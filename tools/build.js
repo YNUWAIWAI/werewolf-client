@@ -52,9 +52,9 @@ function buildHTML(src, dest) {
   })
 }
 
-function build() {
-  buildCSS('src/app.css', 'dest/app.css')
-  buildHTML('src/index.html', 'dest/index.html')
+function build(destDir) {
+  buildCSS('src/app.css', `${destDir}/app.css`)
+  buildHTML('src/index.html', `${destDir}/index.html`)
 }
 
 
@@ -62,9 +62,11 @@ if (process.argv[2] === '-w') {
   const watcher = fs.watch('./src', {recursive: true}, (eventType, filename) => {
     if (filename) {
       console.log(`${eventType}: ${filename}`)
-      build()
+      build('dest')
     }
   })
+} else if (process.argv[2] === '-d') {
+  build('docs')
 } else {
-  build()
+  build('dest')
 }
