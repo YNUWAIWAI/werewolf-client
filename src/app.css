@@ -4,9 +4,16 @@
   padding: 0;
 }
 /* stylelint-enable selector-max-universal */
+:root {
+  /* 100vw * (2/5) * (1/4) - 2 */
+  --chat-image-size: 6vw;
+  --arrow: 2vw;
+}
+
 .info-container {
   display: flex;
   height: 10vh;
+  margin-bottom: 5vh;
 }
 
 .day {
@@ -44,57 +51,70 @@
 }
 
 .flex-container {
-  background: red;
   display: flex;
-  height: 70vh;
+  height: 65vh;
 }
 
 .chat {
-  background: blue;
   flex: 2;
+  overflow: scroll;
 
   &--item {
-    height: 100px;
-    background: purple;
+    height: 300px;
     display: flex;
+    min-height: var(--chat-image-size);
+  }
 
-    &--arrow-box {
-      background: orange;
-      flex: 1;
-      position: relative;
+  &--arrow-box {
+    background: orange;
+    flex: 3;
+    position: relative;
 
-      &::after, &::before {
-        left: 100%;
-        top: 50%;
-        border: solid transparent;
-        content: '';
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-      }
+    &::after {
+      left: 100%;
+      top: calc(var(--chat-image-size) / 2);
+      border: solid transparent;
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-left-color: orange;
+      border-width: var(--arrow);
+      margin-top: calc(var(--arrow) * -1);
+    }
+  }
 
-      &::after {
-        border-color: rgba(136, 183, 213, 0);
-        border-left-color: #88b7d5;
-        border-width: 30px;
-        margin-top: -30px;
-      }
+  &--text {
+    padding: 1em;
+  }
 
-      &::before {
-        border-color: rgba(194, 225, 245, 0);
-        border-left-color: #c2e1f5;
-        border-width: 36px;
-        margin-top: -36px;
-      }
+  &--image {
+    flex: 1;
+    position: relative;
+
+    & > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: var(--chat-image-size);
+      height: var(--chat-image-size);
+    }
+  }
+
+  &--item.me {
+    flex-direction: row-reverse;
+
+    & > .chat--arrow-box::after {
+      left: unset;
+      right: 100%;
+      border-color: transparent;
+      border-right-color: orange;
     }
 
-    &--text {
-      padding: 1em;
-    }
-
-    &--image {
-      flex: 1;
+    & > .chat--image > img {
+      left: 0;
+      right: unset;
     }
   }
 }
