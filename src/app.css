@@ -52,7 +52,7 @@
 
 .flex-container {
   display: flex;
-  height: 65vh;
+  height: 60vh;
 }
 
 .chat {
@@ -124,7 +124,15 @@
   flex: 3;
 }
 
-.command-container {
-  background: yellow;
+.command {
   height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
+
+  &--item {
+    background-color: #8ca0ff;
+    width: 30vw;
+    height: 100%;
+  }
 }
