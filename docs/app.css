@@ -132,6 +132,7 @@
     background: orange;
     grid-area: text;
     position: relative;
+    border-radius: 5px;
   }
 
 .chat--arrow-box::after {
@@ -199,13 +200,25 @@
   width: 48vw;
   display: grid;
   height: 100%;
-  grid: repeat(6, 1fr) / repeat(6, 1fr);
+  grid: repeat(6, 1fr) / repeat(7, 1fr);
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 .prediction > div {
     border: solid 1px black;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 1.5em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
 .prediction > div[ data-player = '1' ] {
@@ -228,14 +241,6 @@
     background-color: purple;
   }
 
-.prediction > div[ data-player = '' ] {
-    background-color: red;
-  }
-
-.prediction > .disable {
-    background-color: gray;
-  }
-
 .command {
   height: 20vh;
   display: -webkit-box;
@@ -253,18 +258,37 @@
   }
 
 .command--item textarea {
+      position: absolute;
       width: 100%;
       max-width: 100%;
       min-width: 100%;
-      max-height: 71%;
-      height: 71%;
+      max-height: 70%;
+      height: 70%;
       resize: none;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 1em;
+      border-radius: 10px;
     }
 
 .command--item button {
       position: absolute;
-      bottom: 2%;
-      right: 2%;
+      right: 0;
+      top: 71%;
       width: 20%;
       height: 25%;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(128, 216, 255);
+      -webkit-box-shadow: 0 1px 1px 0;
+              box-shadow: 0 1px 1px 0;
     }
+
+.command--item button:hover {
+        border: 1px solid white;
+      }
+
+.command--item button:active {
+        background-color: rgb(92, 155, 183);
+      }
