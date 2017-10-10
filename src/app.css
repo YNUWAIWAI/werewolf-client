@@ -57,12 +57,13 @@
 }
 
 .chat {
-  width: 38vw;
+  width: 48vw;
   overflow: scroll;
 
   &--item {
-    height: 300px;
-    display: flex;
+    display: grid;
+    grid-template-areas: 'me text opp';
+    grid-template-columns: 1fr 4fr 1fr;
     min-height: var(--chat-image-size);
     margin-top: 1em;
 
@@ -73,7 +74,7 @@
 
   &--arrow-box {
     background: orange;
-    flex: 3;
+    grid-area: text;
     position: relative;
 
     &::after {
@@ -93,11 +94,13 @@
 
   &--text {
     padding: 1em;
+    word-break: break-all;
   }
 
   &--image {
-    flex: 1;
+    grid-area: opp;
     position: relative;
+    margin: 0 0 0 var(--arrow);
 
     & > img {
       position: absolute;
@@ -109,8 +112,6 @@
   }
 
   &--item.me {
-    flex-direction: row-reverse;
-
     & > .chat--arrow-box::after {
       left: unset;
       right: 100%;
@@ -118,15 +119,20 @@
       border-right-color: orange;
     }
 
-    & > .chat--image > img {
-      left: 0;
-      right: unset;
+    & > .chat--image {
+      grid-area: me;
+      margin: 0 var(--arrow) 0 0;
+
+      & > img {
+        left: 0;
+        right: unset;
+      }
     }
   }
 }
 
 .prediction {
-  width: 58vw;
+  width: 48vw;
   display: grid;
   height: 100%;
   grid: repeat(6, 1fr) / repeat(6, 1fr);
