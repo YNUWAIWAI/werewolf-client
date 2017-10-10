@@ -64,6 +64,11 @@
     height: 300px;
     display: flex;
     min-height: var(--chat-image-size);
+    margin-top: 1em;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   &--arrow-box {
