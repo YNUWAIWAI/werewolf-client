@@ -169,13 +169,17 @@
   width: 48vw;
   display: grid;
   height: 100%;
-  grid: repeat(6, 1fr) / repeat(6, 1fr);
+  grid: repeat(6, 1fr) / repeat(7, 1fr);
   border: 1px solid black;
   border-radius: 3px;
 
   & > div {
     border: solid 1px black;
     box-sizing: border-box;
+    display: inline-flex;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
   }
 
   & > div[ data-player = '1' ] {
@@ -196,14 +200,6 @@
 
   & > div[ data-player = '5' ] {
     background-color: purple;
-  }
-
-  & > div[ data-player = '' ] {
-    background-color: red;
-  }
-
-  & > .disable {
-    background-color: gray;
   }
 }
 
