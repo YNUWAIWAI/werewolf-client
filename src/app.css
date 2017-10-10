@@ -50,7 +50,7 @@
     align-items: center;
   }
 
-  &--image {
+  &--icon {
     height: 80%;
     position: relative;
     width: var(--info-image-size);
@@ -119,7 +119,7 @@
     word-break: break-all;
   }
 
-  &--image {
+  &--icon {
     display: block;
     grid-area: opp;
     position: relative;
@@ -152,7 +152,7 @@
       border-right-color: orange;
     }
 
-    & > .chat--image {
+    & > .chat--icon {
       grid-area: me;
       margin: 0 var(--arrow) 0 0;
 
