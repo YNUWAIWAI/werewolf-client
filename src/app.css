@@ -201,6 +201,22 @@
   & > div[ data-player = '5' ] {
     background-color: purple;
   }
+
+  & > div[ data-state = 'o' ]::before {
+    content: '⭕';
+  }
+
+  & > div[ data-state = 'unk' ]::before {
+    content: '?';
+  }
+
+  & > div[ data-state = 'tri' ]::before {
+    content: '🔺';
+  }
+
+  & > div[ data-state = 'x' ]::before {
+    content: '❌';
+  }
 }
 
 .command {
