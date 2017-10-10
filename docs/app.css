@@ -4,3 +4,234 @@
   padding: 0;
 }
 /* stylelint-enable selector-max-universal */
+:root {
+  /* 100vw * (2/5) * (1/4) - 2 */
+  --chat-image-size: 6vw;
+  --arrow: 2vw;
+}
+
+.info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10vh;
+  margin-bottom: 5vh;
+}
+
+.day {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.day--text {
+    width: 60%;
+    height: 60%;
+    border: 2px solid black;
+    border-radius: 5em;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+.role {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.role--text {
+    width: 60%;
+    height: 60%;
+    border: 2px solid black;
+    border-radius: 5em;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+.activity-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.chat {
+  width: 38vw;
+  overflow: scroll;
+}
+
+.chat--item {
+    height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: var(--chat-image-size);
+  }
+
+.chat--arrow-box {
+    background: orange;
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+    position: relative;
+  }
+
+.chat--arrow-box::after {
+      left: 100%;
+      top: calc(var(--chat-image-size) / 2);
+      border: solid transparent;
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-left-color: orange;
+      border-width: var(--arrow);
+      margin-top: calc(var(--arrow) * -1);
+    }
+
+.chat--text {
+    padding: 1em;
+  }
+
+.chat--image {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    position: relative;
+  }
+
+.chat--image > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: var(--chat-image-size);
+      height: var(--chat-image-size);
+    }
+
+.chat--item.me {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+
+.chat--item.me > .chat--arrow-box::after {
+      left: unset;
+      right: 100%;
+      border-color: transparent;
+      border-right-color: orange;
+    }
+
+.chat--item.me > .chat--image > img {
+      left: 0;
+      right: unset;
+    }
+
+.prediction {
+  width: 58vw;
+  display: grid;
+  height: 100%;
+  grid: repeat(6, 1fr) / repeat(6, 1fr);
+}
+
+.prediction > div {
+    border: solid 1px black;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+.prediction > div[ data-player = '1' ] {
+    background-color: red;
+  }
+
+.prediction > div[ data-player = '2' ] {
+    background-color: yellow;
+  }
+
+.prediction > div[ data-player = '3' ] {
+    background-color: blue;
+  }
+
+.prediction > div[ data-player = '4' ] {
+    background-color: lime;
+  }
+
+.prediction > div[ data-player = '5' ] {
+    background-color: purple;
+  }
+
+.prediction > div[ data-player = '' ] {
+    background-color: red;
+  }
+
+.prediction > .disable {
+    background-color: gray;
+  }
+
+.command {
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 2.5vh 0;
+}
+
+.command--item {
+    width: 30vw;
+    height: 100%;
+    position: relative;
+  }
+
+.command--item textarea {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      max-height: 71%;
+      height: 71%;
+      resize: none;
+    }
+
+.command--item button {
+      position: absolute;
+      bottom: 2%;
+      right: 2%;
+      width: 20%;
+      height: 25%;
+    }
