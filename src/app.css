@@ -6,6 +6,7 @@
 /* stylelint-enable selector-max-universal */
 :root {
   --info-image-size: 6vh;
+  --prediction-image-size: 7vh;
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -182,24 +183,18 @@
     align-items: center;
   }
 
-  & > div[ data-player = '1' ] {
-    background-color: red;
-  }
+  & > div[ data-player ] {
+    flex-direction: column;
 
-  & > div[ data-player = '2' ] {
-    background-color: yellow;
-  }
+    & > img {
+      width: var(--prediction-image-size);
+      height: var(--prediction-image-size);
+    }
 
-  & > div[ data-player = '3' ] {
-    background-color: blue;
-  }
+    & > span {
+      font-size: xx-small;
+    }
 
-  & > div[ data-player = '4' ] {
-    background-color: lime;
-  }
-
-  & > div[ data-player = '5' ] {
-    background-color: purple;
   }
 
   & > div[ data-state = 'o' ]::before {
