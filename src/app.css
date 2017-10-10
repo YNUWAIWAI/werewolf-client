@@ -230,10 +230,10 @@
     & button {
       position: absolute;
       right: 0;
-      top: 71%;
+      top: 70%;
       width: 20%;
       height: 25%;
-      margin-right: 10px;
+      margin: 10px;
       border: none;
       border-radius: 5px;
       background-color: rgb(128, 216, 255);
