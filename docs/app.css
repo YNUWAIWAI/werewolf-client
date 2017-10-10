@@ -6,6 +6,7 @@
 /* stylelint-enable selector-max-universal */
 :root {
   --info-image-size: 6vh;
+  --prediction-image-size: 7vh;
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -221,24 +222,37 @@
             align-items: center;
   }
 
-.prediction > div[ data-player = '1' ] {
-    background-color: red;
+.prediction > div[ data-player ] {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
   }
 
-.prediction > div[ data-player = '2' ] {
-    background-color: yellow;
+.prediction > div[ data-player ] > img {
+      width: var(--prediction-image-size);
+      height: var(--prediction-image-size);
+    }
+
+.prediction > div[ data-player ] > span {
+      font-size: xx-small;
+    }
+
+.prediction > div[ data-state = 'o' ]::before {
+    content: '⭕';
   }
 
-.prediction > div[ data-player = '3' ] {
-    background-color: blue;
+.prediction > div[ data-state = 'unk' ]::before {
+    content: '?';
   }
 
-.prediction > div[ data-player = '4' ] {
-    background-color: lime;
+.prediction > div[ data-state = 'tri' ]::before {
+    content: '🔺';
   }
 
-.prediction > div[ data-player = '5' ] {
-    background-color: purple;
+.prediction > div[ data-state = 'x' ]::before {
+    content: '❌';
   }
 
 .command {
@@ -274,10 +288,10 @@
 .command--item button {
       position: absolute;
       right: 0;
-      top: 71%;
+      top: 70%;
       width: 20%;
       height: 25%;
-      margin-right: 10px;
+      margin: 10px;
       border: none;
       border-radius: 5px;
       background-color: rgb(128, 216, 255);
