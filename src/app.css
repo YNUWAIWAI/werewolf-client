@@ -98,6 +98,7 @@
     background: orange;
     grid-area: text;
     position: relative;
+    border-radius: 5px;
 
     &::after {
       left: 100%;
@@ -169,6 +170,8 @@
   display: grid;
   height: 100%;
   grid: repeat(6, 1fr) / repeat(6, 1fr);
+  border: 1px solid black;
+  border-radius: 3px;
 
   & > div {
     border: solid 1px black;
@@ -216,20 +219,37 @@
     position: relative;
 
     & textarea {
+      position: absolute;
       width: 100%;
       max-width: 100%;
       min-width: 100%;
-      max-height: 71%;
-      height: 71%;
+      max-height: 70%;
+      height: 70%;
       resize: none;
+      box-sizing: border-box;
+      padding: 1em;
+      border-radius: 10px;
     }
 
     & button {
       position: absolute;
-      bottom: 2%;
-      right: 2%;
+      right: 0;
+      top: 71%;
       width: 20%;
       height: 25%;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(128, 216, 255);
+      box-shadow: 0 1px 1px 0;
+
+      &:hover {
+        border: 1px solid white;
+      }
+
+      &:active {
+        background-color: rgb(92, 155, 183);
+      }
     }
   }
 }
