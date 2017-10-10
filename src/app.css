@@ -119,9 +119,44 @@
   }
 }
 
-.prediction-container {
-  background: gray;
+.prediction {
   flex: 3;
+  display: grid;
+  height: 100%;
+  grid: repeat(6, 1fr) / repeat(6, 1fr);
+
+  & > div {
+    border: solid 1px black;
+    box-sizing: border-box;
+  }
+
+  & > div[ data-player = '1' ] {
+    background-color: red;
+  }
+
+  & > div[ data-player = '2' ] {
+    background-color: yellow;
+  }
+
+  & > div[ data-player = '3' ] {
+    background-color: blue;
+  }
+
+  & > div[ data-player = '4' ] {
+    background-color: lime;
+  }
+
+  & > div[ data-player = '5' ] {
+    background-color: purple;
+  }
+
+  & > div[ data-player = '' ] {
+    background-color: red;
+  }
+
+  & > .disable {
+    background-color: gray;
+  }
 }
 
 .command {
