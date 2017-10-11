@@ -52,11 +52,22 @@ function buildHTML(src, dest) {
   })
 }
 
+function buildJS(src, dest) {
+  fs.readFile(src, (err, data) => {
+    mkdir(dest)
+      .then(() => {
+        fs.writeFile(dest, data, err => {
+          if (err) throw err
+        })
+      })
+  })
+}
+
 function build(destDir) {
   buildCSS('src/app.css', `${destDir}/app.css`)
   buildHTML('src/index.html', `${destDir}/index.html`)
+  buildJS('src/index.html', `${destDir}/app.js`)
 }
-
 
 if (process.argv[2] === '-w') {
   const watcher = fs.watch('./src', {recursive: true}, (eventType, filename) => {
