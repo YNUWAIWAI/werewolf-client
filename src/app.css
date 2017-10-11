@@ -185,8 +185,13 @@
     align-items: center;
   }
 
-  & > div[ data-player ] {
+  & > .player {
     flex-direction: column;
+
+    &.dead {
+      background-color: red;
+      color: white;
+    }
 
     & > img {
       width: var(--prediction-image-size);
@@ -196,7 +201,6 @@
     & > span {
       font-size: xx-small;
     }
-
   }
 
   & > div[ data-state = 'o' ]::before {
