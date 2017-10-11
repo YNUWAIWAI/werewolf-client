@@ -10,6 +10,10 @@
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
+  --public-color: rgba(255, 165, 0, 0.5);
+  --private-color: rgba(255, 0, 0, 0.5);
+  --limited-color: rgba(0, 255, 196, 0.5);
+  --master-color: rgba(0, 0, 255, 0.4);
 }
 
 .info-container {
@@ -108,7 +112,7 @@
   }
 
   &--arrow-box {
-    background: orange;
+    background: var(--public-color);
     grid-area: text;
     position: relative;
     border-radius: 5px;
@@ -122,7 +126,7 @@
       width: 0;
       position: absolute;
       pointer-events: none;
-      border-left-color: orange;
+      border-left-color: var(--public-color);
       border-width: var(--arrow);
       margin-top: calc(var(--arrow) * -1);
     }
@@ -158,12 +162,54 @@
     }
   }
 
+  &--item.private {
+    & > .chat--arrow-box {
+      background: var(--private-color);
+
+      &::after {
+        border-left-color: var(--private-color);
+      }
+    }
+  }
+
+  &--item.limited {
+    & > .chat--arrow-box {
+      background: var(--limited-color);
+
+      &::after {
+        border-left-color: var(--limited-color);
+      }
+    }
+  }
+
+  &--item.master {
+    & > .chat--arrow-box {
+      background: var(--master-color);
+
+      &::after {
+        border-left-color: var(--master-color);
+      }
+    }
+  }
+
   &--item.me {
     & > .chat--arrow-box::after {
       left: unset;
       right: 100%;
       border-color: transparent;
-      border-right-color: orange;
+      border-right-color: var(--public-color);
+    }
+
+    &.private > .chat--arrow-box::after {
+      border-right-color: var(--private-color);
+    }
+
+    &.limited > .chat--arrow-box::after {
+      border-right-color: var(--limited-color);
+    }
+
+    &.master > .chat--arrow-box::after {
+      border-right-color: var(--master-color);
     }
 
     & > .chat--icon {
