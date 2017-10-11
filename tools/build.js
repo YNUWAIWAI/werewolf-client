@@ -66,7 +66,7 @@ function buildJS(src, dest) {
 function build(destDir) {
   buildCSS('src/app.css', `${destDir}/app.css`)
   buildHTML('src/index.html', `${destDir}/index.html`)
-  buildJS('src/index.html', `${destDir}/app.js`)
+  buildJS('src/app.js', `${destDir}/app.js`)
 }
 
 if (process.argv[2] === '-w') {
