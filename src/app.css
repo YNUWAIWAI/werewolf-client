@@ -241,7 +241,7 @@
     align-items: center;
   }
 
-  & > .player {
+  &--player {
     flex-direction: column;
 
     &.dead {
