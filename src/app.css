@@ -343,11 +343,12 @@
 
   &--description {
     padding: 0 1em;
+    font-size: 1.5em;
   }
 
   &--option-container {
     display: flex;
-    height: calc(100% - 1.5em);
+    height: calc(100% - 2.25em);
     overflow: scroll;
   }
 
@@ -360,8 +361,8 @@
     flex-wrap: nowrap;
 
     & > img {
-      height: calc(20vh - 3em);
-      width: calc(20vh - 3em);
+      height: calc(20vh - 3.75em);
+      width: calc(20vh - 3.75em);
     }
 
     & > span {
