@@ -16,6 +16,10 @@
   --master-color: rgba(0, 0, 255, 0.4);
 }
 
+.hidden {
+  display: none;
+}
+
 .info-container {
   display: flex;
   height: 10vh;
@@ -282,7 +286,7 @@
   justify-content: space-around;
   margin: 2.5vh 0;
 
-  &--item {
+  &--input {
     width: 30vw;
     height: 100%;
     position: relative;
@@ -328,6 +332,40 @@
 
     &.limited > textarea {
       background: var(--limited-color);
+    }
+  }
+
+  &--select {
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  &--description {
+    padding: 0 1em;
+  }
+
+  &--option-container {
+    display: flex;
+    height: calc(100% - 1.5em);
+    overflow: scroll;
+  }
+
+  &--option {
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    & > img {
+      height: calc(20vh - 3em);
+      width: calc(20vh - 3em);
+    }
+
+    & > span {
+      font-size: xx-small;
     }
   }
 }
