@@ -376,7 +376,7 @@
   height: 30vh;
   top: 35vh;
   left: 35vw;
-  background: red;
+  background: white;
   padding: 1em;
   z-index: 2;
 
@@ -412,6 +412,15 @@
   &--button {
     font-size: 1.5em;
     width: 30%;
+    border: none;
+  }
+
+  &--button[ value = 'yes' ] {
+    background: rgba(255, 0, 0, 0.5);
+  }
+
+  &--button[ value = 'no' ] {
+    background: rgba(0, 0, 255, 0.5);
   }
 }
 
