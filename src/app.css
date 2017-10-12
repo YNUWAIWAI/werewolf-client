@@ -369,3 +369,47 @@
     }
   }
 }
+
+.modal {
+  position: fixed;
+  width: 30vw;
+  height: 30vh;
+  top: 35vh;
+  left: 35vw;
+  background: red;
+  padding: 1em;
+
+  &--icon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    & > img {
+      height: calc(20vh - 3.75em);
+      width: calc(20vh - 3.75em);
+    }
+
+    & > span {
+      font-size: xx-small;
+    }
+  }
+
+  &--description {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  &--button--container {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  &--button {
+    font-size: 1.5em;
+    width: 30%;
+  }
+}
