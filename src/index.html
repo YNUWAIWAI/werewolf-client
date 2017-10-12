@@ -137,7 +137,7 @@
       <div>狩人</div>
       <div>人狼</div>
       <div>狂人</div>
-      <div class="player" data-player="1">
+      <div class="prediction--player" data-player="1">
         <img src="img/wolf.png">
         <span>User1</span>
       </div>
@@ -147,7 +147,7 @@
       <div data-state="unk"></div>
       <div data-state="unk"></div>
       <div data-state="unk"></div>
-      <div class="player dead" data-player="2">
+      <div class="prediction--player dead" data-player="2">
         <img src="img/wolf.png">
         <span>User2</span>
       </div>
@@ -157,7 +157,7 @@
       <div data-state="unk"></div>
       <div data-state="x"></div>
       <div data-state="x"></div>
-      <div class="player" data-player="3">
+      <div class="prediction--player" data-player="3">
         <img src="img/wolf.png">
         <span>User3</span>
       </div>
@@ -167,7 +167,7 @@
       <div data-state="unk"></div>
       <div data-state="tri"></div>
       <div data-state="tri"></div>
-      <div class="player" data-player="4">
+      <div class="prediction--player" data-player="4">
         <img src="img/wolf.png">
         <span>User4</span>
       </div>
@@ -177,7 +177,7 @@
       <div data-state="unk"></div>
       <div data-state="unk"></div>
       <div data-state="tri"></div>
-      <div class="player" data-player="5">
+      <div class="prediction--player" data-player="5">
         <img src="img/wolf.png">
         <span>User5</span>
       </div>
@@ -190,17 +190,46 @@
     </div>
   </div>
   <div class="command">
-    <div class="command--item">
+    <div class="command--input hidden">
       <textarea placeholder="公開用"></textarea>
       <button>送信</button>
     </div>
-    <div class="command--item private">
+    <div class="command--input private hidden">
       <textarea placeholder="非公開用"></textarea>
       <button>送信</button>
     </div>
-    <div class="command--item limited">
+    <div class="command--input limited hidden">
       <textarea placeholder="同一役職にのみ公開用"></textarea>
       <button>送信</button>
+    </div>
+    <div class="command--select">
+      <div class="command--description">description</div>
+      <div class="command--option-container">
+        <div class="command--option">
+          <img src="img/wolf.png">
+          <span>白紙</span>
+        </div>
+        <div class="command--option">
+          <img src="img/wolf.png">
+          <span>User1</span>
+        </div>
+        <div class="command--option">
+          <img src="img/wolf.png">
+          <span>User1</span>
+        </div>
+        <div class="command--option">
+          <img src="img/wolf.png">
+          <span>User1</span>
+        </div>
+        <div class="command--option">
+          <img src="img/wolf.png">
+          <span>User1</span>
+        </div>
+        <div class="command--option">
+          <img src="img/wolf.png">
+          <span>User1</span>
+        </div>
+      </div>
     </div>
   </div>
 </body>
