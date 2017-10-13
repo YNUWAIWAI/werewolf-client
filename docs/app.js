@@ -1,3 +1,5 @@
+import timer from './module/timer.js'
+
 const handleClick = e => {
   const state = [ 'o', 'x', 'tri', 'unk' ]
   const currentState = e.target.dataset.state
@@ -27,57 +29,14 @@ document.querySelectorAll('.command--option').forEach(elem => {
   })
 })
 
-const timer = (id, option = {}) => {
-  option.minute = option.minute || 3
-  option.second = option.second || 0
-  if (option.second < 10) {
-    option.second = `0${option.second}`
-  }
-
-  const node = document.getElementById(id)
-  const timerEvent = {
-    timerEnd: new Event('time-end'),
-    timerStart: new Event('time-start')
-  }
-
-  const tick = () => {
-    let [ , minute, second ] = (/残り(\d+)'(\d+)/).exec(node.textContent)
-
-    minute = Number(minute)
-    second = Number(second)
-
-    if (minute === 0 && second === 0) {
-      node.textContent = '終了'
-      return false
-    }
-
-    second--
-    if (second < 0) {
-      second = 59
-      minute--
-    } else if (second < 10) {
-      second = `0${second}`
-    }
-    node.textContent = `残り${minute}'${second}`
-
-    return true
-  }
-
-  node.textContent = `残り${option.minute}'${option.second}`
-  node.dispatchEvent(timerEvent.timerStart)
-  const interval = window.setInterval(() => {
-    if (!tick(id)) {
-      clearInterval(interval)
-      node.dispatchEvent(timerEvent.timerEnd)
-    }
-  }, 1000)
-}
-
 document.getElementById('day-time').addEventListener('time-start', elem => {
   elem.target.style.color = 'black'
 })
 document.getElementById('day-time').addEventListener('time-end', elem => {
   elem.target.style.color = 'red'
+  document.querySelectorAll('.command--input').forEach(elem => elem.classList.add('hidden'))
+  document.querySelector('.command--select').classList.remove('hidden')
+  timer('select-time')
 })
 document.getElementById('select-time').addEventListener('time-start', elem => {
   elem.target.style.color = 'black'
@@ -85,3 +44,5 @@ document.getElementById('select-time').addEventListener('time-start', elem => {
 document.getElementById('select-time').addEventListener('time-end', elem => {
   elem.target.style.color = 'red'
 })
+
+timer('day-time', {minute: 10})
