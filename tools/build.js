@@ -4,6 +4,7 @@ const postcss = require('postcss')
 const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const glob = require('glob')
+const express = require('express')
 
 const mkdir = dir => {
   return new Promise((resolve, reject) => {
@@ -60,13 +61,14 @@ const buildHTML = (src, dest) => {
         fs.writeFile(dest, data, err => {
           if (err) {
             throw err
-          }s
+          }
         })
       })
   })
 }
 
 const buildJS = (src, dest) => {
+  console.log(src, dest)
   fs.readFile(src, (err, data) => {
     if (err) {
       throw err
@@ -102,6 +104,10 @@ if (process.argv[2] === '-w') {
       build('dest')
     }
   })
+  const app = express()
+  app.use(express.static('dest'))
+  app.listen(8000)
+  console.log('see http://localhost:8000/')
 } else if (process.argv[2] === '-d') {
   build('docs')
 } else {

@@ -4,6 +4,10 @@ module.exports = {
     "es6": true,
     "node": true
   },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "extends": "eslint:recommended",
   "rules": {
     "array-bracket-spacing": ["error", "always", { "singleValue": false, "objectsInArrays": false, "arraysInArrays": false }],
