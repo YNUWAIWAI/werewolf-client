@@ -68,7 +68,6 @@ const buildHTML = (src, dest) => {
 }
 
 const buildJS = (src, dest) => {
-  console.log(src, dest)
   fs.readFile(src, (err, data) => {
     if (err) {
       throw err
