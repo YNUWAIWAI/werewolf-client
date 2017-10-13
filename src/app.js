@@ -27,15 +27,22 @@ document.querySelectorAll('.command--option').forEach(elem => {
   })
 })
 
-const timer = id => {
+const timer = (id, option = {}) => {
+  option.minute = option.minute || 3
+  option.second = option.second || 0
+  if (option.second < 10) {
+    option.second = `0${option.second}`
+  }
+
   const node = document.getElementById(id)
   const timerEvent = {
     timerStart: new Event('timer-start'),
     timerEnd: new Event('timer-end')
   }
 
-  function tick(id) {
-    let [,minute,second] = (/残り(\d+)'(\d+)/).exec(node.textContent)
+  const tick = () => {
+    let [ , minute, second ] = (/残り(\d+)'(\d+)/).exec(node.textContent)
+
     minute = Number(minute)
     second = Number(second)
 
@@ -56,6 +63,7 @@ const timer = id => {
     return true
   }
 
+  node.textContent = `残り${option.minute}'${option.second}`
   node.dispatchEvent(timerEvent.timerStart)
   const interval = window.setInterval(() => {
     if (!tick(id)) {
