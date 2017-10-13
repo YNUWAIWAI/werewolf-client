@@ -5,6 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.1.4",
+    "eslint": "^4.8.0",
     "postcss": "^6.0.13",
     "postcss-nested": "^2.1.2",
     "stylelint": "^8.2.0"
