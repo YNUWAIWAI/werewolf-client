@@ -73,10 +73,10 @@ const timer = (id, option = {}) => {
   }, 1000)
 }
 
-document.getElementById('chat-time').addEventListener('time-start', elem => {
+document.getElementById('day-time').addEventListener('time-start', elem => {
   elem.target.style.color = 'black'
 })
-document.getElementById('chat-time').addEventListener('time-end', elem => {
+document.getElementById('day-time').addEventListener('time-end', elem => {
   elem.target.style.color = 'red'
 })
 document.getElementById('select-time').addEventListener('time-start', elem => {
