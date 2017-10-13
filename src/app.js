@@ -34,6 +34,9 @@ document.getElementById('day-time').addEventListener('time-start', elem => {
 })
 document.getElementById('day-time').addEventListener('time-end', elem => {
   elem.target.style.color = 'red'
+  document.querySelectorAll('.command--input').forEach(elem => elem.classList.add('hidden'))
+  document.querySelector('.command--select').classList.remove('hidden')
+  timer('select-time')
 })
 document.getElementById('select-time').addEventListener('time-start', elem => {
   elem.target.style.color = 'black'
@@ -41,3 +44,5 @@ document.getElementById('select-time').addEventListener('time-start', elem => {
 document.getElementById('select-time').addEventListener('time-end', elem => {
   elem.target.style.color = 'red'
 })
+
+timer('day-time', {minute: 10})
