@@ -16,6 +16,10 @@
   --master-color: rgba(0, 0, 255, 0.4);
 }
 
+.hidden {
+  display: none;
+}
+
 .info-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,7 +44,7 @@
 }
 
 .day--text {
-    width: 60%;
+    width: 70%;
     height: 60%;
     border: 2px solid black;
     border-radius: 5em;
@@ -55,6 +59,12 @@
             align-items: center;
     font-size: 1.5em;
   }
+
+.day--text > span {
+      margin: 0 1em;
+      width: 4.5em;
+      text-align: center;
+    }
 
 .role {
   -webkit-box-flex: 3;
@@ -272,24 +282,24 @@
             align-items: center;
   }
 
-.prediction > .player {
+.prediction--player {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
 
-.prediction > .player.dead {
+.prediction--player.dead {
       background-color: red;
       color: white;
     }
 
-.prediction > .player > img {
+.prediction--player > img {
       width: var(--prediction-image-size);
       height: var(--prediction-image-size);
     }
 
-.prediction > .player > span {
+.prediction--player > span {
       font-size: xx-small;
     }
 
@@ -319,13 +329,13 @@
   margin: 2.5vh 0;
 }
 
-.command--item {
+.command--input {
     width: 30vw;
     height: 100%;
     position: relative;
   }
 
-.command--item textarea {
+.command--input textarea {
       position: absolute;
       width: 100%;
       max-width: 100%;
@@ -340,7 +350,7 @@
       background: var(--public-color);
     }
 
-.command--item button {
+.command--input button {
       position: absolute;
       right: 0;
       top: 70%;
@@ -354,18 +364,139 @@
               box-shadow: 0 1px 1px 0;
     }
 
-.command--item button:hover {
+.command--input button:hover {
         border: 1px solid white;
       }
 
-.command--item button:active {
+.command--input button:active {
         background-color: rgb(92, 155, 183);
       }
 
-.command--item.private > textarea {
+.command--input.private > textarea {
       background: var(--private-color);
     }
 
-.command--item.limited > textarea {
+.command--input.limited > textarea {
       background: var(--limited-color);
     }
+
+.command--select {
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+  }
+
+.command--description {
+    padding: 0 1em;
+    font-size: 1.5em;
+  }
+
+.command--option-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: calc(100% - 2.25em);
+    overflow: scroll;
+  }
+
+.command--option {
+    height: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+
+.command--option > img {
+      height: calc(20vh - 3.75em);
+      width: calc(20vh - 3.75em);
+    }
+
+.command--option > span {
+      font-size: xx-small;
+    }
+
+.modal {
+  position: fixed;
+  width: 30vw;
+  height: 30vh;
+  top: 35vh;
+  left: 35vw;
+  background: white;
+  padding: 1em;
+  z-index: 2;
+}
+
+.modal--icon {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+
+.modal--icon > img {
+      height: calc(20vh - 3.75em);
+      width: calc(20vh - 3.75em);
+    }
+
+.modal--icon > span {
+      font-size: xx-small;
+    }
+
+.modal--description {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+
+.modal--button--container {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+.modal--button {
+    font-size: 1.5em;
+    width: 30%;
+    border: none;
+  }
+
+.modal--button[ value = 'yes' ] {
+    background: rgba(255, 0, 0, 0.5);
+  }
+
+.modal--button[ value = 'no' ] {
+    background: rgba(0, 0, 255, 0.5);
+  }
+
+.obfucator {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
