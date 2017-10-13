@@ -16,7 +16,6 @@ module.exports = {
     "callback-return": "error",
     "camelcase": "error",
     "comma-style": ["error", "last"],
-    "complexity": ["warn", 2],
     "computed-property-spacing": ["error", "never"],
     "consistent-return": "error",
     "consistent-this": ["error", "that"],
