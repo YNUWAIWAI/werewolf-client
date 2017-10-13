@@ -303,20 +303,20 @@
       font-size: xx-small;
     }
 
-.prediction > div[ data-state = 'o' ]::before {
-    content: '⭕';
+.prediction > div[ data-state = 'o' ] {
+    background: no-repeat center / 80% 80% url('img/circle.svg');
   }
 
-.prediction > div[ data-state = 'unk' ]::before {
-    content: '?';
+.prediction > div[ data-state = 'unk' ] {
+    background: no-repeat center / 100% 100% url('img/question.svg');
   }
 
-.prediction > div[ data-state = 'tri' ]::before {
-    content: '🔺';
+.prediction > div[ data-state = 'tri' ] {
+    background: no-repeat center / 100% 100% url('img/triangle.svg');
   }
 
-.prediction > div[ data-state = 'x' ]::before {
-    content: '❌';
+.prediction > div[ data-state = 'x' ] {
+    background: no-repeat center / 80% 80% url('img/cross.svg');
   }
 
 .command {
