@@ -269,20 +269,20 @@
     }
   }
 
-  & > div[ data-state = 'o' ]::before {
-    content: '⭕';
+  & > div[ data-state = 'o' ] {
+    background: no-repeat center / 80% 80% url('img/circle.svg');
   }
 
-  & > div[ data-state = 'unk' ]::before {
-    content: '?';
+  & > div[ data-state = 'unk' ] {
+    background: no-repeat center / 100% 100% url('img/question.svg');
   }
 
-  & > div[ data-state = 'tri' ]::before {
-    content: '🔺';
+  & > div[ data-state = 'tri' ] {
+    background: no-repeat center / 100% 100% url('img/triangle.svg');
   }
 
-  & > div[ data-state = 'x' ]::before {
-    content: '❌';
+  & > div[ data-state = 'x' ] {
+    background: no-repeat center / 80% 80% url('img/cross.svg');
   }
 }
 
