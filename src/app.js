@@ -36,8 +36,8 @@ const timer = (id, option = {}) => {
 
   const node = document.getElementById(id)
   const timerEvent = {
-    timerStart: new Event('timer-start'),
-    timerEnd: new Event('timer-end')
+    timerEnd: new Event('timer-end'),
+    timerStart: new Event('timer-start')
   }
 
   const tick = () => {
