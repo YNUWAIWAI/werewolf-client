@@ -1,6 +1,16 @@
 export default (id, option = {}) => {
-  option.minute = option.minute || 3
-  option.second = option.second || 0
+  if (typeof option.minute !== 'string' && typeof option.minute !== 'number') {
+    option.minute = 3
+  } else if (option.minute < 0) {
+    option.minute = 0
+  }
+
+  if (typeof option.second !== 'string' && typeof option.second !== 'number') {
+    option.second = 0
+  } else if (option.second < 0 || option.second > 60) {
+    option.second = 0
+  }
+
   if (option.second < 10) {
     option.second = `0${option.second}`
   }
