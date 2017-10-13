@@ -36,8 +36,8 @@ const timer = (id, option = {}) => {
 
   const node = document.getElementById(id)
   const timerEvent = {
-    timerEnd: new Event('timer-end'),
-    timerStart: new Event('timer-start')
+    timerEnd: new Event('time-end'),
+    timerStart: new Event('time-start')
   }
 
   const tick = () => {
@@ -72,3 +72,16 @@ const timer = (id, option = {}) => {
     }
   }, 1000)
 }
+
+document.getElementById('chat-time').addEventListener('time-start', elem => {
+  elem.target.style.color = 'black'
+})
+document.getElementById('chat-time').addEventListener('time-end', elem => {
+  elem.target.style.color = 'red'
+})
+document.getElementById('select-time').addEventListener('time-start', elem => {
+  elem.target.style.color = 'black'
+})
+document.getElementById('select-time').addEventListener('time-end', elem => {
+  elem.target.style.color = 'red'
+})
