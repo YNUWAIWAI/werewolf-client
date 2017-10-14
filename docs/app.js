@@ -1,7 +1,7 @@
 import timer from './module/timer.js'
 
 const handleClick = e => {
-  const state = [ 'o', 'x', 'tri', 'unk' ]
+  const state = [ 'o', 'x', 'unk', 'tri' ]
   const currentState = e.target.dataset.state
   const nextIndex = (state.indexOf(currentState) + 1) % state.length
   const nextState = state[nextIndex]
@@ -37,6 +37,7 @@ document.getElementById('day-time').addEventListener('time-end', elem => {
   document.querySelectorAll('.command--input').forEach(elem => elem.classList.add('hidden'))
   document.querySelector('.command--select').classList.remove('hidden')
   timer('select-time')
+  timer('modal-time')
 })
 document.getElementById('select-time').addEventListener('time-start', elem => {
   elem.target.style.color = 'black'
