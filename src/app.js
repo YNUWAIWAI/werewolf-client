@@ -37,6 +37,7 @@ document.getElementById('day-time').addEventListener('time-end', elem => {
   document.querySelectorAll('.command--input').forEach(elem => elem.classList.add('hidden'))
   document.querySelector('.command--select').classList.remove('hidden')
   timer('select-time')
+  timer('modal-time')
 })
 document.getElementById('select-time').addEventListener('time-start', elem => {
   elem.target.style.color = 'black'

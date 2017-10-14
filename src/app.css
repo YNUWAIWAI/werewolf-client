@@ -378,10 +378,10 @@
 
 .modal {
   position: fixed;
-  width: 30vw;
+  width: 40vw;
   height: 30vh;
   top: 35vh;
-  left: 35vw;
+  left: 30vw;
   background: white;
   padding: 1em;
   z-index: 2;
