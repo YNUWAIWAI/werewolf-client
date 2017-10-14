@@ -1,7 +1,7 @@
 import timer from './module/timer.js'
 
 const handleClick = e => {
-  const state = [ 'o', 'x', 'tri', 'unk' ]
+  const state = [ 'o', 'x', 'unk', 'tri' ]
   const currentState = e.target.dataset.state
   const nextIndex = (state.indexOf(currentState) + 1) % state.length
   const nextState = state[nextIndex]
