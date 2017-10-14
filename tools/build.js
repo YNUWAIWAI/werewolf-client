@@ -97,6 +97,7 @@ const build = destDir => {
 }
 
 if (process.argv[2] === '-w') {
+  build('dest')
   fs.watch('./src', {recursive: true}, (eventType, filename) => {
     if (filename) {
       console.log(`${eventType}: ${filename}`)
