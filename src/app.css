@@ -16,6 +16,11 @@
   --master-color: rgba(0, 0, 255, 0.4);
 }
 
+body {
+  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+}
+
 .hidden {
   display: none;
 }
