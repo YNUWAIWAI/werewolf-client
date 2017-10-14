@@ -10,10 +10,11 @@
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
-  --public-color: rgba(255, 165, 0, 0.5);
-  --private-color: rgba(255, 0, 0, 0.5);
-  --limited-color: rgba(0, 255, 196, 0.5);
-  --master-color: rgba(0, 0, 255, 0.4);
+  --public-color: rgba(255, 165, 0, 0.4);
+  --private-color: rgba(128, 128, 128, 0.3);
+  --limited-color: rgba(255, 0, 0, 0.4);
+  --master-color: rgba(0, 255, 0, 0.4);
+  --grave-color: rgba(0, 0, 255, 0.3);
 }
 
 body {
@@ -207,6 +208,16 @@ body {
     }
   }
 
+  &--item.grave {
+    & > .chat--arrow-box {
+      background: var(--grave-color);
+
+      &::after {
+        border-left-color: var(--grave-color);
+      }
+    }
+  }
+
   &--item.me {
     & > .chat--arrow-box::after {
       left: unset;
@@ -225,6 +236,10 @@ body {
 
     &.master > .chat--arrow-box::after {
       border-right-color: var(--master-color);
+    }
+
+    &.grave > .chat--arrow-box::after {
+      border-right-color: var(--grave-color);
     }
 
     & > .chat--icon {
