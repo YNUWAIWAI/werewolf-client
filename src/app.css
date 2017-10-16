@@ -132,6 +132,9 @@ body {
     grid-area: text;
     position: relative;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &::after {
       left: 100%;
@@ -154,9 +157,8 @@ body {
   }
 
   &--date {
-    bottom: 1em;
-    position: absolute;
-    right: 1em;
+    padding: 0 1em 1em;
+    text-align: right;
   }
 
   &--icon {
