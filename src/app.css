@@ -458,6 +458,25 @@ body {
   }
 }
 
+.result {
+  height: 80vh;
+  width: 80vw;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  border: 1px solid black;
+  overflow: scroll;
+
+  &--cell {
+    border: 1px solid black;
+    font-size: 2em;
+    padding: 1rem;
+  }
+}
+
 .obfucator {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
