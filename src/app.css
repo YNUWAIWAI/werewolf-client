@@ -330,7 +330,7 @@ body {
     background: black;
   }
 
-  & > div[ data-state = 'me' ] {
+  & > div[ data-state = 'fix' ] {
     background: no-repeat center / 80% 80% url('img/circle.svg');
     border: solid 3px red;
   }
