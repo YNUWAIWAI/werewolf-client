@@ -7,9 +7,9 @@ const generatePredictionTable = () => new Promise((resolve, reject) => {
   dom = dom.concat(roles.map(role => {
     const id = /\/(\w+)$/.exec(role['@id'])[1]
     return `
-    <div data-role="${id}">
-      <img alt="${role.name.ja}" src="${role.image}">
-      ${role.number > 1 ? 'x'+role.number :''}
+    <div data-role="${id}" data-tooltip="${role.name.ja}">
+      <img src="${role.image}">
+      ${role.number > 1 ? '&times' + role.number : ''}
     </div>`
   }))
   const agentdom = agents.map(agent => `

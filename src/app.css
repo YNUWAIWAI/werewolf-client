@@ -325,6 +325,25 @@ body {
   & > div[ data-state = 'x' ] {
     background: no-repeat center / 80% 80% url('img/cross.svg');
   }
+
+  & > div[ data-role ] {
+    position: relative;
+
+    &:hover::after {
+      background: white;
+      border: solid 1px black;
+      content: attr(data-tooltip);
+      font-size: small;
+      position: absolute;
+      top: 15%;
+      bottom: 10%;
+      left: 10%;
+      right: 15%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .command {
