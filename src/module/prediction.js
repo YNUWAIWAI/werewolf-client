@@ -1,5 +1,7 @@
 import {getAllRoles, getAllAgents} from './server2client.js'
 
+let predictionTable
+
 const generatePredictionTable = () => new Promise((resolve, reject) => {
   let dom = ['<div></div>']
   const roles = getAllRoles()
