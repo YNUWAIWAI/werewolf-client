@@ -316,6 +316,11 @@ body {
 
   & > div[ data-state = 'fill' ] {
     background: black;
+
+    &::after {
+      content: attr(data-date);
+      color: white;
+    }
   }
 
   & > div[ data-state = 'fix' ] {
@@ -323,7 +328,7 @@ body {
     border: solid 3px red;
   }
 
-  & > div[ data-role ] {
+  & > div[ data-role ][ data-tooltip ] {
     position: relative;
 
     &:hover::after {
