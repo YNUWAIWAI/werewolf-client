@@ -132,9 +132,9 @@ body {
     grid-area: text;
     position: relative;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-areas: "num text"
+                         "num date";
 
     &::after {
       left: 100%;
@@ -151,13 +151,25 @@ body {
     }
   }
 
+  &--num {
+    grid-area: num;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    word-break: break-all;
+    padding: 0 0.5em;
+  }
+
   &--text {
-    padding: 1em;
+    grid-area: text;
+    padding: 1em 1em 1em 0;
     word-break: break-all;
   }
 
   &--date {
-    padding: 0 1em 1em;
+    grid-area: date;
+    padding: 0 1em 1em 0;
     text-align: right;
   }
 
