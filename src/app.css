@@ -269,6 +269,7 @@ body {
   grid: repeat(6, 1fr) / repeat(7, 1fr);
   border: 1px solid black;
   border-radius: 3px;
+  overflow: scroll;
 
   & > div {
     border: solid 1px black;
