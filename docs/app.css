@@ -6,7 +6,7 @@
 /* stylelint-enable selector-max-universal */
 :root {
   --info-image-size: 6vh;
-  --prediction-image-size: 7vh;
+  --prediction-image-size: 40px;
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -164,6 +164,9 @@ body {
     grid-area: text;
     position: relative;
     border-radius: 5px;
+    display: grid;
+    grid-template-areas: "num text"
+                         "num date";
   }
 
 .chat--arrow-box::after {
@@ -180,9 +183,32 @@ body {
       margin-top: calc(var(--arrow) * -1);
     }
 
-.chat--text {
-    padding: 1em;
+.chat--num {
+    grid-area: num;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 1.5em;
     word-break: break-all;
+    padding: 0 0.5em;
+  }
+
+.chat--text {
+    grid-area: text;
+    padding: 1em 1em 1em 0;
+    word-break: break-all;
+  }
+
+.chat--date {
+    grid-area: date;
+    padding: 0 1em 1em 0;
+    text-align: right;
   }
 
 .chat--icon {
@@ -282,6 +308,7 @@ body {
   grid: repeat(6, 1fr) / repeat(7, 1fr);
   border: 1px solid black;
   border-radius: 3px;
+  overflow: scroll;
 }
 
 .prediction > div {
@@ -336,6 +363,45 @@ body {
 .prediction > div[ data-state = 'x' ] {
     background: no-repeat center / 80% 80% url('img/cross.svg');
   }
+
+.prediction > div[ data-state = 'fill' ] {
+    background: black;
+  }
+
+.prediction > div[ data-state = 'fill' ]::after {
+      content: attr(data-date);
+      color: white;
+    }
+
+.prediction > div[ data-state = 'fix' ] {
+    background: no-repeat center / 80% 80% url('img/circle.svg');
+    border: solid 3px red;
+  }
+
+.prediction > div[ data-role ][ data-tooltip ] {
+    position: relative;
+  }
+
+.prediction > div[ data-role ][ data-tooltip ]:hover::after {
+      background: white;
+      border: solid 1px black;
+      content: attr(data-tooltip);
+      font-size: small;
+      position: absolute;
+      top: 15%;
+      bottom: 10%;
+      left: 10%;
+      right: 15%;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
 
 .command {
   height: 20vh;
