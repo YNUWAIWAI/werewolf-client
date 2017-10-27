@@ -13,10 +13,10 @@ const generatePredictionTable = () => new Promise((resolve, reject) => {
     </div>`
   }))
   const agentdom = agents.map(agent => `
-  <div class="prediction--player" data-player="${agent.id}">
-    <img src="${agent.image}">
-    <span>${agent.name.ja}</span>
-  </div>`
+    <div class="prediction--player" data-player="${agent.id}">
+      <img src="${agent.image}">
+      <span>${agent.name.ja}</span>
+    </div>`
   )
   agentdom.forEach(agent => {
     dom = dom.concat(agent, roles.map(() => `<div data-state="unk"></div>`))

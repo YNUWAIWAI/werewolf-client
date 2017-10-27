@@ -6,7 +6,7 @@
 /* stylelint-enable selector-max-universal */
 :root {
   --info-image-size: 6vh;
-  --prediction-image-size: 7vh;
+  --prediction-image-size: 40px;
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
