@@ -7,6 +7,7 @@
 :root {
   --info-image-size: 6vh;
   --prediction-image-size: 40px;
+  --result-image-size: 40px;
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -514,7 +515,7 @@ body {
   left: 10vw;
   background: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 1fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
   border: 1px solid black;
   overflow: scroll;
 
@@ -522,8 +523,37 @@ body {
     border: 1px solid black;
     font-size: 2em;
     line-height: 1.5;
-    padding: 1rem;
+    padding: 0.5rem;
     max-height: 3rem;
+    text-align: center;
+    height: 100%;
+
+    &[ data-result = 'image' ],
+    &[ data-result = 'roleImage' ],
+    &[ data-result = 'userAvatar' ] {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &[ data-result = 'roleImage' ][ data-tooltip ] {
+      position: relative;
+
+      &:hover::after {
+        background: white;
+        border: solid 1px black;
+        content: attr(data-tooltip);
+        font-size: 10px;
+        position: absolute;
+        top: 15%;
+        bottom: 15%;
+        left: 10%;
+        right: 10%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
 
     &.dead {
       color: var(--dead-color);
