@@ -1,17 +1,19 @@
 import timer from './module/timer.js'
+import {dayStart} from './module/server2client.js'
+import {generatePredictionTable} from './module/prediction.js'
 
 const handleClick = e => {
   const state = [ 'o', 'x', 'unk', 'tri' ]
   const currentState = e.target.dataset.state
+  if (!state.includes(currentState)) {
+    e.target.removeEventListener('click', handleClick)
+    return;
+  }
   const nextIndex = (state.indexOf(currentState) + 1) % state.length
   const nextState = state[nextIndex]
 
   e.target.dataset.state = nextState
 }
-
-document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
-  elem.addEventListener('click', handleClick)
-})
 
 const toggleModal = () => {
   const obfucator = document.getElementById('obfucator')
@@ -47,3 +49,13 @@ document.getElementById('select-time').addEventListener('time-end', elem => {
 })
 
 timer('day-time', {minute: 10})
+dayStart()
+  .then(() => {
+    generatePredictionTable()
+      .then(dom => {
+        document.getElementById('prediction').innerHTML = dom
+        document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
+          elem.addEventListener('click', handleClick)
+        })
+      })
+  })
