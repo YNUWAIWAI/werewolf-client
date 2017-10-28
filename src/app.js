@@ -50,16 +50,16 @@ document.getElementById('select-time').addEventListener('time-end', elem => {
 })
 
 timer('day-time', {minute: 10})
-// dayStart()
-//   .then(() => {
-//     generatePredictionTable()
-//       .then(dom => {
-//         document.getElementById('prediction').innerHTML = dom
-//         document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
-//           elem.addEventListener('click', handleClick)
-//         })
-//       })
-//   })
+dayStart()
+  .then(() => {
+    generatePredictionTable()
+      .then(dom => {
+        document.getElementById('prediction').innerHTML = dom
+        document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
+          elem.addEventListener('click', handleClick)
+        })
+      })
+  })
 
 getResult()
   .then(() => {
