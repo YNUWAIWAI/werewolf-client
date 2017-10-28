@@ -515,7 +515,7 @@ body {
   left: 10vw;
   background: white;
   display: grid;
-  grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 1fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
+  grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
   border: 1px solid black;
   overflow: scroll;
 
@@ -527,6 +527,7 @@ body {
     max-height: 3rem;
     text-align: center;
     height: 100%;
+    overflow: scroll;
 
     &[ data-result = 'image' ],
     &[ data-result = 'roleImage' ],
