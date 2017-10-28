@@ -1,6 +1,7 @@
 import timer from './module/timer.js'
-import {dayStart} from './module/server2client.js'
+import {dayStart, getResult} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
+import {generateResultTable} from './module/result.js'
 
 const handleClick = e => {
   const state = [ 'o', 'x', 'unk', 'tri' ]
@@ -49,13 +50,19 @@ document.getElementById('select-time').addEventListener('time-end', elem => {
 })
 
 timer('day-time', {minute: 10})
-dayStart()
+// dayStart()
+//   .then(() => {
+//     generatePredictionTable()
+//       .then(dom => {
+//         document.getElementById('prediction').innerHTML = dom
+//         document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
+//           elem.addEventListener('click', handleClick)
+//         })
+//       })
+//   })
+
+getResult()
   .then(() => {
-    generatePredictionTable()
-      .then(dom => {
-        document.getElementById('prediction').innerHTML = dom
-        document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
-          elem.addEventListener('click', handleClick)
-        })
-      })
+    const dom = generateResultTable()
+    document.getElementById('result').innerHTML = dom
   })
