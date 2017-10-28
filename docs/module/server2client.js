@@ -1,4 +1,4 @@
-const baseURI = 'http://werewolf.world/example/0.1/server2client'
+const baseURI = 'https://werewolf.world/example/0.1/server2client'
 let timestamp
 let roles
 let agents
