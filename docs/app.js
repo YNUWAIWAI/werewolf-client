@@ -1,6 +1,7 @@
 import timer from './module/timer.js'
-import {dayStart} from './module/server2client.js'
+import {dayStart, getResult} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
+import {generateResultTable} from './module/result.js'
 
 const handleClick = e => {
   const state = [ 'o', 'x', 'unk', 'tri' ]
@@ -58,4 +59,10 @@ dayStart()
           elem.addEventListener('click', handleClick)
         })
       })
+  })
+
+getResult()
+  .then(() => {
+    const dom = generateResultTable()
+    document.getElementById('result').innerHTML = dom
   })

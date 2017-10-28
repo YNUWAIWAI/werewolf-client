@@ -7,6 +7,7 @@
 :root {
   --info-image-size: 6vh;
   --prediction-image-size: 40px;
+  --result-image-size: 40px;
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -15,6 +16,8 @@
   --limited-color: rgba(255, 0, 0, 0.4);
   --master-color: rgba(0, 255, 0, 0.4);
   --grave-color: rgba(0, 0, 255, 0.3);
+  --win-color: hsla(51, 100%, 50%, 0.7);
+  --dead-color: red;
 }
 
 body {
@@ -574,6 +577,74 @@ body {
 .modal--button[ value = 'no' ] {
     background: rgba(0, 0, 255, 0.5);
   }
+
+.result {
+  height: 80vh;
+  width: 80vw;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  background: white;
+  display: grid;
+  grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+.result--cell {
+    border: 1px solid black;
+    font-size: 2em;
+    line-height: 1.5;
+    padding: 0.5rem;
+    max-height: 3rem;
+    text-align: center;
+    height: 100%;
+    overflow: scroll;
+  }
+
+.result--cell[ data-result = 'image' ],
+    .result--cell[ data-result = 'roleImage' ],
+    .result--cell[ data-result = 'userAvatar' ] {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+
+.result--cell[ data-result = 'roleImage' ][ data-tooltip ] {
+      position: relative;
+    }
+
+.result--cell[ data-result = 'roleImage' ][ data-tooltip ]:hover::after {
+        background: white;
+        border: solid 1px black;
+        content: attr(data-tooltip);
+        font-size: 10px;
+        position: absolute;
+        top: 15%;
+        bottom: 15%;
+        left: 10%;
+        right: 10%;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+.result--cell.dead {
+      color: var(--dead-color);
+    }
+
+.result--cell.win {
+      background: var(--win-color);
+    }
 
 .obfucator {
   background: rgba(0, 0, 0, 0.5);
