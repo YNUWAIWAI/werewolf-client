@@ -27,6 +27,7 @@ body {
 
 .hidden {
   display: none;
+  visibility: hidden;
 }
 
 .info-container {
