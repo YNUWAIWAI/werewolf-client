@@ -137,8 +137,9 @@ body {
     position: relative;
     border-radius: 5px;
     display: grid;
-    grid-template-areas: "num text"
-                         "num date";
+    grid-template-areas: 'num text'
+                         'num date';
+    grid-template-columns: 2.5em 1fr;
 
     &::after {
       left: 100%;
@@ -174,6 +175,8 @@ body {
   &--date {
     grid-area: date;
     padding: 0 1em 1em 0;
+    display: inline-flex;
+    flex-flow: column-reverse;
     text-align: right;
   }
 
