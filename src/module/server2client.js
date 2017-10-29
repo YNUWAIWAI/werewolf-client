@@ -17,10 +17,23 @@ const dayStart = async () => {
       date = json.date
       phaseTimeLimit = json.phaseTimeLimit
     })
-  }
+}
 
-  const getResult = async () => {
-    await fetch(`${baseURI}/results.jsonld`)
+const getResult = async () => {
+  await fetch(`${baseURI}/results.jsonld`)
+    .then(res => res.json())
+    .then(json => {
+      timestamp = json.timestamp
+      roles = json.role
+      agents = json.agent
+      phase = json.phase
+      date = json.date
+      phaseTimeLimit = json.phaseTimeLimit
+    })
+}
+
+const startVotePhase = async () => {
+  await fetch(`${baseURI}/day-vote.jsonld`)
     .then(res => res.json())
     .then(json => {
       timestamp = json.timestamp
@@ -48,4 +61,4 @@ const getPhaseInfo = () => {
   }
 }
 
-export {dayStart, getResult, getAllRoles, getAllAgents, getPhaseInfo}
+export {dayStart, getResult, startVotePhase, getAllRoles, getAllAgents, getPhaseInfo}
