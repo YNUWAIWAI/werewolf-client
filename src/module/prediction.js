@@ -13,7 +13,7 @@ const initPredictionTable = () => {
         table[agent.id][id] = 'fix'
       } else if (agent.agentIsMine && !role.roleIsMine) {
         table[agent.id][id] = 'fill'
-      } else if (!agent.agentIsMine && role.roleIsMine && role.number == 1) {
+      } else if (!agent.agentIsMine && role.roleIsMine && role.numberOfAgents == 1) {
         table[agent.id][id] = 'fill'
       } else {
         table[agent.id][id] = 'unk'
@@ -32,7 +32,7 @@ const generatePredictionTable = () => new Promise((resolve, reject) => {
     return `
     <div data-role="${id}" data-tooltip="${role.name.ja}">
     <img src="${role.image}">
-    ${role.number > 1 ? '&times' + role.number : ''}
+    ${role.numberOfAgents > 1 ? '&times' + role.numberOfAgents : ''}
     </div>`
   }))
   initPredictionTable()
