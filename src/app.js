@@ -1,7 +1,8 @@
 import timer from './module/timer.js'
-import {dayStart, getResult} from './module/server2client.js'
+import {dayStart, getResult, startVotePhase} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
+import {generateOption} from './module/selection.js'
 import {initInfo} from './module/info.js'
 
 const handleClick = e => {
@@ -27,28 +28,6 @@ const toggleModal = () => {
 
 document.getElementById('yes').addEventListener('click', toggleModal)
 document.getElementById('no').addEventListener('click', toggleModal)
-document.querySelectorAll('.command--option').forEach(elem => {
-  elem.addEventListener('click', e => {
-    toggleModal()
-  })
-})
-
-document.getElementById('day-time').addEventListener('time-start', elem => {
-  elem.target.style.color = 'black'
-})
-document.getElementById('day-time').addEventListener('time-end', elem => {
-  elem.target.style.color = 'red'
-  document.querySelectorAll('.command--input').forEach(elem => elem.classList.add('hidden'))
-  document.querySelector('.command--select').classList.remove('hidden')
-  timer('select-time')
-  timer('modal-time')
-})
-document.getElementById('select-time').addEventListener('time-start', elem => {
-  elem.target.style.color = 'black'
-})
-document.getElementById('select-time').addEventListener('time-end', elem => {
-  elem.target.style.color = 'red'
-})
 
 dayStart()
   .then(() => {
@@ -58,6 +37,39 @@ dayStart()
       elem.addEventListener('click', handleClick)
     })
     timer('day-time', {minute: 10})
+    document.getElementById('day-time').addEventListener('time-start', elem => {
+      elem.target.style.color = 'black'
+    })
+    document.getElementById('day-time').addEventListener('time-end', elem => {
+      elem.target.style.color = 'red'
+      document.querySelectorAll('.command--input').forEach(elem => elem.classList.add('hidden'))
+      document.querySelector('.command--select').classList.remove('hidden')
+      timer('select-time')
+      timer('modal-time')
+    })
+  })
+
+startVotePhase()
+  .then(() => {
+    const dom = generateOption()
+
+    document.getElementById('command--option-container').innerHTML = dom
+    document.querySelectorAll('.command--option')
+      .forEach(elem => {
+        elem.addEventListener('click', e => {
+          const option = e.target.dataset.player ? e.target : e.target.parentNode
+
+          document.getElementById('modal-icon-image').src = option.dataset.image
+          document.getElementById('modal-icon-name').textContent = option.dataset.name
+          toggleModal()
+        })
+      })
+    document.getElementById('select-time').addEventListener('time-start', elem => {
+      elem.target.style.color = 'black'
+    })
+    document.getElementById('select-time').addEventListener('time-end', elem => {
+      elem.target.style.color = 'red'
+    })
   })
 
 getResult()
