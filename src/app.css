@@ -5,7 +5,7 @@
 }
 /* stylelint-enable selector-max-universal */
 :root {
-  --info-image-size: 6vh;
+  --info-image-size: 50px;
   --prediction-image-size: 40px;
   --result-image-size: 40px;
   /* 100vw * (2/5) * (1/4) - 2 */
@@ -30,7 +30,7 @@ body {
   visibility: hidden;
 }
 
-.info-container {
+.info {
   display: flex;
   height: 10vh;
   margin-bottom: 5vh;
@@ -91,7 +91,7 @@ body {
     height: 80%;
     position: relative;
     width: var(--info-image-size);
-    margin-right: 1em;
+    margin: 1em 1em 0 0;
 
     & > img {
       position: absolute;
