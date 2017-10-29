@@ -19,7 +19,7 @@ const generateResultTable = () => {
     dom.push(`<div data-result="status" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}">${status}</div>`)
     dom.push(`<div data-result="result" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}">${agent.result}</div>`)
     dom.push(`<div data-result="roleImage" data-tooltip="${agent.role.roleName.ja}" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}"><img src="${agent.role.roleImage}"></div>`)
-    dom.push(`<div data-result="userAvatar" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}"><img src="${agent.userAvatar['@id']}"></div>`)
+    dom.push(`<div data-result="userAvatar" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}"><img src="${agent.userAvatar}"></div>`)
     dom.push(`<div data-result="userName" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}">${agent.userName}</div>`)
   })
 
