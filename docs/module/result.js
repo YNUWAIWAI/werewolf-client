@@ -4,9 +4,11 @@ const generateResultTable = () => {
   let dom = []
   const agents = getAllAgents()
   const roles = getAllRoles()
+
   agents.forEach(agent => {
     let status = agent.status.split(' ')
     const index = status.indexOf('by')
+
     if (index >= 0) {
       status[index] = `<span style="font-size: 1.5rem;">${status[index]}`
       status.push('</span>')
@@ -20,6 +22,7 @@ const generateResultTable = () => {
     dom.push(`<div data-result="userAvatar" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}"><img src="${agent.userAvatar['@id']}"></div>`)
     dom.push(`<div data-result="userName" class="result--cell ${agent.status === 'alive' ? '' : 'dead'} ${agent.result === 'win' ? 'win' : ''}">${agent.userName}</div>`)
   })
+
   return dom.join('')
 }
 
