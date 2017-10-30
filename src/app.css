@@ -8,6 +8,8 @@
   --info-image-size: 50px;
   --prediction-image-size: 40px;
   --result-image-size: 40px;
+  --vote-image-size: 60px;
+  --modal-image-size: 60px;
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -429,26 +431,27 @@ body {
   }
 
   &--description {
-    padding: 0 1em;
-    font-size: 1.5em;
+    padding: 0 1rem;
+    font-size: 1.5rem;
   }
 
   &--option-container {
     display: flex;
-    height: calc(100% - 2.25em);
+    height: calc(100% - 1.5rem);
     overflow: scroll;
   }
 
   &--option {
     height: 100%;
+    width: calc(20vh - 3.45rem);
     display: inline-flex;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
 
     & > img {
-      height: calc(20vh - 3.75em);
-      width: calc(20vh - 3.75em);
+      height: var(--vote-image-size);
+      width: var(--vote-image-size);
     }
 
     & > span {
@@ -460,8 +463,8 @@ body {
 .modal {
   position: fixed;
   width: 40vw;
-  height: 30vh;
-  top: 35vh;
+  height: 24vh;
+  top: 38vh;
   left: 30vw;
   background: white;
   padding: 1em;
@@ -473,10 +476,11 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: calc(20vh - 3.75em);
 
     & > img {
-      height: calc(20vh - 3.75em);
-      width: calc(20vh - 3.75em);
+      height: var(--modal-image-size);
+      width: var(--modal-image-size);
     }
 
     & > span {
