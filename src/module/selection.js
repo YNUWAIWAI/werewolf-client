@@ -15,7 +15,7 @@ const generateDayVoteOption = () => {
 const generateNightOption = () => {
   const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
 
-  if ([ 'werewolf', 'seer', 'hunter' ].includes(myRole)) {
+  if (![ 'werewolf', 'seer', 'hunter' ].includes(myRole)) {
     return ''
   }
   const dom = getAllAgents()
