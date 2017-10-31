@@ -74,4 +74,4 @@ const getPhaseInfo = () => {
   }
 }
 
-export {dayStart, getResult, startVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo}
+export {dayStart, getResult, startDayVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo}

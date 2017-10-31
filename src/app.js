@@ -2,7 +2,7 @@ import timer from './module/timer.js'
 import {dayStart, getResult, startDayVotePhase, startNightPhase} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
-import {generateDayVoteOption, generateNightOption} from './module/selection.js'
+import {generateDayVoteOption, generateNightOption, getDescription} from './module/selection.js'
 import {initInfo} from './module/info.js'
 
 const handleClick = e => {
@@ -54,6 +54,8 @@ startDayVotePhase()
     const dom = generateDayVoteOption()
 
     document.getElementById('command--option-container').innerHTML = dom
+    document.getElementById('command-text').textContent = getDescription().command
+    document.getElementById('modal-text').textContent = getDescription().modal
     document.querySelectorAll('.command--option')
       .forEach(elem => {
         elem.addEventListener('click', e => {
@@ -77,6 +79,8 @@ startNightPhase()
     const dom = generateNightOption()
 
     document.getElementById('command--option-container').innerHTML = dom
+    document.getElementById('command-text').textContent = getDescription().command
+    document.getElementById('modal-text').textContent = getDescription().modal
     document.querySelectorAll('.command--option')
       .forEach(elem => {
         elem.addEventListener('click', e => {

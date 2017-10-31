@@ -12,6 +12,27 @@ const generateDayVoteOption = () => {
   return dom.join('')
 }
 
+const getDescription = () => {
+  const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
+  const description = {}
+
+  if (myRole === 'werewolf') {
+    description.command = '襲撃先を選んでください'
+    description.modal = '襲撃先はこちらでいいですか？'
+  } else if (myRole === 'seer') {
+    description.command = '占い先を選んでください'
+    description.modal = '占い先はこちらでいいですか？'
+  } else if (myRole === 'hunter') {
+    description.command = '守護先を選んでください'
+    description.modal = '守護先はこちらでいいですか？'
+  } else {
+    description.command = '投票先を選んでください'
+    description.modal = '投票先はこちらでいいですか？'
+  }
+
+  return description
+}
+
 const generateNightOption = () => {
   const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
 
@@ -28,4 +49,4 @@ const generateNightOption = () => {
   return dom.join('')
 }
 
-export {generateDayVoteOption, generateNightOption}
+export {generateDayVoteOption, generateNightOption, getDescription}
