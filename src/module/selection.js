@@ -1,8 +1,8 @@
 import {getAllAgents} from './server2client.js'
 
-const generateOption = () => {
+const generateDayVoteOption = () => {
   const dom = getAllAgents()
-    .filter(agent => agent.status === 'alive')
+    .filter(agent => agent.isAChoice)
     .map(agent => `<div data-player="${agent.id}" data-image="${agent.image}" data-name="${agent.name.ja}" class="command--option">
         <img src="${agent.image}">
         <span>${agent.name.ja}</span>
@@ -11,4 +11,4 @@ const generateOption = () => {
   return dom.join('')
 }
 
-export {generateOption}
+export {generateDayVoteOption}
