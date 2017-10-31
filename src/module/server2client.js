@@ -32,7 +32,7 @@ const getResult = async () => {
     })
 }
 
-const startVotePhase = async () => {
+const startDayVotePhase = async () => {
   await fetch(`${baseURI}/day-vote.jsonld`)
     .then(res => res.json())
     .then(json => {

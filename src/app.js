@@ -1,8 +1,8 @@
 import timer from './module/timer.js'
-import {dayStart, getResult, startVotePhase} from './module/server2client.js'
+import {dayStart, getResult, startDayVotePhase} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
-import {generateOption} from './module/selection.js'
+import {generateDayVoteOption} from './module/selection.js'
 import {initInfo} from './module/info.js'
 
 const handleClick = e => {
@@ -49,9 +49,9 @@ dayStart()
     })
   })
 
-startVotePhase()
+startDayVotePhase()
   .then(() => {
-    const dom = generateOption()
+    const dom = generateDayVoteOption()
 
     document.getElementById('command--option-container').innerHTML = dom
     document.querySelectorAll('.command--option')
