@@ -40,4 +40,4 @@ const initInfo = () => {
   </div>`
 }
 
-export {initInfo}
+export {initInfo, getMine}

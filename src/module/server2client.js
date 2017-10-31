@@ -45,6 +45,19 @@ const startDayVotePhase = async () => {
     })
 }
 
+const startNightPhase = async () => {
+  await fetch(`${baseURI}/night.jsonld`)
+    .then(res => res.json())
+    .then(json => {
+      timestamp = json.timestamp
+      roles = json.role
+      agents = json.agent
+      phase = json.phase
+      date = json.date
+      phaseTimeLimit = json.phaseTimeLimit
+    })
+}
+
 const getAllRoles = () => {
   return roles.filter(role => !role['@id'].includes('master'))
 }
@@ -61,4 +74,4 @@ const getPhaseInfo = () => {
   }
 }
 
-export {dayStart, getResult, startVotePhase, getAllRoles, getAllAgents, getPhaseInfo}
+export {dayStart, getResult, startVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo}
