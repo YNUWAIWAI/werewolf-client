@@ -1,8 +1,8 @@
 import timer from './module/timer.js'
-import {dayStart, getResult, startDayVotePhase} from './module/server2client.js'
+import {dayStart, getResult, startDayVotePhase, startNightPhase} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
-import {generateDayVoteOption} from './module/selection.js'
+import {generateDayVoteOption, generateNightOption} from './module/selection.js'
 import {initInfo} from './module/info.js'
 
 const handleClick = e => {
@@ -52,6 +52,29 @@ dayStart()
 startDayVotePhase()
   .then(() => {
     const dom = generateDayVoteOption()
+
+    document.getElementById('command--option-container').innerHTML = dom
+    document.querySelectorAll('.command--option')
+      .forEach(elem => {
+        elem.addEventListener('click', e => {
+          const option = e.target.dataset.player ? e.target : e.target.parentNode
+
+          document.getElementById('modal-icon-image').src = option.dataset.image
+          document.getElementById('modal-icon-name').textContent = option.dataset.name
+          toggleModal()
+        })
+      })
+    document.getElementById('select-time').addEventListener('time-start', elem => {
+      elem.target.style.color = 'black'
+    })
+    document.getElementById('select-time').addEventListener('time-end', elem => {
+      elem.target.style.color = 'red'
+    })
+  })
+
+startNightPhase()
+  .then(() => {
+    const dom = generateNightOption()
 
     document.getElementById('command--option-container').innerHTML = dom
     document.querySelectorAll('.command--option')
