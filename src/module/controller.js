@@ -1,10 +1,10 @@
-import timer from './module/timer.js'
-import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, recieveChat} from './module/server2client.js'
-import {generatePredictionTable} from './module/prediction.js'
-import {generateResultTable} from './module/result.js'
-import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './module/selection.js'
-import {initInfo} from './module/info.js'
-import {generateAgentChatMessage} from './module/chat.js'
+import timer from './timer.js'
+import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, recieveChat} from './server2client.js'
+import {generatePredictionTable} from './prediction.js'
+import {generateResultTable} from './result.js'
+import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './selection.js'
+import {initInfo} from './info.js'
+import {generateAgentChatMessage} from './chat.js'
 
 const baseURI = 'https://werewolf.world/resource/0.1'
 const phase = {
