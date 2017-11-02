@@ -1,10 +1,9 @@
-const baseURI = 'https://werewolf.world/example/0.1/server2client'
-let timestamp
-let roles
-let agents
-let phase
-let date
-let phaseTimeLimit
+let agents,
+    date,
+    phase,
+    phaseTimeLimit,
+    roles,
+    timestamp
 
 const startDayConversation = json => {
   timestamp = json.timestamp
@@ -42,20 +41,14 @@ const startNightPhase = json => {
   phaseTimeLimit = json.phaseTimeLimit
 }
 
-const getAllRoles = () => {
-  return roles.filter(role => !role['@id'].includes('master'))
-}
+const getAllRoles = () => roles.filter(role => !role['@id'].includes('master'))
 
-const getAllAgents = () => {
-  return agents
-}
+const getAllAgents = () => agents
 
-const getPhaseInfo = () => {
-  return {
-    phase,
-    date,
-    phaseTimeLimit
-  }
-}
+const getPhaseInfo = () => ({
+  date,
+  phase,
+  phaseTimeLimit
+})
 
 export {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo}

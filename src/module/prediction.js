@@ -9,13 +9,13 @@ const initPredictionTable = () => {
   agents.forEach(agent => {
     table[agent.id] = {}
     roles.forEach(role => {
-      const id = /\/(\w+)$/.exec(role['@id'])[1]
+      const id = (/\/(\w+)$/).exec(role['@id'])[1]
 
       if (agent.agentIsMine && role.roleIsMine) {
         table[agent.id][id] = 'fix'
       } else if (agent.agentIsMine && !role.roleIsMine) {
         table[agent.id][id] = 'fill'
-      } else if (!agent.agentIsMine && role.roleIsMine && role.numberOfAgents == 1) {
+      } else if (!agent.agentIsMine && role.roleIsMine && role.numberOfAgents === 1) {
         table[agent.id][id] = 'fill'
       } else {
         table[agent.id][id] = 'unk'
@@ -31,7 +31,7 @@ const generatePredictionTable = () => {
   const agents = getAllAgents()
 
   dom = dom.concat(roles.map(role => {
-    const id = /\/(\w+)$/.exec(role['@id'])[1]
+    const id = (/\/(\w+)$/).exec(role['@id'])[1]
 
     return `
     <div data-role="${id}" data-tooltip="${role.name.ja}">

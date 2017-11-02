@@ -2,20 +2,20 @@ import controller from './controller.js'
 let socket
 
 const connectWebSocket = url => {
-  if (!window.WebSocket || window in 'WebSocket') {
+  if (!window.WebSocket || !('WebSocket' in window)) {
     console.log('WebSocket NOT supported by your Browser!')
 
     return
   }
   socket = new WebSocket(url)
 
-  socket.addEventLister('open', event => {
+  socket.addEventListener('open', event => {
     console.log('WebSocket Connected ', event)
   })
-  socket.addEventLister('error', error => {
+  socket.addEventListener('error', error => {
     console.log('WebSocket Error ', error)
   })
-  socket.addEventLister('message', event => {
+  socket.addEventListener('message', event => {
     controller(event.data)
   })
 }

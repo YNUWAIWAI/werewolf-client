@@ -18,9 +18,11 @@ const phase = {
 const handleClick = e => {
   const state = [ 'o', 'x', 'unk', 'tri' ]
   const currentState = e.target.dataset.state
+
   if (!state.includes(currentState)) {
     e.target.removeEventListener('click', handleClick)
-    return;
+
+    return
   }
   const nextIndex = (state.indexOf(currentState) + 1) % state.length
   const nextState = state[nextIndex]
