@@ -12,7 +12,13 @@ const channels = {
 
 const parseChat = text => text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')
 
-const parseTime = time => time
+const parseTime = (from, to, limit) => {
+  const f = new Date(from)
+  const t = new Date(to)
+  const zeropad = num => String(num).padStart(2, '0')
+
+  return `${t.getFullYear()}/${zeropad(t.getMonth())}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
+}
 
 const generateAgentChatMessage = json =>
   `<div id="message${json.chatId}" class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
@@ -22,7 +28,7 @@ const generateAgentChatMessage = json =>
         ${parseChat(json.chatText)}
       </div>
       <div class="chat--date">
-        ${parseTime(json.serverTimestamp)}
+        ${parseTime(json.phaseStartTime, json.serverTimestamp, json.phaseTimeLimit)}
       </div>
     </div>
     <div class="chat--icon">
