@@ -1,5 +1,5 @@
 import timer from './module/timer.js'
-import {dayStart, getResult, startDayVotePhase, startNightPhase} from './module/server2client.js'
+import {startDay, startResultPhase, startDayVotePhase, startNightPhase} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
 import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './module/selection.js'
@@ -26,7 +26,7 @@ const toggleModal = () => {
   modal.classList.toggle('hidden')
 }
 
-dayStart()
+startDay()
   .then(() => {
     document.getElementById('info').innerHTML = initInfo()
     document.getElementById('prediction').innerHTML = generatePredictionTable()
@@ -116,7 +116,7 @@ startNightPhase()
     })
   })
 
-getResult()
+startResultPhase()
   .then(() => {
     const dom = generateResultTable()
     document.getElementById('result').innerHTML = dom
