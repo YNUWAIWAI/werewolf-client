@@ -6,7 +6,7 @@ let phase
 let date
 let phaseTimeLimit
 
-const startDay = async () => {
+const startDayConversation = async () => {
   await fetch(`${baseURI}/first-day-conversation.jsonld`)
     .then(res => res.json())
     .then(json => {
@@ -74,4 +74,4 @@ const getPhaseInfo = () => {
   }
 }
 
-export {startDay, startResultPhase, startDayVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo}
+export {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo}
