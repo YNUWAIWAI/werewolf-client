@@ -320,19 +320,19 @@ body {
   }
 
   & > div[ data-state = 'o' ] {
-    background: no-repeat center / 80% 80% url('img/circle.svg');
+    background: no-repeat center / 80% 80% url('/assets/images/circle.svg');
   }
 
   & > div[ data-state = 'unk' ] {
-    background: no-repeat center / 100% 100% url('img/question.svg');
+    background: no-repeat center / 100% 100% url('/assets/images/question.svg');
   }
 
   & > div[ data-state = 'tri' ] {
-    background: no-repeat center / 100% 100% url('img/triangle.svg');
+    background: no-repeat center / 100% 100% url('/assets/images/triangle.svg');
   }
 
   & > div[ data-state = 'x' ] {
-    background: no-repeat center / 80% 80% url('img/cross.svg');
+    background: no-repeat center / 80% 80% url('/assets/images/cross.svg');
   }
 
   & > div[ data-state = 'fill' ] {
@@ -345,7 +345,7 @@ body {
   }
 
   & > div[ data-state = 'fix' ] {
-    background: no-repeat center / 80% 80% url('img/circle.svg');
+    background: no-repeat center / 80% 80% url('/assets/images/circle.svg');
     border: solid 3px red;
   }
 
