@@ -2,7 +2,7 @@ import timer from './module/timer.js'
 import {dayStart, getResult, startDayVotePhase, startNightPhase} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
-import {generateDayVoteOption, generateNightOption, getDescription} from './module/selection.js'
+import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './module/selection.js'
 import {initInfo} from './module/info.js'
 
 const handleClick = e => {
@@ -25,9 +25,6 @@ const toggleModal = () => {
   obfucator.classList.toggle('hidden')
   modal.classList.toggle('hidden')
 }
-
-document.getElementById('yes').addEventListener('click', toggleModal)
-document.getElementById('no').addEventListener('click', toggleModal)
 
 dayStart()
   .then(() => {
@@ -56,16 +53,26 @@ startDayVotePhase()
     document.getElementById('command--option-container').innerHTML = dom
     document.getElementById('command-text').textContent = getDescription().command
     document.getElementById('modal-text').textContent = getDescription().modal
+    const user = {}
+
     document.querySelectorAll('.command--option')
       .forEach(elem => {
         elem.addEventListener('click', e => {
           const option = e.target.dataset.player ? e.target : e.target.parentNode
 
-          document.getElementById('modal-icon-image').src = option.dataset.image
-          document.getElementById('modal-icon-name').textContent = option.dataset.name
+          user.image = option.dataset.image
+          document.getElementById('modal-icon-image').src = user.image
+          user.name = option.dataset.name
+          document.getElementById('modal-icon-name').textContent = user.name
           toggleModal()
         })
       })
+    document.getElementById('yes').addEventListener('click', toggleModal)
+    document.getElementById('yes').addEventListener('click', () => {
+      document.getElementById('command-text').textContent = getDescription().fixed
+      document.getElementById('command--option-container').innerHTML = generateFixedOption()
+    })
+    document.getElementById('no').addEventListener('click', toggleModal)
     document.getElementById('select-time').addEventListener('time-start', elem => {
       elem.target.style.color = 'black'
     })
@@ -81,16 +88,26 @@ startNightPhase()
     document.getElementById('command--option-container').innerHTML = dom
     document.getElementById('command-text').textContent = getDescription().command
     document.getElementById('modal-text').textContent = getDescription().modal
+    const user = {}
+
     document.querySelectorAll('.command--option')
       .forEach(elem => {
         elem.addEventListener('click', e => {
           const option = e.target.dataset.player ? e.target : e.target.parentNode
 
-          document.getElementById('modal-icon-image').src = option.dataset.image
-          document.getElementById('modal-icon-name').textContent = option.dataset.name
+          user.image = option.dataset.image
+          document.getElementById('modal-icon-image').src = user.image
+          user.name = option.dataset.name
+          document.getElementById('modal-icon-name').textContent = user.name
           toggleModal()
         })
       })
+    document.getElementById('yes').addEventListener('click', toggleModal)
+    document.getElementById('yes').addEventListener('click', () => {
+      document.getElementById('command-text').textContent = getDescription().fixed
+      document.getElementById('command--option-container').innerHTML = generateFixedOption(user)
+    })
+    document.getElementById('no').addEventListener('click', toggleModal)
     document.getElementById('select-time').addEventListener('time-start', elem => {
       elem.target.style.color = 'black'
     })
