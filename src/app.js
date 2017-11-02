@@ -4,7 +4,7 @@ import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
 import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './module/selection.js'
 import {initInfo} from './module/info.js'
-import {generateChatMessage} from './module/chat.js'
+import {generateAgentChatMessage} from './module/chat.js'
 
 const handleClick = e => {
   const state = [ 'o', 'x', 'unk', 'tri' ]
@@ -125,6 +125,6 @@ startResultPhase()
 
 recieveChat()
   .then(json => {
-    const dom = generateChatMessage(json)
+    const dom = generateAgentChatMessage(json)
     document.getElementById('chat').insertAdjacentHTML('afterbegin', dom)
   })
