@@ -10,12 +10,12 @@ const channels = {
   werewolf: 'limited'
 }
 
-const parseChat = text => text
+const parseChat = text => text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')
 
 const parseTime = time => time
 
 const generateChatMessage = json =>
-  `<div id="message4" class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
+  `<div id="message${json.chatId}" class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
     <div class="chat--arrow-box">
       <div class="chat--num">${json.chatId || ''}</div>
       <div class="chat--text">
