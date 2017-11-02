@@ -16,7 +16,7 @@ const connectWebSocket = url => {
     console.log('WebSocket Error ', error)
   })
   socket.addEventListener('message', event => {
-    controller(event.data)
+    controller(JSON.parse(event.data))
   })
 }
 
