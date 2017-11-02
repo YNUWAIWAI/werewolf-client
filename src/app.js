@@ -1,9 +1,10 @@
 import timer from './module/timer.js'
-import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase} from './module/server2client.js'
+import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, recieveChat} from './module/server2client.js'
 import {generatePredictionTable} from './module/prediction.js'
 import {generateResultTable} from './module/result.js'
 import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './module/selection.js'
 import {initInfo} from './module/info.js'
+import {generateChatMessage} from './module/chat.js'
 
 const handleClick = e => {
   const state = [ 'o', 'x', 'unk', 'tri' ]
@@ -120,4 +121,10 @@ startResultPhase()
   .then(() => {
     const dom = generateResultTable()
     document.getElementById('result').innerHTML = dom
+  })
+
+recieveChat()
+  .then(json => {
+    const dom = generateChatMessage(json)
+    document.getElementById('chat').insertAdjacentHTML('afterbegin', dom)
   })

@@ -58,6 +58,17 @@ const startNightPhase = async () => {
     })
 }
 
+const recieveChat = async () => {
+  let res
+  await fetch(`${baseURI}/my-message-on-chat.jsonld`)
+    .then(res => res.json())
+    .then(json => {
+      res = json
+    })
+
+  return res
+}
+
 const getAllRoles = () => {
   return roles.filter(role => !role['@id'].includes('master'))
 }
@@ -74,4 +85,4 @@ const getPhaseInfo = () => {
   }
 }
 
-export {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo}
+export {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, recieveChat, getAllRoles, getAllAgents, getPhaseInfo}
