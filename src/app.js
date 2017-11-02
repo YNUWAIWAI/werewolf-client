@@ -1,2 +1,3 @@
 import {connectWebSocket} from './websocket.js'
-document.addEventListner('DOMContentLoaded', connectWebSocket('wss://massage'))
+const url = document.getElementById('script').dataset.url
+document.addEventListner('DOMContentLoaded', connectWebSocket(url))

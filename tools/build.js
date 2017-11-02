@@ -84,32 +84,28 @@ const buildJS = (src, dest) => {
 }
 
 const build = destDir => {
-  buildCSS('src/app.css', `${destDir}/app.css`)
-  buildHTML('src/index.html', `${destDir}/index.html`)
+  buildCSS('src/app.css', `${destDir}/stylesheets/app.css`)
+  buildHTML('src/index.html', `${destDir}/../app/views/index.scala.html`)
   glob('src/**/*.js', (err, files) => {
     if (err) {
       throw err
     }
     files.forEach(file => {
-      buildJS(file, `${destDir}/${path.relative('src', file)}`)
+      buildJS(file, `${destDir}/javascripts/${path.relative('src', file)}`)
     })
   })
 }
 
 if (process.argv[2] === '-w') {
-  build('dest')
+  build('../public')
   fs.watch('./src', {recursive: true}, (eventType, filename) => {
     if (filename) {
       console.log(`${eventType}: ${filename}`)
-      build('dest')
+      build('../public')
     }
   })
-  const app = express()
-  app.use(express.static('dest'))
-  app.listen(8000)
-  console.log('see http://localhost:8000/')
 } else if (process.argv[2] === '-d') {
   build('docs')
 } else {
-  build('dest')
+  build('../public')
 }
