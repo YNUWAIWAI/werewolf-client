@@ -18,7 +18,7 @@
     </div>
     <div class="role">
       <div id="player" class="role--icon">
-        <img src="img/wolf.png">
+        <img src="">
         <span>User1</span>
       </div>
       <div class="role--text">
@@ -201,65 +201,7 @@
         </div>
       </div>
     </div>
-    <div id="prediction" class="prediction">
-      <div></div>
-      <div>村人</div>
-      <div>占い師</div>
-      <div>霊媒師</div>
-      <div>狩人</div>
-      <div>人狼</div>
-      <div>狂人</div>
-      <div class="prediction--player" data-player="1">
-        <img src="img/wolf.png">
-        <span>User1</span>
-      </div>
-      <div data-state="o"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div class="prediction--player dead" data-player="2">
-        <img src="img/wolf.png">
-        <span>User2</span>
-      </div>
-      <div data-state="unk"></div>
-      <div data-state="tri"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="x"></div>
-      <div data-state="x"></div>
-      <div class="prediction--player" data-player="3">
-        <img src="img/wolf.png">
-        <span>User3</span>
-      </div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="tri"></div>
-      <div data-state="tri"></div>
-      <div class="prediction--player" data-player="4">
-        <img src="img/wolf.png">
-        <span>User4</span>
-      </div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="unk"></div>
-      <div data-state="tri"></div>
-      <div class="prediction--player" data-player="5">
-        <img src="img/wolf.png">
-        <span>User5</span>
-      </div>
-      <div data-state="x"></div>
-      <div data-state="x"></div>
-      <div data-state="x"></div>
-      <div data-state="o"></div>
-      <div data-state="x"></div>
-      <div data-state="x"></div>
-    </div>
+    <div id="prediction" class="prediction"></div>
   </div>
   <div class="command">
     <div class="command--input">
@@ -278,38 +220,13 @@
       <div class="command--description">
         <span id='command-text'>投票先を選んでください</span>（<span id="select-time"></span>）
       </div>
-      <div id="command--option-container" class="command--option-container">
-        <div class="command--option">
-          <img src="img/wolf.png">
-          <span>白紙</span>
-        </div>
-        <div class="command--option">
-          <img src="img/wolf.png">
-          <span>User1</span>
-        </div>
-        <div class="command--option">
-          <img src="img/wolf.png">
-          <span>User1</span>
-        </div>
-        <div class="command--option">
-          <img src="img/wolf.png">
-          <span>User1</span>
-        </div>
-        <div class="command--option">
-          <img src="img/wolf.png">
-          <span>User1</span>
-        </div>
-        <div class="command--option">
-          <img src="img/wolf.png">
-          <span>User1</span>
-        </div>
-      </div>
+      <div id="command--option-container" class="command--option-container"></div>
     </div>
   </div>
   <div id="modal" class="modal hidden">
     <div class="modal--icon">
-      <img id="modal-icon-image" src="img/wolf.png">
-      <span id="modal-icon-name">User</span>
+      <img id="modal-icon-image" src="">
+      <span id="modal-icon-name"></span>
     </div>
     <div class="modal--description"><span id='modal-text'>投票先はこちらでいいですか？</span>（<span id="modal-time"></span>）</div>
     <div class="modal--button--container">
@@ -317,26 +234,7 @@
       <button id="no" class="modal--button" value="no">いいえ</button>
     </div>
   </div>
-  <div id="result" class="result">
-    <div class="result--cell">i</div>
-    <div class="result--cell">User1</div>
-    <div class="result--cell">生存</div>
-    <div class="result--cell">WIN</div>
-    <div class="result--cell">人狼</div>
-    <div class="result--cell">hogehoe</div>
-    <div class="result--cell win">i</div>
-    <div class="result--cell win">User2</div>
-    <div class="result--cell win">生存</div>
-    <div class="result--cell win">WIN</div>
-    <div class="result--cell win">人狼</div>
-    <div class="result--cell win">huauh</div>
-    <div class="result--cell dead">i</div>
-    <div class="result--cell dead">User2</div>
-    <div class="result--cell dead">生存</div>
-    <div class="result--cell dead">WIN</div>
-    <div class="result--cell dead">人狼</div>
-    <div class="result--cell dead">huauh</div>
-  </div>
+  <div id="result" class="result hidden"></div>
   <div id="obfucator" class="obfucator hidden"></div>
 </body>
 </html>
