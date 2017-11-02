@@ -205,18 +205,18 @@
     <div id="prediction" class="prediction"></div>
   </div>
   <div class="command">
-    <div class="command--input">
+    <form class="command--input">
       <textarea placeholder="公開用"></textarea>
-      <button>送信</button>
-    </div>
-    <div class="command--input private">
+      <button id="public" type="button">送信</button>
+    </form>
+    <form class="command--input private">
       <textarea placeholder="非公開用"></textarea>
-      <button>送信</button>
-    </div>
-    <div class="command--input limited">
+      <button id="private" type="button">送信</button>
+    </form>
+    <form class="command--input limited">
       <textarea placeholder="同一役職にのみ公開用"></textarea>
-      <button>送信</button>
-    </div>
+      <button id="limited" type="button">送信</button>
+    </form>
     <div class="command--select hidden">
       <div class="command--description">
         <span id='command-text'>投票先を選んでください</span>（<span id="select-time"></span>）
