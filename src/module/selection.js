@@ -19,15 +19,19 @@ const getDescription = () => {
   if (myRole === 'werewolf') {
     description.command = '襲撃先を選んでください'
     description.modal = '襲撃先はこちらでいいですか？'
+    description.fixed = 'あなたの選んだ襲撃先はこちらです'
   } else if (myRole === 'seer') {
     description.command = '占い先を選んでください'
     description.modal = '占い先はこちらでいいですか？'
+    description.fixed = 'あなたの選んだ占い先はこちらです'
   } else if (myRole === 'hunter') {
     description.command = '守護先を選んでください'
     description.modal = '守護先はこちらでいいですか？'
+    description.fixed = 'あなたの選んだ守護先はこちらです'
   } else {
     description.command = '投票先を選んでください'
     description.modal = '投票先はこちらでいいですか？'
+    description.fixed = 'あなたの選んだ投票先はこちらです'
   }
 
   return description
@@ -49,4 +53,6 @@ const generateNightOption = () => {
   return dom.join('')
 }
 
-export {generateDayVoteOption, generateNightOption, getDescription}
+const generateFixedOption = user => `<div class="command--option"><img src="${user.image}"><span>${user.name}</span></div>`
+
+export {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption}
