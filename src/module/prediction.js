@@ -36,7 +36,7 @@ const generatePredictionTable = () => {
     return `
     <div data-role="${id}" data-tooltip="${role.name.ja}">
     <img src="${role.image}">
-    ${role.numberOfAgents > 1 ? '&times' + role.numberOfAgents : ''}
+    ${role.numberOfAgents > 0 ? '&times' + role.numberOfAgents : ''}
     </div>`
   }))
   initPredictionTable()
