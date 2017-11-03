@@ -1,5 +1,5 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
-import {getMine, getPhaseInfo, storeJson} from './server2client.js'
+import {getMine, storeJson} from './server2client.js'
 import {generateAgentChatMessage} from './chat.js'
 import {generateJson} from './client2server.js'
 import {generatePredictionTable} from './prediction.js'
