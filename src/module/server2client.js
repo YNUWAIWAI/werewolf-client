@@ -85,8 +85,8 @@ const parsePhase = text => {
   const second = (/(\d+)s/).exec(text) || 0
 
   return {
-    minute,
-    second
+    minute: minute[1],
+    second: second[1]
   }
 }
 
