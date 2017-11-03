@@ -1,5 +1,5 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
-import {getMine, getPhaseInfo, startDayConversation, startDayVotePhase, startNightPhase, startResultPhase} from './server2client.js'
+import {getMine, getPhaseInfo, storeJson} from './server2client.js'
 import {generateAgentChatMessage} from './chat.js'
 import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
@@ -43,7 +43,7 @@ export default json => {
 
   if (kindOfMessage === `${baseURI}/systemMessage`) {
     if (json.phase === phase.dayConversation) {
-      startDayConversation(json)
+      storeJson(json)
       document.getElementById('info').innerHTML = initInfo()
       document.getElementById('prediction').innerHTML = generatePredictionTable()
       document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
@@ -70,7 +70,7 @@ export default json => {
         obfucator.classList.add('hidden')
       }
     } else if (json.phase === phase.dayVote) {
-      startDayVotePhase(json)
+      storeJson(json)
       const dom = generateDayVoteOption()
 
       document.getElementById('command--option-container').innerHTML = dom
@@ -103,7 +103,7 @@ export default json => {
         elem.target.style.color = 'red'
       })
     } else if (json.phase === phase.night) {
-      startNightPhase(json)
+      storeJson(json)
       const dom = generateNightOption()
 
       document.getElementById('command--option-container').innerHTML = dom
@@ -136,7 +136,7 @@ export default json => {
         elem.target.style.color = 'red'
       })
     } else if (json.phase === phase.results) {
-      startResultPhase(json)
+      storeJson(json)
       const dom = generateResultTable()
 
       document.getElementById('result').innerHTML = dom

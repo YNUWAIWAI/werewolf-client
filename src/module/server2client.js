@@ -6,37 +6,7 @@ let agents,
     roles,
     timestamp
 
-const startDayConversation = json => {
-  timestamp = json.timestamp
-  roles = json.role
-  agents = json.agent
-  phase = json.phase
-  date = json.date
-  phaseTimeLimit = json.phaseTimeLimit
-  rawjson = json
-}
-
-const startResultPhase = json => {
-  timestamp = json.timestamp
-  roles = json.role
-  agents = json.agent
-  phase = json.phase
-  date = json.date
-  phaseTimeLimit = json.phaseTimeLimit
-  rawjson = json
-}
-
-const startDayVotePhase = json => {
-  timestamp = json.timestamp
-  roles = json.role
-  agents = json.agent
-  phase = json.phase
-  date = json.date
-  phaseTimeLimit = json.phaseTimeLimit
-  rawjson = json
-}
-
-const startNightPhase = json => {
+const storeJson = json => {
   timestamp = json.timestamp
   roles = json.role
   agents = json.agent
@@ -110,10 +80,7 @@ const getGameInfo = () => ({
 })
 
 export {
-  startDayConversation,
-  startResultPhase,
-  startDayVotePhase,
-  startNightPhase,
+  storeJson,
   getAllRoles,
   getAllAgents,
   getMine,
