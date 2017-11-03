@@ -1,4 +1,4 @@
-import {getAllAgents, getAllRoles, getMine, getPhaseInfo} from './server2client.js'
+import {getMine, getPhaseInfo} from './server2client.js'
 
 const phaseDict = {
   'day conversation': '昼',

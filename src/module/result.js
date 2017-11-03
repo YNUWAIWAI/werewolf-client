@@ -1,4 +1,4 @@
-import {getAllAgents, getAllRoles} from './server2client.js'
+import {getAllAgents} from './server2client.js'
 
 const generateResultTable = () => {
   let dom = []

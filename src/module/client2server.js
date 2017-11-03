@@ -1,4 +1,4 @@
-import {getMine, getGameInfo} from './server2client.js'
+import {getGameInfo, getMine} from './server2client.js'
 
 const getMyAgent = () => {
   const mine = getMine()

@@ -1,8 +1,8 @@
 let agents,
     date,
-    rawjson,
     phase,
     phaseTimeLimit,
+    rawjson,
     roles,
     timestamp
 
