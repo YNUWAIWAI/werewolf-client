@@ -49,7 +49,7 @@ export default json => {
       document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
         elem.addEventListener('click', handleClick)
       })
-      timer('day-time', getPhaseInfo().phaseTimeLimit)
+      timer('day-time', json.phaseTimeLimit)
       document.getElementById('day-time').addEventListener('time-start', elem => {
         elem.target.style.color = 'black'
       })
@@ -57,8 +57,8 @@ export default json => {
         elem.target.style.color = 'red'
         document.querySelectorAll('.command--input').forEach(e => e.classList.add('hidden'))
         document.querySelector('.command--select').classList.remove('hidden')
-        timer('select-time', getPhaseInfo().phaseTimeLimit)
-        timer('modal-time', getPhaseInfo().phaseTimeLimit)
+        timer('select-time', json.phaseTimeLimit)
+        timer('modal-time', json.phaseTimeLimit)
       })
       const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
 

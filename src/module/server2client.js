@@ -39,32 +39,11 @@ const getMine = () => {
   }
 }
 
-const parsePhase = text => {
-  if (text === 'none') {
-    return {
-      minute: 0,
-      second: 0
-    }
-  } else if (text === 'debug') {
-    return {
-      minute: 0,
-      second: 3
-    }
-  }
-  const minute = (/(\d+)m/).exec(text) || 0
-  const second = (/(\d+)s/).exec(text) || 0
-
-  return {
-    minute: minute[1],
-    second: second[1]
-  }
-}
-
 const getPhaseInfo = () =>
   ({
     date,
     phase,
-    phaseTimeLimit: parsePhase(phaseTimeLimit)
+    phaseTimeLimit
   })
 
 const getGameInfo = () => ({

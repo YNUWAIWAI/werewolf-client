@@ -1,20 +1,32 @@
-export default (id, option = {}) => {
-  if (typeof option.minute !== 'string' && typeof option.minute !== 'number') {
-    option.minute = 3
-  } else if (option.minute < 0) {
-    option.minute = 0
+const parseTimeString = text => {
+  if (typeof text !== 'string' || text === 'none') {
+    return {
+      minute: '0',
+      second: '0'
+    }
   }
+  const minute = (() => {
+    if ((/(\d+)m/).test(text)) {
+      return String((/(\d+)m/).exec(text)[1])
+    }
 
-  if (typeof option.second !== 'string' && typeof option.second !== 'number') {
-    option.second = 0
-  } else if (option.second < 0 || option.second > 60) {
-    option.second = 0
+    return '0'
+  })()
+  const second = (() => {
+    if ((/(\d+)s/).test(text)) {
+      return String((/(\d+)s/).exec(text)[1]).padStart(2, '0')
+    }
+
+    return '0'
+  })()
+
+  return {
+    minute,
+    second
   }
+}
 
-  if (option.second < 10) {
-    option.second = `0${option.second}`
-  }
-
+export default (id, time = '3s') => {
   const node = document.getElementById(id)
   const timerEvent = {
     timerEnd: new Event('time-end'),
@@ -22,29 +34,31 @@ export default (id, option = {}) => {
   }
 
   const tick = () => {
-    let [ , minute, second ] = (/残り(\d+)'(\d+)/).exec(node.textContent)
+    let [ , min, sec ] = (/残り(\d+)'(\d+)/).exec(node.textContent)
 
-    minute = Number(minute)
-    second = Number(second)
+    min = Number(min)
+    sec = Number(sec)
 
-    if (minute === 0 && second === 0) {
+    if (min === 0 && sec === 0) {
       node.textContent = '終了'
+
       return false
     }
 
-    second--
-    if (second < 0) {
-      second = 59
-      minute--
-    } else if (second < 10) {
-      second = `0${second}`
+    sec--
+    if (sec < 0) {
+      sec = 59
+      min--
+    } else if (sec < 10) {
+      sec = `0${sec}`
     }
-    node.textContent = `残り${minute}'${second}`
+    node.textContent = `残り${min}'${sec}`
 
     return true
   }
 
-  node.textContent = `残り${option.minute}'${option.second}`
+  const {minute, second} = parseTimeString(time)
+  node.textContent = `残り${minute}'${second}`
   node.dispatchEvent(timerEvent.timerStart)
   const interval = window.setInterval(() => {
     if (!tick(id)) {
