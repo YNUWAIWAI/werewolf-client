@@ -65,6 +65,10 @@ export default json => {
       if (myRole !== 'werewolf') {
         document.querySelector('.command--input.limited').classList.add('hidden')
       }
+      if (json.date === 1) {
+        const obfucator = document.getElementById('obfucator')
+        obfucator.classList.add('hidden')
+      }
     } else if (json.phase === phase.dayVote) {
       startDayVotePhase(json)
       const dom = generateDayVoteOption()
