@@ -20,8 +20,8 @@ const connectWebSocket = url => {
   })
 }
 
-const send = text => {
-  socket.send(text)
+const send = json => {
+  socket.send(JSON.stringify(json))
 }
 
 export {connectWebSocket, send}

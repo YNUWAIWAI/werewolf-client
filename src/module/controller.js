@@ -1,5 +1,5 @@
 import timer from './timer.js'
-import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase} from './server2client.js'
+import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, getPhaseInfo} from './server2client.js'
 import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
 import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './selection.js'
@@ -84,7 +84,7 @@ export default json => {
       document.getElementById('yes').addEventListener('click', toggleModal)
       document.getElementById('yes').addEventListener('click', () => {
         document.getElementById('command-text').textContent = getDescription().fixed
-        document.getElementById('command--option-container').innerHTML = generateFixedOption()
+        document.getElementById('command--option-container').innerHTML = generateFixedOption(user)
       })
       document.getElementById('no').addEventListener('click', toggleModal)
       document.getElementById('select-time').addEventListener('time-start', elem => {
