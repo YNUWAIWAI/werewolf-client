@@ -1,5 +1,5 @@
 import {connectWebSocket, send} from './module/websocket.js'
-import {generateJSON} from './module/client2server.js'
+import {generateJson} from './module/client2server.js'
 const url = document.getElementById('script').dataset.url
 
 document.addEventListener('DOMContentLoaded', connectWebSocket(url))
@@ -9,7 +9,7 @@ document.getElementById('public').addEventListener('click', e => {
     channel: 'public',
     text
   }
-  const json = generateJSON(data, 'chat')
+  const json = generateJson(data, 'chat')
 
   send(json)
 })
@@ -19,7 +19,7 @@ document.getElementById('private').addEventListener('click', e => {
     channel: 'private',
     text
   }
-  const json = generateJSON(data, 'chat')
+  const json = generateJson(data, 'chat')
 
   send(json)
 })
@@ -29,7 +29,7 @@ document.getElementById('limited').addEventListener('click', e => {
     channel: 'werewolf',
     text
   }
-  const json = generateJSON(data, 'chat')
+  const json = generateJson(data, 'chat')
 
   send(json)
 })

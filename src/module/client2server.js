@@ -96,7 +96,7 @@ const genVoteInfo = () =>
     'votedAgent': getVotedAgent()
   })
 
-const generateJSON = (data, kind) => {
+const generateJson = (data, kind) => {
   const json = getGameInfo()
 
   json.directionality = 'client to server'
@@ -114,4 +114,4 @@ const generateJSON = (data, kind) => {
   return json
 }
 
-export {generateJSON}
+export {generateJson}
