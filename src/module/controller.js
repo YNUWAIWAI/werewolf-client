@@ -17,7 +17,7 @@ const phase = {
 }
 
 const handleClick = e => {
-  const state = [ 'o', 'x', 'unk', 'tri' ]
+  const state = [ '?', 'Δ', 'O', 'X' ]
   const currentState = e.target.dataset.state
 
   if (!state.includes(currentState)) {

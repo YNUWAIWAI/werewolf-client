@@ -319,19 +319,19 @@ body {
     }
   }
 
-  & > div[ data-state = 'o' ] {
+  & > div[ data-state = 'O' ] {
     background: no-repeat center / 80% 80% url('/assets/images/circle.svg');
   }
 
-  & > div[ data-state = 'unk' ] {
+  & > div[ data-state = '?' ] {
     background: no-repeat center / 100% 100% url('/assets/images/question.svg');
   }
 
-  & > div[ data-state = 'tri' ] {
+  & > div[ data-state = 'Δ' ] {
     background: no-repeat center / 100% 100% url('/assets/images/triangle.svg');
   }
 
-  & > div[ data-state = 'x' ] {
+  & > div[ data-state = 'X' ] {
     background: no-repeat center / 80% 80% url('/assets/images/cross.svg');
   }
 

@@ -18,7 +18,7 @@ const initPredictionTable = () => {
       } else if (!agent.agentIsMine && role.roleIsMine && role.numberOfAgents === 1) {
         table[agent.id][id] = 'fill'
       } else {
-        table[agent.id][id] = 'unk'
+        table[agent.id][id] = '?'
       }
     })
   })
