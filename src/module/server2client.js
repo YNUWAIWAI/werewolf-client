@@ -69,13 +69,33 @@ const getMine = () => {
   }
 }
 
-const getPhaseInfo = () => {
+const parsePhase = text => {
+  if (text === 'none') {
+    return {
+      minute: 0,
+      second: 0
+    }
+  } else if (text === 'debug') {
+    return {
+      minute: 0,
+      second: 3
+    }
+  }
+  const minute = (/(\d+)m/).exec(text) || 0
+  const second = (/(\d+)s/).exec(text) || 0
+
   return {
-    date,
-    phase,
-    phaseTimeLimit
+    minute,
+    second
   }
 }
+
+const getPhaseInfo = () =>
+  ({
+    date,
+    phase,
+    phaseTimeLimit: parsePhase(phaseTimeLimit)
+  })
 
 const getGameInfo = () => ({
   clientTimestamp: rawjson.clientTimestamp,
