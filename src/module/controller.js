@@ -1,5 +1,5 @@
 import timer from './timer.js'
-import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, getPhaseInfo} from './server2client.js'
+import {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, getMine, getPhaseInfo} from './server2client.js'
 import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
 import {generateDayVoteOption, generateNightOption, getDescription, generateFixedOption} from './selection.js'
@@ -60,6 +60,11 @@ export default json => {
         timer('select-time')
         timer('modal-time')
       })
+      const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
+
+      if (myRole !== 'werewolf') {
+        document.querySelector('.command--input.limited').classList.add('hidden')
+      }
     } else if (json.phase === phase.dayVote) {
       startDayVotePhase(json)
       const dom = generateDayVoteOption()

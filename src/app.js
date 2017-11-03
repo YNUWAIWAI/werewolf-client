@@ -16,7 +16,7 @@ document.getElementById('public').addEventListener('click', e => {
 document.getElementById('private').addEventListener('click', e => {
   const text = e.target.form[0].value
   const data = {
-    channel: 'public',
+    channel: 'private',
     text
   }
   const json = generateJSON(data, 'chat')
@@ -26,7 +26,7 @@ document.getElementById('private').addEventListener('click', e => {
 document.getElementById('limited').addEventListener('click', e => {
   const text = e.target.form[0].value
   const data = {
-    channel: 'public',
+    channel: 'werewolf',
     text
   }
   const json = generateJSON(data, 'chat')

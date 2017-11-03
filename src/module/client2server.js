@@ -1,11 +1,10 @@
-import {getGameInfo} from './server2client.js'
-import {getMine} from './info.js'
+import {getMine, getGameInfo} from './server2client.js'
 
 const getMyAgent = () => {
   const mine = getMine()
 
   return {
-    // '@id': mine.agent['@id'],
+    '@id': mine.agent['@id'],
     'myAgentId': mine.agent.id,
     'myAgentImage': mine.agent.image,
     'myAgentName': mine.agent.name,
@@ -45,9 +44,10 @@ const getChatAgent = () => {
 
 const getVotedAgent = agent =>
   ({
-    votedAgentId: agent.id,
-    votedAgentImage: agent.image,
-    votedAgentName: agent.name
+    '@id': agent['@id'],
+    'votedAgentId': agent.id,
+    'votedAgentImage': agent.image,
+    'votedAgentName': agent.name
   })
 
 const genBoardInfo = data =>

@@ -59,6 +59,16 @@ const getAllRoles = () =>
 
 const getAllAgents = () => agents
 
+const getMine = () => {
+  const agent = getAllAgents().filter(a => a.agentIsMine)[0]
+  const role = getAllRoles().filter(r => r.roleIsMine)[0]
+
+  return {
+    agent,
+    role
+  }
+}
+
 const getPhaseInfo = () => {
   return {
     date,
@@ -80,4 +90,14 @@ const getGameInfo = () => ({
   villageName: rawjson.villageName
 })
 
-export {startDayConversation, startResultPhase, startDayVotePhase, startNightPhase, getAllRoles, getAllAgents, getPhaseInfo, getGameInfo}
+export {
+  startDayConversation,
+  startResultPhase,
+  startDayVotePhase,
+  startNightPhase,
+  getAllRoles,
+  getAllAgents,
+  getMine,
+  getPhaseInfo,
+  getGameInfo
+}

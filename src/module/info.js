@@ -1,4 +1,4 @@
-import {getAllAgents, getAllRoles, getPhaseInfo} from './server2client.js'
+import {getAllAgents, getAllRoles, getMine, getPhaseInfo} from './server2client.js'
 
 const phaseDict = {
   'day conversation': '昼',
@@ -6,16 +6,6 @@ const phaseDict = {
   'night': '夜',
   'post mortem': '感想戦',
   'results': '結果'
-}
-
-const getMine = () => {
-  const agent = getAllAgents().filter(a => a.agentIsMine)[0]
-  const role = getAllRoles().filter(r => r.roleIsMine)[0]
-
-  return {
-    agent,
-    role
-  }
 }
 
 const initInfo = () => {

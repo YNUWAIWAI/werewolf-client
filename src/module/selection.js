@@ -1,5 +1,4 @@
-import {getAllAgents} from './server2client.js'
-import {getMine} from './info.js'
+import {getAllAgents, getMine} from './server2client.js'
 
 const generateDayVoteOption = () => {
   const dom = getAllAgents()
