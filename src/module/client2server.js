@@ -50,6 +50,22 @@ const getVotedAgent = agent =>
     'votedAgentName': agent.name
   })
 
+const getTimeStamp = () => {
+  const zeropad = num => String(num).padStart(2, '0')
+  const now = new Date()
+  const Y = now.getFullYear()
+  const M = zeropad(now.getMonth() + 1)
+  const D = zeropad(now.getDate())
+  const h = zeropad(now.getHours())
+  const m = zeropad(now.getMinutes())
+  const s = zeropad(now.getSeconds())
+  const ms = String(now.getMilliseconds()).padStart(3, '0')
+  const to = now.getTimezoneOffset()
+  const tz = `${to >= '0' ? '-' : '+'}${zeropad(Math.floor(Math.abs(to) / 60))}:${zeropad(to % 60)}`
+
+  return `${Y}-${M}-${D}T${h}:${m}:${s}.${ms}${tz}`
+}
+
 const genBoardInfo = data =>
   ({
     '@context': [
@@ -99,6 +115,7 @@ const genVoteInfo = () =>
 const generateJson = (data, kind) => {
   const json = getGameInfo()
 
+  json.clientTimeStamp = getTimeStamp()
   json.directionality = 'client to server'
   json.extensionalDisclosureRange = []
   if (kind === 'board') {

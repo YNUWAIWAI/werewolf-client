@@ -98,7 +98,6 @@ const getPhaseInfo = () =>
   })
 
 const getGameInfo = () => ({
-  clientTimestamp: rawjson.clientTimestamp,
   date: rawjson.date,
   phase: rawjson.phase,
   phaseStartTime: rawjson.phaseStartTime,
