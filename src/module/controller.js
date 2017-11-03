@@ -1,6 +1,7 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
 import {getMine, getPhaseInfo, storeJson} from './server2client.js'
 import {generateAgentChatMessage} from './chat.js'
+import {generateJson} from './client2server.js'
 import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
 import {initInfo} from './info.js'
@@ -94,6 +95,11 @@ export default json => {
       document.getElementById('yes').addEventListener('click', () => {
         document.getElementById('command-text').textContent = getDescription().fixed
         document.getElementById('command--option-container').innerHTML = generateFixedOption(user)
+        const data = {
+          agent: user
+        }
+
+        generateJson(data, 'vote')
       })
       document.getElementById('no').addEventListener('click', toggleModal)
       document.getElementById('select-time').addEventListener('time-start', elem => {
@@ -127,6 +133,11 @@ export default json => {
       document.getElementById('yes').addEventListener('click', () => {
         document.getElementById('command-text').textContent = getDescription().fixed
         document.getElementById('command--option-container').innerHTML = generateFixedOption(user)
+        const data = {
+          agent: user
+        }
+
+        generateJson(data, 'vote')
       })
       document.getElementById('no').addEventListener('click', toggleModal)
       document.getElementById('select-time').addEventListener('time-start', elem => {

@@ -99,7 +99,7 @@ const genChatInfo = data =>
     'myAgent': getMyAgent()
   })
 
-const genVoteInfo = () =>
+const genVoteInfo = (data) =>
   ({
     '@context': [
       'https://werewolf.world/context/0.1/base.jsonld',
@@ -109,7 +109,7 @@ const genVoteInfo = () =>
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': 'private',
     'myAgent': getMyAgent(),
-    'votedAgent': getVotedAgent()
+    'votedAgent': getVotedAgent(data.agent)
   })
 
 const generateJson = (data, kind) => {
