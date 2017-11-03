@@ -6,7 +6,6 @@
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "eslint": "^4.8.0",
-    "express": "^4.16.2",
     "glob": "^7.1.2",
     "postcss": "^6.0.13",
     "postcss-nested": "^2.1.2",

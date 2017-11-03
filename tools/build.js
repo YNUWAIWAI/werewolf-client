@@ -4,7 +4,6 @@ const postcss = require('postcss')
 const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const glob = require('glob')
-const express = require('express')
 
 const mkdir = dir => {
   return new Promise((resolve, reject) => {
