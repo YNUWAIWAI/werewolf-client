@@ -5,6 +5,7 @@ import {generateJson} from './client2server.js'
 import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
 import {initInfo} from './info.js'
+import {send} from './websocket.js'
 import timer from './timer.js'
 
 const baseURI = 'https://werewolf.world/resource/0.1'
@@ -99,7 +100,7 @@ export default json => {
           agent: user
         }
 
-        generateJson(data, 'vote')
+        send(generateJson(data, 'vote'))
       })
       document.getElementById('no').addEventListener('click', toggleModal)
       document.getElementById('select-time').addEventListener('time-start', elem => {
@@ -137,7 +138,7 @@ export default json => {
           agent: user
         }
 
-        generateJson(data, 'vote')
+        send(generateJson(data, 'vote'))
       })
       document.getElementById('no').addEventListener('click', toggleModal)
       document.getElementById('select-time').addEventListener('time-start', elem => {
