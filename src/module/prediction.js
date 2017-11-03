@@ -34,10 +34,10 @@ const generatePredictionTable = () => {
     const id = (/\/(\w+)$/).exec(role['@id'])[1]
 
     return `
-    <div data-role="${id}" data-tooltip="${role.name.ja}">
-    <img src="${role.image}">
-    ${role.numberOfAgents > 0 ? '&times' + role.numberOfAgents : ''}
-    </div>`
+      <div data-role="${id}" data-tooltip="${role.name.ja}">
+        <img src="${role.image}">
+        ${role.numberOfAgents > 0 ? '&times' + role.numberOfAgents : ''}
+      </div>`
   }))
   initPredictionTable()
   const agentdom = agents.map(agent => {
