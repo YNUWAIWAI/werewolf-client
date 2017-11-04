@@ -394,6 +394,13 @@ body {
       background: var(--public-color);
     }
 
+    &--counter {
+      position: absolute;
+      bottom: 0;
+      right: calc(20% + 20px);
+      font-size: x-large;
+    }
+
     & button {
       position: absolute;
       right: 0;

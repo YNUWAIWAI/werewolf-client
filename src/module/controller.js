@@ -172,22 +172,30 @@ export default json => {
       document.getElementById('chat').insertAdjacentHTML('afterbegin', dom)
       if (json.chatIsMine) {
         const chatInterval = (/(\d+)s/).exec(json.chatInterval)[1] * 1000
+
         if (json.intensionalDisclosureRange === 'public') {
           const btn = document.getElementById('public')
+
           btn.disabled = true
           const interval = setInterval(() => {
             btn.disabled = false
             clearInterval(interval)
           }, chatInterval)
+          const counter = document.getElementById('public-counter')
+
+          counter.textContent = `${json.chatCounter}/${json.chatLimit}`
         } else if (json.intensionalDisclosureRange === 'werewolf') {
           const btn = document.getElementById('limited')
+
           btn.disabled = true
           const interval = setInterval(() => {
             btn.disabled = false
             clearInterval(interval)
           }, chatInterval)
-        }
+          const counter = document.getElementById('limited-counter')
 
+          counter.textContent = `${json.chatCounter}/${json.chatLimit}`
+        }
       }
     }
   } else {
