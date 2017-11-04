@@ -170,6 +170,25 @@ export default json => {
       const dom = generateAgentChatMessage(json)
 
       document.getElementById('chat').insertAdjacentHTML('afterbegin', dom)
+      if (json.chatIsMine) {
+        const chatInterval = (/(\d+)s/).exec(json.chatInterval)[1] * 1000
+        if (json.intensionalDisclosureRange === 'public') {
+          const btn = document.getElementById('public')
+          btn.disabled = true
+          const interval = setInterval(() => {
+            btn.disabled = false
+            clearInterval(interval)
+          }, chatInterval)
+        } else if (json.intensionalDisclosureRange === 'werewolf') {
+          const btn = document.getElementById('limited')
+          btn.disabled = true
+          const interval = setInterval(() => {
+            btn.disabled = false
+            clearInterval(interval)
+          }, chatInterval)
+        }
+
+      }
     }
   } else {
     // error

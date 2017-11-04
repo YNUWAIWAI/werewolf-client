@@ -413,6 +413,16 @@ body {
       &:active {
         background-color: rgb(92, 155, 183);
       }
+
+      &[ disabled ] {
+        background-color: rgb(90, 125, 140);
+        box-shadow: 0;
+
+        &:hover, &:active {
+          border: unset;
+          background-color: rgb(90, 125, 140);
+        }
+      }
     }
 
     &.private > textarea {
