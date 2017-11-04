@@ -1,5 +1,5 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
-import {getMine, storeJson} from './server2client.js'
+import {getAllAgents, getMine, storeJson} from './server2client.js'
 import {generateAgentChatMessage} from './chat.js'
 import {generateJson} from './client2server.js'
 import {generatePredictionTable} from './prediction.js'
@@ -85,6 +85,7 @@ export default json => {
           elem.addEventListener('click', e => {
             const option = e.target.dataset.player ? e.target : e.target.parentNode
 
+            user.id = Number(option.dataset.player)
             user.image = option.dataset.image
             document.getElementById('modal-icon-image').src = user.image
             user.name = option.dataset.name
@@ -97,7 +98,7 @@ export default json => {
         document.getElementById('command-text').textContent = getDescription().fixed
         document.getElementById('command--option-container').innerHTML = generateFixedOption(user)
         const data = {
-          agent: user
+          agent: getAllAgents().filter(agent => agent.id === user.id)[0]
         }
 
         send(generateJson(data, 'vote'))
@@ -123,6 +124,7 @@ export default json => {
           elem.addEventListener('click', e => {
             const option = e.target.dataset.player ? e.target : e.target.parentNode
 
+            user.id = Number(option.dataset.player)
             user.image = option.dataset.image
             document.getElementById('modal-icon-image').src = user.image
             user.name = option.dataset.name
@@ -135,7 +137,7 @@ export default json => {
         document.getElementById('command-text').textContent = getDescription().fixed
         document.getElementById('command--option-container').innerHTML = generateFixedOption(user)
         const data = {
-          agent: user
+          agent: getAllAgents().filter(agent => agent.id === user.id)[0]
         }
 
         send(generateJson(data, 'vote'))

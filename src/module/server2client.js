@@ -7,12 +7,12 @@ let agents,
     timestamp
 
 const storeJson = json => {
-  timestamp = json.timestamp
-  roles = json.role
-  agents = json.agent
-  phase = json.phase
-  date = json.date
-  phaseTimeLimit = json.phaseTimeLimit
+  timestamp = json.timestamp || timestamp
+  roles = json.role || roles
+  agents = json.agent || agents
+  phase = json.phase || phase
+  date = json.date || date
+  phaseTimeLimit = json.phaseTimeLimit || phaseTimeLimit
   rawjson = json
 }
 

@@ -99,7 +99,7 @@ const genChatInfo = data =>
     'myAgent': getMyAgent()
   })
 
-const genVoteInfo = (data) =>
+const genVoteInfo = data =>
   ({
     '@context': [
       'https://werewolf.world/context/0.1/base.jsonld',
