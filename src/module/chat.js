@@ -20,10 +20,30 @@ const parseTime = (from, to, limit) => {
   return `${t.getFullYear()}/${zeropad(t.getMonth())}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
 }
 
-const generateAgentChatMessage = json =>
-  `<div id="message${json.chatId}" class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
+const generateAgentChatMessage = json => {
+  if (channels[json.intensionalDisclosureRange] === 'public') {
+    return `
+    <div id="message${json.chatId}" class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
+      <div class="chat--arrow-box">
+        <div class="chat--num">${json.chatId}</div>
+        <div class="chat--text">
+          ${parseChat(json.chatText)}
+        </div>
+        <div class="chat--date">
+          ${parseTime(json.phaseStartTime, json.serverTimestamp, json.phaseTimeLimit)}
+        </div>
+      </div>
+      <div class="chat--icon">
+        <img src="${json.chatAgent.chatAgentImage}">
+        <span>${json.chatAgent.chatAgentName.ja}</span>
+      </div>
+    <div>`
+  }
+
+  return `
+  <div class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
     <div class="chat--arrow-box">
-      <div class="chat--num">${json.chatId}</div>
+      <div class="chat--num"></div>
       <div class="chat--text">
         ${parseChat(json.chatText)}
       </div>
@@ -36,6 +56,7 @@ const generateAgentChatMessage = json =>
       <span>${json.chatAgent.chatAgentName.ja}</span>
     </div>
   <div>`
+}
 
 const generateAudienceChatMessage = json =>
   `<div class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
