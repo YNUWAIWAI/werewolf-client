@@ -27,8 +27,8 @@ const getBoardAgent = agent =>
 const getBoardRole = role =>
   ({
     '@id': role['@id'],
-    'agentImage': role.image,
-    'agentName': role.name
+    'roleImage': role.image,
+    'roleName': role.name
   })
 
 const getChatAgent = () => {

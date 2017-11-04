@@ -37,7 +37,7 @@ const handleClick = e => {
     role: mine.role
   }
 
-  send(generateJson(data, 'vote'))
+  send(generateJson(data, 'board'))
 }
 
 const toggleModal = () => {
