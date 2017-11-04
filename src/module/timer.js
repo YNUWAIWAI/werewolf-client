@@ -1,24 +1,12 @@
-const parseTimeString = text => {
-  if (typeof text !== 'string' || text === 'none') {
+const parseTimeString = time => {
+  if (typeof time !== 'number' || time < 0) {
     return {
-      minute: '0',
-      second: '0'
+      minute: 0,
+      second: 0
     }
   }
-  const minute = (() => {
-    if ((/(\d+)m/).test(text)) {
-      return String((/(\d+)m/).exec(text)[1])
-    }
-
-    return '0'
-  })()
-  const second = (() => {
-    if ((/(\d+)s/).test(text)) {
-      return String((/(\d+)s/).exec(text)[1]).padStart(2, '0')
-    }
-
-    return '0'
-  })()
+  const minute = String(Math.floor(time / 60)).padStart(2, '0')
+  const second = String(time % 60).padStart(2, '0')
 
   return {
     minute,
@@ -26,7 +14,7 @@ const parseTimeString = text => {
   }
 }
 
-export default (id, time = '3s') => {
+export default (id, time = 3) => {
   const node = document.getElementById(id)
   const timerEvent = {
     timerEnd: new Event('time-end'),
@@ -58,6 +46,7 @@ export default (id, time = '3s') => {
   }
 
   const {minute, second} = parseTimeString(time)
+
   node.textContent = `残り${minute}'${second}`
   node.dispatchEvent(timerEvent.timerStart)
   const interval = window.setInterval(() => {
