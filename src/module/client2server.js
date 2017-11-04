@@ -50,7 +50,7 @@ const getVotedAgent = agent =>
     'votedAgentName': agent.name
   })
 
-const getTimeStamp = () => {
+const getTimestamp = () => {
   const zeropad = num => String(num).padStart(2, '0')
   const now = new Date()
   const Y = now.getFullYear()
@@ -115,7 +115,7 @@ const genVoteInfo = data =>
 const generateJson = (data, kind) => {
   const json = getGameInfo()
 
-  json.clientTimeStamp = getTimeStamp()
+  json.clientTimestamp = getTimestamp()
   json.directionality = 'client to server'
   json.extensionalDisclosureRange = []
   if (kind === 'board') {
