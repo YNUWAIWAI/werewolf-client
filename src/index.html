@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/x-icon" href='@routes.Assets.at("images/favicon.ico")'>
   <link rel="stylesheet" href='@routes.Assets.at("stylesheets/app.css")'>
   <script type="module" src='@routes.Assets.at("javascripts/app.js")' data-url='@webSocketUrl' id="script"></script>
   <title>werewolf client</title>
@@ -13,7 +14,7 @@
   <div id="info" class="info">
     <div class="day">
       <div class="day--text">
-        <span id="day-phase">1日目 昼</span>
+        <span id="day-phase">0日目 夜</span>
         <span id="day-time"></span>
       </div>
     </div>
@@ -41,7 +42,7 @@
       <button id="private" type="button">送信</button>
     </form>
     <form name="limited" class="command--input limited">
-      <textarea placeholder="同一役職にのみ公開用"></textarea>
+      <textarea placeholder="人狼用"></textarea>
       <button id="limited" type="button">送信</button>
     </form>
     <div class="command--select hidden">
