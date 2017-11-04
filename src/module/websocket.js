@@ -21,6 +21,7 @@ const connectWebSocket = url => {
 }
 
 const send = json => {
+  console.log(JSON.stringify(json))
   socket.send(JSON.stringify(json))
 }
 

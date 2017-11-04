@@ -1,4 +1,4 @@
-import {getAllAgents, getMine} from './server2client.js'
+import {getAllAgents, getMine, getPhaseInfo} from './server2client.js'
 
 const generateDayVoteOption = () => {
   const dom = getAllAgents()
@@ -12,8 +12,17 @@ const generateDayVoteOption = () => {
 }
 
 const getDescription = () => {
-  const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
   const description = {}
+
+  if (getPhaseInfo === 'day vote') {
+    description.command = '投票先を選んでください'
+    description.modal = '投票先はこちらでいいですか？'
+    description.fixed = 'あなたの選んだ投票先はこちらです'
+
+    return description
+  }
+
+  const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
 
   if (myRole === 'werewolf') {
     description.command = '襲撃先を選んでください'
@@ -28,9 +37,9 @@ const getDescription = () => {
     description.modal = '守護先はこちらでいいですか？'
     description.fixed = 'あなたの選んだ守護先はこちらです'
   } else {
-    description.command = '投票先を選んでください'
-    description.modal = '投票先はこちらでいいですか？'
-    description.fixed = 'あなたの選んだ投票先はこちらです'
+    description.command = '待ってください'
+    description.modal = ''
+    description.fixed = ''
   }
 
   return description

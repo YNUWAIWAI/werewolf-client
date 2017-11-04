@@ -30,4 +30,6 @@ const initInfo = () => {
   </div>`
 }
 
-export {initInfo, getMine}
+const getPhaseText = () => `${getPhaseInfo().date}日目 ${phaseDict[getPhaseInfo().phase]}`
+
+export {initInfo, getPhaseText, getMine}

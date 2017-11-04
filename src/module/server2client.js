@@ -14,6 +14,7 @@ const storeJson = json => {
   date = json.date || date
   phaseTimeLimit = json.phaseTimeLimit || phaseTimeLimit
   rawjson = json
+  console.log(json)
 }
 
 const getAllRoles = () =>

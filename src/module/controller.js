@@ -1,10 +1,10 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
-import {getAllAgents, getMine, storeJson} from './server2client.js'
+import {getAllAgents, getMine, storeJson, getPhaseInfo} from './server2client.js'
+import {getPhaseText, initInfo} from './info.js'
 import {generateAgentChatMessage} from './chat.js'
 import {generateJson} from './client2server.js'
 import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
-import {initInfo} from './info.js'
 import {send} from './websocket.js'
 import timer from './timer.js'
 
@@ -48,13 +48,25 @@ const toggleModal = () => {
   modal.classList.toggle('hidden')
 }
 
+const obfucator = document.getElementById('obfucator')
+
 export default json => {
   const kindOfMessage = json['@id']
 
   if (kindOfMessage === `${baseURI}/systemMessage`) {
     if (json.phase === phase.dayConversation) {
       storeJson(json)
-      document.getElementById('info').innerHTML = initInfo()
+      console.log(kindOfMessage, json)
+      if (json.date === 1) {
+        document.getElementById('info').innerHTML = initInfo()
+        obfucator.classList.add('hidden')
+      }
+      document.getElementById('day-phase').content = getPhaseText()
+      const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
+
+      if (myRole !== 'werewolf') {
+        document.querySelector('.command--input.limited').classList.add('hidden')
+      }
       document.getElementById('prediction').innerHTML = generatePredictionTable()
       document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
         elem.addEventListener('click', handleClick)
@@ -65,24 +77,27 @@ export default json => {
       })
       document.getElementById('day-time').addEventListener('time-end', elem => {
         elem.target.style.color = 'red'
-        document.querySelectorAll('.command--input').forEach(e => e.classList.add('hidden'))
-        document.querySelector('.command--select').classList.remove('hidden')
-        timer('select-time', json.phaseTimeLimit)
-        timer('modal-time', json.phaseTimeLimit)
-      })
-      const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
+        const interval = setInterval(() => {
+          if (getPhaseInfo().phase !== phase.dayConversation) {
+            obfucator.classList.add('hidden')
+            document.querySelectorAll('.command--input').forEach(e => e.classList.add('hidden'))
+            document.querySelector('.command--select').classList.remove('hidden')
+            timer('select-time', json.phaseTimeLimit)
+            timer('modal-time', json.phaseTimeLimit)
+            clearInterval(interval)
 
-      if (myRole !== 'werewolf') {
-        document.querySelector('.command--input.limited').classList.add('hidden')
-      }
-      if (json.date === 1) {
-        const obfucator = document.getElementById('obfucator')
-        obfucator.classList.add('hidden')
-      }
+            return
+          }
+          obfucator.classList.remove('hidden')
+          console.log(`wait for starting ${phase.dayVote}`)
+        }, 100)
+      })
     } else if (json.phase === phase.dayVote) {
+      console.log(kindOfMessage, json)
       storeJson(json)
       const dom = generateDayVoteOption()
 
+      document.getElementById('day-phase').content = getPhaseText()
       document.getElementById('command--option-container').innerHTML = dom
       document.getElementById('command-text').textContent = getDescription().command
       document.getElementById('modal-text').textContent = getDescription().modal
@@ -117,11 +132,25 @@ export default json => {
       })
       document.getElementById('select-time').addEventListener('time-end', elem => {
         elem.target.style.color = 'red'
+        const interval = setInterval(() => {
+          if (getPhaseInfo().phase !== phase.dayVote) {
+            obfucator.classList.add('hidden')
+            timer('select-time', json.phaseTimeLimit)
+            timer('modal-time', json.phaseTimeLimit)
+            clearInterval(interval)
+
+            return
+          }
+          obfucator.classList.remove('hidden')
+          console.log(`wait for starting ${phase.dayVote}`)
+        }, 100)
       })
     } else if (json.phase === phase.night) {
+      console.log(kindOfMessage, json)
       storeJson(json)
       const dom = generateNightOption()
 
+      document.getElementById('day-phase').content = getPhaseText()
       document.getElementById('command--option-container').innerHTML = dom
       document.getElementById('command-text').textContent = getDescription().command
       document.getElementById('modal-text').textContent = getDescription().modal
@@ -156,16 +185,31 @@ export default json => {
       })
       document.getElementById('select-time').addEventListener('time-end', elem => {
         elem.target.style.color = 'red'
+        const interval = setInterval(() => {
+          if (getPhaseInfo().phase !== phase.nightVote) {
+            obfucator.classList.add('hidden')
+            timer('select-time', json.phaseTimeLimit)
+            timer('modal-time', json.phaseTimeLimit)
+            clearInterval(interval)
+
+            return
+          }
+          obfucator.classList.remove('hidden')
+          console.log(`wait for stating ${phase.datConversation}`)
+        }, 100)
       })
     } else if (json.phase === phase.results) {
+      console.log(kindOfMessage, json)
       storeJson(json)
       const dom = generateResultTable()
 
       document.getElementById('result').innerHTML = dom
     } else {
+      console.log(kindOfMessage, json)
       // post moterm
     }
   } else if (kindOfMessage === `${baseURI}/playerMessage`) {
+    console.log(kindOfMessage, json)
     if (![ 'anonymousAudience', 'onymousAudience' ].includes(json.intensionalDisclosureRange)) {
       const dom = generateAgentChatMessage(json)
 
@@ -199,6 +243,7 @@ export default json => {
       }
     }
   } else {
+    console.error(kindOfMessage, json)
     // error
   }
 }
