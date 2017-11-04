@@ -30,6 +30,14 @@ const handleClick = e => {
   const nextState = state[nextIndex]
 
   e.target.dataset.state = nextState
+  const mine = getMine()
+  const data = {
+    agent: mine.agent,
+    prediction: nextState,
+    role: mine.role
+  }
+
+  send(generateJson(data, 'vote'))
 }
 
 const toggleModal = () => {
