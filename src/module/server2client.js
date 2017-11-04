@@ -27,7 +27,12 @@ const getAllRoles = () =>
       return order.indexOf(id1) > order.indexOf(id2)
     })
 
-const getAllAgents = () => agents
+const getAllAgents = () =>
+  agents.filter(agent => {
+    const id = (/\/(\w+)$/).exec(agent['@id'])[1]
+
+    return ![ 'Gert', 'Catalina' ].includes(id)
+  })
 
 const getMine = () => {
   const agent = getAllAgents().filter(a => a.agentIsMine)[0]
