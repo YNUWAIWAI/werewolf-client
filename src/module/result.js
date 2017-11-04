@@ -1,8 +1,8 @@
-import {getAllAgents} from './server2client.js'
+import {getResultsAgents} from './server2client.js'
 
 const generateResultTable = () => {
   let dom = []
-  const agents = getAllAgents()
+  const agents = getResultsAgents()
 
   agents.forEach(agent => {
     let status = agent.status.split(' ')

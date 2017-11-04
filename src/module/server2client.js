@@ -1,8 +1,15 @@
 let agents,
     rawjson,
-    roles
+    roles,
+    results,
+    postMortem
 
 const storeJson = json => {
+  if (json.phase === 'results') {
+    results = json
+  } else if (json.phase === 'post mortem') {
+    postMortem = json
+  }
   roles = json.role || roles
   agents = json.agent || agents
   rawjson = json
@@ -55,11 +62,21 @@ const getGameInfo = () => ({
   villageName: rawjson.villageName
 })
 
+const isGameEnd = () => Boolean(results || postMortem)
+
+const getResultsAgents = () => {
+  agents = results.agent
+
+  return getAllAgents()
+}
+
 export {
   storeJson,
+  isGameEnd,
   getAllRoles,
   getAllAgents,
   getMine,
   getPhaseInfo,
+  getResultsAgents,
   getGameInfo
 }
