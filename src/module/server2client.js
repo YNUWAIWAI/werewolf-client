@@ -1,20 +1,11 @@
 let agents,
-    date,
-    phase,
-    phaseTimeLimit,
     rawjson,
-    roles,
-    timestamp
+    roles
 
 const storeJson = json => {
-  timestamp = json.timestamp || timestamp
   roles = json.role || roles
   agents = json.agent || agents
-  phase = json.phase || phase
-  date = json.date || date
-  phaseTimeLimit = json.phaseTimeLimit || phaseTimeLimit
   rawjson = json
-  console.log(json)
 }
 
 const getAllRoles = () =>
@@ -47,9 +38,9 @@ const getMine = () => {
 
 const getPhaseInfo = () =>
   ({
-    date,
-    phase,
-    phaseTimeLimit
+    date: rawjson.date,
+    phase: rawjson.phase,
+    phaseTimeLimit: rawjson.phaseTimeLimit
   })
 
 const getGameInfo = () => ({

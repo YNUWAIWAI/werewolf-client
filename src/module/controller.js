@@ -54,7 +54,9 @@ export default json => {
   const kindOfMessage = json['@id']
 
   if (kindOfMessage === `${baseURI}/systemMessage`) {
+    // systemMessage
     if (json.phase === phase.dayConversation) {
+      // dayConversationPhase
       storeJson(json)
       console.log(kindOfMessage, json)
       if (json.date === 1) {
@@ -93,6 +95,7 @@ export default json => {
         }, 100)
       })
     } else if (json.phase === phase.dayVote) {
+      // dayVotePhase
       console.log(kindOfMessage, json)
       storeJson(json)
       const dom = generateDayVoteOption()
@@ -146,6 +149,7 @@ export default json => {
         }, 100)
       })
     } else if (json.phase === phase.night) {
+      // nightPhase
       console.log(kindOfMessage, json)
       storeJson(json)
       const dom = generateNightOption()
@@ -199,6 +203,7 @@ export default json => {
         }, 100)
       })
     } else if (json.phase === phase.results) {
+      // resultPhase
       console.log(kindOfMessage, json)
       storeJson(json)
       const dom = generateResultTable()
@@ -206,9 +211,10 @@ export default json => {
       document.getElementById('result').innerHTML = dom
     } else {
       console.log(kindOfMessage, json)
-      // post moterm
+      // postMotermPhase
     }
   } else if (kindOfMessage === `${baseURI}/playerMessage`) {
+    // playerMessage
     console.log(kindOfMessage, json)
     if (![ 'anonymousAudience', 'onymousAudience' ].includes(json.intensionalDisclosureRange)) {
       const dom = generateAgentChatMessage(json)
@@ -242,8 +248,10 @@ export default json => {
         }
       }
     }
-  } else {
+  } else if (`${baseURI}/errorMessage`) {
+    // errorMessage
     console.error(kindOfMessage, json)
-    // error
+  } else {
+    // dummyMessage
   }
 }
