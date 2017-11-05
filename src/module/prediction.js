@@ -1,4 +1,6 @@
 import {getAllRoles, getAllAgents} from './server2client.js'
+import {generateJson, getMine} from './client2server.js'
+import {send} from './websocket.js'
 
 let predictionTable
 const initPredictionTable = () => {
@@ -62,4 +64,27 @@ const generatePredictionTable = () => {
   return dom.join('')
 }
 
-export {generatePredictionTable}
+const handleBoardClick = e => {
+  const state = [ '?', 'Δ', 'O', 'X' ]
+  const currentState = e.target.dataset.state
+
+  if (!state.includes(currentState)) {
+    e.target.removeEventListener('click', handleBoardClick)
+
+    return
+  }
+  const nextIndex = (state.indexOf(currentState) + 1) % state.length
+  const nextState = state[nextIndex]
+
+  e.target.dataset.state = nextState
+  const mine = getMine()
+  const data = {
+    agent: mine.agent,
+    prediction: nextState,
+    role: mine.role
+  }
+
+  send(generateJson(data, 'board'))
+}
+
+export {generatePredictionTable, handleBoardClick}

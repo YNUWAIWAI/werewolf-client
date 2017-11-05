@@ -1,13 +1,13 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
-import {getAllAgents, getMine, storeJson, getPhaseInfo, isGameEnd} from './server2client.js'
+import {generatePredictionTable, handleBoardClick} from './prediction.js'
+import {getAllAgents, getMine, getPhaseInfo, isGameEnd, storeJson} from './server2client.js'
 import {getPhaseText, initInfo} from './info.js'
 import {generateAgentChatMessage} from './chat.js'
 import {generateJson} from './client2server.js'
-import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
 import {send} from './websocket.js'
-import {trimBaseUri} from './util.js'
 import timer from './timer.js'
+import {trimBaseUri} from './util.js'
 
 const phase = {
   dayConversation: 'day conversation',
@@ -39,29 +39,6 @@ const html = {
   yes: document.getElementById('yes')
 }
 
-const handleClick = e => {
-  const state = [ '?', 'Δ', 'O', 'X' ]
-  const currentState = e.target.dataset.state
-
-  if (!state.includes(currentState)) {
-    e.target.removeEventListener('click', handleClick)
-
-    return
-  }
-  const nextIndex = (state.indexOf(currentState) + 1) % state.length
-  const nextState = state[nextIndex]
-
-  e.target.dataset.state = nextState
-  const mine = getMine()
-  const data = {
-    agent: mine.agent,
-    prediction: nextState,
-    role: mine.role
-  }
-
-  send(generateJson(data, 'board'))
-}
-
 const toggleModal = () => {
   html.obfucator.classList.toggle('hidden')
   html.modal.classList.toggle('hidden')
@@ -88,7 +65,7 @@ export default json => {
       }
       html.prediction.innerHTML = generatePredictionTable()
       document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
-        elem.addEventListener('click', handleClick)
+        elem.addEventListener('click', handleBoardClick)
       })
       timer('day-time', json.phaseTimeLimit)
       html.dayTime.addEventListener('time-start', elem => {
