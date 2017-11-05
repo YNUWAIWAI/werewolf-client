@@ -1,4 +1,5 @@
 import {getAllAgents, getMine, getPhaseInfo} from './server2client.js'
+import {trimBaseUri} from './util.js'
 
 const generateDayVoteOption = () => {
   const dom = getAllAgents()
@@ -22,7 +23,7 @@ const getDescription = () => {
     return description
   }
 
-  const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
+  const myRole = trimBaseUri(getMine().role['@id'])
 
   if (myRole === 'werewolf') {
     description.command = '襲撃先を選んでください'
@@ -46,7 +47,7 @@ const getDescription = () => {
 }
 
 const generateNightOption = () => {
-  const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
+  const myRole = trimBaseUri(getMine().role['@id'])
 
   if (![ 'werewolf', 'seer', 'hunter' ].includes(myRole)) {
     return ''

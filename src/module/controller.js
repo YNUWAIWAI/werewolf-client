@@ -6,9 +6,9 @@ import {generateJson} from './client2server.js'
 import {generatePredictionTable} from './prediction.js'
 import {generateResultTable} from './result.js'
 import {send} from './websocket.js'
+import {trimBaseUri} from './util.js'
 import timer from './timer.js'
 
-const baseURI = 'https://werewolf.world/resource/0.1'
 const phase = {
   dayConversation: 'day conversation',
   dayVote: 'day vote',
@@ -51,10 +51,9 @@ const toggleModal = () => {
 const obfucator = document.getElementById('obfucator')
 
 export default json => {
-  const kindOfMessage = json['@id']
+  const kindOfMessage = trimBaseUri(json['@id'])
 
-  console.log(kindOfMessage, json)
-  if (kindOfMessage === `${baseURI}/systemMessage`) {
+  if (kindOfMessage === 'systemMessage') {
     // systemMessage
     if (json.phase === phase.dayConversation) {
       // dayConversationPhase
@@ -64,7 +63,7 @@ export default json => {
         obfucator.classList.add('hidden')
       }
       document.getElementById('day-phase').content = getPhaseText()
-      const myRole = (/\/(\w+)$/).exec(getMine().role['@id'])[1]
+      const myRole = trimBaseUri(getMine().role['@id'])
 
       if (myRole !== 'werewolf') {
         document.querySelector('.command--input.limited').classList.add('hidden')
@@ -235,7 +234,7 @@ export default json => {
       // postMotermPhase
       storeJson(json)
     }
-  } else if (kindOfMessage === `${baseURI}/playerMessage`) {
+  } else if (kindOfMessage === 'playerMessage') {
     // playerMessage
     if (![ 'anonymousAudience', 'onymousAudience' ].includes(json.intensionalDisclosureRange)) {
       const dom = generateAgentChatMessage(json)

@@ -1,4 +1,5 @@
 import {getResultsAgents} from './server2client.js'
+import {trimBaseUri} from './util.js'
 
 const generateResultTable = () => {
   let dom = []
@@ -6,7 +7,7 @@ const generateResultTable = () => {
   const summary = (() => {
     const mine = agents.filter(agent => agent.agentIsMine)[0]
     console.log(mine)
-    const isWerewolfSide = [ 'werewolf', 'madman' ].includes((/\/(\w+)$/).exec(mine.role['@id'])[1])
+    const isWerewolfSide = [ 'werewolf', 'madman' ].includes(trimBaseUri(mine.role['@id']))
     const isWin = mine.result === 'win'
 
     return `人間側の${isWerewolfSide ^ isWin ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`

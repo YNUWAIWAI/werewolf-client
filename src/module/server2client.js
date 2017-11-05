@@ -1,3 +1,5 @@
+import {trimBaseUri} from './util.js'
+
 let agents,
     rawjson,
     roles,
@@ -20,15 +22,15 @@ const getAllRoles = () =>
     .filter(role => !role['@id'].includes('master'))
     .sort((r1, r2) => {
       const order = [ 'villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehumster' ]
-      const id1 = (/\/(\w+)$/).exec(r1['@id'])[1]
-      const id2 = (/\/(\w+)$/).exec(r2['@id'])[1]
+      const id1 = trimBaseUri(r1['@id'])
+      const id2 = trimBaseUri(r2['@id'])
 
       return order.indexOf(id1) > order.indexOf(id2)
     })
 
 const getAllAgents = () =>
   agents.filter(agent => {
-    const id = (/\/(\w+)$/).exec(agent['@id'])[1]
+    const id = trimBaseUri(agent['@id'])
 
     return ![ 'Gert', 'Catalina' ].includes(id)
   })
