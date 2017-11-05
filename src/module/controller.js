@@ -1,5 +1,5 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
-import {generatePredictionTable, handleBoardClick} from './prediction.js'
+import {generatePredictionTable, handleBoardClick, updatePredictionTable} from './prediction.js'
 import {getAllAgents, getMine, getPhaseInfo, isGameEnd, storeJson} from './server2client.js'
 import {getPhaseText, initInfo} from './info.js'
 import {generateAgentChatMessage} from './chat.js'
@@ -53,20 +53,12 @@ export default json => {
     if (json.phase === phase.dayConversation) {
       // dayConversationPhase
       storeJson(json)
-      if (json.date === 1) {
-        html.info.innerHTML = initInfo()
-        html.obfucator.classList.add('hidden')
-      }
-      html.dayPhase.content = getPhaseText()
       const myRole = trimBaseUri(getMine().role['@id'])
 
       if (myRole !== 'werewolf') {
         document.querySelector('.command--input.limited').classList.add('hidden')
       }
-      html.prediction.innerHTML = generatePredictionTable()
-      document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
-        elem.addEventListener('click', handleBoardClick)
-      })
+      html.dayPhase.content = getPhaseText()
       timer('day-time', json.phaseTimeLimit)
       html.dayTime.addEventListener('time-start', elem => {
         elem.target.style.color = 'black'
@@ -95,6 +87,17 @@ export default json => {
           console.log(`wait for starting ${phase.dayVote}`)
         }, 100)
       })
+
+      if (json.date === 1) {
+        html.obfucator.classList.add('hidden')
+        html.info.innerHTML = initInfo()
+        html.prediction.innerHTML = generatePredictionTable()
+        document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
+          elem.addEventListener('click', handleBoardClick)
+        })
+      } else {
+        updatePredictionTable()
+      }
     } else if (json.phase === phase.dayVote) {
       // dayVotePhase
       storeJson(json)
