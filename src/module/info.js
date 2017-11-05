@@ -32,4 +32,4 @@ const initInfo = () => {
 
 const getPhaseText = () => `${getPhaseInfo().date}日目 ${phaseDict[getPhaseInfo().phase]}`
 
-export {initInfo, getPhaseText, getMine}
+export {initInfo, getPhaseText}

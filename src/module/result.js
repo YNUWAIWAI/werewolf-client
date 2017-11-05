@@ -6,7 +6,6 @@ const generateResultTable = () => {
   const agents = getResultsAgents()
   const summary = (() => {
     const mine = agents.filter(agent => agent.agentIsMine)[0]
-    console.log(mine)
     const isWerewolfSide = [ 'werewolf', 'madman' ].includes(trimBaseUri(mine.role['@id']))
     const isWin = mine.result === 'win'
 

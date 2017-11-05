@@ -1,6 +1,7 @@
-import {getAllRoles, getAllAgents} from './server2client.js'
-import {generateJson, getMine} from './client2server.js'
+import {generateJson} from './client2server.js'
+import {getAllAgents, getAllRoles, getMine} from './server2client.js'
 import {send} from './websocket.js'
+import {trimBaseUri} from './util.js'
 
 let predictionTable
 const initPredictionTable = () => {
@@ -11,7 +12,7 @@ const initPredictionTable = () => {
   agents.forEach(agent => {
     table[agent.id] = {}
     roles.forEach(role => {
-      const id = (/\/(\w+)$/).exec(role['@id'])[1]
+      const id = trimBaseUri(role['@id'])
 
       if (agent.agentIsMine && role.roleIsMine) {
         table[agent.id][id] = 'fix'
@@ -77,6 +78,7 @@ const handleBoardClick = e => {
   const nextState = state[nextIndex]
 
   e.target.dataset.state = nextState
+  predictionTable[e.target.dataset.player][e.target.dataset.role] = e.target.dataset.state
   const mine = getMine()
   const data = {
     agent: mine.agent,
