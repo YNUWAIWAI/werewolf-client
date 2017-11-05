@@ -13,12 +13,17 @@ const connectWebSocket = url => {
     console.log('WebSocket Connected ', event)
   })
   socket.addEventListener('close', event => {
-    console.log('WebSocket Disconnected ', event)
-    const obfucator = document.getElementById('obfucator')
+    console.warn('WebSocket Disconnected ', event)
+    const timeoutID = window.setTimeout(() => {
+      socket = connectWebSocket(url)
+    }, 500)
 
-    obfucator.style = 'background: rgba(255, 0, 0, 0.85);font-size: 350px;line-height: 0.8;'
-    obfucator.textContent = 'WebSocket is DEAD'
-    obfucator.classList.remove('hidden')
+    window.clearTimeout(timeoutID)
+    // const obfucator = document.getElementById('obfucator')
+
+    // obfucator.style = 'background: rgba(255, 0, 0, 0.85);font-size: 350px;line-height: 0.8;'
+    // obfucator.textContent = 'WebSocket is DEAD'
+    // obfucator.classList.remove('hidden')
   })
   socket.addEventListener('error', error => {
     console.log('WebSocket Error ', error)
