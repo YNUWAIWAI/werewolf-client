@@ -17,6 +17,8 @@ const phase = {
   results: 'results'
 }
 
+const obfucator = document.getElementById('obfucator')
+
 const handleClick = e => {
   const state = [ '?', 'Δ', 'O', 'X' ]
   const currentState = e.target.dataset.state
@@ -41,14 +43,11 @@ const handleClick = e => {
 }
 
 const toggleModal = () => {
-  const obfucator = document.getElementById('obfucator')
   const modal = document.getElementById('modal')
 
   obfucator.classList.toggle('hidden')
   modal.classList.toggle('hidden')
 }
-
-const obfucator = document.getElementById('obfucator')
 
 export default json => {
   const kindOfMessage = trimBaseUri(json['@id'])
@@ -80,7 +79,6 @@ export default json => {
         elem.target.style.color = 'red'
         const interval = setInterval(() => {
           if (getPhaseInfo().phase !== phase.dayConversation) {
-            obfucator.classList.add('hidden')
             if (isGameEnd()) {
               const dom = generateResultTable()
               const result = document.getElementById('result')
@@ -88,16 +86,17 @@ export default json => {
               result.innerHTML = dom
               result.classList.remove('hidden')
             } else {
+              obfucator.classList.add('hidden')
               document.querySelectorAll('.command--input').forEach(e => e.classList.add('hidden'))
               document.querySelector('.command--select').classList.remove('hidden')
               timer('select-time', json.phaseTimeLimit)
               timer('modal-time', json.phaseTimeLimit)
             }
+            obfucator.classList.remove('hidden')
             clearInterval(interval)
 
             return
           }
-          obfucator.classList.remove('hidden')
           console.log(`wait for starting ${phase.dayVote}`)
         }, 100)
       })
@@ -154,11 +153,11 @@ export default json => {
               timer('select-time', json.phaseTimeLimit)
               timer('modal-time', json.phaseTimeLimit)
             }
+            obfucator.classList.remove('hidden')
             clearInterval(interval)
 
             return
           }
-          obfucator.classList.remove('hidden')
           console.log(`wait for starting ${phase.dayVote}`)
         }, 100)
       })
@@ -219,11 +218,11 @@ export default json => {
               document.querySelector('.command--select').classList.add('hidden')
               timer('day-time', json.phaseTimeLimit)
             }
+            obfucator.classList.remove('hidden')
             clearInterval(interval)
 
             return
           }
-          obfucator.classList.remove('hidden')
           console.log(`wait for stating ${phase.datConversation}`)
         }, 100)
       })

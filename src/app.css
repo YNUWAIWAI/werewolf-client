@@ -544,6 +544,7 @@ body {
   grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
   border: 1px solid black;
   overflow: scroll;
+  z-index: 2;
 
   &--cell {
     border: 1px solid black;
