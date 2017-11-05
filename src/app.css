@@ -540,6 +540,7 @@ body {
   left: 10vw;
   background: white;
   display: grid;
+  grid-template-areas: 'summary summary summary summary summary summary summary';
   grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
   border: 1px solid black;
   overflow: scroll;
@@ -553,6 +554,10 @@ body {
     text-align: center;
     height: 100%;
     overflow: scroll;
+
+    &[ data-result = 'summary' ] {
+      grid-area: summary;
+    }
 
     &[ data-result = 'image' ],
     &[ data-result = 'roleImage' ],
@@ -579,7 +584,6 @@ body {
         align-items: center;
       }
     }
-
 
     &.dead {
       color: var(--dead-color);
