@@ -15,7 +15,7 @@ const generateDayVoteOption = () => {
 const getDescription = () => {
   const description = {}
 
-  if (getPhaseInfo === 'day vote') {
+  if (getPhaseInfo() === 'day vote') {
     description.command = '投票先を選んでください'
     description.modal = '投票先はこちらでいいですか？'
     description.fixed = 'あなたの選んだ投票先はこちらです'
