@@ -107,7 +107,7 @@ export default json => {
       storeJson(json)
       const dom = generateDayVoteOption()
 
-      document.getElementById('day-phase').content = getPhaseText()
+      document.getElementById('day-phase').textContent = getPhaseText()
       document.getElementById('command--option-container').innerHTML = dom
       document.getElementById('command-text').textContent = getDescription().command
       document.getElementById('modal-text').textContent = getDescription().modal
@@ -168,7 +168,7 @@ export default json => {
       storeJson(json)
       const dom = generateNightOption()
 
-      document.getElementById('day-phase').content = getPhaseText()
+      document.getElementById('day-phase').textContent = getPhaseText()
       document.getElementById('command--option-container').innerHTML = dom
       document.getElementById('command-text').textContent = getDescription().command
       document.getElementById('modal-text').textContent = getDescription().modal
