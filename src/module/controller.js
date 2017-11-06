@@ -17,7 +17,7 @@ const phase = {
   results: 'results'
 }
 
-const html = {
+const html = () => ({
   chat: document.getElementById('chat'),
   commandOptionContainer: document.getElementById('command--option-container'),
   commandText: document.getElementById('command-text'),
@@ -37,11 +37,11 @@ const html = {
   result: document.getElementById('result'),
   selectTime: document.getElementById('select-time'),
   yes: document.getElementById('yes')
-}
+})
 
 const toggleModal = () => {
-  html.obfucator.classList.toggle('hidden')
-  html.modal.classList.toggle('hidden')
+  html().obfucator.classList.toggle('hidden')
+  html().modal.classList.toggle('hidden')
 }
 
 export default json => {
@@ -53,33 +53,42 @@ export default json => {
     if (json.phase === phase.dayConversation) {
       // dayConversationPhase
       storeJson(json)
+      if (json.date === 1) {
+        html().obfucator.classList.add('hidden')
+        html().info.innerHTML = initInfo()
+        html().prediction.innerHTML = generatePredictionTable()
+        document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
+          elem.addEventListener('click', handleBoardClick)
+        })
+      } else {
+        updatePredictionTable()
+      }
       const myRole = trimBaseUri(getMine().role['@id'])
-
       if (myRole !== 'werewolf') {
         document.querySelector('.command--input.limited').classList.add('hidden')
       }
-      html.dayPhase.content = getPhaseText()
-      timer('day-time', json.phaseTimeLimit)
-      html.dayTime.addEventListener('time-start', elem => {
+      html().dayPhase.content = getPhaseText()
+      timer(html().dayTime, json.phaseTimeLimit)
+      html().dayTime.addEventListener('time-start', elem => {
         elem.target.style.color = 'black'
       })
-      html.dayTime.addEventListener('time-end', elem => {
+      html().dayTime.addEventListener('time-end', elem => {
         elem.target.style.color = 'red'
         const interval = setInterval(() => {
           if (getPhaseInfo().phase !== phase.dayConversation) {
             if (isGameEnd()) {
               const dom = generateResultTable()
 
-              html.result.innerHTML = dom
-              html.result.classList.remove('hidden')
+              html().result.innerHTML = dom
+              html().result.classList.remove('hidden')
             } else {
-              html.obfucator.classList.add('hidden')
+              html().obfucator.classList.add('hidden')
               document.querySelectorAll('.command--input').forEach(e => e.classList.add('hidden'))
               document.querySelector('.command--select').classList.remove('hidden')
               timer('select-time', json.phaseTimeLimit)
               timer('modal-time', json.phaseTimeLimit)
             }
-            html.obfucator.classList.remove('hidden')
+            html().obfucator.classList.remove('hidden')
             clearInterval(interval)
 
             return
@@ -87,26 +96,15 @@ export default json => {
           console.log(`wait for starting ${phase.dayVote}`)
         }, 100)
       })
-
-      if (json.date === 1) {
-        html.obfucator.classList.add('hidden')
-        html.info.innerHTML = initInfo()
-        html.prediction.innerHTML = generatePredictionTable()
-        document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
-          elem.addEventListener('click', handleBoardClick)
-        })
-      } else {
-        updatePredictionTable()
-      }
     } else if (json.phase === phase.dayVote) {
       // dayVotePhase
       storeJson(json)
       const dom = generateDayVoteOption()
 
-      html.dayPhase.textContent = getPhaseText()
-      html.commandOptionContainer.innerHTML = dom
-      html.commandText.textContent = getDescription().command
-      html.modalText.textContent = getDescription().modal
+      html().dayPhase.textContent = getPhaseText()
+      html().commandOptionContainer.innerHTML = dom
+      html().commandText.textContent = getDescription().command
+      html().modalText.textContent = getDescription().modal
       const user = {}
 
       document.querySelectorAll('.command--option')
@@ -116,41 +114,41 @@ export default json => {
 
             user.id = Number(option.dataset.player)
             user.image = option.dataset.image
-            html.modalIconImage.src = user.image
+            html().modalIconImage.src = user.image
             user.name = option.dataset.name
-            html.modalIconName.textContent = user.name
+            html().modalIconName.textContent = user.name
             toggleModal()
           })
         })
-      html.yes.addEventListener('click', toggleModal)
-      html.yes.addEventListener('click', () => {
-        html.commandText.textContent = getDescription().fixed
-        html.commandOptionContainer.innerHTML = generateFixedOption(user)
+      html().yes.addEventListener('click', toggleModal)
+      html().yes.addEventListener('click', () => {
+        html().commandText.textContent = getDescription().fixed
+        html().commandOptionContainer.innerHTML = generateFixedOption(user)
         const data = {
           agent: getAllAgents().filter(agent => agent.id === user.id)[0]
         }
 
         send(generateJson(data, 'vote'))
       })
-      html.no.addEventListener('click', toggleModal)
-      html.selectTime.addEventListener('time-start', elem => {
+      html().no.addEventListener('click', toggleModal)
+      html().selectTime.addEventListener('time-start', elem => {
         elem.target.style.color = 'black'
       })
-      html.selectTime.addEventListener('time-end', elem => {
+      html().selectTime.addEventListener('time-end', elem => {
         elem.target.style.color = 'red'
         const interval = setInterval(() => {
           if (getPhaseInfo().phase !== phase.dayVote) {
             if (isGameEnd()) {
               const dom = generateResultTable()
 
-              html.result.innerHTML = dom
-              html.result.classList.remove('hidden')
+              html().result.innerHTML = dom
+              html().result.classList.remove('hidden')
             } else {
-              html.obfucator.classList.add('hidden')
+              html().obfucator.classList.add('hidden')
               timer('select-time', json.phaseTimeLimit)
               timer('modal-time', json.phaseTimeLimit)
             }
-            html.obfucator.classList.remove('hidden')
+            html().obfucator.classList.remove('hidden')
             clearInterval(interval)
 
             return
@@ -163,10 +161,10 @@ export default json => {
       storeJson(json)
       const dom = generateNightOption()
 
-      html.dayPhase.textContent = getPhaseText()
-      html.commandOptionContainer.innerHTML = dom
-      html.commandText.textContent = getDescription().command
-      html.modalText.textContent = getDescription().modal
+      html().dayPhase.textContent = getPhaseText()
+      html().commandOptionContainer.innerHTML = dom
+      html().commandText.textContent = getDescription().command
+      html().modalText.textContent = getDescription().modal
       const user = {}
 
       document.querySelectorAll('.command--option')
@@ -176,37 +174,37 @@ export default json => {
 
             user.id = Number(option.dataset.player)
             user.image = option.dataset.image
-            html.modalIconImage.src = user.image
+            html().modalIconImage.src = user.image
             user.name = option.dataset.name
-            html.modalIconName.textContent = user.name
+            html().modalIconName.textContent = user.name
             toggleModal()
           })
         })
-      html.yes.addEventListener('click', toggleModal)
-      html.yes.addEventListener('click', () => {
-        html.commandText.textContent = getDescription().fixed
-        html.commandOptionContainer.innerHTML = generateFixedOption(user)
+      html().yes.addEventListener('click', toggleModal)
+      html().yes.addEventListener('click', () => {
+        html().commandText.textContent = getDescription().fixed
+        html().commandOptionContainer.innerHTML = generateFixedOption(user)
         const data = {
           agent: getAllAgents().filter(agent => agent.id === user.id)[0]
         }
 
         send(generateJson(data, 'vote'))
       })
-      html.no.addEventListener('click', toggleModal)
-      html.selectTime.addEventListener('time-start', elem => {
+      html().no.addEventListener('click', toggleModal)
+      html().selectTime.addEventListener('time-start', elem => {
         elem.target.style.color = 'black'
       })
-      html.selectTime.addEventListener('time-end', elem => {
+      html().selectTime.addEventListener('time-end', elem => {
         elem.target.style.color = 'red'
         const interval = setInterval(() => {
           if (getPhaseInfo().phase !== phase.nightVote) {
             if (isGameEnd()) {
               const dom = generateResultTable()
 
-              html.result.innerHTML = dom
-              html.result.classList.remove('hidden')
+              html().result.innerHTML = dom
+              html().result.classList.remove('hidden')
             } else {
-              html.obfucator.classList.add('hidden')
+              html().obfucator.classList.add('hidden')
               document.querySelectorAll('.command--option')
                 .forEach(e => {
                   e.classList.remove('hidden')
@@ -214,7 +212,7 @@ export default json => {
               document.querySelector('.command--select').classList.add('hidden')
               timer('day-time', json.phaseTimeLimit)
             }
-            html.obfucator.classList.remove('hidden')
+            html().obfucator.classList.remove('hidden')
             clearInterval(interval)
 
             return
@@ -235,7 +233,7 @@ export default json => {
     if (![ 'anonymousAudience', 'onymousAudience' ].includes(json.intensionalDisclosureRange)) {
       const dom = generateAgentChatMessage(json)
 
-      html.chat.insertAdjacentHTML('afterbegin', dom)
+      html().chat.insertAdjacentHTML('afterbegin', dom)
       if (json.chatIsMine) {
         if (json.intensionalDisclosureRange === 'public') {
           const counter = document.getElementById('public-counter')
@@ -249,13 +247,13 @@ export default json => {
       }
       const chatInterval = (/(\d+)s/).exec(json.chatInterval)[1] * 1000
 
-      html.publicButton.disabled = true
-      html.privateButton.disabled = true
-      html.limitedButton.disabled = true
+      html().publicButton.disabled = true
+      html().privateButton.disabled = true
+      html().limitedButton.disabled = true
       const interval = setInterval(() => {
-        html.publicButton.disabled = false
-        html.privateButton.disabled = false
-        html.limitedButton.disabled = false
+        html().publicButton.disabled = false
+        html().privateButton.disabled = false
+        html().limitedButton.disabled = false
         clearInterval(interval)
       }, chatInterval)
     }

@@ -14,8 +14,7 @@ const parseTimeString = time => {
   }
 }
 
-export default (id, time = 3) => {
-  const node = document.getElementById(id)
+export default (node, time = 3) => {
   const timerEvent = {
     timerEnd: new Event('time-end'),
     timerStart: new Event('time-start')
@@ -50,7 +49,7 @@ export default (id, time = 3) => {
   node.textContent = `残り${minute}'${second}`
   node.dispatchEvent(timerEvent.timerStart)
   const interval = window.setInterval(() => {
-    if (!tick(id)) {
+    if (!tick()) {
       clearInterval(interval)
       node.dispatchEvent(timerEvent.timerEnd)
     }
