@@ -4,6 +4,7 @@ const postcss = require('postcss')
 const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const glob = require('glob')
+const flowRemoveTypes = require('flow-remove-types');
 
 const mkdir = dir => {
   return new Promise((resolve, reject) => {
@@ -67,31 +68,22 @@ const buildHTML = (src, dest) => {
 }
 
 const buildJS = (src, dest) => {
-  fs.readFile(src, (err, data) => {
-    if (err) {
-      throw err
-    }
-    mkdir(dest)
-      .then(() => {
-        fs.writeFile(dest, data, err => {
-          if (err) {
-            throw err
-          }
-        })
-      })
-  })
+  const input = fs.readFileSync(src, 'utf-8')
+  const output = flowRemoveTypes(input, { pretty: true })
+
+  mkdir(dest)
+    .then(() => {
+      fs.writeFileSync(dest, output.toString())
+    })
 }
 
 const build = destDir => {
   buildCSS('src/app.css', `${destDir}/stylesheets/app.css`)
   buildHTML('src/index.html', `${destDir}/../app/views/index.scala.html`)
-  glob('src/**/*.js', (err, files) => {
-    if (err) {
-      throw err
-    }
-    files.forEach(file => {
-      buildJS(file, `${destDir}/javascripts/${path.relative('src', file)}`)
-    })
+  const files = glob.sync('src/**/*.js')
+
+  files.forEach(file => {
+    buildJS(file, `${destDir}/javascripts/${path.relative('src', file)}`)
   })
 }
 

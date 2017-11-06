@@ -4,11 +4,18 @@ module.exports = {
     "es6": true,
     "node": true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "extends": "eslint:recommended",
+  "plugins": [
+    "flowtype"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:flowtype/recommended"
+  ],
   "rules": {
     "array-bracket-spacing": ["error", "always", { "singleValue": false, "objectsInArrays": false, "arraysInArrays": false }],
     "array-callback-return": "error",
@@ -32,7 +39,6 @@ module.exports = {
     "eol-last": "error",
     "eqeqeq": "error",
     "func-names": "error",
-    "func-style": ["error", "expression"],
     "generator-star-spacing": ["error", "after"],
     "global-require": "error",
     "guard-for-in": "error",
