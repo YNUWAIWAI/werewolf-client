@@ -245,17 +245,6 @@ export default json => {
           counter.textContent = `${json.chatCounter}/${json.chatLimit}`
         }
       }
-      const chatInterval = (/(\d+)s/).exec(json.chatInterval)[1] * 1000
-
-      html().publicButton.disabled = true
-      html().privateButton.disabled = true
-      html().limitedButton.disabled = true
-      const interval = setInterval(() => {
-        html().publicButton.disabled = false
-        html().privateButton.disabled = false
-        html().limitedButton.disabled = false
-        clearInterval(interval)
-      }, chatInterval)
     }
   } else {
     console.error(kindOfMessage, json)
