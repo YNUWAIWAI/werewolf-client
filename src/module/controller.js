@@ -1,7 +1,7 @@
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
 import {generatePredictionTable, handleBoardClick, updatePredictionTable} from './prediction.js'
 import {getAllAgents, getMine, getPhaseInfo, isGameEnd, storeJson} from './server2client.js'
-import {getPhaseText, initInfo} from './info.js'
+import {getPhaseText, getPlayerRole, genPlayerInfo} from './info.js'
 import {generateAgentChatMessage} from './chat.js'
 import {generateJson} from './client2server.js'
 import {generateResultTable} from './result.js'
@@ -31,10 +31,12 @@ const html = () => ({
   modalText: document.getElementById('modal-text'),
   no: document.getElementById('no'),
   obfucator: document.getElementById('obfucator'),
+  player: document.getElementById('player'),
   prediction: document.getElementById('prediction'),
   privateButton: document.getElementById('private'),
   publicButton: document.getElementById('public'),
   result: document.getElementById('result'),
+  roleName: document.getElementById('role-name'),
   selectTime: document.getElementById('select-time'),
   yes: document.getElementById('yes')
 })
@@ -55,7 +57,9 @@ export default json => {
       storeJson(json)
       if (json.date === 1) {
         html().obfucator.classList.add('hidden')
-        html().info.innerHTML = initInfo()
+        html().dayPhase = getPhaseText()
+        html().player = genPlayerInfo()
+        html().roleName = getPlayerRole()
         html().prediction.innerHTML = generatePredictionTable()
         document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
           elem.addEventListener('click', handleBoardClick)
