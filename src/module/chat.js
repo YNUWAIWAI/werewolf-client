@@ -1,3 +1,4 @@
+// @flow
 const channels = {
   anonymousAudience: 'public',
   grave: 'grave',
@@ -10,9 +11,11 @@ const channels = {
   werewolf: 'limited'
 }
 
-const parseChat = text => text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')
+function parseChat(text: string): rawHTML {
+  return text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')
+}
 
-const parseTime = (from, to, limit) => {
+function parseTime(from: string, to: string, limit: string): string {
   const f = new Date(from)
   const t = new Date(to)
   const zeropad = num => String(num).padStart(2, '0')
@@ -20,7 +23,7 @@ const parseTime = (from, to, limit) => {
   return `${t.getFullYear()}/${zeropad(t.getMonth())}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
 }
 
-const generateAgentChatMessage = json => {
+function generateAgentChatMessage(json: any): rawHTML {
   if (channels[json.intensionalDisclosureRange] === 'public') {
     return `
     <div id="message${json.chatId}" class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
@@ -58,15 +61,15 @@ const generateAgentChatMessage = json => {
   <div>`
 }
 
-const generateAudienceChatMessage = json =>
-  `<div class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
+function generateAudienceChatMessage(json: any): string {
+  return `<div class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
     <div class="chat--arrow-box">
       <div class="chat--num"></div>
       <div class="chat--text">
         ${parseChat(json.chatText)}
       </div>
       <div class="chat--date">
-        ${parseTime(json.serverTimestamp)}
+        ${parseTime(json.phaseStartTime, json.serverTimestamp, json.phaseTimeLimit)}
       </div>
     </div>
     <div class="chat--icon">
@@ -74,5 +77,6 @@ const generateAudienceChatMessage = json =>
       <span>${json.chatUserName || ''}</span>
     </div>
   <div>`
+}
 
 export {generateAgentChatMessage, generateAudienceChatMessage}
