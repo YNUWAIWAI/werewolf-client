@@ -4,7 +4,7 @@ const postcss = require('postcss')
 const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const glob = require('glob')
-const flowRemoveTypes = require('flow-remove-types');
+const flowRemoveTypes = require('flow-remove-types')
 
 const mkdir = dir => {
   return new Promise((resolve, reject) => {
@@ -80,7 +80,7 @@ const buildJS = (src, dest) => {
 const build = destDir => {
   buildCSS('src/app.css', `${destDir}/stylesheets/app.css`)
   buildHTML('src/index.html', `${destDir}/../app/views/index.scala.html`)
-  const files = glob.sync('src/**/*.js')
+  const files = glob.sync('src/**/*.js', { ignore: 'src/flow-typed' })
 
   files.forEach(file => {
     buildJS(file, `${destDir}/javascripts/${path.relative('src', file)}`)
