@@ -25,6 +25,7 @@ const html = () => ({
   dayTime: document.getElementById('day-time'),
   info: document.getElementById('info'),
   limitedButton: document.getElementById('limited'),
+  limitedCounter: document.getElementById('limited-counter'),
   modal: document.getElementById('modal'),
   modalIconImage: document.getElementById('modal-icon-image'),
   modalIconName: document.getElementById('modal-icon-name'),
@@ -35,6 +36,7 @@ const html = () => ({
   prediction: document.getElementById('prediction'),
   privateButton: document.getElementById('private'),
   publicButton: document.getElementById('public'),
+  publicCounter: document.getElementById('public-counter'),
   result: document.getElementById('result'),
   roleName: document.getElementById('role-name'),
   selectTime: document.getElementById('select-time'),
@@ -271,9 +273,7 @@ export default json => {
       html().chat.insertAdjacentHTML('afterbegin', dom)
       if (json.chatIsMine) {
         if (json.intensionalDisclosureRange === 'public') {
-          const counter = document.getElementById('public-counter')
-
-          counter.textContent = `${json.chatCounter}/${json.chatLimit}`
+          html().publicCounter.textContent = `${json.chatCounter}/${json.chatLimit}`
           html().publicButton.form[0].value = ''
           if (json.chatCounter !== json.chatLimit) {
             html().publicButton.disabled = false
@@ -284,9 +284,7 @@ export default json => {
             html().privateButton.disabled = false
           }
         } else if (json.intensionalDisclosureRange === 'werewolf') {
-          const counter = document.getElementById('limited-counter')
-
-          counter.textContent = `${json.chatCounter}/${json.chatLimit}`
+          html().limitedCounter.textContent = `${json.chatCounter}/${json.chatLimit}`
           html().limitedButton.value = ''
           if (json.chatCounter !== json.chatLimit) {
             html().limitedButton.disabled = false
