@@ -57,9 +57,9 @@ export default json => {
       storeJson(json)
       if (json.date === 1) {
         html().obfucator.classList.add('hidden')
-        html().dayPhase = getPhaseText()
-        html().player = genPlayerInfo()
-        html().roleName = getPlayerRole()
+        html().dayPhase.textContent = getPhaseText()
+        html().player.innerHTML = genPlayerInfo()
+        html().roleName.textContent = getPlayerRole()
         html().prediction.innerHTML = generatePredictionTable()
         document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
           elem.addEventListener('click', handleBoardClick)
@@ -68,6 +68,7 @@ export default json => {
         updatePredictionTable()
       }
       html().publicButton.addEventListener('click', e => {
+        e.target.disabled = true
         const text = e.target.form[0].value
         const data = {
           channel: 'public',
@@ -77,6 +78,7 @@ export default json => {
         send(generateJson(data, 'chat'))
       })
       html().privateButton.addEventListener('click', e => {
+        e.target.disabled = true
         const text = e.target.form[0].value
         const data = {
           channel: 'private',
@@ -86,6 +88,7 @@ export default json => {
         send(generateJson(data, 'chat'))
       })
       html().limitedButton.addEventListener('click', e => {
+        e.target.disabled = true
         const text = e.target.form[0].value
         const data = {
           channel: 'werewolf',
@@ -271,10 +274,23 @@ export default json => {
           const counter = document.getElementById('public-counter')
 
           counter.textContent = `${json.chatCounter}/${json.chatLimit}`
+          html().publicButton.form[0].value = ''
+          if (json.chatCounter !== json.chatLimit) {
+            html().publicButton.disabled = false
+          }
+        } else if (json.intensionalDisclosureRange === 'private') {
+          html().privateButton.value = ''
+          if (json.chatCounter !== json.chatLimit) {
+            html().privateButton.disabled = false
+          }
         } else if (json.intensionalDisclosureRange === 'werewolf') {
           const counter = document.getElementById('limited-counter')
 
           counter.textContent = `${json.chatCounter}/${json.chatLimit}`
+          html().limitedButton.value = ''
+          if (json.chatCounter !== json.chatLimit) {
+            html().limitedButton.disabled = false
+          }
         }
       }
     }
