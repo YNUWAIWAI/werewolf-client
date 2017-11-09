@@ -67,7 +67,35 @@ export default json => {
       } else {
         updatePredictionTable()
       }
+      html().publicButton.addEventListener('click', e => {
+        const text = e.target.form[0].value
+        const data = {
+          channel: 'public',
+          text
+        }
+
+        send(generateJson(data, 'chat'))
+      })
+      html().privateButton.addEventListener('click', e => {
+        const text = e.target.form[0].value
+        const data = {
+          channel: 'private',
+          text
+        }
+
+        send(generateJson(data, 'chat'))
+      })
+      html().limitedButton.addEventListener('click', e => {
+        const text = e.target.form[0].value
+        const data = {
+          channel: 'werewolf',
+          text
+        }
+
+        send(generateJson(data, 'chat'))
+      })
       const myRole = trimBaseUri(getMine().role['@id'])
+
       if (myRole !== 'werewolf') {
         document.querySelector('.command--input.limited').classList.add('hidden')
       }
