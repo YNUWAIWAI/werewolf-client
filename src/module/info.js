@@ -9,17 +9,15 @@ const phaseDict = {
   'results': '結果'
 }
 
-const mine = getMine()
-
-function genPlayerInfo(): string {
-  return `<img src="${mine.agent.image}"><span>${mine.agent.name.ja}</span>`
+function genPlayerInfo(): rawHTML {
+  return `<img src="${getMine().agent.image}"><span>${getMine().agent.name.ja}</span>`
 }
 
 function getPlayerRole(): string {
-  return mine.role.name.ja
+  return getMine().role.name.ja
 }
 
-function getPhaseText(): rawHTML {
+function getPhaseText(): string {
   return `${getPhaseInfo().date}日目 ${phaseDict[getPhaseInfo().phase]}`
 }
 
