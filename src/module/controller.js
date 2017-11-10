@@ -24,8 +24,9 @@ const html = () => ({
   dayPhase: document.getElementById('day-phase'),
   dayTime: document.getElementById('day-time'),
   info: document.getElementById('info'),
-  limitedButton: document.getElementById('limited'),
+  limitedButton: document.getElementById('limited-button'),
   limitedCounter: document.getElementById('limited-counter'),
+  limitedTextarea: document.getElementById('limited-textarea'),
   modal: document.getElementById('modal'),
   modalIconImage: document.getElementById('modal-icon-image'),
   modalIconName: document.getElementById('modal-icon-name'),
@@ -34,9 +35,11 @@ const html = () => ({
   obfucator: document.getElementById('obfucator'),
   player: document.getElementById('player'),
   prediction: document.getElementById('prediction'),
-  privateButton: document.getElementById('private'),
-  publicButton: document.getElementById('public'),
+  privateButton: document.getElementById('private-button'),
+  privateTextarea: document.getElementById('private-textarea'),
+  publicButton: document.getElementById('public-button'),
   publicCounter: document.getElementById('public-counter'),
+  publicTextarea: document.getElementById('public-textarea'),
   result: document.getElementById('result'),
   roleName: document.getElementById('role-name'),
   selectTime: document.getElementById('select-time'),
@@ -71,33 +74,43 @@ export default json => {
       }
       html().publicButton.addEventListener('click', e => {
         e.target.disabled = true
-        const text = e.target.form[0].value
-        const data = {
-          channel: 'public',
-          text
+        const text = html().publicTextarea.value
+
+        if (text) {
+          const data = {
+            channel: 'public',
+            text
+          }
+
+          send(generateJson(data, 'chat'))
         }
 
-        send(generateJson(data, 'chat'))
       })
       html().privateButton.addEventListener('click', e => {
         e.target.disabled = true
-        const text = e.target.form[0].value
-        const data = {
-          channel: 'private',
-          text
-        }
+        const text = html().privateTextarea.value
 
-        send(generateJson(data, 'chat'))
+        if (text) {
+          const data = {
+            channel: 'private',
+            text
+          }
+
+          send(generateJson(data, 'chat'))
+        }
       })
       html().limitedButton.addEventListener('click', e => {
         e.target.disabled = true
-        const text = e.target.form[0].value
-        const data = {
-          channel: 'werewolf',
-          text
-        }
+        const text = html().limitedTextarea.value
 
-        send(generateJson(data, 'chat'))
+        if (text) {
+          const data = {
+            channel: 'werewolf',
+            text
+          }
+
+          send(generateJson(data, 'chat'))
+        }
       })
       const myRole = trimBaseUri(getMine().role['@id'])
 

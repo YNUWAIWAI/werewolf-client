@@ -36,18 +36,18 @@
   </div>
   <div class="command">
     <form name="public" class="command--input">
-      <textarea placeholder="公開用"></textarea>
+      <textarea id="public-textarea" placeholder="公開用"></textarea>
       <p class="command--input--counter" id="public-counter">0/10</p>
-      <button id="public" type="button">送信</button>
+      <button id="public-button" type="button">送信</button>
     </form>
     <form name="private" class="command--input private">
-      <textarea placeholder="非公開用"></textarea>
-      <button id="private" type="button">送信</button>
+      <textarea id="private-textarea" placeholder="非公開用"></textarea>
+      <button id="private-button" type="button">送信</button>
     </form>
     <form name="limited" class="command--input limited">
       <textarea placeholder="人狼用"></textarea>
-      <p class="command--input--counter" id="limited-counter">0/10</p>
-      <button id="limited" type="button">送信</button>
+      <p id="limited-textarea" class="command--input--counter" id="limited-counter">0/10</p>
+      <button id="limited-button" type="button">送信</button>
     </form>
     <div class="command--select hidden">
       <div class="command--description">
