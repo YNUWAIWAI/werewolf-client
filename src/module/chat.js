@@ -80,7 +80,58 @@ const generateAudienceChatMessage = (json: any): string =>
     </div>
   <div>`
 
+const sendChat = (channel: string): void => {
+  let text
+
+  if (channel === 'public') {
+    html().publicButton.disabled = true
+    text = html().publicTextarea.value
+  } else if (channel === 'private') {
+    html().privateButton.disabled = true
+    text = html().privateTextarea.value
+  } else {
+    html().limitedButton.disabled = true
+    text = html().limitedTextarea.value
+  }
+
+  if (text) {
+    const data = {
+      channel,
+      text
+    }
+
+    send(generateJson(data, 'chat'))
+  }
+}
+
 const addChatEventListner = (): void => {
+  html().publicTextarea.addEventListener('keydown', e => {
+    if (html().publicButton.disabled) {
+      return
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      sendChat('public')
+    }
+  })
+
+  html().privateTextarea.addEventListener('keydown', e => {
+    if (html().privateButton.disabled) {
+      return
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      sendChat('private')
+    }
+  })
+
+  html().limitedTextarea.addEventListener('keydown', e => {
+    if (html().limitedButton.disabled) {
+      return
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      sendChat('limited')
+    }
+  })
+
   html().publicTextarea.addEventListener('keyup', e => {
     const len = Array.of(...e.target.value).length
 
@@ -130,46 +181,15 @@ const addChatEventListner = (): void => {
   })
 
   html().publicButton.addEventListener('click', e => {
-    e.target.disabled = true
-    const text = html().publicTextarea.value
-
-    if (text) {
-      const data = {
-        channel: 'public',
-        text
-      }
-
-      send(generateJson(data, 'chat'))
-    }
-
+    sendChat('public')
   })
 
   html().privateButton.addEventListener('click', e => {
-    e.target.disabled = true
-    const text = html().privateTextarea.value
-
-    if (text) {
-      const data = {
-        channel: 'private',
-        text
-      }
-
-      send(generateJson(data, 'chat'))
-    }
+    sendChar('private')
   })
 
   html().limitedButton.addEventListener('click', e => {
-    e.target.disabled = true
-    const text = html().limitedTextarea.value
-
-    if (text) {
-      const data = {
-        channel: 'werewolf',
-        text
-      }
-
-      send(generateJson(data, 'chat'))
-    }
+    sendChat('limited')
   })
 }
 

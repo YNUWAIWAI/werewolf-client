@@ -80,7 +80,7 @@ const buildJS = (src, dest) => {
 const build = destDir => {
   buildCSS('src/app.css', `${destDir}/stylesheets/app.css`)
   buildHTML('src/index.html', `${destDir}/../app/views/index.scala.html`)
-  const files = glob.sync('src/**/*.js', { ignore: 'src/flow-typed' })
+  const files = glob.sync('src/**/*.js', { ignore: 'src/flow-typed/*.js' })
 
   files.forEach(file => {
     buildJS(file, `${destDir}/javascripts/${path.relative('src', file)}`)
