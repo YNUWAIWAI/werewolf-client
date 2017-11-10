@@ -5,7 +5,7 @@ import {getAllAgents, getMine, getPhaseInfo, isGameEnd, storeJson} from './serve
 import {getPhaseText, getPlayerRole, genPlayerInfo} from './info.js'
 import {generateJson} from './client2server.js'
 import {generateResultTable} from './result.js'
-import html from 'html.js'
+import html from './html.js'
 import {send} from './websocket.js'
 import timer from './timer.js'
 import {trimBaseUri} from './util.js'
