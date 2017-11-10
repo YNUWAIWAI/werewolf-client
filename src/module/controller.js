@@ -220,18 +220,18 @@ export default json => {
       if (json.chatIsMine) {
         if (json.intensionalDisclosureRange === 'public') {
           html().publicCounter.textContent = `${json.chatCounter}/${json.chatLimit}`
-          html().publicButton.form[0].value = ''
+          html().publicTextarea.value = ''
           if (json.chatCounter !== json.chatLimit) {
             html().publicButton.disabled = false
           }
         } else if (json.intensionalDisclosureRange === 'private') {
-          html().privateButton.value = ''
+          html().privateTextarea.value = ''
           if (json.chatCounter !== json.chatLimit) {
             html().privateButton.disabled = false
           }
         } else if (json.intensionalDisclosureRange === 'werewolf') {
           html().limitedCounter.textContent = `${json.chatCounter}/${json.chatLimit}`
-          html().limitedButton.value = ''
+          html().limitedTextarea.value = ''
           if (json.chatCounter !== json.chatLimit) {
             html().limitedButton.disabled = false
           }
