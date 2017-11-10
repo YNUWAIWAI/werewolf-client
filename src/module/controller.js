@@ -1,10 +1,11 @@
+import {addChatEventListner, generateAgentChatMessage} from './chat.js'
 import {generateDayVoteOption, generateFixedOption, generateNightOption, getDescription} from './selection.js'
 import {generatePredictionTable, handleBoardClick, updatePredictionTable} from './prediction.js'
 import {getAllAgents, getMine, getPhaseInfo, isGameEnd, storeJson} from './server2client.js'
 import {getPhaseText, getPlayerRole, genPlayerInfo} from './info.js'
-import {generateAgentChatMessage} from './chat.js'
 import {generateJson} from './client2server.js'
 import {generateResultTable} from './result.js'
+import html from 'html.js'
 import {send} from './websocket.js'
 import timer from './timer.js'
 import {trimBaseUri} from './util.js'
@@ -16,35 +17,6 @@ const phase = {
   postMortem: 'post mortem',
   results: 'results'
 }
-
-const html = () => ({
-  chat: document.getElementById('chat'),
-  commandOptionContainer: document.getElementById('command--option-container'),
-  commandText: document.getElementById('command-text'),
-  dayPhase: document.getElementById('day-phase'),
-  dayTime: document.getElementById('day-time'),
-  info: document.getElementById('info'),
-  limitedButton: document.getElementById('limited-button'),
-  limitedCounter: document.getElementById('limited-counter'),
-  limitedTextarea: document.getElementById('limited-textarea'),
-  modal: document.getElementById('modal'),
-  modalIconImage: document.getElementById('modal-icon-image'),
-  modalIconName: document.getElementById('modal-icon-name'),
-  modalText: document.getElementById('modal-text'),
-  no: document.getElementById('no'),
-  obfucator: document.getElementById('obfucator'),
-  player: document.getElementById('player'),
-  prediction: document.getElementById('prediction'),
-  privateButton: document.getElementById('private-button'),
-  privateTextarea: document.getElementById('private-textarea'),
-  publicButton: document.getElementById('public-button'),
-  publicCounter: document.getElementById('public-counter'),
-  publicTextarea: document.getElementById('public-textarea'),
-  result: document.getElementById('result'),
-  roleName: document.getElementById('role-name'),
-  selectTime: document.getElementById('select-time'),
-  yes: document.getElementById('yes')
-})
 
 const toggleModal = () => {
   html().obfucator.classList.toggle('hidden')
@@ -72,46 +44,7 @@ export default json => {
       } else {
         updatePredictionTable()
       }
-      html().publicButton.addEventListener('click', e => {
-        e.target.disabled = true
-        const text = html().publicTextarea.value
-
-        if (text) {
-          const data = {
-            channel: 'public',
-            text
-          }
-
-          send(generateJson(data, 'chat'))
-        }
-
-      })
-      html().privateButton.addEventListener('click', e => {
-        e.target.disabled = true
-        const text = html().privateTextarea.value
-
-        if (text) {
-          const data = {
-            channel: 'private',
-            text
-          }
-
-          send(generateJson(data, 'chat'))
-        }
-      })
-      html().limitedButton.addEventListener('click', e => {
-        e.target.disabled = true
-        const text = html().limitedTextarea.value
-
-        if (text) {
-          const data = {
-            channel: 'werewolf',
-            text
-          }
-
-          send(generateJson(data, 'chat'))
-        }
-      })
+      addChatEventListner()
       const myRole = trimBaseUri(getMine().role['@id'])
 
       if (myRole !== 'werewolf') {

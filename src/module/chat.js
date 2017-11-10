@@ -1,4 +1,8 @@
 // @flow
+import {generateJson} from './client2server.js'
+import html from './html.js'
+import {send} from './websocket.js'
+
 const channels = {
   anonymousAudience: 'public',
   grave: 'grave',
@@ -79,4 +83,47 @@ function generateAudienceChatMessage(json: any): string {
   <div>`
 }
 
-export {generateAgentChatMessage, generateAudienceChatMessage}
+const addChatEventListner = (): void => {
+  html().publicButton.addEventListener('click', e => {
+    e.target.disabled = true
+    const text = html().publicTextarea.value
+
+    if (text) {
+      const data = {
+        channel: 'public',
+        text
+      }
+
+      send(generateJson(data, 'chat'))
+    }
+
+  })
+  html().privateButton.addEventListener('click', e => {
+    e.target.disabled = true
+    const text = html().privateTextarea.value
+
+    if (text) {
+      const data = {
+        channel: 'private',
+        text
+      }
+
+      send(generateJson(data, 'chat'))
+    }
+  })
+  html().limitedButton.addEventListener('click', e => {
+    e.target.disabled = true
+    const text = html().limitedTextarea.value
+
+    if (text) {
+      const data = {
+        channel: 'werewolf',
+        text
+      }
+
+      send(generateJson(data, 'chat'))
+    }
+  })
+}
+
+export {addChatEventListner, generateAgentChatMessage, generateAudienceChatMessage}
