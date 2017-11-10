@@ -15,11 +15,9 @@ const channels = {
   werewolf: 'limited'
 }
 
-function parseChat(text: string): rawHTML {
-  return text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')
-}
+const parseChat = (text: string): rawHTML => text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')
 
-function parseTime(from: string, to: string, limit: string): string {
+const parseTime = (from: string, to: string, limit: string): string => {
   const f = new Date(from)
   const t = new Date(to)
   const zeropad = num => String(num).padStart(2, '0')
@@ -27,7 +25,7 @@ function parseTime(from: string, to: string, limit: string): string {
   return `${t.getFullYear()}/${zeropad(t.getMonth())}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
 }
 
-function generateAgentChatMessage(json: any): rawHTML {
+const generateAgentChatMessage = (json: any): rawHTML => {
   if (channels[json.intensionalDisclosureRange] === 'public') {
     return `
     <div id="message${json.chatId}" class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
@@ -65,8 +63,8 @@ function generateAgentChatMessage(json: any): rawHTML {
   <div>`
 }
 
-function generateAudienceChatMessage(json: any): string {
-  return `<div class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
+const generateAudienceChatMessage = (json: any): string =>
+  `<div class="chat--item ${json.chatIsMine ? 'me' : ''} ${channels[json.intensionalDisclosureRange]}">
     <div class="chat--arrow-box">
       <div class="chat--num"></div>
       <div class="chat--text">
@@ -81,7 +79,6 @@ function generateAudienceChatMessage(json: any): string {
       <span>${json.chatUserName || ''}</span>
     </div>
   <div>`
-}
 
 const addChatEventListner = (): void => {
   html().publicButton.addEventListener('click', e => {

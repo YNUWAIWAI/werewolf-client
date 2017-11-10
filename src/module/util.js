@@ -1,6 +1,4 @@
 // @flow
-function trimBaseUri(id: string): string {
-  return (/\/(\w+)$/).exec(id)[1]
-}
+const trimBaseUri = (id: string): string => (/\/(\w+)$/).exec(id)[1]
 
 export {trimBaseUri}
