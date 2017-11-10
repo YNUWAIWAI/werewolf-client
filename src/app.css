@@ -35,7 +35,7 @@ body {
 .info {
   display: flex;
   height: 10vh;
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
 }
 
 .day {
@@ -113,7 +113,7 @@ body {
 
 .activity-container {
   display: flex;
-  height: 60vh;
+  height: 63vh;
   justify-content: space-around;
 }
 
