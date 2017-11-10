@@ -81,6 +81,54 @@ const generateAudienceChatMessage = (json: any): string =>
   <div>`
 
 const addChatEventListner = (): void => {
+  html().publicTextarea.addEventListener('keyup', e => {
+    const len = Array.of(...e.target.value).length
+
+    if (len > 140) {
+      html().publicChar.style.color = 'red'
+      html().publicButton.disabled = true
+    } else if (len <= 0 || html().publicCounter.dataset.counter === 'max') {
+      html().publicChar.style.color = 'black'
+      html().publicButton.disabled = true
+    } else {
+      html().publicChar.style.color = 'black'
+      html().publicButton.disabled = false
+    }
+    html().publicChar.textContent = len
+  })
+
+  html().privateTextarea.addEventListener('keyup', e => {
+    const len = Array.of(...e.target.value).length
+
+    if (len > 140) {
+      html().privateChar.style.color = 'red'
+      html().privateButton.disabled = true
+    } else if (len <= 0) {
+      html().privateChar.style.color = 'black'
+      html().privateButton.disabled = true
+    } else {
+      html().privateChar.style.color = 'black'
+      html().privateButton.disabled = false
+    }
+    html().privateChar.textContent = len
+  })
+
+  html().limitedTextarea.addEventListener('keyup', e => {
+    const len = Array.of(...e.target.value).length
+
+    if (len > 140) {
+      html().limitedChar.style.color = 'red'
+      html().limitedButton.disabled = true
+    } else if (len <= 0 || html().limitedCounter.dataset.counter === 'max') {
+      html().limitedChar.style.color = 'black'
+      html().limitedButton.disabled = true
+    } else {
+      html().limitedChar.style.color = 'black'
+      html().limitedButton.disabled = false
+    }
+    html().limitedChar.textContent = len
+  })
+
   html().publicButton.addEventListener('click', e => {
     e.target.disabled = true
     const text = html().publicTextarea.value
@@ -95,6 +143,7 @@ const addChatEventListner = (): void => {
     }
 
   })
+
   html().privateButton.addEventListener('click', e => {
     e.target.disabled = true
     const text = html().privateTextarea.value
@@ -108,6 +157,7 @@ const addChatEventListner = (): void => {
       send(generateJson(data, 'chat'))
     }
   })
+
   html().limitedButton.addEventListener('click', e => {
     e.target.disabled = true
     const text = html().limitedTextarea.value

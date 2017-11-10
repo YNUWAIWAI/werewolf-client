@@ -219,6 +219,7 @@ export default json => {
       html().chat.insertAdjacentHTML('afterbegin', dom)
       if (json.chatIsMine) {
         if (json.intensionalDisclosureRange === 'public') {
+          html().publicCounter.dataset.counter = json.chatCounter === json.chatLimit ? 'max' : json.chatCounter
           html().publicCounter.textContent = `${json.chatCounter}/${json.chatLimit}`
           html().publicTextarea.value = ''
           if (json.chatCounter !== json.chatLimit) {
@@ -230,6 +231,7 @@ export default json => {
             html().privateButton.disabled = false
           }
         } else if (json.intensionalDisclosureRange === 'werewolf') {
+          html().limitedCounter.dataset.counter = json.chatCounter === json.chatLimit ? 'max' : json.chatCounter
           html().limitedCounter.textContent = `${json.chatCounter}/${json.chatLimit}`
           html().limitedTextarea.value = ''
           if (json.chatCounter !== json.chatLimit) {

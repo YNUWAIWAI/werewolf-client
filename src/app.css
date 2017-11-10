@@ -394,6 +394,12 @@ body {
       background: var(--public-color);
     }
 
+    &--char {
+      position: absolute;
+      top: calc(70% - 1.25em);
+      right: 0.5em;
+    }
+
     &--counter {
       position: absolute;
       bottom: 0;
