@@ -115,6 +115,10 @@ body {
   display: flex;
   height: 63vh;
   justify-content: space-around;
+
+  &.expand {
+    height: 86vh;
+  }
 }
 
 .chat {
@@ -374,6 +378,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 2.5vh 0;
+  position: relative;
 
   &--input {
     width: 30vw;
@@ -480,6 +485,41 @@ body {
     & > span {
       font-size: xx-small;
     }
+  }
+
+  &.hide {
+    position: fixed;
+    top: 98vh;
+  }
+}
+
+.hide--button {
+  width: 4vw;
+  height: 1.5em;
+  position: absolute;
+  bottom: 23vh;
+  right: 0;
+  border: 0;
+  background: #303030;
+
+  &:focus {
+    outline: unset;
+  }
+
+  &--icon {
+    border-style: solid;
+    border-color: white transparent;
+    border-width: 7px 5px 0;
+    position: absolute;
+    margin-left: -2px;
+
+    &.hide {
+      border-width: 0 4px 5px;
+    }
+  }
+
+  &.hide {
+    bottom: 0;
   }
 }
 

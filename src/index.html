@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <div class="activity-container">
+  <div id="activity-container" class="activity-container">
     <div id="chat" class="chat"></div>
     <div id="prediction" class="prediction">
       <div class="hidden" data-state="O"></div>
@@ -34,7 +34,7 @@
       <div class="hidden" data-state="?"></div>
     </div>
   </div>
-  <div class="command">
+  <div id="command" class="command">
     <form name="public" class="command--input">
       <textarea id="public-textarea" placeholder="公開用"></textarea>
       <span id="public-char" class="command--input--char">0</span>
@@ -59,6 +59,7 @@
       <div id="command--option-container" class="command--option-container"></div>
     </div>
   </div>
+  <button id="hide-button" class="hide--button" type='button'><span id="hide-button-icon" class="hide--button--icon"></span></button>
   <div id="modal" class="modal hidden">
     <div class="modal--icon">
       <img id="modal-icon-image" src="">
@@ -71,6 +72,6 @@
     </div>
   </div>
   <div id="result" class="result hidden"></div>
-  <div id="obfucator" class="obfucator"></div>
+  <div id="obfucator" class="obfucator hidden"></div>
 </body>
 </html>
