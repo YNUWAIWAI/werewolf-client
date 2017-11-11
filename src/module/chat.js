@@ -17,12 +17,15 @@ const channels = {
 
 const parseChat = (text: string): rawHTML => text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')
 
-const parseTime = (from: string, to: string, limit: string): string => {
+const parseTime = (from: string, to: string, limit: number): string => {
   const f = new Date(from)
   const t = new Date(to)
-  const zeropad = num => String(num).padStart(2, '0')
+  const zeropad = (num: number): string => String(num).padStart(2, '0')
+  const postTime = `${t.getFullYear()}/${zeropad(t.getMonth() + 1)}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
+  const distance = f.getTime() + limit * 1000 - t.getTime()
+  const restTime = `${zeropad(Math.floor(distance / (60 * 1000)))}'${zeropad(Math.floor(distance / 1000))}`
 
-  return `${t.getFullYear()}/${zeropad(t.getMonth())}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
+  return `${postTime}（残り${restTime}）`
 }
 
 const generateAgentChatMessage = (json: any): rawHTML => {
