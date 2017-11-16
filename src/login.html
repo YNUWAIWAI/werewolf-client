@@ -1,10 +1,10 @@
 @import helper._
 @import models.User
 @(loginForm: Form[User])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
-@main("Log in") {
-    @form(action = routes.AuthController.loginResult()) {
-        @inputText(loginForm("email"))
-        @inputPassword(loginForm("password"))
+@main("Log in", "login.css") {
+    @form(action = routes.AuthController.loginResult(), 'class->"login") {
+        @inputText(loginForm("email"), 'class->"input")
+        @inputPassword(loginForm("password"), 'class->"input")
         @CSRF.formField
         <input type="submit" >
     }

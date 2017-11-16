@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+}
+
+.login {
+  border: solid 1px black;
+  border-radius: 1em;
+  padding: 1em;
+}
