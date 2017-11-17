@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/x-icon" href='@routes.Assets.at("images/favicon.ico")'>
+  <link rel="stylesheet" href="./app.css">
+  <title>werewolf client</title>
+</head>
+<body>
+  <div id="info" class="info">
+    <div id="day" class="day">
+      <div class="day--text">
+        <span id="day-phase">1日目 昼</span>
+        <span id="day-time" style="color: red;">終了</span>
+      </div>
+    </div>
+      <div id="role" class="role">
+      <div id="player" class="role--icon"><img src="https://werewolf.world/image/0.1/Walter.jpg"><span>ヴァルター</span></div>
+        <div class="role--text">
+          あなたは<span id="role-name">村人</span>です
+        </div>
+    </div>
+  </div>
+    <div id="activity-container" class="activity-container">
+    <div id="chat" class="chat">
+      <div class="chat--item private">
+        <div class="chat--arrow-box">
+          <div class="chat--num"></div>
+          <div class="chat--text">
+            aaaaaaaaaaaa
+          </div>
+          <div class="chat--date">
+            2017/11/17 12:51'03（残り00'44）
+          </div>
+        </div>
+        <div class="chat--icon">
+          <img src="https://werewolf.world/image/0.1/Friedel.jpg">
+          <span>フリーデル</span>
+        </div>
+        <div></div>
+      </div>
+      <div id="message1" class="chat--item public">
+        <div class="chat--arrow-box">
+          <div class="chat--num">1</div>
+          <div class="chat--text">
+            aaaaaaaaaa
+          </div>
+          <div class="chat--date">
+            2017/11/17 12:51'01（残り00'45）
+          </div>
+        </div>
+        <div class="chat--icon">
+          <img src="https://werewolf.world/image/0.1/Friedel.jpg">
+          <span>フリーデル</span>
+        </div>
+        <div></div>
+      </div>
+    </div>
+    <div id="prediction" class="prediction" style="grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; grid-template-areas: none; grid-auto-flow: initial; grid-auto-columns: initial; grid-auto-rows: initial; grid-gap: initial;">
+      <div></div>
+      <div data-role="villager" data-tooltip="村人">
+        <img src="https://werewolf.world/image/0.1/villager.jpg">
+        ×6
+      </div>
+      <div data-role="seer" data-tooltip="占い師">
+        <img src="https://werewolf.world/image/0.1/seer.jpg">
+        ×1
+      </div>
+      <div data-role="medium" data-tooltip="霊媒師">
+        <img src="https://werewolf.world/image/0.1/medium.jpg">
+        ×1
+      </div>
+      <div data-role="hunter" data-tooltip="狩人">
+        <img src="https://werewolf.world/image/0.1/hunter.jpg">
+        ×1
+      </div>
+      <div data-role="mason" data-tooltip="共有者">
+        <img src="https://werewolf.world/image/0.1/mason.jpg">
+        ×2
+      </div>
+      <div data-role="madman" data-tooltip="狂人">
+        <img src="https://werewolf.world/image/0.1/madman.jpg">
+        ×1
+      </div>
+      <div data-role="werewolf" data-tooltip="人狼">
+        <img src="https://werewolf.world/image/0.1/werewolf.jpg">
+        ×2
+      </div>
+      <div data-role="werehumster" data-tooltip="ハムスター人間">
+        <img src="https://werewolf.world/image/0.1/werehumster.jpg">
+        ×1
+      </div>
+      <div class="prediction--player" data-player="0">
+        <img src="https://werewolf.world/image/0.1/Gert.jpg">
+        <span>ゲルト</span>
+      </div><div data-role="villager" data-player="0" data-state="?" data-date="1"></div><div data-role="seer" data-player="0" data-state="fill" data-date="1"></div><div data-role="medium" data-player="0" data-state="?" data-date="1"></div><div data-role="hunter" data-player="0" data-state="?" data-date="1"></div><div data-role="mason" data-player="0" data-state="?" data-date="1"></div><div data-role="madman" data-player="0" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="0" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="0" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="1">
+        <img src="https://werewolf.world/image/0.1/Walter.jpg">
+        <span>ヴァルター</span>
+      </div><div data-role="villager" data-player="1" data-state="fill" data-date="1"></div><div data-role="seer" data-player="1" data-state="fix" data-date="1"></div><div data-role="medium" data-player="1" data-state="fill" data-date="1"></div><div data-role="hunter" data-player="1" data-state="fill" data-date="1"></div><div data-role="mason" data-player="1" data-state="fill" data-date="1"></div><div data-role="madman" data-player="1" data-state="fill" data-date="1"></div><div data-role="werewolf" data-player="1" data-state="fill" data-date="1"></div><div data-role="werehumster" data-player="1" data-state="fill" data-date="1"></div>
+      <div class="prediction--player" data-player="2">
+        <img src="https://werewolf.world/image/0.1/Moritz.jpg">
+        <span>モーリッツ</span>
+      </div><div data-role="villager" data-player="2" data-state="?" data-date="1"></div><div data-role="seer" data-player="2" data-state="fill" data-date="1"></div><div data-role="medium" data-player="2" data-state="?" data-date="1"></div><div data-role="hunter" data-player="2" data-state="?" data-date="1"></div><div data-role="mason" data-player="2" data-state="?" data-date="1"></div><div data-role="madman" data-player="2" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="2" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="2" data-state="tri" data-date="1"></div>
+      <div class="prediction--player" data-player="3">
+        <img src="https://werewolf.world/image/0.1/Simson.jpg">
+        <span>ジムゾン</span>
+      </div><div data-role="villager" data-player="3" data-state="?" data-date="1"></div><div data-role="seer" data-player="3" data-state="fill" data-date="1"></div><div data-role="medium" data-player="3" data-state="?" data-date="1"></div><div data-role="hunter" data-player="3" data-state="?" data-date="1"></div><div data-role="mason" data-player="3" data-state="?" data-date="1"></div><div data-role="madman" data-player="3" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="3" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="3" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="4">
+        <img src="https://werewolf.world/image/0.1/Thomas.jpg">
+        <span>トーマス</span>
+      </div><div data-role="villager" data-player="4" data-state="?" data-date="1"></div><div data-role="seer" data-player="4" data-state="fill" data-date="1"></div><div data-role="medium" data-player="4" data-state="?" data-date="1"></div><div data-role="hunter" data-player="4" data-state="?" data-date="1"></div><div data-role="mason" data-player="4" data-state="?" data-date="1"></div><div data-role="madman" data-player="4" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="4" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="4" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="5">
+        <img src="https://werewolf.world/image/0.1/Nicholas.jpg">
+        <span>ニコラス</span>
+      </div><div data-role="villager" data-player="5" data-state="?" data-date="1"></div><div data-role="seer" data-player="5" data-state="fill" data-date="1"></div><div data-role="medium" data-player="5" data-state="?" data-date="1"></div><div data-role="hunter" data-player="5" data-state="?" data-date="1"></div><div data-role="mason" data-player="5" data-state="?" data-date="1"></div><div data-role="madman" data-player="5" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="5" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="5" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="6">
+        <img src="https://werewolf.world/image/0.1/Dieter.jpg">
+        <span>ディーター</span>
+      </div><div data-role="villager" data-player="6" data-state="?" data-date="1"></div><div data-role="seer" data-player="6" data-state="fill" data-date="1"></div><div data-role="medium" data-player="6" data-state="?" data-date="1"></div><div data-role="hunter" data-player="6" data-state="?" data-date="1"></div><div data-role="mason" data-player="6" data-state="?" data-date="1"></div><div data-role="madman" data-player="6" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="6" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="6" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="7">
+        <img src="https://werewolf.world/image/0.1/Peter.jpg">
+        <span>ペーター</span>
+      </div><div data-role="villager" data-player="7" data-state="?" data-date="1"></div><div data-role="seer" data-player="7" data-state="fill" data-date="1"></div><div data-role="medium" data-player="7" data-state="?" data-date="1"></div><div data-role="hunter" data-player="7" data-state="?" data-date="1"></div><div data-role="mason" data-player="7" data-state="?" data-date="1"></div><div data-role="madman" data-player="7" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="7" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="7" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="8">
+        <img src="https://werewolf.world/image/0.1/Lisa.jpg">
+        <span>リーザ</span>
+      </div><div data-role="villager" data-player="8" data-state="?" data-date="1"></div><div data-role="seer" data-player="8" data-state="fill" data-date="1"></div><div data-role="medium" data-player="8" data-state="?" data-date="1"></div><div data-role="hunter" data-player="8" data-state="?" data-date="1"></div><div data-role="mason" data-player="8" data-state="?" data-date="1"></div><div data-role="madman" data-player="8" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="8" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="8" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="9">
+        <img src="https://werewolf.world/image/0.1/Alvin.jpg">
+        <span>アルビン</span>
+      </div><div data-role="villager" data-player="9" data-state="?" data-date="1"></div><div data-role="seer" data-player="9" data-state="fill" data-date="1"></div><div data-role="medium" data-player="9" data-state="?" data-date="1"></div><div data-role="hunter" data-player="9" data-state="?" data-date="1"></div><div data-role="mason" data-player="9" data-state="?" data-date="1"></div><div data-role="madman" data-player="9" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="9" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="9" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="10">
+        <img src="https://werewolf.world/image/0.1/Catalina.jpg">
+        <span>カタリナ</span>
+      </div><div data-role="villager" data-player="10" data-state="?" data-date="1"></div><div data-role="seer" data-player="10" data-state="fill" data-date="1"></div><div data-role="medium" data-player="10" data-state="?" data-date="1"></div><div data-role="hunter" data-player="10" data-state="?" data-date="1"></div><div data-role="mason" data-player="10" data-state="?" data-date="1"></div><div data-role="madman" data-player="10" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="10" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="10" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="11">
+        <img src="https://werewolf.world/image/0.1/Otto.jpg">
+        <span>オットー</span>
+      </div><div data-role="villager" data-player="11" data-state="?" data-date="1"></div><div data-role="seer" data-player="11" data-state="fill" data-date="1"></div><div data-role="medium" data-player="11" data-state="?" data-date="1"></div><div data-role="hunter" data-player="11" data-state="?" data-date="1"></div><div data-role="mason" data-player="11" data-state="?" data-date="1"></div><div data-role="madman" data-player="11" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="11" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="11" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="12">
+        <img src="https://werewolf.world/image/0.1/Joachim.jpg">
+        <span>ヨアヒム</span>
+      </div><div data-role="villager" data-player="12" data-state="?" data-date="1"></div><div data-role="seer" data-player="12" data-state="fill" data-date="1"></div><div data-role="medium" data-player="12" data-state="?" data-date="1"></div><div data-role="hunter" data-player="12" data-state="?" data-date="1"></div><div data-role="mason" data-player="12" data-state="?" data-date="1"></div><div data-role="madman" data-player="12" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="12" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="12" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="13">
+        <img src="https://werewolf.world/image/0.1/Pamela.jpg">
+        <span>パメラ</span>
+      </div><div data-role="villager" data-player="13" data-state="?" data-date="1"></div><div data-role="seer" data-player="13" data-state="fill" data-date="1"></div><div data-role="medium" data-player="13" data-state="?" data-date="1"></div><div data-role="hunter" data-player="13" data-state="?" data-date="1"></div><div data-role="mason" data-player="13" data-state="?" data-date="1"></div><div data-role="madman" data-player="13" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="13" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="13" data-state="?" data-date="1"></div>
+      <div class="prediction--player" data-player="14">
+        <img src="https://werewolf.world/image/0.1/Jacob.jpg">
+        <span>ヤコブ</span>
+      </div><div data-role="villager" data-player="14" data-state="?" data-date="1"></div><div data-role="seer" data-player="14" data-state="fill" data-date="1"></div><div data-role="medium" data-player="14" data-state="?" data-date="1"></div><div data-role="hunter" data-player="14" data-state="?" data-date="1"></div><div data-role="mason" data-player="14" data-state="?" data-date="1"></div><div data-role="madman" data-player="14" data-state="?" data-date="1"></div><div data-role="werewolf" data-player="14" data-state="?" data-date="1"></div><div data-role="werehumster" data-player="14" data-state="?" data-date="1"></div></div>
+  </div>
+  <div id="command" class="command">
+    <form name="public" class="command--input">
+      <textarea id="public-textarea" placeholder="公開用"></textarea>
+      <span id="public-char" class="command--input--char">0</span>
+      <span class="command--input--counter" id="public-counter" data-counter="0">0/10</span>
+      <button id="public-button" type="button">送信</button>
+    </form>
+    <form name="private" class="command--input private">
+      <textarea id="private-textarea" placeholder="非公開用"></textarea>
+      <span id="private-char" class="command--input--char">0</span>
+      <button id="private-button" type="button">送信</button>
+    </form>
+    <form name="limited" class="command--input limited">
+      <textarea id="limited-textarea" placeholder="人狼用"></textarea>
+      <span id="limited-char" class="command--input--char">0</span>
+      <p class="command--input--counter" id="limited-counter" data-counter="0"s>0/10</p>
+      <button id="limited-button" type="button">送信</button>
+    </form>
+    <div class="command--select hidden">
+      <div class="command--description">
+        <span id='command-text'>投票先を選んでください</span>（<span id="select-time"></span>）
+      </div>
+      <div id="command--option-container" class="command--option-container"></div>
+    </div>
+  </div>
+  <button id="hide-button" class="hide--button" type='button'><span id="hide-button-icon" class="hide--button--icon"></span></button>
+  <div id="modal" class="modal hidden">
+    <div class="modal--icon">
+      <img id="modal-icon-image" src="">
+      <span id="modal-icon-name"></span>
+    </div>
+    <div class="modal--description"><span id='modal-text'>投票先はこちらでいいですか？</span>（<span id="modal-time"></span>）</div>
+    <div class="modal--button--container">
+      <button id="yes" class="modal--button" value="yes">はい</button>
+      <button id="no" class="modal--button" value="no">いいえ</button>
+    </div>
+  </div>
+  <div id="result" class="result hidden"></div>
+  <div id="obfucator" class="obfucator hidden"></div>
+  <script>
+      const handleBoardClick = e => {
+        const state = [ '?', 'Δ', 'O', 'X' ]
+        const currentState = e.target.dataset.state
+
+        if (!state.includes(currentState)) {
+          e.target.removeEventListener('click', handleBoardClick)
+
+          return
+        }
+        const nextIndex = (state.indexOf(currentState) + 1) % state.length
+        const nextState = state[nextIndex]
+
+        e.target.dataset.state = nextState
+      }
+
+      document.querySelectorAll('.prediction > div[ data-state ]').forEach(elem => {
+        elem.addEventListener('click', handleBoardClick)
+      })
+  </script>
+</body>
+</html>
