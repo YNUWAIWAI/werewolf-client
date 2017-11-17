@@ -188,7 +188,7 @@ const addChatEventListner = (): void => {
   })
 
   html().privateButton.addEventListener('click', e => {
-    sendChar('private')
+    sendChat('private')
   })
 
   html().limitedButton.addEventListener('click', e => {
