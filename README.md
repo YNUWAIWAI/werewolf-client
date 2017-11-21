@@ -7,10 +7,10 @@
 
 今のところCSSを編集しないなら必要ない．
 
-- Node.js v8.5.0
-- npm 5.3.0 または yarn 1.1.0
+- Node.js (latest stable)
+- npm (latest stable) または yarn (latest stable)
 
-最新のものであればいい．
+バージョンはそのうち固定する．
 
 ## コマンド
 
