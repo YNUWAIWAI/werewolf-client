@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+}
+
+body {
+  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  display: flex;
+}
+
+.main {
+  flex: 3;
+  height: 100vh;
+  position: relative;
+}
+
+.section {
+  flex: 2;
+  height: 100vh;
+}
+
+.login {
+  border: solid 1px black;
+  border-radius: 1rem;
+  margin: 10vh 1rem 1rem 1rem;
+  padding: 1rem;
+}
+
+.signup {
+  border: solid 1px black;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.input {
+  box-sizing: border-box;
+  display: block;
+  font-size: 1em;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  display: block;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.error {
+  font: red;
+}
+
+.title {
+  margin-top: 10vh;
+
+  & > p {
+    font-size: 3rem;
+    margin: 1rem;
+    text-align: center;
+  }
+}
+
+.flavor {
+  margin-top: 10vh;
+
+  & > p {
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+  }
+}
+
+.image {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
