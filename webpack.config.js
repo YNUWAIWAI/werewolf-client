@@ -2,6 +2,10 @@ const path = require('path')
 
 module.exports = {
   entry: './entry.js',
+  externals: {
+    React: 'react',
+    ReactDOM: 'react-dom'
+  },
   module: {
     rules: [
       {
