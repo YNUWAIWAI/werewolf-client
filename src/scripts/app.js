@@ -11,8 +11,12 @@ document.getElementById('hide-button').addEventListener('click', () => {
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Info from './components/Info'
+import ActivityContainer from './components/ActivityContainer'
 
 ReactDOM.render(
-  <Info />,
+  <React.Fragment>
+    <Info />
+    <ActivityContainer />
+  </React.Fragment>,
   document.getElementById('root')
 )
