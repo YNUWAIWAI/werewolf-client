@@ -13,12 +13,14 @@ import ReactDOM from 'react-dom'
 import Info from './components/Info'
 import ActivityContainer from './components/ActivityContainer'
 import Command from './components/Command'
+import HideButton from './components/HideButton'
 
 ReactDOM.render(
   <React.Fragment>
     <Info />
     <ActivityContainer />
     <Command />
+    <HideButton />
   </React.Fragment>,
   document.getElementById('root')
 )
