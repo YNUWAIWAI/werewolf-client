@@ -12,11 +12,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Info from './components/Info'
 import ActivityContainer from './components/ActivityContainer'
+import Command from './components/Command'
 
 ReactDOM.render(
   <React.Fragment>
     <Info />
     <ActivityContainer />
+    <Command />
   </React.Fragment>,
   document.getElementById('root')
 )
