@@ -2,15 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 export default function CommandInput(props) {
-  const placeholder = (() => {
-    if (props.kind === 'public') {
-      return '公開用'
-    } else if (props.kind === 'private') {
-      return '非公開用'
-    }
-
-    return '人狼用'
-  })()
+  const placeholder = (() => ({
+    limited: '人狼用',
+    private: '非公開用',
+    public: '公開用'
+  })[props.kind])()
 
   const PostCounter = () => {
     if (props.kind !== 'private') {
