@@ -5,6 +5,8 @@ import ActivityContainer from './components/ActivityContainer'
 import Command from './components/Command'
 import HideButton from './components/HideButton'
 import Modal from './components/Modal'
+import Result from './components/Result'
+import Obfucator from './components/Obfucator'
 
 ReactDOM.render(
   <React.Fragment>
@@ -13,6 +15,8 @@ ReactDOM.render(
     <Command />
     <HideButton />
     <Modal />
+    <Result />
+    <Obfucator />
   </React.Fragment>,
   document.getElementById('root')
 )
