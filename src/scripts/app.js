@@ -4,6 +4,7 @@ import Info from './components/Info'
 import ActivityContainer from './components/ActivityContainer'
 import Command from './components/Command'
 import HideButton from './components/HideButton'
+import Modal from './components/Modal'
 
 ReactDOM.render(
   <React.Fragment>
@@ -11,6 +12,7 @@ ReactDOM.render(
     <ActivityContainer />
     <Command />
     <HideButton />
+    <Modal />
   </React.Fragment>,
   document.getElementById('root')
 )
