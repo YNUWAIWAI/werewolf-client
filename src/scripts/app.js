@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Info from './components/Info'
-import ActivityContainer from './components/ActivityContainer'
+import Activity from './components/Activity'
 import Command from './components/Command'
 import HideButton from './components/HideButton'
 import Modal from './components/Modal'
@@ -11,7 +11,7 @@ import Obfucator from './components/Obfucator'
 ReactDOM.render(
   <React.Fragment>
     <Info />
-    <ActivityContainer />
+    <Activity />
     <Command />
     <HideButton />
     <Modal />
