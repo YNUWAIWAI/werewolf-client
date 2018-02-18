@@ -20,13 +20,12 @@ export const socketMessage = event => ({
   type: types.SOCKET_MESSAGE
 })
 
-export const setDay = payload => {
-  return {
-    date: payload.date,
-    phase: payload.phase,
-    type: types.SET_DAY
-  }
-}
+export const setDay = payload => ({
+  date: payload.date,
+  phase: payload.phase,
+  type: types.SET_DAY
+})
+
 export const setRole = payload => {
   const role = payload.role.filter(r => r.roleIsMine)[0]
   const agent = payload.agent.filter(a => a.agentIsMine)[0]
@@ -38,3 +37,8 @@ export const setRole = payload => {
     type: types.SET_ROLE
   }
 }
+
+export const toggleObfucator = visible => ({
+  type: types.TOGGLE_OBFUCATOR,
+  visible
+})
