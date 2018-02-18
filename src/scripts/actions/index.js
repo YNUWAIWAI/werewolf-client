@@ -42,3 +42,11 @@ export const toggleObfucator = visible => ({
   type: types.TOGGLE_OBFUCATOR,
   visible
 })
+
+export const wait = () => ({
+  type: types.WAIT
+})
+
+export const ready = () => ({
+  type: types.READY
+})
