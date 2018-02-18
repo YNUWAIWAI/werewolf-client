@@ -1,1 +1,1 @@
-require('./src/scripts/app')
+require('./src/scripts')

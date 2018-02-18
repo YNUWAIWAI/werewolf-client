@@ -1,9 +1,9 @@
-import Day from './Day'
+import Day from '../containers/DayContainer'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Role from './Role'
+import Role from '../containers/RoleContainer'
 
-export default function Info() {
+export default function Info(props) {
   return (
     <div id="info" class="info">
       <Day />
