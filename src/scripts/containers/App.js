@@ -3,7 +3,7 @@ import Command from '../components/Command'
 import HideButton from '../components/HideButton'
 import Info from '../components/Info'
 import Modal from '../components/Modal'
-import Obfucator from '../components/Obfucator'
+import Obfucator from '../containers/ObfucatorContainer'
 import React from 'react'
 import Result from '../components/Result'
 
