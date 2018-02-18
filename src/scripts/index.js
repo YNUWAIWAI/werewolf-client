@@ -1,20 +1,14 @@
 import App from './containers/App'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {applyMiddleware, createStore} from 'redux'
+import {createStore} from 'redux'
 import {Provider} from 'react-redux'
-import {logger, socketMiddleware} from './middlewares'
+import middleware from './middlewares'
 import reducer from './reducers'
 
-const url = document.getElementById('script').dataset.url
 const store = createStore(
   reducer,
-  applyMiddleware(
-    socketMiddleware({
-      url
-    }),
-    logger
-  )
+  middleware
 )
 
 store.dispatch({
