@@ -1,6 +1,5 @@
 import CommandInput from './CommandInput'
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 export default function Command(props) {
   return (
