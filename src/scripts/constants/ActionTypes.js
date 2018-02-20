@@ -4,6 +4,7 @@ export const SET_ROLE = 'SET_ROLE'
 export const TOGGLE_OBFUCATOR = 'TOGGLE_OBFUCATOR'
 export const WAIT = 'WAIT'
 export const READY = 'READY'
+export const POST_CHAT = 'POST_CHAT'
 
 export const SOCKET_OPEN = 'SOCKET:OPEN'
 export const SOCKET_CLOSE = 'SOCKET:CLOSE'

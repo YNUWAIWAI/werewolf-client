@@ -403,6 +403,10 @@ body {
       position: absolute;
       top: calc(70% - 1.25em);
       right: 0.5em;
+
+      &.error {
+        color: red;
+      }
     }
 
     &--counter {

@@ -1,4 +1,4 @@
-import CommandInput from './CommandInput'
+import CommandInput from '../containers/CommandInputContainer'
 import React from 'react'
 
 export default function Command(props) {
