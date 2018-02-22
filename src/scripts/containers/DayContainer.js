@@ -3,10 +3,9 @@ import Phase from '../constants/Phase'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
-  date: state.day.date,
-  phase: Phase[state.day.phase]
+  date: state.game.date,
+  phase: Phase[state.game.phase]
 })
-
 const DayContainer = connect(
   mapStateToProps
 )(Day)

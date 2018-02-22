@@ -1,14 +1,16 @@
+import chat from './chat'
+import game from './game'
+import mine from './mine'
 import {combineReducers} from 'redux'
 import commandInput from './commandInput'
-import day from './day'
 import obfucator from './obfucator'
-import role from './role'
 
 const reducer = combineReducers({
+  chat,
   commandInput,
-  day,
-  obfucator,
-  role
+  game,
+  mine,
+  obfucator
 })
 
 export default reducer
