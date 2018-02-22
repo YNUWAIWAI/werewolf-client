@@ -17,6 +17,7 @@
     "glob": "^7.1.2",
     "postcss": "^6.0.13",
     "postcss-nested": "^2.1.2",
+    "redux-devtools-extension": "^2.13.2",
     "stylelint": "^8.2.0",
     "webpack": "^3.9.1"
   },
