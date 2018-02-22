@@ -24,10 +24,12 @@ const socketMiddleware = (option = {}) => store => next => action => {
     })
     socket.addEventListener('close', event => {
       console.warn('WebSocket Disconnected ', event)
+      socket = null
       store.dispatch(socketClose(event))
     })
     socket.addEventListener('error', error => {
       console.error('WebSocket Error ', error)
+      socket = null
       store.dispatch(socketError(error))
     })
     socket.addEventListener('message', event => {
@@ -47,6 +49,10 @@ const socketMiddleware = (option = {}) => store => next => action => {
     case types.SOCKET_ERROR:
       return next(action)
     case types.SOCKET_MESSAGE:
+      return next(action)
+    case types.SOCKET_SEND:
+      socket.send(JSON.stringify(action.payload))
+
       return next(action)
     default:
       return next(action)
