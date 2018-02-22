@@ -1,4 +1,5 @@
-const BASE_URL = 'https://werewolf.world/resource/0.1'
+import {VERSION} from './Version'
+const BASE_URL = `https://werewolf.world/resource/${VERSION}`
 
 export const BOARD_MESSAGE = `${BASE_URL}/boardMessage`
 export const ERROR_MESSAGE = `${BASE_URL}/errorMessage`
