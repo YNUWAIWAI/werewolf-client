@@ -1,4 +1,4 @@
-import Chat from './Chat'
+import Chat from '../containers/ChatContainer'
 import Prediction from './Prediction'
 import React from 'react'
 

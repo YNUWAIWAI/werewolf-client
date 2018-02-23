@@ -7,6 +7,7 @@ import {
 } from '../actions'
 
 let socket
+let retry = 0
 
 const socketMiddleware = (option = {}) => store => next => action => {
   const connectWebSocket = url => {
@@ -37,7 +38,8 @@ const socketMiddleware = (option = {}) => store => next => action => {
     })
   }
 
-  if (!socket) {
+  if (!socket && retry < 5) {
+    retry++
     connectWebSocket(option.url)
   }
 
