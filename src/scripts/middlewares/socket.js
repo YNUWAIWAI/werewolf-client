@@ -1,9 +1,8 @@
 import * as types from '../constants/ActionTypes'
 import {
-  socketClose,
-  socketOpen,
-  socketError,
-  socketMessage
+  ready,
+  socket as socketAction,
+  wait
 } from '../actions'
 
 let socket
@@ -21,23 +20,23 @@ const socketMiddleware = (option = {}) => store => next => action => {
 
     socket.addEventListener('open', event => {
       console.log('WebSocket Connected ', event)
-      store.dispatch(socketOpen(event))
+      store.dispatch(socketAction.open(event))
     })
     socket.addEventListener('close', event => {
       console.warn('WebSocket Disconnected ', event)
       socket = null
-      store.dispatch(types.WAIT)
-      store.dispatch(socketClose(event))
+      store.dispatch(wait())
+      store.dispatch(socketAction.close(event))
     })
     socket.addEventListener('error', error => {
       console.error('WebSocket Error ', error)
       socket = null
-      store.dispatch(types.WAIT)
-      store.dispatch(socketError(error))
+      store.dispatch(wait())
+      store.dispatch(socketAction.error(error))
     })
     socket.addEventListener('message', event => {
-      store.dispatch(types.READY)
-      store.dispatch(socketMessage(event))
+      store.dispatch(ready())
+      store.dispatch(socketAction.message(event))
     })
   }
 
@@ -56,7 +55,7 @@ const socketMiddleware = (option = {}) => store => next => action => {
     case types.SOCKET_MESSAGE:
       return next(action)
     case types.SOCKET_SEND:
-      socket.send(JSON.stringify(action.payload))
+      socketAction.send(JSON.stringify(action.payload))
 
       return next(action)
     default:
