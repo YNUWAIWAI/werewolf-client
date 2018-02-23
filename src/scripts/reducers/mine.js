@@ -1,6 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import {socketSend} from '../actions'
 
 const initialState = {
   myAgentImage: 'https://werewolf.world/image/0.1/Gert.jpg',
