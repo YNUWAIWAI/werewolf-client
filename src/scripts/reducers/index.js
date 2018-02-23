@@ -6,9 +6,9 @@ import commandInput from './commandInput'
 import obfucator from './obfucator'
 
 const reducer = combineReducers({
+  base,
   chat,
   commandInput,
-  base,
   mine,
   obfucator
 })
