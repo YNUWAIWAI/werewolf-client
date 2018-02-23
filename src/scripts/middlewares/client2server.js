@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes'
-import {socketSend} from '../actions'
+import {socket} from '../actions'
 
 const getTimestamp = () => {
   const zeropad = num => String(num).padStart(2, '0')
@@ -53,7 +53,7 @@ const client2server = store => next => action => {
         }
       )
 
-      store.dispatch(socketSend(payload))
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
