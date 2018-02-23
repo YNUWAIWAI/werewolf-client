@@ -6,9 +6,13 @@ import {
 } from '../actions'
 
 let socket
-let retry = 0
+let retryCount = 0
 
 const socketMiddleware = (option = {}) => store => next => action => {
+  if (!option.url) {
+    console.error('"option.url" not found.')
+  }
+  option.retry = option.retry || 5
   const connectWebSocket = url => {
     if (!window.WebSocket || !('WebSocket' in window)) {
       console.log('WebSocket NOT supported by your Browser!')
@@ -40,8 +44,8 @@ const socketMiddleware = (option = {}) => store => next => action => {
     })
   }
 
-  if (!socket && retry < 5) {
-    retry++
+  if (!socket && retryCount < option.retry) {
+    retryCount += 1
     connectWebSocket(option.url)
   }
 
