@@ -22,20 +22,17 @@ const mine = (state = initialState, action) => {
     const agent = action.payload.agent.filter(a => a.agentIsMine)[0]
     const role = action.payload.role.filter(r => r.roleIsMine)[0]
 
-    return Object.assign(
-      state,
-      {
-        '@id': agent['@id'],
-        'myAgentId': agent.id,
-        'myAgentImage': agent.image,
-        'myAgentName': agent.name,
-        'myRole': {
-          '@id': role['@id'],
-          'myRoleImage': role.image,
-          'myRoleName': role.name
-        }
+    return {
+      '@id': agent['@id'],
+      'myAgentId': agent.id,
+      'myAgentImage': agent.image,
+      'myAgentName': agent.name,
+      'myRole': {
+        '@id': role['@id'],
+        'myRoleImage': role.image,
+        'myRoleName': role.name
       }
-    )
+    }
   }
 
   return state

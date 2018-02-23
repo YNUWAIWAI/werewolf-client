@@ -1,7 +1,10 @@
+import ChatItem from './ChatItem'
 import React from 'react'
 
-export default function Chat(props) {
+export default function Chat({items}) {
   return (
-    <div id="chat" class="chat"></div>
+    <div id="chat" class="chat">
+      {items.map((item, index) => <ChatItem key={index} {... item} />).reverse()}
+    </div>
   )
 }

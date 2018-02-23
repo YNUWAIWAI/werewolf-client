@@ -5,7 +5,6 @@ class CommandInput extends React.PureComponent {
     super(props)
     this.state = {
       isOver: false,
-      isSendable: true,
       text: '',
       textCount: 0
     }
@@ -35,27 +34,50 @@ class CommandInput extends React.PureComponent {
     }
     this.setState({
       isOver,
-      isSendable,
       text,
       textCount
     })
+    if (this.props[this.props.kind].isSendable !== isSendable) {
+      this.props.setIsSendable({
+        isSendable,
+        kind: this.props.kind
+      })
+    }
   }
 
   handlePostChat(event) {
+    this.props.setIsSendable({
+      isSendable: false,
+      kind: this.props.kind
+    })
     this.props.handlePostChat({
       kind: this.props.kind,
       text: this.state.text
     })
+    this.setState({
+      isOver: false,
+      text: '',
+      textCount: 0
+    })
   }
 
   handleKeyDown(event) {
-    if (!this.state.isSendable) {
+    if (!this.props[this.props.kind].isSendable) {
       return
     }
     if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+      this.props.setIsSendable({
+        isSendable: false,
+        kind: this.props.kind
+      })
       this.props.handlePostChat({
         kind: this.props.kind,
         text: this.state.text
+      })
+      this.setState({
+        isOver: false,
+        text: '',
+        textCount: 0
       })
     }
   }
@@ -73,9 +95,9 @@ class CommandInput extends React.PureComponent {
         <span id={`${this.props.kind}-char`} class={`command--input--char ${this.state.isOver && 'error'}`}>{this.state.textCount}</span>
         {
           this.props.kind === 'private' ||
-          <span class="command--input--counter" id={`${this.props.kind}-counter`} data-counter={this.props.postCount}>{this.props.postCount}/{this.props.postCountLimit}</span>
+          <span class="command--input--counter" id={`${this.props.kind}-counter`} data-counter={this.props[this.props.kind].postCount}>{this.props[this.props.kind].postCount}/{this.props[this.props.kind].postCountLimit}</span>
         }
-        <button id={`${this.props.kind}-button`} type="button" disabled={!this.state.isSendable} onClick={this.handlePostChat}>送信</button>
+        <button id={`${this.props.kind}-button`} type="button" disabled={!this.props[this.props.kind].isSendable} onClick={this.handlePostChat}>送信</button>
       </form>
     )
   }

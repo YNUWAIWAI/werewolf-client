@@ -5,13 +5,17 @@ const initialState = {
   date: 0,
   phase: 'day conversation'
 }
-const game = (state = initialState, action) => {
+const base = (state = initialState, action) => {
   if (
     action.type === ActionTypes.SOCKET_MESSAGE &&
     action.payload['@context'].includes(Contexts.BASE)
   ) {
     return {
+      clientTimestamp: action.payload.clientTimestamp,
       date: action.payload.date,
+      directionality: action.payload.directionality,
+      extensionalDisclosureRange: action.payload.extensionalDisclosureRange,
+      intensionalDisclosureRange: action.payload.intensionalDisclosureRange,
       phase: action.payload.phase,
       phaseStartTime: action.payload.phaseStartTime,
       phaseTimeLimit: action.payload.phaseTimeLimit,
@@ -26,4 +30,4 @@ const game = (state = initialState, action) => {
   return state
 }
 
-export default game
+export default base

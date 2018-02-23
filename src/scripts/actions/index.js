@@ -20,6 +20,11 @@ export const socketMessage = event => ({
   type: types.SOCKET_MESSAGE
 })
 
+export const socketSend = payload => ({
+  payload,
+  type: types.SOCKET_SEND
+})
+
 export const setDay = payload => ({
   date: payload.date,
   phase: payload.phase,
@@ -47,6 +52,12 @@ export const postChat = props => ({
   kind: props.kind,
   text: props.text,
   type: types.POST_CHAT
+})
+
+export const setIsSendable = ({isSendable, kind}) => ({
+  isSendable,
+  kind,
+  type: types.SET_IS_SENDABLE,
 })
 
 export const wait = () => ({
