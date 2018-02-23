@@ -26,14 +26,17 @@ const socketMiddleware = (option = {}) => store => next => action => {
     socket.addEventListener('close', event => {
       console.warn('WebSocket Disconnected ', event)
       socket = null
+      store.dispatch(types.WAIT)
       store.dispatch(socketClose(event))
     })
     socket.addEventListener('error', error => {
       console.error('WebSocket Error ', error)
       socket = null
+      store.dispatch(types.WAIT)
       store.dispatch(socketError(error))
     })
     socket.addEventListener('message', event => {
+      store.dispatch(types.READY)
       store.dispatch(socketMessage(event))
     })
   }
