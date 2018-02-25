@@ -57,6 +57,43 @@ const client2server = store => next => action => {
 
       return next(action)
     }
+    case types.CHANGE_PREDICTION_BOARD: {
+      const state = store.getState()
+      const payload = Object.assign(
+        {},
+        state.base,
+        {
+          '@context': [
+            'https://werewolf.world/context/0.1/base.jsonld',
+            'https://werewolf.world/context/0.1/board.jsonld'
+          ],
+          '@id': 'https://werewolf.world/resource/0.1/boardMessage',
+          'clientTimestamp': getTimestamp(),
+          'directionality': 'client to server',
+          'extensionalDisclosureRange': [],
+          'intensionalDisclosureRange': 'private',
+          'myAgent': state.mine
+        },
+        {
+          'boardAgent': {
+            '@id': state.mine['@id'],
+            'agentId': state.mine.myAgentId,
+            'agentImage': state.mine.myAgentImage,
+            'agentName': state.mine.myAgentName
+          },
+          'boardPrediction': action.state,
+          'boardRole': {
+            '@id': state.mine.myRole['@id'],
+            'roleImage': state.mine.myRole.myRoleImage,
+            'roleName': state.mine.myRole.myRoleName
+          }
+        }
+      )
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     default:
       return next(action)
   }

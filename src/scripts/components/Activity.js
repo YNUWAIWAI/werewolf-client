@@ -1,5 +1,5 @@
 import Chat from '../containers/ChatContainer'
-import Prediction from './Prediction'
+import Prediction from '../containers/PredictionContainer'
 import React from 'react'
 
 export default function Activity(props) {
