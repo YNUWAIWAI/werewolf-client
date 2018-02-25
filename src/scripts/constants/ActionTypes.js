@@ -6,6 +6,7 @@ export const WAIT = 'WAIT'
 export const READY = 'READY'
 export const POST_CHAT = 'POST_CHAT'
 export const SET_IS_SENDABLE = 'SET_IS_SENDABLE'
+export const CHANGE_PREDICTION_BOARD = 'CHANGE_PREDICTION_BOARD'
 
 export const SOCKET_OPEN = 'SOCKET:OPEN'
 export const SOCKET_CLOSE = 'SOCKET:CLOSE'

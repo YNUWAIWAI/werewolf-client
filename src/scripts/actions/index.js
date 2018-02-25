@@ -58,6 +58,13 @@ export const setIsSendable = ({isSendable, kind}) => ({
   type: types.SET_IS_SENDABLE,
 })
 
+export const handleBoardClick = (nextState, playerId, roleId) => ({
+  nextState,
+  playerId,
+  roleId,
+  type: types.CHANGE_PREDICTION_BOARD
+})
+
 export const wait = () => ({
   type: types.WAIT
 })
