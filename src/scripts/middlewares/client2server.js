@@ -1,5 +1,7 @@
 import * as types from '../constants/ActionTypes'
+import {Channels} from '../constants/Channels'
 import {socket} from '../actions'
+import {trimBaseUri} from '../module/util'
 
 const getTimestamp = () => {
   const zeropad = num => String(num).padStart(2, '0')
@@ -21,21 +23,37 @@ const client2server = store => next => action => {
   switch (action.type) {
     case types.POST_CHAT: {
       const state = store.getState()
+      const channnel = (kind => {
+        switch (kind) {
+          case 'public':
+            return kind
+          case 'private':
+            return kind
+          case 'limited':
+            return trimBaseUri(state.mine.myRole['@id'])
+          case 'grave':
+            return kind
+          case 'master':
+            return kind
+          default:
+            return 'public'
+        }
+      })(action.kind)
       const payload = Object.assign(
         {},
         state.base,
-        {
-          'clientTimestamp': getTimestamp(),
-          'directionality': 'client to server',
-          'extensionalDisclosureRange': [],
-          'intensionalDisclosureRange': action.kind,
-        },
         {
           '@context': [
             'https://werewolf.world/context/0.1/base.jsonld',
             'https://werewolf.world/context/0.1/chat.jsonld'
           ],
           '@id': 'https://werewolf.world/resource/0.1/playerMessage',
+          'clientTimestamp': getTimestamp(),
+          'directionality': 'client to server',
+          'extensionalDisclosureRange': [],
+          'intensionalDisclosureRange': channnel,
+        },
+        {
           'chatAgent': {
             '@id': state.mine['@id'],
             'chatAgentId': state.mine.myAgentId,

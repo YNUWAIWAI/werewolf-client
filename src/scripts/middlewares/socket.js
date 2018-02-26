@@ -7,6 +7,7 @@ import {
 
 let socket
 let retryCount = 0
+let isReady = false
 
 const socketMiddleware = (option = {}) => store => next => action => {
   if (!option.url) {
@@ -29,17 +30,26 @@ const socketMiddleware = (option = {}) => store => next => action => {
     socket.addEventListener('close', event => {
       console.warn('WebSocket Disconnected ', event)
       socket = null
-      store.dispatch(wait())
+      if (isReady) {
+        store.dispatch(wait())
+        isReady = false
+      }
       store.dispatch(socketAction.close(event))
     })
     socket.addEventListener('error', error => {
       console.error('WebSocket Error ', error)
       socket = null
-      store.dispatch(wait())
+      if (isReady) {
+        store.dispatch(wait())
+        isReady = false
+      }
       store.dispatch(socketAction.error(error))
     })
     socket.addEventListener('message', event => {
-      store.dispatch(ready())
+      if (!isReady) {
+        store.dispatch(ready())
+        isReady = true
+      }
       store.dispatch(socketAction.message(event))
     })
   }

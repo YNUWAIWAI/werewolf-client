@@ -1,4 +1,4 @@
-import Channels from '../constants/Channels'
+import {Channels} from '../constants/Channels'
 import React from 'react'
 
 const parseChat = text => text.replace(/>>(\d+)/, '<a href="#message$1">>>$1</a>')

@@ -3,7 +3,7 @@ import base from './base'
 import prediction from './prediction'
 import mine from './mine'
 import {combineReducers} from 'redux'
-import commandInput from './commandInput'
+import command from './command'
 import obfucator from './obfucator'
 import result from './result'
 
@@ -11,7 +11,7 @@ const reducer = combineReducers({
   base,
   chat,
   prediction,
-  commandInput,
+  command,
   mine,
   obfucator,
   result
