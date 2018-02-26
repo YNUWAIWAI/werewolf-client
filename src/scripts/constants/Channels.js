@@ -1,4 +1,4 @@
-const Channels = {
+export const Channels = {
   anonymousAudience: 'public',
   grave: 'grave',
   hunter: 'limited',
@@ -9,5 +9,3 @@ const Channels = {
   seer: 'limited',
   werewolf: 'limited'
 }
-
-export default Channels

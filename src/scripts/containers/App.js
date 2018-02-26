@@ -1,5 +1,5 @@
 import Activity from '../components/Activity'
-import Command from '../components/Command'
+import Command from './CommandContainer'
 import HideButton from '../components/HideButton'
 import Info from '../components/Info'
 import Modal from '../components/Modal'

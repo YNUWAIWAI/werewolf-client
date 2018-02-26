@@ -29,3 +29,8 @@ export const WEREWOLF_SIDE = [
   MADMAN,
   WEREWOLF
 ]
+export const AVAILABLE_FOR_LIMITED_CHAT = [
+  WEREWOLF,
+  SEER,
+  HUNTER
+]

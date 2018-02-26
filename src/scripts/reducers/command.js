@@ -1,10 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import Channels from '../constants/Channels'
+import {Channels} from '../constants/Channels'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
+import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
+import {trimBaseUri} from '../module/util'
 
 const initialState = {
   limited: {
+    available: false,
     isSendable: true,
     postCount: 0,
     postCountLimit: 10,
@@ -21,7 +24,7 @@ const initialState = {
   }
 }
 
-const commandInput = (state = initialState, action) => {
+const command = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.SET_IS_SENDABLE:
       return Object.assign(
@@ -55,6 +58,31 @@ const commandInput = (state = initialState, action) => {
             }
           }
         )
+      } else if (
+        action.payload['@context'].includes(Contexts.BASE) &&
+        action.payload['@context'].includes(Contexts.ROLE) &&
+        action.payload['@context'].includes(Contexts.AGENT)
+      ) {
+        const role = action.payload.role.filter(r => r.roleIsMine)[0]
+
+        if (
+          role.numberOfAgents > 1 &&
+          AVAILABLE_FOR_LIMITED_CHAT.includes(trimBaseUri(role['@id']))
+        ) {
+          return Object.assign(
+            {},
+            state,
+            {
+              limited: Object.assign(
+                {},
+                state.limited,
+                {
+                  available: true
+                }
+              )
+            }
+          )
+        }
       }
 
       return state
@@ -63,5 +91,5 @@ const commandInput = (state = initialState, action) => {
   }
 }
 
-export default commandInput
+export default command
 
