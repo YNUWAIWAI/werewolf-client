@@ -5,7 +5,7 @@ import Info from '../components/Info'
 import Modal from '../components/Modal'
 import Obfucator from '../containers/ObfucatorContainer'
 import React from 'react'
-import Result from '../components/Result'
+import Result from '../containers/ResultContainer'
 
 export default function App() {
   return (
