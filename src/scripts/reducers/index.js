@@ -5,6 +5,7 @@ import mine from './mine'
 import {combineReducers} from 'redux'
 import commandInput from './commandInput'
 import obfucator from './obfucator'
+import result from './result'
 
 const reducer = combineReducers({
   base,
@@ -12,7 +13,8 @@ const reducer = combineReducers({
   prediction,
   commandInput,
   mine,
-  obfucator
+  obfucator,
+  result
 })
 
 export default reducer

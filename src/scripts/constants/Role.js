@@ -25,3 +25,7 @@ export const ORDERED_ROLE_LIST = [
   WEREWOLF,
   WEREHUMSTER
 ]
+export const WEREWOLF_SIDE = [
+  MADMAN,
+  WEREWOLF
+]
