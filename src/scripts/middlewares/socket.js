@@ -59,7 +59,7 @@ const socketMiddleware = (option = {}) => store => next => action => {
     case types.SOCKET_MESSAGE:
       return next(action)
     case types.SOCKET_SEND:
-      socketAction.send(JSON.stringify(action.payload))
+      socket.send(JSON.stringify(action.payload))
 
       return next(action)
     default:
