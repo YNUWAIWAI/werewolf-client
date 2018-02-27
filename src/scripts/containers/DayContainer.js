@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
   date: state.base.date,
-  phase: Phase[state.base.phase]
+  phase: Phase[state.base.phase],
+  phaseTimeLimit: state.base.phaseTimeLimit
 })
 const DayContainer = connect(
   mapStateToProps

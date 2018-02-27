@@ -6,6 +6,7 @@ import {combineReducers} from 'redux'
 import command from './command'
 import obfucator from './obfucator'
 import result from './result'
+import timer from './timer'
 
 const reducer = combineReducers({
   base,
@@ -14,7 +15,8 @@ const reducer = combineReducers({
   command,
   mine,
   obfucator,
-  result
+  result,
+  timer
 })
 
 export default reducer
