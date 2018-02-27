@@ -1,6 +1,6 @@
 import React from 'react'
 
-class CommandInput extends React.PureComponent {
+class CommandInput extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
