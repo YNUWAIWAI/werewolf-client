@@ -170,16 +170,19 @@ module.exports = {
     "quotes": ["error", "single", {"allowTemplateLiterals": true}],
     "quotes": ["error","single"],
     "radix": "error",
+    "react/button-has-type": 0,
+    "react/destructuring-assignment": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", "tsx"] }],
     "react/jsx-indent" : [0, 2],
     "react/jsx-indent-props" : [2, 2],
     "react/jsx-max-props-per-line": [2, {
-      maximum: 1
+      maximum: 4
     }],
     "react/jsx-no-literals": 2,
     "react/jsx-wrap-multilines": 0,
     "react/no-set-state": 0,
     "react/no-unescaped-entities": 0,
+    "react/prop-types": 0,
     "require-yield": "error",
     "rest-spread-spacing": ["error", "always"],
     "semi-spacing": ["error", {"before": false, "after": true}],

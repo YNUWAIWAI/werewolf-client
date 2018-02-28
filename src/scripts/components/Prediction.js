@@ -5,11 +5,19 @@ import React from 'react'
 
 export default function Prediction({handleBoardClick, roleStatus, playerStatus, table}) {
   const predictionTable = [
-    <div key={'null'}></div>,
+    <div key="null" />,
     ... roleStatus.map(role => <PredictionRole key={role.id} {... role} />),
     ... playerStatus.map(player => [
       <PredictionPlayer key={player.id} {... player} />,
-      ... roleStatus.map(role => <PredictionItem key={player.id + role.id} {... table[player.id][role.id]} playerId={player.id} roleId={role.id} handleBoardClick={handleBoardClick}/>)
+      ... roleStatus.map(role =>
+        <PredictionItem
+          key={player.id + role.id}
+          {... table[player.id][role.id]}
+          handleBoardClick={handleBoardClick}
+          playerId={player.id}
+          roleId={role.id}
+        />
+      )
     ])
   ]
   const style = {
@@ -17,7 +25,7 @@ export default function Prediction({handleBoardClick, roleStatus, playerStatus, 
   }
 
   return (
-    <div id="prediction" className="prediction" style={style}>
+    <div className="prediction" id="prediction" style={style}>
       {predictionTable}
     </div>
   )

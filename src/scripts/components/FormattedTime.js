@@ -8,6 +8,8 @@ const formatTime = time => {
 }
 
 const FormattedTime = props =>
-  <span id={props.id}>{props.time < 0 ? '終了' : formatTime(props.time)}</span>
+  <span id={props.id}>
+    {props.time < 0 ? '終了' : formatTime(props.time)}
+  </span>
 
 export default FormattedTime

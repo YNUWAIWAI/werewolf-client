@@ -15,9 +15,11 @@ const parseTime = (from, to, limit) => {
 
 export default function ChatItem(props) {
   return (
-    <div id={Channels[props.intensionalDisclosureRange] === 'public' ? `message${props.chatId}` : undefined} className={`chat--item ${props.chatIsMine ? 'me' : ''} ${Channels[props.intensionalDisclosureRange]}`}>
+    <div className={`chat--item ${props.chatIsMine ? 'me' : ''} ${Channels[props.intensionalDisclosureRange]}`} id={Channels[props.intensionalDisclosureRange] === 'public' ? `message${props.chatId}` : undefined}>
       <div className="chat--arrow-box">
-        <div className="chat--num">{Channels[props.intensionalDisclosureRange] === 'public' && props.chatId}</div>
+        <div className="chat--num">
+          {Channels[props.intensionalDisclosureRange] === 'public' && props.chatId}
+        </div>
         <div className="chat--text">
           {parseChat(props.chatText)}
         </div>
@@ -27,7 +29,9 @@ export default function ChatItem(props) {
       </div>
       <div className="chat--icon">
         <img src={props.chatAgent.chatAgentImage} />
-        <span>{props.chatAgent.chatAgentName.ja}</span>
+        <span>
+          {props.chatAgent.chatAgentName.ja}
+        </span>
       </div>
     </div>
   )
