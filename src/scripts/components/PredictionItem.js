@@ -17,6 +17,12 @@ export default function PredictionItem(props) {
   }
 
   return (
-    <div data-role={props.roleId} data-player={props.playerId} data-state={props.state} data-date={props.date} onClick={handleBoardClick}></div>
+    <div
+      data-date={props.date}
+      data-player={props.playerId}
+      data-role={props.roleId}
+      data-state={props.state}
+      onClick={handleBoardClick}
+    />
   )
 }

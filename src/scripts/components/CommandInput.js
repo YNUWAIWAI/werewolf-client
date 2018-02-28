@@ -75,14 +75,26 @@ class CommandInput extends React.Component {
     })[this.props.kind])()
 
     return (
-      <form name={this.props.kind} className={`command--input ${this.props.kind}`}>
-        <textarea id={`${this.props.kind}-textarea`} placeholder={placeholder} value={this.state.text} onChange={this.handleTextChange} onKeyDown={this.handleKeyDown}></textarea>
-        <span id={`${this.props.kind}-char`} className={`command--input--char ${this.state.isOver && 'error'}`}>{this.state.textCount}</span>
+      <form className={`command--input ${this.props.kind}`} name={this.props.kind}>
+        <textarea
+          id={`${this.props.kind}-textarea`}
+          onChange={this.handleTextChange}
+          onKeyDown={this.handleKeyDown}
+          placeholder={placeholder}
+          value={this.state.text}
+        />
+        <span className={`command--input--char ${this.state.isOver && 'error'}`} id={`${this.props.kind}-char`}>
+          {this.state.textCount}
+        </span>
         {
           this.props.kind === 'private' ||
-          <span className="command--input--counter" id={`${this.props.kind}-counter`} data-counter={this.props.postCount}>{this.props.postCount}/{this.props.postCountLimit}</span>
+          <span className="command--input--counter" data-counter={this.props.postCount} id={`${this.props.kind}-counter`}>
+            {`${this.props.postCount}/${this.props.postCountLimit}`}
+          </span>
         }
-        <button id={`${this.props.kind}-button`} type="button" disabled={!this.props.isSendable} onClick={this.handlePostChat}>送信</button>
+        <button disabled={!this.props.isSendable} id={`${this.props.kind}-button`} onClick={this.handlePostChat} type="button">
+          {'送信'}
+        </button>
       </form>
     )
   }

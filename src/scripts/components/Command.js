@@ -9,7 +9,7 @@ export default function Command(props) {
   }
 
   return (
-    <div id="command" className="command">
+    <div className="command" id="command">
       <CommandInput kind="public" {... props.public} handlePostChat={props.handlePostChat('public')} setIsSendable={props.setIsSendable('public')} />
       <CommandInput kind="private" {... props.private} handlePostChat={props.handlePostChat('private')} setIsSendable={props.setIsSendable('private')} />
       {

@@ -16,19 +16,21 @@ export default function ResultCell(props) {
     case cellType.image:
     case cellType.userAvatar:
       return (
-        <div data-result={props.type} className={`result--cell ${props.status === 'alive' ? '' : 'dead'} ${props.result === 'win' ? 'win' : ''}`}>
+        <div className={`result--cell ${props.status === 'alive' ? '' : 'dead'} ${props.result === 'win' ? 'win' : ''}`} data-result={props.type}>
           <img src={props.image} />
         </div>
       )
     case cellType.roleImage:
       return (
-        <div data-result={props.type} data-tooltip={props.tooltip} className={`result--cell ${props.status === 'alive' ? '' : 'dead'} ${props.result === 'win' ? 'win' : ''}`}>
+        <div className={`result--cell ${props.status === 'alive' ? '' : 'dead'} ${props.result === 'win' ? 'win' : ''}`} data-result={props.type} data-tooltip={props.tooltip}>
           <img src={props.image} />
         </div>
       )
     default:
       return (
-        <div data-result={props.type} className={`result--cell ${props.status === 'alive' ? '' : 'dead'} ${props.result === 'win' ? 'win' : ''}`}>{props.text}</div>
+        <div className={`result--cell ${props.status === 'alive' ? '' : 'dead'} ${props.result === 'win' ? 'win' : ''}`} data-result={props.type}>
+          {props.text}
+        </div>
       )
   }
 }

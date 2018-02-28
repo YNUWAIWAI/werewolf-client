@@ -6,9 +6,11 @@ export default function CommandOption(props) {
   }
 
   return (
-    <div data-player={props.id} className="command--option" onClick={handleSelectOption}>
+    <div className="command--option" data-player={props.id} onClick={handleSelectOption}>
       <img src={props.image} />
-      <span>{props.name}</span>
+      <span>
+        {props.name}
+      </span>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Timer from './Timer'
 
 export default function Modal(props) {
   if (!props.isVisible) {
@@ -14,15 +15,28 @@ export default function Modal(props) {
   }
 
   return (
-    <div id="modal" className="modal">
+    <div className="modal" id="modal">
       <div className="modal--icon">
         <img id="modal-icon-image" src={props.image} />
-        <span id="modal-icon-name">{props.name}</span>
+        <span id="modal-icon-name">
+          {props.name}
+        </span>
       </div>
-      <div className="modal--description"><span id="modal-text">{props.text}</span>（<Timer id="modal-time" />）</div>
+      <div className="modal--description">
+        <span id="modal-text">
+          {props.text}
+        </span>
+        {'（'}
+        <Timer id="modal-time" />
+        {'）'}
+      </div>
       <div className="modal--button--container">
-        <button id="yes" className="modal--button" value="yes" onClick={handleClick}>はい</button>
-        <button id="no" className="modal--button" value="no" onClick={handleClick}>いいえ</button>
+        <button className="modal--button" id="yes" onClick={handleClick} value="yes">
+          {'はい'}
+        </button>
+        <button className="modal--button" id="no" onClick={handleClick} value="no">
+          {'いいえ'}
+        </button>
       </div>
     </div>
   )
