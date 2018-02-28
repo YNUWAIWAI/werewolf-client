@@ -1,6 +1,5 @@
 import Timer from '../components/Timer'
 import {connect} from 'react-redux'
-import {timer} from '../actions'
 
 const mapStateToProps = state => ({
   limit: state.timer.phaseTimeLimit === -1 ? -1 : state.timer.phaseTimeLimit * 1000,

@@ -1,5 +1,4 @@
 import * as types from '../constants/ActionTypes'
-import {Channels} from '../constants/Channels'
 import {socket} from '../actions'
 import {trimBaseUri} from '../module/util'
 

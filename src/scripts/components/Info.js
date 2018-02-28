@@ -4,7 +4,7 @@ import Role from '../containers/RoleContainer'
 
 export default function Info(props) {
   return (
-    <div id="info" class="info">
+    <div id="info" className="info">
       <Day />
       <Role />
     </div>

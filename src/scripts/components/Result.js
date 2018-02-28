@@ -25,7 +25,7 @@ export default function Result(props) {
   ])
 
   return (
-    <div id="result" class={`result ${props.isVisible ? '' : 'hidden'}`}>
+    <div id="result" className={`result ${props.isVisible ? '' : 'hidden'}`}>
       {
         [
           summary,

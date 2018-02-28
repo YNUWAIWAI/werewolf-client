@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function CommandSelection(props) {
   return (
-    <div class="command--select">
-      <div class="command--description">
+    <div className="command--select">
+      <div className="command--description">
         <span id="command-text">{props.text}</span>（<Timer id="select-time" />）
       </div>
-      <div id="command--option-container" class="command--option-container">
+      <div id="command--option-container" className="command--option-container">
         {
           props.agents
             .filter(a => a.isAChoice)

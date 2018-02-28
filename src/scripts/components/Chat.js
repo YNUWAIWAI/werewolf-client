@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Chat({items}) {
   return (
-    <div id="chat" class="chat">
+    <div id="chat" className="chat">
       {items.map((item, index) => <ChatItem key={index} {... item} />).reverse()}
     </div>
   )

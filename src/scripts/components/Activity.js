@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Activity(props) {
   return (
-    <div id="activity-container" class="activity-container">
+    <div id="activity-container" className="activity-container">
       <Chat />
       <Prediction />
     </div>
