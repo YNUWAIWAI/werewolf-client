@@ -46,9 +46,9 @@ export const toggleObfucator = visible => ({
   visible
 })
 
-export const postChat = props => ({
-  kind: props.kind,
-  text: props.text,
+export const postChat = ({kind, text}) => ({
+  kind,
+  text,
   type: types.POST_CHAT
 })
 

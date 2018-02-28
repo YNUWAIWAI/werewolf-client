@@ -6,7 +6,7 @@ export default function CommandOption(props) {
   }
 
   return (
-    <div data-player={props.id} class="command--option" onClick={handleSelectOption}>
+    <div data-player={props.id} className="command--option" onClick={handleSelectOption}>
       <img src={props.image} />
       <span>{props.name}</span>
     </div>

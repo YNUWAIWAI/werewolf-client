@@ -1,8 +1,8 @@
+import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
+import {postChat, selectOption, setIsSendable} from '../actions'
 import Command from '../components/Command'
-import {connect} from 'react-redux'
-import {postChat, setIsSendable, selectOption} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'
-import {WEREWOLF, SEER, HUNTER} from '../constants/Role'
+import {connect} from 'react-redux'
 
 const getText = (phase, myRole, fixed) => {
   if (phase === DAY_VOTE) {

@@ -17,7 +17,7 @@ export default function Prediction({handleBoardClick, roleStatus, playerStatus, 
   }
 
   return (
-    <div id="prediction" class="prediction" style={style}>
+    <div id="prediction" className="prediction" style={style}>
       {predictionTable}
     </div>
   )

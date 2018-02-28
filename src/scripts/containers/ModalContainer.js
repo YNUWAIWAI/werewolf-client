@@ -1,8 +1,8 @@
+import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
 import {selectNo, selectYes} from '../actions'
+import {DAY_VOTE} from '../constants/Phase'
 import Modal from '../components/Modal'
 import {connect} from 'react-redux'
-import {DAY_VOTE} from '../constants/Phase'
-import {WEREWOLF, SEER, HUNTER} from '../constants/Role'
 
 const getText = (phase, myRole) => {
   if (phase === DAY_VOTE) {

@@ -6,15 +6,20 @@ module.exports = {
   },
   "parser": "babel-eslint",
   "parserOptions": {
+    'ecmaFeatures': {
+      'jsx': true
+    },
     "ecmaVersion": 6,
     "sourceType": "module"
   },
   "plugins": [
-    "flowtype"
+    "flowtype",
+    "react"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:react/all"
   ],
   "rules": {
     "array-bracket-spacing": ["error", "always", { "singleValue": false, "objectsInArrays": false, "arraysInArrays": false }],
@@ -45,7 +50,7 @@ module.exports = {
     "guard-for-in": "error",
     "handle-callback-err": "error",
     "id-blacklist": ["error", "callback"],
-    "id-match": ["warn", "^([a-z]+([A-Z][a-z]+)*|[A-Z]+)$", { "onlyDeclarations": true }],
+    "id-match": ["warn", "^([A-Za-z]+|[A-Z_]+)$", { "onlyDeclarations": true }],
     "indent": ["error", 2, { "SwitchCase": 1 , "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }}],
     "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
     "jsx-quotes": ["error", "prefer-double"],
@@ -165,6 +170,16 @@ module.exports = {
     "quotes": ["error", "single", {"allowTemplateLiterals": true}],
     "quotes": ["error","single"],
     "radix": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", "tsx"] }],
+    "react/jsx-indent" : [0, 2],
+    "react/jsx-indent-props" : [2, 2],
+    "react/jsx-max-props-per-line": [2, {
+      maximum: 1
+    }],
+    "react/jsx-no-literals": 2,
+    "react/jsx-wrap-multilines": 0,
+    "react/no-set-state": 0,
+    "react/no-unescaped-entities": 0,
     "require-yield": "error",
     "rest-spread-spacing": ["error", "always"],
     "semi-spacing": ["error", {"before": false, "after": true}],

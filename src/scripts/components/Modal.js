@@ -14,15 +14,15 @@ export default function Modal(props) {
   }
 
   return (
-    <div id="modal" class="modal">
-      <div class="modal--icon">
+    <div id="modal" className="modal">
+      <div className="modal--icon">
         <img id="modal-icon-image" src={props.image} />
         <span id="modal-icon-name">{props.name}</span>
       </div>
-      <div class="modal--description"><span id="modal-text">{props.text}</span>（<Timer id="modal-time" />）</div>
-      <div class="modal--button--container">
-        <button id="yes" class="modal--button" value="yes" onClick={handleClick}>はい</button>
-        <button id="no" class="modal--button" value="no" onClick={handleClick}>いいえ</button>
+      <div className="modal--description"><span id="modal-text">{props.text}</span>（<Timer id="modal-time" />）</div>
+      <div className="modal--button--container">
+        <button id="yes" className="modal--button" value="yes" onClick={handleClick}>はい</button>
+        <button id="no" className="modal--button" value="no" onClick={handleClick}>いいえ</button>
       </div>
     </div>
   )

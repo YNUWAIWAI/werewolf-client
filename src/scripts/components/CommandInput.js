@@ -75,12 +75,12 @@ class CommandInput extends React.Component {
     })[this.props.kind])()
 
     return (
-      <form name={this.props.kind} class={`command--input ${this.props.kind}`}>
+      <form name={this.props.kind} className={`command--input ${this.props.kind}`}>
         <textarea id={`${this.props.kind}-textarea`} placeholder={placeholder} value={this.state.text} onChange={this.handleTextChange} onKeyDown={this.handleKeyDown}></textarea>
-        <span id={`${this.props.kind}-char`} class={`command--input--char ${this.state.isOver && 'error'}`}>{this.state.textCount}</span>
+        <span id={`${this.props.kind}-char`} className={`command--input--char ${this.state.isOver && 'error'}`}>{this.state.textCount}</span>
         {
           this.props.kind === 'private' ||
-          <span class="command--input--counter" id={`${this.props.kind}-counter`} data-counter={this.props.postCount}>{this.props.postCount}/{this.props.postCountLimit}</span>
+          <span className="command--input--counter" id={`${this.props.kind}-counter`} data-counter={this.props.postCount}>{this.props.postCount}/{this.props.postCountLimit}</span>
         }
         <button id={`${this.props.kind}-button`} type="button" disabled={!this.props.isSendable} onClick={this.handlePostChat}>送信</button>
       </form>
