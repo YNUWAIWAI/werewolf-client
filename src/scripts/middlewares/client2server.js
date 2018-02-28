@@ -112,6 +112,37 @@ const client2server = store => next => action => {
 
       return next(action)
     }
+    case types.SELECT_YES: {
+      const state = store.getState()
+      const payload = Object.assign(
+        {},
+        state.base,
+        {
+          '@context': [
+            'https://werewolf.world/context/0.1/base.jsonld',
+            'https://werewolf.world/context/0.1/vote.jsonld'
+          ],
+          '@id': 'https://werewolf.world/resource/0.1/voteMessage',
+          'clientTimestamp': getTimestamp(),
+          'directionality': 'client to server',
+          'extensionalDisclosureRange': [],
+          'intensionalDisclosureRange': 'private',
+          'myAgent': state.mine
+        },
+        {
+          'votedAgent': {
+            '@id': action.agent['@id'],
+            'votedAgentId': action.agent.id,
+            'votedAgentImage': action.agent.image,
+            'votedAgentName': action.agemt.name
+          }
+        }
+      )
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     default:
       return next(action)
   }

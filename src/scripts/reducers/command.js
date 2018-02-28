@@ -86,6 +86,15 @@ const command = (state = initialState, action) => {
       }
 
       return state
+
+    case ActionTypes.SELECT_YES:
+      return Object.assign(
+        {},
+        state,
+        {
+          fixed: true
+        }
+      )
     default:
       return state
   }
