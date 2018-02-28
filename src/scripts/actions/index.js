@@ -65,6 +65,20 @@ export const handleBoardClick = (nextState, playerId, roleId) => ({
   type: types.CHANGE_PREDICTION_BOARD
 })
 
+export const selectOption = agent => ({
+  agent,
+  type: types.SELECT_OPTION
+})
+
+export const selectNo = () => ({
+  type: types.SELECT_YES
+})
+
+export const selectYes = agent => ({
+  agent,
+  type: types.SELECT_NO
+})
+
 export const wait = () => ({
   type: types.WAIT
 })

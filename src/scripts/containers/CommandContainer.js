@@ -1,13 +1,42 @@
 import Command from '../components/Command'
 import {connect} from 'react-redux'
-import {postChat, setIsSendable} from '../actions'
+import {postChat, setIsSendable, selectOption} from '../actions'
+import {DAY_VOTE} from '../constants/Phase'
+import {WEREWOLF, SEER, HUNTER} from '../constants/Role'
 
-const mapStateToProps = state => state.command
+const getText = (phase, myRole, fixed) => {
+  if (phase === DAY_VOTE) {
+    return '投票先を選んでください'
+  }
+
+  switch (myRole['@id']) {
+    case WEREWOLF:
+      return fixed ? 'あなたの選んだ襲撃先はこちらです' : '襲撃先を選んでください'
+    case SEER:
+      return fixed ? 'あなたの選んだ占い先はこちらです' : '占い先を選んでください'
+    case HUNTER:
+      return fixed ? 'あなたの選んだ守護先はこちらです' : '守護先を選んでください'
+    default:
+      return '待ってください'
+  }
+}
+
+const mapStateToProps = state => Object.assign(
+  {},
+  state.command,
+  {
+    agents: state.agent,
+    phase: state.base.phase,
+    text: getText(state.base.phase, state.mine.myRole, state.command.fixed)
+  }
+)
+
 const mapDispatchToProps = dispatch => ({
   handlePostChat: kind => text => dispatch(postChat({
     kind,
     text
   })),
+  handleSelectOption: agent => dispatch(selectOption(agent)),
   setIsSendable: kind => isSendable => dispatch(setIsSendable({
     isSendable,
     kind

@@ -1,7 +1,13 @@
 import CommandInput from './CommandInput'
+import CommandSelection from './Commandselection'
 import React from 'react'
+import {SELECTION_PHASE} from '../constants/Phase'
 
 export default function Command(props) {
+  if (SELECTION_PHASE.includes(props.phase)) {
+    return <CommandSelection agent={props.agent} text={props.text} />
+  }
+
   return (
     <div id="command" class="command">
       <CommandInput kind="public" {... props.public} handlePostChat={props.handlePostChat('public')} setIsSendable={props.setIsSendable('public')} />
