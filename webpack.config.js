@@ -18,7 +18,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'village.js',
     path: path.resolve(__dirname, '../public/javascripts')
   }
 }
