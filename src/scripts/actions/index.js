@@ -79,6 +79,11 @@ export const selectYes = agent => ({
   type: types.SELECT_NO
 })
 
+export const handleClickHideButton = isHide => ({
+  isHide: !isHide,
+  type: types.CLICK_HIDE_BUTTON
+})
+
 export const wait = () => ({
   type: types.WAIT
 })

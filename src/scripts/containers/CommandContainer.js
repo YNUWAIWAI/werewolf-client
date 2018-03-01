@@ -26,6 +26,7 @@ const mapStateToProps = state => Object.assign(
   state.command,
   {
     agents: state.agent,
+    isHide: state.hideButton.isHide,
     phase: state.base.phase,
     text: getText(state.base.phase, state.mine.myRole, state.command.fixed)
   }
