@@ -1,7 +1,10 @@
 const path = require('path')
 
 module.exports = {
-  entry: './entry.js',
+  entry: {
+    lobby: './src/scripts/lobby',
+    village: './src/scripts/village'
+  },
   externals: {
     React: 'react',
     ReactDOM: 'react-dom'
@@ -18,7 +21,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'village.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, '../public/javascripts')
   }
 }
