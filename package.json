@@ -20,7 +20,7 @@
     "postcss-nested": "^2.1.2",
     "redux-devtools-extension": "^2.13.2",
     "stylelint": "^8.2.0",
-    "webpack": "^3.9.1"
+    "webpack": "^4.0.1"
   },
   "scripts": {
     "build": "node tools/build.js",
