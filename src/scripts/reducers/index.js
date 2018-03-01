@@ -1,5 +1,6 @@
 import chat from './chat'
 import agent from './agent'
+import hideButton from './hideButton'
 import base from './base'
 import prediction from './prediction'
 import mine from './mine'
@@ -14,6 +15,7 @@ const reducer = combineReducers({
   agent,
   base,
   chat,
+  hideButton,
   prediction,
   command,
   mine,
