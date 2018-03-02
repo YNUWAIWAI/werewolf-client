@@ -1,9 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import History from '../containers/HistoryContainer'
-import Main from '../containers/MainContainer'
 import LobbyForAudience from '../containers/LobbyForAudienceContainer'
 import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
 import LobbyForRobotPlayer from '../containers/LobbyForRobotPlayerContainer'
+import Main from '../containers/MainContainer'
 import Setting from '../containers/SettingContainer'
 
 const initialState = {
