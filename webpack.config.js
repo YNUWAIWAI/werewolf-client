@@ -9,6 +9,7 @@ module.exports = {
     React: 'react',
     ReactDOM: 'react-dom'
   },
+  mode: 'production',
   module: {
     rules: [
       {
