@@ -81,8 +81,6 @@ const build = destDir => {
   })
 }
 
-const compiler = webpack(webpackConfig)
-
 if (process.argv[2] === '-w') {
   build('../public')
   fs.watch('./src', {recursive: true}, (eventType, filename) => {
@@ -91,27 +89,35 @@ if (process.argv[2] === '-w') {
       build('../public')
     }
   })
+  const compiler = webpack(
+    Object.assign(
+      webpackConfig,
+      {
+        mode: 'development'
+      }
+    )
+  )
+
   compiler.watch({}, (err, stats) => {
     if (err) {
       throw err
     }
+    console.log(stats.toString({
+      colors: true
+    }))
   })
 } else if (process.argv[2] === '-d') {
   build('docs')
 } else {
   build('../public')
+  const compiler = webpack(webpackConfig)
+
   compiler.run((err, stats) => {
     if (err) {
       throw err
     }
-    const info = stats.toJson()
-
-    if (stats.hasErrors()) {
-      console.error(info.errors)
-    }
-
-    if (stats.hasWarnings()) {
-      console.warn(info.warnings)
-    }
+    console.log(stats.toString({
+      colors: true
+    }))
   })
 }
