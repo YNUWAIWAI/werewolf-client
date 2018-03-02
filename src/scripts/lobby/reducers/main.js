@@ -27,8 +27,8 @@ const initialState = {
   name: 'Pamela'
 }
 
-const home = (state = initialState, action) => {
+const main = (state = initialState, action) => {
   return state
 }
 
-export default home
+export default main

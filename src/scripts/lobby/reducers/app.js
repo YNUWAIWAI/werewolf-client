@@ -1,13 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import History from '../containers/HistoryContainer'
-import Home from '../containers/HomeContainer'
+import Main from '../containers/MainContainer'
 import LobbyForAudience from '../containers/LobbyForAudienceContainer'
 import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
 import LobbyForRobotPlayer from '../containers/LobbyForRobotPlayerContainer'
 import Setting from '../containers/SettingContainer'
 
 const initialState = {
-  content: Home
+  content: Main
 }
 
 const app = (state = initialState, action) => {
@@ -15,10 +15,6 @@ const app = (state = initialState, action) => {
     case ActionTypes.SHOW_HISTORY:
       return {
         content: History
-      }
-    case ActionTypes.SHOW_HOME:
-      return {
-        content: Home
       }
     case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
       return {
@@ -31,6 +27,10 @@ const app = (state = initialState, action) => {
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         content: LobbyForRobotPlayer
+      }
+    case ActionTypes.SHOW_MAIN:
+      return {
+        content: Main
       }
     case ActionTypes.SHOW_SETTING:
       return {

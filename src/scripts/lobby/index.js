@@ -2,7 +2,7 @@ import App from './containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {SHOW_HOME} from './constants/ActionTypes'
+import {SHOW_MAIN} from './constants/ActionTypes'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {createStore} from 'redux'
 import middleware from './middlewares'
@@ -21,5 +21,5 @@ ReactDOM.render(
 )
 
 store.dispatch({
-  type: SHOW_HOME
+  type: SHOW_MAIN
 })
