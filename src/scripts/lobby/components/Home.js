@@ -6,7 +6,7 @@ export default function Home(props) {
   return (
     <React.Fragment>
       <Player image={props.image} name={props.name} />
-      <Menu items={props.items} />
+      <Menu items={props.items} transition={props.transition} />
     </React.Fragment>
   )
 }

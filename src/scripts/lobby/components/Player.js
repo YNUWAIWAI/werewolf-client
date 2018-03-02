@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MenuItem(props) {
+export default function Player(props) {
   return (
     <div className="player">
       {'Hi,'}
