@@ -10,7 +10,7 @@ const initialState = {
       text: 'Lobby for Robot Player'
     },
     {
-      text: 'Lobby for Robot Player'
+      text: 'Lobby for Human Player'
     },
     {
       text: 'History'
