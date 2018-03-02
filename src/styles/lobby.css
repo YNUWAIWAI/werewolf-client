@@ -8,18 +8,15 @@ body {
 }
 
 .player {
-
-  &--text {
-    font-size: 2.5rem;
-    margin: 3rem 0 0 5rem;
-  }
+  font-size: 2.5rem;
+  margin: 3rem 0 0 5rem;
 }
 
 .menu {
   padding: 1rem;
   list-style-type: none;
 
-  &--option {
+  &--item {
     border: 1px solid black;
     font-size: 4rem;
     padding: 1rem;
