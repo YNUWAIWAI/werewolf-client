@@ -1,0 +1,5 @@
+export const SOCKET_OPEN = 'SOCKET:OPEN'
+export const SOCKET_CLOSE = 'SOCKET:CLOSE'
+export const SOCKET_MESSAGE = 'SOCKET:MESSAGE'
+export const SOCKET_ERROR = 'SOCKET:ERROR'
+export const SOCKET_SEND = 'SOCKET:SEND'
