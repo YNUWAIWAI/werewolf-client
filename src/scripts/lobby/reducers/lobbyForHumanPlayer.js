@@ -4,12 +4,12 @@ const initialState = {
   isPlayer: true,
   menuItems: [
     {
-      text: 'Search for a Village in session',
-      type: ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION
+      text: 'Build your Village',
+      type: ActionTypes.BUILD_YOUR_VILLAGE
     },
     {
-      text: 'Search for an Old Village',
-      type: ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE
+      text: 'Search for a Village',
+      type: ActionTypes.SEARCH_FOR_A_VILLAGE
     },
     {
       text: 'Refresh',
