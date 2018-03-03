@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 
 const initialState = {
+  isPlayer: false,
   menuItems: [
     {
       text: 'Search for a Village in session',
