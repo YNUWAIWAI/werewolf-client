@@ -20,7 +20,7 @@ export default function VillageItem(props) {
         {'Setup'}
       </div>
       <div className="village--item--setup--val1">
-        {`${props.playerSetting.number} players`}
+        {props.isPlayer ? `${props.playerSetting.current} / ${props.playerSetting.number} players` : `${props.playerSetting.number} players`}
       </div>
       <div className="village--item--setup--val2">
         {`${props.avatar} Avatar`}
