@@ -24,3 +24,176 @@ body {
     text-align: center;
   }
 }
+
+.compact-menu {
+  list-style-type: none;
+  padding: 0;
+
+  &--item {
+    border: 1px solid black;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem 2rem;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    'header header'
+    'main aside';
+  margin: 1rem;
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.aside-content {
+  grid-area: aside;
+}
+
+.header {
+  font-size: 3rem;
+  grid-area: header;
+  padding: 1rem;
+}
+
+.village {
+  list-style-type: none;
+  padding: 0;
+
+  &--item {
+    border: solid 1px black;
+    display: grid;
+    font-size: 2rem;
+    grid-template-areas:
+      'v-n-p v-n-v v-n-v'
+      'h-n-p h-n-v h-n-v'
+      's-p s-v1 s-v2'
+      'mem mem mem'
+      'c-p c-v c-v';
+    margin-bottom: 0.5rem;
+
+    &--village-name {
+      &--prop {
+        border: solid 1px black;
+        grid-area: v-n-p;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      &--val {
+        border: solid 1px black;
+        grid-area: v-n-v;
+        padding: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    &--host-name {
+      &--prop {
+        border: solid 1px black;
+        grid-area: h-n-p;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      &--val {
+        border: solid 1px black;
+        grid-area: h-n-v;
+        padding: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    &--setup {
+      &--prop {
+        border: solid 1px black;
+        grid-area: s-p;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      &--val1 {
+        border: solid 1px black;
+        grid-area: s-v1;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      &--val2 {
+        border: solid 1px black;
+        grid-area: s-v2;
+        padding: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    &--member {
+      border: solid 1px black;
+      grid-area: mem;
+      padding: 0.5rem;
+      display: grid;
+      grid-template-areas:
+        'robot human'
+        'role role';
+
+      &--robot {
+        border: solid 1px black;
+        grid-area: robot;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      &--human {
+        border: solid 1px black;
+        grid-area: human;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      &--role {
+        display: grid;
+        grid-area: role;
+        grid-template-columns: repeat(8, 1fr);
+        margin-top: 0.5rem;
+
+        &--item {
+          position: relative;
+
+          &:hover::after {
+            background: white;
+            border: solid 1px black;
+            content: attr(data-tooltip);
+            font-size: small;
+            position: absolute;
+            top: 15%;
+            bottom: 10%;
+            left: 10%;
+            right: 15%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    &--comment {
+      &--prop {
+        border: solid 1px black;
+        grid-area: c-p;
+        padding: 0.5rem;
+      }
+
+      &--val {
+        border: solid 1px black;
+        grid-area: c-v;
+        padding: 0.5rem;
+      }
+    }
+  }
+}

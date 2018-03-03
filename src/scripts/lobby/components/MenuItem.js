@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function MenuItem(props) {
+export default function CompactMenuItem(props) {
   return (
-    <li className="menu--item" onClick={props.transition(props.type)}>
+    <li className={props.class} onClick={props.transition(props.type)}>
       {props.text}
     </li>
   )
