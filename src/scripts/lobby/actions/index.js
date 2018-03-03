@@ -22,3 +22,8 @@ export const socket = {
     type: types.SOCKET_SEND
   })
 }
+
+export const selectVillage = id => ({
+  id,
+  type: types.SELECT_A_VILLAGE
+})
