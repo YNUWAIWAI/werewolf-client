@@ -4,7 +4,7 @@ import LobbyForAudience from '../containers/LobbyForAudienceContainer'
 import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
 import LobbyForRobotPlayer from '../containers/LobbyForRobotPlayerContainer'
 import Main from '../containers/MainContainer'
-import Setting from '../containers/SettingContainer'
+import Settings from '../containers/SettingsContainer'
 
 const initialState = {
   content: Main
@@ -32,9 +32,9 @@ const app = (state = initialState, action) => {
       return {
         content: Main
       }
-    case ActionTypes.SHOW_SETTING:
+    case ActionTypes.SHOW_SETTINGS:
       return {
-        content: Setting
+        content: Settings
       }
     default:
       return state

@@ -8,7 +8,7 @@ import VillageList from './VillageList'
 export default function Setting(props) {
   return (
     <div className="grid">
-      <Header text="Setting" />
+      <Header text="Settings" />
       <MainContent>
         {'TODO'}
       </MainContent>
