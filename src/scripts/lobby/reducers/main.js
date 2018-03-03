@@ -20,8 +20,8 @@ const initialState = {
       type: ActionTypes.SHOW_HISTORY
     },
     {
-      text: 'Setting',
-      type: ActionTypes.SHOW_SETTING
+      text: 'Settings',
+      type: ActionTypes.SHOW_SETTINGS
     }
   ],
   name: 'Pamela'

@@ -8,6 +8,6 @@ const initialState = {
     }
   ]
 }
-const setting = (state = initialState, action) => state
+const settings = (state = initialState, action) => state
 
-export default setting
+export default settings
