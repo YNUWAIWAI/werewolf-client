@@ -13,7 +13,12 @@ export default function Setting(props) {
         {'TODO'}
       </MainContent>
       <AsideContent>
-        <Menu class="compact-menu" itemClass="compact-menu--item" items={props.menuItems} transition={props.transition} />
+        <Menu
+          class="compact-menu"
+          itemClass="compact-menu--item"
+          items={props.menuItems}
+          transition={props.transition}
+        />
       </AsideContent>
     </div>
   )

@@ -16,7 +16,7 @@ const initialState = {
       type: ActionTypes.REFRESH
     },
     {
-      text: ' Return to the Main Page',
+      text: 'Return to the Main Page',
       type: ActionTypes.SHOW_MAIN
     }
   ],
