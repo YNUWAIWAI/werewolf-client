@@ -13,7 +13,12 @@ export default function LobbyForHumanPlayer(props) {
         <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
       </MainContent>
       <AsideContent>
-        <Menu class="compact-menu" itemClass="compact-menu--item" items={props.menuItems} transition={props.transition} />
+        <Menu
+          class="compact-menu"
+          itemClass="compact-menu--item"
+          items={props.menuItems}
+          transition={props.transition}
+        />
       </AsideContent>
     </div>
   )

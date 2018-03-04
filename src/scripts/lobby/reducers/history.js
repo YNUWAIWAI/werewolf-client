@@ -4,7 +4,7 @@ const initialState = {
   isPlayer: false,
   menuItems: [
     {
-      text: ' Return to the Main Page',
+      text: 'Return to the Main Page',
       type: ActionTypes.SHOW_MAIN
     }
   ],
