@@ -8,46 +8,38 @@ import Main from '../containers/MainContainer'
 import Settings from '../containers/SettingsContainer'
 
 const initialState = {
-  content: Main,
-  type: ActionTypes.SHOW_MAIN
+  content: Main
 }
 
 const app = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.SHOW_BUILD_VILLAGE:
       return {
-        content: BuildVillage,
-        type: action.type
+        content: BuildVillage
       }
     case ActionTypes.SHOW_HISTORY:
       return {
-        content: History,
-        type: action.type
+        content: History
       }
     case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
       return {
-        content: LobbyForAudience,
-        type: action.type
+        content: LobbyForAudience
       }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
-        content: LobbyForHumanPlayer,
-        type: action.type
+        content: LobbyForHumanPlayer
       }
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
-        content: LobbyForRobotPlayer,
-        type: action.type
+        content: LobbyForRobotPlayer
       }
     case ActionTypes.SHOW_MAIN:
       return {
-        content: Main,
-        type: action.type
+        content: Main
       }
     case ActionTypes.SHOW_SETTINGS:
       return {
-        content: Settings,
-        type: action.type
+        content: Settings
       }
     default:
       return state
