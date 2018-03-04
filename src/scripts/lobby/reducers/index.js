@@ -1,4 +1,5 @@
 import app from './app'
+import buildVillage from './buildVillage'
 import {combineReducers} from 'redux'
 import history from './history'
 import lobbyForAudience from './lobbyForAudience'
@@ -9,6 +10,7 @@ import settings from './settings'
 
 const reducer = combineReducers({
   app,
+  buildVillage,
   history,
   lobbyForAudience,
   lobbyForHumanPlayer,

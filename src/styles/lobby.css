@@ -82,14 +82,15 @@ body {
       &--prop {
         border: solid 1px black;
         grid-area: v-n-p;
-        padding: 0.5rem;
+        padding: 1rem;
         text-align: center;
       }
 
       &--val {
         border: solid 1px black;
+        font-size: inherit;
         grid-area: v-n-v;
-        padding: 0.5rem;
+        padding: 1rem;
         text-align: center;
       }
     }
@@ -98,14 +99,15 @@ body {
       &--prop {
         border: solid 1px black;
         grid-area: h-n-p;
-        padding: 0.5rem;
+        padding: 1rem;
         text-align: center;
       }
 
       &--val {
         border: solid 1px black;
+        font-size: inherit;
         grid-area: h-n-v;
-        padding: 0.5rem;
+        padding: 1rem;
         text-align: center;
       }
     }
@@ -114,29 +116,45 @@ body {
       &--prop {
         border: solid 1px black;
         grid-area: s-p;
-        padding: 0.5rem;
+        padding: 1rem;
         text-align: center;
       }
 
       &--val1 {
         border: solid 1px black;
         grid-area: s-v1;
-        padding: 0.5rem;
+        font-size: inherit;
+        padding: 1rem;
         text-align: center;
+
+        &--input {
+          font-size: inherit;
+          border: none;
+          padding: 0;
+
+          &:focus {
+            padding: 0;
+          }
+        }
       }
 
       &--val2 {
         border: solid 1px black;
         grid-area: s-v2;
-        padding: 0.5rem;
+        font-size: inherit;
+        padding: 1rem;
         text-align: center;
+
+        &--select {
+          font-size: inherit;
+        }
       }
     }
 
     &--member {
       border: solid 1px black;
       grid-area: mem;
-      padding: 0.5rem;
+      padding: 1rem;
       display: grid;
       grid-template-areas:
         'robot human'
@@ -145,14 +163,16 @@ body {
       &--robot {
         border: solid 1px black;
         grid-area: robot;
-        padding: 0.5rem;
+        font-size: inherit;
+        padding: 1rem;
         text-align: center;
       }
 
       &--human {
         border: solid 1px black;
         grid-area: human;
-        padding: 0.5rem;
+        font-size: inherit;
+        padding: 1rem;
         text-align: center;
       }
 
@@ -164,6 +184,7 @@ body {
 
         &--item {
           position: relative;
+          font-size: inherit;
 
           &:hover::after {
             background: white;
@@ -187,13 +208,16 @@ body {
       &--prop {
         border: solid 1px black;
         grid-area: c-p;
-        padding: 0.5rem;
+        padding: 1rem;
+        text-align: center;
       }
 
       &--val {
         border: solid 1px black;
+        font-size: inherit;
         grid-area: c-v;
-        padding: 0.5rem;
+        padding: 1rem;
+        text-align: center;
       }
     }
   }
