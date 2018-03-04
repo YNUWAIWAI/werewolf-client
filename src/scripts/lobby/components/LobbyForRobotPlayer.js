@@ -8,7 +8,7 @@ import VillageList from './VillageList'
 export default function LobbyForRobotPlayer(props) {
   return (
     <div className="grid">
-      <Header text="Lobby for Human Player" />
+      <Header text="Lobby for Robot Player" />
       <MainContent>
         <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
       </MainContent>
