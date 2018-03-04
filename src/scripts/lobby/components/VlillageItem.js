@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function VillageItem(props) {
   return (
-    <li className="village--item" onClick={props.handleClick}>
+    <div className="village--item" onClick={props.handleClick}>
       <div className="village--item--village-name--prop">
         {'Village Name'}
       </div>
@@ -32,7 +32,6 @@ export default function VillageItem(props) {
       <div className="village--item--comment--val">
         {props.comment}
       </div>
-
-    </li>
+    </div>
   )
 }
