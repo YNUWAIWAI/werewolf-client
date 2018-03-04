@@ -5,7 +5,7 @@ const initialState = {
   menuItems: [
     {
       text: 'Build your Village',
-      type: ActionTypes.BUILD_YOUR_VILLAGE
+      type: ActionTypes.SHOW_BUILD_VILLAGE
     },
     {
       text: 'Search for a Village',

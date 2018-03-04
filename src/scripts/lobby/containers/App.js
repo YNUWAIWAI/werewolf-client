@@ -5,7 +5,9 @@ function App(props) {
   return <props.content transition={props.transition} />
 }
 
-const mapStateToProps = state => state.app
+const mapStateToProps = state => ({
+  content: state.app.content
+})
 const mapDispatchToProps = dispatch => ({
   transition: target => () => dispatch({
     type: target
