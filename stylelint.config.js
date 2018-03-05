@@ -9,6 +9,9 @@ const commaSpace = {
 }
 
 module.exports = {
+  plugins: [
+    'stylelint-order'
+  ],
   rules: {
     'at-rule-empty-line-before': [
       'always', {
@@ -104,6 +107,14 @@ module.exports = {
     'number-leading-zero': 'always',
     'number-max-precision': 2,
     'number-no-trailing-zeros': true,
+    'order/order': [
+      'custom-properties',
+      'at-variables',
+      'declarations',
+      'rules',
+      'at-rules'
+    ],
+    'order/properties-alphabetical-order': true,
     'property-case': 'lower',
     'property-no-unknown': true,
     'property-no-vendor-prefix': true,
