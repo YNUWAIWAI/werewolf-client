@@ -6,6 +6,7 @@ import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
 import LobbyForRobotPlayer from '../containers/LobbyForRobotPlayerContainer'
 import Main from '../containers/MainContainer'
 import Settings from '../containers/SettingsContainer'
+import WaitingForPlayers from '../containers/WaitingForPlayersContainer'
 
 const initialState = {
   content: Main
@@ -13,6 +14,10 @@ const initialState = {
 
 const app = (state = initialState, action) => {
   switch (action.type) {
+    case ActionTypes.SELECT_A_VILLAGE:
+      return {
+        content: WaitingForPlayers
+      }
     case ActionTypes.SHOW_BUILD_VILLAGE:
       return {
         content: BuildVillage

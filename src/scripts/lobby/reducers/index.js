@@ -7,6 +7,7 @@ import lobbyForHumanPlayer from './lobbyForHumanPlayer'
 import lobbyForRobotPlayer from './lobbyForRobotPlayer'
 import main from './main'
 import settings from './settings'
+import waitingForPlayers from './waitingForPlayers'
 
 const reducer = combineReducers({
   app,
@@ -16,7 +17,8 @@ const reducer = combineReducers({
   lobbyForHumanPlayer,
   lobbyForRobotPlayer,
   main,
-  settings
+  settings,
+  waitingForPlayers
 })
 
 export default reducer
