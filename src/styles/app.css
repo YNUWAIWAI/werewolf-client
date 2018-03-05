@@ -23,8 +23,8 @@
 }
 
 body {
-  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
 }
 
 .hidden {
@@ -39,44 +39,44 @@ body {
 }
 
 .day {
-  flex: 2;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex: 2;
+  justify-content: center;
 
   &--text {
-    width: 70%;
-    height: 60%;
+    align-items: center;
     border: 2px solid black;
     border-radius: 5em;
     display: inline-flex;
-    justify-content: center;
-    align-items: center;
     font-size: 1.5em;
+    height: 60%;
+    justify-content: center;
+    width: 70%;
 
     & > span {
       margin: 0 1em;
-      width: 5em;
       text-align: center;
+      width: 5em;
     }
   }
 }
 
 .role {
-  flex: 3;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex: 3;
+  justify-content: center;
 
   &--text {
-    width: 60%;
-    height: 60%;
+    align-items: center;
     border: 2px solid black;
     border-radius: 5em;
     display: inline-flex;
-    justify-content: center;
-    align-items: center;
     font-size: 1.5em;
+    height: 60%;
+    justify-content: center;
+    width: 60%;
 
     & > span {
       &::before {
@@ -91,13 +91,13 @@ body {
 
   &--icon {
     height: 80%;
+    margin: 1em 1em 0 0;
     position: relative;
     width: var(--info-image-size);
-    margin: 1em 1em 0 0;
 
     & > img {
-      position: absolute;
       height: var(--info-image-size);
+      position: absolute;
       width: var(--info-image-size);
     }
 
@@ -122,15 +122,15 @@ body {
 }
 
 .chat {
-  width: 48vw;
   overflow: scroll;
+  width: 48vw;
 
   &--item {
     display: grid;
     grid-template-areas: 'me text opp';
     grid-template-columns: 1fr 4fr 1fr;
-    min-height: calc(var(--chat-image-size) + 1em);
     margin-top: 1em;
+    min-height: calc(var(--chat-image-size) + 1em);
 
     &:first-child {
       margin-top: 0;
@@ -139,37 +139,38 @@ body {
 
   &--arrow-box {
     background: var(--public-color);
-    grid-area: text;
-    position: relative;
     border-radius: 5px;
     display: grid;
-    grid-template-areas: 'num text'
-                         'num date';
+    grid-area: text;
+    grid-template-areas:
+      'num text'
+      'num date';
     grid-template-columns: 2.5em 1fr;
+    position: relative;
 
     &::after {
-      left: 100%;
-      top: calc(var(--chat-image-size) / 2);
       border: solid transparent;
-      content: '';
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
       border-left-color: var(--public-color);
       border-width: var(--arrow);
+      content: '';
+      height: 0;
+      left: 100%;
       margin-top: calc(var(--arrow) * -1);
+      pointer-events: none;
+      position: absolute;
+      top: calc(var(--chat-image-size) / 2);
+      width: 0;
     }
   }
 
   &--num {
-    grid-area: num;
-    display: inline-flex;
     align-items: center;
+    display: inline-flex;
+    grid-area: num;
     justify-content: center;
+    padding: 0 0.5em;
     width: 1.5em;
     word-break: break-all;
-    padding: 0 0.5em;
   }
 
   &--text {
@@ -179,35 +180,35 @@ body {
   }
 
   &--date {
-    grid-area: date;
-    padding: 0 1em 1em 0;
     display: inline-flex;
     flex-flow: column-reverse;
+    grid-area: date;
+    padding: 0 1em 1em 0;
     text-align: right;
   }
 
   &--icon {
     display: block;
     grid-area: opp;
-    position: relative;
     margin: 0 0 0 var(--arrow);
+    position: relative;
 
     & > img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: var(--chat-image-size);
       height: var(--chat-image-size);
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: var(--chat-image-size);
     }
 
     & > span {
+      font-size: x-small;
+      overflow: scroll;
       position: absolute;
+      text-align: center;
       top: var(--chat-image-size);
       width: 100%;
-      text-align: center;
-      font-size: x-small;
       word-break: keep-all;
-      overflow: scroll;
     }
   }
 
@@ -253,10 +254,10 @@ body {
 
   &--item.me {
     & > .chat--arrow-box::after {
-      left: unset;
-      right: 100%;
       border-color: transparent;
       border-right-color: var(--public-color);
+      left: unset;
+      right: 100%;
     }
 
     &.private > .chat--arrow-box::after {
@@ -288,21 +289,21 @@ body {
 }
 
 .prediction {
-  width: 48vw;
-  display: grid;
-  height: 100%;
-  grid: repeat(6, 1fr) / repeat(7, 1fr);
   border: 1px solid black;
   border-radius: 3px;
+  display: grid;
+  grid: repeat(6, 1fr) / repeat(7, 1fr);
+  height: 100%;
   overflow: scroll;
+  width: 48vw;
 
   & > div {
+    align-items: center;
     border: solid 1px black;
     box-sizing: border-box;
     display: inline-flex;
     font-size: 1.5em;
     justify-content: center;
-    align-items: center;
   }
 
   &--player {
@@ -314,8 +315,8 @@ body {
     }
 
     & > img {
-      width: var(--prediction-image-size);
       height: var(--prediction-image-size);
+      width: var(--prediction-image-size);
     }
 
     & > span {
@@ -343,8 +344,8 @@ body {
     background: black;
 
     &::after {
-      content: attr(data-date);
       color: white;
+      content: attr(data-date);
     }
   }
 
@@ -357,52 +358,52 @@ body {
     position: relative;
 
     &:hover::after {
+      align-items: center;
       background: white;
       border: solid 1px black;
-      content: attr(data-tooltip);
-      font-size: small;
-      position: absolute;
-      top: 15%;
       bottom: 10%;
-      left: 10%;
-      right: 15%;
+      content: attr(data-tooltip);
       display: inline-flex;
+      font-size: small;
       justify-content: center;
-      align-items: center;
+      left: 10%;
+      position: absolute;
+      right: 15%;
+      top: 15%;
     }
   }
 }
 
 .command {
-  height: 20vh;
   display: flex;
+  height: 20vh;
   justify-content: space-around;
   margin: 2.5vh 0;
   position: relative;
 
   &--input {
-    width: 30vw;
     height: 100%;
     position: relative;
+    width: 30vw;
 
     & textarea {
-      position: absolute;
-      width: 100%;
+      background: var(--public-color);
+      border-radius: 10px;
+      box-sizing: border-box;
+      height: 70%;
+      max-height: 70%;
       max-width: 100%;
       min-width: 100%;
-      max-height: 70%;
-      height: 70%;
-      resize: none;
-      box-sizing: border-box;
       padding: 1em;
-      border-radius: 10px;
-      background: var(--public-color);
+      position: absolute;
+      resize: none;
+      width: 100%;
     }
 
     &--char {
       position: absolute;
-      top: calc(70% - 1.25em);
       right: 0.5em;
+      top: calc(70% - 1.25em);
 
       &.error {
         color: red;
@@ -410,23 +411,23 @@ body {
     }
 
     &--counter {
-      position: absolute;
       bottom: 0;
-      right: calc(20% + 20px);
       font-size: x-large;
+      position: absolute;
+      right: calc(20% + 20px);
     }
 
     & button {
+      background-color: rgb(128, 216, 255);
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 1px 1px 0;
+      height: 25%;
+      margin: 10px;
       position: absolute;
       right: 0;
       top: 70%;
       width: 20%;
-      height: 25%;
-      margin: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: rgb(128, 216, 255);
-      box-shadow: 0 1px 1px 0;
 
       &:hover {
         border: 1px solid white;
@@ -441,8 +442,8 @@ body {
         box-shadow: 0;
 
         &:hover, &:active {
-          border: unset;
           background-color: rgb(90, 125, 140);
+          border: unset;
         }
       }
     }
@@ -457,14 +458,14 @@ body {
   }
 
   &--select {
+    line-height: 1.5;
     height: 100%;
     width: 100%;
-    line-height: 1.5;
   }
 
   &--description {
-    padding: 0 1rem;
     font-size: 1.5rem;
+    padding: 0 1rem;
   }
 
   &--option-container {
@@ -474,12 +475,12 @@ body {
   }
 
   &--option {
-    height: 100%;
-    width: calc(20vh - 3.45rem);
-    display: inline-flex;
-    justify-content: center;
     align-items: center;
+    display: inline-flex;
     flex-flow: column nowrap;
+    height: 100%;
+    justify-content: center;
+    width: calc(20vh - 3.45rem);
 
     & > img {
       height: var(--vote-image-size);
@@ -498,24 +499,24 @@ body {
 }
 
 .hide--button {
-  width: 4vw;
+  background: #303030;
+  border: 0;
+  bottom: 23vh;
   height: 1.5em;
   position: absolute;
-  bottom: 23vh;
   right: 0;
-  border: 0;
-  background: #303030;
+  width: 4vw;
 
   &:focus {
     outline: unset;
   }
 
   &--icon {
-    border-style: solid;
     border-color: white transparent;
+    border-style: solid;
     border-width: 7px 5px 0;
-    position: absolute;
     margin-left: -2px;
+    position: absolute;
 
     &.hide {
       border-width: 0 4px 5px;
@@ -528,22 +529,22 @@ body {
 }
 
 .modal {
-  position: fixed;
-  width: 40vw;
-  height: 24vh;
-  top: 38vh;
-  left: 30vw;
   background: white;
+  height: 24vh;
+  left: 30vw;
   padding: 1em;
+  position: fixed;
+  top: 38vh;
+  width: 40vw;
   z-index: 2;
 
   &--icon {
+    align-items: center;
     display: inline-flex;
     flex-direction: column;
-    align-items: center;
+    height: calc(20vh - 3.75em);
     justify-content: center;
     width: 100%;
-    height: calc(20vh - 3.75em);
 
     & > img {
       height: var(--modal-image-size);
@@ -556,21 +557,21 @@ body {
   }
 
   &--description {
-    text-align: center;
     font-size: 1.5em;
     margin-bottom: 1em;
+    text-align: center;
   }
 
   &--button--container {
     display: inline-flex;
-    width: 100%;
     justify-content: space-around;
+    width: 100%;
   }
 
   &--button {
+    border: none;
     font-size: 1.5em;
     width: 30%;
-    border: none;
   }
 
   &--button[ value = 'yes' ] {
@@ -583,28 +584,28 @@ body {
 }
 
 .result {
-  height: 80vh;
-  width: 80vw;
-  position: fixed;
-  top: 10vh;
-  left: 10vw;
   background: white;
+  border: 1px solid black;
   display: grid;
   grid-template-areas: 'summary summary summary summary summary summary summary';
   grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
-  border: 1px solid black;
+  height: 80vh;
+  left: 10vw;
   overflow: scroll;
+  position: fixed;
+  top: 10vh;
+  width: 80vw;
   z-index: 2;
 
   &--cell {
     border: 1px solid black;
     font-size: 2em;
-    line-height: 1.5;
-    padding: 0.5rem;
-    max-height: 3rem;
-    text-align: center;
     height: 100%;
+    line-height: 1.5;
+    max-height: 3rem;
     overflow: scroll;
+    padding: 0.5rem;
+    text-align: center;
 
     &[ data-result = 'summary' ] {
       grid-area: summary;
@@ -613,26 +614,26 @@ body {
     &[ data-result = 'image' ],
     &[ data-result = 'roleImage' ],
     &[ data-result = 'userAvatar' ] {
-      display: inline-flex;
       align-items: center;
+      display: inline-flex;
     }
 
     &[ data-result = 'roleImage' ][ data-tooltip ] {
       position: relative;
 
       &:hover::after {
+        align-items: center;
         background: white;
         border: solid 1px black;
-        content: attr(data-tooltip);
-        font-size: 10px;
-        position: absolute;
-        top: 15%;
         bottom: 15%;
-        left: 10%;
-        right: 10%;
+        content: attr(data-tooltip);
         display: inline-flex;
+        font-size: 10px;
         justify-content: center;
-        align-items: center;
+        left: 10%;
+        position: absolute;
+        right: 10%;
+        top: 15%;
       }
     }
 
@@ -648,10 +649,10 @@ body {
 
 .obfucator {
   background: rgba(0, 0, 0, 0.5);
-  position: fixed;
   height: 100vh;
-  width: 100vw;
-  top: 0;
   left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
   z-index: 1;
 }
