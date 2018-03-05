@@ -1,6 +1,7 @@
 import app from './app'
 import buildVillage from './buildVillage'
 import {combineReducers} from 'redux'
+import connectingToRobotPlayer from './connectingToRobotPlayer'
 import history from './history'
 import lobbyForAudience from './lobbyForAudience'
 import lobbyForHumanPlayer from './lobbyForHumanPlayer'
@@ -12,6 +13,7 @@ import waitingForPlayers from './waitingForPlayers'
 const reducer = combineReducers({
   app,
   buildVillage,
+  connectingToRobotPlayer,
   history,
   lobbyForAudience,
   lobbyForHumanPlayer,

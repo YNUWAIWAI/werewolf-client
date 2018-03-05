@@ -1,5 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import BuildVillage from '../containers/BuildVillageContainer'
+import ConnectingToRobotPlayer from '../containers/ConnectingToRobotPlayerContainer'
 import History from '../containers/HistoryContainer'
 import LobbyForAudience from '../containers/LobbyForAudienceContainer'
 import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
@@ -21,6 +22,10 @@ const app = (state = initialState, action) => {
     case ActionTypes.SHOW_BUILD_VILLAGE:
       return {
         content: BuildVillage
+      }
+    case ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER:
+      return {
+        connect: ConnectingToRobotPlayer
       }
     case ActionTypes.SHOW_HISTORY:
       return {
