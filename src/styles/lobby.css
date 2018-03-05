@@ -222,3 +222,34 @@ body {
     }
   }
 }
+
+.avatar-list {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  margin-bottom: 1rem;
+
+  &--item {
+    border-bottom: 1px solid black;
+    display: grid;
+    font-size: 1.5rem;
+    grid-gap: 0.5rem;
+    grid-template-columns: 2rem 3fr 1fr;
+
+    &--image {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &--name {
+
+    }
+
+    &--host {
+      border: 1px solid black;
+      border-radius: 1rem;
+      margin: 2px;
+      text-align: center;
+    }
+  }
+}
