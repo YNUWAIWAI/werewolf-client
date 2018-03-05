@@ -80,16 +80,22 @@ body {
 
     &--village-name {
       &--prop {
+        align-items: center;
         border: solid 1px black;
+        display: inline-flex;
         grid-area: v-n-p;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
 
       &--val {
+        align-items: center;
         border: solid 1px black;
+        display: inline-flex;
         font-size: inherit;
         grid-area: v-n-v;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
@@ -97,16 +103,22 @@ body {
 
     &--host-name {
       &--prop {
+        align-items: center;
         border: solid 1px black;
+        display: inline-flex;
         grid-area: h-n-p;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
 
       &--val {
+        align-items: center;
         border: solid 1px black;
+        display: inline-flex;
         font-size: inherit;
         grid-area: h-n-v;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
@@ -114,16 +126,22 @@ body {
 
     &--setup {
       &--prop {
+        align-items: center;
         border: solid 1px black;
+        display: inline-flex;
         grid-area: s-p;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
 
       &--val1 {
+        align-items: center;
         border: solid 1px black;
-        grid-area: s-v1;
+        display: inline-flex;
         font-size: inherit;
+        grid-area: s-v1;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
 
@@ -139,9 +157,12 @@ body {
       }
 
       &--val2 {
+        align-items: center;
         border: solid 1px black;
-        grid-area: s-v2;
+        display: inline-flex;
         font-size: inherit;
+        grid-area: s-v2;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
 
@@ -161,17 +182,23 @@ body {
         'role role';
 
       &--robot {
+        align-items: center;
         border: solid 1px black;
-        grid-area: robot;
+        display: inline-flex;
         font-size: inherit;
+        grid-area: robot;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
 
       &--human {
+        align-items: center;
         border: solid 1px black;
-        grid-area: human;
+        display: inline-flex;
         font-size: inherit;
+        grid-area: human;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
@@ -206,16 +233,22 @@ body {
 
     &--comment {
       &--prop {
+        align-items: center;
         border: solid 1px black;
+        display: inline-flex;
         grid-area: c-p;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
 
       &--val {
+        align-items: center;
         border: solid 1px black;
+        display: inline-flex;
         font-size: inherit;
         grid-area: c-v;
+        justify-content: center;
         padding: 1rem;
         text-align: center;
       }
@@ -242,7 +275,9 @@ body {
     }
 
     &--name {
-
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
     }
 
     &--host {
