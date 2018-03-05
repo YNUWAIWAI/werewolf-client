@@ -3,8 +3,8 @@
 }
 
 body {
-  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
 }
 
 .player {
@@ -13,14 +13,14 @@ body {
 }
 
 .menu {
-  padding: 1rem;
   list-style-type: none;
+  padding: 1rem;
 
   &--item {
     border: 1px solid black;
     font-size: 4rem;
-    padding: 1rem;
     margin: 1.5rem 10rem;
+    padding: 1rem;
     text-align: center;
   }
 }
@@ -41,10 +41,10 @@ body {
 .grid {
   display: grid;
   grid-gap: 1rem 2rem;
-  grid-template-columns: 2fr 1fr;
   grid-template-areas:
     'header header'
     'main aside';
+  grid-template-columns: 2fr 1fr;
   margin: 1rem;
 }
 
@@ -146,8 +146,8 @@ body {
         text-align: center;
 
         &--input {
-          font-size: inherit;
           border: none;
+          font-size: inherit;
           padding: 0;
 
           &:focus {
@@ -174,12 +174,12 @@ body {
 
     &--member {
       border: solid 1px black;
-      grid-area: mem;
-      padding: 1rem;
       display: grid;
+      grid-area: mem;
       grid-template-areas:
         'robot human'
         'role role';
+      padding: 1rem;
 
       &--robot {
         align-items: center;
@@ -210,22 +210,22 @@ body {
         margin-top: 0.5rem;
 
         &--item {
-          position: relative;
           font-size: inherit;
+          position: relative;
 
           &:hover::after {
+            align-items: center;
             background: white;
             border: solid 1px black;
-            content: attr(data-tooltip);
-            font-size: small;
-            position: absolute;
-            top: 15%;
             bottom: 10%;
-            left: 10%;
-            right: 15%;
+            content: attr(data-tooltip);
             display: inline-flex;
+            font-size: small;
             justify-content: center;
-            align-items: center;
+            left: 10%;
+            position: absolute;
+            right: 15%;
+            top: 15%;
           }
         }
       }
@@ -270,8 +270,8 @@ body {
     grid-template-columns: 2rem 3fr 1fr;
 
     &--image {
-      width: 2rem;
       height: 2rem;
+      width: 2rem;
     }
 
     &--name {
