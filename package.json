@@ -3,18 +3,25 @@
   "repository": "git@github.com:YNUWAIWAI/werewolf-client.git",
   "author": "Yudai Udagawa <nimius.rd@gmail.com>",
   "license": "MIT",
+  "jest": {
+    "setupTestFrameworkScriptFile": "./tools/setupTests.js"
+  },
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "babel-eslint": "^8.0.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
-    "eslint": "^4.8.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.2",
     "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-jest": "^21.12.3",
     "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.66.0",
     "flow-remove-types": "^1.2.3",
     "glob": "^7.1.2",
+    "jest": "^22.4.2",
     "postcss": "^6.0.13",
     "postcss-nested": "^3.0.0",
     "redux-devtools-extension": "^2.13.2",
@@ -26,8 +33,8 @@
     "build": "node tools/build.js",
     "build:watch": "node tools/build.js -w",
     "build:docs": "node tools/build.js -d",
-    "test": "ava",
-    "test:watch": "ava --watch"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "babel-loader": "^7.1.2",
