@@ -5,6 +5,7 @@ import React from 'react'
 export default function Member(props) {
   const items = ORDERED_ROLE_LIST.map(item =>
     <MemberRole
+      class="village--item--member--role--item"
       id={item.id}
       image={item.image}
       key={item.id}

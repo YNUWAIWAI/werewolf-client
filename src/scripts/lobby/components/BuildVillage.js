@@ -10,10 +10,18 @@ export default function BuildVillage(props) {
     <div className="grid">
       <Header text="Build village" />
       <MainContent>
-        <EditableVillageItem default={props.default} />
+        <EditableVillageItem
+          {... props.village}
+          handleChange={props.handleChange}
+        />
       </MainContent>
       <AsideContent>
-        <Menu class="compact-menu" itemClass="compact-menu--item" items={props.menuItems} transition={props.transition} />
+        <Menu
+          class="compact-menu"
+          itemClass="compact-menu--item"
+          items={props.menuItems}
+          transition={props.transition}
+        />
       </AsideContent>
     </div>
   )

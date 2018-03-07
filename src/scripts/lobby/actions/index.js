@@ -27,3 +27,31 @@ export const selectVillage = id => ({
   id,
   type: types.SELECT_A_VILLAGE
 })
+export const changeAvatar = avatar => ({
+  avatar,
+  type: types.CHANGE_AVATAR
+})
+export const changeComment = comment => ({
+  comment,
+  type: types.CHANGE_COMMENT
+})
+export const changeHostName = hostName => ({
+  hostName,
+  type: types.CHANGE_HOST_NAME
+})
+export const changeMember = member => ({
+  member,
+  type: types.CHANGE_MEMBER
+})
+export const changeNumberOfPlayers = numberOfPlayers => ({
+  numberOfPlayers: Number(numberOfPlayers),
+  type: types.CHANGE_NUMBER_OF_PLAYERS
+})
+export const changeNumberOfRobots = numberOfRobots => ({
+  numberOfRobots: Number(numberOfRobots),
+  type: types.CHANGE_NUMBER_OF_ROBOTS
+})
+export const changeVillageName = villageName => ({
+  type: types.CHANGE_VILLAGE_NAME,
+  villageName
+})

@@ -176,11 +176,13 @@ module.exports = {
     "react/button-has-type": 0,
     "react/destructuring-assignment": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", "tsx"] }],
+    "react/jsx-handler-names": 0,
     "react/jsx-indent" : [0, 2],
     "react/jsx-indent-props" : [2, 2],
     "react/jsx-max-props-per-line": [2, {
       maximum: 4
     }],
+    "react/jsx-max-depth": 0,
     "react/jsx-no-literals": 2,
     "react/jsx-wrap-multilines": 0,
     "react/no-set-state": 0,
