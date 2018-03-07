@@ -137,6 +137,13 @@ const buildVillage = (state = initialState, action) => {
         {},
         state,
         {
+          village: Object.assign(
+            {},
+            state.village,
+            {
+              isHuman: true
+            }
+          ),
           menuItems: [
             {
               text: 'Build',
@@ -158,6 +165,13 @@ const buildVillage = (state = initialState, action) => {
         {},
         state,
         {
+          village: Object.assign(
+            {},
+            state.village,
+            {
+              isHuman: false
+            }
+          ),
           menuItems: [
             {
               text: 'Build',

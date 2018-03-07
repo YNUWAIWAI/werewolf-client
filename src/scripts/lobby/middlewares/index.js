@@ -8,7 +8,7 @@ const middleware = applyMiddleware(
   // socket({
   //   url
   // }),
-  // client2server,
+  client2server,
   logger
 )
 
