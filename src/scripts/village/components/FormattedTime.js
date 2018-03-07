@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 
 const formatTime = time => {
@@ -7,9 +8,16 @@ const formatTime = time => {
   return `残り${minute}'${second}`
 }
 
-const FormattedTime = props =>
-  <span id={props.id}>
-    {props.time < 0 ? '終了' : formatTime(props.time)}
-  </span>
+type Props = {
+  id: string;
+  time: number;
+}
 
-export default FormattedTime
+export default function FormattedTime(props: Props) {
+  return (
+    <span id={props.id}>
+      {props.time < 0 ? '終了' : formatTime(props.time)}
+    </span>
+  )
+}
+
