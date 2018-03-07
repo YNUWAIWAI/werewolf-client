@@ -1,386 +1,386 @@
 const Cast = {
   4: {
     A: {
-      villager: 3,
-      seer: 0,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 0,
+      villager: 3,
+      werehumster: 0,
+      werewolf: 1
     },
     B: {
-      villager: 2,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 2,
+      werehumster: 0,
+      werewolf: 1
     },
     C: {
-      villager: 1,
-      seer: 1,
-      medium: 1,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 1,
+      werehumster: 0,
+      werewolf: 1
     }
   },
   5: {
     A: {
-      villager: 3,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 3,
+      werehumster: 0,
+      werewolf: 1
     },
     B: {
-      villager: 2,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 1
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 2,
+      werehumster: 1,
+      werewolf: 1
     },
     C: {
-      villager: 1,
-      seer: 1,
-      medium: 0,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 1,
+      werehumster: 0,
+      werewolf: 1
     }
   },
   6: {
     A: {
-      villager: 4,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 4,
+      werehumster: 0,
+      werewolf: 1
     },
     B: {
-      villager: 3,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 1
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 1
     },
     C: {
-      villager: 0,
-      seer: 1,
-      medium: 0,
       hunter: 1,
-      mason: 0,
       madman: 3,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 0,
+      werehumster: 0,
+      werewolf: 1
     }
   },
   7: {
     A: {
-      villager: 5,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 5,
+      werehumster: 0,
+      werewolf: 1
     },
     B: {
-      villager: 4,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 1
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 4,
+      werehumster: 1,
+      werewolf: 1
     },
     C: {
-      villager: 2,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 2,
+      werehumster: 0,
+      werewolf: 1
     }
   },
   8: {
     A: {
-      villager: 6,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 1,
-      werehumster: 0
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 6,
+      werehumster: 0,
+      werewolf: 1
     },
     B: {
-      villager: 4,
-      seer: 1,
-      medium: 0,
       hunter: 0,
-      mason: 0,
       madman: 1,
-      werewolf: 1,
-      werehumster: 1
+      mason: 0,
+      medium: 0,
+      seer: 1,
+      villager: 4,
+      werehumster: 1,
+      werewolf: 1
     },
     C: {
-      villager: 1,
-      seer: 1,
-      medium: 1,
       hunter: 0,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 0
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 1,
+      werehumster: 0,
+      werewolf: 2
     }
   },
   9: {
     A: {
-      villager: 5,
-      seer: 1,
-      medium: 1,
       hunter: 0,
-      mason: 0,
       madman: 0,
-      werewolf: 2,
-      werehumster: 0
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 5,
+      werehumster: 0,
+      werewolf: 2
     },
     B: {
-      villager: 3,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 0,
-      werewolf: 2,
-      werehumster: 1
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 2
     },
     C: {
-      villager: 3,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 1,
-      werehumster: 1
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 1
     }
   },
   10: {
     A: {
-      villager: 5,
-      seer: 1,
-      medium: 1,
       hunter: 0,
-      mason: 0,
       madman: 1,
-      werewolf: 2,
-      werehumster: 0
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 5,
+      werehumster: 0,
+      werewolf: 2
     },
     B: {
-      villager: 4,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 0,
-      werewolf: 2,
-      werehumster: 1
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 4,
+      werehumster: 1,
+      werewolf: 2
     },
     C: {
-      villager: 2,
-      seer: 2,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 0,
+      medium: 1,
+      seer: 2,
+      villager: 2,
+      werehumster: 1,
+      werewolf: 2
     }
   },
   11: {
     A: {
-      villager: 5,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 2,
-      werehumster: 0
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 5,
+      werehumster: 0,
+      werewolf: 2
     },
     B: {
-      villager: 4,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 4,
+      werehumster: 1,
+      werewolf: 2
     },
     C: {
-      villager: 3,
-      seer: 2,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 0,
+      medium: 1,
+      seer: 2,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 2
     }
   },
   12: {
     A: {
-      villager: 6,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 2,
-      werehumster: 0
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 0,
+      werewolf: 2
     },
     B: {
-      villager: 5,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 0,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 0,
+      medium: 1,
+      seer: 1,
+      villager: 5,
+      werehumster: 1,
+      werewolf: 2
     },
     C: {
-      villager: 3,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 2
     }
   },
   13: {
     A: {
-      villager: 5,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 0
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 5,
+      werehumster: 0,
+      werewolf: 2
     },
     B: {
-      villager: 4,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 4,
+      werehumster: 1,
+      werewolf: 2
     },
     C: {
-      villager: 3,
-      seer: 2,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 2,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 2
     }
   },
   14: {
     A: {
-      villager: 5,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 5,
+      werehumster: 1,
+      werewolf: 2
     },
     B: {
-      villager: 5,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 5,
+      werehumster: 1,
+      werewolf: 2
     },
     C: {
-      villager: 3,
-      seer: 2,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 2,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 2,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 2
     }
   },
   15: {
     A: {
-      villager: 6,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 1,
+      werewolf: 2
     },
     B: {
-      villager: 6,
-      seer: 1,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 1,
-      werewolf: 2,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 1,
+      werewolf: 2
     },
     C: {
-      villager: 3,
-      seer: 2,
-      medium: 1,
       hunter: 1,
-      mason: 2,
       madman: 2,
-      werewolf: 3,
-      werehumster: 1
+      mason: 2,
+      medium: 1,
+      seer: 2,
+      villager: 3,
+      werehumster: 1,
+      werewolf: 3
     }
   }
 }
