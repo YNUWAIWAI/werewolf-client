@@ -145,14 +145,8 @@ body {
         padding: 1rem;
         text-align: center;
 
-        &--input {
-          border: none;
+        &--select {
           font-size: inherit;
-          padding: 0;
-
-          &:focus {
-            padding: 0;
-          }
         }
       }
 
@@ -253,7 +247,7 @@ body {
         padding: 1rem;
         text-align: center;
 
-        &--input {
+        &--select {
           font-size: inherit;
         }
       }
