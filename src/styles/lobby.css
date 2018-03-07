@@ -231,6 +231,90 @@ body {
       }
     }
 
+    &--selectable-member {
+      border: solid 1px black;
+      display: grid;
+      grid-area: mem;
+      grid-template-areas:
+        'robot human'
+        'role role'
+        'A A'
+        'B B'
+        'C C';
+      padding: 1rem;
+
+      &--robot {
+        align-items: center;
+        border: solid 1px black;
+        display: inline-flex;
+        font-size: inherit;
+        grid-area: robot;
+        justify-content: center;
+        padding: 1rem;
+        text-align: center;
+
+        &--input {
+          font-size: inherit;
+        }
+      }
+
+      &--human {
+        align-items: center;
+        border: solid 1px black;
+        display: inline-flex;
+        font-size: inherit;
+        grid-area: human;
+        justify-content: center;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      &--role {
+        display: grid;
+        grid-area: role;
+        grid-template-columns: 3rem repeat(8, 1fr);
+        margin-top: 0.5rem;
+
+        &[ data-opt = 'A'] {
+          grid-area: A;
+        }
+
+        &[ data-opt = 'B'] {
+          grid-area: B;
+        }
+
+        &[ data-opt = 'C'] {
+          grid-area: C;
+        }
+
+        &--item {
+          font-size: inherit;
+          position: relative;
+
+          &:hover::after {
+            align-items: center;
+            background: white;
+            border: solid 1px black;
+            bottom: 10%;
+            content: attr(data-tooltip);
+            display: inline-flex;
+            font-size: small;
+            justify-content: center;
+            left: 10%;
+            position: absolute;
+            right: 15%;
+            top: 15%;
+          }
+        }
+
+        &--radio {
+          align-items: center;
+          display: inline-flex;
+          justify-content: space-around;
+        }
+      }
+    }
+
     &--comment {
       &--prop {
         align-items: center;
