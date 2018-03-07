@@ -1,4 +1,5 @@
 import MemberRole from './MemberRole'
+import NumberSelect from './NumberSelect'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
@@ -25,12 +26,11 @@ export default function SelectableMember(props) {
     <div className="village--item--selectable-member">
       <div className="village--item--selectable-member--robot">
         {'min'}
-        <input
-          className="village--item--selectable-member--robot--input"
-          max={props.numberOfPlayers}
-          min="0"
-          onChange={props.handleChange('numberOfRobots')}
-          type="number"
+        <NumberSelect
+          class="village--item--selectable-member--robot--select"
+          from={0}
+          handleChange={props.handleChange('numberOfRobots')}
+          to={props.numberOfPlayers}
           value={props.numberOfRobots}
         />
         {'robots'}

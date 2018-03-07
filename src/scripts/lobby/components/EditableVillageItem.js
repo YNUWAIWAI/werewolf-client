@@ -1,4 +1,5 @@
 import Cast from '../constants/Cast'
+import NumberSelect from './NumberSelect'
 import React from 'react'
 import SelectableMember from './SelectableMember'
 
@@ -27,15 +28,14 @@ export default function EditableVillageItem(props) {
         {'Setup'}
       </div>
       <div className="village--item--setup--val1">
-        <input
-          className="village--item--setup--val1--input"
-          defaultValue={props.numberOfPlayers}
-          max="15"
-          min="5"
-          onChange={props.handleChange('numberOfPlayers')}
-          type="number"
+        <NumberSelect
+          class="village--item--setup--val1--select"
+          from={5}
+          handleChange={props.handleChange('numberOfPlayers')}
+          to={15}
+          value={props.numberOfPlayers}
         />
-        {' players'}
+        {'players'}
       </div>
       <div className="village--item--setup--val2">
         <select
