@@ -5,7 +5,7 @@ import {SELECTION_PHASE} from '../constants/Phase'
 
 export default function Command(props) {
   if (SELECTION_PHASE.includes(props.phase)) {
-    return <CommandSelection agent={props.agent} text={props.text} />
+    return <CommandSelection agents={props.agents} text={props.text} />
   }
 
   return (

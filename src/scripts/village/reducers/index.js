@@ -1,4 +1,4 @@
-import agent from './agent'
+import agents from './agents'
 import base from './base'
 import chat from './chat'
 import {combineReducers} from 'redux'
@@ -12,7 +12,7 @@ import result from './result'
 import timer from './timer'
 
 const reducer = combineReducers({
-  agent,
+  agents,
   base,
   chat,
   hideButton,
