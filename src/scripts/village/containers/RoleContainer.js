@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
   agent: state.mine.myAgentName.ja,
-  imageUrl: state.mine.myAgentImage,
+  image: state.mine.myAgentImage,
   role: state.mine.myRole.myRoleName.ja
 })
 
