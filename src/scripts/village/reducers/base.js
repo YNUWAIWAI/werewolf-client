@@ -3,7 +3,7 @@ import * as Contexts from '../constants/Contexts'
 
 const initialState = {
   date: 0,
-  phase: 'day conversation'
+  phase: 'night'
 }
 const base = (state = initialState, action) => {
   if (

@@ -9,18 +9,11 @@ export default class Timer extends React.Component {
     }
     this.tick = this.tick.bind(this)
   }
-  componentDidUpdate(prevProps) {
-    if (this.props.phase !== prevProps.phase) {
-      this.start()
-    }
-  }
-
-  start() {
+  componentWillReceiveProps() {
     this.setState({
       intervalID: setInterval(this.tick, 1000)
     })
   }
-
   tick() {
     const now = new Date()
     const time = Math.floor((this.props.start + this.props.limit - now) / 1000)
@@ -33,7 +26,6 @@ export default class Timer extends React.Component {
       this.end()
     }
   }
-
   end() {
     clearInterval(this.state.intervalID)
   }
