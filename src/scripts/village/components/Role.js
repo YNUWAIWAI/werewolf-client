@@ -1,21 +1,19 @@
+// @flow
 import React from 'react'
+import RoleIcon from './RoleIcon'
+import RoleText from './RoleText'
 
-export default function Role(props) {
+type Props = {
+  agent: string,
+  image: string,
+  role: string
+}
+
+export default function Role(props: Props) {
   return (
     <div className="role" id="role">
-      <div className="role--icon" id="player">
-        <img src={props.imageUrl} />
-        <span>
-          {props.agent}
-        </span>
-      </div>
-      <div className="role--text">
-        {'あなたは'}
-        <span id="role-name">
-          {props.role}
-        </span>
-        {'です'}
-      </div>
+      <RoleIcon agent={props.agent} class="role--icon" image={props.image} />
+      <RoleText role={props.role} />
     </div>
   )
 }
