@@ -1,11 +1,8 @@
 # werewolf-client
 
 人狼知能の人間側のインターフェース．
-生成物は`docs/`にある．
 
 ## 必要なもの
-
-今のところCSSを編集しないなら必要ない．
 
 - Node.js (latest stable)
 - npm (latest stable) または yarn (latest stable)
@@ -18,16 +15,19 @@
 
 ### `yarn build`
 
-`src/`のCSSとHTMLをビルドし，`dest/`に吐く．
+`src/`をproductionモードでビルドし，`'../public/javascripts'`に吐く．
 
-### `yarn build:watch`
+### `yarn build:watch` === `yarn start`
 
-`yarn build`のwatchできるver
+`src/`をdevelopmentモードでビルドし，`'../public/javascripts'`に吐く．
 
-### `yarn build:docs`
+### `yarn test`
 
-`src/`のCSSとHTMLをビルドし，`docs/`に吐く．
-GitHub Pagesが使える．
+テスト
+
+### `yarn test:watch`
+
+テスト
 
 ## LICENCE
 
