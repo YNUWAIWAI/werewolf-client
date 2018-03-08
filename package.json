@@ -33,6 +33,7 @@
     "build": "node tools/build.js",
     "build:watch": "node tools/build.js -w",
     "build:docs": "node tools/build.js -d",
+    "start": "node tools/build.js -w",
     "test": "jest",
     "test:watch": "jest --watch"
   },
