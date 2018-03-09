@@ -1,33 +1,39 @@
+// @flow
 import FormatedTime from './FormattedTime'
 import React from 'react'
 
-export default class Timer extends React.Component {
-  constructor(props) {
+type Props = {
+  id: string,
+  limit: number
+}
+
+type State = {
+  intervalID?: IntervalID,
+  time: number
+}
+
+export default class Timer extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = {
       time: 0
     }
     this.tick = this.tick.bind(this)
   }
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps: Props) {
     this.setState({
-      intervalID: setInterval(this.tick, 1000)
+      intervalID: setInterval(this.tick, 1000),
+      time: nextProps.limit
     })
   }
   tick() {
-    const now = new Date()
-    const time = Math.floor((this.props.start + this.props.limit - now) / 1000)
-
-    if (time >= 0) {
-      this.setState({
-        time
-      })
+    if (this.state.time > 0) {
+      this.setState(prevState => ({
+        time: prevState.time - 1
+      }))
     } else {
-      this.end()
+      clearInterval(this.state.intervalID)
     }
-  }
-  end() {
-    clearInterval(this.state.intervalID)
   }
 
   render() {
