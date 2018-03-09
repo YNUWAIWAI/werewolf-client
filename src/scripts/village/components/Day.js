@@ -4,7 +4,8 @@ import Timer from '../containers/TimerContainer'
 
 type Props = {
   date: number,
-  phase: string
+  phase: string,
+  phaseTimeLimit: number
 }
 
 export default function Day(props: Props) {
