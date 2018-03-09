@@ -21,13 +21,10 @@ const getText = (phase, myRole) => {
   }
 }
 
-const mapStateToProps = state => Object.assign(
-  {},
-  state.modal,
-  {
-    text: getText(state.base.phase, state.mine.myRole)
-  }
-)
+const mapStateToProps = state => ({
+  ... state.modal,
+  text: getText(state.base.phase, state.mine.myRole)
+})
 const mapDispatchToProps = dispatch => ({
   handleClickNo: () => dispatch(selectNo()),
   handleClickYes: selectedAgent => dispatch(selectYes(selectedAgent))

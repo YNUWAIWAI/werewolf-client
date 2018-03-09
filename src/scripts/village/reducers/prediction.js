@@ -89,44 +89,29 @@ const prediction = (state = initialState, action) => {
           status: agent.status
         }))
 
-        return Object.assign(
-          {},
-          state,
-          {
-            playerStatus,
-            roleStatus,
-            table,
-          }
-        )
+        return {
+          ... state,
+          playerStatus,
+          roleStatus,
+          table,
+        }
       }
 
       return state
     case ActionTypes.CHANGE_PREDICTION_BOARD: {
-      const nextState = Object.assign(
-        {},
-        state,
-        {
-          table: Object.assign(
-            {},
-            state.table,
-            {
-              [action.playerId]: Object.assign(
-                {},
-                state.table[action.playerId],
-                {
-                  [action.roleId]: Object.assign(
-                    {},
-                    state.table[action.playerId][action.roleId],
-                    {
-                      state: action.nextState
-                    }
-                  )
-                }
-              )
+      const nextState = {
+        ... state,
+        table: {
+          ... state.table,
+          [action.playerId]: {
+            ... state.table[action.playerId],
+            [action.roleId]: {
+              ... state.table[action.playerId][action.roleId],
+              state: action.nextState
             }
-          )
+          }
         }
-      )
+      }
 
       return nextState
     }
