@@ -27,17 +27,14 @@ const initialState = {
 const command = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.SET_IS_SENDABLE:
-      return Object.assign(
-        {},
-        state,
-        {
-          [action.kind]: {
-            isSendable: action.isSendable,
-            postCount: state[action.kind].postCount,
-            postCountLimit: state[action.kind].postCountLimit
-          }
+      return {
+        ... state,
+        [action.kind]: {
+          isSendable: action.isSendable,
+          postCount: state[action.kind].postCount,
+          postCountLimit: state[action.kind].postCountLimit
         }
-      )
+      }
     case ActionTypes.SOCKET_MESSAGE:
       if (
         action.payload['@id'] === Message.PLAYER_MESSAGE &&
@@ -47,17 +44,14 @@ const command = (state = initialState, action) => {
         const kind = Channels[action.payload.intensionalDisclosureRange]
         const isSendable = action.payload.chatCounter < action.payload.chatLimit
 
-        return Object.assign(
-          {},
-          state,
-          {
-            [kind]: {
-              isSendable,
-              postCount: action.payload.chatCounter,
-              postCountLimit: action.payload.chatLimit
-            }
+        return {
+          ... state,
+          [kind]: {
+            isSendable,
+            postCount: action.payload.chatCounter,
+            postCountLimit: action.payload.chatLimit
           }
-        )
+        }
       } else if (
         action.payload['@context'].includes(Contexts.BASE) &&
         action.payload['@context'].includes(Contexts.ROLE) &&
@@ -69,32 +63,22 @@ const command = (state = initialState, action) => {
           role.numberOfAgents > 1 &&
           AVAILABLE_FOR_LIMITED_CHAT.includes(trimBaseUri(role['@id']))
         ) {
-          return Object.assign(
-            {},
-            state,
-            {
-              limited: Object.assign(
-                {},
-                state.limited,
-                {
-                  available: true
-                }
-              )
+          return {
+            ... state,
+            limited: {
+              ... state.limited,
+              available: true
             }
-          )
+          }
         }
       }
 
       return state
-
     case ActionTypes.SELECT_YES:
-      return Object.assign(
-        {},
-        state,
-        {
-          fixed: true
-        }
-      )
+      return {
+        ... state,
+        fixed: true
+      }
     default:
       return state
   }

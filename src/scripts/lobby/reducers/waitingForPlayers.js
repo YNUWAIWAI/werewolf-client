@@ -104,47 +104,41 @@ const initialState = {
 const waitingForPlayers = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
-      return Object.assign(
-        {},
-        state,
-        {
-          menuItems: [
-            {
-              text: 'Play',
-              type: ActionTypes.PLAY_GAME
-            },
-            {
-              text: 'Return to Lobby for Human Player',
-              type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
-            },
-            {
-              text: 'Return to the Main Page',
-              type: ActionTypes.SHOW_MAIN
-            }
-          ]
-        }
-      )
+      return {
+        ... state,
+        menuItems: [
+          {
+            text: 'Play',
+            type: ActionTypes.PLAY_GAME
+          },
+          {
+            text: 'Return to Lobby for Human Player',
+            type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+          },
+          {
+            text: 'Return to the Main Page',
+            type: ActionTypes.SHOW_MAIN
+          }
+        ]
+      }
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
-      return Object.assign(
-        {},
-        state,
-        {
-          menuItems: [
-            {
-              text: 'Play',
-              type: ActionTypes.PLAY_GAME
-            },
-            {
-              text: 'Return to Lobby for Robot Player',
-              type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
-            },
-            {
-              text: 'Return to the Main Page',
-              type: ActionTypes.SHOW_MAIN
-            }
-          ]
-        }
-      )
+      return {
+        ... state,
+        menuItems: [
+          {
+            text: 'Play',
+            type: ActionTypes.PLAY_GAME
+          },
+          {
+            text: 'Return to Lobby for Robot Player',
+            type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+          },
+          {
+            text: 'Return to the Main Page',
+            type: ActionTypes.SHOW_MAIN
+          }
+        ]
+      }
     default:
       return state
   }
