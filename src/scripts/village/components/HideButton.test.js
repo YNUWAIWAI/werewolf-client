@@ -14,3 +14,17 @@ test('<HideButton />', () => {
   expect(wrapper.find('.hide-button').hasClass('hide')).toBe(false)
   expect(wrapper.find('.hide-button--icon').hasClass('hide')).toBe(false)
 })
+test('<HideButton isHide /> onClick', () => {
+  const mockFn = jest.fn().mockName('handleClick')
+  const wrapper = shallow(<HideButton handleClick={mockFn} isHide />)
+
+  wrapper.simulate('click')
+  expect(mockFn).toHaveBeenCalledWith(true)
+})
+test('<HideButton /> onClick', () => {
+  const mockFn = jest.fn().mockName('handleClick')
+  const wrapper = shallow(<HideButton handleClick={mockFn} isHide />)
+
+  wrapper.simulate('click')
+  expect(mockFn).toHaveBeenCalledWith(true)
+})
