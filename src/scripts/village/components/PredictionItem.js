@@ -1,7 +1,16 @@
+// @flow
 import React from 'react'
 
-export default function PredictionItem(props) {
-  const handleBoardClick = event => {
+type Props = {
+  date: number,
+  handleBoardClick: (nextState: BoardState, playerId: number, roleId: RoleId) => void,
+  playerId: number,
+  roleId: RoleId,
+  state: BoardState
+}
+
+export default function PredictionItem(props: Props) {
+  const handleBoardClick = () => {
     const state = [ '?', 'Δ', 'O', 'X' ]
     const currentState = props.state
     const playerId = props.playerId
