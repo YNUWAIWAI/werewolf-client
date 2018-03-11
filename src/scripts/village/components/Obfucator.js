@@ -1,5 +1,10 @@
+// @flow
 import React from 'react'
 
-export default function Obfucator(props) {
-  return props.visible && <div className="obfucator" id="obfucator" />
+type Props = {
+  visible: boolean
+}
+
+export default function Obfucator(props: Props) {
+  return props.visible && <div className="obfucator" />
 }
