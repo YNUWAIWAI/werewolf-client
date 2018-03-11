@@ -7,8 +7,8 @@ test('<Obfucator visible />', () => {
 
   expect(wrapper.find('.obfucator').exists()).toBe(true)
 })
-test('<Obfucator />', () => {
-  const wrapper = shallow(<Obfucator />)
+test('<Obfucator visible={false} />', () => {
+  const wrapper = shallow(<Obfucator visible={false} />)
 
   expect(wrapper.find('.obfucator').exists()).toBe(false)
 })
