@@ -1,7 +1,16 @@
+// @flow
 import React from 'react'
 
-export default function CommandOption(props) {
-  const handleSelectOption = event => {
+type Props = {
+  agent: Agent,
+  handleSelectOption: (Object) => void,
+  id: number,
+  image: string,
+  name: string
+}
+
+export default function CommandOption(props: Props) {
+  const handleSelectOption = () => {
     props.handleSelectOption(props.agent)
   }
 
