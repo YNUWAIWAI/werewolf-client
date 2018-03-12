@@ -65,8 +65,8 @@ export const handleBoardClick = (nextState, playerId, roleId) => ({
   type: types.CHANGE_PREDICTION_BOARD
 })
 
-export const selectOption = agent => ({
-  agent,
+export const selectOption = agentId => ({
+  agentId,
   type: types.SELECT_OPTION
 })
 
