@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 
 const cellType = {
@@ -11,7 +12,16 @@ const cellType = {
   userName: 'userName'
 }
 
-export default function ResultCell(props) {
+type Props = {
+  image?: string,
+  result: Result,
+  status: AgentStatus,
+  text?: string,
+  tooltip?: string,
+  type: string
+}
+
+export default function ResultCell(props: Props) {
   switch (props.type) {
     case cellType.image:
     case cellType.userAvatar:
