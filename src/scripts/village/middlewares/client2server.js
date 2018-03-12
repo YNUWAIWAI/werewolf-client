@@ -113,6 +113,7 @@ const client2server = store => next => action => {
     }
     case types.SELECT_YES: {
       const state = store.getState()
+      const agent = state.agents.filter(a => a.id === action.agentId)[0]
       const payload = Object.assign(
         {},
         state.base,
@@ -130,10 +131,10 @@ const client2server = store => next => action => {
         },
         {
           'votedAgent': {
-            '@id': action.agent['@id'],
-            'votedAgentId': action.agent.id,
-            'votedAgentImage': action.agent.image,
-            'votedAgentName': action.agemt.name
+            '@id': agent['@id'],
+            'votedAgentId': agent.id,
+            'votedAgentImage': agent.image,
+            'votedAgentName': agent.name
           }
         }
       )
