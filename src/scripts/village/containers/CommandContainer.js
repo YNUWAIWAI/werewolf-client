@@ -34,7 +34,7 @@ const mapDispatchToProps = dispatch => ({
     kind,
     text
   })),
-  handleSelectOption: agent => dispatch(selectOption(agent)),
+  handleSelectOption: agentId => dispatch(selectOption(agentId)),
   setIsSendable: kind => isSendable => dispatch(setIsSendable({
     isSendable,
     kind
