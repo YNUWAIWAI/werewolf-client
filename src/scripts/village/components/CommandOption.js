@@ -2,8 +2,7 @@
 import React from 'react'
 
 type Props = {
-  agent: Agent,
-  handleSelectOption: (Object) => void,
+  handleSelectOption: number => void,
   id: number,
   image: string,
   name: string
@@ -11,7 +10,7 @@ type Props = {
 
 export default function CommandOption(props: Props) {
   const handleSelectOption = () => {
-    props.handleSelectOption(props.agent)
+    props.handleSelectOption(props.id)
   }
 
   return (
