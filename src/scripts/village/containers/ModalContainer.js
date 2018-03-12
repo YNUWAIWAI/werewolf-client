@@ -21,10 +21,17 @@ const getText = (phase, myRole) => {
   }
 }
 
-const mapStateToProps = state => ({
-  ... state.modal,
-  text: getText(state.base.phase, state.mine.myRole)
-})
+const mapStateToProps = state => {
+  const agent = state.agent.filter(a => a.id === state.modal.agentId)
+
+  return {
+    id: agent.id,
+    image: agent.image,
+    name: agent.name.ja,
+    text: getText(state.base.phase, state.mine.myRole),
+    visible: state.modal.visible
+  }
+}
 const mapDispatchToProps = dispatch => ({
   handleClickNo: () => dispatch(selectNo()),
   handleClickYes: selectedAgent => dispatch(selectYes(selectedAgent))

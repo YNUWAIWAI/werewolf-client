@@ -71,12 +71,12 @@ export const selectOption = agentId => ({
 })
 
 export const selectNo = () => ({
-  type: types.SELECT_YES
+  type: types.SELECT_NO
 })
 
-export const selectYes = agent => ({
-  agent,
-  type: types.SELECT_NO
+export const selectYes = agentId => ({
+  agentId,
+  type: types.SELECT_YES
 })
 
 export const handleClickHideButton = isHide => ({
