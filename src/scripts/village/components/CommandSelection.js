@@ -1,6 +1,6 @@
 import CommandOption from './CommandOption'
 import React from 'react'
-import Timer from './Timer'
+import Timer from '../containers/TimerContainer'
 
 export default function CommandSelection(props) {
   return (
@@ -10,7 +10,7 @@ export default function CommandSelection(props) {
           {props.text}
         </span>
         {'（'}
-        <Timer id="select-time" />
+        <Timer />
         {'）'}
       </div>
       <div className="command--option-container" id="command--option-container">

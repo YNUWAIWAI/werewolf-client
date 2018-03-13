@@ -3,7 +3,6 @@ import * as Contexts from '../constants/Contexts'
 
 const initialState = {
   phase: '',
-  phaseStartTime: '',
   phaseTimeLimit: 0
 }
 const timer = (state = initialState, action) => {
@@ -15,7 +14,6 @@ const timer = (state = initialState, action) => {
       ) {
         return {
           phase: action.payload.phase,
-          phaseStartTime: action.payload.phaseStartTime,
           phaseTimeLimit: action.payload.phaseTimeLimit
         }
       }

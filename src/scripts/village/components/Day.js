@@ -15,7 +15,7 @@ export default function Day(props: Props) {
         <span>
           {`${props.date}日目 ${props.phase}`}
         </span>
-        <Timer id="day-time" phaseTimeLimit={props.phaseTimeLimit} />
+        <Timer />
       </div>
     </div>
   )
