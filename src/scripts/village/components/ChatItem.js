@@ -7,10 +7,10 @@ import React from 'react'
 import RoleIcon from './RoleIcon'
 
 type Props = {
-  chatIsMine: boolean,
   id: number,
   image: string,
   intensionalDisclosureRange: Channel,
+  isMine: boolean,
   name: string,
   phaseStartTime: string,
   phaseTimeLimit: number,
@@ -20,7 +20,7 @@ type Props = {
 
 export default function ChatItem(props: Props) {
   return (
-    <div className={`chat--item ${props.chatIsMine ? 'me' : ''} ${Channels[props.intensionalDisclosureRange]}`} id={Channels[props.intensionalDisclosureRange] === 'public' ? `message${props.id}` : undefined}>
+    <div className={`chat--item ${props.isMine ? 'me' : ''} ${Channels[props.intensionalDisclosureRange]}`} id={Channels[props.intensionalDisclosureRange] === 'public' ? `message${props.id}` : undefined}>
       <div className="chat--arrow-box">
         <ChatNum id={props.id} intensionalDisclosureRange={props.intensionalDisclosureRange} />
         <ChatText text={props.text} />
