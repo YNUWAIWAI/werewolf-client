@@ -6,10 +6,10 @@ import {shallow} from 'enzyme'
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="anonymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="anonymousAudience"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -30,10 +30,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="anonymou
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="anonymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="anonymousAudience"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -54,10 +54,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="grave" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="grave"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -78,10 +78,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="grave" n
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="grave" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="grave"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -102,10 +102,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="werewolf" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="werewolf"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -126,10 +126,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="werewolf
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="hunter" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="hunter"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -150,10 +150,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="master" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="master"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -174,10 +174,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="master" 
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="master" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="master"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -198,10 +198,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="onymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="onymousAudience"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -222,10 +222,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="onymousA
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="onymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="onymousAudience"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -246,10 +246,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="private" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="private"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -270,10 +270,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="private"
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="private" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="private"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -294,10 +294,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="public" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="public"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -318,10 +318,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="public" 
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="public" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="public"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -342,10 +342,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="seer" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="seer"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -366,10 +366,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="seer" na
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="seer" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="seer"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -390,10 +390,10 @@ test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="
 test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="hunter" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="hunter"
+      isMine
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
@@ -414,10 +414,10 @@ test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="hunter" 
 test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="werewolf" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="werewolf"
+      isMine={false}
       name="name"
       phaseStartTime="2018-01-01T00:00:00.000Z"
       phaseTimeLimit={50}
