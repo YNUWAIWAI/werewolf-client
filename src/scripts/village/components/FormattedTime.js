@@ -9,13 +9,12 @@ const formatTime = time => {
 }
 
 type Props = {
-  id: string,
   time: number
 }
 
 export default function FormattedTime(props: Props) {
   return (
-    <span id={props.id}>
+    <span>
       {props.time < 0 ? '終了' : formatTime(props.time)}
     </span>
   )
