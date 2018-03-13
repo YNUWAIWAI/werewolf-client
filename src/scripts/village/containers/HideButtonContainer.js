@@ -4,7 +4,7 @@ import {handleClickHideButton} from '../actions'
 
 const mapStateToProps = state => state.hideButton
 const mapDispatchToProps = dispatch => ({
-  handleClick: isHide => dispatch(handleClickHideButton(isHide))
+  handleClick: hide => dispatch(handleClickHideButton(hide))
 })
 const HideButtonContainer = connect(
   mapStateToProps,
