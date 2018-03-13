@@ -1,6 +1,8 @@
+// @flow
+declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
+declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
 declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'
 declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill' | 'fix'
-declare type Phase = 'day conversation' | 'day vote' | 'night' | 'results' | 'post mortem'
 declare type Language = 'ja' | 'en'
 declare type Result = 'win' | 'lose'
 declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by werewolf attack' | 'death by fear' | 'unnatural death'
