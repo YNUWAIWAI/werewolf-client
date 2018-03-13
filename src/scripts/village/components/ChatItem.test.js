@@ -3,10 +3,10 @@ import ChatItem from './ChatItem'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="anonymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="anonymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="anonymousAudience"
@@ -27,10 +27,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="anon
   expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="anonymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="anonymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="anonymousAudience"
@@ -51,10 +51,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="grave" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="grave" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="grave"
@@ -75,10 +75,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="grav
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="grave" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="grave" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="grave"
@@ -99,10 +99,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="werewolf" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="werewolf" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="werewolf"
@@ -123,10 +123,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="were
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="hunter" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="hunter" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="hunter"
@@ -147,10 +147,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="master" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="master" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="master"
@@ -171,10 +171,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="mast
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="master" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="master" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="master"
@@ -195,10 +195,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="onymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="onymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="onymousAudience"
@@ -219,10 +219,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="onym
   expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="onymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="onymousAudience" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="onymousAudience"
@@ -243,10 +243,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="private" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="private" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="private"
@@ -267,10 +267,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="priv
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="private" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="private" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="private"
@@ -291,10 +291,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="public" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="public" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="public"
@@ -315,10 +315,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="publ
   expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="public" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="public" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="public"
@@ -339,10 +339,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="seer" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="seer" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="seer"
@@ -363,10 +363,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="seer
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="seer" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="seer" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="seer"
@@ -387,10 +387,10 @@ test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRan
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="hunter" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine id={1} image="image" intensionalDisclosureRange="hunter" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine
+      isMine
       id={1}
       image="image"
       intensionalDisclosureRange="hunter"
@@ -411,10 +411,10 @@ test('<ChatItem chatIsMine id={1} image="image" intensionalDisclosureRange="hunt
   expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
   expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
 })
-test('<ChatItem chatIsMine={false} id={1} image="image" intensionalDisclosureRange="werewolf" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
+test('<ChatItem isMine={false} id={1} image="image" intensionalDisclosureRange="werewolf" name="name" phaseStartTime="2018-01-01T00:00:00.000Z" phaseTimeLimit={50} serverTimestamp="2018-01-01T00:00:10.000Z" text="text" />', () => {
   const wrapper = shallow(
     <ChatItem
-      chatIsMine={false}
+      isMine={false}
       id={1}
       image="image"
       intensionalDisclosureRange="werewolf"
