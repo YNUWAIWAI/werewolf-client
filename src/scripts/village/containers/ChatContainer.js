@@ -4,14 +4,15 @@ import {connect} from 'react-redux'
 const mapStateToProps = state => {
   const items = state.chat.items
     .map(item => ({
-      chatId: item.chatId,
-      chatText: item.chatText,
+      id: item.chatId,
       image: item.chatAgent.chatAgentImage,
       intensionalDisclosureRange: item.intensionalDisclosureRange,
+      isMine: item.chatIsMine,
       name: item.chatAgent.chatAgentName.ja,
       phaseStartTime: item.phaseStartTime,
       phaseTimeLimit: item.phaseTimeLimit,
-      serverTimestamp: item.serverTimestamp
+      serverTimestamp: item.serverTimestamp,
+      text: item.chatText
     }))
 
   return {
