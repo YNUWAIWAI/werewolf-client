@@ -3,7 +3,6 @@ import FormatedTime from './FormattedTime'
 import React from 'react'
 
 type Props = {
-  id: string,
   limit: number
 }
 
@@ -38,7 +37,7 @@ export default class Timer extends React.Component<Props, State> {
 
   render() {
     return (
-      <FormatedTime id={this.props.id} time={this.state.time} />
+      <FormatedTime time={this.state.time} />
     )
   }
 }
