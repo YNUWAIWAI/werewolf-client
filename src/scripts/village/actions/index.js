@@ -79,8 +79,8 @@ export const selectYes = agentId => ({
   type: types.SELECT_YES
 })
 
-export const handleClickHideButton = isHide => ({
-  isHide: !isHide,
+export const handleClickHideButton = hide => ({
+  hide: !hide,
   type: types.CLICK_HIDE_BUTTON
 })
 

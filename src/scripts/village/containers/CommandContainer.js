@@ -24,7 +24,7 @@ const getText = (phase, myRole, fixed) => {
 const mapStateToProps = state => ({
   ... state.command,
   agents: state.agents,
-  isHide: state.hideButton.isHide,
+  hide: state.hideButton.hide,
   phase: state.base.phase,
   text: getText(state.base.phase, state.mine.myRole, state.command.fixed)
 })
