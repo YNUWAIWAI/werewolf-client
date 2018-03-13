@@ -6,8 +6,8 @@ import ChatText from './ChatText'
 import React from 'react'
 import RoleIcon from './RoleIcon'
 
-type Props = {
-  id: number,
+export type Props = {
+  id?: number,
   image: string,
   intensionalDisclosureRange: Channel,
   isMine: boolean,
