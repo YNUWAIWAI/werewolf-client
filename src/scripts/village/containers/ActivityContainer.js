@@ -2,7 +2,7 @@ import Activity from '../components/Activity'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
-  expand: state.hideButton.isHide
+  expand: state.hideButton.hide
 })
 const ActivityContainer = connect(
   mapStateToProps

@@ -31,5 +31,5 @@ test('<HideButton hide={false} /> onClick', () => {
   const wrapper = shallow(<HideButton handleClick={mockFn} hide={false} />)
 
   wrapper.simulate('click')
-  expect(mockFn).toHaveBeenCalledWith(true)
+  expect(mockFn).toHaveBeenCalledWith(false)
 })
