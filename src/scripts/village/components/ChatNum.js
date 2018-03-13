@@ -3,7 +3,7 @@ import {Channels} from '../constants/Channels'
 import React from 'react'
 
 type Props = {
-  id: number,
+  id?: number,
   intensionalDisclosureRange: Channel
 }
 
