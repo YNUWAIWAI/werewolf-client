@@ -1,12 +1,12 @@
 // @flow
-import ChatItem from './ChatItem'
+import ChatItem, {type Props as ChatItemProps} from './ChatItem'
 import React from 'react'
-import type ChatItemProps from './ChatItem'
+
 type Props = {
-  items:
+  items: Array<ChatItemProps>
 }
 
-export default function Chat({items}) {
+export default function Chat({items}: Props) {
   return (
     <div className="chat">
       {
