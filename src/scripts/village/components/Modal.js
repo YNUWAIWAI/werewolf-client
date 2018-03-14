@@ -4,13 +4,13 @@ import React from 'react'
 import RoleIcon from './RoleIcon'
 
 type Props = {
-  handleClickNo: void => void,
-  handleClickYes: number => void,
-  id: number,
-  image: string,
-  name: string,
-  text: string,
-  visible: boolean
+  +handleClickNo: void => void,
+  +handleClickYes: number => void,
+  +id: number,
+  +image: string,
+  +name: string,
+  +text: string,
+  +visible: boolean
 }
 
 export default function Modal(props: Props) {
