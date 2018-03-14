@@ -1,8 +1,8 @@
 // @flow
 import React from 'react'
 
-const parseChat = text => {
-  return text
+const parseChat = text =>
+  text
     .split(/(>>\d+)/)
     .map(t => {
       if ((/>>\d+/).test(t)) {
@@ -17,7 +17,6 @@ const parseChat = text => {
 
       return t
     })
-}
 
 type Props = {
   text: string
