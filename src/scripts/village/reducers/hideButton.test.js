@@ -1,3 +1,4 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer from './hideButton'
 

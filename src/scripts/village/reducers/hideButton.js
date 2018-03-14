@@ -1,9 +1,17 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import type {ClickHideButton} from '../actions'
+
+type State = {
+  +hide: boolean
+}
+type Action =
+  | ClickHideButton
 
 const initialState = {
   hide: false
 }
-const hideButton = (state = initialState, action) => {
+const hideButton = (state: State = initialState, action: Action): State => {
   if (action.type === ActionTypes.CLICK_HIDE_BUTTON) {
     return {
       hide: action.hide
