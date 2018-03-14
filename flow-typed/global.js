@@ -1,4 +1,15 @@
 // @flow
+
+// ref: https://github.com/facebook/flow/blob/master/lib/core.js#L495-L502
+declare class JSON {
+  static parse(text: mixed, reviver?: (key: any, value: any) => any): Object;
+  static stringify(
+    value: any,
+    replacer?: ?((key: string, value: any) => any) | Array<any>,
+    space?: string | number
+  ): string;
+}
+
 declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
 declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
 declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'
