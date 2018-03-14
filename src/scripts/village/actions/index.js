@@ -67,14 +67,6 @@ export const handleClickHideButton = (hide: boolean) => ({
   type: types.CLICK_HIDE_BUTTON
 })
 
-export const wait = () => ({
-  type: types.WAIT
-})
-
-export const ready = () => ({
-  type: types.READY
-})
-
 export type SocketClose = $Call<typeof socket.close, *>
 export type SocketError = $Call<typeof socket.error, *>
 export type SocketMessage = $Call<typeof socket.message, *>
@@ -88,5 +80,3 @@ export type SelectOption = $Call<typeof selectOption, *>
 export type SelectNo = $Call<typeof selectNo, *>
 export type SelectYes = $Call<typeof selectYes, *>
 export type ClickHideButton = $Call<typeof handleClickHideButton, *>
-export type Wait = $Call<typeof wait, *>
-export type Ready = $Call<typeof ready, *>

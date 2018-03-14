@@ -1,16 +1,23 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {toggleObfucator} from '../actions'
+import {type ToggleObfucator} from '../actions'
+
+type State = {
+  +visible: boolean
+}
+type Action =
+  | ToggleObfucator
 
 const initialState = {
   visible: true
 }
 
-const obfucator = (state = initialState, action) => {
+const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.WAIT:
-      return toggleObfucator(true)
-    case ActionTypes.READY:
-      return toggleObfucator(false)
+    case ActionTypes.TOGGLE_OBFUCATOR:
+      return {
+        visible: action.visible
+      }
     default:
       return state
   }

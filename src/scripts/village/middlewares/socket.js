@@ -1,8 +1,7 @@
 import * as types from '../constants/ActionTypes'
 import {
-  ready,
   socket as socketAction,
-  wait
+  toggleObfucator
 } from '../actions'
 
 let socket
@@ -31,7 +30,7 @@ const socketMiddleware = (option = {}) => store => next => action => {
       console.warn('WebSocket Disconnected ', event)
       socket = null
       if (isReady) {
-        store.dispatch(wait())
+        store.dispatch(toggleObfucator(false))
         isReady = false
       }
       store.dispatch(socketAction.close(event))
@@ -40,14 +39,14 @@ const socketMiddleware = (option = {}) => store => next => action => {
       console.error('WebSocket Error ', error)
       socket = null
       if (isReady) {
-        store.dispatch(wait())
+        store.dispatch(toggleObfucator(false))
         isReady = false
       }
       store.dispatch(socketAction.error(error))
     })
     socket.addEventListener('message', event => {
       if (!isReady) {
-        store.dispatch(ready())
+        store.dispatch(toggleObfucator(true))
         isReady = true
       }
       store.dispatch(socketAction.message(event))
