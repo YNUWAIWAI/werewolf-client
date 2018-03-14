@@ -3,11 +3,9 @@ import Day from '../containers/DayContainer'
 import React from 'react'
 import Role from '../containers/RoleContainer'
 
-type Props = {}
-
-export default function Info(props: Props) {
+export default function Info() {
   return (
-    <div className="info" id="info">
+    <div className="info">
       <Day />
       <Role />
     </div>
