@@ -1,3 +1,4 @@
+// @flow
 import Info from './Info'
 import React from 'react'
 import {shallow} from 'enzyme'
