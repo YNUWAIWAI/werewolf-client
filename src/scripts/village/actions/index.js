@@ -1,3 +1,4 @@
+// @flow
 import * as types from '../constants/ActionTypes'
 
 export const socket = {
@@ -79,7 +80,7 @@ export const selectYes = agentId => ({
   type: types.SELECT_YES
 })
 
-export const handleClickHideButton = hide => ({
+export const handleClickHideButton = (hide: boolean) => ({
   hide: !hide,
   type: types.CLICK_HIDE_BUTTON
 })
@@ -91,3 +92,5 @@ export const wait = () => ({
 export const ready = () => ({
   type: types.READY
 })
+
+export type ClickHideButton = $Call<typeof handleClickHideButton, *>

@@ -1,3 +1,4 @@
+// @flow
 export const SET_DAY = 'SET_DAY'
 export const GET_PLAYER_ROLE = 'GET_PLAYER_ROLE'
 export const SET_ROLE = 'SET_ROLE'
