@@ -2,71 +2,53 @@
 import * as types from '../constants/ActionTypes'
 
 export const socket = {
-  close: event => ({
+  close: (event: CloseEvent) => ({
     event,
     type: types.SOCKET_CLOSE
   }),
-  error: event => ({
+  error: (event: Event) => ({
     event,
     type: types.SOCKET_ERROR
   }),
-  message: event => ({
+  message: (event: MessageEvent) => ({
     payload: JSON.parse(event.data),
     type: types.SOCKET_MESSAGE
   }),
-  open: event => ({
+  open: (event: Event) => ({
     event,
     type: types.SOCKET_OPEN
   }),
-  send: payload => ({
+  send: (payload: Object) => ({
     payload,
     type: types.SOCKET_SEND
   })
 }
 
-export const setDay = payload => ({
-  date: payload.date,
-  phase: payload.phase,
-  type: types.SET_DAY
-})
-
-export const setRole = payload => {
-  const role = payload.role.filter(r => r.roleIsMine)[0]
-  const agent = payload.agent.filter(a => a.agentIsMine)[0]
-
-  return {
-    agent: agent.name.ja,
-    imageUrl: agent.image,
-    role: role.name.ja,
-    type: types.SET_ROLE
-  }
-}
-
-export const toggleObfucator = visible => ({
+export const toggleObfucator = (visible: boolean) => ({
   type: types.TOGGLE_OBFUCATOR,
   visible
 })
 
-export const postChat = ({kind, text}) => ({
+export const postChat = ({kind, text}: {kind: Channel, text: string}) => ({
   kind,
   text,
   type: types.POST_CHAT
 })
 
-export const setIsSendable = ({isSendable, kind}) => ({
+export const setIsSendable = ({isSendable, kind}: {isSendable: boolean, kind: Channel}) => ({
   isSendable,
   kind,
   type: types.SET_IS_SENDABLE,
 })
 
-export const handleBoardClick = (nextState, playerId, roleId) => ({
+export const handleBoardClick = (nextState: BoardState, playerId: number, roleId: RoleId) => ({
   nextState,
   playerId,
   roleId,
   type: types.CHANGE_PREDICTION_BOARD
 })
 
-export const selectOption = agentId => ({
+export const selectOption = (agentId: number) => ({
   agentId,
   type: types.SELECT_OPTION
 })
@@ -75,7 +57,7 @@ export const selectNo = () => ({
   type: types.SELECT_NO
 })
 
-export const selectYes = agentId => ({
+export const selectYes = (agentId: number) => ({
   agentId,
   type: types.SELECT_YES
 })
@@ -93,4 +75,18 @@ export const ready = () => ({
   type: types.READY
 })
 
+export type SocketClose = $Call<typeof socket.close, *>
+export type SocketError = $Call<typeof socket.error, *>
+export type SocketMessage = $Call<typeof socket.message, *>
+export type SocketOpen = $Call<typeof socket.open, *>
+export type SocketSend = $Call<typeof socket.send, *>
+export type ToggleObfucator = $Call<typeof toggleObfucator, *>
+export type PostChat = $Call<typeof postChat, *>
+export type SetIsSendable = $Call<typeof setIsSendable, *>
+export type ChangePredictionBoard = $Call<typeof handleBoardClick, *>
+export type SelectOption = $Call<typeof selectOption, *>
+export type SelectNo = $Call<typeof selectNo, *>
+export type SelectYes = $Call<typeof selectYes, *>
 export type ClickHideButton = $Call<typeof handleClickHideButton, *>
+export type Wait = $Call<typeof wait, *>
+export type Ready = $Call<typeof ready, *>
