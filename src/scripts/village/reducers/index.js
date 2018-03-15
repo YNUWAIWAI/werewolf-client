@@ -1,5 +1,5 @@
 // @flow
-import agents from './agents'
+import agents, {type State as agentsState} from './agents'
 import base from './base'
 import chat from './chat'
 import {combineReducers} from 'redux'
@@ -29,7 +29,7 @@ const reducer = combineReducers({
 export default reducer
 
 export type ReducerState = {
-  agents: *,
+  agents: agentsState,
   base: *,
   chat: *,
   command: *,
