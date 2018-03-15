@@ -1,3 +1,4 @@
+// @flow
 import {VERSION} from './Version.js'
 
 const BASE_URL = `https://werewolf.world/resource/${VERSION}`
