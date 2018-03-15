@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {type SelectNo, type SelectOption, type SelectYes} from '../actions'
 
-type State = {
+export type State = {
   +id?: number,
   +visible: boolean
 }
