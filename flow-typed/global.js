@@ -10,6 +10,7 @@ declare class JSON {
   ): string;
 }
 
+declare type Directionality = 'server to client' | 'client to server'
 declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
 declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
 declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'

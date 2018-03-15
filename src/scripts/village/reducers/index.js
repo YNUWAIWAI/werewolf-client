@@ -1,6 +1,6 @@
 // @flow
 import agents, {type State as agentsState} from './agents'
-import base from './base'
+import base, {type State as baseState} from './base'
 import chat from './chat'
 import {combineReducers} from 'redux'
 import command from './command'
@@ -30,7 +30,7 @@ export default reducer
 
 export type ReducerState = {
   agents: agentsState,
-  base: *,
+  base: baseState,
   chat: *,
   command: *,
   hideButton: *,

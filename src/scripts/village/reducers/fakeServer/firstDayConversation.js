@@ -1,4 +1,5 @@
 // @flow
+/* eslint sort-keys: 0 */
 export default {
   '@context': [
     'https://werewolf.world/context/0.1/base.jsonld',
