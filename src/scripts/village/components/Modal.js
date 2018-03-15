@@ -3,15 +3,22 @@ import Description from './Description'
 import React from 'react'
 import RoleIcon from './RoleIcon'
 
-type Props = {
-  +handleClickNo: void => void,
-  +handleClickYes: number => void,
+export type StateProps = {
   +id: number,
   +image: string,
   +name: string,
   +text: string,
   +visible: boolean
 }
+export type DispatchProps = {
+  +handleClickNo: void => void,
+  +handleClickYes: number => void
+}
+export type OwnProps = {}
+export type Props =
+  & StateProps
+  & DispatchProps
+  & OwnProps
 
 export default function Modal(props: Props) {
   if (!props.visible) {

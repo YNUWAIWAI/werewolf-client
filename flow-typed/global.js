@@ -34,3 +34,11 @@ declare type Agent = {
   'isAChoice': boolean,
   'result': Result
 }
+declare type Role = {
+  '@id': string,
+  'name': { [Language]: string },
+  'image': string,
+  'roleIsMine': boolean,
+  'id': number,
+  'numberOfAgents': number
+}

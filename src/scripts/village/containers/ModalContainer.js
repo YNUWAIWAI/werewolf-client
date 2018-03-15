@@ -1,10 +1,17 @@
+// @flow
 import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
-import {selectNo, selectYes} from '../actions'
+import Modal, {type DispatchProps, type StateProps} from '../components/Modal'
+import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'
-import Modal from '../components/Modal'
+import type {Dispatch} from 'redux'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-const getText = (phase, myRole) => {
+type Action =
+  | SelectNo
+  | SelectYes
+
+const getText = (phase: Phase, myRole: Role) => {
   if (phase === DAY_VOTE) {
     return '投票先はこちらでいいですか？'
   }
@@ -21,20 +28,24 @@ const getText = (phase, myRole) => {
   }
 }
 
-const mapStateToProps = state => {
-  const agent = state.agent.filter(a => a.id === state.modal.agentId)
+const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
+  const agent: Agent = state.agents.filter(a => a.id === state.modal.id)
 
   return {
     id: agent.id,
     image: agent.image,
     name: agent.name.ja,
     text: getText(state.base.phase, state.mine.myRole),
-    visible: state.modal.visible
+    visible: state.modal.visible,
   }
 }
-const mapDispatchToProps = dispatch => ({
-  handleClickNo: () => dispatch(selectNo()),
-  handleClickYes: selectedAgent => dispatch(selectYes(selectedAgent))
+const mapDispatchToProps = (dispatch: Dispatch<Action>): $Exact<DispatchProps> => ({
+  handleClickNo: () => {
+    dispatch(selectNo())
+  },
+  handleClickYes: selectedAgent => {
+    dispatch(selectYes(selectedAgent))
+  }
 })
 const ModalContainer = connect(
   mapStateToProps,

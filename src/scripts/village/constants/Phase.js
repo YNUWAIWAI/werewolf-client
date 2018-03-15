@@ -1,3 +1,4 @@
+// @flow
 export const DAY_CONVERSATION = 'day conversation'
 export const DAY_VOTE = 'day vote'
 export const NIGHT = 'night'
