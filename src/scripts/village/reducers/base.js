@@ -1,11 +1,38 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
+import type {SocketMessage} from '../actions'
+
+export type State = {
+  +clientTimestamp: string,
+  +date: number,
+  +intensionalDisclosureRange: Channel,
+  +phase: Phase,
+  +phaseStartTime: string,
+  +phaseTimeLimit: number,
+  +serverTimestamp: string,
+  +token: string,
+  +totalNumberOfAgents: number,
+  +villageId: number,
+  +villageName: string
+}
+type Action =
+  | SocketMessage
 
 const initialState = {
+  clientTimestamp: '',
   date: 0,
-  phase: 'night'
+  intensionalDisclosureRange: 'public',
+  phase: 'night',
+  phaseStartTime: '',
+  phaseTimeLimit: 0,
+  serverTimestamp: '',
+  token: '',
+  totalNumberOfAgents: 0,
+  villageId: 0,
+  villageName: ''
 }
-const base = (state = initialState, action) => {
+const base = (state: State = initialState, action: Action): State => {
   if (
     action.type === ActionTypes.SOCKET_MESSAGE &&
     action.payload['@context'].includes(Contexts.BASE)
@@ -13,8 +40,6 @@ const base = (state = initialState, action) => {
     return {
       clientTimestamp: action.payload.clientTimestamp,
       date: action.payload.date,
-      directionality: action.payload.directionality,
-      extensionalDisclosureRange: action.payload.extensionalDisclosureRange,
       intensionalDisclosureRange: action.payload.intensionalDisclosureRange,
       phase: action.payload.phase,
       phaseStartTime: action.payload.phaseStartTime,
