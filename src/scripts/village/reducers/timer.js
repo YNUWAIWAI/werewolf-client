@@ -1,11 +1,20 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
+import type {SocketMessage} from '../actions'
+
+export type State = {
+  +phase: Phase | '',
+  +phaseTimeLimit: number
+}
+type Action =
+  | SocketMessage
 
 const initialState = {
   phase: '',
   phaseTimeLimit: 0
 }
-const timer = (state = initialState, action) => {
+const timer = (state: State = initialState, action: Action) => {
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (

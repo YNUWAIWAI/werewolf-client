@@ -10,7 +10,7 @@ import modal, {type State as modalState} from './modal'
 import obfucator from './obfucator'
 import prediction from './prediction'
 import result from './result'
-import timer from './timer'
+import timer, {type State as timerState} from './timer'
 
 const reducer = combineReducers({
   agents,
@@ -39,5 +39,5 @@ export type ReducerState = {
   obfucator: *,
   prediction: *,
   result: *,
-  timer: *
+  timer: timerState
 }
