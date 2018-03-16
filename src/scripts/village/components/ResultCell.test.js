@@ -1108,7 +1108,7 @@ test('<ResultCell image="image" result="win" status="alive" text="text" tooltip=
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
   expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
-  expect(wrapper.find('.result--cell').hasClass('win')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
 })
@@ -1125,8 +1125,8 @@ test('<ResultCell image="image" result="win" status="dead" text="text" tooltip="
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('win')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+  expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
 })
@@ -1143,8 +1143,8 @@ test('<ResultCell image="image" result="win" status="death by execution" text="t
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('win')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+  expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
 })
@@ -1161,8 +1161,8 @@ test('<ResultCell image="image" result="win" status="death by werewolf attack" t
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('win')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+  expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
 })
@@ -1179,8 +1179,8 @@ test('<ResultCell image="image" result="win" status="death by fear" text="text" 
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('win')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+  expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
 })
@@ -1197,8 +1197,8 @@ test('<ResultCell image="image" result="win" status="unnatural death" text="text
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('win')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+  expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
 })
@@ -1233,7 +1233,7 @@ test('<ResultCell image="image" result="lose" status="dead" text="text" tooltip=
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
   expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
@@ -1251,7 +1251,7 @@ test('<ResultCell image="image" result="lose" status="death by execution" text="
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
   expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
@@ -1269,7 +1269,7 @@ test('<ResultCell image="image" result="lose" status="death by werewolf attack" 
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
   expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
@@ -1287,7 +1287,7 @@ test('<ResultCell image="image" result="lose" status="death by fear" text="text"
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
   expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
@@ -1305,7 +1305,7 @@ test('<ResultCell image="image" result="lose" status="unnatural death" text="tex
   )
 
   expect(wrapper.find('.result--cell').exists()).toBe(true)
-  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+  expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
   expect(wrapper.find('.result--cell').hasClass('win')).toBe(false)
   expect(wrapper.find('.result--cell').is('[data-result="summary"]')).toBe(true)
   expect(wrapper.text()).toBe('text')
