@@ -9,7 +9,7 @@ import mine from './mine'
 import modal, {type State as modalState} from './modal'
 import obfucator from './obfucator'
 import prediction from './prediction'
-import result from './result'
+import result, {type State as resultState} from './result'
 import timer, {type State as timerState} from './timer'
 
 const reducer = combineReducers({
@@ -38,6 +38,6 @@ export type ReducerState = {
   modal: modalState,
   obfucator: *,
   prediction: *,
-  result: *,
+  result: resultState,
   timer: timerState
 }
