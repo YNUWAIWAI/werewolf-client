@@ -25,7 +25,7 @@ declare type Agent = {
   'name': { [Language]: string },
   'image': string,
   'id': number,
-  'role'?: {
+  'role': {
     '@id': string,
     'roleName': { [Language]: string },
     'roleImage': string
