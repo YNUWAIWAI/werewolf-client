@@ -3,7 +3,7 @@ import ResultCell from './ResultCell'
 import {WEREWOLF_SIDE} from '../constants/Role'
 
 export default function Result(props) {
-  if (!props.isVisible) {
+  if (!props.visible) {
     return ''
   }
   const summary = (() => {
@@ -25,7 +25,7 @@ export default function Result(props) {
   ])
 
   return (
-    <div className={`result ${props.isVisible ? '' : 'hidden'}`} id="result">
+    <div className="result">
       {
         [
           summary,

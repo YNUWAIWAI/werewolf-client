@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
   agents: state.result.agents,
-  isVisible: state.result.isVisible,
-  mine: state.mine
+  mine: state.mine,
+  visible: state.result.visible
 })
 const ResultContainer = connect(
   mapStateToProps

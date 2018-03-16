@@ -1,12 +1,22 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import {UNPLAYABLE_AGENT} from '../constants/Agent'
 import {RESULTS} from '../constants/Phase'
+import type {SocketMessage} from '../actions'
+import {UNPLAYABLE_AGENT} from '../constants/Agent'
+
+export type State = {
+  +agents: Agent[],
+  +visible: boolean
+}
+type Action =
+  | SocketMessage
 
 const initialState = {
-  isVisible: false
+  agents: [],
+  visible: false
 }
-const result = (state = initialState, action) => {
+const result = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (
@@ -20,7 +30,7 @@ const result = (state = initialState, action) => {
 
         return {
           agents,
-          isVisible: true
+          visible: true
         }
       }
 
