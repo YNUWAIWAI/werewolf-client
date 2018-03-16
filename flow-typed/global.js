@@ -34,7 +34,9 @@ declare type Agent = {
   'statusUpdatePhase': Phase,
   'statusUpdateDate': number,
   'isAChoice': boolean,
-  'result': Result
+  'result': Result,
+  'userName': string,
+  'userAvatar': string
 }
 declare type Role = {
   '@id': string,
