@@ -6,7 +6,6 @@ import {xor} from '../module/util'
 
 type StateProps = {
   +agents: Agent[],
-  +mine: Agent,
   +visible: boolean
 }
 type Props =
@@ -16,9 +15,10 @@ export default function Result(props: Props) {
   if (!props.visible) {
     return ''
   }
+  const mine: Agent = props.agents.filter(a => a.agentIsMine)[0]
   const summary = (() => {
-    const isWerewolfSide = WEREWOLF_SIDE.includes(props.mine.myRole['@id'])
-    const isWin = props.mine.result === 'win'
+    const isWerewolfSide = WEREWOLF_SIDE.includes(mine.role['@id'])
+    const isWin = mine.result === 'win'
     const text = `人間側の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
 
     return <ResultCell key="summary" text={text} type="summary" />
@@ -26,7 +26,7 @@ export default function Result(props: Props) {
 
   const cells = props.agents.map(agent => [
     <ResultCell
-      image={props.mine.myAgentImage}
+      image={mine.image}
       key={`${agent.id}image`}
       result={agent.result}
       status={agent.status}
@@ -36,7 +36,7 @@ export default function Result(props: Props) {
       key={`${agent.id}name`}
       result={agent.result}
       status={agent.status}
-      text={props.mine.myAgentName.ja}
+      text={mine.name.ja}
       type="name"
     />,
     <ResultCell
@@ -54,11 +54,11 @@ export default function Result(props: Props) {
       type="result"
     />,
     <ResultCell
-      image={props.mine.myRole.myRoleImage}
+      image={mine.role.roleImage}
       key={`${agent.id}roleImage`}
       result={agent.result}
       status={agent.status}
-      tooltip={props.mine.myRole.myRoleName.ja}
+      tooltip={mine.role.roleName.ja}
       type="roleImage"
     />,
     <ResultCell
