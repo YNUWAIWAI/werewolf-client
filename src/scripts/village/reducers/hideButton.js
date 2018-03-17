@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {ClickHideButton} from '../actions'
 
-type State = {
+export type State = {
   +hide: boolean
 }
 type Action =

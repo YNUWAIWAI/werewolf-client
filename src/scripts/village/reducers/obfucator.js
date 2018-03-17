@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {type ToggleObfucator} from '../actions'
 
-type State = {
+export type State = {
   +visible: boolean
 }
 type Action =
