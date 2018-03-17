@@ -254,7 +254,7 @@ export default {
       'board': []
     },
     {
-      '@id': 'https://wereworld.world/resource/0.1/villager',
+      '@id': 'https://werewolf.world/resource/0.1/villager',
       'roleIsMine': false,
       'name': {
         'en': 'Villager',
@@ -332,7 +332,7 @@ export default {
       ]
     },
     {
-      '@id': 'https://wereworld.world/resource/0.1/hunter',
+      '@id': 'https://werewolf.world/resource/0.1/hunter',
       'roleIsMine': false,
       'name': {
         'en': 'Hunter',
@@ -358,7 +358,7 @@ export default {
       ]
     },
     {
-      '@id': 'https://wereworld.world/resource/0.1/mason',
+      '@id': 'https://werewolf.world/resource/0.1/mason',
       'roleIsMine': false,
       'name': {
         'en': 'Mason',
@@ -384,7 +384,7 @@ export default {
       ]
     },
     {
-      '@id': 'https://wereworld.world/resource/0.1/madman',
+      '@id': 'https://werewolf.world/resource/0.1/madman',
       'roleIsMine': false,
       'name': {
         'en': 'Madman',
@@ -410,7 +410,7 @@ export default {
       ]
     },
     {
-      '@id': 'https://wereworld.world/resource/0.1/werewolf',
+      '@id': 'https://werewolf.world/resource/0.1/werewolf',
       'roleIsMine': false,
       'name': {
         'en': 'Werewolf',
@@ -436,7 +436,7 @@ export default {
       ]
     },
     {
-      '@id': 'https://wereworld.world/resource/0.1/werehumster',
+      '@id': 'https://werewolf.world/resource/0.1/werehumster',
       'roleIsMine': false,
       'name': {
         'en': 'Werehumster',

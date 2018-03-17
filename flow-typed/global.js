@@ -15,6 +15,7 @@ declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'on
 declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
 declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'
 declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill' | 'fix'
+declare type BoardPolarity = 'positive' | 'negative'
 declare type Language = 'ja' | 'en'
 declare type Result = 'win' | 'lose'
 declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by werewolf attack' | 'death by fear' | 'unnatural death'
@@ -44,5 +45,16 @@ declare type Role = {
   'image': string,
   'roleIsMine': boolean,
   'id': number,
-  'numberOfAgents': number
+  'numberOfAgents': number,
+  'board': Array<{
+    'boardPolarity': BoardPolarity,
+    'boardAgent': {
+      '@id': string,
+      'boardAgentId': number,
+      'boardAgentName': { [Language]: string },
+      'boardAgentImage': string
+    },
+    'boardPhase': Phase,
+    'boardDate': number
+  }>
 }
