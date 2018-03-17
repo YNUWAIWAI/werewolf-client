@@ -8,7 +8,7 @@ import hideButton from './hideButton'
 import mine from './mine'
 import modal, {type State as modalState} from './modal'
 import obfucator from './obfucator'
-import prediction from './prediction'
+import prediction, {type State as predictionState} from './prediction'
 import result, {type State as resultState} from './result'
 import timer, {type State as timerState} from './timer'
 
@@ -37,7 +37,7 @@ export type ReducerState = {
   mine: *,
   modal: modalState,
   obfucator: *,
-  prediction: *,
+  prediction: predictionState,
   result: resultState,
   timer: timerState
 }
