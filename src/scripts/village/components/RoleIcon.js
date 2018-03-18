@@ -2,9 +2,9 @@
 import React from 'react'
 
 type Props = {
-  agent: string,
-  class: string,
-  image: string
+  +class: string,
+  +image: string,
+  +name: string
 }
 
 export default function RoleIcon(props: Props) {
@@ -12,7 +12,7 @@ export default function RoleIcon(props: Props) {
     <div className={props.class}>
       <img src={props.image} />
       <span>
-        {props.agent || ''}
+        {props.name}
       </span>
     </div>
   )
