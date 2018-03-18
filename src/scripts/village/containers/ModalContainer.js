@@ -29,7 +29,7 @@ const getText = (phase: Phase, myRole: Role) => {
 }
 
 const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
-  const agent: Agent = state.agents.filter(a => a.id === state.modal.id)
+  const agent: Agent = state.agents.filter(a => a.id === state.modal.id)[0]
 
   return {
     id: agent.id,
