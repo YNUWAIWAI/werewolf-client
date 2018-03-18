@@ -1,7 +1,7 @@
 // @flow
 import Description from './Description'
 import React from 'react'
-import RoleIcon from './RoleIcon'
+import AgentIcon from './AgentIcon'
 
 export type StateProps = {
   +id: number,
@@ -35,7 +35,7 @@ export default function Modal(props: Props) {
 
   return (
     <div className="modal">
-      <RoleIcon class="modal--icon" image={props.image} name={props.name} />
+      <AgentIcon class="modal--icon" image={props.image} name={props.name} />
       <Description class="modal--description" text={props.text} />
       <div className="modal--button--container">
         <button className="modal--button" onClick={handleClick('yes')} value="yes">

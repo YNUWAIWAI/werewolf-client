@@ -7,7 +7,7 @@ type Props = {
   +name: string
 }
 
-export default function RoleIcon(props: Props) {
+export default function AgentIcon(props: Props) {
   return (
     <div className={props.class}>
       <img src={props.image} />

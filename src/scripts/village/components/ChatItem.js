@@ -4,7 +4,7 @@ import ChatDate from './ChatDate'
 import ChatNum from './ChatNum'
 import ChatText from './ChatText'
 import React from 'react'
-import RoleIcon from './RoleIcon'
+import AgentIcon from './AgentIcon'
 
 export type Props = {
   id?: number,
@@ -26,7 +26,7 @@ export default function ChatItem(props: Props) {
         <ChatText text={props.text} />
         <ChatDate from={props.phaseStartTime} limit={props.phaseTimeLimit} to={props.serverTimestamp} />
       </div>
-      <RoleIcon class="chat--icon" image={props.image} name={props.name} />
+      <AgentIcon class="chat--icon" image={props.image} name={props.name} />
     </div>
   )
 }
