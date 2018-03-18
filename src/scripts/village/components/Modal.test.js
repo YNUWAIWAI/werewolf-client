@@ -18,7 +18,7 @@ test('<Modal id={1} image="image" name="name" text="text" visible />', () => {
     />
   )
 
-  expect(wrapper.find('RoleIcon').exists()).toBe(true)
+  expect(wrapper.find('AgentIcon').exists()).toBe(true)
   expect(wrapper.find('Description').exists()).toBe(true)
   expect(wrapper.find('.modal--button')).toHaveLength(2)
   expect(wrapper.find('.modal--button').filter('[value="yes"]')).toHaveLength(1)

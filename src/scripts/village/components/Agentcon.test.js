@@ -1,9 +1,9 @@
 import React from 'react'
-import RoleIcon from './RoleIcon'
+import AgentIcon from './AgentIcon'
 import {shallow} from 'enzyme'
 
-test('<RoleIcon class="class" image="image" name="name" />', () => {
-  const wrapper = shallow(<RoleIcon class="class" image="image" name="name" />)
+test('<AgentIcon class="class" image="image" name="name" />', () => {
+  const wrapper = shallow(<AgentIcon class="class" image="image" name="name" />)
 
   expect(wrapper.find('.class')).toHaveLength(1)
   expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
@@ -13,8 +13,8 @@ test('<RoleIcon class="class" image="image" name="name" />', () => {
     </span>
   )).toBe(true)
 })
-test('<RoleIcon class="class" image="image" name="" />', () => {
-  const wrapper = shallow(<RoleIcon class="class" image="image" name="" />)
+test('<AgentIcon class="class" image="image" name="" />', () => {
+  const wrapper = shallow(<AgentIcon class="class" image="image" name="" />)
 
   expect(wrapper.find('.class')).toHaveLength(1)
   expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
@@ -24,8 +24,8 @@ test('<RoleIcon class="class" image="image" name="" />', () => {
     </span>
   )).toBe(true)
 })
-test('<RoleIcon class="" image="image" name="name" />', () => {
-  const wrapper = shallow(<RoleIcon class="" image="image" name="name" />)
+test('<AgentIcon class="" image="image" name="name" />', () => {
+  const wrapper = shallow(<AgentIcon class="" image="image" name="name" />)
 
   expect(wrapper.find('.undefined')).toHaveLength(0)
   expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
@@ -35,8 +35,8 @@ test('<RoleIcon class="" image="image" name="name" />', () => {
     </span>
   )).toBe(true)
 })
-test('<RoleIcon class="class" image="" name="name" />', () => {
-  const wrapper = shallow(<RoleIcon class="class" image="" name="name" />)
+test('<AgentIcon class="class" image="" name="name" />', () => {
+  const wrapper = shallow(<AgentIcon class="class" image="" name="name" />)
 
   expect(wrapper.find('.class')).toHaveLength(1)
   expect(wrapper.containsMatchingElement(<img src="" />)).toBe(true)
