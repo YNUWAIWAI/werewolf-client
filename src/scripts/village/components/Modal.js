@@ -35,7 +35,7 @@ export default function Modal(props: Props) {
 
   return (
     <div className="modal">
-      <RoleIcon agent={props.name} class="modal--icon" image={props.image} />
+      <RoleIcon class="modal--icon" image={props.image} name={props.name} />
       <Description class="modal--description" text={props.text} />
       <div className="modal--button--container">
         <button className="modal--button" onClick={handleClick('yes')} value="yes">

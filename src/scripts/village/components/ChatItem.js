@@ -26,7 +26,7 @@ export default function ChatItem(props: Props) {
         <ChatText text={props.text} />
         <ChatDate from={props.phaseStartTime} limit={props.phaseTimeLimit} to={props.serverTimestamp} />
       </div>
-      <RoleIcon agent={props.name} class="chat--icon" image={props.image} />
+      <RoleIcon class="chat--icon" image={props.image} name={props.name} />
     </div>
   )
 }

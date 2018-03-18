@@ -3,16 +3,19 @@ import React from 'react'
 import RoleIcon from './RoleIcon'
 import RoleText from './RoleText'
 
-type Props = {
-  agent: string,
-  image: string,
-  role: string
+export type StateProps = {
+  +image: string,
+  +role: string,
+  +name: string
 }
+
+type Props =
+ & StateProps
 
 export default function Role(props: Props) {
   return (
-    <div className="role" id="role">
-      <RoleIcon agent={props.agent} class="role--icon" image={props.image} />
+    <div className="role">
+      <RoleIcon class="role--icon" image={props.image} name={props.name} />
       <RoleText role={props.role} />
     </div>
   )
