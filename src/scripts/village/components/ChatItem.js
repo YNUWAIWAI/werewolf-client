@@ -1,10 +1,10 @@
 // @flow
+import AgentIcon from './AgentIcon'
 import {Channels} from '../constants/Channels'
 import ChatDate from './ChatDate'
 import ChatNum from './ChatNum'
 import ChatText from './ChatText'
 import React from 'react'
-import AgentIcon from './AgentIcon'
 
 export type Props = {
   id?: number,

@@ -1,6 +1,6 @@
 // @flow
-import React from 'react'
 import AgentIcon from './AgentIcon'
+import React from 'react'
 import RoleText from './RoleText'
 
 export type StateProps = {

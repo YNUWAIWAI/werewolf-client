@@ -1,7 +1,7 @@
 // @flow
+import AgentIcon from './AgentIcon'
 import Description from './Description'
 import React from 'react'
-import AgentIcon from './AgentIcon'
 
 export type StateProps = {
   +id: number,
