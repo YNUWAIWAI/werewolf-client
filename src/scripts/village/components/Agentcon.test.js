@@ -1,5 +1,5 @@
-import React from 'react'
 import AgentIcon from './AgentIcon'
+import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<AgentIcon class="class" image="image" name="name" />', () => {
