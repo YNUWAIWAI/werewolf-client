@@ -1,33 +1,37 @@
-import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
 import {postChat, selectOption, setIsSendable} from '../actions'
 import Command from '../components/Command'
 import {DAY_VOTE} from '../constants/Phase'
 import {connect} from 'react-redux'
+import {trimBaseUri} from '../module/util'
 
-const getText = (phase, myRole, fixed) => {
+const getText = (phase, role, fixed) => {
   if (phase === DAY_VOTE) {
     return '投票先を選んでください'
   }
 
-  switch (myRole['@id']) {
-    case WEREWOLF:
+  switch (role) {
+    case 'werewolf':
       return fixed ? 'あなたの選んだ襲撃先はこちらです' : '襲撃先を選んでください'
-    case SEER:
+    case 'seer':
       return fixed ? 'あなたの選んだ占い先はこちらです' : '占い先を選んでください'
-    case HUNTER:
+    case 'hunter':
       return fixed ? 'あなたの選んだ守護先はこちらです' : '守護先を選んでください'
     default:
       return '待ってください'
   }
 }
 
-const mapStateToProps = state => ({
-  ... state.command,
-  agents: state.agents,
-  hide: state.hideButton.hide,
-  phase: state.base.phase,
-  text: getText(state.base.phase, state.mine.myRole, state.command.fixed)
-})
+const mapStateToProps = state => {
+  const myRole = state.roles.filter(r => r.roletIsMine)[0]
+
+  return {
+    ... state.command,
+    agents: state.agents,
+    hide: state.hideButton.hide,
+    phase: state.base.phase,
+    text: getText(state.base.phase, trimBaseUri(myRole['@id']), state.command.fixed)
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   handlePostChat: kind => text => dispatch(postChat({

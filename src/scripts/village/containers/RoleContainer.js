@@ -1,20 +1,21 @@
 // @flow
-import Role, {type StateProps} from '../components/Role'
+import RoleComponent, {type StateProps} from '../components/Role'
 import {type ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
-  const mine = state.agents.filter(a => a.agentIsMine)[0]
+  const myAgent: Agent = state.agents.filter(a => a.agentIsMine)[0]
+  const myRole: Role = state.roles.filter(r => r.roleIsMine)[0]
 
   return {
-    image: mine.image,
-    name: mine.name.ja,
-    role: mine.role.roleName.ja
+    image: myAgent.image,
+    name: myAgent.name.ja,
+    role: myRole.name.ja
   }
 }
 
 const RoleContainer = connect(
   mapStateToProps
-)(Role)
+)(RoleComponent)
 
 export default RoleContainer
