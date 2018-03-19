@@ -5,7 +5,6 @@ import chat from './chat'
 import {combineReducers} from 'redux'
 import command from './command'
 import hideButton, {type State as hideButtonState} from './hideButton'
-import mine from './mine'
 import modal, {type State as modalState} from './modal'
 import obfucator, {type State as obfucatorState} from './obfucator'
 import prediction, {type State as predictionState} from './prediction'
@@ -19,7 +18,6 @@ const reducer = combineReducers({
   chat,
   command,
   hideButton,
-  mine,
   modal,
   obfucator,
   prediction,
@@ -36,7 +34,6 @@ export type ReducerState = {
   chat: *,
   command: *,
   hideButton: hideButtonState,
-  mine: *,
   modal: modalState,
   obfucator: obfucatorState,
   prediction: predictionState,
