@@ -1,6 +1,6 @@
 // @flow
 import Role, {type StateProps} from '../components/Role'
-import {type ReducerState} from '../reducers';
+import {type ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
