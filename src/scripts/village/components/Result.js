@@ -5,7 +5,10 @@ import {WEREWOLF_SIDE} from '../constants/Role'
 import {xor} from '../module/util'
 
 type StateProps = {
-  +agents: Agent[],
+  +agents: {
+    +all: Agent[],
+    +mine?: Agent
+  },
   +visible: boolean
 }
 type Props =
@@ -15,18 +18,9 @@ export default function Result(props: Props) {
   if (!props.visible) {
     return ''
   }
-  const mine: Agent = props.agents.filter(a => a.agentIsMine)[0]
-  const summary = (() => {
-    const isWerewolfSide = WEREWOLF_SIDE.includes(mine.role['@id'])
-    const isWin = mine.result === 'win'
-    const text = `人間側の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
-
-    return <ResultCell key="summary" text={text} type="summary" />
-  })()
-
-  const cells = props.agents.map(agent => [
+  const cells = props.agents.all.map(agent => [
     <ResultCell
-      image={mine.image}
+      image={agent.image}
       key={`${agent.id}image`}
       result={agent.result}
       status={agent.status}
@@ -36,7 +30,7 @@ export default function Result(props: Props) {
       key={`${agent.id}name`}
       result={agent.result}
       status={agent.status}
-      text={mine.name.ja}
+      text={agent.name.ja}
       type="name"
     />,
     <ResultCell
@@ -54,11 +48,11 @@ export default function Result(props: Props) {
       type="result"
     />,
     <ResultCell
-      image={mine.role.roleImage}
+      image={agent.role.roleImage}
       key={`${agent.id}roleImage`}
       result={agent.result}
       status={agent.status}
-      tooltip={mine.role.roleName.ja}
+      tooltip={agent.role.roleName.ja}
       type="roleImage"
     />,
     <ResultCell
@@ -76,6 +70,22 @@ export default function Result(props: Props) {
       type="userName"
     />
   ])
+  const summary = (() => {
+    if (props.agents.mine) {
+      const mine = props.agents.mine
+      const isWerewolfSide = WEREWOLF_SIDE.includes(mine.role['@id'])
+      const isWin = mine.result === 'win'
+      const text = `人間側の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
+
+      return <ResultCell key="summary" text={text} type="summary" />
+    }
+    const isWerewolfSide = WEREWOLF_SIDE.includes(props.agents.all[0].role['@id'])
+    const isWin = props.agents.all[0].result === 'win'
+    const text = `人間側が${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}しました`
+
+    return <ResultCell key="summary" text={text} type="summary" />
+
+  })()
 
   return (
     <div className="result">
