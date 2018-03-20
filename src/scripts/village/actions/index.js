@@ -35,7 +35,7 @@ export const postChat = ({kind, text}: {kind: Channel, text: string}) => ({
   type: types.POST_CHAT
 })
 
-export const setIsSendable = ({isSendable, kind}: {isSendable: boolean, kind: Channel}) => ({
+export const setIsSendable = ({isSendable, kind}: {isSendable: boolean, kind: InputChannel}) => ({
   isSendable,
   kind,
   type: types.SET_IS_SENDABLE,
@@ -67,16 +67,16 @@ export const handleClickHideButton = (hide: boolean) => ({
   type: types.CLICK_HIDE_BUTTON
 })
 
-export type SocketClose = $Call<typeof socket.close, *>
-export type SocketError = $Call<typeof socket.error, *>
-export type SocketMessage = $Call<typeof socket.message, *>
-export type SocketOpen = $Call<typeof socket.open, *>
-export type SocketSend = $Call<typeof socket.send, *>
-export type ToggleObfucator = $Call<typeof toggleObfucator, *>
-export type PostChat = $Call<typeof postChat, *>
-export type SetIsSendable = $Call<typeof setIsSendable, *>
-export type ChangePredictionBoard = $Call<typeof handleBoardClick, *, *, *>
-export type SelectOption = $Call<typeof selectOption, *>
-export type SelectNo = $Call<typeof selectNo, *>
-export type SelectYes = $Call<typeof selectYes, *>
-export type ClickHideButton = $Call<typeof handleClickHideButton, *>
+export type SocketClose = $ReadOnly<$Call<typeof socket.close, *>>
+export type SocketError = $ReadOnly<$Call<typeof socket.error, *>>
+export type SocketMessage = $ReadOnly<$Call<typeof socket.message, *>>
+export type SocketOpen = $ReadOnly<$Call<typeof socket.open, *>>
+export type SocketSend = $ReadOnly<$Call<typeof socket.send, *>>
+export type ToggleObfucator = $ReadOnly<$Call<typeof toggleObfucator, *>>
+export type PostChat = $ReadOnly<$Call<typeof postChat, *>>
+export type SetIsSendable = $ReadOnly<$Call<typeof setIsSendable, *>>
+export type ChangePredictionBoard = $ReadOnly<$Call<typeof handleBoardClick, *, *, *>>
+export type SelectOption = $ReadOnly<$Call<typeof selectOption, *>>
+export type SelectNo = $ReadOnly<$Call<typeof selectNo, *>>
+export type SelectYes = $ReadOnly<$Call<typeof selectYes, *>>
+export type ClickHideButton = $ReadOnly<$Call<typeof handleClickHideButton, *>>

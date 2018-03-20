@@ -1,11 +1,38 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {Channels} from '../constants/Channels'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
+import type {SelectYes, SetIsSendable, SocketMessage} from '../actions'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
+import {Channels} from '../constants/Channels'
 import {trimBaseUri} from '../module/util'
 
-const initialState = {
+export type State = {
+  +fixed: boolean,
+  limited: {
+    available: boolean,
+    isSendable: boolean,
+    postCount: number,
+    postCountLimit: number
+  },
+  private: {
+    isSendable: boolean,
+    postCount: number,
+    postCountLimit: number
+  },
+  public: {
+    isSendable: boolean,
+    postCount: number,
+    postCountLimit: number
+  },
+}
+type Action =
+ | SetIsSendable
+ | SocketMessage
+ | SelectYes
+
+export const initialState = {
+  fixed: false,
   limited: {
     available: false,
     isSendable: true,
@@ -24,15 +51,19 @@ const initialState = {
   }
 }
 
-const command = (state = initialState, action) => {
+const command = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.SELECT_YES:
+      return {
+        ... state,
+        fixed: true
+      }
     case ActionTypes.SET_IS_SENDABLE:
       return {
         ... state,
         [action.kind]: {
-          isSendable: action.isSendable,
-          postCount: state[action.kind].postCount,
-          postCountLimit: state[action.kind].postCountLimit
+          ... state[action.kind],
+          isSendable: action.isSendable
         }
       }
     case ActionTypes.SOCKET_MESSAGE:
@@ -41,12 +72,13 @@ const command = (state = initialState, action) => {
         action.payload['@context'].includes(Contexts.CHAT) &&
         action.payload.chatIsMine
       ) {
-        const kind = Channels[action.payload.intensionalDisclosureRange]
+        const kind: InputChannel = Channels[action.payload.intensionalDisclosureRange]
         const isSendable = action.payload.chatCounter < action.payload.chatLimit
 
         return {
           ... state,
           [kind]: {
+            ... state[kind],
             isSendable,
             postCount: action.payload.chatCounter,
             postCountLimit: action.payload.chatLimit
@@ -74,11 +106,6 @@ const command = (state = initialState, action) => {
       }
 
       return state
-    case ActionTypes.SELECT_YES:
-      return {
-        ... state,
-        fixed: true
-      }
     default:
       return state
   }
