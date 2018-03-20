@@ -9,7 +9,7 @@ type Props = {
   +kind: InputChannel,
   +postCount: number,
   +postCountLimit: number,
-  +setIsSendable: boolean => void,
+  +setIsSendable: boolean => void
 }
 type State = {
   isOver: boolean,
@@ -21,7 +21,7 @@ class CommandInput extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      isOver: false,
+      isOver: true,
       text: '',
       textCount: 0
     }
@@ -32,16 +32,18 @@ class CommandInput extends React.Component<Props, State> {
     const textCount = countText(text)
     let isOver, isSendable
 
-    if (textCount > 140) {
+    if (textCount > 140 || textCount <= 0) {
       isOver = true
-      isSendable = false
     } else {
       isOver = false
-      if (this.props.postCount >= this.props.postCountLimit) {
-        isSendable = false
-      }
+    }
+
+    if (isOver || this.props.postCount >= this.props.postCountLimit) {
+      isSendable = false
+    } else {
       isSendable = true
     }
+
     this.setState({
       isOver,
       text,

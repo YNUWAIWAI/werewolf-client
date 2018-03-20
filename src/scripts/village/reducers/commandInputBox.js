@@ -32,17 +32,17 @@ export type Action =
 export const initialState = {
   limited: {
     available: false,
-    isSendable: true,
+    isSendable: false,
     postCount: 0,
     postCountLimit: 10,
   },
   private: {
-    isSendable: true,
+    isSendable: false,
     postCount: 0,
     postCountLimit: 10,
   },
   public: {
-    isSendable: true,
+    isSendable: false,
     postCount: 0,
     postCountLimit: 10,
   }
