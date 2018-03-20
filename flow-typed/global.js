@@ -57,3 +57,20 @@ declare type Role = {
     'boardDate': number
   }>
 }
+declare type Chat = {
+  'chatAgent': {
+    '@id': string,
+    'chatAgentId': number,
+    'chatAgentName': { [Language]: string },
+    'chatAgentImage': string
+  },
+  'chatIsMine': boolean,
+  'chatId': number,
+  'chatCounter': number,
+  'chatLimit': number,
+  'chatInterval': string,
+  'chatText': string,
+  'chatCharacterLimit': number,
+  'chatLanguage': Language,
+  'chatIsOver': boolean
+}

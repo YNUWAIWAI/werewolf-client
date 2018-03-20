@@ -1,12 +1,19 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Message from '../constants/Message'
 import * as Contexts from '../constants/Contexts'
-import {receiveChat} from '../actions'
+import * as Message from '../constants/Message'
+import type {SocketMessage} from '../actions'
+
+export type State = {
+  +items: Chat[]
+}
+type Action =
+  | SocketMessage
 
 const initialState = {
   items: []
 }
-const chat = (state = initialState, action) => {
+const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (
