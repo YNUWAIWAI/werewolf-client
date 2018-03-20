@@ -21,13 +21,25 @@ const getText = (phase, role, fixed) => {
   }
 }
 
-const mapStateToProps = state => ({
-  ... state.command,
-  agents: state.agents.all,
-  hide: state.hideButton.hide,
-  phase: state.base.phase,
-  text: getText(state.base.phase, trimBaseUri(state.roles.mine['@id']), state.command.fixed)
-})
+const mapStateToProps = state => {
+  if (!state.roles.mine) {
+    return {
+      ... state.command,
+      agents: state.agents.all,
+      hide: state.hideButton.hide,
+      phase: state.base.phase,
+      text: ''
+    }
+  }
+
+  return {
+    ... state.command,
+    agents: state.agents.all,
+    hide: state.hideButton.hide,
+    phase: state.base.phase,
+    text: getText(state.base.phase, trimBaseUri(state.roles.mine['@id']), state.command.fixed)
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   handlePostChat: kind => text => dispatch(postChat({
