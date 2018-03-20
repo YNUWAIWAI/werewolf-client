@@ -5,8 +5,8 @@ import type {SocketMessage} from '../actions'
 import {UNPLAYABLE_ROLE} from '../constants/Role'
 
 export type State = {
-  all: Role[],
-  mine?: Role
+  +all: Role[],
+  +mine?: Role
 }
 type Action =
   | SocketMessage

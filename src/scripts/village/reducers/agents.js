@@ -5,8 +5,8 @@ import type {SocketMessage} from '../actions'
 import {UNPLAYABLE_AGENT} from '../constants/Agent'
 
 export type State = {
-  all: Agent[],
-  mine?: Agent
+  +all: Agent[],
+  +mine?: Agent
 }
 type Action =
   | SocketMessage
