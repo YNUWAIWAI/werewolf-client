@@ -30,7 +30,7 @@ const socketMiddleware = (option = {}) => store => next => action => {
       console.warn('WebSocket Disconnected ', event)
       socket = null
       if (isReady) {
-        store.dispatch(toggleObfucator(false))
+        store.dispatch(toggleObfucator(true))
         isReady = false
       }
       store.dispatch(socketAction.close(event))
@@ -39,14 +39,14 @@ const socketMiddleware = (option = {}) => store => next => action => {
       console.error('WebSocket Error ', error)
       socket = null
       if (isReady) {
-        store.dispatch(toggleObfucator(false))
+        store.dispatch(toggleObfucator(true))
         isReady = false
       }
       store.dispatch(socketAction.error(error))
     })
     socket.addEventListener('message', event => {
       if (!isReady) {
-        store.dispatch(toggleObfucator(true))
+        store.dispatch(toggleObfucator(false))
         isReady = true
       }
       store.dispatch(socketAction.message(event))
