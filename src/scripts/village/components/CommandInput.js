@@ -1,25 +1,35 @@
+// @flow
 import React from 'react'
 
-class CommandInput extends React.Component {
-  constructor(props) {
+const countText = (text: string): number => Array.of(... text).length
+
+type Props = {
+  +handlePostChat: string => void,
+  +isSendable: boolean,
+  +kind: InputChannel,
+  +postCount: number,
+  +postCountLimit: number,
+  +setIsSendable: boolean => void,
+}
+type State = {
+  isOver: boolean,
+  text: string,
+  textCount: number
+}
+
+class CommandInput extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = {
       isOver: false,
       text: '',
       textCount: 0
     }
-    this.handleTextChange = this.handleTextChange.bind(this)
-    this.handlePostChat = this.handlePostChat.bind(this)
-    this.handleKeyDown = this.handleKeyDown.bind(this)
   }
 
-  countText(text) {
-    return Array.of(... text).length
-  }
-
-  handleTextChange(event) {
+  handleTextChange(event: SyntheticInputEvent<HTMLTextAreaElement>) {
     const text = event.target.value
-    const textCount = this.countText(text)
+    const textCount = countText(text)
     let isOver, isSendable
 
     if (textCount > 140) {
@@ -42,7 +52,7 @@ class CommandInput extends React.Component {
     }
   }
 
-  handlePostChat(event) {
+  handlePostChat() {
     this.props.setIsSendable(false)
     this.props.handlePostChat(this.state.text)
     this.setState({
@@ -52,7 +62,7 @@ class CommandInput extends React.Component {
     })
   }
 
-  handleKeyDown(event) {
+  handleKeyDown(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) {
     if (!this.props.isSendable) {
       return
     }
@@ -75,24 +85,23 @@ class CommandInput extends React.Component {
     })[this.props.kind])()
 
     return (
-      <form className={`command--input ${this.props.kind}`} name={this.props.kind}>
+      <form className={`command--input ${this.props.kind}`}>
         <textarea
-          id={`${this.props.kind}-textarea`}
-          onChange={this.handleTextChange}
-          onKeyDown={this.handleKeyDown}
+          onChange={e => this.handleTextChange(e)}
+          onKeyDown={e => this.handleKeyDown(e)}
           placeholder={placeholder}
           value={this.state.text}
         />
-        <span className={`command--input--char ${this.state.isOver && 'error'}`} id={`${this.props.kind}-char`}>
+        <span className={`command--input--char ${this.state.isOver ? 'error' : ''}`}>
           {this.state.textCount}
         </span>
         {
           this.props.kind === 'private' ||
-          <span className="command--input--counter" data-counter={this.props.postCount} id={`${this.props.kind}-counter`}>
+          <span className="command--input--counter">
             {`${this.props.postCount}/${this.props.postCountLimit}`}
           </span>
         }
-        <button disabled={!this.props.isSendable} id={`${this.props.kind}-button`} onClick={this.handlePostChat} type="button">
+        <button disabled={!this.props.isSendable} onClick={() => this.handlePostChat()}>
           {'送信'}
         </button>
       </form>
