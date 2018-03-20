@@ -2,8 +2,7 @@
 import agents, {type State as agentsState} from './agents'
 import base, {type State as baseState} from './base'
 import chat, {type State as chatState} from './chat'
-import {combineReducers} from 'redux'
-import command from './command'
+import command, {type State as commandState} from './command'
 import hideButton, {type State as hideButtonState} from './hideButton'
 import modal, {type State as modalState} from './modal'
 import obfucator, {type State as obfucatorState} from './obfucator'
@@ -11,6 +10,7 @@ import prediction, {type State as predictionState} from './prediction'
 import result, {type State as resultState} from './result'
 import roles, {type State as rolesState} from './roles'
 import timer, {type State as timerState} from './timer'
+import {combineReducers} from 'redux'
 
 const reducer = combineReducers({
   agents,
@@ -32,7 +32,7 @@ export type ReducerState = {
   agents: agentsState,
   base: baseState,
   chat: chatState,
-  command: *,
+  command: commandState,
   hideButton: hideButtonState,
   modal: modalState,
   obfucator: obfucatorState,
