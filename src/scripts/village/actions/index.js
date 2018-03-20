@@ -29,7 +29,7 @@ export const toggleObfucator = (visible: boolean) => ({
   visible
 })
 
-export const postChat = ({kind, text}: {kind: Channel, text: string}) => ({
+export const postChat = ({kind, text}: {kind: InputChannel, text: string}) => ({
   kind,
   text,
   type: types.POST_CHAT
