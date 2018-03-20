@@ -4,16 +4,27 @@ import * as Contexts from '../constants/Contexts'
 import type {SocketMessage} from '../actions'
 import {UNPLAYABLE_ROLE} from '../constants/Role'
 
-export type State = Role[]
+export type State = {
+  all: Role[],
+  mine?: Role
+}
 type Action =
   | SocketMessage
 
-const initialState = []
+const initialState = {
+  all: []
+}
 const roles = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (action.payload['@context'].includes(Contexts.ROLE)) {
-        return action.payload.role.filter(r => !UNPLAYABLE_ROLE.includes(r['@id']))
+        const all = action.payload.role.filter(r => !UNPLAYABLE_ROLE.includes(r['@id']))
+        const mine = all.filter(r => r.roleIsMine)[0]
+
+        return {
+          all,
+          mine
+        }
       }
 
       return state
