@@ -4,6 +4,7 @@ import base, {type State as baseState} from './base'
 import chat, {type State as chatState} from './chat'
 import command, {type State as commandState} from './command'
 import commandInputBox, {type State as commandInputBoxState} from './commandInputBox'
+import commandSelection, {type State as commandSelectionState} from './commandSelection'
 import hideButton, {type State as hideButtonState} from './hideButton'
 import modal, {type State as modalState} from './modal'
 import obfucator, {type State as obfucatorState} from './obfucator'
@@ -19,6 +20,7 @@ const reducer = combineReducers({
   chat,
   command,
   commandInputBox,
+  commandSelection,
   hideButton,
   modal,
   obfucator,
@@ -36,6 +38,7 @@ export type ReducerState = {
   chat: chatState,
   command: commandState,
   commandInputBox: commandInputBoxState,
+  commandSelection: commandSelectionState,
   hideButton: hideButtonState,
   modal: modalState,
   obfucator: obfucatorState,
