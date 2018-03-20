@@ -22,8 +22,6 @@ const client2server = store => next => action => {
   switch (action.type) {
     case types.POST_CHAT: {
       const state = store.getState()
-      const myAgent = state.agents.filter(a => a.agentIsMine)[0]
-      const myRole = state.roles.filter(a => a.roleIsMine)[0]
       const channnel = (kind => {
         switch (kind) {
           case 'public':
@@ -31,7 +29,7 @@ const client2server = store => next => action => {
           case 'private':
             return kind
           case 'limited':
-            return trimBaseUri(myRole['@id'])
+            return trimBaseUri(state.roles.mine['@id'])
           case 'grave':
             return kind
           case 'master':
@@ -56,10 +54,10 @@ const client2server = store => next => action => {
         },
         {
           'chatAgent': {
-            '@id': myAgent['@id'],
-            'chatAgentId': myAgent.id,
-            'chatAgentImage': myAgent.image,
-            'chatAgentName': myAgent.name
+            '@id': state.agents.mine['@id'],
+            'chatAgentId': state.agents.mine.id,
+            'chatAgentImage': state.agents.mine.image,
+            'chatAgentName': state.agents.mine.name
           },
           'chatCharacterLimit': 140,
           'chatIsMine': true,
@@ -69,14 +67,14 @@ const client2server = store => next => action => {
           // 'chatUserName': '',
           // 'chatUserAvatar': '',
           'myAgent': {
-            '@id': myAgent['@id'],
-            'myAgentId': myAgent.id,
-            'myAgentImage': myAgent.image,
-            'myAgentName': myAgent.name,
+            '@id': state.agents.mine['@id'],
+            'myAgentId': state.agents.mine.id,
+            'myAgentImage': state.agents.mine.image,
+            'myAgentName': state.agents.mine.name,
             'myRole': {
-              '@id': myRole['@id'],
-              'myRoleImage': myRole.image,
-              'myRoleName': myRole.name
+              '@id': state.roles.mine['@id'],
+              'myRoleImage': state.roles.mine.image,
+              'myRoleName': state.roles.mine.name
             }
           }
         }
@@ -88,8 +86,6 @@ const client2server = store => next => action => {
     }
     case types.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
-      const myAgent = state.agents.filter(a => a.agentIsMine)[0]
-      const myRole = state.roles.filter(a => a.roleIsMine)[0]
       const payload = Object.assign(
         {},
         state.base,
@@ -104,29 +100,29 @@ const client2server = store => next => action => {
           'extensionalDisclosureRange': [],
           'intensionalDisclosureRange': 'private',
           'myAgent': {
-            '@id': myAgent['@id'],
-            'myAgentId': myAgent.id,
-            'myAgentImage': myAgent.image,
-            'myAgentName': myAgent.name,
+            '@id': state.agents.mine['@id'],
+            'myAgentId': state.agents.mine.id,
+            'myAgentImage': state.agents.mine.image,
+            'myAgentName': state.agents.mine.name,
             'myRole': {
-              '@id': myRole['@id'],
-              'myRoleImage': myRole.image,
-              'myRoleName': myRole.name
+              '@id': state.roles.mine['@id'],
+              'myRoleImage': state.roles.mine.image,
+              'myRoleName': state.roles.mine.name
             }
           }
         },
         {
           'boardAgent': {
-            '@id': myAgent['@id'],
-            'agentId': myAgent.id,
-            'agentImage': myAgent.image,
-            'agentName': myAgent.name
+            '@id': state.agents.mine['@id'],
+            'agentId': state.agents.mine.id,
+            'agentImage': state.agents.mine.image,
+            'agentName': state.agents.mine.name
           },
           'boardPrediction': action.state,
           'boardRole': {
-            '@id': myRole['@id'],
-            'roleImage': myRole.image,
-            'roleName': myRole.name
+            '@id': state.roles.mine['@id'],
+            'roleImage': state.roles.mine.image,
+            'roleName': state.roles.mine.name
           }
         }
       )
@@ -137,8 +133,6 @@ const client2server = store => next => action => {
     }
     case types.SELECT_YES: {
       const state = store.getState()
-      const myAgent = state.agents.filter(a => a.agentIsMine)[0]
-      const myRole = state.roles.filter(a => a.roleIsMine)[0]
       const votedAgent = state.agents.filter(a => a.id === action.agentId)[0]
       const payload = Object.assign(
         {},
@@ -154,14 +148,14 @@ const client2server = store => next => action => {
           'extensionalDisclosureRange': [],
           'intensionalDisclosureRange': 'private',
           'myAgent': {
-            '@id': myAgent['@id'],
-            'myAgentId': myAgent.id,
-            'myAgentImage': myAgent.image,
-            'myAgentName': myAgent.name,
+            '@id': state.agents.mine['@id'],
+            'myAgentId': state.agents.mine.id,
+            'myAgentImage': state.agents.mine.image,
+            'myAgentName': state.agents.mine.name,
             'myRole': {
-              '@id': myRole['@id'],
-              'myRoleImage': myRole.image,
-              'myRoleName': myRole.name
+              '@id': state.roles.mine['@id'],
+              'myRoleImage': state.roles.mine.image,
+              'myRoleName': state.roles.mine.name
             }
           }
         },
