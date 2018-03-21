@@ -3,9 +3,13 @@ import Chat from '../containers/ChatContainer'
 import Prediction from '../containers/PredictionContainer'
 import React from 'react'
 
-type Props = {
+export type StateProps = {
   expand: boolean
 }
+export type ownProps = {}
+export type Props =
+  & StateProps
+  & ownProps
 
 export default function Activity(props: Props) {
   return (
