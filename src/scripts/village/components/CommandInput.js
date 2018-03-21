@@ -3,79 +3,74 @@ import React from 'react'
 
 const countText = (text: string): number => Array.of(... text).length
 
-type Props = {
-  +handlePostChat: string => void,
-  +isSendable: boolean,
-  +kind: InputChannel,
-  +postCount: number,
-  +postCountLimit: number,
-  +setIsSendable: boolean => void
-}
-type State = {
-  isOver: boolean,
-  text: string,
-  textCount: number
+const isValidTextLength = (text: string, upperLimit: number, lowerLimit?: number = 1): boolean => {
+  const textCount = countText(text)
+
+  return textCount <= upperLimit && textCount >= lowerLimit
 }
 
-class CommandInput extends React.Component<Props, State> {
+const isSendable = (postCount: number, postCountLimit: number): boolean => postCount < postCountLimit
+
+type Props = {
+  +handlePostChat: string => void,
+  +kind: 'public' | 'limited',
+  +postCount: number,
+  +postCountLimit: number
+} | {
+  +handlePostChat: string => void,
+  +kind: 'private'
+}
+type State = {
+  sendable: boolean,
+  text: string,
+  textCount: number,
+  validTextLength: boolean
+}
+
+export default class CommandInput extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
+    const text = ''
+
     this.state = {
-      isOver: true,
-      text: '',
-      textCount: 0
+      sendable: this.isSendable(),
+      text,
+      textCount: countText(text),
+      validTextLength: isValidTextLength(text, 140)
     }
+  }
+
+  isSendable() {
+    if (this.props.kind === 'private') {
+      return true
+    }
+
+    return isSendable(this.props.postCount, this.props.postCountLimit)
+  }
+
+  updateText(text: string) {
+    this.setState({
+      sendable: this.isSendable(),
+      text,
+      textCount: countText(text),
+      validTextLength: isValidTextLength(text, 140)
+    })
   }
 
   handleTextChange(event: SyntheticInputEvent<HTMLTextAreaElement>) {
-    const text = event.target.value
-    const textCount = countText(text)
-    let isOver, isSendable
-
-    if (textCount > 140 || textCount <= 0) {
-      isOver = true
-    } else {
-      isOver = false
-    }
-
-    if (isOver || this.props.postCount >= this.props.postCountLimit) {
-      isSendable = false
-    } else {
-      isSendable = true
-    }
-
-    this.setState({
-      isOver,
-      text,
-      textCount
-    })
-    if (this.props.isSendable !== isSendable) {
-      this.props.setIsSendable(isSendable)
-    }
+    this.updateText(event.target.value)
   }
 
   handlePostChat() {
-    this.props.setIsSendable(false)
-    this.props.handlePostChat(this.state.text)
-    this.setState({
-      isOver: false,
-      text: '',
-      textCount: 0
-    })
+    if (this.state.sendable && this.state.validTextLength) {
+      this.props.handlePostChat(this.state.text)
+      this.updateText('')
+    }
   }
 
   handleKeyDown(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) {
-    if (!this.props.isSendable) {
-      return
-    }
     if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
-      this.props.setIsSendable(false)
-      this.props.handlePostChat(this.state.text)
-      this.setState({
-        isOver: false,
-        text: '',
-        textCount: 0
-      })
+      this.handlePostChat()
     }
   }
 
@@ -94,21 +89,20 @@ class CommandInput extends React.Component<Props, State> {
           placeholder={placeholder}
           value={this.state.text}
         />
-        <span className={`command--input--char ${this.state.isOver ? 'error' : ''}`}>
+        <span className={`command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
           {this.state.textCount}
         </span>
         {
-          this.props.kind === 'private' ||
-          <span className="command--input--counter">
-            {`${this.props.postCount}/${this.props.postCountLimit}`}
-          </span>
+          this.props.kind === 'private' ?
+            '' :
+            <span className="command--input--counter">
+              {`${this.props.postCount}/${this.props.postCountLimit}`}
+            </span>
         }
-        <button disabled={!this.props.isSendable} onClick={() => this.handlePostChat()}>
+        <button disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
           {'送信'}
         </button>
       </form>
     )
   }
 }
-
-export default CommandInput
