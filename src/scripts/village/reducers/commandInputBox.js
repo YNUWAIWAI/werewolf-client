@@ -10,17 +10,14 @@ import {trimBaseUri} from '../module/util'
 export type State = {
   limited: {
     available: boolean,
-    isSendable: boolean,
     postCount: number,
     postCountLimit: number
   },
   private: {
-    isSendable: boolean,
     postCount: number,
     postCountLimit: number
   },
   public: {
-    isSendable: boolean,
     postCount: number,
     postCountLimit: number
   },
@@ -31,17 +28,14 @@ export type Action =
 export const initialState = {
   limited: {
     available: false,
-    isSendable: false,
     postCount: 0,
     postCountLimit: 10,
   },
   private: {
-    isSendable: false,
     postCount: 0,
     postCountLimit: 10,
   },
   public: {
-    isSendable: false,
     postCount: 0,
     postCountLimit: 10,
   }
@@ -49,14 +43,6 @@ export const initialState = {
 
 const commandInputBox = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SET_IS_SENDABLE:
-      return {
-        ... state,
-        [action.kind]: {
-          ... state[action.kind],
-          isSendable: action.isSendable
-        }
-      }
     case ActionTypes.SOCKET_MESSAGE:
       if (
         action.payload['@id'] === Message.PLAYER_MESSAGE &&
@@ -64,13 +50,11 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         action.payload.chatIsMine
       ) {
         const kind: InputChannel = Channels[action.payload.intensionalDisclosureRange]
-        const isSendable = action.payload.chatCounter < action.payload.chatLimit
 
         return {
           ... state,
           [kind]: {
             ... state[kind],
-            isSendable,
             postCount: action.payload.chatCounter,
             postCountLimit: action.payload.chatLimit
           }
