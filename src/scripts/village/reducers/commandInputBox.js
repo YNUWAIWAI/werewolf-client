@@ -2,9 +2,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
-import type {SetIsSendable, SocketMessage} from '../actions'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import {Channels} from '../constants/Channels'
+import type {SocketMessage} from '../actions'
 import {trimBaseUri} from '../module/util'
 
 export type State = {
@@ -26,7 +26,6 @@ export type State = {
   },
 }
 export type Action =
- | SetIsSendable
  | SocketMessage
 
 export const initialState = {

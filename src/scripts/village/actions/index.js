@@ -35,12 +35,6 @@ export const postChat = ({kind, text}: {kind: InputChannel, text: string}) => ({
   type: types.POST_CHAT
 })
 
-export const setIsSendable = ({isSendable, kind}: {isSendable: boolean, kind: InputChannel}) => ({
-  isSendable,
-  kind,
-  type: types.SET_IS_SENDABLE,
-})
-
 export const handleBoardClick = (nextState: BoardState, playerId: number, roleId: RoleId) => ({
   nextState,
   playerId,
@@ -74,7 +68,6 @@ export type SocketOpen = $ReadOnly<$Call<typeof socket.open, *>>
 export type SocketSend = $ReadOnly<$Call<typeof socket.send, *>>
 export type ToggleObfucator = $ReadOnly<$Call<typeof toggleObfucator, *>>
 export type PostChat = $ReadOnly<$Call<typeof postChat, *>>
-export type SetIsSendable = $ReadOnly<$Call<typeof setIsSendable, *>>
 export type ChangePredictionBoard = $ReadOnly<$Call<typeof handleBoardClick, *, *, *>>
 export type SelectOption = $ReadOnly<$Call<typeof selectOption, *>>
 export type SelectNo = $ReadOnly<$Call<typeof selectNo, *>>
