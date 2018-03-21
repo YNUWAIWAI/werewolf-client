@@ -5,7 +5,17 @@ import * as Message from '../constants/Message'
 import type {SocketMessage} from '../actions'
 
 export type State = {
-  +items: Chat[]
+  +items: Array<{
+    id?: number,
+    image: string,
+    intensionalDisclosureRange: Channel,
+    isMine: boolean,
+    name: { [Language]: string },
+    phaseStartTime: string,
+    phaseTimeLimit: number,
+    serverTimestamp: string,
+    text: string
+  }>
 }
 type Action =
   | SocketMessage
@@ -23,7 +33,17 @@ const chat = (state: State = initialState, action: Action): State => {
         return {
           items: [
             ... state.items,
-            action.payload
+            {
+              id: action.payload.chatId,
+              image: action.payload.chatAgent.chatAgentImage,
+              intensionalDisclosureRange: action.payload.intensionalDisclosureRange,
+              isMine: action.payload.chatIsMine,
+              name: action.payload.chatAgent.chatAgentName,
+              phaseStartTime: action.payload.phaseStartTime,
+              phaseTimeLimit: action.payload.phaseTimeLimit,
+              serverTimestamp: action.payload.serverTimestamp,
+              text: action.payload.chatText
+            }
           ]
         }
       }
