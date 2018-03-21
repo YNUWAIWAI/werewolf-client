@@ -183,7 +183,7 @@ module.exports = {
       maximum: 4
     }],
     "react/jsx-max-depth": 0,
-    "react/jsx-no-bind": [2, {"allowArrowFunctions": true}]
+    "react/jsx-no-bind": [2, {"allowArrowFunctions": true}],
     "react/jsx-no-literals": 2,
     "react/jsx-wrap-multilines": 0,
     "react/no-set-state": 0,
