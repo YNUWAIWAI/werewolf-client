@@ -18,14 +18,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
         text
       })
     )
-  },
-  setIsSendable: kind => isSendable => {
-    dispatch(
-      setIsSendable({
-        isSendable,
-        kind
-      })
-    )
   }
 })
 const CommandInputBoxContainer = connect(
