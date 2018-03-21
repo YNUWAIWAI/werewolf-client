@@ -3,7 +3,7 @@ import ChatItem, {type Props as ChatItemProps} from './ChatItem'
 import React from 'react'
 
 export type StateProps = {
-  items: Array<ChatItemProps>
+  +items: Array<ChatItemProps>
 }
 export type OwnProps = {}
 export type Props =
