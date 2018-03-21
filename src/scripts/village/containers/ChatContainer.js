@@ -1,18 +1,20 @@
-import Chat from '../components/Chat'
+// @flow
+import Chat, {type StateProps} from '../components/Chat'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: ReducerState): StateProps => {
   const items = state.chat.items
     .map(item => ({
-      id: item.chatId,
-      image: item.chatAgent.chatAgentImage,
+      id: item.id,
+      image: item.image,
       intensionalDisclosureRange: item.intensionalDisclosureRange,
-      isMine: item.chatIsMine,
-      name: item.chatAgent.chatAgentName.ja,
+      isMine: item.isMine,
+      name: item.name.ja,
       phaseStartTime: item.phaseStartTime,
       phaseTimeLimit: item.phaseTimeLimit,
       serverTimestamp: item.serverTimestamp,
-      text: item.chatText
+      text: item.text
     }))
 
   return {
