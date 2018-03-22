@@ -4,13 +4,6 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {firstDayConversation} from './fakeServer'
 import reducer from './prediction'
 
-test('initial state', () => {
-  expect(reducer(undefined, {})).toEqual({
-    playerStatus: [],
-    roleStatus: [],
-    table: {}
-  })
-})
 test('SOCKET_MESSAGE initPredictionTable', () => {
   expect(reducer({
     playerStatus: [],
