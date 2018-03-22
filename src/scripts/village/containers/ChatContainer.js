@@ -3,7 +3,7 @@ import Chat, {type StateProps} from '../components/Chat'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-const mapStateToProps = (state: ReducerState): StateProps => {
+const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
   const items = state.chat.items
     .map(item => ({
       id: item.id,
