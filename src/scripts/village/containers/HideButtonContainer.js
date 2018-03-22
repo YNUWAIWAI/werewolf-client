@@ -1,10 +1,18 @@
-import HideButton from '../components/HideButton'
+// @flow
+import {type ClickHideButton, handleClickHideButton} from '../actions'
+import HideButton, {type DispatchProps, type StateProps} from '../components/HideButton'
+import type {Dispatch} from 'redux'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {handleClickHideButton} from '../actions'
 
-const mapStateToProps = state => state.hideButton
-const mapDispatchToProps = dispatch => ({
-  handleClick: hide => dispatch(handleClickHideButton(hide))
+type Action =
+  | ClickHideButton
+
+const mapStateToProps = (state: ReducerState): StateProps => state.hideButton
+const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleClick: hide => () => {
+    dispatch(handleClickHideButton(hide))
+  }
 })
 const HideButtonContainer = connect(
   mapStateToProps,
