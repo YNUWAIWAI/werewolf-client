@@ -2,10 +2,14 @@
 import React from 'react'
 import Timer from '../containers/TimerContainer'
 
-type Props = {
+export type StateProps = {
   date: number,
   phase: string
 }
+export type OwnProps = {}
+export type Props =
+  & StateProps
+  & OwnProps
 
 export default function Day(props: Props) {
   return (
