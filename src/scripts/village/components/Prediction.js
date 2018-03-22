@@ -1,4 +1,5 @@
 // @flow
+/* eslint react/no-unused-prop-types: 0 */
 import PredictionItem from './PredictionItem'
 import PredictionPlayer from './PredictionPlayer'
 import PredictionRole from './PredictionRole'
@@ -18,8 +19,8 @@ export type StateProps = {
     +tooltip: string
   }>,
   +table: {
-    +[agentId: number]: {
-      +[roleId: RoleId]: {
+    [agentId: number]: {
+      [roleId: RoleId]: {
         +date: number,
         +state: BoardState
       }
@@ -46,16 +47,24 @@ export default function Prediction(props: Props) {
         tooltip={role.tooltip}
       />
     ),
-    ... props.playerStatus.map(player => [
-      <PredictionPlayer key={player.id} {... player} />,
-      ... props.roleStatus.map(role =>
-        <PredictionItem
-          key={player.id + role.id}
-          {... props.table[player.id][role.id]}
-          handleBoardClick={props.handleBoardClick(player.id, role.id)}
-        />
-      )
-    ])
+    ... props.playerStatus.map(player =>
+      [
+        <PredictionPlayer
+          image={player.image}
+          key={player.id}
+          name={player.name}
+          status={player.status}
+        />,
+        ... props.roleStatus.map(role =>
+          <PredictionItem
+            date={props.table[player.id][role.id].date}
+            handleBoardClick={props.handleBoardClick(player.id, role.id)}
+            key={player.id + role.id}
+            state={props.table[player.id][role.id].state}
+          />
+        )
+      ]
+    )
   ]
   const style = {
     grid: `repeat(${1 + props.playerStatus.length}, 1fr) / repeat(${1 + props.roleStatus.length}, 1fr)`
