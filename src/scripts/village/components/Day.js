@@ -3,8 +3,8 @@ import React from 'react'
 import Timer from '../containers/TimerContainer'
 
 export type StateProps = {
-  date: number,
-  phase: string
+  +date: number,
+  +phase: string
 }
 export type OwnProps = {}
 export type Props =

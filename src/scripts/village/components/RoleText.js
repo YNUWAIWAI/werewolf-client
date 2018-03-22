@@ -2,7 +2,7 @@
 import React from 'react'
 
 type Props = {
-  role: string
+  +role: string
 }
 
 export default function RoleText(props: Props) {

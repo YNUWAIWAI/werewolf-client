@@ -17,9 +17,9 @@ const parseTime = (from, to, limit) => {
 }
 
 type Props = {
-  from: string,
-  limit: number,
-  to: string
+  +from: string,
+  +limit: number,
+  +to: string
 }
 
 export default function ChatDate(props: Props) {

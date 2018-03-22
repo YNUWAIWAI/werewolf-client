@@ -7,15 +7,15 @@ import ChatText from './ChatText'
 import React from 'react'
 
 export type Props = {
-  id?: number,
-  image: string,
-  intensionalDisclosureRange: Channel,
-  isMine: boolean,
-  name: string,
-  phaseStartTime: string,
-  phaseTimeLimit: number,
-  serverTimestamp: string,
-  text: string
+  +id?: number,
+  +image: string,
+  +intensionalDisclosureRange: Channel,
+  +isMine: boolean,
+  +name: string,
+  +phaseStartTime: string,
+  +phaseTimeLimit: number,
+  +serverTimestamp: string,
+  +text: string
 }
 
 export default function ChatItem(props: Props) {

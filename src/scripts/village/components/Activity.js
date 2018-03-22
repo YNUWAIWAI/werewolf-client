@@ -4,12 +4,12 @@ import Prediction from '../containers/PredictionContainer'
 import React from 'react'
 
 export type StateProps = {
-  expand: boolean
+  +expand: boolean
 }
-export type ownProps = {}
+export type OwnProps = {}
 export type Props =
   & StateProps
-  & ownProps
+  & OwnProps
 
 export default function Activity(props: Props) {
   return (

@@ -3,12 +3,12 @@ import FormatedTime from './FormattedTime'
 import React from 'react'
 
 type Props = {
-  limit: number
+  +limit: number
 }
 
 type State = {
-  intervalID?: IntervalID,
-  time: number
+  +intervalID?: IntervalID,
+  +time: number
 }
 
 export default class Timer extends React.Component<Props, State> {

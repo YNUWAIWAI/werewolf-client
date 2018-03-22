@@ -9,7 +9,7 @@ const formatTime = time => {
 }
 
 type Props = {
-  time: number
+  +time: number
 }
 
 export default function FormattedTime(props: Props) {

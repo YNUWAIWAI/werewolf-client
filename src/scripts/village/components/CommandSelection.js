@@ -10,11 +10,11 @@ export type StateProps = {
 export type DispatchProps = {
   +handleSelectOption: number => void => void
 }
-export type ownProps = {}
+export type OwnProps = {}
 export type Props =
   & StateProps
   & DispatchProps
-  & ownProps
+  & OwnProps
 
 export default function CommandSelection(props: Props) {
   return (

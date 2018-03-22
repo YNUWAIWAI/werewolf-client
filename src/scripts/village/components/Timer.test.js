@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import Timer from './Timer'
 import {shallow} from 'enzyme'

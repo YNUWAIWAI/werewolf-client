@@ -8,9 +8,11 @@ export type StateProps = {
   +role: string,
   +name: string
 }
+type OwnProps = {}
 
 type Props =
  & StateProps
+ & OwnProps
 
 export default function Role(props: Props) {
   return (

@@ -3,27 +3,27 @@ import React from 'react'
 
 type Props =
   | {
-    image: string,
-    result: Result,
-    status: AgentStatus,
-    type: 'image' | 'userAvatar'
+    +image: string,
+    +result: Result,
+    +status: AgentStatus,
+    +type: 'image' | 'userAvatar'
   }
   | {
-    image: string,
-    result: Result,
-    status: AgentStatus,
-    tooltip: string,
-    type: 'roleImage'
+    +image: string,
+    +result: Result,
+    +status: AgentStatus,
+    +tooltip: string,
+    +type: 'roleImage'
   }
   | {
-    text: string,
-    type: 'summary'
+    +text: string,
+    +type: 'summary'
   }
   | {
-    result: Result,
-    status: AgentStatus,
-    text: string,
-    type: 'name' | 'result' | 'status' | 'userName'
+    +result: Result,
+    +status: AgentStatus,
+    +text: string,
+    +type: 'name' | 'result' | 'status' | 'userName'
   }
 
 export default function ResultCell(props: Props) {

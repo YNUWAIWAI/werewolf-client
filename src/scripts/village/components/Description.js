@@ -3,8 +3,8 @@ import React from 'react'
 import Timer from '../containers/TimerContainer'
 
 type Props = {
-  class: string,
-  text: string
+  +class: string,
+  +text: string
 }
 
 export default function Description(props: Props) {

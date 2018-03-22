@@ -20,11 +20,11 @@ export type StateProps = {
 export type DispatchProps = {
   +handlePostChat: InputChannel => string => void
 }
-export type ownProps = {}
+export type OwnProps = {}
 export type Props =
   & StateProps
   & DispatchProps
-  & ownProps
+  & OwnProps
 
 export default function CommandInputBox(props: Props) {
   return (

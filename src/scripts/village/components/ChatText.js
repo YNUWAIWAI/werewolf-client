@@ -19,7 +19,7 @@ const parseChat = text =>
     })
 
 type Props = {
-  text: string
+  +text: string
 }
 
 export default function ChatItem(props: Props) {

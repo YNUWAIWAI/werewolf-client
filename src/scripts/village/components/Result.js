@@ -11,8 +11,10 @@ type StateProps = {
   },
   +visible: boolean
 }
+type OwnProps = {}
 type Props =
   & StateProps
+  & OwnProps
 
 export default function Result(props: Props) {
   if (!props.visible) {

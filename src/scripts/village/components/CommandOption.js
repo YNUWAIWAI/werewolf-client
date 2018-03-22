@@ -2,9 +2,9 @@
 import React from 'react'
 
 type Props = {
-  handleSelectOption: void => void,
-  image: string,
-  name: string
+  +handleSelectOption: void => void,
+  +image: string,
+  +name: string
 }
 
 export default function CommandOption(props: Props) {

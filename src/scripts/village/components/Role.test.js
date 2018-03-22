@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import Role from './Role'
 import {shallow} from 'enzyme'
