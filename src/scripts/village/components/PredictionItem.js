@@ -2,9 +2,9 @@
 import React from 'react'
 
 type Props = {
-  date: number,
-  handleBoardClick: BoardState => void,
-  state: BoardState
+  +date: number,
+  +handleBoardClick: BoardState => void,
+  +state: BoardState
 }
 
 export default function PredictionItem(props: Props) {
