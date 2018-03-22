@@ -38,7 +38,14 @@ export type Props =
 export default function Prediction(props: Props) {
   const predictionTable = [
     <div key="null" />,
-    ... props.roleStatus.map(role => <PredictionRole key={role.id} {... role} />),
+    ... props.roleStatus.map(role =>
+      <PredictionRole
+        image={role.image}
+        key={role.id}
+        numberOfAgents={role.numberOfAgents}
+        tooltip={role.tooltip}
+      />
+    ),
     ... props.playerStatus.map(player => [
       <PredictionPlayer key={player.id} {... player} />,
       ... props.roleStatus.map(role =>
