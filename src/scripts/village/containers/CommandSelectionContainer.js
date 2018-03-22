@@ -30,18 +30,14 @@ const getText = (phase, role, fixed) => {
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.roles.mine) {
     return {
-      ... state.command,
       agents: state.agents.all,
-      fixed: false,
       text: ''
     }
   }
 
   return {
-    ... state.command,
     agents: state.agents.all,
-    fixed: false,
-    text: getText(state.base.phase, trimBaseUri(state.roles.mine['@id']), state.command.fixed)
+    text: getText(state.base.phase, trimBaseUri(state.roles.mine['@id']), state.commandSelection.fixed)
   }
 }
 
