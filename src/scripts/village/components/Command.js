@@ -5,10 +5,10 @@ export type StateProps = {
   +content: React$Element<*>,
   +hide: boolean
 }
-export type ownProps = {}
+export type OwnProps = {}
 export type Props =
   & StateProps
-  & ownProps
+  & OwnProps
 
 export default function Command(props: Props) {
   return (
