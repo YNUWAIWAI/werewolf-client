@@ -354,7 +354,7 @@ body {
     border: solid 3px red;
   }
 
-  & > div[ data-role ][ data-tooltip ] {
+  & > div[ data-tooltip ] {
     position: relative;
 
     &:hover::after {
