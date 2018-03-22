@@ -10,7 +10,11 @@ type Props = {
 export default function ChatNum(props: Props) {
   return (
     <div className="chat--num">
-      {Channels[props.intensionalDisclosureRange] === 'public' && props.id}
+      {
+        Channels[props.intensionalDisclosureRange] === 'public' ?
+          props.id :
+          ''
+      }
     </div>
   )
 }

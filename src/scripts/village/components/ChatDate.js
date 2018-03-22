@@ -7,6 +7,7 @@ const parseTime = (from, to, limit) => {
   const zeropad = num => String(num).padStart(2, '0')
   const postTime = `${t.getFullYear()}/${zeropad(t.getMonth() + 1)}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
   const distance = f.getTime() + limit * 1000 - t.getTime()
+
   if (distance < 0) {
     return `${postTime}（残り00'00）`
   }
