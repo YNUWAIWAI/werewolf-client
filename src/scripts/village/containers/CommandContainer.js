@@ -1,5 +1,5 @@
 // @flow
-import Command from '../components/Command'
+import Command, {type StateProps} from '../components/Command'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandSelection from './CommandselectionContainer'
 import React from 'react'
@@ -7,7 +7,7 @@ import type {ReducerState} from '../reducers'
 import {SELECTION_PHASE} from '../constants/Phase'
 import {connect} from 'react-redux'
 
-const mapStateToProps = (state: ReducerState) => ({
+const mapStateToProps = (state: ReducerState): StateProps => ({
   content: SELECTION_PHASE.includes(state.base.phase) ? <CommandSelection /> : <CommandInputBox />,
   hide: state.hideButton.hide
 })
