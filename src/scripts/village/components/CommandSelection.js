@@ -4,11 +4,11 @@ import React from 'react'
 import Timer from '../containers/TimerContainer'
 
 export type StateProps = {
-  agents: Agent[],
-  text: string
+  +agents: Agent[],
+  +text: string
 }
 export type DispatchProps = {
-  handleSelectOption: number => void => void
+  +handleSelectOption: number => void => void
 }
 export type ownProps = {}
 export type Props =
