@@ -1,31 +1,61 @@
+// @flow
 import PredictionItem from './PredictionItem'
 import PredictionPlayer from './PredictionPlayer'
 import PredictionRole from './PredictionRole'
 import React from 'react'
 
-export default function Prediction({handleBoardClick, roleStatus, playerStatus, table}) {
+export type StateProps = {
+  +playerStatus: Array<{
+    +id: number,
+    +image: string,
+    +name: string,
+    +status: AgentStatus
+  }>,
+  +roleStatus: Array<{
+    +id: RoleId,
+    +image: string,
+    +numberOfAgents: number,
+    +tooltip: string
+  }>,
+  +table: {
+    +[agentId: number]: {
+      +[roleId: RoleId]: {
+        +date: number,
+        +state: BoardState
+      }
+    }
+  }
+}
+export type DispatchProps = {
+  handleBoardClick: (number, RoleId) => BoardState => void
+}
+export type OwnProps = {}
+export type Props =
+  & StateProps
+  & DispatchProps
+  & OwnProps
+
+export default function Prediction(props: Props) {
   const predictionTable = [
     <div key="null" />,
-    ... roleStatus.map(role => <PredictionRole key={role.id} {... role} />),
-    ... playerStatus.map(player => [
+    ... props.roleStatus.map(role => <PredictionRole key={role.id} {... role} />),
+    ... props.playerStatus.map(player => [
       <PredictionPlayer key={player.id} {... player} />,
-      ... roleStatus.map(role =>
+      ... props.roleStatus.map(role =>
         <PredictionItem
           key={player.id + role.id}
-          {... table[player.id][role.id]}
-          handleBoardClick={handleBoardClick}
-          playerId={player.id}
-          roleId={role.id}
+          {... props.table[player.id][role.id]}
+          handleBoardClick={props.handleBoardClick(player.id, role.id)}
         />
       )
     ])
   ]
   const style = {
-    grid: `repeat(${1 + playerStatus.length}, 1fr) / repeat(${1 + roleStatus.length}, 1fr)`
+    grid: `repeat(${1 + props.playerStatus.length}, 1fr) / repeat(${1 + props.roleStatus.length}, 1fr)`
   }
 
   return (
-    <div className="prediction" id="prediction" style={style}>
+    <div className="prediction" style={style}>
       {predictionTable}
     </div>
   )
