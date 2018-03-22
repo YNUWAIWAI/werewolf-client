@@ -1,9 +1,11 @@
+// @flow
 import PredictionItem from './PredictionItem'
 import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<PredictionItem date={1} state="?" />', () => {
-  const wrapper = shallow(<PredictionItem date={1} state="?" />)
+  const handleBoardClick = jest.fn()
+  const wrapper = shallow(<PredictionItem date={1} handleBoardClick={handleBoardClick} state="?" />)
 
   expect(wrapper.is('[data-date=1]')).toBe(true)
   expect(wrapper.is('[data-state="?"]')).toBe(true)
