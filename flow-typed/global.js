@@ -19,6 +19,7 @@ declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill' | 'fix'
 declare type BoardPolarity = 'positive' | 'negative'
 declare type Language = 'ja' | 'en'
 declare type Result = 'win' | 'lose'
+declare type TResult = Result
 declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by werewolf attack' | 'death by fear' | 'unnatural death'
 declare type Agent = {
   '@id': string,
@@ -26,7 +27,7 @@ declare type Agent = {
   'name': { [Language]: string },
   'image': string,
   'id': number,
-  'role': {
+  'role'?: {
     '@id': string,
     'roleName': { [Language]: string },
     'roleImage': string
@@ -35,16 +36,15 @@ declare type Agent = {
   'statusUpdatePhase': Phase,
   'statusUpdateDate': number,
   'isAChoice': boolean,
-  'result': Result,
-  'userName': string,
-  'userAvatar': string
+  'result'?: Result,
+  'userName'?: string,
+  'userAvatar'?: string
 }
 declare type Role = {
   '@id': string,
   'name': { [Language]: string },
   'image': string,
   'roleIsMine': boolean,
-  'id': number,
   'numberOfAgents': number,
   'board': Array<{
     'boardPolarity': BoardPolarity,
