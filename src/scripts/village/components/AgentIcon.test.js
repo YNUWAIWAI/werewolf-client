@@ -1,3 +1,4 @@
+// @flow
 import AgentIcon from './AgentIcon'
 import React from 'react'
 import {shallow} from 'enzyme'
