@@ -57,7 +57,7 @@ export const selectYes = (agentId: number) => ({
 })
 
 export const handleClickHideButton = (hide: boolean) => ({
-  hide: !hide,
+  hide,
   type: types.CLICK_HIDE_BUTTON
 })
 
