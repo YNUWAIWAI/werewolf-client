@@ -1,7 +1,9 @@
-import Obfucator from '../components/Obfucator'
+// @flow
+import Obfucator, {type StateProps} from '../components/Obfucator'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: ReducerState): StateProps => ({
   visible: state.obfucator.visible
 })
 
