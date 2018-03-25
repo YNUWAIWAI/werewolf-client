@@ -19,7 +19,7 @@ export type State = {
 type Action =
   | SocketMessage
 
-const initialState = {
+export const initialState = {
   clientTimestamp: '',
   date: 0,
   intensionalDisclosureRange: 'public',
