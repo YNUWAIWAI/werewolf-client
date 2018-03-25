@@ -189,6 +189,15 @@ module.exports = {
     "react/no-set-state": 0,
     "react/no-unescaped-entities": 0,
     "react/prop-types": 0,
+    "react/sort-comp": [1, {
+      order: [
+        'type-annotations',
+        'static-methods',
+        'lifecycle',
+        'everything-else',
+        'render',
+      ],
+    }],
     "require-yield": "error",
     "rest-spread-spacing": ["error", "always"],
     "semi-spacing": ["error", {"before": false, "after": true}],
