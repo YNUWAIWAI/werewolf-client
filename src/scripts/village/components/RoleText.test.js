@@ -13,8 +13,3 @@ test('<RoleText role="" />', () => {
 
   expect(wrapper.text()).toBe('あなたはです')
 })
-test('<RoleText role={undefined} />', () => {
-  const wrapper = shallow(<RoleText />)
-
-  expect(wrapper.text()).toBe('あなたはです')
-})
