@@ -8,7 +8,7 @@ export type State = {
 type Action =
   | ToggleObfucator
 
-const initialState = {
+export const initialState = {
   visible: true
 }
 
