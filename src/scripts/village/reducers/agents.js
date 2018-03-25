@@ -11,7 +11,7 @@ export type State = {
 type Action =
   | SocketMessage
 
-const initialState = {
+export const initialState = {
   all: []
 }
 const agents = (state: State = initialState, action: Action): State => {

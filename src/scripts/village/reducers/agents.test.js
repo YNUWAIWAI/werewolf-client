@@ -1,20 +1,13 @@
 // @flow
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
+import reducer, {initialState} from './agents'
 import {firstDayConversation} from './fakeServer'
-import reducer from './agents'
 
-test('initial state', () => {
-  expect(reducer(undefined, {})).toEqual({
-    all: []
-  })
-})
 test('SOCKET_MESSAGE', () => {
   expect(
     reducer(
-      {
-        all: []
-      },
+      initialState,
       {
         payload: firstDayConversation,
         type: ActionTypes.SOCKET_MESSAGE
