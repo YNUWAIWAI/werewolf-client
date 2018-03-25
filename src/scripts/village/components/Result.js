@@ -1,8 +1,6 @@
 // @flow
 import React from 'react'
 import ResultCell from './ResultCell'
-import {WEREWOLF_SIDE} from '../constants/Role'
-import {xor} from '../module/util'
 
 export type StateProps = {
   +rows: Array<{
@@ -16,11 +14,7 @@ export type StateProps = {
     +userAvatar: string,
     +userName: string
   }>,
-  +summary: {
-    +isPlayer: boolean,
-    +result: TResult,
-    +role: string
-  },
+  +summary: string,
   +visible: boolean
 }
 export type OwnProps = {}
@@ -84,25 +78,12 @@ export default function Result(props: Props) {
       type="userName"
     />
   ])
-  const summary = (() => {
-    const isWerewolfSide = WEREWOLF_SIDE.includes(props.summary.role)
-    const isWin = props.summary.result === 'win'
-
-    if (props.summary.isPlayer) {
-      const text = `人間側の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
-
-      return <ResultCell key="summary" text={text} type="summary" />
-    }
-    const text = `人間側が${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}しました`
-
-    return <ResultCell key="summary" text={text} type="summary" />
-  })()
 
   return (
     <div className="result">
       {
         [
-          summary,
+          <ResultCell key="summary" text={props.summary} type="summary" />,
           ... cells
         ]
       }
