@@ -19,7 +19,7 @@ export type State = {
   }>,
   +summary: {
     +isPlayer: boolean,
-    +result: TResult,
+    +result: TResult | '',
     +role: string
   },
   +visible: boolean
@@ -29,7 +29,11 @@ type Action =
 
 export const initialState = {
   agents: [],
-  summary: {},
+  summary: {
+    isPlayer: true,
+    result: '',
+    role: ''
+  },
   visible: false
 }
 const result = (state: State = initialState, action: Action): State => {
@@ -41,7 +45,8 @@ const result = (state: State = initialState, action: Action): State => {
         action.payload['@context'].includes(Contexts.ROLE) &&
         action.payload.phase === RESULTS
       ) {
-        const agents = getPlayableAgents(action.payload.agent)
+        const payload: Payload<ReusltAgent, *> = action.payload
+        const agents = getPlayableAgents(payload.agent)
           .map(a => ({
             agentId: a.id,
             agentImage: a.image,
@@ -54,7 +59,7 @@ const result = (state: State = initialState, action: Action): State => {
             userName: a.userName
           }))
         const summary = (() => {
-          const mine = getMyAgent(action.payload.agent)
+          const mine = getMyAgent(payload.agent)
 
           if (mine) {
             return {
@@ -63,7 +68,7 @@ const result = (state: State = initialState, action: Action): State => {
               role: mine.role['@id']
             }
           }
-          const agent = getPlayableAgents(action.payload.agent)[0]
+          const agent = getPlayableAgents(payload.agent)[0]
 
           return {
             isPlayer: false,

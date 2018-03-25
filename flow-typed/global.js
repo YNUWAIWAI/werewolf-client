@@ -27,7 +27,18 @@ declare type Agent = {
   'name': { [Language]: string },
   'image': string,
   'id': number,
-  'role'?: {
+  'status': AgentStatus,
+  'statusUpdatePhase': Phase,
+  'statusUpdateDate': number,
+  'isAChoice': boolean,
+}
+declare type ReusltAgent = {
+  '@id': string,
+  'agentIsMine': boolean,
+  'name': { [Language]: string },
+  'image': string,
+  'id': number,
+  'role': {
     '@id': string,
     'roleName': { [Language]: string },
     'roleImage': string
@@ -36,9 +47,9 @@ declare type Agent = {
   'statusUpdatePhase': Phase,
   'statusUpdateDate': number,
   'isAChoice': boolean,
-  'result'?: Result,
-  'userName'?: string,
-  'userAvatar'?: string
+  'result': Result,
+  'userName': string,
+  'userAvatar': string
 }
 declare type Role = {
   '@id': string,
@@ -58,3 +69,26 @@ declare type Role = {
     'boardDate': number
   }>
 }
+type Base = {
+  '@id': string,
+  '@context': string[],
+  'villageId': number,
+  'villageName': string,
+  'totalNumberOfAgents': number,
+  'token': string,
+  'phase': Phase,
+  'date': number,
+  'phaseTimeLimit': number,
+  'phaseStartTime': string,
+  'serverTimeStamp': string,
+  'clientTimestamp': string,
+  'directionality': Directionality,
+  'intensionalDisclosureRange': Channel,
+  'extensionalDisclosureRange': []
+}
+declare type Payload<A, R> =
+  Base &
+  {
+    agent: A[],
+    role: R[]
+  }
