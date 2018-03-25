@@ -149,19 +149,14 @@ const rows = [
     'userName': '井上'
   }
 ]
-const summary = {
-  isPlayer: true,
-  result: 'win',
-  role: 'https://werewolf.world/resource/0.1/seer'
-}
 
 test('<Result visible />', () => {
-  const wrapper = shallow(<Result rows={rows} summary={summary} visible />)
+  const wrapper = shallow(<Result rows={rows} summary="summary" visible />)
 
   expect(wrapper.find('.result').exists()).toBe(true)
 })
 test('<Result visible={false} />', () => {
-  const wrapper = shallow(<Result rows={rows} summary={summary} visible={false} />)
+  const wrapper = shallow(<Result rows={rows} summary="summary" visible={false} />)
 
   expect(wrapper.find('.result').exists()).toBe(false)
 })
