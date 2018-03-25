@@ -12,9 +12,10 @@ type Action =
 
 const initialState = {
   phase: '',
-  phaseTimeLimit: 0
+  phaseStartTime: '',
+  phaseTimeLimit: -1
 }
-const timer = (state: State = initialState, action: Action) => {
+const timer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (

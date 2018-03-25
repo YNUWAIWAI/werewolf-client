@@ -1,8 +1,11 @@
-import Timer from '../components/Timer'
+// @flow
+import Timer, {type StateProps} from '../components/Timer'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-const mapStateToProps = state => ({
-  limit: state.timer.phaseTimeLimit === -1 ? -1 : state.timer.phaseTimeLimit
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  limit: state.timer.phaseTimeLimit,
+  phase: state.timer.phase
 })
 const TimerContainer = connect(
   mapStateToProps,
