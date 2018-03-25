@@ -1,40 +1,13 @@
 // @flow
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
+import reducer, {initialState} from './base'
 import {firstDayConversation} from './fakeServer'
-import reducer from './base'
 
-test('initial state', () => {
-  expect(reducer(undefined, {})).toEqual({
-    clientTimestamp: '',
-    date: 0,
-    intensionalDisclosureRange: 'public',
-    phase: 'night',
-    phaseStartTime: '',
-    phaseTimeLimit: 0,
-    serverTimestamp: '',
-    token: '',
-    totalNumberOfAgents: 0,
-    villageId: 0,
-    villageName: ''
-  })
-})
 test('SOCKET_MESSAGE', () => {
   expect(
     reducer(
-      {
-        clientTimestamp: '',
-        date: 0,
-        intensionalDisclosureRange: 'public',
-        phase: 'night',
-        phaseStartTime: '',
-        phaseTimeLimit: 0,
-        serverTimestamp: '',
-        token: '',
-        totalNumberOfAgents: 0,
-        villageId: 0,
-        villageName: ''
-      },
+      initialState,
       {
         payload: firstDayConversation,
         type: ActionTypes.SOCKET_MESSAGE
