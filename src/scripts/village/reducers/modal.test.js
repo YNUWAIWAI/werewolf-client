@@ -2,11 +2,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer from './modal'
 
-test('initial state', () => {
-  expect(reducer(undefined, {})).toEqual({
-    visible: false
-  })
-})
 test('SELECT_OPTION', () => {
   const state = {
     visible: false
