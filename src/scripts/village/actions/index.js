@@ -11,7 +11,7 @@ export const socket = {
     type: types.SOCKET_ERROR
   }),
   message: (event: MessageEvent) => ({
-    payload: JSON.parse(event.data),
+    payload: (JSON.parse(event.data): Payload<*, *>),
     type: types.SOCKET_MESSAGE
   }),
   open: (event: Event) => ({
