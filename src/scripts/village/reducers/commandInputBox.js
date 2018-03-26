@@ -3,8 +3,8 @@ import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
-import {Channels} from '../constants/Channels'
 import type {SocketMessage} from '../actions'
+import {getInputChannel} from '../constants/Channels'
 import {getMyRole} from '../module/util'
 
 export type State = {
@@ -51,7 +51,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         const payload: Payload<*, *, Chat> = action.payload
 
         if (payload.chatIsMine) {
-          const kind: InputChannel = Channels[payload.intensionalDisclosureRange]
+          const kind: InputChannel = getInputChannel(payload.intensionalDisclosureRange)
 
           return {
             ... state,
