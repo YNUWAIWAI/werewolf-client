@@ -2,10 +2,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
-import {MEDIUM, ORDERED_ROLE_LIST, SEER, UNPLAYABLE_ROLE} from '../constants/Role'
+import {MEDIUM, ORDERED_ROLE_LIST, SEER} from '../constants/Role'
+import {getPlayableAgents, getPlayableRoles, trimBaseUri} from '../module/util'
 import {DAY_CONVERSATION} from '../constants/Phase'
-import {UNPLAYABLE_AGENT} from '../constants/Agent'
-import {trimBaseUri} from '../module/util'
 
 export type State = {
   +playerStatus: Array<{
@@ -105,12 +104,11 @@ const prediction = (state: State = initialState, action: Action): State => {
         action.payload['@context'].includes(Contexts.BASE) &&
         action.payload['@context'].includes(Contexts.ROLE)
       ) {
-        const agents = action.payload.agent
-          .filter(agent => !UNPLAYABLE_AGENT.includes(agent['@id']))
-        const roles = action.payload.role
-          .filter(role => !UNPLAYABLE_ROLE.includes(role['@id']))
-          .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(r1['@id']) > ORDERED_ROLE_LIST.indexOf(r2['@id']))
-        const table = action.payload.date === 1 && action.payload.phase === DAY_CONVERSATION ? initPredictionTable(agents, roles) : updatePredictionTable(roles, state.table)
+        const payload: Payload<Agent, Role, *> = action.payload
+        const agents = getPlayableAgents(payload.agent)
+        const roles = getPlayableRoles(payload.role)
+          .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(r1['@id']) - ORDERED_ROLE_LIST.indexOf(r2['@id']))
+        const table = payload.date === 1 && payload.phase === DAY_CONVERSATION ? initPredictionTable(agents, roles) : updatePredictionTable(roles, state.table)
         const roleStatus: RoleStatus = roles.map(role => ({
           id: trimBaseUri(role['@id']),
           image: role.image,
