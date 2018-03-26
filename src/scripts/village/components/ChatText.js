@@ -5,8 +5,10 @@ const parseChat = text =>
   text
     .split(/(>>\d+)/)
     .map(t => {
-      if ((/>>\d+/).test(t)) {
-        const id = (/>>(\d+)/).exec(t)[1]
+      const match = (/>>(\d+)/).exec(t)
+
+      if (match && match[1]) {
+        const id = match[1]
 
         return (
           <a href={`#message${id}`} key={`#message${id}`}>
