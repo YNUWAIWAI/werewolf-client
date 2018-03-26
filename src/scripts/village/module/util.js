@@ -16,7 +16,14 @@ export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): 
   getPlayableRoles(roles)
     .filter(r => r.roleIsMine)[0]
 
-export const trimBaseUri = <T: *>(id: string): T =>
-  (/\/(\w+)$/).exec(id)[1]
+export const trimBaseUri = (id: string): string => {
+  const match = (/\/(\w+)$/).exec(id)
+
+  if (match && match[1]) {
+    return match[1]
+  }
+
+  return ''
+}
 
 export const xor = (a: boolean, b: boolean): boolean => a !== b
