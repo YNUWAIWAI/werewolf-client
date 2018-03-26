@@ -5,21 +5,21 @@ import * as Message from '../constants/Message'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import {Channels} from '../constants/Channels'
 import type {SocketMessage} from '../actions'
-import {trimBaseUri} from '../module/util'
+import {getMyRole} from '../module/util'
 
 export type State = {
-  limited: {
-    available: boolean,
-    postCount: number,
-    postCountLimit: number
+  +limited: {
+    +available: boolean,
+    +postCount: number,
+    +postCountLimit: number
   },
-  private: {
-    postCount: number,
-    postCountLimit: number
+  +private: {
+    +postCount: number,
+    +postCountLimit: number
   },
-  public: {
-    postCount: number,
-    postCountLimit: number
+  +public: {
+    +postCount: number,
+    +postCountLimit: number
   },
 }
 export type Action =
@@ -46,17 +46,20 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
     case ActionTypes.SOCKET_MESSAGE:
       if (
         action.payload['@id'] === Message.PLAYER_MESSAGE &&
-        action.payload['@context'].includes(Contexts.CHAT) &&
-        action.payload.chatIsMine
+        action.payload['@context'].includes(Contexts.CHAT)
       ) {
-        const kind: InputChannel = Channels[action.payload.intensionalDisclosureRange]
+        const payload: Payload<*, *, Chat> = action.payload
 
-        return {
-          ... state,
-          [kind]: {
-            ... state[kind],
-            postCount: action.payload.chatCounter,
-            postCountLimit: action.payload.chatLimit
+        if (payload.chatIsMine) {
+          const kind: InputChannel = Channels[payload.intensionalDisclosureRange]
+
+          return {
+            ... state,
+            [kind]: {
+              ... state[kind],
+              postCount: payload.chatCounter,
+              postCountLimit: payload.chatLimit
+            }
           }
         }
       } else if (
@@ -64,11 +67,12 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         action.payload['@context'].includes(Contexts.ROLE) &&
         action.payload['@context'].includes(Contexts.AGENT)
       ) {
-        const role = action.payload.role.filter(r => r.roleIsMine)[0]
+        const payload: Payload<*, Role, *> = action.payload
+        const role = getMyRole(payload.role)
 
         if (
           role.numberOfAgents > 1 &&
-          AVAILABLE_FOR_LIMITED_CHAT.includes(trimBaseUri(role['@id']))
+          AVAILABLE_FOR_LIMITED_CHAT.includes(role['@id'])
         ) {
           return {
             ... state,

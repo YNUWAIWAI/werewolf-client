@@ -45,7 +45,7 @@ const result = (state: State = initialState, action: Action): State => {
         action.payload['@context'].includes(Contexts.ROLE) &&
         action.payload.phase === RESULTS
       ) {
-        const payload: Payload<ReusltAgent, *> = action.payload
+        const payload: Payload<ReusltAgent, *, *> = action.payload
         const agents = getPlayableAgents(payload.agent)
           .map(a => ({
             agentId: a.id,
