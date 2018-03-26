@@ -9,6 +9,23 @@ declare class JSON {
     space?: string | number
   ): string;
 }
+// ref: https://github.com/facebook/flow/blob/v0.67.0/lib/core.js#L345-L360
+declare class RegExp {
+  static (pattern: string | RegExp, flags?: RegExp$flags): RegExp;
+  compile(): RegExp;
+  constructor(pattern: string | RegExp, flags?: RegExp$flags): RegExp;
+  exec(string: string): (string[] & {index: number, input: string}) | null;
+  flags: string;
+  global: boolean;
+  ignoreCase: boolean;
+  lastIndex: number;
+  multiline: boolean;
+  source: string;
+  sticky: boolean;
+  unicode: boolean;
+  test(string: string): boolean;
+  toString(): string;
+}
 
 declare type Directionality = 'server to client' | 'client to server'
 declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
