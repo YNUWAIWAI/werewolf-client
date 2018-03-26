@@ -36,11 +36,11 @@ type Action =
   | ChangePredictionBoard
 
 const updatePredictionTable = (roles: Role[], table: Table): Table => {
-  if (roles.some(role =>
-    role.roleIsMine &&
-    [ SEER, MEDIUM ].includes(role['@id'])
-  )) {
-    roles.forEach(role => {
+  roles.forEach(role => {
+    if (
+      role.roleIsMine &&
+      [ SEER, MEDIUM ].includes(role['@id'])
+    ) {
       const roleId = trimBaseUri(role['@id'])
 
       role.board.forEach(b => {
@@ -49,8 +49,8 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
         table[agentId][roleId].state = b.boardPolarity === 'positive' ? 'fix' : 'fill'
         table[agentId][roleId].date = b.boardDate
       })
-    })
-  }
+    }
+  })
 
   return table
 }
@@ -90,7 +90,7 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
   return updatePredictionTable(roles, table)
 }
 
-const initialState = {
+export const initialState = {
   playerStatus: [],
   roleStatus: [],
   table: {}
