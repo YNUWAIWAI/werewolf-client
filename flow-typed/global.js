@@ -86,9 +86,29 @@ type Base = {
   'intensionalDisclosureRange': Channel,
   'extensionalDisclosureRange': []
 }
-declare type Payload<A, R> =
+declare type Chat = {
+  chatIsMine: boolean,
+  chatAgent: {
+    '@id': string,
+    chatAgentId: number,
+    chatAgentName: string,
+    chatAgentImage: string
+  },
+  chatId: number,
+  chatCounter: number,
+  chatLimit: number,
+  chatInterval: string,
+  chatText: string,
+  chatCharacterLimit: number,
+  chatLanguage: string,
+  chatIsOver: boolean,
+  chatUserName: string,
+  chatUserAvatar: string
+}
+declare type Payload<A, R, T> =
   Base &
   {
     agent: A[],
     role: R[]
-  }
+  } &
+  T
