@@ -5,7 +5,7 @@ import {DAY_VOTE} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {trimBaseUri} from '../module/util'
+import {getRoleId} from '../constants/Role'
 
 type Action =
   | SelectNo
@@ -45,7 +45,7 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     id: selectedAgent.id,
     image: selectedAgent.image,
     name: selectedAgent.name.ja,
-    text: getText(state.base.phase, trimBaseUri(state.roles.mine['@id'])),
+    text: getText(state.base.phase, getRoleId(state.roles.mine['@id'])),
     visible: state.modal.visible,
   }
 }

@@ -5,12 +5,12 @@ import {DAY_VOTE} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {trimBaseUri} from '../module/util'
+import {getRoleId} from '../constants/Role'
 
 type Action =
   | SelectOption
 
-const getText = (phase, role, fixed) => {
+const getText = (phase: Phase, role: RoleId, fixed: boolean) => {
   if (phase === DAY_VOTE) {
     return '投票先を選んでください'
   }
@@ -37,7 +37,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
   return {
     agents: state.agents.all,
-    text: getText(state.base.phase, trimBaseUri(state.roles.mine['@id']), state.commandSelection.fixed)
+    text: getText(state.base.phase, getRoleId(state.roles.mine['@id']), state.commandSelection.fixed)
   }
 }
 

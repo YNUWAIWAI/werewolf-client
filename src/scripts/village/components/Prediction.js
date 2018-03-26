@@ -21,8 +21,8 @@ export type StateProps = {
   +table: {
     [agentId: number]: {
       [roleId: RoleId]: {
-        +date: number,
-        +state: BoardState
+        date: number,
+        state: BoardState
       }
     }
   }
