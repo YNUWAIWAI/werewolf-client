@@ -18,7 +18,8 @@ const roles = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (action.payload['@context'].includes(Contexts.ROLE)) {
-        const all = action.payload.role.filter(r => !UNPLAYABLE_ROLE.includes(r['@id']))
+        const payload: Payload<*, Role, *> = action.payload
+        const all = payload.role.filter(r => !UNPLAYABLE_ROLE.includes(r['@id']))
         const mine = all.filter(r => r.roleIsMine)[0]
 
         return {
