@@ -6,7 +6,7 @@ import {shallow} from 'enzyme'
 test('<ChatNum id={1} intensionalDisclosureRange="anonymousAudience" />', () => {
   const wrapper = shallow(<ChatNum id={1} intensionalDisclosureRange="anonymousAudience" />)
 
-  expect(wrapper.text()).toBe('1')
+  expect(wrapper.text()).toBe('')
 })
 test('<ChatNum id={1} intensionalDisclosureRange="grave" />', () => {
   const wrapper = shallow(<ChatNum id={1} intensionalDisclosureRange="grave" />)
@@ -26,7 +26,7 @@ test('<ChatNum id={1} intensionalDisclosureRange="master" />', () => {
 test('<ChatNum id={1} intensionalDisclosureRange="onymousAudience" />', () => {
   const wrapper = shallow(<ChatNum id={1} intensionalDisclosureRange="onymousAudience" />)
 
-  expect(wrapper.text()).toBe('1')
+  expect(wrapper.text()).toBe('')
 })
 test('<ChatNum id={1} intensionalDisclosureRange="private" />', () => {
   const wrapper = shallow(<ChatNum id={1} intensionalDisclosureRange="private" />)
