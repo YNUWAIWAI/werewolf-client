@@ -1,3 +1,4 @@
+// @flow
 export const Channels = {
   anonymousAudience: 'public',
   grave: 'grave',
@@ -9,3 +10,15 @@ export const Channels = {
   seer: 'limited',
   werewolf: 'limited'
 }
+
+export const getInputChannel = (channel: Channel): InputChannel => {
+  const inputChannel: InputChannel[] = [ 'limited', 'private', 'public' ]
+  const maybe = inputChannel.find(v => v === channel)
+
+  if (!maybe) {
+    throw new Error('Unexpected channel.')
+  }
+
+  return maybe
+}
+
