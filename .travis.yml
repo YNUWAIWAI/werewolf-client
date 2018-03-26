@@ -5,3 +5,5 @@ cache: yarn
 script:
   - yarn test
   - yarn flow check
+after_success:
+  - yarn flow-coverage-report
