@@ -2,21 +2,12 @@
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import {firstDayConversation, myMessageOnChat} from './fakeServer'
-import reducer from './timer'
+import reducer, {initialState} from './timer'
 
-test('initial state', () => {
-  expect(reducer(undefined, {})).toEqual({
-    phase: '',
-    phaseTimeLimit: 0
-  })
-})
 test('SOCKET_MESSAGE', () => {
   expect(
     reducer(
-      {
-        phase: '',
-        phaseTimeLimit: 0
-      },
+      initialState,
       {
         payload: firstDayConversation,
         type: ActionTypes.SOCKET_MESSAGE

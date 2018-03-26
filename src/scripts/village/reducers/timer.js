@@ -10,9 +10,8 @@ export type State = {
 type Action =
   | SocketMessage
 
-const initialState = {
+export const initialState = {
   phase: '',
-  phaseStartTime: '',
   phaseTimeLimit: -1
 }
 const timer = (state: State = initialState, action: Action): State => {
