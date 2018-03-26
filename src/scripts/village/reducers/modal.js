@@ -4,17 +4,15 @@ import {type SelectNo, type SelectOption, type SelectYes} from '../actions'
 
 export type State = {
   +id: number,
-  +visible: true
-} |
-{
-  +visible: false
+  +visible: boolean
 }
 type Action =
   | SelectNo
   | SelectOption
   | SelectYes
 
-const initialState = {
+export const initialState = {
+  id: -1,
   visible: false
 }
 const modal = (state: State = initialState, action: Action): State => {
@@ -27,6 +25,7 @@ const modal = (state: State = initialState, action: Action): State => {
     case ActionTypes.SELECT_NO:
     case ActionTypes.SELECT_YES:
       return {
+        id: -1,
         visible: false
       }
     default:

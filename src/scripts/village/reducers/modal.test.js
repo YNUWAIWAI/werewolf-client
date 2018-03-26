@@ -1,44 +1,56 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import reducer from './modal'
+import reducer, {initialState} from './modal'
 
 test('SELECT_OPTION', () => {
-  const state = {
-    visible: false
-  }
-  const action = {
-    agentId: 1,
-    type: ActionTypes.SELECT_OPTION,
-  }
-
-  expect(reducer(state, action)).toEqual({
-    id: 1,
-    visible: true
-  })
+  expect(
+    reducer(
+      initialState,
+      {
+        agentId: 1,
+        type: ActionTypes.SELECT_OPTION,
+      }
+    )
+  ).toEqual(
+    {
+      id: 1,
+      visible: true
+    }
+  )
 })
 test('SELECT_NO', () => {
-  const state = {
-    id: 1,
-    visible: true
-  }
-  const action = {
-    type: ActionTypes.SELECT_NO,
-  }
-
-  expect(reducer(state, action)).toEqual({
-    visible: false
-  })
+  expect(
+    reducer(
+      {
+        id: 1,
+        visible: true
+      },
+      {
+        type: ActionTypes.SELECT_NO
+      }
+    )
+  ).toEqual(
+    {
+      id: -1,
+      visible: false
+    }
+  )
 })
 test('SELECT_YES', () => {
-  const state = {
-    id: 1,
-    visible: true
-  }
-  const action = {
-    type: ActionTypes.SELECT_YES,
-  }
-
-  expect(reducer(state, action)).toEqual({
-    visible: false
-  })
+  expect(
+    reducer(
+      {
+        id: 1,
+        visible: true
+      },
+      {
+        type: ActionTypes.SELECT_YES,
+      }
+    )
+  ).toEqual(
+    {
+      id: -1,
+      visible: false
+    }
+  )
 })
