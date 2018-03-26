@@ -12,6 +12,7 @@
     "includeGlob": [
       "src/scripts/**/*.js"
     ],
+    "threshold": 100,
     "type": [
       "text"
     ]
