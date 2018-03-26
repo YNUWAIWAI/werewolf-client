@@ -1,7 +1,7 @@
 // @flow
 import Command, {type StateProps} from '../components/Command'
 import CommandInputBox from './CommandInputBoxContainer'
-import CommandSelection from './CommandselectionContainer'
+import CommandSelection from './CommandSelectionContainer'
 import React from 'react'
 import type {ReducerState} from '../reducers'
 import {SELECTION_PHASE} from '../constants/Phase'
