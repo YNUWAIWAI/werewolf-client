@@ -2,8 +2,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
-import {MEDIUM, ORDERED_ROLE_LIST, SEER} from '../constants/Role'
-import {getPlayableAgents, getPlayableRoles, trimBaseUri} from '../module/util'
+import {MEDIUM, ORDERED_ROLE_LIST, SEER, getRoleId} from '../constants/Role'
+import {getPlayableAgents, getPlayableRoles} from '../module/util'
 import {DAY_CONVERSATION} from '../constants/Phase'
 
 export type State = {
@@ -22,8 +22,8 @@ export type State = {
   +table: {
     [agentId: number]: {
       [roleId: RoleId]: {
-        +date: number,
-        +state: BoardState
+        date: number,
+        state: BoardState
       }
     }
   }
@@ -41,7 +41,7 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
       role.roleIsMine &&
       [ SEER, MEDIUM ].includes(role['@id'])
     ) {
-      const roleId = trimBaseUri(role['@id'])
+      const roleId = getRoleId(role['@id'])
 
       role.board.forEach(b => {
         const agentId = b.boardAgent.boardAgentId
@@ -61,7 +61,7 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
   agents.forEach(agent => {
     table[agent.id] = {}
     roles.forEach(role => {
-      const roleId: RoleId = trimBaseUri(role['@id'])
+      const roleId: RoleId = getRoleId(role['@id'])
 
       if (agent.agentIsMine && role.roleIsMine) {
         table[agent.id][roleId] = {
@@ -110,7 +110,7 @@ const prediction = (state: State = initialState, action: Action): State => {
           .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(r1['@id']) - ORDERED_ROLE_LIST.indexOf(r2['@id']))
         const table = payload.date === 1 && payload.phase === DAY_CONVERSATION ? initPredictionTable(agents, roles) : updatePredictionTable(roles, state.table)
         const roleStatus: RoleStatus = roles.map(role => ({
-          id: trimBaseUri(role['@id']),
+          id: getRoleId(role['@id']),
           image: role.image,
           numberOfAgents: role.numberOfAgents,
           tooltip: role.name.ja
