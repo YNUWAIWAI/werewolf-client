@@ -1,9 +1,30 @@
+// @flow
+import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
 import logger from './logger'
 import socket from './socket'
 
-const url = document.getElementById('script').dataset.url
+export type Action =
+  | actions.ChangePredictionBoard
+  | actions.ClickHideButton
+  | actions.PostChat
+  | actions.SelectNo
+  | actions.SelectOption
+  | actions.SelectYes
+  | actions.SocketClose
+  | actions.SocketError
+  | actions.SocketMessage
+  | actions.SocketOpen
+  | actions.SocketSend
+  | actions.ToggleObfucator
+
+const elem = document.getElementById('script')
+
+if (!elem || !elem.dataset || !elem.dataset.url) {
+  throw Error('Not found data-url attribute.')
+}
+const url = elem.dataset.url
 const middleware = applyMiddleware(
   socket({
     url

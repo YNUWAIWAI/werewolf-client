@@ -1,18 +1,13 @@
 // @flow
 /* eslint sort-keys: 0 */
 import * as types from '../constants/ActionTypes'
-import {type ChangePredictionBoard, type PostChat, type SelectYes,type SocketSend, socket} from '../actions'
 import type {DispatchAPI, Middleware} from 'redux'
 import {getMyAgent, getMyRole, getVotedAgent} from '../module/util'
+import type {Action} from '.'
 import type {ReducerState} from '../reducers'
 import {getChannelFromInputChennel} from '../constants/Channels'
 import {getRoleId} from '../constants/Role'
-
-type Action =
-  | ChangePredictionBoard
-  | PostChat
-  | SelectYes
-  | SocketSend
+import {socket} from '../actions'
 
 const getTimestamp = () => new Date().toISOString()
 const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
