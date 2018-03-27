@@ -29,7 +29,8 @@ declare class RegExp {
 
 declare type Directionality = 'server to client' | 'client to server'
 declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
-declare type InputChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
+declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
+declare type InputChannel = 'limited' | 'private' | 'public'
 declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
 declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'
 declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill' | 'fix'
