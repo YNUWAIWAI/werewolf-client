@@ -8,13 +8,35 @@ export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] =>
 export const getPlayableRoles = <T: {'@id': string}>(roles: T[]): T[] =>
   roles.filter(a => !UNPLAYABLE_ROLE.includes(a['@id']))
 
-export const getMyAgent = <T: {'@id': string, agentIsMine: boolean}>(agents: T[]): T =>
-  getPlayableAgents(agents)
-    .filter(a => a.agentIsMine)[0]
+export const getMyAgent = <T: {'@id': string, agentIsMine: boolean}>(agents: T[]): T => {
+  const maybe = getPlayableAgents(agents).find(a => a.agentIsMine)
 
-export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): T =>
-  getPlayableRoles(roles)
-    .filter(r => r.roleIsMine)[0]
+  if (!maybe) {
+    throw Error('Not found my agent.')
+  }
+
+  return maybe
+}
+
+export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): T => {
+  const maybe = getPlayableRoles(roles).find(r => r.roleIsMine)
+
+  if (!maybe) {
+    throw Error('Not found my role.')
+  }
+
+  return maybe
+}
+
+export const getVotedAgent = <T: {'@id': string, id: number}>(agents: T[], agentId: number): T => {
+  const maybe = getPlayableAgents(agents).find(a => a.id === agentId)
+
+  if (!maybe) {
+    throw Error('Not found voted agent.')
+  }
+
+  return maybe
+}
 
 export const trimBaseUri = (id: string): string => {
   const match = (/\/(\w+)$/).exec(id)

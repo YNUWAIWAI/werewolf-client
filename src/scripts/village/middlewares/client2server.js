@@ -1,84 +1,71 @@
+// @flow
+/* eslint sort-keys: 0 */
 import * as types from '../constants/ActionTypes'
-import {socket} from '../actions'
-import {trimBaseUri} from '../module/util'
+import {type ChangePredictionBoard, type PostChat, type SelectYes,type SocketSend, socket} from '../actions'
+import type {DispatchAPI, Middleware} from 'redux'
+import {getMyAgent, getMyRole, getVotedAgent} from '../module/util'
+import type {ReducerState} from '../reducers'
+import {getChannelFromInputChennel} from '../constants/Channels'
+import {getRoleId} from '../constants/Role'
 
-const getTimestamp = () => {
-  const zeropad = num => String(num).padStart(2, '0')
-  const now = new Date()
-  const Y = now.getFullYear()
-  const M = zeropad(now.getMonth() + 1)
-  const D = zeropad(now.getDate())
-  const h = zeropad(now.getHours())
-  const m = zeropad(now.getMinutes())
-  const s = zeropad(now.getSeconds())
-  const ms = String(now.getMilliseconds()).padStart(3, '0')
-  const to = now.getTimezoneOffset()
-  const tz = `${to >= '0' ? '-' : '+'}${zeropad(Math.floor(Math.abs(to) / 60))}:${zeropad(to % 60)}`
+type Action =
+  | ChangePredictionBoard
+  | PostChat
+  | SelectYes
+  | SocketSend
 
-  return `${Y}-${M}-${D}T${h}:${m}:${s}.${ms}${tz}`
-}
-
-const client2server = store => next => action => {
+const getTimestamp = () => new Date().toISOString()
+const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
   switch (action.type) {
     case types.POST_CHAT: {
       const state = store.getState()
-      const channnel = (kind => {
-        switch (kind) {
-          case 'public':
-            return kind
-          case 'private':
-            return kind
-          case 'limited':
-            return trimBaseUri(state.roles.mine['@id'])
-          case 'grave':
-            return kind
-          case 'master':
-            return kind
-          default:
-            return 'public'
-        }
-      })(action.kind)
-      const payload = Object.assign(
-        {},
-        state.base,
-        {
-          '@context': [
-            'https://werewolf.world/context/0.1/base.jsonld',
-            'https://werewolf.world/context/0.1/chat.jsonld'
-          ],
-          '@id': 'https://werewolf.world/resource/0.1/playerMessage',
-          'clientTimestamp': getTimestamp(),
-          'directionality': 'client to server',
-          'extensionalDisclosureRange': [],
-          'intensionalDisclosureRange': channnel,
-        },
-        {
-          'chatAgent': {
-            '@id': state.agents.mine['@id'],
-            'chatAgentId': state.agents.mine.id,
-            'chatAgentImage': state.agents.mine.image,
-            'chatAgentName': state.agents.mine.name
-          },
-          'chatCharacterLimit': 140,
-          'chatIsMine': true,
-          'chatIsOver': false,
-          'chatLanguage': 'ja',
-          'chatText': action.text,
-          // 'chatUserName': '',
-          // 'chatUserAvatar': '',
-          'myAgent': {
-            '@id': state.agents.mine['@id'],
-            'myAgentId': state.agents.mine.id,
-            'myAgentImage': state.agents.mine.image,
-            'myAgentName': state.agents.mine.name,
-            'myRole': {
-              '@id': state.roles.mine['@id'],
-              'myRoleImage': state.roles.mine.image,
-              'myRoleName': state.roles.mine.name
-            }
+      const myRole = getMyRole(state.roles.all)
+      const myAgent = getMyAgent(state.agents.all)
+      const channel = getChannelFromInputChennel(action.kind, getRoleId(myRole['@id']))
+      const payload: C2SPayload<C2SChat> = {
+        '@context': [
+          'https://werewolf.world/context/0.1/base.jsonld',
+          'https://werewolf.world/context/0.1/chat.jsonld'
+        ],
+        '@id': 'https://werewolf.world/resource/0.1/playerMessage',
+        'villageId': state.base.villageId,
+        'villageName': state.base.villageName,
+        'totalNumberOfAgents': state.base.totalNumberOfAgents,
+        'token': state.base.token,
+        'phase': state.base.phase,
+        'date': state.base.date,
+        'phaseTimeLimit': state.base.phaseTimeLimit,
+        'phaseStartTime': state.base.phaseStartTime,
+        'serverTimestamp': state.base.serverTimestamp,
+        'clientTimestamp': getTimestamp(),
+        'directionality': 'client to server',
+        'intensionalDisclosureRange': channel,
+        'extensionalDisclosureRange': [],
+        'myAgent': {
+          '@id': myAgent['@id'],
+          'myAgentId': myAgent.id,
+          'myAgentImage': myAgent.image,
+          'myAgentName': myAgent.name,
+          'myRole': {
+            '@id': myRole['@id'],
+            'myRoleImage': myRole.image,
+            'myRoleName': myRole.name
           }
-        }
-      )
+        },
+        'chatAgent': {
+          '@id': myAgent['@id'],
+          'chatAgentId': myAgent.id,
+          'chatAgentImage': myAgent.image,
+          'chatAgentName': myAgent.name
+        },
+        'chatCharacterLimit': 140,
+        'chatIsMine': true,
+        'chatIsOver': false,
+        'chatLanguage': 'ja',
+        'chatText': action.text,
+        'chatUserName': '',
+        'chatUserAvatar': ''
+      }
 
       store.dispatch(socket.send(payload))
 
@@ -86,46 +73,51 @@ const client2server = store => next => action => {
     }
     case types.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
-      const payload = Object.assign(
-        {},
-        state.base,
-        {
-          '@context': [
-            'https://werewolf.world/context/0.1/base.jsonld',
-            'https://werewolf.world/context/0.1/board.jsonld'
-          ],
-          '@id': 'https://werewolf.world/resource/0.1/boardMessage',
-          'clientTimestamp': getTimestamp(),
-          'directionality': 'client to server',
-          'extensionalDisclosureRange': [],
-          'intensionalDisclosureRange': 'private',
-          'myAgent': {
-            '@id': state.agents.mine['@id'],
-            'myAgentId': state.agents.mine.id,
-            'myAgentImage': state.agents.mine.image,
-            'myAgentName': state.agents.mine.name,
-            'myRole': {
-              '@id': state.roles.mine['@id'],
-              'myRoleImage': state.roles.mine.image,
-              'myRoleName': state.roles.mine.name
-            }
+      const myRole = getMyRole(state.roles.all)
+      const myAgent = getMyAgent(state.agents.all)
+      const payload: C2SPayload<C2SBoard> = {
+        '@context': [
+          'https://werewolf.world/context/0.1/base.jsonld',
+          'https://werewolf.world/context/0.1/board.jsonld'
+        ],
+        '@id': 'https://werewolf.world/resource/0.1/boardMessage',
+        'villageId': state.base.villageId,
+        'villageName': state.base.villageName,
+        'totalNumberOfAgents': state.base.totalNumberOfAgents,
+        'token': state.base.token,
+        'phase': state.base.phase,
+        'date': state.base.date,
+        'phaseTimeLimit': state.base.phaseTimeLimit,
+        'phaseStartTime': state.base.phaseStartTime,
+        'serverTimestamp': state.base.serverTimestamp,
+        'clientTimestamp': getTimestamp(),
+        'directionality': 'client to server',
+        'intensionalDisclosureRange': 'private',
+        'extensionalDisclosureRange': [],
+        'myAgent': {
+          '@id': myAgent['@id'],
+          'myAgentId': myAgent.id,
+          'myAgentImage': myAgent.image,
+          'myAgentName': myAgent.name,
+          'myRole': {
+            '@id': myRole['@id'],
+            'myRoleImage': myRole.image,
+            'myRoleName': myRole.name
           }
         },
-        {
-          'boardAgent': {
-            '@id': state.agents.mine['@id'],
-            'agentId': state.agents.mine.id,
-            'agentImage': state.agents.mine.image,
-            'agentName': state.agents.mine.name
-          },
-          'boardPrediction': action.state,
-          'boardRole': {
-            '@id': state.roles.mine['@id'],
-            'roleImage': state.roles.mine.image,
-            'roleName': state.roles.mine.name
-          }
+        'boardAgent': {
+          '@id': myAgent['@id'],
+          'agentId': myAgent.id,
+          'agentImage': myAgent.image,
+          'agentName': myAgent.name
+        },
+        'boardPrediction': action.nextState,
+        'boardRole': {
+          '@id': myRole['@id'],
+          'roleImage': myRole.image,
+          'roleName': myRole.name
         }
-      )
+      }
 
       store.dispatch(socket.send(payload))
 
@@ -133,41 +125,46 @@ const client2server = store => next => action => {
     }
     case types.SELECT_YES: {
       const state = store.getState()
-      const votedAgent = state.agents.filter(a => a.id === action.agentId)[0]
-      const payload = Object.assign(
-        {},
-        state.base,
-        {
-          '@context': [
-            'https://werewolf.world/context/0.1/base.jsonld',
-            'https://werewolf.world/context/0.1/vote.jsonld'
-          ],
-          '@id': 'https://werewolf.world/resource/0.1/voteMessage',
-          'clientTimestamp': getTimestamp(),
-          'directionality': 'client to server',
-          'extensionalDisclosureRange': [],
-          'intensionalDisclosureRange': 'private',
-          'myAgent': {
-            '@id': state.agents.mine['@id'],
-            'myAgentId': state.agents.mine.id,
-            'myAgentImage': state.agents.mine.image,
-            'myAgentName': state.agents.mine.name,
-            'myRole': {
-              '@id': state.roles.mine['@id'],
-              'myRoleImage': state.roles.mine.image,
-              'myRoleName': state.roles.mine.name
-            }
+      const votedAgent = getVotedAgent(state.agents.all, action.agentId)
+      const myRole = getMyRole(state.roles.all)
+      const myAgent = getMyAgent(state.agents.all)
+      const payload: C2SPayload<C2SVote> = {
+        '@context': [
+          'https://werewolf.world/context/0.1/base.jsonld',
+          'https://werewolf.world/context/0.1/vote.jsonld'
+        ],
+        '@id': 'https://werewolf.world/resource/0.1/voteMessage',
+        'villageId': state.base.villageId,
+        'villageName': state.base.villageName,
+        'totalNumberOfAgents': state.base.totalNumberOfAgents,
+        'token': state.base.token,
+        'phase': state.base.phase,
+        'date': state.base.date,
+        'phaseTimeLimit': state.base.phaseTimeLimit,
+        'phaseStartTime': state.base.phaseStartTime,
+        'serverTimestamp': state.base.serverTimestamp,
+        'clientTimestamp': getTimestamp(),
+        'directionality': 'client to server',
+        'intensionalDisclosureRange': 'private',
+        'extensionalDisclosureRange': [],
+        'myAgent': {
+          '@id': myAgent['@id'],
+          'myAgentId': myAgent.id,
+          'myAgentImage': myAgent.image,
+          'myAgentName': myAgent.name,
+          'myRole': {
+            '@id': myRole['@id'],
+            'myRoleImage': myRole.image,
+            'myRoleName': myRole.name
           }
         },
-        {
-          'votedAgent': {
-            '@id': votedAgent['@id'],
-            'votedAgentId': votedAgent.id,
-            'votedAgentImage': votedAgent.image,
-            'votedAgentName': votedAgent.name
-          }
+        'votedAgent': {
+          '@id': votedAgent['@id'],
+          'votedAgentId': votedAgent.id,
+          'votedAgentImage': votedAgent.image,
+          'votedAgentName': votedAgent.name
         }
-      )
+      }
 
       store.dispatch(socket.send(payload))
 
