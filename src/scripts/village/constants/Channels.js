@@ -12,8 +12,8 @@ export const Channels = {
 }
 
 export const getInputChannel = (channel: Channel): InputChannel => {
-  const inputChannel: InputChannel[] = [ 'limited', 'private', 'public' ]
-  const maybe = inputChannel.find(v => v === channel)
+  const inputChannel: InputChannel[] = [ 'grave', 'limited', 'master', 'private', 'public' ]
+  const maybe = inputChannel.find(v => v === Channels[channel])
 
   if (!maybe) {
     throw new Error('Unexpected channel.')
