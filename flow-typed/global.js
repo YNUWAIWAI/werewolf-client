@@ -102,7 +102,18 @@ type Base = {
   'clientTimestamp': string,
   'directionality': Directionality,
   'intensionalDisclosureRange': Channel,
-  'extensionalDisclosureRange': []
+  'extensionalDisclosureRange': [],
+  'myAgent': {
+    '@id': string,
+    'myAgentId': number,
+    'myAgentImage': string,
+    'myAgentName': { [Language]: string },
+    'myRole': {
+      '@id': string,
+      'myRoleImage': string,
+      'myRoleName': { [Language]: string }
+    }
+  }
 }
 declare type Chat = {
   chatIsMine: boolean,
@@ -123,6 +134,43 @@ declare type Chat = {
   chatUserName: string,
   chatUserAvatar: string
 }
+declare type C2SChat = {
+  chatIsMine: boolean,
+  chatAgent: {
+    '@id': string,
+    chatAgentId: number,
+    chatAgentName: { [Language]: string },
+    chatAgentImage: string
+  },
+  chatText: string,
+  chatCharacterLimit: number,
+  chatLanguage: string,
+  chatIsOver: boolean,
+  chatUserName: string,
+  chatUserAvatar: string
+}
+declare type C2SBoard = {
+  'boardAgent': {
+    '@id': string,
+    'agentId': number,
+    'agentImage': string,
+    'agentName': { [Language]: string }
+  },
+  'boardPrediction': BoardState,
+  'boardRole': {
+    '@id': string,
+    'roleImage': string,
+    'roleName': { [Language]: string }
+  }
+}
+declare type C2SVote = {
+  'votedAgent': {
+    '@id': string,
+    'votedAgentId': number,
+    'votedAgentImage': string,
+    'votedAgentName': { [Language]: string }
+  }
+}
 declare type Payload<A, R, T> =
   Base &
   {
@@ -130,3 +178,7 @@ declare type Payload<A, R, T> =
     role: R[]
   } &
   T
+declare type C2SPayload<T> =
+  Base &
+  T
+

@@ -12,8 +12,8 @@ export const Channels = {
 }
 
 export const getChatChannel = (channel: Channel): ChatChannel => {
-  const inputChannel: ChatChannel[] = [ 'grave', 'limited', 'master', 'private', 'public' ]
-  const maybe = inputChannel.find(v => v === Channels[channel])
+  const chatChannel: ChatChannel[] = [ 'grave', 'limited', 'master', 'private', 'public' ]
+  const maybe = chatChannel.find(v => v === Channels[channel])
 
   if (!maybe) {
     throw new Error('Unexpected channel.')
@@ -25,6 +25,28 @@ export const getChatChannel = (channel: Channel): ChatChannel => {
 export const getInputChannel = (channel: Channel): InputChannel => {
   const inputChannel: InputChannel[] = [ 'limited', 'private', 'public' ]
   const maybe = inputChannel.find(v => v === Channels[channel])
+
+  if (!maybe) {
+    throw new Error('Unexpected channel.')
+  }
+
+  return maybe
+}
+
+type PublicChannel = 'anonymousAudience' | 'onymousAudience' | 'public'
+
+export const getChannelFromInputChennel = (inputChannel: InputChannel, role: RoleId, publicChannel: PublicChannel = 'public'): Channel => {
+  const channel: Channel[] = [ 'anonymousAudience', 'grave', 'hunter', 'master', 'onymousAudience', 'private', 'public', 'seer', 'werewolf' ]
+  const maybe = channel.find(v => {
+    if (inputChannel === 'limited') {
+      return v === role
+    }
+    if (inputChannel === 'public') {
+      return v === publicChannel
+    }
+
+    return v === inputChannel
+  })
 
   if (!maybe) {
     throw new Error('Unexpected channel.')

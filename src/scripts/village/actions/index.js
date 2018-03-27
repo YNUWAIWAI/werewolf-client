@@ -18,7 +18,7 @@ export const socket = {
     event,
     type: types.SOCKET_OPEN
   }),
-  send: (payload: Payload<*, *, *>) => ({
+  send: (payload: C2SPayload<*>) => ({
     payload,
     type: types.SOCKET_SEND
   })
