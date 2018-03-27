@@ -98,7 +98,7 @@ type Base = {
   'date': number,
   'phaseTimeLimit': number,
   'phaseStartTime': string,
-  'serverTimeStamp': string,
+  'serverTimestamp': string,
   'clientTimestamp': string,
   'directionality': Directionality,
   'intensionalDisclosureRange': Channel,
@@ -109,7 +109,7 @@ declare type Chat = {
   chatAgent: {
     '@id': string,
     chatAgentId: number,
-    chatAgentName: string,
+    chatAgentName: { [Language]: string },
     chatAgentImage: string
   },
   chatId: number,
