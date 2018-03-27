@@ -18,7 +18,8 @@ const agents = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (action.payload['@context'].includes(Contexts.AGENT)) {
-        const all = action.payload.agent.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
+        const payload: Payload<Agent, *, *> = action.payload
+        const all = payload.agent.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
         const mine = all.filter(a => a.agentIsMine)[0]
 
         return {
