@@ -30,19 +30,21 @@ const chat = (state: State = initialState, action: Action): State => {
         action.payload['@id'] === Message.PLAYER_MESSAGE &&
         action.payload['@context'].includes(Contexts.CHAT)
       ) {
+        const payload: Payload<*, *, Chat> = action.payload
+
         return {
           items: [
             ... state.items,
             {
-              id: action.payload.chatId,
-              image: action.payload.chatAgent.chatAgentImage,
-              intensionalDisclosureRange: action.payload.intensionalDisclosureRange,
-              isMine: action.payload.chatIsMine,
-              name: action.payload.chatAgent.chatAgentName,
-              phaseStartTime: action.payload.phaseStartTime,
-              phaseTimeLimit: action.payload.phaseTimeLimit,
-              serverTimestamp: action.payload.serverTimestamp,
-              text: action.payload.chatText
+              id: payload.chatId,
+              image: payload.chatAgent.chatAgentImage,
+              intensionalDisclosureRange: payload.intensionalDisclosureRange,
+              isMine: payload.chatIsMine,
+              name: payload.chatAgent.chatAgentName,
+              phaseStartTime: payload.phaseStartTime,
+              phaseTimeLimit: payload.phaseTimeLimit,
+              serverTimestamp: payload.serverTimestamp,
+              text: payload.chatText
             }
           ]
         }
