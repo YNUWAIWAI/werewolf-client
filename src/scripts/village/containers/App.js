@@ -1,15 +1,16 @@
+// @flow
+import React, {Fragment} from 'react'
 import Activity from './ActivityContainer'
 import Command from './CommandContainer'
 import HideButton from './HideButtonContainer'
 import Info from '../components/Info'
-import Modal from '../components/Modal'
-import Obfucator from '../containers/ObfucatorContainer'
-import React from 'react'
-import Result from '../containers/ResultContainer'
+import Modal from './ModalContainer'
+import Obfucator from './ObfucatorContainer'
+import Result from './ResultContainer'
 
 export default function App() {
   return (
-    <React.Fragment>
+    <Fragment>
       <Info />
       <Activity />
       <Command />
@@ -17,6 +18,6 @@ export default function App() {
       <Modal />
       <Result />
       <Obfucator />
-    </React.Fragment>
+    </Fragment>
   )
 }
