@@ -1,3 +1,4 @@
+// @flow
 import Obfucator from './Obfucator'
 import React from 'react'
 import {shallow} from 'enzyme'
