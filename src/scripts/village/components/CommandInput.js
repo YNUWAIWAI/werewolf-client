@@ -84,8 +84,8 @@ export default class CommandInput extends React.Component<Props, State> {
     return (
       <form className={`command--input ${this.props.kind}`}>
         <textarea
-          onChange={e => this.handleTextChange(e)}
-          onKeyDown={e => this.handleKeyDown(e)}
+          onChange={(event: SyntheticInputEvent<HTMLTextAreaElement>) => this.handleTextChange(event)}
+          onKeyDown={(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) => this.handleKeyDown(event)}
           placeholder={placeholder}
           value={this.state.text}
         />
