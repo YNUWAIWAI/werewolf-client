@@ -1,4 +1,13 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+
+export type State = {
+  menuItems: {
+    text: string,
+    type: string
+  }[]
+}
+type Action = any
 
 const initialState = {
   menuItems: [
@@ -8,6 +17,6 @@ const initialState = {
     }
   ]
 }
-const settings = (state = initialState, action) => state
+const settings = (state: State = initialState, action: Action) => state
 
 export default settings
