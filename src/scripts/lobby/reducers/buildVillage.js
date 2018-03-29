@@ -1,4 +1,28 @@
+// @flow
+/* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
+import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeVillageName} from '../actions'
+
+export type State = {
+  village: {
+    villageName: string,
+    member: Member,
+    numberOfPlayers: number,
+    numberOfRobots: number,
+    numberOfHumans: number,
+    avatar: string,
+    comment: string
+  }
+}
+type Action =
+  | ChangeAvatar
+  | ChangeComment
+  | ChangeHostName
+  | ChangeMember
+  | ChangeNumberOfPlayers
+  | ChangeVillageName
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
 
 const initialState = {
   village: {
@@ -13,7 +37,7 @@ const initialState = {
   }
 }
 
-const buildVillage = (state = initialState, action) => {
+const buildVillage = (state: State = initialState, action: Action) => {
   switch (action.type) {
     case ActionTypes.CHANGE_AVATAR:
       return {
