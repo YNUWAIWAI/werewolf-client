@@ -1,5 +1,5 @@
 // @flow
-import app from './app'
+import app, {type State as AppState} from './app'
 import buildVillage, {type State as BuildVillageState} from './buildVillage'
 import connectingToRobotPlayer, {type State as ConnectingToRobotPlayerState} from './connectingToRobotPlayer'
 import history, {type State as HistoryState} from './history'
@@ -27,7 +27,7 @@ const reducer = combineReducers({
 export default reducer
 
 export type ReducerState = {
-  app: */*AppState*/,
+  app: AppState,
   buildVillage: BuildVillageState,
   connectingToRobotPlayer: ConnectingToRobotPlayerState,
   history: HistoryState,
