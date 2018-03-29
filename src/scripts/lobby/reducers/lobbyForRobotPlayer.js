@@ -1,4 +1,5 @@
 // @flow
+/* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 
 export type State = {
