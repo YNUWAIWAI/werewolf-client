@@ -7,7 +7,7 @@ import history from './history'
 import lobbyForAudience from './lobbyForAudience'
 import lobbyForHumanPlayer from './lobbyForHumanPlayer'
 import lobbyForRobotPlayer from './lobbyForRobotPlayer'
-import main from './main'
+import main, {type State as MainState} from './main'
 import settings, {type State as SettingsState} from './settings'
 import waitingForPlayers from './waitingForPlayers'
 
@@ -34,7 +34,7 @@ export type ReducerState = {
   lobbyForAudience: */*LobbyForAudienceState*/,
   lobbyForHumanPlayer: */*LobbyForHumanPlayerState*/,
   lobbyForRobotPlayer: */*LobbyForRobotPlayerState*/,
-  main: */*MainState*/,
+  main: MainState,
   settings: SettingsState,
   waitingForPlayers: */*WaitingForPlayersState*/
 }
