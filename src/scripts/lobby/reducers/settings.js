@@ -2,10 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 
 export type State = {
-  menuItems: {
-    text: string,
-    type: string
-  }[]
+  menuItems: MenuItem[]
 }
 type Action = any
 

@@ -39,3 +39,7 @@ declare type RoleSetting = {
   mason: number,
   werehumster: number
 }
+declare type MenuItem = {
+  text: string,
+  type: string
+}
