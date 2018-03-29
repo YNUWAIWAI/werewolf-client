@@ -1,7 +1,7 @@
 // @flow
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
-import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeVillageName} from '../actions'
+import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName} from '../actions'
 
 export type State = {
   village: {
@@ -20,6 +20,7 @@ type Action =
   | ChangeHostName
   | ChangeMember
   | ChangeNumberOfPlayers
+  | ChangeNumberOfRobots
   | ChangeVillageName
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
