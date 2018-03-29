@@ -1,6 +1,11 @@
+// @flow
 import React from 'react'
 
-export default function MainContent(props) {
+type Props = {
+  children?: React$Node
+}
+
+export default function MainContent(props: Props) {
   return (
     <div className="main-content">
       {props.children}
