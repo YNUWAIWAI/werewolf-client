@@ -1,4 +1,10 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+
+export type State = {
+  menuItems: MenuItem[]
+}
+type Action = void
 
 const initialState = {
   menuItems: [
@@ -8,6 +14,6 @@ const initialState = {
     }
   ]
 }
-const connectingToRobotPlayer = (state = initialState, action) => state
+const connectingToRobotPlayer = (state: State = initialState, action: Action) => state
 
 export default connectingToRobotPlayer
