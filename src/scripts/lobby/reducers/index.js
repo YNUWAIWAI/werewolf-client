@@ -1,7 +1,6 @@
 // @flow
 import app from './app'
-import buildVillage from './buildVillage'
-import {combineReducers} from 'redux'
+import buildVillage, {type State as BuildVillageState} from './buildVillage'
 import connectingToRobotPlayer, {type State as ConnectingToRobotPlayerState} from './connectingToRobotPlayer'
 import history, {type State as HistoryState} from './history'
 import lobbyForAudience, {type State as LobbyForAudienceState} from './lobbyForAudience'
@@ -10,6 +9,7 @@ import lobbyForRobotPlayer, {type State as LobbyForRobotPlayerState} from './lob
 import main, {type State as MainState} from './main'
 import settings, {type State as SettingsState} from './settings'
 import waitingForPlayers, {type State as WaitingForPlayersState} from './waitingForPlayers'
+import {combineReducers} from 'redux'
 
 const reducer = combineReducers({
   app,
@@ -28,7 +28,7 @@ export default reducer
 
 export type ReducerState = {
   app: */*AppState*/,
-  buildVillage: */*BuildVillageState*/,
+  buildVillage: BuildVillageState,
   connectingToRobotPlayer: ConnectingToRobotPlayerState,
   history: HistoryState,
   lobbyForAudience: LobbyForAudienceState,
