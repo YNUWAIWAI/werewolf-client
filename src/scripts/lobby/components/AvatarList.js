@@ -1,7 +1,13 @@
-import AvatarItem from './AvatarItem'
+// @flow
+import AvatarItem, {type Props as AvatarItemProps} from './AvatarItem'
 import React from 'react'
 
-export default function AvatarList(props) {
+type Props = {
+  isPlayer: boolean,
+  items: (AvatarItemProps & {token: string})[]
+}
+
+export default function AvatarList(props: Props) {
   const items = props.items.map(item =>
     <AvatarItem
       key={item.token}
