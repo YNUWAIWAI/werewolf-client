@@ -1,3 +1,4 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import BuildVillage from '../containers/BuildVillageContainer'
 import ConnectingToRobotPlayer from '../containers/ConnectingToRobotPlayerContainer'
@@ -6,14 +7,27 @@ import LobbyForAudience from '../containers/LobbyForAudienceContainer'
 import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
 import LobbyForRobotPlayer from '../containers/LobbyForRobotPlayerContainer'
 import Main from '../containers/MainContainer'
+import type {SelectVillage} from '../actions'
 import Settings from '../containers/SettingsContainer'
 import WaitingForPlayers from '../containers/WaitingForPlayersContainer'
+
+export type State = {
+  content: React$ComponentType<*>
+}
+type Action =
+  | SelectVillage
+  | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
+  | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_AUDIENCE}
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
+  | {type: typeof ActionTypes.SHOW_MAIN}
+  | {type: typeof ActionTypes.SHOW_SETTINGS}
 
 const initialState = {
   content: Main
 }
-
-const app = (state = initialState, action) => {
+const app = (state: State = initialState, action: Action) => {
   switch (action.type) {
     case ActionTypes.SELECT_A_VILLAGE:
       return {
