@@ -14,6 +14,6 @@ const initialState = {
     }
   ]
 }
-const connectingToRobotPlayer = (state: State = initialState, action: Action) => state
+const connectingToRobotPlayer = (state: State = initialState, action: Action): State => state
 
 export default connectingToRobotPlayer

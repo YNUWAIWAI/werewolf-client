@@ -85,6 +85,6 @@ const initialState = {
   ]
 }
 
-const history = (state: State = initialState, action: Action) => state
+const history = (state: State = initialState, action: Action): State => state
 
 export default history

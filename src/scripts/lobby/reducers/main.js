@@ -35,6 +35,6 @@ const initialState = {
   name: 'Pamela'
 }
 
-const main = (state: State = initialState, action: Action) => state
+const main = (state: State = initialState, action: Action): State => state
 
 export default main

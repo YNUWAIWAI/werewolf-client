@@ -38,7 +38,7 @@ const initialState = {
   }
 }
 
-const buildVillage = (state: State = initialState, action: Action) => {
+const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.CHANGE_AVATAR:
       return {

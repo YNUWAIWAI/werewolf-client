@@ -97,6 +97,6 @@ const initialState = {
   ]
 }
 
-const lobbyForRobotPlayer = (state: State = initialState, action: Action) => state
+const lobbyForRobotPlayer = (state: State = initialState, action: Action): State => state
 
 export default lobbyForRobotPlayer

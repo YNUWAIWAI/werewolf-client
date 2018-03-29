@@ -97,6 +97,6 @@ const initialState = {
   ]
 }
 
-const lobbyForAudience = (state: State = initialState, action: Action) => state
+const lobbyForAudience = (state: State = initialState, action: Action): State => state
 
 export default lobbyForAudience

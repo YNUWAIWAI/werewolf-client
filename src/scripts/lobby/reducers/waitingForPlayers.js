@@ -119,7 +119,7 @@ const initialState = {
     }
   ]
 }
-const waitingForPlayers = (state: State = initialState, action: Action) => {
+const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {

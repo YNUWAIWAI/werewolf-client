@@ -14,6 +14,6 @@ const initialState = {
     }
   ]
 }
-const settings = (state: State = initialState, action: Action) => state
+const settings = (state: State = initialState, action: Action): State => state
 
 export default settings
