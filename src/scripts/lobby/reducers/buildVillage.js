@@ -6,12 +6,14 @@ import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNu
 export type State = {
   village: {
     villageName: string,
+    hostName: string,
     member: Member,
     numberOfPlayers: number,
     numberOfRobots: number,
     numberOfHumans: number,
     avatar: string,
-    comment: string
+    comment: string,
+    isHuman: boolean
   }
 }
 type Action =
@@ -34,7 +36,8 @@ const initialState = {
     numberOfRobots: 1,
     numberOfHumans: 14,
     avatar: 'fixed',
-    comment: ''
+    comment: '',
+    isHuman: true
   }
 }
 
