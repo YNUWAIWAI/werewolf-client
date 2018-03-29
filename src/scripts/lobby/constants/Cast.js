@@ -1,5 +1,6 @@
+// @flow
 const Cast = {
-  4: {
+  '4': {
     A: {
       hunter: 0,
       madman: 0,
@@ -31,7 +32,7 @@ const Cast = {
       werewolf: 1
     }
   },
-  5: {
+  '5': {
     A: {
       hunter: 0,
       madman: 0,
@@ -63,7 +64,7 @@ const Cast = {
       werewolf: 1
     }
   },
-  6: {
+  '6': {
     A: {
       hunter: 0,
       madman: 0,
@@ -95,7 +96,7 @@ const Cast = {
       werewolf: 1
     }
   },
-  7: {
+  '7': {
     A: {
       hunter: 0,
       madman: 0,
@@ -127,7 +128,7 @@ const Cast = {
       werewolf: 1
     }
   },
-  8: {
+  '8': {
     A: {
       hunter: 0,
       madman: 0,
@@ -159,7 +160,7 @@ const Cast = {
       werewolf: 2
     }
   },
-  9: {
+  '9': {
     A: {
       hunter: 0,
       madman: 0,
@@ -191,7 +192,7 @@ const Cast = {
       werewolf: 1
     }
   },
-  10: {
+  '10': {
     A: {
       hunter: 0,
       madman: 1,
@@ -223,7 +224,7 @@ const Cast = {
       werewolf: 2
     }
   },
-  11: {
+  '11': {
     A: {
       hunter: 1,
       madman: 1,
@@ -255,7 +256,7 @@ const Cast = {
       werewolf: 2
     }
   },
-  12: {
+  '12': {
     A: {
       hunter: 1,
       madman: 1,
@@ -287,7 +288,7 @@ const Cast = {
       werewolf: 2
     }
   },
-  13: {
+  '13': {
     A: {
       hunter: 1,
       madman: 1,
@@ -319,7 +320,7 @@ const Cast = {
       werewolf: 2
     }
   },
-  14: {
+  '14': {
     A: {
       hunter: 1,
       madman: 1,
@@ -351,7 +352,7 @@ const Cast = {
       werewolf: 2
     }
   },
-  15: {
+  '15': {
     A: {
       hunter: 1,
       madman: 1,
