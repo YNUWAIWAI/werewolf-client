@@ -9,7 +9,7 @@ declare type Village = {
   playerSetting: PlayerSetting,
   roleSetting: RoleSetting,
   avatar: string,
-  comment: string
+  comment: ?string
 }
 declare type HostPlayer = {
   name: string,
