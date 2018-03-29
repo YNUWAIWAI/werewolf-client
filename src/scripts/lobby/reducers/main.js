@@ -1,4 +1,15 @@
+// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+
+export type State = {
+  image: string,
+  items: {
+    text: string,
+    type: string
+  }[],
+  name: string
+}
+type Action = void
 
 const initialState = {
   image: 'https://werewolf.world/image/0.1/Pamela.jpg',
@@ -27,8 +38,6 @@ const initialState = {
   name: 'Pamela'
 }
 
-const main = (state = initialState, action) => {
-  return state
-}
+const main = (state: State = initialState, action: Action) => state
 
 export default main
