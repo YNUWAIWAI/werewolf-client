@@ -1,6 +1,11 @@
+// @flow
 import React from 'react'
 
-export default function Header(props) {
+type Props = {
+  text: string
+}
+
+export default function Header(props: Props) {
   return (
     <div className="header">
       {props.text}
