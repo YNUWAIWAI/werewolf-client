@@ -9,7 +9,7 @@ import lobbyForHumanPlayer from './lobbyForHumanPlayer'
 import lobbyForRobotPlayer from './lobbyForRobotPlayer'
 import main, {type State as MainState} from './main'
 import settings, {type State as SettingsState} from './settings'
-import waitingForPlayers from './waitingForPlayers'
+import waitingForPlayers, {type State as WaitingForPlayersState} from './waitingForPlayers'
 
 const reducer = combineReducers({
   app,
@@ -36,5 +36,5 @@ export type ReducerState = {
   lobbyForRobotPlayer: */*LobbyForRobotPlayerState*/,
   main: MainState,
   settings: SettingsState,
-  waitingForPlayers: */*WaitingForPlayersState*/
+  waitingForPlayers: WaitingForPlayersState
 }
