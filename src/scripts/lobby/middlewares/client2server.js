@@ -1,9 +1,13 @@
+// @flow
 import * as types from '../constants/ActionTypes'
+import type {DispatchAPI, Middleware} from 'redux'
+import type {Action} from '.'
 import Cast from '../constants/Cast'
+import type {ReducerState} from '../reducers'
 import {socket} from '../actions'
 
-const client2server = store => next => action => {
-  switch(action.type) {
+const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
+  switch (action.type) {
     case types.BUILD_VILLAGE: {
       const state = store.getState()
       const payload = {
