@@ -1,6 +1,12 @@
+// @flow
 import React from 'react'
 
-export default function Player(props) {
+type Props = {
+  image: string,
+  name: string
+}
+
+export default function Player(props: Props) {
   return (
     <div className="player">
       {'Hi,'}
