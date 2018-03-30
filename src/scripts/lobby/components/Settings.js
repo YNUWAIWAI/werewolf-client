@@ -1,11 +1,16 @@
+// @flow
+import Menu, {type Props as MenuProps} from './Menu'
 import AsideContent from './AsideContent'
 import Header from './Header'
 import MainContent from './MainContent'
-import Menu from './Menu'
 import React from 'react'
-import VillageList from './VillageList'
 
-export default function Setting(props) {
+type Props = {
+  menuItems: $PropertyType<MenuProps, 'items'>,
+  transition: string => void => void
+}
+
+export default function Setting(props: Props) {
   return (
     <div className="grid">
       <Header text="Settings" />
