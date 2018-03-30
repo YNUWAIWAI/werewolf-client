@@ -1,21 +1,36 @@
+// @flow
+import Cast from '../constants/Cast'
 import MemberRole from './MemberRole'
 import NumberSelect from './NumberSelect'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
-const getMember = role =>
-  ORDERED_ROLE_LIST.map(item =>
-    <MemberRole
-      class="village--item--selectable-member--role--item"
-      id={item.id}
-      image={item.image}
-      key={item.id}
-      name={item.name.ja}
-      numberOfAgents={role[item.id]}
-    />
-  )
+type Props = {
+  handleChange: string => void => void,
+  numberOfHumans: number,
+  numberOfPlayers: number,
+  numberOfRobots: number,
+  role: {
+    A: $PropertyType<$PropertyType<typeof Cast, '15'>, 'A'>,
+    B: $PropertyType<$PropertyType<typeof Cast, '15'>, 'B'>,
+    C: $PropertyType<$PropertyType<typeof Cast, '15'>, 'C'>
+  }
+}
 
-export default function SelectableMember(props) {
+const getMember = role =>
+  ORDERED_ROLE_LIST
+    .map(item =>
+      <MemberRole
+        class="village--item--selectable-member--role--item"
+        id={item.id}
+        image={item.image}
+        key={item.id}
+        name={item.name.ja}
+        numberOfAgents={role[item.id]}
+      />
+    )
+
+export default function SelectableMember(props: Props) {
   const member = {
     A: getMember(props.role.A),
     B: getMember(props.role.B),
