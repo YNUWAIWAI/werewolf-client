@@ -1,6 +1,15 @@
+// @flow
 import React from 'react'
 
-export default function NumberSelect(props) {
+type Props = {
+  class: string,
+  from: number,
+  handleChange: void => void,
+  to: number,
+  value: number
+}
+
+export default function NumberSelect(props: Props) {
   const options = [... Array(props.to - props.from + 1).keys()]
     .map(e => e + props.from)
     .map(option =>
@@ -8,6 +17,7 @@ export default function NumberSelect(props) {
         {option}
       </option>
     )
+    .reverse()
 
   return (
     <select
