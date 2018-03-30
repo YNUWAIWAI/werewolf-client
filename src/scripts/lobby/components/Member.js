@@ -1,8 +1,15 @@
+// @flow
 import MemberRole from './MemberRole'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
-export default function Member(props) {
+type Props = {
+  human: Human,
+  robot: Robot,
+  role: RoleSetting
+}
+
+export default function Member(props: Props) {
   const items = ORDERED_ROLE_LIST.map(item =>
     <MemberRole
       class="village--item--member--role--item"
