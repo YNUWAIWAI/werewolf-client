@@ -6,7 +6,7 @@ import {shallow} from 'enzyme'
 test('<LobbyForRobotPlayer />', () => {
   const selectVillage = jest.fn()
   const transition = jest.fn()
-  const wrapper = shallow(<LobbyForRobotPlayer isPlayer={false} menuItems={[]} selectVillage={selectVillage} transition={transition} villageItems={[]} />)
+  const wrapper = shallow(<LobbyForRobotPlayer isPlayer menuItems={[]} selectVillage={selectVillage} transition={transition} villageItems={[]} />)
 
   expect(wrapper.children()).toHaveLength(3)
   expect(wrapper.find('Header').exists()).toBe(true)
