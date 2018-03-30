@@ -2,7 +2,7 @@
 import MenuItem from './MenuItem'
 import React from 'react'
 
-type Props = {
+export type Props = {
   class: string,
   itemClass: string,
   items: {
