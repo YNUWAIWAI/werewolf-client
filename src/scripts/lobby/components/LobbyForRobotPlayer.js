@@ -1,3 +1,4 @@
+// @flow
 import AsideContent from './AsideContent'
 import Header from './Header'
 import MainContent from './MainContent'
@@ -5,7 +6,18 @@ import Menu from './Menu'
 import React from 'react'
 import VillageList from './VillageList'
 
-export default function LobbyForRobotPlayer(props) {
+type Props = {
+  isPlayer: boolean,
+  menuItems: {
+    text: string,
+    type: string
+  }[],
+  selectVillage: number => void => void,
+  transition: string => void => void,
+  villageItems: Village[]
+}
+
+export default function LobbyForRobotPlayer(props: Props) {
   return (
     <div className="grid">
       <Header text="Lobby for Robot Player" />
