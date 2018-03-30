@@ -1,3 +1,4 @@
+// @flow
 import AsideContent from './AsideContent'
 import Header from './Header'
 import MainContent from './MainContent'
@@ -5,12 +6,23 @@ import Menu from './Menu'
 import React from 'react'
 import VillageList from './VillageList'
 
-export default function LobbyForAudience(props) {
+type Props = {
+  isPlayer: boolean,
+  menuItems: {
+    text: string,
+    type: string
+  }[],
+  selectVillage: number => void => void,
+  transition: string => void => void,
+  villageItems: Village[]
+}
+
+export default function LobbyForAudience(props: Props) {
   return (
     <div className="grid">
       <Header text="Lobby for Audience" />
       <MainContent>
-        <VillageList items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
+        <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
       </MainContent>
       <AsideContent>
         <Menu
