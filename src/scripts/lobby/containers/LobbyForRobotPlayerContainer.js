@@ -1,10 +1,18 @@
-import LobbyForRobotPlayer from '../components/LobbyForRobotPlayer'
+// @flow
+import LobbyForRobotPlayer, {type DispatchProps, type StateProps} from '../components/LobbyForRobotPlayer'
+import {type SelectVillage, selectVillage} from '../actions'
+import type {Dispatch} from 'redux'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {selectVillage} from '../actions'
 
-const mapStateToProps = state => state.lobbyForRobotPlayer
-const mapDispatchToProps = dispatch => ({
-  selectVillage: id => () => dispatch(selectVillage(id))
+type Action =
+  | SelectVillage
+
+const mapStateToProps = (state: ReducerState): StateProps => state.lobbyForRobotPlayer
+const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  selectVillage: id => () => {
+    dispatch(selectVillage(id))
+  }
 })
 const LobbyForRobotPlayerContainer = connect(
   mapStateToProps,
