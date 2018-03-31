@@ -6,16 +6,21 @@ import Menu from './Menu'
 import React from 'react'
 import VillageList from './VillageList'
 
-type Props = {
+export type StateProps = {
   isPlayer: boolean,
-  menuItems: {
-    text: string,
-    type: string
-  }[],
-  selectVillage: number => void => void,
-  transition: string => void => void,
+  menuItems: MenuItem[],
   villageItems: Village[]
 }
+export type DispatchProps = {
+  selectVillage: number => void => void
+}
+export type OwnProps = {
+  transition: string => void => void
+}
+export type Props =
+  & StateProps
+  & DispatchProps
+  & OwnProps
 
 export default function LobbyForHumanPlayer(props: Props) {
   return (
