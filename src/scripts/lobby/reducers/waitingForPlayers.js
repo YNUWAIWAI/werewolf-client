@@ -4,7 +4,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 
 export type State = {
   isPlayer: boolean,
-  village: Village,
+  menuItems: MenuItem[],
   players: {
     token: string,
     name: string,
@@ -12,7 +12,8 @@ export type State = {
     isAnonymous: boolean,
     isHost: boolean,
     isMe: boolean
-  }[]
+  }[],
+  village: Village
 }
 type Action =
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
@@ -20,38 +21,7 @@ type Action =
 
 const initialState = {
   isPlayer: true,
-  village: {
-    'name': 'Fairytale village',
-    'id': 1,
-    'hostPlayer': {
-      'name': 'Anonymous',
-      'isAnonymous': true
-    },
-    'playerSetting': {
-      'number': 15,
-      'current': 8,
-      'robot': {
-        'min': 7,
-        'current': 3
-      },
-      'human': {
-        'max': 8,
-        'current': 5
-      }
-    },
-    'roleSetting': {
-      'villager': 6,
-      'werewolf': 2,
-      'seer': 1,
-      'medium': 1,
-      'madman': 1,
-      'hunter': 1,
-      'mason': 2,
-      'werehumster': 1
-    },
-    'avatar': 'random',
-    'comment': 'Experts recommended'
-  },
+  menuItems: [],
   players: [
     {
       'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
@@ -117,7 +87,39 @@ const initialState = {
       'isHost': false,
       'isMe': false
     }
-  ]
+  ],
+  village: {
+    'name': 'Fairytale village',
+    'id': 1,
+    'hostPlayer': {
+      'name': 'Anonymous',
+      'isAnonymous': true
+    },
+    'playerSetting': {
+      'number': 15,
+      'current': 8,
+      'robot': {
+        'min': 7,
+        'current': 3
+      },
+      'human': {
+        'max': 8,
+        'current': 5
+      }
+    },
+    'roleSetting': {
+      'villager': 6,
+      'werewolf': 2,
+      'seer': 1,
+      'medium': 1,
+      'madman': 1,
+      'hunter': 1,
+      'mason': 2,
+      'werehumster': 1
+    },
+    'avatar': 'random',
+    'comment': 'Experts recommended'
+  }
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {

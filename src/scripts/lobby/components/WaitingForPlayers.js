@@ -7,13 +7,18 @@ import MainContent from './MainContent'
 import React from 'react'
 import VillageItem from './VillageItem'
 
-type Props = {
+export type StateProps = {
   isPlayer: boolean,
-  menuItems: $PropertyType<MenuProps, 'items'>,
+  menuItems: MenuItem[],
   players: $PropertyType<AvatarListProps, 'items'>,
-  transition: string => void => void,
   village: Village
 }
+export type OwnProps = {
+  transition: string => void => void,
+}
+export type Props =
+  & StateProps
+  & OwnProps
 
 export default function WaitingForPlayers(props: Props) {
   return (

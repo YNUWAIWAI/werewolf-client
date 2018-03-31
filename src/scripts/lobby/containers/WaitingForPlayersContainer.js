@@ -1,7 +1,20 @@
-import WaitingForPlayers from '../components/WaitingForPlayers'
+// @flow
+import WaitingForPlayers, {type StateProps} from '../components/WaitingForPlayers'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-const mapStateToProps = state => state.waitingForPlayers
+const defaultAvatarImage = ''
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  isPlayer: state.waitingForPlayers.isPlayer,
+  menuItems: state.waitingForPlayers.menuItems,
+  players: state.waitingForPlayers.players.map(player => ({
+    avatarImage: player.avatarImage ? player.avatarImage : defaultAvatarImage,
+    isHost: player.isHost,
+    name: player.name,
+    token: player.token
+  })),
+  village: state.waitingForPlayers.village
+})
 const WaitingForPlayersContainer = connect(
   mapStateToProps
 )(WaitingForPlayers)
