@@ -2,7 +2,7 @@
 import AvatarItem, {type Props as AvatarItemProps} from './AvatarItem'
 import React from 'react'
 
-type Props = {
+export type Props = {
   isPlayer: boolean,
   items: (AvatarItemProps & {token: string})[]
 }
