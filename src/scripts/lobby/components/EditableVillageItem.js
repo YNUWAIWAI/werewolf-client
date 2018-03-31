@@ -1,11 +1,22 @@
-import Cast from '../constants/Cast'
+// @flow
 import NumberSelect from './NumberSelect'
 import React from 'react'
 import SelectableMember from './SelectableMember'
+import {getCastFromNumberOfPlayers} from '../constants/Cast'
 
-export default function EditableVillageItem(props) {
+type Props = {
+  comment: string,
+  handleChange: string => void => void,
+  hostName: string,
+  numberOfHumans: number,
+  numberOfPlayers: number,
+  numberOfRobots: number,
+  villageName: string
+}
+
+export default function EditableVillageItem(props: Props) {
   return (
-    <li className="village--item">
+    <div className="village--item">
       <div className="village--item--village-name--prop">
         {'Village Name'}
       </div>
@@ -56,7 +67,7 @@ export default function EditableVillageItem(props) {
         numberOfHumans={props.numberOfHumans}
         numberOfPlayers={props.numberOfPlayers}
         numberOfRobots={props.numberOfRobots}
-        role={Cast[props.numberOfPlayers]}
+        role={getCastFromNumberOfPlayers(props.numberOfPlayers)}
       />
       <div className="village--item--comment--prop">
         {'Village Comment'}
@@ -67,6 +78,6 @@ export default function EditableVillageItem(props) {
         onChange={props.handleChange('comment')}
         type="text"
       />
-    </li>
+    </div>
   )
 }
