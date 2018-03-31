@@ -1,14 +1,21 @@
 // @flow
-import Menu, {type Props as MenuProps} from './Menu'
 import AsideContent from './AsideContent'
 import Header from './Header'
 import MainContent from './MainContent'
+import Menu from './Menu'
 import React from 'react'
 
-type Props = {
-  menuItems: $PropertyType<MenuProps, 'items'>,
+export type StateProps = {
+  menuItems: MenuItem[]
+}
+export type DispatchProps = {}
+export type OwnProps = {
   transition: string => void => void
 }
+export type Props =
+  & StateProps
+  & DispatchProps
+  & OwnProps
 
 export default function ConnectingToRobotPlayer(props: Props) {
   return (
