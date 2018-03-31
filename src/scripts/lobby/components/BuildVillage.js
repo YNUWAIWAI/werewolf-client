@@ -1,11 +1,26 @@
+// @flow
+import Menu, {type Props as MenuProps} from './Menu'
 import AsideContent from './AsideContent'
 import EditableVillageItem from './EditableVillageItem'
 import Header from './Header'
 import MainContent from './MainContent'
-import Menu from './Menu'
 import React from 'react'
 
-export default function BuildVillage(props) {
+type Props = {
+  handleChange: string => void => void,
+  menuItems: $PropertyType<MenuProps, 'items'>,
+  transition: string => void => void,
+  village: {
+    comment: string,
+    hostName: string,
+    numberOfHumans: number,
+    numberOfPlayers: number,
+    numberOfRobots: number,
+    villageName: string
+  }
+}
+
+export default function BuildVillage(props: Props) {
   return (
     <div className="grid">
       <Header text="Build village" />
