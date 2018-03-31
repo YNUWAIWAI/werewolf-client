@@ -1,10 +1,18 @@
-import LobbyForAudience from '../components/LobbyForAudience'
+// @flow
+import LobbyForAudience, {type DispatchProps, type StateProps} from '../components/LobbyForAudience'
+import {type SelectVillage, selectVillage} from '../actions'
+import type {Dispatch} from 'redux'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {selectVillage} from '../actions'
 
-const mapStateToProps = state => state.lobbyForAudience
-const mapDispatchToProps = dispatch => ({
-  selectVillage: id => () => dispatch(selectVillage(id))
+type Action =
+  | SelectVillage
+
+const mapStateToProps = (state: ReducerState): StateProps => state.lobbyForAudience
+const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  selectVillage: id => () => {
+    dispatch(selectVillage(id))
+  }
 })
 const LobbyForAudienceContainer = connect(
   mapStateToProps,
