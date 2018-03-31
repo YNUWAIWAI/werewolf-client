@@ -19,10 +19,10 @@ test('<EditableVillageItem villageName="villageName" hostName="hostName" numberO
   )
 
   expect(wrapper.children()).toHaveLength(10)
-  expect(wrapper.find('.village--item--village-name--val').props().defaultValue).toBe('villageName')
-  expect(wrapper.find('.village--item--host-name--val').props().defaultValue).toBe('hostName')
+  expect(wrapper.find('.village--item--village-name--val[defaultValue="villageName"]').exists()).toBe(true)
+  expect(wrapper.find('.village--item--host-name--val[defaultValue="hostName"]').exists()).toBe(true)
   expect(wrapper.find('.village--item--setup--val1').text()).toBe('<NumberSelect />players')
-  expect(wrapper.find('.village--item--comment--val').props().defaultValue).toBe('comment')
+  expect(wrapper.find('.village--item--comment--val[defaultValue="comment"]').exists()).toBe(true)
   expect(handleChange).toHaveBeenCalledTimes(5)
   expect(handleChangeEventHandler).toHaveBeenCalledTimes(0)
 })
