@@ -1,14 +1,19 @@
 // @flow
-import Menu, {type Props as MenuProps} from './Menu'
 import React, {Fragment} from 'react'
+import Menu from './Menu'
 import Player from './Player'
 
-type Props = {
+export type StateProps = {
   image: string,
-  items: $PropertyType<MenuProps, 'items'>,
-  name: string,
+  items: MenuItem[],
+  name: string
+}
+export type OwnProps = {
   transition: string => void => void
 }
+export type Props =
+  & StateProps
+  & OwnProps
 
 export default function Main(props: Props) {
   return (

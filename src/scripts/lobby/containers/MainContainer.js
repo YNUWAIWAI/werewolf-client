@@ -1,8 +1,9 @@
-import Main from '../components/Main'
+// @flow
+import Main, {type StateProps} from '../components/Main'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-const mapStateToProps = state => state.main
-
+const mapStateToProps = (state: ReducerState): StateProps => state.main
 const MainContainer = connect(
   mapStateToProps
 )(Main)
