@@ -34,9 +34,10 @@ test('<NumberSelect class="class" from={1} to={3} value={2} /> onChange', () => 
   )
 
   wrapper.find('select').simulate('change', {
-    event: {
-      target: 3
+    target: {
+      value: 3
     }
   })
   expect(handleChange).toHaveBeenCalledTimes(1)
+  expect(handleChange).toHaveBeenCalledWith(3)
 })
