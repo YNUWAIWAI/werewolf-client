@@ -2,8 +2,8 @@
 import * as types from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Action} from '.'
-import Cast from '../constants/Cast'
 import type {ReducerState} from '../reducers'
+import {getCastFromNumberOfPlayers} from '../constants/Cast'
 import {socket} from '../actions'
 
 const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
@@ -30,7 +30,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
             current: -1
           }
         },
-        roleSetting: Cast[state.buildVillage.village.numberOfPlayers][state.buildVillage.village.member],
+        roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member],
         avatar: state.buildVillage.village.avatar,
         comment: state.buildVillage.village.comment
       }
