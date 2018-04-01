@@ -11,28 +11,28 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
     case types.BUILD_VILLAGE: {
       const state = store.getState()
       const payload = {
-        name: state.buildVillage.village.villageName,
-        id: -1,
+        avatar: state.buildVillage.village.avatar,
+        comment: state.buildVillage.village.comment,
         hostPlayer: {
-          name: state.buildVillage.village.hostName,
           isAnonymous: state.buildVillage.village.avatar === 'random',
-          isHuman: state.buildVillage.village.isHuman
+          isHuman: state.buildVillage.village.isHuman,
+          name: state.buildVillage.village.hostName
         },
+        id: -1,
+        name: state.buildVillage.village.villageName,
         playerSetting: {
-          number: state.buildVillage.village.numberOfPlayers,
           current: -1,
-          robot: {
-            min: state.buildVillage.village.numberOfRobots,
-            current: -1
-          },
           human: {
-            max: state.buildVillage.village.numberOfHumans,
-            current: -1
+            current: -1,
+            max: state.buildVillage.village.numberOfHumans
+          },
+          number: state.buildVillage.village.numberOfPlayers,
+          robot: {
+            current: -1,
+            min: state.buildVillage.village.numberOfRobots
           }
         },
         roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member],
-        avatar: state.buildVillage.village.avatar,
-        comment: state.buildVillage.village.comment
       }
 
       socket.send(payload)
