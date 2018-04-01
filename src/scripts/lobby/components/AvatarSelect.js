@@ -5,7 +5,7 @@ type Props = {
   handleChange: Avatar => void,
 }
 
-export default function NumberSelect(props: Props) {
+export default function AvatarSelect(props: Props) {
   const handleChange = (event: SyntheticInputEvent<HTMLSelectElement>) => {
     const value = event.target.value
     const avatar: Avatar[] = [ 'fixed', 'random' ]
