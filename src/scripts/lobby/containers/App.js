@@ -1,17 +1,33 @@
+// @flow
+import type {Dispatch} from 'redux'
 import React from 'react'
+import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-function App(props) {
+type StateProps = {
+  content: React$ComponentType<*>
+}
+type DispatchProps = {
+  transition: string => void => void
+}
+type Props =
+  & StateProps
+  & DispatchProps
+type Action = {type: string}
+
+function App(props: Props) {
   return <props.content transition={props.transition} />
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: ReducerState): StateProps => ({
   content: state.app.content
 })
-const mapDispatchToProps = dispatch => ({
-  transition: target => () => dispatch({
-    type: target
-  })
+const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  transition: target => () => {
+    dispatch({
+      type: target
+    })
+  }
 })
 
 export default connect(
