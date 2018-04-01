@@ -27,7 +27,7 @@ type Action =
 const initialState = {
   content: Main
 }
-const app = (state: State = initialState, action: Action) => {
+const app = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SELECT_A_VILLAGE:
       return {
@@ -39,7 +39,7 @@ const app = (state: State = initialState, action: Action) => {
       }
     case ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER:
       return {
-        connect: ConnectingToRobotPlayer
+        content: ConnectingToRobotPlayer
       }
     case ActionTypes.SHOW_HISTORY:
       return {

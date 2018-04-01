@@ -28,8 +28,6 @@ export type Action =
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
   | {type: typeof ActionTypes.SHOW_MAIN}
   | {type: typeof ActionTypes.SHOW_SETTINGS}
-  | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
-  | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
 
 // const elem = document.getElementById('script')
 
