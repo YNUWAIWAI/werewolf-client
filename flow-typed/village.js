@@ -13,77 +13,77 @@ declare type TResult = Result
 declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by werewolf attack' | 'death by fear' | 'unnatural death'
 declare type Agent = {
   '@id': string,
-  'agentIsMine': boolean,
-  'name': { [Language]: string },
-  'image': string,
-  'id': number,
-  'status': AgentStatus,
-  'statusUpdatePhase': Phase,
-  'statusUpdateDate': number,
-  'isAChoice': boolean,
+  agentIsMine: boolean,
+  name: { [Language]: string },
+  image: string,
+  id: number,
+  status: AgentStatus,
+  statusUpdatePhase: Phase,
+  statusUpdateDate: number,
+  isAChoice: boolean,
 }
 declare type ReusltAgent = {
   '@id': string,
-  'agentIsMine': boolean,
-  'name': { [Language]: string },
-  'image': string,
-  'id': number,
-  'role': {
+  agentIsMine: boolean,
+  name: { [Language]: string },
+  image: string,
+  id: number,
+  role: {
     '@id': string,
-    'roleName': { [Language]: string },
-    'roleImage': string
+    roleName: { [Language]: string },
+    roleImage: string
   },
-  'status': AgentStatus,
-  'statusUpdatePhase': Phase,
-  'statusUpdateDate': number,
-  'isAChoice': boolean,
-  'result': Result,
-  'userName': string,
-  'userAvatar': string
+  status: AgentStatus,
+  statusUpdatePhase: Phase,
+  statusUpdateDate: number,
+  isAChoice: boolean,
+  result: Result,
+  userName: string,
+  userAvatar: string
 }
 declare type Role = {
   '@id': string,
-  'name': { [Language]: string },
-  'image': string,
-  'roleIsMine': boolean,
-  'numberOfAgents': number,
-  'board': Array<{
-    'boardPolarity': BoardPolarity,
-    'boardAgent': {
+  name: { [Language]: string },
+  image: string,
+  roleIsMine: boolean,
+  numberOfAgents: number,
+  board: Array<{
+    boardPolarity: BoardPolarity,
+    boardAgent: {
       '@id': string,
-      'boardAgentId': number,
-      'boardAgentName': { [Language]: string },
-      'boardAgentImage': string
+      boardAgentId: number,
+      boardAgentName: { [Language]: string },
+      boardAgentImage: string
     },
-    'boardPhase': Phase,
-    'boardDate': number
+    boardPhase: Phase,
+    boardDate: number
   }>
 }
 type Base = {
   '@id': string,
   '@context': string[],
-  'villageId': number,
-  'villageName': string,
-  'totalNumberOfAgents': number,
-  'token': string,
-  'phase': Phase,
-  'date': number,
-  'phaseTimeLimit': number,
-  'phaseStartTime': string,
-  'serverTimestamp': string,
-  'clientTimestamp': string,
-  'directionality': Directionality,
-  'intensionalDisclosureRange': Channel,
-  'extensionalDisclosureRange': [],
-  'myAgent': {
+  villageId: number,
+  villageName: string,
+  totalNumberOfAgents: number,
+  token: string,
+  phase: Phase,
+  date: number,
+  phaseTimeLimit: number,
+  phaseStartTime: string,
+  serverTimestamp: string,
+  clientTimestamp: string,
+  directionality: Directionality,
+  intensionalDisclosureRange: Channel,
+  extensionalDisclosureRange: [],
+  myAgent: {
     '@id': string,
-    'myAgentId': number,
-    'myAgentImage': string,
-    'myAgentName': { [Language]: string },
-    'myRole': {
+    myAgentId: number,
+    myAgentImage: string,
+    myAgentName: { [Language]: string },
+    myRole: {
       '@id': string,
-      'myRoleImage': string,
-      'myRoleName': { [Language]: string }
+      myRoleImage: string,
+      myRoleName: { [Language]: string }
     }
   }
 }
@@ -122,25 +122,25 @@ declare type C2SChat = {
   chatUserAvatar: string
 }
 declare type C2SBoard = {
-  'boardAgent': {
+  boardAgent: {
     '@id': string,
-    'agentId': number,
-    'agentImage': string,
-    'agentName': { [Language]: string }
+    agentId: number,
+    agentImage: string,
+    agentName: { [Language]: string }
   },
-  'boardPrediction': BoardState,
-  'boardRole': {
+  boardPrediction: BoardState,
+  boardRole: {
     '@id': string,
-    'roleImage': string,
-    'roleName': { [Language]: string }
+    roleImage: string,
+    roleName: { [Language]: string }
   }
 }
 declare type C2SVote = {
-  'votedAgent': {
+  votedAgent: {
     '@id': string,
-    'votedAgentId': number,
-    'votedAgentImage': string,
-    'votedAgentName': { [Language]: string }
+    votedAgentId: number,
+    votedAgentImage: string,
+    votedAgentName: { [Language]: string }
   }
 }
 declare type Payload<A, R, T> =
