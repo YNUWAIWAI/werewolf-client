@@ -3,41 +3,41 @@
 declare type Avatar = 'fixed' | 'random'
 declare type Member = 'A' | 'B' | 'C'
 declare type Village = {
-  name: string,
-  id: number,
-  hostPlayer: HostPlayer,
-  playerSetting: PlayerSetting,
-  roleSetting: RoleSetting,
   avatar: string,
-  comment: ?string
+  comment: ?string,
+  hostPlayer: HostPlayer,
+  id: number,
+  name: string,
+  playerSetting: PlayerSetting,
+  roleSetting: RoleSetting
 }
 declare type HostPlayer = {
-  name: string,
-  isAnonymous: boolean
+  isAnonymous: boolean,
+  name: string
 }
 declare type PlayerSetting = {
-  number: number,
   current: number,
-  robot: Robot,
-  human: Human
+  human: Human,
+  number: number,
+  robot: Robot
 }
 declare type Robot = {
-  min: number,
-  current: number
+  current: number,
+  min: number
 }
 declare type Human = {
-  max: number,
-  current: number
+  current: number,
+  max: number
 }
 declare type RoleSetting = {
-  villager: number,
-  werewolf: number,
-  seer: number,
-  medium: number,
-  madman: number,
   hunter: number,
+  madman: number,
   mason: number,
-  werehumster: number
+  medium: number,
+  seer: number,
+  villager: number,
+  werehumster: number,
+  werewolf: number
 }
 declare type MenuItem = {
   text: string,
