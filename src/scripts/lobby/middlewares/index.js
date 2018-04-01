@@ -19,6 +19,7 @@ export type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
+  | {type: typeof ActionTypes.BUILD_VILLAGE}
   | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
   | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
   | {type: typeof ActionTypes.SHOW_HISTORY}
