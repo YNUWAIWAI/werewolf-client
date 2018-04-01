@@ -1,17 +1,16 @@
 // @flow
-/* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 
 export type State = {
   isPlayer: boolean,
   menuItems: MenuItem[],
   players: {
-    token: string,
-    name: string,
     avatarImage: ?string,
     isAnonymous: boolean,
     isHost: boolean,
-    isMe: boolean
+    isMe: boolean,
+    name: string,
+    token: string
   }[],
   village: Village
 }
@@ -24,101 +23,101 @@ const initialState = {
   menuItems: [],
   players: [
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
-      'name': 'Anonymous',
       'avatarImage': null,
       'isAnonymous': true,
       'isHost': true,
-      'isMe': false
+      'isMe': false,
+      'name': 'Anonymous',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
     },
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
-      'name': 'Cathy',
       'avatarImage': 'https://werewolf.world/image/0.1/Friedel.jpg',
       'isAnonymous': true,
       'isHost': false,
-      'isMe': true
+      'isMe': true,
+      'name': 'Cathy',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
     },
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3303',
-      'name': 'Anonymous',
       'avatarImage': null,
       'isAnonymous': true,
       'isHost': false,
-      'isMe': false
+      'isMe': false,
+      'name': 'Anonymous',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
     },
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3304',
-      'name': 'Anonymous',
       'avatarImage': null,
       'isAnonymous': true,
       'isHost': false,
-      'isMe': false
+      'isMe': false,
+      'name': 'Anonymous',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
     },
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3305',
-      'name': 'Anonymous',
       'avatarImage': null,
       'isAnonymous': true,
       'isHost': false,
-      'isMe': false
+      'isMe': false,
+      'name': 'Anonymous',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
     },
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3306',
-      'name': 'Anonymous',
       'avatarImage': null,
       'isAnonymous': true,
       'isHost': false,
-      'isMe': false
+      'isMe': false,
+      'name': 'Anonymous',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
     },
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3307',
-      'name': 'Anonymous',
       'avatarImage': null,
       'isAnonymous': true,
       'isHost': false,
-      'isMe': false
+      'isMe': false,
+      'name': 'Anonymous',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
     },
     {
-      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3308',
-      'name': 'Anonymous',
       'avatarImage': null,
       'isAnonymous': true,
       'isHost': false,
-      'isMe': false
+      'isMe': false,
+      'name': 'Anonymous',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
     }
   ],
   village: {
-    'name': 'Fairytale village',
-    'id': 1,
+    'avatar': 'random',
+    'comment': 'Experts recommended',
     'hostPlayer': {
-      'name': 'Anonymous',
-      'isAnonymous': true
+      'isAnonymous': true,
+      'name': 'Anonymous'
     },
+    'id': 1,
+    'name': 'Fairytale village',
     'playerSetting': {
-      'number': 15,
       'current': 8,
-      'robot': {
-        'min': 7,
-        'current': 3
-      },
       'human': {
-        'max': 8,
-        'current': 5
+        'current': 5,
+        'max': 8
+      },
+      'number': 15,
+      'robot': {
+        'current': 3,
+        'min': 7
       }
     },
     'roleSetting': {
-      'villager': 6,
-      'werewolf': 2,
-      'seer': 1,
-      'medium': 1,
-      'madman': 1,
       'hunter': 1,
+      'madman': 1,
       'mason': 2,
-      'werehumster': 1
+      'medium': 1,
+      'seer': 1,
+      'villager': 6,
+      'werehumster': 1,
+      'werewolf': 2,
     },
-    'avatar': 'random',
-    'comment': 'Experts recommended'
   }
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {

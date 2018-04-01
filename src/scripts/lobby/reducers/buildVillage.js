@@ -1,20 +1,19 @@
 // @flow
-/* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName} from '../actions'
 
 export type State = {
   menuItems: MenuItem[],
   village: {
-    villageName: string,
-    hostName: string,
-    member: Member,
-    numberOfPlayers: number,
-    numberOfRobots: number,
-    numberOfHumans: number,
     avatar: Avatar,
     comment: string,
-    isHuman: boolean
+    hostName: string,
+    isHuman: boolean,
+    member: Member,
+    numberOfHumans: number,
+    numberOfPlayers: number,
+    numberOfRobots: number,
+    villageName: string
   }
 }
 type Action =
@@ -31,15 +30,15 @@ type Action =
 const initialState = {
   menuItems: [],
   village: {
-    villageName: 'Alice\'s village',
-    hostName: 'Alice',
-    member: 'A',
-    numberOfPlayers: 15,
-    numberOfRobots: 1,
-    numberOfHumans: 14,
     avatar: 'fixed',
     comment: '',
-    isHuman: true
+    hostName: 'Alice',
+    isHuman: true,
+    member: 'A',
+    numberOfHumans: 14,
+    numberOfPlayers: 15,
+    numberOfRobots: 1,
+    villageName: 'Alice\'s village'
   }
 }
 
