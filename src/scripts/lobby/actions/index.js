@@ -24,10 +24,6 @@ export const socket = {
   })
 }
 
-export const selectVillage = (id: number) => ({
-  id,
-  type: types.SELECT_A_VILLAGE
-})
 export const changeAvatar = (avatar: Avatar) => ({
   avatar,
   type: types.CHANGE_AVATAR
@@ -56,13 +52,16 @@ export const changeVillageName = (villageName: string) => ({
   type: types.CHANGE_VILLAGE_NAME,
   villageName
 })
+export const selectVillage = (id: number) => ({
+  id,
+  type: types.SELECT_A_VILLAGE
+})
 
 export type SocketClose = $ReadOnly<$Call<typeof socket.close, *>>
 export type SocketError = $ReadOnly<$Call<typeof socket.error, *>>
 export type SocketMessage = $ReadOnly<$Call<typeof socket.message, *>>
 export type SocketOpen = $ReadOnly<$Call<typeof socket.open, *>>
 export type SocketSend = $ReadOnly<$Call<typeof socket.send, *>>
-export type SelectVillage = $ReadOnly<$Call<typeof selectVillage, *>>
 export type ChangeAvatar = $ReadOnly<$Call<typeof changeAvatar, *>>
 export type ChangeComment = $ReadOnly<$Call<typeof changeComment, *>>
 export type ChangeHostName = $ReadOnly<$Call<typeof changeHostName, *>>
@@ -70,3 +69,4 @@ export type ChangeMember = $ReadOnly<$Call<typeof changeMember, *>>
 export type ChangeNumberOfPlayers = $ReadOnly<$Call<typeof changeNumberOfPlayers, *>>
 export type ChangeNumberOfRobots = $ReadOnly<$Call<typeof changeNumberOfRobots, *>>
 export type ChangeVillageName = $ReadOnly<$Call<typeof changeVillageName, *>>
+export type SelectVillage = $ReadOnly<$Call<typeof selectVillage, *>>
