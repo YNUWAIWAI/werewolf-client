@@ -18,6 +18,7 @@ export type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
+  | {type: string}
 
 // const elem = document.getElementById('script')
 
