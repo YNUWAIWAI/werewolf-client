@@ -9,7 +9,7 @@ export type Props = {
     text: string,
     type: string
   }[],
-  transition: string => void => void,
+  transition: string => void => void
 }
 
 export default function Menu(props: Props) {
