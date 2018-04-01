@@ -1,3 +1,4 @@
+// @flow
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
@@ -13,13 +14,19 @@ const store = createStore(
   composeWithDevTools(middleware)
 )
 
+store.dispatch({
+  type: SHOW_MAIN
+})
+
+const root = document.getElementById('root')
+
+if (!root) {
+  throw Error('Not found root element.')
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  root
 )
-
-store.dispatch({
-  type: SHOW_MAIN
-})
