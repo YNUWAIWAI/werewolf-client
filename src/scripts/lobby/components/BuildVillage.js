@@ -1,15 +1,13 @@
 // @flow
-import Menu, {type Props as MenuProps} from './Menu'
 import AsideContent from './AsideContent'
 import EditableVillageItem from './EditableVillageItem'
 import Header from './Header'
 import MainContent from './MainContent'
+import Menu from './Menu'
 import React from 'react'
 
-type Props = {
-  handleChange: string => void => void,
-  menuItems: $PropertyType<MenuProps, 'items'>,
-  transition: string => void => void,
+export type StateProps = {
+  menuItems: MenuItem[],
   village: {
     comment: string,
     hostName: string,
@@ -19,6 +17,19 @@ type Props = {
     villageName: string
   }
 }
+export type DispatchProps = {
+  handleAvatarChange: Avatar => void,
+  handleMemberChange: Member => void,
+  handleNumberChange: string => number => void,
+  handleTextChange: string => string => void
+}
+export type OwnProps = {
+  transition: string => void => void
+}
+export type Props =
+  & StateProps
+  & DispatchProps
+  & OwnProps
 
 export default function BuildVillage(props: Props) {
   return (
@@ -27,7 +38,10 @@ export default function BuildVillage(props: Props) {
       <MainContent>
         <EditableVillageItem
           {... props.village}
-          handleChange={props.handleChange}
+          handleAvatarChange={props.handleAvatarChange}
+          handleMemberChange={props.handleMemberChange}
+          handleNumberChange={props.handleNumberChange}
+          handleTextChange={props.handleTextChange}
         />
       </MainContent>
       <AsideContent>

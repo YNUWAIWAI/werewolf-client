@@ -1,4 +1,5 @@
 // @flow
+import AvatarSelect from './AvatarSelect'
 import NumberSelect from './NumberSelect'
 import React from 'react'
 import SelectableMember from './SelectableMember'
@@ -6,7 +7,10 @@ import {getCastFromNumberOfPlayers} from '../constants/Cast'
 
 type Props = {
   comment: string,
-  handleChange: string => void => void,
+  handleAvatarChange: Avatar => void,
+  handleMemberChange: Member => void,
+  handleNumberChange: string => number => void,
+  handleTextChange: string => string => void,
   hostName: string,
   numberOfHumans: number,
   numberOfPlayers: number,
@@ -23,7 +27,7 @@ export default function EditableVillageItem(props: Props) {
       <input
         className="village--item--village-name--val"
         defaultValue={props.villageName}
-        onChange={props.handleChange('villageName')}
+        onChange={props.handleTextChange('villageName')}
         type="text"
       />
       <div className="village--item--host-name--prop">
@@ -32,7 +36,7 @@ export default function EditableVillageItem(props: Props) {
       <input
         className="village--item--host-name--val"
         defaultValue={props.hostName}
-        onChange={props.handleChange('hostName')}
+        onChange={props.handleTextChange('hostName')}
         type="text"
       />
       <div className="village--item--setup--prop">
@@ -42,28 +46,18 @@ export default function EditableVillageItem(props: Props) {
         <NumberSelect
           class="village--item--setup--val1--select"
           from={5}
-          handleChange={props.handleChange('numberOfPlayers')}
+          handleChange={props.handleNumberChange('numberOfPlayers')}
           to={15}
           value={props.numberOfPlayers}
         />
         {'players'}
       </div>
       <div className="village--item--setup--val2">
-        <select
-          className="village--item--setup--val2--select"
-          name="avatar"
-          onChange={props.handleChange('avatar')}
-        >
-          <option value="fixed">
-            {'Fixed Avatar'}
-          </option>
-          <option value="random">
-            {'Random Avatar'}
-          </option>
-        </select>
+        <AvatarSelect handleChange={props.handleAvatarChange} />
       </div>
       <SelectableMember
-        handleChange={props.handleChange}
+        handleMemberChange={props.handleMemberChange}
+        handleNumberChange={props.handleNumberChange}
         numberOfHumans={props.numberOfHumans}
         numberOfPlayers={props.numberOfPlayers}
         numberOfRobots={props.numberOfRobots}
@@ -75,7 +69,7 @@ export default function EditableVillageItem(props: Props) {
       <input
         className="village--item--comment--val"
         defaultValue={props.comment}
-        onChange={props.handleChange('comment')}
+        onChange={props.handleTextChange('comment')}
         type="text"
       />
     </div>

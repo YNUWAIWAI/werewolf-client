@@ -4,6 +4,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName} from '../actions'
 
 export type State = {
+  menuItems: MenuItem[],
   village: {
     villageName: string,
     hostName: string,
@@ -11,7 +12,7 @@ export type State = {
     numberOfPlayers: number,
     numberOfRobots: number,
     numberOfHumans: number,
-    avatar: string,
+    avatar: Avatar,
     comment: string,
     isHuman: boolean
   }
@@ -28,6 +29,7 @@ type Action =
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
 
 const initialState = {
+  menuItems: [],
   village: {
     villageName: 'Alice\'s village',
     hostName: 'Alice',

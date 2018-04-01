@@ -4,7 +4,7 @@ import React from 'react'
 type Props = {
   class: string,
   from: number,
-  handleChange: void => void,
+  handleChange: number => void,
   to: number,
   value: number
 }
@@ -22,7 +22,7 @@ export default function NumberSelect(props: Props) {
   return (
     <select
       className={props.class}
-      onChange={props.handleChange}
+      onChange={(event: SyntheticInputEvent<HTMLSelectElement>) => props.handleChange(Number(event.target.value))}
       value={props.value}
     >
       {options}

@@ -1,19 +1,19 @@
 // @flow
-import Cast from '../constants/Cast'
 import MemberRole from './MemberRole'
 import NumberSelect from './NumberSelect'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
 type Props = {
-  handleChange: string => void => void,
+  handleMemberChange: Member => void,
+  handleNumberChange: string => number => void,
   numberOfHumans: number,
   numberOfPlayers: number,
   numberOfRobots: number,
   role: {
-    A: $PropertyType<$PropertyType<typeof Cast, '15'>, 'A'>,
-    B: $PropertyType<$PropertyType<typeof Cast, '15'>, 'B'>,
-    C: $PropertyType<$PropertyType<typeof Cast, '15'>, 'C'>
+    A: RoleSetting,
+    B: RoleSetting,
+    C: RoleSetting
   }
 }
 
@@ -44,7 +44,7 @@ export default function SelectableMember(props: Props) {
         <NumberSelect
           class="village--item--selectable-member--robot--select"
           from={0}
-          handleChange={props.handleChange('numberOfRobots')}
+          handleChange={props.handleNumberChange('numberOfRobots')}
           to={props.numberOfPlayers}
           value={props.numberOfRobots}
         />
@@ -58,7 +58,7 @@ export default function SelectableMember(props: Props) {
           <input
             defaultChecked
             name="member"
-            onChange={props.handleChange('member')}
+            onChange={() => props.handleMemberChange('A')}
             type="radio"
             value="A"
           />
@@ -72,7 +72,7 @@ export default function SelectableMember(props: Props) {
         <div className="village--item--selectable-member--role--radio">
           <input
             name="member"
-            onChange={props.handleChange('member')}
+            onChange={() => props.handleMemberChange('B')}
             type="radio"
             value="B"
           />
@@ -86,7 +86,7 @@ export default function SelectableMember(props: Props) {
         <div className="village--item--selectable-member--role--radio">
           <input
             name="member"
-            onChange={props.handleChange('member')}
+            onChange={() => props.handleMemberChange('C')}
             type="radio"
             value="C"
           />
