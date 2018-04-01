@@ -1,5 +1,6 @@
 // @flow
 import * as actions from '../actions'
+import * as ActionTypes from '../constants/ActionTypes'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
 import logger from './logger'
@@ -18,7 +19,16 @@ export type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
-  | {type: string}
+  | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
+  | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
+  | {type: typeof ActionTypes.SHOW_HISTORY}
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_AUDIENCE}
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
+  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
+  | {type: typeof ActionTypes.SHOW_MAIN}
+  | {type: typeof ActionTypes.SHOW_SETTINGS}
+  | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
+  | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
 
 // const elem = document.getElementById('script')
 

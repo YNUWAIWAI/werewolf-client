@@ -1,9 +1,9 @@
 // @flow
 import * as types from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
-import {socket as socketAction} from '../actions'
 import {type Action} from '.'
 import type {ReducerState} from '../reducers'
+import {socket as socketAction} from '../actions'
 
 let socket
 let retryCount = 0
