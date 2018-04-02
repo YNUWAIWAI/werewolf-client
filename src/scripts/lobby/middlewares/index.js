@@ -1,5 +1,4 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
