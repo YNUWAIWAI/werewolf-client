@@ -17,8 +17,18 @@ test('<NumberSelect class="class" from={1} to={3} value={2} />', () => {
 
   expect(wrapper.find('select[value=2]').exists()).toBe(true)
   expect(wrapper.find('option')).toHaveLength(3)
-  expect(wrapper.find('option').first().text()).toBe('3')
-  expect(wrapper.find('option').last().text()).toBe('1')
+  expect(
+    wrapper
+      .find('option')
+      .first()
+      .text()
+  ).toBe('3')
+  expect(
+    wrapper
+      .find('option')
+      .last()
+      .text()
+  ).toBe('1')
   expect(handleChange).toHaveBeenCalledTimes(0)
 })
 test('<NumberSelect class="class" from={1} to={3} value={2} /> onChange', () => {

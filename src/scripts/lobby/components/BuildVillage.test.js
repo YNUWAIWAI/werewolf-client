@@ -31,9 +31,19 @@ test('<BuildVillage />', () => {
 
   expect(wrapper.find('Header').exists()).toBe(true)
   expect(wrapper.find('MainContent').exists()).toBe(true)
-  expect(wrapper.find('MainContent').find('EditableVillageItem').exists()).toBe(true)
+  expect(
+    wrapper
+      .find('MainContent')
+      .find('EditableVillageItem')
+      .exists()
+  ).toBe(true)
   expect(wrapper.find('AsideContent').exists()).toBe(true)
-  expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
+  expect(
+    wrapper
+      .find('AsideContent')
+      .find('Menu')
+      .exists()
+  ).toBe(true)
   expect(handleAvatarChange).toHaveBeenCalledTimes(0)
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleNumberChange).toHaveBeenCalledTimes(0)

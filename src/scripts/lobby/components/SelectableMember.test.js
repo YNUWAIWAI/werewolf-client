@@ -109,10 +109,19 @@ test('<SelectableMember numberOfHumans={7} numberOfPlayers={15} numberOfRobots={
   )
 
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
-  wrapper.find('.village--item--selectable-member--role--radio').find('input[value="A"]').simulate('change')
+  wrapper
+    .find('.village--item--selectable-member--role--radio')
+    .find('input[value="A"]')
+    .simulate('change')
   expect(handleMemberChange).toHaveBeenCalledTimes(1)
-  wrapper.find('.village--item--selectable-member--role--radio').find('input[value="B"]').simulate('change')
+  wrapper
+    .find('.village--item--selectable-member--role--radio')
+    .find('input[value="B"]')
+    .simulate('change')
   expect(handleMemberChange).toHaveBeenCalledTimes(2)
-  wrapper.find('.village--item--selectable-member--role--radio').find('input[value="C"]').simulate('change')
+  wrapper
+    .find('.village--item--selectable-member--role--radio')
+    .find('input[value="C"]')
+    .simulate('change')
   expect(handleMemberChange).toHaveBeenCalledTimes(3)
 })

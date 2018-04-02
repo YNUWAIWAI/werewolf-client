@@ -50,9 +50,24 @@ test('<WaitingForPlayers isPlayer />', () => {
   expect(wrapper.children()).toHaveLength(3)
   expect(wrapper.find('Header').exists()).toBe(true)
   expect(wrapper.find('MainContent').exists()).toBe(true)
-  expect(wrapper.find('MainContent').find('VillageItem').exists()).toBe(true)
+  expect(
+    wrapper
+      .find('MainContent')
+      .find('VillageItem')
+      .exists()
+  ).toBe(true)
   expect(wrapper.find('AsideContent').exists()).toBe(true)
-  expect(wrapper.find('AsideContent').find('AvatarList').exists()).toBe(true)
-  expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
+  expect(
+    wrapper
+      .find('AsideContent')
+      .find('AvatarList')
+      .exists()
+  ).toBe(true)
+  expect(
+    wrapper
+      .find('AsideContent')
+      .find('Menu')
+      .exists()
+  ).toBe(true)
   expect(transition).toHaveBeenCalledTimes(0)
 })

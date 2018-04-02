@@ -7,7 +7,6 @@ import {socket as socketAction} from '../actions'
 
 let socket
 let retryCount = 0
-let isReady = false
 
 const socketMiddleware: ({url: string, retry?: number}) => Middleware<ReducerState, Action, DispatchAPI<Action>> = option => store => next => action => {
   const retry = option.retry || 5
