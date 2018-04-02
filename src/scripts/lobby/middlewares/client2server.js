@@ -50,6 +50,16 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
+    case types.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
+      const payload = {
+        lobby: 'human player',
+        page: 1
+      }
+
+      socket.send(payload)
+
+      return next(action)
+    }
     default:
       return next(action)
   }
