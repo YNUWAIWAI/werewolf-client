@@ -14,31 +14,24 @@ export type Action =
   | actions.ChangeNumberOfPlayers
   | actions.ChangeNumberOfRobots
   | actions.ChangeVillageName
+  | actions.SelectVillage
   | actions.SocketClose
   | actions.SocketError
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
-  | {type: typeof ActionTypes.BUILD_VILLAGE}
-  | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
-  | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
-  | {type: typeof ActionTypes.SHOW_HISTORY}
-  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_AUDIENCE}
-  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
-  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
-  | {type: typeof ActionTypes.SHOW_MAIN}
-  | {type: typeof ActionTypes.SHOW_SETTINGS}
+  | actions.Transition
 
-// const elem = document.getElementById('script')
+const elem = document.getElementById('script')
 
-// if (!elem || !elem.dataset || !elem.dataset.url) {
-//   throw Error('Not found data-url attribute.')
-// }
-// const url = elem.dataset.url
+if (!elem || !elem.dataset || !elem.dataset.url) {
+  throw Error('Not found data-url attribute.')
+}
+const url = elem.dataset.url
 const middleware = applyMiddleware(
-  // socket({
-  //   url
-  // }),
+  socket({
+    url
+  }),
   client2server,
   logger
 )

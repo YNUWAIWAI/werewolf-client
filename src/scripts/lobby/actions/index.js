@@ -52,9 +52,9 @@ export const changeVillageName = (villageName: string): {type: 'CHANGE_VILLAGE_N
   type: types.CHANGE_VILLAGE_NAME,
   villageName
 })
-export const selectVillage = (id: number): {id: number, type: 'SELECT_A_VILLAGE'} => ({
+export const selectVillage = (id: number): {id: number, type: 'SELECT_VILLAGE'} => ({
   id,
-  type: types.SELECT_A_VILLAGE
+  type: types.SELECT_VILLAGE
 })
 export const transition = (target: Target): {type: Target} => ({
   type: target
