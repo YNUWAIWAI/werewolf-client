@@ -1,5 +1,4 @@
 // @flow
-
 declare type Avatar = 'fixed' | 'random'
 declare type Member = 'A' | 'B' | 'C'
 declare type Village = {
@@ -39,8 +38,23 @@ declare type RoleSetting = {
   werehumster: number,
   werewolf: number
 }
+declare type Target =
+  | 'BUILD_VILLAGE'
+  | 'PLAY_GAME'
+  | 'REFRESH'
+  | 'SEARCH_FOR_A_VILLAGE'
+  | 'SEARCH_FOR_A_VILLAGE_IN_SESSION'
+  | 'SEARCH_FOR_AN_OLD_VILLAGE'
+  | 'SHOW_BUILD_VILLAGE'
+  | 'SHOW_CONNECTING_TO_ROBOT_PLAYER'
+  | 'SHOW_HISTORY'
+  | 'SHOW_LOBBY_FOR_AUDIENCE'
+  | 'SHOW_LOBBY_FOR_HUMAN_PLAYER'
+  | 'SHOW_LOBBY_FOR_ROBOT_PLAYER'
+  | 'SHOW_MAIN'
+  | 'SHOW_SETTINGS'
 declare type MenuItem = {
   text: string,
-  type: string
+  type: Target
 }
 declare type TMenuItem = MenuItem
