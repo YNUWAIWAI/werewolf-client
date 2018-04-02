@@ -4,8 +4,8 @@ import React from 'react'
 type Props = {
   +class: string,
   +text: string,
-  +transition: string => void => void,
-  +type: string
+  +transition: Target => void => void,
+  +type: Target
 }
 
 export default function MenuItem(props: Props) {

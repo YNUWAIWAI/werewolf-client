@@ -3,17 +3,18 @@ import type {Dispatch} from 'redux'
 import React from 'react'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {transition} from '../actions'
 
 type StateProps = {
   +content: React$ComponentType<*>
 }
 type DispatchProps = {
-  +transition: string => void => void
+  +transition: Target => void => void
 }
 type Props =
   & StateProps
   & DispatchProps
-type Action = {type: string}
+type Action = {type: Target}
 
 function App(props: Props) {
   return <props.content transition={props.transition} />
@@ -24,9 +25,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   transition: target => () => {
-    dispatch({
-      type: target
-    })
+    dispatch(transition(target))
   }
 })
 

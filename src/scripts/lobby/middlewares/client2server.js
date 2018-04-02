@@ -39,6 +39,17 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
+    case types.SELECT_A_VILLAGE: {
+      const payload = {
+        village: {
+          id: action.id
+        }
+      }
+
+      socket.send(payload)
+
+      return next(action)
+    }
     default:
       return next(action)
   }
