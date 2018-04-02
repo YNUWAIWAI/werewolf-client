@@ -19,7 +19,7 @@ test('<Menu class="class" itemClass="itemClass" /> 1 item', () => {
   const items = [
     {
       text: 'text',
-      type: 'type'
+      type: 'SHOW_MAIN'
     }
   ]
   const wrapper = shallow(<Menu class="class" itemClass="itemClass" items={items} transition={transition} />)
@@ -34,11 +34,11 @@ test('<Menu class="class" itemClass="itemClass" /> 2 items', () => {
   const items = [
     {
       text: 'text',
-      type: 'type'
+      type: 'SHOW_MAIN'
     },
     {
       text: 'text',
-      type: 'type'
+      type: 'SHOW_MAIN'
     }
   ]
   const wrapper = shallow(<Menu class="class" itemClass="itemClass" items={items} transition={transition} />)
