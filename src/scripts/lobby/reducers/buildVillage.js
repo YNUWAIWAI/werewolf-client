@@ -3,17 +3,17 @@ import * as ActionTypes from '../constants/ActionTypes'
 import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName} from '../actions'
 
 export type State = {
-  menuItems: MenuItem[],
-  village: {
-    avatar: Avatar,
-    comment: string,
-    hostName: string,
-    isHuman: boolean,
-    member: Member,
-    numberOfHumans: number,
-    numberOfPlayers: number,
-    numberOfRobots: number,
-    villageName: string
+  +menuItems: MenuItem[],
+  +village: {
+    +avatar: Avatar,
+    +comment: string,
+    +hostName: string,
+    +isHuman: boolean,
+    +member: Member,
+    +numberOfHumans: number,
+    +numberOfPlayers: number,
+    +numberOfRobots: number,
+    +villageName: string
   }
 }
 type Action =

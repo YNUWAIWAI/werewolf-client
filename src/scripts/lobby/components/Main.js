@@ -4,12 +4,12 @@ import Menu from './Menu'
 import Player from './Player'
 
 export type StateProps = {
-  image: string,
-  items: MenuItem[],
-  name: string
+  +image: string,
+  +items: MenuItem[],
+  +name: string
 }
 export type OwnProps = {
-  transition: string => void => void
+  +transition: string => void => void
 }
 export type Props =
   & StateProps

@@ -2,7 +2,7 @@
 import React from 'react'
 
 type Props = {
-  text: string
+  +text: string
 }
 
 export default function Header(props: Props) {

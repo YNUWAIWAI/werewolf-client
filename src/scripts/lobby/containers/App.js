@@ -5,10 +5,10 @@ import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type StateProps = {
-  content: React$ComponentType<*>
+  +content: React$ComponentType<*>
 }
 type DispatchProps = {
-  transition: string => void => void
+  +transition: string => void => void
 }
 type Props =
   & StateProps

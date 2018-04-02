@@ -6,16 +6,16 @@ import SelectableMember from './SelectableMember'
 import {getCastFromNumberOfPlayers} from '../constants/Cast'
 
 type Props = {
-  comment: string,
-  handleAvatarChange: Avatar => void,
-  handleMemberChange: Member => void,
-  handleNumberChange: string => number => void,
-  handleTextChange: string => string => void,
-  hostName: string,
-  numberOfHumans: number,
-  numberOfPlayers: number,
-  numberOfRobots: number,
-  villageName: string
+  +comment: string,
+  +handleAvatarChange: Avatar => void,
+  +handleMemberChange: Member => void,
+  +handleNumberChange: string => number => void,
+  +handleTextChange: string => string => void,
+  +hostName: string,
+  +numberOfHumans: number,
+  +numberOfPlayers: number,
+  +numberOfRobots: number,
+  +villageName: string
 }
 
 export default function EditableVillageItem(props: Props) {

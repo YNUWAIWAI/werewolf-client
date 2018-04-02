@@ -4,9 +4,9 @@ import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
 type Props = {
-  human: Human,
-  robot: Robot,
-  role: RoleSetting
+  +human: Human,
+  +robot: Robot,
+  +role: RoleSetting
 }
 
 export default function Member(props: Props) {

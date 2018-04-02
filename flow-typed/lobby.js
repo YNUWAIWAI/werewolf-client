@@ -43,3 +43,4 @@ declare type MenuItem = {
   text: string,
   type: string
 }
+declare type TMenuItem = MenuItem

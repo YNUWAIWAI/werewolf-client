@@ -7,24 +7,24 @@ import Menu from './Menu'
 import React from 'react'
 
 export type StateProps = {
-  menuItems: MenuItem[],
-  village: {
-    comment: string,
-    hostName: string,
-    numberOfHumans: number,
-    numberOfPlayers: number,
-    numberOfRobots: number,
-    villageName: string
+  +menuItems: MenuItem[],
+  +village: {
+    +comment: string,
+    +hostName: string,
+    +numberOfHumans: number,
+    +numberOfPlayers: number,
+    +numberOfRobots: number,
+    +villageName: string
   }
 }
 export type DispatchProps = {
-  handleAvatarChange: Avatar => void,
-  handleMemberChange: Member => void,
-  handleNumberChange: string => number => void,
-  handleTextChange: string => string => void
+  +handleAvatarChange: Avatar => void,
+  +handleMemberChange: Member => void,
+  +handleNumberChange: string => number => void,
+  +handleTextChange: string => string => void
 }
 export type OwnProps = {
-  transition: string => void => void
+  +transition: string => void => void
 }
 export type Props =
   & StateProps

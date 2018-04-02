@@ -2,11 +2,11 @@
 import React from 'react'
 
 type Props = {
-  class: string,
-  from: number,
-  handleChange: number => void,
-  to: number,
-  value: number
+  +class: string,
+  +from: number,
+  +handleChange: number => void,
+  +to: number,
+  +value: number
 }
 
 export default function NumberSelect(props: Props) {

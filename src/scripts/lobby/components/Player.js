@@ -2,8 +2,8 @@
 import React from 'react'
 
 type Props = {
-  image: string,
-  name: string
+  +image: string,
+  +name: string
 }
 
 export default function Player(props: Props) {

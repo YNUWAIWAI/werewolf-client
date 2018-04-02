@@ -7,15 +7,15 @@ import React from 'react'
 import VillageList from './VillageList'
 
 export type StateProps = {
-  isPlayer: boolean,
-  menuItems: MenuItem[],
-  villageItems: Village[]
+  +isPlayer: boolean,
+  +menuItems: MenuItem[],
+  +villageItems: Village[]
 }
 export type DispatchProps = {
-  selectVillage: number => void => void
+  +selectVillage: number => void => void
 }
 export type OwnProps = {
-  transition: string => void => void
+  +transition: string => void => void
 }
 export type Props =
   & StateProps

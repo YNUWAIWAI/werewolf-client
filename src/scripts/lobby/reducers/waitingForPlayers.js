@@ -2,17 +2,17 @@
 import * as ActionTypes from '../constants/ActionTypes'
 
 export type State = {
-  isPlayer: boolean,
-  menuItems: MenuItem[],
-  players: {
-    avatarImage: ?string,
-    isAnonymous: boolean,
-    isHost: boolean,
-    isMe: boolean,
-    name: string,
-    token: string
+  +isPlayer: boolean,
+  +menuItems: MenuItem[],
+  +players: {
+    +avatarImage: ?string,
+    +isAnonymous: boolean,
+    +isHost: boolean,
+    +isMe: boolean,
+    +name: string,
+    +token: string
   }[],
-  village: Village
+  +village: Village
 }
 type Action =
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}

@@ -3,8 +3,8 @@ import AvatarItem, {type Props as AvatarItemProps} from './AvatarItem'
 import React from 'react'
 
 export type Props = {
-  isPlayer: boolean,
-  items: (AvatarItemProps & {token: string})[]
+  +isPlayer: boolean,
+  +items: (AvatarItemProps & {token: string})[]
 }
 
 export default function AvatarList(props: Props) {

@@ -3,13 +3,10 @@ import MenuItem from './MenuItem'
 import React from 'react'
 
 export type Props = {
-  class: string,
-  itemClass: string,
-  items: {
-    text: string,
-    type: string
-  }[],
-  transition: string => void => void
+  +class: string,
+  +itemClass: string,
+  +items: TMenuItem[],
+  +transition: string => void => void
 }
 
 export default function Menu(props: Props) {

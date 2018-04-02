@@ -3,9 +3,9 @@ import React from 'react'
 import VillageItem from './VillageItem'
 
 type Props = {
-  isPlayer: boolean,
-  items: Village[],
-  selectVillage: number => void => void
+  +isPlayer: boolean,
+  +items: Village[],
+  +selectVillage: number => void => void
 }
 
 export default function VillageList(props: Props) {

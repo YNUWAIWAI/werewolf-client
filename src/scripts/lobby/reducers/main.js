@@ -2,9 +2,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 
 export type State = {
-  image: string,
-  items: MenuItem[],
-  name: string
+  +image: string,
+  +items: MenuItem[],
+  +name: string
 }
 type Action = void
 

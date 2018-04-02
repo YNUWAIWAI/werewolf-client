@@ -8,13 +8,13 @@ import React from 'react'
 import VillageItem from './VillageItem'
 
 export type StateProps = {
-  isPlayer: boolean,
-  menuItems: MenuItem[],
-  players: $PropertyType<AvatarListProps, 'items'>,
-  village: Village
+  +isPlayer: boolean,
+  +menuItems: MenuItem[],
+  +players: $PropertyType<AvatarListProps, 'items'>,
+  +village: Village
 }
 export type OwnProps = {
-  transition: string => void => void,
+  +transition: string => void => void,
 }
 export type Props =
   & StateProps

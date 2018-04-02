@@ -2,11 +2,11 @@
 import React from 'react'
 
 type Props = {
-  class: string,
-  id: string,
-  image: string,
-  name: string,
-  numberOfAgents: number
+  +class: string,
+  +id: string,
+  +image: string,
+  +name: string,
+  +numberOfAgents: number
 }
 
 export default function MemberRole(props: Props) {

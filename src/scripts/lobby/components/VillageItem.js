@@ -3,9 +3,9 @@ import Member from './Member'
 import React from 'react'
 
 type Props = {
-  handleClick: void => void,
-  isPlayer: boolean
-} & Village
+  +handleClick: void => void,
+  +isPlayer: boolean
+} & $ReadOnly<Village>
 
 export default function VillageItem(props: Props) {
   return (

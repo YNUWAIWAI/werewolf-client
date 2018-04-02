@@ -12,7 +12,7 @@ import Settings from '../containers/SettingsContainer'
 import WaitingForPlayers from '../containers/WaitingForPlayersContainer'
 
 export type State = {
-  content: React$ComponentType<*>
+  +content: React$ComponentType<*>
 }
 type Action =
   | SelectVillage

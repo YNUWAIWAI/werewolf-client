@@ -2,7 +2,7 @@
 import React from 'react'
 
 type Props = {
-  handleChange: Avatar => void
+  +handleChange: Avatar => void
 }
 
 export default function AvatarSelect(props: Props) {

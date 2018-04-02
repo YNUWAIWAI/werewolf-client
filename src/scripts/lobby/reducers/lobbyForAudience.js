@@ -3,9 +3,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 
 export type State = {
-  isPlayer: boolean,
-  menuItems: MenuItem[],
-  villageItems: Village[]
+  +isPlayer: boolean,
+  +menuItems: MenuItem[],
+  +villageItems: Village[]
 }
 type Action = void
 

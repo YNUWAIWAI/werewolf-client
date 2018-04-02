@@ -6,10 +6,10 @@ import Menu from './Menu'
 import React from 'react'
 
 export type StateProps = {
-  menuItems: MenuItem[]
+  +menuItems: MenuItem[]
 }
 export type OwnProps = {
-  transition: string => void => void
+  +transition: string => void => void
 }
 export type Props =
   & StateProps

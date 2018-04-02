@@ -5,15 +5,15 @@ import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
 type Props = {
-  handleMemberChange: Member => void,
-  handleNumberChange: string => number => void,
-  numberOfHumans: number,
-  numberOfPlayers: number,
-  numberOfRobots: number,
-  role: {
-    A: RoleSetting,
-    B: RoleSetting,
-    C: RoleSetting
+  +handleMemberChange: Member => void,
+  +handleNumberChange: string => number => void,
+  +numberOfHumans: number,
+  +numberOfPlayers: number,
+  +numberOfRobots: number,
+  +role: {
+    +A: RoleSetting,
+    +B: RoleSetting,
+    +C: RoleSetting
   }
 }
 

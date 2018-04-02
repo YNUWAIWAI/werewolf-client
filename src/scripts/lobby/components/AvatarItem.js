@@ -2,9 +2,9 @@
 import React from 'react'
 
 export type Props = {
-  avatarImage: string,
-  isHost: boolean,
-  name: string
+  +avatarImage: string,
+  +isHost: boolean,
+  +name: string
 }
 
 export default function AvatarItem(props: Props) {
