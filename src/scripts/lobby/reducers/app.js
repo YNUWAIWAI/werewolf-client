@@ -29,7 +29,7 @@ const initialState = {
 }
 const app = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SELECT_A_VILLAGE:
+    case ActionTypes.SELECT_VILLAGE:
       return {
         content: WaitingForPlayers
       }
