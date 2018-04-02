@@ -5,36 +5,36 @@ import {shallow} from 'enzyme'
 
 test('<VillageItem isPlayer />', () => {
   const village: Village = {
-    name: 'name',
-    id: 1,
+    avatar: 'fixed',
+    comment: 'comment',
     hostPlayer: {
-      name: 'hostPlayer name',
-      isAnonymous: false
+      isAnonymous: false,
+      name: 'hostPlayer name'
     },
+    id: 1,
+    name: 'name',
     playerSetting: {
-      number: 15,
       current: 8,
-      robot: {
-        min: 7,
-        current: 3
-      },
       human: {
-        max: 8,
-        current: 5
+        current: 5,
+        max: 8
+      },
+      number: 15,
+      robot: {
+        current: 3,
+        min: 7
       }
     },
     roleSetting: {
-      villager: 6,
-      werewolf: 2,
-      seer: 1,
-      medium: 1,
-      madman: 1,
       hunter: 1,
+      madman: 1,
       mason: 2,
-      werehumster: 1
-    },
-    avatar: 'fixed',
-    comment: 'comment'
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 1,
+      werewolf: 2
+    }
   }
   const handleClick = jest.fn()
   const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer />)
@@ -49,36 +49,36 @@ test('<VillageItem isPlayer />', () => {
 })
 test('<VillageItem isPlayer={false} />', () => {
   const village: Village = {
-    name: 'name',
-    id: 1,
+    avatar: 'random',
+    comment: 'comment',
     hostPlayer: {
-      name: 'hostPlayer name',
-      isAnonymous: false
+      isAnonymous: false,
+      name: 'hostPlayer name'
     },
+    id: 1,
+    name: 'name',
     playerSetting: {
-      number: 15,
       current: 8,
-      robot: {
-        min: 7,
-        current: 3
-      },
       human: {
-        max: 8,
-        current: 5
+        current: 5,
+        max: 8
+      },
+      number: 15,
+      robot: {
+        current: 3,
+        min: 7
       }
     },
     roleSetting: {
-      villager: 6,
-      werewolf: 2,
-      seer: 1,
-      medium: 1,
-      madman: 1,
       hunter: 1,
+      madman: 1,
       mason: 2,
-      werehumster: 1
-    },
-    avatar: 'random',
-    comment: 'comment'
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 1,
+      werewolf: 2
+    }
   }
   const handleClick = jest.fn()
   const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)
@@ -93,36 +93,36 @@ test('<VillageItem isPlayer={false} />', () => {
 })
 test('<VillageItem isPlayer /> onClick', () => {
   const village: Village = {
-    name: 'name',
-    id: 1,
+    avatar: 'fixed',
+    comment: 'comment',
     hostPlayer: {
-      name: 'hostPlayer name',
-      isAnonymous: false
+      isAnonymous: false,
+      name: 'hostPlayer name'
     },
+    id: 1,
+    name: 'name',
     playerSetting: {
-      number: 15,
       current: 8,
-      robot: {
-        min: 7,
-        current: 3
-      },
       human: {
-        max: 8,
-        current: 5
+        current: 5,
+        max: 8
+      },
+      number: 15,
+      robot: {
+        current: 3,
+        min: 7
       }
     },
     roleSetting: {
-      villager: 6,
-      werewolf: 2,
-      seer: 1,
-      medium: 1,
-      madman: 1,
       hunter: 1,
+      madman: 1,
       mason: 2,
-      werehumster: 1
-    },
-    avatar: 'fixed',
-    comment: 'comment'
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 1,
+      werewolf: 2
+    }
   }
   const handleClick = jest.fn()
   const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer />)
@@ -132,36 +132,36 @@ test('<VillageItem isPlayer /> onClick', () => {
 })
 test('<VillageItem isPlayer={false} /> onClick', () => {
   const village: Village = {
-    name: 'name',
-    id: 1,
+    avatar: 'random',
+    comment: 'comment',
     hostPlayer: {
-      name: 'hostPlayer name',
-      isAnonymous: false
+      isAnonymous: false,
+      name: 'hostPlayer name'
     },
+    id: 1,
+    name: 'name',
     playerSetting: {
-      number: 15,
       current: 8,
-      robot: {
-        min: 7,
-        current: 3
-      },
       human: {
-        max: 8,
-        current: 5
+        current: 5,
+        max: 8
+      },
+      number: 15,
+      robot: {
+        current: 3,
+        min: 7
       }
     },
     roleSetting: {
-      villager: 6,
-      werewolf: 2,
-      seer: 1,
-      medium: 1,
-      madman: 1,
       hunter: 1,
+      madman: 1,
       mason: 2,
-      werehumster: 1
-    },
-    avatar: 'random',
-    comment: 'comment'
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 1,
+      werewolf: 2
+    }
   }
   const handleClick = jest.fn()
   const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)

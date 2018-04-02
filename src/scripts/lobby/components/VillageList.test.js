@@ -16,36 +16,36 @@ test('<VillageList isPlayer /> 0 item', () => {
 test('<VillageList isPlayer /> 1 item', () => {
   const items: Village[] = [
     {
-      name: 'name',
-      id: 1,
+      avatar: 'fixed',
+      comment: 'comment',
       hostPlayer: {
-        name: 'hostPlayer name',
-        isAnonymous: false
+        isAnonymous: false,
+        name: 'hostPlayer name'
       },
+      id: 1,
+      name: 'name',
       playerSetting: {
-        number: 15,
         current: 8,
-        robot: {
-          min: 7,
-          current: 3
-        },
         human: {
-          max: 8,
-          current: 5
+          current: 5,
+          max: 8
+        },
+        number: 15,
+        robot: {
+          current: 3,
+          min: 7
         }
       },
       roleSetting: {
-        villager: 6,
-        werewolf: 2,
-        seer: 1,
-        medium: 1,
-        madman: 1,
         hunter: 1,
+        madman: 1,
         mason: 2,
-        werehumster: 1
-      },
-      avatar: 'fixed',
-      comment: 'comment'
+        medium: 1,
+        seer: 1,
+        villager: 6,
+        werehumster: 1,
+        werewolf: 2
+      }
     }
   ]
   const selectVillageEventHandler = jest.fn()
@@ -60,68 +60,68 @@ test('<VillageList isPlayer /> 1 item', () => {
 test('<VillageList isPlayer /> 2 item', () => {
   const items: Village[] = [
     {
-      name: 'name',
-      id: 1,
+      avatar: 'fixed',
+      comment: 'comment',
       hostPlayer: {
-        name: 'hostPlayer name',
-        isAnonymous: false
+        isAnonymous: false,
+        name: 'hostPlayer name'
       },
+      id: 1,
+      name: 'name',
       playerSetting: {
-        number: 15,
         current: 8,
-        robot: {
-          min: 7,
-          current: 3
-        },
         human: {
-          max: 8,
-          current: 5
+          current: 5,
+          max: 8
+        },
+        number: 15,
+        robot: {
+          current: 3,
+          min: 7
         }
       },
       roleSetting: {
-        villager: 6,
-        werewolf: 2,
-        seer: 1,
-        medium: 1,
-        madman: 1,
         hunter: 1,
+        madman: 1,
         mason: 2,
-        werehumster: 1
-      },
-      avatar: 'fixed',
-      comment: 'comment'
+        medium: 1,
+        seer: 1,
+        villager: 6,
+        werehumster: 1,
+        werewolf: 2
+      }
     },
     {
-      name: 'name',
-      id: 2,
+      avatar: 'fixed',
+      comment: 'comment',
       hostPlayer: {
-        name: 'hostPlayer name',
-        isAnonymous: false
+        isAnonymous: false,
+        name: 'hostPlayer name'
       },
+      id: 2,
+      name: 'name',
       playerSetting: {
-        number: 15,
         current: 8,
-        robot: {
-          min: 7,
-          current: 3
-        },
         human: {
-          max: 8,
-          current: 5
+          current: 5,
+          max: 8
+        },
+        number: 15,
+        robot: {
+          current: 3,
+          min: 7
         }
       },
       roleSetting: {
-        villager: 6,
-        werewolf: 2,
-        seer: 1,
-        medium: 1,
-        madman: 1,
         hunter: 1,
+        madman: 1,
         mason: 2,
-        werehumster: 1
-      },
-      avatar: 'fixed',
-      comment: 'comment'
+        medium: 1,
+        seer: 1,
+        villager: 6,
+        werehumster: 1,
+        werewolf: 2
+      }
     }
   ]
   const selectVillageEventHandler = jest.fn()

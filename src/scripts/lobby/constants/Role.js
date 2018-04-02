@@ -25,7 +25,7 @@ export const MEDIUM = {
   name: {
     en: 'Medium',
     ja: '霊媒師'
-  },
+  }
 }
 export const HUNTER = {
   id: 'hunter',
@@ -33,7 +33,7 @@ export const HUNTER = {
   name: {
     en: 'Hunter',
     ja: 'ハンター'
-  },
+  }
 }
 export const MASON = {
   id: 'mason',
@@ -41,7 +41,7 @@ export const MASON = {
   name: {
     en: 'Mason',
     ja: '共有者'
-  },
+  }
 }
 export const MADMAN = {
   id: 'madman',
@@ -49,7 +49,7 @@ export const MADMAN = {
   name: {
     en: 'Madman',
     ja: '狂人'
-  },
+  }
 }
 export const WEREWOLF = {
   id: 'werewolf',
@@ -57,7 +57,7 @@ export const WEREWOLF = {
   name: {
     en: 'Werewolf',
     ja: '人狼'
-  },
+  }
 }
 export const WEREHUMSTER = {
   id: 'werehumster',
@@ -65,7 +65,7 @@ export const WEREHUMSTER = {
   name: {
     en: 'Werehumster',
     ja: 'ハムスター人間'
-  },
+  }
 }
 
 export const ORDERED_ROLE_LIST = [

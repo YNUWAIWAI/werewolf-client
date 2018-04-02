@@ -32,7 +32,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
             min: state.buildVillage.village.numberOfRobots
           }
         },
-        roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member],
+        roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member]
       }
 
       socket.send(payload)

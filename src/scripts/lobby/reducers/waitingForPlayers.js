@@ -116,8 +116,8 @@ const initialState = {
       'seer': 1,
       'villager': 6,
       'werehumster': 1,
-      'werewolf': 2,
-    },
+      'werewolf': 2
+    }
   }
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
