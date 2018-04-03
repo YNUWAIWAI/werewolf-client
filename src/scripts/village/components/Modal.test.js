@@ -22,9 +22,19 @@ test('<Modal id={1} image="image" name="name" text="text" visible />', () => {
   expect(wrapper.find('Description').exists()).toBe(true)
   expect(wrapper.find('.modal--button')).toHaveLength(2)
   expect(wrapper.find('.modal--button').filter('[value="yes"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="yes"]').text()).toBe('はい')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="yes"]')
+      .text()
+  ).toBe('はい')
   expect(wrapper.find('.modal--button').filter('[value="no"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="no"]').text()).toBe('いいえ')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="no"]')
+      .text()
+  ).toBe('いいえ')
   expect(handleClickNoMockFn).toHaveBeenCalledTimes(0)
   expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
 })
@@ -62,18 +72,38 @@ test('<Modal id={1} image="image" name="name" text="text" visible /> handleClick
 
   expect(wrapper.find('.modal--button')).toHaveLength(2)
   expect(wrapper.find('.modal--button').filter('[value="yes"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="yes"]').text()).toBe('はい')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="yes"]')
+      .text()
+  ).toBe('はい')
   expect(wrapper.find('.modal--button').filter('[value="no"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="no"]').text()).toBe('いいえ')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="no"]')
+      .text()
+  ).toBe('いいえ')
   wrapper.find('.modal--button[value="no"]').simulate('click')
   expect(handleClickNoMockFn).toHaveBeenCalledTimes(1)
   expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
   expect(handleClickNoMockFn).toHaveBeenCalledWith()
   expect(wrapper.find('.modal--button')).toHaveLength(2)
   expect(wrapper.find('.modal--button').filter('[value="yes"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="yes"]').text()).toBe('はい')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="yes"]')
+      .text()
+  ).toBe('はい')
   expect(wrapper.find('.modal--button').filter('[value="no"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="no"]').text()).toBe('いいえ')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="no"]')
+      .text()
+  ).toBe('いいえ')
 })
 test('<Modal id={1} image="image" name="name" text="text" visible /> handleClickYes', () => {
   const handleClickNoMockFn = jest.fn()
@@ -92,16 +122,36 @@ test('<Modal id={1} image="image" name="name" text="text" visible /> handleClick
 
   expect(wrapper.find('.modal--button')).toHaveLength(2)
   expect(wrapper.find('.modal--button').filter('[value="yes"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="yes"]').text()).toBe('はい')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="yes"]')
+      .text()
+  ).toBe('はい')
   expect(wrapper.find('.modal--button').filter('[value="no"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="no"]').text()).toBe('いいえ')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="no"]')
+      .text()
+  ).toBe('いいえ')
   wrapper.find('.modal--button[value="yes"]').simulate('click')
   expect(handleClickNoMockFn).toHaveBeenCalledTimes(0)
   expect(handleClickYesMockFn).toHaveBeenCalledTimes(1)
   expect(handleClickYesMockFn).toHaveBeenCalledWith(1)
   expect(wrapper.find('.modal--button')).toHaveLength(2)
   expect(wrapper.find('.modal--button').filter('[value="yes"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="yes"]').text()).toBe('はい')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="yes"]')
+      .text()
+  ).toBe('はい')
   expect(wrapper.find('.modal--button').filter('[value="no"]')).toHaveLength(1)
-  expect(wrapper.find('.modal--button').filter('[value="no"]').text()).toBe('いいえ')
+  expect(
+    wrapper
+      .find('.modal--button')
+      .filter('[value="no"]')
+      .text()
+  ).toBe('いいえ')
 })

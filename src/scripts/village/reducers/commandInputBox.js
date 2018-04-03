@@ -30,15 +30,15 @@ export const initialState = {
   limited: {
     available: false,
     postCount: 0,
-    postCountLimit: 10,
+    postCountLimit: 10
   },
   private: {
     postCount: 0,
-    postCountLimit: 10,
+    postCountLimit: 10
   },
   public: {
     postCount: 0,
-    postCountLimit: 10,
+    postCountLimit: 10
   }
 }
 

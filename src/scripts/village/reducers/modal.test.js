@@ -8,7 +8,7 @@ test('SELECT_OPTION', () => {
       initialState,
       {
         agentId: 1,
-        type: ActionTypes.SELECT_OPTION,
+        type: ActionTypes.SELECT_OPTION
       }
     )
   ).toEqual(
@@ -44,7 +44,7 @@ test('SELECT_YES', () => {
         visible: true
       },
       {
-        type: ActionTypes.SELECT_YES,
+        type: ActionTypes.SELECT_YES
       }
     )
   ).toEqual(

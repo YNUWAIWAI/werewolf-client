@@ -14,15 +14,15 @@ test('SOCKET_MESSAGE chatIsMine={true}', () => {
     limited: {
       available: false,
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     },
     private: {
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     },
     public: {
       postCount: 7,
-      postCountLimit: 10,
+      postCountLimit: 10
     }
   })
 })
@@ -46,15 +46,15 @@ test('SOCKET_MESSAGE seer 1', () => {
     limited: {
       available: false,
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     },
     private: {
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     },
     public: {
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     }
   })
 })
@@ -69,15 +69,15 @@ test('SOCKET_MESSAGE seer 2', () => {
     limited: {
       available: true,
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     },
     private: {
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     },
     public: {
       postCount: 0,
-      postCountLimit: 10,
+      postCountLimit: 10
     }
   })
 })

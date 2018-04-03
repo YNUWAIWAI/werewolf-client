@@ -55,7 +55,7 @@ test('<Chat /> 2 items', () => {
   const wrapper = shallow(<Chat items={items} />)
 
   expect(wrapper.find('ChatItem')).toHaveLength(2)
-  expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([2, 1])
+  expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([ 2, 1 ])
 })
 test('<Chat /> 3 items', () => {
   const items = [
@@ -96,5 +96,5 @@ test('<Chat /> 3 items', () => {
   const wrapper = shallow(<Chat items={items} />)
 
   expect(wrapper.find('ChatItem')).toHaveLength(3)
-  expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([3, 2, 1])
+  expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([ 3, 2, 1 ])
 })

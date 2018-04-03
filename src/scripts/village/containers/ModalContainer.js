@@ -38,7 +38,7 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
       image: selectedAgent.image,
       name: selectedAgent.name.ja,
       text: '',
-      visible: state.modal.visible,
+      visible: state.modal.visible
     }
   }
 
@@ -47,7 +47,7 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     image: selectedAgent.image,
     name: selectedAgent.name.ja,
     text: getText(state.base.phase, getRoleId(state.roles.mine['@id'])),
-    visible: state.modal.visible,
+    visible: state.modal.visible
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): $Exact<DispatchProps> => ({
