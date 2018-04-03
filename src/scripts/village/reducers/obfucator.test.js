@@ -22,13 +22,3 @@ test('TOGGLE_OBFUCATOR visible={false}', () => {
     visible: false
   })
 })
-test('UNRELATED_ACTION', () => {
-  const action = {
-    type: 'UNRELATED_ACTION',
-    visible: false
-  }
-
-  expect(reducer(initialState, action)).toEqual({
-    visible: true
-  })
-})

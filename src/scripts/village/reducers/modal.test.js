@@ -44,6 +44,7 @@ test('SELECT_YES', () => {
         visible: true
       },
       {
+        agentId: 1,
         type: ActionTypes.SELECT_YES
       }
     )
