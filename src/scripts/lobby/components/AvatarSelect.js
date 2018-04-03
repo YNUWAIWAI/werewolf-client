@@ -1,5 +1,6 @@
 // @flow
 import React from 'react'
+import type {Avatar} from 'lobby'
 
 type Props = {
   +handleChange: Avatar => void

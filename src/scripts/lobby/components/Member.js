@@ -1,4 +1,5 @@
 // @flow
+import type {Human, Robot, RoleSetting} from 'lobby'
 import MemberRole from './MemberRole'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'

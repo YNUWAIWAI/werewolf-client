@@ -1,4 +1,5 @@
 // @flow
+import type {TMenuItem, Target} from 'lobby'
 import MenuItem from './MenuItem'
 import React from 'react'
 

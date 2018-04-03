@@ -1,4 +1,5 @@
 // @flow
+import type {Avatar, Member, MenuItem, Target} from 'lobby'
 import AsideContent from './AsideContent'
 import EditableVillageItem from './EditableVillageItem'
 import Header from './Header'

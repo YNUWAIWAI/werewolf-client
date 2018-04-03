@@ -1,6 +1,7 @@
 // @flow
 import Member from './Member'
 import React from 'react'
+import type {Village} from 'lobby'
 
 type Props = {
   +handleClick: void => void,

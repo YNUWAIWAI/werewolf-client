@@ -1,4 +1,5 @@
 // @flow
+import type {Avatar, Member} from 'lobby'
 import AvatarSelect from './AvatarSelect'
 import NumberSelect from './NumberSelect'
 import React from 'react'

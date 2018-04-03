@@ -1,5 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import type {Avatar, Member, MenuItem} from 'lobby'
 import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName} from '../actions'
 
 export type State = {

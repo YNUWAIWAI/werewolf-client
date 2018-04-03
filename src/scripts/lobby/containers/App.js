@@ -2,6 +2,7 @@
 import type {Dispatch} from 'redux'
 import React from 'react'
 import type {ReducerState} from '../reducers'
+import type {Target} from 'lobby'
 import {connect} from 'react-redux'
 import {transition} from '../actions'
 

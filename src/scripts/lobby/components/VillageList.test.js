@@ -1,5 +1,6 @@
 // @flow
 import React from 'react'
+import type {Village} from 'lobby'
 import VillageList from './VillageList'
 import {shallow} from 'enzyme'
 
