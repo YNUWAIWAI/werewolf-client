@@ -18,6 +18,7 @@ export type Action =
   | actions.SocketOpen
   | actions.SocketSend
   | actions.ToggleObfucator
+  | {type: 'INIT'}
 
 const elem = document.getElementById('script')
 
