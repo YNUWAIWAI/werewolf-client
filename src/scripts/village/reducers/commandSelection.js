@@ -2,6 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import type {SelectYes, SocketMessage} from '../actions'
+import type {Phase} from 'village'
 
 export type State = {
   +fixed: boolean,

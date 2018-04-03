@@ -1,6 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
+import type {Payload, Role} from 'village'
 import type {SocketMessage} from '../actions'
 import {UNPLAYABLE_ROLE} from '../constants/Role'
 

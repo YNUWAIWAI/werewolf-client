@@ -1,6 +1,7 @@
 // @flow
 import React, {Fragment} from 'react'
 import CommandInput from './CommandInput'
+import type {InputChannel} from 'village'
 
 export type StateProps = {
   +limited: {

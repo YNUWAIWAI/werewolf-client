@@ -1,4 +1,5 @@
 // @flow
+import type {Agent, Phase, RoleId} from 'village'
 import Modal, {type DispatchProps, type StateProps} from '../components/Modal'
 import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'

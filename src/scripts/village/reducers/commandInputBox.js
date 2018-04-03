@@ -2,25 +2,26 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
+import type {Chat, InputChannel, Payload, Role} from 'village'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
 import {getInputChannel} from '../constants/Channels'
 import {getMyRole} from '../module/util'
 
 export type State = {
-  +limited: {
-    +available: boolean,
-    +postCount: number,
-    +postCountLimit: number
+  limited: {
+    available: boolean,
+    postCount: number,
+    postCountLimit: number
   },
-  +private: {
-    +postCount: number,
-    +postCountLimit: number
+  private: {
+    postCount: number,
+    postCountLimit: number
   },
-  +public: {
-    +postCount: number,
-    +postCountLimit: number
-  },
+  public: {
+    postCount: number,
+    postCountLimit: number
+  }
 }
 export type Action =
  | SocketMessage

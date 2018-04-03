@@ -1,6 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
+import type {Channel, Phase} from 'village'
 import type {SocketMessage} from '../actions'
 
 export type State = {

@@ -1,4 +1,5 @@
 // @flow
+import type {RoleId} from 'village'
 import {VERSION} from './Version.js'
 import {trimBaseUri} from '../module/util'
 

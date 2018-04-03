@@ -1,4 +1,5 @@
 // @flow
+import type {AgentStatus, TResult} from 'village'
 import React from 'react'
 import ResultCell from './ResultCell'
 

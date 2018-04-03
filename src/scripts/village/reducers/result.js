@@ -1,6 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
+import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village'
 import {getMyAgent, getPlayableAgents} from '../module/util'
 import {RESULTS} from '../constants/Phase'
 import type {SocketMessage} from '../actions'

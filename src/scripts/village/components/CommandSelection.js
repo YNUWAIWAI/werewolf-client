@@ -1,4 +1,5 @@
 // @flow
+import type {Agent} from 'village'
 import CommandOption from './CommandOption'
 import React from 'react'
 import Timer from '../containers/TimerContainer'

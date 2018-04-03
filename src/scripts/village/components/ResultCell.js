@@ -1,4 +1,5 @@
 // @flow
+import type {AgentStatus, Result} from 'village'
 import React from 'react'
 
 type Props =
