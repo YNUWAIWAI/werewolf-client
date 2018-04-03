@@ -1,5 +1,6 @@
 // @flow
 import * as types from '../constants/ActionTypes'
+import type {Avatar, Member, Target} from 'lobby'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: 'SOCKET:CLOSE'} => ({

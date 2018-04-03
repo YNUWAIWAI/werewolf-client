@@ -1,5 +1,6 @@
 // @flow
 import React from 'react'
+import type {Target} from 'lobby'
 
 type Props = {
   +class: string,

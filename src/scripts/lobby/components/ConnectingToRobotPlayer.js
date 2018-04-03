@@ -1,4 +1,5 @@
 // @flow
+import type {MenuItem, Target} from 'lobby'
 import AsideContent from './AsideContent'
 import Header from './Header'
 import MainContent from './MainContent'

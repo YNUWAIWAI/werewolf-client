@@ -1,5 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import type {MenuItem} from 'lobby'
 
 export type State = {
   +menuItems: MenuItem[]
