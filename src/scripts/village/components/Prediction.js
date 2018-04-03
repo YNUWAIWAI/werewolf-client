@@ -1,5 +1,6 @@
 // @flow
 /* eslint react/no-unused-prop-types: 0 */
+import type {AgentStatus, BoardState, RoleId} from 'village'
 import PredictionItem from './PredictionItem'
 import PredictionPlayer from './PredictionPlayer'
 import PredictionRole from './PredictionRole'

@@ -1,4 +1,5 @@
 // @flow
+import type {Channel} from 'village'
 import React from 'react'
 
 type Props = {

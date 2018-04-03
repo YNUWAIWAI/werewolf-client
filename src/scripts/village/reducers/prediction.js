@@ -1,6 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
+import type {Agent, AgentStatus, BoardState, Payload, Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {MEDIUM, ORDERED_ROLE_LIST, SEER, getRoleId} from '../constants/Role'
 import {getPlayableAgents, getPlayableRoles} from '../module/util'

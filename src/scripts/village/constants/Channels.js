@@ -1,4 +1,6 @@
 // @flow
+import type {Channel, ChatChannel, InputChannel, RoleId} from 'village'
+
 export const Channels = {
   anonymousAudience: 'public',
   grave: 'grave',

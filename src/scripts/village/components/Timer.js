@@ -1,5 +1,6 @@
 // @flow
 import FormatedTime from './FormattedTime'
+import type {Phase} from 'village'
 import React from 'react'
 
 export type StateProps = {

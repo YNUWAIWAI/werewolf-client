@@ -1,6 +1,7 @@
 // @flow
 /* eslint sort-keys: 0 */
 import * as types from '../constants/ActionTypes'
+import type {C2SBoard, C2SChat, C2SPayload, C2SVote} from 'village'
 import type {DispatchAPI, Middleware} from 'redux'
 import {getMyAgent, getMyRole, getVotedAgent} from '../module/util'
 import type {Action} from '.'

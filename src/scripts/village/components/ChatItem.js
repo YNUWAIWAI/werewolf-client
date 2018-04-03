@@ -1,5 +1,6 @@
 // @flow
 import AgentIcon from './AgentIcon'
+import type {Channel} from 'village'
 import ChatDate from './ChatDate'
 import ChatNum from './ChatNum'
 import ChatText from './ChatText'

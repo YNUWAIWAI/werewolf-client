@@ -2,6 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
+import type {Channel, Chat, Language, Payload} from 'village'
 import type {SocketMessage} from '../actions'
 
 export type State = {

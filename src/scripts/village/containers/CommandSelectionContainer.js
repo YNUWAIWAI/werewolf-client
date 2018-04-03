@@ -1,5 +1,6 @@
 // @flow
 import CommandSelection, {type DispatchProps, type StateProps} from '../components/CommandSelection'
+import type {Phase, RoleId} from 'village'
 import {type SelectOption, selectOption} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'
 import type {Dispatch} from 'redux'
