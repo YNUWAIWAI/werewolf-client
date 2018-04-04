@@ -59,4 +59,9 @@ declare module 'lobby' {
     type: Target
   }
   declare type TMenuItem = MenuItem
+  declare type PayLoad$Lobby = {
+    error: ?string,
+    type: string,
+    villages: Village[]
+  }
 }
