@@ -50,9 +50,9 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case types.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
+    case types.SHOW_LOBBY_FOR_AUDIENCE: {
       const payload = {
-        lobby: 'human player',
+        lobby: 'audience',
         page: 1
       }
 
@@ -60,9 +60,9 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case types.SHOW_LOBBY_FOR_AUDIENCE: {
+    case types.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
       const payload = {
-        lobby: 'audience',
+        lobby: 'human player',
         page: 1
       }
 
