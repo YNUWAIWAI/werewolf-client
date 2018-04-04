@@ -39,6 +39,14 @@ declare module 'lobby' {
     werehumster: number,
     werewolf: number
   }
+  declare type WaitingPlayer = {
+    avatarImage: ?string,
+    isAnonymous: boolean,
+    isHost: boolean,
+    isMe: boolean,
+    name: string,
+    token: string
+  }
   declare type Target =
     | 'BUILD_VILLAGE'
     | 'PLAY_GAME'
@@ -65,5 +73,9 @@ declare module 'lobby' {
   } & T
   declare type Payload$Lobby = Payload<{
     villages: Village[]
+  }>
+  declare type Payload$WatingPage = Payload<{
+    village: Village,
+    players: WaitingPlayer[]
   }>
 }

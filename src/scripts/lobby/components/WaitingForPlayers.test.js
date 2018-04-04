@@ -3,7 +3,7 @@ import React from 'react'
 import WaitingForPlayers from './WaitingForPlayers'
 import {shallow} from 'enzyme'
 
-test('<WaitingForPlayers isPlayer />', () => {
+test('<WaitingForPlayers isPlayer village />', () => {
   const transition = jest.fn()
   const village = {
     avatar: 'fixed',
@@ -56,6 +56,41 @@ test('<WaitingForPlayers isPlayer />', () => {
       .find('VillageItem')
       .exists()
   ).toBe(true)
+  expect(wrapper.find('AsideContent').exists()).toBe(true)
+  expect(
+    wrapper
+      .find('AsideContent')
+      .find('AvatarList')
+      .exists()
+  ).toBe(true)
+  expect(
+    wrapper
+      .find('AsideContent')
+      .find('Menu')
+      .exists()
+  ).toBe(true)
+  expect(transition).toHaveBeenCalledTimes(0)
+})
+test('<WaitingForPlayers isPlayer village={undefined} />', () => {
+  const transition = jest.fn()
+  const wrapper = shallow(
+    <WaitingForPlayers
+      isPlayer
+      menuItems={[]}
+      players={[]}
+      transition={transition}
+    />
+  )
+
+  expect(wrapper.children()).toHaveLength(3)
+  expect(wrapper.find('Header').exists()).toBe(true)
+  expect(wrapper.find('MainContent').exists()).toBe(true)
+  expect(
+    wrapper
+      .find('MainContent')
+      .find('VillageItem')
+      .exists()
+  ).toBe(false)
   expect(wrapper.find('AsideContent').exists()).toBe(true)
   expect(
     wrapper

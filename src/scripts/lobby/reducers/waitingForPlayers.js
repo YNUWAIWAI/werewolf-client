@@ -1,23 +1,17 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {MenuItem, Village} from 'lobby'
+import type {MenuItem, Payload$WatingPage, Village, WaitingPlayer} from 'lobby'
+import type {SocketMessage, Transition} from '../actions'
 
 export type State = {
   +isPlayer: boolean,
   +menuItems: MenuItem[],
-  +players: {
-    +avatarImage: ?string,
-    +isAnonymous: boolean,
-    +isHost: boolean,
-    +isMe: boolean,
-    +name: string,
-    +token: string
-  }[],
-  +village: Village
+  +players: WaitingPlayer[],
+  +village?: Village
 }
 type Action =
-  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
-  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
+  | SocketMessage
+  | Transition
 
 const initialState = {
   isPlayer: true,
@@ -159,6 +153,18 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           }
         ]
       }
+    case ActionTypes.SOCKET_MESSAGE:
+      if (action.payload.type === 'waitingPage') {
+        const payload: Payload$WatingPage = action.payload
+
+        return {
+          ... state,
+          players: payload.players,
+          village: payload.village
+        }
+      }
+
+      return state
     default:
       return state
   }

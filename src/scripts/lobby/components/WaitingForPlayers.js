@@ -12,7 +12,7 @@ export type StateProps = {
   +isPlayer: boolean,
   +menuItems: MenuItem[],
   +players: $PropertyType<AvatarListProps, 'items'>,
-  +village: Village
+  +village?: Village
 }
 export type OwnProps = {
   +transition: Target => void => void,
@@ -26,11 +26,15 @@ export default function WaitingForPlayers(props: Props) {
     <div className="grid">
       <Header text="Waiting for players" />
       <MainContent>
-        <VillageItem
-          {... props.village}
-          handleClick={() => {}}
-          isPlayer={props.isPlayer}
-        />
+        {
+          props.village ?
+            <VillageItem
+              {... props.village}
+              handleClick={() => {}}
+              isPlayer={props.isPlayer}
+            /> :
+            ''
+        }
       </MainContent>
       <AsideContent>
         <AvatarList
