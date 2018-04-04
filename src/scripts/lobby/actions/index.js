@@ -1,6 +1,6 @@
 // @flow
 import * as types from '../constants/ActionTypes'
-import type {Avatar, Member, Target} from 'lobby'
+import type {Avatar, Member, Payload, Target} from 'lobby'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: 'SOCKET:CLOSE'} => ({
@@ -11,7 +11,7 @@ export const socket = {
     event,
     type: types.SOCKET_ERROR
   }),
-  message: (event: MessageEvent): {payload: Object, type: 'SOCKET:MESSAGE'} => ({
+  message: (event: MessageEvent): {payload: Payload<*>, type: 'SOCKET:MESSAGE'} => ({
     payload: JSON.parse(event.data),
     type: types.SOCKET_MESSAGE
   }),

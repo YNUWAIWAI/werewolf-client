@@ -1,7 +1,7 @@
 // @flow
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
-import type {MenuItem, PayLoad$Lobby, Village} from 'lobby'
+import type {MenuItem, Payload$Lobby, Village} from 'lobby'
 import type {SocketMessage} from '../actions'
 
 export type State = {
@@ -104,7 +104,7 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
   switch (action.type) {
     case ActionTypes.SOCKET_MESSAGE:
       if (action.payload.type === 'lobby') {
-        const payload: PayLoad$Lobby = action.payload
+        const payload: Payload$Lobby = action.payload
 
         return {
           ... state,
