@@ -59,9 +59,11 @@ declare module 'lobby' {
     type: Target
   }
   declare type TMenuItem = MenuItem
-  declare type PayLoad$Lobby = {
+  declare type Payload<T> = {
     error: ?string,
-    type: string,
+    type: string
+  } & T
+  declare type Payload$Lobby = Payload<{
     villages: Village[]
-  }
+  }>
 }
