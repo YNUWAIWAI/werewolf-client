@@ -80,6 +80,17 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
+    case types.SOCKET_MESSAGE:
+      if (action.payload.type === 'ping') {
+        const state = store.getState()
+        const payload = {
+          pong: state.ping.myToken
+        }
+
+        socket.send(payload)
+      }
+
+      return next(action)
     default:
       return next(action)
   }
