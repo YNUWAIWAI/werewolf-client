@@ -7,6 +7,7 @@ import lobbyForAudience, {type State as LobbyForAudienceState} from './lobbyForA
 import lobbyForHumanPlayer, {type State as LobbyForHumanPlayerState} from './lobbyForHumanPlayer'
 import lobbyForRobotPlayer, {type State as LobbyForRobotPlayerState} from './lobbyForRobotPlayer'
 import main, {type State as MainState} from './main'
+import ping, {type State as PingState} from './ping'
 import settings, {type State as SettingsState} from './settings'
 import waitingForPlayers, {type State as WaitingForPlayersState} from './waitingForPlayers'
 import {combineReducers} from 'redux'
@@ -20,6 +21,7 @@ const reducer = combineReducers({
   lobbyForHumanPlayer,
   lobbyForRobotPlayer,
   main,
+  ping,
   settings,
   waitingForPlayers
 })
@@ -35,6 +37,7 @@ export type ReducerState = {
   lobbyForHumanPlayer: LobbyForHumanPlayerState,
   lobbyForRobotPlayer: LobbyForRobotPlayerState,
   main: MainState,
+  ping: PingState,
   settings: SettingsState,
   waitingForPlayers: WaitingForPlayersState
 }
