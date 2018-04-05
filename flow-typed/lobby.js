@@ -67,12 +67,19 @@ declare module 'lobby' {
     type: Target
   }
   declare type TMenuItem = MenuItem
+  declare type PingResult = {
+    ping: string,
+    token: string
+  }
   declare type Payload<T> = {
     error: ?string,
     type: string
   } & T
   declare type Payload$Lobby = Payload<{
     villages: Village[]
+  }>
+  declare type Payload$Ping = Payload<{
+    results: PingResult[]
   }>
   declare type Payload$WatingPage = Payload<{
     village: Village,
