@@ -39,6 +39,20 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
+    case types.LEAVE_WAITING_PAGE: {
+      const state = store.getState()
+      const me = state.waitingForPlayers.players.find(v => v.isMe)
+
+      if (me) {
+        const payload = {
+          leave: me.token
+        }
+
+        socket.send(payload)
+      }
+
+      return next(action)
+    }
     case types.SELECT_VILLAGE: {
       const payload = {
         village: {
