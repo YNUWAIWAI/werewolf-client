@@ -37,9 +37,11 @@ test('<WaitingForPlayers isPlayer village />', () => {
       werewolf: 2
     }
   }
+  const kickOut = jest.fn()
   const wrapper = shallow(
     <WaitingForPlayers
       isPlayer
+      kickOut={kickOut}
       menuItems={[]}
       players={[]}
       transition={transition}
@@ -70,12 +72,15 @@ test('<WaitingForPlayers isPlayer village />', () => {
       .exists()
   ).toBe(true)
   expect(transition).toHaveBeenCalledTimes(0)
+  expect(kickOut).toHaveBeenCalledTimes(0)
 })
 test('<WaitingForPlayers isPlayer village={undefined} />', () => {
   const transition = jest.fn()
+  const kickOut = jest.fn()
   const wrapper = shallow(
     <WaitingForPlayers
       isPlayer
+      kickOut={kickOut}
       menuItems={[]}
       players={[]}
       transition={transition}
@@ -105,4 +110,5 @@ test('<WaitingForPlayers isPlayer village={undefined} />', () => {
       .exists()
   ).toBe(true)
   expect(transition).toHaveBeenCalledTimes(0)
+  expect(kickOut).toHaveBeenCalledTimes(0)
 })
