@@ -49,6 +49,7 @@ declare module 'lobby' {
   }
   declare type Target =
     | 'BUILD_VILLAGE'
+    | 'LEAVE_WAITING_PAGE'
     | 'PLAY_GAME'
     | 'REFRESH'
     | 'SEARCH_FOR_A_VILLAGE'
