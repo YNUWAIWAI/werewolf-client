@@ -53,6 +53,10 @@ export const changeVillageName = (villageName: string): {type: 'CHANGE_VILLAGE_N
   type: types.CHANGE_VILLAGE_NAME,
   villageName
 })
+export const kickOutPlayer = (token: string): {token: string, type: 'KICK_OUT_PLAYER'} => ({
+  token,
+  type: types.KICK_OUT_PLAYER
+})
 export const selectVillage = (id: number): {id: number, type: 'SELECT_VILLAGE'} => ({
   id,
   type: types.SELECT_VILLAGE
@@ -73,5 +77,6 @@ export type ChangeMember = $Call<typeof changeMember, Member>
 export type ChangeNumberOfPlayers = $Call<typeof changeNumberOfPlayers, number>
 export type ChangeNumberOfRobots = $Call<typeof changeNumberOfRobots, number>
 export type ChangeVillageName = $Call<typeof changeVillageName, string>
+export type KickOutPlayer = $Call<typeof kickOutPlayer, string>
 export type SelectVillage = $Call<typeof selectVillage, number>
 export type Transition = $Call<typeof transition, Target>
