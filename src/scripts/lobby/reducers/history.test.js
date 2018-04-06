@@ -11,7 +11,7 @@ test('SOCKET_MESSAGE', () => {
         menuItems: [
           {
             text: 'Return to the Main Page',
-            type: ActionTypes.SHOW_MAIN
+            types: [ActionTypes.SHOW_MAIN]
           }
         ],
         villageItems: []
@@ -27,7 +27,7 @@ test('SOCKET_MESSAGE', () => {
       menuItems: [
         {
           text: 'Return to the Main Page',
-          type: ActionTypes.SHOW_MAIN
+          types: [ActionTypes.SHOW_MAIN]
         }
       ],
       villageItems: [

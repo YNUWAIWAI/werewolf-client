@@ -21,15 +21,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           text: 'Play',
-          type: ActionTypes.PLAY_GAME
+          types: [ActionTypes.PLAY_GAME]
         },
         {
           text: 'Return to Lobby for Human Player',
-          type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+          types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           text: 'Return to the Main Page',
-          type: ActionTypes.SHOW_MAIN
+          types: [ActionTypes.SHOW_MAIN]
         }
       ],
       players: []
@@ -54,15 +54,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           text: 'Play',
-          type: ActionTypes.PLAY_GAME
+          types: [ActionTypes.PLAY_GAME]
         },
         {
           text: 'Return to Lobby for Robot Player',
-          type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+          types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           text: 'Return to the Main Page',
-          type: ActionTypes.SHOW_MAIN
+          types: [ActionTypes.SHOW_MAIN]
         }
       ],
       players: []

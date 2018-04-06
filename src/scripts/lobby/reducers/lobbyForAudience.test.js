@@ -11,19 +11,19 @@ test('SOCKET_MESSAGE', () => {
         menuItems: [
           {
             text: 'Search for a Village in session',
-            type: ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION
+            types: [ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION]
           },
           {
             text: 'Search for an Old Village',
-            type: ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE
+            types: [ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE]
           },
           {
             text: 'Refresh',
-            type: ActionTypes.REFRESH
+            types: [ActionTypes.REFRESH]
           },
           {
             text: 'Return to the Main Page',
-            type: ActionTypes.SHOW_MAIN
+            types: [ActionTypes.SHOW_MAIN]
           }
         ],
         villageItems: []
@@ -39,19 +39,19 @@ test('SOCKET_MESSAGE', () => {
       menuItems: [
         {
           text: 'Search for a Village in session',
-          type: ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION
+          types: [ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION]
         },
         {
           text: 'Search for an Old Village',
-          type: ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE
+          types: [ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE]
         },
         {
           text: 'Refresh',
-          type: ActionTypes.REFRESH
+          types: [ActionTypes.REFRESH]
         },
         {
           text: 'Return to the Main Page',
-          type: ActionTypes.SHOW_MAIN
+          types: [ActionTypes.SHOW_MAIN]
         }
       ],
       villageItems: [
