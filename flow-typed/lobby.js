@@ -64,7 +64,7 @@ declare module 'lobby' {
     | 'SHOW_SETTINGS'
   declare type MenuItem = {
     text: string,
-    type: Target
+    types: Target[]
   }
   declare type TMenuItem = MenuItem
   declare type PingResult = {

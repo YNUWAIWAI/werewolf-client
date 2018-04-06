@@ -7,7 +7,7 @@ export type Props = {
   +class: string,
   +itemClass: string,
   +items: TMenuItem[],
-  +transition: Target => void => void
+  +transition: Target => void
 }
 
 export default function Menu(props: Props) {
@@ -17,7 +17,7 @@ export default function Menu(props: Props) {
       key={item.text}
       text={item.text}
       transition={props.transition}
-      type={item.type}
+      types={item.types}
     />)
 
   return (

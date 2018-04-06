@@ -120,15 +120,15 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             text: 'Build',
-            type: ActionTypes.BUILD_VILLAGE
+            types: [ActionTypes.BUILD_VILLAGE]
           },
           {
             text: 'Return to Lobby for Human Player',
-            type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+            types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             text: 'Return to the Main Page',
-            type: ActionTypes.SHOW_MAIN
+            types: [ActionTypes.SHOW_MAIN]
           }
         ],
         village: {
@@ -142,15 +142,15 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             text: 'Build',
-            type: ActionTypes.BUILD_VILLAGE
+            types: [ActionTypes.BUILD_VILLAGE]
           },
           {
             text: 'Return to Lobby for Robot Player',
-            type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+            types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             text: 'Return to the Main Page',
-            type: ActionTypes.SHOW_MAIN
+            types: [ActionTypes.SHOW_MAIN]
           }
         ],
         village: {

@@ -11,7 +11,7 @@ export type StateProps = {
 }
 export type DispatchProps = {}
 export type OwnProps = {
-  +transition: Target => void => void
+  +transition: Target => void
 }
 export type Props =
   & StateProps

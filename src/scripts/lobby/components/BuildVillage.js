@@ -25,7 +25,7 @@ export type DispatchProps = {
   +handleTextChange: string => string => void
 }
 export type OwnProps = {
-  +transition: Target => void => void
+  +transition: Target => void
 }
 export type Props =
   & StateProps

@@ -5,13 +5,20 @@ import type {Target} from 'lobby'
 type Props = {
   +class: string,
   +text: string,
-  +transition: Target => void => void,
-  +type: Target
+  +transition: Target => void,
+  +types: Target[]
 }
 
 export default function MenuItem(props: Props) {
   return (
-    <li className={props.class} onClick={props.transition(props.type)}>
+    <li
+      className={props.class}
+      onClick={() => {
+        props.types.forEach(type => {
+          props.transition(type)
+        })
+      }}
+    >
       {props.text}
     </li>
   )
