@@ -5,77 +5,138 @@ import {shallow} from 'enzyme'
 
 test('<AvatarList isPlayer /> 0 items', () => {
   const items = []
-  const wrapper = shallow(<AvatarList isPlayer items={items} />)
+  const kickOut = jest.fn()
+  const wrapper = shallow(
+    <AvatarList
+      isPlayer
+      items={items}
+      kickOut={kickOut}
+    />
+  )
 
   expect(wrapper.children()).toHaveLength(0)
+  expect(kickOut).toHaveBeenCalledTimes(0)
 })
 test('<AvatarList isPlayer={false} /> 0 items', () => {
   const items = []
-  const wrapper = shallow(<AvatarList isPlayer={false} items={items} />)
+  const kickOut = jest.fn()
+  const wrapper = shallow(
+    <AvatarList
+      isPlayer={false}
+      items={items}
+      kickOut={kickOut}
+    />
+  )
 
   expect(wrapper.children()).toHaveLength(0)
+  expect(kickOut).toHaveBeenCalledTimes(0)
 })
 test('<AvatarList isPlayer /> 1 items', () => {
   const items = [
     {
       avatarImage: 'image',
+      canKickOut: true,
       isHost: true,
       name: 'name',
       token: 'token'
     }
   ]
-  const wrapper = shallow(<AvatarList isPlayer items={items} />)
+  const kickOut = jest.fn()
+  const wrapper = shallow(
+    <AvatarList
+      isPlayer
+      items={items}
+      kickOut={kickOut}
+    />
+  )
 
   expect(wrapper.children()).toHaveLength(1)
+  expect(kickOut).toHaveBeenCalledTimes(1)
+  expect(kickOut).toHaveBeenCalledWith('token')
 })
 test('<AvatarList isPlayer={false} /> 1 items', () => {
   const items = [
     {
       avatarImage: 'image',
+      canKickOut: true,
       isHost: true,
       name: 'name',
       token: 'token'
     }
   ]
-  const wrapper = shallow(<AvatarList isPlayer={false} items={items} />)
+  const kickOut = jest.fn()
+  const wrapper = shallow(
+    <AvatarList
+      isPlayer={false}
+      items={items}
+      kickOut={kickOut}
+    />
+  )
 
   expect(wrapper.children()).toHaveLength(1)
+  expect(kickOut).toHaveBeenCalledTimes(1)
+  expect(kickOut).toHaveBeenCalledWith('token')
 })
 test('<AvatarList isPlayer /> 2 items', () => {
   const items = [
     {
       avatarImage: 'image',
+      canKickOut: true,
       isHost: true,
       name: 'name',
-      token: 'token'
+      token: 'token1'
     },
     {
       avatarImage: 'image',
+      canKickOut: true,
       isHost: true,
       name: 'name',
-      token: 'token'
+      token: 'token2'
     }
   ]
-  const wrapper = shallow(<AvatarList isPlayer items={items} />)
+  const kickOut = jest.fn()
+  const wrapper = shallow(
+    <AvatarList
+      isPlayer={false}
+      items={items}
+      kickOut={kickOut}
+    />
+  )
 
   expect(wrapper.children()).toHaveLength(2)
+  expect(kickOut).toHaveBeenCalledTimes(2)
+  expect(kickOut).toHaveBeenCalledWith('token1')
+  expect(kickOut).toHaveBeenCalledWith('token2')
+
 })
 test('<AvatarList isPlayer={false} /> 2 items', () => {
   const items = [
     {
       avatarImage: 'image',
+      canKickOut: true,
       isHost: true,
       name: 'name',
-      token: 'token'
+      token: 'token1'
     },
     {
       avatarImage: 'image',
+      canKickOut: true,
       isHost: true,
       name: 'name',
-      token: 'token'
+      token: 'token2'
     }
   ]
-  const wrapper = shallow(<AvatarList isPlayer={false} items={items} />)
+  const kickOut = jest.fn()
+  const wrapper = shallow(
+    <AvatarList
+      isPlayer={false}
+      items={items}
+      kickOut={kickOut}
+    />
+  )
 
   expect(wrapper.children()).toHaveLength(2)
+  expect(kickOut).toHaveBeenCalledTimes(2)
+  expect(kickOut).toHaveBeenCalledWith('token1')
+  expect(kickOut).toHaveBeenCalledWith('token2')
 })
