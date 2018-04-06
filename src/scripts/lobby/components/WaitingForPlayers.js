@@ -15,7 +15,7 @@ export type StateProps = {
   +village?: Village
 }
 export type OwnProps = {
-  +transition: Target => void => void,
+  +transition: Target => void,
 }
 export type Props =
   & StateProps

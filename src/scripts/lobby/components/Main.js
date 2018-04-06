@@ -10,7 +10,7 @@ export type StateProps = {
   +name: string
 }
 export type OwnProps = {
-  +transition: Target => void => void
+  +transition: Target => void
 }
 export type Props =
   & StateProps

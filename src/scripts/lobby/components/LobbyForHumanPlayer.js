@@ -16,7 +16,7 @@ export type DispatchProps = {
   +selectVillage: number => void => void
 }
 export type OwnProps = {
-  +transition: Target => void => void
+  +transition: Target => void
 }
 export type Props =
   & StateProps

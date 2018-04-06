@@ -14,23 +14,23 @@ const initialState = {
   items: [
     {
       text: 'Lobby for Audience',
-      type: ActionTypes.SHOW_LOBBY_FOR_AUDIENCE
+      types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
     },
     {
       text: 'Lobby for Robot Player',
-      type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+      types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
     },
     {
       text: 'Lobby for Human Player',
-      type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+      types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
     },
     {
       text: 'History',
-      type: ActionTypes.SHOW_HISTORY
+      types: [ActionTypes.SHOW_HISTORY]
     },
     {
       text: 'Settings',
-      type: ActionTypes.SHOW_SETTINGS
+      types: [ActionTypes.SHOW_SETTINGS]
     }
   ],
   name: 'Pamela'

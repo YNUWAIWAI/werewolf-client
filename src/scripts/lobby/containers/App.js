@@ -10,7 +10,7 @@ type StateProps = {
   +content: React$ComponentType<*>
 }
 type DispatchProps = {
-  +transition: Target => void => void
+  +transition: Target => void
 }
 type Props =
   & StateProps
@@ -25,7 +25,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   content: state.app.content
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  transition: target => () => {
+  transition: target => {
     dispatch(transition(target))
   }
 })

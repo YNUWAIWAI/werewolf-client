@@ -17,19 +17,19 @@ const initialState = {
   menuItems: [
     {
       text: 'Build your Village',
-      type: ActionTypes.SHOW_BUILD_VILLAGE
+      types: [ActionTypes.SHOW_BUILD_VILLAGE]
     },
     {
       text: 'Search for a Village',
-      type: ActionTypes.SEARCH_FOR_A_VILLAGE
+      types: [ActionTypes.SEARCH_FOR_A_VILLAGE]
     },
     {
       text: 'Refresh',
-      type: ActionTypes.REFRESH
+      types: [ActionTypes.REFRESH]
     },
     {
       text: 'Return to the Main Page',
-      type: ActionTypes.SHOW_MAIN
+      types: [ActionTypes.SHOW_MAIN]
     }
   ],
   villageItems: [
