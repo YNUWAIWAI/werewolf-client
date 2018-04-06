@@ -1,10 +1,17 @@
 // @flow
-import AvatarItem, {type Props as AvatarItemProps} from './AvatarItem'
+import AvatarItem from './AvatarItem'
 import React from 'react'
 
 export type Props = {
   +isPlayer: boolean,
-  +items: (AvatarItemProps & {token: string})[]
+  +items: {
+    +avatarImage: string,
+    +canKickOut: boolean,
+    +isHost: boolean,
+    +name: string,
+    +token: string
+  }[],
+  +kickOut: string => void => void
 }
 
 export default function AvatarList(props: Props) {
@@ -13,6 +20,7 @@ export default function AvatarList(props: Props) {
       key={item.token}
       {... item}
       isPlayer={props.isPlayer}
+      kickOut={props.kickOut(item.token)}
     />
   )
 

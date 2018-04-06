@@ -1,7 +1,7 @@
 // @flow
-import AvatarList, {type Props as AvatarListProps} from './AvatarList'
 import type {MenuItem, Target, Village} from 'lobby'
 import AsideContent from './AsideContent'
+import AvatarList from './AvatarList'
 import Header from './Header'
 import MainContent from './MainContent'
 import Menu from './Menu'
@@ -11,14 +11,24 @@ import VillageItem from './VillageItem'
 export type StateProps = {
   +isPlayer: boolean,
   +menuItems: MenuItem[],
-  +players: $PropertyType<AvatarListProps, 'items'>,
+  +players: {
+    +avatarImage: string,
+    +canKickOut: boolean,
+    +isHost: boolean,
+    +name: string,
+    +token: string
+  }[],
   +village?: Village
+}
+export type DispatchProps = {
+  +kickOut: string => void => void
 }
 export type OwnProps = {
   +transition: Target => void,
 }
 export type Props =
   & StateProps
+  & DispatchProps
   & OwnProps
 
 export default function WaitingForPlayers(props: Props) {
@@ -40,6 +50,7 @@ export default function WaitingForPlayers(props: Props) {
         <AvatarList
           isPlayer={props.isPlayer}
           items={props.players}
+          kickOut={props.kickOut}
         />
         <Menu
           class="compact-menu"
