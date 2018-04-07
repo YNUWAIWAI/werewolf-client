@@ -26,3 +26,10 @@ declare class RegExp {
   test(string: string): boolean;
   toString(): string;
 }
+
+declare var window: {
+  confirm: ?string => boolean
+}
+declare var global: {
+  confirm: ?string => boolean
+}
