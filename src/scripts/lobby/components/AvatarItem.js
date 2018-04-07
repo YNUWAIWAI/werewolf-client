@@ -12,7 +12,9 @@ export type Props = {
 export default function AvatarItem(props: Props) {
   const handleClick = () => {
     if (props.canKickOut) {
-      props.kickOut()
+      if (window.confirm(`${props.name}を退出させます`)) {
+        props.kickOut()
+      }
     }
   }
 
