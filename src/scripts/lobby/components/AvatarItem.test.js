@@ -53,8 +53,12 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} name="name
     />
   )
 
+  const tmp = global.confirm
+
+  global.confirm = () => true
   wrapper.simulate('click')
   expect(kickOut).toHaveBeenCalledTimes(1)
+  global.confirm = tmp
 })
 test('<AvatarItem avatarImage="avatarImage" canKickOut={false} isHost={false} name="name" /> onClick', () => {
   const kickOut = jest.fn()
