@@ -7,4 +7,4 @@ script:
   - yarn flow check
 after_success:
   - yarn flow-coverage-report
-  - yarn deploy-storybook -- --ci --existing-output-dir docs --branch master
+  - yarn deploy-storybook -- --ci
