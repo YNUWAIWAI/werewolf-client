@@ -18,12 +18,20 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.0",
+    "@storybook/addon-links": "^3.4.0",
+    "@storybook/addons": "^3.4.0",
+    "@storybook/cli": "^3.4.0",
+    "@storybook/react": "^3.4.0",
+    "@storybook/storybook-deployer": "^2.3.0",
     "autoprefixer": "^8.0.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.18.2",
@@ -49,7 +57,10 @@
     "build:docs": "node tools/build.js -d",
     "start": "node tools/build.js -w",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o docs",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "babel-loader": "^7.1.2",
