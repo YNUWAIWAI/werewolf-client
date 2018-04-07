@@ -53,6 +53,19 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
+    case types.KICK_OUT_PLAYER: {
+      const payload = {
+        players: [
+          {
+            token: action.token
+          }
+        ]
+      }
+
+      socket.send(payload)
+
+      return next(action)
+    }
     case types.SELECT_VILLAGE: {
       const payload = {
         village: {
