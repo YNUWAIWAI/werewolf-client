@@ -13,6 +13,7 @@ export type Action =
   | actions.ChangeNumberOfPlayers
   | actions.ChangeNumberOfRobots
   | actions.ChangeVillageName
+  | actions.KickOutPlayer
   | actions.SelectVillage
   | actions.SocketClose
   | actions.SocketError
