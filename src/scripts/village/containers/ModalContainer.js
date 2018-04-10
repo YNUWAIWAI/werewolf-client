@@ -30,13 +30,13 @@ const getText = (phase: Phase, role: RoleId) => {
 }
 
 const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
-  const selectedAgent: Agent = state.agents.all.filter(a => a.id === state.modal.id)[0]
+  const selectedAgent = state.agents.all.find(a => a.id === state.modal.id)
 
-  if (!state.roles.mine) {
+  if (!selectedAgent) {
     return {
-      id: selectedAgent.id,
-      image: selectedAgent.image,
-      name: selectedAgent.name.ja,
+      id: -1,
+      image: '',
+      name: '',
       text: '',
       visible: state.modal.visible
     }
@@ -46,7 +46,7 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     id: selectedAgent.id,
     image: selectedAgent.image,
     name: selectedAgent.name.ja,
-    text: getText(state.base.phase, getRoleId(state.roles.mine['@id'])),
+    text: state.roles.mine ? getText(state.base.phase, getRoleId(state.roles.mine['@id'])) : '',
     visible: state.modal.visible
   }
 }
