@@ -1,9 +1,9 @@
 // @flow
 import {number, selectV2, withKnobs} from '@storybook/addon-knobs/react'
+import React from 'react'
 import Timer from '../src/scripts/village/components/Timer'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
-import React from 'react'
 
 storiesOf('village/Timer', module)
   .addDecorator(withKnobs)
