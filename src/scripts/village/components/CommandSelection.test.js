@@ -7,9 +7,13 @@ import {shallow} from 'enzyme'
 test('<CommandSelection agents={[]} text="text" />', () => {
   const handleSelectOptionEventHandler = jest.fn()
   const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
-  const wrapper = shallow(<CommandSelection agents={[]} handleSelectOption={handleSelectOption} text="text" />)
+  const timer = {
+    limit: 10,
+    phase: ''
+  }
+  const wrapper = shallow(<CommandSelection agents={[]} handleSelectOption={handleSelectOption} text="text" timer={timer} />)
 
-  expect(wrapper.find('.command--description').text()).toBe('text（<Connect(Timer) />）')
+  expect(wrapper.find('.command--description').text()).toBe('text（<Timer />）')
   expect(wrapper.find('.command--option-container').children()).toHaveLength(0)
 })
 test('<CommandSelection agents={agents} text="text" />', () => {
@@ -225,10 +229,14 @@ test('<CommandSelection agents={agents} text="text" />', () => {
       'isAChoice': true
     }
   ]
+  const timer = {
+    limit: 10,
+    phase: ''
+  }
   const handleSelectOptionEventHandler = jest.fn()
   const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
-  const wrapper = shallow(<CommandSelection agents={agents} handleSelectOption={handleSelectOption} text="text" />)
+  const wrapper = shallow(<CommandSelection agents={agents} handleSelectOption={handleSelectOption} text="text" timer={timer} />)
 
-  expect(wrapper.find('.command--description').text()).toBe('text（<Connect(Timer) />）')
+  expect(wrapper.find('.command--description').text()).toBe('text（<Timer />）')
   expect(wrapper.find('.command--option-container').children('CommandOption')).toHaveLength(12)
 })
