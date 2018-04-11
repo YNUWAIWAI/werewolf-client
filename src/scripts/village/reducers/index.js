@@ -23,8 +23,7 @@ const reducer = combineReducers({
   obfucator,
   prediction,
   result,
-  roles,
-  timer
+  roles
 })
 
 export default reducer
