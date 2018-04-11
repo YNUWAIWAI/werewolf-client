@@ -1,10 +1,11 @@
 // @flow
+import Timer, {type Props as TimerProps} from './Timer'
 import React from 'react'
-import Timer from '../containers/TimerContainer'
 
 type Props = {
   +class: string,
-  +text: string
+  +text: string,
+  +timer: TimerProps
 }
 
 export default function Description(props: Props) {
@@ -14,7 +15,7 @@ export default function Description(props: Props) {
         {props.text}
       </span>
       {'（'}
-      <Timer />
+      <Timer {... props.timer} />
       {'）'}
     </div>
   )

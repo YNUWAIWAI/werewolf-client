@@ -2,12 +2,14 @@
 import AgentIcon from './AgentIcon'
 import Description from './Description'
 import React from 'react'
+import type {Props as TimerProps} from './Timer'
 
 export type StateProps = {
   +id: number,
   +image: string,
   +name: string,
   +text: string,
+  +timer: TimerProps,
   +visible: boolean
 }
 export type DispatchProps = {
@@ -36,7 +38,7 @@ export default function Modal(props: Props) {
   return (
     <div className="modal">
       <AgentIcon class="modal--icon" image={props.image} name={props.name} />
-      <Description class="modal--description" text={props.text} />
+      <Description class="modal--description" text={props.text} timer={props.timer} />
       <div className="modal--button--container">
         <button className="modal--button" onClick={handleClick('yes')} value="yes">
           {'はい'}

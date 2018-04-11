@@ -3,14 +3,10 @@ import FormatedTime from './FormattedTime'
 import type {Phase} from 'village'
 import React from 'react'
 
-export type StateProps = {
+export type Props = {
   +limit: number,
   +phase: Phase | ''
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & OwnProps
 export type State = {
   start: DOMHighResTimeStamp,
   time: number
