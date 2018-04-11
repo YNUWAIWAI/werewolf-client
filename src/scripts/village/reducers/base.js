@@ -26,7 +26,7 @@ export const initialState = {
   intensionalDisclosureRange: 'public',
   phase: 'night',
   phaseStartTime: '',
-  phaseTimeLimit: 0,
+  phaseTimeLimit: -1,
   serverTimestamp: '',
   token: '',
   totalNumberOfAgents: 0,

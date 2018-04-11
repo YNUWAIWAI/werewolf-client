@@ -34,8 +34,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       agents: state.agents.all,
       text: '',
       timer: {
-        limit: state.timer.phaseTimeLimit,
-        phase: state.timer.phase
+        limit: state.base.phaseTimeLimit,
+        phase: state.base.phase
       }
     }
   }
@@ -44,8 +44,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     agents: state.agents.all,
     text: getText(state.base.phase, getRoleId(state.roles.mine['@id']), state.commandSelection.fixed),
     timer: {
-      limit: state.timer.phaseTimeLimit,
-      phase: state.timer.phase
+      limit: state.base.phaseTimeLimit,
+      phase: state.base.phase
     }
   }
 }
