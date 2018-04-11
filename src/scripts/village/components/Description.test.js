@@ -6,7 +6,7 @@ import {shallow} from 'enzyme'
 test('<Description class="class" text="text" />', () => {
   const timer = {
     limit: 10,
-    phase: ''
+    phase: 'night'
   }
   const wrapper = shallow(<Description class="class" text="text" timer={timer} />)
 
