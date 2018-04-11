@@ -4,6 +4,10 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<Modal id={1} image="image" name="name" text="text" visible />', () => {
+  const timer = {
+    limit: 10,
+    phase: ''
+  }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()
   const wrapper = shallow(
@@ -14,6 +18,7 @@ test('<Modal id={1} image="image" name="name" text="text" visible />', () => {
       image="image"
       name="name"
       text="text"
+      timer={timer}
       visible
     />
   )
@@ -39,6 +44,10 @@ test('<Modal id={1} image="image" name="name" text="text" visible />', () => {
   expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
 })
 test('<Modal visible={false} />', () => {
+  const timer = {
+    limit: 10,
+    phase: ''
+  }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()
   const wrapper = shallow(
@@ -49,6 +58,7 @@ test('<Modal visible={false} />', () => {
       image="image"
       name="name"
       text="text"
+      timer={timer}
       visible={false}
     />
   )
@@ -56,6 +66,10 @@ test('<Modal visible={false} />', () => {
   expect(wrapper.find('.modal').exists()).toBe(false)
 })
 test('<Modal id={1} image="image" name="name" text="text" visible /> handleClickNo', () => {
+  const timer = {
+    limit: 10,
+    phase: ''
+  }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()
   const wrapper = shallow(
@@ -66,6 +80,7 @@ test('<Modal id={1} image="image" name="name" text="text" visible /> handleClick
       image="image"
       name="name"
       text="text"
+      timer={timer}
       visible
     />
   )
@@ -106,6 +121,10 @@ test('<Modal id={1} image="image" name="name" text="text" visible /> handleClick
   ).toBe('いいえ')
 })
 test('<Modal id={1} image="image" name="name" text="text" visible /> handleClickYes', () => {
+  const timer = {
+    limit: 10,
+    phase: ''
+  }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()
   const wrapper = shallow(
@@ -116,6 +135,7 @@ test('<Modal id={1} image="image" name="name" text="text" visible /> handleClick
       image="image"
       name="name"
       text="text"
+      timer={timer}
       visible
     />
   )
