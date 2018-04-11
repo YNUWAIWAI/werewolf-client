@@ -9,7 +9,7 @@ test('<CommandSelection agents={[]} text="text" />', () => {
   const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
   const timer = {
     limit: 10,
-    phase: ''
+    phase: 'night'
   }
   const wrapper = shallow(<CommandSelection agents={[]} handleSelectOption={handleSelectOption} text="text" timer={timer} />)
 
@@ -231,7 +231,7 @@ test('<CommandSelection agents={agents} text="text" />', () => {
   ]
   const timer = {
     limit: 10,
-    phase: ''
+    phase: 'night'
   }
   const handleSelectOptionEventHandler = jest.fn()
   const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)

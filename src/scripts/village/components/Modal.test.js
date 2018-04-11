@@ -6,7 +6,7 @@ import {shallow} from 'enzyme'
 test('<Modal id={1} image="image" name="name" text="text" visible />', () => {
   const timer = {
     limit: 10,
-    phase: ''
+    phase: 'night'
   }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()
@@ -46,7 +46,7 @@ test('<Modal id={1} image="image" name="name" text="text" visible />', () => {
 test('<Modal visible={false} />', () => {
   const timer = {
     limit: 10,
-    phase: ''
+    phase: 'night'
   }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()
@@ -68,7 +68,7 @@ test('<Modal visible={false} />', () => {
 test('<Modal id={1} image="image" name="name" text="text" visible /> handleClickNo', () => {
   const timer = {
     limit: 10,
-    phase: ''
+    phase: 'night'
   }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()
@@ -123,7 +123,7 @@ test('<Modal id={1} image="image" name="name" text="text" visible /> handleClick
 test('<Modal id={1} image="image" name="name" text="text" visible /> handleClickYes', () => {
   const timer = {
     limit: 10,
-    phase: ''
+    phase: 'night'
   }
   const handleClickNoMockFn = jest.fn()
   const handleClickYesMockFn = jest.fn()

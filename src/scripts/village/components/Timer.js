@@ -5,7 +5,7 @@ import React from 'react'
 
 export type Props = {
   +limit: number,
-  +phase: Phase | ''
+  +phase: Phase
 }
 export type State = {
   start: DOMHighResTimeStamp,
@@ -17,7 +17,7 @@ export default class Timer extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      start: 0,
+      start: -1,
       time: 0
     }
     this.intervalID = []
@@ -27,9 +27,6 @@ export default class Timer extends React.Component<Props, State> {
     if (nextProps.limit === -1) {
       return
     }
-    this.setState({
-      start: performance.now()
-    })
     this.intervalID = [
       ... this.intervalID,
       setInterval(() => this.tick(), 200)
@@ -52,6 +49,12 @@ export default class Timer extends React.Component<Props, State> {
   }
 
   tick() {
+    if (this.state.start === -1) {
+      this.setState({
+        start: performance.now()
+      })
+    }
+
     const time = Math.floor((this.state.start + this.props.limit * 1000 - performance.now()) / 1000)
 
     this.setState({
@@ -65,6 +68,9 @@ export default class Timer extends React.Component<Props, State> {
 
       clearInterval(head)
       this.intervalID = tail
+      this.setState({
+        start: -1
+      })
     }
   }
 
