@@ -15,20 +15,26 @@ storiesOf('village/CommandInput', module)
       step: 1
     })
     const story =
-      <div className="command">
-        <CommandInput
-          handlePostChat={action('postChat')}
-          kind="public"
-          postCount={postCount}
-          postCountLimit={10}
-        />
-      </div>
+    <div style={{
+      height: '200px'
+    }}
+    >
+      <CommandInput
+        handlePostChat={action('postChat')}
+        kind="public"
+        postCount={postCount}
+        postCountLimit={10}
+      />
+    </div>
 
     return story
   }))
   .add('private', withInfo('')(() => {
     const story =
-      <div className="command">
+      <div style={{
+        height: '200px'
+      }}
+      >
         <CommandInput
           handlePostChat={action('postChat')}
           kind="private"
@@ -44,7 +50,10 @@ storiesOf('village/CommandInput', module)
       step: 1
     })
     const story =
-      <div className="command">
+      <div style={{
+        height: '200px'
+      }}
+      >
         <CommandInput
           handlePostChat={action('postChat')}
           kind="limited"
