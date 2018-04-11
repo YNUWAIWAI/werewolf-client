@@ -1,12 +1,13 @@
 // @flow
+import Timer, {type Props as TimerProps} from './Timer'
 import type {Agent} from 'village'
 import CommandOption from './CommandOption'
 import React from 'react'
-import Timer from '../containers/TimerContainer'
 
 export type StateProps = {
   +agents: Agent[],
-  +text: string
+  +text: string,
+  +timer: TimerProps
 }
 export type DispatchProps = {
   +handleSelectOption: number => void => void
@@ -25,7 +26,7 @@ export default function CommandSelection(props: Props) {
           {props.text}
         </span>
         {'（'}
-        <Timer />
+        <Timer {... props.timer} />
         {'）'}
       </div>
       <div className="command--option-container">

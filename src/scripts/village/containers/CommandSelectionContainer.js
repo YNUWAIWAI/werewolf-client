@@ -32,13 +32,21 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.roles.mine) {
     return {
       agents: state.agents.all,
-      text: ''
+      text: '',
+      timer: {
+        limit: state.timer.phaseTimeLimit,
+        phase: state.timer.phase
+      }
     }
   }
 
   return {
     agents: state.agents.all,
-    text: getText(state.base.phase, getRoleId(state.roles.mine['@id']), state.commandSelection.fixed)
+    text: getText(state.base.phase, getRoleId(state.roles.mine['@id']), state.commandSelection.fixed),
+    timer: {
+      limit: state.timer.phaseTimeLimit,
+      phase: state.timer.phase
+    }
   }
 }
 

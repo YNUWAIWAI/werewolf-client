@@ -1,10 +1,11 @@
 // @flow
+import Timer, {type Props as TimerProps} from './Timer'
 import React from 'react'
-import Timer from '../containers/TimerContainer'
 
 export type StateProps = {
   +date: number,
-  +phase: string
+  +phase: string,
+  +timer: TimerProps
 }
 export type OwnProps = {}
 export type Props =
@@ -18,7 +19,7 @@ export default function Day(props: Props) {
         <span>
           {`${props.date}日目 ${props.phase}`}
         </span>
-        <Timer />
+        <Timer {... props.timer} />
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 // @flow
-import type {Agent, Phase, RoleId} from 'village'
 import Modal, {type DispatchProps, type StateProps} from '../components/Modal'
+import type {Phase, RoleId} from 'village'
 import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'
 import type {Dispatch} from 'redux'
@@ -38,6 +38,10 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
       image: '',
       name: '',
       text: '',
+      timer: {
+        limit: state.timer.phaseTimeLimit,
+        phase: state.timer.phase
+      },
       visible: state.modal.visible
     }
   }
@@ -47,6 +51,10 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     image: selectedAgent.image,
     name: selectedAgent.name.ja,
     text: state.roles.mine ? getText(state.base.phase, getRoleId(state.roles.mine['@id'])) : '',
+    timer: {
+      limit: state.timer.phaseTimeLimit,
+      phase: state.timer.phase
+    },
     visible: state.modal.visible
   }
 }
