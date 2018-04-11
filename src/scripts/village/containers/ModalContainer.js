@@ -39,8 +39,8 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
       name: '',
       text: '',
       timer: {
-        limit: state.timer.phaseTimeLimit,
-        phase: state.timer.phase
+        limit: state.base.phaseTimeLimit,
+        phase: state.base.phase
       },
       visible: state.modal.visible
     }
@@ -52,8 +52,8 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     name: selectedAgent.name.ja,
     text: state.roles.mine ? getText(state.base.phase, getRoleId(state.roles.mine['@id'])) : '',
     timer: {
-      limit: state.timer.phaseTimeLimit,
-      phase: state.timer.phase
+      limit: state.base.phaseTimeLimit,
+      phase: state.base.phase
     },
     visible: state.modal.visible
   }

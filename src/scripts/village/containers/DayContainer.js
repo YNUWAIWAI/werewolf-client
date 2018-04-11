@@ -8,8 +8,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   date: state.base.date,
   phase: Phase[state.base.phase],
   timer: {
-    limit: state.timer.phaseTimeLimit,
-    phase: state.timer.phase
+    limit: state.base.phaseTimeLimit,
+    phase: state.base.phase
   }
 })
 const DayContainer = connect(
