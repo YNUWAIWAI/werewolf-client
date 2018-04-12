@@ -530,8 +530,7 @@ body {
 }
 
 .modal {
-  background: white;
-  height: 24vh;
+  background: #fafafa;
   left: 30vw;
   padding: 1em;
   position: fixed;
