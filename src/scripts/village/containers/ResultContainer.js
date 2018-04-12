@@ -3,7 +3,7 @@ import Result, {type StateProps} from '../components/Result'
 import type {ReducerState} from '../reducers'
 import {WEREWOLF_SIDE} from '../constants/Role'
 import {connect} from 'react-redux'
-import {xor} from '../module/util'
+import {xor} from '../util'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const rows = state.result.agents.map(a => ({

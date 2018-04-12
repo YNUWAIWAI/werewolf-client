@@ -1,7 +1,7 @@
 // @flow
 import type {RoleId} from 'village'
 import {VERSION} from './Version.js'
-import {trimBaseUri} from '../module/util'
+import {trimBaseUri} from '../util'
 
 const BASE_URL = `https://werewolf.world/resource/${VERSION}`
 

@@ -1,6 +1,6 @@
 // @flow
 /* eslint sort-keys: 0 */
-import {getMyAgent, getMyRole, getPlayableAgents, getPlayableRoles,trimBaseUri, xor} from './util.js'
+import {getMyAgent, getMyRole, getPlayableAgents, getPlayableRoles,trimBaseUri, xor} from './index'
 
 test('getPlayableAgents', () => {
   const agents = [
