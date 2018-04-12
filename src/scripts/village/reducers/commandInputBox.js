@@ -6,7 +6,7 @@ import type {Chat, InputChannel, Payload, Role} from 'village'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
 import {getInputChannel} from '../constants/Channels'
-import {getMyRole} from '../module/util'
+import {getMyRole} from '../util'
 
 export type State = {
   limited: {
