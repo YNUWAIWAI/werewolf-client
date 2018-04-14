@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {Agent, AgentStatus, BoardState, Payload, Role, RoleId} from 'village'
+import type {Agent, AgentId, AgentStatus, BoardState, Payload, Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {MEDIUM, ORDERED_ROLE_LIST, SEER, getRoleId} from '../constants/Role'
 import {getPlayableAgents, getPlayableRoles} from '../util'
@@ -21,7 +21,7 @@ export type State = {
     +tooltip: string
   }>,
   +table: {
-    [agentId: number]: {
+    [agentId: AgentId]: {
       [roleId: RoleId]: {
         date: number,
         state: BoardState
@@ -45,7 +45,7 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
       const roleId = getRoleId(role['@id'])
 
       role.board.forEach(b => {
-        const agentId = b.boardAgent.boardAgentId
+        const agentId = String(b.boardAgent.boardAgentId)
 
         table[agentId][roleId].state = b.boardPolarity === 'positive' ? 'fix' : 'fill'
         table[agentId][roleId].date = b.boardDate
@@ -60,27 +60,29 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
   const table: Table = {}
 
   agents.forEach(agent => {
-    table[agent.id] = {}
+    const agentId = String(agent.id)
+
+    table[agentId] = {}
     roles.forEach(role => {
       const roleId: RoleId = getRoleId(role['@id'])
 
       if (agent.agentIsMine && role.roleIsMine) {
-        table[agent.id][roleId] = {
+        table[agentId][roleId] = {
           date: 1,
           state: 'fix'
         }
       } else if (agent.agentIsMine && !role.roleIsMine) {
-        table[agent.id][roleId] = {
+        table[agentId][roleId] = {
           date: 1,
           state: 'fill'
         }
       } else if (!agent.agentIsMine && role.roleIsMine && role.numberOfAgents === 1) {
-        table[agent.id][roleId] = {
+        table[agentId][roleId] = {
           date: 1,
           state: 'fill'
         }
       } else {
-        table[agent.id][roleId] = {
+        table[agentId][roleId] = {
           date: 1,
           state: '?'
         }
@@ -133,14 +135,16 @@ const prediction = (state: State = initialState, action: Action): State => {
 
       return state
     case ActionTypes.CHANGE_PREDICTION_BOARD: {
+      const agentId = String(action.playerId)
+
       return {
         ... state,
         table: {
           ... state.table,
           [action.playerId]: {
-            ... state.table[action.playerId],
+            ... state.table[agentId],
             [action.roleId]: {
-              ... state.table[action.playerId][action.roleId],
+              ... state.table[agentId][action.roleId],
               state: action.nextState
             }
           }

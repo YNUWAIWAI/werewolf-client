@@ -11,6 +11,7 @@ declare module 'village' {
   declare type Language = 'ja' | 'en'
   declare type Result = 'win' | 'lose'
   declare type TResult = Result
+  declare type AgentId = string
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by werewolf attack' | 'death by fear' | 'unnatural death'
   declare type Agent = {
     '@id': string,

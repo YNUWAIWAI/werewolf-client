@@ -1,6 +1,6 @@
 // @flow
 /* eslint react/no-unused-prop-types: 0 */
-import type {AgentStatus, BoardState, RoleId} from 'village'
+import type {AgentId, AgentStatus, BoardState, RoleId} from 'village'
 import PredictionItem from './PredictionItem'
 import PredictionPlayer from './PredictionPlayer'
 import PredictionRole from './PredictionRole'
@@ -20,7 +20,7 @@ export type StateProps = {
     +tooltip: string
   }>,
   +table: {
-    [agentId: number]: {
+    [agentId: AgentId]: {
       [roleId: RoleId]: {
         date: number,
         state: BoardState
@@ -58,10 +58,10 @@ export default function Prediction(props: Props) {
         />,
         ... props.roleStatus.map(role =>
           <PredictionItem
-            date={props.table[player.id][role.id].date}
+            date={props.table[String(player.id)][role.id].date}
             handleBoardClick={props.handleBoardClick(player.id, role.id)}
             key={player.id + role.id}
-            state={props.table[player.id][role.id].state}
+            state={props.table[String(player.id)][role.id].state}
           />
         )
       ]
