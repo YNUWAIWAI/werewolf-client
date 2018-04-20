@@ -1,5 +1,6 @@
 // @flow
 import App from './containers/App'
+import {PROLOGUE} from './constants/ActionTypes'
 import {Provider} from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -14,7 +15,7 @@ const store = createStore(
 )
 
 store.dispatch({
-  type: 'INIT'
+  type: PROLOGUE
 })
 
 const root = document.getElementById('root')

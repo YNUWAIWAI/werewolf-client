@@ -18,7 +18,7 @@ export type Action =
   | actions.SocketOpen
   | actions.SocketSend
   | actions.ToggleObfucator
-  | {type: 'INIT'}
+  | {type: 'PROLOGUE'}
 
 const elem = document.getElementById('script')
 
