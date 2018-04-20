@@ -1,5 +1,4 @@
 // @flow
-/* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './base'
 import {firstDayConversation} from './fakeServer'
@@ -25,6 +24,5 @@ test('SOCKET_MESSAGE', () => {
     totalNumberOfAgents: 15,
     villageId: 3,
     villageName: '横国の森の奥にある時代に取り残された小さな村'
-
   })
 })
