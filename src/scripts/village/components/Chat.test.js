@@ -4,14 +4,16 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<Chat /> 0 item', () => {
-  const items = []
-  const wrapper = shallow(<Chat items={items} />)
+  const allIds = []
+  const byId = {}
+  const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
 
   expect(wrapper.find('ChatItem')).toHaveLength(0)
 })
 test('<Chat /> 1 item', () => {
-  const items = [
-    {
+  const allIds = ['chat0']
+  const byId = {
+    'chat0': {
       id: 1,
       image: 'image',
       intensionalDisclosureRange: 'anonymousAudience',
@@ -22,14 +24,15 @@ test('<Chat /> 1 item', () => {
       serverTimestamp: '2018-01-01T00:00:10.000Z',
       text: 'text'
     }
-  ]
-  const wrapper = shallow(<Chat items={items} />)
+  }
+  const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
 
   expect(wrapper.find('ChatItem')).toHaveLength(1)
 })
 test('<Chat /> 2 items', () => {
-  const items = [
-    {
+  const allIds = [ 'chat1', 'chat0' ]
+  const byId = {
+    'chat0': {
       id: 1,
       image: 'image',
       intensionalDisclosureRange: 'anonymousAudience',
@@ -40,7 +43,7 @@ test('<Chat /> 2 items', () => {
       serverTimestamp: '2018-01-01T00:00:10.000Z',
       text: 'text'
     },
-    {
+    'chat1': {
       id: 2,
       image: 'image',
       intensionalDisclosureRange: 'anonymousAudience',
@@ -51,15 +54,16 @@ test('<Chat /> 2 items', () => {
       serverTimestamp: '2018-01-01T00:00:10.000Z',
       text: 'text'
     }
-  ]
-  const wrapper = shallow(<Chat items={items} />)
+  }
+  const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
 
   expect(wrapper.find('ChatItem')).toHaveLength(2)
   expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([ 2, 1 ])
 })
 test('<Chat /> 3 items', () => {
-  const items = [
-    {
+  const allIds = [ 'chat2', 'chat1', 'chat0' ]
+  const byId = {
+    'chat0': {
       id: 1,
       image: 'image',
       intensionalDisclosureRange: 'anonymousAudience',
@@ -70,7 +74,7 @@ test('<Chat /> 3 items', () => {
       serverTimestamp: '2018-01-01T00:00:10.000Z',
       text: 'text'
     },
-    {
+    'chat1': {
       id: 2,
       image: 'image',
       intensionalDisclosureRange: 'anonymousAudience',
@@ -81,7 +85,7 @@ test('<Chat /> 3 items', () => {
       serverTimestamp: '2018-01-01T00:00:10.000Z',
       text: 'text'
     },
-    {
+    'chat2': {
       id: 3,
       image: 'image',
       intensionalDisclosureRange: 'anonymousAudience',
@@ -92,8 +96,8 @@ test('<Chat /> 3 items', () => {
       serverTimestamp: '2018-01-01T00:00:10.000Z',
       text: 'text'
     }
-  ]
-  const wrapper = shallow(<Chat items={items} />)
+  }
+  const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
 
   expect(wrapper.find('ChatItem')).toHaveLength(3)
   expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([ 3, 2, 1 ])
