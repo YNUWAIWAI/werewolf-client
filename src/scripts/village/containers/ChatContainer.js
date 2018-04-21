@@ -4,21 +4,19 @@ import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const items = state.chat.items
-    .map(item => ({
-      id: item.id,
-      image: item.image,
-      intensionalDisclosureRange: item.intensionalDisclosureRange,
-      isMine: item.isMine,
-      name: item.name.ja,
-      phaseStartTime: item.phaseStartTime,
-      phaseTimeLimit: item.phaseTimeLimit,
-      serverTimestamp: item.serverTimestamp,
-      text: item.text
-    }))
+  const byId = {}
+
+  state.chat.allIds
+    .forEach(id => {
+      byId[id] = {
+        ... state.chat.byId[id],
+        name: state.chat.byId[id].name.ja
+      }
+    })
 
   return {
-    items
+    allIds: state.chat.allIds,
+    byId
   }
 }
 const ChatContainer = connect(
