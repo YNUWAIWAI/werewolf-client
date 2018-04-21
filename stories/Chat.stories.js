@@ -8,8 +8,9 @@ import {withKnobs} from '@storybook/addon-knobs/react'
 storiesOf('village/Chat', module)
   .addDecorator(withKnobs)
   .add('anonymousAudience', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'anonymousAudience',
@@ -20,7 +21,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'anonymousAudience',
@@ -31,14 +32,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('grave', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'grave',
@@ -49,7 +51,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'grave',
@@ -60,14 +62,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('hunter', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'hunter',
@@ -78,7 +81,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'hunter',
@@ -89,14 +92,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('master', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'master',
@@ -107,7 +111,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'master',
@@ -118,14 +122,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('onymousAudience', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'onymousAudience',
@@ -136,7 +141,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'onymousAudience',
@@ -147,14 +152,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('private', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'private',
@@ -165,7 +171,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'private',
@@ -176,14 +182,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('public', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'public',
@@ -194,7 +201,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'public',
@@ -205,14 +212,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('seer', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'seer',
@@ -223,7 +231,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'seer',
@@ -234,14 +242,15 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
   .add('werewolf', withInfo('')(() => {
-    const items = [
-      {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: 'werewolf',
@@ -252,7 +261,7 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text'
       },
-      {
+      'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: 'werewolf',
@@ -263,8 +272,8 @@ storiesOf('village/Chat', module)
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text'
       }
-    ]
-    const story = <Chat items={items} />
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
 
     return story
   }))
