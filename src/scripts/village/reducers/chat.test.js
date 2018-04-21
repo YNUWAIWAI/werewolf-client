@@ -32,9 +32,6 @@ test('SOCKET_MESSAGE', () => {
       }
     }
   })
-})
-
-test('SOCKET_MESSAGE 2 items', () => {
   expect(
     reducer(
       {
@@ -95,4 +92,3 @@ test('SOCKET_MESSAGE 2 items', () => {
     }
   })
 })
-
