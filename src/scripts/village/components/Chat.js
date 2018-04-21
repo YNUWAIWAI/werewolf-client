@@ -3,23 +3,26 @@ import ChatItem, {type Props as ChatItemProps} from './ChatItem'
 import React from 'react'
 
 export type StateProps = {
-  +items: Array<ChatItemProps>
+  +allIds: string[],
+  +byId: {
+    [string]: ChatItemProps
+  }
 }
 export type OwnProps = {}
 export type Props =
   & StateProps
   & OwnProps
 
-export default function Chat({items}: Props) {
+export default function Chat(props: Props) {
   return (
     <div className="chat">
       {
-        items.map((item, index) =>
+        props.allIds.map(id =>
           <ChatItem
-            key={index}
-            {... item}
+            key={id}
+            {... props.byId[id]}
           />
-        ).reverse()
+        )
       }
     </div>
   )

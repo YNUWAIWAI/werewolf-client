@@ -8,7 +8,7 @@ import React from 'react'
 import {getChatChannel} from '../constants/Channels'
 
 export type Props = {
-  +id?: number,
+  +id: number,
   +image: string,
   +intensionalDisclosureRange: Channel,
   +isMine: boolean,
