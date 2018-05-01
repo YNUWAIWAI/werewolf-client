@@ -2,40 +2,52 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village'
-import {getMyAgent, getPlayableAgents} from '../util'
+import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
 import {RESULTS} from '../constants/Phase'
 import type {SocketMessage} from '../actions'
 
+const getAgentId = idGenerater('agent')
+
 export type State = {
-  +agents: Array<{
-    +agentImage: string,
-    +agentId: number,
-    +agentName: { [Language]: string },
-    +result: TResult,
-    +roleImage: string,
-    +roleName: { [Language]: string },
-    +status: AgentStatus,
-    +userAvatar: string,
-    +userName: string
-  }>,
+  +agents: {
+    [string]: {
+      +agentImage: string,
+      +agentId: number,
+      +agentName: { [Language]: string },
+      +result: TResult,
+      +roleImage: string,
+      +roleName: { [Language]: string },
+      +status: AgentStatus,
+      +userAvatar: string,
+      +userName: string
+    }
+  },
+  +allIds: string[],
+  +losers: string[],
+  +me: ?string,
   +summary: {
     +isPlayer: boolean,
     +result: TResult | '',
     +role: string
   },
-  +visible: boolean
+  +visible: boolean,
+  +winners: string[]
 }
 type Action =
   | SocketMessage
 
 export const initialState = {
-  agents: [],
+  agents: {},
+  allIds: [],
+  losers: [],
+  me: null,
   summary: {
     isPlayer: true,
     result: '',
     role: ''
   },
-  visible: false
+  visible: false,
+  winners: []
 }
 const result = (state: State = initialState, action: Action): State => {
   switch (action.type) {
@@ -47,18 +59,38 @@ const result = (state: State = initialState, action: Action): State => {
         action.payload.phase === RESULTS
       ) {
         const payload: Payload<ReusltAgent, *, *> = action.payload
-        const agents = getPlayableAgents(payload.agent)
-          .map(a => ({
-            agentId: a.id,
-            agentImage: a.image,
-            agentName: a.name,
-            result: a.result,
-            roleImage: a.role.roleImage,
-            roleName: a.role.roleName,
-            status: a.status,
-            userAvatar: a.userAvatar,
-            userName: a.userName
-          }))
+        const agents = {}
+        const allIds = []
+        const losers = []
+        let me
+        const winners = []
+
+        getPlayableAgents(payload.agent)
+          .forEach(a => {
+            const agentId = getAgentId()
+
+            agents[agentId] = {
+              agentId: a.id,
+              agentImage: a.image,
+              agentName: a.name,
+              result: a.result,
+              roleImage: a.role.roleImage,
+              roleName: a.role.roleName,
+              status: a.status,
+              userAvatar: a.userAvatar,
+              userName: a.userName
+            }
+            if (a.result === 'win') {
+              winners.push(agentId)
+            }
+            if (a.result === 'lose') {
+              losers.push(agentId)
+            }
+            if (a.agentIsMine) {
+              me = agentId
+            }
+            allIds.push(agentId)
+          })
         const summary = (() => {
           const mine = getMyAgent(payload.agent)
 
@@ -80,8 +112,12 @@ const result = (state: State = initialState, action: Action): State => {
 
         return {
           agents,
+          allIds,
+          losers,
+          me,
           summary,
-          visible: true
+          visible: true,
+          winners
         }
       }
 

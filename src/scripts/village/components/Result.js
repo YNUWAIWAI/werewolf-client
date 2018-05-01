@@ -4,88 +4,128 @@ import React from 'react'
 import ResultCell from './ResultCell'
 
 export type StateProps = {
-  +rows: Array<{
-    +agentName: string,
-    +agentImage: string,
-    +agentId: number,
-    +result: TResult,
-    +roleImage: string,
-    +roleName: string,
-    +status: AgentStatus,
-    +userAvatar: string,
-    +userName: string
-  }>,
+  +agents: {
+    [string]: {
+      +agentName: string,
+      +agentImage: string,
+      +agentId: number,
+      +result: TResult,
+      +roleImage: string,
+      +roleName: string,
+      +status: AgentStatus,
+      +userAvatar: string,
+      +userName: string
+    }
+  },
+  +losers: string[],
+  +me: ?string,
   +summary: string,
-  +visible: boolean
+  +visible: boolean,
+  +winners: string[]
 }
 export type OwnProps = {}
 export type Props =
   & StateProps
   & OwnProps
 
+const getRow = agent => [
+  <ResultCell
+    image={agent.agentImage}
+    key={`${agent.agentId}image`}
+    status={agent.status}
+    type="image"
+  />,
+  <ResultCell
+    key={`${agent.agentId}name`}
+    status={agent.status}
+    text={agent.agentName}
+    type="name"
+  />,
+  <ResultCell
+    key={`${agent.agentId}status`}
+    status={agent.status}
+    text={agent.status === 'alive' ? '生存' : '死亡'}
+    type="status"
+  />,
+  <ResultCell
+    image={agent.roleImage}
+    key={`${agent.agentId}roleImage`}
+    status={agent.status}
+    tooltip={agent.roleName}
+    type="roleImage"
+  />,
+  <ResultCell
+    image={agent.userAvatar}
+    key={`${agent.agentId}userAvatar`}
+    status={agent.status}
+    type="userAvatar"
+  />,
+  <ResultCell
+    key={`${agent.agentId}userName`}
+    status={agent.status}
+    text={agent.userName}
+    type="userName"
+  />
+]
+
 export default function Result(props: Props) {
   if (!props.visible) {
     return ''
   }
-  const cells = props.rows.map(row => [
-    <ResultCell
-      image={row.agentImage}
-      key={`${row.agentId}image`}
-      result={row.result}
-      status={row.status}
-      type="image"
-    />,
-    <ResultCell
-      key={`${row.agentId}name`}
-      result={row.result}
-      status={row.status}
-      text={row.agentName}
-      type="name"
-    />,
-    <ResultCell
-      key={`${row.agentId}status`}
-      result={row.result}
-      status={row.status}
-      text={row.status === 'alive' ? '生存' : '死亡'}
-      type="status"
-    />,
-    <ResultCell
-      key={`${row.agentId}result`}
-      result={row.result}
-      status={row.status}
-      text={row.result === 'win' ? '勝利' : '敗北'}
-      type="result"
-    />,
-    <ResultCell
-      image={row.roleImage}
-      key={`${row.agentId}roleImage`}
-      result={row.result}
-      status={row.status}
-      tooltip={row.roleName}
-      type="roleImage"
-    />,
-    <ResultCell
-      image={row.userAvatar}
-      key={`${row.agentId}userAvatar`}
-      result={row.result}
-      status={row.status}
-      type="userAvatar"
-    />,
-    <ResultCell
-      key={`${row.agentId}userName`}
-      result={row.result}
-      status={row.status}
-      text={row.userName}
-      type="userName"
-    />
-  ])
+  const me = (() => {
+    if (props.me === undefined || props.me === null) {
+      return []
+    }
+
+    return getRow(props.agents[props.me])
+  })()
+  const compareAgentName = (a, b) => {
+    const agents = props.agents
+
+    if (agents[a].agentName < agents[b].agentName) {
+      return -1
+    }
+    if (agents[a].agentName > agents[b].agentName) {
+      return 1
+    }
+
+    return 0
+  }
+  const compareStatus = (a, b) => {
+    const agents = props.agents
+
+    if (agents[a].status === 'alive' && agents[b].status === 'alive') {
+      return 0
+    }
+    if (agents[a].status !== 'alive' && agents[b].status === 'alive') {
+      return 1
+    }
+    if (agents[a].status === 'alive' && agents[b].status !== 'alive') {
+      return -1
+    }
+
+    return 0
+  }
+  const losers = props.losers
+    .sort(compareAgentName)
+    .sort(compareStatus)
+    .map(id => getRow(props.agents[id]))
+
+  const winners = [... props.winners]
+    .sort(compareAgentName)
+    .sort(compareStatus)
+    .map(id => getRow(props.agents[id]))
 
   return (
     <div className="result">
       {
         [
           <ResultCell key="summary" text={props.summary} type="summary" />,
-          ... cells
+          me,
+          <ResultCell key="caption winners" text="勝利者" type="caption" />,
+          ... winners,
+          <ResultCell key="caption losers" text="敗者" type="caption" />,
+          ... losers
         ]
       }
     </div>
