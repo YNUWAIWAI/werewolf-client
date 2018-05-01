@@ -6,17 +6,23 @@ import {connect} from 'react-redux'
 import {xor} from '../util'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const rows = state.result.agents.map(a => ({
-    agentId: a.agentId,
-    agentImage: a.agentImage,
-    agentName: a.agentName.ja,
-    result: a.result,
-    roleImage: a.roleImage,
-    roleName: a.roleName.ja,
-    status: a.status,
-    userAvatar: a.userAvatar,
-    userName: a.userName
-  }))
+  const agents = {}
+
+  state.result.allIds.forEach(id => {
+    const a = state.result.agents[id]
+
+    agents[id] = {
+      agentId: a.agentId,
+      agentImage: a.agentImage,
+      agentName: a.agentName.ja,
+      result: a.result,
+      roleImage: a.roleImage,
+      roleName: a.roleName.ja,
+      status: a.status,
+      userAvatar: a.userAvatar,
+      userName: a.userName
+    }
+  })
   const summary = (() => {
     const isWerewolfSide = WEREWOLF_SIDE.includes(state.result.summary.role)
     const isWin = state.result.summary.result === 'win'
@@ -32,9 +38,12 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   })()
 
   return {
-    rows,
+    agents,
+    losers: state.result.losers,
+    me: state.result.me,
     summary,
-    visible: state.result.visible
+    visible: state.result.visible,
+    winners: state.result.winners
   }
 }
 const ResultContainer = connect(

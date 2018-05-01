@@ -587,8 +587,7 @@ body {
   background: white;
   border: 1px solid black;
   display: grid;
-  grid-template-areas: 'summary summary summary summary summary summary summary';
-  grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr 1fr calc(var(--result-image-size) + 1rem) calc(var(--result-image-size) + 1rem) 2fr;
+  grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr calc(var(--result-image-size) + 1rem) calc(4px + var(--result-image-size) + 1rem) 2fr;
   height: 80vh;
   left: 10vw;
   overflow: scroll;
@@ -608,7 +607,16 @@ body {
     text-align: center;
 
     &[ data-result = 'summary' ] {
-      grid-area: summary;
+      grid-column: 1 / 7;
+    }
+
+    &[ data-result = 'caption' ] {
+      grid-column: 1 / 7;
+      padding-top: 2rem;
+    }
+
+    &[ data-result = 'userAvatar' ] {
+      border-left: 4px double black;
     }
 
     &[ data-result = 'image' ],
@@ -618,31 +626,31 @@ body {
       display: inline-flex;
     }
 
-    &[ data-result = 'roleImage' ][ data-tooltip ] {
-      position: relative;
+    &[ data-result = 'roleImage' ] {
+      border-right: none;
 
-      &:hover::after {
-        align-items: center;
-        background: white;
-        border: solid 1px black;
-        bottom: 15%;
-        content: attr(data-tooltip);
-        display: inline-flex;
-        font-size: 10px;
-        justify-content: center;
-        left: 10%;
-        position: absolute;
-        right: 10%;
-        top: 15%;
+      &[ data-tooltip ] {
+        position: relative;
+
+        &:hover::after {
+          align-items: center;
+          background: white;
+          border: solid 1px black;
+          bottom: 15%;
+          content: attr(data-tooltip);
+          display: inline-flex;
+          font-size: 10px;
+          justify-content: center;
+          left: 10%;
+          position: absolute;
+          right: 10%;
+          top: 15%;
+        }
       }
     }
 
     &.dead {
       color: var(--dead-color);
-    }
-
-    &.win {
-      background: var(--win-color);
     }
   }
 }

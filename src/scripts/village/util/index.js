@@ -2,6 +2,19 @@
 import {UNPLAYABLE_AGENT} from '../constants/Agent'
 import {UNPLAYABLE_ROLE} from '../constants/Role'
 
+export const idGenerater = (prefix: string) => {
+  let chatId
+
+  return () => {
+    if (chatId === undefined) {
+      chatId = -1
+    }
+    chatId += 1
+
+    return `${prefix}${chatId}`
+  }
+}
+
 export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] =>
   agents.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
 
