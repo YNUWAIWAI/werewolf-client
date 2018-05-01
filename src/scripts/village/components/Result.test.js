@@ -4,8 +4,8 @@ import React from 'react'
 import Result from './Result'
 import {shallow} from 'enzyme'
 
-const rows = [
-  {
+const agents = {
+  'agent0': {
     'agentId': 1,
     'agentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
     'agentName': 'ヴァルター',
@@ -16,7 +16,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Gert.jpg',
     'userName': 'Suzuki'
   },
-  {
+  'agent1': {
     'agentId': 2,
     'agentImage': 'https://werewolf.world/image/0.1/Moritz.jpg',
     'agentName': 'モーリッツ',
@@ -27,7 +27,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Alvin.jpg',
     'userName': 'Takahashi'
   },
-  {
+  'agent2': {
     'agentId': 3,
     'agentImage': 'https://werewolf.world/image/0.1/Simson.jpg',
     'agentName': 'ジムゾン',
@@ -38,7 +38,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Friedel.jpg',
     'userName': 'Tanaka'
   },
-  {
+  'agent3': {
     'agentId': 4,
     'agentImage': 'https://werewolf.world/image/0.1/Thomas.jpg',
     'agentName': 'トーマス',
@@ -49,7 +49,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Dieter.jpg',
     'userName': 'Ito'
   },
-  {
+  'agent4': {
     'agentId': 5,
     'agentImage': 'https://werewolf.world/image/0.1/Nicholas.jpg',
     'agentName': 'ニコラス',
@@ -60,7 +60,7 @@ const rows = [
     'userName': 'Watanabe',
     'userAvatar': 'https://werewolf.world/image/0.1/Erna.jpg'
   },
-  {
+  'agent5': {
     'agentId': 6,
     'agentImage': 'https://werewolf.world/image/0.1/Dieter.jpg',
     'agentName': 'ディーター',
@@ -71,7 +71,7 @@ const rows = [
     'userName': 'Yamamoto',
     'userAvatar': 'https://werewolf.world/image/0.1/Jacob.jpg'
   },
-  {
+  'agent6': {
     'agentId': 7,
     'agentImage': 'https://werewolf.world/image/0.1/Peter.jpg',
     'agentName': 'ペーター',
@@ -82,7 +82,7 @@ const rows = [
     'userName': 'Nakamura',
     'userAvatar': 'https://werewolf.world/image/0.1/Nicholas.jpg'
   },
-  {
+  'agent7': {
     'agentImage': 'https://werewolf.world/image/0.1/Lisa.jpg',
     'agentName': 'リーザ',
     'agentId': 8,
@@ -93,7 +93,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Peter.jpg',
     'userName': 'Kobayashi'
   },
-  {
+  'agent8': {
     'agentId': 9,
     'agentImage': 'https://werewolf.world/image/0.1/Alvin.jpg',
     'agentName': 'アルビン',
@@ -104,7 +104,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Peter.jpg',
     'userName': 'Yoshida'
   },
-  {
+  'agent9': {
     'agentId': 11,
     'agentImage': 'https://werewolf.world/image/0.1/Otto.jpg',
     'agentName': 'オットー',
@@ -115,7 +115,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Simson.jpg',
     'userName': 'Sasaki'
   },
-  {
+  'agent10': {
     'agentId': 12,
     'agentImage': 'https://werewolf.world/image/0.1/Joachim.jpg',
     'agentName': 'ヨアヒム',
@@ -126,7 +126,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Otto.jpg',
     'userName': '山口'
   },
-  {
+  'agent11': {
     'agentName': 'パメラ',
     'agentImage': 'https://werewolf.world/image/0.1/Pamela.jpg',
     'agentId': 13,
@@ -137,7 +137,7 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Joachim.jpg',
     'userName': '松本'
   },
-  {
+  'agent12': {
     'agentId': 14,
     'agentImage': 'https://werewolf.world/image/0.1/Jacob.jpg',
     'agentName': 'ヤコブ',
@@ -148,15 +148,51 @@ const rows = [
     'userAvatar': 'https://werewolf.world/image/0.1/Catalina.jpg',
     'userName': '井上'
   }
+}
+const losers = [
+  'agent1',
+  'agent4',
+  'agent5',
+  'agent6'
+]
+const me = 'agent0'
+const winners = [
+  'agent0',
+  'agent2',
+  'agent3',
+  'agent7',
+  'agent8',
+  'agent9',
+  'agent10',
+  'agent11',
+  'agent12'
 ]
 
 test('<Result visible />', () => {
-  const wrapper = shallow(<Result rows={rows} summary="summary" visible />)
+  const wrapper = shallow(
+    <Result
+      agents={agents}
+      losers={losers}
+      me={me}
+      summary="summary"
+      visible
+      winners={winners}
+    />
+  )
 
   expect(wrapper.find('.result').exists()).toBe(true)
 })
 test('<Result visible={false} />', () => {
-  const wrapper = shallow(<Result rows={rows} summary="summary" visible={false} />)
+  const wrapper = shallow(
+    <Result
+      agents={agents}
+      losers={losers}
+      me={me}
+      summary="summary"
+      visible={false}
+      winners={winners}
+    />
+  )
 
   expect(wrapper.find('.result').exists()).toBe(false)
 })
