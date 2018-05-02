@@ -9,7 +9,7 @@ import {withKnobs} from '@storybook/addon-knobs/react'
 
 storiesOf('village/Result', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('13 players', withInfo('')(() => {
     const agents = {
       'agent0': {
         'agentId': 1,
@@ -172,6 +172,87 @@ storiesOf('village/Result', module)
       'agent10',
       'agent11',
       'agent12'
+    ]
+    const story =
+      <Result
+        agents={agents}
+        handleClickCloseButton={action('handleCloseClick')}
+        losers={losers}
+        me={me}
+        summary="summary"
+        visible
+        winners={winners}
+      />
+
+    return story
+  }))
+  .add('5 players', withInfo('')(() => {
+    const agents = {
+      'agent0': {
+        'agentId': 1,
+        'agentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'agentName': 'ヴァルター',
+        'result': 'win',
+        'roleImage': 'https://werewolf.world/image/0.1/seer.jpg',
+        'roleName': '占い師',
+        'status': 'alive',
+        'userAvatar': 'https://werewolf.world/image/0.1/Gert.jpg',
+        'userName': 'Suzuki'
+      },
+      'agent1': {
+        'agentId': 2,
+        'agentImage': 'https://werewolf.world/image/0.1/Moritz.jpg',
+        'agentName': 'モーリッツ',
+        'result': 'lose',
+        'roleImage': 'https://werewolf.world/image/0.1/werewolf.jpg',
+        'roleName': '人狼',
+        'status': 'alive',
+        'userAvatar': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'userName': 'Takahashi'
+      },
+      'agent2': {
+        'agentId': 3,
+        'agentImage': 'https://werewolf.world/image/0.1/Simson.jpg',
+        'agentName': 'ジムゾン',
+        'result': 'win',
+        'roleImage': 'https://werewolf.world/image/0.1/hunter.jpg',
+        'roleName': '狩人',
+        'status': 'alive',
+        'userAvatar': 'https://werewolf.world/image/0.1/Friedel.jpg',
+        'userName': 'Tanaka'
+      },
+      'agent3': {
+        'agentId': 4,
+        'agentImage': 'https://werewolf.world/image/0.1/Thomas.jpg',
+        'agentName': 'トーマス',
+        'result': 'win',
+        'roleImage': 'https://werewolf.world/image/0.1/medium.jpg',
+        'roleName': '霊媒師',
+        'status': 'alive',
+        'userAvatar': 'https://werewolf.world/image/0.1/Dieter.jpg',
+        'userName': 'Ito'
+      },
+      'agent4': {
+        'agentId': 5,
+        'agentImage': 'https://werewolf.world/image/0.1/Nicholas.jpg',
+        'agentName': 'ニコラス',
+        'result': 'lose',
+        'roleImage': 'https://werewolf.world/image/0.1/werehumster.jpg',
+        'roleName': 'ハムスター人間',
+        'status': 'death by fear',
+        'userName': 'Watanabe',
+        'userAvatar': 'https://werewolf.world/image/0.1/Erna.jpg'
+      }
+    }
+    const losers = [
+      'agent1',
+      'agent4'
+    ]
+    const me = 'agent0'
+    const winners = [
+      'agent0',
+      'agent2',
+      'agent3'
     ]
     const story =
       <Result
