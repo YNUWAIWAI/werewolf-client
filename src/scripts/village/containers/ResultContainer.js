@@ -31,15 +31,27 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   const summary = (() => {
     const isWerewolfSide = WEREWOLF_SIDE.includes(state.result.summary.role)
     const isWin = state.result.summary.result === 'win'
+    const description = (() => {
+      if (state.result.summary.isPlayer) {
+        return `人間側の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
+      }
 
-    if (state.result.summary.isPlayer) {
-      const text = `人間側の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
+      return `人間側が${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}しました`
+    })()
 
-      return text
+    if (xor(isWerewolfSide, isWin)) {
+      return {
+        description,
+        loser: '敗者（人狼チーム）',
+        winner: '勝者（人間チーム）'
+      }
     }
-    const text = `人間側が${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}しました`
 
-    return text
+    return {
+      description,
+      loser: '敗者（人間チーム）',
+      winner: '勝者（人狼チーム）'
+    }
   })()
 
   return {

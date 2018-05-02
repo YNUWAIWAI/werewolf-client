@@ -162,6 +162,11 @@ storiesOf('village/Result', module)
       'agent6'
     ]
     const me = 'agent0'
+    const summary = {
+      description: '人間側の勝利のため，あなたは勝ちました',
+      loser: '敗者（人狼チーム）',
+      winner: '勝者（人間チーム）'
+    }
     const winners = [
       'agent0',
       'agent2',
@@ -179,7 +184,7 @@ storiesOf('village/Result', module)
         handleClickCloseButton={action('handleCloseClick')}
         losers={losers}
         me={me}
-        summary="summary"
+        summary={summary}
         visible
         winners={winners}
       />
@@ -249,6 +254,11 @@ storiesOf('village/Result', module)
       'agent4'
     ]
     const me = 'agent0'
+    const summary = {
+      description: '人間側の勝利のため，あなたは勝ちました',
+      loser: '敗者（人狼チーム）',
+      winner: '勝者（人間チーム）'
+    }
     const winners = [
       'agent0',
       'agent2',
@@ -260,7 +270,7 @@ storiesOf('village/Result', module)
         handleClickCloseButton={action('handleCloseClick')}
         losers={losers}
         me={me}
-        summary="summary"
+        summary={summary}
         visible
         winners={winners}
       />
