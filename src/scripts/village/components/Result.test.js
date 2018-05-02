@@ -156,6 +156,11 @@ const losers = [
   'agent6'
 ]
 const me = 'agent0'
+const summary = {
+  description: 'description',
+  loser: 'loser',
+  winner: 'winner'
+}
 const winners = [
   'agent0',
   'agent2',
@@ -176,7 +181,7 @@ test('<Result visible />', () => {
       handleClickCloseButton={handleClickCloseButton}
       losers={losers}
       me={me}
-      summary="summary"
+      summary={summary}
       visible
       winners={winners}
     />
@@ -193,7 +198,7 @@ test('<Result visible={false} />', () => {
       handleClickCloseButton={handleClickCloseButton}
       losers={losers}
       me={me}
-      summary="summary"
+      summary={summary}
       visible={false}
       winners={winners}
     />
