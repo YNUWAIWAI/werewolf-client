@@ -104,7 +104,7 @@ storiesOf('village/Result', module)
         'agentImage': 'https://werewolf.world/image/0.1/Alvin.jpg',
         'agentName': 'アルビン',
         'roleImage': 'https://werewolf.world/image/0.1/villager.jpg',
-        'roleName':  '村人',
+        'roleName': '村人',
         'status': 'unnatural death',
         'result': 'win',
         'userAvatar': 'https://werewolf.world/image/0.1/Peter.jpg',
