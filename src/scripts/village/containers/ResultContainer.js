@@ -1,11 +1,11 @@
 // @flow
+import {type CloseReuslt, closeReuslt} from '../actions'
 import Result, {type DispatchProps, type StateProps} from '../components/Result'
-import type {ReducerState} from '../reducers'
 import type {Dispatch} from 'redux'
+import type {ReducerState} from '../reducers'
 import {WEREWOLF_SIDE} from '../constants/Role'
 import {connect} from 'react-redux'
 import {xor} from '../util'
-import {type CloseReuslt, closeReuslt} from '../actions';
 
 type Action =
   | CloseReuslt
