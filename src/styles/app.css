@@ -585,7 +585,8 @@ body {
 
 .result {
   background: white;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 8px;
   display: grid;
   grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr calc(var(--result-image-size) + 1rem) calc(4px + var(--result-image-size) + 1rem) 2fr;
   height: 80vh;
