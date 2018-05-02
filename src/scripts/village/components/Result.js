@@ -20,7 +20,11 @@ export type StateProps = {
   },
   +losers: string[],
   +me: ?string,
-  +summary: string,
+  +summary: {
+    +description: string,
+    +loser: string,
+    +winner: string
+  },
   +visible: boolean,
   +winners: string[]
 }
@@ -126,11 +130,11 @@ export default function Result(props: Props) {
       {
         [
           <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
-          <ResultCell key="summary" text={props.summary} type="summary" />,
+          <ResultCell key="summary" text={props.summary.description} type="summary" />,
           me,
-          <ResultCell key="caption winners" text="勝者" type="caption" />,
+          <ResultCell key="caption winners" text={props.summary.winner} type="caption" />,
           ... winners,
-          <ResultCell key="caption losers" text="敗者" type="caption" />,
+          <ResultCell key="caption losers" text={props.summary.loser} type="caption" />,
           ... losers
         ]
       }
