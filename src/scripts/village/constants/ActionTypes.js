@@ -1,6 +1,7 @@
 // @flow
 export const CHANGE_PREDICTION_BOARD = 'CHANGE_PREDICTION_BOARD'
 export const CLICK_HIDE_BUTTON = 'CLICK_HIDE_BUTTON'
+export const CLOSE_RESULT = 'CLOSE_RESULT'
 export const GET_PLAYER_ROLE = 'GET_PLAYER_ROLE'
 export const PROLOGUE = 'PROLOGUE'
 export const POST_CHAT = 'POST_CHAT'

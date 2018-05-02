@@ -2,6 +2,7 @@
 /* eslint sort-keys: 0 */
 import React from 'react'
 import Result from '../src/scripts/village/components/Result'
+import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
@@ -175,6 +176,7 @@ storiesOf('village/Result', module)
     const story =
       <Result
         agents={agents}
+        handleClickCloseButton={action('handleCloseClick')}
         losers={losers}
         me={me}
         summary="summary"
