@@ -150,7 +150,7 @@ module.exports = {
     'unit-case': 'lower',
     'unit-no-unknown': true,
     'unit-whitelist': [
-      [ 'rem', '%', 's', 'vh', 'vw' ], {
+      [ 'fr', 'px', 'rem', 'vh', 'vw', '%' ], {
         'severity': 'warning'
       }
     ],
