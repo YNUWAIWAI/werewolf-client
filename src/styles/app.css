@@ -653,6 +653,31 @@ body {
       color: var(--dead-color);
     }
   }
+
+  &--close {
+    align-items: center;
+    display: inline-flex;
+    filter: opacity(75%);
+    height: 1.5rem;
+    justify-content: center;
+    position: fixed;
+    right: 10vw;
+    top: 10vh;
+    width: 1.5rem;
+
+    & > svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
+      filter: opacity(100%);
+    }
+
+    &:active {
+      filter: opacity(50%);
+    }
+  }
 }
 
 .obfucator {

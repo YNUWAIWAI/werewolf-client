@@ -1,9 +1,14 @@
 // @flow
-import Result, {type StateProps} from '../components/Result'
+import Result, {type DispatchProps, type StateProps} from '../components/Result'
 import type {ReducerState} from '../reducers'
+import type {Dispatch} from 'redux'
 import {WEREWOLF_SIDE} from '../constants/Role'
 import {connect} from 'react-redux'
 import {xor} from '../util'
+import {type CloseReuslt, closeReuslt} from '../actions';
+
+type Action =
+  | CloseReuslt
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const agents = {}
@@ -46,8 +51,14 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     winners: state.result.winners
   }
 }
+const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleClickCloseButton: () => {
+    dispatch(closeReuslt())
+  }
+})
 const ResultContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Result)
 
 export default ResultContainer

@@ -62,6 +62,10 @@ export const handleClickHideButton = (hide: boolean): {hide: boolean, type: 'CLI
   type: types.CLICK_HIDE_BUTTON
 })
 
+export const closeReuslt = (): {type: 'CLOSE_RESULT'} => ({
+  type: types.CLOSE_RESULT
+})
+
 export type SocketClose = $Call<typeof socket.close, *>
 export type SocketError = $Call<typeof socket.error, *>
 export type SocketMessage = $Call<typeof socket.message, *>
@@ -74,3 +78,4 @@ export type SelectOption = $Call<typeof selectOption, *>
 export type SelectNo = $Call<typeof selectNo, *>
 export type SelectYes = $Call<typeof selectYes, *>
 export type ClickHideButton = $Call<typeof handleClickHideButton, *>
+export type CloseReuslt = $Call<typeof closeReuslt>

@@ -2,6 +2,7 @@
 import type {AgentStatus, TResult} from 'village'
 import React from 'react'
 import ResultCell from './ResultCell'
+import ResultClose from './ResultClose'
 
 export type StateProps = {
   +agents: {
@@ -23,9 +24,13 @@ export type StateProps = {
   +visible: boolean,
   +winners: string[]
 }
+export type DispatchProps = {
+  +handleClickCloseButton: void => void
+}
 export type OwnProps = {}
 export type Props =
   & StateProps
+  & DispatchProps
   & OwnProps
 
 const getRow = agent => [
@@ -120,9 +125,10 @@ export default function Result(props: Props) {
     <div className="result">
       {
         [
+          <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
           <ResultCell key="summary" text={props.summary} type="summary" />,
           me,
-          <ResultCell key="caption winners" text="勝利者" type="caption" />,
+          <ResultCell key="caption winners" text="勝者" type="caption" />,
           ... winners,
           <ResultCell key="caption losers" text="敗者" type="caption" />,
           ... losers
