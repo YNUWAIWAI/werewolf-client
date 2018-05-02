@@ -169,9 +169,11 @@ const winners = [
 ]
 
 test('<Result visible />', () => {
+  const handleClickCloseButton = jest.fn()
   const wrapper = shallow(
     <Result
       agents={agents}
+      handleClickCloseButton={handleClickCloseButton}
       losers={losers}
       me={me}
       summary="summary"
@@ -180,12 +182,15 @@ test('<Result visible />', () => {
     />
   )
 
+  expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
   expect(wrapper.find('.result').exists()).toBe(true)
 })
 test('<Result visible={false} />', () => {
+  const handleClickCloseButton = jest.fn()
   const wrapper = shallow(
     <Result
       agents={agents}
+      handleClickCloseButton={handleClickCloseButton}
       losers={losers}
       me={me}
       summary="summary"
@@ -194,5 +199,6 @@ test('<Result visible={false} />', () => {
     />
   )
 
+  expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
   expect(wrapper.find('.result').exists()).toBe(false)
 })
