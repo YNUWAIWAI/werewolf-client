@@ -13,6 +13,9 @@ declare module 'village' {
   declare type TResult = Result
   declare type AgentId = string
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by werewolf attack' | 'death by fear' | 'unnatural death'
+  declare type NavigationType =
+    | 'OPEN_RESULT'
+    | 'RETURN_TO_LOBBY'
   declare type Agent = {
     '@id': string,
     agentIsMine: boolean,

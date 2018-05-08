@@ -18,7 +18,7 @@ type Props = {
   +postCountLimit: number
 } | {
   +handlePostChat: string => void,
-  +kind: 'private'
+  +kind: 'private' | 'postMortem'
 }
 type State = {
   sendable: boolean,
@@ -41,11 +41,16 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   isSendable() {
-    if (this.props.kind === 'private') {
-      return true
+    switch (this.props.kind) {
+      case 'private':
+      case 'postMortem':
+        return true
+      case 'public':
+      case 'limited':
+        return isSendable(this.props.postCount, this.props.postCountLimit)
+      default:
+        throw Error(`Unknown: ${this.props.kind}`)
     }
-
-    return isSendable(this.props.postCount, this.props.postCountLimit)
   }
 
   updateText(text: string) {
@@ -77,6 +82,7 @@ export default class CommandInput extends React.Component<Props, State> {
   render() {
     const placeholder = (() => ({
       limited: '人狼用',
+      postMortem: '感想戦',
       private: '非公開用',
       public: '公開用'
     })[this.props.kind])()
@@ -93,11 +99,11 @@ export default class CommandInput extends React.Component<Props, State> {
           {this.state.textCount}
         </span>
         {
-          this.props.kind === 'private' ?
-            '' :
+          this.props.kind === 'public' || this.props.kind === 'limited' ?
             <span className="command--input--counter">
               {`${this.props.postCount}/${this.props.postCountLimit}`}
-            </span>
+            </span> :
+            ''
         }
         <button disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
           {'送信'}
