@@ -54,6 +54,10 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         if (payload.chatIsMine) {
           const kind: InputChannel = getInputChannel(payload.intensionalDisclosureRange)
 
+          if (kind === 'post mortem') {
+            return state
+          }
+
           return {
             ... state,
             [kind]: {
