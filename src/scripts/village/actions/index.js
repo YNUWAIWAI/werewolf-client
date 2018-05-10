@@ -29,10 +29,6 @@ export const clickNavigationButton = (type: NavigationType): {type: NavigationTy
   type
 })
 
-export const closeReuslt = (): {type: 'CLOSE_RESULT'} => ({
-  type: types.CLOSE_RESULT
-})
-
 export const handleBoardClick = (nextState: BoardState, playerId: number, roleId: RoleId): {nextState: BoardState, playerId: number, roleId: RoleId, type: 'CHANGE_PREDICTION_BOARD'} => ({
   nextState,
   playerId,
@@ -43,6 +39,10 @@ export const handleBoardClick = (nextState: BoardState, playerId: number, roleId
 export const handleClickHideButton = (hide: boolean): {hide: boolean, type: 'CLICK_HIDE_BUTTON'} => ({
   hide,
   type: types.CLICK_HIDE_BUTTON
+})
+
+export const hideReuslt = (): {type: 'HIDE_RESULT'} => ({
+  type: types.HIDE_RESULT
 })
 
 export const postChat = ({kind, text}: {kind: InputChannel, text: string}): {kind: InputChannel, text: string, type: 'POST_CHAT'} => ({

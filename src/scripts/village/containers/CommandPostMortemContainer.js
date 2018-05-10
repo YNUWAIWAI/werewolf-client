@@ -1,4 +1,5 @@
 // @flow
+import * as types from '../constants/ActionTypes'
 import CommandPostMortem, {type DispatchProps, type StateProps} from '../components/CommandPostMortem'
 import {type PostChat, postChat} from '../actions'
 import type {Dispatch} from 'redux'
@@ -12,17 +13,17 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   navigation: [
     {
       text: (() => ({
-        en: '',
+        en: 'Show result',
         ja: '結果を表示'
       })['ja'])(),
-      type: 'OPEN_RESULT'
+      type: types.SHOW_RESULT
     },
     {
       text: (() => ({
-        en: '',
+        en: 'Return to lobby',
         ja: 'ロビーへ戻る'
       })['ja'])(),
-      type: 'RETURN_TO_LOBBY'
+      type: types.RETURN_TO_LOBBY
     }
   ]
 })
