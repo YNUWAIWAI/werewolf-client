@@ -7,7 +7,7 @@ import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('village/CommandNavigation', module)
+storiesOf('Command/CommandNavigation', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
     const items = [

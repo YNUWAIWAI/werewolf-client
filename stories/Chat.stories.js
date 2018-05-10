@@ -5,7 +5,7 @@ import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('village/Chat', module)
+storiesOf('Chat', module)
   .addDecorator(withKnobs)
   .add('anonymousAudience', withInfo('')(() => {
     const allIds = [ 'chat0', 'chat1' ]

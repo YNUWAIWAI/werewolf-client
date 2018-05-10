@@ -6,7 +6,7 @@ import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 
-storiesOf('village/CommandInput', module)
+storiesOf('Command/CommandInput', module)
   .addDecorator(withKnobs)
   .add('public', withInfo('')(() => {
     const postCount = number('postCount', 0, {

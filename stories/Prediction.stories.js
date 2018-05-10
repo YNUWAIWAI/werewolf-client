@@ -7,7 +7,7 @@ import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('village/Prediction', module)
+storiesOf('Prediction', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('本来は各マスに画像が出てくるが，設定が面倒なので表示されないままになっている．')(() => {
     const playerStatus = [

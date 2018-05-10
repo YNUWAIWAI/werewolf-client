@@ -7,7 +7,7 @@ import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('village/Result', module)
+storiesOf('Result', module)
   .addDecorator(withKnobs)
   .add('13 players', withInfo('')(() => {
     const agents = {

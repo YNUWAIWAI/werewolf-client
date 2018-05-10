@@ -16,7 +16,7 @@ const store = createStore(
   reducer
 )
 
-storiesOf('village/Command', module)
+storiesOf('Command', module)
   .addDecorator(withKnobs)
   .addDecorator(getStory =>
     <Provider store={store}>

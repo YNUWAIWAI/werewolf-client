@@ -5,7 +5,7 @@ import Timer from '../src/scripts/village/components/Timer'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 
-storiesOf('village/Timer', module)
+storiesOf('Timer', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
     const limit = number('limit', 10)

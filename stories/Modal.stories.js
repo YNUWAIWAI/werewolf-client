@@ -6,7 +6,7 @@ import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('village/Modal', module)
+storiesOf('Modal', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
     const timer = {
