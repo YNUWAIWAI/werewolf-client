@@ -8,7 +8,21 @@ import {connect} from 'react-redux'
 type Action =
   | ChangePredictionBoard
 
-const mapStateToProps = (state: ReducerState): StateProps => state.prediction
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  playerStatus: state.prediction.playerStatus.map(player => ({
+    id: player.id,
+    image: player.image,
+    name: player.name[state.language],
+    status: player.status
+  })),
+  roleStatus: state.prediction.roleStatus.map(role => ({
+    id: role.id,
+    image: role.image,
+    numberOfAgents: role.numberOfAgents,
+    tooltip: role.tooltip[state.language]
+  })),
+  table: state.prediction.table
+})
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleBoardClick: (playerId, roleId) => nextState => {

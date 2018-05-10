@@ -17,79 +17,118 @@ test('SOCKET_MESSAGE my role is seer', () => {
     {
       playerStatus: [
         {
-          'name': 'ヴァルター',
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
           'image': 'https://werewolf.world/image/0.1/Walter.jpg',
           'id': 1,
           'status': 'alive'
         },
         {
-          'name': 'モーリッツ',
+          'name': {
+            'en': 'Moritz',
+            'ja': 'モーリッツ'
+          },
           'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
           'id': 2,
           'status': 'alive'
         },
         {
-          'name': 'ジムゾン',
+          'name': {
+            'en': 'Simson',
+            'ja': 'ジムゾン'
+          },
           'image': 'https://werewolf.world/image/0.1/Simson.jpg',
           'id': 3,
           'status': 'alive'
         },
         {
-          'name': 'トーマス',
+          'name': {
+            'en': 'Thomas',
+            'ja': 'トーマス'
+          },
           'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
           'id': 4,
           'status': 'alive'
         },
         {
-          'name': 'ニコラス',
+          'name': {
+            'en': 'Nicholas',
+            'ja': 'ニコラス'
+          },
           'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
           'id': 5,
           'status': 'alive'
         },
         {
-          'name': 'ディーター',
+          'name': {
+            'en': 'Dieter',
+            'ja': 'ディーター'
+          },
           'image': 'https://werewolf.world/image/0.1/Dieter.jpg',
           'id': 6,
           'status': 'alive'
         },
         {
-          'name': 'ペーター',
+          'name': {
+            'en': 'Peter',
+            'ja': 'ペーター'
+          },
           'image': 'https://werewolf.world/image/0.1/Peter.jpg',
           'id': 7,
           'status': 'alive'
         },
         {
-          'name': 'リーザ',
+          'name': {
+            'en': 'Lisa',
+            'ja': 'リーザ'
+          },
           'image': 'https://werewolf.world/image/0.1/Lisa.jpg',
           'id': 8,
           'status': 'alive'
         },
         {
-          'name': 'アルビン',
+          'name': {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          },
           'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
           'id': 9,
           'status': 'alive'
         },
         {
-          'name': 'オットー',
+          'name': {
+            'en': 'Otto',
+            'ja': 'オットー'
+          },
           'image': 'https://werewolf.world/image/0.1/Otto.jpg',
           'id': 11,
           'status': 'alive'
         },
         {
-          'name': 'ヨアヒム',
+          'name': {
+            'en': 'Joachim',
+            'ja': 'ヨアヒム'
+          },
           'image': 'https://werewolf.world/image/0.1/Joachim.jpg',
           'id': 12,
           'status': 'alive'
         },
         {
-          'name': 'パメラ',
+          'name': {
+            'en': 'Pamela',
+            'ja': 'パメラ'
+          },
           'image': 'https://werewolf.world/image/0.1/Pamela.jpg',
           'id': 13,
           'status': 'alive'
         },
         {
-          'name': 'ヤコブ',
+          'name': {
+            'en': 'Jacob',
+            'ja': 'ヤコブ'
+          },
           'image': 'https://werewolf.world/image/0.1/Jacob.jpg',
           'id': 14,
           'status': 'alive'
@@ -100,49 +139,73 @@ test('SOCKET_MESSAGE my role is seer', () => {
           'id': 'villager',
           'image': 'https://werewolf.world/image/0.1/villager.jpg',
           'numberOfAgents': 6,
-          'tooltip': '村人'
+          'tooltip': {
+            'en': 'Villager',
+            'ja': '村人'
+          }
         },
         {
           'id': 'seer',
           'image': 'https://werewolf.world/image/0.1/seer.jpg',
           'numberOfAgents': 1,
-          'tooltip': '占い師'
+          'tooltip': {
+            'en': 'Seer',
+            'ja': '占い師'
+          }
         },
         {
           'id': 'medium',
           'image': 'https://werewolf.world/image/0.1/medium.jpg',
           'numberOfAgents': 1,
-          'tooltip': '霊媒師'
+          'tooltip': {
+            'en': 'Medium',
+            'ja': '霊媒師'
+          }
         },
         {
           'id': 'hunter',
           'image': 'https://werewolf.world/image/0.1/hunter.jpg',
           'numberOfAgents': 1,
-          'tooltip': '狩人'
+          'tooltip': {
+            'en': 'Hunter',
+            'ja': '狩人'
+          }
         },
         {
           'id': 'mason',
           'image': 'https://werewolf.world/image/0.1/mason.jpg',
           'numberOfAgents': 2,
-          'tooltip': '共有者'
+          'tooltip': {
+            'en': 'Mason',
+            'ja': '共有者'
+          }
         },
         {
           'id': 'madman',
           'image': 'https://werewolf.world/image/0.1/madman.jpg',
           'numberOfAgents': 1,
-          'tooltip': '狂人'
+          'tooltip': {
+            'en': 'Madman',
+            'ja': '狂人'
+          }
         },
         {
           'id': 'werewolf',
           'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
           'numberOfAgents': 2,
-          'tooltip': '人狼'
+          'tooltip': {
+            'en': 'Werewolf',
+            'ja': '人狼'
+          }
         },
         {
           'id': 'werehumster',
           'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
           'numberOfAgents': 1,
-          'tooltip': 'ハムスター人間'
+          'tooltip': {
+            'en': 'Werehumster',
+            'ja': 'ハムスター人間'
+          }
         }
       ],
       table: {
@@ -605,79 +668,118 @@ test('SOCKET_MESSAGE my role is villager', () => {
     {
       playerStatus: [
         {
-          'name': 'ヴァルター',
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
           'image': 'https://werewolf.world/image/0.1/Walter.jpg',
           'id': 1,
           'status': 'alive'
         },
         {
-          'name': 'モーリッツ',
+          'name': {
+            'en': 'Moritz',
+            'ja': 'モーリッツ'
+          },
           'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
           'id': 2,
           'status': 'alive'
         },
         {
-          'name': 'ジムゾン',
+          'name': {
+            'en': 'Simson',
+            'ja': 'ジムゾン'
+          },
           'image': 'https://werewolf.world/image/0.1/Simson.jpg',
           'id': 3,
           'status': 'alive'
         },
         {
-          'name': 'トーマス',
+          'name': {
+            'en': 'Thomas',
+            'ja': 'トーマス'
+          },
           'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
           'id': 4,
           'status': 'alive'
         },
         {
-          'name': 'ニコラス',
+          'name': {
+            'en': 'Nicholas',
+            'ja': 'ニコラス'
+          },
           'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
           'id': 5,
           'status': 'alive'
         },
         {
-          'name': 'ディーター',
+          'name': {
+            'en': 'Dieter',
+            'ja': 'ディーター'
+          },
           'image': 'https://werewolf.world/image/0.1/Dieter.jpg',
           'id': 6,
           'status': 'alive'
         },
         {
-          'name': 'ペーター',
+          'name': {
+            'en': 'Peter',
+            'ja': 'ペーター'
+          },
           'image': 'https://werewolf.world/image/0.1/Peter.jpg',
           'id': 7,
           'status': 'alive'
         },
         {
-          'name': 'リーザ',
+          'name': {
+            'en': 'Lisa',
+            'ja': 'リーザ'
+          },
           'image': 'https://werewolf.world/image/0.1/Lisa.jpg',
           'id': 8,
           'status': 'alive'
         },
         {
-          'name': 'アルビン',
+          'name': {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          },
           'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
           'id': 9,
           'status': 'alive'
         },
         {
-          'name': 'オットー',
+          'name': {
+            'en': 'Otto',
+            'ja': 'オットー'
+          },
           'image': 'https://werewolf.world/image/0.1/Otto.jpg',
           'id': 11,
           'status': 'alive'
         },
         {
-          'name': 'ヨアヒム',
+          'name': {
+            'en': 'Joachim',
+            'ja': 'ヨアヒム'
+          },
           'image': 'https://werewolf.world/image/0.1/Joachim.jpg',
           'id': 12,
           'status': 'alive'
         },
         {
-          'name': 'パメラ',
+          'name': {
+            'en': 'Pamela',
+            'ja': 'パメラ'
+          },
           'image': 'https://werewolf.world/image/0.1/Pamela.jpg',
           'id': 13,
           'status': 'alive'
         },
         {
-          'name': 'ヤコブ',
+          'name': {
+            'en': 'Jacob',
+            'ja': 'ヤコブ'
+          },
           'image': 'https://werewolf.world/image/0.1/Jacob.jpg',
           'id': 14,
           'status': 'alive'
@@ -688,49 +790,73 @@ test('SOCKET_MESSAGE my role is villager', () => {
           'id': 'villager',
           'image': 'https://werewolf.world/image/0.1/villager.jpg',
           'numberOfAgents': 6,
-          'tooltip': '村人'
+          'tooltip': {
+            'en': 'Villager',
+            'ja': '村人'
+          }
         },
         {
           'id': 'seer',
           'image': 'https://werewolf.world/image/0.1/seer.jpg',
           'numberOfAgents': 1,
-          'tooltip': '占い師'
+          'tooltip': {
+            'en': 'Seer',
+            'ja': '占い師'
+          }
         },
         {
           'id': 'medium',
           'image': 'https://werewolf.world/image/0.1/medium.jpg',
           'numberOfAgents': 1,
-          'tooltip': '霊媒師'
+          'tooltip': {
+            'en': 'Medium',
+            'ja': '霊媒師'
+          }
         },
         {
           'id': 'hunter',
           'image': 'https://werewolf.world/image/0.1/hunter.jpg',
           'numberOfAgents': 1,
-          'tooltip': '狩人'
+          'tooltip': {
+            'en': 'Hunter',
+            'ja': '狩人'
+          }
         },
         {
           'id': 'mason',
           'image': 'https://werewolf.world/image/0.1/mason.jpg',
           'numberOfAgents': 2,
-          'tooltip': '共有者'
+          'tooltip': {
+            'en': 'Mason',
+            'ja': '共有者'
+          }
         },
         {
           'id': 'madman',
           'image': 'https://werewolf.world/image/0.1/madman.jpg',
           'numberOfAgents': 1,
-          'tooltip': '狂人'
+          'tooltip': {
+            'en': 'Madman',
+            'ja': '狂人'
+          }
         },
         {
           'id': 'werewolf',
           'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
           'numberOfAgents': 2,
-          'tooltip': '人狼'
+          'tooltip': {
+            'en': 'Werewolf',
+            'ja': '人狼'
+          }
         },
         {
           'id': 'werehumster',
           'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
           'numberOfAgents': 1,
-          'tooltip': 'ハムスター人間'
+          'tooltip': {
+            'en': 'Werehumster',
+            'ja': 'ハムスター人間'
+          }
         }
       ],
       table: {
