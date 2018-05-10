@@ -19,10 +19,10 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     agents[id] = {
       agentId: a.agentId,
       agentImage: a.agentImage,
-      agentName: a.agentName.ja,
+      agentName: a.agentName[state.language],
       result: a.result,
       roleImage: a.roleImage,
-      roleName: a.roleName.ja,
+      roleName: a.roleName[state.language],
       status: a.status,
       userAvatar: a.userAvatar,
       userName: a.userName

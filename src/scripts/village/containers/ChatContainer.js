@@ -10,7 +10,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     .forEach(id => {
       byId[id] = {
         ... state.chat.byId[id],
-        name: state.chat.byId[id].name.ja
+        name: state.chat.byId[id].name[state.language]
       }
     })
 

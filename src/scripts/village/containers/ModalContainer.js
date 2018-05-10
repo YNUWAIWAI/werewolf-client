@@ -49,7 +49,7 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
   return {
     id: selectedAgent.id,
     image: selectedAgent.image,
-    name: selectedAgent.name.ja,
+    name: selectedAgent.name[state.language],
     text: state.roles.mine ? getText(state.base.phase, getRoleId(state.roles.mine['@id'])) : '',
     timer: {
       limit: state.base.phaseTimeLimit,
