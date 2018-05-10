@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {Agent, AgentId, AgentStatus, BoardState, Payload, Role, RoleId} from 'village'
+import type {Agent, AgentId, AgentStatus, BoardState, Language, Payload, Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {MEDIUM, ORDERED_ROLE_LIST, SEER, getRoleId} from '../constants/Role'
 import {getPlayableAgents, getPlayableRoles} from '../util'
@@ -11,14 +11,14 @@ export type State = {
   +playerStatus: Array<{
     +id: number,
     +image: string,
-    +name: string,
+    +name: { [Language]: string },
     +status: AgentStatus
   }>,
   +roleStatus: Array<{
     +id: RoleId,
     +image: string,
     +numberOfAgents: number,
-    +tooltip: string
+    +tooltip: { [Language]: string }
   }>,
   +table: {
     [agentId: AgentId]: {
@@ -116,12 +116,12 @@ const prediction = (state: State = initialState, action: Action): State => {
           id: getRoleId(role['@id']),
           image: role.image,
           numberOfAgents: role.numberOfAgents,
-          tooltip: role.name.ja
+          tooltip: role.name
         }))
         const playerStatus: PlayerStatus = agents.map(agent => ({
           id: agent.id,
           image: agent.image,
-          name: agent.name.ja,
+          name: agent.name,
           status: agent.status
         }))
 
