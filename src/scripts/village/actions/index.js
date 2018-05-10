@@ -1,6 +1,6 @@
 // @flow
 import * as types from '../constants/ActionTypes'
-import type {BoardState, C2SPayload, InputChannel, Payload, RoleId} from 'village'
+import type {BoardState, C2SPayload, InputChannel, NavigationType, Payload, RoleId} from 'village'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: 'SOCKET:CLOSE'} => ({
@@ -25,8 +25,8 @@ export const socket = {
   })
 }
 
-export const closeReuslt = (): {type: 'CLOSE_RESULT'} => ({
-  type: types.CLOSE_RESULT
+export const clickNavigationButton = (type: NavigationType): {type: NavigationType} => ({
+  type
 })
 
 export const handleBoardClick = (nextState: BoardState, playerId: number, roleId: RoleId): {nextState: BoardState, playerId: number, roleId: RoleId, type: 'CHANGE_PREDICTION_BOARD'} => ({
@@ -39,6 +39,10 @@ export const handleBoardClick = (nextState: BoardState, playerId: number, roleId
 export const handleClickHideButton = (hide: boolean): {hide: boolean, type: 'CLICK_HIDE_BUTTON'} => ({
   hide,
   type: types.CLICK_HIDE_BUTTON
+})
+
+export const hideReuslt = (): {type: 'HIDE_RESULT'} => ({
+  type: types.HIDE_RESULT
 })
 
 export const postChat = ({kind, text}: {kind: InputChannel, text: string}): {kind: InputChannel, text: string, type: 'POST_CHAT'} => ({
@@ -72,7 +76,8 @@ export type SocketMessage = $Call<typeof socket.message, *>
 export type SocketOpen = $Call<typeof socket.open, *>
 export type SocketSend = $Call<typeof socket.send, *>
 export type ClickHideButton = $Call<typeof handleClickHideButton, *>
-export type CloseReuslt = $Call<typeof closeReuslt>
+export type ClickNavigationButton = $Call<typeof clickNavigationButton, *>
+export type HideReuslt = $Call<typeof hideReuslt>
 export type ChangePredictionBoard = $Call<typeof handleBoardClick, *, *, *>
 export type PostChat = $Call<typeof postChat, *>
 export type SelectOption = $Call<typeof selectOption, *>
