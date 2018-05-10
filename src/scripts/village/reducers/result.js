@@ -4,7 +4,7 @@ import * as Contexts from '../constants/Contexts'
 import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village'
 import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
 import {RESULTS} from '../constants/Phase'
-import type {SocketMessage} from '../actions'
+import type {SocketMessage, HideReuslt} from '../actions'
 
 const getAgentId = idGenerater('agent')
 
@@ -35,6 +35,8 @@ export type State = {
 }
 type Action =
   | SocketMessage
+  | HideReuslt
+  | {type: 'SHOW_RESULT'}
 
 export const initialState = {
   agents: {},
@@ -51,6 +53,16 @@ export const initialState = {
 }
 const result = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.SHOW_RESULT:
+      return {
+        ... state,
+        visible: true
+      }
+    case ActionTypes.HIDE_RESULT:
+      return {
+        ... state,
+        visible: false
+      }
     case ActionTypes.SOCKET_MESSAGE:
       if (
         action.payload['@context'].includes(Contexts.BASE) &&
