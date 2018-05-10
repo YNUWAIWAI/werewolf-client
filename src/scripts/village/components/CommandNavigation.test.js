@@ -8,7 +8,7 @@ test('<CommandNavigation />', () => {
   const items = [
     {
       text: '結果を表示',
-      type: 'OPEN_RESULT'
+      type: 'SHOW_RESULT'
     },
     {
       text: 'ロビーへ戻る',

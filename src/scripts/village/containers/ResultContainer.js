@@ -1,5 +1,5 @@
 // @flow
-import {type CloseReuslt, closeReuslt} from '../actions'
+import {type HideReuslt, hideReuslt} from '../actions'
 import Result, {type DispatchProps, type StateProps} from '../components/Result'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 import {xor} from '../util'
 
 type Action =
-  | CloseReuslt
+  | HideReuslt
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const agents = {}
@@ -65,7 +65,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleClickCloseButton: () => {
-    dispatch(closeReuslt())
+    dispatch(hideReuslt())
   }
 })
 const ResultContainer = connect(
