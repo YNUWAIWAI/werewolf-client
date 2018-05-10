@@ -1,4 +1,5 @@
 // @flow
+import * as types from '../src/scripts/village/constants/ActionTypes'
 import Command from '../src/scripts/village/components/Command'
 import CommandInputBox from '../src/scripts/village/components/CommandInputBox'
 import CommandPostMortem from '../src/scripts/village/components/CommandPostMortem'
@@ -80,11 +81,11 @@ storiesOf('village/Command', module)
       navigation: [
         {
           text: '結果を表示',
-          type: 'SHOW_RESULT'
+          type: types.SHOW_RESULT
         },
         {
           text: 'ロビーへ戻る',
-          type: 'RETURN_TO_LOBBY'
+          type: types.RETURN_TO_LOBBY
         }
       ]
     }

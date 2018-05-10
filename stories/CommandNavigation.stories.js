@@ -1,4 +1,5 @@
 // @flow
+import * as types from '../src/scripts/village/constants/ActionTypes'
 import CommandNavigation from '../src/scripts/village/components/CommandNavigation'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
@@ -12,11 +13,11 @@ storiesOf('village/CommandNavigation', module)
     const items = [
       {
         text: '結果を表示',
-        type: 'SHOW_RESULT'
+        type: types.SHOW_RESULT
       },
       {
         text: 'ロビーへ戻る',
-        type: 'RETURN_TO_LOBBY'
+        type: types.RETURN_TO_LOBBY
       }
     ]
     const story = <CommandNavigation handleClick={type => action(`handleClick: ${type}`)} items={items} />

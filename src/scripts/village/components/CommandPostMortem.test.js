@@ -1,4 +1,5 @@
 // @flow
+import * as types from '../constants/ActionTypes'
 import CommandPostMortem from './CommandPostMortem'
 import React from 'react'
 import {shallow} from 'enzyme'
@@ -8,11 +9,11 @@ test('<CommandPostMortem />', () => {
   const navigation = [
     {
       text: '結果を表示',
-      type: 'SHOW_RESULT'
+      type: types.SHOW_RESULT
     },
     {
       text: 'ロビーへ戻る',
-      type: 'RETURN_TO_LOBBY'
+      type: types.RETURN_TO_LOBBY
     }
   ]
   const wrapper = shallow(<CommandPostMortem handlePostChat={handlePostChat} navigation={navigation} />)
