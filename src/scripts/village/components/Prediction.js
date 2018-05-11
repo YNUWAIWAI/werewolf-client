@@ -22,8 +22,9 @@ export type StateProps = {
   +table: {
     [agentId: AgentId]: {
       [roleId: RoleId]: {
-        date: number,
-        state: BoardState
+        +date: number,
+        +fixed: boolean,
+        +state: BoardState
       }
     }
   }
@@ -59,6 +60,7 @@ export default function Prediction(props: Props) {
         ... props.roleStatus.map(role =>
           <PredictionItem
             date={props.table[String(player.id)][role.id].date}
+            fixed={props.table[String(player.id)][role.id].fixed}
             handleBoardClick={props.handleBoardClick(player.id, role.id)}
             key={player.id + role.id}
             state={props.table[String(player.id)][role.id].state}

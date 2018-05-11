@@ -6,7 +6,7 @@ declare module 'village' {
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
   declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'
-  declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill' | 'fix'
+  declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type BoardPolarity = 'positive' | 'negative'
   declare type Language = 'ja' | 'en'
   declare type Result = 'win' | 'lose'
