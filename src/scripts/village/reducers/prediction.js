@@ -23,8 +23,9 @@ export type State = {
   +table: {
     [agentId: AgentId]: {
       [roleId: RoleId]: {
-        date: number,
-        state: BoardState
+        +date: number,
+        +fixed: boolean,
+        +state: BoardState
       }
     }
   }
@@ -47,8 +48,11 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
       role.board.forEach(b => {
         const agentId = String(b.boardAgent.boardAgentId)
 
-        table[agentId][roleId].state = b.boardPolarity === 'positive' ? 'fix' : 'fill'
-        table[agentId][roleId].date = b.boardDate
+        table[agentId][roleId] = {
+          date: b.boardDate,
+          fixed: true,
+          state: b.boardPolarity === 'positive' ? 'O' : 'fill'
+        }
       })
     }
   })
@@ -69,21 +73,25 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
       if (agent.agentIsMine && role.roleIsMine) {
         table[agentId][roleId] = {
           date: 1,
-          state: 'fix'
+          fixed: true,
+          state: 'O'
         }
       } else if (agent.agentIsMine && !role.roleIsMine) {
         table[agentId][roleId] = {
           date: 1,
+          fixed: true,
           state: 'fill'
         }
       } else if (!agent.agentIsMine && role.roleIsMine && role.numberOfAgents === 1) {
         table[agentId][roleId] = {
           date: 1,
+          fixed: true,
           state: 'fill'
         }
       } else {
         table[agentId][roleId] = {
           date: 1,
+          fixed: false,
           state: '?'
         }
       }
