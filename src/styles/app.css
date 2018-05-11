@@ -324,20 +324,10 @@ body {
     }
   }
 
-  & > div[ data-state = 'O' ] {
-    background: no-repeat center / 80% 80% url('/assets/images/circle.svg');
-  }
-
-  & > div[ data-state = '?' ] {
-    background: no-repeat center / 100% 100% url('/assets/images/question.svg');
-  }
-
-  & > div[ data-state = 'Δ' ] {
-    background: no-repeat center / 100% 100% url('/assets/images/triangle.svg');
-  }
-
-  & > div[ data-state = 'X' ] {
-    background: no-repeat center / 80% 80% url('/assets/images/cross.svg');
+  &--item {
+    & > svg {
+      width: 100%;
+    }
   }
 
   & > div[ data-state = 'fill' ] {
@@ -349,9 +339,8 @@ body {
     }
   }
 
-  & > div[ data-state = 'fix' ] {
-    background: no-repeat center / 80% 80% url('/assets/images/circle.svg');
-    border: solid 3px red;
+  & > .fixed {
+    box-shadow: inset 0 0 0 4px red;
   }
 
   & > div[ data-tooltip ] {
