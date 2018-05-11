@@ -325,6 +325,10 @@ body {
   }
 
   &--item {
+    &.fixed {
+      box-shadow: inset 0 0 0 4px red;
+    }
+
     & > svg {
       width: 100%;
     }
@@ -337,10 +341,6 @@ body {
       color: white;
       content: attr(data-date);
     }
-  }
-
-  & > .fixed {
-    box-shadow: inset 0 0 0 4px red;
   }
 
   & > div[ data-tooltip ] {
