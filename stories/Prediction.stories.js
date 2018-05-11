@@ -144,442 +144,546 @@ storiesOf('Prediction', module)
       '1': {
         villager: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         seer: {
           date: 1,
-          state: 'fix'
+          fixed: true,
+          state: 'O'
         },
         medium: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         hunter: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         mason: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         madman: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         werewolf: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         werehumster: {
           date: 1,
+          fixed: true,
           state: 'fill'
         }
       },
       '2': {
         villager: {
           date: 1,
-          state: '?'
+          fixed: false,
+          state: 'Δ'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
-          state: '?'
+          fixed: false,
+          state: 'O'
         },
         hunter: {
           date: 1,
-          state: '?'
+          fixed: false,
+          state: 'X'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '3': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '4': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '5': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '6': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '7': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '8': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '9': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '11': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '12': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '13': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       },
       '14': {
         villager: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         seer: {
           date: 1,
+          fixed: true,
           state: 'fill'
         },
         medium: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         hunter: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         mason: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         madman: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werewolf: {
           date: 1,
+          fixed: false,
           state: '?'
         },
         werehumster: {
           date: 1,
+          fixed: false,
           state: '?'
         }
       }
