@@ -1,6 +1,6 @@
 // @flow
+import React, {Fragment} from 'react'
 import AgentIcon from './AgentIcon'
-import React from 'react'
 import RoleText from './RoleText'
 
 export type StateProps = {
@@ -16,9 +16,9 @@ type Props =
 
 export default function Role(props: Props) {
   return (
-    <div className="role">
+    <Fragment>
       <AgentIcon class="role--icon" image={props.image} name={props.name} />
       <RoleText role={props.role} />
-    </div>
+    </Fragment>
   )
 }

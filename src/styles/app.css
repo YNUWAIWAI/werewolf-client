@@ -33,49 +33,54 @@ body {
 }
 
 .info {
-  display: flex;
-  height: 10vh;
-  margin-bottom: 2vh;
+  display: grid;
+  grid-gap: 0 1vw;
+  grid-template-areas:
+    '. . .'
+    'day roleIcon roleText';
+  grid-template-columns: 2fr var(--info-image-size) 2fr;
+  grid-template-rows: 2vh 10vh;
+  max-height: 12vh;
 }
 
 .day {
-  align-items: center;
   display: flex;
-  flex: 2;
+  grid-area: day;
+  height: 5vh;
   justify-content: center;
 
   &--text {
-    align-items: center;
     border: 2px solid black;
-    border-radius: 5em;
-    display: inline-flex;
-    font-size: 1.5em;
-    height: 60%;
-    justify-content: center;
-    width: 70%;
+    border-radius: 5rem;
+    display: grid;
+    font-size: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    height: 5vh;
+    padding: 1vh 1.5rem;
+    width: 60%;
 
     & > span {
-      margin: 0 1em;
-      text-align: center;
-      width: 5em;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
     }
   }
 }
 
 .role {
-  align-items: center;
   display: flex;
-  flex: 3;
   justify-content: center;
 
   &--text {
     align-items: center;
     border: 2px solid black;
-    border-radius: 5em;
+    border-radius: 5rem;
     display: inline-flex;
-    font-size: 1.5em;
-    height: 60%;
+    font-size: 1.5rem;
+    grid-area: roleText;
+    height: 5vh;
     justify-content: center;
+    padding: 1vh;
     width: 60%;
 
     & > span {
@@ -90,22 +95,19 @@ body {
   }
 
   &--icon {
-    height: 80%;
-    margin: 1em 1em 0 0;
-    position: relative;
+    grid-area: roleIcon;
     width: var(--info-image-size);
 
     & > img {
+      display: block;
       height: var(--info-image-size);
-      position: absolute;
       width: var(--info-image-size);
     }
 
     & > span {
+      display: block;
       font-size: xx-small;
-      position: absolute;
       text-align: center;
-      top: var(--info-image-size);
       width: 100%;
     }
   }
@@ -129,8 +131,8 @@ body {
     display: grid;
     grid-template-areas: 'me text opp';
     grid-template-columns: 1fr 4fr 1fr;
-    margin-top: 1em;
-    min-height: calc(var(--chat-image-size) + 1em);
+    margin-top: 1rem;
+    min-height: calc(var(--chat-image-size) + 1rem);
 
     &:first-child {
       margin-top: 0;
@@ -145,7 +147,7 @@ body {
     grid-template-areas:
       'num text'
       'num date';
-    grid-template-columns: 2.5em 1fr;
+    grid-template-columns: 2.5rem 1fr;
     position: relative;
 
     &::after {
@@ -168,14 +170,14 @@ body {
     display: inline-flex;
     grid-area: num;
     justify-content: center;
-    padding: 0 0.5em;
-    width: 1.5em;
+    padding: 0 0.5rem;
+    width: 1.5rem;
     word-break: break-all;
   }
 
   &--text {
     grid-area: text;
-    padding: 1em 1em 1em 0;
+    padding: 1rem 1rem 1rem 0;
     word-break: break-all;
   }
 
@@ -183,7 +185,7 @@ body {
     display: inline-flex;
     flex-flow: column-reverse;
     grid-area: date;
-    padding: 0 1em 1em 0;
+    padding: 0 1rem 1rem 0;
     text-align: right;
   }
 
@@ -292,17 +294,17 @@ body {
   border: 1px solid black;
   border-radius: 3px;
   display: grid;
-  grid: repeat(6, 1fr) / repeat(7, 1fr);
-  height: 100%;
+  grid: 1fr / 1fr;
+  max-height: 100%;
+  max-width: 48vw;
   overflow: scroll;
-  width: 48vw;
 
   & > div {
     align-items: center;
     border: solid 1px black;
     box-sizing: border-box;
     display: inline-flex;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     justify-content: center;
   }
 
@@ -382,7 +384,7 @@ body {
       box-sizing: border-box;
       grid-column: 1 / 3;
       grid-row: 1;
-      padding: 1em;
+      padding: 1rem;
       resize: none;
       z-index: 2;
     }
@@ -428,7 +430,7 @@ body {
         filter: brightness(85%);
       }
 
-      &[ disabled ] {
+      &:disabled {
         box-shadow: inset 2px 2px 1px 0 grey;
         filter: brightness(50%);
 
@@ -520,7 +522,7 @@ body {
   background: #303030;
   border: 0;
   bottom: 23vh;
-  height: 1.5em;
+  height: 1.5rem;
   position: absolute;
   right: 0;
   width: 4vw;
@@ -549,7 +551,7 @@ body {
 .modal {
   background: #fafafa;
   left: 30vw;
-  padding: 1em;
+  padding: 1rem;
   position: fixed;
   top: 38vh;
   width: 40vw;
@@ -559,7 +561,7 @@ body {
     align-items: center;
     display: inline-flex;
     flex-direction: column;
-    height: calc(20vh - 3.75em);
+    height: calc(20vh - 3.75rem);
     justify-content: center;
     width: 100%;
 
@@ -574,8 +576,8 @@ body {
   }
 
   &--description {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     text-align: center;
   }
 
@@ -587,7 +589,7 @@ body {
 
   &--button {
     border: none;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     width: 30%;
 
     &:hover {
@@ -624,7 +626,7 @@ body {
 
   &--cell {
     border: 1px solid black;
-    font-size: 2em;
+    font-size: 2rem;
     height: 100%;
     line-height: 1.5;
     max-height: 3rem;
