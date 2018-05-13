@@ -9,7 +9,7 @@ import {withKnobs} from '@storybook/addon-knobs/react'
 
 storiesOf('Prediction', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('本来は各マスに画像が出てくるが，設定が面倒なので表示されないままになっている．')(() => {
+  .add('13 players', withInfo('')(() => {
     const playerStatus = [
       {
         'name': 'ヴァルター',
@@ -94,7 +94,7 @@ storiesOf('Prediction', module)
       {
         'id': 'villager',
         'image': 'https://werewolf.world/image/0.1/villager.jpg',
-        'numberOfAgents': 6,
+        'numberOfAgents': 4,
         'tooltip': '村人'
       },
       {
@@ -682,6 +682,187 @@ storiesOf('Prediction', module)
           state: '?'
         },
         werehumster: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        }
+      }
+    }
+    const story =
+      <Prediction
+        handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+        playerStatus={playerStatus}
+        roleStatus={roleStatus}
+        table={table}
+      />
+
+    return story
+  }))
+  .add('5 players', withInfo('')(() => {
+    const playerStatus = [
+      {
+        'name': 'ヴァルター',
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'id': 1,
+        'status': 'alive'
+      },
+      {
+        'name': 'モーリッツ',
+        'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
+        'id': 2,
+        'status': 'alive'
+      },
+      {
+        'name': 'ジムゾン',
+        'image': 'https://werewolf.world/image/0.1/Simson.jpg',
+        'id': 3,
+        'status': 'alive'
+      },
+      {
+        'name': 'トーマス',
+        'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
+        'id': 4,
+        'status': 'alive'
+      },
+      {
+        'name': 'ニコラス',
+        'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
+        'id': 5,
+        'status': 'alive'
+      }
+    ]
+    const roleStatus = [
+      {
+        'id': 'villager',
+        'image': 'https://werewolf.world/image/0.1/villager.jpg',
+        'numberOfAgents': 2,
+        'tooltip': '村人'
+      },
+      {
+        'id': 'seer',
+        'image': 'https://werewolf.world/image/0.1/seer.jpg',
+        'numberOfAgents': 1,
+        'tooltip': '占い師'
+      },
+      {
+        'id': 'madman',
+        'image': 'https://werewolf.world/image/0.1/madman.jpg',
+        'numberOfAgents': 1,
+        'tooltip': '狂人'
+      },
+      {
+        'id': 'werewolf',
+        'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
+        'numberOfAgents': 1,
+        'tooltip': '人狼'
+      }
+    ]
+    const table = {
+      '1': {
+        villager: {
+          date: 1,
+          fixed: true,
+          state: 'fill'
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: 'O'
+        },
+        madman: {
+          date: 1,
+          fixed: true,
+          state: 'fill'
+        },
+        werewolf: {
+          date: 1,
+          fixed: true,
+          state: 'fill'
+        }
+      },
+      '2': {
+        villager: {
+          date: 1,
+          fixed: false,
+          state: 'Δ'
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: 'fill'
+        },
+        madman: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        },
+        werewolf: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        }
+      },
+      '3': {
+        villager: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: 'fill'
+        },
+        madman: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        },
+        werewolf: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        }
+      },
+      '4': {
+        villager: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: 'fill'
+        },
+        madman: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        },
+        werewolf: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        }
+      },
+      '5': {
+        villager: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: 'fill'
+        },
+        madman: {
+          date: 1,
+          fixed: false,
+          state: '?'
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: '?'
