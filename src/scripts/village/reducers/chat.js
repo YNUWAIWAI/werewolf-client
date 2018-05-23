@@ -4,19 +4,9 @@ import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
 import type {Channel, Chat, Language, Payload} from 'village'
 import type {SocketMessage} from '../actions'
+import {idGenerater} from '../util'
 
-const getChatId = (() => {
-  let chatId
-
-  return () => {
-    if (chatId === undefined) {
-      chatId = -1
-    }
-    chatId += 1
-
-    return `chat${chatId}`
-  }
-})()
+const getChatId = idGenerater('chat')
 
 export type State = {
   +allIds: string[],
