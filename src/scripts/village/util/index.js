@@ -3,15 +3,15 @@ import {UNPLAYABLE_AGENT} from '../constants/Agent'
 import {UNPLAYABLE_ROLE} from '../constants/Role'
 
 export const idGenerater = (prefix: string) => {
-  let chatId
+  let id
 
   return () => {
-    if (chatId === undefined) {
-      chatId = -1
+    if (id === undefined) {
+      id = -1
     }
-    chatId += 1
+    id += 1
 
-    return `${prefix}${chatId}`
+    return `${prefix}${id}`
   }
 }
 

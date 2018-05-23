@@ -2,9 +2,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village'
+import type {HideReuslt, SocketMessage} from '../actions'
 import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
 import {RESULTS} from '../constants/Phase'
-import type {SocketMessage, HideReuslt} from '../actions'
 
 const getAgentId = idGenerater('agent')
 
