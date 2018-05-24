@@ -1,3 +1,4 @@
+// @flow
 import ActivityContainer from './ActivityContainer'
 import React from 'react'
 import {initialState} from '../reducers/hideButton'
