@@ -8,6 +8,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<CommandContainer /> DAY_CONVERSATION', () => {
+  const dispatch = jest.fn()
   const getState = () => ({
     base: {
       phase: DAY_CONVERSATION
@@ -18,6 +19,7 @@ test('<CommandContainer /> DAY_CONVERSATION', () => {
   })
   const subscribe = jest.fn()
   const store = {
+    dispatch,
     getState,
     subscribe
   }
@@ -27,6 +29,7 @@ test('<CommandContainer /> DAY_CONVERSATION', () => {
   expect(wrapper.props().hide).toBe(false)
 })
 test('<CommandContainer /> DAY_VOTE', () => {
+  const dispatch = jest.fn()
   const getState = () => ({
     base: {
       phase: DAY_VOTE
@@ -37,6 +40,7 @@ test('<CommandContainer /> DAY_VOTE', () => {
   })
   const subscribe = jest.fn()
   const store = {
+    dispatch,
     getState,
     subscribe
   }
@@ -46,6 +50,7 @@ test('<CommandContainer /> DAY_VOTE', () => {
   expect(wrapper.props().hide).toBe(false)
 })
 test('<CommandContainer /> NIGHT', () => {
+  const dispatch = jest.fn()
   const getState = () => ({
     base: {
       phase: NIGHT
@@ -56,6 +61,7 @@ test('<CommandContainer /> NIGHT', () => {
   })
   const subscribe = jest.fn()
   const store = {
+    dispatch,
     getState,
     subscribe
   }
@@ -65,6 +71,7 @@ test('<CommandContainer /> NIGHT', () => {
   expect(wrapper.props().hide).toBe(false)
 })
 test('<CommandContainer /> POST_MORTEM', () => {
+  const dispatch = jest.fn()
   const getState = () => ({
     base: {
       phase: POST_MORTEM
@@ -75,6 +82,7 @@ test('<CommandContainer /> POST_MORTEM', () => {
   })
   const subscribe = jest.fn()
   const store = {
+    dispatch,
     getState,
     subscribe
   }
@@ -84,6 +92,7 @@ test('<CommandContainer /> POST_MORTEM', () => {
   expect(wrapper.props().hide).toBe(false)
 })
 test('<CommandContainer /> RESULTS', () => {
+  const dispatch = jest.fn()
   const getState = () => ({
     base: {
       phase: RESULTS
@@ -94,6 +103,7 @@ test('<CommandContainer /> RESULTS', () => {
   })
   const subscribe = jest.fn()
   const store = {
+    dispatch,
     getState,
     subscribe
   }
