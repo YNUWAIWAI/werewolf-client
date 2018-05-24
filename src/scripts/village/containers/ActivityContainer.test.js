@@ -1,12 +1,11 @@
 import ActivityContainer from './ActivityContainer'
 import React from 'react'
+import {initialState} from '../reducers/hideButton'
 import {shallow} from 'enzyme'
 
-test('<ActivityContainer />', () => {
+test('<ActivityContainer /> initialState', () => {
   const getState = () => ({
-    hideButton: {
-      hide: true
-    }
+    hideButton: initialState
   })
   const subscribe = jest.fn()
   const store = {
@@ -15,5 +14,5 @@ test('<ActivityContainer />', () => {
   }
   const wrapper = shallow(<ActivityContainer store={store} />)
 
-  expect(wrapper.props().expand).toBe(true)
+  expect(wrapper.props().expand).toBe(false)
 })

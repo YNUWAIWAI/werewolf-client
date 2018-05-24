@@ -8,7 +8,7 @@ export type State = {
 type Action =
   | ClickHideButton
 
-const initialState = {
+export const initialState = {
   hide: false
 }
 const hideButton = (state: State = initialState, action: Action): State => {
