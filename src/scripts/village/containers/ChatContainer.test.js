@@ -1,3 +1,4 @@
+// @flow
 import ChatContainer from './ChatContainer'
 import React from 'react'
 import {initialState} from '../reducers/chat'
