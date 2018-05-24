@@ -5,11 +5,13 @@ import {initialState} from '../reducers/chat'
 import {shallow} from 'enzyme'
 
 test('<ChatContainer /> initialState', () => {
+  const dispatch = jest.fn()
   const getState = () => ({
     chat: initialState
   })
   const subscribe = jest.fn()
   const store = {
+    dispatch,
     getState,
     subscribe
   }
@@ -19,6 +21,7 @@ test('<ChatContainer /> initialState', () => {
   expect(wrapper.props().byId).toEqual({})
 })
 test('<ChatContainer />', () => {
+  const dispatch = jest.fn()
   const getState = () => ({
     chat: {
       allIds: ['chat0'],
@@ -43,6 +46,7 @@ test('<ChatContainer />', () => {
   })
   const subscribe = jest.fn()
   const store = {
+    dispatch,
     getState,
     subscribe
   }
