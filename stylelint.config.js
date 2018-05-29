@@ -78,11 +78,6 @@ module.exports = {
     'keyframe-declaration-no-important': true,
     'length-zero-no-unit': true,
     'max-empty-lines': 1,
-    'max-line-length': [
-      80, {
-        ignore: ['comments']
-      }
-    ],
     'max-nesting-depth': 5,
     'media-feature-colon-space-after': 'always',
     'media-feature-colon-space-before': 'never',
