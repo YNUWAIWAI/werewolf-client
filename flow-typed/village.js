@@ -46,6 +46,17 @@ declare module 'village' {
     userName: string,
     userAvatar: string
   }
+  declare type VoteAgent = {
+    '@id': string,
+    agentIsMine: boolean,
+    name: { [Language]: string },
+    image: string,
+    id: number,
+    status: AgentStatus,
+    statusUpdatePhase: Phase,
+    statusUpdateDate: number,
+    isAChoice: boolean
+  }
   declare type Role = {
     '@id': string,
     name: { [Language]: string },

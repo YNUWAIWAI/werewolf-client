@@ -1,22 +1,27 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
+import type {Language, Payload, VoteAgent} from 'village'
 import type {SelectYes, SocketMessage} from '../actions'
-import type {Phase} from 'village'
+import {VOTING_PHASE} from '../constants/Phase'
 
 export type State = {
-  +fixed: boolean,
-  +phase: Phase | ''
+  +agents: {
+    +id: number,
+    +image: string,
+    +name: { [Language]: string }
+  }[],
+  +fixed: boolean
 }
 type Action =
  | SocketMessage
  | SelectYes
 
 export const initialState = {
-  fixed: false,
-  phase: ''
+  agents: [],
+  fixed: false
 }
-
+let prev = ''
 const commandSelection = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SELECT_YES:
@@ -26,12 +31,24 @@ const commandSelection = (state: State = initialState, action: Action): State =>
       }
     case ActionTypes.SOCKET_MESSAGE:
       if (
-        action.payload['@context'].includes(Contexts.BASE) &&
-        state.phase !== action.payload.phase
+        action.payload['@context'].includes(Contexts.AGENT) &&
+        VOTING_PHASE.includes(action.payload.phase)
       ) {
+        const payload: Payload<VoteAgent, *, *> = action.payload
+        const agents = payload.agent
+          .filter(a => a.agentIsMine)
+          .map(a => ({
+            id: a.id,
+            image: a.image,
+            name: a.name
+          }))
+        const fixed = prev !== payload.phase
+
+        prev = payload.phase
+
         return {
-          fixed: false,
-          phase: action.payload.phase
+          agents,
+          fixed
         }
       }
 
