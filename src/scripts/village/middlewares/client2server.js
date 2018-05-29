@@ -3,7 +3,7 @@
 import * as types from '../constants/ActionTypes'
 import type {C2SBoard, C2SChat, C2SPayload, C2SVote} from 'village'
 import type {DispatchAPI, Middleware} from 'redux'
-import {getMyAgent, getMyRole, getVotedAgent} from '../util'
+import {getVotedAgent, just} from '../util'
 import type {Action} from '.'
 import type {ReducerState} from '../reducers'
 import {getChannelFromInputChennel} from '../constants/Channels'
@@ -15,8 +15,8 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
   switch (action.type) {
     case types.POST_CHAT: {
       const state = store.getState()
-      const myRole = getMyRole(state.roles.all)
-      const myAgent = getMyAgent(state.agents.all)
+      const myRole = just(state.roles.mine)
+      const myAgent = just(state.agents.mine)
       const channel = getChannelFromInputChennel(action.kind, getRoleId(myRole['@id']))
       const payload: C2SPayload<C2SChat> = {
         '@context': [
@@ -69,8 +69,8 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
     }
     case types.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
-      const myRole = getMyRole(state.roles.all)
-      const myAgent = getMyAgent(state.agents.all)
+      const myRole = just(state.roles.mine)
+      const myAgent = just(state.agents.mine)
       const payload: C2SPayload<C2SBoard> = {
         '@context': [
           'https://werewolf.world/context/0.1/base.jsonld',
@@ -122,8 +122,8 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
     case types.SELECT_YES: {
       const state = store.getState()
       const votedAgent = getVotedAgent(state.agents.all, action.agentId)
-      const myRole = getMyRole(state.roles.all)
-      const myAgent = getMyAgent(state.agents.all)
+      const myRole = just(state.roles.mine)
+      const myAgent = just(state.agents.mine)
       const payload: C2SPayload<C2SVote> = {
         '@context': [
           'https://werewolf.world/context/0.1/base.jsonld',
