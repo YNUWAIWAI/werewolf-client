@@ -2,19 +2,6 @@
 import {UNPLAYABLE_AGENT} from '../constants/Agent'
 import {UNPLAYABLE_ROLE} from '../constants/Role'
 
-export const idGenerater = (prefix: string) => {
-  let id
-
-  return () => {
-    if (id === undefined) {
-      id = -1
-    }
-    id += 1
-
-    return `${prefix}${id}`
-  }
-}
-
 export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] =>
   agents.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
 
@@ -49,6 +36,27 @@ export const getVotedAgent = <T: {'@id': string, id: number}>(agents: T[], agent
   }
 
   return maybe
+}
+
+export const idGenerater = (prefix: string) => {
+  let id
+
+  return () => {
+    if (id === undefined) {
+      id = -1
+    }
+    id += 1
+
+    return `${prefix}${id}`
+  }
+}
+
+export const just = <T>(value: ?T): T => {
+  if (value === undefined || value === null) {
+    throw Error('Nothing')
+  }
+
+  return value
 }
 
 export const trimBaseUri = (id: string): string => {

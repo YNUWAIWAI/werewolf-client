@@ -1,6 +1,15 @@
 // @flow
 /* eslint sort-keys: 0 */
-import {getMyAgent, getMyRole, getPlayableAgents, getPlayableRoles, idGenerater, trimBaseUri, xor} from './index'
+import {
+  getMyAgent,
+  getMyRole,
+  getPlayableAgents,
+  getPlayableRoles,
+  idGenerater,
+  just,
+  trimBaseUri,
+  xor
+} from './index'
 
 test('getMyAgent', () => {
   const agents = [
@@ -468,6 +477,11 @@ test('idGenerater', () => {
   expect(generateId()).toBe('id0')
   expect(generateId()).toBe('id1')
   expect(generateId()).toBe('id2')
+})
+test('just', () => {
+  expect(just('just')).toBe('just')
+  expect(() => just(null)).toThrow()
+  expect(() => just(undefined)).toThrow()
 })
 test('trimBaseUri', () => {
   expect(trimBaseUri('https://werewolf.world/resource/target')).toBe('target')
