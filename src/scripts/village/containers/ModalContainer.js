@@ -7,6 +7,7 @@ import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import {getRoleId} from '../constants/Role'
+import {just} from '../util'
 
 type Action =
   | SelectNo
@@ -14,30 +15,47 @@ type Action =
 
 const getText = (phase: Phase, role: RoleId) => {
   if (phase === DAY_VOTE) {
-    return '投票先はこちらでいいですか？'
+    return {
+      en: 'EN',
+      ja: '投票先はこちらでいいですか？'
+    }
   }
 
   switch (role) {
     case 'werewolf':
-      return '襲撃先はこちらでいいですか？'
+      return {
+        en: 'EN',
+        ja: '襲撃先はこちらでいいですか？'
+      }
     case 'seer':
-      return '占い先はこちらでいいですか？'
+      return {
+        en: 'EN',
+        ja: '占い先はこちらでいいですか？'
+      }
     case 'hunter':
-      return '守護先はこちらでいいですか？'
+      return {
+        en: 'EN',
+        ja: '守護先はこちらでいいですか？'
+      }
     default:
-      return '待ってください'
+      return {
+        en: '',
+        ja: '待ってください'
+      }
   }
 }
 
 const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
   const selectedAgent = state.agents.all.find(a => a.id === state.modal.id)
 
-  if (!selectedAgent) {
+  if (selectedAgent) {
+    const myRole = just(state.roles.mine)
+
     return {
-      id: -1,
-      image: '',
-      name: '',
-      text: '',
+      id: selectedAgent.id,
+      image: selectedAgent.image,
+      name: selectedAgent.name[state.language],
+      text: getText(state.base.phase, getRoleId(myRole['@id']))[state.language],
       timer: {
         limit: state.base.phaseTimeLimit,
         phase: state.base.phase
@@ -47,10 +65,10 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
   }
 
   return {
-    id: selectedAgent.id,
-    image: selectedAgent.image,
-    name: selectedAgent.name[state.language],
-    text: state.roles.mine ? getText(state.base.phase, getRoleId(state.roles.mine['@id'])) : '',
+    id: -1,
+    image: '',
+    name: '',
+    text: '',
     timer: {
       limit: state.base.phaseTimeLimit,
       phase: state.base.phase
