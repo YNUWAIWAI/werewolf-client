@@ -21,38 +21,49 @@
     <div class="image">
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="50"/>
-        <text x="12.5" y="75" fill="white" style="font-size: 5rem;">絵</text>
+        <text x="12.5" y="75" fill="white">絵</text>
       </svg>
     </div>
   </main>
   <section class="section">
     @form(action = routes.AuthController.loginResult(), 'class->"login") {
-      <p class="field">
-        <label class="label" for="login-email">email</label>
-        @inputText(loginForm("email"), 'class->"input", 'id->"login-email", 'name->"email", 'value->"", 'autocomplete->"off", 'required->"")
-      </p>
-      <p class="field">
-        <label class="label" for="login-password">password</label>
-        @inputPassword(loginForm("password"), 'class->"input", 'id->"login-password", 'name->"password", 'autocomplete->"off", 'minLength->"8", 'required->"")
-      </p>
-      @CSRF.formField
-      <input class="button" type="submit">
+    <p class="field">
+    <dl id="login-email_field">
+      <dt><label class="label" for="login-email">Email</label></dt>
+      <dd><input type="text" name="email" id="login-email" class="input" value="" autocomplete="off" required></dd>
+    </dl>
+    </p>
+    <p class="field">
+    <dl id="login-password_field">
+      <dt><label class="label" for="login-password">Password</label></dt>
+      <dd><input type="password" name="password" id="login-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
+    </dl>
+    </p>
+    @CSRF.formField
+    <input class="button" type="submit" value="Submit">
     }
     @form(action = routes.AuthController.signupResult(), 'class->"signup") {
-      <p class="field">
-        <label class="label" for="signup-name">name</label>
-        @inputText(signupForm("name"), 'class->"input", 'id->"signup-email", 'name->"name", 'value->"", 'autocomplete->"off", 'required->"")
-      </p>
-      <p class="field">
-        <label class="label" for="signup-email">email</label>
-        @inputText(signupForm("email"), 'class->"input", 'id->"signup-email", 'name->"email", 'value->"", 'autocomplete->"off", 'required->"")
-      </p>
-      <p class="field">
-        <label class="label" for="signup-password">password</label>
-        @inputPassword(signupForm("password"), 'class->"input", 'id->"signup-password", 'name->"password", 'autocomplete->"off", 'minLength->"8", 'required->"")
-      </p>
-      @CSRF.formField
-      <input class="button" type="submit">
+    <p class="field">
+    <dl id="signup-name_field">
+      <dt><label class="label" for="signup-name">Name</label></dt>
+      <dd><input type="text" name="name" id="signup-name" class="input" value="" autocomplete="off" required></dd>
+    </dl>
+    </p>
+    <p class="field">
+    <dl id="signup-email_field">
+      <dt><label class="label" for="signup-email">Email</label></dt>
+      <dd><input type="text" name="email" id="signup-email" class="input" value="" autocomplete="off" required></dd>
+    </dl>
+    </p>
+    <p class="field">
+    <dl id="signup-password_field">
+      <dt><label class="label" for="signup-password">Password</label></dt>
+      <dd><input type="password" name="password" id="signup-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
+    </dl>
+    </p>
+    @CSRF.formField
+    <p>Please agree to our <a href="terms" target="_blank">Terms, Data Policy and Cookies Policy</a> before signing up.</p>
+    <input class="button" type="submit" value="Submit">
     }
   </section>
 </body>
