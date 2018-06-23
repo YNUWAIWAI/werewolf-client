@@ -35,7 +35,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member]
       }
 
-      socket.send(payload)
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
@@ -48,7 +48,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
           leave: me.token
         }
 
-        socket.send(payload)
+        store.dispatch(socket.send(payload))
       }
 
       return next(action)
@@ -62,7 +62,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         ]
       }
 
-      socket.send(payload)
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
@@ -73,7 +73,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         }
       }
 
-      socket.send(payload)
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
@@ -83,7 +83,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         page: 1
       }
 
-      socket.send(payload)
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
@@ -93,7 +93,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         page: 1
       }
 
-      socket.send(payload)
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
@@ -103,7 +103,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         page: 1
       }
 
-      socket.send(payload)
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
@@ -114,7 +114,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
           pong: state.ping.myToken
         }
 
-        socket.send(payload)
+        store.dispatch(socket.send(payload))
       }
 
       return next(action)
