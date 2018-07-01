@@ -34,7 +34,7 @@ test('<EditableVillageItem villageName="villageName" hostName="hostName" numberO
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleNumberChange).toHaveBeenCalledTimes(1)
   expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
-  expect(handleTextChange).toHaveBeenCalledTimes(3)
+  expect(handleTextChange).toHaveBeenCalledTimes(0)
   expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
 })
 test('<EditableVillageItem villageName="villageName" hostName="hostName" numberOfHumans={8} numberOfPlayers={15} numberOfRobots={7} comment="comment" /> onChange', () => {
@@ -60,12 +60,27 @@ test('<EditableVillageItem villageName="villageName" hostName="hostName" numberO
   )
 
   expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-  wrapper.find('.village--item--village-name--val').simulate('change')
+  wrapper.find('.village--item--village-name--val').simulate('change', {
+    target: {
+      value: 'changed villageName'
+    }
+  })
   expect(handleTextChangeInner).toHaveBeenCalledTimes(1)
-  wrapper.find('.village--item--host-name--val').simulate('change')
+  expect(handleTextChangeInner).toHaveBeenCalledWith('changed villageName')
+  wrapper.find('.village--item--host-name--val').simulate('change', {
+    target: {
+      value: 'changed hostName'
+    }
+  })
   expect(handleTextChangeInner).toHaveBeenCalledTimes(2)
-  wrapper.find('.village--item--comment--val').simulate('change')
+  expect(handleTextChangeInner).toHaveBeenCalledWith('changed hostName')
+  wrapper.find('.village--item--comment--val').simulate('change', {
+    target: {
+      value: 'changed comment'
+    }
+  })
   expect(handleTextChangeInner).toHaveBeenCalledTimes(3)
+  expect(handleTextChangeInner).toHaveBeenCalledWith('changed comment')
   expect(handleAvatarChange).toHaveBeenCalledTimes(0)
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
