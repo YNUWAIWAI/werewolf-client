@@ -78,11 +78,12 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         }
       }
     case ActionTypes.CHANGE_NUMBER_OF_PLAYERS:
-      if (state.village.numberOfHumans === 0 && action.numberOfPlayers < state.village.numberOfRobots) {
+      if (action.numberOfPlayers < state.village.numberOfRobots) {
         return {
           ... state,
           village: {
             ... state.village,
+            numberOfHumans: 0,
             numberOfPlayers: action.numberOfPlayers,
             numberOfRobots: action.numberOfPlayers
           }

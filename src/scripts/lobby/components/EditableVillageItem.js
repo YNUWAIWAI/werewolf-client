@@ -28,7 +28,7 @@ export default function EditableVillageItem(props: Props) {
       <input
         className="village--item--village-name--val"
         defaultValue={props.villageName}
-        onChange={props.handleTextChange('villageName')}
+        onChange={event => props.handleTextChange('villageName')(event.target.value)}
         type="text"
       />
       <div className="village--item--host-name--prop">
@@ -37,7 +37,7 @@ export default function EditableVillageItem(props: Props) {
       <input
         className="village--item--host-name--val"
         defaultValue={props.hostName}
-        onChange={props.handleTextChange('hostName')}
+        onChange={event => props.handleTextChange('hostName')(event.target.value)}
         type="text"
       />
       <div className="village--item--setup--prop">
@@ -70,7 +70,7 @@ export default function EditableVillageItem(props: Props) {
       <input
         className="village--item--comment--val"
         defaultValue={props.comment}
-        onChange={props.handleTextChange('comment')}
+        onChange={event => props.handleTextChange('comment')(event.target.value)}
         type="text"
       />
     </div>
