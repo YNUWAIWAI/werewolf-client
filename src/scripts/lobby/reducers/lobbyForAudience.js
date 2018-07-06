@@ -12,7 +12,7 @@ export type State = {
 type Action =
   | SocketMessage
 
-const initialState = {
+export const initialState = {
   isPlayer: false,
   menuItems: [
     {
