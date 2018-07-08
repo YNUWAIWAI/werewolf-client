@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import React from 'react'
 import SettingsContainer from './SettingsContainer'
-import {initialState} from '../reducers/main'
+import {initialState} from '../reducers/settings'
 import {shallow} from 'enzyme'
 
 test('<SettingsContainer /> initialState', () => {
