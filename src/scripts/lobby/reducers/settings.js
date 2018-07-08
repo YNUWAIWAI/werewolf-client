@@ -7,7 +7,7 @@ export type State = {
 }
 type Action = any
 
-const initialState = {
+export const initialState = {
   menuItems: [
     {
       text: 'Return to the Main Page',
