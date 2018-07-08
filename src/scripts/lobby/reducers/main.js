@@ -4,14 +4,14 @@ import type {MenuItem} from 'lobby'
 
 export type State = {
   +image: string,
-  +items: MenuItem[],
+  +menuItems: MenuItem[],
   +name: string
 }
 type Action = void
 
-const initialState = {
+export const initialState = {
   image: 'https://werewolf.world/image/0.1/Pamela.jpg',
-  items: [
+  menuItems: [
     {
       text: 'Lobby for Audience',
       types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
