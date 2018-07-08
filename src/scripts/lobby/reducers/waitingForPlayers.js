@@ -13,7 +13,7 @@ type Action =
   | SocketMessage
   | Transition
 
-const initialState = {
+export const initialState = {
   isPlayer: true,
   menuItems: [],
   players: []
