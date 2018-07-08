@@ -6,7 +6,7 @@ import Player from './Player'
 
 export type StateProps = {
   +image: string,
-  +items: MenuItem[],
+  +menuItems: MenuItem[],
   +name: string
 }
 export type OwnProps = {
@@ -20,7 +20,7 @@ export default function Main(props: Props) {
   return (
     <Fragment>
       <Player image={props.image} name={props.name} />
-      <Menu class="menu" itemClass="menu--item" items={props.items} transition={props.transition} />
+      <Menu class="menu" itemClass="menu--item" items={props.menuItems} transition={props.transition} />
     </Fragment>
   )
 }
