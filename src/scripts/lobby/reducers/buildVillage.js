@@ -28,7 +28,7 @@ type Action =
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
 
-const initialState = {
+export const initialState = {
   menuItems: [],
   village: {
     avatar: 'fixed',
