@@ -86,4 +86,8 @@ declare module 'lobby' {
     village: Village,
     players: WaitingPlayer[]
   }>
+  declare type Payload$Name = Payload<{
+    image: string,
+    name: string
+  }>
 }
