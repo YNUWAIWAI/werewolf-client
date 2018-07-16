@@ -1,6 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import type {MenuItem, Payload$Name} from 'lobby'
+import type {SocketMessage} from '../actions'
 
 export type State = {
   +image: string,
@@ -8,7 +9,7 @@ export type State = {
   +name: string
 }
 type Action =
-  | ActionTypes.SOCKET_MESSAGE
+  | SocketMessage
 
 export const initialState = {
   image: '',
