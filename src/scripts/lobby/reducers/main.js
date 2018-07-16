@@ -7,7 +7,8 @@ export type State = {
   +menuItems: MenuItem[],
   +name: string
 }
-type Action = void
+type Action =
+  | ActionTypes.SOCKET_MESSAGE
 
 export const initialState = {
   image: '',
