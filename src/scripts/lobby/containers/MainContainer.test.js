@@ -18,7 +18,7 @@ test('<MainContainer /> initialState', () => {
   }
   const wrapper = shallow(<MainContainer store={store} transition={jest.fn()} />)
 
-  expect(wrapper.props().image).toBe('https://werewolf.world/image/0.1/Pamela.jpg')
+  expect(wrapper.props().image).toBe('')
   expect(wrapper.props().menuItems)
     .toEqual([
       {
@@ -42,5 +42,5 @@ test('<MainContainer /> initialState', () => {
         types: [ActionTypes.SHOW_SETTINGS]
       }
     ])
-  expect(wrapper.props().name).toBe('Pamela')
+  expect(wrapper.props().name).toBe('')
 })
