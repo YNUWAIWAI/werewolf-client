@@ -39,6 +39,15 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
+    case types.GET_NAME: {
+      const payload = {
+        type: 'name'
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case types.LEAVE_WAITING_PAGE: {
       const state = store.getState()
       const me = state.waitingForPlayers.players.find(v => v.isMe)

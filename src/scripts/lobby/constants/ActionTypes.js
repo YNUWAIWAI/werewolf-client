@@ -16,6 +16,7 @@ export const KICK_OUT_PLAYER = 'KICK_OUT_PLAYER'
 export const SELECT_VILLAGE = 'SELECT_VILLAGE'
 
 export const BUILD_VILLAGE = 'BUILD_VILLAGE'
+export const GET_NAME = 'GET_NAME'
 export const LEAVE_WAITING_PAGE = 'LEAVE_WAITING_PAGE'
 export const PLAY_GAME = 'PLAY_GAME'
 export const REFRESH = 'REFRESH'
