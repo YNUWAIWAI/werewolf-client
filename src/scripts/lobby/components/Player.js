@@ -9,7 +9,6 @@ type Props = {
 export default function Player(props: Props) {
   return (
     <div className="player">
-      {'Hi,'}
       <span>
         <img src={props.image} />
       </span>
