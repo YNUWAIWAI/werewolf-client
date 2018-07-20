@@ -1,13 +1,13 @@
 // @flow
-import LobbyForAudience from './LobbyForAudience'
+import History from './History'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-test('<LobbyForAudience />', () => {
+test('<History />', () => {
   const selectVillage = jest.fn()
   const transition = jest.fn()
   const wrapper = shallow(
-    <LobbyForAudience
+    <History
       isPlayer={false}
       menuItems={[]}
       selectVillage={selectVillage}

@@ -8,15 +8,17 @@ test('<LobbyForHumanPlayer />', () => {
   const transition = jest.fn()
   const wrapper = shallow(
     <LobbyForHumanPlayer
+      image="image"
       isPlayer
       menuItems={[]}
+      name="name"
       selectVillage={selectVillage}
       transition={transition}
       villageItems={[]}
     />
   )
 
-  expect(wrapper.children()).toHaveLength(3)
+  expect(wrapper.children()).toHaveLength(4)
   expect(wrapper.find('Header').exists()).toBe(true)
   expect(wrapper.find('MainContent').exists()).toBe(true)
   expect(

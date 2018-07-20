@@ -1,12 +1,13 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import {enterLobby} from './fakeServer'
-import reducer from './lobbyForHumanPlayer'
+import reducer from './lobbyForRobotPlayer'
 
 test('SOCKET_MESSAGE', () => {
   expect(
     reducer(
       {
+        image: '',
         isPlayer: true,
         menuItems: [
           {
@@ -26,6 +27,7 @@ test('SOCKET_MESSAGE', () => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        name: '',
         villageItems: []
       },
       {
@@ -35,6 +37,7 @@ test('SOCKET_MESSAGE', () => {
     )
   ).toEqual(
     {
+      image: '',
       isPlayer: true,
       menuItems: [
         {
@@ -54,6 +57,7 @@ test('SOCKET_MESSAGE', () => {
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
+      name: '',
       villageItems: [
         {
           avatar: 'fixed',
