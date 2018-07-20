@@ -59,8 +59,7 @@ body {
 
 .player {
   font-size: 2.5rem;
-    grid-area: player;
-  margin: 3rem 0 0 5rem;
+  grid-area: player;
 }
 
 .village {
