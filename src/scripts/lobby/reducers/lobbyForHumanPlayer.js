@@ -5,14 +5,17 @@ import type {MenuItem, Payload$Lobby, Village} from 'lobby'
 import type {SocketMessage} from '../actions'
 
 export type State = {
+  +image: string,
   +isPlayer: boolean,
   +menuItems: MenuItem[],
+  +name: string,
   +villageItems: Village[]
 }
 type Action =
   | SocketMessage
 
 export const initialState = {
+  image: '',
   isPlayer: true,
   menuItems: [
     {
@@ -32,6 +35,7 @@ export const initialState = {
       types: [ActionTypes.SHOW_MAIN]
     }
   ],
+  name: '',
   villageItems: []
 }
 
