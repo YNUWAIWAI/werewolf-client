@@ -76,6 +76,10 @@ declare module 'lobby' {
     error: ?string,
     type: string
   } & T
+  declare type Payload$Avatar = Payload<{
+    image: string,
+    name: string
+  }>
   declare type Payload$Lobby = Payload<{
     villages: Village[]
   }>
@@ -85,9 +89,5 @@ declare module 'lobby' {
   declare type Payload$WatingPage = Payload<{
     village: Village,
     players: WaitingPlayer[]
-  }>
-  declare type Payload$Name = Payload<{
-    image: string,
-    name: string
   }>
 }
