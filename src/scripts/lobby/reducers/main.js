@@ -1,18 +1,15 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {MenuItem, Payload$Name} from 'lobby'
+import type {MenuItem} from 'lobby'
 import type {SocketMessage} from '../actions'
 
 export type State = {
-  +image: string,
-  +menuItems: MenuItem[],
-  +name: string
+  +menuItems: MenuItem[]
 }
 type Action =
   | SocketMessage
 
 export const initialState = {
-  image: '',
   menuItems: [
     {
       text: 'Lobby for Audience',
@@ -34,29 +31,9 @@ export const initialState = {
       text: 'Settings',
       types: [ActionTypes.SHOW_SETTINGS]
     }
-  ],
-  name: ''
+  ]
 }
 
-const main = (state: State = initialState, action: Action): State => {
-  switch (action.type) {
-    case ActionTypes.SOCKET_MESSAGE:
-      switch (action.payload.type) {
-        case 'name': {
-          const payload: Payload$Name = action.payload
-
-          return {
-            ... state,
-            image: payload.image,
-            name: payload.name
-          }
-        }
-        default:
-          return state
-      }
-    default:
-      return state
-  }
-}
+const main = (state: State = initialState, action: Action): State => state
 
 export default main

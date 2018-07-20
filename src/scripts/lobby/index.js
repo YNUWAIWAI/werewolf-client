@@ -1,9 +1,9 @@
 // @flow
-import {GET_NAME, SHOW_MAIN} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {SHOW_MAIN} from './constants/ActionTypes'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {createStore} from 'redux'
 import middleware from './middlewares'
@@ -16,9 +16,6 @@ const store = createStore(
 
 store.dispatch({
   type: SHOW_MAIN
-})
-store.dispatch({
-  type: GET_NAME
 })
 
 const root = document.getElementById('root')
