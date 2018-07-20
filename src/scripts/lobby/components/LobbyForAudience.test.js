@@ -20,7 +20,7 @@ test('<LobbyForAudience />', () => {
 
   expect(wrapper.children()).toHaveLength(4)
   expect(wrapper.find('Header').exists()).toBe(true)
-  expect(wrapper.find('Player').exists()).toBe(true)
+  expect(wrapper.find('Avatar').exists()).toBe(true)
   expect(wrapper.find('MainContent').exists()).toBe(true)
   expect(
     wrapper

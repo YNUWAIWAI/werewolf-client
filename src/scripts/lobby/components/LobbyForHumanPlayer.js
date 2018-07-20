@@ -1,10 +1,10 @@
 // @flow
 import type {MenuItem, Target, Village} from 'lobby'
 import AsideContent from './AsideContent'
+import Avatar from './Avatar'
 import Header from './Header'
 import MainContent from './MainContent'
 import Menu from './Menu'
-import Player from './Player'
 import React from 'react'
 import VillageList from './VillageList'
 
@@ -30,7 +30,7 @@ export default function LobbyForHumanPlayer(props: Props) {
   return (
     <div className="grid">
       <Header text="Lobby for Human Player" />
-      <Player image={props.image} name={props.name} />
+      <Avatar image={props.image} name={props.name} />
       <MainContent>
         <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
       </MainContent>

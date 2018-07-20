@@ -37,7 +37,7 @@ body {
   display: grid;
   grid-gap: 1rem 2rem;
   grid-template-areas:
-    'header player'
+    'header avatar'
     'main aside';
   grid-template-columns: 2fr 1fr;
   margin: 1rem;
@@ -57,10 +57,10 @@ body {
   padding: 1rem;
 }
 
-.player {
+.avatar {
   align-items: center;
   display: inline-flex;
-  grid-area: player;
+  grid-area: avatar;
 
   &--image {
     height: 3rem;
