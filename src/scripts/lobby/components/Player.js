@@ -9,8 +9,8 @@ type Props = {
 export default function Player(props: Props) {
   return (
     <div className="player">
-      <img src={props.image} />
-      <span>
+      <img className="player--image" src={props.image} />
+      <span className="player--name">
         {props.name}
       </span>
     </div>

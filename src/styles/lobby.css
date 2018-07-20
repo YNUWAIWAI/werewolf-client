@@ -58,8 +58,17 @@ body {
 }
 
 .player {
-  font-size: 2.5rem;
+  align-items: center;
+  display: inline-flex;
   grid-area: player;
+
+  &--image {
+    height: 3rem;
+  }
+
+  &--image {
+    font-size: 2.5rem;
+  }
 }
 
 .village {
