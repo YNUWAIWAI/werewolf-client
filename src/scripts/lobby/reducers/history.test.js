@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import {enterLobby} from './fakeServer'
-import reducer from './lobbyForAudience'
+import reducer from './history'
 
 test('SOCKET_MESSAGE', () => {
   expect(

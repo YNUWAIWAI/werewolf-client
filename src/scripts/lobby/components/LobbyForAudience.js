@@ -1,6 +1,7 @@
 // @flow
 import type {MenuItem, Target, Village} from 'lobby'
 import AsideContent from './AsideContent'
+import Avatar from './Avatar'
 import Header from './Header'
 import MainContent from './MainContent'
 import Menu from './Menu'
@@ -8,8 +9,10 @@ import React from 'react'
 import VillageList from './VillageList'
 
 export type StateProps = {
+  +image: string,
   +isPlayer: boolean,
   +menuItems: MenuItem[],
+  +name: string,
   +villageItems: Village[]
 }
 export type DispatchProps = {
@@ -27,6 +30,7 @@ export default function LobbyForAudience(props: Props) {
   return (
     <div className="grid">
       <Header text="Lobby for Audience" />
+      <Avatar image={props.image} name={props.name} />
       <MainContent>
         <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
       </MainContent>

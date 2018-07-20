@@ -7,11 +7,6 @@ body {
   @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
 }
 
-.player {
-  font-size: 2.5rem;
-  margin: 3rem 0 0 5rem;
-}
-
 .menu {
   list-style-type: none;
   padding: 1rem;
@@ -42,7 +37,7 @@ body {
   display: grid;
   grid-gap: 1rem 2rem;
   grid-template-areas:
-    'header header'
+    'header avatar'
     'main aside';
   grid-template-columns: 2fr 1fr;
   margin: 1rem;
@@ -60,6 +55,20 @@ body {
   font-size: 3rem;
   grid-area: header;
   padding: 1rem;
+}
+
+.avatar {
+  align-items: center;
+  display: inline-flex;
+  grid-area: avatar;
+
+  &--image {
+    height: 3rem;
+  }
+
+  &--name {
+    font-size: 2.5rem;
+  }
 }
 
 .village {

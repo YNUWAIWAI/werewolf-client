@@ -78,32 +78,35 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       return next(action)
     }
     case types.SHOW_LOBBY_FOR_AUDIENCE: {
-      const payload = {
+      store.dispatch(socket.send({
         lobby: 'audience',
         page: 1
-      }
-
-      store.dispatch(socket.send(payload))
+      }))
+      store.dispatch(socket.send({
+        type: 'avatar'
+      }))
 
       return next(action)
     }
     case types.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
-      const payload = {
+      store.dispatch(socket.send({
         lobby: 'human player',
         page: 1
-      }
-
-      store.dispatch(socket.send(payload))
+      }))
+      store.dispatch(socket.send({
+        type: 'avatar'
+      }))
 
       return next(action)
     }
     case types.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
-      const payload = {
+      store.dispatch(socket.send({
         lobby: 'robot player',
         page: 1
-      }
-
-      store.dispatch(socket.send(payload))
+      }))
+      store.dispatch(socket.send({
+        type: 'avatar'
+      }))
 
       return next(action)
     }

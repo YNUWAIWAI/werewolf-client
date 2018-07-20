@@ -18,7 +18,6 @@ test('<MainContainer /> initialState', () => {
   }
   const wrapper = shallow(<MainContainer store={store} transition={jest.fn()} />)
 
-  expect(wrapper.props().image).toBe('')
   expect(wrapper.props().menuItems)
     .toEqual([
       {
@@ -42,5 +41,4 @@ test('<MainContainer /> initialState', () => {
         types: [ActionTypes.SHOW_SETTINGS]
       }
     ])
-  expect(wrapper.props().name).toBe('')
 })
