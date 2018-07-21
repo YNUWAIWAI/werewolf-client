@@ -373,5 +373,9 @@ body {
       margin: 2px;
       text-align: center;
     }
+
+    &.me {
+      background: lightcyan;
+    }
   }
 }

@@ -15,6 +15,7 @@ export type StateProps = {
     +avatarImage: string,
     +canKickOut: boolean,
     +isHost: boolean,
+    +isMe: boolean,
     +name: string,
     +token: string
   }[],
