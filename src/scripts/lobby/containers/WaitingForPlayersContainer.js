@@ -15,6 +15,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     avatarImage: player.avatarImage ? player.avatarImage : defaultAvatarImage,
     canKickOut: amIHost && !player.isMe,
     isHost: player.isHost,
+    isMe: player.isMe,
     name: player.name,
     token: player.token
   }))
