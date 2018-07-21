@@ -35,8 +35,9 @@ test('<AvatarList isPlayer /> 1 items', () => {
   const items = [
     {
       avatarImage: 'image',
-      canKickOut: true,
+      canKickOut: false,
       isHost: true,
+      isMe: true,
       name: 'name',
       token: 'token'
     }
@@ -58,8 +59,9 @@ test('<AvatarList isPlayer={false} /> 1 items', () => {
   const items = [
     {
       avatarImage: 'image',
-      canKickOut: true,
+      canKickOut: false,
       isHost: true,
+      isMe: true,
       name: 'name',
       token: 'token'
     }
@@ -81,15 +83,17 @@ test('<AvatarList isPlayer /> 2 items', () => {
   const items = [
     {
       avatarImage: 'image',
-      canKickOut: true,
+      canKickOut: false,
       isHost: true,
+      isMe: true,
       name: 'name',
       token: 'token1'
     },
     {
       avatarImage: 'image',
       canKickOut: true,
-      isHost: true,
+      isHost: false,
+      isMe: false,
       name: 'name',
       token: 'token2'
     }
@@ -113,15 +117,17 @@ test('<AvatarList isPlayer={false} /> 2 items', () => {
   const items = [
     {
       avatarImage: 'image',
-      canKickOut: true,
+      canKickOut: false,
       isHost: true,
+      isMe: true,
       name: 'name',
       token: 'token1'
     },
     {
       avatarImage: 'image',
       canKickOut: true,
-      isHost: true,
+      isHost: false,
+      isMe: false,
       name: 'name',
       token: 'token2'
     }
