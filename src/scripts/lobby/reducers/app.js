@@ -16,6 +16,7 @@ export type State = {
 }
 type Action =
   | SelectVillage
+  | {type: typeof ActionTypes.BUILD_VILLAGE}
   | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
   | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_AUDIENCE}
@@ -30,6 +31,7 @@ const initialState = {
 const app = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.SELECT_VILLAGE:
+    case ActionTypes.BUILD_VILLAGE:
       return {
         content: WaitingForPlayers
       }
