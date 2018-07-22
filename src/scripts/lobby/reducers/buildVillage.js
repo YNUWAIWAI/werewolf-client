@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Avatar, Member, MenuItem} from 'lobby'
-import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName} from '../actions'
+import type {Avatar, Member, MenuItem, Payload$Avatar} from 'lobby'
+import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName, SocketMessage} from '../actions'
 
 export type State = {
   +menuItems: MenuItem[],
@@ -25,6 +25,7 @@ type Action =
   | ChangeNumberOfPlayers
   | ChangeNumberOfRobots
   | ChangeVillageName
+  | SocketMessage
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
 
@@ -158,6 +159,23 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           ... state.village,
           isHuman: false
         }
+      }
+    case ActionTypes.SOCKET_MESSAGE:
+      switch (action.payload.type) {
+        case 'avatar': {
+          const payload: Payload$Avatar = action.payload
+
+          return {
+            ... state,
+            village: {
+              ... state.village,
+              hostName: payload.name,
+              villageName: `${payload.name}'s village`
+            }
+          }
+        }
+        default:
+          return state
       }
     default:
       return state
