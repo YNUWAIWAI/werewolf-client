@@ -13,6 +13,7 @@ test('<VillageItem isPlayer />', () => {
       name: 'hostPlayer name'
     },
     id: 1,
+    idForSearching: 123,
     name: 'name',
     playerSetting: {
       current: 8,
@@ -40,8 +41,9 @@ test('<VillageItem isPlayer />', () => {
   const handleClick = jest.fn()
   const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer />)
 
-  expect(wrapper.children()).toHaveLength(10)
+  expect(wrapper.children()).toHaveLength(11)
   expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
+  expect(wrapper.find('.village--item--idForSearching').text()).toBe('123')
   expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
   expect(wrapper.find('.village--item--setup--val1').text()).toBe('8 / 15 players')
   expect(wrapper.find('.village--item--setup--val2').text()).toBe('Fixed Avatar')
@@ -57,6 +59,7 @@ test('<VillageItem isPlayer={false} />', () => {
       name: 'hostPlayer name'
     },
     id: 1,
+    idForSearching: 123,
     name: 'name',
     playerSetting: {
       current: 8,
@@ -84,8 +87,9 @@ test('<VillageItem isPlayer={false} />', () => {
   const handleClick = jest.fn()
   const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)
 
-  expect(wrapper.children()).toHaveLength(10)
+  expect(wrapper.children()).toHaveLength(11)
   expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
+  expect(wrapper.find('.village--item--idForSearching').text()).toBe('123')
   expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
   expect(wrapper.find('.village--item--setup--val1').text()).toBe('15 players')
   expect(wrapper.find('.village--item--setup--val2').text()).toBe('Random Avatar')
@@ -101,6 +105,7 @@ test('<VillageItem isPlayer /> onClick', () => {
       name: 'hostPlayer name'
     },
     id: 1,
+    idForSearching: 123,
     name: 'name',
     playerSetting: {
       current: 8,
@@ -140,6 +145,7 @@ test('<VillageItem isPlayer={false} /> onClick', () => {
       name: 'hostPlayer name'
     },
     id: 1,
+    idForSearching: 123,
     name: 'name',
     playerSetting: {
       current: 8,

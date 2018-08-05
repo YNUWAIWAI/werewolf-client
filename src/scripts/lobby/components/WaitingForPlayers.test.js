@@ -13,6 +13,7 @@ test('<WaitingForPlayers isPlayer village />', () => {
       name: 'hostPlayer name'
     },
     id: 1,
+    idForSearching: 123,
     name: 'name',
     playerSetting: {
       current: 8,

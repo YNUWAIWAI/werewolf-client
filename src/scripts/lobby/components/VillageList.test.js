@@ -24,6 +24,7 @@ test('<VillageList isPlayer /> 1 item', () => {
         name: 'hostPlayer name'
       },
       id: 1,
+      idForSearching: 123,
       name: 'name',
       playerSetting: {
         current: 8,
@@ -68,6 +69,7 @@ test('<VillageList isPlayer /> 2 item', () => {
         name: 'hostPlayer name'
       },
       id: 1,
+      idForSearching: 123,
       name: 'name',
       playerSetting: {
         current: 8,
@@ -100,6 +102,7 @@ test('<VillageList isPlayer /> 2 item', () => {
         name: 'hostPlayer name'
       },
       id: 2,
+      idForSearching: 456,
       name: 'name',
       playerSetting: {
         current: 8,
