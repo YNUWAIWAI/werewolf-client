@@ -43,7 +43,7 @@ test('<VillageItem isPlayer />', () => {
 
   expect(wrapper.children()).toHaveLength(11)
   expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
-  expect(wrapper.find('.village--item--idForSearching').text()).toBe('123')
+  expect(wrapper.find('.village--item--idForSearching').text()).toBe('#123')
   expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
   expect(wrapper.find('.village--item--setup--val1').text()).toBe('8 / 15 players')
   expect(wrapper.find('.village--item--setup--val2').text()).toBe('Fixed Avatar')
@@ -89,12 +89,51 @@ test('<VillageItem isPlayer={false} />', () => {
 
   expect(wrapper.children()).toHaveLength(11)
   expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
-  expect(wrapper.find('.village--item--idForSearching').text()).toBe('123')
+  expect(wrapper.find('.village--item--idForSearching').text()).toBe('#123')
   expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
   expect(wrapper.find('.village--item--setup--val1').text()).toBe('15 players')
   expect(wrapper.find('.village--item--setup--val2').text()).toBe('Random Avatar')
   expect(wrapper.find('.village--item--comment--val').text()).toBe('comment')
   expect(handleClick).toHaveBeenCalledTimes(0)
+})
+test('<VillageItem isPlayer /> idForSearching is invalid', () => {
+  const village: Village = {
+    avatar: 'fixed',
+    comment: 'comment',
+    hostPlayer: {
+      isAnonymous: false,
+      name: 'hostPlayer name'
+    },
+    id: 1,
+    idForSearching: 1.23,
+    name: 'name',
+    playerSetting: {
+      current: 8,
+      human: {
+        current: 5,
+        max: 8
+      },
+      number: 15,
+      robot: {
+        current: 3,
+        min: 7
+      }
+    },
+    roleSetting: {
+      hunter: 1,
+      madman: 1,
+      mason: 2,
+      medium: 1,
+      seer: 1,
+      villager: 6,
+      werehumster: 1,
+      werewolf: 2
+    }
+  }
+  const handleClick = jest.fn()
+  const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer />)
+
+  expect(wrapper.find('.village--item--idForSearching').text()).toBe('####')
 })
 test('<VillageItem isPlayer /> onClick', () => {
   const village: Village = {
