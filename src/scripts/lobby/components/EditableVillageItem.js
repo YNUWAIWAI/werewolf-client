@@ -21,7 +21,7 @@ type Props = {
 
 export default function EditableVillageItem(props: Props) {
   return (
-    <div className="village--item">
+    <div className="village--item build">
       <div className="village--item--village-name--prop">
         {'Village Name'}
       </div>

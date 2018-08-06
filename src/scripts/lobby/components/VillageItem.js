@@ -17,6 +17,9 @@ export default function VillageItem(props: Props) {
       <div className="village--item--village-name--val">
         {props.name}
       </div>
+      <div className="village--item--idForSearching">
+        {Number.isInteger(props.idForSearching) ? `#${props.idForSearching}` : '####'}
+      </div>
       <div className="village--item--host-name--prop">
         {'Host Name'}
       </div>

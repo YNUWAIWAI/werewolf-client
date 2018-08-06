@@ -80,12 +80,21 @@ body {
     display: grid;
     font-size: 2rem;
     grid-template-areas:
-      'v-n-p v-n-v v-n-v'
+      'v-n-p v-n-v i-f-s'
       'h-n-p h-n-v h-n-v'
       's-p s-v1 s-v2'
       'mem mem mem'
       'c-p c-v c-v';
     margin-bottom: 0.5rem;
+
+    &.build {
+      grid-template-areas:
+        'v-n-p v-n-v v-n-v'
+        'h-n-p h-n-v h-n-v'
+        's-p s-v1 s-v2'
+        'mem mem mem'
+        'c-p c-v c-v';
+    }
 
     &--village-name {
       &--prop {
@@ -108,6 +117,14 @@ body {
         padding: 1rem;
         text-align: center;
       }
+    }
+
+    &--idForSearching {
+      align-items: center;
+      border: solid 1px black;
+      display: inline-flex;
+      grid-area: i-f-s;
+      justify-content: center;
     }
 
     &--host-name {

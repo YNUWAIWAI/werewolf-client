@@ -7,6 +7,7 @@ declare module 'lobby' {
     comment: ?string,
     hostPlayer: HostPlayer,
     id: number,
+    idForSearching: number,
     name: string,
     playerSetting: PlayerSetting,
     roleSetting: RoleSetting
