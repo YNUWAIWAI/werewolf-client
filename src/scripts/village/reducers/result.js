@@ -5,6 +5,7 @@ import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village
 import type {HideReuslt, SocketMessage} from '../actions'
 import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
 import {RESULTS} from '../constants/Phase'
+import {WEREHUMSTER} from '../constants/Role'
 
 const getAgentId = idGenerater('agent')
 
@@ -31,6 +32,10 @@ export type State = {
     +role: string
   },
   +visible: boolean,
+  +werehumster: {
+    exists: boolean,
+    isWin: boolean
+  },
   +winners: string[]
 }
 type Action =
@@ -49,6 +54,10 @@ export const initialState = {
     role: ''
   },
   visible: false,
+  werehumster: {
+    exists: false,
+    isWin: false
+  },
   winners: []
 }
 const result = (state: State = initialState, action: Action): State => {
@@ -75,6 +84,10 @@ const result = (state: State = initialState, action: Action): State => {
         const allIds = []
         const losers = []
         let me
+        const werehumster = {
+          exists: false,
+          isWin: false
+        }
         const winners = []
 
         getPlayableAgents(payload.agent)
@@ -100,6 +113,10 @@ const result = (state: State = initialState, action: Action): State => {
             }
             if (a.agentIsMine) {
               me = agentId
+            }
+            if (a.role['@id'] === WEREHUMSTER) {
+              werehumster.exists = true
+              werehumster.isWin = a.result === 'win'
             }
             allIds.push(agentId)
           })
@@ -129,6 +146,7 @@ const result = (state: State = initialState, action: Action): State => {
           me,
           summary,
           visible: true,
+          werehumster,
           winners
         }
       }

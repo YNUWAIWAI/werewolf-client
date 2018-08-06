@@ -33,24 +33,24 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     const isWin = state.result.summary.result === 'win'
     const description = (() => {
       if (state.result.summary.isPlayer) {
-        return `人間側の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
+        return `人間陣営の${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}のため，あなたは${isWin ? '勝ち' : '負け'}ました`
       }
 
-      return `人間側が${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}しました`
+      return `人間陣営が${xor(isWerewolfSide, isWin) ? '勝利' : '敗北'}しました`
     })()
 
     if (xor(isWerewolfSide, isWin)) {
       return {
         description,
-        loser: '敗者（人狼チーム）',
-        winner: '勝者（人間チーム）'
+        loser: `敗者（人狼陣営${state.result.werehumster.exists && !state.result.werehumster.isWin ? '，ハムスター人間陣営' : ''}）`,
+        winner: `勝者（村人陣営${state.result.werehumster.exists && state.result.werehumster.isWin ? '，ハムスター人間陣営' : ''}）`
       }
     }
 
     return {
       description,
-      loser: '敗者（人間チーム）',
-      winner: '勝者（人狼チーム）'
+      loser: `敗者（村人陣営${state.result.werehumster.exists && !state.result.werehumster.isWin ? '，ハムスター人間陣営' : ''}）`,
+      winner: `勝者（人狼陣営${state.result.werehumster.exists && state.result.werehumster.isWin ? '，ハムスター人間陣営' : ''}）`
     }
   })()
 
