@@ -276,6 +276,10 @@ test('SOCKET_MESSAGE phase is results', () => {
       role: 'https://werewolf.world/resource/0.1/seer'
     },
     visible: true,
+    werehumster: {
+      exists: true,
+      isWin: false
+    },
     winners: [
       'agent0',
       'agent2',
