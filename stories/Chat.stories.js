@@ -277,3 +277,33 @@ storiesOf('Chat', module)
 
     return story
   }))
+  .add('区切り', withInfo('')(() => {
+    const allIds = [ 'chat0', 'chat1' ]
+    const byId = {
+      'chat0': {
+        id: 1,
+        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        intensionalDisclosureRange: 'public',
+        isMine: true,
+        name: 'ゲルト',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:20.000Z',
+        text: 'text'
+      },
+      'chat1': {
+        id: 2,
+        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        intensionalDisclosureRange: 'public',
+        isMine: false,
+        name: 'ヴァルター',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'text'
+      }
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
+
+    return story
+  }))
