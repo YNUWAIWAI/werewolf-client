@@ -1109,6 +1109,10 @@ export default {
       role: ''
     },
     visible: false,
+    werehumster: {
+      exists: false,
+      isWin: false
+    },
     winners: []
   },
   roles: {
