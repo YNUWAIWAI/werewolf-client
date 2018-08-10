@@ -2,11 +2,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
+import type {ChangeDate, SocketMessage} from '../actions'
 import type {Channel, Chat, Language, Payload} from 'village'
-import type {SocketMessage} from '../actions'
 import {idGenerater} from '../util'
 
 const getChatId = idGenerater('chat')
+const getDelimeterId = idGenerater('delimeter')
 
 export type State = {
   +allIds: string[],
@@ -20,11 +21,17 @@ export type State = {
       +phaseStartTime: string,
       +phaseTimeLimit: number,
       +serverTimestamp: string,
-      +text: string
+      +text: string,
+      +type: 'item'
+    } |
+    {
+      +date: number,
+      +type: 'delimeter'
     }
   }
 }
 type Action =
+  | ChangeDate
   | SocketMessage
 
 export const initialState = {
@@ -42,7 +49,7 @@ const chat = (state: State = initialState, action: Action): State => {
         const chatId = getChatId()
 
         return {
-          allIds: [ chatId , ... state.allIds ],
+          allIds: [ chatId, ... state.allIds ],
           byId: {
             ... state.byId,
             [chatId]: {
@@ -54,13 +61,28 @@ const chat = (state: State = initialState, action: Action): State => {
               phaseStartTime: payload.phaseStartTime,
               phaseTimeLimit: payload.phaseTimeLimit,
               serverTimestamp: payload.serverTimestamp,
-              text: payload.chatText
+              text: payload.chatText,
+              type: 'item'
             }
           }
         }
       }
 
       return state
+    case ActionTypes.CHANGE_DATE: {
+      const delimeterId = getDelimeterId()
+
+      return {
+        allIds: [ delimeterId, ... state.allIds ],
+        byId: {
+          ... state.byId,
+          [delimeterId]: {
+            date: action.to,
+            type: 'delimeter'
+          }
+        }
+      }
+    }
     default:
       return state
   }
