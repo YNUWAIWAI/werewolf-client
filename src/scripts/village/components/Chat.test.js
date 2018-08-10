@@ -22,7 +22,8 @@ test('<Chat /> 1 item', () => {
       phaseStartTime: '2018-01-01T00:00:00.000Z',
       phaseTimeLimit: 50,
       serverTimestamp: '2018-01-01T00:00:10.000Z',
-      text: 'text'
+      text: 'text',
+      type: 'item'
     }
   }
   const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
@@ -41,7 +42,8 @@ test('<Chat /> 2 items', () => {
       phaseStartTime: '2018-01-01T00:00:00.000Z',
       phaseTimeLimit: 50,
       serverTimestamp: '2018-01-01T00:00:10.000Z',
-      text: 'text'
+      text: 'text',
+      type: 'item'
     },
     'chat1': {
       id: 2,
@@ -52,7 +54,8 @@ test('<Chat /> 2 items', () => {
       phaseStartTime: '2018-01-01T00:00:00.000Z',
       phaseTimeLimit: 50,
       serverTimestamp: '2018-01-01T00:00:10.000Z',
-      text: 'text'
+      text: 'text',
+      type: 'item'
     }
   }
   const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
@@ -60,8 +63,8 @@ test('<Chat /> 2 items', () => {
   expect(wrapper.find('ChatItem')).toHaveLength(2)
   expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([ 2, 1 ])
 })
-test('<Chat /> 3 items', () => {
-  const allIds = [ 'chat2', 'chat1', 'chat0' ]
+test('<Chat /> 3 items with 1 delimeter', () => {
+  const allIds = [ 'delimeter0', 'chat2', 'chat1', 'chat0' ]
   const byId = {
     'chat0': {
       id: 1,
@@ -72,7 +75,8 @@ test('<Chat /> 3 items', () => {
       phaseStartTime: '2018-01-01T00:00:00.000Z',
       phaseTimeLimit: 50,
       serverTimestamp: '2018-01-01T00:00:10.000Z',
-      text: 'text'
+      text: 'text',
+      type: 'item'
     },
     'chat1': {
       id: 2,
@@ -83,7 +87,8 @@ test('<Chat /> 3 items', () => {
       phaseStartTime: '2018-01-01T00:00:00.000Z',
       phaseTimeLimit: 50,
       serverTimestamp: '2018-01-01T00:00:10.000Z',
-      text: 'text'
+      text: 'text',
+      type: 'item'
     },
     'chat2': {
       id: 3,
@@ -94,11 +99,17 @@ test('<Chat /> 3 items', () => {
       phaseStartTime: '2018-01-01T00:00:00.000Z',
       phaseTimeLimit: 50,
       serverTimestamp: '2018-01-01T00:00:10.000Z',
-      text: 'text'
+      text: 'text',
+      type: 'item'
+    },
+    'delimeter0': {
+      text: '1日目',
+      type: 'delimeter'
     }
   }
   const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
 
   expect(wrapper.find('ChatItem')).toHaveLength(3)
+  expect(wrapper.find('ChatDelimeter')).toHaveLength(1)
   expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([ 3, 2, 1 ])
 })
