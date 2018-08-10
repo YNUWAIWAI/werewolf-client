@@ -1,6 +1,6 @@
 // @flow
 import * as types from '../constants/ActionTypes'
-import type {BoardState, C2SPayload, InputChannel, Language, NavigationType, Payload, RoleId} from 'village'
+import type {BoardState, C2SPayload, InputChannel, Language, NavigationType, Payload, Phase, RoleId} from 'village'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: 'SOCKET:CLOSE'} => ({
@@ -28,6 +28,18 @@ export const socket = {
 export const changeLanguage = (language: Language): {language: Language, type: 'CHANGE_LANGUAGE'} => ({
   language,
   type: types.CHANGE_LANGUAGE
+})
+
+export const changeDate = ({from, to}: {from: number, to: number}): {from: number, to: number, type: 'CHANGE_DATE'} => ({
+  from,
+  to,
+  type: types.CHANGE_DATE
+})
+
+export const changePhase = ({from, to}: {from: Phase, to: Phase}): {from: Phase, to: Phase, type: 'CHANGE_PHASE'} => ({
+  from,
+  to,
+  type: types.CHANGE_PHASE
 })
 
 export const clickNavigationButton = (type: NavigationType): {type: NavigationType} => ({
@@ -83,7 +95,9 @@ export type SocketSend = $Call<typeof socket.send, *>
 export type ClickHideButton = $Call<typeof handleClickHideButton, *>
 export type ClickNavigationButton = $Call<typeof clickNavigationButton, *>
 export type ChangePredictionBoard = $Call<typeof handleBoardClick, *, *, *>
+export type ChangeDate = $Call<typeof changeDate, *>
 export type ChangeLanguage = $Call<typeof changeLanguage, *>
+export type ChangePhase = $Call<typeof changePhase, *>
 export type HideReuslt = $Call<typeof hideReuslt>
 export type PostChat = $Call<typeof postChat, *>
 export type SelectOption = $Call<typeof selectOption, *>
