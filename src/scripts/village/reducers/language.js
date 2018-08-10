@@ -6,7 +6,7 @@ export type State = Language
 type Action =
   | ChangeLanguage
 
-const initialState = 'ja'
+export const initialState = 'ja'
 const language = (state: State = initialState, action: Action): State => state
 
 export default language
