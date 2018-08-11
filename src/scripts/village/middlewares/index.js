@@ -4,8 +4,11 @@ import {applyMiddleware} from 'redux'
 import client2server from './client2server'
 import logger from './logger'
 import socket from './socket'
+import timeWatcher from './timeWatcher'
 
 export type Action =
+  | actions.ChangeDate
+  | actions.ChangePhase
   | actions.ChangePredictionBoard
   | actions.ClickHideButton
   | actions.PostChat
@@ -31,7 +34,8 @@ const middleware = applyMiddleware(
     url
   }),
   client2server,
-  logger
+  logger,
+  timeWatcher
 )
 
 export default middleware

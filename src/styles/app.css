@@ -124,7 +124,7 @@ body {
 }
 
 .chat {
-  overflow: scroll;
+  overflow: auto;
   width: 48vw;
 
   &--item {
@@ -205,7 +205,7 @@ body {
 
     & > span {
       font-size: x-small;
-      overflow: scroll;
+      overflow: auto;
       position: absolute;
       text-align: center;
       top: var(--chat-image-size);
@@ -288,6 +288,14 @@ body {
       }
     }
   }
+
+  &--delimeter {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
 
 .prediction {
@@ -297,7 +305,7 @@ body {
   grid: 1fr / 1fr;
   max-height: 100%;
   max-width: 48vw;
-  overflow: scroll;
+  overflow: auto;
 
   & > div {
     align-items: center;
@@ -463,7 +471,7 @@ body {
   &--option-container {
     display: flex;
     height: calc(100% - 1.5rem);
-    overflow: scroll;
+    overflow: auto;
   }
 
   &--option {
@@ -618,7 +626,7 @@ body {
   grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr calc(var(--result-image-size) + 1rem) calc(4px + var(--result-image-size) + 1rem) 2fr;
   left: 10vw;
   max-height: 80vh;
-  overflow: scroll;
+  overflow: auto;
   position: fixed;
   top: 10vh;
   width: 80vw;
@@ -630,7 +638,7 @@ body {
     height: 100%;
     line-height: 1.5;
     max-height: 3rem;
-    overflow: scroll;
+    overflow: auto;
     padding: 0.5rem;
     text-align: center;
 

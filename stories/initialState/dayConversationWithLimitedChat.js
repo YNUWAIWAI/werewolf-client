@@ -227,7 +227,7 @@ export default {
     villageName: '横国の森の奥にある時代に取り残された小さな村'
   },
   chat: {
-    allIds: [ 'chat1', 'chat0' ],
+    allIds: [ 'chat4', 'chat3', 'chat2', 'chat1', 'chat0' ],
     byId: {
       'chat0': {
         'id': 1,
@@ -256,6 +256,48 @@ export default {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': '>>1 私はパメラが人狼だと思う。'
+      },
+      'chat2': {
+        'id': 3,
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'intensionalDisclosureRange': 'public',
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'phaseTimeLimit': 600,
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'text': 'それはどうかな〜？'
+      },
+      'chat3': {
+        'id': 4,
+        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'intensionalDisclosureRange': 'public',
+        'isMine': false,
+        'name': {
+          'en': 'Alvin',
+          'ja': 'アルビン'
+        },
+        'phaseTimeLimit': 600,
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'text': 'えー'
+      },
+      'chat4': {
+        'id': 5,
+        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'intensionalDisclosureRange': 'public',
+        'isMine': false,
+        'name': {
+          'en': 'Alvin',
+          'ja': 'アルビン'
+        },
+        'phaseTimeLimit': 600,
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'text': 'じゃあ，わかんないや'
       }
     }
   },
@@ -1043,6 +1085,10 @@ export default {
       role: ''
     },
     visible: false,
+    werehumster: {
+      exists: false,
+      isWin: false
+    },
     winners: []
   },
   roles: {
