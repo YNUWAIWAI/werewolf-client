@@ -24,7 +24,7 @@ test('<ChatContainer />', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     chat: {
-      allIds: ['chat0'],
+      allIds: [ 'chat0', 'delimeter0' ],
       byId: {
         chat0: {
           id: 12,
@@ -38,7 +38,12 @@ test('<ChatContainer />', () => {
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-          text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。'
+          text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+          type: 'item'
+        },
+        delimeter0: {
+          date: 1,
+          type: 'delimeter'
         }
       }
     },
@@ -52,7 +57,7 @@ test('<ChatContainer />', () => {
   }
   const wrapper = shallow(<ChatContainer store={store} />)
 
-  expect(wrapper.props().allIds).toEqual(['chat0'])
+  expect(wrapper.props().allIds).toEqual([ 'chat0', 'delimeter0' ])
   expect(wrapper.props().byId).toEqual({
     chat0: {
       id: 12,
@@ -63,7 +68,12 @@ test('<ChatContainer />', () => {
       phaseStartTime: '2006-10-07T12:06:56.568+09:00',
       phaseTimeLimit: 600,
       serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。'
+      text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+      type: 'item'
+    },
+    delimeter0: {
+      text: '1日目',
+      type: 'delimeter'
     }
   })
 })

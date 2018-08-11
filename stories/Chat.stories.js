@@ -19,7 +19,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -30,7 +31,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -49,7 +51,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -60,7 +63,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -79,7 +83,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -90,7 +95,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -109,7 +115,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -120,7 +127,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -139,7 +147,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -150,7 +159,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -169,7 +179,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -180,7 +191,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -199,7 +211,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -210,7 +223,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -229,7 +243,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -240,7 +255,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
@@ -259,7 +275,8 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
       },
       'chat1': {
         id: 2,
@@ -270,7 +287,44 @@ storiesOf('Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text'
+        text: 'text',
+        type: 'item'
+      }
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
+
+    return story
+  }))
+  .add('区切り', withInfo('')(() => {
+    const allIds = [ 'chat0', 'delimeter0', 'chat1' ]
+    const byId = {
+      'chat0': {
+        id: 1,
+        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        intensionalDisclosureRange: 'public',
+        isMine: true,
+        name: 'ゲルト',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:20.000Z',
+        text: 'text',
+        type: 'item'
+      },
+      'chat1': {
+        id: 2,
+        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        intensionalDisclosureRange: 'public',
+        isMine: false,
+        name: 'ヴァルター',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'text',
+        type: 'item'
+      },
+      'delimeter0': {
+        text: '1日目',
+        type: 'delimeter'
       }
     }
     const story = <Chat allIds={allIds} byId={byId} />
