@@ -31,7 +31,7 @@ test('<LobbyForAudienceContainer /> initialState', () => {
       },
       {
         text: 'Refresh',
-        types: [ActionTypes.REFRESH]
+        types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
       },
       {
         text: 'Return to the Main Page',
