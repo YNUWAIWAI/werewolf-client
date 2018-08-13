@@ -25,7 +25,7 @@ module.exports = {
     "plugin:react/all"
   ],
   "rules": {
-    "array-bracket-spacing": ["error", "always", { "singleValue": false, "objectsInArrays": false, "arraysInArrays": false }],
+    "array-bracket-spacing": ["error", "never"],
     "array-callback-return": "error",
     "arrow-body-style": ["warn", "as-needed"],
     "arrow-parens": ["error", "as-needed"],
