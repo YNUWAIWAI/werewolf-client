@@ -14,6 +14,7 @@ test('SOCKET_MESSAGE watingPage', () => {
     )
   ).toEqual(
     {
+      id: '',
       myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
       results: []
     }
@@ -23,6 +24,7 @@ test('SOCKET_MESSAGE ping', () => {
   expect(
     reducer(
       {
+        id: '',
         myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
         results: []
       },
@@ -33,6 +35,7 @@ test('SOCKET_MESSAGE ping', () => {
     )
   ).toEqual(
     {
+      id: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
       results: [
         {

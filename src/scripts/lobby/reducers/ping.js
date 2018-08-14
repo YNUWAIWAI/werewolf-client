@@ -5,6 +5,7 @@ import type {SocketMessage, Transition} from '../actions'
 
 export type State = {
   +myToken: string,
+  +id: string,
   +results: PingResult[]
 }
 type Action =
@@ -12,6 +13,7 @@ type Action =
   | Transition
 
 export const initialState = {
+  id: '',
   myToken: '',
   results: []
 }
@@ -37,6 +39,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
 
           return {
             ... state,
+            id: payload.id,
             results: payload.results
           }
         }
