@@ -2,6 +2,7 @@
 import * as types from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Action} from '.'
+import type {Payload$Ping} from 'lobby'
 import type {ReducerState} from '../reducers'
 import {getCastFromNumberOfPlayers} from '../constants/Cast'
 import {socket} from '../actions'
@@ -113,11 +114,13 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
     case types.SOCKET_MESSAGE:
       if (action.payload.type === 'ping') {
         const state = store.getState()
-        const payload = {
-          pong: state.ping.myToken
-        }
+        const payload: Payload$Ping = action.payload
 
-        store.dispatch(socket.send(payload))
+        store.dispatch(socket.send({
+          id: payload.id,
+          token: state.ping.myToken,
+          type: 'pong'
+        }))
       }
 
       return next(action)
