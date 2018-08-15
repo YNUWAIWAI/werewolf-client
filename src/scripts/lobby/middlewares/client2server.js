@@ -1,15 +1,29 @@
 // @flow
+import * as Schema from '../constants/Schema'
 import * as types from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Action} from '.'
+import Ajv from 'ajv'
 import type {Payload$Ping} from 'lobby'
 import type {ReducerState} from '../reducers'
 import {getCastFromNumberOfPlayers} from '../constants/Cast'
 import {socket} from '../actions'
 
+const ajv = new Ajv()
 const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
   switch (action.type) {
     case types.BUILD_VILLAGE: {
+      fetch(Schema.buildVillage)
+        .then(res => res.json())
+        .then(json => {
+          const validate = ajv.compile(json)
+          const valid = validate(action.payload)
+
+          console.log(validate)
+          if (!valid) {
+            console.log(validate.errors)
+          }
+        })
       const state = store.getState()
       const payload = {
         avatar: state.buildVillage.village.avatar,
