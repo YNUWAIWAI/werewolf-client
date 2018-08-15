@@ -66,6 +66,7 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "ajv": "^6.5.2",
     "babel-loader": "^7.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
