@@ -1,6 +1,6 @@
 // @flow
 import * as types from '../constants/ActionTypes'
-import type {Avatar, Member, Payload, Target} from 'lobby'
+import type {Avatar, Member, Lobby, Payload, Target} from 'lobby'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: 'SOCKET:CLOSE'} => ({
@@ -49,6 +49,11 @@ export const changeNumberOfRobots = (numberOfRobots: number): {numberOfRobots: n
   numberOfRobots: Number(numberOfRobots),
   type: types.CHANGE_NUMBER_OF_ROBOTS
 })
+export const changeToken = ({lobby, token}: {lobby: Lobby, token: string}): {lobby: Lobby, token: string, type: 'CHANGE_TOKEN'} => ({
+  lobby,
+  token,
+  type: types.CHANGE_TOKEN
+})
 export const changeVillageName = (villageName: string): {type: 'CHANGE_VILLAGE_NAME', villageName: string} => ({
   type: types.CHANGE_VILLAGE_NAME,
   villageName
@@ -76,6 +81,7 @@ export type ChangeHostName = $Call<typeof changeHostName, string>
 export type ChangeMember = $Call<typeof changeMember, Member>
 export type ChangeNumberOfPlayers = $Call<typeof changeNumberOfPlayers, number>
 export type ChangeNumberOfRobots = $Call<typeof changeNumberOfRobots, number>
+export type ChangeToken = $Call<typeof changeToken, {lobby: Lobby, token: string}>
 export type ChangeVillageName = $Call<typeof changeVillageName, string>
 export type KickOutPlayer = $Call<typeof kickOutPlayer, string>
 export type SelectVillage = $Call<typeof selectVillage, number>
