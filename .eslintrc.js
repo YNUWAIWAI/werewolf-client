@@ -208,7 +208,7 @@ module.exports = {
     "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": true}],
     "sort-vars": ["warn", { "ignoreCase": true }],
     "space-before-blocks": "error",
-    "space-before-function-paren": ["error", "never"],
+    "space-before-function-paren": ["error", {"anonymous": "never", "named": "never", "asyncArrow": "always"}],
     "space-in-parens": ["error", "never"],
     "space-infix-ops": "error",
     "space-unary-ops": "error",
