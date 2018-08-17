@@ -1,5 +1,6 @@
 [ignore]
-.*/node_modules/ajv.*
+.*/node_modules/.*/ajv/.*
+
 [include]
 
 [libs]
