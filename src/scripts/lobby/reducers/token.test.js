@@ -16,7 +16,7 @@ describe('CHANGE_TOKEN', () => {
     ).toEqual(
       {
         'human player': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-        'lobby': '',
+        'lobby': 'human player',
         'onymous audience': '',
         'robot player': ''
       }
@@ -35,7 +35,7 @@ describe('CHANGE_TOKEN', () => {
     ).toEqual(
       {
         'human player': '',
-        'lobby': '',
+        'lobby': 'human player',
         'onymous audience': '',
         'robot player': '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
       }
@@ -54,7 +54,7 @@ describe('CHANGE_TOKEN', () => {
     ).toEqual(
       {
         'human player': '',
-        'lobby': '',
+        'lobby': 'human player',
         'onymous audience': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
         'robot player': ''
       }
