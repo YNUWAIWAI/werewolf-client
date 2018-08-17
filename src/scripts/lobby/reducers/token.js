@@ -5,7 +5,7 @@ import type {Lobby} from 'lobby'
 
 export type State = {
   'human player': string,
-  +'lobby': Lobby | '',
+  +'lobby': Lobby,
   'onymous audience': string,
   'robot player': string
 }
@@ -15,7 +15,7 @@ type Action =
 
 export const initialState = {
   'human player': '',
-  'lobby': '',
+  'lobby': 'human player',
   'onymous audience': '',
   'robot player': ''
 }
