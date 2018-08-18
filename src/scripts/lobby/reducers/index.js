@@ -13,6 +13,21 @@ import token, {type State as TokenState} from './token'
 import waitingForPlayers, {type State as WaitingForPlayersState} from './waitingForPlayers'
 import {combineReducers} from 'redux'
 
+export type ReducerState = {
+  app: AppState,
+  buildVillage: BuildVillageState,
+  connectingToRobotPlayer: ConnectingToRobotPlayerState,
+  history: HistoryState,
+  lobbyForAudience: LobbyForAudienceState,
+  lobbyForHumanPlayer: LobbyForHumanPlayerState,
+  lobbyForRobotPlayer: LobbyForRobotPlayerState,
+  main: MainState,
+  ping: PingState,
+  settings: SettingsState,
+  token: TokenState,
+  waitingForPlayers: WaitingForPlayersState
+}
+
 const reducer = combineReducers({
   app,
   buildVillage,
@@ -29,18 +44,3 @@ const reducer = combineReducers({
 })
 
 export default reducer
-
-export type ReducerState = {
-  app: AppState,
-  buildVillage: BuildVillageState,
-  connectingToRobotPlayer: ConnectingToRobotPlayerState,
-  history: HistoryState,
-  lobbyForAudience: LobbyForAudienceState,
-  lobbyForHumanPlayer: LobbyForHumanPlayerState,
-  lobbyForRobotPlayer: LobbyForRobotPlayerState,
-  main: MainState,
-  ping: PingState,
-  settings: SettingsState,
-  token: TokenState,
-  waitingForPlayers: WaitingForPlayersState
-}

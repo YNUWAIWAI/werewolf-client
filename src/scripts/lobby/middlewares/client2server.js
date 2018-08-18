@@ -1,13 +1,13 @@
 // @flow
 import * as types from '../constants/ActionTypes'
-import type {DispatchAPI, Middleware} from 'redux'
 import type {Action} from '.'
+import type {Middleware} from 'redux'
 import type {Payload$Ping} from 'lobby'
 import type {ReducerState} from '../reducers'
 import {getCastFromNumberOfPlayers} from '../constants/Cast'
 import {socket} from '../actions'
 
-const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
+const client2server: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
     case types.BUILD_VILLAGE: {
       const state = store.getState()

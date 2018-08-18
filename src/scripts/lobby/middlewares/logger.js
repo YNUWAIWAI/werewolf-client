@@ -1,11 +1,10 @@
 // @flow
-/* eslint no-console: 0 */
 
-import type {DispatchAPI, Middleware} from 'redux'
 import type {Action} from '.'
+import type {Middleware} from 'redux'
 import type {ReducerState} from '../reducers'
 
-const logger: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
+const logger: Middleware<ReducerState, Action> = store => next => action => {
   console.group(action.type)
   console.info('dispatching', action)
   console.log('next state', store.getState())

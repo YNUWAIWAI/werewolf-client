@@ -1,14 +1,14 @@
 // @flow
 import * as types from '../constants/ActionTypes'
-import type {DispatchAPI, Middleware} from 'redux'
 import {type Action} from '.'
+import type {Middleware} from 'redux'
 import type {ReducerState} from '../reducers'
 import {socket as socketAction} from '../actions'
 
 let socket
 let retryCount = 0
 
-const socketMiddleware: ({url: string, retry?: number}) => Middleware<ReducerState, Action, DispatchAPI<Action>> = option => store => next => action => {
+const socketMiddleware: ({url: string, retry?: number}) => Middleware<ReducerState, Action> = option => store => next => action => {
   const retry = option.retry || 5
   const connectWebSocket = url => {
     socket = new WebSocket(url)
