@@ -21,7 +21,7 @@ storiesOf('Info/Day', module)
   )
   .add('default', withInfo('')(() => {
     const date = number('date', 0)
-    const phase = selectV2('phase', [ 'day conversation', 'day vote', 'night', 'post mortem', 'results' ], '')
+    const phase = selectV2('phase', ['day conversation', 'day vote', 'night', 'post mortem', 'results'], '')
     const timer = {
       limit: number('limit', 10),
       phase
