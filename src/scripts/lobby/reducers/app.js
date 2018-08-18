@@ -25,7 +25,7 @@ type Action =
   | {type: typeof ActionTypes.SHOW_MAIN}
   | {type: typeof ActionTypes.SHOW_SETTINGS}
 
-const initialState = {
+export const initialState = {
   content: Main
 }
 const app = (state: State = initialState, action: Action): State => {

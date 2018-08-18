@@ -1,4 +1,7 @@
 @(webSocketUrl: String)
+@(humanPlayerToken: String)
+@(robotPlayerToken: String)
+@(onymousAudienceToken: String)
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +41,7 @@
   <link rel="stylesheet" href='@routes.Assets.at("stylesheets/lobby.css")'>
   <script crossorigin src="https://unpkg.com/react@@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
-  <script defer src='@routes.Assets.at("javascripts/lobby.js")' data-url='@webSocketUrl' id="script"></script>
+  <script defer src='@routes.Assets.at("javascripts/lobby.js")' data-url='@webSocketUrl' id="script" data-human-player-token='@humanPlayerToken' data-robot-player-token='@robotPlayerToken' data-onymous-audience-token='@onymousAudienceToken'></script>
   <title>Lobby, Werewolf: The Game</title>
 </head>
 <body>

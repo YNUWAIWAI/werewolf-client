@@ -8,7 +8,7 @@ import {withKnobs} from '@storybook/addon-knobs/react'
 storiesOf('Chat', module)
   .addDecorator(withKnobs)
   .add('anonymousAudience', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -40,7 +40,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('grave', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -72,7 +72,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('hunter', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -104,7 +104,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('master', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -136,7 +136,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('onymousAudience', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -168,7 +168,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('private', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -200,7 +200,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('public', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -232,7 +232,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('seer', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -264,7 +264,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('werewolf', withInfo('')(() => {
-    const allIds = [ 'chat0', 'chat1' ]
+    const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -296,7 +296,7 @@ storiesOf('Chat', module)
     return story
   }))
   .add('区切り', withInfo('')(() => {
-    const allIds = [ 'chat0', 'delimeter0', 'chat1' ]
+    const allIds = ['chat0', 'delimeter0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,

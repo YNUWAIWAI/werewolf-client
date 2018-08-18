@@ -1,13 +1,13 @@
 // @flow
 import * as types from '../constants/ActionTypes'
-import type {DispatchAPI, Middleware} from 'redux'
 import type {Action} from '.'
+import type {Middleware} from 'redux'
 import type {Payload$Ping} from 'lobby'
 import type {ReducerState} from '../reducers'
 import {getCastFromNumberOfPlayers} from '../constants/Cast'
 import {socket} from '../actions'
 
-const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
+const client2server: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
     case types.BUILD_VILLAGE: {
       const state = store.getState()
@@ -33,7 +33,9 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
             min: state.buildVillage.village.numberOfRobots
           }
         },
-        roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member]
+        roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member],
+        token: state.token[state.token.lobby],
+        type: 'buildVillage'
       }
 
       store.dispatch(socket.send(payload))
@@ -44,9 +46,12 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const state = store.getState()
       const me = state.waitingForPlayers.players.find(v => v.isMe)
 
-      if (me) {
+      if (me && state.waitingForPlayers.village) {
         const payload = {
-          leave: me.token
+          lobby: state.token.lobby,
+          token: me.token,
+          type: 'leaveWaitingPage',
+          villageId: state.waitingForPlayers.village.id
         }
 
         store.dispatch(socket.send(payload))
@@ -55,12 +60,15 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       return next(action)
     }
     case types.KICK_OUT_PLAYER: {
+      const state = store.getState()
       const payload = {
         players: [
           {
             token: action.token
           }
-        ]
+        ],
+        token: state.token[state.token.lobby],
+        type: 'kickOutPlayer'
       }
 
       store.dispatch(socket.send(payload))
@@ -68,7 +76,10 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       return next(action)
     }
     case types.SELECT_VILLAGE: {
+      const state = store.getState()
       const payload = {
+        token: state.token[state.token.lobby],
+        type: 'selectVillage',
         village: {
           id: action.id
         }
@@ -79,34 +90,49 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       return next(action)
     }
     case types.SHOW_LOBBY_FOR_AUDIENCE: {
+      const state = store.getState()
+
       store.dispatch(socket.send({
-        lobby: 'audience',
-        page: 1
+        lobby: 'onymous audience',
+        page: 1,
+        token: state.token[state.token.lobby],
+        type: 'enterLobby'
       }))
       store.dispatch(socket.send({
-        type: 'avatar'
+        token: state.token[state.token.lobby],
+        type: 'getAvatar'
       }))
 
       return next(action)
     }
     case types.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
+      const state = store.getState()
+
       store.dispatch(socket.send({
         lobby: 'human player',
-        page: 1
+        page: 1,
+        token: state.token[state.token.lobby],
+        type: 'enterLobby'
       }))
       store.dispatch(socket.send({
-        type: 'avatar'
+        token: state.token[state.token.lobby],
+        type: 'getAvatar'
       }))
 
       return next(action)
     }
     case types.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
+      const state = store.getState()
+
       store.dispatch(socket.send({
         lobby: 'robot player',
-        page: 1
+        page: 1,
+        token: state.token[state.token.lobby],
+        type: 'enterLobby'
       }))
       store.dispatch(socket.send({
-        type: 'avatar'
+        token: state.token[state.token.lobby],
+        type: 'getAvatar'
       }))
 
       return next(action)
@@ -118,7 +144,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
         store.dispatch(socket.send({
           id: payload.id,
-          token: state.ping.myToken,
+          token: state.token[state.token.lobby],
           type: 'pong'
         }))
       }

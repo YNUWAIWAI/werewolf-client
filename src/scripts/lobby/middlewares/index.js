@@ -12,6 +12,7 @@ export type Action =
   | actions.ChangeMember
   | actions.ChangeNumberOfPlayers
   | actions.ChangeNumberOfRobots
+  | actions.ChangeToken
   | actions.ChangeVillageName
   | actions.KickOutPlayer
   | actions.SelectVillage

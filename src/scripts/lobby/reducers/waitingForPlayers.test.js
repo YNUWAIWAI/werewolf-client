@@ -160,6 +160,7 @@ test('SOCKET_MESSAGE', () => {
           name: 'Anonymous'
         },
         id: 1,
+        idForSearching: 123,
         name: 'Fairytale village',
         playerSetting: {
           current: 8,
