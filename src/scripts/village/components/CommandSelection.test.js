@@ -1,5 +1,4 @@
 // @flow
-/* eslint sort-keys: 0 */
 import CommandSelection from './CommandSelection'
 import React from 'react'
 import {shallow} from 'enzyme'
@@ -59,8 +58,8 @@ test('<CommandSelection agents={agents} text="text" />', () => {
       name: 'リーザ'
     },
     {
-      image: 'https://werewolf.world/image/0.1/Alvin.jpg',
       id: 9,
+      image: 'https://werewolf.world/image/0.1/Alvin.jpg',
       name: 'アルビン'
     },
     {

@@ -148,10 +148,9 @@ test('<PredictionContainer />', () => {
       tooltip: '人狼'
     }
   ]
-  /* eslint sort-keys: 0 */
   const table = {
     '1': {
-      villager: {
+      madman: {
         date: 1,
         fixed: true,
         state: 'fill'
@@ -161,7 +160,7 @@ test('<PredictionContainer />', () => {
         fixed: true,
         state: 'O'
       },
-      madman: {
+      villager: {
         date: 1,
         fixed: true,
         state: 'fill'
@@ -173,20 +172,20 @@ test('<PredictionContainer />', () => {
       }
     },
     '2': {
-      villager: {
+      madman: {
         date: 1,
         fixed: false,
-        state: 'Δ'
+        state: '?'
       },
       seer: {
         date: 1,
         fixed: true,
         state: 'fill'
       },
-      madman: {
+      villager: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: 'Δ'
       },
       werewolf: {
         date: 1,
@@ -195,7 +194,7 @@ test('<PredictionContainer />', () => {
       }
     },
     '3': {
-      villager: {
+      madman: {
         date: 1,
         fixed: false,
         state: '?'
@@ -205,7 +204,7 @@ test('<PredictionContainer />', () => {
         fixed: true,
         state: 'fill'
       },
-      madman: {
+      villager: {
         date: 1,
         fixed: false,
         state: '?'
@@ -217,7 +216,7 @@ test('<PredictionContainer />', () => {
       }
     },
     '4': {
-      villager: {
+      madman: {
         date: 1,
         fixed: false,
         state: '?'
@@ -227,7 +226,7 @@ test('<PredictionContainer />', () => {
         fixed: true,
         state: 'fill'
       },
-      madman: {
+      villager: {
         date: 1,
         fixed: false,
         state: '?'
@@ -239,7 +238,7 @@ test('<PredictionContainer />', () => {
       }
     },
     '5': {
-      villager: {
+      madman: {
         date: 1,
         fixed: false,
         state: '?'
@@ -249,7 +248,7 @@ test('<PredictionContainer />', () => {
         fixed: true,
         state: 'fill'
       },
-      madman: {
+      villager: {
         date: 1,
         fixed: false,
         state: '?'

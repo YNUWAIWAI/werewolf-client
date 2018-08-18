@@ -1,5 +1,4 @@
 // @flow
-/* eslint sort-keys: 0 */
 import React from 'react'
 import Result from './Result'
 import {shallow} from 'enzyme'
@@ -127,9 +126,9 @@ const agents = {
     'userName': '山口'
   },
   'agent11': {
-    'agentName': 'パメラ',
-    'agentImage': 'https://werewolf.world/image/0.1/Pamela.jpg',
     'agentId': 13,
+    'agentImage': 'https://werewolf.world/image/0.1/Pamela.jpg',
+    'agentName': 'パメラ',
     'result': 'win',
     'roleImage': 'https://werewolf.world/image/0.1/villager.jpg',
     'roleName': '村人',
