@@ -49,7 +49,7 @@ const chat = (state: State = initialState, action: Action): State => {
         const chatId = getChatId()
 
         return {
-          allIds: [ chatId, ... state.allIds ],
+          allIds: [chatId, ... state.allIds],
           byId: {
             ... state.byId,
             [chatId]: {
@@ -73,7 +73,7 @@ const chat = (state: State = initialState, action: Action): State => {
       const delimeterId = getDelimeterId()
 
       return {
-        allIds: [ delimeterId, ... state.allIds ],
+        allIds: [delimeterId, ... state.allIds],
         byId: {
           ... state.byId,
           [delimeterId]: {

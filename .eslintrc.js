@@ -13,6 +13,12 @@ module.exports = {
     "ecmaVersion": 6,
     "sourceType": "module"
   },
+  "settings": {
+    "react": {
+      "version": "16.4",
+      "flowVersion": "0.71"
+    }
+  },
   "plugins": [
     "flowtype",
     "jest",

@@ -389,7 +389,7 @@ const Cast = {
 export default Cast
 
 export const getCastFromNumberOfPlayers = (numberOfPlayers: number): $PropertyType<typeof Cast, '15'> => {
-  const availableNumber: $Keys<typeof Cast>[] = [ '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15' ]
+  const availableNumber: $Keys<typeof Cast>[] = ['4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
   const maybe = availableNumber.find(v => v === String(numberOfPlayers))
 
   if (!maybe) {

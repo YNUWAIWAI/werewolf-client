@@ -25,11 +25,11 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         },
         {
           text: 'Return to Lobby for Human Player',
-          types: [ ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER ]
+          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           text: 'Return to the Main Page',
-          types: [ ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN ]
+          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
         }
       ],
       players: []
@@ -58,11 +58,11 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         },
         {
           text: 'Return to Lobby for Robot Player',
-          types: [ ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER ]
+          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           text: 'Return to the Main Page',
-          types: [ ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN ]
+          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
         }
       ],
       players: []

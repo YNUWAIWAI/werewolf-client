@@ -40,7 +40,7 @@ export const AVAILABLE_FOR_LIMITED_CHAT = [
 
 export const getRoleId = (str: string): RoleId => {
   const id = trimBaseUri(str)
-  const roleId: RoleId[] = [ 'villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehumster' ]
+  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehumster']
   const maybe = roleId.find(v => v === id)
 
   if (!maybe) {
