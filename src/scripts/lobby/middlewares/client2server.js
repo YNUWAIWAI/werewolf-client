@@ -46,7 +46,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const state = store.getState()
       const me = state.waitingForPlayers.players.find(v => v.isMe)
 
-      if (me) {
+      if (me && state.waitingForPlayers.village) {
         const payload = {
           lobby: state.token.lobby,
           token: me.token,
