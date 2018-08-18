@@ -5,7 +5,7 @@ type NodeModule = typeof module;
 
 declare module '@storybook/react' {
   declare type Renderable = React$Node;
-  declare type RenderFunction = (context: Context) => Renderable;
+  declare type RenderFunction = (context: ?Context) => Renderable;
   declare type Context = { kind: string, story: string };
 
   declare type StoryDecorator = (
