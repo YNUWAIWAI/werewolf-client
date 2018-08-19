@@ -271,6 +271,109 @@ describe('KICK_OUT_PLAYER', () => {
     })
   })
 })
+describe('PLAY_GAME', () => {
+  const dispatch = jest.fn()
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
+  const villageId = 1
+  const getState = () => ({
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers: {
+      isPlayer: true,
+      menuItems: [],
+      players: [
+        {
+          avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
+          isAnonymous: true,
+          isHost: false,
+          isMe: true,
+          name: 'Cathy',
+          token
+        }
+      ],
+      village: {
+        avatar: 'random',
+        comment: 'Experts recommended',
+        hostPlayer: {
+          isAnonymous: true,
+          name: 'Anonymous'
+        },
+        id: villageId,
+        idForSearching: 123,
+        name: 'Fairytale village',
+        playerSetting: {
+          current: 8,
+          human: {
+            current: 5,
+            max: 8
+          },
+          number: 15,
+          robot: {
+            current: 3,
+            min: 7
+          }
+        },
+        roleSetting: {
+          hunter: 1,
+          madman: 1,
+          mason: 2,
+          medium: 1,
+          seer: 1,
+          villager: 6,
+          werehumster: 1,
+          werewolf: 2
+        }
+      }
+    }
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    type: ActionTypes.PLAY_GAME
+  }
+  const playPayload = {
+    token: avatarToken.humanPlayer,
+    type: 'play',
+    villageId
+  }
+
+  test('validate the JSON of play', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/play.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, playPayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: playPayload,
+      type: ActionTypes.SOCKET_SEND
+    })
+  })
+})
 describe('SELECT_VILLAGE', () => {
   const dispatch = jest.fn()
   const getState = () => ({

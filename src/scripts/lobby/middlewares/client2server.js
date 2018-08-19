@@ -76,6 +76,22 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
+    case types.PLAY_GAME: {
+      const state = store.getState()
+
+      if (!state.waitingForPlayers.village) {
+        return next(action)
+      }
+      const payload = {
+        token: state.token[state.token.lobby],
+        type: 'play',
+        villageId: state.waitingForPlayers.village.id
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case types.SELECT_VILLAGE: {
       const state = store.getState()
       const payload = {
