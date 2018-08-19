@@ -1,5 +1,4 @@
 // @flow
-/* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import type {MenuItem, Payload$Lobby, Village} from 'lobby'
 import type {SocketMessage} from '../actions'

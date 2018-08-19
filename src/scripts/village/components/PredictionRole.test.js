@@ -4,7 +4,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<PredictionRole image="image" tooltip="tooltip" numberOfAgents={1} />', () => {
-  const wrapper = shallow(<PredictionRole image="image"numberOfAgents={1} tooltip="tooltip" />)
+  const wrapper = shallow(<PredictionRole image="image" numberOfAgents={1} tooltip="tooltip" />)
 
   expect(wrapper.is('[data-tooltip="tooltip"]')).toBe(true)
   expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)

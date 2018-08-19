@@ -15,7 +15,7 @@ type Props = {
 
 export default function PredictionItem(props: Props) {
   const handleBoardClick = () => {
-    const state = [ '?', 'Δ', 'O', 'X' ]
+    const state = ['?', 'Δ', 'O', 'X']
     const currentState = props.state
 
     if (!state.includes(currentState) || props.fixed) {

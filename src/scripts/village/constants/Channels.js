@@ -14,7 +14,7 @@ export const Channels = {
 }
 
 export const getChatChannel = (channel: Channel): ChatChannel => {
-  const chatChannel: ChatChannel[] = [ 'grave', 'limited', 'master', 'private', 'public' ]
+  const chatChannel: ChatChannel[] = ['grave', 'limited', 'master', 'private', 'public']
   const maybe = chatChannel.find(v => v === Channels[channel])
 
   if (!maybe) {
@@ -25,7 +25,7 @@ export const getChatChannel = (channel: Channel): ChatChannel => {
 }
 
 export const getInputChannel = (channel: Channel): InputChannel => {
-  const inputChannel: InputChannel[] = [ 'limited', 'private', 'public' ]
+  const inputChannel: InputChannel[] = ['limited', 'private', 'public']
   const maybe = inputChannel.find(v => v === Channels[channel])
 
   if (!maybe) {
@@ -38,7 +38,7 @@ export const getInputChannel = (channel: Channel): InputChannel => {
 type PublicChannel = 'anonymousAudience' | 'onymousAudience' | 'public'
 
 export const getChannelFromInputChennel = (inputChannel: InputChannel, role: RoleId, publicChannel: PublicChannel = 'public'): Channel => {
-  const channel: Channel[] = [ 'anonymousAudience', 'grave', 'hunter', 'master', 'onymousAudience', 'private', 'public', 'seer', 'werewolf' ]
+  const channel: Channel[] = ['anonymousAudience', 'grave', 'hunter', 'master', 'onymousAudience', 'private', 'public', 'seer', 'werewolf']
   const maybe = channel.find(v => {
     if (inputChannel === 'limited') {
       return v === role

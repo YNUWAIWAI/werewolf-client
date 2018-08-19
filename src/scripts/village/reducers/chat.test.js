@@ -60,7 +60,7 @@ test('SOCKET_MESSAGE', () => {
       }
     )
   ).toEqual({
-    allIds: [ 'chat1', 'chat0' ],
+    allIds: ['chat1', 'chat0'],
     byId: {
       chat0: {
         id: 12,

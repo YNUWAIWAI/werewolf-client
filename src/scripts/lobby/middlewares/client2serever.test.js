@@ -17,7 +17,6 @@ import {initialState as ping} from '../reducers/ping'
 import {initialState as settings} from '../reducers/settings'
 import {initialState as waitingForPlayers} from '../reducers/waitingForPlayers'
 
-
 const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
 const CLIENT2SERVER = `${BASE_URI}/client2server`
 const SERVER2CLIENT = `${BASE_URI}/server2client`
@@ -69,6 +68,7 @@ describe('BUILD_VILLAGE', () => {
       name: buildVillage.village.hostName
     },
     id: -1,
+    idForSearching: -1,
     name: buildVillage.village.villageName,
     playerSetting: {
       current: -1,
@@ -306,9 +306,7 @@ describe('SELECT_VILLAGE', () => {
   const selectVillagePayload = {
     token: avatarToken.humanPlayer,
     type: 'selectVillage',
-    village: {
-      id: villageId
-    }
+    villageId
   }
 
   test('validate the JSON of selectVillage', async () => {

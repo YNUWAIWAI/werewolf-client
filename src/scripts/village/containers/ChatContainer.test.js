@@ -24,7 +24,7 @@ test('<ChatContainer />', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     chat: {
-      allIds: [ 'chat0', 'delimeter0' ],
+      allIds: ['chat0', 'delimeter0'],
       byId: {
         chat0: {
           id: 12,
@@ -57,7 +57,7 @@ test('<ChatContainer />', () => {
   }
   const wrapper = shallow(<ChatContainer store={store} />)
 
-  expect(wrapper.props().allIds).toEqual([ 'chat0', 'delimeter0' ])
+  expect(wrapper.props().allIds).toEqual(['chat0', 'delimeter0'])
   expect(wrapper.props().byId).toEqual({
     chat0: {
       id: 12,

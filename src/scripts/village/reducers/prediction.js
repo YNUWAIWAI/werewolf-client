@@ -41,7 +41,7 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
   roles.forEach(role => {
     if (
       role.roleIsMine &&
-      [ SEER, MEDIUM ].includes(role['@id'])
+      [SEER, MEDIUM].includes(role['@id'])
     ) {
       const roleId = getRoleId(role['@id'])
 

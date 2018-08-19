@@ -9,7 +9,7 @@ type Props = {
 export default function AvatarSelect(props: Props) {
   const handleChange = (event: SyntheticInputEvent<HTMLSelectElement>) => {
     const value = event.target.value
-    const avatar: Avatar[] = [ 'fixed', 'random' ]
+    const avatar: Avatar[] = ['fixed', 'random']
     const maybe = avatar.find(v => v === value)
 
     if (maybe) {
