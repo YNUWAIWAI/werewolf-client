@@ -1,4 +1,5 @@
 // @flow
+/* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import {initialState as agents} from '../reducers/agents'
 import {initialState as base} from '../reducers/base'
