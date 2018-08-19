@@ -20,6 +20,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
           name: state.buildVillage.village.hostName
         },
         id: -1,
+        idForSearching: -1,
         name: state.buildVillage.village.villageName,
         playerSetting: {
           current: -1,
@@ -80,9 +81,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
       const payload = {
         token: state.token[state.token.lobby],
         type: 'selectVillage',
-        village: {
-          id: action.id
-        }
+        villageId: action.id
       }
 
       store.dispatch(socket.send(payload))
