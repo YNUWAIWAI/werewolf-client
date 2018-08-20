@@ -1,8 +1,10 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import AdvancedSearch from '../containers/AdvancedSearchContainer'
 import BuildVillage from '../containers/BuildVillageContainer'
 import ConnectingToRobotPlayer from '../containers/ConnectingToRobotPlayerContainer'
 import History from '../containers/HistoryContainer'
+import IdSearch from '../containers/IdSearchContainer'
 import LobbyForAudience from '../containers/LobbyForAudienceContainer'
 import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
 import LobbyForRobotPlayer from '../containers/LobbyForRobotPlayerContainer'
@@ -17,8 +19,10 @@ export type State = {
 type Action =
   | SelectVillage
   | {type: typeof ActionTypes.BUILD_VILLAGE}
+  | {type: typeof ActionTypes.SHOW_ADVANCED_SEARCH}
   | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
   | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
+  | {type: typeof ActionTypes.SHOW_ID_SEARCH}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_AUDIENCE}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
@@ -35,6 +39,10 @@ const app = (state: State = initialState, action: Action): State => {
       return {
         content: WaitingForPlayers
       }
+    case ActionTypes.SHOW_ADVANCED_SEARCH:
+      return {
+        content: AdvancedSearch
+      }
     case ActionTypes.SHOW_BUILD_VILLAGE:
       return {
         content: BuildVillage
@@ -46,6 +54,10 @@ const app = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_HISTORY:
       return {
         content: History
+      }
+    case ActionTypes.SHOW_ID_SEARCH:
+      return {
+        content: IdSearch
       }
     case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
       return {
