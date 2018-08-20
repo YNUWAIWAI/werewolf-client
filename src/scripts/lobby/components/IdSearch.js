@@ -20,12 +20,15 @@ export type Props =
   & DispatchProps
   & OwnProps
 
+const numberOfDigit = 3
+const placeholder = `${numberOfDigit} digits`
+
 export default function IdSearch(props: Props) {
   return (
     <div className="grid">
       <Header text={props.header} />
       <MainContent>
-        <IdSearchBox text="id search" />
+        <IdSearchBox numberOfDigit={numberOfDigit} placeholder={placeholder} />
       </MainContent>
       <AsideContent>
         <Menu
