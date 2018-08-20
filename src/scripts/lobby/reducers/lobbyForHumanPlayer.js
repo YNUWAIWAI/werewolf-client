@@ -22,8 +22,12 @@ export const initialState = {
       types: [ActionTypes.SHOW_BUILD_VILLAGE]
     },
     {
-      text: 'Search for a Village',
-      types: [ActionTypes.SEARCH_FOR_A_VILLAGE]
+      text: 'ID Search',
+      types: [ActionTypes.SHOW_ID_SEARCH]
+    },
+    {
+      text: 'Advanced Search',
+      types: [ActionTypes.SHOW_ADVANCED_SEARCH]
     },
     {
       text: 'Refresh',
