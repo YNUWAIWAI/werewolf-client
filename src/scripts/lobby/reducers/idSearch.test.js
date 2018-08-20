@@ -14,6 +14,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     {
       header: 'Audience\'s ID Search',
       id: -1,
+      image: '',
       menuItems: [
         {
           text: 'Search',
@@ -27,7 +28,8 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
           text: 'Return to the Main Page',
           types: [ActionTypes.SHOW_MAIN]
         }
-      ]
+      ],
+      name: ''
     }
   )
 })
@@ -43,6 +45,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     {
       header: 'Human Player\'s ID Search',
       id: -1,
+      image: '',
       menuItems: [
         {
           text: 'Search',
@@ -56,7 +59,8 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
           text: 'Return to the Main Page',
           types: [ActionTypes.SHOW_MAIN]
         }
-      ]
+      ],
+      name: ''
     }
   )
 })
@@ -72,6 +76,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     {
       header: 'Robot Player\'s ID Search',
       id: -1,
+      image: '',
       menuItems: [
         {
           text: 'Search',
@@ -85,7 +90,8 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
           text: 'Return to the Main Page',
           types: [ActionTypes.SHOW_MAIN]
         }
-      ]
+      ],
+      name: ''
     }
   )
 })
@@ -102,7 +108,9 @@ test('CHANGE_SEARCH_ID', () => {
     {
       header: '',
       id: 123,
-      menuItems: []
+      image: '',
+      menuItems: [],
+      name: ''
     }
   )
 })

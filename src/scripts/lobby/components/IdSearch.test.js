@@ -11,12 +11,14 @@ test('<IdSearch />', () => {
     <IdSearch
       changeSearchId={changeSearchId}
       header="header"
+      image="image"
       menuItems={[]}
+      name="name"
       transition={transition}
     />
   )
 
-  expect(wrapper.children()).toHaveLength(3)
+  expect(wrapper.children()).toHaveLength(4)
   expect(wrapper.find('Header').exists()).toBe(true)
   expect(wrapper.find('MainContent').exists()).toBe(true)
   expect(
