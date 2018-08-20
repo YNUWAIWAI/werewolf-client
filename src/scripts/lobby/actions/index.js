@@ -49,6 +49,10 @@ export const changeNumberOfRobots = (numberOfRobots: number): {numberOfRobots: n
   numberOfRobots: Number(numberOfRobots),
   type: types.CHANGE_NUMBER_OF_ROBOTS
 })
+export const changeSearchId = (id: number): {id: number, type: 'CHANGE_SEARCH_ID'} => ({
+  id,
+  type: types.CHANGE_SEARCH_ID
+})
 export const changeToken = ({lobby, token}: {lobby: Lobby, token: string}): {lobby: Lobby, token: string, type: 'CHANGE_TOKEN'} => ({
   lobby,
   token,
@@ -81,6 +85,7 @@ export type ChangeHostName = $Call<typeof changeHostName, string>
 export type ChangeMember = $Call<typeof changeMember, Member>
 export type ChangeNumberOfPlayers = $Call<typeof changeNumberOfPlayers, number>
 export type ChangeNumberOfRobots = $Call<typeof changeNumberOfRobots, number>
+export type ChangeSearchId = $Call<typeof changeSearchId, number>
 export type ChangeToken = $Call<typeof changeToken, {lobby: Lobby, token: string}>
 export type ChangeVillageName = $Call<typeof changeVillageName, string>
 export type KickOutPlayer = $Call<typeof kickOutPlayer, string>

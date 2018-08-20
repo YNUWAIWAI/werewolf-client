@@ -11,7 +11,9 @@ export type StateProps = {
   +header: string,
   +menuItems: MenuItem[],
 }
-export type DispatchProps = {}
+export type DispatchProps = {
+  +changeSearchId: number => void
+}
 export type OwnProps = {
   +transition: Target => void
 }
@@ -28,7 +30,11 @@ export default function IdSearch(props: Props) {
     <div className="grid">
       <Header text={props.header} />
       <MainContent>
-        <IdSearchBox numberOfDigit={numberOfDigit} placeholder={placeholder} />
+        <IdSearchBox
+          changeSearchId={props.changeSearchId}
+          numberOfDigit={numberOfDigit}
+          placeholder={placeholder}
+        />
       </MainContent>
       <AsideContent>
         <Menu

@@ -1,17 +1,17 @@
 // @flow
+import {type ChangeSearchId, changeSearchId} from '../actions'
 import IdSearch, {type DispatchProps, type StateProps} from '../components/IdSearch'
-import {type SelectVillage, selectVillage} from '../actions'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | SelectVillage
+  | ChangeSearchId
 
 const mapStateToProps = (state: ReducerState): StateProps => state.idSearch
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  selectVillage: id => () => {
-    dispatch(selectVillage(id))
+  changeSearchId: id => {
+    dispatch(changeSearchId(id))
   }
 })
 const IdSearchContainer = connect(

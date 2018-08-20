@@ -1,18 +1,21 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {SocketMessage, Transition} from '../actions'
+import type {ChangeSearchId, SocketMessage, Transition} from '../actions'
 import type {MenuItem} from 'lobby'
 
 export type State = {
   +header: string,
+  +id: number,
   +menuItems: MenuItem[]
 }
 type Action =
+  | ChangeSearchId
   | SocketMessage
   | Transition
 
 export const initialState = {
   header: '',
+  id: -1,
   menuItems: []
 }
 
@@ -22,6 +25,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         header: 'Audience\'s ID Search',
+        id: -1,
         menuItems: [
           {
             text: 'Search',
@@ -41,6 +45,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         header: 'Human Player\'s ID Search',
+        id: -1,
         menuItems: [
           {
             text: 'Search',
@@ -60,6 +65,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         header: 'Robot Player\'s ID Search',
+        id: -1,
         menuItems: [
           {
             text: 'Search',
@@ -74,6 +80,11 @@ const idSearch = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ]
+      }
+    case ActionTypes.CHANGE_SEARCH_ID:
+      return {
+        ... state,
+        id: action.id
       }
     default:
       return state
