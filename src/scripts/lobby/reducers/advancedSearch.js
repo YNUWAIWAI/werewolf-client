@@ -1,11 +1,13 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import type {MenuItem, Payload$Avatar} from 'lobby'
 import type {SocketMessage, Transition} from '../actions'
-import type {MenuItem} from 'lobby'
 
 export type State = {
   +header: string,
-  +menuItems: MenuItem[]
+  +image: string,
+  +menuItems: MenuItem[],
+  +name: string
 }
 type Action =
   | SocketMessage
@@ -13,7 +15,9 @@ type Action =
 
 export const initialState = {
   header: '',
-  menuItems: []
+  image: '',
+  menuItems: [],
+  name: ''
 }
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
@@ -40,7 +44,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
-        header: 'Audience\'s Advanced Search',
+        header: 'Human Player\'s Advanced Search',
         menuItems: [
           {
             text: 'Search',
@@ -59,7 +63,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
-        header: 'Audience\'s Advanced Search',
+        header: 'Robot Player\'s Advanced Search',
         menuItems: [
           {
             text: 'Search',
@@ -74,6 +78,20 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ]
+      }
+    case ActionTypes.SOCKET_MESSAGE:
+      switch (action.payload.type) {
+        case 'avatar': {
+          const payload: Payload$Avatar = action.payload
+
+          return {
+            ... state,
+            image: payload.image,
+            name: payload.name
+          }
+        }
+        default:
+          return state
       }
     default:
       return state
