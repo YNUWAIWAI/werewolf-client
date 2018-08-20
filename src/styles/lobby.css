@@ -396,3 +396,30 @@ body {
     }
   }
 }
+
+.id-search {
+  font-size: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &--input {
+    height: 4.5rem; /* font-size * line-height */
+    width: 12rem; /* (number_of_digit + 1) * font-size */
+    text-align: center;
+    font-size: 3rem;
+  }
+  &--input:invalid + &--validity::after {
+    content: '✖';
+    color: #f00;
+    padding-left: 0.5rem;
+  }
+  &--input:valid + &--validity::after {
+    content: '✓';
+    color: #26b72b;
+    padding-left: 0.5rem;
+  }
+  &--sharp {
+    padding-right: 0.5rem
+  }
+}
