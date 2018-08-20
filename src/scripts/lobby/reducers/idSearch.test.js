@@ -13,6 +13,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
   ).toEqual(
     {
       header: 'Audience\'s ID Search',
+      id: -1,
       menuItems: [
         {
           text: 'Search',
@@ -41,6 +42,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   ).toEqual(
     {
       header: 'Human Player\'s ID Search',
+      id: -1,
       menuItems: [
         {
           text: 'Search',
@@ -69,6 +71,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   ).toEqual(
     {
       header: 'Robot Player\'s ID Search',
+      id: -1,
       menuItems: [
         {
           text: 'Search',
@@ -83,6 +86,23 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
           types: [ActionTypes.SHOW_MAIN]
         }
       ]
+    }
+  )
+})
+test('CHANGE_SEARCH_ID', () => {
+  expect(
+    reducer(
+      initialState,
+      {
+        id: 123,
+        type: ActionTypes.CHANGE_SEARCH_ID
+      }
+    )
+  ).toEqual(
+    {
+      header: '',
+      id: 123,
+      menuItems: []
     }
   )
 })

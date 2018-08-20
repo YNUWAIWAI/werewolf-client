@@ -4,10 +4,12 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<IdSearch />', () => {
+  const changeSearchId = jest.fn()
   const selectVillage = jest.fn()
   const transition = jest.fn()
   const wrapper = shallow(
     <IdSearch
+      changeSearchId={changeSearchId}
       header="header"
       menuItems={[]}
       transition={transition}
