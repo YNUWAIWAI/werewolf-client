@@ -50,16 +50,19 @@ declare module 'lobby' {
     token: string
   }
   declare type Target =
+    | 'ADVANCED_SEARCH'
     | 'BUILD_VILLAGE'
     | 'LEAVE_WAITING_PAGE'
     | 'PLAY_GAME'
     | 'REFRESH'
-    | 'SEARCH_FOR_A_VILLAGE'
     | 'SEARCH_FOR_A_VILLAGE_IN_SESSION'
     | 'SEARCH_FOR_AN_OLD_VILLAGE'
+    | 'SEARCH_FOR_ID'
+    | 'SHOW_ADVANCED_SEARCH'
     | 'SHOW_BUILD_VILLAGE'
     | 'SHOW_CONNECTING_TO_ROBOT_PLAYER'
     | 'SHOW_HISTORY'
+    | 'SHOW_ID_SEARCH'
     | 'SHOW_LOBBY_FOR_AUDIENCE'
     | 'SHOW_LOBBY_FOR_HUMAN_PLAYER'
     | 'SHOW_LOBBY_FOR_ROBOT_PLAYER'
