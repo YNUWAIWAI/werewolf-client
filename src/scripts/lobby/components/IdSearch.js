@@ -1,6 +1,7 @@
 // @flow
 import type {MenuItem, Target} from 'lobby'
 import AsideContent from './AsideContent'
+import Avatar from './Avatar'
 import Header from './Header'
 import IdSearchBox from './IdSearchBox'
 import MainContent from './MainContent'
@@ -9,7 +10,9 @@ import React from 'react'
 
 export type StateProps = {
   +header: string,
+  +image: string,
   +menuItems: MenuItem[],
+  +name: string
 }
 export type DispatchProps = {
   +changeSearchId: number => void
@@ -29,6 +32,7 @@ export default function IdSearch(props: Props) {
   return (
     <div className="grid">
       <Header text={props.header} />
+      <Avatar image={props.image} name={props.name} />
       <MainContent>
         <IdSearchBox
           changeSearchId={props.changeSearchId}

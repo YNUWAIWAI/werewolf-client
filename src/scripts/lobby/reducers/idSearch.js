@@ -1,12 +1,14 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import type {ChangeSearchId, SocketMessage, Transition} from '../actions'
-import type {MenuItem} from 'lobby'
+import type {MenuItem, Payload$Avatar} from 'lobby'
 
 export type State = {
   +header: string,
   +id: number,
-  +menuItems: MenuItem[]
+  +image: string,
+  +menuItems: MenuItem[],
+  +name: string
 }
 type Action =
   | ChangeSearchId
@@ -16,7 +18,9 @@ type Action =
 export const initialState = {
   header: '',
   id: -1,
-  menuItems: []
+  image: '',
+  menuItems: [],
+  name: ''
 }
 
 const idSearch = (state: State = initialState, action: Action): State => {
@@ -85,6 +89,20 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         id: action.id
+      }
+    case ActionTypes.SOCKET_MESSAGE:
+      switch (action.payload.type) {
+        case 'avatar': {
+          const payload: Payload$Avatar = action.payload
+
+          return {
+            ... state,
+            image: payload.image,
+            name: payload.name
+          }
+        }
+        default:
+          return state
       }
     default:
       return state
