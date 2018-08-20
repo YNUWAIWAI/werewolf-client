@@ -384,6 +384,106 @@ describe('PLAY_GAME', () => {
     })
   })
 })
+describe('SEARCH_FOR_ID valid id', () => {
+  const dispatch = jest.fn()
+  const idForSearching = 123
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch: {
+      ... idSearch,
+      id: idForSearching
+    },
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    type: ActionTypes.SEARCH_FOR_ID
+  }
+  const idSearchPayload = {
+    idForSearching,
+    lobby: 'human player',
+    token: avatarToken.humanPlayer,
+    type: 'idSearch'
+  }
+
+  test('validate the JSON of idSearch', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/idSearch.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, idSearchPayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: idSearchPayload,
+      type: ActionTypes.SOCKET_SEND
+    })
+  })
+})
+describe('SEARCH_FOR_ID invalid id(=-1)', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    type: ActionTypes.SEARCH_FOR_ID
+  }
+
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(0)
+  })
+})
 describe('SELECT_VILLAGE', () => {
   const dispatch = jest.fn()
   const getState = () => ({
