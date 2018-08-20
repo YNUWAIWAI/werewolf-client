@@ -92,6 +92,23 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
+    case types.SEARCH_FOR_ID: {
+      const state = store.getState()
+
+      if (state.idSearch.id === -1) {
+        return next(action)
+      }
+      const payload = {
+        idForSearching: state.idSearch.id,
+        lobby: state.token.lobby,
+        token: state.token[state.token.lobby],
+        type: 'idSearch'
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case types.SELECT_VILLAGE: {
       const state = store.getState()
       const payload = {
