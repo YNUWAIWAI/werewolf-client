@@ -2,12 +2,14 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
+import {initialState as advancedSearch} from '../reducers/advancedSearch'
 import {initialState as app} from '../reducers/app'
 import {initialState as buildVillage} from '../reducers/buildVillage'
 import {initialState as connectingToRobotPlayer} from '../reducers/connectingToRobotPlayer'
 import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../constants/Cast'
 import {initialState as history} from '../reducers/history'
+import {initialState as idSearch} from '../reducers/idSearch'
 import {initialState as lobbyForAudience} from '../reducers/lobbyForAudience'
 import {initialState as lobbyForHumanPlayer} from '../reducers/lobbyForHumanPlayer'
 import {initialState as lobbyForRobotPlayer} from '../reducers/lobbyForRobotPlayer'
@@ -30,10 +32,12 @@ const ajv = new Ajv()
 describe('BUILD_VILLAGE', () => {
   const dispatch = jest.fn()
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -111,10 +115,12 @@ describe('LEAVE_WAITING_PAGE', () => {
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
   const villageId = 1
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -213,10 +219,12 @@ describe('LEAVE_WAITING_PAGE', () => {
 describe('KICK_OUT_PLAYER', () => {
   const dispatch = jest.fn()
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -276,10 +284,12 @@ describe('PLAY_GAME', () => {
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
   const villageId = 1
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -377,10 +387,12 @@ describe('PLAY_GAME', () => {
 describe('SELECT_VILLAGE', () => {
   const dispatch = jest.fn()
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -434,10 +446,12 @@ describe('SELECT_VILLAGE', () => {
 describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
   const dispatch = jest.fn()
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -508,10 +522,12 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
 describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   const dispatch = jest.fn()
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -582,10 +598,12 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
 describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   const dispatch = jest.fn()
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
@@ -656,10 +674,12 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
 describe('SOCKET_MESSAGE tyoe: "ping"', () => {
   const dispatch = jest.fn()
   const getState = () => ({
+    advancedSearch,
     app,
     buildVillage,
     connectingToRobotPlayer,
     history,
+    idSearch,
     lobbyForAudience,
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
