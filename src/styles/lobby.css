@@ -423,3 +423,35 @@ body {
     padding-right: 0.5rem
   }
 }
+
+.advanced-search {
+  border: black solid 1px;
+  display: grid;
+  font-size: 3rem;
+  &--prop {
+    align-items: center;
+    border: black solid 1px;
+    display: inline-flex;
+    grid-column: 1 / 2;
+
+    & > input {
+      margin: 0 1rem;
+    }
+  }
+  &--input {
+    border: black solid 1px;
+    font-size: 3rem;
+    grid-column: 2 / 5;
+    text-align: center;
+
+    textarea& {
+      resize: vertical;
+    }
+
+    &:invalid {
+      color: red;
+      outline-color: red;
+      outline-offset: -2px;
+    }
+  }
+}
