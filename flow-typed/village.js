@@ -1,4 +1,3 @@
-// @flow
 declare module 'village' {
   declare type Directionality = 'server to client' | 'client to server'
   declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'

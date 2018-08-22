@@ -1,5 +1,3 @@
-// @flow
-
 // ref: https://github.com/facebook/flow/blob/master/lib/core.js#L495-L502
 declare class JSON {
   static parse(text: mixed, reviver?: (key: any, value: any) => any): Object;
