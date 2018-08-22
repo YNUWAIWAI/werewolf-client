@@ -27,7 +27,7 @@ declare class RegExp {
 
 declare var window: {
   confirm: ?string => boolean
-}
+} & Object
 declare var global: {
   confirm: ?string => boolean
-}
+} & Object
