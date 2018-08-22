@@ -440,9 +440,11 @@ body {
   }
   &--input {
     border: black solid 1px;
+    box-sizing: border-box;
     font-size: 3rem;
     grid-column: 2 / 5;
     text-align: center;
+    width: 100%;
 
     textarea& {
       resize: vertical;
@@ -454,4 +456,9 @@ body {
       outline-offset: -2px;
     }
   }
+}
+
+.react-select__value-container {
+  display: inline-flex;
+  justify-content: center;
 }
