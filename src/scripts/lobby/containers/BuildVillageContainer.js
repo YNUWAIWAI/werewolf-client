@@ -1,13 +1,13 @@
 // @flow
 import BuildVillage, {type DispatchProps, type StateProps} from '../components/BuildVillage'
 import {
-  type ChangeAvatar,
-  type ChangeComment,
-  type ChangeHostName,
-  type ChangeMember,
-  type ChangeNumberOfPlayers,
-  type ChangeNumberOfRobots,
-  type ChangeVillageName,
+  type BuildVillage$ChangeAvatar,
+  type BuildVillage$ChangeComment,
+  type BuildVillage$ChangeHostName,
+  type BuildVillage$ChangeMember,
+  type BuildVillage$ChangeNumberOfPlayers,
+  type BuildVillage$ChangeNumberOfRobots,
+  type BuildVillage$ChangeVillageName,
   changeAvatar,
   changeComment,
   changeHostName,
@@ -21,13 +21,13 @@ import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | ChangeAvatar
-  | ChangeComment
-  | ChangeHostName
-  | ChangeMember
-  | ChangeNumberOfPlayers
-  | ChangeNumberOfRobots
-  | ChangeVillageName
+  | BuildVillage$ChangeAvatar
+  | BuildVillage$ChangeComment
+  | BuildVillage$ChangeHostName
+  | BuildVillage$ChangeMember
+  | BuildVillage$ChangeNumberOfPlayers
+  | BuildVillage$ChangeNumberOfRobots
+  | BuildVillage$ChangeVillageName
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   menuItems: state.buildVillage.menuItems,
@@ -42,28 +42,28 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
-    dispatch(changeAvatar(value))
+    dispatch(changeAvatar('buildVillage')(value))
   },
   handleMemberChange: value => {
-    dispatch(changeMember(value))
+    dispatch(changeMember('buildVillage')(value))
   },
   handleNumberChange: propName => value => {
     if (propName === 'numberOfPlayers') {
-      dispatch(changeNumberOfPlayers(value))
+      dispatch(changeNumberOfPlayers('buildVillage')(value))
     }
     if (propName === 'numberOfRobots') {
-      dispatch(changeNumberOfRobots(value))
+      dispatch(changeNumberOfRobots('buildVillage')(value))
     }
   },
   handleTextChange: propName => value => {
     if (propName === 'comment') {
-      dispatch(changeComment(value))
+      dispatch(changeComment('buildVillage')(value))
     }
     if (propName === 'hostName') {
-      dispatch(changeHostName(value))
+      dispatch(changeHostName('buildVillage')(value))
     }
     if (propName === 'villageName') {
-      dispatch(changeVillageName(value))
+      dispatch(changeVillageName('buildVillage')(value))
     }
   }
 })

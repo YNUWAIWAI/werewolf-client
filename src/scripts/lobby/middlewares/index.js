@@ -6,15 +6,15 @@ import logger from './logger'
 import socket from './socket'
 
 export type Action =
-  | actions.ChangeAvatar
-  | actions.ChangeComment
-  | actions.ChangeHostName
-  | actions.ChangeMember
-  | actions.ChangeNumberOfPlayers
-  | actions.ChangeNumberOfRobots
+  | actions.BuildVillage$ChangeAvatar
+  | actions.BuildVillage$ChangeComment
+  | actions.BuildVillage$ChangeHostName
+  | actions.BuildVillage$ChangeMember
+  | actions.BuildVillage$ChangeNumberOfPlayers
+  | actions.BuildVillage$ChangeNumberOfRobots
   | actions.ChangeSearchId
   | actions.ChangeToken
-  | actions.ChangeVillageName
+  | actions.BuildVillage$ChangeVillageName
   | actions.KickOutPlayer
   | actions.SelectVillage
   | actions.SocketClose

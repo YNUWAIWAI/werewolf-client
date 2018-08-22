@@ -25,29 +25,29 @@ export const socket = {
   })
 }
 
-export const changeAvatar = (avatar: Avatar): {avatar: Avatar, type: 'CHANGE_AVATAR'} => ({
+export const changeAvatar = (scope: 'advancedSearch' | 'buildVillage') => (avatar: Avatar): ({avatar: Avatar, type: 'advancedSearch/CHANGE_AVATAR' | 'buildVillage/CHANGE_AVATAR'}) => ({
   avatar,
-  type: types.CHANGE_AVATAR
+  type: types[scope].CHANGE_AVATAR
 })
-export const changeComment = (comment: string): {comment: string, type: 'CHANGE_COMMENT'} => ({
+export const changeComment = (scope: 'advancedSearch' | 'buildVillage') => (comment: string): {comment: string, type: 'advancedSearch/CHANGE_COMMENT' | 'buildVillage/CHANGE_COMMENT' } => ({
   comment,
-  type: types.CHANGE_COMMENT
+  type: types[scope].CHANGE_COMMENT
 })
-export const changeHostName = (hostName: string): {hostName: string, type: 'CHANGE_HOST_NAME'} => ({
+export const changeHostName = (scope: 'advancedSearch' | 'buildVillage') => (hostName: string): {hostName: string, type: 'advancedSearch/CHANGE_HOST_NAME' | 'buildVillage/CHANGE_HOST_NAME'} => ({
   hostName,
-  type: types.CHANGE_HOST_NAME
+  type: types[scope].CHANGE_HOST_NAME
 })
-export const changeMember = (member: Member): {member: Member, type: 'CHANGE_MEMBER'} => ({
+export const changeMember = (scope: 'buildVillage') => (member: Member): {member: Member, type: 'buildVillage/CHANGE_MEMBER'} => ({
   member,
-  type: types.CHANGE_MEMBER
+  type: types[scope].CHANGE_MEMBER
 })
-export const changeNumberOfPlayers = (numberOfPlayers: number): {numberOfPlayers: number, type: 'CHANGE_NUMBER_OF_PLAYERS'} => ({
+export const changeNumberOfPlayers = (scope: 'buildVillage') => (numberOfPlayers: number): {numberOfPlayers: number, type: 'buildVillage/CHANGE_NUMBER_OF_PLAYERS'} => ({
   numberOfPlayers: Number(numberOfPlayers),
-  type: types.CHANGE_NUMBER_OF_PLAYERS
+  type: types[scope].CHANGE_NUMBER_OF_PLAYERS
 })
-export const changeNumberOfRobots = (numberOfRobots: number): {numberOfRobots: number, type: 'CHANGE_NUMBER_OF_ROBOTS'} => ({
+export const changeNumberOfRobots = (scope: 'buildVillage') => (numberOfRobots: number): {numberOfRobots: number, type: 'buildVillage/CHANGE_NUMBER_OF_ROBOTS'} => ({
   numberOfRobots: Number(numberOfRobots),
-  type: types.CHANGE_NUMBER_OF_ROBOTS
+  type: types[scope].CHANGE_NUMBER_OF_ROBOTS
 })
 export const changeSearchId = (id: number): {id: number, type: 'CHANGE_SEARCH_ID'} => ({
   id,
@@ -58,8 +58,8 @@ export const changeToken = ({lobby, token}: {lobby: Lobby, token: string}): {lob
   token,
   type: types.CHANGE_TOKEN
 })
-export const changeVillageName = (villageName: string): {type: 'CHANGE_VILLAGE_NAME', villageName: string} => ({
-  type: types.CHANGE_VILLAGE_NAME,
+export const changeVillageName = (scope: 'advancedSearch' | 'buildVillage') => (villageName: string): {type: 'advancedSearch/CHANGE_VILLAGE_NAME' | 'buildVillage/CHANGE_VILLAGE_NAME', villageName: string} => ({
+  type: types[scope].CHANGE_VILLAGE_NAME,
   villageName
 })
 export const kickOutPlayer = (token: string): {token: string, type: 'KICK_OUT_PLAYER'} => ({
@@ -79,15 +79,15 @@ export type SocketError = $Call<typeof socket.error, Event>
 export type SocketMessage = $Call<typeof socket.message, MessageEvent>
 export type SocketOpen = $Call<typeof socket.open, Event>
 export type SocketSend = $Call<typeof socket.send, Object>
-export type ChangeAvatar = $Call<typeof changeAvatar, Avatar>
-export type ChangeComment = $Call<typeof changeComment, string>
-export type ChangeHostName = $Call<typeof changeHostName, string>
-export type ChangeMember = $Call<typeof changeMember, Member>
-export type ChangeNumberOfPlayers = $Call<typeof changeNumberOfPlayers, number>
-export type ChangeNumberOfRobots = $Call<typeof changeNumberOfRobots, number>
+export type BuildVillage$ChangeAvatar = $Call<$Call<typeof changeAvatar, 'buildVillage'>, Avatar>
+export type BuildVillage$ChangeComment = $Call<$Call<typeof changeComment, 'buildVillage'>, string>
+export type BuildVillage$ChangeHostName = $Call<$Call<typeof changeHostName, 'buildVillage'>, string>
+export type BuildVillage$ChangeMember = $Call<$Call<typeof changeMember, 'buildVillage'>, Member>
+export type BuildVillage$ChangeNumberOfPlayers = $Call<$Call<typeof changeNumberOfPlayers, 'buildVillage'>, number>
+export type BuildVillage$ChangeNumberOfRobots = $Call<$Call<typeof changeNumberOfRobots, 'buildVillage'>, number>
 export type ChangeSearchId = $Call<typeof changeSearchId, number>
 export type ChangeToken = $Call<typeof changeToken, {lobby: Lobby, token: string}>
-export type ChangeVillageName = $Call<typeof changeVillageName, string>
+export type BuildVillage$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'buildVillage'>, string>
 export type KickOutPlayer = $Call<typeof kickOutPlayer, string>
 export type SelectVillage = $Call<typeof selectVillage, number>
 export type Transition = $Call<typeof transition, Target>
