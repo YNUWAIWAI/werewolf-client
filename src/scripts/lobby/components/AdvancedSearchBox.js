@@ -1,29 +1,63 @@
 // @flow
 import AdvancedSearchBoxRow from './AdvancedSearchBoxRow'
+import type {Avatar} from 'lobby'
 import React from 'react'
 
 export type Props = {
-  text: string
+  +checked: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +maximum: boolean,
+    +minimum: boolean,
+    +villageName: boolean
+  },
+  +handleAvatarChange: Avatar => void,
+  +handleCheckboxChange: string => boolean => void,
+  +handleTextChange: string => string => void
 }
 
 export default function AdvancedSearchBox(props: Props) {
-  const handleChange = event => {
-    const elem = document.getElementById(event.target.dataset.checkboxId)
+  const handleChange = propName => event => {
+    if (event.target.validity && event.target.validity.valid && event.target.value !== '') {
+      switch (propName) {
+        case 'avatar': {
+          const avatar: Avatar[] = ['fixed', 'random', 'unspecified']
+          const maybe = avatar.find(v => v === event.target.value)
 
-    if (event.target.validity.valid && event.target.value !== '') {
-      console.log(event.target.validity.valid)
-      console.log(event.target.value)
-      elem.checked = true
+          if (maybe) {
+            props.handleAvatarChange(maybe)
+          }
+          break
+        }
+        case 'comment':
+          props.handleTextChange(propName)(event.target.value)
+          break
+        case 'hostName':
+          props.handleTextChange(propName)(event.target.value)
+          break
+        case 'maximum':
+          break
+        case 'minimum':
+          break
+        case 'villageName':
+          props.handleTextChange(propName)(event.target.value)
+          break
+        default:
+          throw Error(`Unknown: ${propName}`)
+      }
+      props.handleCheckboxChange(propName)(true)
     } else {
-      elem.checked = false
+      props.handleCheckboxChange(propName)(false)
+
     }
   }
 
   return (
     <div className="advanced-search">
       <AdvancedSearchBoxRow
-        checked={false}
-        handleChange={handleChange}
+        checked={props.checked.villageName}
+        handleChange={handleChange('villageName')}
         id="villageName"
         max={30}
         min={5}
@@ -32,8 +66,8 @@ export default function AdvancedSearchBox(props: Props) {
         type="text"
       />
       <AdvancedSearchBoxRow
-        checked={false}
-        handleChange={handleChange}
+        checked={props.checked.hostName}
+        handleChange={handleChange('hostName')}
         id="hostName"
         max={15}
         min={5}
@@ -42,8 +76,8 @@ export default function AdvancedSearchBox(props: Props) {
         type="text"
       />
       <AdvancedSearchBoxRow
-        checked={false}
-        handleChange={handleChange}
+        checked={props.checked.minimum}
+        handleChange={handleChange('minimum')}
         id="minimum"
         max={15}
         min={5}
@@ -52,8 +86,8 @@ export default function AdvancedSearchBox(props: Props) {
         type="number"
       />
       <AdvancedSearchBoxRow
-        checked={false}
-        handleChange={handleChange}
+        checked={props.checked.maximum}
+        handleChange={handleChange('maximum')}
         id="maximum"
         max={15}
         min={5}
@@ -62,15 +96,15 @@ export default function AdvancedSearchBox(props: Props) {
         type="number"
       />
       <AdvancedSearchBoxRow
-        checked
-        handleChange={handleChange}
+        checked={props.checked.avatar}
+        handleChange={handleChange('avatar')}
         id="avatar"
         name="Avatar"
         type="select"
       />
       <AdvancedSearchBoxRow
-        checked={false}
-        handleChange={handleChange}
+        checked={props.checked.comment}
+        handleChange={handleChange('comment')}
         id="comment"
         max={100}
         min={0}

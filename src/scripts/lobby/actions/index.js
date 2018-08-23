@@ -24,12 +24,16 @@ export const socket = {
     type: types.SOCKET_SEND
   })
 }
-
-export const changeAvatar = (scope: 'advancedSearch' | 'buildVillage') => (avatar: Avatar): ({avatar: Avatar, type: 'advancedSearch/CHANGE_AVATAR' | 'buildVillage/CHANGE_AVATAR'}) => ({
+export const changeAvatar = (scope: 'advancedSearch' | 'buildVillage') => (avatar: Avatar): {avatar: Avatar, type: 'advancedSearch/CHANGE_AVATAR' | 'buildVillage/CHANGE_AVATAR'} => ({
   avatar,
   type: types[scope].CHANGE_AVATAR
 })
-export const changeComment = (scope: 'advancedSearch' | 'buildVillage') => (comment: string): {comment: string, type: 'advancedSearch/CHANGE_COMMENT' | 'buildVillage/CHANGE_COMMENT' } => ({
+export const changeCheckbox = (scope: 'advancedSearch') => (id: string) => (checked: boolean): {id: string, checked: boolean, type: 'advancedSearch/CHANGE_CHECKBOX'} => ({
+  checked,
+  id,
+  type: types[scope].CHANGE_CHECKBOX
+})
+export const changeComment = (scope: 'advancedSearch' | 'buildVillage') => (comment: string): {comment: string, type: 'advancedSearch/CHANGE_COMMENT' | 'buildVillage/CHANGE_COMMENT'} => ({
   comment,
   type: types[scope].CHANGE_COMMENT
 })
@@ -37,9 +41,17 @@ export const changeHostName = (scope: 'advancedSearch' | 'buildVillage') => (hos
   hostName,
   type: types[scope].CHANGE_HOST_NAME
 })
+export const changeMaximum = (scope: 'advancedSearch') => (maximum: number): {maximum: number, type: 'advancedSearch/CHANGE_MAXIMUM'} => ({
+  maximum: Number(maximum),
+  type: types[scope].CHANGE_MAXIMUM
+})
 export const changeMember = (scope: 'buildVillage') => (member: Member): {member: Member, type: 'buildVillage/CHANGE_MEMBER'} => ({
   member,
   type: types[scope].CHANGE_MEMBER
+})
+export const changeMinimum = (scope: 'advancedSearch') => (minimum: number): {minimum: number, type: 'advancedSearch/CHANGE_MINIMUM'} => ({
+  minimum: Number(minimum),
+  type: types[scope].CHANGE_MINIMUM
 })
 export const changeNumberOfPlayers = (scope: 'buildVillage') => (numberOfPlayers: number): {numberOfPlayers: number, type: 'buildVillage/CHANGE_NUMBER_OF_PLAYERS'} => ({
   numberOfPlayers: Number(numberOfPlayers),
@@ -79,15 +91,22 @@ export type SocketError = $Call<typeof socket.error, Event>
 export type SocketMessage = $Call<typeof socket.message, MessageEvent>
 export type SocketOpen = $Call<typeof socket.open, Event>
 export type SocketSend = $Call<typeof socket.send, Object>
+export type AdvancedSearch$ChangeAvatar = $Call<$Call<typeof changeAvatar, 'advancedSearch'>, Avatar>
+export type AdvancedSearch$ChangeCheckbox = $Call<$Call<$Call<typeof changeCheckbox, 'advancedSearch'>, string>, boolean>
+export type AdvancedSearch$ChangeComment = $Call<$Call<typeof changeComment, 'advancedSearch'>, string>
+export type AdvancedSearch$ChangeHostName = $Call<$Call<typeof changeHostName, 'advancedSearch'>, string>
+export type AdvancedSearch$ChangeMaximum = $Call<$Call<typeof changeMaximum, 'advancedSearch'>, number>
+export type AdvancedSearch$ChangeMinimum = $Call<$Call<typeof changeMinimum, 'advancedSearch'>, number>
+export type AdvancedSearch$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'advancedSearch'>, string>
 export type BuildVillage$ChangeAvatar = $Call<$Call<typeof changeAvatar, 'buildVillage'>, Avatar>
 export type BuildVillage$ChangeComment = $Call<$Call<typeof changeComment, 'buildVillage'>, string>
 export type BuildVillage$ChangeHostName = $Call<$Call<typeof changeHostName, 'buildVillage'>, string>
 export type BuildVillage$ChangeMember = $Call<$Call<typeof changeMember, 'buildVillage'>, Member>
 export type BuildVillage$ChangeNumberOfPlayers = $Call<$Call<typeof changeNumberOfPlayers, 'buildVillage'>, number>
 export type BuildVillage$ChangeNumberOfRobots = $Call<$Call<typeof changeNumberOfRobots, 'buildVillage'>, number>
+export type BuildVillage$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'buildVillage'>, string>
 export type ChangeSearchId = $Call<typeof changeSearchId, number>
 export type ChangeToken = $Call<typeof changeToken, {lobby: Lobby, token: string}>
-export type BuildVillage$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'buildVillage'>, string>
 export type KickOutPlayer = $Call<typeof kickOutPlayer, string>
 export type SelectVillage = $Call<typeof selectVillage, number>
 export type Transition = $Call<typeof transition, Target>

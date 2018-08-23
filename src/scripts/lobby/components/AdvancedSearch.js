@@ -1,5 +1,5 @@
 // @flow
-import type {MenuItem, Target} from 'lobby'
+import type {Avatar as AvatarType, MenuItem, Target} from 'lobby'
 import AdvancedSearchBox from './AdvancedSearchBox'
 import AsideContent from './AsideContent'
 import Avatar from './Avatar'
@@ -9,12 +9,25 @@ import Menu from './Menu'
 import React from 'react'
 
 export type StateProps = {
+  +checked: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +maximum: boolean,
+    +minimum: boolean,
+    +villageName: boolean
+  },
   +header: string,
   +image: string,
   +menuItems: MenuItem[],
   +name: string
 }
-export type DispatchProps = {}
+export type DispatchProps = {
+  +handleAvatarChange: AvatarType => void,
+  +handleCheckboxChange: string => boolean => void,
+  +handleNumberChange: string => number => void,
+  +handleTextChange: string => string => void
+}
 export type OwnProps = {
   +transition: Target => void
 }
@@ -29,7 +42,13 @@ export default function AdvancedSearch(props: Props) {
       <Header text={props.header} />
       <Avatar image={props.image} name={props.name} />
       <MainContent>
-        <AdvancedSearchBox text="advanced search" />
+        <AdvancedSearchBox
+          checked={props.checked}
+          handleAvatarChange={props.handleAvatarChange}
+          handleCheckboxChange={props.handleCheckboxChange}
+          handleNumberChange={props.handleNumberChange}
+          handleTextChange={props.handleTextChange}
+        />
       </MainContent>
       <AsideContent>
         <Menu

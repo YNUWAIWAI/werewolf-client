@@ -6,6 +6,13 @@ import logger from './logger'
 import socket from './socket'
 
 export type Action =
+  | actions.AdvancedSearch$ChangeAvatar
+  | actions.AdvancedSearch$ChangeCheckbox
+  | actions.AdvancedSearch$ChangeComment
+  | actions.AdvancedSearch$ChangeHostName
+  | actions.AdvancedSearch$ChangeMaximum
+  | actions.AdvancedSearch$ChangeMinimum
+  | actions.AdvancedSearch$ChangeVillageName
   | actions.BuildVillage$ChangeAvatar
   | actions.BuildVillage$ChangeComment
   | actions.BuildVillage$ChangeHostName

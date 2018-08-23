@@ -4,6 +4,14 @@ import type {MenuItem, Payload$Avatar} from 'lobby'
 import type {SocketMessage, Transition} from '../actions'
 
 export type State = {
+  +checked: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +maximum: boolean,
+    +minimum: boolean,
+    +villageName: boolean
+  },
   +header: string,
   +image: string,
   +menuItems: MenuItem[],
@@ -14,6 +22,14 @@ type Action =
   | Transition
 
 export const initialState = {
+  checked: {
+    avatar: true,
+    comment: false,
+    hostName: false,
+    maximum: false,
+    minimum: false,
+    villageName: false
+  },
   header: '',
   image: '',
   menuItems: [],
