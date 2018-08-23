@@ -34,8 +34,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
     dispatch(changeAvatar('advancedSearch')(value))
   },
-  handleCheckboxChange: id => checked => {
-    dispatch(changeCheckbox('advancedSearch')(id)(checked))
+  handleCheckboxChange: propName => checked => {
+    dispatch(changeCheckbox('advancedSearch')(propName)(checked))
   },
   handleNumberChange: propName => value => {
     if (propName === 'maximum') {

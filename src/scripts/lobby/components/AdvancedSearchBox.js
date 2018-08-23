@@ -13,8 +13,8 @@ export type Props = {
     +villageName: boolean
   },
   +handleAvatarChange: Avatar => void,
-  +handleCheckboxChange: string => boolean => void,
-  +handleTextChange: string => string => void
+  +handleCheckboxChange: ('avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => boolean => void,
+  +handleTextChange: ('comment' | 'hostName' | 'villageName') => string => void
 }
 
 export default function AdvancedSearchBox(props: Props) {

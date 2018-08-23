@@ -24,9 +24,9 @@ export type StateProps = {
 }
 export type DispatchProps = {
   +handleAvatarChange: AvatarType => void,
-  +handleCheckboxChange: string => boolean => void,
-  +handleNumberChange: string => number => void,
-  +handleTextChange: string => string => void
+  +handleCheckboxChange: ('avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => boolean => void,
+  +handleNumberChange: ('maximum' | 'minimum') => number => void,
+  +handleTextChange: ('comment' | 'hostName' | 'villageName') => string => void
 }
 export type OwnProps = {
   +transition: Target => void
