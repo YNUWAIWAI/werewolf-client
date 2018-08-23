@@ -15,6 +15,14 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     )
   ).toEqual(
     {
+      checked: {
+        avatar: true,
+        comment: false,
+        hostName: false,
+        maximum: false,
+        minimum: false,
+        villageName: false
+      },
       header: 'Audience\'s Advanced Search',
       image: '',
       menuItems: [
@@ -45,6 +53,14 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     )
   ).toEqual(
     {
+      checked: {
+        avatar: true,
+        comment: false,
+        hostName: false,
+        maximum: false,
+        minimum: false,
+        villageName: false
+      },
       header: 'Human Player\'s Advanced Search',
       image: '',
       menuItems: [
@@ -75,6 +91,14 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     )
   ).toEqual(
     {
+      checked: {
+        avatar: true,
+        comment: false,
+        hostName: false,
+        maximum: false,
+        minimum: false,
+        villageName: false
+      },
       header: 'Robot Player\'s Advanced Search',
       image: '',
       menuItems: [
@@ -129,6 +153,14 @@ describe('SOCKET_MESSAGE', () => {
       )
     ).toEqual(
       {
+        checked: {
+          avatar: true,
+          comment: false,
+          hostName: false,
+          maximum: false,
+          minimum: false,
+          villageName: false
+        },
         header: '',
         image: '/assets/images/avatar/default/user.png',
         menuItems: [],

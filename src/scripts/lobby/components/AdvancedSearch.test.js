@@ -6,8 +6,25 @@ import {shallow} from 'enzyme'
 test('<AdvancedSearch />', () => {
   const selectVillage = jest.fn()
   const transition = jest.fn()
+  const handleAvatarChange = jest.fn()
+  const handleCheckboxChange = jest.fn()
+  const handleNumberChange = jest.fn()
+  const handleTextChange = jest.fn()
+  const checked = {
+    avatar: true,
+    comment: false,
+    hostName: false,
+    maximum: false,
+    minimum: false,
+    villageName: false
+  }
   const wrapper = shallow(
     <AdvancedSearch
+      checked={checked}
+      handleAvatarChange={handleAvatarChange}
+      handleCheckboxChange={handleCheckboxChange}
+      handleNumberChange={handleNumberChange}
+      handleTextChange={handleTextChange}
       header="header"
       image="image"
       menuItems={[]}
