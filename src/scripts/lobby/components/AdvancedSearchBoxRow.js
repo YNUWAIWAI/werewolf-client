@@ -27,7 +27,6 @@ export default function AdvancedSearchBoxRow(props: Props) {
         return (
           <input
             className="advanced-search--input"
-            data-checkbox-id={props.id}
             max={props.max}
             min={props.min}
             onChange={props.handleChange}
@@ -66,7 +65,6 @@ export default function AdvancedSearchBoxRow(props: Props) {
         return (
           <input
             className="advanced-search--input"
-            data-checkbox-id={props.id}
             maxLength={props.max}
             minLength={props.min}
             onChange={props.handleChange}
@@ -78,7 +76,6 @@ export default function AdvancedSearchBoxRow(props: Props) {
         return (
           <textarea
             className="advanced-search--input"
-            data-checkbox-id={props.id}
             maxLength={props.max}
             minLength={props.min}
             onChange={props.handleChange}
@@ -87,7 +84,7 @@ export default function AdvancedSearchBoxRow(props: Props) {
           />
         )
       default:
-        return ''
+        throw Error(`Unknown type: ${props.type}`)
     }
   }
 
