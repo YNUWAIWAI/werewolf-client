@@ -80,7 +80,7 @@ export default function AdvancedSearchBox(props: Props) {
         handleChange={handleChange('minimum')}
         id="minimum"
         max={15}
-        min={5}
+        min={4}
         name="Minimum"
         placeholder="4-15"
         type="number"
@@ -90,7 +90,7 @@ export default function AdvancedSearchBox(props: Props) {
         handleChange={handleChange('maximum')}
         id="maximum"
         max={15}
-        min={5}
+        min={4}
         name="Maximum"
         placeholder="4-15"
         type="number"
