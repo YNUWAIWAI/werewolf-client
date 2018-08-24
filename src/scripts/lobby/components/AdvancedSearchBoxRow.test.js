@@ -1,6 +1,6 @@
 // @flow
-import React, {Fragment} from 'react'
 import AdvancedSearchBoxRow from './AdvancedSearchBoxRow'
+import React from 'react'
 import {mount} from 'enzyme'
 
 describe('<AdvancedSearchBoxRow />', () => {
