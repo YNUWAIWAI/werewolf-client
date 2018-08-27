@@ -1,13 +1,13 @@
 // @flow
 /* eslint sort-keys: 0 */
 import React from 'react'
-import Result from '../src/scripts/village/components/Result'
+import Result from '../../src/scripts/village/components/Result'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('Result', module)
+storiesOf('village|Result', module)
   .addDecorator(withKnobs)
   .add('13 players', withInfo('')(() => {
     const agents = {

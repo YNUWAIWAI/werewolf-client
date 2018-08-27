@@ -1,11 +1,11 @@
 // @flow
-import Chat from '../src/scripts/village/components/Chat'
+import Chat from '../../src/scripts/village/components/Chat'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('Chat', module)
+storiesOf('village|Chat', module)
   .addDecorator(withKnobs)
   .add('anonymousAudience', withInfo('')(() => {
     const allIds = ['chat0', 'chat1']

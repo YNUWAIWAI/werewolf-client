@@ -2,11 +2,11 @@
 import {number, selectV2, withKnobs} from '@storybook/addon-knobs/react'
 import type {Phase} from 'village'
 import React from 'react'
-import Timer from '../src/scripts/village/components/Timer'
+import Timer from '../../src/scripts/village/components/Timer'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 
-storiesOf('Timer', module)
+storiesOf('village|Timer', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
     const limit = number('limit', 10)

@@ -1,13 +1,13 @@
 // @flow
 /* eslint sort-keys: 0 */
-import CommandSelection from '../src/scripts/village/components/CommandSelection'
+import CommandSelection from '../../src/scripts/village/components/CommandSelection'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('Command/CommandSelection', module)
+storiesOf('village|Command/CommandSelection', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
     const agents = [
