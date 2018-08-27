@@ -1,10 +1,10 @@
 // @flow
 import {number, selectV2, withKnobs} from '@storybook/addon-knobs/react'
-import Day from '../src/scripts/village/components/Day'
+import Day from '../../src/scripts/village/components/Day'
 import {Provider} from 'react-redux'
 import React from 'react'
 import {createStore} from 'redux'
-import reducer from '../src/scripts/village/reducers'
+import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 
@@ -12,7 +12,7 @@ const store = createStore(
   reducer
 )
 
-storiesOf('Info/Day', module)
+storiesOf('village|Info/Day', module)
   .addDecorator(withKnobs)
   .addDecorator(getStory =>
     <Provider store={store}>

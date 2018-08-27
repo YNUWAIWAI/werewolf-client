@@ -1,12 +1,12 @@
 // @flow
 import {number, withKnobs} from '@storybook/addon-knobs/react'
-import CommandInput from '../src/scripts/village/components/CommandInput'
+import CommandInput from '../../src/scripts/village/components/CommandInput'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 
-storiesOf('Command/CommandInput', module)
+storiesOf('village|Command/CommandInput', module)
   .addDecorator(withKnobs)
   .add('public', withInfo('')(() => {
     const postCount = number('postCount', 0, {

@@ -1,5 +1,5 @@
 // @flow
-import App from '../src/scripts/village/containers/App'
+import App from '../../src/scripts/village/containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
 import {createStore} from 'redux'
@@ -7,13 +7,13 @@ import dayConversationWithLimitedChat from './initialState/dayConversationWithLi
 import dayConversationWithoutLimitedChat from './initialState/dayConversationWithoutLimitedChat'
 import dayVote from './initialState/dayVote'
 import nightVote from './initialState/nightVote'
-import reducer from '../src/scripts/village/reducers'
+import reducer from '../../src/scripts/village/reducers'
 import results from './initialState/results'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('App', module)
+storiesOf('village|App', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
     const store = createStore(

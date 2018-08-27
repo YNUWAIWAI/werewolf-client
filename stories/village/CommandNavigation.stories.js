@@ -1,13 +1,13 @@
 // @flow
-import * as types from '../src/scripts/village/constants/ActionTypes'
-import CommandNavigation from '../src/scripts/village/components/CommandNavigation'
+import * as types from '../../src/scripts/village/constants/ActionTypes'
+import CommandNavigation from '../../src/scripts/village/components/CommandNavigation'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
-storiesOf('Command/CommandNavigation', module)
+storiesOf('village|Command/CommandNavigation', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
     const items = [

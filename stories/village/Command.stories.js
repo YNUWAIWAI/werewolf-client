@@ -1,13 +1,13 @@
 // @flow
-import * as types from '../src/scripts/village/constants/ActionTypes'
-import Command from '../src/scripts/village/components/Command'
-import CommandInputBox from '../src/scripts/village/components/CommandInputBox'
-import CommandPostMortem from '../src/scripts/village/components/CommandPostMortem'
+import * as types from '../../src/scripts/village/constants/ActionTypes'
+import Command from '../../src/scripts/village/components/Command'
+import CommandInputBox from '../../src/scripts/village/components/CommandInputBox'
+import CommandPostMortem from '../../src/scripts/village/components/CommandPostMortem'
 import {Provider} from 'react-redux'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import reducer from '../src/scripts/village/reducers'
+import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
@@ -16,7 +16,7 @@ const store = createStore(
   reducer
 )
 
-storiesOf('Command', module)
+storiesOf('village|Command', module)
   .addDecorator(withKnobs)
   .addDecorator(getStory =>
     <Provider store={store}>

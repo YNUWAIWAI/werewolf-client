@@ -22,6 +22,7 @@
     "@storybook/addon-info": "^3.4.0",
     "@storybook/addon-knobs": "^3.4.0",
     "@storybook/addon-links": "^3.4.0",
+    "@storybook/addon-options": "^3.4.10",
     "@storybook/addons": "^3.4.0",
     "@storybook/cli": "^3.4.0",
     "@storybook/react": "^3.4.0",
