@@ -51,12 +51,12 @@ declare module 'lobby' {
   declare type Target =
     | 'ADVANCED_SEARCH'
     | 'BUILD_VILLAGE'
+    | 'ID_SEARCH'
     | 'LEAVE_WAITING_PAGE'
     | 'PLAY_GAME'
     | 'REFRESH'
     | 'SEARCH_FOR_A_VILLAGE_IN_SESSION'
     | 'SEARCH_FOR_AN_OLD_VILLAGE'
-    | 'SEARCH_FOR_ID'
     | 'SHOW_ADVANCED_SEARCH'
     | 'SHOW_BUILD_VILLAGE'
     | 'SHOW_CONNECTING_TO_ROBOT_PLAYER'
