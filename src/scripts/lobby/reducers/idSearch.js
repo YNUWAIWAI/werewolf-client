@@ -33,7 +33,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             text: 'Search',
-            types: [ActionTypes.SEARCH_FOR_ID]
+            types: [ActionTypes.ID_SEARCH]
           },
           {
             text: 'Return to Lobby for Audience',
@@ -53,7 +53,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             text: 'Search',
-            types: [ActionTypes.SEARCH_FOR_ID]
+            types: [ActionTypes.ID_SEARCH]
           },
           {
             text: 'Return to Lobby for Human Player',
@@ -73,7 +73,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             text: 'Search',
-            types: [ActionTypes.SEARCH_FOR_ID]
+            types: [ActionTypes.ID_SEARCH]
           },
           {
             text: 'Return to Lobby for Robot Player',

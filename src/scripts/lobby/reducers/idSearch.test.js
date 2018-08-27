@@ -21,7 +21,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       menuItems: [
         {
           text: 'Search',
-          types: [ActionTypes.SEARCH_FOR_ID]
+          types: [ActionTypes.ID_SEARCH]
         },
         {
           text: 'Return to Lobby for Audience',
@@ -52,7 +52,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           text: 'Search',
-          types: [ActionTypes.SEARCH_FOR_ID]
+          types: [ActionTypes.ID_SEARCH]
         },
         {
           text: 'Return to Lobby for Human Player',
@@ -83,7 +83,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           text: 'Search',
-          types: [ActionTypes.SEARCH_FOR_ID]
+          types: [ActionTypes.ID_SEARCH]
         },
         {
           text: 'Return to Lobby for Robot Player',

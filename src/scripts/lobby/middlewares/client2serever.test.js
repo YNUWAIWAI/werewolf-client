@@ -384,7 +384,7 @@ describe('PLAY_GAME', () => {
     })
   })
 })
-describe('SEARCH_FOR_ID valid id', () => {
+describe('ID_SEARCH valid id', () => {
   const dispatch = jest.fn()
   const idForSearching = 123
   const getState = () => ({
@@ -418,7 +418,7 @@ describe('SEARCH_FOR_ID valid id', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.SEARCH_FOR_ID
+    type: ActionTypes.ID_SEARCH
   }
   const idSearchPayload = {
     idForSearching,
@@ -446,7 +446,7 @@ describe('SEARCH_FOR_ID valid id', () => {
     })
   })
 })
-describe('SEARCH_FOR_ID invalid id(=-1)', () => {
+describe('ID_SEARCH invalid id(=-1)', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     advancedSearch,
@@ -476,7 +476,7 @@ describe('SEARCH_FOR_ID invalid id(=-1)', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.SEARCH_FOR_ID
+    type: ActionTypes.ID_SEARCH
   }
 
   test('dispatch correctly', () => {

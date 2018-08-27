@@ -92,7 +92,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.SEARCH_FOR_ID: {
+    case types.ID_SEARCH: {
       const state = store.getState()
 
       if (state.idSearch.id === -1) {
