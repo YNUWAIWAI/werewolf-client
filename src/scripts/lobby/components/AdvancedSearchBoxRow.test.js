@@ -6,16 +6,19 @@ import {mount} from 'enzyme'
 describe('<AdvancedSearchBoxRow />', () => {
   test('type: number', () => {
     const handleChange = jest.fn()
+    const handleClick = jest.fn()
     const wrapper = mount(
       <AdvancedSearchBoxRow
         checked
         handleChange={handleChange}
+        handleClick={handleClick}
         id="maximum"
         max={15}
         min={4}
         name="Maximum"
         placeholder="4-15"
         type="number"
+        validity
       />
     )
 
@@ -23,7 +26,9 @@ describe('<AdvancedSearchBoxRow />', () => {
       <div className="advanced-search--prop">
         <input
           checked
+          disabled={false}
           id="maximum"
+          onClick={handleClick}
           type="checkbox"
         />
         <label htmlFor="maximum">
@@ -31,7 +36,7 @@ describe('<AdvancedSearchBoxRow />', () => {
         </label>
       </div>
     )).toBe(true)
-    expect(wrapper.containsMatchingElement(
+    expect(wrapper.contains(
       <input
         className="advanced-search--input"
         max={15}
@@ -44,16 +49,19 @@ describe('<AdvancedSearchBoxRow />', () => {
   })
   test('type: text', () => {
     const handleChange = jest.fn()
+    const handleClick = jest.fn()
     const wrapper = mount(
       <AdvancedSearchBoxRow
         checked
         handleChange={handleChange}
+        handleClick={handleClick}
         id="villageName"
         max={30}
         min={5}
         name="Village Name"
         placeholder="5-30 chars"
         type="text"
+        validity
       />
     )
 
@@ -61,7 +69,9 @@ describe('<AdvancedSearchBoxRow />', () => {
       <div className="advanced-search--prop">
         <input
           checked
+          disabled={false}
           id="villageName"
+          onClick={handleClick}
           type="checkbox"
         />
         <label htmlFor="villageName">
@@ -69,7 +79,7 @@ describe('<AdvancedSearchBoxRow />', () => {
         </label>
       </div>
     )).toBe(true)
-    expect(wrapper.containsMatchingElement(
+    expect(wrapper.contains(
       <input
         className="advanced-search--input"
         maxLength={30}
@@ -82,16 +92,19 @@ describe('<AdvancedSearchBoxRow />', () => {
   })
   test('type: textarea', () => {
     const handleChange = jest.fn()
+    const handleClick = jest.fn()
     const wrapper = mount(
       <AdvancedSearchBoxRow
         checked
         handleChange={handleChange}
+        handleClick={handleClick}
         id="comment"
         max={100}
         min={0}
         name="Comment"
         placeholder="0-100 chars"
         type="textarea"
+        validity
       />
     )
 
@@ -99,7 +112,9 @@ describe('<AdvancedSearchBoxRow />', () => {
       <div className="advanced-search--prop">
         <input
           checked
+          disabled={false}
           id="comment"
+          onClick={handleClick}
           type="checkbox"
         />
         <label htmlFor="comment">
@@ -107,7 +122,7 @@ describe('<AdvancedSearchBoxRow />', () => {
         </label>
       </div>
     )).toBe(true)
-    expect(wrapper.containsMatchingElement(
+    expect(wrapper.contains(
       <textarea
         className="advanced-search--input"
         maxLength={100}

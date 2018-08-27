@@ -10,7 +10,16 @@ test('<AdvancedSearch />', () => {
   const handleCheckboxChange = jest.fn()
   const handleNumberChange = jest.fn()
   const handleTextChange = jest.fn()
+  const handleValidityChange = jest.fn()
   const checked = {
+    avatar: true,
+    comment: false,
+    hostName: false,
+    maximum: false,
+    minimum: false,
+    villageName: false
+  }
+  const validity = {
     avatar: true,
     comment: false,
     hostName: false,
@@ -25,11 +34,13 @@ test('<AdvancedSearch />', () => {
       handleCheckboxChange={handleCheckboxChange}
       handleNumberChange={handleNumberChange}
       handleTextChange={handleTextChange}
+      handleValidityChange={handleValidityChange}
       header="header"
       image="image"
       menuItems={[]}
       name="name"
       transition={transition}
+      validity={validity}
     />
   )
 
