@@ -1,7 +1,18 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {MenuItem, Payload$Avatar} from 'lobby'
-import type {SocketMessage, Transition} from '../actions'
+import type {
+  AdvancedSearch$ChangeAvatar,
+  AdvancedSearch$ChangeCheckbox,
+  AdvancedSearch$ChangeComment,
+  AdvancedSearch$ChangeHostName,
+  AdvancedSearch$ChangeMaximum,
+  AdvancedSearch$ChangeMinimum,
+  AdvancedSearch$ChangeValidity,
+  AdvancedSearch$ChangeVillageName,
+  SocketMessage,
+  Transition
+} from '../actions'
+import type {Avatar, MenuItem, Payload$Avatar} from 'lobby'
 
 export type State = {
   +checked: {
@@ -15,9 +26,33 @@ export type State = {
   +header: string,
   +image: string,
   +menuItems: MenuItem[],
-  +name: string
+  +name: string,
+  +validity: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +maximum: boolean,
+    +minimum: boolean,
+    +villageName: boolean
+  },
+  +value: {
+    +avatar: Avatar,
+    +comment: string,
+    +hostName: string,
+    +maximum: number,
+    +minimum: number,
+    +villageName: string
+  }
 }
 type Action =
+  | AdvancedSearch$ChangeAvatar
+  | AdvancedSearch$ChangeCheckbox
+  | AdvancedSearch$ChangeComment
+  | AdvancedSearch$ChangeHostName
+  | AdvancedSearch$ChangeMaximum
+  | AdvancedSearch$ChangeMinimum
+  | AdvancedSearch$ChangeValidity
+  | AdvancedSearch$ChangeVillageName
   | SocketMessage
   | Transition
 
@@ -33,11 +68,98 @@ export const initialState = {
   header: '',
   image: '',
   menuItems: [],
-  name: ''
+  name: '',
+  validity: {
+    avatar: true,
+    comment: false,
+    hostName: false,
+    maximum: false,
+    minimum: false,
+    villageName: false
+  },
+  value: {
+    avatar: 'random',
+    comment: '',
+    hostName: '',
+    maximum: -1,
+    minimum: -1,
+    villageName: ''
+  }
 }
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.advancedSearch.CHANGE_AVATAR:
+      return {
+        ... state,
+        value: {
+          ... state.value,
+          avatar: action.avatar
+        }
+      }
+    case ActionTypes.advancedSearch.CHANGE_CHECKBOX:
+      return {
+        ... state,
+        checked: {
+          ... state.checked,
+          [action.propName]: action.checked
+        }
+      }
+    case ActionTypes.advancedSearch.CHANGE_COMMENT:
+      return {
+        ... state,
+        value: {
+          ... state.value,
+          comment: action.comment
+        }
+      }
+    case ActionTypes.advancedSearch.CHANGE_HOST_NAME:
+      return {
+        ... state,
+        value: {
+          ... state.value,
+          hostName: action.hostName
+        }
+      }
+    case ActionTypes.advancedSearch.CHANGE_MAXIMUM:
+      return {
+        ... state,
+        value: {
+          ... state.value,
+          maximum: action.maximum
+        }
+      }
+    case ActionTypes.advancedSearch.CHANGE_MINIMUM:
+      return {
+        ... state,
+        value: {
+          ... state.value,
+          minimum: action.minimum
+        }
+      }
+    case ActionTypes.advancedSearch.CHANGE_VALIDITY:
+      return {
+        ... state,
+        validity: {
+          ... state.validity,
+          [action.propName]: action.validity
+        }
+      }
+    case ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME:
+      return {
+        ... state,
+        value: {
+          ... state.value,
+          villageName: action.villageName
+        }
+      }
+    case ActionTypes.SHOW_ADVANCED_SEARCH:
+      return {
+        ... state,
+        checked: initialState.checked,
+        validity: initialState.validity,
+        value: initialState.value
+      }
     case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,

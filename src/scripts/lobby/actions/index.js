@@ -28,9 +28,9 @@ export const changeAvatar = (scope: 'advancedSearch' | 'buildVillage') => (avata
   avatar,
   type: types[scope].CHANGE_AVATAR
 })
-export const changeCheckbox = (scope: 'advancedSearch') => (id: string) => (checked: boolean): {id: string, checked: boolean, type: 'advancedSearch/CHANGE_CHECKBOX'} => ({
+export const changeCheckbox = (scope: 'advancedSearch') => (propName: string) => (checked: boolean): {propName: string, checked: boolean, type: 'advancedSearch/CHANGE_CHECKBOX'} => ({
   checked,
-  id,
+  propName,
   type: types[scope].CHANGE_CHECKBOX
 })
 export const changeComment = (scope: 'advancedSearch' | 'buildVillage') => (comment: string): {comment: string, type: 'advancedSearch/CHANGE_COMMENT' | 'buildVillage/CHANGE_COMMENT'} => ({
@@ -70,6 +70,11 @@ export const changeToken = ({lobby, token}: {lobby: Lobby, token: string}): {lob
   token,
   type: types.CHANGE_TOKEN
 })
+export const changeValidity = (scope: 'advancedSearch') => (propName: string) => (validity: boolean): {propName: string, type: 'advancedSearch/CHANGE_VALIDITY', validity: boolean} => ({
+  propName,
+  type: types[scope].CHANGE_VALIDITY,
+  validity
+})
 export const changeVillageName = (scope: 'advancedSearch' | 'buildVillage') => (villageName: string): {type: 'advancedSearch/CHANGE_VILLAGE_NAME' | 'buildVillage/CHANGE_VILLAGE_NAME', villageName: string} => ({
   type: types[scope].CHANGE_VILLAGE_NAME,
   villageName
@@ -97,6 +102,7 @@ export type AdvancedSearch$ChangeComment = $Call<$Call<typeof changeComment, 'ad
 export type AdvancedSearch$ChangeHostName = $Call<$Call<typeof changeHostName, 'advancedSearch'>, string>
 export type AdvancedSearch$ChangeMaximum = $Call<$Call<typeof changeMaximum, 'advancedSearch'>, number>
 export type AdvancedSearch$ChangeMinimum = $Call<$Call<typeof changeMinimum, 'advancedSearch'>, number>
+export type AdvancedSearch$ChangeValidity = $Call<$Call<$Call<typeof changeValidity, 'advancedSearch'>, string>, boolean>
 export type AdvancedSearch$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'advancedSearch'>, string>
 export type BuildVillage$ChangeAvatar = $Call<$Call<typeof changeAvatar, 'buildVillage'>, Avatar>
 export type BuildVillage$ChangeComment = $Call<$Call<typeof changeComment, 'buildVillage'>, string>

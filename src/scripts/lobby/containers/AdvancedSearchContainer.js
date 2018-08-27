@@ -7,6 +7,7 @@ import {
   type AdvancedSearch$ChangeHostName,
   type AdvancedSearch$ChangeMaximum,
   type AdvancedSearch$ChangeMinimum,
+  type AdvancedSearch$ChangeValidity,
   type AdvancedSearch$ChangeVillageName,
   changeAvatar,
   changeCheckbox,
@@ -14,6 +15,7 @@ import {
   changeHostName,
   changeMaximum,
   changeMinimum,
+  changeValidity,
   changeVillageName
 } from '../actions'
 import type {Dispatch} from 'redux'
@@ -27,9 +29,17 @@ type Action =
   | AdvancedSearch$ChangeHostName
   | AdvancedSearch$ChangeMaximum
   | AdvancedSearch$ChangeMinimum
+  | AdvancedSearch$ChangeValidity
   | AdvancedSearch$ChangeVillageName
 
-const mapStateToProps = (state: ReducerState): StateProps => state.advancedSearch
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  checked: state.advancedSearch.checked,
+  header: state.advancedSearch.header,
+  image: state.advancedSearch.image,
+  menuItems: state.advancedSearch.menuItems,
+  name: state.advancedSearch.name,
+  validity: state.advancedSearch.validity
+})
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
     dispatch(changeAvatar('advancedSearch')(value))
@@ -55,6 +65,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     if (propName === 'villageName') {
       dispatch(changeVillageName('advancedSearch')(value))
     }
+  },
+  handleValidityChange: propName => validity => {
+    dispatch(changeValidity('advancedSearch')(propName)(validity))
   }
 })
 const AdvancedSearchContainer = connect(

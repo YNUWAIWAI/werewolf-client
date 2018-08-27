@@ -20,13 +20,22 @@ export type StateProps = {
   +header: string,
   +image: string,
   +menuItems: MenuItem[],
-  +name: string
+  +name: string,
+  +validity: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +maximum: boolean,
+    +minimum: boolean,
+    +villageName: boolean
+  }
 }
 export type DispatchProps = {
   +handleAvatarChange: AvatarType => void,
   +handleCheckboxChange: ('avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => boolean => void,
   +handleNumberChange: ('maximum' | 'minimum') => number => void,
-  +handleTextChange: ('comment' | 'hostName' | 'villageName') => string => void
+  +handleTextChange: ('comment' | 'hostName' | 'villageName') => string => void,
+  +handleValidityChange: ('avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => boolean => void,
 }
 export type OwnProps = {
   +transition: Target => void
@@ -48,6 +57,8 @@ export default function AdvancedSearch(props: Props) {
           handleCheckboxChange={props.handleCheckboxChange}
           handleNumberChange={props.handleNumberChange}
           handleTextChange={props.handleTextChange}
+          handleValidityChange={props.handleValidityChange}
+          validity={props.validity}
         />
       </MainContent>
       <AsideContent>

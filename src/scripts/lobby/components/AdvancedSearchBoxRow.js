@@ -6,18 +6,22 @@ import Select from 'react-select'
 export type Props = {
   checked: boolean,
   handleChange: SyntheticInputEvent<HTMLInputElement> => void,
+  handleClick: SyntheticInputEvent<HTMLInputElement> => void,
   id: string,
   max: number,
   min: number,
   name: string,
   placeholder: string,
-  type: 'number' | 'text' | 'textarea'
+  type: 'number' | 'text' | 'textarea',
+  validity: boolean
 } | {
   checked: boolean,
   handleChange: SyntheticInputEvent<HTMLInputElement> => void,
+  handleClick: SyntheticInputEvent<HTMLInputElement> => void,
   id: string,
   name: string,
-  type: 'select'
+  type: 'select',
+  validity: boolean
 }
 
 export default function AdvancedSearchBoxRow(props: Props) {
@@ -93,7 +97,9 @@ export default function AdvancedSearchBoxRow(props: Props) {
       <div className="advanced-search--prop">
         <input
           checked={props.checked}
+          disabled={!props.validity}
           id={props.id}
+          onClick={props.handleClick}
           type="checkbox"
         />
         <label htmlFor={props.id}>
