@@ -1,6 +1,7 @@
 import {configure} from '@storybook/react'
 import {setOptions} from '@storybook/addon-options'
 import '../src/styles/app.css'
+import '../src/styles/lobby.css'
 
 setOptions({
   hierarchyRootSeparator: /\|/
