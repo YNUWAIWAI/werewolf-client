@@ -1,8 +1,10 @@
 // @flow
+import advancedSearch, {type State as AdvancedSearchState} from './advancedSearch'
 import app, {type State as AppState} from './app'
 import buildVillage, {type State as BuildVillageState} from './buildVillage'
 import connectingToRobotPlayer, {type State as ConnectingToRobotPlayerState} from './connectingToRobotPlayer'
 import history, {type State as HistoryState} from './history'
+import idSearch, {type State as IdSearchState} from './idSearch'
 import lobbyForAudience, {type State as LobbyForAudienceState} from './lobbyForAudience'
 import lobbyForHumanPlayer, {type State as LobbyForHumanPlayerState} from './lobbyForHumanPlayer'
 import lobbyForRobotPlayer, {type State as LobbyForRobotPlayerState} from './lobbyForRobotPlayer'
@@ -14,10 +16,12 @@ import waitingForPlayers, {type State as WaitingForPlayersState} from './waiting
 import {combineReducers} from 'redux'
 
 export type ReducerState = {
+  advancedSearch: AdvancedSearchState,
   app: AppState,
   buildVillage: BuildVillageState,
   connectingToRobotPlayer: ConnectingToRobotPlayerState,
   history: HistoryState,
+  idSearch: IdSearchState,
   lobbyForAudience: LobbyForAudienceState,
   lobbyForHumanPlayer: LobbyForHumanPlayerState,
   lobbyForRobotPlayer: LobbyForRobotPlayerState,
@@ -29,10 +33,12 @@ export type ReducerState = {
 }
 
 const reducer = combineReducers({
+  advancedSearch,
   app,
   buildVillage,
   connectingToRobotPlayer,
   history,
+  idSearch,
   lobbyForAudience,
   lobbyForHumanPlayer,
   lobbyForRobotPlayer,

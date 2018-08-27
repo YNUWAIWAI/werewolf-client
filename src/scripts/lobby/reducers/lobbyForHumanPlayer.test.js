@@ -1,35 +1,12 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import reducer, {initialState} from './lobbyForHumanPlayer'
 import {enterLobby} from './fakeServer'
-import reducer from './lobbyForHumanPlayer'
 
 test('SOCKET_MESSAGE', () => {
   expect(
     reducer(
-      {
-        image: '',
-        isPlayer: true,
-        menuItems: [
-          {
-            text: 'Build your Village',
-            types: [ActionTypes.SHOW_BUILD_VILLAGE]
-          },
-          {
-            text: 'Search for a Village',
-            types: [ActionTypes.SEARCH_FOR_A_VILLAGE]
-          },
-          {
-            text: 'Refresh',
-            types: [ActionTypes.REFRESH]
-          },
-          {
-            text: 'Return to the Main Page',
-            types: [ActionTypes.SHOW_MAIN]
-          }
-        ],
-        name: '',
-        villageItems: []
-      },
+      initialState,
       {
         payload: enterLobby,
         type: ActionTypes.SOCKET_MESSAGE
@@ -45,12 +22,16 @@ test('SOCKET_MESSAGE', () => {
           types: [ActionTypes.SHOW_BUILD_VILLAGE]
         },
         {
-          text: 'Search for a Village',
-          types: [ActionTypes.SEARCH_FOR_A_VILLAGE]
+          text: 'ID Search',
+          types: [ActionTypes.SHOW_ID_SEARCH]
+        },
+        {
+          text: 'Advanced Search',
+          types: [ActionTypes.SHOW_ADVANCED_SEARCH]
         },
         {
           text: 'Refresh',
-          types: [ActionTypes.REFRESH]
+          types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           text: 'Return to the Main Page',

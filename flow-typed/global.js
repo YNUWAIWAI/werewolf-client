@@ -1,5 +1,3 @@
-// @flow
-
 // ref: https://github.com/facebook/flow/blob/master/lib/core.js#L495-L502
 declare class JSON {
   static parse(text: mixed, reviver?: (key: any, value: any) => any): Object;
@@ -29,7 +27,7 @@ declare class RegExp {
 
 declare var window: {
   confirm: ?string => boolean
-}
+} & Object
 declare var global: {
   confirm: ?string => boolean
-}
+} & Object

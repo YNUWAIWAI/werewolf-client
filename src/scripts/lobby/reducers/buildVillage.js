@@ -1,7 +1,16 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import type {Avatar, Member, MenuItem, Payload$Avatar} from 'lobby'
-import type {ChangeAvatar, ChangeComment, ChangeHostName, ChangeMember, ChangeNumberOfPlayers, ChangeNumberOfRobots, ChangeVillageName, SocketMessage} from '../actions'
+import type {
+  BuildVillage$ChangeAvatar,
+  BuildVillage$ChangeComment,
+  BuildVillage$ChangeHostName,
+  BuildVillage$ChangeMember,
+  BuildVillage$ChangeNumberOfPlayers,
+  BuildVillage$ChangeNumberOfRobots,
+  BuildVillage$ChangeVillageName,
+  SocketMessage
+} from '../actions'
 
 export type State = {
   +menuItems: MenuItem[],
@@ -18,13 +27,13 @@ export type State = {
   }
 }
 type Action =
-  | ChangeAvatar
-  | ChangeComment
-  | ChangeHostName
-  | ChangeMember
-  | ChangeNumberOfPlayers
-  | ChangeNumberOfRobots
-  | ChangeVillageName
+  | BuildVillage$ChangeAvatar
+  | BuildVillage$ChangeComment
+  | BuildVillage$ChangeHostName
+  | BuildVillage$ChangeMember
+  | BuildVillage$ChangeNumberOfPlayers
+  | BuildVillage$ChangeNumberOfRobots
+  | BuildVillage$ChangeVillageName
   | SocketMessage
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
@@ -46,7 +55,7 @@ export const initialState = {
 
 const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.CHANGE_AVATAR:
+    case ActionTypes.buildVillage.CHANGE_AVATAR:
       return {
         ... state,
         village: {
@@ -54,7 +63,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           avatar: action.avatar
         }
       }
-    case ActionTypes.CHANGE_COMMENT:
+    case ActionTypes.buildVillage.CHANGE_COMMENT:
       return {
         ... state,
         village: {
@@ -62,7 +71,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           comment: action.comment
         }
       }
-    case ActionTypes.CHANGE_HOST_NAME:
+    case ActionTypes.buildVillage.CHANGE_HOST_NAME:
       return {
         ... state,
         village: {
@@ -70,7 +79,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           hostName: action.hostName
         }
       }
-    case ActionTypes.CHANGE_MEMBER:
+    case ActionTypes.buildVillage.CHANGE_MEMBER:
       return {
         ... state,
         village: {
@@ -78,7 +87,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           member: action.member
         }
       }
-    case ActionTypes.CHANGE_NUMBER_OF_PLAYERS:
+    case ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS:
       if (action.numberOfPlayers < state.village.numberOfRobots) {
         return {
           ... state,
@@ -99,7 +108,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           numberOfPlayers: action.numberOfPlayers
         }
       }
-    case ActionTypes.CHANGE_NUMBER_OF_ROBOTS:
+    case ActionTypes.buildVillage.CHANGE_NUMBER_OF_ROBOTS:
       return {
         ... state,
         village: {
@@ -108,7 +117,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           numberOfRobots: action.numberOfRobots
         }
       }
-    case ActionTypes.CHANGE_VILLAGE_NAME:
+    case ActionTypes.buildVillage.CHANGE_VILLAGE_NAME:
       return {
         ... state,
         village: {

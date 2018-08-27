@@ -396,3 +396,69 @@ body {
     }
   }
 }
+
+.id-search {
+  font-size: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &--input {
+    height: 4.5rem; /* font-size * line-height */
+    width: 12rem; /* (number_of_digit + 1) * font-size */
+    text-align: center;
+    font-size: 3rem;
+  }
+  &--input:invalid + &--validity::after {
+    content: '✖';
+    color: #f00;
+    padding-left: 0.5rem;
+  }
+  &--input:valid + &--validity::after {
+    content: '✓';
+    color: #26b72b;
+    padding-left: 0.5rem;
+  }
+  &--sharp {
+    padding-right: 0.5rem
+  }
+}
+
+.advanced-search {
+  border: black solid 1px;
+  display: grid;
+  font-size: 3rem;
+  &--prop {
+    align-items: center;
+    border: black solid 1px;
+    display: inline-flex;
+    grid-column: 1 / 2;
+
+    & > input {
+      margin: 0 1rem;
+    }
+  }
+  &--input {
+    border: black solid 1px;
+    box-sizing: border-box;
+    font-size: 3rem;
+    grid-column: 2 / 5;
+    text-align: center;
+    width: 100%;
+
+    textarea& {
+      resize: vertical;
+    }
+
+    &:invalid {
+      color: red;
+      outline-color: red;
+      outline-offset: -2px;
+    }
+  }
+}
+
+.react-select__value-container {
+  display: inline-flex;
+  justify-content: center;
+}
