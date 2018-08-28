@@ -170,18 +170,27 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
       return next(action)
     }
     case types.SOCKET_MESSAGE:
-      if (action.payload.type === 'ping') {
-        const state = store.getState()
-        const payload: Payload$Ping = action.payload
+      switch (action.payload.type) {
+        case 'ping': {
+          const state = store.getState()
+          const payload: Payload$Ping = action.payload
 
-        store.dispatch(socket.send({
-          id: payload.id,
-          token: state.token[state.token.lobby],
-          type: 'pong'
-        }))
+          store.dispatch(socket.send({
+            id: payload.id,
+            token: state.token[state.token.lobby],
+            type: 'pong'
+          }))
+
+          return next(action)
+        }
+        case 'played': {
+          window.location.replace(`${window.location.origin}/village`)
+
+          return next(action)
+        }
+        default:
+          return next(action)
       }
-
-      return next(action)
     default:
       return next(action)
   }
