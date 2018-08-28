@@ -58,10 +58,14 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
         case 'lobby': {
           const payload: Payload$Lobby = action.payload
 
-          return {
-            ... state,
-            villageItems: payload.villages
+          if (payload.lobby === 'robot player') {
+            return {
+              ... state,
+              villageItems: payload.villages
+            }
           }
+
+          return state
         }
         default:
           return state

@@ -18,12 +18,12 @@ export const initialState = {
   isPlayer: false,
   menuItems: [
     {
-      text: 'Search for a Village in session',
-      types: [ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION]
+      text: 'ID Search',
+      types: [ActionTypes.SHOW_ID_SEARCH]
     },
     {
-      text: 'Search for an Old Village',
-      types: [ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE]
+      text: 'Advanced Search',
+      types: [ActionTypes.SHOW_ADVANCED_SEARCH]
     },
     {
       text: 'Refresh',
@@ -54,10 +54,14 @@ const lobbyForAudience = (state: State = initialState, action: Action): State =>
         case 'lobby': {
           const payload: Payload$Lobby = action.payload
 
-          return {
-            ... state,
-            villageItems: payload.villages
+          if (payload.lobby === 'onymous audience') {
+            return {
+              ... state,
+              villageItems: payload.villages
+            }
           }
+
+          return state
         }
         default:
           return state
