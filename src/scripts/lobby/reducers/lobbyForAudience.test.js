@@ -1,63 +1,33 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {enterLobby} from './fakeServer'
-import reducer from './lobbyForAudience'
+import {enterHumanPlayerLobby, enterOnymousAudienceLobby, enterRobotPlayerLobby} from './fakeServer'
+import reducer, {initialState} from './lobbyForAudience'
 
-test('SOCKET_MESSAGE', () => {
-  expect(
-    reducer(
-      {
-        image: '',
-        isPlayer: false,
-        menuItems: [
-          {
-            text: 'Search for a Village in session',
-            types: [ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION]
-          },
-          {
-            text: 'Search for an Old Village',
-            types: [ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE]
-          },
-          {
-            text: 'Refresh',
-            types: [ActionTypes.REFRESH]
-          },
-          {
-            text: 'Return to the Main Page',
-            types: [ActionTypes.SHOW_MAIN]
-          }
-        ],
-        name: '',
-        villageItems: []
-      },
-      {
-        payload: enterLobby,
-        type: ActionTypes.SOCKET_MESSAGE
-      }
-    )
-  ).toEqual(
-    {
-      image: '',
-      isPlayer: false,
-      menuItems: [
+describe('SOCKET_MESSAGE', () => {
+  test('human player', () => {
+    expect(
+      reducer(
+        initialState,
         {
-          text: 'Search for a Village in session',
-          types: [ActionTypes.SEARCH_FOR_A_VILLAGE_IN_SESSION]
-        },
-        {
-          text: 'Search for an Old Village',
-          types: [ActionTypes.SEARCH_FOR_AN_OLD_VILLAGE]
-        },
-        {
-          text: 'Refresh',
-          types: [ActionTypes.REFRESH]
-        },
-        {
-          text: 'Return to the Main Page',
-          types: [ActionTypes.SHOW_MAIN]
+          payload: enterHumanPlayerLobby,
+          type: ActionTypes.SOCKET_MESSAGE
         }
-      ],
-      name: '',
+      )
+    ).toEqual(
+      initialState
+    )
+  })
+  test('onymous audience', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          payload: enterOnymousAudienceLobby,
+          type: ActionTypes.SOCKET_MESSAGE
+        }
+      )
+    ).toEqual({
+      ... initialState,
       villageItems: [
         {
           avatar: 'fixed',
@@ -124,6 +94,19 @@ test('SOCKET_MESSAGE', () => {
           }
         }
       ]
-    }
-  )
+    })
+  })
+  test('robot player', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          payload: enterRobotPlayerLobby,
+          type: ActionTypes.SOCKET_MESSAGE
+        }
+      )
+    ).toEqual(
+      initialState
+    )
+  })
 })

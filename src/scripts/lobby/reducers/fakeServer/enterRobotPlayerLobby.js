@@ -1,6 +1,7 @@
 // @flow
 export default {
   error: null,
+  lobby: 'robot player',
   type: 'lobby',
   villages: [
     {
