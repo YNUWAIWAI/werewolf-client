@@ -850,3 +850,57 @@ describe('SOCKET_MESSAGE tyoe: "ping"', () => {
     })
   })
 })
+describe('SOCKET_MESSAGE tyoe: "played"', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    payload: {
+      error: null,
+      type: 'played'
+    },
+    type: ActionTypes.SOCKET_MESSAGE
+  }
+
+  window.location.replace = jest.fn()
+
+  test('validate the JSON of played', async () => {
+    expect.hasAssertions()
+    await fetch(`${SERVER2CLIENT}/played.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, action.payload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('tansition correctly', () => {
+    actionHandler(action)
+    expect(window.location.replace).toHaveBeenCalled()
+  })
+})
