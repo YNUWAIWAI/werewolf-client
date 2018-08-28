@@ -9,6 +9,24 @@ import {socket} from '../actions'
 
 const client2server: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
+    case types.ADVANCED_SEARCH: {
+      const state = store.getState()
+      const payload = {
+        avatar: state.advancedSearch.validity.avatar ? state.advancedSearch.value.avatar : 'random',
+        comment: state.advancedSearch.validity.comment ? state.advancedSearch.value.comment : null,
+        hostName: state.advancedSearch.validity.hostName ? state.advancedSearch.value.hostName : null,
+        lobby: state.token.lobby,
+        maximum: state.advancedSearch.validity.maximum ? state.advancedSearch.value.maximum : null,
+        minimum: state.advancedSearch.validity.minimum ? state.advancedSearch.value.minimum : null,
+        token: state.token[state.token.lobby],
+        type: 'advancedSearch',
+        villageName: state.advancedSearch.validity.villageName ? state.advancedSearch.value.villageName : null
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case types.BUILD_VILLAGE: {
       const state = store.getState()
       const payload = {

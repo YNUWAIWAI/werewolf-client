@@ -29,6 +29,174 @@ const avatarToken = {
 }
 const ajv = new Ajv()
 
+describe('ADVANCED_SEARCH', () => {
+  describe('validity: true', () => {
+    const dispatch = jest.fn()
+    const value = {
+      avatar: 'fixed',
+      comment: 'Beginners are welcome',
+      hostName: 'Alice',
+      maximum: 15,
+      minimum: 5,
+      villageName: 'Alice\'s Village'
+    }
+    const getState = () => ({
+      advancedSearch: {
+        ... advancedSearch,
+        checked: {
+          avatar: true,
+          comment: true,
+          hostName: true,
+          maximum: true,
+          minimum: true,
+          villageName: true
+        },
+        validity: {
+          avatar: true,
+          comment: true,
+          hostName: true,
+          maximum: true,
+          minimum: true,
+          villageName: true
+        },
+        value
+      },
+      app,
+      buildVillage,
+      connectingToRobotPlayer,
+      history,
+      idSearch,
+      lobbyForAudience,
+      lobbyForHumanPlayer,
+      lobbyForRobotPlayer,
+      main,
+      ping,
+      settings,
+      token: {
+        'human player': avatarToken.humanPlayer,
+        'lobby': 'human player',
+        'onymous audience': avatarToken.onymousAudience,
+        'robot player': avatarToken.robotPlayer
+      },
+      waitingForPlayers
+    })
+    const nextHandler = middleware({
+      dispatch,
+      getState
+    })
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+    const action = {
+      type: ActionTypes.ADVANCED_SEARCH
+    }
+    const advancedSearchPayload = {
+      ... value,
+      lobby: 'human player',
+      token: avatarToken.humanPlayer,
+      type: 'advancedSearch'
+    }
+
+    test('validate the JSON of advancedSearch', async () => {
+      expect.hasAssertions()
+      await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
+        .then(res => res.json())
+        .then(schema => {
+          const validate = ajv.validate(schema, advancedSearchPayload)
+
+          expect(validate).toBe(true)
+        })
+    })
+    test('dispatch correctly', () => {
+      actionHandler(action)
+      expect(dispatch).toHaveBeenCalledTimes(1)
+      expect(dispatch).toHaveBeenCalledWith({
+        payload: advancedSearchPayload,
+        type: ActionTypes.SOCKET_SEND
+      })
+    })
+  })
+  describe('validity: false', () => {
+    const dispatch = jest.fn()
+    const getState = () => ({
+      advancedSearch: {
+        ... advancedSearch,
+        checked: {
+          avatar: false,
+          comment: false,
+          hostName: false,
+          maximum: false,
+          minimum: false,
+          villageName: false
+        },
+        validity: {
+          avatar: false,
+          comment: false,
+          hostName: false,
+          maximum: false,
+          minimum: false,
+          villageName: false
+        }
+      },
+      app,
+      buildVillage,
+      connectingToRobotPlayer,
+      history,
+      idSearch,
+      lobbyForAudience,
+      lobbyForHumanPlayer,
+      lobbyForRobotPlayer,
+      main,
+      ping,
+      settings,
+      token: {
+        'human player': avatarToken.humanPlayer,
+        'lobby': 'human player',
+        'onymous audience': avatarToken.onymousAudience,
+        'robot player': avatarToken.robotPlayer
+      },
+      waitingForPlayers
+    })
+    const nextHandler = middleware({
+      dispatch,
+      getState
+    })
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+    const action = {
+      type: ActionTypes.ADVANCED_SEARCH
+    }
+    const advancedSearchPayload = {
+      avatar: 'random',
+      comment: null,
+      hostName: null,
+      lobby: 'human player',
+      maximum: null,
+      minimum: null,
+      token: avatarToken.humanPlayer,
+      type: 'advancedSearch',
+      villageName: null
+    }
+
+    test('validate the JSON of advancedSearch', async () => {
+      expect.hasAssertions()
+      await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
+        .then(res => res.json())
+        .then(schema => {
+          const validate = ajv.validate(schema, advancedSearchPayload)
+
+          expect(validate).toBe(true)
+        })
+    })
+    test('dispatch correctly', () => {
+      actionHandler(action)
+      expect(dispatch).toHaveBeenCalledTimes(1)
+      expect(dispatch).toHaveBeenCalledWith({
+        payload: advancedSearchPayload,
+        type: ActionTypes.SOCKET_SEND
+      })
+    })
+  })
+})
 describe('BUILD_VILLAGE', () => {
   const dispatch = jest.fn()
   const getState = () => ({
@@ -58,9 +226,7 @@ describe('BUILD_VILLAGE', () => {
   })
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const action = {
-    token,
     type: ActionTypes.BUILD_VILLAGE
   }
   const buildVillagePayload = {
