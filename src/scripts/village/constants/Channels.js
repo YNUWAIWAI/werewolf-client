@@ -18,7 +18,7 @@ export const getChatChannel = (channel: Channel): ChatChannel => {
   const maybe = chatChannel.find(v => v === Channels[channel])
 
   if (!maybe) {
-    throw new Error('Unexpected channel.')
+    throw new Error(`Unexpected channel: ${channel}`)
   }
 
   return maybe
@@ -29,7 +29,7 @@ export const getInputChannel = (channel: Channel): InputChannel => {
   const maybe = inputChannel.find(v => v === Channels[channel])
 
   if (!maybe) {
-    throw new Error('Unexpected channel.')
+    throw new Error(`Unexpected channel: ${channel}`)
   }
 
   return maybe
@@ -51,7 +51,7 @@ export const getChannelFromInputChennel = (inputChannel: InputChannel, role: Rol
   })
 
   if (!maybe) {
-    throw new Error('Unexpected channel.')
+    throw new Error(`Unexpected channel: ${inputChannel}`)
   }
 
   return maybe
