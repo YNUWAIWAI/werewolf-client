@@ -85,6 +85,7 @@ declare module 'lobby' {
     name: string
   }>
   declare type Payload$Lobby = Payload<{
+    lobby: Lobby,
     villages: Village[]
   }>
   declare type Payload$Ping = Payload<{
