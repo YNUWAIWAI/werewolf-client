@@ -26,6 +26,7 @@ test('advancedSearch/CHANGE_AVATAR', () => {
       },
       header: '',
       image: '',
+      isPlayer: true,
       menuItems: [],
       name: '',
       validity: {
@@ -43,7 +44,8 @@ test('advancedSearch/CHANGE_AVATAR', () => {
         maximum: -1,
         minimum: -1,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -70,6 +72,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -87,7 +90,8 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -113,6 +117,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -130,7 +135,8 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -156,6 +162,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -173,7 +180,8 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -199,6 +207,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -216,7 +225,8 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -242,6 +252,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -259,7 +270,8 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -285,6 +297,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -302,7 +315,8 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -328,6 +342,7 @@ test('advancedSearch/CHANGE_COMMENT', () => {
       },
       header: '',
       image: '',
+      isPlayer: true,
       menuItems: [],
       name: '',
       validity: {
@@ -345,7 +360,8 @@ test('advancedSearch/CHANGE_COMMENT', () => {
         maximum: -1,
         minimum: -1,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -370,6 +386,7 @@ test('advancedSearch/CHANGE_HOST_NAME', () => {
       },
       header: '',
       image: '',
+      isPlayer: true,
       menuItems: [],
       name: '',
       validity: {
@@ -387,7 +404,8 @@ test('advancedSearch/CHANGE_HOST_NAME', () => {
         maximum: -1,
         minimum: -1,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -412,6 +430,7 @@ test('advancedSearch/CHANGE_MAXIMUM', () => {
       },
       header: '',
       image: '',
+      isPlayer: true,
       menuItems: [],
       name: '',
       validity: {
@@ -429,7 +448,8 @@ test('advancedSearch/CHANGE_MAXIMUM', () => {
         maximum: 15,
         minimum: -1,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -454,6 +474,7 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
       },
       header: '',
       image: '',
+      isPlayer: true,
       menuItems: [],
       name: '',
       validity: {
@@ -471,7 +492,8 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
         maximum: -1,
         minimum: 4,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -498,6 +520,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -515,7 +538,8 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -541,6 +565,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -558,7 +583,8 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -584,6 +610,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -601,7 +628,8 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -627,6 +655,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -644,7 +673,8 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -670,6 +700,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -687,7 +718,8 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -713,6 +745,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         },
         header: '',
         image: '',
+        isPlayer: true,
         menuItems: [],
         name: '',
         validity: {
@@ -730,7 +763,8 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })
@@ -756,6 +790,7 @@ test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
       },
       header: '',
       image: '',
+      isPlayer: true,
       menuItems: [],
       name: '',
       validity: {
@@ -773,7 +808,8 @@ test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
         maximum: -1,
         minimum: -1,
         villageName: 'villageName'
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -797,6 +833,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       },
       header: 'Audience\'s Advanced Search',
       image: '',
+      isPlayer: false,
       menuItems: [
         {
           text: 'Search',
@@ -827,7 +864,8 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         maximum: -1,
         minimum: -1,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -851,6 +889,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       },
       header: 'Human Player\'s Advanced Search',
       image: '',
+      isPlayer: true,
       menuItems: [
         {
           text: 'Search',
@@ -881,7 +920,8 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         maximum: -1,
         minimum: -1,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -905,6 +945,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       },
       header: 'Robot Player\'s Advanced Search',
       image: '',
+      isPlayer: true,
       menuItems: [
         {
           text: 'Search',
@@ -935,7 +976,8 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         maximum: -1,
         minimum: -1,
         villageName: ''
-      }
+      },
+      villageItems: []
     }
   )
 })
@@ -983,6 +1025,7 @@ describe('SOCKET_MESSAGE', () => {
         },
         header: '',
         image: '/assets/images/avatar/default/user.png',
+        isPlayer: true,
         menuItems: [],
         name: 'Alice',
         validity: {
@@ -1000,7 +1043,8 @@ describe('SOCKET_MESSAGE', () => {
           maximum: -1,
           minimum: -1,
           villageName: ''
-        }
+        },
+        villageItems: []
       }
     )
   })

@@ -4,13 +4,13 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<AdvancedSearch />', () => {
-  const selectVillage = jest.fn()
-  const transition = jest.fn()
   const handleAvatarChange = jest.fn()
   const handleCheckboxChange = jest.fn()
   const handleNumberChange = jest.fn()
   const handleTextChange = jest.fn()
   const handleValidityChange = jest.fn()
+  const selectVillage = jest.fn()
+  const transition = jest.fn()
   const checked = {
     avatar: true,
     comment: false,
@@ -37,10 +37,13 @@ test('<AdvancedSearch />', () => {
       handleValidityChange={handleValidityChange}
       header="header"
       image="image"
+      isPlayer
       menuItems={[]}
       name="name"
+      selectVillage={selectVillage}
       transition={transition}
       validity={validity}
+      villageItems={[]}
     />
   )
 
@@ -51,6 +54,12 @@ test('<AdvancedSearch />', () => {
     wrapper
       .find('MainContent')
       .find('AdvancedSearchBox')
+      .exists()
+  ).toBe(true)
+  expect(
+    wrapper
+      .find('MainContent')
+      .find('VillageList')
       .exists()
   ).toBe(true)
   expect(wrapper.find('AsideContent').exists()).toBe(true)
