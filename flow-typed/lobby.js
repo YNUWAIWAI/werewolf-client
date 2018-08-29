@@ -92,6 +92,9 @@ declare module 'lobby' {
     id: string,
     results: PingResult[]
   }>
+  declare type Payload$SearchResult = Payload<{
+    villages: Village[]
+  }>
   declare type Payload$WatingPage = Payload<{
     village: Village,
     players: WaitingPlayer[]

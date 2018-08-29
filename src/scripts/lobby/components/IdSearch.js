@@ -1,5 +1,5 @@
 // @flow
-import type {MenuItem, Target} from 'lobby'
+import type {MenuItem, Target, Village} from 'lobby'
 import AsideContent from './AsideContent'
 import Avatar from './Avatar'
 import Header from './Header'
@@ -7,15 +7,19 @@ import IdSearchBox from './IdSearchBox'
 import MainContent from './MainContent'
 import Menu from './Menu'
 import React from 'react'
+import VillageList from './VillageList'
 
 export type StateProps = {
   +header: string,
   +image: string,
+  +isPlayer: boolean,
   +menuItems: MenuItem[],
-  +name: string
+  +name: string,
+  +villageItems: Village[]
 }
 export type DispatchProps = {
-  +changeSearchId: number => void
+  +changeSearchId: number => void,
+  +selectVillage: number => void => void
 }
 export type OwnProps = {
   +transition: Target => void
@@ -38,6 +42,11 @@ export default function IdSearch(props: Props) {
           changeSearchId={props.changeSearchId}
           numberOfDigit={numberOfDigit}
           placeholder={placeholder}
+        />
+        <VillageList
+          isPlayer={props.isPlayer}
+          items={props.villageItems}
+          selectVillage={props.selectVillage}
         />
       </MainContent>
       <AsideContent>

@@ -12,7 +12,7 @@ import type {
   SocketMessage,
   Transition
 } from '../actions'
-import type {Avatar, MenuItem, Payload$Avatar} from 'lobby'
+import type {Avatar, MenuItem, Payload$Avatar, Payload$SearchResult, Village} from 'lobby'
 
 export type State = {
   +checked: {
@@ -25,6 +25,7 @@ export type State = {
   },
   +header: string,
   +image: string,
+  +isPlayer: boolean,
   +menuItems: MenuItem[],
   +name: string,
   +validity: {
@@ -42,7 +43,8 @@ export type State = {
     +maximum: number,
     +minimum: number,
     +villageName: string
-  }
+  },
+  +villageItems: Village[]
 }
 type Action =
   | AdvancedSearch$ChangeAvatar
@@ -67,6 +69,7 @@ export const initialState = {
   },
   header: '',
   image: '',
+  isPlayer: true,
   menuItems: [],
   name: '',
   validity: {
@@ -84,7 +87,8 @@ export const initialState = {
     maximum: -1,
     minimum: -1,
     villageName: ''
-  }
+  },
+  villageItems: []
 }
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
@@ -164,6 +168,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         header: 'Audience\'s Advanced Search',
+        isPlayer: false,
         menuItems: [
           {
             text: 'Search',
@@ -177,12 +182,14 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             text: 'Return to the Main Page',
             types: [ActionTypes.SHOW_MAIN]
           }
-        ]
+        ],
+        villageItems: []
       }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         header: 'Human Player\'s Advanced Search',
+        isPlayer: true,
         menuItems: [
           {
             text: 'Search',
@@ -196,12 +203,14 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             text: 'Return to the Main Page',
             types: [ActionTypes.SHOW_MAIN]
           }
-        ]
+        ],
+        villageItems: []
       }
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         header: 'Robot Player\'s Advanced Search',
+        isPlayer: true,
         menuItems: [
           {
             text: 'Search',
@@ -215,7 +224,8 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             text: 'Return to the Main Page',
             types: [ActionTypes.SHOW_MAIN]
           }
-        ]
+        ],
+        villageItems: []
       }
     case ActionTypes.SOCKET_MESSAGE:
       switch (action.payload.type) {
@@ -226,6 +236,14 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             ... state,
             image: payload.image,
             name: payload.name
+          }
+        }
+        case 'searchResult': {
+          const payload: Payload$SearchResult = action.payload
+
+          return {
+            ... state,
+            villageItems: payload.villages
           }
         }
         default:
