@@ -21,21 +21,24 @@ export default function Chat(props: Props) {
         props.allIds.map(id => {
           const item = props.byId[id]
 
-          if (item.type === 'delimeter') {
-            return (
-              <ChatDelimeter
-                key={id}
-                {... item}
-              />
-            )
+          switch (item.type) {
+            case 'item':
+              return (
+                <ChatItem
+                  key={id}
+                  {... item}
+                />
+              )
+            case 'delimeter':
+              return (
+                <ChatDelimeter
+                  key={id}
+                  {... item}
+                />
+              )
+            default:
+              throw Error(`Unexpected item type: ${item.type}`)
           }
-
-          return (
-            <ChatItem
-              key={id}
-              {... item}
-            />
-          )
         })
       }
     </div>

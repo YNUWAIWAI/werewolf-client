@@ -241,7 +241,8 @@ export default {
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'text': 'それで、あなたは人狼が誰だと思うの？'
+        'text': 'それで、あなたは人狼が誰だと思うの？',
+        'type': 'item'
       },
       'chat1': {
         'id': 2,
@@ -255,7 +256,8 @@ export default {
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'text': '>>1 私はパメラが人狼だと思う。'
+        'text': '>>1 私はパメラが人狼だと思う。',
+        'type': 'item'
       },
       'chat2': {
         'id': 3,
@@ -269,7 +271,8 @@ export default {
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'text': 'それはどうかな〜？'
+        'text': 'それはどうかな〜？',
+        'type': 'item'
       },
       'chat3': {
         'id': 4,
@@ -283,7 +286,8 @@ export default {
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'text': 'えー'
+        'text': 'えー',
+        'type': 'item'
       },
       'chat4': {
         'id': 5,
@@ -297,7 +301,8 @@ export default {
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'text': 'じゃあ，わかんないや'
+        'text': 'じゃあ，わかんないや',
+        'type': 'item'
       }
     }
   },
