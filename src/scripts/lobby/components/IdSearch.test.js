@@ -12,9 +12,12 @@ test('<IdSearch />', () => {
       changeSearchId={changeSearchId}
       header="header"
       image="image"
+      isPlayer
       menuItems={[]}
       name="name"
+      selectVillage={selectVillage}
       transition={transition}
+      villageItems={[]}
     />
   )
 
@@ -25,6 +28,12 @@ test('<IdSearch />', () => {
     wrapper
       .find('MainContent')
       .find('IdSearchBox')
+      .exists()
+  ).toBe(true)
+  expect(
+    wrapper
+      .find('MainContent')
+      .find('VillageList')
       .exists()
   ).toBe(true)
   expect(wrapper.find('AsideContent').exists()).toBe(true)

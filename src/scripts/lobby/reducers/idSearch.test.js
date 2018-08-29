@@ -18,6 +18,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       header: 'Audience\'s ID Search',
       id: -1,
       image: '',
+      isPlayer: false,
       menuItems: [
         {
           text: 'Search',
@@ -32,7 +33,8 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
-      name: ''
+      name: '',
+      villageItems: []
     }
   )
 })
@@ -49,6 +51,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       header: 'Human Player\'s ID Search',
       id: -1,
       image: '',
+      isPlayer: true,
       menuItems: [
         {
           text: 'Search',
@@ -63,7 +66,8 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
-      name: ''
+      name: '',
+      villageItems: []
     }
   )
 })
@@ -80,6 +84,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       header: 'Robot Player\'s ID Search',
       id: -1,
       image: '',
+      isPlayer: true,
       menuItems: [
         {
           text: 'Search',
@@ -94,7 +99,8 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
-      name: ''
+      name: '',
+      villageItems: []
     }
   )
 })
@@ -112,8 +118,10 @@ test('CHANGE_SEARCH_ID', () => {
       header: '',
       id: 123,
       image: '',
+      isPlayer: true,
       menuItems: [],
-      name: ''
+      name: '',
+      villageItems: []
     }
   )
 })
@@ -154,8 +162,10 @@ describe('SOCKET_MESSAGE', () => {
         header: '',
         id: -1,
         image: '/assets/images/avatar/default/user.png',
+        isPlayer: true,
         menuItems: [],
-        name: 'Alice'
+        name: 'Alice',
+        villageItems: []
       }
     )
   })

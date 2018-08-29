@@ -1,5 +1,5 @@
 // @flow
-import type {Avatar as AvatarType, MenuItem, Target} from 'lobby'
+import type {Avatar as AvatarType, MenuItem, Target, Village} from 'lobby'
 import AdvancedSearchBox from './AdvancedSearchBox'
 import AsideContent from './AsideContent'
 import Avatar from './Avatar'
@@ -7,6 +7,7 @@ import Header from './Header'
 import MainContent from './MainContent'
 import Menu from './Menu'
 import React from 'react'
+import VillageList from './VillageList'
 
 export type StateProps = {
   +checked: {
@@ -19,6 +20,7 @@ export type StateProps = {
   },
   +header: string,
   +image: string,
+  +isPlayer: boolean,
   +menuItems: MenuItem[],
   +name: string,
   +validity: {
@@ -28,7 +30,8 @@ export type StateProps = {
     +maximum: boolean,
     +minimum: boolean,
     +villageName: boolean
-  }
+  },
+  +villageItems: Village[]
 }
 export type DispatchProps = {
   +handleAvatarChange: AvatarType => void,
@@ -36,6 +39,7 @@ export type DispatchProps = {
   +handleNumberChange: ('maximum' | 'minimum') => number => void,
   +handleTextChange: ('comment' | 'hostName' | 'villageName') => string => void,
   +handleValidityChange: ('avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => boolean => void,
+  +selectVillage: number => void => void
 }
 export type OwnProps = {
   +transition: Target => void
@@ -59,6 +63,11 @@ export default function AdvancedSearch(props: Props) {
           handleTextChange={props.handleTextChange}
           handleValidityChange={props.handleValidityChange}
           validity={props.validity}
+        />
+        <VillageList
+          isPlayer={props.isPlayer}
+          items={props.villageItems}
+          selectVillage={props.selectVillage}
         />
       </MainContent>
       <AsideContent>
