@@ -37,5 +37,5 @@ test('<AdvancedSearchBox />', () => {
     />
   )
 
-  expect(wrapper.children()).toHaveLength(6)
+  expect(wrapper.children()).toHaveLength(12)
 })
