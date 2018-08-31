@@ -1,7 +1,11 @@
 // @flow
-import AdvancedSearchBoxRow from './AdvancedSearchBoxRow'
+import AdvancedSearchProp from './AdvancedSearchProp'
 import type {Avatar} from 'lobby'
+import AvatarSelect from './AvatarSelect2'
+import NumberSelect from './NumberSelect2'
 import React from 'react'
+import TextInput from './TextInput'
+import TextareaInput from './TextareaInput'
 
 export type Props = {
   +checked: {
@@ -28,30 +32,34 @@ export type Props = {
 }
 
 export default function AdvancedSearchBox(props: Props) {
-  const handleChange = propName => event => {
-    if (event.target.validity && event.target.validity.valid && event.target.value !== '') {
-      switch (propName) {
-        case 'avatar': {
-          const avatar: Avatar[] = ['fixed', 'random', 'unspecified']
-          const maybe = avatar.find(v => v === event.target.value)
+  const handleChange = propName => valid => value => {
+    switch (propName) {
+      case 'avatar': {
+        const avatar: Avatar[] = ['fixed', 'random', 'unspecified']
+        const maybe = avatar.find(v => v === value)
 
-          if (maybe) {
-            props.handleAvatarChange(maybe)
-          }
-          break
+        if (maybe) {
+          props.handleAvatarChange(maybe)
         }
-        case 'comment':
-        case 'hostName':
-        case 'villageName':
-          props.handleTextChange(propName)(event.target.value)
-          break
-        case 'maximum':
-        case 'minimum':
-          props.handleNumberChange(propName)(Number(event.target.value))
-          break
-        default:
-          throw Error(`Unknown: ${propName}`)
+        break
       }
+      case 'comment':
+      case 'hostName':
+      case 'villageName':
+        if (typeof value === 'string') {
+          props.handleTextChange(propName)(value)
+        }
+        break
+      case 'maximum':
+      case 'minimum':
+        if (typeof value === 'number') {
+          props.handleNumberChange(propName)(value)
+        }
+        break
+      default:
+        throw Error(`Unknown: ${propName}`)
+    }
+    if (valid && value !== '') {
       props.handleCheckboxChange(propName)(true)
       props.handleValidityChange(propName)(true)
     } else {
@@ -59,80 +67,111 @@ export default function AdvancedSearchBox(props: Props) {
       props.handleValidityChange(propName)(false)
     }
   }
-  const handleClick = propName => event => {
-    props.handleCheckboxChange(propName)(!event.target.checked)
+  const handleClick = propName => checked => {
+    switch (propName) {
+      case 'avatar':
+        break
+      case 'comment':
+      case 'hostName':
+      case 'villageName':
+      case 'maximum':
+      case 'minimum':
+        props.handleCheckboxChange(propName)(checked)
+        break
+      default:
+        throw Error(`Unknown: ${propName}`)
+    }
   }
 
   return (
     <div className="advanced-search">
-      <AdvancedSearchBoxRow
+      <AdvancedSearchProp
         checked={props.checked.villageName}
-        handleChange={handleChange('villageName')}
         handleClick={handleClick('villageName')}
-        id="villageName"
-        max={30}
-        min={5}
-        name="Village Name"
-        placeholder="5-30 chars"
-        type="text"
+        label="Village Name"
+        name="villageName"
         validity={props.validity.villageName}
       />
-      <AdvancedSearchBoxRow
-        checked={props.checked.hostName}
-        handleChange={handleChange('hostName')}
-        handleClick={handleClick('hostName')}
-        id="hostName"
-        max={15}
+      <TextInput
+        className="advanced-search--input"
+        handleChange={handleChange('villageName')}
+        max={30}
         min={5}
-        name="Host Name"
-        placeholder="5-15 chars"
-        type="text"
+        placeholder="5-30 chars"
+      />
+
+      <AdvancedSearchProp
+        checked={props.checked.hostName}
+        handleClick={handleClick('hostName')}
+        label="Host Name"
+        name="hostName"
         validity={props.validity.hostName}
       />
-      <AdvancedSearchBoxRow
-        checked={props.checked.minimum}
-        handleChange={handleChange('minimum')}
-        handleClick={handleClick('minimum')}
-        id="minimum"
+      <TextInput
+        className="advanced-search--input"
+        handleChange={handleChange('hostName')}
         max={15}
-        min={4}
-        name="Minimum"
-        placeholder="4-15"
-        type="number"
+        min={5}
+        placeholder="5-15 chars"
+      />
+
+      <AdvancedSearchProp
+        checked={props.checked.minimum}
+        handleClick={handleClick('minimum')}
+        label="Minimum"
+        name="minimum"
         validity={props.validity.minimum}
       />
-      <AdvancedSearchBoxRow
+      <NumberSelect
+        ascendingOrder
+        className="advanced-search--input"
+        from={4}
+        handleChange={handleChange('minimum')}
+        name="minimum"
+        to={15}
+      />
+
+      <AdvancedSearchProp
         checked={props.checked.maximum}
-        handleChange={handleChange('maximum')}
         handleClick={handleClick('maximum')}
-        id="maximum"
-        max={15}
-        min={4}
-        name="Maximum"
-        placeholder="4-15"
-        type="number"
+        label="Maximum"
+        name="maximum"
         validity={props.validity.maximum}
       />
-      <AdvancedSearchBoxRow
+      <NumberSelect
+        ascendingOrder={false}
+        className="advanced-search--input"
+        from={4}
+        handleChange={handleChange('maximum')}
+        name="maximum"
+        to={15}
+      />
+
+      <AdvancedSearchProp
         checked={props.checked.avatar}
-        handleChange={handleChange('avatar')}
         handleClick={handleClick('avatar')}
-        id="avatar"
-        name="Avatar"
-        type="select"
+        label="Avatar"
+        name="avatar"
         validity={props.validity.avatar}
       />
-      <AdvancedSearchBoxRow
+      <AvatarSelect
+        handleChange={handleChange('avatar')}
+      />
+
+      <AdvancedSearchProp
         checked={props.checked.comment}
-        handleChange={handleChange('comment')}
         handleClick={handleClick('comment')}
-        id="comment"
+        label="Comment"
+        name="comment"
+        validity={props.validity.comment}
+      />
+      <TextareaInput
+        className="advanced-search--input"
+        handleChange={handleChange('comment')}
         max={100}
         min={0}
-        name="Comment"
         placeholder="0-100 chars"
-        type="textarea"
-        validity={props.validity.comment}
+        rows={3}
       />
     </div>
   )
