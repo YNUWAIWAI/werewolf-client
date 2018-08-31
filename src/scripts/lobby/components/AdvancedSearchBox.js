@@ -1,5 +1,4 @@
 // @flow
-/* eslint react/forbid-component-props: 0 */
 import AdvancedSearchProp from './AdvancedSearchProp'
 import type {Avatar} from 'lobby'
 import AvatarSelect from './AvatarSelect2'
