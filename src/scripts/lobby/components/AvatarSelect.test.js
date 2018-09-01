@@ -1,5 +1,5 @@
 // @flow
-import AvatarSelect from './AvatarSelect2'
+import AvatarSelect from './AvatarSelect'
 import React from 'react'
 import Select from 'react-select'
 import {shallow} from 'enzyme'

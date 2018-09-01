@@ -1,5 +1,5 @@
 // @flow
-import NumberSelect from './NumberSelect2'
+import NumberSelect from './NumberSelect'
 import React from 'react'
 import Select from 'react-select'
 import {shallow} from 'enzyme'

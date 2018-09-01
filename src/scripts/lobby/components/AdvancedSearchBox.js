@@ -1,8 +1,8 @@
 // @flow
 import AdvancedSearchProp from './AdvancedSearchProp'
 import type {Avatar} from 'lobby'
-import AvatarSelect from './AvatarSelect2'
-import NumberSelect from './NumberSelect2'
+import AvatarSelect from './AvatarSelect'
+import NumberSelect from './NumberSelect'
 import React from 'react'
 import TextInput from './TextInput'
 import TextareaInput from './TextareaInput'

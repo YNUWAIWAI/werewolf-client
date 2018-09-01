@@ -1,7 +1,7 @@
 // @flow
 import type {Member, RoleSetting} from 'lobby'
 import MemberRole from './MemberRole'
-import NumberSelect from './NumberSelect2'
+import NumberSelect from './NumberSelect'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
