@@ -10,7 +10,9 @@ describe('<AvatarSelect />', () => {
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <AvatarSelect
+        className="class"
         handleChange={handleChange}
+        type="advancedSearch"
       />
     )
 
@@ -22,7 +24,9 @@ describe('<AvatarSelect />', () => {
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <AvatarSelect
+        className="class"
         handleChange={handleChange}
+        type="advancedSearch"
       />
     )
 
@@ -35,18 +39,37 @@ describe('<AvatarSelect />', () => {
     expect(handleChangeInner).toHaveBeenCalledTimes(1)
     expect(handleChangeInner).toHaveBeenCalledWith('fixed')
   })
-  test('onChange invalid', () => {
+  test('onChange invalid advancedSearch', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <AvatarSelect
+        className="class"
         handleChange={handleChange}
+        type="advancedSearch"
       />
     )
 
     wrapper.find(Select).simulate('change', [])
     expect(handleChange).toHaveBeenCalledTimes(1)
     expect(handleChange).toHaveBeenCalledWith(true)
+    expect(handleChangeInner).toHaveBeenCalledTimes(1)
+    expect(handleChangeInner).toHaveBeenCalledWith('random')
+  })
+  test('onChange invalid buildVillage', () => {
+    const handleChangeInner = jest.fn()
+    const handleChange = jest.fn(() => handleChangeInner)
+    const wrapper = shallow(
+      <AvatarSelect
+        className="class"
+        handleChange={handleChange}
+        type="buildVillage"
+      />
+    )
+
+    wrapper.find(Select).simulate('change', [])
+    expect(handleChange).toHaveBeenCalledTimes(1)
+    expect(handleChange).toHaveBeenCalledWith(false)
     expect(handleChangeInner).toHaveBeenCalledTimes(1)
     expect(handleChangeInner).toHaveBeenCalledWith('random')
   })

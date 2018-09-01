@@ -15,6 +15,7 @@ describe('<NumberSelect />', () => {
         from={4}
         handleChange={handleChange}
         name="minimum"
+        suffix=""
         to={15}
       />
     )
@@ -32,6 +33,7 @@ describe('<NumberSelect />', () => {
         from={4}
         handleChange={handleChange}
         name="minimum"
+        suffix=""
         to={15}
       />
     )
@@ -55,6 +57,7 @@ describe('<NumberSelect />', () => {
         from={4}
         handleChange={handleChange}
         name="minimum"
+        suffix=""
         to={15}
       />
     )

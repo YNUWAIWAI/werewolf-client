@@ -11,9 +11,11 @@ describe('<TextareaInput />', () => {
       <TextareaInput
         className="advanced-search--input"
         handleChange={handleChange}
+        initialValue=""
         max={100}
         min={0}
         placeholder="0-100 chars"
+        required
         rows={3}
       />
     )
@@ -28,9 +30,11 @@ describe('<TextareaInput />', () => {
       <TextareaInput
         className="advanced-search--input"
         handleChange={handleChange}
+        initialValue=""
         max={100}
         min={0}
         placeholder="0-100 chars"
+        required
         rows={3}
       />
     )

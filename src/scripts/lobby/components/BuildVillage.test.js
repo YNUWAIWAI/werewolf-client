@@ -8,6 +8,7 @@ test('<BuildVillage />', () => {
   const handleMemberChange = jest.fn()
   const handleNumberChange = jest.fn()
   const handleTextChange = jest.fn()
+  const handleValidityChange = jest.fn()
   const transition = jest.fn()
   const village = {
     comment: 'comment',
@@ -23,6 +24,7 @@ test('<BuildVillage />', () => {
       handleMemberChange={handleMemberChange}
       handleNumberChange={handleNumberChange}
       handleTextChange={handleTextChange}
+      handleValidityChange={handleValidityChange}
       menuItems={[]}
       transition={transition}
       village={village}
@@ -48,5 +50,6 @@ test('<BuildVillage />', () => {
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleNumberChange).toHaveBeenCalledTimes(0)
   expect(handleTextChange).toHaveBeenCalledTimes(0)
+  expect(handleValidityChange).toHaveBeenCalledTimes(0)
   expect(transition).toHaveBeenCalledTimes(0)
 })
