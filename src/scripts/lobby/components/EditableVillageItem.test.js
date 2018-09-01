@@ -13,6 +13,22 @@ describe('<EditableVillageItem />', () => {
     const handleTextChange = jest.fn().mockReturnValue(handleTextChangeInner)
     const handleValidityChangeInner = jest.fn()
     const handleValidityChange = jest.fn().mockReturnValue(handleValidityChangeInner)
+    const validity = {
+      avatar: true,
+      comment: true,
+      hostName: true,
+      numberOfPlayers: true,
+      numberOfRobots: true,
+      villageName: true
+    }
+    const village = {
+      comment: '',
+      hostName: 'Alice',
+      numberOfHumans: 8,
+      numberOfPlayers: 15,
+      numberOfRobots: 7,
+      villageName: 'Alice\'s village'
+    }
     const wrapper = shallow(
       <EditableVillageItem
         handleAvatarChange={handleAvatarChange}
@@ -20,9 +36,8 @@ describe('<EditableVillageItem />', () => {
         handleNumberChange={handleNumberChange}
         handleTextChange={handleTextChange}
         handleValidityChange={handleValidityChange}
-        numberOfHumans={8}
-        numberOfPlayers={15}
-        numberOfRobots={7}
+        validity={validity}
+        village={village}
       />
     )
 

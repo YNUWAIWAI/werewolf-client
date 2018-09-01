@@ -10,6 +10,14 @@ test('<BuildVillage />', () => {
   const handleTextChange = jest.fn()
   const handleValidityChange = jest.fn()
   const transition = jest.fn()
+  const validity = {
+    avatar: true,
+    comment: true,
+    hostName: true,
+    numberOfPlayers: true,
+    numberOfRobots: true,
+    villageName: true
+  }
   const village = {
     comment: 'comment',
     hostName: 'hostName',
@@ -27,6 +35,7 @@ test('<BuildVillage />', () => {
       handleValidityChange={handleValidityChange}
       menuItems={[]}
       transition={transition}
+      validity={validity}
       village={village}
     />
   )

@@ -48,6 +48,9 @@ test('<SelectableMember numberOfHumans={7} numberOfPlayers={15} numberOfRobots={
       numberOfPlayers={15}
       numberOfRobots={8}
       role={role}
+      validity={{
+        numberOfRobots: true
+      }}
     />
   )
 
