@@ -14,9 +14,22 @@ type Props = {
   +handleNumberChange: string => number => void,
   +handleTextChange: string => string => void,
   +handleValidityChange: string => boolean => void,
-  +numberOfHumans: number,
-  +numberOfPlayers: number,
-  +numberOfRobots: number
+  +validity: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +numberOfPlayers: boolean,
+    +numberOfRobots: boolean,
+    +villageName: boolean
+  },
+  +village: {
+    +comment: string,
+    +hostName: string,
+    +numberOfHumans: number,
+    +numberOfPlayers: number,
+    +numberOfRobots: number,
+    +villageName: string
+  }
 }
 
 export default function EditableVillageItem(props: Props) {
@@ -75,9 +88,9 @@ export default function EditableVillageItem(props: Props) {
         {'Village Name'}
       </div>
       <TextInput
-        className="village--item--village-name--val"
+        className={`village--item--village-name--val ${props.validity.villageName ? '' : 'invalid'}`}
         handleChange={handleChange('villageName')}
-        initialValue={'Alice\'s Village'}
+        initialValue={props.village.villageName}
         max={30}
         min={5}
         placeholder="5-30 chars"
@@ -88,9 +101,9 @@ export default function EditableVillageItem(props: Props) {
         {'Host Name'}
       </div>
       <TextInput
-        className="village--item--host-name--val"
+        className={`village--item--host-name--val ${props.validity.hostName ? '' : 'invalid'}`}
         handleChange={handleChange('hostName')}
-        initialValue="Alice"
+        initialValue={props.village.hostName}
         max={15}
         min={5}
         placeholder="5-15 chars"
@@ -100,11 +113,11 @@ export default function EditableVillageItem(props: Props) {
       <div className="village--item--setup--prop">
         {'Setup'}
       </div>
-      <div className="village--item--setup--val1">
+      <div className={`village--item--setup--val1 ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
         <NumberSelect
           ascendingOrder={false}
           className="village--item--setup--val1--select"
-          defaultValue={15}
+          defaultValue={props.village.numberOfPlayers}
           from={4}
           handleChange={handleChange('numberOfPlayers')}
           name="numberOfPlayers"
@@ -112,7 +125,7 @@ export default function EditableVillageItem(props: Props) {
           to={15}
         />
       </div>
-      <div className="village--item--setup--val2">
+      <div className={`village--item--setup--val2 ${props.validity.avatar ? '' : 'invalid'}`}>
         <AvatarSelect
           className="village--item--setup--val2--select"
           handleChange={handleChange('avatar')}
@@ -123,19 +136,22 @@ export default function EditableVillageItem(props: Props) {
       <SelectableMember
         handleMemberChange={handleChange('member')}
         handleNumberChange={handleChange('numberOfRobots')}
-        numberOfHumans={props.numberOfHumans}
-        numberOfPlayers={props.numberOfPlayers}
-        numberOfRobots={props.numberOfRobots}
-        role={getCastFromNumberOfPlayers(props.numberOfPlayers)}
+        numberOfHumans={props.village.numberOfHumans}
+        numberOfPlayers={props.village.numberOfPlayers}
+        numberOfRobots={props.village.numberOfRobots}
+        role={getCastFromNumberOfPlayers(props.village.numberOfPlayers)}
+        validity={{
+          numberOfRobots: props.validity.numberOfRobots
+        }}
       />
 
       <div className="village--item--comment--prop">
         {'Comment'}
       </div>
       <TextareaInput
-        className="village--item--comment--val"
+        className={`village--item--comment--val ${props.validity.comment ? '' : 'invalid'}`}
         handleChange={handleChange('comment')}
-        initialValue=""
+        initialValue={props.village.comment}
         max={100}
         min={0}
         placeholder="0-100 chars"

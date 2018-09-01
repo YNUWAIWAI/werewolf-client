@@ -118,6 +118,10 @@ body {
         padding: 1rem;
         text-align: center;
 
+        &.invalid {
+          border-color: red;
+        }
+
         &:invalid {
           color: red;
           outline-color: red;
@@ -155,6 +159,10 @@ body {
         padding: 1rem;
         text-align: center;
 
+        &.invalid {
+          border-color: red;
+        }
+
         &:invalid {
           color: red;
           outline-color: red;
@@ -183,6 +191,10 @@ body {
         justify-content: center;
         text-align: center;
 
+        &.invalid {
+          border-color: red;
+        }
+
         &--select {
           font-size: inherit;
           width: 100%;
@@ -197,6 +209,10 @@ body {
         grid-area: s-v2;
         justify-content: center;
         text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
 
         &--select {
           font-size: inherit;
@@ -289,7 +305,12 @@ body {
 
         &--select {
           font-size: inherit;
+          padding-left: 1rem;
           width: 100%;
+        }
+
+        &.invalid {
+          border-color: red;
         }
       }
 
@@ -370,6 +391,10 @@ body {
         justify-content: center;
         padding: 1rem;
         text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
 
         &:invalid {
           color: red;

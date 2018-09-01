@@ -15,6 +15,9 @@ type Props = {
     +A: RoleSetting,
     +B: RoleSetting,
     +C: RoleSetting
+  },
+  +validity: {
+    +numberOfRobots: boolean
   }
 }
 
@@ -40,7 +43,7 @@ export default function SelectableMember(props: Props) {
 
   return (
     <div className="village--item--selectable-member">
-      <div className="village--item--selectable-member--robot">
+      <div className={`village--item--selectable-member--robot ${props.validity.numberOfRobots ? '' : 'invalid'}`}>
         {'min'}
         <NumberSelect
           ascendingOrder

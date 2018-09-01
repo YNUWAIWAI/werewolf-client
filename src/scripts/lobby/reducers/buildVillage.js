@@ -70,6 +70,10 @@ export const initialState = {
     villageName: 'Alice\'s village'
   }
 }
+const initialValue = {
+  hostName: 'Alice',
+  villageName: 'Alice\'s village'
+}
 
 const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
@@ -168,9 +172,19 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        validity: initialState.validity,
         village: {
           ... state.village,
           isHuman: true
+        }
+      }
+    case ActionTypes.SHOW_MAIN:
+      return {
+        ... state,
+        validity: initialState.validity,
+        village: {
+          ... initialState.village,
+          ... initialValue
         }
       }
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
@@ -190,6 +204,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        validity: initialState.validity,
         village: {
           ... state.village,
           isHuman: false
@@ -200,12 +215,15 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         case 'avatar': {
           const payload: Payload$Avatar = action.payload
 
+          initialValue.hostName = payload.name
+          initialValue.villageName = `${payload.name}'s village`
+
           return {
             ... state,
             village: {
               ... state.village,
-              hostName: payload.name,
-              villageName: `${payload.name}'s village`
+              hostName: initialValue.hostName,
+              villageName: initialValue.villageName
             }
           }
         }

@@ -9,6 +9,14 @@ import React from 'react'
 
 export type StateProps = {
   +menuItems: MenuItem[],
+  +validity: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +numberOfPlayers: boolean,
+    +numberOfRobots: boolean,
+    +villageName: boolean
+  },
   +village: {
     +comment: string,
     +hostName: string,
@@ -39,12 +47,13 @@ export default function BuildVillage(props: Props) {
       <Header text="Build village" />
       <MainContent>
         <EditableVillageItem
-          {... props.village}
           handleAvatarChange={props.handleAvatarChange}
           handleMemberChange={props.handleMemberChange}
           handleNumberChange={props.handleNumberChange}
           handleTextChange={props.handleTextChange}
           handleValidityChange={props.handleValidityChange}
+          validity={props.validity}
+          village={props.village}
         />
       </MainContent>
       <AsideContent>
