@@ -70,7 +70,7 @@ export const changeToken = ({lobby, token}: {lobby: Lobby, token: string}): {lob
   token,
   type: types.CHANGE_TOKEN
 })
-export const changeValidity = (scope: 'advancedSearch') => (propName: string) => (validity: boolean): {propName: string, type: 'advancedSearch/CHANGE_VALIDITY', validity: boolean} => ({
+export const changeValidity = (scope: 'advancedSearch' | 'buildVillage') => (propName: string) => (validity: boolean): {propName: string, type: 'advancedSearch/CHANGE_VALIDITY' | 'buildVillage/CHANGE_VALIDITY', validity: boolean} => ({
   propName,
   type: types[scope].CHANGE_VALIDITY,
   validity
@@ -110,6 +110,7 @@ export type BuildVillage$ChangeHostName = $Call<$Call<typeof changeHostName, 'bu
 export type BuildVillage$ChangeMember = $Call<$Call<typeof changeMember, 'buildVillage'>, Member>
 export type BuildVillage$ChangeNumberOfPlayers = $Call<$Call<typeof changeNumberOfPlayers, 'buildVillage'>, number>
 export type BuildVillage$ChangeNumberOfRobots = $Call<$Call<typeof changeNumberOfRobots, 'buildVillage'>, number>
+export type BuildVillage$ChangeValidity = $Call<$Call<$Call<typeof changeValidity, 'buildVillage'>, string>, boolean>
 export type BuildVillage$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'buildVillage'>, string>
 export type ChangeSearchId = $Call<typeof changeSearchId, number>
 export type ChangeToken = $Call<typeof changeToken, {lobby: Lobby, token: string}>

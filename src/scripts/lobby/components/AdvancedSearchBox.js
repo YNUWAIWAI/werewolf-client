@@ -95,9 +95,11 @@ export default function AdvancedSearchBox(props: Props) {
       <TextInput
         className="advanced-search--input"
         handleChange={handleChange('villageName')}
+        initialValue=""
         max={30}
         min={5}
         placeholder="5-30 chars"
+        required={false}
       />
 
       <AdvancedSearchProp
@@ -110,9 +112,11 @@ export default function AdvancedSearchBox(props: Props) {
       <TextInput
         className="advanced-search--input"
         handleChange={handleChange('hostName')}
+        initialValue=""
         max={15}
         min={5}
         placeholder="5-15 chars"
+        required={false}
       />
 
       <AdvancedSearchProp
@@ -128,6 +132,7 @@ export default function AdvancedSearchBox(props: Props) {
         from={4}
         handleChange={handleChange('minimum')}
         name="minimum"
+        suffix=""
         to={15}
       />
 
@@ -144,6 +149,7 @@ export default function AdvancedSearchBox(props: Props) {
         from={4}
         handleChange={handleChange('maximum')}
         name="maximum"
+        suffix=""
         to={15}
       />
 
@@ -155,7 +161,9 @@ export default function AdvancedSearchBox(props: Props) {
         validity={props.validity.avatar}
       />
       <AvatarSelect
+        className="advanced-search--input"
         handleChange={handleChange('avatar')}
+        type="advancedSearch"
       />
 
       <AdvancedSearchProp
@@ -168,9 +176,11 @@ export default function AdvancedSearchBox(props: Props) {
       <TextareaInput
         className="advanced-search--input"
         handleChange={handleChange('comment')}
+        initialValue=""
         max={100}
         min={0}
         placeholder="0-100 chars"
+        required={false}
         rows={3}
       />
     </div>

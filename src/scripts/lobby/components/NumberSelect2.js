@@ -5,9 +5,11 @@ import Select from 'react-select'
 type Props = {
   +ascendingOrder: boolean,
   +className: string,
+  +defaultValue?: number,
   +from: number,
   +handleChange: boolean => number => void,
   +name: string,
+  +suffix: string,
   +to: number
 }
 
@@ -22,7 +24,7 @@ export default function NumberSelect(props: Props) {
   const options = [... Array(props.to - props.from + 1).keys()]
     .map(e => e + props.from)
     .map(option => ({
-      label: option,
+      label: `${option} ${props.suffix}`,
       value: option
     }))
 
@@ -30,6 +32,14 @@ export default function NumberSelect(props: Props) {
     <Select
       className={props.className}
       classNamePrefix="react-select"
+      defaultValue={
+        props.defaultValue ?
+          {
+            label: `${props.defaultValue} ${props.suffix}`,
+            value: props.defaultValue
+          } :
+          []
+      }
       name={props.name}
       onChange={handleChange}
       options={props.ascendingOrder ? options : options.reverse()}

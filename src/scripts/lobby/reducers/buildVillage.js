@@ -8,12 +8,21 @@ import type {
   BuildVillage$ChangeMember,
   BuildVillage$ChangeNumberOfPlayers,
   BuildVillage$ChangeNumberOfRobots,
+  BuildVillage$ChangeValidity,
   BuildVillage$ChangeVillageName,
   SocketMessage
 } from '../actions'
 
 export type State = {
   +menuItems: MenuItem[],
+  +validity: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +numberOfPlayers: boolean,
+    +numberOfRobots: boolean,
+    +villageName: boolean
+  },
   +village: {
     +avatar: Avatar,
     +comment: string,
@@ -33,6 +42,7 @@ type Action =
   | BuildVillage$ChangeMember
   | BuildVillage$ChangeNumberOfPlayers
   | BuildVillage$ChangeNumberOfRobots
+  | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
   | SocketMessage
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
@@ -40,6 +50,14 @@ type Action =
 
 export const initialState = {
   menuItems: [],
+  validity: {
+    avatar: true,
+    comment: true,
+    hostName: true,
+    numberOfPlayers: true,
+    numberOfRobots: true,
+    villageName: true
+  },
   village: {
     avatar: 'fixed',
     comment: '',
@@ -115,6 +133,14 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           ... state.village,
           numberOfHumans: state.village.numberOfPlayers - action.numberOfRobots,
           numberOfRobots: action.numberOfRobots
+        }
+      }
+    case ActionTypes.buildVillage.CHANGE_VALIDITY:
+      return {
+        ... state,
+        validity: {
+          ... state.validity,
+          [action.propName]: action.validity
         }
       }
     case ActionTypes.buildVillage.CHANGE_VILLAGE_NAME:

@@ -4,9 +4,11 @@ import React from 'react'
 type Props = {
   +className: string,
   +handleChange: boolean => string => void,
+  +initialValue: string,
   +max: number,
   +min: number,
   +placeholder: string,
+  +required: boolean,
   +rows: number
 }
 type State = {
@@ -18,7 +20,7 @@ export default class TextareaInput extends React.Component<Props, State> {
     super(props)
 
     this.state = {
-      value: ''
+      value: this.props.initialValue
     }
   }
   shouldComponentUpdate() {
@@ -38,8 +40,8 @@ export default class TextareaInput extends React.Component<Props, State> {
         minLength={this.props.min}
         onChange={event => this.handleChange(event)}
         placeholder={this.props.placeholder}
+        required={this.props.required}
         rows={this.props.rows}
-        type="text"
         value={this.state.value}
       />
     )

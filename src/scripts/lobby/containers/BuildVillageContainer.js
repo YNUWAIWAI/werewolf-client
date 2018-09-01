@@ -7,6 +7,7 @@ import {
   type BuildVillage$ChangeMember,
   type BuildVillage$ChangeNumberOfPlayers,
   type BuildVillage$ChangeNumberOfRobots,
+  type BuildVillage$ChangeValidity,
   type BuildVillage$ChangeVillageName,
   changeAvatar,
   changeComment,
@@ -14,6 +15,7 @@ import {
   changeMember,
   changeNumberOfPlayers,
   changeNumberOfRobots,
+  changeValidity,
   changeVillageName
 } from '../actions'
 import type {Dispatch} from 'redux'
@@ -27,6 +29,7 @@ type Action =
   | BuildVillage$ChangeMember
   | BuildVillage$ChangeNumberOfPlayers
   | BuildVillage$ChangeNumberOfRobots
+  | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
@@ -65,6 +68,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     if (propName === 'villageName') {
       dispatch(changeVillageName('buildVillage')(value))
     }
+  },
+  handleValidityChange: propName => validity => {
+    dispatch(changeValidity('buildVillage')(propName)(validity))
   }
 })
 const BuildVillageContainer = connect(

@@ -1,12 +1,12 @@
 // @flow
-import type {TMenuItem, Target} from 'lobby'
+import type {MenuItem as MenuItemType, Target} from 'lobby'
 import MenuItem from './MenuItem'
 import React from 'react'
 
 export type Props = {
   +class: string,
   +itemClass: string,
-  +items: TMenuItem[],
+  +items: MenuItemType[],
   +transition: Target => void
 }
 

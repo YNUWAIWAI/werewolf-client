@@ -22,7 +22,8 @@ export type DispatchProps = {
   +handleAvatarChange: Avatar => void,
   +handleMemberChange: Member => void,
   +handleNumberChange: string => number => void,
-  +handleTextChange: string => string => void
+  +handleTextChange: string => string => void,
+  +handleValidityChange: string => boolean => void
 }
 export type OwnProps = {
   +transition: Target => void
@@ -43,6 +44,7 @@ export default function BuildVillage(props: Props) {
           handleMemberChange={props.handleMemberChange}
           handleNumberChange={props.handleNumberChange}
           handleTextChange={props.handleTextChange}
+          handleValidityChange={props.handleValidityChange}
         />
       </MainContent>
       <AsideContent>

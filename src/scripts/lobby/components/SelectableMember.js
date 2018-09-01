@@ -1,13 +1,13 @@
 // @flow
 import type {Member, RoleSetting} from 'lobby'
 import MemberRole from './MemberRole'
-import NumberSelect from './NumberSelect'
+import NumberSelect from './NumberSelect2'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
 import React from 'react'
 
 type Props = {
-  +handleMemberChange: Member => void,
-  +handleNumberChange: string => number => void,
+  +handleMemberChange: boolean => Member => void,
+  +handleNumberChange: boolean => number => void,
   +numberOfHumans: number,
   +numberOfPlayers: number,
   +numberOfRobots: number,
@@ -43,13 +43,15 @@ export default function SelectableMember(props: Props) {
       <div className="village--item--selectable-member--robot">
         {'min'}
         <NumberSelect
-          class="village--item--selectable-member--robot--select"
+          ascendingOrder
+          className="village--item--selectable-member--robot--select"
+          defaultValue={props.numberOfRobots}
           from={0}
-          handleChange={props.handleNumberChange('numberOfRobots')}
+          handleChange={props.handleNumberChange}
+          name="numberOfRobots"
+          suffix="robots"
           to={props.numberOfPlayers}
-          value={props.numberOfRobots}
         />
-        {'robots'}
       </div>
       <div className="village--item--selectable-member--human">
         {`max ${props.numberOfHumans} humans`}
@@ -59,7 +61,7 @@ export default function SelectableMember(props: Props) {
           <input
             defaultChecked
             name="member"
-            onChange={() => props.handleMemberChange('A')}
+            onChange={() => props.handleMemberChange(true)('A')}
             type="radio"
             value="A"
           />
@@ -73,7 +75,7 @@ export default function SelectableMember(props: Props) {
         <div className="village--item--selectable-member--role--radio">
           <input
             name="member"
-            onChange={() => props.handleMemberChange('B')}
+            onChange={() => props.handleMemberChange(true)('B')}
             type="radio"
             value="B"
           />
@@ -87,7 +89,7 @@ export default function SelectableMember(props: Props) {
         <div className="village--item--selectable-member--role--radio">
           <input
             name="member"
-            onChange={() => props.handleMemberChange('C')}
+            onChange={() => props.handleMemberChange(true)('C')}
             type="radio"
             value="C"
           />

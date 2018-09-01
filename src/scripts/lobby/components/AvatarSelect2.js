@@ -4,35 +4,51 @@ import React from 'react'
 import Select from 'react-select'
 
 type Props = {
-  +handleChange: boolean => Avatar => void
+  +className: string,
+  +handleChange: boolean => Avatar => void,
+  +type: 'advancedSearch' | 'buildVillage'
 }
 
 export default function AvatarSelect(props: Props) {
   const handleChange = selectedOption => {
-    if (selectedOption.value) {
-      props.handleChange(true)(selectedOption.value)
-    } else {
+    if (!selectedOption.value && props.type === 'advancedSearch') {
       props.handleChange(true)('random')
+    } else if (!selectedOption.value && props.type === 'buildVillage') {
+      props.handleChange(false)('random')
+    } else {
+      props.handleChange(true)(selectedOption.value)
     }
   }
-  const options = [
-    {
-      label: 'Random',
-      value: 'random'
-    },
-    {
-      label: 'Fixed',
-      value: 'fixed'
-    },
-    {
-      label: 'Unspecified',
-      value: 'unspecified'
-    }
-  ]
+  const options = {
+    advancedSearch: [
+      {
+        label: 'Random',
+        value: 'random'
+      },
+      {
+        label: 'Fixed',
+        value: 'fixed'
+      },
+      {
+        label: 'Unspecified',
+        value: 'unspecified'
+      }
+    ],
+    buildVillage: [
+      {
+        label: 'Random Avatar',
+        value: 'random'
+      },
+      {
+        label: 'Fixed Avatar',
+        value: 'fixed'
+      }
+    ]
+  }[props.type]
 
   return (
     <Select
-      className="advanced-search--input"
+      className={props.className}
       classNamePrefix="react-select"
       defaultValue={options[0]}
       name="avatar"
