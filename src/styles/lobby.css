@@ -473,7 +473,7 @@ body {
 .advanced-search {
   border: black solid 1px;
   display: grid;
-  font-size: 3rem;
+  font-size: 2rem;
   &--prop {
     align-items: center;
     border: black solid 1px;
@@ -487,7 +487,7 @@ body {
   &--input {
     border: black solid 1px;
     box-sizing: border-box;
-    font-size: 3rem;
+    font-size: inherit;
     grid-column: 2 / 5;
     text-align: center;
     width: 100%;
