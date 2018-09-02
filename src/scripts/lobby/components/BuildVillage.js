@@ -1,7 +1,7 @@
 // @flow
 import type {Avatar, Member, MenuItem, Target} from 'lobby'
 import AsideContent from './AsideContent'
-import EditableVillageItem from './EditableVillageItem'
+import BuildVillageBox from './BuildVillageBox'
 import Header from './Header'
 import MainContent from './MainContent'
 import Menu from './Menu'
@@ -46,7 +46,7 @@ export default function BuildVillage(props: Props) {
     <div className="grid">
       <Header text="Build village" />
       <MainContent>
-        <EditableVillageItem
+        <BuildVillageBox
           handleAvatarChange={props.handleAvatarChange}
           handleMemberChange={props.handleMemberChange}
           handleNumberChange={props.handleNumberChange}

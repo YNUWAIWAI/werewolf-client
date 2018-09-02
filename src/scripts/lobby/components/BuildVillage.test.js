@@ -45,7 +45,7 @@ test('<BuildVillage />', () => {
   expect(
     wrapper
       .find('MainContent')
-      .find('EditableVillageItem')
+      .find('BuildVillageBox')
       .exists()
   ).toBe(true)
   expect(wrapper.find('AsideContent').exists()).toBe(true)

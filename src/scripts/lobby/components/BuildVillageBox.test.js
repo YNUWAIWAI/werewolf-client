@@ -1,9 +1,9 @@
 // @flow
-import EditableVillageItem from './EditableVillageItem'
+import BuildVillageBox from './BuildVillageBox'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-describe('<EditableVillageItem />', () => {
+describe('<BuildVillageBox />', () => {
   test('render', () => {
     const handleAvatarChange = jest.fn()
     const handleMemberChange = jest.fn()
@@ -30,7 +30,7 @@ describe('<EditableVillageItem />', () => {
       villageName: 'Alice\'s village'
     }
     const wrapper = shallow(
-      <EditableVillageItem
+      <BuildVillageBox
         handleAvatarChange={handleAvatarChange}
         handleMemberChange={handleMemberChange}
         handleNumberChange={handleNumberChange}

@@ -34,7 +34,7 @@ const getMember = role =>
       />
     )
 
-export default function SelectableMember(props: Props) {
+export default function SelectMember(props: Props) {
   const member = {
     A: getMember(props.role.A),
     B: getMember(props.role.B),

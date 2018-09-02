@@ -3,7 +3,7 @@ import type {Avatar, Member} from 'lobby'
 import AvatarSelect from './AvatarSelect'
 import NumberSelect from './NumberSelect'
 import React from 'react'
-import SelectableMember from './SelectableMember'
+import SelectMember from './SelectMember'
 import TextInput from './TextInput'
 import TextareaInput from './TextareaInput'
 import {getCastFromNumberOfPlayers} from '../constants/Cast'
@@ -32,9 +32,8 @@ type Props = {
   }
 }
 
-export default function EditableVillageItem(props: Props) {
+export default function BuildVillageBox(props: Props) {
   const handleChange = propName => valid => value => {
-    console.log(propName, valid, value)
     if (!valid) {
       props.handleValidityChange(propName)(false)
 
@@ -133,7 +132,7 @@ export default function EditableVillageItem(props: Props) {
         />
       </div>
 
-      <SelectableMember
+      <SelectMember
         handleMemberChange={handleChange('member')}
         handleNumberChange={handleChange('numberOfRobots')}
         numberOfHumans={props.village.numberOfHumans}
