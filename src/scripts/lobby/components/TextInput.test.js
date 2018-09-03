@@ -11,9 +11,11 @@ describe('<TextInput />', () => {
       <TextInput
         className="advanced-search--input"
         handleChange={handleChange}
+        initialValue=""
         max={30}
         min={5}
         placeholder="5-30 chars"
+        required
       />
     )
 
@@ -27,9 +29,11 @@ describe('<TextInput />', () => {
       <TextInput
         className="advanced-search--input"
         handleChange={handleChange}
+        initialValue=""
         max={30}
         min={5}
         placeholder="5-30 chars"
+        required
       />
     )
 
@@ -53,9 +57,11 @@ describe('<TextInput />', () => {
       <TextInput
         className="advanced-search--input"
         handleChange={handleChange}
+        initialValue=""
         max={30}
         min={5}
         placeholder="5-30 chars"
+        required
       />
     )
 

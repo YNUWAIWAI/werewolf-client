@@ -94,6 +94,7 @@ body {
         's-p s-v1 s-v2'
         'mem mem mem'
         'c-p c-v c-v';
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     &--village-name {
@@ -103,7 +104,7 @@ body {
         display: inline-flex;
         grid-area: v-n-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -114,8 +115,17 @@ body {
         font-size: inherit;
         grid-area: v-n-v;
         justify-content: center;
-        padding: 1rem;
         text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
+
+        &:invalid {
+          color: red;
+          outline-color: red;
+          outline-offset: -2px;
+        }
       }
     }
 
@@ -134,7 +144,7 @@ body {
         display: inline-flex;
         grid-area: h-n-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -145,8 +155,17 @@ body {
         font-size: inherit;
         grid-area: h-n-v;
         justify-content: center;
-        padding: 1rem;
         text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
+
+        &:invalid {
+          color: red;
+          outline-color: red;
+          outline-offset: -2px;
+        }
       }
     }
 
@@ -157,7 +176,7 @@ body {
         display: inline-flex;
         grid-area: s-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -168,11 +187,16 @@ body {
         font-size: inherit;
         grid-area: s-v1;
         justify-content: center;
-        padding: 1rem;
         text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
 
         &--select {
           font-size: inherit;
+          height: 100%;
+          width: 100%;
         }
       }
 
@@ -183,11 +207,16 @@ body {
         font-size: inherit;
         grid-area: s-v2;
         justify-content: center;
-        padding: 1rem;
         text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
 
         &--select {
           font-size: inherit;
+          height:100%;
+          width: 100%;
         }
       }
     }
@@ -261,6 +290,7 @@ body {
         'A A'
         'B B'
         'C C';
+      grid-template-columns: 1fr 1fr;
       padding: 1rem;
 
       &--robot {
@@ -275,6 +305,12 @@ body {
 
         &--select {
           font-size: inherit;
+          padding-left: 1rem;
+          width: 100%;
+        }
+
+        &.invalid {
+          border-color: red;
         }
       }
 
@@ -342,7 +378,7 @@ body {
         display: inline-flex;
         grid-area: c-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -353,8 +389,18 @@ body {
         font-size: inherit;
         grid-area: c-v;
         justify-content: center;
-        padding: 1rem;
+        padding: 0 1rem;
         text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
+
+        &:invalid {
+          color: red;
+          outline-color: red;
+          outline-offset: -2px;
+        }
       }
     }
   }
@@ -427,12 +473,13 @@ body {
 .advanced-search {
   border: black solid 1px;
   display: grid;
-  font-size: 3rem;
+  font-size: 2rem;
   &--prop {
     align-items: center;
     border: black solid 1px;
     display: inline-flex;
     grid-column: 1 / 2;
+    padding: 1rem 0;
 
     & > input {
       margin: 0 1rem;
@@ -441,12 +488,13 @@ body {
   &--input {
     border: black solid 1px;
     box-sizing: border-box;
-    font-size: 3rem;
+    font-size: inherit;
     grid-column: 2 / 5;
     text-align: center;
     width: 100%;
 
     textarea& {
+      padding: 0 1rem;
       resize: vertical;
     }
 
@@ -458,6 +506,9 @@ body {
   }
 }
 
+.react-select__control {
+  height: 100%;
+}
 .react-select__value-container {
   display: inline-flex;
   justify-content: center;

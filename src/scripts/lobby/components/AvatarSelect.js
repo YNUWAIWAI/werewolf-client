@@ -1,34 +1,59 @@
 // @flow
 import type {Avatar} from 'lobby'
 import React from 'react'
+import Select from 'react-select'
 
 type Props = {
-  +handleChange: Avatar => void
+  +className: string,
+  +handleChange: boolean => Avatar => void,
+  +type: 'advancedSearch' | 'buildVillage'
 }
 
 export default function AvatarSelect(props: Props) {
-  const handleChange = (event: SyntheticInputEvent<HTMLSelectElement>) => {
-    const value = event.target.value
-    const avatar: Avatar[] = ['fixed', 'random']
-    const maybe = avatar.find(v => v === value)
-
-    if (maybe) {
-      props.handleChange(maybe)
+  const handleChange = selectedOption => {
+    if (!selectedOption.value && props.type === 'advancedSearch') {
+      props.handleChange(true)('random')
+    } else if (!selectedOption.value && props.type === 'buildVillage') {
+      props.handleChange(false)('random')
+    } else {
+      props.handleChange(true)(selectedOption.value)
     }
   }
+  const options = {
+    advancedSearch: [
+      {
+        label: 'Random',
+        value: 'random'
+      },
+      {
+        label: 'Fixed',
+        value: 'fixed'
+      },
+      {
+        label: 'Unspecified',
+        value: 'unspecified'
+      }
+    ],
+    buildVillage: [
+      {
+        label: 'Random Avatar',
+        value: 'random'
+      },
+      {
+        label: 'Fixed Avatar',
+        value: 'fixed'
+      }
+    ]
+  }[props.type]
 
   return (
-    <select
-      className="village--item--setup--val2--select"
+    <Select
+      className={props.className}
+      classNamePrefix="react-select"
+      defaultValue={options[0]}
       name="avatar"
       onChange={handleChange}
-    >
-      <option value="fixed">
-        {'Fixed Avatar'}
-      </option>
-      <option value="random">
-        {'Random Avatar'}
-      </option>
-    </select>
+      options={options}
+    />
   )
 }

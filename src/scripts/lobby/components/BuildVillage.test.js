@@ -8,7 +8,16 @@ test('<BuildVillage />', () => {
   const handleMemberChange = jest.fn()
   const handleNumberChange = jest.fn()
   const handleTextChange = jest.fn()
+  const handleValidityChange = jest.fn()
   const transition = jest.fn()
+  const validity = {
+    avatar: true,
+    comment: true,
+    hostName: true,
+    numberOfPlayers: true,
+    numberOfRobots: true,
+    villageName: true
+  }
   const village = {
     comment: 'comment',
     hostName: 'hostName',
@@ -23,8 +32,10 @@ test('<BuildVillage />', () => {
       handleMemberChange={handleMemberChange}
       handleNumberChange={handleNumberChange}
       handleTextChange={handleTextChange}
+      handleValidityChange={handleValidityChange}
       menuItems={[]}
       transition={transition}
+      validity={validity}
       village={village}
     />
   )
@@ -34,7 +45,7 @@ test('<BuildVillage />', () => {
   expect(
     wrapper
       .find('MainContent')
-      .find('EditableVillageItem')
+      .find('BuildVillageBox')
       .exists()
   ).toBe(true)
   expect(wrapper.find('AsideContent').exists()).toBe(true)
@@ -48,5 +59,6 @@ test('<BuildVillage />', () => {
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleNumberChange).toHaveBeenCalledTimes(0)
   expect(handleTextChange).toHaveBeenCalledTimes(0)
+  expect(handleValidityChange).toHaveBeenCalledTimes(0)
   expect(transition).toHaveBeenCalledTimes(0)
 })

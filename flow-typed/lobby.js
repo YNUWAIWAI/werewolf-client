@@ -71,7 +71,6 @@ declare module 'lobby' {
     text: string,
     types: Target[]
   }
-  declare type TMenuItem = MenuItem
   declare type PingResult = {
     ping: string,
     token: string

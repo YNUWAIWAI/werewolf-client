@@ -4,9 +4,11 @@ import React from 'react'
 type Props = {
   +className: string,
   +handleChange: boolean => string => void,
+  +initialValue: string,
   +max: number,
   +min: number,
-  +placeholder: string
+  +placeholder: string,
+  +required: boolean
 }
 type State = {
   value: string
@@ -17,7 +19,7 @@ export default class TextInput extends React.Component<Props, State> {
     super(props)
 
     this.state = {
-      value: ''
+      value: this.props.initialValue
     }
   }
   shouldComponentUpdate() {
@@ -37,6 +39,7 @@ export default class TextInput extends React.Component<Props, State> {
         minLength={this.props.min}
         onChange={event => this.handleChange(event)}
         placeholder={this.props.placeholder}
+        required={this.props.required}
         type="text"
         value={this.state.value}
       />

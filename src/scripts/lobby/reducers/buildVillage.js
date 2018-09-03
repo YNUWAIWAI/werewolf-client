@@ -8,12 +8,21 @@ import type {
   BuildVillage$ChangeMember,
   BuildVillage$ChangeNumberOfPlayers,
   BuildVillage$ChangeNumberOfRobots,
+  BuildVillage$ChangeValidity,
   BuildVillage$ChangeVillageName,
   SocketMessage
 } from '../actions'
 
 export type State = {
   +menuItems: MenuItem[],
+  +validity: {
+    +avatar: boolean,
+    +comment: boolean,
+    +hostName: boolean,
+    +numberOfPlayers: boolean,
+    +numberOfRobots: boolean,
+    +villageName: boolean
+  },
   +village: {
     +avatar: Avatar,
     +comment: string,
@@ -33,6 +42,7 @@ type Action =
   | BuildVillage$ChangeMember
   | BuildVillage$ChangeNumberOfPlayers
   | BuildVillage$ChangeNumberOfRobots
+  | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
   | SocketMessage
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
@@ -40,6 +50,14 @@ type Action =
 
 export const initialState = {
   menuItems: [],
+  validity: {
+    avatar: true,
+    comment: true,
+    hostName: true,
+    numberOfPlayers: true,
+    numberOfRobots: true,
+    villageName: true
+  },
   village: {
     avatar: 'fixed',
     comment: '',
@@ -51,6 +69,10 @@ export const initialState = {
     numberOfRobots: 1,
     villageName: 'Alice\'s village'
   }
+}
+const initialValue = {
+  hostName: 'Alice',
+  villageName: 'Alice\'s village'
 }
 
 const buildVillage = (state: State = initialState, action: Action): State => {
@@ -117,6 +139,14 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           numberOfRobots: action.numberOfRobots
         }
       }
+    case ActionTypes.buildVillage.CHANGE_VALIDITY:
+      return {
+        ... state,
+        validity: {
+          ... state.validity,
+          [action.propName]: action.validity
+        }
+      }
     case ActionTypes.buildVillage.CHANGE_VILLAGE_NAME:
       return {
         ... state,
@@ -142,9 +172,19 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        validity: initialState.validity,
         village: {
           ... state.village,
           isHuman: true
+        }
+      }
+    case ActionTypes.SHOW_MAIN:
+      return {
+        ... state,
+        validity: initialState.validity,
+        village: {
+          ... initialState.village,
+          ... initialValue
         }
       }
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
@@ -164,6 +204,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        validity: initialState.validity,
         village: {
           ... state.village,
           isHuman: false
@@ -174,12 +215,15 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         case 'avatar': {
           const payload: Payload$Avatar = action.payload
 
+          initialValue.hostName = payload.name
+          initialValue.villageName = `${payload.name}'s village`
+
           return {
             ... state,
             village: {
               ... state.village,
-              hostName: payload.name,
-              villageName: `${payload.name}'s village`
+              hostName: initialValue.hostName,
+              villageName: initialValue.villageName
             }
           }
         }
