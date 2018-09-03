@@ -104,7 +104,7 @@ body {
         display: inline-flex;
         grid-area: v-n-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -115,7 +115,6 @@ body {
         font-size: inherit;
         grid-area: v-n-v;
         justify-content: center;
-        padding: 1rem;
         text-align: center;
 
         &.invalid {
@@ -145,7 +144,7 @@ body {
         display: inline-flex;
         grid-area: h-n-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -156,7 +155,6 @@ body {
         font-size: inherit;
         grid-area: h-n-v;
         justify-content: center;
-        padding: 1rem;
         text-align: center;
 
         &.invalid {
@@ -178,7 +176,7 @@ body {
         display: inline-flex;
         grid-area: s-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -197,6 +195,7 @@ body {
 
         &--select {
           font-size: inherit;
+          height: 100%;
           width: 100%;
         }
       }
@@ -216,6 +215,7 @@ body {
 
         &--select {
           font-size: inherit;
+          height:100%;
           width: 100%;
         }
       }
@@ -378,7 +378,7 @@ body {
         display: inline-flex;
         grid-area: c-p;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
       }
 
@@ -389,7 +389,6 @@ body {
         font-size: inherit;
         grid-area: c-v;
         justify-content: center;
-        padding: 1rem;
         text-align: center;
 
         &.invalid {
@@ -479,6 +478,7 @@ body {
     border: black solid 1px;
     display: inline-flex;
     grid-column: 1 / 2;
+    padding: 1rem 0;
 
     & > input {
       margin: 0 1rem;
@@ -504,6 +504,9 @@ body {
   }
 }
 
+.react-select__control {
+  height: 100%;
+}
 .react-select__value-container {
   display: inline-flex;
   justify-content: center;
