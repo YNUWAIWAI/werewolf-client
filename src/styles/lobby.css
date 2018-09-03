@@ -389,6 +389,7 @@ body {
         font-size: inherit;
         grid-area: c-v;
         justify-content: center;
+        padding: 0 1rem;
         text-align: center;
 
         &.invalid {
@@ -493,6 +494,7 @@ body {
     width: 100%;
 
     textarea& {
+      padding: 0 1rem;
       resize: vertical;
     }
 
