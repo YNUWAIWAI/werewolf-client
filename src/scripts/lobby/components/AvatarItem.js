@@ -6,9 +6,9 @@ export type Props = {
   +canKickOut: boolean,
   +isHost: boolean,
   +isMe: boolean,
-  +ping: string,
   +kickOut: void => void,
-  +name: string
+  +name: string,
+  +ping: string
 }
 
 export default function AvatarItem(props: Props) {
