@@ -415,13 +415,19 @@ body {
   &--item {
     border-bottom: 1px solid black;
     display: grid;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     grid-gap: 0.5rem;
-    grid-template-columns: 2rem 3fr 1fr;
+    grid-template-columns: 2.5rem 3fr 1fr 1fr;
+    height: 2.5rem;
 
     &--image {
-      height: 2rem;
-      width: 2rem;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+
+      & > img {
+        width: 100%;
+      }
     }
 
     &--name {
@@ -431,10 +437,20 @@ body {
     }
 
     &--host {
+      align-items: center;
       border: 1px solid black;
       border-radius: 1rem;
+      display: inline-flex;
+      justify-content: center;
       margin: 2px;
-      text-align: center;
+    }
+
+    &--ping {
+      align-items: center;
+      display: inline-flex;
+      font-size: 0.8rem;
+      justify-content: center;
+      grid-column: 4 / 5;
     }
 
     &.me {

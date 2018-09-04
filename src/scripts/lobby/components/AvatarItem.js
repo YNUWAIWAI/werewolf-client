@@ -6,6 +6,7 @@ export type Props = {
   +canKickOut: boolean,
   +isHost: boolean,
   +isMe: boolean,
+  +ping: string,
   +kickOut: void => void,
   +name: string
 }
@@ -21,7 +22,9 @@ export default function AvatarItem(props: Props) {
 
   return (
     <div className={`avatar-list--item ${props.isMe ? 'me' : ''}`} onClick={handleClick}>
-      <img className="avatar-list--item--image" src={props.avatarImage} />
+      <div className="avatar-list--item--image">
+        <img src={props.avatarImage} />
+      </div>
       <div className="avatar-list--item--name">
         {props.name}
       </div>
@@ -32,6 +35,9 @@ export default function AvatarItem(props: Props) {
           </div> :
           ''
       }
+      <div className="avatar-list--item--ping">
+        {props.ping}
+      </div>
     </div>
   )
 }

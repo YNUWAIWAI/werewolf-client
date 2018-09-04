@@ -10,6 +10,7 @@ export type Props = {
     +isHost: boolean,
     +isMe: boolean,
     +name: string,
+    +ping: string,
     +token: string
   }[],
   +kickOut: string => void => void
