@@ -34,9 +34,11 @@ export type Props =
   & OwnProps
 
 export default function WaitingForPlayers(props: Props) {
+  const [head, ... tail] = props.menuItems
+
   return (
     <div className="grid">
-      <Header text="Waiting for players" />
+      <Header text="Waiting for Players" />
       <MainContent>
         {
           props.village ?
@@ -49,6 +51,12 @@ export default function WaitingForPlayers(props: Props) {
         }
       </MainContent>
       <AsideContent>
+        <Menu
+          class="compact-menu"
+          itemClass="compact-menu--item"
+          items={[head]}
+          transition={props.transition}
+        />
         <AvatarList
           isPlayer={props.isPlayer}
           items={props.players}
@@ -57,7 +65,7 @@ export default function WaitingForPlayers(props: Props) {
         <Menu
           class="compact-menu"
           itemClass="compact-menu--item"
-          items={props.menuItems}
+          items={tail}
           transition={props.transition}
         />
       </AsideContent>
