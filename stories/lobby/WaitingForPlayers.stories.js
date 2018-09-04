@@ -9,7 +9,9 @@ import {withKnobs} from '@storybook/addon-knobs/react'
 storiesOf('lobby|WaitingForPlayers', module)
   .addDecorator(withKnobs)
   .add('default', withInfo('')(() => {
-    const kickOut = () => {}
+    const kickOut = token => () => {
+      console.log(`kick out ${token}`)
+    }
     const transition = () => {}
     const menuItems = [
       {
@@ -105,15 +107,6 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
-        token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
-      },
-      {
-        avatarImage: '',
-        canKickOut: false,
-        isHost: false,
-        isMe: false,
-        name: 'Anonymous',
-        ping: '99.999 s',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
       },
       {
@@ -160,6 +153,15 @@ storiesOf('lobby|WaitingForPlayers', module)
         name: 'Anonymous',
         ping: '99.999 s',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
+      },
+      {
+        avatarImage: '',
+        canKickOut: false,
+        isHost: false,
+        isMe: false,
+        name: 'Anonymous',
+        ping: '99.999 s',
+        token: '3F2504E0-4F89-11D3-9A0C-0305E82C3315'
       }
     ]
     const village = {
