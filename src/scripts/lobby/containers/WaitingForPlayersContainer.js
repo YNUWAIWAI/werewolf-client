@@ -11,14 +11,32 @@ type Action =
 const defaultAvatarImage = ''
 const mapStateToProps = (state: ReducerState): StateProps => {
   const amIHost = state.waitingForPlayers.players.some(v => v.isHost && v.isMe)
-  const players = state.waitingForPlayers.players.map(player => ({
-    avatarImage: player.avatarImage ? player.avatarImage : defaultAvatarImage,
-    canKickOut: amIHost && !player.isMe,
-    isHost: player.isHost,
-    isMe: player.isMe,
-    name: player.name,
-    token: player.token
-  }))
+  const players = state.waitingForPlayers.players.map(player => {
+    const result = state.ping.results.find(r => r.token === player.token)
+
+    if (result) {
+      return {
+        avatarImage: player.avatarImage ? player.avatarImage : defaultAvatarImage,
+        canKickOut: amIHost && !player.isMe,
+        isHost: player.isHost,
+        isMe: player.isMe,
+        name: player.name,
+        ping: result.ping,
+        token: player.token
+      }
+    }
+
+    return {
+      avatarImage: player.avatarImage ? player.avatarImage : defaultAvatarImage,
+      canKickOut: amIHost && !player.isMe,
+      isHost: player.isHost,
+      isMe: player.isMe,
+      name: player.name,
+      ping: '99.999 s',
+      token: player.token
+    }
+
+  })
 
   if (state.waitingForPlayers.village) {
     return {

@@ -17,6 +17,7 @@ export type StateProps = {
     +isHost: boolean,
     +isMe: boolean,
     +name: string,
+    +ping: string,
     +token: string
   }[],
   +village?: Village

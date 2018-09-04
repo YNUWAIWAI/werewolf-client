@@ -13,14 +13,16 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe name="name" /
       isMe
       kickOut={kickOut}
       name="name"
+      ping="99.999 s"
     />
   )
 
-  expect(wrapper.children()).toHaveLength(3)
-  expect(wrapper.find('img.avatar-list--item--image[src="avatarImage"]').exists()).toBe(true)
+  expect(wrapper.children()).toHaveLength(4)
+  expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(true)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').text()).toBe('Host')
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
@@ -34,14 +36,16 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
       isMe
       kickOut={kickOut}
       name="name"
+      ping="99.999 s"
     />
   )
 
-  expect(wrapper.children()).toHaveLength(2)
-  expect(wrapper.find('img.avatar-list--item--image[src="avatarImage"]').exists()).toBe(true)
+  expect(wrapper.children()).toHaveLength(3)
+  expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(true)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').exists()).toBe(false)
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
@@ -55,14 +59,16 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe={false} name=
       isMe={false}
       kickOut={kickOut}
       name="name"
+      ping="99.999 s"
     />
   )
 
-  expect(wrapper.children()).toHaveLength(3)
-  expect(wrapper.find('img.avatar-list--item--image[src="avatarImage"]').exists()).toBe(true)
+  expect(wrapper.children()).toHaveLength(4)
+  expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(false)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').text()).toBe('Host')
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
@@ -76,14 +82,16 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe={fals
       isMe={false}
       kickOut={kickOut}
       name="name"
+      ping="99.999 s"
     />
   )
 
-  expect(wrapper.children()).toHaveLength(2)
-  expect(wrapper.find('img.avatar-list--item--image[src="avatarImage"]').exists()).toBe(true)
+  expect(wrapper.children()).toHaveLength(3)
+  expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(false)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').exists()).toBe(false)
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
@@ -97,6 +105,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
       isMe
       kickOut={kickOut}
       name="name"
+      ping="99.999 s"
     />
   )
 
@@ -117,6 +126,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut={false} isHost={false} is
       isMe
       kickOut={kickOut}
       name="name"
+      ping="99.999 s"
     />
   )
 
