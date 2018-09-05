@@ -296,7 +296,7 @@ storiesOf('village|Chat', module)
     return story
   }))
   .add('区切り', withInfo('')(() => {
-    const allIds = ['chat0', 'delimeter0', 'chat1']
+    const allIds = ['delimeter1', 'chat0', 'delimeter0', 'chat1']
     const byId = {
       'chat0': {
         id: 1,
@@ -324,6 +324,10 @@ storiesOf('village|Chat', module)
       },
       'delimeter0': {
         text: '1日目',
+        type: 'delimeter'
+      },
+      'delimeter1': {
+        text: '感想戦',
         type: 'delimeter'
       }
     }
