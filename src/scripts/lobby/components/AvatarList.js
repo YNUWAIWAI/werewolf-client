@@ -1,5 +1,6 @@
 // @flow
 import AvatarItem from './AvatarItem'
+import type {PingStatus} from 'lobby'
 import React from 'react'
 
 export type Props = {
@@ -11,6 +12,7 @@ export type Props = {
     +isMe: boolean,
     +name: string,
     +ping: string,
+    +pingStatus: PingStatus,
     +token: string
   }[],
   +kickOut: string => void => void

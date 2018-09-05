@@ -1,5 +1,9 @@
 // @flow
+import Danger from './svg/Danger'
+import type {PingStatus} from 'lobby'
 import React from 'react'
+import Safe from './svg/Safe'
+import Warning from './svg/Warning'
 
 export type Props = {
   +avatarImage: string,
@@ -8,7 +12,8 @@ export type Props = {
   +isMe: boolean,
   +kickOut: void => void,
   +name: string,
-  +ping: string
+  +ping: string,
+  +pingStatus: PingStatus
 }
 
 export default function AvatarItem(props: Props) {
@@ -19,6 +24,11 @@ export default function AvatarItem(props: Props) {
       }
     }
   }
+  const Status = {
+    danger: Danger,
+    safe: Safe,
+    warning: Warning
+  }[props.pingStatus]
 
   return (
     <div className={`avatar-list--item ${props.isMe ? 'me' : ''}`} onClick={handleClick}>
@@ -36,7 +46,8 @@ export default function AvatarItem(props: Props) {
           ''
       }
       <div className="avatar-list--item--ping">
-        {props.ping}
+        <Status />
+        {props.ping.padStart(8, '0')}
       </div>
     </div>
   )

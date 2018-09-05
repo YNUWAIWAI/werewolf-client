@@ -40,6 +40,7 @@ test('<AvatarList isPlayer /> 1 items', () => {
       isMe: true,
       name: 'name',
       ping: '99.999 s',
+      pingStatus: 'danger',
       token: 'token'
     }
   ]
@@ -65,6 +66,7 @@ test('<AvatarList isPlayer={false} /> 1 items', () => {
       isMe: true,
       name: 'name',
       ping: '99.999 s',
+      pingStatus: 'danger',
       token: 'token'
     }
   ]
@@ -90,6 +92,7 @@ test('<AvatarList isPlayer /> 2 items', () => {
       isMe: true,
       name: 'name',
       ping: '99.999 s',
+      pingStatus: 'danger',
       token: 'token1'
     },
     {
@@ -99,6 +102,7 @@ test('<AvatarList isPlayer /> 2 items', () => {
       isMe: false,
       name: 'name',
       ping: '99.999 s',
+      pingStatus: 'danger',
       token: 'token2'
     }
   ]
@@ -126,6 +130,7 @@ test('<AvatarList isPlayer={false} /> 2 items', () => {
       isMe: true,
       name: 'name',
       ping: '99.999 s',
+      pingStatus: 'danger',
       token: 'token1'
     },
     {
@@ -135,6 +140,7 @@ test('<AvatarList isPlayer={false} /> 2 items', () => {
       isMe: false,
       name: 'name',
       ping: '99.999 s',
+      pingStatus: 'danger',
       token: 'token2'
     }
   ]

@@ -974,6 +974,7 @@ describe('SOCKET_MESSAGE tyoe: "ping"', () => {
       results: [
         {
           ping: '99.999 s',
+          status: 'danger',
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
         }
       ],
