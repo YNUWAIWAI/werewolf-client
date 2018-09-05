@@ -35,6 +35,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       },
       {
@@ -43,7 +44,8 @@ storiesOf('lobby|WaitingForPlayers', module)
         isHost: false,
         isMe: true,
         name: 'Cathy',
-        ping: '99.999 s',
+        ping: '2.000 s',
+        pingStatus: 'warning',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
       },
       {
@@ -52,7 +54,8 @@ storiesOf('lobby|WaitingForPlayers', module)
         isHost: false,
         isMe: false,
         name: 'Anonymous',
-        ping: '99.999 s',
+        ping: '0.500 s',
+        pingStatus: 'safe',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
       },
       {
@@ -62,6 +65,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
       },
       {
@@ -71,6 +75,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
       },
       {
@@ -80,6 +85,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
       },
       {
@@ -89,6 +95,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
       },
       {
@@ -98,6 +105,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
       },
       {
@@ -107,6 +115,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
       },
       {
@@ -116,6 +125,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
       },
       {
@@ -125,6 +135,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
       },
       {
@@ -134,6 +145,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
       },
       {
@@ -143,6 +155,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
       },
       {
@@ -152,6 +165,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
       },
       {
@@ -161,6 +175,7 @@ storiesOf('lobby|WaitingForPlayers', module)
         isMe: false,
         name: 'Anonymous',
         ping: '99.999 s',
+        pingStatus: 'danger',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3315'
       }
     ]
