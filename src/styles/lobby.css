@@ -13,16 +13,91 @@ body {
   @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
 }
 
-.menu {
-  list-style-type: none;
-  padding: 1rem;
+.aside-content {
+  grid-area: aside;
+}
+
+.avatar {
+  align-items: center;
+  display: inline-flex;
+  grid-area: avatar;
+
+  &--image {
+    height: 3rem;
+  }
+
+  &--name {
+    font-size: 2.5rem;
+  }
+}
+
+.avatar-list {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  margin-bottom: 1rem;
 
   &--item {
-    border: 1px solid black;
-    font-size: 4rem;
-    margin: 1.5rem 10rem;
-    padding: 1rem;
-    text-align: center;
+    border-bottom: 1px solid black;
+    display: grid;
+    font-size: 1.2rem;
+    grid-gap: 0.5rem;
+    grid-template-columns: 2.5rem 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
+    height: 2.5rem;
+
+    &--image {
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+
+      & > img {
+        width: 100%;
+      }
+    }
+
+    &--host {
+      align-items: center;
+      border: 1px solid black;
+      border-radius: 1rem;
+      display: inline-flex;
+      justify-content: center;
+      margin: 2px;
+    }
+
+    &--name {
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+    }
+
+    &--ping {
+      align-items: center;
+      display: inline-flex;
+      font-size: 0.8rem;
+      justify-content: center;
+      grid-column: 4 / 5;
+
+      & > svg {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      & > svg.danger {
+        fill: var(--danger-color);
+      }
+
+      & > svg.safe {
+        fill: var(--safe-color);
+      }
+
+      & > svg.warning {
+        fill: var(--warning-color);
+      }
+    }
+
+    &.me {
+      background: lightcyan;
+    }
   }
 }
 
@@ -49,32 +124,104 @@ body {
   margin: 1rem;
 }
 
-.main-content {
-  grid-area: main;
-}
-
-.aside-content {
-  grid-area: aside;
-}
-
 .header {
   font-size: 3rem;
   grid-area: header;
   padding: 1rem;
 }
 
-.avatar {
-  align-items: center;
+.id-search {
+  font-size: 3rem;
   display: inline-flex;
-  grid-area: avatar;
+  justify-content: center;
+  align-items: center;
 
-  &--image {
-    height: 3rem;
+  &--input {
+    height: 4.5rem; /* font-size * line-height */
+    width: 12rem; /* (number_of_digit + 1) * font-size */
+    text-align: center;
+    font-size: 3rem;
   }
 
-  &--name {
-    font-size: 2.5rem;
+  &--input:invalid + &--validity::after {
+    content: '✖';
+    color: #f00;
+    padding-left: 0.5rem;
   }
+
+  &--input:valid + &--validity::after {
+    content: '✓';
+    color: #26b72b;
+    padding-left: 0.5rem;
+  }
+
+  &--sharp {
+    padding-right: 0.5rem
+  }
+}
+
+.advanced-search {
+  border: black solid 1px;
+  display: grid;
+  font-size: 2rem;
+
+  &--input {
+    border: black solid 1px;
+    box-sizing: border-box;
+    font-size: inherit;
+    grid-column: 2 / 5;
+    text-align: center;
+    width: 100%;
+
+    textarea& {
+      padding: 0 1rem;
+      resize: vertical;
+    }
+
+    &:invalid {
+      color: red;
+      outline-color: red;
+      outline-offset: -2px;
+    }
+  }
+
+  &--prop {
+    align-items: center;
+    border: black solid 1px;
+    display: inline-flex;
+    grid-column: 1 / 2;
+    padding: 1rem 0;
+
+    & > input {
+      margin: 0 1rem;
+    }
+  }
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 1rem;
+
+  &--item {
+    border: 1px solid black;
+    font-size: 4rem;
+    margin: 1.5rem 10rem;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+.react-select__control {
+  height: 100%;
+}
+
+.react-select__value-container {
+  display: inline-flex;
+  justify-content: center;
 }
 
 .village {
@@ -103,12 +250,12 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    &--village-name {
+    &--comment {
       &--prop {
         align-items: center;
         border: solid 1px black;
         display: inline-flex;
-        grid-area: v-n-p;
+        grid-area: c-p;
         justify-content: center;
         padding: 1rem 0;
         text-align: center;
@@ -119,8 +266,9 @@ body {
         border: solid 1px black;
         display: inline-flex;
         font-size: inherit;
-        grid-area: v-n-v;
+        grid-area: c-v;
         justify-content: center;
+        padding: 0 1rem;
         text-align: center;
 
         &.invalid {
@@ -133,14 +281,6 @@ body {
           outline-offset: -2px;
         }
       }
-    }
-
-    &--idForSearching {
-      align-items: center;
-      border: solid 1px black;
-      display: inline-flex;
-      grid-area: i-f-s;
-      justify-content: center;
     }
 
     &--host-name {
@@ -175,56 +315,12 @@ body {
       }
     }
 
-    &--setup {
-      &--prop {
-        align-items: center;
-        border: solid 1px black;
-        display: inline-flex;
-        grid-area: s-p;
-        justify-content: center;
-        padding: 1rem 0;
-        text-align: center;
-      }
-
-      &--val1 {
-        align-items: center;
-        border: solid 1px black;
-        display: inline-flex;
-        font-size: inherit;
-        grid-area: s-v1;
-        justify-content: center;
-        text-align: center;
-
-        &.invalid {
-          border-color: red;
-        }
-
-        &--select {
-          font-size: inherit;
-          height: 100%;
-          width: 100%;
-        }
-      }
-
-      &--val2 {
-        align-items: center;
-        border: solid 1px black;
-        display: inline-flex;
-        font-size: inherit;
-        grid-area: s-v2;
-        justify-content: center;
-        text-align: center;
-
-        &.invalid {
-          border-color: red;
-        }
-
-        &--select {
-          font-size: inherit;
-          height:100%;
-          width: 100%;
-        }
-      }
+    &--idForSearching {
+      align-items: center;
+      border: solid 1px black;
+      display: inline-flex;
+      grid-area: i-f-s;
+      justify-content: center;
     }
 
     &--member {
@@ -377,12 +473,64 @@ body {
       }
     }
 
-    &--comment {
+    &--setup {
       &--prop {
         align-items: center;
         border: solid 1px black;
         display: inline-flex;
-        grid-area: c-p;
+        grid-area: s-p;
+        justify-content: center;
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      &--val1 {
+        align-items: center;
+        border: solid 1px black;
+        display: inline-flex;
+        font-size: inherit;
+        grid-area: s-v1;
+        justify-content: center;
+        text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
+
+        &--select {
+          font-size: inherit;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &--val2 {
+        align-items: center;
+        border: solid 1px black;
+        display: inline-flex;
+        font-size: inherit;
+        grid-area: s-v2;
+        justify-content: center;
+        text-align: center;
+
+        &.invalid {
+          border-color: red;
+        }
+
+        &--select {
+          font-size: inherit;
+          height:100%;
+          width: 100%;
+        }
+      }
+    }
+
+    &--village-name {
+      &--prop {
+        align-items: center;
+        border: solid 1px black;
+        display: inline-flex;
+        grid-area: v-n-p;
         justify-content: center;
         padding: 1rem 0;
         text-align: center;
@@ -393,9 +541,8 @@ body {
         border: solid 1px black;
         display: inline-flex;
         font-size: inherit;
-        grid-area: c-v;
+        grid-area: v-n-v;
         justify-content: center;
-        padding: 0 1rem;
         text-align: center;
 
         &.invalid {
@@ -410,145 +557,4 @@ body {
       }
     }
   }
-}
-
-.avatar-list {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  margin-bottom: 1rem;
-
-  &--item {
-    border-bottom: 1px solid black;
-    display: grid;
-    font-size: 1.2rem;
-    grid-gap: 0.5rem;
-    grid-template-columns: 2.5rem 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
-    height: 2.5rem;
-
-    &--image {
-      align-items: center;
-      display: inline-flex;
-      justify-content: center;
-
-      & > img {
-        width: 100%;
-      }
-    }
-
-    &--name {
-      align-items: center;
-      display: inline-flex;
-      justify-content: center;
-    }
-
-    &--host {
-      align-items: center;
-      border: 1px solid black;
-      border-radius: 1rem;
-      display: inline-flex;
-      justify-content: center;
-      margin: 2px;
-    }
-
-    &--ping {
-      align-items: center;
-      display: inline-flex;
-      font-size: 0.8rem;
-      justify-content: center;
-      grid-column: 4 / 5;
-
-      & > svg {
-        height: 2rem;
-        width: 2rem;
-      }
-
-      & > svg.danger {
-        fill: var(--danger-color);
-      }
-
-      & > svg.safe {
-        fill: var(--safe-color);
-      }
-
-      & > svg.warning {
-        fill: var(--warning-color);
-      }
-    }
-
-    &.me {
-      background: lightcyan;
-    }
-  }
-}
-
-.id-search {
-  font-size: 3rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  &--input {
-    height: 4.5rem; /* font-size * line-height */
-    width: 12rem; /* (number_of_digit + 1) * font-size */
-    text-align: center;
-    font-size: 3rem;
-  }
-  &--input:invalid + &--validity::after {
-    content: '✖';
-    color: #f00;
-    padding-left: 0.5rem;
-  }
-  &--input:valid + &--validity::after {
-    content: '✓';
-    color: #26b72b;
-    padding-left: 0.5rem;
-  }
-  &--sharp {
-    padding-right: 0.5rem
-  }
-}
-
-.advanced-search {
-  border: black solid 1px;
-  display: grid;
-  font-size: 2rem;
-  &--prop {
-    align-items: center;
-    border: black solid 1px;
-    display: inline-flex;
-    grid-column: 1 / 2;
-    padding: 1rem 0;
-
-    & > input {
-      margin: 0 1rem;
-    }
-  }
-  &--input {
-    border: black solid 1px;
-    box-sizing: border-box;
-    font-size: inherit;
-    grid-column: 2 / 5;
-    text-align: center;
-    width: 100%;
-
-    textarea& {
-      padding: 0 1rem;
-      resize: vertical;
-    }
-
-    &:invalid {
-      color: red;
-      outline-color: red;
-      outline-offset: -2px;
-    }
-  }
-}
-
-.react-select__control {
-  height: 100%;
-}
-.react-select__value-container {
-  display: inline-flex;
-  justify-content: center;
 }
