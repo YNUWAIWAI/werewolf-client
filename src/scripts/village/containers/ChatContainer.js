@@ -15,11 +15,19 @@ const mapStateToProps = (state: ReducerState): StateProps => {
           ... item,
           name: item.name[state.language]
         }
-      } else {
+      } else if (item.type === 'delimeter' && item.date >= 0) {
         byId[id] = {
           text: {
             en: `Day ${item.date}`,
             ja: `${item.date}日目`
+          }[state.language],
+          type: item.type
+        }
+      } else {
+        byId[id] = {
+          text: {
+            en: 'Post Mortem',
+            ja: '感想戦'
           }[state.language],
           type: item.type
         }
