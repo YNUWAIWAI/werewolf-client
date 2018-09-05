@@ -22,6 +22,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
         isMe: player.isMe,
         name: player.name,
         ping: result.ping,
+        pingStatus: result.status,
         token: player.token
       }
     }
@@ -33,6 +34,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       isMe: player.isMe,
       name: player.name,
       ping: '99.999 s',
+      pingStatus: 'danger',
       token: player.token
     }
 

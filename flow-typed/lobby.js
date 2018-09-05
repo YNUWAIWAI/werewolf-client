@@ -74,6 +74,7 @@ declare module 'lobby' {
   }
   declare type PingResult = {
     ping: string,
+    status: PingStatus,
     token: string
   }
   declare type Payload<T> = {
