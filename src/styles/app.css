@@ -76,10 +76,12 @@ body {
 
   &--delimeter {
     align-items: center;
+    border-bottom: 1px solid #d4d4d4;
     display: flex;
     font-size: 1.5rem;
     justify-content: center;
-    margin-top: 1rem;
+    margin: 1rem auto 0 auto;
+    width: 74%;
   }
 
   &--icon {
