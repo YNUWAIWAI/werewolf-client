@@ -1,5 +1,5 @@
 // @flow
-import type {MenuItem, Target, Village} from 'lobby'
+import type {MenuItem, PingStatus, Target, Village} from 'lobby'
 import AsideContent from './AsideContent'
 import AvatarList from './AvatarList'
 import Header from './Header'
@@ -18,6 +18,7 @@ export type StateProps = {
     +isMe: boolean,
     +name: string,
     +ping: string,
+    +pingStatus: PingStatus,
     +token: string
   }[],
   +village?: Village

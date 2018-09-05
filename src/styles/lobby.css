@@ -2,6 +2,12 @@
   margin: 0;
 }
 
+:root {
+  --danger-color: rgb(219, 69, 69);
+  --safe-color: rgb(57, 170, 86);
+  --warning-color: rgb(240, 210, 24)
+}
+
 body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
   @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
@@ -451,6 +457,23 @@ body {
       font-size: 0.8rem;
       justify-content: center;
       grid-column: 4 / 5;
+
+      & > svg {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      & > svg.danger {
+        fill: var(--danger-color);
+      }
+
+      & > svg.safe {
+        fill: var(--safe-color);
+      }
+
+      & > svg.warning {
+        fill: var(--warning-color);
+      }
     }
 
     &.me {

@@ -2,6 +2,7 @@ declare module 'lobby' {
   declare type Avatar = 'fixed' | 'random' | 'unspecified'
   declare type Member = 'A' | 'B' | 'C'
   declare type Lobby = 'human player' | 'onymous audience' | 'robot player'
+  declare type PingStatus = 'danger' | 'safe' | 'warning'
   declare type Village = {
     avatar: string,
     comment: ?string,
