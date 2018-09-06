@@ -2,11 +2,11 @@
 import * as types from '../constants/ActionTypes'
 import {type Action} from '.'
 import type {Middleware} from 'redux'
+import type {Payload$WatingPage} from 'lobby'
 import type {ReducerState} from '../reducers'
-import {socket as socketAction} from '../actions'
 
-const dbName = 'lobby'
 let db
+const dbName = 'lobby'
 const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => action => {
   const connectDB = () => {
     const request = window.indexedDB.open(dbName)
@@ -15,19 +15,28 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
       console.error(event.target.errorCode)
     }
     request.onupgradeneeded = event => {
-      console.log('upgradeneeded')
       db = event.target.result
-      const objectStore = db.createObjectStore('lastVisited',  {keyPath: 'token'})
+      const objectStore = db.createObjectStore(
+        'lastVisited',
+        {
+          keyPath: 'token'
+        }
+      )
 
-      objectStore.createIndex('villageId', 'villageId', {unique: false})
-      objectStore.transaction.oncomplete = e =>{
-        const lastVisitedObjectStore = db.transaction('lastVisited', 'readwrite').objectStore('lastVisited')
-
-        lastVisitedObjectStore.add({
-          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
-          villageId: 1
-        })
-      }
+      objectStore.createIndex(
+        'lobby',
+        'lobby',
+        {
+          unique: false
+        }
+      )
+      objectStore.createIndex(
+        'villageId',
+        'villageId',
+        {
+          unique: false
+        }
+      )
     }
     request.onsuccess = event => {
       db = event.target.result
@@ -51,7 +60,22 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
     connectDB()
   }
 
-  return next(action)
+  switch (action.type) {
+    case types.SOCKET_MESSAGE: {
+      if (action.payload.type === 'waitingPage') {
+        const payload: Payload$WatingPage = action.payload
+        const state = store.getState()
+
+        console.log('token', state.token[state.token.lobby])
+        console.log('lobby', state.token.lobby)
+        console.log('villageId', payload.village.id)
+      }
+
+      return next(action)
+    }
+    default:
+      return next(action)
+  }
 }
 
 export default indexedDBMiddleware
