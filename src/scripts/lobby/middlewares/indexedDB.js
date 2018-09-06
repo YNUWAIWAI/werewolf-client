@@ -93,6 +93,27 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
 
       return next(action)
     }
+    case types.LEAVE_WAITING_PAGE: {
+      connectLobbyDB().then(db => {
+        const transaction = db.transaction('history', 'readwrite')
+
+        transaction.oncomplete = event => {
+          console.log('All done!')
+        }
+        transaction.onerror = event => {
+          console.error('transaction error')
+        }
+
+        const objectStore = transaction.objectStore('history')
+        const request = objectStore.delete('lastVisited')
+
+        request.onsuccess = event => {
+          console.log(event.target.result)
+        }
+      })
+
+      return next(action)
+    }
     case types.SOCKET_MESSAGE: {
       if (action.payload.type === 'waitingPage') {
         const payload: Payload$WatingPage = action.payload
