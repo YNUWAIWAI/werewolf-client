@@ -25,9 +25,9 @@ const connectDB = dbName => {
     request.onupgradeneeded = event => {
       db = event.target.result
       const objectStore = db.createObjectStore(
-        'lastVisited',
+        'history',
         {
-          autoIncrement: true
+          keyPath: 'type'
         }
       )
 
@@ -36,6 +36,13 @@ const connectDB = dbName => {
         'lobby',
         {
           unique: false
+        }
+      )
+      objectStore.createIndex(
+        'token',
+        'token',
+        {
+          unique: true
         }
       )
       objectStore.createIndex(
@@ -72,9 +79,9 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
       const state = store.getState()
 
       connectLobbyDB().then(db => {
-        const transaction = db.transaction('lastVisited')
-        const objectStore = transaction.objectStore('lastVisited')
-        const request = objectStore.get(state.token['human player'])
+        const transaction = db.transaction('history')
+        const objectStore = transaction.objectStore('history')
+        const request = objectStore.get('lastVisited')
 
         request.onerror = event => {
           console.error('error')
@@ -92,7 +99,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
         const state = store.getState()
 
         connectLobbyDB().then(db => {
-          const transaction = db.transaction('lastVisited', 'readwrite')
+          const transaction = db.transaction('history', 'readwrite')
 
           transaction.oncomplete = event => {
             console.log('All done!')
@@ -101,10 +108,11 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
             console.error('transaction error')
           }
 
-          const objectStore = transaction.objectStore('lastVisited')
+          const objectStore = transaction.objectStore('history')
           const request = objectStore.add({
             lobby: state.token.lobby,
             token: state.token[state.token.lobby],
+            type: 'lastVisited',
             villageId: payload.village.id
           })
 
