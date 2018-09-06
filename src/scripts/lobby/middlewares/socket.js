@@ -10,6 +10,7 @@ const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = op
     let socket
 
     return () => new Promise((resolve, reject) => {
+      console.log(socket)
       if (socket) {
         resolve(socket)
       }
