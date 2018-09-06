@@ -92,7 +92,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
         const payload: Payload$WatingPage = action.payload
         const state = store.getState()
 
-        connectDB().then(db => {
+        connectLobbyDB().then(db => {
           const transaction = db.transaction('lastVisited', 'readwrite')
 
           transaction.oncomplete = event => {
