@@ -48,3 +48,13 @@ export const buildVillage = {
   CHANGE_VALIDITY: 'buildVillage/CHANGE_VALIDITY',
   CHANGE_VILLAGE_NAME: 'buildVillage/CHANGE_VILLAGE_NAME'
 }
+export const indexeddb = {
+  ABORT: 'indexeddb/ABORT',
+  BLOCKED: 'indexeddb/BLOCKED',
+  CLOSE: 'indexeddb/CLOSE',
+  COMPLETE: 'indexeddb/COMPLETE',
+  ERROR: 'indexeddb/ERROR',
+  SUCCESS: 'indexeddb/SUCCESS',
+  UPGRADE_NEEDED: 'indexeddb/UPGRADE_NEEDED',
+  VERSION_CHANGE: 'indexeddb/VERSION_CHANGE'
+}
