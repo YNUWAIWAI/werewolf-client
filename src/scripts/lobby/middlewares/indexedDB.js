@@ -5,14 +5,18 @@ import type {Middleware} from 'redux'
 import type {Payload$WatingPage} from 'lobby'
 import type {ReducerState} from '../reducers'
 
-let db
-const dbName = 'lobby'
-const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => action => {
-  const connectDB = async () => {
+const connectDB = dbName => {
+  let db
+
+  return new Promise((resolve, reject) => {
+    if (db) {
+      resolve(db)
+    }
     const request = window.indexedDB.open(dbName)
 
     request.onerror = event => {
-      await console.error(event.target.errorCode)
+      console.error(event.target.error)
+      reject(event.target.error)
     }
     request.onupgradeneeded = event => {
       db = event.target.result
@@ -52,27 +56,30 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
       db.onversionchange = e => {
         console.log('version changed', e)
       }
-      await console.log('success', db)
+      console.log('success', db)
+      resolve(db)
     }
-  }
-
-  if (!db) {
-    connectDB()
-  }
-
+  })
+}
+const connectLobbyDB = connectDB('lobby')
+const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
     case types.indexedDB.INIT: {
       const state = store.getState()
-      const transaction = db.transaction('lastVisited')
-      const objectStore = transaction.objectStore('lastVisited')
-      const request = objectStore.get(state.token['human player'])
 
-      request.onerror = event => {
-        console.error('error')
-      }
-      request.onsuccess = event => {
-        console.log(event.target.result)
-      }
+      connectLobbyDB.then(db => {
+        const transaction = db.transaction('lastVisited')
+        const objectStore = transaction.objectStore('lastVisited')
+        const request = objectStore.get(state.token['human player'])
+
+        request.onerror = event => {
+          console.error('error')
+        }
+        request.onsuccess = event => {
+          console.log(event.target.result)
+        }
+      })
+
 
       return next(action)
     }
@@ -80,25 +87,28 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
       if (action.payload.type === 'waitingPage') {
         const payload: Payload$WatingPage = action.payload
         const state = store.getState()
-        const transaction = db.transaction('lastVisited', 'readwrite')
 
-        transaction.oncomplete = event => {
-          console.log('All done!')
-        }
-        transaction.onerror = event => {
-          console.error('transaction error')
-        }
+        connectDB.then(db => {
+          const transaction = db.transaction('lastVisited', 'readwrite')
 
-        const objectStore = transaction.objectStore('lastVisited')
-        const request = objectStore.add({
-          lobby: state.token.lobby,
-          token: state.token[state.token.lobby],
-          villageId: payload.village.id
+          transaction.oncomplete = event => {
+            console.log('All done!')
+          }
+          transaction.onerror = event => {
+            console.error('transaction error')
+          }
+
+          const objectStore = transaction.objectStore('lastVisited')
+          const request = objectStore.add({
+            lobby: state.token.lobby,
+            token: state.token[state.token.lobby],
+            villageId: payload.village.id
+          })
+
+          request.onsuccess = event => {
+            console.log(event.target.result)
+          }
         })
-
-        request.onsuccess = event => {
-          console.log(event.target.result)
-        }
       }
 
       return next(action)
