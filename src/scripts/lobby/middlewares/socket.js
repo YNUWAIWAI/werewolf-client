@@ -5,38 +5,33 @@ import type {Middleware} from 'redux'
 import type {ReducerState} from '../reducers'
 import {socket as socketAction} from '../actions'
 
+let socket
 const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = option => store => next => action => {
-  const connectWebSocket = (url => {
-    let socket
-
-    return () => new Promise((resolve, reject) => {
-      console.log(socket)
-      if (socket) {
-        resolve(socket)
-      }
-      socket = new WebSocket(url)
-      socket.onopen = event => {
-        console.info('WebSocket Connected ', event)
-        store.dispatch(socketAction.open(event))
-        resolve(socket)
-      }
-      socket.onclose = event => {
-        console.warn('WebSocket Disconnected ', event)
-        socket = null
-        store.dispatch(socketAction.close(event))
-        reject(event)
-      }
-      socket.onerror = error => {
-        console.error('WebSocket Error ', error)
-        socket = null
-        store.dispatch(socketAction.error(error))
-        reject(error)
-      }
-      socket.onmessage = event => {
-        store.dispatch(socketAction.message(event))
-      }
-    })
-  })(option.url)
+  const connectWebSocket = (url => () => new Promise((resolve, reject) => {
+    if (socket) {
+      console.log(socket.readyState)
+      resolve(socket)
+    }
+    socket = new WebSocket(url)
+    socket.onopen = event => {
+      console.info('WebSocket Connected ', event)
+      store.dispatch(socketAction.open(event))
+      resolve(socket)
+    }
+    socket.onclose = event => {
+      console.warn('WebSocket Disconnected ', event)
+      socket = null
+      store.dispatch(socketAction.close(event))
+    }
+    socket.onerror = error => {
+      console.error('WebSocket Error ', error)
+      socket = null
+      store.dispatch(socketAction.error(error))
+    }
+    socket.onmessage = event => {
+      store.dispatch(socketAction.message(event))
+    }
+  }))(option.url)
 
   switch (action.type) {
     case types.SOCKET_OPEN:
