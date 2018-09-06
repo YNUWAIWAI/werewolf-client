@@ -9,7 +9,9 @@ let socket
 const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = option => store => next => action => {
   const connectWebSocket = (url => () => new Promise((resolve, reject) => {
     if (socket) {
-      while (socket.readyState === 1) {}
+      while (socket.readyState === 1) {
+        setTimeout(console.log(socket.readyState), 10)
+      }
       resolve(socket)
     }
     socket = new WebSocket(url)
