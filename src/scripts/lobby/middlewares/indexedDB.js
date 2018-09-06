@@ -16,6 +16,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
     }
     request.onupgradeneeded = event => {
       console.log('upgradeneeded')
+      db = event.target.result
       const objectStore = db.createObjectStore('lastVisited',  {keyPath: 'token'})
 
       objectStore.createIndex('villageId', 'villageId', {unique: false})
