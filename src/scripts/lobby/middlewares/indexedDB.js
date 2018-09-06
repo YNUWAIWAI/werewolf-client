@@ -65,6 +65,25 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
       if (action.payload.type === 'waitingPage') {
         const payload: Payload$WatingPage = action.payload
         const state = store.getState()
+        const transaction = db.transaction('lastVisited', 'readwrite')
+
+        transaction.oncomplete = event => {
+          console.log('All done!')
+        }
+        transaction.onerror = event => {
+          console.error('transaction error')
+        }
+
+        const objectStore = transaction.objectStore('lastVisited')
+        const request = objectStore.add({
+          lobby: state.token.lobby,
+          token: state.token[state.token.lobby],
+          villageId: payload.village.id
+        })
+
+        request.onsuccess = event => {
+          console.log(event.target.result)
+        }
 
         console.log('token', state.token[state.token.lobby])
         console.log('lobby', state.token.lobby)
