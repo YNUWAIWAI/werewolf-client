@@ -11,13 +11,15 @@ const connectWebSocket = (() => {
   return (url, store) => new Promise((resolve, reject) => {
     if (socket) {
       console.log(socket.readyState)
-      ;(function wait() {
-        if (socket.readyState !== 1) {
-          setTimeout(wait, 1)
+      const wait = () => {
+        if (socket.readyState === 1) {
+          resolve(socket)
+        } else {
+          setTimeout(wait, 0)
         }
-      })()
+      }
 
-      resolve(socket)
+      wait()
 
       return
     }
