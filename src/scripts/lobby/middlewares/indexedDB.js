@@ -15,7 +15,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
     }
     request.onsuccess = event => {
       db = event.target.result
-      console.log('success')
+      console.log('success', db)
     }
   }
 
