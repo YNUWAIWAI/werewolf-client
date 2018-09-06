@@ -27,7 +27,7 @@ const connectDB = dbName => {
       const objectStore = db.createObjectStore(
         'lastVisited',
         {
-          keyPath: 'token'
+          autoIncrement: true
         }
       )
 
@@ -83,7 +83,6 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
           console.log(event.target.result)
         }
       })
-
 
       return next(action)
     }
