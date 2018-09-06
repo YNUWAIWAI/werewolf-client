@@ -5,24 +5,18 @@ import type {Middleware} from 'redux'
 import type {ReducerState} from '../reducers'
 import {socket as socketAction} from '../actions'
 
-const socketMiddleware: ({url: string, retryLimit?: number}) => Middleware<ReducerState, Action> = option => store => next => action => {
-  const retryLimit = option.retryLimit || 5
+const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = option => store => next => action => {
   const connectWebSocket = (url => {
     let socket
-    let retryCount = 0
 
     return () => new Promise((resolve, reject) => {
       if (socket) {
         resolve(socket)
       }
-      if (retryCount >= retryLimit) {
-        reject('Exceeded retry limit')
-      }
       socket = new WebSocket(url)
       socket.onopen = event => {
         console.info('WebSocket Connected ', event)
         store.dispatch(socketAction.open(event))
-        retryCount += 1
         resolve(socket)
       }
       socket.onclose = event => {
