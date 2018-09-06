@@ -15,6 +15,18 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
     }
     request.onsuccess = event => {
       db = event.target.result
+      db.onabort = e => {
+        console.error('Database opening aborted!', e)
+      }
+      db.onerror = e => {
+        console.error('Error opening database.', e)
+      }
+      db.onclose = e => {
+        console.log(`The database ${db.name} has unexpectedly closed.`)
+      }
+      db.onversionchange = e => {
+        console.log('version changed', e)
+      }
       console.log('success', db)
     }
   }
