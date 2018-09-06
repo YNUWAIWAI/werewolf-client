@@ -11,6 +11,8 @@ const connectWebSocket = (() => {
   return (url, store) => new Promise((resolve, reject) => {
     if (socket) {
       resolve(socket)
+
+      return
     }
     socket = new WebSocket(url)
     socket.onopen = event => {
