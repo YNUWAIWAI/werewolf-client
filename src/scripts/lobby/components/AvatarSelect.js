@@ -36,12 +36,12 @@ export default function AvatarSelect(props: Props) {
     ],
     buildVillage: [
       {
-        label: 'Random Avatar',
-        value: 'random'
-      },
-      {
         label: 'Fixed Avatar',
         value: 'fixed'
+      },
+      {
+        label: 'Random Avatar',
+        value: 'random'
       }
     ]
   }[props.type]
