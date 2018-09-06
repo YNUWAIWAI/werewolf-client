@@ -109,7 +109,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
           }
 
           const objectStore = transaction.objectStore('history')
-          const request = objectStore.add({
+          const request = objectStore.put({
             lobby: state.token.lobby,
             token: state.token[state.token.lobby],
             type: 'lastVisited',
