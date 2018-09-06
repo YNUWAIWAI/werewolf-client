@@ -17,6 +17,7 @@ const connectWebSocket = (() => {
         }
       }
 
+      wait()
       resolve(socket)
 
       return
