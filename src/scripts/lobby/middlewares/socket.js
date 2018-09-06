@@ -5,11 +5,11 @@ import type {Middleware} from 'redux'
 import type {ReducerState} from '../reducers'
 import {socket as socketAction} from '../actions'
 
-let socket
-const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = option => store => next => action => {
-  const connectWebSocket = (url => () => new Promise((resolve, reject) => {
+const connectWebSocket = (() => {
+  let socket
+
+  return (url, store) => new Promise((resolve, reject) => {
     if (socket) {
-      console.log(socket.readyState)
       resolve(socket)
     }
     socket = new WebSocket(url)
@@ -27,12 +27,14 @@ const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = op
       console.error('WebSocket Error ', error)
       socket = null
       store.dispatch(socketAction.error(error))
+      reject(error)
     }
     socket.onmessage = event => {
       store.dispatch(socketAction.message(event))
     }
-  }))(option.url)
-
+  })
+})()
+const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = option => store => next => action => {
   switch (action.type) {
     case types.SOCKET_OPEN:
       return next(action)
@@ -43,7 +45,7 @@ const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = op
     case types.SOCKET_MESSAGE:
       return next(action)
     case types.SOCKET_SEND:
-      connectWebSocket()
+      connectWebSocket(option.url, store)
         .then(socket => {
           socket.send(JSON.stringify(action.payload))
         })
