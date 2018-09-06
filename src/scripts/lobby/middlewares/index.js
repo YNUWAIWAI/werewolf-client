@@ -20,6 +20,7 @@ export type Action =
   | actions.BuildVillage$ChangeMember
   | actions.BuildVillage$ChangeNumberOfPlayers
   | actions.BuildVillage$ChangeNumberOfRobots
+  | actions.ChangeLobby
   | actions.ChangeSearchId
   | actions.ChangeToken
   | actions.BuildVillage$ChangeVillageName

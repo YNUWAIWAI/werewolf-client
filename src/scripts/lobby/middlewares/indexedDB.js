@@ -1,5 +1,6 @@
 // @flow
 import * as types from '../constants/ActionTypes'
+import {changeLobby, selectVillage} from '../actions'
 import {type Action} from '.'
 import type {Middleware} from 'redux'
 import type {Payload$WatingPage} from 'lobby'
@@ -87,7 +88,12 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
           console.error('error')
         }
         request.onsuccess = event => {
-          console.log(event.target.result)
+          const result = event.target.result
+
+          if (result) {
+            store.dispatch(changeLobby(result.lobby))
+            store.dispatch(selectVillage(result.villageId))
+          }
         }
       })
 

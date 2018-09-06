@@ -41,6 +41,10 @@ export const changeHostName = (scope: 'advancedSearch' | 'buildVillage') => (hos
   hostName,
   type: types[scope].CHANGE_HOST_NAME
 })
+export const changeLobby = (lobby: Lobby): {lobby: Lobby, type: 'CHANGE_LOBBY'} => ({
+  lobby,
+  type: types.CHANGE_LOBBY
+})
 export const changeMaximum = (scope: 'advancedSearch') => (maximum: number): {maximum: number, type: 'advancedSearch/CHANGE_MAXIMUM'} => ({
   maximum: Number(maximum),
   type: types[scope].CHANGE_MAXIMUM
@@ -112,6 +116,7 @@ export type BuildVillage$ChangeNumberOfPlayers = $Call<$Call<typeof changeNumber
 export type BuildVillage$ChangeNumberOfRobots = $Call<$Call<typeof changeNumberOfRobots, 'buildVillage'>, number>
 export type BuildVillage$ChangeValidity = $Call<$Call<$Call<typeof changeValidity, 'buildVillage'>, string>, boolean>
 export type BuildVillage$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'buildVillage'>, string>
+export type ChangeLobby = $Call<typeof changeLobby, Lobby>
 export type ChangeSearchId = $Call<typeof changeSearchId, number>
 export type ChangeToken = $Call<typeof changeToken, {lobby: Lobby, token: string}>
 export type KickOutPlayer = $Call<typeof kickOutPlayer, string>
