@@ -8,7 +8,7 @@ import type {ReducerState} from '../reducers'
 const connectDB = dbName => {
   let db
 
-  return new Promise((resolve, reject) => {
+  return () => new Promise((resolve, reject) => {
     if (db) {
       resolve(db)
     }
@@ -67,7 +67,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
     case types.indexedDB.INIT: {
       const state = store.getState()
 
-      connectLobbyDB.then(db => {
+      connectLobbyDB().then(db => {
         const transaction = db.transaction('lastVisited')
         const objectStore = transaction.objectStore('lastVisited')
         const request = objectStore.get(state.token['human player'])
@@ -88,7 +88,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
         const payload: Payload$WatingPage = action.payload
         const state = store.getState()
 
-        connectDB.then(db => {
+        connectDB().then(db => {
           const transaction = db.transaction('lastVisited', 'readwrite')
 
           transaction.oncomplete = event => {
