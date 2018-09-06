@@ -8,11 +8,11 @@ import type {ReducerState} from '../reducers'
 let db
 const dbName = 'lobby'
 const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => action => {
-  const connectDB = () => {
+  const connectDB = async () => {
     const request = window.indexedDB.open(dbName)
 
     request.onerror = event => {
-      console.error(event.target.errorCode)
+      await console.error(event.target.errorCode)
     }
     request.onupgradeneeded = event => {
       db = event.target.result
@@ -52,7 +52,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
       db.onversionchange = e => {
         console.log('version changed', e)
       }
-      console.log('success', db)
+      await console.log('success', db)
     }
   }
 
