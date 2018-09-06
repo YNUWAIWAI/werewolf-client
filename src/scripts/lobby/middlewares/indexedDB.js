@@ -8,6 +8,10 @@ import type {ReducerState} from '../reducers'
 const connectDB = dbName => {
   let db
 
+  if (typeof dbName !== 'string') {
+    throw Error('dbName is unexpected value')
+  }
+
   return () => new Promise((resolve, reject) => {
     if (db) {
       resolve(db)
