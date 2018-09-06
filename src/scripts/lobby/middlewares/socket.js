@@ -13,7 +13,7 @@ const connectWebSocket = (() => {
       console.log(socket.readyState)
       ;(function wait() {
         if (socket.readyState !== 1) {
-          setTimeout(wait, 0)
+          setTimeout(wait, 1)
         }
       })()
 
