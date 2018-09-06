@@ -14,9 +14,22 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
     request.onerror = event => {
       console.error(event.target.errorCode)
     }
+    request.onupgradeneeded = event => {
+      console.log('upgradeneeded')
+      const objectStore = db.createObjectStore('lastVisited',  {keyPath: 'token'})
+
+      objectStore.createIndex('villageId', 'villageId', {unique: false})
+      objectStore.transaction.oncomplete = e =>{
+        const lastVisitedObjectStore = db_.transaction('lastVisited', 'readwrite').objectStore('lastVisited')
+
+        lastVisitedObjectStore.add({
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
+          villageId: 1
+        })
+      }
+    }
     request.onsuccess = event => {
       db = event.target.result
-
       db.onabort = e => {
         console.error('Database opening aborted!', e)
       }
@@ -30,18 +43,6 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
         console.log('version changed', e)
       }
       console.log('success', db)
-      const objectStore = db.createObjectStore('lastVisited',  {keyPath: 'token'})
-
-      objectStore.createIndex('villageId', 'villageId', {unique: false})
-      objectStore.transaction.oncomplete = e =>{
-        const lastVisitedObjectStore = db.transaction('lastVisited', 'readwrite').objectStore('lastVisited')
-
-        lastVisitedObjectStore.add({
-          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
-          villageId: 1
-        })
-      }
-
     }
   }
 
