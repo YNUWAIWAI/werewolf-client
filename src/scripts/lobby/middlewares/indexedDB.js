@@ -61,6 +61,21 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
   }
 
   switch (action.type) {
+    case types.indexedDB.INIT: {
+      const state = store.getState()
+      const transaction = db.transaction('lastVisited')
+      const objectStore = transaction.objectStore('lastVisited')
+      const request = objectStore.get(state.token['human player'])
+
+      request.onerror = event => {
+        console.error('error')
+      }
+      request.onsuccess = event => {
+        console.log(event.target.result)
+      }
+
+      return next(action)
+    }
     case types.SOCKET_MESSAGE: {
       if (action.payload.type === 'waitingPage') {
         const payload: Payload$WatingPage = action.payload
@@ -84,10 +99,6 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
         request.onsuccess = event => {
           console.log(event.target.result)
         }
-
-        console.log('token', state.token[state.token.lobby])
-        console.log('lobby', state.token.lobby)
-        console.log('villageId', payload.village.id)
       }
 
       return next(action)

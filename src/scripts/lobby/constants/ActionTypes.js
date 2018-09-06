@@ -48,13 +48,14 @@ export const buildVillage = {
   CHANGE_VALIDITY: 'buildVillage/CHANGE_VALIDITY',
   CHANGE_VILLAGE_NAME: 'buildVillage/CHANGE_VILLAGE_NAME'
 }
-export const indexeddb = {
-  ABORT: 'indexeddb/ABORT',
-  BLOCKED: 'indexeddb/BLOCKED',
-  CLOSE: 'indexeddb/CLOSE',
-  COMPLETE: 'indexeddb/COMPLETE',
-  ERROR: 'indexeddb/ERROR',
-  SUCCESS: 'indexeddb/SUCCESS',
-  UPGRADE_NEEDED: 'indexeddb/UPGRADE_NEEDED',
-  VERSION_CHANGE: 'indexeddb/VERSION_CHANGE'
+export const indexedDB = {
+  ABORT: 'indexedDB/ABORT',
+  BLOCKED: 'indexedDB/BLOCKED',
+  CLOSE: 'indexedDB/CLOSE',
+  COMPLETE: 'indexedDB/COMPLETE',
+  ERROR: 'indexedDB/ERROR',
+  INIT: 'indexedDB/INIT',
+  SUCCESS: 'indexedDB/SUCCESS',
+  UPGRADE_NEEDED: 'indexedDB/UPGRADE_NEEDED',
+  VERSION_CHANGE: 'indexedDB/VERSION_CHANGE'
 }
