@@ -9,10 +9,9 @@ const connectWebSocket = (() => {
   let socket
 
   return (url, store) => new Promise((resolve, reject) => {
-    if (socket) {
-      console.log(socket.readyState)
+    if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
       const wait = () => {
-        if (socket.readyState === 1) {
+        if (socket.readyState === WebSocket.OPEN) {
           resolve(socket)
         } else {
           setTimeout(wait, 0)
@@ -31,12 +30,10 @@ const connectWebSocket = (() => {
     }
     socket.onclose = event => {
       console.warn('WebSocket Disconnected ', event)
-      socket = null
       store.dispatch(socketAction.close(event))
     }
     socket.onerror = error => {
       console.error('WebSocket Error ', error)
-      socket = null
       store.dispatch(socketAction.error(error))
       reject(error)
     }

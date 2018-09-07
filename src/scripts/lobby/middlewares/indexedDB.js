@@ -16,6 +16,8 @@ const connectDB = dbName => {
   return () => new Promise((resolve, reject) => {
     if (db) {
       resolve(db)
+
+      return
     }
     const request = window.indexedDB.open(dbName)
 
@@ -77,8 +79,6 @@ const connectLobbyDB = connectDB('lobby')
 const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
     case types.indexedDB.INIT: {
-      const state = store.getState()
-
       connectLobbyDB().then(db => {
         const transaction = db.transaction('history')
         const objectStore = transaction.objectStore('history')
