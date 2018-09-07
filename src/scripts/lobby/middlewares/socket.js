@@ -12,6 +12,8 @@ const connectWebSocket = (() => {
     const wait = time => {
       if (time > 5000) {
         reject('Timeout')
+
+        return
       }
       if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
         if (socket.readyState === WebSocket.OPEN) {
