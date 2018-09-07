@@ -14,7 +14,7 @@ const connectWebSocket = (() => {
         if (socket.readyState === WebSocket.OPEN) {
           resolve(socket)
         } else {
-          setTimeout(wait, 0, resolve, reject)
+          setTimeout(wait, 0)
         }
       } else {
         socket = new WebSocket(url)
@@ -30,7 +30,6 @@ const connectWebSocket = (() => {
         socket.onerror = error => {
           console.error('WebSocket Error ', error)
           store.dispatch(socketAction.error(error))
-          reject(error)
         }
         socket.onmessage = event => {
           store.dispatch(socketAction.message(event))
