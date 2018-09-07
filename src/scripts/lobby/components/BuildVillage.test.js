@@ -19,6 +19,7 @@ test('<BuildVillage />', () => {
     villageName: true
   }
   const village = {
+    avatar: 'random',
     comment: 'comment',
     hostName: 'hostName',
     numberOfHumans: 8,
