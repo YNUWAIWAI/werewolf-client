@@ -259,6 +259,7 @@ body {
       &--prop {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         grid-area: c-p;
         justify-content: center;
@@ -269,12 +270,15 @@ body {
       &--val {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         font-size: inherit;
         grid-area: c-v;
         justify-content: center;
+        resize: vertical;
         padding: 0 1rem;
         text-align: center;
+        width: 100%;
 
         &.invalid {
           border-color: red;
@@ -292,6 +296,7 @@ body {
       &--prop {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         grid-area: h-n-p;
         justify-content: center;
@@ -302,11 +307,13 @@ body {
       &--val {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         font-size: inherit;
         grid-area: h-n-v;
         justify-content: center;
         text-align: center;
+        width: 100%;
 
         &.invalid {
           border-color: red;
@@ -323,6 +330,7 @@ body {
     &--idForSearching {
       align-items: center;
       border: solid 1px black;
+      box-sizing: border-box;
       display: inline-flex;
       grid-area: i-f-s;
       justify-content: center;
@@ -330,6 +338,7 @@ body {
 
     &--member {
       border: solid 1px black;
+      box-sizing: border-box;
       display: grid;
       grid-area: mem;
       grid-template-areas:
@@ -389,6 +398,7 @@ body {
 
     &--selectable-member {
       border: solid 1px black;
+      box-sizing: border-box;
       display: grid;
       grid-area: mem;
       grid-template-areas:
@@ -399,6 +409,7 @@ body {
         'C C';
       grid-template-columns: 1fr 1fr;
       padding: 1rem;
+      width: 100%;
 
       &--robot {
         align-items: center;
@@ -482,6 +493,7 @@ body {
       &--prop {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         grid-area: s-p;
         justify-content: center;
@@ -492,6 +504,7 @@ body {
       &--val1 {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         font-size: inherit;
         grid-area: s-v1;
@@ -512,6 +525,7 @@ body {
       &--val2 {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         font-size: inherit;
         grid-area: s-v2;
@@ -534,6 +548,7 @@ body {
       &--prop {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         grid-area: v-n-p;
         justify-content: center;
@@ -544,11 +559,13 @@ body {
       &--val {
         align-items: center;
         border: solid 1px black;
+        box-sizing: border-box;
         display: inline-flex;
         font-size: inherit;
         grid-area: v-n-v;
         justify-content: center;
         text-align: center;
+        width: 100%;
 
         &.invalid {
           border-color: red;
