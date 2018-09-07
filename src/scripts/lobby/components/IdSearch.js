@@ -43,11 +43,17 @@ export default function IdSearch(props: Props) {
           numberOfDigit={numberOfDigit}
           placeholder={placeholder}
         />
-        <VillageList
-          isPlayer={props.isPlayer}
-          items={props.villageItems}
-          selectVillage={props.selectVillage}
-        />
+        {
+          props.villageItems.length === 0 ?
+            <div className="id-search--no-item">
+              {'Not Found'}
+            </div> :
+            <VillageList
+              isPlayer={props.isPlayer}
+              items={props.villageItems}
+              selectVillage={props.selectVillage}
+            />
+        }
       </MainContent>
       <AsideContent>
         <Menu
