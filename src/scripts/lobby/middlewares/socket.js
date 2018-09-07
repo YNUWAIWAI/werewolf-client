@@ -9,38 +9,38 @@ const connectWebSocket = (() => {
   let socket
 
   return (url, store) => new Promise((resolve, reject) => {
-    if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
-      const wait = () => {
-        console.log(socket.readyState)
+    const wait = () => {
+      if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
         if (socket.readyState === WebSocket.OPEN) {
           resolve(socket)
         } else {
-          setTimeout(wait, 0)
+          setTimeout(wait, 0, resolve, reject)
+        }
+      } else {
+        socket = new WebSocket(url)
+        socket.onopen = event => {
+          console.info('WebSocket Connected ', event)
+          store.dispatch(socketAction.open(event))
+          resolve(socket)
+        }
+        socket.onclose = event => {
+          console.warn(`WebSocket Disconnected code: ${event.code} wasClean: ${String(event.wasClean)} reason: ${event.reason}`)
+          store.dispatch(socketAction.close(event))
+        }
+        socket.onerror = error => {
+          console.error('WebSocket Error ', error)
+          store.dispatch(socketAction.error(error))
+          reject(error)
+        }
+        socket.onmessage = event => {
+          store.dispatch(socketAction.message(event))
         }
       }
+    }
 
-      wait()
+    wait()
 
-      return
-    }
-    socket = new WebSocket(url)
-    socket.onopen = event => {
-      console.info('WebSocket Connected ', event)
-      store.dispatch(socketAction.open(event))
-      resolve(socket)
-    }
-    socket.onclose = event => {
-      console.warn(`WebSocket Disconnected code: ${event.code} wasClean: ${String(event.wasClean)} reason: ${event.reason}`)
-      store.dispatch(socketAction.close(event))
-    }
-    socket.onerror = error => {
-      console.error('WebSocket Error ', error)
-      store.dispatch(socketAction.error(error))
-      reject(error)
-    }
-    socket.onmessage = event => {
-      store.dispatch(socketAction.message(event))
-    }
+    return
   })
 })()
 const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = option => store => next => action => {
