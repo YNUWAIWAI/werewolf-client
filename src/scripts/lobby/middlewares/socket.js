@@ -29,8 +29,8 @@ const connectWebSocket = (() => {
       resolve(socket)
     }
     socket.onclose = event => {
+      console.warn(`WebSocket Disconnected code: ${event.code} wasClean: ${String(event.wasClean)} reason: ${event.reason}`)
       store.dispatch(socketAction.close(event))
-      reject(`WebSocket Disconnected code: ${event.code} wasClean: ${String(event.wasClean)} reason: ${event.reason}`)
     }
     socket.onerror = error => {
       console.error('WebSocket Error ', error)
