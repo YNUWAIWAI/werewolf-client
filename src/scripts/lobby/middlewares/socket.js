@@ -17,7 +17,14 @@ const connectWebSocket = (() => {
           setTimeout(wait, 0)
         }
       } else {
-        socket = new WebSocket(url)
+        try {
+          socket = new WebSocket(url)
+        } catch (e) {
+          console.error(e)
+          setTimeout(wait, 0)
+
+          return
+        }
         socket.onopen = event => {
           console.info('WebSocket Connected ', event)
           store.dispatch(socketAction.open(event))
