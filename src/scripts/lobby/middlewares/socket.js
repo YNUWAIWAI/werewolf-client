@@ -26,12 +26,12 @@ const connectWebSocket = (() => {
         socket.onclose = event => {
           console.warn(`WebSocket Disconnected code: ${event.code} wasClean: ${String(event.wasClean)} reason: ${event.reason}`)
           store.dispatch(socketAction.close(event))
-          setTimeout(wait, 0)
+          setTimeout(wait, 100)
         }
         socket.onerror = error => {
           console.error('WebSocket Error ', error)
           store.dispatch(socketAction.error(error))
-          setTimeout(wait, 0)
+          setTimeout(wait, 100)
         }
         socket.onmessage = event => {
           store.dispatch(socketAction.message(event))
