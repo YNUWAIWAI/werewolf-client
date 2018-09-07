@@ -19,6 +19,7 @@ test('<BuildVillageContainer /> initialState', () => {
 
   expect(wrapper.props().menuItems).toEqual([])
   expect(wrapper.props().village).toEqual({
+    avatar: 'fixed',
     comment: '',
     hostName: 'Alice',
     numberOfHumans: 14,

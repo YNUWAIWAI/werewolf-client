@@ -22,6 +22,7 @@ describe('<BuildVillageBox />', () => {
       villageName: true
     }
     const village = {
+      avatar: 'fixed',
       comment: '',
       hostName: 'Alice',
       numberOfHumans: 8,
