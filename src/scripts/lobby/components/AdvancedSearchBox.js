@@ -162,6 +162,7 @@ export default function AdvancedSearchBox(props: Props) {
       />
       <AvatarSelect
         className="advanced-search--input"
+        defaultValue="random"
         handleChange={handleChange('avatar')}
         type="advancedSearch"
       />

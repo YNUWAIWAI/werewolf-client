@@ -5,6 +5,7 @@ import Select from 'react-select'
 
 type Props = {
   +className: string,
+  +defaultValue: Avatar,
   +handleChange: boolean => Avatar => void,
   +type: 'advancedSearch' | 'buildVillage'
 }
@@ -14,7 +15,7 @@ export default function AvatarSelect(props: Props) {
     if (!selectedOption.value && props.type === 'advancedSearch') {
       props.handleChange(true)('random')
     } else if (!selectedOption.value && props.type === 'buildVillage') {
-      props.handleChange(false)('random')
+      props.handleChange(false)('fixed')
     } else {
       props.handleChange(true)(selectedOption.value)
     }
@@ -45,12 +46,13 @@ export default function AvatarSelect(props: Props) {
       }
     ]
   }[props.type]
+  const defaultValue = options.find(option => option.value === props.defaultValue)
 
   return (
     <Select
       className={props.className}
       classNamePrefix="react-select"
-      defaultValue={options[0]}
+      defaultValue={defaultValue}
       name="avatar"
       onChange={handleChange}
       options={options}

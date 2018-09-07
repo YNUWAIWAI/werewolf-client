@@ -23,6 +23,7 @@ type Props = {
     +villageName: boolean
   },
   +village: {
+    +avatar: Avatar,
     +comment: string,
     +hostName: string,
     +numberOfHumans: number,
@@ -127,6 +128,7 @@ export default function BuildVillageBox(props: Props) {
       <div className={`village--item--setup--val2 ${props.validity.avatar ? '' : 'invalid'}`}>
         <AvatarSelect
           className="village--item--setup--val2--select"
+          defaultValue={props.village.avatar}
           handleChange={handleChange('avatar')}
           type="buildVillage"
         />
