@@ -11,6 +11,7 @@ const connectWebSocket = (() => {
   return (url, store) => new Promise((resolve, reject) => {
     if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
       const wait = () => {
+        console.log(socket.readyState)
         if (socket.readyState === WebSocket.OPEN) {
           resolve(socket)
         } else {
