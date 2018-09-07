@@ -155,6 +155,11 @@ body {
     padding-left: 0.5rem;
   }
 
+  &--no-item {
+    font-size: 3rem;
+    color: rgba(180, 180, 180, 1);
+  }
+
   &--sharp {
     padding-right: 0.5rem
   }
