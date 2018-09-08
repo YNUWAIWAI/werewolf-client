@@ -1,5 +1,5 @@
 // @flow
-import {SHOW_MAIN, indexedDB} from './constants/ActionTypes'
+import {SHOW_MAIN, SOCKET_INIT, indexedDB} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
@@ -50,6 +50,9 @@ const root = document.getElementById('root')
 if (!root) {
   throw Error('Not found: root element')
 }
+store.dispatch({
+  type: SOCKET_INIT
+})
 store.dispatch({
   type: indexedDB.INIT
 })

@@ -33,6 +33,7 @@ export type Action =
   | actions.SocketSend
   | actions.Transition
   | {type: 'indexedDB/INIT'}
+  | {type: 'SOCKET:INIT'}
 
 const elem = document.getElementById('script')
 
