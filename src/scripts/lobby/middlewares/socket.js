@@ -54,6 +54,13 @@ const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = op
       return next(action)
     case types.SOCKET_ERROR:
       return next(action)
+    case types.SOCKET_INIT:
+      connectWebSocket(option.url, store)
+        .catch(reason => {
+          console.error(reason)
+        })
+
+      return next(action)
     case types.SOCKET_MESSAGE:
       return next(action)
     case types.SOCKET_SEND:
