@@ -30,29 +30,29 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
     case types.BUILD_VILLAGE: {
       const state = store.getState()
       const payload = {
-        avatar: state.buildVillage.village.avatar,
-        comment: state.buildVillage.village.comment,
+        avatar: state.buildVillage.value.avatar,
+        comment: state.buildVillage.value.comment,
         hostPlayer: {
-          isAnonymous: state.buildVillage.village.avatar === 'random',
-          isHuman: state.buildVillage.village.isHuman,
-          name: state.buildVillage.village.hostName
+          isAnonymous: state.buildVillage.value.avatar === 'random',
+          isHuman: state.buildVillage.value.isHuman,
+          name: state.buildVillage.value.hostName
         },
         id: -1,
         idForSearching: -1,
-        name: state.buildVillage.village.villageName,
+        name: state.buildVillage.value.villageName,
         playerSetting: {
           current: -1,
           human: {
             current: -1,
-            max: state.buildVillage.village.numberOfHumans
+            max: state.buildVillage.value.numberOfHumans
           },
-          number: state.buildVillage.village.numberOfPlayers,
+          number: state.buildVillage.value.numberOfPlayers,
           robot: {
             current: -1,
-            min: state.buildVillage.village.numberOfRobots
+            min: state.buildVillage.value.numberOfRobots
           }
         },
-        roleSetting: getCastFromNumberOfPlayers(state.buildVillage.village.numberOfPlayers)[state.buildVillage.village.member],
+        roleSetting: getCastFromNumberOfPlayers(state.buildVillage.value.numberOfPlayers)[state.buildVillage.value.member],
         token: state.token[state.token.lobby],
         type: 'buildVillage'
       }
