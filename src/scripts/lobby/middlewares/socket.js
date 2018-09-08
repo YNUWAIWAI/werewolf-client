@@ -7,6 +7,7 @@ import {socket as socketAction} from '../actions'
 
 const connectWebSocket = (() => {
   let socket
+  const timeout = 600000
 
   return (url, store) => new Promise((resolve, reject) => {
     const wait = () => {
@@ -39,7 +40,7 @@ const connectWebSocket = (() => {
       }
     }
 
-    setTimeout(reject, 10000, 'timeout')
+    setTimeout(reject, timeout, 'timeout')
     wait()
 
     return
