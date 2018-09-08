@@ -9,6 +9,7 @@ const connectWebSocket = (() => {
   let socket
 
   return (url, store) => new Promise((resolve, reject) => {
+    setTimeout(reject, 10000, 'timeout')
     const wait = time => {
       if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
         if (socket.readyState === WebSocket.OPEN) {
