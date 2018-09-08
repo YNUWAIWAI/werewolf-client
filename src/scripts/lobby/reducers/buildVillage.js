@@ -155,6 +155,15 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: action.villageName
         }
       }
+    case ActionTypes.LEAVE_WAITING_PAGE:
+      return {
+        ... state,
+        validity: initialState.validity,
+        village: {
+          ... initialState.village,
+          ... initialValue
+        }
+      }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
