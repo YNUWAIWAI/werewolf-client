@@ -36,6 +36,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   menuItems: state.buildVillage.menuItems,
   validity: state.buildVillage.validity,
   village: {
+    avatar: state.buildVillage.village.avatar,
     comment: state.buildVillage.village.comment,
     hostName: state.buildVillage.village.hostName,
     numberOfHumans: state.buildVillage.village.numberOfHumans,

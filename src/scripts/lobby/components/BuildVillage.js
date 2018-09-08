@@ -18,6 +18,7 @@ export type StateProps = {
     +villageName: boolean
   },
   +village: {
+    +avatar: Avatar,
     +comment: string,
     +hostName: string,
     +numberOfHumans: number,
