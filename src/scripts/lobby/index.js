@@ -1,9 +1,9 @@
 // @flow
+import {SHOW_MAIN, SOCKET_INIT, indexedDB} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {SHOW_MAIN} from './constants/ActionTypes'
 import {changeToken} from './actions'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {createStore} from 'redux'
@@ -50,6 +50,12 @@ const root = document.getElementById('root')
 if (!root) {
   throw Error('Not found: root element')
 }
+store.dispatch({
+  type: SOCKET_INIT
+})
+store.dispatch({
+  type: indexedDB.INIT
+})
 
 ReactDOM.render(
   <Provider store={store}>

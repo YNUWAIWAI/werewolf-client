@@ -2,6 +2,7 @@
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
+import indexedDB from './indexedDB'
 import logger from './logger'
 import socket from './socket'
 
@@ -19,6 +20,7 @@ export type Action =
   | actions.BuildVillage$ChangeMember
   | actions.BuildVillage$ChangeNumberOfPlayers
   | actions.BuildVillage$ChangeNumberOfRobots
+  | actions.ChangeLobby
   | actions.ChangeSearchId
   | actions.ChangeToken
   | actions.BuildVillage$ChangeVillageName
@@ -30,6 +32,8 @@ export type Action =
   | actions.SocketOpen
   | actions.SocketSend
   | actions.Transition
+  | {type: 'indexedDB/INIT'}
+  | {type: 'SOCKET:INIT'}
 
 const elem = document.getElementById('script')
 
@@ -42,6 +46,7 @@ const middleware = applyMiddleware(
     url
   }),
   client2server,
+  indexedDB,
   logger
 )
 

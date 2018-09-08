@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import type {ChangeLobby, SocketMessage, Transition} from '../actions'
 import type {MenuItem, Payload$WatingPage, Village, WaitingPlayer} from 'lobby'
-import type {SocketMessage, Transition} from '../actions'
 
 export type State = {
   +isPlayer: boolean,
@@ -10,6 +10,7 @@ export type State = {
   +village?: Village
 }
 type Action =
+  | ChangeLobby
   | SocketMessage
   | Transition
 
@@ -20,6 +21,65 @@ export const initialState = {
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.CHANGE_LOBBY:
+      switch (action.lobby) {
+        case 'human player':
+          return {
+            ... state,
+            menuItems: [
+              {
+                text: 'Play',
+                types: [ActionTypes.PLAY_GAME]
+              },
+              {
+                text: 'Return to Lobby for Human Player',
+                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              },
+              {
+                text: 'Return to the Main Page',
+                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+              }
+            ]
+          }
+        case 'onymous audience':
+          return {
+            ... state,
+            menuItems: [
+              {
+                text: 'Play',
+                types: [ActionTypes.PLAY_GAME]
+              },
+              {
+                text: 'Return to Lobby for Robot Player',
+                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              },
+              {
+                text: 'Return to the Main Page',
+                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+              }
+            ]
+          }
+        case 'robot player':
+          return {
+            ... state,
+            menuItems: [
+              {
+                text: 'Play',
+                types: [ActionTypes.PLAY_GAME]
+              },
+              {
+                text: 'Return to Lobby for Robot Player',
+                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              },
+              {
+                text: 'Return to the Main Page',
+                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+              }
+            ]
+          }
+        default:
+          return state
+      }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,

@@ -1,10 +1,12 @@
 // @flow
 export const SOCKET_OPEN = 'SOCKET:OPEN'
 export const SOCKET_CLOSE = 'SOCKET:CLOSE'
+export const SOCKET_INIT = 'SOCKET:INIT'
 export const SOCKET_MESSAGE = 'SOCKET:MESSAGE'
 export const SOCKET_ERROR = 'SOCKET:ERROR'
 export const SOCKET_SEND = 'SOCKET:SEND'
 
+export const CHANGE_LOBBY = 'CHANGE_LOBBY'
 export const CHANGE_SEARCH_ID = 'CHANGE_SEARCH_ID'
 export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 export const CHANGE_VILLAGE_NAME = 'CHANGE_VILLAGE_NAME'
@@ -47,4 +49,15 @@ export const buildVillage = {
   CHANGE_NUMBER_OF_ROBOTS: 'buildVillage/CHANGE_NUMBER_OF_ROBOTS',
   CHANGE_VALIDITY: 'buildVillage/CHANGE_VALIDITY',
   CHANGE_VILLAGE_NAME: 'buildVillage/CHANGE_VILLAGE_NAME'
+}
+export const indexedDB = {
+  ABORT: 'indexedDB/ABORT',
+  BLOCKED: 'indexedDB/BLOCKED',
+  CLOSE: 'indexedDB/CLOSE',
+  COMPLETE: 'indexedDB/COMPLETE',
+  ERROR: 'indexedDB/ERROR',
+  INIT: 'indexedDB/INIT',
+  SUCCESS: 'indexedDB/SUCCESS',
+  UPGRADE_NEEDED: 'indexedDB/UPGRADE_NEEDED',
+  VERSION_CHANGE: 'indexedDB/VERSION_CHANGE'
 }

@@ -1,15 +1,16 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {ChangeToken, Transition} from '../actions'
+import type {ChangeLobby, ChangeToken, Transition} from '../actions'
 import type {Lobby} from 'lobby'
 
 export type State = {
   'human player': string,
-  +'lobby': Lobby,
+  'lobby': Lobby,
   'onymous audience': string,
   'robot player': string
 }
 type Action =
+  | ChangeLobby
   | ChangeToken
   | Transition
 
@@ -22,6 +23,11 @@ export const initialState = {
 
 const token = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.CHANGE_LOBBY:
+      return {
+        ... state,
+        lobby: action.lobby
+      }
     case ActionTypes.CHANGE_TOKEN:
       return {
         ... state,
