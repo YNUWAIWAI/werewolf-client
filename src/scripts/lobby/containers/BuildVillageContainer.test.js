@@ -18,7 +18,7 @@ test('<BuildVillageContainer /> initialState', () => {
   const wrapper = shallow(<BuildVillageContainer store={store} transition={jest.fn()} />)
 
   expect(wrapper.props().menuItems).toEqual([])
-  expect(wrapper.props().village).toEqual({
+  expect(wrapper.props().value).toEqual({
     avatar: 'fixed',
     comment: '',
     hostName: 'Alice',

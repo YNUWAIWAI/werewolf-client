@@ -18,7 +18,7 @@ test('<BuildVillage />', () => {
     numberOfRobots: true,
     villageName: true
   }
-  const village = {
+  const value = {
     avatar: 'random',
     comment: 'comment',
     hostName: 'hostName',
@@ -37,7 +37,7 @@ test('<BuildVillage />', () => {
       menuItems={[]}
       transition={transition}
       validity={validity}
-      village={village}
+      value={value}
     />
   )
 
