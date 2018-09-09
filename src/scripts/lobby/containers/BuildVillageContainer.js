@@ -36,13 +36,13 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   menuItems: state.buildVillage.menuItems,
   validity: state.buildVillage.validity,
   village: {
-    avatar: state.buildVillage.village.avatar,
-    comment: state.buildVillage.village.comment,
-    hostName: state.buildVillage.village.hostName,
-    numberOfHumans: state.buildVillage.village.numberOfHumans,
-    numberOfPlayers: state.buildVillage.village.numberOfPlayers,
-    numberOfRobots: state.buildVillage.village.numberOfRobots,
-    villageName: state.buildVillage.village.villageName
+    avatar: state.buildVillage.value.avatar,
+    comment: state.buildVillage.value.comment,
+    hostName: state.buildVillage.value.hostName,
+    numberOfHumans: state.buildVillage.value.numberOfHumans,
+    numberOfPlayers: state.buildVillage.value.numberOfPlayers,
+    numberOfRobots: state.buildVillage.value.numberOfRobots,
+    villageName: state.buildVillage.value.villageName
   }
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({

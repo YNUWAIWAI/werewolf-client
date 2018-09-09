@@ -230,29 +230,29 @@ describe('BUILD_VILLAGE', () => {
     type: ActionTypes.BUILD_VILLAGE
   }
   const buildVillagePayload = {
-    avatar: buildVillage.village.avatar,
-    comment: buildVillage.village.comment,
+    avatar: buildVillage.value.avatar,
+    comment: buildVillage.value.comment,
     hostPlayer: {
-      isAnonymous: buildVillage.village.avatar === 'random',
-      isHuman: buildVillage.village.isHuman,
-      name: buildVillage.village.hostName
+      isAnonymous: buildVillage.value.avatar === 'random',
+      isHuman: buildVillage.value.isHuman,
+      name: buildVillage.value.hostName
     },
     id: -1,
     idForSearching: -1,
-    name: buildVillage.village.villageName,
+    name: buildVillage.value.villageName,
     playerSetting: {
       current: -1,
       human: {
         current: -1,
-        max: buildVillage.village.numberOfHumans
+        max: buildVillage.value.numberOfHumans
       },
-      number: buildVillage.village.numberOfPlayers,
+      number: buildVillage.value.numberOfPlayers,
       robot: {
         current: -1,
-        min: buildVillage.village.numberOfRobots
+        min: buildVillage.value.numberOfRobots
       }
     },
-    roleSetting: getCastFromNumberOfPlayers(buildVillage.village.numberOfPlayers)[buildVillage.village.member],
+    roleSetting: getCastFromNumberOfPlayers(buildVillage.value.numberOfPlayers)[buildVillage.value.member],
     token: avatarToken.humanPlayer,
     type: 'buildVillage'
   }
