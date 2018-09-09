@@ -22,7 +22,7 @@ type Props = {
     +numberOfRobots: boolean,
     +villageName: boolean
   },
-  +village: {
+  +value: {
     +avatar: Avatar,
     +comment: string,
     +hostName: string,
@@ -90,7 +90,7 @@ export default function BuildVillageBox(props: Props) {
       <TextInput
         className={`village--item--village-name--val ${props.validity.villageName ? '' : 'invalid'}`}
         handleChange={handleChange('villageName')}
-        initialValue={props.village.villageName}
+        initialValue={props.value.villageName}
         max={30}
         min={5}
         placeholder="5-30 chars"
@@ -100,16 +100,9 @@ export default function BuildVillageBox(props: Props) {
       <div className="village--item--host-name--prop">
         {'Host Name'}
       </div>
-      <TextInput
-        className={`village--item--host-name--val ${props.validity.hostName ? '' : 'invalid'}`}
-        handleChange={handleChange('hostName')}
-        initialValue={props.village.hostName}
-        max={15}
-        min={5}
-        placeholder="5-15 chars"
-        required
-      />
-
+      <div className="village--item--host-name--val">
+        {props.value.hostName}
+      </div>
       <div className="village--item--setup--prop">
         {'Setup'}
       </div>
@@ -117,7 +110,7 @@ export default function BuildVillageBox(props: Props) {
         <NumberSelect
           ascendingOrder={false}
           className="village--item--setup--val1--select"
-          defaultValue={props.village.numberOfPlayers}
+          defaultValue={props.value.numberOfPlayers}
           from={4}
           handleChange={handleChange('numberOfPlayers')}
           name="numberOfPlayers"
@@ -128,7 +121,7 @@ export default function BuildVillageBox(props: Props) {
       <div className={`village--item--setup--val2 ${props.validity.avatar ? '' : 'invalid'}`}>
         <AvatarSelect
           className="village--item--setup--val2--select"
-          defaultValue={props.village.avatar}
+          defaultValue={props.value.avatar}
           handleChange={handleChange('avatar')}
           type="buildVillage"
         />
@@ -137,10 +130,10 @@ export default function BuildVillageBox(props: Props) {
       <SelectMember
         handleMemberChange={handleChange('member')}
         handleNumberChange={handleChange('numberOfRobots')}
-        numberOfHumans={props.village.numberOfHumans}
-        numberOfPlayers={props.village.numberOfPlayers}
-        numberOfRobots={props.village.numberOfRobots}
-        role={getCastFromNumberOfPlayers(props.village.numberOfPlayers)}
+        numberOfHumans={props.value.numberOfHumans}
+        numberOfPlayers={props.value.numberOfPlayers}
+        numberOfRobots={props.value.numberOfRobots}
+        role={getCastFromNumberOfPlayers(props.value.numberOfPlayers)}
         validity={{
           numberOfRobots: props.validity.numberOfRobots
         }}
@@ -152,7 +145,7 @@ export default function BuildVillageBox(props: Props) {
       <TextareaInput
         className={`village--item--comment--val ${props.validity.comment ? '' : 'invalid'}`}
         handleChange={handleChange('comment')}
-        initialValue={props.village.comment}
+        initialValue={props.value.comment}
         max={100}
         min={0}
         placeholder="0-100 chars"

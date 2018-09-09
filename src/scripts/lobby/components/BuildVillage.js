@@ -17,7 +17,7 @@ export type StateProps = {
     +numberOfRobots: boolean,
     +villageName: boolean
   },
-  +village: {
+  +value: {
     +avatar: Avatar,
     +comment: string,
     +hostName: string,
@@ -54,7 +54,7 @@ export default function BuildVillage(props: Props) {
           handleTextChange={props.handleTextChange}
           handleValidityChange={props.handleValidityChange}
           validity={props.validity}
-          village={props.village}
+          value={props.value}
         />
       </MainContent>
       <AsideContent>
