@@ -5,39 +5,83 @@ import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
 
-test('buildVillage/CHANGE_AVATAR', () => {
-  expect(
-    reducer(
-      initialState,
+describe('buildVillage/CHANGE_AVATAR', () => {
+  test('fixed', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          avatar: 'fixed',
+          type: ActionTypes.buildVillage.CHANGE_AVATAR
+        }
+      )
+    ).toEqual(
       {
-        avatar: 'random',
-        type: ActionTypes.buildVillage.CHANGE_AVATAR
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
+        menuItems: [],
+        validity: {
+          avatar: true,
+          comment: true,
+          hostName: true,
+          numberOfPlayers: true,
+          numberOfRobots: true,
+          villageName: true
+        },
+        value: {
+          avatar: 'fixed',
+          comment: '',
+          hostName: 'Alice',
+          isHuman: true,
+          member: 'A',
+          numberOfHumans: 14,
+          numberOfPlayers: 15,
+          numberOfRobots: 1,
+          villageName: 'Alice\'s village'
+        }
       }
     )
-  ).toEqual(
-    {
-      menuItems: [],
-      validity: {
-        avatar: true,
-        comment: true,
-        hostName: true,
-        numberOfPlayers: true,
-        numberOfRobots: true,
-        villageName: true
-      },
-      value: {
-        avatar: 'random',
-        comment: '',
-        hostName: 'Alice',
-        isHuman: true,
-        member: 'A',
-        numberOfHumans: 14,
-        numberOfPlayers: 15,
-        numberOfRobots: 1,
-        villageName: 'Alice\'s village'
+  })
+  test('random', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          avatar: 'random',
+          type: ActionTypes.buildVillage.CHANGE_AVATAR
+        }
+      )
+    ).toEqual(
+      {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
+        menuItems: [],
+        validity: {
+          avatar: true,
+          comment: true,
+          hostName: true,
+          numberOfPlayers: true,
+          numberOfRobots: true,
+          villageName: true
+        },
+        value: {
+          avatar: 'random',
+          comment: '',
+          hostName: 'Anonymous',
+          isHuman: true,
+          member: 'A',
+          numberOfHumans: 14,
+          numberOfPlayers: 15,
+          numberOfRobots: 1,
+          villageName: expect.any(String)
+        }
       }
-    }
-  )
+    )
+  })
 })
 test('buildVillage/CHANGE_COMMENT', () => {
   expect(
@@ -50,6 +94,10 @@ test('buildVillage/CHANGE_COMMENT', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [],
       validity: {
         avatar: true,
@@ -60,15 +108,15 @@ test('buildVillage/CHANGE_COMMENT', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: 'random',
         comment: 'comment',
-        hostName: 'Alice',
+        hostName: 'Anonymous',
         isHuman: true,
         member: 'A',
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
-        villageName: 'Alice\'s village'
+        villageName: 'Cursed Village'
       }
     }
   )
@@ -76,7 +124,15 @@ test('buildVillage/CHANGE_COMMENT', () => {
 test('buildVillage/CHANGE_HOST_NAME', () => {
   expect(
     reducer(
-      initialState,
+      {
+        ... initialState,
+        value: {
+          ... initialState.value,
+          avatar: 'fixed',
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        }
+      },
       {
         hostName: 'hostName',
         type: ActionTypes.buildVillage.CHANGE_HOST_NAME
@@ -84,6 +140,10 @@ test('buildVillage/CHANGE_HOST_NAME', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [],
       validity: {
         avatar: true,
@@ -118,6 +178,10 @@ test('buildVillage/CHANGE_MEMBER', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [],
       validity: {
         avatar: true,
@@ -128,15 +192,15 @@ test('buildVillage/CHANGE_MEMBER', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: 'random',
         comment: '',
-        hostName: 'Alice',
+        hostName: 'Anonymous',
         isHuman: true,
         member: 'B',
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
-        villageName: 'Alice\'s village'
+        villageName: 'Cursed Village'
       }
     }
   )
@@ -161,6 +225,10 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -171,15 +239,15 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 0,
           numberOfPlayers: 5,
           numberOfRobots: 5,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -203,6 +271,10 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -213,15 +285,15 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 0,
           numberOfPlayers: 8,
           numberOfRobots: 8,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -245,6 +317,10 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -255,15 +331,15 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 2,
           numberOfPlayers: 10,
           numberOfRobots: 8,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -280,6 +356,10 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [],
       validity: {
         avatar: true,
@@ -290,15 +370,15 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: 'random',
         comment: '',
-        hostName: 'Alice',
+        hostName: 'Anonymous',
         isHuman: true,
         member: 'A',
         numberOfHumans: 7,
         numberOfPlayers: 15,
         numberOfRobots: 8,
-        villageName: 'Alice\'s village'
+        villageName: 'Cursed Village'
       }
     }
   )
@@ -316,6 +396,10 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: false,
@@ -326,15 +410,15 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -351,6 +435,10 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -361,15 +449,15 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -386,6 +474,10 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -396,15 +488,15 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -421,6 +513,10 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -431,15 +527,15 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -456,6 +552,10 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -466,15 +566,15 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -491,6 +591,10 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -501,15 +605,15 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: false
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
@@ -518,7 +622,15 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
 test('buildVillage/CHANGE_VILLAGE_NAME', () => {
   expect(
     reducer(
-      initialState,
+      {
+        ... initialState,
+        value: {
+          ... initialState.value,
+          avatar: 'fixed',
+          hostName: 'Alice',
+          villageName: 'Alice\'s village'
+        }
+      },
       {
         type: ActionTypes.buildVillage.CHANGE_VILLAGE_NAME,
         villageName: 'villageName'
@@ -526,6 +638,10 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [],
       validity: {
         avatar: true,
@@ -563,7 +679,7 @@ test('LEAVE_WAITING_PAGE', () => {
           villageName: false
         },
         value: {
-          avatar: 'random',
+          avatar: 'fixed',
           comment: 'comment',
           hostName: 'hostName',
           isHuman: false,
@@ -580,6 +696,10 @@ test('LEAVE_WAITING_PAGE', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [],
       validity: {
         avatar: true,
@@ -590,15 +710,15 @@ test('LEAVE_WAITING_PAGE', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: 'random',
         comment: '',
-        hostName: 'Alice',
+        hostName: 'Anonymous',
         isHuman: true,
         member: 'A',
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
-        villageName: 'Alice\'s village'
+        villageName: expect.any(String)
       }
     }
   )
@@ -627,6 +747,10 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [
         {
           text: 'Build',
@@ -650,15 +774,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: 'random',
         comment: '',
-        hostName: 'Alice',
+        hostName: 'Anonymous',
         isHuman: true,
         member: 'A',
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
-        villageName: 'Alice\'s village'
+        villageName: 'Cursed Village'
       }
     }
   )
@@ -677,7 +801,7 @@ test('SHOW_MAIN', () => {
           villageName: false
         },
         value: {
-          avatar: 'random',
+          avatar: 'fixed',
           comment: 'comment',
           hostName: 'hostName',
           isHuman: false,
@@ -694,6 +818,10 @@ test('SHOW_MAIN', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [],
       validity: {
         avatar: true,
@@ -704,15 +832,15 @@ test('SHOW_MAIN', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: 'random',
         comment: '',
-        hostName: 'Alice',
+        hostName: 'Anonymous',
         isHuman: true,
         member: 'A',
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
-        villageName: 'Alice\'s village'
+        villageName: expect.any(String)
       }
     }
   )
@@ -741,6 +869,10 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     )
   ).toEqual(
     {
+      initialFixedValue: {
+        hostName: 'Alice',
+        villageName: 'Alice\'s village'
+      },
       menuItems: [
         {
           text: 'Build',
@@ -764,15 +896,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: 'random',
         comment: '',
-        hostName: 'Alice',
+        hostName: 'Anonymous',
         isHuman: false,
         member: 'A',
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
-        villageName: 'Alice\'s village'
+        villageName: 'Cursed Village'
       }
     }
   )
@@ -784,7 +916,7 @@ describe('SOCKET_MESSAGE', () => {
   const avatarPayload = {
     error: null,
     image: '/assets/images/avatar/default/user.png',
-    name: 'Alice',
+    name: 'Kevin',
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
     type: 'avatar'
   }
@@ -803,14 +935,7 @@ describe('SOCKET_MESSAGE', () => {
   test('reduce correctly', () => {
     expect(
       reducer(
-        {
-          ... initialState,
-          value: {
-            ... initialState.value,
-            hostName: 'hostName',
-            villageName: 'villageName'
-          }
-        },
+        initialState,
         {
           payload: avatarPayload,
           type: ActionTypes.SOCKET_MESSAGE
@@ -818,6 +943,10 @@ describe('SOCKET_MESSAGE', () => {
       )
     ).toEqual(
       {
+        initialFixedValue: {
+          hostName: 'Kevin',
+          villageName: 'Kevin\'s village'
+        },
         menuItems: [],
         validity: {
           avatar: true,
@@ -828,15 +957,15 @@ describe('SOCKET_MESSAGE', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: 'random',
           comment: '',
-          hostName: 'Alice',
+          hostName: 'Anonymous',
           isHuman: true,
           member: 'A',
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
-          villageName: 'Alice\'s village'
+          villageName: 'Cursed Village'
         }
       }
     )
