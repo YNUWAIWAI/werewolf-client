@@ -14,6 +14,10 @@ import type {
 } from '../actions'
 
 export type State = {
+  +initialFixedValue: {
+    hostName: string,
+    villageName: string
+  },
   +menuItems: MenuItem[],
   +validity: {
     +avatar: boolean,
@@ -49,6 +53,10 @@ type Action =
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
 
 export const initialState = {
+  initialFixedValue: {
+    hostName: 'Alice',
+    villageName: 'Alice\'s village'
+  },
   menuItems: [],
   validity: {
     avatar: true,
@@ -59,30 +67,45 @@ export const initialState = {
     villageName: true
   },
   value: {
-    avatar: 'fixed',
+    avatar: 'random',
     comment: '',
-    hostName: 'Alice',
+    hostName: 'Anonymous',
     isHuman: true,
     member: 'A',
     numberOfHumans: 14,
     numberOfPlayers: 15,
     numberOfRobots: 1,
-    villageName: 'Alice\'s village'
+    villageName: 'Cursed Village'
   }
 }
-const initialValue = {
-  hostName: 'Alice',
-  villageName: 'Alice\'s village'
-}
-
+const anonymousVillageName = [
+  'Cursed Village',
+  'Secret Village',
+  'Doubtful Village'
+]
+const getAnonymousVillageName = () => anonymousVillageName[Math.floor(Math.random() * anonymousVillageName.length)]
 const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.buildVillage.CHANGE_AVATAR:
+      if (action.avatar === 'fixed') {
+        return {
+          ... state,
+          value: {
+            ... state.value,
+            avatar: action.avatar,
+            hostName: state.initialFixedValue.hostName,
+            villageName: state.initialFixedValue.villageName
+          }
+        }
+      }
+
       return {
         ... state,
         value: {
           ... state.value,
-          avatar: action.avatar
+          avatar: action.avatar,
+          hostName: 'Anonymous',
+          villageName: getAnonymousVillageName()
         }
       }
     case ActionTypes.buildVillage.CHANGE_COMMENT:
@@ -161,7 +184,8 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         validity: initialState.validity,
         value: {
           ... initialState.value,
-          ... initialValue
+          hostName: 'Anonymous',
+          villageName: getAnonymousVillageName()
         }
       }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
@@ -193,7 +217,8 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         validity: initialState.validity,
         value: {
           ... initialState.value,
-          ... initialValue
+          hostName: 'Anonymous',
+          villageName: getAnonymousVillageName()
         }
       }
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
@@ -224,15 +249,11 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         case 'avatar': {
           const payload: Payload$Avatar = action.payload
 
-          initialValue.hostName = payload.name
-          initialValue.villageName = `${payload.name}'s village`
-
           return {
             ... state,
-            value: {
-              ... state.value,
-              hostName: initialValue.hostName,
-              villageName: initialValue.villageName
+            initialFixedValue: {
+              hostName: payload.name,
+              villageName: `${payload.name}'s village`
             }
           }
         }

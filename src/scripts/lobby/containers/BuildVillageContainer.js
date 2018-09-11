@@ -35,7 +35,7 @@ type Action =
 const mapStateToProps = (state: ReducerState): StateProps => ({
   menuItems: state.buildVillage.menuItems,
   validity: state.buildVillage.validity,
-  village: {
+  value: {
     avatar: state.buildVillage.value.avatar,
     comment: state.buildVillage.value.comment,
     hostName: state.buildVillage.value.hostName,

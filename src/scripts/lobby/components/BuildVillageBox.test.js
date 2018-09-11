@@ -21,7 +21,7 @@ describe('<BuildVillageBox />', () => {
       numberOfRobots: true,
       villageName: true
     }
-    const village = {
+    const value = {
       avatar: 'fixed',
       comment: '',
       hostName: 'Alice',
@@ -38,7 +38,7 @@ describe('<BuildVillageBox />', () => {
         handleTextChange={handleTextChange}
         handleValidityChange={handleValidityChange}
         validity={validity}
-        village={village}
+        value={value}
       />
     )
 
