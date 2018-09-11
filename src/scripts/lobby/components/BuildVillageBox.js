@@ -87,15 +87,23 @@ export default function BuildVillageBox(props: Props) {
       <div className="village--item--village-name--prop">
         {'Village Name'}
       </div>
-      <TextInput
-        className={`village--item--village-name--val ${props.validity.villageName ? '' : 'invalid'}`}
-        handleChange={handleChange('villageName')}
-        initialValue={props.value.villageName}
-        max={30}
-        min={5}
-        placeholder="5-30 chars"
-        required
-      />
+      {
+        props.value.avatar === 'fixed' ?
+          <TextInput
+            className={`village--item--village-name--val ${props.validity.villageName ? '' : 'invalid'}`}
+            handleChange={handleChange('villageName')}
+            initialValue={props.value.villageName}
+            max={30}
+            min={5}
+            placeholder="5-30 chars"
+            required
+          /> :
+          <div
+            className="village--item--village-name--val"
+          >
+            {props.value.villageName}
+          </div>
+      }
 
       <div className="village--item--host-name--prop">
         {'Host Name'}
