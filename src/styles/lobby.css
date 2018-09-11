@@ -171,6 +171,7 @@ body {
   font-size: 2rem;
 
   &--input {
+    background: rgba(250, 250, 250, 1);
     border: black solid 1px;
     box-sizing: border-box;
     font-size: inherit;
@@ -280,6 +281,10 @@ body {
         text-align: center;
         width: 100%;
 
+        textarea& {
+          background: rgba(250, 250, 250, 1);
+        }
+
         &.invalid {
           border-color: red;
         }
@@ -314,6 +319,10 @@ body {
         justify-content: center;
         text-align: center;
         width: 100%;
+
+        input& {
+          background: rgba(250, 250, 250, 1);
+        }
 
         &.invalid {
           border-color: red;
@@ -566,6 +575,10 @@ body {
         justify-content: center;
         text-align: center;
         width: 100%;
+
+        input& {
+          background: rgba(250, 250, 250, 1);
+        }
 
         &.invalid {
           border-color: red;
