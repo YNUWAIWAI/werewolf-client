@@ -196,7 +196,7 @@ body {
     border: black solid 1px;
     display: inline-flex;
     grid-column: 1 / 2;
-    padding: 1rem 0;
+    padding: 1rem 1rem 1rem 0;
 
     & > input {
       margin: 0 1rem;
@@ -264,7 +264,7 @@ body {
         display: inline-flex;
         grid-area: c-p;
         justify-content: center;
-        padding: 1rem 0;
+        padding: 1rem;
         text-align: center;
       }
 
@@ -305,7 +305,7 @@ body {
         display: inline-flex;
         grid-area: h-n-p;
         justify-content: center;
-        padding: 1rem 0;
+        padding: 1rem;
         text-align: center;
       }
 
@@ -506,7 +506,7 @@ body {
         display: inline-flex;
         grid-area: s-p;
         justify-content: center;
-        padding: 1rem 0;
+        padding: 1rem;
         text-align: center;
       }
 
@@ -561,7 +561,7 @@ body {
         display: inline-flex;
         grid-area: v-n-p;
         justify-content: center;
-        padding: 1rem 0;
+        padding: 1rem;
         text-align: center;
       }
 
