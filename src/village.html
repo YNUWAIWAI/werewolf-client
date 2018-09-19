@@ -1,7 +1,5 @@
 @(webSocketUrl: String)
-@template("Village", "app.css") {
-  <div id="root"></div>
-} {
+@prefetch = {
   <link rel="prefetch" href='https://werewolf.world/image/0.1/master.jpg' as="image">
   <link rel="prefetch" href='https://werewolf.world/image/0.1/villager.jpg' as="image">
   <link rel="prefetch" href='https://werewolf.world/image/0.1/seer.jpg' as="image">
@@ -32,4 +30,6 @@
   <link rel="prefetch" href='https://werewolf.world/image/0.1/Clara.jpg' as="image">
   <link rel="prefetch" href='https://werewolf.world/image/0.1/Simon.jpg' as="image">
 }
-
+@template("Village", "app.css") {
+  <div id="root"></div>
+}
