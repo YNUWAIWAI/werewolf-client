@@ -1,10 +1,5 @@
 @(webSocketUrl: String)
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@prefetch = {
   <link rel="prefetch" href='https://werewolf.world/image/0.1/master.jpg' as="image">
   <link rel="prefetch" href='https://werewolf.world/image/0.1/villager.jpg' as="image">
   <link rel="prefetch" href='https://werewolf.world/image/0.1/seer.jpg' as="image">
@@ -34,14 +29,12 @@
   <link rel="prefetch" href='https://werewolf.world/image/0.1/Erna.jpg' as="image">
   <link rel="prefetch" href='https://werewolf.world/image/0.1/Clara.jpg' as="image">
   <link rel="prefetch" href='https://werewolf.world/image/0.1/Simon.jpg' as="image">
-  <link rel="shortcut icon" type="image/x-icon" href='@routes.Assets.at("images/favicon.ico")'>
-  <link rel="stylesheet" href='@routes.Assets.at("stylesheets/app.css")'>
+}
+@scripts = {
   <script crossorigin src="https://unpkg.com/react@@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
   <script defer src='@routes.Assets.at("javascripts/village.js")' data-url='@webSocketUrl' id="script"></script>
-  <title>Village, Werewolf: The Game</title>
-</head>
-<body>
+}
+@template("Village", "app.css", scripts, prefetch) {
   <div id="root"></div>
-</body>
-</html>
+}

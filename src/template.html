@@ -1,10 +1,12 @@
-@(title: String, stylesheet: String)(content: Html)
+@(title: String, stylesheet: String, scripts: Html = Html(""), prefetch: Html = Html(""))(content: Html)
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  @prefetch
+  @scripts
   <link rel="shortcut icon" type="image/x-icon" href='@routes.Assets.at("images/favicon.ico")'>
   <link rel="stylesheet" href='@routes.Assets.at("stylesheets/" + stylesheet)'>
   <title>@title, Werewolf: The Game</title>
