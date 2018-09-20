@@ -47,7 +47,7 @@ body {
     grid-area: text;
     grid-template-areas:
       'num text'
-      'num date';
+      'icon date';
     grid-template-columns: 2.5rem 1fr;
     position: relative;
 
@@ -66,25 +66,7 @@ body {
     }
   }
 
-  &--date {
-    display: inline-flex;
-    flex-flow: column-reverse;
-    grid-area: date;
-    padding: 0 1rem 1rem 0;
-    text-align: right;
-  }
-
-  &--delimeter {
-    align-items: center;
-    border-bottom: 1px solid #d4d4d4;
-    display: flex;
-    font-size: 1.5rem;
-    justify-content: center;
-    margin: 1rem auto 0 auto;
-    width: 74%;
-  }
-
-  &--icon {
+  &--agent {
     display: block;
     grid-area: opp;
     margin: 0 0 0 var(--arrow);
@@ -107,6 +89,28 @@ body {
       width: 100%;
       word-break: keep-all;
     }
+  }
+
+  &--date {
+    display: inline-flex;
+    flex-flow: column-reverse;
+    grid-area: date;
+    padding: 0 1rem 1rem 0;
+    text-align: right;
+  }
+
+  &--delimeter {
+    align-items: center;
+    border-bottom: 1px solid #d4d4d4;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    margin: 1rem auto 0 auto;
+    width: 74%;
+  }
+
+  &--icon {
+    grid-area: 'icon';
   }
 
   &--item {
@@ -174,7 +178,7 @@ body {
         border-right-color: var(--private-color);
       }
 
-      & > .chat--icon {
+      & > .chat--agent {
         grid-area: me;
         margin: 0 var(--arrow) 0 0;
 
