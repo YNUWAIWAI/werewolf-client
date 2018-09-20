@@ -110,7 +110,16 @@ body {
   }
 
   &--icon {
-    grid-area: 'icon';
+    grid-area: icon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > svg {
+      height: 100%;
+      width: 100%;
+      margin: 4px;
+    }
   }
 
   &--item {
