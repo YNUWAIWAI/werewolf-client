@@ -107,10 +107,19 @@ body {
 
   &--item {
     border: 1px solid black;
+    cursor: pointer;
     font-size: 2rem;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
     text-align: center;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.03);
+
+      &:active {
+        background: rgba(0, 0, 0, 0.07);
+      }
+    }
   }
 }
 
@@ -214,10 +223,19 @@ body {
 
   &--item {
     border: 1px solid black;
+    cursor: pointer;
     font-size: 4rem;
     margin: 1.5rem 10rem;
     padding: 1rem;
     text-align: center;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.03);
+
+      &:active {
+        background: rgba(0, 0, 0, 0.07);
+      }
+    }
   }
 }
 
