@@ -107,6 +107,7 @@ body {
 
   &--item {
     border: 1px solid black;
+    cursor: pointer;
     font-size: 2rem;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
@@ -222,6 +223,7 @@ body {
 
   &--item {
     border: 1px solid black;
+    cursor: pointer;
     font-size: 4rem;
     margin: 1.5rem 10rem;
     padding: 1rem;
