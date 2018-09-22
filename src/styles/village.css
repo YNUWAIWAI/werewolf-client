@@ -9,6 +9,7 @@
   --result-image-size: 40px;
   --vote-image-size: 60px;
   --modal-image-size: 60px;
+
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -240,11 +241,10 @@ body {
   &--input {
     display: grid;
     grid-gap: 10px;
-    grid-template-areas:
-      'input input input input'
-      'icon space counter send';
-    grid-template-columns: 2.25rem auto 3rem 20%;
-    grid-template-rows: auto 2.25rem;
+    grid-template:
+      'input input input input' auto
+      'icon . counter send' 2.25rem
+      / 2.25rem auto 3rem 20%;
     height: 100%;
     width: 30vw;
 
@@ -518,7 +518,6 @@ body {
     }
   }
 
-
   & > div[ data-state = 'fill' ] {
     background: black;
 
@@ -690,7 +689,6 @@ body {
       }
     }
   }
-
 }
 
 .modal {
