@@ -1,5 +1,7 @@
 // @flow
+import ChatIcon from './ChatIcon'
 import React from 'react'
+import {getChannelFromInputChennel} from '../constants/Channels'
 
 const countText = (text: string): number => Array.of(... text).length
 
@@ -18,7 +20,7 @@ type Props = {
   +postCountLimit: number
 } | {
   +handlePostChat: string => void,
-  +kind: 'private' | 'postMortem'
+  +kind: 'private' | 'post mortem'
 }
 type State = {
   sendable: boolean,
@@ -43,7 +45,7 @@ export default class CommandInput extends React.Component<Props, State> {
   isSendable() {
     switch (this.props.kind) {
       case 'private':
-      case 'postMortem':
+      case 'post mortem':
         return true
       case 'public':
       case 'limited':
@@ -81,10 +83,10 @@ export default class CommandInput extends React.Component<Props, State> {
 
   render() {
     const placeholder = (() => ({
-      limited: '人狼用',
-      postMortem: '感想戦',
-      private: '非公開用',
-      public: '公開用'
+      'limited': '人狼用',
+      'post mortem': '感想戦',
+      'private': '非公開用',
+      'public': '公開用'
     })[this.props.kind])()
 
     return (
@@ -98,6 +100,10 @@ export default class CommandInput extends React.Component<Props, State> {
         <span className={`command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
           {this.state.textCount}
         </span>
+        <ChatIcon
+          channel={getChannelFromInputChennel(this.props.kind, 'werewolf')}
+          className="command--input--icon"
+        />
         {
           this.props.kind === 'public' || this.props.kind === 'limited' ?
             <span className="command--input--counter">

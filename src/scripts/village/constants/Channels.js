@@ -43,7 +43,7 @@ export const getChannelFromInputChennel = (inputChannel: InputChannel, role: Rol
     if (inputChannel === 'limited') {
       return v === role
     }
-    if (inputChannel === 'public') {
+    if (inputChannel === 'public' || inputChannel === 'post mortem') {
       return v === publicChannel
     }
 
