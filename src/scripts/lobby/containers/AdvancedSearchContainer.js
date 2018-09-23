@@ -1,4 +1,5 @@
 // @flow
+import * as ActionTypes from '../constants/ActionTypes'
 import AdvancedSearch, {type DispatchProps, type StateProps} from '../components/AdvancedSearch'
 import {
   type AdvancedSearch$ChangeAvatar,
@@ -35,16 +36,39 @@ type Action =
   | AdvancedSearch$ChangeVillageName
   | SelectVillage
 
-const mapStateToProps = (state: ReducerState): StateProps => ({
-  checked: state.advancedSearch.checked,
-  header: state.advancedSearch.header,
-  image: state.advancedSearch.image,
-  isPlayer: state.advancedSearch.isPlayer,
-  menuItems: state.advancedSearch.menuItems,
-  name: state.advancedSearch.name,
-  validity: state.advancedSearch.validity,
-  villageItems: state.advancedSearch.villageItems
-})
+const mapStateToProps = (state: ReducerState): StateProps => {
+  const menuItems = (() => {
+    if (
+      Object.keys(state.advancedSearch.checked)
+        .filter(key => state.advancedSearch.checked[key])
+        .every(key => state.advancedSearch.validity[key])
+    ) {
+      return state.advancedSearch.menuItems
+    }
+
+    return state.advancedSearch.menuItems.map(item => {
+      if (item.types.includes(ActionTypes.ADVANCED_SEARCH)) {
+        return {
+          ... item,
+          disabled: true
+        }
+      }
+
+      return item
+    })
+  })()
+
+  return {
+    checked: state.advancedSearch.checked,
+    header: state.advancedSearch.header,
+    image: state.advancedSearch.image,
+    isPlayer: state.advancedSearch.isPlayer,
+    menuItems,
+    name: state.advancedSearch.name,
+    validity: state.advancedSearch.validity,
+    villageItems: state.advancedSearch.villageItems
+  }
+}
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
     dispatch(changeAvatar('advancedSearch')(value))
