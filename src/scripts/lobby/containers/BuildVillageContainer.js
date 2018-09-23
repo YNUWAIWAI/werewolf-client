@@ -34,31 +34,22 @@ type Action =
   | BuildVillage$ChangeVillageName
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  if (Object.keys(state.buildVillage.validity).every(key => state.buildVillage.validity[key])) {
-    return {
-      menuItems: state.buildVillage.menuItems,
-      validity: state.buildVillage.validity,
-      value: {
-        avatar: state.buildVillage.value.avatar,
-        comment: state.buildVillage.value.comment,
-        hostName: state.buildVillage.value.hostName,
-        numberOfHumans: state.buildVillage.value.numberOfHumans,
-        numberOfPlayers: state.buildVillage.value.numberOfPlayers,
-        numberOfRobots: state.buildVillage.value.numberOfRobots,
-        villageName: state.buildVillage.value.villageName
-      }
-    }
-  }
-  const menuItems = state.buildVillage.menuItems.map(item => {
-    if (item.types.includes(ActionTypes.BUILD_VILLAGE)) {
-      return {
-        ... item,
-        disabled: true
-      }
+  const menuItems = (() => {
+    if (Object.keys(state.buildVillage.validity).every(key => state.buildVillage.validity[key])) {
+      return state.buildVillage.menuItems
     }
 
-    return item
-  })
+    return state.buildVillage.menuItems.map(item => {
+      if (item.types.includes(ActionTypes.BUILD_VILLAGE)) {
+        return {
+          ... item,
+          disabled: true
+        }
+      }
+
+      return item
+    })
+  })()
 
   return {
     menuItems,
