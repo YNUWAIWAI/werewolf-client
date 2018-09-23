@@ -69,6 +69,7 @@ declare module 'lobby' {
     | 'SHOW_MAIN'
     | 'SHOW_SETTINGS'
   declare type MenuItem = {
+    disabled?: boolean,
     text: string,
     types: Target[]
   }

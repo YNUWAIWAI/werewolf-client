@@ -113,6 +113,19 @@ body {
     padding: 0.5rem;
     text-align: center;
 
+    &.disabled {
+      background: rgba(0, 0, 0, 0.3);
+      cursor: not-allowed;
+
+      &:hover {
+       background: rgba(0, 0, 0, 0.3);
+
+        &:active {
+          background: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+
     &:hover {
       background: rgba(0, 0, 0, 0.03);
 
