@@ -69,7 +69,7 @@ describe('<NumberSelect />', () => {
     expect(handleChange).toHaveBeenCalledTimes(1)
     expect(handleChange).toHaveBeenCalledWith(true)
     expect(handleChangeInner).toHaveBeenCalledTimes(1)
-    expect(handleChangeInner).toHaveBeenCalledWith(4)
+    expect(handleChangeInner).toHaveBeenCalledWith(0)
   })
   test('onChange invalid', () => {
     const handleChangeInner = jest.fn()
