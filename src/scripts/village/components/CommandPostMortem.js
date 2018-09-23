@@ -20,8 +20,13 @@ type Props =
 export default function CommandPostMortem(props: Props) {
   return (
     <Fragment>
-      <CommandInput handlePostChat={props.handlePostChat('post mortem')} kind="postMortem" />
-      <CommandNavigation items={props.navigation} />
+      <CommandInput
+        handlePostChat={props.handlePostChat('post mortem')}
+        kind="post mortem"
+      />
+      <CommandNavigation
+        items={props.navigation}
+      />
     </Fragment>
   )
 }

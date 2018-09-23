@@ -9,6 +9,7 @@
   --result-image-size: 40px;
   --vote-image-size: 60px;
   --modal-image-size: 60px;
+
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
@@ -47,7 +48,7 @@ body {
     grid-area: text;
     grid-template-areas:
       'num text'
-      'num date';
+      'icon date';
     grid-template-columns: 2.5rem 1fr;
     position: relative;
 
@@ -66,25 +67,7 @@ body {
     }
   }
 
-  &--date {
-    display: inline-flex;
-    flex-flow: column-reverse;
-    grid-area: date;
-    padding: 0 1rem 1rem 0;
-    text-align: right;
-  }
-
-  &--delimeter {
-    align-items: center;
-    border-bottom: 1px solid #d4d4d4;
-    display: flex;
-    font-size: 1.5rem;
-    justify-content: center;
-    margin: 1rem auto 0 auto;
-    width: 74%;
-  }
-
-  &--icon {
+  &--agent {
     display: block;
     grid-area: opp;
     margin: 0 0 0 var(--arrow);
@@ -106,6 +89,37 @@ body {
       top: var(--chat-image-size);
       width: 100%;
       word-break: keep-all;
+    }
+  }
+
+  &--date {
+    display: inline-flex;
+    flex-flow: column-reverse;
+    grid-area: date;
+    padding: 0 1rem 1rem 0;
+    text-align: right;
+  }
+
+  &--delimeter {
+    align-items: center;
+    border-bottom: 1px solid #d4d4d4;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    margin: 1rem auto 0;
+    width: 74%;
+  }
+
+  &--icon {
+    align-items: center;
+    display: flex;
+    grid-area: icon;
+    justify-content: center;
+
+    & > svg {
+      height: calc(100% - 8px);
+      margin: 4px;
+      width: 100%;
     }
   }
 
@@ -174,7 +188,7 @@ body {
         border-right-color: var(--private-color);
       }
 
-      & > .chat--icon {
+      & > .chat--agent {
         grid-area: me;
         margin: 0 var(--arrow) 0 0;
 
@@ -227,7 +241,10 @@ body {
   &--input {
     display: grid;
     grid-gap: 10px;
-    grid-template: auto 2.25rem / auto 20%;
+    grid-template:
+      'input input input input' auto
+      'icon . counter send' 2.25rem
+      / 2.25rem auto 3rem 20%;
     height: 100%;
     width: 30vw;
 
@@ -235,8 +252,7 @@ body {
       background: var(--public-color);
       border-radius: 10px;
       box-sizing: border-box;
-      grid-column: 1 / 3;
-      grid-row: 1;
+      grid-area: input;
       padding: 1rem;
       resize: none;
       z-index: 2;
@@ -245,8 +261,7 @@ body {
     &--char {
       align-items: flex-end;
       display: inline-flex;
-      grid-column: 1 / 3;
-      grid-row: 1;
+      grid-area: input;
       justify-content: flex-end;
       padding: 5px 10px;
       z-index: 1;
@@ -260,9 +275,21 @@ body {
       align-items: center;
       display: inline-flex;
       font-size: 1.5rem;
-      grid-column: 1;
-      grid-row: 2;
+      grid-area: counter;
       justify-content: flex-end;
+    }
+
+    &--icon {
+      align-items: center;
+      display: flex;
+      grid-area: icon;
+      justify-content: left;
+
+      & > svg {
+        height: calc(100% - 4px);
+        padding: 2px;
+        width: 100%;
+      }
     }
 
     & button {
@@ -270,8 +297,7 @@ body {
       border: none;
       border-radius: 5px;
       box-shadow: 2px 2px 1px 0 grey;
-      grid-column: 2;
-      grid-row: 2;
+      grid-area: send;
       width: 90%;
 
       &:hover {
@@ -492,7 +518,6 @@ body {
     }
   }
 
-
   & > div[ data-state = 'fill' ] {
     background: black;
 
@@ -664,7 +689,6 @@ body {
       }
     }
   }
-
 }
 
 .modal {
