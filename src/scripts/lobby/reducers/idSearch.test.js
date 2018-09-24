@@ -21,6 +21,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       isPlayer: false,
       menuItems: [
         {
+          disabled: true,
           text: 'Search',
           types: [ActionTypes.ID_SEARCH]
         },
@@ -54,6 +55,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
+          disabled: true,
           text: 'Search',
           types: [ActionTypes.ID_SEARCH]
         },
@@ -87,6 +89,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
+          disabled: true,
           text: 'Search',
           types: [ActionTypes.ID_SEARCH]
         },
@@ -110,7 +113,7 @@ test('CHANGE_SEARCH_ID', () => {
       initialState,
       {
         id: 123,
-        type: ActionTypes.CHANGE_SEARCH_ID
+        type: ActionTypes.idSearch.CHANGE_SEARCH_ID
       }
     )
   ).toEqual(
