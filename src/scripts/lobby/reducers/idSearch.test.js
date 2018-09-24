@@ -107,7 +107,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     }
   )
 })
-test('CHANGE_SEARCH_ID', () => {
+test('idSearch/CHANGE_SEARCH_ID', () => {
   expect(
     reducer(
       initialState,
@@ -123,6 +123,59 @@ test('CHANGE_SEARCH_ID', () => {
       image: '',
       isPlayer: true,
       menuItems: [],
+      name: '',
+      villageItems: []
+    }
+  )
+})
+test('idSearch/CHANGE_VALIDITY', () => {
+  expect(
+    reducer(
+      {
+        ... initialState,
+        menuItems: [
+          {
+            disabled: true,
+            text: 'Search',
+            types: [ActionTypes.ID_SEARCH]
+          },
+          {
+            text: 'Return to Lobby for Audience',
+            types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            text: 'Return to the Main Page',
+            types: [ActionTypes.SHOW_MAIN]
+          }
+        ]
+      },
+      {
+        propName: 'id',
+        type: ActionTypes.idSearch.CHANGE_VALIDITY,
+        validity: true
+      }
+    )
+  ).toEqual(
+    {
+      header: '',
+      id: 123,
+      image: '',
+      isPlayer: true,
+      menuItems: [
+        {
+          disabled: false,
+          text: 'Search',
+          types: [ActionTypes.ID_SEARCH]
+        },
+        {
+          text: 'Return to Lobby for Audience',
+          types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+        },
+        {
+          text: 'Return to the Main Page',
+          types: [ActionTypes.SHOW_MAIN]
+        }
+      ],
       name: '',
       villageItems: []
     }
