@@ -1,4 +1,5 @@
 // @flow
+import * as ActionTypes from '../constants/ActionTypes'
 import BuildVillage, {type DispatchProps, type StateProps} from '../components/BuildVillage'
 import {
   type BuildVillage$ChangeAvatar,
@@ -32,19 +33,38 @@ type Action =
   | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
 
-const mapStateToProps = (state: ReducerState): StateProps => ({
-  menuItems: state.buildVillage.menuItems,
-  validity: state.buildVillage.validity,
-  value: {
-    avatar: state.buildVillage.value.avatar,
-    comment: state.buildVillage.value.comment,
-    hostName: state.buildVillage.value.hostName,
-    numberOfHumans: state.buildVillage.value.numberOfHumans,
-    numberOfPlayers: state.buildVillage.value.numberOfPlayers,
-    numberOfRobots: state.buildVillage.value.numberOfRobots,
-    villageName: state.buildVillage.value.villageName
+const mapStateToProps = (state: ReducerState): StateProps => {
+  const menuItems = (() => {
+    if (Object.keys(state.buildVillage.validity).every(key => state.buildVillage.validity[key])) {
+      return state.buildVillage.menuItems
+    }
+
+    return state.buildVillage.menuItems.map(item => {
+      if (item.types.includes(ActionTypes.BUILD_VILLAGE)) {
+        return {
+          ... item,
+          disabled: true
+        }
+      }
+
+      return item
+    })
+  })()
+
+  return {
+    menuItems,
+    validity: state.buildVillage.validity,
+    value: {
+      avatar: state.buildVillage.value.avatar,
+      comment: state.buildVillage.value.comment,
+      hostName: state.buildVillage.value.hostName,
+      numberOfHumans: state.buildVillage.value.numberOfHumans,
+      numberOfPlayers: state.buildVillage.value.numberOfPlayers,
+      numberOfRobots: state.buildVillage.value.numberOfRobots,
+      villageName: state.buildVillage.value.villageName
+    }
   }
-})
+}
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
     dispatch(changeAvatar('buildVillage')(value))

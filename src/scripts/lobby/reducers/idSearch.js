@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {ChangeSearchId, SocketMessage, Transition} from '../actions'
+import type {IdSearch$ChangeSearchId, IdSearch$ChangeValidity, SocketMessage, Transition} from '../actions'
 import type {MenuItem, Payload$Avatar, Payload$SearchResult, Village} from 'lobby'
 
 export type State = {
@@ -13,7 +13,8 @@ export type State = {
   +villageItems: Village[]
 }
 type Action =
-  | ChangeSearchId
+  | IdSearch$ChangeSearchId
+  | IdSearch$ChangeValidity
   | SocketMessage
   | Transition
 
@@ -37,6 +38,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
         isPlayer: false,
         menuItems: [
           {
+            disabled: true,
             text: 'Search',
             types: [ActionTypes.ID_SEARCH]
           },
@@ -59,6 +61,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
         isPlayer: true,
         menuItems: [
           {
+            disabled: true,
             text: 'Search',
             types: [ActionTypes.ID_SEARCH]
           },
@@ -81,6 +84,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
         isPlayer: true,
         menuItems: [
           {
+            disabled: true,
             text: 'Search',
             types: [ActionTypes.ID_SEARCH]
           },
@@ -95,11 +99,28 @@ const idSearch = (state: State = initialState, action: Action): State => {
         ],
         villageItems: []
       }
-    case ActionTypes.CHANGE_SEARCH_ID:
+    case ActionTypes.idSearch.CHANGE_SEARCH_ID:
       return {
         ... state,
         id: action.id
       }
+    case ActionTypes.idSearch.CHANGE_VALIDITY: {
+      const disabled = !action.validity
+
+      return {
+        ... state,
+        menuItems: state.menuItems.map(item => {
+          if (item.types.includes(ActionTypes.ID_SEARCH)) {
+            return {
+              ... item,
+              disabled
+            }
+          }
+
+          return item
+        })
+      }
+    }
     case ActionTypes.SOCKET_MESSAGE:
       switch (action.payload.type) {
         case 'avatar': {

@@ -65,16 +65,16 @@ export const changeNumberOfRobots = (scope: 'buildVillage') => (numberOfRobots: 
   numberOfRobots: Number(numberOfRobots),
   type: types[scope].CHANGE_NUMBER_OF_ROBOTS
 })
-export const changeSearchId = (id: number): {id: number, type: 'CHANGE_SEARCH_ID'} => ({
+export const changeSearchId = (id: number): {id: number, type: 'idSearch/CHANGE_SEARCH_ID'} => ({
   id,
-  type: types.CHANGE_SEARCH_ID
+  type: types.idSearch.CHANGE_SEARCH_ID
 })
 export const changeToken = ({lobby, token}: {lobby: Lobby, token: string}): {lobby: Lobby, token: string, type: 'CHANGE_TOKEN'} => ({
   lobby,
   token,
   type: types.CHANGE_TOKEN
 })
-export const changeValidity = (scope: 'advancedSearch' | 'buildVillage') => (propName: string) => (validity: boolean): {propName: string, type: 'advancedSearch/CHANGE_VALIDITY' | 'buildVillage/CHANGE_VALIDITY', validity: boolean} => ({
+export const changeValidity = (scope: 'advancedSearch' | 'buildVillage' | 'idSearch') => (propName: string) => (validity: boolean): {propName: string, type: 'advancedSearch/CHANGE_VALIDITY' | 'buildVillage/CHANGE_VALIDITY' | 'idSearch/CHANGE_VALIDITY', validity: boolean} => ({
   propName,
   type: types[scope].CHANGE_VALIDITY,
   validity
@@ -117,8 +117,9 @@ export type BuildVillage$ChangeNumberOfRobots = $Call<$Call<typeof changeNumberO
 export type BuildVillage$ChangeValidity = $Call<$Call<$Call<typeof changeValidity, 'buildVillage'>, string>, boolean>
 export type BuildVillage$ChangeVillageName = $Call<$Call<typeof changeVillageName, 'buildVillage'>, string>
 export type ChangeLobby = $Call<typeof changeLobby, Lobby>
-export type ChangeSearchId = $Call<typeof changeSearchId, number>
 export type ChangeToken = $Call<typeof changeToken, {lobby: Lobby, token: string}>
 export type KickOutPlayer = $Call<typeof kickOutPlayer, string>
+export type IdSearch$ChangeSearchId = $Call<typeof changeSearchId, number>
+export type IdSearch$ChangeValidity = $Call<$Call<$Call<typeof changeValidity, 'idSearch'>, string>, boolean>
 export type SelectVillage = $Call<typeof selectVillage, number>
 export type Transition = $Call<typeof transition, Target>

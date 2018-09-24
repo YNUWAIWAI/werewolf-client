@@ -4,6 +4,7 @@ import type {Target} from 'lobby'
 
 type Props = {
   +class: string,
+  +disabled?: boolean,
   +text: string,
   +transition: Target => void,
   +types: Target[]
@@ -12,10 +13,13 @@ type Props = {
 export default function MenuItem(props: Props) {
   return (
     <li
-      className={props.class}
+      className={`${props.class} ${props.disabled ? 'disabled' : ''}`}
+      disabled={props.disabled}
       onClick={() => {
         props.types.forEach(type => {
-          props.transition(type)
+          if (!props.disabled) {
+            props.transition(type)
+          }
         })
       }}
     >

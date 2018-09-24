@@ -15,7 +15,7 @@ type Props = {
 
 export default function NumberSelect(props: Props) {
   const handleChange = selectedOption => {
-    if (selectedOption.value) {
+    if (typeof selectedOption.value === 'number') {
       props.handleChange(true)(selectedOption.value)
     } else {
       props.handleChange(false)(-1)

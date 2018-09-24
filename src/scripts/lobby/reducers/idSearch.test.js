@@ -21,6 +21,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       isPlayer: false,
       menuItems: [
         {
+          disabled: true,
           text: 'Search',
           types: [ActionTypes.ID_SEARCH]
         },
@@ -54,6 +55,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
+          disabled: true,
           text: 'Search',
           types: [ActionTypes.ID_SEARCH]
         },
@@ -87,6 +89,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
+          disabled: true,
           text: 'Search',
           types: [ActionTypes.ID_SEARCH]
         },
@@ -104,13 +107,13 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     }
   )
 })
-test('CHANGE_SEARCH_ID', () => {
+test('idSearch/CHANGE_SEARCH_ID', () => {
   expect(
     reducer(
       initialState,
       {
         id: 123,
-        type: ActionTypes.CHANGE_SEARCH_ID
+        type: ActionTypes.idSearch.CHANGE_SEARCH_ID
       }
     )
   ).toEqual(
@@ -120,6 +123,59 @@ test('CHANGE_SEARCH_ID', () => {
       image: '',
       isPlayer: true,
       menuItems: [],
+      name: '',
+      villageItems: []
+    }
+  )
+})
+test('idSearch/CHANGE_VALIDITY', () => {
+  expect(
+    reducer(
+      {
+        ... initialState,
+        menuItems: [
+          {
+            disabled: true,
+            text: 'Search',
+            types: [ActionTypes.ID_SEARCH]
+          },
+          {
+            text: 'Return to Lobby for Audience',
+            types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            text: 'Return to the Main Page',
+            types: [ActionTypes.SHOW_MAIN]
+          }
+        ]
+      },
+      {
+        propName: 'id',
+        type: ActionTypes.idSearch.CHANGE_VALIDITY,
+        validity: true
+      }
+    )
+  ).toEqual(
+    {
+      header: '',
+      id: -1,
+      image: '',
+      isPlayer: true,
+      menuItems: [
+        {
+          disabled: false,
+          text: 'Search',
+          types: [ActionTypes.ID_SEARCH]
+        },
+        {
+          text: 'Return to Lobby for Audience',
+          types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+        },
+        {
+          text: 'Return to the Main Page',
+          types: [ActionTypes.SHOW_MAIN]
+        }
+      ],
       name: '',
       villageItems: []
     }

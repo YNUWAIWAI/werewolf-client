@@ -2,15 +2,17 @@
 import React from 'react'
 
 export type Props = {
-  changeSearchId: number => void,
+  handleSearchIdChange: number => void,
+  handleValidityChange: boolean => void,
   placeholder: string,
   numberOfDigit: number
 }
 
 export default function IdSearchBox(props: Props) {
-  const handleIdChange = event => {
+  const handleIdChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
+    props.handleValidityChange(event.target.validity.valid)
     if (event.target.validity.valid) {
-      props.changeSearchId(Number(event.target.value))
+      props.handleSearchIdChange(Number(event.target.value))
     }
   }
 

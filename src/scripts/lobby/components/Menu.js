@@ -14,6 +14,7 @@ export default function Menu(props: Props) {
   const items = props.items.map(item =>
     <MenuItem
       class={props.itemClass}
+      disabled={item.disabled}
       key={item.text}
       text={item.text}
       transition={props.transition}

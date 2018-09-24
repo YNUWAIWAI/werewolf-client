@@ -18,7 +18,8 @@ export type StateProps = {
   +villageItems: Village[]
 }
 export type DispatchProps = {
-  +changeSearchId: number => void,
+  +handleSearchIdChange: number => void,
+  +handleValidityChange: boolean => void,
   +selectVillage: number => void => void
 }
 export type OwnProps = {
@@ -39,7 +40,8 @@ export default function IdSearch(props: Props) {
       <Avatar image={props.image} name={props.name} />
       <MainContent>
         <IdSearchBox
-          changeSearchId={props.changeSearchId}
+          handleSearchIdChange={props.handleSearchIdChange}
+          handleValidityChange={props.handleValidityChange}
           numberOfDigit={numberOfDigit}
           placeholder={placeholder}
         />
