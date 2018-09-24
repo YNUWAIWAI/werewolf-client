@@ -4,12 +4,14 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<IdSearch /> 0 items', () => {
-  const changeSearchId = jest.fn()
+  const handleSearchIdChange = jest.fn()
+  const handleValidityChange = jest.fn()
   const selectVillage = jest.fn()
   const transition = jest.fn()
   const wrapper = shallow(
     <IdSearch
-      changeSearchId={changeSearchId}
+      handleSearchIdChange={handleSearchIdChange}
+      handleValidityChange={handleValidityChange}
       header="header"
       image="image"
       isPlayer
@@ -47,7 +49,8 @@ test('<IdSearch /> 0 items', () => {
   expect(transition).toHaveBeenCalledTimes(0)
 })
 test('<IdSearch /> 1items', () => {
-  const changeSearchId = jest.fn()
+  const handleSearchIdChange = jest.fn()
+  const handleValidityChange = jest.fn()
   const selectVillage = jest.fn()
   const transition = jest.fn()
   const villageItems = [
@@ -87,7 +90,8 @@ test('<IdSearch /> 1items', () => {
   ]
   const wrapper = shallow(
     <IdSearch
-      changeSearchId={changeSearchId}
+      handleSearchIdChange={handleSearchIdChange}
+      handleValidityChange={handleValidityChange}
       header="header"
       image="image"
       isPlayer
