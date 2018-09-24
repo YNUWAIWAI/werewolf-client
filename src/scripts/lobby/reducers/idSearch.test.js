@@ -158,7 +158,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
   ).toEqual(
     {
       header: '',
-      id: 123,
+      id: -1,
       image: '',
       isPlayer: true,
       menuItems: [
