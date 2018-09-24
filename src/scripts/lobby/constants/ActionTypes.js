@@ -7,7 +7,6 @@ export const SOCKET_ERROR = 'SOCKET:ERROR'
 export const SOCKET_SEND = 'SOCKET:SEND'
 
 export const CHANGE_LOBBY = 'CHANGE_LOBBY'
-export const CHANGE_SEARCH_ID = 'CHANGE_SEARCH_ID'
 export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 export const CHANGE_VILLAGE_NAME = 'CHANGE_VILLAGE_NAME'
 export const KICK_OUT_PLAYER = 'KICK_OUT_PLAYER'
@@ -49,6 +48,10 @@ export const buildVillage = {
   CHANGE_NUMBER_OF_ROBOTS: 'buildVillage/CHANGE_NUMBER_OF_ROBOTS',
   CHANGE_VALIDITY: 'buildVillage/CHANGE_VALIDITY',
   CHANGE_VILLAGE_NAME: 'buildVillage/CHANGE_VILLAGE_NAME'
+}
+export const idSearch = {
+  CHANGE_SEARCH_ID: 'idSearch/CHANGE_SEARCH_ID',
+  CHANGE_VALIDITY: 'idSearch/CHANGE_VALIDITY'
 }
 export const indexedDB = {
   ABORT: 'indexedDB/ABORT',

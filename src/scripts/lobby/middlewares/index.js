@@ -13,6 +13,7 @@ export type Action =
   | actions.AdvancedSearch$ChangeHostName
   | actions.AdvancedSearch$ChangeMaximum
   | actions.AdvancedSearch$ChangeMinimum
+  | actions.AdvancedSearch$ChangeValidity
   | actions.AdvancedSearch$ChangeVillageName
   | actions.BuildVillage$ChangeAvatar
   | actions.BuildVillage$ChangeComment
@@ -20,10 +21,12 @@ export type Action =
   | actions.BuildVillage$ChangeMember
   | actions.BuildVillage$ChangeNumberOfPlayers
   | actions.BuildVillage$ChangeNumberOfRobots
-  | actions.ChangeLobby
-  | actions.ChangeSearchId
-  | actions.ChangeToken
+  | actions.BuildVillage$ChangeValidity
   | actions.BuildVillage$ChangeVillageName
+  | actions.ChangeLobby
+  | actions.ChangeToken
+  | actions.IdSearch$ChangeSearchId
+  | actions.IdSearch$ChangeValidity
   | actions.KickOutPlayer
   | actions.SelectVillage
   | actions.SocketClose
