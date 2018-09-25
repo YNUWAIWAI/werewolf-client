@@ -20,7 +20,8 @@ export default function Menu(props: Props) {
       text={item.text}
       transition={props.transition}
       types={item.types}
-    />)
+    />
+  )
 
   return (
     <ul className={props.class}>
