@@ -4,7 +4,7 @@ import React from 'react'
 import type {Target} from 'lobby'
 
 type Props = {
-  +class: string,
+  +className: string,
   +disabled?: boolean,
   +isLoading?: boolean,
   +text: string,
@@ -15,8 +15,7 @@ type Props = {
 export default function MenuItem(props: Props) {
   return (
     <li
-      className={`${props.class} ${props.disabled ? 'disabled' : ''} ${props.isLoading ? 'loader' : ''}`}
-      disabled={props.disabled}
+      className={`${props.className} ${props.disabled ? 'disabled' : ''} ${props.isLoading ? 'loader' : ''}`}
       onClick={() => {
         props.types.forEach(type => {
           if (!props.disabled) {

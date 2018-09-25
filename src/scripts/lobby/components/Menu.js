@@ -13,7 +13,7 @@ export type Props = {
 export default function Menu(props: Props) {
   const items = props.items.map(item =>
     <MenuItem
-      class={props.itemClass}
+      className={props.itemClass}
       disabled={item.disabled}
       isLoading={item.isLoading}
       key={item.text}
