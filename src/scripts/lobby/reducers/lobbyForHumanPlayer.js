@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import type {MenuItem, Payload$Avatar, Payload$Lobby, Village} from 'lobby'
-import type {SocketMessage} from '../actions'
+import type {SocketMessage, Transition} from '../actions'
 
 export type State = {
   +image: string,
@@ -12,6 +12,7 @@ export type State = {
 }
 type Action =
   | SocketMessage
+  | Transition
 
 export const initialState = {
   image: '',
@@ -44,6 +45,20 @@ export const initialState = {
 
 const lobbyForHumanPlayer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.REFRESH:
+      return {
+        ... state,
+        menuItems: state.menuItems.map(item => {
+          if (item.types.includes(ActionTypes.REFRESH) && item.types.includes(ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER)) {
+            return {
+              ... item,
+              isLoading: true
+            }
+          }
+
+          return item
+        })
+      }
     case ActionTypes.SOCKET_MESSAGE:
       switch (action.payload.type) {
         case 'avatar': {
@@ -61,6 +76,16 @@ const lobbyForHumanPlayer = (state: State = initialState, action: Action): State
           if (payload.lobby === 'human player') {
             return {
               ... state,
+              menuItems: state.menuItems.map(item => {
+                if (item.types.includes(ActionTypes.REFRESH) && item.types.includes(ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER)) {
+                  return {
+                    ... item,
+                    isLoading: false
+                  }
+                }
+
+                return item
+              }),
               villageItems: payload.villages
             }
           }

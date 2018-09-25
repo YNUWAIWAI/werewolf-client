@@ -93,6 +93,20 @@ export const initialState = {
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.ADVANCED_SEARCH:
+      return {
+        ... state,
+        menuItems: state.menuItems.map(item => {
+          if (item.types.includes(ActionTypes.ADVANCED_SEARCH)) {
+            return {
+              ... item,
+              isLoading: true
+            }
+          }
+
+          return item
+        })
+      }
     case ActionTypes.advancedSearch.CHANGE_AVATAR:
       return {
         ... state,
@@ -243,6 +257,16 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
 
           return {
             ... state,
+            menuItems: state.menuItems.map(item => {
+              if (item.types.includes(ActionTypes.ADVANCED_SEARCH)) {
+                return {
+                  ... item,
+                  isLoading: false
+                }
+              }
+
+              return item
+            }),
             villageItems: payload.villages
           }
         }

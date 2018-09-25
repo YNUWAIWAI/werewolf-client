@@ -121,6 +121,20 @@ const idSearch = (state: State = initialState, action: Action): State => {
         })
       }
     }
+    case ActionTypes.ID_SEARCH:
+      return {
+        ... state,
+        menuItems: state.menuItems.map(item => {
+          if (item.types.includes(ActionTypes.ID_SEARCH)) {
+            return {
+              ... item,
+              isLoading: true
+            }
+          }
+
+          return item
+        })
+      }
     case ActionTypes.SOCKET_MESSAGE:
       switch (action.payload.type) {
         case 'avatar': {
@@ -137,6 +151,16 @@ const idSearch = (state: State = initialState, action: Action): State => {
 
           return {
             ... state,
+            menuItems: state.menuItems.map(item => {
+              if (item.types.includes(ActionTypes.ID_SEARCH)) {
+                return {
+                  ... item,
+                  isLoading: false
+                }
+              }
+
+              return item
+            }),
             villageItems: payload.villages
           }
         }

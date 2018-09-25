@@ -80,6 +80,20 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         default:
           return state
       }
+    case ActionTypes.PLAY_GAME:
+      return {
+        ... state,
+        menuItems: state.menuItems.map(item => {
+          if (item.types.includes(ActionTypes.PLAY_GAME)) {
+            return {
+              ... item,
+              isLoading: true
+            }
+          }
+
+          return item
+        })
+      }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
@@ -117,17 +131,34 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         ]
       }
     case ActionTypes.SOCKET_MESSAGE:
-      if (action.payload.type === 'waitingPage') {
-        const payload: Payload$WatingPage = action.payload
+      switch (action.payload.type) {
+        case 'waitingPage': {
+          const payload: Payload$WatingPage = action.payload
 
-        return {
-          ... state,
-          players: payload.players,
-          village: payload.village
+          return {
+            ... state,
+            players: payload.players,
+            village: payload.village
+          }
         }
-      }
+        case 'played': {
+          return {
+            ... state,
+            menuItems: state.menuItems.map(item => {
+              if (item.types.includes(ActionTypes.PLAY_GAME)) {
+                return {
+                  ... item,
+                  isLoading: false
+                }
+              }
 
-      return state
+              return item
+            })
+          }
+        }
+        default:
+          return state
+      }
     default:
       return state
   }
