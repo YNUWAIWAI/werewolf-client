@@ -10,7 +10,6 @@
 
 body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
-  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
 }
 
 .aside-content {
