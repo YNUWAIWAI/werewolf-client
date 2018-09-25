@@ -15,6 +15,7 @@ export default function Menu(props: Props) {
     <MenuItem
       class={props.itemClass}
       disabled={item.disabled}
+      isLoading={item.isLoading}
       key={item.text}
       text={item.text}
       transition={props.transition}

@@ -70,6 +70,7 @@ declare module 'lobby' {
     | 'SHOW_SETTINGS'
   declare type MenuItem = {
     disabled?: boolean,
+    isLoading?: boolean,
     text: string,
     types: Target[]
   }
