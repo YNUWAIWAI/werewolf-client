@@ -9,9 +9,11 @@ export default {
       comment: null,
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'Alice'
       },
       id: 1,
+      idForSearching: 123,
       name: 'Alice\'s village',
       playerSetting: {
         current: 8,
@@ -41,9 +43,11 @@ export default {
       comment: 'Open to beginners',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: false,
         name: 'Anonymous'
       },
       id: 2,
+      idForSearching: 456,
       name: 'Ruined village',
       playerSetting: {
         current: 4,
