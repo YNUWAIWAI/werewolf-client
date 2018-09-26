@@ -3,13 +3,13 @@ import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './base'
 import {firstDayConversation} from './fakeServer'
 
-test('SOCKET_MESSAGE', () => {
+test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
       {
         payload: firstDayConversation,
-        type: ActionTypes.SOCKET_MESSAGE
+        type: ActionTypes.socket.MESSAGE
       }
     )
   ).toEqual({

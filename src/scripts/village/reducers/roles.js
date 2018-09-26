@@ -17,7 +17,7 @@ export const initialState = {
 }
 const roles = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       if (action.payload['@context'].includes(Contexts.ROLE)) {
         const payload: Payload<*, Role, *> = action.payload
         const all = payload.role.filter(r => !UNPLAYABLE_ROLE.includes(r['@id']))

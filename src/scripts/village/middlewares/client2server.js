@@ -1,6 +1,6 @@
 // @flow
 /* eslint sort-keys: 0 */
-import * as types from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 import type {C2SBoard, C2SChat, C2SPayload, C2SVote} from 'village'
 import type {DispatchAPI, Middleware} from 'redux'
 import {getVotedAgent, just} from '../util'
@@ -13,7 +13,7 @@ import {socket} from '../actions'
 const getTimestamp = () => new Date().toISOString()
 const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
   switch (action.type) {
-    case types.POST_CHAT: {
+    case ActionTypes.POST_CHAT: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
@@ -67,7 +67,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case types.CHANGE_PREDICTION_BOARD: {
+    case ActionTypes.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
@@ -119,7 +119,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case types.SELECT_YES: {
+    case ActionTypes.SELECT_YES: {
       const state = store.getState()
       const votedAgent = getVotedAgent(state.agents.all, action.agentId)
       const myRole = just(state.roles.mine)

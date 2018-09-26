@@ -29,7 +29,7 @@ const commandSelection = (state: State = initialState, action: Action): State =>
         ... state,
         fixed: true
       }
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       if (
         action.payload['@context'].includes(Contexts.AGENT) &&
         VOTING_PHASE.includes(action.payload.phase)

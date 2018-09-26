@@ -35,7 +35,7 @@ export const initialState = {
 }
 const base = (state: State = initialState, action: Action): State => {
   if (
-    action.type === ActionTypes.SOCKET_MESSAGE &&
+    action.type === ActionTypes.socket.MESSAGE &&
     action.payload['@context'].includes(Contexts.BASE)
   ) {
     return {
