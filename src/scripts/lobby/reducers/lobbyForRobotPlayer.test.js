@@ -3,6 +3,46 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {enterHumanPlayerLobby, enterOnymousAudienceLobby, enterRobotPlayerLobby} from './fakeServer'
 import reducer, {initialState} from './lobbyForRobotPlayer'
 
+test('REFRESH', () => {
+  expect(
+    reducer(
+      initialState,
+      {
+        type: ActionTypes.REFRESH
+      }
+    )
+  ).toEqual(
+    {
+      image: '',
+      isPlayer: true,
+      menuItems: [
+        {
+          text: 'Build your Village',
+          types: [ActionTypes.SHOW_BUILD_VILLAGE]
+        },
+        {
+          text: 'ID Search',
+          types: [ActionTypes.SHOW_ID_SEARCH]
+        },
+        {
+          text: 'Advanced Search',
+          types: [ActionTypes.SHOW_ADVANCED_SEARCH]
+        },
+        {
+          isLoading: true,
+          text: 'Refresh',
+          types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+        },
+        {
+          text: 'Return to the Main Page',
+          types: [ActionTypes.SHOW_MAIN]
+        }
+      ],
+      name: '',
+      villageItems: []
+    }
+  )
+})
 describe('SOCKET_MESSAGE', () => {
   test('human player', () => {
     expect(
@@ -41,7 +81,32 @@ describe('SOCKET_MESSAGE', () => {
       )
     ).toEqual(
       {
-        ... initialState,
+        image: '',
+        isPlayer: true,
+        menuItems: [
+          {
+            text: 'Build your Village',
+            types: [ActionTypes.SHOW_BUILD_VILLAGE]
+          },
+          {
+            text: 'ID Search',
+            types: [ActionTypes.SHOW_ID_SEARCH]
+          },
+          {
+            text: 'Advanced Search',
+            types: [ActionTypes.SHOW_ADVANCED_SEARCH]
+          },
+          {
+            isLoading: false,
+            text: 'Refresh',
+            types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          },
+          {
+            text: 'Return to the Main Page',
+            types: [ActionTypes.SHOW_MAIN]
+          }
+        ],
+        name: '',
         villageItems: [
           {
             avatar: 'fixed',

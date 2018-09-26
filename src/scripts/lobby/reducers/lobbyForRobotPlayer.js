@@ -77,7 +77,7 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
             return {
               ... state,
               menuItems: state.menuItems.map(item => {
-                if (item.types.includes(ActionTypes.REFRESH) && item.types.includes(ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER)) {
+                if (item.types.includes(ActionTypes.REFRESH) && item.types.includes(ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER)) {
                   return {
                     ... item,
                     isLoading: false
