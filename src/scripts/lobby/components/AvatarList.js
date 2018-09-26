@@ -4,7 +4,6 @@ import type {PingStatus} from 'lobby'
 import React from 'react'
 
 export type Props = {
-  +isPlayer: boolean,
   +items: {
     +avatarImage: string,
     +canKickOut: boolean,
@@ -23,7 +22,6 @@ export default function AvatarList(props: Props) {
     <AvatarItem
       key={item.token}
       {... item}
-      isPlayer={props.isPlayer}
       kickOut={props.kickOut(item.token)}
     />
   )

@@ -42,7 +42,7 @@ declare module 'lobby' {
     werewolf: number
   }
   declare type WaitingPlayer = {
-    avatarImage: ?string,
+    avatarImage: string,
     isAnonymous: boolean,
     isHost: boolean,
     isMe: boolean,

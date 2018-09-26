@@ -8,7 +8,6 @@ import {connect} from 'react-redux'
 type Action =
   | KickOutPlayer
 
-const defaultAvatarImage = ''
 const mapStateToProps = (state: ReducerState): StateProps => {
   const amIHost = state.waitingForPlayers.players.some(v => v.isHost && v.isMe)
   const players = state.waitingForPlayers.players.map(player => {
@@ -16,7 +15,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
     if (result) {
       return {
-        avatarImage: player.avatarImage ? player.avatarImage : defaultAvatarImage,
+        avatarImage: player.avatarImage,
         canKickOut: amIHost && !player.isMe,
         isHost: player.isHost,
         isMe: player.isMe,
@@ -28,7 +27,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     }
 
     return {
-      avatarImage: player.avatarImage ? player.avatarImage : defaultAvatarImage,
+      avatarImage: player.avatarImage,
       canKickOut: amIHost && !player.isMe,
       isHost: player.isHost,
       isMe: player.isMe,

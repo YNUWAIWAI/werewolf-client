@@ -26,6 +26,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         case 'human player':
           return {
             ... state,
+            isPlayer: true,
             menuItems: [
               {
                 text: 'Play',
@@ -44,14 +45,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         case 'onymous audience':
           return {
             ... state,
+            isPlayer: false,
             menuItems: [
               {
                 text: 'Play',
                 types: [ActionTypes.PLAY_GAME]
               },
               {
-                text: 'Return to Lobby for Robot Player',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                text: 'Return to Lobby for Audience',
+                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
               },
               {
                 text: 'Return to the Main Page',
@@ -62,6 +64,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         case 'robot player':
           return {
             ... state,
+            isPlayer: true,
             menuItems: [
               {
                 text: 'Play',
@@ -94,9 +97,29 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           return item
         })
       }
+    case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
+      return {
+        ... state,
+        isPlayer: false,
+        menuItems: [
+          {
+            text: 'Play',
+            types: [ActionTypes.PLAY_GAME]
+          },
+          {
+            text: 'Return to Lobby for Audience',
+            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            text: 'Return to the Main Page',
+            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+          }
+        ]
+      }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
+        isPlayer: true,
         menuItems: [
           {
             text: 'Play',
@@ -115,6 +138,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
+        isPlayer: true,
         menuItems: [
           {
             text: 'Play',
@@ -132,15 +156,6 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
       }
     case ActionTypes.SOCKET_MESSAGE:
       switch (action.payload.type) {
-        case 'waitingPage': {
-          const payload: Payload$WatingPage = action.payload
-
-          return {
-            ... state,
-            players: payload.players,
-            village: payload.village
-          }
-        }
         case 'played': {
           return {
             ... state,
@@ -154,6 +169,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
 
               return item
             })
+          }
+        }
+        case 'waitingPage': {
+          const payload: Payload$WatingPage = action.payload
+
+          return {
+            ... state,
+            players: payload.players,
+            village: payload.village
           }
         }
         default:
