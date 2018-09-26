@@ -181,7 +181,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
     }
   )
 })
-describe('SOCKET_MESSAGE', () => {
+describe('socket/MESSAGE', () => {
   const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
   const SERVER2CLIENT = `${BASE_URI}/server2client`
   const ajv = new Ajv()
@@ -210,7 +210,7 @@ describe('SOCKET_MESSAGE', () => {
         initialState,
         {
           payload: avatarPayload,
-          type: ActionTypes.SOCKET_MESSAGE
+          type: ActionTypes.socket.MESSAGE
         }
       )
     ).toEqual(

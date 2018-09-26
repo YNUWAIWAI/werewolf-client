@@ -1,5 +1,5 @@
 // @flow
-import * as types from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 import type {Action} from '.'
 import type {Middleware} from 'redux'
 import type {Payload$Ping} from 'lobby'
@@ -9,7 +9,7 @@ import {socket} from '../actions'
 
 const client2server: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
-    case types.ADVANCED_SEARCH: {
+    case ActionTypes.ADVANCED_SEARCH: {
       const state = store.getState()
       const payload = {
         avatar: state.advancedSearch.validity.avatar ? state.advancedSearch.value.avatar : 'random',
@@ -27,7 +27,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.BUILD_VILLAGE: {
+    case ActionTypes.BUILD_VILLAGE: {
       const state = store.getState()
       const payload = {
         avatar: state.buildVillage.value.avatar,
@@ -61,7 +61,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.LEAVE_WAITING_PAGE: {
+    case ActionTypes.LEAVE_WAITING_PAGE: {
       const state = store.getState()
       const me = state.waitingForPlayers.players.find(v => v.isMe)
 
@@ -78,7 +78,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.KICK_OUT_PLAYER: {
+    case ActionTypes.KICK_OUT_PLAYER: {
       const state = store.getState()
       const payload = {
         players: [
@@ -94,7 +94,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.PLAY_GAME: {
+    case ActionTypes.PLAY_GAME: {
       const state = store.getState()
 
       if (!state.waitingForPlayers.village) {
@@ -110,7 +110,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.ID_SEARCH: {
+    case ActionTypes.ID_SEARCH: {
       const state = store.getState()
 
       if (state.idSearch.id === -1) {
@@ -127,7 +127,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.SELECT_VILLAGE: {
+    case ActionTypes.SELECT_VILLAGE: {
       const state = store.getState()
       const payload = {
         token: state.token[state.token.lobby],
@@ -139,7 +139,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.SHOW_LOBBY_FOR_AUDIENCE: {
+    case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE: {
       const state = store.getState()
 
       store.dispatch(socket.send({
@@ -155,7 +155,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
+    case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
       const state = store.getState()
 
       store.dispatch(socket.send({
@@ -171,7 +171,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
+    case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
       const state = store.getState()
 
       store.dispatch(socket.send({
@@ -187,7 +187,7 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
-    case types.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
         case 'ping': {
           const state = store.getState()

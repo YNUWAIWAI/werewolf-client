@@ -3,13 +3,13 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {ping, waitingPage} from './fakeServer'
 import reducer, {initialState} from './ping'
 
-test('SOCKET_MESSAGE watingPage', () => {
+test('socket/MESSAGE watingPage', () => {
   expect(
     reducer(
       initialState,
       {
         payload: waitingPage,
-        type: ActionTypes.SOCKET_MESSAGE
+        type: ActionTypes.socket.MESSAGE
       }
     )
   ).toEqual(
@@ -20,7 +20,7 @@ test('SOCKET_MESSAGE watingPage', () => {
     }
   )
 })
-test('SOCKET_MESSAGE ping', () => {
+test('socket/MESSAGE ping', () => {
   expect(
     reducer(
       {
@@ -30,7 +30,7 @@ test('SOCKET_MESSAGE ping', () => {
       },
       {
         payload: ping,
-        type: ActionTypes.SOCKET_MESSAGE
+        type: ActionTypes.socket.MESSAGE
       }
     )
   ).toEqual(

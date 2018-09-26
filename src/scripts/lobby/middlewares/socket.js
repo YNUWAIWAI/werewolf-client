@@ -1,5 +1,5 @@
 // @flow
-import * as types from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 import {type Action} from '.'
 import type {Middleware} from 'redux'
 import type {ReducerState} from '../reducers'
@@ -48,22 +48,22 @@ const connectWebSocket = (() => {
 })()
 const socketMiddleware: ({url: string}) => Middleware<ReducerState, Action> = option => store => next => action => {
   switch (action.type) {
-    case types.SOCKET_OPEN:
+    case ActionTypes.socket.OPEN:
       return next(action)
-    case types.SOCKET_CLOSE:
+    case ActionTypes.socket.CLOSE:
       return next(action)
-    case types.SOCKET_ERROR:
+    case ActionTypes.socket.ERROR:
       return next(action)
-    case types.SOCKET_INIT:
+    case ActionTypes.socket.INIT:
       connectWebSocket(option.url, store)
         .catch(reason => {
           console.error(reason)
         })
 
       return next(action)
-    case types.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       return next(action)
-    case types.SOCKET_SEND:
+    case ActionTypes.socket.SEND:
       connectWebSocket(option.url, store)
         .then(socket => {
           socket.send(JSON.stringify(action.payload))

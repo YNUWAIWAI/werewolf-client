@@ -154,7 +154,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           }
         ]
       }
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
         case 'played': {
           return {

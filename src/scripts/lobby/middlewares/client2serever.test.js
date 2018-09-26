@@ -111,7 +111,7 @@ describe('ADVANCED_SEARCH', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload: advancedSearchPayload,
-        type: ActionTypes.SOCKET_SEND
+        type: ActionTypes.socket.SEND
       })
     })
   })
@@ -192,7 +192,7 @@ describe('ADVANCED_SEARCH', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload: advancedSearchPayload,
-        type: ActionTypes.SOCKET_SEND
+        type: ActionTypes.socket.SEND
       })
     })
   })
@@ -272,7 +272,7 @@ describe('BUILD_VILLAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: buildVillagePayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -378,7 +378,7 @@ describe('LEAVE_WAITING_PAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: leaveWaitingPagePayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -441,7 +441,7 @@ describe('KICK_OUT_PLAYER', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: kickOutPlayerPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -546,7 +546,7 @@ describe('PLAY_GAME', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: playPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -608,7 +608,7 @@ describe('ID_SEARCH valid id', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: idSearchPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -705,7 +705,7 @@ describe('SELECT_VILLAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: selectVillagePayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -777,11 +777,11 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       payload: enterLobbyPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
     expect(dispatch).toHaveBeenCalledWith({
       payload: getAvatarPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -853,11 +853,11 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       payload: enterLobbyPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
     expect(dispatch).toHaveBeenCalledWith({
       payload: getAvatarPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
@@ -929,15 +929,15 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       payload: enterLobbyPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
     expect(dispatch).toHaveBeenCalledWith({
       payload: getAvatarPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
-describe('SOCKET_MESSAGE tyoe: "ping"', () => {
+describe('socket/MESSAGE tyoe: "ping"', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     advancedSearch,
@@ -980,7 +980,7 @@ describe('SOCKET_MESSAGE tyoe: "ping"', () => {
       ],
       type: 'ping'
     },
-    type: ActionTypes.SOCKET_MESSAGE
+    type: ActionTypes.socket.MESSAGE
   }
   const pongPayload = {
     id: pingId,
@@ -1013,11 +1013,11 @@ describe('SOCKET_MESSAGE tyoe: "ping"', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: pongPayload,
-      type: ActionTypes.SOCKET_SEND
+      type: ActionTypes.socket.SEND
     })
   })
 })
-describe('SOCKET_MESSAGE tyoe: "played"', () => {
+describe('socket/MESSAGE tyoe: "played"', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     advancedSearch,
@@ -1051,7 +1051,7 @@ describe('SOCKET_MESSAGE tyoe: "played"', () => {
       error: null,
       type: 'played'
     },
-    type: ActionTypes.SOCKET_MESSAGE
+    type: ActionTypes.socket.MESSAGE
   }
 
   window.location.replace = jest.fn()
