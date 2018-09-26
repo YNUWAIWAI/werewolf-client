@@ -46,7 +46,7 @@ test('REFRESH', () => {
     }
   )
 })
-describe('SOCKET_MESSAGE', () => {
+describe('socket/MESSAGE', () => {
   describe('human player', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
@@ -68,7 +68,7 @@ describe('SOCKET_MESSAGE', () => {
           initialState,
           {
             payload: enterHumanPlayerLobby,
-            type: ActionTypes.SOCKET_MESSAGE
+            type: ActionTypes.socket.MESSAGE
           }
         )
       ).toEqual(
@@ -194,7 +194,7 @@ describe('SOCKET_MESSAGE', () => {
           initialState,
           {
             payload: enterOnymousAudienceLobby,
-            type: ActionTypes.SOCKET_MESSAGE
+            type: ActionTypes.socket.MESSAGE
           }
         )
       ).toEqual(
@@ -223,7 +223,7 @@ describe('SOCKET_MESSAGE', () => {
           initialState,
           {
             payload: enterRobotPlayerLobby,
-            type: ActionTypes.SOCKET_MESSAGE
+            type: ActionTypes.socket.MESSAGE
           }
         )
       ).toEqual(

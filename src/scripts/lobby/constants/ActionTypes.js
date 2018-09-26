@@ -1,11 +1,4 @@
 // @flow
-export const SOCKET_OPEN = 'SOCKET:OPEN'
-export const SOCKET_CLOSE = 'SOCKET:CLOSE'
-export const SOCKET_INIT = 'SOCKET:INIT'
-export const SOCKET_MESSAGE = 'SOCKET:MESSAGE'
-export const SOCKET_ERROR = 'SOCKET:ERROR'
-export const SOCKET_SEND = 'SOCKET:SEND'
-
 export const CHANGE_LOBBY = 'CHANGE_LOBBY'
 export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 export const CHANGE_VILLAGE_NAME = 'CHANGE_VILLAGE_NAME'
@@ -63,4 +56,12 @@ export const indexedDB = {
   SUCCESS: 'indexedDB/SUCCESS',
   UPGRADE_NEEDED: 'indexedDB/UPGRADE_NEEDED',
   VERSION_CHANGE: 'indexedDB/VERSION_CHANGE'
+}
+export const socket = {
+  CLOSE: 'socket/CLOSE',
+  ERROR: 'socket/ERROR',
+  INIT: 'socket/INIT',
+  MESSAGE: 'socket/MESSAGE',
+  OPEN: 'socket/OPEN',
+  SEND: 'socket/SEND'
 }

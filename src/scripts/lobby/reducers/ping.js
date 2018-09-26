@@ -19,7 +19,7 @@ export const initialState = {
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
         case 'waitingPage': {
           const payload: Payload$WatingPage = action.payload

@@ -24,7 +24,7 @@ export const initialState = {
 
 const history = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       if (action.payload.type === 'lobby') {
         const payload: Payload$Lobby = action.payload
 

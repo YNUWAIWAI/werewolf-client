@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {enterHumanPlayerLobby} from './fakeServer'
 import reducer from './history'
 
-test('SOCKET_MESSAGE', () => {
+test('socket/MESSAGE', () => {
   expect(
     reducer(
       {
@@ -18,7 +18,7 @@ test('SOCKET_MESSAGE', () => {
       },
       {
         payload: enterHumanPlayerLobby,
-        type: ActionTypes.SOCKET_MESSAGE
+        type: ActionTypes.socket.MESSAGE
       }
     )
   ).toEqual(

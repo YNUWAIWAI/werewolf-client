@@ -197,7 +197,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     }
   )
 })
-describe('SOCKET_MESSAGE', () => {
+describe('socket/MESSAGE', () => {
   describe('played', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
@@ -241,7 +241,7 @@ describe('SOCKET_MESSAGE', () => {
           },
           {
             payload: playedPayload,
-            type: ActionTypes.SOCKET_MESSAGE
+            type: ActionTypes.socket.MESSAGE
           }
         )
       ).toEqual(
@@ -293,7 +293,7 @@ describe('SOCKET_MESSAGE', () => {
           },
           {
             payload: waitingPage,
-            type: ActionTypes.SOCKET_MESSAGE
+            type: ActionTypes.socket.MESSAGE
           }
         )
       ).toEqual(

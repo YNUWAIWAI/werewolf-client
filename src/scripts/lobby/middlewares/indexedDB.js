@@ -1,5 +1,5 @@
 // @flow
-import * as types from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 import {changeLobby, selectVillage} from '../actions'
 import {type Action} from '.'
 import type {Middleware} from 'redux'
@@ -78,7 +78,7 @@ const connectDB = dbName => {
 const connectLobbyDB = connectDB('lobby')
 const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
-    case types.indexedDB.INIT: {
+    case ActionTypes.indexedDB.INIT: {
       connectLobbyDB().then(db => {
         const transaction = db.transaction('history')
         const objectStore = transaction.objectStore('history')
@@ -99,7 +99,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
 
       return next(action)
     }
-    case types.LEAVE_WAITING_PAGE: {
+    case ActionTypes.LEAVE_WAITING_PAGE: {
       connectLobbyDB().then(db => {
         const transaction = db.transaction('history', 'readwrite')
 
@@ -120,7 +120,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
 
       return next(action)
     }
-    case types.SOCKET_MESSAGE: {
+    case ActionTypes.socket.MESSAGE: {
       if (action.payload.type === 'waitingPage') {
         const payload: Payload$WatingPage = action.payload
         const state = store.getState()
