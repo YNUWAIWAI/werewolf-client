@@ -1,45 +1,45 @@
 // @flow
-import * as types from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 import type {BoardState, C2SPayload, InputChannel, Language, NavigationType, Payload, Phase, RoleId} from 'village'
 
 export const socket = {
-  close: (event: CloseEvent): {event: CloseEvent, type: 'SOCKET:CLOSE'} => ({
+  close: (event: CloseEvent): {event: CloseEvent, type: 'socket/CLOSE'} => ({
     event,
-    type: types.SOCKET_CLOSE
+    type: ActionTypes.socket.CLOSE
   }),
-  error: (event: Event): {event: Event, type: 'SOCKET:ERROR'} => ({
+  error: (event: Event): {event: Event, type: 'socket/ERROR'} => ({
     event,
-    type: types.SOCKET_ERROR
+    type: ActionTypes.socket.ERROR
   }),
-  message: (event: MessageEvent): {payload: Payload<*, *, *>, type: 'SOCKET:MESSAGE'} => ({
+  message: (event: MessageEvent): {payload: Payload<*, *, *>, type: 'socket/MESSAGE'} => ({
     payload: JSON.parse(event.data),
-    type: types.SOCKET_MESSAGE
+    type: ActionTypes.socket.MESSAGE
   }),
-  open: (event: Event): {event: Event, type: 'SOCKET:OPEN'} => ({
+  open: (event: Event): {event: Event, type: 'socket/OPEN'} => ({
     event,
-    type: types.SOCKET_OPEN
+    type: ActionTypes.socket.OPEN
   }),
-  send: (payload: C2SPayload<*>): {payload: C2SPayload<*>, type: 'SOCKET:SEND'} => ({
+  send: (payload: C2SPayload<*>): {payload: C2SPayload<*>, type: 'socket/SEND'} => ({
     payload,
-    type: types.SOCKET_SEND
+    type: ActionTypes.socket.SEND
   })
 }
 
 export const changeLanguage = (language: Language): {language: Language, type: 'CHANGE_LANGUAGE'} => ({
   language,
-  type: types.CHANGE_LANGUAGE
+  type: ActionTypes.CHANGE_LANGUAGE
 })
 
 export const changeDate = ({from, to}: {from: number, to: number}): {from: number, to: number, type: 'CHANGE_DATE'} => ({
   from,
   to,
-  type: types.CHANGE_DATE
+  type: ActionTypes.CHANGE_DATE
 })
 
 export const changePhase = ({from, to}: {from: Phase, to: Phase}): {from: Phase, to: Phase, type: 'CHANGE_PHASE'} => ({
   from,
   to,
-  type: types.CHANGE_PHASE
+  type: ActionTypes.CHANGE_PHASE
 })
 
 export const clickNavigationButton = (type: NavigationType): {type: NavigationType} => ({
@@ -50,40 +50,40 @@ export const handleBoardClick = (nextState: BoardState, playerId: number, roleId
   nextState,
   playerId,
   roleId,
-  type: types.CHANGE_PREDICTION_BOARD
+  type: ActionTypes.CHANGE_PREDICTION_BOARD
 })
 
 export const handleClickHideButton = (hide: boolean): {hide: boolean, type: 'CLICK_HIDE_BUTTON'} => ({
   hide,
-  type: types.CLICK_HIDE_BUTTON
+  type: ActionTypes.CLICK_HIDE_BUTTON
 })
 
 export const hideReuslt = (): {type: 'HIDE_RESULT'} => ({
-  type: types.HIDE_RESULT
+  type: ActionTypes.HIDE_RESULT
 })
 
 export const postChat = ({kind, text}: {kind: InputChannel, text: string}): {kind: InputChannel, text: string, type: 'POST_CHAT'} => ({
   kind,
   text,
-  type: types.POST_CHAT
+  type: ActionTypes.POST_CHAT
 })
 
 export const selectNo = (): {type: 'SELECT_NO'} => ({
-  type: types.SELECT_NO
+  type: ActionTypes.SELECT_NO
 })
 
 export const selectOption = (agentId: number): {agentId: number, type: 'SELECT_OPTION'} => ({
   agentId,
-  type: types.SELECT_OPTION
+  type: ActionTypes.SELECT_OPTION
 })
 
 export const selectYes = (agentId: number): {agentId: number, type: 'SELECT_YES'} => ({
   agentId,
-  type: types.SELECT_YES
+  type: ActionTypes.SELECT_YES
 })
 
 export const toggleObfucator = (visible: boolean): {visible: boolean, type: 'TOGGLE_OBFUCATOR'} => ({
-  type: types.TOGGLE_OBFUCATOR,
+  type: ActionTypes.TOGGLE_OBFUCATOR,
   visible
 })
 

@@ -40,7 +40,7 @@ export const initialState = {
 }
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       if (
         action.payload['@id'] === Message.PLAYER_MESSAGE &&
         action.payload['@context'].includes(Contexts.CHAT)

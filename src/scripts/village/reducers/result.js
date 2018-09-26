@@ -72,7 +72,7 @@ const result = (state: State = initialState, action: Action): State => {
         ... state,
         visible: false
       }
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       if (
         action.payload['@context'].includes(Contexts.BASE) &&
         action.payload['@context'].includes(Contexts.AGENT) &&

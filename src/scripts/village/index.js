@@ -1,6 +1,6 @@
 // @flow
+import {PROLOGUE, socket} from './constants/ActionTypes'
 import App from './containers/App'
-import {PROLOGUE} from './constants/ActionTypes'
 import {Provider} from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -14,6 +14,9 @@ const store = createStore(
   composeWithDevTools(middleware)
 )
 
+store.dispatch({
+  type: socket.INIT
+})
 store.dispatch({
   type: PROLOGUE
 })

@@ -109,7 +109,7 @@ export const initialState = {
 
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SOCKET_MESSAGE:
+    case ActionTypes.socket.MESSAGE:
       if (
         action.payload['@context'].includes(Contexts.AGENT) &&
         action.payload['@context'].includes(Contexts.BASE) &&

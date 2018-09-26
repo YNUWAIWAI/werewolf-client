@@ -17,8 +17,12 @@ export const SET_ROLE = 'SET_ROLE'
 export const SHOW_RESULT = 'SHOW_RESULT'
 export const TOGGLE_OBFUCATOR = 'TOGGLE_OBFUCATOR'
 
-export const SOCKET_OPEN = 'SOCKET:OPEN'
-export const SOCKET_CLOSE = 'SOCKET:CLOSE'
-export const SOCKET_MESSAGE = 'SOCKET:MESSAGE'
-export const SOCKET_ERROR = 'SOCKET:ERROR'
-export const SOCKET_SEND = 'SOCKET:SEND'
+export const socket = {
+  CLOSE: 'socket/CLOSE',
+  ERROR: 'socket/ERROR',
+  INIT: 'socket/INIT',
+  MESSAGE: 'socket/MESSAGE',
+  OPEN: 'socket/OPEN',
+  SEND: 'socket/SEND'
+}
+
