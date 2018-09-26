@@ -1,5 +1,5 @@
 // @flow
-import {SHOW_MAIN, socket, indexedDB} from './constants/ActionTypes'
+import {SHOW_MAIN, indexedDB, socket} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
