@@ -59,7 +59,6 @@ export default function WaitingForPlayers(props: Props) {
           transition={props.transition}
         />
         <AvatarList
-          isPlayer={props.isPlayer}
           items={props.players}
           kickOut={props.kickOut}
         />

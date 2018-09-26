@@ -42,7 +42,7 @@ declare module 'lobby' {
     werewolf: number
   }
   declare type WaitingPlayer = {
-    avatarImage: ?string,
+    avatarImage: string,
     isAnonymous: boolean,
     isHost: boolean,
     isMe: boolean,
@@ -70,6 +70,7 @@ declare module 'lobby' {
     | 'SHOW_SETTINGS'
   declare type MenuItem = {
     disabled?: boolean,
+    isLoading?: boolean,
     text: string,
     types: Target[]
   }

@@ -3,7 +3,7 @@ export default {
   error: null,
   players: [
     {
-      avatarImage: null,
+      avatarImage: '/assets/images/avatar/default/user.png',
       isAnonymous: true,
       isHost: true,
       isMe: false,
@@ -19,7 +19,7 @@ export default {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
     },
     {
-      avatarImage: null,
+      avatarImage: '/assets/images/avatar/default/user.png',
       isAnonymous: true,
       isHost: false,
       isMe: false,
@@ -27,7 +27,7 @@ export default {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
     },
     {
-      avatarImage: null,
+      avatarImage: '/assets/images/avatar/default/user.png',
       isAnonymous: true,
       isHost: false,
       isMe: false,
@@ -35,7 +35,7 @@ export default {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
     },
     {
-      avatarImage: null,
+      avatarImage: '/assets/images/avatar/default/user.png',
       isAnonymous: true,
       isHost: false,
       isMe: false,
@@ -43,7 +43,7 @@ export default {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
     },
     {
-      avatarImage: null,
+      avatarImage: '/assets/images/avatar/default/user.png',
       isAnonymous: true,
       isHost: false,
       isMe: false,
@@ -51,7 +51,7 @@ export default {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
     },
     {
-      avatarImage: null,
+      avatarImage: '/assets/images/avatar/default/user.png',
       isAnonymous: true,
       isHost: false,
       isMe: false,
@@ -59,7 +59,7 @@ export default {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
     },
     {
-      avatarImage: null,
+      avatarImage: '/assets/images/avatar/default/user.png',
       isAnonymous: true,
       isHost: false,
       isMe: false,
@@ -73,6 +73,7 @@ export default {
     comment: 'Experts recommended',
     hostPlayer: {
       isAnonymous: true,
+      isHuman: true,
       name: 'Anonymous'
     },
     id: 1,
