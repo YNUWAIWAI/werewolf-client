@@ -10,10 +10,13 @@ type Props = {
 export default function PredictionPlayer(props: Props) {
   return (
     <div className={`prediction--player ${props.status === 'alive' ? '' : 'dead'}`}>
-      <img src={props.image} />
-      <span>
+      <img
+        className="prediction--player--image"
+        src={props.image}
+      />
+      <div className="prediction--player--name">
         {props.name}
-      </span>
+      </div>
     </div>
   )
 }

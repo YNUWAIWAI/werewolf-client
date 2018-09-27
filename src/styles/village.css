@@ -5,7 +5,7 @@
 
 :root {
   --info-image-size: 50px;
-  --prediction-image-size: 40px;
+  --prediction-image-size: 50px;
   --result-image-size: 40px;
   --vote-image-size: 60px;
   --modal-image-size: 60px;
@@ -296,6 +296,7 @@ body {
       border: none;
       border-radius: 5px;
       box-shadow: 2px 2px 1px 0 grey;
+      cursor: pointer;
       grid-area: send;
       width: 90%;
 
@@ -310,6 +311,7 @@ body {
 
       &:disabled {
         box-shadow: inset 2px 2px 1px 0 grey;
+        cursor: not-allowed;
         filter: brightness(50%);
 
         &:hover {
@@ -481,67 +483,103 @@ body {
   overflow: auto;
 
   & > div {
-    align-items: center;
     border: solid 1px black;
-    box-sizing: border-box;
-    display: inline-flex;
-    font-size: 1.5rem;
-    justify-content: center;
   }
 
   &--item {
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+
     &.fixed {
       box-shadow: inset 0 0 0 4px red;
+      cursor: default;
     }
 
     & > svg {
+      height: 100%;
       width: 100%;
+    }
+
+    &[ data-state = 'fill' ] {
+      background: black;
+      cursor: default;
+      font-size: 1.5rem;
+
+      &::after {
+        color: white;
+        content: attr(data-date);
+      }
     }
   }
 
   &--player {
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+      '. . .'
+      '. image .'
+      'name name name'
+      '. . .';
+    grid-template-rows: 1fr var(--prediction-image-size) 15px 1fr;
+    grid-template-columns: 1fr var(--prediction-image-size) 1fr;
 
     &.dead {
       background-color: red;
       color: white;
     }
 
-    & > img {
+    &--image {
+      grid-area: image;
       height: var(--prediction-image-size);
       width: var(--prediction-image-size);
     }
 
-    & > span {
-      font-size: xx-small;
+    &--name {
+      font-size: 10px;
+      grid-area: name;
+      line-height: 1.5;
+      text-align: center;
     }
   }
 
-  & > div[ data-state = 'fill' ] {
-    background: black;
+  &--role {
+    display: grid;
+    grid-template: 1fr calc(var(--prediction-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--prediction-image-size) - 24px) 12px 12px 1fr;
 
-    &::after {
-      color: white;
-      content: attr(data-date);
+    &--caption {
+      font-size: 10px;
+      grid-column: 1 / 6;
+      grid-row: 4;
+      line-height: 1.5;
+      text-align: center;
     }
-  }
 
-  & > div[ data-tooltip ] {
-    position: relative;
+    &--image {
+      grid-column: 2 / 4;
+      grid-row: 2 / 4;
+      height: var(--prediction-image-size);
+      width: var(--prediction-image-size);
+    }
 
-    &:hover::after {
-      align-items: center;
-      background: white;
-      border: solid 1px black;
-      bottom: 10%;
-      content: attr(data-tooltip);
+    &--times {
+      align-items: flex-end;
+      color: #fefefe;
       display: inline-flex;
-      font-size: small;
+      font-size: 0.75rem;
+      grid-column: 3;
+      grid-row: 3;
       justify-content: center;
-      left: 10%;
-      position: absolute;
-      right: 15%;
-      top: 15%;
+      line-height: 1;
+    }
+
+    &--number {
+      color: #fefefe;
+      font-size: 1rem;
+      grid-column: 4;
+      grid-row: 3;
+      line-height: 1;
     }
   }
 }

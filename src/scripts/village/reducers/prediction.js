@@ -15,10 +15,10 @@ export type State = {
     +status: AgentStatus
   }>,
   +roleStatus: Array<{
+    +caption: { [Language]: string },
     +id: RoleId,
     +image: string,
-    +numberOfAgents: number,
-    +tooltip: { [Language]: string }
+    +numberOfAgents: number
   }>,
   +table: {
     [agentId: AgentId]: {
@@ -121,10 +121,10 @@ const prediction = (state: State = initialState, action: Action): State => {
           .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(r1['@id']) - ORDERED_ROLE_LIST.indexOf(r2['@id']))
         const table = payload.date === 1 && payload.phase === DAY_CONVERSATION ? initPredictionTable(agents, roles) : updatePredictionTable(roles, state.table)
         const roleStatus: RoleStatus = roles.map(role => ({
+          caption: role.name,
           id: getRoleId(role['@id']),
           image: role.image,
-          numberOfAgents: role.numberOfAgents,
-          tooltip: role.name
+          numberOfAgents: role.numberOfAgents
         }))
         const playerStatus: PlayerStatus = agents.map(agent => ({
           id: agent.id,
