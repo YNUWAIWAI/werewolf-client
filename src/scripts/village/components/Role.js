@@ -17,7 +17,7 @@ type Props =
 export default function Role(props: Props) {
   return (
     <Fragment>
-      <AgentIcon class="role--icon" image={props.image} name={props.name} />
+      <AgentIcon class="info--role--icon" image={props.image} name={props.name} />
       <RoleText role={props.role} />
     </Fragment>
   )

@@ -10,8 +10,11 @@ type Props = {
 export default function AgentIcon(props: Props) {
   return (
     <div className={props.class}>
-      <img src={props.image} />
-      <span>
+      <img
+        className={`${props.class}--image`}
+        src={props.image}
+      />
+      <span className={`${props.class}--name`}>
         {props.name}
       </span>
     </div>

@@ -14,8 +14,8 @@ export type Props =
 
 export default function Day(props: Props) {
   return (
-    <div className="day">
-      <div className="day--text">
+    <div className="info--day">
+      <div className="info--day--text">
         <span>
           {`${props.date}日目 ${props.phase}`}
         </span>
