@@ -3,17 +3,20 @@ import PredictionRole from './PredictionRole'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-test('<PredictionRole image="image" tooltip="tooltip" numberOfAgents={1} />', () => {
-  const wrapper = shallow(<PredictionRole image="image" numberOfAgents={1} tooltip="tooltip" />)
+test('<PredictionRole image="image" caption="caption" numberOfAgents={1} />', () => {
+  const wrapper = shallow(
+    <PredictionRole
+      caption="caption"
+      image="image"
+      numberOfAgents={1}
+    />
+  )
 
-  expect(wrapper.is('[data-tooltip="tooltip"]')).toBe(true)
-  expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-  expect(wrapper.text()).toBe('✕1')
-})
-test('<PredictionRole image="image" tooltip="tooltip" numberOfAgents={0} />', () => {
-  const wrapper = shallow(<PredictionRole image="image" numberOfAgents={0} tooltip="tooltip" />)
-
-  expect(wrapper.is('[data-tooltip="tooltip"]')).toBe(true)
-  expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-  expect(wrapper.text()).toBe('✕0')
+  expect(wrapper.find('.prediction--role').exists()).toBe(true)
+  expect(wrapper.find('.prediction--role--image').exists()).toBe(true)
+  expect(wrapper.find('.prediction--role--times').exists()).toBe(true)
+  expect(wrapper.find('.prediction--role--number').exists()).toBe(true)
+  expect(wrapper.find('.prediction--role--number').text()).toBe('1')
+  expect(wrapper.find('.prediction--role--caption').exists()).toBe(true)
+  expect(wrapper.find('.prediction--role--caption').text()).toBe('caption')
 })
