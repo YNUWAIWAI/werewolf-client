@@ -54,40 +54,40 @@ test('<PredictionContainer />', () => {
   ]
   const roleStatus = [
     {
-      id: 'villager',
-      image: 'https://werewolf.world/image/0.1/villager.jpg',
-      numberOfAgents: 2,
-      tooltip: {
+      caption: {
         en: 'Villager',
         ja: '村人'
-      }
+      },
+      id: 'villager',
+      image: 'https://werewolf.world/image/0.1/villager.jpg',
+      numberOfAgents: 2
     },
     {
-      id: 'seer',
-      image: 'https://werewolf.world/image/0.1/seer.jpg',
-      numberOfAgents: 1,
-      tooltip: {
+      caption: {
         en: 'Seer',
         ja: '占い師'
-      }
+      },
+      id: 'seer',
+      image: 'https://werewolf.world/image/0.1/seer.jpg',
+      numberOfAgents: 1
     },
     {
-      id: 'madman',
-      image: 'https://werewolf.world/image/0.1/madman.jpg',
-      numberOfAgents: 1,
-      tooltip: {
+      caption: {
         en: 'Madman',
         ja: '狂人'
-      }
+      },
+      id: 'madman',
+      image: 'https://werewolf.world/image/0.1/madman.jpg',
+      numberOfAgents: 1
     },
     {
-      id: 'werewolf',
-      image: 'https://werewolf.world/image/0.1/werewolf.jpg',
-      numberOfAgents: 1,
-      tooltip: {
+      caption: {
         en: 'Werewolf',
         ja: '人狼'
-      }
+      },
+      id: 'werewolf',
+      image: 'https://werewolf.world/image/0.1/werewolf.jpg',
+      numberOfAgents: 1
     }
   ]
   const expectedPlayerStatus = [
@@ -124,28 +124,28 @@ test('<PredictionContainer />', () => {
   ]
   const expectedRoleStatus = [
     {
+      caption: '村人',
       id: 'villager',
       image: 'https://werewolf.world/image/0.1/villager.jpg',
-      numberOfAgents: 2,
-      tooltip: '村人'
+      numberOfAgents: 2
     },
     {
+      caption: '占い師',
       id: 'seer',
       image: 'https://werewolf.world/image/0.1/seer.jpg',
-      numberOfAgents: 1,
-      tooltip: '占い師'
+      numberOfAgents: 1
     },
     {
+      caption: '狂人',
       id: 'madman',
       image: 'https://werewolf.world/image/0.1/madman.jpg',
-      numberOfAgents: 1,
-      tooltip: '狂人'
+      numberOfAgents: 1
     },
     {
+      caption: '人狼',
       id: 'werewolf',
       image: 'https://werewolf.world/image/0.1/werewolf.jpg',
-      numberOfAgents: 1,
-      tooltip: '人狼'
+      numberOfAgents: 1
     }
   ]
   const table = {

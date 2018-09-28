@@ -17,7 +17,7 @@ export type StateProps = {
     +id: RoleId,
     +image: string,
     +numberOfAgents: number,
-    +tooltip: string
+    +caption: string
   }>,
   +table: {
     [agentId: AgentId]: {
@@ -43,10 +43,10 @@ export default function Prediction(props: Props) {
     <div key="null" />,
     ... props.roleStatus.map(role =>
       <PredictionRole
+        caption={role.caption}
         image={role.image}
         key={role.id}
         numberOfAgents={role.numberOfAgents}
-        tooltip={role.tooltip}
       />
     ),
     ... props.playerStatus.map(player =>
@@ -70,7 +70,7 @@ export default function Prediction(props: Props) {
     )
   ]
   const style = {
-    grid: `repeat(${1 + props.playerStatus.length}, 1fr) / repeat(${1 + props.roleStatus.length}, 1fr)`
+    grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
   }
 
   return (

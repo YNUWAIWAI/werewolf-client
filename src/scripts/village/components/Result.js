@@ -57,10 +57,10 @@ const getRow = agent => [
     type="status"
   />,
   <ResultCell
+    caption={agent.roleName}
     image={agent.roleImage}
     key={`${agent.agentId}roleImage`}
     status={agent.status}
-    tooltip={agent.roleName}
     type="roleImage"
   />,
   <ResultCell

@@ -7,7 +7,7 @@ type Props = {
 
 export default function RoleText(props: Props) {
   return (
-    <div className="role--text">
+    <div className="info--role--text">
       {'あなたは'}
       <span>
         {props.role}

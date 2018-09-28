@@ -381,7 +381,7 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.1/Otto.jpg',
         'id': 11,
-        'status': 'alive'
+        'status': 'dead'
       },
       {
         'name': {
@@ -416,7 +416,7 @@ export default {
         'id': 'villager',
         'image': 'https://werewolf.world/image/0.1/villager.jpg',
         'numberOfAgents': 6,
-        'tooltip': {
+        'caption': {
           'en': 'Villager',
           'ja': '村人'
         }
@@ -425,7 +425,7 @@ export default {
         'id': 'seer',
         'image': 'https://werewolf.world/image/0.1/seer.jpg',
         'numberOfAgents': 1,
-        'tooltip': {
+        'caption': {
           'en': 'Seer',
           'ja': '占い師'
         }
@@ -434,7 +434,7 @@ export default {
         'id': 'medium',
         'image': 'https://werewolf.world/image/0.1/medium.jpg',
         'numberOfAgents': 1,
-        'tooltip': {
+        'caption': {
           'en': 'Medium',
           'ja': '霊媒師'
         }
@@ -443,7 +443,7 @@ export default {
         'id': 'hunter',
         'image': 'https://werewolf.world/image/0.1/hunter.jpg',
         'numberOfAgents': 1,
-        'tooltip': {
+        'caption': {
           'en': 'Hunter',
           'ja': '狩人'
         }
@@ -452,7 +452,7 @@ export default {
         'id': 'mason',
         'image': 'https://werewolf.world/image/0.1/mason.jpg',
         'numberOfAgents': 2,
-        'tooltip': {
+        'caption': {
           'en': 'Mason',
           'ja': '共有者'
         }
@@ -461,7 +461,7 @@ export default {
         'id': 'madman',
         'image': 'https://werewolf.world/image/0.1/madman.jpg',
         'numberOfAgents': 1,
-        'tooltip': {
+        'caption': {
           'en': 'Madman',
           'ja': '狂人'
         }
@@ -470,7 +470,7 @@ export default {
         'id': 'werewolf',
         'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
         'numberOfAgents': 2,
-        'tooltip': {
+        'caption': {
           'en': 'Werewolf',
           'ja': '人狼'
         }
@@ -479,7 +479,7 @@ export default {
         'id': 'werehumster',
         'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
         'numberOfAgents': 1,
-        'tooltip': {
+        'caption': {
           'en': 'Werehumster',
           'ja': 'ハムスター人間'
         }

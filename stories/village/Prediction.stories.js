@@ -92,52 +92,52 @@ storiesOf('village|Prediction', module)
     ]
     const roleStatus = [
       {
+        'caption': '村人',
         'id': 'villager',
         'image': 'https://werewolf.world/image/0.1/villager.jpg',
-        'numberOfAgents': 4,
-        'tooltip': '村人'
+        'numberOfAgents': 4
       },
       {
+        'caption': '占い師',
         'id': 'seer',
         'image': 'https://werewolf.world/image/0.1/seer.jpg',
-        'numberOfAgents': 1,
-        'tooltip': '占い師'
+        'numberOfAgents': 1
       },
       {
+        'caption': '霊媒師',
         'id': 'medium',
         'image': 'https://werewolf.world/image/0.1/medium.jpg',
-        'numberOfAgents': 1,
-        'tooltip': '霊媒師'
+        'numberOfAgents': 1
       },
       {
+        'caption': '狩人',
         'id': 'hunter',
         'image': 'https://werewolf.world/image/0.1/hunter.jpg',
-        'numberOfAgents': 1,
-        'tooltip': '狩人'
+        'numberOfAgents': 1
       },
       {
+        'caption': '共有者',
         'id': 'mason',
         'image': 'https://werewolf.world/image/0.1/mason.jpg',
-        'numberOfAgents': 2,
-        'tooltip': '共有者'
+        'numberOfAgents': 2
       },
       {
+        'caption': '狂人',
         'id': 'madman',
         'image': 'https://werewolf.world/image/0.1/madman.jpg',
-        'numberOfAgents': 1,
-        'tooltip': '狂人'
+        'numberOfAgents': 1
       },
       {
+        'caption': '人狼',
         'id': 'werewolf',
         'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
-        'numberOfAgents': 2,
-        'tooltip': '人狼'
+        'numberOfAgents': 2
       },
       {
+        'caption': 'ハムスター人間',
         'id': 'werehumster',
         'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
-        'numberOfAgents': 1,
-        'tooltip': 'ハムスター人間'
+        'numberOfAgents': 1
       }
     ]
     const table = {
@@ -733,28 +733,28 @@ storiesOf('village|Prediction', module)
     ]
     const roleStatus = [
       {
+        'caption': '村人',
         'id': 'villager',
         'image': 'https://werewolf.world/image/0.1/villager.jpg',
-        'numberOfAgents': 2,
-        'tooltip': '村人'
+        'numberOfAgents': 2
       },
       {
+        'caption': '占い師',
         'id': 'seer',
         'image': 'https://werewolf.world/image/0.1/seer.jpg',
-        'numberOfAgents': 1,
-        'tooltip': '占い師'
+        'numberOfAgents': 1
       },
       {
+        'caption': '狂人',
         'id': 'madman',
         'image': 'https://werewolf.world/image/0.1/madman.jpg',
-        'numberOfAgents': 1,
-        'tooltip': '狂人'
+        'numberOfAgents': 1
       },
       {
+        'caption': '人狼',
         'id': 'werewolf',
         'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
-        'numberOfAgents': 1,
-        'tooltip': '人狼'
+        'numberOfAgents': 1
       }
     ]
     const table = {
