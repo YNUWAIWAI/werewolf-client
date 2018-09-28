@@ -484,7 +484,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--userName')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
-      expect(wrapper.text()).toBe('text')s
+      expect(wrapper.text()).toBe('text')
     })
     test('status="dead"', () => {
       const wrapper = shallow(
