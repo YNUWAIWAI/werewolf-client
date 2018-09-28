@@ -6,7 +6,7 @@
 :root {
   --info-image-size: 50px;
   --prediction-image-size: 50px;
-  --result-image-size: 40px;
+  --result-image-size: 50px;
   --vote-image-size: 60px;
   --modal-image-size: 60px;
 
@@ -358,6 +358,7 @@ body {
       border: none;
       border-radius: 8px;
       box-shadow: 2px 2px 1px 0 grey;
+      cursor: pointer;
       display: inline-flex;
       font-size: 1.5rem;
       justify-content: center;
@@ -639,13 +640,13 @@ body {
   border: 2px solid black;
   border-radius: 8px;
   display: grid;
-  grid-template-columns: calc(var(--result-image-size) + 1rem) 2fr 2fr calc(var(--result-image-size) + 1rem) calc(4px + var(--result-image-size) + 1rem) 2fr;
-  left: 10vw;
-  max-height: 80vh;
+  grid-template-columns: calc(var(--result-image-size) + 1.5rem + 2px) 1fr 1fr calc(var(--result-image-size) + 1.5rem + 2px) calc(5px + var(--result-image-size) + 1.5rem) 1fr;
+  left: 5vw;
+  max-height: 90vh;
   overflow: auto;
   position: fixed;
-  top: 10vh;
-  width: 80vw;
+  top: 5vh;
+  width: 90vw;
   z-index: 4;
 
   &--cell {
@@ -653,51 +654,67 @@ body {
     font-size: 2rem;
     height: 100%;
     line-height: 1.5;
-    max-height: 3rem;
+    max-height: var(--result-image-size);
     overflow: auto;
-    padding: 0.5rem;
+    padding: 0.75rem;
     text-align: center;
 
-    &[ data-result = 'summary' ] {
+    &--summary {
       grid-column: 1 / 7;
     }
 
-    &[ data-result = 'caption' ] {
+    &--caption {
       grid-column: 1 / 7;
       padding-top: 2rem;
     }
 
-    &[ data-result = 'userAvatar' ] {
+    &--userAvatar {
+      align-items: center;
       border-left: 4px double black;
+      display: inline-flex;
+      overflow: hidden;
+
+      & > img {
+        height: var(--result-image-size);
+        width: var(--result-image-size);
+      }
     }
 
-    &[ data-result = 'image' ],
-    &[ data-result = 'roleImage' ],
-    &[ data-result = 'userAvatar' ] {
+    &--image {
       align-items: center;
       display: inline-flex;
+      overflow: hidden;
+
+      & > img {
+        height: var(--result-image-size);
+        width: var(--result-image-size);
+      }
     }
 
-    &[ data-result = 'roleImage' ] {
+    &--roleImage {
       border-right: none;
+      display: grid;
+      grid-template-areas:
+        '. . .'
+        '. image .'
+        'caption caption caption'
+        '. . .';
+      grid-template-columns: 1fr var(--result-image-size) 1fr;
+      grid-template-rows: minmax(0.5rem, 1fr) var(--result-image-size) 12px auto;
+      min-height: calc(var(--result-image-size) + 1.5rem);
+      overflow: hidden;
+      padding: 0;
 
-      &[ data-tooltip ] {
-        position: relative;
+      &--caption {
+        font-size: 10px;
+        grid-area: caption;
+        line-height: 1.2;
+      }
 
-        &:hover::after {
-          align-items: center;
-          background: white;
-          border: solid 1px black;
-          bottom: 15%;
-          content: attr(data-tooltip);
-          display: inline-flex;
-          font-size: 10px;
-          justify-content: center;
-          left: 10%;
-          position: absolute;
-          right: 10%;
-          top: 15%;
-        }
+      & > img {
+        grid-area: image;
+        height: var(--result-image-size);
+        width: var(--result-image-size);
       }
     }
 
@@ -708,13 +725,14 @@ body {
 
   &--close {
     align-items: center;
+    cursor: pointer;
     display: inline-flex;
     filter: opacity(75%);
     height: 1.5rem;
     justify-content: center;
     position: fixed;
-    right: 10vw;
-    top: 10vh;
+    right: 5vw;
+    top: 5vh;
     width: 1.5rem;
 
     & > svg {

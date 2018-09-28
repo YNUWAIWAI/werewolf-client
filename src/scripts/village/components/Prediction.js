@@ -70,7 +70,7 @@ export default function Prediction(props: Props) {
     )
   ]
   const style = {
-    grid: `repeat(${1 + props.playerStatus.length}, minmax(67px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(67px, min-content))`
+    grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
   }
 
   return (

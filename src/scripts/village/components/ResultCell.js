@@ -9,9 +9,9 @@ type Props =
     +type: 'image' | 'userAvatar'
   }
   | {
+    +caption: string,
     +image: string,
     +status: AgentStatus,
-    +tooltip: string,
     +type: 'roleImage'
   }
   | {
@@ -29,20 +29,23 @@ export default function ResultCell(props: Props) {
     case 'image':
     case 'userAvatar':
       return (
-        <div className={`result--cell ${props.status === 'alive' ? '' : 'dead'}`} data-result={props.type}>
+        <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           <img src={props.image} />
         </div>
       )
     case 'roleImage':
       return (
-        <div className={`result--cell ${props.status === 'alive' ? '' : 'dead'}`} data-result={props.type} data-tooltip={props.tooltip}>
+        <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           <img src={props.image} />
+          <span className={`result--cell--${props.type}--caption`}>
+            {props.caption}
+          </span>
         </div>
       )
     case 'caption':
     case 'summary':
       return (
-        <div className="result--cell" data-result={props.type}>
+        <div className={`result--cell result--cell--${props.type}`}>
           {props.text}
         </div>
       )
@@ -50,7 +53,7 @@ export default function ResultCell(props: Props) {
     case 'status':
     case 'userName':
       return (
-        <div className={`result--cell ${props.status === 'alive' ? '' : 'dead'}`} data-result={props.type}>
+        <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           {props.text}
         </div>
       )
