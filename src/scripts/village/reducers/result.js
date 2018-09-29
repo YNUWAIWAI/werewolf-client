@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village'
-import type {HideReuslt, SocketMessage} from '../actions'
+import type {HideResult, SocketMessage} from '../actions'
 import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
 import {RESULTS} from '../constants/Phase'
 import {WEREHUMSTER} from '../constants/Role'
@@ -40,7 +40,7 @@ export type State = {
 }
 type Action =
   | SocketMessage
-  | HideReuslt
+  | HideResult
   | {type: 'SHOW_RESULT'}
 
 export const initialState = {
