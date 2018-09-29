@@ -58,7 +58,7 @@ export const handleClickHideButton = (hide: boolean): {hide: boolean, type: 'CLI
   type: ActionTypes.CLICK_HIDE_BUTTON
 })
 
-export const hideReuslt = (): {type: 'HIDE_RESULT'} => ({
+export const hideResult = (): {type: 'HIDE_RESULT'} => ({
   type: ActionTypes.HIDE_RESULT
 })
 
@@ -98,7 +98,7 @@ export type ChangePredictionBoard = $Call<typeof handleBoardClick, *, *, *>
 export type ChangeDate = $Call<typeof changeDate, *>
 export type ChangeLanguage = $Call<typeof changeLanguage, *>
 export type ChangePhase = $Call<typeof changePhase, *>
-export type HideReuslt = $Call<typeof hideReuslt>
+export type HideResult = $Call<typeof hideResult>
 export type PostChat = $Call<typeof postChat, *>
 export type SelectOption = $Call<typeof selectOption, *>
 export type SelectNo = $Call<typeof selectNo, *>
