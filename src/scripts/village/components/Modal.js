@@ -23,10 +23,6 @@ export type Props =
   & OwnProps
 
 export default function Modal(props: Props) {
-  if (!props.visible) {
-    return ''
-  }
-
   const handleClick = value => () => {
     if (value === 'no') {
       props.handleClickNo()
@@ -36,7 +32,7 @@ export default function Modal(props: Props) {
   }
 
   return (
-    <div className="modal">
+    <div className={`modal ${props.visible ? '' : 'hidden'}`}>
       <AgentIcon class="modal--icon" image={props.image} name={props.name} />
       <Description class="modal--description" text={props.text} timer={props.timer} />
       <button className="modal--button yes" onClick={handleClick('yes')}>
