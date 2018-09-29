@@ -289,7 +289,7 @@ export default {
     visible: false
   },
   obfucator: {
-    visible: false
+    visible: true
   },
   prediction: {
     playerStatus: [
