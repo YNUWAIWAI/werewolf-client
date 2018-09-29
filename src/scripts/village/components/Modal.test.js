@@ -54,7 +54,7 @@ describe('<Modal />', () => {
       />
     )
 
-    expect(wrapper.find('.modal').exists()).toBe(false)
+    expect(wrapper.find('.modal').hasClass('hidden')).toBe(true)
   })
   test('handleClickNo', () => {
     const timer = {
