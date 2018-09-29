@@ -281,67 +281,106 @@ export default {
       {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        name: 'ヴァルター'
+        name: {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        }
       },
       {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Moritz.jpg',
-        name: 'モーリッツ'
+        name: {
+          'en': 'Moritz',
+          'ja': 'モーリッツ'
+        }
       },
       {
         id: 3,
         image: 'https://werewolf.world/image/0.1/Simson.jpg',
-        name: 'ジムゾン'
+        name: {
+          'en': 'Simson',
+          'ja': 'ジムゾン'
+        }
       },
       {
         id: 4,
         image: 'https://werewolf.world/image/0.1/Thomas.jpg',
-        name: 'トーマス'
+        name: {
+          'en': 'Thomas',
+          'ja': 'トーマス'
+        }
       },
       {
         id: 5,
         image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
-        name: 'ニコラス'
+        name: {
+          'en': 'Nicholas',
+          'ja': 'ニコラス'
+        }
       },
       {
         id: 6,
         image: 'https://werewolf.world/image/0.1/Dieter.jpg',
-        name: 'ディーター'
+        name: {
+          'en': 'Dieter',
+          'ja': 'ディーター'
+        }
       },
       {
         id: 7,
         image: 'https://werewolf.world/image/0.1/Peter.jpg',
-        name: 'ペーター'
+        name: {
+          'en': 'Peter',
+          'ja': 'ペーター'
+        }
       },
       {
         id: 8,
         image: 'https://werewolf.world/image/0.1/Lisa.jpg',
-        name: 'リーザ'
+        name: {
+          'en': 'Lisa',
+          'ja': 'リーザ'
+        }
       },
       {
         id: 9,
         image: 'https://werewolf.world/image/0.1/Alvin.jpg',
-        name: 'アルビン'
+        name: {
+          'en': 'Alvin',
+          'ja': 'アルビン'
+        }
       },
       {
         id: 11,
         image: 'https://werewolf.world/image/0.1/Otto.jpg',
-        name: 'オットー'
+        name: {
+          'en': 'Otto',
+          'ja': 'オットー'
+        }
       },
       {
         id: 12,
         image: 'https://werewolf.world/image/0.1/Joachim.jpg',
-        name: 'ヨアヒム'
+        name: {
+          'en': 'Joachim',
+          'ja': 'ヨアヒム'
+        }
       },
       {
         id: 13,
         image: 'https://werewolf.world/image/0.1/Pamela.jpg',
-        name: 'パメラ'
+        name: {
+          'en': 'Pamela',
+          'ja': 'パメラ'
+        }
       },
       {
         id: 14,
         image: 'https://werewolf.world/image/0.1/Jacob.jpg',
-        name: 'ヤコブ'
+        name: {
+          'en': 'Jacob',
+          'ja': 'ヤコブ'
+        }
       }
     ],
     fixed: false
