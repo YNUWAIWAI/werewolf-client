@@ -7,8 +7,8 @@
   --info-image-size: 50px;
   --prediction-image-size: 50px;
   --result-image-size: 50px;
-  --vote-image-size: 60px;
-  --modal-image-size: 60px;
+  --vote-image-size: 50px;
+  --modal-image-size: 50px;
 
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
@@ -232,11 +232,6 @@ body {
   justify-content: space-around;
   margin: 2.5vh 0;
 
-  &--description {
-    font-size: 1.5rem;
-    padding: 0 1rem;
-  }
-
   &--input {
     display: grid;
     gap: 10px;
@@ -329,24 +324,6 @@ body {
     }
   }
 
-  &--option {
-    align-items: center;
-    display: inline-flex;
-    flex-flow: column nowrap;
-    height: 100%;
-    justify-content: center;
-    width: calc(20vh - 3.45rem);
-
-    & > img {
-      height: var(--vote-image-size);
-      width: var(--vote-image-size);
-    }
-
-    & > span {
-      font-size: xx-small;
-    }
-  }
-
   &--navigation {
     display: grid;
     gap: 0.5rem;
@@ -376,16 +353,41 @@ body {
     }
   }
 
-  &--option-container {
-    display: flex;
-    height: calc(100% - 1.5rem);
-    overflow: auto;
-  }
-
-  &--select {
+  &--selection {
     height: 100%;
     line-height: 1.5;
     width: 100%;
+
+    &--description {
+      font-size: 1.5rem;
+      padding: 0 1rem;
+    }
+
+    &--select {
+      display: grid;
+      grid-auto-columns: minmax(70px, min-content);
+      grid-auto-flow: column;
+      height: calc(100% - 1.5rem);
+      overflow: auto;
+    }
+
+    &--option {
+      align-items: center;
+      display: inline-flex;
+      flex-flow: column nowrap;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+
+      &--image {
+        height: var(--vote-image-size);
+        width: var(--vote-image-size);
+      }
+
+      &--name {
+        font-size: 10px;
+      }
+    }
   }
 
   &.hide {
@@ -752,17 +754,44 @@ body {
 
 .modal {
   background: #fafafa;
-  left: 30vw;
+  display: grid;
+  gap: 0.5rem 0;
+  grid-template-areas:
+    '. icon icon icon  .'
+    'description description description description description'
+    '. yes . no .';
+  grid-template-columns: 1fr 5.5rem 1fr 5.5rem 1fr;
+  /*
+    5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
+  */
+  grid-template-rows: calc(var(--modal-image-size) + 15px) 4.5rem 3.25rem;
+  /*
+    15px = name's font-size(10px) * name's line-height(1.5)
+    4.5rem = font-size(1.5rem) * line-height(1.5) * number of lines(2)
+    3.25rem = font-size(1.5rem) * name's line-height(1.5) + padding-top(0.5rem) + padding-bottom(0.5rem)
+  */
+  left: 25vw;
   padding: 1rem;
   position: fixed;
-  top: 38vh;
-  width: 40vw;
+  top: 30vh;
+  width: 50vw;
   z-index: 4;
 
   &--button {
     border: none;
     font-size: 1.5rem;
-    width: 30%;
+    line-height: 1.5;
+    padding: 0.5rem;
+
+    &.yes {
+      background: rgba(255, 0, 0, 0.5);
+      grid-area: yes;
+    }
+
+    &.no {
+      background: rgba(0, 0, 255, 0.5);
+      grid-area: no;
+    }
 
     &:hover {
       filter: opacity(85%);
@@ -773,23 +802,13 @@ body {
     }
   }
 
-  &--button[ value = 'yes' ] {
-    background: rgba(255, 0, 0, 0.5);
-  }
-
-  &--button[ value = 'no' ] {
-    background: rgba(0, 0, 255, 0.5);
-  }
-
-  &--button--container {
-    display: inline-flex;
-    justify-content: space-around;
-    width: 100%;
-  }
-
   &--description {
+    align-items: center;
+    display: inline-flex;
+    flex-wrap: wrap;
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    grid-area: description;
+    justify-content: center;
     text-align: center;
   }
 
@@ -797,17 +816,16 @@ body {
     align-items: center;
     display: inline-flex;
     flex-direction: column;
-    height: calc(20vh - 3.75rem);
+    grid-area: icon;
     justify-content: center;
-    width: 100%;
 
-    & > img {
+    &--image {
       height: var(--modal-image-size);
       width: var(--modal-image-size);
     }
 
-    & > span {
-      font-size: xx-small;
+    &--name {
+      font-size: 10px;
     }
   }
 }

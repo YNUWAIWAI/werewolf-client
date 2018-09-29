@@ -1,19 +1,29 @@
 // @flow
+import AgentIcon from './AgentIcon'
 import CommandSelection from './CommandSelection'
+import Description from './Description'
 import React from 'react'
 import {shallow} from 'enzyme'
+describe('<CommandSelection />', () => {
+  test('agents={[]}', () => {
+    const handleSelectOptionEventHandler = jest.fn()
+    const handleSelectOption = jest.fn(handleSelectOptionEventHandler)
+    const timer = {
+      limit: 10,
+      phase: 'night'
+    }
+    const wrapper = shallow(
+      <CommandSelection
+        agents={[]}
+        handleSelectOption={handleSelectOption}
+        text="text"
+        timer={timer}
+      />
+    )
 
-test('<CommandSelection agents={[]} text="text" />', () => {
-  const handleSelectOptionEventHandler = jest.fn()
-  const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
-  const timer = {
-    limit: 10,
-    phase: 'night'
-  }
-  const wrapper = shallow(<CommandSelection agents={[]} handleSelectOption={handleSelectOption} text="text" timer={timer} />)
-
-  expect(wrapper.find('.command--description').text()).toBe('text（<Timer />）')
-  expect(wrapper.find('.command--option-container').children()).toHaveLength(0)
+    expect(wrapper.find(Description).exists()).toBe(true)
+    expect(wrapper.find('.command--selection--select').children()).toHaveLength(0)
+  })
 })
 test('<CommandSelection agents={agents} text="text" />', () => {
   const agents = [
@@ -89,8 +99,15 @@ test('<CommandSelection agents={agents} text="text" />', () => {
   }
   const handleSelectOptionEventHandler = jest.fn()
   const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
-  const wrapper = shallow(<CommandSelection agents={agents} handleSelectOption={handleSelectOption} text="text" timer={timer} />)
+  const wrapper = shallow(
+    <CommandSelection
+      agents={agents}
+      handleSelectOption={handleSelectOption}
+      text="text"
+      timer={timer}
+    />
+  )
 
-  expect(wrapper.find('.command--description').text()).toBe('text（<Timer />）')
-  expect(wrapper.find('.command--option-container').children('CommandOption')).toHaveLength(13)
+  expect(wrapper.find(Description).exists()).toBe(true)
+  expect(wrapper.find('.command--selection--select').children(AgentIcon)).toHaveLength(13)
 })

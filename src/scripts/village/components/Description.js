@@ -14,9 +14,11 @@ export default function Description(props: Props) {
       <span>
         {props.text}
       </span>
-      {'（'}
-      <Timer {... props.timer} />
-      {'）'}
+      <span>
+        {'（'}
+        <Timer {... props.timer} />
+        {'）'}
+      </span>
     </div>
   )
 }
