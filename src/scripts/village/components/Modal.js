@@ -39,14 +39,12 @@ export default function Modal(props: Props) {
     <div className="modal">
       <AgentIcon class="modal--icon" image={props.image} name={props.name} />
       <Description class="modal--description" text={props.text} timer={props.timer} />
-      <div className="modal--button--container">
-        <button className="modal--button" onClick={handleClick('yes')} value="yes">
-          {'はい'}
-        </button>
-        <button className="modal--button" onClick={handleClick('no')} value="no">
-          {'いいえ'}
-        </button>
-      </div>
+      <button className="modal--button yes" onClick={handleClick('yes')}>
+        {'はい'}
+      </button>
+      <button className="modal--button no" onClick={handleClick('no')}>
+        {'いいえ'}
+      </button>
     </div>
   )
 }

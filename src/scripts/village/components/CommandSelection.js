@@ -1,7 +1,8 @@
 // @flow
-import Timer, {type Props as TimerProps} from './Timer'
-import CommandOption from './CommandOption'
+import AgentIcon from './AgentIcon'
+import Description from './Description'
 import React from 'react'
+import type {Props as TimerProps} from './Timer'
 
 export type StateProps = {
   +agents: {
@@ -23,21 +24,19 @@ export type Props =
 
 export default function CommandSelection(props: Props) {
   return (
-    <div className="command--select">
-      <div className="command--description">
-        <span>
-          {props.text}
-        </span>
-        {'（'}
-        <Timer {... props.timer} />
-        {'）'}
-      </div>
-      <div className="command--option-container">
+    <div className="command--selection">
+      <Description
+        class="command--selection--description"
+        text={props.text}
+        timer={props.timer}
+      />
+      <div className="command--selection--select">
         {
           props.agents
             .map(a =>
-              <CommandOption
-                handleSelectOption={props.handleSelectOption(a.id)}
+              <AgentIcon
+                class="command--selection--option"
+                handleOnClick={props.handleSelectOption(a.id)}
                 image={a.image}
                 key={a.id}
                 name={a.name}
