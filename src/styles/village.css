@@ -409,11 +409,6 @@ body {
       }
     }
   }
-
-  &.hide {
-    position: fixed;
-    top: 98vh;
-  }
 }
 
 .hidden {
