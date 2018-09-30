@@ -307,11 +307,11 @@ body {
 
       &:hover {
         filter: opacity(85%);
-      }
 
-      &:active {
-        box-shadow: inset 2px 2px 1px 0 grey;
-        filter: brightness(85%);
+        &:active {
+          box-shadow: inset 2px 2px 1px 0 grey;
+          filter: brightness(85%);
+        }
       }
 
       &:disabled {
@@ -354,22 +354,22 @@ body {
 
       &:hover {
         filter: opacity(85%);
-      }
 
-      &:active {
-        box-shadow: inset 2px 2px 1px 0 grey;
-        filter: brightness(85%);
+        &:active {
+          box-shadow: inset 2px 2px 1px 0 grey;
+          filter: brightness(85%);
+        }
       }
     }
   }
 
   &--selection {
     height: 100%;
-    line-height: 1.5;
     width: 100%;
 
     &--description {
       font-size: 1.5rem;
+      line-height: 1.5;
       padding: 0 1rem;
     }
 
@@ -383,6 +383,7 @@ body {
 
     &--option {
       align-items: center;
+      cursor: pointer;
       display: inline-flex;
       flex-flow: column nowrap;
       height: 100%;
@@ -396,6 +397,14 @@ body {
 
       &--name {
         font-size: 10px;
+      }
+
+      &:hover {
+        filter: opacity(80%);
+
+        &:active {
+          filter: brightness(85%);
+        }
       }
     }
   }
@@ -754,10 +763,10 @@ body {
 
     &:hover {
       filter: opacity(100%);
-    }
 
-    &:active {
-      filter: opacity(50%);
+      &:active {
+        filter: opacity(50%);
+      }
     }
   }
 }
@@ -805,10 +814,10 @@ body {
 
     &:hover {
       filter: opacity(85%);
-    }
 
-    &:active {
-      filter: brightness(85%);
+      &:active {
+        filter: brightness(85%);
+      }
     }
   }
 
