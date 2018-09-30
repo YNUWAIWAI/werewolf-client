@@ -43,7 +43,7 @@ body {
     'info info'
     'activity activity'
     'command command';
-  grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 63vh) minmax(150px, 20vh);
+  grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 63vh) minmax(130px, 20vh);
   height: 100vh;
 }
 
