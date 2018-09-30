@@ -28,12 +28,23 @@ body {
 
 .activity-container {
   display: flex;
-  height: 63vh;
+  grid-area: activity;
   justify-content: space-around;
 
   &.expand {
     height: 86vh;
   }
+}
+
+.app {
+  display: grid;
+  gap: 1vh 0;
+  grid-template-areas:
+    'info info'
+    'activity activity'
+    'command command';
+  grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 63vh) minmax(150px, 20vh);
+  height: 100vh;
 }
 
 .chat {
@@ -228,9 +239,8 @@ body {
 
 .command {
   display: flex;
-  height: 20vh;
+  grid-area: command;
   justify-content: space-around;
-  margin: 2.5vh 0;
 
   &--input {
     display: grid;
@@ -434,14 +444,14 @@ body {
 .info {
   display: grid;
   gap: 0 2rem;
+  grid-area: info;
   grid-template-areas:
     '. . .'
     'day roleIcon roleText'
     '. roleIcon .';
   grid-template-columns: 3fr var(--info-image-size) 2fr;
-  grid-template-rows: 2vh minmax(calc(3.25rem + 4px), 5vh) auto;
-  height: 12vh;
-  max-height: 12vh;
+  grid-template-rows: 2vh minmax(calc(3.25rem + 4px), 5vh) minmax(15px, auto);
+  height: 100%;
 
   &--day {
     display: flex;
