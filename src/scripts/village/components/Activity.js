@@ -13,7 +13,7 @@ export type Props =
 
 export default function Activity(props: Props) {
   return (
-    <div className={`activity-container ${props.expand ? 'expand' : ''}`}>
+    <div className={`activity ${props.expand ? 'expand' : ''}`}>
       <Chat />
       <Prediction />
     </div>

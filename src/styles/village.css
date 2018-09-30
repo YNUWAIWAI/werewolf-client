@@ -26,13 +26,13 @@ body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
 }
 
-.activity-container {
+.activity {
   display: flex;
   grid-area: activity;
   justify-content: space-around;
 
   &.expand {
-    height: 86vh;
+    grid-area: activity / 1 / command / 1;
   }
 }
 
@@ -40,10 +40,10 @@ body {
   display: grid;
   gap: 1vh 0;
   grid-template-areas:
-    'info info'
-    'activity activity'
-    'command command';
-  grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 63vh) minmax(130px, 20vh);
+    'info'
+    'activity'
+    'command';
+  grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 68vh) minmax(130px, 20vh);
   height: 100vh;
 }
 
@@ -241,6 +241,7 @@ body {
   display: flex;
   grid-area: command;
   justify-content: space-around;
+  position: relative;
 
   &--input {
     display: grid;
@@ -421,16 +422,26 @@ body {
 }
 
 .hide-button {
-  background: #303030;
-  border: 0;
-  bottom: 23vh;
-  height: 1.5rem;
-  position: absolute;
-  right: 0;
-  width: 4vw;
+  grid-area: command;
+  position: relative;
 
-  &:focus {
-    outline: unset;
+  &--button {
+    background: #303030;
+    border: 0;
+    height: 24px;
+    left: 0;
+    position: absolute;
+    top: -24px;
+    width: 48px;
+
+    &:focus {
+      outline: unset;
+    }
+
+    &.hide {
+      bottom: 0;
+      top: unset;
+    }
   }
 
   &--icon {
@@ -443,10 +454,6 @@ body {
     &.hide {
       border-width: 0 4px 5px;
     }
-  }
-
-  &.hide {
-    bottom: 0;
   }
 }
 

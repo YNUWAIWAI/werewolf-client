@@ -15,8 +15,10 @@ export type Props =
 
 export default function HideButton(props: Props) {
   return (
-    <button className={`hide-button ${props.hide ? 'hide' : ''}`} onClick={props.handleClick(!props.hide)}>
-      <span className={`hide-button--icon ${props.hide ? 'hide' : ''}`} />
-    </button>
+    <div className={`hide-button ${props.hide ? 'hide' : ''}`}>
+      <button className={`hide-button--button ${props.hide ? 'hide' : ''}`} onClick={props.handleClick(!props.hide)}>
+        <span className={`hide-button--icon ${props.hide ? 'hide' : ''}`} />
+      </button>
+    </div>
   )
 }
