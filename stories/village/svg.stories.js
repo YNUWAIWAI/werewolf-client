@@ -2,6 +2,7 @@
 import Audience from '../../src/scripts/village/components/svg/Audience'
 import Circle from '../../src/scripts/village/components/svg/Circle'
 import Cross from '../../src/scripts/village/components/svg/Cross'
+import DownArrow from '../../src/scripts/village/components/svg/DownArrow'
 import Grave from '../../src/scripts/village/components/svg/Grave'
 import Master from '../../src/scripts/village/components/svg/Master'
 import Private from '../../src/scripts/village/components/svg/Private'
@@ -31,6 +32,7 @@ storiesOf('village|svg', module)
   .add('Audience', withInfo('')(() => <Audience />))
   .add('Circle', withInfo('')(() => <Circle />))
   .add('Cross', withInfo('')(() => <Cross />))
+  .add('DownArrow', withInfo('')(() => <DownArrow />))
   .add('Grave', withInfo('')(() => <Grave />))
   .add('Master', withInfo('')(() => <Master />))
   .add('Private', withInfo('')(() => <Private />))
