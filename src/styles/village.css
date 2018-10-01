@@ -423,6 +423,7 @@ body {
   &--button {
     background: #303030;
     border: 0;
+    border-radius: 4px;
     height: 24px;
     left: 0;
     position: absolute;
@@ -436,18 +437,15 @@ body {
     &.hide {
       bottom: 0;
       top: unset;
+
+      & > svg {
+        transform: rotate(0.5turn);
+      }
     }
-  }
 
-  &--icon {
-    border-color: white transparent;
-    border-style: solid;
-    border-width: 7px 5px 0;
-    margin-left: -2px;
-    position: absolute;
-
-    &.hide {
-      border-width: 0 4px 5px;
+    & > svg {
+      fill: white;
+      width: 100%;
     }
   }
 }

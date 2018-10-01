@@ -1,4 +1,5 @@
 // @flow
+import DownArrow from './svg/DownArrow'
 import React from 'react'
 
 export type StateProps = {
@@ -15,9 +16,9 @@ export type Props =
 
 export default function HideButton(props: Props) {
   return (
-    <div className={`hide-button ${props.hide ? 'hide' : ''}`}>
+    <div className="hide-button">
       <button className={`hide-button--button ${props.hide ? 'hide' : ''}`} onClick={props.handleClick(!props.hide)}>
-        <span className={`hide-button--icon ${props.hide ? 'hide' : ''}`} />
+        <DownArrow />
       </button>
     </div>
   )
