@@ -12,7 +12,7 @@ export type Props =
 
 export default function Command(props: Props) {
   return (
-    <div className={`command ${props.hide ? 'hide' : ''}`}>
+    <div className={`command ${props.hide ? 'hidden' : ''}`}>
       {props.content}
     </div>
   )

@@ -26,14 +26,25 @@ body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
 }
 
-.activity-container {
+.activity {
   display: flex;
-  height: 63vh;
+  grid-area: activity;
   justify-content: space-around;
 
   &.expand {
-    height: 86vh;
+    grid-area: activity / 1 / command / 1;
   }
+}
+
+.app {
+  display: grid;
+  gap: 1vh 0;
+  grid-template-areas:
+    'info'
+    'activity'
+    'command';
+  grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 68vh) minmax(130px, 20vh);
+  height: 100vh;
 }
 
 .chat {
@@ -228,9 +239,9 @@ body {
 
 .command {
   display: flex;
-  height: 20vh;
+  grid-area: command;
   justify-content: space-around;
-  margin: 2.5vh 0;
+  position: relative;
 
   &--input {
     display: grid;
@@ -297,11 +308,11 @@ body {
 
       &:hover {
         filter: opacity(85%);
-      }
 
-      &:active {
-        box-shadow: inset 2px 2px 1px 0 grey;
-        filter: brightness(85%);
+        &:active {
+          box-shadow: inset 2px 2px 1px 0 grey;
+          filter: brightness(85%);
+        }
       }
 
       &:disabled {
@@ -344,22 +355,22 @@ body {
 
       &:hover {
         filter: opacity(85%);
-      }
 
-      &:active {
-        box-shadow: inset 2px 2px 1px 0 grey;
-        filter: brightness(85%);
+        &:active {
+          box-shadow: inset 2px 2px 1px 0 grey;
+          filter: brightness(85%);
+        }
       }
     }
   }
 
   &--selection {
     height: 100%;
-    line-height: 1.5;
     width: 100%;
 
     &--description {
       font-size: 1.5rem;
+      line-height: 1.5;
       padding: 0 1rem;
     }
 
@@ -373,6 +384,7 @@ body {
 
     &--option {
       align-items: center;
+      cursor: pointer;
       display: inline-flex;
       flex-flow: column nowrap;
       height: 100%;
@@ -387,12 +399,15 @@ body {
       &--name {
         font-size: 10px;
       }
-    }
-  }
 
-  &.hide {
-    position: fixed;
-    top: 98vh;
+      &:hover {
+        filter: opacity(80%);
+
+        &:active {
+          filter: brightness(85%);
+        }
+      }
+    }
   }
 }
 
@@ -402,46 +417,50 @@ body {
 }
 
 .hide-button {
-  background: #303030;
-  border: 0;
-  bottom: 23vh;
-  height: 1.5rem;
-  position: absolute;
-  right: 0;
-  width: 4vw;
+  grid-area: command;
+  position: relative;
 
-  &:focus {
-    outline: unset;
-  }
-
-  &--icon {
-    border-color: white transparent;
-    border-style: solid;
-    border-width: 7px 5px 0;
-    margin-left: -2px;
+  &--button {
+    background: #303030;
+    border: 0;
+    border-radius: 4px;
+    height: 24px;
+    left: 0;
     position: absolute;
+    top: -24px;
+    width: 48px;
+
+    &:focus {
+      outline: unset;
+    }
 
     &.hide {
-      border-width: 0 4px 5px;
-    }
-  }
+      bottom: 0;
+      top: unset;
 
-  &.hide {
-    bottom: 0;
+      & > svg {
+        transform: rotate(0.5turn);
+      }
+    }
+
+    & > svg {
+      fill: white;
+      width: 100%;
+    }
   }
 }
 
 .info {
   display: grid;
   gap: 0 2rem;
+  grid-area: info;
   grid-template-areas:
     '. . .'
     'day roleIcon roleText'
     '. roleIcon .';
   grid-template-columns: 3fr var(--info-image-size) 2fr;
-  grid-template-rows: 2vh minmax(calc(3.25rem + 4px), 5vh) auto;
-  height: 12vh;
-  max-height: 12vh;
+  grid-template-rows: 2vh minmax(calc(3.25rem + 4px), 5vh) minmax(15px, auto);
+  height: 100%;
 
   &--day {
     display: flex;
@@ -732,8 +751,8 @@ body {
     filter: opacity(75%);
     height: 1.5rem;
     justify-content: center;
+    left: 5vw;
     position: fixed;
-    right: 5vw;
     top: 5vh;
     width: 1.5rem;
 
@@ -744,10 +763,10 @@ body {
 
     &:hover {
       filter: opacity(100%);
-    }
 
-    &:active {
-      filter: opacity(50%);
+      &:active {
+        filter: opacity(50%);
+      }
     }
   }
 }
@@ -795,10 +814,10 @@ body {
 
     &:hover {
       filter: opacity(85%);
-    }
 
-    &:active {
-      filter: brightness(85%);
+      &:active {
+        filter: brightness(85%);
+      }
     }
   }
 
