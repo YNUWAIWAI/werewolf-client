@@ -8,8 +8,7 @@ test('<HideButton hide />', () => {
   const handleClick = jest.fn().mockReturnValueOnce(handleClickEventHandler)
   const wrapper = shallow(<HideButton handleClick={handleClick} hide />)
 
-  expect(wrapper.find('.hide-button').hasClass('hide')).toBe(true)
-  expect(wrapper.find('.hide-button--icon').hasClass('hide')).toBe(true)
+  expect(wrapper.find('.hide-button--button').hasClass('hide')).toBe(true)
   expect(handleClickEventHandler).toHaveBeenCalledTimes(0)
   expect(handleClick).toHaveBeenCalledTimes(1)
   expect(handleClick).toHaveBeenCalledWith(false)
@@ -19,9 +18,7 @@ test('<HideButton hide={false} />', () => {
   const handleClick = jest.fn().mockReturnValueOnce(handleClickEventHandler)
   const wrapper = shallow(<HideButton handleClick={handleClick} hide={false} />)
 
-  expect(wrapper.find('.hide-button').hasClass('hide')).toBe(false)
   expect(wrapper.find('.hide-button--button').hasClass('hide')).toBe(false)
-  expect(wrapper.find('.hide-button--icon').hasClass('hide')).toBe(false)
   expect(handleClickEventHandler).toHaveBeenCalledTimes(0)
   expect(handleClick).toHaveBeenCalledTimes(1)
   expect(handleClick).toHaveBeenCalledWith(true)
