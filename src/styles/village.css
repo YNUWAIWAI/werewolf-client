@@ -242,6 +242,7 @@ body {
   grid-area: command;
   justify-content: space-around;
   position: relative;
+  z-index: 2;
 
   &--input {
     display: grid;
@@ -407,6 +408,18 @@ body {
           filter: brightness(85%);
         }
       }
+
+      &.fixed {
+        cursor: default;
+
+        &:hover {
+          filter: unset;
+
+          &:active {
+            filter: unset;
+          }
+        }
+      }
     }
   }
 }
@@ -419,6 +432,7 @@ body {
 .hide-button {
   grid-area: command;
   position: relative;
+  z-index: 1;
 
   &--button {
     background: #303030;

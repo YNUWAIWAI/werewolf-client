@@ -81,7 +81,7 @@ storiesOf('village|Command/CommandSelection', module)
       limit: 90,
       phase: 'day vote'
     }
-    const story = <CommandSelection agents={agents} handleSelectOption={id => action(`handleSelectOption id: ${id}`)} text="投票先を選んでください" timer={timer} />
+    const story = <CommandSelection agents={agents} fixed={false} handleSelectOption={id => action(`handleSelectOption id: ${id}`)} text="投票先を選んでください" timer={timer} />
 
     return story
   }))

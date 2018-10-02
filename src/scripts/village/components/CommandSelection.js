@@ -10,6 +10,7 @@ export type StateProps = {
     +image: string,
     +name: string
   }[],
+  +fixed: boolean,
   +text: string,
   +timer: TimerProps
 }
@@ -30,18 +31,29 @@ export default function CommandSelection(props: Props) {
         text={props.text}
         timer={props.timer}
       />
-      <div className="command--selection--select">
+      <div className="command--selection--select ">
         {
-          props.agents
-            .map(a =>
-              <AgentIcon
-                class="command--selection--option"
-                handleOnClick={props.handleSelectOption(a.id)}
-                image={a.image}
-                key={a.id}
-                name={a.name}
-              />
-            )
+          props.fixed ?
+            props.agents
+              .map(a =>
+                <AgentIcon
+                  additionalClass="fixed"
+                  class="command--selection--option"
+                  image={a.image}
+                  key={a.id}
+                  name={a.name}
+                />
+              ) :
+            props.agents
+              .map(a =>
+                <AgentIcon
+                  class="command--selection--option"
+                  handleOnClick={props.handleSelectOption(a.id)}
+                  image={a.image}
+                  key={a.id}
+                  name={a.name}
+                />
+              )
         }
       </div>
     </div>

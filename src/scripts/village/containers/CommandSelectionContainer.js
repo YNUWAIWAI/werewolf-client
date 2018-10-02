@@ -13,10 +13,15 @@ type Action =
 
 const getText = (phase: Phase, role: RoleId, fixed: boolean, lang: Language) => {
   if (phase === DAY_VOTE) {
-    return {
-      en: 'EN',
-      ja: '投票先を選んでください'
-    }[lang]
+    return fixed ?
+      {
+        en: 'EN',
+        ja: 'あなたの選んだ投票先はこちらです'
+      }[lang] :
+      {
+        en: 'EN',
+        ja: '投票先を選んでください'
+      }[lang]
   }
 
   switch (role) {
@@ -69,6 +74,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.roles.mine) {
     return {
       agents,
+      fixed: state.commandSelection.fixed,
       text: '',
       timer: {
         limit: state.base.phaseTimeLimit,
@@ -79,6 +85,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
   return {
     agents,
+    fixed: state.commandSelection.fixed,
     text: getText(
       state.base.phase,
       getRoleId(state.roles.mine['@id']),
