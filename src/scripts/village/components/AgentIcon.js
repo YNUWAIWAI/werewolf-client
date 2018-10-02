@@ -2,6 +2,7 @@
 import React from 'react'
 
 type Props = {
+  +additionalClass?: string,
   +class: string,
   +handleOnClick?: void => void,
   +image: string,
@@ -11,7 +12,7 @@ type Props = {
 export default function AgentIcon(props: Props) {
   return (
     <div
-      className={props.class}
+      className={`${props.class} ${props.additionalClass || ''}`}
       onClick={props.handleOnClick}
     >
       <img
