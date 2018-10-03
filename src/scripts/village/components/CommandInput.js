@@ -1,5 +1,6 @@
 // @flow
 import ChatIcon from './ChatIcon'
+import {FormattedMessage} from 'react-intl'
 import React from 'react'
 import {getChannelFromInputChennel} from '../constants/Channels'
 
@@ -111,8 +112,10 @@ export default class CommandInput extends React.Component<Props, State> {
             </span> :
             ''
         }
-        <button disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
-          {'送信'}
+        <button className="command--input--send" disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
+          <FormattedMessage
+            id="CommandInput.send"
+          />
         </button>
       </form>
     )
