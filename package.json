@@ -53,6 +53,7 @@
     "postcss": "^7.0.2",
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.0",
+    "react-intl": "^2.7.0",
     "redux-devtools-extension": "^2.13.2",
     "stylelint": "^9.5.0",
     "stylelint-order": "^1.0.0",
