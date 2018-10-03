@@ -298,7 +298,7 @@ body {
       }
     }
 
-    & button {
+    &--send {
       background-color: rgb(128, 216, 255);
       border: none;
       border-radius: 5px;
@@ -322,7 +322,12 @@ body {
         filter: brightness(50%);
 
         &:hover {
-          border: none;
+          filter: brightness(50%);
+
+          &:active {
+            box-shadow: inset 2px 2px 1px 0 grey;
+            filter: brightness(50%);
+          }
         }
       }
     }
