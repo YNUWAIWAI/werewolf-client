@@ -3,6 +3,7 @@ declare module 'lobby' {
   declare type Member = 'A' | 'B' | 'C'
   declare type Lobby = 'human player' | 'onymous audience' | 'robot player'
   declare type PingStatus = 'danger' | 'safe' | 'warning'
+  declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type Village = {
     avatar: string,
     comment: ?string,
@@ -86,6 +87,11 @@ declare module 'lobby' {
   declare type Payload$Avatar = Payload<{
     image: string,
     name: string
+  }>
+  declare type Payload$GetSettings = Payload<{
+    lang: Language,
+    userEmail: string,
+    userName: string
   }>
   declare type Payload$Lobby = Payload<{
     lobby: Lobby,

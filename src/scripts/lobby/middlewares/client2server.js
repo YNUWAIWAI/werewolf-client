@@ -61,6 +61,46 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
       return next(action)
     }
+    case ActionTypes.CHANGE_LANGUAGE: {
+      const payload = {
+        lang: action.language,
+        type: 'changeLang'
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.CHANGE_USER_EMAIL: {
+      const payload = {
+        type: 'changeUserEmail',
+        userEmail: action.userEmail
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.CHANGE_USER_NAME: {
+      const payload = {
+        type: 'changeUserName',
+        userName: action.userName
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.CHANGE_USER_PASSWORD: {
+      const payload = {
+        type: 'changeUserPassword',
+        userPassword: action.userPassword
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.LEAVE_WAITING_PAGE: {
       const state = store.getState()
       const me = state.waitingForPlayers.players.find(v => v.isMe)
@@ -183,6 +223,13 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
       store.dispatch(socket.send({
         token: state.token[state.token.lobby],
         type: 'getAvatar'
+      }))
+
+      return next(action)
+    }
+    case ActionTypes.SHOW_SETTINGS: {
+      store.dispatch(socket.send({
+        type: 'getSettings'
       }))
 
       return next(action)

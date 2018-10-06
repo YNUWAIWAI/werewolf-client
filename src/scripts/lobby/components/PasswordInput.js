@@ -4,23 +4,18 @@ import React from 'react'
 type Props = {
   +className: string,
   +handleChange: boolean => string => void,
-  +id?: string,
-  +initialValue: string,
-  +max: number,
-  +min: number,
-  +placeholder: string,
-  +required: boolean
+  +id: string
 }
 type State = {
   value: string
 }
 
-export default class TextInput extends React.Component<Props, State> {
+export default class PasswordInput extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
 
     this.state = {
-      value: this.props.initialValue
+      value: ''
     }
   }
   shouldComponentUpdate() {
@@ -37,12 +32,11 @@ export default class TextInput extends React.Component<Props, State> {
       <input
         className={this.props.className}
         id={this.props.id}
-        maxLength={this.props.max}
-        minLength={this.props.min}
+        maxLength={128}
+        minLength={8}
         onChange={event => this.handleChange(event)}
-        placeholder={this.props.placeholder}
-        required={this.props.required}
-        type="text"
+        required
+        type="password"
         value={this.state.value}
       />
     )

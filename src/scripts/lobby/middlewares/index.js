@@ -23,7 +23,11 @@ export type Action =
   | actions.BuildVillage$ChangeNumberOfRobots
   | actions.BuildVillage$ChangeValidity
   | actions.BuildVillage$ChangeVillageName
+  | actions.ChangeLanguage
   | actions.ChangeLobby
+  | actions.ChangeUserEmail
+  | actions.ChangeUserName
+  | actions.ChangeUserPassword
   | actions.ChangeToken
   | actions.IdSearch$ChangeSearchId
   | actions.IdSearch$ChangeValidity
