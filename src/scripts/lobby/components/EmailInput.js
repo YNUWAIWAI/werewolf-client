@@ -4,8 +4,8 @@ import React from 'react'
 type Props = {
   +className: string,
   +handleChange: boolean => string => void,
-  +initialValue: string,
-  +id: string
+  +id: string,
+  +initialValue: string
 }
 type State = {
   value: string
