@@ -276,6 +276,297 @@ describe('BUILD_VILLAGE', () => {
     })
   })
 })
+describe('CHANGE_LANGUAGE', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    language: 'ja',
+    type: ActionTypes.CHANGE_LANGUAGE
+  }
+  const changeLangPayload = {
+    lang: 'ja',
+    type: 'changeLang'
+  }
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/changeLang.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, changeLangPayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: changeLangPayload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
+describe('CHANGE_USER_EMAIL', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    type: ActionTypes.CHANGE_USER_EMAIL,
+    userEmail: 'example@example.com'
+  }
+  const changeUserEmailPayload = {
+    type: 'changeUserEmail',
+    userEmail: 'example@example.com'
+  }
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/changeUserEmail.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, changeUserEmailPayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: changeUserEmailPayload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
+describe('CHANGE_USER_NAME', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    type: ActionTypes.CHANGE_USER_NAME,
+    userName: 'userName'
+  }
+  const changeUserNamePayload = {
+    type: 'changeUserName',
+    userName: 'userName'
+  }
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/changeUserName.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, changeUserNamePayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: changeUserNamePayload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
+describe('CHANGE_USER_PASSWORD', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    type: ActionTypes.CHANGE_USER_PASSWORD,
+    userPassword: 'userPassword'
+  }
+  const changeUserPasswordPayload = {
+    type: 'changeUserPassword',
+    userPassword: 'userPassword'
+  }
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/changeUserPassword.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, changeUserPasswordPayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: changeUserPasswordPayload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
+describe('KICK_OUT_PLAYER', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+  const action = {
+    token,
+    type: ActionTypes.KICK_OUT_PLAYER
+  }
+  const kickOutPlayerPayload = {
+    players: [
+      {
+        token
+      }
+    ],
+    token: avatarToken.humanPlayer,
+    type: 'kickOutPlayer'
+  }
+
+  test('validate the JSON of kickOutPlayer', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/kickOutPlayer.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, kickOutPlayerPayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: kickOutPlayerPayload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
 describe('LEAVE_WAITING_PAGE', () => {
   const dispatch = jest.fn()
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
@@ -378,69 +669,6 @@ describe('LEAVE_WAITING_PAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: leaveWaitingPagePayload,
-      type: ActionTypes.socket.SEND
-    })
-  })
-})
-describe('KICK_OUT_PLAYER', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
-    token: {
-      'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
-  })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
-  const dispatchAPI = jest.fn()
-  const actionHandler = nextHandler(dispatchAPI)
-  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
-  const action = {
-    token,
-    type: ActionTypes.KICK_OUT_PLAYER
-  }
-  const kickOutPlayerPayload = {
-    players: [
-      {
-        token
-      }
-    ],
-    token: avatarToken.humanPlayer,
-    type: 'kickOutPlayer'
-  }
-
-  test('validate the JSON of kickOutPlayer', async () => {
-    expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/kickOutPlayer.json`)
-      .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, kickOutPlayerPayload)
-
-        expect(validate).toBe(true)
-      })
-  })
-  test('dispatch correctly', () => {
-    actionHandler(action)
-    expect(dispatch).toHaveBeenCalledTimes(1)
-    expect(dispatch).toHaveBeenCalledWith({
-      payload: kickOutPlayerPayload,
       type: ActionTypes.socket.SEND
     })
   })
@@ -933,6 +1161,61 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     })
     expect(dispatch).toHaveBeenCalledWith({
       payload: getAvatarPayload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
+describe('SHOW_SETTINGS', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    advancedSearch,
+    app,
+    buildVillage,
+    connectingToRobotPlayer,
+    history,
+    idSearch,
+    lobbyForAudience,
+    lobbyForHumanPlayer,
+    lobbyForRobotPlayer,
+    main,
+    ping,
+    settings,
+    token: {
+      'human player': avatarToken.humanPlayer,
+      'lobby': 'human player',
+      'onymous audience': avatarToken.onymousAudience,
+      'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    type: ActionTypes.SHOW_SETTINGS
+  }
+  const getSettingsPayload = {
+    type: 'getSettings'
+  }
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    await fetch(`${CLIENT2SERVER}/getSettings.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, getSettingsPayload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: getSettingsPayload,
       type: ActionTypes.socket.SEND
     })
   })
