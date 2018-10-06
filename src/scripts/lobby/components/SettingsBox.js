@@ -39,7 +39,6 @@ type State = {
 export default class SettingsBox extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
-
     this.state = {
       language: {
         validity: false,
