@@ -42,7 +42,7 @@ export default class SettingsBox extends React.Component<Props, State> {
 
     this.state = {
       language: {
-        validity: true,
+        validity: false,
         value: props.initialValue.language
       },
       userEmail: {
@@ -66,7 +66,7 @@ export default class SettingsBox extends React.Component<Props, State> {
     return (validity: boolean) => (value: string) => {
       this.setState({
         [propName]: {
-          validity,
+          validity: validity && value !== this.props.initialValue[propName],
           value
         }
       })
@@ -114,7 +114,8 @@ export default class SettingsBox extends React.Component<Props, State> {
               handleChange={(() => this.handleChange('language'))()}
             />
             <button
-              className={`settings--bucket--form--button ${this.state.language.validity ? '' : 'invalid'}`}
+              className="settings--bucket--form--button"
+              disabled={!this.state.language.validity}
               type="submit"
             >
               {'SAVE'}
@@ -146,7 +147,8 @@ export default class SettingsBox extends React.Component<Props, State> {
               required
             />
             <button
-              className={`settings--bucket--form--button ${this.state.userName.validity ? '' : 'invalid'}`}
+              className="settings--bucket--form--button"
+              disabled={!this.state.userName.validity}
               type="submit"
             >
               {'SAVE'}
@@ -169,7 +171,8 @@ export default class SettingsBox extends React.Component<Props, State> {
               initialValue={this.props.initialValue.userEmail}
             />
             <button
-              className={`settings--bucket--form--button ${this.state.userEmail.validity ? '' : 'invalid'}`}
+              className="settings--bucket--form--button"
+              disabled={!this.state.userEmail.validity}
               type="submit"
             >
               {'SAVE'}
@@ -191,7 +194,8 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="userPassword"
             />
             <button
-              className={`settings--bucket--form--button ${this.state.userPassword.validity ? '' : 'invalid'}`}
+              className="settings--bucket--form--button"
+              disabled={!this.state.userPassword.validity}
               type="submit"
             >
               {'SAVE'}

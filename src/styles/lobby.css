@@ -323,6 +323,22 @@ body {
         grid-area: button;
         line-height: 2;
 
+        &:disabled {
+          background: var(--disabled-color);
+          box-shadow: inset 2px 2px 1px 0 grey;
+          cursor: not-allowed;
+
+          &:hover {
+            background: var(--disabled-color);
+            box-shadow: inset 2px 2px 1px 0 grey;
+
+            &:active {
+              background: var(--disabled-color);
+              box-shadow: inset 2px 2px 1px 0 grey;
+            }
+          }
+        }
+
         &:hover {
           background: var(--hover-color);
 
