@@ -5,7 +5,12 @@
 :root {
   --danger-color: rgb(219, 69, 69);
   --safe-color: rgb(57, 170, 86);
-  --warning-color: rgb(240, 210, 24)
+  --warning-color: rgb(240, 210, 24);
+  --settings-bucket-color: rgb(230, 230, 230);
+  --settings-bucket-danger-color: rgba(255, 0, 0, 0.6);
+  --active-color: rgba(0, 0, 0, 0.07);
+  --disabled-color: rgba(0, 0, 0, 0.3);
+  --hover-color: rgba(0, 0, 0, 0.03);
 }
 
 body {
@@ -114,30 +119,30 @@ body {
     text-align: center;
 
     &.disabled {
-      background: rgba(0, 0, 0, 0.3);
+      background: var(--disabled-color);
       cursor: not-allowed;
 
       &:hover {
-        background: rgba(0, 0, 0, 0.3);
+        background: var(--disabled-color);
 
         &:active {
-          background: rgba(0, 0, 0, 0.3);
+          background: var(--disabled-color);
         }
       }
     }
 
     &.loader {
       align-items: center;
-      background: rgba(0, 0, 0, 0.07);
+      background: var(--active-color);
       cursor: wait;
       display: flex;
       justify-content: center;
 
       &:hover {
-        background: rgba(0, 0, 0, 0.07);
+        background: var(--active-color);
 
         &:active {
-          background: rgba(0, 0, 0, 0.07);
+          background: var(--active-color);
         }
       }
     }
@@ -148,10 +153,10 @@ body {
     }
 
     &:hover {
-      background: rgba(0, 0, 0, 0.03);
+      background: var(--hover-color);
 
       &:active {
-        background: rgba(0, 0, 0, 0.07);
+        background: var(--active-color);
       }
     }
   }
@@ -264,10 +269,10 @@ body {
     text-align: center;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.03);
+      background: var(--hover-color);
 
       &:active {
-        background: rgba(0, 0, 0, 0.07);
+        background: var(--active-color);
       }
     }
   }
@@ -280,6 +285,87 @@ body {
 .react-select__value-container {
   display: inline-flex;
   justify-content: center;
+}
+
+.settings {
+  &--bucket {
+    border: 1px solid var(--settings-bucket-color);
+    margin-bottom: 3rem;
+
+    &.danger {
+      border-color: var(--settings-bucket-danger-color);
+    }
+
+    &--head {
+      background: var(--settings-bucket-color);
+      font-size: 2rem;
+      padding: 1rem;
+
+      &.danger {
+        background: var(--settings-bucket-danger-color);
+      }
+    }
+
+    &--form {
+      display: grid;
+      gap: 1rem;
+      grid-template-areas:
+        'label field button';
+      grid-template-columns: 3fr 5fr 6rem;
+      margin: 1rem;
+
+      &--button {
+        appearance: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 1px 0 grey;
+        cursor: pointer;
+        font-size: 1.5rem;
+        grid-area: button;
+        line-height: 2;
+
+        &:disabled {
+          background: var(--disabled-color);
+          box-shadow: inset 2px 2px 1px 0 grey;
+          cursor: not-allowed;
+
+          &:hover {
+            background: var(--disabled-color);
+            box-shadow: inset 2px 2px 1px 0 grey;
+
+            &:active {
+              background: var(--disabled-color);
+              box-shadow: inset 2px 2px 1px 0 grey;
+            }
+          }
+        }
+
+        &:hover {
+          background: var(--hover-color);
+
+          &:active {
+            background: var(--active-color);
+            box-shadow: inset 2px 2px 1px 0 grey;
+          }
+        }
+      }
+
+      &--field {
+        font-size: 1.5rem;
+        grid-area: field;
+        padding: 0 0.5rem;
+        text-align: center;
+      }
+
+      &--label {
+        font-size: 1.5rem;
+        grid-area: label;
+      }
+
+      &.danger {
+        grid-template-columns: 3fr 5fr 12rem;
+      }
+    }
+  }
 }
 
 .village {
