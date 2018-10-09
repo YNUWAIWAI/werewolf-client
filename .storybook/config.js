@@ -1,11 +1,14 @@
-import {configure} from '@storybook/react'
-import {setOptions} from '@storybook/addon-options'
+import {addDecorator, configure} from '@storybook/react'
+import {withOptions} from '@storybook/addon-options'
 import '../src/styles/village.css'
 import '../src/styles/lobby.css'
 
-setOptions({
-  hierarchyRootSeparator: /\|/
-})
+addDecorator(
+  withOptions({
+    hierarchyRootSeparator: /\|/
+  })
+)
+
 const req = require.context('../stories', true, /.stories.js$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
