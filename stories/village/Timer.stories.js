@@ -1,5 +1,5 @@
 // @flow
-import {number, selectV2, withKnobs} from '@storybook/addon-knobs/react'
+import {number, selectV2, withKnobs} from '@storybook/addon-knobs'
 import type {Phase} from 'village'
 import React from 'react'
 import Timer from '../../src/scripts/village/components/Timer'

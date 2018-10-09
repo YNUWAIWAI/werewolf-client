@@ -1,5 +1,5 @@
 // @flow
-import {number, selectV2, withKnobs} from '@storybook/addon-knobs/react'
+import {number, selectV2, withKnobs} from '@storybook/addon-knobs'
 import Day from '../../src/scripts/village/components/Day'
 import {Provider} from 'react-redux'
 import React from 'react'

@@ -5,7 +5,7 @@ import React from 'react'
 import Safe from '../../src/scripts/lobby/components/svg/Safe'
 import Warning from '../../src/scripts/lobby/components/svg/Warning'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|svg', module)
   .addDecorator(withKnobs)

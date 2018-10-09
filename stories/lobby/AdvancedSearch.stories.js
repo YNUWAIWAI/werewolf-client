@@ -2,7 +2,7 @@
 import AdvancedSearchBox from '../../src/scripts/lobby/components/AdvancedSearchBox'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|AdvancedSearchBox', module)
   .addDecorator(withKnobs)

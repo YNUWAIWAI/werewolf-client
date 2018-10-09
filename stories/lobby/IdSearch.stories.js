@@ -2,7 +2,7 @@
 import IdSearchBox from '../../src/scripts/lobby/components/IdSearchBox'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|IdSearchBox', module)
   .addDecorator(withKnobs)

@@ -2,7 +2,7 @@
 import Chat from '../../src/scripts/village/components/Chat'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|Chat', module)
   .addDecorator(withKnobs)

@@ -12,7 +12,7 @@ import React from 'react'
 import Triangle from '../../src/scripts/village/components/svg/Triangle'
 import Werewolf from '../../src/scripts/village/components/svg/Werewolf'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|svg', module)
   .addDecorator(withKnobs)

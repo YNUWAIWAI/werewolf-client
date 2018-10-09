@@ -4,7 +4,7 @@ import React from 'react'
 import Result from '../../src/scripts/village/components/Result'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|Result', module)
   .addDecorator(withKnobs)

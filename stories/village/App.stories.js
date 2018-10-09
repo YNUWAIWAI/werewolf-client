@@ -10,7 +10,7 @@ import nightVote from './initialState/nightVote'
 import reducer from '../../src/scripts/village/reducers'
 import results from './initialState/results'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|App', module)
   .addDecorator(withKnobs)
