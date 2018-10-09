@@ -9,7 +9,6 @@ import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
 const store = createStore(
@@ -23,7 +22,7 @@ storiesOf('village|Command', module)
       {getStory()}
     </Provider>
   )
-  .add('昼（限定なし）', withInfo('')(() => {
+  .add('昼（限定なし）', () => {
     const props = {
       handlePostChat: () => action('handlePostChat'),
       limited: {
@@ -48,8 +47,8 @@ storiesOf('village|Command', module)
       />
 
     return story
-  }))
-  .add('昼（限定あり）', withInfo('')(() => {
+  })
+  .add('昼（限定あり）', () => {
     const props = {
       handlePostChat: () => action('handlePostChat'),
       limited: {
@@ -74,8 +73,8 @@ storiesOf('village|Command', module)
       />
 
     return story
-  }))
-  .add('感想戦', withInfo('')(() => {
+  })
+  .add('感想戦', () => {
     const props = {
       handlePostChat: () => action('handlePostChat'),
       navigation: [
@@ -97,4 +96,4 @@ storiesOf('village|Command', module)
       />
 
     return story
-  }))
+  })

@@ -3,12 +3,11 @@ import Modal from '../../src/scripts/village/components/Modal'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
 storiesOf('village|Modal', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const timer = {
       limit: 10,
       phase: 'night'
@@ -26,4 +25,4 @@ storiesOf('village|Modal', module)
       />
 
     return story
-  }))
+  })

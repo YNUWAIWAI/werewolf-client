@@ -6,7 +6,6 @@ import React from 'react'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 
 const store = createStore(
   reducer
@@ -19,7 +18,7 @@ storiesOf('village|Info/Day', module)
       {getStory()}
     </Provider>
   )
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const date = number('date', 0)
     const phase = selectV2('phase', ['day conversation', 'day vote', 'night', 'post mortem', 'results'], '')
     const timer = {
@@ -33,4 +32,4 @@ storiesOf('village|Info/Day', module)
       </div>
 
     return story
-  }))
+  })

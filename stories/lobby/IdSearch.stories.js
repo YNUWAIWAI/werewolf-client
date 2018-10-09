@@ -2,12 +2,11 @@
 import IdSearchBox from '../../src/scripts/lobby/components/IdSearchBox'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
 storiesOf('lobby|IdSearchBox', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const story =
       <IdSearchBox
         handleSearchIdChange={id => {console.log(id)}}
@@ -17,4 +16,4 @@ storiesOf('lobby|IdSearchBox', module)
       />
 
     return story
-  }))
+  })

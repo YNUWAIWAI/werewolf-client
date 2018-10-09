@@ -4,12 +4,11 @@ import CommandSelection from '../../src/scripts/village/components/CommandSelect
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
 storiesOf('village|Command/CommandSelection', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const agents = [
       {
         id: 1,
@@ -84,4 +83,4 @@ storiesOf('village|Command/CommandSelection', module)
     const story = <CommandSelection agents={agents} fixed={false} handleSelectOption={id => action(`handleSelectOption id: ${id}`)} text="投票先を選んでください" timer={timer} />
 
     return story
-  }))
+  })

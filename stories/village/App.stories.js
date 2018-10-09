@@ -10,12 +10,11 @@ import nightVote from './initialState/nightVote'
 import reducer from '../../src/scripts/village/reducers'
 import results from './initialState/results'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
 storiesOf('village|App', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const store = createStore(
       reducer
     )
@@ -26,8 +25,8 @@ storiesOf('village|App', module)
       </Provider>
 
     return story
-  }))
-  .add('昼 会話（限定なし）', withInfo('')(() => {
+  })
+  .add('昼 会話（限定なし）', () => {
     const store = createStore(
       reducer,
       dayConversationWithoutLimitedChat
@@ -38,8 +37,8 @@ storiesOf('village|App', module)
       </Provider>
 
     return story
-  }))
-  .add('昼 会話（限定あり）', withInfo('')(() => {
+  })
+  .add('昼 会話（限定あり）', () => {
     const store = createStore(
       reducer,
       dayConversationWithLimitedChat
@@ -50,8 +49,8 @@ storiesOf('village|App', module)
       </Provider>
 
     return story
-  }))
-  .add('昼 投票', withInfo('')(() => {
+  })
+  .add('昼 投票', () => {
     const store = createStore(
       reducer,
       dayVote
@@ -62,8 +61,8 @@ storiesOf('village|App', module)
       </Provider>
 
     return story
-  }))
-  .add('夜 投票', withInfo('')(() => {
+  })
+  .add('夜 投票', () => {
     const store = createStore(
       reducer,
       nightVote
@@ -74,8 +73,8 @@ storiesOf('village|App', module)
       </Provider>
 
     return story
-  }))
-  .add('結果', withInfo('')(() => {
+  })
+  .add('結果', () => {
     const store = createStore(
       reducer,
       results
@@ -86,4 +85,4 @@ storiesOf('village|App', module)
       </Provider>
 
     return story
-  }))
+  })

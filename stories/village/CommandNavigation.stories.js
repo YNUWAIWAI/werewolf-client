@@ -4,12 +4,11 @@ import CommandNavigation from '../../src/scripts/village/components/CommandNavig
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 import {withKnobs} from '@storybook/addon-knobs/react'
 
 storiesOf('village|Command/CommandNavigation', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const items = [
       {
         text: '結果を表示',
@@ -23,4 +22,4 @@ storiesOf('village|Command/CommandNavigation', module)
     const story = <CommandNavigation handleClick={type => action(`handleClick: ${type}`)} items={items} />
 
     return story
-  }))
+  })
