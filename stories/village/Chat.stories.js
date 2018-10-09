@@ -2,12 +2,11 @@
 import Chat from '../../src/scripts/village/components/Chat'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|Chat', module)
   .addDecorator(withKnobs)
-  .add('anonymousAudience', withInfo('')(() => {
+  .add('anonymousAudience', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -38,8 +37,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('grave', withInfo('')(() => {
+  })
+  .add('grave', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -70,8 +69,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('hunter', withInfo('')(() => {
+  })
+  .add('hunter',() => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -102,8 +101,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('master', withInfo('')(() => {
+  })
+  .add('master', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -134,8 +133,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('onymousAudience', withInfo('')(() => {
+  })
+  .add('onymousAudience', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -166,8 +165,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('private', withInfo('')(() => {
+  })
+  .add('private', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -198,8 +197,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('public', withInfo('')(() => {
+  })
+  .add('public', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -230,8 +229,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('seer', withInfo('')(() => {
+  })
+  .add('seer', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -262,8 +261,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('werewolf', withInfo('')(() => {
+  })
+  .add('werewolf', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
       'chat0': {
@@ -294,8 +293,8 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
-  .add('区切り', withInfo('')(() => {
+  })
+  .add('区切り', () => {
     const allIds = ['delimeter1', 'chat0', 'delimeter0', 'chat1']
     const byId = {
       'chat0': {
@@ -334,4 +333,4 @@ storiesOf('village|Chat', module)
     const story = <Chat allIds={allIds} byId={byId} />
 
     return story
-  }))
+  })

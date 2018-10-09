@@ -23,7 +23,6 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.0.0-alpha.22",
-    "@storybook/addon-info": "^4.0.0-alpha.22",
     "@storybook/addon-knobs": "^4.0.0-alpha.22",
     "@storybook/addon-links": "^4.0.0-alpha.22",
     "@storybook/addon-options": "^4.0.0-alpha.22",

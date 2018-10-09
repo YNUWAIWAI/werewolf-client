@@ -3,12 +3,11 @@ import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import React from 'react'
 import WaitingForPlayers from '../../src/scripts/lobby/components/WaitingForPlayers'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|WaitingForPlayers', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const kickOut = token => () => {
       console.log(`kick out ${token}`)
     }
@@ -223,8 +222,8 @@ storiesOf('lobby|WaitingForPlayers', module)
       />
 
     return story
-  }))
-  .add('long comment', withInfo('')(() => {
+  })
+  .add('long comment', () => {
     const kickOut = token => () => {
       console.log(`kick out ${token}`)
     }
@@ -439,4 +438,4 @@ storiesOf('lobby|WaitingForPlayers', module)
       />
 
     return story
-  }))
+  })

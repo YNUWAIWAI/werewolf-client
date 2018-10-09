@@ -2,12 +2,11 @@
 import AdvancedSearchBox from '../../src/scripts/lobby/components/AdvancedSearchBox'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|AdvancedSearchBox', module)
   .addDecorator(withKnobs)
-  .add('default', withInfo('')(() => {
+  .add('default', () => {
     const checked = {
       avatar: true,
       comment: false,
@@ -51,4 +50,4 @@ storiesOf('lobby|AdvancedSearchBox', module)
       />
 
     return story
-  }))
+  })

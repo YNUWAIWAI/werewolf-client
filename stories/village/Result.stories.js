@@ -4,12 +4,11 @@ import React from 'react'
 import Result from '../../src/scripts/village/components/Result'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|Result', module)
   .addDecorator(withKnobs)
-  .add('13 players', withInfo('')(() => {
+  .add('13 players', () => {
     const agents = {
       'agent0': {
         'agentId': 1,
@@ -190,8 +189,8 @@ storiesOf('village|Result', module)
       />
 
     return story
-  }))
-  .add('5 players', withInfo('')(() => {
+  })
+  .add('5 players', () => {
     const agents = {
       'agent0': {
         'agentId': 1,
@@ -276,4 +275,4 @@ storiesOf('village|Result', module)
       />
 
     return story
-  }))
+  })

@@ -12,8 +12,7 @@ import React from 'react'
 import Triangle from '../../src/scripts/village/components/svg/Triangle'
 import Werewolf from '../../src/scripts/village/components/svg/Werewolf'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|svg', module)
   .addDecorator(withKnobs)
@@ -29,14 +28,14 @@ storiesOf('village|svg', module)
       </div>
     )
   })
-  .add('Audience', withInfo('')(() => <Audience />))
-  .add('Circle', withInfo('')(() => <Circle />))
-  .add('Cross', withInfo('')(() => <Cross />))
-  .add('DownArrow', withInfo('')(() => <DownArrow />))
-  .add('Grave', withInfo('')(() => <Grave />))
-  .add('Master', withInfo('')(() => <Master />))
-  .add('Private', withInfo('')(() => <Private />))
-  .add('Public', withInfo('')(() => <Public />))
-  .add('Question', withInfo('')(() => <Question />))
-  .add('Triangle', withInfo('')(() => <Triangle />))
-  .add('Werewolf', withInfo('')(() => <Werewolf />))
+  .add('Audience', () => <Audience />)
+  .add('Circle', () => <Circle />)
+  .add('Cross', () => <Cross />)
+  .add('DownArrow', () => <DownArrow />)
+  .add('Grave', () => <Grave />)
+  .add('Master', () => <Master />)
+  .add('Private', () => <Private />)
+  .add('Public', () => <Public />)
+  .add('Question', () => <Question />)
+  .add('Triangle', () => <Triangle />)
+  .add('Werewolf', () => <Werewolf />)

@@ -4,12 +4,11 @@ import Prediction from '../../src/scripts/village/components/Prediction'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|Prediction', module)
   .addDecorator(withKnobs)
-  .add('13 players', withInfo('')(() => {
+  .add('13 players', () => {
     const playerStatus = [
       {
         'name': 'ヴァルター',
@@ -697,8 +696,8 @@ storiesOf('village|Prediction', module)
       />
 
     return story
-  }))
-  .add('5 players', withInfo('')(() => {
+  })
+  .add('5 players', () => {
     const playerStatus = [
       {
         'name': 'ヴァルター',
@@ -878,4 +877,4 @@ storiesOf('village|Prediction', module)
       />
 
     return story
-  }))
+  })

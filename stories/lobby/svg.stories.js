@@ -5,8 +5,7 @@ import React from 'react'
 import Safe from '../../src/scripts/lobby/components/svg/Safe'
 import Warning from '../../src/scripts/lobby/components/svg/Warning'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs} from '@storybook/addon-knobs/react'
+import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|svg', module)
   .addDecorator(withKnobs)
@@ -22,7 +21,7 @@ storiesOf('lobby|svg', module)
       </div>
     )
   })
-  .add('Danger', withInfo('')(() => <Danger />))
-  .add('Loader', withInfo('')(() => <Loader />))
-  .add('Safe', withInfo('')(() => <Safe />))
-  .add('Warning', withInfo('')(() => <Warning />))
+  .add('Danger', () => <Danger />)
+  .add('Loader', () => <Loader />)
+  .add('Safe', () => <Safe />)
+  .add('Warning', () => <Warning />)

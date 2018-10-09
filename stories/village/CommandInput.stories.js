@@ -1,14 +1,13 @@
 // @flow
-import {number, withKnobs} from '@storybook/addon-knobs/react'
+import {number, withKnobs} from '@storybook/addon-knobs'
 import CommandInput from '../../src/scripts/village/components/CommandInput'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
 
 storiesOf('village|Command/CommandInput', module)
   .addDecorator(withKnobs)
-  .add('public', withInfo('')(() => {
+  .add('public', () => {
     const postCount = number('postCount', 0, {
       max: 10,
       min: 0,
@@ -28,8 +27,8 @@ storiesOf('village|Command/CommandInput', module)
     </div>
 
     return story
-  }))
-  .add('private', withInfo('')(() => {
+  })
+  .add('private', () => {
     const story =
       <div style={{
         height: '200px'
@@ -42,8 +41,8 @@ storiesOf('village|Command/CommandInput', module)
       </div>
 
     return story
-  }))
-  .add('limited', withInfo('')(() => {
+  })
+  .add('limited', () => {
     const postCount = number('postCount', 0, {
       max: 10,
       min: 0,
@@ -63,4 +62,4 @@ storiesOf('village|Command/CommandInput', module)
       </div>
 
     return story
-  }))
+  })
