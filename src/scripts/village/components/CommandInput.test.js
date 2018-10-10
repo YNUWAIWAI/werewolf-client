@@ -1,12 +1,15 @@
 // @flow
 import CommandInput from './CommandInput'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../i18n/village'
+import {initRenderer} from '../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<CommandInput />', () => {
   test('kind="public" postCount={0} postCountLimit={10}', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -27,7 +30,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="private" postCount={0} postCountLimit={10} />', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="private"
@@ -45,7 +48,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="limited" postCount={0} postCountLimit={10} />', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="limited"
@@ -66,7 +69,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={0} postCountLimit={10} /> textarea: 0 -> charLimit -> charLimit + 1', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -112,7 +115,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={10} postCountLimit={10} /> textarea: 0 -> charLimit -> charLimit + 1', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -158,7 +161,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={0} postCountLimit={10} /> handlePostChat textarea: charLimit', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -186,7 +189,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={0} postCountLimit={10} /> handlePostChat textarea: charLimit + 1', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -213,7 +216,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={10} postCountLimit={10} /> handlePostChat textarea: charLimit', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -240,7 +243,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={10} postCountLimit={10} /> handlePostChat textarea: charLimit + 1', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -267,7 +270,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={0} postCountLimit={10} /> handleKeyDown(ctrlKey & Enter) textarea: charLimit', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -303,7 +306,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={0} postCountLimit={10} /> handleKeyDown(metaKey & Enter) textarea: charLimit', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
@@ -339,7 +342,7 @@ describe('<CommandInput />', () => {
   })
   test('<CommandInput kind="public" postCount={0} postCountLimit={10} /> handleKeyDown(metaKey & ctrlKey & Enter) textarea: charLimit', () => {
     const handlePostChat = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <CommandInput
         handlePostChat={handlePostChat}
         kind="public"
