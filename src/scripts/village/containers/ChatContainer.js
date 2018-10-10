@@ -19,6 +19,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
         byId[id] = {
           text: {
             en: `Day ${item.date}`,
+            fr: `Day ${item.date}`,
+            it: `Day ${item.date}`,
             ja: `${item.date}日目`
           }[state.language],
           type: item.type
@@ -27,6 +29,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
         byId[id] = {
           text: {
             en: 'Post Mortem',
+            fr: 'Post Mortem',
+            it: 'Post Mortem',
             ja: '感想戦'
           }[state.language],
           type: item.type

@@ -14,6 +14,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     {
       text: (() => ({
         en: 'Show result',
+        fr: 'Show result',
+        it: 'Show result',
         ja: '結果を表示'
       })[state.language])(),
       type: ActionTypes.SHOW_RESULT
@@ -21,6 +23,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     {
       text: (() => ({
         en: 'Return to lobby',
+        fr: 'Return to lobby',
+        it: 'Return to lobby',
         ja: 'ロビーへ戻る'
       })[state.language])(),
       type: ActionTypes.RETURN_TO_LOBBY

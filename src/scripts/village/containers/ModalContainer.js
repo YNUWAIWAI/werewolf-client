@@ -17,6 +17,8 @@ const getText = (phase: Phase, role: RoleId) => {
   if (phase === DAY_VOTE) {
     return {
       en: 'EN',
+      fr: 'FR',
+      it: 'IT',
       ja: '投票先はこちらでいいですか？'
     }
   }
@@ -25,21 +27,29 @@ const getText = (phase: Phase, role: RoleId) => {
     case 'werewolf':
       return {
         en: 'EN',
+        fr: 'FR',
+        it: 'IT',
         ja: '襲撃先はこちらでいいですか？'
       }
     case 'seer':
       return {
         en: 'EN',
+        fr: 'FR',
+        it: 'IT',
         ja: '占い先はこちらでいいですか？'
       }
     case 'hunter':
       return {
         en: 'EN',
+        fr: 'FR',
+        it: 'IT',
         ja: '守護先はこちらでいいですか？'
       }
     default:
       return {
         en: '',
+        fr: 'FR',
+        it: 'IT',
         ja: '待ってください'
       }
   }

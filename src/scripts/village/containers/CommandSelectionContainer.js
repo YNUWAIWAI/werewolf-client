@@ -16,10 +16,14 @@ const getText = (phase: Phase, role: RoleId, fixed: boolean, lang: Language) => 
     return fixed ?
       {
         en: 'EN',
+        fr: 'FR',
+        it: 'IT',
         ja: 'あなたの選んだ投票先はこちらです'
       }[lang] :
       {
         en: 'EN',
+        fr: 'FR',
+        it: 'IT',
         ja: '投票先を選んでください'
       }[lang]
   }
@@ -29,35 +33,49 @@ const getText = (phase: Phase, role: RoleId, fixed: boolean, lang: Language) => 
       return fixed ?
         {
           en: 'EN',
+          fr: 'FR',
+          it: 'IT',
           ja: 'あなたの選んだ守護先はこちらです'
         }[lang] :
         {
           en: 'EN',
+          fr: 'FR',
+          it: 'IT',
           ja: '守護先を選んでください'
         }[lang]
     case 'seer':
       return fixed ?
         {
           en: 'EN',
+          fr: 'FR',
+          it: 'IT',
           ja: 'あなたの選んだ占い先はこちらです'
         }[lang] :
         {
           en: 'EN',
+          fr: 'FR',
+          it: 'IT',
           ja: '占い先を選んでください'
         }[lang]
     case 'werewolf':
       return fixed ?
         {
           en: 'EN',
+          fr: 'FR',
+          it: 'IT',
           ja: 'あなたの選んだ襲撃先はこちらです'
         }[lang] :
         {
           en: 'EN',
+          fr: 'FR',
+          it: 'IT',
           ja: '襲撃先を選んでください'
         }[lang]
     default:
       return {
         en: 'EN',
+        fr: 'FR',
+        it: 'IT',
         ja: '待ってください'
       }[lang]
   }

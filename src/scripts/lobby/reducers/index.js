@@ -5,6 +5,7 @@ import buildVillage, {type State as BuildVillageState} from './buildVillage'
 import connectingToRobotPlayer, {type State as ConnectingToRobotPlayerState} from './connectingToRobotPlayer'
 import history, {type State as HistoryState} from './history'
 import idSearch, {type State as IdSearchState} from './idSearch'
+import language, {type State as LanguageState} from './language'
 import lobbyForAudience, {type State as LobbyForAudienceState} from './lobbyForAudience'
 import lobbyForHumanPlayer, {type State as LobbyForHumanPlayerState} from './lobbyForHumanPlayer'
 import lobbyForRobotPlayer, {type State as LobbyForRobotPlayerState} from './lobbyForRobotPlayer'
@@ -22,6 +23,7 @@ export type ReducerState = {
   connectingToRobotPlayer: ConnectingToRobotPlayerState,
   history: HistoryState,
   idSearch: IdSearchState,
+  language: LanguageState,
   lobbyForAudience: LobbyForAudienceState,
   lobbyForHumanPlayer: LobbyForHumanPlayerState,
   lobbyForRobotPlayer: LobbyForRobotPlayerState,
@@ -39,6 +41,7 @@ const reducer = combineReducers({
   connectingToRobotPlayer,
   history,
   idSearch,
+  language,
   lobbyForAudience,
   lobbyForHumanPlayer,
   lobbyForRobotPlayer,
