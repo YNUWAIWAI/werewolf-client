@@ -1,4 +1,6 @@
 export default {
+  'ChatContainer.date': '{date}日目',
+  'ChatContainer.postMortem': '感想戦',
   'CommandInput.placeholder.limited': '人狼用',
   'CommandInput.placeholder.postMortem': '感想戦',
   'CommandInput.placeholder.private': '非公開用',
