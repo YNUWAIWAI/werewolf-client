@@ -1,7 +1,7 @@
 // @flow
-import {number, selectV2, withKnobs} from '@storybook/addon-knobs'
+import {number, select, withKnobs} from '@storybook/addon-knobs'
 import Day from '../../src/scripts/village/components/molecules/Day'
-import {Provider} from 'react-redux'
+import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import React from 'react'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
@@ -14,13 +14,13 @@ const store = createStore(
 storiesOf('village|Info/Day', module)
   .addDecorator(withKnobs)
   .addDecorator(getStory =>
-    <Provider store={store}>
+    <IntlProvider store={store}>
       {getStory()}
-    </Provider>
+    </IntlProvider>
   )
   .add('default', () => {
     const date = number('date', 0)
-    const phase = selectV2('phase', ['day conversation', 'day vote', 'night', 'post mortem', 'results'], '')
+    const phase = select('phase', ['day conversation', 'day vote', 'night', 'post mortem', 'results'], 'day conversation')
     const timer = {
       limit: number('limit', 10),
       phase
@@ -28,7 +28,11 @@ storiesOf('village|Info/Day', module)
 
     const story =
       <div className="info">
-        <Day date={date} phase={phase} timer={timer} />
+        <Day
+          date={date}
+          phase={phase}
+          timer={timer}
+        />
       </div>
 
     return story

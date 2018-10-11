@@ -1,13 +1,25 @@
 // @flow
 /* eslint sort-keys: 0 */
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
+import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
+import {createStore} from 'redux'
+import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
+const store = createStore(
+  reducer
+)
+
 storiesOf('village|Command/CommandSelection', module)
   .addDecorator(withKnobs)
+  .addDecorator(story =>
+    <IntlProvider store={store}>
+      {story()}
+    </IntlProvider>
+  )
   .add('default', () => {
     const agents = [
       {
@@ -80,7 +92,14 @@ storiesOf('village|Command/CommandSelection', module)
       limit: 90,
       phase: 'day vote'
     }
-    const story = <CommandSelection agents={agents} fixed={false} handleSelectOption={id => action(`handleSelectOption id: ${id}`)} text="投票先を選んでください" timer={timer} />
+    const story =
+      <CommandSelection
+        agents={agents}
+        fixed={false}
+        handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
+        text="投票先を選んでください"
+        timer={timer}
+      />
 
     return story
   })
