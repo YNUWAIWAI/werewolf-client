@@ -1,5 +1,5 @@
 // @flow
-import CommandInputBox, {type DispatchProps, type StateProps} from '../components/CommandInputBox'
+import CommandInputBox, {type DispatchProps, type StateProps} from '../components/organisms/CommandInputBox'
 import {type PostChat, postChat} from '../actions'
 import type {Dispatch} from 'redux'
 import {type ReducerState} from '../reducers'

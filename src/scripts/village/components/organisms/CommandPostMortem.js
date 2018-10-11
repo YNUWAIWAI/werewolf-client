@@ -1,8 +1,8 @@
 // @flow
 import type {InputChannel, NavigationType} from 'village'
 import React, {Fragment} from 'react'
-import CommandInput from './CommandInput'
-import CommandNavigation from '../containers/CommandNavigationContainer'
+import CommandInput from '../molecules/CommandInput'
+import CommandNavigation from '../../containers/CommandNavigationContainer'
 
 export type DispatchProps = {
   +handlePostChat: InputChannel => string => void

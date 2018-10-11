@@ -1,5 +1,5 @@
 // @flow
-import CommandSelection, {type DispatchProps, type StateProps} from '../components/CommandSelection'
+import CommandSelection, {type DispatchProps, type StateProps} from '../components/organisms/CommandSelection'
 import type {Language, Phase, RoleId} from 'village'
 import {type SelectOption, selectOption} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'

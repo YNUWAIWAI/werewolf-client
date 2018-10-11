@@ -1,5 +1,5 @@
 // @flow
-import Chat, {type StateProps} from '../components/Chat'
+import Chat, {type StateProps} from '../components/organisms/Chat'
 import {IntlProvider} from 'react-intl'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

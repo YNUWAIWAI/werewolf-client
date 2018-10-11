@@ -1,5 +1,5 @@
 // @flow
-import Activity, {type StateProps} from '../components/Activity'
+import Activity, {type StateProps} from '../components/organisms/Activity'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 

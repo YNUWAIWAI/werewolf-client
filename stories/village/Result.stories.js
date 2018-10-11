@@ -1,7 +1,7 @@
 // @flow
 /* eslint sort-keys: 0 */
 import React from 'react'
-import Result from '../../src/scripts/village/components/Result'
+import Result from '../../src/scripts/village/components/organisms/Result'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'

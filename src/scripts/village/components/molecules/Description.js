@@ -1,5 +1,5 @@
 // @flow
-import Timer, {type Props as TimerProps} from './Timer'
+import Timer, {type Props as TimerProps} from '../atoms/Timer'
 import React from 'react'
 
 type Props = {

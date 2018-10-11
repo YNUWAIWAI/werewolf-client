@@ -1,9 +1,9 @@
 // @flow
 /* eslint react/no-unused-prop-types: 0 */
 import type {AgentId, AgentStatus, BoardState, RoleId} from 'village'
-import PredictionItem from './PredictionItem'
-import PredictionPlayer from './PredictionPlayer'
-import PredictionRole from './PredictionRole'
+import PredictionItem from '../atoms/PredictionItem'
+import PredictionPlayer from '../atoms/PredictionPlayer'
+import PredictionRole from '../atoms/PredictionRole'
 import React from 'react'
 
 export type StateProps = {

@@ -1,9 +1,9 @@
 // @flow
-import Timer, {type Props as TimerProps} from './Timer'
+import Timer, {type Props as TimerProps} from '../atoms/Timer'
 import {FormattedMessage} from 'react-intl'
 import type {Phase} from 'village'
 import React from 'react'
-import {spaceSeparatedToCamelCase} from '../util'
+import {spaceSeparatedToCamelCase} from '../../util'
 
 export type StateProps = {
   +date: number,

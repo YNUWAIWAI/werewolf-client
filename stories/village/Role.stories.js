@@ -1,7 +1,7 @@
 // @flow
 import {Provider} from 'react-redux'
 import React from 'react'
-import Role from '../../src/scripts/village/components/Role'
+import Role from '../../src/scripts/village/components/molecules/Role'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'

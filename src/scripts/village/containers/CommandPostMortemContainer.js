@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import CommandPostMortem, {type DispatchProps, type StateProps} from '../components/CommandPostMortem'
+import CommandPostMortem, {type DispatchProps, type StateProps} from '../components/organisms/CommandPostMortem'
 import {type PostChat, postChat} from '../actions'
 import type {Dispatch} from 'redux'
 import {IntlProvider} from 'react-intl'

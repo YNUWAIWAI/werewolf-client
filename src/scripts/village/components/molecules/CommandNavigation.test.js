@@ -1,5 +1,5 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
+import * as ActionTypes from '../../constants/ActionTypes'
 import CommandNavigation from './CommandNavigation'
 import React from 'react'
 import {shallow} from 'enzyme'

@@ -1,7 +1,7 @@
 // @flow
 import React, {Fragment} from 'react'
-import AgentIcon from './AgentIcon'
-import RoleText from './RoleText'
+import AgentIcon from '../atoms/AgentIcon'
+import RoleText from '../atoms/RoleText'
 
 export type StateProps = {
   +image: string,

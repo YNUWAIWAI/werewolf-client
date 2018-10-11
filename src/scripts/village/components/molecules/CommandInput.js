@@ -1,9 +1,9 @@
 // @flow
 import {FormattedMessage, injectIntl} from 'react-intl'
-import ChatIcon from './ChatIcon'
+import ChatIcon from '../atoms/ChatIcon'
 import React from 'react'
-import {getChannelFromInputChennel} from '../constants/Channels'
-import {spaceSeparatedToCamelCase} from '../util'
+import {getChannelFromInputChennel} from '../../constants/Channels'
+import {spaceSeparatedToCamelCase} from '../../util'
 
 const countText = (text: string): number => Array.of(... text).length
 const isValidTextLength = (text: string, upperLimit: number, lowerLimit?: number = 1): boolean => {

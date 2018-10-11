@@ -1,8 +1,8 @@
 // @flow
-import AgentIcon from './AgentIcon'
-import Description from './Description'
+import AgentIcon from '../atoms/AgentIcon'
+import Description from '../molecules/Description'
 import React from 'react'
-import type {Props as TimerProps} from './Timer'
+import type {Props as TimerProps} from '../atoms/Timer'
 
 export type StateProps = {
   +agents: {

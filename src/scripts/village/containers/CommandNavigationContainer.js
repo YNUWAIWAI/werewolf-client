@@ -1,6 +1,6 @@
 // @flow
 import {type ClickNavigationButton, clickNavigationButton} from '../actions'
-import CommandNavigation, {type DispatchProps} from '../components/CommandNavigation'
+import CommandNavigation, {type DispatchProps} from '../components/molecules/CommandNavigation'
 import type {Dispatch} from 'redux'
 import type {NavigationType} from 'village'
 import {connect} from 'react-redux'

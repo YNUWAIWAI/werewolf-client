@@ -1,5 +1,5 @@
 // @flow
-import Command, {type StateProps} from '../components/Command'
+import Command, {type StateProps} from '../components/organisms/Command'
 import {DAY_CONVERSATION, DAY_VOTE, NIGHT, POST_MORTEM, RESULTS} from '../constants/Phase'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'

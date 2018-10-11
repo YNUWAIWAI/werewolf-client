@@ -1,6 +1,6 @@
 // @flow
 import {type ClickHideButton, handleClickHideButton} from '../actions'
-import HideButton, {type DispatchProps, type StateProps} from '../components/HideButton'
+import HideButton, {type DispatchProps, type StateProps} from '../components/atoms/HideButton'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

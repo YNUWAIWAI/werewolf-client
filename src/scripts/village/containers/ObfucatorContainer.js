@@ -1,5 +1,5 @@
 // @flow
-import Obfucator, {type StateProps} from '../components/Obfucator'
+import Obfucator, {type StateProps} from '../components/organisms/Obfucator'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 

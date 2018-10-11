@@ -1,5 +1,5 @@
 // @flow
-import Chat from '../../src/scripts/village/components/Chat'
+import Chat from '../../src/scripts/village/components/organisms/Chat'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'

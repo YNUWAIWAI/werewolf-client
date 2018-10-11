@@ -1,6 +1,6 @@
 // @flow
 import {type HideResult, hideResult} from '../actions'
-import Result, {type DispatchProps, type StateProps} from '../components/Result'
+import Result, {type DispatchProps, type StateProps} from '../components/organisms/Result'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {WEREWOLF_SIDE} from '../constants/Role'
