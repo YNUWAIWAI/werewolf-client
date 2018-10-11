@@ -4,62 +4,63 @@ import type {Language, Phase, RoleId} from 'village'
 import {type SelectOption, selectOption} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'
 import type {Dispatch} from 'redux'
+import {IntlProvider} from 'react-intl'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {getMessages} from '../../../i18n/village'
 import {getRoleId} from '../constants/Role'
 
 type Action =
   | SelectOption
 
-const getText = (phase: Phase, role: RoleId, fixed: boolean, lang: Language) => {
+const getText = (phase: Phase, role: RoleId, fixed: boolean, language: Language) => {
+  const {intl} = new IntlProvider(
+    {
+      locale: language,
+      messages: getMessages(language)
+    },
+    {}
+  ).getChildContext()
+
   if (phase === DAY_VOTE) {
     return fixed ?
-      {
-        en: 'EN',
-        ja: 'あなたの選んだ投票先はこちらです'
-      }[lang] :
-      {
-        en: 'EN',
-        ja: '投票先を選んでください'
-      }[lang]
+      intl.formatMessage({
+        id: 'CommandSelectionContainer.dayVote.fixed'
+      }) :
+      intl.formatMessage({
+        id: 'CommandSelectionContainer.dayVote.unfixed'
+      })
   }
 
   switch (role) {
     case 'hunter':
       return fixed ?
-        {
-          en: 'EN',
-          ja: 'あなたの選んだ守護先はこちらです'
-        }[lang] :
-        {
-          en: 'EN',
-          ja: '守護先を選んでください'
-        }[lang]
+        intl.formatMessage({
+          id: 'CommandSelectionContainer.hunterVote.fixed'
+        }) :
+        intl.formatMessage({
+          id: 'CommandSelectionContainer.hunterVote.unfixed'
+        })
     case 'seer':
       return fixed ?
-        {
-          en: 'EN',
-          ja: 'あなたの選んだ占い先はこちらです'
-        }[lang] :
-        {
-          en: 'EN',
-          ja: '占い先を選んでください'
-        }[lang]
+        intl.formatMessage({
+          id: 'CommandSelectionContainer.seerVote.fixed'
+        }) :
+        intl.formatMessage({
+          id: 'CommandSelectionContainer.seerVote.unfixed'
+        })
     case 'werewolf':
       return fixed ?
-        {
-          en: 'EN',
-          ja: 'あなたの選んだ襲撃先はこちらです'
-        }[lang] :
-        {
-          en: 'EN',
-          ja: '襲撃先を選んでください'
-        }[lang]
+        intl.formatMessage({
+          id: 'CommandSelectionContainer.werewolfVote.fixed'
+        }) :
+        intl.formatMessage({
+          id: 'CommandSelectionContainer.werewolfVote.unfixed'
+        })
     default:
-      return {
-        en: 'EN',
-        ja: '待ってください'
-      }[lang]
+      return intl.formatMessage({
+        id: 'CommandSelectionContainer.wait'
+      })
   }
 }
 

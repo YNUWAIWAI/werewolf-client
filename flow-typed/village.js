@@ -7,7 +7,7 @@ declare module 'village' {
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type BoardPolarity = 'positive' | 'negative'
-  declare type Language = 'ja' | 'en'
+  declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type Result = 'win' | 'lose'
   declare type TResult = Result
   declare type AgentId = string

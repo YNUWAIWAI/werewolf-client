@@ -3,30 +3,40 @@ import * as ActionTypes from '../constants/ActionTypes'
 import CommandPostMortem, {type DispatchProps, type StateProps} from '../components/CommandPostMortem'
 import {type PostChat, postChat} from '../actions'
 import type {Dispatch} from 'redux'
+import {IntlProvider} from 'react-intl'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {getMessages} from '../../../i18n/village'
 
 type Action =
   | PostChat
 
-const mapStateToProps = (state: ReducerState): StateProps => ({
-  navigation: [
+const mapStateToProps = (state: ReducerState): StateProps => {
+  const {intl} = new IntlProvider(
     {
-      text: (() => ({
-        en: 'Show result',
-        ja: '結果を表示'
-      })[state.language])(),
-      type: ActionTypes.SHOW_RESULT
+      locale: state.language,
+      messages: getMessages(state.language)
     },
-    {
-      text: (() => ({
-        en: 'Return to lobby',
-        ja: 'ロビーへ戻る'
-      })[state.language])(),
-      type: ActionTypes.RETURN_TO_LOBBY
-    }
-  ]
-})
+    {}
+  ).getChildContext()
+
+  return {
+    navigation: [
+      {
+        text: intl.formatMessage({
+          id: 'CommandPostMortemContainer.showResult'
+        }),
+        type: ActionTypes.SHOW_RESULT
+      },
+      {
+        text: intl.formatMessage({
+          id: 'CommandPostMortemContainer.returnToLobby'
+        }),
+        type: ActionTypes.RETURN_TO_LOBBY
+      }
+    ]
+  }
+}
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handlePostChat: kind => text => {
     dispatch(

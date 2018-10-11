@@ -4,7 +4,7 @@ import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import en from 'react-intl/locale-data/en'
 import fr from 'react-intl/locale-data/fr'
-import {getMessages} from '../../../i18n/village'
+import {getMessages} from '../../../i18n/lobby'
 import it from 'react-intl/locale-data/it'
 import ja from 'react-intl/locale-data/ja'
 

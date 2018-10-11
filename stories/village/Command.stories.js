@@ -3,6 +3,7 @@ import * as types from '../../src/scripts/village/constants/ActionTypes'
 import Command from '../../src/scripts/village/components/Command'
 import CommandInputBox from '../../src/scripts/village/components/CommandInputBox'
 import CommandPostMortem from '../../src/scripts/village/components/CommandPostMortem'
+import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
@@ -17,9 +18,11 @@ const store = createStore(
 
 storiesOf('village|Command', module)
   .addDecorator(withKnobs)
-  .addDecorator(getStory =>
+  .addDecorator(story =>
     <Provider store={store}>
-      {getStory()}
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
     </Provider>
   )
   .add('昼（限定なし）', () => {

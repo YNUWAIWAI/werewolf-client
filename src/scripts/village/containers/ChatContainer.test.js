@@ -7,7 +7,8 @@ import {shallow} from 'enzyme'
 test('<ChatContainer /> initialState', () => {
   const dispatch = jest.fn()
   const getState = () => ({
-    chat: initialState
+    chat: initialState,
+    language: 'ja'
   })
   const subscribe = jest.fn()
   const store = {

@@ -22,7 +22,7 @@ test('<DayContainer /> initialState', () => {
   const wrapper = shallow(<DayContainer store={store} />)
 
   expect(wrapper.props().date).toBe(1)
-  expect(wrapper.props().phase).toBe('昼')
+  expect(wrapper.props().phase).toBe('day conversation')
   expect(wrapper.props().timer).toEqual({
     limit: 100,
     phase: DAY_CONVERSATION

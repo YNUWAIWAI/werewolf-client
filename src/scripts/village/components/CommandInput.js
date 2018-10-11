@@ -1,17 +1,16 @@
 // @flow
+import {FormattedMessage, injectIntl} from 'react-intl'
 import ChatIcon from './ChatIcon'
-import {FormattedMessage} from 'react-intl'
 import React from 'react'
 import {getChannelFromInputChennel} from '../constants/Channels'
 
+const spaceSeparatedToCamelCase = (str: string) => str.replace(/\s+(\w)/, (_, p1) => p1.toUpperCase())
 const countText = (text: string): number => Array.of(... text).length
-
 const isValidTextLength = (text: string, upperLimit: number, lowerLimit?: number = 1): boolean => {
   const textCount = countText(text)
 
   return textCount <= upperLimit && textCount >= lowerLimit
 }
-
 const isSendable = (postCount: number, postCountLimit: number): boolean => postCount < postCountLimit
 
 type Props = {
@@ -83,21 +82,20 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   render() {
-    const placeholder = (() => ({
-      'limited': '人狼用',
-      'post mortem': '感想戦',
-      'private': '非公開用',
-      'public': '公開用'
-    })[this.props.kind])()
+    const Textarea = injectIntl(({intl}) =>
+      <textarea
+        onChange={(event: SyntheticInputEvent<HTMLTextAreaElement>) => this.handleTextChange(event)}
+        onKeyDown={(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) => this.handleKeyDown(event)}
+        placeholder={intl.formatMessage({
+          id: `CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.kind)}`
+        })}
+        value={this.state.text}
+      />
+    )
 
     return (
-      <form className={`command--input ${this.props.kind}`}>
-        <textarea
-          onChange={(event: SyntheticInputEvent<HTMLTextAreaElement>) => this.handleTextChange(event)}
-          onKeyDown={(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) => this.handleKeyDown(event)}
-          placeholder={placeholder}
-          value={this.state.text}
-        />
+      <form className={`command--input ${spaceSeparatedToCamelCase(this.props.kind)}`}>
+        <Textarea />
         <span className={`command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
           {this.state.textCount}
         </span>
@@ -112,11 +110,14 @@ export default class CommandInput extends React.Component<Props, State> {
             </span> :
             ''
         }
-        <button className="command--input--send" disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
-          <FormattedMessage
-            id="CommandInput.send"
-          />
-        </button>
+        <FormattedMessage id="CommandInput.send">
+          {
+            (text: string) =>
+              <button className="command--input--send" disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
+                {text}
+              </button>
+          }
+        </FormattedMessage>
       </form>
     )
   }
