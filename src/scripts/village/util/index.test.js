@@ -6,6 +6,7 @@ import {
   getPlayableRoles,
   idGenerater,
   just,
+  spaceSeparatedToCamelCase,
   trimBaseUri,
   xor
 } from './index'
@@ -481,6 +482,11 @@ test('just', () => {
   expect(just('just')).toBe('just')
   expect(() => just(null)).toThrow()
   expect(() => just(undefined)).toThrow()
+})
+test('spaceSeparatedToCamelCase', () => {
+  expect(spaceSeparatedToCamelCase('space separated')).toBe('spaceSeparated')
+  expect(spaceSeparatedToCamelCase('space sepa rated')).toBe('spaceSepaRated')
+  expect(spaceSeparatedToCamelCase(' space sepa rated ')).toBe('spaceSepaRated')
 })
 test('trimBaseUri', () => {
   expect(trimBaseUri('https://werewolf.world/resource/target')).toBe('target')

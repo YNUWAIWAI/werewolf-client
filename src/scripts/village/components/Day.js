@@ -3,6 +3,7 @@ import Timer, {type Props as TimerProps} from './Timer'
 import {FormattedMessage} from 'react-intl'
 import type {Phase} from 'village'
 import React from 'react'
+import {spaceSeparatedToCamelCase} from '../util'
 
 export type StateProps = {
   +date: number,
@@ -13,8 +14,6 @@ export type OwnProps = {}
 export type Props =
   & StateProps
   & OwnProps
-
-const spaceSeparatedToCamelCase = (str: string) => str.replace(/\s+(\w)/, (_, p1) => p1.toUpperCase())
 
 export default function Day(props: Props) {
   return (

@@ -59,6 +59,8 @@ export const just = <T>(value: ?T): T => {
   return value
 }
 
+export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(\w)/g, (_, p1) => p1.toUpperCase())
+
 export const trimBaseUri = (id: string): string => {
   const match = (/\/(\w+)$/).exec(id)
 
