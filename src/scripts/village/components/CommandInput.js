@@ -3,8 +3,8 @@ import {FormattedMessage, injectIntl} from 'react-intl'
 import ChatIcon from './ChatIcon'
 import React from 'react'
 import {getChannelFromInputChennel} from '../constants/Channels'
+import {spaceSeparatedToCamelCase} from '../util'
 
-const spaceSeparatedToCamelCase = (str: string) => str.replace(/\s+(\w)/, (_, p1) => p1.toUpperCase())
 const countText = (text: string): number => Array.of(... text).length
 const isValidTextLength = (text: string, upperLimit: number, lowerLimit?: number = 1): boolean => {
   const textCount = countText(text)
