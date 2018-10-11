@@ -1,5 +1,5 @@
 // @flow
-import CommandNavigationButton from './CommandNavigationButton'
+import CommandNavigationButton from '../atoms/CommandNavigationButton'
 import type {NavigationType} from 'village'
 import React from 'react'
 

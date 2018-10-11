@@ -1,5 +1,5 @@
 // @flow
-import RoleComponent, {type StateProps} from '../components/Role'
+import RoleComponent, {type StateProps} from '../components/molecules/Role'
 import {type ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 

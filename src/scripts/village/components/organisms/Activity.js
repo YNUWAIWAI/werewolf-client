@@ -1,6 +1,6 @@
 // @flow
-import Chat from '../containers/ChatContainer'
-import Prediction from '../containers/PredictionContainer'
+import Chat from '../../containers/ChatContainer'
+import Prediction from '../../containers/PredictionContainer'
 import React from 'react'
 
 export type StateProps = {

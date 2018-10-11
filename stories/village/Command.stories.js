@@ -1,8 +1,8 @@
 // @flow
 import * as types from '../../src/scripts/village/constants/ActionTypes'
-import Command from '../../src/scripts/village/components/Command'
-import CommandInputBox from '../../src/scripts/village/components/CommandInputBox'
-import CommandPostMortem from '../../src/scripts/village/components/CommandPostMortem'
+import Command from '../../src/scripts/village/components/organisms/Command'
+import CommandInputBox from '../../src/scripts/village/components/organisms/CommandInputBox'
+import CommandPostMortem from '../../src/scripts/village/components/organisms/CommandPostMortem'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import React from 'react'

@@ -1,8 +1,8 @@
 // @flow
 import type {AgentStatus, TResult} from 'village'
 import React from 'react'
-import ResultCell from './ResultCell'
-import ResultClose from './ResultClose'
+import ResultCell from '../atoms/ResultCell'
+import ResultClose from '../atoms/ResultClose'
 
 export type StateProps = {
   +agents: {

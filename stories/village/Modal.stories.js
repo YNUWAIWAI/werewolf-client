@@ -1,5 +1,5 @@
 // @flow
-import Modal from '../../src/scripts/village/components/Modal'
+import Modal from '../../src/scripts/village/components/organisms/Modal'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'

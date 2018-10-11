@@ -1,6 +1,6 @@
 // @flow
 import * as types from '../../src/scripts/village/constants/ActionTypes'
-import CommandNavigation from '../../src/scripts/village/components/CommandNavigation'
+import CommandNavigation from '../../src/scripts/village/components/molecules/CommandNavigation'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'

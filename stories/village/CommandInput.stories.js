@@ -1,6 +1,6 @@
 // @flow
 import {number, withKnobs} from '@storybook/addon-knobs'
-import CommandInput from '../../src/scripts/village/components/CommandInput'
+import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'

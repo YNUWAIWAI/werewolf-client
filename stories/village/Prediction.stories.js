@@ -1,6 +1,6 @@
 // @flow
 /* eslint sort-keys: 0 */
-import Prediction from '../../src/scripts/village/components/Prediction'
+import Prediction from '../../src/scripts/village/components/organisms/Prediction'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'

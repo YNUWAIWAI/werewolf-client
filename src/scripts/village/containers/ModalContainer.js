@@ -1,6 +1,6 @@
 // @flow
 import type {Language, Phase, RoleId} from 'village'
-import Modal, {type DispatchProps, type StateProps} from '../components/Modal'
+import Modal, {type DispatchProps, type StateProps} from '../components/organisms/Modal'
 import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'
 import type {Dispatch} from 'redux'

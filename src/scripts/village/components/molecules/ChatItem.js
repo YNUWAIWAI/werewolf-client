@@ -1,12 +1,12 @@
 // @flow
-import AgentIcon from './AgentIcon'
+import AgentIcon from '../atoms/AgentIcon'
 import type {Channel} from 'village'
-import ChatDate from './ChatDate'
-import ChatIcon from './ChatIcon'
-import ChatNum from './ChatNum'
-import ChatText from './ChatText'
+import ChatDate from '../atoms/ChatDate'
+import ChatIcon from '../atoms/ChatIcon'
+import ChatNum from '../atoms/ChatNum'
+import ChatText from '../atoms/ChatText'
 import React from 'react'
-import {getChatChannel} from '../constants/Channels'
+import {getChatChannel} from '../../constants/Channels'
 
 export type Props = {
   +id: number,

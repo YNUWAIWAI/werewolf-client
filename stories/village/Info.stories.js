@@ -1,5 +1,5 @@
 // @flow
-import Info from '../../src/scripts/village/components/Info'
+import Info from '../../src/scripts/village/components/organisms/Info'
 import {Provider} from 'react-redux'
 import React from 'react'
 import {createStore} from 'redux'

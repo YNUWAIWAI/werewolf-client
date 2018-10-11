@@ -1,8 +1,8 @@
 // @flow
 import Day from './Day'
 import React from 'react'
-import {getMessages} from '../../../i18n/village'
-import {initRenderer} from '../../../../tools/intl-enzyme-test-helper'
+import {getMessages} from '../../../../i18n/village'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
 const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 

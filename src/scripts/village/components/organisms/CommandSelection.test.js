@@ -1,7 +1,7 @@
 // @flow
-import AgentIcon from './AgentIcon'
+import AgentIcon from '../atoms/AgentIcon'
 import CommandSelection from './CommandSelection'
-import Description from './Description'
+import Description from '../molecules/Description'
 import React from 'react'
 import {shallow} from 'enzyme'
 describe('<CommandSelection />', () => {

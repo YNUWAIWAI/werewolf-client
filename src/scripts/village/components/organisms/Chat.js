@@ -1,6 +1,6 @@
 // @flow
-import ChatDelimeter, {type Props as ChatDelimeterProps} from './ChatDelimeter'
-import ChatItem, {type Props as ChatItemProps} from './ChatItem'
+import ChatDelimeter, {type Props as ChatDelimeterProps} from '../atoms/ChatDelimeter'
+import ChatItem, {type Props as ChatItemProps} from '../molecules/ChatItem'
 import React from 'react'
 
 export type StateProps = {

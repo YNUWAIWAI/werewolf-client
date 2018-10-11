@@ -1,6 +1,6 @@
 // @flow
 /* eslint sort-keys: 0 */
-import CommandSelection from '../../src/scripts/village/components/CommandSelection'
+import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'

@@ -1,5 +1,5 @@
 // @flow
-import Day, {type StateProps} from '../components/Day'
+import Day, {type StateProps} from '../components/molecules/Day'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 

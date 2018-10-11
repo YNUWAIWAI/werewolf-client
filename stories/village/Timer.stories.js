@@ -2,7 +2,7 @@
 import {number, selectV2, withKnobs} from '@storybook/addon-knobs'
 import type {Phase} from 'village'
 import React from 'react'
-import Timer from '../../src/scripts/village/components/Timer'
+import Timer from '../../src/scripts/village/components/atoms/Timer'
 import {storiesOf} from '@storybook/react'
 
 storiesOf('village|Timer', module)
