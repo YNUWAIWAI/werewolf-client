@@ -1,12 +1,24 @@
 // @flow
 import {number, withKnobs} from '@storybook/addon-knobs'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
+import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import React from 'react'
 import {action} from '@storybook/addon-actions'
+import {createStore} from 'redux'
+import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+
+const store = createStore(
+  reducer
+)
 
 storiesOf('village|Command/CommandInput', module)
   .addDecorator(withKnobs)
+  .addDecorator(story =>
+    <IntlProvider store={store}>
+      {story()}
+    </IntlProvider>
+  )
   .add('public', () => {
     const postCount = number('postCount', 0, {
       max: 10,
