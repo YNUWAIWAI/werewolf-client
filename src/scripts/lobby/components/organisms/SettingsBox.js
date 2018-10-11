@@ -1,10 +1,10 @@
 // @flow
-import EmailInput from './EmailInput'
+import EmailInput from '../atoms/EmailInput'
 import type {Language} from 'lobby'
-import LanguageSelect from './LanguageSelect'
-import PasswordInput from './PasswordInput'
+import LanguageSelect from '../atoms/LanguageSelect'
+import PasswordInput from '../atoms/PasswordInput'
 import React from 'react'
-import TextInput from './TextInput'
+import TextInput from '../atoms/TextInput'
 
 type Props = {
   +handleChangeLanguage: Language => void,

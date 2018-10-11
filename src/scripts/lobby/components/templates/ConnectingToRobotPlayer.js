@@ -1,9 +1,9 @@
 // @flow
 import type {MenuItem, Target} from 'lobby'
-import AsideContent from './AsideContent'
-import Header from './Header'
-import MainContent from './MainContent'
-import Menu from './Menu'
+import AsideContent from '../atoms/AsideContent'
+import Header from '../atoms/Header'
+import MainContent from '../atoms/MainContent'
+import Menu from '../organisms/Menu'
 import React from 'react'
 
 export type StateProps = {

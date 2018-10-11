@@ -1,5 +1,5 @@
 // @flow
-import History, {type DispatchProps, type StateProps} from '../components/History'
+import History, {type DispatchProps, type StateProps} from '../components/templates/History'
 import {type SelectVillage, selectVillage} from '../actions'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'

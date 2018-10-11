@@ -1,9 +1,9 @@
 // @flow
-import Danger from './svg/Danger'
+import Danger from '../atoms/svg/Danger'
 import type {PingStatus} from 'lobby'
 import React from 'react'
-import Safe from './svg/Safe'
-import Warning from './svg/Warning'
+import Safe from '../atoms/svg/Safe'
+import Warning from '../atoms/svg/Warning'
 
 export type Props = {
   +avatarImage: string,

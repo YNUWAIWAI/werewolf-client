@@ -1,5 +1,5 @@
 // @flow
-import IdSearchBox from '../../src/scripts/lobby/components/IdSearchBox'
+import IdSearchBox from '../../src/scripts/lobby/components/organisms/IdSearchBox'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'

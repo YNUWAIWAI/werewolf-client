@@ -9,7 +9,7 @@ import {
   changeUserName,
   changeUserPassword
 } from '../actions'
-import Settings, {type DispatchProps, type StateProps} from '../components/Settings'
+import Settings, {type DispatchProps, type StateProps} from '../components/templates/Settings'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

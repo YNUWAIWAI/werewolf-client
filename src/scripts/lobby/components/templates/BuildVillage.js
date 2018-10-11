@@ -1,10 +1,10 @@
 // @flow
 import type {Avatar, Member, MenuItem, Target} from 'lobby'
-import AsideContent from './AsideContent'
-import BuildVillageBox from './BuildVillageBox'
-import Header from './Header'
-import MainContent from './MainContent'
-import Menu from './Menu'
+import AsideContent from '../atoms/AsideContent'
+import BuildVillageBox from '../organisms/BuildVillageBox'
+import Header from '../atoms/Header'
+import MainContent from '../atoms/MainContent'
+import Menu from '../organisms/Menu'
 import React from 'react'
 
 export type StateProps = {

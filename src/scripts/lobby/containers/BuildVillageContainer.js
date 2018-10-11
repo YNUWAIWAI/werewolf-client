@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import BuildVillage, {type DispatchProps, type StateProps} from '../components/BuildVillage'
+import BuildVillage, {type DispatchProps, type StateProps} from '../components/templates/BuildVillage'
 import {
   type BuildVillage$ChangeAvatar,
   type BuildVillage$ChangeComment,

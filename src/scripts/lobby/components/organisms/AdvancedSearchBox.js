@@ -1,11 +1,11 @@
 // @flow
-import AdvancedSearchProp from './AdvancedSearchProp'
+import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
 import type {Avatar} from 'lobby'
-import AvatarSelect from './AvatarSelect'
-import NumberSelect from './NumberSelect'
+import AvatarSelect from '../atoms/AvatarSelect'
+import NumberSelect from '../atoms/NumberSelect'
 import React from 'react'
-import TextInput from './TextInput'
-import TextareaInput from './TextareaInput'
+import TextInput from '../atoms/TextInput'
+import TextareaInput from '../atoms/TextareaInput'
 
 export type Props = {
   +checked: {

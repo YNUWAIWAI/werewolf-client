@@ -1,6 +1,6 @@
 // @flow
 import {type KickOutPlayer, kickOutPlayer} from '../actions'
-import WaitingForPlayers, {type DispatchProps, type StateProps} from '../components/WaitingForPlayers'
+import WaitingForPlayers, {type DispatchProps, type StateProps} from '../components/templates/WaitingForPlayers'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

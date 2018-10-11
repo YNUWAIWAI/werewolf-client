@@ -1,5 +1,5 @@
 // @flow
-import LobbyForAudience, {type DispatchProps, type StateProps} from '../components/LobbyForAudience'
+import LobbyForAudience, {type DispatchProps, type StateProps} from '../components/templates/LobbyForAudience'
 import {type SelectVillage, selectVillage} from '../actions'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'

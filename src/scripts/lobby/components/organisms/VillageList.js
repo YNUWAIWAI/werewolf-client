@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import type {Village} from 'lobby'
-import VillageItem from './VillageItem'
+import VillageItem from '../molecules/VillageItem'
 
 type Props = {
   +isPlayer: boolean,
