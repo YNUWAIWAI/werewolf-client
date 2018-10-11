@@ -1,14 +1,87 @@
 // @flow
 import Day from './Day'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../i18n/village'
+import {initRenderer} from '../../../../tools/intl-enzyme-test-helper'
 
-test('<Day date={0} phase="昼" />', () => {
-  const timer = {
-    limit: 10,
-    phase: 'night'
-  }
-  const wrapper = shallow(<Day date={0} phase="昼" timer={timer} />)
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
-  expect(wrapper.text()).toMatch('0日目 昼')
+describe('<Day />', () => {
+  describe('phase', () => {
+    test('day conversation', () => {
+      const timer = {
+        limit: 10,
+        phase: 'day conversation'
+      }
+      const wrapper = mountWithIntl(
+        <Day
+          date={0}
+          phase="day conversation"
+          timer={timer}
+        />
+      )
+
+      expect(wrapper.text()).toMatch('0日目 昼')
+    })
+    test('day vote', () => {
+      const timer = {
+        limit: 10,
+        phase: 'day vote'
+      }
+      const wrapper = mountWithIntl(
+        <Day
+          date={1}
+          phase="day vote"
+          timer={timer}
+        />
+      )
+
+      expect(wrapper.text()).toMatch('1日目 投票')
+    })
+    test('night', () => {
+      const timer = {
+        limit: 10,
+        phase: 'night'
+      }
+      const wrapper = mountWithIntl(
+        <Day
+          date={1}
+          phase="night"
+          timer={timer}
+        />
+      )
+
+      expect(wrapper.text()).toMatch('1日目 夜')
+    })
+    test('post mortem', () => {
+      const timer = {
+        limit: 10,
+        phase: 'post mortem'
+      }
+      const wrapper = mountWithIntl(
+        <Day
+          date={-1}
+          phase="post mortem"
+          timer={timer}
+        />
+      )
+
+      expect(wrapper.text()).toMatch('感想戦')
+    })
+    test('results', () => {
+      const timer = {
+        limit: 10,
+        phase: 'results'
+      }
+      const wrapper = mountWithIntl(
+        <Day
+          date={-1}
+          phase="results"
+          timer={timer}
+        />
+      )
+
+      expect(wrapper.text()).toMatch('結果')
+    })
+  })
 })
