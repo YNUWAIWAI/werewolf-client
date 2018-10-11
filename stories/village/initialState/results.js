@@ -227,7 +227,7 @@ export default {
     villageName: '横国の森の奥にある時代に取り残された小さな村'
   },
   chat: {
-    allIds: [ 'chat1', 'chat0' ],
+    allIds: ['delimeter1', 'chat1', 'chat0', 'delimeter0'],
     byId: {
       'chat0': {
         'id': 1,
@@ -258,6 +258,14 @@ export default {
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': '>>1 私はパメラが人狼だと思う。',
         'type': 'item'
+      },
+      'delimeter0': {
+        date: 1,
+        type: 'delimeter'
+      },
+      'delimeter1': {
+        date: -1,
+        type: 'delimeter'
       }
     }
   },
