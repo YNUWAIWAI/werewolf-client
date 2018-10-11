@@ -1,7 +1,7 @@
 // @flow
 import type {MenuItem, Target} from 'lobby'
 import React, {Fragment} from 'react'
-import Menu from './Menu'
+import Menu from '../organisms/Menu'
 
 export type StateProps = {
   +menuItems: MenuItem[]

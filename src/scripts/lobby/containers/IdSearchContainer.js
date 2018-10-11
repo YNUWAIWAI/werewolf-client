@@ -1,5 +1,5 @@
 // @flow
-import IdSearch, {type DispatchProps, type StateProps} from '../components/IdSearch'
+import IdSearch, {type DispatchProps, type StateProps} from '../components/templates/IdSearch'
 import {
   type IdSearch$ChangeSearchId,
   type IdSearch$ChangeValidity,

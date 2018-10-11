@@ -1,5 +1,5 @@
 // @flow
-import ConnectingToRobotPlayer, {type StateProps} from '../components/ConnectingToRobotPlayer'
+import ConnectingToRobotPlayer, {type StateProps} from '../components/templates/ConnectingToRobotPlayer'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 

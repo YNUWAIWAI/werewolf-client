@@ -1,5 +1,5 @@
 // @flow
-import AvatarItem from './AvatarItem'
+import AvatarItem from '../molecules/AvatarItem'
 import type {PingStatus} from 'lobby'
 import React from 'react'
 

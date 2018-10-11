@@ -1,5 +1,5 @@
 // @flow
-import AdvancedSearchBox from '../../src/scripts/lobby/components/AdvancedSearchBox'
+import AdvancedSearchBox from '../../src/scripts/lobby/components/organisms/AdvancedSearchBox'
 import React from 'react'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'

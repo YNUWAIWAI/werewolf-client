@@ -1,12 +1,12 @@
 // @flow
 import type {MenuItem, PingStatus, Target, Village} from 'lobby'
-import AsideContent from './AsideContent'
-import AvatarList from './AvatarList'
-import Header from './Header'
-import MainContent from './MainContent'
-import Menu from './Menu'
+import AsideContent from '../atoms/AsideContent'
+import AvatarList from '../organisms/AvatarList'
+import Header from '../atoms/Header'
+import MainContent from '../atoms/MainContent'
+import Menu from '../organisms/Menu'
 import React from 'react'
-import VillageItem from './VillageItem'
+import VillageItem from '../molecules/VillageItem'
 
 export type StateProps = {
   +isPlayer: boolean,

@@ -1,15 +1,18 @@
 // @flow
 import type {MenuItem, Target, Village} from 'lobby'
-import AsideContent from './AsideContent'
-import Header from './Header'
-import MainContent from './MainContent'
-import Menu from './Menu'
+import AsideContent from '../atoms/AsideContent'
+import Avatar from '../atoms/Avatar'
+import Header from '../atoms/Header'
+import MainContent from '../atoms/MainContent'
+import Menu from '../organisms/Menu'
 import React from 'react'
-import VillageList from './VillageList'
+import VillageList from '../organisms/VillageList'
 
 export type StateProps = {
+  +image: string,
   +isPlayer: boolean,
   +menuItems: MenuItem[],
+  +name: string,
   +villageItems: Village[]
 }
 export type DispatchProps = {
@@ -23,10 +26,11 @@ export type Props =
   & DispatchProps
   & OwnProps
 
-export default function History(props: Props) {
+export default function LobbyForRobotPlayer(props: Props) {
   return (
     <div className="grid">
-      <Header text="History" />
+      <Header text="Lobby for Robot Player" />
+      <Avatar image={props.image} name={props.name} />
       <MainContent>
         <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
       </MainContent>

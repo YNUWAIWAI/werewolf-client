@@ -1,6 +1,6 @@
 // @flow
 import type {MenuItem as MenuItemType, Target} from 'lobby'
-import MenuItem from './MenuItem'
+import MenuItem from '../molecules/MenuItem'
 import React from 'react'
 
 export type Props = {

@@ -1,5 +1,5 @@
 // @flow
-import Main, {type StateProps} from '../components/Main'
+import Main, {type StateProps} from '../components/templates/Main'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 

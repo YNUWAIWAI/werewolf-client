@@ -1,5 +1,5 @@
 // @flow
-import Loader from './svg/Loader'
+import Loader from '../atoms/svg/Loader'
 import React from 'react'
 import type {Target} from 'lobby'
 

@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import AdvancedSearch, {type DispatchProps, type StateProps} from '../components/AdvancedSearch'
+import AdvancedSearch, {type DispatchProps, type StateProps} from '../components/templates/AdvancedSearch'
 import {
   type AdvancedSearch$ChangeAvatar,
   type AdvancedSearch$ChangeCheckbox,

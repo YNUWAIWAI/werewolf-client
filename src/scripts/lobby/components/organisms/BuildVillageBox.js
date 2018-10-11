@@ -1,12 +1,12 @@
 // @flow
 import type {Avatar, Member} from 'lobby'
-import AvatarSelect from './AvatarSelect'
-import NumberSelect from './NumberSelect'
+import AvatarSelect from '../atoms/AvatarSelect'
+import NumberSelect from '../atoms/NumberSelect'
 import React from 'react'
-import SelectMember from './SelectMember'
-import TextInput from './TextInput'
-import TextareaInput from './TextareaInput'
-import {getCastFromNumberOfPlayers} from '../constants/Cast'
+import SelectMember from '../molecules/SelectMember'
+import TextInput from '../atoms/TextInput'
+import TextareaInput from '../atoms/TextareaInput'
+import {getCastFromNumberOfPlayers} from '../../constants/Cast'
 
 type Props = {
   +handleAvatarChange: Avatar => void,
