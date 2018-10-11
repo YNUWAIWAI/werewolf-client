@@ -6,6 +6,8 @@ export default {
   'CommandInput.placeholder.private': '非公開用',
   'CommandInput.placeholder.public': '公開用',
   'CommandInput.send': '送信',
+  'CommandPostMortemContainer.returnToLobby': 'ロビーへ戻る',
+  'CommandPostMortemContainer.showResult': '結果を表示',
   'CommandSelectionContainer.dayVote.fixed': 'あなたの選んだ投票先はこちらです',
   'CommandSelectionContainer.dayVote.unfixed': '投票先を選んでください',
   'CommandSelectionContainer.hunterVote.fixed': 'あなたの選んだ守護先はこちらです',
