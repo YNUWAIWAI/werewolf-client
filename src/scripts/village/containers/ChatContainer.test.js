@@ -77,11 +77,11 @@ test('<ChatContainer />', () => {
       type: 'item'
     },
     delimeter0: {
-      text: '1日目',
+      date: 1,
       type: 'delimeter'
     },
     delimeter1: {
-      text: '感想戦',
+      date: -1,
       type: 'delimeter'
     }
   })
