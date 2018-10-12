@@ -5,20 +5,27 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<CommandPostMortem />', () => {
+  const handleNavigationClick = jest.fn()
   const handlePostChat = jest.fn()
   const navigation = [
     {
-      text: '結果を表示',
+      id: 'CommandPostMortemContainer.showResult',
       type: ActionTypes.SHOW_RESULT
     },
     {
-      text: 'ロビーへ戻る',
+      id: 'CommandPostMortemContainer.returnToLobby',
       type: ActionTypes.RETURN_TO_LOBBY
     }
   ]
-  const wrapper = shallow(<CommandPostMortem handlePostChat={handlePostChat} navigation={navigation} />)
+  const wrapper = shallow(
+    <CommandPostMortem
+      handleNavigationClick={handleNavigationClick}
+      handlePostChat={handlePostChat}
+      navigation={navigation}
+    />
+  )
 
   expect(handlePostChat).toHaveBeenCalledTimes(1)
   expect(wrapper.find('CommandInput')).toHaveLength(1)
-  expect(wrapper.find('Connect(CommandNavigation)')).toHaveLength(1)
+  expect(wrapper.find('CommandNavigation')).toHaveLength(1)
 })

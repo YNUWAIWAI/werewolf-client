@@ -79,14 +79,15 @@ storiesOf('village|Command', module)
   })
   .add('感想戦', () => {
     const props = {
+      handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
       navigation: [
         {
-          text: '結果を表示',
+          id: 'CommandPostMortemContainer.showResult',
           type: types.SHOW_RESULT
         },
         {
-          text: 'ロビーへ戻る',
+          id: 'CommandPostMortemContainer.returnToLobby',
           type: types.RETURN_TO_LOBBY
         }
       ]

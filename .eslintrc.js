@@ -75,7 +75,7 @@ module.exports = {
     "new-parens": "error",
     "newline-after-var": ["warn", "always"],
     "newline-before-return": "warn",
-    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
     "no-alert": "error",
     "no-array-constructor": "error",
     "no-bitwise": "warn",
