@@ -23,11 +23,11 @@ storiesOf('village|Command/CommandNavigation', module)
   .add('default', () => {
     const items = [
       {
-        text: '結果を表示',
+        id: 'CommandPostMortemContainer.showResult',
         type: types.SHOW_RESULT
       },
       {
-        text: 'ロビーへ戻る',
+        id: 'CommandPostMortemContainer.returnToLobby',
         type: types.RETURN_TO_LOBBY
       }
     ]
