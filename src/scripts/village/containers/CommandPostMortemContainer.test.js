@@ -19,11 +19,11 @@ test('<CommandPostMortemContainer />', () => {
 
   expect(wrapper.props().navigation).toEqual([
     {
-      text: '結果を表示',
+      id: 'CommandPostMortemContainer.showResult',
       type: ActionTypes.SHOW_RESULT
     },
     {
-      text: 'ロビーへ戻る',
+      id: 'CommandPostMortemContainer.returnToLobby',
       type: ActionTypes.RETURN_TO_LOBBY
     }
   ])
