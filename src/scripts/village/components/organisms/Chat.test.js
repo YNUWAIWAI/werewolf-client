@@ -103,7 +103,7 @@ test('<Chat /> 3 items with 1 delimeter', () => {
       type: 'item'
     },
     'delimeter0': {
-      text: '1日目',
+      date: 1,
       type: 'delimeter'
     }
   }

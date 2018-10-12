@@ -1,10 +1,37 @@
 // @flow
 import ChatDelimeter from './ChatDelimeter'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/village'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-test('<ChatDelimeter text="1日目" />', () => {
-  const wrapper = shallow(<ChatDelimeter text="1日目" />)
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
-  expect(wrapper.find('.chat--delimeter').text()).toBe('1日目')
+describe('<ChatDelimeter />', () => {
+  test('date=1', () => {
+    const wrapper = mountWithIntl(
+      <ChatDelimeter
+        date={1}
+      />
+    )
+
+    expect(wrapper.find('.chat--delimeter').text()).toBe('1日目')
+  })
+  test('date=0', () => {
+    const wrapper = mountWithIntl(
+      <ChatDelimeter
+        date={0}
+      />
+    )
+
+    expect(wrapper.find('.chat--delimeter').text()).toBe('0日目')
+  })
+  test('date=-1', () => {
+    const wrapper = mountWithIntl(
+      <ChatDelimeter
+        date={-1}
+      />
+    )
+
+    expect(wrapper.find('.chat--delimeter').text()).toBe('感想戦')
+  })
 })

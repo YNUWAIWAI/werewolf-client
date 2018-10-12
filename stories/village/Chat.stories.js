@@ -1,11 +1,23 @@
 // @flow
 import Chat from '../../src/scripts/village/components/organisms/Chat'
+import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import React from 'react'
+import {createStore} from 'redux'
+import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
+const store = createStore(
+  reducer
+)
+
 storiesOf('village|Chat', module)
   .addDecorator(withKnobs)
+  .addDecorator(story =>
+    <IntlProvider store={store}>
+      {story()}
+    </IntlProvider>
+  )
   .add('anonymousAudience', () => {
     const allIds = ['chat0', 'chat1']
     const byId = {
@@ -295,7 +307,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('区切り', () => {
-    const allIds = ['delimeter1', 'chat0', 'delimeter0', 'chat1']
+    const allIds = ['delimeter1', 'chat1', 'chat0', 'delimeter0']
     const byId = {
       'chat0': {
         id: 1,
@@ -322,11 +334,11 @@ storiesOf('village|Chat', module)
         type: 'item'
       },
       'delimeter0': {
-        text: '1日目',
+        date: 1,
         type: 'delimeter'
       },
       'delimeter1': {
-        text: '感想戦',
+        date: -1,
         type: 'delimeter'
       }
     }
