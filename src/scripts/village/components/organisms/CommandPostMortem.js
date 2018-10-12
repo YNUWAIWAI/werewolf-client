@@ -2,14 +2,15 @@
 import type {InputChannel, NavigationType} from 'village'
 import React, {Fragment} from 'react'
 import CommandInput from '../molecules/CommandInput'
-import CommandNavigation from '../../containers/CommandNavigationContainer'
+import CommandNavigation from '../molecules/CommandNavigation'
 
 export type DispatchProps = {
+  +handleNavigationClick: NavigationType => void => void,
   +handlePostChat: InputChannel => string => void
 }
 export type StateProps = {
   +navigation: {
-    +text: string,
+    +id: string,
     +type: NavigationType
   }[]
 }
@@ -25,6 +26,7 @@ export default function CommandPostMortem(props: Props) {
         kind="post mortem"
       />
       <CommandNavigation
+        handleClick={props.handleNavigationClick}
         items={props.navigation}
       />
     </Fragment>
