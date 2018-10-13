@@ -27,4 +27,5 @@ export default {
   'ModalContainer.seerVote': '占い先はこちらでいいですか？',
   'ModalContainer.wait': '待ってください',
   'ModalContainer.werewolfVote': '襲撃先はこちらでいいですか？',
+  'RoleText': 'あなたは{role}です',
 }
