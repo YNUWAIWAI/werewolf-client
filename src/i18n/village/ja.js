@@ -22,6 +22,8 @@ export default {
   'Day.night': '{date}日目 夜',
   'Day.postMortem': '感想戦',
   'Day.results': '結果',
+  'FormattedTime.end': '終了',
+  'FormattedTime.time': '残り{minute}\'{second}',
   'ModalContainer.dayVote': '投票先はこちらでいいですか？',
   'ModalContainer.hunterVote': '守護先はこちらでいいですか？',
   'ModalContainer.seerVote': '占い先はこちらでいいですか？',
