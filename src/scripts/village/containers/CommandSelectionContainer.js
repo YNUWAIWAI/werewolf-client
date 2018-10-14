@@ -41,7 +41,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.roles.mine) {
     return {
       agents,
-      descriptionId: '',
+      descriptionId: 'CommandSelection.Description.wait',
       fixed: state.commandSelection.fixed,
       timer: {
         limit: state.base.phaseTimeLimit,
