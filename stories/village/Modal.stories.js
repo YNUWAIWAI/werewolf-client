@@ -14,12 +14,12 @@ storiesOf('village|Modal', module)
     }
     const story =
       <Modal
+        descriptionId="Modal.Description.dayVote"
         handleClickNo={action('handleClickNo')}
         handleClickYes={action('handleClickYes')}
         id={1}
         image="https://werewolf.world/image/0.1/Walter.jpg"
         name="ヴァルター"
-        text="投票先はこちらでいいですか？"
         timer={timer}
         visible
       />
