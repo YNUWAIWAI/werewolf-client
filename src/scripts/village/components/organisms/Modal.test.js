@@ -13,12 +13,12 @@ describe('<Modal />', () => {
     const handleClickYesMockFn = jest.fn()
     const wrapper = shallow(
       <Modal
+        descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
         handleClickYes={handleClickYesMockFn}
         id={1}
         image="image"
         name="name"
-        text="text"
         timer={timer}
         visible
       />
@@ -43,12 +43,12 @@ describe('<Modal />', () => {
     const handleClickYesMockFn = jest.fn()
     const wrapper = shallow(
       <Modal
+        descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
         handleClickYes={handleClickYesMockFn}
         id={1}
         image="image"
         name="name"
-        text="text"
         timer={timer}
         visible={false}
       />
@@ -65,12 +65,12 @@ describe('<Modal />', () => {
     const handleClickYesMockFn = jest.fn()
     const wrapper = shallow(
       <Modal
+        descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
         handleClickYes={handleClickYesMockFn}
         id={1}
         image="image"
         name="name"
-        text="text"
         timer={timer}
         visible
       />
@@ -100,12 +100,12 @@ describe('<Modal />', () => {
     const handleClickYesMockFn = jest.fn()
     const wrapper = shallow(
       <Modal
+        descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
         handleClickYes={handleClickYesMockFn}
         id={1}
         image="image"
         name="name"
-        text="text"
         timer={timer}
         visible
       />

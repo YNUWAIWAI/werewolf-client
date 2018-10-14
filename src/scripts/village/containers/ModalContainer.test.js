@@ -128,10 +128,10 @@ test('<ModalContainer />', () => {
   }
   const wrapper = shallow(<ModalContainer store={store} />)
 
+  expect(wrapper.props().descriptionId).toBe('Modal.Description.dayVote')
   expect(wrapper.props().id).toBe(2)
   expect(wrapper.props().image).toBe('https://werewolf.world/image/0.1/Moritz.jpg')
   expect(wrapper.props().name).toBe('モーリッツ')
-  expect(wrapper.props().text).toBe('投票先はこちらでいいですか？')
   expect(wrapper.props().timer).toEqual({
     limit: 100,
     phase: DAY_VOTE
