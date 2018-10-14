@@ -1,13 +1,11 @@
 // @flow
-import type {Language, Phase, RoleId} from 'village'
 import Modal, {type DispatchProps, type StateProps} from '../components/organisms/Modal'
+import type {Phase, RoleId} from 'village'
 import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
 import {DAY_VOTE} from '../constants/Phase'
 import type {Dispatch} from 'redux'
-import {IntlProvider} from 'react-intl'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getMessages} from '../../../i18n/village'
 import {getRoleId} from '../constants/Role'
 import {just} from '../util'
 
@@ -15,38 +13,20 @@ type Action =
   | SelectNo
   | SelectYes
 
-const getText = (phase: Phase, role: RoleId, language: Language) => {
-  const {intl} = new IntlProvider(
-    {
-      locale: language,
-      messages: getMessages(language)
-    },
-    {}
-  ).getChildContext()
-
+const getDescriptionId = (phase: Phase, role: RoleId) => {
   if (phase === DAY_VOTE) {
-    return intl.formatMessage({
-      id: 'ModalContainer.dayVote'
-    })
+    return 'Modal.Description.dayVote'
   }
 
   switch (role) {
     case 'werewolf':
-      return intl.formatMessage({
-        id: 'ModalContainer.werewolfVote'
-      })
+      return 'Modal.Description.werewolfVote'
     case 'seer':
-      return intl.formatMessage({
-        id: 'ModalContainer.seerVote'
-      })
+      return 'Modal.Description.seerVote'
     case 'hunter':
-      return intl.formatMessage({
-        id: 'ModalContainer.hunterVote'
-      })
+      return 'Modal.Description.hunterVote'
     default:
-      return intl.formatMessage({
-        id: 'ModalContainer.wait'
-      })
+      return 'Modal.Description.wait'
   }
 }
 
@@ -57,10 +37,10 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     const myRole = just(state.roles.mine)
 
     return {
+      descriptionId: getDescriptionId(state.base.phase, getRoleId(myRole['@id'])),
       id: selectedAgent.id,
       image: selectedAgent.image,
       name: selectedAgent.name[state.language],
-      text: getText(state.base.phase, getRoleId(myRole['@id']), state.language),
       timer: {
         limit: state.base.phaseTimeLimit,
         phase: state.base.phase
@@ -70,10 +50,10 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
   }
 
   return {
+    descriptionId: 'Modal.Description.wait',
     id: -1,
     image: '',
     name: '',
-    text: '',
     timer: {
       limit: state.base.phaseTimeLimit,
       phase: state.base.phase

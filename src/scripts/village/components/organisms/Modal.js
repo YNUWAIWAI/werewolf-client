@@ -5,10 +5,10 @@ import React from 'react'
 import type {Props as TimerProps} from '../atoms/Timer'
 
 export type StateProps = {
+  +descriptionId: string,
   +id: number,
   +image: string,
   +name: string,
-  +text: string,
   +timer: TimerProps,
   +visible: boolean
 }
@@ -34,7 +34,7 @@ export default function Modal(props: Props) {
   return (
     <div className={`modal ${props.visible ? '' : 'hidden'}`}>
       <AgentIcon class="modal--icon" image={props.image} name={props.name} />
-      <Description class="modal--description" text={props.text} timer={props.timer} />
+      <Description class="modal--description" id={props.descriptionId} timer={props.timer} />
       <button className="modal--button yes" onClick={handleClick('yes')}>
         {'はい'}
       </button>

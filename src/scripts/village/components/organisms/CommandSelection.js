@@ -10,8 +10,8 @@ export type StateProps = {
     +image: string,
     +name: string
   }[],
+  +descriptionId: string,
   +fixed: boolean,
-  +text: string,
   +timer: TimerProps
 }
 export type DispatchProps = {
@@ -28,7 +28,7 @@ export default function CommandSelection(props: Props) {
     <div className="command--selection">
       <Description
         class="command--selection--description"
-        text={props.text}
+        id={props.descriptionId}
         timer={props.timer}
       />
       <div className="command--selection--select ">
