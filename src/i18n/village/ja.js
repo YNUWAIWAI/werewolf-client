@@ -29,5 +29,7 @@ export default {
   'Modal.Description.seerVote': '占い先はこちらでいいですか？',
   'Modal.Description.wait': '待ってください',
   'Modal.Description.werewolfVote': '襲撃先はこちらでいいですか？',
+  'Modal.button.no': 'いいえ',
+  'Modal.button.yes': 'はい',
   'RoleText': 'あなたは{role}です',
 }
