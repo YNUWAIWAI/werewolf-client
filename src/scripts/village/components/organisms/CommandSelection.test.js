@@ -4,6 +4,7 @@ import CommandSelection from './CommandSelection'
 import Description from '../molecules/Description'
 import React from 'react'
 import {shallow} from 'enzyme'
+
 describe('<CommandSelection />', () => {
   test('agents={[]}', () => {
     const handleSelectOptionEventHandler = jest.fn()
@@ -15,9 +16,9 @@ describe('<CommandSelection />', () => {
     const wrapper = shallow(
       <CommandSelection
         agents={[]}
+        descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
-        text="text"
         timer={timer}
       />
     )
@@ -102,9 +103,9 @@ describe('<CommandSelection />', () => {
     const wrapper = shallow(
       <CommandSelection
         agents={agents}
+        descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
-        text="text"
         timer={timer}
       />
     )
@@ -129,9 +130,9 @@ describe('<CommandSelection />', () => {
     const wrapper = shallow(
       <CommandSelection
         agents={agents}
+        descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed
         handleSelectOption={handleSelectOption}
-        text="text"
         timer={timer}
       />
     )

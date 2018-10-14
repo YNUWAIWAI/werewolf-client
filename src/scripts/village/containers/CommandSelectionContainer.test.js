@@ -34,7 +34,7 @@ describe('<CommandSelectionContainer />', () => {
       const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
       expect(wrapper.props().agents).toEqual([])
-      expect(wrapper.props().text).toBe('あなたの選んだ投票先はこちらです')
+      expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.dayVote.fixed')
       expect(wrapper.props().timer).toEqual({
         limit: 100,
         phase: DAY_VOTE
@@ -67,7 +67,7 @@ describe('<CommandSelectionContainer />', () => {
       const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
       expect(wrapper.props().agents).toEqual([])
-      expect(wrapper.props().text).toBe('投票先を選んでください')
+      expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.dayVote.unfixed')
       expect(wrapper.props().timer).toEqual({
         limit: 100,
         phase: DAY_VOTE
@@ -103,7 +103,7 @@ describe('<CommandSelectionContainer />', () => {
         const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
         expect(wrapper.props().agents).toEqual([])
-        expect(wrapper.props().text).toBe('あなたの選んだ守護先はこちらです')
+        expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.hunterVote.fixed')
         expect(wrapper.props().timer).toEqual({
           limit: 100,
           phase: NIGHT
@@ -136,7 +136,7 @@ describe('<CommandSelectionContainer />', () => {
         const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
         expect(wrapper.props().agents).toEqual([])
-        expect(wrapper.props().text).toBe('守護先を選んでください')
+        expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.hunterVote.unfixed')
         expect(wrapper.props().timer).toEqual({
           limit: 100,
           phase: NIGHT
@@ -171,7 +171,7 @@ describe('<CommandSelectionContainer />', () => {
         const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
         expect(wrapper.props().agents).toEqual([])
-        expect(wrapper.props().text).toBe('あなたの選んだ占い先はこちらです')
+        expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.seerVote.fixed')
         expect(wrapper.props().timer).toEqual({
           limit: 100,
           phase: NIGHT
@@ -204,7 +204,7 @@ describe('<CommandSelectionContainer />', () => {
         const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
         expect(wrapper.props().agents).toEqual([])
-        expect(wrapper.props().text).toBe('占い先を選んでください')
+        expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.seerVote.unfixed')
         expect(wrapper.props().timer).toEqual({
           limit: 100,
           phase: NIGHT
@@ -239,7 +239,7 @@ describe('<CommandSelectionContainer />', () => {
         const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
         expect(wrapper.props().agents).toEqual([])
-        expect(wrapper.props().text).toBe('あなたの選んだ襲撃先はこちらです')
+        expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.werewolfVote.fixed')
         expect(wrapper.props().timer).toEqual({
           limit: 100,
           phase: NIGHT
@@ -272,7 +272,7 @@ describe('<CommandSelectionContainer />', () => {
         const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
         expect(wrapper.props().agents).toEqual([])
-        expect(wrapper.props().text).toBe('襲撃先を選んでください')
+        expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.werewolfVote.unfixed')
         expect(wrapper.props().timer).toEqual({
           limit: 100,
           phase: NIGHT
@@ -306,7 +306,7 @@ describe('<CommandSelectionContainer />', () => {
       const wrapper = shallow(<CommandSelectionContainer store={store} />)
 
       expect(wrapper.props().agents).toEqual([])
-      expect(wrapper.props().text).toBe('待ってください')
+      expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.wait')
       expect(wrapper.props().timer).toEqual({
         limit: 100,
         phase: NIGHT

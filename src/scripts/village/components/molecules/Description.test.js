@@ -1,15 +1,23 @@
 // @flow
 import Description from './Description'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/village'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-test('<Description class="class" text="text" />', () => {
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+
+test('<Description />', () => {
   const timer = {
     limit: 10,
     phase: 'night'
   }
-  const wrapper = shallow(<Description class="class" text="text" timer={timer} />)
+  const wrapper = mountWithIntl(
+    <Description
+      class="class"
+      id="CommandSelection.Description.dayVote.fixed"
+      timer={timer}
+    />
+  )
 
-  expect(wrapper.is('.class')).toBe(true)
-  expect(wrapper.text()).toBe('text（<Timer />）')
+  expect(wrapper.text()).toBe('あなたの選んだ投票先はこちらです（残り00\'00）')
 })
