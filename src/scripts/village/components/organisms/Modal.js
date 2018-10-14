@@ -1,6 +1,7 @@
 // @flow
 import AgentIcon from '../atoms/AgentIcon'
 import Description from '../molecules/Description'
+import {FormattedMessage} from 'react-intl'
 import React from 'react'
 import type {Props as TimerProps} from '../atoms/Timer'
 
@@ -35,12 +36,32 @@ export default function Modal(props: Props) {
     <div className={`modal ${props.visible ? '' : 'hidden'}`}>
       <AgentIcon class="modal--icon" image={props.image} name={props.name} />
       <Description class="modal--description" id={props.descriptionId} timer={props.timer} />
-      <button className="modal--button yes" onClick={handleClick('yes')}>
-        {'はい'}
-      </button>
-      <button className="modal--button no" onClick={handleClick('no')}>
-        {'いいえ'}
-      </button>
+      <FormattedMessage
+        id="Modal.button.yes"
+      >
+        {
+          (text: string) =>
+            <button
+              className="modal--button yes"
+              onClick={handleClick('yes')}
+            >
+              {text}
+            </button>
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="Modal.button.no"
+      >
+        {
+          (text: string) =>
+            <button
+              className="modal--button no"
+              onClick={handleClick('no')}
+            >
+              {text}
+            </button>
+        }
+      </FormattedMessage>
     </div>
   )
 }

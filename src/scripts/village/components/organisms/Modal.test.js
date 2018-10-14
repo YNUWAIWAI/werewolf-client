@@ -1,7 +1,10 @@
 // @flow
 import Modal from './Modal'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/village'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<Modal />', () => {
   test('visible', () => {
@@ -11,7 +14,7 @@ describe('<Modal />', () => {
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <Modal
         descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
@@ -41,7 +44,7 @@ describe('<Modal />', () => {
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <Modal
         descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
@@ -63,7 +66,7 @@ describe('<Modal />', () => {
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <Modal
         descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
@@ -98,7 +101,7 @@ describe('<Modal />', () => {
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <Modal
         descriptionId="Modal.Description.dayVote"
         handleClickNo={handleClickNoMockFn}
