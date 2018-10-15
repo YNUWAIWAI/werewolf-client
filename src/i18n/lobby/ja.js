@@ -18,6 +18,7 @@ export default {
   'Menu.lobbyForAudience': 'Lobby for Audience',
   'Menu.lobbyForHumanPlayer': 'Lobby for Human Player',
   'Menu.lobbyForRobotPlayer': 'Lobby for Robot Player',
+  'Menu.playGame': 'Play',
   'Menu.refresh': 'Refresh',
   'Menu.returnToLobbyForAudience': 'Return to Lobby for Audience',
   'Menu.returnToLobbyForHumanPlayer': 'Return to Lobby for Human Player',
