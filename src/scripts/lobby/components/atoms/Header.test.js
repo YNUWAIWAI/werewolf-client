@@ -1,10 +1,13 @@
 // @flow
 import Header from './Header'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-test('<Header text="text" />', () => {
-  const wrapper = shallow(<Header text="text" />)
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
-  expect(wrapper.text()).toBe('text')
+test('<Header />', () => {
+  const wrapper = mountWithIntl(<Header id="Header.buildVillage" />)
+
+  expect(wrapper.text()).toBe('Build village')
 })
