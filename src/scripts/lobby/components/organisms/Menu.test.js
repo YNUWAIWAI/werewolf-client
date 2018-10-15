@@ -23,7 +23,7 @@ describe('<Menu />', () => {
     const transition = jest.fn()
     const items = [
       {
-        text: 'text',
+        id: 'Menu.returnToMainPage',
         types: ['SHOW_MAIN']
       }
     ]
@@ -43,11 +43,11 @@ describe('<Menu />', () => {
     const transition = jest.fn()
     const items = [
       {
-        text: 'text',
+        id: 'Menu.returnToMainPage',
         types: ['SHOW_MAIN']
       },
       {
-        text: 'text',
+        id: 'Menu.returnToMainPage',
         types: ['SHOW_MAIN']
       }
     ]

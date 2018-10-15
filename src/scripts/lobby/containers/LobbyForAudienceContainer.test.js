@@ -22,19 +22,19 @@ test('<LobbyForAudienceContainer /> initialState', () => {
   expect(wrapper.props().menuItems)
     .toEqual([
       {
-        text: 'ID Search',
+        id: 'Menu.showIdSearch',
         types: [ActionTypes.SHOW_ID_SEARCH]
       },
       {
-        text: 'Advanced Search',
+        id: 'Menu.showAdvancedSearch',
         types: [ActionTypes.SHOW_ADVANCED_SEARCH]
       },
       {
-        text: 'Refresh',
+        id: 'Menu.refresh',
         types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
       },
       {
-        text: 'Return to the Main Page',
+        id: 'Menu.returnToMainPage',
         types: [ActionTypes.SHOW_MAIN]
       }
     ])

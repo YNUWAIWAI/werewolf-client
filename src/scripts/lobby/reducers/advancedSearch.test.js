@@ -12,15 +12,15 @@ test('ADVANCED_SEARCH', () => {
         ... initialState,
         menuItems: [
           {
-            text: 'Search',
+            id: 'Menu.search',
             types: [ActionTypes.ADVANCED_SEARCH]
           },
           {
-            text: 'Return to Lobby for Audience',
+            id: 'Menu.returnToLobbyForAudience',
             types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
-            text: 'Return to the Main Page',
+            id: 'Menu.returnToMainPage',
             types: [ActionTypes.SHOW_MAIN]
           }
         ]
@@ -45,15 +45,15 @@ test('ADVANCED_SEARCH', () => {
       menuItems: [
         {
           isLoading: true,
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ADVANCED_SEARCH]
         },
         {
-          text: 'Return to Lobby for Audience',
+          id: 'Menu.returnToLobbyForAudience',
           types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -909,15 +909,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       isPlayer: false,
       menuItems: [
         {
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ADVANCED_SEARCH]
         },
         {
-          text: 'Return to Lobby for Audience',
+          id: 'Menu.returnToLobbyForAudience',
           types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -965,15 +965,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ADVANCED_SEARCH]
         },
         {
-          text: 'Return to Lobby for Human Player',
+          id: 'Menu.returnToLobbyForHumanPlayer',
           types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -1021,15 +1021,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ADVANCED_SEARCH]
         },
         {
-          text: 'Return to Lobby for Robot Player',
+          id: 'Menu.returnToLobbyForRobotPlayer',
           types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -1187,15 +1187,15 @@ describe('socket/MESSAGE', () => {
             menuItems: [
               {
                 isLoading: true,
-                text: 'Search',
+                id: 'Menu.search',
                 types: [ActionTypes.ADVANCED_SEARCH]
               },
               {
-                text: 'Return to Lobby for Audience',
+                id: 'Menu.returnToLobbyForAudience',
                 types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
               },
               {
-                text: 'Return to the Main Page',
+                id: 'Menu.returnToMainPage',
                 types: [ActionTypes.SHOW_MAIN]
               }
             ]
@@ -1220,16 +1220,16 @@ describe('socket/MESSAGE', () => {
           isPlayer: true,
           menuItems: [
             {
+              id: 'Menu.search',
               isLoading: false,
-              text: 'Search',
               types: [ActionTypes.ADVANCED_SEARCH]
             },
             {
-              text: 'Return to Lobby for Audience',
+              id: 'Menu.returnToLobbyForAudience',
               types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
             },
             {
-              text: 'Return to the Main Page',
+              id: 'Menu.returnToMainPage',
               types: [ActionTypes.SHOW_MAIN]
             }
           ],

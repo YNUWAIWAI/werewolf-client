@@ -20,20 +20,20 @@ test('REFRESH', () => {
       isPlayer: false,
       menuItems: [
         {
-          text: 'ID Search',
+          id: 'Menu.showIdSearch',
           types: [ActionTypes.SHOW_ID_SEARCH]
         },
         {
-          text: 'Advanced Search',
+          id: 'Menu.showAdvancedSearch',
           types: [ActionTypes.SHOW_ADVANCED_SEARCH]
         },
         {
+          id: 'Menu.refresh',
           isLoading: true,
-          text: 'Refresh',
           types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -101,20 +101,20 @@ describe('socket/MESSAGE', () => {
         isPlayer: false,
         menuItems: [
           {
-            text: 'ID Search',
+            id: 'Menu.showIdSearch',
             types: [ActionTypes.SHOW_ID_SEARCH]
           },
           {
-            text: 'Advanced Search',
+            id: 'Menu.showAdvancedSearch',
             types: [ActionTypes.SHOW_ADVANCED_SEARCH]
           },
           {
+            id: 'Menu.refresh',
             isLoading: false,
-            text: 'Refresh',
             types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
-            text: 'Return to the Main Page',
+            id: 'Menu.returnToMainPage',
             types: [ActionTypes.SHOW_MAIN]
           }
         ],

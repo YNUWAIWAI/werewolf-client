@@ -1,12 +1,24 @@
 // @flow
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
+import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import React from 'react'
 import WaitingForPlayers from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
+import {createStore} from 'redux'
+import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
+const store = createStore(
+  reducer
+)
+
 storiesOf('lobby|WaitingForPlayers', module)
   .addDecorator(withKnobs)
+  .addDecorator(story =>
+    <IntlProvider store={store}>
+      {story()}
+    </IntlProvider>
+  )
   .add('default', () => {
     const kickOut = token => () => {
       console.log(`kick out ${token}`)
@@ -14,15 +26,15 @@ storiesOf('lobby|WaitingForPlayers', module)
     const transition = () => {}
     const menuItems = [
       {
-        text: 'Play',
+        id: 'Menu.playGame',
         types: [ActionTypes.PLAY_GAME]
       },
       {
-        text: 'Return to Lobby for Human Player',
+        id: 'Menu.returnToLobbyForHumanPlayer',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
-        text: 'Return to the Main Page',
+        id: 'Menu.returnToMainPage',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
       }
     ]
@@ -230,15 +242,15 @@ storiesOf('lobby|WaitingForPlayers', module)
     const transition = () => {}
     const menuItems = [
       {
-        text: 'Play',
+        id: 'Menu.playGame',
         types: [ActionTypes.PLAY_GAME]
       },
       {
-        text: 'Return to Lobby for Human Player',
+        id: 'Menu.returnToLobbyForHumanPlayer',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
-        text: 'Return to the Main Page',
+        id: 'Menu.returnToMainPage',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
       }
     ]

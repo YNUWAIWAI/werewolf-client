@@ -21,15 +21,15 @@ describe('CHANGE_LOBBY', () => {
         isPlayer: true,
         menuItems: [
           {
-            text: 'Play',
+            id: 'Menu.playGame',
             types: [ActionTypes.PLAY_GAME]
           },
           {
-            text: 'Return to Lobby for Human Player',
+            id: 'Menu.returnToLobbyForHumanPlayer',
             types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
-            text: 'Return to the Main Page',
+            id: 'Menu.returnToMainPage',
             types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
           }
         ],
@@ -51,15 +51,15 @@ describe('CHANGE_LOBBY', () => {
         isPlayer: false,
         menuItems: [
           {
-            text: 'Play',
+            id: 'Menu.playGame',
             types: [ActionTypes.PLAY_GAME]
           },
           {
-            text: 'Return to Lobby for Audience',
+            id: 'Menu.returnToLobbyForAudience',
             types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
-            text: 'Return to the Main Page',
+            id: 'Menu.returnToMainPage',
             types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
           }
         ],
@@ -81,15 +81,15 @@ describe('CHANGE_LOBBY', () => {
         isPlayer: true,
         menuItems: [
           {
-            text: 'Play',
+            id: 'Menu.playGame',
             types: [ActionTypes.PLAY_GAME]
           },
           {
-            text: 'Return to Lobby for Robot Player',
+            id: 'Menu.returnToLobbyForRobotPlayer',
             types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
-            text: 'Return to the Main Page',
+            id: 'Menu.returnToMainPage',
             types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
           }
         ],
@@ -115,15 +115,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       isPlayer: false,
       menuItems: [
         {
-          text: 'Play',
+          id: 'Menu.playGame',
           types: [ActionTypes.PLAY_GAME]
         },
         {
-          text: 'Return to Lobby for Audience',
+          id: 'Menu.returnToLobbyForAudience',
           types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
         }
       ],
@@ -148,15 +148,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
-          text: 'Play',
+          id: 'Menu.playGame',
           types: [ActionTypes.PLAY_GAME]
         },
         {
-          text: 'Return to Lobby for Human Player',
+          id: 'Menu.returnToLobbyForHumanPlayer',
           types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
         }
       ],
@@ -181,15 +181,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
-          text: 'Play',
+          id: 'Menu.playGame',
           types: [ActionTypes.PLAY_GAME]
         },
         {
-          text: 'Return to Lobby for Robot Player',
+          id: 'Menu.returnToLobbyForRobotPlayer',
           types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
         }
       ],
@@ -225,16 +225,16 @@ describe('socket/MESSAGE', () => {
             ... initialState,
             menuItems: [
               {
+                id: 'Menu.playGame',
                 isLoading: true,
-                text: 'Play',
                 types: [ActionTypes.PLAY_GAME]
               },
               {
-                text: 'Return to Lobby for Human Player',
+                id: 'Menu.returnToLobbyForHumanPlayer',
                 types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
-                text: 'Return to the Main Page',
+                id: 'Menu.returnToMainPage',
                 types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
               }
             ]
@@ -249,16 +249,16 @@ describe('socket/MESSAGE', () => {
           isPlayer: true,
           menuItems: [
             {
+              id: 'Menu.playGame',
               isLoading: false,
-              text: 'Play',
               types: [ActionTypes.PLAY_GAME]
             },
             {
-              text: 'Return to Lobby for Human Player',
+              id: 'Menu.returnToLobbyForHumanPlayer',
               types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
-              text: 'Return to the Main Page',
+              id: 'Menu.returnToMainPage',
               types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
             }
           ],

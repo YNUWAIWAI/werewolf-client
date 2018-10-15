@@ -71,8 +71,8 @@ declare module 'lobby' {
     | 'SHOW_SETTINGS'
   declare type MenuItem = {
     disabled?: boolean,
+    id: string,
     isLoading?: boolean,
-    text: string,
     types: Target[]
   }
   declare type PingResult = {

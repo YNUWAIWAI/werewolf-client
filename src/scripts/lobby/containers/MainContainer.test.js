@@ -21,23 +21,23 @@ test('<MainContainer /> initialState', () => {
   expect(wrapper.props().menuItems)
     .toEqual([
       {
-        text: 'Lobby for Audience',
+        id: 'Menu.lobbyForAudience',
         types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
       },
       {
-        text: 'Lobby for Robot Player',
+        id: 'Menu.lobbyForRobotPlayer',
         types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
       },
       {
-        text: 'Lobby for Human Player',
+        id: 'Menu.lobbyForHumanPlayer',
         types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
-        text: 'History',
+        id: 'Menu.history',
         types: [ActionTypes.SHOW_HISTORY]
       },
       {
-        text: 'Settings',
+        id: 'Menu.settings',
         types: [ActionTypes.SHOW_SETTINGS]
       }
     ])

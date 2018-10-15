@@ -22,7 +22,7 @@ test('<HistoryContainer /> initialState', () => {
   expect(wrapper.props().menuItems)
     .toEqual([
       {
-        text: 'Return to the Main Page',
+        id: 'Menu.returnToMainPage',
         types: [ActionTypes.SHOW_MAIN]
       }
     ])

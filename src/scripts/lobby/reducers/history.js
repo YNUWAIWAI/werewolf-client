@@ -15,7 +15,7 @@ export const initialState = {
   isPlayer: false,
   menuItems: [
     {
-      text: 'Return to the Main Page',
+      id: 'Menu.returnToMainPage',
       types: [ActionTypes.SHOW_MAIN]
     }
   ],
