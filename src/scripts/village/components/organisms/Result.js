@@ -130,11 +130,23 @@ export default function Result(props: Props) {
       {
         [
           <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
-          <ResultCell key="summary" text={props.summary.description} type="summary" />,
+          <ResultCell
+            id={props.summary.description}
+            key="summary"
+            type="summary"
+          />,
           me,
-          <ResultCell key="caption winners" text={props.summary.winner} type="caption" />,
+          <ResultCell
+            id={props.summary.winner}
+            key="caption winners"
+            type="caption"
+          />,
           ... winners,
-          <ResultCell key="caption losers" text={props.summary.loser} type="caption" />,
+          <ResultCell
+            id={props.summary.loser}
+            key="caption losers"
+            type="caption"
+          />,
           ... losers
         ]
       }
