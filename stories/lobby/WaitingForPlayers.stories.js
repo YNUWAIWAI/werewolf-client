@@ -14,15 +14,15 @@ storiesOf('lobby|WaitingForPlayers', module)
     const transition = () => {}
     const menuItems = [
       {
-        text: 'Play',
+        id: 'Menu.playGame',
         types: [ActionTypes.PLAY_GAME]
       },
       {
-        text: 'Return to Lobby for Human Player',
+        id: 'Menu.returnToLobbyForHumanPlayer',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
-        text: 'Return to the Main Page',
+        id: 'Menu.returnToMainPage',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
       }
     ]
@@ -230,15 +230,15 @@ storiesOf('lobby|WaitingForPlayers', module)
     const transition = () => {}
     const menuItems = [
       {
-        text: 'Play',
+        id: 'Menu.playGame',
         types: [ActionTypes.PLAY_GAME]
       },
       {
-        text: 'Return to Lobby for Human Player',
+        id: 'Menu.returnToLobbyForHumanPlayer',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
-        text: 'Return to the Main Page',
+        id: 'Menu.returnToMainPage',
         types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
       }
     ]
