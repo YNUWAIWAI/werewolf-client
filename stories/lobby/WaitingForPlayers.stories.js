@@ -1,12 +1,24 @@
 // @flow
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
+import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import React from 'react'
 import WaitingForPlayers from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
+import {createStore} from 'redux'
+import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
+const store = createStore(
+  reducer
+)
+
 storiesOf('lobby|WaitingForPlayers', module)
   .addDecorator(withKnobs)
+  .addDecorator(story =>
+    <IntlProvider store={store}>
+      {story()}
+    </IntlProvider>
+  )
   .add('default', () => {
     const kickOut = token => () => {
       console.log(`kick out ${token}`)
