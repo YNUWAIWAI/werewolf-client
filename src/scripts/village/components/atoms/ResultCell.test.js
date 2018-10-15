@@ -1,12 +1,15 @@
 // @flow
 import React from 'react'
 import ResultCell from './ResultCell'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/village'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<ResultCell />', () => {
   describe('type="image"', () => {
     test('status="alive"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="alive"
@@ -20,7 +23,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="dead"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="dead"
@@ -34,7 +37,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="death by execution"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="death by execution"
@@ -48,7 +51,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="death by werewolf attack"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="death by werewolf attack"
@@ -62,7 +65,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="death by fear"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="death by fear"
@@ -76,7 +79,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="unnatural death"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="unnatural death"
@@ -92,7 +95,7 @@ describe('<ResultCell />', () => {
   })
   describe('type="userAvatar"', () => {
     test('status="alive"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="alive"
@@ -106,7 +109,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="dead"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="dead"
@@ -120,7 +123,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="death by execution"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="death by execution"
@@ -134,7 +137,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="death by werewolf attack"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="death by werewolf attack"
@@ -148,7 +151,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="death by fear"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="death by fear"
@@ -162,7 +165,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="unnatural death"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="unnatural death"
@@ -177,9 +180,8 @@ describe('<ResultCell />', () => {
     })
   })
   describe('type="roleImage"', () => {
-
     test('status="alive"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           caption="caption"
           image="image"
@@ -195,7 +197,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
     })
     test('status="dead"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           caption="caption"
           image="image"
@@ -211,7 +213,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
     })
     test('status="death by execution"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           caption="caption"
           image="image"
@@ -227,7 +229,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
     })
     test('status="death by werewolf attack"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           caption="caption"
           image="image"
@@ -243,7 +245,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
     })
     test('status="death by fear"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           caption="caption"
           image="image"
@@ -259,7 +261,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
     })
     test('status="unnatural death"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           caption="caption"
           image="image"
@@ -275,33 +277,33 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
     })
   })
-  test('type="summary"', () => {
-    const wrapper = shallow(
-      <ResultCell
-        text="text"
-        type="summary"
-      />
-    )
-
-    expect(wrapper.find('.result--cell').exists()).toBe(true)
-    expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
-    expect(wrapper.find('.result--cell').text()).toBe('text')
-  })
   test('type="caption"', () => {
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <ResultCell
-        text="text"
+        id="Result.summary.loser(villager, werehumster)"
         type="caption"
       />
     )
 
     expect(wrapper.find('.result--cell').exists()).toBe(true)
     expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
-    expect(wrapper.find('.result--cell').text()).toBe('text')
+    expect(wrapper.find('.result--cell').text()).toBe('敗者（村人陣営，ハムスター人間陣営）')
   })
-  describe('type="caption"', () => {
+  test('type="summary"', () => {
+    const wrapper = mountWithIntl(
+      <ResultCell
+        id="Result.summary.description(player, villagerLose, youLose)"
+        type="summary"
+      />
+    )
+
+    expect(wrapper.find('.result--cell').exists()).toBe(true)
+    expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
+    expect(wrapper.find('.result--cell').text()).toBe('村人陣営の敗北のため，あなたは負けました')
+  })
+  describe('type="name"', () => {
     test('status="alive"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="alive"
           text="text"
@@ -315,7 +317,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="dead"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="dead"
           text="text"
@@ -329,7 +331,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by execution"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by execution"
           text="text"
@@ -343,7 +345,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by werewolf attack"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by werewolf attack"
           text="text"
@@ -357,7 +359,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by fear"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by fear"
           text="text"
@@ -371,7 +373,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="unnatural death"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="unnatural death"
           text="text"
@@ -387,10 +389,9 @@ describe('<ResultCell />', () => {
   })
   describe('type="status"', () => {
     test('status="alive', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="alive"
-          text="text"
           type="status"
         />
       )
@@ -398,13 +399,12 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
-      expect(wrapper.text()).toBe('text')
+      expect(wrapper.text()).toBe('生存')
     })
     test('status="dead', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="dead"
-          text="text"
           type="status"
         />
       )
@@ -412,13 +412,12 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.text()).toBe('text')
+      expect(wrapper.text()).toBe('死亡')
     })
     test('status="death by execution', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by execution"
-          text="text"
           type="status"
         />
       )
@@ -426,13 +425,12 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.text()).toBe('text')
+      expect(wrapper.text()).toBe('処刑死')
     })
     test('status="death by werewolf attack', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by werewolf attack"
-          text="text"
           type="status"
         />
       )
@@ -440,13 +438,12 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.text()).toBe('text')
+      expect(wrapper.text()).toBe('襲撃死')
     })
     test('status="death by fear', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by fear"
-          text="text"
           type="status"
         />
       )
@@ -454,13 +451,12 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.text()).toBe('text')
+      expect(wrapper.text()).toBe('恐怖死')
     })
     test('status="unnatural death', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="unnatural death"
-          text="text"
           type="status"
         />
       )
@@ -468,12 +464,12 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.text()).toBe('text')
+      expect(wrapper.text()).toBe('不審死')
     })
   })
   describe('type="userName"', () => {
     test('status="alive"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="alive"
           text="text"
@@ -487,7 +483,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="dead"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="dead"
           text="text"
@@ -501,7 +497,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by execution"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by execution"
           text="text"
@@ -515,7 +511,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by werewolf attack"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by werewolf attack"
           text="text"
@@ -529,7 +525,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by fear"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="death by fear"
           text="text"
@@ -543,7 +539,7 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('text')
     })
     test('status="unnatural death"', () => {
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <ResultCell
           status="unnatural death"
           text="text"
