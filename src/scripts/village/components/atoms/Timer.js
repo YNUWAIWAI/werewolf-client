@@ -23,16 +23,6 @@ export default class Timer extends React.Component<Props, State> {
     this.intervalID = []
   }
 
-  componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.limit === -1) {
-      return
-    }
-    this.intervalID = [
-      ... this.intervalID,
-      setInterval(() => this.tick(), 200)
-    ]
-  }
-
   shouldComponentUpdate(nextProps: Props, nextState: State) {
     if (nextProps.phase !== this.props.phase) {
       if (nextProps.limit === -1) {
@@ -46,6 +36,15 @@ export default class Timer extends React.Component<Props, State> {
     }
 
     return false
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.phase !== prevProps.phase && this.props.limit !== -1) {
+      this.intervalID = [
+        ... this.intervalID,
+        setInterval(() => this.tick(), 200)
+      ]
+    }
   }
 
   tick() {
