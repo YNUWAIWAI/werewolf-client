@@ -1,13 +1,25 @@
 // @flow
 /* eslint sort-keys: 0 */
+import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import React from 'react'
 import Result from '../../src/scripts/village/components/organisms/Result'
 import {action} from '@storybook/addon-actions'
+import {createStore} from 'redux'
+import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
+const store = createStore(
+  reducer
+)
+
 storiesOf('village|Result', module)
   .addDecorator(withKnobs)
+  .addDecorator(story =>
+    <IntlProvider store={store}>
+      {story()}
+    </IntlProvider>
+  )
   .add('13 players', () => {
     const agents = {
       'agent0': {
@@ -162,9 +174,9 @@ storiesOf('village|Result', module)
     ]
     const me = 'agent0'
     const summary = {
-      description: '人間側の勝利のため，あなたは勝ちました',
-      loser: '敗者（人狼チーム）',
-      winner: '勝者（人間チーム）'
+      description: 'Result.summary.description(player, villagerWin, youWin)',
+      loser: 'Result.summary.loser(werewolf)',
+      winner: 'Result.summary.winner(villager)'
     }
     const winners = [
       'agent0',
@@ -254,9 +266,9 @@ storiesOf('village|Result', module)
     ]
     const me = 'agent0'
     const summary = {
-      description: '人間側の勝利のため，あなたは勝ちました',
-      loser: '敗者（人狼チーム）',
-      winner: '勝者（人間チーム）'
+      description: 'Result.summary.description(player, villagerWin, youWin)',
+      loser: 'Result.summary.loser(werewolf)',
+      winner: 'Result.summary.winner(villager)'
     }
     const winners = [
       'agent0',
