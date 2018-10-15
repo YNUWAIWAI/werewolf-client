@@ -1,6 +1,6 @@
 // @flow
-import {FormattedMessage, injectIntl} from 'react-intl'
 import ChatIcon from '../atoms/ChatIcon'
+import {FormattedMessage} from 'react-intl'
 import React from 'react'
 import {getChannelFromInputChennel} from '../../constants/Channels'
 import {spaceSeparatedToCamelCase} from '../../util'
@@ -82,20 +82,19 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   render() {
-    const Textarea = injectIntl(({intl}) =>
-      <textarea
-        onChange={(event: SyntheticInputEvent<HTMLTextAreaElement>) => this.handleTextChange(event)}
-        onKeyDown={(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) => this.handleKeyDown(event)}
-        placeholder={intl.formatMessage({
-          id: `CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.kind)}`
-        })}
-        value={this.state.text}
-      />
-    )
-
     return (
       <form className={`command--input ${spaceSeparatedToCamelCase(this.props.kind)}`}>
-        <Textarea />
+        <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.kind)}`}>
+          {
+            (text: string) =>
+              <textarea
+                onChange={(event: SyntheticInputEvent<HTMLTextAreaElement>) => this.handleTextChange(event)}
+                onKeyDown={(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) => this.handleKeyDown(event)}
+                placeholder={text}
+                value={this.state.text}
+              />
+          }
+        </FormattedMessage>
         <span className={`command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
           {this.state.textCount}
         </span>
