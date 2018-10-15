@@ -21,7 +21,7 @@ export type Props =
 export default function ConnectingToRobotPlayer(props: Props) {
   return (
     <div className="grid">
-      <Header text="Connecting to Robot Player" />
+      <Header id="Header.connectingToRobotPlayer" />
       <MainContent>
         {'TODO'}
       </MainContent>

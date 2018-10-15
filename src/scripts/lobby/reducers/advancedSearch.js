@@ -181,7 +181,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
-        header: 'Audience\'s Advanced Search',
+        header: 'Header.advancedSearch(audience)',
         isPlayer: false,
         menuItems: [
           {
@@ -202,7 +202,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
-        header: 'Human Player\'s Advanced Search',
+        header: 'Header.advancedSearch(human player)',
         isPlayer: true,
         menuItems: [
           {
@@ -223,7 +223,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
-        header: 'Robot Player\'s Advanced Search',
+        header: 'Header.advancedSearch(robot player)',
         isPlayer: true,
         menuItems: [
           {

@@ -52,7 +52,7 @@ export type Props =
 export default function AdvancedSearch(props: Props) {
   return (
     <div className="grid">
-      <Header text={props.header} />
+      <Header id={props.header} />
       <Avatar image={props.image} name={props.name} />
       <MainContent>
         <AdvancedSearchBox

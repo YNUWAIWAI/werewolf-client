@@ -32,7 +32,7 @@ export type Props =
 export default function Setting(props: Props) {
   return (
     <div className="grid">
-      <Header text="Settings" />
+      <Header id="Header.settings" />
       <MainContent>
         <SettingsBox
           handleChangeLanguage={props.handleChangeLanguage}

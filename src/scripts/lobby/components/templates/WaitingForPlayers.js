@@ -39,7 +39,7 @@ export default function WaitingForPlayers(props: Props) {
 
   return (
     <div className="grid">
-      <Header text="Waiting for Players" />
+      <Header id="Header.waitingForPlayers" />
       <MainContent>
         {
           props.village ?

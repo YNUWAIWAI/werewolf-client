@@ -1,14 +1,22 @@
 // @flow
+import {FormattedMessage} from 'react-intl'
 import React from 'react'
 
 type Props = {
-  +text: string
+  +id: string
 }
 
 export default function Header(props: Props) {
   return (
-    <div className="header">
-      {props.text}
-    </div>
+    <FormattedMessage
+      id={props.id}
+    >
+      {
+        (text: string) =>
+          <div className="header">
+            {text}
+          </div>
+      }
+    </FormattedMessage>
   )
 }

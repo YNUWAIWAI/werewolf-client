@@ -45,7 +45,7 @@ export type Props =
 export default function BuildVillage(props: Props) {
   return (
     <div className="grid">
-      <Header text="Build village" />
+      <Header id="Header.buildVillage" />
       <MainContent>
         <BuildVillageBox
           handleAvatarChange={props.handleAvatarChange}
