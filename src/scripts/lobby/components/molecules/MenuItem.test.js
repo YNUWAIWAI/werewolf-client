@@ -1,64 +1,65 @@
 // @flow
 import MenuItem from './MenuItem'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<MenuItem />', () => {
   test('default', () => {
     const transition = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <MenuItem
         className="className"
-        text="text"
+        id="Menu.returnToMainPage"
         transition={transition}
         types={['SHOW_MAIN']}
       />
     )
 
-    expect(wrapper.text()).toBe('text')
-    expect(wrapper.hasClass('className')).toBe(true)
+    expect(wrapper.text()).toBe('Return to the Main Page')
+    expect(wrapper.find('li.className').exists()).toBe(true)
     expect(transition).toHaveBeenCalledTimes(0)
   })
   test('disabled', () => {
     const transition = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <MenuItem
         className="className"
         disabled
-        text="text"
+        id="Menu.returnToMainPage"
         transition={transition}
         types={['SHOW_MAIN']}
       />
     )
 
-    expect(wrapper.text()).toBe('text')
-    expect(wrapper.hasClass('className')).toBe(true)
-    expect(wrapper.hasClass('disabled')).toBe(true)
+    expect(wrapper.text()).toBe('Return to the Main Page')
+    expect(wrapper.find('li.className').hasClass('disabled')).toBe(true)
     expect(transition).toHaveBeenCalledTimes(0)
   })
   test('isLoading', () => {
     const transition = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <MenuItem
         className="className"
+        id="Menu.returnToMainPage"
         isLoading
-        text="text"
         transition={transition}
         types={['SHOW_MAIN']}
       />
     )
 
-    expect(wrapper.text()).toBe('<Loader />')
-    expect(wrapper.hasClass('className')).toBe(true)
-    expect(wrapper.hasClass('loader')).toBe(true)
+    expect(wrapper.text()).toBe('')
+    expect(wrapper.find('li.className').hasClass('loader')).toBe(true)
     expect(transition).toHaveBeenCalledTimes(0)
   })
   test('onClick: default', () => {
     const transition = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <MenuItem
         className="className"
-        text="text"
+        id="Menu.returnToMainPage"
         transition={transition}
         types={['SHOW_MAIN']}
       />
@@ -70,11 +71,11 @@ describe('<MenuItem />', () => {
   })
   test('onClick: disabled', () => {
     const transition = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <MenuItem
         className="className"
         disabled
-        text="text"
+        id="Menu.returnToMainPage"
         transition={transition}
         types={['SHOW_MAIN']}
       />

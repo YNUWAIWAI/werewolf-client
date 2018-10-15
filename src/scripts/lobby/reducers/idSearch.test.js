@@ -22,15 +22,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       menuItems: [
         {
           disabled: true,
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ID_SEARCH]
         },
         {
-          text: 'Return to Lobby for Audience',
+          id: 'Menu.returnToLobbyForAudience',
           types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -56,15 +56,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           disabled: true,
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ID_SEARCH]
         },
         {
-          text: 'Return to Lobby for Human Player',
+          id: 'Menu.returnToLobbyForHumanPlayer',
           types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -90,15 +90,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           disabled: true,
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ID_SEARCH]
         },
         {
-          text: 'Return to Lobby for Robot Player',
+          id: 'Menu.returnToLobbyForRobotPlayer',
           types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
@@ -136,15 +136,15 @@ test('idSearch/CHANGE_VALIDITY', () => {
         menuItems: [
           {
             disabled: true,
-            text: 'Search',
+            id: 'Menu.search',
             types: [ActionTypes.ID_SEARCH]
           },
           {
-            text: 'Return to Lobby for Audience',
+            id: 'Menu.returnToLobbyForAudience',
             types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
-            text: 'Return to the Main Page',
+            id: 'Menu.returnToMainPage',
             types: [ActionTypes.SHOW_MAIN]
           }
         ]
@@ -164,15 +164,15 @@ test('idSearch/CHANGE_VALIDITY', () => {
       menuItems: [
         {
           disabled: false,
-          text: 'Search',
+          id: 'Menu.search',
           types: [ActionTypes.ID_SEARCH]
         },
         {
-          text: 'Return to Lobby for Audience',
+          id: 'Menu.returnToLobbyForAudience',
           types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
-          text: 'Return to the Main Page',
+          id: 'Menu.returnToMainPage',
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
