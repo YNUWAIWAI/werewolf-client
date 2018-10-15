@@ -437,9 +437,9 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
   ])
   expect(wrapper.props().me).toBe('agent0')
   expect(wrapper.props().summary).toEqual({
-    description: '人間陣営の勝利のため，あなたは勝ちました',
-    loser: '敗者（人狼陣営，ハムスター人間陣営）',
-    winner: '勝者（村人陣営）'
+    description: 'Result.summary.description(player, villagerWin, youWin)',
+    loser: 'Result.summary.loser(werewolf, werehumster)',
+    winner: 'Result.summary.winner(villager)'
   })
   expect(wrapper.props().winners).toEqual([
     'agent0',
@@ -886,9 +886,9 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
   ])
   expect(wrapper.props().me).toBe('agent0')
   expect(wrapper.props().summary).toEqual({
-    description: '人間陣営の勝利のため，あなたは勝ちました',
-    loser: '敗者（人狼陣営）',
-    winner: '勝者（村人陣営，ハムスター人間陣営）'
+    description: 'Result.summary.description(player, villagerWin, youWin)',
+    loser: 'Result.summary.loser(werewolf)',
+    winner: 'Result.summary.winner(villager, werehumster)'
   })
   expect(wrapper.props().winners).toEqual([
     'agent0',
@@ -1306,9 +1306,9 @@ test('<ResultContainer /> werehumster does not exist', () => {
   ])
   expect(wrapper.props().me).toBe('agent0')
   expect(wrapper.props().summary).toEqual({
-    description: '人間陣営の勝利のため，あなたは勝ちました',
-    loser: '敗者（人狼陣営）',
-    winner: '勝者（村人陣営）'
+    description: 'Result.summary.description(player, villagerWin, youWin)',
+    loser: 'Result.summary.loser(werewolf)',
+    winner: 'Result.summary.winner(villager)'
   })
   expect(wrapper.props().winners).toEqual([
     'agent0',
