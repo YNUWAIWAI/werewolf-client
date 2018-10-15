@@ -33,7 +33,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
-        header: 'Audience\'s ID Search',
+        header: 'Header.idSearch(audience)',
         id: -1,
         isPlayer: false,
         menuItems: [
@@ -56,7 +56,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
-        header: 'Human Player\'s ID Search',
+        header: 'Header.idSearch(human player)',
         id: -1,
         isPlayer: true,
         menuItems: [
@@ -79,7 +79,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
-        header: 'Robot Player\'s ID Search',
+        header: 'Header.idSearch(robot player)',
         id: -1,
         isPlayer: true,
         menuItems: [

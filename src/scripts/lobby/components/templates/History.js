@@ -26,7 +26,7 @@ export type Props =
 export default function History(props: Props) {
   return (
     <div className="grid">
-      <Header text="History" />
+      <Header id="Header.history" />
       <MainContent>
         <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
       </MainContent>

@@ -904,7 +904,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         minimum: false,
         villageName: false
       },
-      header: 'Audience\'s Advanced Search',
+      header: 'Header.advancedSearch(audience)',
       image: '',
       isPlayer: false,
       menuItems: [
@@ -960,7 +960,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         minimum: false,
         villageName: false
       },
-      header: 'Human Player\'s Advanced Search',
+      header: 'Header.advancedSearch(human player)',
       image: '',
       isPlayer: true,
       menuItems: [
@@ -1016,7 +1016,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         minimum: false,
         villageName: false
       },
-      header: 'Robot Player\'s Advanced Search',
+      header: 'Header.advancedSearch(robot player)',
       image: '',
       isPlayer: true,
       menuItems: [

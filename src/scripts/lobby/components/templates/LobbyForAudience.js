@@ -29,7 +29,7 @@ export type Props =
 export default function LobbyForAudience(props: Props) {
   return (
     <div className="grid">
-      <Header text="Lobby for Audience" />
+      <Header id="Header.lobbyForAudience" />
       <Avatar image={props.image} name={props.name} />
       <MainContent>
         <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />

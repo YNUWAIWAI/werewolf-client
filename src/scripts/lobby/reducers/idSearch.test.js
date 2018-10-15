@@ -15,7 +15,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     )
   ).toEqual(
     {
-      header: 'Audience\'s ID Search',
+      header: 'Header.idSearch(audience)',
       id: -1,
       image: '',
       isPlayer: false,
@@ -49,7 +49,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     )
   ).toEqual(
     {
-      header: 'Human Player\'s ID Search',
+      header: 'Header.idSearch(human player)',
       id: -1,
       image: '',
       isPlayer: true,
@@ -83,7 +83,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     )
   ).toEqual(
     {
-      header: 'Robot Player\'s ID Search',
+      header: 'Header.idSearch(robot player)',
       id: -1,
       image: '',
       isPlayer: true,
