@@ -22,7 +22,11 @@ type Props =
   | {
     +status: AgentStatus,
     +text: string,
-    +type: 'name' | 'status' | 'userName'
+    +type: 'name' | 'userName'
+  }
+  | {
+    +status: AgentStatus,
+    +type: 'status'
   }
 
 export default function ResultCell(props: Props) {
