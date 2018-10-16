@@ -29,4 +29,13 @@ export default {
   'Menu.showAdvancedSearch': 'Advanced Search',
   'Menu.showBuildVillage': 'Build your Village',
   'Menu.showIdSearch': 'ID Search',
+  'Settings.button(deactivate)': 'DEACTIVATE',
+  'Settings.button(logout)': 'LOGOUT',
+  'Settings.button(save)': 'SAVE',
+  'Settings.head(danger)': 'Danger Zone',
+  'Settings.head(language)': 'Language',
+  'Settings.head(user)': 'User',
+  'Settings.label(userEmail)': 'E-mail',
+  'Settings.label(userName)': 'Name',
+  'Settings.label(userPassword)': 'Password',
 }
