@@ -1,11 +1,23 @@
 // @flow
 import AdvancedSearchBox from '../../src/scripts/lobby/components/organisms/AdvancedSearchBox'
+import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import React from 'react'
+import {createStore} from 'redux'
+import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
+const store = createStore(
+  reducer
+)
+
 storiesOf('lobby|AdvancedSearchBox', module)
   .addDecorator(withKnobs)
+  .addDecorator(story =>
+    <IntlProvider store={store}>
+      {story()}
+    </IntlProvider>
+  )
   .add('default', () => {
     const checked = {
       avatar: true,

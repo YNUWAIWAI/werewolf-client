@@ -1,4 +1,13 @@
 export default {
+  'AdvancedSearch.label(avatar)': 'Avatar',
+  'AdvancedSearch.label(comment)': 'Comment',
+  'AdvancedSearch.label(hostName)': 'Host Name',
+  'AdvancedSearch.label(maximum)': 'Maximum',
+  'AdvancedSearch.label(minimum)': 'Minimum',
+  'AdvancedSearch.label(villageName)': 'Village Name',
+  'AdvancedSearch.placeholder(comment)': '{min}-{max} chars',
+  'AdvancedSearch.placeholder(hostName)': '{min}-{max} chars',
+  'AdvancedSearch.placeholder(villageName)': '{min}-{max} chars',
   'Header.advancedSearch(audience)': 'Audience\'s Advanced Search',
   'Header.advancedSearch(human player)': 'Human Player\'s Advanced Search',
   'Header.advancedSearch(robot player)': 'Robot Player\'s Advanced Search',

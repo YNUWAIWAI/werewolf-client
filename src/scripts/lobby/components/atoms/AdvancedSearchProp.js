@@ -1,10 +1,10 @@
 // @flow
+import {FormattedMessage} from 'react-intl'
 import React from 'react'
 
 type Props = {
   +checked: boolean,
   +handleClick: boolean => void,
-  +label: string,
   +name: string,
   +validity: boolean
 }
@@ -20,9 +20,16 @@ export default function AdvancedSearchProp(props: Props) {
         readOnly
         type="checkbox"
       />
-      <label htmlFor={props.name}>
-        {props.label}
-      </label>
+      <FormattedMessage
+        id={`AdvancedSearch.label(${props.name})`}
+      >
+        {
+          (text: string) =>
+            <label htmlFor={props.name}>
+              {text}
+            </label>
+        }
+      </FormattedMessage>
     </div>
   )
 }

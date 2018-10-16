@@ -2,6 +2,7 @@
 import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
 import type {Avatar} from 'lobby'
 import AvatarSelect from '../atoms/AvatarSelect'
+import {FormattedMessage} from 'react-intl'
 import NumberSelect from '../atoms/NumberSelect'
 import React from 'react'
 import TextInput from '../atoms/TextInput'
@@ -82,47 +83,70 @@ export default function AdvancedSearchBox(props: Props) {
         throw Error(`Unknown: ${propName}`)
     }
   }
+  const comment = {
+    max: 100,
+    min: 0
+  }
+  const hostName = {
+    max: 15,
+    min: 5
+  }
+  const villageName = {
+    max: 30,
+    min: 5
+  }
 
   return (
     <div className="advanced-search">
       <AdvancedSearchProp
         checked={props.checked.villageName}
         handleClick={handleClick('villageName')}
-        label="Village Name"
         name="villageName"
         validity={props.validity.villageName}
       />
-      <TextInput
-        className="advanced-search--input"
-        handleChange={handleChange('villageName')}
-        initialValue=""
-        max={30}
-        min={5}
-        placeholder="5-30 chars"
-        required={false}
-      />
-
+      <FormattedMessage
+        id="AdvancedSearch.placeholder(villageName)"
+        values={villageName}
+      >
+        {
+          (text: string) =>
+            <TextInput
+              className="advanced-search--input"
+              handleChange={handleChange('villageName')}
+              initialValue=""
+              max={villageName.max}
+              min={villageName.min}
+              placeholder={text}
+              required={false}
+            />
+        }
+      </FormattedMessage>
       <AdvancedSearchProp
         checked={props.checked.hostName}
         handleClick={handleClick('hostName')}
-        label="Host Name"
         name="hostName"
         validity={props.validity.hostName}
       />
-      <TextInput
-        className="advanced-search--input"
-        handleChange={handleChange('hostName')}
-        initialValue=""
-        max={15}
-        min={5}
-        placeholder="5-15 chars"
-        required={false}
-      />
-
+      <FormattedMessage
+        id="AdvancedSearch.placeholder(hostName)"
+        values={hostName}
+      >
+        {
+          (text: string) =>
+            <TextInput
+              className="advanced-search--input"
+              handleChange={handleChange('hostName')}
+              initialValue=""
+              max={hostName.max}
+              min={hostName.min}
+              placeholder={text}
+              required={false}
+            />
+        }
+      </FormattedMessage>
       <AdvancedSearchProp
         checked={props.checked.minimum}
         handleClick={handleClick('minimum')}
-        label="Minimum"
         name="minimum"
         validity={props.validity.minimum}
       />
@@ -139,7 +163,6 @@ export default function AdvancedSearchBox(props: Props) {
       <AdvancedSearchProp
         checked={props.checked.maximum}
         handleClick={handleClick('maximum')}
-        label="Maximum"
         name="maximum"
         validity={props.validity.maximum}
       />
@@ -156,7 +179,6 @@ export default function AdvancedSearchBox(props: Props) {
       <AdvancedSearchProp
         checked={props.checked.avatar}
         handleClick={handleClick('avatar')}
-        label="Avatar"
         name="avatar"
         validity={props.validity.avatar}
       />
@@ -170,20 +192,27 @@ export default function AdvancedSearchBox(props: Props) {
       <AdvancedSearchProp
         checked={props.checked.comment}
         handleClick={handleClick('comment')}
-        label="Comment"
         name="comment"
         validity={props.validity.comment}
       />
-      <TextareaInput
-        className="advanced-search--input"
-        handleChange={handleChange('comment')}
-        initialValue=""
-        max={100}
-        min={0}
-        placeholder="0-100 chars"
-        required={false}
-        rows={3}
-      />
+      <FormattedMessage
+        id="AdvancedSearch.placeholder(comment)"
+        values={comment}
+      >
+        {
+          (text: string) =>
+            <TextareaInput
+              className="advanced-search--input"
+              handleChange={handleChange('comment')}
+              initialValue=""
+              max={comment.max}
+              min={comment.min}
+              placeholder={text}
+              required={false}
+              rows={3}
+            />
+        }
+      </FormattedMessage>
     </div>
   )
 }
