@@ -1,5 +1,6 @@
 // @flow
 import EmailInput from '../atoms/EmailInput'
+import {FormattedMessage} from 'react-intl'
 import type {Language} from 'lobby'
 import LanguageSelect from '../atoms/LanguageSelect'
 import PasswordInput from '../atoms/PasswordInput'
@@ -100,9 +101,16 @@ export default class SettingsBox extends React.Component<Props, State> {
     return (
       <div className="settings">
         <div className="settings--bucket">
-          <div className="settings--bucket--head">
-            {'Language'}
-          </div>
+          <FormattedMessage
+            id="Settings.head(language)"
+          >
+            {
+              (text: string) =>
+                <div className="settings--bucket--head">
+                  {text}
+                </div>
+            }
+          </FormattedMessage>
           <form
             className="settings--bucket--form"
             onSubmit={event => this.handleSubmit('language')(event)}
@@ -112,29 +120,50 @@ export default class SettingsBox extends React.Component<Props, State> {
               defaultValue={this.props.initialValue.language}
               handleChange={(() => this.handleChange('language'))()}
             />
-            <button
-              className="settings--bucket--form--button"
-              disabled={!this.state.language.validity}
-              type="submit"
+            <FormattedMessage
+              id="Settings.button(save)"
             >
-              {'SAVE'}
-            </button>
+              {
+                (text: string) =>
+                  <button
+                    className="settings--bucket--form--button"
+                    disabled={!this.state.language.validity}
+                    type="submit"
+                  >
+                    {text}
+                  </button>
+              }
+            </FormattedMessage>
           </form>
         </div>
         <div className="settings--bucket">
-          <div className="settings--bucket--head">
-            {'User'}
-          </div>
+          <FormattedMessage
+            id="Settings.head(user)"
+          >
+            {
+              (text: string) =>
+                <div className="settings--bucket--head">
+                  {text}
+                </div>
+            }
+          </FormattedMessage>
           <form
             className="settings--bucket--form"
             onSubmit={event => this.handleSubmit('userName')(event)}
           >
-            <label
-              className="settings--bucket--form--label"
-              htmlFor="userName"
+            <FormattedMessage
+              id="Settings.label(userName)"
             >
-              {'Name'}
-            </label>
+              {
+                (text: string) =>
+                  <label
+                    className="settings--bucket--form--label"
+                    htmlFor="userName"
+                  >
+                    {text}
+                  </label>
+              }
+            </FormattedMessage>
             <TextInput
               className="settings--bucket--form--field"
               handleChange={(() => this.handleChange('userName'))()}
@@ -145,87 +174,143 @@ export default class SettingsBox extends React.Component<Props, State> {
               placeholder=""
               required
             />
-            <button
-              className="settings--bucket--form--button"
-              disabled={!this.state.userName.validity}
-              type="submit"
+            <FormattedMessage
+              id="Settings.button(save)"
             >
-              {'SAVE'}
-            </button>
+              {
+                (text: string) =>
+                  <button
+                    className="settings--bucket--form--button"
+                    disabled={!this.state.userName.validity}
+                    type="submit"
+                  >
+                    {text}
+                  </button>
+              }
+            </FormattedMessage>
           </form>
           <form
             className="settings--bucket--form"
             onSubmit={event => this.handleSubmit('userEmail')(event)}
           >
-            <label
-              className="settings--bucket--form--label"
-              htmlFor="userEmail"
+            <FormattedMessage
+              id="Settings.label(userEmail)"
             >
-              {'E-mail'}
-            </label>
+              {
+                (text: string) =>
+                  <label
+                    className="settings--bucket--form--label"
+                    htmlFor="userEmail"
+                  >
+                    {text}
+                  </label>
+              }
+            </FormattedMessage>
             <EmailInput
               className="settings--bucket--form--field"
               handleChange={(() => this.handleChange('userEmail'))()}
               id="userEmail"
               initialValue={this.props.initialValue.userEmail}
             />
-            <button
-              className="settings--bucket--form--button"
-              disabled={!this.state.userEmail.validity}
-              type="submit"
+            <FormattedMessage
+              id="Settings.button(save)"
             >
-              {'SAVE'}
-            </button>
+              {
+                (text: string) =>
+                  <button
+                    className="settings--bucket--form--button"
+                    disabled={!this.state.userEmail.validity}
+                    type="submit"
+                  >
+                    {text}
+                  </button>
+              }
+            </FormattedMessage>
           </form>
           <form
             className="settings--bucket--form"
             onSubmit={event => this.handleSubmit('userPassword')(event)}
           >
-            <label
-              className="settings--bucket--form--label"
-              htmlFor="userPassword"
+            <FormattedMessage
+              id="Settings.label(userPassword)"
             >
-              {'Password'}
-            </label>
+              {
+                (text: string) =>
+                  <label
+                    className="settings--bucket--form--label"
+                    htmlFor="userPassword"
+                  >
+                    {text}
+                  </label>
+              }
+            </FormattedMessage>
             <PasswordInput
               className="settings--bucket--form--field"
               handleChange={(() => this.handleChange('userPassword'))()}
               id="userPassword"
             />
-            <button
-              className="settings--bucket--form--button"
-              disabled={!this.state.userPassword.validity}
-              type="submit"
+            <FormattedMessage
+              id="Settings.button(save)"
             >
-              {'SAVE'}
-            </button>
+              {
+                (text: string) =>
+                  <button
+                    className="settings--bucket--form--button"
+                    disabled={!this.state.userPassword.validity}
+                    type="submit"
+                  >
+                    {text}
+                  </button>
+              }
+            </FormattedMessage>
           </form>
         </div>
         <div className="settings--bucket danger">
-          <div className="settings--bucket--head danger">
-            {'Danger Zone'}
-          </div>
+          <FormattedMessage
+            id="Settings.head(danger)"
+          >
+            {
+              (text: string) =>
+                <div className="settings--bucket--head danger">
+                  {text}
+                </div>
+            }
+          </FormattedMessage>
           <form
             className="settings--bucket--form danger"
             onSubmit={event => this.handleSubmit('logout')(event)}
           >
-            <button
-              className={`settings--bucket--form--button ${this.state.language.validity ? '' : 'invalid'}`}
-              type="submit"
+            <FormattedMessage
+              id="Settings.button(logout)"
             >
-              {'LOGOUT'}
-            </button>
+              {
+                (text: string) =>
+                  <button
+                    className={`settings--bucket--form--button ${this.state.language.validity ? '' : 'invalid'}`}
+                    type="submit"
+                  >
+                    {text}
+                  </button>
+              }
+            </FormattedMessage>
           </form>
           <form
             className="settings--bucket--form danger"
             onSubmit={event => this.handleSubmit('deactivate')(event)}
           >
-            <button
-              className={`settings--bucket--form--button ${this.state.language.validity ? '' : 'invalid'}`}
-              type="submit"
+            <FormattedMessage
+              id="Settings.button(deactivate)"
             >
-              {'DEACTIVATE'}
-            </button>
+              {
+                (text: string) =>
+                  <button
+                    className={`settings--bucket--form--button ${this.state.language.validity ? '' : 'invalid'}`}
+                    type="submit"
+                  >
+                    {text}
+                  </button>
+              }
+            </FormattedMessage>
           </form>
         </div>
       </div>
