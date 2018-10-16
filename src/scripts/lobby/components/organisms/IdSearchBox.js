@@ -1,11 +1,11 @@
 // @flow
+import {FormattedMessage} from 'react-intl'
 import React from 'react'
 
-export type Props = {
-  handleSearchIdChange: number => void,
-  handleValidityChange: boolean => void,
-  placeholder: string,
-  numberOfDigit: number
+type Props = {
+  +handleSearchIdChange: number => void,
+  +handleValidityChange: boolean => void,
+  +max: number
 }
 
 export default function IdSearchBox(props: Props) {
@@ -21,16 +21,27 @@ export default function IdSearchBox(props: Props) {
       <span className="id-search--sharp">
         {'#'}
       </span>
-      <input
-        className="id-search--input"
-        maxLength={props.numberOfDigit}
-        minLength={1}
-        onChange={handleIdChange}
-        pattern="^\d+$"
-        placeholder={props.placeholder}
-        required
-        type="text"
-      />
+      <FormattedMessage
+        id="IdSearch.placeholder"
+        values={{
+          max: 10 ** props.max - 1,
+          min: 1
+        }}
+      >
+        {
+          (text: string) =>
+            <input
+              className="id-search--input"
+              maxLength={props.max}
+              minLength={1}
+              onChange={handleIdChange}
+              pattern="^\d+$"
+              placeholder={text}
+              required
+              type="text"
+            />
+        }
+      </FormattedMessage>
       <span className="id-search--validity" />
     </div>
   )

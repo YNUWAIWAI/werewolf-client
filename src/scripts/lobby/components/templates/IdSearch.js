@@ -30,9 +30,6 @@ export type Props =
   & DispatchProps
   & OwnProps
 
-const numberOfDigit = 3
-const placeholder = `${numberOfDigit} digits`
-
 export default function IdSearch(props: Props) {
   return (
     <div className="grid">
@@ -42,8 +39,7 @@ export default function IdSearch(props: Props) {
         <IdSearchBox
           handleSearchIdChange={props.handleSearchIdChange}
           handleValidityChange={props.handleValidityChange}
-          numberOfDigit={numberOfDigit}
-          placeholder={placeholder}
+          max={3}
         />
         {
           props.villageItems.length === 0 ?
