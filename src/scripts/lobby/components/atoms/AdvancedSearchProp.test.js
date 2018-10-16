@@ -17,7 +17,6 @@ test('<AdvancedSearchProp />', () => {
     />
   )
 
-  expect(wrapper.children()).toHaveLength(2)
   expect(wrapper.find('input').exists()).toBe(true)
   expect(wrapper.find('label').exists()).toBe(true)
 })
