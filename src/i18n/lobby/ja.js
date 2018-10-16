@@ -22,6 +22,7 @@ export default {
   'Header.lobbyForRonotPlayer': 'Lobby for Robot Player',
   'Header.settings': 'Settings',
   'Header.waitingForPlayers': 'Waiting for Players',
+  'IdSearch.placeholder': '{min}-{max}',
   'Menu.buildVillage': 'Build',
   'Menu.history': 'History',
   'Menu.lobbyForAudience': 'Lobby for Audience',

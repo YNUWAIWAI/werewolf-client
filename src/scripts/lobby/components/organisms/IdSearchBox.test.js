@@ -10,8 +10,7 @@ test('<IdSearchBox />', () => {
     <IdSearchBox
       handleSearchIdChange={handleSearchIdChange}
       handleValidityChange={handleValidityChange}
-      numberOfDigit={3}
-      placeholder="3 digits"
+      max={3}
     />
   )
 
