@@ -1,15 +1,17 @@
 // @flow
 import AdvancedSearchProp from './AdvancedSearchProp'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 test('<AdvancedSearchProp />', () => {
   const handleClick = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <AdvancedSearchProp
       checked
       handleClick={handleClick}
-      label="Village Name"
       name="villageName"
       validity
     />
