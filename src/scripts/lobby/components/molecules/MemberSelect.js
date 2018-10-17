@@ -1,5 +1,6 @@
 // @flow
 import type {Member, RoleSetting} from 'lobby'
+import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
 import NumberSelect from '../atoms/NumberSelect'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
@@ -34,7 +35,7 @@ const getMember = role =>
       />
     )
 
-export default function SelectMember(props: Props) {
+export default function MemberSelect(props: Props) {
   const member = {
     A: getMember(props.role.A),
     B: getMember(props.role.B),
@@ -44,7 +45,7 @@ export default function SelectMember(props: Props) {
   return (
     <div className="village--item--selectable-member">
       <div className={`village--item--selectable-member--robot ${props.validity.numberOfRobots ? '' : 'invalid'}`}>
-        {'min'}
+        <FormattedMessage id="MemberSelect.min" />
         <NumberSelect
           ascendingOrder
           className="village--item--selectable-member--robot--select"
@@ -54,11 +55,22 @@ export default function SelectMember(props: Props) {
           name="numberOfRobots"
           suffix="robots"
           to={props.numberOfPlayers}
+          type="robot"
         />
       </div>
-      <div className="village--item--selectable-member--human">
-        {`max ${props.numberOfHumans} humans`}
-      </div>
+      <FormattedMessage
+        id="MemberSelect.max"
+        values={{
+          num: props.numberOfHumans
+        }}
+      >
+        {
+          (text: string) =>
+            <div className="village--item--selectable-member--human">
+              {text}
+            </div>
+        }
+      </FormattedMessage>
       <label className="village--item--selectable-member--role" data-opt="A">
         <div className="village--item--selectable-member--role--radio">
           <input

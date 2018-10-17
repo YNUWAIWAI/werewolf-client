@@ -158,6 +158,7 @@ export default function AdvancedSearchBox(props: Props) {
         name="minimum"
         suffix=""
         to={15}
+        type="player"
       />
 
       <AdvancedSearchProp
@@ -174,6 +175,7 @@ export default function AdvancedSearchBox(props: Props) {
         name="maximum"
         suffix=""
         to={15}
+        type="player"
       />
 
       <AdvancedSearchProp

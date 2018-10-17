@@ -1,9 +1,12 @@
 // @flow
+import MemberSelect from './MemberSelect'
 import React from 'react'
-import SelectMember from './SelectMember'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-test('<SelectMember numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} />', () => {
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+
+test('<MemberSelect numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} />', () => {
   const handleMemberChangeInner = jest.fn()
   const handleMemberChange = jest.fn(() => handleMemberChangeInner)
   const handleNumberChangeInner = jest.fn()
@@ -40,8 +43,8 @@ test('<SelectMember numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} /
       werewolf: 3
     }
   }
-  const wrapper = shallow(
-    <SelectMember
+  const wrapper = mountWithIntl(
+    <MemberSelect
       handleMemberChange={handleMemberChange}
       handleNumberChange={handleNumberChange}
       numberOfHumans={7}
@@ -54,11 +57,8 @@ test('<SelectMember numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} /
     />
   )
 
-  expect(wrapper.children()).toHaveLength(5)
+  expect(wrapper.children().children()).toHaveLength(5)
   expect(wrapper.find('.village--item--selectable-member--human').text()).toBe('max 7 humans')
-  expect(wrapper.find('.village--item--selectable-member--role[data-opt="A"]').text()).toBe('A<MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole />')
-  expect(wrapper.find('.village--item--selectable-member--role[data-opt="B"]').text()).toBe('B<MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole />')
-  expect(wrapper.find('.village--item--selectable-member--role[data-opt="C"]').text()).toBe('C<MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole /><MemberRole />')
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleMemberChangeInner).toHaveBeenCalledTimes(0)
   expect(handleNumberChange).toHaveBeenCalledTimes(0)
