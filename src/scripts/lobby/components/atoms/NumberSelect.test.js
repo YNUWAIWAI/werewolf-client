@@ -2,21 +2,24 @@
 import NumberSelect from './NumberSelect'
 import React from 'react'
 import Select from 'react-select'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<NumberSelect />', () => {
   test('render', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <NumberSelect
         ascendingOrder
         className="advanced-search--input"
         from={4}
         handleChange={handleChange}
         name="minimum"
-        suffix=""
         to={15}
+        type="player"
       />
     )
 
@@ -26,19 +29,19 @@ describe('<NumberSelect />', () => {
   test('onChange valid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <NumberSelect
         ascendingOrder
         className="advanced-search--input"
         from={4}
         handleChange={handleChange}
         name="minimum"
-        suffix=""
         to={15}
+        type="player"
       />
     )
 
-    wrapper.find(Select).simulate('change', {
+    wrapper.find(Select).props().onChange({
       label: 4,
       value: 4
     })
@@ -50,19 +53,19 @@ describe('<NumberSelect />', () => {
   test('onChange valid 0', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <NumberSelect
         ascendingOrder
         className="advanced-search--input"
         from={0}
         handleChange={handleChange}
         name="minimum"
-        suffix=""
         to={15}
+        type="player"
       />
     )
 
-    wrapper.find(Select).simulate('change', {
+    wrapper.find(Select).props().onChange({
       label: 0,
       value: 0
     })
@@ -74,19 +77,19 @@ describe('<NumberSelect />', () => {
   test('onChange invalid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <NumberSelect
         ascendingOrder
         className="advanced-search--input"
         from={4}
         handleChange={handleChange}
         name="minimum"
-        suffix=""
         to={15}
+        type="player"
       />
     )
 
-    wrapper.find(Select).simulate('change', [])
+    wrapper.find(Select).props().onChange([])
     expect(handleChange).toHaveBeenCalledTimes(1)
     expect(handleChange).toHaveBeenCalledWith(false)
     expect(handleChangeInner).toHaveBeenCalledTimes(1)
