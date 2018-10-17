@@ -1,4 +1,5 @@
 // @flow
+import {type InjectIntlProvidedProps, injectIntl} from 'react-intl'
 import React from 'react'
 import Select from 'react-select'
 
@@ -9,22 +10,34 @@ type Props = {
   +from: number,
   +handleChange: boolean => number => void,
   +name: string,
-  +suffix: string,
-  +to: number
+  +to: number,
+  +type: 'player' | 'robot'
+} & InjectIntlProvidedProps
+
+type Option = {
+  label: string,
+  value: number
 }
 
-export default function NumberSelect(props: Props) {
-  const handleChange = selectedOption => {
-    if (typeof selectedOption.value === 'number') {
-      props.handleChange(true)(selectedOption.value)
-    } else {
+export default injectIntl(function NumberSelect(props: Props) {
+  const handleChange = (selectedOption: Option | []) => {
+    if (Array.isArray(selectedOption)) {
       props.handleChange(false)(-1)
+    } else {
+      props.handleChange(true)(selectedOption.value)
     }
   }
   const options = [... Array(props.to - props.from + 1).keys()]
     .map(e => e + props.from)
     .map(option => ({
-      label: `${option} ${props.suffix}`,
+      label: props.intl.formatMessage(
+        {
+          id: `NumberSelect(${props.type})`
+        },
+        {
+          num: option
+        }
+      ),
       value: option
     }))
 
@@ -35,7 +48,14 @@ export default function NumberSelect(props: Props) {
       defaultValue={
         props.defaultValue ?
           {
-            label: `${props.defaultValue} ${props.suffix}`,
+            label: props.intl.formatMessage(
+              {
+                id: `NumberSelect(${props.type})`
+              },
+              {
+                num: props.defaultValue
+              }
+            ),
             value: props.defaultValue
           } :
           []
@@ -45,4 +65,4 @@ export default function NumberSelect(props: Props) {
       options={props.ascendingOrder ? options : options.reverse()}
     />
   )
-}
+})

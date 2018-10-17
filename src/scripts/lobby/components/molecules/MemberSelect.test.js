@@ -1,9 +1,9 @@
 // @flow
 import React from 'react'
-import SelectMember from './SelectMember'
+import MemberSelect from './MemberSelect'
 import {shallow} from 'enzyme'
 
-test('<SelectMember numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} />', () => {
+test('<MemberSelect numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} />', () => {
   const handleMemberChangeInner = jest.fn()
   const handleMemberChange = jest.fn(() => handleMemberChangeInner)
   const handleNumberChangeInner = jest.fn()
@@ -41,7 +41,7 @@ test('<SelectMember numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} /
     }
   }
   const wrapper = shallow(
-    <SelectMember
+    <MemberSelect
       handleMemberChange={handleMemberChange}
       handleNumberChange={handleNumberChange}
       numberOfHumans={7}

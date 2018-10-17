@@ -8,6 +8,16 @@ export default {
   'AdvancedSearch.placeholder(comment)': '{min}-{max} chars',
   'AdvancedSearch.placeholder(hostName)': '{min}-{max} chars',
   'AdvancedSearch.placeholder(villageName)': '{min}-{max} chars',
+  'AvatarSelect.advancedSearch(fixed)': 'Fixed',
+  'AvatarSelect.advancedSearch(random)': 'Random',
+  'AvatarSelect.advancedSearch(unspecified)': 'Unspecified',
+  'AvatarSelect.buildVillage(fixed)': 'Fixed Avatar',
+  'AvatarSelect.buildVillage(random)': 'Random Avatar',
+  'BuildVillage.label(comment)': 'Comment',
+  'BuildVillage.label(hostName)': 'Host Name',
+  'BuildVillage.label(setup)': 'Setup',
+  'BuildVillage.label(villageName)': 'Village Name',
+  'BuildVillage.placeholder': '{min}-{max} chars',
   'Header.advancedSearch(audience)': 'Audience\'s Advanced Search',
   'Header.advancedSearch(human player)': 'Human Player\'s Advanced Search',
   'Header.advancedSearch(robot player)': 'Robot Player\'s Advanced Search',
@@ -23,6 +33,11 @@ export default {
   'Header.settings': 'Settings',
   'Header.waitingForPlayers': 'Waiting for Players',
   'IdSearch.placeholder': '{min}-{max}',
+  'MemberSelect.max': `max {num, plural,
+    =1 {# human}
+    other {# humans}
+  }`,
+  'MemberSelect.min': 'min',
   'Menu.buildVillage': 'Build',
   'Menu.history': 'History',
   'Menu.lobbyForAudience': 'Lobby for Audience',
@@ -39,6 +54,14 @@ export default {
   'Menu.showAdvancedSearch': 'Advanced Search',
   'Menu.showBuildVillage': 'Build your Village',
   'Menu.showIdSearch': 'ID Search',
+  'NumberSelect(player)': `{num, plural,
+    =1 {# player}
+    other {# players}
+  }`,
+  'NumberSelect(robot)': `{num, plural,
+    =1 {# robot}
+    other {# robots}
+  }`,
   'Settings.button(deactivate)': 'DEACTIVATE',
   'Settings.button(logout)': 'LOGOUT',
   'Settings.button(save)': 'SAVE',
