@@ -2,14 +2,17 @@
 import AvatarSelect from './AvatarSelect'
 import React from 'react'
 import Select from 'react-select'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<AvatarSelect />', () => {
   describe('render', () => {
     test('advancedSearch fixed', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="fixed"
@@ -28,7 +31,7 @@ describe('<AvatarSelect />', () => {
     test('advancedSearch random', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="random"
@@ -47,7 +50,7 @@ describe('<AvatarSelect />', () => {
     test('advancedSearch unspecified', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="unspecified"
@@ -66,7 +69,7 @@ describe('<AvatarSelect />', () => {
     test('buildVillage random', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="random"
@@ -85,7 +88,7 @@ describe('<AvatarSelect />', () => {
     test('buildVillage fixed', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="fixed"
@@ -106,7 +109,7 @@ describe('<AvatarSelect />', () => {
     test('valid advancedSearch', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="fixed"
@@ -115,7 +118,7 @@ describe('<AvatarSelect />', () => {
         />
       )
 
-      wrapper.find(Select).simulate('change', {
+      wrapper.find(Select).props().onChange({
         label: 'Unspecified',
         value: 'unspecified'
       })
@@ -127,7 +130,7 @@ describe('<AvatarSelect />', () => {
     test('valid buildVillage', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="fixed"
@@ -136,8 +139,8 @@ describe('<AvatarSelect />', () => {
         />
       )
 
-      wrapper.find(Select).simulate('change', {
-        label: 'random',
+      wrapper.find(Select).props().onChange({
+        label: 'Random',
         value: 'random'
       })
       expect(handleChange).toHaveBeenCalledTimes(1)
@@ -148,7 +151,7 @@ describe('<AvatarSelect />', () => {
     test('invalid advancedSearch', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="fixed"
@@ -157,7 +160,7 @@ describe('<AvatarSelect />', () => {
         />
       )
 
-      wrapper.find(Select).simulate('change', [])
+      wrapper.find(Select).props().onChange([])
       expect(handleChange).toHaveBeenCalledTimes(1)
       expect(handleChange).toHaveBeenCalledWith(true)
       expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -166,7 +169,7 @@ describe('<AvatarSelect />', () => {
     test('invalid buildVillage', () => {
       const handleChangeInner = jest.fn()
       const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = shallow(
+      const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
           defaultValue="random"
@@ -175,7 +178,7 @@ describe('<AvatarSelect />', () => {
         />
       )
 
-      wrapper.find(Select).simulate('change', [])
+      wrapper.find(Select).props().onChange([])
       expect(handleChange).toHaveBeenCalledTimes(1)
       expect(handleChange).toHaveBeenCalledWith(false)
       expect(handleChangeInner).toHaveBeenCalledTimes(1)
