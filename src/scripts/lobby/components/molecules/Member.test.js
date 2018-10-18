@@ -1,7 +1,10 @@
 // @flow
 import Member from './Member'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 test('<Member />', () => {
   const human = {
@@ -22,7 +25,7 @@ test('<Member />', () => {
     werehumster: 1,
     werewolf: 2
   }
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <Member
       human={human}
       robot={robot}
@@ -30,7 +33,6 @@ test('<Member />', () => {
     />
   )
 
-  expect(wrapper.children()).toHaveLength(3)
   expect(wrapper.find('.village--item--member--robot').text()).toBe('min 7 robots')
   expect(wrapper.find('.village--item--member--human').text()).toBe('max 8 humans')
   expect(wrapper.find('.village--item--member--role').children()).toHaveLength(8)

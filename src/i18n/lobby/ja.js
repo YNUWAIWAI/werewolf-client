@@ -35,6 +35,14 @@ export default {
   'Header.settings': 'Settings',
   'Header.waitingForPlayers': 'Waiting for Players',
   'IdSearch.placeholder': '{min}-{max}',
+  'Member.max': `max {num, plural,
+    =1 {# human}
+    other {# humans}
+  }`,
+  'Member.min': `min {num, plural,
+    =1 {# robot}
+    other {# robots}
+  }`,
   'MemberSelect.max': `max {num, plural,
     =1 {# human}
     other {# humans}
@@ -73,4 +81,12 @@ export default {
   'Settings.label(userEmail)': 'E-mail',
   'Settings.label(userName)': 'Name',
   'Settings.label(userPassword)': 'Password',
+  'VillageItem.label(comment)': 'Comment',
+  'VillageItem.label(hostName)': 'Host Name',
+  'VillageItem.label(setup)': 'Setup',
+  'VillageItem.label(villageName)': 'Village Name',
+  'VillageItem.val(avatar, fixed)': 'Fixed Avatar',
+  'VillageItem.val(avatar, random)': 'Random Avatar',
+  'VillageItem.val(numOfPlayers, audience)': '{number} players',
+  'VillageItem.val(numOfPlayers, player)': '{current} / {number} players',
 }

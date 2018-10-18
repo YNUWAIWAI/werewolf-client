@@ -2,7 +2,10 @@
 import React from 'react'
 import type {Village} from 'lobby'
 import VillageItem from './VillageItem'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 test('<VillageItem isPlayer />', () => {
   const village: Village = {
@@ -39,9 +42,8 @@ test('<VillageItem isPlayer />', () => {
     }
   }
   const handleClick = jest.fn()
-  const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer />)
+  const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer />)
 
-  expect(wrapper.children()).toHaveLength(11)
   expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
   expect(wrapper.find('.village--item--idForSearching').text()).toBe('#123')
   expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
@@ -85,9 +87,8 @@ test('<VillageItem isPlayer={false} />', () => {
     }
   }
   const handleClick = jest.fn()
-  const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)
+  const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)
 
-  expect(wrapper.children()).toHaveLength(11)
   expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
   expect(wrapper.find('.village--item--idForSearching').text()).toBe('#123')
   expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
@@ -131,7 +132,7 @@ test('<VillageItem isPlayer /> idForSearching is invalid', () => {
     }
   }
   const handleClick = jest.fn()
-  const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer />)
+  const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer />)
 
   expect(wrapper.find('.village--item--idForSearching').text()).toBe('####')
 })
@@ -170,7 +171,7 @@ test('<VillageItem isPlayer /> onClick', () => {
     }
   }
   const handleClick = jest.fn()
-  const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer />)
+  const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer />)
 
   wrapper.simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)
@@ -210,7 +211,7 @@ test('<VillageItem isPlayer={false} /> onClick', () => {
     }
   }
   const handleClick = jest.fn()
-  const wrapper = shallow(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)
+  const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)
 
   wrapper.simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)

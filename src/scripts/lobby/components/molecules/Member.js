@@ -1,5 +1,6 @@
 // @flow
 import type {Human, Robot, RoleSetting} from 'lobby'
+import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
 import React from 'react'
@@ -24,12 +25,34 @@ export default function Member(props: Props) {
 
   return (
     <div className="village--item--member">
-      <div className="village--item--member--robot">
-        {`min ${props.robot.min} robots`}
-      </div>
-      <div className="village--item--member--human">
-        {`max ${props.human.max} humans`}
-      </div>
+      <FormattedMessage
+        id="Member.min"
+        values={{
+          num: props.robot.min
+        }}
+      >
+        {
+          (text: string) =>
+            <div className="village--item--member--robot">
+              {text}
+            </div>
+
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="Member.max"
+        values={{
+          num: props.human.max
+        }}
+      >
+        {
+          (text: string) =>
+            <div className="village--item--member--human">
+              {text}
+            </div>
+
+        }
+      </FormattedMessage>
       <div className="village--item--member--role">
         {items}
       </div>
