@@ -17,15 +17,15 @@ export default function VillageItem(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--village-name--prop">
+            <div className="village--item--prop village-name">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--village-name--val">
+      <div className="village--item--val village-name">
         {props.name}
       </div>
-      <div className="village--item--idForSearching">
+      <div className="village--item--val id-for-searching">
         {Number.isInteger(props.idForSearching) ? `#${props.idForSearching}` : '####'}
       </div>
       <FormattedMessage
@@ -33,12 +33,12 @@ export default function VillageItem(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--host-name--prop">
+            <div className="village--item--prop host-name">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--host-name--val">
+      <div className="village--item--val host-name">
         {props.hostPlayer.name}
       </div>
       <FormattedMessage
@@ -46,7 +46,7 @@ export default function VillageItem(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--setup--prop">
+            <div className="village--item--prop setup">
               {text}
             </div>
         }
@@ -60,7 +60,7 @@ export default function VillageItem(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--setup--val1">
+            <div className="village--item--val setup1">
               {text}
             </div>
         }
@@ -70,7 +70,7 @@ export default function VillageItem(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--setup--val2">
+            <div className="village--item--val setup2">
               {text}
             </div>
         }
@@ -81,12 +81,12 @@ export default function VillageItem(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--comment--prop">
+            <div className="village--item--prop comment">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--comment--val">
+      <div className="village--item--val comment">
         {props.comment}
       </div>
     </div>

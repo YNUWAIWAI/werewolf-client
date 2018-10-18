@@ -98,7 +98,7 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--village-name--prop">
+            <div className="village--item--prop village-name">
               {text}
             </div>
         }
@@ -112,7 +112,7 @@ export default function BuildVillageBox(props: Props) {
             {
               (text: string) =>
                 <TextInput
-                  className={`village--item--village-name--val ${props.validity.villageName ? '' : 'invalid'}`}
+                  className={`village--item--val village-name ${props.validity.villageName ? '' : 'invalid'}`}
                   handleChange={handleChange('villageName')}
                   initialValue={props.value.villageName}
                   max={villageName.max}
@@ -123,7 +123,7 @@ export default function BuildVillageBox(props: Props) {
             }
           </FormattedMessage> :
           <div
-            className="village--item--village-name--val"
+            className="village--item--val village-name"
           >
             {props.value.villageName}
           </div>
@@ -133,12 +133,12 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--host-name--prop">
+            <div className="village--item--prop host-name">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--host-name--val">
+      <div className="village--item--val host-name">
         {props.value.hostName}
       </div>
       <FormattedMessage
@@ -146,15 +146,15 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--setup--prop">
+            <div className="village--item--prop setup">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className={`village--item--setup--val1 ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
+      <div className={`village--item--val setup1 build ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
         <NumberSelect
           ascendingOrder={false}
-          className="village--item--setup--val1--select"
+          className="village--item--val--setup1--select"
           defaultValue={props.value.numberOfPlayers}
           from={4}
           handleChange={handleChange('numberOfPlayers')}
@@ -163,9 +163,9 @@ export default function BuildVillageBox(props: Props) {
           type="player"
         />
       </div>
-      <div className={`village--item--setup--val2 ${props.validity.avatar ? '' : 'invalid'}`}>
+      <div className={`village--item--val setup2 build ${props.validity.avatar ? '' : 'invalid'}`}>
         <AvatarSelect
-          className="village--item--setup--val2--select"
+          className="village--item--val--setup2--select"
           defaultValue={props.value.avatar}
           handleChange={handleChange('avatar')}
           type="buildVillage"
@@ -189,7 +189,7 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           (text: string) =>
-            <div className="village--item--comment--prop">
+            <div className="village--item--prop comment">
               {text}
             </div>
         }
@@ -201,7 +201,7 @@ export default function BuildVillageBox(props: Props) {
         {
           (text: string) =>
             <TextareaInput
-              className={`village--item--comment--val ${props.validity.comment ? '' : 'invalid'}`}
+              className={`village--item--val comment ${props.validity.comment ? '' : 'invalid'}`}
               handleChange={handleChange('comment')}
               initialValue={props.value.comment}
               max={comment.max}
