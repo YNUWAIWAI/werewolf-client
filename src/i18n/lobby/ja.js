@@ -8,6 +8,8 @@ export default {
   'AdvancedSearch.placeholder(comment)': '{min}-{max} chars',
   'AdvancedSearch.placeholder(hostName)': '{min}-{max} chars',
   'AdvancedSearch.placeholder(villageName)': '{min}-{max} chars',
+  'AvatarItem.host': 'Host',
+  'AvatarItem.kickout': '{name}を退出させます',
   'AvatarSelect.advancedSearch(fixed)': 'Fixed',
   'AvatarSelect.advancedSearch(random)': 'Random',
   'AvatarSelect.advancedSearch(unspecified)': 'Unspecified',

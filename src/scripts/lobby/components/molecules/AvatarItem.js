@@ -1,4 +1,5 @@
 // @flow
+import {type InjectIntlProvidedProps, injectIntl} from 'react-intl'
 import Danger from '../atoms/svg/Danger'
 import type {PingStatus} from 'lobby'
 import React from 'react'
@@ -14,12 +15,21 @@ export type Props = {
   +name: string,
   +ping: string,
   +pingStatus: PingStatus
-}
+} & InjectIntlProvidedProps
 
-export default function AvatarItem(props: Props) {
+export default injectIntl(function AvatarItem(props: Props) {
   const handleClick = () => {
     if (props.canKickOut) {
-      if (window.confirm(`${props.name}を退出させます`)) {
+      const message = props.intl.formatMessage(
+        {
+          id: 'AvatarItem.kickout'
+        },
+        {
+          name: props.name
+        }
+      )
+
+      if (window.confirm(message)) {
         props.kickOut()
       }
     }
@@ -41,7 +51,13 @@ export default function AvatarItem(props: Props) {
       {
         props.isHost ?
           <div className="avatar-list--item--host">
-            {'Host'}
+            {
+              props.intl.formatMessage(
+                {
+                  id: 'AvatarItem.host'
+                }
+              )
+            }
           </div> :
           ''
       }
@@ -51,4 +67,4 @@ export default function AvatarItem(props: Props) {
       </div>
     </div>
   )
-}
+})
