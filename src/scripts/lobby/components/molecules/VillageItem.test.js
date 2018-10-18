@@ -44,12 +44,12 @@ test('<VillageItem isPlayer />', () => {
   const handleClick = jest.fn()
   const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer />)
 
-  expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
-  expect(wrapper.find('.village--item--idForSearching').text()).toBe('#123')
-  expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
-  expect(wrapper.find('.village--item--setup--val1').text()).toBe('8 / 15 players')
-  expect(wrapper.find('.village--item--setup--val2').text()).toBe('Fixed Avatar')
-  expect(wrapper.find('.village--item--comment--val').text()).toBe('comment')
+  expect(wrapper.find('.village--item--val.village-name').text()).toBe('name')
+  expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('#123')
+  expect(wrapper.find('.village--item--val.host-name').text()).toBe('hostPlayer name')
+  expect(wrapper.find('.village--item--val.setup1').text()).toBe('8 / 15 players')
+  expect(wrapper.find('.village--item--val.setup2').text()).toBe('Fixed Avatar')
+  expect(wrapper.find('.village--item--val.comment').text()).toBe('comment')
   expect(handleClick).toHaveBeenCalledTimes(0)
 })
 test('<VillageItem isPlayer={false} />', () => {
@@ -89,12 +89,12 @@ test('<VillageItem isPlayer={false} />', () => {
   const handleClick = jest.fn()
   const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer={false} />)
 
-  expect(wrapper.find('.village--item--village-name--val').text()).toBe('name')
-  expect(wrapper.find('.village--item--idForSearching').text()).toBe('#123')
-  expect(wrapper.find('.village--item--host-name--val').text()).toBe('hostPlayer name')
-  expect(wrapper.find('.village--item--setup--val1').text()).toBe('15 players')
-  expect(wrapper.find('.village--item--setup--val2').text()).toBe('Random Avatar')
-  expect(wrapper.find('.village--item--comment--val').text()).toBe('comment')
+  expect(wrapper.find('.village--item--val.village-name').text()).toBe('name')
+  expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('#123')
+  expect(wrapper.find('.village--item--val.host-name').text()).toBe('hostPlayer name')
+  expect(wrapper.find('.village--item--val.setup1').text()).toBe('15 players')
+  expect(wrapper.find('.village--item--val.setup2').text()).toBe('Random Avatar')
+  expect(wrapper.find('.village--item--val.comment').text()).toBe('comment')
   expect(handleClick).toHaveBeenCalledTimes(0)
 })
 test('<VillageItem isPlayer /> idForSearching is invalid', () => {
@@ -134,7 +134,7 @@ test('<VillageItem isPlayer /> idForSearching is invalid', () => {
   const handleClick = jest.fn()
   const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer />)
 
-  expect(wrapper.find('.village--item--idForSearching').text()).toBe('####')
+  expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('####')
 })
 test('<VillageItem isPlayer /> onClick', () => {
   const village: Village = {

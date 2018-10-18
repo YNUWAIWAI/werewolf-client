@@ -394,93 +394,101 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    &--comment {
-      &--prop {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        grid-area: c-p;
-        justify-content: center;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      &--val {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        font-size: inherit;
-        grid-area: c-v;
-        justify-content: center;
-        resize: vertical;
-        padding: 0 1rem;
-        text-align: center;
-        width: 100%;
-
-        textarea& {
-          background: rgba(250, 250, 250, 1);
-        }
-
-        &.invalid {
-          border-color: red;
-        }
-
-        &:invalid {
-          color: red;
-          outline-color: red;
-          outline-offset: -2px;
-        }
-      }
-    }
-
-    &--host-name {
-      &--prop {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        grid-area: h-n-p;
-        justify-content: center;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      &--val {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        font-size: inherit;
-        grid-area: h-n-v;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-
-        input& {
-          background: rgba(250, 250, 250, 1);
-        }
-
-        &.invalid {
-          border-color: red;
-        }
-
-        &:invalid {
-          color: red;
-          outline-color: red;
-          outline-offset: -2px;
-        }
-      }
-    }
-
-    &--idForSearching {
+    &--prop {
       align-items: center;
       border: solid 1px black;
       box-sizing: border-box;
       display: inline-flex;
-      grid-area: i-f-s;
       justify-content: center;
+      padding: 1rem;
+      text-align: center;
+
+      &.comment {
+        grid-area: c-p;
+      }
+
+      &.host-name {
+        grid-area: h-n-p;
+      }
+
+      &.setup {
+        grid-area: s-p;
+      }
+
+      &.village-name {
+        grid-area: v-n-p;
+      }
+    }
+
+    &--val {
+      align-items: center;
+      border: solid 1px black;
+      box-sizing: border-box;
+      display: inline-flex;
+      font-size: inherit;
+      justify-content: center;
+      padding: 0 1rem;
+      text-align: center;
+      width: 100%;
+
+      &.comment {
+        grid-area: c-v;
+        resize: vertical;
+      }
+
+      &.host-name {
+        grid-area: h-n-v;
+      }
+
+      &.id-for-searching {
+        grid-area: i-f-s;
+      }
+
+      &.setup1 {
+        grid-area: s-v1;
+
+        &.build {
+          padding: 0;
+        }
+      }
+
+      &--setup1--select {
+        font-size: inherit;
+        height: 100%;
+        width: 100%;
+      }
+
+      &.setup2 {
+        grid-area: s-v2;
+
+        &.build {
+          padding: 0;
+        }
+      }
+
+      &--setup2--select {
+        font-size: inherit;
+        height: 100%;
+        width: 100%;
+      }
+
+      &.village-name {
+        grid-area: v-n-v;
+      }
+
+      input&, textarea& {
+        background: rgba(250, 250, 250, 1);
+      }
+
+      &.invalid {
+        border-color: red;
+      }
+
+      &:invalid {
+        color: red;
+        outline-color: red;
+        outline-offset: -2px;
+      }
     }
 
     &--member {
@@ -632,100 +640,6 @@ body {
           align-items: center;
           display: inline-flex;
           justify-content: space-around;
-        }
-      }
-    }
-
-    &--setup {
-      &--prop {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        grid-area: s-p;
-        justify-content: center;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      &--val1 {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        font-size: inherit;
-        grid-area: s-v1;
-        justify-content: center;
-        text-align: center;
-
-        &.invalid {
-          border-color: red;
-        }
-
-        &--select {
-          font-size: inherit;
-          height: 100%;
-          width: 100%;
-        }
-      }
-
-      &--val2 {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        font-size: inherit;
-        grid-area: s-v2;
-        justify-content: center;
-        text-align: center;
-
-        &.invalid {
-          border-color: red;
-        }
-
-        &--select {
-          font-size: inherit;
-          height:100%;
-          width: 100%;
-        }
-      }
-    }
-
-    &--village-name {
-      &--prop {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        grid-area: v-n-p;
-        justify-content: center;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      &--val {
-        align-items: center;
-        border: solid 1px black;
-        box-sizing: border-box;
-        display: inline-flex;
-        font-size: inherit;
-        grid-area: v-n-v;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-
-        input& {
-          background: rgba(250, 250, 250, 1);
-        }
-
-        &.invalid {
-          border-color: red;
-        }
-
-        &:invalid {
-          color: red;
-          outline-color: red;
-          outline-offset: -2px;
         }
       }
     }
