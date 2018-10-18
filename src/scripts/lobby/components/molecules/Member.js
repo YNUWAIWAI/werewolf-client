@@ -42,7 +42,7 @@ export default function Member(props: Props) {
       <FormattedMessage
         id="Member.max"
         values={{
-          num: props.robot.min
+          num: props.human.max
         }}
       >
         {
