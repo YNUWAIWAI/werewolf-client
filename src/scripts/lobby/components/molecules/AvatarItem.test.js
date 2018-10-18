@@ -1,11 +1,14 @@
 // @flow
 import AvatarItem from './AvatarItem'
 import React from 'react'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/lobby'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe name="name" />', () => {
   const kickOut = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
@@ -18,18 +21,17 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe name="name" /
     />
   )
 
-  expect(wrapper.children()).toHaveLength(4)
   expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(true)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').text()).toBe('Host')
-  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('<Danger />99.999 s')
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
 test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name="name" />', () => {
   const kickOut = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
@@ -42,18 +44,17 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
     />
   )
 
-  expect(wrapper.children()).toHaveLength(3)
   expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(true)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').exists()).toBe(false)
-  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('<Danger />99.999 s')
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
 test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe={false} name="name" />', () => {
   const kickOut = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
@@ -66,18 +67,17 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe={false} name=
     />
   )
 
-  expect(wrapper.children()).toHaveLength(4)
   expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(false)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').text()).toBe('Host')
-  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('<Danger />99.999 s')
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
 test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe={false} name="name" />', () => {
   const kickOut = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
@@ -90,18 +90,17 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe={fals
     />
   )
 
-  expect(wrapper.children()).toHaveLength(3)
   expect(wrapper.find('.avatar-list--item--image').exists()).toBe(true)
   expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(false)
   expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
   expect(wrapper.find('.avatar-list--item--host').exists()).toBe(false)
-  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('<Danger />99.999 s')
+  expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
   expect(kickOut).toHaveBeenCalledTimes(0)
 
 })
 test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name="name" /> onClick', () => {
   const kickOut = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
@@ -123,7 +122,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
 })
 test('<AvatarItem avatarImage="avatarImage" canKickOut={false} isHost={false} isMe name="name" /> onClick', () => {
   const kickOut = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mountWithIntl(
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut={false}
