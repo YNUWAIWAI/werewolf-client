@@ -82,23 +82,23 @@ body {
       align-items: center;
       display: inline-flex;
       font-size: 0.8rem;
-      justify-content: center;
       grid-column: 4 / 5;
+      justify-content: center;
 
       & > svg {
         height: 2rem;
         width: 2rem;
       }
 
-      & > svg.danger {
+      & > .danger {
         fill: var(--danger-color);
       }
 
-      & > svg.safe {
+      & > .safe {
         fill: var(--safe-color);
       }
 
-      & > svg.warning {
+      & > .warning {
         fill: var(--warning-color);
       }
     }
@@ -183,37 +183,37 @@ body {
 }
 
 .id-search {
-  font-size: 3rem;
-  display: inline-flex;
-  justify-content: center;
   align-items: center;
+  display: inline-flex;
+  font-size: 3rem;
+  justify-content: center;
 
   &--input {
-    height: 4.5rem; /* font-size * line-height */
-    width: 12rem; /* (number_of_digit + 1) * font-size */
-    text-align: center;
     font-size: 3rem;
+    height: 4.5rem; /* font-size * line-height */
+    text-align: center;
+    width: 12rem; /* (number_of_digit + 1) * font-size */
   }
 
   &--input:invalid + &--validity::after {
-    content: '✖';
     color: #f00;
+    content: '✖';
     padding-left: 0.5rem;
   }
 
   &--input:valid + &--validity::after {
-    content: '✓';
     color: #26b72b;
+    content: '✓';
     padding-left: 0.5rem;
   }
 
   &--no-item {
-    font-size: 3rem;
     color: rgba(180, 180, 180, 1);
+    font-size: 3rem;
   }
 
   &--sharp {
-    padding-right: 0.5rem
+    padding-right: 0.5rem;
   }
 }
 
