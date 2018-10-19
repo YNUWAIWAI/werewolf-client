@@ -11,6 +11,7 @@
   --active-color: rgba(0, 0, 0, 0.07);
   --disabled-color: rgba(0, 0, 0, 0.3);
   --hover-color: rgba(0, 0, 0, 0.03);
+  --image-size: 50px;
 }
 
 body {
@@ -533,22 +534,39 @@ body {
         margin-top: 0.5rem;
 
         &--item {
+          display: grid;
           font-size: inherit;
-          position: relative;
+          grid-template-areas:
+            'image times number'
+            'caption . .';
+          grid-template-columns: var(--image-size) 10px 1fr;
+          grid-template-rows: var(--image-size) 15px;
 
-          &:hover::after {
-            align-items: center;
-            background: white;
-            border: solid 1px black;
-            bottom: 10%;
-            content: attr(data-tooltip);
-            display: inline-flex;
-            font-size: small;
-            justify-content: center;
-            left: 10%;
-            position: absolute;
-            right: 15%;
-            top: 15%;
+          &--caption {
+            font-size: 10px;
+            grid-area: caption;
+            line-height: 1.5;
+            text-align: center;
+            word-break: keep-all;
+          }
+
+          &--image {
+            grid-area: image;
+            height: var(--image-size);
+            width: var(--image-size);
+          }
+
+          &--number {
+            align-self: end;
+            font-size: 1.5rem;
+            grid-area: number;
+            line-height: 1;
+          }
+
+          &--times {
+            align-self: end;
+            font-size: 10px;
+            grid-area: times;
           }
         }
       }
@@ -606,6 +624,7 @@ body {
         grid-area: role;
         grid-template-columns: 3rem repeat(8, 1fr);
         margin-top: 0.5rem;
+        overflow: auto;
 
         &[ data-opt = 'A'] {
           grid-area: A;
@@ -620,29 +639,49 @@ body {
         }
 
         &--item {
+          display: grid;
           font-size: inherit;
-          position: relative;
+          grid-template-areas:
+            'image times number'
+            'caption . .';
+          grid-template-columns: var(--image-size) 10px 1fr;
+          grid-template-rows: var(--image-size) 15px;
 
-          &:hover::after {
-            align-items: center;
-            background: white;
-            border: solid 1px black;
-            bottom: 10%;
-            content: attr(data-tooltip);
-            display: inline-flex;
-            font-size: small;
-            justify-content: center;
-            left: 10%;
-            position: absolute;
-            right: 15%;
-            top: 15%;
+          &--caption {
+            font-size: 10px;
+            grid-area: caption;
+            line-height: 1.5;
+            text-align: center;
+            word-break: keep-all;
+          }
+
+          &--image {
+            grid-area: image;
+            height: var(--image-size);
+            width: var(--image-size);
+          }
+
+          &--number {
+            align-self: end;
+            font-size: 1.5rem;
+            grid-area: number;
+            line-height: 1;
+          }
+
+          &--times {
+            align-self: end;
+            font-size: 10px;
+            grid-area: times;
           }
         }
 
         &--radio {
           align-items: center;
+          background: white;
           display: inline-flex;
           justify-content: space-around;
+          left: 0;
+          position: sticky;
         }
       }
     }

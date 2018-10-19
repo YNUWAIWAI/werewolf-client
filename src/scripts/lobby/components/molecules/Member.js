@@ -14,7 +14,7 @@ type Props = {
 export default function Member(props: Props) {
   const items = ORDERED_ROLE_LIST.map(item =>
     <MemberRole
-      class="village--item--member--role--item"
+      className="village--item--member--role--item"
       id={item.id}
       image={item.image}
       key={item.id}
