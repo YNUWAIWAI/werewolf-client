@@ -26,7 +26,7 @@ const getMember = role =>
   ORDERED_ROLE_LIST
     .map(item =>
       <MemberRole
-        class="village--item--selectable-member--role--item"
+        className="village--item--selectable-member--role--item"
         id={item.id}
         image={item.image}
         key={item.id}
