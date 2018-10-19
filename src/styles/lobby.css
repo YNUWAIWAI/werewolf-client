@@ -47,16 +47,19 @@ body {
     display: grid;
     font-size: 1.2rem;
     grid-gap: 0.5rem;
-    grid-template-columns: 2.5rem 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
-    height: 2.5rem;
+    grid-template-columns: var(--image-size) 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
+    height: var(--image-size);
 
     &--image {
       align-items: center;
       display: inline-flex;
+      height: var(--image-size);
       justify-content: center;
+      width: var(--image-size);
 
       & > img {
-        width: 100%;
+        height: var(--image-size);
+        width: var(--image-size);
       }
     }
 
