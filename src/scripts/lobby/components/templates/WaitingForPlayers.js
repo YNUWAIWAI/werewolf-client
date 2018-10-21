@@ -14,6 +14,7 @@ export type StateProps = {
   +players: {
     +avatarImage: string,
     +canKickOut: boolean,
+    +isAnonymous: boolean,
     +isHost: boolean,
     +isMe: boolean,
     +name: string,

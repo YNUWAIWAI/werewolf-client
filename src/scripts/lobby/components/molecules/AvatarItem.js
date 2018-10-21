@@ -1,5 +1,5 @@
 // @flow
-import {type InjectIntlProvidedProps, injectIntl} from 'react-intl'
+import {FormattedMessage, type InjectIntlProvidedProps, injectIntl} from 'react-intl'
 import Danger from '../atoms/svg/Danger'
 import type {PingStatus} from 'lobby'
 import React from 'react'
@@ -9,6 +9,7 @@ import Warning from '../atoms/svg/Warning'
 export type Props = {
   +avatarImage: string,
   +canKickOut: boolean,
+  +isAnonymous: boolean,
   +isHost: boolean,
   +isMe: boolean,
   +kickOut: void => void,
@@ -45,20 +46,34 @@ export default injectIntl(function AvatarItem(props: Props) {
       <div className="avatar-list--item--image">
         <img src={props.avatarImage} />
       </div>
-      <div className="avatar-list--item--name">
-        {props.name}
-      </div>
+      {
+        props.isAnonymous ?
+          <FormattedMessage
+            id="AvatarItem.name.anonymous"
+          >
+            {
+              (text: string) =>
+                <div className="avatar-list--item--name">
+                  {text}
+                </div>
+            }
+          </FormattedMessage> :
+          <div className="avatar-list--item--name">
+            {props.name}
+          </div>
+      }
       {
         props.isHost ?
-          <div className="avatar-list--item--host">
+          <FormattedMessage
+            id="AvatarItem.host"
+          >
             {
-              props.intl.formatMessage(
-                {
-                  id: 'AvatarItem.host'
-                }
-              )
+              (text: string) =>
+                <div className="avatar-list--item--host">
+                  {text}
+                </div>
             }
-          </div> :
+          </FormattedMessage> :
           ''
       }
       <div className="avatar-list--item--ping">

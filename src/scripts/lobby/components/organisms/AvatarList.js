@@ -7,6 +7,7 @@ export type Props = {
   +items: {
     +avatarImage: string,
     +canKickOut: boolean,
+    +isAnonymous: boolean,
     +isHost: boolean,
     +isMe: boolean,
     +name: string,

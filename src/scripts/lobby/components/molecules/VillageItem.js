@@ -38,9 +38,22 @@ export default function VillageItem(props: Props) {
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--val host-name">
-        {props.hostPlayer.name}
-      </div>
+      {
+        props.avatar === 'fixed' ?
+          <div className="village--item--val host-name">
+            {props.hostPlayer.name}
+          </div> :
+          <FormattedMessage
+            id="VillageItem.hostName.anonymous"
+          >
+            {
+              (text: string) =>
+                <div className="village--item--val host-name">
+                  {text}
+                </div>
+            }
+          </FormattedMessage>
+      }
       <FormattedMessage
         id="VillageItem.label(setup)"
       >
