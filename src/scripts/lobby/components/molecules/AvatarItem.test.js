@@ -12,6 +12,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe name="name" /
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
+      isAnonymous={false}
       isHost
       isMe
       kickOut={kickOut}
@@ -35,6 +36,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
+      isAnonymous={false}
       isHost={false}
       isMe
       kickOut={kickOut}
@@ -58,6 +60,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe={false} name=
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
+      isAnonymous={false}
       isHost
       isMe={false}
       kickOut={kickOut}
@@ -81,6 +84,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe={fals
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
+      isAnonymous={false}
       isHost={false}
       isMe={false}
       kickOut={kickOut}
@@ -104,6 +108,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut
+      isAnonymous={false}
       isHost={false}
       isMe
       kickOut={kickOut}
@@ -126,6 +131,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut={false} isHost={false} is
     <AvatarItem
       avatarImage="avatarImage"
       canKickOut={false}
+      isAnonymous={false}
       isHost={false}
       isMe
       kickOut={kickOut}

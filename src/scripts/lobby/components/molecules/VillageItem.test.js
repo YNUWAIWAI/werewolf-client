@@ -54,7 +54,7 @@ test('<VillageItem isPlayer />', () => {
 })
 test('<VillageItem isPlayer={false} />', () => {
   const village: Village = {
-    avatar: 'random',
+    avatar: 'fixed',
     comment: 'comment',
     hostPlayer: {
       isAnonymous: false,
@@ -93,7 +93,7 @@ test('<VillageItem isPlayer={false} />', () => {
   expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('#123')
   expect(wrapper.find('.village--item--val.host-name').text()).toBe('hostPlayer name')
   expect(wrapper.find('.village--item--val.setup1').text()).toBe('15 players')
-  expect(wrapper.find('.village--item--val.setup2').text()).toBe('Random Avatar')
+  expect(wrapper.find('.village--item--val.setup2').text()).toBe('Fixed Avatar')
   expect(wrapper.find('.village--item--val.comment').text()).toBe('comment')
   expect(handleClick).toHaveBeenCalledTimes(0)
 })
@@ -178,7 +178,7 @@ test('<VillageItem isPlayer /> onClick', () => {
 })
 test('<VillageItem isPlayer={false} /> onClick', () => {
   const village: Village = {
-    avatar: 'random',
+    avatar: 'fixed',
     comment: 'comment',
     hostPlayer: {
       isAnonymous: false,

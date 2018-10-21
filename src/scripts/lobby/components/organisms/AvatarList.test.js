@@ -36,6 +36,7 @@ test('<AvatarList isPlayer /> 1 items', () => {
     {
       avatarImage: 'image',
       canKickOut: false,
+      isAnonymous: false,
       isHost: true,
       isMe: true,
       name: 'name',
@@ -62,6 +63,7 @@ test('<AvatarList isPlayer={false} /> 1 items', () => {
     {
       avatarImage: 'image',
       canKickOut: false,
+      isAnonymous: false,
       isHost: true,
       isMe: true,
       name: 'name',
@@ -88,6 +90,7 @@ test('<AvatarList isPlayer /> 2 items', () => {
     {
       avatarImage: 'image',
       canKickOut: false,
+      isAnonymous: false,
       isHost: true,
       isMe: true,
       name: 'name',
@@ -98,6 +101,7 @@ test('<AvatarList isPlayer /> 2 items', () => {
     {
       avatarImage: 'image',
       canKickOut: true,
+      isAnonymous: false,
       isHost: false,
       isMe: false,
       name: 'name',
@@ -126,6 +130,7 @@ test('<AvatarList isPlayer={false} /> 2 items', () => {
     {
       avatarImage: 'image',
       canKickOut: false,
+      isAnonymous: false,
       isHost: true,
       isMe: true,
       name: 'name',
@@ -136,6 +141,7 @@ test('<AvatarList isPlayer={false} /> 2 items', () => {
     {
       avatarImage: 'image',
       canKickOut: true,
+      isAnonymous: false,
       isHost: false,
       isMe: false,
       name: 'name',
