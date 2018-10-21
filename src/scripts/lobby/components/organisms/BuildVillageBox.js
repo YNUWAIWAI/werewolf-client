@@ -122,11 +122,18 @@ export default function BuildVillageBox(props: Props) {
                 />
             }
           </FormattedMessage> :
-          <div
-            className="village--item--val village-name"
+          <FormattedMessage
+            id={`BuildVillage.villageName.anonymous(${props.value.villageName})`}
           >
-            {props.value.villageName}
-          </div>
+            {
+              (text: string) =>
+                <div
+                  className="village--item--val village-name"
+                >
+                  {text}
+                </div>
+            }
+          </FormattedMessage>
       }
       <FormattedMessage
         id="BuildVillage.label(hostName)"
@@ -138,9 +145,22 @@ export default function BuildVillageBox(props: Props) {
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--val host-name">
-        {props.value.hostName}
-      </div>
+      {
+        props.value.avatar === 'fixed' ?
+          <div className="village--item--val host-name">
+            {props.value.hostName}
+          </div> :
+          <FormattedMessage
+            id="BuildVillage.hostName.anonymous"
+          >
+            {
+              (text: string) =>
+                <div className="village--item--val host-name">
+                  {text}
+                </div>
+            }
+          </FormattedMessage>
+      }
       <FormattedMessage
         id="BuildVillage.label(setup)"
       >

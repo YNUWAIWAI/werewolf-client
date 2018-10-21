@@ -12,6 +12,7 @@ import type {
   BuildVillage$ChangeVillageName,
   SocketMessage
 } from '../actions'
+import {getAnonymousVillageName} from '../constants/AnonymousVillageName'
 
 export type State = {
   +initialFixedValue: {
@@ -78,12 +79,6 @@ export const initialState = {
     villageName: 'Cursed Village'
   }
 }
-const anonymousVillageName = [
-  'Cursed Village',
-  'Secret Village',
-  'Doubtful Village'
-]
-const getAnonymousVillageName = () => anonymousVillageName[Math.floor(Math.random() * anonymousVillageName.length)]
 const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.buildVillage.CHANGE_AVATAR:

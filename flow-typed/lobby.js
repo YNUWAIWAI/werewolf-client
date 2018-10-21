@@ -5,7 +5,7 @@ declare module 'lobby' {
   declare type PingStatus = 'danger' | 'safe' | 'warning'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type Village = {
-    avatar: string,
+    avatar: Avatar,
     comment: ?string,
     hostPlayer: HostPlayer,
     id: number,

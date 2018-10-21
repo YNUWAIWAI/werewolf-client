@@ -17,6 +17,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       return {
         avatarImage: player.avatarImage,
         canKickOut: amIHost && !player.isMe,
+        isAnonymous: player.isAnonymous,
         isHost: player.isHost,
         isMe: player.isMe,
         name: player.name,
@@ -29,6 +30,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     return {
       avatarImage: player.avatarImage,
       canKickOut: amIHost && !player.isMe,
+      isAnonymous: player.isAnonymous,
       isHost: player.isHost,
       isMe: player.isMe,
       name: player.name,
