@@ -42,6 +42,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: true,
         isMe: false,
         name: 'Anonymous',
@@ -52,6 +53,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
         canKickOut: false,
+        isAnonymous: false,
         isHost: false,
         isMe: true,
         name: 'Cathy',
@@ -62,6 +64,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -72,6 +75,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -82,6 +86,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -92,6 +97,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -102,6 +108,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -112,6 +119,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -122,6 +130,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -132,6 +141,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -142,6 +152,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -152,6 +163,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -162,6 +174,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -172,6 +185,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -182,6 +196,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -258,6 +273,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: true,
         isMe: false,
         name: 'Anonymous',
@@ -268,6 +284,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
         canKickOut: false,
+        isAnonymous: false,
         isHost: false,
         isMe: true,
         name: 'Cathy',
@@ -278,6 +295,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -288,6 +306,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -298,6 +317,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -308,6 +328,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -318,6 +339,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -328,6 +350,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -338,6 +361,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -348,6 +372,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -358,6 +383,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -368,6 +394,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -378,6 +405,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -388,6 +416,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
@@ -398,6 +427,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         avatarImage: '',
         canKickOut: false,
+        isAnonymous: true,
         isHost: false,
         isMe: false,
         name: 'Anonymous',
