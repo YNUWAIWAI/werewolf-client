@@ -15,10 +15,11 @@ export default function ChatDate(props: Props) {
   const postTime =
     <FormattedDate
       day="2-digit"
+      formatMatcher="basic"
       hour="2-digit"
       hour12={false}
-      formatMatcher="basic"
       key="date"
+      localeMatcher="lookup"
       minute="2-digit"
       month="2-digit"
       second="2-digit"
