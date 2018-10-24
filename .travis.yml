@@ -9,9 +9,8 @@ addons:
 env:
   - TZ=Asia/Tokyo
 before_script:
+  - sudo locale-gen ja_JP.UTF-8
   - locale
-  - locale -a
-  - locale-gen ja_JP.UTF-8
 script:
   - yarn test
   - yarn flow check
