@@ -1,20 +1,6 @@
 // @flow
+import {FormattedDate, FormattedMessage, FormattedTime} from 'react-intl'
 import React from 'react'
-
-const parseTime = (from, to, limit) => {
-  const f = new Date(from)
-  const t = new Date(to)
-  const zeropad = num => String(num).padStart(2, '0')
-  const postTime = `${t.getFullYear()}/${zeropad(t.getMonth() + 1)}/${zeropad(t.getDate())} ${zeropad(t.getHours())}:${zeropad(t.getMinutes())}'${zeropad(t.getSeconds())}`
-  const distance = f.getTime() + limit * 1000 - t.getTime()
-
-  if (distance < 0) {
-    return `${postTime}（残り00'00）`
-  }
-  const restTime = `${zeropad(Math.floor(distance / (60 * 1000)))}'${zeropad(Math.floor(distance / 1000 % 60))}`
-
-  return `${postTime}（残り${restTime}）`
-}
 
 type Props = {
   +from: string,
@@ -23,9 +9,47 @@ type Props = {
 }
 
 export default function ChatDate(props: Props) {
+  const f = new Date(props.from)
+  const t = new Date(props.to)
+  const restTimeValue = f.getTime() - t.getTime() + props.limit * 1000
+  const postTime =
+    <FormattedDate
+      day="2-digit"
+      hour="2-digit"
+      hour12={false}
+      key="date"
+      minute="2-digit"
+      month="2-digit"
+      second="2-digit"
+      value={props.to}
+      year="numeric"
+    >
+      {(text: string) => text}
+    </FormattedDate>
+  const restTime =
+    <FormattedTime
+      key="time"
+      minute="2-digit"
+      second="2-digit"
+      value={restTimeValue < 0 ? 0 : restTimeValue}
+    >
+      {(text: string) => text}
+    </FormattedTime>
+
   return (
-    <div className="chat--date">
-      {parseTime(props.from, props.to, props.limit)}
-    </div>
+    <FormattedMessage
+      id="ChatDate"
+      values={{
+        postTime,
+        restTime
+      }}
+    >
+      {
+        (... text: string[]) =>
+          <div className="chat--date">
+            {text}
+          </div>
+      }
+    </FormattedMessage>
   )
 }
