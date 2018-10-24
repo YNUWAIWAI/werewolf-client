@@ -9,7 +9,7 @@ addons:
 env:
   - TZ=Asia/Tokyo
 before_script:
-  - sudo locale-gen ja_JP.UTF-8
+  - sudo update-locale LANG=ja_JP.UTF-8
   - locale
 script:
   - yarn test
