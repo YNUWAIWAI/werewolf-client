@@ -21,7 +21,6 @@ export default function ChatDate(props: Props) {
       minute="2-digit"
       month="2-digit"
       second="2-digit"
-      timeZoneName="short"
       value={props.to}
       year="numeric"
     >
