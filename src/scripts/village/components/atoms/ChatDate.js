@@ -18,6 +18,7 @@ export default function ChatDate(props: Props) {
       hour="2-digit"
       hour12={false}
       key="date"
+      localeMatcher="lookup"
       minute="2-digit"
       month="2-digit"
       second="2-digit"
