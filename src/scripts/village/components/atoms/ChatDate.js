@@ -17,6 +17,7 @@ export default function ChatDate(props: Props) {
       day="2-digit"
       hour="2-digit"
       hour12={false}
+      formatMatcher="basic"
       key="date"
       minute="2-digit"
       month="2-digit"
