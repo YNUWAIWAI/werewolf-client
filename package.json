@@ -63,8 +63,8 @@
     "build:watch": "node tools/build.js -w",
     "build:docs": "node tools/build.js -d",
     "start": "node tools/build.js -w",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "TZ=UTC jest",
+    "test:watch": "TZ=UTC jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages"
