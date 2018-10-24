@@ -2,9 +2,9 @@ language: node_js
 node_js:
   - node
 cache: yarn
+before_script:
+  - export TZ=Asia/Tokyo
 script:
-  - echo $TZ
-  - echo $LOCALE
   - yarn test
   - yarn flow check
 after_success:
