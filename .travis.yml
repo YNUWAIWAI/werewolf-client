@@ -4,6 +4,7 @@ node_js:
 cache: yarn
 script:
   - echo $TZ
+  - echo $LOCALE
   - yarn test
   - yarn flow check
 after_success:
