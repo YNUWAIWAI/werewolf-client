@@ -3,8 +3,7 @@ node_js:
   - node
 cache: yarn
 env:
-  - TZ=Asia/Tokyo
-  - LANG=ja_JP.UTF-8
+  - TZ=Asia/Tokyo LANG=ja_JP.UTF-8
 script:
   - yarn test
   - yarn flow check
