@@ -3,6 +3,7 @@ node_js:
   - node
 cache: yarn
 script:
+  - echo $TZ
   - yarn test
   - yarn flow check
 after_success:
