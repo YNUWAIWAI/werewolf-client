@@ -11,7 +11,7 @@ env:
 before_script:
   - locale
   - locale -a
-  - update-locale LANG=ja_JP.UTF-8
+  - locale-gen ja_JP.UTF-8
 script:
   - yarn test
   - yarn flow check
