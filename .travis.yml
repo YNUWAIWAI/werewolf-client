@@ -2,8 +2,9 @@ language: node_js
 node_js:
   - node
 cache: yarn
-before_script:
-  - export TZ=Asia/Tokyo
+env:
+  - TZ=Asia/Tokyo
+  - LANG=ja_JP.UTF-8
 script:
   - yarn test
   - yarn flow check
