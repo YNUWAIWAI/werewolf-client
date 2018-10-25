@@ -2,6 +2,12 @@ language: node_js
 node_js:
   - node
 cache: yarn
+addons:
+  apt:
+    packages:
+      - language-pack-ja
+env:
+  - TZ=Asia/Tokyo LC_ALL=ja_JP.UTF-8 LANG=ja_JP.UTF-8
 script:
   - yarn test
   - yarn flow check

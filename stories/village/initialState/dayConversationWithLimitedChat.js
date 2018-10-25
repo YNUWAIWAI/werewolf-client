@@ -240,7 +240,7 @@ export default {
         },
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:07:56.568+09:00',
         'text': 'それで、あなたは人狼が誰だと思うの？',
         'type': 'item'
       },
@@ -255,7 +255,7 @@ export default {
         },
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:08:56.568+09:00',
         'text': '>>1 私はパメラが人狼だと思う。',
         'type': 'item'
       },
@@ -270,7 +270,7 @@ export default {
         },
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:09:56.568+09:00',
         'text': 'それはどうかな〜？',
         'type': 'item'
       },
@@ -285,7 +285,7 @@ export default {
         },
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:10:56.568+09:00',
         'text': 'えー',
         'type': 'item'
       },
@@ -300,7 +300,7 @@ export default {
         },
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:11:56.568+09:00',
         'text': 'じゃあ，わかんないや',
         'type': 'item'
       }
