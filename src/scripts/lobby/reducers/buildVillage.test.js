@@ -948,6 +948,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       }
     }
   )
+})
 describe('scoket/MESSAGE', () => {
   const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
   const SERVER2CLIENT = `${BASE_URI}/server2client`
