@@ -52,7 +52,9 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   })()
 
   return {
+    image: state.buildVillage.image,
     menuItems,
+    name: state.buildVillage.name,
     validity: state.buildVillage.validity,
     value: {
       avatar: state.buildVillage.value.avatar,

@@ -15,11 +15,13 @@ import type {
 import {getAnonymousVillageName} from '../constants/AnonymousVillageName'
 
 export type State = {
+  +image: string,
   +initialFixedValue: {
     hostName: string,
     villageName: string
   },
   +menuItems: MenuItem[],
+  +name: string,
   +validity: {
     +avatar: boolean,
     +comment: boolean,
@@ -54,11 +56,13 @@ type Action =
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
 
 export const initialState = {
+  image: '',
   initialFixedValue: {
     hostName: 'Alice',
     villageName: 'Alice\'s village'
   },
   menuItems: [],
+  name: '',
   validity: {
     avatar: true,
     comment: true,
@@ -246,10 +250,12 @@ const buildVillage = (state: State = initialState, action: Action): State => {
 
           return {
             ... state,
+            image: payload.image,
             initialFixedValue: {
               hostName: payload.name,
               villageName: `${payload.name}'s village`
-            }
+            },
+            name: payload.name
           }
         }
         default:

@@ -17,11 +17,13 @@ describe('buildVillage/CHANGE_AVATAR', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -55,11 +57,13 @@ describe('buildVillage/CHANGE_AVATAR', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -94,11 +98,13 @@ test('buildVillage/CHANGE_COMMENT', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
       },
       menuItems: [],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -140,11 +146,13 @@ test('buildVillage/CHANGE_HOST_NAME', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
       },
       menuItems: [],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -178,11 +186,13 @@ test('buildVillage/CHANGE_MEMBER', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
       },
       menuItems: [],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -225,11 +235,13 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -271,11 +283,13 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -317,11 +331,13 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -356,11 +372,13 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
       },
       menuItems: [],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -396,11 +414,13 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: false,
           comment: true,
@@ -435,11 +455,13 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: false,
@@ -474,11 +496,13 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -513,11 +537,13 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -552,11 +578,13 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -591,11 +619,13 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
+        image: '',
         initialFixedValue: {
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         },
         menuItems: [],
+        name: '',
         validity: {
           avatar: true,
           comment: true,
@@ -638,11 +668,13 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
       },
       menuItems: [],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -696,11 +728,13 @@ test('LEAVE_WAITING_PAGE', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
       },
       menuItems: [],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -747,6 +781,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
@@ -765,6 +800,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -818,11 +854,13 @@ test('SHOW_MAIN', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
       },
       menuItems: [],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -869,6 +907,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     )
   ).toEqual(
     {
+      image: '',
       initialFixedValue: {
         hostName: 'Alice',
         villageName: 'Alice\'s village'
@@ -887,6 +926,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
           types: [ActionTypes.SHOW_MAIN]
         }
       ],
+      name: '',
       validity: {
         avatar: true,
         comment: true,
@@ -908,7 +948,6 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       }
     }
   )
-})
 describe('scoket/MESSAGE', () => {
   const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
   const SERVER2CLIENT = `${BASE_URI}/server2client`
@@ -943,11 +982,13 @@ describe('scoket/MESSAGE', () => {
       )
     ).toEqual(
       {
+        image: '/assets/images/avatar/default/user.png',
         initialFixedValue: {
           hostName: 'Kevin',
           villageName: 'Kevin\'s village'
         },
         menuItems: [],
+        name: 'Kevin',
         validity: {
           avatar: true,
           comment: true,
