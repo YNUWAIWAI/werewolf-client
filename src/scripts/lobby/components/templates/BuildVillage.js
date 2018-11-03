@@ -1,6 +1,7 @@
 // @flow
-import type {Avatar, Member, MenuItem, Target} from 'lobby'
+import type {Avatar as AvatarType, Member, MenuItem, Target} from 'lobby'
 import AsideContent from '../atoms/AsideContent'
+import Avatar from '../atoms/Avatar'
 import BuildVillageBox from '../organisms/BuildVillageBox'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
@@ -8,6 +9,8 @@ import Menu from '../organisms/Menu'
 import React from 'react'
 
 export type StateProps = {
+  +image: string,
+  +name: string,
   +menuItems: MenuItem[],
   +validity: {
     +avatar: boolean,
@@ -18,7 +21,7 @@ export type StateProps = {
     +villageName: boolean
   },
   +value: {
-    +avatar: Avatar,
+    +avatar: AvatarType,
     +comment: string,
     +hostName: string,
     +numberOfHumans: number,
@@ -28,7 +31,7 @@ export type StateProps = {
   }
 }
 export type DispatchProps = {
-  +handleAvatarChange: Avatar => void,
+  +handleAvatarChange: AvatarType => void,
   +handleMemberChange: Member => void,
   +handleNumberChange: string => number => void,
   +handleTextChange: string => string => void,
@@ -46,6 +49,7 @@ export default function BuildVillage(props: Props) {
   return (
     <div className="grid">
       <Header id="Header.buildVillage" />
+      <Avatar image={props.image} name={props.name} />
       <MainContent>
         <BuildVillageBox
           handleAvatarChange={props.handleAvatarChange}
