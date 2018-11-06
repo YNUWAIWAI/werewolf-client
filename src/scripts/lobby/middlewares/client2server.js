@@ -248,11 +248,6 @@ const client2server: Middleware<ReducerState, Action> = store => next => action 
 
           return next(action)
         }
-        case 'played': {
-          window.location.replace(`${window.location.origin}/village`)
-
-          return next(action)
-        }
         default:
           return next(action)
       }
