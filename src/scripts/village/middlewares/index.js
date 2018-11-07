@@ -2,6 +2,7 @@
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
+import indexedDB from './indexedDB'
 import logger from './logger'
 import socket from './socket'
 import timeWatcher from './timeWatcher'
@@ -12,6 +13,7 @@ export type Action =
   | actions.ChangePredictionBoard
   | actions.ClickHideButton
   | actions.PostChat
+  | actions.Ready
   | actions.SelectNo
   | actions.SelectOption
   | actions.SelectYes
@@ -22,6 +24,7 @@ export type Action =
   | actions.SocketSend
   | actions.ToggleObfucator
   | {type: 'PROLOGUE'}
+  | {type: 'indexedDB/INIT'}
   | {type: 'socket/INIT'}
 
 const elem = document.getElementById('script')
@@ -35,6 +38,7 @@ const middleware = applyMiddleware(
     url
   }),
   client2server,
+  indexedDB,
   logger,
   timeWatcher
 )

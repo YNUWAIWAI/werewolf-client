@@ -1,7 +1,6 @@
 // @flow
-import {PROLOGUE, socket} from './constants/ActionTypes'
+import {PROLOGUE, indexedDB, socket} from './constants/ActionTypes'
 import App from './containers/App'
-import IntlProvider from './containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -21,6 +20,9 @@ const store = createStore(
 
 store.dispatch({
   type: socket.INIT
+})
+store.dispatch({
+  type: indexedDB.INIT
 })
 store.dispatch({
   type: PROLOGUE
