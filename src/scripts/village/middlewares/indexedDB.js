@@ -43,9 +43,9 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
   switch (action.type) {
     case ActionTypes.indexedDB.INIT: {
       connectVillageDB().then(db => {
-        const transaction = db.transaction('history')
-        const objectStore = transaction.objectStore('history')
-        const request = objectStore.get('lastVisited')
+        const transaction = db.transaction('village')
+        const objectStore = transaction.objectStore('village')
+        const request = objectStore.get('village')
 
         request.onerror = event => {
           console.error('error')
