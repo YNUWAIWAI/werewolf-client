@@ -91,7 +91,7 @@ const connectVillageDB = (() => {
       const objectStore = db.createObjectStore(
         'village',
         {
-          keyPath: 'token'
+          keyPath: 'type'
         }
       )
 
@@ -192,6 +192,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
             const objectStore = transaction.objectStore('village')
             const request = objectStore.put({
               token: state.token[state.token.lobby],
+              type: 'ready',
               villageId: state.waitingForPlayers.village ? state.waitingForPlayers.village.id : 0
             })
 

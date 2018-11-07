@@ -45,7 +45,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
       connectVillageDB().then(db => {
         const transaction = db.transaction('village', 'readwrite')
         const objectStore = transaction.objectStore('village')
-        const request = objectStore.get('village')
+        const request = objectStore.get('ready')
 
         request.onerror = event => {
           console.error('error')
