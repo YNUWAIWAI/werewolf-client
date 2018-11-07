@@ -91,7 +91,7 @@ const connectVillageDB = (() => {
       const objectStore = db.createObjectStore(
         'village',
         {
-          keyPath: 'type'
+          keyPath: 'token'
         }
       )
 
