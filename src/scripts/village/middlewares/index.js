@@ -24,6 +24,7 @@ export type Action =
   | actions.SocketSend
   | actions.ToggleObfucator
   | {type: 'PROLOGUE'}
+  | {type: 'indexedDB/INIT'}
   | {type: 'socket/INIT'}
 
 const elem = document.getElementById('script')
