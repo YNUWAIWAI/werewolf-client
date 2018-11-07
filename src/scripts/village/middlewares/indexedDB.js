@@ -43,7 +43,7 @@ const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => a
   switch (action.type) {
     case ActionTypes.indexedDB.INIT: {
       connectVillageDB().then(db => {
-        const transaction = db.transaction('village', 'readwrite')
+        const transaction = db.transaction('village', 'read')
         const objectStore = transaction.objectStore('village')
         const request = objectStore.get('ready')
 
