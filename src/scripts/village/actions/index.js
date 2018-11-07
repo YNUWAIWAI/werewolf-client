@@ -1,6 +1,16 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {BoardState, C2SPayload, InputChannel, Language, NavigationType, Payload, Phase, ReadyPayload, RoleId} from 'village'
+import type {
+  BoardState,
+  C2SPayload,
+  InputChannel,
+  Language,
+  NavigationType,
+  Payload,
+  Phase,
+  ReadyPayload,
+  RoleId
+} from 'village'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: 'socket/CLOSE'} => ({
