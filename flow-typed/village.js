@@ -168,4 +168,9 @@ declare module 'village' {
   declare type C2SPayload<T> =
     Base &
     T
+  declare type ReadyPayload = {
+    token: string,
+    type: 'ready',
+    villageId: number
+  }
 }

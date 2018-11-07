@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {BoardState, C2SPayload, InputChannel, Language, NavigationType, Payload, Phase, RoleId} from 'village'
+import type {BoardState, C2SPayload, InputChannel, Language, NavigationType, Payload, Phase, ReadyPayload, RoleId} from 'village'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: 'socket/CLOSE'} => ({
@@ -19,7 +19,7 @@ export const socket = {
     event,
     type: ActionTypes.socket.OPEN
   }),
-  send: (payload: C2SPayload<*>): {payload: C2SPayload<*>, type: 'socket/SEND'} => ({
+  send: (payload: C2SPayload<*> | ReadyPayload): {payload: C2SPayload<*> | ReadyPayload, type: 'socket/SEND'} => ({
     payload,
     type: ActionTypes.socket.SEND
   })
@@ -68,6 +68,12 @@ export const postChat = ({kind, text}: {kind: InputChannel, text: string}): {kin
   type: ActionTypes.POST_CHAT
 })
 
+export const ready = ({token, villageId}: {token: string, villageId: number}): {token: string, type: 'READY', villageId: number} => ({
+  token,
+  type: ActionTypes.READY,
+  villageId
+})
+
 export const selectNo = (): {type: 'SELECT_NO'} => ({
   type: ActionTypes.SELECT_NO
 })
@@ -100,6 +106,7 @@ export type ChangeLanguage = $Call<typeof changeLanguage, *>
 export type ChangePhase = $Call<typeof changePhase, *>
 export type HideResult = $Call<typeof hideResult>
 export type PostChat = $Call<typeof postChat, *>
+export type Ready = $Call<typeof ready, *>
 export type SelectOption = $Call<typeof selectOption, *>
 export type SelectNo = $Call<typeof selectNo, *>
 export type SelectYes = $Call<typeof selectYes, *>

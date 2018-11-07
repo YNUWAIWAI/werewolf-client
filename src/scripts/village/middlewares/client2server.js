@@ -119,6 +119,17 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
+    case ActionTypes.READY: {
+      const payload = {
+        token: action.token,
+        type: 'ready',
+        villageId: action.villageId
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.SELECT_YES: {
       const state = store.getState()
       const votedAgent = getVotedAgent(state.agents.all, action.agentId)
