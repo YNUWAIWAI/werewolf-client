@@ -199,11 +199,11 @@ describe('socket/MESSAGE', () => {
             }
           },
           {
-            id: 'werehumster',
-            image: 'https://werewolf.world/image/0.1/werehumster.jpg',
+            id: 'werehamster',
+            image: 'https://werewolf.world/image/0.1/werehamster.jpg',
             numberOfAgents: 1,
             caption: {
-              en: 'Werehumster',
+              en: 'Werehamster',
               ja: 'ハムスター人間'
             }
           }
@@ -240,7 +240,7 @@ describe('socket/MESSAGE', () => {
               fixed: true,
               state: 'fill'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: true,
               state: 'fill'
@@ -282,7 +282,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -324,7 +324,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -366,7 +366,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -408,7 +408,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -450,7 +450,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -492,7 +492,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -534,7 +534,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -576,7 +576,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -618,7 +618,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -660,7 +660,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -702,7 +702,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -744,7 +744,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -955,11 +955,11 @@ describe('socket/MESSAGE', () => {
           },
           {
             caption: {
-              en: 'Werehumster',
+              en: 'Werehamster',
               ja: 'ハムスター人間'
             },
-            id: 'werehumster',
-            image: 'https://werewolf.world/image/0.1/werehumster.jpg',
+            id: 'werehamster',
+            image: 'https://werewolf.world/image/0.1/werehamster.jpg',
             numberOfAgents: 1
           }
         ],
@@ -995,7 +995,7 @@ describe('socket/MESSAGE', () => {
               fixed: true,
               state: 'O'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: true,
               state: 'fill'
@@ -1037,7 +1037,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1079,7 +1079,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1121,7 +1121,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1163,7 +1163,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1205,7 +1205,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1247,7 +1247,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1289,7 +1289,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1331,7 +1331,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1373,7 +1373,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1415,7 +1415,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1457,7 +1457,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'
@@ -1499,7 +1499,7 @@ describe('socket/MESSAGE', () => {
               fixed: false,
               state: '?'
             },
-            werehumster: {
+            werehamster: {
               date: 1,
               fixed: false,
               state: '?'

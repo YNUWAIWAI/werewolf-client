@@ -53,7 +53,7 @@ const agents = {
     agentImage: 'https://werewolf.world/image/0.1/Nicholas.jpg',
     agentName: 'ニコラス',
     result: 'lose',
-    roleImage: 'https://werewolf.world/image/0.1/werehumster.jpg',
+    roleImage: 'https://werewolf.world/image/0.1/werehamster.jpg',
     roleName: 'ハムスター人間',
     status: 'death by fear',
     userAvatar: 'https://werewolf.world/image/0.1/Erna.jpg',

@@ -280,7 +280,7 @@ describe('<ResultCell />', () => {
   test('type="caption"', () => {
     const wrapper = mountWithIntl(
       <ResultCell
-        id="Result.summary.loser(villager, werehumster)"
+        id="Result.summary.loser(villager, werehamster)"
         type="caption"
       />
     )

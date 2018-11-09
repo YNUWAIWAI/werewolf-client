@@ -45,7 +45,7 @@ test('<VillageList isPlayer /> 1 item', () => {
         medium: 1,
         seer: 1,
         villager: 6,
-        werehumster: 1,
+        werehamster: 1,
         werewolf: 2
       }
     }
@@ -90,7 +90,7 @@ test('<VillageList isPlayer /> 2 item', () => {
         medium: 1,
         seer: 1,
         villager: 6,
-        werehumster: 1,
+        werehamster: 1,
         werewolf: 2
       }
     },
@@ -123,7 +123,7 @@ test('<VillageList isPlayer /> 2 item', () => {
         medium: 1,
         seer: 1,
         villager: 6,
-        werehumster: 1,
+        werehamster: 1,
         werewolf: 2
       }
     }

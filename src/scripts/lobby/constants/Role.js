@@ -60,10 +60,10 @@ export const WEREWOLF = {
   }
 }
 export const WEREHUMSTER = {
-  id: 'werehumster',
-  image: `${BASE_URL}/werehumster.jpg`,
+  id: 'werehamster',
+  image: `${BASE_URL}/werehamster.jpg`,
   name: {
-    en: 'Werehumster',
+    en: 'Werehamster',
     ja: 'ハムスター人間'
   }
 }

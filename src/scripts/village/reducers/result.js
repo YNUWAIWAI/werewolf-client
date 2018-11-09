@@ -32,7 +32,7 @@ export type State = {
     +role: string
   },
   +visible: boolean,
-  +werehumster: {
+  +werehamster: {
     exists: boolean,
     isWin: boolean
   },
@@ -54,7 +54,7 @@ export const initialState = {
     role: ''
   },
   visible: false,
-  werehumster: {
+  werehamster: {
     exists: false,
     isWin: false
   },
@@ -84,7 +84,7 @@ const result = (state: State = initialState, action: Action): State => {
         const allIds = []
         const losers = []
         let me
-        const werehumster = {
+        const werehamster = {
           exists: false,
           isWin: false
         }
@@ -115,8 +115,8 @@ const result = (state: State = initialState, action: Action): State => {
               me = agentId
             }
             if (a.role['@id'] === WEREHUMSTER) {
-              werehumster.exists = true
-              werehumster.isWin = a.result === 'win'
+              werehamster.exists = true
+              werehamster.isWin = a.result === 'win'
             }
             allIds.push(agentId)
           })
@@ -146,7 +146,7 @@ const result = (state: State = initialState, action: Action): State => {
           me,
           summary,
           visible: true,
-          werehumster,
+          werehamster,
           winners
         }
       }
