@@ -59,7 +59,7 @@ export const WEREWOLF = {
     ja: '人狼'
   }
 }
-export const WEREHUMSTER = {
+export const WEREHAMSTER = {
   id: 'werehamster',
   image: `${BASE_URL}/werehamster.jpg`,
   name: {
@@ -76,5 +76,5 @@ export const ORDERED_ROLE_LIST = [
   MASON,
   MADMAN,
   WEREWOLF,
-  WEREHUMSTER
+  WEREHAMSTER
 ]

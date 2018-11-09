@@ -5,7 +5,7 @@ import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village
 import type {HideResult, SocketMessage} from '../actions'
 import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
 import {RESULTS} from '../constants/Phase'
-import {WEREHUMSTER} from '../constants/Role'
+import {WEREHAMSTER} from '../constants/Role'
 
 const getAgentId = idGenerater('agent')
 
@@ -114,7 +114,7 @@ const result = (state: State = initialState, action: Action): State => {
             if (a.agentIsMine) {
               me = agentId
             }
-            if (a.role['@id'] === WEREHUMSTER) {
+            if (a.role['@id'] === WEREHAMSTER) {
               werehamster.exists = true
               werehamster.isWin = a.result === 'win'
             }
