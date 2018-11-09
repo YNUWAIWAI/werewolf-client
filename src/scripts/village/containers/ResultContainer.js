@@ -42,15 +42,15 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     if (xor(isWerewolfSide, isWin)) {
       return {
         description,
-        loser: `Result.summary.loser(werewolf${state.result.werehumster.exists && !state.result.werehumster.isWin ? ', werehumster' : ''})`,
-        winner: `Result.summary.winner(villager${state.result.werehumster.exists && state.result.werehumster.isWin ? ', werehumster' : ''})`
+        loser: `Result.summary.loser(werewolf${state.result.werehamster.exists && !state.result.werehamster.isWin ? ', werehamster' : ''})`,
+        winner: `Result.summary.winner(villager${state.result.werehamster.exists && state.result.werehamster.isWin ? ', werehamster' : ''})`
       }
     }
 
     return {
       description,
-      loser: `Result.summary.loser(villager${state.result.werehumster.exists && !state.result.werehumster.isWin ? ', werehumster' : ''})`,
-      winner: `Result.summary.winner(werewolf${state.result.werehumster.exists && state.result.werehumster.isWin ? ', werehumster' : ''})`
+      loser: `Result.summary.loser(villager${state.result.werehamster.exists && !state.result.werehamster.isWin ? ', werehamster' : ''})`,
+      winner: `Result.summary.winner(werewolf${state.result.werehamster.exists && state.result.werehamster.isWin ? ', werehamster' : ''})`
     }
   })()
 

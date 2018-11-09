@@ -396,7 +396,7 @@ describe('socket/MESSAGE', () => {
               medium: 1,
               seer: 1,
               villager: 6,
-              werehumster: 1,
+              werehamster: 1,
               werewolf: 2
             }
           }

@@ -521,11 +521,11 @@ export default {
         }
       },
       {
-        'id': 'werehumster',
-        'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
+        'id': 'werehamster',
+        'image': 'https://werewolf.world/image/0.1/werehamster.jpg',
         'numberOfAgents': 1,
         'caption': {
-          'en': 'Werehumster',
+          'en': 'Werehamster',
           'ja': 'ハムスター人間'
         }
       }
@@ -567,7 +567,7 @@ export default {
           fixed: true,
           state: 'fill'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: true,
           state: 'fill'
@@ -609,7 +609,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -651,7 +651,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -693,7 +693,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -735,7 +735,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -777,7 +777,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -819,7 +819,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -861,7 +861,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -903,7 +903,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -945,7 +945,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -987,7 +987,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -1029,7 +1029,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -1071,7 +1071,7 @@ export default {
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -1090,7 +1090,7 @@ export default {
       role: ''
     },
     visible: false,
-    werehumster: {
+    werehamster: {
       exists: false,
       isWin: false
     },
@@ -1292,13 +1292,13 @@ export default {
         ]
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/werehumster',
+        '@id': 'https://werewolf.world/resource/0.1/werehamster',
         'roleIsMine': false,
         'name': {
-          'en': 'Werehumster',
+          'en': 'Werehamster',
           'ja': 'ハムスター人間'
         },
-        'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
+        'image': 'https://werewolf.world/image/0.1/werehamster.jpg',
         'numberOfAgents': 1,
         'board': [
           {

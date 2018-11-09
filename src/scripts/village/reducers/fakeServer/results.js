@@ -149,12 +149,12 @@ export default {
       'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
       'id': 5,
       'role': {
-        '@id': 'https://werewolf.world/resource/0.1/werehumster',
+        '@id': 'https://werewolf.world/resource/0.1/werehamster',
         'roleName': {
           'en': 'Werehuster',
           'ja': 'ハムスター人間'
         },
-        'roleImage': 'https://werewolf.world/image/0.1/werehumster.jpg'
+        'roleImage': 'https://werewolf.world/image/0.1/werehamster.jpg'
       },
       'status': 'death by fear',
       'result': 'lose',
@@ -584,13 +584,13 @@ export default {
       ]
     },
     {
-      '@id': 'https://wereworld.world/resource/0.1/werehumster',
+      '@id': 'https://wereworld.world/resource/0.1/werehamster',
       'roleIsMine': false,
       'name': {
-        'en': 'Werehumster',
+        'en': 'Werehamster',
         'ja': 'ハムスター人間'
       },
-      'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
+      'image': 'https://werewolf.world/image/0.1/werehamster.jpg',
       'numberOfAgents': 1,
       'agent': [
         {

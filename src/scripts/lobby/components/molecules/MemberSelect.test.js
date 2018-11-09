@@ -19,7 +19,7 @@ test('<MemberSelect numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} /
       medium: 1,
       seer: 1,
       villager: 6,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 2
     },
     B: {
@@ -29,7 +29,7 @@ test('<MemberSelect numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} /
       medium: 1,
       seer: 1,
       villager: 6,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 2
     },
     C: {
@@ -39,7 +39,7 @@ test('<MemberSelect numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} /
       medium: 1,
       seer: 2,
       villager: 3,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 3
     }
   }

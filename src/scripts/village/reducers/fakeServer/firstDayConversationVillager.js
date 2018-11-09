@@ -436,13 +436,13 @@ export default {
       ]
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/werehumster',
+      '@id': 'https://werewolf.world/resource/0.1/werehamster',
       'roleIsMine': false,
       'name': {
-        'en': 'Werehumster',
+        'en': 'Werehamster',
         'ja': 'ハムスター人間'
       },
-      'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
+      'image': 'https://werewolf.world/image/0.1/werehamster.jpg',
       'numberOfAgents': 1,
       'board': [
         {

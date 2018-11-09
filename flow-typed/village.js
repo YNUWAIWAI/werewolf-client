@@ -4,7 +4,7 @@ declare module 'village' {
   declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
   declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
-  declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehumster'
+  declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type BoardPolarity = 'positive' | 'negative'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'

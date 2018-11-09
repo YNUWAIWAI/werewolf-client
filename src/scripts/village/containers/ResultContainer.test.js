@@ -3,7 +3,7 @@ import React from 'react'
 import ResultContainer from './ResultContainer'
 import {shallow} from 'enzyme'
 
-test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => {
+test('<ResultContainer /> winner: villager loser: werewolf, werehamster', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     language: 'ja',
@@ -85,7 +85,7 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
             'ja': 'ニコラス'
           },
           'result': 'lose',
-          'roleImage': 'https://werewolf.world/image/0.1/werehumster.jpg',
+          'roleImage': 'https://werewolf.world/image/0.1/werehamster.jpg',
           'roleName': {
             'en': 'Werehuster',
             'ja': 'ハムスター人間'
@@ -259,7 +259,7 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
         role: 'https://werewolf.world/resource/0.1/seer'
       },
       visible: true,
-      werehumster: {
+      werehamster: {
         exists: true,
         isWin: false
       },
@@ -334,7 +334,7 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
       'agentImage': 'https://werewolf.world/image/0.1/Nicholas.jpg',
       'agentName': 'ニコラス',
       'result': 'lose',
-      'roleImage': 'https://werewolf.world/image/0.1/werehumster.jpg',
+      'roleImage': 'https://werewolf.world/image/0.1/werehamster.jpg',
       'roleName': 'ハムスター人間',
       'status': 'death by fear',
       'userAvatar': 'https://werewolf.world/image/0.1/Erna.jpg',
@@ -438,7 +438,7 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
   expect(wrapper.props().me).toBe('agent0')
   expect(wrapper.props().summary).toEqual({
     description: 'Result.summary.description(player, villagerWin, youWin)',
-    loser: 'Result.summary.loser(werewolf, werehumster)',
+    loser: 'Result.summary.loser(werewolf, werehamster)',
     winner: 'Result.summary.winner(villager)'
   })
   expect(wrapper.props().winners).toEqual([
@@ -453,7 +453,7 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
     'agent12'
   ])
 })
-test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => {
+test('<ResultContainer /> winner: villager, werehamster loser: werewolf', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     language: 'ja',
@@ -535,7 +535,7 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
             'ja': 'ニコラス'
           },
           'result': 'win',
-          'roleImage': 'https://werewolf.world/image/0.1/werehumster.jpg',
+          'roleImage': 'https://werewolf.world/image/0.1/werehamster.jpg',
           'roleName': {
             'en': 'Werehuster',
             'ja': 'ハムスター人間'
@@ -708,7 +708,7 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
         role: 'https://werewolf.world/resource/0.1/seer'
       },
       visible: true,
-      werehumster: {
+      werehamster: {
         exists: true,
         isWin: true
       },
@@ -784,7 +784,7 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
       'agentImage': 'https://werewolf.world/image/0.1/Nicholas.jpg',
       'agentName': 'ニコラス',
       'result': 'win',
-      'roleImage': 'https://werewolf.world/image/0.1/werehumster.jpg',
+      'roleImage': 'https://werewolf.world/image/0.1/werehamster.jpg',
       'roleName': 'ハムスター人間',
       'status': 'alive',
       'userAvatar': 'https://werewolf.world/image/0.1/Erna.jpg',
@@ -888,7 +888,7 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
   expect(wrapper.props().summary).toEqual({
     description: 'Result.summary.description(player, villagerWin, youWin)',
     loser: 'Result.summary.loser(werewolf)',
-    winner: 'Result.summary.winner(villager, werehumster)'
+    winner: 'Result.summary.winner(villager, werehamster)'
   })
   expect(wrapper.props().winners).toEqual([
     'agent0',
@@ -903,7 +903,7 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
     'agent12'
   ])
 })
-test('<ResultContainer /> werehumster does not exist', () => {
+test('<ResultContainer /> werehamster does not exist', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     language: 'ja',
@@ -1140,7 +1140,7 @@ test('<ResultContainer /> werehumster does not exist', () => {
         role: 'https://werewolf.world/resource/0.1/seer'
       },
       visible: true,
-      werehumster: {
+      werehamster: {
         exists: false,
         isWin: false
       },

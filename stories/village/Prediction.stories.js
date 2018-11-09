@@ -134,8 +134,8 @@ storiesOf('village|Prediction', module)
       },
       {
         'caption': 'ハムスター人間',
-        'id': 'werehumster',
-        'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
+        'id': 'werehamster',
+        'image': 'https://werewolf.world/image/0.1/werehamster.jpg',
         'numberOfAgents': 1
       }
     ]
@@ -176,7 +176,7 @@ storiesOf('village|Prediction', module)
           fixed: true,
           state: 'fill'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: true,
           state: 'fill'
@@ -218,7 +218,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -260,7 +260,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -302,7 +302,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -344,7 +344,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -386,7 +386,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -428,7 +428,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -470,7 +470,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -512,7 +512,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -554,7 +554,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -596,7 +596,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -638,7 +638,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'
@@ -680,7 +680,7 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: '?'
         },
-        werehumster: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: '?'

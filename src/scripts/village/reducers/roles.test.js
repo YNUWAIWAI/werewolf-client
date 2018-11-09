@@ -197,7 +197,7 @@ test('socket/MESSAGE', () => {
         'roleIsMine': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/werehumster',
+        '@id': 'https://werewolf.world/resource/0.1/werehamster',
         'board': [
           {
             'boardAgent': {
@@ -214,9 +214,9 @@ test('socket/MESSAGE', () => {
             'boardPolarity': 'negative'
           }
         ],
-        'image': 'https://werewolf.world/image/0.1/werehumster.jpg',
+        'image': 'https://werewolf.world/image/0.1/werehamster.jpg',
         'name': {
-          'en': 'Werehumster',
+          'en': 'Werehamster',
           'ja': 'ハムスター人間'
         },
         'numberOfAgents': 1,
