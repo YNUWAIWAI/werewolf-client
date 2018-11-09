@@ -39,7 +39,7 @@ declare module 'lobby' {
     medium: number,
     seer: number,
     villager: number,
-    werehumster: number,
+    werehamster: number,
     werewolf: number
   }
   declare type WaitingPlayer = {

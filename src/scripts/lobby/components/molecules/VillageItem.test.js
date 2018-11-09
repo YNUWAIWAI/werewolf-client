@@ -37,7 +37,7 @@ test('<VillageItem isPlayer />', () => {
       medium: 1,
       seer: 1,
       villager: 6,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 2
     }
   }
@@ -82,7 +82,7 @@ test('<VillageItem isPlayer={false} />', () => {
       medium: 1,
       seer: 1,
       villager: 6,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 2
     }
   }
@@ -127,7 +127,7 @@ test('<VillageItem isPlayer /> idForSearching is invalid', () => {
       medium: 1,
       seer: 1,
       villager: 6,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 2
     }
   }
@@ -166,7 +166,7 @@ test('<VillageItem isPlayer /> onClick', () => {
       medium: 1,
       seer: 1,
       villager: 6,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 2
     }
   }
@@ -206,7 +206,7 @@ test('<VillageItem isPlayer={false} /> onClick', () => {
       medium: 1,
       seer: 1,
       villager: 6,
-      werehumster: 1,
+      werehamster: 1,
       werewolf: 2
     }
   }

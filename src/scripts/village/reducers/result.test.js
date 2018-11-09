@@ -102,7 +102,7 @@ describe('socket/MESSAGE', () => {
             ja: 'ニコラス'
           },
           result: 'lose',
-          roleImage: 'https://werewolf.world/image/0.1/werehumster.jpg',
+          roleImage: 'https://werewolf.world/image/0.1/werehamster.jpg',
           roleName: {
             en: 'Werehuster',
             ja: 'ハムスター人間'
@@ -276,7 +276,7 @@ describe('socket/MESSAGE', () => {
         role: 'https://werewolf.world/resource/0.1/seer'
       },
       visible: true,
-      werehumster: {
+      werehamster: {
         exists: true,
         isWin: false
       },

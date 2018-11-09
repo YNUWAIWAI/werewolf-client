@@ -188,7 +188,7 @@ describe('scoket/MESSAGE', () => {
                 medium: 1,
                 seer: 1,
                 villager: 6,
-                werehumster: 1,
+                werehamster: 1,
                 werewolf: 2
               }
             },
@@ -222,7 +222,7 @@ describe('scoket/MESSAGE', () => {
                 medium: 0,
                 seer: 1,
                 villager: 3,
-                werehumster: 0,
+                werehamster: 0,
                 werewolf: 1
               }
             }

@@ -13,7 +13,7 @@ export const HUNTER = `${BASE_URL}/hunter`
 export const MASON = `${BASE_URL}/mason`
 export const MADMAN = `${BASE_URL}/madman`
 export const WEREWOLF = `${BASE_URL}/werewolf`
-export const WEREHUMSTER = `${BASE_URL}/werehumster`
+export const WEREHAMSTER = `${BASE_URL}/werehamster`
 
 export const UNPLAYABLE_ROLE = [
   MASTER
@@ -26,7 +26,7 @@ export const ORDERED_ROLE_LIST = [
   MASON,
   MADMAN,
   WEREWOLF,
-  WEREHUMSTER
+  WEREHAMSTER
 ]
 export const WEREWOLF_SIDE = [
   MADMAN,
@@ -40,7 +40,7 @@ export const AVAILABLE_FOR_LIMITED_CHAT = [
 
 export const getRoleId = (str: string): RoleId => {
   const id = trimBaseUri(str)
-  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehumster']
+  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster']
   const maybe = roleId.find(v => v === id)
 
   if (!maybe) {
