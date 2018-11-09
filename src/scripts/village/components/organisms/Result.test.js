@@ -121,7 +121,7 @@ const agents = {
     result: 'win',
     roleImage: 'https://werewolf.world/image/0.1/villager.jpg',
     roleName: '村人',
-    status: 'death by werewolf attack',
+    status: 'death by attack',
     userAvatar: 'https://werewolf.world/image/0.1/Otto.jpg',
     userName: '山口'
   },
