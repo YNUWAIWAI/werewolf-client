@@ -209,7 +209,7 @@ describe('socket/MESSAGE', () => {
             en: 'Villager',
             ja: '村人'
           },
-          status: 'death by werewolf attack',
+          status: 'death by attack',
           userAvatar: 'https://werewolf.world/image/0.1/Otto.jpg',
           userName: '山口'
         },

@@ -50,11 +50,11 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
-    test('status="death by werewolf attack"', () => {
+    test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by werewolf attack"
+          status="death by attack"
           type="image"
         />
       )
@@ -136,11 +136,11 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
-    test('<ResultCell image="image" status="death by werewolf attack"', () => {
+    test('<ResultCell image="image" status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by werewolf attack"
+          status="death by attack"
           type="userAvatar"
         />
       )
@@ -228,12 +228,12 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
       expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
     })
-    test('status="death by werewolf attack"', () => {
+    test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           caption="caption"
           image="image"
-          status="death by werewolf attack"
+          status="death by attack"
           type="roleImage"
         />
       )
@@ -344,10 +344,10 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
-    test('status="death by werewolf attack"', () => {
+    test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by werewolf attack"
+          status="death by attack"
           text="text"
           type="name"
         />
@@ -427,10 +427,10 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('処刑死')
     })
-    test('status="death by werewolf attack', () => {
+    test('status="death by attack', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by werewolf attack"
+          status="death by attack"
           type="status"
         />
       )
@@ -510,10 +510,10 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
-    test('status="death by werewolf attack"', () => {
+    test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by werewolf attack"
+          status="death by attack"
           text="text"
           type="userName"
         />

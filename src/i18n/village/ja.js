@@ -36,7 +36,7 @@ export default {
   'Result.status(dead)': '死亡',
   'Result.status(death by execution)': '処刑死',
   'Result.status(death by fear)': '恐怖死',
-  'Result.status(death by werewolf attack)': '襲撃死',
+  'Result.status(death by attack)': '襲撃死',
   'Result.status(unnatural death)': '不審死',
   'Result.summary.description(audience, villagerLose)': '村人陣営が敗北しました',
   'Result.summary.description(audience, villagerWin)': '村人陣営が勝利しました',

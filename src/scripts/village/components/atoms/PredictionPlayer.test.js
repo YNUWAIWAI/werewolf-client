@@ -45,12 +45,12 @@ test('<PredictionPlayer image="image" name="name" status="death by execution" />
   expect(wrapper.find('.prediction--player--name').exists()).toBe(true)
   expect(wrapper.text()).toBe('name')
 })
-test('<PredictionPlayer image="image" name="name" status="death by werewolf attack" />', () => {
+test('<PredictionPlayer image="image" name="name" status="death by attack" />', () => {
   const wrapper = shallow(
     <PredictionPlayer
       image="image"
       name="name"
-      status="death by werewolf attack"
+      status="death by attack"
     />
   )
 

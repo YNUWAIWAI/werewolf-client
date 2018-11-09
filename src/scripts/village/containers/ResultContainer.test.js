@@ -192,7 +192,7 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
             'en': 'Villager',
             'ja': '村人'
           },
-          'status': 'death by werewolf attack',
+          'status': 'death by attack',
           'userAvatar': 'https://werewolf.world/image/0.1/Otto.jpg',
           'userName': '山口'
         },
@@ -402,7 +402,7 @@ test('<ResultContainer /> winner: villager loser: werewolf, werehumster', () => 
       'result': 'win',
       'roleImage': 'https://werewolf.world/image/0.1/villager.jpg',
       'roleName': '村人',
-      'status': 'death by werewolf attack',
+      'status': 'death by attack',
       'userAvatar': 'https://werewolf.world/image/0.1/Otto.jpg',
       'userName': '山口'
     },
@@ -642,7 +642,7 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
             'en': 'Villager',
             'ja': '村人'
           },
-          'status': 'death by werewolf attack',
+          'status': 'death by attack',
           'userAvatar': 'https://werewolf.world/image/0.1/Otto.jpg',
           'userName': '山口'
         },
@@ -852,7 +852,7 @@ test('<ResultContainer /> winner: villager, werehumster loser: werewolf', () => 
       'result': 'win',
       'roleImage': 'https://werewolf.world/image/0.1/villager.jpg',
       'roleName': '村人',
-      'status': 'death by werewolf attack',
+      'status': 'death by attack',
       'userAvatar': 'https://werewolf.world/image/0.1/Otto.jpg',
       'userName': '山口'
     },
@@ -1075,7 +1075,7 @@ test('<ResultContainer /> werehumster does not exist', () => {
             'en': 'Villager',
             'ja': '村人'
           },
-          'status': 'death by werewolf attack',
+          'status': 'death by attack',
           'userAvatar': 'https://werewolf.world/image/0.1/Otto.jpg',
           'userName': '山口'
         },
@@ -1272,7 +1272,7 @@ test('<ResultContainer /> werehumster does not exist', () => {
       'result': 'win',
       'roleImage': 'https://werewolf.world/image/0.1/villager.jpg',
       'roleName': '村人',
-      'status': 'death by werewolf attack',
+      'status': 'death by attack',
       'userAvatar': 'https://werewolf.world/image/0.1/Otto.jpg',
       'userName': '山口'
     },
