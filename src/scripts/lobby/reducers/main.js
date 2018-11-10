@@ -30,6 +30,14 @@ export const initialState = {
     {
       id: 'Menu.settings',
       types: [ActionTypes.SHOW_SETTINGS]
+    },
+    {
+      id: 'Menu.howToPlay',
+      types: [ActionTypes.SHOW_HOW_TO_PLAY]
+    },
+    {
+      id: 'Menu.credits',
+      types: [ActionTypes.SHOW_CREDITS]
     }
   ]
 }
