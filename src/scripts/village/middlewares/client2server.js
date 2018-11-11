@@ -13,6 +13,58 @@ import {socket} from '../actions'
 const getTimestamp = () => new Date().toISOString()
 const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
   switch (action.type) {
+    case ActionTypes.CHANGE_PREDICTION_BOARD: {
+      const state = store.getState()
+      const myRole = just(state.roles.mine)
+      const myAgent = just(state.agents.mine)
+      const payload: C2SPayload<C2SBoard> = {
+        '@context': [
+          'https://werewolf.world/context/0.1/base.jsonld',
+          'https://werewolf.world/context/0.1/board.jsonld'
+        ],
+        '@id': 'https://werewolf.world/resource/0.1/boardMessage',
+        'villageId': state.base.villageId,
+        'villageName': state.base.villageName,
+        'totalNumberOfAgents': state.base.totalNumberOfAgents,
+        'token': state.base.token,
+        'phase': state.base.phase,
+        'date': state.base.date,
+        'phaseTimeLimit': state.base.phaseTimeLimit,
+        'phaseStartTime': state.base.phaseStartTime,
+        'serverTimestamp': state.base.serverTimestamp,
+        'clientTimestamp': getTimestamp(),
+        'directionality': 'client to server',
+        'intensionalDisclosureRange': 'private',
+        'extensionalDisclosureRange': [],
+        'myAgent': {
+          '@id': myAgent['@id'],
+          'myAgentId': myAgent.id,
+          'myAgentImage': myAgent.image,
+          'myAgentName': myAgent.name,
+          'myRole': {
+            '@id': myRole['@id'],
+            'myRoleImage': myRole.image,
+            'myRoleName': myRole.name
+          }
+        },
+        'boardAgent': {
+          '@id': myAgent['@id'],
+          'agentId': myAgent.id,
+          'agentImage': myAgent.image,
+          'agentName': myAgent.name
+        },
+        'boardPrediction': action.nextState,
+        'boardRole': {
+          '@id': myRole['@id'],
+          'roleImage': myRole.image,
+          'roleName': myRole.name
+        }
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.POST_CHAT: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
@@ -61,58 +113,6 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'chatText': action.text,
         'chatUserName': '',
         'chatUserAvatar': ''
-      }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
-    }
-    case ActionTypes.CHANGE_PREDICTION_BOARD: {
-      const state = store.getState()
-      const myRole = just(state.roles.mine)
-      const myAgent = just(state.agents.mine)
-      const payload: C2SPayload<C2SBoard> = {
-        '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld',
-          'https://werewolf.world/context/0.1/board.jsonld'
-        ],
-        '@id': 'https://werewolf.world/resource/0.1/boardMessage',
-        'villageId': state.base.villageId,
-        'villageName': state.base.villageName,
-        'totalNumberOfAgents': state.base.totalNumberOfAgents,
-        'token': state.base.token,
-        'phase': state.base.phase,
-        'date': state.base.date,
-        'phaseTimeLimit': state.base.phaseTimeLimit,
-        'phaseStartTime': state.base.phaseStartTime,
-        'serverTimestamp': state.base.serverTimestamp,
-        'clientTimestamp': getTimestamp(),
-        'directionality': 'client to server',
-        'intensionalDisclosureRange': 'private',
-        'extensionalDisclosureRange': [],
-        'myAgent': {
-          '@id': myAgent['@id'],
-          'myAgentId': myAgent.id,
-          'myAgentImage': myAgent.image,
-          'myAgentName': myAgent.name,
-          'myRole': {
-            '@id': myRole['@id'],
-            'myRoleImage': myRole.image,
-            'myRoleName': myRole.name
-          }
-        },
-        'boardAgent': {
-          '@id': myAgent['@id'],
-          'agentId': myAgent.id,
-          'agentImage': myAgent.image,
-          'agentName': myAgent.name
-        },
-        'boardPrediction': action.nextState,
-        'boardRole': {
-          '@id': myRole['@id'],
-          'roleImage': myRole.image,
-          'roleName': myRole.name
-        }
       }
 
       store.dispatch(socket.send(payload))
