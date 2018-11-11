@@ -55,7 +55,7 @@ export default {
   'Result.summary.loser(werewolf)': 'Losers （Team Werewolves）',
   'Result.summary.loser(werewolf, werehamster)': 'Losers （Team Werewolves and Team Werehamster）',
   'Result.summary.winner(villager)': 'Winners （Team Villagers）',
-  'Result.summary.winner(werehamster)': 'Winners （Team Werewhumster）',
+  'Result.summary.winner(werehamster)': 'Winners （Team Werewhamster）',
   'Result.summary.winner(werewolf)': 'Winners （Team Werewolves）',
   'RoleText': 'You are a {role}. (Team {group})'
 }
