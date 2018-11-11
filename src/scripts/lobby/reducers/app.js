@@ -22,6 +22,8 @@ type Action =
   | {type: typeof ActionTypes.SHOW_ADVANCED_SEARCH}
   | {type: typeof ActionTypes.SHOW_BUILD_VILLAGE}
   | {type: typeof ActionTypes.SHOW_CONNECTING_TO_ROBOT_PLAYER}
+  | {type: typeof ActionTypes.SHOW_CREDITS}
+  | {type: typeof ActionTypes.SHOW_HOW_TO_PLAY}
   | {type: typeof ActionTypes.SHOW_ID_SEARCH}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_AUDIENCE}
   | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
@@ -51,6 +53,14 @@ const app = (state: State = initialState, action: Action): State => {
       return {
         content: ConnectingToRobotPlayer
       }
+    case ActionTypes.SHOW_CREDITS:
+      window.location.assign(`${window.location.origin}/credits`)
+
+      return state
+    case ActionTypes.SHOW_HOW_TO_PLAY:
+      window.location.assign(`${window.location.origin}/how-to-play`)
+
+      return state
     case ActionTypes.SHOW_HISTORY:
       return {
         content: History
