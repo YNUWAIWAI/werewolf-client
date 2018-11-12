@@ -3,8 +3,7 @@ import type {Team, _RoleId} from 'village'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
-  WEREHAMSTER_TEAM,
-  WEREWOLF_TEAM
+  WEREHAMSTER_TEAM
 } from '../constants/Role'
 import {UNPLAYABLE_AGENT} from '../constants/Agent'
 
