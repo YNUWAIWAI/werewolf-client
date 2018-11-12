@@ -4,7 +4,7 @@ import * as Contexts from '../constants/Contexts'
 import type {AgentStatus, Language, Payload, ReusltAgent, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
 import {getPlayableAgents, getRoleId, getTeam, idGenerater} from '../util'
-import {RESULTS} from '../constants/Phase'
+import {RESULT} from '../constants/Phase'
 import {WEREHAMSTER} from '../constants/Role'
 
 const getAgentId = idGenerater('agent')
@@ -84,7 +84,7 @@ const result = (state: State = initialState, action: Action): State => {
         action.payload['@context'].includes(Contexts.BASE) &&
         action.payload['@context'].includes(Contexts.AGENT) &&
         action.payload['@context'].includes(Contexts.ROLE) &&
-        action.payload.phase === RESULTS
+        action.payload.phase === RESULT
       ) {
         const payload: Payload<ReusltAgent, *, *> = action.payload
         const agents: Agents = {}

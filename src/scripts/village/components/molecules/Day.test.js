@@ -68,15 +68,15 @@ describe('<Day />', () => {
 
       expect(wrapper.text()).toMatch('感想戦')
     })
-    test('results', () => {
+    test('result', () => {
       const timer = {
         limit: 10,
-        phase: 'results'
+        phase: 'result'
       }
       const wrapper = mountWithIntl(
         <Day
           date={-1}
-          phase="results"
+          phase="result"
           timer={timer}
         />
       )
