@@ -14,6 +14,15 @@ export const MASON = `${BASE_URL}/mason`
 export const MADMAN = `${BASE_URL}/madman`
 export const WEREWOLF = `${BASE_URL}/werewolf`
 export const WEREHAMSTER = `${BASE_URL}/werehamster`
+export const _MASTER = 'Master'
+export const _VILLAGER = 'Villager'
+export const _SEER = 'Seer'
+export const _MEDIUM = 'Medium'
+export const _HUNTER = 'Hunter'
+export const _MASON = 'Mason'
+export const _MADMAN = 'Madman'
+export const _WEREWOLF = 'Werewolf'
+export const _WEREHAMSTER = 'Werehamster'
 
 export const UNPLAYABLE_ROLE = [
   MASTER
@@ -36,6 +45,23 @@ export const AVAILABLE_FOR_LIMITED_CHAT = [
   WEREWOLF,
   SEER,
   HUNTER
+]
+
+export const VILLAGER_TEAM = [
+  _VILLAGER,
+  _SEER,
+  _MEDIUM,
+  _HUNTER,
+  _MASON
+]
+
+export const WEREWOLF_TEAM = [
+  _MADMAN,
+  _WEREWOLF
+]
+
+export const WEREHAMSTER_TEAM = [
+  _WEREHAMSTER
 ]
 
 export const getRoleId = (str: string): RoleId => {

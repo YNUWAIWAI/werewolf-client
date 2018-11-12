@@ -5,6 +5,7 @@ declare module 'village' {
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
   declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster'
+  declare type _RoleId = 'Villager' | 'Seer' | 'Medium' | 'Hunter' | 'Mason' | 'Madman' | 'Werewolf' | 'Werehamster'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type BoardPolarity = 'positive' | 'negative'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
@@ -12,6 +13,7 @@ declare module 'village' {
   declare type TResult = Result
   declare type AgentId = string
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
+  declare type Team = 'villager' | 'werehamster' | 'werewolf'
   declare type NavigationType =
     | 'SHOW_RESULT'
     | 'RETURN_TO_LOBBY'

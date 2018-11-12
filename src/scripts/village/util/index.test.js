@@ -4,6 +4,7 @@ import {
   getMyRole,
   getPlayableAgents,
   getPlayableRoles,
+  getTeam,
   idGenerater,
   just,
   spaceSeparatedToCamelCase,
@@ -470,6 +471,32 @@ test('getPlayableRoles', () => {
       'roleIsMine': false
     }
   ])
+})
+describe('getTeam', () => {
+  test('Villager', () => {
+    expect(getTeam('Villager')).toBe('villager')
+  })
+  test('Seer', () => {
+    expect(getTeam('Seer')).toBe('villager')
+  })
+  test('Medium', () => {
+    expect(getTeam('Medium')).toBe('villager')
+  })
+  test('Hunter', () => {
+    expect(getTeam('Hunter')).toBe('villager')
+  })
+  test('Mason', () => {
+    expect(getTeam('Mason')).toBe('villager')
+  })
+  test('Madman', () => {
+    expect(getTeam('Madman')).toBe('werewolf')
+  })
+  test('Werewolf', () => {
+    expect(getTeam('Werewolf')).toBe('werewolf')
+  })
+  test('Werehamster', () => {
+    expect(getTeam('Werehamster')).toBe('werehamster')
+  })
 })
 test('idGenerater', () => {
   const generateId = idGenerater('id')
