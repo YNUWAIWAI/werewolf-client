@@ -18,7 +18,7 @@ describe('socket/MESSAGE', () => {
         playerStatus: [
           {
             id: 1,
-            image: 'https://werewolf.world/image/0.1/Walter.jpg',
+            image: 'https://werewolf.world/image/0.2/Walter.jpg',
             name: {
               en: 'Walter',
               ja: 'ヴァルター'
@@ -27,7 +27,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 2,
-            image: 'https://werewolf.world/image/0.1/Moritz.jpg',
+            image: 'https://werewolf.world/image/0.2/Moritz.jpg',
             name: {
               en: 'Moritz',
               ja: 'モーリッツ'
@@ -36,7 +36,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 3,
-            image: 'https://werewolf.world/image/0.1/Simson.jpg',
+            image: 'https://werewolf.world/image/0.2/Simson.jpg',
             name: {
               en: 'Simson',
               ja: 'ジムゾン'
@@ -45,7 +45,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 4,
-            image: 'https://werewolf.world/image/0.1/Thomas.jpg',
+            image: 'https://werewolf.world/image/0.2/Thomas.jpg',
             name: {
               en: 'Thomas',
               ja: 'トーマス'
@@ -54,7 +54,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 5,
-            image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
+            image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
             name: {
               en: 'Nicholas',
               ja: 'ニコラス'
@@ -63,7 +63,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 6,
-            image: 'https://werewolf.world/image/0.1/Dieter.jpg',
+            image: 'https://werewolf.world/image/0.2/Dieter.jpg',
             name: {
               en: 'Dieter',
               ja: 'ディーター'
@@ -72,7 +72,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 7,
-            image: 'https://werewolf.world/image/0.1/Peter.jpg',
+            image: 'https://werewolf.world/image/0.2/Peter.jpg',
             name: {
               en: 'Peter',
               ja: 'ペーター'
@@ -81,7 +81,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 8,
-            image: 'https://werewolf.world/image/0.1/Lisa.jpg',
+            image: 'https://werewolf.world/image/0.2/Lisa.jpg',
             name: {
               en: 'Lisa',
               ja: 'リーザ'
@@ -90,7 +90,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 9,
-            image: 'https://werewolf.world/image/0.1/Alvin.jpg',
+            image: 'https://werewolf.world/image/0.2/Alvin.jpg',
             name: {
               en: 'Alvin',
               ja: 'アルビン'
@@ -99,7 +99,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 11,
-            image: 'https://werewolf.world/image/0.1/Otto.jpg',
+            image: 'https://werewolf.world/image/0.2/Otto.jpg',
             name: {
               en: 'Otto',
               ja: 'オットー'
@@ -108,7 +108,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 12,
-            image: 'https://werewolf.world/image/0.1/Joachim.jpg',
+            image: 'https://werewolf.world/image/0.2/Joachim.jpg',
             name: {
               en: 'Joachim',
               ja: 'ヨアヒム'
@@ -117,7 +117,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 13,
-            image: 'https://werewolf.world/image/0.1/Pamela.jpg',
+            image: 'https://werewolf.world/image/0.2/Pamela.jpg',
             name: {
               en: 'Pamela',
               ja: 'パメラ'
@@ -126,7 +126,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 14,
-            image: 'https://werewolf.world/image/0.1/Jacob.jpg',
+            image: 'https://werewolf.world/image/0.2/Jacob.jpg',
             name: {
               en: 'Jacob',
               ja: 'ヤコブ'
@@ -137,7 +137,7 @@ describe('socket/MESSAGE', () => {
         roleStatus: [
           {
             id: 'villager',
-            image: 'https://werewolf.world/image/0.1/villager.jpg',
+            image: 'https://werewolf.world/image/0.2/villager.jpg',
             numberOfAgents: 6,
             caption: {
               en: 'Villager',
@@ -146,7 +146,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'seer',
-            image: 'https://werewolf.world/image/0.1/seer.jpg',
+            image: 'https://werewolf.world/image/0.2/seer.jpg',
             numberOfAgents: 1,
             caption: {
               en: 'Seer',
@@ -155,7 +155,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'medium',
-            image: 'https://werewolf.world/image/0.1/medium.jpg',
+            image: 'https://werewolf.world/image/0.2/medium.jpg',
             numberOfAgents: 1,
             caption: {
               en: 'Medium',
@@ -164,7 +164,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'hunter',
-            image: 'https://werewolf.world/image/0.1/hunter.jpg',
+            image: 'https://werewolf.world/image/0.2/hunter.jpg',
             numberOfAgents: 1,
             caption: {
               en: 'Hunter',
@@ -173,7 +173,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'mason',
-            image: 'https://werewolf.world/image/0.1/mason.jpg',
+            image: 'https://werewolf.world/image/0.2/mason.jpg',
             numberOfAgents: 2,
             caption: {
               en: 'Mason',
@@ -182,7 +182,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'madman',
-            image: 'https://werewolf.world/image/0.1/madman.jpg',
+            image: 'https://werewolf.world/image/0.2/madman.jpg',
             numberOfAgents: 1,
             caption: {
               en: 'Madman',
@@ -191,7 +191,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'werewolf',
-            image: 'https://werewolf.world/image/0.1/werewolf.jpg',
+            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
             numberOfAgents: 2,
             caption: {
               en: 'Werewolf',
@@ -200,7 +200,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'werehamster',
-            image: 'https://werewolf.world/image/0.1/werehamster.jpg',
+            image: 'https://werewolf.world/image/0.2/werehamster.jpg',
             numberOfAgents: 1,
             caption: {
               en: 'Werehamster',
@@ -773,7 +773,7 @@ describe('socket/MESSAGE', () => {
         playerStatus: [
           {
             id: 1,
-            image: 'https://werewolf.world/image/0.1/Walter.jpg',
+            image: 'https://werewolf.world/image/0.2/Walter.jpg',
             name: {
               en: 'Walter',
               ja: 'ヴァルター'
@@ -782,7 +782,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 2,
-            image: 'https://werewolf.world/image/0.1/Moritz.jpg',
+            image: 'https://werewolf.world/image/0.2/Moritz.jpg',
             name: {
               en: 'Moritz',
               ja: 'モーリッツ'
@@ -791,7 +791,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 3,
-            image: 'https://werewolf.world/image/0.1/Simson.jpg',
+            image: 'https://werewolf.world/image/0.2/Simson.jpg',
             name: {
               en: 'Simson',
               ja: 'ジムゾン'
@@ -800,7 +800,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 4,
-            image: 'https://werewolf.world/image/0.1/Thomas.jpg',
+            image: 'https://werewolf.world/image/0.2/Thomas.jpg',
             name: {
               en: 'Thomas',
               ja: 'トーマス'
@@ -809,7 +809,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 5,
-            image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
+            image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
             name: {
               en: 'Nicholas',
               ja: 'ニコラス'
@@ -818,7 +818,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 6,
-            image: 'https://werewolf.world/image/0.1/Dieter.jpg',
+            image: 'https://werewolf.world/image/0.2/Dieter.jpg',
             name: {
               en: 'Dieter',
               ja: 'ディーター'
@@ -827,7 +827,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 7,
-            image: 'https://werewolf.world/image/0.1/Peter.jpg',
+            image: 'https://werewolf.world/image/0.2/Peter.jpg',
             name: {
               en: 'Peter',
               ja: 'ペーター'
@@ -836,7 +836,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 8,
-            image: 'https://werewolf.world/image/0.1/Lisa.jpg',
+            image: 'https://werewolf.world/image/0.2/Lisa.jpg',
             name: {
               en: 'Lisa',
               ja: 'リーザ'
@@ -845,7 +845,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 9,
-            image: 'https://werewolf.world/image/0.1/Alvin.jpg',
+            image: 'https://werewolf.world/image/0.2/Alvin.jpg',
             name: {
               en: 'Alvin',
               ja: 'アルビン'
@@ -854,7 +854,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 11,
-            image: 'https://werewolf.world/image/0.1/Otto.jpg',
+            image: 'https://werewolf.world/image/0.2/Otto.jpg',
             name: {
               en: 'Otto',
               ja: 'オットー'
@@ -863,7 +863,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 12,
-            image: 'https://werewolf.world/image/0.1/Joachim.jpg',
+            image: 'https://werewolf.world/image/0.2/Joachim.jpg',
             name: {
               en: 'Joachim',
               ja: 'ヨアヒム'
@@ -872,7 +872,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 13,
-            image: 'https://werewolf.world/image/0.1/Pamela.jpg',
+            image: 'https://werewolf.world/image/0.2/Pamela.jpg',
             name: {
               en: 'Pamela',
               ja: 'パメラ'
@@ -881,7 +881,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 14,
-            image: 'https://werewolf.world/image/0.1/Jacob.jpg',
+            image: 'https://werewolf.world/image/0.2/Jacob.jpg',
             name: {
               en: 'Jacob',
               ja: 'ヤコブ'
@@ -896,7 +896,7 @@ describe('socket/MESSAGE', () => {
               ja: '村人'
             },
             id: 'villager',
-            image: 'https://werewolf.world/image/0.1/villager.jpg',
+            image: 'https://werewolf.world/image/0.2/villager.jpg',
             numberOfAgents: 6
           },
           {
@@ -905,7 +905,7 @@ describe('socket/MESSAGE', () => {
               ja: '占い師'
             },
             id: 'seer',
-            image: 'https://werewolf.world/image/0.1/seer.jpg',
+            image: 'https://werewolf.world/image/0.2/seer.jpg',
             numberOfAgents: 1
           },
           {
@@ -914,7 +914,7 @@ describe('socket/MESSAGE', () => {
               ja: '霊媒師'
             },
             id: 'medium',
-            image: 'https://werewolf.world/image/0.1/medium.jpg',
+            image: 'https://werewolf.world/image/0.2/medium.jpg',
             numberOfAgents: 1
           },
           {
@@ -923,7 +923,7 @@ describe('socket/MESSAGE', () => {
               ja: '狩人'
             },
             id: 'hunter',
-            image: 'https://werewolf.world/image/0.1/hunter.jpg',
+            image: 'https://werewolf.world/image/0.2/hunter.jpg',
             numberOfAgents: 1
           },
           {
@@ -932,7 +932,7 @@ describe('socket/MESSAGE', () => {
               ja: '共有者'
             },
             id: 'mason',
-            image: 'https://werewolf.world/image/0.1/mason.jpg',
+            image: 'https://werewolf.world/image/0.2/mason.jpg',
             numberOfAgents: 2
           },
           {
@@ -941,7 +941,7 @@ describe('socket/MESSAGE', () => {
               ja: '狂人'
             },
             id: 'madman',
-            image: 'https://werewolf.world/image/0.1/madman.jpg',
+            image: 'https://werewolf.world/image/0.2/madman.jpg',
             numberOfAgents: 1
           },
           {
@@ -950,7 +950,7 @@ describe('socket/MESSAGE', () => {
               ja: '人狼'
             },
             id: 'werewolf',
-            image: 'https://werewolf.world/image/0.1/werewolf.jpg',
+            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
             numberOfAgents: 2
           },
           {
@@ -959,7 +959,7 @@ describe('socket/MESSAGE', () => {
               ja: 'ハムスター人間'
             },
             id: 'werehamster',
-            image: 'https://werewolf.world/image/0.1/werehamster.jpg',
+            image: 'https://werewolf.world/image/0.2/werehamster.jpg',
             numberOfAgents: 1
           }
         ],

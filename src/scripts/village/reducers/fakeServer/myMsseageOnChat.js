@@ -2,10 +2,10 @@
 /* eslint sort-keys: 0 */
 export default {
   '@context': [
-    'https://werewolf.world/context/0.1/base.jsonld',
-    'https://werewolf.world/context/0.1/chat.jsonld'
+    'https://werewolf.world/context/0.2/base.jsonld',
+    'https://werewolf.world/context/0.2/chat.jsonld'
   ],
-  '@id': 'https://werewolf.world/resource/0.1/playerMessage',
+  '@id': 'https://werewolf.world/resource/0.2/playerMessage',
   'villageId': 3,
   'villageName': '横国の森の奥にある時代に取り残された小さな村',
   'totalNumberOfAgents': 15,
@@ -21,13 +21,13 @@ export default {
   'extensionalDisclosureRange': [],
 
   'chatAgent': {
-    '@id': 'https://werewolf.world/resource/0.1/Walter',
+    '@id': 'https://werewolf.world/resource/0.2/Walter',
     'chatAgentId': 1,
     'chatAgentName': {
       'en': 'Walter',
       'ja': 'ヴァルター'
     },
-    'chatAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg'
+    'chatAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
   },
   'chatIsMine': true,
   'chatId': 12,

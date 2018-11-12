@@ -20,10 +20,10 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const channel = getChannelFromInputChennel(action.kind, getRoleId(myRole['@id']))
       const payload: C2SPayload<C2SChat> = {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld',
-          'https://werewolf.world/context/0.1/chat.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/chat.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/playerMessage',
+        '@id': 'https://werewolf.world/resource/0.2/playerMessage',
         'villageId': state.base.villageId,
         'villageName': state.base.villageName,
         'totalNumberOfAgents': state.base.totalNumberOfAgents,
@@ -73,10 +73,10 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const myAgent = just(state.agents.mine)
       const payload: C2SPayload<C2SBoard> = {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld',
-          'https://werewolf.world/context/0.1/board.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/board.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/boardMessage',
+        '@id': 'https://werewolf.world/resource/0.2/boardMessage',
         'villageId': state.base.villageId,
         'villageName': state.base.villageName,
         'totalNumberOfAgents': state.base.totalNumberOfAgents,
@@ -137,10 +137,10 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const myAgent = just(state.agents.mine)
       const payload: C2SPayload<C2SVote> = {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld',
-          'https://werewolf.world/context/0.1/vote.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/vote.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/voteMessage',
+        '@id': 'https://werewolf.world/resource/0.2/voteMessage',
         'villageId': state.base.villageId,
         'villageName': state.base.villageName,
         'totalNumberOfAgents': state.base.totalNumberOfAgents,

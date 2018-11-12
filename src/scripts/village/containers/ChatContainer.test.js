@@ -29,7 +29,7 @@ test('<ChatContainer />', () => {
       byId: {
         chat0: {
           id: 12,
-          image: 'https://werewolf.world/image/0.1/Walter.jpg',
+          image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
           isMine: true,
           name: {
@@ -66,7 +66,7 @@ test('<ChatContainer />', () => {
   expect(wrapper.props().byId).toEqual({
     chat0: {
       id: 12,
-      image: 'https://werewolf.world/image/0.1/Walter.jpg',
+      image: 'https://werewolf.world/image/0.2/Walter.jpg',
       intensionalDisclosureRange: 'public',
       isMine: true,
       name: 'ヴァルター',
