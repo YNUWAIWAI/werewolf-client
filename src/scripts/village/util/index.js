@@ -33,6 +33,17 @@ export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): 
   return maybe
 }
 
+export const getRoleId = (str: string): _RoleId => {
+  const roleId: _RoleId[] = ['Villager', 'Seer', 'Medium', 'Hunter', 'Mason', 'Madman', 'Werewolf', 'Werehamster']
+  const maybe = roleId.find(v => v === str)
+
+  if (!maybe) {
+    throw new Error(`Unexpected RoleId: ${str}`)
+  }
+
+  return maybe
+}
+
 export const getTeam = (role: _RoleId): Team => {
   if (VILLAGER_TEAM.includes(role)) {
     return 'villager'

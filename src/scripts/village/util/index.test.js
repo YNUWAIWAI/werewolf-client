@@ -4,6 +4,7 @@ import {
   getMyRole,
   getPlayableAgents,
   getPlayableRoles,
+  getRoleId,
   getTeam,
   idGenerater,
   just,
@@ -471,6 +472,35 @@ test('getPlayableRoles', () => {
       'roleIsMine': false
     }
   ])
+})
+describe('getRoleId', () => {
+  test('Villager', () => {
+    expect(getRoleId('Villager')).toBe('Villager')
+  })
+  test('Seer', () => {
+    expect(getRoleId('Seer')).toBe('Seer')
+  })
+  test('Medium', () => {
+    expect(getRoleId('Medium')).toBe('Medium')
+  })
+  test('Hunter', () => {
+    expect(getRoleId('Hunter')).toBe('Hunter')
+  })
+  test('Mason', () => {
+    expect(getRoleId('Mason')).toBe('Mason')
+  })
+  test('Madman', () => {
+    expect(getRoleId('Madman')).toBe('Madman')
+  })
+  test('Werewolf', () => {
+    expect(getRoleId('Werewolf')).toBe('Werewolf')
+  })
+  test('Werehamster', () => {
+    expect(getRoleId('Werehamster')).toBe('Werehamster')
+  })
+  test('Unexpected Value', () => {
+    expect(() => getRoleId('Unexpected')).toThrow()
+  })
 })
 describe('getTeam', () => {
   test('Villager', () => {
