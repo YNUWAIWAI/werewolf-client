@@ -1,36 +1,44 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village'
+import type {AgentStatus, Language, Payload, ReusltAgent, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
-import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
+import {getPlayableAgents, getRoleId, getTeam, idGenerater} from '../util'
 import {RESULTS} from '../constants/Phase'
 import {WEREHAMSTER} from '../constants/Role'
 
 const getAgentId = idGenerater('agent')
 
+type Agents = {
+  [string]: {
+    +agentImage: string,
+    +agentId: number,
+    +agentName: { [Language]: string },
+    +result: TResult,
+    +roleImage: string,
+    +roleName: { [Language]: string },
+    +status: AgentStatus,
+    +userAvatar: string,
+    +userName: string
+  }
+}
+type Summary = {
+  +kind: 'audience',
+  +loserTeam: Set<Team>,
+  +winnerTeam: Team
+} | {
+  +kind: 'player',
+  +loserTeam: Set<Team>,
+  +myTeam: Team,
+  +result: 'win' | 'lose',
+  +winnerTeam: Team
+}
 export type State = {
-  +agents: {
-    [string]: {
-      +agentImage: string,
-      +agentId: number,
-      +agentName: { [Language]: string },
-      +result: TResult,
-      +roleImage: string,
-      +roleName: { [Language]: string },
-      +status: AgentStatus,
-      +userAvatar: string,
-      +userName: string
-    }
-  },
+  +agents: Agents,
   +allIds: string[],
   +losers: string[],
   +me: ?string,
-  +summary: {
-    +isPlayer: boolean,
-    +result: TResult | '',
-    +role: string
-  },
+  +summary: Summary,
   +visible: boolean,
   +werehamster: {
     exists: boolean,
@@ -49,9 +57,8 @@ export const initialState = {
   losers: [],
   me: null,
   summary: {
-    isPlayer: true,
-    result: '',
-    role: ''
+    kind: 'audience',
+    winnerTeam: 'villager'
   },
   visible: false,
   werehamster: {
@@ -80,7 +87,7 @@ const result = (state: State = initialState, action: Action): State => {
         action.payload.phase === RESULTS
       ) {
         const payload: Payload<ReusltAgent, *, *> = action.payload
-        const agents = {}
+        const agents: Agents = {}
         const allIds = []
         const losers = []
         let me
@@ -120,22 +127,27 @@ const result = (state: State = initialState, action: Action): State => {
             }
             allIds.push(agentId)
           })
-        const summary = (() => {
-          const mine = getMyAgent(payload.agent)
+        const summary: Summary = (() => {
+          if (winners.length === 0) {
+            throw Error('Unexpected Result: no winners')
+          }
+          const winnerTeam = getTeam(getRoleId(agents[winners[0]].agentName.en))
+          const loserTeam = new Set(losers.map(loser => getTeam(getRoleId(agents[loser].agentName.en))))
 
-          if (mine) {
+          if (me) {
             return {
-              isPlayer: true,
-              result: mine.result,
-              role: mine.role['@id']
+              kind: 'player',
+              loserTeam,
+              myTeam: getTeam(getRoleId(agents[me].agentName.en)),
+              result: agents[me].result,
+              winnerTeam
             }
           }
-          const agent = getPlayableAgents(payload.agent)[0]
 
           return {
-            isPlayer: false,
-            result: agent.result,
-            role: agent.role['@id']
+            kind: 'audience',
+            loserTeam,
+            winnerTeam
           }
         })()
 

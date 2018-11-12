@@ -10,7 +10,6 @@ declare module 'village' {
   declare type BoardPolarity = 'positive' | 'negative'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type Result = 'win' | 'lose'
-  declare type TResult = Result
   declare type AgentId = string
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
   declare type Team = 'villager' | 'werehamster' | 'werewolf'
