@@ -131,14 +131,14 @@ const result = (state: State = initialState, action: Action): State => {
           if (winners.length === 0) {
             throw Error('Unexpected Result: no winners')
           }
-          const winnerTeam = getTeam(getRoleId(agents[winners[0]].agentName.en))
-          const loserTeam = new Set(losers.map(loser => getTeam(getRoleId(agents[loser].agentName.en))))
+          const winnerTeam = getTeam(getRoleId(agents[winners[0]].roleName.en))
+          const loserTeam = new Set(losers.map(loser => getTeam(getRoleId(agents[loser].roleName.en))))
 
           if (me) {
             return {
               kind: 'player',
               loserTeam,
-              myTeam: getTeam(getRoleId(agents[me].agentName.en)),
+              myTeam: getTeam(getRoleId(agents[me].roleName.en)),
               result: agents[me].result,
               winnerTeam
             }
