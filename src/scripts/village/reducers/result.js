@@ -1,11 +1,10 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {AgentStatus, Language, Payload, ReusltAgent, Result as TResult, Team} from 'village'
+import type {AgentStatus, Language, ResultPayload, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
 import {getPlayableAgents, getRoleId, getTeam, idGenerater} from '../util'
 import {RESULT} from '../constants/Phase'
-import {WEREHAMSTER} from '../constants/Role'
 
 const getAgentId = idGenerater('agent')
 
@@ -14,12 +13,12 @@ type Agents = {
     +agentImage: string,
     +agentId: number,
     +agentName: { [Language]: string },
+    +avatarImage: string,
+    +avatarName: string,
     +result: TResult,
     +roleImage: string,
     +roleName: { [Language]: string },
-    +status: AgentStatus,
-    +userAvatar: string,
-    +userName: string
+    +status: AgentStatus
   }
 }
 type Summary = {
@@ -40,10 +39,6 @@ export type State = {
   +me: ?string,
   +summary: Summary,
   +visible: boolean,
-  +werehamster: {
-    exists: boolean,
-    isWin: boolean
-  },
   +winners: string[]
 }
 type Action =
@@ -61,10 +56,6 @@ export const initialState = {
     winnerTeam: 'villager'
   },
   visible: false,
-  werehamster: {
-    exists: false,
-    isWin: false
-  },
   winners: []
 }
 const result = (state: State = initialState, action: Action): State => {
@@ -82,19 +73,14 @@ const result = (state: State = initialState, action: Action): State => {
     case ActionTypes.socket.MESSAGE:
       if (
         action.payload['@context'].includes(Contexts.BASE) &&
-        action.payload['@context'].includes(Contexts.AGENT) &&
-        action.payload['@context'].includes(Contexts.ROLE) &&
+        action.payload['@context'].includes(Contexts.VOTING_RESULT) &&
         action.payload.phase === RESULT
       ) {
-        const payload: Payload<ReusltAgent, *, *> = action.payload
+        const payload: ResultPayload = action.payload
         const agents: Agents = {}
         const allIds = []
         const losers = []
         let me
-        const werehamster = {
-          exists: false,
-          isWin: false
-        }
         const winners = []
 
         getPlayableAgents(payload.agent)
@@ -105,12 +91,12 @@ const result = (state: State = initialState, action: Action): State => {
               agentId: a.id,
               agentImage: a.image,
               agentName: a.name,
+              avatarImage: a.avatar.image,
+              avatarName: a.avatar.name,
               result: a.result,
-              roleImage: a.role.roleImage,
-              roleName: a.role.roleName,
-              status: a.status,
-              userAvatar: a.userAvatar,
-              userName: a.userName
+              roleImage: a.role.image,
+              roleName: a.role.name,
+              status: a.status
             }
             if (a.result === 'win') {
               winners.push(agentId)
@@ -118,12 +104,8 @@ const result = (state: State = initialState, action: Action): State => {
             if (a.result === 'lose') {
               losers.push(agentId)
             }
-            if (a.agentIsMine) {
+            if (a.isMine) {
               me = agentId
-            }
-            if (a.role['@id'] === WEREHAMSTER) {
-              werehamster.exists = true
-              werehamster.isWin = a.result === 'win'
             }
             allIds.push(agentId)
           })
@@ -158,7 +140,6 @@ const result = (state: State = initialState, action: Action): State => {
           me,
           summary,
           visible: true,
-          werehamster,
           winners
         }
       }

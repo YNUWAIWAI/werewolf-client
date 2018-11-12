@@ -188,7 +188,7 @@ export default {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
         '@id': 'https://licos.online/state/0.2/village#3/agent#5/role',
         'name': {
-          'en': 'Werehuster',
+          'en': 'Werehamster',
           'ja': 'ハムスター人間'
         },
         'image': 'https://werewolf.world/image/0.2/werehamster.jpg'
@@ -258,7 +258,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#7/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI7',
         'name': 'Nakamura',
-        'avatar': 'https://werewolf.world/image/0.2/Nicholas.jpg'
+        'image': 'https://werewolf.world/image/0.2/Nicholas.jpg'
       }
     },
     {
