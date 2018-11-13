@@ -22,7 +22,7 @@ export default {
   'Day.dayVote': '{date}日目 投票',
   'Day.night': '{date}日目 夜',
   'Day.postMortem': '感想戦',
-  'Day.results': '結果',
+  'Day.result': '結果',
   'FormattedTime.end': '終了',
   'FormattedTime.time': '残り{minute}\'{second}',
   'Modal.Description.dayVote': '投票先はこちらでいいですか？',
