@@ -38,20 +38,28 @@ export default {
   'Result.status(death by execution)': 'Executed',
   'Result.status(death by fear)': 'Scared to death',
   'Result.status(unnatural death)': 'Found dead',
-  'Result.summary.description(audience, villagerWin)': 'Victory for Team Villagers',
-  'Result.summary.description(audience, werehamsterWin)': 'Victory for Team Werehamster',
-  'Result.summary.description(audience, werewolfWin)': 'Victory for Team Werewolves',
-  'Result.summary.description(player, villagerLose, werehamsterWin)': 'Your Team Villagers lose. (Victory for Team Werehamster)',
-  'Result.summary.description(player, villagerLose, werewolfWin)': 'Your Team Villagers lose. (Victory for Team Werewolves)',
-  'Result.summary.description(player, villagerWin, vilagerWin)': 'Your Team Villagers win. (Victory for Team Villagers)',
-  'Result.summary.description(player, werehamsterLose, vilagerWin)': 'Your Team Werehamster lose. (Victory for Team Villagers)',
-  'Result.summary.description(player, werehamsterLose, werewolfWin)': 'Your Team Werehamster lose. (Victory for Team Werewolves)',
-  'Result.summary.description(player, werehamsterWin, werehamsterWin)': 'Your Team Werehamster win. (Victory for Team Werehamster)',
-  'Result.summary.description(player, werewolfLose, vilagerWin)': 'Your Team Werewolves lose. (Victory for Team Villagers)',
-  'Result.summary.description(player, werewolfLose, werehamsterWin)': 'Your Team Werewolves lose. (Victory for Team Werehamster)',
-  'Result.summary.description(player, werewolfWin, werewolfWin)': 'Your Team Weerewolves win. (Victory for Team Werewolves)',
+  /*
+    Result.summary.description(kind, winnerTeam, ?myTeam, ?result)
+      kind: 'audience' | 'player'
+      winnerTeam: 'villager' | 'werehamster' | 'werewolf'
+      myTeam: 'villager' | 'werehamster' | 'werewolf'
+      result: 'win' | 'lose
+  */
+  'Result.summary.description(audience, villager)': 'Victory for Team Villagers',
+  'Result.summary.description(audience, werehamster)': 'Victory for Team Werehamster',
+  'Result.summary.description(audience, werewolf)': 'Victory for Team Werewolves',
+  'Result.summary.description(player, villager, villager, lose)': 'Your Team Villagers win. (Victory for Team Villagers)',
+  'Result.summary.description(player, villager, werehamster, lose)': 'Your Team Werehamster lose. (Victory for Team Villagers)',
+  'Result.summary.description(player, villager, werewolf, lose)': 'Your Team Werewolves lose. (Victory for Team Villagers)',
+  'Result.summary.description(player, werehamster, villager, lose)': 'Your Team Villagers lose. (Victory for Team Werehamster)',
+  'Result.summary.description(player, werehamster, werehamster, win)': 'Your Team Werehamster win. (Victory for Team Werehamster)',
+  'Result.summary.description(player, werehamster, werewolf, lose)': 'Your Team Werewolves lose. (Victory for Team Werehamster)',
+  'Result.summary.description(player, werewolf, villager, lose)': 'Your Team Villagers lose. (Victory for Team Werewolves)',
+  'Result.summary.description(player, werewolf, werehamster, lose)': 'Your Team Werehamster lose. (Victory for Team Werewolves)',
+  'Result.summary.description(player, werewolf, werewolf, win)': 'Your Team Weerewolves win. (Victory for Team Werewolves)',
   'Result.summary.loser(villager)': 'Losers （Team Villagers）',
   'Result.summary.loser(villager, werehamster)': 'Losers （Team Villagers and Team Werehamster）',
+  'Result.summary.loser(villager, werewolf)': 'Losers （Team Villagers and Team Werewolves）',
   'Result.summary.loser(werewolf)': 'Losers （Team Werewolves）',
   'Result.summary.loser(werewolf, werehamster)': 'Losers （Team Werewolves and Team Werehamster）',
   'Result.summary.winner(villager)': 'Winners （Team Villagers）',
