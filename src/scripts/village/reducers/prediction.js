@@ -5,7 +5,7 @@ import type {Agent, AgentId, AgentStatus, BoardState, Language, Payload, Role, R
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {MEDIUM, ORDERED_ROLE_LIST, SEER, getRoleId} from '../constants/Role'
 import {getPlayableAgents, getPlayableRoles} from '../util'
-import {DAY_CONVERSATION} from '../constants/Phase'
+import {MORNING} from '../constants/Phase'
 
 export type State = {
   +playerStatus: Array<{
@@ -119,7 +119,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         const agents = getPlayableAgents(payload.agent)
         const roles = getPlayableRoles(payload.role)
           .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(r1['@id']) - ORDERED_ROLE_LIST.indexOf(r2['@id']))
-        const table = payload.date === 1 && payload.phase === DAY_CONVERSATION ? initPredictionTable(agents, roles) : updatePredictionTable(roles, state.table)
+        const table = payload.date === 1 && payload.phase === MORNING ? initPredictionTable(agents, roles) : updatePredictionTable(roles, state.table)
         const roleStatus: RoleStatus = roles.map(role => ({
           caption: role.name,
           id: getRoleId(role['@id']),

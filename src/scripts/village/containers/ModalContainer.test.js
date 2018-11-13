@@ -35,7 +35,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Moritz',
@@ -49,7 +49,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Simson',
@@ -63,7 +63,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Thomas',
@@ -77,7 +77,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         }
       ]
     },
@@ -106,7 +106,7 @@ test('<ModalContainer />', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'positive'
           }
         ],

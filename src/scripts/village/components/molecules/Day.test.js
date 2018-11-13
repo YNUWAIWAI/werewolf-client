@@ -8,15 +8,15 @@ const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<Day />', () => {
   describe('phase', () => {
-    test('day conversation', () => {
+    test('morning', () => {
       const timer = {
         limit: 10,
-        phase: 'day conversation'
+        phase: 'morning'
       }
       const wrapper = mountWithIntl(
         <Day
           date={0}
-          phase="day conversation"
+          phase="morning"
           timer={timer}
         />
       )

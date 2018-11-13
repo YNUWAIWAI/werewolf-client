@@ -18,7 +18,7 @@ export default {
   'CommandSelection.Description.wait': 'Please wait...',
   'CommandSelection.Description.werewolfVote.fixed': 'This is the character you chose to attack',
   'CommandSelection.Description.werewolfVote.unfixed': 'Choose a character to attack',
-  'Day.dayConversation': 'Day {date}: morning',
+  'Day.morning': 'Day {date}: morning',
   'Day.dayVote': 'Day {date}: noon',
   'Day.night': 'Day {date}: night',
   'Day.postMortem': 'Post-mortem discussion',

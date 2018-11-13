@@ -27,7 +27,7 @@ test('getMyAgent', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     },
     {
       '@id': 'https://werewolf.world/resource/0.2/Walter',
@@ -41,7 +41,7 @@ test('getMyAgent', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     },
     {
       '@id': 'https://werewolf.world/resource/0.2/Catalina',
@@ -55,7 +55,7 @@ test('getMyAgent', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     },
     {
       '@id': 'https://werewolf.world/resource/0.2/Otto',
@@ -69,7 +69,7 @@ test('getMyAgent', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     }
   ]
 
@@ -85,7 +85,7 @@ test('getMyAgent', () => {
     },
     'status': 'alive',
     'statusUpdateDate': 1,
-    'statusUpdatePhase': 'day conversation'
+    'statusUpdatePhase': 'morning'
   })
 })
 test('getMyRole', () => {
@@ -115,7 +115,7 @@ test('getMyRole', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'negative'
         }
       ],
@@ -141,7 +141,7 @@ test('getMyRole', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'positive'
         }
       ],
@@ -167,7 +167,7 @@ test('getMyRole', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'negative',
         }
       ],
@@ -195,7 +195,7 @@ test('getMyRole', () => {
           }
         },
         'boardDate': 1,
-        'boardPhase': 'day conversation',
+        'boardPhase': 'morning',
         'boardPolarity': 'positive'
       }
     ],
@@ -222,7 +222,7 @@ test('getPlayableAgents', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     },
     {
       '@id': 'https://werewolf.world/resource/0.2/Walter',
@@ -236,7 +236,7 @@ test('getPlayableAgents', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     },
     {
       '@id': 'https://werewolf.world/resource/0.2/Catalina',
@@ -250,7 +250,7 @@ test('getPlayableAgents', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     },
     {
       '@id': 'https://werewolf.world/resource/0.2/Otto',
@@ -264,7 +264,7 @@ test('getPlayableAgents', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     }
   ]
 
@@ -281,7 +281,7 @@ test('getPlayableAgents', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     },
     {
       '@id': 'https://werewolf.world/resource/0.2/Otto',
@@ -295,7 +295,7 @@ test('getPlayableAgents', () => {
       },
       'status': 'alive',
       'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'statusUpdatePhase': 'morning'
     }
   ])
 })
@@ -326,7 +326,7 @@ test('getPlayableRoles', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'negative'
         }
       ],
@@ -352,7 +352,7 @@ test('getPlayableRoles', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'positive'
         }
       ],
@@ -378,7 +378,7 @@ test('getPlayableRoles', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'negative'
         }
       ],
@@ -407,7 +407,7 @@ test('getPlayableRoles', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'negative'
         }
       ],
@@ -433,7 +433,7 @@ test('getPlayableRoles', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'positive'
         }
       ],
@@ -459,7 +459,7 @@ test('getPlayableRoles', () => {
             },
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'negative'
         }
       ],

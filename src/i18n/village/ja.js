@@ -18,7 +18,7 @@ export default {
   'CommandSelection.Description.wait': '待ってください',
   'CommandSelection.Description.werewolfVote.fixed': 'あなたの選んだ襲撃先はこちらです',
   'CommandSelection.Description.werewolfVote.unfixed': '襲撃先を選んでください',
-  'Day.dayConversation': '{date}日目 昼',
+  'Day.morning': '{date}日目 昼',
   'Day.dayVote': '{date}日目 投票',
   'Day.night': '{date}日目 夜',
   'Day.postMortem': '感想戦',

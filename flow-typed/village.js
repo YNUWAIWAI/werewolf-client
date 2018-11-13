@@ -3,7 +3,7 @@ declare module 'village' {
   declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
   declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
-  declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'result'
+  declare type Phase = 'morning' | 'day vote' | 'night' | 'post mortem' | 'result'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster'
   declare type _RoleId = 'Villager' | 'Seer' | 'Medium' | 'Hunter' | 'Mason' | 'Madman' | 'Werewolf' | 'Werehamster'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'

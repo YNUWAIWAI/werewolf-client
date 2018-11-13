@@ -1,5 +1,5 @@
 // @flow
-export const DAY_CONVERSATION = 'day conversation'
+export const MORNING = 'morning'
 export const DAY_VOTE = 'day vote'
 export const NIGHT = 'night'
 export const POST_MORTEM = 'post mortem'
@@ -9,7 +9,7 @@ export const VOTING_PHASE = [
   NIGHT
 ]
 const Phase = {
-  'day conversation': '昼',
+  'morning': '昼',
   'day vote': '投票',
   'night': '夜',
   'post mortem': '感想戦',

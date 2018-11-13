@@ -25,7 +25,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Walter.jpg',
         'id': 1,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -39,7 +39,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
         'id': 2,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -53,7 +53,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Simson.jpg',
         'id': 3,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -67,7 +67,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
         'id': 4,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -81,7 +81,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
         'id': 5,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -95,7 +95,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
         'id': 6,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -109,7 +109,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Peter.jpg',
         'id': 7,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -123,7 +123,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
         'id': 8,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -137,7 +137,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
         'id': 9,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -151,7 +151,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Otto.jpg',
         'id': 11,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -165,7 +165,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
         'id': 12,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -179,7 +179,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
         'id': 13,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       },
@@ -193,7 +193,7 @@ test('socket/MESSAGE', () => {
         'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
         'id': 14,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
+        'statusUpdatePhase': 'morning',
         'statusUpdateDate': 1,
         'isAChoice': false
       }
@@ -208,7 +208,7 @@ test('socket/MESSAGE', () => {
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'id': 1,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     }

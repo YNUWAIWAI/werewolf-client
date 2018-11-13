@@ -13,7 +13,7 @@ export default {
   'villageName': '横国の森の奥にある時代に取り残された小さな村',
   'totalNumberOfAgents': 15,
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-  'phase': 'day conversation',
+  'phase': 'morning',
   'date': 1,
   'phaseTimeLimit': 600,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -39,7 +39,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'id': 0,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -53,7 +53,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'id': 1,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -67,7 +67,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
       'id': 2,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -81,7 +81,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Simson.jpg',
       'id': 3,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -95,7 +95,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
       'id': 4,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -109,7 +109,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
       'id': 5,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -123,7 +123,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
       'id': 6,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -137,7 +137,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Peter.jpg',
       'id': 7,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -151,7 +151,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
       'id': 8,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -165,7 +165,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
       'id': 9,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -179,7 +179,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
       'id': 10,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -193,7 +193,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Otto.jpg',
       'id': 11,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -207,7 +207,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
       'id': 12,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -221,7 +221,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
       'id': 13,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     },
@@ -235,7 +235,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
       'id': 14,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
+      'statusUpdatePhase': 'morning',
       'statusUpdateDate': 1,
       'isAChoice': false
     }
@@ -274,7 +274,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'negative',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]
@@ -300,7 +300,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'positive',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]
@@ -326,7 +326,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'negative',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]
@@ -352,7 +352,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'negative',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]
@@ -378,7 +378,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'negative',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]
@@ -404,7 +404,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'negative',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]
@@ -430,7 +430,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'negative',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]
@@ -456,7 +456,7 @@ export default {
             'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'boardPolarity': 'negative',
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardDate': 1
         }
       ]

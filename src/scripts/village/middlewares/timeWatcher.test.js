@@ -16,7 +16,7 @@ import {initialState as result} from '../reducers/result'
 import {initialState as roles} from '../reducers/roles'
 
 describe('socket/MESSAGE', () => {
-  test('phase: night -> day conversation, date: 0 -> 1', () => {
+  test('phase: night -> morning, date: 0 -> 1', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents,
@@ -48,7 +48,7 @@ describe('socket/MESSAGE', () => {
         'villageName': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15,
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-        'phase': 'day conversation',
+        'phase': 'morning',
         'date': 1,
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -84,7 +84,7 @@ describe('socket/MESSAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       from: 'night',
-      to: 'day conversation',
+      to: 'morning',
       type: ActionTypes.CHANGE_PHASE
     })
     expect(dispatch).toHaveBeenCalledWith({
@@ -93,7 +93,7 @@ describe('socket/MESSAGE', () => {
       type: ActionTypes.CHANGE_DATE
     })
   })
-  test('phase: night -> day conversation, date: 0', () => {
+  test('phase: night -> morning, date: 0', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents,
@@ -125,7 +125,7 @@ describe('socket/MESSAGE', () => {
         'villageName': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15,
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-        'phase': 'day conversation',
+        'phase': 'morning',
         'date': 0,
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -161,7 +161,7 @@ describe('socket/MESSAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       from: 'night',
-      to: 'day conversation',
+      to: 'morning',
       type: ActionTypes.CHANGE_PHASE
     })
   })
