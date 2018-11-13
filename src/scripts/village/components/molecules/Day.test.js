@@ -23,15 +23,15 @@ describe('<Day />', () => {
 
       expect(wrapper.text()).toMatch('0日目 昼')
     })
-    test('day vote', () => {
+    test('day', () => {
       const timer = {
         limit: 10,
-        phase: 'day vote'
+        phase: 'day'
       }
       const wrapper = mountWithIntl(
         <Day
           date={1}
-          phase="day vote"
+          phase="day"
           timer={timer}
         />
       )

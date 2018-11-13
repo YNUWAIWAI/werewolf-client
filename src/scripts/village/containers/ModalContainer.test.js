@@ -21,7 +21,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'dead',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day vote'
+          'statusUpdatePhase': 'day'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Walter',

@@ -3,7 +3,7 @@ declare module 'village' {
   declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
   declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
-  declare type Phase = 'morning' | 'day vote' | 'night' | 'post mortem' | 'result'
+  declare type Phase = 'morning' | 'day' | 'night' | 'post mortem' | 'result'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster'
   declare type _RoleId = 'Villager' | 'Seer' | 'Medium' | 'Hunter' | 'Mason' | 'Madman' | 'Werewolf' | 'Werehamster'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
@@ -14,6 +14,23 @@ declare module 'village' {
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
   declare type Team = 'villager' | 'werehamster' | 'werewolf'
   declare type Gender = 'female' | 'male'
+  declare type Context =
+    | 'https://werewolf.world/context/0.2/base.jsonld'
+    | 'https://werewolf.world/context/0.2/error.jsonld'
+    | 'https://werewolf.world/context/0.2/agent.jsonld'
+    | 'https://werewolf.world/context/0.2/role.jsonld'
+    | 'https://werewolf.world/context/0.2/board.jsonld'
+    | 'https://werewolf.world/context/0.2/chat.jsonld'
+    | 'https://werewolf.world/context/0.2/vote.jsonld'
+    | 'https://werewolf.world/context/0.2/votingResult.jsonld'
+    | 'https://werewolf.world/context/0.2/scroll.jsonld'
+  declare type Message =
+    | 'https://werewolf.world/resource/0.2/boardMessage'
+    | 'https://werewolf.world/resource/0.2/errorMessage'
+    | 'https://werewolf.world/resource/0.2/playerMessage'
+    | 'https://werewolf.world/resource/0.2/scrollMessage'
+    | 'https://werewolf.world/resource/0.2/systemMessage'
+    | 'https://werewolf.world/resource/0.2/voteMessage'
   declare type NavigationType =
     | 'SHOW_RESULT'
     | 'RETURN_TO_LOBBY'
@@ -69,11 +86,13 @@ declare module 'village' {
     isAChoice: boolean
   }
   declare type Base = {
-    '@id': string,
-    '@context': string[],
-    villageId: number,
-    villageName: string,
-    totalNumberOfAgents: number,
+    '@id': Message,
+    '@context': Context[],
+    village: {
+      id: number,
+      name: string,
+      totalNumberOfAgents: number
+    },
     token: string,
     phase: Phase,
     date: number,
