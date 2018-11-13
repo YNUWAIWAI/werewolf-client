@@ -89,11 +89,12 @@ declare module 'village' {
     '@id': Message,
     '@context': Context[],
     village: {
+      '@id': string,
       id: number,
       name: string,
       totalNumberOfAgents: number
     },
-    token: string,
+    token: $NonMaybeType<$PropertyType<Avatar, 'token'>>,
     phase: Phase,
     date: number,
     phaseTimeLimit: number,
@@ -102,16 +103,28 @@ declare module 'village' {
     clientTimestamp: string,
     directionality: Directionality,
     intensionalDisclosureRange: Channel,
-    extensionalDisclosureRange: [],
+    extensionalDisclosureRange: {
+      '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
+      id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
+      image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
+      name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
+      role: {
+        '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
+        image: $NonMaybeType<$PropertyType<Role, 'image'>>,
+        name: $NonMaybeType<$PropertyType<Role, 'name'>>
+      },
+      status: $NonMaybeType<$PropertyType<Agent, 'status'>>
+    }[],
+    avatar: Avatar,
     myAgent: {
-      '@id': string,
-      myAgentId: number,
-      myAgentImage: string,
-      myAgentName: { [Language]: string },
-      myRole: {
-        '@id': string,
-        myRoleImage: string,
-        myRoleName: { [Language]: string }
+      '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
+      id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
+      image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
+      name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
+      role: {
+        '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
+        image: $NonMaybeType<$PropertyType<Role, 'image'>>,
+        name: $NonMaybeType<$PropertyType<Role, 'name'>>
       }
     }
   }
