@@ -3,9 +3,7 @@ import {type HideResult, hideResult} from '../actions'
 import Result, {type DispatchProps, type StateProps} from '../components/organisms/Result'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
-import {WEREWOLF_SIDE} from '../constants/Role'
 import {connect} from 'react-redux'
-import {xor} from '../util'
 
 type Action =
   | HideResult
@@ -20,37 +18,46 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       agentId: a.agentId,
       agentImage: a.agentImage,
       agentName: a.agentName[state.language],
+      avatarImage: a.avatarImage,
+      avatarName: a.avatarName,
       result: a.result,
       roleImage: a.roleImage,
       roleName: a.roleName[state.language],
-      status: a.status,
-      userAvatar: a.userAvatar,
-      userName: a.userName
+      status: a.status
     }
   })
   const summary = (() => {
-    const isWerewolfSide = WEREWOLF_SIDE.includes(state.result.summary.role)
-    const isWin = state.result.summary.result === 'win'
     const description = (() => {
-      if (state.result.summary.isPlayer) {
-        return `Result.summary.description(player, villager${xor(isWerewolfSide, isWin) ? 'Win' : 'Lose'}, you${isWin ? 'Win' : 'Lose'})`
+      if (state.result.summary.kind === 'player') {
+        return `Result.summary.description(player, ${state.result.summary.winnerTeam}, ${state.result.summary.myTeam}, ${state.result.summary.result})`
       }
 
-      return `Result.summary.description(audience, villager${xor(isWerewolfSide, isWin) ? 'Win' : 'Lose'})`
+      // state.result.summary.kind === 'audience'
+      return `Result.summary.description(audience, ${state.result.summary.winnerTeam})`
     })()
+    const loser = (() => {
+      const villager = state.result.summary.loserTeam.has('villager')
+      const werehamster = state.result.summary.loserTeam.has('werehamster')
+      const werewolf = state.result.summary.loserTeam.has('werewolf')
 
-    if (xor(isWerewolfSide, isWin)) {
-      return {
-        description,
-        loser: `Result.summary.loser(werewolf${state.result.werehamster.exists && !state.result.werehamster.isWin ? ', werehamster' : ''})`,
-        winner: `Result.summary.winner(villager${state.result.werehamster.exists && state.result.werehamster.isWin ? ', werehamster' : ''})`
+      if (villager && !werehamster && !werewolf) {
+        return 'Result.summary.loser(villager)'
+      } else if (villager && werehamster && !werewolf) {
+        return 'Result.summary.loser(villager, werehamster)'
+      } else if (villager && !werehamster && werewolf) {
+        return 'Result.summary.loser(villager, werewolf)'
+      } else if (!villager && !werehamster && werewolf) {
+        return 'Result.summary.loser(werewolf)'
       }
-    }
+
+      // !villager && werehamster && werewolf)
+      return 'Result.summary.loser(werewolf, werehamster)'
+    })()
 
     return {
       description,
-      loser: `Result.summary.loser(villager${state.result.werehamster.exists && !state.result.werehamster.isWin ? ', werehamster' : ''})`,
-      winner: `Result.summary.winner(werewolf${state.result.werehamster.exists && state.result.werehamster.isWin ? ', werehamster' : ''})`
+      loser,
+      winner: `Result.summary.winner(${state.result.summary.winnerTeam})`
     }
   })()
 

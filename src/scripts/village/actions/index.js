@@ -9,6 +9,7 @@ import type {
   Payload,
   Phase,
   ReadyPayload,
+  ResultPayload,
   RoleId
 } from 'village'
 
@@ -21,7 +22,7 @@ export const socket = {
     event,
     type: ActionTypes.socket.ERROR
   }),
-  message: (event: MessageEvent): {payload: Payload<*, *, *>, type: 'socket/MESSAGE'} => ({
+  message: (event: MessageEvent): {payload: Payload<*, *, *> | ResultPayload, type: 'socket/MESSAGE'} => ({
     payload: JSON.parse(event.data),
     type: ActionTypes.socket.MESSAGE
   }),

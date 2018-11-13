@@ -41,9 +41,9 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
+        '@id': 'https://werewolf.world/resource/0.2/systemMessage',
         'villageId': 3,
         'villageName': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15,
@@ -58,20 +58,20 @@ describe('socket/MESSAGE', () => {
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
         'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
+          '@id': 'https://werewolf.world/resource/0.2/Walter',
           'myAgentId': 1,
           'myAgentName': {
             'en': 'Walter',
             'ja': 'ヴァルター'
           },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+          'myAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
           'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
+            '@id': 'https://werewolf.world/resource/0.2/villager',
             'myRoleName': {
               'en': 'Villager',
               'ja': '村人'
             },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
+            'myRoleImage': 'https://werewolf.world/image/0.2/villager.jpg'
           }
         },
         'agent': [],
@@ -118,9 +118,9 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
+        '@id': 'https://werewolf.world/resource/0.2/systemMessage',
         'villageId': 3,
         'villageName': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15,
@@ -135,20 +135,20 @@ describe('socket/MESSAGE', () => {
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
         'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
+          '@id': 'https://werewolf.world/resource/0.2/Walter',
           'myAgentId': 1,
           'myAgentName': {
             'en': 'Walter',
             'ja': 'ヴァルター'
           },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+          'myAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
           'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
+            '@id': 'https://werewolf.world/resource/0.2/villager',
             'myRoleName': {
               'en': 'Villager',
               'ja': '村人'
             },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
+            'myRoleImage': 'https://werewolf.world/image/0.2/villager.jpg'
           }
         },
         'agent': [],
@@ -190,9 +190,9 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
+        '@id': 'https://werewolf.world/resource/0.2/systemMessage',
         'villageId': 3,
         'villageName': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15,
@@ -207,20 +207,20 @@ describe('socket/MESSAGE', () => {
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
         'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
+          '@id': 'https://werewolf.world/resource/0.2/Walter',
           'myAgentId': 1,
           'myAgentName': {
             'en': 'Walter',
             'ja': 'ヴァルター'
           },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+          'myAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
           'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
+            '@id': 'https://werewolf.world/resource/0.2/villager',
             'myRoleName': {
               'en': 'Villager',
               'ja': '村人'
             },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
+            'myRoleImage': 'https://werewolf.world/image/0.2/villager.jpg'
           }
         },
         'agent': [],
@@ -262,9 +262,9 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
+        '@id': 'https://werewolf.world/resource/0.2/systemMessage',
         'villageId': 3,
         'villageName': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15,
@@ -279,20 +279,20 @@ describe('socket/MESSAGE', () => {
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
         'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
+          '@id': 'https://werewolf.world/resource/0.2/Walter',
           'myAgentId': 1,
           'myAgentName': {
             'en': 'Walter',
             'ja': 'ヴァルター'
           },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+          'myAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
           'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
+            '@id': 'https://werewolf.world/resource/0.2/villager',
             'myRoleName': {
               'en': 'Villager',
               'ja': '村人'
             },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
+            'myRoleImage': 'https://werewolf.world/image/0.2/villager.jpg'
           }
         },
         'agent': [],

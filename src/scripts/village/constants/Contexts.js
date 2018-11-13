@@ -9,5 +9,5 @@ export const ROLE = `${BASE_URL}/role.jsonld`
 export const BOARD = `${BASE_URL}/board.jsonld`
 export const CHAT = `${BASE_URL}/chat.jsonld`
 export const VOTE = `${BASE_URL}/vote.jsonld`
-export const VOTING_RESULTS = `${BASE_URL}/votingResults.jsonld`
+export const VOTING_RESULT = `${BASE_URL}/votingResult.jsonld`
 export const SCROLL = `${BASE_URL}/scroll.jsonld`

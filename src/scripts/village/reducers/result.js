@@ -1,41 +1,44 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {AgentStatus, Language, Payload, ReusltAgent, TResult} from 'village'
+import type {AgentStatus, Language, ResultPayload, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
-import {getMyAgent, getPlayableAgents, idGenerater} from '../util'
-import {RESULTS} from '../constants/Phase'
-import {WEREHAMSTER} from '../constants/Role'
+import {getPlayableAgents, getRoleId, getTeam, idGenerater} from '../util'
+import {RESULT} from '../constants/Phase'
 
 const getAgentId = idGenerater('agent')
 
+type Agents = {
+  [string]: {
+    +agentImage: string,
+    +agentId: number,
+    +agentName: { [Language]: string },
+    +avatarImage: string,
+    +avatarName: string,
+    +result: TResult,
+    +roleImage: string,
+    +roleName: { [Language]: string },
+    +status: AgentStatus
+  }
+}
+type Summary = {
+  +kind: 'audience',
+  +loserTeam: Set<Team>,
+  +winnerTeam: Team
+} | {
+  +kind: 'player',
+  +loserTeam: Set<Team>,
+  +myTeam: Team,
+  +result: 'win' | 'lose',
+  +winnerTeam: Team
+}
 export type State = {
-  +agents: {
-    [string]: {
-      +agentImage: string,
-      +agentId: number,
-      +agentName: { [Language]: string },
-      +result: TResult,
-      +roleImage: string,
-      +roleName: { [Language]: string },
-      +status: AgentStatus,
-      +userAvatar: string,
-      +userName: string
-    }
-  },
+  +agents: Agents,
   +allIds: string[],
   +losers: string[],
   +me: ?string,
-  +summary: {
-    +isPlayer: boolean,
-    +result: TResult | '',
-    +role: string
-  },
+  +summary: Summary,
   +visible: boolean,
-  +werehamster: {
-    exists: boolean,
-    isWin: boolean
-  },
   +winners: string[]
 }
 type Action =
@@ -49,15 +52,10 @@ export const initialState = {
   losers: [],
   me: null,
   summary: {
-    isPlayer: true,
-    result: '',
-    role: ''
+    kind: 'audience',
+    winnerTeam: 'villager'
   },
   visible: false,
-  werehamster: {
-    exists: false,
-    isWin: false
-  },
   winners: []
 }
 const result = (state: State = initialState, action: Action): State => {
@@ -75,19 +73,14 @@ const result = (state: State = initialState, action: Action): State => {
     case ActionTypes.socket.MESSAGE:
       if (
         action.payload['@context'].includes(Contexts.BASE) &&
-        action.payload['@context'].includes(Contexts.AGENT) &&
-        action.payload['@context'].includes(Contexts.ROLE) &&
-        action.payload.phase === RESULTS
+        action.payload['@context'].includes(Contexts.VOTING_RESULT) &&
+        action.payload.phase === RESULT
       ) {
-        const payload: Payload<ReusltAgent, *, *> = action.payload
-        const agents = {}
+        const payload: ResultPayload = action.payload
+        const agents: Agents = {}
         const allIds = []
         const losers = []
         let me
-        const werehamster = {
-          exists: false,
-          isWin: false
-        }
         const winners = []
 
         getPlayableAgents(payload.agent)
@@ -98,12 +91,12 @@ const result = (state: State = initialState, action: Action): State => {
               agentId: a.id,
               agentImage: a.image,
               agentName: a.name,
+              avatarImage: a.avatar.image,
+              avatarName: a.avatar.name,
               result: a.result,
-              roleImage: a.role.roleImage,
-              roleName: a.role.roleName,
-              status: a.status,
-              userAvatar: a.userAvatar,
-              userName: a.userName
+              roleImage: a.role.image,
+              roleName: a.role.name,
+              status: a.status
             }
             if (a.result === 'win') {
               winners.push(agentId)
@@ -111,31 +104,32 @@ const result = (state: State = initialState, action: Action): State => {
             if (a.result === 'lose') {
               losers.push(agentId)
             }
-            if (a.agentIsMine) {
+            if (a.isMine) {
               me = agentId
-            }
-            if (a.role['@id'] === WEREHAMSTER) {
-              werehamster.exists = true
-              werehamster.isWin = a.result === 'win'
             }
             allIds.push(agentId)
           })
-        const summary = (() => {
-          const mine = getMyAgent(payload.agent)
+        const summary: Summary = (() => {
+          if (winners.length === 0) {
+            throw Error('Unexpected Result: no winners')
+          }
+          const winnerTeam = getTeam(getRoleId(agents[winners[0]].roleName.en))
+          const loserTeam = new Set(losers.map(loser => getTeam(getRoleId(agents[loser].roleName.en))))
 
-          if (mine) {
+          if (me) {
             return {
-              isPlayer: true,
-              result: mine.result,
-              role: mine.role['@id']
+              kind: 'player',
+              loserTeam,
+              myTeam: getTeam(getRoleId(agents[me].roleName.en)),
+              result: agents[me].result,
+              winnerTeam
             }
           }
-          const agent = getPlayableAgents(payload.agent)[0]
 
           return {
-            isPlayer: false,
-            result: agent.result,
-            role: agent.role['@id']
+            kind: 'audience',
+            loserTeam,
+            winnerTeam
           }
         })()
 
@@ -146,7 +140,6 @@ const result = (state: State = initialState, action: Action): State => {
           me,
           summary,
           visible: true,
-          werehamster,
           winners
         }
       }

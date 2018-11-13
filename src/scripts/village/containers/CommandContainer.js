@@ -1,6 +1,6 @@
 // @flow
 import Command, {type StateProps} from '../components/organisms/Command'
-import {DAY_CONVERSATION, DAY_VOTE, NIGHT, POST_MORTEM, RESULTS} from '../constants/Phase'
+import {DAY_CONVERSATION, DAY_VOTE, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
 import CommandSelection from './CommandSelectionContainer'
@@ -17,7 +17,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       case NIGHT:
         return <CommandSelection />
       case POST_MORTEM:
-      case RESULTS:
+      case RESULT:
         return <CommandPostMortem />
       default:
         throw Error(`Unknown: ${phase}`)

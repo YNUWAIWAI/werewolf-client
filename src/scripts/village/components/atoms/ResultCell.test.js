@@ -292,14 +292,14 @@ describe('<ResultCell />', () => {
   test('type="summary"', () => {
     const wrapper = mountWithIntl(
       <ResultCell
-        id="Result.summary.description(player, villagerLose, youLose)"
+        id="Result.summary.description(player, werewolf, villager, lose)"
         type="summary"
       />
     )
 
     expect(wrapper.find('.result--cell').exists()).toBe(true)
     expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
-    expect(wrapper.find('.result--cell').text()).toBe('村人陣営の敗北のため，あなたは負けました')
+    expect(wrapper.find('.result--cell').text()).toBe('村人陣営のあなたは敗北しました。（人狼陣営の勝利）')
   })
   describe('type="name"', () => {
     test('status="alive"', () => {

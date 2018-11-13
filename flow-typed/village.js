@@ -3,47 +3,59 @@ declare module 'village' {
   declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
   declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
-  declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'results'
+  declare type Phase = 'day conversation' | 'day vote' | 'night' | 'post mortem' | 'result'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster'
+  declare type _RoleId = 'Villager' | 'Seer' | 'Medium' | 'Hunter' | 'Mason' | 'Madman' | 'Werewolf' | 'Werehamster'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type BoardPolarity = 'positive' | 'negative'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type Result = 'win' | 'lose'
-  declare type TResult = Result
   declare type AgentId = string
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
+  declare type Team = 'villager' | 'werehamster' | 'werewolf'
+  declare type Gender = 'female' | 'male'
   declare type NavigationType =
     | 'SHOW_RESULT'
     | 'RETURN_TO_LOBBY'
   declare type Agent = {
     '@id': string,
-    agentIsMine: boolean,
-    name: { [Language]: string },
-    image: string,
-    id: number,
-    status: AgentStatus,
-    statusUpdatePhase: Phase,
-    statusUpdateDate: number,
-    isAChoice: boolean,
-  }
-  declare type ReusltAgent = {
-    '@id': string,
-    agentIsMine: boolean,
-    name: { [Language]: string },
-    image: string,
-    id: number,
-    role: {
-      '@id': string,
-      roleName: { [Language]: string },
-      roleImage: string
+    isMine?: boolean,
+    name?: { [Language]: string },
+    'full name'?: { [Language]: string },
+    gender?: Gender,
+    image?: string,
+    id?: number,
+    status?: AgentStatus,
+    update?: {
+      date: number,
+      phase: Phase
     },
-    status: AgentStatus,
-    statusUpdatePhase: Phase,
-    statusUpdateDate: number,
-    isAChoice: boolean,
-    result: Result,
-    userName: string,
-    userAvatar: string
+    isAChoice?: boolean,
+    result?: Result
+  }
+  declare type Avatar = {
+    '@id': string,
+    token: string,
+    name: string,
+    image: string
+  }
+  declare type Role = {
+    '@id': string,
+    name?: { [Language]: string },
+    image?: string,
+    isMine?: boolean,
+    numberOfAgents?: number,
+    board?: Array<{
+      boardPolarity: BoardPolarity,
+      boardAgent: {
+        '@id': string,
+        boardAgentId: number,
+        boardAgentName: { [Language]: string },
+        boardAgentImage: string
+      },
+      boardPhase: Phase,
+      boardDate: number
+    }>
   }
   declare type VoteAgent = {
     '@id': string,
@@ -55,24 +67,6 @@ declare module 'village' {
     statusUpdatePhase: Phase,
     statusUpdateDate: number,
     isAChoice: boolean
-  }
-  declare type Role = {
-    '@id': string,
-    name: { [Language]: string },
-    image: string,
-    roleIsMine: boolean,
-    numberOfAgents: number,
-    board: Array<{
-      boardPolarity: BoardPolarity,
-      boardAgent: {
-        '@id': string,
-        boardAgentId: number,
-        boardAgentName: { [Language]: string },
-        boardAgentImage: string
-      },
-      boardPhase: Phase,
-      boardDate: number
-    }>
   }
   declare type Base = {
     '@id': string,
@@ -165,6 +159,41 @@ declare module 'village' {
       role: R[]
     } &
     T
+  declare type ResultAgent = {
+    '@id': string,
+    isMine: boolean,
+    name: { [Language]: string },
+    image: string,
+    id: number,
+    status: AgentStatus,
+    role: {
+      '@id': string,
+      name: { [Language]: string },
+      image: string
+    },
+    result: Result,
+    avatar: Avatar
+  }
+  declare type ResultRole = {
+    '@id': string,
+    name: { [Language]: string },
+    image: string,
+    isMine: boolean,
+    numberOfAgents: number,
+    agent: {
+      '@id': string,
+      name: { [Language]: string },
+      image: string,
+      id: number
+    }[]
+  }
+
+  declare type ResultPayload =
+    Base &
+    {
+      agent: ResultAgent[],
+      role: ResultRole[]
+    }
   declare type C2SPayload<T> =
     Base &
     T

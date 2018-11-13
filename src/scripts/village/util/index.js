@@ -1,6 +1,11 @@
 // @flow
+import type {Team, _RoleId} from 'village'
+import {
+  UNPLAYABLE_ROLE,
+  VILLAGER_TEAM,
+  WEREHAMSTER_TEAM
+} from '../constants/Role'
 import {UNPLAYABLE_AGENT} from '../constants/Agent'
-import {UNPLAYABLE_ROLE} from '../constants/Role'
 
 export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] =>
   agents.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
@@ -26,6 +31,27 @@ export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): 
   }
 
   return maybe
+}
+
+export const getRoleId = (str: string): _RoleId => {
+  const roleId: _RoleId[] = ['Villager', 'Seer', 'Medium', 'Hunter', 'Mason', 'Madman', 'Werewolf', 'Werehamster']
+  const maybe = roleId.find(v => v === str)
+
+  if (!maybe) {
+    throw new Error(`Unexpected RoleId: ${str}`)
+  }
+
+  return maybe
+}
+
+export const getTeam = (role: _RoleId): Team => {
+  if (VILLAGER_TEAM.includes(role)) {
+    return 'villager'
+  } else if (WEREHAMSTER_TEAM.includes(role)) {
+    return 'werehamster'
+  }
+
+  return 'werewolf' // WEREWOLF_TEAM.includes(role)
 }
 
 export const getVotedAgent = <T: {'@id': string, id: number}>(agents: T[], agentId: number): T => {

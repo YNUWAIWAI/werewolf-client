@@ -4,6 +4,8 @@ import {
   getMyRole,
   getPlayableAgents,
   getPlayableRoles,
+  getRoleId,
+  getTeam,
   idGenerater,
   just,
   spaceSeparatedToCamelCase,
@@ -14,10 +16,10 @@ import {
 test('getMyAgent', () => {
   const agents = [
     {
-      '@id': 'https://werewolf.world/resource/0.1/Gert',
+      '@id': 'https://werewolf.world/resource/0.2/Gert',
       'agentIsMine': false,
       'id': 0,
-      'image': 'https://werewolf.world/image/0.1/Gert.jpg',
+      'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Gert',
@@ -28,10 +30,10 @@ test('getMyAgent', () => {
       'statusUpdatePhase': 'day conversation'
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Walter',
+      '@id': 'https://werewolf.world/resource/0.2/Walter',
       'agentIsMine': true,
       'id': 1,
-      'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Walter',
@@ -42,10 +44,10 @@ test('getMyAgent', () => {
       'statusUpdatePhase': 'day conversation'
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Catalina',
+      '@id': 'https://werewolf.world/resource/0.2/Catalina',
       'agentIsMine': false,
       'id': 10,
-      'image': 'https://werewolf.world/image/0.1/Catalina.jpg',
+      'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Catalina',
@@ -56,10 +58,10 @@ test('getMyAgent', () => {
       'statusUpdatePhase': 'day conversation'
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Otto',
+      '@id': 'https://werewolf.world/resource/0.2/Otto',
       'agentIsMine': false,
       'id': 11,
-      'image': 'https://werewolf.world/image/0.1/Otto.jpg',
+      'image': 'https://werewolf.world/image/0.2/Otto.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Otto',
@@ -72,10 +74,10 @@ test('getMyAgent', () => {
   ]
 
   expect(getMyAgent(agents)).toEqual({
-    '@id': 'https://werewolf.world/resource/0.1/Walter',
+    '@id': 'https://werewolf.world/resource/0.2/Walter',
     'agentIsMine': true,
     'id': 1,
-    'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+    'image': 'https://werewolf.world/image/0.2/Walter.jpg',
     'isAChoice': false,
     'name': {
       'en': 'Walter',
@@ -89,9 +91,9 @@ test('getMyAgent', () => {
 test('getMyRole', () => {
   const roles = [
     {
-      '@id': 'https://werewolf.world/resource/0.1/master',
+      '@id': 'https://werewolf.world/resource/0.2/master',
       'board': [],
-      'image': 'https://werewolf.world/image/0.1/master.jpg',
+      'image': 'https://werewolf.world/image/0.2/master.jpg',
       'name': {
         'en': 'Master',
         'ja': 'マスター'
@@ -100,13 +102,13 @@ test('getMyRole', () => {
       'roleIsMine': false
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/villager',
+      '@id': 'https://werewolf.world/resource/0.2/villager',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -117,7 +119,7 @@ test('getMyRole', () => {
           'boardPolarity': 'negative'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/villager.jpg',
+      'image': 'https://werewolf.world/image/0.2/villager.jpg',
       'name': {
         'en': 'Villager',
         'ja': '村人'
@@ -126,13 +128,13 @@ test('getMyRole', () => {
       'roleIsMine': false
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/seer',
+      '@id': 'https://werewolf.world/resource/0.2/seer',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -143,7 +145,7 @@ test('getMyRole', () => {
           'boardPolarity': 'positive'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/seer.jpg',
+      'image': 'https://werewolf.world/image/0.2/seer.jpg',
       'name': {
         'en': 'Seer',
         'ja': '占い師'
@@ -152,13 +154,13 @@ test('getMyRole', () => {
       'roleIsMine': true
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/medium',
+      '@id': 'https://werewolf.world/resource/0.2/medium',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -169,7 +171,7 @@ test('getMyRole', () => {
           'boardPolarity': 'negative',
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/medium.jpg',
+      'image': 'https://werewolf.world/image/0.2/medium.jpg',
       'name': {
         'en': 'Medium',
         'ja': '霊媒師'
@@ -180,13 +182,13 @@ test('getMyRole', () => {
   ]
 
   expect(getMyRole(roles)).toEqual({
-    '@id': 'https://werewolf.world/resource/0.1/seer',
+    '@id': 'https://werewolf.world/resource/0.2/seer',
     'board': [
       {
         'boardAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
+          '@id': 'https://werewolf.world/resource/0.2/Walter',
           'boardAgentId': 1,
-          'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+          'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
           'boardAgentName': {
             'en': 'Walter',
             'ja': 'ヴァルター'
@@ -197,7 +199,7 @@ test('getMyRole', () => {
         'boardPolarity': 'positive'
       }
     ],
-    'image': 'https://werewolf.world/image/0.1/seer.jpg',
+    'image': 'https://werewolf.world/image/0.2/seer.jpg',
     'name': {
       'en': 'Seer',
       'ja': '占い師'
@@ -209,10 +211,10 @@ test('getMyRole', () => {
 test('getPlayableAgents', () => {
   const agents = [
     {
-      '@id': 'https://werewolf.world/resource/0.1/Gert',
+      '@id': 'https://werewolf.world/resource/0.2/Gert',
       'agentIsMine': false,
       'id': 0,
-      'image': 'https://werewolf.world/image/0.1/Gert.jpg',
+      'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Gert',
@@ -223,10 +225,10 @@ test('getPlayableAgents', () => {
       'statusUpdatePhase': 'day conversation'
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Walter',
+      '@id': 'https://werewolf.world/resource/0.2/Walter',
       'agentIsMine': true,
       'id': 1,
-      'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Walter',
@@ -237,10 +239,10 @@ test('getPlayableAgents', () => {
       'statusUpdatePhase': 'day conversation'
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Catalina',
+      '@id': 'https://werewolf.world/resource/0.2/Catalina',
       'agentIsMine': false,
       'id': 10,
-      'image': 'https://werewolf.world/image/0.1/Catalina.jpg',
+      'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Catalina',
@@ -251,10 +253,10 @@ test('getPlayableAgents', () => {
       'statusUpdatePhase': 'day conversation'
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Otto',
+      '@id': 'https://werewolf.world/resource/0.2/Otto',
       'agentIsMine': false,
       'id': 11,
-      'image': 'https://werewolf.world/image/0.1/Otto.jpg',
+      'image': 'https://werewolf.world/image/0.2/Otto.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Otto',
@@ -268,10 +270,10 @@ test('getPlayableAgents', () => {
 
   expect(getPlayableAgents(agents)).toEqual([
     {
-      '@id': 'https://werewolf.world/resource/0.1/Walter',
+      '@id': 'https://werewolf.world/resource/0.2/Walter',
       'agentIsMine': true,
       'id': 1,
-      'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Walter',
@@ -282,10 +284,10 @@ test('getPlayableAgents', () => {
       'statusUpdatePhase': 'day conversation'
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Otto',
+      '@id': 'https://werewolf.world/resource/0.2/Otto',
       'agentIsMine': false,
       'id': 11,
-      'image': 'https://werewolf.world/image/0.1/Otto.jpg',
+      'image': 'https://werewolf.world/image/0.2/Otto.jpg',
       'isAChoice': false,
       'name': {
         'en': 'Otto',
@@ -300,9 +302,9 @@ test('getPlayableAgents', () => {
 test('getPlayableRoles', () => {
   const roles = [
     {
-      '@id': 'https://werewolf.world/resource/0.1/master',
+      '@id': 'https://werewolf.world/resource/0.2/master',
       'board': [],
-      'image': 'https://werewolf.world/image/0.1/master.jpg',
+      'image': 'https://werewolf.world/image/0.2/master.jpg',
       'name': {
         'en': 'Master',
         'ja': 'マスター'
@@ -311,13 +313,13 @@ test('getPlayableRoles', () => {
       'roleIsMine': false
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/villager',
+      '@id': 'https://werewolf.world/resource/0.2/villager',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -328,7 +330,7 @@ test('getPlayableRoles', () => {
           'boardPolarity': 'negative'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/villager.jpg',
+      'image': 'https://werewolf.world/image/0.2/villager.jpg',
       'name': {
         'en': 'Villager',
         'ja': '村人'
@@ -337,13 +339,13 @@ test('getPlayableRoles', () => {
       'roleIsMine': false
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/seer',
+      '@id': 'https://werewolf.world/resource/0.2/seer',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -354,7 +356,7 @@ test('getPlayableRoles', () => {
           'boardPolarity': 'positive'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/seer.jpg',
+      'image': 'https://werewolf.world/image/0.2/seer.jpg',
       'name': {
         'en': 'Seer',
         'ja': '占い師'
@@ -363,13 +365,13 @@ test('getPlayableRoles', () => {
       'roleIsMine': true
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/medium',
+      '@id': 'https://werewolf.world/resource/0.2/medium',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -380,7 +382,7 @@ test('getPlayableRoles', () => {
           'boardPolarity': 'negative'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/medium.jpg',
+      'image': 'https://werewolf.world/image/0.2/medium.jpg',
       'name': {
         'en': 'Medium',
         'ja': '霊媒師'
@@ -392,13 +394,13 @@ test('getPlayableRoles', () => {
 
   expect(getPlayableRoles(roles)).toEqual([
     {
-      '@id': 'https://werewolf.world/resource/0.1/villager',
+      '@id': 'https://werewolf.world/resource/0.2/villager',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -409,7 +411,7 @@ test('getPlayableRoles', () => {
           'boardPolarity': 'negative'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/villager.jpg',
+      'image': 'https://werewolf.world/image/0.2/villager.jpg',
       'name': {
         'en': 'Villager',
         'ja': '村人'
@@ -418,13 +420,13 @@ test('getPlayableRoles', () => {
       'roleIsMine': false
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/seer',
+      '@id': 'https://werewolf.world/resource/0.2/seer',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -435,7 +437,7 @@ test('getPlayableRoles', () => {
           'boardPolarity': 'positive'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/seer.jpg',
+      'image': 'https://werewolf.world/image/0.2/seer.jpg',
       'name': {
         'en': 'Seer',
         'ja': '占い師'
@@ -444,13 +446,13 @@ test('getPlayableRoles', () => {
       'roleIsMine': true
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/medium',
+      '@id': 'https://werewolf.world/resource/0.2/medium',
       'board': [
         {
           'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
+            '@id': 'https://werewolf.world/resource/0.2/Walter',
             'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+            'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
             'boardAgentName': {
               'en': 'Walter',
               'ja': 'ヴァルター'
@@ -461,7 +463,7 @@ test('getPlayableRoles', () => {
           'boardPolarity': 'negative'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/medium.jpg',
+      'image': 'https://werewolf.world/image/0.2/medium.jpg',
       'name': {
         'en': 'Medium',
         'ja': '霊媒師'
@@ -470,6 +472,61 @@ test('getPlayableRoles', () => {
       'roleIsMine': false
     }
   ])
+})
+describe('getRoleId', () => {
+  test('Villager', () => {
+    expect(getRoleId('Villager')).toBe('Villager')
+  })
+  test('Seer', () => {
+    expect(getRoleId('Seer')).toBe('Seer')
+  })
+  test('Medium', () => {
+    expect(getRoleId('Medium')).toBe('Medium')
+  })
+  test('Hunter', () => {
+    expect(getRoleId('Hunter')).toBe('Hunter')
+  })
+  test('Mason', () => {
+    expect(getRoleId('Mason')).toBe('Mason')
+  })
+  test('Madman', () => {
+    expect(getRoleId('Madman')).toBe('Madman')
+  })
+  test('Werewolf', () => {
+    expect(getRoleId('Werewolf')).toBe('Werewolf')
+  })
+  test('Werehamster', () => {
+    expect(getRoleId('Werehamster')).toBe('Werehamster')
+  })
+  test('Unexpected Value', () => {
+    expect(() => getRoleId('Unexpected')).toThrow()
+  })
+})
+describe('getTeam', () => {
+  test('Villager', () => {
+    expect(getTeam('Villager')).toBe('villager')
+  })
+  test('Seer', () => {
+    expect(getTeam('Seer')).toBe('villager')
+  })
+  test('Medium', () => {
+    expect(getTeam('Medium')).toBe('villager')
+  })
+  test('Hunter', () => {
+    expect(getTeam('Hunter')).toBe('villager')
+  })
+  test('Mason', () => {
+    expect(getTeam('Mason')).toBe('villager')
+  })
+  test('Madman', () => {
+    expect(getTeam('Madman')).toBe('werewolf')
+  })
+  test('Werewolf', () => {
+    expect(getTeam('Werewolf')).toBe('werewolf')
+  })
+  test('Werehamster', () => {
+    expect(getTeam('Werehamster')).toBe('werehamster')
+  })
 })
 test('idGenerater', () => {
   const generateId = idGenerater('id')

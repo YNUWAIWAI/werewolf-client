@@ -10,10 +10,10 @@ test('<ModalContainer />', () => {
     agents: {
       all: [
         {
-          '@id': 'https://werewolf.world/resource/0.1/Gert',
+          '@id': 'https://werewolf.world/resource/0.2/Gert',
           'agentIsMine': false,
           'id': 0,
-          'image': 'https://werewolf.world/image/0.1/Gert.jpg',
+          'image': 'https://werewolf.world/image/0.2/Gert.jpg',
           'isAChoice': false,
           'name': {
             'en': 'Gert',
@@ -24,10 +24,10 @@ test('<ModalContainer />', () => {
           'statusUpdatePhase': 'day vote'
         },
         {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
+          '@id': 'https://werewolf.world/resource/0.2/Walter',
           'agentIsMine': true,
           'id': 1,
-          'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
           'isAChoice': false,
           'name': {
             'en': 'Walter',
@@ -38,10 +38,10 @@ test('<ModalContainer />', () => {
           'statusUpdatePhase': 'day conversation'
         },
         {
-          '@id': 'https://werewolf.world/resource/0.1/Moritz',
+          '@id': 'https://werewolf.world/resource/0.2/Moritz',
           'agentIsMine': false,
           'id': 2,
-          'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
+          'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
           'isAChoice': true,
           'name': {
             'en': 'Moritz',
@@ -52,10 +52,10 @@ test('<ModalContainer />', () => {
           'statusUpdatePhase': 'day conversation'
         },
         {
-          '@id': 'https://werewolf.world/resource/0.1/Simson',
+          '@id': 'https://werewolf.world/resource/0.2/Simson',
           'agentIsMine': false,
           'id': 3,
-          'image': 'https://werewolf.world/image/0.1/Simson.jpg',
+          'image': 'https://werewolf.world/image/0.2/Simson.jpg',
           'isAChoice': true,
           'name': {
             'en': 'Simson',
@@ -66,10 +66,10 @@ test('<ModalContainer />', () => {
           'statusUpdatePhase': 'day conversation'
         },
         {
-          '@id': 'https://werewolf.world/resource/0.1/Thomas',
+          '@id': 'https://werewolf.world/resource/0.2/Thomas',
           'agentIsMine': false,
           'id': 4,
-          'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
+          'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
           'isAChoice': true,
           'name': {
             'en': 'Thomas',
@@ -93,13 +93,13 @@ test('<ModalContainer />', () => {
     },
     roles: {
       mine: {
-        '@id': 'https://werewolf.world/resource/0.1/seer',
+        '@id': 'https://werewolf.world/resource/0.2/seer',
         'board': [
           {
             'boardAgent': {
-              '@id': 'https://werewolf.world/resource/0.1/Walter',
+              '@id': 'https://werewolf.world/resource/0.2/Walter',
               'boardAgentId': 1,
-              'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
+              'boardAgentImage': 'https://werewolf.world/image/0.2/Walter.jpg',
               'boardAgentName': {
                 'en': 'Walter',
                 'ja': 'ヴァルター'
@@ -110,7 +110,7 @@ test('<ModalContainer />', () => {
             'boardPolarity': 'positive'
           }
         ],
-        'image': 'https://werewolf.world/image/0.1/seer.jpg',
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'name': {
           'en': 'Seer',
           'ja': '占い師'
@@ -130,7 +130,7 @@ test('<ModalContainer />', () => {
 
   expect(wrapper.props().descriptionId).toBe('Modal.Description.dayVote')
   expect(wrapper.props().id).toBe(2)
-  expect(wrapper.props().image).toBe('https://werewolf.world/image/0.1/Moritz.jpg')
+  expect(wrapper.props().image).toBe('https://werewolf.world/image/0.2/Moritz.jpg')
   expect(wrapper.props().name).toBe('モーリッツ')
   expect(wrapper.props().timer).toEqual({
     limit: 100,
