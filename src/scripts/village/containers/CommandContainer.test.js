@@ -1,5 +1,5 @@
 // @flow
-import {MORNING, DAY_VOTE, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
+import {MORNING, DAY, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandContainer from './CommandContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
@@ -28,11 +28,11 @@ test('<CommandContainer /> MORNING', () => {
   expect(wrapper.props().content).toEqual(<CommandInputBox />)
   expect(wrapper.props().hide).toBe(false)
 })
-test('<CommandContainer /> DAY_VOTE', () => {
+test('<CommandContainer /> DAY', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     base: {
-      phase: DAY_VOTE
+      phase: DAY
     },
     hideButton: {
       hide: false

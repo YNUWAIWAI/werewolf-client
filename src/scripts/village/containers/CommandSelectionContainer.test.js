@@ -1,17 +1,17 @@
 // @flow
-import {DAY_VOTE, NIGHT} from '../constants/Phase'
+import {DAY, NIGHT} from '../constants/Phase'
 import {HUNTER, SEER, VILLAGER, WEREWOLF} from '../constants/Role'
 import CommandSelectionContainer from './CommandSelectionContainer'
 import React from 'react'
 import {shallow} from 'enzyme'
 
 describe('<CommandSelectionContainer />', () => {
-  describe('DAY_VOTE', () => {
+  describe('DAY', () => {
     test('fixed', () => {
       const dispatch = jest.fn()
       const getState = () => ({
         base: {
-          phase: DAY_VOTE,
+          phase: DAY,
           phaseTimeLimit: 100
         },
         commandSelection: {
@@ -37,14 +37,14 @@ describe('<CommandSelectionContainer />', () => {
       expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.dayVote.fixed')
       expect(wrapper.props().timer).toEqual({
         limit: 100,
-        phase: DAY_VOTE
+        phase: DAY
       })
     })
     test('unfixed', () => {
       const dispatch = jest.fn()
       const getState = () => ({
         base: {
-          phase: DAY_VOTE,
+          phase: DAY,
           phaseTimeLimit: 100
         },
         commandSelection: {
@@ -70,7 +70,7 @@ describe('<CommandSelectionContainer />', () => {
       expect(wrapper.props().descriptionId).toBe('CommandSelection.Description.dayVote.unfixed')
       expect(wrapper.props().timer).toEqual({
         limit: 100,
-        phase: DAY_VOTE
+        phase: DAY
       })
     })
   })

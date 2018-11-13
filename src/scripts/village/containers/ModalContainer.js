@@ -2,7 +2,7 @@
 import Modal, {type DispatchProps, type StateProps} from '../components/organisms/Modal'
 import type {Phase, RoleId} from 'village'
 import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
-import {DAY_VOTE} from '../constants/Phase'
+import {DAY} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -14,7 +14,7 @@ type Action =
   | SelectYes
 
 const getDescriptionId = (phase: Phase, role: RoleId) => {
-  if (phase === DAY_VOTE) {
+  if (phase === DAY) {
     return 'Modal.Description.dayVote'
   }
 

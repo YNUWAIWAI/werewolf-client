@@ -1,6 +1,6 @@
 // @flow
 import Command, {type StateProps} from '../components/organisms/Command'
-import {MORNING, DAY_VOTE, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
+import {MORNING, DAY, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
 import CommandSelection from './CommandSelectionContainer'
@@ -13,7 +13,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     switch (phase) {
       case MORNING:
         return <CommandInputBox />
-      case DAY_VOTE:
+      case DAY:
       case NIGHT:
         return <CommandSelection />
       case POST_MORTEM:

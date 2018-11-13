@@ -1,5 +1,5 @@
 // @flow
-import {DAY_VOTE} from '../constants/Phase'
+import {DAY} from '../constants/Phase'
 import ModalContainer from './ModalContainer'
 import React from 'react'
 import {shallow} from 'enzyme'
@@ -83,7 +83,7 @@ test('<ModalContainer />', () => {
     },
     base: {
       date: 1,
-      phase: DAY_VOTE,
+      phase: DAY,
       phaseTimeLimit: 100
     },
     language: 'ja',
@@ -134,7 +134,7 @@ test('<ModalContainer />', () => {
   expect(wrapper.props().name).toBe('モーリッツ')
   expect(wrapper.props().timer).toEqual({
     limit: 100,
-    phase: DAY_VOTE
+    phase: DAY
   })
   expect(wrapper.props().visible).toBe(true)
 })
