@@ -1,5 +1,5 @@
 // @flow
-import {DAY_VOTE} from '../constants/Phase'
+import {DAY} from '../constants/Phase'
 import ModalContainer from './ModalContainer'
 import React from 'react'
 import {shallow} from 'enzyme'
@@ -21,7 +21,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'dead',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day vote'
+          'statusUpdatePhase': 'day'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Walter',
@@ -35,7 +35,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Moritz',
@@ -49,7 +49,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Simson',
@@ -63,7 +63,7 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         },
         {
           '@id': 'https://werewolf.world/resource/0.2/Thomas',
@@ -77,13 +77,13 @@ test('<ModalContainer />', () => {
           },
           'status': 'alive',
           'statusUpdateDate': 1,
-          'statusUpdatePhase': 'day conversation'
+          'statusUpdatePhase': 'morning'
         }
       ]
     },
     base: {
       date: 1,
-      phase: DAY_VOTE,
+      phase: DAY,
       phaseTimeLimit: 100
     },
     language: 'ja',
@@ -106,7 +106,7 @@ test('<ModalContainer />', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'positive'
           }
         ],
@@ -134,7 +134,7 @@ test('<ModalContainer />', () => {
   expect(wrapper.props().name).toBe('モーリッツ')
   expect(wrapper.props().timer).toEqual({
     limit: 100,
-    phase: DAY_VOTE
+    phase: DAY
   })
   expect(wrapper.props().visible).toBe(true)
 })

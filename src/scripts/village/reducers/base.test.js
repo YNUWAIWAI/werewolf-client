@@ -16,7 +16,7 @@ test('socket/MESSAGE', () => {
     clientTimestamp: '2006-10-07T12:06:56.568+09:00',
     date: 1,
     intensionalDisclosureRange: 'private',
-    phase: 'day conversation',
+    phase: 'morning',
     phaseStartTime: '2006-10-07T12:06:56.568+09:00',
     phaseTimeLimit: 600,
     serverTimestamp: '2006-10-07T12:06:56.568+09:00',

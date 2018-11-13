@@ -1,5 +1,5 @@
 // @flow
-import {DAY_CONVERSATION, DAY_VOTE, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
+import {MORNING, DAY, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandContainer from './CommandContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
@@ -7,11 +7,11 @@ import CommandSelection from './CommandSelectionContainer'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-test('<CommandContainer /> DAY_CONVERSATION', () => {
+test('<CommandContainer /> MORNING', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     base: {
-      phase: DAY_CONVERSATION
+      phase: MORNING
     },
     hideButton: {
       hide: false
@@ -28,11 +28,11 @@ test('<CommandContainer /> DAY_CONVERSATION', () => {
   expect(wrapper.props().content).toEqual(<CommandInputBox />)
   expect(wrapper.props().hide).toBe(false)
 })
-test('<CommandContainer /> DAY_VOTE', () => {
+test('<CommandContainer /> DAY', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     base: {
-      phase: DAY_VOTE
+      phase: DAY
     },
     hideButton: {
       hide: false

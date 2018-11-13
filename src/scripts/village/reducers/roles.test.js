@@ -28,7 +28,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'negative'
           }
         ],
@@ -54,7 +54,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'positive'
           }
         ],
@@ -80,7 +80,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'negative'
           }
         ],
@@ -106,7 +106,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'negative'
           }
         ],
@@ -132,7 +132,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'negative'
           }
         ],
@@ -158,7 +158,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'negative'
           }
         ],
@@ -184,7 +184,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'negative'
           }
         ],
@@ -210,7 +210,7 @@ test('socket/MESSAGE', () => {
               }
             },
             'boardDate': 1,
-            'boardPhase': 'day conversation',
+            'boardPhase': 'morning',
             'boardPolarity': 'negative'
           }
         ],
@@ -237,7 +237,7 @@ test('socket/MESSAGE', () => {
             }
           },
           'boardDate': 1,
-          'boardPhase': 'day conversation',
+          'boardPhase': 'morning',
           'boardPolarity': 'positive'
         }
       ],
