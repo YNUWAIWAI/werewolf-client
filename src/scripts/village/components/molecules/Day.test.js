@@ -21,7 +21,7 @@ describe('<Day />', () => {
         />
       )
 
-      expect(wrapper.text()).toMatch('0日目 朝残り00\'00')
+      expect(wrapper.text()).toMatch('0日目 朝')
     })
     test('day', () => {
       const timer = {
@@ -36,7 +36,7 @@ describe('<Day />', () => {
         />
       )
 
-      expect(wrapper.text()).toMatch('1日目 昼残り00\'00')
+      expect(wrapper.text()).toMatch('1日目 昼')
     })
     test('night', () => {
       const timer = {
@@ -51,7 +51,7 @@ describe('<Day />', () => {
         />
       )
 
-      expect(wrapper.text()).toMatch('1日目 夜残り00\'00')
+      expect(wrapper.text()).toMatch('1日目 夜')
     })
     test('post mortem', () => {
       const timer = {
@@ -66,7 +66,7 @@ describe('<Day />', () => {
         />
       )
 
-      expect(wrapper.text()).toMatch('感想戦終了')
+      expect(wrapper.text()).toMatch('感想戦')
     })
     test('result', () => {
       const timer = {
@@ -81,7 +81,7 @@ describe('<Day />', () => {
         />
       )
 
-      expect(wrapper.text()).toMatch('結果終了')
+      expect(wrapper.text()).toMatch('結果')
     })
   })
 })
