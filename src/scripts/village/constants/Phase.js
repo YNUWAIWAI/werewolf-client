@@ -9,8 +9,8 @@ export const VOTING_PHASE = [
   NIGHT
 ]
 const Phase = {
-  'day': '投票',
-  'morning': '昼',
+  'day': '昼',
+  'morning': '朝',
   'night': '夜',
   'post mortem': '感想戦',
   'result': '結果'
