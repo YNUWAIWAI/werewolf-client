@@ -5,16 +5,9 @@ import {
   VILLAGER_TEAM,
   WEREHAMSTER_TEAM
 } from '../constants/Role'
-import {UNPLAYABLE_AGENT} from '../constants/Agent'
 
-export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] =>
-  agents.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
-
-export const getPlayableRoles = <T: {'@id': string}>(roles: T[]): T[] =>
-  roles.filter(a => !UNPLAYABLE_ROLE.includes(a['@id']))
-
-export const getMyAgent = <T: {'@id': string, agentIsMine: boolean}>(agents: T[]): T => {
-  const maybe = getPlayableAgents(agents).find(a => a.agentIsMine)
+export const getMyAgent = <T: {'@id': string, isMine: boolean}>(agents: T[]): T => {
+  const maybe = agents.find(a => a.isMine)
 
   if (!maybe) {
     throw Error('Not found my agent.')
@@ -22,6 +15,10 @@ export const getMyAgent = <T: {'@id': string, agentIsMine: boolean}>(agents: T[]
 
   return maybe
 }
+
+export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] => agents
+export const getPlayableRoles = <T: {'@id': string}>(roles: T[]): T[] =>
+  roles.filter(a => !UNPLAYABLE_ROLE.includes(a['@id']))
 
 export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): T => {
   const maybe = getPlayableRoles(roles).find(r => r.roleIsMine)

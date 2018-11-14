@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {AgentStatus, Language, ResultPayload, Result as TResult, Team} from 'village'
+import type {AgentStatus, Language, Payload$Result, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
 import {getPlayableAgents, getRoleId, getTeam, idGenerater} from '../util'
 import {RESULT} from '../constants/Phase'
@@ -76,7 +76,7 @@ const result = (state: State = initialState, action: Action): State => {
         action.payload['@context'].includes(Contexts.VOTING_RESULT) &&
         action.payload.phase === RESULT
       ) {
-        const payload: ResultPayload = action.payload
+        const payload: Payload$Result = action.payload
         const agents: Agents = {}
         const allIds = []
         const losers = []
