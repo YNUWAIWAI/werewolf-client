@@ -6,7 +6,7 @@ import {
   WEREHAMSTER_TEAM
 } from '../constants/Role'
 
-export const getMyAgent = <T: {'@id': string, isMine: boolean}>(agents: T[]): T => {
+export const getMyAgent = <T: {name: {en: string}, isMine: boolean}>(agents: T[]): T => {
   const maybe = agents.find(a => a.isMine)
 
   if (!maybe) {
@@ -16,12 +16,12 @@ export const getMyAgent = <T: {'@id': string, isMine: boolean}>(agents: T[]): T 
   return maybe
 }
 
-export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] => agents
-export const getPlayableRoles = <T: {'@id': string}>(roles: T[]): T[] =>
-  roles.filter(a => !UNPLAYABLE_ROLE.includes(a['@id']))
+export const getPlayableAgents = <T: {name: {en: string}}>(agents: T[]): T[] => agents
 
-export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): T => {
-  const maybe = getPlayableRoles(roles).find(r => r.roleIsMine)
+export const getPlayableRoles = <T: {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(r.name.en))
+
+export const getMyRole = <T: {name: {en: string}, isMine: boolean}>(roles: T[]): T => {
+  const maybe = getPlayableRoles(roles).find(r => r.isMine)
 
   if (!maybe) {
     throw Error('Not found my role.')

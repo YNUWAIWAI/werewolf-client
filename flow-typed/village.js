@@ -336,35 +336,36 @@ declare module 'village' {
       image?: $NonMaybeType<$PropertyType<Avatar, 'image'>>
     }
   }
-  declare type Payload$systemMessage = Payload<{
-    votingResultsSummary?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsSummary'>>,
-    votingResultsDetails?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsDetails'>>,
-    agent?: Agent$SystemMessage[],
-    role?: {
-      '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
-      isMine: $NonMaybeType<$PropertyType<Role, 'isMine'>>,
-      name: $NonMaybeType<$PropertyType<Role, 'name'>>,
-      image: $NonMaybeType<$PropertyType<Role, 'image'>>,
-      numberOfAgents: $NonMaybeType<$PropertyType<Role, 'numberOfAgents'>>,
+  declare type Role$SystemMessage = {
+    '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
+    isMine: $NonMaybeType<$PropertyType<Role, 'isMine'>>,
+    name: $NonMaybeType<$PropertyType<Role, 'name'>>,
+    image: $NonMaybeType<$PropertyType<Role, 'image'>>,
+    numberOfAgents: $NonMaybeType<$PropertyType<Role, 'numberOfAgents'>>,
+    agent: {
+      '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
+      name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
+      image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
+      id: $NonMaybeType<$PropertyType<Agent, 'id'>>
+    },
+    board: {
+      '@id': string,
       agent: {
         '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
         name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
         image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
         id: $NonMaybeType<$PropertyType<Agent, 'id'>>
       },
-      board: {
-        '@id': string,
-        agent: {
-          '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
-          name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
-          image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
-          id: $NonMaybeType<$PropertyType<Agent, 'id'>>
-        },
-        polarity: $NonMaybeType<$PropertyType<Board, 'polarity'>>,
-        phase: $PropertyType<Time, 'phase'>,
-        date: $PropertyType<Time, 'date'>
-      }
-    }[],
+      polarity: $NonMaybeType<$PropertyType<Board, 'polarity'>>,
+      phase: $PropertyType<Time, 'phase'>,
+      date: $PropertyType<Time, 'date'>
+    }
+  }
+  declare type Payload$systemMessage = Payload<{
+    votingResultsSummary?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsSummary'>>,
+    votingResultsDetails?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsDetails'>>,
+    agent?: Agent$SystemMessage[],
+    role?: Role$SystemMessage[],
     flavorText?: Payload$playerMessage[]
   }>
   declare type Payload$voteMessage = Payload<{

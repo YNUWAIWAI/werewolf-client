@@ -25,7 +25,7 @@ export const _WEREWOLF = 'Werewolf'
 export const _WEREHAMSTER = 'Werehamster'
 
 export const UNPLAYABLE_ROLE = [
-  MASTER
+  _MASTER
 ]
 export const ORDERED_ROLE_LIST = [
   VILLAGER,
