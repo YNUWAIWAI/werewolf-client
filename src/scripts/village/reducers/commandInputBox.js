@@ -1,8 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
-import type {InputChannel, Payload$playerMessage, Payload$systemMessage, Role} from 'village'
+import type {InputChannel, Payload$playerMessage, Payload$systemMessage} from 'village'
 import {getMyRole, trimBaseUri} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
