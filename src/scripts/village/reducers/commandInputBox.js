@@ -2,11 +2,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
 import * as Message from '../constants/Message'
-import type {Chat, InputChannel, Payload, Role} from 'village'
+import type {InputChannel, Payload$playerMessage, Payload$systemMessage, Role} from 'village'
+import {getMyRole, trimBaseUri} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
 import {getInputChannel} from '../constants/Channels'
-import {getMyRole} from '../util'
 
 export type State = {
   limited: {
@@ -45,51 +45,55 @@ export const initialState = {
 const commandInputBox = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (
-        action.payload['@id'] === Message.PLAYER_MESSAGE &&
-        action.payload['@context'].includes(Contexts.CHAT)
-      ) {
-        const payload: Payload<*, *, Chat> = action.payload
+      switch (trimBaseUri(action.payload['@id'])) {
+        case Message.PLAYER_MESSAGE: {
+          const payload: Payload$playerMessage = action.payload
 
-        if (payload.chatIsMine) {
-          const kind: InputChannel = getInputChannel(payload.intensionalDisclosureRange)
+          if (payload.isMine) {
+            const kind: InputChannel = getInputChannel(payload.intensionalDisclosureRange)
 
-          if (kind === 'post mortem') {
+            if (kind === 'post mortem') {
+              return state
+            }
+
+            return {
+              ... state,
+              [kind]: {
+                ... state[kind],
+                postCount: payload.counter,
+                postCountLimit: payload.limit
+              }
+            }
+          }
+
+          return state
+        }
+        case Message.SYSTEM_MESSAGE: {
+          const payload: Payload$systemMessage = action.payload
+
+          if (!payload.role) {
             return state
           }
+          const role = getMyRole(payload.role)
 
-          return {
-            ... state,
-            [kind]: {
-              ... state[kind],
-              postCount: payload.chatCounter,
-              postCountLimit: payload.chatLimit
+          if (
+            role.numberOfAgents > 1 &&
+            AVAILABLE_FOR_LIMITED_CHAT.includes(role.name.en)
+          ) {
+            return {
+              ... state,
+              limited: {
+                ... state.limited,
+                available: true
+              }
             }
           }
-        }
-      } else if (
-        action.payload['@context'].includes(Contexts.BASE) &&
-        action.payload['@context'].includes(Contexts.ROLE) &&
-        action.payload['@context'].includes(Contexts.AGENT)
-      ) {
-        const payload: Payload<*, Role, *> = action.payload
-        const role = getMyRole(payload.role)
 
-        if (
-          role.numberOfAgents > 1 &&
-          AVAILABLE_FOR_LIMITED_CHAT.includes(role['@id'])
-        ) {
-          return {
-            ... state,
-            limited: {
-              ... state.limited,
-              available: true
-            }
-          }
+          return state
         }
+        default:
+          return state
       }
-
-      return state
     default:
       return state
   }

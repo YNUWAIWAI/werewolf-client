@@ -42,9 +42,9 @@ export const WEREWOLF_SIDE = [
   WEREWOLF
 ]
 export const AVAILABLE_FOR_LIMITED_CHAT = [
-  WEREWOLF,
-  SEER,
-  HUNTER
+  _WEREWOLF,
+  _SEER,
+  _HUNTER
 ]
 
 export const VILLAGER_TEAM = [
