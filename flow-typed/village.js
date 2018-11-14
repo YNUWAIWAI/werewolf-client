@@ -96,8 +96,8 @@ declare module 'village' {
       totalNumberOfAgents: number
     },
     token: $NonMaybeType<$PropertyType<Avatar, 'token'>>,
-    phase: $PropertyType<TIme, 'phase'>,
-    date: $PropertyType<TIme, 'date'>,
+    phase: $PropertyType<Time, 'phase'>,
+    date: $PropertyType<Time, 'date'>,
     phaseTimeLimit: number,
     phaseStartTime: string,
     serverTimestamp: string,
