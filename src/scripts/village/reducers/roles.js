@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Payload$systemMessage, Role$SystemMessage as Role} from 'village'
+import type {Payload$systemMessage, Role$systemMessage as Role} from 'village'
 import {getMyRole, getPlayableRoles, trimBaseUri} from '../util'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 import type {SocketMessage} from '../actions'

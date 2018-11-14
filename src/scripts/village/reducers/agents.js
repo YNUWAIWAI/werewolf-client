@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Agent$SystemMessage as Agent, Payload$systemMessage} from 'village'
+import type {Agent$systemMessage as Agent, Payload$systemMessage} from 'village'
 import {getMyAgent, trimBaseUri} from '../util'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 import type {SocketMessage} from '../actions'

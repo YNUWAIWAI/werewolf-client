@@ -320,7 +320,7 @@ declare module 'village' {
     isOver: $NonMaybeType<$PropertyType<Chat, 'isOver'>>
   }>
   declare type Payload$scrollMessage = Payload<Scroll>
-  declare type Agent$SystemMessage = {
+  declare type Agent$systemMessage = {
     '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
     isMine: $NonMaybeType<$PropertyType<Agent, 'isMine'>>,
     name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
@@ -336,7 +336,7 @@ declare module 'village' {
       image?: $NonMaybeType<$PropertyType<Avatar, 'image'>>
     }
   }
-  declare type Role$SystemMessage = {
+  declare type Role$systemMessage = {
     '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
     isMine: $NonMaybeType<$PropertyType<Role, 'isMine'>>,
     name: $NonMaybeType<$PropertyType<Role, 'name'>>,
@@ -364,8 +364,8 @@ declare module 'village' {
   declare type Payload$systemMessage = Payload<{
     votingResultsSummary?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsSummary'>>,
     votingResultsDetails?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsDetails'>>,
-    agent?: Agent$SystemMessage[],
-    role?: Role$SystemMessage[],
+    agent?: Agent$systemMessage[],
+    role?: Role$systemMessage[],
     flavorText?: Payload$playerMessage[]
   }>
   declare type Payload$voteMessage = Payload<{

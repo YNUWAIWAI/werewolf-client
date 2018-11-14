@@ -17,7 +17,7 @@ export type State = {
       +image: string,
       +intensionalDisclosureRange: Channel,
       +isMine: boolean,
-      +name: { [Language]: string },
+      +name: { [Language]: string } | string,
       +phaseStartTime: string,
       +phaseTimeLimit: number,
       +serverTimestamp: string,
@@ -41,9 +41,7 @@ export const initialState = {
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (
-        trimBaseUri(action.payload['@id']) === Message.PLAYER_MESSAGE
-      ) {
+      if (trimBaseUri(action.payload['@id']) === Message.PLAYER_MESSAGE) {
         const payload: Payload$playerMessage = action.payload
         const chatId = getChatId()
         const id = payload.intensionalDisclosureRange === PUBLIC ? just(payload.id) : -1
