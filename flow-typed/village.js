@@ -304,7 +304,7 @@ declare module 'village' {
   }>
   declare type Payload$errorMessage = Payload<Error>
   declare type Payload$playerMessage = Payload<{
-    agent: {
+    agent?: {
       '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
       name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
