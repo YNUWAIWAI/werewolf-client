@@ -1,8 +1,8 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Contexts from '../constants/Contexts'
 import type {Payload$systemMessage, Role$SystemMessage as Role} from 'village'
-import {getMyRole, getPlayableRoles} from '../util'
+import {getMyRole, getPlayableRoles, trimBaseUri} from '../util'
+import {SYSTEM_MESSAGE} from '../constants/Message'
 import type {SocketMessage} from '../actions'
 
 export type State = {
@@ -18,7 +18,7 @@ export const initialState = {
 const roles = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (action.payload['@context'].includes(Contexts.ROLE)) {
+      if (trimBaseUri(action.payload['@id']) === SYSTEM_MESSAGE) {
         const payload: Payload$systemMessage = action.payload
 
         if (payload.role) {

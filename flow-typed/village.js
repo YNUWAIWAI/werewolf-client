@@ -26,12 +26,12 @@ declare module 'village' {
     | 'https://werewolf.world/context/0.2/votingResult.jsonld'
     | 'https://werewolf.world/context/0.2/scroll.jsonld'
   declare type Message =
-    | 'https://werewolf.world/resource/0.2/boardMessage'
-    | 'https://werewolf.world/resource/0.2/errorMessage'
-    | 'https://werewolf.world/resource/0.2/playerMessage'
-    | 'https://werewolf.world/resource/0.2/scrollMessage'
-    | 'https://werewolf.world/resource/0.2/systemMessage'
-    | 'https://werewolf.world/resource/0.2/voteMessage'
+    | 'boardMessage'
+    | 'errorMessage'
+    | 'playerMessage'
+    | 'scrollMessage'
+    | 'systemMessage'
+    | 'voteMessage'
   declare type NavigationType =
     | 'SHOW_RESULT'
     | 'RETURN_TO_LOBBY'
@@ -40,10 +40,10 @@ declare module 'village' {
     'https://werewolf.world/context/0.2/agent.jsonld'
       dependency:
         'https://werewolf.world/context/0.2/base.jsonld'
-        'https://werewolf.world/resource/0.2/boardMessage'
-        'https://werewolf.world/resource/0.2/playerMessage'
-        'https://werewolf.world/resource/0.2/systemMessage'
-        'https://werewolf.world/resource/0.2/voteMessage'
+        'boardMessage'
+        'playerMessage'
+        'systemMessage'
+        'voteMessage'
         'https://werewolf.world/context/0.2/votingResult.jsonld'
   */
   declare type Agent = {
@@ -67,7 +67,7 @@ declare module 'village' {
   'https://werewolf.world/context/0.2/avatar.jsonld'
     dependency:
       'https://werewolf.world/context/0.2/base.jsonld'
-      'https://werewolf.world/resource/0.2/systemMessage'
+      'systemMessage'
   */
   declare type Avatar = {
     '@id'?: string,
@@ -79,12 +79,12 @@ declare module 'village' {
   /*
     'https://werewolf.world/context/0.2/base.jsonld'
       dependency:
-        'https://werewolf.world/resource/0.2/boardMessage'
-        'https://werewolf.world/resource/0.2/errorMessage'
-        'https://werewolf.world/resource/0.2/playerMessage'
-        'https://werewolf.world/resource/0.2/scrollMessage'
-        'https://werewolf.world/resource/0.2/systemMessage'
-        'https://werewolf.world/resource/0.2/voteMessage'
+        'boardMessage'
+        'errorMessage'
+        'playerMessage'
+        'scrollMessage'
+        'systemMessage'
+        'voteMessage'
   */
   declare type Base = {
     '@id': Message,
@@ -138,8 +138,8 @@ declare module 'village' {
   /*
   'https://werewolf.world/context/0.2/board.jsonld'
     dependency:
-      'https://werewolf.world/resource/0.2/boardMessage'
-      'https://werewolf.world/resource/0.2/systemMessage'
+      'boardMessage'
+      'systemMessage'
   */
   declare type Board = {
     '@id'?: string,
@@ -150,7 +150,7 @@ declare module 'village' {
   /*
   'https://werewolf.world/context/0.2/chat.jsonld'
     dependency;
-      'https://werewolf.world/resource/0.2/playerMessage'
+      'playerMessage'
   */
   declare type Chat = {
     isMine: boolean,
@@ -169,7 +169,7 @@ declare module 'village' {
   /*
   'https://werewolf.world/context/0.2/error.jsonld'
     dependency:
-      'https://werewolf.world/resource/0.2/errorMessage'
+      'errorMessage'
   */
   declare type Error = {
     content: {
@@ -184,8 +184,8 @@ declare module 'village' {
   'https://werewolf.world/context/0.2/role.jsonld'
     dependency:
       'https://werewolf.world/context/0.2/base.jsonld'
-      'https://werewolf.world/resource/0.2/boardMessage'
-      'https://werewolf.world/resource/0.2/systemMessage'
+      'boardMessage'
+      'systemMessage'
   */
   declare type Role = {
     '@id': string,
@@ -198,7 +198,7 @@ declare module 'village' {
   /*
   'https://werewolf.world/context/0.2/scroll.jsonld'
     dependency:
-      https://werewolf.world/resource/0.2/scrollMessage
+      scrollMessage
   */
   declare type Scroll = {
     nodeId: string,
@@ -212,7 +212,7 @@ declare module 'village' {
     dependency:
       'https://werewolf.world/context/0.2/agent.jsonld'
       'https://werewolf.world/context/0.2/base.jsonld'
-      'https://werewolf.world/resource/0.2/systemMessage'
+      'systemMessage'
   */
   declare type Time = {
     '@id'?: string,
@@ -223,7 +223,7 @@ declare module 'village' {
   /*
   'https://werewolf.world/context/0.2/votingResult.jsonld'
     dependency:
-      'https://werewolf.world/resource/0.2/systemMessage'
+      'systemMessage'
   */
   declare type VotingResult = {
     votingResultsSummary?: {

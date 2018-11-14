@@ -18,7 +18,7 @@ export const initialState = {
 const agents = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (trimBaseUri(action.payload['@id']) === trimBaseUri(SYSTEM_MESSAGE)) {
+      if (trimBaseUri(action.payload['@id']) === SYSTEM_MESSAGE) {
         const payload: Payload$systemMessage = action.payload
 
         if (payload.agent) {
