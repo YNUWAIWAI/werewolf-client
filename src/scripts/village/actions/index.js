@@ -2,7 +2,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {
   BoardState,
-  C2SPayload,
   InputChannel,
   Language,
   NavigationType,

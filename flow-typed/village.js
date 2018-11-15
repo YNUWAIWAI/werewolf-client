@@ -143,7 +143,7 @@ declare module 'village' {
   declare type Board = {
     '@id'?: string,
     polarity?: Polarity,
-    prediction?: State
+    prediction?: BoardState
   }
 
   /*
@@ -343,60 +343,9 @@ declare module 'village' {
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
     }
   }>
-  declare type C2SPayload<T> =
-    Base &
-    T
   declare type ReadyPayload = {
     token: string,
     type: 'ready',
     villageId: number
-  }
-  declare type VoteAgent = {
-    '@id': string,
-    agentIsMine: boolean,
-    name: { [Language]: string },
-    image: string,
-    id: number,
-    status: AgentStatus,
-    statusUpdatePhase: Phase,
-    statusUpdateDate: number,
-    isAChoice: boolean
-  }
-  declare type C2SChat = {
-    chatIsMine: boolean,
-    chatAgent: {
-      '@id': string,
-      chatAgentId: number,
-      chatAgentName: { [Language]: string },
-      chatAgentImage: string
-    },
-    chatText: string,
-    chatCharacterLimit: number,
-    chatLanguage: string,
-    chatIsOver: boolean,
-    chatUserName: string,
-    chatUserAvatar: string
-  }
-  declare type C2SBoard = {
-    boardAgent: {
-      '@id': string,
-      agentId: number,
-      agentImage: string,
-      agentName: { [Language]: string }
-    },
-    boardPrediction: BoardState,
-    boardRole: {
-      '@id': string,
-      roleImage: string,
-      roleName: { [Language]: string }
-    }
-  }
-  declare type C2SVote = {
-    votedAgent: {
-      '@id': string,
-      votedAgentId: number,
-      votedAgentImage: string,
-      votedAgentName: { [Language]: string }
-    }
   }
 }

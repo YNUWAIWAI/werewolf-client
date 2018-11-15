@@ -14,6 +14,7 @@ export type State = {
   +serverTimestamp: string,
   +token: string,
   +village: {
+    +'@id': string,
     +id: number,
     +name: string,
     +totalNumberOfAgents: number
@@ -32,9 +33,10 @@ export const initialState = {
   serverTimestamp: '',
   token: '',
   village: {
-    id: 0,
-    name: '',
-    totalNumberOfAgents: 0
+    '@id': '',
+    'id': 0,
+    'name': '',
+    'totalNumberOfAgents': 0
   }
 }
 const base = (state: State = initialState, action: Action): State => {
@@ -52,9 +54,10 @@ const base = (state: State = initialState, action: Action): State => {
       serverTimestamp: action.payload.serverTimestamp,
       token: action.payload.token,
       village: {
-        id: action.payload.village.id,
-        name: action.payload.village.name,
-        totalNumberOfAgents: action.payload.village.totalNumberOfAgents
+        '@id': action.payload.village['@id'],
+        'id': action.payload.village.id,
+        'name': action.payload.village.name,
+        'totalNumberOfAgents': action.payload.village.totalNumberOfAgents
       }
     }
   }
