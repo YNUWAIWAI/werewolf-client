@@ -18,24 +18,24 @@ export const getMyAgent = <T: {name: {en: string}, isMine: boolean}>(agents: T[]
 
 export const getPlayableAgents = <T: {name: {en: string}}>(agents: T[]): T[] => agents
 
-export const getPlayableRoles = <T: {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(r.name.en))
-
-export const getMyRole = <T: {name: {en: string}, isMine: boolean}>(roles: T[]): T => {
-  const maybe = getPlayableRoles(roles).find(r => r.isMine)
-
-  if (!maybe) {
-    throw Error('Not found my role.')
-  }
-
-  return maybe
-}
-
 export const getRoleId = (str: string): RoleId => {
   const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster', 'master']
   const maybe = roleId.find(v => v === str.toLowerCase())
 
   if (!maybe) {
     throw new Error(`Unexpected RoleId: ${str}`)
+  }
+
+  return maybe
+}
+
+export const getPlayableRoles = <T: {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(getRoleId(r.name.en)))
+
+export const getMyRole = <T: {name: {en: string}, isMine: boolean}>(roles: T[]): T => {
+  const maybe = getPlayableRoles(roles).find(r => r.isMine)
+
+  if (!maybe) {
+    throw Error('Not found my role.')
   }
 
   return maybe

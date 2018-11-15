@@ -1,10 +1,10 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {firstMorning, firstDayConversationVillager} from './fakeServer'
+import {firstMorning, firstMorning3} from './fakeServer'
 import reducer, {initialState} from './prediction'
 
 describe('socket/MESSAGE', () => {
-  test('my role is seer', () => {
+  test('my role is seer (numberOfAgents === 1)', () => {
     expect(
       reducer(
         initialState,
@@ -16,6 +16,15 @@ describe('socket/MESSAGE', () => {
     ).toEqual(
       {
         playerStatus: [
+          {
+            id: 0,
+            image: 'https://werewolf.world/image/0.2/Gert.jpg',
+            name: {
+              en: 'Gert',
+              ja: 'ゲルト'
+            },
+            status: 'alive'
+          },
           {
             id: 1,
             image: 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -94,6 +103,15 @@ describe('socket/MESSAGE', () => {
             name: {
               en: 'Alvin',
               ja: 'アルビン'
+            },
+            status: 'alive'
+          },
+          {
+            id: 10,
+            image: 'https://werewolf.world/image/0.2/Catalina.jpg',
+            name: {
+              en: 'Catalina',
+              ja: 'カタリナ'
             },
             status: 'alive'
           },
@@ -209,6 +227,48 @@ describe('socket/MESSAGE', () => {
           }
         ],
         table: {
+          '0': {
+            hunter: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werehamster: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
           '1': {
             hunter: {
               date: 1,
@@ -546,6 +606,48 @@ describe('socket/MESSAGE', () => {
             }
           },
           '9': {
+            hunter: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werehamster: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '10': {
             hunter: {
               date: 1,
               fixed: false,
@@ -764,13 +866,22 @@ describe('socket/MESSAGE', () => {
       reducer(
         initialState,
         {
-          payload: firstDayConversationVillager,
+          payload: firstMorning3,
           type: ActionTypes.socket.MESSAGE
         }
       )
     ).toEqual(
       {
         playerStatus: [
+          {
+            id: 0,
+            image: 'https://werewolf.world/image/0.2/Gert.jpg',
+            name: {
+              en: 'Gert',
+              ja: 'ゲルト'
+            },
+            status: 'alive'
+          },
           {
             id: 1,
             image: 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -849,6 +960,15 @@ describe('socket/MESSAGE', () => {
             name: {
               en: 'Alvin',
               ja: 'アルビン'
+            },
+            status: 'alive'
+          },
+          {
+            id: 10,
+            image: 'https://werewolf.world/image/0.2/Catalina.jpg',
+            name: {
+              en: 'Catalina',
+              ja: 'カタリナ'
             },
             status: 'alive'
           },
@@ -964,6 +1084,48 @@ describe('socket/MESSAGE', () => {
           }
         ],
         table: {
+          '0': {
+            hunter: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werehamster: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
           '1': {
             hunter: {
               date: 1,
@@ -1301,6 +1463,48 @@ describe('socket/MESSAGE', () => {
             }
           },
           '9': {
+            hunter: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werehamster: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '10': {
             hunter: {
               date: 1,
               fixed: false,
