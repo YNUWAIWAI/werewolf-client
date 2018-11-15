@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {firstDayConversation, firstDayConversationVillager} from './fakeServer'
+import {firstMorning, firstDayConversationVillager} from './fakeServer'
 import reducer, {initialState} from './prediction'
 
 describe('socket/MESSAGE', () => {
@@ -9,7 +9,7 @@ describe('socket/MESSAGE', () => {
       reducer(
         initialState,
         {
-          payload: firstDayConversation,
+          payload: firstMorning,
           type: ActionTypes.socket.MESSAGE
         }
       )
@@ -136,76 +136,76 @@ describe('socket/MESSAGE', () => {
         ],
         roleStatus: [
           {
-            id: 'villager',
-            image: 'https://werewolf.world/image/0.2/villager.jpg',
-            numberOfAgents: 6,
             caption: {
               en: 'Villager',
               ja: '村人'
-            }
+            },
+            id: 'villager',
+            image: 'https://werewolf.world/image/0.2/villager.jpg',
+            numberOfAgents: 6
           },
           {
-            id: 'seer',
-            image: 'https://werewolf.world/image/0.2/seer.jpg',
-            numberOfAgents: 1,
             caption: {
               en: 'Seer',
               ja: '占い師'
-            }
+            },
+            id: 'seer',
+            image: 'https://werewolf.world/image/0.2/seer.jpg',
+            numberOfAgents: 1
           },
           {
-            id: 'medium',
-            image: 'https://werewolf.world/image/0.2/medium.jpg',
-            numberOfAgents: 1,
             caption: {
               en: 'Medium',
               ja: '霊媒師'
-            }
+            },
+            id: 'medium',
+            image: 'https://werewolf.world/image/0.2/medium.jpg',
+            numberOfAgents: 1
           },
           {
-            id: 'hunter',
-            image: 'https://werewolf.world/image/0.2/hunter.jpg',
-            numberOfAgents: 1,
             caption: {
               en: 'Hunter',
               ja: '狩人'
-            }
+            },
+            id: 'hunter',
+            image: 'https://werewolf.world/image/0.2/hunter.jpg',
+            numberOfAgents: 1
           },
           {
-            id: 'mason',
-            image: 'https://werewolf.world/image/0.2/mason.jpg',
-            numberOfAgents: 2,
             caption: {
               en: 'Mason',
               ja: '共有者'
-            }
+            },
+            id: 'mason',
+            image: 'https://werewolf.world/image/0.2/mason.jpg',
+            numberOfAgents: 2
           },
           {
-            id: 'madman',
-            image: 'https://werewolf.world/image/0.2/madman.jpg',
-            numberOfAgents: 1,
             caption: {
               en: 'Madman',
               ja: '狂人'
-            }
+            },
+            id: 'madman',
+            image: 'https://werewolf.world/image/0.2/madman.jpg',
+            numberOfAgents: 1
           },
           {
-            id: 'werewolf',
-            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
-            numberOfAgents: 2,
             caption: {
               en: 'Werewolf',
               ja: '人狼'
-            }
+            },
+            id: 'werewolf',
+            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
+            numberOfAgents: 2
           },
           {
-            id: 'werehamster',
-            image: 'https://werewolf.world/image/0.2/werehamster.jpg',
-            numberOfAgents: 1,
             caption: {
               en: 'Werehamster',
               ja: 'ハムスター人間'
-            }
+            },
+            id: 'werehamster',
+            image: 'https://werewolf.world/image/0.2/werehamster.jpg',
+            numberOfAgents: 1
           }
         ],
         table: {
