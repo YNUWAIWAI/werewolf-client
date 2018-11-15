@@ -1,5 +1,5 @@
 // @flow
-import type {RoleId, Message, Team} from 'village'
+import type {Message, RoleId, Team} from 'village'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
