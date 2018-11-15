@@ -6,7 +6,6 @@ declare module 'village' {
   declare type Phase = 'morning' | 'day' | 'night' | 'post mortem' | 'result'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster' | 'master'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
-  declare type State = '?' | 'Δ' | 'O' | 'X'
   declare type Polarity = 'positive' | 'negative'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type Result = 'win' | 'lose'
