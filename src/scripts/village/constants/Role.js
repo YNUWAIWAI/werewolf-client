@@ -56,15 +56,3 @@ export const WEREWOLF_TEAM = [
 export const WEREHAMSTER_TEAM = [
   WEREHAMSTER
 ]
-
-export const getRoleId = (str: string): RoleId => {
-  const id = trimBaseUri(str)
-  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster']
-  const maybe = roleId.find(v => v === id)
-
-  if (!maybe) {
-    throw new Error('Unexpected role id.')
-  }
-
-  return maybe
-}
