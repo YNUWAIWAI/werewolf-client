@@ -22,9 +22,10 @@ test('socket/MESSAGE', () => {
     serverTimestamp: '2006-10-07T12:06:56.568+09:00',
     token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     village: {
-      id: 3,
-      name: '横国の森の奥にある時代に取り残された小さな村',
-      totalNumberOfAgents: 15
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
     }
   })
 })
