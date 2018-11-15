@@ -23,7 +23,10 @@ export const GRAVE = 'grave'
 export const ONYMOUS_AUDIENCE = 'onymousAudience'
 export const ANONYMOUS_AUDIENCE = 'anonymousAudience'
 
-export const AUDIENCE = {}
+export const AUDIENCE = [
+  ONYMOUS_AUDIENCE,
+  ANONYMOUS_AUDIENCE
+]
 
 export const getChatChannel = (channel: Channel): ChatChannel => {
   const chatChannel: ChatChannel[] = ['grave', 'limited', 'master', 'private', 'public']

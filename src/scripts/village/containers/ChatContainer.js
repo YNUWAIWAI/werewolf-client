@@ -11,9 +11,16 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       const item = state.chat.byId[id]
 
       if (item.type === 'item') {
-        byId[id] = {
-          ... item,
-          name: item.name[state.language]
+        if (typeof item.name === 'string') {
+          byId[id] = {
+            ... item,
+            name: item.name
+          }
+        } else { // item.name: { [Language]: string }
+          byId[id] = {
+            ... item,
+            name: item.name[state.language]
+          }
         }
       } else { // item.type === 'delimeter'
         byId[id] = item
