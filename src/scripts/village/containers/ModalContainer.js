@@ -1,13 +1,13 @@
 // @flow
+import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
 import Modal, {type DispatchProps, type StateProps} from '../components/organisms/Modal'
 import type {Phase, RoleId} from 'village'
 import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
+import {getRoleId, just} from '../util'
 import {DAY} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getRoleId} from '../constants/Role'
-import {just} from '../util'
 
 type Action =
   | SelectNo
@@ -18,13 +18,13 @@ const getDescriptionId = (phase: Phase, role: RoleId) => {
     return 'Modal.Description.dayVote'
   }
 
-  switch (role) {
-    case 'werewolf':
-      return 'Modal.Description.werewolfVote'
-    case 'seer':
-      return 'Modal.Description.seerVote'
-    case 'hunter':
+  switch (role) { // phase === NIGHT
+    case HUNTER:
       return 'Modal.Description.hunterVote'
+    case SEER:
+      return 'Modal.Description.seerVote'
+    case WEREWOLF:
+      return 'Modal.Description.werewolfVote'
     default:
       return 'Modal.Description.wait'
   }
@@ -37,7 +37,7 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     const myRole = just(state.roles.mine)
 
     return {
-      descriptionId: getDescriptionId(state.base.phase, getRoleId(myRole['@id'])),
+      descriptionId: getDescriptionId(state.base.phase, getRoleId(myRole.name.en)),
       id: selectedAgent.id,
       image: selectedAgent.image,
       name: selectedAgent.name[state.language],
