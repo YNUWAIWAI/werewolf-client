@@ -25,7 +25,7 @@ test('<ChatContainer />', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     chat: {
-      allIds: ['delimeter1', 'chat0', 'delimeter0'],
+      allIds: ['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'],
       byId: {
         chat0: {
           id: 12,
@@ -36,6 +36,30 @@ test('<ChatContainer />', () => {
             en: 'Walter',
             ja: 'ヴァルター'
           },
+          phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+          phaseTimeLimit: 600,
+          serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+          text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+          type: 'item'
+        },
+        chat1: {
+          id: -1,
+          image: 'https://werewolf.world/image/0.2/Regina.jpg',
+          intensionalDisclosureRange: 'onymousAudience',
+          isMine: true,
+          name: 'Katoh',
+          phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+          phaseTimeLimit: 600,
+          serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+          text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+          type: 'item'
+        },
+        chat2: {
+          id: -1,
+          image: 'Anonymous',
+          intensionalDisclosureRange: 'anonymousAudience',
+          isMine: true,
+          name: 'Anonymous',
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -62,7 +86,7 @@ test('<ChatContainer />', () => {
   }
   const wrapper = shallow(<ChatContainer store={store} />)
 
-  expect(wrapper.props().allIds).toEqual(['delimeter1', 'chat0', 'delimeter0'])
+  expect(wrapper.props().allIds).toEqual(['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'])
   expect(wrapper.props().byId).toEqual({
     chat0: {
       id: 12,
@@ -70,6 +94,30 @@ test('<ChatContainer />', () => {
       intensionalDisclosureRange: 'public',
       isMine: true,
       name: 'ヴァルター',
+      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+      phaseTimeLimit: 600,
+      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+      text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+      type: 'item'
+    },
+    chat1: {
+      id: -1,
+      image: 'https://werewolf.world/image/0.2/Regina.jpg',
+      intensionalDisclosureRange: 'onymousAudience',
+      isMine: true,
+      name: 'Katoh',
+      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+      phaseTimeLimit: 600,
+      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+      text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+      type: 'item'
+    },
+    chat2: {
+      id: -1,
+      image: 'Anonymous',
+      intensionalDisclosureRange: 'anonymousAudience',
+      isMine: true,
+      name: 'Anonymous',
       phaseStartTime: '2006-10-07T12:06:56.568+09:00',
       phaseTimeLimit: 600,
       serverTimestamp: '2006-10-07T12:06:56.568+09:00',
