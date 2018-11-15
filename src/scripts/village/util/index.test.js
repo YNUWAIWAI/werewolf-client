@@ -156,7 +156,7 @@ describe('getMyRole', () => {
             },
             'date': 1,
             'phase': 'morning',
-            'polarity': 'negative',
+            'polarity': 'negative'
           }
         ],
         'image': 'https://werewolf.world/image/0.2/villager.jpg',
@@ -265,7 +265,7 @@ describe('getMyRole', () => {
             },
             'date': 1,
             'phase': 'morning',
-            'polarity': 'negative',
+            'polarity': 'negative'
           }
         ],
         'image': 'https://werewolf.world/image/0.2/villager.jpg',
@@ -449,7 +449,7 @@ test('getPlayableRoles', () => {
           },
           'date': 1,
           'phase': 'morning',
-          'polarity': 'negative',
+          'polarity': 'negative'
         }
       ],
       'image': 'https://werewolf.world/image/0.2/villager.jpg',
@@ -512,7 +512,7 @@ test('getPlayableRoles', () => {
           },
           'date': 1,
           'phase': 'morning',
-          'polarity': 'negative',
+          'polarity': 'negative'
         }
       ],
       'image': 'https://werewolf.world/image/0.2/villager.jpg',
