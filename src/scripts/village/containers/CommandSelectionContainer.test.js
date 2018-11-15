@@ -1,6 +1,5 @@
 // @flow
 import {DAY, NIGHT} from '../constants/Phase'
-import {HUNTER, SEER, VILLAGER, WEREWOLF} from '../constants/Role'
 import CommandSelectionContainer from './CommandSelectionContainer'
 import React from 'react'
 import {shallow} from 'enzyme'
@@ -21,7 +20,15 @@ describe('<CommandSelectionContainer />', () => {
         language: 'ja',
         roles: {
           mine: {
-            '@id': VILLAGER
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            'image': 'https://werewolf.world/image/0.2/seer.jpg',
+            'isMine': true,
+            'name': {
+              'en': 'Seer',
+              'ja': '占い師'
+            },
+            'numberOfAgents': 1
           }
         }
       })
@@ -54,7 +61,15 @@ describe('<CommandSelectionContainer />', () => {
         language: 'ja',
         roles: {
           mine: {
-            '@id': VILLAGER
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            'image': 'https://werewolf.world/image/0.2/seer.jpg',
+            'isMine': true,
+            'name': {
+              'en': 'Seer',
+              'ja': '占い師'
+            },
+            'numberOfAgents': 1
           }
         }
       })
@@ -90,7 +105,15 @@ describe('<CommandSelectionContainer />', () => {
           language: 'ja',
           roles: {
             mine: {
-              '@id': HUNTER
+              '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+              'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+              'isMine': false,
+              'name': {
+                'en': 'Hunter',
+                'ja': '狩人'
+              },
+              'numberOfAgents': 1
             }
           }
         })
@@ -123,7 +146,15 @@ describe('<CommandSelectionContainer />', () => {
           language: 'ja',
           roles: {
             mine: {
-              '@id': HUNTER
+              '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+              'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+              'isMine': false,
+              'name': {
+                'en': 'Hunter',
+                'ja': '狩人'
+              },
+              'numberOfAgents': 1
             }
           }
         })
@@ -158,7 +189,15 @@ describe('<CommandSelectionContainer />', () => {
           language: 'ja',
           roles: {
             mine: {
-              '@id': SEER
+              '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+              'image': 'https://werewolf.world/image/0.2/seer.jpg',
+              'isMine': true,
+              'name': {
+                'en': 'Seer',
+                'ja': '占い師'
+              },
+              'numberOfAgents': 1
             }
           }
         })
@@ -191,7 +230,15 @@ describe('<CommandSelectionContainer />', () => {
           language: 'ja',
           roles: {
             mine: {
-              '@id': SEER
+              '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+              'image': 'https://werewolf.world/image/0.2/seer.jpg',
+              'isMine': true,
+              'name': {
+                'en': 'Seer',
+                'ja': '占い師'
+              },
+              'numberOfAgents': 1
             }
           }
         })
@@ -226,7 +273,15 @@ describe('<CommandSelectionContainer />', () => {
           language: 'ja',
           roles: {
             mine: {
-              '@id': WEREWOLF
+              '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+              'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+              'isMine': false,
+              'name': {
+                'en': 'Werewolf',
+                'ja': '人狼'
+              },
+              'numberOfAgents': 2
             }
           }
         })
@@ -259,7 +314,15 @@ describe('<CommandSelectionContainer />', () => {
           language: 'ja',
           roles: {
             mine: {
-              '@id': WEREWOLF
+              '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+              'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+              'isMine': false,
+              'name': {
+                'en': 'Werewolf',
+                'ja': '人狼'
+              },
+              'numberOfAgents': 2
             }
           }
         })
@@ -293,7 +356,15 @@ describe('<CommandSelectionContainer />', () => {
         language: 'ja',
         roles: {
           mine: {
-            '@id': VILLAGER
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+            'image': 'https://werewolf.world/image/0.2/villager.jpg',
+            'isMine': false,
+            'name': {
+              'en': 'Villager',
+              'ja': '村人'
+            },
+            'numberOfAgents': 6
           }
         }
       })
