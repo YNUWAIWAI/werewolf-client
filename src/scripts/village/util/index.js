@@ -1,5 +1,5 @@
 // @flow
-import type {Team, _RoleId} from 'village'
+import type {RoleId, Team} from 'village'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
@@ -30,9 +30,9 @@ export const getMyRole = <T: {name: {en: string}, isMine: boolean}>(roles: T[]):
   return maybe
 }
 
-export const getRoleId = (str: string): _RoleId => {
-  const roleId: _RoleId[] = ['Villager', 'Seer', 'Medium', 'Hunter', 'Mason', 'Madman', 'Werewolf', 'Werehamster']
-  const maybe = roleId.find(v => v === str)
+export const getRoleId = (str: string): RoleId => {
+  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster', 'master']
+  const maybe = roleId.find(v => v === str.toLowerCase())
 
   if (!maybe) {
     throw new Error(`Unexpected RoleId: ${str}`)
@@ -41,7 +41,7 @@ export const getRoleId = (str: string): _RoleId => {
   return maybe
 }
 
-export const getTeam = (role: _RoleId): Team => {
+export const getTeam = (role: RoleId): Team => {
   if (VILLAGER_TEAM.includes(role)) {
     return 'villager'
   } else if (WEREHAMSTER_TEAM.includes(role)) {

@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Message from '../constants/Message'
 import type {InputChannel, Payload$playerMessage, Payload$systemMessage} from 'village'
-import {getMyRole, trimBaseUri} from '../util'
+import {getMyRole, getRoleId, trimBaseUri} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
 import {getInputChannel} from '../constants/Channels'
@@ -77,7 +77,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
 
           if (
             role.numberOfAgents > 1 &&
-            AVAILABLE_FOR_LIMITED_CHAT.includes(role.name.en)
+            AVAILABLE_FOR_LIMITED_CHAT.includes(getRoleId(role.name.en))
           ) {
             return {
               ... state,

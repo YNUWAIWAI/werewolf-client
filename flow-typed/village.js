@@ -4,8 +4,7 @@ declare module 'village' {
   declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
   declare type Phase = 'morning' | 'day' | 'night' | 'post mortem' | 'result'
-  declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster'
-  declare type _RoleId = 'Villager' | 'Seer' | 'Medium' | 'Hunter' | 'Mason' | 'Madman' | 'Werewolf' | 'Werehamster'
+  declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster' | 'master'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type State = '?' | 'Δ' | 'O' | 'X'
   declare type Polarity = 'positive' | 'negative'
@@ -359,7 +358,7 @@ declare module 'village' {
       polarity: $NonMaybeType<$PropertyType<Board, 'polarity'>>,
       phase: $PropertyType<Time, 'phase'>,
       date: $PropertyType<Time, 'date'>
-    }
+    }[]
   }
   declare type Payload$systemMessage = Payload<{
     votingResultsSummary?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsSummary'>>,

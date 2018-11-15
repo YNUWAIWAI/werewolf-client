@@ -557,28 +557,28 @@ test('getPlayableRoles', () => {
 })
 describe('getRoleId', () => {
   test('Villager', () => {
-    expect(getRoleId('Villager')).toBe('Villager')
+    expect(getRoleId('Villager')).toBe('villager')
   })
   test('Seer', () => {
-    expect(getRoleId('Seer')).toBe('Seer')
+    expect(getRoleId('Seer')).toBe('seer')
   })
   test('Medium', () => {
-    expect(getRoleId('Medium')).toBe('Medium')
+    expect(getRoleId('Medium')).toBe('medium')
   })
   test('Hunter', () => {
-    expect(getRoleId('Hunter')).toBe('Hunter')
+    expect(getRoleId('Hunter')).toBe('hunter')
   })
   test('Mason', () => {
-    expect(getRoleId('Mason')).toBe('Mason')
+    expect(getRoleId('Mason')).toBe('mason')
   })
   test('Madman', () => {
-    expect(getRoleId('Madman')).toBe('Madman')
+    expect(getRoleId('Madman')).toBe('madman')
   })
   test('Werewolf', () => {
-    expect(getRoleId('Werewolf')).toBe('Werewolf')
+    expect(getRoleId('Werewolf')).toBe('werewolf')
   })
   test('Werehamster', () => {
-    expect(getRoleId('Werehamster')).toBe('Werehamster')
+    expect(getRoleId('Werehamster')).toBe('werehamster')
   })
   test('Unexpected Value', () => {
     expect(() => getRoleId('Unexpected')).toThrow()
@@ -586,28 +586,28 @@ describe('getRoleId', () => {
 })
 describe('getTeam', () => {
   test('Villager', () => {
-    expect(getTeam('Villager')).toBe('villager')
+    expect(getTeam('villager')).toBe('villager')
   })
   test('Seer', () => {
-    expect(getTeam('Seer')).toBe('villager')
+    expect(getTeam('seer')).toBe('villager')
   })
   test('Medium', () => {
-    expect(getTeam('Medium')).toBe('villager')
+    expect(getTeam('medium')).toBe('villager')
   })
   test('Hunter', () => {
-    expect(getTeam('Hunter')).toBe('villager')
+    expect(getTeam('hunter')).toBe('villager')
   })
   test('Mason', () => {
-    expect(getTeam('Mason')).toBe('villager')
+    expect(getTeam('mason')).toBe('villager')
   })
   test('Madman', () => {
-    expect(getTeam('Madman')).toBe('werewolf')
+    expect(getTeam('madman')).toBe('werewolf')
   })
   test('Werewolf', () => {
-    expect(getTeam('Werewolf')).toBe('werewolf')
+    expect(getTeam('werewolf')).toBe('werewolf')
   })
   test('Werehamster', () => {
-    expect(getTeam('Werehamster')).toBe('werehamster')
+    expect(getTeam('werehamster')).toBe('werehamster')
   })
 })
 test('idGenerater', () => {
