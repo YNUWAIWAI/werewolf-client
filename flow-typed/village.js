@@ -86,7 +86,7 @@ declare module 'village' {
         'voteMessage'
   */
   declare type Base = {
-    '@id': Message,
+    '@id': string,
     '@context': Context[],
     village: {
       '@id': string,

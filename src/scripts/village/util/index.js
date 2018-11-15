@@ -1,10 +1,20 @@
 // @flow
-import type {RoleId, Team} from 'village'
+import type {RoleId, Message, Team} from 'village'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
   WEREHAMSTER_TEAM
 } from '../constants/Role'
+
+export const trimBaseUri = (id: string): string => {
+  const match = (/\/(\w+)$/).exec(id)
+
+  if (match && match[1]) {
+    return match[1]
+  }
+
+  return ''
+}
 
 export const getMyAgent = <T: {name: {en: string}, isMine: boolean}>(agents: T[]): T => {
   const maybe = agents.find(a => a.isMine)
@@ -30,6 +40,17 @@ export const getRoleId = (str: string): RoleId => {
 }
 
 export const getPlayableRoles = <T: {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(getRoleId(r.name.en)))
+
+export const getMessage = (str: string): Message => {
+  const roleId: Message[] = ['boardMessage', 'errorMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
+  const maybe = roleId.find(v => v === trimBaseUri(str))
+
+  if (!maybe) {
+    throw new Error(`Unexpected RoleId: ${str}`)
+  }
+
+  return maybe
+}
 
 export const getMyRole = <T: {name: {en: string}, isMine: boolean}>(roles: T[]): T => {
   const maybe = getPlayableRoles(roles).find(r => r.isMine)
@@ -83,15 +104,5 @@ export const just = <T>(value: ?T): T => {
 }
 
 export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(\w)/g, (_, p1) => p1.toUpperCase())
-
-export const trimBaseUri = (id: string): string => {
-  const match = (/\/(\w+)$/).exec(id)
-
-  if (match && match[1]) {
-    return match[1]
-  }
-
-  return ''
-}
 
 export const xor = (a: boolean, b: boolean): boolean => a !== b

@@ -1,5 +1,6 @@
 // @flow
 import {
+  getMessage,
   getMyAgent,
   getMyRole,
   getPlayableAgents,
@@ -13,6 +14,29 @@ import {
   xor
 } from './index'
 
+describe('getMessage', () => {
+  test('boardMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/boardMessage')).toBe('boardMessage')
+  })
+  test('errorMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/errorMessage')).toBe('errorMessage')
+  })
+  test('playerMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
+  })
+  test('scrollMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')
+  })
+  test('systemMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/systemMessage')).toBe('systemMessage')
+  })
+  test('voteMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/voteMessage')).toBe('voteMessage')
+  })
+  test('throw Exception', () => {
+    expect(() => getMessage('throw Exception')).toThrow()
+  })
+})
 describe('getMyAgent', () => {
   test('nominal', () => {
     const agents = [

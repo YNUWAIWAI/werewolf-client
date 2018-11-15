@@ -1,8 +1,8 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Message from '../constants/Message'
+import {PLAYER_MESSAGE, SYSTEM_MESSAGE} from '../constants/Message'
 import type {InputChannel, Payload$playerMessage, Payload$systemMessage} from 'village'
-import {getMyRole, getRoleId, trimBaseUri} from '../util'
+import {getMessage, getMyRole, getRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
 import {getInputChannel} from '../constants/Channels'
@@ -44,8 +44,8 @@ export const initialState = {
 const commandInputBox = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      switch (trimBaseUri(action.payload['@id'])) {
-        case Message.PLAYER_MESSAGE: {
+      switch (getMessage(action.payload['@id'])) {
+        case PLAYER_MESSAGE: {
           const payload: Payload$playerMessage = action.payload
 
           if (payload.isMine) {
@@ -67,7 +67,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
 
           return state
         }
-        case Message.SYSTEM_MESSAGE: {
+        case SYSTEM_MESSAGE: {
           const payload: Payload$systemMessage = action.payload
 
           if (!payload.role) {

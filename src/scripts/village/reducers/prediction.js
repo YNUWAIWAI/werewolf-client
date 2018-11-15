@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, Language, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
-import {getPlayableRoles, getRoleId, just, trimBaseUri} from '../util'
+import {getMessage, getPlayableRoles, getRoleId, just} from '../util'
 import {MORNING} from '../constants/Phase'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 
@@ -110,7 +110,7 @@ export const initialState = {
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (trimBaseUri(action.payload['@id']) === SYSTEM_MESSAGE) {
+      if (getMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
         const payload: Payload$systemMessage = action.payload
         const agents = just(payload.agent)
         const roles = getPlayableRoles(just(payload.role))

@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {AgentStatus, Language, Payload$systemMessage, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
-import {getPlayableAgents, getRoleId, getTeam, idGenerater, just, trimBaseUri} from '../util'
+import {getMessage, getPlayableAgents, getRoleId, getTeam, idGenerater, just} from '../util'
 import {RESULT} from '../constants/Phase'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 
@@ -73,7 +73,7 @@ const result = (state: State = initialState, action: Action): State => {
       }
     case ActionTypes.socket.MESSAGE:
       if (
-        trimBaseUri(action.payload['@id']) === SYSTEM_MESSAGE &&
+        getMessage(action.payload['@id']) === SYSTEM_MESSAGE &&
         action.payload.phase === RESULT
       ) {
         const payload: Payload$systemMessage = action.payload
