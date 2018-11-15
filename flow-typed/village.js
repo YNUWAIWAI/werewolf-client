@@ -142,7 +142,7 @@ declare module 'village' {
   declare type Board = {
     '@id'?: string,
     polarity?: Polarity,
-    prediction?: BoardState
+    prediction?: string // BoardState
   }
 
   /*
