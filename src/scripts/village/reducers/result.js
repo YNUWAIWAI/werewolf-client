@@ -1,10 +1,10 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Contexts from '../constants/Contexts'
-import type {AgentStatus, Language, Payload$Result, Result as TResult, Team} from 'village'
+import type {AgentStatus, Language, Payload$systemMessage, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
-import {getPlayableAgents, getRoleId, getTeam, idGenerater} from '../util'
+import {getPlayableAgents, getRoleId, getTeam, idGenerater, just, trimBaseUri} from '../util'
 import {RESULT} from '../constants/Phase'
+import {SYSTEM_MESSAGE} from '../constants/Message'
 
 const getAgentId = idGenerater('agent')
 
@@ -53,6 +53,7 @@ export const initialState = {
   me: null,
   summary: {
     kind: 'audience',
+    loserTeam: new Set(),
     winnerTeam: 'villager'
   },
   visible: false,
@@ -72,18 +73,17 @@ const result = (state: State = initialState, action: Action): State => {
       }
     case ActionTypes.socket.MESSAGE:
       if (
-        action.payload['@context'].includes(Contexts.BASE) &&
-        action.payload['@context'].includes(Contexts.VOTING_RESULT) &&
+        trimBaseUri(action.payload['@id']) === SYSTEM_MESSAGE &&
         action.payload.phase === RESULT
       ) {
-        const payload: Payload$Result = action.payload
+        const payload: Payload$systemMessage = action.payload
         const agents: Agents = {}
         const allIds = []
         const losers = []
         let me
         const winners = []
 
-        getPlayableAgents(payload.agent)
+        getPlayableAgents(just(payload.agent))
           .forEach(a => {
             const agentId = getAgentId()
 
@@ -91,11 +91,11 @@ const result = (state: State = initialState, action: Action): State => {
               agentId: a.id,
               agentImage: a.image,
               agentName: a.name,
-              avatarImage: a.avatar.image,
-              avatarName: a.avatar.name,
-              result: a.result,
-              roleImage: a.role.image,
-              roleName: a.role.name,
+              avatarImage: just(just(a.avatar).image),
+              avatarName: just(just(a.avatar).name),
+              result: just(a.result),
+              roleImage: just(a.role).image,
+              roleName: just(a.role).name,
               status: a.status
             }
             if (a.result === 'win') {

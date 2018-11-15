@@ -255,38 +255,6 @@ declare module 'village' {
   declare type Payload<T> =
     Base &
     T
-  declare type Agent$Result = {
-    '@id': string,
-    isMine: boolean,
-    name: { [Language]: string },
-    image: string,
-    id: number,
-    status: AgentStatus,
-    role: {
-      '@id': string,
-      name: { [Language]: string },
-      image: string
-    },
-    result: Result,
-    avatar: Avatar
-  }
-  declare type Role$Result = {
-    '@id': string,
-    name: { [Language]: string },
-    image: string,
-    isMine: boolean,
-    numberOfAgents: number,
-    agent: {
-      '@id': string,
-      name: { [Language]: string },
-      image: string,
-      id: number
-    }[]
-  }
-  declare type Payload$Result = Payload<{
-    agent: Agent$Result[],
-    role: Role$Result[]
-  }>
   declare type Payload$boardMessage = Payload<{
     agent: {
       '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
