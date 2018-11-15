@@ -72,7 +72,7 @@ export const getTeam = (role: RoleId): Team => {
   return 'werewolf' // WEREWOLF_TEAM.includes(role)
 }
 
-export const getVotedAgent = <T: {'@id': string, id: number}>(agents: T[], agentId: number): T => {
+export const getVotedAgent = <T: {id: number, name: {en: string}}>(agents: T[], agentId: number): T => {
   const maybe = getPlayableAgents(agents).find(a => a.id === agentId)
 
   if (!maybe) {
