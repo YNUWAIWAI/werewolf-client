@@ -19,6 +19,7 @@ declare module 'village' {
   declare type Context$Role = 'https://werewolf.world/context/0.2/role.jsonld'
   declare type Context$Board = 'https://werewolf.world/context/0.2/board.jsonld'
   declare type Context$Chat = 'https://werewolf.world/context/0.2/chat.jsonld'
+  declare type Context$Village = 'https://werewolf.world/context/0.2/village.jsonld'
   declare type Context$Vote = 'https://werewolf.world/context/0.2/vote.jsonld'
   declare type Context$VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
   declare type Context$Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld'
@@ -54,6 +55,7 @@ declare module 'village' {
         'https://werewolf.world/context/0.2/votingResult.jsonld'
   */
   declare type Agent = {
+    '@context': Context$Agent,
     '@id': string,
     isMine?: boolean,
     name: { [Language]: string },
@@ -77,6 +79,7 @@ declare module 'village' {
       'systemMessage'
   */
   declare type Avatar = {
+    '@context'?: Context$Avatar,
     '@id'?: string,
     token?: string,
     name?: string,
@@ -97,6 +100,7 @@ declare module 'village' {
     '@id': string,
     '@context': Context[],
     village: {
+      '@context': Context$Village,
       '@id': string,
       id: number,
       name: string,
@@ -124,17 +128,20 @@ declare module 'village' {
       status: $NonMaybeType<$PropertyType<Agent, 'status'>>
     }[],
     avatar?: {
+      '@context': $NonMaybeType<$PropertyType<Avatar, '@context'>>,
       '@id': $NonMaybeType<$PropertyType<Avatar, '@id'>>,
       token: $NonMaybeType<$PropertyType<Avatar, 'token'>>,
       name: $NonMaybeType<$PropertyType<Avatar, 'name'>>,
       image: $NonMaybeType<$PropertyType<Avatar, 'image'>>
     },
     myAgent?: {
+      '@context': $NonMaybeType<$PropertyType<Agent, '@context'>>,
       '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
       image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
       name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
       role: {
+        '@context': $NonMaybeType<$PropertyType<Role, '@context'>>,
         '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
         image: $NonMaybeType<$PropertyType<Role, 'image'>>,
         name: $NonMaybeType<$PropertyType<Role, 'name'>>
@@ -266,12 +273,14 @@ declare module 'village' {
     T
   declare type Payload$boardMessage = Payload<{
     agent: {
+      '@context': $NonMaybeType<$PropertyType<Agent, '@context'>>,
       '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
       name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
       image: $NonMaybeType<$PropertyType<Agent, 'image'>>
     },
     role: {
+      '@context': $NonMaybeType<$PropertyType<Role, '@context'>>,
       '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
       name: $NonMaybeType<$PropertyType<Role, 'name'>>,
       image: $NonMaybeType<$PropertyType<Role, 'image'>>
@@ -281,6 +290,7 @@ declare module 'village' {
   declare type Payload$errorMessage = Payload<Error>
   declare type Payload$playerMessage = Payload<{
     agent?: {
+      '@context': $NonMaybeType<$PropertyType<Agent, '@context'>>,
       '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
       name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
@@ -352,6 +362,7 @@ declare module 'village' {
   }>
   declare type Payload$voteMessage = Payload<{
     agent?: {
+      '@context': $NonMaybeType<$PropertyType<Agent, '@context'>>,
       '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
       name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
       image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
