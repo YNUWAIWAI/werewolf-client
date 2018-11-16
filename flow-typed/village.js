@@ -297,9 +297,9 @@ declare module 'village' {
     isAChoice?: $NonMaybeType<$PropertyType<Agent, 'isAChoice'>>,
     result?: $NonMaybeType<$PropertyType<Agent, 'result'>>,
     avatar?: {
-      token?: $NonMaybeType<$PropertyType<Avatar, 'token'>>,
-      name?: $NonMaybeType<$PropertyType<Avatar, 'name'>>,
-      image?: $NonMaybeType<$PropertyType<Avatar, 'image'>>
+      token: $NonMaybeType<$PropertyType<Avatar, 'token'>>,
+      name: $NonMaybeType<$PropertyType<Avatar, 'name'>>,
+      image: $NonMaybeType<$PropertyType<Avatar, 'image'>>
     }
   }
   declare type Role$systemMessage = {
