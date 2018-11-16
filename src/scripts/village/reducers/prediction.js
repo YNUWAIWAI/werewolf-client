@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, Language, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
-import {strToMessage, getPlayableRoles, strToRoleId, just} from '../util'
+import {getPlayableRoles, just, strToMessage, strToRoleId} from '../util'
 import {MORNING} from '../constants/Phase'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 

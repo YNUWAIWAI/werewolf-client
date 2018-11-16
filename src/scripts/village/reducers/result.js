@@ -2,7 +2,14 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {AgentStatus, Language, Payload$systemMessage, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
-import {strToMessage, getPlayableAgents, strToRoleId, getTeam, idGenerater, just} from '../util'
+import {
+  getPlayableAgents,
+  getTeam,
+  idGenerater,
+  just,
+  strToMessage,
+  strToRoleId
+} from '../util'
 import {RESULT} from '../constants/Phase'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 

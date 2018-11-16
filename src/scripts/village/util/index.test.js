@@ -1,16 +1,16 @@
 // @flow
 import {
   getAgent,
-  strToMessage,
   getMyAgent,
   getMyRole,
   getPlayableAgents,
   getPlayableRoles,
-  strToRoleId,
   getTeam,
   idGenerater,
   just,
   spaceSeparatedToCamelCase,
+  strToMessage,
+  strToRoleId,
   trimBaseUri,
   xor
 } from './index'

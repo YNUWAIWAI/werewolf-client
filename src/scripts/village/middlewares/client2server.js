@@ -3,7 +3,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
-import {strToRoleId, getAgent, just} from '../util'
+import {getAgent, just, strToRoleId} from '../util'
 import type {Action} from '.'
 import type {ReducerState} from '../reducers'
 import {getChannelFromInputChennel} from '../constants/Channels'
