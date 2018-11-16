@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {firstDayConversation, result} from './fakeServer'
+import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './result'
 
 describe('socket/MESSAGE', () => {
@@ -9,7 +9,7 @@ describe('socket/MESSAGE', () => {
       reducer(
         initialState,
         {
-          payload: firstDayConversation,
+          payload: firstMorning,
           type: ActionTypes.socket.MESSAGE
         }
       )

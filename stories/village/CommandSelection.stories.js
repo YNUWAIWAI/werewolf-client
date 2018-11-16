@@ -90,7 +90,7 @@ storiesOf('village|Command/CommandSelection', module)
     ]
     const timer = {
       limit: 90,
-      phase: 'day vote'
+      phase: 'day'
     }
     const story =
       <CommandSelection

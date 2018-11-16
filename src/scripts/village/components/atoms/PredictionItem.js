@@ -1,4 +1,5 @@
 // @flow
+import {CIRCLE, CROSS, FILL, QUESTION, TRIANGLE} from '../../constants/State'
 import type {BoardState} from 'village'
 import Circle from './svg/Circle'
 import Cross from './svg/Cross'
@@ -15,7 +16,7 @@ type Props = {
 
 export default function PredictionItem(props: Props) {
   const handleBoardClick = () => {
-    const state = ['?', 'Δ', 'O', 'X']
+    const state = [QUESTION, TRIANGLE, CIRCLE, CROSS]
     const currentState = props.state
 
     if (!state.includes(currentState) || props.fixed) {
@@ -29,15 +30,15 @@ export default function PredictionItem(props: Props) {
 
   const image = (state => {
     switch (state) {
-      case '?':
+      case QUESTION:
         return <Question />
-      case 'Δ':
+      case TRIANGLE:
         return <Triangle />
-      case 'O':
+      case CIRCLE:
         return <Circle />
-      case 'X':
+      case CROSS:
         return <Cross />
-      case 'fill':
+      case FILL:
       default:
         return ''
     }
@@ -45,7 +46,7 @@ export default function PredictionItem(props: Props) {
 
   return (
     <div
-      className={`prediction--item ${props.fixed && props.state !== 'fill' ? 'fixed' : ''}`}
+      className={`prediction--item ${props.fixed && props.state !== FILL ? 'fixed' : ''}`}
       data-date={props.date}
       data-state={props.state}
       onClick={handleBoardClick}

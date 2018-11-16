@@ -1,20 +1,23 @@
 // @flow
-import type {Team, _RoleId} from 'village'
+import type {Message, RoleId, Team} from 'village'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
   WEREHAMSTER_TEAM
 } from '../constants/Role'
-import {UNPLAYABLE_AGENT} from '../constants/Agent'
 
-export const getPlayableAgents = <T: {'@id': string}>(agents: T[]): T[] =>
-  agents.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
+export const trimBaseUri = (id: string): string => {
+  const match = (/\/(\w+)$/).exec(id)
 
-export const getPlayableRoles = <T: {'@id': string}>(roles: T[]): T[] =>
-  roles.filter(a => !UNPLAYABLE_ROLE.includes(a['@id']))
+  if (match && match[1]) {
+    return match[1]
+  }
 
-export const getMyAgent = <T: {'@id': string, agentIsMine: boolean}>(agents: T[]): T => {
-  const maybe = getPlayableAgents(agents).find(a => a.agentIsMine)
+  return ''
+}
+
+export const getMyAgent = <T: {name: {en: string}, isMine: boolean}>(agents: T[]): T => {
+  const maybe = agents.find(a => a.isMine)
 
   if (!maybe) {
     throw Error('Not found my agent.')
@@ -23,19 +26,11 @@ export const getMyAgent = <T: {'@id': string, agentIsMine: boolean}>(agents: T[]
   return maybe
 }
 
-export const getMyRole = <T: {'@id': string, roleIsMine: boolean}>(roles: T[]): T => {
-  const maybe = getPlayableRoles(roles).find(r => r.roleIsMine)
+export const getPlayableAgents = <T: {name: {en: string}}>(agents: T[]): T[] => agents
 
-  if (!maybe) {
-    throw Error('Not found my role.')
-  }
-
-  return maybe
-}
-
-export const getRoleId = (str: string): _RoleId => {
-  const roleId: _RoleId[] = ['Villager', 'Seer', 'Medium', 'Hunter', 'Mason', 'Madman', 'Werewolf', 'Werehamster']
-  const maybe = roleId.find(v => v === str)
+export const getRoleId = (str: string): RoleId => {
+  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster', 'master']
+  const maybe = roleId.find(v => v === str.toLowerCase())
 
   if (!maybe) {
     throw new Error(`Unexpected RoleId: ${str}`)
@@ -44,7 +39,30 @@ export const getRoleId = (str: string): _RoleId => {
   return maybe
 }
 
-export const getTeam = (role: _RoleId): Team => {
+export const getPlayableRoles = <T: {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(getRoleId(r.name.en)))
+
+export const getMessage = (str: string): Message => {
+  const roleId: Message[] = ['boardMessage', 'errorMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
+  const maybe = roleId.find(v => v === trimBaseUri(str))
+
+  if (!maybe) {
+    throw new Error(`Unexpected RoleId: ${str}`)
+  }
+
+  return maybe
+}
+
+export const getMyRole = <T: {name: {en: string}, isMine: boolean}>(roles: T[]): T => {
+  const maybe = getPlayableRoles(roles).find(r => r.isMine)
+
+  if (!maybe) {
+    throw Error('Not found my role.')
+  }
+
+  return maybe
+}
+
+export const getTeam = (role: RoleId): Team => {
   if (VILLAGER_TEAM.includes(role)) {
     return 'villager'
   } else if (WEREHAMSTER_TEAM.includes(role)) {
@@ -54,7 +72,7 @@ export const getTeam = (role: _RoleId): Team => {
   return 'werewolf' // WEREWOLF_TEAM.includes(role)
 }
 
-export const getVotedAgent = <T: {'@id': string, id: number}>(agents: T[], agentId: number): T => {
+export const getVotedAgent = <T: {id: number, name: {en: string}}>(agents: T[], agentId: number): T => {
   const maybe = getPlayableAgents(agents).find(a => a.id === agentId)
 
   if (!maybe) {
@@ -86,15 +104,5 @@ export const just = <T>(value: ?T): T => {
 }
 
 export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(\w)/g, (_, p1) => p1.toUpperCase())
-
-export const trimBaseUri = (id: string): string => {
-  const match = (/\/(\w+)$/).exec(id)
-
-  if (match && match[1]) {
-    return match[1]
-  }
-
-  return ''
-}
 
 export const xor = (a: boolean, b: boolean): boolean => a !== b
