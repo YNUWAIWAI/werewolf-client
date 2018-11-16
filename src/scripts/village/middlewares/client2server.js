@@ -12,6 +12,66 @@ import {socket} from '../actions'
 const getTimestamp = () => new Date().toISOString()
 const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
   switch (action.type) {
+    case ActionTypes.CHANGE_PREDICTION_BOARD: {
+      const state = store.getState()
+      const myRole = just(state.roles.mine)
+      const myAgent = just(state.agents.mine)
+      const payload: Payload$boardMessage = {
+        '@context': [
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/board.jsonld'
+        ],
+        '@id': 'https://werewolf.world/resource/0.2/boardMessage',
+        'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@id': state.base.village['@id'],
+          'id': state.base.village.id,
+          'name': state.base.village.name,
+          'totalNumberOfAgents': state.base.village.totalNumberOfAgents
+        },
+        'token': state.base.token,
+        'phase': state.base.phase,
+        'date': state.base.date,
+        'phaseTimeLimit': state.base.phaseTimeLimit,
+        'phaseStartTime': state.base.phaseStartTime,
+        'serverTimestamp': state.base.serverTimestamp,
+        'clientTimestamp': getTimestamp(),
+        'directionality': 'client to server',
+        'intensionalDisclosureRange': 'private',
+        'extensionalDisclosureRange': [],
+        'myAgent': {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': myAgent['@id'],
+          'id': myAgent.id,
+          'image': myAgent.image,
+          'name': myAgent.name,
+          'role': {
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@id': myRole['@id'],
+            'image': myRole.image,
+            'name': myRole.name
+          }
+        },
+        'agent': {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': myAgent['@id'],
+          'id': myAgent.id,
+          'image': myAgent.image,
+          'name': myAgent.name
+        },
+        'prediction': action.nextState,
+        'role': {
+          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@id': myRole['@id'],
+          'image': myRole.image,
+          'name': myRole.name
+        }
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.POST_CHAT: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
@@ -66,66 +126,6 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'text': {
           '@language': state.language,
           '@value': action.text
-        }
-      }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
-    }
-    case ActionTypes.CHANGE_PREDICTION_BOARD: {
-      const state = store.getState()
-      const myRole = just(state.roles.mine)
-      const myAgent = just(state.agents.mine)
-      const payload: Payload$boardMessage = {
-        '@context': [
-          'https://werewolf.world/context/0.2/base.jsonld',
-          'https://werewolf.world/context/0.2/board.jsonld'
-        ],
-        '@id': 'https://werewolf.world/resource/0.2/boardMessage',
-        'village': {
-          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
-          '@id': state.base.village['@id'],
-          'id': state.base.village.id,
-          'name': state.base.village.name,
-          'totalNumberOfAgents': state.base.village.totalNumberOfAgents
-        },
-        'token': state.base.token,
-        'phase': state.base.phase,
-        'date': state.base.date,
-        'phaseTimeLimit': state.base.phaseTimeLimit,
-        'phaseStartTime': state.base.phaseStartTime,
-        'serverTimestamp': state.base.serverTimestamp,
-        'clientTimestamp': getTimestamp(),
-        'directionality': 'client to server',
-        'intensionalDisclosureRange': 'private',
-        'extensionalDisclosureRange': [],
-        'myAgent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-          '@id': myAgent['@id'],
-          'id': myAgent.id,
-          'image': myAgent.image,
-          'name': myAgent.name,
-          'role': {
-            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
-            '@id': myRole['@id'],
-            'image': myRole.image,
-            'name': myRole.name
-          }
-        },
-        'agent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-          '@id': myAgent['@id'],
-          'id': myAgent.id,
-          'image': myAgent.image,
-          'name': myAgent.name
-        },
-        'prediction': action.nextState,
-        'role': {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
-          '@id': myRole['@id'],
-          'image': myRole.image,
-          'name': myRole.name
         }
       }
 
