@@ -24,6 +24,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         ],
         '@id': 'https://werewolf.world/resource/0.2/playerMessage',
         'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
           'name': state.base.village.name,
@@ -46,6 +47,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
           'image': myAgent.image,
           'name': myAgent.name,
           'role': {
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
             '@id': myRole['@id'],
             'image': myRole.image,
             'name': myRole.name
@@ -82,6 +84,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         ],
         '@id': 'https://werewolf.world/resource/0.2/boardMessage',
         'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
           'name': state.base.village.name,
@@ -98,17 +101,20 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
         'myAgent': {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
           '@id': myAgent['@id'],
           'id': myAgent.id,
           'image': myAgent.image,
           'name': myAgent.name,
           'role': {
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
             '@id': myRole['@id'],
             'image': myRole.image,
             'name': myRole.name
           }
         },
         'agent': {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
           '@id': myAgent['@id'],
           'id': myAgent.id,
           'image': myAgent.image,
@@ -150,6 +156,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         ],
         '@id': 'https://werewolf.world/resource/0.2/voteMessage',
         'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
           'name': state.base.village.name,
@@ -166,17 +173,20 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
         'myAgent': {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
           '@id': myAgent['@id'],
           'id': myAgent.id,
           'image': myAgent.image,
           'name': myAgent.name,
           'role': {
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
             '@id': myRole['@id'],
             'image': myRole.image,
             'name': myRole.name
           }
         },
         'agent': {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
           '@id': votedAgent['@id'],
           'id': votedAgent.id,
           'image': votedAgent.image,
