@@ -146,7 +146,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
     }
     case ActionTypes.SELECT_YES: {
       const state = store.getState()
-      const votedAgent = getVotedAgent(state.agents.all, action.agentId)
+      const votedAgent = getAgent(state.agents.all, action.agentId)
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
       const payload: Payload$voteMessage = {

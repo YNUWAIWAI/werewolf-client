@@ -1,5 +1,9 @@
 // @flow
-import type {Message, RoleId, Team} from 'village'
+import type {
+  Message,
+  RoleId,
+  Team
+} from 'village'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
@@ -72,7 +76,7 @@ export const getTeam = (role: RoleId): Team => {
   return 'werewolf' // WEREWOLF_TEAM.includes(role)
 }
 
-export const getVotedAgent = <T: {id: number, name: {en: string}}>(agents: T[], agentId: number): T => {
+export const getAgent = <T: {id: number, name: {en: string}}>(agents: T[], agentId: number): T => {
   const maybe = getPlayableAgents(agents).find(a => a.id === agentId)
 
   if (!maybe) {

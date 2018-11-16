@@ -1,5 +1,6 @@
 // @flow
 import {
+  getAgent,
   getMessage,
   getMyAgent,
   getMyRole,
@@ -14,6 +15,115 @@ import {
   xor
 } from './index'
 
+describe('getAgent', () => {
+  test('nominal', () => {
+    const agents = [
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Gert',
+        'id': 0,
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Gert',
+          'ja': 'ゲルト'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      },
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Walter',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'isAChoice': false,
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      },
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Catalina',
+        'id': 10,
+        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Catalina',
+          'ja': 'カタリナ'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      },
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Otto',
+        'id': 11,
+        'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Otto',
+          'ja': 'オットー'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      }
+    ]
+
+    expect(getAgent(agents, 1)).toEqual({
+      '@id': 'https://werewolf.world/resource/0.2/Walter',
+      'id': 1,
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'isAChoice': false,
+      'isMine': true,
+      'name': {
+        'en': 'Walter',
+        'ja': 'ヴァルター'
+      },
+      'status': 'alive',
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
+    })
+  })
+  test('throw Exception', () => {
+    const agents = [
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Gert',
+        'id': 0,
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Gert',
+          'ja': 'ゲルト'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      }
+    ]
+
+    expect(() => getAgent(agents, 1)).toThrow()
+  })
+})
 describe('getMessage', () => {
   test('boardMessage', () => {
     expect(getMessage('https://licos.online/state/0.2/village#3/boardMessage')).toBe('boardMessage')
