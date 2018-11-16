@@ -3,7 +3,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
-import {getRoleId, getVotedAgent, just} from '../util'
+import {strToRoleId, getAgent, just} from '../util'
 import type {Action} from '.'
 import type {ReducerState} from '../reducers'
 import {getChannelFromInputChennel} from '../constants/Channels'
@@ -16,6 +16,8 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
+      const boardAgent = getAgent(state.agents.all, action.playerId)
+      const boardRole = state.roles.all
       const payload: Payload$boardMessage = {
         '@context': [
           'https://werewolf.world/context/0.2/base.jsonld',
@@ -76,7 +78,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
-      const channel = getChannelFromInputChennel(action.kind, getRoleId(myRole.name.en))
+      const channel = getChannelFromInputChennel(action.kind, strToRoleId(myRole.name.en))
       const payload: Payload$playerMessage = {
         '@context': [
           'https://werewolf.world/context/0.2/base.jsonld',

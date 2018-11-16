@@ -3,7 +3,7 @@ import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
 import Modal, {type DispatchProps, type StateProps} from '../components/organisms/Modal'
 import type {Phase, RoleId} from 'village'
 import {type SelectNo, type SelectYes, selectNo, selectYes} from '../actions'
-import {getRoleId, just} from '../util'
+import {strToRoleId, just} from '../util'
 import {DAY} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
@@ -37,7 +37,7 @@ const mapStateToProps = (state: ReducerState): $Exact<StateProps> => {
     const myRole = just(state.roles.mine)
 
     return {
-      descriptionId: getDescriptionId(state.base.phase, getRoleId(myRole.name.en)),
+      descriptionId: getDescriptionId(state.base.phase, strToRoleId(myRole.name.en)),
       id: selectedAgent.id,
       image: selectedAgent.image,
       name: selectedAgent.name[state.language],

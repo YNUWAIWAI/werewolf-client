@@ -32,7 +32,7 @@ export const getMyAgent = <T: {name: {en: string}, isMine: boolean}>(agents: T[]
 
 export const getPlayableAgents = <T: {name: {en: string}}>(agents: T[]): T[] => agents
 
-export const getRoleId = (str: string): RoleId => {
+export const strToRoleId = (str: string): RoleId => {
   const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster', 'master']
   const maybe = roleId.find(v => v === str.toLowerCase())
 
@@ -43,9 +43,9 @@ export const getRoleId = (str: string): RoleId => {
   return maybe
 }
 
-export const getPlayableRoles = <T: {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(getRoleId(r.name.en)))
+export const getPlayableRoles = <T: {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(strToRoleId(r.name.en)))
 
-export const getMessage = (str: string): Message => {
+export const strToMessage = (str: string): Message => {
   const roleId: Message[] = ['boardMessage', 'errorMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
   const maybe = roleId.find(v => v === trimBaseUri(str))
 

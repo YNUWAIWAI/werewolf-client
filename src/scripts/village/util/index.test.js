@@ -1,12 +1,12 @@
 // @flow
 import {
   getAgent,
-  getMessage,
+  strToMessage,
   getMyAgent,
   getMyRole,
   getPlayableAgents,
   getPlayableRoles,
-  getRoleId,
+  strToRoleId,
   getTeam,
   idGenerater,
   just,
@@ -124,27 +124,27 @@ describe('getAgent', () => {
     expect(() => getAgent(agents, 1)).toThrow()
   })
 })
-describe('getMessage', () => {
+describe('strToMessage', () => {
   test('boardMessage', () => {
-    expect(getMessage('https://licos.online/state/0.2/village#3/boardMessage')).toBe('boardMessage')
+    expect(strToMessage('https://licos.online/state/0.2/village#3/boardMessage')).toBe('boardMessage')
   })
   test('errorMessage', () => {
-    expect(getMessage('https://licos.online/state/0.2/village#3/errorMessage')).toBe('errorMessage')
+    expect(strToMessage('https://licos.online/state/0.2/village#3/errorMessage')).toBe('errorMessage')
   })
   test('playerMessage', () => {
-    expect(getMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
+    expect(strToMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
   })
   test('scrollMessage', () => {
-    expect(getMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')
+    expect(strToMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')
   })
   test('systemMessage', () => {
-    expect(getMessage('https://licos.online/state/0.2/village#3/systemMessage')).toBe('systemMessage')
+    expect(strToMessage('https://licos.online/state/0.2/village#3/systemMessage')).toBe('systemMessage')
   })
   test('voteMessage', () => {
-    expect(getMessage('https://licos.online/state/0.2/village#3/voteMessage')).toBe('voteMessage')
+    expect(strToMessage('https://licos.online/state/0.2/village#3/voteMessage')).toBe('voteMessage')
   })
   test('throw Exception', () => {
-    expect(() => getMessage('throw Exception')).toThrow()
+    expect(() => strToMessage('throw Exception')).toThrow()
   })
 })
 describe('getMyAgent', () => {
@@ -689,33 +689,33 @@ test('getPlayableRoles', () => {
     }
   ])
 })
-describe('getRoleId', () => {
+describe('strToRoleId', () => {
   test('Villager', () => {
-    expect(getRoleId('Villager')).toBe('villager')
+    expect(strToRoleId('Villager')).toBe('villager')
   })
   test('Seer', () => {
-    expect(getRoleId('Seer')).toBe('seer')
+    expect(strToRoleId('Seer')).toBe('seer')
   })
   test('Medium', () => {
-    expect(getRoleId('Medium')).toBe('medium')
+    expect(strToRoleId('Medium')).toBe('medium')
   })
   test('Hunter', () => {
-    expect(getRoleId('Hunter')).toBe('hunter')
+    expect(strToRoleId('Hunter')).toBe('hunter')
   })
   test('Mason', () => {
-    expect(getRoleId('Mason')).toBe('mason')
+    expect(strToRoleId('Mason')).toBe('mason')
   })
   test('Madman', () => {
-    expect(getRoleId('Madman')).toBe('madman')
+    expect(strToRoleId('Madman')).toBe('madman')
   })
   test('Werewolf', () => {
-    expect(getRoleId('Werewolf')).toBe('werewolf')
+    expect(strToRoleId('Werewolf')).toBe('werewolf')
   })
   test('Werehamster', () => {
-    expect(getRoleId('Werehamster')).toBe('werehamster')
+    expect(strToRoleId('Werehamster')).toBe('werehamster')
   })
   test('Unexpected Value', () => {
-    expect(() => getRoleId('Unexpected')).toThrow()
+    expect(() => strToRoleId('Unexpected')).toThrow()
   })
 })
 describe('getTeam', () => {
