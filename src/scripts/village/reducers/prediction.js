@@ -1,11 +1,11 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Contexts from '../constants/Contexts'
-import type {Agent, AgentId, AgentStatus, BoardState, Language, Payload, Role, RoleId} from 'village'
+import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, Language, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
-import {MEDIUM, ORDERED_ROLE_LIST, SEER, getRoleId} from '../constants/Role'
-import {getPlayableAgents, getPlayableRoles} from '../util'
-import {DAY_CONVERSATION} from '../constants/Phase'
+import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
+import {getMessage, getPlayableRoles, getRoleId, just} from '../util'
+import {MORNING} from '../constants/Phase'
+import {SYSTEM_MESSAGE} from '../constants/Message'
 
 export type State = {
   +playerStatus: Array<{
@@ -39,19 +39,19 @@ type Action =
 
 const updatePredictionTable = (roles: Role[], table: Table): Table => {
   roles.forEach(role => {
-    if (
-      role.roleIsMine &&
-      [SEER, MEDIUM].includes(role['@id'])
-    ) {
-      const roleId = getRoleId(role['@id'])
+    const roleId = getRoleId(role.name.en)
 
+    if (
+      role.isMine &&
+      PREDICTION.includes(roleId)
+    ) {
       role.board.forEach(b => {
-        const agentId = String(b.boardAgent.boardAgentId)
+        const agentId = String(b.agent.id)
 
         table[agentId][roleId] = {
-          date: b.boardDate,
+          date: b.date,
           fixed: true,
-          state: b.boardPolarity === 'positive' ? 'O' : 'fill'
+          state: b.polarity === 'positive' ? 'O' : 'fill'
         }
       })
     }
@@ -68,21 +68,21 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
 
     table[agentId] = {}
     roles.forEach(role => {
-      const roleId: RoleId = getRoleId(role['@id'])
+      const roleId = getRoleId(role.name.en)
 
-      if (agent.agentIsMine && role.roleIsMine) {
+      if (agent.isMine && role.isMine) {
         table[agentId][roleId] = {
           date: 1,
           fixed: true,
           state: 'O'
         }
-      } else if (agent.agentIsMine && !role.roleIsMine) {
+      } else if (agent.isMine && !role.isMine) {
         table[agentId][roleId] = {
           date: 1,
           fixed: true,
           state: 'fill'
         }
-      } else if (!agent.agentIsMine && role.roleIsMine && role.numberOfAgents === 1) {
+      } else if (!agent.isMine && role.isMine && role.numberOfAgents === 1) {
         table[agentId][roleId] = {
           date: 1,
           fixed: true,
@@ -110,19 +110,21 @@ export const initialState = {
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (
-        action.payload['@context'].includes(Contexts.AGENT) &&
-        action.payload['@context'].includes(Contexts.BASE) &&
-        action.payload['@context'].includes(Contexts.ROLE)
-      ) {
-        const payload: Payload<Agent, Role, *> = action.payload
-        const agents = getPlayableAgents(payload.agent)
-        const roles = getPlayableRoles(payload.role)
-          .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(r1['@id']) - ORDERED_ROLE_LIST.indexOf(r2['@id']))
-        const table = payload.date === 1 && payload.phase === DAY_CONVERSATION ? initPredictionTable(agents, roles) : updatePredictionTable(roles, state.table)
+      if (getMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
+        const payload: Payload$systemMessage = action.payload
+        const agents = just(payload.agent)
+        const roles = getPlayableRoles(just(payload.role))
+          .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(getRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(getRoleId(r2.name.en)))
+        const table = (() => {
+          if (payload.date === 1 && payload.phase === MORNING) {
+            return initPredictionTable(agents, roles)
+          }
+
+          return updatePredictionTable(roles, state.table)
+        })()
         const roleStatus: RoleStatus = roles.map(role => ({
           caption: role.name,
-          id: getRoleId(role['@id']),
+          id: getRoleId(role.name.en),
           image: role.image,
           numberOfAgents: role.numberOfAgents
         }))

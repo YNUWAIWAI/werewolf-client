@@ -16,7 +16,7 @@ import {initialState as result} from '../reducers/result'
 import {initialState as roles} from '../reducers/roles'
 
 describe('socket/MESSAGE', () => {
-  test('phase: night -> day conversation, date: 0 -> 1', () => {
+  test('phase: night -> morning, date: 0 -> 1', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents,
@@ -41,14 +41,19 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/votingResult.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
-        'villageId': 3,
-        'villageName': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15,
+        '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+        'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@id': 'https://licos.online/state/0.2/village',
+          'id': 3,
+          'name': '横国の森の奥にある時代に取り残された小さな村',
+          'totalNumberOfAgents': 15
+        },
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-        'phase': 'day conversation',
+        'phase': 'morning',
         'date': 1,
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -57,23 +62,6 @@ describe('socket/MESSAGE', () => {
         'directionality': 'server to client',
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
-        'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
-          'myAgentId': 1,
-          'myAgentName': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-          'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
-            'myRoleName': {
-              'en': 'Villager',
-              'ja': '村人'
-            },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
-          }
-        },
         'agent': [],
         'role': []
       },
@@ -84,7 +72,7 @@ describe('socket/MESSAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       from: 'night',
-      to: 'day conversation',
+      to: 'morning',
       type: ActionTypes.CHANGE_PHASE
     })
     expect(dispatch).toHaveBeenCalledWith({
@@ -93,7 +81,7 @@ describe('socket/MESSAGE', () => {
       type: ActionTypes.CHANGE_DATE
     })
   })
-  test('phase: night -> day conversation, date: 0', () => {
+  test('phase: night -> morning, date: 0', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents,
@@ -118,14 +106,19 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/votingResult.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
-        'villageId': 3,
-        'villageName': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15,
+        '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+        'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@id': 'https://licos.online/state/0.2/village',
+          'id': 3,
+          'name': '横国の森の奥にある時代に取り残された小さな村',
+          'totalNumberOfAgents': 15
+        },
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-        'phase': 'day conversation',
+        'phase': 'morning',
         'date': 0,
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -134,23 +127,6 @@ describe('socket/MESSAGE', () => {
         'directionality': 'server to client',
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
-        'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
-          'myAgentId': 1,
-          'myAgentName': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-          'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
-            'myRoleName': {
-              'en': 'Villager',
-              'ja': '村人'
-            },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
-          }
-        },
         'agent': [],
         'role': []
       },
@@ -161,7 +137,7 @@ describe('socket/MESSAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       from: 'night',
-      to: 'day conversation',
+      to: 'morning',
       type: ActionTypes.CHANGE_PHASE
     })
   })
@@ -190,12 +166,17 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/votingResult.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
-        'villageId': 3,
-        'villageName': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15,
+        '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+        'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@id': 'https://licos.online/state/0.2/village',
+          'id': 3,
+          'name': '横国の森の奥にある時代に取り残された小さな村',
+          'totalNumberOfAgents': 15
+        },
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
         'phase': 'night',
         'date': 1,
@@ -206,23 +187,6 @@ describe('socket/MESSAGE', () => {
         'directionality': 'server to client',
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
-        'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
-          'myAgentId': 1,
-          'myAgentName': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-          'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
-            'myRoleName': {
-              'en': 'Villager',
-              'ja': '村人'
-            },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
-          }
-        },
         'agent': [],
         'role': []
       },
@@ -262,12 +226,17 @@ describe('socket/MESSAGE', () => {
     const action = {
       payload: {
         '@context': [
-          'https://werewolf.world/context/0.1/base.jsonld'
+          'https://werewolf.world/context/0.2/base.jsonld',
+          'https://werewolf.world/context/0.2/votingResult.jsonld'
         ],
-        '@id': 'https://werewolf.world/resource/0.1/systemMessage',
-        'villageId': 3,
-        'villageName': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15,
+        '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+        'village': {
+          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@id': 'https://licos.online/state/0.2/village',
+          'id': 3,
+          'name': '横国の森の奥にある時代に取り残された小さな村',
+          'totalNumberOfAgents': 15
+        },
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
         'phase': 'night',
         'date': 0,
@@ -278,23 +247,6 @@ describe('socket/MESSAGE', () => {
         'directionality': 'server to client',
         'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
-        'myAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
-          'myAgentId': 1,
-          'myAgentName': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          },
-          'myAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-          'myRole': {
-            '@id': 'https://werewolf.world/resource/0.1/villager',
-            'myRoleName': {
-              'en': 'Villager',
-              'ja': '村人'
-            },
-            'myRoleImage': 'https://werewolf.world/image/0.1/villager.jpg'
-          }
-        },
         'agent': [],
         'role': []
       },

@@ -1,5 +1,5 @@
 // @flow
-import type {AgentStatus, TResult} from 'village'
+import type {AgentStatus, Result as TResult} from 'village'
 import React from 'react'
 import ResultCell from '../atoms/ResultCell'
 import ResultClose from '../atoms/ResultClose'

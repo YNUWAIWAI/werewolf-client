@@ -8,35 +8,35 @@ const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
 
 describe('<Day />', () => {
   describe('phase', () => {
-    test('day conversation', () => {
+    test('morning', () => {
       const timer = {
         limit: 10,
-        phase: 'day conversation'
+        phase: 'morning'
       }
       const wrapper = mountWithIntl(
         <Day
           date={0}
-          phase="day conversation"
+          phase="morning"
           timer={timer}
         />
       )
 
-      expect(wrapper.text()).toMatch('0日目 昼')
+      expect(wrapper.text()).toMatch('0日目 朝')
     })
-    test('day vote', () => {
+    test('day', () => {
       const timer = {
         limit: 10,
-        phase: 'day vote'
+        phase: 'day'
       }
       const wrapper = mountWithIntl(
         <Day
           date={1}
-          phase="day vote"
+          phase="day"
           timer={timer}
         />
       )
 
-      expect(wrapper.text()).toMatch('1日目 投票')
+      expect(wrapper.text()).toMatch('1日目 昼')
     })
     test('night', () => {
       const timer = {
@@ -68,15 +68,15 @@ describe('<Day />', () => {
 
       expect(wrapper.text()).toMatch('感想戦')
     })
-    test('results', () => {
+    test('result', () => {
       const timer = {
         limit: 10,
-        phase: 'results'
+        phase: 'result'
       }
       const wrapper = mountWithIntl(
         <Day
           date={-1}
-          phase="results"
+          phase="result"
           timer={timer}
         />
       )

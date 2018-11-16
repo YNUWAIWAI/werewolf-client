@@ -1,9 +1,9 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Contexts from '../constants/Contexts'
-import type {Payload, Role} from 'village'
+import type {Payload$systemMessage, Role$systemMessage as Role} from 'village'
+import {getMessage, getMyRole, getPlayableRoles} from '../util'
+import {SYSTEM_MESSAGE} from '../constants/Message'
 import type {SocketMessage} from '../actions'
-import {UNPLAYABLE_ROLE} from '../constants/Role'
 
 export type State = {
   +all: Role[],
@@ -18,14 +18,17 @@ export const initialState = {
 const roles = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (action.payload['@context'].includes(Contexts.ROLE)) {
-        const payload: Payload<*, Role, *> = action.payload
-        const all = payload.role.filter(r => !UNPLAYABLE_ROLE.includes(r['@id']))
-        const mine = all.filter(r => r.roleIsMine)[0]
+      if (getMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
+        const payload: Payload$systemMessage = action.payload
 
-        return {
-          all,
-          mine
+        if (payload.role) {
+          const all = getPlayableRoles(payload.role)
+          const mine = getMyRole(all)
+
+          return {
+            all,
+            mine
+          }
         }
       }
 

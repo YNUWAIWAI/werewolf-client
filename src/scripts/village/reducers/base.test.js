@@ -1,14 +1,14 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './base'
-import {firstDayConversation} from './fakeServer'
+import {firstMorning} from './fakeServer'
 
 test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
       {
-        payload: firstDayConversation,
+        payload: firstMorning,
         type: ActionTypes.socket.MESSAGE
       }
     )
@@ -16,13 +16,16 @@ test('socket/MESSAGE', () => {
     clientTimestamp: '2006-10-07T12:06:56.568+09:00',
     date: 1,
     intensionalDisclosureRange: 'private',
-    phase: 'day conversation',
+    phase: 'morning',
     phaseStartTime: '2006-10-07T12:06:56.568+09:00',
     phaseTimeLimit: 600,
     serverTimestamp: '2006-10-07T12:06:56.568+09:00',
     token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-    totalNumberOfAgents: 15,
-    villageId: 3,
-    villageName: '横国の森の奥にある時代に取り残された小さな村'
+    village: {
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
+    }
   })
 })

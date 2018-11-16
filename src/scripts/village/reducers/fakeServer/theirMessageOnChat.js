@@ -35,7 +35,7 @@ export default {
     },
     'image': 'https://werewolf.world/image/0.2/Walter.jpg'
   },
-  'isMine': true,
+  'isMine': false,
   'id': 12,
   'counter': 7,
   'limit': 10,

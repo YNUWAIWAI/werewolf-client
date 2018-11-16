@@ -1,5 +1,5 @@
 // @flow
-import {DAY_CONVERSATION} from '../constants/Phase'
+import {MORNING} from '../constants/Phase'
 import DayContainer from './DayContainer'
 import React from 'react'
 import {shallow} from 'enzyme'
@@ -9,7 +9,7 @@ test('<DayContainer /> initialState', () => {
   const getState = () => ({
     base: {
       date: 1,
-      phase: DAY_CONVERSATION,
+      phase: MORNING,
       phaseTimeLimit: 100
     }
   })
@@ -22,9 +22,9 @@ test('<DayContainer /> initialState', () => {
   const wrapper = shallow(<DayContainer store={store} />)
 
   expect(wrapper.props().date).toBe(1)
-  expect(wrapper.props().phase).toBe('day conversation')
+  expect(wrapper.props().phase).toBe('morning')
   expect(wrapper.props().timer).toEqual({
     limit: 100,
-    phase: DAY_CONVERSATION
+    phase: MORNING
   })
 })

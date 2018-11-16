@@ -1,9 +1,9 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Contexts from '../constants/Contexts'
-import type {Agent, Payload} from 'village'
+import type {Agent$systemMessage as Agent, Payload$systemMessage} from 'village'
+import {getMessage, getMyAgent} from '../util'
+import {SYSTEM_MESSAGE} from '../constants/Message'
 import type {SocketMessage} from '../actions'
-import {UNPLAYABLE_AGENT} from '../constants/Agent'
 
 export type State = {
   +all: Agent[],
@@ -18,14 +18,17 @@ export const initialState = {
 const agents = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (action.payload['@context'].includes(Contexts.AGENT)) {
-        const payload: Payload<Agent, *, *> = action.payload
-        const all = payload.agent.filter(a => !UNPLAYABLE_AGENT.includes(a['@id']))
-        const mine = all.filter(a => a.agentIsMine)[0]
+      if (getMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
+        const payload: Payload$systemMessage = action.payload
 
-        return {
-          all,
-          mine
+        if (payload.agent) {
+          const all = payload.agent
+          const mine = getMyAgent(all)
+
+          return {
+            all,
+            mine
+          }
         }
       }
 

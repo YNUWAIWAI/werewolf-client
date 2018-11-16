@@ -1,9 +1,12 @@
 // @flow
 import {
+  getMessage,
   getMyAgent,
   getMyRole,
   getPlayableAgents,
   getPlayableRoles,
+  getRoleId,
+  getTeam,
   idGenerater,
   just,
   spaceSeparatedToCamelCase,
@@ -11,465 +14,625 @@ import {
   xor
 } from './index'
 
-test('getMyAgent', () => {
-  const agents = [
-    {
-      '@id': 'https://werewolf.world/resource/0.1/Gert',
-      'agentIsMine': false,
-      'id': 0,
-      'image': 'https://werewolf.world/image/0.1/Gert.jpg',
-      'isAChoice': false,
-      'name': {
-        'en': 'Gert',
-        'ja': 'ゲルト'
+describe('getMessage', () => {
+  test('boardMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/boardMessage')).toBe('boardMessage')
+  })
+  test('errorMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/errorMessage')).toBe('errorMessage')
+  })
+  test('playerMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
+  })
+  test('scrollMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')
+  })
+  test('systemMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/systemMessage')).toBe('systemMessage')
+  })
+  test('voteMessage', () => {
+    expect(getMessage('https://licos.online/state/0.2/village#3/voteMessage')).toBe('voteMessage')
+  })
+  test('throw Exception', () => {
+    expect(() => getMessage('throw Exception')).toThrow()
+  })
+})
+describe('getMyAgent', () => {
+  test('nominal', () => {
+    const agents = [
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Gert',
+        'id': 0,
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Gert',
+          'ja': 'ゲルト'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
       },
-      'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/Walter',
-      'agentIsMine': true,
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Walter',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'isAChoice': false,
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      },
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Catalina',
+        'id': 10,
+        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Catalina',
+          'ja': 'カタリナ'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      },
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Otto',
+        'id': 11,
+        'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Otto',
+          'ja': 'オットー'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      }
+    ]
+
+    expect(getMyAgent(agents)).toEqual({
+      '@id': 'https://werewolf.world/resource/0.2/Walter',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'isAChoice': false,
+      'isMine': true,
       'name': {
         'en': 'Walter',
         'ja': 'ヴァルター'
       },
       'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/Catalina',
-      'agentIsMine': false,
-      'id': 10,
-      'image': 'https://werewolf.world/image/0.1/Catalina.jpg',
-      'isAChoice': false,
-      'name': {
-        'en': 'Catalina',
-        'ja': 'カタリナ'
-      },
-      'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/Otto',
-      'agentIsMine': false,
-      'id': 11,
-      'image': 'https://werewolf.world/image/0.1/Otto.jpg',
-      'isAChoice': false,
-      'name': {
-        'en': 'Otto',
-        'ja': 'オットー'
-      },
-      'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
-    }
-  ]
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
+    })
+  })
+  test('throw Exception', () => {
+    const agents = [
+      {
+        '@id': 'https://werewolf.world/resource/0.2/Gert',
+        'id': 0,
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+        'isAChoice': false,
+        'isMine': false,
+        'name': {
+          'en': 'Gert',
+          'ja': 'ゲルト'
+        },
+        'status': 'alive',
+        'update': {
+          'date': 1,
+          'phase': 'morning'
+        }
+      }
+    ]
 
-  expect(getMyAgent(agents)).toEqual({
-    '@id': 'https://werewolf.world/resource/0.1/Walter',
-    'agentIsMine': true,
-    'id': 1,
-    'image': 'https://werewolf.world/image/0.1/Walter.jpg',
-    'isAChoice': false,
-    'name': {
-      'en': 'Walter',
-      'ja': 'ヴァルター'
-    },
-    'status': 'alive',
-    'statusUpdateDate': 1,
-    'statusUpdatePhase': 'day conversation'
+    expect(() => getMyAgent(agents)).toThrow()
   })
 })
-test('getMyRole', () => {
-  const roles = [
-    {
-      '@id': 'https://werewolf.world/resource/0.1/master',
-      'board': [],
-      'image': 'https://werewolf.world/image/0.1/master.jpg',
-      'name': {
-        'en': 'Master',
-        'ja': 'マスター'
-      },
-      'numberOfAgents': 1,
-      'roleIsMine': false
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/villager',
-      'board': [
-        {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
-          },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'negative'
-        }
-      ],
-      'image': 'https://werewolf.world/image/0.1/villager.jpg',
-      'name': {
-        'en': 'Villager',
-        'ja': '村人'
-      },
-      'numberOfAgents': 6,
-      'roleIsMine': false
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/seer',
-      'board': [
-        {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
-          },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'positive'
-        }
-      ],
-      'image': 'https://werewolf.world/image/0.1/seer.jpg',
-      'name': {
-        'en': 'Seer',
-        'ja': '占い師'
-      },
-      'numberOfAgents': 1,
-      'roleIsMine': true
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/medium',
-      'board': [
-        {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
-          },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'negative',
-        }
-      ],
-      'image': 'https://werewolf.world/image/0.1/medium.jpg',
-      'name': {
-        'en': 'Medium',
-        'ja': '霊媒師'
-      },
-      'numberOfAgents': 1,
-      'roleIsMine': false
-    }
-  ]
-
-  expect(getMyRole(roles)).toEqual({
-    '@id': 'https://werewolf.world/resource/0.1/seer',
-    'board': [
+describe('getMyRole', () => {
+  test('nominal', () => {
+    const roles = [
       {
-        'boardAgent': {
-          '@id': 'https://werewolf.world/resource/0.1/Walter',
-          'boardAgentId': 1,
-          'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-          'boardAgentName': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          }
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#master',
+        'board': [],
+        'image': 'https://werewolf.world/image/0.2/master.jpg',
+        'isMine': false,
+        'name': {
+          'en': 'Master',
+          'ja': 'マスター'
         },
-        'boardDate': 1,
-        'boardPhase': 'day conversation',
-        'boardPolarity': 'positive'
+        'numberOfAgents': 1
+      },
+      {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+        'board': [
+          {
+            '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
+            'agent': {
+              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+              'id': 1,
+              'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+              'name': {
+                'en': 'Walter',
+                'ja': 'ヴァルター'
+              }
+            },
+            'date': 1,
+            'phase': 'morning',
+            'polarity': 'negative'
+          }
+        ],
+        'image': 'https://werewolf.world/image/0.2/villager.jpg',
+        'isMine': false,
+        'name': {
+          'en': 'Villager',
+          'ja': '村人'
+        },
+        'numberOfAgents': 6
+      },
+      {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'board': [
+          {
+            '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
+            'agent': {
+              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+              'id': 1,
+              'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+              'name': {
+                'en': 'Walter',
+                'ja': 'ヴァルター'
+              }
+            },
+            'date': 1,
+            'phase': 'morning',
+            'polarity': 'positive'
+          }
+        ],
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'isMine': true,
+        'name': {
+          'en': 'Seer',
+          'ja': '占い師'
+        },
+        'numberOfAgents': 1
       }
-    ],
-    'image': 'https://werewolf.world/image/0.1/seer.jpg',
-    'name': {
-      'en': 'Seer',
-      'ja': '占い師'
-    },
-    'numberOfAgents': 1,
-    'roleIsMine': true
+    ]
+
+    expect(getMyRole(roles)).toEqual(
+      {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'board': [
+          {
+            '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
+            'agent': {
+              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+              'id': 1,
+              'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+              'name': {
+                'en': 'Walter',
+                'ja': 'ヴァルター'
+              }
+            },
+            'date': 1,
+            'phase': 'morning',
+            'polarity': 'positive'
+          }
+        ],
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'isMine': true,
+        'name': {
+          'en': 'Seer',
+          'ja': '占い師'
+        },
+        'numberOfAgents': 1
+      }
+    )
+  })
+  test('throw Exception', () => {
+    const roles = [
+      {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#master',
+        'board': [],
+        'image': 'https://werewolf.world/image/0.2/master.jpg',
+        'isMine': false,
+        'name': {
+          'en': 'Master',
+          'ja': 'マスター'
+        },
+        'numberOfAgents': 1
+      },
+      {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+        'board': [
+          {
+            '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
+            'agent': {
+              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+              'id': 1,
+              'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+              'name': {
+                'en': 'Walter',
+                'ja': 'ヴァルター'
+              }
+            },
+            'date': 1,
+            'phase': 'morning',
+            'polarity': 'negative'
+          }
+        ],
+        'image': 'https://werewolf.world/image/0.2/villager.jpg',
+        'isMine': false,
+        'name': {
+          'en': 'Villager',
+          'ja': '村人'
+        },
+        'numberOfAgents': 6
+      }
+    ]
+
+    expect(() => getMyRole(roles)).toThrow()
   })
 })
 test('getPlayableAgents', () => {
   const agents = [
     {
-      '@id': 'https://werewolf.world/resource/0.1/Gert',
-      'agentIsMine': false,
+      '@id': 'https://werewolf.world/resource/0.2/Gert',
       'id': 0,
-      'image': 'https://werewolf.world/image/0.1/Gert.jpg',
+      'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'isAChoice': false,
+      'isMine': false,
       'name': {
         'en': 'Gert',
         'ja': 'ゲルト'
       },
       'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Walter',
-      'agentIsMine': true,
+      '@id': 'https://werewolf.world/resource/0.2/Walter',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'isAChoice': false,
+      'isMine': true,
       'name': {
         'en': 'Walter',
         'ja': 'ヴァルター'
       },
       'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Catalina',
-      'agentIsMine': false,
+      '@id': 'https://werewolf.world/resource/0.2/Catalina',
       'id': 10,
-      'image': 'https://werewolf.world/image/0.1/Catalina.jpg',
+      'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
       'isAChoice': false,
+      'isMine': false,
       'name': {
         'en': 'Catalina',
         'ja': 'カタリナ'
       },
       'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Otto',
-      'agentIsMine': false,
+      '@id': 'https://werewolf.world/resource/0.2/Otto',
       'id': 11,
-      'image': 'https://werewolf.world/image/0.1/Otto.jpg',
+      'image': 'https://werewolf.world/image/0.2/Otto.jpg',
       'isAChoice': false,
+      'isMine': false,
       'name': {
         'en': 'Otto',
         'ja': 'オットー'
       },
       'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
     }
   ]
 
   expect(getPlayableAgents(agents)).toEqual([
     {
-      '@id': 'https://werewolf.world/resource/0.1/Walter',
-      'agentIsMine': true,
-      'id': 1,
-      'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+      '@id': 'https://werewolf.world/resource/0.2/Gert',
+      'id': 0,
+      'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'isAChoice': false,
+      'isMine': false,
+      'name': {
+        'en': 'Gert',
+        'ja': 'ゲルト'
+      },
+      'status': 'alive',
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
+    },
+    {
+      '@id': 'https://werewolf.world/resource/0.2/Walter',
+      'id': 1,
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'isAChoice': false,
+      'isMine': true,
       'name': {
         'en': 'Walter',
         'ja': 'ヴァルター'
       },
       'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/Otto',
-      'agentIsMine': false,
-      'id': 11,
-      'image': 'https://werewolf.world/image/0.1/Otto.jpg',
+      '@id': 'https://werewolf.world/resource/0.2/Catalina',
+      'id': 10,
+      'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
       'isAChoice': false,
+      'isMine': false,
+      'name': {
+        'en': 'Catalina',
+        'ja': 'カタリナ'
+      },
+      'status': 'alive',
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
+    },
+    {
+      '@id': 'https://werewolf.world/resource/0.2/Otto',
+      'id': 11,
+      'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+      'isAChoice': false,
+      'isMine': false,
       'name': {
         'en': 'Otto',
         'ja': 'オットー'
       },
       'status': 'alive',
-      'statusUpdateDate': 1,
-      'statusUpdatePhase': 'day conversation'
+      'update': {
+        'date': 1,
+        'phase': 'morning'
+      }
     }
   ])
 })
 test('getPlayableRoles', () => {
   const roles = [
     {
-      '@id': 'https://werewolf.world/resource/0.1/master',
+      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/role#master',
       'board': [],
-      'image': 'https://werewolf.world/image/0.1/master.jpg',
+      'image': 'https://werewolf.world/image/0.2/master.jpg',
+      'isMine': false,
       'name': {
         'en': 'Master',
         'ja': 'マスター'
       },
-      'numberOfAgents': 1,
-      'roleIsMine': false
+      'numberOfAgents': 1
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/villager',
+      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/role#villager',
       'board': [
         {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
+          '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
+          'agent': {
+            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'name': {
               'en': 'Walter',
               'ja': 'ヴァルター'
             }
           },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'negative'
+          'date': 1,
+          'phase': 'morning',
+          'polarity': 'negative'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/villager.jpg',
+      'image': 'https://werewolf.world/image/0.2/villager.jpg',
+      'isMine': false,
       'name': {
         'en': 'Villager',
         'ja': '村人'
       },
-      'numberOfAgents': 6,
-      'roleIsMine': false
+      'numberOfAgents': 6
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/seer',
+      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/role#seer',
       'board': [
         {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
+          '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
+          'agent': {
+            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'name': {
               'en': 'Walter',
               'ja': 'ヴァルター'
             }
           },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'positive'
+          'date': 1,
+          'phase': 'morning',
+          'polarity': 'positive'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/seer.jpg',
+      'image': 'https://werewolf.world/image/0.2/seer.jpg',
+      'isMine': true,
       'name': {
         'en': 'Seer',
         'ja': '占い師'
       },
-      'numberOfAgents': 1,
-      'roleIsMine': true
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/medium',
-      'board': [
-        {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
-          },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'negative'
-        }
-      ],
-      'image': 'https://werewolf.world/image/0.1/medium.jpg',
-      'name': {
-        'en': 'Medium',
-        'ja': '霊媒師'
-      },
-      'numberOfAgents': 1,
-      'roleIsMine': false
+      'numberOfAgents': 1
     }
   ]
 
   expect(getPlayableRoles(roles)).toEqual([
     {
-      '@id': 'https://werewolf.world/resource/0.1/villager',
+      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/role#villager',
       'board': [
         {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
+          '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
+          'agent': {
+            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'name': {
               'en': 'Walter',
               'ja': 'ヴァルター'
             }
           },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'negative'
+          'date': 1,
+          'phase': 'morning',
+          'polarity': 'negative'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/villager.jpg',
+      'image': 'https://werewolf.world/image/0.2/villager.jpg',
+      'isMine': false,
       'name': {
         'en': 'Villager',
         'ja': '村人'
       },
-      'numberOfAgents': 6,
-      'roleIsMine': false
+      'numberOfAgents': 6
     },
     {
-      '@id': 'https://werewolf.world/resource/0.1/seer',
+      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/role#seer',
       'board': [
         {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
+          '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
+          'agent': {
+            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'name': {
               'en': 'Walter',
               'ja': 'ヴァルター'
             }
           },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'positive'
+          'date': 1,
+          'phase': 'morning',
+          'polarity': 'positive'
         }
       ],
-      'image': 'https://werewolf.world/image/0.1/seer.jpg',
+      'image': 'https://werewolf.world/image/0.2/seer.jpg',
+      'isMine': true,
       'name': {
         'en': 'Seer',
         'ja': '占い師'
       },
-      'numberOfAgents': 1,
-      'roleIsMine': true
-    },
-    {
-      '@id': 'https://werewolf.world/resource/0.1/medium',
-      'board': [
-        {
-          'boardAgent': {
-            '@id': 'https://werewolf.world/resource/0.1/Walter',
-            'boardAgentId': 1,
-            'boardAgentImage': 'https://werewolf.world/image/0.1/Walter.jpg',
-            'boardAgentName': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            },
-          },
-          'boardDate': 1,
-          'boardPhase': 'day conversation',
-          'boardPolarity': 'negative'
-        }
-      ],
-      'image': 'https://werewolf.world/image/0.1/medium.jpg',
-      'name': {
-        'en': 'Medium',
-        'ja': '霊媒師'
-      },
-      'numberOfAgents': 1,
-      'roleIsMine': false
+      'numberOfAgents': 1
     }
   ])
+})
+describe('getRoleId', () => {
+  test('Villager', () => {
+    expect(getRoleId('Villager')).toBe('villager')
+  })
+  test('Seer', () => {
+    expect(getRoleId('Seer')).toBe('seer')
+  })
+  test('Medium', () => {
+    expect(getRoleId('Medium')).toBe('medium')
+  })
+  test('Hunter', () => {
+    expect(getRoleId('Hunter')).toBe('hunter')
+  })
+  test('Mason', () => {
+    expect(getRoleId('Mason')).toBe('mason')
+  })
+  test('Madman', () => {
+    expect(getRoleId('Madman')).toBe('madman')
+  })
+  test('Werewolf', () => {
+    expect(getRoleId('Werewolf')).toBe('werewolf')
+  })
+  test('Werehamster', () => {
+    expect(getRoleId('Werehamster')).toBe('werehamster')
+  })
+  test('Unexpected Value', () => {
+    expect(() => getRoleId('Unexpected')).toThrow()
+  })
+})
+describe('getTeam', () => {
+  test('Villager', () => {
+    expect(getTeam('villager')).toBe('villager')
+  })
+  test('Seer', () => {
+    expect(getTeam('seer')).toBe('villager')
+  })
+  test('Medium', () => {
+    expect(getTeam('medium')).toBe('villager')
+  })
+  test('Hunter', () => {
+    expect(getTeam('hunter')).toBe('villager')
+  })
+  test('Mason', () => {
+    expect(getTeam('mason')).toBe('villager')
+  })
+  test('Madman', () => {
+    expect(getTeam('madman')).toBe('werewolf')
+  })
+  test('Werewolf', () => {
+    expect(getTeam('werewolf')).toBe('werewolf')
+  })
+  test('Werehamster', () => {
+    expect(getTeam('werehamster')).toBe('werehamster')
+  })
 })
 test('idGenerater', () => {
   const generateId = idGenerater('id')

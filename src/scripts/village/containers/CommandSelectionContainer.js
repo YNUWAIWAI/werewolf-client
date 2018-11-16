@@ -2,11 +2,11 @@
 import CommandSelection, {type DispatchProps, type StateProps} from '../components/organisms/CommandSelection'
 import type {Phase, RoleId} from 'village'
 import {type SelectOption, selectOption} from '../actions'
-import {DAY_VOTE} from '../constants/Phase'
+import {DAY} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getRoleId} from '../constants/Role'
+import {getRoleId} from '../util'
 
 type Action =
   | SelectOption
@@ -14,7 +14,7 @@ type Action =
 const getDescriptionId = (phase: Phase, role: RoleId, fixed: boolean) => {
   const fixedState = fixed ? 'fixed' : 'unfixed'
 
-  if (phase === DAY_VOTE) {
+  if (phase === DAY) {
     return `CommandSelection.Description.dayVote.${fixedState}`
   }
 
@@ -54,7 +54,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     agents,
     descriptionId: getDescriptionId(
       state.base.phase,
-      getRoleId(state.roles.mine['@id']),
+      getRoleId(state.roles.mine.name.en),
       state.commandSelection.fixed,
     ),
     fixed: state.commandSelection.fixed,

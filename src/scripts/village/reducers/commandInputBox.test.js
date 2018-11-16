@@ -1,10 +1,10 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {firstDayConversation, firstDayConversationSeer2, myMessageOnChat, theirMessageOnChat} from './fakeServer'
+import {firstMorning, firstMorning2, myMessageOnChat, theirMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './commandInputBox'
 
 describe('socket/MESSAGE', () => {
-  test('chatIsMine={true}', () => {
+  test('isMine={true}', () => {
     expect(reducer(
       initialState,
       {
@@ -27,7 +27,7 @@ describe('socket/MESSAGE', () => {
       }
     })
   })
-  test('chatIsMine={false}', () => {
+  test('isMine={false}', () => {
     expect(reducer(
       initialState,
       {
@@ -40,7 +40,7 @@ describe('socket/MESSAGE', () => {
     expect(reducer(
       initialState,
       {
-        payload: firstDayConversation,
+        payload: firstMorning,
         type: ActionTypes.socket.MESSAGE
       }
     )).toEqual({
@@ -63,7 +63,7 @@ describe('socket/MESSAGE', () => {
     expect(reducer(
       initialState,
       {
-        payload: firstDayConversationSeer2,
+        payload: firstMorning2,
         type: ActionTypes.socket.MESSAGE
       }
     )).toEqual({

@@ -30,67 +30,67 @@ describe('<CommandSelection />', () => {
     const agents = [
       {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.2/Walter.jpg',
         name: 'ヴァルター'
       },
       {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Moritz.jpg',
+        image: 'https://werewolf.world/image/0.2/Moritz.jpg',
         name: 'モーリッツ'
       },
       {
         id: 3,
-        image: 'https://werewolf.world/image/0.1/Simson.jpg',
+        image: 'https://werewolf.world/image/0.2/Simson.jpg',
         name: 'ジムゾン'
       },
       {
         id: 4,
-        image: 'https://werewolf.world/image/0.1/Thomas.jpg',
+        image: 'https://werewolf.world/image/0.2/Thomas.jpg',
         name: 'トーマス'
       },
       {
         id: 5,
-        image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
+        image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
         name: 'ニコラス'
       },
       {
         id: 6,
-        image: 'https://werewolf.world/image/0.1/Dieter.jpg',
+        image: 'https://werewolf.world/image/0.2/Dieter.jpg',
         name: 'ディーター'
       },
       {
         id: 7,
-        image: 'https://werewolf.world/image/0.1/Peter.jpg',
+        image: 'https://werewolf.world/image/0.2/Peter.jpg',
         name: 'ペーター'
       },
       {
         id: 8,
-        image: 'https://werewolf.world/image/0.1/Lisa.jpg',
+        image: 'https://werewolf.world/image/0.2/Lisa.jpg',
         name: 'リーザ'
       },
       {
         id: 9,
-        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
+        image: 'https://werewolf.world/image/0.2/Alvin.jpg',
         name: 'アルビン'
       },
       {
         id: 11,
-        image: 'https://werewolf.world/image/0.1/Otto.jpg',
+        image: 'https://werewolf.world/image/0.2/Otto.jpg',
         name: 'オットー'
       },
       {
         id: 12,
-        image: 'https://werewolf.world/image/0.1/Joachim.jpg',
+        image: 'https://werewolf.world/image/0.2/Joachim.jpg',
         name: 'ヨアヒム'
       },
       {
         id: 13,
-        image: 'https://werewolf.world/image/0.1/Pamela.jpg',
+        image: 'https://werewolf.world/image/0.2/Pamela.jpg',
         name: 'パメラ'
       },
       {
         id: 14,
-        image: 'https://werewolf.world/image/0.1/Jacob.jpg',
+        image: 'https://werewolf.world/image/0.2/Jacob.jpg',
         name: 'ヤコブ'
       }
     ]
@@ -117,7 +117,7 @@ describe('<CommandSelection />', () => {
     const agents = [
       {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.2/Walter.jpg',
         name: 'ヴァルター'
       }
     ]

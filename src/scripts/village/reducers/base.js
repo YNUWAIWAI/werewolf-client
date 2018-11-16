@@ -13,9 +13,12 @@ export type State = {
   +phaseTimeLimit: number,
   +serverTimestamp: string,
   +token: string,
-  +totalNumberOfAgents: number,
-  +villageId: number,
-  +villageName: string
+  +village: {
+    +'@id': string,
+    +id: number,
+    +name: string,
+    +totalNumberOfAgents: number
+  }
 }
 type Action =
   | SocketMessage
@@ -29,9 +32,12 @@ export const initialState = {
   phaseTimeLimit: -1,
   serverTimestamp: '',
   token: '',
-  totalNumberOfAgents: 0,
-  villageId: 0,
-  villageName: ''
+  village: {
+    '@id': '',
+    'id': 0,
+    'name': '',
+    'totalNumberOfAgents': 0
+  }
 }
 const base = (state: State = initialState, action: Action): State => {
   if (
@@ -47,9 +53,12 @@ const base = (state: State = initialState, action: Action): State => {
       phaseTimeLimit: action.payload.phaseTimeLimit,
       serverTimestamp: action.payload.serverTimestamp,
       token: action.payload.token,
-      totalNumberOfAgents: action.payload.totalNumberOfAgents,
-      villageId: action.payload.villageId,
-      villageName: action.payload.villageName
+      village: {
+        '@id': action.payload.village['@id'],
+        'id': action.payload.village.id,
+        'name': action.payload.village.name,
+        'totalNumberOfAgents': action.payload.village.totalNumberOfAgents
+      }
     }
   }
 

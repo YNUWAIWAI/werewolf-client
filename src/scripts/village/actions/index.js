@@ -2,7 +2,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {
   BoardState,
-  C2SPayload,
   InputChannel,
   Language,
   NavigationType,
@@ -21,7 +20,7 @@ export const socket = {
     event,
     type: ActionTypes.socket.ERROR
   }),
-  message: (event: MessageEvent): {payload: Payload<*, *, *>, type: 'socket/MESSAGE'} => ({
+  message: (event: MessageEvent): {payload: Payload<*>, type: 'socket/MESSAGE'} => ({
     payload: JSON.parse(event.data),
     type: ActionTypes.socket.MESSAGE
   }),
@@ -29,7 +28,7 @@ export const socket = {
     event,
     type: ActionTypes.socket.OPEN
   }),
-  send: (payload: C2SPayload<*> | ReadyPayload): {payload: C2SPayload<*> | ReadyPayload, type: 'socket/SEND'} => ({
+  send: (payload: Payload<*> | ReadyPayload): {payload: Payload<*> | ReadyPayload, type: 'socket/SEND'} => ({
     payload,
     type: ActionTypes.socket.SEND
   })

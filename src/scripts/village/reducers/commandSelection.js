@@ -1,8 +1,9 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Contexts from '../constants/Contexts'
 import type {ChangePhase, SelectYes, SocketMessage} from '../actions'
-import type {Language, Payload, VoteAgent} from 'village'
+import type {Language, Payload$systemMessage} from 'village'
+import {getMessage, just} from '../util'
+import {SYSTEM_MESSAGE} from '../constants/Message'
 import {VOTING_PHASE} from '../constants/Phase'
 
 export type State = {
@@ -39,12 +40,12 @@ const commandSelection = (state: State = initialState, action: Action): State =>
     }
     case ActionTypes.socket.MESSAGE:
       if (
-        action.payload['@context'].includes(Contexts.AGENT) &&
+        getMessage(action.payload['@id']) === SYSTEM_MESSAGE &&
         VOTING_PHASE.includes(action.payload.phase)
       ) {
-        const payload: Payload<VoteAgent, *, *> = action.payload
-        const agents = payload.agent
-          .filter(a => a.agentIsMine)
+        const payload: Payload$systemMessage = action.payload
+        const agents = just(payload.agent)
+          .filter(a => just(a.isAChoice))
           .map(a => ({
             id: a.id,
             image: a.image,
