@@ -1,8 +1,8 @@
 // @flow
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
 import type {DispatchAPI, Middleware} from 'redux'
+import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
 import {getRoleId, getVotedAgent, just} from '../util'
 import type {Action} from '.'
 import type {ReducerState} from '../reducers'
