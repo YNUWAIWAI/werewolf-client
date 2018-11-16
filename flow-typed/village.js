@@ -13,6 +13,7 @@ declare module 'village' {
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
   declare type Team = 'villager' | 'werehamster' | 'werewolf'
   declare type Gender = 'female' | 'male'
+  declare type Context$Avatar = 'https://werewolf.world/context/0.2/avatar.jsonld'
   declare type Context$Base = 'https://werewolf.world/context/0.2/base.jsonld'
   declare type Context$Error = 'https://werewolf.world/context/0.2/error.jsonld'
   declare type Context$Agent = 'https://werewolf.world/context/0.2/agent.jsonld'
