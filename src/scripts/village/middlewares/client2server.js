@@ -116,6 +116,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         },
         'prediction': action.nextState,
         'role': {
+          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
           '@id': myRole['@id'],
           'image': myRole.image,
           'name': myRole.name

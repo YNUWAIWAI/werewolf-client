@@ -13,16 +13,25 @@ declare module 'village' {
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
   declare type Team = 'villager' | 'werehamster' | 'werewolf'
   declare type Gender = 'female' | 'male'
+  declare type Context$Base = 'https://werewolf.world/context/0.2/base.jsonld'
+  declare type Context$Error = 'https://werewolf.world/context/0.2/error.jsonld'
+  declare type Context$Agent = 'https://werewolf.world/context/0.2/agent.jsonld'
+  declare type Context$Role = 'https://werewolf.world/context/0.2/role.jsonld'
+  declare type Context$Board = 'https://werewolf.world/context/0.2/board.jsonld'
+  declare type Context$Chat = 'https://werewolf.world/context/0.2/chat.jsonld'
+  declare type Context$Vote = 'https://werewolf.world/context/0.2/vote.jsonld'
+  declare type Context$VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
+  declare type Context$Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld'
   declare type Context =
-    | 'https://werewolf.world/context/0.2/base.jsonld'
-    | 'https://werewolf.world/context/0.2/error.jsonld'
-    | 'https://werewolf.world/context/0.2/agent.jsonld'
-    | 'https://werewolf.world/context/0.2/role.jsonld'
-    | 'https://werewolf.world/context/0.2/board.jsonld'
-    | 'https://werewolf.world/context/0.2/chat.jsonld'
-    | 'https://werewolf.world/context/0.2/vote.jsonld'
-    | 'https://werewolf.world/context/0.2/votingResult.jsonld'
-    | 'https://werewolf.world/context/0.2/scroll.jsonld'
+    | Context$Base
+    | Context$Error
+    | Context$Agent
+    | Context$Role
+    | Context$Board
+    | Context$Chat
+    | Context$Vote
+    | Context$VotingResult
+    | Context$Scroll
   declare type Message =
     | 'boardMessage'
     | 'errorMessage'
@@ -186,7 +195,7 @@ declare module 'village' {
       'systemMessage'
   */
   declare type Role = {
-    '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+    '@context': Context$Role,
     '@id': string,
     name: { [Language]: string },
     image: string,
