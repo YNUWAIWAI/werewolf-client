@@ -186,6 +186,7 @@ declare module 'village' {
       'systemMessage'
   */
   declare type Role = {
+    '@context': 'https://werewolf.world/context/0.2/role.jsonld',
     '@id': string,
     name: { [Language]: string },
     image: string,
@@ -300,6 +301,12 @@ declare module 'village' {
       token: $NonMaybeType<$PropertyType<Avatar, 'token'>>,
       name: $NonMaybeType<$PropertyType<Avatar, 'name'>>,
       image: $NonMaybeType<$PropertyType<Avatar, 'image'>>
+    },
+    role?: {
+      '@context': $NonMaybeType<$PropertyType<Role, '@context'>>,
+      '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
+      name: $NonMaybeType<$PropertyType<Role, 'name'>>,
+      image: $NonMaybeType<$PropertyType<Role, 'image'>>
     }
   }
   declare type Role$systemMessage = {
