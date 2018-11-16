@@ -20,6 +20,17 @@ export const trimBaseUri = (id: string): string => {
   return ''
 }
 
+export const strToRoleId = (str: string): RoleId => {
+  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster', 'master']
+  const maybe = roleId.find(v => v === str.toLowerCase())
+
+  if (!maybe) {
+    throw new Error(`Unexpected RoleId: ${str}`)
+  }
+
+  return maybe
+}
+
 export const getMyAgent = <T: {name: {en: string}, isMine: boolean}>(agents: T[]): T => {
   const maybe = agents.find(a => a.isMine)
 
@@ -58,7 +69,17 @@ export const getAgent = <T: {id: number, name: {en: string}}>(agents: T[], agent
   const maybe = getPlayableAgents(agents).find(a => a.id === agentId)
 
   if (!maybe) {
-    throw Error('Not found voted agent.')
+    throw Error('Not found agent.')
+  }
+
+  return maybe
+}
+
+export const getRole = <T: {name: {en: string}}>(roles: T[], roleId: RoleId): T => {
+  const maybe = getPlayableRoles(roles).find(r => strToRoleId(r.name.en) === roleId)
+
+  if (!maybe) {
+    throw Error('Not found role.')
   }
 
   return maybe
@@ -90,17 +111,6 @@ export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s
 export const strToMessage = (str: string): Message => {
   const roleId: Message[] = ['boardMessage', 'errorMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
   const maybe = roleId.find(v => v === trimBaseUri(str))
-
-  if (!maybe) {
-    throw new Error(`Unexpected RoleId: ${str}`)
-  }
-
-  return maybe
-}
-
-export const strToRoleId = (str: string): RoleId => {
-  const roleId: RoleId[] = ['villager', 'seer', 'medium', 'hunter', 'mason', 'madman', 'werewolf', 'werehamster', 'master']
-  const maybe = roleId.find(v => v === str.toLowerCase())
 
   if (!maybe) {
     throw new Error(`Unexpected RoleId: ${str}`)
