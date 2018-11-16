@@ -12,7 +12,7 @@ import {socket} from '../actions'
 const getTimestamp = () => new Date().toISOString()
 const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
   switch (action.type) {
-    case ActionTypes.CHANGE_PREDICTION_BOARD: {
+    case ActionTypes.POST_CHAT: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
@@ -38,7 +38,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'serverTimestamp': state.base.serverTimestamp,
         'clientTimestamp': getTimestamp(),
         'directionality': 'client to server',
-        'intensionalDisclosureRange': 'private',
+        'intensionalDisclosureRange': channel,
         'extensionalDisclosureRange': [],
         'myAgent': {
           '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -73,7 +73,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case ActionTypes.POST_CHAT: {
+    case ActionTypes.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
@@ -98,7 +98,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'serverTimestamp': state.base.serverTimestamp,
         'clientTimestamp': getTimestamp(),
         'directionality': 'client to server',
-        'intensionalDisclosureRange': channel,
+        'intensionalDisclosureRange': 'private',
         'extensionalDisclosureRange': [],
         'myAgent': {
           '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
