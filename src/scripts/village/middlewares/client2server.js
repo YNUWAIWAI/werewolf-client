@@ -3,7 +3,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
-import {getAgent, just, strToRoleId} from '../util'
+import {getAgent, getRole, just, strToRoleId} from '../util'
 import type {Action} from '.'
 import type {ReducerState} from '../reducers'
 import {getChannelFromInputChennel} from '../constants/Channels'
@@ -17,7 +17,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
       const boardAgent = getAgent(state.agents.all, action.playerId)
-      const boardRole = state.roles.all
+      const boardRole = getRole(state.roles.all, action.roleId)
       const payload: Payload$boardMessage = {
         '@context': [
           'https://werewolf.world/context/0.2/base.jsonld',
@@ -56,17 +56,17 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         },
         'agent': {
           '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-          '@id': myAgent['@id'],
-          'id': myAgent.id,
-          'image': myAgent.image,
-          'name': myAgent.name
+          '@id': boardAgent['@id'],
+          'id': boardAgent.id,
+          'image': boardAgent.image,
+          'name': boardAgent.name
         },
         'prediction': action.nextState,
         'role': {
           '@context': 'https://werewolf.world/context/0.2/role.jsonld',
-          '@id': myRole['@id'],
-          'image': myRole.image,
-          'name': myRole.name
+          '@id': boardRole['@id'],
+          'image': boardRole.image,
+          'name': boardRole.name
         }
       }
 
