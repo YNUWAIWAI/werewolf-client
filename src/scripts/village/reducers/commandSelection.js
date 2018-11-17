@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {ChangePhase, SelectYes, SocketMessage} from '../actions'
 import type {Language, Payload$systemMessage} from 'village'
-import {strToMessage, just} from '../util'
+import {just, strToMessage} from '../util'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 import {VOTING_PHASE} from '../constants/Phase'
 
