@@ -57,7 +57,7 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
         table[agentId][roleId] = {
           date: b.date,
           fixed: true,
-          state: b.polarity === 'positive' ? 'O' : 'fill'
+          state: b.polarity === 'positive' ? 'O' : 'fill' // polarity: 'positive' | 'negative'
         }
       })
     }
