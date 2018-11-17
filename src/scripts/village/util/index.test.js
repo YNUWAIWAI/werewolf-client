@@ -126,52 +126,6 @@ describe('getAgent', () => {
     expect(() => getAgent(agents, 1)).toThrow()
   })
 })
-describe('strToMessage', () => {
-  test('boardMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/boardMessage')).toBe('boardMessage')
-  })
-  test('errorMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/errorMessage')).toBe('errorMessage')
-  })
-  test('playerMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
-  })
-  test('scrollMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')
-  })
-  test('systemMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/systemMessage')).toBe('systemMessage')
-  })
-  test('voteMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/voteMessage')).toBe('voteMessage')
-  })
-  test('throw Exception', () => {
-    expect(() => strToMessage('throw Exception')).toThrow()
-  })
-})
-describe('strToAgentStatus', () => {
-  test('alive', () => {
-    expect(strToAgentStatus('alive')).toBe('alive')
-  })
-  test('dead', () => {
-    expect(strToAgentStatus('dead')).toBe('dead')
-  })
-  test('death by execution', () => {
-    expect(strToAgentStatus('death by execution')).toBe('death by execution')
-  })
-  test('death by attack', () => {
-    expect(strToAgentStatus('death by attack')).toBe('death by attack')
-  })
-  test('death by fear', () => {
-    expect(strToAgentStatus('death by fear')).toBe('death by fear')
-  })
-  test('unnatural death', () => {
-    expect(strToAgentStatus('unnatural death')).toBe('unnatural death')
-  })
-  test('throw Exception', () => {
-    expect(() => strToAgentStatus('throw Exception')).toThrow()
-  })
-})
 describe('getMyAgent', () => {
   test('nominal', () => {
     const agents = [
@@ -872,6 +826,52 @@ test('getPlayableRoles', () => {
       'numberOfAgents': 1
     }
   ])
+})
+describe('strToAgentStatus', () => {
+  test('alive', () => {
+    expect(strToAgentStatus('alive')).toBe('alive')
+  })
+  test('dead', () => {
+    expect(strToAgentStatus('dead')).toBe('dead')
+  })
+  test('death by execution', () => {
+    expect(strToAgentStatus('death by execution')).toBe('death by execution')
+  })
+  test('death by attack', () => {
+    expect(strToAgentStatus('death by attack')).toBe('death by attack')
+  })
+  test('death by fear', () => {
+    expect(strToAgentStatus('death by fear')).toBe('death by fear')
+  })
+  test('unnatural death', () => {
+    expect(strToAgentStatus('unnatural death')).toBe('unnatural death')
+  })
+  test('throw Exception', () => {
+    expect(() => strToAgentStatus('throw Exception')).toThrow()
+  })
+})
+describe('strToMessage', () => {
+  test('boardMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/boardMessage')).toBe('boardMessage')
+  })
+  test('errorMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/errorMessage')).toBe('errorMessage')
+  })
+  test('playerMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
+  })
+  test('scrollMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')
+  })
+  test('systemMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/systemMessage')).toBe('systemMessage')
+  })
+  test('voteMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/voteMessage')).toBe('voteMessage')
+  })
+  test('throw Exception', () => {
+    expect(() => strToMessage('throw Exception')).toThrow()
+  })
 })
 describe('strToRoleId', () => {
   test('Villager', () => {

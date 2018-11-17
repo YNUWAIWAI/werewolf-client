@@ -7,6 +7,7 @@ import {
   getTeam,
   idGenerater,
   just,
+  strToAgentStatus,
   strToMessage,
   strToRoleId
 } from '../util'
@@ -103,7 +104,7 @@ const result = (state: State = initialState, action: Action): State => {
               result: just(a.result),
               roleImage: just(a.role).image,
               roleName: just(a.role).name,
-              status: a.status
+              status: strToAgentStatus(a.status)
             }
             if (a.result === 'win') {
               winners.push(agentId)

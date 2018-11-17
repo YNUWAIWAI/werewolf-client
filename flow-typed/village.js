@@ -64,7 +64,7 @@ declare module 'village' {
     gender?: Gender,
     image: string,
     id: number,
-    status?: AgentStatus,
+    status?: string, // AgentStatus
     update?: {
       date: $PropertyType<Time, 'date'>,
       phase: $PropertyType<Time, 'phase'>

@@ -3,7 +3,13 @@ import * as ActionTypes from '../constants/ActionTypes'
 import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, Language, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
-import {getPlayableRoles, just, strToMessage, strToRoleId} from '../util'
+import {
+  getPlayableRoles,
+  just,
+  strToAgentStatus,
+  strToMessage,
+  strToRoleId
+} from '../util'
 import {MORNING} from '../constants/Phase'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 
@@ -132,7 +138,7 @@ const prediction = (state: State = initialState, action: Action): State => {
           id: agent.id,
           image: agent.image,
           name: agent.name,
-          status: agent.status
+          status: strToAgentStatus(agent.status)
         }))
 
         return {

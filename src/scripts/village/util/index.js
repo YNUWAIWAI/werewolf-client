@@ -109,23 +109,23 @@ export const just = <T>(value: ?T): T => {
 
 export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(\w)/g, (_, p1) => p1.toUpperCase())
 
-export const strToMessage = (str: string): Message => {
-  const message: Message[] = ['boardMessage', 'errorMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
-  const maybe = message.find(v => v === trimBaseUri(str))
-
-  if (!maybe) {
-    throw new Error(`Unexpected Message: ${str}`)
-  }
-
-  return maybe
-}
-
 export const strToAgentStatus = (str: string): AgentStatus => {
   const agentStatus: AgentStatus[] = ['alive', 'dead', 'death by execution', 'death by attack', 'death by fear', 'unnatural death']
   const maybe = agentStatus.find(v => v === str)
 
   if (!maybe) {
     throw new Error(`Unexpected AgentStatus: ${str}`)
+  }
+
+  return maybe
+}
+
+export const strToMessage = (str: string): Message => {
+  const message: Message[] = ['boardMessage', 'errorMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
+  const maybe = message.find(v => v === trimBaseUri(str))
+
+  if (!maybe) {
+    throw new Error(`Unexpected Message: ${str}`)
   }
 
   return maybe
