@@ -49,7 +49,8 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
 
     if (
       role.isMine &&
-      PREDICTION.includes(roleId)
+      PREDICTION.includes(roleId) &&
+      role.board
     ) {
       role.board.forEach(b => {
         const agentId = String(b.agent.id)
