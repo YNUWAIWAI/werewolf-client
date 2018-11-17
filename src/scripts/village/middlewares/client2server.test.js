@@ -20,7 +20,6 @@ import {initialState as result} from '../reducers/result'
 import {initialState as roles} from '../reducers/roles'
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
-const ajv = new Ajv()
 
 describe('CHANGE_PREDICTION_BOARD', () => {
   const dispatch = jest.fn()
@@ -517,7 +516,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     roleId: VILLAGER,
     type: ActionTypes.CHANGE_PREDICTION_BOARD
   }
-  const changePredictionBoardPayload = {
+  const payload = {
     '@context': [
       'https://werewolf.world/context/0.2/base.jsonld',
       'https://werewolf.world/context/0.2/board.jsonld'
@@ -582,6 +581,8 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   }
 
   test('validate the JSON', async () => {
+    const ajv = new Ajv()
+
     expect.hasAssertions()
     await Promise.all([
       fetch(`${BASE_URI}/boardMessage.json`)
@@ -599,7 +600,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         const [schema, ... rest] = schemas
         const validate = ajv
           .addSchema(rest)
-          .validate(schema, changePredictionBoardPayload)
+          .validate(schema, payload)
 
         expect(validate).toBe(true)
       })
@@ -608,9 +609,173 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: changePredictionBoardPayload,
+      payload,
       type: ActionTypes.socket.SEND
     })
   })
+})
+describe('POST_CHAT', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    agents: {
+      ... agents,
+      all: [],
+      mine: {
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'status': 'alive'
+      }
+    },
+    base: {
+      ... base,
+      clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+      date: 1,
+      intensionalDisclosureRange: 'private',
+      phase: 'morning',
+      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+      phaseTimeLimit: 600,
+      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+      token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      village: {
+        '@id': 'https://licos.online/state/0.2/village',
+        'id': 3,
+        'name': '横国の森の奥にある時代に取り残された小さな村',
+        'totalNumberOfAgents': 15
+      }
+    },
+    chat,
+    commandInputBox,
+    commandSelection,
+    hideButton,
+    language,
+    modal,
+    obfucator,
+    prediction,
+    result,
+    roles: {
+      ... roles,
+      all: [],
+      mine: {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'isMine': true,
+        'name': {
+          'en': 'Seer',
+          'ja': '占い師'
+        },
+        'numberOfAgents': 1
+      }
+    }
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    kind: 'public',
+    text: 'text',
+    type: ActionTypes.POST_CHAT
+  }
+  const payload = {
+    '@context': [
+      'https://werewolf.world/context/0.2/base.jsonld',
+      'https://werewolf.world/context/0.2/chat.jsonld'
+    ],
+    '@id': 'https://werewolf.world/resource/0.2/playerMessage',
+    'village': {
+      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
+    },
+    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'phase': 'morning',
+    'date': 1,
+    'phaseTimeLimit': 600,
+    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'clientTimestamp': expect.any(String),
+    'directionality': 'client to server',
+    'intensionalDisclosureRange': 'public',
+    'extensionalDisclosureRange': [],
+    'myAgent': {
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      'id': 1,
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'name': {
+        'en': 'Walter',
+        'ja': 'ヴァルター'
+      },
+      'role': {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'name': {
+          'en': 'Seer',
+          'ja': '占い師'
+        }
+      }
+    },
+    'agent': {
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      'id': 1,
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'name': {
+        'en': 'Walter',
+        'ja': 'ヴァルター'
+      },
+    },
+    'characterLimit': 140,
+    'isMine': true,
+    'isOver': false,
+    'text': {
+      '@language': 'ja',
+      '@value': 'text'
+    }
+  }
 
+  test('validate the JSON', async () => {
+    const ajv = new Ajv()
+
+    expect.hasAssertions()
+    await Promise.all([
+      fetch(`${BASE_URI}/playerMessage.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/agent.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/base.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/chat.json`)
+        .then(res => res.json())
+    ])
+      .then(schemas => {
+        const [schema, ... rest] = schemas
+        const validate = ajv
+          .addSchema(rest)
+          .validate(schema, payload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.socket.SEND
+    })
+  })
 })
