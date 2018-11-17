@@ -10,6 +10,7 @@ import {
   idGenerater,
   just,
   spaceSeparatedToCamelCase,
+  strToAgentStatus,
   strToMessage,
   strToRoleId,
   trimBaseUri,
@@ -146,6 +147,29 @@ describe('strToMessage', () => {
   })
   test('throw Exception', () => {
     expect(() => strToMessage('throw Exception')).toThrow()
+  })
+})
+describe('strToAgentStatus', () => {
+  test('alive', () => {
+    expect(strToAgentStatus('alive')).toBe('alive')
+  })
+  test('dead', () => {
+    expect(strToAgentStatus('dead')).toBe('dead')
+  })
+  test('death by execution', () => {
+    expect(strToAgentStatus('death by execution')).toBe('death by execution')
+  })
+  test('death by attack', () => {
+    expect(strToAgentStatus('death by attack')).toBe('death by attack')
+  })
+  test('death by fear', () => {
+    expect(strToAgentStatus('death by fear')).toBe('death by fear')
+  })
+  test('unnatural death', () => {
+    expect(strToAgentStatus('unnatural death')).toBe('unnatural death')
+  })
+  test('throw Exception', () => {
+    expect(() => strToAgentStatus('throw Exception')).toThrow()
   })
 })
 describe('getMyAgent', () => {
