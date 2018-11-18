@@ -2,232 +2,313 @@ export default {
   agents: {
     all: [
       {
-        '@id': 'https://werewolf.world/resource/0.1/Walter',
-        'agentIsMine': true,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#0',
+        'isMine': false,
+        'name': {
+          'en': 'Gert',
+          'ja': 'ゲルト'
+        },
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+        'id': 0,
+        'status': 'alive',
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#0/update',
+          'phase': 'morning',
+          'date': 1
+        },
+        'isAChoice': false
+      },
+      {
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        'isMine': true,
         'name': {
           'en': 'Walter',
           'ja': 'ヴァルター'
         },
-        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
         'id': 1,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Moritz',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+        'isMine': false,
         'name': {
           'en': 'Moritz',
           'ja': 'モーリッツ'
         },
-        'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
+        'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
         'id': 2,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#2/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Simson',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+        'isMine': false,
         'name': {
           'en': 'Simson',
           'ja': 'ジムゾン'
         },
-        'image': 'https://werewolf.world/image/0.1/Simson.jpg',
+        'image': 'https://werewolf.world/image/0.2/Simson.jpg',
         'id': 3,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#3/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Thomas',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+        'isMine': false,
         'name': {
           'en': 'Thomas',
           'ja': 'トーマス'
         },
-        'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
+        'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
         'id': 4,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#4/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Nicholas',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+        'isMine': false,
         'name': {
           'en': 'Nicholas',
           'ja': 'ニコラス'
         },
-        'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
+        'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
         'id': 5,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#5/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Dieter',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+        'isMine': false,
         'name': {
           'en': 'Dieter',
           'ja': 'ディーター'
         },
-        'image': 'https://werewolf.world/image/0.1/Dieter.jpg',
+        'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
         'id': 6,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#6/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Peter',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+        'isMine': false,
         'name': {
           'en': 'Peter',
           'ja': 'ペーター'
         },
-        'image': 'https://werewolf.world/image/0.1/Peter.jpg',
+        'image': 'https://werewolf.world/image/0.2/Peter.jpg',
         'id': 7,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#7/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Lisa',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+        'isMine': false,
         'name': {
           'en': 'Lisa',
           'ja': 'リーザ'
         },
-        'image': 'https://werewolf.world/image/0.1/Lisa.jpg',
+        'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
         'id': 8,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#8/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Alvin',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+        'isMine': false,
         'name': {
           'en': 'Alvin',
           'ja': 'アルビン'
         },
-        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
         'id': 9,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#9/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Catalina',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+        'isMine': false,
         'name': {
           'en': 'Catalina',
           'ja': 'カタリナ'
         },
-        'image': 'https://werewolf.world/image/0.1/Catalina.jpg',
+        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
         'id': 10,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#10/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Otto',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+        'isMine': false,
         'name': {
           'en': 'Otto',
           'ja': 'オットー'
         },
-        'image': 'https://werewolf.world/image/0.1/Otto.jpg',
+        'image': 'https://werewolf.world/image/0.2/Otto.jpg',
         'id': 11,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#11/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Joachim',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+        'isMine': false,
         'name': {
           'en': 'Joachim',
           'ja': 'ヨアヒム'
         },
-        'image': 'https://werewolf.world/image/0.1/Joachim.jpg',
+        'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
         'id': 12,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#12/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Pamela',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+        'isMine': false,
         'name': {
           'en': 'Pamela',
           'ja': 'パメラ'
         },
-        'image': 'https://werewolf.world/image/0.1/Pamela.jpg',
+        'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
         'id': 13,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#13/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       },
       {
-        '@id': 'https://werewolf.world/resource/0.1/Jacob',
-        'agentIsMine': false,
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+        'isMine': false,
         'name': {
           'en': 'Jacob',
           'ja': 'ヤコブ'
         },
-        'image': 'https://werewolf.world/image/0.1/Jacob.jpg',
+        'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
         'id': 14,
         'status': 'alive',
-        'statusUpdatePhase': 'day conversation',
-        'statusUpdateDate': 1,
+        'update': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#14/update',
+          'phase': 'morning',
+          'date': 1
+        },
         'isAChoice': false
       }
     ],
     mine: {
-      '@id': 'https://werewolf.world/resource/0.1/Walter',
-      'agentIsMine': true,
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      'isMine': true,
       'name': {
         'en': 'Walter',
         'ja': 'ヴァルター'
       },
-      'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'id': 1,
       'status': 'alive',
-      'statusUpdatePhase': 'day conversation',
-      'statusUpdateDate': 1,
+      'update': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+        'phase': 'morning',
+        'date': 1
+      },
       'isAChoice': false
     }
   },
   base: {
-    clientTimestamp: '',
+    clientTimestamp: '2006-10-07T12:06:56.568+09:00',
     date: 1,
     intensionalDisclosureRange: 'private',
-    phase: 'night',
-    phaseStartTime: '2018-06-01T01:13:26.203Z',
-    phaseTimeLimit: 50,
-    serverTimestamp: '2018-06-01T01:13:26.209Z',
-    token: '9014d3ac-1327-4de3-a47a-94a0a11a2922',
-    totalNumberOfAgents: 2,
-    villageId: 1,
-    villageName: '横国の森の奥にある時代に取り残された小さな村'
+    phase: 'morning',
+    phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+    phaseTimeLimit: 600,
+    serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+    token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    village: {
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
+    }
   },
   chat: {
-    allIds: [ 'chat1', 'chat0' ],
+    allIds: ['chat4', 'chat3', 'chat2', 'chat1', 'chat0'],
     byId: {
       'chat0': {
         'id': 1,
@@ -240,7 +321,7 @@ export default {
         },
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:07:56.568+09:00',
         'text': 'それで、あなたは人狼が誰だと思うの？',
         'type': 'item'
       },
@@ -255,8 +336,53 @@ export default {
         },
         'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:08:56.568+09:00',
         'text': '>>1 私はパメラが人狼だと思う。',
+        'type': 'item'
+      },
+      'chat2': {
+        'id': 3,
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'intensionalDisclosureRange': 'public',
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'phaseTimeLimit': 600,
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:09:56.568+09:00',
+        'text': 'それはどうかな〜？',
+        'type': 'item'
+      },
+      'chat3': {
+        'id': 4,
+        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'intensionalDisclosureRange': 'public',
+        'isMine': false,
+        'name': {
+          'en': 'Alvin',
+          'ja': 'アルビン'
+        },
+        'phaseTimeLimit': 600,
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:10:56.568+09:00',
+        'text': 'えー',
+        'type': 'item'
+      },
+      'chat4': {
+        'id': 5,
+        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'intensionalDisclosureRange': 'public',
+        'isMine': false,
+        'name': {
+          'en': 'Alvin',
+          'ja': 'アルビン'
+        },
+        'phaseTimeLimit': 600,
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:11:56.568+09:00',
+        'text': 'じゃあ，わかんないや',
         'type': 'item'
       }
     }
@@ -277,112 +403,7 @@ export default {
     }
   },
   commandSelection: {
-    agents: [
-      {
-        id: 1,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        name: {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        }
-      },
-      {
-        id: 2,
-        image: 'https://werewolf.world/image/0.1/Moritz.jpg',
-        name: {
-          'en': 'Moritz',
-          'ja': 'モーリッツ'
-        }
-      },
-      {
-        id: 3,
-        image: 'https://werewolf.world/image/0.1/Simson.jpg',
-        name: {
-          'en': 'Simson',
-          'ja': 'ジムゾン'
-        }
-      },
-      {
-        id: 4,
-        image: 'https://werewolf.world/image/0.1/Thomas.jpg',
-        name: {
-          'en': 'Thomas',
-          'ja': 'トーマス'
-        }
-      },
-      {
-        id: 5,
-        image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
-        name: {
-          'en': 'Nicholas',
-          'ja': 'ニコラス'
-        }
-      },
-      {
-        id: 6,
-        image: 'https://werewolf.world/image/0.1/Dieter.jpg',
-        name: {
-          'en': 'Dieter',
-          'ja': 'ディーター'
-        }
-      },
-      {
-        id: 7,
-        image: 'https://werewolf.world/image/0.1/Peter.jpg',
-        name: {
-          'en': 'Peter',
-          'ja': 'ペーター'
-        }
-      },
-      {
-        id: 8,
-        image: 'https://werewolf.world/image/0.1/Lisa.jpg',
-        name: {
-          'en': 'Lisa',
-          'ja': 'リーザ'
-        }
-      },
-      {
-        id: 9,
-        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
-        name: {
-          'en': 'Alvin',
-          'ja': 'アルビン'
-        }
-      },
-      {
-        id: 11,
-        image: 'https://werewolf.world/image/0.1/Otto.jpg',
-        name: {
-          'en': 'Otto',
-          'ja': 'オットー'
-        }
-      },
-      {
-        id: 12,
-        image: 'https://werewolf.world/image/0.1/Joachim.jpg',
-        name: {
-          'en': 'Joachim',
-          'ja': 'ヨアヒム'
-        }
-      },
-      {
-        id: 13,
-        image: 'https://werewolf.world/image/0.1/Pamela.jpg',
-        name: {
-          'en': 'Pamela',
-          'ja': 'パメラ'
-        }
-      },
-      {
-        id: 14,
-        image: 'https://werewolf.world/image/0.1/Jacob.jpg',
-        name: {
-          'en': 'Jacob',
-          'ja': 'ヤコブ'
-        }
-      }
-    ],
+    agents: [],
     fixed: false
   },
   hideButton: {
@@ -486,7 +507,7 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.1/Otto.jpg',
         'id': 11,
-        'status': 'alive'
+        'status': 'dead'
       },
       {
         'name': {
@@ -1145,15 +1166,11 @@ export default {
     losers: [],
     me: null,
     summary: {
-      isPlayer: true,
-      result: '',
-      role: ''
+      kind: 'audience',
+      loserTeam: new Set(),
+      winnerTeam: 'villager'
     },
     visible: false,
-    werehamster: {
-      exists: false,
-      isWin: false
-    },
     winners: []
   },
   roles: {

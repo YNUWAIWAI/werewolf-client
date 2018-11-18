@@ -214,17 +214,20 @@ export default {
     }
   },
   base: {
-    clientTimestamp: '',
+    clientTimestamp: '2006-10-07T12:06:56.568+09:00',
     date: 1,
     intensionalDisclosureRange: 'private',
-    phase: 'day vote',
-    phaseStartTime: '2018-06-01T01:13:26.203Z',
+    phase: 'morning',
+    phaseStartTime: '2006-10-07T12:06:56.568+09:00',
     phaseTimeLimit: 50,
-    serverTimestamp: '2018-06-01T01:13:26.209Z',
-    token: '9014d3ac-1327-4de3-a47a-94a0a11a2922',
-    totalNumberOfAgents: 2,
-    villageId: 1,
-    villageName: '横国の森の奥にある時代に取り残された小さな村'
+    serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+    token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    village: {
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 2
+    }
   },
   chat: {
     allIds: [ 'chat1', 'chat0' ],
@@ -1145,15 +1148,11 @@ export default {
     losers: [],
     me: null,
     summary: {
-      isPlayer: true,
-      result: '',
-      role: ''
+      kind: 'audience',
+      loserTeam: new Set(),
+      winnerTeam: 'villager'
     },
     visible: false,
-    werehamster: {
-      exists: false,
-      isWin: false
-    },
     winners: []
   },
   roles: {
