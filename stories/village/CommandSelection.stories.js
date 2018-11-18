@@ -95,7 +95,7 @@ storiesOf('village|Command/CommandSelection', module)
     const story =
       <CommandSelection
         agents={agents}
-        descriptionId="CommandSelection.Description.dayVote.unfixed"
+        descriptionId="CommandSelection.Description.day.unfixed"
         fixed={false}
         handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
         timer={timer}

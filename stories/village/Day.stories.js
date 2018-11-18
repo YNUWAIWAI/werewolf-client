@@ -20,7 +20,7 @@ storiesOf('village|Info/Day', module)
   )
   .add('default', () => {
     const date = number('date', 0)
-    const phase = select('phase', ['day conversation', 'day vote', 'night', 'post mortem', 'results'], 'day conversation')
+    const phase = select('phase', ['morning', 'day', 'night', 'post mortem', 'result'], 'day')
     const timer = {
       limit: number('limit', 10),
       phase
