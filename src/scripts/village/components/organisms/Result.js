@@ -10,12 +10,12 @@ export type StateProps = {
       +agentName: string,
       +agentImage: string,
       +agentId: number,
+      +avatarImage: string,
+      +avatarName: string,
       +result: TResult,
       +roleImage: string,
       +roleName: string,
-      +status: AgentStatus,
-      +userAvatar: string,
-      +userName: string
+      +status: AgentStatus
     }
   },
   +losers: string[],
@@ -64,16 +64,16 @@ const getRow = agent => [
     type="roleImage"
   />,
   <ResultCell
-    image={agent.userAvatar}
-    key={`${agent.agentId}userAvatar`}
+    image={agent.avatarImage}
+    key={`${agent.agentId}avatarImage`}
     status={agent.status}
-    type="userAvatar"
+    type="avatarImage"
   />,
   <ResultCell
-    key={`${agent.agentId}userName`}
+    key={`${agent.agentId}avatarName`}
     status={agent.status}
-    text={agent.userName}
-    type="userName"
+    text={agent.avatarName}
+    type="avatarName"
   />
 ]
 

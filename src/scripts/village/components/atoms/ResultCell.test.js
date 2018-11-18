@@ -93,18 +93,18 @@ describe('<ResultCell />', () => {
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
   })
-  describe('type="userAvatar"', () => {
+  describe('type="avatarImage"', () => {
     test('status="alive"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
           status="alive"
-          type="userAvatar"
+          type="avatarImage"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userAvatar')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
@@ -113,12 +113,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           status="dead"
-          type="userAvatar"
+          type="avatarImage"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userAvatar')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
@@ -127,12 +127,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           status="death by execution"
-          type="userAvatar"
+          type="avatarImage"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userAvatar')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
@@ -141,12 +141,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           status="death by attack"
-          type="userAvatar"
+          type="avatarImage"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userAvatar')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
@@ -155,12 +155,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           status="death by fear"
-          type="userAvatar"
+          type="avatarImage"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userAvatar')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
@@ -169,12 +169,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           status="unnatural death"
-          type="userAvatar"
+          type="avatarImage"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userAvatar')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
@@ -467,18 +467,18 @@ describe('<ResultCell />', () => {
       expect(wrapper.text()).toBe('不審死')
     })
   })
-  describe('type="userName"', () => {
+  describe('type="avatarName"', () => {
     test('status="alive"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           status="alive"
           text="text"
-          type="userName"
+          type="avatarName"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userName')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
       expect(wrapper.text()).toBe('text')
     })
@@ -487,12 +487,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           status="dead"
           text="text"
-          type="userName"
+          type="avatarName"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userName')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
@@ -501,12 +501,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           status="death by execution"
           text="text"
-          type="userName"
+          type="avatarName"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userName')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
@@ -515,12 +515,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           status="death by attack"
           text="text"
-          type="userName"
+          type="avatarName"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userName')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
@@ -529,12 +529,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           status="death by fear"
           text="text"
-          type="userName"
+          type="avatarName"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userName')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
@@ -543,12 +543,12 @@ describe('<ResultCell />', () => {
         <ResultCell
           status="unnatural death"
           text="text"
-          type="userName"
+          type="avatarName"
         />
       )
 
       expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--userName')).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })

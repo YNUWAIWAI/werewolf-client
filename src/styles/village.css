@@ -708,7 +708,7 @@ body {
       padding-top: 2rem;
     }
 
-    &--userAvatar {
+    &--avatarImage {
       align-items: center;
       border-left: 4px double black;
       display: inline-flex;
