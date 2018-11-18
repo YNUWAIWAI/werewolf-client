@@ -2,7 +2,15 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {AgentStatus, Language, Payload$systemMessage, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
-import {getMessage, getPlayableAgents, getRoleId, getTeam, idGenerater, just} from '../util'
+import {
+  getPlayableAgents,
+  getTeam,
+  idGenerater,
+  just,
+  strToAgentStatus,
+  strToMessage,
+  strToRoleId
+} from '../util'
 import {RESULT} from '../constants/Phase'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 
@@ -73,7 +81,7 @@ const result = (state: State = initialState, action: Action): State => {
       }
     case ActionTypes.socket.MESSAGE:
       if (
-        getMessage(action.payload['@id']) === SYSTEM_MESSAGE &&
+        strToMessage(action.payload['@id']) === SYSTEM_MESSAGE &&
         action.payload.phase === RESULT
       ) {
         const payload: Payload$systemMessage = action.payload
@@ -96,7 +104,7 @@ const result = (state: State = initialState, action: Action): State => {
               result: just(a.result),
               roleImage: just(a.role).image,
               roleName: just(a.role).name,
-              status: a.status
+              status: strToAgentStatus(a.status)
             }
             if (a.result === 'win') {
               winners.push(agentId)
@@ -113,14 +121,14 @@ const result = (state: State = initialState, action: Action): State => {
           if (winners.length === 0) {
             throw Error('Unexpected Result: no winners')
           }
-          const winnerTeam = getTeam(getRoleId(agents[winners[0]].roleName.en))
-          const loserTeam = new Set(losers.map(loser => getTeam(getRoleId(agents[loser].roleName.en))))
+          const winnerTeam = getTeam(strToRoleId(agents[winners[0]].roleName.en))
+          const loserTeam = new Set(losers.map(loser => getTeam(strToRoleId(agents[loser].roleName.en))))
 
           if (me) {
             return {
               kind: 'player',
               loserTeam,
-              myTeam: getTeam(getRoleId(agents[me].roleName.en)),
+              myTeam: getTeam(strToRoleId(agents[me].roleName.en)),
               result: agents[me].result,
               winnerTeam
             }

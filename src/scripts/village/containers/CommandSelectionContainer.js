@@ -6,7 +6,7 @@ import {DAY} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getRoleId} from '../util'
+import {strToRoleId} from '../util'
 
 type Action =
   | SelectOption
@@ -54,7 +54,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     agents,
     descriptionId: getDescriptionId(
       state.base.phase,
-      getRoleId(state.roles.mine.name.en),
+      strToRoleId(state.roles.mine.name.en),
       state.commandSelection.fixed,
     ),
     fixed: state.commandSelection.fixed,

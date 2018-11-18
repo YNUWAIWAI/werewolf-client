@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {InputChannel, Payload$playerMessage, Payload$systemMessage} from 'village'
 import {PLAYER_MESSAGE, SYSTEM_MESSAGE} from '../constants/Message'
-import {getMessage, getMyRole, getRoleId} from '../util'
+import {strToMessage, getMyRole, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
 import {getInputChannel} from '../constants/Channels'
@@ -44,7 +44,7 @@ export const initialState = {
 const commandInputBox = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      switch (getMessage(action.payload['@id'])) {
+      switch (strToMessage(action.payload['@id'])) {
         case PLAYER_MESSAGE: {
           const payload: Payload$playerMessage = action.payload
 
@@ -77,7 +77,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
 
           if (
             role.numberOfAgents > 1 &&
-            AVAILABLE_FOR_LIMITED_CHAT.includes(getRoleId(role.name.en))
+            AVAILABLE_FOR_LIMITED_CHAT.includes(strToRoleId(role.name.en))
           ) {
             return {
               ... state,

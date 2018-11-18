@@ -6,7 +6,6 @@ declare module 'village' {
   declare type Phase = 'morning' | 'day' | 'night' | 'post mortem' | 'result'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster' | 'master'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
-  declare type Polarity = 'positive' | 'negative'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type Result = 'win' | 'lose'
   declare type AgentId = string
@@ -19,6 +18,7 @@ declare module 'village' {
   declare type Context$Agent = 'https://werewolf.world/context/0.2/agent.jsonld'
   declare type Context$Role = 'https://werewolf.world/context/0.2/role.jsonld'
   declare type Context$Board = 'https://werewolf.world/context/0.2/board.jsonld'
+  declare type Context$BoardResult = 'https://werewolf.world/context/0.2/boardResult.jsonld'
   declare type Context$Chat = 'https://werewolf.world/context/0.2/chat.jsonld'
   declare type Context$Village = 'https://werewolf.world/context/0.2/village.jsonld'
   declare type Context$Vote = 'https://werewolf.world/context/0.2/vote.jsonld'
@@ -64,7 +64,7 @@ declare module 'village' {
     gender?: Gender,
     image: string,
     id: number,
-    status?: AgentStatus,
+    status?: string, // AgentStatus
     update?: {
       date: $PropertyType<Time, 'date'>,
       phase: $PropertyType<Time, 'phase'>
@@ -157,8 +157,9 @@ declare module 'village' {
       'systemMessage'
   */
   declare type Board = {
+    '@context'?: Context$BoardResult,
     '@id'?: string,
-    polarity?: Polarity,
+    polarity?: string, // 'positive' | 'negative'
     prediction?: string // BoardState
   }
 
@@ -330,20 +331,24 @@ declare module 'village' {
     }
   }
   declare type Role$systemMessage = {
+    '@context': $NonMaybeType<$PropertyType<Role, '@context'>>,
     '@id': $NonMaybeType<$PropertyType<Role, '@id'>>,
     isMine: $NonMaybeType<$PropertyType<Role, 'isMine'>>,
     name: $NonMaybeType<$PropertyType<Role, 'name'>>,
     image: $NonMaybeType<$PropertyType<Role, 'image'>>,
     numberOfAgents: $NonMaybeType<$PropertyType<Role, 'numberOfAgents'>>,
-    agent: {
+    agent?: {
+      '@context': $NonMaybeType<$PropertyType<Agent, '@context'>>,
       '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
       name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
       image: $NonMaybeType<$PropertyType<Agent, 'image'>>,
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>
     },
-    board: {
+    board?: {
+      '@context': $NonMaybeType<$PropertyType<Board, '@context'>>,
       '@id': string,
       agent: {
+        '@context': $NonMaybeType<$PropertyType<Agent, '@context'>>,
         '@id': $NonMaybeType<$PropertyType<Agent, '@id'>>,
         name: $NonMaybeType<$PropertyType<Agent, 'name'>>,
         image: $NonMaybeType<$PropertyType<Agent, 'image'>>,

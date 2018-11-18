@@ -3,7 +3,13 @@ import * as ActionTypes from '../constants/ActionTypes'
 import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, Language, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
-import {getMessage, getPlayableRoles, getRoleId, just} from '../util'
+import {
+  getPlayableRoles,
+  just,
+  strToAgentStatus,
+  strToMessage,
+  strToRoleId
+} from '../util'
 import {MORNING} from '../constants/Phase'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 
@@ -39,11 +45,12 @@ type Action =
 
 const updatePredictionTable = (roles: Role[], table: Table): Table => {
   roles.forEach(role => {
-    const roleId = getRoleId(role.name.en)
+    const roleId = strToRoleId(role.name.en)
 
     if (
       role.isMine &&
-      PREDICTION.includes(roleId)
+      PREDICTION.includes(roleId) &&
+      role.board
     ) {
       role.board.forEach(b => {
         const agentId = String(b.agent.id)
@@ -51,7 +58,7 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
         table[agentId][roleId] = {
           date: b.date,
           fixed: true,
-          state: b.polarity === 'positive' ? 'O' : 'fill'
+          state: b.polarity === 'positive' ? 'O' : 'fill' // polarity: 'positive' | 'negative'
         }
       })
     }
@@ -68,7 +75,7 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
 
     table[agentId] = {}
     roles.forEach(role => {
-      const roleId = getRoleId(role.name.en)
+      const roleId = strToRoleId(role.name.en)
 
       if (agent.isMine && role.isMine) {
         table[agentId][roleId] = {
@@ -110,11 +117,11 @@ export const initialState = {
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (getMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
+      if (strToMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
         const payload: Payload$systemMessage = action.payload
         const agents = just(payload.agent)
         const roles = getPlayableRoles(just(payload.role))
-          .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(getRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(getRoleId(r2.name.en)))
+          .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
         const table = (() => {
           if (payload.date === 1 && payload.phase === MORNING) {
             return initPredictionTable(agents, roles)
@@ -124,7 +131,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         })()
         const roleStatus: RoleStatus = roles.map(role => ({
           caption: role.name,
-          id: getRoleId(role.name.en),
+          id: strToRoleId(role.name.en),
           image: role.image,
           numberOfAgents: role.numberOfAgents
         }))
@@ -132,7 +139,7 @@ const prediction = (state: State = initialState, action: Action): State => {
           id: agent.id,
           image: agent.image,
           name: agent.name,
-          status: agent.status
+          status: strToAgentStatus(agent.status)
         }))
 
         return {
