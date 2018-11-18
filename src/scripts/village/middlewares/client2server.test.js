@@ -522,23 +522,21 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'https://werewolf.world/context/0.2/board.jsonld'
     ],
     '@id': 'https://werewolf.world/resource/0.2/boardMessage',
-    'village': {
-      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
-      '@id': 'https://licos.online/state/0.2/village',
-      'id': 3,
-      'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+    'agent': {
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+      'id': 2,
+      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+      'name': {
+        'en': 'Moritz',
+        'ja': 'モーリッツ'
+      }
     },
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-    'phase': 'morning',
-    'date': 1,
-    'phaseTimeLimit': 600,
-    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'clientTimestamp': expect.any(String),
+    'date': 1,
     'directionality': 'client to server',
-    'intensionalDisclosureRange': 'private',
     'extensionalDisclosureRange': [],
+    'intensionalDisclosureRange': 'private',
     'myAgent': {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -558,16 +556,9 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         }
       }
     },
-    'agent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-      'id': 2,
-      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-      'name': {
-        'en': 'Moritz',
-        'ja': 'モーリッツ'
-      }
-    },
+    'phase': 'morning',
+    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+    'phaseTimeLimit': 600,
     'prediction': CIRCLE,
     'role': {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -577,6 +568,15 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'en': 'Villager',
         'ja': '村人'
       }
+    },
+    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'village': {
+      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
     }
   }
 
@@ -692,23 +692,24 @@ describe('POST_CHAT', () => {
       'https://werewolf.world/context/0.2/chat.jsonld'
     ],
     '@id': 'https://werewolf.world/resource/0.2/playerMessage',
-    'village': {
-      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
-      '@id': 'https://licos.online/state/0.2/village',
-      'id': 3,
-      'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+    'agent': {
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      'id': 1,
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'name': {
+        'en': 'Walter',
+        'ja': 'ヴァルター'
+      }
     },
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-    'phase': 'morning',
-    'date': 1,
-    'phaseTimeLimit': 600,
-    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'characterLimit': 140,
     'clientTimestamp': expect.any(String),
+    'date': 1,
     'directionality': 'client to server',
-    'intensionalDisclosureRange': 'public',
     'extensionalDisclosureRange': [],
+    'intensionalDisclosureRange': 'public',
+    'isMine': true,
+    'isOver': false,
     'myAgent': {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -728,22 +729,21 @@ describe('POST_CHAT', () => {
         }
       }
     },
-    'agent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-      'id': 1,
-      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-      'name': {
-        'en': 'Walter',
-        'ja': 'ヴァルター'
-      }
-    },
-    'characterLimit': 140,
-    'isMine': true,
-    'isOver': false,
+    'phase': 'morning',
+    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+    'phaseTimeLimit': 600,
+    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'text': {
       '@language': 'ja',
       '@value': 'text'
+    },
+    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'village': {
+      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
     }
   }
 
@@ -1093,23 +1093,21 @@ describe('SELECT_YES', () => {
       'https://werewolf.world/context/0.2/vote.jsonld'
     ],
     '@id': 'https://werewolf.world/resource/0.2/voteMessage',
-    'village': {
-      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
-      '@id': 'https://licos.online/state/0.2/village',
-      'id': 3,
-      'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+    'agent': {
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+      'id': 2,
+      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+      'name': {
+        'en': 'Moritz',
+        'ja': 'モーリッツ'
+      }
     },
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-    'phase': 'morning',
-    'date': 1,
-    'phaseTimeLimit': 600,
-    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'clientTimestamp': expect.any(String),
+    'date': 1,
     'directionality': 'client to server',
-    'intensionalDisclosureRange': 'private',
     'extensionalDisclosureRange': [],
+    'intensionalDisclosureRange': 'private',
     'myAgent': {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -1129,15 +1127,17 @@ describe('SELECT_YES', () => {
         }
       }
     },
-    'agent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-      'id': 2,
-      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-      'name': {
-        'en': 'Moritz',
-        'ja': 'モーリッツ'
-      }
+    'phase': 'morning',
+    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+    'phaseTimeLimit': 600,
+    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'village': {
+      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
     }
   }
 
