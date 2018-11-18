@@ -3,12 +3,12 @@ import App from '../../src/scripts/village/containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
 import {createStore} from 'redux'
-import dayConversationWithLimitedChat from './initialState/dayConversationWithLimitedChat'
-import dayConversationWithoutLimitedChat from './initialState/dayConversationWithoutLimitedChat'
-import dayVote from './initialState/dayVote'
-import nightVote from './initialState/nightVote'
+import day from './initialState/day'
+import morningWithLimitedChat from './initialState/morningWithLimitedChat'
+import morningWithoutLimitedChat from './initialState/morningWithoutLimitedChat'
+import night from './initialState/night'
 import reducer from '../../src/scripts/village/reducers'
-import results from './initialState/results'
+import result from './initialState/result'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
@@ -26,10 +26,10 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('昼 会話（限定なし）', () => {
+  .add('朝（限定なし）', () => {
     const store = createStore(
       reducer,
-      dayConversationWithoutLimitedChat
+      morningWithoutLimitedChat
     )
     const story =
       <Provider store={store}>
@@ -38,10 +38,10 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('昼 会話（限定あり）', () => {
+  .add('朝（限定あり）', () => {
     const store = createStore(
       reducer,
-      dayConversationWithLimitedChat
+      morningWithLimitedChat
     )
     const story =
       <Provider store={store}>
@@ -50,10 +50,10 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('昼 投票', () => {
+  .add('昼', () => {
     const store = createStore(
       reducer,
-      dayVote
+      day
     )
     const story =
       <Provider store={store}>
@@ -62,10 +62,10 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('夜 投票', () => {
+  .add('夜', () => {
     const store = createStore(
       reducer,
-      nightVote
+      night
     )
     const story =
       <Provider store={store}>
@@ -77,7 +77,7 @@ storiesOf('village|App', module)
   .add('結果', () => {
     const store = createStore(
       reducer,
-      results
+      result
     )
     const story =
       <Provider store={store}>
