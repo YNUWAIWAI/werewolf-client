@@ -736,7 +736,7 @@ describe('POST_CHAT', () => {
       'name': {
         'en': 'Walter',
         'ja': 'ヴァルター'
-      },
+      }
     },
     'characterLimit': 140,
     'isMine': true,
@@ -753,6 +753,344 @@ describe('POST_CHAT', () => {
     expect.hasAssertions()
     await Promise.all([
       fetch(`${BASE_URI}/playerMessage.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/agent.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/base.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/chat.json`)
+        .then(res => res.json())
+    ])
+      .then(schemas => {
+        const [schema, ... rest] = schemas
+        const validate = ajv
+          .addSchema(rest)
+          .validate(schema, payload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
+describe('SELECT_YES', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    agents: {
+      ... agents,
+      all: [
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#0',
+          'id': 0,
+          'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Gert',
+            'ja': 'ゲルト'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': 1,
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+          'isMine': true,
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          'id': 2,
+          'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Moritz',
+            'ja': 'モーリッツ'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          'id': 3,
+          'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Simson',
+            'ja': 'ジムゾン'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          'id': 4,
+          'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Thomas',
+            'ja': 'トーマス'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          'id': 5,
+          'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Nicholas',
+            'ja': 'ニコラス'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+          'id': 6,
+          'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Dieter',
+            'ja': 'ディーター'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+          'id': 7,
+          'image': 'https://werewolf.world/image/0.2/Peter.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Peter',
+            'ja': 'ペーター'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+          'id': 8,
+          'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Lisa',
+            'ja': 'リーザ'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+          'id': 9,
+          'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+          'id': 10,
+          'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Catalina',
+            'ja': 'カタリナ'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+          'id': 11,
+          'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Otto',
+            'ja': 'オットー'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+          'id': 12,
+          'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Joachim',
+            'ja': 'ヨアヒム'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+          'id': 13,
+          'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Pamela',
+            'ja': 'パメラ'
+          },
+          'status': 'alive'
+        },
+        {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+          'id': 14,
+          'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
+          'isMine': false,
+          'name': {
+            'en': 'Jacob',
+            'ja': 'ヤコブ'
+          },
+          'status': 'alive'
+        }
+      ],
+      mine: {
+        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'status': 'alive'
+      }
+    },
+    base: {
+      ... base,
+      clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+      date: 1,
+      intensionalDisclosureRange: 'private',
+      phase: 'morning',
+      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+      phaseTimeLimit: 600,
+      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+      token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      village: {
+        '@id': 'https://licos.online/state/0.2/village',
+        'id': 3,
+        'name': '横国の森の奥にある時代に取り残された小さな村',
+        'totalNumberOfAgents': 15
+      }
+    },
+    chat,
+    commandInputBox,
+    commandSelection,
+    hideButton,
+    language,
+    modal,
+    obfucator,
+    prediction,
+    result,
+    roles: {
+      ... roles,
+      all: [],
+      mine: {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'isMine': true,
+        'name': {
+          'en': 'Seer',
+          'ja': '占い師'
+        },
+        'numberOfAgents': 1
+      }
+    }
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = {
+    agentId: 2,
+    type: ActionTypes.SELECT_YES
+  }
+  const payload = {
+    '@context': [
+      'https://werewolf.world/context/0.2/base.jsonld',
+      'https://werewolf.world/context/0.2/vote.jsonld'
+    ],
+    '@id': 'https://werewolf.world/resource/0.2/voteMessage',
+    'village': {
+      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@id': 'https://licos.online/state/0.2/village',
+      'id': 3,
+      'name': '横国の森の奥にある時代に取り残された小さな村',
+      'totalNumberOfAgents': 15
+    },
+    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'phase': 'morning',
+    'date': 1,
+    'phaseTimeLimit': 600,
+    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'clientTimestamp': expect.any(String),
+    'directionality': 'client to server',
+    'intensionalDisclosureRange': 'private',
+    'extensionalDisclosureRange': [],
+    'myAgent': {
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      'id': 1,
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'name': {
+        'en': 'Walter',
+        'ja': 'ヴァルター'
+      },
+      'role': {
+        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'name': {
+          'en': 'Seer',
+          'ja': '占い師'
+        }
+      }
+    },
+    'agent': {
+      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+      'id': 2,
+      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+      'name': {
+        'en': 'Moritz',
+        'ja': 'モーリッツ'
+      }
+    }
+  }
+
+  test('validate the JSON', async () => {
+    const ajv = new Ajv()
+
+    expect.hasAssertions()
+    await Promise.all([
+      fetch(`${BASE_URI}/voteMessage.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/agent.json`)
         .then(res => res.json()),
