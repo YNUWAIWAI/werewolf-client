@@ -7,7 +7,7 @@ type Props =
   | {
     +image: string,
     +status: AgentStatus,
-    +type: 'image' | 'userAvatar'
+    +type: 'avatarImage' | 'image'
   }
   | {
     +caption: string,
@@ -22,7 +22,7 @@ type Props =
   | {
     +status: AgentStatus,
     +text: string,
-    +type: 'name' | 'userName'
+    +type: 'avatarName' | 'name'
   }
   | {
     +status: AgentStatus,
@@ -31,8 +31,8 @@ type Props =
 
 export default function ResultCell(props: Props) {
   switch (props.type) {
+    case 'avatarImage':
     case 'image':
-    case 'userAvatar':
       return (
         <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           <img src={props.image} />
@@ -63,8 +63,8 @@ export default function ResultCell(props: Props) {
           }
         </FormattedMessage>
       )
+    case 'avatarName':
     case 'name':
-    case 'userName':
       return (
         <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           {props.text}
