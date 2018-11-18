@@ -1,5 +1,5 @@
 // @flow
-import {MORNING, DAY, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
+import {DAY, MORNING, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandContainer from './CommandContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'

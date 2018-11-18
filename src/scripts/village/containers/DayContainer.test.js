@@ -1,6 +1,6 @@
 // @flow
-import {MORNING} from '../constants/Phase'
 import DayContainer from './DayContainer'
+import {MORNING} from '../constants/Phase'
 import React from 'react'
 import {shallow} from 'enzyme'
 

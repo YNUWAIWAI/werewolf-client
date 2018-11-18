@@ -94,5 +94,5 @@ export default {
   'VillageItem.val(avatar, fixed)': 'Fixed Avatar',
   'VillageItem.val(avatar, random)': 'Random Avatar',
   'VillageItem.val(numOfPlayers, audience)': '{number} players',
-  'VillageItem.val(numOfPlayers, player)': '{current} / {number} players',
+  'VillageItem.val(numOfPlayers, player)': '{current} / {number} players'
 }

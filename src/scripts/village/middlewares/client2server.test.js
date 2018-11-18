@@ -830,7 +830,7 @@ describe('READY', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: payload,
+      payload,
       type: ActionTypes.socket.SEND
     })
   })
