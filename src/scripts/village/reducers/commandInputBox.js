@@ -2,7 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {InputChannel, Payload$playerMessage, Payload$systemMessage} from 'village'
 import {PLAYER_MESSAGE, SYSTEM_MESSAGE} from '../constants/Message'
-import {strToMessage, getMyRole, strToRoleId} from '../util'
+import {getMyRole, strToMessage, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
 import {getInputChannel} from '../constants/Channels'

@@ -4,7 +4,7 @@ import * as Message from '../constants/Message'
 import {ANONYMOUS_AUDIENCE, ONYMOUS_AUDIENCE, PUBLIC} from '../constants/Channels'
 import type {ChangeDate, SocketMessage} from '../actions'
 import type {Channel, Language, Payload$playerMessage} from 'village'
-import {strToMessage, idGenerater, just} from '../util'
+import {idGenerater, just, strToMessage} from '../util'
 
 const getChatId = idGenerater('chat')
 const getDelimeterId = idGenerater('delimeter')

@@ -5,12 +5,12 @@ export default {
         '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
         '@id': 'https://licos.online/state/0.2/village#3/agent#0',
         'isMine': false,
+        'id': 0,
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
         'name': {
           'en': 'Gert',
           'ja': 'ゲルト'
         },
-        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-        'id': 0,
         'status': 'alive',
         'update': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#0/update',

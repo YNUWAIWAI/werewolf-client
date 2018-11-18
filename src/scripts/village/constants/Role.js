@@ -1,6 +1,5 @@
 // @flow
 import type {RoleId} from 'village'
-import {trimBaseUri} from '../util'
 
 export const MASTER: RoleId = 'master'
 export const VILLAGER: RoleId = 'villager'

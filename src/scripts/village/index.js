@@ -12,7 +12,6 @@ import ja from 'react-intl/locale-data/ja'
 import middleware from './middlewares'
 import reducer from './reducers'
 
-
 const store = createStore(
   reducer,
   composeWithDevTools(middleware)
