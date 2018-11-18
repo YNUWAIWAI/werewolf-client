@@ -779,6 +779,62 @@ describe('POST_CHAT', () => {
     })
   })
 })
+describe('READY', () => {
+  const dispatch = jest.fn()
+  const getState = () => ({
+    agents,
+    base,
+    chat,
+    commandInputBox,
+    commandSelection,
+    hideButton,
+    language,
+    modal,
+    obfucator,
+    prediction,
+    result,
+    roles
+  })
+  const nextHandler = middleware({
+    dispatch,
+    getState
+  })
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+  const villageId = 3
+  const action = {
+    token,
+    type: ActionTypes.READY,
+    villageId
+  }
+  const payload = {
+    token,
+    type: 'ready',
+    villageId
+  }
+
+  test('validate the JSON of play', async () => {
+    const ajv = new Ajv()
+
+    expect.hasAssertions()
+    await fetch(`https://werewolf.world/lobby/schema/${VERSION}/client2server/ready.json`)
+      .then(res => res.json())
+      .then(schema => {
+        const validate = ajv.validate(schema, payload)
+
+        expect(validate).toBe(true)
+      })
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: payload,
+      type: ActionTypes.socket.SEND
+    })
+  })
+})
 describe('SELECT_YES', () => {
   const dispatch = jest.fn()
   const getState = () => ({
