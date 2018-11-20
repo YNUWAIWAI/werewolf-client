@@ -22,7 +22,7 @@ export default {
   'Day.morning': 'Day {date}: morning',
   'Day.night': 'Day {date}: night',
   'Day.postMortem': 'Post-mortem discussion',
-  'Day.results': 'Results',
+  'Day.result': 'Result',
   'FormattedTime.end': 'Time\'s up',
   'FormattedTime.time': '{minute}\'{second} left',
   'Modal.Description.dayVote': 'Do you really want to put this character to death?',
