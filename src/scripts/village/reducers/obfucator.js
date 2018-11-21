@@ -43,6 +43,10 @@ const obfucator = (state: State = initialState, action: Action): State => {
       return {
         visible: action.visible
       }
+    case ActionTypes.socket.OPEN:
+      return {
+        visible: false
+      }
     default:
       return state
   }
