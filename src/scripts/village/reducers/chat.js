@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import * as Message from '../constants/Message'
 import {ANONYMOUS_AUDIENCE, ONYMOUS_AUDIENCE, PUBLIC} from '../constants/Channels'
 import type {ChangeDate, SocketMessage} from '../actions'
-import type {Channel, Language, Payload$playerMessage} from 'village'
+import type {Channel, Language, Payload$flavorTextMessage, Payload$playerMessage} from 'village'
 import {idGenerater, just, strToMessage} from '../util'
 
 const getChatId = idGenerater('chat')
@@ -40,42 +40,63 @@ export const initialState = {
 }
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE:
-      if (strToMessage(action.payload['@id']) === Message.PLAYER_MESSAGE) {
-        const payload: Payload$playerMessage = action.payload
-        const chatId = getChatId()
-        const id = payload.intensionalDisclosureRange === PUBLIC ? just(payload.id) : -1
+    case ActionTypes.socket.MESSAGE: {
+      switch (strToMessage(action.payload['@id'])) {
+        case Message.PLAYER_MESSAGE: {
+          const payload: Payload$playerMessage = action.payload
+          const chatId = getChatId()
+          const id = payload.intensionalDisclosureRange === PUBLIC ? just(payload.id) : -1
 
-        if (payload.intensionalDisclosureRange === ANONYMOUS_AUDIENCE) {
-          return {
-            allIds: [chatId, ... state.allIds],
-            byId: {
-              ... state.byId,
-              [chatId]: {
-                id,
-                image: 'Anonymous',
-                intensionalDisclosureRange: payload.intensionalDisclosureRange,
-                isMine: payload.isMine,
-                name: 'Anonymous',
-                phaseStartTime: payload.phaseStartTime,
-                phaseTimeLimit: payload.phaseTimeLimit,
-                serverTimestamp: payload.serverTimestamp,
-                text: payload.text['@value'],
-                type: 'item'
+          if (payload.intensionalDisclosureRange === ANONYMOUS_AUDIENCE) {
+            return {
+              allIds: [chatId, ... state.allIds],
+              byId: {
+                ... state.byId,
+                [chatId]: {
+                  id,
+                  image: 'Anonymous',
+                  intensionalDisclosureRange: payload.intensionalDisclosureRange,
+                  isMine: payload.isMine,
+                  name: 'Anonymous',
+                  phaseStartTime: payload.phaseStartTime,
+                  phaseTimeLimit: payload.phaseTimeLimit,
+                  serverTimestamp: payload.serverTimestamp,
+                  text: payload.text['@value'],
+                  type: 'item'
+                }
+              }
+            }
+          } else if (payload.intensionalDisclosureRange === ONYMOUS_AUDIENCE) {
+            return {
+              allIds: [chatId, ... state.allIds],
+              byId: {
+                ... state.byId,
+                [chatId]: {
+                  id,
+                  image: just(payload.avatar).image,
+                  intensionalDisclosureRange: payload.intensionalDisclosureRange,
+                  isMine: payload.isMine,
+                  name: just(payload.avatar).name,
+                  phaseStartTime: payload.phaseStartTime,
+                  phaseTimeLimit: payload.phaseTimeLimit,
+                  serverTimestamp: payload.serverTimestamp,
+                  text: payload.text['@value'],
+                  type: 'item'
+                }
               }
             }
           }
-        } else if (payload.intensionalDisclosureRange === ONYMOUS_AUDIENCE) {
+
           return {
             allIds: [chatId, ... state.allIds],
             byId: {
               ... state.byId,
               [chatId]: {
                 id,
-                image: just(payload.avatar).image,
+                image: just(payload.agent).image,
                 intensionalDisclosureRange: payload.intensionalDisclosureRange,
                 isMine: payload.isMine,
-                name: just(payload.avatar).name,
+                name: just(payload.agent).name,
                 phaseStartTime: payload.phaseStartTime,
                 phaseTimeLimit: payload.phaseTimeLimit,
                 serverTimestamp: payload.serverTimestamp,
@@ -85,28 +106,10 @@ const chat = (state: State = initialState, action: Action): State => {
             }
           }
         }
-
-        return {
-          allIds: [chatId, ... state.allIds],
-          byId: {
-            ... state.byId,
-            [chatId]: {
-              id,
-              image: just(payload.agent).image,
-              intensionalDisclosureRange: payload.intensionalDisclosureRange,
-              isMine: payload.isMine,
-              name: just(payload.agent).name,
-              phaseStartTime: payload.phaseStartTime,
-              phaseTimeLimit: payload.phaseTimeLimit,
-              serverTimestamp: payload.serverTimestamp,
-              text: payload.text['@value'],
-              type: 'item'
-            }
-          }
-        }
+        default:
+          return state
       }
-
-      return state
+    }
     case ActionTypes.CHANGE_DATE: {
       const delimeterId = getDelimeterId()
 

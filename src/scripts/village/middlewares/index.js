@@ -2,6 +2,7 @@
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
+import flavorText from './flavorText'
 import indexedDB from './indexedDB'
 import logger from './logger'
 import socket from './socket'
@@ -38,6 +39,7 @@ const middleware = applyMiddleware(
     url
   }),
   client2server,
+  flavorText,
   indexedDB,
   logger,
   timeWatcher
