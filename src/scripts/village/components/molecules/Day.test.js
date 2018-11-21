@@ -83,5 +83,20 @@ describe('<Day />', () => {
 
       expect(wrapper.text()).toMatch('結果')
     })
+    test('flavor text', () => {
+      const timer = {
+        limit: 10,
+        phase: 'flavor text'
+      }
+      const wrapper = mountWithIntl(
+        <Day
+          date={1}
+          phase="flavor text"
+          timer={timer}
+        />
+      )
+
+      expect(wrapper.text()).toMatch('1日目 夜')
+    })
   })
 })
