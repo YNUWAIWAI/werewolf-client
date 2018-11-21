@@ -121,7 +121,7 @@ export const strToAgentStatus = (str: string): AgentStatus => {
 }
 
 export const strToMessage = (str: string): Message => {
-  const message: Message[] = ['boardMessage', 'errorMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
+  const message: Message[] = ['boardMessage', 'errorMessage', 'flavorTextMessage', 'playerMessage', 'scrollMessage', 'systemMessage', 'voteMessage']
   const maybe = message.find(v => v === trimBaseUri(str))
 
   if (!maybe) {
