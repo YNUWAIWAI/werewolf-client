@@ -857,6 +857,9 @@ describe('strToMessage', () => {
   test('errorMessage', () => {
     expect(strToMessage('https://licos.online/state/0.2/village#3/errorMessage')).toBe('errorMessage')
   })
+  test('flavorTextMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/flavorTextMessage')).toBe('flavorTextMessage')
+  })
   test('playerMessage', () => {
     expect(strToMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
   })

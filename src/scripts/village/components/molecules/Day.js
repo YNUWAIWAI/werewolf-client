@@ -16,11 +16,13 @@ export type Props =
   & OwnProps
 
 export default function Day(props: Props) {
+  const phase = props.phase === 'flavor text' ? 'night' : props.phase
+
   return (
     <div className="info--day">
       <div className="info--day--text">
         <FormattedMessage
-          id={`Day.${spaceSeparatedToCamelCase(props.phase)}`}
+          id={`Day.${spaceSeparatedToCamelCase(phase)}`}
           values={{
             date: props.date
           }}

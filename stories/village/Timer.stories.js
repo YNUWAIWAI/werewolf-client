@@ -20,7 +20,7 @@ storiesOf('village|Timer', module)
   )
   .add('default', () => {
     const limit = number('limit', 10)
-    const phase = select('phase', ['morning', 'day', 'night', 'post mortem', 'result'], 'day')
+    const phase = select('phase', ['morning', 'day', 'night', 'post mortem', 'result', 'flavor text'], 'day')
     const story = <Timer limit={limit} phase={phase} />
 
     return story

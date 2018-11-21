@@ -3,7 +3,7 @@ declare module 'village' {
   declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
   declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
   declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
-  declare type Phase = 'morning' | 'day' | 'night' | 'post mortem' | 'result'
+  declare type Phase = 'morning' | 'day' | 'night' | 'post mortem' | 'result' | 'flavor text'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster' | 'master'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
@@ -12,31 +12,32 @@ declare module 'village' {
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
   declare type Team = 'villager' | 'werehamster' | 'werewolf'
   declare type Gender = 'female' | 'male'
+  declare type Context$Agent = 'https://werewolf.world/context/0.2/agent.jsonld'
   declare type Context$Avatar = 'https://werewolf.world/context/0.2/avatar.jsonld'
   declare type Context$Base = 'https://werewolf.world/context/0.2/base.jsonld'
-  declare type Context$Error = 'https://werewolf.world/context/0.2/error.jsonld'
-  declare type Context$Agent = 'https://werewolf.world/context/0.2/agent.jsonld'
-  declare type Context$Role = 'https://werewolf.world/context/0.2/role.jsonld'
   declare type Context$Board = 'https://werewolf.world/context/0.2/board.jsonld'
   declare type Context$BoardResult = 'https://werewolf.world/context/0.2/boardResult.jsonld'
   declare type Context$Chat = 'https://werewolf.world/context/0.2/chat.jsonld'
+  declare type Context$Error = 'https://werewolf.world/context/0.2/error.jsonld'
+  declare type Context$Role = 'https://werewolf.world/context/0.2/role.jsonld'
+  declare type Context$Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld'
   declare type Context$Village = 'https://werewolf.world/context/0.2/village.jsonld'
   declare type Context$Vote = 'https://werewolf.world/context/0.2/vote.jsonld'
   declare type Context$VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
-  declare type Context$Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld'
   declare type Context =
-    | Context$Base
-    | Context$Error
     | Context$Agent
-    | Context$Role
+    | Context$Base
     | Context$Board
     | Context$Chat
+    | Context$Error
+    | Context$Role
+    | Context$Scroll
     | Context$Vote
     | Context$VotingResult
-    | Context$Scroll
   declare type Message =
     | 'boardMessage'
     | 'errorMessage'
+    | 'flavorTextMessage'
     | 'playerMessage'
     | 'scrollMessage'
     | 'systemMessage'
@@ -92,6 +93,7 @@ declare module 'village' {
       dependency:
         'boardMessage'
         'errorMessage'
+        'flavorTextMessage'
         'playerMessage'
         'scrollMessage'
         'systemMessage'
@@ -290,6 +292,9 @@ declare module 'village' {
     prediction: $NonMaybeType<$PropertyType<Board, 'prediction'>>
   }>
   declare type Payload$errorMessage = Payload<Error>
+  declare type Payload$flavorTextMessage = Payload<{
+    flavorText?: Payload$playerMessage[]
+  }>
   declare type Payload$playerMessage = Payload<{
     agent?: {
       '@context': $NonMaybeType<$PropertyType<Agent, '@context'>>,
@@ -364,7 +369,6 @@ declare module 'village' {
     votingResultsDetails?: $NonMaybeType<$PropertyType<VotingResult, 'votingResultsDetails'>>,
     agent?: Agent$systemMessage[],
     role?: Role$systemMessage[],
-    flavorText?: Payload$playerMessage[]
   }>
   declare type Payload$voteMessage = Payload<{
     agent?: {
