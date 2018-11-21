@@ -11,12 +11,12 @@ import {connect} from 'react-redux'
 const mapStateToProps = (state: ReducerState): StateProps => {
   const content = (phase => {
     switch (phase) {
-      case FLAVOR_TEXT:
-      case MORNING:
-        return <CommandInputBox />
       case DAY:
       case NIGHT:
         return <CommandSelection />
+      case FLAVOR_TEXT:
+      case MORNING:
+        return <CommandInputBox />
       case POST_MORTEM:
       case RESULT:
         return <CommandPostMortem />
