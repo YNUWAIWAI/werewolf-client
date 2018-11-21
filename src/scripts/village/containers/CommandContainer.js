@@ -1,6 +1,6 @@
 // @flow
 import Command, {type StateProps} from '../components/organisms/Command'
-import {DAY, MORNING, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
+import {DAY, FLAVOR_TEXT, MORNING, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
 import CommandSelection from './CommandSelectionContainer'
@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 const mapStateToProps = (state: ReducerState): StateProps => {
   const content = (phase => {
     switch (phase) {
+      case FLAVOR_TEXT:
       case MORNING:
         return <CommandInputBox />
       case DAY:
