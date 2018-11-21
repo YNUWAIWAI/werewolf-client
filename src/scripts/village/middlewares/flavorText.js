@@ -8,7 +8,7 @@ import type {Payload$flavorTextMessage} from 'village'
 import type {ReducerState} from '../reducers'
 import {strToMessage} from '../util'
 
-const INTERVAL = 1000
+const INTERVAL = 5000
 
 const flavorText: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
   switch (action.type) {
