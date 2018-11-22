@@ -293,7 +293,7 @@ declare module 'village' {
   }>
   declare type Payload$errorMessage = Payload<Error>
   declare type Payload$flavorTextMessage = Payload<{
-    flavorText?: Payload$playerMessage[]
+    flavorText: Payload$playerMessage[]
   }>
   declare type Payload$playerMessage = Payload<{
     agent?: {
