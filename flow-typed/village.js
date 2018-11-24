@@ -19,6 +19,7 @@ declare module 'village' {
   declare type Context$BoardResult = 'https://werewolf.world/context/0.2/boardResult.jsonld'
   declare type Context$Chat = 'https://werewolf.world/context/0.2/chat.jsonld'
   declare type Context$Error = 'https://werewolf.world/context/0.2/error.jsonld'
+  declare type Context$FlavorText = 'https://werewolf.world/context/0.2/flavorText.jsonld'
   declare type Context$Role = 'https://werewolf.world/context/0.2/role.jsonld'
   declare type Context$Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld'
   declare type Context$Village = 'https://werewolf.world/context/0.2/village.jsonld'
@@ -30,6 +31,7 @@ declare module 'village' {
     | Context$Board
     | Context$Chat
     | Context$Error
+    | Context$FlavorText
     | Context$Role
     | Context$Scroll
     | Context$Vote
