@@ -2,7 +2,7 @@ declare module 'village' {
   declare type Directionality = 'server to client' | 'client to server'
   declare type Channel = 'anonymousAudience' | 'grave' | 'hunter' | 'master' | 'onymousAudience' | 'private' | 'public' | 'seer' | 'werewolf'
   declare type ChatChannel = 'grave' | 'limited' | 'master' | 'private' | 'public'
-  declare type InputChannel = 'limited' | 'post mortem' | 'private' | 'public'
+  declare type InputChannel = 'grave' | 'limited' | 'post mortem' | 'private' | 'public'
   declare type Phase = 'morning' | 'day' | 'night' | 'post mortem' | 'result' | 'flavor text'
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster' | 'master'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
