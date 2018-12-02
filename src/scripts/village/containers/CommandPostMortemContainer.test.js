@@ -19,11 +19,11 @@ test('<CommandPostMortemContainer />', () => {
 
   expect(wrapper.props().navigation).toEqual([
     {
-      id: 'CommandPostMortemContainer.showResult',
+      id: 'CommandNavigation.showResult',
       type: ActionTypes.SHOW_RESULT
     },
     {
-      id: 'CommandPostMortemContainer.returnToLobby',
+      id: 'CommandNavigation.returnToLobby',
       type: ActionTypes.RETURN_TO_LOBBY
     }
   ])
