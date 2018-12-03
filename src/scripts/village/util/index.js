@@ -1,6 +1,9 @@
 // @flow
 import type {
   AgentStatus,
+  Channel,
+  ChatChannel,
+  InputChannel,
   Message,
   RoleId,
   Team
@@ -19,6 +22,74 @@ export const trimBaseUri = (id: string): string => {
   }
 
   return ''
+}
+
+type PublicChannel = 'anonymousAudience' | 'onymousAudience' | 'public'
+
+export const getChannelFromInputChennel = (inputChannel: InputChannel, role: RoleId, publicChannel: PublicChannel = 'public'): Channel => {
+  const channel: Channel[] = ['anonymousAudience', 'grave', 'hunter', 'master', 'onymousAudience', 'private', 'public', 'seer', 'werewolf']
+  const maybe = channel.find(v => {
+    if (inputChannel === 'limited') {
+      return v === role // 'hunter' | 'seer' | 'werewolf'
+    }
+    if (inputChannel === 'public' || inputChannel === 'post mortem') {
+      return v === publicChannel // PublicChannel
+    }
+
+    return v === inputChannel // 'grave' | 'private'
+  })
+
+  if (!maybe) {
+    throw new Error(`Unexpected channel: ${inputChannel}`)
+  }
+
+  return maybe
+}
+
+export const getChatChannelFromChannel = (channel: Channel): ChatChannel => {
+  const chatChannel: ChatChannel[] = ['grave', 'limited', 'master', 'private', 'public']
+  const table: {[key: Channel]: ChatChannel} = {
+    anonymousAudience: 'public',
+    grave: 'grave',
+    hunter: 'limited',
+    master: 'master',
+    onymousAudience: 'public',
+    private: 'private',
+    public: 'public',
+    seer: 'limited',
+    werewolf: 'limited'
+  }
+  const maybe = chatChannel.find(v => v === table[channel])
+
+  if (!maybe) {
+    throw new Error(`Unexpected channel: ${channel}`)
+  }
+
+  return maybe
+}
+
+export const getInputChannelFromChannel = (channel: Channel): InputChannel => {
+  if (channel === 'master') {
+    throw new Error(`channel === '${channel}' is undefined behavior`)
+  }
+  const inputChannel: InputChannel[] = ['grave', 'limited', 'post mortem', 'private', 'public']
+  const table: {[key: Channel]: InputChannel} = {
+    anonymousAudience: 'public',
+    grave: 'grave',
+    hunter: 'limited',
+    onymousAudience: 'public',
+    private: 'private',
+    public: 'public',
+    seer: 'limited',
+    werewolf: 'limited'
+  }
+  const maybe = inputChannel.find(v => v === table[channel])
+
+  if (!maybe) {
+    throw new Error(`Unexpected channel: ${channel}`)
+  }
+
+  return maybe
 }
 
 export const strToRoleId = (str: string): RoleId => {

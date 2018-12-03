@@ -3,10 +3,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
-import {getAgent, getRole, just, strToRoleId} from '../util'
+import {getAgent, getChannelFromInputChennel, getRole, just, strToRoleId} from '../util'
 import type {Action} from '.'
 import type {ReducerState} from '../reducers'
-import {getChannelFromInputChennel} from '../constants/Channels'
 import {socket} from '../actions'
 
 const getTimestamp = () => new Date().toISOString()

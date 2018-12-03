@@ -6,7 +6,7 @@ import ChatIcon from '../atoms/ChatIcon'
 import ChatNum from '../atoms/ChatNum'
 import ChatText from '../atoms/ChatText'
 import React from 'react'
-import {getChatChannel} from '../../constants/Channels'
+import {getChatChannelFromChannel} from '../../util'
 
 export type Props = {
   +id: number,
@@ -21,10 +21,12 @@ export type Props = {
 }
 
 export default function ChatItem(props: Props) {
+  const chatChannel = getChatChannelFromChannel(props.intensionalDisclosureRange)
+
   return (
     <div
-      className={`chat--item ${props.isMine ? 'me' : ''} ${getChatChannel(props.intensionalDisclosureRange)}`}
-      id={getChatChannel(props.intensionalDisclosureRange) === 'public' ? `message${String(props.id)}` : undefined}
+      className={`chat--item ${props.isMine ? 'me' : ''} ${chatChannel}`}
+      id={chatChannel === 'public' ? `message${String(props.id)}` : undefined}
     >
       <div className="chat--arrow-box">
         <ChatIcon
