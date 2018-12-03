@@ -1,10 +1,10 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import CommandPostMortemContainer from './CommandPostMortemContainer'
+import CommandGraveContainer from './CommandGraveContainer'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-test('<CommandPostMortemContainer />', () => {
+test('<CommandGraveContainer />', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     language: 'ja'
@@ -15,13 +15,9 @@ test('<CommandPostMortemContainer />', () => {
     getState,
     subscribe
   }
-  const wrapper = shallow(<CommandPostMortemContainer store={store} />)
+  const wrapper = shallow(<CommandGraveContainer store={store} />)
 
   expect(wrapper.props().navigation).toEqual([
-    {
-      id: 'CommandNavigation.showResult',
-      type: ActionTypes.SHOW_RESULT
-    },
     {
       id: 'CommandNavigation.returnToLobby',
       type: ActionTypes.RETURN_TO_LOBBY

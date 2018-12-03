@@ -1,24 +1,20 @@
 // @flow
 import * as ActionTypes from '../../constants/ActionTypes'
-import CommandPostMortem from './CommandPostMortem'
+import CommandGrave from './CommandGrave'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-test('<CommandPostMortem />', () => {
+test('<CommandGrave />', () => {
   const handleNavigationClick = jest.fn()
   const handlePostChat = jest.fn()
   const navigation = [
     {
-      id: 'CommandNavigation.showResult',
-      type: ActionTypes.SHOW_RESULT
-    },
-    {
-      id: 'CommandNavigation.returnToLobby',
+      id: 'CommandGraveContainer.returnToLobby',
       type: ActionTypes.RETURN_TO_LOBBY
     }
   ]
   const wrapper = shallow(
-    <CommandPostMortem
+    <CommandGrave
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
       navigation={navigation}

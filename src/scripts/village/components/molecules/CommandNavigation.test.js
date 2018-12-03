@@ -11,11 +11,11 @@ test('<CommandNavigation />', () => {
   const handleClick = jest.fn()
   const items = [
     {
-      id: 'CommandPostMortemContainer.showResult',
+      id: 'CommandNavigation.showResult',
       type: ActionTypes.SHOW_RESULT
     },
     {
-      id: 'CommandPostMortemContainer.returnToLobby',
+      id: 'CommandNavigation.returnToLobby',
       type: ActionTypes.RETURN_TO_LOBBY
     }
   ]

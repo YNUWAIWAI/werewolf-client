@@ -51,7 +51,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           if (payload.isMine) {
             const kind: InputChannel = getInputChannel(payload.intensionalDisclosureRange)
 
-            if (kind === 'post mortem') {
+            if (kind === 'grave' || kind === 'post mortem') {
               return state
             }
 

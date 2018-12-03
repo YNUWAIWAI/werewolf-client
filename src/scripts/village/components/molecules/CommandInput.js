@@ -20,7 +20,7 @@ type Props = {
   +postCountLimit: number
 } | {
   +handlePostChat: string => void,
-  +kind: 'private' | 'post mortem'
+  +kind: 'grave' | 'post mortem' | 'private'
 }
 type State = {
   sendable: boolean,
@@ -44,6 +44,7 @@ export default class CommandInput extends React.Component<Props, State> {
 
   isSendable() {
     switch (this.props.kind) {
+      case 'grave':
       case 'private':
       case 'post mortem':
         return true
