@@ -333,6 +333,10 @@ body {
       }
     }
 
+    &.grave > textarea {
+      background: var(--grave-color);
+    }
+
     &.limited > textarea {
       background: var(--limited-color);
     }
