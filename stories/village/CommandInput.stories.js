@@ -19,6 +19,27 @@ storiesOf('village|Command/CommandInput', module)
       {story()}
     </IntlProvider>
   )
+  .add('grave', () => {
+    const postCount = number('postCount', 0, {
+      max: 10,
+      min: 0,
+      step: 1
+    })
+    const story =
+    <div style={{
+      height: '200px'
+    }}
+    >
+      <CommandInput
+        handlePostChat={action('postChat')}
+        kind="grave"
+        postCount={postCount}
+        postCountLimit={10}
+      />
+    </div>
+
+    return story
+  })
   .add('public', () => {
     const postCount = number('postCount', 0, {
       max: 10,

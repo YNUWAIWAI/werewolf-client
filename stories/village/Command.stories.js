@@ -1,6 +1,7 @@
 // @flow
 import * as types from '../../src/scripts/village/constants/ActionTypes'
 import Command from '../../src/scripts/village/components/organisms/Command'
+import CommandGrave from '../../src/scripts/village/components/organisms/CommandGrave'
 import CommandInputBox from '../../src/scripts/village/components/organisms/CommandInputBox'
 import CommandPostMortem from '../../src/scripts/village/components/organisms/CommandPostMortem'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
@@ -83,16 +84,36 @@ storiesOf('village|Command', module)
       handlePostChat: () => action('handlePostChat'),
       navigation: [
         {
-          id: 'CommandPostMortemContainer.showResult',
+          id: 'CommandNavigation.showResult',
           type: types.SHOW_RESULT
         },
         {
-          id: 'CommandPostMortemContainer.returnToLobby',
+          id: 'CommandNavigation.returnToLobby',
           type: types.RETURN_TO_LOBBY
         }
       ]
     }
     const content = <CommandPostMortem {... props} />
+    const story =
+      <Command
+        content={content}
+        hide={false}
+      />
+
+    return story
+  })
+  .add('墓地', () => {
+    const props = {
+      handleNavigationClick: () => action('handleNavigationClick'),
+      handlePostChat: () => action('handlePostChat'),
+      navigation: [
+        {
+          id: 'CommandNavigation.returnToLobby',
+          type: types.RETURN_TO_LOBBY
+        }
+      ]
+    }
+    const content = <CommandGrave {... props} />
     const story =
       <Command
         content={content}
