@@ -25,15 +25,20 @@ export const trimBaseUri = (id: string): string => {
 }
 
 type PublicChannel = 'anonymousAudience' | 'onymousAudience' | 'public'
+type getChannelFromInputChennelArg = {
+  inputChannel: InputChannel,
+  role?: RoleId,
+  publicChannel?: PublicChannel
+}
 
-export const getChannelFromInputChennel = (inputChannel: InputChannel, role: RoleId, publicChannel: PublicChannel = 'public'): Channel => {
+export const getChannelFromInputChennel = ({inputChannel, role, publicChannel}: getChannelFromInputChennelArg): Channel => {
   const channel: Channel[] = ['anonymousAudience', 'grave', 'hunter', 'master', 'onymousAudience', 'private', 'public', 'seer', 'werewolf']
   const maybe = channel.find(v => {
     if (inputChannel === 'limited') {
       return v === role // 'hunter' | 'seer' | 'werewolf'
     }
     if (inputChannel === 'public' || inputChannel === 'post mortem') {
-      return v === publicChannel // PublicChannel
+      return v === (publicChannel || 'public') // PublicChannel
     }
 
     return v === inputChannel // 'grave' | 'private'

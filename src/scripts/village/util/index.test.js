@@ -132,49 +132,88 @@ describe('getAgent', () => {
 describe('getChannelFromInputChennel', () => {
   describe('inputChannel: \'limited\'', () => {
     test('role: villager', () => {
-      expect(() => getChannelFromInputChennel('limited', 'villager')).toThrow()
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'villager'
+      })).toThrow()
     })
     test('role: seer', () => {
-      expect(getChannelFromInputChennel('limited', 'seer')).toBe('seer')
+      expect(getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'seer'
+      })).toBe('seer')
     })
     test('role: medium', () => {
-      expect(() => getChannelFromInputChennel('limited', 'medium')).toThrow()
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'medium'
+      })).toThrow()
     })
     test('role: hunter', () => {
-      expect(getChannelFromInputChennel('limited', 'hunter')).toBe('hunter')
+      expect(getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'hunter'
+      })).toBe('hunter')
     })
     test('role: mason', () => {
-      expect(() => getChannelFromInputChennel('limited', 'mason')).toThrow()
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'mason'
+      })).toThrow()
     })
     test('role: madman', () => {
-      expect(() => getChannelFromInputChennel('limited', 'madman')).toThrow()
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'madman'
+      })).toThrow()
     })
     test('role: werewolf', () => {
-      expect(getChannelFromInputChennel('limited', 'werewolf')).toBe('werewolf')
+      expect(getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'werewolf'
+      })).toBe('werewolf')
     })
     test('role: werehamster', () => {
-      expect(() => getChannelFromInputChennel('limited', 'werehamster')).toThrow()
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'werehamster'
+      })).toThrow()
     })
   })
   describe('inputChannel: \'public\'', () => {
     test('publicChannel: default value', () => {
-      expect(getChannelFromInputChennel('public', 'villager')).toBe('public')
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public'
+      })).toBe('public')
     })
     test('publicChannel: anonymousAudience', () => {
-      expect(getChannelFromInputChennel('public', 'villager', 'anonymousAudience')).toBe('anonymousAudience')
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public',
+        publicChannel: 'anonymousAudience'
+      })).toBe('anonymousAudience')
     })
     test('publicChannel: onymousAudience', () => {
-      expect(getChannelFromInputChennel('public', 'villager', 'onymousAudience')).toBe('onymousAudience')
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public',
+        publicChannel: 'onymousAudience'
+      })).toBe('onymousAudience')
     })
     test('publicChannel: public', () => {
-      expect(getChannelFromInputChennel('public', 'villager', 'public')).toBe('public')
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public',
+        publicChannel: 'public'
+      })).toBe('public')
     })
   })
   test('inputChannel: grave', () => {
-    expect(getChannelFromInputChennel('grave', 'villager')).toBe('grave')
+    expect(getChannelFromInputChennel({
+      inputChannel: 'grave'
+    })).toBe('grave')
   })
   test('inputChannel: private', () => {
-    expect(getChannelFromInputChennel('private', 'villager')).toBe('private')
+    expect(getChannelFromInputChennel({
+      inputChannel: 'private'
+    })).toBe('private')
   })
 })
 describe('getChatChannelFromChannel', () => {

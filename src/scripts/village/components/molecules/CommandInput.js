@@ -99,7 +99,10 @@ export default class CommandInput extends React.Component<Props, State> {
           {this.state.textCount}
         </span>
         <ChatIcon
-          channel={getChannelFromInputChennel(this.props.kind, 'werewolf')}
+          channel={getChannelFromInputChennel({
+            inputChannel: this.props.kind,
+            role: 'werewolf'
+          })}
           className="command--input--icon"
         />
         {

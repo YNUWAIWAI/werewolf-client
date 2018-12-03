@@ -77,7 +77,10 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
-      const channel = getChannelFromInputChennel(action.kind, strToRoleId(myRole.name.en))
+      const channel = getChannelFromInputChennel({
+        inputChannel: action.kind,
+        role: strToRoleId(myRole.name.en)
+      })
       const payload: Payload$playerMessage = {
         '@context': [
           'https://werewolf.world/context/0.2/base.jsonld',
