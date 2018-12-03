@@ -2,10 +2,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {InputChannel, Payload$playerMessage, Payload$systemMessage} from 'village'
 import {PLAYER_MESSAGE, SYSTEM_MESSAGE} from '../constants/Message'
-import {getMyRole, strToMessage, strToRoleId} from '../util'
+import {getInputChannelFromChannel, getMyRole, strToMessage, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 import type {SocketMessage} from '../actions'
-import {getInputChannel} from '../constants/Channels'
 
 export type State = {
   limited: {
@@ -49,7 +48,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           const payload: Payload$playerMessage = action.payload
 
           if (payload.isMine) {
-            const kind: InputChannel = getInputChannel(payload.intensionalDisclosureRange)
+            const kind: InputChannel = getInputChannelFromChannel(payload.intensionalDisclosureRange)
 
             if (kind === 'grave' || kind === 'post mortem') {
               return state

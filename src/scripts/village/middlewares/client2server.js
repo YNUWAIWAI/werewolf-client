@@ -3,10 +3,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
 import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
-import {getAgent, getRole, just, strToRoleId} from '../util'
+import {getAgent, getChannelFromInputChennel, getRole, just, strToRoleId} from '../util'
 import type {Action} from '.'
 import type {ReducerState} from '../reducers'
-import {getChannelFromInputChennel} from '../constants/Channels'
 import {socket} from '../actions'
 
 const getTimestamp = () => new Date().toISOString()
@@ -78,7 +77,10 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
-      const channel = getChannelFromInputChennel(action.kind, strToRoleId(myRole.name.en))
+      const channel = getChannelFromInputChennel({
+        inputChannel: action.kind,
+        role: strToRoleId(myRole.name.en)
+      })
       const payload: Payload$playerMessage = {
         '@context': [
           'https://werewolf.world/context/0.2/base.jsonld',

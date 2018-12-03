@@ -1,9 +1,8 @@
 // @flow
+import {getChannelFromInputChennel, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import {FormattedMessage} from 'react-intl'
 import React from 'react'
-import {getChannelFromInputChennel} from '../../constants/Channels'
-import {spaceSeparatedToCamelCase} from '../../util'
 
 const countText = (text: string): number => Array.of(... text).length
 const isValidTextLength = (text: string, upperLimit: number, lowerLimit?: number = 1): boolean => {
@@ -100,7 +99,10 @@ export default class CommandInput extends React.Component<Props, State> {
           {this.state.textCount}
         </span>
         <ChatIcon
-          channel={getChannelFromInputChennel(this.props.kind, 'werewolf')}
+          channel={getChannelFromInputChennel({
+            inputChannel: this.props.kind,
+            role: 'werewolf'
+          })}
           className="command--input--icon"
         />
         {

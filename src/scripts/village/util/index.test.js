@@ -1,6 +1,9 @@
 // @flow
 import {
   getAgent,
+  getChannelFromInputChennel,
+  getChatChannelFromChannel,
+  getInputChannelFromChannel,
   getMyAgent,
   getMyRole,
   getPlayableAgents,
@@ -124,6 +127,151 @@ describe('getAgent', () => {
     ]
 
     expect(() => getAgent(agents, 1)).toThrow()
+  })
+})
+describe('getChannelFromInputChennel', () => {
+  describe('inputChannel: \'limited\'', () => {
+    test('role: villager', () => {
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'villager'
+      })).toThrow()
+    })
+    test('role: seer', () => {
+      expect(getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'seer'
+      })).toBe('seer')
+    })
+    test('role: medium', () => {
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'medium'
+      })).toThrow()
+    })
+    test('role: hunter', () => {
+      expect(getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'hunter'
+      })).toBe('hunter')
+    })
+    test('role: mason', () => {
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'mason'
+      })).toThrow()
+    })
+    test('role: madman', () => {
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'madman'
+      })).toThrow()
+    })
+    test('role: werewolf', () => {
+      expect(getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'werewolf'
+      })).toBe('werewolf')
+    })
+    test('role: werehamster', () => {
+      expect(() => getChannelFromInputChennel({
+        inputChannel: 'limited',
+        role: 'werehamster'
+      })).toThrow()
+    })
+  })
+  describe('inputChannel: \'public\'', () => {
+    test('publicChannel: default value', () => {
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public'
+      })).toBe('public')
+    })
+    test('publicChannel: anonymousAudience', () => {
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public',
+        publicChannel: 'anonymousAudience'
+      })).toBe('anonymousAudience')
+    })
+    test('publicChannel: onymousAudience', () => {
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public',
+        publicChannel: 'onymousAudience'
+      })).toBe('onymousAudience')
+    })
+    test('publicChannel: public', () => {
+      expect(getChannelFromInputChennel({
+        inputChannel: 'public',
+        publicChannel: 'public'
+      })).toBe('public')
+    })
+  })
+  test('inputChannel: grave', () => {
+    expect(getChannelFromInputChennel({
+      inputChannel: 'grave'
+    })).toBe('grave')
+  })
+  test('inputChannel: private', () => {
+    expect(getChannelFromInputChennel({
+      inputChannel: 'private'
+    })).toBe('private')
+  })
+})
+describe('getChatChannelFromChannel', () => {
+  test('anonymousAudience', () => {
+    expect(getChatChannelFromChannel('anonymousAudience')).toBe('public')
+  })
+  test('grave', () => {
+    expect(getChatChannelFromChannel('grave')).toBe('grave')
+  })
+  test('hunter', () => {
+    expect(getChatChannelFromChannel('hunter')).toBe('limited')
+  })
+  test('master', () => {
+    expect(getChatChannelFromChannel('master')).toBe('master')
+  })
+  test('onymousAudience', () => {
+    expect(getChatChannelFromChannel('onymousAudience')).toBe('public')
+  })
+  test('private', () => {
+    expect(getChatChannelFromChannel('private')).toBe('private')
+  })
+  test('public', () => {
+    expect(getChatChannelFromChannel('public')).toBe('public')
+  })
+  test('seer', () => {
+    expect(getChatChannelFromChannel('seer')).toBe('limited')
+  })
+  test('werewolf', () => {
+    expect(getChatChannelFromChannel('werewolf')).toBe('limited')
+  })
+})
+describe('getInputChannelFromChannel', () => {
+  test('anonymousAudience', () => {
+    expect(getInputChannelFromChannel('anonymousAudience')).toBe('public')
+  })
+  test('grave', () => {
+    expect(getInputChannelFromChannel('grave')).toBe('grave')
+  })
+  test('hunter', () => {
+    expect(getInputChannelFromChannel('hunter')).toBe('limited')
+  })
+  test('master', () => {
+    expect(() => getInputChannelFromChannel('master')).toThrow()
+  })
+  test('onymousAudience', () => {
+    expect(getInputChannelFromChannel('onymousAudience')).toBe('public')
+  })
+  test('private', () => {
+    expect(getInputChannelFromChannel('private')).toBe('private')
+  })
+  test('public', () => {
+    expect(getInputChannelFromChannel('public')).toBe('public')
+  })
+  test('seer', () => {
+    expect(getInputChannelFromChannel('seer')).toBe('limited')
+  })
+  test('werewolf', () => {
+    expect(getInputChannelFromChannel('werewolf')).toBe('limited')
   })
 })
 describe('getMyAgent', () => {
