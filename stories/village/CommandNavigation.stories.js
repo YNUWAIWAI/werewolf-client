@@ -23,11 +23,11 @@ storiesOf('village|Command/CommandNavigation', module)
   .add('default', () => {
     const items = [
       {
-        id: 'CommandPostMortemContainer.showResult',
+        id: 'CommandNavigation.showResult',
         type: types.SHOW_RESULT
       },
       {
-        id: 'CommandPostMortemContainer.returnToLobby',
+        id: 'CommandNavigation.returnToLobby',
         type: types.RETURN_TO_LOBBY
       }
     ]
