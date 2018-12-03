@@ -1,17 +1,4 @@
 // @flow
-
-export const Channels = {
-  anonymousAudience: 'public',
-  grave: 'grave',
-  hunter: 'limited',
-  master: 'master',
-  onymousAudience: 'public',
-  private: 'private',
-  public: 'public',
-  seer: 'limited',
-  werewolf: 'limited'
-}
-
 export const PUBLIC = 'public'
 export const PRIVATE = 'private'
 export const WEREWOLF = 'werewolf'
