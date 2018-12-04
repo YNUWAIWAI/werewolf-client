@@ -149,6 +149,7 @@ body {
         background: var(--grave-color);
 
         &::after {
+          border-left-color: transparent;
           border-right-color: var(--grave-color);
         }
       }
@@ -159,6 +160,7 @@ body {
         background: var(--limited-color);
 
         &::after {
+          border-left-color: transparent;
           border-right-color: var(--limited-color);
         }
       }
@@ -169,6 +171,7 @@ body {
         background: var(--master-color);
 
         &::after {
+          border-left-color: transparent;
           border-right-color: var(--master-color);
         }
       }
@@ -176,26 +179,30 @@ body {
 
     &.me {
       & > .chat--arrow-box::after {
-        border-color: transparent;
         border-left-color: var(--public-color);
+        border-right-color: transparent;
         left: 100%;
         right: unset;
       }
 
       &.grave > .chat--arrow-box::after {
         border-left-color: var(--grave-color);
+        border-right-color: transparent;
       }
 
       &.limited > .chat--arrow-box::after {
         border-left-color: var(--limited-color);
+        border-right-color: transparent;
       }
 
       &.master > .chat--arrow-box::after {
         border-left-color: var(--master-color);
+        border-right-color: transparent;
       }
 
       &.private > .chat--arrow-box::after {
         border-left-color: var(--private-color);
+        border-right-color: transparent;
       }
 
       & > .chat--agent {
@@ -215,6 +222,7 @@ body {
         background: var(--private-color);
 
         &::after {
+          border-left-color: transparent;
           border-right-color: var(--private-color);
         }
       }
