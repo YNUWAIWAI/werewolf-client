@@ -9,6 +9,9 @@ import Private from '../../src/scripts/village/components/atoms/svg/Private'
 import Public from '../../src/scripts/village/components/atoms/svg/Public'
 import Question from '../../src/scripts/village/components/atoms/svg/Question'
 import React from 'react'
+import TeamVillager from '../../src/scripts/village/components/atoms/svg/TeamVillager'
+import TeamWerehamster from '../../src/scripts/village/components/atoms/svg/TeamWerehamster'
+import TeamWerewolf from '../../src/scripts/village/components/atoms/svg/TeamWerewolf'
 import Triangle from '../../src/scripts/village/components/atoms/svg/Triangle'
 import Werewolf from '../../src/scripts/village/components/atoms/svg/Werewolf'
 import {storiesOf} from '@storybook/react'
@@ -37,5 +40,8 @@ storiesOf('village|svg', module)
   .add('Private', () => <Private />)
   .add('Public', () => <Public />)
   .add('Question', () => <Question />)
+  .add('TeamVillagers', () => <TeamVillager />)
+  .add('TeamWerehamster', () => <TeamWerehamster />)
+  .add('TeamWerewolves', () => <TeamWerewolf />)
   .add('Triangle', () => <Triangle />)
   .add('Werewolf', () => <Werewolf />)
