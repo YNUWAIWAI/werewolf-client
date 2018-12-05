@@ -484,15 +484,35 @@ body {
 
 .info {
   display: grid;
-  gap: 0 2rem;
+  gap: 0;
   grid-area: info;
   grid-template-areas:
-    '. . .'
-    'day roleIcon roleText'
-    '. roleIcon .';
-  grid-template-columns: 3fr var(--info-image-size) 2fr;
-  grid-template-rows: 2vh minmax(calc(3.25rem + 4px), 5vh) minmax(15px, auto);
+    '. . . . . . .'
+    'day property-agent agent property-role role property-team team';
+  grid-template-columns: 3fr 1fr calc(var(--info-image-size) + 22px) 1fr calc(var(--info-image-size) + 22px) 1fr calc(var(--info-image-size) + 22px);
+  grid-template-rows: 2vh minmax(calc(3.25rem + 4px + 15px), 5vh);
   height: 100%;
+
+  &--agent {
+    display: flex;
+    flex-direction: column;
+    grid-area: agent;
+    justify-content: center;
+
+    &--image {
+      display: block;
+      height: var(--info-image-size);
+      padding: 0 11px;
+      width: var(--info-image-size);
+    }
+
+    &--name {
+      display: block;
+      font-size: 10px;
+      text-align: center;
+      width: 100%;
+    }
+  }
 
   &--day {
     display: flex;
@@ -519,50 +539,64 @@ body {
     }
   }
 
-  &--role {
-    display: flex;
-    justify-content: center;
-    min-height: 3.25rem;
+  &--property {
+    align-items: center;
+    display: inline-flex;
+    font-size: 1.5rem;
+    justify-content: flex-end;
 
-    &--icon {
-      grid-area: roleIcon;
-      width: var(--info-image-size);
-
-      &--image {
-        display: block;
-        height: var(--info-image-size);
-        width: var(--info-image-size);
-      }
-
-      &--name {
-        display: block;
-        font-size: xx-small;
-        text-align: center;
-        width: 100%;
-      }
+    &.agent {
+      grid-area: property-agent;
     }
 
-    &--text {
-      align-items: center;
-      border: 2px solid black;
-      border-radius: 1.5rem;
-      display: inline-flex;
-      font-size: 1.5rem;
-      grid-area: roleText;
-      justify-content: center;
-      min-height: 2.25rem;
-      padding: 0.5rem 1.5rem;
-      width: 15rem;
+    &.role {
+      grid-area: property-role;
+    }
 
-      & > span {
-        &::before {
-          content: '【';
-        }
+    &.team {
+      grid-area: property-team;
+    }
+  }
 
-        &::after {
-          content: '】';
-        }
-      }
+  &--role {
+    display: flex;
+    flex-direction: column;
+    grid-area: role;
+    justify-content: center;
+
+    &--image {
+      display: block;
+      height: var(--info-image-size);
+      padding: 0 11px;
+      width: var(--info-image-size);
+    }
+
+    &--name {
+      display: block;
+      font-size: 10px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &--team {
+    display: flex;
+    flex-direction: column;
+    grid-area: team;
+    justify-content: center;
+
+    &--image {
+      display: block;
+      height: var(--info-image-size);
+      padding: 0 11px;
+      width: var(--info-image-size);
+    }
+
+    &--name {
+      display: block;
+      font-size: 10px;
+      text-align: center;
+      width: 100%;
     }
   }
 }
