@@ -19,6 +19,9 @@
   --master-color: rgba(0, 255, 0, 0.4);
   --grave-color: rgba(0, 0, 255, 0.3);
   --win-color: hsla(51, 100%, 50%, 0.7);
+  --villager--color: rgb(140, 198, 63);
+  --werehamster--color: rgb(251, 176, 59);
+  --werewolf--color: rgb(147, 39, 143);
   --dead-color: red;
 }
 
@@ -590,6 +593,18 @@ body {
       height: var(--info-image-size);
       padding: 0 20px;
       width: var(--info-image-size);
+
+      &.teamVillager {
+        fill: var(--villager--color);
+      }
+
+      &.teamWerehamster {
+        fill: var(--werehamster--color);
+      }
+
+      &.teamWerewolf {
+        fill: var(--werewolf--color);
+      }
     }
 
     &--name {
