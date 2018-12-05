@@ -1,10 +1,14 @@
 // @flow
 import React from 'react'
 
-export default function TeamVillagers() {
+type Props = {
+  +className?: string
+}
+
+export default function TeamVillager(props: Props) {
   return (
     <svg
-      className="teamVillagers"
+      className={`${props.className || ''} teamVillager`}
       viewBox="0 0 50 50"
       xmlns="http://www.w3.org/2000/svg"
     >
