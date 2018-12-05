@@ -69,7 +69,6 @@ export default {
   'Result.summary.winner(villager)': '勝者（村人陣営）',
   'Result.summary.winner(werehamster)': '勝者（ハムスター人間陣営）',
   'Result.summary.winner(werewolf)': '勝者（人狼陣営）',
-  'RoleText': 'あなたは{role}です',
   'TeamIcon.villager': '村人陣営',
   'TeamIcon.werehamster': 'ハムスター人間陣営',
   'TeamIcon.werewolf': '人狼陣営'
