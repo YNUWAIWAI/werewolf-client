@@ -487,9 +487,9 @@ body {
   gap: 0;
   grid-area: info;
   grid-template-areas:
-    '. . . . . . .'
-    'day property-agent agent property-role role property-team team';
-  grid-template-columns: 3fr 1fr calc(var(--info-image-size) + 22px) 1fr calc(var(--info-image-size) + 22px) 1fr calc(var(--info-image-size) + 22px);
+    '. . . . . . . .'
+    'day property-agent agent property-role role property-team team .';
+  grid-template-columns: 3fr 1fr calc(var(--info-image-size) + 40px) 1fr calc(var(--info-image-size) + 40px) 1fr calc(var(--info-image-size) + 40px) 0.25fr;
   grid-template-rows: 2vh minmax(calc(3.25rem + 4px + 15px), 5vh);
   height: 100%;
 
@@ -502,7 +502,7 @@ body {
     &--image {
       display: block;
       height: var(--info-image-size);
-      padding: 0 11px;
+      padding: 0 20px;
       width: var(--info-image-size);
     }
 
@@ -567,7 +567,7 @@ body {
     &--image {
       display: block;
       height: var(--info-image-size);
-      padding: 0 11px;
+      padding: 0 20px;
       width: var(--info-image-size);
     }
 
@@ -588,7 +588,7 @@ body {
     &--image {
       display: block;
       height: var(--info-image-size);
-      padding: 0 11px;
+      padding: 0 20px;
       width: var(--info-image-size);
     }
 
