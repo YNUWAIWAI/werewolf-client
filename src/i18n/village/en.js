@@ -68,5 +68,8 @@ export default {
   'Result.summary.winner(villager)': 'Winners （Team Villagers）',
   'Result.summary.winner(werehamster)': 'Winners （Team Werewhamster）',
   'Result.summary.winner(werewolf)': 'Winners （Team Werewolves）',
-  'RoleText': 'You are a {role}. (Team {group})'
+  'RoleText': 'You are a {role}. (Team {group})',
+  'TeamIcon.villager': 'Team Villagers',
+  'TeamIcon.werehamster': 'Team Werewhamster',
+  'TeamIcon.werewolf': 'Team Werewolves'
 }
