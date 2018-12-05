@@ -6,7 +6,7 @@ import TeamVillager from './svg/TeamVillager'
 import TeamWerehamster from './svg/TeamWerehamster'
 import TeamWerewolf from './svg/TeamWerewolf'
 
-type Props = {
+export type Props = {
   +additionalClass?: string,
   +class: string,
   +team: Team | ''

@@ -1,17 +1,19 @@
 // @flow
-import InfoAgent, {type StateProps} from '../components/molecules/InfoAgent'
+import AgentIcon, {type Props as StateProps} from '../components/atoms/AgentIcon'
 import {type ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.agents.mine) {
     return {
+      class: 'info--agent',
       image: '',
       name: ''
     }
   }
 
   return {
+    class: 'info--agent',
     image: state.agents.mine.image,
     name: state.agents.mine.name[state.language]
   }
@@ -19,6 +21,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
 const InfoAgentContainer = connect(
   mapStateToProps
-)(InfoAgent)
+)(AgentIcon)
 
 export default InfoAgentContainer

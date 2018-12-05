@@ -1,17 +1,19 @@
 // @flow
-import InfoRole, {type StateProps} from '../components/molecules/InfoRole'
+import RoleIcon, {type Props as StateProps} from '../components/atoms/RoleIcon'
 import {type ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.roles.mine) {
     return {
+      class: 'info--role',
       image: '',
       name: ''
     }
   }
 
   return {
+    class: 'info--role',
     image: state.roles.mine.image,
     name: state.roles.mine.name[state.language]
   }
@@ -19,6 +21,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
 const InfoRoleContainer = connect(
   mapStateToProps
-)(InfoRole)
+)(RoleIcon)
 
 export default InfoRoleContainer
