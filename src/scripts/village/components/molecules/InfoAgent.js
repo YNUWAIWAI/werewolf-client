@@ -1,6 +1,6 @@
 // @flow
-import React, {Fragment} from 'react'
 import AgentIcon from '../atoms/AgentIcon'
+import React from 'react'
 
 export type StateProps = {
   +image: string,
@@ -14,12 +14,10 @@ type Props =
 
 export default function InfoAgent(props: Props) {
   return (
-    <Fragment>
-      <AgentIcon
-        class="info--agent"
-        image={props.image}
-        name={props.name}
-      />
-    </Fragment>
+    <AgentIcon
+      class="info--agent"
+      image={props.image}
+      name={props.name}
+    />
   )
 }

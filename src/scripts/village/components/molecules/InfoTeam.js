@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from 'react'
+import React from 'react'
 import type {Team} from 'village'
 import TeamIcon from '../atoms/TeamIcon'
 
@@ -14,11 +14,9 @@ type Props =
 
 export default function InfoAgent(props: Props) {
   return (
-    <Fragment>
-      <TeamIcon
-        class="info--team"
-        team={props.team}
-      />
-    </Fragment>
+    <TeamIcon
+      class="info--team"
+      team={props.team}
+    />
   )
 }
