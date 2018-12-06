@@ -20,6 +20,10 @@ body {
 
 .aside-content {
   grid-area: aside;
+
+  &.expand {
+    grid-area: avatar / aside / 4;
+  }
 }
 
 .avatar {
