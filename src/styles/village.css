@@ -531,8 +531,8 @@ body {
       font-size: 1.5rem;
       grid-template-columns: 1fr 1fr;
       min-height: 2.25rem;
+      min-width: calc(90% - 3rem);
       padding: 0.5rem 1.5rem;
-      width: 15rem;
 
       & > span {
         align-items: center;
