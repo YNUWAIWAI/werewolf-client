@@ -1,5 +1,6 @@
 // @flow
-import type {AgentStatus} from 'village'
+import type {AgentStatus, Team} from 'village'
+import TeamIcon from '../atoms/TeamIcon'
 import {FormattedMessage} from 'react-intl'
 import React from 'react'
 
@@ -17,7 +18,15 @@ type Props =
   }
   | {
     +id: string,
-    +type: 'caption' | 'summary'
+    +myTeam: ?Team,
+    +type: 'summary',
+    +winnerTeam: Team
+  }
+  | {
+    +id: string,
+    +loserTeam?: Set<Team>,
+    +type: 'caption',
+    +winnerTeam?: Team
   }
   | {
     +status: AgentStatus,
@@ -47,14 +56,65 @@ export default function ResultCell(props: Props) {
           </span>
         </div>
       )
-    case 'caption':
+    case 'caption': {
+      // '' is dummy element
+      const loserTeam = props.loserTeam ? [... props.loserTeam, ''] : ['', '']
+
+      return (
+        <FormattedMessage
+          id={props.id}
+          values={
+            {
+              loserTeam0:
+                <TeamIcon
+                  class="result--cell--caption--team"
+                  team={loserTeam[0]}
+                />,
+              loserTeam1:
+                <TeamIcon
+                  class="result--cell--caption--team"
+                  team={loserTeam[1]}
+                />,
+              winnerTeam:
+                <TeamIcon
+                  class="result--cell--caption--team"
+                  team={props.winnerTeam || ''}
+                />
+            }
+          }
+        >
+          {
+            (... text: string[]) =>
+              <div
+                className={`result--cell result--cell--${props.type}`}
+              >
+                {text}
+              </div>
+          }
+        </FormattedMessage>
+      )
+    }
     case 'summary':
       return (
         <FormattedMessage
           id={props.id}
+          values={
+            {
+              myTeam:
+                <TeamIcon
+                  class="result--cell--summary--team"
+                  team={props.myTeam || ''}
+                />,
+              winnerTeam:
+                <TeamIcon
+                  class="result--cell--summary--team"
+                  team={props.winnerTeam}
+                />
+            }
+          }
         >
           {
-            (text: string) =>
+            (... text: string[]) =>
               <div
                 className={`result--cell result--cell--${props.type}`}
               >

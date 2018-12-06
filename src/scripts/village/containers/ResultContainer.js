@@ -26,40 +26,18 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       status: a.status
     }
   })
-  const summary = (() => {
-    const description = (() => {
-      if (state.result.summary.kind === 'player') {
-        return `Result.summary.description(player, ${state.result.summary.winnerTeam}, ${state.result.summary.myTeam}, ${state.result.summary.result})`
-      }
-
-      // state.result.summary.kind === 'audience'
-      return `Result.summary.description(audience, ${state.result.summary.winnerTeam})`
-    })()
-    const loser = (() => {
-      const villager = state.result.summary.loserTeam.has('villager')
-      const werehamster = state.result.summary.loserTeam.has('werehamster')
-      const werewolf = state.result.summary.loserTeam.has('werewolf')
-
-      if (villager && !werehamster && !werewolf) {
-        return 'Result.summary.loser(villager)'
-      } else if (villager && werehamster && !werewolf) {
-        return 'Result.summary.loser(villager, werehamster)'
-      } else if (villager && !werehamster && werewolf) {
-        return 'Result.summary.loser(villager, werewolf)'
-      } else if (!villager && !werehamster && werewolf) {
-        return 'Result.summary.loser(werewolf)'
-      }
-
-      // !villager && werehamster && werewolf)
-      return 'Result.summary.loser(werewolf, werehamster)'
-    })()
-
-    return {
-      description,
-      loser,
-      winner: `Result.summary.winner(${state.result.summary.winnerTeam})`
-    }
-  })()
+  const summary = {
+    description: {
+      loser: `Result.summary.loser(${state.result.summary.loserTeam.size})`,
+      summary: state.result.summary.kind === 'player' ?
+        `Result.summary.description(player, ${state.result.summary.result})` :
+        'Result.summary.description(audience)',
+      winner: 'Result.summary.winner'
+    },
+    loserTeam: state.result.summary.loserTeam,
+    myTeam: state.result.summary.myTeam,
+    winnerTeam: state.result.summary.winnerTeam
+  }
 
   return {
     agents,
