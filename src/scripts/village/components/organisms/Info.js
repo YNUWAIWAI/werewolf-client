@@ -1,7 +1,7 @@
 // @flow
-import Day from '../../containers/DayContainer'
 import {FormattedMessage} from 'react-intl'
 import InfoAgent from '../../containers/InfoAgentContainer'
+import InfoDay from '../../containers/InfoDayContainer'
 import InfoRole from '../../containers/InfoRoleContainer'
 import InfoTeam from '../../containers/InfoTeamContainer'
 import React from 'react'
@@ -9,7 +9,7 @@ import React from 'react'
 export default function Info() {
   return (
     <div className="info">
-      <Day />
+      <InfoDay />
       <FormattedMessage
         id="Info.property.agent"
       >

@@ -15,14 +15,14 @@ export type Props =
   & StateProps
   & OwnProps
 
-export default function Day(props: Props) {
+export default function InfoDay(props: Props) {
   const phase = props.phase === 'flavor text' ? 'night' : props.phase
 
   return (
     <div className="info--day">
       <div className="info--day--text">
         <FormattedMessage
-          id={`Day.${spaceSeparatedToCamelCase(phase)}`}
+          id={`InfoDay.${spaceSeparatedToCamelCase(phase)}`}
           values={{
             date: props.date
           }}

@@ -1,10 +1,10 @@
 // @flow
-import DayContainer from './DayContainer'
+import InfoDayContainer from './InfoDayContainer'
 import {MORNING} from '../constants/Phase'
 import React from 'react'
 import {shallow} from 'enzyme'
 
-test('<DayContainer /> initialState', () => {
+test('<InfoDayContainer /> initialState', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     base: {
@@ -19,7 +19,7 @@ test('<DayContainer /> initialState', () => {
     getState,
     subscribe
   }
-  const wrapper = shallow(<DayContainer store={store} />)
+  const wrapper = shallow(<InfoDayContainer store={store} />)
 
   expect(wrapper.props().date).toBe(1)
   expect(wrapper.props().phase).toBe('morning')
