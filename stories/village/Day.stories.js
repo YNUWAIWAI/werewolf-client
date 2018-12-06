@@ -1,6 +1,6 @@
 // @flow
 import {number, select, withKnobs} from '@storybook/addon-knobs'
-import Day from '../../src/scripts/village/components/molecules/Day'
+import Day from '../../src/scripts/village/components/molecules/InfoDay'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import React from 'react'
 import {createStore} from 'redux'
