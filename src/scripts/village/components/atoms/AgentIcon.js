@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 
-type Props = {
+export type Props = {
   +additionalClass?: string,
   +class: string,
   +handleOnClick?: void => void,

@@ -1,5 +1,5 @@
 // @flow
-import Day, {type StateProps} from '../components/molecules/Day'
+import InfoDay, {type StateProps} from '../components/molecules/InfoDay'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -11,8 +11,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     phase: state.base.phase
   }
 })
-const DayContainer = connect(
+const InfoDayContainer = connect(
   mapStateToProps
-)(Day)
+)(InfoDay)
 
-export default DayContainer
+export default InfoDayContainer

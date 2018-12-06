@@ -1,5 +1,5 @@
 // @flow
-import Day from './Day'
+import InfoDay from './InfoDay'
 import React from 'react'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
@@ -14,7 +14,7 @@ describe('<Day />', () => {
         phase: 'morning'
       }
       const wrapper = mountWithIntl(
-        <Day
+        <InfoDay
           date={0}
           phase="morning"
           timer={timer}
@@ -29,7 +29,7 @@ describe('<Day />', () => {
         phase: 'day'
       }
       const wrapper = mountWithIntl(
-        <Day
+        <InfoDay
           date={1}
           phase="day"
           timer={timer}
@@ -44,7 +44,7 @@ describe('<Day />', () => {
         phase: 'night'
       }
       const wrapper = mountWithIntl(
-        <Day
+        <InfoDay
           date={1}
           phase="night"
           timer={timer}
@@ -59,7 +59,7 @@ describe('<Day />', () => {
         phase: 'post mortem'
       }
       const wrapper = mountWithIntl(
-        <Day
+        <InfoDay
           date={-1}
           phase="post mortem"
           timer={timer}
@@ -74,7 +74,7 @@ describe('<Day />', () => {
         phase: 'result'
       }
       const wrapper = mountWithIntl(
-        <Day
+        <InfoDay
           date={-1}
           phase="result"
           timer={timer}
@@ -89,7 +89,7 @@ describe('<Day />', () => {
         phase: 'flavor text'
       }
       const wrapper = mountWithIntl(
-        <Day
+        <InfoDay
           date={1}
           phase="flavor text"
           timer={timer}
