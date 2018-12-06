@@ -52,7 +52,9 @@ export default function WaitingForPlayers(props: Props) {
             ''
         }
       </MainContent>
-      <AsideContent>
+      <AsideContent
+        expand
+      >
         <Menu
           class="compact-menu"
           itemClass="compact-menu--item"
