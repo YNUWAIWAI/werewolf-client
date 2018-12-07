@@ -183,8 +183,8 @@ describe('<ResultCell />', () => {
     test('status="alive"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          caption="caption"
           image="image"
+          name="name"
           status="alive"
           type="roleImage"
         />
@@ -193,14 +193,14 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
-      expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
+      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="dead"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          caption="caption"
           image="image"
+          name="name"
           status="dead"
           type="roleImage"
         />
@@ -209,14 +209,14 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
+      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="death by execution"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          caption="caption"
           image="image"
+          name="name"
           status="death by execution"
           type="roleImage"
         />
@@ -225,14 +225,14 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
+      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          caption="caption"
           image="image"
+          name="name"
           status="death by attack"
           type="roleImage"
         />
@@ -241,14 +241,14 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
+      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="death by fear"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          caption="caption"
           image="image"
+          name="name"
           status="death by fear"
           type="roleImage"
         />
@@ -257,14 +257,14 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
+      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="unnatural death"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          caption="caption"
           image="image"
+          name="name"
           status="unnatural death"
           type="roleImage"
         />
@@ -273,33 +273,85 @@ describe('<ResultCell />', () => {
       expect(wrapper.find('.result--cell').exists()).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
       expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--caption').text()).toBe('caption')
+      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
     })
   })
-  test('type="caption"', () => {
-    const wrapper = mountWithIntl(
-      <ResultCell
-        id="Result.summary.loser(villager, werehamster)"
-        type="caption"
-      />
-    )
+  describe('type="caption"', () => {
+    test('loser(1)', () => {
+      const wrapper = mountWithIntl(
+        <ResultCell
+          id="Result.summary.loser(1)"
+          loserTeam={new Set(['villager'])}
+          type="caption"
+        />
+      )
 
-    expect(wrapper.find('.result--cell').exists()).toBe(true)
-    expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
-    expect(wrapper.find('.result--cell').text()).toBe('敗者（村人陣営，ハムスター人間陣営）')
+      expect(wrapper.find('.result--cell').exists()).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
+      expect(wrapper.find('.result--cell--caption--team')).toHaveLength(1)
+      expect(wrapper.find('.result--cell').text()).toBe('敗者（村人陣営）')
+    })
+    test('loser(2)', () => {
+      const wrapper = mountWithIntl(
+        <ResultCell
+          id="Result.summary.loser(2)"
+          loserTeam={new Set(['villager', 'werehamster'])}
+          type="caption"
+        />
+      )
+
+      expect(wrapper.find('.result--cell').exists()).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
+      expect(wrapper.find('.result--cell--caption--team')).toHaveLength(2)
+      expect(wrapper.find('.result--cell').text()).toBe('敗者（村人陣営，ハムスター人間陣営）')
+    })
+    test('winner', () => {
+      const wrapper = mountWithIntl(
+        <ResultCell
+          id="Result.summary.winner"
+          type="caption"
+          winnerTeam="villager"
+        />
+      )
+
+      expect(wrapper.find('.result--cell').exists()).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
+      expect(wrapper.find('.result--cell--caption--team')).toHaveLength(1)
+      expect(wrapper.find('.result--cell').text()).toBe('勝者（村人陣営）')
+    })
   })
-  test('type="summary"', () => {
-    const wrapper = mountWithIntl(
-      <ResultCell
-        id="Result.summary.description(player, werewolf, villager, lose)"
-        type="summary"
-      />
-    )
+  describe('type="summary"', () => {
+    test('audience', () => {
+      const wrapper = mountWithIntl(
+        <ResultCell
+          id="Result.summary.description(audience)"
+          myTeam={}
+          type="summary"
+          winnerTeam="werewolf"
+        />
+      )
 
-    expect(wrapper.find('.result--cell').exists()).toBe(true)
-    expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
-    expect(wrapper.find('.result--cell').text()).toBe('村人陣営のあなたは敗北しました。（人狼陣営の勝利）')
+      expect(wrapper.find('.result--cell').exists()).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
+      expect(wrapper.find('.result--cell--summary--team')).toHaveLength(1)
+      expect(wrapper.find('.result--cell').text()).toBe('人狼陣営が勝利しました')
+    })
+    test('player', () => {
+      const wrapper = mountWithIntl(
+        <ResultCell
+          id="Result.summary.description(player, lose)"
+          myTeam="villager"
+          type="summary"
+          winnerTeam="werewolf"
+        />
+      )
+
+      expect(wrapper.find('.result--cell').exists()).toBe(true)
+      expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
+      expect(wrapper.find('.result--cell--summary--team')).toHaveLength(2)
+      expect(wrapper.find('.result--cell').text()).toBe('村人陣営のあなたは敗北しました。（人狼陣営の勝利）')
+    })
   })
   describe('type="name"', () => {
     test('status="alive"', () => {

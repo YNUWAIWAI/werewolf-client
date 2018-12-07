@@ -225,9 +225,14 @@ describe('<ResultContainer />', () => {
     ])
     expect(wrapper.props().me).toBe('agent1')
     expect(wrapper.props().summary).toEqual({
-      description: 'Result.summary.description(player, villager, villager, win)',
-      loser: 'Result.summary.loser(werewolf, werehamster)',
-      winner: 'Result.summary.winner(villager)'
+      description: {
+        loser: 'Result.summary.loser(2)',
+        summary: 'Result.summary.description(player, win)',
+        winner: 'Result.summary.winner'
+      },
+      loserTeam: new Set(['werehamster', 'werewolf']),
+      myTeam: 'villager',
+      winnerTeam: 'villager'
     })
     expect(wrapper.props().winners).toEqual([
       'agent0',
@@ -451,9 +456,14 @@ describe('<ResultContainer />', () => {
       }
     })
     expect(wrapper.props().summary).toEqual({
-      description: 'Result.summary.description(player, werehamster, villager, lose)',
-      loser: 'Result.summary.loser(villager, werewolf)',
-      winner: 'Result.summary.winner(werehamster)'
+      description: {
+        loser: 'Result.summary.loser(2)',
+        summary: 'Result.summary.description(player, lose)',
+        winner: 'Result.summary.winner'
+      },
+      loserTeam: new Set(['villager', 'werewolf']),
+      myTeam: 'villager',
+      winnerTeam: 'werehamster'
     })
   })
   test('winner: werewolf loser: villager, werehamster', () => {
@@ -671,9 +681,14 @@ describe('<ResultContainer />', () => {
       }
     })
     expect(wrapper.props().summary).toEqual({
-      description: 'Result.summary.description(player, werewolf, villager, lose)',
-      loser: 'Result.summary.loser(villager, werehamster)',
-      winner: 'Result.summary.winner(werewolf)'
+      description: {
+        loser: 'Result.summary.loser(2)',
+        summary: 'Result.summary.description(player, lose)',
+        winner: 'Result.summary.winner'
+      },
+      loserTeam: new Set(['villager', 'werehamster']),
+      myTeam: 'villager',
+      winnerTeam: 'werewolf'
     })
   })
   test('winner: werewolf loser: villager', () => {
@@ -861,9 +876,14 @@ describe('<ResultContainer />', () => {
       }
     })
     expect(wrapper.props().summary).toEqual({
-      description: 'Result.summary.description(player, werewolf, villager, lose)',
-      loser: 'Result.summary.loser(villager)',
-      winner: 'Result.summary.winner(werewolf)'
+      description: {
+        loser: 'Result.summary.loser(1)',
+        summary: 'Result.summary.description(player, lose)',
+        winner: 'Result.summary.winner'
+      },
+      loserTeam: new Set(['villager']),
+      myTeam: 'villager',
+      winnerTeam: 'werewolf'
     })
   })
   test('winner: villager loser: werewolf', () => {
@@ -1051,9 +1071,14 @@ describe('<ResultContainer />', () => {
       }
     })
     expect(wrapper.props().summary).toEqual({
-      description: 'Result.summary.description(player, villager, villager, win)',
-      loser: 'Result.summary.loser(werewolf)',
-      winner: 'Result.summary.winner(villager)'
+      description: {
+        loser: 'Result.summary.loser(1)',
+        summary: 'Result.summary.description(player, win)',
+        winner: 'Result.summary.winner'
+      },
+      loserTeam: new Set(['werewolf']),
+      myTeam: 'villager',
+      winnerTeam: 'villager'
     })
   })
 })
