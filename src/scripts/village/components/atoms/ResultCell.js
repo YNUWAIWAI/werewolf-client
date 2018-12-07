@@ -18,7 +18,7 @@ type Props =
   }
   | {
     +id: string,
-    +myTeam: ?Team,
+    +myTeam: Team | '',
     +type: 'summary',
     +winnerTeam: Team
   }

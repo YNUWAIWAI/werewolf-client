@@ -35,7 +35,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       winner: 'Result.summary.winner'
     },
     loserTeam: state.result.summary.loserTeam,
-    myTeam: state.result.summary.myTeam,
+    myTeam: state.result.summary.myTeam || '', // '' => 'audience'
     winnerTeam: state.result.summary.winnerTeam
   }
 

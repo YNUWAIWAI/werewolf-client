@@ -27,7 +27,7 @@ export type StateProps = {
       winner: string
     },
     +loserTeam: Set<Team>,
-    +myTeam?: Team,
+    +myTeam: Team | '',
     +winnerTeam: Team
   },
   +visible: boolean,
