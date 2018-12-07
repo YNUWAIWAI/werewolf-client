@@ -174,9 +174,14 @@ storiesOf('village|Result', module)
     ]
     const me = 'agent0'
     const summary = {
-      description: 'Result.summary.description(player, villager, villager, win)',
-      loser: 'Result.summary.loser(werewolf, werehamster)',
-      winner: 'Result.summary.winner(villager)'
+      description: {
+        loser: 'Result.summary.loser(2)',
+        summary: 'Result.summary.description(player, win)',
+        winner: 'Result.summary.winner'
+      },
+      loserTeam: new Set(['werewolf', 'werehamster']),
+      myTeam: 'villager',
+      winnerTeam: 'villager'
     }
     const winners = [
       'agent0',
@@ -266,9 +271,14 @@ storiesOf('village|Result', module)
     ]
     const me = 'agent0'
     const summary = {
-      description: 'Result.summary.description(player, villager, villager, win)',
-      loser: 'Result.summary.loser(werewolf, werehamster)',
-      winner: 'Result.summary.winner(villager)'
+      description: {
+        loser: 'Result.summary.loser(2)',
+        summary: 'Result.summary.description(player, win)',
+        winner: 'Result.summary.winner'
+      },
+      loserTeam: new Set(['werewolf', 'werehamster']),
+      myTeam: 'villager',
+      winnerTeam: 'villager'
     }
     const winners = [
       'agent0',

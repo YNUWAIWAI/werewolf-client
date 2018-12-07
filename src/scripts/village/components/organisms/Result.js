@@ -1,5 +1,5 @@
 // @flow
-import type {AgentStatus, Result as TResult} from 'village'
+import type {AgentStatus, Result as TResult, Team} from 'village'
 import React from 'react'
 import ResultCell from '../atoms/ResultCell'
 import ResultClose from '../atoms/ResultClose'
@@ -21,9 +21,14 @@ export type StateProps = {
   +losers: string[],
   +me: ?string,
   +summary: {
-    +description: string,
-    +loser: string,
-    +winner: string
+    +description: {
+      loser: string,
+      summary: string,
+      winner: string
+    },
+    +loserTeam: Set<Team>,
+    +myTeam: Team | '',
+    +winnerTeam: Team
   },
   +visible: boolean,
   +winners: string[]
@@ -53,13 +58,12 @@ const getRow = agent => [
   <ResultCell
     key={`${agent.agentId}status`}
     status={agent.status}
-    text={agent.status === 'alive' ? '生存' : '死亡'}
     type="status"
   />,
   <ResultCell
-    caption={agent.roleName}
     image={agent.roleImage}
     key={`${agent.agentId}roleImage`}
+    name={agent.roleName}
     status={agent.status}
     type="roleImage"
   />,
@@ -131,20 +135,24 @@ export default function Result(props: Props) {
         [
           <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
           <ResultCell
-            id={props.summary.description}
+            id={props.summary.description.summary}
             key="summary"
+            myTeam={props.summary.myTeam}
             type="summary"
+            winnerTeam={props.summary.winnerTeam}
           />,
           me,
           <ResultCell
-            id={props.summary.winner}
+            id={props.summary.description.winner}
             key="caption winners"
             type="caption"
+            winnerTeam={props.summary.winnerTeam}
           />,
           ... winners,
           <ResultCell
-            id={props.summary.loser}
+            id={props.summary.description.loser}
             key="caption losers"
+            loserTeam={props.summary.loserTeam}
             type="caption"
           />,
           ... losers

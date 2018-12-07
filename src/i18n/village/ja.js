@@ -42,34 +42,13 @@ export default {
   'Result.status(death by execution)': '処刑死',
   'Result.status(death by fear)': '恐怖死',
   'Result.status(unnatural death)': '不審死',
-  /*
-    Result.summary.description(kind, winnerTeam, ?myTeam, ?result)
-      kind: 'audience' | 'player'
-      winnerTeam: 'villager' | 'werehamster' | 'werewolf'
-      myTeam: 'villager' | 'werehamster' | 'werewolf'
-      result: 'win' | 'lose
-  */
-  'Result.summary.description(audience, villager)': '村人陣営が勝利しました',
-  'Result.summary.description(audience, werehamster)': 'ハムスター人間陣営が勝利しました',
-  'Result.summary.description(audience, werewolf)': '人狼陣営が勝利しました',
-  'Result.summary.description(player, villager, villager, win)': '村人陣営のあなたは勝利しました。（村人陣営の勝利）',
-  'Result.summary.description(player, villager, werehamster, lose)': 'ハムスター人間陣営のあなたは敗北しました。（村人陣営の勝利）',
-  'Result.summary.description(player, villager, werewolf, lose)': '人狼陣営のあなたは敗北しました。（村人陣営の勝利）',
-  'Result.summary.description(player, werehamster, villager, lose)': '村人陣営のあなたは敗北しました。（ハムスター人間陣営の勝利）',
-  'Result.summary.description(player, werehamster, werehamster, win)': 'ハムスター人間陣営のあなたは勝利しました。（ハムスター人間陣営の勝利）',
-  'Result.summary.description(player, werehamster, werewolf, lose)': '人狼陣営のあなたは敗北しました。（ハムスター人間陣営の勝利）',
-  'Result.summary.description(player, werewolf, villager, lose)': '村人陣営のあなたは敗北しました。（人狼陣営の勝利）',
-  'Result.summary.description(player, werewolf, werehamster, lose)': 'ハムスター人間陣営のあなたは敗北しました。（人狼陣営の勝利）',
-  'Result.summary.description(player, werewolf, werewolf, win)': '人狼陣営のあなたは勝利しました。（人狼陣営の勝利）',
-  'Result.summary.loser(villager)': '敗者（村人陣営）',
-  'Result.summary.loser(villager, werehamster)': '敗者（村人陣営，ハムスター人間陣営）',
-  'Result.summary.loser(villager, werewolf)': '敗者（村人陣営，人狼陣営）',
-  'Result.summary.loser(werewolf)': '敗者（人狼陣営）',
-  'Result.summary.loser(werewolf, werehamster)': '敗者（人狼陣営，ハムスター人間陣営）',
-  'Result.summary.winner(villager)': '勝者（村人陣営）',
-  'Result.summary.winner(werehamster)': '勝者（ハムスター人間陣営）',
-  'Result.summary.winner(werewolf)': '勝者（人狼陣営）',
-  'TeamIcon.villager': '村人陣営',
-  'TeamIcon.werehamster': 'ハムスター人間陣営',
-  'TeamIcon.werewolf': '人狼陣営'
+  'Result.summary.description(audience)': '{winnerTeam}陣営が勝利しました',
+  'Result.summary.description(player, lose)': '{myTeam}陣営のあなたは敗北しました。（{winnerTeam}陣営の勝利）',
+  'Result.summary.description(player, win)': '{myTeam}陣営のあなたは勝利しました。（{winnerTeam}陣営の勝利）',
+  'Result.summary.loser(1)': '敗者（{loserTeam0}陣営）',
+  'Result.summary.loser(2)': '敗者（{loserTeam0}陣営，{loserTeam1}陣営）',
+  'Result.summary.winner': '勝者（{winnerTeam}陣営）',
+  'TeamIcon.villager': '村人',
+  'TeamIcon.werehamster': 'ハムスター人間',
+  'TeamIcon.werewolf': '人狼'
 }

@@ -156,9 +156,14 @@ const losers = [
 ]
 const me = 'agent0'
 const summary = {
-  description: 'description',
-  loser: 'loser',
-  winner: 'winner'
+  description: {
+    loser: 'Result.summary.loser(2)',
+    summary: 'Result.summary.description(player, win)',
+    winner: 'Result.summary.winner'
+  },
+  loserTeam: new Set(['werehamster', 'werewolf']),
+  myTeam: 'villager',
+  winnerTeam: 'villager'
 }
 const winners = [
   'agent0',
