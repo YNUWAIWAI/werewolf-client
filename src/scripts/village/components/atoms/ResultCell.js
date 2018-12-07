@@ -70,6 +70,7 @@ export default function ResultCell(props: Props) {
       return (
         <FormattedMessage
           id={props.id}
+          key="caption"
           values={
             {
               loserTeam0:
@@ -105,6 +106,7 @@ export default function ResultCell(props: Props) {
       return (
         <FormattedMessage
           id={props.id}
+          key="summary"
           values={
             {
               myTeam:
