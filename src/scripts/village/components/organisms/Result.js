@@ -61,9 +61,9 @@ const getRow = agent => [
     type="status"
   />,
   <ResultCell
-    caption={agent.roleName}
     image={agent.roleImage}
     key={`${agent.agentId}roleImage`}
+    name={agent.roleName}
     status={agent.status}
     type="roleImage"
   />,

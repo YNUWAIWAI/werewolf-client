@@ -1,8 +1,8 @@
 // @flow
 import type {AgentStatus, Team} from 'village'
-import TeamIcon from '../atoms/TeamIcon'
 import {FormattedMessage} from 'react-intl'
 import React from 'react'
+import TeamIcon from '../atoms/TeamIcon'
 
 type Props =
   | {
@@ -11,8 +11,8 @@ type Props =
     +type: 'avatarImage' | 'image'
   }
   | {
-    +caption: string,
     +image: string,
+    +name: string,
     +status: AgentStatus,
     +type: 'roleImage'
   }
@@ -44,20 +44,27 @@ export default function ResultCell(props: Props) {
     case 'image':
       return (
         <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
-          <img src={props.image} />
+          <img
+            className={`result--cell--${props.type}--image`}
+            src={props.image}
+          />
         </div>
       )
     case 'roleImage':
       return (
         <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
-          <img src={props.image} />
-          <span className={`result--cell--${props.type}--caption`}>
-            {props.caption}
+          <img
+            className={`result--cell--${props.type}--image`}
+            src={props.image}
+          />
+          <span className={`result--cell--${props.type}--name`}>
+            {props.name}
           </span>
         </div>
       )
     case 'caption': {
       // '' is dummy element
+      // ex) ['werewolf', 'villager'], ['werewolf', ''], ['', '']
       const loserTeam = props.loserTeam ? [... props.loserTeam, ''] : ['', '']
 
       return (
@@ -67,17 +74,17 @@ export default function ResultCell(props: Props) {
             {
               loserTeam0:
                 <TeamIcon
-                  class="result--cell--caption--team"
+                  class={`result--cell--${props.type}--team`}
                   team={loserTeam[0]}
                 />,
               loserTeam1:
                 <TeamIcon
-                  class="result--cell--caption--team"
+                  class={`result--cell--${props.type}--team`}
                   team={loserTeam[1]}
                 />,
               winnerTeam:
                 <TeamIcon
-                  class="result--cell--caption--team"
+                  class={`result--cell--${props.type}--team`}
                   team={props.winnerTeam || ''}
                 />
             }
@@ -102,12 +109,12 @@ export default function ResultCell(props: Props) {
             {
               myTeam:
                 <TeamIcon
-                  class="result--cell--summary--team"
+                  class={`result--cell--${props.type}--team`}
                   team={props.myTeam || ''}
                 />,
               winnerTeam:
                 <TeamIcon
-                  class="result--cell--summary--team"
+                  class={`result--cell--${props.type}--team`}
                   team={props.winnerTeam}
                 />
             }

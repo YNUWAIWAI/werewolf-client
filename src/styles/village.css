@@ -845,7 +845,7 @@ body {
       display: inline-flex;
       overflow: hidden;
 
-      & > img {
+      &--image {
         height: var(--result-image-size);
         width: var(--result-image-size);
       }
@@ -856,7 +856,7 @@ body {
       display: inline-flex;
       overflow: hidden;
 
-      & > img {
+      &--image {
         height: var(--result-image-size);
         width: var(--result-image-size);
       }
@@ -868,7 +868,7 @@ body {
       grid-template-areas:
         '. . .'
         '. image .'
-        'caption caption caption'
+        'name name name'
         '. . .';
       grid-template-columns: 1fr var(--result-image-size) 1fr;
       grid-template-rows: minmax(0.5rem, 1fr) var(--result-image-size) 12px auto;
@@ -876,13 +876,13 @@ body {
       overflow: hidden;
       padding: 0;
 
-      &--caption {
+      &--name {
         font-size: 10px;
-        grid-area: caption;
+        grid-area: name;
         line-height: 1.2;
       }
 
-      & > img {
+      &--image {
         grid-area: image;
         height: var(--result-image-size);
         width: var(--result-image-size);
