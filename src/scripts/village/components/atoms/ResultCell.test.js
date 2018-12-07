@@ -326,7 +326,7 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           id="Result.summary.description(audience)"
-          myTeam={}
+          myTeam=""
           type="summary"
           winnerTeam="werewolf"
         />
