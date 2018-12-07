@@ -76,16 +76,19 @@ export default function ResultCell(props: Props) {
               loserTeam0:
                 <TeamIcon
                   class={`result--cell--${props.type}--team`}
+                  key="loserTeam0"
                   team={loserTeam[0]}
                 />,
               loserTeam1:
                 <TeamIcon
                   class={`result--cell--${props.type}--team`}
+                  key="loserTeam1"
                   team={loserTeam[1]}
                 />,
               winnerTeam:
                 <TeamIcon
                   class={`result--cell--${props.type}--team`}
+                  key="winnerTeam"
                   team={props.winnerTeam || ''}
                 />
             }
@@ -112,11 +115,13 @@ export default function ResultCell(props: Props) {
               myTeam:
                 <TeamIcon
                   class={`result--cell--${props.type}--team`}
+                  key="myTeam"
                   team={props.myTeam || ''}
                 />,
               winnerTeam:
                 <TeamIcon
                   class={`result--cell--${props.type}--team`}
+                  key="winnerTeam"
                   team={props.winnerTeam}
                 />
             }
@@ -143,6 +148,7 @@ export default function ResultCell(props: Props) {
       return (
         <FormattedMessage
           id={`Result.status(${props.status})`}
+          key="status"
         >
           {
             (text: string) =>
