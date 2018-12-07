@@ -48,7 +48,7 @@ export default {
   'Result.summary.loser(1)': '敗者（{loserTeam0}陣営）',
   'Result.summary.loser(2)': '敗者（{loserTeam0}陣営，{loserTeam1}陣営）',
   'Result.summary.winner': '勝者（{winnerTeam}陣営）',
-  'TeamIcon.villager': '村人陣営',
-  'TeamIcon.werehamster': 'ハムスター人間陣営',
-  'TeamIcon.werewolf': '人狼陣営'
+  'TeamIcon.villager': '村人',
+  'TeamIcon.werehamster': 'ハムスター人間',
+  'TeamIcon.werewolf': '人狼'
 }
