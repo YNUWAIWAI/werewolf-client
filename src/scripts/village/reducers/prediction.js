@@ -119,6 +119,10 @@ const prediction = (state: State = initialState, action: Action): State => {
     case ActionTypes.socket.MESSAGE:
       if (strToMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
         const payload: Payload$systemMessage = action.payload
+
+        if (payload.date === 0) {
+          return state
+        }
         const agents = just(payload.agent)
         const roles = getPlayableRoles(just(payload.role))
           .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
