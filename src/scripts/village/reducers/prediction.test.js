@@ -1,9 +1,20 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {firstMorning, firstMorning3} from './fakeServer'
+import {firstMorning, firstMorning3, flavorText} from './fakeServer'
 import reducer, {initialState} from './prediction'
 
 describe('socket/MESSAGE', () => {
+  test('flavor text', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          payload: flavorText,
+          type: ActionTypes.socket.MESSAGE
+        }
+      )
+    ).toEqual(initialState)
+  })
   test('my role is seer (numberOfAgents === 1)', () => {
     expect(
       reducer(
