@@ -6,6 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {addLocaleData} from 'react-intl'
 import {composeWithDevTools} from 'redux-devtools-extension'
+import config from '../../config'
 import {createStore} from 'redux'
 import en from 'react-intl/locale-data/en'
 import ja from 'react-intl/locale-data/ja'
@@ -13,7 +14,7 @@ import middleware from './middlewares'
 import reducer from './reducers'
 
 const store =
-  process.env.NODE_ENV === 'production' ?
+  config.env === 'production' ?
     createStore(
       reducer,
       middleware
