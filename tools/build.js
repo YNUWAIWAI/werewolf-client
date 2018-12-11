@@ -31,7 +31,7 @@ const buildCSS = (src, dest) => {
     if (err) {
       throw err
     }
-    postcss([ nested, autoprefixer ])
+    postcss([nested, autoprefixer])
       .process(css, {
         from: src,
         to: dest
@@ -83,16 +83,23 @@ const build = destDir => {
 
 if (process.argv[2] === '-w') {
   build('../public')
-  fs.watch('./src', {recursive: true}, (eventType, filename) => {
-    if (filename) {
-      console.log(`${eventType}: ${filename}`)
-      build('../public')
+  fs.watch(
+    './src',
+    {
+      recursive: true
+    },
+    (eventType, filename) => {
+      if (filename) {
+        console.log(`${eventType}: ${filename}`)
+        build('../public')
+      }
     }
-  })
+  )
   const compiler = webpack(
     Object.assign(
       webpackConfig,
       {
+        devtool: 'source-map',
         mode: 'development'
       }
     )

@@ -1,14 +1,17 @@
 const path = require('path')
 
 module.exports = {
-  devtool: 'source-map',
   entry: {
     lobby: './src/scripts/lobby',
     village: './src/scripts/village'
   },
   externals: {
-    React: 'react',
-    ReactDOM: 'react-dom'
+    'react': 'react',
+    'react-dom': 'react-dom',
+    'react-intl': 'react-intl',
+    'react-redux': 'react-redux',
+    'react-select': 'react-select',
+    'redux': 'redux'
   },
   mode: 'production',
   module: {
