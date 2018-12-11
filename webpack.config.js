@@ -1,4 +1,5 @@
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -23,6 +24,18 @@ module.exports = {
           loader: 'babel-loader'
         }
       }
+    ]
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true,
+        uglifyOptions: {
+          compress: {
+            'drop_console': true
+          }
+        }
+      })
     ]
   },
   output: {
