@@ -114,7 +114,25 @@ if (process.argv[2] === '-w') {
     }))
   })
 } else if (process.argv[2] === '-d') {
-  build('docs')
+  build('../public')
+  const compiler = webpack(
+    Object.assign(
+      webpackConfig,
+      {
+        devtool: 'source-map',
+        mode: 'development'
+      }
+    )
+  )
+
+  compiler.run((err, stats) => {
+    if (err) {
+      throw err
+    }
+    console.log(stats.toString({
+      colors: true
+    }))
+  })
 } else {
   build('../public')
   const compiler = webpack(webpackConfig)
