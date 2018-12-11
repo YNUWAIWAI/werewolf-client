@@ -6,11 +6,10 @@ module.exports = {
     village: './src/scripts/village'
   },
   externals: {
-    'react': 'react',
-    'react-dom': 'react-dom',
+    'react': 'React',
+    'react-dom': 'ReactDOM',
     'react-intl': 'react-intl',
     'react-redux': 'react-redux',
-    'react-select': 'react-select',
     'redux': 'redux'
   },
   mode: 'production',
