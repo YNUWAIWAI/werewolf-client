@@ -6,6 +6,7 @@ module.exports = {
     village: './src/scripts/village'
   },
   externals: {
+    'prop-types': 'PropTypes',
     'react': 'React',
     'react-dom': 'ReactDOM',
     'react-intl': 'react-intl',
