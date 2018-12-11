@@ -11,7 +11,7 @@ module.exports = {
     'react-dom': 'ReactDOM',
     'react-intl': 'ReactIntl',
     'react-redux': 'ReactRedux',
-    'redux': 'redux'
+    'redux': 'Redux'
   },
   mode: 'production',
   module: {
