@@ -2,6 +2,7 @@
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
+import config from '../../../../config'
 import flavorText from './flavorText'
 import indexedDB from './indexedDB'
 import logger from './logger'
@@ -34,15 +35,26 @@ if (!elem || !elem.dataset || !elem.dataset.url) {
   throw Error('Not found data-url attribute.')
 }
 const url = elem.dataset.url
-const middleware = applyMiddleware(
-  socket({
-    url
-  }),
-  client2server,
-  flavorText,
-  indexedDB,
-  logger,
-  timeWatcher
-)
+const middleware =
+  config.env === 'production' ?
+    applyMiddleware(
+      socket({
+        url
+      }),
+      client2server,
+      flavorText,
+      indexedDB,
+      timeWatcher
+    ) :
+    applyMiddleware(
+      socket({
+        url
+      }),
+      client2server,
+      flavorText,
+      indexedDB,
+      logger,
+      timeWatcher
+    )
 
 export default middleware

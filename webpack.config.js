@@ -1,14 +1,18 @@
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  devtool: 'source-map',
   entry: {
     lobby: './src/scripts/lobby',
     village: './src/scripts/village'
   },
   externals: {
-    React: 'react',
-    ReactDOM: 'react-dom'
+    'prop-types': 'PropTypes',
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    'react-intl': 'ReactIntl',
+    'react-redux': 'ReactRedux',
+    'redux': 'Redux'
   },
   mode: 'production',
   module: {
@@ -20,6 +24,18 @@ module.exports = {
           loader: 'babel-loader'
         }
       }
+    ]
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true,
+        uglifyOptions: {
+          compress: {
+            'drop_console': true
+          }
+        }
+      })
     ]
   },
   output: {

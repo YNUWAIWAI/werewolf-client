@@ -57,9 +57,10 @@
     "webpack": "^4.19.1"
   },
   "scripts": {
-    "build": "node tools/build.js",
+    "build": "node tools/build.js -d",
+    "build:development": "node tools/build.js -d",
     "build:watch": "node tools/build.js -w",
-    "build:docs": "node tools/build.js -d",
+    "build:production": "node tools/build.js",
     "start": "node tools/build.js -w",
     "test": "jest",
     "test:watch": "jest --watch",

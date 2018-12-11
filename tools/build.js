@@ -4,6 +4,7 @@ const postcss = require('postcss')
 const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const glob = require('glob')
+const config = require('../config')
 const webpack = require('webpack')
 const webpackConfig = require('../webpack.config.js')
 
@@ -31,7 +32,7 @@ const buildCSS = (src, dest) => {
     if (err) {
       throw err
     }
-    postcss([ nested, autoprefixer ])
+    postcss([nested, autoprefixer])
       .process(css, {
         from: src,
         to: dest
@@ -82,17 +83,24 @@ const build = destDir => {
 }
 
 if (process.argv[2] === '-w') {
-  build('../public')
-  fs.watch('./src', {recursive: true}, (eventType, filename) => {
-    if (filename) {
-      console.log(`${eventType}: ${filename}`)
-      build('../public')
+  build(config.dest)
+  fs.watch(
+    './src',
+    {
+      recursive: true
+    },
+    (eventType, filename) => {
+      if (filename) {
+        console.log(`${eventType}: ${filename}`)
+        build(config.dest)
+      }
     }
-  })
+  )
   const compiler = webpack(
     Object.assign(
       webpackConfig,
       {
+        devtool: 'source-map',
         mode: 'development'
       }
     )
@@ -107,9 +115,27 @@ if (process.argv[2] === '-w') {
     }))
   })
 } else if (process.argv[2] === '-d') {
-  build('docs')
+  build(config.dest)
+  const compiler = webpack(
+    Object.assign(
+      webpackConfig,
+      {
+        devtool: 'source-map',
+        mode: 'development'
+      }
+    )
+  )
+
+  compiler.run((err, stats) => {
+    if (err) {
+      throw err
+    }
+    console.log(stats.toString({
+      colors: true
+    }))
+  })
 } else {
-  build('../public')
+  build(config.dest)
   const compiler = webpack(webpackConfig)
 
   compiler.run((err, stats) => {
