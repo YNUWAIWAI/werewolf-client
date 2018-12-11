@@ -54,12 +54,10 @@ export default class Timer extends React.Component<Props, State> {
       })
     }
 
-    const time = Math.floor((this.state.start + this.props.limit * 1000 - performance.now()) / 1000)
-
-    this.setState({
-      time
-    })
-    if (time < 0) {
+    this.setState((prevState, prevProps) => ({
+      time: Math.floor((prevState.start + prevProps.limit * 1000 - performance.now()) / 1000)
+    }))
+    if (this.state.time < 0) {
       const [
         head,
         ... tail
