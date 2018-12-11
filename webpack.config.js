@@ -7,9 +7,9 @@ module.exports = {
   },
   externals: {
     'prop-types': 'PropTypes',
-    'react': 'react',
+    'react': 'React',
     'react-dom': 'ReactDOM',
-    'react-intl': 'react-intl',
+    'react-intl': 'ReactIntl',
     'react-redux': 'react-redux',
     'redux': 'redux'
   },
