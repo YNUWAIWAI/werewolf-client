@@ -2,7 +2,7 @@
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
-import config from '../../../config'
+import config from '../../../../config'
 import flavorText from './flavorText'
 import indexedDB from './indexedDB'
 import logger from './logger'
