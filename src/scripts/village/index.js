@@ -12,10 +12,16 @@ import ja from 'react-intl/locale-data/ja'
 import middleware from './middlewares'
 import reducer from './reducers'
 
-const store = createStore(
-  reducer,
-  composeWithDevTools(middleware)
-)
+const store =
+  process.env.NODE_ENV === 'production' ?
+    createStore(
+      reducer,
+      middleware
+    ) :
+    createStore(
+      reducer,
+      composeWithDevTools(middleware)
+    )
 
 store.dispatch({
   type: socket.INIT

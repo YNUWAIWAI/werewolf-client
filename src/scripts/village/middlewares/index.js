@@ -34,15 +34,26 @@ if (!elem || !elem.dataset || !elem.dataset.url) {
   throw Error('Not found data-url attribute.')
 }
 const url = elem.dataset.url
-const middleware = applyMiddleware(
-  socket({
-    url
-  }),
-  client2server,
-  flavorText,
-  indexedDB,
-  logger,
-  timeWatcher
-)
+const middleware =
+  process.env.NODE_ENV === 'production' ?
+    applyMiddleware(
+      socket({
+        url
+      }),
+      client2server,
+      flavorText,
+      indexedDB,
+      timeWatcher
+    ) :
+    applyMiddleware(
+      socket({
+        url
+      }),
+      client2server,
+      flavorText,
+      indexedDB,
+      logger,
+      timeWatcher
+    )
 
 export default middleware
