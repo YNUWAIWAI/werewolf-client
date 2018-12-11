@@ -4,6 +4,7 @@ const postcss = require('postcss')
 const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const glob = require('glob')
+const config = require('../config')
 const webpack = require('webpack')
 const webpackConfig = require('../webpack.config.js')
 
@@ -82,7 +83,7 @@ const build = destDir => {
 }
 
 if (process.argv[2] === '-w') {
-  build('../public')
+  build(config.dest)
   fs.watch(
     './src',
     {
@@ -91,7 +92,7 @@ if (process.argv[2] === '-w') {
     (eventType, filename) => {
       if (filename) {
         console.log(`${eventType}: ${filename}`)
-        build('../public')
+        build(config.dest)
       }
     }
   )
@@ -114,7 +115,7 @@ if (process.argv[2] === '-w') {
     }))
   })
 } else if (process.argv[2] === '-d') {
-  build('../public')
+  build(config.dest)
   const compiler = webpack(
     Object.assign(
       webpackConfig,
@@ -134,7 +135,7 @@ if (process.argv[2] === '-w') {
     }))
   })
 } else {
-  build('../public')
+  build(config.dest)
   const compiler = webpack(webpackConfig)
 
   compiler.run((err, stats) => {
