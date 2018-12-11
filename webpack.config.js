@@ -10,7 +10,7 @@ module.exports = {
     'react': 'React',
     'react-dom': 'ReactDOM',
     'react-intl': 'ReactIntl',
-    'react-redux': 'react-redux',
+    'react-redux': 'ReactRedux',
     'redux': 'redux'
   },
   mode: 'production',
