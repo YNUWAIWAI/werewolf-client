@@ -7,6 +7,7 @@ test('<ObfucatorContainer />', () => {
   const dispatch = jest.fn()
   const getState = () => ({
     obfucator: {
+      loading: true,
       visible: true
     }
   })
@@ -18,5 +19,6 @@ test('<ObfucatorContainer />', () => {
   }
   const wrapper = shallow(<ObfucatorContainer store={store} />)
 
+  expect(wrapper.props().loading).toBe(true)
   expect(wrapper.props().visible).toBe(true)
 })
