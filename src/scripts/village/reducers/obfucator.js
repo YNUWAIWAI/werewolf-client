@@ -1,6 +1,15 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {HideResult, SelectNo, SelectOption, SelectYes, ToggleObfucator} from '../actions'
+import type {
+  HideResult,
+  SelectNo,
+  SelectOption,
+  SelectYes,
+  SocketClose,
+  SocketError,
+  SocketOpen,
+  ToggleObfucator
+} from '../actions'
 
 export type State = {
   +loading: boolean,
@@ -11,6 +20,9 @@ type Action =
   | SelectNo
   | SelectOption
   | SelectYes
+  | SocketClose
+  | SocketError
+  | SocketOpen
   | ToggleObfucator
   | {type: 'SHOW_RESULT'}
 
