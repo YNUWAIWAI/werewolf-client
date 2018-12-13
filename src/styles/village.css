@@ -13,6 +13,7 @@
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
+  --obfucator-color: rgba(0, 0, 0, 0.15);
   --public-color: rgba(255, 165, 0, 0.4);
   --private-color: rgba(128, 128, 128, 0.3);
   --limited-color: rgba(255, 0, 0, 0.4);
@@ -617,13 +618,21 @@ body {
 }
 
 .obfucator {
-  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  background: var(--obfucator-color);
+  display: flex;
   height: 100vh;
+  justify-content: center;
   left: 0;
   position: fixed;
   top: 0;
   width: 100vw;
   z-index: 3;
+
+  &--loader {
+    height: 10%;
+    width: 10%;
+  }
 }
 
 .prediction {

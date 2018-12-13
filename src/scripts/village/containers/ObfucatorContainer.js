@@ -4,6 +4,7 @@ import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
+  loading: state.obfucator.loading,
   visible: state.obfucator.visible
 })
 

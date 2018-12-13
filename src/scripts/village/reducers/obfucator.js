@@ -1,8 +1,17 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {HideResult, SelectNo, SelectOption, SelectYes, ToggleObfucator} from '../actions'
+import type {
+  HideResult,
+  SelectNo,
+  SelectOption,
+  SelectYes,
+  SocketClose,
+  SocketError,
+  SocketOpen
+} from '../actions'
 
 export type State = {
+  +loading: boolean,
   +visible: boolean
 }
 type Action =
@@ -10,41 +19,40 @@ type Action =
   | SelectNo
   | SelectOption
   | SelectYes
-  | ToggleObfucator
+  | SocketClose
+  | SocketError
+  | SocketOpen
   | {type: 'SHOW_RESULT'}
 
 export const initialState = {
+  loading: true,
   visible: true
 }
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.HIDE_RESULT:
-      return {
-        visible: false
-      }
     case ActionTypes.SELECT_NO:
+    case ActionTypes.SELECT_YES:
       return {
+        ... state,
         visible: false
       }
     case ActionTypes.SELECT_OPTION:
-      return {
-        visible: true
-      }
-    case ActionTypes.SELECT_YES:
-      return {
-        visible: false
-      }
     case ActionTypes.SHOW_RESULT:
       return {
+        loading: false,
         visible: true
       }
-    case ActionTypes.TOGGLE_OBFUCATOR:
+    case ActionTypes.socket.CLOSE:
+    case ActionTypes.socket.ERROR:
       return {
-        visible: action.visible
+        loading: true,
+        visible: true
       }
     case ActionTypes.socket.OPEN:
       return {
+        loading: false,
         visible: false
       }
     default:

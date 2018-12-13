@@ -4,6 +4,7 @@ import Circle from '../../src/scripts/village/components/atoms/svg/Circle'
 import Cross from '../../src/scripts/village/components/atoms/svg/Cross'
 import DownArrow from '../../src/scripts/village/components/atoms/svg/DownArrow'
 import Grave from '../../src/scripts/village/components/atoms/svg/Grave'
+import Loader from '../../src/scripts/village/components/atoms/svg/Loader'
 import Master from '../../src/scripts/village/components/atoms/svg/Master'
 import Private from '../../src/scripts/village/components/atoms/svg/Private'
 import Public from '../../src/scripts/village/components/atoms/svg/Public'
@@ -36,6 +37,7 @@ storiesOf('village|svg', module)
   .add('Cross', () => <Cross />)
   .add('DownArrow', () => <DownArrow />)
   .add('Grave', () => <Grave />)
+  .add('Loader', () => <Loader />)
   .add('Master', () => <Master />)
   .add('Private', () => <Private />)
   .add('Public', () => <Public />)
