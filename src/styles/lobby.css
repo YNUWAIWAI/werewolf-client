@@ -543,37 +543,41 @@ body {
         &--item {
           display: grid;
           font-size: inherit;
-          grid-template-areas:
-            'image times number'
-            'caption . .';
-          grid-template-columns: var(--image-size) 10px 1fr;
-          grid-template-rows: var(--image-size) 15px;
+          grid-template: 1fr calc(var(--image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--image-size) - 24px) 12px 12px 1fr;
 
           &--caption {
             font-size: 10px;
-            grid-area: caption;
+            grid-column: 1 / 6;
+            grid-row: 4;
             line-height: 1.5;
             text-align: center;
             word-break: keep-all;
           }
 
           &--image {
-            grid-area: image;
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
             height: var(--image-size);
             width: var(--image-size);
           }
 
           &--number {
-            align-self: end;
-            font-size: 1.5rem;
-            grid-area: number;
+            color: #fefefe;
+            font-size: 1rem;
+            grid-column: 4;
+            grid-row: 3;
             line-height: 1;
           }
 
           &--times {
-            align-self: end;
-            font-size: 10px;
-            grid-area: times;
+            align-items: flex-end;
+            color: #fefefe;
+            display: inline-flex;
+            font-size: 0.75rem;
+            grid-column: 3;
+            grid-row: 3;
+            justify-content: center;
+            line-height: 1;
           }
         }
       }
@@ -648,37 +652,41 @@ body {
         &--item {
           display: grid;
           font-size: inherit;
-          grid-template-areas:
-            'image times number'
-            'caption . .';
-          grid-template-columns: var(--image-size) 10px 1fr;
-          grid-template-rows: var(--image-size) 15px;
+          grid-template: 1fr calc(var(--image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--image-size) - 24px) 12px 12px 1fr;
 
           &--caption {
             font-size: 10px;
-            grid-area: caption;
+            grid-column: 1 / 6;
+            grid-row: 4;
             line-height: 1.5;
             text-align: center;
             word-break: keep-all;
           }
 
           &--image {
-            grid-area: image;
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
             height: var(--image-size);
             width: var(--image-size);
           }
 
           &--number {
-            align-self: end;
-            font-size: 1.5rem;
-            grid-area: number;
+            color: #fefefe;
+            font-size: 1rem;
+            grid-column: 4;
+            grid-row: 3;
             line-height: 1;
           }
 
           &--times {
-            align-self: end;
-            font-size: 10px;
-            grid-area: times;
+            align-items: flex-end;
+            color: #fefefe;
+            display: inline-flex;
+            font-size: 0.75rem;
+            grid-column: 3;
+            grid-row: 3;
+            justify-content: center;
+            line-height: 1;
           }
         }
 
