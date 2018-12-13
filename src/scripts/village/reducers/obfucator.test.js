@@ -56,6 +56,7 @@ test('SHOW_RESULT', () => {
 })
 test('socket/CLOSE', () => {
   const action = {
+    event: new CloseEvent('close event'),
     type: ActionTypes.socket.CLOSE
   }
 
@@ -63,8 +64,10 @@ test('socket/CLOSE', () => {
     loading: true,
     visible: true
   })
+})
 test('socket/ERROR', () => {
   const action = {
+    event: new Event('error'),
     type: ActionTypes.socket.ERROR
   }
 
@@ -75,6 +78,7 @@ test('socket/ERROR', () => {
 })
 test('socket/OPEN', () => {
   const action = {
+    event: new Event('error'),
     type: ActionTypes.socket.OPEN
   }
 
