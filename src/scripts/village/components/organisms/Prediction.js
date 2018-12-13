@@ -1,5 +1,4 @@
 // @flow
-/* eslint react/no-unused-prop-types: 0 */
 import type {AgentId, AgentStatus, BoardState, RoleId} from 'village'
 import PredictionItem from '../atoms/PredictionItem'
 import PredictionPlayer from '../atoms/PredictionPlayer'
@@ -69,9 +68,17 @@ export default function Prediction(props: Props) {
       ]
     )
   ]
-  const style = {
-    grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
-  }
+  const style = (() => {
+    if (props.playerStatus.length === 0 && props.roleStatus.length === 0) {
+      return {
+        display: 'none'
+      }
+    }
+
+    return {
+      grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
+    }
+  })()
 
   return (
     <div className="prediction" style={style}>
