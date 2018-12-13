@@ -24,7 +24,6 @@ export type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
-  | actions.ToggleObfucator
   | {type: 'PROLOGUE'}
   | {type: 'indexedDB/INIT'}
   | {type: 'socket/INIT'}
