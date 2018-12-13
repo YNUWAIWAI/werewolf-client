@@ -11,7 +11,8 @@
   --active-color: rgba(0, 0, 0, 0.07);
   --disabled-color: rgba(0, 0, 0, 0.3);
   --hover-color: rgba(0, 0, 0, 0.03);
-  --image-size: 50px;
+  --avatar-image-size: 50px;
+  --role-image-size: 50px;
 }
 
 body {
@@ -51,19 +52,19 @@ body {
     display: grid;
     font-size: 1.2rem;
     grid-gap: 0.5rem;
-    grid-template-columns: var(--image-size) 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
-    height: var(--image-size);
+    grid-template-columns: var(--avatar-image-size) 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
+    height: var(--avatar-image-size);
 
     &--image {
       align-items: center;
       display: inline-flex;
-      height: var(--image-size);
+      height: var(--avatar-image-size);
       justify-content: center;
-      width: var(--image-size);
+      width: var(--avatar-image-size);
 
       & > img {
-        height: var(--image-size);
-        width: var(--image-size);
+        height: var(--avatar-image-size);
+        width: var(--avatar-image-size);
       }
     }
 
@@ -543,7 +544,7 @@ body {
         &--item {
           display: grid;
           font-size: inherit;
-          grid-template: 1fr calc(var(--image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--image-size) - 24px) 12px 12px 1fr;
+          grid-template: 1fr calc(var(--role-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--role-image-size) - 24px) 12px 12px 1fr;
 
           &--caption {
             font-size: 10px;
@@ -557,8 +558,8 @@ body {
           &--image {
             grid-column: 2 / 4;
             grid-row: 2 / 4;
-            height: var(--image-size);
-            width: var(--image-size);
+            height: var(--role-image-size);
+            width: var(--role-image-size);
           }
 
           &--number {
@@ -583,7 +584,7 @@ body {
       }
     }
 
-    &--selectable-member {
+    &--member-select {
       border: solid 1px black;
       box-sizing: border-box;
       display: grid;
@@ -652,7 +653,7 @@ body {
         &--item {
           display: grid;
           font-size: inherit;
-          grid-template: 1fr calc(var(--image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--image-size) - 24px) 12px 12px 1fr;
+          grid-template: 1fr calc(var(--role-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--role-image-size) - 24px) 12px 12px 1fr;
 
           &--caption {
             font-size: 10px;
@@ -666,8 +667,8 @@ body {
           &--image {
             grid-column: 2 / 4;
             grid-row: 2 / 4;
-            height: var(--image-size);
-            width: var(--image-size);
+            height: var(--role-image-size);
+            width: var(--role-image-size);
           }
 
           &--number {
