@@ -22,25 +22,13 @@ export const initialState = {
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.HIDE_RESULT:
-      return {
-        ... state,
-        visible: false
-      }
     case ActionTypes.SELECT_NO:
-      return {
-        ... state,
-        visible: false
-      }
-    case ActionTypes.SELECT_OPTION:
-      return {
-        loading: false,
-        visible: true
-      }
     case ActionTypes.SELECT_YES:
       return {
         ... state,
         visible: false
       }
+    case ActionTypes.SELECT_OPTION:
     case ActionTypes.SHOW_RESULT:
       return {
         loading: false,
@@ -52,6 +40,7 @@ const obfucator = (state: State = initialState, action: Action): State => {
         visible: action.visible
       }
     case ActionTypes.socket.CLOSE:
+    case ActionTypes.socket.ERROR:
       return {
         loading: true,
         visible: true
