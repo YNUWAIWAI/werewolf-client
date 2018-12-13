@@ -22,7 +22,6 @@ type Action =
   | SocketClose
   | SocketError
   | SocketOpen
-  | ToggleObfucator
   | {type: 'SHOW_RESULT'}
 
 export const initialState = {
