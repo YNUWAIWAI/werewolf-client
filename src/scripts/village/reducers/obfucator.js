@@ -7,8 +7,7 @@ import type {
   SelectYes,
   SocketClose,
   SocketError,
-  SocketOpen,
-  ToggleObfucator
+  SocketOpen
 } from '../actions'
 
 export type State = {
@@ -45,11 +44,6 @@ const obfucator = (state: State = initialState, action: Action): State => {
       return {
         loading: false,
         visible: true
-      }
-    case ActionTypes.TOGGLE_OBFUCATOR:
-      return {
-        ... state,
-        visible: action.visible
       }
     case ActionTypes.socket.CLOSE:
     case ActionTypes.socket.ERROR:

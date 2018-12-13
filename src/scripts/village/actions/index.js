@@ -97,11 +97,6 @@ export const selectYes = (agentId: number): {agentId: number, type: 'SELECT_YES'
   type: ActionTypes.SELECT_YES
 })
 
-export const toggleObfucator = (visible: boolean): {visible: boolean, type: 'TOGGLE_OBFUCATOR'} => ({
-  type: ActionTypes.TOGGLE_OBFUCATOR,
-  visible
-})
-
 export type SocketClose = $Call<typeof socket.close, *>
 export type SocketError = $Call<typeof socket.error, *>
 export type SocketMessage = $Call<typeof socket.message, *>
@@ -119,4 +114,3 @@ export type Ready = $Call<typeof ready, *>
 export type SelectOption = $Call<typeof selectOption, *>
 export type SelectNo = $Call<typeof selectNo, *>
 export type SelectYes = $Call<typeof selectYes, *>
-export type ToggleObfucator = $Call<typeof toggleObfucator, *>

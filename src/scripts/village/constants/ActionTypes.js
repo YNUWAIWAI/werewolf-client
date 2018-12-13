@@ -16,7 +16,6 @@ export const SELECT_YES = 'SELECT_YES'
 export const SET_DAY = 'SET_DAY'
 export const SET_ROLE = 'SET_ROLE'
 export const SHOW_RESULT = 'SHOW_RESULT'
-export const TOGGLE_OBFUCATOR = 'TOGGLE_OBFUCATOR'
 
 export const indexedDB = {
   ABORT: 'indexedDB/ABORT',

@@ -87,25 +87,3 @@ test('socket/OPEN', () => {
     visible: false
   })
 })
-test('TOGGLE_OBFUCATOR visible={true}', () => {
-  const action = {
-    type: ActionTypes.TOGGLE_OBFUCATOR,
-    visible: true
-  }
-
-  expect(reducer(initialState, action)).toEqual({
-    loading: true,
-    visible: true
-  })
-})
-test('TOGGLE_OBFUCATOR visible={false}', () => {
-  const action = {
-    type: ActionTypes.TOGGLE_OBFUCATOR,
-    visible: false
-  }
-
-  expect(reducer(initialState, action)).toEqual({
-    loading: true,
-    visible: false
-  })
-})
