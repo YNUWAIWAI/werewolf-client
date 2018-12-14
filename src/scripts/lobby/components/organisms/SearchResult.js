@@ -13,25 +13,25 @@ type Props = {
 }
 
 export default function SearchResult(props: Props) {
-  if (props.villageItems.length === 0) {
-    if (props.searched) {
-      return (
-        <FormattedMessage
-          id="SearchResult.notFound"
-        >
-          {
-            (text: string) =>
-              <div className={`${props.className}--not-found`}>
-                {text}
-              </div>
-          }
-        </FormattedMessage>
-      )
-    }
-
+  if (!props.searched) {
     return ''
   }
+  if (props.villageItems.length === 0) { // && props.searched
+    return (
+      <FormattedMessage
+        id="SearchResult.notFound"
+      >
+        {
+          (text: string) =>
+            <div className={`${props.className}--not-found`}>
+              {text}
+            </div>
+        }
+      </FormattedMessage>
+    )
+  }
 
+  // props.villageItems.length > 0 && props.searched
   return (
     <VillageList
       isPlayer={props.isPlayer}
