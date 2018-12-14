@@ -11,7 +11,8 @@
   --active-color: rgba(0, 0, 0, 0.07);
   --disabled-color: rgba(0, 0, 0, 0.3);
   --hover-color: rgba(0, 0, 0, 0.03);
-  --image-size: 50px;
+  --avatar-image-size: 50px;
+  --role-image-size: 50px;
 }
 
 body {
@@ -51,19 +52,19 @@ body {
     display: grid;
     font-size: 1.2rem;
     grid-gap: 0.5rem;
-    grid-template-columns: var(--image-size) 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
-    height: var(--image-size);
+    grid-template-columns: var(--avatar-image-size) 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
+    height: var(--avatar-image-size);
 
     &--image {
       align-items: center;
       display: inline-flex;
-      height: var(--image-size);
+      height: var(--avatar-image-size);
       justify-content: center;
-      width: var(--image-size);
+      width: var(--avatar-image-size);
 
       & > img {
-        height: var(--image-size);
-        width: var(--image-size);
+        height: var(--avatar-image-size);
+        width: var(--avatar-image-size);
       }
     }
 
@@ -543,43 +544,47 @@ body {
         &--item {
           display: grid;
           font-size: inherit;
-          grid-template-areas:
-            'image times number'
-            'caption . .';
-          grid-template-columns: var(--image-size) 10px 1fr;
-          grid-template-rows: var(--image-size) 15px;
+          grid-template: 1fr calc(var(--role-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--role-image-size) - 24px) 12px 12px 1fr;
 
           &--caption {
             font-size: 10px;
-            grid-area: caption;
+            grid-column: 1 / 6;
+            grid-row: 4;
             line-height: 1.5;
             text-align: center;
             word-break: keep-all;
           }
 
           &--image {
-            grid-area: image;
-            height: var(--image-size);
-            width: var(--image-size);
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+            height: var(--role-image-size);
+            width: var(--role-image-size);
           }
 
           &--number {
-            align-self: end;
-            font-size: 1.5rem;
-            grid-area: number;
+            color: #fefefe;
+            font-size: 1rem;
+            grid-column: 4;
+            grid-row: 3;
             line-height: 1;
           }
 
           &--times {
-            align-self: end;
-            font-size: 10px;
-            grid-area: times;
+            align-items: flex-end;
+            color: #fefefe;
+            display: inline-flex;
+            font-size: 0.75rem;
+            grid-column: 3;
+            grid-row: 3;
+            justify-content: center;
+            line-height: 1;
           }
         }
       }
     }
 
-    &--selectable-member {
+    &--member-select {
       border: solid 1px black;
       box-sizing: border-box;
       display: grid;
@@ -630,8 +635,9 @@ body {
         display: grid;
         grid-area: role;
         grid-template-columns: 3rem repeat(8, 1fr);
-        margin-top: 0.5rem;
+        margin: 0.25rem;
         overflow: auto;
+        padding: 0.25rem;
 
         &[ data-opt = 'A'] {
           grid-area: A;
@@ -645,46 +651,53 @@ body {
           grid-area: C;
         }
 
+        &:hover {
+          background: var(--hover-color);
+        }
+
         &--item {
           display: grid;
           font-size: inherit;
-          grid-template-areas:
-            'image times number'
-            'caption . .';
-          grid-template-columns: var(--image-size) 10px 1fr;
-          grid-template-rows: var(--image-size) 15px;
+          grid-template: 1fr calc(var(--role-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--role-image-size) - 24px) 12px 12px 1fr;
 
           &--caption {
             font-size: 10px;
-            grid-area: caption;
+            grid-column: 1 / 6;
+            grid-row: 4;
             line-height: 1.5;
             text-align: center;
             word-break: keep-all;
           }
 
           &--image {
-            grid-area: image;
-            height: var(--image-size);
-            width: var(--image-size);
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+            height: var(--role-image-size);
+            width: var(--role-image-size);
           }
 
           &--number {
-            align-self: end;
-            font-size: 1.5rem;
-            grid-area: number;
+            color: #fefefe;
+            font-size: 1rem;
+            grid-column: 4;
+            grid-row: 3;
             line-height: 1;
           }
 
           &--times {
-            align-self: end;
-            font-size: 10px;
-            grid-area: times;
+            align-items: flex-end;
+            color: #fefefe;
+            display: inline-flex;
+            font-size: 0.75rem;
+            grid-column: 3;
+            grid-row: 3;
+            justify-content: center;
+            line-height: 1;
           }
         }
 
         &--radio {
           align-items: center;
-          background: white;
           display: inline-flex;
           justify-content: space-around;
           left: 0;
