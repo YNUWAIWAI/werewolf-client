@@ -7,7 +7,7 @@ import IdSearchBox from '../organisms/IdSearchBox'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
 import React from 'react'
-import VillageList from '../organisms/VillageList'
+import SearchResult from '../organisms/SearchResult'
 
 export type StateProps = {
   +header: string,
@@ -15,6 +15,7 @@ export type StateProps = {
   +isPlayer: boolean,
   +menuItems: MenuItem[],
   +name: string,
+  +searched: boolean,
   +villageItems: Village[]
 }
 export type DispatchProps = {
@@ -36,24 +37,20 @@ export default function IdSearch(props: Props) {
       <Header id={props.header} />
       <Avatar image={props.image} name={props.name} />
       <MainContent>
+        <SearchResult
+          className="id-search"
+          isPlayer={props.isPlayer}
+          searched={props.searched}
+          selectVillage={props.selectVillage}
+          villageItems={props.villageItems}
+        />
+      </MainContent>
+      <AsideContent>
         <IdSearchBox
           handleSearchIdChange={props.handleSearchIdChange}
           handleValidityChange={props.handleValidityChange}
           max={3}
         />
-        {
-          props.villageItems.length === 0 ?
-            <div className="id-search--no-item">
-              {'Not Found'}
-            </div> :
-            <VillageList
-              isPlayer={props.isPlayer}
-              items={props.villageItems}
-              selectVillage={props.selectVillage}
-            />
-        }
-      </MainContent>
-      <AsideContent>
         <Menu
           class="compact-menu"
           itemClass="compact-menu--item"

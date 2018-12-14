@@ -10,6 +10,7 @@ export type State = {
   +isPlayer: boolean,
   +menuItems: MenuItem[],
   +name: string,
+  +searched: boolean,
   +villageItems: Village[]
 }
 type Action =
@@ -25,6 +26,7 @@ export const initialState = {
   isPlayer: true,
   menuItems: [],
   name: '',
+  searched: false,
   villageItems: []
 }
 
@@ -51,6 +53,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        searched: false,
         villageItems: []
       }
     case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
@@ -74,6 +77,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        searched: false,
         villageItems: []
       }
     case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
@@ -97,12 +101,14 @@ const idSearch = (state: State = initialState, action: Action): State => {
             types: [ActionTypes.SHOW_MAIN]
           }
         ],
+        searched: false,
         villageItems: []
       }
     case ActionTypes.idSearch.CHANGE_SEARCH_ID:
       return {
         ... state,
-        id: action.id
+        id: action.id,
+        searched: false
       }
     case ActionTypes.idSearch.CHANGE_VALIDITY: {
       const disabled = !action.validity
@@ -161,6 +167,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
 
               return item
             }),
+            searched: true,
             villageItems: payload.villages
           }
         }
