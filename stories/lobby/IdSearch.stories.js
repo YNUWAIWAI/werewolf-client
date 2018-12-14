@@ -21,18 +21,10 @@ storiesOf('lobby|IdSearch', module)
     </IntlProvider>
   )
   .add('検索前', () => {
-    const handleSearchIdChange = id => {
-      action(`handleSearchIdChange: ${id}`)
-    }
-    const handleValidityChange = validity => {
-      action(`handleValidityChange: ${String(validity)}`)
-    }
-    const selectVillage = id => () => {
-      action(`selectVillage: ${id}`)
-    }
-    const transition = target => {
-      action(`transition: ${target}`)
-    }
+    const handleSearchIdChange = action('handleSearchIdChange')
+    const handleValidityChange = action('handleValidityChange')
+    const selectVillage = id => action(`selectVillage: ${id}`)
+    const transition = action('transition')
     const menuItems = [
       {
         disabled: true,
@@ -66,18 +58,10 @@ storiesOf('lobby|IdSearch', module)
     return story
   })
   .add('検索後(0件)', () => {
-    const handleSearchIdChange = id => {
-      action(`handleSearchIdChange: ${id}`)
-    }
-    const handleValidityChange = validity => {
-      action(`handleValidityChange: ${String(validity)}`)
-    }
-    const selectVillage = id => () => {
-      action(`selectVillage: ${id}`)
-    }
-    const transition = target => {
-      action(`transition: ${target}`)
-    }
+    const handleSearchIdChange = action('handleSearchIdChange')
+    const handleValidityChange = action('handleValidityChange')
+    const selectVillage = id => action(`selectVillage: ${id}`)
+    const transition = action('transition')
     const menuItems = [
       {
         disabled: true,
@@ -111,18 +95,10 @@ storiesOf('lobby|IdSearch', module)
     return story
   })
   .add('検索後(1件)', () => {
-    const handleSearchIdChange = id => {
-      action(`handleSearchIdChange: ${id}`)
-    }
-    const handleValidityChange = validity => {
-      action(`handleValidityChange: ${String(validity)}`)
-    }
-    const selectVillage = id => () => {
-      action(`selectVillage: ${id}`)
-    }
-    const transition = target => {
-      action(`transition: ${target}`)
-    }
+    const handleSearchIdChange = action('handleSearchIdChange')
+    const handleValidityChange = action('handleValidityChange')
+    const selectVillage = id => action(`selectVillage: ${id}`)
+    const transition = action('transition')
     const menuItems = [
       {
         disabled: true,
