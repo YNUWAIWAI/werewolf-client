@@ -79,6 +79,7 @@ export default {
     =1 {# robot}
     other {# robots}
   }`,
+  'SearchResult.notFound': 'Not Found',
   'Settings.button(deactivate)': 'DEACTIVATE',
   'Settings.button(logout)': 'LOGOUT',
   'Settings.button(save)': 'SAVE',
