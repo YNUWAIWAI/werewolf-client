@@ -65,6 +65,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     isPlayer: state.advancedSearch.isPlayer,
     menuItems,
     name: state.advancedSearch.name,
+    searched: state.advancedSearch.searched,
     validity: state.advancedSearch.validity,
     villageItems: state.advancedSearch.villageItems
   }

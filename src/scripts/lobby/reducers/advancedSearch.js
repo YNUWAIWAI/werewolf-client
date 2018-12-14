@@ -28,6 +28,7 @@ export type State = {
   +isPlayer: boolean,
   +menuItems: MenuItem[],
   +name: string,
+  +searched: boolean,
   +validity: {
     +avatar: boolean,
     +comment: boolean,
@@ -72,6 +73,7 @@ export const initialState = {
   isPlayer: true,
   menuItems: [],
   name: '',
+  searched: false,
   validity: {
     avatar: true,
     comment: false,
@@ -105,7 +107,8 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           }
 
           return item
-        })
+        }),
+        searched: false
       }
     case ActionTypes.advancedSearch.CHANGE_AVATAR:
       return {
@@ -175,6 +178,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         checked: initialState.checked,
+        searched: false,
         validity: initialState.validity,
         value: initialState.value
       }
@@ -267,6 +271,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
 
               return item
             }),
+            searched: true,
             villageItems: payload.villages
           }
         }

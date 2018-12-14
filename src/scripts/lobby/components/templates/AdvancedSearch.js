@@ -7,7 +7,7 @@ import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
 import React from 'react'
-import VillageList from '../organisms/VillageList'
+import SearchResult from '../organisms/SearchResult'
 
 export type StateProps = {
   +checked: {
@@ -23,6 +23,7 @@ export type StateProps = {
   +isPlayer: boolean,
   +menuItems: MenuItem[],
   +name: string,
+  +searched: boolean,
   +validity: {
     +avatar: boolean,
     +comment: boolean,
@@ -64,10 +65,12 @@ export default function AdvancedSearch(props: Props) {
           handleValidityChange={props.handleValidityChange}
           validity={props.validity}
         />
-        <VillageList
+        <SearchResult
+          className="advanced-search"
           isPlayer={props.isPlayer}
-          items={props.villageItems}
+          searched={props.searched}
           selectVillage={props.selectVillage}
+          villageItems={props.villageItems}
         />
       </MainContent>
       <AsideContent>
