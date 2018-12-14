@@ -35,6 +35,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         }
       ],
       name: '',
+      searched: false,
       villageItems: []
     }
   )
@@ -69,6 +70,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         }
       ],
       name: '',
+      searched: false,
       villageItems: []
     }
   )
@@ -103,6 +105,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         }
       ],
       name: '',
+      searched: false,
       villageItems: []
     }
   )
@@ -124,6 +127,7 @@ test('idSearch/CHANGE_SEARCH_ID', () => {
       isPlayer: true,
       menuItems: [],
       name: '',
+      searched: false,
       villageItems: []
     }
   )
@@ -177,6 +181,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
         }
       ],
       name: '',
+      searched: false,
       villageItems: []
     }
   )
@@ -221,6 +226,7 @@ describe('socket/MESSAGE', () => {
         isPlayer: true,
         menuItems: [],
         name: 'Alice',
+        searched: false,
         villageItems: []
       }
     )

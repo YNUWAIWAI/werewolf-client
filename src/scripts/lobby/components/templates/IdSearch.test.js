@@ -18,6 +18,7 @@ describe('<IdSearch />', () => {
         isPlayer
         menuItems={[]}
         name="name"
+        searched={false}
         selectVillage={selectVillage}
         transition={transition}
         villageItems={[]}
@@ -27,29 +28,14 @@ describe('<IdSearch />', () => {
     expect(wrapper.children()).toHaveLength(4)
     expect(wrapper.find('Header').exists()).toBe(true)
     expect(wrapper.find('MainContent').exists()).toBe(true)
-    expect(
-      wrapper
-        .find('MainContent')
-        .find('IdSearchBox')
-        .exists()
-    ).toBe(true)
-    expect(
-      wrapper
-        .find('MainContent')
-        .find('div')
-        .exists()
-    ).toBe(true)
+    expect(wrapper.find('MainContent').find('SearchResult').exists()).toBe(true)
     expect(wrapper.find('AsideContent').exists()).toBe(true)
-    expect(
-      wrapper
-        .find('AsideContent')
-        .find('Menu')
-        .exists()
-    ).toBe(true)
+    expect(wrapper.find('AsideContent').find('IdSearchBox').exists()).toBe(true)
+    expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
     expect(selectVillage).toHaveBeenCalledTimes(0)
     expect(transition).toHaveBeenCalledTimes(0)
   })
-  test('1 items', () => {
+  test('1 item', () => {
     const handleSearchIdChange = jest.fn()
     const handleValidityChange = jest.fn()
     const selectVillage = jest.fn()
@@ -98,6 +84,7 @@ describe('<IdSearch />', () => {
         isPlayer
         menuItems={[]}
         name="name"
+        searched
         selectVillage={selectVillage}
         transition={transition}
         villageItems={villageItems}
@@ -107,25 +94,10 @@ describe('<IdSearch />', () => {
     expect(wrapper.children()).toHaveLength(4)
     expect(wrapper.find('Header').exists()).toBe(true)
     expect(wrapper.find('MainContent').exists()).toBe(true)
-    expect(
-      wrapper
-        .find('MainContent')
-        .find('IdSearchBox')
-        .exists()
-    ).toBe(true)
-    expect(
-      wrapper
-        .find('MainContent')
-        .find('VillageList')
-        .exists()
-    ).toBe(true)
+    expect(wrapper.find('MainContent').find('SearchResult').exists()).toBe(true)
     expect(wrapper.find('AsideContent').exists()).toBe(true)
-    expect(
-      wrapper
-        .find('AsideContent')
-        .find('Menu')
-        .exists()
-    ).toBe(true)
+    expect(wrapper.find('AsideContent').find('IdSearchBox').exists()).toBe(true)
+    expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
     expect(selectVillage).toHaveBeenCalledTimes(0)
     expect(transition).toHaveBeenCalledTimes(0)
   })
