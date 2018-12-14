@@ -192,6 +192,8 @@ body {
   display: inline-flex;
   font-size: 3rem;
   justify-content: center;
+  margin: 1rem 0;
+  width: 100%;
 
   &--input {
     font-size: 3rem;
@@ -203,18 +205,25 @@ body {
   &--input:invalid + &--validity::after {
     color: #f00;
     content: '✖';
+    display: inline-block;
+    font-size: 3rem;
     padding-left: 0.5rem;
+    width: 3rem;
   }
 
   &--input:valid + &--validity::after {
     color: #26b72b;
     content: '✓';
+    display: inline-block;
+    font-size: 3rem;
     padding-left: 0.5rem;
+    width: 3rem;
   }
 
-  &--no-item {
+  &--not-found {
     color: rgba(180, 180, 180, 1);
     font-size: 3rem;
+    text-align: center;
   }
 
   &--sharp {
