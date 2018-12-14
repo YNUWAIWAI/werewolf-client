@@ -40,6 +40,7 @@ test('<AdvancedSearch />', () => {
       isPlayer
       menuItems={[]}
       name="name"
+      searched={false}
       selectVillage={selectVillage}
       transition={transition}
       validity={validity}
@@ -50,25 +51,10 @@ test('<AdvancedSearch />', () => {
   expect(wrapper.children()).toHaveLength(4)
   expect(wrapper.find('Header').exists()).toBe(true)
   expect(wrapper.find('MainContent').exists()).toBe(true)
-  expect(
-    wrapper
-      .find('MainContent')
-      .find('AdvancedSearchBox')
-      .exists()
-  ).toBe(true)
-  expect(
-    wrapper
-      .find('MainContent')
-      .find('VillageList')
-      .exists()
-  ).toBe(true)
+  expect(wrapper.find('MainContent').find('AdvancedSearchBox').exists()).toBe(true)
+  expect(wrapper.find('MainContent').find('SearchResult').exists()).toBe(true)
   expect(wrapper.find('AsideContent').exists()).toBe(true)
-  expect(
-    wrapper
-      .find('AsideContent')
-      .find('Menu')
-      .exists()
-  ).toBe(true)
+  expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
   expect(selectVillage).toHaveBeenCalledTimes(0)
   expect(transition).toHaveBeenCalledTimes(0)
 })

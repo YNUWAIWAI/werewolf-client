@@ -235,6 +235,7 @@ body {
   border: black solid 1px;
   display: grid;
   font-size: 2rem;
+  margin: 0 0 1rem;
 
   &--input {
     background: rgba(250, 250, 250, 1);
@@ -255,6 +256,12 @@ body {
       outline-color: red;
       outline-offset: -2px;
     }
+  }
+
+  &--not-found {
+    color: rgba(180, 180, 180, 1);
+    font-size: 3rem;
+    text-align: center;
   }
 
   &--prop {

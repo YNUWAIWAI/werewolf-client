@@ -44,8 +44,8 @@ test('ADVANCED_SEARCH', () => {
       isPlayer: true,
       menuItems: [
         {
-          isLoading: true,
           id: 'Menu.search',
+          isLoading: true,
           types: [ActionTypes.ADVANCED_SEARCH]
         },
         {
@@ -58,6 +58,7 @@ test('ADVANCED_SEARCH', () => {
         }
       ],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -102,6 +103,7 @@ test('advancedSearch/CHANGE_AVATAR', () => {
       isPlayer: true,
       menuItems: [],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -148,6 +150,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -193,6 +196,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -238,6 +242,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -283,6 +288,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -328,6 +334,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -373,6 +380,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -418,6 +426,7 @@ test('advancedSearch/CHANGE_COMMENT', () => {
       isPlayer: true,
       menuItems: [],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -462,6 +471,7 @@ test('advancedSearch/CHANGE_HOST_NAME', () => {
       isPlayer: true,
       menuItems: [],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -506,6 +516,7 @@ test('advancedSearch/CHANGE_MAXIMUM', () => {
       isPlayer: true,
       menuItems: [],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -550,6 +561,7 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
       isPlayer: true,
       menuItems: [],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -596,6 +608,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -641,6 +654,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: true,
@@ -686,6 +700,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -731,6 +746,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -776,6 +792,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -821,6 +838,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         isPlayer: true,
         menuItems: [],
         name: '',
+        searched: false,
         validity: {
           avatar: true,
           comment: false,
@@ -866,6 +884,7 @@ test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
       isPlayer: true,
       menuItems: [],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -922,6 +941,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         }
       ],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -978,6 +998,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         }
       ],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -1034,6 +1055,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         }
       ],
       name: '',
+      searched: false,
       validity: {
         avatar: true,
         comment: false,
@@ -1102,6 +1124,7 @@ describe('socket/MESSAGE', () => {
           isPlayer: true,
           menuItems: [],
           name: 'Alice',
+          searched: false,
           validity: {
             avatar: true,
             comment: false,
@@ -1186,8 +1209,8 @@ describe('socket/MESSAGE', () => {
             ... initialState,
             menuItems: [
               {
-                isLoading: true,
                 id: 'Menu.search',
+                isLoading: true,
                 types: [ActionTypes.ADVANCED_SEARCH]
               },
               {
@@ -1234,6 +1257,7 @@ describe('socket/MESSAGE', () => {
             }
           ],
           name: '',
+          searched: true,
           validity: {
             avatar: true,
             comment: false,
