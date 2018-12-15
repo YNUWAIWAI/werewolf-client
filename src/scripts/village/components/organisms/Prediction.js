@@ -38,6 +38,9 @@ export type Props =
   & OwnProps
 
 export default function Prediction(props: Props) {
+  if (props.playerStatus.length === 0 && props.roleStatus.length === 0) {
+    return ''
+  }
   const predictionTable = [
     <div key="null" />,
     ... props.roleStatus.map(role =>
@@ -68,17 +71,9 @@ export default function Prediction(props: Props) {
       ]
     )
   ]
-  const style = (() => {
-    if (props.playerStatus.length === 0 && props.roleStatus.length === 0) {
-      return {
-        display: 'none'
-      }
-    }
-
-    return {
-      grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
-    }
-  })()
+  const style = {
+    grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
+  }
 
   return (
     <div className="prediction" style={style}>
