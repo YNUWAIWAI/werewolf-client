@@ -4,7 +4,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 describe('<Prediction />', () => {
-  test('init', () => {
+  test('playerStatus.length === 0 || roleStatus.length === 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
     const playerStatus = []
@@ -21,7 +21,7 @@ describe('<Prediction />', () => {
 
     expect(wrapper.text()).toBe('')
   })
-  test('', () => {
+  test('playerStatus.length !== 0 && roleStatus.length !== 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
     const playerStatus = [
