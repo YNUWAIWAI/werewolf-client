@@ -38,7 +38,7 @@ export type Props =
   & OwnProps
 
 export default function Prediction(props: Props) {
-  if (props.playerStatus.length === 0 && props.roleStatus.length === 0) {
+  if (props.playerStatus.length === 0 || props.roleStatus.length === 0) {
     return ''
   }
   const predictionTable = [
