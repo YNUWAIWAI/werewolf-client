@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import {firstMorning, firstMorning3, flavorText} from './fakeServer'
+import {firstMorning, firstMorning3, firstMorning4, flavorText} from './fakeServer'
 import reducer, {initialState} from './prediction'
 
 describe('socket/MESSAGE', () => {
@@ -1715,6 +1715,128 @@ describe('socket/MESSAGE', () => {
               state: '?'
             },
             werehamster: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          }
+        }
+      }
+    )
+  })
+  test('ignore the role which is not exists', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          payload: firstMorning4,
+          type: ActionTypes.socket.MESSAGE
+        }
+      )
+    ).toEqual(
+      {
+        playerStatus: [
+          {
+            id: 0,
+            image: 'https://werewolf.world/image/0.2/Gert.jpg',
+            name: {
+              en: 'Gert',
+              ja: 'ゲルト'
+            },
+            status: 'alive'
+          },
+          {
+            id: 1,
+            image: 'https://werewolf.world/image/0.2/Walter.jpg',
+            name: {
+              en: 'Walter',
+              ja: 'ヴァルター'
+            },
+            status: 'alive'
+          },
+          {
+            id: 2,
+            image: 'https://werewolf.world/image/0.2/Moritz.jpg',
+            name: {
+              en: 'Moritz',
+              ja: 'モーリッツ'
+            },
+            status: 'alive'
+          },
+          {
+            id: 3,
+            image: 'https://werewolf.world/image/0.2/Simson.jpg',
+            name: {
+              en: 'Simson',
+              ja: 'ジムゾン'
+            },
+            status: 'alive'
+          }
+        ],
+        roleStatus: [
+          {
+            caption: {
+              en: 'Villager',
+              ja: '村人'
+            },
+            id: 'villager',
+            image: 'https://werewolf.world/image/0.2/villager.jpg',
+            numberOfAgents: 3
+          },
+          {
+            caption: {
+              en: 'Werewolf',
+              ja: '人狼'
+            },
+            id: 'werewolf',
+            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
+            numberOfAgents: 1
+          }
+        ],
+        table: {
+          '0': {
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '1': {
+            villager: {
+              date: 1,
+              fixed: true,
+              state: 'O'
+            },
+            werewolf: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            }
+          },
+          '2': {
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '3': {
+            villager: {
               date: 1,
               fixed: false,
               state: '?'
