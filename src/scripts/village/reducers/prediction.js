@@ -44,25 +44,27 @@ type Action =
   | ChangePredictionBoard
 
 const updatePredictionTable = (roles: Role[], table: Table): Table => {
-  roles.forEach(role => {
-    const roleId = strToRoleId(role.name.en)
+  roles
+    .filter(role => role.numberOfAgents > 0)
+    .forEach(role => {
+      const roleId = strToRoleId(role.name.en)
 
-    if (
-      role.isMine &&
-      PREDICTION.includes(roleId) &&
-      role.board
-    ) {
-      role.board.forEach(b => {
-        const agentId = String(b.agent.id)
+      if (
+        role.isMine &&
+        PREDICTION.includes(roleId) &&
+        role.board
+      ) {
+        role.board.forEach(b => {
+          const agentId = String(b.agent.id)
 
-        table[agentId][roleId] = {
-          date: b.date,
-          fixed: true,
-          state: b.polarity === 'positive' ? 'O' : 'fill' // polarity: 'positive' | 'negative'
-        }
-      })
-    }
-  })
+          table[agentId][roleId] = {
+            date: b.date,
+            fixed: true,
+            state: b.polarity === 'positive' ? 'O' : 'fill' // polarity: 'positive' | 'negative'
+          }
+        })
+      }
+    })
 
   return table
 }
@@ -74,35 +76,37 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
     const agentId = String(agent.id)
 
     table[agentId] = {}
-    roles.forEach(role => {
-      const roleId = strToRoleId(role.name.en)
+    roles
+      .filter(role => role.numberOfAgents > 0)
+      .forEach(role => {
+        const roleId = strToRoleId(role.name.en)
 
-      if (agent.isMine && role.isMine) {
-        table[agentId][roleId] = {
-          date: 1,
-          fixed: true,
-          state: 'O'
+        if (agent.isMine && role.isMine) {
+          table[agentId][roleId] = {
+            date: 1,
+            fixed: true,
+            state: 'O'
+          }
+        } else if (agent.isMine && !role.isMine) {
+          table[agentId][roleId] = {
+            date: 1,
+            fixed: true,
+            state: 'fill'
+          }
+        } else if (!agent.isMine && role.isMine && role.numberOfAgents === 1) {
+          table[agentId][roleId] = {
+            date: 1,
+            fixed: true,
+            state: 'fill'
+          }
+        } else {
+          table[agentId][roleId] = {
+            date: 1,
+            fixed: false,
+            state: '?'
+          }
         }
-      } else if (agent.isMine && !role.isMine) {
-        table[agentId][roleId] = {
-          date: 1,
-          fixed: true,
-          state: 'fill'
-        }
-      } else if (!agent.isMine && role.isMine && role.numberOfAgents === 1) {
-        table[agentId][roleId] = {
-          date: 1,
-          fixed: true,
-          state: 'fill'
-        }
-      } else {
-        table[agentId][roleId] = {
-          date: 1,
-          fixed: false,
-          state: '?'
-        }
-      }
-    })
+      })
   })
 
   return updatePredictionTable(roles, table)
@@ -133,18 +137,23 @@ const prediction = (state: State = initialState, action: Action): State => {
 
           return updatePredictionTable(roles, state.table)
         })()
-        const roleStatus: RoleStatus = roles.map(role => ({
-          caption: role.name,
-          id: strToRoleId(role.name.en),
-          image: role.image,
-          numberOfAgents: role.numberOfAgents
-        }))
-        const playerStatus: PlayerStatus = agents.map(agent => ({
-          id: agent.id,
-          image: agent.image,
-          name: agent.name,
-          status: strToAgentStatus(agent.status)
-        }))
+        const roleStatus: RoleStatus =
+          roles
+            .filter(role => role.numberOfAgents > 0)
+            .map(role => ({
+              caption: role.name,
+              id: strToRoleId(role.name.en),
+              image: role.image,
+              numberOfAgents: role.numberOfAgents
+            }))
+        const playerStatus: PlayerStatus =
+          agents
+            .map(agent => ({
+              id: agent.id,
+              image: agent.image,
+              name: agent.name,
+              status: strToAgentStatus(agent.status)
+            }))
 
         return {
           ... state,
