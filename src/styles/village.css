@@ -648,12 +648,18 @@ body {
   max-width: 48vw;
   overflow: auto;
 
-  & > div {
+  &--empty {
+    background: var(--background-color);
     border: solid 1px black;
+    left: 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
 
   &--item {
     align-items: center;
+    border: solid 1px black;
     box-sizing: border-box;
     cursor: pointer;
     display: inline-flex;
@@ -683,6 +689,7 @@ body {
 
   &--player {
     background: var(--background-color);
+    border: solid 1px black;
     display: grid;
     grid-template-areas:
       '. . .'
@@ -716,11 +723,12 @@ body {
 
   &--role {
     background: var(--background-color);
+    border: solid 1px black;
     display: grid;
     grid-template: 1fr calc(var(--prediction-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--prediction-image-size) - 24px) 12px 12px 1fr;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 1;
 
     &--caption {
       font-size: 10px;
