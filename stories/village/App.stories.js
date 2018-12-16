@@ -1,14 +1,17 @@
 // @flow
+import {
+  day,
+  morningWithLimitedChat,
+  morningWithoutLimitedChat,
+  night,
+  prologue,
+  result
+} from './initialState'
 import App from '../../src/scripts/village/containers/App'
 import {Provider} from 'react-redux'
 import React from 'react'
 import {createStore} from 'redux'
-import day from './initialState/day'
-import morningWithLimitedChat from './initialState/morningWithLimitedChat'
-import morningWithoutLimitedChat from './initialState/morningWithoutLimitedChat'
-import night from './initialState/night'
 import reducer from '../../src/scripts/village/reducers'
-import result from './initialState/result'
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
 
@@ -17,6 +20,19 @@ storiesOf('village|App', module)
   .add('default', () => {
     const store = createStore(
       reducer
+    )
+
+    const story =
+      <Provider store={store}>
+        <App />
+      </Provider>
+
+    return story
+  })
+  .add('prologue', () => {
+    const store = createStore(
+      reducer,
+      prologue
     )
 
     const story =
