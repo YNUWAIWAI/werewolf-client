@@ -643,7 +643,7 @@ body {
   display: grid;
   grid: 1fr / 1fr;
   grid-area: prediction;
-  margin: 0 auto 0 1vw;
+  margin: 0 auto auto 1vw;
   max-height: 100%;
   max-width: 48vw;
   overflow: auto;
