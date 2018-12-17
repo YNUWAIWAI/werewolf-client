@@ -24,6 +24,7 @@
   --werehamster--color: rgb(251, 176, 59);
   --werewolf--color: rgb(147, 39, 143);
   --dead-color: red;
+  --background-color: white;
 }
 
 body {
@@ -31,9 +32,10 @@ body {
 }
 
 .activity {
-  display: flex;
+  display: grid;
   grid-area: activity;
-  justify-content: space-around;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'chat prediction';
 
   &.expand {
     grid-area: activity / 1 / command / 1;
@@ -52,8 +54,9 @@ body {
 }
 
 .chat {
+  grid-area: chat;
   overflow: auto;
-  width: 48vw;
+  padding: 0 1vw;
 
   &--arrow-box {
     background: var(--public-color);
@@ -636,20 +639,27 @@ body {
 }
 
 .prediction {
-  border: 1px solid black;
-  border-radius: 3px;
+  border: solid 1px black;
   display: grid;
   grid: 1fr / 1fr;
+  grid-area: prediction;
+  margin: 0 auto 0 1vw;
   max-height: 100%;
   max-width: 48vw;
   overflow: auto;
 
-  & > div {
+  &--empty {
+    background: var(--background-color);
     border: solid 1px black;
+    left: 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
 
   &--item {
     align-items: center;
+    border: solid 1px black;
     box-sizing: border-box;
     cursor: pointer;
     display: inline-flex;
@@ -678,6 +688,8 @@ body {
   }
 
   &--player {
+    background: var(--background-color);
+    border: solid 1px black;
     display: grid;
     grid-template-areas:
       '. . .'
@@ -686,6 +698,9 @@ body {
       '. . .';
     grid-template-rows: 1fr var(--prediction-image-size) 15px 1fr;
     grid-template-columns: 1fr var(--prediction-image-size) 1fr;
+    left: 0;
+    position: sticky;
+    z-index: 1;
 
     &.dead {
       background-color: red;
@@ -707,8 +722,13 @@ body {
   }
 
   &--role {
+    background: var(--background-color);
+    border: solid 1px black;
     display: grid;
     grid-template: 1fr calc(var(--prediction-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--prediction-image-size) - 24px) 12px 12px 1fr;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
     &--caption {
       font-size: 10px;

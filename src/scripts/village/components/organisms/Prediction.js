@@ -42,7 +42,10 @@ export default function Prediction(props: Props) {
     return ''
   }
   const predictionTable = [
-    <div key="null" />,
+    <div
+      className="prediction--empty"
+      key="empty"
+    />,
     ... props.roleStatus.map(role =>
       <PredictionRole
         caption={role.caption}
