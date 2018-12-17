@@ -53,26 +53,7 @@ describe('<CommandContainer />', () => {
   test('FLAVOR_TEXT', () => {
     const dispatch = jest.fn()
     const getState = () => ({
-      agents: {
-        mine: {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-          'id': 1,
-          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-          'isAChoice': false,
-          'isMine': true,
-          'name': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          },
-          'status': 'alive',
-          'update': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
-            'date': 1,
-            'phase': 'morning'
-          }
-        }
-      },
+      agents: {},
       base: {
         phase: FLAVOR_TEXT
       },
@@ -88,7 +69,7 @@ describe('<CommandContainer />', () => {
     }
     const wrapper = shallow(<CommandContainer store={store} />)
 
-    expect(wrapper.props().content).toEqual(<CommandInputBox />)
+    expect(wrapper.props().content).toEqual(<CommandSelection />)
     expect(wrapper.props().hide).toBe(false)
   })
   test('MORNING', () => {

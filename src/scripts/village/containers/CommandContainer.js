@@ -16,9 +16,9 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     }
     switch (phase) {
       case DAY:
+      case FLAVOR_TEXT:
       case NIGHT:
         return <CommandSelection />
-      case FLAVOR_TEXT:
       case MORNING:
         return <CommandInputBox />
       case POST_MORTEM:
