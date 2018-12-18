@@ -5,6 +5,7 @@ import type {DispatchAPI, Middleware} from 'redux'
 import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
 import {getAgent, getChannelFromInputChennel, getRole, just, strToRoleId} from '../util'
 import type {Action} from '.'
+import {POST_MORTEM, RESULT} from '../constants/Phase'
 import type {ReducerState} from '../reducers'
 import {socket} from '../actions'
 
@@ -95,7 +96,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
           'totalNumberOfAgents': state.base.village.totalNumberOfAgents
         },
         'token': state.base.token,
-        'phase': state.base.phase,
+        'phase': state.base.phase === RESULT ? POST_MORTEM : state.base.phase,
         'date': state.base.date,
         'phaseTimeLimit': state.base.phaseTimeLimit,
         'phaseStartTime': state.base.phaseStartTime,
