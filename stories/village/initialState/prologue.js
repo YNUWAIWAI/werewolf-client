@@ -30,8 +30,8 @@ export default {
           'en': 'Walter',
           'ja': 'ヴァルター'
         },
-        'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:07:56.568+09:00',
         'text': 'それで、あなたは人狼が誰だと思うの？',
         'type': 'item'
@@ -45,8 +45,8 @@ export default {
           'en': 'Alvin',
           'ja': 'アルビン'
         },
-        'phaseTimeLimit': 600,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:08:56.568+09:00',
         'text': '>>1 私はパメラが人狼だと思う。',
         'type': 'item'
