@@ -4,6 +4,8 @@ import type {
   Channel,
   ChatChannel,
   InputChannel,
+  Language,
+  LanguageMap,
   Message,
   RoleId,
   Team
@@ -160,6 +162,15 @@ export const getRole = <T: {name: {en: string}}>(roles: T[], roleId: RoleId): T 
   }
 
   return maybe
+}
+
+export const getText = ({language, languageMap}: {language: Language, languageMap: LanguageMap}): string => {
+  if (languageMap[language]) {
+    return languageMap[language]
+  }
+  console.error(`Not found language: ${language}`)
+
+  return languageMap.en
 }
 
 export const idGenerater = (prefix: string) => {

@@ -7,6 +7,12 @@ declare module 'village' {
   declare type RoleId = 'villager' | 'seer' | 'medium' | 'hunter' | 'mason' | 'madman' | 'werewolf' | 'werehamster' | 'master'
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
+  declare type LanguageMap = {
+    en: string,
+    fr?: string,
+    it?: string,
+    ja?: string
+  }
   declare type Result = 'win' | 'lose'
   declare type AgentId = string
   declare type AgentStatus = 'alive' | 'dead' | 'death by execution' | 'death by attack' | 'death by fear' | 'unnatural death'
@@ -62,8 +68,8 @@ declare module 'village' {
     '@context': Context$Agent,
     '@id': string,
     isMine?: boolean,
-    name: { [Language]: string },
-    'full name'?: { [Language]: string },
+    name: LanguageMap,
+    'full name'?: LanguageMap,
     gender?: Gender,
     image: string,
     id: number,
@@ -210,7 +216,7 @@ declare module 'village' {
   declare type Role = {
     '@context': Context$Role,
     '@id': string,
-    name: { [Language]: string },
+    name: LanguageMap,
     image: string,
     isMine?: boolean,
     numberOfAgents?: number
