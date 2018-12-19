@@ -10,6 +10,7 @@ import {
   getPlayableRoles,
   getRole,
   getTeam,
+  getText,
   idGenerater,
   just,
   spaceSeparatedToCamelCase,
@@ -1077,6 +1078,51 @@ describe('getTeam', () => {
   })
   test('Werehamster', () => {
     expect(getTeam('werehamster')).toBe('werehamster')
+  })
+})
+describe('getText', () => {
+  test('en', () => {
+    const languageMap = {
+      en: 'English'
+    }
+
+    expect(
+      getText(
+        {
+          language: 'en',
+          languageMap
+        }
+      )
+    ).toBe('English')
+  })
+  test('ja', () => {
+    const languageMap = {
+      en: 'English',
+      ja: '日本語'
+    }
+
+    expect(
+      getText(
+        {
+          language: 'ja',
+          languageMap
+        }
+      )
+    ).toBe('日本語')
+  })
+  test('fallback', () => {
+    const languageMap = {
+      en: 'English'
+    }
+
+    expect(
+      getText(
+        {
+          language: 'ja',
+          languageMap
+        }
+      )
+    ).toBe('English')
   })
 })
 test('idGenerater', () => {

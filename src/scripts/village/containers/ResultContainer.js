@@ -4,6 +4,7 @@ import Result, {type DispatchProps, type StateProps} from '../components/organis
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {getText} from '../util'
 
 type Action =
   | HideResult
@@ -17,12 +18,18 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     agents[id] = {
       agentId: a.agentId,
       agentImage: a.agentImage,
-      agentName: a.agentName[state.language],
+      agentName: getText({
+        language: state.language,
+        languageMap: a.agentName
+      }),
       avatarImage: a.avatarImage,
       avatarName: a.avatarName,
       result: a.result,
       roleImage: a.roleImage,
-      roleName: a.roleName[state.language],
+      roleName: getText({
+        language: state.language,
+        languageMap: a.roleName
+      }),
       status: a.status
     }
   })

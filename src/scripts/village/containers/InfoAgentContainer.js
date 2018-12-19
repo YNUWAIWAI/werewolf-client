@@ -2,6 +2,7 @@
 import AgentIcon, {type Props as StateProps} from '../components/atoms/AgentIcon'
 import {type ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {getText} from '../util'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.agents.mine) {
@@ -15,7 +16,10 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   return {
     class: 'info--agent',
     image: state.agents.mine.image,
-    name: state.agents.mine.name[state.language]
+    name: getText({
+      language: state.language,
+      languageMap: state.agents.mine.name
+    })
   }
 }
 

@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import * as Message from '../constants/Message'
 import {ANONYMOUS_AUDIENCE, ONYMOUS_AUDIENCE, PUBLIC} from '../constants/Channels'
 import type {ChangeDate, SocketMessage} from '../actions'
-import type {Channel, Language, Payload$playerMessage} from 'village'
+import type {Channel, LanguageMap, Payload$playerMessage} from 'village'
 import {idGenerater, just, strToMessage} from '../util'
 
 const getChatId = idGenerater('chat')
@@ -17,7 +17,7 @@ export type State = {
       +image: string,
       +intensionalDisclosureRange: Channel,
       +isMine: boolean,
-      +name: { [Language]: string } | string,
+      +name: LanguageMap | string,
       +phaseStartTime: string,
       +phaseTimeLimit: number,
       +serverTimestamp: string,
