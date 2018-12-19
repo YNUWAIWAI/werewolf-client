@@ -2,6 +2,7 @@
 import Chat, {type StateProps} from '../components/organisms/Chat'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {getText} from '../util'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const byId = {}
@@ -16,10 +17,13 @@ const mapStateToProps = (state: ReducerState): StateProps => {
             ... item,
             name: item.name
           }
-        } else { // item.name: { [Language]: string }
+        } else { // item.name: LanguageMap
           byId[id] = {
             ... item,
-            name: item.name[state.language]
+            name: getText({
+              language: state.language,
+              languageMap: item.name
+            })
           }
         }
       } else { // item.type === 'delimeter'

@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, Language, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
+import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, LanguageMap, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
 import type {ChangePredictionBoard, SocketMessage} from '../actions'
 import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
 import {
@@ -17,11 +17,11 @@ export type State = {
   +playerStatus: Array<{
     +id: number,
     +image: string,
-    +name: { [Language]: string },
+    +name: LanguageMap,
     +status: AgentStatus
   }>,
   +roleStatus: Array<{
-    +caption: { [Language]: string },
+    +caption: LanguageMap,
     +id: RoleId,
     +image: string,
     +numberOfAgents: number

@@ -8,10 +8,8 @@ declare module 'village' {
   declare type BoardState = '?' | 'Δ' | 'O' | 'X' | 'fill'
   declare type Language = 'en' | 'fr' | 'it' | 'ja'
   declare type LanguageMap = {
-    en: string,
-    fr?: string,
-    it?: string,
-    ja?: string
+    [Language]: string,
+    en: string
   }
   declare type Result = 'win' | 'lose'
   declare type AgentId = string

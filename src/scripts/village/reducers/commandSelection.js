@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import type {ChangePhase, SelectYes, SocketMessage} from '../actions'
-import type {Language, Payload$systemMessage} from 'village'
+import type {LanguageMap, Payload$systemMessage} from 'village'
 import {just, strToMessage} from '../util'
 import {SYSTEM_MESSAGE} from '../constants/Message'
 import {VOTING_PHASE} from '../constants/Phase'
@@ -10,7 +10,7 @@ export type State = {
   +agents: {
     +id: number,
     +image: string,
-    +name: { [Language]: string }
+    +name: LanguageMap
   }[],
   +fixed: boolean
 }

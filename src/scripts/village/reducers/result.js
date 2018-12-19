@@ -1,6 +1,6 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {AgentStatus, Language, Payload$systemMessage, Result as TResult, Team} from 'village'
+import type {AgentStatus, LanguageMap, Payload$systemMessage, Result as TResult, Team} from 'village'
 import type {HideResult, SocketMessage} from '../actions'
 import {
   getPlayableAgents,
@@ -20,12 +20,12 @@ type Agents = {
   [string]: {
     +agentImage: string,
     +agentId: number,
-    +agentName: { [Language]: string },
+    +agentName: LanguageMap,
     +avatarImage: string,
     +avatarName: string,
     +result: TResult,
     +roleImage: string,
-    +roleName: { [Language]: string },
+    +roleName: LanguageMap,
     +status: AgentStatus
   }
 }

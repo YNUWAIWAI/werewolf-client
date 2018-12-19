@@ -2,11 +2,11 @@
 import CommandSelection, {type DispatchProps, type StateProps} from '../components/organisms/CommandSelection'
 import type {Phase, RoleId} from 'village'
 import {type SelectOption, selectOption} from '../actions'
+import {getText, strToRoleId} from '../util'
 import {DAY} from '../constants/Phase'
 import type {Dispatch} from 'redux'
 import type {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {strToRoleId} from '../util'
 
 type Action =
   | SelectOption
@@ -35,7 +35,10 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     .map(a => ({
       id: a.id,
       image: a.image,
-      name: a.name[state.language]
+      name: getText({
+        language: state.language,
+        languageMap: a.name
+      })
     }))
 
   if (!state.roles.mine) {

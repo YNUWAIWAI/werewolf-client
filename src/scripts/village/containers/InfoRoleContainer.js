@@ -2,6 +2,7 @@
 import RoleIcon, {type Props as StateProps} from '../components/atoms/RoleIcon'
 import {type ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {getText} from '../util'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.roles.mine) {
@@ -15,7 +16,10 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   return {
     class: 'info--role',
     image: state.roles.mine.image,
-    name: state.roles.mine.name[state.language]
+    name: getText({
+      language: state.language,
+      languageMap: state.roles.mine.name
+    })
   }
 }
 

@@ -2,10 +2,10 @@
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import type {DispatchAPI, Middleware} from 'redux'
+import {POST_MORTEM, RESULT} from '../constants/Phase'
 import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
 import {getAgent, getChannelFromInputChennel, getRole, just, strToRoleId} from '../util'
 import type {Action} from '.'
-import {POST_MORTEM, RESULT} from '../constants/Phase'
 import type {ReducerState} from '../reducers'
 import {socket} from '../actions'
 
