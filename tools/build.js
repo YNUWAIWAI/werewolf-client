@@ -74,11 +74,11 @@ const build = destDir => {
   const HTMLfiles = glob.sync('src/**/*.html')
 
   CSSfiles.forEach(file => {
-    buildCSS(file, `${destDir}/stylesheets/${path.relative('src/styles', file)}`)
+    buildCSS(file, `${path.resolve(destDir, 'stylesheets')}/${path.relative('src/styles', file)}`)
   })
 
   HTMLfiles.forEach(file => {
-    buildHTML(file, `${destDir}/../app/views/${path.parse(file).name}.scala.html`)
+    buildHTML(file, `${path.resolve(destDir, '../app/views')}/${path.parse(file).name}.scala.html`)
   })
 }
 
