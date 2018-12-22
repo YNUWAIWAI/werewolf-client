@@ -88,6 +88,7 @@ declare module 'lobby' {
   } & T
   declare type Payload$Avatar = Payload<{
     image: string,
+    lang: Language,
     name: string
   }>
   declare type Payload$GetSettings = Payload<{
