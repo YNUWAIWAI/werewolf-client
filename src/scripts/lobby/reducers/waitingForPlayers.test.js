@@ -204,6 +204,7 @@ describe('socket/MESSAGE', () => {
     const ajv = new Ajv()
     const playedPayload = {
       error: null,
+      lang: 'ja',
       type: 'played'
     }
 
