@@ -737,7 +737,7 @@ describe('POST_CHAT', () => {
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'text': {
-      '@language': 'ja',
+      '@language': 'en',
       '@value': 'text'
     },
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
