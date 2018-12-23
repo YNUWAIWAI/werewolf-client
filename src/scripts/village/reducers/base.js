@@ -1,7 +1,7 @@
 // @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {Channel, Phase} from 'village'
+import type {Channel, Language, Phase} from 'village'
 import type {SocketMessage} from '../actions'
 
 export type State = {
@@ -16,6 +16,7 @@ export type State = {
   +village: {
     +'@id': string,
     +id: number,
+    +lang: Language,
     +name: string,
     +totalNumberOfAgents: number
   }
@@ -35,6 +36,7 @@ export const initialState = {
   village: {
     '@id': '',
     'id': 0,
+    'lang': 'en',
     'name': '',
     'totalNumberOfAgents': 0
   }
@@ -56,6 +58,7 @@ const base = (state: State = initialState, action: Action): State => {
       village: {
         '@id': action.payload.village['@id'],
         'id': action.payload.village.id,
+        'lang': action.payload.village.lang,
         'name': action.payload.village.name,
         'totalNumberOfAgents': action.payload.village.totalNumberOfAgents
       }
