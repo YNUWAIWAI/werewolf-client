@@ -28,6 +28,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
           '@context': 'https://werewolf.world/context/0.2/village.jsonld',
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
+          'lang': state.base.village.lang,
           'name': state.base.village.name,
           'totalNumberOfAgents': state.base.village.totalNumberOfAgents
         },
@@ -92,6 +93,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
           '@context': 'https://werewolf.world/context/0.2/village.jsonld',
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
+          'lang': state.base.village.lang,
           'name': state.base.village.name,
           'totalNumberOfAgents': state.base.village.totalNumberOfAgents
         },
@@ -164,6 +166,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
           '@context': 'https://werewolf.world/context/0.2/village.jsonld',
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
+          'lang': state.base.village.lang,
           'name': state.base.village.name,
           'totalNumberOfAgents': state.base.village.totalNumberOfAgents
         },
