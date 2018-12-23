@@ -926,7 +926,7 @@ describe('SELECT_VILLAGE', () => {
     id: villageId,
     type: ActionTypes.SELECT_VILLAGE
   }
-  const selectVillagePayload = {
+  const payload = {
     token: avatarToken.humanPlayer,
     type: 'selectVillage',
     villageId
@@ -937,7 +937,7 @@ describe('SELECT_VILLAGE', () => {
     await fetch(`${CLIENT2SERVER}/selectVillage.json`)
       .then(res => res.json())
       .then(schema => {
-        const validate = ajv.validate(schema, selectVillagePayload)
+        const validate = ajv.validate(schema, payload)
 
         expect(validate).toBe(true)
       })
@@ -946,7 +946,7 @@ describe('SELECT_VILLAGE', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: selectVillagePayload,
+      payload,
       type: ActionTypes.socket.SEND
     })
   })
@@ -1215,7 +1215,7 @@ describe('SHOW_SETTINGS', () => {
   const action = {
     type: ActionTypes.SHOW_SETTINGS
   }
-  const getSettingsPayload = {
+  const payload = {
     type: 'getSettings'
   }
 
@@ -1224,7 +1224,7 @@ describe('SHOW_SETTINGS', () => {
     await fetch(`${CLIENT2SERVER}/getSettings.json`)
       .then(res => res.json())
       .then(schema => {
-        const validate = ajv.validate(schema, getSettingsPayload)
+        const validate = ajv.validate(schema, payload)
 
         expect(validate).toBe(true)
       })
@@ -1233,7 +1233,7 @@ describe('SHOW_SETTINGS', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: getSettingsPayload,
+      payload,
       type: ActionTypes.socket.SEND
     })
   })
@@ -1269,19 +1269,19 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const pingId = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+  const pingPayload = {
+    id: pingId,
+    results: [
+      {
+        ping: '99.999 s',
+        status: 'danger',
+        token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+      }
+    ],
+    type: 'ping'
+  }
   const action = {
-    payload: {
-      error: null,
-      id: pingId,
-      results: [
-        {
-          ping: '99.999 s',
-          status: 'danger',
-          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
-        }
-      ],
-      type: 'ping'
-    },
+    payload: pingPayload,
     type: ActionTypes.socket.MESSAGE
   }
   const pongPayload = {
@@ -1295,7 +1295,7 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
     await fetch(`${SERVER2CLIENT}/ping.json`)
       .then(res => res.json())
       .then(schema => {
-        const validate = ajv.validate(schema, action.payload)
+        const validate = ajv.validate(schema, pingPayload)
 
         expect(validate).toBe(true)
       })
