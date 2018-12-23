@@ -24,8 +24,7 @@ describe('socket/MESSAGE', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
     const ajv = new Ajv()
-    const avatarPayload = {
-      error: null,
+    const payload = {
       image: '/assets/images/avatar/default/user.png',
       lang: 'ja',
       name: 'Alice',
@@ -38,7 +37,7 @@ describe('socket/MESSAGE', () => {
       await fetch(`${SERVER2CLIENT}/avatar.json`)
         .then(res => res.json())
         .then(schema => {
-          const validate = ajv.validate(schema, avatarPayload)
+          const validate = ajv.validate(schema, payload)
 
           expect(validate).toBe(true)
         })
@@ -49,7 +48,7 @@ describe('socket/MESSAGE', () => {
         reducer(
           initialState,
           {
-            payload: avatarPayload,
+            payload,
             type: ActionTypes.socket.MESSAGE
           }
         )

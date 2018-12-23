@@ -202,8 +202,7 @@ describe('socket/MESSAGE', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
     const ajv = new Ajv()
-    const playedPayload = {
-      error: null,
+    const payload = {
       lang: 'ja',
       type: 'played'
     }
@@ -213,7 +212,7 @@ describe('socket/MESSAGE', () => {
       await fetch(`${SERVER2CLIENT}/played.json`)
         .then(res => res.json())
         .then(schema => {
-          const validate = ajv.validate(schema, playedPayload)
+          const validate = ajv.validate(schema, payload)
 
           expect(validate).toBe(true)
         })
@@ -241,7 +240,7 @@ describe('socket/MESSAGE', () => {
             ]
           },
           {
-            payload: playedPayload,
+            payload,
             type: ActionTypes.socket.MESSAGE
           }
         )
