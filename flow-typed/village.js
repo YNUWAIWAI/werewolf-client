@@ -385,9 +385,13 @@ declare module 'village' {
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
     }
   }>
-  declare type ReadyPayload = {
+  declare type Payload$Ready = {
     token: string,
     type: 'ready',
     villageId: number
+  }
+  declare type Payload$Played = {
+    lang: Language,
+    type: 'played'
   }
 }
