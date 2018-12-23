@@ -112,6 +112,7 @@ declare module 'village' {
       '@context': Context$Village,
       '@id': string,
       id: number,
+      lang: Language,
       name: string,
       totalNumberOfAgents: number
     },
