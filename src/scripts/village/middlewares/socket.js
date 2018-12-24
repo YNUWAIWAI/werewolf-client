@@ -35,7 +35,7 @@ const connectWebSocket = (() => {
           setTimeout(wait, 1000)
         }
         socket.onmessage = event => {
-          store.dispatch(socketAction.message(event))
+          store.dispatch(socketAction.message(JSON.parse(event.data)))
         }
       }
     }

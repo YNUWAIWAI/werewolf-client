@@ -6,8 +6,9 @@ import type {
   Language,
   NavigationType,
   Payload,
+  Payload$Played,
+  Payload$Ready,
   Phase,
-  ReadyPayload,
   RoleId
 } from 'village'
 
@@ -20,15 +21,24 @@ export const socket = {
     event,
     type: ActionTypes.socket.ERROR
   }),
-  message: (event: MessageEvent): {payload: Payload<*>, type: 'socket/MESSAGE'} => ({
-    payload: JSON.parse(event.data),
-    type: ActionTypes.socket.MESSAGE
-  }),
+  message: (payload: Payload<*> | Payload$Played): {payload: Payload<*>, type: 'socket/MESSAGE'} | {payload: Payload$Played, type: 'PLAYED'} => {
+    if (payload.type === 'played') {
+      return {
+        payload,
+        type: ActionTypes.PLAYED
+      }
+    }
+
+    return {
+      payload,
+      type: ActionTypes.socket.MESSAGE
+    }
+  },
   open: (event: Event): {event: Event, type: 'socket/OPEN'} => ({
     event,
     type: ActionTypes.socket.OPEN
   }),
-  send: (payload: Payload<*> | ReadyPayload): {payload: Payload<*> | ReadyPayload, type: 'socket/SEND'} => ({
+  send: (payload: Payload<*> | Payload$Ready): {payload: Payload<*> | Payload$Ready, type: 'socket/SEND'} => ({
     payload,
     type: ActionTypes.socket.SEND
   })
@@ -99,7 +109,7 @@ export const selectYes = (agentId: number): {agentId: number, type: 'SELECT_YES'
 
 export type SocketClose = $Call<typeof socket.close, *>
 export type SocketError = $Call<typeof socket.error, *>
-export type SocketMessage = $Call<typeof socket.message, *>
+export type SocketMessage = $Call<typeof socket.message, Payload<*>>
 export type SocketOpen = $Call<typeof socket.open, *>
 export type SocketSend = $Call<typeof socket.send, *>
 export type ClickHideButton = $Call<typeof handleClickHideButton, *>
@@ -109,6 +119,7 @@ export type ChangeDate = $Call<typeof changeDate, *>
 export type ChangeLanguage = $Call<typeof changeLanguage, *>
 export type ChangePhase = $Call<typeof changePhase, *>
 export type HideResult = $Call<typeof hideResult>
+export type Played = $Call<typeof socket.message, Payload$Played>
 export type PostChat = $Call<typeof postChat, *>
 export type Ready = $Call<typeof ready, *>
 export type SelectOption = $Call<typeof selectOption, *>

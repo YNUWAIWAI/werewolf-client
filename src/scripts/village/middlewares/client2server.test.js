@@ -234,6 +234,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       village: {
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -575,6 +576,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       '@context': 'https://werewolf.world/context/0.2/village.jsonld',
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
+      'lang': 'ja',
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -646,6 +648,7 @@ describe('POST_CHAT', () => {
       village: {
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -734,7 +737,7 @@ describe('POST_CHAT', () => {
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'text': {
-      '@language': 'ja',
+      '@language': 'en',
       '@value': 'text'
     },
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
@@ -742,6 +745,7 @@ describe('POST_CHAT', () => {
       '@context': 'https://werewolf.world/context/0.2/village.jsonld',
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
+      'lang': 'ja',
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -1048,6 +1052,7 @@ describe('SELECT_YES', () => {
       village: {
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -1136,6 +1141,7 @@ describe('SELECT_YES', () => {
       '@context': 'https://werewolf.world/context/0.2/village.jsonld',
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
+      'lang': 'ja',
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }

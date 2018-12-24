@@ -112,6 +112,7 @@ declare module 'village' {
       '@context': Context$Village,
       '@id': string,
       id: number,
+      lang: Language,
       name: string,
       totalNumberOfAgents: number
     },
@@ -385,9 +386,13 @@ declare module 'village' {
       id: $NonMaybeType<$PropertyType<Agent, 'id'>>,
     }
   }>
-  declare type ReadyPayload = {
+  declare type Payload$Ready = {
     token: string,
     type: 'ready',
     villageId: number
+  }
+  declare type Payload$Played = {
+    lang: Language,
+    type: 'played'
   }
 }

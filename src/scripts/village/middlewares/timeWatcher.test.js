@@ -64,6 +64,7 @@ describe('socket/MESSAGE', () => {
         '@context': 'https://werewolf.world/context/0.2/village.jsonld',
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -163,6 +164,7 @@ describe('socket/MESSAGE', () => {
         '@context': 'https://werewolf.world/context/0.2/village.jsonld',
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -257,6 +259,7 @@ describe('socket/MESSAGE', () => {
         '@context': 'https://werewolf.world/context/0.2/village.jsonld',
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -351,6 +354,7 @@ describe('socket/MESSAGE', () => {
         '@context': 'https://werewolf.world/context/0.2/village.jsonld',
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }

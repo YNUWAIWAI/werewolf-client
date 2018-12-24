@@ -83,11 +83,11 @@ declare module 'lobby' {
     token: string
   }
   declare type Payload<T> = {
-    error: ?string,
     type: string
   } & T
   declare type Payload$Avatar = Payload<{
     image: string,
+    lang: Language,
     name: string
   }>
   declare type Payload$GetSettings = Payload<{
@@ -96,6 +96,7 @@ declare module 'lobby' {
     userName: string
   }>
   declare type Payload$Lobby = Payload<{
+    error: ?string,
     lobby: Lobby,
     villages: Village[]
   }>
@@ -104,9 +105,11 @@ declare module 'lobby' {
     results: PingResult[]
   }>
   declare type Payload$SearchResult = Payload<{
+    error: ?string,
     villages: Village[]
   }>
   declare type Payload$WatingPage = Payload<{
+    error: ?string,
     village: Village,
     players: WaitingPlayer[]
   }>
