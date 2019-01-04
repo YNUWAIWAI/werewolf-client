@@ -41,6 +41,11 @@ const connectVillageDB = (() => {
 })()
 const indexedDBMiddleware: Middleware<ReducerState, Action> = store => next => action => {
   switch (action.type) {
+    case ActionTypes.RETURN_TO_LOBBY: {
+      window.location.replace(`${window.location.origin}/lobby`)
+
+      return next(action)
+    }
     case ActionTypes.indexedDB.INIT: {
       connectVillageDB().then(db => {
         const transaction = db.transaction('village', 'readwrite')
