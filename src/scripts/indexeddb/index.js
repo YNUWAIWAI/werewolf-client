@@ -17,12 +17,7 @@ export const connectLobbyDB = (() => {
     }
     request.onupgradeneeded = event => {
       db = event.target.result
-      const objectStore = db.createObjectStore(
-        'history',
-        {
-          keyPath: 'type'
-        }
-      )
+      const objectStore = db.createObjectStore('lobby')
 
       objectStore.createIndex(
         'lobby',
