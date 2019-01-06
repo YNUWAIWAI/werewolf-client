@@ -2,9 +2,10 @@
 
 ## lobby
 
-|キー|値（例）|概要|
+|キー|概要|値|
 |:------:|:-----:|:------|
-|a|b|c|
+|lobbyType|ロビーの種類|'human player', 'onymous audience', 'robot player'|
+|token|avatarのトークン|^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$|
 
 ## village
 
