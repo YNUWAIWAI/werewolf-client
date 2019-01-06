@@ -576,6 +576,7 @@ body {
             grid-row: 2 / 4;
             height: var(--role-image-size);
             width: var(--role-image-size);
+            z-index: 1;
           }
 
           &--number {
@@ -584,6 +585,7 @@ body {
             grid-column: 4;
             grid-row: 3;
             line-height: 1;
+            z-index: 2;
           }
 
           &--times {
@@ -595,6 +597,7 @@ body {
             grid-row: 3;
             justify-content: center;
             line-height: 1;
+            z-index: 2;
           }
         }
       }
@@ -690,6 +693,7 @@ body {
             grid-row: 2 / 4;
             height: var(--role-image-size);
             width: var(--role-image-size);
+            z-index: 1;
           }
 
           &--number {
@@ -698,6 +702,7 @@ body {
             grid-column: 4;
             grid-row: 3;
             line-height: 1;
+            z-index: 2;
           }
 
           &--times {
@@ -709,6 +714,7 @@ body {
             grid-row: 3;
             justify-content: center;
             line-height: 1;
+            z-index: 2;
           }
         }
 
