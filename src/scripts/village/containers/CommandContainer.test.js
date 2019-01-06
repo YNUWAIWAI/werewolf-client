@@ -9,7 +9,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 describe('<CommandContainer />', () => {
-  test('DAY', () => {
+  test('phase: DAY, isDead: false', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents: {
@@ -50,7 +50,48 @@ describe('<CommandContainer />', () => {
     expect(wrapper.props().content).toEqual(<CommandSelection />)
     expect(wrapper.props().hide).toBe(false)
   })
-  test('FLAVOR_TEXT', () => {
+  test('phase: DAY, isDead: true', () => {
+    const dispatch = jest.fn()
+    const getState = () => ({
+      agents: {
+        mine: {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': 1,
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+          'isAChoice': false,
+          'isMine': true,
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
+          'status': 'dead',
+          'update': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+            'date': 1,
+            'phase': 'morning'
+          }
+        }
+      },
+      base: {
+        phase: DAY
+      },
+      hideButton: {
+        hide: false
+      }
+    })
+    const subscribe = jest.fn()
+    const store = {
+      dispatch,
+      getState,
+      subscribe
+    }
+    const wrapper = shallow(<CommandContainer store={store} />)
+
+    expect(wrapper.props().content).toEqual(<CommandGrave />)
+    expect(wrapper.props().hide).toBe(false)
+  })
+  test('phase: FLAVOR_TEXT, isDead: false', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents: {},
@@ -72,7 +113,48 @@ describe('<CommandContainer />', () => {
     expect(wrapper.props().content).toEqual(<CommandSelection />)
     expect(wrapper.props().hide).toBe(false)
   })
-  test('MORNING', () => {
+  test('phase: FLAVOR_TEXT, isDead: true', () => {
+    const dispatch = jest.fn()
+    const getState = () => ({
+      agents: {
+        mine: {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': 1,
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+          'isAChoice': false,
+          'isMine': true,
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
+          'status': 'dead',
+          'update': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+            'date': 1,
+            'phase': 'morning'
+          }
+        }
+      },
+      base: {
+        phase: FLAVOR_TEXT
+      },
+      hideButton: {
+        hide: false
+      }
+    })
+    const subscribe = jest.fn()
+    const store = {
+      dispatch,
+      getState,
+      subscribe
+    }
+    const wrapper = shallow(<CommandContainer store={store} />)
+
+    expect(wrapper.props().content).toEqual(<CommandGrave />)
+    expect(wrapper.props().hide).toBe(false)
+  })
+  test('phase: MORNING, isDead: false', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents: {
@@ -113,7 +195,48 @@ describe('<CommandContainer />', () => {
     expect(wrapper.props().content).toEqual(<CommandInputBox />)
     expect(wrapper.props().hide).toBe(false)
   })
-  test('NIGHT', () => {
+  test('phase: MORNING, isDead: true', () => {
+    const dispatch = jest.fn()
+    const getState = () => ({
+      agents: {
+        mine: {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': 1,
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+          'isAChoice': false,
+          'isMine': true,
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
+          'status': 'dead',
+          'update': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+            'date': 1,
+            'phase': 'morning'
+          }
+        }
+      },
+      base: {
+        phase: MORNING
+      },
+      hideButton: {
+        hide: false
+      }
+    })
+    const subscribe = jest.fn()
+    const store = {
+      dispatch,
+      getState,
+      subscribe
+    }
+    const wrapper = shallow(<CommandContainer store={store} />)
+
+    expect(wrapper.props().content).toEqual(<CommandGrave />)
+    expect(wrapper.props().hide).toBe(false)
+  })
+  test('phase: NIGHT, isDead: false', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents: {
@@ -154,7 +277,48 @@ describe('<CommandContainer />', () => {
     expect(wrapper.props().content).toEqual(<CommandSelection />)
     expect(wrapper.props().hide).toBe(false)
   })
-  test('POST_MORTEM', () => {
+  test('phase: NIGHT, isDead: true', () => {
+    const dispatch = jest.fn()
+    const getState = () => ({
+      agents: {
+        mine: {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': 1,
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+          'isAChoice': false,
+          'isMine': true,
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
+          'status': 'dead',
+          'update': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+            'date': 1,
+            'phase': 'morning'
+          }
+        }
+      },
+      base: {
+        phase: NIGHT
+      },
+      hideButton: {
+        hide: false
+      }
+    })
+    const subscribe = jest.fn()
+    const store = {
+      dispatch,
+      getState,
+      subscribe
+    }
+    const wrapper = shallow(<CommandContainer store={store} />)
+
+    expect(wrapper.props().content).toEqual(<CommandGrave />)
+    expect(wrapper.props().hide).toBe(false)
+  })
+  test('phase: POST_MORTEM, isDead: false', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents: {
@@ -195,7 +359,48 @@ describe('<CommandContainer />', () => {
     expect(wrapper.props().content).toEqual(<CommandPostMortem />)
     expect(wrapper.props().hide).toBe(false)
   })
-  test('RESULT', () => {
+  test('phase: POST_MORTEM, isDead: true', () => {
+    const dispatch = jest.fn()
+    const getState = () => ({
+      agents: {
+        mine: {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': 1,
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+          'isAChoice': false,
+          'isMine': true,
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
+          'status': 'dead',
+          'update': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+            'date': 1,
+            'phase': 'morning'
+          }
+        }
+      },
+      base: {
+        phase: POST_MORTEM
+      },
+      hideButton: {
+        hide: false
+      }
+    })
+    const subscribe = jest.fn()
+    const store = {
+      dispatch,
+      getState,
+      subscribe
+    }
+    const wrapper = shallow(<CommandContainer store={store} />)
+
+    expect(wrapper.props().content).toEqual(<CommandPostMortem />)
+    expect(wrapper.props().hide).toBe(false)
+  })
+  test('phase: RESULT, isDead: false', () => {
     const dispatch = jest.fn()
     const getState = () => ({
       agents: {
@@ -211,6 +416,47 @@ describe('<CommandContainer />', () => {
             'ja': 'ヴァルター'
           },
           'status': 'alive',
+          'update': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
+            'date': 1,
+            'phase': 'morning'
+          }
+        }
+      },
+      base: {
+        phase: RESULT
+      },
+      hideButton: {
+        hide: false
+      }
+    })
+    const subscribe = jest.fn()
+    const store = {
+      dispatch,
+      getState,
+      subscribe
+    }
+    const wrapper = shallow(<CommandContainer store={store} />)
+
+    expect(wrapper.props().content).toEqual(<CommandPostMortem />)
+    expect(wrapper.props().hide).toBe(false)
+  })
+  test('phase: RESULT, isDead: true', () => {
+    const dispatch = jest.fn()
+    const getState = () => ({
+      agents: {
+        mine: {
+          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': 1,
+          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+          'isAChoice': false,
+          'isMine': true,
+          'name': {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          },
+          'status': 'dead',
           'update': {
             '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
             'date': 1,
@@ -256,47 +502,6 @@ describe('<CommandContainer />', () => {
     const wrapper = shallow(<CommandContainer store={store} />)
 
     expect(wrapper.props().content).toEqual(<CommandSelection />)
-    expect(wrapper.props().hide).toBe(false)
-  })
-  test('agents.mine.status !== \'alive\'', () => {
-    const dispatch = jest.fn()
-    const getState = () => ({
-      agents: {
-        mine: {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-          'id': 1,
-          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-          'isAChoice': false,
-          'isMine': true,
-          'name': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          },
-          'status': 'death',
-          'update': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
-            'date': 1,
-            'phase': 'morning'
-          }
-        }
-      },
-      base: {
-        phase: DAY
-      },
-      hideButton: {
-        hide: false
-      }
-    })
-    const subscribe = jest.fn()
-    const store = {
-      dispatch,
-      getState,
-      subscribe
-    }
-    const wrapper = shallow(<CommandContainer store={store} />)
-
-    expect(wrapper.props().content).toEqual(<CommandGrave />)
     expect(wrapper.props().hide).toBe(false)
   })
 })
