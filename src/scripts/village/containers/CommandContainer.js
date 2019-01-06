@@ -11,15 +11,20 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const content = ((phase, isDead) => {
-    if (isDead) {
-      return <CommandGrave />
-    }
     switch (phase) {
       case DAY:
       case FLAVOR_TEXT:
       case NIGHT:
+        if (isDead) {
+          return <CommandGrave />
+        }
+
         return <CommandSelection />
       case MORNING:
+        if (isDead) {
+          return <CommandGrave />
+        }
+
         return <CommandInputBox />
       case POST_MORTEM:
       case RESULT:
