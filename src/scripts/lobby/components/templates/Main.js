@@ -16,7 +16,12 @@ export type Props =
 export default function Main(props: Props) {
   return (
     <Fragment>
-      <Menu class="menu" itemClass="menu--item" items={props.menuItems} transition={props.transition} />
+      <Menu
+        class="menu"
+        itemClass="menu--item"
+        items={props.menuItems}
+        transition={props.transition}
+      />
     </Fragment>
   )
 }

@@ -32,7 +32,12 @@ export default function LobbyForHumanPlayer(props: Props) {
       <Header id="Header.lobbyForHumanPlayer" />
       <Avatar image={props.image} name={props.name} />
       <MainContent>
-        <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
+        <VillageList
+          isPlayer={props.isPlayer}
+          items={props.villageItems}
+          selectVillage={props.selectVillage}
+          transition={props.transition}
+        />
       </MainContent>
       <AsideContent>
         <Menu
