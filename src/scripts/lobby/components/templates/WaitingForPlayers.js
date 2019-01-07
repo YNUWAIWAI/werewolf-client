@@ -46,7 +46,6 @@ export default function WaitingForPlayers(props: Props) {
           props.village ?
             <VillageItem
               {... props.village}
-              handleClick={() => {}}
               isPlayer={props.isPlayer}
             /> :
             ''
