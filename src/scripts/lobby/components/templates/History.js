@@ -28,7 +28,12 @@ export default function History(props: Props) {
     <div className="grid">
       <Header id="Header.history" />
       <MainContent>
-        <VillageList isPlayer={props.isPlayer} items={props.villageItems} selectVillage={props.selectVillage} transition={props.transition} />
+        <VillageList
+          isPlayer={props.isPlayer}
+          items={props.villageItems}
+          selectVillage={props.selectVillage}
+          transition={props.transition}
+        />
       </MainContent>
       <AsideContent>
         <Menu
