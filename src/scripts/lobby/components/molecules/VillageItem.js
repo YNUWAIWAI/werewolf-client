@@ -5,13 +5,16 @@ import React from 'react'
 import type {Village} from 'lobby'
 
 type Props = {
-  +handleClick: void => void,
+  +handleClick?: void => void,
   +isPlayer: boolean
 } & $ReadOnly<Village>
 
 export default function VillageItem(props: Props) {
   return (
-    <div className="village--item" onClick={props.handleClick}>
+    <div
+      className={`village--item ${typeof props.handleClick === 'function' ? 'clickable' : ''}`}
+      onClick={props.handleClick}
+    >
       <FormattedMessage
         id="VillageItem.label(villageName)"
       >

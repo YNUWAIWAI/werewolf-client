@@ -10,7 +10,14 @@ type Props = {
 }
 
 export default function VillageList(props: Props) {
-  const items = props.items.map(item => <VillageItem key={item.id} {... item} handleClick={props.selectVillage(item.id)} isPlayer={props.isPlayer} />)
+  const items = props.items.map(item =>
+    <VillageItem
+      key={item.id}
+      {... item}
+      handleClick={props.selectVillage(item.id)}
+      isPlayer={props.isPlayer}
+    />
+  )
 
   return (
     <div className="village">
