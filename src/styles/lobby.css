@@ -422,6 +422,18 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
+    &.clickable {
+      cursor: pointer;
+
+      &:hover {
+        background: var(--hover-color);
+
+        &:active {
+          background: var(--active-color);
+        }
+      }
+    }
+
     &--prop {
       align-items: center;
       border: solid 1px black;
