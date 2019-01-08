@@ -303,14 +303,17 @@ body {
   }
 }
 
-.react-select__control {
-  height: 100%;
+.react-select {
+  &__control {
+    height: 100%;
+  }
+
+  &__value-container {
+    display: inline-flex;
+    justify-content: center;
+  }
 }
 
-.react-select__value-container {
-  display: inline-flex;
-  justify-content: center;
-}
 
 .settings {
   &--bucket {
@@ -588,7 +591,7 @@ body {
             grid-row: 2 / 4;
             height: var(--role-image-size);
             width: var(--role-image-size);
-            z-index: 1;
+            z-index: -1;
           }
 
           &--number {
@@ -597,7 +600,7 @@ body {
             grid-column: 4;
             grid-row: 3;
             line-height: 1;
-            z-index: 2;
+            z-index: 0;
           }
 
           &--times {
@@ -609,7 +612,7 @@ body {
             grid-row: 3;
             justify-content: center;
             line-height: 1;
-            z-index: 2;
+            z-index: 0;
           }
         }
       }
@@ -705,7 +708,7 @@ body {
             grid-row: 2 / 4;
             height: var(--role-image-size);
             width: var(--role-image-size);
-            z-index: 1;
+            z-index: -1;
           }
 
           &--number {
@@ -714,7 +717,7 @@ body {
             grid-column: 4;
             grid-row: 3;
             line-height: 1;
-            z-index: 2;
+            z-index: 0;
           }
 
           &--times {
@@ -726,7 +729,7 @@ body {
             grid-row: 3;
             justify-content: center;
             line-height: 1;
-            z-index: 2;
+            z-index: 0;
           }
         }
 
