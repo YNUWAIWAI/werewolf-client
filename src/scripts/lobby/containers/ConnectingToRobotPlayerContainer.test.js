@@ -1,28 +1,21 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import ConnectingToRobotPlayerContainer from './ConnectingToRobotPlayerContainer'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {initialState} from '../reducers/connectingToRobotPlayer'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
 test('<ConnectingToRobotPlayerContainer /> initialState', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    connectingToRobotPlayer: initialState
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<ConnectingToRobotPlayerContainer store={store} transition={jest.fn()} />)
+  const transition = jest.fn()
+  const store = fakeStore()
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <ConnectingToRobotPlayerContainer transition={transition} />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().menuItems)
-    .toEqual([
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
-      }
-    ])
+  expect(wrapper.html()).toMatchSnapshot()
 })

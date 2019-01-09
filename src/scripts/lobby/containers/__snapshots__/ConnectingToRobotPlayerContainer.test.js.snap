@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConnectingToRobotPlayerContainer /> initialState 1`] = `"<div class=\\"grid\\"><div class=\\"header\\">Connecting to the robot player</div><div class=\\"main-content\\">TODO</div><div class=\\"aside-content \\"><ul class=\\"compact-menu\\"><li class=\\"compact-menu--item  \\">Return to the main page</li></ul></div></div>"`;
