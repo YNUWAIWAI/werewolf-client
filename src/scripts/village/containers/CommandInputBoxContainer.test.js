@@ -1,33 +1,20 @@
 // @flow
 import CommandInputBoxContainer from './CommandInputBoxContainer'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {initialState} from '../reducers/commandInputBox'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
-test('<CommandInputBoxContainer /> initialState', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    commandInputBox: initialState
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<CommandInputBoxContainer store={store} />)
+test('<CommandInputBoxContainer />', () => {
+  const store = fakeStore()
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <CommandInputBoxContainer />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().limited).toEqual({
-    available: false,
-    postCount: 0,
-    postCountLimit: 10
-  })
-  expect(wrapper.props().private).toEqual({
-    postCount: 0,
-    postCountLimit: 10
-  })
-  expect(wrapper.props().public).toEqual({
-    postCount: 0,
-    postCountLimit: 10
-  })
+  expect(wrapper.html()).toMatchSnapshot()
 })
