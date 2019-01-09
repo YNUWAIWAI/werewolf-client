@@ -1,5 +1,6 @@
 // @flow
 import ActivityContainer from './ActivityContainer'
+import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import React from 'react'
 import fakeStore from './fakeStore'
@@ -10,7 +11,9 @@ describe('<ActivityContainer />', () => {
     const store = fakeStore()
     const wrapper = mount(
       <Provider store={store} >
-        <ActivityContainer />
+        <IntlProviderContainer>
+          <ActivityContainer />
+        </IntlProviderContainer>
       </Provider>
     )
 
@@ -28,7 +31,9 @@ describe('<ActivityContainer />', () => {
     )
     const wrapper = mount(
       <Provider store={store} >
-        <ActivityContainer />
+        <IntlProviderContainer>
+          <ActivityContainer />
+        </IntlProviderContainer>
       </Provider>
     )
 
