@@ -1,21 +1,39 @@
 // @flow
 import ActivityContainer from './ActivityContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {initialState} from '../reducers/hideButton'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
-test('<ActivityContainer /> initialState', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    hideButton: initialState
+describe('<ActivityContainer />', () => {
+  test('expand: false', () => {
+    const store = fakeStore()
+    const wrapper = mount(
+      <Provider store={store} >
+        <ActivityContainer />
+      </Provider>
+    )
+
+    expect(wrapper.find('.activity').hasClass('expand')).toBe(false)
+    expect(wrapper.html()).toMatchSnapshot()
   })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<ActivityContainer store={store} />)
 
-  expect(wrapper.props().expand).toBe(false)
+  test('expand: true', () => {
+    const store = fakeStore(
+      {
+        hideButton: {
+          hide: true
+        }
+      }
+    )
+    const wrapper = mount(
+      <Provider store={store} >
+        <ActivityContainer />
+      </Provider>
+    )
+
+    expect(wrapper.find('.activity').hasClass('expand')).toBe(true)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })
+
