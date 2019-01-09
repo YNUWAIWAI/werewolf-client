@@ -1,26 +1,24 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import CommandGraveContainer from './CommandGraveContainer'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
 test('<CommandGraveContainer />', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    language: 'ja'
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<CommandGraveContainer store={store} />)
-
-  expect(wrapper.props().navigation).toEqual([
+  const store = fakeStore(
     {
-      id: 'CommandNavigation.returnToLobby',
-      type: ActionTypes.RETURN_TO_LOBBY
+      language: 'ja'
     }
-  ])
+  )
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <CommandGraveContainer />
+      </IntlProviderContainer>
+    </Provider>
+  )
+
+  expect(wrapper.html()).toMatchSnapshot()
 })
