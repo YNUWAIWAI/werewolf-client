@@ -1,43 +1,21 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
+import IntlProviderContainer from './IntlProviderContainer'
 import LobbyForAudienceContainer from './LobbyForAudienceContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {initialState} from '../reducers/lobbyForAudience'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
 test('<LobbyForAudienceContainer /> initialState', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    lobbyForAudience: initialState
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<LobbyForAudienceContainer store={store} transition={jest.fn()} />)
+  const transition = jest.fn()
+  const store = fakeStore()
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <LobbyForAudienceContainer transition={transition} />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().isPlayer).toBe(false)
-  expect(wrapper.props().menuItems)
-    .toEqual([
-      {
-        id: 'Menu.showIdSearch',
-        types: [ActionTypes.SHOW_ID_SEARCH]
-      },
-      {
-        id: 'Menu.showAdvancedSearch',
-        types: [ActionTypes.SHOW_ADVANCED_SEARCH]
-      },
-      {
-        id: 'Menu.refresh',
-        types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
-      }
-    ])
-  expect(wrapper.props().villageItems)
-    .toEqual([])
+  expect(wrapper.html()).toMatchSnapshot()
 })
