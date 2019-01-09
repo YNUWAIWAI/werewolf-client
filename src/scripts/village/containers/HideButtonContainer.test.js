@@ -1,22 +1,27 @@
 // @flow
 import HideButtonContainer from './HideButtonContainer'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
 test('<HideButtonContainer />', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    hideButton: {
-      hide: true
+  const store = fakeStore(
+    {
+      hideButton: {
+        hide: true
+      }
     }
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<HideButtonContainer store={store} />)
+  )
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <HideButtonContainer />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().hide).toBe(true)
+  expect(wrapper.find('.hide-button--button').hasClass('hide')).toBe(true)
+  expect(wrapper.html()).toMatchSnapshot()
 })
