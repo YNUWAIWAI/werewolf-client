@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoRoleContainer /> agents.mine exists 1`] = `"<div class=\\"info--role \\"><img class=\\"info--role--image\\" src=\\"https://werewolf.world/image/0.2/seer.jpg\\"><div class=\\"info--role--name\\">Seer</div></div>"`;
+
+exports[`<InfoRoleContainer /> initialState 1`] = `"<div class=\\"info--role \\"><img class=\\"info--role--image\\" src=\\"\\"><div class=\\"info--role--name\\"></div></div>"`;
