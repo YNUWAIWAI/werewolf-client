@@ -1,5 +1,4 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import CommandPostMortemContainer from './CommandPostMortemContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
