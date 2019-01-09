@@ -39,7 +39,7 @@ export default (state?: Object) => {
     console.log('replaceReducer')
   }
   const subscribe: Object = () => {
-    console.log('subscribe')
+    // console.log('subscribe')
   }
   const store = {
     dispatch,
