@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommandSelectionContainer /> DAY fixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>あなたの選んだ投票先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> DAY unfixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>投票先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> NIGHT HUNTER fixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>あなたの選んだ守護先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> NIGHT HUNTER unfixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>守護先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> NIGHT SEER fixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>あなたの選んだ占い先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> NIGHT SEER unfixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>占い先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> NIGHT VILLAGER 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>待ってください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> NIGHT WEREWOLF fixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>あなたの選んだ襲撃先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
+
+exports[`<CommandSelectionContainer /> NIGHT WEREWOLF unfixed 1`] = `"<div class=\\"command--selection\\"><div class=\\"command--selection--description\\"><span>襲撃先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"command--selection--select \\"></div></div>"`;
