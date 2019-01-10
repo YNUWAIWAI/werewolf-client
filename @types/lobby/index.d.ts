@@ -69,7 +69,7 @@ declare namespace lobby {
     isAnonymous: boolean;
     isHost: boolean;
     isMe: boolean;
-    name: StringLiteral;
+    name: string;
     token: string;
   }
   enum Target {
