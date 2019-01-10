@@ -20,7 +20,7 @@ declare namespace lobby {
     safe = 'safe',
     warning = 'warning'
   }
-  enum Language {
+  const enum Language {
     fr = 'fr',
     en = 'en',
     it = 'it',
