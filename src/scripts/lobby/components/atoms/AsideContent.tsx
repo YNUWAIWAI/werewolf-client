@@ -1,9 +1,8 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +children?: React$Node,
-  +expand?: boolean
+interface Props {
+  readonly children?: React.ReactNode
+  readonly expand?: boolean
 }
 
 export default function AsideContent(props: Props) {
