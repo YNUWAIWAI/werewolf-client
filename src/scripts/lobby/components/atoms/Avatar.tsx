@@ -1,9 +1,8 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +image: string,
-  +name: string
+interface Props {
+  readonly image: string;
+  readonly name: string;
 }
 
 export default function Avatar(props: Props) {

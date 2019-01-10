@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import Avatar from './Avatar'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<Avatar image="image" name="name" />', () => {
