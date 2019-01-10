@@ -5,7 +5,7 @@ module.exports = {
     "jest/globals": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  "parser": "typescript-eslint-parser",
   "parserOptions": {
     'ecmaFeatures': {
       'jsx': true
