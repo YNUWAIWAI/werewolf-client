@@ -7,7 +7,7 @@ import WaitingForPlayersContainer from './WaitingForPlayersContainer'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
-test('<WaitingForPlayersContainer /> initialState', () => {
+test('<WaitingForPlayersContainer />', () => {
   const transition = jest.fn()
   const store = fakeStore(
     {

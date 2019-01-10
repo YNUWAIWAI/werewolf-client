@@ -7,7 +7,7 @@ import React from 'react'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
-test('<InfoDayContainer /> initialState', () => {
+test('<InfoDayContainer />', () => {
   const store = fakeStore(
     {
       base: {

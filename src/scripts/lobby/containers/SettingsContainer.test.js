@@ -6,7 +6,7 @@ import SettingsContainer from './SettingsContainer'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
-test('<SettingsContainer /> initialState', () => {
+test('<SettingsContainer />', () => {
   const transition = jest.fn()
   const store = fakeStore()
   const wrapper = mount(

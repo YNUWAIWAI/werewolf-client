@@ -6,7 +6,7 @@ import React from 'react'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
-test('<MainContainer /> initialState', () => {
+test('<MainContainer />', () => {
   const transition = jest.fn()
   const store = fakeStore()
   const wrapper = mount(
