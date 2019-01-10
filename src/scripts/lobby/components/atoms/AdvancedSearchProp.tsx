@@ -1,12 +1,11 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
 
-type Props = {
-  +checked: boolean,
-  +handleClick: boolean => void,
-  +name: string,
-  +validity: boolean
+interface Props {
+  readonly checked: boolean;
+  readonly handleClick: (checked: boolean) => void;
+  readonly name: string;
+  readonly validity: boolean;
 }
 
 export default function AdvancedSearchProp(props: Props) {
@@ -16,7 +15,7 @@ export default function AdvancedSearchProp(props: Props) {
         checked={props.checked}
         disabled={!props.validity}
         id={props.name}
-        onClick={event => props.handleClick(event.target.checked)}
+        onChange={event => props.handleClick(event.target.checked)}
         readOnly
         type="checkbox"
       />
