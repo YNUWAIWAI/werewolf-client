@@ -181,6 +181,7 @@ module.exports = {
     "react/destructuring-assignment": 0,
     "react/forbid-component-props": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", "tsx"] }],
+    "react/jsx-fragments": 0,
     "react/jsx-handler-names": 0,
     "react/jsx-indent" : [0, 2],
     "react/jsx-indent-props" : [2, 2],
