@@ -1,10 +1,12 @@
 // @flow
+import IntlProviderContainer from './IntlProviderContainer'
 import PredictionContainer from './PredictionContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
 test('<PredictionContainer />', () => {
-  const dispatch = jest.fn()
   const playerStatus = [
     {
       id: 1,
@@ -260,23 +262,23 @@ test('<PredictionContainer />', () => {
       }
     }
   }
-  const getState = () => ({
-    language: 'ja',
-    prediction: {
-      playerStatus,
-      roleStatus,
-      table
+  const store = fakeStore(
+    {
+      language: 'ja',
+      prediction: {
+        playerStatus,
+        roleStatus,
+        table
+      }
     }
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<PredictionContainer store={store} />)
+  )
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <PredictionContainer />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().playerStatus).toEqual(expectedPlayerStatus)
-  expect(wrapper.props().roleStatus).toEqual(expectedRoleStatus)
-  expect(wrapper.props().table).toEqual(table)
+  expect(wrapper.html()).toMatchSnapshot()
 })

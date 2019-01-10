@@ -1,136 +1,94 @@
 // @flow
 import ChatContainer from './ChatContainer'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {initialState} from '../reducers/chat'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
-test('<ChatContainer /> initialState', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    chat: initialState,
-    language: 'ja'
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<ChatContainer store={store} />)
-
-  expect(wrapper.props().allIds).toEqual([])
-  expect(wrapper.props().byId).toEqual({})
-})
-test('<ChatContainer />', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    chat: {
-      allIds: ['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'],
-      byId: {
-        chat0: {
-          id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
-          intensionalDisclosureRange: 'public',
-          isMine: true,
-          name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
-          },
-          phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-          phaseTimeLimit: 600,
-          serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-          text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
-        },
-        chat1: {
-          id: -1,
-          image: 'https://werewolf.world/image/0.2/Regina.jpg',
-          intensionalDisclosureRange: 'onymousAudience',
-          isMine: true,
-          name: 'Katoh',
-          phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-          phaseTimeLimit: 600,
-          serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-          text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
-        },
-        chat2: {
-          id: -1,
-          image: 'Anonymous',
-          intensionalDisclosureRange: 'anonymousAudience',
-          isMine: true,
-          name: 'Anonymous',
-          phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-          phaseTimeLimit: 600,
-          serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-          text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
-        },
-        delimeter0: {
-          date: 1,
-          type: 'delimeter'
-        },
-        delimeter1: {
-          date: -1,
-          type: 'delimeter'
-        }
+describe('<ChatContainer />', () => {
+  test('chat dosen\'t exist', () => {
+    const store = fakeStore(
+      {
+        language: 'ja'
       }
-    },
-    language: 'ja'
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<ChatContainer store={store} />)
+    )
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <ChatContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
 
-  expect(wrapper.props().allIds).toEqual(['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'])
-  expect(wrapper.props().byId).toEqual({
-    chat0: {
-      id: 12,
-      image: 'https://werewolf.world/image/0.2/Walter.jpg',
-      intensionalDisclosureRange: 'public',
-      isMine: true,
-      name: 'ヴァルター',
-      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-      phaseTimeLimit: 600,
-      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-      type: 'item'
-    },
-    chat1: {
-      id: -1,
-      image: 'https://werewolf.world/image/0.2/Regina.jpg',
-      intensionalDisclosureRange: 'onymousAudience',
-      isMine: true,
-      name: 'Katoh',
-      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-      phaseTimeLimit: 600,
-      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-      type: 'item'
-    },
-    chat2: {
-      id: -1,
-      image: 'Anonymous',
-      intensionalDisclosureRange: 'anonymousAudience',
-      isMine: true,
-      name: 'Anonymous',
-      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-      phaseTimeLimit: 600,
-      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-      type: 'item'
-    },
-    delimeter0: {
-      date: 1,
-      type: 'delimeter'
-    },
-    delimeter1: {
-      date: -1,
-      type: 'delimeter'
-    }
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+  test('chat exists', () => {
+    const store = fakeStore(
+      {
+        chat: {
+          allIds: ['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'],
+          byId: {
+            chat0: {
+              id: 12,
+              image: 'https://werewolf.world/image/0.2/Walter.jpg',
+              intensionalDisclosureRange: 'public',
+              isMine: true,
+              name: {
+                en: 'Walter',
+                ja: 'ヴァルター'
+              },
+              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+              phaseTimeLimit: 600,
+              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+              type: 'item'
+            },
+            chat1: {
+              id: -1,
+              image: 'https://werewolf.world/image/0.2/Regina.jpg',
+              intensionalDisclosureRange: 'onymousAudience',
+              isMine: true,
+              name: 'Katoh',
+              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+              phaseTimeLimit: 600,
+              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+              type: 'item'
+            },
+            chat2: {
+              id: -1,
+              image: 'Anonymous',
+              intensionalDisclosureRange: 'anonymousAudience',
+              isMine: true,
+              name: 'Anonymous',
+              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+              phaseTimeLimit: 600,
+              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+              type: 'item'
+            },
+            delimeter0: {
+              date: 1,
+              type: 'delimeter'
+            },
+            delimeter1: {
+              date: -1,
+              type: 'delimeter'
+            }
+          }
+        },
+        language: 'ja'
+      }
+    )
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <ChatContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

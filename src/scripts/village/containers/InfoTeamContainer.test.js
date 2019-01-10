@@ -1,54 +1,57 @@
 // @flow
 import InfoTeamContainer from './InfoTeamContainer'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
 describe('<InfoTeamContainer />', () => {
   test('initialState', () => {
-    const dispatch = jest.fn()
-    const getState = () => ({
-      roles: {
-        all: []
-      }
-    })
-    const subscribe = jest.fn()
-    const store = {
-      dispatch,
-      getState,
-      subscribe
-    }
-    const wrapper = shallow(<InfoTeamContainer store={store} />)
-
-    expect(wrapper.props().class).toBe('info--team')
-    expect(wrapper.props().team).toBe('')
-  })
-  test('agents.mine exists', () => {
-    const dispatch = jest.fn()
-    const getState = () => ({
-      roles: {
-        all: [],
-        mine: {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
-          '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-          'image': 'https://werewolf.world/image/0.2/seer.jpg',
-          'isMine': true,
-          'name': {
-            'en': 'Seer',
-            'ja': '占い師'
-          },
-          'numberOfAgents': 1
+    const store = fakeStore(
+      {
+        roles: {
+          all: []
         }
       }
-    })
-    const subscribe = jest.fn()
-    const store = {
-      dispatch,
-      getState,
-      subscribe
-    }
-    const wrapper = shallow(<InfoTeamContainer store={store} />)
+    )
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <InfoTeamContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
 
-    expect(wrapper.props().class).toBe('info--team')
-    expect(wrapper.props().team).toBe('villager')
+    expect(wrapper.text()).toMatchSnapshot()
+  })
+  test('roles.mine exists', () => {
+    const store = fakeStore(
+      {
+        roles: {
+          all: [],
+          mine: {
+            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            'image': 'https://werewolf.world/image/0.2/seer.jpg',
+            'isMine': true,
+            'name': {
+              'en': 'Seer',
+              'ja': '占い師'
+            },
+            'numberOfAgents': 1
+          }
+        }
+      }
+    )
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <InfoTeamContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

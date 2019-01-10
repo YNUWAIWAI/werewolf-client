@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoDayContainer /> 1`] = `"<div class=\\"info--day\\"><div class=\\"info--day--text\\"><span>Day 1: morning</span><span>00'00 left</span></div></div>"`;

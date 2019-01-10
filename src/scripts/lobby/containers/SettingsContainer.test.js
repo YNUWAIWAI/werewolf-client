@@ -1,28 +1,21 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
 import SettingsContainer from './SettingsContainer'
-import {initialState} from '../reducers/settings'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
-test('<SettingsContainer /> initialState', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    settings: initialState
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<SettingsContainer store={store} transition={jest.fn()} />)
+test('<SettingsContainer />', () => {
+  const transition = jest.fn()
+  const store = fakeStore()
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <SettingsContainer transition={transition} />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().menuItems)
-    .toEqual([
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
-      }
-    ])
+  expect(wrapper.html()).toMatchSnapshot()
 })

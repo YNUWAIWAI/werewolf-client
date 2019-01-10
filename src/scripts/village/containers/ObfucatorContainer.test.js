@@ -1,24 +1,27 @@
 // @flow
+import IntlProviderContainer from './IntlProviderContainer'
 import ObfucatorContainer from './ObfucatorContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
 test('<ObfucatorContainer />', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    obfucator: {
-      loading: true,
-      visible: true
+  const store = fakeStore(
+    {
+      obfucator: {
+        loading: true,
+        visible: true
+      }
     }
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<ObfucatorContainer store={store} />)
+  )
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <ObfucatorContainer />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().loading).toBe(true)
-  expect(wrapper.props().visible).toBe(true)
+  expect(wrapper.html()).toMatchSnapshot()
 })

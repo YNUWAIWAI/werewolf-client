@@ -1,52 +1,21 @@
 // @flow
-import * as ActionTypes from '../constants/ActionTypes'
+import IntlProviderContainer from './IntlProviderContainer'
 import MainContainer from './MainContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {initialState} from '../reducers/main'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
-test('<MainContainer /> initialState', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    main: initialState
-  })
-  const subscribe = jest.fn()
-  const store = {
-    dispatch,
-    getState,
-    subscribe
-  }
-  const wrapper = shallow(<MainContainer store={store} transition={jest.fn()} />)
+test('<MainContainer />', () => {
+  const transition = jest.fn()
+  const store = fakeStore()
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <MainContainer transition={transition} />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-  expect(wrapper.props().menuItems)
-    .toEqual([
-      {
-        id: 'Menu.lobbyForAudience',
-        types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
-      },
-      {
-        id: 'Menu.lobbyForRobotPlayer',
-        types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
-      },
-      {
-        id: 'Menu.lobbyForHumanPlayer',
-        types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.history',
-        types: [ActionTypes.SHOW_HISTORY]
-      },
-      {
-        id: 'Menu.settings',
-        types: [ActionTypes.SHOW_SETTINGS]
-      },
-      {
-        id: 'Menu.howToPlay',
-        types: [ActionTypes.SHOW_HOW_TO_PLAY]
-      },
-      {
-        id: 'Menu.credits',
-        types: [ActionTypes.SHOW_CREDITS]
-      }
-    ])
+  expect(wrapper.html()).toMatchSnapshot()
 })

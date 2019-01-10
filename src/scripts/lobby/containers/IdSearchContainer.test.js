@@ -1,29 +1,34 @@
 // @flow
 import IdSearchContainer from './IdSearchContainer'
+import IntlProviderContainer from './IntlProviderContainer'
+import {Provider} from 'react-redux'
 import React from 'react'
-import {initialState} from '../reducers/idSearch'
-import {shallow} from 'enzyme'
+import fakeStore from './fakeStore'
+import {mount} from 'enzyme'
 
-describe('<IdSearchContainer />', () => {
-  test('initialState', () => {
-    const dispatch = jest.fn()
-    const getState = () => ({
-      idSearch: initialState
-    })
-    const subscribe = jest.fn()
-    const store = {
-      dispatch,
-      getState,
-      subscribe
+test('<IdSearchContainer />', () => {
+  const transition = jest.fn()
+  const store = fakeStore(
+    {
+      idSearch: {
+        header: 'Header.idSearch(human player)',
+        id: -1,
+        image: '',
+        isPlayer: true,
+        menuItems: [],
+        name: '',
+        searched: false,
+        villageItems: []
+      }
     }
-    const wrapper = shallow(<IdSearchContainer store={store} transition={jest.fn()} />)
+  )
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <IdSearchContainer transition={transition} />
+      </IntlProviderContainer>
+    </Provider>
+  )
 
-    expect(wrapper.props().header).toBe('')
-    expect(wrapper.props().id).toBe(-1)
-    expect(wrapper.props().image).toBe('')
-    expect(wrapper.props().isPlayer).toBe(true)
-    expect(wrapper.props().menuItems).toEqual([])
-    expect(wrapper.props().name).toBe('')
-    expect(wrapper.props().villageItems).toEqual([])
-  })
+  expect(wrapper.html()).toMatchSnapshot()
 })
