@@ -75,9 +75,12 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "@types/lobby": "./@types/lobby/",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "@types/react-intl": "^2.3.15",
+    "@types/react-select": "^2.0.11",
+    "@types/village": "./@types/village/",
     "babel-loader": "^8.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
