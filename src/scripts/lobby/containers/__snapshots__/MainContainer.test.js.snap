@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainContainer /> initialState 1`] = `"<ul class=\\"menu\\"><li class=\\"menu--item  \\">Lobby for audiences</li><li class=\\"menu--item  \\">Lobby for robot players</li><li class=\\"menu--item  \\">Lobby for human players</li><li class=\\"menu--item  \\">History</li><li class=\\"menu--item  \\">Settings</li><li class=\\"menu--item  \\">How to play</li><li class=\\"menu--item  \\">Credits</li></ul>"`;
