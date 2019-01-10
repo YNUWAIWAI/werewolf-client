@@ -1,11 +1,10 @@
-// @flow
-import type {Language} from 'village'
+/// <reference types="village" />
 import en from './en'
 import fr from './fr'
 import it from './it'
 import ja from './ja'
 
-export const getMessages = (locale: Language) => {
+export const getMessages = (locale: village.Language) => {
   switch (locale) {
     case 'en':
       return en

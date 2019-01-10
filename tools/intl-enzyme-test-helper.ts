@@ -1,8 +1,10 @@
+/* eslint no-unused-vars: 0 */
+/// <reference types="lobby" />
+import * as React from 'react'
 import {IntlProvider, intlShape} from 'react-intl'
-import {mount, shallow} from 'enzyme'
-import React from 'react'
+import {MountRendererProps, ShallowRendererProps, mount, shallow} from 'enzyme'
 
-export const initRenderer = (locale, messages) => {
+export const initRenderer = (locale: lobby.Language, messages: {[key: string]: string}) => {
   const intlProvider = new IntlProvider(
     {
       locale,
@@ -11,7 +13,7 @@ export const initRenderer = (locale, messages) => {
     {}
   )
   const {intl} = intlProvider.getChildContext()
-  const nodeWithIntlProp = node =>
+  const nodeWithIntlProp = (node: React.ReactElement<any>) =>
     React.cloneElement(
       node,
       {
@@ -20,7 +22,7 @@ export const initRenderer = (locale, messages) => {
     )
 
   return {
-    mountWithIntl: (node, {context, childContextTypes, ... additionalOptions} = {}) =>
+    mountWithIntl: (node: React.ReactElement<any>, {context, childContextTypes, ... additionalOptions}: MountRendererProps = {}) =>
       mount(
         nodeWithIntlProp(node),
         {
@@ -35,7 +37,7 @@ export const initRenderer = (locale, messages) => {
           ... additionalOptions
         }
       ),
-    shallowWithIntl: (node, {context, ... additionalOptions} = {}) =>
+    shallowWithIntl: (node: React.ReactElement<any>, {context, ... additionalOptions}: ShallowRendererProps = {}) =>
       shallow(
         nodeWithIntlProp(node),
         {
