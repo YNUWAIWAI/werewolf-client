@@ -1,5 +1,4 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 import TextareaInput from './TextareaInput'
 import {shallow} from 'enzyme'
 
