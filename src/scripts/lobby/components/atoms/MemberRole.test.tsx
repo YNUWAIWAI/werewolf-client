@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import MemberRole from './MemberRole'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<MemberRole class="class" id="id" image="image" name="name" numberOfAgents={0} />', () => {

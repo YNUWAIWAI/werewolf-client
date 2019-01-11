@@ -1,12 +1,11 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +className: string,
-  +id: string,
-  +image: string,
-  +name: string,
-  +numberOfAgents: number
+interface Props {
+  readonly className: string
+  readonly id: string
+  readonly image: string
+  readonly name: string
+  readonly numberOfAgents: number
 }
 
 export default function MemberRole(props: Props) {
