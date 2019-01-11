@@ -1,21 +1,21 @@
 /* eslint no-unused-vars: 0 */
 declare namespace lobby {
-  enum Avatar {
+  const enum Avatar {
     fixed = 'fixed',
     random = 'random',
     unspecified = 'unspecified'
   }
-  enum Member {
+  const enum Member {
     A = 'A',
     B = 'B',
     C = 'C'
   }
-  enum Lobby {
+  const enum Lobby {
     human = 'human player',
     audience = 'onymous audience',
     robot = 'robot player'
   }
-  enum PingStatus {
+  const enum PingStatus {
     danger = 'danger',
     safe = 'safe',
     warning = 'warning'

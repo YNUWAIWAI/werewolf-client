@@ -1,11 +1,12 @@
-// @flow
+/* global lobby */
+/// <reference types="lobby" />
+import * as React from 'react'
 import AvatarSelect from './AvatarSelect'
-import React from 'react'
 import Select from 'react-select'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 describe('<AvatarSelect />', () => {
   describe('render', () => {
@@ -15,7 +16,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="fixed"
+          defaultValue={lobby.Avatar.fixed}
           handleChange={handleChange}
           type="advancedSearch"
         />
@@ -34,7 +35,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="random"
+          defaultValue={lobby.Avatar.random}
           handleChange={handleChange}
           type="advancedSearch"
         />
@@ -53,7 +54,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="unspecified"
+          defaultValue={lobby.Avatar.unspecified}
           handleChange={handleChange}
           type="advancedSearch"
         />
@@ -72,7 +73,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="random"
+          defaultValue={lobby.Avatar.random}
           handleChange={handleChange}
           type="buildVillage"
         />
@@ -91,7 +92,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="fixed"
+          defaultValue={lobby.Avatar.fixed}
           handleChange={handleChange}
           type="buildVillage"
         />
@@ -112,7 +113,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="fixed"
+          defaultValue={lobby.Avatar.fixed}
           handleChange={handleChange}
           type="advancedSearch"
         />
@@ -133,7 +134,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="fixed"
+          defaultValue={lobby.Avatar.fixed}
           handleChange={handleChange}
           type="buildVillage"
         />
@@ -154,7 +155,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="fixed"
+          defaultValue={lobby.Avatar.fixed}
           handleChange={handleChange}
           type="advancedSearch"
         />
@@ -172,7 +173,7 @@ describe('<AvatarSelect />', () => {
       const wrapper = mountWithIntl(
         <AvatarSelect
           className="class"
-          defaultValue="random"
+          defaultValue={lobby.Avatar.random}
           handleChange={handleChange}
           type="buildVillage"
         />

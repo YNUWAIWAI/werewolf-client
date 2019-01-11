@@ -1,19 +1,19 @@
-// @flow
-import {type InjectIntlProvidedProps, injectIntl} from 'react-intl'
-import type {Avatar} from 'lobby'
-import React from 'react'
+/* global lobby */
+/// <reference types="lobby" />
+import * as React from 'react'
 import Select from 'react-select'
+import {injectIntl} from 'react-intl'
 
-type Props = {
-  +className: string,
-  +defaultValue: Avatar,
-  +handleChange: boolean => Avatar => void,
-  +type: 'advancedSearch' | 'buildVillage'
-} & InjectIntlProvidedProps
+interface Props extends ReactIntl.InjectedIntlProps {
+  readonly className: string
+  readonly defaultValue: lobby.Avatar
+  readonly handleChange: (validity: boolean) => (avatar: lobby.Avatar) => void
+  readonly type: 'advancedSearch' | 'buildVillage'
+}
 
-type Option = {
-  label: string,
-  value: Avatar
+interface Option {
+  label: string
+  value: lobby.Avatar
 }
 
 export default injectIntl(function AvatarSelect(props: Props) {
@@ -21,9 +21,9 @@ export default injectIntl(function AvatarSelect(props: Props) {
     if (!Array.isArray(selectedOption)) { // selectedOption: Option
       props.handleChange(true)(selectedOption.value)
     } else if (props.type === 'advancedSearch') { // selectedOption: []
-      props.handleChange(true)('random')
+      props.handleChange(true)(lobby.Avatar.random)
     } else { // props.type === 'buildVillage', selectedOption: []
-      props.handleChange(false)('fixed')
+      props.handleChange(false)(lobby.Avatar.fixed)
     }
   }
   const options = {
