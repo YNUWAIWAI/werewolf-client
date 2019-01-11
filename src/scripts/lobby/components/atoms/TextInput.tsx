@@ -1,17 +1,16 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +className: string,
-  +handleChange: boolean => string => void,
-  +id?: string,
-  +initialValue: string,
-  +max: number,
-  +min: number,
-  +placeholder: string,
-  +required: boolean
+interface Props {
+  readonly className: string
+  readonly handleChange: (validity: boolean) => (value: string) => void
+  readonly id?: string
+  readonly initialValue: string
+  readonly max: number
+  readonly min: number
+  readonly placeholder: string
+  readonly required: boolean
 }
-type State = {
+interface State {
   value: string
 }
 
@@ -26,7 +25,7 @@ export default class TextInput extends React.Component<Props, State> {
   shouldComponentUpdate() {
     return true
   }
-  handleChange(event: SyntheticInputEvent<HTMLInputElement>) {
+  handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       value: event.target.value
     })
