@@ -1,8 +1,8 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +children?: React$Node
+interface Props {
+  readonly children?: React.ReactNode
 }
 
 export default function MainContent(props: Props) {
