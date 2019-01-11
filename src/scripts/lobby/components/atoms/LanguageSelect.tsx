@@ -10,8 +10,8 @@ interface Props {
 }
 
 interface Option {
-  label: string
-  value: lobby.Language
+  readonly label: string
+  readonly value: lobby.Language
 }
 
 export default function LanguageSelect(props: Props) {
