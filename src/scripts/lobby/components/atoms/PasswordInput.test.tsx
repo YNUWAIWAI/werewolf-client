@@ -1,13 +1,12 @@
-// @flow
-import PasswordInput from './PasswordInput'
-import React from 'react'
+import * as React from 'react'
+import PasswordInput, {Props, State} from './PasswordInput'
 import {shallow} from 'enzyme'
 
 describe('<PasswordInput />', () => {
   test('render', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = shallow<Props, State>(
       <PasswordInput
         className="className"
         handleChange={handleChange}
@@ -22,7 +21,7 @@ describe('<PasswordInput />', () => {
   test('onChange valid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = shallow<Props, State>(
       <PasswordInput
         className="className"
         handleChange={handleChange}
@@ -47,7 +46,7 @@ describe('<PasswordInput />', () => {
   test('onChange invalid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = shallow<Props, State>(
       <PasswordInput
         className="className"
         handleChange={handleChange}
