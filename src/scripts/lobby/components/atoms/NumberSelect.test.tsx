@@ -1,11 +1,12 @@
-// @flow
+/* global lobby */
+/// <reference types="lobby" />
+import * as React from 'react'
 import NumberSelect from './NumberSelect'
-import React from 'react'
 import Select from 'react-select'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 describe('<NumberSelect />', () => {
   test('render', () => {
