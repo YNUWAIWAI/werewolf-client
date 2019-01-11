@@ -1,13 +1,12 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +className: string,
-  +handleChange: boolean => string => void,
-  +id: string,
-  +initialValue: string
+export interface Props {
+  readonly className: string
+  readonly handleChange: (validity: boolean) => (value: string) => void
+  readonly id: string
+  readonly initialValue: string
 }
-type State = {
+export interface State {
   value: string
 }
 
@@ -22,7 +21,7 @@ export default class EmaildInput extends React.Component<Props, State> {
   shouldComponentUpdate() {
     return true
   }
-  handleChange(event: SyntheticInputEvent<HTMLInputElement>) {
+  handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       value: event.target.value
     })

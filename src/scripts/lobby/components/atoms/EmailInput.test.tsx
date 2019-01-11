@@ -1,13 +1,12 @@
-// @flow
-import EmailInput from './EmailInput'
-import React from 'react'
+import * as React from 'react'
+import EmailInput, {Props, State} from './EmailInput'
 import {shallow} from 'enzyme'
 
 describe('<EmailInput />', () => {
   test('render', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = shallow<Props, State>(
       <EmailInput
         className="className"
         handleChange={handleChange}
@@ -23,7 +22,7 @@ describe('<EmailInput />', () => {
   test('onChange valid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = shallow<Props, State>(
       <EmailInput
         className="className"
         handleChange={handleChange}
@@ -49,7 +48,7 @@ describe('<EmailInput />', () => {
   test('onChange invalid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
+    const wrapper = shallow<Props, State>(
       <EmailInput
         className="className"
         handleChange={handleChange}
