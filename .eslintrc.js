@@ -5,7 +5,7 @@ module.exports = {
     "jest/globals": true,
     "node": true
   },
-  "parser": "typescript-eslint-parser",
+  "parser": "eslint-plugin-typescript/parser",
   "parserOptions": {
     'ecmaFeatures': {
       'jsx': true
@@ -15,20 +15,19 @@ module.exports = {
   },
   "settings": {
     "react": {
-      "version": "16.4",
-      "flowVersion": "0.71"
+      "version": "16.4"
     }
   },
   "plugins": [
-    "flowtype",
+    "typescript",
     "jest",
     "react"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:flowtype/recommended",
     "plugin:jest/recommended",
-    "plugin:react/all"
+    "plugin:react/all",
+    "plugin:typescript/recommended"
   ],
   "rules": {
     "array-bracket-spacing": ["error", "never"],
