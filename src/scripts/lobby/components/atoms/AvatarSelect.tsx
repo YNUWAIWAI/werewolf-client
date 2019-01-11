@@ -12,8 +12,8 @@ interface Props extends ReactIntl.InjectedIntlProps {
 }
 
 interface Option {
-  label: string
-  value: lobby.Avatar
+  readonly label: string
+  readonly value: lobby.Avatar
 }
 
 export default injectIntl(function AvatarSelect(props: Props) {
@@ -26,7 +26,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
       props.handleChange(false)(lobby.Avatar.fixed)
     }
   }
-  const options = {
+  const options: Option[] = {
     advancedSearch: [
       {
         label: props.intl.formatMessage(
@@ -34,7 +34,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
             id: 'AvatarSelect.advancedSearch(random)'
           }
         ),
-        value: 'random'
+        value: lobby.Avatar.random
       },
       {
         label: props.intl.formatMessage(
@@ -42,7 +42,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
             id: 'AvatarSelect.advancedSearch(fixed)'
           }
         ),
-        value: 'fixed'
+        value: lobby.Avatar.fixed
       },
       {
         label: props.intl.formatMessage(
@@ -50,7 +50,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
             id: 'AvatarSelect.advancedSearch(unspecified)'
           }
         ),
-        value: 'unspecified'
+        value: lobby.Avatar.unspecified
       }
     ],
     buildVillage: [
@@ -60,7 +60,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
             id: 'AvatarSelect.buildVillage(fixed)'
           }
         ),
-        value: 'fixed'
+        value: lobby.Avatar.fixed
       },
       {
         label: props.intl.formatMessage(
@@ -68,7 +68,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
             id: 'AvatarSelect.buildVillage(random)'
           }
         ),
-        value: 'random'
+        value: lobby.Avatar.random
       }
     ]
   }[props.type]
