@@ -1,6 +1,7 @@
-// @flow
+/* global lobby */
+/// <reference types="lobby" />
+import * as React from 'react'
 import LanguageSelect from './LanguageSelect'
-import React from 'react'
 import Select from 'react-select'
 import {shallow} from 'enzyme'
 
@@ -11,7 +12,7 @@ describe('<LanguageSelect />', () => {
     const wrapper = shallow(
       <LanguageSelect
         className="className"
-        defaultValue="ja"
+        defaultValue={lobby.Language.ja}
         handleChange={handleChange}
       />
     )
@@ -25,7 +26,7 @@ describe('<LanguageSelect />', () => {
     const wrapper = shallow(
       <LanguageSelect
         className="className"
-        defaultValue="ja"
+        defaultValue={lobby.Language.ja}
         handleChange={handleChange}
       />
     )
@@ -45,7 +46,7 @@ describe('<LanguageSelect />', () => {
     const wrapper = shallow(
       <LanguageSelect
         className="className"
-        defaultValue="ja"
+        defaultValue={lobby.Language.ja}
         handleChange={handleChange}
       />
     )
