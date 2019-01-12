@@ -6,7 +6,7 @@ import Select from 'react-select'
 interface Props {
   readonly className: string
   readonly defaultValue: lobby.Language
-  readonly handleChange: (validity: boolean) => (value: lobby.Language) => void
+  readonly handleChange: (valid: boolean) => (value: lobby.Language) => void
 }
 
 interface Option {

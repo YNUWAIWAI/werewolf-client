@@ -5,8 +5,8 @@ import NumberSelect from '../atoms/NumberSelect'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
 
 interface Props {
-  readonly handleMemberChange: (validity: boolean) => (value: lobby.Member) => void
-  readonly handleNumberChange: (validity: boolean) => (value: number) => void
+  readonly handleMemberChange: (valid: boolean) => (value: lobby.Member) => void
+  readonly handleNumberChange: (valid: boolean) => (value: number) => void
   readonly numberOfHumans: number
   readonly numberOfPlayers: number
   readonly numberOfRobots: number

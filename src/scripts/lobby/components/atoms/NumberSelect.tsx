@@ -7,7 +7,7 @@ interface Props extends ReactIntl.InjectedIntlProps {
   readonly className: string
   readonly defaultValue?: number
   readonly from: number
-  readonly handleChange: (validity: boolean) => (value: number) => void
+  readonly handleChange: (valid: boolean) => (value: number) => void
   readonly name: string
   readonly to: number
   readonly type: 'player' | 'robot'

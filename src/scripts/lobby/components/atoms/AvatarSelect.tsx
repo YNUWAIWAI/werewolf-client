@@ -7,7 +7,7 @@ import {injectIntl} from 'react-intl'
 interface Props extends ReactIntl.InjectedIntlProps {
   readonly className: string
   readonly defaultValue: lobby.Avatar
-  readonly handleChange: (validity: boolean) => (avatar: lobby.Avatar) => void
+  readonly handleChange: (valid: boolean) => (avatar: lobby.Avatar) => void
   readonly type: 'advancedSearch' | 'buildVillage'
 }
 

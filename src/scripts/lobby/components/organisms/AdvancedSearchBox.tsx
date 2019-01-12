@@ -25,7 +25,7 @@ export interface Props {
   readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
   readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void,
   readonly handleTextChange: (propName: TextPropName) => (value: string) => void
-  readonly handleValidityChange: (propName: PropName) => (validity: boolean) => void
+  readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 interface Props {
   readonly className: string
-  readonly handleChange: (validity: boolean) => (value: string) => void
+  readonly handleChange: (valid: boolean) => (value: string) => void
   readonly id?: string
   readonly initialValue: string
   readonly max: number

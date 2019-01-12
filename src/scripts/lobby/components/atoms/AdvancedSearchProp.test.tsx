@@ -14,7 +14,7 @@ test('<AdvancedSearchProp />', () => {
       checked
       handleClick={handleClick}
       name="villageName"
-      validity
+      valid
     />
   )
 
