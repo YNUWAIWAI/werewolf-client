@@ -1,13 +1,11 @@
-// @flow
-import type {MenuItem as MenuItemType, Target} from 'lobby'
+import * as React from 'react'
 import MenuItem from '../molecules/MenuItem'
-import React from 'react'
 
-export type Props = {
-  +class: string,
-  +itemClass: string,
-  +items: MenuItemType[],
-  +transition: Target => void
+export interface Props {
+  readonly class: string
+  readonly itemClass: string
+  readonly items: lobby.MenuItem[]
+  readonly transition: (target:lobby.Target) => void
 }
 
 export default function Menu(props: Props) {
