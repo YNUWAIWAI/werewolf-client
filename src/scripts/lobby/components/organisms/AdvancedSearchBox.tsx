@@ -1,42 +1,46 @@
-// @flow
+import * as React from 'react'
 import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
-import type {Avatar} from 'lobby'
 import AvatarSelect from '../atoms/AvatarSelect'
 import {FormattedMessage} from 'react-intl'
 import NumberSelect from '../atoms/NumberSelect'
-import React from 'react'
 import TextInput from '../atoms/TextInput'
 import TextareaInput from '../atoms/TextareaInput'
 
-export type Props = {
-  +checked: {
-    +avatar: boolean,
-    +comment: boolean,
-    +hostName: boolean,
-    +maximum: boolean,
-    +minimum: boolean,
-    +villageName: boolean
-  },
-  +handleAvatarChange: Avatar => void,
-  +handleCheckboxChange: ('avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => boolean => void,
-  +handleNumberChange: ('maximum' | 'minimum') => number => void,
-  +handleTextChange: ('comment' | 'hostName' | 'villageName') => string => void,
-  +handleValidityChange: ('avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => boolean => void,
-  +validity: {
-    +avatar: boolean,
-    +comment: boolean,
-    +hostName: boolean,
-    +maximum: boolean,
-    +minimum: boolean,
-    +villageName: boolean
+type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
+
+type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
+
+type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
+
+export interface Props {
+  readonly checked: {
+    readonly avatar: boolean
+    readonly comment: boolean
+    readonly hostName: boolean
+    readonly maximum: boolean
+    readonly minimum: boolean
+    readonly villageName: boolean
+  }
+  readonly handleAvatarChange: (avatar: lobby.Avatar) => void,
+  readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
+  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void,
+  readonly handleTextChange: (propName: TextPropName) => (value: string) => void
+  readonly handleValidityChange: (propName: PropName) => (validity: boolean) => void
+  readonly validity: {
+    readonly avatar: boolean
+    readonly comment: boolean
+    readonly hostName: boolean
+    readonly maximum: boolean
+    readonly minimum: boolean
+    readonly villageName: boolean
   }
 }
 
 export default function AdvancedSearchBox(props: Props) {
-  const handleChange = propName => valid => value => {
+  const handleChange = (propName: PropName) => (valid: boolean) => (value: boolean | number | string | lobby.Avatar) => {
     switch (propName) {
       case 'avatar': {
-        const avatar: Avatar[] = ['fixed', 'random', 'unspecified']
+        const avatar = [lobby.Avatar.fixed, lobby.Avatar.random, lobby.Avatar.unspecified]
         const maybe = avatar.find(v => v === value)
 
         if (maybe) {
@@ -68,7 +72,7 @@ export default function AdvancedSearchBox(props: Props) {
       props.handleValidityChange(propName)(false)
     }
   }
-  const handleClick = propName => checked => {
+  const handleClick = (propName: PropName) => (checked: boolean) => {
     switch (propName) {
       case 'avatar':
         break
@@ -156,7 +160,6 @@ export default function AdvancedSearchBox(props: Props) {
         from={4}
         handleChange={handleChange('minimum')}
         name="minimum"
-        suffix=""
         to={15}
         type="player"
       />
@@ -173,7 +176,6 @@ export default function AdvancedSearchBox(props: Props) {
         from={4}
         handleChange={handleChange('maximum')}
         name="maximum"
-        suffix=""
         to={15}
         type="player"
       />
@@ -186,7 +188,7 @@ export default function AdvancedSearchBox(props: Props) {
       />
       <AvatarSelect
         className="advanced-search--input"
-        defaultValue="random"
+        defaultValue={lobby.Avatar.random}
         handleChange={handleChange('avatar')}
         type="advancedSearch"
       />

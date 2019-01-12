@@ -5,17 +5,11 @@ module.exports = {
     "jest/globals": true,
     "node": true
   },
-  "parser": "eslint-plugin-typescript/parser",
-  "parserOptions": {
-    'ecmaFeatures': {
-      'jsx': true
-    },
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
+  // "parser": "eslint-plugin-typescript/parser",
+  "parser": "typescript-eslint-parser",
   "settings": {
     "react": {
-      "version": "16.4"
+      "version": "16.5"
     }
   },
   "plugins": [
@@ -26,8 +20,8 @@ module.exports = {
   "extends": [
     "eslint:recommended",
     "plugin:jest/recommended",
-    "plugin:react/all",
-    "plugin:typescript/recommended"
+    // "plugin:typescript/recommended",
+    "plugin:react/all"
   ],
   "rules": {
     "array-bracket-spacing": ["error", "never"],
@@ -218,6 +212,7 @@ module.exports = {
     "space-unary-ops": "error",
     "strict": 0,
     "template-curly-spacing": ["error", "never"],
+    "typescript/no-unused-vars": "error",
     "unicode-bom": ["warn", "never"],
     "vars-on-top": "error",
     "wrap-iife": ["error", "inside"],
