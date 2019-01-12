@@ -106,7 +106,7 @@ export default function AdvancedSearchBox(props: Props) {
         checked={props.checked.villageName}
         handleClick={handleClick('villageName')}
         name="villageName"
-        validity={props.validity.villageName}
+        valid={props.validity.villageName}
       />
       <FormattedMessage
         id="AdvancedSearch.placeholder(villageName)"
@@ -129,7 +129,7 @@ export default function AdvancedSearchBox(props: Props) {
         checked={props.checked.hostName}
         handleClick={handleClick('hostName')}
         name="hostName"
-        validity={props.validity.hostName}
+        valid={props.validity.hostName}
       />
       <FormattedMessage
         id="AdvancedSearch.placeholder(hostName)"
@@ -152,7 +152,7 @@ export default function AdvancedSearchBox(props: Props) {
         checked={props.checked.minimum}
         handleClick={handleClick('minimum')}
         name="minimum"
-        validity={props.validity.minimum}
+        valid={props.validity.minimum}
       />
       <NumberSelect
         ascendingOrder
@@ -168,7 +168,7 @@ export default function AdvancedSearchBox(props: Props) {
         checked={props.checked.maximum}
         handleClick={handleClick('maximum')}
         name="maximum"
-        validity={props.validity.maximum}
+        valid={props.validity.maximum}
       />
       <NumberSelect
         ascendingOrder={false}
@@ -184,7 +184,7 @@ export default function AdvancedSearchBox(props: Props) {
         checked={props.checked.avatar}
         handleClick={handleClick('avatar')}
         name="avatar"
-        validity={props.validity.avatar}
+        valid={props.validity.avatar}
       />
       <AvatarSelect
         className="advanced-search--input"
@@ -197,7 +197,7 @@ export default function AdvancedSearchBox(props: Props) {
         checked={props.checked.comment}
         handleClick={handleClick('comment')}
         name="comment"
-        validity={props.validity.comment}
+        valid={props.validity.comment}
       />
       <FormattedMessage
         id="AdvancedSearch.placeholder(comment)"
