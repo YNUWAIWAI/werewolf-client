@@ -1,13 +1,11 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import Member from './Member'
-import React from 'react'
-import type {Village} from 'lobby'
 
-type Props = {
-  +handleClick?: void => void,
-  +isPlayer: boolean
-} & $ReadOnly<Village>
+interface Props extends Readonly<lobby.Village> {
+  readonly handleClick?: () => void
+  readonly isPlayer: boolean
+}
 
 export default function VillageItem(props: Props) {
   return (

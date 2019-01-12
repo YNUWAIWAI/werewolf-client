@@ -1,16 +1,14 @@
-// @flow
-import React from 'react'
-import type {Village} from 'lobby'
+import * as React from 'react'
 import VillageItem from './VillageItem'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 describe('<VillageItem />', () => {
   test('isPlayer: true', () => {
-    const village: Village = {
-      avatar: 'fixed',
+    const village: lobby.Village = {
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
@@ -61,8 +59,8 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('isPlayer: false', () => {
-    const village: Village = {
-      avatar: 'fixed',
+    const village: lobby.Village = {
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
@@ -113,8 +111,8 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('isPlayer: true, idForSearching is invalid', () => {
-    const village: Village = {
-      avatar: 'fixed',
+    const village: lobby.Village = {
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
@@ -152,8 +150,8 @@ describe('<VillageItem />', () => {
     expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('####')
   })
   test('isPlayer: true, onClick', () => {
-    const village: Village = {
-      avatar: 'fixed',
+    const village: lobby.Village = {
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
@@ -198,8 +196,8 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
   test('isPlayer: false, onClick', () => {
-    const village: Village = {
-      avatar: 'fixed',
+    const village: lobby.Village = {
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
@@ -244,8 +242,8 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
   test('typeof handleClick !== "function"', () => {
-    const village: Village = {
-      avatar: 'fixed',
+    const village: lobby.Village = {
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
