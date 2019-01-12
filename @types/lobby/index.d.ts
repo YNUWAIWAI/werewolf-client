@@ -68,6 +68,12 @@ declare namespace lobby {
     [key in RoleId]: number
   }
 
+  type Cast = {
+    [numberOfPlayers: string]: {
+      [member in Member]: RoleSetting
+    }
+  }
+
   interface WaitingPlayer {
     avatarImage: string;
     isAnonymous: boolean;

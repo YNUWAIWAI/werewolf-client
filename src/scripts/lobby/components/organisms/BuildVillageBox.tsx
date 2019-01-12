@@ -1,41 +1,45 @@
-// @flow
-import type {Avatar, Member} from 'lobby'
+import * as React from 'react'
 import AvatarSelect from '../atoms/AvatarSelect'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'
 import NumberSelect from '../atoms/NumberSelect'
-import React from 'react'
 import TextInput from '../atoms/TextInput'
 import TextareaInput from '../atoms/TextareaInput'
-import {getCastFromNumberOfPlayers} from '../../constants/Cast'
+import {getCastFromNumberOfPlayers} from '../../util'
 
-type Props = {
-  +handleAvatarChange: Avatar => void,
-  +handleMemberChange: Member => void,
-  +handleNumberChange: string => number => void,
-  +handleTextChange: string => string => void,
-  +handleValidityChange: string => boolean => void,
-  +validity: {
-    +avatar: boolean,
-    +comment: boolean,
-    +hostName: boolean,
-    +numberOfPlayers: boolean,
-    +numberOfRobots: boolean,
-    +villageName: boolean
-  },
-  +value: {
-    +avatar: Avatar,
-    +comment: string,
-    +hostName: string,
-    +numberOfHumans: number,
-    +numberOfPlayers: number,
-    +numberOfRobots: number,
-    +villageName: string
+type PropName = 'avatar' | 'comment' | 'hostName' | 'member' | 'numberOfPlayers' | 'numberOfRobots' | 'villageName'
+
+type NumberPropName = Extract<PropName, 'numberOfPlayers' | 'numberOfRobots'>
+
+type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
+
+export interface Props {
+  readonly handleAvatarChange: (value: lobby.Avatar) => void
+  readonly handleMemberChange: (value: lobby.Member) => void
+  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
+  readonly handleTextChange: (propName: TextPropName) => (value: string) => void
+  readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
+  readonly validity: {
+    readonly avatar: boolean
+    readonly comment: boolean
+    readonly hostName: boolean
+    readonly numberOfPlayers: boolean
+    readonly numberOfRobots: boolean
+    readonly villageName: boolean
+  }
+  readonly value: {
+    readonly avatar: lobby.Avatar
+    readonly comment: string
+    readonly hostName: string
+    readonly numberOfHumans: number
+    readonly numberOfPlayers: number
+    readonly numberOfRobots: number
+    readonly villageName: string
   }
 }
 
 export default function BuildVillageBox(props: Props) {
-  const handleChange = propName => valid => value => {
+  const handleChange = (propName: PropName) => (valid: boolean) => (value: boolean | number | string | lobby.Avatar | lobby.Member) => {
     if (!valid) {
       props.handleValidityChange(propName)(false)
 
@@ -44,21 +48,11 @@ export default function BuildVillageBox(props: Props) {
     props.handleValidityChange(propName)(true)
     switch (propName) {
       case 'avatar': {
-        const avatar: Avatar[] = ['fixed', 'random']
+        const avatar = [lobby.Avatar.fixed, lobby.Avatar.random]
         const maybe = avatar.find(v => v === value)
 
         if (maybe) {
           props.handleAvatarChange(maybe)
-        }
-
-        return
-      }
-      case 'member': {
-        const member: Member[] = ['A', 'B', 'C']
-        const maybe = member.find(v => v === value)
-
-        if (maybe) {
-          props.handleMemberChange(maybe)
         }
 
         return
@@ -71,6 +65,16 @@ export default function BuildVillageBox(props: Props) {
         }
 
         return
+      case 'member': {
+        const member = [lobby.Member.A, lobby.Member.B, lobby.Member.C]
+        const maybe = member.find(v => v === value)
+
+        if (maybe) {
+          props.handleMemberChange(maybe)
+        }
+
+        return
+      }
       case 'numberOfPlayers':
       case 'numberOfRobots':
         if (typeof value === 'number') {

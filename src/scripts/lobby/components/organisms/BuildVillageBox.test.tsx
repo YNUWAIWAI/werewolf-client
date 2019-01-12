@@ -1,6 +1,5 @@
-// @flow
-import BuildVillageBox from './BuildVillageBox'
-import React from 'react'
+import * as React from 'react'
+import BuildVillageBox, {Props} from './BuildVillageBox'
 import {shallow} from 'enzyme'
 
 describe('<BuildVillageBox />', () => {
@@ -13,7 +12,7 @@ describe('<BuildVillageBox />', () => {
     const handleTextChange = jest.fn().mockReturnValue(handleTextChangeInner)
     const handleValidityChangeInner = jest.fn()
     const handleValidityChange = jest.fn().mockReturnValue(handleValidityChangeInner)
-    const validity = {
+    const validity: Props['validity'] = {
       avatar: true,
       comment: true,
       hostName: true,
@@ -21,8 +20,8 @@ describe('<BuildVillageBox />', () => {
       numberOfRobots: true,
       villageName: true
     }
-    const value = {
-      avatar: 'fixed',
+    const value: Props['value'] = {
+      avatar: lobby.Avatar.fixed,
       comment: '',
       hostName: 'Alice',
       numberOfHumans: 8,
