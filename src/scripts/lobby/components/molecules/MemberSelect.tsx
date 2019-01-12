@@ -1,28 +1,26 @@
-// @flow
-import type {Member, RoleSetting} from 'lobby'
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
 import NumberSelect from '../atoms/NumberSelect'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
-import React from 'react'
 
-type Props = {
-  +handleMemberChange: boolean => Member => void,
-  +handleNumberChange: boolean => number => void,
-  +numberOfHumans: number,
-  +numberOfPlayers: number,
-  +numberOfRobots: number,
-  +role: {
-    +A: RoleSetting,
-    +B: RoleSetting,
-    +C: RoleSetting
-  },
-  +validity: {
-    +numberOfRobots: boolean
+interface Props {
+  readonly handleMemberChange: (validity: boolean) => (value: lobby.Member) => void
+  readonly handleNumberChange: (validity: boolean) => (value: number) => void
+  readonly numberOfHumans: number
+  readonly numberOfPlayers: number
+  readonly numberOfRobots: number
+  readonly role: {
+    readonly A: Readonly<lobby.RoleSetting>
+    readonly B: Readonly<lobby.RoleSetting>
+    readonly C: Readonly<lobby.RoleSetting>
+  }
+  readonly validity: {
+    readonly numberOfRobots: boolean
   }
 }
 
-const getMember = role =>
+const getMember = (role: Readonly<lobby.RoleSetting>) =>
   ORDERED_ROLE_LIST
     .map(item =>
       <MemberRole
@@ -53,7 +51,6 @@ export default function MemberSelect(props: Props) {
           from={0}
           handleChange={props.handleNumberChange}
           name="numberOfRobots"
-          suffix="robots"
           to={props.numberOfPlayers}
           type="robot"
         />
@@ -71,45 +68,42 @@ export default function MemberSelect(props: Props) {
             </div>
         }
       </FormattedMessage>
-      <label className="village--item--member-select--role" data-opt="A">
+      <label className="village--item--member-select--role">
         <div className="village--item--member-select--role--radio">
           <input
             defaultChecked
             name="member"
-            onChange={() => props.handleMemberChange(true)('A')}
+            onChange={() => props.handleMemberChange(true)(lobby.Member.A)}
             type="radio"
-            value="A"
           />
           <span>
-            {'A'}
+            {lobby.Member.A}
           </span>
         </div>
         {member.A}
       </label>
-      <label className="village--item--member-select--role" data-opt="B">
+      <label className="village--item--member-select--role">
         <div className="village--item--member-select--role--radio">
           <input
             name="member"
-            onChange={() => props.handleMemberChange(true)('B')}
+            onChange={() => props.handleMemberChange(true)(lobby.Member.B)}
             type="radio"
-            value="B"
           />
           <span>
-            {'B'}
+            {lobby.Member.B}
           </span>
         </div>
         {member.B}
       </label>
-      <label className="village--item--member-select--role" data-opt="C">
+      <label className="village--item--member-select--role">
         <div className="village--item--member-select--role--radio">
           <input
             name="member"
-            onChange={() => props.handleMemberChange(true)('C')}
+            onChange={() => props.handleMemberChange(true)(lobby.Member.C)}
             type="radio"
-            value="C"
           />
           <span>
-            {'C'}
+            {lobby.Member.C}
           </span>
         </div>
         {member.C}

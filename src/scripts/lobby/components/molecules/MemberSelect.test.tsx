@@ -1,10 +1,9 @@
-// @flow
+import * as React from 'react'
 import MemberSelect from './MemberSelect'
-import React from 'react'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 test('<MemberSelect numberOfHumans={7} numberOfPlayers={15} numberOfRobots={8} />', () => {
   const handleMemberChangeInner = jest.fn()
