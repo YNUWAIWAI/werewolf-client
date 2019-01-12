@@ -1,15 +1,14 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
 
-type Props = {
-  +handleSearchIdChange: number => void,
-  +handleValidityChange: boolean => void,
-  +max: number
+interface Props {
+  readonly handleSearchIdChange: (value: number) => void
+  readonly handleValidityChange: (valid: boolean) => void
+  readonly max: number
 }
 
 export default function IdSearchBox(props: Props) {
-  const handleIdChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
+  const handleIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.handleValidityChange(event.target.validity.valid)
     if (event.target.validity.valid) {
       props.handleSearchIdChange(Number(event.target.value))

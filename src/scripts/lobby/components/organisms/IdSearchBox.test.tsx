@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import IdSearchBox from './IdSearchBox'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<IdSearchBox />', () => {
