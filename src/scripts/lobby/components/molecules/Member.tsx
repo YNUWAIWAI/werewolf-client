@@ -4,9 +4,9 @@ import MemberRole from '../atoms/MemberRole'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
 
 interface Props {
-  readonly human: lobby.Human
-  readonly robot: lobby.Robot
-  readonly role: lobby.RoleSetting
+  readonly human: Readonly<lobby.Human>
+  readonly robot: Readonly<lobby.Robot>
+  readonly role: Readonly<lobby.RoleSetting>
 }
 
 export default function Member(props: Props) {
