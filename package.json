@@ -43,6 +43,7 @@
     "stylelint-order": "^2.0.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2",
+    "typescript-eslint-parser": "^21.0.2",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.19.1"
   },

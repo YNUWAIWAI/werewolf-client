@@ -76,7 +76,7 @@ declare namespace lobby {
     name: string;
     token: string;
   }
-  enum Target {
+  const enum Target {
     ADVANCED_SEARCH = 'ADVANCED_SEARCH',
     BUILD_VILLAGE = 'BUILD_VILLAGE',
     ID_SEARCH = 'ID_SEARCH',

@@ -1,10 +1,9 @@
-// @flow
+import * as React from 'react'
 import MenuItem from './MenuItem'
-import React from 'react'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 describe('<MenuItem />', () => {
   test('default', () => {
@@ -14,7 +13,7 @@ describe('<MenuItem />', () => {
         className="className"
         id="Menu.returnToMainPage"
         transition={transition}
-        types={['SHOW_MAIN']}
+        types={[lobby.Target.SHOW_MAIN]}
       />
     )
 
@@ -30,7 +29,7 @@ describe('<MenuItem />', () => {
         disabled
         id="Menu.returnToMainPage"
         transition={transition}
-        types={['SHOW_MAIN']}
+        types={[lobby.Target.SHOW_MAIN]}
       />
     )
 
@@ -46,7 +45,7 @@ describe('<MenuItem />', () => {
         id="Menu.returnToMainPage"
         isLoading
         transition={transition}
-        types={['SHOW_MAIN']}
+        types={[lobby.Target.SHOW_MAIN]}
       />
     )
 
@@ -61,7 +60,7 @@ describe('<MenuItem />', () => {
         className="className"
         id="Menu.returnToMainPage"
         transition={transition}
-        types={['SHOW_MAIN']}
+        types={[lobby.Target.SHOW_MAIN]}
       />
     )
 
@@ -77,7 +76,7 @@ describe('<MenuItem />', () => {
         disabled
         id="Menu.returnToMainPage"
         transition={transition}
-        types={['SHOW_MAIN']}
+        types={[lobby.Target.SHOW_MAIN]}
       />
     )
 

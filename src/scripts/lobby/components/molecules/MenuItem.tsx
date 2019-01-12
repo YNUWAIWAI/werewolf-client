@@ -1,16 +1,14 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import Loader from '../atoms/svg/Loader'
-import React from 'react'
-import type {Target} from 'lobby'
 
-type Props = {
-  +className: string,
-  +disabled?: boolean,
-  +id: string,
-  +isLoading?: boolean,
-  +transition: Target => void,
-  +types: Target[]
+interface Props {
+  readonly className: string
+  readonly disabled?: boolean
+  readonly id: string
+  readonly isLoading?: boolean
+  readonly transition: (target: lobby.Target) => void
+  readonly types: lobby.Target[]
 }
 
 export default function MenuItem(props: Props) {
