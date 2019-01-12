@@ -1,10 +1,9 @@
-// @flow
+import * as React from 'react'
 import AvatarItem from './AvatarItem'
-import React from 'react'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe name="name" />', () => {
   const kickOut = jest.fn()
@@ -18,7 +17,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe name="name" /
       kickOut={kickOut}
       name="name"
       ping="99.999 s"
-      pingStatus="danger"
+      pingStatus={lobby.PingStatus.danger}
     />
   )
 
@@ -42,7 +41,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
       kickOut={kickOut}
       name="name"
       ping="99.999 s"
-      pingStatus="danger"
+      pingStatus={lobby.PingStatus.danger}
     />
   )
 
@@ -66,7 +65,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost isMe={false} name=
       kickOut={kickOut}
       name="name"
       ping="99.999 s"
-      pingStatus="danger"
+      pingStatus={lobby.PingStatus.danger}
     />
   )
 
@@ -90,7 +89,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe={fals
       kickOut={kickOut}
       name="name"
       ping="99.999 s"
-      pingStatus="danger"
+      pingStatus={lobby.PingStatus.danger}
     />
   )
 
@@ -114,16 +113,16 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut isHost={false} isMe name=
       kickOut={kickOut}
       name="name"
       ping="99.999 s"
-      pingStatus="danger"
+      pingStatus={lobby.PingStatus.danger}
     />
   )
 
-  const tmp = global.confirm
+  const tmp = window.confirm
 
-  global.confirm = () => true
+  window.confirm = () => true
   wrapper.simulate('click')
   expect(kickOut).toHaveBeenCalledTimes(1)
-  global.confirm = tmp
+  window.confirm = tmp
 })
 test('<AvatarItem avatarImage="avatarImage" canKickOut={false} isHost={false} isMe name="name" /> onClick', () => {
   const kickOut = jest.fn()
@@ -137,7 +136,7 @@ test('<AvatarItem avatarImage="avatarImage" canKickOut={false} isHost={false} is
       kickOut={kickOut}
       name="name"
       ping="99.999 s"
-      pingStatus="danger"
+      pingStatus={lobby.PingStatus.danger}
     />
   )
 

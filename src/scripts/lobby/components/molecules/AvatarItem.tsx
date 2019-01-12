@@ -1,22 +1,20 @@
-// @flow
-import {FormattedMessage, type InjectIntlProvidedProps, injectIntl} from 'react-intl'
+import * as React from 'react'
+import {FormattedMessage, injectIntl} from 'react-intl'
 import Danger from '../atoms/svg/Danger'
-import type {PingStatus} from 'lobby'
-import React from 'react'
 import Safe from '../atoms/svg/Safe'
 import Warning from '../atoms/svg/Warning'
 
-export type Props = {
-  +avatarImage: string,
-  +canKickOut: boolean,
-  +isAnonymous: boolean,
-  +isHost: boolean,
-  +isMe: boolean,
-  +kickOut: void => void,
-  +name: string,
-  +ping: string,
-  +pingStatus: PingStatus
-} & InjectIntlProvidedProps
+export interface Props extends ReactIntl.InjectedIntlProps {
+  readonly avatarImage: string
+  readonly canKickOut: boolean
+  readonly isAnonymous: boolean
+  readonly isHost: boolean
+  readonly isMe: boolean
+  readonly kickOut: () => void
+  readonly name: string
+  readonly ping: string
+  readonly pingStatus: lobby.PingStatus
+}
 
 export default injectIntl(function AvatarItem(props: Props) {
   const handleClick = () => {
