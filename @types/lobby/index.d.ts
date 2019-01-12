@@ -54,16 +54,20 @@ declare namespace lobby {
     current: number;
     max: number;
   }
-  interface RoleSetting {
-    hunter: number;
-    madman: number;
-    mason: number;
-    medium: number;
-    seer: number;
-    villager: number;
-    werehamster: number;
-    werewolf: number;
+  const enum RoleId {
+    hunter = 'hunter',
+    madman = 'madman',
+    mason = 'mason',
+    medium = 'medium',
+    seer = 'seer',
+    villager = 'villager',
+    werehamster = 'werehamster',
+    werewolf = 'werewolf'
   }
+  type RoleSetting = {
+    [key in RoleId]: number
+  }
+
   interface WaitingPlayer {
     avatarImage: string;
     isAnonymous: boolean;

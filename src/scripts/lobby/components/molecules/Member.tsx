@@ -1,14 +1,12 @@
-// @flow
-import type {Human, Robot, RoleSetting} from 'lobby'
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
-import React from 'react'
 
-type Props = {
-  +human: Human,
-  +robot: Robot,
-  +role: RoleSetting
+interface Props {
+  readonly human: lobby.Human
+  readonly robot: lobby.Robot
+  readonly role: lobby.RoleSetting
 }
 
 export default function Member(props: Props) {

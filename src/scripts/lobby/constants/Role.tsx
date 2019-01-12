@@ -1,10 +1,9 @@
-// @flow
-import {VERSION} from './Version.js'
+import {VERSION} from './Version'
 
 const BASE_URL = `https://werewolf.world/image/${VERSION}`
 
 export const VILLAGER = {
-  id: 'villager',
+  id: lobby.RoleId.villager,
   image: `${BASE_URL}/villager.jpg`,
   name: {
     en: 'Villager',
@@ -12,7 +11,7 @@ export const VILLAGER = {
   }
 }
 export const SEER = {
-  id: 'seer',
+  id: lobby.RoleId.seer,
   image: `${BASE_URL}/seer.jpg`,
   name: {
     en: 'Seer',
@@ -20,7 +19,7 @@ export const SEER = {
   }
 }
 export const MEDIUM = {
-  id: 'medium',
+  id: lobby.RoleId.medium,
   image: `${BASE_URL}/medium.jpg`,
   name: {
     en: 'Medium',
@@ -28,7 +27,7 @@ export const MEDIUM = {
   }
 }
 export const HUNTER = {
-  id: 'hunter',
+  id: lobby.RoleId.hunter,
   image: `${BASE_URL}/hunter.jpg`,
   name: {
     en: 'Hunter',
@@ -36,7 +35,7 @@ export const HUNTER = {
   }
 }
 export const MASON = {
-  id: 'mason',
+  id: lobby.RoleId.mason,
   image: `${BASE_URL}/mason.jpg`,
   name: {
     en: 'Mason',
@@ -44,7 +43,7 @@ export const MASON = {
   }
 }
 export const MADMAN = {
-  id: 'madman',
+  id: lobby.RoleId.madman,
   image: `${BASE_URL}/madman.jpg`,
   name: {
     en: 'Madman',
@@ -52,7 +51,7 @@ export const MADMAN = {
   }
 }
 export const WEREWOLF = {
-  id: 'werewolf',
+  id: lobby.RoleId.werewolf,
   image: `${BASE_URL}/werewolf.jpg`,
   name: {
     en: 'Werewolf',
@@ -60,7 +59,7 @@ export const WEREWOLF = {
   }
 }
 export const WEREHAMSTER = {
-  id: 'werehamster',
+  id: lobby.RoleId.werehamster,
   image: `${BASE_URL}/werehamster.jpg`,
   name: {
     en: 'Werehamster',

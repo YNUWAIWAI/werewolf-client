@@ -1,10 +1,9 @@
-// @flow
+import * as React from 'react'
 import Member from './Member'
-import React from 'react'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 test('<Member />', () => {
   const human = {
