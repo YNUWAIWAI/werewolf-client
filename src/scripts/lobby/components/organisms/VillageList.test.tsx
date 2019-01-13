@@ -1,11 +1,9 @@
-// @flow
-import React from 'react'
-import type {Village} from 'lobby'
+import * as React from 'react'
 import VillageList from './VillageList'
 import {shallow} from 'enzyme'
 
 test('<VillageList isPlayer /> 0 item', () => {
-  const items: Village[] = []
+  const items: lobby.Village[] = []
   const selectVillageEventHandler = jest.fn()
   const selectVillage = jest.fn().mockReturnValue(selectVillageEventHandler)
   const wrapper = shallow(<VillageList isPlayer items={items} selectVillage={selectVillage} />)
@@ -15,9 +13,9 @@ test('<VillageList isPlayer /> 0 item', () => {
   expect(selectVillage).toHaveBeenCalledTimes(0)
 })
 test('<VillageList isPlayer /> 1 item', () => {
-  const items: Village[] = [
+  const items: lobby.Village[] = [
     {
-      avatar: 'fixed',
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
@@ -60,9 +58,9 @@ test('<VillageList isPlayer /> 1 item', () => {
   expect(selectVillage).toHaveBeenCalledWith(1)
 })
 test('<VillageList isPlayer /> 2 item', () => {
-  const items: Village[] = [
+  const items: lobby.Village[] = [
     {
-      avatar: 'fixed',
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
@@ -95,7 +93,7 @@ test('<VillageList isPlayer /> 2 item', () => {
       }
     },
     {
-      avatar: 'fixed',
+      avatar: lobby.Avatar.fixed,
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,

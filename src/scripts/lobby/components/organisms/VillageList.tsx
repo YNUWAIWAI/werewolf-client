@@ -1,12 +1,10 @@
-// @flow
-import React from 'react'
-import type {Village} from 'lobby'
+import * as React from 'react'
 import VillageItem from '../molecules/VillageItem'
 
-type Props = {
-  +isPlayer: boolean,
-  +items: Village[],
-  +selectVillage: number => void => void
+interface Props {
+  readonly isPlayer: boolean
+  readonly items: lobby.Village[]
+  readonly selectVillage: (id: number) => () => void
 }
 
 export default function VillageList(props: Props) {
