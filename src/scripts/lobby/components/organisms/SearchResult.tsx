@@ -1,20 +1,18 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
-import type {Village} from 'lobby'
-import VillageList from '../organisms/VillageList'
+import VillageList from './VillageList'
 
-type Props = {
-  +className: string,
-  +isPlayer: boolean,
-  +searched: boolean,
-  +selectVillage: number => void => void,
-  +villageItems: Village[]
+interface Props {
+  readonly className: string
+  readonly isPlayer: boolean
+  readonly searched: boolean
+  readonly selectVillage: (id: number) => () => void
+  readonly villageItems: lobby.Village[]
 }
 
 export default function SearchResult(props: Props) {
   if (!props.searched) {
-    return ''
+    return null
   }
   if (props.villageItems.length === 0) { // && props.searched
     return (

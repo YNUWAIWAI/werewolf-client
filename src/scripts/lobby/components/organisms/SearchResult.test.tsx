@@ -1,11 +1,10 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 import SearchResult from './SearchResult'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 import {shallow} from 'enzyme'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 describe('<SearchResult />', () => {
   test('0 items (searched: false)', () => {
@@ -20,17 +19,18 @@ describe('<SearchResult />', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('')
+    expect(wrapper.html()).toBe(null)
   })
   test('0 items (searched: true)', () => {
     const selectVillage = jest.fn()
+    const villageItems: lobby.Village[] = []
     const wrapper = mountWithIntl(
       <SearchResult
         className="className"
         isPlayer
         searched
         selectVillage={selectVillage}
-        villageItems={[]}
+        villageItems={villageItems}
       />
     )
 
@@ -38,9 +38,9 @@ describe('<SearchResult />', () => {
   })
   test('1 item', () => {
     const selectVillage = jest.fn()
-    const villageItems = [
+    const villageItems: lobby.Village[] = [
       {
-        avatar: 'fixed',
+        avatar: lobby.Avatar.fixed,
         comment: 'comment',
         hostPlayer: {
           isAnonymous: false,
