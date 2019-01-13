@@ -1,38 +1,46 @@
-// @flow
+import * as React from 'react'
 import EmailInput from '../atoms/EmailInput'
 import {FormattedMessage} from 'react-intl'
-import type {Language} from 'lobby'
 import LanguageSelect from '../atoms/LanguageSelect'
 import PasswordInput from '../atoms/PasswordInput'
-import React from 'react'
 import TextInput from '../atoms/TextInput'
 
-type Props = {
-  +handleChangeLanguage: Language => void,
-  +handleChangeUserEmail: string => void,
-  +handleChangeUserName: string => void,
-  +handleChangeUserPassword: string => void,
-  +initialValue: {
-    +language: Language,
-    +userEmail: string,
-    +userName: string
+export enum PropName {
+  deactivate = 'deactivate',
+  language = 'language',
+  logout = 'logout',
+  userEmail = 'userEmail',
+  userName = 'userName',
+  userPassword = 'userPassword'
+}
+
+export interface Props {
+  readonly handleChangeLanguage: (language: lobby.Language) => void
+  readonly handleChangeUserEmail: (value: string) => void
+  readonly handleChangeUserName: (value: string) => void
+  readonly handleChangeUserPassword: (value: string) => void
+  readonly initialValue: {
+    readonly [PropName.language]: lobby.Language
+    readonly [PropName.userEmail]: string
+    readonly [PropName.userName]: string
   }
 }
-type State = {
-  language: {
-    validity: boolean,
-    value: Language
+
+interface State {
+  [PropName.language]: {
+    valid: boolean
+    value: lobby.Language
   },
-  userEmail: {
-    validity: boolean,
+  [PropName.userEmail]: {
+    valid: boolean
     value: string
   },
-  userName: {
-    validity: boolean,
+  [PropName.userName]: {
+    valid: boolean
     value: string
   },
-  userPassword: {
-    validity: boolean,
+  [PropName.userPassword]: {
+    valid: boolean
     value: string
   }
 }
@@ -42,19 +50,19 @@ export default class SettingsBox extends React.Component<Props, State> {
     super(props)
     this.state = {
       language: {
-        validity: false,
+        valid: false,
         value: props.initialValue.language
       },
       userEmail: {
-        validity: false,
+        valid: false,
         value: props.initialValue.userEmail
       },
       userName: {
-        validity: false,
+        valid: false,
         value: props.initialValue.userName
       },
       userPassword: {
-        validity: false,
+        valid: false,
         value: ''
       }
     }
@@ -62,36 +70,72 @@ export default class SettingsBox extends React.Component<Props, State> {
   shouldComponentUpdate() {
     return true
   }
-  handleChange(propName: string) {
-    return (validity: boolean) => (value: string) => {
-      this.setState({
-        [propName]: {
-          validity: validity && value !== this.props.initialValue[propName],
-          value
+  handleChange(propName: PropName): (valid: boolean) => (value: lobby.Language | string) => void {
+    switch (propName) {
+      case PropName.language:
+        return (valid: boolean) => (value: lobby.Language) => {
+          this.setState({
+            [propName]: {
+              valid: valid && value !== this.props.initialValue[propName],
+              value
+            }
+          })
         }
-      })
+      case PropName.userEmail:
+        return (valid: boolean) => (value: string) => {
+          this.setState({
+            [propName]: {
+              valid: valid && value !== this.props.initialValue[propName],
+              value
+            }
+          })
+        }
+      case PropName.userName:
+        return (valid: boolean) => (value: string) => {
+          this.setState({
+            [propName]: {
+              valid: valid && value !== this.props.initialValue[propName],
+              value
+            }
+          })
+        }
+      case PropName.userPassword:
+        return (valid: boolean) => (value: string) => {
+          this.setState({
+            [propName]: {
+              valid: valid && value !== '',
+              value
+            }
+          })
+        }
+      case PropName.deactivate:
+      case PropName.logout:
+      default:
+        throw Error(`Unknown propName: ${propName}`)
     }
   }
-  handleSubmit(propName: string) {
-    return (event: SyntheticEvent<HTMLFormElement>) => {
+  handleSubmit(propName: PropName) {
+    return (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault()
       switch (propName) {
-        case 'language':
+        case PropName.language:
           this.props.handleChangeLanguage(this.state.language.value)
 
           return
-        case 'userEmail':
+        case PropName.userEmail:
           this.props.handleChangeUserEmail(this.state.userEmail.value)
 
           return
-        case 'userName':
+        case PropName.userName:
           this.props.handleChangeUserName(this.state.userName.value)
 
           return
-        case 'userPassword':
+        case PropName.userPassword:
           this.props.handleChangeUserPassword(this.state.userPassword.value)
 
           return
+        case PropName.deactivate:
+        case PropName.logout:
         default:
           return
       }
@@ -113,12 +157,12 @@ export default class SettingsBox extends React.Component<Props, State> {
           </FormattedMessage>
           <form
             className="settings--bucket--form"
-            onSubmit={event => this.handleSubmit('language')(event)}
+            onSubmit={event => this.handleSubmit(PropName.language)(event)}
           >
             <LanguageSelect
               className="settings--bucket--form--field"
               defaultValue={this.props.initialValue.language}
-              handleChange={(() => this.handleChange('language'))()}
+              handleChange={(() => this.handleChange(PropName.language))()}
             />
             <FormattedMessage
               id="Settings.button(save)"
@@ -127,7 +171,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                 (text: string) =>
                   <button
                     className="settings--bucket--form--button"
-                    disabled={!this.state.language.validity}
+                    disabled={!this.state.language.valid}
                     type="submit"
                   >
                     {text}
@@ -149,7 +193,7 @@ export default class SettingsBox extends React.Component<Props, State> {
           </FormattedMessage>
           <form
             className="settings--bucket--form"
-            onSubmit={event => this.handleSubmit('userName')(event)}
+            onSubmit={event => this.handleSubmit(PropName.userName)(event)}
           >
             <FormattedMessage
               id="Settings.label(userName)"
@@ -166,7 +210,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
             <TextInput
               className="settings--bucket--form--field"
-              handleChange={(() => this.handleChange('userName'))()}
+              handleChange={(() => this.handleChange(PropName.userName))()}
               id="userName"
               initialValue={this.props.initialValue.userName}
               max={15}
@@ -181,7 +225,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                 (text: string) =>
                   <button
                     className="settings--bucket--form--button"
-                    disabled={!this.state.userName.validity}
+                    disabled={!this.state.userName.valid}
                     type="submit"
                   >
                     {text}
@@ -191,7 +235,7 @@ export default class SettingsBox extends React.Component<Props, State> {
           </form>
           <form
             className="settings--bucket--form"
-            onSubmit={event => this.handleSubmit('userEmail')(event)}
+            onSubmit={event => this.handleSubmit(PropName.userEmail)(event)}
           >
             <FormattedMessage
               id="Settings.label(userEmail)"
@@ -208,7 +252,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
             <EmailInput
               className="settings--bucket--form--field"
-              handleChange={(() => this.handleChange('userEmail'))()}
+              handleChange={(() => this.handleChange(PropName.userEmail))()}
               id="userEmail"
               initialValue={this.props.initialValue.userEmail}
             />
@@ -219,7 +263,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                 (text: string) =>
                   <button
                     className="settings--bucket--form--button"
-                    disabled={!this.state.userEmail.validity}
+                    disabled={!this.state.userEmail.valid}
                     type="submit"
                   >
                     {text}
@@ -229,7 +273,7 @@ export default class SettingsBox extends React.Component<Props, State> {
           </form>
           <form
             className="settings--bucket--form"
-            onSubmit={event => this.handleSubmit('userPassword')(event)}
+            onSubmit={event => this.handleSubmit(PropName.userPassword)(event)}
           >
             <FormattedMessage
               id="Settings.label(userPassword)"
@@ -246,7 +290,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
             <PasswordInput
               className="settings--bucket--form--field"
-              handleChange={(() => this.handleChange('userPassword'))()}
+              handleChange={(() => this.handleChange(PropName.userPassword))()}
               id="userPassword"
             />
             <FormattedMessage
@@ -256,7 +300,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                 (text: string) =>
                   <button
                     className="settings--bucket--form--button"
-                    disabled={!this.state.userPassword.validity}
+                    disabled={!this.state.userPassword.valid}
                     type="submit"
                   >
                     {text}
@@ -278,7 +322,7 @@ export default class SettingsBox extends React.Component<Props, State> {
           </FormattedMessage>
           <form
             className="settings--bucket--form danger"
-            onSubmit={event => this.handleSubmit('logout')(event)}
+            onSubmit={event => this.handleSubmit(PropName.logout)(event)}
           >
             <FormattedMessage
               id="Settings.button(logout)"
@@ -286,7 +330,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 (text: string) =>
                   <button
-                    className={`settings--bucket--form--button ${this.state.language.validity ? '' : 'invalid'}`}
+                    className={`settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     type="submit"
                   >
                     {text}
@@ -296,7 +340,7 @@ export default class SettingsBox extends React.Component<Props, State> {
           </form>
           <form
             className="settings--bucket--form danger"
-            onSubmit={event => this.handleSubmit('deactivate')(event)}
+            onSubmit={event => this.handleSubmit(PropName.deactivate)(event)}
           >
             <FormattedMessage
               id="Settings.button(deactivate)"
@@ -304,7 +348,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 (text: string) =>
                   <button
-                    className={`settings--bucket--form--button ${this.state.language.validity ? '' : 'invalid'}`}
+                    className={`settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     type="submit"
                   >
                     {text}
