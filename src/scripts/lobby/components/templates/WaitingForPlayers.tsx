@@ -4,6 +4,7 @@ import AvatarList from '../organisms/AvatarList'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
+import {Target} from '../../constants/ActionTypes'
 import VillageItem from '../molecules/VillageItem'
 
 export interface StateProps {
@@ -26,7 +27,7 @@ export interface DispatchProps {
   readonly kickOut: (token: lobby.Token) => () => void
 }
 export interface OwnProps {
-  readonly transition: (target: lobby.Target) => void
+  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 

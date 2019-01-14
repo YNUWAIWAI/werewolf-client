@@ -1,11 +1,12 @@
 import * as React from 'react'
 import Menu from '../organisms/Menu'
+import {Target} from '../../constants/ActionTypes'
 
 export interface StateProps {
   readonly menuItems: lobby.MenuItem[]
 }
 export interface OwnProps {
-  readonly transition: (target: lobby.Target) => void
+  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, OwnProps {}
 

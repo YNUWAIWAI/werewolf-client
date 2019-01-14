@@ -6,6 +6,7 @@ import IdSearchBox from '../organisms/IdSearchBox'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
 import SearchResult from '../organisms/SearchResult'
+import {Target} from '../../constants/ActionTypes'
 
 export interface StateProps {
   readonly header: string
@@ -22,7 +23,7 @@ export interface DispatchProps {
   readonly selectVillage: (id: number) => () => void
 }
 export interface OwnProps {
-  readonly transition: (target: lobby.Target) => void
+  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 

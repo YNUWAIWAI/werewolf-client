@@ -4,6 +4,7 @@ import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
 import SettingsBox from '../organisms/SettingsBox'
+import {Target} from '../../constants/ActionTypes'
 
 export interface StateProps {
   readonly initialValue: {
@@ -20,7 +21,7 @@ export interface DispatchProps {
   readonly handleChangeUserPassword: (value: string) => void
 }
 export interface OwnProps {
-  readonly transition: (target: lobby.Target) => void
+  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
