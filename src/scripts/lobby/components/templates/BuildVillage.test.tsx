@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import BuildVillage from './BuildVillage'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<BuildVillage />', () => {
@@ -19,7 +18,7 @@ test('<BuildVillage />', () => {
     villageName: true
   }
   const value = {
-    avatar: 'random',
+    avatar: lobby.Avatar.random,
     comment: 'comment',
     hostName: 'hostName',
     numberOfHumans: 8,
