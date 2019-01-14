@@ -11,9 +11,9 @@ export interface Props {
     readonly name: string
     readonly ping: string
     readonly pingStatus: lobby.PingStatus
-    readonly token: string
+    readonly token: lobby.Token
   }[]
-  readonly kickOut: (token: string) => () => void
+  readonly kickOut: (token: lobby.Token) => () => void
 }
 
 export default function AvatarList(props: Props) {

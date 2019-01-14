@@ -18,12 +18,12 @@ export interface StateProps {
     readonly name: string
     readonly ping: string
     readonly pingStatus: lobby.PingStatus
-    readonly token: string
+    readonly token: lobby.Token
   }[],
   readonly village?: lobby.Village
 }
 export interface DispatchProps {
-  readonly kickOut: (token: string) => () => void
+  readonly kickOut: (token: lobby.Token) => () => void
 }
 export interface OwnProps {
   readonly transition: (target: lobby.Target) => void
