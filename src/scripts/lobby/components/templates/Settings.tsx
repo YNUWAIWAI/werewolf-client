@@ -1,33 +1,28 @@
-// @flow
-import type {Language, MenuItem, Target} from 'lobby'
+import * as React from 'react'
 import AsideContent from '../atoms/AsideContent'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
-import React from 'react'
 import SettingsBox from '../organisms/SettingsBox'
 
-export type StateProps = {
-  +initialValue: {
-    +language: Language,
-    +userEmail: string,
-    +userName: string
+export interface StateProps {
+  readonly initialValue: {
+    readonly language: lobby.Language
+    readonly userEmail: string
+    readonly userName: string
   },
-  +menuItems: MenuItem[]
+  readonly menuItems: lobby.MenuItem[]
 }
-export type DispatchProps = {
-  +handleChangeLanguage: Language => void,
-  +handleChangeUserEmail: string => void,
-  +handleChangeUserName: string => void,
-  +handleChangeUserPassword: string => void
+export interface DispatchProps {
+  readonly handleChangeLanguage: (value: lobby.Language) => void
+  readonly handleChangeUserEmail: (value: string) => void
+  readonly handleChangeUserName: (value: string) => void
+  readonly handleChangeUserPassword: (value: string) => void
 }
-export type OwnProps = {
-  +transition: Target => void
+export interface OwnProps {
+  readonly transition: (target: lobby.Target) => void
 }
-export type Props =
-  & StateProps
-  & DispatchProps
-  & OwnProps
+export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function Setting(props: Props) {
   return (

@@ -1,15 +1,14 @@
-// @flow
-import React from 'react'
-import Settings from './Settings'
+import * as React from 'react'
+import Settings, {Props} from './Settings'
 import {shallow} from 'enzyme'
 
 test('<Settings />', () => {
-  const initialValue = {
-    language: 'ja',
+  const initialValue: Props['initialValue'] = {
+    language: lobby.Language.ja,
     userEmail: 'example@example.com',
     userName: 'userName'
   }
-  const menuItems = []
+  const menuItems: Props['menuItems'] = []
   const handleChangeLanguage = jest.fn()
   const handleChangeUserEmail = jest.fn()
   const handleChangeUserName = jest.fn()
