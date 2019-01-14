@@ -1,11 +1,18 @@
 import * as React from 'react'
-import MenuItem from '../molecules/MenuItem'
+import MenuItem, {Props as MenuItemProps_} from '../molecules/MenuItem'
+import {Target} from '../../constants/ActionTypes'
 
+export interface MenuItemProps {
+  readonly disabled?: MenuItemProps_['disabled']
+  readonly id: MenuItemProps_['id']
+  readonly isLoading?: MenuItemProps_['isLoading']
+  readonly types: MenuItemProps_['types']
+}
 export interface Props {
   readonly class: string
   readonly itemClass: string
-  readonly items: lobby.MenuItem[]
-  readonly transition: (target:lobby.Target) => void
+  readonly items: MenuItemProps[]
+  readonly transition: (target: Target) => void
 }
 
 export default function Menu(props: Props) {

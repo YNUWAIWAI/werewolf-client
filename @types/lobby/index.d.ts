@@ -84,12 +84,6 @@ declare namespace lobby {
     name: string;
     token: string;
   }
-  interface MenuItem {
-    disabled?: boolean;
-    id: string;
-    isLoading?: boolean;
-    types: Target[];
-  }
   interface PingResult {
     ping: string;
     status: PingStatus;

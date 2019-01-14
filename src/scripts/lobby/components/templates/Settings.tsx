@@ -1,8 +1,8 @@
 import * as React from 'react'
+import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import Menu from '../organisms/Menu'
 import SettingsBox from '../organisms/SettingsBox'
 import {Target} from '../../constants/ActionTypes'
 
@@ -12,7 +12,7 @@ export interface StateProps {
     readonly userEmail: string
     readonly userName: string
   },
-  readonly menuItems: lobby.MenuItem[]
+  readonly menuItems: MenuItem[]
 }
 export interface DispatchProps {
   readonly handleChangeLanguage: (value: lobby.Language) => void

@@ -1,14 +1,14 @@
 import * as React from 'react'
+import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import Menu from '../organisms/Menu'
 import {Target} from '../../constants/ActionTypes'
 import VillageList from '../organisms/VillageList'
 
 export interface StateProps {
   readonly isPlayer: boolean
-  readonly menuItems: lobby.MenuItem[]
+  readonly menuItems: MenuItem[]
   readonly villageItems: lobby.Village[]
 }
 export interface DispatchProps {

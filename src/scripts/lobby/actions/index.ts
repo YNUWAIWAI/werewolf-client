@@ -22,23 +22,55 @@ export const socket = {
     type: ActionTypes.socket.SEND
   })
 }
-export const changeAvatar = (scope: 'advancedSearch' | 'buildVillage') => (avatar: lobby.Avatar): {avatar: lobby.Avatar, type: ActionTypes.advancedSearch.CHANGE_AVATAR | ActionTypes.buildVillage.CHANGE_AVATAR} => ({
-  avatar,
-  type: ActionTypes[scope].CHANGE_AVATAR
-})
-export const changeCheckbox = (scope: 'advancedSearch') => (propName: string) => (checked: boolean): {propName: string, checked: boolean, type: ActionTypes.advancedSearch.CHANGE_CHECKBOX} => ({
+
+export const changeAvatar = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (avatar: lobby.Avatar)
+  : {avatar: lobby.Avatar, type: ActionTypes.advancedSearch.CHANGE_AVATAR} | {avatar: lobby.Avatar, type: ActionTypes.buildVillage.CHANGE_AVATAR} => {
+  if (scope === ActionTypes.Scope.advancedSearch) {
+    return {
+      avatar,
+      type: ActionTypes[scope].CHANGE_AVATAR
+    }
+  }
+
+  return {
+    avatar,
+    type: ActionTypes[scope].CHANGE_AVATAR
+  }
+}
+export const changeCheckbox = (scope: ActionTypes.Scope.advancedSearch) => (propName: string) => (checked: boolean)
+  : {propName: string, checked: boolean, type: ActionTypes.advancedSearch.CHANGE_CHECKBOX} => ({
   checked,
   propName,
   type: ActionTypes[scope].CHANGE_CHECKBOX
 })
-export const changeComment = (scope: 'advancedSearch' | 'buildVillage') => (comment: string): {comment: string, type: ActionTypes.advancedSearch.CHANGE_COMMENT | ActionTypes.buildVillage.CHANGE_COMMENT} => ({
-  comment,
-  type: ActionTypes[scope].CHANGE_COMMENT
-})
-export const changeHostName = (scope: 'advancedSearch' | 'buildVillage') => (hostName: string): {hostName: string, type: ActionTypes.advancedSearch.CHANGE_HOST_NAME | ActionTypes.buildVillage.CHANGE_HOST_NAME} => ({
-  hostName,
-  type: ActionTypes[scope].CHANGE_HOST_NAME
-})
+export const changeComment = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (comment: string)
+  : {comment: string, type: ActionTypes.advancedSearch.CHANGE_COMMENT} | {comment: string, type: ActionTypes.buildVillage.CHANGE_COMMENT} => {
+  if (scope === ActionTypes.Scope.advancedSearch) {
+    return {
+      comment,
+      type: ActionTypes[scope].CHANGE_COMMENT
+    }
+  }
+
+  return {
+    comment,
+    type: ActionTypes[scope].CHANGE_COMMENT
+  }
+}
+export const changeHostName = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (hostName: string)
+  : {hostName: string, type: ActionTypes.advancedSearch.CHANGE_HOST_NAME} | {hostName: string, type: ActionTypes.buildVillage.CHANGE_HOST_NAME} => {
+  if (scope === ActionTypes.Scope.advancedSearch) {
+    return {
+      hostName,
+      type: ActionTypes[scope].CHANGE_HOST_NAME
+    }
+  }
+
+  return {
+    hostName,
+    type: ActionTypes[scope].CHANGE_HOST_NAME
+  }
+}
 export const changeLanguage = (language: lobby.Language): {language: lobby.Language, type: ActionTypes.global.CHANGE_LANGUAGE} => ({
   language,
   type: ActionTypes.global.CHANGE_LANGUAGE
@@ -47,15 +79,18 @@ export const changeLobby = (lobby: lobby.Lobby): {lobby: lobby.Lobby, type: Acti
   lobby,
   type: ActionTypes.global.CHANGE_LOBBY
 })
-export const changeMaximum = (scope: 'advancedSearch') => (maximum: number): {maximum: number, type: ActionTypes.advancedSearch.CHANGE_MAXIMUM} => ({
+export const changeMaximum = (scope: ActionTypes.Scope.advancedSearch) => (maximum: number)
+  : {maximum: number, type: ActionTypes.advancedSearch.CHANGE_MAXIMUM} => ({
   maximum: Number(maximum),
   type: ActionTypes[scope].CHANGE_MAXIMUM
 })
-export const changeMember = (scope: 'buildVillage') => (member: lobby.Member): {member: lobby.Member, type: ActionTypes.buildVillage.CHANGE_MEMBER} => ({
+export const changeMember = (scope: ActionTypes.Scope.buildVillage) => (member: lobby.Member)
+  : {member: lobby.Member, type: ActionTypes.buildVillage.CHANGE_MEMBER} => ({
   member,
   type: ActionTypes[scope].CHANGE_MEMBER
 })
-export const changeMinimum = (scope: 'advancedSearch') => (minimum: number): {minimum: number, type: ActionTypes.advancedSearch.CHANGE_MINIMUM} => ({
+export const changeMinimum = (scope: ActionTypes.Scope.advancedSearch) => (minimum: number)
+  : {minimum: number, type: ActionTypes.advancedSearch.CHANGE_MINIMUM} => ({
   minimum: Number(minimum),
   type: ActionTypes[scope].CHANGE_MINIMUM
 })
@@ -88,15 +123,42 @@ export const changeUserPassword = (userPassword: string): {userPassword: string,
   type: ActionTypes.global.CHANGE_USER_PASSWORD,
   userPassword
 })
-export const changeValidity = (scope: 'advancedSearch' | 'buildVillage' | 'idSearch') => (propName: string) => (validity: boolean): {propName: string, type: ActionTypes.advancedSearch.CHANGE_VALIDITY | ActionTypes.buildVillage.CHANGE_VALIDITY | ActionTypes.idSearch.CHANGE_VALIDITY, validity: boolean} => ({
-  propName,
-  type: ActionTypes[scope].CHANGE_VALIDITY,
-  validity
-})
-export const changeVillageName = (scope: 'advancedSearch' | 'buildVillage') => (villageName: string): {type: ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME | ActionTypes.buildVillage.CHANGE_VILLAGE_NAME, villageName: string} => ({
-  type: ActionTypes[scope].CHANGE_VILLAGE_NAME,
-  villageName
-})
+export const changeValidity = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage | ActionTypes.Scope.idSearch) => (propName: string) => (validity: boolean)
+  : {propName: string, type: ActionTypes.advancedSearch.CHANGE_VALIDITY, validity: boolean} | {propName: string, type: ActionTypes.buildVillage.CHANGE_VALIDITY, validity: boolean} | {propName: string, type: ActionTypes.idSearch.CHANGE_VALIDITY, validity: boolean} => {
+  if (scope === ActionTypes.Scope.advancedSearch) {
+    return {
+      propName,
+      type: ActionTypes[scope].CHANGE_VALIDITY,
+      validity
+    }
+  } else if (scope === ActionTypes.Scope.buildVillage) {
+    return {
+      propName,
+      type: ActionTypes[scope].CHANGE_VALIDITY,
+      validity
+    }
+  }
+
+  return {
+    propName,
+    type: ActionTypes[scope].CHANGE_VALIDITY,
+    validity
+  }
+}
+export const changeVillageName = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (villageName: string)
+  : {type: ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME, villageName: string} | {type: ActionTypes.buildVillage.CHANGE_VILLAGE_NAME, villageName: string} => {
+  if (scope === ActionTypes.Scope.advancedSearch) {
+    return {
+      type: ActionTypes[scope].CHANGE_VILLAGE_NAME,
+      villageName
+    }
+  }
+
+  return {
+    type: ActionTypes[scope].CHANGE_VILLAGE_NAME,
+    villageName
+  }
+}
 export const kickOutPlayer = (token: lobby.Token): {token: lobby.Token, type: ActionTypes.global.KICK_OUT_PLAYER} => ({
   token,
   type: ActionTypes.global.KICK_OUT_PLAYER
@@ -105,7 +167,7 @@ export const selectVillage = (id: number): {id: number, type: ActionTypes.global
   id,
   type: ActionTypes.global.SELECT_VILLAGE
 })
-export const transition = (target: lobby.Target): {type: lobby.Target} => ({
+export const transition = (target: ActionTypes.Target): {type: ActionTypes.Target} => ({
   type: target
 })
 

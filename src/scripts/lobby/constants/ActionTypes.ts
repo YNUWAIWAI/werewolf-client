@@ -90,4 +90,11 @@ export const enum Target {
   SHOW_MAIN = global.SHOW_MAIN,
   SHOW_SETTINGS = global.SHOW_SETTINGS
 }
+export const enum Scope {
+  advancedSearch = 'advancedSearch',
+  buildVillage = 'buildVillage',
+  idSearch = 'idSearch',
+  indexeddb = 'indexeddb',
+  socket = 'socket'
+}
 

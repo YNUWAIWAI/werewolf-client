@@ -1,15 +1,15 @@
 import * as React from 'react'
+import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import AvatarList from '../organisms/AvatarList'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import Menu from '../organisms/Menu'
 import {Target} from '../../constants/ActionTypes'
 import VillageItem from '../molecules/VillageItem'
 
 export interface StateProps {
   readonly isPlayer: boolean
-  readonly menuItems: lobby.MenuItem[]
+  readonly menuItems: MenuItem[]
   readonly players: {
     readonly avatarImage: string
     readonly canKickOut: boolean

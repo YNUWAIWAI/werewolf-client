@@ -1,11 +1,12 @@
 import * as React from 'react'
+import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AdvancedSearchBox from '../organisms/AdvancedSearchBox'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import Menu from '../organisms/Menu'
 import SearchResult from '../organisms/SearchResult'
+import {Target} from '../../constants/ActionTypes'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
 
@@ -25,7 +26,7 @@ export interface StateProps {
   readonly header: string
   readonly image: string
   readonly isPlayer: boolean
-  readonly menuItems: lobby.MenuItem[]
+  readonly menuItems: MenuItem[]
   readonly name: string
   readonly searched: boolean
   readonly validity: {
@@ -47,7 +48,7 @@ export interface DispatchProps {
   readonly selectVillage: (id: number) => () => void
 }
 export interface OwnProps {
-  readonly transition: (target: lobby.Target) => void
+  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 

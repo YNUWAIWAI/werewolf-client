@@ -1,5 +1,6 @@
 import * as React from 'react'
 import MenuItem from './MenuItem'
+import {Target} from '../../constants/ActionTypes'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
@@ -13,7 +14,7 @@ describe('<MenuItem />', () => {
         className="className"
         id="Menu.returnToMainPage"
         transition={transition}
-        types={[lobby.Target.SHOW_MAIN]}
+        types={[Target.SHOW_MAIN]}
       />
     )
 
@@ -29,7 +30,7 @@ describe('<MenuItem />', () => {
         disabled
         id="Menu.returnToMainPage"
         transition={transition}
-        types={[lobby.Target.SHOW_MAIN]}
+        types={[Target.SHOW_MAIN]}
       />
     )
 
@@ -45,7 +46,7 @@ describe('<MenuItem />', () => {
         id="Menu.returnToMainPage"
         isLoading
         transition={transition}
-        types={[lobby.Target.SHOW_MAIN]}
+        types={[Target.SHOW_MAIN]}
       />
     )
 
@@ -60,7 +61,7 @@ describe('<MenuItem />', () => {
         className="className"
         id="Menu.returnToMainPage"
         transition={transition}
-        types={[lobby.Target.SHOW_MAIN]}
+        types={[Target.SHOW_MAIN]}
       />
     )
 
@@ -76,7 +77,7 @@ describe('<MenuItem />', () => {
         disabled
         id="Menu.returnToMainPage"
         transition={transition}
-        types={[lobby.Target.SHOW_MAIN]}
+        types={[Target.SHOW_MAIN]}
       />
     )
 

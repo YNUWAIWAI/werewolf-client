@@ -1,10 +1,11 @@
 import * as React from 'react'
+import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
 import BuildVillageBox from '../organisms/BuildVillageBox'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import Menu from '../organisms/Menu'
+import {Target} from '../../constants/ActionTypes'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'member' | 'numberOfPlayers' | 'numberOfRobots' | 'villageName'
 
@@ -15,7 +16,7 @@ type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
 export interface StateProps {
   readonly image: string
   readonly name: string
-  readonly menuItems: lobby.MenuItem[]
+  readonly menuItems: MenuItem[]
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
@@ -42,7 +43,7 @@ export interface DispatchProps {
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
 }
 export interface OwnProps {
-  readonly transition: (target: lobby.Target) => void
+  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 

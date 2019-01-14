@@ -1,15 +1,16 @@
 import * as React from 'react'
+import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import Menu from '../organisms/Menu'
+import {Target} from '../../constants/ActionTypes'
 
 export interface StateProps {
-  readonly menuItems: lobby.MenuItem[]
+  readonly menuItems: MenuItem[]
 }
 export interface DispatchProps {}
 export interface OwnProps {
-  readonly transition: (target: lobby.Target) => void
+  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
