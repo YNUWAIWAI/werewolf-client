@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import History from './History'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<History />', () => {
