@@ -1,6 +1,5 @@
-// @flow
-import IdSearch from './IdSearch'
-import React from 'react'
+import * as React from 'react'
+import IdSearch, {Props} from './IdSearch'
 import {shallow} from 'enzyme'
 
 describe('<IdSearch />', () => {
@@ -40,9 +39,9 @@ describe('<IdSearch />', () => {
     const handleValidityChange = jest.fn()
     const selectVillage = jest.fn()
     const transition = jest.fn()
-    const villageItems = [
+    const villageItems: Props['villageItems'] = [
       {
-        avatar: 'fixed',
+        avatar: lobby.Avatar.fixed,
         comment: 'comment',
         hostPlayer: {
           isAnonymous: false,
