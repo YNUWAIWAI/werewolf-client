@@ -1,12 +1,11 @@
-// @flow
-import React from 'react'
-import WaitingForPlayers from './WaitingForPlayers'
+import * as React from 'react'
+import WaitingForPlayers, {Props} from './WaitingForPlayers'
 import {shallow} from 'enzyme'
 
 test('<WaitingForPlayers isPlayer village />', () => {
   const transition = jest.fn()
-  const village = {
-    avatar: 'fixed',
+  const village: Props['village'] = {
+    avatar: lobby.Avatar.fixed,
     comment: 'comment',
     hostPlayer: {
       isAnonymous: false,

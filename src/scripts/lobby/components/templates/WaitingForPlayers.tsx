@@ -1,39 +1,34 @@
-// @flow
-import type {MenuItem, PingStatus, Target, Village} from 'lobby'
+import * as React from 'react'
 import AsideContent from '../atoms/AsideContent'
 import AvatarList from '../organisms/AvatarList'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
-import React from 'react'
 import VillageItem from '../molecules/VillageItem'
 
-export type StateProps = {
-  +isPlayer: boolean,
-  +menuItems: MenuItem[],
-  +players: {
-    +avatarImage: string,
-    +canKickOut: boolean,
-    +isAnonymous: boolean,
-    +isHost: boolean,
-    +isMe: boolean,
-    +name: string,
-    +ping: string,
-    +pingStatus: PingStatus,
-    +token: string
+export interface StateProps {
+  readonly isPlayer: boolean
+  readonly menuItems: lobby.MenuItem[]
+  readonly players: {
+    readonly avatarImage: string
+    readonly canKickOut: boolean
+    readonly isAnonymous: boolean
+    readonly isHost: boolean
+    readonly isMe: boolean
+    readonly name: string
+    readonly ping: string
+    readonly pingStatus: lobby.PingStatus
+    readonly token: string
   }[],
-  +village?: Village
+  readonly village?: lobby.Village
 }
-export type DispatchProps = {
-  +kickOut: string => void => void
+export interface DispatchProps {
+  readonly kickOut: (token: string) => () => void
 }
-export type OwnProps = {
-  +transition: Target => void,
+export interface OwnProps {
+  readonly transition: (target: lobby.Target) => void
 }
-export type Props =
-  & StateProps
-  & DispatchProps
-  & OwnProps
+export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function WaitingForPlayers(props: Props) {
   const [head, ... tail] = props.menuItems
