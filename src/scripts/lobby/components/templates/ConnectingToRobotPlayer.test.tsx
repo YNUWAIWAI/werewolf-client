@@ -1,10 +1,9 @@
-// @flow
-import ConnectingToRobotPlayer from './ConnectingToRobotPlayer'
-import React from 'react'
+import * as React from 'react'
+import ConnectingToRobotPlayer, {Props} from './ConnectingToRobotPlayer'
 import {shallow} from 'enzyme'
 
 test('<ConnectingToRobotPlayer />', () => {
-  const items = []
+  const items: Props['menuItems'] = []
   const transition = jest.fn()
   const wrapper = shallow(<ConnectingToRobotPlayer menuItems={items} transition={transition} />)
 

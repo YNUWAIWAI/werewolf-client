@@ -1,22 +1,17 @@
-// @flow
-import type {MenuItem, Target} from 'lobby'
+import * as React from 'react'
 import AsideContent from '../atoms/AsideContent'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../organisms/Menu'
-import React from 'react'
 
-export type StateProps = {
-  +menuItems: MenuItem[]
+export interface StateProps {
+  readonly menuItems: lobby.MenuItem[]
 }
-export type DispatchProps = {}
-export type OwnProps = {
-  +transition: Target => void
+export interface DispatchProps {}
+export interface OwnProps {
+  readonly transition: (target: lobby.Target) => void
 }
-export type Props =
-  & StateProps
-  & DispatchProps
-  & OwnProps
+export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function ConnectingToRobotPlayer(props: Props) {
   return (
