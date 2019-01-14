@@ -89,35 +89,49 @@ declare namespace lobby {
     status: PingStatus;
     token: string;
   }
-  interface Payload {
+  type Payload =
+    | Payload$Avatar
+    | Payload$Settings
+    | Payload$Lobby
+    | Payload$Ping
+    | Payload$SearchResult
+    | Payload$WatingPage
+
+  interface PayloadBase {
     type: string;
   }
-  interface Payload$Avatar extends Payload {
+  interface Payload$Avatar extends PayloadBase {
     image: string;
     lang: Language;
     name: string;
+    type: 'avatar';
   }
-  interface Payload$GetSettings extends Payload {
+  interface Payload$Settings extends PayloadBase {
     lang: Language;
+    type: 'settings';
     userEmail: string;
     userName: string;
   }
-  interface Payload$Lobby extends Payload {
+  interface Payload$Lobby extends PayloadBase {
     error: string | null;
     lobby: Lobby;
+    type: 'lobby';
     villages: Village[];
   }
-  interface Payload$Ping extends Payload {
+  interface Payload$Ping extends PayloadBase {
     id: string;
     results: PingResult[];
+    type: 'ping';
   }
-  interface Payload$SearchResult extends Payload {
+  interface Payload$SearchResult extends PayloadBase {
     error: string | null;
+    type: 'searchResult';
     villages: Village[];
   }
-  interface Payload$WatingPage extends Payload {
+  interface Payload$WatingPage extends PayloadBase {
     error: string | null;
-    village: Village;
     players: WaitingPlayer[];
+    type: 'waitingPage';
+    village: Village;
   }
 }
