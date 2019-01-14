@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import LobbyForAudience from './LobbyForAudience'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<LobbyForAudience />', () => {
