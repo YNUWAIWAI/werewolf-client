@@ -12,7 +12,6 @@ type NumberPropName = Extract<PropName, 'numberOfPlayers' | 'numberOfRobots'>
 
 type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
 
-
 export interface StateProps {
   readonly image: string
   readonly name: string
