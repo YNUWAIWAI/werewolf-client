@@ -74,6 +74,8 @@ declare namespace lobby {
     }
   }
 
+  type Token = string
+
   interface WaitingPlayer {
     avatarImage: string;
     isAnonymous: boolean;
