@@ -9,6 +9,7 @@ test('<WaitingForPlayers isPlayer village />', () => {
     comment: 'comment',
     hostPlayer: {
       isAnonymous: false,
+      isHuman: true,
       name: 'hostPlayer name'
     },
     id: 1,
