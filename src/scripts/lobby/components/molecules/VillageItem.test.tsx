@@ -12,6 +12,7 @@ describe('<VillageItem />', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
@@ -64,6 +65,7 @@ describe('<VillageItem />', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
@@ -116,6 +118,7 @@ describe('<VillageItem />', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
@@ -155,6 +158,7 @@ describe('<VillageItem />', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
@@ -201,6 +205,7 @@ describe('<VillageItem />', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
@@ -247,6 +252,7 @@ describe('<VillageItem />', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
