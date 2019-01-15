@@ -1,7 +1,6 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import * as Ajv from 'ajv'
 import reducer, {initialState} from './idSearch'
-import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
 
@@ -10,7 +9,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_AUDIENCE
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toEqual(
@@ -23,15 +22,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.ID_SEARCH]
+          types: [ActionTypes.Target.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -45,7 +44,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toEqual(
@@ -58,15 +57,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.ID_SEARCH]
+          types: [ActionTypes.Target.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -80,7 +79,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toEqual(
@@ -93,15 +92,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.ID_SEARCH]
+          types: [ActionTypes.Target.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -141,15 +140,15 @@ test('idSearch/CHANGE_VALIDITY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.ID_SEARCH]
+            types: [ActionTypes.Target.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ]
       },
@@ -169,15 +168,15 @@ test('idSearch/CHANGE_VALIDITY', () => {
         {
           disabled: false,
           id: 'Menu.search',
-          types: [ActionTypes.ID_SEARCH]
+          types: [ActionTypes.Target.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',

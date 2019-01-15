@@ -1,17 +1,21 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {IdSearch$ChangeSearchId, IdSearch$ChangeValidity, SocketMessage, Transition} from '../actions'
-import type {MenuItem, Payload$Avatar, Payload$SearchResult, Village} from 'lobby'
+import {
+  IdSearch$ChangeSearchId,
+  IdSearch$ChangeValidity,
+  SocketMessage,
+  Transition
+} from '../actions'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 
-export type State = {
-  +header: string,
-  +id: number,
-  +image: string,
-  +isPlayer: boolean,
-  +menuItems: MenuItem[],
-  +name: string,
-  +searched: boolean,
-  +villageItems: Village[]
+export interface State {
+  readonly header: string
+  readonly id: number
+  readonly image: string
+  readonly isPlayer: boolean
+  readonly menuItems: MenuItem[]
+  readonly name: string
+  readonly searched: boolean
+  readonly villageItems: lobby.Village[]
 }
 type Action =
   | IdSearch$ChangeSearchId
@@ -19,7 +23,7 @@ type Action =
   | SocketMessage
   | Transition
 
-export const initialState = {
+export const initialState: State = {
   header: '',
   id: -1,
   image: '',
@@ -32,7 +36,7 @@ export const initialState = {
 
 const idSearch = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
         header: 'Header.idSearch(audience)',
@@ -42,21 +46,21 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.ID_SEARCH]
+            types: [ActionTypes.Target.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         searched: false,
         villageItems: []
       }
-    case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         header: 'Header.idSearch(human player)',
@@ -66,21 +70,21 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.ID_SEARCH]
+            types: [ActionTypes.Target.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         searched: false,
         villageItems: []
       }
-    case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         header: 'Header.idSearch(robot player)',
@@ -90,15 +94,15 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.ID_SEARCH]
+            types: [ActionTypes.Target.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         searched: false,
@@ -116,7 +120,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.ID_SEARCH)) {
+          if (item.types.includes(ActionTypes.Target.ID_SEARCH)) {
             return {
               ... item,
               disabled
@@ -127,11 +131,11 @@ const idSearch = (state: State = initialState, action: Action): State => {
         })
       }
     }
-    case ActionTypes.ID_SEARCH:
+    case ActionTypes.Target.ID_SEARCH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.ID_SEARCH)) {
+          if (item.types.includes(ActionTypes.Target.ID_SEARCH)) {
             return {
               ... item,
               isLoading: true
@@ -143,8 +147,8 @@ const idSearch = (state: State = initialState, action: Action): State => {
       }
     case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
-        case 'avatar': {
-          const payload: Payload$Avatar = action.payload
+        case lobby.PayloadType.avatar: {
+          const payload = action.payload
 
           return {
             ... state,
@@ -152,13 +156,13 @@ const idSearch = (state: State = initialState, action: Action): State => {
             name: payload.name
           }
         }
-        case 'searchResult': {
-          const payload: Payload$SearchResult = action.payload
+        case lobby.PayloadType.searchResult: {
+          const payload = action.payload
 
           return {
             ... state,
             menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.ID_SEARCH)) {
+              if (item.types.includes(ActionTypes.Target.ID_SEARCH)) {
                 return {
                   ... item,
                   isLoading: false
