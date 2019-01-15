@@ -1,7 +1,6 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import * as Ajv from 'ajv'
 import reducer, {initialState} from './settings'
-import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
 import {settings} from './fakeServer'
@@ -41,7 +40,7 @@ describe('scoket/MESSAGE', () => {
           menuItems: [
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.SHOW_MAIN]
+              types: [ActionTypes.Target.SHOW_MAIN]
             }
           ]
         }

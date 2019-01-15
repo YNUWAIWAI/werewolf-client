@@ -1,29 +1,28 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Language, MenuItem, Payload$GetSettings} from 'lobby'
-import type {SocketMessage} from '../actions'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
+import {SocketMessage} from '../actions'
 
-export type State = {
-  +initialValue: {
-    +language: Language,
-    +userEmail: string,
-    +userName: string
+export interface State {
+  readonly initialValue: {
+    readonly language: lobby.Language
+    readonly userEmail: string
+    readonly userName: string
   },
-  +menuItems: MenuItem[]
+  readonly menuItems: MenuItem[]
 }
 type Action =
   | SocketMessage
 
-export const initialState = {
+export const initialState: State = {
   initialValue: {
-    language: 'ja',
+    language: lobby.Language.ja,
     userEmail: 'example@example.com',
     userName: 'user name'
   },
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.SHOW_MAIN]
+      types: [ActionTypes.Target.SHOW_MAIN]
     }
   ]
 }
@@ -31,8 +30,8 @@ const settings = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE: {
       switch (action.payload.type) {
-        case 'settings': {
-          const payload: Payload$GetSettings = action.payload
+        case lobby.PayloadType.settings: {
+          const payload = action.payload
 
           return {
             ... state,
