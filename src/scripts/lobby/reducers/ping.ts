@@ -1,18 +1,16 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Payload$Ping, Payload$WatingPage, PingResult} from 'lobby'
-import type {SocketMessage, Transition} from '../actions'
+import {SocketMessage, Transition} from '../actions'
 
-export type State = {
-  +myToken: string,
-  +id: string,
-  +results: PingResult[]
+export interface State {
+  readonly myToken: string
+  readonly id: string
+  readonly results: lobby.PingResult[]
 }
 type Action =
   | SocketMessage
   | Transition
 
-export const initialState = {
+export const initialState: State = {
   id: '',
   myToken: '',
   results: []
@@ -21,8 +19,8 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
-        case 'waitingPage': {
-          const payload: Payload$WatingPage = action.payload
+        case lobby.PayloadType.waitingPage: {
+          const payload = action.payload
           const me = payload.players.find(v => v.isMe)
 
           if (me) {
@@ -34,8 +32,8 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
 
           return state
         }
-        case 'ping': {
-          const payload: Payload$Ping = action.payload
+        case lobby.PayloadType.ping: {
+          const payload = action.payload
 
           return {
             ... state,

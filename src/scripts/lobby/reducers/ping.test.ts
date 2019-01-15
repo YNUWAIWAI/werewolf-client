@@ -1,4 +1,3 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import {ping, waitingPage} from './fakeServer'
 import reducer, {initialState} from './ping'
