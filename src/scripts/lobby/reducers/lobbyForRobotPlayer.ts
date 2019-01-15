@@ -1,14 +1,16 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {MenuItem, Payload$Avatar, Payload$Lobby, Village} from 'lobby'
-import type {SocketMessage, Transition} from '../actions'
+import {
+  SocketMessage,
+  Transition
+} from '../actions'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 
-export type State = {
-  +image: string,
-  +isPlayer: boolean,
-  +menuItems: MenuItem[],
-  +name: string,
-  +villageItems: Village[]
+export interface State {
+  readonly image: string
+  readonly isPlayer: boolean
+  readonly menuItems: MenuItem[]
+  readonly name: string
+  readonly villageItems: lobby.Village[]
 }
 type Action =
   | SocketMessage
@@ -20,23 +22,23 @@ export const initialState = {
   menuItems: [
     {
       id: 'Menu.showBuildVillage',
-      types: [ActionTypes.SHOW_BUILD_VILLAGE]
+      types: [ActionTypes.Target.SHOW_BUILD_VILLAGE]
     },
     {
       id: 'Menu.showIdSearch',
-      types: [ActionTypes.SHOW_ID_SEARCH]
+      types: [ActionTypes.Target.SHOW_ID_SEARCH]
     },
     {
       id: 'Menu.showAdvancedSearch',
-      types: [ActionTypes.SHOW_ADVANCED_SEARCH]
+      types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
     },
     {
       id: 'Menu.refresh',
-      types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+      types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
     },
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.SHOW_MAIN]
+      types: [ActionTypes.Target.SHOW_MAIN]
     }
   ],
   name: '',
@@ -45,11 +47,11 @@ export const initialState = {
 
 const lobbyForRobotPlayer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.REFRESH:
+    case ActionTypes.Target.REFRESH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.REFRESH) && item.types.includes(ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER)) {
+          if (item.types.includes(ActionTypes.Target.REFRESH) && item.types.includes(ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER)) {
             return {
               ... item,
               isLoading: true
@@ -61,8 +63,8 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
       }
     case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
-        case 'avatar': {
-          const payload: Payload$Avatar = action.payload
+        case lobby.PayloadType.avatar: {
+          const payload = action.payload
 
           return {
             ... state,
@@ -70,14 +72,14 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
             name: payload.name
           }
         }
-        case 'lobby': {
-          const payload: Payload$Lobby = action.payload
+        case lobby.PayloadType.lobby: {
+          const payload = action.payload
 
           if (payload.lobby === 'robot player') {
             return {
               ... state,
               menuItems: state.menuItems.map(item => {
-                if (item.types.includes(ActionTypes.REFRESH) && item.types.includes(ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER)) {
+                if (item.types.includes(ActionTypes.Target.REFRESH) && item.types.includes(ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER)) {
                   return {
                     ... item,
                     isLoading: false
