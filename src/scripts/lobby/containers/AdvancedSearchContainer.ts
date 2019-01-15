@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import AdvancedSearch, {DispatchProps, PropName, StateProps} from '../components/templates/AdvancedSearch'
+import AdvancedSearch, {DispatchProps, StateProps} from '../components/templates/AdvancedSearch'
 import {
   AdvancedSearch$ChangeAvatar,
   AdvancedSearch$ChangeCheckbox,
@@ -42,8 +42,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
     if (
       Object.keys(state.advancedSearch.checked)
-        .filter((key: PropName) => state.advancedSearch.checked[key])
-        .every((key: PropName) => state.advancedSearch.validity[key])
+        .filter((key: keyof ReducerState['advancedSearch']['checked']) => state.advancedSearch.checked[key])
+        .every((key: keyof ReducerState['advancedSearch']['checked']) => state.advancedSearch.validity[key])
     ) {
       return state.advancedSearch.menuItems
     }

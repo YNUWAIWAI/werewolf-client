@@ -8,11 +8,11 @@ import MainContent from '../atoms/MainContent'
 import SearchResult from '../organisms/SearchResult'
 import {Target} from '../../constants/ActionTypes'
 
-export type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
+type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
 
-export type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
+type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
 
-export type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
+type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
 
 export interface StateProps {
   readonly checked: {
