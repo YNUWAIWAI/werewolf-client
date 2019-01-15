@@ -12,7 +12,7 @@ import {
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {getAnonymousVillageName} from '../constants/AnonymousVillageName'
+import {getAnonymousVillageName} from '../util'
 
 export interface State {
   readonly image: string,
