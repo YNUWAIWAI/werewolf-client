@@ -1,22 +1,23 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {MenuItem, Payload$Lobby, Village} from 'lobby'
-import type {SocketMessage} from '../actions'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
+import {
+  SocketMessage
+} from '../actions'
 
-export type State = {
-  +isPlayer: boolean,
-  +menuItems: MenuItem[],
-  +villageItems: Village[]
+export interface State {
+  readonly isPlayer: boolean
+  readonly menuItems: MenuItem[]
+  readonly villageItems: lobby.Village[]
 }
 type Action =
   | SocketMessage
 
-export const initialState = {
+export const initialState: State = {
   isPlayer: false,
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.SHOW_MAIN]
+      types: [ActionTypes.Target.SHOW_MAIN]
     }
   ],
   villageItems: []
@@ -25,8 +26,8 @@ export const initialState = {
 const history = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (action.payload.type === 'lobby') {
-        const payload: Payload$Lobby = action.payload
+      if (action.payload.type === lobby.PayloadType.lobby) {
+        const payload = action.payload
 
         return {
           ... state,

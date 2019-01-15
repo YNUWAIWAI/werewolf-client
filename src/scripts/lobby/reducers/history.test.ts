@@ -1,4 +1,3 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import {enterHumanPlayerLobby} from './fakeServer'
 import reducer from './history'
@@ -11,7 +10,7 @@ test('socket/MESSAGE', () => {
         menuItems: [
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         villageItems: []
@@ -27,7 +26,7 @@ test('socket/MESSAGE', () => {
       menuItems: [
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       villageItems: [
