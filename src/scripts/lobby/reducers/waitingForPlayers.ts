@@ -1,13 +1,12 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {ChangeLobby, SocketMessage, Transition} from '../actions'
-import type {MenuItem, Payload$WatingPage, Village, WaitingPlayer} from 'lobby'
+import {ChangeLobby, SocketMessage, Transition} from '../actions'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 
-export type State = {
-  +isPlayer: boolean,
-  +menuItems: MenuItem[],
-  +players: WaitingPlayer[],
-  +village?: Village
+export interface State {
+  readonly isPlayer: boolean,
+  readonly menuItems: MenuItem[],
+  readonly players: lobby.WaitingPlayer[],
+  readonly village?: lobby.Village
 }
 type Action =
   | ChangeLobby
@@ -21,7 +20,7 @@ export const initialState = {
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.CHANGE_LOBBY:
+    case ActionTypes.global.CHANGE_LOBBY:
       switch (action.lobby) {
         case 'human player':
           return {
@@ -30,15 +29,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             menuItems: [
               {
                 id: 'Menu.playGame',
-                types: [ActionTypes.PLAY_GAME]
+                types: [ActionTypes.Target.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
             ]
           }
@@ -49,15 +48,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             menuItems: [
               {
                 id: 'Menu.playGame',
-                types: [ActionTypes.PLAY_GAME]
+                types: [ActionTypes.Target.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForAudience',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
             ]
           }
@@ -68,26 +67,26 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             menuItems: [
               {
                 id: 'Menu.playGame',
-                types: [ActionTypes.PLAY_GAME]
+                types: [ActionTypes.Target.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
             ]
           }
         default:
           return state
       }
-    case ActionTypes.PLAY_GAME:
+    case ActionTypes.Target.PLAY_GAME:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.PLAY_GAME)) {
+          if (item.types.includes(ActionTypes.Target.PLAY_GAME)) {
             return {
               ... item,
               isLoading: true
@@ -97,70 +96,70 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           return item
         })
       }
-    case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
         isPlayer: false,
         menuItems: [
           {
             id: 'Menu.playGame',
-            types: [ActionTypes.PLAY_GAME]
+            types: [ActionTypes.Target.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
         ]
       }
-    case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         isPlayer: true,
         menuItems: [
           {
             id: 'Menu.playGame',
-            types: [ActionTypes.PLAY_GAME]
+            types: [ActionTypes.Target.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
         ]
       }
-    case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         isPlayer: true,
         menuItems: [
           {
             id: 'Menu.playGame',
-            types: [ActionTypes.PLAY_GAME]
+            types: [ActionTypes.Target.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
         ]
       }
     case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
-        case 'played': {
+        case lobby.PayloadType.played: {
           return {
             ... state,
             menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.PLAY_GAME)) {
+              if (item.types.includes(ActionTypes.Target.PLAY_GAME)) {
                 return {
                   ... item,
                   isLoading: false
@@ -171,8 +170,8 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             })
           }
         }
-        case 'waitingPage': {
-          const payload: Payload$WatingPage = action.payload
+        case lobby.PayloadType.waitingPage: {
+          const payload = action.payload
 
           return {
             ... state,

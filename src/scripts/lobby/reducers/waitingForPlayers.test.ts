@@ -1,7 +1,6 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import * as Ajv from 'ajv'
 import reducer, {initialState} from './waitingForPlayers'
-import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
 import {waitingPage} from './fakeServer'
@@ -12,8 +11,8 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: 'human player',
-          type: ActionTypes.CHANGE_LOBBY
+          lobby: lobby.Lobby.human,
+          type: ActionTypes.global.CHANGE_LOBBY
         }
       )
     ).toEqual(
@@ -22,15 +21,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.playGame',
-            types: [ActionTypes.PLAY_GAME]
+            types: [ActionTypes.Target.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
         ],
         players: []
@@ -42,8 +41,8 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: 'onymous audience',
-          type: ActionTypes.CHANGE_LOBBY
+          lobby: lobby.Lobby.audience,
+          type: ActionTypes.global.CHANGE_LOBBY
         }
       )
     ).toEqual(
@@ -52,15 +51,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.playGame',
-            types: [ActionTypes.PLAY_GAME]
+            types: [ActionTypes.Target.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
         ],
         players: []
@@ -72,8 +71,8 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: 'robot player',
-          type: ActionTypes.CHANGE_LOBBY
+          lobby: lobby.Lobby.robot,
+          type: ActionTypes.global.CHANGE_LOBBY
         }
       )
     ).toEqual(
@@ -82,15 +81,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.playGame',
-            types: [ActionTypes.PLAY_GAME]
+            types: [ActionTypes.Target.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
         ],
         players: []
@@ -107,7 +106,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         players: []
       },
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_AUDIENCE
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toEqual(
@@ -116,15 +115,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       menuItems: [
         {
           id: 'Menu.playGame',
-          types: [ActionTypes.PLAY_GAME]
+          types: [ActionTypes.Target.PLAY_GAME]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
         }
       ],
       players: []
@@ -140,7 +139,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         players: []
       },
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toEqual(
@@ -149,15 +148,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.playGame',
-          types: [ActionTypes.PLAY_GAME]
+          types: [ActionTypes.Target.PLAY_GAME]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
         }
       ],
       players: []
@@ -173,7 +172,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         players: []
       },
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toEqual(
@@ -182,15 +181,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.playGame',
-          types: [ActionTypes.PLAY_GAME]
+          types: [ActionTypes.Target.PLAY_GAME]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
         }
       ],
       players: []
@@ -202,9 +201,9 @@ describe('socket/MESSAGE', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
     const ajv = new Ajv()
-    const payload = {
-      lang: 'ja',
-      type: 'played'
+    const payload: lobby.Payload = {
+      lang: lobby.Language.ja,
+      type: lobby.PayloadType.played
     }
 
     test('validate the JSON', async () => {
@@ -227,15 +226,15 @@ describe('socket/MESSAGE', () => {
               {
                 id: 'Menu.playGame',
                 isLoading: true,
-                types: [ActionTypes.PLAY_GAME]
+                types: [ActionTypes.Target.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
             ]
           },
@@ -251,15 +250,15 @@ describe('socket/MESSAGE', () => {
             {
               id: 'Menu.playGame',
               isLoading: false,
-              types: [ActionTypes.PLAY_GAME]
+              types: [ActionTypes.Target.PLAY_GAME]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
             }
           ],
           players: []

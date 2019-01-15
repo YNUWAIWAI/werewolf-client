@@ -93,6 +93,7 @@ declare namespace lobby {
   type Payload =
     | Payload$Avatar
     | Payload$Lobby
+    | Payload$Played
     | Payload$Ping
     | Payload$SearchResult
     | Payload$Settings
@@ -101,13 +102,14 @@ declare namespace lobby {
   const enum PayloadType {
     avatar = 'avatar',
     lobby = 'lobby',
+    played = 'played',
     ping = 'ping',
     searchResult = 'searchResult',
     settings = 'settings',
     waitingPage = 'waitingPage'
   }
   interface PayloadBase {
-    type: string;
+    type: PayloadType;
   }
   interface Payload$Avatar extends PayloadBase {
     image: string;
@@ -121,6 +123,10 @@ declare namespace lobby {
     lobby: Lobby;
     type: PayloadType.lobby;
     villages: Village[];
+  }
+  interface Payload$Played extends PayloadBase {
+    lang: Language;
+    type: PayloadType.played;
   }
   interface Payload$Ping extends PayloadBase {
     id: string;
