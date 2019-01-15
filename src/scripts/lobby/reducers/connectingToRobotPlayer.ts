@@ -1,17 +1,16 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {MenuItem} from 'lobby'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 
-export type State = {
-  +menuItems: MenuItem[]
+export interface State {
+  readonly menuItems: MenuItem[]
 }
 type Action = void
 
-export const initialState = {
+export const initialState: State = {
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.SHOW_MAIN]
+      types: [ActionTypes.Target.SHOW_MAIN]
     }
   ]
 }
