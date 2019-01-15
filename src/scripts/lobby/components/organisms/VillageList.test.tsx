@@ -19,6 +19,7 @@ test('<VillageList isPlayer /> 1 item', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
@@ -64,6 +65,7 @@ test('<VillageList isPlayer /> 2 item', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 1,
@@ -97,6 +99,7 @@ test('<VillageList isPlayer /> 2 item', () => {
       comment: 'comment',
       hostPlayer: {
         isAnonymous: false,
+        isHuman: true,
         name: 'hostPlayer name'
       },
       id: 2,
