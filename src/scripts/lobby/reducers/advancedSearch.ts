@@ -1,6 +1,5 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {
+import {
   AdvancedSearch$ChangeAvatar,
   AdvancedSearch$ChangeCheckbox,
   AdvancedSearch$ChangeComment,
@@ -12,40 +11,40 @@ import type {
   SocketMessage,
   Transition
 } from '../actions'
-import type {Avatar, MenuItem, Payload$Avatar, Payload$SearchResult, Village} from 'lobby'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 
-export type State = {
-  +checked: {
-    +avatar: boolean,
-    +comment: boolean,
-    +hostName: boolean,
-    +maximum: boolean,
-    +minimum: boolean,
-    +villageName: boolean
-  },
-  +header: string,
-  +image: string,
-  +isPlayer: boolean,
-  +menuItems: MenuItem[],
-  +name: string,
-  +searched: boolean,
-  +validity: {
-    +avatar: boolean,
-    +comment: boolean,
-    +hostName: boolean,
-    +maximum: boolean,
-    +minimum: boolean,
-    +villageName: boolean
-  },
-  +value: {
-    +avatar: Avatar,
-    +comment: string,
-    +hostName: string,
-    +maximum: number,
-    +minimum: number,
-    +villageName: string
-  },
-  +villageItems: Village[]
+export interface State {
+  readonly checked: {
+    readonly avatar: boolean
+    readonly comment: boolean
+    readonly hostName: boolean
+    readonly maximum: boolean
+    readonly minimum: boolean
+    readonly villageName: boolean
+  }
+  readonly header: string
+  readonly image: string
+  readonly isPlayer: boolean
+  readonly menuItems: MenuItem[]
+  readonly name: string
+  readonly searched: boolean
+  readonly validity: {
+    readonly avatar: boolean
+    readonly comment: boolean
+    readonly hostName: boolean
+    readonly maximum: boolean
+    readonly minimum: boolean
+    readonly villageName: boolean
+  }
+  readonly value: {
+    readonly avatar: lobby.Avatar
+    readonly comment: string
+    readonly hostName: string
+    readonly maximum: number
+    readonly minimum: number
+    readonly villageName: string
+  }
+  readonly villageItems: lobby.Village[]
 }
 type Action =
   | AdvancedSearch$ChangeAvatar
@@ -59,7 +58,7 @@ type Action =
   | SocketMessage
   | Transition
 
-export const initialState = {
+export const initialState: State = {
   checked: {
     avatar: true,
     comment: false,
@@ -83,7 +82,7 @@ export const initialState = {
     villageName: false
   },
   value: {
-    avatar: 'random',
+    avatar: lobby.Avatar.random,
     comment: '',
     hostName: '',
     maximum: -1,
@@ -95,11 +94,11 @@ export const initialState = {
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.ADVANCED_SEARCH:
+    case ActionTypes.Target.ADVANCED_SEARCH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.ADVANCED_SEARCH)) {
+          if (item.types.includes(ActionTypes.Target.ADVANCED_SEARCH)) {
             return {
               ... item,
               isLoading: true
@@ -174,7 +173,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           villageName: action.villageName
         }
       }
-    case ActionTypes.SHOW_ADVANCED_SEARCH:
+    case ActionTypes.Target.SHOW_ADVANCED_SEARCH:
       return {
         ... state,
         checked: initialState.checked,
@@ -182,7 +181,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         validity: initialState.validity,
         value: initialState.value
       }
-    case ActionTypes.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
         header: 'Header.advancedSearch(audience)',
@@ -190,20 +189,20 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.ADVANCED_SEARCH]
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         villageItems: []
       }
-    case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         header: 'Header.advancedSearch(human player)',
@@ -211,20 +210,20 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.ADVANCED_SEARCH]
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         villageItems: []
       }
-    case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         header: 'Header.advancedSearch(robot player)',
@@ -232,23 +231,23 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.ADVANCED_SEARCH]
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         villageItems: []
       }
     case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
-        case 'avatar': {
-          const payload: Payload$Avatar = action.payload
+        case lobby.PayloadType.avatar: {
+          const payload = action.payload
 
           return {
             ... state,
@@ -256,13 +255,13 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             name: payload.name
           }
         }
-        case 'searchResult': {
-          const payload: Payload$SearchResult = action.payload
+        case lobby.PayloadType.searchResult: {
+          const payload = action.payload
 
           return {
             ... state,
             menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.ADVANCED_SEARCH)) {
+              if (item.types.includes(ActionTypes.Target.ADVANCED_SEARCH)) {
                 return {
                   ... item,
                   isLoading: false

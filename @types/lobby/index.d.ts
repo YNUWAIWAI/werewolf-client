@@ -38,6 +38,7 @@ declare namespace lobby {
   }
   interface HostPlayer {
     isAnonymous: boolean;
+    isHuman: boolean;
     name: string;
   }
   interface PlayerSetting {
@@ -82,21 +83,29 @@ declare namespace lobby {
     isHost: boolean;
     isMe: boolean;
     name: string;
-    token: string;
+    token: Token;
   }
   interface PingResult {
     ping: string;
     status: PingStatus;
-    token: string;
+    token: Token;
   }
   type Payload =
     | Payload$Avatar
-    | Payload$Settings
     | Payload$Lobby
     | Payload$Ping
     | Payload$SearchResult
+    | Payload$Settings
     | Payload$WatingPage
 
+  const enum PayloadType {
+    avatar = 'avatar',
+    lobby = 'lobby',
+    ping = 'ping',
+    searchResult = 'searchResult',
+    settings = 'settings',
+    waitingPage = 'waitingPage'
+  }
   interface PayloadBase {
     type: string;
   }
@@ -104,34 +113,35 @@ declare namespace lobby {
     image: string;
     lang: Language;
     name: string;
-    type: 'avatar';
-  }
-  interface Payload$Settings extends PayloadBase {
-    lang: Language;
-    type: 'settings';
-    userEmail: string;
-    userName: string;
+    token: Token;
+    type: PayloadType.avatar;
   }
   interface Payload$Lobby extends PayloadBase {
     error: string | null;
     lobby: Lobby;
-    type: 'lobby';
+    type: PayloadType.lobby;
     villages: Village[];
   }
   interface Payload$Ping extends PayloadBase {
     id: string;
     results: PingResult[];
-    type: 'ping';
+    type: PayloadType.ping;
   }
   interface Payload$SearchResult extends PayloadBase {
     error: string | null;
-    type: 'searchResult';
+    type: PayloadType.searchResult;
     villages: Village[];
+  }
+  interface Payload$Settings extends PayloadBase {
+    lang: Language;
+    type: PayloadType.settings;
+    userEmail: string;
+    userName: string;
   }
   interface Payload$WatingPage extends PayloadBase {
     error: string | null;
     players: WaitingPlayer[];
-    type: 'waitingPage';
+    type: PayloadType.waitingPage;
     village: Village;
   }
 }

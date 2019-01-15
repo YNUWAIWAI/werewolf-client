@@ -1,7 +1,6 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import * as Ajv from 'ajv'
 import reducer, {initialState} from './advancedSearch'
-import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
 
@@ -13,20 +12,20 @@ test('ADVANCED_SEARCH', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.ADVANCED_SEARCH]
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ]
       },
       {
-        type: ActionTypes.ADVANCED_SEARCH
+        type: ActionTypes.Target.ADVANCED_SEARCH
       }
     )
   ).toEqual(
@@ -46,15 +45,15 @@ test('ADVANCED_SEARCH', () => {
         {
           id: 'Menu.search',
           isLoading: true,
-          types: [ActionTypes.ADVANCED_SEARCH]
+          types: [ActionTypes.Target.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -84,7 +83,7 @@ test('advancedSearch/CHANGE_AVATAR', () => {
     reducer(
       initialState,
       {
-        avatar: 'fixed',
+        avatar: lobby.Avatar.fixed,
         type: ActionTypes.advancedSearch.CHANGE_AVATAR
       }
     )
@@ -910,7 +909,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_AUDIENCE
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toEqual(
@@ -929,15 +928,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.ADVANCED_SEARCH]
+          types: [ActionTypes.Target.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -967,7 +966,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toEqual(
@@ -986,15 +985,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.ADVANCED_SEARCH]
+          types: [ActionTypes.Target.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -1024,7 +1023,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toEqual(
@@ -1043,15 +1042,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.ADVANCED_SEARCH]
+          types: [ActionTypes.Target.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -1081,12 +1080,12 @@ describe('socket/MESSAGE', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
     const ajv = new Ajv()
-    const payload = {
+    const payload: lobby.Payload = {
       image: '/assets/images/avatar/default/user.png',
-      lang: 'ja',
+      lang: lobby.Language.ja,
       name: 'Alice',
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
-      type: 'avatar'
+      type: lobby.PayloadType.avatar
     }
 
     test('validate the JSON', async () => {
@@ -1150,12 +1149,12 @@ describe('socket/MESSAGE', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
     const ajv = new Ajv()
-    const payload = {
+    const payload: lobby.Payload = {
       error: null,
-      type: 'searchResult',
+      type: lobby.PayloadType.searchResult,
       villages: [
         {
-          avatar: 'fixed',
+          avatar: lobby.Avatar.fixed,
           comment: null,
           hostPlayer: {
             isAnonymous: false,
@@ -1211,15 +1210,15 @@ describe('socket/MESSAGE', () => {
               {
                 id: 'Menu.search',
                 isLoading: true,
-                types: [ActionTypes.ADVANCED_SEARCH]
+                types: [ActionTypes.Target.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForAudience',
-                types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+                types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.SHOW_MAIN]
+                types: [ActionTypes.Target.SHOW_MAIN]
               }
             ]
           },
@@ -1245,15 +1244,15 @@ describe('socket/MESSAGE', () => {
             {
               id: 'Menu.search',
               isLoading: false,
-              types: [ActionTypes.ADVANCED_SEARCH]
+              types: [ActionTypes.Target.ADVANCED_SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForAudience',
-              types: [ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+              types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.SHOW_MAIN]
+              types: [ActionTypes.global.SHOW_MAIN]
             }
           ],
           name: '',
