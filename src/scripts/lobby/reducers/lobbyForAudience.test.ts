@@ -1,8 +1,7 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import * as Ajv from 'ajv'
 import {enterHumanPlayerLobby, enterOnymousAudienceLobby, enterRobotPlayerLobby} from './fakeServer'
 import reducer, {initialState} from './lobbyForAudience'
-import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
 
@@ -11,7 +10,7 @@ test('REFRESH', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.REFRESH
+        type: ActionTypes.Target.REFRESH
       }
     )
   ).toEqual(
@@ -21,20 +20,20 @@ test('REFRESH', () => {
       menuItems: [
         {
           id: 'Menu.showIdSearch',
-          types: [ActionTypes.SHOW_ID_SEARCH]
+          types: [ActionTypes.Target.SHOW_ID_SEARCH]
         },
         {
           id: 'Menu.showAdvancedSearch',
-          types: [ActionTypes.SHOW_ADVANCED_SEARCH]
+          types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
         },
         {
           id: 'Menu.refresh',
           isLoading: true,
-          types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -102,20 +101,20 @@ describe('socket/MESSAGE', () => {
         menuItems: [
           {
             id: 'Menu.showIdSearch',
-            types: [ActionTypes.SHOW_ID_SEARCH]
+            types: [ActionTypes.Target.SHOW_ID_SEARCH]
           },
           {
             id: 'Menu.showAdvancedSearch',
-            types: [ActionTypes.SHOW_ADVANCED_SEARCH]
+            types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
           },
           {
             id: 'Menu.refresh',
             isLoading: false,
-            types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         name: '',
