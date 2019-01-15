@@ -6,7 +6,6 @@ import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
 test('<AdvancedSearchContainer />', () => {
-  const transition = jest.fn()
   const store = fakeStore(
     {
       advancedSearch: {
