@@ -8,11 +8,11 @@ import MainContent from '../atoms/MainContent'
 import SearchResult from '../organisms/SearchResult'
 import {Target} from '../../constants/ActionTypes'
 
-type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
+export type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
 
-type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
+export type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
 
-type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
+export type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
 
 export interface StateProps {
   readonly checked: {
@@ -46,10 +46,9 @@ export interface DispatchProps {
   readonly handleTextChange: (propName: TextPropName) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (value: boolean) => void
   readonly selectVillage: (id: number) => () => void
-}
-export interface OwnProps {
   readonly transition: (target: Target) => void
 }
+export interface OwnProps {}
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function AdvancedSearch(props: Props) {

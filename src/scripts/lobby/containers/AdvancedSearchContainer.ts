@@ -1,16 +1,16 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import AdvancedSearch, {type DispatchProps, type StateProps} from '../components/templates/AdvancedSearch'
+import AdvancedSearch, {DispatchProps, PropName, StateProps} from '../components/templates/AdvancedSearch'
 import {
-  type AdvancedSearch$ChangeAvatar,
-  type AdvancedSearch$ChangeCheckbox,
-  type AdvancedSearch$ChangeComment,
-  type AdvancedSearch$ChangeHostName,
-  type AdvancedSearch$ChangeMaximum,
-  type AdvancedSearch$ChangeMinimum,
-  type AdvancedSearch$ChangeValidity,
-  type AdvancedSearch$ChangeVillageName,
-  type SelectVillage,
+  AdvancedSearch$ChangeAvatar,
+  AdvancedSearch$ChangeCheckbox,
+  AdvancedSearch$ChangeComment,
+  AdvancedSearch$ChangeHostName,
+  AdvancedSearch$ChangeMaximum,
+  AdvancedSearch$ChangeMinimum,
+  AdvancedSearch$ChangeValidity,
+  AdvancedSearch$ChangeVillageName,
+  SelectVillage,
+  Transition,
   changeAvatar,
   changeCheckbox,
   changeComment,
@@ -19,10 +19,11 @@ import {
   changeMinimum,
   changeValidity,
   changeVillageName,
-  selectVillage
+  selectVillage,
+  transition
 } from '../actions'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
@@ -35,19 +36,20 @@ type Action =
   | AdvancedSearch$ChangeValidity
   | AdvancedSearch$ChangeVillageName
   | SelectVillage
+  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
     if (
       Object.keys(state.advancedSearch.checked)
-        .filter(key => state.advancedSearch.checked[key])
-        .every(key => state.advancedSearch.validity[key])
+        .filter((key: PropName) => state.advancedSearch.checked[key])
+        .every((key: PropName) => state.advancedSearch.validity[key])
     ) {
       return state.advancedSearch.menuItems
     }
 
     return state.advancedSearch.menuItems.map(item => {
-      if (item.types.includes(ActionTypes.ADVANCED_SEARCH)) {
+      if (item.types.includes(ActionTypes.Target.ADVANCED_SEARCH)) {
         return {
           ... item,
           disabled: true
@@ -72,35 +74,38 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
-    dispatch(changeAvatar('advancedSearch')(value))
+    dispatch(changeAvatar(ActionTypes.Scope.advancedSearch)(value))
   },
   handleCheckboxChange: propName => checked => {
-    dispatch(changeCheckbox('advancedSearch')(propName)(checked))
+    dispatch(changeCheckbox(ActionTypes.Scope.advancedSearch)(propName)(checked))
   },
   handleNumberChange: propName => value => {
     if (propName === 'maximum') {
-      dispatch(changeMaximum('advancedSearch')(value))
+      dispatch(changeMaximum(ActionTypes.Scope.advancedSearch)(value))
     }
     if (propName === 'minimum') {
-      dispatch(changeMinimum('advancedSearch')(value))
+      dispatch(changeMinimum(ActionTypes.Scope.advancedSearch)(value))
     }
   },
   handleTextChange: propName => value => {
     if (propName === 'comment') {
-      dispatch(changeComment('advancedSearch')(value))
+      dispatch(changeComment(ActionTypes.Scope.advancedSearch)(value))
     }
     if (propName === 'hostName') {
-      dispatch(changeHostName('advancedSearch')(value))
+      dispatch(changeHostName(ActionTypes.Scope.advancedSearch)(value))
     }
     if (propName === 'villageName') {
-      dispatch(changeVillageName('advancedSearch')(value))
+      dispatch(changeVillageName(ActionTypes.Scope.advancedSearch)(value))
     }
   },
   handleValidityChange: propName => validity => {
-    dispatch(changeValidity('advancedSearch')(propName)(validity))
+    dispatch(changeValidity(ActionTypes.Scope.advancedSearch)(propName)(validity))
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))
+  },
+  transition: target => {
+    dispatch(transition(target))
   }
 })
 const AdvancedSearchContainer = connect(

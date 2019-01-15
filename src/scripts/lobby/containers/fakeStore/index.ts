@@ -1,5 +1,5 @@
-// @flow
-import type {ReducerState} from '../../reducers'
+import {ReducerState} from '../../reducers'
+import {Store} from 'redux'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
 import {initialState as app} from '../../reducers/app'
 import {initialState as buildVillage} from '../../reducers/buildVillage'
@@ -16,7 +16,7 @@ import {initialState as settings} from '../../reducers/settings'
 import {initialState as token} from '../../reducers/token'
 import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayers'
 
-export default (state?: Object) => {
+export default (state?: Object): Store => {
   const initialState: ReducerState = {
     advancedSearch,
     app,
@@ -34,18 +34,23 @@ export default (state?: Object) => {
     token,
     waitingForPlayers
   }
-  const dispatch: Object = () => {
-    console.log('dispatch')
+  const dispatch = (action: any) => {
+    console.log('dispatch', action)
+
+    return action
   }
   const getState = () => ({
     ... initialState,
     ... state
   })
-  const replaceReducer: Object = () => {
+  const replaceReducer = () => {
     console.log('replaceReducer')
   }
-  const subscribe: Object = () => {
+  const subscribe = () => {
     // console.log('subscribe')
+    return () => {
+      // console.log('unsubscribe')
+    }
   }
   const store = {
     dispatch,
