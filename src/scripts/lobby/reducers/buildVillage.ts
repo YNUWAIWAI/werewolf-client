@@ -1,7 +1,5 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Avatar, Member, MenuItem, Payload$Avatar} from 'lobby'
-import type {
+import {
   BuildVillage$ChangeAvatar,
   BuildVillage$ChangeComment,
   BuildVillage$ChangeHostName,
@@ -10,36 +8,38 @@ import type {
   BuildVillage$ChangeNumberOfRobots,
   BuildVillage$ChangeValidity,
   BuildVillage$ChangeVillageName,
-  SocketMessage
+  SocketMessage,
+  Transition
 } from '../actions'
+import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {getAnonymousVillageName} from '../constants/AnonymousVillageName'
 
-export type State = {
-  +image: string,
-  +initialFixedValue: {
+export interface State {
+  readonly image: string,
+  readonly initialFixedValue: {
     hostName: string,
     villageName: string
   },
-  +menuItems: MenuItem[],
-  +name: string,
-  +validity: {
-    +avatar: boolean,
-    +comment: boolean,
-    +hostName: boolean,
-    +numberOfPlayers: boolean,
-    +numberOfRobots: boolean,
-    +villageName: boolean
+  readonly menuItems: MenuItem[],
+  readonly name: string,
+  readonly validity: {
+    readonly avatar: boolean,
+    readonly comment: boolean,
+    readonly hostName: boolean,
+    readonly numberOfPlayers: boolean,
+    readonly numberOfRobots: boolean,
+    readonly villageName: boolean
   },
-  +value: {
-    +avatar: Avatar,
-    +comment: string,
-    +hostName: string,
-    +isHuman: boolean,
-    +member: Member,
-    +numberOfHumans: number,
-    +numberOfPlayers: number,
-    +numberOfRobots: number,
-    +villageName: string
+  readonly value: {
+    readonly avatar: lobby.Avatar,
+    readonly comment: string,
+    readonly hostName: string,
+    readonly isHuman: boolean,
+    readonly member: lobby.Member,
+    readonly numberOfHumans: number,
+    readonly numberOfPlayers: number,
+    readonly numberOfRobots: number,
+    readonly villageName: string
   }
 }
 type Action =
@@ -52,10 +52,9 @@ type Action =
   | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
   | SocketMessage
-  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER}
-  | {type: typeof ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER}
+  | Transition
 
-export const initialState = {
+export const initialState: State = {
   image: '',
   initialFixedValue: {
     hostName: 'Alice',
@@ -72,11 +71,11 @@ export const initialState = {
     villageName: true
   },
   value: {
-    avatar: 'random',
+    avatar: lobby.Avatar.random,
     comment: '',
     hostName: 'Anonymous',
     isHuman: true,
-    member: 'A',
+    member: lobby.Member.A,
     numberOfHumans: 14,
     numberOfPlayers: 15,
     numberOfRobots: 1,
@@ -86,7 +85,7 @@ export const initialState = {
 const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.buildVillage.CHANGE_AVATAR:
-      if (action.avatar === 'fixed') {
+      if (action.avatar === lobby.Avatar.fixed) {
         return {
           ... state,
           value: {
@@ -177,7 +176,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: action.villageName
         }
       }
-    case ActionTypes.LEAVE_WAITING_PAGE:
+    case ActionTypes.Target.LEAVE_WAITING_PAGE:
       return {
         ... state,
         validity: initialState.validity,
@@ -187,21 +186,21 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: getAnonymousVillageName()
         }
       }
-    case ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.BUILD_VILLAGE]
+            types: [ActionTypes.Target.BUILD_VILLAGE]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         validity: initialState.validity,
@@ -210,7 +209,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           isHuman: true
         }
       }
-    case ActionTypes.SHOW_MAIN:
+    case ActionTypes.Target.SHOW_MAIN:
       return {
         ... state,
         validity: initialState.validity,
@@ -220,21 +219,21 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: getAnonymousVillageName()
         }
       }
-    case ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.BUILD_VILLAGE]
+            types: [ActionTypes.Target.BUILD_VILLAGE]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
         validity: initialState.validity,
@@ -245,8 +244,8 @@ const buildVillage = (state: State = initialState, action: Action): State => {
       }
     case ActionTypes.socket.MESSAGE:
       switch (action.payload.type) {
-        case 'avatar': {
-          const payload: Payload$Avatar = action.payload
+        case lobby.PayloadType.avatar: {
+          const payload = action.payload
 
           return {
             ... state,

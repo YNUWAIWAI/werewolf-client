@@ -1,7 +1,6 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import * as Ajv from 'ajv'
 import reducer, {initialState} from './buildVillage'
-import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
 
@@ -11,7 +10,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
       reducer(
         initialState,
         {
-          avatar: 'fixed',
+          avatar: lobby.Avatar.fixed,
           type: ActionTypes.buildVillage.CHANGE_AVATAR
         }
       )
@@ -33,7 +32,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
           villageName: true
         },
         value: {
-          avatar: 'fixed',
+          avatar: lobby.Avatar.fixed,
           comment: '',
           hostName: 'Alice',
           isHuman: true,
@@ -51,7 +50,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
       reducer(
         initialState,
         {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           type: ActionTypes.buildVillage.CHANGE_AVATAR
         }
       )
@@ -73,11 +72,11 @@ describe('buildVillage/CHANGE_AVATAR', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
@@ -114,11 +113,11 @@ test('buildVillage/CHANGE_COMMENT', () => {
         villageName: true
       },
       value: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: 'comment',
         hostName: 'Anonymous',
         isHuman: true,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -134,7 +133,7 @@ test('buildVillage/CHANGE_HOST_NAME', () => {
         ... initialState,
         value: {
           ... initialState.value,
-          avatar: 'fixed',
+          avatar: lobby.Avatar.fixed,
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         }
@@ -162,11 +161,11 @@ test('buildVillage/CHANGE_HOST_NAME', () => {
         villageName: true
       },
       value: {
-        avatar: 'fixed',
+        avatar: lobby.Avatar.fixed,
         comment: '',
         hostName: 'hostName',
         isHuman: true,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -180,7 +179,7 @@ test('buildVillage/CHANGE_MEMBER', () => {
     reducer(
       initialState,
       {
-        member: 'B',
+        member: lobby.Member.B,
         type: ActionTypes.buildVillage.CHANGE_MEMBER
       }
     )
@@ -202,11 +201,11 @@ test('buildVillage/CHANGE_MEMBER', () => {
         villageName: true
       },
       value: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: '',
         hostName: 'Anonymous',
         isHuman: true,
-        member: 'B',
+        member: lobby.Member.B,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -251,11 +250,11 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 0,
           numberOfPlayers: 5,
           numberOfRobots: 5,
@@ -299,11 +298,11 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 0,
           numberOfPlayers: 8,
           numberOfRobots: 8,
@@ -347,11 +346,11 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 2,
           numberOfPlayers: 10,
           numberOfRobots: 8,
@@ -388,11 +387,11 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
         villageName: true
       },
       value: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: '',
         hostName: 'Anonymous',
         isHuman: true,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 7,
         numberOfPlayers: 15,
         numberOfRobots: 8,
@@ -430,11 +429,11 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
@@ -471,11 +470,11 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
@@ -512,11 +511,11 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
@@ -553,11 +552,11 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
@@ -594,11 +593,11 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
@@ -635,11 +634,11 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           villageName: false
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,
@@ -656,7 +655,7 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
         ... initialState,
         value: {
           ... initialState.value,
-          avatar: 'fixed',
+          avatar: lobby.Avatar.fixed,
           hostName: 'Alice',
           villageName: 'Alice\'s village'
         }
@@ -688,7 +687,7 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
         comment: '',
         hostName: 'Alice',
         isHuman: true,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -711,11 +710,11 @@ test('LEAVE_WAITING_PAGE', () => {
           villageName: false
         },
         value: {
-          avatar: 'fixed',
+          avatar: lobby.Avatar.fixed,
           comment: 'comment',
           hostName: 'hostName',
           isHuman: false,
-          member: 'B',
+          member: lobby.Member.B,
           numberOfHumans: 7,
           numberOfPlayers: 14,
           numberOfRobots: 7,
@@ -723,7 +722,7 @@ test('LEAVE_WAITING_PAGE', () => {
         }
       },
       {
-        type: ActionTypes.LEAVE_WAITING_PAGE
+        type: ActionTypes.Target.LEAVE_WAITING_PAGE
       }
     )
   ).toEqual(
@@ -744,11 +743,11 @@ test('LEAVE_WAITING_PAGE', () => {
         villageName: true
       },
       value: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: '',
         hostName: 'Anonymous',
         isHuman: true,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -776,7 +775,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         }
       },
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toEqual(
@@ -789,15 +788,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.buildVillage',
-          types: [ActionTypes.BUILD_VILLAGE]
+          types: [ActionTypes.Target.BUILD_VILLAGE]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -810,11 +809,11 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         villageName: true
       },
       value: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: '',
         hostName: 'Anonymous',
         isHuman: true,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -837,11 +836,11 @@ test('SHOW_MAIN', () => {
           villageName: false
         },
         value: {
-          avatar: 'fixed',
+          avatar: lobby.Avatar.fixed,
           comment: 'comment',
           hostName: 'hostName',
           isHuman: false,
-          member: 'B',
+          member: lobby.Member.B,
           numberOfHumans: 7,
           numberOfPlayers: 14,
           numberOfRobots: 7,
@@ -849,7 +848,7 @@ test('SHOW_MAIN', () => {
         }
       },
       {
-        type: ActionTypes.SHOW_MAIN
+        type: ActionTypes.Target.SHOW_MAIN
       }
     )
   ).toEqual(
@@ -870,11 +869,11 @@ test('SHOW_MAIN', () => {
         villageName: true
       },
       value: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: '',
         hostName: 'Anonymous',
         isHuman: true,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -902,7 +901,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         }
       },
       {
-        type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toEqual(
@@ -915,15 +914,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.buildVillage',
-          types: [ActionTypes.BUILD_VILLAGE]
+          types: [ActionTypes.Target.BUILD_VILLAGE]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.SHOW_MAIN]
+          types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
       name: '',
@@ -936,11 +935,11 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         villageName: true
       },
       value: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: '',
         hostName: 'Anonymous',
         isHuman: false,
-        member: 'A',
+        member: lobby.Member.A,
         numberOfHumans: 14,
         numberOfPlayers: 15,
         numberOfRobots: 1,
@@ -953,12 +952,12 @@ describe('scoket/MESSAGE', () => {
   const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
   const SERVER2CLIENT = `${BASE_URI}/server2client`
   const ajv = new Ajv()
-  const payload = {
+  const payload: lobby.Payload = {
     image: '/assets/images/avatar/default/user.png',
-    lang: 'ja',
+    lang: lobby.Language.ja,
     name: 'Kevin',
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
-    type: 'avatar'
+    type: lobby.PayloadType.avatar
   }
 
   test('validate the JSON of avatar', async () => {
@@ -999,11 +998,11 @@ describe('scoket/MESSAGE', () => {
           villageName: true
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: 'Anonymous',
           isHuman: true,
-          member: 'A',
+          member: lobby.Member.A,
           numberOfHumans: 14,
           numberOfPlayers: 15,
           numberOfRobots: 1,

@@ -1,8 +1,16 @@
-import Cast from '../constants/Cast'
 import {
+  getAnonymousVillageName,
   getCastFromNumberOfPlayers
 } from '.'
+import Cast from '../constants/Cast'
+import {anonymousVillageName} from '../constants/AnonymousVillageName'
 
+test('getAnonymousVillageName', () => {
+  expect(anonymousVillageName).toContain(getAnonymousVillageName())
+  expect(anonymousVillageName).toContain(getAnonymousVillageName())
+  expect(anonymousVillageName).toContain(getAnonymousVillageName())
+  expect(anonymousVillageName).toContain(getAnonymousVillageName())
+})
 describe('getCastFromNumberOfPlayers', () => {
   test('4', () => {
     expect(getCastFromNumberOfPlayers(4)).toEqual(Cast['4'])
