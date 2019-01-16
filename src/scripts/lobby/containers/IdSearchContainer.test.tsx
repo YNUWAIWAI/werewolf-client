@@ -6,7 +6,6 @@ import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
 test('<IdSearchContainer />', () => {
-  const transition = jest.fn()
   const store = fakeStore(
     {
       idSearch: {
