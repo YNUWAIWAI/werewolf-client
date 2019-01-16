@@ -9,7 +9,6 @@ import {mount} from 'enzyme'
 
 describe('<BuildVillageContainer />', () => {
   test('initialState', () => {
-    const transition = jest.fn()
     const store = fakeStore()
     const wrapper = mount(
       <Provider store={store} >
@@ -22,7 +21,6 @@ describe('<BuildVillageContainer />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('buildVillage is enable', () => {
-    const transition = jest.fn()
     const store = fakeStore(
       {
         buildVillage: {
