@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'
 import {injectIntl} from 'react-intl'
 
@@ -19,8 +20,11 @@ interface Option {
 }
 
 export default injectIntl(function NumberSelect(props: Props) {
-  const handleChange = (selectedOption: Option | []) => {
-    if (Array.isArray(selectedOption)) { // selectedOption: []
+  const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
+    if (!selectedOption) { // selectedOption: null | undifined
+      return
+    }
+    if (Array.isArray(selectedOption)) { // selectedOption: Option[]
       props.handleChange(false)(-1)
     } else { // selectedOption: Option
       props.handleChange(true)(selectedOption.value)
