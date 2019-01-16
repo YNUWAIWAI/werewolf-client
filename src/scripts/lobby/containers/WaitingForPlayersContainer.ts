@@ -1,12 +1,17 @@
-// @flow
-import {type KickOutPlayer, kickOutPlayer} from '../actions'
-import WaitingForPlayers, {type DispatchProps, type StateProps} from '../components/templates/WaitingForPlayers'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {
+  KickOutPlayer,
+  Transition,
+  kickOutPlayer,
+  transition
+} from '../actions'
+import WaitingForPlayers, {DispatchProps, StateProps} from '../components/templates/WaitingForPlayers'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
   | KickOutPlayer
+  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const amIHost = state.waitingForPlayers.players.some(v => v.isHost && v.isMe)
@@ -35,7 +40,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       isMe: player.isMe,
       name: player.name,
       ping: '99.999 s',
-      pingStatus: 'danger',
+      pingStatus: lobby.PingStatus.danger,
       token: player.token
     }
 
@@ -59,6 +64,9 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   kickOut: token => () => {
     dispatch(kickOutPlayer(token))
+  },
+  transition: target => {
+    dispatch(transition(target))
   }
 })
 const WaitingForPlayersContainer = connect(

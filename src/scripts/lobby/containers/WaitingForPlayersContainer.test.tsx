@@ -1,14 +1,12 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
+import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import WaitingForPlayersContainer from './WaitingForPlayersContainer'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
 test('<WaitingForPlayersContainer />', () => {
-  const transition = jest.fn()
   const store = fakeStore(
     {
       waitingForPlayers: {
@@ -17,15 +15,15 @@ test('<WaitingForPlayersContainer />', () => {
           {
             id: 'Menu.playGame',
             isLoading: false,
-            types: [ActionTypes.PLAY_GAME]
+            types: [ActionTypes.Target.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
         ],
         players: [
@@ -134,7 +132,7 @@ test('<WaitingForPlayersContainer />', () => {
   const wrapper = mount(
     <Provider store={store} >
       <IntlProviderContainer>
-        <WaitingForPlayersContainer transition={transition} />
+        <WaitingForPlayersContainer />
       </IntlProviderContainer>
     </Provider>
   )

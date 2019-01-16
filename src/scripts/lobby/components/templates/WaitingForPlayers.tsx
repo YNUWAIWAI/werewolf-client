@@ -25,10 +25,9 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly kickOut: (token: lobby.Token) => () => void
-}
-export interface OwnProps {
   readonly transition: (target: Target) => void
 }
+export interface OwnProps {}
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function WaitingForPlayers(props: Props) {
