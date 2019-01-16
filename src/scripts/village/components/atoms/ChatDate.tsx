@@ -44,7 +44,7 @@ export default function ChatDate(props: Props) {
       }}
     >
       {
-        (... text: string[]) =>
+        (... text) =>
           <div className="chat--date">
             {text}
           </div>
