@@ -1,9 +1,8 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
 
-export type Props = {
-  +date: number
+export interface Props {
+  readonly date: number
 }
 
 export default function ChatDelimeter(props: Props) {
@@ -16,7 +15,7 @@ export default function ChatDelimeter(props: Props) {
         }}
       >
         {
-          (text: string) =>
+          text =>
             <div className="chat--delimeter">
               {text}
             </div>
@@ -30,7 +29,7 @@ export default function ChatDelimeter(props: Props) {
       id="ChatContainer.postMortem"
     >
       {
-        (text: string) =>
+        text =>
           <div className="chat--delimeter">
             {text}
           </div>

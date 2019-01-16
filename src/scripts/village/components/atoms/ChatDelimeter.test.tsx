@@ -1,10 +1,9 @@
-// @flow
+import * as React from 'react'
 import ChatDelimeter from './ChatDelimeter'
-import React from 'react'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 describe('<ChatDelimeter />', () => {
   test('date=1', () => {
