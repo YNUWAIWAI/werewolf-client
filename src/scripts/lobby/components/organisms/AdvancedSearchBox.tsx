@@ -113,16 +113,23 @@ export default function AdvancedSearchBox(props: Props) {
         values={villageName}
       >
         {
-          (text: string) =>
-            <TextInput
-              className="advanced-search--input"
-              handleChange={handleChange('villageName')}
-              initialValue=""
-              max={villageName.max}
-              min={villageName.min}
-              placeholder={text}
-              required={false}
-            />
+          text => {
+            if (typeof text !== 'string') {
+              return null
+            }
+
+            return (
+              <TextInput
+                className="advanced-search--input"
+                handleChange={handleChange('villageName')}
+                initialValue=""
+                max={villageName.max}
+                min={villageName.min}
+                placeholder={text}
+                required={false}
+              />
+            )
+          }
         }
       </FormattedMessage>
       <AdvancedSearchProp
@@ -136,16 +143,23 @@ export default function AdvancedSearchBox(props: Props) {
         values={hostName}
       >
         {
-          (text: string) =>
-            <TextInput
-              className="advanced-search--input"
-              handleChange={handleChange('hostName')}
-              initialValue=""
-              max={hostName.max}
-              min={hostName.min}
-              placeholder={text}
-              required={false}
-            />
+          text => {
+            if (typeof text !== 'string') {
+              return null
+            }
+
+            return (
+              <TextInput
+                className="advanced-search--input"
+                handleChange={handleChange('hostName')}
+                initialValue=""
+                max={hostName.max}
+                min={hostName.min}
+                placeholder={text}
+                required={false}
+              />
+            )
+          }
         }
       </FormattedMessage>
       <AdvancedSearchProp
@@ -204,17 +218,24 @@ export default function AdvancedSearchBox(props: Props) {
         values={comment}
       >
         {
-          (text: string) =>
-            <TextareaInput
-              className="advanced-search--input"
-              handleChange={handleChange('comment')}
-              initialValue=""
-              max={comment.max}
-              min={comment.min}
-              placeholder={text}
-              required={false}
-              rows={3}
-            />
+          text => {
+            if (typeof text !== 'string') {
+              return null
+            }
+
+            return (
+              <TextareaInput
+                className="advanced-search--input"
+                handleChange={handleChange('comment')}
+                initialValue=""
+                max={comment.max}
+                min={comment.min}
+                placeholder={text}
+                required={false}
+                rows={3}
+              />
+            )
+          }
         }
       </FormattedMessage>
     </div>
