@@ -61,7 +61,6 @@ describe('<BuildVillageContainer />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('buildVillage is disable', () => {
-    const transition = jest.fn()
     const store = fakeStore(
       {
         buildVillage: {
