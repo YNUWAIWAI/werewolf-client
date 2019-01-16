@@ -41,10 +41,9 @@ export interface DispatchProps {
   readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
   readonly handleTextChange: (propName: TextPropName) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
-}
-export interface OwnProps {
   readonly transition: (target: Target) => void
 }
+export interface OwnProps {}
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function BuildVillage(props: Props) {

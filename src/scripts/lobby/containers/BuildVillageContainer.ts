@@ -1,15 +1,15 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import BuildVillage, {type DispatchProps, type StateProps} from '../components/templates/BuildVillage'
+import BuildVillage, {DispatchProps, StateProps} from '../components/templates/BuildVillage'
 import {
-  type BuildVillage$ChangeAvatar,
-  type BuildVillage$ChangeComment,
-  type BuildVillage$ChangeHostName,
-  type BuildVillage$ChangeMember,
-  type BuildVillage$ChangeNumberOfPlayers,
-  type BuildVillage$ChangeNumberOfRobots,
-  type BuildVillage$ChangeValidity,
-  type BuildVillage$ChangeVillageName,
+  BuildVillage$ChangeAvatar,
+  BuildVillage$ChangeComment,
+  BuildVillage$ChangeHostName,
+  BuildVillage$ChangeMember,
+  BuildVillage$ChangeNumberOfPlayers,
+  BuildVillage$ChangeNumberOfRobots,
+  BuildVillage$ChangeValidity,
+  BuildVillage$ChangeVillageName,
+  Transition,
   changeAvatar,
   changeComment,
   changeHostName,
@@ -17,10 +17,11 @@ import {
   changeNumberOfPlayers,
   changeNumberOfRobots,
   changeValidity,
-  changeVillageName
+  changeVillageName,
+  transition
 } from '../actions'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
@@ -32,15 +33,19 @@ type Action =
   | BuildVillage$ChangeNumberOfRobots
   | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
+  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
-    if (Object.keys(state.buildVillage.validity).every(key => state.buildVillage.validity[key])) {
+    if (
+      Object.keys(state.buildVillage.validity)
+        .every((key: keyof ReducerState['buildVillage']['validity']) => state.buildVillage.validity[key])
+    ) {
       return state.buildVillage.menuItems
     }
 
     return state.buildVillage.menuItems.map(item => {
-      if (item.types.includes(ActionTypes.BUILD_VILLAGE)) {
+      if (item.types.includes(ActionTypes.Target.BUILD_VILLAGE)) {
         return {
           ... item,
           disabled: true
@@ -69,32 +74,35 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
-    dispatch(changeAvatar('buildVillage')(value))
+    dispatch(changeAvatar(ActionTypes.Scope.buildVillage)(value))
   },
   handleMemberChange: value => {
-    dispatch(changeMember('buildVillage')(value))
+    dispatch(changeMember(ActionTypes.Scope.buildVillage)(value))
   },
   handleNumberChange: propName => value => {
     if (propName === 'numberOfPlayers') {
-      dispatch(changeNumberOfPlayers('buildVillage')(value))
+      dispatch(changeNumberOfPlayers(ActionTypes.Scope.buildVillage)(value))
     }
     if (propName === 'numberOfRobots') {
-      dispatch(changeNumberOfRobots('buildVillage')(value))
+      dispatch(changeNumberOfRobots(ActionTypes.Scope.buildVillage)(value))
     }
   },
   handleTextChange: propName => value => {
     if (propName === 'comment') {
-      dispatch(changeComment('buildVillage')(value))
+      dispatch(changeComment(ActionTypes.Scope.buildVillage)(value))
     }
     if (propName === 'hostName') {
-      dispatch(changeHostName('buildVillage')(value))
+      dispatch(changeHostName(ActionTypes.Scope.buildVillage)(value))
     }
     if (propName === 'villageName') {
-      dispatch(changeVillageName('buildVillage')(value))
+      dispatch(changeVillageName(ActionTypes.Scope.buildVillage)(value))
     }
   },
   handleValidityChange: propName => validity => {
-    dispatch(changeValidity('buildVillage')(propName)(validity))
+    dispatch(changeValidity(ActionTypes.Scope.buildVillage)(propName)(validity))
+  },
+  transition: target => {
+    dispatch(transition(target))
   }
 })
 const BuildVillageContainer = connect(
