@@ -11,7 +11,7 @@ export default function Header(props: Props) {
       id={props.id}
     >
       {
-        (text: string) =>
+        text =>
           <div className="header">
             {text}
           </div>
