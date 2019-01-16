@@ -51,7 +51,7 @@ export const enum idSearch {
   CHANGE_SEARCH_ID = 'idSearch/CHANGE_SEARCH_ID',
   CHANGE_VALIDITY = 'idSearch/CHANGE_VALIDITY'
 }
-export const enum indexeddb {
+export const enum indexedDB {
   ABORT = 'indexedDB/ABORT',
   BLOCKED = 'indexedDB/BLOCKED',
   CLOSE = 'indexedDB/CLOSE',
