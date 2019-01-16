@@ -16,10 +16,9 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly selectVillage: (id: number) => () => void
-}
-export interface OwnProps {
   readonly transition: (target: Target) => void
 }
+export interface OwnProps {}
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function LobbyForHumanPlayer(props: Props) {
