@@ -6,7 +6,6 @@ import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
 test('<ConnectingToRobotPlayerContainer />', () => {
-  const transition = jest.fn()
   const store = fakeStore()
   const wrapper = mount(
     <Provider store={store}>
