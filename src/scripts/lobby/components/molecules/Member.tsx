@@ -30,7 +30,7 @@ export default function Member(props: Props) {
         }}
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--member--robot">
               {text}
             </div>
@@ -44,7 +44,7 @@ export default function Member(props: Props) {
         }}
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--member--human">
               {text}
             </div>
