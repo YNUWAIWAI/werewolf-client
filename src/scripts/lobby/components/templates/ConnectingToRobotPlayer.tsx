@@ -8,10 +8,10 @@ import {Target} from '../../constants/ActionTypes'
 export interface StateProps {
   readonly menuItems: MenuItem[]
 }
-export interface DispatchProps {}
-export interface OwnProps {
+export interface DispatchProps {
   readonly transition: (target: Target) => void
 }
+export interface OwnProps {}
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function ConnectingToRobotPlayer(props: Props) {

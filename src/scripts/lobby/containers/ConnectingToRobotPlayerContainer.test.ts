@@ -1,8 +1,7 @@
-// @flow
+import * as React from 'react'
 import ConnectingToRobotPlayerContainer from './ConnectingToRobotPlayerContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
@@ -10,9 +9,9 @@ test('<ConnectingToRobotPlayerContainer />', () => {
   const transition = jest.fn()
   const store = fakeStore()
   const wrapper = mount(
-    <Provider store={store} >
+    <Provider store={store}>
       <IntlProviderContainer>
-        <ConnectingToRobotPlayerContainer transition={transition} />
+        <ConnectingToRobotPlayerContainer />
       </IntlProviderContainer>
     </Provider>
   )
