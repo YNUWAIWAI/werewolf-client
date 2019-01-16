@@ -101,7 +101,7 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(villageName)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop village-name">
               {text}
             </div>
@@ -114,23 +114,30 @@ export default function BuildVillageBox(props: Props) {
             values={villageName}
           >
             {
-              (text: string) =>
-                <TextInput
-                  className={`village--item--val village-name ${props.validity.villageName ? '' : 'invalid'}`}
-                  handleChange={handleChange('villageName')}
-                  initialValue={props.value.villageName}
-                  max={villageName.max}
-                  min={villageName.min}
-                  placeholder={text}
-                  required
-                />
+              text => {
+                if (typeof text !== 'string') {
+                  return null
+                }
+
+                return (
+                  <TextInput
+                    className={`village--item--val village-name ${props.validity.villageName ? '' : 'invalid'}`}
+                    handleChange={handleChange('villageName')}
+                    initialValue={props.value.villageName}
+                    max={villageName.max}
+                    min={villageName.min}
+                    placeholder={text}
+                    required
+                  />
+                )
+              }
             }
           </FormattedMessage> :
           <FormattedMessage
             id={`BuildVillage.villageName.anonymous(${props.value.villageName})`}
           >
             {
-              (text: string) =>
+              text =>
                 <div
                   className="village--item--val village-name"
                 >
@@ -143,7 +150,7 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(hostName)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop host-name">
               {text}
             </div>
@@ -158,7 +165,7 @@ export default function BuildVillageBox(props: Props) {
             id="BuildVillage.hostName.anonymous"
           >
             {
-              (text: string) =>
+              text =>
                 <div className="village--item--val host-name">
                   {text}
                 </div>
@@ -169,7 +176,7 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(setup)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop setup">
               {text}
             </div>
@@ -212,7 +219,7 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(comment)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop comment">
               {text}
             </div>
@@ -223,17 +230,24 @@ export default function BuildVillageBox(props: Props) {
         values={comment}
       >
         {
-          (text: string) =>
-            <TextareaInput
-              className={`village--item--val comment ${props.validity.comment ? '' : 'invalid'}`}
-              handleChange={handleChange('comment')}
-              initialValue={props.value.comment}
-              max={comment.max}
-              min={comment.min}
-              placeholder={text}
-              required={false}
-              rows={3}
-            />
+          text => {
+            if (text !== 'string') {
+              return null
+            }
+
+            return (
+              <TextareaInput
+                className={`village--item--val comment ${props.validity.comment ? '' : 'invalid'}`}
+                handleChange={handleChange('comment')}
+                initialValue={props.value.comment}
+                max={comment.max}
+                min={comment.min}
+                placeholder={text}
+                required={false}
+                rows={3}
+              />
+            )
+          }
         }
       </FormattedMessage>
     </div>
