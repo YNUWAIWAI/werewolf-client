@@ -1,5 +1,3 @@
-/* global lobby */
-/// <reference types="lobby" />
 import * as React from 'react'
 import LanguageSelect from './LanguageSelect'
 import Select from 'react-select'

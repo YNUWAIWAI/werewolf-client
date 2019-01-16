@@ -1,6 +1,5 @@
-/* global lobby */
-/// <reference types="lobby" />
 import * as React from 'react'
+import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'
 
 interface Props {
@@ -15,8 +14,11 @@ interface Option {
 }
 
 export default function LanguageSelect(props: Props) {
-  const handleChange = (selectedOption: Option | []) => {
-    if (Array.isArray(selectedOption)) { // selectedOption: []
+  const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
+    if (!selectedOption) { // selectedOption: null | undifined
+      return
+    }
+    if (Array.isArray(selectedOption)) { // selectedOption: Option[]
       props.handleChange(false)(lobby.Language.en)
     } else { // selectedOption: Option
       props.handleChange(true)(selectedOption.value)
