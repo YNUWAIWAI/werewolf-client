@@ -62,7 +62,7 @@ export default function MemberSelect(props: Props) {
         }}
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--member-select--human">
               {text}
             </div>
