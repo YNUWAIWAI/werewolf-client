@@ -1,4 +1,3 @@
-// @flow
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
@@ -26,10 +25,10 @@ export type Action =
   | actions.BuildVillage$ChangeVillageName
   | actions.ChangeLanguage
   | actions.ChangeLobby
+  | actions.ChangeToken
   | actions.ChangeUserEmail
   | actions.ChangeUserName
   | actions.ChangeUserPassword
-  | actions.ChangeToken
   | actions.IdSearch$ChangeSearchId
   | actions.IdSearch$ChangeValidity
   | actions.KickOutPlayer
