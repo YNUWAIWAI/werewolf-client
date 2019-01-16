@@ -4,7 +4,7 @@ declare namespace village {
     serverToClient = 'server to client',
     clientToServer = 'client to server'
   }
-  enum Channel {
+  const enum Channel {
     anonymousAudience = 'anonymousAudience',
     grave = 'grave',
     hunter = 'hunter',
@@ -15,21 +15,21 @@ declare namespace village {
     seer = 'seer',
     werewolf = 'werewolf'
   }
-  enum ChatChannel {
+  const enum ChatChannel {
     grave = 'grave',
     limited = 'limited',
     master = 'master',
     private = 'private',
     public = 'public'
   }
-  enum InputChannel {
+  const enum InputChannel {
     grave = 'grave',
     limited = 'limited',
     postMortem = 'post mortem',
     private = 'private',
     public = 'public'
   }
-  enum Phase {
+  const enum Phase {
     morning = 'morning',
     day = 'day',
     night = 'night',
@@ -37,7 +37,7 @@ declare namespace village {
     result = 'result',
     flavorText = 'flavor text'
   }
-  enum RoleId {
+  const enum RoleId {
     villager = 'villager',
     seer = 'seer',
     medium = 'medium',
@@ -48,30 +48,27 @@ declare namespace village {
     werehamster = 'werehamster',
     master = 'master'
   }
-  enum BoardState {
+  const enum BoardState {
     QUESTION = '?',
     TRIANGLE = 'Δ',
     CIRCLE = 'O',
     CROSS = 'X',
     FILL = 'fill'
   }
-  enum Language {
+  const enum Language {
     en = 'en',
     fr = 'fr',
     it = 'it',
     ja = 'ja'
   }
-  type LanguageMap = {
-    [lang in Language]: string;
-  }
 
-  enum Result {
+  const enum Result {
     win = 'win',
     lose = 'lose'
   }
   type AgentId = string
 
-  enum AgentStatus {
+  const enum AgentStatus {
     alive = 'alive',
     dead = 'dead',
     deathByExecution = 'death by execution',
@@ -79,16 +76,16 @@ declare namespace village {
     deathByFear = 'death by fear',
     unnaturalDeath = 'unnatural death'
   }
-  enum Team {
+  const enum Team {
     villager = 'villager',
     werehamster = 'werehamster',
     werewolf = 'werewolf'
   }
-  enum Gender {
+  const enum Gender {
     female = 'female',
     male = 'male'
   }
-  enum Context {
+  const enum Context {
     Agent = 'https://werewolf.world/context/0.2/agent.jsonld',
     Avatar = 'https://werewolf.world/context/0.2/avatar.jsonld',
     Base = 'https://werewolf.world/context/0.2/base.jsonld',
@@ -103,7 +100,7 @@ declare namespace village {
     Vote = 'https://werewolf.world/context/0.2/vote.jsonld',
     VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
   }
-  enum BaseContext {
+  const enum BaseContext {
     Agent = 'https://werewolf.world/context/0.2/agent.jsonld',
     Avatar = 'https://werewolf.world/context/0.2/avatar.jsonld',
     Base = 'https://werewolf.world/context/0.2/base.jsonld',
@@ -115,7 +112,7 @@ declare namespace village {
     Vote = 'https://werewolf.world/context/0.2/vote.jsonld',
     VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
   }
-  enum Message {
+  const enum Message {
     boardMessage = 'boardMessage',
     errorMessage = 'errorMessage',
     flavorTextMessage = 'flavorTextMessage',
@@ -124,7 +121,7 @@ declare namespace village {
     systemMessage = 'systemMessage',
     voteMessage = 'voteMessage',
   }
-  enum NavigationType {
+  const enum NavigationType {
     SHOW_RESULT = 'SHOW_RESULT',
     RETURN_TO_LOBBY = 'RETURN_TO_LOBBY'
   }
