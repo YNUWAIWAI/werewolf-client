@@ -1,8 +1,6 @@
-// @flow
-
-import type {Action} from '.'
-import type {Middleware} from 'redux'
-import type {ReducerState} from '../reducers'
+import {Action} from '.'
+import {Middleware} from 'redux'
+import {ReducerState} from '../reducers'
 
 const logger: Middleware<ReducerState, Action> = store => next => action => {
   console.group(action.type)
