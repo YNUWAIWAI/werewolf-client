@@ -28,17 +28,24 @@ export default function IdSearchBox(props: Props) {
         }}
       >
         {
-          (text: string) =>
-            <input
-              className="id-search--input"
-              maxLength={props.max}
-              minLength={1}
-              onChange={handleIdChange}
-              pattern="^\d+$"
-              placeholder={text}
-              required
-              type="text"
-            />
+          text => {
+            if (typeof text !== 'string') {
+              return null
+            }
+
+            return (
+              <input
+                className="id-search--input"
+                maxLength={props.max}
+                minLength={1}
+                onChange={handleIdChange}
+                pattern="^\d+$"
+                placeholder={text}
+                required
+                type="text"
+              />
+            )
+          }
         }
       </FormattedMessage>
       <span className="id-search--validity" />
