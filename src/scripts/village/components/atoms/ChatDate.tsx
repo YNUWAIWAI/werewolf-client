@@ -1,11 +1,10 @@
-// @flow
+import * as React from 'react'
 import {FormattedDate, FormattedMessage, FormattedTime} from 'react-intl'
-import React from 'react'
 
-type Props = {
-  +from: string,
-  +limit: number,
-  +to: string
+interface Props {
+  readonly from: string
+  readonly limit: number
+  readonly to: string
 }
 
 export default function ChatDate(props: Props) {
