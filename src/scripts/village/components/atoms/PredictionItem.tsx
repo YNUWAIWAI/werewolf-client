@@ -1,22 +1,19 @@
-// @flow
-import {CIRCLE, CROSS, FILL, QUESTION, TRIANGLE} from '../../constants/State'
-import type {BoardState} from 'village'
+import * as React from 'react'
 import Circle from './svg/Circle'
 import Cross from './svg/Cross'
 import Question from './svg/Question'
-import React from 'react'
 import Triangle from './svg/Triangle'
 
-type Props = {
-  +date: number,
-  +fixed: boolean,
-  +handleBoardClick: BoardState => void,
-  +state: BoardState
+interface Props {
+  readonly date: number
+  readonly fixed: boolean
+  readonly handleBoardClick: (state: village.BoardState) => void
+  readonly state: village.BoardState
 }
 
 export default function PredictionItem(props: Props) {
   const handleBoardClick = () => {
-    const state = [QUESTION, TRIANGLE, CIRCLE, CROSS]
+    const state = [village.BoardState.QUESTION, village.BoardState.TRIANGLE, village.BoardState.CIRCLE, village.BoardState.CROSS]
     const currentState = props.state
 
     if (!state.includes(currentState) || props.fixed) {
@@ -30,15 +27,15 @@ export default function PredictionItem(props: Props) {
 
   const image = (state => {
     switch (state) {
-      case QUESTION:
+      case village.BoardState.QUESTION:
         return <Question />
-      case TRIANGLE:
+      case village.BoardState.TRIANGLE:
         return <Triangle />
-      case CIRCLE:
+      case village.BoardState.CIRCLE:
         return <Circle />
-      case CROSS:
+      case village.BoardState.CROSS:
         return <Cross />
-      case FILL:
+      case village.BoardState.FILL:
       default:
         return ''
     }
@@ -46,7 +43,7 @@ export default function PredictionItem(props: Props) {
 
   return (
     <div
-      className={`prediction--item ${props.fixed && props.state !== FILL ? 'fixed' : ''}`}
+      className={`prediction--item ${props.fixed && props.state !== village.BoardState.FILL ? 'fixed' : ''}`}
       data-date={props.date}
       data-state={props.state}
       onClick={handleBoardClick}
