@@ -23,7 +23,7 @@ export default function AdvancedSearchProp(props: Props) {
         id={`AdvancedSearch.label(${props.name})`}
       >
         {
-          (text: string) =>
+          text =>
             <label htmlFor={props.name}>
               {text}
             </label>
