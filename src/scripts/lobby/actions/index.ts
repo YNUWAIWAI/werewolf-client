@@ -171,11 +171,6 @@ export const transition = (target: ActionTypes.Target): {type: ActionTypes.Targe
   type: target
 })
 
-export type SocketClose = ReturnType<typeof socket.close>
-export type SocketError = ReturnType<typeof socket.error>
-export type SocketMessage = ReturnType<typeof socket.message>
-export type SocketOpen = ReturnType<typeof socket.open>
-export type SocketSend = ReturnType<typeof socket.send>
 export type AdvancedSearch$ChangeAvatar = ReturnType<ReturnType<typeof changeAvatar>>
 export type AdvancedSearch$ChangeCheckbox = ReturnType<ReturnType<ReturnType<typeof changeCheckbox>>>
 export type AdvancedSearch$ChangeComment = ReturnType<ReturnType<typeof changeComment>>
@@ -198,8 +193,13 @@ export type ChangeToken = ReturnType<typeof changeToken>
 export type ChangeUserEmail = ReturnType<typeof changeUserEmail>
 export type ChangeUserName = ReturnType<typeof changeUserName>
 export type ChangeUserPassword = ReturnType<typeof changeUserPassword>
-export type KickOutPlayer = ReturnType<typeof kickOutPlayer>
 export type IdSearch$ChangeSearchId = ReturnType<typeof changeSearchId>
 export type IdSearch$ChangeValidity = ReturnType<ReturnType<ReturnType<typeof changeValidity>>>
+export type KickOutPlayer = ReturnType<typeof kickOutPlayer>
 export type SelectVillage = ReturnType<typeof selectVillage>
+export type SocketClose = ReturnType<typeof socket.close>
+export type SocketError = ReturnType<typeof socket.error>
+export type SocketMessage = ReturnType<typeof socket.message>
+export type SocketOpen = ReturnType<typeof socket.open>
+export type SocketSend = ReturnType<typeof socket.send>
 export type Transition = ReturnType<typeof transition>
