@@ -1,17 +1,25 @@
-// @flow
-import History, {type DispatchProps, type StateProps} from '../components/templates/History'
-import {type SelectVillage, selectVillage} from '../actions'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import History, {DispatchProps, StateProps} from '../components/templates/History'
+import {
+  SelectVillage,
+  Transition,
+  selectVillage,
+  transition
+} from '../actions'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
   | SelectVillage
+  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => state.history
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   selectVillage: id => () => {
     dispatch(selectVillage(id))
+  },
+  transition: target => {
+    dispatch(transition(target))
   }
 })
 const HistoryContainer = connect(
