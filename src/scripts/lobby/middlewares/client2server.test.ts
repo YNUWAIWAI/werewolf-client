@@ -1,24 +1,13 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import Ajv from 'ajv'
+import * as Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as advancedSearch} from '../reducers/advancedSearch'
-import {initialState as app} from '../reducers/app'
 import {initialState as buildVillage} from '../reducers/buildVillage'
-import {initialState as connectingToRobotPlayer} from '../reducers/connectingToRobotPlayer'
+import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
-import {getCastFromNumberOfPlayers} from '../constants/Cast'
-import {initialState as history} from '../reducers/history'
+import {getCastFromNumberOfPlayers} from '../util'
 import {initialState as idSearch} from '../reducers/idSearch'
-import {initialState as language} from '../reducers/language'
-import {initialState as lobbyForAudience} from '../reducers/lobbyForAudience'
-import {initialState as lobbyForHumanPlayer} from '../reducers/lobbyForHumanPlayer'
-import {initialState as lobbyForRobotPlayer} from '../reducers/lobbyForRobotPlayer'
-import {initialState as main} from '../reducers/main'
 import middleware from './client2server'
-import {initialState as ping} from '../reducers/ping'
-import {initialState as settings} from '../reducers/settings'
-import {initialState as waitingForPlayers} from '../reducers/waitingForPlayers'
 
 const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
 const CLIENT2SERVER = `${BASE_URI}/client2server`
@@ -32,7 +21,6 @@ const ajv = new Ajv()
 
 describe('ADVANCED_SEARCH', () => {
   describe('validity: true', () => {
-    const dispatch = jest.fn()
     const value = {
       avatar: 'fixed',
       comment: 'Beginners are welcome',
@@ -41,7 +29,7 @@ describe('ADVANCED_SEARCH', () => {
       minimum: 5,
       villageName: 'Alice\'s Village'
     }
-    const getState = () => ({
+    const store = fakeStore({
       advancedSearch: {
         ... advancedSearch,
         checked: {
@@ -62,38 +50,25 @@ describe('ADVANCED_SEARCH', () => {
         },
         value
       },
-      app,
-      buildVillage,
-      connectingToRobotPlayer,
-      history,
-      idSearch,
-      language,
-      lobbyForAudience,
-      lobbyForHumanPlayer,
-      lobbyForRobotPlayer,
-      main,
-      ping,
-      settings,
       token: {
         'human player': avatarToken.humanPlayer,
         'lobby': 'human player',
         'onymous audience': avatarToken.onymousAudience,
         'robot player': avatarToken.robotPlayer
-      },
-      waitingForPlayers
+      }
     })
-    const nextHandler = middleware({
-      dispatch,
-      getState
-    })
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
     const action = {
-      type: ActionTypes.ADVANCED_SEARCH
+      type: ActionTypes.Target.ADVANCED_SEARCH
     }
     const advancedSearchPayload = {
       ... value,
-      lobby: 'human player',
+      lobby: lobby.Lobby.human,
       token: avatarToken.humanPlayer,
       type: 'advancedSearch'
     }
@@ -118,8 +93,7 @@ describe('ADVANCED_SEARCH', () => {
     })
   })
   describe('validity: false', () => {
-    const dispatch = jest.fn()
-    const getState = () => ({
+    const store = fakeStore({
       advancedSearch: {
         ... advancedSearch,
         checked: {
@@ -139,34 +113,21 @@ describe('ADVANCED_SEARCH', () => {
           villageName: false
         }
       },
-      app,
-      buildVillage,
-      connectingToRobotPlayer,
-      history,
-      idSearch,
-      language,
-      lobbyForAudience,
-      lobbyForHumanPlayer,
-      lobbyForRobotPlayer,
-      main,
-      ping,
-      settings,
       token: {
         'human player': avatarToken.humanPlayer,
         'lobby': 'human player',
         'onymous audience': avatarToken.onymousAudience,
         'robot player': avatarToken.robotPlayer
-      },
-      waitingForPlayers
+      }
     })
-    const nextHandler = middleware({
-      dispatch,
-      getState
-    })
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
     const action = {
-      type: ActionTypes.ADVANCED_SEARCH
+      type: ActionTypes.Target.ADVANCED_SEARCH
     }
     const advancedSearchPayload = {
       avatar: 'random',
@@ -201,37 +162,22 @@ describe('ADVANCED_SEARCH', () => {
   })
 })
 describe('BUILD_VILLAGE', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.BUILD_VILLAGE
+    type: ActionTypes.Target.BUILD_VILLAGE
   }
   const buildVillagePayload = {
     avatar: buildVillage.value.avatar,
@@ -281,38 +227,23 @@ describe('BUILD_VILLAGE', () => {
   })
 })
 describe('CHANGE_LANGUAGE', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
     language: 'ja',
-    type: ActionTypes.CHANGE_LANGUAGE
+    type: ActionTypes.global.CHANGE_LANGUAGE
   }
   const changeLangPayload = {
     lang: 'ja',
@@ -339,37 +270,22 @@ describe('CHANGE_LANGUAGE', () => {
   })
 })
 describe('CHANGE_USER_EMAIL', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.CHANGE_USER_EMAIL,
+    type: ActionTypes.global.CHANGE_USER_EMAIL,
     userEmail: 'example@example.com'
   }
   const changeUserEmailPayload = {
@@ -397,37 +313,22 @@ describe('CHANGE_USER_EMAIL', () => {
   })
 })
 describe('CHANGE_USER_NAME', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.CHANGE_USER_NAME,
+    type: ActionTypes.global.CHANGE_USER_NAME,
     userName: 'userName'
   }
   const changeUserNamePayload = {
@@ -455,37 +356,22 @@ describe('CHANGE_USER_NAME', () => {
   })
 })
 describe('CHANGE_USER_PASSWORD', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.CHANGE_USER_PASSWORD,
+    type: ActionTypes.global.CHANGE_USER_PASSWORD,
     userPassword: 'userPassword'
   }
   const changeUserPasswordPayload = {
@@ -513,39 +399,24 @@ describe('CHANGE_USER_PASSWORD', () => {
   })
 })
 describe('KICK_OUT_PLAYER', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const action = {
     token,
-    type: ActionTypes.KICK_OUT_PLAYER
+    type: ActionTypes.global.KICK_OUT_PLAYER
   }
   const kickOutPlayerPayload = {
     players: [
@@ -577,23 +448,9 @@ describe('KICK_OUT_PLAYER', () => {
   })
 })
 describe('LEAVE_WAITING_PAGE', () => {
-  const dispatch = jest.fn()
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
   const villageId = 1
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
@@ -648,14 +505,14 @@ describe('LEAVE_WAITING_PAGE', () => {
       }
     }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.LEAVE_WAITING_PAGE
+    type: ActionTypes.Target.LEAVE_WAITING_PAGE
   }
   const leaveWaitingPagePayload = {
     lobby: 'human player',
@@ -684,23 +541,9 @@ describe('LEAVE_WAITING_PAGE', () => {
   })
 })
 describe('PLAY_GAME', () => {
-  const dispatch = jest.fn()
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
   const villageId = 1
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
@@ -755,14 +598,14 @@ describe('PLAY_GAME', () => {
       }
     }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.PLAY_GAME
+    type: ActionTypes.global.PLAY_GAME
   }
   const playPayload = {
     token: avatarToken.humanPlayer,
@@ -790,41 +633,27 @@ describe('PLAY_GAME', () => {
   })
 })
 describe('ID_SEARCH valid id', () => {
-  const dispatch = jest.fn()
   const idForSearching = 123
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
+  const store = fakeStore({
     idSearch: {
       ... idSearch,
       id: idForSearching
     },
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.ID_SEARCH
+    type: ActionTypes.Target.ID_SEARCH
   }
   const idSearchPayload = {
     idForSearching,
@@ -853,37 +682,22 @@ describe('ID_SEARCH valid id', () => {
   })
 })
 describe('ID_SEARCH invalid id(=-1)', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.ID_SEARCH
+    type: ActionTypes.Target.ID_SEARCH
   }
 
   test('dispatch correctly', () => {
@@ -892,39 +706,24 @@ describe('ID_SEARCH invalid id(=-1)', () => {
   })
 })
 describe('SELECT_VILLAGE', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const villageId = 1
   const action = {
     id: villageId,
-    type: ActionTypes.SELECT_VILLAGE
+    type: ActionTypes.global.SELECT_VILLAGE
   }
   const payload = {
     token: avatarToken.humanPlayer,
@@ -952,37 +751,22 @@ describe('SELECT_VILLAGE', () => {
   })
 })
 describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.SHOW_LOBBY_FOR_AUDIENCE
+    type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
   }
   const enterLobbyPayload = {
     lobby: 'onymous audience',
@@ -1029,37 +813,22 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
   })
 })
 describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER
+    type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
   }
   const enterLobbyPayload = {
     lobby: 'human player',
@@ -1106,37 +875,22 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   })
 })
 describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.SHOW_LOBBY_FOR_ROBOT_PLAYER
+    type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
   }
   const enterLobbyPayload = {
     lobby: 'robot player',
@@ -1183,37 +937,22 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   })
 })
 describe('SHOW_SETTINGS', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.SHOW_SETTINGS
+    type: ActionTypes.Target.SHOW_SETTINGS
   }
   const payload = {
     type: 'getSettings'
@@ -1239,33 +978,18 @@ describe('SHOW_SETTINGS', () => {
   })
 })
 describe('socket/MESSAGE tyoe: "ping"', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
-    advancedSearch,
-    app,
-    buildVillage,
-    connectingToRobotPlayer,
-    history,
-    idSearch,
-    language,
-    lobbyForAudience,
-    lobbyForHumanPlayer,
-    lobbyForRobotPlayer,
-    main,
-    ping,
-    settings,
+  const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': 'human player',
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
-    },
-    waitingForPlayers
+    }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const pingId = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
