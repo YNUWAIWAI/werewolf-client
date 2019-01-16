@@ -94,7 +94,7 @@ export const enum Scope {
   advancedSearch = 'advancedSearch',
   buildVillage = 'buildVillage',
   idSearch = 'idSearch',
-  indexeddb = 'indexeddb',
+  indexedDB = 'indexedDB',
   socket = 'socket'
 }
 
