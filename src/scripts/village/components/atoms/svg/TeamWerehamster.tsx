@@ -1,8 +1,7 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +className?: string
+interface Props {
+  readonly className?: string
 }
 
 export default function TeamWerehamster(props: Props) {
