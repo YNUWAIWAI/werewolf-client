@@ -18,7 +18,7 @@ export default function MenuItem(props: Props) {
       id={props.id}
     >
       {
-        (text: string) =>
+        text =>
           <li
             className={`${props.className} ${props.disabled ? 'disabled' : ''} ${props.isLoading ? 'loader' : ''}`}
             onClick={() => {
