@@ -149,7 +149,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             id="Settings.head(language)"
           >
             {
-              (text: string) =>
+              text =>
                 <div className="settings--bucket--head">
                   {text}
                 </div>
@@ -168,7 +168,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                (text: string) =>
+                text =>
                   <button
                     className="settings--bucket--form--button"
                     disabled={!this.state.language.valid}
@@ -185,7 +185,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             id="Settings.head(user)"
           >
             {
-              (text: string) =>
+              text =>
                 <div className="settings--bucket--head">
                   {text}
                 </div>
@@ -199,7 +199,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.label(userName)"
             >
               {
-                (text: string) =>
+                text =>
                   <label
                     className="settings--bucket--form--label"
                     htmlFor="userName"
@@ -222,7 +222,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                (text: string) =>
+                text =>
                   <button
                     className="settings--bucket--form--button"
                     disabled={!this.state.userName.valid}
@@ -241,7 +241,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.label(userEmail)"
             >
               {
-                (text: string) =>
+                text =>
                   <label
                     className="settings--bucket--form--label"
                     htmlFor="userEmail"
@@ -260,7 +260,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                (text: string) =>
+                text =>
                   <button
                     className="settings--bucket--form--button"
                     disabled={!this.state.userEmail.valid}
@@ -279,7 +279,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.label(userPassword)"
             >
               {
-                (text: string) =>
+                text =>
                   <label
                     className="settings--bucket--form--label"
                     htmlFor="userPassword"
@@ -297,7 +297,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                (text: string) =>
+                text =>
                   <button
                     className="settings--bucket--form--button"
                     disabled={!this.state.userPassword.valid}
@@ -314,7 +314,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             id="Settings.head(danger)"
           >
             {
-              (text: string) =>
+              text =>
                 <div className="settings--bucket--head danger">
                   {text}
                 </div>
@@ -328,7 +328,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(logout)"
             >
               {
-                (text: string) =>
+                text =>
                   <button
                     className={`settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     type="submit"
@@ -346,7 +346,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(deactivate)"
             >
               {
-                (text: string) =>
+                text =>
                   <button
                     className={`settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     type="submit"
