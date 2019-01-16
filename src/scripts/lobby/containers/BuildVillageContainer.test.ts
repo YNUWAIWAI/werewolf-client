@@ -55,7 +55,7 @@ describe('<BuildVillageContainer />', () => {
     const wrapper = mount(
       <Provider store={store} >
         <IntlProviderContainer>
-          <BuildVillageContainer transition={transition} />
+          <BuildVillageContainer />
         </IntlProviderContainer>
       </Provider>
     )
