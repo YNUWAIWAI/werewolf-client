@@ -1,10 +1,8 @@
-// @flow
-import type {Channel} from 'village'
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +id: number,
-  +intensionalDisclosureRange: Channel
+interface Props {
+  readonly id: number
+  readonly intensionalDisclosureRange: village.Channel
 }
 
 export default function ChatNum(props: Props) {
