@@ -1,13 +1,12 @@
-// @flow
+import * as React from 'react'
 import ChatIcon from './ChatIcon'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 describe('<ChatIcon />', () => {
   test('anonymousAudience', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="anonymousAudience"
+        channel={village.Channel.anonymousAudience}
         className="className"
       />
     )
@@ -17,7 +16,7 @@ describe('<ChatIcon />', () => {
   test('grave', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="grave"
+        channel={village.Channel.grave}
         className="className"
       />
     )
@@ -27,7 +26,7 @@ describe('<ChatIcon />', () => {
   test('hunter', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="hunter"
+        channel={village.Channel.hunter}
         className="className"
       />
     )
@@ -37,7 +36,7 @@ describe('<ChatIcon />', () => {
   test('master', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="master"
+        channel={village.Channel.master}
         className="className"
       />
     )
@@ -47,7 +46,7 @@ describe('<ChatIcon />', () => {
   test('onymousAudience', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="onymousAudience"
+        channel={village.Channel.onymousAudience}
         className="className"
       />
     )
@@ -57,7 +56,7 @@ describe('<ChatIcon />', () => {
   test('private', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="private"
+        channel={village.Channel.private}
         className="className"
       />
     )
@@ -67,7 +66,7 @@ describe('<ChatIcon />', () => {
   test('public', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="public"
+        channel={village.Channel.public}
         className="className"
       />
     )
@@ -77,7 +76,7 @@ describe('<ChatIcon />', () => {
   test('seer', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="seer"
+        channel={village.Channel.seer}
         className="className"
       />
     )
@@ -87,7 +86,7 @@ describe('<ChatIcon />', () => {
   test('werewolf', () => {
     const wrapper = shallow(
       <ChatIcon
-        channel="werewolf"
+        channel={village.Channel.werewolf}
         className="className"
       />
     )

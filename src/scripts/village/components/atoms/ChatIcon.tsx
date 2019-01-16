@@ -1,54 +1,52 @@
-// @flow
+import * as React from 'react'
 import Audience from './svg/Audience'
-import type {Channel} from 'village'
 import Grave from './svg/Grave'
 import Master from './svg/Master'
 import Private from './svg/Private'
 import Public from './svg/Public'
-import React from 'react'
 import Werewolf from './svg/Werewolf'
 
-export type Props = {
-  +channel: Channel,
-  +className: string
+export interface Props {
+  readonly channel: village.Channel,
+  readonly className: string
 }
 
 export default function ChatIcon(props: Props) {
   switch (props.channel) {
-    case 'anonymousAudience':
-    case 'onymousAudience':
+    case village.Channel.anonymousAudience:
+    case village.Channel.onymousAudience:
       return (
         <div className={props.className}>
           <Audience />
         </div>
       )
-    case 'grave':
+    case village.Channel.grave:
       return (
         <div className={props.className}>
           <Grave />
         </div>
       )
-    case 'hunter':
-    case 'seer':
-    case 'werewolf':
+    case village.Channel.hunter:
+    case village.Channel.seer:
+    case village.Channel.werewolf:
       return (
         <div className={props.className}>
           <Werewolf />
         </div>
       )
-    case 'master':
+    case village.Channel.master:
       return (
         <div className={props.className}>
           <Master />
         </div>
       )
-    case 'private':
+    case village.Channel.private:
       return (
         <div className={props.className}>
           <Private />
         </div>
       )
-    case 'public':
+    case village.Channel.public:
       return (
         <div className={props.className}>
           <Public />
