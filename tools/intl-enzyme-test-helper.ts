@@ -4,7 +4,7 @@ import * as React from 'react'
 import {IntlProvider, intlShape} from 'react-intl'
 import {MountRendererProps, ShallowRendererProps, mount, shallow} from 'enzyme'
 
-export const initRenderer = (locale: lobby.Language, messages: {[key: string]: string}) => {
+export const initRenderer = (locale: lobby.Language | village.Language, messages: {[key: string]: string}) => {
   const intlProvider = new IntlProvider(
     {
       locale,
