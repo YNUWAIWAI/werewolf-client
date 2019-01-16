@@ -1,17 +1,18 @@
-// @flow
 import {
-  type ChangeLanguage,
-  type ChangeUserEmail,
-  type ChangeUserName,
-  type ChangeUserPassword,
+  ChangeLanguage,
+  ChangeUserEmail,
+  ChangeUserName,
+  ChangeUserPassword,
+  Transition,
   changeLanguage,
   changeUserEmail,
   changeUserName,
-  changeUserPassword
+  changeUserPassword,
+  transition
 } from '../actions'
-import Settings, {type DispatchProps, type StateProps} from '../components/templates/Settings'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import Settings, {DispatchProps, StateProps} from '../components/templates/Settings'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
@@ -19,6 +20,7 @@ type Action =
   | ChangeUserEmail
   | ChangeUserName
   | ChangeUserPassword
+  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => state.settings
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
@@ -33,6 +35,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   },
   handleChangeUserPassword: value => {
     dispatch(changeUserPassword(value))
+  },
+  transition: target => {
+    dispatch(transition(target))
   }
 })
 const SettingsContainer = connect(

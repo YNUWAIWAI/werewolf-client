@@ -19,10 +19,9 @@ export interface DispatchProps {
   readonly handleChangeUserEmail: (value: string) => void
   readonly handleChangeUserName: (value: string) => void
   readonly handleChangeUserPassword: (value: string) => void
-}
-export interface OwnProps {
   readonly transition: (target: Target) => void
 }
+export interface OwnProps {}
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function Setting(props: Props) {
