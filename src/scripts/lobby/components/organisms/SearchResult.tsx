@@ -20,7 +20,7 @@ export default function SearchResult(props: Props) {
         id="SearchResult.notFound"
       >
         {
-          (text: string) =>
+          text =>
             <div className={`${props.className}--not-found`}>
               {text}
             </div>
