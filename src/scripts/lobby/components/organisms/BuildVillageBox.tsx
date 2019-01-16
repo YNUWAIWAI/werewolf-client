@@ -231,7 +231,7 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           text => {
-            if (text !== 'string') {
+            if (typeof text !== 'string') {
               return null
             }
 
