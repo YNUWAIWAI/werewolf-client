@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import HideButton from './HideButton'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<HideButton hide />', () => {

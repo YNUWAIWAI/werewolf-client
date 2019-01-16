@@ -1,14 +1,13 @@
-// @flow
+import * as React from 'react'
 import DownArrow from './svg/DownArrow'
-import React from 'react'
 
-export type StateProps = {
-  +hide: boolean
+export interface StateProps {
+  readonly hide: boolean
 }
-export type DispatchProps = {
-  +handleClick: boolean => void => void
+export interface DispatchProps {
+  readonly handleClick: (valid: boolean) => () => void
 }
-export type OwnProps = {}
+export interface OwnProps {}
 export type Props =
   & StateProps
   & DispatchProps
