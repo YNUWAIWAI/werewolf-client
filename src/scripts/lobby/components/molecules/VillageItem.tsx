@@ -17,7 +17,7 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(villageName)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop village-name">
               {text}
             </div>
@@ -33,7 +33,7 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(hostName)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop host-name">
               {text}
             </div>
@@ -48,7 +48,7 @@ export default function VillageItem(props: Props) {
             id="VillageItem.hostName.anonymous"
           >
             {
-              (text: string) =>
+              text =>
                 <div className="village--item--val host-name">
                   {text}
                 </div>
@@ -59,7 +59,7 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(setup)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop setup">
               {text}
             </div>
@@ -73,7 +73,7 @@ export default function VillageItem(props: Props) {
         }}
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--val setup1">
               {text}
             </div>
@@ -83,7 +83,7 @@ export default function VillageItem(props: Props) {
         id={`VillageItem.val(avatar, ${props.avatar})`}
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--val setup2">
               {text}
             </div>
@@ -94,7 +94,7 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(comment)"
       >
         {
-          (text: string) =>
+          text =>
             <div className="village--item--prop comment">
               {text}
             </div>
