@@ -1,6 +1,5 @@
-/* global lobby */
-/// <reference types="lobby" />
 import * as React from 'react'
+import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'
 import {injectIntl} from 'react-intl'
 
@@ -17,12 +16,15 @@ interface Option {
 }
 
 export default injectIntl(function AvatarSelect(props: Props) {
-  const handleChange = (selectedOption: Option | []) => {
+  const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
+    if (!selectedOption) { // selectedOption: null | undifined
+      return
+    }
     if (!Array.isArray(selectedOption)) { // selectedOption: Option
       props.handleChange(true)(selectedOption.value)
-    } else if (props.type === 'advancedSearch') { // selectedOption: []
+    } else if (props.type === 'advancedSearch') { // selectedOption: Option[]
       props.handleChange(true)(lobby.Avatar.random)
-    } else { // props.type === 'buildVillage', selectedOption: []
+    } else { // props.type === 'buildVillage', selectedOption: Option[]
       props.handleChange(false)(lobby.Avatar.fixed)
     }
   }
