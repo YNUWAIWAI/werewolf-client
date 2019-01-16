@@ -1,8 +1,7 @@
-// @flow
+import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
 import LobbyForAudienceContainer from './LobbyForAudienceContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
@@ -12,7 +11,7 @@ test('<LobbyForAudienceContainer />', () => {
   const wrapper = mount(
     <Provider store={store} >
       <IntlProviderContainer>
-        <LobbyForAudienceContainer transition={transition} />
+        <LobbyForAudienceContainer />
       </IntlProviderContainer>
     </Provider>
   )
