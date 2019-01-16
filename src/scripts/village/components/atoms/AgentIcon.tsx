@@ -1,12 +1,11 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-export type Props = {
-  +additionalClass?: string,
-  +class: string,
-  +handleOnClick?: void => void,
-  +image: string,
-  +name: string,
+export interface Props {
+  readonly additionalClass?: string
+  readonly class: string
+  readonly handleOnClick?: () => void
+  readonly image: string
+  readonly name: string
 }
 
 export default function AgentIcon(props: Props) {
