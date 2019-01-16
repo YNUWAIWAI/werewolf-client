@@ -1,21 +1,24 @@
-// @flow
-import IdSearch, {type DispatchProps, type StateProps} from '../components/templates/IdSearch'
+import IdSearch, {DispatchProps, StateProps} from '../components/templates/IdSearch'
 import {
-  type IdSearch$ChangeSearchId,
-  type IdSearch$ChangeValidity,
-  type SelectVillage,
+  IdSearch$ChangeSearchId,
+  IdSearch$ChangeValidity,
+  SelectVillage,
+  Transition,
   changeSearchId,
   changeValidity,
-  selectVillage
+  selectVillage,
+  transition
 } from '../actions'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
+import {Scope} from '../constants/ActionTypes'
 import {connect} from 'react-redux'
 
 type Action =
   | IdSearch$ChangeSearchId
   | IdSearch$ChangeValidity
   | SelectVillage
+  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => state.idSearch
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
@@ -23,10 +26,13 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(changeSearchId(id))
   },
   handleValidityChange: validity => {
-    dispatch(changeValidity('idSearch')('id')(validity))
+    dispatch(changeValidity(Scope.idSearch)('id')(validity))
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))
+  },
+  transition: target => {
+    dispatch(transition(target))
   }
 })
 const IdSearchContainer = connect(

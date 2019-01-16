@@ -21,10 +21,9 @@ export interface DispatchProps {
   readonly handleSearchIdChange: (id: number) => void
   readonly handleValidityChange: (valid: boolean) => void
   readonly selectVillage: (id: number) => () => void
-}
-export interface OwnProps {
   readonly transition: (target: Target) => void
 }
+export interface OwnProps {}
 export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function IdSearch(props: Props) {
