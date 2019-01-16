@@ -40,11 +40,9 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
-    if (
-      Object.keys(state.advancedSearch.checked)
-        .filter((key: keyof ReducerState['advancedSearch']['checked']) => state.advancedSearch.checked[key])
-        .every((key: keyof ReducerState['advancedSearch']['checked']) => state.advancedSearch.validity[key])
-    ) {
+    const keys: (keyof ReducerState['advancedSearch']['checked'])[] = ['avatar', 'comment', 'hostName', 'maximum', 'minimum', 'villageName']
+
+    if (keys.filter(key => state.advancedSearch.checked[key]).every(key => state.advancedSearch.validity[key])) {
       return state.advancedSearch.menuItems
     }
 
