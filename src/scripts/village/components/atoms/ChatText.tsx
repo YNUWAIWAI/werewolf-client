@@ -1,7 +1,6 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-const parseChat = text =>
+const parseChat = (text: string) =>
   text
     .split(/(>>\d+)/)
     .map(t => {
@@ -20,8 +19,8 @@ const parseChat = text =>
       return t
     })
 
-type Props = {
-  +text: string
+interface Props {
+  readonly text: string
 }
 
 export default function ChatItem(props: Props) {
