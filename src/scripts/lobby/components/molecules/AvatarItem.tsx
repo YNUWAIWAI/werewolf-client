@@ -50,7 +50,7 @@ export default injectIntl(function AvatarItem(props: Props) {
             id="AvatarItem.name.anonymous"
           >
             {
-              (text: string) =>
+              text =>
                 <div className="avatar-list--item--name">
                   {text}
                 </div>
@@ -66,7 +66,7 @@ export default injectIntl(function AvatarItem(props: Props) {
             id="AvatarItem.host"
           >
             {
-              (text: string) =>
+              text =>
                 <div className="avatar-list--item--host">
                   {text}
                 </div>
