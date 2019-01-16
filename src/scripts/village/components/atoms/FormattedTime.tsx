@@ -1,9 +1,8 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
 
-type Props = {
-  +time: number
+interface Props {
+  readonly time: number
 }
 
 export default function FormattedTime(props: Props) {
