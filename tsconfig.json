@@ -2,9 +2,8 @@
   "compilerOptions": {
       "outDir": "./dist/",
       "sourceMap": true,
-      "noImplicitAny": true,
       "module": "commonjs",
-      "strictNullChecks": true,
+      "strict": true,
       "target": "es2017",
       "jsx": "react"
   },
