@@ -70,19 +70,26 @@ export default class SettingsBox extends React.Component<Props, State> {
   shouldComponentUpdate() {
     return true
   }
-  handleChange(propName: PropName): (valid: boolean) => (value: lobby.Language | string) => void {
+  handleChange(propName: PropName): (valid: boolean) => (value: string) => void {
     switch (propName) {
       case PropName.language:
-        return (valid: boolean) => (value: lobby.Language) => {
-          this.setState({
-            [propName]: {
-              valid: valid && value !== this.props.initialValue[propName],
-              value
-            }
-          })
+        return valid => value => {
+          const lang = [lobby.Language.en, lobby.Language.fr, lobby.Language.it, lobby.Language.ja]
+          const maybe = lang.find(v => v === value)
+
+          if (maybe) {
+            this.setState({
+              [propName]: {
+                valid: valid && value !== this.props.initialValue[propName],
+                value: maybe
+              }
+            })
+          } else {
+            throw Error(`Unknown language: ${value}`)
+          }
         }
       case PropName.userEmail:
-        return (valid: boolean) => (value: string) => {
+        return valid => value => {
           this.setState({
             [propName]: {
               valid: valid && value !== this.props.initialValue[propName],
@@ -91,7 +98,7 @@ export default class SettingsBox extends React.Component<Props, State> {
           })
         }
       case PropName.userName:
-        return (valid: boolean) => (value: string) => {
+        return valid => value => {
           this.setState({
             [propName]: {
               valid: valid && value !== this.props.initialValue[propName],
@@ -100,7 +107,7 @@ export default class SettingsBox extends React.Component<Props, State> {
           })
         }
       case PropName.userPassword:
-        return (valid: boolean) => (value: string) => {
+        return valid => value => {
           this.setState({
             [propName]: {
               valid: valid && value !== '',
