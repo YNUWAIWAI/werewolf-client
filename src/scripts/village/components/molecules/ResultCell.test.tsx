@@ -281,7 +281,7 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           id="Result.summary.loser(1)"
-          loserTeam={new Set(['villager'])}
+          loserTeam={new Set([village.Team.villager])}
           type={ResultCellType.caption}
         />
       )
@@ -295,7 +295,7 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           id="Result.summary.loser(2)"
-          loserTeam={new Set(['villager', 'werehamster'])}
+          loserTeam={new Set([village.Team.villager, village.Team.werehamster])}
           type={ResultCellType.caption}
         />
       )
@@ -310,7 +310,7 @@ describe('<ResultCell />', () => {
         <ResultCell
           id="Result.summary.winner"
           type={ResultCellType.caption}
-          winnerTeam="villager"
+          winnerTeam={village.Team.villager}
         />
       )
 
@@ -327,7 +327,7 @@ describe('<ResultCell />', () => {
           id="Result.summary.description(audience)"
           myTeam=""
           type={ResultCellType.summary}
-          winnerTeam="werewolf"
+          winnerTeam={village.Team.werewolf}
         />
       )
 
@@ -340,9 +340,9 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           id="Result.summary.description(player, lose)"
-          myTeam="villager"
+          myTeam={village.Team.villager}
           type={ResultCellType.summary}
-          winnerTeam="werewolf"
+          winnerTeam={village.Team.werewolf}
         />
       )
 
