@@ -1,5 +1,4 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 import RoleIcon from './RoleIcon'
 import {shallow} from 'enzyme'
 

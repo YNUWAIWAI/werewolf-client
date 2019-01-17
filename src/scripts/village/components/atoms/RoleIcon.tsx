@@ -1,12 +1,11 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-export type Props = {
-  +additionalClass?: string,
-  +class: string,
-  +image: string,
-  +name: string,
-  +numberOfAgents?: number
+export interface Props {
+  readonly additionalClass?: string
+  readonly class: string
+  readonly image: string
+  readonly name: string
+  readonly numberOfAgents?: number
 }
 
 export default function RoleIcon(props: Props) {
