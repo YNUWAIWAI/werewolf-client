@@ -1,27 +1,23 @@
-// @flow
+import * as React from 'react'
 import AgentIcon from '../atoms/AgentIcon'
 import Description from '../molecules/Description'
-import React from 'react'
-import type {Props as TimerProps} from '../atoms/Timer'
+import {Props as TimerProps} from '../atoms/Timer'
 
-export type StateProps = {
-  +agents: {
-    +id: number,
-    +image: string,
-    +name: string
+export interface StateProps {
+  readonly agents: {
+    readonly id: number
+    readonly image: string
+    readonly name: string
   }[],
-  +descriptionId: string,
-  +fixed: boolean,
-  +timer: TimerProps
+  readonly descriptionId: string
+  readonly fixed: boolean
+  readonly timer: TimerProps
 }
-export type DispatchProps = {
-  +handleSelectOption: number => void => void
+export interface DispatchProps {
+  readonly handleSelectOption: (agentId: number) => () => void
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & DispatchProps
-  & OwnProps
+export interface OwnProps {}
+export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function CommandSelection(props: Props) {
   return (

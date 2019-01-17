@@ -1,8 +1,7 @@
-// @flow
+import * as React from 'react'
 import AgentIcon from '../atoms/AgentIcon'
 import CommandSelection from './CommandSelection'
 import Description from '../molecules/Description'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 describe('<CommandSelection />', () => {
@@ -11,7 +10,7 @@ describe('<CommandSelection />', () => {
     const handleSelectOption = jest.fn(handleSelectOptionEventHandler)
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const wrapper = shallow(
       <CommandSelection
@@ -96,7 +95,7 @@ describe('<CommandSelection />', () => {
     ]
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const handleSelectOptionEventHandler = jest.fn()
     const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
@@ -123,7 +122,7 @@ describe('<CommandSelection />', () => {
     ]
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const handleSelectOptionEventHandler = jest.fn()
     const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
