@@ -1,23 +1,21 @@
-// @flow
+import * as React from 'react'
 import AgentIcon from '../atoms/AgentIcon'
-import type {Channel} from 'village'
 import ChatDate from '../atoms/ChatDate'
 import ChatIcon from '../atoms/ChatIcon'
 import ChatNum from '../atoms/ChatNum'
 import ChatText from '../atoms/ChatText'
-import React from 'react'
 import {getChatChannelFromChannel} from '../../util'
 
-export type Props = {
-  +id: number,
-  +image: string,
-  +intensionalDisclosureRange: Channel,
-  +isMine: boolean,
-  +name: string,
-  +phaseStartTime: string,
-  +phaseTimeLimit: number,
-  +serverTimestamp: string,
-  +text: string
+export interface Props {
+  readonly id: number
+  readonly image: string
+  readonly intensionalDisclosureRange: village.Channel
+  readonly isMine: boolean
+  readonly name: string
+  readonly phaseStartTime: string
+  readonly phaseTimeLimit: number
+  readonly serverTimestamp: string
+  readonly text: string
 }
 
 export default function ChatItem(props: Props) {
