@@ -1,19 +1,17 @@
-// @flow
+import * as React from 'react'
 import FormatedTime from './FormattedTime'
-import type {Phase} from 'village'
-import React from 'react'
 
-export type Props = {
-  +limit: number,
-  +phase: Phase
+export interface Props {
+  readonly limit: number
+  readonly phase: village.Phase
 }
-export type State = {
-  start: DOMHighResTimeStamp,
+export interface State {
+  start: DOMHighResTimeStamp
   time: number
 }
 
 export default class Timer extends React.Component<Props, State> {
-  intervalID: IntervalID[]
+  intervalID: NodeJS.Timeout[]
   constructor(props: Props) {
     super(props)
     this.state = {
