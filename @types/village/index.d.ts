@@ -61,6 +61,12 @@ declare namespace village {
     it = 'it',
     ja = 'ja'
   }
+  type LanguageMap = {
+    [Language.en]: string,
+    [Language.fr]?: string,
+    [Language.it]?: string,
+    [Language.ja]?: string
+  }
 
   const enum Result {
     win = 'win',
@@ -121,11 +127,6 @@ declare namespace village {
     systemMessage = 'systemMessage',
     voteMessage = 'voteMessage',
   }
-  const enum NavigationType {
-    SHOW_RESULT = 'SHOW_RESULT',
-    RETURN_TO_LOBBY = 'RETURN_TO_LOBBY'
-  }
-
   /*
     'https://werewolf.world/context/0.2/agent.jsonld'
       dependency:
