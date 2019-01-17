@@ -5,7 +5,7 @@ export interface StateProps {
   readonly hide: boolean
 }
 export interface DispatchProps {
-  readonly handleClick: (valid: boolean) => () => void
+  readonly handleClick: (valid: boolean) => void
 }
 export interface OwnProps {}
 export type Props =
@@ -16,7 +16,7 @@ export type Props =
 export default function HideButton(props: Props) {
   return (
     <div className="hide-button">
-      <button className={`hide-button--button ${props.hide ? 'hide' : ''}`} onClick={props.handleClick(!props.hide)}>
+      <button className={`hide-button--button ${props.hide ? 'hide' : ''}`} onClick={() => props.handleClick(!props.hide)}>
         <DownArrow />
       </button>
     </div>
