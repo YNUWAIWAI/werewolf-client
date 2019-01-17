@@ -22,8 +22,8 @@ export const initRenderer = (locale: lobby.Language | village.Language, messages
     )
 
   return {
-    mountWithIntl: (node: React.ReactElement<any>, {context, childContextTypes, ... additionalOptions}: MountRendererProps = {}) =>
-      mount(
+    mountWithIntl: <C extends React.Component>(node: React.ReactElement<any>, {context, childContextTypes, ... additionalOptions}: MountRendererProps = {}) =>
+      mount<C>(
         nodeWithIntlProp(node),
         {
           childContextTypes: {
@@ -37,8 +37,8 @@ export const initRenderer = (locale: lobby.Language | village.Language, messages
           ... additionalOptions
         }
       ),
-    shallowWithIntl: (node: React.ReactElement<any>, {context, ... additionalOptions}: ShallowRendererProps = {}) =>
-      shallow(
+    shallowWithIntl: <C extends React.Component>(node: React.ReactElement<any>, {context, ... additionalOptions}: ShallowRendererProps = {}) =>
+      shallow<C>(
         nodeWithIntlProp(node),
         {
           context: {

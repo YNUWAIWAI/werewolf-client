@@ -1,11 +1,10 @@
-// @flow
+import * as React from 'react'
 import {getChannelFromInputChennel, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
 
 const countText = (text: string): number => Array.of(... text).length
-const isValidTextLength = (text: string, upperLimit: number, lowerLimit?: number = 1): boolean => {
+const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number = 1): boolean => {
   const textCount = countText(text)
 
   return textCount <= upperLimit && textCount >= lowerLimit
@@ -13,18 +12,19 @@ const isValidTextLength = (text: string, upperLimit: number, lowerLimit?: number
 const isSendable = (postCount: number, postCountLimit: number): boolean => postCount < postCountLimit
 
 type Props = {
-  +handlePostChat: string => void,
-  +kind: 'public' | 'limited',
-  +postCount: number,
-  +postCountLimit: number
+  readonly handlePostChat: (value: string) => void
+  readonly inputChannel: village.InputChannel.public | village.InputChannel.limited
+  readonly postCount: number
+  readonly postCountLimit: number
 } | {
-  +handlePostChat: string => void,
-  +kind: 'grave' | 'post mortem' | 'private'
+ readonly handlePostChat: (value: string) => void
+  readonly inputChannel: village.InputChannel.grave | village.InputChannel.postMortem | village.InputChannel.private
 }
-type State = {
-  sendable: boolean,
-  text: string,
-  textCount: number,
+
+interface State {
+  sendable: boolean
+  text: string
+  textCount: number
   validTextLength: boolean
 }
 
@@ -42,16 +42,16 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   isSendable() {
-    switch (this.props.kind) {
-      case 'grave':
-      case 'private':
-      case 'post mortem':
+    switch (this.props.inputChannel) {
+      case village.InputChannel.grave:
+      case village.InputChannel.private:
+      case village.InputChannel.postMortem:
         return true
-      case 'public':
-      case 'limited':
+      case village.InputChannel.public:
+      case village.InputChannel.limited:
         return isSendable(this.props.postCount, this.props.postCountLimit)
       default:
-        throw Error(`Unknown: ${this.props.kind}`)
+        throw Error('props.inputChannel: unkonwn')
     }
   }
 
@@ -64,7 +64,7 @@ export default class CommandInput extends React.Component<Props, State> {
     })
   }
 
-  handleTextChange(event: SyntheticInputEvent<HTMLTextAreaElement>) {
+  handleTextChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
     this.updateText(event.target.value)
   }
 
@@ -75,7 +75,7 @@ export default class CommandInput extends React.Component<Props, State> {
     }
   }
 
-  handleKeyDown(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) {
+  handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
       this.handlePostChat()
     }
@@ -83,16 +83,23 @@ export default class CommandInput extends React.Component<Props, State> {
 
   render() {
     return (
-      <form className={`command--input ${spaceSeparatedToCamelCase(this.props.kind)}`}>
-        <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.kind)}`}>
+      <form className={`command--input ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
+        <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
           {
-            (text: string) =>
-              <textarea
-                onChange={(event: SyntheticInputEvent<HTMLTextAreaElement>) => this.handleTextChange(event)}
-                onKeyDown={(event: SyntheticKeyboardEvent<HTMLTextAreaElement>) => this.handleKeyDown(event)}
-                placeholder={text}
-                value={this.state.text}
-              />
+            text => {
+              if (typeof text !== 'string') {
+                return null
+              }
+
+              return (
+                <textarea
+                  onChange={event => this.handleTextChange(event)}
+                  onKeyDown={event => this.handleKeyDown(event)}
+                  placeholder={text}
+                  value={this.state.text}
+                />
+              )
+            }
           }
         </FormattedMessage>
         <span className={`command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
@@ -100,13 +107,13 @@ export default class CommandInput extends React.Component<Props, State> {
         </span>
         <ChatIcon
           channel={getChannelFromInputChennel({
-            inputChannel: this.props.kind,
-            role: 'werewolf'
+            inputChannel: this.props.inputChannel,
+            role: village.RoleId.werewolf
           })}
           className="command--input--icon"
         />
         {
-          this.props.kind === 'public' || this.props.kind === 'limited' ?
+          this.props.inputChannel === 'public' || this.props.inputChannel === 'limited' ?
             <span className="command--input--counter">
               {`${this.props.postCount}/${this.props.postCountLimit}`}
             </span> :
@@ -114,7 +121,7 @@ export default class CommandInput extends React.Component<Props, State> {
         }
         <FormattedMessage id="CommandInput.send">
           {
-            (text: string) =>
+            text =>
               <button className="command--input--send" disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
                 {text}
               </button>
