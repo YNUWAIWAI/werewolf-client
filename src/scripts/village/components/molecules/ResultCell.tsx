@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import TeamIcon from './TeamIcon'
+import TeamIcon from '../atoms/TeamIcon'
 
 export const enum ResultCellType {
   avatarImage = 'avatarImage',
