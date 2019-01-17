@@ -10,7 +10,7 @@ describe('<TeamIcon />', () => {
     const wrapper = mountWithIntl(
       <TeamIcon
         class="class"
-        team="unknown"
+        team=""
       />
     )
 

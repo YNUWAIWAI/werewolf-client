@@ -7,7 +7,7 @@ import TeamWerewolf from './svg/TeamWerewolf'
 export interface Props {
   readonly additionalClass?: string
   readonly class: string
-  readonly team: village.Team | 'unknown'
+  readonly team: village.Team | ''
 }
 
 export default function TeamIcon(props: Props) {
