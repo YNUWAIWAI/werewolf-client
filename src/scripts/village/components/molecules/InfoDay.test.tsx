@@ -1,22 +1,21 @@
-// @flow
+import * as React from 'react'
 import InfoDay from './InfoDay'
-import React from 'react'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 describe('<Day />', () => {
   describe('phase', () => {
     test('morning', () => {
       const timer = {
         limit: 10,
-        phase: 'morning'
+        phase: village.Phase.morning
       }
       const wrapper = mountWithIntl(
         <InfoDay
           date={0}
-          phase="morning"
+          phase={village.Phase.morning}
           timer={timer}
         />
       )
@@ -26,12 +25,12 @@ describe('<Day />', () => {
     test('day', () => {
       const timer = {
         limit: 10,
-        phase: 'day'
+        phase: village.Phase.day
       }
       const wrapper = mountWithIntl(
         <InfoDay
           date={1}
-          phase="day"
+          phase={village.Phase.day}
           timer={timer}
         />
       )
@@ -41,12 +40,12 @@ describe('<Day />', () => {
     test('night', () => {
       const timer = {
         limit: 10,
-        phase: 'night'
+        phase: village.Phase.night
       }
       const wrapper = mountWithIntl(
         <InfoDay
           date={1}
-          phase="night"
+          phase={village.Phase.night}
           timer={timer}
         />
       )
@@ -56,12 +55,12 @@ describe('<Day />', () => {
     test('post mortem', () => {
       const timer = {
         limit: 10,
-        phase: 'post mortem'
+        phase: village.Phase.postMortem
       }
       const wrapper = mountWithIntl(
         <InfoDay
           date={-1}
-          phase="post mortem"
+          phase={village.Phase.postMortem}
           timer={timer}
         />
       )
@@ -71,12 +70,12 @@ describe('<Day />', () => {
     test('result', () => {
       const timer = {
         limit: 10,
-        phase: 'result'
+        phase: village.Phase.result
       }
       const wrapper = mountWithIntl(
         <InfoDay
           date={-1}
-          phase="result"
+          phase={village.Phase.result}
           timer={timer}
         />
       )
@@ -86,12 +85,12 @@ describe('<Day />', () => {
     test('flavor text', () => {
       const timer = {
         limit: 10,
-        phase: 'flavor text'
+        phase: village.Phase.flavorText
       }
       const wrapper = mountWithIntl(
         <InfoDay
           date={1}
-          phase="flavor text"
+          phase={village.Phase.flavorText}
           timer={timer}
         />
       )

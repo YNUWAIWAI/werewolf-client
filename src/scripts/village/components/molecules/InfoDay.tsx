@@ -1,22 +1,18 @@
-// @flow
-import Timer, {type Props as TimerProps} from '../atoms/Timer'
+import * as React from 'react'
+import Timer, {Props as TimerProps} from '../atoms/Timer'
 import {FormattedMessage} from 'react-intl'
-import type {Phase} from 'village'
-import React from 'react'
 import {spaceSeparatedToCamelCase} from '../../util'
 
-export type StateProps = {
-  +date: number,
-  +phase: Phase,
-  +timer: TimerProps
+export interface StateProps {
+  readonly date: number
+  readonly phase: village.Phase
+  readonly timer: TimerProps
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & OwnProps
+export interface OwnProps {}
+export interface Props extends StateProps, OwnProps {}
 
 export default function InfoDay(props: Props) {
-  const phase = props.phase === 'flavor text' ? 'night' : props.phase
+  const phase = props.phase === village.Phase.flavorText ? village.Phase.night : props.phase
 
   return (
     <div className="info--day">
