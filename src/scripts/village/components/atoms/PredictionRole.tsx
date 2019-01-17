@@ -1,10 +1,9 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +caption: string,
-  +image: string,
-  +numberOfAgents: number
+interface Props {
+  readonly caption: string
+  readonly image: string
+  readonly numberOfAgents: number
 }
 
 export default function PredictionRole(props: Props) {

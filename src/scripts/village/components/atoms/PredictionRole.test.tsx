@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import PredictionRole from './PredictionRole'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<PredictionRole image="image" caption="caption" numberOfAgents={1} />', () => {
