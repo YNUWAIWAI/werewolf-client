@@ -1,7 +1,6 @@
-// @flow
 import * as ActionTypes from '../../constants/ActionTypes'
+import * as React from 'react'
 import CommandPostMortem from './CommandPostMortem'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<CommandPostMortem />', () => {
@@ -10,11 +9,11 @@ test('<CommandPostMortem />', () => {
   const navigation = [
     {
       id: 'CommandNavigation.showResult',
-      type: ActionTypes.SHOW_RESULT
+      type: ActionTypes.Navigation.SHOW_RESULT
     },
     {
       id: 'CommandNavigation.returnToLobby',
-      type: ActionTypes.RETURN_TO_LOBBY
+      type: ActionTypes.Navigation.RETURN_TO_LOBBY
     }
   ]
   const wrapper = shallow(
