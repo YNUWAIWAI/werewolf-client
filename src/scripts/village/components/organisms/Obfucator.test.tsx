@@ -1,7 +1,6 @@
-// @flow
+import * as React from 'react'
 import Loader from '../atoms/svg/Loader'
 import Obfucator from './Obfucator'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 describe('<Obfucator />', () => {

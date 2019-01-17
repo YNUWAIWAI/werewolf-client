@@ -1,15 +1,12 @@
-// @flow
+import * as React from 'react'
 import Loader from '../atoms/svg/Loader'
-import React from 'react'
 
-export type StateProps = {
-  loading: boolean,
-  visible: boolean
+export interface StateProps {
+  readonly loading: boolean
+  readonly visible: boolean
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & OwnProps
+export interface OwnProps {}
+export interface Props extends StateProps, OwnProps {}
 
 export default function Obfucator(props: Props) {
   return props.visible ?
@@ -22,5 +19,5 @@ export default function Obfucator(props: Props) {
           ''
       }
     </div> :
-    ''
+    null
 }
