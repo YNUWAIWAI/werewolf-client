@@ -1,47 +1,56 @@
-// @flow
-import type {AgentStatus, Team} from 'village'
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
-import TeamIcon from '../atoms/TeamIcon'
+import TeamIcon from './TeamIcon'
+
+export const enum ResultCellType {
+  avatarImage = 'avatarImage',
+  avatarName = 'avatarName',
+  caption = 'caption',
+  image = 'image',
+  name = 'name',
+  roleImage = 'roleImage',
+  status = 'status',
+  summary = 'summary'
+}
 
 type Props =
   | {
-    +image: string,
-    +status: AgentStatus,
-    +type: 'avatarImage' | 'image'
+    readonly image: string
+    readonly status: village.AgentStatus
+    readonly type: ResultCellType.avatarImage | ResultCellType.image
   }
   | {
-    +image: string,
-    +name: string,
-    +status: AgentStatus,
-    +type: 'roleImage'
+    readonly image: string
+    readonly name: string,
+    readonly status: village.AgentStatus
+    readonly type: ResultCellType.roleImage
   }
   | {
-    +id: string,
-    +myTeam: Team | '',
-    +type: 'summary',
-    +winnerTeam: Team
+    readonly id: string
+    readonly myTeam: village.Team | ''
+    readonly type: ResultCellType.summary
+    readonly winnerTeam: village.Team
   }
   | {
-    +id: string,
-    +loserTeam?: Set<Team>,
-    +type: 'caption',
-    +winnerTeam?: Team
+    readonly id: string
+    readonly loserTeam?: Set<village.Team>
+    readonly type: ResultCellType.caption
+    readonly winnerTeam?: village.Team
   }
   | {
-    +status: AgentStatus,
-    +text: string,
-    +type: 'avatarName' | 'name'
+    readonly status: village.AgentStatus
+    readonly text: string
+    readonly type: ResultCellType.avatarName | ResultCellType.name
   }
   | {
-    +status: AgentStatus,
-    +type: 'status'
+    readonly status: village.AgentStatus
+    readonly type: ResultCellType.status
   }
 
 export default function ResultCell(props: Props) {
   switch (props.type) {
-    case 'avatarImage':
-    case 'image':
+    case ResultCellType.avatarImage:
+    case ResultCellType.image:
       return (
         <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           <img
@@ -50,7 +59,7 @@ export default function ResultCell(props: Props) {
           />
         </div>
       )
-    case 'roleImage':
+    case ResultCellType.roleImage:
       return (
         <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           <img
@@ -62,10 +71,10 @@ export default function ResultCell(props: Props) {
           </span>
         </div>
       )
-    case 'caption': {
+    case ResultCellType.caption: {
       // '' is dummy element
       // ex) ['werewolf', 'villager'], ['werewolf', ''], ['', '']
-      const loserTeam = props.loserTeam ? [... props.loserTeam, ''] : ['', '']
+      const loserTeam: (village.Team | '')[] = props.loserTeam ? [... props.loserTeam, ''] : ['', '']
 
       return (
         <FormattedMessage
@@ -95,7 +104,7 @@ export default function ResultCell(props: Props) {
           }
         >
           {
-            (... text: string[]) =>
+            (... text) =>
               <div
                 className={`result--cell result--cell--${props.type}`}
               >
@@ -105,7 +114,7 @@ export default function ResultCell(props: Props) {
         </FormattedMessage>
       )
     }
-    case 'summary':
+    case ResultCellType.summary:
       return (
         <FormattedMessage
           id={props.id}
@@ -128,7 +137,7 @@ export default function ResultCell(props: Props) {
           }
         >
           {
-            (... text: string[]) =>
+            (... text) =>
               <div
                 className={`result--cell result--cell--${props.type}`}
               >
@@ -137,21 +146,21 @@ export default function ResultCell(props: Props) {
           }
         </FormattedMessage>
       )
-    case 'avatarName':
-    case 'name':
+    case ResultCellType.avatarName:
+    case ResultCellType.name:
       return (
         <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           {props.text}
         </div>
       )
-    case 'status':
+    case ResultCellType.status:
       return (
         <FormattedMessage
           id={`Result.status(${props.status})`}
           key="status"
         >
           {
-            (text: string) =>
+            text =>
               <div
                 className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}
               >
@@ -161,6 +170,6 @@ export default function ResultCell(props: Props) {
         </FormattedMessage>
       )
     default:
-      throw Error(`props.type: ${props.type} is unexpectted value.`)
+      throw Error('props.type: unexpectted value.')
   }
 }

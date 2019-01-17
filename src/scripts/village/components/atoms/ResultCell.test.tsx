@@ -1,10 +1,9 @@
-// @flow
-import React from 'react'
-import ResultCell from './ResultCell'
+import * as React from 'react'
+import ResultCell, {ResultCellType} from './ResultCell'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 describe('<ResultCell />', () => {
   describe('type="image"', () => {
@@ -12,8 +11,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="alive"
-          type="image"
+          status={village.AgentStatus.alive}
+          type={ResultCellType.image}
         />
       )
 
@@ -26,8 +25,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="dead"
-          type="image"
+          status={village.AgentStatus.dead}
+          type={ResultCellType.image}
         />
       )
 
@@ -40,8 +39,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by execution"
-          type="image"
+          status={village.AgentStatus.deathByExecution}
+          type={ResultCellType.image}
         />
       )
 
@@ -54,8 +53,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by attack"
-          type="image"
+          status={village.AgentStatus.deathByAttack}
+          type={ResultCellType.image}
         />
       )
 
@@ -68,8 +67,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by fear"
-          type="image"
+          status={village.AgentStatus.deathByFear}
+          type={ResultCellType.image}
         />
       )
 
@@ -82,8 +81,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="unnatural death"
-          type="image"
+          status={village.AgentStatus.unnaturalDeath}
+          type={ResultCellType.image}
         />
       )
 
@@ -98,8 +97,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="alive"
-          type="avatarImage"
+          status={village.AgentStatus.alive}
+          type={ResultCellType.avatarImage}
         />
       )
 
@@ -112,8 +111,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="dead"
-          type="avatarImage"
+          status={village.AgentStatus.dead}
+          type={ResultCellType.avatarImage}
         />
       )
 
@@ -126,8 +125,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by execution"
-          type="avatarImage"
+          status={village.AgentStatus.deathByExecution}
+          type={ResultCellType.avatarImage}
         />
       )
 
@@ -140,8 +139,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by attack"
-          type="avatarImage"
+          status={village.AgentStatus.deathByAttack}
+          type={ResultCellType.avatarImage}
         />
       )
 
@@ -154,8 +153,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="death by fear"
-          type="avatarImage"
+          status={village.AgentStatus.deathByFear}
+          type={ResultCellType.avatarImage}
         />
       )
 
@@ -168,8 +167,8 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           image="image"
-          status="unnatural death"
-          type="avatarImage"
+          status={village.AgentStatus.unnaturalDeath}
+          type={ResultCellType.avatarImage}
         />
       )
 
@@ -185,8 +184,8 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           name="name"
-          status="alive"
-          type="roleImage"
+          status={village.AgentStatus.alive}
+          type={ResultCellType.roleImage}
         />
       )
 
@@ -201,8 +200,8 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           name="name"
-          status="dead"
-          type="roleImage"
+          status={village.AgentStatus.dead}
+          type={ResultCellType.roleImage}
         />
       )
 
@@ -217,8 +216,8 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           name="name"
-          status="death by execution"
-          type="roleImage"
+          status={village.AgentStatus.deathByExecution}
+          type={ResultCellType.roleImage}
         />
       )
 
@@ -233,8 +232,8 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           name="name"
-          status="death by attack"
-          type="roleImage"
+          status={village.AgentStatus.deathByAttack}
+          type={ResultCellType.roleImage}
         />
       )
 
@@ -249,8 +248,8 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           name="name"
-          status="death by fear"
-          type="roleImage"
+          status={village.AgentStatus.deathByFear}
+          type={ResultCellType.roleImage}
         />
       )
 
@@ -265,8 +264,8 @@ describe('<ResultCell />', () => {
         <ResultCell
           image="image"
           name="name"
-          status="unnatural death"
-          type="roleImage"
+          status={village.AgentStatus.unnaturalDeath}
+          type={ResultCellType.roleImage}
         />
       )
 
@@ -283,7 +282,7 @@ describe('<ResultCell />', () => {
         <ResultCell
           id="Result.summary.loser(1)"
           loserTeam={new Set(['villager'])}
-          type="caption"
+          type={ResultCellType.caption}
         />
       )
 
@@ -297,7 +296,7 @@ describe('<ResultCell />', () => {
         <ResultCell
           id="Result.summary.loser(2)"
           loserTeam={new Set(['villager', 'werehamster'])}
-          type="caption"
+          type={ResultCellType.caption}
         />
       )
 
@@ -310,7 +309,7 @@ describe('<ResultCell />', () => {
       const wrapper = mountWithIntl(
         <ResultCell
           id="Result.summary.winner"
-          type="caption"
+          type={ResultCellType.caption}
           winnerTeam="villager"
         />
       )
@@ -327,7 +326,7 @@ describe('<ResultCell />', () => {
         <ResultCell
           id="Result.summary.description(audience)"
           myTeam=""
-          type="summary"
+          type={ResultCellType.summary}
           winnerTeam="werewolf"
         />
       )
@@ -342,7 +341,7 @@ describe('<ResultCell />', () => {
         <ResultCell
           id="Result.summary.description(player, lose)"
           myTeam="villager"
-          type="summary"
+          type={ResultCellType.summary}
           winnerTeam="werewolf"
         />
       )
@@ -357,9 +356,9 @@ describe('<ResultCell />', () => {
     test('status="alive"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="alive"
+          status={village.AgentStatus.alive}
           text="text"
-          type="name"
+          type={ResultCellType.name}
         />
       )
 
@@ -371,9 +370,9 @@ describe('<ResultCell />', () => {
     test('status="dead"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="dead"
+          status={village.AgentStatus.dead}
           text="text"
-          type="name"
+          type={ResultCellType.name}
         />
       )
 
@@ -385,9 +384,9 @@ describe('<ResultCell />', () => {
     test('status="death by execution"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by execution"
+          status={village.AgentStatus.deathByExecution}
           text="text"
-          type="name"
+          type={ResultCellType.name}
         />
       )
 
@@ -399,9 +398,9 @@ describe('<ResultCell />', () => {
     test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by attack"
+          status={village.AgentStatus.deathByAttack}
           text="text"
-          type="name"
+          type={ResultCellType.name}
         />
       )
 
@@ -413,9 +412,9 @@ describe('<ResultCell />', () => {
     test('status="death by fear"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by fear"
+          status={village.AgentStatus.deathByFear}
           text="text"
-          type="name"
+          type={ResultCellType.name}
         />
       )
 
@@ -427,9 +426,9 @@ describe('<ResultCell />', () => {
     test('status="unnatural death"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="unnatural death"
+          status={village.AgentStatus.unnaturalDeath}
           text="text"
-          type="name"
+          type={ResultCellType.name}
         />
       )
 
@@ -443,8 +442,8 @@ describe('<ResultCell />', () => {
     test('status="alive', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="alive"
-          type="status"
+          status={village.AgentStatus.alive}
+          type={ResultCellType.status}
         />
       )
 
@@ -456,8 +455,8 @@ describe('<ResultCell />', () => {
     test('status="dead', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="dead"
-          type="status"
+          status={village.AgentStatus.dead}
+          type={ResultCellType.status}
         />
       )
 
@@ -469,8 +468,8 @@ describe('<ResultCell />', () => {
     test('status="death by execution', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by execution"
-          type="status"
+          status={village.AgentStatus.deathByExecution}
+          type={ResultCellType.status}
         />
       )
 
@@ -482,8 +481,8 @@ describe('<ResultCell />', () => {
     test('status="death by attack', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by attack"
-          type="status"
+          status={village.AgentStatus.deathByAttack}
+          type={ResultCellType.status}
         />
       )
 
@@ -495,8 +494,8 @@ describe('<ResultCell />', () => {
     test('status="death by fear', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by fear"
-          type="status"
+          status={village.AgentStatus.deathByFear}
+          type={ResultCellType.status}
         />
       )
 
@@ -508,8 +507,8 @@ describe('<ResultCell />', () => {
     test('status="unnatural death', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="unnatural death"
-          type="status"
+          status={village.AgentStatus.unnaturalDeath}
+          type={ResultCellType.status}
         />
       )
 
@@ -523,9 +522,9 @@ describe('<ResultCell />', () => {
     test('status="alive"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="alive"
+          status={village.AgentStatus.alive}
           text="text"
-          type="avatarName"
+          type={ResultCellType.avatarName}
         />
       )
 
@@ -537,9 +536,9 @@ describe('<ResultCell />', () => {
     test('status="dead"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="dead"
+          status={village.AgentStatus.dead}
           text="text"
-          type="avatarName"
+          type={ResultCellType.avatarName}
         />
       )
 
@@ -551,9 +550,9 @@ describe('<ResultCell />', () => {
     test('status="death by execution"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by execution"
+          status={village.AgentStatus.deathByExecution}
           text="text"
-          type="avatarName"
+          type={ResultCellType.avatarName}
         />
       )
 
@@ -565,9 +564,9 @@ describe('<ResultCell />', () => {
     test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by attack"
+          status={village.AgentStatus.deathByAttack}
           text="text"
-          type="avatarName"
+          type={ResultCellType.avatarName}
         />
       )
 
@@ -579,9 +578,9 @@ describe('<ResultCell />', () => {
     test('status="death by fear"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="death by fear"
+          status={village.AgentStatus.deathByFear}
           text="text"
-          type="avatarName"
+          type={ResultCellType.avatarName}
         />
       )
 
@@ -593,9 +592,9 @@ describe('<ResultCell />', () => {
     test('status="unnatural death"', () => {
       const wrapper = mountWithIntl(
         <ResultCell
-          status="unnatural death"
+          status={village.AgentStatus.unnaturalDeath}
           text="text"
-          type="avatarName"
+          type={ResultCellType.avatarName}
         />
       )
 
