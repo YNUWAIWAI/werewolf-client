@@ -1,10 +1,9 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 
-type Props = {
-  +image: string,
-  +name: string,
-  +status: string
+interface Props {
+  readonly image: string
+  readonly name: string
+  readonly status: string
 }
 
 export default function PredictionPlayer(props: Props) {
