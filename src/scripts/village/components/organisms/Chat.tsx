@@ -1,18 +1,15 @@
-// @flow
-import ChatDelimeter, {type Props as ChatDelimeterProps} from '../atoms/ChatDelimeter'
-import ChatItem, {type Props as ChatItemProps} from '../molecules/ChatItem'
-import React from 'react'
+import * as React from 'react'
+import ChatDelimeter, {Props as ChatDelimeterProps} from '../atoms/ChatDelimeter'
+import ChatItem, {Props as ChatItemProps} from '../molecules/ChatItem'
 
-export type StateProps = {
-  +allIds: string[],
-  +byId: {
-    [string]: (ChatDelimeterProps & {type: 'delimeter'}) | (ChatItemProps & {type: 'item'})
+export interface StateProps {
+  readonly allIds: string[]
+  readonly byId: {
+    [id: string]: (ChatDelimeterProps & {type: 'delimeter'}) | (ChatItemProps & {type: 'item'})
   }
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & OwnProps
+export interface OwnProps {}
+export interface Props extends StateProps, OwnProps {}
 
 export default function Chat(props: Props) {
   return (
@@ -37,7 +34,7 @@ export default function Chat(props: Props) {
                 />
               )
             default:
-              throw Error(`Unexpected item type: ${item.type}`)
+              throw Error('Unexpected item type')
           }
         })
       }
