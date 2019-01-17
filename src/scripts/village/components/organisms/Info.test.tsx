@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import Info from './Info'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<Info />', () => {

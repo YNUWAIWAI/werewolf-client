@@ -1,10 +1,9 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import InfoAgent from '../../containers/InfoAgentContainer'
 import InfoDay from '../../containers/InfoDayContainer'
 import InfoRole from '../../containers/InfoRoleContainer'
 import InfoTeam from '../../containers/InfoTeamContainer'
-import React from 'react'
 
 export default function Info() {
   return (
@@ -14,7 +13,7 @@ export default function Info() {
         id="Info.property.agent"
       >
         {
-          (text: string) =>
+          text =>
             <div
               className="info--property agent"
             >
@@ -27,7 +26,7 @@ export default function Info() {
         id="Info.property.role"
       >
         {
-          (text: string) =>
+          text =>
             <div
               className="info--property role"
             >
@@ -40,7 +39,7 @@ export default function Info() {
         id="Info.property.team"
       >
         {
-          (text: string) =>
+          text =>
             <div
               className="info--property team"
             >
