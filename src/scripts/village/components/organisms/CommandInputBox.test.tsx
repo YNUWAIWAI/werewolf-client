@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import CommandInputBox from './CommandInputBox'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<CommandInputBox /> limited is unavailable', () => {
