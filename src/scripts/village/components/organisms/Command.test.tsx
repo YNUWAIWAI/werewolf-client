@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import Command from './Command'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<Command hide />', () => {
