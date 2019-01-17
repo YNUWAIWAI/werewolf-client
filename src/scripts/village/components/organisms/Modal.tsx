@@ -1,37 +1,25 @@
-// @flow
+import * as React from 'react'
 import AgentIcon from '../atoms/AgentIcon'
 import Description from '../molecules/Description'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
-import type {Props as TimerProps} from '../atoms/Timer'
+import {Props as TimerProps} from '../atoms/Timer'
 
-export type StateProps = {
-  +descriptionId: string,
-  +id: number,
-  +image: string,
-  +name: string,
-  +timer: TimerProps,
-  +visible: boolean
+export interface StateProps {
+  readonly descriptionId: string
+  readonly id: number
+  readonly image: string
+  readonly name: string
+  readonly timer: TimerProps
+  readonly visible: boolean
 }
-export type DispatchProps = {
-  +handleClickNo: void => void,
-  +handleClickYes: number => void
+export interface DispatchProps {
+  readonly handleClickNo: () => void
+  readonly handleClickYes: (agentId: number) => void
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & DispatchProps
-  & OwnProps
+export interface OwnProps {}
+export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function Modal(props: Props) {
-  const handleClick = value => () => {
-    if (value === 'no') {
-      props.handleClickNo()
-    } else {
-      props.handleClickYes(props.id)
-    }
-  }
-
   return (
     <div className={`modal ${props.visible ? '' : 'hidden'}`}>
       <AgentIcon class="modal--icon" image={props.image} name={props.name} />
@@ -40,10 +28,10 @@ export default function Modal(props: Props) {
         id="Modal.button.yes"
       >
         {
-          (text: string) =>
+          text =>
             <button
               className="modal--button yes"
-              onClick={handleClick('yes')}
+              onClick={() => props.handleClickYes(props.id)}
             >
               {text}
             </button>
@@ -53,10 +41,10 @@ export default function Modal(props: Props) {
         id="Modal.button.no"
       >
         {
-          (text: string) =>
+          text =>
             <button
               className="modal--button no"
-              onClick={handleClick('no')}
+              onClick={() => props.handleClickNo()}
             >
               {text}
             </button>

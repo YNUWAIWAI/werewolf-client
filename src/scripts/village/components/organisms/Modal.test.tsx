@@ -1,16 +1,15 @@
-// @flow
+import * as React from 'react'
 import Modal from './Modal'
-import React from 'react'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 describe('<Modal />', () => {
   test('visible', () => {
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
@@ -40,7 +39,7 @@ describe('<Modal />', () => {
   test('visible={false}', () => {
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
@@ -62,7 +61,7 @@ describe('<Modal />', () => {
   test('handleClickNo', () => {
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
@@ -97,7 +96,7 @@ describe('<Modal />', () => {
   test('handleClickYes', () => {
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
