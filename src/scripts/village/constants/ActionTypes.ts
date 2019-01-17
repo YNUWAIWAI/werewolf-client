@@ -41,4 +41,8 @@ export const enum Scope {
   indexedDB = 'indexedDB',
   socket = 'socket'
 }
+export const enum Navigation {
+  RETURN_TO_LOBBY = 'RETURN_TO_LOBBY',
+  SHOW_RESULT = 'SHOW_RESULT'
+}
 

@@ -1,13 +1,12 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import type {NavigationType} from 'village'
-import React from 'react'
+import {Navigation} from '../../constants/ActionTypes'
 
-type Props = {
-  handleClick: NavigationType => void => void,
-  items: {
-    +id: string,
-    +type: NavigationType
+interface Props {
+  readonly handleClick: (type: Navigation) => void
+  readonly items: {
+    readonly id: string,
+    readonly type: Navigation
   }[]
 }
 
@@ -18,10 +17,10 @@ export default function CommandNavigation(props: Props) {
       key={item.id}
     >
       {
-        (text: string) =>
+        text =>
           <button
             className="command--navigation--button"
-            onClick={props.handleClick(item.type)}
+            onClick={() => props.handleClick(item.type)}
           >
             {text}
           </button>
