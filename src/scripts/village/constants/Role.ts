@@ -1,15 +1,12 @@
-// @flow
-import type {RoleId} from 'village'
-
-export const MASTER: RoleId = 'master'
-export const VILLAGER: RoleId = 'villager'
-export const SEER: RoleId = 'seer'
-export const MEDIUM: RoleId = 'medium'
-export const HUNTER: RoleId = 'hunter'
-export const MASON: RoleId = 'mason'
-export const MADMAN: RoleId = 'madman'
-export const WEREWOLF: RoleId = 'werewolf'
-export const WEREHAMSTER: RoleId = 'werehamster'
+export const MASTER = village.RoleId.master
+export const VILLAGER = village.RoleId.villager
+export const SEER = village.RoleId.seer
+export const MEDIUM = village.RoleId.medium
+export const HUNTER = village.RoleId.hunter
+export const MASON = village.RoleId.mason
+export const MADMAN = village.RoleId.madman
+export const WEREWOLF = village.RoleId.werewolf
+export const WEREHAMSTER = village.RoleId.werehamster
 
 export const UNPLAYABLE_ROLE = [
   MASTER

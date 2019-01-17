@@ -1,0 +1,9 @@
+export const BASE: Context = village.Context.Base
+export const ERROR: Context = village.Context.ERROR
+export const AGENT: Context = village.Context.Agent
+export const ROLE: Context = village.Context.Role
+export const BOARD: Context = village.Context.Board
+export const CHAT: Context = village.Context.Chat
+export const VOTE: Context = village.Context.Vote
+export const VOTING_RESULT: Context = village.Context.VotingResult
+export const SCROLL: Context = village.Context.Scroll
