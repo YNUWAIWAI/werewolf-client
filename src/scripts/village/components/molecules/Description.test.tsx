@@ -1,15 +1,14 @@
-// @flow
+import * as React from 'react'
 import Description from './Description'
-import React from 'react'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 test('<Description />', () => {
   const timer = {
     limit: 10,
-    phase: 'night'
+    phase: village.Phase.night
   }
   const wrapper = mountWithIntl(
     <Description
