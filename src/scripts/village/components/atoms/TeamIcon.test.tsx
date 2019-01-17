@@ -1,17 +1,16 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 import TeamIcon from './TeamIcon'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer('ja', getMessages('ja'))
+const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 describe('<TeamIcon />', () => {
   test('default', () => {
     const wrapper = mountWithIntl(
       <TeamIcon
         class="class"
-        team=""
+        team="unknown"
       />
     )
 
@@ -22,7 +21,7 @@ describe('<TeamIcon />', () => {
       <TeamIcon
         additionalClass="additionalClass"
         class="class"
-        team="villager"
+        team={village.Team.villager}
       />
     )
 
@@ -36,7 +35,7 @@ describe('<TeamIcon />', () => {
       const wrapper = mountWithIntl(
         <TeamIcon
           class="class"
-          team="villager"
+          team={village.Team.villager}
         />
       )
 
@@ -49,7 +48,7 @@ describe('<TeamIcon />', () => {
       const wrapper = mountWithIntl(
         <TeamIcon
           class="class"
-          team="werehamster"
+          team={village.Team.werehamster}
         />
       )
 
@@ -62,7 +61,7 @@ describe('<TeamIcon />', () => {
       const wrapper = mountWithIntl(
         <TeamIcon
           class="class"
-          team="werewolf"
+          team={village.Team.werewolf}
         />
       )
 

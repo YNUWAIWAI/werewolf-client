@@ -1,20 +1,18 @@
-// @flow
+import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import React from 'react'
-import type {Team} from 'village'
 import TeamVillager from './svg/TeamVillager'
 import TeamWerehamster from './svg/TeamWerehamster'
 import TeamWerewolf from './svg/TeamWerewolf'
 
-export type Props = {
-  +additionalClass?: string,
-  +class: string,
-  +team: Team | ''
+export interface Props {
+  readonly additionalClass?: string
+  readonly class: string
+  readonly team: village.Team | 'unknown'
 }
 
 export default function TeamIcon(props: Props) {
   switch (props.team) {
-    case 'villager':
+    case village.Team.villager:
       return (
         <div
           className={`${props.class} ${props.additionalClass || ''}`}
@@ -26,7 +24,7 @@ export default function TeamIcon(props: Props) {
             id="TeamIcon.villager"
           >
             {
-              (text: string) =>
+              text =>
                 <span className={`${props.class}--name`}>
                   {text}
                 </span>
@@ -34,7 +32,7 @@ export default function TeamIcon(props: Props) {
           </FormattedMessage>
         </div>
       )
-    case 'werehamster':
+    case village.Team.werehamster:
       return (
         <div
           className={`${props.class} ${props.additionalClass || ''}`}
@@ -46,7 +44,7 @@ export default function TeamIcon(props: Props) {
             id="TeamIcon.werehamster"
           >
             {
-              (text: string) =>
+              text =>
                 <span className={`${props.class}--name`}>
                   {text}
                 </span>
@@ -54,7 +52,7 @@ export default function TeamIcon(props: Props) {
           </FormattedMessage>
         </div>
       )
-    case 'werewolf':
+    case village.Team.werewolf:
       return (
         <div
           className={`${props.class} ${props.additionalClass || ''}`}
@@ -66,7 +64,7 @@ export default function TeamIcon(props: Props) {
             id="TeamIcon.werewolf"
           >
             {
-              (text: string) =>
+              text =>
                 <span className={`${props.class}--name`}>
                   {text}
                 </span>
@@ -75,6 +73,6 @@ export default function TeamIcon(props: Props) {
         </div>
       )
     default:
-      return ''
+      return null
   }
 }
