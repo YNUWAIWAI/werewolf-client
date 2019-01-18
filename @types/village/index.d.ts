@@ -74,6 +74,8 @@ declare namespace village {
   }
   type AgentId = string
 
+  type Token = string
+
   const enum AgentStatus {
     alive = 'alive',
     dead = 'dead',
@@ -354,29 +356,27 @@ declare namespace village {
       };
     }[];
   }
-
-  namespace Payload {
-    interface boardMessage extends Base {
-      agent: {
-        '@context': Agent['@context'];
-        '@id': Agent['@id'];
-        id: Agent['id'];
-        name: Agent['name'];
-        image: Agent['image'];
-      };
-      role: {
-        '@context': Role['@context'];
-        '@id': Role['@id'];
-        name: Role['name'];
-        image: Role['image'];
-      };
-      prediction: Board['prediction'];
-    }
-    interface errorMessage extends Base, Error {}
-    interface flavorTextMessage extends Base {
+  interface Payload$boardMessage extends Base {
+    agent: {
+      '@context': Agent['@context'];
+      '@id': Agent['@id'];
+      id: Agent['id'];
+      name: Agent['name'];
+      image: Agent['image'];
+    };
+    role: {
+      '@context': Role['@context'];
+      '@id': Role['@id'];
+      name: Role['name'];
+      image: Role['image'];
+    };
+    prediction: Board['prediction'];
+  }
+    interface Payload$errorMessage extends Base, Error {}
+    interface Payload$flavorTextMessage extends Base {
       flavorText: playerMessage[];
     }
-    interface playerMessage extends Base {
+    interface Payload$playerMessage extends Base {
       agent?: {
         '@context': Agent['@context'];
         '@id': Agent['@id'];
@@ -393,8 +393,8 @@ declare namespace village {
       characterLimit: Chat['characterLimit'];
       isOver: Chat['isOver'];
     }
-    interface scrollMessage extends Base, Scroll {}
-    interface systemMessage extends Base {
+    interface Payload$scrollMessage extends Base, Scroll {}
+    interface Payload$systemMessage extends Base {
       votingResultsSummary?: VotingResult['votingResultsSummary'];
       votingResultsDetails?: VotingResult['votingResultsDetails'];
       agent?: {
@@ -449,7 +449,7 @@ declare namespace village {
         }[];
       }[];
     }
-    interface voteMessage extends Base {
+    interface Payload$voteMessage extends Base {
       agent?: {
         '@context': Agent['@context'];
         '@id': Agent['@id'];
@@ -458,14 +458,18 @@ declare namespace village {
         id: Agent['id'];
       };
     }
-    interface ready {
+    interface Payload$ready {
       token: string,
       type: 'ready',
       villageId: number
     }
-    interface played {
-      lang: Language,
-      type: 'played'
-    }
-  }
+    type Payload =
+      | Payload$boardMessage
+      | Payload$errorMessage
+      | Payload$flavorTextMessage
+      | Payload$playerMessage
+      | Payload$scrollMessage
+      | Payload$systemMessage
+      | Payload$voteMessage
+      | Payload$ready
 }
