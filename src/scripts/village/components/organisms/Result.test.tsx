@@ -1,19 +1,18 @@
-// @flow
-import React from 'react'
-import Result from './Result'
+import * as React from 'react'
+import Result, {Props} from './Result'
 import {shallow} from 'enzyme'
 
-const agents = {
+const agents: Props['agents'] = {
   agent0: {
     agentId: 1,
     agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
     agentName: 'ヴァルター',
     avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
     avatarName: 'Suzuki',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
     roleName: '占い師',
-    status: 'alive'
+    status: village.AgentStatus.alive
   },
   agent1: {
     agentId: 2,
@@ -21,10 +20,10 @@ const agents = {
     agentName: 'モーリッツ',
     avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
     avatarName: 'Takahashi',
-    result: 'lose',
+    result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
     roleName: '人狼',
-    status: 'alive'
+    status: village.AgentStatus.alive
   },
   agent2: {
     agentId: 3,
@@ -32,10 +31,10 @@ const agents = {
     agentName: 'ジムゾン',
     avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
     avatarName: 'Tanaka',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
     roleName: '狩人',
-    status: 'alive'
+    status: village.AgentStatus.alive
   },
   agent3: {
     agentId: 4,
@@ -43,10 +42,10 @@ const agents = {
     agentName: 'トーマス',
     avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
     avatarName: 'Ito',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
     roleName: '霊媒師',
-    status: 'alive'
+    status: village.AgentStatus.alive
   },
   agent4: {
     agentId: 5,
@@ -54,10 +53,10 @@ const agents = {
     agentName: 'ニコラス',
     avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
     avatarName: 'Watanabe',
-    result: 'lose',
+    result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
     roleName: 'ハムスター人間',
-    status: 'death by fear'
+    status: village.AgentStatus.deathByFear
   },
   agent5: {
     agentId: 6,
@@ -65,10 +64,10 @@ const agents = {
     agentName: 'ディーター',
     avatarImage: 'https://werewolf.world/image/0.2/Jacob.jpg',
     avatarName: 'Yamamoto',
-    result: 'lose',
+    result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.2/madman.jpg',
     roleName: '狂人',
-    status: 'death by execution'
+    status: village.AgentStatus.deathByExecution
   },
   agent6: {
     agentId: 7,
@@ -76,10 +75,10 @@ const agents = {
     agentName: 'ペーター',
     avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
     avatarName: 'Nakamura',
-    result: 'lose',
+    result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
     roleName: '人狼',
-    status: 'unnatural death'
+    status: village.AgentStatus.unnaturalDeath
   },
   agent7: {
     agentId: 8,
@@ -87,10 +86,10 @@ const agents = {
     agentName: 'リーザ',
     avatarImage: 'https://werewolf.world/image/0.2/Peter.jpg',
     avatarName: 'Kobayashi',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
     roleName: '村人',
-    status: 'unnatural death'
+    status: village.AgentStatus.unnaturalDeath
   },
   agent8: {
     agentId: 9,
@@ -98,10 +97,10 @@ const agents = {
     agentName: 'アルビン',
     avatarImage: 'https://werewolf.world/image/0.2/Peter.jpg',
     avatarName: 'Yoshida',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
     roleName: '村人',
-    status: 'unnatural death'
+    status: village.AgentStatus.unnaturalDeath
   },
   agent9: {
     agentId: 11,
@@ -109,10 +108,10 @@ const agents = {
     agentName: 'オットー',
     avatarImage: 'https://werewolf.world/image/0.2/Simson.jpg',
     avatarName: 'Sasaki',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/mason.jpg',
     roleName: '共有者',
-    status: 'unnatural death'
+    status: village.AgentStatus.unnaturalDeath
   },
   agent10: {
     agentId: 12,
@@ -120,10 +119,10 @@ const agents = {
     agentName: 'ヨアヒム',
     avatarImage: 'https://werewolf.world/image/0.2/Otto.jpg',
     avatarName: '山口',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
     roleName: '村人',
-    status: 'death by attack'
+    status: village.AgentStatus.deathByAttack
   },
   agent11: {
     agentId: 13,
@@ -131,10 +130,10 @@ const agents = {
     agentName: 'パメラ',
     avatarImage: 'https://werewolf.world/image/0.2/Joachim.jpg',
     avatarName: '松本',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
     roleName: '村人',
-    status: 'alive'
+    status: village.AgentStatus.alive
   },
   agent12: {
     agentId: 14,
@@ -142,30 +141,30 @@ const agents = {
     agentName: 'ヤコブ',
     avatarImage: 'https://werewolf.world/image/0.2/Catalina.jpg',
     avatarName: '井上',
-    result: 'win',
+    result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
     roleName: '村人',
-    status: 'alive'
+    status: village.AgentStatus.alive
   }
 }
-const losers = [
+const losers: Props['losers'] = [
   'agent1',
   'agent4',
   'agent5',
   'agent6'
 ]
-const me = 'agent0'
-const summary = {
+const me: Props['me'] = 'agent0'
+const summary: Props['summary'] = {
   description: {
     loser: 'Result.summary.loser(2)',
     summary: 'Result.summary.description(player, win)',
     winner: 'Result.summary.winner'
   },
-  loserTeam: new Set(['werehamster', 'werewolf']),
-  myTeam: 'villager',
-  winnerTeam: 'villager'
+  loserTeam: new Set([village.Team.werehamster, village.Team.werewolf]),
+  myTeam: village.Team.villager,
+  winnerTeam: village.Team.villager
 }
-const winners = [
+const winners: Props['winners'] = [
   'agent0',
   'agent2',
   'agent3',
