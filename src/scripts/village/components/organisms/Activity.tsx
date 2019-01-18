@@ -1,15 +1,12 @@
-// @flow
+import * as React from 'react'
 import Chat from '../../containers/ChatContainer'
 import Prediction from '../../containers/PredictionContainer'
-import React from 'react'
 
-export type StateProps = {
-  +expand: boolean
+export interface StateProps {
+  readonly expand: boolean
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & OwnProps
+export interface OwnProps {}
+export interface Props extends StateProps, OwnProps {}
 
 export default function Activity(props: Props) {
   return (

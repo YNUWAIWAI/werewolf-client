@@ -1,6 +1,5 @@
-// @flow
+import * as React from 'react'
 import Activity from './Activity'
-import React from 'react'
 import {shallow} from 'enzyme'
 
 test('<Activity expand />', () => {
