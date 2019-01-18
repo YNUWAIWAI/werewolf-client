@@ -1,4 +1,3 @@
-// @flow
 /* eslint sort-keys: 0 */
 export default {
   '@context': [
@@ -318,7 +317,7 @@ export default {
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-      'isMine': true,
+      'isMine': false,
       'name': {
         'en': 'Villager',
         'ja': '村人'
@@ -348,7 +347,7 @@ export default {
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-      'isMine': false,
+      'isMine': true,
       'name': {
         'en': 'Seer',
         'ja': '占い師'

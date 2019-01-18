@@ -1,4 +1,3 @@
-// @flow
 /* eslint sort-keys: 0 */
 export default {
   '@context': [

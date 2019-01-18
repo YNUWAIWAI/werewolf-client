@@ -1,4 +1,3 @@
-// @flow
 import anonymousAudienceChatJSON from './anonymousAudienceChat'
 import dayJSON from './day'
 import firstMorning1JSON from './firstMorning1'

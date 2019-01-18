@@ -1,4 +1,3 @@
-// @flow
 /* eslint sort-keys: 0 */
 export default {
   '@context': [
@@ -16,9 +15,9 @@ export default {
     'totalNumberOfAgents': 15
   },
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-  'phase': 'night',
+  'phase': 'morning',
   'date': 1,
-  'phaseTimeLimit': 180,
+  'phaseTimeLimit': 600,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -40,10 +39,10 @@ export default {
       },
       'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'id': 0,
-      'status': 'dead',
+      'status': 'alive',
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#0/update',
-        'phase': 'day',
+        'phase': 'morning',
         'date': 1
       },
       'isAChoice': false
@@ -82,7 +81,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -100,7 +99,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -118,7 +117,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -136,7 +135,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -154,7 +153,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -172,7 +171,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -184,10 +183,10 @@ export default {
       },
       'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
       'id': 8,
-      'status': 'dead',
+      'status': 'alive',
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#8/update',
-        'phase': 'night',
+        'phase': 'morning',
         'date': 1
       },
       'isAChoice': false
@@ -208,7 +207,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -226,7 +225,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -244,7 +243,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -262,7 +261,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -280,7 +279,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     },
     {
       '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -298,7 +297,7 @@ export default {
         'phase': 'morning',
         'date': 1
       },
-      'isAChoice': true
+      'isAChoice': false
     }
   ],
 
@@ -318,7 +317,7 @@ export default {
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-      'isMine': false,
+      'isMine': true,
       'name': {
         'en': 'Villager',
         'ja': '村人'
@@ -348,7 +347,7 @@ export default {
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-      'isMine': true,
+      'isMine': false,
       'name': {
         'en': 'Seer',
         'ja': '占い師'
