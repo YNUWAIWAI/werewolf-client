@@ -1,45 +1,41 @@
-// @flow
-import type {AgentId, AgentStatus, BoardState, RoleId} from 'village'
+import * as React from 'react'
 import PredictionItem from '../atoms/PredictionItem'
 import PredictionPlayer from '../atoms/PredictionPlayer'
 import PredictionRole from '../atoms/PredictionRole'
-import React from 'react'
+import {just} from '../../util'
 
-export type StateProps = {
-  +playerStatus: Array<{
-    +id: number,
-    +image: string,
-    +name: string,
-    +status: AgentStatus
-  }>,
-  +roleStatus: Array<{
-    +id: RoleId,
-    +image: string,
-    +numberOfAgents: number,
-    +caption: string
-  }>,
-  +table: {
-    [agentId: AgentId]: {
-      [roleId: RoleId]: {
-        +date: number,
-        +fixed: boolean,
-        +state: BoardState
+export interface StateProps {
+  readonly playerStatus: {
+    readonly id: number,
+    readonly image: string,
+    readonly name: string,
+    readonly status: village.AgentStatus
+  }[]
+  readonly roleStatus: {
+    readonly id: village.RoleId,
+    readonly image: string,
+    readonly numberOfAgents: number,
+    readonly caption: string
+  }[]
+  readonly table: {
+    readonly [agentId in village.AgentId]: Partial<{
+      readonly [roleId in village.RoleId]: {
+        readonly date: number,
+        readonly fixed: boolean,
+        readonly state: village.BoardState
       }
-    }
+    }>
   }
 }
-export type DispatchProps = {
-  handleBoardClick: (number, RoleId) => BoardState => void
+export interface DispatchProps {
+  handleBoardClick: (playerId: number, role: village.RoleId) => (state: village.BoardState) => void
 }
-export type OwnProps = {}
-export type Props =
-  & StateProps
-  & DispatchProps
-  & OwnProps
+export interface OwnProps {}
+export interface Props extends StateProps, DispatchProps, OwnProps {}
 
 export default function Prediction(props: Props) {
   if (props.playerStatus.length === 0 || props.roleStatus.length === 0) {
-    return ''
+    return null
   }
   const predictionTable = [
     <div
@@ -64,11 +60,11 @@ export default function Prediction(props: Props) {
         />,
         ... props.roleStatus.map(role =>
           <PredictionItem
-            date={props.table[String(player.id)][role.id].date}
-            fixed={props.table[String(player.id)][role.id].fixed}
+            date={just(props.table[String(player.id)][role.id]).date}
+            fixed={just(props.table[String(player.id)][role.id]).fixed}
             handleBoardClick={props.handleBoardClick(player.id, role.id)}
             key={player.id + role.id}
-            state={props.table[String(player.id)][role.id].state}
+            state={just(props.table[String(player.id)][role.id]).state}
           />
         )
       ]
