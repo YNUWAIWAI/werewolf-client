@@ -140,8 +140,8 @@ export const strToRoleId = (str: string): village.RoleId => {
   return maybe
 }
 
-export const getMyAgent = <T extends {name: {en: string}, isMine: boolean}>(agents: T[]): T => {
-  const maybe = agents.find(a => a.isMine)
+export const getMyAgent = <T extends {name: village.LanguageMap, isMine?: boolean}>(agents: T[]): T => {
+  const maybe = agents.find(a => a.isMine !== undefined && a.isMine)
 
   if (!maybe) {
     throw Error('Not found my agent.')
@@ -150,11 +150,11 @@ export const getMyAgent = <T extends {name: {en: string}, isMine: boolean}>(agen
   return maybe
 }
 
-export const getPlayableAgents = <T extends {name: {en: string}}>(agents: T[]): T[] => agents
+export const getPlayableAgents = <T extends {name: village.LanguageMap}>(agents: T[]): T[] => agents
 
-export const getPlayableRoles = <T extends {name: {en: string}}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(strToRoleId(r.name.en)))
+export const getPlayableRoles = <T extends {name: village.LanguageMap}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(strToRoleId(r.name.en)))
 
-export const getMyRole = <T extends {name: {en: string}, isMine: boolean}>(roles: T[]): T => {
+export const getMyRole = <T extends {name: village.LanguageMap, isMine: boolean}>(roles: T[]): T => {
   const maybe = getPlayableRoles(roles).find(r => r.isMine)
 
   if (!maybe) {
