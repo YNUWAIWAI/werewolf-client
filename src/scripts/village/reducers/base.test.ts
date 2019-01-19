@@ -1,16 +1,12 @@
-// @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './base'
 import {firstMorning} from './fakeServer'
+import {socket} from '../actions'
 
 test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      {
-        payload: firstMorning,
-        type: ActionTypes.socket.MESSAGE
-      }
+      socket.message(firstMorning)
     )
   ).toEqual({
     clientTimestamp: '2006-10-07T12:06:56.568+09:00',

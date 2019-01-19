@@ -1,34 +1,32 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Contexts from '../constants/Contexts'
-import type {Channel, Language, Phase} from 'village'
-import type {SocketMessage} from '../actions'
+import {SocketMessage} from '../actions'
 
-export type State = {
-  +clientTimestamp: string,
-  +date: number,
-  +intensionalDisclosureRange: Channel,
-  +phase: Phase,
-  +phaseStartTime: string,
-  +phaseTimeLimit: number,
-  +serverTimestamp: string,
-  +token: string,
-  +village: {
-    +'@id': string,
-    +id: number,
-    +lang: Language,
-    +name: string,
-    +totalNumberOfAgents: number
+export interface State {
+  readonly clientTimestamp: string
+  readonly date: number
+  readonly intensionalDisclosureRange: village.Channel
+  readonly phase: village.Phase
+  readonly phaseStartTime: string
+  readonly phaseTimeLimit: number
+  readonly serverTimestamp: string
+  readonly token: village.Token
+  readonly village: {
+    readonly '@id': string
+    readonly id: number
+    readonly lang: village.Language
+    readonly name: string
+    readonly totalNumberOfAgents: number
   }
 }
 type Action =
   | SocketMessage
 
-export const initialState = {
+export const initialState: State = {
   clientTimestamp: '',
   date: 0,
-  intensionalDisclosureRange: 'public',
-  phase: 'night',
+  intensionalDisclosureRange: village.Channel.public,
+  phase: village.Phase.night,
   phaseStartTime: '',
   phaseTimeLimit: -1,
   serverTimestamp: '',
@@ -36,16 +34,13 @@ export const initialState = {
   village: {
     '@id': '',
     'id': 0,
-    'lang': 'en',
+    'lang': village.Language.en,
     'name': '',
     'totalNumberOfAgents': 0
   }
 }
 const base = (state: State = initialState, action: Action): State => {
-  if (
-    action.type === ActionTypes.socket.MESSAGE &&
-    action.payload['@context'].includes(Contexts.BASE)
-  ) {
+  if (action.type === ActionTypes.socket.MESSAGE) {
     return {
       clientTimestamp: action.payload.clientTimestamp,
       date: action.payload.date,
