@@ -1,4 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import {strToMessage} from '../util'
+
+type SocketMessageReturnType<T> = {
+  payload: T,
+  type: ActionTypes.socket.MESSAGE
+}
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: ActionTypes.socket.CLOSE} => ({
@@ -9,10 +15,71 @@ export const socket = {
     event,
     type: ActionTypes.socket.ERROR
   }),
-  message: (payload: village.Payload): {payload: village.Payload, type: ActionTypes.socket.MESSAGE} => {
-    return {
-      payload,
-      type: ActionTypes.socket.MESSAGE
+  message: (payload: village.Payload) => {
+    if (payload['@id'] === undefined) {
+      throw Error('Unkonown Message')
+    }
+    const message = strToMessage(payload['@id'])
+
+    switch (message) {
+      case village.Message.boardMessage:
+        return <SocketMessageReturnType<village.Payload$boardMessage>>{
+          payload: {
+            ... <village.Payload$boardMessage>payload,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
+      case village.Message.errorMessage:
+        return <SocketMessageReturnType<village.Payload$errorMessage>>{
+          payload: {
+            ... <village.Payload$errorMessage>payload,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
+      case village.Message.flavorTextMessage:
+        return <SocketMessageReturnType<village.Payload$flavorTextMessage>>{
+          payload: {
+            ... <village.Payload$flavorTextMessage>payload,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
+      case village.Message.playerMessage:
+        return <SocketMessageReturnType<village.Payload$playerMessage>>{
+          payload: {
+            ... <village.Payload$playerMessage>payload,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
+      case village.Message.scrollMessage:
+        return <SocketMessageReturnType<village.Payload$scrollMessage>>{
+          payload: {
+            ... <village.Payload$scrollMessage>payload,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
+      case village.Message.systemMessage:
+        return <SocketMessageReturnType<village.Payload$systemMessage>>{
+          payload: {
+            ... <village.Payload$systemMessage>payload,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
+      case village.Message.voteMessage:
+        return <SocketMessageReturnType<village.Payload$voteMessage>>{
+          payload: {
+            ... <village.Payload$voteMessage>payload,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
+      default:
+        throw Error('Unkonown Message')
     }
   },
   open: (event: Event): {event: Event, type: ActionTypes.socket.OPEN} => ({
@@ -102,6 +169,6 @@ export type SelectOption = ReturnType<typeof selectOption>
 export type SelectYes = ReturnType<typeof selectYes>
 export type SocketClose = ReturnType<typeof socket.close>
 export type SocketError = ReturnType<typeof socket.error>
-export type SocketMessage = ReturnType<typeof socket.messag>
+export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
