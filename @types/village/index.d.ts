@@ -410,6 +410,7 @@ declare namespace village {
       votingResultsSummary?: VotingResult['votingResultsSummary'];
       votingResultsDetails?: VotingResult['votingResultsDetails'];
       agent?: {
+        '@context': Agent['@context'];
         '@id': Agent['@id'];
         isMine: Agent['isMine'];
         name: Agent['name'];
