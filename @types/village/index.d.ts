@@ -93,6 +93,10 @@ declare namespace village {
     female = 'female',
     male = 'male'
   }
+  const enum Polarity {
+    negative = 'negative',
+    positive = 'positive'
+  }
   const enum Context {
     Agent = 'https://werewolf.world/context/0.2/agent.jsonld',
     Avatar = 'https://werewolf.world/context/0.2/avatar.jsonld',
@@ -245,8 +249,8 @@ declare namespace village {
   interface Board {
     '@context'?: Context.BoardResult;
     '@id'?: string;
-    polarity?: string; // 'positive' | 'negative'
-    prediction?: string; // BoardState
+    polarity?: Polarity; // 'positive' | 'negative'
+    prediction?: BoardState; // BoardState
   }
 
   /*
