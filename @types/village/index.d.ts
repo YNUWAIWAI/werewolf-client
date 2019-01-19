@@ -449,19 +449,19 @@ declare namespace village {
         agent?: {
           '@context': Agent['@context'];
           '@id': Agent['@id'];
+          id: Agent['id'];
           name: Agent['name'];
           image: Agent['image'];
-          id: Agent['id'];
-        };
+        }[];
         board?: {
           '@context': Board['@context'];
           '@id': string;
           agent: {
             '@context': Agent['@context'];
             '@id': Agent['@id'];
+            id: Agent['id'];
             name: Agent['name'];
             image: Agent['image'];
-            id: Agent['id'];
           };
           polarity: Board['polarity'];
           phase: Time['phase'];
