@@ -154,9 +154,9 @@ declare namespace village {
     id: number;
     status?: string; // AgentStatus
     update?: {
-      '@id': Time['@id'];
-      date: Time['date'];
-      phase: Time['phase'];
+      '@id': NonNullable<Time['@id']>;
+      date: NonNullable<Time['date']>;
+      phase: NonNullable<Time['phase']>;
     };
     isAChoice?: boolean;
     result?: Result;
@@ -198,9 +198,9 @@ declare namespace village {
       name: string;
       totalNumberOfAgents: number;
     };
-    token: Avatar['token'];
-    phase: Time['phase'];
-    date: Time['date'];
+    token: NonNullable<Avatar['token']>;
+    phase: NonNullable<Time['phase']>;
+    date: NonNullable<Time['date']>;
     phaseTimeLimit: number;
     phaseStartTime: string;
     serverTimestamp: string;
@@ -208,35 +208,35 @@ declare namespace village {
     directionality: Directionality;
     intensionalDisclosureRange: Channel;
     extensionalDisclosureRange: {
-      '@id': Agent['@id'];
-      id: Agent['id'];
-      image: Agent['image'];
-      name: Agent['name'];
+      '@id': NonNullable<Agent['@id']>;
+      id: NonNullable<Agent['id']>;
+      image: NonNullable<Agent['image']>;
+      name: NonNullable<Agent['name']>;
       role: {
-        '@id': Role['@id'];
-        image: Role['image'];
-        name: Role['name'];
+        '@id': NonNullable<Role['@id']>;
+        image: NonNullable<Role['image']>;
+        name: NonNullable<Role['name']>;
       };
-      status: Agent['status'];
+      status: NonNullable<Agent['status']>;
     }[];
     avatar?: {
-      '@context': Avatar['@context'];
-      '@id': Avatar['@id'];
-      token: Avatar['token'];
-      name: Avatar['name'];
-      image: Avatar['image'];
+      '@context': NonNullable<Avatar['@context']>;
+      '@id': NonNullable<Avatar['@id']>;
+      token: NonNullable<Avatar['token']>;
+      name: NonNullable<Avatar['name']>;
+      image: NonNullable<Avatar['image']>;
     };
     myAgent?: {
-      '@context': Agent['@context'];
-      '@id': Agent['@id'];
-      id: Agent['id'];
-      image: Agent['image'];
-      name: Agent['name'];
+      '@context': NonNullable<Agent['@context']>;
+      '@id': NonNullable<Agent['@id']>;
+      id: NonNullable<Agent['id']>;
+      image: NonNullable<Agent['image']>;
+      name: NonNullable<Agent['name']>;
       role: {
-        '@context': Role['@context'];
-        '@id': Role['@id'];
-        image: Role['image'];
-        name: Role['name'];
+        '@context': NonNullable<Role['@context']>;
+        '@id': NonNullable<Role['@id']>;
+        image: NonNullable<Role['image']>;
+        name: NonNullable<Role['name']>;
       };
     };
   }
@@ -337,10 +337,10 @@ declare namespace village {
     votingResultsSummary?: {
       '@id': string;
       agentToLynch: {
-        '@id': Agent['@id'];
-        id: Agent['id'];
-        image: Agent['image'];
-        name: Agent['name'];
+        '@id': NonNullable<Agent['@id']>;
+        id: NonNullable<Agent['id']>;
+        image: NonNullable<Agent['image']>;
+        name: NonNullable<Agent['name']>;
       };
       numberOfVotes: number;
       rankOfVotes: number;
@@ -348,16 +348,16 @@ declare namespace village {
     votingResultsDetails?: {
       '@id': string;
       sourceAgent: {
-        '@id': Agent['@id'];
-        id: Agent['id'];
-        image: Agent['image'];
-        name: Agent['name'];
+        '@id': NonNullable<Agent['@id']>;
+        id: NonNullable<Agent['id']>;
+        image: NonNullable<Agent['image']>;
+        name: NonNullable<Agent['name']>;
       };
       targetAgent: {
-        '@id': Agent['@id'];
-        id: Agent['id'];
-        image: Agent['image'];
-        name: Agent['name'];
+        '@id': NonNullable<Agent['@id']>;
+        id: NonNullable<Agent['id']>;
+        image: NonNullable<Agent['image']>;
+        name: NonNullable<Agent['name']>;
       };
     }[];
   }
@@ -368,17 +368,17 @@ declare namespace village {
   interface Payload$boardMessage extends Base {
     '@payload'?: Message.boardMessage,
     agent: {
-      '@context': Agent['@context'];
-      '@id': Agent['@id'];
-      id: Agent['id'];
-      name: Agent['name'];
-      image: Agent['image'];
+      '@context': NonNullable<Agent['@context']>;
+      '@id': NonNullable<Agent['@id']>;
+      id: NonNullable<Agent['id']>;
+      name: NonNullable<Agent['name']>;
+      image: NonNullable<Agent['image']>;
     };
     role: {
-      '@context': Role['@context'];
-      '@id': Role['@id'];
-      name: Role['name'];
-      image: Role['image'];
+      '@context': NonNullable<Role['@context']>;
+      '@id': NonNullable<Role['@id']>;
+      name: NonNullable<Role['name']>;
+      image: NonNullable<Role['image']>;
     };
     prediction: Board['prediction'];
   }
@@ -392,91 +392,91 @@ declare namespace village {
     interface Payload$playerMessage extends Base {
       '@payload'?: Message.playerMessage,
       agent?: {
-        '@context': Agent['@context'];
-        '@id': Agent['@id'];
-        id: Agent['id'];
-        name: Agent['name'];
-        image: Agent['image'];
+        '@context': NonNullable<Agent['@context']>;
+        '@id': NonNullable<Agent['@id']>;
+        id: NonNullable<Agent['id']>;
+        name: NonNullable<Agent['name']>;
+        image: NonNullable<Agent['image']>;
       };
-      isMine: Chat['isMine'];
-      id?: Chat['id'];
-      counter?: Chat['counter'];
-      limit?: Chat['limit'];
-      interval?: Chat['interval'];
-      text: Chat['text'];
-      characterLimit: Chat['characterLimit'];
-      isOver: Chat['isOver'];
+      isMine: NonNullable<Chat['isMine']>;
+      id?: NonNullable<Chat['id']>;
+      counter?: NonNullable<Chat['counter']>;
+      limit?: NonNullable<Chat['limit']>;
+      interval?: NonNullable<Chat['interval']>;
+      text: NonNullable<Chat['text']>;
+      characterLimit: NonNullable<Chat['characterLimit']>;
+      isOver: NonNullable<Chat['isOver']>;
     }
     interface Payload$scrollMessage extends Base, Scroll {
       '@payload'?: Message.scrollMessage
     }
     interface Payload$systemMessage extends Base {
       '@payload'?: Message.systemMessage,
-      votingResultsSummary?: VotingResult['votingResultsSummary'];
-      votingResultsDetails?: VotingResult['votingResultsDetails'];
+      votingResultsSummary?: NonNullable<VotingResult['votingResultsSummary']>;
+      votingResultsDetails?: NonNullable<VotingResult['votingResultsDetails']>;
       agent?: {
-        '@context': Agent['@context'];
-        '@id': Agent['@id'];
-        isMine: Agent['isMine'];
-        name: Agent['name'];
-        image: Agent['image'];
-        id: Agent['id'];
-        status: Agent['status'];
-        update?: Agent['update'];
-        isAChoice?: Agent['isAChoice'];
-        result?: Agent['result'];
+        '@context': NonNullable<Agent['@context']>;
+        '@id': NonNullable<Agent['@id']>;
+        isMine: NonNullable<Agent['isMine']>;
+        name: NonNullable<Agent['name']>;
+        image: NonNullable<Agent['image']>;
+        id: NonNullable<Agent['id']>;
+        status: NonNullable<Agent['status']>;
+        update?: NonNullable<Agent['update']>;
+        isAChoice?: NonNullable<Agent['isAChoice']>;
+        result?: NonNullable<Agent['result']>;
         avatar?: {
-          '@context': Avatar['@context'];
-          '@id': Avatar['@id'];
-          token: Avatar['token'];
-          name: Avatar['name'];
-          image: Avatar['image'];
+          '@context': NonNullable<Avatar['@context']>;
+          '@id': NonNullable<Avatar['@id']>;
+          token: NonNullable<Avatar['token']>;
+          name: NonNullable<Avatar['name']>;
+          image: NonNullable<Avatar['image']>;
         };
         role?: {
-          '@context': Role['@context'];
-          '@id': Role['@id'];
-          name: Role['name'];
-          image: Role['image'];
+          '@context': NonNullable<Role['@context']>;
+          '@id': NonNullable<Role['@id']>;
+          name: NonNullable<Role['name']>;
+          image: NonNullable<Role['image']>;
         };
       }[];
       role?: {
-        '@context': Role['@context'];
-        '@id': Role['@id'];
-        isMine: Role['isMine'];
-        name: Role['name'];
-        image: Role['image'];
-        numberOfAgents: Role['numberOfAgents'];
+        '@context': NonNullable<Role['@context']>;
+        '@id': NonNullable<Role['@id']>;
+        isMine: NonNullable<Role['isMine']>;
+        name: NonNullable<Role['name']>;
+        image: NonNullable<Role['image']>;
+        numberOfAgents: NonNullable<Role['numberOfAgents']>;
         agent?: {
-          '@context': Agent['@context'];
-          '@id': Agent['@id'];
-          id: Agent['id'];
-          name: Agent['name'];
-          image: Agent['image'];
+          '@context': NonNullable<Agent['@context']>;
+          '@id': NonNullable<Agent['@id']>;
+          id: NonNullable<Agent['id']>;
+          name: NonNullable<Agent['name']>;
+          image: NonNullable<Agent['image']>;
         }[];
         board?: {
-          '@context': Board['@context'];
+          '@context': NonNullable<Board['@context']>;
           '@id': string;
           agent: {
-            '@context': Agent['@context'];
-            '@id': Agent['@id'];
-            id: Agent['id'];
-            name: Agent['name'];
-            image: Agent['image'];
+            '@context': NonNullable<Agent['@context']>;
+            '@id': NonNullable<Agent['@id']>;
+            id: NonNullable<Agent['id']>;
+            name: NonNullable<Agent['name']>;
+            image: NonNullable<Agent['image']>;
           };
-          polarity: Board['polarity'];
-          phase: Time['phase'];
-          date: Time['date'];
+          polarity: NonNullable<Board['polarity']>;
+          phase: NonNullable<Time['phase']>;
+          date: NonNullable<Time['date']>;
         }[];
       }[];
     }
     interface Payload$voteMessage extends Base {
       '@payload'?: Message.voteMessage,
       agent?: {
-        '@context': Agent['@context'];
-        '@id': Agent['@id'];
-        name: Agent['name'];
-        image: Agent['image'];
-        id: Agent['id'];
+        '@context': NonNullable<Agent['@context']>;
+        '@id': NonNullable<Agent['@id']>;
+        name: NonNullable<Agent['name']>;
+        image: NonNullable<Agent['image']>;
+        id: NonNullable<Agent['id']>;
       };
     }
     interface Payload$ready extends PayloadBase {
