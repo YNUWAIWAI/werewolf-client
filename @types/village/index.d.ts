@@ -426,6 +426,8 @@ declare namespace village {
         isAChoice?: Agent['isAChoice'];
         result?: Agent['result'];
         avatar?: {
+          '@context': Avatar['@context'];
+          '@id': Avatar['@id'];
           token: Avatar['token'];
           name: Avatar['name'];
           image: Avatar['image'];
