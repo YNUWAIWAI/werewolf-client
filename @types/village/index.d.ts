@@ -182,7 +182,7 @@ declare namespace village {
         'systemMessage'
         'voteMessage'
   */
-  interface Base {
+  interface Base extends PayloadBase {
     '@id': string;
     '@context': BaseContext[];
     village: {
@@ -356,7 +356,12 @@ declare namespace village {
       };
     }[];
   }
+  interface PayloadBase {
+    '@id'?: string
+    '@payload'?: Message
+  }
   interface Payload$boardMessage extends Base {
+    '@payload'?: Message.boardMessage,
     agent: {
       '@context': Agent['@context'];
       '@id': Agent['@id'];
@@ -372,11 +377,15 @@ declare namespace village {
     };
     prediction: Board['prediction'];
   }
-    interface Payload$errorMessage extends Base, Error {}
+    interface Payload$errorMessage extends Base, Error {
+      '@payload'?: Message.errorMessage
+    }
     interface Payload$flavorTextMessage extends Base {
-      flavorText: playerMessage[];
+      '@payload'?: Message.flavorTextMessage,
+      flavorText: Payload$playerMessage[];
     }
     interface Payload$playerMessage extends Base {
+      '@payload'?: Message.playerMessage,
       agent?: {
         '@context': Agent['@context'];
         '@id': Agent['@id'];
@@ -393,8 +402,11 @@ declare namespace village {
       characterLimit: Chat['characterLimit'];
       isOver: Chat['isOver'];
     }
-    interface Payload$scrollMessage extends Base, Scroll {}
+    interface Payload$scrollMessage extends Base, Scroll {
+      '@payload'?: Message.scrollMessage
+    }
     interface Payload$systemMessage extends Base {
+      '@payload'?: Message.systemMessage,
       votingResultsSummary?: VotingResult['votingResultsSummary'];
       votingResultsDetails?: VotingResult['votingResultsDetails'];
       agent?: {
@@ -450,6 +462,7 @@ declare namespace village {
       }[];
     }
     interface Payload$voteMessage extends Base {
+      '@payload'?: Message.voteMessage,
       agent?: {
         '@context': Agent['@context'];
         '@id': Agent['@id'];
@@ -458,7 +471,7 @@ declare namespace village {
         id: Agent['id'];
       };
     }
-    interface Payload$ready {
+    interface Payload$ready extends PayloadBase {
       token: string,
       type: 'ready',
       villageId: number
@@ -468,8 +481,8 @@ declare namespace village {
       | Payload$errorMessage
       | Payload$flavorTextMessage
       | Payload$playerMessage
+      | Payload$ready
       | Payload$scrollMessage
       | Payload$systemMessage
       | Payload$voteMessage
-      | Payload$ready
 }
