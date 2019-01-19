@@ -171,7 +171,7 @@ declare namespace village {
   interface Avatar {
     '@context'?: Context.Avatar;
     '@id'?: string;
-    token?: string;
+    token?: Token;
     name?: string;
     image?: string;
   }
@@ -480,7 +480,7 @@ declare namespace village {
       };
     }
     interface Payload$ready extends PayloadBase {
-      token: string,
+      token: Token,
       type: 'ready',
       villageId: number
     }
