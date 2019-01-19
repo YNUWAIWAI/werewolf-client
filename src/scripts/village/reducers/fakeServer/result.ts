@@ -1,28 +1,28 @@
 /* eslint sort-keys: 0 */
-export default {
+const json: village.Payload$systemMessage = {
   '@context': [
-    'https://werewolf.world/context/0.2/base.jsonld',
-    'https://werewolf.world/context/0.2/votingResult.jsonld'
+    village.BaseContext.Base,
+    village.BaseContext.VotingResult
   ],
   '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
 
   'village': {
-    '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+    '@context': village.Context.Village,
     '@id': 'https://licos.online/state/0.2/village',
     'id': 3,
-    'lang': 'ja',
+    'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
     'totalNumberOfAgents': 15
   },
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-  'phase': 'result',
+  'phase': village.Phase.result,
   'date': -1,
   'phaseTimeLimit': -1,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'directionality': 'server to client',
-  'intensionalDisclosureRange': 'private',
+  'directionality': village.Directionality.serverToClient,
+  'intensionalDisclosureRange': village.Channel.private,
   'extensionalDisclosureRange': [],
 
   'votingResultsSummary': [],
@@ -30,7 +30,7 @@ export default {
 
   'agent': [
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#0',
       'isMine': false,
       'name': {
@@ -40,7 +40,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'id': 0,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#0/role',
         'name': {
           'en': 'Villager',
@@ -48,10 +48,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/villager.jpg'
       },
-      'status': 'alive',
-      'result': 'win',
+      'status': village.AgentStatus.alive,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#0/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
         'name': 'Sato',
@@ -59,7 +59,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'isMine': true,
       'name': {
@@ -69,7 +69,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'id': 1,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#1/role',
         'name': {
           'en': 'Seer',
@@ -77,10 +77,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/seer.jpg'
       },
-      'status': 'alive',
-      'result': 'win',
+      'status': village.AgentStatus.alive,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#1/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI1',
         'name': 'Suzuki',
@@ -88,7 +88,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'isMine': false,
       'name': {
@@ -98,7 +98,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
       'id': 2,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#2/role',
         'name': {
           'en': 'Werewolf',
@@ -106,10 +106,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/werewolf.jpg'
       },
-      'status': 'alive',
-      'result': 'lose',
+      'status': village.AgentStatus.alive,
+      'result': village.Result.lose,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#2/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI2',
         'name': 'Takahashi',
@@ -117,7 +117,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#3',
       'isMine': false,
       'name': {
@@ -127,7 +127,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Simson.jpg',
       'id': 3,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#3/role',
         'name': {
           'en': 'Hunter',
@@ -135,10 +135,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/hunter.jpg'
       },
-      'status': 'alive',
-      'result': 'win',
+      'status': village.AgentStatus.alive,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#3/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI3',
         'name': 'Tanaka',
@@ -146,7 +146,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#4',
       'isMine': false,
       'name': {
@@ -156,7 +156,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
       'id': 4,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#4/role',
         'name': {
           'en': 'Medium',
@@ -164,10 +164,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/medium.jpg'
       },
-      'status': 'alive',
-      'result': 'win',
+      'status': village.AgentStatus.alive,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#4/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI4',
         'name': 'Ito',
@@ -175,7 +175,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#5',
       'isMine': false,
       'name': {
@@ -185,7 +185,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
       'id': 5,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#5/role',
         'name': {
           'en': 'Werehamster',
@@ -193,10 +193,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/werehamster.jpg'
       },
-      'status': 'death by fear',
-      'result': 'lose',
+      'status': village.AgentStatus.deathByFear,
+      'result': village.Result.lose,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#5/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI5',
         'name': 'Watanabe',
@@ -204,7 +204,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#6',
       'isMine': false,
       'name': {
@@ -214,7 +214,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
       'id': 6,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#6/role',
         'name': {
           'en': 'Madman',
@@ -222,10 +222,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/madman.jpg'
       },
-      'status': 'death by execution',
-      'result': 'lose',
+      'status': village.AgentStatus.deathByExecution,
+      'result': village.Result.lose,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#6/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI6',
         'name': 'Yamamoto',
@@ -233,7 +233,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#7',
       'isMine': false,
       'name': {
@@ -243,7 +243,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Peter.jpg',
       'id': 7,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#7/role',
         'name': {
           'en': 'Werewolf',
@@ -251,10 +251,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/werewolf.jpg'
       },
-      'status': 'unnatural death',
-      'result': 'lose',
+      'status': village.AgentStatus.unnaturalDeath,
+      'result': village.Result.lose,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#7/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI7',
         'name': 'Nakamura',
@@ -262,7 +262,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#8',
       'isMine': false,
       'name': {
@@ -272,7 +272,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
       'id': 8,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#8/role',
         'name': {
           'en': 'Villager',
@@ -280,10 +280,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/villager.jpg'
       },
-      'status': 'unnatural death',
-      'result': 'win',
+      'status': village.AgentStatus.unnaturalDeath,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#8/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI8',
         'name': 'Kobayashi',
@@ -291,7 +291,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#9',
       'isMine': false,
       'name': {
@@ -301,7 +301,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
       'id': 9,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#9/role',
         'name': {
           'en': 'Villager',
@@ -309,10 +309,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/villager.jpg'
       },
-      'status': 'unnatural death',
-      'result': 'win',
+      'status': village.AgentStatus.unnaturalDeath,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#9/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI9',
         'name': 'Yoshida',
@@ -320,7 +320,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#10',
       'isMine': false,
       'name': {
@@ -330,7 +330,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
       'id': 10,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#10/role',
         'name': {
           'en': 'Mason',
@@ -338,10 +338,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/mason.jpg'
       },
-      'status': 'unnatural death',
-      'result': 'win',
+      'status': village.AgentStatus.unnaturalDeath,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#10/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVG10',
         'name': 'Yamada',
@@ -349,7 +349,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#11',
       'isMine': false,
       'name': {
@@ -359,7 +359,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Otto.jpg',
       'id': 11,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#11/role',
         'name': {
           'en': 'Mason',
@@ -367,10 +367,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/mason.jpg'
       },
-      'status': 'unnatural death',
-      'result': 'win',
+      'status': village.AgentStatus.unnaturalDeath,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#11/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVG11',
         'name': 'Sasaki',
@@ -378,7 +378,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#12',
       'isMine': false,
       'name': {
@@ -388,7 +388,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
       'id': 12,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#12/role',
         'name': {
           'en': 'Villager',
@@ -396,10 +396,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/villager.jpg'
       },
-      'status': 'death by attack',
-      'result': 'win',
+      'status': village.AgentStatus.deathByAttack,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#12/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVG12',
         'name': '山口',
@@ -407,7 +407,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#13',
       'isMine': false,
       'name': {
@@ -417,7 +417,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
       'id': 13,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#13/role',
         'name': {
           'en': 'Villager',
@@ -425,10 +425,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/villager.jpg'
       },
-      'status': 'alive',
-      'result': 'win',
+      'status': village.AgentStatus.alive,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#13/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVG13',
         'name': '松本',
@@ -436,7 +436,7 @@ export default {
       }
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#14',
       'isMine': false,
       'name': {
@@ -446,7 +446,7 @@ export default {
       'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
       'id': 14,
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/agent#14/role',
         'name': {
           'en': 'Villager',
@@ -454,10 +454,10 @@ export default {
         },
         'image': 'https://werewolf.world/image/0.2/villager.jpg'
       },
-      'status': 'alive',
-      'result': 'win',
+      'status': village.AgentStatus.alive,
+      'result': village.Result.win,
       'avatar': {
-        '@context': 'https://werewolf.world/context/0.2/avatar.jsonld',
+        '@context': village.Context.Avatar,
         '@id': 'https://licos.online/state/0.2/village#3/agent#14/avatar',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVG14',
         'name': '井上',
@@ -468,7 +468,7 @@ export default {
 
   'role': [
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#master',
       'isMine': false,
       'name': {
@@ -480,7 +480,7 @@ export default {
       'agent': []
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
       'isMine': false,
       'name': {
@@ -491,7 +491,7 @@ export default {
       'numberOfAgents': 6,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/agent#0',
           'id': 0,
           'name': {
@@ -501,7 +501,7 @@ export default {
           'image': 'https://werewolf.world/image/0.2/Gert.jpg'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/agent#8',
           'id': 8,
           'name': {
@@ -511,7 +511,7 @@ export default {
           'image': 'https://werewolf.world/image/0.2/Lisa.jpg'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/agent#9',
           'id': 9,
           'name': {
@@ -521,7 +521,7 @@ export default {
           'image': 'https://werewolf.world/image/0.2/Alvin.jpg'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/agent#12',
           'id': 12,
           'name': {
@@ -531,7 +531,7 @@ export default {
           'image': 'https://werewolf.world/image/0.2/Joachim.jpg'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/agent#13',
           'id': 13,
           'name': {
@@ -541,7 +541,7 @@ export default {
           'image': 'https://werewolf.world/image/0.2/Pamela.jpg'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/agent#14',
           'id': 14,
           'name': {
@@ -553,7 +553,7 @@ export default {
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#seer',
       'isMine': true,
       'name': {
@@ -564,7 +564,7 @@ export default {
       'numberOfAgents': 1,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#seer/agent#1',
           'id': 1,
           'name': {
@@ -576,7 +576,7 @@ export default {
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#medium',
       'isMine': false,
       'name': {
@@ -587,7 +587,7 @@ export default {
       'numberOfAgents': 1,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#medium/agent#4',
           'id': 4,
           'name': {
@@ -599,7 +599,7 @@ export default {
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
       'isMine': false,
       'name': {
@@ -610,7 +610,7 @@ export default {
       'numberOfAgents': 1,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#hunter/agent#3',
           'id': 3,
           'name': {
@@ -622,7 +622,7 @@ export default {
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#mason',
       'isMine': false,
       'name': {
@@ -633,7 +633,7 @@ export default {
       'numberOfAgents': 2,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#mason/agent#10',
           'id': 10,
           'name': {
@@ -643,7 +643,7 @@ export default {
           'image': 'https://werewolf.world/image/0.2/Catalina.jpg'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#mason/agent#11',
           'id': 11,
           'name': {
@@ -655,7 +655,7 @@ export default {
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#madman',
       'isMine': false,
       'name': {
@@ -666,7 +666,7 @@ export default {
       'numberOfAgents': 1,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#madman/agent#6',
           'id': 6,
           'name': {
@@ -678,7 +678,7 @@ export default {
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
       'isMine': false,
       'name': {
@@ -689,7 +689,7 @@ export default {
       'numberOfAgents': 2,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/agent#2',
           'id': 2,
           'name': {
@@ -699,7 +699,7 @@ export default {
           'image': 'https://werewolf.world/image/0.2/Moritz.jpg'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/agent#7',
           'id': 7,
           'name': {
@@ -711,7 +711,7 @@ export default {
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
       'isMine': false,
       'name': {
@@ -722,7 +722,7 @@ export default {
       'numberOfAgents': 1,
       'agent': [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/role#werehamster/agent#5',
           'id': 5,
           'name': {
@@ -735,3 +735,5 @@ export default {
     }
   ]
 }
+
+export default json

@@ -1,54 +1,55 @@
 /* eslint sort-keys: 0 */
-export default {
+const json: village.Payload$flavorTextMessage = {
   '@context': [
-    'https://werewolf.world/context/0.2/base.jsonld',
-    'https://werewolf.world/context/0.2/flavorText.jsonld'
+    village.BaseContext.Base,
+    village.BaseContext.FlavorText
   ],
   '@id': 'https://licos.online/state/0.2/village#3/flavorTextMessage',
   'village': {
-    '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+    '@context': village.Context.Village,
     '@id': 'https://licos.online/state/0.2/village',
     'id': 3,
-    'lang': 'ja',
+    'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
     'totalNumberOfAgents': 15
   },
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-  'phase': 'flavor text',
+  'phase': village.Phase.flavorText,
   'date': 0,
   'phaseTimeLimit': 600,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'directionality': 'server to client',
-  'intensionalDisclosureRange': 'public',
+  'directionality': village.Directionality.serverToClient,
+  'intensionalDisclosureRange': village.Channel.public,
   'extensionalDisclosureRange': [],
   'flavorText': [
     {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/chat.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.Chat
       ],
       '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       },
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-      'phase': 'morning',
+      'phase': village.Phase.morning,
       'date': 1,
       'phaseTimeLimit': 600,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'directionality': 'server to client',
-      'intensionalDisclosureRange': 'public',
+      'directionality': village.Directionality.serverToClient,
+      'intensionalDisclosureRange':  village.Channel.public,
       'extensionalDisclosureRange': [],
       'agent': {
-        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
         'name': {
@@ -64,36 +65,37 @@ export default {
       'interval': '5s',
       'text': {
         '@value': '最初のフレーバーテキストです',
-        '@language': 'ja'
+        '@language': village.Language.ja
       },
       'characterLimit': 140,
       'isOver': false
     },
     {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/chat.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.Chat
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#2/playerMessage',
+      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       },
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-      'phase': 'morning',
+      'phase': village.Phase.morning,
       'date': 1,
       'phaseTimeLimit': 600,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'directionality': 'server to client',
-      'intensionalDisclosureRange': 'public',
+      'directionality': village.Directionality.serverToClient,
+      'intensionalDisclosureRange':  village.Channel.public,
       'extensionalDisclosureRange': [],
       'agent': {
-        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
         'name': {
@@ -109,10 +111,12 @@ export default {
       'interval': '5s',
       'text': {
         '@value': '２番目のフレーバーテキストです',
-        '@language': 'ja'
+        '@language':  village.Language.ja
       },
       'characterLimit': 140,
       'isOver': false
     }
   ]
 }
+
+export default json

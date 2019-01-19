@@ -11,15 +11,15 @@ import onymousAudienceChatJSON from './onymousAudienceChat'
 import resultJSON from './result'
 import theirMessageOnChatJSON from './theirMessageOnChat'
 
-export const anonymousAudienceChat: Object = anonymousAudienceChatJSON
-export const day: Object = dayJSON
-export const firstMorning: Object = firstMorning1JSON
-export const firstMorning2: Object = firstMorning2JSON
-export const firstMorning3: Object = firstMorning3JSON
-export const firstMorning4: Object = firstMorning4JSON
-export const flavorText: Object = flavorTextJSON
-export const myMessageOnChat: Object = myMessageOnChatJSON
-export const night: Object = nightJSON
-export const onymousAudienceChat: Object = onymousAudienceChatJSON
-export const result: Object = resultJSON
-export const theirMessageOnChat: Object = theirMessageOnChatJSON
+export const anonymousAudienceChat = anonymousAudienceChatJSON
+export const day = dayJSON
+export const firstMorning = firstMorning1JSON
+export const firstMorning2 = firstMorning2JSON
+export const firstMorning3 = firstMorning3JSON
+export const firstMorning4 = firstMorning4JSON
+export const flavorText = flavorTextJSON
+export const myMessageOnChat = myMessageOnChatJSON
+export const night = nightJSON
+export const onymousAudienceChat = onymousAudienceChatJSON
+export const result = resultJSON
+export const theirMessageOnChat = theirMessageOnChatJSON

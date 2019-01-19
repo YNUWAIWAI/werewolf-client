@@ -1,28 +1,28 @@
 /* eslint sort-keys: 0 */
-export default {
+const json: village.Payload$systemMessage = {
   '@context': [
-    'https://werewolf.world/context/0.2/base.jsonld',
-    'https://werewolf.world/context/0.2/votingResult.jsonld'
+    village.BaseContext.Base,
+    village.BaseContext.VotingResult
   ],
   '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
 
   'village': {
-    '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+    '@context': village.Context.Village,
     '@id': 'https://licos.online/state/0.2/village',
     'id': 3,
-    'lang': 'ja',
+    'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfAgents': 4
+    'totalNumberOfAgents': 15
   },
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-  'phase': 'morning',
+  'phase': village.Phase.morning,
   'date': 1,
   'phaseTimeLimit': 600,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'directionality': 'server to client',
-  'intensionalDisclosureRange': 'private',
+  'directionality': village.Directionality.serverToClient,
+  'intensionalDisclosureRange': village.Channel.private,
   'extensionalDisclosureRange': [],
 
   'votingResultsSummary': [],
@@ -30,7 +30,7 @@ export default {
 
   'agent': [
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#0',
       'isMine': false,
       'name': {
@@ -39,16 +39,16 @@ export default {
       },
       'image': 'https://werewolf.world/image/0.2/Gert.jpg',
       'id': 0,
-      'status': 'alive',
+      'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#0/update',
-        'phase': 'morning',
+        'phase': village.Phase.morning,
         'date': 1
       },
       'isAChoice': false
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'isMine': true,
       'name': {
@@ -57,16 +57,16 @@ export default {
       },
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
       'id': 1,
-      'status': 'alive',
+      'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
-        'phase': 'morning',
+        'phase': village.Phase.morning,
         'date': 1
       },
       'isAChoice': false
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'isMine': false,
       'name': {
@@ -75,16 +75,16 @@ export default {
       },
       'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
       'id': 2,
-      'status': 'alive',
+      'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#2/update',
-        'phase': 'morning',
+        'phase': village.Phase.morning,
         'date': 1
       },
       'isAChoice': false
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#3',
       'isMine': false,
       'name': {
@@ -93,10 +93,10 @@ export default {
       },
       'image': 'https://werewolf.world/image/0.2/Simson.jpg',
       'id': 3,
-      'status': 'alive',
+      'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#3/update',
-        'phase': 'morning',
+        'phase': village.Phase.morning,
         'date': 1
       },
       'isAChoice': false
@@ -105,7 +105,7 @@ export default {
 
   'role': [
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#master',
       'isMine': false,
       'name': {
@@ -117,7 +117,7 @@ export default {
       'board': []
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
       'isMine': true,
       'name': {
@@ -128,10 +128,10 @@ export default {
       'numberOfAgents': 3,
       'board': [
         {
-          '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+          '@context': village.Context.BoardResult,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
           'agent': {
-            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+            '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
             'id': 1,
             'name': {
@@ -140,14 +140,14 @@ export default {
             },
             'image': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
-          'polarity': 'negative',
-          'phase': 'morning',
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
           'date': 1
         }
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#seer',
       'isMine': false,
       'name': {
@@ -159,7 +159,7 @@ export default {
       'board': []
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#medium',
       'isMine': false,
       'name': {
@@ -171,7 +171,7 @@ export default {
       'board': []
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
       'isMine': false,
       'name': {
@@ -183,7 +183,7 @@ export default {
       'board': []
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#mason',
       'isMine': false,
       'name': {
@@ -195,7 +195,7 @@ export default {
       'board': []
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#madman',
       'isMine': false,
       'name': {
@@ -207,7 +207,7 @@ export default {
       'board': []
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
       'isMine': false,
       'name': {
@@ -218,10 +218,10 @@ export default {
       'numberOfAgents': 1,
       'board': [
         {
-          '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
+          '@context': village.Context.BoardResult,
           '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/board#1',
           'agent': {
-            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+            '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/board#1/agent#1',
             'id': 1,
             'name': {
@@ -230,14 +230,14 @@ export default {
             },
             'image': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
-          'polarity': 'negative',
-          'phase': 'morning',
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
           'date': 1
         }
       ]
     },
     {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
       'isMine': false,
       'name': {
@@ -250,3 +250,5 @@ export default {
     }
   ]
 }
+
+export default json
