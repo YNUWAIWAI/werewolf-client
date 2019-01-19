@@ -21,7 +21,7 @@ const json: village.Payload$playerMessage = {
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'directionality': village.Directionality.clientToServer,
+  'directionality': village.Directionality.serverToClient,
   'intensionalDisclosureRange': village.Channel.onymousAudience,
   'extensionalDisclosureRange': [],
   'avatar': {
