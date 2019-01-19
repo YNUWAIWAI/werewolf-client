@@ -1657,7 +1657,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./@types/village/":
-  version "1.9.0"
+  version "1.10.0"
 
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"

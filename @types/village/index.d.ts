@@ -154,6 +154,7 @@ declare namespace village {
     id: number;
     status?: string; // AgentStatus
     update?: {
+      '@id': Time['@id'];
       date: Time['date'];
       phase: Time['phase'];
     };
@@ -322,7 +323,7 @@ declare namespace village {
       'systemMessage'
   */
   interface Time {
-    '@id'?: string;
+    '@id': string;
     phase: Phase;
     date: number;
   }
