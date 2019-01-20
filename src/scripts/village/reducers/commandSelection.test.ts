@@ -1,16 +1,16 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import {day, night} from './fakeServer'
 import reducer, {initialState} from './commandSelection'
+import {socket} from '../actions'
 
 test('CHANGE_PHASE', () => {
   expect(
     reducer(
       initialState,
       {
-        from: 'day',
-        to: 'night',
-        type: ActionTypes.CHANGE_PHASE
+        from: village.Phase.day,
+        to: village.Phase.night,
+        type: ActionTypes.global.CHANGE_PHASE
       }
     )
   ).toEqual({
@@ -134,7 +134,7 @@ test('SELECT_YES', () => {
       },
       {
         agentId: 2,
-        type: ActionTypes.SELECT_YES
+        type: ActionTypes.global.SELECT_YES
       }
     )
   ).toEqual({
@@ -157,10 +157,7 @@ describe('socket/MESSAGE', () => {
       expect(
         reducer(
           initialState,
-          {
-            payload: day,
-            type: ActionTypes.socket.MESSAGE
-          }
+          socket.message(day)
         )
       ).toEqual({
         agents: [
@@ -276,10 +273,7 @@ describe('socket/MESSAGE', () => {
       expect(
         reducer(
           initialState,
-          {
-            payload: night,
-            type: ActionTypes.socket.MESSAGE
-          }
+          socket.message(night)
         )
       ).toEqual({
         agents: [
