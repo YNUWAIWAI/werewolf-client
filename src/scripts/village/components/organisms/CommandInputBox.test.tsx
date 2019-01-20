@@ -9,10 +9,6 @@ test('<CommandInputBox /> limited is unavailable', () => {
       postCount: 0,
       postCountLimit: 10
     },
-    private: {
-      postCount: 0,
-      postCountLimit: 10
-    },
     public: {
       postCount: 0,
       postCountLimit: 10
@@ -33,10 +29,6 @@ test('<CommandInputBox /> limited is available', () => {
   const props = {
     limited: {
       available: true,
-      postCount: 0,
-      postCountLimit: 10
-    },
-    private: {
       postCount: 0,
       postCountLimit: 10
     },

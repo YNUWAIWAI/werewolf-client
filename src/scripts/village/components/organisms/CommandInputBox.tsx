@@ -6,11 +6,7 @@ export interface StateProps {
     readonly available: boolean
     readonly postCount: number
     readonly postCountLimit: number
-  },
-  readonly private: {
-    readonly postCount: number
-    readonly postCountLimit: number
-  },
+  }
   readonly public: {
     readonly postCount: number
     readonly postCountLimit: number
@@ -26,21 +22,20 @@ export default function CommandInputBox(props: Props) {
   return (
     <>
       <CommandInput
+        handlePostChat={props.handlePostChat(village.InputChannel.public)}
         inputChannel={village.InputChannel.public}
         {... props.public}
-        handlePostChat={props.handlePostChat(village.InputChannel.public)}
       />
       <CommandInput
-        inputChannel={village.InputChannel.private}
-        {... props.private}
         handlePostChat={props.handlePostChat(village.InputChannel.private)}
+        inputChannel={village.InputChannel.private}
       />
       {
         props.limited.available ?
           <CommandInput
+            handlePostChat={props.handlePostChat(village.InputChannel.limited)}
             inputChannel={village.InputChannel.limited}
             {... props.limited}
-            handlePostChat={props.handlePostChat(village.InputChannel.limited)}
           /> :
           ''
       }
