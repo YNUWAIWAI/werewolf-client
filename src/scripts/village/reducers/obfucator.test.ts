@@ -1,20 +1,23 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './obfucator'
 
 test('HIDE_RESULT', () => {
   const action = {
-    type: ActionTypes.HIDE_RESULT
+    type: ActionTypes.global.HIDE_RESULT
   }
 
-  expect(reducer(initialState, action)).toEqual({
+  expect(
+    reducer(
+      initialState,
+      action
+    )).toEqual({
     loading: true,
     visible: false
   })
 })
 test('SELECT_NO', () => {
   const action = {
-    type: ActionTypes.SELECT_NO
+    type: ActionTypes.global.SELECT_NO
   }
 
   expect(reducer(initialState, action)).toEqual({
@@ -25,7 +28,7 @@ test('SELECT_NO', () => {
 test('SELECT_YES', () => {
   const action = {
     agentId: 1,
-    type: ActionTypes.SELECT_YES
+    type: ActionTypes.global.SELECT_YES
   }
 
   expect(reducer(initialState, action)).toEqual({
@@ -36,7 +39,7 @@ test('SELECT_YES', () => {
 test('SELECT_OPTION', () => {
   const action = {
     agentId: 1,
-    type: ActionTypes.SELECT_OPTION
+    type: ActionTypes.global.SELECT_OPTION
   }
 
   expect(reducer(initialState, action)).toEqual({
@@ -46,7 +49,7 @@ test('SELECT_OPTION', () => {
 })
 test('SHOW_RESULT', () => {
   const action = {
-    type: ActionTypes.SHOW_RESULT
+    type: ActionTypes.global.SHOW_RESULT
   }
 
   expect(reducer(initialState, action)).toEqual({
