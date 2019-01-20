@@ -19,6 +19,8 @@ import fetch from 'node-fetch'
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
 test('validate anonymousAudienceChat', async () => {
+  const ajv = new Ajv()
+
   expect.hasAssertions()
   await Promise.all([
     fetch(`${BASE_URI}/agent.json`)
