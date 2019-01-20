@@ -10,7 +10,7 @@ const getDelimeterId = idGenerater('delimeter')
 export interface State {
   readonly allIds: string[]
   readonly byId: {
-    [id: string]: {
+    readonly [id: string]: {
       readonly id: number
       readonly image: string
       readonly intensionalDisclosureRange: village.Channel
