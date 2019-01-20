@@ -1,17 +1,14 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import {anonymousAudienceChat, myMessageOnChat, onymousAudienceChat, theirMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './chat'
+import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {
   test('myMessageOnChat', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: myMessageOnChat,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(myMessageOnChat)
       )
     ).toEqual({
       allIds: ['chat0'],
@@ -43,7 +40,7 @@ describe('socket/MESSAGE', () => {
             chat0: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange: 'public',
+              intensionalDisclosureRange: village.Channel.public,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -57,10 +54,7 @@ describe('socket/MESSAGE', () => {
             }
           }
         },
-        {
-          payload: theirMessageOnChat,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(theirMessageOnChat)
       )
     ).toEqual({
       allIds: ['chat1', 'chat0'],
@@ -107,7 +101,7 @@ describe('socket/MESSAGE', () => {
             chat0: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange: 'public',
+              intensionalDisclosureRange: village.Channel.public,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -122,7 +116,7 @@ describe('socket/MESSAGE', () => {
             chat1: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange: 'public',
+              intensionalDisclosureRange:  village.Channel.public,
               isMine: false,
               name: {
                 en: 'Walter',
@@ -136,10 +130,7 @@ describe('socket/MESSAGE', () => {
             }
           }
         },
-        {
-          payload: onymousAudienceChat,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(onymousAudienceChat)
       )
     ).toEqual({
       allIds: ['chat2', 'chat1', 'chat0'],
@@ -198,7 +189,7 @@ describe('socket/MESSAGE', () => {
             chat0: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange: 'public',
+              intensionalDisclosureRange:  village.Channel.public,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -213,7 +204,7 @@ describe('socket/MESSAGE', () => {
             chat1: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange: 'public',
+              intensionalDisclosureRange:  village.Channel.public,
               isMine: false,
               name: {
                 en: 'Walter',
@@ -228,7 +219,7 @@ describe('socket/MESSAGE', () => {
             chat2: {
               id: -1,
               image: 'https://werewolf.world/image/0.2/Regina.jpg',
-              intensionalDisclosureRange: 'onymousAudience',
+              intensionalDisclosureRange:  village.Channel.onymousAudience,
               isMine: true,
               name: 'Katoh',
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -239,10 +230,7 @@ describe('socket/MESSAGE', () => {
             }
           }
         },
-        {
-          payload: anonymousAudienceChat,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(anonymousAudienceChat)
       )
     ).toEqual({
       allIds: ['chat3', 'chat2', 'chat1', 'chat0'],
@@ -312,7 +300,7 @@ test('CHANGE_DATE', () => {
       {
         from: 0,
         to: 1,
-        type: ActionTypes.CHANGE_DATE
+        type: ActionTypes.global.CHANGE_DATE
       }
     )
   ).toEqual({

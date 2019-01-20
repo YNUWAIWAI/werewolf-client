@@ -1,32 +1,30 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Message from '../constants/Message'
 import {ANONYMOUS_AUDIENCE, ONYMOUS_AUDIENCE, PUBLIC} from '../constants/Channels'
-import type {ChangeDate, SocketMessage} from '../actions'
-import type {Channel, LanguageMap, Payload$playerMessage} from 'village'
-import {idGenerater, just, strToMessage} from '../util'
+import {ChangeDate, SocketMessage} from '../actions'
+import {idGenerater, just} from '../util'
 
 const getChatId = idGenerater('chat')
 const getDelimeterId = idGenerater('delimeter')
 
-export type State = {
-  +allIds: string[],
-  +byId: {
-    [string]: {
-      +id: number,
-      +image: string,
-      +intensionalDisclosureRange: Channel,
-      +isMine: boolean,
-      +name: LanguageMap | string,
-      +phaseStartTime: string,
-      +phaseTimeLimit: number,
-      +serverTimestamp: string,
-      +text: string,
-      +type: 'item'
+export interface State {
+  readonly allIds: string[]
+  readonly byId: {
+    [id: string]: {
+      readonly id: number
+      readonly image: string
+      readonly intensionalDisclosureRange: village.Channel
+      readonly isMine: boolean
+      readonly name: village.LanguageMap | string
+      readonly phaseStartTime: string
+      readonly phaseTimeLimit: number
+      readonly serverTimestamp: string
+      readonly text: string
+      readonly type: 'item'
     } |
     {
-      +date: number,
-      +type: 'delimeter'
+      readonly date: number
+      readonly type: 'delimeter'
     }
   }
 }
@@ -34,16 +32,16 @@ type Action =
   | ChangeDate
   | SocketMessage
 
-export const initialState = {
+export const initialState: State = {
   allIds: [],
   byId: {}
 }
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE: {
-      switch (strToMessage(action.payload['@id'])) {
+      switch (action.payload['@payload']) {
         case Message.PLAYER_MESSAGE: {
-          const payload: Payload$playerMessage = action.payload
+          const payload = action.payload
           const chatId = getChatId()
           const id = payload.intensionalDisclosureRange === PUBLIC ? just(payload.id) : -1
 
@@ -110,7 +108,7 @@ const chat = (state: State = initialState, action: Action): State => {
           return state
       }
     }
-    case ActionTypes.CHANGE_DATE: {
+    case ActionTypes.global.CHANGE_DATE: {
       const delimeterId = getDelimeterId()
 
       return {
