@@ -1,4 +1,3 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './modal'
 
@@ -8,7 +7,7 @@ test('SELECT_OPTION', () => {
       initialState,
       {
         agentId: 1,
-        type: ActionTypes.SELECT_OPTION
+        type: ActionTypes.global.SELECT_OPTION
       }
     )
   ).toEqual(
@@ -26,7 +25,7 @@ test('SELECT_NO', () => {
         visible: true
       },
       {
-        type: ActionTypes.SELECT_NO
+        type: ActionTypes.global.SELECT_NO
       }
     )
   ).toEqual(
@@ -45,7 +44,7 @@ test('SELECT_YES', () => {
       },
       {
         agentId: 1,
-        type: ActionTypes.SELECT_YES
+        type: ActionTypes.global.SELECT_YES
       }
     )
   ).toEqual(
