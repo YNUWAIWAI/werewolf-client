@@ -1,4 +1,3 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer from './hideButton'
 
@@ -9,7 +8,7 @@ test('CLICK_HIDE_BUTTON hide={true}', () => {
     },
     {
       hide: true,
-      type: ActionTypes.CLICK_HIDE_BUTTON
+      type: ActionTypes.global.CLICK_HIDE_BUTTON
     })
   ).toEqual({
     hide: true
@@ -22,7 +21,7 @@ test('CLICK_HIDE_BUTTON hide={false}', () => {
     },
     {
       hide: false,
-      type: ActionTypes.CLICK_HIDE_BUTTON
+      type: ActionTypes.global.CLICK_HIDE_BUTTON
     })
   ).toEqual({
     hide: false
