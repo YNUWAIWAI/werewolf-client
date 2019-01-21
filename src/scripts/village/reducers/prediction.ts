@@ -1,49 +1,46 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {Agent$systemMessage as Agent, AgentId, AgentStatus, BoardState, LanguageMap, Payload$systemMessage, Role$systemMessage as Role, RoleId} from 'village'
-import type {ChangePredictionBoard, SocketMessage} from '../actions'
+import {ChangePredictionBoard, SocketMessage} from '../actions'
 import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
 import {
   getPlayableRoles,
   just,
   strToAgentStatus,
-  strToMessage,
   strToRoleId
 } from '../util'
-import {MORNING} from '../constants/Phase'
-import {SYSTEM_MESSAGE} from '../constants/Message'
 
-export type State = {
-  +playerStatus: Array<{
-    +id: number,
-    +image: string,
-    +name: LanguageMap,
-    +status: AgentStatus
-  }>,
-  +roleStatus: Array<{
-    +caption: LanguageMap,
-    +id: RoleId,
-    +image: string,
-    +numberOfAgents: number
-  }>,
-  +table: {
-    [agentId: AgentId]: {
-      [roleId: RoleId]: {
-        +date: number,
-        +fixed: boolean,
-        +state: BoardState
+export interface State {
+  readonly playerStatus: {
+    readonly id: number
+    readonly image: string
+    readonly name: village.LanguageMap
+    readonly status: village.AgentStatus
+  }[]
+  readonly roleStatus: {
+    readonly caption: village.LanguageMap
+    readonly id: village.RoleId
+    readonly image: string
+    readonly numberOfAgents: number
+  }[]
+  readonly table: {
+    [agentId in village.AgentId]: Partial<{
+      [roleId in village.RoleId]: {
+        readonly date: number,
+        readonly fixed: boolean,
+        readonly state: village.BoardState
       }
-    }
+    }>
   }
 }
-type PlayerStatus = $PropertyType<State, 'playerStatus'>
-type RoleStatus = $PropertyType<State, 'roleStatus'>
-type Table = $PropertyType<State, 'table'>
+type PlayerStatus = State['playerStatus']
+type RoleStatus = State['roleStatus']
+type Table = State['table']
 type Action =
   | SocketMessage
   | ChangePredictionBoard
+type Agents = NonNullable<village.Payload$systemMessage['agent']>
+type Roles = NonNullable<village.Payload$systemMessage['role']>
 
-const updatePredictionTable = (roles: Role[], table: Table): Table => {
+const updatePredictionTable = (roles: Roles, table: Table): Table => {
   roles
     .filter(role => role.numberOfAgents > 0)
     .forEach(role => {
@@ -60,7 +57,7 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
           table[agentId][roleId] = {
             date: b.date,
             fixed: true,
-            state: b.polarity === 'positive' ? 'O' : 'fill' // polarity: 'positive' | 'negative'
+            state: b.polarity === village.Polarity.positive ? village.BoardState.CIRCLE : village.BoardState.FILL
           }
         })
       }
@@ -69,7 +66,7 @@ const updatePredictionTable = (roles: Role[], table: Table): Table => {
   return table
 }
 
-const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
+const initPredictionTable = (agents: Agents, roles: Roles): Table => {
   const table: Table = {}
 
   agents.forEach(agent => {
@@ -85,25 +82,25 @@ const initPredictionTable = (agents: Agent[], roles: Role[]): Table => {
           table[agentId][roleId] = {
             date: 1,
             fixed: true,
-            state: 'O'
+            state: village.BoardState.CIRCLE
           }
         } else if (agent.isMine && !role.isMine) {
           table[agentId][roleId] = {
             date: 1,
             fixed: true,
-            state: 'fill'
+            state: village.BoardState.FILL
           }
         } else if (!agent.isMine && role.isMine && role.numberOfAgents === 1) {
           table[agentId][roleId] = {
             date: 1,
             fixed: true,
-            state: 'fill'
+            state: village.BoardState.FILL
           }
         } else {
           table[agentId][roleId] = {
             date: 1,
             fixed: false,
-            state: '?'
+            state: village.BoardState.QUESTION
           }
         }
       })
@@ -121,8 +118,8 @@ export const initialState = {
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (strToMessage(action.payload['@id']) === SYSTEM_MESSAGE) {
-        const payload: Payload$systemMessage = action.payload
+      if (action.payload['@payload'] === village.Message.systemMessage) {
+        const payload = action.payload
 
         if (payload.date === 0) {
           return state
@@ -131,7 +128,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         const roles = getPlayableRoles(just(payload.role))
           .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
         const table = (() => {
-          if (payload.date === 1 && payload.phase === MORNING) {
+          if (payload.date === 1 && payload.phase === village.Phase.morning) {
             return initPredictionTable(agents, roles)
           }
 
@@ -164,7 +161,7 @@ const prediction = (state: State = initialState, action: Action): State => {
       }
 
       return state
-    case ActionTypes.CHANGE_PREDICTION_BOARD: {
+    case ActionTypes.global.CHANGE_PREDICTION_BOARD: {
       const agentId = String(action.playerId)
 
       return {

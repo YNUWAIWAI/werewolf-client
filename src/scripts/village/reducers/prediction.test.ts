@@ -1,17 +1,13 @@
-// @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import {firstMorning, firstMorning3, firstMorning4, flavorText} from './fakeServer'
 import reducer, {initialState} from './prediction'
+import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {
   test('flavor text', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: flavorText,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(flavorText)
       )
     ).toEqual(initialState)
   })
@@ -19,10 +15,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: firstMorning,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(firstMorning)
       )
     ).toEqual(
       {
@@ -876,10 +869,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: firstMorning3,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(firstMorning3)
       )
     ).toEqual(
       {
@@ -1733,10 +1723,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: firstMorning4,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(firstMorning4)
       )
     ).toEqual(
       {
