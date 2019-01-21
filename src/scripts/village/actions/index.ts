@@ -109,7 +109,7 @@ export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}
   type: ActionTypes.global.CHANGE_PHASE
 })
 
-export const clickNavigationButton = (type: NavigationType): {type: NavigationType} => ({
+export const clickNavigationButton = (type: ActionTypes.Navigation): {type: ActionTypes.Navigation} => ({
   type
 })
 
@@ -172,3 +172,6 @@ export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
+export type Target = {
+  type: ActionTypes.global
+}
