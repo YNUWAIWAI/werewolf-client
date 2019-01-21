@@ -1,6 +1,5 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import Ajv from 'ajv'
+import * as Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as agents} from '../reducers/agents'
 import {initialState as base} from '../reducers/base'
@@ -16,6 +15,7 @@ import {initialState as obfucator} from '../reducers/obfucator'
 import {initialState as prediction} from '../reducers/prediction'
 import {initialState as result} from '../reducers/result'
 import {initialState as roles} from '../reducers/roles'
+import {socket} from '../actions'
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
@@ -41,15 +41,15 @@ describe('socket/MESSAGE', () => {
   })
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const flavorTextPayload = [
+  const flavorTextPayload: village.Payload$playerMessage[] = [
     {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/chat.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.Chat
       ],
       '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
       'agent': {
-        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
         'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
@@ -62,40 +62,40 @@ describe('socket/MESSAGE', () => {
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,
       'date': 1,
-      'directionality': 'server to client',
+      'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'id': 1,
-      'intensionalDisclosureRange': 'public',
+      'intensionalDisclosureRange': village.Channel.public,
       'interval': '5s',
       'isMine': false,
       'isOver': false,
       'limit': 10,
-      'phase': 'morning',
+      'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'text': {
-        '@language': 'ja',
+        '@language': village.Language.ja,
         '@value': '最初のフレーバーテキストです'
       },
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
     },
     {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/chat.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.Chat
       ],
       '@id': 'https://licos.online/state/0.2/village#3/flavorText#2/playerMessage',
       'agent': {
-        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
         'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
@@ -108,62 +108,58 @@ describe('socket/MESSAGE', () => {
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,
       'date': 1,
-      'directionality': 'server to client',
+      'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
-      'id': 2,
-      'intensionalDisclosureRange': 'public',
+      'id': 1,
+      'intensionalDisclosureRange': village.Channel.public,
       'interval': '5s',
       'isMine': false,
       'isOver': false,
       'limit': 10,
-      'phase': 'morning',
+      'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'text': {
-        '@language': 'ja',
+        '@language': village.Language.ja,
         '@value': '２番目のフレーバーテキストです'
       },
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
     }
   ]
-  const payload = {
+  const payload: village.Payload$flavorTextMessage = {
     '@context': [
-      'https://werewolf.world/context/0.2/base.jsonld',
-      'https://werewolf.world/context/0.2/flavorText.jsonld'
+      village.BaseContext.Base,
+      village.BaseContext.FlavorText
     ],
     '@id': 'https://licos.online/state/0.2/village#3/flavorTextMessage',
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
     'date': 1,
-    'directionality': 'server to client',
+    'directionality': village.Directionality.serverToClient,
     'extensionalDisclosureRange': [],
     'flavorText': flavorTextPayload,
-    'intensionalDisclosureRange': 'public',
-    'phase': 'flavor text',
+    'intensionalDisclosureRange': village.Channel.public,
+    'phase': village.Phase.flavorText,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
-      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
-      'lang': 'ja',
+      'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
-  }
-  const action = {
-    payload,
-    type: ActionTypes.socket.MESSAGE
   }
 
   test('validate the JSON', async () => {
@@ -195,7 +191,7 @@ describe('socket/MESSAGE', () => {
   })
   test('dispatch correctly', () => {
     jest.useFakeTimers()
-    actionHandler(action)
+    actionHandler(socket.message(payload))
     jest.runAllTimers()
     expect(dispatch).toHaveBeenCalledTimes(2)
     flavorTextPayload.forEach(item => {
