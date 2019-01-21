@@ -1,6 +1,5 @@
-// @flow
-import AgentIcon, {type Props as StateProps} from '../components/atoms/AgentIcon'
-import {type ReducerState} from '../reducers'
+import AgentIcon, {Props as StateProps} from '../components/atoms/AgentIcon'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import {getText} from '../util'
 
