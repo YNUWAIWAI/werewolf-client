@@ -1,31 +1,27 @@
-// @flow
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
-import type {DispatchAPI, Middleware} from 'redux'
 import {POST_MORTEM, RESULT} from '../constants/Phase'
-import type {Payload$boardMessage, Payload$playerMessage, Payload$voteMessage} from 'village'
 import {getAgent, getChannelFromInputChennel, getRole, just, strToRoleId} from '../util'
-import type {Action} from '.'
-import type {ReducerState} from '../reducers'
+import {Middleware} from '.'
 import {socket} from '../actions'
 
 const getTimestamp = () => new Date().toISOString()
-const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
+const client2server: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.CHANGE_PREDICTION_BOARD: {
+    case ActionTypes.global.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
       const boardAgent = getAgent(state.agents.all, action.playerId)
       const boardRole = getRole(state.roles.all, action.roleId)
-      const payload: Payload$boardMessage = {
+      const payload: village.Payload$boardMessage = {
         '@context': [
-          'https://werewolf.world/context/0.2/base.jsonld',
-          'https://werewolf.world/context/0.2/board.jsonld'
+          village.BaseContext.Base,
+          village.BaseContext.Board
         ],
-        '@id': 'https://werewolf.world/resource/0.2/boardMessage',
+        '@id': `${state.base['@id']}/boardMessage`,
         'village': {
-          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@context': village.Context.Village,
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
           'lang': state.base.village.lang,
@@ -39,24 +35,24 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'phaseStartTime': state.base.phaseStartTime,
         'serverTimestamp': state.base.serverTimestamp,
         'clientTimestamp': getTimestamp(),
-        'directionality': 'client to server',
-        'intensionalDisclosureRange': 'private',
+        'directionality': village.Directionality.clientToServer,
+        'intensionalDisclosureRange': village.Channel.private,
         'extensionalDisclosureRange': [],
         'myAgent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': myAgent['@id'],
           'id': myAgent.id,
           'image': myAgent.image,
           'name': myAgent.name,
           'role': {
-            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@context': village.Context.Role,
             '@id': myRole['@id'],
             'image': myRole.image,
             'name': myRole.name
           }
         },
         'agent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': boardAgent['@id'],
           'id': boardAgent.id,
           'image': boardAgent.image,
@@ -64,7 +60,7 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         },
         'prediction': action.nextState,
         'role': {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': boardRole['@id'],
           'image': boardRole.image,
           'name': boardRole.name
@@ -75,22 +71,22 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case ActionTypes.POST_CHAT: {
+    case ActionTypes.global.POST_CHAT: {
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
       const channel = getChannelFromInputChennel({
-        inputChannel: action.kind,
+        inputChannel: action.channel,
         role: strToRoleId(myRole.name.en)
       })
-      const payload: Payload$playerMessage = {
+      const payload: village.Payload$playerMessage = {
         '@context': [
-          'https://werewolf.world/context/0.2/base.jsonld',
-          'https://werewolf.world/context/0.2/chat.jsonld'
+          village.BaseContext.Base,
+          village.BaseContext.Chat
         ],
-        '@id': 'https://werewolf.world/resource/0.2/playerMessage',
+        '@id': `${state.base['@id']}/playerMessage`,
         'village': {
-          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@context': village.Context.Village,
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
           'lang': state.base.village.lang,
@@ -104,24 +100,24 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'phaseStartTime': state.base.phaseStartTime,
         'serverTimestamp': state.base.serverTimestamp,
         'clientTimestamp': getTimestamp(),
-        'directionality': 'client to server',
+        'directionality': village.Directionality.clientToServer,
         'intensionalDisclosureRange': channel,
         'extensionalDisclosureRange': [],
         'myAgent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': myAgent['@id'],
           'id': myAgent.id,
           'image': myAgent.image,
           'name': myAgent.name,
           'role': {
-            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@context': village.Context.Role,
             '@id': myRole['@id'],
             'image': myRole.image,
             'name': myRole.name
           }
         },
         'agent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': myAgent['@id'],
           'id': myAgent.id,
           'image': myAgent.image,
@@ -140,8 +136,8 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case ActionTypes.READY: {
-      const payload = {
+    case ActionTypes.global.READY: {
+      const payload: village.Payload$ready = {
         token: action.token,
         type: 'ready',
         villageId: action.villageId
@@ -151,19 +147,19 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
 
       return next(action)
     }
-    case ActionTypes.SELECT_YES: {
+    case ActionTypes.global.SELECT_YES: {
       const state = store.getState()
       const votedAgent = getAgent(state.agents.all, action.agentId)
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
-      const payload: Payload$voteMessage = {
+      const payload: village.Payload$voteMessage = {
         '@context': [
-          'https://werewolf.world/context/0.2/base.jsonld',
-          'https://werewolf.world/context/0.2/vote.jsonld'
+          village.BaseContext.Base,
+          village.BaseContext.Vote
         ],
-        '@id': 'https://werewolf.world/resource/0.2/voteMessage',
+        '@id': `${state.base['@id']}/voteMessage`,
         'village': {
-          '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+          '@context': village.Context.Village,
           '@id': state.base.village['@id'],
           'id': state.base.village.id,
           'lang': state.base.village.lang,
@@ -177,24 +173,24 @@ const client2server: Middleware<ReducerState, Action, DispatchAPI<Action>> = sto
         'phaseStartTime': state.base.phaseStartTime,
         'serverTimestamp': state.base.serverTimestamp,
         'clientTimestamp': getTimestamp(),
-        'directionality': 'client to server',
-        'intensionalDisclosureRange': 'private',
+        'directionality': village.Directionality.clientToServer,
+        'intensionalDisclosureRange': village.Channel.private,
         'extensionalDisclosureRange': [],
         'myAgent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': myAgent['@id'],
           'id': myAgent.id,
           'image': myAgent.image,
           'name': myAgent.name,
           'role': {
-            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            '@context': village.Context.Role,
             '@id': myRole['@id'],
             'image': myRole.image,
             'name': myRole.name
           }
         },
         'agent': {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': votedAgent['@id'],
           'id': votedAgent.id,
           'image': votedAgent.image,

@@ -1,34 +1,24 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import Ajv from 'ajv'
-import {CIRCLE} from '../constants/State'
+import * as Ajv from 'ajv'
+import {ChangePredictionBoard, PostChat, Ready, SelectYes} from '../actions'
 import {VERSION} from '../constants/Version'
 import {VILLAGER} from '../constants/Role'
 import {initialState as agents} from '../reducers/agents'
 import {initialState as base} from '../reducers/base'
-import {initialState as chat} from '../reducers/chat'
-import {initialState as commandInputBox} from '../reducers/commandInputBox'
-import {initialState as commandSelection} from '../reducers/commandSelection'
+import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
-import {initialState as hideButton} from '../reducers/hideButton'
-import {initialState as language} from '../reducers/language'
 import middleware from './client2server'
-import {initialState as modal} from '../reducers/modal'
-import {initialState as obfucator} from '../reducers/obfucator'
-import {initialState as prediction} from '../reducers/prediction'
-import {initialState as result} from '../reducers/result'
 import {initialState as roles} from '../reducers/roles'
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
 describe('CHANGE_PREDICTION_BOARD', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
+  const store = fakeStore({
     agents: {
       ... agents,
       all: [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#0',
           'id': 0,
           'image': 'https://werewolf.world/image/0.2/Gert.jpg',
@@ -40,7 +30,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#1',
           'id': 1,
           'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -52,7 +42,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#2',
           'id': 2,
           'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
@@ -64,7 +54,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#3',
           'id': 3,
           'image': 'https://werewolf.world/image/0.2/Simson.jpg',
@@ -76,7 +66,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#4',
           'id': 4,
           'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
@@ -88,7 +78,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#5',
           'id': 5,
           'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
@@ -100,7 +90,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#6',
           'id': 6,
           'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
@@ -112,7 +102,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#7',
           'id': 7,
           'image': 'https://werewolf.world/image/0.2/Peter.jpg',
@@ -124,7 +114,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#8',
           'id': 8,
           'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
@@ -136,7 +126,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#9',
           'id': 9,
           'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
@@ -148,7 +138,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#10',
           'id': 10,
           'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
@@ -160,7 +150,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#11',
           'id': 11,
           'image': 'https://werewolf.world/image/0.2/Otto.jpg',
@@ -172,7 +162,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#12',
           'id': 12,
           'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
@@ -184,7 +174,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#13',
           'id': 13,
           'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
@@ -196,7 +186,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#14',
           'id': 14,
           'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
@@ -209,7 +199,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         }
       ],
       mine: {
-        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
         'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -223,15 +213,16 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     },
     base: {
       ... base,
-      clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-      date: 1,
-      intensionalDisclosureRange: 'private',
-      phase: 'morning',
-      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-      phaseTimeLimit: 600,
-      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-      village: {
+      '@id': 'https://licos.online/state/0.2/village#3',
+      'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'date': 1,
+      'intensionalDisclosureRange': 'private',
+      'phase': village.Phase.morning,
+      'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+      'phaseTimeLimit': 600,
+      'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'village': {
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
         'lang': 'ja',
@@ -239,27 +230,18 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'totalNumberOfAgents': 15
       }
     },
-    chat,
-    commandInputBox,
-    commandSelection,
-    hideButton,
-    language,
-    modal,
-    obfucator,
-    prediction,
-    result,
     roles: {
       ... roles,
       all: [
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#villager',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -269,7 +251,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'negative'
             }
           ],
@@ -282,14 +264,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 6
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#seer',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -299,7 +281,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'positive'
             }
           ],
@@ -312,14 +294,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 1
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#medium',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#medium/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#medium/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -329,7 +311,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'negative'
             }
           ],
@@ -342,14 +324,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 1
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#hunter/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#hunter/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -359,7 +341,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'negative'
             }
           ],
@@ -372,14 +354,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 1
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#mason',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#mason/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#mason/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -389,7 +371,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'negative'
             }
           ],
@@ -402,14 +384,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 2
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#madman',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#madman/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#madman/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -419,7 +401,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'negative'
             }
           ],
@@ -432,14 +414,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 1
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -449,7 +431,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'negative'
             }
           ],
@@ -462,14 +444,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 2
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+          '@context': village.Context.Role,
           '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
           'board': [
             {
               '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
               '@id': 'https://licos.online/state/0.2/village#3/role#werehamster/board#1',
               'agent': {
-                '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+                '@context': village.Context.Agent,
                 '@id': 'https://licos.online/state/0.2/village#3/role#werehamster/board#1/agent#1',
                 'id': 1,
                 'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -479,7 +461,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
                 }
               },
               'date': 1,
-              'phase': 'morning',
+              'phase': village.Phase.morning,
               'polarity': 'negative'
             }
           ],
@@ -493,7 +475,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         }
       ],
       mine: {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'isMine': true,
@@ -505,26 +487,26 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       }
     }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    nextState: CIRCLE,
+  const action: ChangePredictionBoard = {
+    nextState: village.BoardState.CIRCLE,
     playerId: 2,
     roleId: VILLAGER,
-    type: ActionTypes.CHANGE_PREDICTION_BOARD
+    type: ActionTypes.global.CHANGE_PREDICTION_BOARD
   }
-  const payload = {
+  const payload: village.Payload$boardMessage = {
     '@context': [
-      'https://werewolf.world/context/0.2/base.jsonld',
-      'https://werewolf.world/context/0.2/board.jsonld'
+      village.BaseContext.Base,
+      village.BaseContext.Board
     ],
-    '@id': 'https://werewolf.world/resource/0.2/boardMessage',
+    '@id': 'https://licos.online/state/0.2/village#3/boardMessage',
     'agent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'id': 2,
       'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
@@ -535,11 +517,11 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     },
     'clientTimestamp': expect.any(String),
     'date': 1,
-    'directionality': 'client to server',
+    'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
-    'intensionalDisclosureRange': 'private',
+    'intensionalDisclosureRange': village.Channel.private,
     'myAgent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -548,7 +530,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'ja': 'ヴァルター'
       },
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'name': {
@@ -557,12 +539,12 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         }
       }
     },
-    'phase': 'morning',
+    'phase': village.Phase.morning,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
-    'prediction': CIRCLE,
+    'prediction': village.BoardState.CIRCLE,
     'role': {
-      '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+      '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
       'image': 'https://werewolf.world/image/0.2/villager.jpg',
       'name': {
@@ -573,10 +555,10 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
-      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
-      'lang': 'ja',
+      'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -617,13 +599,12 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   })
 })
 describe('POST_CHAT', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
+  const store = fakeStore({
     agents: {
       ... agents,
       all: [],
       mine: {
-        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
         'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -637,15 +618,16 @@ describe('POST_CHAT', () => {
     },
     base: {
       ... base,
-      clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-      date: 1,
-      intensionalDisclosureRange: 'private',
-      phase: 'morning',
-      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-      phaseTimeLimit: 600,
-      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-      village: {
+      '@id': 'https://licos.online/state/0.2/village#3',
+      'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'date': 1,
+      'intensionalDisclosureRange': 'private',
+      'phase': village.Phase.morning,
+      'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+      'phaseTimeLimit': 600,
+      'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'village': {
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
         'lang': 'ja',
@@ -653,20 +635,11 @@ describe('POST_CHAT', () => {
         'totalNumberOfAgents': 15
       }
     },
-    chat,
-    commandInputBox,
-    commandSelection,
-    hideButton,
-    language,
-    modal,
-    obfucator,
-    prediction,
-    result,
     roles: {
       ... roles,
       all: [],
       mine: {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'isMine': true,
@@ -678,25 +651,25 @@ describe('POST_CHAT', () => {
       }
     }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    kind: 'public',
+  const action: PostChat = {
+    channel: village.InputChannel.public,
     text: 'text',
-    type: ActionTypes.POST_CHAT
+    type: ActionTypes.global.POST_CHAT
   }
-  const payload = {
+  const payload: village.Payload$playerMessage = {
     '@context': [
-      'https://werewolf.world/context/0.2/base.jsonld',
-      'https://werewolf.world/context/0.2/chat.jsonld'
+      village.BaseContext.Base,
+      village.BaseContext.Chat
     ],
-    '@id': 'https://werewolf.world/resource/0.2/playerMessage',
+    '@id': 'https://licos.online/state/0.2/village#3/playerMessage',
     'agent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -708,13 +681,13 @@ describe('POST_CHAT', () => {
     'characterLimit': 140,
     'clientTimestamp': expect.any(String),
     'date': 1,
-    'directionality': 'client to server',
+    'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
-    'intensionalDisclosureRange': 'public',
+    'intensionalDisclosureRange': village.Channel.public,
     'isMine': true,
     'isOver': false,
     'myAgent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -723,7 +696,7 @@ describe('POST_CHAT', () => {
         'ja': 'ヴァルター'
       },
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'name': {
@@ -732,20 +705,20 @@ describe('POST_CHAT', () => {
         }
       }
     },
-    'phase': 'morning',
+    'phase': village.Phase.morning,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'text': {
-      '@language': 'en',
+      '@language': village.Language.en,
       '@value': 'text'
     },
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
-      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
-      'lang': 'ja',
+      'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -784,35 +757,21 @@ describe('POST_CHAT', () => {
   })
 })
 describe('READY', () => {
+  const store = fakeStore()
   const dispatch = jest.fn()
-  const getState = () => ({
-    agents,
-    base,
-    chat,
-    commandInputBox,
-    commandSelection,
-    hideButton,
-    language,
-    modal,
-    obfucator,
-    prediction,
-    result,
-    roles
-  })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const villageId = 3
-  const action = {
+  const action: Ready = {
     token,
-    type: ActionTypes.READY,
+    type: ActionTypes.global.READY,
     villageId
   }
-  const payload = {
+  const payload: village.Payload$ready = {
     token,
     type: 'ready',
     villageId
@@ -840,13 +799,12 @@ describe('READY', () => {
   })
 })
 describe('SELECT_YES', () => {
-  const dispatch = jest.fn()
-  const getState = () => ({
+  const store = fakeStore({
     agents: {
       ... agents,
       all: [
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#0',
           'id': 0,
           'image': 'https://werewolf.world/image/0.2/Gert.jpg',
@@ -858,7 +816,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#1',
           'id': 1,
           'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -870,7 +828,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#2',
           'id': 2,
           'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
@@ -882,7 +840,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#3',
           'id': 3,
           'image': 'https://werewolf.world/image/0.2/Simson.jpg',
@@ -894,7 +852,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#4',
           'id': 4,
           'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
@@ -906,7 +864,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#5',
           'id': 5,
           'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
@@ -918,7 +876,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#6',
           'id': 6,
           'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
@@ -930,7 +888,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#7',
           'id': 7,
           'image': 'https://werewolf.world/image/0.2/Peter.jpg',
@@ -942,7 +900,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#8',
           'id': 8,
           'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
@@ -954,7 +912,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#9',
           'id': 9,
           'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
@@ -966,7 +924,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#10',
           'id': 10,
           'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
@@ -978,7 +936,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#11',
           'id': 11,
           'image': 'https://werewolf.world/image/0.2/Otto.jpg',
@@ -990,7 +948,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#12',
           'id': 12,
           'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
@@ -1002,7 +960,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#13',
           'id': 13,
           'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
@@ -1014,7 +972,7 @@ describe('SELECT_YES', () => {
           'status': 'alive'
         },
         {
-          '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+          '@context': village.Context.Agent,
           '@id': 'https://licos.online/state/0.2/village#3/agent#14',
           'id': 14,
           'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
@@ -1027,7 +985,7 @@ describe('SELECT_YES', () => {
         }
       ],
       mine: {
-        '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+        '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
         'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -1041,15 +999,16 @@ describe('SELECT_YES', () => {
     },
     base: {
       ... base,
-      clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-      date: 1,
-      intensionalDisclosureRange: 'private',
-      phase: 'morning',
-      phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-      phaseTimeLimit: 600,
-      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-      village: {
+      '@id': 'https://licos.online/state/0.2/village#3',
+      'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'date': 1,
+      'intensionalDisclosureRange': 'private',
+      'phase': village.Phase.morning,
+      'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+      'phaseTimeLimit': 600,
+      'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'village': {
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
         'lang': 'ja',
@@ -1057,20 +1016,11 @@ describe('SELECT_YES', () => {
         'totalNumberOfAgents': 15
       }
     },
-    chat,
-    commandInputBox,
-    commandSelection,
-    hideButton,
-    language,
-    modal,
-    obfucator,
-    prediction,
-    result,
     roles: {
       ... roles,
       all: [],
       mine: {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'isMine': true,
@@ -1082,24 +1032,24 @@ describe('SELECT_YES', () => {
       }
     }
   })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
+  const action: SelectYes = {
     agentId: 2,
-    type: ActionTypes.SELECT_YES
+    type: ActionTypes.global.SELECT_YES
   }
-  const payload = {
+  const payload: village.Payload$voteMessage = {
     '@context': [
-      'https://werewolf.world/context/0.2/base.jsonld',
-      'https://werewolf.world/context/0.2/vote.jsonld'
+      village.BaseContext.Base,
+      village.BaseContext.Vote
     ],
-    '@id': 'https://werewolf.world/resource/0.2/voteMessage',
+    '@id': 'https://licos.online/state/0.2/village#3/voteMessage',
     'agent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'id': 2,
       'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
@@ -1110,11 +1060,11 @@ describe('SELECT_YES', () => {
     },
     'clientTimestamp': expect.any(String),
     'date': 1,
-    'directionality': 'client to server',
+    'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
-    'intensionalDisclosureRange': 'private',
+    'intensionalDisclosureRange': village.Channel.private,
     'myAgent': {
-      '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
+      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -1123,7 +1073,7 @@ describe('SELECT_YES', () => {
         'ja': 'ヴァルター'
       },
       'role': {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'name': {
@@ -1132,16 +1082,16 @@ describe('SELECT_YES', () => {
         }
       }
     },
-    'phase': 'morning',
+    'phase': village.Phase.morning,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
-      '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+      '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
-      'lang': 'ja',
+      'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
