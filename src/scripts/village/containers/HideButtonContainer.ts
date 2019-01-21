@@ -1,8 +1,7 @@
-// @flow
-import {type ClickHideButton, handleClickHideButton} from '../actions'
-import HideButton, {type DispatchProps, type StateProps} from '../components/atoms/HideButton'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {ClickHideButton, handleClickHideButton} from '../actions'
+import HideButton, {DispatchProps, StateProps} from '../components/atoms/HideButton'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
@@ -10,7 +9,7 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => state.hideButton
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleClick: hide => () => {
+  handleClick: hide => {
     dispatch(handleClickHideButton(hide))
   }
 })
