@@ -1,14 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {Dispatch, Middleware, MiddlewareAPI} from 'redux'
-import {Action} from '.'
-import {ReducerState} from '../reducers'
+import {Middleware} from '.'
 import {socket as socketAction} from '../actions'
 
 const connectWebSocket = (() => {
   let socket: WebSocket
   const timeout = 600000
 
-  return (url: string, store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => new Promise((resolve, reject) => {
+  return (url: string, store: Parameters<Middleware>[0]) => new Promise((resolve, reject) => {
     const wait = () => {
       if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
         if (socket.readyState === WebSocket.OPEN) {
@@ -47,10 +45,10 @@ const connectWebSocket = (() => {
 })()
 
 type Option = {
-  url: string
+  readonly url: string
 }
 
-const socketMiddleware: (optoin: Option) => Middleware<{}, ReducerState, Dispatch<Action>> = option => store => next => action => {
+const socketMiddleware: (optoin: Option) => Middleware = option => store => next => action => {
   switch (action.type) {
     case ActionTypes.socket.OPEN:
       return next(action)
