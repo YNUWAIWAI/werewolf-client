@@ -1,6 +1,5 @@
-// @flow
-import RoleIcon, {type Props as StateProps} from '../components/atoms/RoleIcon'
-import {type ReducerState} from '../reducers'
+import RoleIcon, {Props as StateProps} from '../components/atoms/RoleIcon'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import {getText} from '../util'
 
