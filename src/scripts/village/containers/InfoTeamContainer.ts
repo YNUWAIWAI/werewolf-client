@@ -1,7 +1,6 @@
-// @flow
-import TeamIcon, {type Props as StateProps} from '../components/atoms/TeamIcon'
+import TeamIcon, {Props as StateProps} from '../components/atoms/TeamIcon'
 import {getTeam, strToRoleId} from '../util'
-import {type ReducerState} from '../reducers'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
