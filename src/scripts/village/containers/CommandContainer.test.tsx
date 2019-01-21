@@ -1,4 +1,4 @@
-// @flow
+import * as React from 'react'
 import {DAY, FLAVOR_TEXT, MORNING, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandContainer from './CommandContainer'
 import CommandGrave from './CommandGraveContainer'
@@ -7,7 +7,6 @@ import CommandPostMortem from './CommandPostMortemContainer'
 import CommandSelection from './CommandSelectionContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 

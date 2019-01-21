@@ -1,12 +1,11 @@
-// @flow
-import Command, {type StateProps} from '../components/organisms/Command'
+import * as React from 'react'
+import Command, {StateProps} from '../components/organisms/Command'
 import {DAY, FLAVOR_TEXT, MORNING, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandGrave from './CommandGraveContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
 import CommandSelection from './CommandSelectionContainer'
-import React from 'react'
-import type {ReducerState} from '../reducers'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
