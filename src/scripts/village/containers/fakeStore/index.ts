@@ -1,5 +1,5 @@
-// @flow
-import type {ReducerState} from '../../reducers'
+import {ReducerState} from '../../reducers'
+import {Store} from 'redux'
 import {initialState as agents} from '../../reducers/agents'
 import {initialState as base} from '../../reducers/base'
 import {initialState as chat} from '../../reducers/chat'
@@ -13,7 +13,7 @@ import {initialState as prediction} from '../../reducers/prediction'
 import {initialState as result} from '../../reducers/result'
 import {initialState as roles} from '../../reducers/roles'
 
-export default (state?: Object) => {
+export default (state?: Object): Store => {
   const initialState: ReducerState = {
     agents,
     base,
@@ -28,18 +28,23 @@ export default (state?: Object) => {
     result,
     roles
   }
-  const dispatch: Object = () => {
+  const dispatch = (action: any) => {
     console.log('dispatch')
+
+    return action
   }
   const getState = () => ({
     ... initialState,
     ... state
   })
-  const replaceReducer: Object = () => {
+  const replaceReducer = () => {
     console.log('replaceReducer')
   }
-  const subscribe: Object = () => {
+  const subscribe = () => {
     // console.log('subscribe')
+    return () => {
+      // console.log('unsubscribe')
+    }
   }
   const store = {
     dispatch,
