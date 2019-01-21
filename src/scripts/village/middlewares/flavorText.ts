@@ -13,7 +13,7 @@ const flavorText: Middleware = store => next => action => {
           setTimeout(() => {
             store.dispatch({
               payload: value,
-              type: 'socket/MESSAGE'
+              type: ActionTypes.socket.MESSAGE
             })
           }, INTERVAL * index)
         )
