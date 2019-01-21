@@ -1,6 +1,5 @@
-// @flow
-import Activity, {type StateProps} from '../components/organisms/Activity'
-import type {ReducerState} from '../reducers'
+import Activity, {StateProps} from '../components/organisms/Activity'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
