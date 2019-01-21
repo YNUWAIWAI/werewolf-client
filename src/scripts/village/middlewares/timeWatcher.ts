@@ -1,10 +1,8 @@
-import {Dispatch, Middleware} from 'redux'
 import {changeDate, changePhase} from '../actions'
-import {Action} from '.'
-import {ReducerState} from '../reducers'
+import {Middleware} from '.'
 import {socket} from '../constants/ActionTypes'
 
-const timeWatcher: Middleware<{}, ReducerState, Dispatch<Action>> = store => next => action => {
+const timeWatcher: Middleware = store => next => action => {
   if (action.type === socket.MESSAGE) {
     const base = store.getState().base
 
