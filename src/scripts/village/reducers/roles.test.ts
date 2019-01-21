@@ -1,16 +1,12 @@
-// @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './roles'
 import {firstMorning} from './fakeServer'
+import {socket} from '../actions'
 
 test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      {
-        payload: firstMorning,
-        type: ActionTypes.socket.MESSAGE
-      }
+      socket.message(firstMorning)
     )
   ).toEqual({
     all: [
