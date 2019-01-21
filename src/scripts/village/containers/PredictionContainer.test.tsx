@@ -1,8 +1,7 @@
-// @flow
+import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
 import PredictionContainer from './PredictionContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
@@ -87,64 +86,6 @@ test('<PredictionContainer />', () => {
         en: 'Werewolf',
         ja: '人狼'
       },
-      id: 'werewolf',
-      image: 'https://werewolf.world/image/0.2/werewolf.jpg',
-      numberOfAgents: 1
-    }
-  ]
-  const expectedPlayerStatus = [
-    {
-      id: 1,
-      image: 'https://werewolf.world/image/0.2/Walter.jpg',
-      name: 'ヴァルター',
-      status: 'alive'
-    },
-    {
-      id: 2,
-      image: 'https://werewolf.world/image/0.2/Moritz.jpg',
-      name: 'モーリッツ',
-      status: 'alive'
-    },
-    {
-      id: 3,
-      image: 'https://werewolf.world/image/0.2/Simson.jpg',
-      name: 'ジムゾン',
-      status: 'alive'
-    },
-    {
-      id: 4,
-      image: 'https://werewolf.world/image/0.2/Thomas.jpg',
-      name: 'トーマス',
-      status: 'alive'
-    },
-    {
-      id: 5,
-      image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
-      name: 'ニコラス',
-      status: 'alive'
-    }
-  ]
-  const expectedRoleStatus = [
-    {
-      caption: '村人',
-      id: 'villager',
-      image: 'https://werewolf.world/image/0.2/villager.jpg',
-      numberOfAgents: 2
-    },
-    {
-      caption: '占い師',
-      id: 'seer',
-      image: 'https://werewolf.world/image/0.2/seer.jpg',
-      numberOfAgents: 1
-    },
-    {
-      caption: '狂人',
-      id: 'madman',
-      image: 'https://werewolf.world/image/0.2/madman.jpg',
-      numberOfAgents: 1
-    },
-    {
-      caption: '人狼',
       id: 'werewolf',
       image: 'https://werewolf.world/image/0.2/werewolf.jpg',
       numberOfAgents: 1

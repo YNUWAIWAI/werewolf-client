@@ -1,8 +1,7 @@
-// @flow
-import {type ChangePredictionBoard, handleBoardClick} from '../actions'
-import Prediction, {type DispatchProps, type StateProps} from '../components/organisms/Prediction'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {ChangePredictionBoard, handleBoardClick} from '../actions'
+import Prediction, {DispatchProps, StateProps} from '../components/organisms/Prediction'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import {getText} from '../util'
 
