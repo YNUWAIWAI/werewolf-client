@@ -1,6 +1,5 @@
-// @flow
-import InfoDay, {type StateProps} from '../components/molecules/InfoDay'
-import type {ReducerState} from '../reducers'
+import InfoDay, {StateProps} from '../components/molecules/InfoDay'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
