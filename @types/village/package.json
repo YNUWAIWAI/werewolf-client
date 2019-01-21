@@ -2,5 +2,5 @@
   "name": "@types/village",
   "private": true,
   "types": "index.d.ts",
-  "version": "1.14.0"
+  "version": "1.15.0"
 }
