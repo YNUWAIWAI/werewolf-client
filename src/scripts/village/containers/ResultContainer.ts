@@ -1,8 +1,7 @@
-// @flow
-import {type HideResult, hideResult} from '../actions'
-import Result, {type DispatchProps, type StateProps} from '../components/organisms/Result'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {HideResult, hideResult} from '../actions'
+import Result, {DispatchProps, StateProps} from '../components/organisms/Result'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import {getText} from '../util'
 
@@ -10,7 +9,7 @@ type Action =
   | HideResult
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const agents = {}
+  const agents: StateProps['agents'] = {}
 
   state.result.allIds.forEach(id => {
     const a = state.result.agents[id]
@@ -34,7 +33,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     }
   })
   const myTeam = state.result.summary.kind === 'audience' ? '' : state.result.summary.myTeam // '' => 'audience'
-  const summary = {
+  const summary: StateProps['summary'] = {
     description: {
       loser: `Result.summary.loser(${state.result.summary.loserTeam.size})`,
       summary: state.result.summary.kind === 'player' ?

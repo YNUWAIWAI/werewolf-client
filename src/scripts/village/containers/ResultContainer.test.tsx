@@ -1,7 +1,6 @@
-// @flow
+import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import ResultContainer from './ResultContainer'
 import fakeStore from './fakeStore'
 import {render} from 'enzyme'
