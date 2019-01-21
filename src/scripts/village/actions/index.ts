@@ -129,8 +129,8 @@ export const hideResult = (): {type: ActionTypes.global.HIDE_RESULT} => ({
   type: ActionTypes.global.HIDE_RESULT
 })
 
-export const postChat = ({kind, text}: {kind: village.InputChannel, text: string}): {kind: village.InputChannel, text: string, type: ActionTypes.global.POST_CHAT} => ({
-  kind,
+export const postChat = ({channel, text}: {channel: village.InputChannel, text: string}): {channel: village.InputChannel, text: string, type: ActionTypes.global.POST_CHAT} => ({
+  channel,
   text,
   type: ActionTypes.global.POST_CHAT
 })

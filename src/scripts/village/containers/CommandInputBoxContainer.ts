@@ -9,10 +9,10 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => state.commandInputBox
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handlePostChat: kind => text => {
+  handlePostChat: channel => text => {
     dispatch(
       postChat({
-        kind,
+        channel,
         text
       })
     )

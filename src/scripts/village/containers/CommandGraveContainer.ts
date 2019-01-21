@@ -21,10 +21,10 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleNavigationClick: type => {
     dispatch(clickNavigationButton(type))
   },
-  handlePostChat: kind => text => {
+  handlePostChat: channel => text => {
     dispatch(
       postChat({
-        kind,
+        channel,
         text
       })
     )
