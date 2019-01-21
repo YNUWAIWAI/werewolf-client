@@ -1,7 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {SocketMessage} from '../actions'
+import {getBaseUri} from '../util'
 
 export interface State {
+  readonly '@id': string // ^https://licos.online/state/0.2/village#[0-9]+$
   readonly clientTimestamp: string
   readonly date: number
   readonly intensionalDisclosureRange: village.Channel
@@ -22,15 +24,16 @@ type Action =
   | SocketMessage
 
 export const initialState: State = {
-  clientTimestamp: '',
-  date: 0,
-  intensionalDisclosureRange: village.Channel.public,
-  phase: village.Phase.night,
-  phaseStartTime: '',
-  phaseTimeLimit: -1,
-  serverTimestamp: '',
-  token: '',
-  village: {
+  '@id': '',
+  'clientTimestamp': '',
+  'date': 0,
+  'intensionalDisclosureRange': village.Channel.public,
+  'phase': village.Phase.night,
+  'phaseStartTime': '',
+  'phaseTimeLimit': -1,
+  'serverTimestamp': '',
+  'token': '',
+  'village': {
     '@id': '',
     'id': 0,
     'lang': village.Language.en,
@@ -41,15 +44,16 @@ export const initialState: State = {
 const base = (state: State = initialState, action: Action): State => {
   if (action.type === ActionTypes.socket.MESSAGE) {
     return {
-      clientTimestamp: action.payload.clientTimestamp,
-      date: action.payload.date,
-      intensionalDisclosureRange: action.payload.intensionalDisclosureRange,
-      phase: action.payload.phase,
-      phaseStartTime: action.payload.phaseStartTime,
-      phaseTimeLimit: action.payload.phaseTimeLimit,
-      serverTimestamp: action.payload.serverTimestamp,
-      token: action.payload.token,
-      village: {
+      '@id': getBaseUri(action.payload['@id']),
+      'clientTimestamp': action.payload.clientTimestamp,
+      'date': action.payload.date,
+      'intensionalDisclosureRange': action.payload.intensionalDisclosureRange,
+      'phase': action.payload.phase,
+      'phaseStartTime': action.payload.phaseStartTime,
+      'phaseTimeLimit': action.payload.phaseTimeLimit,
+      'serverTimestamp': action.payload.serverTimestamp,
+      'token': action.payload.token,
+      'village': {
         '@id': action.payload.village['@id'],
         'id': action.payload.village.id,
         'lang': action.payload.village.lang,
