@@ -1,12 +1,13 @@
 import * as actions from '../actions'
-import {applyMiddleware} from 'redux'
+import {Dispatch, MiddlewareAPI, applyMiddleware} from 'redux'
+import {ReducerState} from '../reducers'
 import client2server from './client2server'
 import config from '../../../../config'
 import indexedDB from './indexedDB'
 import logger from './logger'
 import socket from './socket'
 
-export type Action =
+type Action =
   | actions.AdvancedSearch$ChangeAvatar
   | actions.AdvancedSearch$ChangeCheckbox
   | actions.AdvancedSearch$ChangeComment
@@ -41,6 +42,8 @@ export type Action =
   | actions.Transition
   | {type: 'indexedDB/INIT'}
   | {type: 'socket/INIT'}
+
+export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 
 const elem = document.getElementById('script')
 
