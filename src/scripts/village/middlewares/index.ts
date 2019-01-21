@@ -1,3 +1,4 @@
+import * as ActionTypes from '../constants/ActionTypes'
 import * as actions from '../actions'
 import {Dispatch, MiddlewareAPI, applyMiddleware} from 'redux'
 import {ReducerState} from '../reducers'
@@ -26,9 +27,9 @@ type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
-  | {type: 'PROLOGUE'}
-| {type: 'indexedDB/INIT'}
-  | {type: 'socket/INI'}
+  | actions.Target
+  | {type: ActionTypes.indexedDB.INIT}
+  | {type: ActionTypes.socket.INIT}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 
