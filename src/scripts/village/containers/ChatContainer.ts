@@ -1,11 +1,10 @@
-// @flow
-import Chat, {type StateProps} from '../components/organisms/Chat'
-import type {ReducerState} from '../reducers'
+import Chat, {StateProps} from '../components/organisms/Chat'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import {getText} from '../util'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const byId = {}
+  const byId: StateProps['byId'] = {}
 
   state.chat.allIds
     .forEach(id => {
