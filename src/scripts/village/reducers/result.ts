@@ -1,60 +1,59 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import type {AgentStatus, LanguageMap, Payload$systemMessage, Result as TResult, Team} from 'village'
-import type {HideResult, SocketMessage} from '../actions'
+import {HideResult, SocketMessage} from '../actions'
 import {
   getPlayableAgents,
   getTeam,
   idGenerater,
   just,
   strToAgentStatus,
-  strToMessage,
   strToRoleId
 } from '../util'
-import {RESULT} from '../constants/Phase'
-import {SYSTEM_MESSAGE} from '../constants/Message'
 
 const getAgentId = idGenerater('agent')
 
-type Agents = {
-  [string]: {
-    +agentImage: string,
-    +agentId: number,
-    +agentName: LanguageMap,
-    +avatarImage: string,
-    +avatarName: string,
-    +result: TResult,
-    +roleImage: string,
-    +roleName: LanguageMap,
-    +status: AgentStatus
+type PlayerSummary = {
+  readonly kind: 'player',
+  readonly loserTeam: Set<village.Team>,
+  readonly myTeam: village.Team,
+  readonly result: village.Result,
+  readonly winnerTeam: village.Team
+}
+
+type AudienceSummary = {
+  readonly kind: 'audience',
+  readonly loserTeam: Set<village.Team>,
+  readonly winnerTeam: village.Team
+}
+
+type Summary = PlayerSummary | AudienceSummary
+
+export interface State {
+  readonly agents: {
+    [id in village.AgentId]: {
+      readonly agentImage: string
+      readonly agentId: number
+      readonly agentName: village.LanguageMap
+      readonly avatarImage: string
+      readonly avatarName: string
+      readonly result: village.Result
+      readonly roleImage: string
+      readonly roleName: village.LanguageMap
+      readonly status: village.AgentStatus
+    }
   }
-}
-type Summary = {
-  +kind: 'audience',
-  +loserTeam: Set<Team>,
-  +winnerTeam: Team
-} | {
-  +kind: 'player',
-  +loserTeam: Set<Team>,
-  +myTeam: Team,
-  +result: 'win' | 'lose',
-  +winnerTeam: Team
-}
-export type State = {
-  +agents: Agents,
-  +allIds: string[],
-  +losers: string[],
-  +me: ?string,
-  +summary: Summary,
-  +visible: boolean,
-  +winners: string[]
+  readonly allIds: string[]
+  readonly losers: string[]
+  readonly me: string | null
+  readonly summary: Summary
+  readonly visible: boolean
+  readonly winners: string[]
 }
 type Action =
   | SocketMessage
   | HideResult
   | {type: 'SHOW_RESULT'}
 
-export const initialState = {
+export const initialState: State = {
   agents: {},
   allIds: [],
   losers: [],
@@ -62,34 +61,34 @@ export const initialState = {
   summary: {
     kind: 'audience',
     loserTeam: new Set(),
-    winnerTeam: 'villager'
+    winnerTeam: village.Team.villager
   },
   visible: false,
   winners: []
 }
 const result = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SHOW_RESULT:
+    case ActionTypes.global.SHOW_RESULT:
       return {
         ... state,
         visible: true
       }
-    case ActionTypes.HIDE_RESULT:
+    case ActionTypes.global.HIDE_RESULT:
       return {
         ... state,
         visible: false
       }
     case ActionTypes.socket.MESSAGE:
       if (
-        strToMessage(action.payload['@id']) === SYSTEM_MESSAGE &&
-        action.payload.phase === RESULT
+        action.payload['@payload'] === village.Message.systemMessage &&
+        action.payload.phase === village.Phase.result
       ) {
-        const payload: Payload$systemMessage = action.payload
-        const agents: Agents = {}
-        const allIds = []
-        const losers = []
-        let me
-        const winners = []
+        const payload = action.payload
+        const agents: State['agents'] = {}
+        const allIds: State['allIds'] = []
+        const losers: State['losers'] = []
+        let me: State['me'] = null
+        const winners: State['winners'] = []
 
         getPlayableAgents(just(payload.agent))
           .forEach(a => {
@@ -106,10 +105,10 @@ const result = (state: State = initialState, action: Action): State => {
               roleName: just(a.role).name,
               status: strToAgentStatus(a.status)
             }
-            if (a.result === 'win') {
+            if (a.result === village.Result.win) {
               winners.push(agentId)
             }
-            if (a.result === 'lose') {
+            if (a.result === village.Result.lose) {
               losers.push(agentId)
             }
             if (a.isMine) {
@@ -117,15 +116,15 @@ const result = (state: State = initialState, action: Action): State => {
             }
             allIds.push(agentId)
           })
-        const summary: Summary = (() => {
+        const summary = (() => {
           if (winners.length === 0) {
             throw Error('Unexpected Result: no winners')
           }
           const winnerTeam = getTeam(strToRoleId(agents[winners[0]].roleName.en))
           const loserTeam = new Set(losers.map(loser => getTeam(strToRoleId(agents[loser].roleName.en))))
 
-          if (me) {
-            return {
+          if (typeof me === 'string') {
+            return <PlayerSummary>{
               kind: 'player',
               loserTeam,
               myTeam: getTeam(strToRoleId(agents[me].roleName.en)),
@@ -134,7 +133,7 @@ const result = (state: State = initialState, action: Action): State => {
             }
           }
 
-          return {
+          return <AudienceSummary>{
             kind: 'audience',
             loserTeam,
             winnerTeam

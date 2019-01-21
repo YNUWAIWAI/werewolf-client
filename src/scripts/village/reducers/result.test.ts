@@ -1,17 +1,13 @@
-// @flow
-import * as ActionTypes from '../constants/ActionTypes'
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './result'
+import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {
   test('phase is not result', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: firstMorning,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(firstMorning)
       )
     ).toEqual(initialState)
   })
@@ -19,10 +15,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: result,
-          type: ActionTypes.socket.MESSAGE
-        }
+        socket.message(result)
       )
     ).toEqual({
       agents: {
