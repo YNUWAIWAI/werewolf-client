@@ -4,6 +4,15 @@ import {
   WEREHAMSTER_TEAM
 } from '../constants/Role'
 
+export const getBaseUri = (id: string): string => {
+  const match = (/^([^\n]+)\/\w+$/).exec(id)
+
+  if (match && match[1]) {
+    return match[1]
+  }
+
+  return ''
+}
 export const trimBaseUri = (id: string): string => {
   const match = (/\/(\w+)$/).exec(id)
 

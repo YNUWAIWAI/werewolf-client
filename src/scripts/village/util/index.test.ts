@@ -1,6 +1,6 @@
-// @flow
 import {
   getAgent,
+  getBaseUri,
   getChannelFromInputChennel,
   getChatChannelFromChannel,
   getInputChannelFromChannel,
@@ -129,6 +129,9 @@ describe('getAgent', () => {
 
     expect(() => getAgent(agents, 1)).toThrow()
   })
+})
+test('getBaseUri', () => {
+  expect(getBaseUri('https://licos.online/state/0.2/village#3/boardMessage')).toBe('https://licos.online/state/0.2/village#3')
 })
 describe('getChannelFromInputChennel', () => {
   describe('inputChannel: \'limited\'', () => {
