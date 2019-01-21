@@ -1,14 +1,11 @@
-// @flow
-
-import type {DispatchAPI, Middleware} from 'redux'
+import {Dispatch, Middleware} from 'redux'
 import {changeDate, changePhase} from '../actions'
-import type {Action} from '.'
-import {BASE} from '../constants/Contexts'
-import type {ReducerState} from '../reducers'
+import {Action} from '.'
+import {ReducerState} from '../reducers'
 import {socket} from '../constants/ActionTypes'
 
-const timeWatcher: Middleware<ReducerState, Action, DispatchAPI<Action>> = store => next => action => {
-  if (action.type === socket.MESSAGE && action.payload['@context'].includes(BASE)) {
+const timeWatcher: Middleware<{}, ReducerState, Dispatch<Action>> = store => next => action => {
+  if (action.type === socket.MESSAGE) {
     const base = store.getState().base
 
     if (action.payload.date !== base.date) {
@@ -17,7 +14,7 @@ const timeWatcher: Middleware<ReducerState, Action, DispatchAPI<Action>> = store
         to: action.payload.date
       }))
     }
-    if (action.payload.phase !== base.phase) {
+    if (base.phase !== village.Phase.flavorText && action.payload.phase !== base.phase) {
       store.dispatch(changePhase({
         from: base.phase,
         to: action.payload.phase

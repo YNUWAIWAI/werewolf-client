@@ -1,6 +1,5 @@
-// @flow
 import * as ActionTypes from '../constants/ActionTypes'
-import Ajv from 'ajv'
+import * as Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as agents} from '../reducers/agents'
 import {initialState as base} from '../reducers/base'
@@ -16,6 +15,7 @@ import {initialState as obfucator} from '../reducers/obfucator'
 import {initialState as prediction} from '../reducers/prediction'
 import {initialState as result} from '../reducers/result'
 import {initialState as roles} from '../reducers/roles'
+import {socket} from '../actions'
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
@@ -42,36 +42,32 @@ describe('socket/MESSAGE', () => {
     })
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload = {
+    const payload: village.Payload$systemMessage = {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/votingResult.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.VotingResult
       ],
       '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
       'agent': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
-      'directionality': 'server to client',
+      'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
-      'intensionalDisclosureRange': 'private',
-      'phase': 'morning',
+      'intensionalDisclosureRange': village.Channel.private,
+      'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'role': [],
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
-    }
-    const action = {
-      payload,
-      type: ActionTypes.socket.MESSAGE
     }
 
     test('validate the JSON', async () => {
@@ -106,17 +102,17 @@ describe('socket/MESSAGE', () => {
         })
     })
     test('dispatch correctly', () => {
-      actionHandler(action)
+      actionHandler(socket.message(payload))
       expect(dispatch).toHaveBeenCalledTimes(2)
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'morning',
-        type: ActionTypes.CHANGE_PHASE
+        type: ActionTypes.global.CHANGE_PHASE
       })
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.CHANGE_DATE
+        type: ActionTypes.global.CHANGE_DATE
       })
     })
   })
@@ -142,36 +138,32 @@ describe('socket/MESSAGE', () => {
     })
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload = {
+    const payload: village.Payload$systemMessage = {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/votingResult.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.VotingResult
       ],
       '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
       'agent': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 0,
-      'directionality': 'server to client',
+      'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
-      'intensionalDisclosureRange': 'private',
-      'phase': 'morning',
+      'intensionalDisclosureRange': village.Channel.private,
+      'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'role': [],
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
-    }
-    const action = {
-      payload,
-      type: ActionTypes.socket.MESSAGE
     }
 
     test('validate the JSON', async () => {
@@ -206,12 +198,12 @@ describe('socket/MESSAGE', () => {
         })
     })
     test('dispatch correctly', () => {
-      actionHandler(action)
+      actionHandler(socket.message(payload))
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'morning',
-        type: ActionTypes.CHANGE_PHASE
+        type: ActionTypes.global.CHANGE_PHASE
       })
     })
   })
@@ -237,36 +229,32 @@ describe('socket/MESSAGE', () => {
     })
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload = {
+    const payload: village.Payload$systemMessage = {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/votingResult.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.VotingResult
       ],
       '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
       'agent': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
-      'directionality': 'server to client',
+      'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
-      'intensionalDisclosureRange': 'private',
-      'phase': 'night',
+      'intensionalDisclosureRange': village.Channel.private,
+      'phase': village.Phase.night,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'role': [],
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
-    }
-    const action = {
-      payload,
-      type: ActionTypes.socket.MESSAGE
     }
 
     test('validate the JSON', async () => {
@@ -301,12 +289,12 @@ describe('socket/MESSAGE', () => {
         })
     })
     test('dispatch correctly', () => {
-      actionHandler(action)
+      actionHandler(socket.message(payload))
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.CHANGE_DATE
+        type: ActionTypes.global.CHANGE_DATE
       })
     })
   })
@@ -332,36 +320,32 @@ describe('socket/MESSAGE', () => {
     })
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload = {
+    const payload: village.Payload$systemMessage = {
       '@context': [
-        'https://werewolf.world/context/0.2/base.jsonld',
-        'https://werewolf.world/context/0.2/votingResult.jsonld'
+        village.BaseContext.Base,
+        village.BaseContext.VotingResult
       ],
       '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
       'agent': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 0,
-      'directionality': 'server to client',
+      'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
-      'intensionalDisclosureRange': 'private',
-      'phase': 'night',
+      'intensionalDisclosureRange': village.Channel.private,
+      'phase': village.Phase.night,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'role': [],
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': 'https://werewolf.world/context/0.2/village.jsonld',
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
-    }
-    const action = {
-      payload,
-      type: ActionTypes.socket.MESSAGE
     }
 
     test('validate the JSON', async () => {
@@ -396,7 +380,7 @@ describe('socket/MESSAGE', () => {
         })
     })
     test('dispatch correctly', () => {
-      actionHandler(action)
+      actionHandler(socket.message(payload))
       expect(dispatch).toHaveBeenCalledTimes(0)
     })
   })
