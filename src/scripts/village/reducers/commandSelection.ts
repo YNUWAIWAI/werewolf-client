@@ -1,8 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePhase, SelectYes, SocketMessage} from '../actions'
-import {just, strToMessage} from '../util'
-import {SYSTEM_MESSAGE} from '../constants/Message'
 import {VOTING_PHASE} from '../constants/Phase'
+import {just} from '../util'
 
 export interface State {
   readonly agents: {
