@@ -1,4 +1,3 @@
-// @flow
 import * as actions from '../actions'
 import {applyMiddleware} from 'redux'
 import client2server from './client2server'
@@ -9,11 +8,13 @@ import logger from './logger'
 import socket from './socket'
 import timeWatcher from './timeWatcher'
 
-export type Action =
+type Action =
   | actions.ChangeDate
+  | actions.ChangeLanguage
   | actions.ChangePhase
   | actions.ChangePredictionBoard
   | actions.ClickHideButton
+  | actions.HideResult
   | actions.PostChat
   | actions.Ready
   | actions.SelectNo
@@ -25,8 +26,10 @@ export type Action =
   | actions.SocketOpen
   | actions.SocketSend
   | {type: 'PROLOGUE'}
-  | {type: 'indexedDB/INIT'}
-  | {type: 'socket/INIT'}
+| {type: 'indexedDB/INIT'}
+  | {type: 'socket/INI'}
+
+export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 
 const elem = document.getElementById('script')
 
