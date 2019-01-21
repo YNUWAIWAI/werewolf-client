@@ -1,8 +1,7 @@
-// @flow
-import CommandInputBox, {type DispatchProps, type StateProps} from '../components/organisms/CommandInputBox'
-import {type PostChat, postChat} from '../actions'
-import type {Dispatch} from 'redux'
-import {type ReducerState} from '../reducers'
+import CommandInputBox, {DispatchProps, StateProps} from '../components/organisms/CommandInputBox'
+import {PostChat, postChat} from '../actions'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
