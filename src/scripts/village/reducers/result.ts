@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {HideResult, SocketMessage} from '../actions'
+import {HideResult, SocketMessage, Target} from '../actions'
 import {
   getPlayableAgents,
   getTeam,
@@ -51,7 +51,7 @@ export interface State {
 type Action =
   | SocketMessage
   | HideResult
-  | {type: 'SHOW_RESULT'}
+  | Target
 
 export const initialState: State = {
   agents: {},
