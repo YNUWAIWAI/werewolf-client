@@ -1,17 +1,15 @@
-// @flow
-import CommandSelection, {type DispatchProps, type StateProps} from '../components/organisms/CommandSelection'
-import type {Phase, RoleId} from 'village'
-import {type SelectOption, selectOption} from '../actions'
+import CommandSelection, {DispatchProps, StateProps} from '../components/organisms/CommandSelection'
+import {SelectOption, selectOption} from '../actions'
 import {getText, strToRoleId} from '../util'
 import {DAY} from '../constants/Phase'
-import type {Dispatch} from 'redux'
-import type {ReducerState} from '../reducers'
+import {Dispatch} from 'redux'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
   | SelectOption
 
-const getDescriptionId = (phase: Phase, role: RoleId, fixed: boolean) => {
+const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boolean) => {
   const fixedState = fixed ? 'fixed' : 'unfixed'
 
   if (phase === DAY) {

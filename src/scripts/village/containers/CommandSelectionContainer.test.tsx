@@ -1,9 +1,8 @@
-// @flow
+import * as React from 'react'
 import {DAY, NIGHT} from '../constants/Phase'
 import CommandSelectionContainer from './CommandSelectionContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
