@@ -116,7 +116,7 @@ declare namespace village {
     Agent = 'https://werewolf.world/context/0.2/agent.jsonld',
     Avatar = 'https://werewolf.world/context/0.2/avatar.jsonld',
     Base = 'https://werewolf.world/context/0.2/base.jsonld',
-    BoardResult = 'https://werewolf.world/context/0.2/boardResult.jsonld',
+    Board = 'https://werewolf.world/context/0.2/board.jsonld',
     Chat = 'https://werewolf.world/context/0.2/chat.jsonld',
     Error = 'https://werewolf.world/context/0.2/error.jsonld',
     FlavorText = 'https://werewolf.world/context/0.2/flavorText.jsonld',
