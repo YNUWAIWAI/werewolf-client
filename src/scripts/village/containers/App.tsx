@@ -1,4 +1,4 @@
-// @flow
+import * as React from 'react'
 import Activity from './ActivityContainer'
 import Command from './CommandContainer'
 import HideButton from './HideButtonContainer'
@@ -6,7 +6,6 @@ import Info from '../components/organisms/Info'
 import IntlProvider from './IntlProviderContainer'
 import Modal from './ModalContainer'
 import Obfucator from './ObfucatorContainer'
-import React from 'react'
 import Result from './ResultContainer'
 
 export default function App() {
