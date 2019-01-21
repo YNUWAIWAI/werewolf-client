@@ -1,12 +1,12 @@
-// @flow
+
+import * as en from 'react-intl/locale-data/en'
+import * as fr from 'react-intl/locale-data/fr'
+import * as it from 'react-intl/locale-data/it'
+import * as ja from 'react-intl/locale-data/ja'
 import {IntlProvider, addLocaleData} from 'react-intl'
-import type {ReducerState} from '../reducers'
+import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import en from 'react-intl/locale-data/en'
-import fr from 'react-intl/locale-data/fr'
 import {getMessages} from '../../../i18n/village'
-import it from 'react-intl/locale-data/it'
-import ja from 'react-intl/locale-data/ja'
 
 addLocaleData([... en, ... fr, ... it, ... ja])
 
