@@ -22,7 +22,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   ]
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleNavigationClick: type => () => {
+  handleNavigationClick: type => {
     dispatch(clickNavigationButton(type))
   },
   handlePostChat: kind => text => {
