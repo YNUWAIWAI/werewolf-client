@@ -1,11 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {Dispatch, Middleware} from 'redux'
-import {Action} from '.'
-import {ReducerState} from '../reducers'
+import {Middleware} from '.'
 import {getCastFromNumberOfPlayers} from '../util'
 import {socket} from '../actions'
 
-const client2server: Middleware<{}, ReducerState, Dispatch<Action>> = store => next => action => {
+const client2server: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.Target.ADVANCED_SEARCH: {
       const state = store.getState()
