@@ -1,4 +1,3 @@
-// @flow
 /* eslint no-process-env: 0 */
 const path = require('path')
 
