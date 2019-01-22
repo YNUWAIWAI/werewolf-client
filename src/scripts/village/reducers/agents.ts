@@ -3,8 +3,8 @@ import {SocketMessage} from '../actions'
 import {getMyAgent} from '../util'
 
 export interface State {
-  readonly all: village.Agent[]
-  readonly mine?: village.Agent
+  readonly all: NonNullable<village.Payload$systemMessage['agent']>
+  readonly mine?: NonNullable<village.Payload$systemMessage['agent']>[number]
 }
 type Action =
   | SocketMessage

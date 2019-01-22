@@ -3,8 +3,8 @@ import {getMyRole, getPlayableRoles} from '../util'
 import {SocketMessage} from '../actions'
 
 export interface State {
-  readonly all: village.Role[]
-  readonly mine?: village.Role
+  readonly all: NonNullable<village.Payload$systemMessage['role']>
+  readonly mine?: NonNullable<village.Payload$systemMessage['role']>[number]
 }
 type Action =
   | SocketMessage
