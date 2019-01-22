@@ -1,4 +1,4 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const config = require('./config')
 
 module.exports = {
@@ -30,9 +30,9 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         parallel: true,
-        uglifyOptions: {
+        terserOptions: {
           compress: {
             'drop_console': true
           }
