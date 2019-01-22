@@ -4,7 +4,7 @@ import {connectDB, getValue} from '../../indexeddb'
 import {Middleware} from '.'
 
 type Village = {
-  lobbyType: village.Lobby,
+  lobbyType: lobby.Lobby,
   token: string,
   villageId: number
 }

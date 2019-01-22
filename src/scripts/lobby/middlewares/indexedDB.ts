@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {changeLobby, selectVillage} from '../actions'
-import {connectDB, deleteValue, getValue, updateValue} from '../../indexedDB'
+import {connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {Middleware} from '.'
 
 type Village = {

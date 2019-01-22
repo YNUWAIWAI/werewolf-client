@@ -1,13 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  ClickNavigationButton,
   HideResult,
   SelectNo,
   SelectOption,
   SelectYes,
   SocketClose,
   SocketError,
-  SocketOpen,
-  Target
+  SocketOpen
 } from '../actions'
 
 export interface State {
@@ -15,6 +15,7 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
+  | ClickNavigationButton
   | HideResult
   | SelectNo
   | SelectOption
@@ -22,7 +23,6 @@ type Action =
   | SocketClose
   | SocketError
   | SocketOpen
-  | Target
 
 export const initialState: State = {
   loading: true,
@@ -39,7 +39,7 @@ const obfucator = (state: State = initialState, action: Action): State => {
         visible: false
       }
     case ActionTypes.global.SELECT_OPTION:
-    case ActionTypes.global.SHOW_RESULT:
+    case ActionTypes.Navigation.SHOW_RESULT:
       return {
         loading: false,
         visible: true

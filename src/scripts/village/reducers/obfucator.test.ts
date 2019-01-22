@@ -1,9 +1,16 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import {
+  ClickNavigationButton,
+  HideResult,
+  SelectNo,
+  SelectOption,
+  SelectYes,
+  socket
+} from '../actions'
 import reducer, {initialState} from './obfucator'
-import {socket} from '../actions'
 
 test('HIDE_RESULT', () => {
-  const action = {
+  const action: HideResult = {
     type: ActionTypes.global.HIDE_RESULT
   }
 
@@ -17,7 +24,7 @@ test('HIDE_RESULT', () => {
   })
 })
 test('SELECT_NO', () => {
-  const action = {
+  const action: SelectNo = {
     type: ActionTypes.global.SELECT_NO
   }
 
@@ -32,7 +39,7 @@ test('SELECT_NO', () => {
   })
 })
 test('SELECT_YES', () => {
-  const action = {
+  const action: SelectYes = {
     agentId: 1,
     type: ActionTypes.global.SELECT_YES
   }
@@ -48,7 +55,7 @@ test('SELECT_YES', () => {
   })
 })
 test('SELECT_OPTION', () => {
-  const action = {
+  const action: SelectOption = {
     agentId: 1,
     type: ActionTypes.global.SELECT_OPTION
   }
@@ -64,8 +71,8 @@ test('SELECT_OPTION', () => {
   })
 })
 test('SHOW_RESULT', () => {
-  const action = {
-    type: ActionTypes.global.SHOW_RESULT
+  const action: ClickNavigationButton = {
+    type: ActionTypes.Navigation.SHOW_RESULT
   }
 
   expect(

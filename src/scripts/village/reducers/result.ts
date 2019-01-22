@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {HideResult, SocketMessage, Target} from '../actions'
+import {ClickNavigationButton, HideResult, SocketMessage} from '../actions'
 import {
   getPlayableAgents,
   getTeam,
@@ -49,9 +49,9 @@ export interface State {
   readonly winners: string[]
 }
 type Action =
+  | ClickNavigationButton
   | SocketMessage
   | HideResult
-  | Target
 
 export const initialState: State = {
   agents: {},
@@ -68,7 +68,7 @@ export const initialState: State = {
 }
 const result = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.SHOW_RESULT:
+    case ActionTypes.Navigation.SHOW_RESULT:
       return {
         ... state,
         visible: true

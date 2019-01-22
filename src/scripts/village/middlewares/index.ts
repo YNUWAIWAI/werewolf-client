@@ -16,6 +16,7 @@ type Action =
   | actions.ChangePhase
   | actions.ChangePredictionBoard
   | actions.ClickHideButton
+  | actions.ClickNavigationButton
   | actions.HideResult
   | actions.PostChat
   | actions.Ready
@@ -27,7 +28,6 @@ type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
-  | actions.Target
   | {type: ActionTypes.indexedDB.INIT}
   | {type: ActionTypes.socket.INIT}
 

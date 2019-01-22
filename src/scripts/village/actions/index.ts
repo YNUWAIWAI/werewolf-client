@@ -172,6 +172,4 @@ export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
-export type Target = {
-  type: ActionTypes.global | ActionTypes.Navigation
-}
+
