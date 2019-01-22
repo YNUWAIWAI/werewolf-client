@@ -1,9 +1,8 @@
-// @flow
-import {PROLOGUE, indexedDB, socket} from './constants/ActionTypes'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import {global, indexedDB, socket} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'
-import React from 'react'
-import ReactDOM from 'react-dom'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import config from '../../../config'
 import {createStore} from 'redux'
@@ -28,7 +27,7 @@ store.dispatch({
   type: indexedDB.INIT
 })
 store.dispatch({
-  type: PROLOGUE
+  type: global.PROLOGUE
 })
 
 const root = document.getElementById('root')
