@@ -1,7 +1,6 @@
-// @flow
+import * as React from 'react'
 import Danger from '../../src/scripts/lobby/components/atoms/svg/Danger'
 import Loader from '../../src/scripts/lobby/components/atoms/svg/Loader'
-import React from 'react'
 import Safe from '../../src/scripts/lobby/components/atoms/svg/Safe'
 import Warning from '../../src/scripts/lobby/components/atoms/svg/Warning'
 import {storiesOf} from '@storybook/react'

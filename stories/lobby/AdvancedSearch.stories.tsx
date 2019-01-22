@@ -1,8 +1,8 @@
-// @flow
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
-import AdvancedSearch from '../../src/scripts/lobby/components/templates/AdvancedSearch'
+import * as React from 'react'
+import AdvancedSearch, {Props} from '../../src/scripts/lobby/components/templates/AdvancedSearch'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
-import React from 'react'
+import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
@@ -16,9 +16,11 @@ const store = createStore(
 storiesOf('lobby|AdvancedSearch', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <IntlProvider store={store}>
-      {story()}
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('検索前', () => {
     const checked = {
@@ -40,23 +42,23 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.ADVANCED_SEARCH]
+        types: [ActionTypes.Target.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
-    const handleCheckboxChange = propName => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = propName => action(`handleNumberChange ${propName}`)
-    const handleTextChange = propName => action(`handleTextChange ${propName}`)
-    const handleValidityChange = propName => action(`handleValidityChange ${propName}`)
-    const selectVillage = id => action(`selectVillage ${id}`)
+    const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
+    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
+    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
+    const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
     const story =
       <AdvancedSearch
@@ -100,23 +102,23 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.ADVANCED_SEARCH]
+        types: [ActionTypes.Target.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
-    const handleCheckboxChange = propName => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = propName => action(`handleNumberChange ${propName}`)
-    const handleTextChange = propName => action(`handleTextChange ${propName}`)
-    const handleValidityChange = propName => action(`handleValidityChange ${propName}`)
-    const selectVillage = id => action(`selectVillage ${id}`)
+    const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
+    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
+    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
+    const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
     const story =
       <AdvancedSearch
@@ -160,27 +162,27 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.ADVANCED_SEARCH]
+        types: [ActionTypes.Target.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
-    const handleCheckboxChange = propName => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = propName => action(`handleNumberChange ${propName}`)
-    const handleTextChange = propName => action(`handleTextChange ${propName}`)
-    const handleValidityChange = propName => action(`handleValidityChange ${propName}`)
-    const selectVillage = id => action(`selectVillage ${id}`)
+    const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
+    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
+    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
+    const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
-    const villageItems = [
+    const villageItems: Props['villageItems'] = [
       {
-        avatar: 'fixed',
+        avatar: lobby.Avatar.fixed,
         comment: null,
         hostPlayer: {
           isAnonymous: false,
@@ -256,27 +258,27 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.ADVANCED_SEARCH]
+        types: [ActionTypes.Target.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
-    const handleCheckboxChange = propName => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = propName => action(`handleNumberChange ${propName}`)
-    const handleTextChange = propName => action(`handleTextChange ${propName}`)
-    const handleValidityChange = propName => action(`handleValidityChange ${propName}`)
-    const selectVillage = id => action(`selectVillage ${id}`)
+    const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
+    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
+    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
+    const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
-    const villageItems = [
+    const villageItems: Props['villageItems'] = [
       {
-        avatar: 'fixed',
+        avatar: lobby.Avatar.fixed,
         comment: null,
         hostPlayer: {
           isAnonymous: false,
@@ -310,7 +312,7 @@ storiesOf('lobby|AdvancedSearch', module)
         }
       },
       {
-        avatar: 'fixed',
+        avatar: lobby.Avatar.fixed,
         comment: null,
         hostPlayer: {
           isAnonymous: false,

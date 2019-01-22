@@ -1,8 +1,8 @@
-// @flow
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
+import * as React from 'react'
+import WaitingForPlayers, {Props} from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
-import React from 'react'
-import WaitingForPlayers from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
+import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
@@ -11,7 +11,7 @@ import {withKnobs} from '@storybook/addon-knobs'
 const store = createStore(
   reducer
 )
-const players = [
+const players: Props['players'] = [
   {
     avatarImage: '',
     canKickOut: false,
@@ -20,7 +20,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   },
   {
@@ -31,7 +31,7 @@ const players = [
     isMe: true,
     name: 'Cathy',
     ping: '2.000 s',
-    pingStatus: 'warning',
+    pingStatus: lobby.PingStatus.warning,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
   },
   {
@@ -42,7 +42,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '0.500 s',
-    pingStatus: 'safe',
+    pingStatus: lobby.PingStatus.safe,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
   },
   {
@@ -53,7 +53,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
   },
   {
@@ -64,7 +64,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
   },
   {
@@ -75,7 +75,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
   },
   {
@@ -86,7 +86,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
   },
   {
@@ -97,7 +97,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
   },
   {
@@ -108,7 +108,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
   },
   {
@@ -119,7 +119,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
   },
   {
@@ -130,7 +130,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
   },
   {
@@ -141,7 +141,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
   },
   {
@@ -152,7 +152,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
   },
   {
@@ -163,7 +163,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
   },
   {
@@ -174,7 +174,7 @@ const players = [
     isMe: false,
     name: 'Anonymous',
     ping: '99.999 s',
-    pingStatus: 'danger',
+    pingStatus: lobby.PingStatus.danger,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3315'
   }
 ]
@@ -182,34 +182,37 @@ const players = [
 storiesOf('lobby|WaitingForPlayers', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <IntlProvider store={store}>
-      {story()}
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('15 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -251,29 +254,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('14 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -315,29 +319,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('13 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -379,29 +384,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('12 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -443,29 +449,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('11 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -507,29 +514,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('10 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -571,29 +579,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('9 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -635,29 +644,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('8 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -699,29 +709,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('7 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -763,29 +774,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('6 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -827,29 +839,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('5 players', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,
@@ -891,29 +904,30 @@ storiesOf('lobby|WaitingForPlayers', module)
     return story
   })
   .add('long comment', () => {
-    const kickOut = token => () => {
+    const kickOut = (token: lobby.Token) => () => {
       console.log(`kick out ${token}`)
     }
     const transition = () => {}
     const menuItems = [
       {
         id: 'Menu.playGame',
-        types: [ActionTypes.PLAY_GAME]
+        types: [ActionTypes.Target.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.LEAVE_WAITING_PAGE, ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const village = {
-      avatar: 'random',
+    const village: Props['village'] = {
+      avatar: lobby.Avatar.random,
       comment: 'Too long long long long long long long long long long long long long long long long long long commen',
       hostPlayer: {
         isAnonymous: true,
+        isHuman: true,
         name: 'Anonymous'
       },
       id: 1,

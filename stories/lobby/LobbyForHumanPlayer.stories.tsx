@@ -1,8 +1,8 @@
-// @flow
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
+import * as React from 'react'
+import LobbyForHumanPlayer, {Props} from '../../src/scripts/lobby/components/templates/LobbyForHumanPlayer'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
-import LobbyForHumanPlayer from '../../src/scripts/lobby/components/templates/LobbyForHumanPlayer'
-import React from 'react'
+import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
@@ -16,36 +16,38 @@ const store = createStore(
 storiesOf('lobby|LobbyForHumanPlayer', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <IntlProvider store={store}>
-      {story()}
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('検索前', () => {
     const menuItems = [
       {
         id: 'Menu.showBuildVillage',
-        types: [ActionTypes.SHOW_BUILD_VILLAGE]
+        types: [ActionTypes.Target.SHOW_BUILD_VILLAGE]
       },
       {
         id: 'Menu.showIdSearch',
-        types: [ActionTypes.SHOW_ID_SEARCH]
+        types: [ActionTypes.Target.SHOW_ID_SEARCH]
       },
       {
         id: 'Menu.showAdvancedSearch',
-        types: [ActionTypes.SHOW_ADVANCED_SEARCH]
+        types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
       },
       {
         id: 'Menu.refresh',
-        types: [ActionTypes.REFRESH, ActionTypes.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.SHOW_MAIN]
+        types: [ActionTypes.Target.SHOW_MAIN]
       }
     ]
-    const villageItems = [
+    const villageItems: Props['villageItems'] = [
       {
-        'avatar': 'fixed',
+        'avatar': lobby.Avatar.fixed,
         'comment': null,
         'hostPlayer': {
           'isAnonymous': false,
@@ -79,7 +81,7 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
         }
       },
       {
-        'avatar': 'random',
+        'avatar': lobby.Avatar.random,
         'comment': 'Open to beginners',
         'hostPlayer': {
           'isAnonymous': true,
@@ -113,11 +115,10 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
         }
       }
     ]
-    const selectVillage = id => action(`selectVillage ${id}`)
+    const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
     const story =
       <LobbyForHumanPlayer
-        header="Header.advancedSearch(human player)"
         image="https://werewolf.world/image/0.1/Friedel.jpg"
         isPlayer
         menuItems={menuItems}
