@@ -1,6 +1,6 @@
-// @flow
+import * as React from 'react'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
-import React from 'react'
+import {Provider} from 'react-redux'
 import TeamIcon from '../../src/scripts/village/components/atoms/TeamIcon'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
@@ -11,17 +11,19 @@ const store = createStore(
 )
 
 storiesOf('village|Info/InfoTeam', module)
-  .addDecorator(getStory =>
-    <IntlProvider store={store}>
-      {getStory()}
-    </IntlProvider>
+  .addDecorator(story =>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('villager', () => {
     const story =
       <div className="info">
         <TeamIcon
           class="info--team"
-          team="villager"
+          team={village.Team.villager}
         />
       </div>
 
@@ -32,7 +34,7 @@ storiesOf('village|Info/InfoTeam', module)
       <div className="info">
         <TeamIcon
           class="info--team"
-          team="werehamster"
+          team={village.Team.werehamster}
         />
       </div>
 
@@ -43,7 +45,7 @@ storiesOf('village|Info/InfoTeam', module)
       <div className="info">
         <TeamIcon
           class="info--team"
-          team="werewolf"
+          team={village.Team.werewolf}
         />
       </div>
 

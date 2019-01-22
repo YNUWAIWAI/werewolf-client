@@ -1,7 +1,7 @@
-// @flow
+import * as React from 'react'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import Modal from '../../src/scripts/village/components/organisms/Modal'
-import React from 'react'
+import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
@@ -15,14 +15,16 @@ const store = createStore(
 storiesOf('village|Modal', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <IntlProvider store={store}>
-      {story()}
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('default', () => {
     const timer = {
       limit: 10,
-      phase: 'night'
+      phase: village.Phase.night
     }
     const story =
       <Modal

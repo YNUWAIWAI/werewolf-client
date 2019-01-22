@@ -1,4 +1,4 @@
-// @flow
+import * as React from 'react'
 import Audience from '../../src/scripts/village/components/atoms/svg/Audience'
 import Circle from '../../src/scripts/village/components/atoms/svg/Circle'
 import Cross from '../../src/scripts/village/components/atoms/svg/Cross'
@@ -9,7 +9,6 @@ import Master from '../../src/scripts/village/components/atoms/svg/Master'
 import Private from '../../src/scripts/village/components/atoms/svg/Private'
 import Public from '../../src/scripts/village/components/atoms/svg/Public'
 import Question from '../../src/scripts/village/components/atoms/svg/Question'
-import React from 'react'
 import TeamVillager from '../../src/scripts/village/components/atoms/svg/TeamVillager'
 import TeamWerehamster from '../../src/scripts/village/components/atoms/svg/TeamWerehamster'
 import TeamWerewolf from '../../src/scripts/village/components/atoms/svg/TeamWerewolf'

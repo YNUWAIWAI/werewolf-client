@@ -1,8 +1,8 @@
-// @flow
 /* eslint sort-keys: 0 */
+import * as React from 'react'
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
-import React from 'react'
+import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
@@ -16,9 +16,11 @@ const store = createStore(
 storiesOf('village|Command/CommandSelection', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <IntlProvider store={store}>
-      {story()}
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('default', () => {
     const agents = [
@@ -90,7 +92,7 @@ storiesOf('village|Command/CommandSelection', module)
     ]
     const timer = {
       limit: 90,
-      phase: 'day'
+      phase: village.Phase.day
     }
     const story =
       <CommandSelection

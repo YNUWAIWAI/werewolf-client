@@ -1,12 +1,11 @@
-// @flow
-import * as types from '../../src/scripts/village/constants/ActionTypes'
+import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
+import * as React from 'react'
 import Command from '../../src/scripts/village/components/organisms/Command'
 import CommandGrave from '../../src/scripts/village/components/organisms/CommandGrave'
 import CommandInputBox from '../../src/scripts/village/components/organisms/CommandInputBox'
 import CommandPostMortem from '../../src/scripts/village/components/organisms/CommandPostMortem'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
@@ -34,10 +33,6 @@ storiesOf('village|Command', module)
         postCount: 0,
         postCountLimit: 10
       },
-      private: {
-        postCount: 0,
-        postCountLimit: 10
-      },
       public: {
         postCount: 0,
         postCountLimit: 10
@@ -57,10 +52,6 @@ storiesOf('village|Command', module)
       handlePostChat: () => action('handlePostChat'),
       limited: {
         available: true,
-        postCount: 0,
-        postCountLimit: 10
-      },
-      private: {
         postCount: 0,
         postCountLimit: 10
       },
@@ -85,11 +76,11 @@ storiesOf('village|Command', module)
       navigation: [
         {
           id: 'CommandNavigation.showResult',
-          type: types.SHOW_RESULT
+          type: ActionTypes.Navigation.SHOW_RESULT
         },
         {
           id: 'CommandNavigation.returnToLobby',
-          type: types.RETURN_TO_LOBBY
+          type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       ]
     }
@@ -109,7 +100,7 @@ storiesOf('village|Command', module)
       navigation: [
         {
           id: 'CommandNavigation.returnToLobby',
-          type: types.RETURN_TO_LOBBY
+          type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       ]
     }

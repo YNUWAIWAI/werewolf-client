@@ -1,7 +1,7 @@
-// @flow
-import Chat from '../../src/scripts/village/components/organisms/Chat'
+import * as React from 'react'
+import Chat, {Props} from '../../src/scripts/village/components/organisms/Chat'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
-import React from 'react'
+import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
@@ -14,17 +14,19 @@ const store = createStore(
 storiesOf('village|Chat', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <IntlProvider store={store}>
-      {story()}
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('anonymousAudience', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'anonymousAudience',
+        intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -36,7 +38,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'anonymousAudience',
+        intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -52,11 +54,11 @@ storiesOf('village|Chat', module)
   })
   .add('grave', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'grave',
+        intensionalDisclosureRange: village.Channel.grave,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -68,7 +70,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'grave',
+        intensionalDisclosureRange: village.Channel.grave,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -84,11 +86,11 @@ storiesOf('village|Chat', module)
   })
   .add('hunter',() => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'hunter',
+        intensionalDisclosureRange: village.Channel.hunter,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -100,7 +102,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'hunter',
+        intensionalDisclosureRange: village.Channel.hunter,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -116,11 +118,11 @@ storiesOf('village|Chat', module)
   })
   .add('master', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'master',
+        intensionalDisclosureRange: village.Channel.master,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -132,7 +134,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'master',
+        intensionalDisclosureRange: village.Channel.master,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -148,11 +150,11 @@ storiesOf('village|Chat', module)
   })
   .add('onymousAudience', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'onymousAudience',
+        intensionalDisclosureRange: village.Channel.onymousAudience,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -164,7 +166,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'onymousAudience',
+        intensionalDisclosureRange: village.Channel.onymousAudience,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -180,11 +182,11 @@ storiesOf('village|Chat', module)
   })
   .add('private', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'private',
+        intensionalDisclosureRange: village.Channel.private,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -196,7 +198,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'private',
+        intensionalDisclosureRange: village.Channel.private,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -212,11 +214,11 @@ storiesOf('village|Chat', module)
   })
   .add('public', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'public',
+        intensionalDisclosureRange: village.Channel.public,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -228,7 +230,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'public',
+        intensionalDisclosureRange: village.Channel.public,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -244,11 +246,11 @@ storiesOf('village|Chat', module)
   })
   .add('seer', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'seer',
+        intensionalDisclosureRange: village.Channel.seer,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -260,7 +262,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'seer',
+        intensionalDisclosureRange: village.Channel.seer,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -276,11 +278,11 @@ storiesOf('village|Chat', module)
   })
   .add('werewolf', () => {
     const allIds = ['chat0', 'chat1']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'werewolf',
+        intensionalDisclosureRange: village.Channel.werewolf,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -292,7 +294,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'werewolf',
+        intensionalDisclosureRange: village.Channel.werewolf,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -308,11 +310,11 @@ storiesOf('village|Chat', module)
   })
   .add('区切り', () => {
     const allIds = ['delimeter1', 'chat1', 'chat0', 'delimeter0']
-    const byId = {
+    const byId: Props['byId'] = {
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
-        intensionalDisclosureRange: 'public',
+        intensionalDisclosureRange: village.Channel.public,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -324,7 +326,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        intensionalDisclosureRange: 'public',
+        intensionalDisclosureRange: village.Channel.public,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',

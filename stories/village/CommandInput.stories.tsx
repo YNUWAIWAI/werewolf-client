@@ -1,8 +1,8 @@
-// @flow
+import * as React from 'react'
 import {number, withKnobs} from '@storybook/addon-knobs'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
-import React from 'react'
+import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
@@ -15,28 +15,23 @@ const store = createStore(
 storiesOf('village|Command/CommandInput', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <IntlProvider store={store}>
-      {story()}
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider>
+        {story()}
+      </IntlProvider>
+    </Provider>
   )
   .add('grave', () => {
-    const postCount = number('postCount', 0, {
-      max: 10,
-      min: 0,
-      step: 1
-    })
     const story =
-    <div style={{
-      height: '200px'
-    }}
-    >
-      <CommandInput
-        handlePostChat={action('postChat')}
-        kind="grave"
-        postCount={postCount}
-        postCountLimit={10}
-      />
-    </div>
+      <div style={{
+        height: '200px'
+      }}
+      >
+        <CommandInput
+          handlePostChat={action('postChat')}
+          inputChannel={village.InputChannel.grave}
+        />
+      </div>
 
     return story
   })
@@ -44,6 +39,7 @@ storiesOf('village|Command/CommandInput', module)
     const postCount = number('postCount', 0, {
       max: 10,
       min: 0,
+      range: false,
       step: 1
     })
     const story =
@@ -53,7 +49,7 @@ storiesOf('village|Command/CommandInput', module)
     >
       <CommandInput
         handlePostChat={action('postChat')}
-        kind="public"
+        inputChannel={village.InputChannel.public}
         postCount={postCount}
         postCountLimit={10}
       />
@@ -69,7 +65,7 @@ storiesOf('village|Command/CommandInput', module)
       >
         <CommandInput
           handlePostChat={action('postChat')}
-          kind="private"
+          inputChannel={village.InputChannel.private}
         />
       </div>
 
@@ -79,6 +75,7 @@ storiesOf('village|Command/CommandInput', module)
     const postCount = number('postCount', 0, {
       max: 10,
       min: 0,
+      range: false,
       step: 1
     })
     const story =
@@ -88,7 +85,7 @@ storiesOf('village|Command/CommandInput', module)
       >
         <CommandInput
           handlePostChat={action('postChat')}
-          kind="limited"
+          inputChannel={village.InputChannel.limited}
           postCount={postCount}
           postCountLimit={10}
         />
