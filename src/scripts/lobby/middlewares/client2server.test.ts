@@ -1,5 +1,14 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
+import {
+  ChangeLanguage,
+  ChangeUserEmail,
+  ChangeUserName,
+  ChangeUserPassword,
+  KickOutPlayer,
+  SelectVillage,
+  SocketMessage
+} from '../actions'
 import {VERSION} from '../constants/Version'
 import {initialState as advancedSearch} from '../reducers/advancedSearch'
 import {initialState as buildVillage} from '../reducers/buildVillage'
@@ -241,8 +250,8 @@ describe('CHANGE_LANGUAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    language: 'ja',
+  const action: ChangeLanguage = {
+    language: lobby.Language.ja,
     type: ActionTypes.global.CHANGE_LANGUAGE
   }
   const changeLangPayload = {
@@ -284,7 +293,7 @@ describe('CHANGE_USER_EMAIL', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
+  const action: ChangeUserEmail = {
     type: ActionTypes.global.CHANGE_USER_EMAIL,
     userEmail: 'example@example.com'
   }
@@ -327,7 +336,7 @@ describe('CHANGE_USER_NAME', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
+  const action: ChangeUserName = {
     type: ActionTypes.global.CHANGE_USER_NAME,
     userName: 'userName'
   }
@@ -370,7 +379,7 @@ describe('CHANGE_USER_PASSWORD', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
+  const action: ChangeUserPassword = {
     type: ActionTypes.global.CHANGE_USER_PASSWORD,
     userPassword: 'userPassword'
   }
@@ -414,7 +423,7 @@ describe('KICK_OUT_PLAYER', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
-  const action = {
+  const action: KickOutPlayer = {
     token,
     type: ActionTypes.global.KICK_OUT_PLAYER
   }
@@ -605,7 +614,7 @@ describe('PLAY_GAME', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action = {
-    type: ActionTypes.global.PLAY_GAME
+    type: ActionTypes.Target.PLAY_GAME
   }
   const playPayload = {
     token: avatarToken.humanPlayer,
@@ -721,7 +730,7 @@ describe('SELECT_VILLAGE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const villageId = 1
-  const action = {
+  const action: SelectVillage = {
     id: villageId,
     type: ActionTypes.global.SELECT_VILLAGE
   }
@@ -993,18 +1002,18 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const pingId = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
-  const pingPayload = {
+  const pingPayload: lobby.Payload$Ping = {
     id: pingId,
     results: [
       {
         ping: '99.999 s',
-        status: 'danger',
+        status: lobby.PingStatus.danger,
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       }
     ],
-    type: 'ping'
+    type: lobby.PayloadType.ping
   }
-  const action = {
+  const action: SocketMessage = {
     payload: pingPayload,
     type: ActionTypes.socket.MESSAGE
   }
