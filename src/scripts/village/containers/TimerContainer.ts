@@ -9,6 +9,12 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   const now = state.timer.start + state.timer.time
   const rest = end - now
 
+  if (Number.isNaN(rest)) {
+    return {
+      time: 0
+    }
+  }
+
   return {
     time: Math.floor(rest / 1000)
   }
