@@ -183,7 +183,7 @@ const json: village.Payload$systemMessage = {
       },
       'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
       'id': 8,
-      'status': 'dead',
+      'status': village.AgentStatus.dead,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#8/update',
         'phase': village.Phase.night,

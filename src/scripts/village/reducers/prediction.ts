@@ -24,8 +24,8 @@ export interface State {
   readonly table: {
     [agentId in village.AgentId]: Partial<{
       [roleId in village.RoleId]: {
-        readonly date: number,
-        readonly fixed: boolean,
+        readonly date: number
+        readonly fixed: boolean
         readonly state: village.BoardState
       }
     }>
