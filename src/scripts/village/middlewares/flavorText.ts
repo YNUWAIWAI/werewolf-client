@@ -1,5 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
+import {just} from '../util'
 
 const flavorText: Middleware = store => next => action => {
   switch (action.type) {
@@ -8,7 +9,7 @@ const flavorText: Middleware = store => next => action => {
         const payload = action.payload
 
         payload.flavorText.forEach((value, index) => {
-          const [,interval] = (/(\d+)s/).exec(value.interval)
+          const [,interval] = (/(\d+)s/).exec(just(value.interval))
 
           setTimeout(() => {
             store.dispatch({
