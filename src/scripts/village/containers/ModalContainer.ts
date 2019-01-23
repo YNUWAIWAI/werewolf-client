@@ -1,4 +1,3 @@
-// @flow
 import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
 import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
 import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
@@ -12,7 +11,7 @@ type Action =
   | SelectNo
   | SelectYes
 
-const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
+const getDescriptionId = (phase: village.Phase, role: village.RoleId): string => {
   if (phase === DAY) {
     return 'Modal.Description.dayVote'
   }

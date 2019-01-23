@@ -9,7 +9,7 @@ import {connect} from 'react-redux'
 type Action =
   | SelectOption
 
-const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boolean) => {
+const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boolean): string => {
   const fixedState = fixed ? 'fixed' : 'unfixed'
 
   if (phase === DAY) {

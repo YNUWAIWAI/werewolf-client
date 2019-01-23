@@ -1,4 +1,3 @@
-
 import * as en from 'react-intl/locale-data/en'
 import * as fr from 'react-intl/locale-data/fr'
 import * as it from 'react-intl/locale-data/it'
@@ -10,7 +9,14 @@ import {getMessages} from '../../../i18n/village'
 
 addLocaleData([... en, ... fr, ... it, ... ja])
 
-const mapStateToProps = (state: ReducerState) => ({
+interface StateProps {
+  locale: village.Language
+  messages: {
+    [key: string]: string
+  }
+}
+
+const mapStateToProps = (state: ReducerState): StateProps => ({
   locale: state.language,
   messages: getMessages(state.language)
 })

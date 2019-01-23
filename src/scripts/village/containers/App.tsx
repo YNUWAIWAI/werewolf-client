@@ -8,7 +8,7 @@ import Modal from './ModalContainer'
 import Obfucator from './ObfucatorContainer'
 import Result from './ResultContainer'
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <IntlProvider>
       <div className="app">
