@@ -13,6 +13,7 @@ export interface State {
   readonly serverTimestamp: string
   readonly token: village.Token
   readonly village: {
+    readonly '@context': village.Context.Village
     readonly '@id': string
     readonly id: number
     readonly lang: village.Language
@@ -34,6 +35,7 @@ export const initialState: State = {
   'serverTimestamp': '',
   'token': '',
   'village': {
+    '@context': village.Context.Village,
     '@id': '',
     'id': 0,
     'lang': village.Language.en,
@@ -54,6 +56,7 @@ const base = (state: State = initialState, action: Action): State => {
       'serverTimestamp': action.payload.serverTimestamp,
       'token': action.payload.token,
       'village': {
+        '@context': action.payload.village['@context'],
         '@id': action.payload.village['@id'],
         'id': action.payload.village.id,
         'lang': action.payload.village.lang,
