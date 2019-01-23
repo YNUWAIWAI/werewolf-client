@@ -1,8 +1,11 @@
 import * as React from 'react'
 import Modal from './Modal'
+import {Provider} from 'react-redux'
+import fakeStore from '../../containers/fakeStore'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
+const store = fakeStore()
 const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 describe('<Modal />', () => {
@@ -10,15 +13,17 @@ describe('<Modal />', () => {
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
-      <Modal
-        descriptionId="Modal.Description.dayVote"
-        handleClickNo={handleClickNoMockFn}
-        handleClickYes={handleClickYesMockFn}
-        id={1}
-        image="image"
-        name="name"
-        visible
-      />
+      <Provider store={store}>
+        <Modal
+          descriptionId="Modal.Description.dayVote"
+          handleClickNo={handleClickNoMockFn}
+          handleClickYes={handleClickYesMockFn}
+          id={1}
+          image="image"
+          name="name"
+          visible
+        />
+      </Provider>
     )
 
     expect(wrapper.find('AgentIcon').exists()).toBe(true)
@@ -35,15 +40,17 @@ describe('<Modal />', () => {
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
-      <Modal
-        descriptionId="Modal.Description.dayVote"
-        handleClickNo={handleClickNoMockFn}
-        handleClickYes={handleClickYesMockFn}
-        id={1}
-        image="image"
-        name="name"
-        visible={false}
-      />
+      <Provider store={store}>
+        <Modal
+          descriptionId="Modal.Description.dayVote"
+          handleClickNo={handleClickNoMockFn}
+          handleClickYes={handleClickYesMockFn}
+          id={1}
+          image="image"
+          name="name"
+          visible={false}
+        />
+      </Provider>
     )
 
     expect(wrapper.find('.modal').hasClass('hidden')).toBe(true)
@@ -52,15 +59,17 @@ describe('<Modal />', () => {
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
-      <Modal
-        descriptionId="Modal.Description.dayVote"
-        handleClickNo={handleClickNoMockFn}
-        handleClickYes={handleClickYesMockFn}
-        id={1}
-        image="image"
-        name="name"
-        visible
-      />
+      <Provider store={store}>
+        <Modal
+          descriptionId="Modal.Description.dayVote"
+          handleClickNo={handleClickNoMockFn}
+          handleClickYes={handleClickYesMockFn}
+          id={1}
+          image="image"
+          name="name"
+          visible
+        />
+      </Provider>
     )
 
     expect(wrapper.find('.modal--button')).toHaveLength(2)
@@ -82,15 +91,17 @@ describe('<Modal />', () => {
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
-      <Modal
-        descriptionId="Modal.Description.dayVote"
-        handleClickNo={handleClickNoMockFn}
-        handleClickYes={handleClickYesMockFn}
-        id={1}
-        image="image"
-        name="name"
-        visible
-      />
+      <Provider store={store}>
+        <Modal
+          descriptionId="Modal.Description.dayVote"
+          handleClickNo={handleClickNoMockFn}
+          handleClickYes={handleClickYesMockFn}
+          id={1}
+          image="image"
+          name="name"
+          visible
+        />
+      </Provider>
     )
 
     expect(wrapper.find('.modal--button')).toHaveLength(2)
