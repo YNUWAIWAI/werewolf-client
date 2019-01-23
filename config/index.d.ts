@@ -2,4 +2,6 @@ interface config {
   dest: string
   env: 'production' | 'development'
 }
-export const config: config
+declare const config: config
+
+export default config
