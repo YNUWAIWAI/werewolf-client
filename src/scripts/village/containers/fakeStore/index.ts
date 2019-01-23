@@ -12,8 +12,9 @@ import {initialState as obfucator} from '../../reducers/obfucator'
 import {initialState as prediction} from '../../reducers/prediction'
 import {initialState as result} from '../../reducers/result'
 import {initialState as roles} from '../../reducers/roles'
+import {initialState as timer} from '../../reducers/timer'
 
-export default (state?: Object): Store => {
+export default (state?: Record<string, unknown>): Store => {
   const initialState: ReducerState = {
     agents,
     base,
@@ -26,7 +27,8 @@ export default (state?: Object): Store => {
     obfucator,
     prediction,
     result,
-    roles
+    roles,
+    timer
   }
   const dispatch = (action: any) => {
     console.log('dispatch')

@@ -7,10 +7,6 @@ const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.La
 
 describe('<Modal />', () => {
   test('visible', () => {
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
@@ -21,7 +17,6 @@ describe('<Modal />', () => {
         id={1}
         image="image"
         name="name"
-        timer={timer}
         visible
       />
     )
@@ -37,10 +32,6 @@ describe('<Modal />', () => {
     expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
   })
   test('visible={false}', () => {
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
@@ -51,7 +42,6 @@ describe('<Modal />', () => {
         id={1}
         image="image"
         name="name"
-        timer={timer}
         visible={false}
       />
     )
@@ -59,10 +49,6 @@ describe('<Modal />', () => {
     expect(wrapper.find('.modal').hasClass('hidden')).toBe(true)
   })
   test('handleClickNo', () => {
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
@@ -73,7 +59,6 @@ describe('<Modal />', () => {
         id={1}
         image="image"
         name="name"
-        timer={timer}
         visible
       />
     )
@@ -94,10 +79,6 @@ describe('<Modal />', () => {
     expect(wrapper.find('.modal--button.no').text()).toBe('いいえ')
   })
   test('handleClickYes', () => {
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
     const wrapper = mountWithIntl(
@@ -108,7 +89,6 @@ describe('<Modal />', () => {
         id={1}
         image="image"
         name="name"
-        timer={timer}
         visible
       />
     )

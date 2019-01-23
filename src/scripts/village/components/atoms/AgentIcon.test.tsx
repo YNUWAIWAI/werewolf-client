@@ -6,37 +6,37 @@ describe('<AgentIcon />', () => {
   test('default', () => {
     const wrapper = shallow(
       <AgentIcon
-        class="class"
+        className="className"
         image="image"
         name="name"
       />
     )
 
-    expect(wrapper.find('.class').exists()).toBe(true)
-    expect(wrapper.find('.class').hasClass('undefined')).toBe(false)
-    expect(wrapper.find('.class--image').exists()).toBe(true)
-    expect(wrapper.find('.class--name').exists()).toBe(true)
+    expect(wrapper.find('.className').exists()).toBe(true)
+    expect(wrapper.find('.className').hasClass('undefined')).toBe(false)
+    expect(wrapper.find('.className--image').exists()).toBe(true)
+    expect(wrapper.find('.className--name').exists()).toBe(true)
   })
   test('additionalClass', () => {
     const wrapper = shallow(
       <AgentIcon
         additionalClass="additionalClass"
-        class="class"
+        className="className"
         image="image"
         name="name"
       />
     )
 
-    expect(wrapper.find('.class').exists()).toBe(true)
-    expect(wrapper.find('.class').hasClass('additionalClass')).toBe(true)
-    expect(wrapper.find('.class--image').exists()).toBe(true)
-    expect(wrapper.find('.class--name').exists()).toBe(true)
+    expect(wrapper.find('.className').exists()).toBe(true)
+    expect(wrapper.find('.className').hasClass('additionalClass')).toBe(true)
+    expect(wrapper.find('.className--image').exists()).toBe(true)
+    expect(wrapper.find('.className--name').exists()).toBe(true)
   })
   test('handleOnClick', () => {
     const handleOnClick = jest.fn()
     const wrapper = shallow(
       <AgentIcon
-        class="class"
+        className="className"
         handleOnClick={handleOnClick}
         image="image"
         name="name"
@@ -44,7 +44,7 @@ describe('<AgentIcon />', () => {
     )
 
     expect(handleOnClick).toHaveBeenCalledTimes(0)
-    wrapper.find('.class').simulate('click')
+    wrapper.find('.className').simulate('click')
     expect(handleOnClick).toHaveBeenCalledTimes(1)
   })
 })

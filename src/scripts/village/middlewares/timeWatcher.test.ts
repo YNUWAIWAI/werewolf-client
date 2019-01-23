@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as base} from '../reducers/base'
-import fakeServer from '../containers/fakeStore'
+import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './timeWatcher'
 import {socket} from '../actions'
@@ -11,7 +11,7 @@ const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
 describe('socket/MESSAGE', () => {
   describe('phase: night -> morning, date: 0 -> 1', () => {
-    const store = fakeServer({
+    const store = fakeStore({
       base: {
         ... base,
         date: 0,
@@ -99,7 +99,7 @@ describe('socket/MESSAGE', () => {
     })
   })
   describe('phase: night -> morning, date: 0', () => {
-    const store = fakeServer({
+    const store = fakeStore({
       base: {
         ... base,
         date: 0,
@@ -182,7 +182,7 @@ describe('socket/MESSAGE', () => {
     })
   })
   describe('phase: night -> flavor text, date: 0', () => {
-    const store = fakeServer({
+    const store = fakeStore({
       base: {
         ... base,
         date: 0,
@@ -259,7 +259,7 @@ describe('socket/MESSAGE', () => {
     })
   })
   describe('phase: night, date: 0 -> 1', () => {
-    const store = fakeServer({
+    const store = fakeStore({
       base: {
         ... base,
         date: 0,
@@ -342,7 +342,7 @@ describe('socket/MESSAGE', () => {
     })
   })
   describe('phase: night, date: 0', () => {
-    const store = fakeServer({
+    const store = fakeStore({
       base: {
         ... base,
         date: 0,

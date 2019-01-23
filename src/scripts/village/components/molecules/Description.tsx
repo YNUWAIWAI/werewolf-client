@@ -3,13 +3,13 @@ import {FormattedMessage} from 'react-intl'
 import Timer from '../../containers/TimerContainer'
 
 interface Props {
-  class: string
+  className: string
   id: string
 }
 
 export default function Description(props: Props) {
   return (
-    <div className={props.class}>
+    <div className={props.className}>
       <FormattedMessage
         id={props.id}
       />

@@ -20,8 +20,8 @@ export interface Props extends StateProps, DispatchProps, OwnProps {}
 export default function Modal(props: Props) {
   return (
     <div className={`modal ${props.visible ? '' : 'hidden'}`}>
-      <AgentIcon class="modal--icon" image={props.image} name={props.name} />
-      <Description class="modal--description" id={props.descriptionId} />
+      <AgentIcon className="modal--icon" image={props.image} name={props.name} />
+      <Description className="modal--description" id={props.descriptionId} />
       <FormattedMessage
         id="Modal.button.yes"
       >

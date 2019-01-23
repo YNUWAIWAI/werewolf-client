@@ -21,7 +21,7 @@ export default function CommandSelection(props: Props) {
   return (
     <div className="command--selection">
       <Description
-        class="command--selection--description"
+        className="command--selection--description"
         id={props.descriptionId}
       />
       <div className="command--selection--select ">
@@ -31,7 +31,7 @@ export default function CommandSelection(props: Props) {
               .map(a =>
                 <AgentIcon
                   additionalClass="fixed"
-                  class="command--selection--option"
+                  className="command--selection--option"
                   image={a.image}
                   key={a.id}
                   name={a.name}
@@ -40,7 +40,7 @@ export default function CommandSelection(props: Props) {
             props.agents
               .map(a =>
                 <AgentIcon
-                  class="command--selection--option"
+                  className="command--selection--option"
                   handleOnClick={props.handleSelectOption(a.id)}
                   image={a.image}
                   key={a.id}
