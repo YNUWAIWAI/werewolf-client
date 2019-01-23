@@ -37,8 +37,8 @@ module.exports = {
         requireLast: false
       },
       singleline: {
-        delimiter: 'semi',
-        requireLast: true
+        delimiter: 'comma',
+        requireLast: false
       }
     }],
     "array-bracket-spacing": ["error", "never"],

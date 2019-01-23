@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {strToMessage} from '../util'
 
-type SocketMessageReturnType<T> = {
-  payload: T,
+interface SocketMessageReturnType<T> {
+  payload: T
   type: ActionTypes.socket.MESSAGE
 }
 
@@ -22,62 +22,84 @@ export const socket = {
     const message = strToMessage(payload['@id'])
 
     switch (message) {
-      case village.Message.boardMessage:
-        return <SocketMessageReturnType<village.Payload$boardMessage>>{
+      case village.Message.boardMessage: {
+        const action: SocketMessageReturnType<village.Payload$boardMessage> = {
           payload: {
-            ... <village.Payload$boardMessage>payload,
+            ... payload as village.Payload$boardMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
         }
-      case village.Message.errorMessage:
-        return <SocketMessageReturnType<village.Payload$errorMessage>>{
+
+        return action
+      }
+
+      case village.Message.errorMessage: {
+        const action: SocketMessageReturnType<village.Payload$errorMessage> = {
           payload: {
-            ... <village.Payload$errorMessage>payload,
+            ... payload as village.Payload$errorMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
         }
-      case village.Message.flavorTextMessage:
-        return <SocketMessageReturnType<village.Payload$flavorTextMessage>>{
+
+        return action
+      }
+      case village.Message.flavorTextMessage: {
+        const action: SocketMessageReturnType<village.Payload$flavorTextMessage> = {
           payload: {
-            ... <village.Payload$flavorTextMessage>payload,
+            ... payload as village.Payload$flavorTextMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
         }
-      case village.Message.playerMessage:
-        return <SocketMessageReturnType<village.Payload$playerMessage>>{
+
+        return action
+      }
+      case village.Message.playerMessage: {
+        const action: SocketMessageReturnType<village.Payload$playerMessage> = {
           payload: {
-            ... <village.Payload$playerMessage>payload,
+            ... payload as village.Payload$playerMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
         }
-      case village.Message.scrollMessage:
-        return <SocketMessageReturnType<village.Payload$scrollMessage>>{
+
+        return action
+      }
+      case village.Message.scrollMessage: {
+        const action: SocketMessageReturnType<village.Payload$scrollMessage> = {
           payload: {
-            ... <village.Payload$scrollMessage>payload,
+            ... payload as village.Payload$scrollMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
         }
-      case village.Message.systemMessage:
-        return <SocketMessageReturnType<village.Payload$systemMessage>>{
+
+        return action
+      }
+      case village.Message.systemMessage: {
+        const action: SocketMessageReturnType<village.Payload$systemMessage> = {
           payload: {
-            ... <village.Payload$systemMessage>payload,
+            ... payload as village.Payload$systemMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
         }
-      case village.Message.voteMessage:
-        return <SocketMessageReturnType<village.Payload$voteMessage>>{
+
+        return action
+      }
+      case village.Message.voteMessage: {
+        const action: SocketMessageReturnType<village.Payload$voteMessage> = {
           payload: {
-            ... <village.Payload$voteMessage>payload,
+            ... payload as village.Payload$voteMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
         }
+
+        return action
+      }
       default:
         throw Error('Unkonown Message')
     }
