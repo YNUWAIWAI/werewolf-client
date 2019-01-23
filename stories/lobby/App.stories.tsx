@@ -1,7 +1,6 @@
-// @flow
+import * as React from 'react'
 import App from '../../src/scripts/lobby/containers/App'
 import {Provider} from 'react-redux'
-import React from 'react'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
