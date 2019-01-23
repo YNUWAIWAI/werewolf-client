@@ -116,7 +116,7 @@ describe('socket/MESSAGE', () => {
             chat1: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange:  village.Channel.public,
+              intensionalDisclosureRange: village.Channel.public,
               isMine: false,
               name: {
                 en: 'Walter',
@@ -189,7 +189,7 @@ describe('socket/MESSAGE', () => {
             chat0: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange:  village.Channel.public,
+              intensionalDisclosureRange: village.Channel.public,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -204,7 +204,7 @@ describe('socket/MESSAGE', () => {
             chat1: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange:  village.Channel.public,
+              intensionalDisclosureRange: village.Channel.public,
               isMine: false,
               name: {
                 en: 'Walter',
@@ -219,7 +219,7 @@ describe('socket/MESSAGE', () => {
             chat2: {
               id: -1,
               image: 'https://werewolf.world/image/0.2/Regina.jpg',
-              intensionalDisclosureRange:  village.Channel.onymousAudience,
+              intensionalDisclosureRange: village.Channel.onymousAudience,
               isMine: true,
               name: 'Katoh',
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',

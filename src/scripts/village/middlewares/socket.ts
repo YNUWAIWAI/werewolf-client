@@ -44,7 +44,7 @@ const connectWebSocket = (() => {
   })
 })()
 
-type Option = {
+interface Option {
   readonly url: string
 }
 

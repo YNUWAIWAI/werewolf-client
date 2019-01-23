@@ -11,7 +11,7 @@ type Action =
   | SelectNo
   | SelectYes
 
-const getDescriptionId = (phase: village.Phase, role: village.RoleId): string => {
+const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
   if (phase === DAY) {
     return 'Modal.Description.dayVote'
   }

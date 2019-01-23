@@ -11,17 +11,17 @@ import {
 
 const getAgentId = idGenerater('agent')
 
-type PlayerSummary = {
-  readonly kind: 'player',
-  readonly loserTeam: Set<village.Team>,
-  readonly myTeam: village.Team,
-  readonly result: village.Result,
+interface PlayerSummary {
+  readonly kind: 'player'
+  readonly loserTeam: Set<village.Team>
+  readonly myTeam: village.Team
+  readonly result: village.Result
   readonly winnerTeam: village.Team
 }
 
-type AudienceSummary = {
-  readonly kind: 'audience',
-  readonly loserTeam: Set<village.Team>,
+interface AudienceSummary {
+  readonly kind: 'audience'
+  readonly loserTeam: Set<village.Team>
   readonly winnerTeam: village.Team
 }
 
@@ -124,20 +124,23 @@ const result = (state: State = initialState, action: Action): State => {
           const loserTeam = new Set(losers.map(loser => getTeam(strToRoleId(agents[loser].roleName.en))))
 
           if (typeof me === 'string') {
-            return <PlayerSummary>{
+            const playerSummary: PlayerSummary = {
               kind: 'player',
               loserTeam,
               myTeam: getTeam(strToRoleId(agents[me].roleName.en)),
               result: agents[me].result,
               winnerTeam
             }
-          }
 
-          return <AudienceSummary>{
+            return playerSummary
+          }
+          const audienceSummary: AudienceSummary = {
             kind: 'audience',
             loserTeam,
             winnerTeam
           }
+
+          return audienceSummary
         })()
 
         return {

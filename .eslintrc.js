@@ -30,6 +30,7 @@ module.exports = {
   ],
   "rules": {
     "@typescript-eslint/class-name-casing": 0,
+    "@typescript-eslint/explicit-function-return-type": ["off"],
     "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 , "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }}],
     "@typescript-eslint/member-delimiter-style": ["error", {
       multiline: {

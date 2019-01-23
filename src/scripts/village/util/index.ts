@@ -25,9 +25,9 @@ export const trimBaseUri = (id: string): string => {
 
 type PublicChannel = 'anonymousAudience' | 'onymousAudience' | 'public'
 
-type getChannelFromInputChennelArg = {
-  inputChannel: village.InputChannel,
-  role?: village.RoleId,
+interface getChannelFromInputChennelArg {
+  inputChannel: village.InputChannel
+  role?: village.RoleId
   publicChannel?: PublicChannel
 }
 

@@ -3,9 +3,9 @@ import {changeLanguage, ready} from '../actions'
 import {connectDB, getValue} from '../../indexeddb'
 import {Middleware} from '.'
 
-type Village = {
-  lobbyType: lobby.Lobby,
-  token: string,
+interface Village {
+  lobbyType: lobby.Lobby
+  token: string
   villageId: number
 }
 

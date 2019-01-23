@@ -30,16 +30,16 @@ const reducer = combineReducers({
 export default reducer
 
 export interface ReducerState {
-  readonly agents: agentsState,
-  readonly base: baseState,
-  readonly chat: chatState,
-  readonly commandInputBox: commandInputBoxState,
-  readonly commandSelection: commandSelectionState,
-  readonly hideButton: hideButtonState,
-  readonly language: languageState,
-  readonly modal: modalState,
-  readonly obfucator: obfucatorState,
-  readonly prediction: predictionState,
-  readonly result: resultState,
+  readonly agents: agentsState
+  readonly base: baseState
+  readonly chat: chatState
+  readonly commandInputBox: commandInputBoxState
+  readonly commandSelection: commandSelectionState
+  readonly hideButton: hideButtonState
+  readonly language: languageState
+  readonly modal: modalState
+  readonly obfucator: obfucatorState
+  readonly prediction: predictionState
+  readonly result: resultState
   readonly roles: rolesState
 }
