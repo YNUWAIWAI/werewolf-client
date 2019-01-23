@@ -43,7 +43,7 @@ if (!elem || !elem.dataset || !elem.dataset.url) {
 }
 const url = elem.dataset.url
 const middleware =
-  config.env === 'production' ?
+  process.env.NODE_ENV === 'production' ?
     applyMiddleware(
       socket({
         url
