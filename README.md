@@ -1,7 +1,5 @@
 # werewolf-client [![Build Status](https://travis-ci.org/YNUWAIWAI/werewolf-client.svg?branch=master)](https://travis-ci.org/YNUWAIWAI/werewolf-client)
 
-人狼知能の人間側のインターフェース．
-
 ## 必要なもの
 
 - Node.js (latest stable)

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+      "outDir": "./dist/",
+      "sourceMap": true,
+      "module": "commonjs",
+      "strict": true,
+      "target": "es2017",
+      "jsx": "react"
+  },
+  "include": [
+      "./src/**/*"
+  ]
+}

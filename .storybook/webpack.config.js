@@ -20,7 +20,16 @@ module.exports = {
           }
         ],
         include: path.resolve(__dirname, "../src/styles")
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: [{
+          loader: require.resolve('awesome-typescript-loader')
+        }]
       }
     ]
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.css', '.js']
   }
 }

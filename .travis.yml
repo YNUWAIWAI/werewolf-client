@@ -10,7 +10,5 @@ env:
   - TZ=Asia/Tokyo LC_ALL=ja_JP.UTF-8 LANG=ja_JP.UTF-8
 script:
   - yarn test
-  - yarn flow check
 after_success:
-  - yarn flow-coverage-report
   - yarn deploy-storybook --ci

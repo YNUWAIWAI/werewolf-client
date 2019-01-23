@@ -1,5 +1,5 @@
-const path = require('path')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const config = require('./config')
 
 module.exports = {
   entry: {
@@ -18,19 +18,21 @@ module.exports = {
   module: {
     rules: [
       {
-        exclude: /node_modules/,
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader'
-        }
+        loader: 'awesome-typescript-loader',
+        test: /\.tsx?$/
+      },
+      {
+        enforce: 'pre',
+        loader: 'source-map-loader',
+        test: /\.js$/
       }
     ]
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         parallel: true,
-        uglifyOptions: {
+        terserOptions: {
           compress: {
             'drop_console': true
           }
@@ -40,6 +42,9 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, '../public/javascripts')
+    path: config.dest
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json']
   }
 }

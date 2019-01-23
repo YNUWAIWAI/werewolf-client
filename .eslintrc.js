@@ -5,32 +5,43 @@ module.exports = {
     "jest/globals": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    'ecmaFeatures': {
-      'jsx': true
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "ecmaVersion": 6,
-    "sourceType": "module"
+    "useJSXTextNode": true
   },
   "settings": {
     "react": {
-      "version": "16.4",
-      "flowVersion": "0.71"
+      "version": "16.5"
     }
   },
   "plugins": [
-    "flowtype",
     "jest",
-    "react"
+    "react",
+    "@typescript-eslint"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:flowtype/recommended",
     "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/all"
   ],
   "rules": {
+    "@typescript-eslint/class-name-casing": 0,
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 , "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }}],
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      multiline: {
+        delimiter: 'none',
+        requireLast: false
+      },
+      singleline: {
+        delimiter: 'comma',
+        requireLast: false
+      }
+    }],
     "array-bracket-spacing": ["error", "never"],
     "array-callback-return": "error",
     "arrow-body-style": ["warn", "as-needed"],
@@ -60,7 +71,7 @@ module.exports = {
     "guard-for-in": "error",
     "handle-callback-err": "error",
     "id-blacklist": ["error", "callback"],
-    "indent": ["error", 2, { "SwitchCase": 1 , "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }}],
+    "indent": ["off", 2, { "SwitchCase": 1 , "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }}],
     "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
     "jsx-quotes": ["error", "prefer-double"],
     "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
