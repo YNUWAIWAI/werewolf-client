@@ -9,14 +9,21 @@ const flavorText: Middleware = store => next => action => {
         const payload = action.payload
 
         payload.flavorText.forEach((value, index) => {
-          const [,interval] = (/(\d+)s/).exec(just(value.interval))
+          const match = (/(\d+)s/).exec(just(value.interval))
+          let interval: number
+
+          if (match && match[1]) {
+            interval = Number(match[1]) * 1000
+          } else {
+            interval = 5000
+          }
 
           setTimeout(() => {
             store.dispatch({
               payload: value,
               type: ActionTypes.socket.MESSAGE
             })
-          }, Number(interval) * index)
+          }, interval * index)
         })
       }
 
