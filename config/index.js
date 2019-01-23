@@ -1,7 +1,7 @@
 /* eslint no-process-env: 0 */
 const path = require('path')
 
-exports.default = {
+module.exports = {
   dest: path.resolve('../public'),
   env: process.env.NODE_ENV || 'production'
 }

@@ -1,6 +1,6 @@
 const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
-const config = require('./config').default
+const config = require('./config')
 
 module.exports = {
   entry: {

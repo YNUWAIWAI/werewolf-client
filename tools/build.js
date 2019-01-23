@@ -4,7 +4,7 @@ const postcss = require('postcss')
 const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const glob = require('glob')
-const config = require('../config').default
+const config = require('../config')
 const webpack = require('webpack')
 const webpackConfig = require('../webpack.config.js')
 
