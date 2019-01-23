@@ -2,14 +2,12 @@ import * as React from 'react'
 import AgentIcon from '../atoms/AgentIcon'
 import Description from '../molecules/Description'
 import {FormattedMessage} from 'react-intl'
-import {Props as TimerProps} from '../atoms/Timer'
 
 export interface StateProps {
   readonly descriptionId: string
   readonly id: number
   readonly image: string
   readonly name: string
-  readonly timer: TimerProps
   readonly visible: boolean
 }
 export interface DispatchProps {
@@ -23,7 +21,7 @@ export default function Modal(props: Props) {
   return (
     <div className={`modal ${props.visible ? '' : 'hidden'}`}>
       <AgentIcon class="modal--icon" image={props.image} name={props.name} />
-      <Description class="modal--description" id={props.descriptionId} timer={props.timer} />
+      <Description class="modal--description" id={props.descriptionId} />
       <FormattedMessage
         id="Modal.button.yes"
       >

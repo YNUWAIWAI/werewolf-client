@@ -16,7 +16,8 @@ export const enum global {
   SELECT_YES = 'SELECT_YES',
   SET_DAY = 'SET_DAY',
   SET_ROLE = 'SET_ROLE',
-  SHOW_RESULT = 'SHOW_RESULT'
+  SHOW_RESULT = 'SHOW_RESULT',
+  TICK = 'TICK'
 }
 export const enum indexedDB {
   ABORT = 'indexedDB/ABORT',

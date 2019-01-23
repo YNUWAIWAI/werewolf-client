@@ -1,17 +1,15 @@
 import * as React from 'react'
 import AgentIcon from '../atoms/AgentIcon'
 import Description from '../molecules/Description'
-import {Props as TimerProps} from '../atoms/Timer'
 
 export interface StateProps {
   readonly agents: {
     readonly id: number
     readonly image: string
     readonly name: string
-  }[],
+  }[]
   readonly descriptionId: string
   readonly fixed: boolean
-  readonly timer: TimerProps
 }
 export interface DispatchProps {
   readonly handleSelectOption: (agentId: number) => () => void
@@ -25,7 +23,6 @@ export default function CommandSelection(props: Props) {
       <Description
         class="command--selection--description"
         id={props.descriptionId}
-        timer={props.timer}
       />
       <div className="command--selection--select ">
         {

@@ -1,12 +1,11 @@
 import * as React from 'react'
-import Timer, {Props as TimerProps} from '../atoms/Timer'
 import {FormattedMessage} from 'react-intl'
+import Timer from '../../containers/TimerContainer'
 import {spaceSeparatedToCamelCase} from '../../util'
 
 export interface StateProps {
   readonly date: number
   readonly phase: village.Phase
-  readonly timer: TimerProps
 }
 export interface OwnProps {}
 export interface Props extends StateProps, OwnProps {}
@@ -23,7 +22,7 @@ export default function InfoDay(props: Props) {
             date: props.date
           }}
         />
-        <Timer {... props.timer} />
+        <Timer />
       </div>
     </div>
   )
