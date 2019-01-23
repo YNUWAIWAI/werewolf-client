@@ -1,4 +1,4 @@
-// @flow
+import * as React from 'react'
 import {
   day,
   morningWithLimitedChat,
@@ -9,7 +9,6 @@ import {
 } from './initialState'
 import App from '../../src/scripts/village/containers/App'
 import {Provider} from 'react-redux'
-import React from 'react'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'

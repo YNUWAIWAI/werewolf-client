@@ -1,20 +1,23 @@
-export default {
+import {ReducerState} from '../../../src/scripts/village/reducers'
+export default <ReducerState>{
   agents: {
     all: []
   },
   base: {
-    clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-    date: 0,
-    intensionalDisclosureRange: 'private',
-    phase: 'flavor text',
-    phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-    phaseTimeLimit: 600,
-    serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-    token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-    village: {
+    '@id': 'https://licos.online/state/0.2/village#3',
+    'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'date': 0,
+    'intensionalDisclosureRange': village.Channel.private,
+    'phase': village.Phase.flavorText,
+    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+    'phaseTimeLimit': 600,
+    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'village': {
+      '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
-      'lang': 'ja',
+      'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -25,7 +28,7 @@ export default {
       'chat0': {
         'id': 1,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
-        'intensionalDisclosureRange': 'public',
+        'intensionalDisclosureRange': village.Channel.public,
         'isMine': true,
         'name': {
           'en': 'Walter',
@@ -40,7 +43,7 @@ export default {
       'chat1': {
         'id': 2,
         'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
-        'intensionalDisclosureRange': 'public',
+        'intensionalDisclosureRange': village.Channel.public,
         'isMine': false,
         'name': {
           'en': 'Alvin',
@@ -57,10 +60,6 @@ export default {
   commandInputBox: {
     'limited': {
       available: true,
-      postCount: 0,
-      postCountLimit: 10
-    },
-    'private': {
       postCount: 0,
       postCountLimit: 10
     },
@@ -82,6 +81,7 @@ export default {
     visible: false
   },
   obfucator: {
+    loading: false,
     visible: false
   },
   prediction: {

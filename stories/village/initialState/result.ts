@@ -1,22 +1,23 @@
-export default {
+import {ReducerState} from '../../../src/scripts/village/reducers'
+export default <ReducerState>{
   agents: {
     all: [
       {
         '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
         '@id': 'https://licos.online/state/0.2/village#3/agent#0',
         'id': 0,
-        'image': 'https://licos.online/image/0.2/Gert.jpg',
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
         'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Gert',
           'ja': 'ゲルト'
         },
-        'status': 'dead',
+        'status': 'alive',
         'update': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#0/update',
           'date': 1,
-          'phase': 'day'
+          'phase': 'morning'
         }
       },
       {
@@ -42,7 +43,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#2',
         'id': 2,
         'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Moritz',
@@ -60,7 +61,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#3',
         'id': 3,
         'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Simson',
@@ -78,7 +79,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#4',
         'id': 4,
         'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Thomas',
@@ -96,7 +97,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#5',
         'id': 5,
         'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Nicholas',
@@ -114,7 +115,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#6',
         'id': 6,
         'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Dieter',
@@ -132,7 +133,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#7',
         'id': 7,
         'image': 'https://werewolf.world/image/0.2/Peter.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Peter',
@@ -150,7 +151,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#8',
         'id': 8,
         'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Lisa',
@@ -168,7 +169,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#9',
         'id': 9,
         'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Alvin',
@@ -186,7 +187,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#10',
         'id': 10,
         'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Catalina',
@@ -204,7 +205,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#11',
         'id': 11,
         'image': 'https://werewolf.world/image/0.2/Otto.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Otto',
@@ -222,7 +223,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#12',
         'id': 12,
         'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Joachim',
@@ -240,7 +241,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#13',
         'id': 13,
         'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Pamela',
@@ -258,7 +259,7 @@ export default {
         '@id': 'https://licos.online/state/0.2/village#3/agent#14',
         'id': 14,
         'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Jacob',
@@ -292,24 +293,26 @@ export default {
     }
   },
   base: {
-    clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-    date: 1,
-    intensionalDisclosureRange: 'private',
-    phase: 'day',
-    phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-    phaseTimeLimit: 50,
-    serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-    token: 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-    village: {
+    '@id': 'https://licos.online/state/0.2/village#3',
+    'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'date': -1,
+    'intensionalDisclosureRange': 'private',
+    'phase': 'result',
+    'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+    'phaseTimeLimit': -1,
+    'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'village': {
+      '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'id': 3,
       'lang': 'ja',
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 2
+      'totalNumberOfAgents': 15
     }
   },
   chat: {
-    allIds: ['chat1', 'chat0'],
+    allIds: ['delimeter1', 'chat1', 'chat0', 'delimeter0'],
     byId: {
       'chat0': {
         'id': 1,
@@ -340,6 +343,14 @@ export default {
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': '>>1 私はパメラが人狼だと思う。',
         'type': 'item'
+      },
+      'delimeter0': {
+        date: 1,
+        type: 'delimeter'
+      },
+      'delimeter1': {
+        date: -1,
+        type: 'delimeter'
       }
     }
   },
@@ -359,112 +370,7 @@ export default {
     }
   },
   commandSelection: {
-    agents: [
-      {
-        id: 1,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        name: {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        }
-      },
-      {
-        id: 2,
-        image: 'https://werewolf.world/image/0.1/Moritz.jpg',
-        name: {
-          'en': 'Moritz',
-          'ja': 'モーリッツ'
-        }
-      },
-      {
-        id: 3,
-        image: 'https://werewolf.world/image/0.1/Simson.jpg',
-        name: {
-          'en': 'Simson',
-          'ja': 'ジムゾン'
-        }
-      },
-      {
-        id: 4,
-        image: 'https://werewolf.world/image/0.1/Thomas.jpg',
-        name: {
-          'en': 'Thomas',
-          'ja': 'トーマス'
-        }
-      },
-      {
-        id: 5,
-        image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
-        name: {
-          'en': 'Nicholas',
-          'ja': 'ニコラス'
-        }
-      },
-      {
-        id: 6,
-        image: 'https://werewolf.world/image/0.1/Dieter.jpg',
-        name: {
-          'en': 'Dieter',
-          'ja': 'ディーター'
-        }
-      },
-      {
-        id: 7,
-        image: 'https://werewolf.world/image/0.1/Peter.jpg',
-        name: {
-          'en': 'Peter',
-          'ja': 'ペーター'
-        }
-      },
-      {
-        id: 8,
-        image: 'https://werewolf.world/image/0.1/Lisa.jpg',
-        name: {
-          'en': 'Lisa',
-          'ja': 'リーザ'
-        }
-      },
-      {
-        id: 9,
-        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
-        name: {
-          'en': 'Alvin',
-          'ja': 'アルビン'
-        }
-      },
-      {
-        id: 11,
-        image: 'https://werewolf.world/image/0.1/Otto.jpg',
-        name: {
-          'en': 'Otto',
-          'ja': 'オットー'
-        }
-      },
-      {
-        id: 12,
-        image: 'https://werewolf.world/image/0.1/Joachim.jpg',
-        name: {
-          'en': 'Joachim',
-          'ja': 'ヨアヒム'
-        }
-      },
-      {
-        id: 13,
-        image: 'https://werewolf.world/image/0.1/Pamela.jpg',
-        name: {
-          'en': 'Pamela',
-          'ja': 'パメラ'
-        }
-      },
-      {
-        id: 14,
-        image: 'https://werewolf.world/image/0.1/Jacob.jpg',
-        name: {
-          'en': 'Jacob',
-          'ja': 'ヤコブ'
-        }
-      }
-    ],
+    agents: [],
     fixed: false
   },
   hideButton: {
@@ -476,7 +382,8 @@ export default {
     visible: false
   },
   obfucator: {
-    visible: false
+    loading: false,
+    visible: true
   },
   prediction: {
     playerStatus: [
@@ -1222,32 +1129,311 @@ export default {
     }
   },
   result: {
-    agents: {},
-    allIds: [],
-    losers: [],
-    me: null,
+    agents: {
+      agent0: {
+        agentId: 0,
+        agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+        agentName: {
+          'en': 'Gert',
+          'ja': 'ゲルト'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+        avatarName: 'Sato',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+        roleName: {
+          'en': 'Villager',
+          'ja': '村人'
+        },
+        status: 'alive'
+      },
+      agent1: {
+        agentId: 1,
+        agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
+        agentName: {
+          en: 'Walter',
+          ja: 'ヴァルター'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+        avatarName: 'Suzuki',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
+        roleName: {
+          en: 'Seer',
+          ja: '占い師'
+        },
+        status: 'alive'
+      },
+      agent2: {
+        agentId: 2,
+        agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
+        agentName: {
+          en: 'Moritz',
+          ja: 'モーリッツ'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+        avatarName: 'Takahashi',
+        result: 'lose',
+        roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+        roleName: {
+          en: 'Werewolf',
+          ja: '人狼'
+        },
+        status: 'alive'
+      },
+      agent3: {
+        agentId: 3,
+        agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+        agentName: {
+          en: 'Simson',
+          ja: 'ジムゾン'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+        avatarName: 'Tanaka',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
+        roleName: {
+          en: 'Hunter',
+          ja: '狩人'
+        },
+        status: 'alive'
+      },
+      agent4: {
+        agentId: 4,
+        agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
+        agentName: {
+          en: 'Thomas',
+          ja: 'トーマス'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+        avatarName: 'Ito',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
+        roleName: {
+          en: 'Medium',
+          ja: '霊媒師'
+        },
+        status: 'alive'
+      },
+      agent5: {
+        agentId: 5,
+        agentImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+        agentName: {
+          en: 'Nicholas',
+          ja: 'ニコラス'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
+        avatarName: 'Watanabe',
+        result: 'lose',
+        roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
+        roleName: {
+          en: 'Werehamster',
+          ja: 'ハムスター人間'
+        },
+        status: 'death by fear'
+      },
+      agent6: {
+        agentId: 6,
+        agentImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+        agentName: {
+          en: 'Dieter',
+          ja: 'ディーター'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Jacob.jpg',
+        avatarName: 'Yamamoto',
+        result: 'lose',
+        roleImage: 'https://werewolf.world/image/0.2/madman.jpg',
+        roleName: {
+          en: 'Madman',
+          ja: '狂人'
+        },
+        status: 'death by execution'
+      },
+      agent7: {
+        agentId: 7,
+        agentImage: 'https://werewolf.world/image/0.2/Peter.jpg',
+        agentName: {
+          en: 'Peter',
+          ja: 'ペーター'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+        avatarName: 'Nakamura',
+        result: 'lose',
+        roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+        roleName: {
+          en: 'Werewolf',
+          ja: '人狼'
+        },
+        status: 'unnatural death'
+      },
+      agent8: {
+        agentId: 8,
+        agentImage: 'https://werewolf.world/image/0.2/Lisa.jpg',
+        agentName: {
+          en: 'Lisa',
+          ja: 'リーザ'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Peter.jpg',
+        avatarName: 'Kobayashi',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: 'unnatural death'
+      },
+      agent9: {
+        agentId: 9,
+        agentImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+        agentName: {
+          en: 'Alvin',
+          ja: 'アルビン'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Peter.jpg',
+        avatarName: 'Yoshida',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: 'unnatural death'
+      },
+      agent10: {
+        agentId: 10,
+        agentImage: 'https://werewolf.world/image/0.2/Catalina.jpg',
+        agentName: {
+          'en': 'Catalina',
+          'ja': 'カタリナ'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Simon.jpg',
+        avatarName: 'Yamada',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/mason.jpg',
+        roleName: {
+          'en': 'Mason',
+          'ja': '共有者'
+        },
+        status: 'unnatural death'
+      },
+      agent11: {
+        agentId: 11,
+        agentImage: 'https://werewolf.world/image/0.2/Otto.jpg',
+        agentName: {
+          en: 'Otto',
+          ja: 'オットー'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+        avatarName: 'Sasaki',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/mason.jpg',
+        roleName: {
+          en: 'Mason',
+          ja: '共有者'
+        },
+        status: 'unnatural death'
+      },
+      agent12: {
+        agentId: 12,
+        agentImage: 'https://werewolf.world/image/0.2/Joachim.jpg',
+        agentName: {
+          en: 'Joachim',
+          ja: 'ヨアヒム'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Otto.jpg',
+        avatarName: '山口',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: 'death by attack'
+      },
+      agent13: {
+        agentId: 13,
+        agentImage: 'https://werewolf.world/image/0.2/Pamela.jpg',
+        agentName: {
+          en: 'Pamela',
+          ja: 'パメラ'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Joachim.jpg',
+        avatarName: '松本',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: 'alive'
+      },
+      agent14: {
+        agentId: 14,
+        agentImage: 'https://werewolf.world/image/0.2/Jacob.jpg',
+        agentName: {
+          en: 'Jacob',
+          ja: 'ヤコブ'
+        },
+        avatarImage: 'https://werewolf.world/image/0.2/Catalina.jpg',
+        avatarName: '井上',
+        result: 'win',
+        roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: 'alive'
+      }
+    },
+    allIds: [
+      'agent0',
+      'agent1',
+      'agent2',
+      'agent3',
+      'agent4',
+      'agent5',
+      'agent6',
+      'agent7',
+      'agent8',
+      'agent9',
+      'agent10',
+      'agent11',
+      'agent12',
+      'agent13',
+      'agent14'
+    ],
+    losers: [
+      'agent2',
+      'agent5',
+      'agent6',
+      'agent7'
+    ],
+    me: 'agent1',
     summary: {
-      kind: 'audience',
-      loserTeam: new Set(),
+      kind: 'player',
+      loserTeam: new Set(['werewolf', 'werehamster']),
+      myTeam: 'villager',
+      result: 'win',
       winnerTeam: 'villager'
     },
-    visible: false,
-    winners: []
+    visible: true,
+    winners: [
+      'agent0',
+      'agent1',
+      'agent3',
+      'agent4',
+      'agent8',
+      'agent9',
+      'agent10',
+      'agent11',
+      'agent12',
+      'agent13',
+      'agent14'
+    ]
   },
   roles: {
     all: [
-      {
-        '@context': 'https://werewolf.world/context/0.2/role.jsonld',
-        '@id': 'https://licos.online/state/0.2/village#3/role#master',
-        'board': [],
-        'image': 'https://werewolf.world/image/0.2/master.jpg',
-        'isMine': false,
-        'name': {
-          'en': 'Master',
-          'ja': 'マスター'
-        },
-        'numberOfAgents': 1
-      },
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
         '@id': 'https://licos.online/state/0.2/village#3/role#villager',
