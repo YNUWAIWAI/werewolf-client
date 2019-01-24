@@ -23,6 +23,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Chat
       ],
       '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
+      '@payload': village.Message.playerMessage,
       'agent': {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
@@ -69,6 +70,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Chat
       ],
       '@id': 'https://licos.online/state/0.2/village#3/flavorText#2/playerMessage',
+      '@payload': village.Message.playerMessage,
       'agent': {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
