@@ -12,7 +12,7 @@ const timeWatcher: Middleware = store => next => action => {
         to: action.payload.date
       }))
     }
-    if (action.payload.phase !== village.Phase.flavorText && action.payload.phase !== base.phase) {
+    if (action.payload.phase !== base.phase) {
       store.dispatch(changePhase({
         from: base.phase,
         to: action.payload.phase

@@ -255,7 +255,12 @@ describe('socket/MESSAGE', () => {
     })
     test('dispatch correctly', () => {
       actionHandler(socket.message(payload))
-      expect(dispatch).toHaveBeenCalledTimes(0)
+      expect(dispatch).toHaveBeenCalledTimes(1)
+      expect(dispatch).toHaveBeenCalledWith({
+        from: 'night',
+        to: 'flavor text',
+        type: ActionTypes.global.CHANGE_PHASE
+      })
     })
   })
   describe('phase: night, date: 0 -> 1', () => {

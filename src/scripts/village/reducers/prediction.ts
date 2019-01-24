@@ -124,8 +124,11 @@ const prediction = (state: State = initialState, action: Action): State => {
         if (payload.date === 0) {
           return state
         }
-        const agents = just(payload.agent)
-        const roles = getPlayableRoles(just(payload.role))
+        if (!payload.agent || !payload.role) {
+          return state
+        }
+        const agents = payload.agent
+        const roles = getPlayableRoles(payload.role)
           .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
         const table = (() => {
           if (payload.date === 1 && payload.phase === village.Phase.morning) {
