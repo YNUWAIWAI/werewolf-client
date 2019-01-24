@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 import {just} from '../util'
+import {socket} from '../actions'
 
 const flavorText: Middleware = store => next => action => {
   switch (action.type) {
@@ -19,10 +20,7 @@ const flavorText: Middleware = store => next => action => {
           }
 
           setTimeout(() => {
-            store.dispatch({
-              payload: value,
-              type: ActionTypes.socket.MESSAGE
-            })
+            store.dispatch(socket.message(value))
           }, interval * index)
         })
       }
