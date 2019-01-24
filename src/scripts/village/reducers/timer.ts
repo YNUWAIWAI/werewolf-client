@@ -1,12 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SocketMessage, Tick} from '../actions'
+import {Tick} from '../actions'
 
 export interface State {
   readonly start: DOMHighResTimeStamp
   readonly time: DOMHighResTimeStamp
 }
 type Action =
-  | SocketMessage
   | Tick
 
 export const initialState = {
