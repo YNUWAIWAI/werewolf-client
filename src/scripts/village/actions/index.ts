@@ -177,6 +177,12 @@ export const selectYes = (agentId: number): {agentId: number, type: ActionTypes.
   type: ActionTypes.global.SELECT_YES
 })
 
+export const tick = ({start, time}: {start: number, time: number}): {start: number, time: number, type: ActionTypes.global.TICK} => ({
+  start,
+  time,
+  type: ActionTypes.global.TICK
+})
+
 export type ChangeDate = ReturnType<typeof changeDate>
 export type ChangeLanguage = ReturnType<typeof changeLanguage>
 export type ChangePhase = ReturnType<typeof changePhase>
@@ -194,4 +200,5 @@ export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
+export type Tick = ReturnType<typeof tick>
 

@@ -1,4 +1,5 @@
 const TerserPlugin = require('terser-webpack-plugin')
+const path = require('path')
 const config = require('./config')
 
 module.exports = {
@@ -42,7 +43,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: config.dest
+    path: path.resolve(config.dest, 'javascripts')
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json']

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-      "outDir": "./dist/",
       "sourceMap": true,
       "module": "commonjs",
       "strict": true,
@@ -8,6 +7,6 @@
       "jsx": "react"
   },
   "include": [
-      "./src/**/*"
+      "src/**/*"
   ]
 }

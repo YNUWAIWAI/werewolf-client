@@ -45,7 +45,7 @@ export default function ChatItem(props: Props) {
         />
       </div>
       <AgentIcon
-        class="chat--agent"
+        className="chat--agent"
         image={props.image}
         name={props.name}
       />

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 
-interface Props {
+export interface Props {
   readonly time: number
 }
 

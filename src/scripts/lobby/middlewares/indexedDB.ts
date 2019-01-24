@@ -4,8 +4,8 @@ import {connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {Middleware} from '.'
 
 type Village = {
-  lobbyType: lobby.Lobby,
-  token: string,
+  lobbyType: lobby.Lobby
+  token: string
   villageId: number
 }
 
@@ -47,7 +47,8 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             updateValue<lobby.Language>(
               objectStore,
               'lang',
-              payload.lang
+              payload.lang,
+              `${window.location.origin}/village`
             )
           })
 

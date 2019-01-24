@@ -43,11 +43,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     return {
       agents,
       descriptionId: 'CommandSelection.Description.wait',
-      fixed: state.commandSelection.fixed,
-      timer: {
-        limit: state.base.phaseTimeLimit,
-        phase: state.base.phase
-      }
+      fixed: state.commandSelection.fixed
     }
   }
 
@@ -58,11 +54,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       strToRoleId(state.roles.mine.name.en),
       state.commandSelection.fixed,
     ),
-    fixed: state.commandSelection.fixed,
-    timer: {
-      limit: state.base.phaseTimeLimit,
-      phase: state.base.phase
-    }
+    fixed: state.commandSelection.fixed
   }
 }
 

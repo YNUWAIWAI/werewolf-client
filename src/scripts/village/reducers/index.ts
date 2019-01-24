@@ -10,6 +10,7 @@ import obfucator, {State as obfucatorState} from './obfucator'
 import prediction, {State as predictionState} from './prediction'
 import result, {State as resultState} from './result'
 import roles, {State as rolesState} from './roles'
+import timer, {State as timerState} from './timer'
 import {combineReducers} from 'redux'
 
 const reducer = combineReducers({
@@ -24,7 +25,8 @@ const reducer = combineReducers({
   obfucator,
   prediction,
   result,
-  roles
+  roles,
+  timer
 })
 
 export default reducer
@@ -42,4 +44,5 @@ export interface ReducerState {
   readonly prediction: predictionState
   readonly result: resultState
   readonly roles: rolesState
+  readonly timer: timerState
 }

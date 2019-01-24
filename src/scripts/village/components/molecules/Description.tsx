@@ -1,22 +1,21 @@
 import * as React from 'react'
-import Timer, {Props as TimerProps} from '../atoms/Timer'
 import {FormattedMessage} from 'react-intl'
+import Timer from '../../containers/TimerContainer'
 
 interface Props {
-  class: string,
-  id: string,
-  timer: TimerProps
+  className: string
+  id: string
 }
 
 export default function Description(props: Props) {
   return (
-    <div className={props.class}>
+    <div className={props.className}>
       <FormattedMessage
         id={props.id}
       />
       <span>
         {'（'}
-        <Timer {... props.timer} />
+        <Timer />
         {'）'}
       </span>
     </div>

@@ -70,7 +70,7 @@ export const deleteValue = (objectStore: IDBObjectStore, key: string) => {
     console.log('Success to delete')
   }
 }
-export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValue: T) => {
+export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValue: T, url?: string) => {
   const request = objectStore.put(newValue, key)
 
   request.onerror = () => {
@@ -78,6 +78,9 @@ export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValu
   }
   request.onsuccess = () => {
     console.log(request.result)
+    if (url) {
+      window.location.replace(url)
+    }
   }
 }
 

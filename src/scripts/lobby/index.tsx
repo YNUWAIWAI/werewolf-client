@@ -1,3 +1,4 @@
+/* eslint no-process-env: 0 */
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import {global, indexedDB, socket} from './constants/ActionTypes'
@@ -5,13 +6,12 @@ import App from './containers/App'
 import {Provider} from 'react-redux'
 import {changeToken} from './actions'
 import {composeWithDevTools} from 'redux-devtools-extension'
-import config from '../../../config'
 import {createStore} from 'redux'
 import middleware from './middlewares'
 import reducer from './reducers'
 
 const store =
-  config.env === 'production' ?
+  process.env.NODE_ENV === 'production' ?
     createStore(
       reducer,
       middleware

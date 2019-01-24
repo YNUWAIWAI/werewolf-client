@@ -1,8 +1,8 @@
+/* eslint no-process-env: 0 */
 import * as actions from '../actions'
 import {Dispatch, MiddlewareAPI, applyMiddleware} from 'redux'
 import {ReducerState} from '../reducers'
 import client2server from './client2server'
-import config from '../../../../config'
 import indexedDB from './indexedDB'
 import logger from './logger'
 import socket from './socket'
@@ -52,7 +52,7 @@ if (!elem || !elem.dataset || !elem.dataset.url) {
 }
 const url = elem.dataset.url
 const middleware =
-  config.env === 'production' ?
+  process.env.NODE_ENV === 'production' ?
     applyMiddleware(
       socket({
         url

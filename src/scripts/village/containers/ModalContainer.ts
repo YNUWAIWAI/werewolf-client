@@ -42,10 +42,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
         language: state.language,
         languageMap: selectedAgent.name
       }),
-      timer: {
-        limit: state.base.phaseTimeLimit,
-        phase: state.base.phase
-      },
       visible: state.modal.visible
     }
   }
@@ -55,10 +51,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     id: -1,
     image: '',
     name: '',
-    timer: {
-      limit: state.base.phaseTimeLimit,
-      phase: state.base.phase
-    },
     visible: state.modal.visible
   }
 }

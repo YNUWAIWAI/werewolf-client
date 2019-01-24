@@ -8,17 +8,12 @@ describe('<CommandSelection />', () => {
   test('agents={[]}', () => {
     const handleSelectOptionEventHandler = jest.fn()
     const handleSelectOption = jest.fn(handleSelectOptionEventHandler)
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const wrapper = shallow(
       <CommandSelection
         agents={[]}
         descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
-        timer={timer}
       />
     )
 
@@ -93,10 +88,6 @@ describe('<CommandSelection />', () => {
         name: 'ヤコブ'
       }
     ]
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const handleSelectOptionEventHandler = jest.fn()
     const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
     const wrapper = shallow(
@@ -105,7 +96,6 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
-        timer={timer}
       />
     )
 
@@ -120,10 +110,6 @@ describe('<CommandSelection />', () => {
         name: 'ヴァルター'
       }
     ]
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const handleSelectOptionEventHandler = jest.fn()
     const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
     const wrapper = shallow(
@@ -132,7 +118,6 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed
         handleSelectOption={handleSelectOption}
-        timer={timer}
       />
     )
 

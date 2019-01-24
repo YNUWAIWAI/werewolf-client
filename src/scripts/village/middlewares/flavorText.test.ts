@@ -1,44 +1,19 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
-import {initialState as agents} from '../reducers/agents'
-import {initialState as base} from '../reducers/base'
-import {initialState as chat} from '../reducers/chat'
-import {initialState as commandInputBox} from '../reducers/commandInputBox'
-import {initialState as commandSelection} from '../reducers/commandSelection'
+import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
-import {initialState as hideButton} from '../reducers/hideButton'
-import {initialState as language} from '../reducers/language'
 import middleware from './flavorText'
-import {initialState as modal} from '../reducers/modal'
-import {initialState as obfucator} from '../reducers/obfucator'
-import {initialState as prediction} from '../reducers/prediction'
-import {initialState as result} from '../reducers/result'
-import {initialState as roles} from '../reducers/roles'
 import {socket} from '../actions'
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
 describe('socket/MESSAGE', () => {
+  const store = fakeStore()
   const dispatch = jest.fn()
-  const getState = () => ({
-    agents,
-    base,
-    chat,
-    commandInputBox,
-    commandSelection,
-    hideButton,
-    language,
-    modal,
-    obfucator,
-    prediction,
-    result,
-    roles
-  })
-  const nextHandler = middleware({
-    dispatch,
-    getState
-  })
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const flavorTextPayload: village.Payload$playerMessage[] = [
