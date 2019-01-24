@@ -12,29 +12,31 @@ type Village = {
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.indexedDB.INIT: {
-      connectDB().then(db => {
-        const transaction = db.transaction('licosDB')
-        const objectStore = transaction.objectStore('licosDB')
+      connectDB()
+        .then(db => {
+          const transaction = db.transaction('licosDB')
+          const objectStore = transaction.objectStore('licosDB')
 
-        getValue<Village>(objectStore, 'viilage')
-          .then(result => {
-            store.dispatch(changeLobby(result.lobbyType))
-            store.dispatch(selectVillage(result.villageId))
-          })
-          .catch(message => {
-            console.error(message)
-          })
-      })
+          getValue<Village>(objectStore, 'viilage')
+            .then(result => {
+              store.dispatch(changeLobby(result.lobbyType))
+              store.dispatch(selectVillage(result.villageId))
+            })
+            .catch(message => {
+              console.log(message)
+            })
+        })
 
       return next(action)
     }
     case ActionTypes.Target.LEAVE_WAITING_PAGE: {
-      connectDB().then(db => {
-        const transaction = db.transaction('licosDB', 'readwrite')
-        const objectStore = transaction.objectStore('licosDB')
+      connectDB()
+        .then(db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
 
-        deleteValue(objectStore, 'village')
-      })
+          deleteValue(objectStore, 'village')
+        })
 
       return next(action)
     }
@@ -43,17 +45,18 @@ const indexedDBMiddleware: Middleware = store => next => action => {
         case lobby.PayloadType.played: {
           const payload = action.payload
 
-          connectDB().then(db => {
-            const transaction = db.transaction('licosDB', 'readwrite')
-            const objectStore = transaction.objectStore('licosDB')
+          connectDB()
+            .then(db => {
+              const transaction = db.transaction('licosDB', 'readwrite')
+              const objectStore = transaction.objectStore('licosDB')
 
-            updateValue<lobby.Language>(
-              objectStore,
-              'lang',
-              payload.lang,
-              `${window.location.origin}/village`
-            )
-          })
+              updateValue<lobby.Language>(
+                objectStore,
+                'lang',
+                payload.lang,
+                `${window.location.origin}/village`
+              )
+            })
 
           return next(action)
         }
@@ -61,20 +64,21 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const payload = action.payload
           const state = store.getState()
 
-          connectDB().then(db => {
-            const transaction = db.transaction('licosDB', 'readwrite')
-            const objectStore = transaction.objectStore('licosDB')
+          connectDB()
+            .then(db => {
+              const transaction = db.transaction('licosDB', 'readwrite')
+              const objectStore = transaction.objectStore('licosDB')
 
-            updateValue<Village>(
-              objectStore,
-              'village',
-              {
-                lobbyType: state.token.lobby,
-                token: state.token[state.token.lobby],
-                villageId: payload.village.id
-              }
-            )
-          })
+              updateValue<Village>(
+                objectStore,
+                'village',
+                {
+                  lobbyType: state.token.lobby,
+                  token: state.token[state.token.lobby],
+                  villageId: payload.village.id
+                }
+              )
+            })
 
           return next(action)
         }
