@@ -1,3 +1,4 @@
+/* eslint no-process-env: 0 */
 import * as actions from '../actions'
 import {Dispatch, MiddlewareAPI, applyMiddleware} from 'redux'
 import {ReducerState} from '../reducers'
