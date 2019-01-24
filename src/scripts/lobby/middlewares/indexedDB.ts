@@ -21,6 +21,9 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             store.dispatch(changeLobby(result.lobbyType))
             store.dispatch(selectVillage(result.villageId))
           })
+          .catch(message => {
+            console.error(message)
+          })
       })
 
       return next(action)
