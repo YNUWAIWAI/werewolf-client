@@ -22,10 +22,8 @@ const indexedDBMiddleware: Middleware = store => next => action => {
               store.dispatch(changeLobby(result.lobbyType))
               store.dispatch(selectVillage(result.villageId))
             })
-            .catch(message => {
-              console.log(message)
-            })
         })
+        .catch(reason => console.error(reason))
 
       return next(action)
     }
@@ -37,6 +35,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
           deleteValue(objectStore, 'village')
         })
+        .catch(reason => console.error(reason))
 
       return next(action)
     }
@@ -53,9 +52,11 @@ const indexedDBMiddleware: Middleware = store => next => action => {
               updateValue<lobby.Language>(
                 objectStore,
                 'lang',
-                payload.lang,
-                `${window.location.origin}/village`
+                payload.lang
               )
+                .then(() => {
+                  window.location.replace(`${window.location.origin}/village`)
+                })
             })
 
           return next(action)

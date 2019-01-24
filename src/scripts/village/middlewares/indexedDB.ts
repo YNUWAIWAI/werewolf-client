@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {changeLanguage, ready} from '../actions'
-import {connectDB, getValue} from '../../indexeddb'
+import {connectDB, deleteValue, getValue} from '../../indexeddb'
 import {Middleware} from '.'
 
 interface Village {
@@ -17,14 +17,12 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
 
-          getValue<Village>(objectStore, 'village')
-            .then(result => {
-              store.dispatch(ready({
-                token: result.token,
-                villageId: result.villageId
-              }))
+          deleteValue(objectStore, 'village')
+            .then(() => {
+              window.location.replace(`${window.location.origin}/lobby`)
             })
         })
+        .catch(reason => console.error(reason))
 
       return next(action)
     }
@@ -38,9 +36,6 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             .then(result => {
               store.dispatch(changeLanguage(result))
             })
-            .catch(message => {
-              console.log(message)
-            })
           getValue<Village>(objectStore, 'village')
             .then(result => {
               store.dispatch(ready({
@@ -48,10 +43,8 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                 villageId: result.villageId
               }))
             })
-            .catch(message => {
-              console.log(message)
-            })
         })
+        .catch(reason => console.error(reason))
 
       return next(action)
     }
