@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TimerContainer /> initialState 1`] = `"<span>00'00 left</span>"`;
+
+exports[`<TimerContainer /> morning 1`] = `"<span>09'50 left</span>"`;
