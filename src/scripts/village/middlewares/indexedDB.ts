@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {changeLanguage, ready} from '../actions'
-import {connectDB, getValue} from '../../indexeddb'
+import {connectDB, deleteValue, getValue} from '../../indexeddb'
 import {Middleware} from '.'
 
 interface Village {
@@ -12,35 +12,39 @@ interface Village {
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.Navigation.RETURN_TO_LOBBY: {
-      connectDB().then(db => {
-        const transaction = db.transaction('licosDB', 'readwrite')
-        const objectStore = transaction.objectStore('licosDB')
+      connectDB()
+        .then(db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
 
-        getValue<Village>(objectStore, 'village').then(result => {
-          store.dispatch(ready({
-            token: result.token,
-            villageId: result.villageId
-          }))
+          deleteValue(objectStore, 'village')
+            .then(() => {
+              window.location.replace(`${window.location.origin}/lobby`)
+            })
         })
-      })
+        .catch(reason => console.error(reason))
 
       return next(action)
     }
     case ActionTypes.indexedDB.INIT: {
-      connectDB().then(db => {
-        const transaction = db.transaction('licosDB', 'readwrite')
-        const objectStore = transaction.objectStore('licosDB')
+      connectDB()
+        .then(db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
 
-        getValue<village.Language>(objectStore, 'lang').then(result => {
-          store.dispatch(changeLanguage(result))
+          getValue<village.Language>(objectStore, 'lang')
+            .then(result => {
+              store.dispatch(changeLanguage(result))
+            })
+          getValue<Village>(objectStore, 'village')
+            .then(result => {
+              store.dispatch(ready({
+                token: result.token,
+                villageId: result.villageId
+              }))
+            })
         })
-        getValue<Village>(objectStore, 'village').then(result => {
-          store.dispatch(ready({
-            token: result.token,
-            villageId: result.villageId
-          }))
-        })
-      })
+        .catch(reason => console.error(reason))
 
       return next(action)
     }

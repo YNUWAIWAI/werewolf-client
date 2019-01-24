@@ -54,33 +54,31 @@ export const getValue = <T>(objectStore: IDBObjectStore, key: string) => new Pro
     const result = request.result
 
     if (result === undefined || result === null) {
-      reject()
+      reject(`Fail to get ${objectStore.name}.${key}`)
     }
 
     resolve(result)
   }
 })
-export const deleteValue = (objectStore: IDBObjectStore, key: string) => {
+export const deleteValue = (objectStore: IDBObjectStore, key: string) => new Promise<never>((resolve, reject) => {
   const request = objectStore.delete(key)
 
   request.onerror = () => {
-    console.error(request.error)
+    reject(request.error)
   }
   request.onsuccess = () => {
     console.log('Success to delete')
+    resolve()
   }
-}
-export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValue: T, url?: string) => {
+})
+export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValue: T) => new Promise<T>((resolve, reject) => {
   const request = objectStore.put(newValue, key)
 
   request.onerror = () => {
-    console.error(request.error)
+    reject(request.error)
   }
   request.onsuccess = () => {
-    console.log(request.result)
-    if (url) {
-      window.location.replace(url)
-    }
+    console.log('Success to update')
+    resolve()
   }
-}
-
+})
