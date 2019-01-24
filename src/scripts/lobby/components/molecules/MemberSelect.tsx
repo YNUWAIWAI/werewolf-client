@@ -68,7 +68,7 @@ export default function MemberSelect(props: Props) {
             </div>
         }
       </FormattedMessage>
-      <label className="village--item--member-select--role">
+      <label className="village--item--member-select--role" data-opt="A">
         <div className="village--item--member-select--role--radio">
           <input
             defaultChecked
@@ -82,7 +82,7 @@ export default function MemberSelect(props: Props) {
         </div>
         {member.A}
       </label>
-      <label className="village--item--member-select--role">
+      <label className="village--item--member-select--role" data-opt="B">
         <div className="village--item--member-select--role--radio">
           <input
             name="member"
@@ -95,7 +95,7 @@ export default function MemberSelect(props: Props) {
         </div>
         {member.B}
       </label>
-      <label className="village--item--member-select--role">
+      <label className="village--item--member-select--role" data-opt="C">
         <div className="village--item--member-select--role--radio">
           <input
             name="member"
