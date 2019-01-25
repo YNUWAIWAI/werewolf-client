@@ -485,12 +485,36 @@ declare namespace village {
     type: 'ready'
     villageId: number
   }
+  interface Payload$receivedSystemMessage extends PayloadBase {
+    date: number
+    phase: Phase
+    token: Token
+    type: 'receivedSystemMessage'
+    villageId: number
+  }
+  interface Payload$receivedFlavorTextMessage extends PayloadBase {
+    date: number
+    phase: Phase
+    token: Token
+    type: 'receivedFlavorTextMessage'
+    villageId: number
+  }
+  interface Payload$receivedPlayerMessage extends PayloadBase {
+    from: number
+    serverTimestamp: string
+    token: Token
+    type: 'receivedPlayerMessage'
+    villageId: number
+  }
   type Payload =
     | Payload$boardMessage
     | Payload$errorMessage
     | Payload$flavorTextMessage
     | Payload$playerMessage
     | Payload$ready
+    | Payload$receivedFlavorTextMessage
+    | Payload$receivedPlayerMessage
+    | Payload$receivedSystemMessage
     | Payload$scrollMessage
     | Payload$systemMessage
     | Payload$voteMessage
