@@ -34,7 +34,7 @@ export default (state?: Record<string, unknown>): Store => {
     token,
     waitingForPlayers
   }
-  const dispatch = (action: AnyAction) => {
+  const dispatch = (action: any) => {
     console.log('dispatch', action)
 
     return action
