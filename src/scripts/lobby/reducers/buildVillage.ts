@@ -15,30 +15,30 @@ import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {getAnonymousVillageName} from '../util'
 
 export interface State {
-  readonly image: string,
+  readonly image: string
   readonly initialFixedValue: {
-    hostName: string,
+    hostName: string
     villageName: string
-  },
-  readonly menuItems: MenuItem[],
-  readonly name: string,
+  }
+  readonly menuItems: MenuItem[]
+  readonly name: string
   readonly validity: {
-    readonly avatar: boolean,
-    readonly comment: boolean,
-    readonly hostName: boolean,
-    readonly numberOfPlayers: boolean,
-    readonly numberOfRobots: boolean,
+    readonly avatar: boolean
+    readonly comment: boolean
+    readonly hostName: boolean
+    readonly numberOfPlayers: boolean
+    readonly numberOfRobots: boolean
     readonly villageName: boolean
-  },
+  }
   readonly value: {
-    readonly avatar: lobby.Avatar,
-    readonly comment: string,
-    readonly hostName: string,
-    readonly isHuman: boolean,
-    readonly member: lobby.Member,
-    readonly numberOfHumans: number,
-    readonly numberOfPlayers: number,
-    readonly numberOfRobots: number,
+    readonly avatar: lobby.Avatar
+    readonly comment: string
+    readonly hostName: string
+    readonly isHuman: boolean
+    readonly member: lobby.Member
+    readonly numberOfHumans: number
+    readonly numberOfPlayers: number
+    readonly numberOfRobots: number
     readonly villageName: string
   }
 }

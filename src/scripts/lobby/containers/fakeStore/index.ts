@@ -1,5 +1,5 @@
+import {AnyAction, Store} from 'redux'
 import {ReducerState} from '../../reducers'
-import {Store} from 'redux'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
 import {initialState as app} from '../../reducers/app'
 import {initialState as buildVillage} from '../../reducers/buildVillage'
@@ -16,7 +16,7 @@ import {initialState as settings} from '../../reducers/settings'
 import {initialState as token} from '../../reducers/token'
 import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayers'
 
-export default (state?: Object): Store => {
+export default (state?: Record<string, unknown>): Store => {
   const initialState: ReducerState = {
     advancedSearch,
     app,
@@ -34,7 +34,7 @@ export default (state?: Object): Store => {
     token,
     waitingForPlayers
   }
-  const dispatch = (action: any) => {
+  const dispatch = (action: AnyAction) => {
     console.log('dispatch', action)
 
     return action

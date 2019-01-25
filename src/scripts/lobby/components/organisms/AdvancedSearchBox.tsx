@@ -21,9 +21,9 @@ export interface Props {
     readonly minimum: boolean
     readonly villageName: boolean
   }
-  readonly handleAvatarChange: (avatar: lobby.Avatar) => void,
+  readonly handleAvatarChange: (avatar: lobby.Avatar) => void
   readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
-  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void,
+  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
   readonly handleTextChange: (propName: TextPropName) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
   readonly validity: {

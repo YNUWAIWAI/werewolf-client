@@ -24,7 +24,7 @@ export interface StateProps {
     readonly numberOfPlayers: boolean
     readonly numberOfRobots: boolean
     readonly villageName: boolean
-  },
+  }
   readonly value: {
     readonly avatar: lobby.Avatar
     readonly comment: string
@@ -43,8 +43,7 @@ export interface DispatchProps {
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
   readonly transition: (target: Target) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function BuildVillage(props: Props) {
   return (

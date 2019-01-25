@@ -53,6 +53,7 @@
     "build:development": "node tools/build.js -d",
     "build:watch": "node tools/build.js -w",
     "build:production": "node tools/build.js",
+    "eslint": "eslint src/**/*.ts*",
     "start": "node tools/build.js -w",
     "test": "jest",
     "test:watch": "jest --watch",

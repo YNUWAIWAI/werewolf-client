@@ -7,7 +7,7 @@ export interface State {
     readonly language: lobby.Language
     readonly userEmail: string
     readonly userName: string
-  },
+  }
   readonly menuItems: MenuItem[]
 }
 type Action =

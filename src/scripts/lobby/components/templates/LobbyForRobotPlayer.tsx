@@ -18,9 +18,7 @@ export interface DispatchProps {
   readonly selectVillage: (id: number) => () => void
   readonly transition: (target: Target) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
-
+export interface Props extends StateProps, DispatchProps {}
 
 export default function LobbyForRobotPlayer(props: Props) {
   return (

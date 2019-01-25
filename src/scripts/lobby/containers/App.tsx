@@ -6,10 +6,8 @@ import {connect} from 'react-redux'
 interface StateProps {
   readonly content: React.ComponentType<any>
 }
-interface DispatchProps {}
-interface Props extends StateProps, DispatchProps {}
 
-function App(props: Props) {
+function App(props: StateProps) {
   return (
     <IntlProvider>
       <props.content />
