@@ -202,6 +202,54 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.socket.MESSAGE: {
+      switch (action.payload['@payload']) {
+        case village.Message.flavorTextMessage: {
+          const payload: village.Payload$receivedFlavorTextMessage =  {
+            date: action.payload.date,
+            phase: action.payload.phase,
+            token: action.payload.token,
+            type: 'receivedFlavorTextMessage',
+            villageId: action.payload.village.id
+          }
+
+          store.dispatch(socket.send(payload))
+
+          return next(action)
+        }
+        case village.Message.playerMessage: {
+          if (action.payload.phase === village.Phase.flavorText) {
+            return next(action)
+          }
+          const payload: village.Payload$receivedPlayerMessage = {
+            from: action.payload.agent.id,
+            serverTimestamp: action.payload.serverTimestamp,
+            token: action.payload.token,
+            type: 'receivedPlayerMessage',
+            villageId: action.payload.village.id
+          }
+
+          store.dispatch(socket.send(payload))
+
+          return next(action)
+        }
+        case village.Message.systemMessage: {
+          const payload: village.Payload$receivedSystemMessage = {
+            date: action.payload.date,
+            phase: action.payload.phase,
+            token: action.payload.token,
+            type: 'receivedSystemMessage',
+            villageId: action.payload.village.id
+          }
+
+          store.dispatch(socket.send(payload))
+
+          return next(action)
+        }
+        default:
+          return next(action)
+      }
+    }
     default:
       return next(action)
   }
