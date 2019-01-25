@@ -1,5 +1,4 @@
-// @flow
-export default {
+const json: lobby.Payload$WatingPage = {
   error: null,
   players: [
     {
@@ -67,9 +66,9 @@ export default {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
     }
   ],
-  type: 'waitingPage',
+  type: lobby.PayloadType.waitingPage,
   village: {
-    avatar: 'random',
+    avatar: lobby.Avatar.random,
     comment: 'Experts recommended',
     hostPlayer: {
       isAnonymous: true,
@@ -103,3 +102,5 @@ export default {
     }
   }
 }
+
+export default json

@@ -1,11 +1,10 @@
-// @flow
-export default {
+const json: lobby.Payload$Lobby = {
   error: null,
-  lobby: 'robot player',
-  type: 'lobby',
+  lobby: lobby.Lobby.robot,
+  type: lobby.PayloadType.lobby,
   villages: [
     {
-      avatar: 'fixed',
+      avatar: lobby.Avatar.fixed,
       comment: null,
       hostPlayer: {
         isAnonymous: false,
@@ -39,7 +38,7 @@ export default {
       }
     },
     {
-      avatar: 'random',
+      avatar: lobby.Avatar.random,
       comment: 'Open to beginners',
       hostPlayer: {
         isAnonymous: true,
@@ -74,3 +73,5 @@ export default {
     }
   ]
 }
+
+export default json

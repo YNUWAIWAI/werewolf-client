@@ -1,4 +1,3 @@
-// @flow
 import enterHumanPlayerLobbyJSON from './enterHumanPlayerLobby'
 import enterOnymousAudienceLobbyJSON from './enterOnymousAudienceLobby'
 import enterRobotPlayerLobbyJSON from './enterRobotPlayerLobby'
@@ -6,9 +5,9 @@ import pingJSON from './ping'
 import settingsJSON from './settings'
 import waitingPageJSON from './waitingPage'
 
-export const enterHumanPlayerLobby: any = enterHumanPlayerLobbyJSON
-export const enterOnymousAudienceLobby: any = enterOnymousAudienceLobbyJSON
-export const enterRobotPlayerLobby: any = enterRobotPlayerLobbyJSON
-export const ping: any = pingJSON
-export const settings: any = settingsJSON
-export const waitingPage: any = waitingPageJSON
+export const enterHumanPlayerLobby = enterHumanPlayerLobbyJSON
+export const enterOnymousAudienceLobby = enterOnymousAudienceLobbyJSON
+export const enterRobotPlayerLobby = enterRobotPlayerLobbyJSON
+export const ping = pingJSON
+export const settings = settingsJSON
+export const waitingPage = waitingPageJSON
