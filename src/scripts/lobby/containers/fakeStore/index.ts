@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 import {ReducerState} from '../../reducers'
 import {Store} from 'redux'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
@@ -47,9 +48,10 @@ export default (state?: Record<string, unknown>): Store => {
     console.log('replaceReducer')
   }
   const subscribe = () => {
-    // console.log('subscribe')
+    console.log('subscribe')
+
     return () => {
-      // console.log('unsubscribe')
+      console.log('unsubscribe')
     }
   }
   const store = {
