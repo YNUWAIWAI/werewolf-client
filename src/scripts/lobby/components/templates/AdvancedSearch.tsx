@@ -22,7 +22,7 @@ export interface StateProps {
     readonly maximum: boolean
     readonly minimum: boolean
     readonly villageName: boolean
-  },
+  }
   readonly header: string
   readonly image: string
   readonly isPlayer: boolean
@@ -36,11 +36,11 @@ export interface StateProps {
     readonly maximum: boolean
     readonly minimum: boolean
     readonly villageName: boolean
-  },
+  }
   readonly villageItems: lobby.Village[]
 }
 export interface DispatchProps {
-  readonly handleAvatarChange: (value: lobby.Avatar) => void,
+  readonly handleAvatarChange: (value: lobby.Avatar) => void
   readonly handleCheckboxChange: (propName: PropName) => (valid: boolean) => void
   readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
   readonly handleTextChange: (propName: TextPropName) => (value: string) => void
@@ -48,8 +48,7 @@ export interface DispatchProps {
   readonly selectVillage: (id: number) => () => void
   readonly transition: (target: Target) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function AdvancedSearch(props: Props) {
   return (

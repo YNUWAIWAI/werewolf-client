@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import WaitingForPlayers, {Props} from './WaitingForPlayers'
 import {shallow} from 'enzyme'

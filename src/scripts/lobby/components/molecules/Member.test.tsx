@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import Member from './Member'
 import {getMessages} from '../../../../i18n/lobby'

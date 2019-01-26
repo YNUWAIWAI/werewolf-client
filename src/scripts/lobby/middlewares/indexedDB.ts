@@ -1,9 +1,10 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {changeLobby, selectVillage} from '../actions'
 import {connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {Middleware} from '.'
 
-type Village = {
+interface Village {
   lobbyType: lobby.Lobby
   token: string
   villageId: number

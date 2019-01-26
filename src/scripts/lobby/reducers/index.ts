@@ -16,20 +16,20 @@ import waitingForPlayers, {State as WaitingForPlayersState} from './waitingForPl
 import {combineReducers} from 'redux'
 
 export interface ReducerState {
-  advancedSearch: AdvancedSearchState,
-  app: AppState,
-  buildVillage: BuildVillageState,
-  connectingToRobotPlayer: ConnectingToRobotPlayerState,
-  history: HistoryState,
-  idSearch: IdSearchState,
-  language: LanguageState,
-  lobbyForAudience: LobbyForAudienceState,
-  lobbyForHumanPlayer: LobbyForHumanPlayerState,
-  lobbyForRobotPlayer: LobbyForRobotPlayerState,
-  main: MainState,
-  ping: PingState,
-  settings: SettingsState,
-  token: TokenState,
+  advancedSearch: AdvancedSearchState
+  app: AppState
+  buildVillage: BuildVillageState
+  connectingToRobotPlayer: ConnectingToRobotPlayerState
+  history: HistoryState
+  idSearch: IdSearchState
+  language: LanguageState
+  lobbyForAudience: LobbyForAudienceState
+  lobbyForHumanPlayer: LobbyForHumanPlayerState
+  lobbyForRobotPlayer: LobbyForRobotPlayerState
+  main: MainState
+  ping: PingState
+  settings: SettingsState
+  token: TokenState
   waitingForPlayers: WaitingForPlayersState
 }
 

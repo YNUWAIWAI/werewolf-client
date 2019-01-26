@@ -1,3 +1,4 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {SocketMessage} from '../actions'
@@ -7,7 +8,7 @@ export interface State {
     readonly language: lobby.Language
     readonly userEmail: string
     readonly userName: string
-  },
+  }
   readonly menuItems: MenuItem[]
 }
 type Action =

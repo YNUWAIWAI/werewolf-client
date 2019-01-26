@@ -11,7 +11,7 @@ export interface StateProps {
     readonly language: lobby.Language
     readonly userEmail: string
     readonly userName: string
-  },
+  }
   readonly menuItems: MenuItem[]
 }
 export interface DispatchProps {
@@ -21,8 +21,7 @@ export interface DispatchProps {
   readonly handleChangeUserPassword: (value: string) => void
   readonly transition: (target: Target) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function Setting(props: Props) {
   return (

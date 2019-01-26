@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import EmailInput from '../atoms/EmailInput'
 import {FormattedMessage} from 'react-intl'
@@ -30,15 +31,15 @@ interface State {
   [PropName.language]: {
     valid: boolean
     value: lobby.Language
-  },
+  }
   [PropName.userEmail]: {
     valid: boolean
     value: string
-  },
+  }
   [PropName.userName]: {
     valid: boolean
     value: string
-  },
+  }
   [PropName.userPassword]: {
     valid: boolean
     value: string
@@ -46,7 +47,7 @@ interface State {
 }
 
 export default class SettingsBox extends React.Component<Props, State> {
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props)
     this.state = {
       language: {
@@ -67,10 +68,10 @@ export default class SettingsBox extends React.Component<Props, State> {
       }
     }
   }
-  shouldComponentUpdate() {
+  public shouldComponentUpdate() {
     return true
   }
-  handleChange(propName: PropName): (valid: boolean) => (value: string) => void {
+  public handleChange(propName: PropName): (valid: boolean) => (value: string) => void {
     switch (propName) {
       case PropName.language:
         return valid => value => {
@@ -121,7 +122,7 @@ export default class SettingsBox extends React.Component<Props, State> {
         throw Error(`Unknown propName: ${propName}`)
     }
   }
-  handleSubmit(propName: PropName) {
+  public handleSubmit(propName: PropName) {
     return (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault()
       switch (propName) {
@@ -148,7 +149,7 @@ export default class SettingsBox extends React.Component<Props, State> {
       }
     }
   }
-  render() {
+  public render() {
     return (
       <div className="settings">
         <div className="settings--bucket">

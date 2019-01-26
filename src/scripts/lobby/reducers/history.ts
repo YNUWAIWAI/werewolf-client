@@ -1,3 +1,4 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {

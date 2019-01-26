@@ -20,15 +20,14 @@ export interface StateProps {
     readonly ping: string
     readonly pingStatus: lobby.PingStatus
     readonly token: lobby.Token
-  }[],
+  }[]
   readonly village?: lobby.Village
 }
 export interface DispatchProps {
   readonly kickOut: (token: lobby.Token) => () => void
   readonly transition: (target: Target) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function WaitingForPlayers(props: Props) {
   const [head, ... tail] = props.menuItems

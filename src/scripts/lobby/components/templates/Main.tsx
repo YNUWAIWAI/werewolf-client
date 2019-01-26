@@ -8,8 +8,7 @@ export interface StateProps {
 export interface DispatchProps {
   readonly transition: (target: Target) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function Main(props: Props) {
   return (

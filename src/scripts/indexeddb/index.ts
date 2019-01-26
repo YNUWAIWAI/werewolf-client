@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 const VERSION = 2
 
 export const connectDB = (() => {

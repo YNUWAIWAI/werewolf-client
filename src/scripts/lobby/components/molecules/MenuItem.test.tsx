@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import MenuItem from './MenuItem'
 import {Target} from '../../constants/ActionTypes'

@@ -17,14 +17,13 @@ export const socket = {
     event,
     type: ActionTypes.socket.OPEN
   }),
-  send: (payload: Object): {payload: Object, type: ActionTypes.socket.SEND} => ({
+  send: (payload: lobby.Payload): {payload: lobby.Payload, type: ActionTypes.socket.SEND} => ({
     payload,
     type: ActionTypes.socket.SEND
   })
 }
 
-export const changeAvatar = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (avatar: lobby.Avatar)
-  : {avatar: lobby.Avatar, type: ActionTypes.advancedSearch.CHANGE_AVATAR} | {avatar: lobby.Avatar, type: ActionTypes.buildVillage.CHANGE_AVATAR} => {
+export const changeAvatar = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (avatar: lobby.Avatar): {avatar: lobby.Avatar, type: ActionTypes.advancedSearch.CHANGE_AVATAR} | {avatar: lobby.Avatar, type: ActionTypes.buildVillage.CHANGE_AVATAR} => {
   if (scope === ActionTypes.Scope.advancedSearch) {
     return {
       avatar,
@@ -37,14 +36,12 @@ export const changeAvatar = (scope: ActionTypes.Scope.advancedSearch | ActionTyp
     type: ActionTypes[scope].CHANGE_AVATAR
   }
 }
-export const changeCheckbox = (scope: ActionTypes.Scope.advancedSearch) => (propName: string) => (checked: boolean)
-  : {propName: string, checked: boolean, type: ActionTypes.advancedSearch.CHANGE_CHECKBOX} => ({
+export const changeCheckbox = (scope: ActionTypes.Scope.advancedSearch) => (propName: string) => (checked: boolean): {propName: string, checked: boolean, type: ActionTypes.advancedSearch.CHANGE_CHECKBOX} => ({
   checked,
   propName,
   type: ActionTypes[scope].CHANGE_CHECKBOX
 })
-export const changeComment = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (comment: string)
-  : {comment: string, type: ActionTypes.advancedSearch.CHANGE_COMMENT} | {comment: string, type: ActionTypes.buildVillage.CHANGE_COMMENT} => {
+export const changeComment = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (comment: string): {comment: string, type: ActionTypes.advancedSearch.CHANGE_COMMENT} | {comment: string, type: ActionTypes.buildVillage.CHANGE_COMMENT} => {
   if (scope === ActionTypes.Scope.advancedSearch) {
     return {
       comment,
@@ -57,8 +54,7 @@ export const changeComment = (scope: ActionTypes.Scope.advancedSearch | ActionTy
     type: ActionTypes[scope].CHANGE_COMMENT
   }
 }
-export const changeHostName = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (hostName: string)
-  : {hostName: string, type: ActionTypes.advancedSearch.CHANGE_HOST_NAME} | {hostName: string, type: ActionTypes.buildVillage.CHANGE_HOST_NAME} => {
+export const changeHostName = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (hostName: string): {hostName: string, type: ActionTypes.advancedSearch.CHANGE_HOST_NAME} | {hostName: string, type: ActionTypes.buildVillage.CHANGE_HOST_NAME} => {
   if (scope === ActionTypes.Scope.advancedSearch) {
     return {
       hostName,
@@ -79,18 +75,15 @@ export const changeLobby = (lobby: lobby.Lobby): {lobby: lobby.Lobby, type: Acti
   lobby,
   type: ActionTypes.global.CHANGE_LOBBY
 })
-export const changeMaximum = (scope: ActionTypes.Scope.advancedSearch) => (maximum: number)
-  : {maximum: number, type: ActionTypes.advancedSearch.CHANGE_MAXIMUM} => ({
+export const changeMaximum = (scope: ActionTypes.Scope.advancedSearch) => (maximum: number): {maximum: number, type: ActionTypes.advancedSearch.CHANGE_MAXIMUM} => ({
   maximum: Number(maximum),
   type: ActionTypes[scope].CHANGE_MAXIMUM
 })
-export const changeMember = (scope: ActionTypes.Scope.buildVillage) => (member: lobby.Member)
-  : {member: lobby.Member, type: ActionTypes.buildVillage.CHANGE_MEMBER} => ({
+export const changeMember = (scope: ActionTypes.Scope.buildVillage) => (member: lobby.Member): {member: lobby.Member, type: ActionTypes.buildVillage.CHANGE_MEMBER} => ({
   member,
   type: ActionTypes[scope].CHANGE_MEMBER
 })
-export const changeMinimum = (scope: ActionTypes.Scope.advancedSearch) => (minimum: number)
-  : {minimum: number, type: ActionTypes.advancedSearch.CHANGE_MINIMUM} => ({
+export const changeMinimum = (scope: ActionTypes.Scope.advancedSearch) => (minimum: number): {minimum: number, type: ActionTypes.advancedSearch.CHANGE_MINIMUM} => ({
   minimum: Number(minimum),
   type: ActionTypes[scope].CHANGE_MINIMUM
 })
@@ -123,8 +116,7 @@ export const changeUserPassword = (userPassword: string): {userPassword: string,
   type: ActionTypes.global.CHANGE_USER_PASSWORD,
   userPassword
 })
-export const changeValidity = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage | ActionTypes.Scope.idSearch) => (propName: string) => (validity: boolean)
-  : {propName: string, type: ActionTypes.advancedSearch.CHANGE_VALIDITY, validity: boolean} | {propName: string, type: ActionTypes.buildVillage.CHANGE_VALIDITY, validity: boolean} | {propName: string, type: ActionTypes.idSearch.CHANGE_VALIDITY, validity: boolean} => {
+export const changeValidity = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage | ActionTypes.Scope.idSearch) => (propName: string) => (validity: boolean): {propName: string, type: ActionTypes.advancedSearch.CHANGE_VALIDITY, validity: boolean} | {propName: string, type: ActionTypes.buildVillage.CHANGE_VALIDITY, validity: boolean} | {propName: string, type: ActionTypes.idSearch.CHANGE_VALIDITY, validity: boolean} => {
   if (scope === ActionTypes.Scope.advancedSearch) {
     return {
       propName,
@@ -145,8 +137,7 @@ export const changeValidity = (scope: ActionTypes.Scope.advancedSearch | ActionT
     validity
   }
 }
-export const changeVillageName = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (villageName: string)
-  : {type: ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME, villageName: string} | {type: ActionTypes.buildVillage.CHANGE_VILLAGE_NAME, villageName: string} => {
+export const changeVillageName = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (villageName: string): {type: ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME, villageName: string} | {type: ActionTypes.buildVillage.CHANGE_VILLAGE_NAME, villageName: string} => {
   if (scope === ActionTypes.Scope.advancedSearch) {
     return {
       type: ActionTypes[scope].CHANGE_VILLAGE_NAME,
