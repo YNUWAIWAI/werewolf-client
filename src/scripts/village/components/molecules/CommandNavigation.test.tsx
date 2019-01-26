@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
 import CommandNavigation from './CommandNavigation'

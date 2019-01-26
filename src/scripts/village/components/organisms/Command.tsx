@@ -1,11 +1,10 @@
 import * as React from 'react'
 
 export interface StateProps {
-  readonly content: React.ReactElement<any>,
+  readonly content: React.ReactElement<any>
   readonly hide: boolean
 }
-export interface OwnProps {}
-export interface Props extends StateProps, OwnProps {}
+export type Props = StateProps
 
 export default function Command(props: Props) {
   return (

@@ -1,3 +1,4 @@
+/* global village */
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import {POST_MORTEM, RESULT} from '../constants/Phase'
@@ -205,7 +206,7 @@ const client2server: Middleware = store => next => action => {
     case ActionTypes.socket.MESSAGE: {
       switch (action.payload['@payload']) {
         case village.Message.flavorTextMessage: {
-          const payload: village.Payload$receivedFlavorTextMessage =  {
+          const payload: village.Payload$receivedFlavorTextMessage = {
             date: action.payload.date,
             phase: action.payload.phase,
             token: action.payload.token,

@@ -1,9 +1,9 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePredictionBoard, SocketMessage} from '../actions'
 import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
 import {
   getPlayableRoles,
-  just,
   strToAgentStatus,
   strToRoleId
 } from '../util'

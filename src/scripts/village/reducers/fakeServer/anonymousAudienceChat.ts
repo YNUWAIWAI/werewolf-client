@@ -1,3 +1,4 @@
+/* global village */
 /* eslint sort-keys: 0 */
 const json: village.Payload$playerMessage = {
   '@context': [

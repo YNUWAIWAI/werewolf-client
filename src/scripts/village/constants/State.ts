@@ -1,3 +1,4 @@
+/* global village */
 export const CIRCLE = village.BoardState.CIRCLE
 export const CROSS = village.BoardState.CROSS
 export const FILL = village.BoardState.FILL

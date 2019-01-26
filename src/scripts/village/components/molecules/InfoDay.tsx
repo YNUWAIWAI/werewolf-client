@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import Timer from '../../containers/TimerContainer'
@@ -7,8 +8,7 @@ export interface StateProps {
   readonly date: number
   readonly phase: village.Phase
 }
-export interface OwnProps {}
-export interface Props extends StateProps, OwnProps {}
+export type Props = StateProps
 
 export default function InfoDay(props: Props) {
   const phase = props.phase === village.Phase.flavorText ? village.Phase.night : props.phase

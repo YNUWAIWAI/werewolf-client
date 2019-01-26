@@ -1,3 +1,4 @@
+/* global village */
 export const MORNING = village.Phase.morning
 export const DAY = village.Phase.day
 export const NIGHT = village.Phase.night

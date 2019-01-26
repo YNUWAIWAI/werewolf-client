@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {SocketMessage} from '../actions'
 import {getBaseUri} from '../util'

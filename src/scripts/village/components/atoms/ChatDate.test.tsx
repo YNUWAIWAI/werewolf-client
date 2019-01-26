@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import ChatDate from './ChatDate'
 import {getMessages} from '../../../../i18n/village'

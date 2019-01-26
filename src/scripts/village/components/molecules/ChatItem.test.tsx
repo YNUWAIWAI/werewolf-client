@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import ChatItem from './ChatItem'
 import {shallow} from 'enzyme'

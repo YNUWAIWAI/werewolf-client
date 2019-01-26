@@ -1,3 +1,4 @@
+/* global village */
 /* eslint sort-keys: 0 */
 const json: village.Payload$flavorTextMessage = {
   '@context': [
@@ -46,7 +47,7 @@ const json: village.Payload$flavorTextMessage = {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'directionality': village.Directionality.serverToClient,
-      'intensionalDisclosureRange':  village.Channel.public,
+      'intensionalDisclosureRange': village.Channel.public,
       'extensionalDisclosureRange': [],
       'agent': {
         '@context': village.Context.Agent,
@@ -92,7 +93,7 @@ const json: village.Payload$flavorTextMessage = {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'directionality': village.Directionality.serverToClient,
-      'intensionalDisclosureRange':  village.Channel.public,
+      'intensionalDisclosureRange': village.Channel.public,
       'extensionalDisclosureRange': [],
       'agent': {
         '@context': village.Context.Agent,
@@ -111,7 +112,7 @@ const json: village.Payload$flavorTextMessage = {
       'interval': '5s',
       'text': {
         '@value': '２番目のフレーバーテキストです',
-        '@language':  village.Language.ja
+        '@language': village.Language.ja
       },
       'characterLimit': 140,
       'isOver': false

@@ -1,3 +1,4 @@
+/* global village */
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,

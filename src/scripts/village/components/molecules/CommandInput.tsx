@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import {getChannelFromInputChennel, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
@@ -17,7 +18,7 @@ type Props = {
   readonly postCount: number
   readonly postCountLimit: number
 } | {
- readonly handlePostChat: (value: string) => void
+  readonly handlePostChat: (value: string) => void
   readonly inputChannel: village.InputChannel.grave | village.InputChannel.postMortem | village.InputChannel.private
 }
 
@@ -29,7 +30,7 @@ interface State {
 }
 
 export default class CommandInput extends React.Component<Props, State> {
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props)
     const text = ''
 
@@ -41,7 +42,7 @@ export default class CommandInput extends React.Component<Props, State> {
     }
   }
 
-  isSendable() {
+  public isSendable() {
     switch (this.props.inputChannel) {
       case village.InputChannel.grave:
       case village.InputChannel.private:
@@ -55,7 +56,7 @@ export default class CommandInput extends React.Component<Props, State> {
     }
   }
 
-  updateText(text: string) {
+  public updateText(text: string) {
     this.setState({
       sendable: this.isSendable(),
       text,
@@ -64,24 +65,24 @@ export default class CommandInput extends React.Component<Props, State> {
     })
   }
 
-  handleTextChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
+  public handleTextChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
     this.updateText(event.target.value)
   }
 
-  handlePostChat() {
+  public handlePostChat() {
     if (this.state.sendable && this.state.validTextLength) {
       this.props.handlePostChat(this.state.text)
       this.updateText('')
     }
   }
 
-  handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
+  public handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
       this.handlePostChat()
     }
   }
 
-  render() {
+  public render() {
     return (
       <form className={`command--input ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
         <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>

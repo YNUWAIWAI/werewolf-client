@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {day, night} from './fakeServer'
 import reducer, {initialState} from './commandSelection'

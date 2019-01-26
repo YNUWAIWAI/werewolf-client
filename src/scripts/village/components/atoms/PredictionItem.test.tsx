@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import PredictionItem from './PredictionItem'
 import {shallow} from 'enzyme'

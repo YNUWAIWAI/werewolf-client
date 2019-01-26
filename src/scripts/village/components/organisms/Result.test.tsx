@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import Result, {Props} from './Result'
 import {shallow} from 'enzyme'

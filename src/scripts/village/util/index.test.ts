@@ -1,3 +1,4 @@
+/* global village */
 import {
   getAgent,
   getBaseUri,

@@ -1,4 +1,5 @@
 /* eslint sort-keys: 0 */
+/* global village */
 import reducer, {initialState} from './agents'
 import {firstMorning} from './fakeServer'
 import {socket} from '../actions'

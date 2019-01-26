@@ -21,7 +21,7 @@ type Props =
   }
   | {
     readonly image: string
-    readonly name: string,
+    readonly name: string
     readonly status: village.AgentStatus
     readonly type: ResultCellType.roleImage
   }

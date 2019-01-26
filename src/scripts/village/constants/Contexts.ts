@@ -1,3 +1,4 @@
+/* global village */
 export const BASE = village.Context.Base
 export const ERROR = village.Context.Error
 export const AGENT = village.Context.Agent

@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {getMyRole, getPlayableRoles} from '../util'
 import {SocketMessage} from '../actions'

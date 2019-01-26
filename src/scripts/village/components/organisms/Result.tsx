@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import ResultCell, {ResultCellType} from '../molecules/ResultCell'
 import ResultClose from '../atoms/ResultClose'
@@ -15,27 +16,26 @@ export interface StateProps {
       readonly roleName: string
       readonly status: village.AgentStatus
     }
-  },
-  readonly losers: string[],
-  readonly me: string | null,
+  }
+  readonly losers: string[]
+  readonly me: string | null
   readonly summary: {
     readonly description: {
-      loser: string,
-      summary: string,
+      loser: string
+      summary: string
       winner: string
-    },
-    readonly loserTeam: Set<village.Team>,
-    readonly myTeam: village.Team | '',
+    }
+    readonly loserTeam: Set<village.Team>
+    readonly myTeam: village.Team | ''
     readonly winnerTeam: village.Team
-  },
-  readonly visible: boolean,
+  }
+  readonly visible: boolean
   readonly winners: string[]
 }
 export interface DispatchProps {
   readonly handleClickCloseButton: () => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 const getRow = (agent: Props['agents'][village.AgentId]) => [
   <ResultCell

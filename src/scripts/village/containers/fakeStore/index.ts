@@ -43,9 +43,10 @@ export default (state?: Record<string, unknown>): Store => {
     console.log('replaceReducer')
   }
   const subscribe = () => {
-    // console.log('subscribe')
+    console.log('subscribe')
+
     return () => {
-      // console.log('unsubscribe')
+      console.log('unsubscribe')
     }
   }
   const store = {

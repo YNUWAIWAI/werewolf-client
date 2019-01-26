@@ -8,8 +8,7 @@ export interface StateProps {
     [id: string]: (ChatDelimeterProps & {type: 'delimeter'}) | (ChatItemProps & {type: 'item'})
   }
 }
-export interface OwnProps {}
-export interface Props extends StateProps, OwnProps {}
+export type Props = StateProps
 
 export default function Chat(props: Props) {
   return (
