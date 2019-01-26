@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import AvatarList, {Props} from './AvatarList'
 import {shallow} from 'enzyme'

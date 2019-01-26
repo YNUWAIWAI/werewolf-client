@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import SettingsBox, {PropName, Props} from './SettingsBox'
 import {shallow} from 'enzyme'

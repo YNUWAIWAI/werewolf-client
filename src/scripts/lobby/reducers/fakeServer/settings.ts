@@ -1,3 +1,4 @@
+/* global lobby */
 const json: lobby.Payload$Settings = {
   lang: lobby.Language.ja,
   type: lobby.PayloadType.settings,

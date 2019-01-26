@@ -1,3 +1,4 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 import {getCastFromNumberOfPlayers} from '../util'

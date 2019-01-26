@@ -1,3 +1,4 @@
+/* global lobby */
 const json: lobby.Payload$Lobby = {
   error: null,
   lobby: lobby.Lobby.audience,

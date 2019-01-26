@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import Settings, {Props} from './Settings'
 import {shallow} from 'enzyme'

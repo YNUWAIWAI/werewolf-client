@@ -1,5 +1,5 @@
-import {AnyAction, Store} from 'redux'
 import {ReducerState} from '../../reducers'
+import {Store} from 'redux'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
 import {initialState as app} from '../../reducers/app'
 import {initialState as buildVillage} from '../../reducers/buildVillage'

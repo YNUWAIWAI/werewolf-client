@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'

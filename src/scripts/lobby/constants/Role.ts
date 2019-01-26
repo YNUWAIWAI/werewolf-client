@@ -1,3 +1,4 @@
+/* global lobby */
 import {VERSION} from './Version'
 
 const BASE_URL = `https://werewolf.world/image/${VERSION}`

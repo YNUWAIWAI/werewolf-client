@@ -1,3 +1,4 @@
+/* global lobby */
 const json: lobby.Payload$WatingPage = {
   error: null,
   players: [

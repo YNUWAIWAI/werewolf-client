@@ -1,5 +1,4 @@
 /* global lobby */
-/// <reference types="lobby" />
 import * as React from 'react'
 import AdvancedSearchProp from './AdvancedSearchProp'
 import {getMessages} from '../../../../i18n/lobby'

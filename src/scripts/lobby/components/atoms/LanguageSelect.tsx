@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'

@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
 import AvatarSelect from '../atoms/AvatarSelect'
