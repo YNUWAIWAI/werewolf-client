@@ -1524,7 +1524,7 @@
   integrity sha512-ePl4l+7dLLmCucIwgQHAgjiepY++qcI6nb8eAwGNkB6OxmTe3Z9rQU3rSpomqu42PCCnlThZbOoxsf+qylJsLA==
 
 "@types/lobby@./@types/lobby":
-  version "1.19.0"
+  version "1.25.0"
 
 "@types/node-fetch@^2.1.4":
   version "2.1.4"
