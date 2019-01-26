@@ -1,3 +1,4 @@
+/* global lobby */
 import {
   KickOutPlayer,
   Transition,

@@ -1,3 +1,4 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
 import reducer, {initialState} from './language'

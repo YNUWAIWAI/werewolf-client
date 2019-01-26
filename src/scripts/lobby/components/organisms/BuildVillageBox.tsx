@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import AvatarSelect from '../atoms/AvatarSelect'
 import {FormattedMessage} from 'react-intl'

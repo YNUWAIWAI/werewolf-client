@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import VillageList from './VillageList'
 import {shallow} from 'enzyme'

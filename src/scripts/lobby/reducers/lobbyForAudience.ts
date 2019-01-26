@@ -1,3 +1,4 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   SocketMessage,
@@ -9,7 +10,7 @@ export interface State {
   readonly image: string
   readonly isPlayer: boolean
   readonly menuItems: MenuItem[]
-  readonly name: string,
+  readonly name: string
   readonly villageItems: lobby.Village[]
 }
 type Action =

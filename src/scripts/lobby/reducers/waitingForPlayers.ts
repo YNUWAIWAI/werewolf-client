@@ -1,11 +1,12 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangeLobby, SocketMessage, Transition} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 
 export interface State {
-  readonly isPlayer: boolean,
-  readonly menuItems: MenuItem[],
-  readonly players: lobby.WaitingPlayer[],
+  readonly isPlayer: boolean
+  readonly menuItems: MenuItem[]
+  readonly players: lobby.WaitingPlayer[]
   readonly village?: lobby.Village
 }
 type Action =

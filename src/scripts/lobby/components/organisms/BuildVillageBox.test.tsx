@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import BuildVillageBox, {Props} from './BuildVillageBox'
 import {shallow} from 'enzyme'

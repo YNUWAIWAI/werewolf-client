@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 interface Props {
-  readonly image: string;
-  readonly name: string;
+  readonly image: string
+  readonly name: string
 }
 
 export default function Avatar(props: Props) {

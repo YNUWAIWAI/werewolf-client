@@ -15,23 +15,23 @@ interface State {
 }
 
 export default class TextInput extends React.Component<Props, State> {
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props)
 
     this.state = {
       value: this.props.initialValue
     }
   }
-  shouldComponentUpdate() {
+  public shouldComponentUpdate() {
     return true
   }
-  handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+  public handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       value: event.target.value
     })
     this.props.handleChange(event.target.validity.valid)(event.target.value)
   }
-  render() {
+  public render() {
     return (
       <input
         className={this.props.className}

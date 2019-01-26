@@ -3,7 +3,7 @@ import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {SocketMessage} from '../actions'
 
 export interface State {
-   readonly menuItems: MenuItem[]
+  readonly menuItems: MenuItem[]
 }
 type Action =
   | SocketMessage

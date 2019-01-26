@@ -1,5 +1,4 @@
 /* global lobby */
-/// <reference types="lobby" />
 import * as React from 'react'
 import NumberSelect from './NumberSelect'
 import Select from 'react-select'
