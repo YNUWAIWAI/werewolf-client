@@ -15,7 +15,7 @@ import {initialState as result} from '../../reducers/result'
 import {initialState as roles} from '../../reducers/roles'
 import {initialState as timer} from '../../reducers/timer'
 
-export default (state?: Record<string, unknown>): Store<unknown, Action<unknown>> => {
+export default (state?: Record<string, unknown>): Store<ReducerState, Action<unknown>> => {
   const initialState: ReducerState = {
     agents,
     base,
