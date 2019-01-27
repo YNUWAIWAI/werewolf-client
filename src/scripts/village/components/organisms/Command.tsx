@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export interface StateProps {
-  readonly content: React.ReactElement<any>
+  readonly content: React.ReactElement<unknown>
   readonly hide: boolean
 }
 export type Props = StateProps

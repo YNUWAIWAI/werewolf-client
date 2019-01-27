@@ -33,7 +33,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     }
   })(
     state.base.phase,
-    state.agents.mine !== undefined && state.agents.mine.status !== 'alive'
+    typeof state.agents.mine !== 'undefined' && state.agents.mine.status !== 'alive'
   )
 
   return {

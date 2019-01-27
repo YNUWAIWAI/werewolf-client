@@ -81,7 +81,7 @@ export default function Result(props: Props) {
     return null
   }
   const me = (() => {
-    if (props.me === undefined || props.me === null) {
+    if (typeof props.me === 'undefined' || props.me === null) {
       return []
     }
 

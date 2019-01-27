@@ -151,7 +151,7 @@ export const strToRoleId = (str: string): village.RoleId => {
 }
 
 export const getMyAgent = <T extends {name: village.LanguageMap, isMine?: boolean}>(agents: T[]): T => {
-  const maybe = agents.find(a => a.isMine !== undefined && a.isMine)
+  const maybe = agents.find(a => typeof a.isMine !== 'undefined' && a.isMine)
 
   if (!maybe) {
     throw Error('Not found my agent.')
@@ -220,7 +220,7 @@ export const idGenerater = (prefix: string) => {
   let id: number | undefined
 
   return () => {
-    if (id === undefined) {
+    if (typeof id === 'undefined') {
       id = -1
     }
     id += 1
@@ -230,7 +230,7 @@ export const idGenerater = (prefix: string) => {
 }
 
 export const just = <T>(value: T | undefined | null): T => {
-  if (value === undefined || value === null) {
+  if (typeof value === 'undefined' || value === null) {
     throw Error('Nothing')
   }
 

@@ -1,5 +1,6 @@
+/* eslint no-console: 0 */
+import {Action, Dispatch, Store} from 'redux'
 import {ReducerState} from '../../reducers'
-import {Store} from 'redux'
 import {initialState as agents} from '../../reducers/agents'
 import {initialState as base} from '../../reducers/base'
 import {initialState as chat} from '../../reducers/chat'
@@ -14,7 +15,7 @@ import {initialState as result} from '../../reducers/result'
 import {initialState as roles} from '../../reducers/roles'
 import {initialState as timer} from '../../reducers/timer'
 
-export default (state?: Record<string, unknown>): Store => {
+export default (state?: Record<string, unknown>): Store<unknown, Action<unknown>> => {
   const initialState: ReducerState = {
     agents,
     base,
@@ -30,7 +31,7 @@ export default (state?: Record<string, unknown>): Store => {
     roles,
     timer
   }
-  const dispatch = (action: any) => {
+  const dispatch: Dispatch<Action<unknown>> = action => {
     console.log('dispatch')
 
     return action
