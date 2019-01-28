@@ -13,7 +13,7 @@ import Settings from '../containers/SettingsContainer'
 import WaitingForPlayers from '../containers/WaitingForPlayersContainer'
 
 export interface State {
-  readonly content: React.ComponentType<any>
+  readonly content: React.ComponentType
 }
 type Action =
   | SelectVillage
