@@ -17,7 +17,7 @@
     </div>
   </div>
   @form(action = routes.AuthController.loginResult(), 'class->"login") {
-    @if(loginForm.hasGlobalErrors) {
+    @if(loginForm.hasErrors) {
       <p class="error">
         error
       </p>
