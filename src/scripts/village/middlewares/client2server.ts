@@ -223,7 +223,7 @@ const client2server: Middleware = store => next => action => {
             return next(action)
           }
           const payload: village.Payload$receivedPlayerMessage = {
-            from: action.payload.agent.id,
+            clientTimestamp: action.payload.clientTimestamp,
             serverTimestamp: action.payload.serverTimestamp,
             token: action.payload.token,
             type: 'receivedPlayerMessage',
