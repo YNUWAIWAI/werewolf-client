@@ -3,27 +3,27 @@
 }
 
 body {
-  display: flex;
+  display: grid;
+  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  grid-template-areas:
+    'lead login'
+    'lead signup';
 }
 
 .confirmation {
   margin-bottom: 0.5rem;
 }
 
-.main {
-  flex: 3;
+.lead {
+  grid-area: lead;
   height: 100vh;
   position: relative;
-}
-
-.section {
-  flex: 2;
-  height: 100vh;
 }
 
 .login {
   border: solid 1px black;
   border-radius: 1rem;
+  grid-area: login;
   margin: 10vh 1rem 1rem;
   padding: 1rem;
 }
@@ -31,6 +31,7 @@ body {
 .signup {
   border: solid 1px black;
   border-radius: 1rem;
+  grid-area: signup;
   margin: 1rem;
   padding: 1rem;
 }
