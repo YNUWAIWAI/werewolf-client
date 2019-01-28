@@ -69,7 +69,7 @@
     "@types/react-redux": "^7.0.0",
     "@types/react-select": "^2.0.11",
     "@types/redux": "^3.6.0",
-    "@types/village": "./@types/village/",
+    "@types/village": "./@types/village",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-intl": "^2.8.0",

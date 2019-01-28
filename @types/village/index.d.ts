@@ -493,7 +493,7 @@ declare namespace village {
     villageId: number
   }
   interface Payload$receivedPlayerMessage extends PayloadBase {
-    from: number
+    clientTimestamp: string
     serverTimestamp: string
     token: Token
     type: 'receivedPlayerMessage'

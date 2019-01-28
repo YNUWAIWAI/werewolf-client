@@ -1657,10 +1657,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./@types/village":
-  version "1.19.0"
-
-"@types/village@./@types/village/":
-  version "1.19.0"
+  version "1.21.0"
 
 "@types/webpack-env@*":
   version "1.13.6"
