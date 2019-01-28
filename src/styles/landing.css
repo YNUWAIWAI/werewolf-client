@@ -3,9 +3,11 @@
 }
 
 body {
-  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
-  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
   display: flex;
+}
+
+.confirmation {
+  margin-bottom: 0.5rem;
 }
 
 .main {
@@ -22,7 +24,7 @@ body {
 .login {
   border: solid 1px black;
   border-radius: 1rem;
-  margin: 10vh 1rem 1rem 1rem;
+  margin: 10vh 1rem 1rem;
   padding: 1rem;
 }
 
@@ -79,7 +81,7 @@ body {
 }
 
 .image {
-  width: 50%;
   height: 50%;
   margin: 0 auto;
+  width: 50%;
 }

@@ -1,16 +1,7 @@
 @import helper._
 @import models.UserModel
 @(loginForm: Form[UserModel], signupForm: Form[UserModel])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/x-icon" href='@routes.Assets.at("images/favicon.ico")'>
-  <link rel="stylesheet" href='@routes.Assets.at("stylesheets/landing.css")'>
-  <title>Home, Werewolf: The Game</title>
-</head>
-<body>
+@template("Home", "landing.css") {
   <main class="main">
     <div class="title">
       <p>Werewolf: The Game</p>
@@ -62,9 +53,10 @@
         </dl>
       </div>
       @CSRF.formField
-      <p>Please agree to our <a href="terms" target="_blank">Terms, Data Policy and Cookies Policy</a> before signing up.</p>
+      <p class="confirmation">
+        Please agree to our <a href="terms" target="_blank">Terms, Data Policy and Cookies Policy</a> before signing up.
+      </p>
       <input class="button" type="submit" value="Signup">
     }
   </section>
-</body>
-</html>
+}
