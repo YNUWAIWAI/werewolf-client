@@ -54,7 +54,7 @@ export const getValue = <T>(objectStore: IDBObjectStore, key: string) => new Pro
   request.onsuccess = () => {
     const result = request.result
 
-    if (result === undefined || result === null) {
+    if (typeof result === 'undefined' || result === null) {
       reject(`Fail to get ${objectStore.name}.${key}`)
     }
 

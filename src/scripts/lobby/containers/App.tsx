@@ -4,15 +4,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 interface StateProps {
-  readonly content: React.ComponentType<any>
-}
-
-function App(props: StateProps) {
-  return (
-    <IntlProvider>
-      <props.content />
-    </IntlProvider>
-  )
+  readonly content: React.ComponentType
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
@@ -21,4 +13,12 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 
 export default connect(
   mapStateToProps
-)(App)
+)(
+  function App(props: StateProps) {
+    return (
+      <IntlProvider>
+        <props.content />
+      </IntlProvider>
+    )
+  }
+)
