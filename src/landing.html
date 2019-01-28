@@ -19,7 +19,7 @@
   @form(action = routes.AuthController.loginResult(), 'class->"login") {
     @if(loginForm.hasGlobalErrors) {
       <p class="error">
-          @loginForm.globalError.message
+        error
       </p>
     }
     <div class="field">
