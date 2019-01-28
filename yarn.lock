@@ -1524,7 +1524,7 @@
   integrity sha512-ePl4l+7dLLmCucIwgQHAgjiepY++qcI6nb8eAwGNkB6OxmTe3Z9rQU3rSpomqu42PCCnlThZbOoxsf+qylJsLA==
 
 "@types/lobby@./@types/lobby":
-  version "1.25.0"
+  version "1.26.0"
 
 "@types/node-fetch@^2.1.4":
   version "2.1.4"
@@ -1657,7 +1657,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./@types/village":
-  version "1.21.0"
+  version "1.22.0"
 
 "@types/webpack-env@*":
   version "1.13.6"
