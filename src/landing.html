@@ -1,17 +1,8 @@
 @import helper._
 @import models.UserModel
 @(loginForm: Form[UserModel], signupForm: Form[UserModel])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/x-icon" href='@routes.Assets.at("images/favicon.ico")'>
-  <link rel="stylesheet" href='@routes.Assets.at("stylesheets/landing.css")'>
-  <title>Home, Werewolf: The Game</title>
-</head>
-<body>
-  <main class="main">
+@template("Home", "landing.css") {
+  <div class="lead">
     <div class="title">
       <p>Werewolf: The Game</p>
     </div>
@@ -24,47 +15,56 @@
         <text x="12.5" y="75" fill="white">絵</text>
       </svg>
     </div>
-  </main>
-  <section class="section">
-    @form(action = routes.AuthController.loginResult(), 'class->"login") {
-    <p class="field">
-    <dl id="login-email_field">
-      <dt><label class="label" for="login-email">Email</label></dt>
-      <dd><input type="text" name="email" id="login-email" class="input" value="" autocomplete="off" required></dd>
-    </dl>
-    </p>
-    <p class="field">
-    <dl id="login-password_field">
-      <dt><label class="label" for="login-password">Password</label></dt>
-      <dd><input type="password" name="password" id="login-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
-    </dl>
-    </p>
-    @CSRF.formField
-    <input class="button" type="submit" value="Submit">
+  </div>
+  @form(action = routes.AuthController.loginResult(), 'class->"login") {
+    @if(loginForm.hasErrors) {
+      <p class="error">
+        Invalid email or password
+      </p>
     }
-    @form(action = routes.AuthController.signupResult(), 'class->"signup") {
-    <p class="field">
-    <dl id="signup-name_field">
-      <dt><label class="label" for="signup-name">Name</label></dt>
-      <dd><input type="text" name="name" id="signup-name" class="input" value="" autocomplete="off" required></dd>
-    </dl>
-    </p>
-    <p class="field">
-    <dl id="signup-email_field">
-      <dt><label class="label" for="signup-email">Email</label></dt>
-      <dd><input type="text" name="email" id="signup-email" class="input" value="" autocomplete="off" required></dd>
-    </dl>
-    </p>
-    <p class="field">
-    <dl id="signup-password_field">
-      <dt><label class="label" for="signup-password">Password</label></dt>
-      <dd><input type="password" name="password" id="signup-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
-    </dl>
-    </p>
+    <div class="field">
+      <dl id="login-email_field">
+        <dt><label class="label" for="login-email">Email</label></dt>
+        <dd><input type="text" name="email" id="login-email" class="input" value="" autocomplete="off" autofocus required></dd>
+      </dl>
+    </div>
+    <div class="field">
+      <dl id="login-divassword_field">
+        <dt><label class="label" for="login-password">Password</label></dt>
+        <dd><input type="password" name="password" id="login-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
+      </dl>
+    </div>
     @CSRF.formField
-    <p>Please agree to our <a href="terms" target="_blank">Terms, Data Policy and Cookies Policy</a> before signing up.</p>
-    <input class="button" type="submit" value="Submit">
+    <input class="button" type="submit" value="Login">
+  }
+  @form(action = routes.AuthController.signupResult(), 'class->"signup") {
+    @if(signupForm.hasErrors) {
+      <p class="error">
+        Invalid name, email or password
+      </p>
     }
-  </section>
-</body>
-</html>
+    <div class="field">
+      <dl id="signup-name_field">
+        <dt><label class="label" for="signup-name">Name</label></dt>
+        <dd><input type="text" name="name" id="signup-name" class="input" value="" autocomplete="off" required></dd>
+      </dl>
+    </div>
+    <div class="field">
+      <dl id="signup-email_field">
+        <dt><label class="label" for="signup-email">Email</label></dt>
+        <dd><input type="text" name="email" id="signup-email" class="input" value="" autocomplete="off" required></dd>
+      </dl>
+    </div>
+    <div class="field">
+      <dl id="signup-password_field">
+        <dt><label class="label" for="signup-password">Password</label></dt>
+        <dd><input type="password" name="password" id="signup-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
+      </dl>
+    </div>
+    @CSRF.formField
+    <p class="confirmation">
+      Please agree to our <a href="terms" target="_blank">Terms, Data Policy and Cookies Policy</a> before signing up.
+    </p>
+    <input class="button" type="submit" value="Signup">
+  }
+}
