@@ -38,6 +38,11 @@
     <input class="button" type="submit" value="Login">
   }
   @form(action = routes.AuthController.signupResult(), 'class->"signup") {
+    @if(signupForm.hasErrors) {
+      <p class="error">
+        Invalid name, email or password
+      </p>
+    }
     <div class="field">
       <dl id="signup-name_field">
         <dt><label class="label" for="signup-name">Name</label></dt>
