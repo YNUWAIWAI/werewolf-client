@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import Audience from './svg/Audience'
 import Grave from './svg/Grave'
@@ -7,7 +8,7 @@ import Public from './svg/Public'
 import Werewolf from './svg/Werewolf'
 
 export interface Props {
-  readonly channel: village.Channel,
+  readonly channel: village.Channel
   readonly className: string
 }
 

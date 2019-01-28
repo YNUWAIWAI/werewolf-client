@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import FormattedTime from './FormattedTime'
 import {getMessages} from '../../../../i18n/village'

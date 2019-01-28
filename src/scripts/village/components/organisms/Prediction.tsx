@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import PredictionItem from '../atoms/PredictionItem'
 import PredictionPlayer from '../atoms/PredictionPlayer'
@@ -6,22 +7,22 @@ import {just} from '../../util'
 
 export interface StateProps {
   readonly playerStatus: {
-    readonly id: number,
-    readonly image: string,
-    readonly name: string,
+    readonly id: number
+    readonly image: string
+    readonly name: string
     readonly status: village.AgentStatus
   }[]
   readonly roleStatus: {
-    readonly id: village.RoleId,
-    readonly image: string,
-    readonly numberOfAgents: number,
+    readonly id: village.RoleId
+    readonly image: string
+    readonly numberOfAgents: number
     readonly caption: string
   }[]
   readonly table: {
     readonly [agentId in village.AgentId]: Partial<{
       readonly [roleId in village.RoleId]: {
-        readonly date: number,
-        readonly fixed: boolean,
+        readonly date: number
+        readonly fixed: boolean
         readonly state: village.BoardState
       }
     }>
@@ -30,8 +31,7 @@ export interface StateProps {
 export interface DispatchProps {
   handleBoardClick: (playerId: number, role: village.RoleId) => (state: village.BoardState) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function Prediction(props: Props) {
   if (props.playerStatus.length === 0 || props.roleStatus.length === 0) {

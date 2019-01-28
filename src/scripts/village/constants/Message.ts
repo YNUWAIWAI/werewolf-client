@@ -1,3 +1,4 @@
+/* global village */
 export const BOARD_MESSAGE = village.Message.boardMessage
 export const ERROR_MESSAGE = village.Message.errorMessage
 export const FLAVOR_TEXT_MESSAGE = village.Message.flavorTextMessage

@@ -5,8 +5,7 @@ import Prediction from '../../containers/PredictionContainer'
 export interface StateProps {
   readonly expand: boolean
 }
-export interface OwnProps {}
-export interface Props extends StateProps, OwnProps {}
+export type Props = StateProps
 
 export default function Activity(props: Props) {
   return (

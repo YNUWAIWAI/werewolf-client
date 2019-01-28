@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import InfoDay from './InfoDay'
 import {Provider} from 'react-redux'

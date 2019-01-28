@@ -14,8 +14,7 @@ export interface StateProps {
 export interface DispatchProps {
   readonly handleSelectOption: (agentId: number) => () => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function CommandSelection(props: Props) {
   return (

@@ -5,7 +5,7 @@ import {Navigation} from '../../constants/ActionTypes'
 interface Props {
   readonly handleClick: (type: Navigation) => void
   readonly items: {
-    readonly id: string,
+    readonly id: string
     readonly type: Navigation
   }[]
 }

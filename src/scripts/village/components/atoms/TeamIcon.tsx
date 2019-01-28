@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import TeamVillager from './svg/TeamVillager'

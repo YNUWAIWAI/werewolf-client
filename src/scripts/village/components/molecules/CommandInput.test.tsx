@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import CommandInput from './CommandInput'
 import {getMessages} from '../../../../i18n/village'

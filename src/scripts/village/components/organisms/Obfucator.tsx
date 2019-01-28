@@ -5,8 +5,7 @@ export interface StateProps {
   readonly loading: boolean
   readonly visible: boolean
 }
-export interface OwnProps {}
-export interface Props extends StateProps, OwnProps {}
+export type Props = StateProps
 
 export default function Obfucator(props: Props) {
   return props.visible ?

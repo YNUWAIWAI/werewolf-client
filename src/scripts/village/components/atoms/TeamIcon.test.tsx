@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import TeamIcon from './TeamIcon'
 import {getMessages} from '../../../../i18n/village'

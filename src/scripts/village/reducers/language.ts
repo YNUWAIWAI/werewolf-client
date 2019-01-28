@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangeLanguage} from '../actions'
 

@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePhase, SocketMessage} from '../actions'
 import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'

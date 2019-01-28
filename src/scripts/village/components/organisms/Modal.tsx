@@ -14,8 +14,7 @@ export interface DispatchProps {
   readonly handleClickNo: () => void
   readonly handleClickYes: (agentId: number) => void
 }
-export interface OwnProps {}
-export interface Props extends StateProps, DispatchProps, OwnProps {}
+export interface Props extends StateProps, DispatchProps {}
 
 export default function Modal(props: Props) {
   return (

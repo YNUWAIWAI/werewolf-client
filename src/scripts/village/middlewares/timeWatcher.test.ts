@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
 import {VERSION} from '../constants/Version'

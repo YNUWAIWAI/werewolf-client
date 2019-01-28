@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'

@@ -1,3 +1,4 @@
+/* global village */
 export const PUBLIC = village.Channel.public
 export const PRIVATE = village.Channel.private
 export const WEREWOLF = village.Channel.werewolf

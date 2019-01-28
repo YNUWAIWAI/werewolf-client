@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import Circle from './svg/Circle'
 import Cross from './svg/Cross'

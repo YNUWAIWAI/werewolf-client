@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {firstMorning, firstMorning2, myMessageOnChat, theirMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './commandInputBox'

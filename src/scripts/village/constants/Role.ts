@@ -1,3 +1,4 @@
+/* global village */
 export const MASTER = village.RoleId.master
 export const VILLAGER = village.RoleId.villager
 export const SEER = village.RoleId.seer

@@ -7,11 +7,7 @@ export interface StateProps {
 export interface DispatchProps {
   readonly handleClick: (valid: boolean) => void
 }
-export interface OwnProps {}
-export type Props =
-  & StateProps
-  & DispatchProps
-  & OwnProps
+export interface Props extends StateProps, DispatchProps {}
 
 export default function HideButton(props: Props) {
   return (

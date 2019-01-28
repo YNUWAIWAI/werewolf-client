@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import Modal from './Modal'
 import {Provider} from 'react-redux'

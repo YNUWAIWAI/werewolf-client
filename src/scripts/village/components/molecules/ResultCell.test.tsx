@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import ResultCell, {ResultCellType} from './ResultCell'
 import {getMessages} from '../../../../i18n/village'

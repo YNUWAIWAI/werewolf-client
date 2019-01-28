@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePhase, SelectYes, SocketMessage} from '../actions'
 import {VOTING_PHASE} from '../constants/Phase'

@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {strToMessage} from '../util'
 
@@ -16,7 +17,7 @@ export const socket = {
     type: ActionTypes.socket.ERROR
   }),
   message: (payload: village.Payload) => {
-    if (payload['@id'] === undefined) {
+    if (typeof payload['@id'] === 'undefined') {
       throw Error('Unkonown Message')
     }
     const message = strToMessage(payload['@id'])
