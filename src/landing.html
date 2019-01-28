@@ -19,7 +19,7 @@
   @form(action = routes.AuthController.loginResult(), 'class->"login") {
     @if(loginForm.hasErrors) {
       <p class="error">
-        @loginForm.error("email")(0)
+        @loginForm.error("email").messages(0)
       </p>
     }
     <div class="field">
