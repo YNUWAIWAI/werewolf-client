@@ -3,11 +3,13 @@ import {
   ChangeUserEmail,
   ChangeUserName,
   ChangeUserPassword,
+  SubmitLogout,
   Transition,
   changeLanguage,
   changeUserEmail,
   changeUserName,
   changeUserPassword,
+  submitLogout,
   transition
 } from '../actions'
 import Settings, {DispatchProps, StateProps} from '../components/templates/Settings'
@@ -20,6 +22,7 @@ type Action =
   | ChangeUserEmail
   | ChangeUserName
   | ChangeUserPassword
+  | SubmitLogout
   | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => state.settings
@@ -35,6 +38,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   },
   handleChangeUserPassword: value => {
     dispatch(changeUserPassword(value))
+  },
+  handleSubmitLogout: () => {
+    dispatch(submitLogout())
   },
   transition: target => {
     dispatch(transition(target))

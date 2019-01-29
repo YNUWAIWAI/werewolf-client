@@ -19,6 +19,7 @@ export interface DispatchProps {
   readonly handleChangeUserEmail: (value: string) => void
   readonly handleChangeUserName: (value: string) => void
   readonly handleChangeUserPassword: (value: string) => void
+  readonly handleSubmitLogout: () => void
   readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps {}
@@ -33,6 +34,7 @@ export default function Setting(props: Props) {
           handleChangeUserEmail={props.handleChangeUserEmail}
           handleChangeUserName={props.handleChangeUserName}
           handleChangeUserPassword={props.handleChangeUserPassword}
+          handleSubmitLogout={props.handleSubmitLogout}
           initialValue={props.initialValue}
         />
       </MainContent>

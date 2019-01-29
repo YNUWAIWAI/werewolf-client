@@ -20,6 +20,7 @@ export interface Props {
   readonly handleChangeUserEmail: (value: string) => void
   readonly handleChangeUserName: (value: string) => void
   readonly handleChangeUserPassword: (value: string) => void
+  readonly handleSubmitLogout: () => void
   readonly initialValue: {
     readonly [PropName.language]: lobby.Language
     readonly [PropName.userEmail]: string
@@ -142,8 +143,11 @@ export default class SettingsBox extends React.Component<Props, State> {
           this.props.handleChangeUserPassword(this.state.userPassword.value)
 
           return
-        case PropName.deactivate:
         case PropName.logout:
+          this.props.handleSubmitLogout()
+
+          return
+        case PropName.deactivate:
         default:
           return
       }

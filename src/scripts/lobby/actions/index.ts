@@ -158,6 +158,9 @@ export const selectVillage = (id: number): {id: number, type: ActionTypes.global
   id,
   type: ActionTypes.global.SELECT_VILLAGE
 })
+export const submitLogout = (): {type: ActionTypes.global.LOGOUT} => ({
+  type: ActionTypes.global.LOGOUT
+})
 export const transition = (target: ActionTypes.Target): {type: ActionTypes.Target} => ({
   type: target
 })
@@ -193,4 +196,5 @@ export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
+export type SubmitLogout = ReturnType<typeof submitLogout>
 export type Transition = ReturnType<typeof transition>

@@ -39,6 +39,7 @@ type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
+  | actions.SubmitLogout
   | actions.Transition
   | {type: 'indexedDB/INIT'}
   | {type: 'socket/INIT'}
