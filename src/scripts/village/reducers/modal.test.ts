@@ -1,6 +1,24 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './modal'
 
+test('CHANGE_PHASE', () => {
+  expect(
+    reducer(
+      initialState,
+      {
+        from: village.Phase.day,
+        to: village.Phase.night,
+        type: ActionTypes.global.CHANGE_PHASE
+      }
+    )
+  ).toEqual(
+    {
+      id: 1,
+      visible: true
+    }
+  )
+})
 test('SELECT_OPTION', () => {
   expect(
     reducer(
