@@ -1,5 +1,7 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  ChangePhase,
   ClickNavigationButton,
   HideResult,
   SelectNo,
@@ -10,6 +12,53 @@ import {
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './obfucator'
 
+describe('CHANGE_PHASE', () => {
+  test('day -> night', () => {
+    const action: ChangePhase = {
+      from: village.Phase.day,
+      to: village.Phase.night,
+      type: ActionTypes.global.CHANGE_PHASE
+    }
+
+    expect(
+      reducer(
+        initialState,
+        action
+      )
+    ).toEqual({
+      loading: true,
+      visible: false
+    })
+  })
+  test('night -> result', () => {
+    const action: ChangePhase = {
+      from: village.Phase.night,
+      to: village.Phase.result,
+      type: ActionTypes.global.CHANGE_PHASE
+    }
+
+    expect(
+      reducer(
+        initialState,
+        action
+      )
+    ).toEqual(initialState)
+  })
+  test('result -> postMortem', () => {
+    const action: ChangePhase = {
+      from: village.Phase.result,
+      to: village.Phase.postMortem,
+      type: ActionTypes.global.CHANGE_PHASE
+    }
+
+    expect(
+      reducer(
+        initialState,
+        action
+      )
+    ).toEqual(initialState)
+  })
+})
 test('HIDE_RESULT', () => {
   const action: HideResult = {
     type: ActionTypes.global.HIDE_RESULT

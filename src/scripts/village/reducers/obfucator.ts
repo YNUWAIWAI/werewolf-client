@@ -1,7 +1,7 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  ChangeDate,
+  ChangePhase,
   ClickNavigationButton,
   HideResult,
   SelectNo,
@@ -18,7 +18,7 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
-  | ChangeDate
+  | ChangePhase
   | ClickNavigationButton
   | HideResult
   | SelectNo
@@ -36,7 +36,15 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_DATE:
+    case ActionTypes.global.CHANGE_PHASE:
+      if (action.to === village.Phase.result || action.from === village.Phase.result) {
+        return state
+      }
+
+      return {
+        ... state,
+        visible: false
+      }
     case ActionTypes.global.HIDE_RESULT:
     case ActionTypes.global.SELECT_NO:
     case ActionTypes.global.SELECT_YES:
