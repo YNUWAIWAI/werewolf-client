@@ -361,6 +361,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                 text =>
                   <button
                     className={`settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
+                    disabled
                     type="submit"
                   >
                     {text}
