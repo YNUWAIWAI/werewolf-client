@@ -1,8 +1,8 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  ClickNavigationButton,
   ChangeDate,
+  ClickNavigationButton,
   HideResult,
   SelectNo,
   SelectOption,
@@ -18,8 +18,8 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
-  | ClickNavigationButton
   | ChangeDate
+  | ClickNavigationButton
   | HideResult
   | SelectNo
   | SelectOption

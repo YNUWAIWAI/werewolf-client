@@ -7,7 +7,7 @@ import {
   SelectYes,
   socket
 } from '../actions'
-import {firstmorning, result} from './fakeServer'
+import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './obfucator'
 
 test('HIDE_RESULT', () => {
@@ -112,7 +112,7 @@ test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      socket.message(firstmorning)
+      socket.message(firstMorning)
     )
   ).toEqual({
     loading: true,
