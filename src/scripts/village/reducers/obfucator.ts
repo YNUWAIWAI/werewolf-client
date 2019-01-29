@@ -1,5 +1,7 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  ChangeDate,
   ClickNavigationButton,
   HideResult,
   SelectNo,
@@ -7,6 +9,7 @@ import {
   SelectYes,
   SocketClose,
   SocketError,
+  SocketMessage,
   SocketOpen
 } from '../actions'
 
@@ -15,6 +18,7 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
+  | ChangeDate
   | ClickNavigationButton
   | HideResult
   | SelectNo
@@ -22,6 +26,7 @@ type Action =
   | SelectYes
   | SocketClose
   | SocketError
+  | SocketMessage
   | SocketOpen
 
 export const initialState: State = {
@@ -31,6 +36,7 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.global.CHANGE_DATE:
     case ActionTypes.global.HIDE_RESULT:
     case ActionTypes.global.SELECT_NO:
     case ActionTypes.global.SELECT_YES:
@@ -50,6 +56,18 @@ const obfucator = (state: State = initialState, action: Action): State => {
         loading: true,
         visible: true
       }
+    case ActionTypes.socket.MESSAGE:
+      if (
+        action.payload['@payload'] === village.Message.systemMessage &&
+        action.payload.phase === village.Phase.result
+      ) {
+        return {
+          loading: false,
+          visible: true
+        }
+      }
+
+      return state
     case ActionTypes.socket.OPEN:
       return {
         loading: false,
