@@ -14,8 +14,8 @@ test('CHANGE_PHASE', () => {
     )
   ).toEqual(
     {
-      id: 1,
-      visible: true
+      id: -1,
+      visible: false
     }
   )
 })
