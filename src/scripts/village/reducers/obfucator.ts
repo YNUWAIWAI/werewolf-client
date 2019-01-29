@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ClickNavigationButton,
@@ -7,6 +8,7 @@ import {
   SelectYes,
   SocketClose,
   SocketError,
+  SocketMessage,
   SocketOpen
 } from '../actions'
 
@@ -22,6 +24,7 @@ type Action =
   | SelectYes
   | SocketClose
   | SocketError
+  | SocketMessage
   | SocketOpen
 
 export const initialState: State = {
@@ -50,6 +53,18 @@ const obfucator = (state: State = initialState, action: Action): State => {
         loading: true,
         visible: true
       }
+    case ActionTypes.socket.MESSAGE:
+      if (
+        action.payload['@payload'] === village.Message.systemMessage &&
+        action.payload.phase === village.Phase.result
+      ) {
+        return {
+          loading: false,
+          visible: true
+        }
+      }
+
+      return state
     case ActionTypes.socket.OPEN:
       return {
         loading: false,
