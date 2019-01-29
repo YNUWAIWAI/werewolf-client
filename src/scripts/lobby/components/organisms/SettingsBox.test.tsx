@@ -14,12 +14,14 @@ describe('<SettingsBox />', () => {
     const handleChangeUserEmail = jest.fn()
     const handleChangeUserName = jest.fn()
     const handleChangeUserPassword = jest.fn()
+    const handleSubmitLogout = jest.fn()
     const wrapper = shallow<SettingsBox>(
       <SettingsBox
         handleChangeLanguage={handleChangeLanguage}
         handleChangeUserEmail={handleChangeUserEmail}
         handleChangeUserName={handleChangeUserName}
         handleChangeUserPassword={handleChangeUserPassword}
+        handleSubmitLogout={handleSubmitLogout}
         initialValue={initialValue}
       />
     )
@@ -53,6 +55,7 @@ describe('<SettingsBox />', () => {
     expect(handleChangeUserEmail).toHaveBeenCalledTimes(0)
     expect(handleChangeUserName).toHaveBeenCalledTimes(0)
     expect(handleChangeUserPassword).toHaveBeenCalledTimes(0)
+    expect(handleSubmitLogout).toHaveBeenCalledTimes(0)
   })
   describe('handleChange', () => {
     describe('language', () => {
@@ -66,12 +69,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -109,12 +114,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -152,12 +159,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -195,12 +204,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -240,12 +251,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -283,12 +296,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -326,12 +341,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -369,12 +386,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -414,12 +433,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -457,12 +478,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -500,12 +523,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -543,12 +568,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -588,12 +615,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -631,12 +660,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -674,12 +705,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -717,12 +750,14 @@ describe('<SettingsBox />', () => {
         const handleChangeUserEmail = jest.fn()
         const handleChangeUserName = jest.fn()
         const handleChangeUserPassword = jest.fn()
+        const handleSubmitLogout = jest.fn()
         const wrapper = shallow<SettingsBox>(
           <SettingsBox
             handleChangeLanguage={handleChangeLanguage}
             handleChangeUserEmail={handleChangeUserEmail}
             handleChangeUserName={handleChangeUserName}
             handleChangeUserPassword={handleChangeUserPassword}
+            handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
           />
         )
@@ -762,12 +797,14 @@ describe('<SettingsBox />', () => {
     const handleChangeUserEmail = jest.fn()
     const handleChangeUserName = jest.fn()
     const handleChangeUserPassword = jest.fn()
+    const handleSubmitLogout = jest.fn()
     const wrapper = shallow<SettingsBox>(
       <SettingsBox
         handleChangeLanguage={handleChangeLanguage}
         handleChangeUserEmail={handleChangeUserEmail}
         handleChangeUserName={handleChangeUserName}
         handleChangeUserPassword={handleChangeUserPassword}
+        handleSubmitLogout={handleSubmitLogout}
         initialValue={initialValue}
       />
     )
@@ -785,5 +822,6 @@ describe('<SettingsBox />', () => {
     expect(handleChangeUserName).toHaveBeenCalledWith(initialValue.userName)
     expect(handleChangeUserPassword).toHaveBeenCalledTimes(1)
     expect(handleChangeUserPassword).toHaveBeenCalledWith('')
+    expect(handleSubmitLogout).toHaveBeenCalledTimes(1)
   })
 })

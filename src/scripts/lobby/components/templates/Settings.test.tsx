@@ -14,6 +14,7 @@ test('<Settings />', () => {
   const handleChangeUserEmail = jest.fn()
   const handleChangeUserName = jest.fn()
   const handleChangeUserPassword = jest.fn()
+  const handleSubmitLogout = jest.fn()
   const transition = jest.fn()
   const wrapper = shallow(
     <Settings
@@ -21,6 +22,7 @@ test('<Settings />', () => {
       handleChangeUserEmail={handleChangeUserEmail}
       handleChangeUserName={handleChangeUserName}
       handleChangeUserPassword={handleChangeUserPassword}
+      handleSubmitLogout={handleSubmitLogout}
       initialValue={initialValue}
       menuItems={menuItems}
       transition={transition}
