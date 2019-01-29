@@ -7,6 +7,7 @@ import {
   SelectYes,
   socket
 } from '../actions'
+import {firstmorning, result} from './fakeServer'
 import reducer, {initialState} from './obfucator'
 
 test('HIDE_RESULT', () => {
@@ -104,6 +105,26 @@ test('socket/ERROR', () => {
     )
   ).toEqual({
     loading: true,
+    visible: true
+  })
+})
+test('socket/MESSAGE', () => {
+  expect(
+    reducer(
+      initialState,
+      socket.message(firstmorning)
+    )
+  ).toEqual({
+    loading: true,
+    visible: true
+  })
+  expect(
+    reducer(
+      initialState,
+      socket.message(result)
+    )
+  ).toEqual({
+    loading: false,
     visible: true
   })
 })
