@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SelectVillage, Transition} from '../actions'
+import {SelectVillage, SubmitLogout, Transition} from '../actions'
 import AdvancedSearch from '../containers/AdvancedSearchContainer'
 import BuildVillage from '../containers/BuildVillageContainer'
 import ConnectingToRobotPlayer from '../containers/ConnectingToRobotPlayerContainer'
@@ -17,6 +17,7 @@ export interface State {
 }
 type Action =
   | SelectVillage
+  | SubmitLogout
   | Transition
 
 export const initialState = {
@@ -24,6 +25,10 @@ export const initialState = {
 }
 const app = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.global.LOGOUT:
+      window.location.assign(`${window.location.origin}/logout`)
+
+      return state
     case ActionTypes.global.SELECT_VILLAGE:
     case ActionTypes.Target.BUILD_VILLAGE:
       return {
