@@ -2,6 +2,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ClickNavigationButton,
+  ChangeDate,
   HideResult,
   SelectNo,
   SelectOption,
@@ -18,6 +19,7 @@ export interface State {
 }
 type Action =
   | ClickNavigationButton
+  | ChangeDate
   | HideResult
   | SelectNo
   | SelectOption
@@ -34,6 +36,7 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.global.CHANGE_DATE:
     case ActionTypes.global.HIDE_RESULT:
     case ActionTypes.global.SELECT_NO:
     case ActionTypes.global.SELECT_YES:
