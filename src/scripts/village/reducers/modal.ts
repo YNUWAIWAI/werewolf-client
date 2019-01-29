@@ -1,11 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SelectNo, SelectOption, SelectYes} from '../actions'
+import {ChangePhase, SelectNo, SelectOption, SelectYes} from '../actions'
 
 export interface State {
   readonly id: number
   readonly visible: boolean
 }
 type Action =
+  | ChangePhase
   | SelectNo
   | SelectOption
   | SelectYes
@@ -21,6 +22,7 @@ const modal = (state: State = initialState, action: Action): State => {
         id: action.agentId,
         visible: true
       }
+    case ActionTypes.global.CHANGE_PHASE:
     case ActionTypes.global.SELECT_NO:
     case ActionTypes.global.SELECT_YES:
       return {
