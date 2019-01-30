@@ -22,10 +22,6 @@ storiesOf('village|Modal', module)
     </Provider>
   )
   .add('default', () => {
-    const timer = {
-      limit: 10,
-      phase: village.Phase.night
-    }
     const story =
       <Modal
         descriptionId="Modal.Description.dayVote"
@@ -34,7 +30,6 @@ storiesOf('village|Modal', module)
         id={1}
         image="https://werewolf.world/image/0.1/Walter.jpg"
         name="ヴァルター"
-        timer={timer}
         visible
       />
 

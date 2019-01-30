@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import {number, withKnobs} from '@storybook/addon-knobs'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'

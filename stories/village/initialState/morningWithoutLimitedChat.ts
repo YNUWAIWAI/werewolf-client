@@ -1,5 +1,6 @@
+/* global village */
 import {ReducerState} from '../../../src/scripts/village/reducers'
-export default <ReducerState>{
+const state: ReducerState = {
   agents: {
     all: [
       {
@@ -1402,5 +1403,11 @@ export default <ReducerState>{
       },
       'numberOfAgents': 1
     }
+  },
+  timer: {
+    start: new Date('2006-10-07T12:06:56.568+09:00').getTime(),
+    time: 0
   }
 }
+
+export default state

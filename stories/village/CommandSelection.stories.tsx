@@ -90,17 +90,12 @@ storiesOf('village|Command/CommandSelection', module)
         name: 'ヤコブ'
       }
     ]
-    const timer = {
-      limit: 90,
-      phase: village.Phase.day
-    }
     const story =
       <CommandSelection
         agents={agents}
         descriptionId="CommandSelection.Description.dayVote.unfixed"
         fixed={false}
         handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
-        timer={timer}
       />
 
     return story

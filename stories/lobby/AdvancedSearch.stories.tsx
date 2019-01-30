@@ -1,3 +1,4 @@
+/* global lobby */
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
 import AdvancedSearch, {Props} from '../../src/scripts/lobby/components/templates/AdvancedSearch'

@@ -1,3 +1,4 @@
+/* global village */
 /* eslint sort-keys: 0 */
 import * as React from 'react'
 import Result, {Props} from '../../src/scripts/village/components/organisms/Result'
