@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import {number, select, withKnobs} from '@storybook/addon-knobs'
 import InfoDay from '../../src/scripts/village/components/molecules/InfoDay'
@@ -29,10 +30,6 @@ storiesOf('village|Info/InfoDay', module)
       ],
       village.Phase.day
     )
-    const timer = {
-      limit: number('limit', 10),
-      phase
-    }
     const story =
       <Provider store={store}>
         <IntlProvider>
@@ -40,7 +37,6 @@ storiesOf('village|Info/InfoDay', module)
             <InfoDay
               date={date}
               phase={phase}
-              timer={timer}
             />
           </div>
         </IntlProvider>
@@ -68,10 +64,6 @@ storiesOf('village|Info/InfoDay', module)
       ],
       village.Phase.day
     )
-    const timer = {
-      limit: number('limit', 10),
-      phase
-    }
     const story =
       <Provider store={store}>
         <IntlProvider>
@@ -79,7 +71,6 @@ storiesOf('village|Info/InfoDay', module)
             <InfoDay
               date={date}
               phase={phase}
-              timer={timer}
             />
           </div>
         </IntlProvider>

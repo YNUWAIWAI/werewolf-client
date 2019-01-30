@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import Info from '../../src/scripts/village/components/organisms/Info'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'

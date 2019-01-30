@@ -1,5 +1,6 @@
+/* global village */
 import {ReducerState} from '../../../src/scripts/village/reducers'
-export default <ReducerState>{
+const state: ReducerState = {
   agents: {
     all: []
   },
@@ -75,7 +76,7 @@ export default <ReducerState>{
   hideButton: {
     hide: false
   },
-  language: 'ja',
+  language: village.Language.ja,
   modal: {
     id: -1,
     visible: false
@@ -97,12 +98,18 @@ export default <ReducerState>{
     summary: {
       kind: 'audience',
       loserTeam: new Set(),
-      winnerTeam: 'villager'
+      winnerTeam: village.Team.villager
     },
     visible: false,
     winners: []
   },
   roles: {
     all: []
+  },
+  timer: {
+    start: new Date('2006-10-07T12:06:56.568+09:00').getTime(),
+    time: 0
   }
 }
+
+export default state

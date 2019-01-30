@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import Chat, {Props} from '../../src/scripts/village/components/organisms/Chat'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'

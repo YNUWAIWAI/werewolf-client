@@ -1,8 +1,10 @@
+/* global lobby */
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
 import WaitingForPlayers, {Props} from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
+import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
@@ -190,9 +192,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   )
   .add('15 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -255,9 +259,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('14 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -320,9 +326,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('13 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -385,9 +393,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('12 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -450,9 +460,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('11 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -515,9 +527,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('10 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -580,9 +594,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('9 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -645,9 +661,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('8 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -710,9 +728,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('7 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -775,9 +795,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('6 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -840,9 +862,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('5 players', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
@@ -905,9 +929,11 @@ storiesOf('lobby|WaitingForPlayers', module)
   })
   .add('long comment', () => {
     const kickOut = (token: lobby.Token) => () => {
-      console.log(`kick out ${token}`)
+      action(`kick out ${token}`)
     }
-    const transition = () => {}
+    const transition = () => {
+      action('transition')
+    }
     const menuItems = [
       {
         id: 'Menu.playGame',
