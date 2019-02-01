@@ -4,6 +4,7 @@ const config = require('./config')
 
 module.exports = {
   entry: {
+    landing: './src/scripts/landing',
     lobby: './src/scripts/lobby',
     village: './src/scripts/village'
   },
