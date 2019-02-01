@@ -28,10 +28,10 @@ const ids = [
   'login-label-password',
   'login-submit',
   // 'signup-confirmation',
-  'signup-email',
   'signup-error',
-  'signup-name',
-  'signup-password',
+  'signup-label-email',
+  'signup-label-name',
+  'signup-label-password',
   'signup-submit'
 ]
 
