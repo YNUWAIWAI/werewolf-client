@@ -1,7 +1,7 @@
-import en from './en'
-import fr from './fr'
-import it from './it'
-import ja from './ja'
+import enMessages from './en'
+import frMessages from './fr'
+import itMessages from './it'
+import jaMessages from './ja'
 
 export const enum Language {
   en = 'en',
@@ -16,13 +16,13 @@ interface Messages {
 export const getMessages = (locale: Language): Messages => {
   switch (locale) {
     case 'en':
-      return en
+      return enMessages
     case 'fr':
-      return fr
+      return frMessages
     case 'it':
-      return it
+      return itMessages
     case 'ja':
-      return ja
+      return jaMessages
     default:
       throw Error(`${locale} is unsuported`)
   }
