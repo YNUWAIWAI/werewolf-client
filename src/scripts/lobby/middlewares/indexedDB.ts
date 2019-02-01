@@ -88,6 +88,29 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           return next(action)
       }
     }
+    case ActionTypes.socket.SEND:
+      switch (action.payload.type) {
+        case lobby.PayloadType.buildVillage: {
+          const payload = action.payload
+
+          connectDB()
+            .then(db => {
+
+              const transaction = db.transaction('licosDB', 'readwrite')
+              const objectStore = transaction.objectStore('licosDB')
+
+              updateValue<lobby.Payload$BuildVillage>(
+                objectStore,
+                'buildVillagePayload',
+                payload
+              )
+            })
+
+          return next(action)
+        }
+        default:
+          return next(action)
+      }
     default:
       return next(action)
   }
