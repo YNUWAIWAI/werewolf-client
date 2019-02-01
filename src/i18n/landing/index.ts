@@ -9,8 +9,11 @@ export const enum Language {
   it = 'it',
   ja = 'ja'
 }
+interface Messages {
+  [id: string]: string
+}
 
-export const getMessages = (locale: Language) => {
+export const getMessages = (locale: Language): Messages => {
   switch (locale) {
     case 'en':
       return en
