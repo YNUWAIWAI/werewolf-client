@@ -3,7 +3,7 @@ export default {
   'login-label-email': 'Email',
   'login-label-password': 'Password',
   'login-submit': 'Login',
-  // 'signup-confirmation': '',
+  'signup-confirmation': 'Please agree to our <a href="terms" target="_blank">Terms, Data Policy and Cookies Policy</a> before signing up.',
   'signup-error': 'Invalid name, email or password',
   'signup-label-email': 'Email',
   'signup-label-name': 'Name',

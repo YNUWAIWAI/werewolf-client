@@ -19,7 +19,11 @@ const insertText = (id: string) => {
   const elem = document.getElementById(id)
 
   if (elem) {
-    elem.textContent = messages[id]
+    if (id === 'signup-confirmation') {
+      elem.innerHTML = messages[id]
+    } else {
+      elem.textContent = messages[id]
+    }
   }
 }
 const ids = [
