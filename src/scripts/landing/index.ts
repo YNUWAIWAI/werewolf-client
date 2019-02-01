@@ -19,7 +19,7 @@ const insertText = (id: string) => {
 
   if (elem) {
     if (id === 'signup-confirmation') {
-      elem.innerHTML = messages[id]
+      elem.insertAdjacentHTML('afterbegin', messages[id])
     } else {
       elem.textContent = messages[id]
     }
