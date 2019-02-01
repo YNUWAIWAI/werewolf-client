@@ -1,18 +1,17 @@
 import {Language, getMessages} from '../../i18n/landing'
 
 const lang = (() => {
-  switch (navigator.language) {
-    case 'en':
-      return Language.en
-    case 'fr':
-      return Language.fr
-    case 'it':
-      return Language.it
-    case 'ja':
-      return Language.ja
-    default:
-      return Language.en
+  if ((/^eng?/).test(navigator.language)) {
+    return Language.en
+  } else if ((/^fr[ae]?/).test(navigator.language)) {
+    return Language.fr
+  } else if ((/^ita?/).test(navigator.language)) {
+    return Language.it
+  } else if ((/^j(a(?!v)|pn)/).test(navigator.language)) {
+    return Language.ja
   }
+
+  return Language.en
 })()
 const messages = getMessages(lang)
 const insertText = (id: string) => {
