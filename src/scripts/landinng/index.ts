@@ -29,6 +29,7 @@ const ids = [
   'login-submit',
   'signup-confirmation',
   'signup-email',
+  'signup-error',
   'signup-name',
   'signup-password',
   'signup-submit'

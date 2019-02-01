@@ -1,11 +1,12 @@
 export default {
-  'login-error': 'Invalid email or password',
-  'login-label-email': 'Email',
-  'login-label-password': 'Password',
-  'login-submit': 'Login',
+  'login-error': 'メールアドレス，またはパスワードが正しくないです',
+  'login-label-email': 'メールアドレス',
+  'login-label-password': 'パスワード',
+  'login-submit': 'ログイン',
   // 'signup-confirmation': '',
-  'signup-email': 'Email',
-  'signup-name': 'Name',
-  'signup-password': 'Password',
-  'signup-submit': 'Signup'
+  'signup-email': 'メールアドレス',
+  'signup-error': 'ユーザー名，メールアドレス，またはパスワードが正しくないです',
+  'signup-name': 'ユーザー名',
+  'signup-password': 'パスワード',
+  'signup-submit': '新規登録'
 }
