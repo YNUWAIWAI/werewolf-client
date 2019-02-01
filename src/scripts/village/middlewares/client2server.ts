@@ -219,7 +219,7 @@ const client2server: Middleware = store => next => action => {
           return next(action)
         }
         case village.Message.playerMessage: {
-          if (action.payload.phase === village.Phase.flavorText) {
+          if (action.payload.phase === village.Phase.flavorText || action.payload.phase === village.Phase.result) {
             return next(action)
           }
           const payload: village.Payload$receivedPlayerMessage = {
