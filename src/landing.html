@@ -21,46 +21,42 @@
   </div>
   @form(action = routes.AuthController.loginResult(), 'class->"login") {
     @if(loginForm.hasErrors) {
-      <p class="error" id="login-error">
-        Invalid email or password
-      </p>
+      <p class="error" id="login-error"></p>
     }
     <div class="field">
       <dl id="login-email_field">
-        <dt><label class="label" for="login-email" id="login-label-email">Email</label></dt>
+        <dt><label class="label" for="login-email" id="login-label-email"></label></dt>
         <dd><input type="text" name="email" id="login-email" class="input" value="" autocomplete="off" autofocus required></dd>
       </dl>
     </div>
     <div class="field">
       <dl id="login-divassword_field">
-        <dt><label class="label" for="login-password" id="login-label-password">Password</label></dt>
+        <dt><label class="label" for="login-password" id="login-label-password"></label></dt>
         <dd><input type="password" name="password" id="login-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
       </dl>
     </div>
     @CSRF.formField
-    <button class="button" id="login-submit" type="submit">Login</button>
+    <button class="button" id="login-submit" type="submit"></button>
   }
   @form(action = routes.AuthController.signupResult(), 'class->"signup") {
     @if(signupForm.hasErrors) {
-      <p class="error" id="signup-error">
-        Invalid name, email or password
-      </p>
+      <p class="error" id="signup-error"></p>
     }
     <div class="field">
       <dl id="signup-name_field">
-        <dt><label class="label" for="signup-name" id="signup-label-name">Name</label></dt>
+        <dt><label class="label" for="signup-name" id="signup-label-name"></label></dt>
         <dd><input type="text" name="name" id="signup-name" class="input" value="" autocomplete="off" required></dd>
       </dl>
     </div>
     <div class="field">
       <dl id="signup-email_field">
-        <dt><label class="label" for="signup-email" id="signup-label-email">Email</label></dt>
+        <dt><label class="label" for="signup-email" id="signup-label-email"></label></dt>
         <dd><input type="text" name="email" id="signup-email" class="input" value="" autocomplete="off" required></dd>
       </dl>
     </div>
     <div class="field">
       <dl id="signup-password_field">
-        <dt><label class="label" for="signup-password" id="signup-label-password">Password</label></dt>
+        <dt><label class="label" for="signup-password" id="signup-label-password"></label></dt>
         <dd><input type="password" name="password" id="signup-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
       </dl>
     </div>
@@ -68,6 +64,6 @@
     <p class="confirmation" id="signup-confirmation">
       Please agree to our <a href="terms" target="_blank" rel="noreferrer noopener">Terms, Data Policy and Cookies Policy</a> before signing up.
     </p>
-    <button class="button" id="signup-submit" type="submit">Signup</button>
+    <button class="button" id="signup-submit" type="submit"></button>
   }
 }
