@@ -1,12 +1,13 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePredictionBoard, SocketMessage} from '../actions'
-import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
 import {
   getPlayableRoles,
+  just,
   strToAgentStatus,
   strToRoleId
 } from '../util'
+import {ORDERED_ROLE_LIST} from '../constants/Role'
 
 export interface State {
   readonly playerStatus: {
@@ -40,27 +41,59 @@ type Action =
 type Agents = NonNullable<village.Payload$systemMessage['agent']>
 type Roles = NonNullable<village.Payload$systemMessage['role']>
 
-const updatePredictionTable = (roles: Roles, table: Table): Table => {
+const updatePredictionTable = (agents: Agents, roles: Roles, table: Table): Table => {
+  const allAgentId = agents.map(agent => String(agent.id))
+  const allRoleId = roles
+    .filter(role => role.numberOfAgents > 0)
+    .map(role => strToRoleId(role.name.en))
+
   roles
     .filter(role => role.numberOfAgents > 0)
     .forEach(role => {
+      if (typeof role.board === 'undefined') {
+        return
+      }
       const roleId = strToRoleId(role.name.en)
 
-      if (
-        role.isMine &&
-        PREDICTION.includes(roleId) &&
-        role.board
-      ) {
-        role.board.forEach(b => {
-          const agentId = String(b.agent.id)
+      role.board.forEach(b => {
+        const agentId = String(b.agent.id)
+        const state = b.polarity === village.Polarity.positive ? village.BoardState.CIRCLE : village.BoardState.FILL
 
-          table[agentId][roleId] = {
-            date: b.date,
-            fixed: true,
-            state: b.polarity === village.Polarity.positive ? village.BoardState.CIRCLE : village.BoardState.FILL
-          }
-        })
-      }
+        table[agentId][roleId] = {
+          date: b.date,
+          fixed: true,
+          state
+        }
+        const numberOfCircle = allAgentId
+          .filter(id => just(table[id][roleId]).state === village.BoardState.CIRCLE)
+          .length
+
+        if (numberOfCircle === role.numberOfAgents) {
+          allAgentId.forEach(id => {
+            if (just(table[id][roleId]).fixed) {
+              if (just(table[id][roleId]).state === village.BoardState.CIRCLE) {
+                allRoleId.forEach(roleId_ => {
+                  if (just(table[id][roleId_]).fixed) {
+                    return
+                  }
+                  table[id][roleId_] = {
+                    date: b.date,
+                    fixed: true,
+                    state: village.BoardState.FILL
+                  }
+                })
+              }
+
+              return
+            }
+            table[id][roleId] = {
+              date: b.date,
+              fixed: true,
+              state: village.BoardState.FILL
+            }
+          })
+        }
+      })
     })
 
   return table
@@ -78,35 +111,15 @@ const initPredictionTable = (agents: Agents, roles: Roles): Table => {
       .forEach(role => {
         const roleId = strToRoleId(role.name.en)
 
-        if (agent.isMine && role.isMine) {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: true,
-            state: village.BoardState.CIRCLE
-          }
-        } else if (agent.isMine && !role.isMine) {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: true,
-            state: village.BoardState.FILL
-          }
-        } else if (!agent.isMine && role.isMine && role.numberOfAgents === 1) {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: true,
-            state: village.BoardState.FILL
-          }
-        } else {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: false,
-            state: village.BoardState.QUESTION
-          }
+        table[agentId][roleId] = {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
         }
       })
   })
 
-  return updatePredictionTable(roles, table)
+  return updatePredictionTable(agents, roles, table)
 }
 
 export const initialState = {
@@ -135,7 +148,7 @@ const prediction = (state: State = initialState, action: Action): State => {
             return initPredictionTable(agents, roles)
           }
 
-          return updatePredictionTable(roles, state.table)
+          return updatePredictionTable(agents, roles, state.table)
         })()
         const roleStatus: RoleStatus =
           roles
