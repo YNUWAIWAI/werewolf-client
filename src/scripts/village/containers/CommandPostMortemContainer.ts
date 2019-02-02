@@ -16,6 +16,10 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
       type: ActionTypes.Navigation.SHOW_RESULT
     },
     {
+      id: 'CommandNavigation.nextGame',
+      type: ActionTypes.Navigation.NEXT_GAME
+    },
+    {
       id: 'CommandNavigation.returnToLobby',
       type: ActionTypes.Navigation.RETURN_TO_LOBBY
     }

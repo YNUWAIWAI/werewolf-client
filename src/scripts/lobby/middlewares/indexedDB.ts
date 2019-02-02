@@ -59,6 +59,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                   window.location.replace(`${window.location.origin}/village`)
                 })
             })
+            .catch(reason => console.error(reason))
 
           return next(action)
         }
@@ -80,7 +81,13 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                   villageId: payload.village.id
                 }
               )
+              updateValue<boolean>(
+                objectStore,
+                'isHost',
+                state.waitingForPlayers.players.some(player => player.isHost && player.isMe)
+              )
             })
+            .catch(reason => console.error(reason))
 
           return next(action)
         }
@@ -105,6 +112,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                 payload
               )
             })
+            .catch(reason => console.error(reason))
 
           return next(action)
         }
