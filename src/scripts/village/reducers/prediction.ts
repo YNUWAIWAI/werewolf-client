@@ -64,35 +64,34 @@ const updatePredictionTable = (agents: Agents, roles: Roles, table: Table): Tabl
           fixed: true,
           state
         }
-        const numberOfCircle = allAgentId
-          .filter(id => just(table[id][roleId]).state === village.BoardState.CIRCLE)
+        const numberOfFixedCircle = allAgentId
+          .filter(id => just(table[id][roleId]).fixed && just(table[id][roleId]).state === village.BoardState.CIRCLE)
           .length
 
-        if (numberOfCircle === role.numberOfAgents) {
-          allAgentId.forEach(id => {
-            if (just(table[id][roleId]).fixed) {
-              if (just(table[id][roleId]).state === village.BoardState.CIRCLE) {
-                allRoleId.forEach(roleId_ => {
-                  if (just(table[id][roleId_]).fixed) {
-                    return
-                  }
-                  table[id][roleId_] = {
-                    date: b.date,
-                    fixed: true,
-                    state: village.BoardState.FILL
-                  }
-                })
-              }
-
-              return
-            }
+        if (numberOfFixedCircle < role.numberOfAgents) {
+          return
+        }
+        allAgentId.forEach(id => {
+          if (!just(table[id][roleId]).fixed) {
             table[id][roleId] = {
               date: b.date,
               fixed: true,
               state: village.BoardState.FILL
             }
-          })
-        }
+          }
+          if (just(table[id][roleId]).state === village.BoardState.CIRCLE) {
+            allRoleId.forEach(roleId_ => {
+              if (just(table[id][roleId_]).fixed) {
+                return
+              }
+              table[id][roleId_] = {
+                date: b.date,
+                fixed: true,
+                state: village.BoardState.FILL
+              }
+            })
+          }
+        })
       })
     })
 
