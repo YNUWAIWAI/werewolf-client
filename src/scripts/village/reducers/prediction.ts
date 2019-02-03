@@ -41,12 +41,7 @@ type Action =
 type Agents = NonNullable<village.Payload$systemMessage['agent']>
 type Roles = NonNullable<village.Payload$systemMessage['role']>
 
-const updatePredictionTable = (agents: Agents, roles: Roles, table: Table): Table => {
-  const allAgentId = agents.map(agent => String(agent.id))
-  const allRoleId = roles
-    .filter(role => role.numberOfAgents > 0)
-    .map(role => strToRoleId(role.name.en))
-
+const updatePredictionTable = (roles: Roles, table: Table): Table => {
   roles
     .filter(role => role.numberOfAgents > 0)
     .forEach(role => {
@@ -64,34 +59,6 @@ const updatePredictionTable = (agents: Agents, roles: Roles, table: Table): Tabl
           fixed: true,
           state
         }
-        const numberOfFixedCircle = allAgentId
-          .filter(id => just(table[id][roleId]).fixed && just(table[id][roleId]).state === village.BoardState.CIRCLE)
-          .length
-
-        if (numberOfFixedCircle < role.numberOfAgents) {
-          return
-        }
-        allAgentId.forEach(id => {
-          if (!just(table[id][roleId]).fixed) {
-            table[id][roleId] = {
-              date: b.date,
-              fixed: true,
-              state: village.BoardState.FILL
-            }
-          }
-          if (just(table[id][roleId]).state === village.BoardState.CIRCLE) {
-            allRoleId.forEach(roleId_ => {
-              if (just(table[id][roleId_]).fixed) {
-                return
-              }
-              table[id][roleId_] = {
-                date: b.date,
-                fixed: true,
-                state: village.BoardState.FILL
-              }
-            })
-          }
-        })
       })
     })
 
@@ -118,7 +85,7 @@ const initPredictionTable = (agents: Agents, roles: Roles): Table => {
       })
   })
 
-  return updatePredictionTable(agents, roles, table)
+  return updatePredictionTable(roles, table)
 }
 
 export const initialState = {
@@ -147,7 +114,7 @@ const prediction = (state: State = initialState, action: Action): State => {
             return initPredictionTable(agents, roles)
           }
 
-          return updatePredictionTable(agents, roles, state.table)
+          return updatePredictionTable(roles, state.table)
         })()
         const roleStatus: RoleStatus =
           roles
