@@ -40,13 +40,13 @@ describe('<ChatText />', () => {
     expect(wrapper.find('p')).toHaveLength(1)
   })
   test('text="text\\n\\r\\ntext"', () => {
-    const wrapper = shallow(<ChatText text="text\n\r\ntext" />)
+    const wrapper = shallow(<ChatText text={'text\n\r\ntext'} />)
 
     expect(wrapper.text()).toBe('texttext')
     expect(wrapper.find('p')).toHaveLength(2)
   })
   test('text="text>>>1\\ntext"', () => {
-    const wrapper = shallow(<ChatText text="text>>1\ntext" />)
+    const wrapper = shallow(<ChatText text={'text>>1\ntext'} />)
 
     expect(wrapper.text()).toBe('text>>1text')
     expect(wrapper.find('p')).toHaveLength(2)

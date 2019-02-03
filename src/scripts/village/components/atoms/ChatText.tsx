@@ -5,7 +5,7 @@ const getChunkId = idGenerater('chunk')
 
 const parseChat = (text: string) =>
   text
-    .split(/(?:\\n|\\r)+/)
+    .split(/(?:\n|\r)+/)
     .map(chunk => {
       const parsedText = chunk
         .split(/(>>\d+)/)
