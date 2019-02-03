@@ -349,3 +349,43 @@ storiesOf('village|Chat', module)
 
     return story
   })
+  .add('改行', () => {
+    const allIds = ['delimeter1', 'chat1', 'chat0', 'delimeter0']
+    const byId: Props['byId'] = {
+      'chat0': {
+        id: 1,
+        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        intensionalDisclosureRange: village.Channel.public,
+        isMine: true,
+        name: 'ゲルト',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:20.000Z',
+        text: 'text\ntext',
+        type: 'item'
+      },
+      'chat1': {
+        id: 2,
+        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        intensionalDisclosureRange: village.Channel.public,
+        isMine: false,
+        name: 'ヴァルター',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'text\n\r\ntext',
+        type: 'item'
+      },
+      'delimeter0': {
+        date: 1,
+        type: 'delimeter'
+      },
+      'delimeter1': {
+        date: -1,
+        type: 'delimeter'
+      }
+    }
+    const story = <Chat allIds={allIds} byId={byId} />
+
+    return story
+  })
