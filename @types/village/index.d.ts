@@ -372,7 +372,7 @@ declare namespace village {
   }
   interface PayloadBase {
     '@id'?: string
-    '@payload'?: Message
+    '@payload'?: Message | PayloadType
     'type'?: PayloadType
   }
   interface Payload$boardMessage extends Base {
@@ -495,10 +495,12 @@ declare namespace village {
     villageId: number
   }
   interface Payload$nextGameInvitation extends PayloadBase {
+    '@payload': PayloadType.nextGameInvitation
     type: PayloadType.nextGameInvitation
     villageId: number
   }
   interface Payload$nextGameInvitationIsClosed extends PayloadBase {
+    '@payload': PayloadType.nextGameInvitationIsClosed
     type: PayloadType.nextGameInvitationIsClosed
   }
   interface Payload$receivedFlavorTextMessage extends PayloadBase {
