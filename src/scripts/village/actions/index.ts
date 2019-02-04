@@ -18,7 +18,30 @@ export const socket = {
   }),
   message: (payload: village.Payload) => {
     if (typeof payload['@id'] === 'undefined') {
-      throw Error('Unkonown Message')
+      switch (payload.type) {
+        case village.PayloadType.nextGameInvitation: {
+          const action: SocketMessageReturnType<village.Payload$nextGameInvitation> = {
+            payload: {
+              ... payload as village.Payload$nextGameInvitation
+            },
+            type: ActionTypes.socket.MESSAGE
+          }
+
+          return action
+        }
+        case village.PayloadType.nextGameInvitationIsClosed: {
+          const action: SocketMessageReturnType<village.Payload$nextGameInvitationIsClosed> = {
+            payload: {
+              ... payload as village.Payload$nextGameInvitationIsClosed
+            },
+            type: ActionTypes.socket.MESSAGE
+          }
+
+          return action
+        }
+        default:
+          throw Error('Unkonown Message')
+      }
     }
     const message = strToMessage(payload['@id'])
 
