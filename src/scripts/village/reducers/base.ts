@@ -46,23 +46,33 @@ export const initialState: State = {
 }
 const base = (state: State = initialState, action: Action): State => {
   if (action.type === ActionTypes.socket.MESSAGE) {
-    return {
-      '@id': getBaseUri(action.payload['@id']),
-      'clientTimestamp': action.payload.clientTimestamp,
-      'date': action.payload.date,
-      'intensionalDisclosureRange': action.payload.intensionalDisclosureRange,
-      'phase': action.payload.phase,
-      'phaseStartTime': action.payload.phaseStartTime,
-      'phaseTimeLimit': action.payload.phaseTimeLimit,
-      'serverTimestamp': action.payload.serverTimestamp,
-      'token': action.payload.token,
-      'village': {
-        '@context': action.payload.village['@context'],
-        '@id': action.payload.village['@id'],
-        'id': action.payload.village.id,
-        'lang': action.payload.village.lang,
-        'name': action.payload.village.name,
-        'totalNumberOfAgents': action.payload.village.totalNumberOfAgents
+    if (
+      action.payload['@payload'] === village.Message.boardMessage ||
+      action.payload['@payload'] === village.Message.errorMessage ||
+      action.payload['@payload'] === village.Message.flavorTextMessage ||
+      action.payload['@payload'] === village.Message.playerMessage ||
+      action.payload['@payload'] === village.Message.scrollMessage ||
+      action.payload['@payload'] === village.Message.systemMessage ||
+      action.payload['@payload'] === village.Message.voteMessage
+    ) {
+      return {
+        '@id': getBaseUri(action.payload['@id']),
+        'clientTimestamp': action.payload.clientTimestamp,
+        'date': action.payload.date,
+        'intensionalDisclosureRange': action.payload.intensionalDisclosureRange,
+        'phase': action.payload.phase,
+        'phaseStartTime': action.payload.phaseStartTime,
+        'phaseTimeLimit': action.payload.phaseTimeLimit,
+        'serverTimestamp': action.payload.serverTimestamp,
+        'token': action.payload.token,
+        'village': {
+          '@context': action.payload.village['@context'],
+          '@id': action.payload.village['@id'],
+          'id': action.payload.village.id,
+          'lang': action.payload.village.lang,
+          'name': action.payload.village.name,
+          'totalNumberOfAgents': action.payload.village.totalNumberOfAgents
+        }
       }
     }
   }

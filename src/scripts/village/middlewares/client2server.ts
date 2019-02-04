@@ -140,7 +140,7 @@ const client2server: Middleware = store => next => action => {
     case ActionTypes.global.READY: {
       const payload: village.Payload$ready = {
         token: action.token,
-        type: 'ready',
+        type: village.PayloadType.ready,
         villageId: action.villageId
       }
 
@@ -210,7 +210,7 @@ const client2server: Middleware = store => next => action => {
             date: action.payload.date,
             phase: action.payload.phase,
             token: action.payload.token,
-            type: 'receivedFlavorTextMessage',
+            type: village.PayloadType.receivedFlavorTextMessage,
             villageId: action.payload.village.id
           }
 
@@ -226,7 +226,7 @@ const client2server: Middleware = store => next => action => {
             clientTimestamp: action.payload.clientTimestamp,
             serverTimestamp: action.payload.serverTimestamp,
             token: action.payload.token,
-            type: 'receivedPlayerMessage',
+            type: village.PayloadType.receivedPlayerMessage,
             villageId: action.payload.village.id
           }
 
@@ -239,7 +239,7 @@ const client2server: Middleware = store => next => action => {
             date: action.payload.date,
             phase: action.payload.phase,
             token: action.payload.token,
-            type: 'receivedSystemMessage',
+            type: village.PayloadType.receivedSystemMessage,
             villageId: action.payload.village.id
           }
 
