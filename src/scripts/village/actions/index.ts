@@ -22,7 +22,8 @@ export const socket = {
         case village.PayloadType.nextGameInvitation: {
           const action: SocketMessageReturnType<village.Payload$nextGameInvitation> = {
             payload: {
-              ... payload as village.Payload$nextGameInvitation
+              ... payload as village.Payload$nextGameInvitation,
+              '@payload': village.PayloadType.nextGameInvitation
             },
             type: ActionTypes.socket.MESSAGE
           }
@@ -32,7 +33,8 @@ export const socket = {
         case village.PayloadType.nextGameInvitationIsClosed: {
           const action: SocketMessageReturnType<village.Payload$nextGameInvitationIsClosed> = {
             payload: {
-              ... payload as village.Payload$nextGameInvitationIsClosed
+              ... payload as village.Payload$nextGameInvitationIsClosed,
+              '@payload': village.PayloadType.nextGameInvitationIsClosed
             },
             type: ActionTypes.socket.MESSAGE
           }
