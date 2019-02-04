@@ -49,7 +49,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -81,7 +84,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -113,7 +119,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -145,7 +154,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -177,7 +189,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -209,7 +224,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -241,7 +259,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -273,7 +294,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -305,7 +329,10 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
@@ -345,12 +372,15 @@ storiesOf('village|Chat', module)
         type: 'delimeter'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
   .add('改行', () => {
-    const allIds = ['delimeter1', 'chat1', 'chat0', 'delimeter0']
+    const allIds = ['delimeter1', 'chat3', 'chat2', 'chat1', 'chat0', 'delimeter0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -373,7 +403,31 @@ storiesOf('village|Chat', module)
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
-        text: 'text\n\r\ntext',
+        text: '改行\n\r\n複数',
+        type: 'item'
+      },
+      'chat2': {
+        id: 2,
+        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        intensionalDisclosureRange: village.Channel.public,
+        isMine: false,
+        name: 'ヴァルター',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:09.000Z',
+        text: 'longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongtext\ntext',
+        type: 'item'
+      },
+      'chat3': {
+        id: 2,
+        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        intensionalDisclosureRange: village.Channel.public,
+        isMine: false,
+        name: 'ヴァルター',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:08.000Z',
+        text: '最後\n改行\n',
         type: 'item'
       },
       'delimeter0': {
@@ -385,7 +439,10 @@ storiesOf('village|Chat', module)
         type: 'delimeter'
       }
     }
-    const story = <Chat allIds={allIds} byId={byId} />
+    const story =
+      <div className="activity">
+        <Chat allIds={allIds} byId={byId} />
+      </div>
 
     return story
   })
