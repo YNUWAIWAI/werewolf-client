@@ -26,7 +26,10 @@ const parseChat = (text: string) =>
         })
 
       return (
-        <p key={getChunkId()}>
+        <p
+          className="chat--text--chunk"
+          key={getChunkId()}
+        >
           {parsedText}
         </p>
       )

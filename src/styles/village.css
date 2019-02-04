@@ -249,7 +249,12 @@ body {
   &--text {
     grid-area: text;
     padding: 1rem 1rem 1rem 0;
-    word-break: break-all;
+
+    &--chunk {
+      font-size: 1rem;
+      line-height: 1.5;
+      word-break: break-all;
+    }
   }
 }
 
