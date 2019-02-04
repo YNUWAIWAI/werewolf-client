@@ -485,6 +485,13 @@ declare namespace village {
     type: 'ready'
     villageId: number
   }
+  interface Payload$nextGameInvitation extends PayloadBase {
+    type: 'nextGameInvitation'
+    villageId: number
+  }
+  interface Payload$nextGameInvitationIsClosed extends PayloadBase {
+    type: 'nextGameInvitationIsClosed'
+  }
   interface Payload$receivedFlavorTextMessage extends PayloadBase {
     date: number
     phase: Phase
@@ -511,6 +518,8 @@ declare namespace village {
     | Payload$errorMessage
     | Payload$flavorTextMessage
     | Payload$playerMessage
+    | Payload$nextGameInvitations
+    | Payload$nextGameInvitationIsClosed
     | Payload$ready
     | Payload$receivedFlavorTextMessage
     | Payload$receivedPlayerMessage
