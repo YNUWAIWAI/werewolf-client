@@ -85,25 +85,23 @@ body {
   }
 
   &--agent {
-    display: block;
+    display: flex;
+    flex-direction: column;
     grid-area: opp;
+    justify-content: center;
     margin: 0 var(--arrow) 0 0;
-    position: relative;
 
-    & > img {
+    &--image {
+      display: block;
       height: var(--chat-image-size);
-      position: absolute;
-      right: 0;
-      top: 0;
       width: var(--chat-image-size);
     }
 
-    & > span {
-      font-size: x-small;
+    &--name {
+      display: block;
+      font-size: 10px;
       overflow: auto;
-      position: absolute;
       text-align: center;
-      top: var(--chat-image-size);
       width: 100%;
       word-break: keep-all;
     }
@@ -249,7 +247,12 @@ body {
   &--text {
     grid-area: text;
     padding: 1rem 1rem 1rem 0;
-    word-break: break-all;
+
+    &--chunk {
+      font-size: 1rem;
+      line-height: 1.5;
+      word-break: break-all;
+    }
   }
 }
 
