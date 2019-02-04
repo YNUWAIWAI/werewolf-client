@@ -518,7 +518,7 @@ declare namespace village {
     | Payload$errorMessage
     | Payload$flavorTextMessage
     | Payload$playerMessage
-    | Payload$nextGameInvitations
+    | Payload$nextGameInvitation
     | Payload$nextGameInvitationIsClosed
     | Payload$ready
     | Payload$receivedFlavorTextMessage
