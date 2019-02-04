@@ -362,9 +362,18 @@ declare namespace village {
       }
     }[]
   }
+  const enum PayloadType {
+    ready = 'ready',
+    nextGameInvitation = 'nextGameInvitation',
+    nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
+    receivedFlavorTextMessage = 'receivedFlavorTextMessage',
+    receivedPlayerMessage = 'receivedPlayerMessage',
+    receivedSystemMessage = 'receivedSystemMessage'
+  }
   interface PayloadBase {
     '@id'?: string
     '@payload'?: Message
+    'type'?: PayloadType
   }
   interface Payload$boardMessage extends Base {
     '@payload'?: Message.boardMessage
@@ -482,35 +491,35 @@ declare namespace village {
   }
   interface Payload$ready extends PayloadBase {
     token: Token
-    type: 'ready'
+    type: PayloadType.ready
     villageId: number
   }
   interface Payload$nextGameInvitation extends PayloadBase {
-    type: 'nextGameInvitation'
+    type: PayloadType.nextGameInvitation
     villageId: number
   }
   interface Payload$nextGameInvitationIsClosed extends PayloadBase {
-    type: 'nextGameInvitationIsClosed'
+    type: PayloadType.nextGameInvitationIsClosed
   }
   interface Payload$receivedFlavorTextMessage extends PayloadBase {
     date: number
     phase: Phase
     token: Token
-    type: 'receivedFlavorTextMessage'
+    type: PayloadType.receivedFlavorTextMessage
     villageId: number
   }
   interface Payload$receivedPlayerMessage extends PayloadBase {
     clientTimestamp: string
     serverTimestamp: string
     token: Token
-    type: 'receivedPlayerMessage'
+    type: PayloadType.receivedPlayerMessage
     villageId: number
   }
   interface Payload$receivedSystemMessage extends PayloadBase {
     date: number
     phase: Phase
     token: Token
-    type: 'receivedSystemMessage'
+    type: PayloadType.receivedSystemMessage
     villageId: number
   }
   type Payload =

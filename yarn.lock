@@ -1657,7 +1657,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./@types/village":
-  version "1.24.0"
+  version "1.25.0"
 
 "@types/webpack-env@*":
   version "1.13.6"
