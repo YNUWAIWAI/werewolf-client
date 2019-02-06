@@ -1,5 +1,6 @@
 /* global village */
 import {ReducerState} from '../../../src/scripts/village/reducers'
+import {Status} from '../../../src/scripts/village/reducers/commandNextButton'
 const state: ReducerState = {
   agents: {
     all: [
@@ -402,6 +403,9 @@ const state: ReducerState = {
       postCount: 0,
       postCountLimit: 10
     }
+  },
+  commandNextButton: {
+    status: Status.inactive
   },
   commandSelection: {
     agents: [],
