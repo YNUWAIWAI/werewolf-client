@@ -5,6 +5,7 @@ import {Navigation} from '../../constants/ActionTypes'
 export interface Props {
   readonly handleClick: (type: Navigation) => void
   readonly items: {
+    readonly className?: string
     readonly disabled?: boolean
     readonly id: string
     readonly type: Navigation
@@ -20,7 +21,7 @@ export default function CommandNavigation(props: Props) {
       {
         text =>
           <button
-            className="command--navigation--button"
+            className={`command--navigation--button ${item.className || ''}`}
             disabled={item.disabled}
             onClick={() => props.handleClick(item.type)}
           >

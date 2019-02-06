@@ -363,8 +363,9 @@ body {
 
   &--navigation {
     display: grid;
-    gap: 0.5rem;
-    width: 30vw;
+    gap: 0.5rem 1rem;
+    grid-template-areas: 'show-result next-game'
+      'show-result return-to-lobby';
 
     &--button {
       align-items: center;
@@ -376,8 +377,35 @@ body {
       display: inline-flex;
       font-size: 1.5rem;
       justify-content: center;
+      min-width: 15vw;
       overflow: hidden;
       padding: 0.5rem;
+
+      &.show-result {
+        grid-area: show-result;
+      }
+
+      &.next-game {
+        grid-area: next-game;
+      }
+
+      &.return-to-lobby {
+        grid-area: return-to-lobby;
+      }
+
+      &:disabled {
+        box-shadow: inset 2px 2px 1px 0 grey;
+        cursor: not-allowed;
+        filter: brightness(50%);
+
+         &:hover {
+          filter: brightness(50%);
+
+          &:active {
+            filter: brightness(50%);
+          }
+        }
+      }
 
       &:hover {
         filter: opacity(85%);
