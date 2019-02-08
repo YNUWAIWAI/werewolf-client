@@ -26,6 +26,26 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.Navigation.NEXT_GAME: {
+      connectDB()
+        .then(db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
+
+          getValue<boolean>(objectStore, 'isHost')
+            .then(result => {
+              if (result) {
+                getValue<lobby.Payload$BuildVillage>(objectStore, 'buildVillagePayload')
+                  .then(result => {
+
+                  })
+              }
+            })
+        })
+        .catch(reason => console.error(reason))
+
+      return next(action)
+    }
     case ActionTypes.indexedDB.INIT: {
       connectDB()
         .then(db => {
