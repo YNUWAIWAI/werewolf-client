@@ -358,6 +358,23 @@ const json: village.Payload$systemMessage = {
       'board': [
         {
           '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#0',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#0/agent#0',
+            'id': 0,
+            'name': {
+              'en': 'Gert',
+              'ja': 'ゲルト'
+            },
+            'image': 'https://werewolf.world/image/0.2/Gert.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
           '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
           'agent': {
             '@context': village.Context.Agent,
@@ -370,6 +387,227 @@ const json: village.Payload$systemMessage = {
             'image': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
           'polarity': village.Polarity.positive,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#2',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#2/agent#2',
+            'id': 2,
+            'name': {
+              'en': 'Moritz',
+              'ja': 'モーリッツ'
+            },
+            'image': 'https://werewolf.world/image/0.2/Moritz.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#3',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#3/agent#3',
+            'id': 3,
+            'name': {
+              'en': 'Simson',
+              'ja': 'ジムゾン'
+            },
+            'image': 'https://werewolf.world/image/0.2/Simson.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#4',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#4/agent#4',
+            'id': 4,
+            'name': {
+              'en': 'Thomas',
+              'ja': 'トーマス'
+            },
+            'image': 'https://werewolf.world/image/0.2/Thomas.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#5',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#5/agent#5',
+            'id': 5,
+            'name': {
+              'en': 'Nicholas',
+              'ja': 'ニコラス'
+            },
+            'image': 'https://werewolf.world/image/0.2/Nicholas.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#6',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#6/agent#6',
+            'id': 6,
+            'name': {
+              'en': 'Dieter',
+              'ja': 'ディーター'
+            },
+            'image': 'https://werewolf.world/image/0.2/Dieter.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#7',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#7/agent#7',
+            'id': 7,
+            'name': {
+              'en': 'Peter',
+              'ja': 'ペーター'
+            },
+            'image': 'https://werewolf.world/image/0.2/Peter.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#8',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#8/agent#8',
+            'id': 8,
+            'name': {
+              'en': 'Lisa',
+              'ja': 'リーザ'
+            },
+            'image': 'https://werewolf.world/image/0.2/Lisa.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#9',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#9/agent#9',
+            'id': 9,
+            'name': {
+              'en': 'Alvin',
+              'ja': 'アルビン'
+            },
+            'image': 'https://werewolf.world/image/0.2/Alvin.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#10',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#10/agent#10',
+            'id': 10,
+            'name': {
+              'en': 'Catalina',
+              'ja': 'カタリナ'
+            },
+            'image': 'https://werewolf.world/image/0.2/Catalina.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#11',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#11/agent#11',
+            'id': 11,
+            'name': {
+              'en': 'Otto',
+              'ja': 'オットー'
+            },
+            'image': 'https://werewolf.world/image/0.2/Otto.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#12',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#12/agent#12',
+            'id': 12,
+            'name': {
+              'en': 'Joachim',
+              'ja': 'ヨアヒム'
+            },
+            'image': 'https://werewolf.world/image/0.2/Joachim.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#13',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#13/agent#13',
+            'id': 13,
+            'name': {
+              'en': 'Pamela',
+              'ja': 'パメラ'
+            },
+            'image': 'https://werewolf.world/image/0.2/Pamela.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#14',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#14/agent#14',
+            'id': 14,
+            'name': {
+              'en': 'Jacob',
+              'ja': 'ヤコブ'
+            },
+            'image': 'https://werewolf.world/image/0.2/Jacob.jpg'
+          },
+          'polarity': village.Polarity.negative,
           'phase': village.Phase.morning,
           'date': 1
         }

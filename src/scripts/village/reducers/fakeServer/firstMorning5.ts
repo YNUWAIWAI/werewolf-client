@@ -190,6 +190,22 @@ const json: village.Payload$systemMessage = {
           'polarity': village.Polarity.negative,
           'phase': village.Phase.morning,
           'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+            'id': 6,
+            'name': {
+              'en': 'Jasmin'
+            },
+            'image': 'https://werewolf.world/image/0.2/jasmin.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
         }
       ]
     },
@@ -221,6 +237,86 @@ const json: village.Payload$systemMessage = {
         },
         {
           '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#1',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#1/agent#1',
+            'id': 1,
+            'name': {
+              'en': 'Susan'
+            },
+            'image': 'https://werewolf.world/image/0.2/susan.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#2',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#2/agent#2',
+            'id': 2,
+            'name': {
+              'en': 'Gavriil'
+            },
+            'image': 'https://werewolf.world/image/0.2/gavriil.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#3',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#3/agent#3',
+            'id': 3,
+            'name': {
+              'en': 'Oliwia'
+            },
+            'image': 'https://werewolf.world/image/0.2/oliwia.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#4',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#4/agent#4',
+            'id': 4,
+            'name': {
+              'en': 'Henrik'
+            },
+            'image': 'https://werewolf.world/image/0.2/henrik.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#5',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#5/agent#5',
+            'id': 5,
+            'name': {
+              'en': 'Fernando'
+            },
+            'image': 'https://werewolf.world/image/0.2/fernando.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
           '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
           'agent': {
             '@context': village.Context.Agent,
@@ -232,6 +328,22 @@ const json: village.Payload$systemMessage = {
             'image': 'https://werewolf.world/image/0.2/jasmin.jpg'
           },
           'polarity': village.Polarity.positive,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#7',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#7/agent#7',
+            'id': 7,
+            'name': {
+              'en': 'Adil'
+            },
+            'image': 'https://werewolf.world/image/0.2/adil.jpg'
+          },
+          'polarity': village.Polarity.negative,
           'phase': village.Phase.morning,
           'date': 1
         }
@@ -258,6 +370,22 @@ const json: village.Payload$systemMessage = {
               'en': 'Ryan'
             },
             'image': 'https://werewolf.world/image/0.2/ryan.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+            'id': 6,
+            'name': {
+              'en': 'Jasmin'
+            },
+            'image': 'https://werewolf.world/image/0.2/jasmin.jpg'
           },
           'polarity': village.Polarity.negative,
           'phase': village.Phase.morning,
@@ -290,6 +418,22 @@ const json: village.Payload$systemMessage = {
           'polarity': village.Polarity.negative,
           'phase': village.Phase.morning,
           'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+            'id': 6,
+            'name': {
+              'en': 'Jasmin'
+            },
+            'image': 'https://werewolf.world/image/0.2/jasmin.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
         }
       ]
     },
@@ -318,6 +462,86 @@ const json: village.Payload$systemMessage = {
           'polarity': village.Polarity.negative,
           'phase': village.Phase.morning,
           'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#1',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#1/agent#1',
+            'id': 1,
+            'name': {
+              'en': 'Susan'
+            },
+            'image': 'https://werewolf.world/image/0.2/susan.jpg'
+          },
+          'polarity': village.Polarity.circle,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#2',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#2/agent#2',
+            'id': 2,
+            'name': {
+              'en': 'Gavriil'
+            },
+            'image': 'https://werewolf.world/image/0.2/gavriil.jpg'
+          },
+          'polarity': village.Polarity.cross,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#3',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#3/agent#3',
+            'id': 3,
+            'name': {
+              'en': 'Oliwia'
+            },
+            'image': 'https://werewolf.world/image/0.2/oliwia.jpg'
+          },
+          'polarity': village.Polarity.question,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#4',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#4/agent#4',
+            'id': 4,
+            'name': {
+              'en': 'Henrik'
+            },
+            'image': 'https://werewolf.world/image/0.2/henrik.jpg'
+          },
+          'polarity': village.Polarity.triangle,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+            'id': 6,
+            'name': {
+              'en': 'Jasmin'
+            },
+            'image': 'https://werewolf.world/image/0.2/jasmin.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
         }
       ]
     },
@@ -342,6 +566,22 @@ const json: village.Payload$systemMessage = {
               'en': 'Ryan'
             },
             'image': 'https://werewolf.world/image/0.2/ryan.jpg'
+          },
+          'polarity': village.Polarity.negative,
+          'phase': village.Phase.morning,
+          'date': 1
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+            'id': 6,
+            'name': {
+              'en': 'Jasmin'
+            },
+            'image': 'https://werewolf.world/image/0.2/jasmin.jpg'
           },
           'polarity': village.Polarity.negative,
           'phase': village.Phase.morning,

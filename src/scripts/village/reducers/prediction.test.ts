@@ -2019,7 +2019,7 @@ describe('socket/MESSAGE', () => {
             villager: {
               date: 1,
               fixed: false,
-              state: '?'
+              state: 'O'
             },
             werewolf: {
               date: 1,
@@ -2051,7 +2051,7 @@ describe('socket/MESSAGE', () => {
             villager: {
               date: 1,
               fixed: false,
-              state: '?'
+              state: 'X'
             },
             werewolf: {
               date: 1,
@@ -2115,7 +2115,7 @@ describe('socket/MESSAGE', () => {
             villager: {
               date: 1,
               fixed: false,
-              state: '?'
+              state: 'Δ'
             },
             werewolf: {
               date: 1,
