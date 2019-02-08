@@ -3,7 +3,6 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePredictionBoard, SocketMessage} from '../actions'
 import {
   getPlayableRoles,
-  just,
   strToAgentStatus,
   strToRoleId
 } from '../util'
@@ -52,12 +51,50 @@ const updatePredictionTable = (roles: Roles, table: Table): Table => {
 
       role.board.forEach(b => {
         const agentId = String(b.agent.id)
-        const state = b.polarity === village.Polarity.positive ? village.BoardState.CIRCLE : village.BoardState.FILL
 
-        table[agentId][roleId] = {
-          date: b.date,
-          fixed: true,
-          state
+        switch (b.polarity) {
+          case village.Polarity.circle:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.CIRCLE
+            }
+            break
+          case village.Polarity.cross:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.CROSS
+            }
+            break
+          case village.Polarity.negative:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: true,
+              state: village.BoardState.FILL
+            }
+            break
+          case village.Polarity.positive:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: true,
+              state: village.BoardState.CIRCLE
+            }
+            break
+          case village.Polarity.triangle:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.TRIANGLE
+            }
+            break
+          case village.Polarity.question:
+          default:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.QUESTION
+            }
         }
       })
     })
