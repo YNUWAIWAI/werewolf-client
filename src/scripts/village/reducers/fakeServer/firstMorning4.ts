@@ -10,6 +10,7 @@ const json: village.Payload$systemMessage = {
   'village': {
     '@context': village.Context.Village,
     '@id': 'https://licos.online/state/0.2/village',
+    'characterLimit': 10,
     'id': 3,
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -141,7 +142,7 @@ const json: village.Payload$systemMessage = {
             },
             'image': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
-          'polarity': village.Polarity.negative,
+          'polarity': village.Polarity.positive,
           'phase': village.Phase.morning,
           'date': 1
         }

@@ -16,6 +16,7 @@ export interface State {
   readonly village: {
     readonly '@context': village.Context.Village
     readonly '@id': string
+    readonly characterLimit: number
     readonly id: number
     readonly lang: village.Language
     readonly name: string
@@ -38,6 +39,7 @@ export const initialState: State = {
   'village': {
     '@context': village.Context.Village,
     '@id': '',
+    'characterLimit': 10,
     'id': 0,
     'lang': village.Language.en,
     'name': '',
@@ -68,6 +70,7 @@ const base = (state: State = initialState, action: Action): State => {
         'village': {
           '@context': action.payload.village['@context'],
           '@id': action.payload.village['@id'],
+          'characterLimit': action.payload.village.characterLimit,
           'id': action.payload.village.id,
           'lang': action.payload.village.lang,
           'name': action.payload.village.name,

@@ -94,8 +94,12 @@ declare namespace village {
     male = 'male'
   }
   const enum Polarity {
+    circle = 'O',
+    cross = 'X',
     negative = 'negative',
-    positive = 'positive'
+    positive = 'positive',
+    question = '?',
+    triangle = 'Δ'
   }
   const enum Context {
     Agent = 'https://werewolf.world/context/0.2/agent.jsonld',
@@ -194,6 +198,7 @@ declare namespace village {
     village: {
       '@context': Context.Village
       '@id': string
+      characterLimit: number
       id: number
       lang: Language
       name: string

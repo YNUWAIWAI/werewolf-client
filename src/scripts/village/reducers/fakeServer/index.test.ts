@@ -6,6 +6,7 @@ import {
   firstMorning2,
   firstMorning3,
   firstMorning4,
+  firstMorning5,
   flavorText,
   myMessageOnChat,
   night,
@@ -106,6 +107,23 @@ test('validate firstMorning3', async () => {
     })
 })
 test('validate firstMorning4', async () => {
+  const ajv = new Ajv()
+
+  expect.hasAssertions()
+  await Promise.all([
+    fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json())
+  ])
+    .then(schemas => {
+      const [schema, ... rest] = schemas
+      const validate = ajv
+        .addSchema(rest)
+        .validate(schema, firstMorning4)
+
+      expect(validate).toBe(true)
+    })
+})
+test('validate firstMorning5', async () => {
   const ajv = new Ajv()
 
   expect.hasAssertions()

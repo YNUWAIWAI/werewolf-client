@@ -82,7 +82,16 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         }
         case village.Message.systemMessage: {
           if (!action.payload.role) {
-            return state
+            return {
+              limited: {
+                ... state.limited,
+                postCountLimit: action.payload.village.characterLimit
+              },
+              public: {
+                ... state.public,
+                postCountLimit: action.payload.village.characterLimit
+              }
+            }
           }
           const role = getMyRole(action.payload.role)
 
@@ -91,15 +100,28 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
             AVAILABLE_FOR_LIMITED_CHAT.includes(strToRoleId(role.name.en))
           ) {
             return {
-              ... state,
               limited: {
                 ... state.limited,
-                available: true
+                available: true,
+                postCountLimit: action.payload.village.characterLimit
+              },
+              public: {
+                ... state.public,
+                postCountLimit: action.payload.village.characterLimit
               }
             }
           }
 
-          return state
+          return {
+            limited: {
+              ... state.limited,
+              postCountLimit: action.payload.village.characterLimit
+            },
+            public: {
+              ... state.public,
+              postCountLimit: action.payload.village.characterLimit
+            }
+          }
         }
         default:
           return state

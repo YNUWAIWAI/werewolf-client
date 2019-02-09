@@ -1,4 +1,4 @@
-import {firstMorning, firstMorning3, firstMorning4, flavorText} from './fakeServer'
+import {firstMorning, firstMorning3, firstMorning4, firstMorning5, flavorText} from './fakeServer'
 import reducer, {initialState} from './prediction'
 import {socket} from '../actions'
 
@@ -1719,7 +1719,7 @@ describe('socket/MESSAGE', () => {
       }
     )
   })
-  test('ignore the role which is not exists', () => {
+  test('ignore the role that is not exists', () => {
     expect(
       reducer(
         initialState,
@@ -1823,6 +1823,391 @@ describe('socket/MESSAGE', () => {
             }
           },
           '3': {
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          }
+        }
+      }
+    )
+  })
+  test('my role is mason', () => {
+    expect(
+      reducer(
+        initialState,
+        socket.message(firstMorning5)
+      )
+    ).toEqual(
+      {
+        playerStatus: [
+          {
+            id: 7,
+            image: 'https://werewolf.world/image/0.2/adil.jpg',
+            name: {
+              en: 'Adil'
+            },
+            status: 'alive'
+          },
+          {
+            id: 5,
+            image: 'https://werewolf.world/image/0.2/fernando.jpg',
+            name: {
+              en: 'Fernando'
+            },
+            status: 'alive'
+          },
+          {
+            id: 2,
+            image: 'https://werewolf.world/image/0.2/gavriil.jpg',
+            name: {
+              en: 'Gavriil'
+            },
+            status: 'alive'
+          },
+          {
+            id: 4,
+            image: 'https://werewolf.world/image/0.2/henrik.jpg',
+            name: {
+              en: 'Henrik'
+            },
+            status: 'alive'
+          },
+          {
+            id: 6,
+            image: 'https://werewolf.world/image/0.2/jasmin.jpg',
+            name: {
+              en: 'Jasmin'
+            },
+            status: 'alive'
+          },
+          {
+            id: 3,
+            image: 'https://werewolf.world/image/0.2/oliwia.jpg',
+            name: {
+              en: 'Oliwia'
+            },
+            status: 'alive'
+          },
+          {
+            id: 0,
+            image: 'https://werewolf.world/image/0.2/ryan.jpg',
+            name: {
+              en: 'Ryan'
+            },
+            status: 'alive'
+          },
+          {
+            id: 1,
+            image: 'https://werewolf.world/image/0.2/susan.jpg',
+            name: {
+              en: 'Susan'
+            },
+            status: 'alive'
+          }
+        ],
+        roleStatus: [
+          {
+            caption: {
+              en: 'Villager'
+            },
+            id: 'villager',
+            image: 'https://werewolf.world/image/0.2/villager.jpg',
+            numberOfAgents: 1
+          },
+          {
+            caption: {
+              en: 'Seer'
+            },
+            id: 'seer',
+            image: 'https://werewolf.world/image/0.2/seer.jpg',
+            numberOfAgents: 1
+          },
+          {
+            caption: {
+              en: 'Medium'
+            },
+            id: 'medium',
+            image: 'https://werewolf.world/image/0.2/medium.jpg',
+            numberOfAgents: 1
+          },
+          {
+            caption: {
+              en: 'Mason'
+            },
+            id: 'mason',
+            image: 'https://werewolf.world/image/0.2/mason.jpg',
+            numberOfAgents: 2
+          },
+          {
+            caption: {
+              en: 'Madman'
+            },
+            id: 'madman',
+            image: 'https://werewolf.world/image/0.2/madman.jpg',
+            numberOfAgents: 1
+          },
+          {
+            caption: {
+              en: 'Werewolf'
+            },
+            id: 'werewolf',
+            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
+            numberOfAgents: 2
+          }
+        ],
+        table: {
+          '0': {
+            madman: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'O'
+            },
+            medium: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            seer: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            villager: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            werewolf: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            }
+          },
+          '1': {
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: 'O'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '2': {
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: 'X'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '3': {
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '4': {
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: 'Δ'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '5': {
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            villager: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            werewolf: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            }
+          },
+          '6': {
+            madman: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'O'
+            },
+            medium: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            seer: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            villager: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            werewolf: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            }
+          },
+          '7': {
+            madman: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            mason: {
+              date: 1,
+              fixed: true,
+              state: 'fill'
+            },
+            medium: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
+            seer: {
+              date: 1,
+              fixed: false,
+              state: '?'
+            },
             villager: {
               date: 1,
               fixed: false,

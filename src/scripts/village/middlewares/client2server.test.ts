@@ -225,7 +225,9 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
+        'characterLimit': 10,
         'id': 3,
         'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -559,6 +561,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'village': {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
+      'characterLimit': 10,
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -630,7 +633,9 @@ describe('POST_CHAT', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
+        'characterLimit': 10,
         'id': 3,
         'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -719,6 +724,7 @@ describe('POST_CHAT', () => {
     'village': {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
+      'characterLimit': 10,
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -1011,7 +1017,9 @@ describe('SELECT_YES', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
+        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
+        'characterLimit': 10,
         'id': 3,
         'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -1092,6 +1100,7 @@ describe('SELECT_YES', () => {
     'village': {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
+      'characterLimit': 10,
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
