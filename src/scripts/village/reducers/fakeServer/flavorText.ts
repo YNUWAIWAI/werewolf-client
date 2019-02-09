@@ -9,6 +9,7 @@ const json: village.Payload$flavorTextMessage = {
   'village': {
     '@context': village.Context.Village,
     '@id': 'https://licos.online/state/0.2/village',
+    'characterLimit': 10,
     'id': 3,
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -34,6 +35,7 @@ const json: village.Payload$flavorTextMessage = {
       'village': {
         '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
+        'characterLimit': 10,
         'id': 3,
         'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -80,6 +82,7 @@ const json: village.Payload$flavorTextMessage = {
       'village': {
         '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
+        'characterLimit': 10,
         'id': 3,
         'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
