@@ -20,6 +20,7 @@ const json: village.Payload$systemMessage = {
   'village': {
     '@context': village.Context.Village,
     '@id': 'https://licos.online/state/0.2/village',
+    'characterLimit': 10,
     'id': 29,
     'name': 'Doubtful Village',
     'totalNumberOfAgents': 8,

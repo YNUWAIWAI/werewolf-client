@@ -24,6 +24,7 @@ const client2server: Middleware = store => next => action => {
         'village': {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
+          'characterLimit': state.base.village.characterLimit,
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
@@ -89,6 +90,7 @@ const client2server: Middleware = store => next => action => {
         'village': {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
+          'characterLimit': state.base.village.characterLimit,
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
@@ -162,6 +164,7 @@ const client2server: Middleware = store => next => action => {
         'village': {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
+          'characterLimit': state.base.village.characterLimit,
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
