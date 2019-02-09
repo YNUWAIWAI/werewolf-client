@@ -32,11 +32,6 @@ export const AVAILABLE_FOR_LIMITED_CHAT = [
   HUNTER
 ]
 
-export const PREDICTION = [
-  SEER,
-  MEDIUM
-]
-
 export const VILLAGER_TEAM = [
   VILLAGER,
   SEER,

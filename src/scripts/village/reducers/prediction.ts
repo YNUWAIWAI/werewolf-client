@@ -1,12 +1,12 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePredictionBoard, SocketMessage} from '../actions'
-import {ORDERED_ROLE_LIST, PREDICTION} from '../constants/Role'
 import {
   getPlayableRoles,
   strToAgentStatus,
   strToRoleId
 } from '../util'
+import {ORDERED_ROLE_LIST} from '../constants/Role'
 
 export interface State {
   readonly playerStatus: {
@@ -44,23 +44,59 @@ const updatePredictionTable = (roles: Roles, table: Table): Table => {
   roles
     .filter(role => role.numberOfAgents > 0)
     .forEach(role => {
+      if (typeof role.board === 'undefined') {
+        return
+      }
       const roleId = strToRoleId(role.name.en)
 
-      if (
-        role.isMine &&
-        PREDICTION.includes(roleId) &&
-        role.board
-      ) {
-        role.board.forEach(b => {
-          const agentId = String(b.agent.id)
+      role.board.forEach(b => {
+        const agentId = String(b.agent.id)
 
-          table[agentId][roleId] = {
-            date: b.date,
-            fixed: true,
-            state: b.polarity === village.Polarity.positive ? village.BoardState.CIRCLE : village.BoardState.FILL
-          }
-        })
-      }
+        switch (b.polarity) {
+          case village.Polarity.circle:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.CIRCLE
+            }
+            break
+          case village.Polarity.cross:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.CROSS
+            }
+            break
+          case village.Polarity.negative:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: true,
+              state: village.BoardState.FILL
+            }
+            break
+          case village.Polarity.positive:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: true,
+              state: village.BoardState.CIRCLE
+            }
+            break
+          case village.Polarity.triangle:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.TRIANGLE
+            }
+            break
+          case village.Polarity.question:
+          default:
+            table[agentId][roleId] = {
+              date: b.date,
+              fixed: false,
+              state: village.BoardState.QUESTION
+            }
+        }
+      })
     })
 
   return table
@@ -78,30 +114,10 @@ const initPredictionTable = (agents: Agents, roles: Roles): Table => {
       .forEach(role => {
         const roleId = strToRoleId(role.name.en)
 
-        if (agent.isMine && role.isMine) {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: true,
-            state: village.BoardState.CIRCLE
-          }
-        } else if (agent.isMine && !role.isMine) {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: true,
-            state: village.BoardState.FILL
-          }
-        } else if (!agent.isMine && role.isMine && role.numberOfAgents === 1) {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: true,
-            state: village.BoardState.FILL
-          }
-        } else {
-          table[agentId][roleId] = {
-            date: 1,
-            fixed: false,
-            state: village.BoardState.QUESTION
-          }
+        table[agentId][roleId] = {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
         }
       })
   })

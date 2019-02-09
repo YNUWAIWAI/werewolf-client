@@ -141,7 +141,7 @@ const json: village.Payload$systemMessage = {
             },
             'image': 'https://werewolf.world/image/0.2/Walter.jpg'
           },
-          'polarity': village.Polarity.negative,
+          'polarity': village.Polarity.positive,
           'phase': village.Phase.morning,
           'date': 1
         }
