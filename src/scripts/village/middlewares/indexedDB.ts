@@ -18,7 +18,10 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
 
-          deleteValue(objectStore, 'village')
+          Promise.all([
+            deleteValue(objectStore, 'village'),
+            deleteValue(objectStore, 'nextGameVillageId')
+          ])
             .then(() => {
               window.location.replace(`${window.location.origin}/lobby`)
             })
