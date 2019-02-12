@@ -368,6 +368,7 @@ declare namespace village {
     }[]
   }
   const enum PayloadType {
+    buildVillage = 'buildVillage',
     ready = 'ready',
     nextGameInvitation = 'nextGameInvitation',
     nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
@@ -494,6 +495,19 @@ declare namespace village {
       id: NonNullable<Agent['id']>
     }
   }
+  interface Payload$buildVillage extends PayloadBase {
+    '@payload': PayloadType.buildVillage
+    avatar: lobby.Payload$BuildVillage['avatar']
+    comment: lobby.Payload$BuildVillage['comment']
+    hostPlayer: lobby.Payload$BuildVillage['hostPlayer']
+    id: lobby.Payload$BuildVillage['id']
+    idForSearching: lobby.Payload$BuildVillage['idForSearching']
+    name: lobby.Payload$BuildVillage['name']
+    playerSetting: lobby.Payload$BuildVillage['playerSetting']
+    roleSetting: lobby.Payload$BuildVillage['roleSetting']
+    token: lobby.Payload$BuildVillage['token']
+    type: PayloadType.buildVillage
+  }
   interface Payload$ready extends PayloadBase {
     token: Token
     type: PayloadType.ready
@@ -530,6 +544,7 @@ declare namespace village {
     villageId: number
   }
   type Payload =
+    |
     | Payload$boardMessage
     | Payload$errorMessage
     | Payload$flavorTextMessage
