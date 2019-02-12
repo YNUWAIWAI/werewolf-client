@@ -369,6 +369,7 @@ declare namespace village {
   }
   const enum PayloadType {
     buildVillage = 'buildVillage',
+    leaveWaitingPage = 'leaveWaitingPage',
     ready = 'ready',
     nextGameInvitation = 'nextGameInvitation',
     nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
@@ -496,7 +497,6 @@ declare namespace village {
     }
   }
   interface Payload$buildVillage extends PayloadBase {
-    '@payload': PayloadType.buildVillage
     avatar: lobby.Payload$BuildVillage['avatar']
     comment: lobby.Payload$BuildVillage['comment']
     hostPlayer: lobby.Payload$BuildVillage['hostPlayer']
@@ -507,6 +507,12 @@ declare namespace village {
     roleSetting: lobby.Payload$BuildVillage['roleSetting']
     token: lobby.Payload$BuildVillage['token']
     type: PayloadType.buildVillage
+  }
+  interface Payload$leaveWaitingPage extends PayloadBase {
+    lobby: lobby.Payload$LeaveWaitingPage['lobby']
+    token: lobby.Payload$LeaveWaitingPage['token']
+    type: PayloadType.leaveWaitingPage
+    villageId: lobby.Payload$LeaveWaitingPage['villageId']
   }
   interface Payload$ready extends PayloadBase {
     token: Token
@@ -548,6 +554,7 @@ declare namespace village {
     | Payload$boardMessage
     | Payload$errorMessage
     | Payload$flavorTextMessage
+    | Payload$leaveWaitingPage
     | Payload$playerMessage
     | Payload$nextGameInvitation
     | Payload$nextGameInvitationIsClosed
