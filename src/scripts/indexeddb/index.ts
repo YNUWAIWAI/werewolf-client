@@ -72,7 +72,7 @@ export const deleteValue = (objectStore: IDBObjectStore, key: string) => new Pro
     resolve()
   }
 })
-export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValue: T) => new Promise<T>((resolve, reject) => {
+export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValue: T) => new Promise<never>((resolve, reject) => {
   const request = objectStore.put(newValue, key)
 
   request.onerror = () => {

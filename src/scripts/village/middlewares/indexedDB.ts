@@ -36,13 +36,15 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
 
-          getValue<boolean>(objectStore, 'isHost')
-            .then(isHost => {
+          Promise.all([
+            getValue<boolean>(objectStore, 'isHost'),
+            getValue<village.Payload$buildVillage>(objectStore, 'buildVillagePayload')
+          ])
+            .then(values => {
+              const [isHost, buildVillagePayload] = values
+
               if (isHost) {
-                getValue<village.Payload$buildVillage>(objectStore, 'buildVillagePayload')
-                  .then(buildVillagePayload => {
-                    store.dispatch(socket.send(buildVillagePayload))
-                  })
+                store.dispatch(socket.send(buildVillagePayload))
               } else {
                 window.location.replace(`${window.location.origin}/lobby`)
               }
@@ -58,18 +60,18 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
 
-          getValue<village.Language>(objectStore, 'lang')
-            .then(lang => {
+          Promise.all([
+            getValue<village.Language>(objectStore, 'lang'),
+            getValue<village.Language>(objectStore, 'isHost'),
+            getValue<Village>(objectStore, 'village')
+          ])
+            .then(values => {
+              const [lang, isHost, village] = values
+
               store.dispatch(changeLanguage(lang))
-            })
-          getValue<village.Language>(objectStore, 'isHost')
-            .then(isHost => {
               if (isHost) {
                 store.dispatch(activateNextButton(-1))
               }
-            })
-          getValue<Village>(objectStore, 'village')
-            .then(village => {
               store.dispatch(ready({
                 token: village.token,
                 villageId: village.villageId
@@ -89,16 +91,18 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             const transaction = db.transaction('licosDB', 'readwrite')
             const objectStore = transaction.objectStore('licosDB')
 
-            updateValue<number>(objectStore, 'nextGameVillageId', payload.villageId)
-              .then(() => {
-                getValue<village.Language>(objectStore, 'isHost')
-                  .then(isHost => {
-                    if (isHost) {
-                      window.location.replace(`${window.location.origin}/lobby`)
-                    } else {
-                      store.dispatch(activateNextButton(payload.villageId))
-                    }
-                  })
+            Promise.all([
+              getValue<boolean>(objectStore, 'isHost'),
+              updateValue<number>(objectStore, 'nextGameVillageId', payload.villageId)
+            ])
+              .then(values => {
+                const [isHost] = values
+
+                if (isHost) {
+                  window.location.replace(`${window.location.origin}/lobby`)
+                } else {
+                  store.dispatch(activateNextButton(payload.villageId))
+                }
               })
           })
           .catch(reason => console.error(reason))
