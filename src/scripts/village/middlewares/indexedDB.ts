@@ -1,6 +1,7 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import {changeLanguage, ready} from '../actions'
-import {connectDB, deleteValue, getValue} from '../../indexeddb'
+import {activateNextButton, changeLanguage, ready, socket} from '../actions'
+import {connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {Middleware} from '.'
 
 interface Village {
@@ -33,12 +34,14 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const objectStore = transaction.objectStore('licosDB')
 
           getValue<boolean>(objectStore, 'isHost')
-            .then(result => {
-              if (result) {
-                getValue<lobby.Payload$BuildVillage>(objectStore, 'buildVillagePayload')
-                  .then(result => {
-
+            .then(isHost => {
+              if (isHost) {
+                getValue<village.Payload$buildVillage>(objectStore, 'buildVillagePayload')
+                  .then(buildVillagePayload => {
+                    store.dispatch(socket.send(buildVillagePayload))
                   })
+              } else {
+                window.location.replace(`${window.location.origin}/lobby`)
               }
             })
         })
@@ -53,18 +56,50 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const objectStore = transaction.objectStore('licosDB')
 
           getValue<village.Language>(objectStore, 'lang')
-            .then(result => {
-              store.dispatch(changeLanguage(result))
+            .then(lang => {
+              store.dispatch(changeLanguage(lang))
+            })
+          getValue<village.Language>(objectStore, 'isHost')
+            .then(isHost => {
+              if (isHost) {
+                store.dispatch(activateNextButton(-1))
+              }
             })
           getValue<Village>(objectStore, 'village')
-            .then(result => {
+            .then(village => {
               store.dispatch(ready({
-                token: result.token,
-                villageId: result.villageId
+                token: village.token,
+                villageId: village.villageId
               }))
             })
         })
         .catch(reason => console.error(reason))
+
+      return next(action)
+    }
+    case ActionTypes.socket.MESSAGE: {
+      if (action.payload['@payload'] === village.PayloadType.nextGameInvitation) {
+        const payload = action.payload
+
+        connectDB()
+          .then(db => {
+            const transaction = db.transaction('licosDB', 'readwrite')
+            const objectStore = transaction.objectStore('licosDB')
+
+            updateValue<number>(objectStore, 'nextGameVillageId', payload.villageId)
+              .then(() => {
+                getValue<village.Language>(objectStore, 'isHost')
+                  .then(isHost => {
+                    if (isHost) {
+                      window.location.replace(`${window.location.origin}/lobby`)
+                    } else {
+                      store.dispatch(activateNextButton(payload.villageId))
+                    }
+                  })
+              })
+          })
+          .catch(reason => console.error(reason))
+      }
 
       return next(action)
     }
