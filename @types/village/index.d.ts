@@ -544,7 +544,7 @@ declare namespace village {
     villageId: number
   }
   type Payload =
-    |
+    | Payload$buildVillage
     | Payload$boardMessage
     | Payload$errorMessage
     | Payload$flavorTextMessage
