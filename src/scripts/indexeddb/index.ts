@@ -15,9 +15,10 @@ export interface Village {
   villageId: number
 }
 export const enum WhatToDoNextInLobby {
+  leaveWaitingPage = 'leaveWaitingPage',
   nothing = 'nothing',
   selectNextVillage = 'selectNextVillage',
-  leaveWaitingPage = 'leaveWaitingPage'
+  selectVillage = 'selectVillage'
 }
 
 export const connectDB = (() => {

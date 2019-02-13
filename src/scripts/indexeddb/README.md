@@ -49,6 +49,6 @@ boolean
 
 ### 値
 
-`nothing`, `selectNextVillage`, `leaveWaitingPage`
+`leaveWaitingPage`, `nothing`, `selectNextVillage`, `selectVillage`,
 
 値が設定されてないときは`nothing`として扱う

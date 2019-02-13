@@ -1,6 +1,6 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
-import {Key, Village, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
+import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {changeLobby, selectVillage} from '../actions'
 import {Middleware} from '.'
 
@@ -12,10 +12,32 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const transaction = db.transaction('licosDB')
           const objectStore = transaction.objectStore('licosDB')
 
-          getValue<Village>(objectStore, Key.village)
-            .then(result => {
-              store.dispatch(changeLobby(result.lobbyType))
-              store.dispatch(selectVillage(result.villageId))
+          Promise.all([
+            getValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby),
+            getValue<number>(objectStore, Key.nextGameVillageId),
+            getValue<Village>(objectStore, Key.village)
+          ])
+            .then(values => {
+              const [whatToDoNextInLobby, nextGameVillageId, villageInfo] = values
+
+              switch (whatToDoNextInLobby) {
+                case WhatToDoNextInLobby.leaveWaitingPage: {
+                  break
+                }
+                case WhatToDoNextInLobby.selectNextVillage: {
+                  store.dispatch(changeLobby(villageInfo.lobbyType))
+                  store.dispatch(selectVillage(nextGameVillageId))
+                  break
+                }
+                case WhatToDoNextInLobby.selectVillage: {
+                  store.dispatch(changeLobby(villageInfo.lobbyType))
+                  store.dispatch(selectVillage(villageInfo.villageId))
+                  break
+                }
+                case WhatToDoNextInLobby.nothing:
+                default:
+                  break
+              }
             })
         })
         .catch(reason => console.error(reason))
