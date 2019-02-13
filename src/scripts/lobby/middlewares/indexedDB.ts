@@ -1,14 +1,8 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
+import {Key, Village, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {changeLobby, selectVillage} from '../actions'
-import {connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {Middleware} from '.'
-
-interface Village {
-  lobbyType: lobby.Lobby
-  token: string
-  villageId: number
-}
 
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
@@ -18,7 +12,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const transaction = db.transaction('licosDB')
           const objectStore = transaction.objectStore('licosDB')
 
-          getValue<Village>(objectStore, 'viilage')
+          getValue<Village>(objectStore, Key.village)
             .then(result => {
               store.dispatch(changeLobby(result.lobbyType))
               store.dispatch(selectVillage(result.villageId))
@@ -34,7 +28,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
 
-          deleteValue(objectStore, 'village')
+          deleteValue(objectStore, Key.village)
         })
         .catch(reason => console.error(reason))
 
@@ -52,7 +46,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
               updateValue<lobby.Language>(
                 objectStore,
-                'lang',
+                Key.lang,
                 payload.lang
               )
                 .then(() => {
@@ -74,7 +68,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
               updateValue<Village>(
                 objectStore,
-                'village',
+                Key.village,
                 {
                   lobbyType: state.token.lobby,
                   token: state.token[state.token.lobby],
@@ -83,7 +77,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
               )
               updateValue<boolean>(
                 objectStore,
-                'isHost',
+                Key.isHost,
                 state.waitingForPlayers.players.some(player => player.isHost && player.isMe)
               )
             })
@@ -108,7 +102,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
               updateValue<lobby.Payload$BuildVillage>(
                 objectStore,
-                'buildVillagePayload',
+                Key.buildVillagePayload,
                 payload
               )
             })

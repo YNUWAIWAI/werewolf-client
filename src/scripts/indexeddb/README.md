@@ -14,3 +14,41 @@
 
 ### 値
 `en`, `fr`, `it`, `ja`
+
+## buildVillagePayload
+
+buildVillageをしたときにサーバーに送られるJSON
+
+### 値
+
+schema:
+https://werewolf.world/lobby/schema/0.2/client2server/buildVillage.json
+
+example:
+https://werewolf.world/lobby/example/0.2/client2server/buildVillage.json
+
+## nextGameVillageId
+
+次の村のID
+
+### 値
+
+number
+
+## isHost
+
+プレイヤーがホストかそうでないか
+
+### 値
+
+boolean
+
+## whatToDoNextInLobby
+
+`/lobby`にアクセスしたときにすること
+
+### 値
+
+`nothing`, `selectNextVillage`, `leaveWaitingPage`
+
+値が設定されてないときは`nothing`として扱う
