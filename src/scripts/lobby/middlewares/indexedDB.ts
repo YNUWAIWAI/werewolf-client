@@ -1,7 +1,7 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
-import {changeLobby, selectVillage} from '../actions'
+import {changeLobby, selectVillage, socket} from '../actions'
 import {Middleware} from '.'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
@@ -22,20 +22,52 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
               switch (whatToDoNextInLobby) {
                 case WhatToDoNextInLobby.leaveWaitingPage: {
+                  const payload: lobby.Payload$LeaveWaitingPage = {
+                    lobby: villageInfo.lobbyType,
+                    token: villageInfo.token,
+                    type: lobby.PayloadType.leaveWaitingPage,
+                    villageId: villageInfo.villageId
+                  }
+
+                  store.dispatch(socket.send(payload))
+                  Promise.all([
+                    deleteValue(objectStore, Key.buildVillagePayload),
+                    deleteValue(objectStore, Key.isHost),
+                    deleteValue(objectStore, Key.nextGameVillageId),
+                    deleteValue(objectStore, Key.village),
+                    updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.nothing)
+                  ]).catch(reason => console.error(reason))
                   break
                 }
                 case WhatToDoNextInLobby.selectNextVillage: {
                   store.dispatch(changeLobby(villageInfo.lobbyType))
                   store.dispatch(selectVillage(nextGameVillageId))
+                  Promise.all([
+                    deleteValue(objectStore, Key.nextGameVillageId),
+                    updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.nothing)
+                  ]).catch(reason => console.error(reason))
+
                   break
                 }
                 case WhatToDoNextInLobby.selectVillage: {
                   store.dispatch(changeLobby(villageInfo.lobbyType))
                   store.dispatch(selectVillage(villageInfo.villageId))
+                  Promise.all([
+                    deleteValue(objectStore, Key.isHost),
+                    deleteValue(objectStore, Key.buildVillagePayload),
+                    deleteValue(objectStore, Key.nextGameVillageId),
+                    updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.nothing)
+                  ]).catch(reason => console.error(reason))
                   break
                 }
                 case WhatToDoNextInLobby.nothing:
                 default:
+                  Promise.all([
+                    deleteValue(objectStore, Key.isHost),
+                    deleteValue(objectStore, Key.buildVillagePayload),
+                    deleteValue(objectStore, Key.nextGameVillageId),
+                    updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.nothing)
+                  ]).catch(reason => console.error(reason))
                   break
               }
             })
