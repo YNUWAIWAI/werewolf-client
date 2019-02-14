@@ -129,7 +129,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
               updateValue<boolean>(
                 objectStore,
                 Key.isHost,
-                state.waitingForPlayers.players.some(player => player.isHost && player.isMe)
+                payload.players.some(player => player.isHost && player.isMe)
               )
             })
             .catch(reason => console.error(reason))
