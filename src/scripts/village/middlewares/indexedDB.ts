@@ -8,26 +8,22 @@ const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.Navigation.RETURN_TO_LOBBY: {
       connectDB()
-        .then(db => {
+        .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
+          const villageInfo = await getValue<Village>(objectStore, Key.village)
 
-          getValue<Village>(objectStore, Key.village)
-            .then(villageInfo => {
-              store.dispatch(socket.send({
-                lobby: villageInfo.lobbyType,
-                token: villageInfo.token,
-                type: village.PayloadType.leaveWaitingPage,
-                villageId: villageInfo.villageId
-              }))
-            })
-          Promise.all([
+          store.dispatch(socket.send({
+            lobby: villageInfo.lobbyType,
+            token: villageInfo.token,
+            type: village.PayloadType.leaveWaitingPage,
+            villageId: villageInfo.villageId
+          }))
+          await Promise.all([
             updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.leaveWaitingPage),
             deleteValue(objectStore, Key.nextGameVillageId)
           ])
-            .then(() => {
-              window.location.replace(`${window.location.origin}/lobby`)
-            })
+          window.location.replace(`${window.location.origin}/lobby`)
         })
         .catch(reason => console.error(reason))
 
@@ -35,24 +31,20 @@ const indexedDBMiddleware: Middleware = store => next => action => {
     }
     case ActionTypes.Navigation.NEXT_GAME: {
       connectDB()
-        .then(db => {
+        .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
-
-          Promise.all([
+          const [isHost, buildVillagePayload] = await Promise.all([
             getValue<boolean>(objectStore, Key.isHost),
             getValue<village.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
             updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.selectNextVillage)
           ])
-            .then(values => {
-              const [isHost, buildVillagePayload] = values
 
-              if (isHost) {
-                store.dispatch(socket.send(buildVillagePayload))
-              } else {
-                window.location.replace(`${window.location.origin}/lobby`)
-              }
-            })
+          if (isHost) {
+            store.dispatch(socket.send(buildVillagePayload))
+          } else {
+            window.location.replace(`${window.location.origin}/lobby`)
+          }
         })
         .catch(reason => console.error(reason))
 
@@ -60,27 +52,23 @@ const indexedDBMiddleware: Middleware = store => next => action => {
     }
     case ActionTypes.indexedDB.INIT: {
       connectDB()
-        .then(db => {
+        .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
-
-          Promise.all([
+          const [lang, isHost, villageInfo] = await Promise.all([
             getValue<village.Language>(objectStore, Key.lang),
             getValue<village.Language>(objectStore, Key.isHost),
             getValue<Village>(objectStore, Key.village)
           ])
-            .then(values => {
-              const [lang, isHost, villageInfo] = values
 
-              store.dispatch(changeLanguage(lang))
-              if (isHost) {
-                store.dispatch(activateNextButton(-1))
-              }
-              store.dispatch(ready({
-                token: villageInfo.token,
-                villageId: villageInfo.villageId
-              }))
-            })
+          store.dispatch(changeLanguage(lang))
+          if (isHost) {
+            store.dispatch(activateNextButton(-1))
+          }
+          store.dispatch(ready({
+            token: villageInfo.token,
+            villageId: villageInfo.villageId
+          }))
         })
         .catch(reason => console.error(reason))
 
@@ -91,23 +79,19 @@ const indexedDBMiddleware: Middleware = store => next => action => {
         const payload = action.payload
 
         connectDB()
-          .then(db => {
+          .then(async db => {
             const transaction = db.transaction('licosDB', 'readwrite')
             const objectStore = transaction.objectStore('licosDB')
-
-            Promise.all([
+            const [isHost] = await Promise.all([
               getValue<boolean>(objectStore, Key.isHost),
               updateValue<number>(objectStore, Key.nextGameVillageId, payload.villageId)
             ])
-              .then(values => {
-                const [isHost] = values
 
-                if (isHost) {
-                  window.location.replace(`${window.location.origin}/lobby`)
-                } else {
-                  store.dispatch(activateNextButton(payload.villageId))
-                }
-              })
+            if (isHost) {
+              window.location.replace(`${window.location.origin}/lobby`)
+            } else {
+              store.dispatch(activateNextButton(payload.villageId))
+            }
           })
           .catch(reason => console.error(reason))
       }
