@@ -9,7 +9,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
     case ActionTypes.indexedDB.INIT: {
       connectDB()
         .then(async db => {
-          const transaction = db.transaction('licosDB')
+          const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
           const [whatToDoNextInLobby, nextGameVillageId, villageInfo] = await Promise.all([
             getValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby),
