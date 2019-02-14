@@ -91,18 +91,16 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const payload = action.payload
 
           connectDB()
-            .then(db => {
+            .then(async db => {
               const transaction = db.transaction('licosDB', 'readwrite')
               const objectStore = transaction.objectStore('licosDB')
 
-              updateValue<lobby.Language>(
+              await updateValue<lobby.Language>(
                 objectStore,
                 Key.lang,
                 payload.lang
               )
-                .then(() => {
-                  window.location.replace(`${window.location.origin}/village`)
-                })
+              window.location.replace(`${window.location.origin}/village`)
             })
             .catch(reason => console.error(reason))
 
@@ -117,20 +115,22 @@ const indexedDBMiddleware: Middleware = store => next => action => {
               const transaction = db.transaction('licosDB', 'readwrite')
               const objectStore = transaction.objectStore('licosDB')
 
-              updateValue<Village>(
-                objectStore,
-                Key.village,
-                {
-                  lobbyType: state.token.lobby,
-                  token: state.token[state.token.lobby],
-                  villageId: payload.village.id
-                }
-              )
-              updateValue<boolean>(
-                objectStore,
-                Key.isHost,
-                payload.players.some(player => player.isHost && player.isMe)
-              )
+              Promise.all([
+                updateValue<Village>(
+                  objectStore,
+                  Key.village,
+                  {
+                    lobbyType: state.token.lobby,
+                    token: state.token[state.token.lobby],
+                    villageId: payload.village.id
+                  }
+                ),
+                updateValue<boolean>(
+                  objectStore,
+                  Key.isHost,
+                  payload.players.some(player => player.isHost && player.isMe)
+                )
+              ])
             })
             .catch(reason => console.error(reason))
 
