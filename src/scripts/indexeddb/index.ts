@@ -75,7 +75,8 @@ export const getValue = <T>(objectStore: IDBObjectStore, key: Key) => new Promis
     const result = request.result
 
     if (typeof result === 'undefined' || result === null) {
-      reject(`Fail to get ${objectStore.name}.${key}`)
+      console.error(`Fail to get ${objectStore.name}.${key}`)
+      resolve(undefined)
     }
 
     resolve(result)
