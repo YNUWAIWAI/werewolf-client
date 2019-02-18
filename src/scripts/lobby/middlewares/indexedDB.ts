@@ -44,7 +44,6 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                 deleteValue(objectStore, Key.nextGameVillageId),
                 updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.nothing)
               ]).catch(reason => console.error(reason))
-
               break
             }
             case WhatToDoNextInLobby.selectVillage: {
@@ -147,7 +146,6 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
           connectDB()
             .then(db => {
-
               const transaction = db.transaction('licosDB', 'readwrite')
               const objectStore = transaction.objectStore('licosDB')
 

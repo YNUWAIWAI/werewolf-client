@@ -19,7 +19,7 @@ declare module 'fake-indexeddb/lib/FDBDatabase' {
   export default FDBDatabase
 }
 declare module 'fake-indexeddb/lib/FDBFactory' {
-  const FDBFactory: anny
+  const FDBFactory: any
 
   export default FDBFactory
 }

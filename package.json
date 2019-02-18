@@ -15,7 +15,7 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
-    "@types/fake-indexeddb": "./@types/fake-indexeddb",
+    "@types/indexeddb": "./@types/indexeddb",
     "@types/jest": "^23.3.12",
     "@types/node-fetch": "^2.1.4",
     "@types/storybook__addon-actions": "^3.4.1",
