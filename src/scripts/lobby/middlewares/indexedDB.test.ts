@@ -14,6 +14,7 @@ import * as FDBRequest from 'fake-indexeddb/lib/FDBRequest'
 import * as FDBTransaction from 'fake-indexeddb/lib/FDBTransaction'
 import * as FDBVersionChangeEvent from 'fake-indexeddb/lib/FDBVersionChangeEvent'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
+import {Transition} from '../actions'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
@@ -66,8 +67,8 @@ const deleteAllValue = async () => {
   ])
 }
 
+beforeEach(() => deleteAllValue())
 describe('indexedDB/INIT', () => {
-  beforeEach(() => deleteAllValue())
   const store = fakeStore()
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
@@ -99,7 +100,7 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.nothing)
     expect(dispatch).toHaveBeenCalledTimes(0)
   })
-  test('nothing', async () => {
+  test('whatToDoNextInLobby: nothing', async () => {
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
@@ -127,7 +128,7 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.nothing)
     expect(dispatch).toHaveBeenCalledTimes(0)
   })
-  test('leaveWaitingPage', async () => {
+  test('whatToDoNextInLobby: leaveWaitingPage', async () => {
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
@@ -173,7 +174,7 @@ describe('indexedDB/INIT', () => {
       type: ActionTypes.socket.SEND
     })
   })
-  test('selectNextVillage', async () => {
+  test('whatToDoNextInLobby: selectNextVillage', async () => {
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
@@ -218,7 +219,7 @@ describe('indexedDB/INIT', () => {
       type: ActionTypes.global.SELECT_VILLAGE
     })
   })
-  test('selectVillage', async () => {
+  test('whatToDoNextInLobby: selectVillage', async () => {
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
@@ -235,7 +236,7 @@ describe('indexedDB/INIT', () => {
       updateValue<Village>(objectStore, Key.village, village),
       updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.selectVillage)
     ])
-    await actionHandler(action)
+    actionHandler(action)
     const [
       buildVillagePayload,
       isHost,
@@ -262,4 +263,42 @@ describe('indexedDB/INIT', () => {
       type: ActionTypes.global.SELECT_VILLAGE
     })
   })
+})
+test('LEAVE_WAITING_PAGE', async () => {
+  const store = fakeStore()
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action: Transition = {
+    type: ActionTypes.Target.LEAVE_WAITING_PAGE
+  }
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const db = await connectDB()
+  const transaction = db.transaction('licosDB', 'readwrite')
+  const objectStore = transaction.objectStore('licosDB')
+  const village = {
+    lobbyType: lobby.Lobby.human,
+    token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
+    villageId: 3
+  }
+
+  await updateValue<Village>(objectStore, Key.village, village)
+  actionHandler(action)
+  const [
+    buildVillagePayload,
+    isHost,
+    lang,
+    nextGameVillageId,
+    villageInfo,
+    whatToDoNextInLobby
+  ] = await getAllValue()
+
+  expect(buildVillagePayload).toBeUndefined()
+  expect(isHost).toBeUndefined()
+  expect(lang).toBeUndefined()
+  expect(nextGameVillageId).toBeUndefined()
+  expect(villageInfo).toBeUndefined()
+  expect(whatToDoNextInLobby).toBeUndefined()
 })
