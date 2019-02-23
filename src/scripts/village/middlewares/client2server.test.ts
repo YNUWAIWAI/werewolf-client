@@ -781,7 +781,7 @@ describe('READY', () => {
   }
   const payload: village.Payload$ready = {
     token,
-    type: 'ready',
+    type: village.PayloadType.ready,
     villageId
   }
 
@@ -1156,7 +1156,7 @@ describe('socket/MESSAGE', () => {
       date: 0,
       phase: village.Phase.flavorText,
       token,
-      type: 'receivedFlavorTextMessage',
+      type: village.PayloadType.receivedFlavorTextMessage,
       villageId
     }
 
@@ -1207,7 +1207,7 @@ describe('socket/MESSAGE', () => {
       clientTimestamp: '2006-10-07T12:06:56.568+09:00',
       serverTimestamp: '2006-10-07T12:06:56.568+09:00',
       token,
-      type: 'receivedPlayerMessage',
+      type: village.PayloadType.receivedPlayerMessage,
       villageId
     }
 
@@ -1258,7 +1258,7 @@ describe('socket/MESSAGE', () => {
       date: 1,
       phase: village.Phase.morning,
       token,
-      type: 'receivedSystemMessage',
+      type: village.PayloadType.receivedSystemMessage,
       villageId
     }
 

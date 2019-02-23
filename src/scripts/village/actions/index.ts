@@ -18,7 +18,32 @@ export const socket = {
   }),
   message: (payload: village.Payload) => {
     if (typeof payload['@id'] === 'undefined') {
-      throw Error('Unkonown Message')
+      switch (payload.type) {
+        case village.PayloadType.nextGameInvitation: {
+          const action: SocketMessageReturnType<village.Payload$nextGameInvitation> = {
+            payload: {
+              ... payload as village.Payload$nextGameInvitation,
+              '@payload': village.PayloadType.nextGameInvitation
+            },
+            type: ActionTypes.socket.MESSAGE
+          }
+
+          return action
+        }
+        case village.PayloadType.nextGameInvitationIsClosed: {
+          const action: SocketMessageReturnType<village.Payload$nextGameInvitationIsClosed> = {
+            payload: {
+              ... payload as village.Payload$nextGameInvitationIsClosed,
+              '@payload': village.PayloadType.nextGameInvitationIsClosed
+            },
+            type: ActionTypes.socket.MESSAGE
+          }
+
+          return action
+        }
+        default:
+          throw Error('Unkonown Message')
+      }
     }
     const message = strToMessage(payload['@id'])
 
@@ -115,6 +140,11 @@ export const socket = {
   })
 }
 
+export const activateNextButton = (villageId: number): {type: ActionTypes.global.ACTIVATE_NEXT_BUTTON, villageId: number} => ({
+  type: ActionTypes.global.ACTIVATE_NEXT_BUTTON,
+  villageId
+})
+
 export const changeLanguage = (language: village.Language): {language: village.Language, type: ActionTypes.global.CHANGE_LANGUAGE} => ({
   language,
   type: ActionTypes.global.CHANGE_LANGUAGE
@@ -134,6 +164,10 @@ export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}
 
 export const clickNavigationButton = (type: ActionTypes.Navigation): {type: ActionTypes.Navigation} => ({
   type
+})
+
+export const deactivateNextButton = (): {type: ActionTypes.global.DEACTIVATE_NEXT_BUTTON} => ({
+  type: ActionTypes.global.DEACTIVATE_NEXT_BUTTON
 })
 
 export const handleBoardClick = (nextState: village.BoardState, playerId: number, roleId: village.RoleId): {nextState: village.BoardState, playerId: number, roleId: village.RoleId, type: ActionTypes.global.CHANGE_PREDICTION_BOARD} => ({
@@ -184,12 +218,14 @@ export const tick = ({start, time}: {start: number, time: number}): {start: numb
   type: ActionTypes.global.TICK
 })
 
+export type ActivateNextButton = ReturnType<typeof activateNextButton>
 export type ChangeDate = ReturnType<typeof changeDate>
 export type ChangeLanguage = ReturnType<typeof changeLanguage>
 export type ChangePhase = ReturnType<typeof changePhase>
 export type ChangePredictionBoard = ReturnType<typeof handleBoardClick>
 export type ClickHideButton = ReturnType<typeof handleClickHideButton>
 export type ClickNavigationButton = ReturnType<typeof clickNavigationButton>
+export type DeactivateNextButton = ReturnType<typeof deactivateNextButton>
 export type HideResult = ReturnType<typeof hideResult>
 export type PostChat = ReturnType<typeof postChat>
 export type Ready = ReturnType<typeof ready>
@@ -202,4 +238,3 @@ export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
 export type Tick = ReturnType<typeof tick>
-

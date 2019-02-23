@@ -1,6 +1,26 @@
 /* eslint no-console: 0 */
 const VERSION = 2
 
+export const enum Key {
+  buildVillagePayload = 'buildVillagePayload',
+  isHost = 'isHost',
+  lang = 'lang',
+  nextGameVillageId = 'nextGameVillageId',
+  village = 'village',
+  whatToDoNextInLobby = 'whatToDoNextInLobby'
+}
+export interface Village {
+  lobbyType: lobby.Lobby
+  token: string
+  villageId: number
+}
+export const enum WhatToDoNextInLobby {
+  leaveWaitingPage = 'leaveWaitingPage',
+  nothing = 'nothing',
+  selectNextVillage = 'selectNextVillage',
+  selectVillage = 'selectVillage'
+}
+
 export const connectDB = (() => {
   let db: IDBDatabase
 
@@ -45,7 +65,7 @@ export const connectDB = (() => {
   })
 })()
 
-export const getValue = <T>(objectStore: IDBObjectStore, key: string) => new Promise<T>((resolve, reject) => {
+export const getValue = <T>(objectStore: IDBObjectStore, key: Key) => new Promise<T>((resolve, reject) => {
   const request: IDBRequest<T> = objectStore.get(key)
 
   request.onerror = () => {
@@ -55,13 +75,14 @@ export const getValue = <T>(objectStore: IDBObjectStore, key: string) => new Pro
     const result = request.result
 
     if (typeof result === 'undefined' || result === null) {
-      reject(`Fail to get ${objectStore.name}.${key}`)
+      console.error(`Fail to get ${objectStore.name}.${key}`)
+      resolve(undefined)
     }
 
     resolve(result)
   }
 })
-export const deleteValue = (objectStore: IDBObjectStore, key: string) => new Promise<never>((resolve, reject) => {
+export const deleteValue = (objectStore: IDBObjectStore, key: Key) => new Promise<never>((resolve, reject) => {
   const request = objectStore.delete(key)
 
   request.onerror = () => {
@@ -72,7 +93,7 @@ export const deleteValue = (objectStore: IDBObjectStore, key: string) => new Pro
     resolve()
   }
 })
-export const updateValue = <T>(objectStore: IDBObjectStore, key: string, newValue: T) => new Promise<T>((resolve, reject) => {
+export const updateValue = <T>(objectStore: IDBObjectStore, key: Key, newValue: T) => new Promise<never>((resolve, reject) => {
   const request = objectStore.put(newValue, key)
 
   request.onerror = () => {

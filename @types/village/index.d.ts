@@ -367,9 +367,20 @@ declare namespace village {
       }
     }[]
   }
+  const enum PayloadType {
+    buildVillage = 'buildVillage',
+    leaveWaitingPage = 'leaveWaitingPage',
+    ready = 'ready',
+    nextGameInvitation = 'nextGameInvitation',
+    nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
+    receivedFlavorTextMessage = 'receivedFlavorTextMessage',
+    receivedPlayerMessage = 'receivedPlayerMessage',
+    receivedSystemMessage = 'receivedSystemMessage'
+  }
   interface PayloadBase {
     '@id'?: string
-    '@payload'?: Message
+    '@payload'?: Message | PayloadType
+    'type'?: PayloadType
   }
   interface Payload$boardMessage extends Base {
     '@payload'?: Message.boardMessage
@@ -485,37 +496,68 @@ declare namespace village {
       id: NonNullable<Agent['id']>
     }
   }
+  interface Payload$buildVillage extends PayloadBase {
+    avatar: lobby.Payload$BuildVillage['avatar']
+    comment: lobby.Payload$BuildVillage['comment']
+    hostPlayer: lobby.Payload$BuildVillage['hostPlayer']
+    id: lobby.Payload$BuildVillage['id']
+    idForSearching: lobby.Payload$BuildVillage['idForSearching']
+    name: lobby.Payload$BuildVillage['name']
+    playerSetting: lobby.Payload$BuildVillage['playerSetting']
+    roleSetting: lobby.Payload$BuildVillage['roleSetting']
+    token: lobby.Payload$BuildVillage['token']
+    type: PayloadType.buildVillage
+  }
+  interface Payload$leaveWaitingPage extends PayloadBase {
+    lobby: lobby.Payload$LeaveWaitingPage['lobby']
+    token: lobby.Payload$LeaveWaitingPage['token']
+    type: PayloadType.leaveWaitingPage
+    villageId: lobby.Payload$LeaveWaitingPage['villageId']
+  }
   interface Payload$ready extends PayloadBase {
     token: Token
-    type: 'ready'
+    type: PayloadType.ready
     villageId: number
+  }
+  interface Payload$nextGameInvitation extends PayloadBase {
+    '@payload': PayloadType.nextGameInvitation
+    type: PayloadType.nextGameInvitation
+    villageId: number
+  }
+  interface Payload$nextGameInvitationIsClosed extends PayloadBase {
+    '@payload': PayloadType.nextGameInvitationIsClosed
+    type: PayloadType.nextGameInvitationIsClosed
   }
   interface Payload$receivedFlavorTextMessage extends PayloadBase {
     date: number
     phase: Phase
     token: Token
-    type: 'receivedFlavorTextMessage'
+    type: PayloadType.receivedFlavorTextMessage
     villageId: number
   }
   interface Payload$receivedPlayerMessage extends PayloadBase {
     clientTimestamp: string
     serverTimestamp: string
     token: Token
-    type: 'receivedPlayerMessage'
+    type: PayloadType.receivedPlayerMessage
     villageId: number
   }
   interface Payload$receivedSystemMessage extends PayloadBase {
     date: number
     phase: Phase
     token: Token
-    type: 'receivedSystemMessage'
+    type: PayloadType.receivedSystemMessage
     villageId: number
   }
   type Payload =
+    | Payload$buildVillage
     | Payload$boardMessage
     | Payload$errorMessage
     | Payload$flavorTextMessage
+    | Payload$leaveWaitingPage
     | Payload$playerMessage
+    | Payload$nextGameInvitation
+    | Payload$nextGameInvitationIsClosed
     | Payload$ready
     | Payload$receivedFlavorTextMessage
     | Payload$receivedPlayerMessage

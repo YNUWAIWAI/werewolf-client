@@ -12,12 +12,14 @@ import timeWatcher from './timeWatcher'
 import timer from './timer'
 
 type Action =
+  | actions.ActivateNextButton
   | actions.ChangeDate
   | actions.ChangeLanguage
   | actions.ChangePhase
   | actions.ChangePredictionBoard
   | actions.ClickHideButton
   | actions.ClickNavigationButton
+  | actions.DeactivateNextButton
   | actions.HideResult
   | actions.PostChat
   | actions.Ready

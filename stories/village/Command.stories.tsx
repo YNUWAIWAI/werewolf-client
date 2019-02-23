@@ -69,16 +69,81 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('感想戦', () => {
+  .add('感想戦(Host)', () => {
     const props = {
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
       navigation: [
         {
+          className: 'show-result',
           id: 'CommandNavigation.showResult',
           type: ActionTypes.Navigation.SHOW_RESULT
         },
         {
+          className: 'next-game',
+          id: 'CommandNavigation.nextGame',
+          type: ActionTypes.Navigation.NEXT_GAME
+        },
+        {
+          className: 'return-to-lobby',
+          id: 'CommandNavigation.returnToLobby',
+          type: ActionTypes.Navigation.RETURN_TO_LOBBY
+        }
+      ]
+    }
+    const content = <CommandPostMortem {... props} />
+    const story =
+      <Command
+        content={content}
+        hide={false}
+      />
+
+    return story
+  })
+  .add('感想戦(Guest) inactive', () => {
+    const props = {
+      handleNavigationClick: () => action('handleNavigationClick'),
+      handlePostChat: () => action('handlePostChat'),
+      navigation: [
+        {
+          className: 'show-result',
+          id: 'CommandNavigation.showResult',
+          type: ActionTypes.Navigation.SHOW_RESULT
+        },
+        {
+          className: 'next-game',
+          disabled: true,
+          id: 'CommandNavigation.nextGame',
+          type: ActionTypes.Navigation.NEXT_GAME
+        },
+        {
+          className: 'return-to-lobby',
+          id: 'CommandNavigation.returnToLobby',
+          type: ActionTypes.Navigation.RETURN_TO_LOBBY
+        }
+      ]
+    }
+    const content = <CommandPostMortem {... props} />
+    const story =
+      <Command
+        content={content}
+        hide={false}
+      />
+
+    return story
+  })
+  .add('感想戦(Guest) invisible', () => {
+    const props = {
+      handleNavigationClick: () => action('handleNavigationClick'),
+      handlePostChat: () => action('handlePostChat'),
+      navigation: [
+        {
+          className: 'show-result',
+          id: 'CommandNavigation.showResult',
+          type: ActionTypes.Navigation.SHOW_RESULT
+        },
+        {
+          className: 'return-to-lobby next-game',
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
@@ -99,6 +164,7 @@ storiesOf('village|Command', module)
       handlePostChat: () => action('handlePostChat'),
       navigation: [
         {
+          className: 'return-to-lobby next-game',
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }

@@ -1,4 +1,5 @@
 /* eslint no-process-env: 0 */
+import * as ActionTypes from '../constants/ActionTypes'
 import * as actions from '../actions'
 import {Dispatch, MiddlewareAPI, applyMiddleware} from 'redux'
 import {ReducerState} from '../reducers'
@@ -41,8 +42,8 @@ type Action =
   | actions.SocketSend
   | actions.SubmitLogout
   | actions.Transition
-  | {type: 'indexedDB/INIT'}
-  | {type: 'socket/INIT'}
+  | {type: ActionTypes.indexedDB.INIT}
+  | {type: ActionTypes.socket.INIT}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 

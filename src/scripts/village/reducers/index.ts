@@ -2,6 +2,7 @@ import agents, {State as agentsState} from './agents'
 import base, {State as baseState} from './base'
 import chat, {State as chatState} from './chat'
 import commandInputBox, {State as commandInputBoxState} from './commandInputBox'
+import commandNextButton, {State as commandNextButtonState} from './commandNextButton'
 import commandSelection, {State as commandSelectionState} from './commandSelection'
 import hideButton, {State as hideButtonState} from './hideButton'
 import language, {State as languageState} from './language'
@@ -18,6 +19,7 @@ const reducer = combineReducers({
   base,
   chat,
   commandInputBox,
+  commandNextButton,
   commandSelection,
   hideButton,
   language,
@@ -36,6 +38,7 @@ export interface ReducerState {
   readonly base: baseState
   readonly chat: chatState
   readonly commandInputBox: commandInputBoxState
+  readonly commandNextButton: commandNextButtonState
   readonly commandSelection: commandSelectionState
   readonly hideButton: hideButtonState
   readonly language: languageState

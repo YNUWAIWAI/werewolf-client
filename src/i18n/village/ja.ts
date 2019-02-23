@@ -8,6 +8,7 @@ export default {
   'CommandInput.placeholder.private': '非公開用',
   'CommandInput.placeholder.public': '公開用',
   'CommandInput.send': '送信',
+  'CommandNavigation.nextGame': '次のゲーム',
   'CommandNavigation.returnToLobby': 'ロビーへ戻る',
   'CommandNavigation.showResult': '結果を表示',
   'CommandSelection.Description.dayVote.fixed': 'あなたの選んだ投票先はこちらです',

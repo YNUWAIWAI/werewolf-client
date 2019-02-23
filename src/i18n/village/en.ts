@@ -7,6 +7,7 @@ export default {
   'CommandInput.placeholder.private': 'Private',
   'CommandInput.placeholder.public': 'Public',
   'CommandInput.send': 'Send',
+  'CommandNavigation.nextGame': 'Next Game',
   'CommandNavigation.returnToLobby': 'Return to the lobby',
   'CommandNavigation.showResult': 'Show results',
   'CommandSelection.Description.dayVote.fixed': 'This is the character you chose to put to death',
