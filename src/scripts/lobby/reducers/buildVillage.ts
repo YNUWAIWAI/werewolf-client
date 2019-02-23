@@ -77,9 +77,9 @@ export const initialState: State = {
     hostName: 'Anonymous',
     isHuman: true,
     member: lobby.Member.A,
-    numberOfHumans: 14,
+    numberOfHumans: 15,
     numberOfPlayers: 15,
-    numberOfRobots: 1,
+    numberOfRobots: 0,
     villageName: 'Cursed Village'
   }
 }
