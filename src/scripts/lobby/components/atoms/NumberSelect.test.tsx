@@ -8,91 +8,141 @@ import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 
 describe('<NumberSelect />', () => {
-  test('render', () => {
-    const handleChangeInner = jest.fn()
-    const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = mountWithIntl(
-      <NumberSelect
-        ascendingOrder
-        className="advanced-search--input"
-        from={4}
-        handleChange={handleChange}
-        name="minimum"
-        to={15}
-        type="player"
-      />
-    )
+  describe('render', () => {
+    test('defaultValue: undefiend', () => {
+      const handleChangeInner = jest.fn()
+      const handleChange = jest.fn(() => handleChangeInner)
+      const wrapper = mountWithIntl(
+        <NumberSelect
+          ascendingOrder
+          className="advanced-search--input"
+          from={4}
+          handleChange={handleChange}
+          name="minimum"
+          to={15}
+          type="player"
+        />
+      )
 
-    expect(wrapper.find(Select)).toHaveLength(1)
-    expect(handleChange).toHaveBeenCalledTimes(0)
-  })
-  test('onChange valid', () => {
-    const handleChangeInner = jest.fn()
-    const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = mountWithIntl(
-      <NumberSelect
-        ascendingOrder
-        className="advanced-search--input"
-        from={4}
-        handleChange={handleChange}
-        name="minimum"
-        to={15}
-        type="player"
-      />
-    )
-
-    wrapper.find(Select).props().onChange({
-      label: 4,
-      value: 4
+      expect(wrapper.find(Select)).toHaveLength(1)
+      expect(handleChange).toHaveBeenCalledTimes(0)
     })
-    expect(handleChange).toHaveBeenCalledTimes(1)
-    expect(handleChange).toHaveBeenCalledWith(true)
-    expect(handleChangeInner).toHaveBeenCalledTimes(1)
-    expect(handleChangeInner).toHaveBeenCalledWith(4)
-  })
-  test('onChange valid 0', () => {
-    const handleChangeInner = jest.fn()
-    const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = mountWithIntl(
-      <NumberSelect
-        ascendingOrder
-        className="advanced-search--input"
-        from={0}
-        handleChange={handleChange}
-        name="minimum"
-        to={15}
-        type="player"
-      />
-    )
+    test('defaultValue: 0', () => {
+      const handleChangeInner = jest.fn()
+      const handleChange = jest.fn(() => handleChangeInner)
+      const wrapper = mountWithIntl(
+        <NumberSelect
+          ascendingOrder
+          className="advanced-search--input"
+          defaultValue={0}
+          from={4}
+          handleChange={handleChange}
+          name="minimum"
+          to={15}
+          type="player"
+        />
+      )
 
-    wrapper.find(Select).props().onChange({
-      label: 0,
-      value: 0
+      expect(wrapper.find(Select)).toHaveLength(1)
+      expect(wrapper.find(Select).props().defaultValue).toEqual({
+        label: '0 players',
+        value: 0
+      })
+      expect(handleChange).toHaveBeenCalledTimes(0)
     })
-    expect(handleChange).toHaveBeenCalledTimes(1)
-    expect(handleChange).toHaveBeenCalledWith(true)
-    expect(handleChangeInner).toHaveBeenCalledTimes(1)
-    expect(handleChangeInner).toHaveBeenCalledWith(0)
-  })
-  test('onChange invalid', () => {
-    const handleChangeInner = jest.fn()
-    const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = mountWithIntl(
-      <NumberSelect
-        ascendingOrder
-        className="advanced-search--input"
-        from={4}
-        handleChange={handleChange}
-        name="minimum"
-        to={15}
-        type="player"
-      />
-    )
+    test('defaultValue: 1', () => {
+      const handleChangeInner = jest.fn()
+      const handleChange = jest.fn(() => handleChangeInner)
+      const wrapper = mountWithIntl(
+        <NumberSelect
+          ascendingOrder
+          className="advanced-search--input"
+          defaultValue={1}
+          from={4}
+          handleChange={handleChange}
+          name="minimum"
+          to={15}
+          type="player"
+        />
+      )
 
-    wrapper.find(Select).props().onChange([])
-    expect(handleChange).toHaveBeenCalledTimes(1)
-    expect(handleChange).toHaveBeenCalledWith(false)
-    expect(handleChangeInner).toHaveBeenCalledTimes(1)
-    expect(handleChangeInner).toHaveBeenCalledWith(-1)
+      expect(wrapper.find(Select)).toHaveLength(1)
+      expect(wrapper.find(Select).props().defaultValue).toEqual({
+        label: '1 player',
+        value: 1
+      })
+      expect(handleChange).toHaveBeenCalledTimes(0)
+    })
+  })
+  describe('onChange', () => {
+    test('to 4', () => {
+      const handleChangeInner = jest.fn()
+      const handleChange = jest.fn(() => handleChangeInner)
+      const wrapper = mountWithIntl(
+        <NumberSelect
+          ascendingOrder
+          className="advanced-search--input"
+          from={4}
+          handleChange={handleChange}
+          name="minimum"
+          to={15}
+          type="player"
+        />
+      )
+
+      wrapper.find(Select).props().onChange({
+        label: 4,
+        value: 4
+      })
+      expect(handleChange).toHaveBeenCalledTimes(1)
+      expect(handleChange).toHaveBeenCalledWith(true)
+      expect(handleChangeInner).toHaveBeenCalledTimes(1)
+      expect(handleChangeInner).toHaveBeenCalledWith(4)
+    })
+    test('to 0', () => {
+      const handleChangeInner = jest.fn()
+      const handleChange = jest.fn(() => handleChangeInner)
+      const wrapper = mountWithIntl(
+        <NumberSelect
+          ascendingOrder
+          className="advanced-search--input"
+          from={0}
+          handleChange={handleChange}
+          name="minimum"
+          to={15}
+          type="player"
+        />
+      )
+
+      wrapper.find(Select).props().onChange({
+        label: 0,
+        value: 0
+      })
+      expect(handleChange).toHaveBeenCalledTimes(1)
+      expect(handleChange).toHaveBeenCalledWith(true)
+      expect(handleChangeInner).toHaveBeenCalledTimes(1)
+      expect(handleChangeInner).toHaveBeenCalledWith(0)
+    })
+    test('invalid', () => {
+      const handleChangeInner = jest.fn()
+      const handleChange = jest.fn(() => handleChangeInner)
+      const wrapper = mountWithIntl(
+        <NumberSelect
+          ascendingOrder
+          className="advanced-search--input"
+          from={4}
+          handleChange={handleChange}
+          name="minimum"
+          to={15}
+          type="player"
+        />
+      )
+
+      wrapper.find(Select).props().onChange([])
+      expect(handleChange).toHaveBeenCalledTimes(1)
+      expect(handleChange).toHaveBeenCalledWith(false)
+      expect(handleChangeInner).toHaveBeenCalledTimes(1)
+      expect(handleChangeInner).toHaveBeenCalledWith(-1)
+    })
   })
 })

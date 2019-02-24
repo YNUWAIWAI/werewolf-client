@@ -49,7 +49,7 @@ export default injectIntl(function NumberSelect(props: Props) {
       className={props.className}
       classNamePrefix="react-select"
       defaultValue={
-        props.defaultValue ?
+        typeof props.defaultValue === 'number' ?
           {
             label: props.intl.formatMessage(
               {
