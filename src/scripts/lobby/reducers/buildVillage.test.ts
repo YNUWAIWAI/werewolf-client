@@ -38,9 +38,9 @@ describe('buildVillage/CHANGE_AVATAR', () => {
           hostName: 'Alice',
           isHuman: true,
           member: 'A',
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Alice\'s village'
         }
       }
@@ -78,9 +78,9 @@ describe('buildVillage/CHANGE_AVATAR', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: expect.any(String)
         }
       }
@@ -119,9 +119,9 @@ test('buildVillage/CHANGE_COMMENT', () => {
         hostName: 'Anonymous',
         isHuman: true,
         member: lobby.Member.A,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: 'Cursed Village'
       }
     }
@@ -167,9 +167,9 @@ test('buildVillage/CHANGE_HOST_NAME', () => {
         hostName: 'hostName',
         isHuman: true,
         member: lobby.Member.A,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: 'Alice\'s village'
       }
     }
@@ -207,9 +207,9 @@ test('buildVillage/CHANGE_MEMBER', () => {
         hostName: 'Anonymous',
         isHuman: true,
         member: lobby.Member.B,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: 'Cursed Village'
       }
     }
@@ -435,9 +435,9 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Cursed Village'
         }
       }
@@ -476,9 +476,9 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Cursed Village'
         }
       }
@@ -517,9 +517,9 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Cursed Village'
         }
       }
@@ -558,9 +558,9 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Cursed Village'
         }
       }
@@ -599,9 +599,9 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Cursed Village'
         }
       }
@@ -640,9 +640,9 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Cursed Village'
         }
       }
@@ -689,9 +689,9 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
         hostName: 'Alice',
         isHuman: true,
         member: lobby.Member.A,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: 'villageName'
       }
     }
@@ -749,9 +749,9 @@ test('LEAVE_WAITING_PAGE', () => {
         hostName: 'Anonymous',
         isHuman: true,
         member: lobby.Member.A,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: expect.any(String)
       }
     }
@@ -815,9 +815,9 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         hostName: 'Anonymous',
         isHuman: true,
         member: lobby.Member.A,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: 'Cursed Village'
       }
     }
@@ -875,9 +875,9 @@ test('SHOW_MAIN', () => {
         hostName: 'Anonymous',
         isHuman: true,
         member: lobby.Member.A,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: expect.any(String)
       }
     }
@@ -941,9 +941,9 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         hostName: 'Anonymous',
         isHuman: false,
         member: lobby.Member.A,
-        numberOfHumans: 14,
+        numberOfHumans: 15,
         numberOfPlayers: 15,
-        numberOfRobots: 1,
+        numberOfRobots: 0,
         villageName: 'Cursed Village'
       }
     }
@@ -1004,9 +1004,9 @@ describe('scoket/MESSAGE', () => {
           hostName: 'Anonymous',
           isHuman: true,
           member: lobby.Member.A,
-          numberOfHumans: 14,
+          numberOfHumans: 15,
           numberOfPlayers: 15,
-          numberOfRobots: 1,
+          numberOfRobots: 0,
           villageName: 'Cursed Village'
         }
       }
