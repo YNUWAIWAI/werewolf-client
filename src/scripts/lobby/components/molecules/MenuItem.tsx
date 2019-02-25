@@ -23,7 +23,7 @@ export default function MenuItem(props: Props) {
             className={`${props.className} ${props.disabled ? 'disabled' : ''} ${props.isLoading ? 'loader' : ''}`}
             onClick={() => {
               props.types.forEach(type => {
-                if (!props.disabled) {
+                if (!props.disabled && !props.isLoading) {
                   props.transition(type)
                 }
               })
