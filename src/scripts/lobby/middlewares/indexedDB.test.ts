@@ -482,7 +482,7 @@ describe('socket/MESSAGE', () => {
           token: avatarToken.humanPlayer,
           villageId: 1
         })
-        expect(whatToDoNextInLobby).toBeUndefined()
+        expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectVillage)
       })
     })
     describe('isHost: false', () => {
@@ -524,7 +524,7 @@ describe('socket/MESSAGE', () => {
           token: avatarToken.humanPlayer,
           villageId: 1
         })
-        expect(whatToDoNextInLobby).toBeUndefined()
+        expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectVillage)
       })
     })
   })

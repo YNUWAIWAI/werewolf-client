@@ -196,6 +196,11 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                   objectStore,
                   Key.isHost,
                   payload.players.some(player => player.isHost && player.isMe)
+                ),
+                updateValue<WhatToDoNextInLobby>(
+                  objectStore,
+                  Key.whatToDoNextInLobby,
+                  WhatToDoNextInLobby.selectVillage
                 )
               ])
             })
