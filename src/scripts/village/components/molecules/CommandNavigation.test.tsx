@@ -2,6 +2,7 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
 import CommandNavigation from './CommandNavigation'
+import Loader from '../atoms/svg/Loader'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
@@ -12,11 +13,20 @@ describe('<CommandNavigation />', () => {
     const handleClick = jest.fn()
     const items = [
       {
+        className: 'show-result',
         id: 'CommandNavigation.showResult',
         type: ActionTypes.Navigation.SHOW_RESULT
       },
       {
+        className: 'next-game',
+        disabled: true,
+        id: 'CommandNavigation.nextGame',
+        type: ActionTypes.Navigation.NEXT_GAME
+      },
+      {
+        className: 'return-to-lobby',
         id: 'CommandNavigation.returnToLobby',
+        isLoading: true,
         type: ActionTypes.Navigation.RETURN_TO_LOBBY
       }
     ]
@@ -28,19 +38,30 @@ describe('<CommandNavigation />', () => {
     )
 
     expect(handleClick).toHaveBeenCalledTimes(0)
-    expect(wrapper.find('button')).toHaveLength(2)
+    expect(wrapper.find('button')).toHaveLength(3)
     expect(wrapper.find('button').at(0).text()).toBe('結果を表示')
-    expect(wrapper.find('button').at(1).text()).toBe('ロビーへ戻る')
+    expect(wrapper.find('button').at(1).text()).toBe('次のゲーム')
+    expect(wrapper.find('button').at(1).props().disabled).toBe(true)
+    expect(wrapper.find('button').at(2).find(Loader).exists()).toBe(true)
   })
   test('onClick', () => {
     const handleClick = jest.fn()
     const items = [
       {
+        className: 'show-result',
         id: 'CommandNavigation.showResult',
         type: ActionTypes.Navigation.SHOW_RESULT
       },
       {
+        className: 'next-game',
+        disabled: true,
+        id: 'CommandNavigation.nextGame',
+        type: ActionTypes.Navigation.NEXT_GAME
+      },
+      {
+        className: 'return-to-lobby',
         id: 'CommandNavigation.returnToLobby',
+        isLoading: true,
         type: ActionTypes.Navigation.RETURN_TO_LOBBY
       }
     ]
@@ -55,8 +76,9 @@ describe('<CommandNavigation />', () => {
     wrapper.find('button').forEach(node => {
       node.simulate('click')
     })
-    expect(handleClick).toHaveBeenCalledTimes(2)
+    expect(handleClick).toHaveBeenCalledTimes(1)
     expect(handleClick).toHaveBeenCalledWith(ActionTypes.Navigation.SHOW_RESULT)
-    expect(handleClick).toHaveBeenCalledWith(ActionTypes.Navigation.RETURN_TO_LOBBY)
+    expect(handleClick).not.toHaveBeenCalledWith(ActionTypes.Navigation.NEXT_GAME)
+    expect(handleClick).not.toHaveBeenCalledWith(ActionTypes.Navigation.RETURN_TO_LOBBY)
   })
 })
