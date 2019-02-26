@@ -2,9 +2,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
 import reducer, {initialState} from './waitingForPlayers'
+import {waitingPage, waitingPage2} from './fakeServer'
 import {VERSION} from '../constants/Version'
 import fetch from 'node-fetch'
-import {waitingPage} from './fakeServer'
 
 describe('CHANGE_LOBBY', () => {
   test('human player', () => {
@@ -21,6 +21,7 @@ describe('CHANGE_LOBBY', () => {
         isPlayer: true,
         menuItems: [
           {
+            disabled: true,
             id: 'Menu.playGame',
             types: [ActionTypes.Target.PLAY_GAME]
           },
@@ -51,6 +52,7 @@ describe('CHANGE_LOBBY', () => {
         isPlayer: false,
         menuItems: [
           {
+            disabled: true,
             id: 'Menu.playGame',
             types: [ActionTypes.Target.PLAY_GAME]
           },
@@ -81,6 +83,7 @@ describe('CHANGE_LOBBY', () => {
         isPlayer: true,
         menuItems: [
           {
+            disabled: true,
             id: 'Menu.playGame',
             types: [ActionTypes.Target.PLAY_GAME]
           },
@@ -115,6 +118,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       isPlayer: false,
       menuItems: [
         {
+          disabled: true,
           id: 'Menu.playGame',
           types: [ActionTypes.Target.PLAY_GAME]
         },
@@ -148,6 +152,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
+          disabled: true,
           id: 'Menu.playGame',
           types: [ActionTypes.Target.PLAY_GAME]
         },
@@ -181,6 +186,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       isPlayer: true,
       menuItems: [
         {
+          disabled: true,
           id: 'Menu.playGame',
           types: [ActionTypes.Target.PLAY_GAME]
         },
@@ -225,6 +231,7 @@ describe('socket/MESSAGE', () => {
             ... initialState,
             menuItems: [
               {
+                disabled: false,
                 id: 'Menu.playGame',
                 isLoading: true,
                 types: [ActionTypes.Target.PLAY_GAME]
@@ -249,6 +256,7 @@ describe('socket/MESSAGE', () => {
           isPlayer: true,
           menuItems: [
             {
+              disabled: false,
               id: 'Menu.playGame',
               isLoading: false,
               types: [ActionTypes.Target.PLAY_GAME]
@@ -272,136 +280,328 @@ describe('socket/MESSAGE', () => {
     const SERVER2CLIENT = `${BASE_URI}/server2client`
     const ajv = new Ajv()
 
-    test('validate the JSON', async () => {
-      expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-        .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, waitingPage)
+    describe('isHost: true', () => {
+      test('validate the JSON', async () => {
+        expect.hasAssertions()
+        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+          .then(res => res.json())
+          .then(schema => {
+            const validate = ajv.validate(schema, waitingPage2)
 
-          expect(validate).toBe(true)
-        })
-    })
+            expect(validate).toBe(true)
+          })
+      })
 
-    test('reduce correctly', () => {
-      expect(
-        reducer(
+      test('reduce correctly', () => {
+        expect(
+          reducer(
+            {
+              isPlayer: true,
+              menuItems: [
+                {
+                  disabled: true,
+                  id: 'Menu.playGame',
+                  types: [ActionTypes.Target.PLAY_GAME]
+                },
+                {
+                  id: 'Menu.returnToLobbyForRobotPlayer',
+                  types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                },
+                {
+                  id: 'Menu.returnToMainPage',
+                  types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+                }
+              ],
+              players: []
+            },
+            {
+              payload: waitingPage2,
+              type: ActionTypes.socket.MESSAGE
+            }
+          )
+        ).toEqual(
           {
             isPlayer: true,
-            menuItems: [],
-            players: []
-          },
-          {
-            payload: waitingPage,
-            type: ActionTypes.socket.MESSAGE
+            menuItems: [
+              {
+                disabled: false,
+                id: 'Menu.playGame',
+                types: [ActionTypes.Target.PLAY_GAME]
+              },
+              {
+                id: 'Menu.returnToLobbyForRobotPlayer',
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+              }
+            ],
+            players: [
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: true,
+                isMe: true,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+              },
+              {
+                avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Cathy',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
+              }
+            ],
+            village: {
+              avatar: 'random',
+              comment: 'Experts recommended',
+              hostPlayer: {
+                isAnonymous: true,
+                isHuman: true,
+                name: 'Anonymous'
+              },
+              id: 1,
+              idForSearching: 123,
+              name: 'Fairytale village',
+              playerSetting: {
+                current: 8,
+                human: {
+                  current: 5,
+                  max: 8
+                },
+                number: 15,
+                robot: {
+                  current: 3,
+                  min: 7
+                }
+              },
+              roleSetting: {
+                hunter: 1,
+                madman: 1,
+                mason: 2,
+                medium: 1,
+                seer: 1,
+                villager: 6,
+                werehamster: 1,
+                werewolf: 2
+              }
+            }
           }
         )
-      ).toEqual(
-        {
-          isPlayer: true,
-          menuItems: [],
-          players: [
+      })
+    })
+    describe('isHost: false', () => {
+      test('validate the JSON', async () => {
+        expect.hasAssertions()
+        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+          .then(res => res.json())
+          .then(schema => {
+            const validate = ajv.validate(schema, waitingPage)
+
+            expect(validate).toBe(true)
+          })
+      })
+
+      test('reduce correctly', () => {
+        expect(
+          reducer(
             {
-              avatarImage: '/assets/images/avatar/default/user.png',
-              isAnonymous: true,
-              isHost: true,
-              isMe: false,
-              name: 'Anonymous',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+              isPlayer: true,
+              menuItems: [
+                {
+                  disabled: true,
+                  id: 'Menu.playGame',
+                  types: [ActionTypes.Target.PLAY_GAME]
+                },
+                {
+                  id: 'Menu.returnToLobbyForRobotPlayer',
+                  types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                },
+                {
+                  id: 'Menu.returnToMainPage',
+                  types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+                }
+              ],
+              players: []
             },
             {
-              avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
-              isAnonymous: true,
-              isHost: false,
-              isMe: true,
-              name: 'Cathy',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
-            },
-            {
-              avatarImage: '/assets/images/avatar/default/user.png',
-              isAnonymous: true,
-              isHost: false,
-              isMe: false,
-              name: 'Anonymous',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
-            },
-            {
-              avatarImage: '/assets/images/avatar/default/user.png',
-              isAnonymous: true,
-              isHost: false,
-              isMe: false,
-              name: 'Anonymous',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
-            },
-            {
-              avatarImage: '/assets/images/avatar/default/user.png',
-              isAnonymous: true,
-              isHost: false,
-              isMe: false,
-              name: 'Anonymous',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
-            },
-            {
-              avatarImage: '/assets/images/avatar/default/user.png',
-              isAnonymous: true,
-              isHost: false,
-              isMe: false,
-              name: 'Anonymous',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
-            },
-            {
-              avatarImage: '/assets/images/avatar/default/user.png',
-              isAnonymous: true,
-              isHost: false,
-              isMe: false,
-              name: 'Anonymous',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
-            },
-            {
-              avatarImage: '/assets/images/avatar/default/user.png',
-              isAnonymous: true,
-              isHost: false,
-              isMe: false,
-              name: 'Anonymous',
-              token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
+              payload: waitingPage,
+              type: ActionTypes.socket.MESSAGE
             }
-          ],
-          village: {
-            avatar: 'random',
-            comment: 'Experts recommended',
-            hostPlayer: {
-              isAnonymous: true,
-              isHuman: true,
-              name: 'Anonymous'
-            },
-            id: 1,
-            idForSearching: 123,
-            name: 'Fairytale village',
-            playerSetting: {
-              current: 8,
-              human: {
-                current: 5,
-                max: 8
+          )
+        ).toEqual(
+          {
+            isPlayer: true,
+            menuItems: [
+              {
+                disabled: true,
+                id: 'Menu.playGame',
+                types: [ActionTypes.Target.PLAY_GAME]
               },
-              number: 15,
-              robot: {
-                current: 3,
-                min: 7
+              {
+                id: 'Menu.returnToLobbyForRobotPlayer',
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
-            },
-            roleSetting: {
-              hunter: 1,
-              madman: 1,
-              mason: 2,
-              medium: 1,
-              seer: 1,
-              villager: 6,
-              werehamster: 1,
-              werewolf: 2
+            ],
+            players: [
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: true,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+              },
+              {
+                avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
+                isAnonymous: true,
+                isHost: false,
+                isMe: true,
+                name: 'Cathy',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
+              },
+              {
+                avatarImage: '/assets/images/avatar/default/user.png',
+                isAnonymous: true,
+                isHost: false,
+                isMe: false,
+                name: 'Anonymous',
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
+              }
+            ],
+            village: {
+              avatar: 'random',
+              comment: 'Experts recommended',
+              hostPlayer: {
+                isAnonymous: true,
+                isHuman: true,
+                name: 'Anonymous'
+              },
+              id: 1,
+              idForSearching: 123,
+              name: 'Fairytale village',
+              playerSetting: {
+                current: 8,
+                human: {
+                  current: 5,
+                  max: 8
+                },
+                number: 15,
+                robot: {
+                  current: 3,
+                  min: 7
+                }
+              },
+              roleSetting: {
+                hunter: 1,
+                madman: 1,
+                mason: 2,
+                medium: 1,
+                seer: 1,
+                villager: 6,
+                werehamster: 1,
+                werewolf: 2
+              }
             }
           }
-        }
-      )
+        )
+      })
     })
   })
 })
+
