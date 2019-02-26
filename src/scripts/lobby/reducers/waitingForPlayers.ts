@@ -29,6 +29,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             isPlayer: true,
             menuItems: [
               {
+                disabled: true,
                 id: 'Menu.playGame',
                 types: [ActionTypes.Target.PLAY_GAME]
               },
@@ -48,6 +49,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             isPlayer: false,
             menuItems: [
               {
+                disabled: true,
                 id: 'Menu.playGame',
                 types: [ActionTypes.Target.PLAY_GAME]
               },
@@ -67,6 +69,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             isPlayer: true,
             menuItems: [
               {
+                disabled: true,
                 id: 'Menu.playGame',
                 types: [ActionTypes.Target.PLAY_GAME]
               },
@@ -103,6 +106,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         isPlayer: false,
         menuItems: [
           {
+            disabled: true,
             id: 'Menu.playGame',
             types: [ActionTypes.Target.PLAY_GAME]
           },
@@ -122,6 +126,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         isPlayer: true,
         menuItems: [
           {
+            disabled: true,
             id: 'Menu.playGame',
             types: [ActionTypes.Target.PLAY_GAME]
           },
@@ -141,6 +146,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         isPlayer: true,
         menuItems: [
           {
+            disabled: true,
             id: 'Menu.playGame',
             types: [ActionTypes.Target.PLAY_GAME]
           },
@@ -173,6 +179,24 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         }
         case lobby.PayloadType.waitingPage: {
           const payload = action.payload
+
+          if (payload.players.some(player => player.isHost && player.isMe)) {
+            return {
+              ... state,
+              menuItems: state.menuItems.map(item => {
+                if (item.types.includes(ActionTypes.Target.PLAY_GAME)) {
+                  return {
+                    ... item,
+                    disabled: false
+                  }
+                }
+
+                return item
+              }),
+              players: payload.players,
+              village: payload.village
+            }
+          }
 
           return {
             ... state,
