@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
+import Loader from '../atoms/svg/Loader'
 import {Navigation} from '../../constants/ActionTypes'
 
 export interface Props {
@@ -8,6 +9,7 @@ export interface Props {
     readonly className?: string
     readonly disabled?: boolean
     readonly id: string
+    readonly isLoading?: boolean
     readonly type: Navigation
   }[]
 }
@@ -23,9 +25,17 @@ export default function CommandNavigation(props: Props) {
           <button
             className={`command--navigation--button ${item.className || ''}`}
             disabled={item.disabled}
-            onClick={() => props.handleClick(item.type)}
+            onClick={() => {
+              if (!item.disabled && !item.isLoading) {
+                props.handleClick(item.type)
+              }
+            }}
           >
-            {text}
+            {
+              item.isLoading ?
+                <Loader /> :
+                text
+            }
           </button>
       }
     </FormattedMessage>
