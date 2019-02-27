@@ -400,6 +400,25 @@ body {
         }
       }
 
+      &.isLoading {
+        box-shadow: inset 2px 2px 1px 0 grey;
+        cursor: wait;
+        filter: brightness(50%);
+
+        & > .loader {
+          height: 2.25rem;
+          width: 2.25rem;
+        }
+
+        &:hover {
+          filter: brightness(50%);
+
+          &:active {
+            filter: brightness(50%);
+          }
+        }
+      }
+
       &:disabled {
         box-shadow: inset 2px 2px 1px 0 grey;
         cursor: not-allowed;

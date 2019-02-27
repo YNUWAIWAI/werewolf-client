@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ActivateNextButton, DeactivateNextButton} from '../actions'
+import {ActivateNextButton, ClickNavigationButton, DeactivateNextButton} from '../actions'
 
 export interface State {
   readonly navigation: {
@@ -12,6 +12,7 @@ export interface State {
 }
 type Action =
   | ActivateNextButton
+  | ClickNavigationButton
   | DeactivateNextButton
 
 export const initialState: State = {
@@ -70,6 +71,32 @@ const commandPostMortem = (state: State = initialState, action: Action): State =
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
           }
         ]
+      }
+    case ActionTypes.Navigation.NEXT_GAME:
+      return {
+        navigation: state.navigation.map(item => {
+          if (item.type === ActionTypes.Navigation.NEXT_GAME) {
+            return {
+              ... item,
+              isLoading: true
+            }
+          }
+
+          return item
+        })
+      }
+    case ActionTypes.Navigation.RETURN_TO_LOBBY:
+      return {
+        navigation: state.navigation.map(item => {
+          if (item.type === ActionTypes.Navigation.RETURN_TO_LOBBY) {
+            return {
+              ... item,
+              isLoading: true
+            }
+          }
+
+          return item
+        })
       }
     default:
       return state

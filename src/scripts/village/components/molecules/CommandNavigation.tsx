@@ -23,7 +23,7 @@ export default function CommandNavigation(props: Props) {
       {
         text =>
           <button
-            className={`command--navigation--button ${item.className || ''}`}
+            className={`command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
             disabled={item.disabled}
             onClick={() => {
               if (!item.disabled && !item.isLoading) {
