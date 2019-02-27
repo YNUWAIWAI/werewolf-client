@@ -14,7 +14,7 @@ describe('commandGrave', () => {
       {
         navigation: [
           {
-            className: 'return-to-lobby',
+            className: 'return-to-lobby expand',
             id: 'CommandNavigation.returnToLobby',
             isLoading: true,
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
