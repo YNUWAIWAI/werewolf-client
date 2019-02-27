@@ -138,6 +138,8 @@ const state: ReducerState = {
     all: []
   },
   timer: {
+    phaseStartTime: new Date('2006-10-07T12:06:56.568+09:00').getTime(),
+    phaseTimeLimit: 600000,
     start: new Date('2006-10-07T12:06:56.568+09:00').getTime(),
     time: 0
   }
