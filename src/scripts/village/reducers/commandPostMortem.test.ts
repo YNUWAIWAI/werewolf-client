@@ -54,4 +54,102 @@ describe('commandPostMortem', () => {
       }
     )
   })
+  test('NEXT_GAME', () => {
+    expect(
+      reducer(
+        {
+          navigation: [
+            {
+              className: 'show-result',
+              id: 'CommandNavigation.showResult',
+              type: ActionTypes.Navigation.SHOW_RESULT
+            },
+            {
+              className: 'next-game',
+              id: 'CommandNavigation.nextGame',
+              type: ActionTypes.Navigation.NEXT_GAME
+            },
+            {
+              className: 'return-to-lobby',
+              id: 'CommandNavigation.returnToLobby',
+              type: ActionTypes.Navigation.RETURN_TO_LOBBY
+            }
+          ]
+        },
+        {
+          type: ActionTypes.Navigation.NEXT_GAME
+        }
+      )
+    ).toEqual(
+      {
+        navigation: [
+          {
+            className: 'show-result',
+            id: 'CommandNavigation.showResult',
+            type: ActionTypes.Navigation.SHOW_RESULT
+          },
+          {
+            className: 'next-game',
+            id: 'CommandNavigation.nextGame',
+            isLoading: true,
+            type: ActionTypes.Navigation.NEXT_GAME
+          },
+          {
+            className: 'return-to-lobby',
+            id: 'CommandNavigation.returnToLobby',
+            type: ActionTypes.Navigation.RETURN_TO_LOBBY
+          }
+        ]
+      }
+    )
+  })
+  test('RETURN_TO_LOBBY', () => {
+    expect(
+      reducer(
+        {
+          navigation: [
+            {
+              className: 'show-result',
+              id: 'CommandNavigation.showResult',
+              type: ActionTypes.Navigation.SHOW_RESULT
+            },
+            {
+              className: 'next-game',
+              id: 'CommandNavigation.nextGame',
+              type: ActionTypes.Navigation.NEXT_GAME
+            },
+            {
+              className: 'return-to-lobby',
+              id: 'CommandNavigation.returnToLobby',
+              type: ActionTypes.Navigation.RETURN_TO_LOBBY
+            }
+          ]
+        },
+        {
+          type: ActionTypes.Navigation.NEXT_GAME
+        }
+      )
+    ).toEqual(
+      {
+        navigation: [
+          {
+            className: 'show-result',
+            id: 'CommandNavigation.showResult',
+            type: ActionTypes.Navigation.SHOW_RESULT
+          },
+          {
+            className: 'next-game',
+            id: 'CommandNavigation.nextGame',
+            type: ActionTypes.Navigation.NEXT_GAME
+          },
+          {
+            className: 'return-to-lobby',
+            id: 'CommandNavigation.returnToLobby',
+            isLoading: true,
+            type: ActionTypes.Navigation.RETURN_TO_LOBBY
+          }
+        ]
+      }
+    )
+  })
 })
