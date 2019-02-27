@@ -395,7 +395,7 @@ body {
       &.return-to-lobby {
         grid-area: return-to-lobby;
 
-        &.next-game {
+        &.expand {
           grid-area: next-game / return-to-lobby / return-to-lobby;
         }
       }

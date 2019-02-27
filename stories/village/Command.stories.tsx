@@ -143,7 +143,7 @@ storiesOf('village|Command', module)
           type: ActionTypes.Navigation.SHOW_RESULT
         },
         {
-          className: 'return-to-lobby next-game',
+          className: 'return-to-lobby expand',
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
@@ -164,7 +164,7 @@ storiesOf('village|Command', module)
       handlePostChat: () => action('handlePostChat'),
       navigation: [
         {
-          className: 'return-to-lobby next-game',
+          className: 'return-to-lobby expand',
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }

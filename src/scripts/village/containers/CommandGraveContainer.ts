@@ -12,7 +12,7 @@ type Action =
 const mapStateToProps = (state: ReducerState): StateProps => ({
   navigation: [
     {
-      className: 'return-to-lobby next-game',
+      className: 'return-to-lobby expand',
       id: 'CommandNavigation.returnToLobby',
       type: ActionTypes.Navigation.RETURN_TO_LOBBY
     }

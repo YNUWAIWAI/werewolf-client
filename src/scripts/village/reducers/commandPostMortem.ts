@@ -65,7 +65,7 @@ const commandPostMortem = (state: State = initialState, action: Action): State =
             type: ActionTypes.Navigation.SHOW_RESULT
           },
           {
-            className: 'return-to-lobby next-game',
+            className: 'return-to-lobby expand',
             id: 'CommandNavigation.returnToLobby',
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
           }
