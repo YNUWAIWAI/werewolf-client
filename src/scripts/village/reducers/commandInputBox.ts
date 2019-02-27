@@ -85,11 +85,11 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
             return {
               limited: {
                 ... state.limited,
-                postCountLimit: action.payload.village.characterLimit || 10
+                postCountLimit: action.payload.village.chatSettings.limit
               },
               public: {
                 ... state.public,
-                postCountLimit: action.payload.village.characterLimit || 10
+                postCountLimit: action.payload.village.chatSettings.limit
               }
             }
           }
@@ -103,11 +103,11 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
               limited: {
                 ... state.limited,
                 available: true,
-                postCountLimit: action.payload.village.characterLimit || 10
+                postCountLimit: action.payload.village.chatSettings.limit
               },
               public: {
                 ... state.public,
-                postCountLimit: action.payload.village.characterLimit || 10
+                postCountLimit: action.payload.village.chatSettings.limit
               }
             }
           }
@@ -115,11 +115,11 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           return {
             limited: {
               ... state.limited,
-              postCountLimit: action.payload.village.characterLimit || 10
+              postCountLimit: action.payload.village.chatSettings.limit
             },
             public: {
               ... state.public,
-              postCountLimit: action.payload.village.characterLimit || 10
+              postCountLimit: action.payload.village.chatSettings.limit
             }
           }
         }
