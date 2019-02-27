@@ -52,7 +52,6 @@ const base = (state: State = initialState, action: Action): State => {
       action.payload['@payload'] === village.Message.boardMessage ||
       action.payload['@payload'] === village.Message.errorMessage ||
       action.payload['@payload'] === village.Message.flavorTextMessage ||
-      action.payload['@payload'] === village.Message.playerMessage ||
       action.payload['@payload'] === village.Message.scrollMessage ||
       action.payload['@payload'] === village.Message.systemMessage ||
       action.payload['@payload'] === village.Message.voteMessage
