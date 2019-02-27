@@ -70,7 +70,7 @@ const base = (state: State = initialState, action: Action): State => {
         'village': {
           '@context': action.payload.village['@context'],
           '@id': action.payload.village['@id'],
-          'characterLimit': action.payload.village.characterLimit,
+          'characterLimit': initialState.village.characterLimit,
           'id': action.payload.village.id,
           'lang': action.payload.village.lang,
           'name': action.payload.village.name,
