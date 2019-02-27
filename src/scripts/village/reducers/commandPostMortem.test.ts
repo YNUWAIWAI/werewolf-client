@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {activateNextButton, deactivateNextButton} from '../actions'
 import reducer, {initialState} from './commandPostMortem'
 
-describe('commandNextButton', () => {
+describe('commandPostMortem', () => {
   test('ACTIVATE_NEXT_BUTTON', () => {
     expect(
       reducer(
@@ -46,7 +46,7 @@ describe('commandNextButton', () => {
             type: ActionTypes.Navigation.SHOW_RESULT
           },
           {
-            className: 'return-to-lobby next-game',
+            className: 'return-to-lobby expand',
             id: 'CommandNavigation.returnToLobby',
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
           }
