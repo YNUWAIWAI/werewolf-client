@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {
   day,
+  grave,
   morningWithLimitedChat,
   morningWithoutLimitedChat,
   night,
@@ -81,6 +82,18 @@ storiesOf('village|App', module)
     const store = createStore(
       reducer,
       night
+    )
+    const story =
+      <Provider store={store}>
+        <App />
+      </Provider>
+
+    return story
+  })
+  .add('墓場', () => {
+    const store = createStore(
+      reducer,
+      grave
     )
     const story =
       <Provider store={store}>

@@ -349,6 +349,15 @@ const state: ReducerState = {
       }
     }
   },
+  commandGrave: {
+    navigation: [
+      {
+        className: 'return-to-lobby expand',
+        id: 'CommandNavigation.returnToLobby',
+        type: ActionTypes.Navigation.RETURN_TO_LOBBY
+      }
+    ]
+  },
   commandInputBox: {
     'limited': {
       available: true,

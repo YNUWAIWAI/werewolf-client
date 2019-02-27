@@ -8,18 +8,18 @@ const state: ReducerState = {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent#0',
         'id': 0,
-        'image': 'https://licos.online/image/0.2/Gert.jpg',
+        'image': 'https://werewolf.world/image/0.2/Gert.jpg',
         'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Gert',
           'ja': 'ゲルト'
         },
-        'status': village.AgentStatus.dead,
+        'status': village.AgentStatus.alive,
         'update': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#0/update',
           'date': 1,
-          'phase': village.Phase.day
+          'phase': village.Phase.morning
         }
       },
       {
@@ -33,7 +33,7 @@ const state: ReducerState = {
           'en': 'Walter',
           'ja': 'ヴァルター'
         },
-        'status': village.AgentStatus.alive,
+        'status': village.AgentStatus.dead,
         'update': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
           'date': 1,
@@ -45,7 +45,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#2',
         'id': 2,
         'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Moritz',
@@ -63,7 +63,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#3',
         'id': 3,
         'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Simson',
@@ -81,7 +81,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#4',
         'id': 4,
         'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Thomas',
@@ -99,7 +99,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#5',
         'id': 5,
         'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Nicholas',
@@ -117,7 +117,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#6',
         'id': 6,
         'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Dieter',
@@ -135,7 +135,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#7',
         'id': 7,
         'image': 'https://werewolf.world/image/0.2/Peter.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Peter',
@@ -159,11 +159,11 @@ const state: ReducerState = {
           'en': 'Lisa',
           'ja': 'リーザ'
         },
-        'status': village.AgentStatus.dead,
+        'status': village.AgentStatus.alive,
         'update': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#8/update',
           'date': 1,
-          'phase': village.Phase.night
+          'phase': village.Phase.morning
         }
       },
       {
@@ -171,7 +171,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#9',
         'id': 9,
         'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Alvin',
@@ -189,7 +189,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#10',
         'id': 10,
         'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Catalina',
@@ -207,7 +207,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#11',
         'id': 11,
         'image': 'https://werewolf.world/image/0.2/Otto.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Otto',
@@ -225,7 +225,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#12',
         'id': 12,
         'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Joachim',
@@ -243,7 +243,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#13',
         'id': 13,
         'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Pamela',
@@ -261,7 +261,7 @@ const state: ReducerState = {
         '@id': 'https://licos.online/state/0.2/village#3/agent#14',
         'id': 14,
         'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
-        'isAChoice': true,
+        'isAChoice': false,
         'isMine': false,
         'name': {
           'en': 'Jacob',
@@ -286,7 +286,7 @@ const state: ReducerState = {
         'en': 'Walter',
         'ja': 'ヴァルター'
       },
-      'status': village.AgentStatus.alive,
+      'status': village.AgentStatus.dead,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
         'date': 1,
@@ -299,9 +299,9 @@ const state: ReducerState = {
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
     'date': 1,
     'intensionalDisclosureRange': village.Channel.private,
-    'phase': village.Phase.night,
+    'phase': village.Phase.morning,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-    'phaseTimeLimit': 100,
+    'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
@@ -360,7 +360,7 @@ const state: ReducerState = {
   },
   commandInputBox: {
     'limited': {
-      available: true,
+      available: false,
       postCount: 0,
       postCountLimit: 10
     },
@@ -390,112 +390,7 @@ const state: ReducerState = {
     ]
   },
   commandSelection: {
-    agents: [
-      {
-        id: 1,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        name: {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        }
-      },
-      {
-        id: 2,
-        image: 'https://werewolf.world/image/0.1/Moritz.jpg',
-        name: {
-          'en': 'Moritz',
-          'ja': 'モーリッツ'
-        }
-      },
-      {
-        id: 3,
-        image: 'https://werewolf.world/image/0.1/Simson.jpg',
-        name: {
-          'en': 'Simson',
-          'ja': 'ジムゾン'
-        }
-      },
-      {
-        id: 4,
-        image: 'https://werewolf.world/image/0.1/Thomas.jpg',
-        name: {
-          'en': 'Thomas',
-          'ja': 'トーマス'
-        }
-      },
-      {
-        id: 5,
-        image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
-        name: {
-          'en': 'Nicholas',
-          'ja': 'ニコラス'
-        }
-      },
-      {
-        id: 6,
-        image: 'https://werewolf.world/image/0.1/Dieter.jpg',
-        name: {
-          'en': 'Dieter',
-          'ja': 'ディーター'
-        }
-      },
-      {
-        id: 7,
-        image: 'https://werewolf.world/image/0.1/Peter.jpg',
-        name: {
-          'en': 'Peter',
-          'ja': 'ペーター'
-        }
-      },
-      {
-        id: 8,
-        image: 'https://werewolf.world/image/0.1/Lisa.jpg',
-        name: {
-          'en': 'Lisa',
-          'ja': 'リーザ'
-        }
-      },
-      {
-        id: 9,
-        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
-        name: {
-          'en': 'Alvin',
-          'ja': 'アルビン'
-        }
-      },
-      {
-        id: 11,
-        image: 'https://werewolf.world/image/0.1/Otto.jpg',
-        name: {
-          'en': 'Otto',
-          'ja': 'オットー'
-        }
-      },
-      {
-        id: 12,
-        image: 'https://werewolf.world/image/0.1/Joachim.jpg',
-        name: {
-          'en': 'Joachim',
-          'ja': 'ヨアヒム'
-        }
-      },
-      {
-        id: 13,
-        image: 'https://werewolf.world/image/0.1/Pamela.jpg',
-        name: {
-          'en': 'Pamela',
-          'ja': 'パメラ'
-        }
-      },
-      {
-        id: 14,
-        image: 'https://werewolf.world/image/0.1/Jacob.jpg',
-        name: {
-          'en': 'Jacob',
-          'ja': 'ヤコブ'
-        }
-      }
-    ],
+    agents: [],
     fixed: false
   },
   hideButton: {
@@ -1268,18 +1163,6 @@ const state: ReducerState = {
   },
   roles: {
     all: [
-      {
-        '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#master',
-        'board': [],
-        'image': 'https://werewolf.world/image/0.2/master.jpg',
-        'isMine': false,
-        'name': {
-          'en': 'Master',
-          'ja': 'マスター'
-        },
-        'numberOfAgents': 1
-      },
       {
         '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#villager',
