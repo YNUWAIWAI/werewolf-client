@@ -126,7 +126,7 @@ describe('commandPostMortem', () => {
           ]
         },
         {
-          type: ActionTypes.Navigation.NEXT_GAME
+          type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       )
     ).toEqual(
