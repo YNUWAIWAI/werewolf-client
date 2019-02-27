@@ -1,5 +1,6 @@
 /* global village */
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
+import {Content} from '../../../src/scripts/village/reducers/command'
 import {ReducerState} from '../../../src/scripts/village/reducers'
 const state: ReducerState = {
   agents: {
@@ -348,6 +349,10 @@ const state: ReducerState = {
         'type': 'item'
       }
     }
+  },
+  command: {
+    content: Content.CommandInputBox,
+    isDead: false
   },
   commandGrave: {
     navigation: [
