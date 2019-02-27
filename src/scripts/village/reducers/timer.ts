@@ -27,7 +27,10 @@ const roles = (state: State = initialState, action: Action): State => {
         time: action.time
       }
     case ActionTypes.socket.MESSAGE:
-      if (action.payload['@payload'] === village.Message.systemMessage) {
+      if (
+        action.payload['@payload'] === village.Message.systemMessage ||
+        (action.payload['@payload'] === village.Message.flavorTextMessage && action.payload.date === 0)
+      ) {
         return {
           ... state,
           phaseStartTime: new Date(action.payload.phaseStartTime).getTime(),
