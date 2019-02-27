@@ -1,4 +1,3 @@
-import * as ActionTypes from '../constants/ActionTypes'
 import {ClickNavigationButton, PostChat, clickNavigationButton, postChat} from '../actions'
 import CommandGrave, {DispatchProps, StateProps} from '../components/organisms/CommandPostMortem'
 import {Dispatch} from 'redux'
@@ -9,15 +8,7 @@ type Action =
   | ClickNavigationButton
   | PostChat
 
-const mapStateToProps = (state: ReducerState): StateProps => ({
-  navigation: [
-    {
-      className: 'return-to-lobby next-game',
-      id: 'CommandNavigation.returnToLobby',
-      type: ActionTypes.Navigation.RETURN_TO_LOBBY
-    }
-  ]
-})
+const mapStateToProps = (state: ReducerState): StateProps => state.commandGrave
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleNavigationClick: type => {
     dispatch(clickNavigationButton(type))

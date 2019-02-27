@@ -395,8 +395,27 @@ body {
       &.return-to-lobby {
         grid-area: return-to-lobby;
 
-        &.next-game {
+        &.expand {
           grid-area: next-game / return-to-lobby / return-to-lobby;
+        }
+      }
+
+      &.isLoading {
+        box-shadow: inset 2px 2px 1px 0 grey;
+        cursor: wait;
+        filter: brightness(50%);
+
+        & > .loader {
+          height: 2.25rem;
+          width: 2.25rem;
+        }
+
+        &:hover {
+          filter: brightness(50%);
+
+          &:active {
+            filter: brightness(50%);
+          }
         }
       }
 

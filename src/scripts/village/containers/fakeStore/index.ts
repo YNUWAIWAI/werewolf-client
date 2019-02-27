@@ -4,8 +4,9 @@ import {ReducerState} from '../../reducers'
 import {initialState as agents} from '../../reducers/agents'
 import {initialState as base} from '../../reducers/base'
 import {initialState as chat} from '../../reducers/chat'
+import {initialState as commandGrave} from '../../reducers/commandGrave'
 import {initialState as commandInputBox} from '../../reducers/commandInputBox'
-import {initialState as commandNextButton} from '../../reducers/commandNextButton'
+import {initialState as commandPostMortem} from '../../reducers/commandPostMortem'
 import {initialState as commandSelection} from '../../reducers/commandSelection'
 import {initialState as hideButton} from '../../reducers/hideButton'
 import {initialState as language} from '../../reducers/language'
@@ -21,8 +22,9 @@ export default (state?: Record<string, unknown>): Store<ReducerState, Action<unk
     agents,
     base,
     chat,
+    commandGrave,
     commandInputBox,
-    commandNextButton,
+    commandPostMortem,
     commandSelection,
     hideButton,
     language,

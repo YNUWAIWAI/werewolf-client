@@ -1,6 +1,6 @@
 /* global village */
+import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
 import {ReducerState} from '../../../src/scripts/village/reducers'
-import {Status} from '../../../src/scripts/village/reducers/commandNextButton'
 const state: ReducerState = {
   agents: {
     all: []
@@ -60,6 +60,15 @@ const state: ReducerState = {
       }
     }
   },
+  commandGrave: {
+    navigation: [
+      {
+        className: 'return-to-lobby expand',
+        id: 'CommandNavigation.returnToLobby',
+        type: ActionTypes.Navigation.RETURN_TO_LOBBY
+      }
+    ]
+  },
   commandInputBox: {
     'limited': {
       available: true,
@@ -71,8 +80,25 @@ const state: ReducerState = {
       postCountLimit: 10
     }
   },
-  commandNextButton: {
-    status: Status.inactive
+  commandPostMortem: {
+    navigation: [
+      {
+        className: 'show-result',
+        id: 'CommandNavigation.showResult',
+        type: ActionTypes.Navigation.SHOW_RESULT
+      },
+      {
+        className: 'next-game',
+        disabled: true,
+        id: 'CommandNavigation.nextGame',
+        type: ActionTypes.Navigation.NEXT_GAME
+      },
+      {
+        className: 'return-to-lobby',
+        id: 'CommandNavigation.returnToLobby',
+        type: ActionTypes.Navigation.RETURN_TO_LOBBY
+      }
+    ]
   },
   commandSelection: {
     agents: [],
