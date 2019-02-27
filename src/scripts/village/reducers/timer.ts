@@ -18,7 +18,7 @@ export const initialState = {
   start: 0,
   time: 0
 }
-const roles = (state: State = initialState, action: Action): State => {
+const timer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.global.TICK:
       return {
@@ -44,4 +44,4 @@ const roles = (state: State = initialState, action: Action): State => {
   }
 }
 
-export default roles
+export default timer
