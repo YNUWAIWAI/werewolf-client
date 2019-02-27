@@ -198,6 +198,10 @@ declare namespace village {
     village: {
       '@context': Context.Village
       '@id': string
+      chatSettings: {
+        limit: number
+        characterLimit: number
+      }
       characterLimit: number
       id: number
       lang: Language
