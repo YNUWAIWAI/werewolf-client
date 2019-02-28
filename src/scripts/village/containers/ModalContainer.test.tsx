@@ -11,84 +11,42 @@ describe('<ModalContainer />', () => {
     test('DAY', () => {
       const store = fakeStore(
         {
-          agents: {
-            all: [
-              {
-                '@id': 'https://werewolf.world/resource/0.2/Gert',
-                'agentIsMine': false,
-                'id': 0,
-                'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-                'isAChoice': false,
-                'name': {
-                  'en': 'Gert',
-                  'ja': 'ゲルト'
-                },
-                'status': 'dead',
-                'statusUpdateDate': 1,
-                'statusUpdatePhase': 'day'
-              },
-              {
-                '@id': 'https://werewolf.world/resource/0.2/Walter',
-                'agentIsMine': true,
-                'id': 1,
-                'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-                'isAChoice': false,
-                'name': {
-                  'en': 'Walter',
-                  'ja': 'ヴァルター'
-                },
-                'status': 'alive',
-                'statusUpdateDate': 1,
-                'statusUpdatePhase': 'morning'
-              },
-              {
-                '@id': 'https://werewolf.world/resource/0.2/Moritz',
-                'agentIsMine': false,
-                'id': 2,
-                'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-                'isAChoice': true,
-                'name': {
-                  'en': 'Moritz',
-                  'ja': 'モーリッツ'
-                },
-                'status': 'alive',
-                'statusUpdateDate': 1,
-                'statusUpdatePhase': 'morning'
-              },
-              {
-                '@id': 'https://werewolf.world/resource/0.2/Simson',
-                'agentIsMine': false,
-                'id': 3,
-                'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-                'isAChoice': true,
-                'name': {
-                  'en': 'Simson',
-                  'ja': 'ジムゾン'
-                },
-                'status': 'alive',
-                'statusUpdateDate': 1,
-                'statusUpdatePhase': 'morning'
-              },
-              {
-                '@id': 'https://werewolf.world/resource/0.2/Thomas',
-                'agentIsMine': false,
-                'id': 4,
-                'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-                'isAChoice': true,
-                'name': {
-                  'en': 'Thomas',
-                  'ja': 'トーマス'
-                },
-                'status': 'alive',
-                'statusUpdateDate': 1,
-                'statusUpdatePhase': 'morning'
-              }
-            ]
-          },
           base: {
             date: 1,
             phase: DAY,
             phaseTimeLimit: 100
+          },
+          commandSelection: {
+            agents: [
+              {
+                '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                'id': 2,
+                'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                'name': {
+                  'en': 'Moritz',
+                  'ja': 'モーリッツ'
+                }
+              },
+              {
+                '@id': 'https://werewolf.world/resource/0.2/Simson',
+                'id': 3,
+                'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                'name': {
+                  'en': 'Simson',
+                  'ja': 'ジムゾン'
+                }
+              },
+              {
+                '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                'id': 4,
+                'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                'name': {
+                  'en': 'Thomas',
+                  'ja': 'トーマス'
+                }
+              }
+            ],
+            fixed: false
           },
           language: 'ja',
           modal: {
@@ -124,84 +82,42 @@ describe('<ModalContainer />', () => {
       test('HUNTER', () => {
         const store = fakeStore(
           {
-            agents: {
-              all: [
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Gert',
-                  'agentIsMine': false,
-                  'id': 0,
-                  'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
-                  },
-                  'status': 'dead',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'day'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Walter',
-                  'agentIsMine': true,
-                  'id': 1,
-                  'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Walter',
-                    'ja': 'ヴァルター'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
-                  'agentIsMine': false,
-                  'id': 2,
-                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Moritz',
-                    'ja': 'モーリッツ'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Simson',
-                  'agentIsMine': false,
-                  'id': 3,
-                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Simson',
-                    'ja': 'ジムゾン'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
-                  'agentIsMine': false,
-                  'id': 4,
-                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Thomas',
-                    'ja': 'トーマス'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                }
-              ]
-            },
             base: {
               date: 1,
               phase: NIGHT,
               phaseTimeLimit: 100
+            },
+            commandSelection: {
+              agents: [
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                  'id': 2,
+                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  'name': {
+                    'en': 'Moritz',
+                    'ja': 'モーリッツ'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Simson',
+                  'id': 3,
+                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                  'name': {
+                    'en': 'Simson',
+                    'ja': 'ジムゾン'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                  'id': 4,
+                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  'name': {
+                    'en': 'Thomas',
+                    'ja': 'トーマス'
+                  }
+                }
+              ],
+              fixed: false
             },
             language: 'ja',
             modal: {
@@ -237,84 +153,42 @@ describe('<ModalContainer />', () => {
       test('SEER', () => {
         const store = fakeStore(
           {
-            agents: {
-              all: [
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Gert',
-                  'agentIsMine': false,
-                  'id': 0,
-                  'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
-                  },
-                  'status': 'dead',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'day'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Walter',
-                  'agentIsMine': true,
-                  'id': 1,
-                  'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Walter',
-                    'ja': 'ヴァルター'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
-                  'agentIsMine': false,
-                  'id': 2,
-                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Moritz',
-                    'ja': 'モーリッツ'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Simson',
-                  'agentIsMine': false,
-                  'id': 3,
-                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Simson',
-                    'ja': 'ジムゾン'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
-                  'agentIsMine': false,
-                  'id': 4,
-                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Thomas',
-                    'ja': 'トーマス'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                }
-              ]
-            },
             base: {
               date: 1,
               phase: NIGHT,
               phaseTimeLimit: 100
+            },
+            commandSelection: {
+              agents: [
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                  'id': 2,
+                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  'name': {
+                    'en': 'Moritz',
+                    'ja': 'モーリッツ'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Simson',
+                  'id': 3,
+                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                  'name': {
+                    'en': 'Simson',
+                    'ja': 'ジムゾン'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                  'id': 4,
+                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  'name': {
+                    'en': 'Thomas',
+                    'ja': 'トーマス'
+                  }
+                }
+              ],
+              fixed: false
             },
             language: 'ja',
             modal: {
@@ -350,84 +224,42 @@ describe('<ModalContainer />', () => {
       test('WEREWOLF', () => {
         const store = fakeStore(
           {
-            agents: {
-              all: [
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Gert',
-                  'agentIsMine': false,
-                  'id': 0,
-                  'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
-                  },
-                  'status': 'dead',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'day'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Walter',
-                  'agentIsMine': true,
-                  'id': 1,
-                  'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Walter',
-                    'ja': 'ヴァルター'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
-                  'agentIsMine': false,
-                  'id': 2,
-                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Moritz',
-                    'ja': 'モーリッツ'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Simson',
-                  'agentIsMine': false,
-                  'id': 3,
-                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Simson',
-                    'ja': 'ジムゾン'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
-                  'agentIsMine': false,
-                  'id': 4,
-                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Thomas',
-                    'ja': 'トーマス'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                }
-              ]
-            },
             base: {
               date: 1,
               phase: NIGHT,
               phaseTimeLimit: 100
+            },
+            commandSelection: {
+              agents: [
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                  'id': 2,
+                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  'name': {
+                    'en': 'Moritz',
+                    'ja': 'モーリッツ'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Simson',
+                  'id': 3,
+                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                  'name': {
+                    'en': 'Simson',
+                    'ja': 'ジムゾン'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                  'id': 4,
+                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  'name': {
+                    'en': 'Thomas',
+                    'ja': 'トーマス'
+                  }
+                }
+              ],
+              fixed: false
             },
             language: 'ja',
             modal: {
@@ -463,84 +295,42 @@ describe('<ModalContainer />', () => {
       test('VILLAGER(default)', () => {
         const store = fakeStore(
           {
-            agents: {
-              all: [
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Gert',
-                  'agentIsMine': false,
-                  'id': 0,
-                  'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
-                  },
-                  'status': 'dead',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'day'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Walter',
-                  'agentIsMine': true,
-                  'id': 1,
-                  'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-                  'isAChoice': false,
-                  'name': {
-                    'en': 'Walter',
-                    'ja': 'ヴァルター'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
-                  'agentIsMine': false,
-                  'id': 2,
-                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Moritz',
-                    'ja': 'モーリッツ'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Simson',
-                  'agentIsMine': false,
-                  'id': 3,
-                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Simson',
-                    'ja': 'ジムゾン'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                },
-                {
-                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
-                  'agentIsMine': false,
-                  'id': 4,
-                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-                  'isAChoice': true,
-                  'name': {
-                    'en': 'Thomas',
-                    'ja': 'トーマス'
-                  },
-                  'status': 'alive',
-                  'statusUpdateDate': 1,
-                  'statusUpdatePhase': 'morning'
-                }
-              ]
-            },
             base: {
               date: 1,
               phase: NIGHT,
               phaseTimeLimit: 100
+            },
+            commandSelection: {
+              agents: [
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                  'id': 2,
+                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  'name': {
+                    'en': 'Moritz',
+                    'ja': 'モーリッツ'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Simson',
+                  'id': 3,
+                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                  'name': {
+                    'en': 'Simson',
+                    'ja': 'ジムゾン'
+                  }
+                },
+                {
+                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                  'id': 4,
+                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  'name': {
+                    'en': 'Thomas',
+                    'ja': 'トーマス'
+                  }
+                }
+              ],
+              fixed: false
             },
             language: 'ja',
             modal: {
@@ -578,84 +368,42 @@ describe('<ModalContainer />', () => {
   test('selectedAgent doesn\'t exist', () => {
     const store = fakeStore(
       {
-        agents: {
-          all: [
-            {
-              '@id': 'https://werewolf.world/resource/0.2/Gert',
-              'agentIsMine': false,
-              'id': 0,
-              'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-              'isAChoice': false,
-              'name': {
-                'en': 'Gert',
-                'ja': 'ゲルト'
-              },
-              'status': 'dead',
-              'statusUpdateDate': 1,
-              'statusUpdatePhase': 'day'
-            },
-            {
-              '@id': 'https://werewolf.world/resource/0.2/Walter',
-              'agentIsMine': true,
-              'id': 1,
-              'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-              'isAChoice': false,
-              'name': {
-                'en': 'Walter',
-                'ja': 'ヴァルター'
-              },
-              'status': 'alive',
-              'statusUpdateDate': 1,
-              'statusUpdatePhase': 'morning'
-            },
-            {
-              '@id': 'https://werewolf.world/resource/0.2/Moritz',
-              'agentIsMine': false,
-              'id': 2,
-              'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-              'isAChoice': true,
-              'name': {
-                'en': 'Moritz',
-                'ja': 'モーリッツ'
-              },
-              'status': 'alive',
-              'statusUpdateDate': 1,
-              'statusUpdatePhase': 'morning'
-            },
-            {
-              '@id': 'https://werewolf.world/resource/0.2/Simson',
-              'agentIsMine': false,
-              'id': 3,
-              'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-              'isAChoice': true,
-              'name': {
-                'en': 'Simson',
-                'ja': 'ジムゾン'
-              },
-              'status': 'alive',
-              'statusUpdateDate': 1,
-              'statusUpdatePhase': 'morning'
-            },
-            {
-              '@id': 'https://werewolf.world/resource/0.2/Thomas',
-              'agentIsMine': false,
-              'id': 4,
-              'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-              'isAChoice': true,
-              'name': {
-                'en': 'Thomas',
-                'ja': 'トーマス'
-              },
-              'status': 'alive',
-              'statusUpdateDate': 1,
-              'statusUpdatePhase': 'morning'
-            }
-          ]
-        },
         base: {
           date: 1,
           phase: DAY,
           phaseTimeLimit: 100
+        },
+        commandSelection: {
+          agents: [
+            {
+              '@id': 'https://werewolf.world/resource/0.2/Moritz',
+              'id': 2,
+              'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+              'name': {
+                'en': 'Moritz',
+                'ja': 'モーリッツ'
+              }
+            },
+            {
+              '@id': 'https://werewolf.world/resource/0.2/Simson',
+              'id': 3,
+              'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+              'name': {
+                'en': 'Simson',
+                'ja': 'ジムゾン'
+              }
+            },
+            {
+              '@id': 'https://werewolf.world/resource/0.2/Thomas',
+              'id': 4,
+              'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+              'name': {
+                'en': 'Thomas',
+                'ja': 'トーマス'
+              }
+            }
+          ],
+          fixed: false
         },
         language: 'ja',
         modal: {
