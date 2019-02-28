@@ -397,107 +397,120 @@ const state: ReducerState = {
   commandSelection: {
     agents: [
       {
-        id: 1,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        name: {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+        'id': 2,
+        'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+        'name': {
+          en: 'Moritz',
+          ja: 'モーリッツ'
         }
       },
       {
-        id: 2,
-        image: 'https://werewolf.world/image/0.1/Moritz.jpg',
-        name: {
-          'en': 'Moritz',
-          'ja': 'モーリッツ'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+        'id': 3,
+        'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+        'name': {
+          en: 'Simson',
+          ja: 'ジムゾン'
         }
       },
       {
-        id: 3,
-        image: 'https://werewolf.world/image/0.1/Simson.jpg',
-        name: {
-          'en': 'Simson',
-          'ja': 'ジムゾン'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+        'id': 4,
+        'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+        'name': {
+          en: 'Thomas',
+          ja: 'トーマス'
         }
       },
       {
-        id: 4,
-        image: 'https://werewolf.world/image/0.1/Thomas.jpg',
-        name: {
-          'en': 'Thomas',
-          'ja': 'トーマス'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+        'id': 5,
+        'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
+        'name': {
+          en: 'Nicholas',
+          ja: 'ニコラス'
         }
       },
       {
-        id: 5,
-        image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
-        name: {
-          'en': 'Nicholas',
-          'ja': 'ニコラス'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+        'id': 6,
+        'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
+        'name': {
+          en: 'Dieter',
+          ja: 'ディーター'
         }
       },
       {
-        id: 6,
-        image: 'https://werewolf.world/image/0.1/Dieter.jpg',
-        name: {
-          'en': 'Dieter',
-          'ja': 'ディーター'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+        'id': 7,
+        'image': 'https://werewolf.world/image/0.2/Peter.jpg',
+        'name': {
+          en: 'Peter',
+          ja: 'ペーター'
         }
       },
       {
-        id: 7,
-        image: 'https://werewolf.world/image/0.1/Peter.jpg',
-        name: {
-          'en': 'Peter',
-          'ja': 'ペーター'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+        'id': 8,
+        'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
+        'name': {
+          en: 'Lisa',
+          ja: 'リーザ'
         }
       },
       {
-        id: 8,
-        image: 'https://werewolf.world/image/0.1/Lisa.jpg',
-        name: {
-          'en': 'Lisa',
-          'ja': 'リーザ'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+        'id': 9,
+        'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
+        'name': {
+          en: 'Alvin',
+          ja: 'アルビン'
         }
       },
       {
-        id: 9,
-        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
-        name: {
-          'en': 'Alvin',
-          'ja': 'アルビン'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+        'id': 10,
+        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+        'name': {
+          en: 'Catalina',
+          ja: 'カタリナ'
         }
       },
       {
-        id: 11,
-        image: 'https://werewolf.world/image/0.1/Otto.jpg',
-        name: {
-          'en': 'Otto',
-          'ja': 'オットー'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+        'id': 11,
+        'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+        'name': {
+          en: 'Otto',
+          ja: 'オットー'
         }
       },
       {
-        id: 12,
-        image: 'https://werewolf.world/image/0.1/Joachim.jpg',
-        name: {
-          'en': 'Joachim',
-          'ja': 'ヨアヒム'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+        'id': 12,
+        'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
+        'name': {
+          en: 'Joachim',
+          ja: 'ヨアヒム'
         }
       },
       {
-        id: 13,
-        image: 'https://werewolf.world/image/0.1/Pamela.jpg',
-        name: {
-          'en': 'Pamela',
-          'ja': 'パメラ'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+        'id': 13,
+        'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
+        'name': {
+          en: 'Pamela',
+          ja: 'パメラ'
         }
       },
       {
-        id: 14,
-        image: 'https://werewolf.world/image/0.1/Jacob.jpg',
-        name: {
-          'en': 'Jacob',
-          'ja': 'ヤコブ'
+        '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+        'id': 14,
+        'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
+        'name': {
+          en: 'Jacob',
+          ja: 'ヤコブ'
         }
       }
     ],
