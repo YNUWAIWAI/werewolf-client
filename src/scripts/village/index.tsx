@@ -42,3 +42,5 @@ ReactDOM.render(
   </Provider>,
   root
 )
+
+window.onbeforeunload = () => ''
