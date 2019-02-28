@@ -6,6 +6,7 @@ import {just} from '../util'
 
 export interface State {
   readonly agents: {
+    readonly '@id': string
     readonly id: number
     readonly image: string
     readonly name: village.LanguageMap
@@ -44,9 +45,10 @@ const commandSelection = (state: State = initialState, action: Action): State =>
         const agents = just(action.payload.agent)
           .filter(a => just(a.isAChoice))
           .map(a => ({
-            id: a.id,
-            image: a.image,
-            name: a.name
+            '@id': a['@id'],
+            'id': a.id,
+            'image': a.image,
+            'name': a.name
           }))
 
         return {
