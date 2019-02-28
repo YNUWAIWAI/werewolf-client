@@ -152,7 +152,7 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.global.SELECT_YES: {
       const state = store.getState()
-      const votedAgent = getAgent(state.agents.all, action.agentId)
+      const votedAgent = getAgent(state.commandSelection.agents, action.agentId)
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
       const payload: village.Payload$voteMessage = {

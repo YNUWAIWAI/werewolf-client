@@ -29,28 +29,28 @@ const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const selectedAgent = state.agents.all.find(a => a.id === state.modal.id)
+  const selectedAgent = state.commandSelection.agents.find(a => a.id === state.modal.id)
 
-  if (selectedAgent) {
-    const myRole = just(state.roles.mine)
-
+  if (!selectedAgent) {
     return {
-      descriptionId: getDescriptionId(state.base.phase, strToRoleId(myRole.name.en)),
-      id: selectedAgent.id,
-      image: selectedAgent.image,
-      name: getText({
-        language: state.language,
-        languageMap: selectedAgent.name
-      }),
+      descriptionId: 'Modal.Description.wait',
+      id: -1,
+      image: '',
+      name: '',
       visible: state.modal.visible
     }
   }
 
+  const myRole = just(state.roles.mine)
+
   return {
-    descriptionId: 'Modal.Description.wait',
-    id: -1,
-    image: '',
-    name: '',
+    descriptionId: getDescriptionId(state.base.phase, strToRoleId(myRole.name.en)),
+    id: selectedAgent.id,
+    image: selectedAgent.image,
+    name: getText({
+      language: state.language,
+      languageMap: selectedAgent.name
+    }),
     visible: state.modal.visible
   }
 }
