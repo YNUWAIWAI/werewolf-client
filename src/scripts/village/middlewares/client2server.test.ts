@@ -808,6 +808,21 @@ describe('READY', () => {
 })
 describe('SELECT_YES', () => {
   const store = fakeStore({
+    agents: {
+      all: [],
+      mine: {
+        '@context': village.Context.Agent,
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'status': 'alive'
+      }
+    },
     base: {
       ... base,
       '@id': 'https://licos.online/state/0.2/village#3',
