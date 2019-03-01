@@ -1,5 +1,6 @@
 /* global village */
 import * as React from 'react'
+import Question from './svg/Question'
 import TeamIcon from './TeamIcon'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
@@ -15,7 +16,7 @@ describe('<TeamIcon />', () => {
       />
     )
 
-    expect(wrapper.children()).toHaveLength(0)
+    expect(wrapper.find(Question).exists()).toBe(true)
   })
   test('additionalClass', () => {
     const wrapper = mountWithIntl(
