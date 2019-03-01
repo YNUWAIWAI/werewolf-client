@@ -58,27 +58,27 @@ describe('<Prediction />', () => {
     ]
     const roleStatus: Props['roleStatus'] = [
       {
-        caption: '村人',
         id: village.RoleId.villager,
         image: 'https://werewolf.world/image/0.2/villager.jpg',
+        name: '村人',
         numberOfAgents: 2
       },
       {
-        caption: '占い師',
         id: village.RoleId.seer,
         image: 'https://werewolf.world/image/0.2/seer.jpg',
+        name: '占い師',
         numberOfAgents: 1
       },
       {
-        caption: '狂人',
         id: village.RoleId.madman,
         image: 'https://werewolf.world/image/0.2/madman.jpg',
+        name: '狂人',
         numberOfAgents: 1
       },
       {
-        caption: '人狼',
         id: village.RoleId.werewolf,
         image: 'https://werewolf.world/image/0.2/werewolf.jpg',
+        name: '人狼',
         numberOfAgents: 1
       }
     ]

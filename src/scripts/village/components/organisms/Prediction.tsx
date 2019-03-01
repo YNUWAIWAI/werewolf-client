@@ -15,8 +15,8 @@ export interface StateProps {
   readonly roleStatus: {
     readonly id: village.RoleId
     readonly image: string
+    readonly name: string
     readonly numberOfAgents: number
-    readonly caption: string
   }[]
   readonly table: {
     readonly [agentId in village.AgentId]: Partial<{
@@ -44,9 +44,9 @@ export default function Prediction(props: Props) {
     />,
     ... props.roleStatus.map(role =>
       <PredictionRole
-        caption={role.caption}
         image={role.image}
         key={role.id}
+        name={role.name}
         numberOfAgents={role.numberOfAgents}
       />
     ),
