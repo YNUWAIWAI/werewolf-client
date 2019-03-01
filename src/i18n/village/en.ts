@@ -49,6 +49,6 @@ export default {
   'Result.summary.loser(2)': 'Losers (Team {loserTeam0} and Team {loserTeam1})',
   'Result.summary.winner': 'Winners (Team {winnerTeam})',
   'TeamIcon.villager': 'Villagers',
-  'TeamIcon.werehamster': 'Werewhamster',
+  'TeamIcon.werehamster': 'Werehamster',
   'TeamIcon.werewolf': 'Werewolves'
 }
