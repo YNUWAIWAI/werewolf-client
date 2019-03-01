@@ -41,10 +41,10 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     }
   }
 
-  const myRole = just(state.roles.mine)
+  const myRole = just(state.mine.role)
 
   return {
-    descriptionId: getDescriptionId(state.base.phase, strToRoleId(myRole.name.en)),
+    descriptionId: getDescriptionId(state.base.phase, myRole.id),
     id: selectedAgent.id,
     image: selectedAgent.image,
     name: getText({

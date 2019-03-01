@@ -5,34 +5,15 @@ import {ChangePredictionBoard, PostChat, Ready, SelectYes, socket} from '../acti
 import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'
 import {VERSION} from '../constants/Version'
 import {VILLAGER} from '../constants/Role'
-import {initialState as agents} from '../reducers/agents'
-import {initialState as base} from '../reducers/base'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './client2server'
-import {initialState as roles} from '../reducers/roles'
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
 describe('CHANGE_PREDICTION_BOARD', () => {
   const store = fakeStore({
-    agents: {
-      all: [],
-      mine: {
-        '@context': village.Context.Agent,
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-        'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-        'isMine': true,
-        'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        },
-        'status': 'alive'
-      }
-    },
     base: {
-      ... base,
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
@@ -50,6 +31,26 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'lang': 'ja',
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
+      }
+    },
+    mine: {
+      agent: {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'name': {
+          en: 'Walter',
+          ja: 'ヴァルター'
+        }
+      },
+      role: {
+        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'id': 'seer',
+        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'name': {
+          'en': 'Seer',
+          'ja': '占い師'
+        }
       }
     },
     prediction: {
@@ -280,20 +281,6 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         }
       ],
       table: {}
-    },
-    roles: {
-      all: [],
-      mine: {
-        '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'isMine': true,
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        },
-        'numberOfAgents': 1
-      }
     }
   })
   const dispatch = jest.fn()
@@ -410,24 +397,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
 })
 describe('POST_CHAT', () => {
   const store = fakeStore({
-    agents: {
-      ... agents,
-      all: [],
-      mine: {
-        '@context': village.Context.Agent,
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-        'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-        'isMine': true,
-        'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        },
-        'status': 'alive'
-      }
-    },
     base: {
-      ... base,
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
@@ -447,19 +417,24 @@ describe('POST_CHAT', () => {
         'totalNumberOfAgents': 15
       }
     },
-    roles: {
-      ... roles,
-      all: [],
-      mine: {
-        '@context': village.Context.Role,
+    mine: {
+      agent: {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        }
+      },
+      role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'id': 'seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'isMine': true,
         'name': {
           'en': 'Seer',
           'ja': '占い師'
-        },
-        'numberOfAgents': 1
+        }
       }
     }
   })
@@ -613,23 +588,7 @@ describe('READY', () => {
 })
 describe('SELECT_YES', () => {
   const store = fakeStore({
-    agents: {
-      all: [],
-      mine: {
-        '@context': village.Context.Agent,
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-        'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-        'isMine': true,
-        'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        },
-        'status': 'alive'
-      }
-    },
     base: {
-      ... base,
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
@@ -771,19 +730,24 @@ describe('SELECT_YES', () => {
       ],
       fixed: true
     },
-    roles: {
-      ... roles,
-      all: [],
-      mine: {
-        '@context': village.Context.Role,
+    mine: {
+      agent: {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        }
+      },
+      role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        'id': 'seer',
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'isMine': true,
         'name': {
           'en': 'Seer',
           'ja': '占い師'
-        },
-        'numberOfAgents': 1
+        }
       }
     }
   })
