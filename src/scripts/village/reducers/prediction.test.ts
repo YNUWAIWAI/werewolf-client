@@ -21,213 +21,236 @@ describe('socket/MESSAGE', () => {
       {
         playerStatus: [
           {
-            id: 0,
-            image: 'https://werewolf.world/image/0.2/Gert.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#0',
+            'id': 0,
+            'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+            'name': {
               en: 'Gert',
               ja: 'ゲルト'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 1,
-            image: 'https://werewolf.world/image/0.2/Walter.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'name': {
               en: 'Walter',
               ja: 'ヴァルター'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 2,
-            image: 'https://werewolf.world/image/0.2/Moritz.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+            'id': 2,
+            'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+            'name': {
               en: 'Moritz',
               ja: 'モーリッツ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 3,
-            image: 'https://werewolf.world/image/0.2/Simson.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+            'id': 3,
+            'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+            'name': {
               en: 'Simson',
               ja: 'ジムゾン'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 4,
-            image: 'https://werewolf.world/image/0.2/Thomas.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+            'id': 4,
+            'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+            'name': {
               en: 'Thomas',
               ja: 'トーマス'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 5,
-            image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+            'id': 5,
+            'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
+            'name': {
               en: 'Nicholas',
               ja: 'ニコラス'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 6,
-            image: 'https://werewolf.world/image/0.2/Dieter.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+            'id': 6,
+            'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
+            'name': {
               en: 'Dieter',
               ja: 'ディーター'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 7,
-            image: 'https://werewolf.world/image/0.2/Peter.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+            'id': 7,
+            'image': 'https://werewolf.world/image/0.2/Peter.jpg',
+            'name': {
               en: 'Peter',
               ja: 'ペーター'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 8,
-            image: 'https://werewolf.world/image/0.2/Lisa.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+            'id': 8,
+            'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
+            'name': {
               en: 'Lisa',
               ja: 'リーザ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 9,
-            image: 'https://werewolf.world/image/0.2/Alvin.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+            'id': 9,
+            'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
+            'name': {
               en: 'Alvin',
               ja: 'アルビン'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 10,
-            image: 'https://werewolf.world/image/0.2/Catalina.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+            'id': 10,
+            'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+            'name': {
               en: 'Catalina',
               ja: 'カタリナ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 11,
-            image: 'https://werewolf.world/image/0.2/Otto.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+            'id': 11,
+            'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+            'name': {
               en: 'Otto',
               ja: 'オットー'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 12,
-            image: 'https://werewolf.world/image/0.2/Joachim.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+            'id': 12,
+            'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
+            'name': {
               en: 'Joachim',
               ja: 'ヨアヒム'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 13,
-            image: 'https://werewolf.world/image/0.2/Pamela.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+            'id': 13,
+            'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
+            'name': {
               en: 'Pamela',
               ja: 'パメラ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 14,
-            image: 'https://werewolf.world/image/0.2/Jacob.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+            'id': 14,
+            'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
+            'name': {
               en: 'Jacob',
               ja: 'ヤコブ'
             },
-            status: 'alive'
+            'status': 'alive'
           }
         ],
         roleStatus: [
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+            'id': 'villager',
+            'image': 'https://werewolf.world/image/0.2/villager.jpg',
+            'name': {
               en: 'Villager',
               ja: '村人'
             },
-            id: 'villager',
-            image: 'https://werewolf.world/image/0.2/villager.jpg',
-            numberOfAgents: 6
+            'numberOfAgents': 6
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            'id': 'seer',
+            'image': 'https://werewolf.world/image/0.2/seer.jpg',
+            'name': {
               en: 'Seer',
               ja: '占い師'
             },
-            id: 'seer',
-            image: 'https://werewolf.world/image/0.2/seer.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+            'id': 'medium',
+            'image': 'https://werewolf.world/image/0.2/medium.jpg',
+            'name': {
               en: 'Medium',
               ja: '霊媒師'
             },
-            id: 'medium',
-            image: 'https://werewolf.world/image/0.2/medium.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+            'id': 'hunter',
+            'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+            'name': {
               en: 'Hunter',
               ja: '狩人'
             },
-            id: 'hunter',
-            image: 'https://werewolf.world/image/0.2/hunter.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+            'id': 'mason',
+            'image': 'https://werewolf.world/image/0.2/mason.jpg',
+            'name': {
               en: 'Mason',
               ja: '共有者'
             },
-            id: 'mason',
-            image: 'https://werewolf.world/image/0.2/mason.jpg',
-            numberOfAgents: 2
+            'numberOfAgents': 2
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+            'id': 'madman',
+            'image': 'https://werewolf.world/image/0.2/madman.jpg',
+            'name': {
               en: 'Madman',
               ja: '狂人'
             },
-            id: 'madman',
-            image: 'https://werewolf.world/image/0.2/madman.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+            'id': 'werewolf',
+            'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+            'name': {
               en: 'Werewolf',
               ja: '人狼'
             },
-            id: 'werewolf',
-            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
-            numberOfAgents: 2
+            'numberOfAgents': 2
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+            'id': 'werehamster',
+            'image': 'https://werewolf.world/image/0.2/werehamster.jpg',
+            'name': {
               en: 'Werehamster',
               ja: 'ハムスター人間'
             },
-            id: 'werehamster',
-            image: 'https://werewolf.world/image/0.2/werehamster.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           }
         ],
         table: {
@@ -875,213 +898,236 @@ describe('socket/MESSAGE', () => {
       {
         playerStatus: [
           {
-            id: 0,
-            image: 'https://werewolf.world/image/0.2/Gert.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#0',
+            'id': 0,
+            'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+            'name': {
               en: 'Gert',
               ja: 'ゲルト'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 1,
-            image: 'https://werewolf.world/image/0.2/Walter.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'name': {
               en: 'Walter',
               ja: 'ヴァルター'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 2,
-            image: 'https://werewolf.world/image/0.2/Moritz.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+            'id': 2,
+            'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+            'name': {
               en: 'Moritz',
               ja: 'モーリッツ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 3,
-            image: 'https://werewolf.world/image/0.2/Simson.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+            'id': 3,
+            'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+            'name': {
               en: 'Simson',
               ja: 'ジムゾン'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 4,
-            image: 'https://werewolf.world/image/0.2/Thomas.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+            'id': 4,
+            'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+            'name': {
               en: 'Thomas',
               ja: 'トーマス'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 5,
-            image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+            'id': 5,
+            'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
+            'name': {
               en: 'Nicholas',
               ja: 'ニコラス'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 6,
-            image: 'https://werewolf.world/image/0.2/Dieter.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+            'id': 6,
+            'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
+            'name': {
               en: 'Dieter',
               ja: 'ディーター'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 7,
-            image: 'https://werewolf.world/image/0.2/Peter.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+            'id': 7,
+            'image': 'https://werewolf.world/image/0.2/Peter.jpg',
+            'name': {
               en: 'Peter',
               ja: 'ペーター'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 8,
-            image: 'https://werewolf.world/image/0.2/Lisa.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+            'id': 8,
+            'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
+            'name': {
               en: 'Lisa',
               ja: 'リーザ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 9,
-            image: 'https://werewolf.world/image/0.2/Alvin.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+            'id': 9,
+            'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
+            'name': {
               en: 'Alvin',
               ja: 'アルビン'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 10,
-            image: 'https://werewolf.world/image/0.2/Catalina.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+            'id': 10,
+            'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+            'name': {
               en: 'Catalina',
               ja: 'カタリナ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 11,
-            image: 'https://werewolf.world/image/0.2/Otto.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+            'id': 11,
+            'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+            'name': {
               en: 'Otto',
               ja: 'オットー'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 12,
-            image: 'https://werewolf.world/image/0.2/Joachim.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+            'id': 12,
+            'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
+            'name': {
               en: 'Joachim',
               ja: 'ヨアヒム'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 13,
-            image: 'https://werewolf.world/image/0.2/Pamela.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+            'id': 13,
+            'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
+            'name': {
               en: 'Pamela',
               ja: 'パメラ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 14,
-            image: 'https://werewolf.world/image/0.2/Jacob.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+            'id': 14,
+            'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
+            'name': {
               en: 'Jacob',
               ja: 'ヤコブ'
             },
-            status: 'alive'
+            'status': 'alive'
           }
         ],
         roleStatus: [
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+            'id': 'villager',
+            'image': 'https://werewolf.world/image/0.2/villager.jpg',
+            'name': {
               en: 'Villager',
               ja: '村人'
             },
-            id: 'villager',
-            image: 'https://werewolf.world/image/0.2/villager.jpg',
-            numberOfAgents: 6
+            'numberOfAgents': 6
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            'id': 'seer',
+            'image': 'https://werewolf.world/image/0.2/seer.jpg',
+            'name': {
               en: 'Seer',
               ja: '占い師'
             },
-            id: 'seer',
-            image: 'https://werewolf.world/image/0.2/seer.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+            'id': 'medium',
+            'image': 'https://werewolf.world/image/0.2/medium.jpg',
+            'name': {
               en: 'Medium',
               ja: '霊媒師'
             },
-            id: 'medium',
-            image: 'https://werewolf.world/image/0.2/medium.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+            'id': 'hunter',
+            'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+            'name': {
               en: 'Hunter',
               ja: '狩人'
             },
-            id: 'hunter',
-            image: 'https://werewolf.world/image/0.2/hunter.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+            'id': 'mason',
+            'image': 'https://werewolf.world/image/0.2/mason.jpg',
+            'name': {
               en: 'Mason',
               ja: '共有者'
             },
-            id: 'mason',
-            image: 'https://werewolf.world/image/0.2/mason.jpg',
-            numberOfAgents: 2
+            'numberOfAgents': 2
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+            'id': 'madman',
+            'image': 'https://werewolf.world/image/0.2/madman.jpg',
+            'name': {
               en: 'Madman',
               ja: '狂人'
             },
-            id: 'madman',
-            image: 'https://werewolf.world/image/0.2/madman.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+            'id': 'werewolf',
+            'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+            'name': {
               en: 'Werewolf',
               ja: '人狼'
             },
-            id: 'werewolf',
-            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
-            numberOfAgents: 2
+            'numberOfAgents': 2
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+            'id': 'werehamster',
+            'image': 'https://werewolf.world/image/0.2/werehamster.jpg',
+            'name': {
               en: 'Werehamster',
               ja: 'ハムスター人間'
             },
-            id: 'werehamster',
-            image: 'https://werewolf.world/image/0.2/werehamster.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           }
         ],
         table: {
@@ -1729,60 +1775,66 @@ describe('socket/MESSAGE', () => {
       {
         playerStatus: [
           {
-            id: 0,
-            image: 'https://werewolf.world/image/0.2/Gert.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#0',
+            'id': 0,
+            'image': 'https://werewolf.world/image/0.2/Gert.jpg',
+            'name': {
               en: 'Gert',
               ja: 'ゲルト'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 1,
-            image: 'https://werewolf.world/image/0.2/Walter.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'name': {
               en: 'Walter',
               ja: 'ヴァルター'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 2,
-            image: 'https://werewolf.world/image/0.2/Moritz.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+            'id': 2,
+            'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+            'name': {
               en: 'Moritz',
               ja: 'モーリッツ'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 3,
-            image: 'https://werewolf.world/image/0.2/Simson.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+            'id': 3,
+            'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+            'name': {
               en: 'Simson',
               ja: 'ジムゾン'
             },
-            status: 'alive'
+            'status': 'alive'
           }
         ],
         roleStatus: [
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+            'id': 'villager',
+            'image': 'https://werewolf.world/image/0.2/villager.jpg',
+            'name': {
               en: 'Villager',
               ja: '村人'
             },
-            id: 'villager',
-            image: 'https://werewolf.world/image/0.2/villager.jpg',
-            numberOfAgents: 3
+            'numberOfAgents': 3
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+            'id': 'werewolf',
+            'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+            'name': {
               en: 'Werewolf',
               ja: '人狼'
             },
-            id: 'werewolf',
-            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           }
         ],
         table: {
@@ -1848,118 +1900,132 @@ describe('socket/MESSAGE', () => {
       {
         playerStatus: [
           {
-            id: 7,
-            image: 'https://werewolf.world/image/0.2/adil.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#7',
+            'id': 7,
+            'image': 'https://werewolf.world/image/0.2/adil.jpg',
+            'name': {
               en: 'Adil'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 5,
-            image: 'https://werewolf.world/image/0.2/fernando.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#5',
+            'id': 5,
+            'image': 'https://werewolf.world/image/0.2/fernando.jpg',
+            'name': {
               en: 'Fernando'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 2,
-            image: 'https://werewolf.world/image/0.2/gavriil.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#2',
+            'id': 2,
+            'image': 'https://werewolf.world/image/0.2/gavriil.jpg',
+            'name': {
               en: 'Gavriil'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 4,
-            image: 'https://werewolf.world/image/0.2/henrik.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#4',
+            'id': 4,
+            'image': 'https://werewolf.world/image/0.2/henrik.jpg',
+            'name': {
               en: 'Henrik'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 6,
-            image: 'https://werewolf.world/image/0.2/jasmin.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#6',
+            'id': 6,
+            'image': 'https://werewolf.world/image/0.2/jasmin.jpg',
+            'name': {
               en: 'Jasmin'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 3,
-            image: 'https://werewolf.world/image/0.2/oliwia.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#3',
+            'id': 3,
+            'image': 'https://werewolf.world/image/0.2/oliwia.jpg',
+            'name': {
               en: 'Oliwia'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 0,
-            image: 'https://werewolf.world/image/0.2/ryan.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#0',
+            'id': 0,
+            'image': 'https://werewolf.world/image/0.2/ryan.jpg',
+            'name': {
               en: 'Ryan'
             },
-            status: 'alive'
+            'status': 'alive'
           },
           {
-            id: 1,
-            image: 'https://werewolf.world/image/0.2/susan.jpg',
-            name: {
+            '@id': 'https://licos.online/state/0.2/village#29/agent#1',
+            'id': 1,
+            'image': 'https://werewolf.world/image/0.2/susan.jpg',
+            'name': {
               en: 'Susan'
             },
-            status: 'alive'
+            'status': 'alive'
           }
         ],
         roleStatus: [
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#29/role#villager',
+            'id': 'villager',
+            'image': 'https://werewolf.world/image/0.2/villager.jpg',
+            'name': {
               en: 'Villager'
             },
-            id: 'villager',
-            image: 'https://werewolf.world/image/0.2/villager.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#29/role#seer',
+            'id': 'seer',
+            'image': 'https://werewolf.world/image/0.2/seer.jpg',
+            'name': {
               en: 'Seer'
             },
-            id: 'seer',
-            image: 'https://werewolf.world/image/0.2/seer.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#29/role#medium',
+            'id': 'medium',
+            'image': 'https://werewolf.world/image/0.2/medium.jpg',
+            'name': {
               en: 'Medium'
             },
-            id: 'medium',
-            image: 'https://werewolf.world/image/0.2/medium.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#29/role#mason',
+            'id': 'mason',
+            'image': 'https://werewolf.world/image/0.2/mason.jpg',
+            'name': {
               en: 'Mason'
             },
-            id: 'mason',
-            image: 'https://werewolf.world/image/0.2/mason.jpg',
-            numberOfAgents: 2
+            'numberOfAgents': 2
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#29/role#madman',
+            'id': 'madman',
+            'image': 'https://werewolf.world/image/0.2/madman.jpg',
+            'name': {
               en: 'Madman'
             },
-            id: 'madman',
-            image: 'https://werewolf.world/image/0.2/madman.jpg',
-            numberOfAgents: 1
+            'numberOfAgents': 1
           },
           {
-            caption: {
+            '@id': 'https://licos.online/state/0.2/village#29/role#werewolf',
+            'id': 'werewolf',
+            'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+            'name': {
               en: 'Werewolf'
             },
-            id: 'werewolf',
-            image: 'https://werewolf.world/image/0.2/werewolf.jpg',
-            numberOfAgents: 2
+            'numberOfAgents': 2
           }
         ],
         table: {
