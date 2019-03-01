@@ -23,6 +23,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.leaveWaitingPage),
             deleteValue(objectStore, Key.nextGameVillageId)
           ])
+          window.onbeforeunload = null
           window.location.replace(`${window.location.origin}/lobby`)
         })
         .catch(reason => console.error(reason))
@@ -43,6 +44,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           if (isHost) {
             store.dispatch(socket.send(buildVillagePayload))
           } else {
+            window.onbeforeunload = null
             window.location.replace(`${window.location.origin}/lobby`)
           }
         })
@@ -88,6 +90,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             ])
 
             if (isHost) {
+              window.onbeforeunload = null
               window.location.replace(`${window.location.origin}/lobby`)
             } else {
               store.dispatch(activateNextButton(payload.villageId))
