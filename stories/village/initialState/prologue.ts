@@ -3,9 +3,6 @@ import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes
 import {Content} from '../../../src/scripts/village/reducers/command'
 import {ReducerState} from '../../../src/scripts/village/reducers'
 const state: ReducerState = {
-  agents: {
-    all: []
-  },
   base: {
     '@id': 'https://licos.online/state/0.2/village#3',
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -113,6 +110,7 @@ const state: ReducerState = {
     hide: false
   },
   language: village.Language.ja,
+  mine: {},
   modal: {
     id: -1,
     visible: false
@@ -138,9 +136,6 @@ const state: ReducerState = {
     },
     visible: false,
     winners: []
-  },
-  roles: {
-    all: []
   },
   timer: {
     phaseStartTime: new Date('2006-10-07T12:06:56.568+09:00').getTime(),
