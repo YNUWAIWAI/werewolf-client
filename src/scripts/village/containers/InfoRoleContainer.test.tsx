@@ -18,22 +18,19 @@ describe('<InfoRoleContainer />', () => {
 
     expect(wrapper.html()).toMatchSnapshot()
   })
-  test('agents.mine exists', () => {
+  test('mine.role exists', () => {
     const store = fakeStore(
       {
         language: 'en',
-        roles: {
-          all: [],
-          mine: {
-            '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+        mine: {
+          role: {
             '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            'id': 'seer',
             'image': 'https://werewolf.world/image/0.2/seer.jpg',
-            'isMine': true,
             'name': {
               'en': 'Seer',
               'ja': '占い師'
-            },
-            'numberOfAgents': 1
+            }
           }
         }
       }

@@ -1,10 +1,10 @@
 import CommandSelection, {DispatchProps, StateProps} from '../components/organisms/CommandSelection'
 import {SelectOption, selectOption} from '../actions'
-import {getText, strToRoleId} from '../util'
 import {DAY} from '../constants/Phase'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {getText} from '../util'
 
 type Action =
   | SelectOption
@@ -39,7 +39,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       })
     }))
 
-  if (!state.roles.mine) {
+  if (!state.mine.role) {
     return {
       agents,
       descriptionId: 'CommandSelection.Description.wait',
@@ -51,7 +51,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     agents,
     descriptionId: getDescriptionId(
       state.base.phase,
-      strToRoleId(state.roles.mine.name.en),
+      state.mine.role.id,
       state.commandSelection.fixed,
     ),
     fixed: state.commandSelection.fixed

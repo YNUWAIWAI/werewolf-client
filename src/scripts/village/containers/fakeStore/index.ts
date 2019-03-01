@@ -1,7 +1,6 @@
 /* eslint no-console: 0 */
 import {Action, Dispatch, Store} from 'redux'
 import {ReducerState} from '../../reducers'
-import {initialState as agents} from '../../reducers/agents'
 import {initialState as base} from '../../reducers/base'
 import {initialState as chat} from '../../reducers/chat'
 import {initialState as command} from '../../reducers/command'
@@ -11,16 +10,15 @@ import {initialState as commandPostMortem} from '../../reducers/commandPostMorte
 import {initialState as commandSelection} from '../../reducers/commandSelection'
 import {initialState as hideButton} from '../../reducers/hideButton'
 import {initialState as language} from '../../reducers/language'
+import {initialState as mine} from '../../reducers/mine'
 import {initialState as modal} from '../../reducers/modal'
 import {initialState as obfucator} from '../../reducers/obfucator'
 import {initialState as prediction} from '../../reducers/prediction'
 import {initialState as result} from '../../reducers/result'
-import {initialState as roles} from '../../reducers/roles'
 import {initialState as timer} from '../../reducers/timer'
 
 export default (state?: Record<string, unknown>): Store<ReducerState, Action<unknown>> => {
   const initialState: ReducerState = {
-    agents,
     base,
     chat,
     command,
@@ -30,11 +28,11 @@ export default (state?: Record<string, unknown>): Store<ReducerState, Action<unk
     commandSelection,
     hideButton,
     language,
+    mine,
     modal,
     obfucator,
     prediction,
     result,
-    roles,
     timer
   }
   const dispatch: Dispatch<Action<unknown>> = action => {

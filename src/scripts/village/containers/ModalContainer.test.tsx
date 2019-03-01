@@ -49,21 +49,20 @@ describe('<ModalContainer />', () => {
             fixed: false
           },
           language: 'ja',
-          modal: {
-            id: 2,
-            visible: true
-          },
-          roles: {
-            mine: {
+          mine: {
+            role: {
               '@id': 'https://werewolf.world/resource/0.2/seer',
+              'id': 'seer',
               'image': 'https://werewolf.world/image/0.2/seer.jpg',
               'name': {
                 'en': 'Seer',
                 'ja': '占い師'
-              },
-              'numberOfAgents': 1,
-              'roleIsMine': true
+              }
             }
+          },
+          modal: {
+            id: 2,
+            visible: true
           }
         }
       )
@@ -120,22 +119,20 @@ describe('<ModalContainer />', () => {
               fixed: false
             },
             language: 'ja',
-            modal: {
-              id: 2,
-              visible: true
-            },
-            roles: {
-              mine: {
-                '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            mine: {
+              role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+                'id': 'hunter',
                 'image': 'https://werewolf.world/image/0.2/hunter.jpg',
-                'isMine': false,
                 'name': {
                   'en': 'Hunter',
                   'ja': '狩人'
-                },
-                'numberOfAgents': 1
+                }
               }
+            },
+            modal: {
+              id: 2,
+              visible: true
             }
           }
         )
@@ -191,22 +188,20 @@ describe('<ModalContainer />', () => {
               fixed: false
             },
             language: 'ja',
-            modal: {
-              id: 2,
-              visible: true
-            },
-            roles: {
-              mine: {
-                '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            mine: {
+              role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+                'id': 'seer',
                 'image': 'https://werewolf.world/image/0.2/seer.jpg',
-                'isMine': true,
                 'name': {
                   'en': 'Seer',
                   'ja': '占い師'
-                },
-                'numberOfAgents': 1
+                }
               }
+            },
+            modal: {
+              id: 2,
+              visible: true
             }
           }
         )
@@ -262,22 +257,20 @@ describe('<ModalContainer />', () => {
               fixed: false
             },
             language: 'ja',
-            modal: {
-              id: 2,
-              visible: true
-            },
-            roles: {
-              mine: {
-                '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            mine: {
+              role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+                'id': 'werewolf',
                 'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
-                'isMine': false,
                 'name': {
                   'en': 'Werewolf',
                   'ja': '人狼'
-                },
-                'numberOfAgents': 2
+                }
               }
+            },
+            modal: {
+              id: 2,
+              visible: true
             }
           }
         )
@@ -333,22 +326,20 @@ describe('<ModalContainer />', () => {
               fixed: false
             },
             language: 'ja',
-            modal: {
-              id: 2,
-              visible: true
-            },
-            roles: {
-              mine: {
-                '@context': 'https://werewolf.world/context/0.2/role.jsonld',
+            mine: {
+              role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+                'id': 'villager',
                 'image': 'https://werewolf.world/image/0.2/villager.jpg',
-                'isMine': false,
                 'name': {
                   'en': 'Villager',
                   'ja': '村人'
-                },
-                'numberOfAgents': 6
+                }
               }
+            },
+            modal: {
+              id: 2,
+              visible: true
             }
           }
         )

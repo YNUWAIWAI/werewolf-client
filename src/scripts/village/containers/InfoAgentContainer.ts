@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {getText} from '../util'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  if (!state.agents.mine) {
+  if (!state.mine.agent) {
     return {
       className: 'info--agent',
       image: '',
@@ -14,10 +14,10 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
   return {
     className: 'info--agent',
-    image: state.agents.mine.image,
+    image: state.mine.agent.image,
     name: getText({
       language: state.language,
-      languageMap: state.agents.mine.name
+      languageMap: state.mine.agent.name
     })
   }
 }
