@@ -33,14 +33,14 @@ export default function RoleIcon(props: Props) {
           <div className={`${props.class}--times`}>
             {'×'}
           </div> :
-          ''
+          null
       }
       {
         typeof props.numberOfAgents === 'number' ?
           <div className={`${props.class}--number`}>
             {props.numberOfAgents}
           </div> :
-          ''
+          null
       }
       <div className={`${props.class}--name`}>
         {props.name}
