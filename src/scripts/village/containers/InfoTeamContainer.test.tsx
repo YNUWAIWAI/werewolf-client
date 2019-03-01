@@ -16,7 +16,7 @@ describe('<InfoTeamContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.text()).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test('mine.role exists', () => {
     const store = fakeStore(
