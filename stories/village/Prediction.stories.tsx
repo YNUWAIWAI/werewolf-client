@@ -91,51 +91,51 @@ storiesOf('village|Prediction', module)
     ]
     const roleStatus: Props['roleStatus'] = [
       {
-        'caption': '村人',
         'id': village.RoleId.villager,
         'image': 'https://werewolf.world/image/0.1/villager.jpg',
+        'name': '村人',
         'numberOfAgents': 4
       },
       {
-        'caption': '占い師',
         'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.1/seer.jpg',
+        'name': '占い師',
         'numberOfAgents': 1
       },
       {
-        'caption': '霊媒師',
         'id': village.RoleId.medium,
         'image': 'https://werewolf.world/image/0.1/medium.jpg',
+        'name': '霊媒師',
         'numberOfAgents': 1
       },
       {
-        'caption': '狩人',
         'id': village.RoleId.hunter,
         'image': 'https://werewolf.world/image/0.1/hunter.jpg',
+        'name': '狩人',
         'numberOfAgents': 1
       },
       {
-        'caption': '共有者',
         'id': village.RoleId.mason,
         'image': 'https://werewolf.world/image/0.1/mason.jpg',
+        'name': '共有者',
         'numberOfAgents': 2
       },
       {
-        'caption': '狂人',
         'id': village.RoleId.madman,
         'image': 'https://werewolf.world/image/0.1/madman.jpg',
+        'name': '狂人',
         'numberOfAgents': 1
       },
       {
-        'caption': '人狼',
         'id': village.RoleId.werewolf,
         'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
+        'name': '人狼',
         'numberOfAgents': 2
       },
       {
-        'caption': 'ハムスター人間',
         'id': village.RoleId.werehamster,
         'image': 'https://werewolf.world/image/0.1/werehamster.jpg',
+        'name': 'ハムスター人間',
         'numberOfAgents': 1
       }
     ]
@@ -732,27 +732,27 @@ storiesOf('village|Prediction', module)
     ]
     const roleStatus: Props['roleStatus'] = [
       {
-        'caption': '村人',
         'id': village.RoleId.villager,
         'image': 'https://werewolf.world/image/0.1/villager.jpg',
+        'name': '村人',
         'numberOfAgents': 2
       },
       {
-        'caption': '占い師',
         'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.1/seer.jpg',
+        'name': '占い師',
         'numberOfAgents': 1
       },
       {
-        'caption': '狂人',
         'id': village.RoleId.madman,
         'image': 'https://werewolf.world/image/0.1/madman.jpg',
+        'name': '狂人',
         'numberOfAgents': 1
       },
       {
-        'caption': '人狼',
         'id': village.RoleId.werewolf,
         'image': 'https://werewolf.world/image/0.1/werewolf.jpg',
+        'name': '人狼',
         'numberOfAgents': 1
       }
     ]

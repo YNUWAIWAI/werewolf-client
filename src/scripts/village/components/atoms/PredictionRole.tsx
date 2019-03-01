@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 interface Props {
-  readonly caption: string
   readonly image: string
+  readonly name: string
   readonly numberOfAgents: number
 }
 
@@ -20,8 +20,8 @@ export default function PredictionRole(props: Props) {
       <div className="prediction--role--number">
         {props.numberOfAgents}
       </div>
-      <div className="prediction--role--caption">
-        {props.caption}
+      <div className="prediction--role--name">
+        {props.name}
       </div>
     </div>
   )

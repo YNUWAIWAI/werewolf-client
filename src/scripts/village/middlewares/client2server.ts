@@ -13,8 +13,8 @@ const client2server: Middleware = store => next => action => {
       const state = store.getState()
       const myRole = just(state.roles.mine)
       const myAgent = just(state.agents.mine)
-      const boardAgent = getAgent(state.agents.all, action.playerId)
-      const boardRole = getRole(state.roles.all, action.roleId)
+      const boardAgent = getAgent(state.prediction.playerStatus, action.playerId)
+      const boardRole = getRole(state.prediction.roleStatus, action.roleId)
       const payload: village.Payload$boardMessage = {
         '@context': [
           village.BaseContext.Base,

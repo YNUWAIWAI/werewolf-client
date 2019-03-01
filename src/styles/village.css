@@ -784,7 +784,7 @@ body {
     top: 0;
     z-index: 1;
 
-    &--caption {
+    &--name {
       font-size: 10px;
       grid-column: 1 / 6;
       grid-row: 4;
