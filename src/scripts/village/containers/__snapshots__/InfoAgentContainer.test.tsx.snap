@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<InfoAgentContainer /> agents.mine exists 1`] = `"<div class=\\"info--agent \\"><img class=\\"info--agent--image\\" src=\\"https://werewolf.world/image/0.2/Walter.jpg\\"><span class=\\"info--agent--name\\">Walter</span></div>"`;
-
 exports[`<InfoAgentContainer /> initialState 1`] = `"<div class=\\"info--agent \\"><img class=\\"info--agent--image\\" src=\\"\\"><span class=\\"info--agent--name\\"></span></div>"`;
+
+exports[`<InfoAgentContainer /> mine.agent exists 1`] = `"<div class=\\"info--agent \\"><img class=\\"info--agent--image\\" src=\\"https://werewolf.world/image/0.2/Walter.jpg\\"><span class=\\"info--agent--name\\">Walter</span></div>"`;
