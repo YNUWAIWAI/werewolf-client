@@ -4,6 +4,7 @@ import CommandGrave from './CommandGraveContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
 import CommandSelection from './CommandSelectionContainer'
+import {Content} from '../reducers/command'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
@@ -14,7 +15,7 @@ describe('<CommandContainer />', () => {
     const store = fakeStore(
       {
         command: {
-          content: 'CommandGrave',
+          content: Content.CommandGrave,
           isDead: false
         }
       }
@@ -35,7 +36,7 @@ describe('<CommandContainer />', () => {
     const store = fakeStore(
       {
         command: {
-          content: 'CommandInputBox',
+          content: Content.CommandInputBox,
           isDead: false
         }
       }
@@ -56,7 +57,7 @@ describe('<CommandContainer />', () => {
     const store = fakeStore(
       {
         command: {
-          content: 'CommandPostMortem',
+          content: Content.CommandPostMortem,
           isDead: false
         }
       }
@@ -77,7 +78,7 @@ describe('<CommandContainer />', () => {
     const store = fakeStore(
       {
         command: {
-          content: 'CommandSelection',
+          content: Content.CommandSelection,
           isDead: false
         }
       }

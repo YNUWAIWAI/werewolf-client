@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import InfoTeamContainer from './InfoTeamContainer'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -24,7 +25,7 @@ describe('<InfoTeamContainer />', () => {
         mine: {
           role: {
             '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-            'id': 'seer',
+            'id': village.RoleId.seer,
             'image': 'https://werewolf.world/image/0.2/seer.jpg',
             'name': {
               'en': 'Seer',

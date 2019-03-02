@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import InfoAgentContainer from './InfoAgentContainer'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -21,7 +22,7 @@ describe('<InfoAgentContainer />', () => {
   test('mine.agent exists', () => {
     const store = fakeStore(
       {
-        language: 'en',
+        language: village.Language.en,
         mine: {
           agent: {
             '@id': 'https://licos.online/state/0.2/village#3/agent#1',
