@@ -167,6 +167,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                 Key.lang,
                 payload.lang
               )
+              window.onbeforeunload = null
               window.location.replace(`${window.location.origin}/village`)
             })
             .catch(reason => console.error(reason))

@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<InfoRoleContainer /> agents.mine exists 1`] = `"<div class=\\"info--role \\"><img class=\\"info--role--image\\" src=\\"https://werewolf.world/image/0.2/seer.jpg\\"><div class=\\"info--role--name\\">Seer</div></div>"`;
+exports[`<InfoRoleContainer /> initialState 1`] = `"<div class=\\"info--role \\"><svg viewBox=\\"0 0 180 180\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M60,67c0-13 1-19 8-26c7-9 18-10 28-8c10,2 22,12 22,26c0,14-11,19-15,22c-7,2-10,6-11,11v20m0,12v16\\" fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"16\\"></path></svg></div>"`;
 
-exports[`<InfoRoleContainer /> initialState 1`] = `"<div class=\\"info--role \\"><img class=\\"info--role--image\\" src=\\"\\"><div class=\\"info--role--name\\"></div></div>"`;
+exports[`<InfoRoleContainer /> mine.role exists 1`] = `"<div class=\\"info--role \\"><img class=\\"info--role--image\\" src=\\"https://werewolf.world/image/0.2/seer.jpg\\"><div class=\\"info--role--name\\">Seer</div></div>"`;

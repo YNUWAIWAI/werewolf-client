@@ -8,87 +8,96 @@ import {mount} from 'enzyme'
 test('<PredictionContainer />', () => {
   const playerStatus = [
     {
-      id: 1,
-      image: 'https://werewolf.world/image/0.2/Walter.jpg',
-      name: {
+      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      'id': 1,
+      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'name': {
         en: 'Walter',
         ja: 'ヴァルター'
       },
-      status: 'alive'
+      'status': 'alive'
     },
     {
-      id: 2,
-      image: 'https://werewolf.world/image/0.2/Moritz.jpg',
-      name: {
+      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+      'id': 2,
+      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+      'name': {
         en: 'Moritz',
         ja: 'モーリッツ'
       },
-      status: 'alive'
+      'status': 'alive'
     },
     {
-      id: 3,
-      image: 'https://werewolf.world/image/0.2/Simson.jpg',
-      name: {
+      '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+      'id': 3,
+      'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+      'name': {
         en: 'Simson',
         ja: 'ジムゾン'
       },
-      status: 'alive'
+      'status': 'alive'
     },
     {
-      id: 4,
-      image: 'https://werewolf.world/image/0.2/Thomas.jpg',
-      name: {
+      '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+      'id': 4,
+      'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+      'name': {
         en: 'Thomas',
         ja: 'トーマス'
       },
-      status: 'alive'
+      'status': 'alive'
     },
     {
-      id: 5,
-      image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
-      name: {
+      '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+      'id': 5,
+      'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
+      'name': {
         en: 'Nicholas',
         ja: 'ニコラス'
       },
-      status: 'alive'
+      'status': 'alive'
     }
   ]
   const roleStatus = [
     {
-      caption: {
+      '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+      'id': 'villager',
+      'image': 'https://werewolf.world/image/0.2/villager.jpg',
+      'name': {
         en: 'Villager',
         ja: '村人'
       },
-      id: 'villager',
-      image: 'https://werewolf.world/image/0.2/villager.jpg',
-      numberOfAgents: 2
+      'numberOfAgents': 2
     },
     {
-      caption: {
+      '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+      'id': 'seer',
+      'image': 'https://werewolf.world/image/0.2/seer.jpg',
+      'name': {
         en: 'Seer',
         ja: '占い師'
       },
-      id: 'seer',
-      image: 'https://werewolf.world/image/0.2/seer.jpg',
-      numberOfAgents: 1
+      'numberOfAgents': 1
     },
     {
-      caption: {
+      '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+      'id': 'madman',
+      'image': 'https://werewolf.world/image/0.2/madman.jpg',
+      'name': {
         en: 'Madman',
         ja: '狂人'
       },
-      id: 'madman',
-      image: 'https://werewolf.world/image/0.2/madman.jpg',
-      numberOfAgents: 1
+      'numberOfAgents': 1
     },
     {
-      caption: {
+      '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+      'id': 'werewolf',
+      'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+      'name': {
         en: 'Werewolf',
         ja: '人狼'
       },
-      id: 'werewolf',
-      image: 'https://werewolf.world/image/0.2/werewolf.jpg',
-      numberOfAgents: 1
+      'numberOfAgents': 1
     }
   ]
   const table = {

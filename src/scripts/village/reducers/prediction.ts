@@ -10,15 +10,17 @@ import {ORDERED_ROLE_LIST} from '../constants/Role'
 
 export interface State {
   readonly playerStatus: {
+    readonly '@id': string
     readonly id: number
     readonly image: string
     readonly name: village.LanguageMap
     readonly status: village.AgentStatus
   }[]
   readonly roleStatus: {
-    readonly caption: village.LanguageMap
+    readonly '@id': string
     readonly id: village.RoleId
     readonly image: string
+    readonly name: village.LanguageMap
     readonly numberOfAgents: number
   }[]
   readonly table: {
@@ -157,18 +159,20 @@ const prediction = (state: State = initialState, action: Action): State => {
           roles
             .filter(role => role.numberOfAgents > 0)
             .map(role => ({
-              caption: role.name,
-              id: strToRoleId(role.name.en),
-              image: role.image,
-              numberOfAgents: role.numberOfAgents
+              '@id': role['@id'],
+              'id': strToRoleId(role.name.en),
+              'image': role.image,
+              'name': role.name,
+              'numberOfAgents': role.numberOfAgents
             }))
         const playerStatus: PlayerStatus =
           agents
             .map(agent => ({
-              id: agent.id,
-              image: agent.image,
-              name: agent.name,
-              status: strToAgentStatus(agent.status)
+              '@id': agent['@id'],
+              'id': agent.id,
+              'image': agent.image,
+              'name': agent.name,
+              'status': strToAgentStatus(agent.status)
             }))
 
         return {

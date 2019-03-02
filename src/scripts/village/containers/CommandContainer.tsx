@@ -1,44 +1,37 @@
 import * as React from 'react'
 import Command, {StateProps} from '../components/organisms/Command'
-import {DAY, FLAVOR_TEXT, MORNING, NIGHT, POST_MORTEM, RESULT} from '../constants/Phase'
 import CommandGrave from './CommandGraveContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
 import CommandSelection from './CommandSelectionContainer'
+import {Content} from '../reducers/command'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const content = ((phase, isDead) => {
-    switch (phase) {
-      case DAY:
-      case FLAVOR_TEXT:
-      case NIGHT:
-        if (isDead) {
-          return <CommandGrave />
-        }
-
-        return <CommandSelection />
-      case MORNING:
-        if (isDead) {
-          return <CommandGrave />
-        }
-
-        return <CommandInputBox />
-      case POST_MORTEM:
-      case RESULT:
-        return <CommandPostMortem />
-      default:
-        throw Error(`Unknown: ${phase}`)
-    }
-  })(
-    state.base.phase,
-    typeof state.agents.mine !== 'undefined' && state.agents.mine.status !== 'alive'
-  )
-
-  return {
-    content,
-    hide: state.hideButton.hide
+  switch (state.command.content) {
+    case Content.CommandGrave:
+      return {
+        content: <CommandGrave />,
+        hide: state.hideButton.hide
+      }
+    case Content.CommandInputBox:
+      return {
+        content: <CommandInputBox />,
+        hide: state.hideButton.hide
+      }
+    case Content.CommandPostMortem:
+      return {
+        content: <CommandPostMortem />,
+        hide: state.hideButton.hide
+      }
+    case Content.CommandSelection:
+      return {
+        content: <CommandSelection />,
+        hide: state.hideButton.hide
+      }
+    default:
+      throw Error('Unexpected value')
   }
 }
 const CommandContainer = connect(

@@ -11,10 +11,10 @@ const client2server: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.global.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
-      const myRole = just(state.roles.mine)
-      const myAgent = just(state.agents.mine)
-      const boardAgent = getAgent(state.agents.all, action.playerId)
-      const boardRole = getRole(state.roles.all, action.roleId)
+      const myRole = just(state.mine.role)
+      const myAgent = just(state.mine.agent)
+      const boardAgent = getAgent(state.prediction.playerStatus, action.playerId)
+      const boardRole = getRole(state.prediction.roleStatus, action.roleId)
       const payload: village.Payload$boardMessage = {
         '@context': [
           village.BaseContext.Base,
@@ -75,8 +75,8 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.global.POST_CHAT: {
       const state = store.getState()
-      const myRole = just(state.roles.mine)
-      const myAgent = just(state.agents.mine)
+      const myRole = just(state.mine.role)
+      const myAgent = just(state.mine.agent)
       const channel = getChannelFromInputChennel({
         inputChannel: action.channel,
         role: strToRoleId(myRole.name.en)
@@ -152,9 +152,9 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.global.SELECT_YES: {
       const state = store.getState()
-      const votedAgent = getAgent(state.agents.all, action.agentId)
-      const myRole = just(state.roles.mine)
-      const myAgent = just(state.agents.mine)
+      const votedAgent = getAgent(state.commandSelection.agents, action.agentId)
+      const myRole = just(state.mine.role)
+      const myAgent = just(state.mine.agent)
       const payload: village.Payload$voteMessage = {
         '@context': [
           village.BaseContext.Base,

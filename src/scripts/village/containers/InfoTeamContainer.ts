@@ -4,7 +4,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  if (!state.roles.mine) {
+  if (!state.mine.role) {
     return {
       class: 'info--team',
       team: ''
@@ -13,7 +13,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
   return {
     class: 'info--team',
-    team: getTeam(strToRoleId(state.roles.mine.name.en))
+    team: getTeam(strToRoleId(state.mine.role.name.en))
   }
 }
 

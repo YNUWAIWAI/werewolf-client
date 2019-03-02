@@ -1,6 +1,7 @@
 /* global village */
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
+import Question from './svg/Question'
 import TeamVillager from './svg/TeamVillager'
 import TeamWerehamster from './svg/TeamWerehamster'
 import TeamWerewolf from './svg/TeamWerewolf'
@@ -74,6 +75,13 @@ export default function TeamIcon(props: Props) {
         </div>
       )
     default:
-      return null
+      return (
+        <div
+          className={`${props.class} ${props.additionalClass || ''}`}
+        >
+          <Question />
+        </div>
+      )
+
   }
 }

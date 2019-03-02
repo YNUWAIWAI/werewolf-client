@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Question from './svg/Question'
 
 export interface Props {
   readonly additionalClass?: string
@@ -9,6 +10,17 @@ export interface Props {
 }
 
 export default function AgentIcon(props: Props) {
+  if (props.image === '') {
+    return (
+      <div
+        className={`${props.className} ${props.additionalClass || ''}`}
+        onClick={props.handleOnClick}
+      >
+        <Question />
+      </div>
+    )
+  }
+
   return (
     <div
       className={`${props.className} ${props.additionalClass || ''}`}

@@ -31,6 +31,8 @@ const app = (state: State = initialState, action: Action): State => {
       return state
     case ActionTypes.global.SELECT_VILLAGE:
     case ActionTypes.Target.BUILD_VILLAGE:
+      window.onbeforeunload = () => ''
+
       return {
         content: WaitingForPlayers
       }
@@ -46,14 +48,24 @@ const app = (state: State = initialState, action: Action): State => {
       return {
         content: ConnectingToRobotPlayer
       }
-    case ActionTypes.Target.SHOW_CREDITS:
-      window.location.assign(`${window.location.origin}/credits`)
+    case ActionTypes.Target.SHOW_CREDITS: {
+      const w = window.open(`${window.location.origin}/credits`, 'credits')
+
+      if (w) {
+        w.opener = null
+      }
 
       return state
-    case ActionTypes.Target.SHOW_HOW_TO_PLAY:
-      window.location.assign(`${window.location.origin}/how-to-play`)
+    }
+    case ActionTypes.Target.SHOW_HOW_TO_PLAY: {
+      const w = window.open(`${window.location.origin}/how-to-play`, 'how-to-play')
+
+      if (w) {
+        w.opener = null
+      }
 
       return state
+    }
     case ActionTypes.Target.SHOW_HISTORY:
       return {
         content: History
@@ -63,22 +75,32 @@ const app = (state: State = initialState, action: Action): State => {
         content: IdSearch
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
+      window.onbeforeunload = null
+
       return {
         content: LobbyForAudience
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+      window.onbeforeunload = null
+
       return {
         content: LobbyForHumanPlayer
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+      window.onbeforeunload = null
+
       return {
         content: LobbyForRobotPlayer
       }
     case ActionTypes.Target.SHOW_MAIN:
+      window.onbeforeunload = null
+
       return {
         content: Main
       }
     case ActionTypes.Target.SHOW_SETTINGS:
+      window.onbeforeunload = () => ''
+
       return {
         content: Settings
       }

@@ -19,12 +19,12 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     status: player.status
   })),
   roleStatus: state.prediction.roleStatus.map(role => ({
-    caption: getText({
-      language: state.language,
-      languageMap: role.caption
-    }),
     id: role.id,
     image: role.image,
+    name: getText({
+      language: state.language,
+      languageMap: role.name
+    }),
     numberOfAgents: role.numberOfAgents
   })),
   table: state.prediction.table
