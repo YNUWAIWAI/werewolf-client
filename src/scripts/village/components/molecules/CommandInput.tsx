@@ -13,11 +13,13 @@ const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number 
 const isSendable = (postCount: number, postCountLimit: number): boolean => postCount < postCountLimit
 
 type Props = {
+  readonly characterLimit: number
   readonly handlePostChat: (value: string) => void
   readonly inputChannel: village.InputChannel.public | village.InputChannel.limited
   readonly postCount: number
   readonly postCountLimit: number
 } | {
+  readonly characterLimit: number
   readonly handlePostChat: (value: string) => void
   readonly inputChannel: village.InputChannel.grave | village.InputChannel.postMortem | village.InputChannel.private
 }
@@ -38,7 +40,7 @@ export default class CommandInput extends React.Component<Props, State> {
       sendable: this.isSendable(),
       text,
       textCount: countText(text),
-      validTextLength: isValidTextLength(text, 140)
+      validTextLength: isValidTextLength(text, props.characterLimit)
     }
   }
 
@@ -61,7 +63,7 @@ export default class CommandInput extends React.Component<Props, State> {
       sendable: this.isSendable(),
       text,
       textCount: countText(text),
-      validTextLength: isValidTextLength(text, 140)
+      validTextLength: isValidTextLength(text, this.props.characterLimit)
     })
   }
 
@@ -118,7 +120,7 @@ export default class CommandInput extends React.Component<Props, State> {
             <span className="command--input--counter">
               {`${this.props.postCount}/${this.props.postCountLimit}`}
             </span> :
-            ''
+            null
         }
         <FormattedMessage id="CommandInput.send">
           {

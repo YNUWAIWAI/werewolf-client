@@ -5,14 +5,14 @@ import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 
 export interface State {
+  readonly characterLimit: number
   readonly limited: {
     readonly available: boolean
     readonly postCount: number
-    readonly postCountLimit: number
   }
+  readonly postCountLimit: number
   readonly public: {
     readonly postCount: number
-    readonly postCountLimit: number
   }
 }
 export type Action =
@@ -20,14 +20,14 @@ export type Action =
  | SocketMessage
 
 export const initialState: State = {
+  characterLimit: 140,
   limited: {
     available: false,
-    postCount: 0,
-    postCountLimit: 10
+    postCount: 0
   },
+  postCountLimit: 10,
   public: {
-    postCount: 0,
-    postCountLimit: 10
+    postCount: 0
   }
 }
 
@@ -35,6 +35,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
   switch (action.type) {
     case ActionTypes.global.CHANGE_PHASE: {
       return {
+        ... state,
         limited: {
           ... state.limited,
           postCount: 0
@@ -60,8 +61,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
                 ... state,
                 limited: {
                   ... state.limited,
-                  postCount: just(action.payload.counter),
-                  postCountLimit: just(action.payload.limit)
+                  postCount: just(action.payload.counter)
                 }
               }
             case village.InputChannel.public:
@@ -69,8 +69,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
                 ... state,
                 public: {
                   ... state.public,
-                  postCount: just(action.payload.counter),
-                  postCountLimit: just(action.payload.limit)
+                  postCount: just(action.payload.counter)
                 }
               }
             case village.InputChannel.grave:
@@ -83,14 +82,9 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         case village.Message.systemMessage: {
           if (!action.payload.role) {
             return {
-              limited: {
-                ... state.limited,
-                postCountLimit: action.payload.village.chatSettings.limit
-              },
-              public: {
-                ... state.public,
-                postCountLimit: action.payload.village.chatSettings.limit
-              }
+              ... state,
+              characterLimit: action.payload.village.chatSettings.characterLimit,
+              postCountLimit: action.payload.village.chatSettings.limit
             }
           }
           const role = getMyRole(action.payload.role)
@@ -100,27 +94,20 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
             AVAILABLE_FOR_LIMITED_CHAT.includes(strToRoleId(role.name.en))
           ) {
             return {
+              ... state,
+              characterLimit: action.payload.village.chatSettings.characterLimit,
               limited: {
                 ... state.limited,
-                available: true,
-                postCountLimit: action.payload.village.chatSettings.limit
+                available: true
               },
-              public: {
-                ... state.public,
-                postCountLimit: action.payload.village.chatSettings.limit
-              }
+              postCountLimit: action.payload.village.chatSettings.limit
             }
           }
 
           return {
-            limited: {
-              ... state.limited,
-              postCountLimit: action.payload.village.chatSettings.limit
-            },
-            public: {
-              ... state.public,
-              postCountLimit: action.payload.village.chatSettings.limit
-            }
+            ... state,
+            characterLimit: action.payload.village.chatSettings.characterLimit,
+            postCountLimit: action.payload.village.chatSettings.limit
           }
         }
         default:
