@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import ChatContainer from './ChatContainer'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -9,7 +10,7 @@ describe('<ChatContainer />', () => {
   test('chat dosen\'t exist', () => {
     const store = fakeStore(
       {
-        language: 'ja'
+        language: village.Language.ja
       }
     )
     const wrapper = mount(
@@ -31,7 +32,7 @@ describe('<ChatContainer />', () => {
             chat0: {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
-              intensionalDisclosureRange: 'public',
+              intensionalDisclosureRange: village.Channel.public,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -46,7 +47,7 @@ describe('<ChatContainer />', () => {
             chat1: {
               id: -1,
               image: 'https://werewolf.world/image/0.2/Regina.jpg',
-              intensionalDisclosureRange: 'onymousAudience',
+              intensionalDisclosureRange: village.Channel.onymousAudience,
               isMine: true,
               name: 'Katoh',
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -58,7 +59,7 @@ describe('<ChatContainer />', () => {
             chat2: {
               id: -1,
               image: 'Anonymous',
-              intensionalDisclosureRange: 'anonymousAudience',
+              intensionalDisclosureRange: village.Channel.anonymousAudience,
               isMine: true,
               name: 'Anonymous',
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -77,7 +78,7 @@ describe('<ChatContainer />', () => {
             }
           }
         },
-        language: 'ja'
+        language: village.Language.ja
       }
     )
     const wrapper = mount(

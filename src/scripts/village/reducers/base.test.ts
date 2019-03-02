@@ -22,7 +22,10 @@ test('socket/MESSAGE', () => {
     'village': {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
-      'characterLimit': 10,
+      'chatSettings': {
+        characterLimit: 140,
+        limit: 10
+      },
       'id': 3,
       'lang': 'ja',
       'name': '横国の森の奥にある時代に取り残された小さな村',

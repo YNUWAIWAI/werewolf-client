@@ -16,7 +16,10 @@ export interface State {
   readonly village: {
     readonly '@context': village.Context.Village
     readonly '@id': string
-    readonly characterLimit: number
+    readonly chatSettings: {
+      readonly characterLimit: number
+      readonly limit: number
+    }
     readonly id: number
     readonly lang: village.Language
     readonly name: string
@@ -39,7 +42,10 @@ export const initialState: State = {
   'village': {
     '@context': village.Context.Village,
     '@id': '',
-    'characterLimit': 10,
+    'chatSettings': {
+      'characterLimit': 140,
+      'limit': 10
+    },
     'id': 0,
     'lang': village.Language.en,
     'name': '',
@@ -69,7 +75,10 @@ const base = (state: State = initialState, action: Action): State => {
         'village': {
           '@context': action.payload.village['@context'],
           '@id': action.payload.village['@id'],
-          'characterLimit': initialState.village.characterLimit,
+          'chatSettings': {
+            characterLimit: action.payload.village.chatSettings.characterLimit,
+            limit: action.payload.village.chatSettings.limit
+          },
           'id': action.payload.village.id,
           'lang': action.payload.village.lang,
           'name': action.payload.village.name,

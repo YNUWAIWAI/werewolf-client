@@ -17,7 +17,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
-      'intensionalDisclosureRange': 'private',
+      'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
@@ -26,9 +26,12 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'village': {
         '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
-        'characterLimit': 10,
+        'chatSettings': {
+          characterLimit: 140,
+          limit: 10
+        },
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -45,7 +48,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'id': 'seer',
+        'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'name': {
           'en': 'Seer',
@@ -63,7 +66,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Gert',
             'ja': 'ゲルト'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -73,7 +76,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Walter',
             'ja': 'ヴァルター'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#2',
@@ -83,7 +86,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Moritz',
             'ja': 'モーリッツ'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#3',
@@ -93,7 +96,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Simson',
             'ja': 'ジムゾン'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#4',
@@ -103,7 +106,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Thomas',
             'ja': 'トーマス'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#5',
@@ -113,7 +116,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Nicholas',
             'ja': 'ニコラス'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#6',
@@ -123,7 +126,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Dieter',
             'ja': 'ディーター'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#7',
@@ -133,7 +136,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Peter',
             'ja': 'ペーター'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#8',
@@ -143,7 +146,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Lisa',
             'ja': 'リーザ'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#9',
@@ -153,7 +156,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Alvin',
             'ja': 'アルビン'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#10',
@@ -163,7 +166,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Catalina',
             'ja': 'カタリナ'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#11',
@@ -173,7 +176,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Otto',
             'ja': 'オットー'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#12',
@@ -183,7 +186,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Joachim',
             'ja': 'ヨアヒム'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#13',
@@ -193,7 +196,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Pamela',
             'ja': 'パメラ'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#14',
@@ -203,12 +206,13 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'en': 'Jacob',
             'ja': 'ヤコブ'
           },
-          'status': 'alive'
+          'status': village.AgentStatus.alive
         }
       ],
       roleStatus: [
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+          'id': village.RoleId.villager,
           'image': 'https://werewolf.world/image/0.2/villager.jpg',
           'name': {
             'en': 'Villager',
@@ -218,6 +222,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+          'id': village.RoleId.seer,
           'image': 'https://werewolf.world/image/0.2/seer.jpg',
           'name': {
             'en': 'Seer',
@@ -227,6 +232,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+          'id': village.RoleId.medium,
           'image': 'https://werewolf.world/image/0.2/medium.jpg',
           'name': {
             'en': 'Medium',
@@ -236,6 +242,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+          'id': village.RoleId.hunter,
           'image': 'https://werewolf.world/image/0.2/hunter.jpg',
           'name': {
             'en': 'Hunter',
@@ -245,6 +252,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+          'id': village.RoleId.mason,
           'image': 'https://werewolf.world/image/0.2/mason.jpg',
           'name': {
             'en': 'Mason',
@@ -254,6 +262,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+          'id': village.RoleId.madman,
           'image': 'https://werewolf.world/image/0.2/madman.jpg',
           'name': {
             'en': 'Madman',
@@ -263,6 +272,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+          'id': village.RoleId.werewolf,
           'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
           'name': {
             'en': 'Werewolf',
@@ -272,6 +282,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+          'id': village.RoleId.werehamster,
           'image': 'https://werewolf.world/image/0.2/werehamster.jpg',
           'name': {
             'en': 'Werehamster',
@@ -353,7 +364,10 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'village': {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
-      'characterLimit': 10,
+      'chatSettings': {
+        characterLimit: 140,
+        limit: 10
+      },
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -401,7 +415,7 @@ describe('POST_CHAT', () => {
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
-      'intensionalDisclosureRange': 'private',
+      'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
@@ -410,9 +424,12 @@ describe('POST_CHAT', () => {
       'village': {
         '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
-        'characterLimit': 10,
+        'chatSettings': {
+          characterLimit: 140,
+          limit: 10
+        },
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -429,7 +446,7 @@ describe('POST_CHAT', () => {
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'id': 'seer',
+        'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'name': {
           'en': 'Seer',
@@ -504,7 +521,10 @@ describe('POST_CHAT', () => {
     'village': {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
-      'characterLimit': 10,
+      'chatSettings': {
+        characterLimit: 140,
+        limit: 10
+      },
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
@@ -592,8 +612,8 @@ describe('SELECT_YES', () => {
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
-      'intensionalDisclosureRange': 'private',
-      'phase': village.Phase.morning,
+      'intensionalDisclosureRange': village.Channel.private,
+      'phase': village.Phase.day,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -601,9 +621,12 @@ describe('SELECT_YES', () => {
       'village': {
         '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
-        'characterLimit': 10,
+        'chatSettings': {
+          characterLimit: 140,
+          limit: 10
+        },
         'id': 3,
-        'lang': 'ja',
+        'lang': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -742,7 +765,7 @@ describe('SELECT_YES', () => {
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'id': 'seer',
+        'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.2/seer.jpg',
         'name': {
           'en': 'Seer',
@@ -801,7 +824,7 @@ describe('SELECT_YES', () => {
         }
       }
     },
-    'phase': village.Phase.morning,
+    'phase': village.Phase.day,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -809,7 +832,10 @@ describe('SELECT_YES', () => {
     'village': {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
-      'characterLimit': 10,
+      'chatSettings': {
+        characterLimit: 140,
+        limit: 10
+      },
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',

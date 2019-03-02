@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
@@ -9,7 +10,7 @@ describe('<ResultContainer />', () => {
   test('winner: villager loser: werewolf, werehamster', () => {
     const store = fakeStore(
       {
-        language: 'ja',
+        language: village.Language.ja,
         result: {
           agents: {
             agent0: {
@@ -21,13 +22,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
               avatarName: 'Sato',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
               roleName: {
                 'en': 'Villager',
                 'ja': '村人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent1: {
               agentId: 1,
@@ -38,13 +39,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
               avatarName: 'Suzuki',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
               roleName: {
                 en: 'Seer',
                 ja: '占い師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent2: {
               agentId: 2,
@@ -55,13 +56,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
               avatarName: 'Takahashi',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
               roleName: {
                 en: 'Werewolf',
                 ja: '人狼'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent3: {
               agentId: 3,
@@ -72,13 +73,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
               avatarName: 'Tanaka',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
               roleName: {
                 en: 'Hunter',
                 ja: '狩人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent4: {
               agentId: 4,
@@ -89,13 +90,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
               avatarName: 'Ito',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
               roleName: {
                 en: 'Medium',
                 ja: '霊媒師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent5: {
               agentId: 5,
@@ -106,13 +107,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
               avatarName: 'Watanabe',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
               roleName: {
                 en: 'Werehamster',
                 ja: 'ハムスター人間'
               },
-              status: 'death by fear'
+              status: village.AgentStatus.deathByFear
             }
           },
           allIds: [
@@ -130,10 +131,10 @@ describe('<ResultContainer />', () => {
           me: 'agent1',
           summary: {
             kind: 'player',
-            loserTeam: new Set(['werewolf', 'werehamster']),
-            myTeam: 'villager',
-            result: 'win',
-            winnerTeam: 'villager'
+            loserTeam: new Set([village.Team.werewolf, village.Team.werehamster]),
+            myTeam: village.Team.villager,
+            result: village.Result.win,
+            winnerTeam: village.Team.villager
           },
           visible: true,
           winners: [
@@ -158,7 +159,7 @@ describe('<ResultContainer />', () => {
   test('winner: werehamster loser: villager, werewolf', () => {
     const store = fakeStore(
       {
-        language: 'ja',
+        language: village.Language.ja,
         result: {
           agents: {
             agent0: {
@@ -170,13 +171,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
               avatarName: 'Sato',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
               roleName: {
                 'en': 'Villager',
                 'ja': '村人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent1: {
               agentId: 1,
@@ -187,13 +188,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
               avatarName: 'Suzuki',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
               roleName: {
                 en: 'Seer',
                 ja: '占い師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent2: {
               agentId: 2,
@@ -204,13 +205,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
               avatarName: 'Takahashi',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
               roleName: {
                 en: 'Werewolf',
                 ja: '人狼'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent3: {
               agentId: 3,
@@ -221,13 +222,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
               avatarName: 'Tanaka',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
               roleName: {
                 en: 'Hunter',
                 ja: '狩人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent4: {
               agentId: 4,
@@ -238,13 +239,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
               avatarName: 'Ito',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
               roleName: {
                 en: 'Medium',
                 ja: '霊媒師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent5: {
               agentId: 5,
@@ -255,13 +256,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
               avatarName: 'Watanabe',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
               roleName: {
                 en: 'Werehamster',
                 ja: 'ハムスター人間'
               },
-              status: 'death by fear'
+              status: village.AgentStatus.deathByFear
             }
           },
           allIds: [
@@ -282,10 +283,10 @@ describe('<ResultContainer />', () => {
           me: 'agent1',
           summary: {
             kind: 'player',
-            loserTeam: new Set(['villager', 'werewolf']),
-            myTeam: 'villager',
-            result: 'lose',
-            winnerTeam: 'werehamster'
+            loserTeam: new Set([village.Team.villager, village.Team.werewolf]),
+            myTeam: village.Team.villager,
+            result: village.Result.lose,
+            winnerTeam: village.Team.werehamster
           },
           visible: true,
           winners: [
@@ -307,7 +308,7 @@ describe('<ResultContainer />', () => {
   test('winner: werewolf loser: villager, werehamster', () => {
     const store = fakeStore(
       {
-        language: 'ja',
+        language: village.Language.ja,
         result: {
           agents: {
             agent0: {
@@ -319,13 +320,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
               avatarName: 'Sato',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
               roleName: {
                 'en': 'Villager',
                 'ja': '村人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent1: {
               agentId: 1,
@@ -336,13 +337,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
               avatarName: 'Suzuki',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
               roleName: {
                 en: 'Seer',
                 ja: '占い師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent2: {
               agentId: 2,
@@ -353,13 +354,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
               avatarName: 'Takahashi',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
               roleName: {
                 en: 'Werewolf',
                 ja: '人狼'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent3: {
               agentId: 3,
@@ -370,13 +371,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
               avatarName: 'Tanaka',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
               roleName: {
                 en: 'Hunter',
                 ja: '狩人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent4: {
               agentId: 4,
@@ -387,13 +388,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
               avatarName: 'Ito',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
               roleName: {
                 en: 'Medium',
                 ja: '霊媒師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent5: {
               agentId: 5,
@@ -404,13 +405,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
               avatarName: 'Watanabe',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
               roleName: {
                 en: 'Werehamster',
                 ja: 'ハムスター人間'
               },
-              status: 'death by fear'
+              status: village.AgentStatus.deathByFear
             }
           },
           allIds: [
@@ -431,10 +432,10 @@ describe('<ResultContainer />', () => {
           me: 'agent1',
           summary: {
             kind: 'player',
-            loserTeam: new Set(['villager', 'werewolf']),
-            myTeam: 'villager',
-            result: 'lose',
-            winnerTeam: 'werehamster'
+            loserTeam: new Set([village.Team.villager, village.Team.werewolf]),
+            myTeam: village.Team.villager,
+            result: village.Result.lose,
+            winnerTeam: village.Team.werehamster
           },
           visible: true,
           winners: [
@@ -456,7 +457,7 @@ describe('<ResultContainer />', () => {
   test('winner: werewolf loser: villager', () => {
     const store = fakeStore(
       {
-        language: 'ja',
+        language: village.Language.ja,
         result: {
           agents: {
             agent0: {
@@ -468,13 +469,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
               avatarName: 'Sato',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
               roleName: {
                 'en': 'Villager',
                 'ja': '村人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent1: {
               agentId: 1,
@@ -485,13 +486,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
               avatarName: 'Suzuki',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
               roleName: {
                 en: 'Seer',
                 ja: '占い師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent2: {
               agentId: 2,
@@ -502,13 +503,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
               avatarName: 'Takahashi',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
               roleName: {
                 en: 'Werewolf',
                 ja: '人狼'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent3: {
               agentId: 3,
@@ -519,13 +520,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
               avatarName: 'Tanaka',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
               roleName: {
                 en: 'Hunter',
                 ja: '狩人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent4: {
               agentId: 4,
@@ -536,13 +537,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
               avatarName: 'Ito',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
               roleName: {
                 en: 'Medium',
                 ja: '霊媒師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             }
           },
           allIds: [
@@ -561,10 +562,10 @@ describe('<ResultContainer />', () => {
           me: 'agent1',
           summary: {
             kind: 'player',
-            loserTeam: new Set(['villager']),
-            myTeam: 'villager',
-            result: 'lose',
-            winnerTeam: 'werewolf'
+            loserTeam: new Set([village.Team.villager]),
+            myTeam: village.Team.villager,
+            result: village.Result.lose,
+            winnerTeam: village.Team.werewolf
           },
           visible: true,
           winners: [
@@ -586,7 +587,7 @@ describe('<ResultContainer />', () => {
   test('winner: villager loser: werewolf', () => {
     const store = fakeStore(
       {
-        language: 'ja',
+        language: village.Language.ja,
         result: {
           agents: {
             agent0: {
@@ -598,13 +599,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
               avatarName: 'Sato',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
               roleName: {
                 'en': 'Villager',
                 'ja': '村人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent1: {
               agentId: 1,
@@ -615,13 +616,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
               avatarName: 'Suzuki',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
               roleName: {
                 en: 'Seer',
                 ja: '占い師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent2: {
               agentId: 2,
@@ -632,13 +633,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
               avatarName: 'Takahashi',
-              result: 'lose',
+              result: village.Result.lose,
               roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
               roleName: {
                 en: 'Werewolf',
                 ja: '人狼'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent3: {
               agentId: 3,
@@ -649,13 +650,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
               avatarName: 'Tanaka',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
               roleName: {
                 en: 'Hunter',
                 ja: '狩人'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             },
             agent4: {
               agentId: 4,
@@ -666,13 +667,13 @@ describe('<ResultContainer />', () => {
               },
               avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
               avatarName: 'Ito',
-              result: 'win',
+              result: village.Result.win,
               roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
               roleName: {
                 en: 'Medium',
                 ja: '霊媒師'
               },
-              status: 'alive'
+              status: village.AgentStatus.alive
             }
           },
           allIds: [
@@ -688,10 +689,10 @@ describe('<ResultContainer />', () => {
           me: 'agent1',
           summary: {
             kind: 'player',
-            loserTeam: new Set(['werewolf']),
-            myTeam: 'villager',
-            result: 'win',
-            winnerTeam: 'villager'
+            loserTeam: new Set([village.Team.werewolf]),
+            myTeam: village.Team.villager,
+            result: village.Result.win,
+            winnerTeam: village.Team.villager
           },
           visible: true,
           winners: [

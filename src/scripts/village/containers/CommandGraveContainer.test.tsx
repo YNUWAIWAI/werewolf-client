@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import CommandGraveContainer from './CommandGraveContainer'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -8,7 +9,7 @@ import {mount} from 'enzyme'
 test('<CommandGraveContainer />', () => {
   const store = fakeStore(
     {
-      language: 'ja'
+      language: village.Language.ja
     }
   )
   const wrapper = mount(

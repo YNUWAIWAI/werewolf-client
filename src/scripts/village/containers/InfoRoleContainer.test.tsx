@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import InfoRoleContainer from './InfoRoleContainer'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -21,11 +22,11 @@ describe('<InfoRoleContainer />', () => {
   test('mine.role exists', () => {
     const store = fakeStore(
       {
-        language: 'en',
+        language: village.Language.en,
         mine: {
           role: {
             '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-            'id': 'seer',
+            'id': village.RoleId.seer,
             'image': 'https://werewolf.world/image/0.2/seer.jpg',
             'name': {
               'en': 'Seer',

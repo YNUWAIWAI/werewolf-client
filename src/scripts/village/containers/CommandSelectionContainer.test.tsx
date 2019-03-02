@@ -1,5 +1,5 @@
+/* global village */
 import * as React from 'react'
-import {DAY, NIGHT} from '../constants/Phase'
 import CommandSelectionContainer from './CommandSelectionContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
@@ -12,18 +12,37 @@ describe('<CommandSelectionContainer />', () => {
       const store = fakeStore(
         {
           base: {
-            phase: DAY,
-            phaseTimeLimit: 100
+            '@id': 'https://licos.online/state/0.2/village#3',
+            'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+            'date': 1,
+            'intensionalDisclosureRange': village.Channel.private,
+            'phase': village.Phase.day,
+            'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+            'phaseTimeLimit': 100,
+            'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+            'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+            'village': {
+              '@context': village.Context.Village,
+              '@id': 'https://licos.online/state/0.2/village',
+              'chatSettings': {
+                characterLimit: 140,
+                limit: 10
+              },
+              'id': 3,
+              'lang': village.Language.ja,
+              'name': '横国の森の奥にある時代に取り残された小さな村',
+              'totalNumberOfAgents': 15
+            }
           },
           commandSelection: {
             agents: [],
             fixed: true
           },
-          language: 'ja',
+          language: village.Language.ja,
           mine: {
             role: {
               '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-              'id': 'seer',
+              'id': village.RoleId.seer,
               'image': 'https://werewolf.world/image/0.2/seer.jpg',
               'name': {
                 'en': 'Seer',
@@ -47,18 +66,37 @@ describe('<CommandSelectionContainer />', () => {
       const store = fakeStore(
         {
           base: {
-            phase: DAY,
-            phaseTimeLimit: 100
+            '@id': 'https://licos.online/state/0.2/village#3',
+            'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+            'date': 1,
+            'intensionalDisclosureRange': village.Channel.private,
+            'phase': village.Phase.day,
+            'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+            'phaseTimeLimit': 100,
+            'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+            'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+            'village': {
+              '@context': village.Context.Village,
+              '@id': 'https://licos.online/state/0.2/village',
+              'chatSettings': {
+                characterLimit: 140,
+                limit: 10
+              },
+              'id': 3,
+              'lang': village.Language.ja,
+              'name': '横国の森の奥にある時代に取り残された小さな村',
+              'totalNumberOfAgents': 15
+            }
           },
           commandSelection: {
             agents: [],
             fixed: false
           },
-          language: 'ja',
+          language: village.Language.ja,
           mine: {
             role: {
               '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-              'id': 'seer',
+              'id': village.RoleId.seer,
               'image': 'https://werewolf.world/image/0.2/seer.jpg',
               'name': {
                 'en': 'Seer',
@@ -85,18 +123,37 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              phase: NIGHT,
-              phaseTimeLimit: 100
+              '@id': 'https://licos.online/state/0.2/village#3',
+              'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'date': 1,
+              'intensionalDisclosureRange': village.Channel.private,
+              'phase': village.Phase.night,
+              'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+              'phaseTimeLimit': 100,
+              'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+              'village': {
+                '@context': village.Context.Village,
+                '@id': 'https://licos.online/state/0.2/village',
+                'chatSettings': {
+                  characterLimit: 140,
+                  limit: 10
+                },
+                'id': 3,
+                'lang': village.Language.ja,
+                'name': '横国の森の奥にある時代に取り残された小さな村',
+                'totalNumberOfAgents': 15
+              }
             },
             commandSelection: {
               agents: [],
               fixed: true
             },
-            language: 'ja',
+            language: village.Language.ja,
             mine: {
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
-                'id': 'hunter',
+                'id': village.RoleId.hunter,
                 'image': 'https://werewolf.world/image/0.2/hunter.jpg',
                 'name': {
                   'en': 'Hunter',
@@ -120,18 +177,37 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              phase: NIGHT,
-              phaseTimeLimit: 100
+              '@id': 'https://licos.online/state/0.2/village#3',
+              'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'date': 1,
+              'intensionalDisclosureRange': village.Channel.private,
+              'phase': village.Phase.night,
+              'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+              'phaseTimeLimit': 100,
+              'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+              'village': {
+                '@context': village.Context.Village,
+                '@id': 'https://licos.online/state/0.2/village',
+                'chatSettings': {
+                  characterLimit: 140,
+                  limit: 10
+                },
+                'id': 3,
+                'lang': village.Language.ja,
+                'name': '横国の森の奥にある時代に取り残された小さな村',
+                'totalNumberOfAgents': 15
+              }
             },
             commandSelection: {
               agents: [],
               fixed: false
             },
-            language: 'ja',
+            language: village.Language.ja,
             mine: {
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
-                'id': 'hunter',
+                'id': village.RoleId.hunter,
                 'image': 'https://werewolf.world/image/0.2/hunter.jpg',
                 'name': {
                   'en': 'Hunter',
@@ -157,18 +233,37 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              phase: NIGHT,
-              phaseTimeLimit: 100
+              '@id': 'https://licos.online/state/0.2/village#3',
+              'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'date': 1,
+              'intensionalDisclosureRange': village.Channel.private,
+              'phase': village.Phase.night,
+              'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+              'phaseTimeLimit': 100,
+              'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+              'village': {
+                '@context': village.Context.Village,
+                '@id': 'https://licos.online/state/0.2/village',
+                'chatSettings': {
+                  characterLimit: 140,
+                  limit: 10
+                },
+                'id': 3,
+                'lang': village.Language.ja,
+                'name': '横国の森の奥にある時代に取り残された小さな村',
+                'totalNumberOfAgents': 15
+              }
             },
             commandSelection: {
               agents: [],
               fixed: true
             },
-            language: 'ja',
+            language: village.Language.ja,
             mine: {
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-                'id': 'seer',
+                'id': village.RoleId.seer,
                 'image': 'https://werewolf.world/image/0.2/seer.jpg',
                 'name': {
                   'en': 'Seer',
@@ -192,18 +287,37 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              phase: NIGHT,
-              phaseTimeLimit: 100
+              '@id': 'https://licos.online/state/0.2/village#3',
+              'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'date': 1,
+              'intensionalDisclosureRange': village.Channel.private,
+              'phase': village.Phase.night,
+              'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+              'phaseTimeLimit': 100,
+              'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+              'village': {
+                '@context': village.Context.Village,
+                '@id': 'https://licos.online/state/0.2/village',
+                'chatSettings': {
+                  characterLimit: 140,
+                  limit: 10
+                },
+                'id': 3,
+                'lang': village.Language.ja,
+                'name': '横国の森の奥にある時代に取り残された小さな村',
+                'totalNumberOfAgents': 15
+              }
             },
             commandSelection: {
               agents: [],
               fixed: false
             },
-            language: 'ja',
+            language: village.Language.ja,
             mine: {
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-                'id': 'seer',
+                'id': village.RoleId.seer,
                 'image': 'https://werewolf.world/image/0.2/seer.jpg',
                 'name': {
                   'en': 'Seer',
@@ -229,18 +343,37 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              phase: NIGHT,
-              phaseTimeLimit: 100
+              '@id': 'https://licos.online/state/0.2/village#3',
+              'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'date': 1,
+              'intensionalDisclosureRange': village.Channel.private,
+              'phase': village.Phase.night,
+              'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+              'phaseTimeLimit': 100,
+              'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+              'village': {
+                '@context': village.Context.Village,
+                '@id': 'https://licos.online/state/0.2/village',
+                'chatSettings': {
+                  characterLimit: 140,
+                  limit: 10
+                },
+                'id': 3,
+                'lang': village.Language.ja,
+                'name': '横国の森の奥にある時代に取り残された小さな村',
+                'totalNumberOfAgents': 15
+              }
             },
             commandSelection: {
               agents: [],
               fixed: true
             },
-            language: 'ja',
+            language: village.Language.ja,
             mine: {
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
-                'id': 'werewolf',
+                'id': village.RoleId.werewolf,
                 'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
                 'name': {
                   'en': 'Werewolf',
@@ -264,18 +397,37 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              phase: NIGHT,
-              phaseTimeLimit: 100
+              '@id': 'https://licos.online/state/0.2/village#3',
+              'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'date': 1,
+              'intensionalDisclosureRange': village.Channel.private,
+              'phase': village.Phase.night,
+              'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+              'phaseTimeLimit': 100,
+              'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+              'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+              'village': {
+                '@context': village.Context.Village,
+                '@id': 'https://licos.online/state/0.2/village',
+                'chatSettings': {
+                  characterLimit: 140,
+                  limit: 10
+                },
+                'id': 3,
+                'lang': village.Language.ja,
+                'name': '横国の森の奥にある時代に取り残された小さな村',
+                'totalNumberOfAgents': 15
+              }
             },
             commandSelection: {
               agents: [],
               fixed: false
             },
-            language: 'ja',
+            language: village.Language.ja,
             mine: {
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
-                'id': 'werewolf',
+                'id': village.RoleId.werewolf,
                 'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
                 'name': {
                   'en': 'Werewolf',
@@ -300,18 +452,37 @@ describe('<CommandSelectionContainer />', () => {
       const store = fakeStore(
         {
           base: {
-            phase: NIGHT,
-            phaseTimeLimit: 100
+            '@id': 'https://licos.online/state/0.2/village#3',
+            'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+            'date': 1,
+            'intensionalDisclosureRange': village.Channel.private,
+            'phase': village.Phase.night,
+            'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+            'phaseTimeLimit': 100,
+            'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+            'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+            'village': {
+              '@context': village.Context.Village,
+              '@id': 'https://licos.online/state/0.2/village',
+              'chatSettings': {
+                characterLimit: 140,
+                limit: 10
+              },
+              'id': 3,
+              'lang': village.Language.ja,
+              'name': '横国の森の奥にある時代に取り残された小さな村',
+              'totalNumberOfAgents': 15
+            }
           },
           commandSelection: {
             agents: [],
             fixed: true
           },
-          language: 'ja',
+          language: village.Language.ja,
           mine: {
             role: {
               '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-              'id': 'villager',
+              'id': village.RoleId.villager,
               'image': 'https://werewolf.world/image/0.2/villager.jpg',
               'name': {
                 'en': 'Villager',

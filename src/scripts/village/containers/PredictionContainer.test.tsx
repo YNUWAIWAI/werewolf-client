@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
 import PredictionContainer from './PredictionContainer'
@@ -15,7 +16,7 @@ test('<PredictionContainer />', () => {
         en: 'Walter',
         ja: 'ヴァルター'
       },
-      'status': 'alive'
+      'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
@@ -25,7 +26,7 @@ test('<PredictionContainer />', () => {
         en: 'Moritz',
         ja: 'モーリッツ'
       },
-      'status': 'alive'
+      'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#3',
@@ -35,7 +36,7 @@ test('<PredictionContainer />', () => {
         en: 'Simson',
         ja: 'ジムゾン'
       },
-      'status': 'alive'
+      'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#4',
@@ -45,7 +46,7 @@ test('<PredictionContainer />', () => {
         en: 'Thomas',
         ja: 'トーマス'
       },
-      'status': 'alive'
+      'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#5',
@@ -55,13 +56,13 @@ test('<PredictionContainer />', () => {
         en: 'Nicholas',
         ja: 'ニコラス'
       },
-      'status': 'alive'
+      'status': village.AgentStatus.alive
     }
   ]
   const roleStatus = [
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-      'id': 'villager',
+      'id': village.RoleId.villager,
       'image': 'https://werewolf.world/image/0.2/villager.jpg',
       'name': {
         en: 'Villager',
@@ -71,7 +72,7 @@ test('<PredictionContainer />', () => {
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-      'id': 'seer',
+      'id': village.RoleId.seer,
       'image': 'https://werewolf.world/image/0.2/seer.jpg',
       'name': {
         en: 'Seer',
@@ -81,7 +82,7 @@ test('<PredictionContainer />', () => {
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#madman',
-      'id': 'madman',
+      'id': village.RoleId.madman,
       'image': 'https://werewolf.world/image/0.2/madman.jpg',
       'name': {
         en: 'Madman',
@@ -91,7 +92,7 @@ test('<PredictionContainer />', () => {
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
-      'id': 'werewolf',
+      'id': village.RoleId.werewolf,
       'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
       'name': {
         en: 'Werewolf',
@@ -105,116 +106,116 @@ test('<PredictionContainer />', () => {
       madman: {
         date: 1,
         fixed: true,
-        state: 'fill'
+        state: village.BoardState.FILL
       },
       seer: {
         date: 1,
         fixed: true,
-        state: 'O'
+        state: village.BoardState.CIRCLE
       },
       villager: {
         date: 1,
         fixed: true,
-        state: 'fill'
+        state: village.BoardState.FILL
       },
       werewolf: {
         date: 1,
         fixed: true,
-        state: 'fill'
+        state: village.BoardState.FILL
       }
     },
     '2': {
       madman: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       },
       seer: {
         date: 1,
         fixed: true,
-        state: 'fill'
+        state: village.BoardState.FILL
       },
       villager: {
         date: 1,
         fixed: false,
-        state: 'Δ'
+        state: village.BoardState.TRIANGLE
       },
       werewolf: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       }
     },
     '3': {
       madman: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       },
       seer: {
         date: 1,
         fixed: true,
-        state: 'fill'
+        state: village.BoardState.FILL
       },
       villager: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       },
       werewolf: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       }
     },
     '4': {
       madman: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       },
       seer: {
         date: 1,
         fixed: true,
-        state: 'fill'
+        state: village.BoardState.FILL
       },
       villager: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       },
       werewolf: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       }
     },
     '5': {
       madman: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       },
       seer: {
         date: 1,
         fixed: true,
-        state: 'fill'
+        state: village.BoardState.FILL
       },
       villager: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       },
       werewolf: {
         date: 1,
         fixed: false,
-        state: '?'
+        state: village.BoardState.QUESTION
       }
     }
   }
   const store = fakeStore(
     {
-      language: 'ja',
+      language: village.Language.ja,
       prediction: {
         playerStatus,
         roleStatus,
