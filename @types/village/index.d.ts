@@ -202,7 +202,6 @@ declare namespace village {
         limit: number
         characterLimit: number
       }
-      characterLimit: number
       id: number
       lang: Language
       name: string

@@ -1519,7 +1519,7 @@
     "@types/react" "*"
 
 "@types/indexeddb@./@types/indexeddb":
-  version "2.0.5"
+  version "1.30.0"
 
 "@types/jest@^23.3.12":
   version "23.3.14"
@@ -1660,7 +1660,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./@types/village":
-  version "1.30.0"
+  version "1.32.0"
 
 "@types/webpack-env@*":
   version "1.13.7"
