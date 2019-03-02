@@ -24,7 +24,10 @@ const client2server: Middleware = store => next => action => {
         'village': {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
-          'characterLimit': state.base.village.characterLimit,
+          'chatSettings': {
+            characterLimit: state.base.village.chatSettings.characterLimit,
+            limit: state.base.village.chatSettings.limit
+          },
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
@@ -90,7 +93,10 @@ const client2server: Middleware = store => next => action => {
         'village': {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
-          'characterLimit': state.base.village.characterLimit,
+          'chatSettings': {
+            characterLimit: state.base.village.chatSettings.characterLimit,
+            limit: state.base.village.chatSettings.limit
+          },
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
@@ -126,7 +132,7 @@ const client2server: Middleware = store => next => action => {
           'image': myAgent.image,
           'name': myAgent.name
         },
-        'characterLimit': 140,
+        'characterLimit': state.base.village.chatSettings.characterLimit,
         'isMine': true,
         'isOver': false,
         'text': {
@@ -164,7 +170,10 @@ const client2server: Middleware = store => next => action => {
         'village': {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
-          'characterLimit': state.base.village.characterLimit,
+          'chatSettings': {
+            characterLimit: state.base.village.chatSettings.characterLimit,
+            limit: state.base.village.chatSettings.limit
+          },
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
