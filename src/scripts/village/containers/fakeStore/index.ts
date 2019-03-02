@@ -17,7 +17,7 @@ import {initialState as prediction} from '../../reducers/prediction'
 import {initialState as result} from '../../reducers/result'
 import {initialState as timer} from '../../reducers/timer'
 
-export default (state?: Record<string, unknown>): Store<ReducerState, Action<unknown>> => {
+export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unknown>> => {
   const initialState: ReducerState = {
     base,
     chat,
