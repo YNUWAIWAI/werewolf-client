@@ -32,7 +32,7 @@ const ajv = new Ajv()
 describe('ADVANCED_SEARCH', () => {
   describe('validity: true', () => {
     const value = {
-      avatar: 'fixed',
+      avatar: lobby.Avatar.fixed,
       comment: 'Beginners are welcome',
       hostName: 'Alice',
       maximum: 15,
@@ -62,7 +62,7 @@ describe('ADVANCED_SEARCH', () => {
       },
       token: {
         'human player': avatarToken.humanPlayer,
-        'lobby': 'human player',
+        'lobby': lobby.Lobby.human,
         'onymous audience': avatarToken.onymousAudience,
         'robot player': avatarToken.robotPlayer
       }
@@ -125,7 +125,7 @@ describe('ADVANCED_SEARCH', () => {
       },
       token: {
         'human player': avatarToken.humanPlayer,
-        'lobby': 'human player',
+        'lobby': lobby.Lobby.human,
         'onymous audience': avatarToken.onymousAudience,
         'robot player': avatarToken.robotPlayer
       }
@@ -175,7 +175,7 @@ describe('BUILD_VILLAGE', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -240,7 +240,7 @@ describe('CHANGE_LANGUAGE', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -283,7 +283,7 @@ describe('CHANGE_USER_EMAIL', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -326,7 +326,7 @@ describe('CHANGE_USER_NAME', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -369,7 +369,7 @@ describe('CHANGE_USER_PASSWORD', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -412,7 +412,7 @@ describe('KICK_OUT_PLAYER', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -463,7 +463,7 @@ describe('LEAVE_WAITING_PAGE', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     },
@@ -481,10 +481,11 @@ describe('LEAVE_WAITING_PAGE', () => {
         }
       ],
       village: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: 'Experts recommended',
         hostPlayer: {
           isAnonymous: true,
+          isHuman: true,
           name: 'Anonymous'
         },
         id: villageId,
@@ -556,7 +557,7 @@ describe('PLAY_GAME', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     },
@@ -574,10 +575,11 @@ describe('PLAY_GAME', () => {
         }
       ],
       village: {
-        avatar: 'random',
+        avatar: lobby.Avatar.random,
         comment: 'Experts recommended',
         hostPlayer: {
           isAnonymous: true,
+          isHuman: true,
           name: 'Anonymous'
         },
         id: villageId,
@@ -651,7 +653,7 @@ describe('ID_SEARCH valid id', () => {
     },
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -695,7 +697,7 @@ describe('ID_SEARCH invalid id(=-1)', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -719,7 +721,7 @@ describe('SELECT_VILLAGE', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -764,7 +766,7 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -826,7 +828,7 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -841,7 +843,7 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
   }
   const enterLobbyPayload = {
-    lobby: 'human player',
+    lobby: lobby.Lobby.human,
     page: 1,
     token: avatarToken.humanPlayer,
     type: 'enterLobby'
@@ -888,7 +890,7 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -950,7 +952,7 @@ describe('SHOW_SETTINGS', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }
@@ -991,7 +993,7 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
-      'lobby': 'human player',
+      'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
     }

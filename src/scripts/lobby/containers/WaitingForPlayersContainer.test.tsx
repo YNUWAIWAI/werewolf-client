@@ -1,3 +1,4 @@
+/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -93,7 +94,7 @@ test('<WaitingForPlayersContainer />', () => {
           }
         ],
         village: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: 'Experts recommended',
           hostPlayer: {
             isAnonymous: true,
