@@ -1,3 +1,4 @@
+/* global lobby */
 import * as React from 'react'
 import AdvancedSearchContainer from './AdvancedSearchContainer'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -32,7 +33,7 @@ test('<AdvancedSearchContainer />', () => {
           villageName: false
         },
         value: {
-          avatar: 'random',
+          avatar: lobby.Avatar.random,
           comment: '',
           hostName: '',
           maximum: -1,

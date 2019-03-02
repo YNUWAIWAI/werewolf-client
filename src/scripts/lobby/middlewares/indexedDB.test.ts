@@ -364,7 +364,7 @@ describe('socket/MESSAGE', () => {
     const store = fakeStore({
       token: {
         'human player': avatarToken.humanPlayer,
-        'lobby': 'human player',
+        'lobby': lobby.Lobby.human,
         'onymous audience': avatarToken.onymousAudience,
         'robot player': avatarToken.robotPlayer
       }

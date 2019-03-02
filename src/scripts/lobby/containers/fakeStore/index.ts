@@ -17,7 +17,7 @@ import {initialState as settings} from '../../reducers/settings'
 import {initialState as token} from '../../reducers/token'
 import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayers'
 
-export default (state?: Record<string, unknown>): Store<ReducerState, Action<unknown>> => {
+export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unknown>> => {
   const initialState: ReducerState = {
     advancedSearch,
     app,
