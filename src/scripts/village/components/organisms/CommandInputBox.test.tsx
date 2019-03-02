@@ -4,14 +4,14 @@ import {shallow} from 'enzyme'
 
 test('<CommandInputBox /> limited is unavailable', () => {
   const props = {
+    characterLimit: 140,
     limited: {
       available: false,
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     },
+    postCountLimit: 10,
     public: {
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     }
   }
   const handlePostChatEventHandler = jest.fn()
@@ -27,14 +27,14 @@ test('<CommandInputBox /> limited is unavailable', () => {
 })
 test('<CommandInputBox /> limited is available', () => {
   const props = {
+    characterLimit: 140,
     limited: {
       available: true,
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     },
+    postCountLimit: 10,
     public: {
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     }
   }
   const handlePostChatEventHandler = jest.fn()

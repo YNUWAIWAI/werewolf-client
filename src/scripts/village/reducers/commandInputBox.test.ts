@@ -10,14 +10,14 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(myMessageOnChat)
     )).toEqual({
+      characterLimit: 140,
       limited: {
         available: false,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
+      postCountLimit: 10,
       public: {
-        postCount: 7,
-        postCountLimit: 10
+        postCount: 7
       }
     })
   })
@@ -32,14 +32,14 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning)
     )).toEqual({
+      characterLimit: 140,
       limited: {
         available: false,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
+      postCountLimit: 10,
       public: {
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       }
     })
   })
@@ -48,14 +48,14 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning2)
     )).toEqual({
+      characterLimit: 140,
       limited: {
         available: true,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
+      postCountLimit: 10,
       public: {
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       }
     })
   })
@@ -63,14 +63,14 @@ describe('socket/MESSAGE', () => {
 test('CHANGE_DATE', () => {
   expect(reducer(
     {
+      characterLimit: 140,
       limited: {
         available: true,
-        postCount: 10,
-        postCountLimit: 10
+        postCount: 10
       },
+      postCountLimit: 10,
       public: {
-        postCount: 10,
-        postCountLimit: 10
+        postCount: 10
       }
     },
     {
@@ -79,14 +79,14 @@ test('CHANGE_DATE', () => {
       type: ActionTypes.global.CHANGE_PHASE
     }
   )).toEqual({
+    characterLimit: 140,
     limited: {
       available: true,
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     },
+    postCountLimit: 10,
     public: {
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     }
   })
 })
