@@ -29,6 +29,7 @@ storiesOf('village|Command/CommandInput', module)
       }}
       >
         <CommandInput
+          characterLimit={140}
           handlePostChat={action('postChat')}
           inputChannel={village.InputChannel.grave}
         />
@@ -49,6 +50,7 @@ storiesOf('village|Command/CommandInput', module)
     }}
     >
       <CommandInput
+        characterLimit={140}
         handlePostChat={action('postChat')}
         inputChannel={village.InputChannel.public}
         postCount={postCount}
@@ -65,6 +67,7 @@ storiesOf('village|Command/CommandInput', module)
       }}
       >
         <CommandInput
+          characterLimit={140}
           handlePostChat={action('postChat')}
           inputChannel={village.InputChannel.private}
         />
@@ -85,6 +88,7 @@ storiesOf('village|Command/CommandInput', module)
       }}
       >
         <CommandInput
+          characterLimit={140}
           handlePostChat={action('postChat')}
           inputChannel={village.InputChannel.limited}
           postCount={postCount}
