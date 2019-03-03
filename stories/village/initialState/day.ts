@@ -77,12 +77,10 @@ const state: ReducerState = {
   commandInputBox: {
     'limited': {
       available: true,
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     },
     'public': {
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     }
   },
   commandPostMortem: {
