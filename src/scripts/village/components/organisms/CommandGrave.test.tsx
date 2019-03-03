@@ -14,6 +14,7 @@ test('<CommandGrave />', () => {
   ]
   const wrapper = shallow(
     <CommandGrave
+      characterLimit={140}
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
       navigation={navigation}
