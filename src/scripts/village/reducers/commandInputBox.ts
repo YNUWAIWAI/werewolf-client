@@ -5,12 +5,10 @@ import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 
 export interface State {
-  readonly characterLimit: number
   readonly limited: {
     readonly available: boolean
     readonly postCount: number
   }
-  readonly postCountLimit: number
   readonly public: {
     readonly postCount: number
   }
@@ -20,12 +18,10 @@ export type Action =
  | SocketMessage
 
 export const initialState: State = {
-  characterLimit: 140,
   limited: {
     available: false,
     postCount: 0
   },
-  postCountLimit: 10,
   public: {
     postCount: 0
   }
@@ -81,11 +77,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         }
         case village.Message.systemMessage: {
           if (!action.payload.role) {
-            return {
-              ... state,
-              characterLimit: action.payload.village.chatSettings.characterLimit,
-              postCountLimit: action.payload.village.chatSettings.limit
-            }
+            return state
           }
           const role = getMyRole(action.payload.role)
 
@@ -95,20 +87,14 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           ) {
             return {
               ... state,
-              characterLimit: action.payload.village.chatSettings.characterLimit,
               limited: {
                 ... state.limited,
                 available: true
-              },
-              postCountLimit: action.payload.village.chatSettings.limit
+              }
             }
           }
 
-          return {
-            ... state,
-            characterLimit: action.payload.village.chatSettings.characterLimit,
-            postCountLimit: action.payload.village.chatSettings.limit
-          }
+          return state
         }
         default:
           return state

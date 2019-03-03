@@ -7,7 +7,11 @@ import {connect} from 'react-redux'
 type Action =
   | PostChat
 
-const mapStateToProps = (state: ReducerState): StateProps => state.commandInputBox
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  ... state.commandInputBox,
+  characterLimit: state.base.village.chatSettings.characterLimit,
+  postCountLimit: state.base.village.chatSettings.limit
+})
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handlePostChat: channel => text => {
     dispatch(
