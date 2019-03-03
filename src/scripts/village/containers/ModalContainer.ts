@@ -1,7 +1,7 @@
 import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
 import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
 import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
-import {getText, just, strToRoleId} from '../util'
+import {getText, just} from '../util'
 import {DAY} from '../constants/Phase'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
