@@ -8,7 +8,10 @@ type Action =
   | ClickNavigationButton
   | PostChat
 
-const mapStateToProps = (state: ReducerState): StateProps => state.commandPostMortem
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  ... state.commandPostMortem,
+  characterLimit: state.base.village.chatSettings.characterLimit
+})
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleNavigationClick: type => {
     dispatch(clickNavigationButton(type))

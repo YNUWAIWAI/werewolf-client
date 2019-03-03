@@ -11,6 +11,7 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl(
       <CommandInput
+        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.grave}
       />
@@ -29,6 +30,7 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl(
       <CommandInput
+        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.limited}
         postCount={0}
@@ -50,6 +52,7 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl(
       <CommandInput
+        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.private}
       />
@@ -68,6 +71,7 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl(
       <CommandInput
+        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.postMortem}
       />
@@ -86,6 +90,7 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl(
       <CommandInput
+        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.public}
         postCount={0}
@@ -108,6 +113,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={0}
@@ -154,6 +160,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={10}
@@ -202,6 +209,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={0}
@@ -230,6 +238,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={0}
@@ -257,6 +266,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={10}
@@ -284,6 +294,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={10}
@@ -313,6 +324,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={0}
@@ -349,6 +361,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={0}
@@ -385,6 +398,7 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
+          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           postCount={0}

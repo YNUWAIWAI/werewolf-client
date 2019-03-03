@@ -3,14 +3,14 @@ import * as React from 'react'
 import CommandInput from '../molecules/CommandInput'
 
 export interface StateProps {
+  readonly characterLimit: number
   readonly limited: {
     readonly available: boolean
     readonly postCount: number
-    readonly postCountLimit: number
   }
+  readonly postCountLimit: number
   readonly public: {
     readonly postCount: number
-    readonly postCountLimit: number
   }
 }
 export interface DispatchProps {
@@ -22,22 +22,27 @@ export default function CommandInputBox(props: Props) {
   return (
     <>
       <CommandInput
+        characterLimit={props.characterLimit}
         handlePostChat={props.handlePostChat(village.InputChannel.public)}
         inputChannel={village.InputChannel.public}
-        {... props.public}
+        postCount={props.public.postCount}
+        postCountLimit={props.postCountLimit}
       />
       <CommandInput
+        characterLimit={props.characterLimit}
         handlePostChat={props.handlePostChat(village.InputChannel.private)}
         inputChannel={village.InputChannel.private}
       />
       {
         props.limited.available ?
           <CommandInput
+            characterLimit={props.characterLimit}
             handlePostChat={props.handlePostChat(village.InputChannel.limited)}
             inputChannel={village.InputChannel.limited}
-            {... props.limited}
+            postCount={props.limited.postCount}
+            postCountLimit={props.postCountLimit}
           /> :
-          ''
+          null
       }
     </>
   )

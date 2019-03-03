@@ -27,15 +27,15 @@ storiesOf('village|Command', module)
   )
   .add('昼（限定なし）', () => {
     const props = {
+      characterLimit: 140,
       handlePostChat: () => action('handlePostChat'),
       limited: {
         available: false,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
+      postCountLimit: 10,
       public: {
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       }
     }
     const content = <CommandInputBox {... props} />
@@ -49,15 +49,15 @@ storiesOf('village|Command', module)
   })
   .add('昼（限定あり）', () => {
     const props = {
+      characterLimit: 140,
       handlePostChat: () => action('handlePostChat'),
       limited: {
         available: true,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
+      postCountLimit: 10,
       public: {
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       }
     }
     const content = <CommandInputBox {... props} />
@@ -71,6 +71,7 @@ storiesOf('village|Command', module)
   })
   .add('感想戦(Host)', () => {
     const props = {
+      characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
       navigation: [
@@ -102,6 +103,7 @@ storiesOf('village|Command', module)
   })
   .add('感想戦(Guest) inactive', () => {
     const props = {
+      characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
       navigation: [
@@ -134,6 +136,7 @@ storiesOf('village|Command', module)
   })
   .add('感想戦(Guest) invisible', () => {
     const props = {
+      characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
       navigation: [
@@ -160,6 +163,7 @@ storiesOf('village|Command', module)
   })
   .add('墓地', () => {
     const props = {
+      characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
       navigation: [

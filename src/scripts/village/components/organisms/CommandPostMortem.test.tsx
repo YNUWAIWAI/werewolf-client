@@ -18,6 +18,7 @@ test('<CommandPostMortem />', () => {
   ]
   const wrapper = shallow(
     <CommandPostMortem
+      characterLimit={140}
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
       navigation={navigation}

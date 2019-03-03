@@ -8,11 +8,9 @@ export interface State {
   readonly limited: {
     readonly available: boolean
     readonly postCount: number
-    readonly postCountLimit: number
   }
   readonly public: {
     readonly postCount: number
-    readonly postCountLimit: number
   }
 }
 export type Action =
@@ -22,12 +20,10 @@ export type Action =
 export const initialState: State = {
   limited: {
     available: false,
-    postCount: 0,
-    postCountLimit: 10
+    postCount: 0
   },
   public: {
-    postCount: 0,
-    postCountLimit: 10
+    postCount: 0
   }
 }
 
@@ -35,6 +31,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
   switch (action.type) {
     case ActionTypes.global.CHANGE_PHASE: {
       return {
+        ... state,
         limited: {
           ... state.limited,
           postCount: 0
@@ -60,8 +57,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
                 ... state,
                 limited: {
                   ... state.limited,
-                  postCount: just(action.payload.counter),
-                  postCountLimit: just(action.payload.limit)
+                  postCount: just(action.payload.counter)
                 }
               }
             case village.InputChannel.public:
@@ -69,8 +65,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
                 ... state,
                 public: {
                   ... state.public,
-                  postCount: just(action.payload.counter),
-                  postCountLimit: just(action.payload.limit)
+                  postCount: just(action.payload.counter)
                 }
               }
             case village.InputChannel.grave:
@@ -82,16 +77,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         }
         case village.Message.systemMessage: {
           if (!action.payload.role) {
-            return {
-              limited: {
-                ... state.limited,
-                postCountLimit: action.payload.village.chatSettings.limit
-              },
-              public: {
-                ... state.public,
-                postCountLimit: action.payload.village.chatSettings.limit
-              }
-            }
+            return state
           }
           const role = getMyRole(action.payload.role)
 
@@ -100,28 +86,15 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
             AVAILABLE_FOR_LIMITED_CHAT.includes(strToRoleId(role.name.en))
           ) {
             return {
+              ... state,
               limited: {
                 ... state.limited,
-                available: true,
-                postCountLimit: action.payload.village.chatSettings.limit
-              },
-              public: {
-                ... state.public,
-                postCountLimit: action.payload.village.chatSettings.limit
+                available: true
               }
             }
           }
 
-          return {
-            limited: {
-              ... state.limited,
-              postCountLimit: action.payload.village.chatSettings.limit
-            },
-            public: {
-              ... state.public,
-              postCountLimit: action.payload.village.chatSettings.limit
-            }
-          }
+          return state
         }
         default:
           return state

@@ -12,12 +12,10 @@ describe('socket/MESSAGE', () => {
     )).toEqual({
       limited: {
         available: false,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
       public: {
-        postCount: 7,
-        postCountLimit: 10
+        postCount: 7
       }
     })
   })
@@ -34,12 +32,10 @@ describe('socket/MESSAGE', () => {
     )).toEqual({
       limited: {
         available: false,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
       public: {
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       }
     })
   })
@@ -50,12 +46,10 @@ describe('socket/MESSAGE', () => {
     )).toEqual({
       limited: {
         available: true,
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       },
       public: {
-        postCount: 0,
-        postCountLimit: 10
+        postCount: 0
       }
     })
   })
@@ -65,12 +59,10 @@ test('CHANGE_DATE', () => {
     {
       limited: {
         available: true,
-        postCount: 10,
-        postCountLimit: 10
+        postCount: 10
       },
       public: {
-        postCount: 10,
-        postCountLimit: 10
+        postCount: 10
       }
     },
     {
@@ -81,12 +73,10 @@ test('CHANGE_DATE', () => {
   )).toEqual({
     limited: {
       available: true,
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     },
     public: {
-      postCount: 0,
-      postCountLimit: 10
+      postCount: 0
     }
   })
 })
