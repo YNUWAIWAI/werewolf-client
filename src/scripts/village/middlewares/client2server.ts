@@ -1,7 +1,6 @@
 /* global village */
 /* eslint sort-keys: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
-import {POST_MORTEM, RESULT} from '../constants/Phase'
 import {getAgent, getChannelFromInputChennel, getRole, just, strToRoleId} from '../util'
 import {Middleware} from '.'
 import {socket} from '../actions'
@@ -103,7 +102,7 @@ const client2server: Middleware = store => next => action => {
           'totalNumberOfAgents': state.base.village.totalNumberOfAgents
         },
         'token': state.base.token,
-        'phase': state.base.phase === RESULT ? POST_MORTEM : state.base.phase,
+        'phase': state.base.phase === village.Phase.result ? village.Phase.postMortem : state.base.phase,
         'date': state.base.date,
         'phaseTimeLimit': state.base.phaseTimeLimit,
         'phaseStartTime': state.base.phaseStartTime,

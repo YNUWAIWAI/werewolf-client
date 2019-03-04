@@ -1,6 +1,5 @@
+/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Message from '../constants/Message'
-import {ANONYMOUS_AUDIENCE, ONYMOUS_AUDIENCE, PUBLIC} from '../constants/Channels'
 import {ChangeDate, SocketMessage} from '../actions'
 import {idGenerater, just} from '../util'
 
@@ -40,12 +39,12 @@ const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE: {
       switch (action.payload['@payload']) {
-        case Message.PLAYER_MESSAGE: {
+        case village.Message.playerMessage: {
           const payload = action.payload
           const chatId = getChatId()
-          const id = payload.intensionalDisclosureRange === PUBLIC ? just(payload.id) : -1
+          const id = payload.intensionalDisclosureRange === village.Channel.public ? just(payload.id) : -1
 
-          if (payload.intensionalDisclosureRange === ANONYMOUS_AUDIENCE) {
+          if (payload.intensionalDisclosureRange === village.Channel.anonymousAudience) {
             return {
               allIds: [chatId, ... state.allIds],
               byId: {
@@ -64,7 +63,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 }
               }
             }
-          } else if (payload.intensionalDisclosureRange === ONYMOUS_AUDIENCE) {
+          } else if (payload.intensionalDisclosureRange === village.Channel.onymousAudience) {
             return {
               allIds: [chatId, ... state.allIds],
               byId: {

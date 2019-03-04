@@ -1,6 +1,6 @@
+/* global village */
 import CommandSelection, {DispatchProps, StateProps} from '../components/organisms/CommandSelection'
 import {SelectOption, selectOption} from '../actions'
-import {DAY} from '../constants/Phase'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -12,7 +12,7 @@ type Action =
 const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boolean) => {
   const fixedState = fixed ? 'fixed' : 'unfixed'
 
-  if (phase === DAY) {
+  if (phase === village.Phase.day) {
     return `CommandSelection.Description.dayVote.${fixedState}`
   }
 

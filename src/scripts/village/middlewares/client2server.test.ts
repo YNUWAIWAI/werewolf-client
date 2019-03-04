@@ -4,7 +4,6 @@ import * as Ajv from 'ajv'
 import {ChangePredictionBoard, PostChat, Ready, SelectYes, socket} from '../actions'
 import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'
 import {VERSION} from '../constants/Version'
-import {VILLAGER} from '../constants/Role'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './client2server'
@@ -303,7 +302,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   const action: ChangePredictionBoard = {
     nextState: village.BoardState.CIRCLE,
     playerId: 2,
-    roleId: VILLAGER,
+    roleId: village.RoleId.villager,
     type: ActionTypes.global.CHANGE_PREDICTION_BOARD
   }
   const payload: village.Payload$boardMessage = {

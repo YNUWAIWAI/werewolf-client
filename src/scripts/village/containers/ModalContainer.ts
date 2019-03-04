@@ -1,8 +1,7 @@
-import {HUNTER, SEER, WEREWOLF} from '../constants/Role'
+/* global village */
 import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
 import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
 import {getText, just} from '../util'
-import {DAY} from '../constants/Phase'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -12,16 +11,16 @@ type Action =
   | SelectYes
 
 const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
-  if (phase === DAY) {
+  if (phase === village.Phase.day) {
     return 'Modal.Description.dayVote'
   }
 
   switch (role) { // phase === NIGHT
-    case HUNTER:
+    case village.RoleId.hunter:
       return 'Modal.Description.hunterVote'
-    case SEER:
+    case village.RoleId.seer:
       return 'Modal.Description.seerVote'
-    case WEREWOLF:
+    case village.RoleId.werewolf:
       return 'Modal.Description.werewolfVote'
     default:
       return 'Modal.Description.wait'
