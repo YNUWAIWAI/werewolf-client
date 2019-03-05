@@ -62,8 +62,8 @@ describe('socket/MESSAGE', () => {
         'chatSettings': {
           '@context': village.Context.ChatSettings,
           '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          characterLimit: 140,
-          limit: 10
+          'characterLimit': 140,
+          'limit': 10
         },
         'id': 3,
         'lang': village.Language.ja,
@@ -115,8 +115,8 @@ describe('socket/MESSAGE', () => {
         'chatSettings': {
           '@context': village.Context.ChatSettings,
           '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          characterLimit: 140,
-          limit: 10
+          'characterLimit': 140,
+          'limit': 10
         },
         'id': 3,
         'lang': village.Language.ja,
@@ -148,8 +148,8 @@ describe('socket/MESSAGE', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        characterLimit: 140,
-        limit: 10
+        'characterLimit': 140,
+        'limit': 10
       },
       'id': 3,
       'lang': village.Language.ja,
@@ -159,31 +159,57 @@ describe('socket/MESSAGE', () => {
   }
 
   test('validate the JSON', async () => {
-    const ajv = new Ajv()
-
     expect.hasAssertions()
-    await Promise.all([
+    const [mainSchema, subSchema, baseSchema, ... schemas] = await Promise.all([
       fetch(`${BASE_URI}/flavorTextMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/base.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chat.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/playerMessage.json`)
         .then(res => res.json()),
+      fetch(`${BASE_URI}/base.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/agent.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/chat.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/chatSettings.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/role.json`)
+        .then(res => res.json()),
       fetch(`${BASE_URI}/time.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/village.json`)
         .then(res => res.json())
     ])
-      .then(schemas => {
-        const [schema, ... rest] = schemas
-        const validate = ajv
-          .addSchema(rest)
-          .validate(schema, payload)
+    const mergedMainSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const mergedSubSchema = {
+      ... subSchema,
+      properties: {
+        ... subSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedMainSchema,
+        mergedSubSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(`${BASE_URI}/flavorTextMessage.json`, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     jest.useFakeTimers()
