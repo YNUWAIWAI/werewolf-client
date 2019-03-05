@@ -12,8 +12,8 @@ const json: village.Payload$flavorTextMessage = {
     'chatSettings': {
       '@context': village.Context.ChatSettings,
       '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-      characterLimit: 140,
-      limit: 10
+      'characterLimit': 140,
+      'limit': 10
     },
     'id': 3,
     'lang': village.Language.ja,
@@ -43,8 +43,8 @@ const json: village.Payload$flavorTextMessage = {
         'chatSettings': {
           '@context': village.Context.ChatSettings,
           '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          characterLimit: 140,
-          limit: 10
+          'characterLimit': 140,
+          'limit': 10
         },
         'id': 3,
         'lang': village.Language.ja,
@@ -95,8 +95,8 @@ const json: village.Payload$flavorTextMessage = {
         'chatSettings': {
           '@context': village.Context.ChatSettings,
           '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          characterLimit: 140,
-          limit: 10
+          'characterLimit': 140,
+          'limit': 10
         },
         'id': 3,
         'lang': village.Language.ja,

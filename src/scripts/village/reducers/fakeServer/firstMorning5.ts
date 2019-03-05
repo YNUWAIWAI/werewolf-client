@@ -8,7 +8,7 @@ const json: village.Payload$systemMessage = {
   'serverTimestamp': '2019-02-02T17:31:19.865+09:00',
   'directionality': village.Directionality.serverToClient,
   'phaseTimeLimit': 10,
-  'clientTimestamp': '',
+  'clientTimestamp': '2019-02-02T17:31:19.865+09:00',
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.VotingResult
@@ -23,8 +23,8 @@ const json: village.Payload$systemMessage = {
     'chatSettings': {
       '@context': village.Context.ChatSettings,
       '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-      characterLimit: 140,
-      limit: 10
+      'characterLimit': 140,
+      'limit': 10
     },
     'id': 29,
     'name': 'Doubtful Village',

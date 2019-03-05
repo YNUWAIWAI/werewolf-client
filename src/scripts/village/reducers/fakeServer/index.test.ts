@@ -20,225 +20,603 @@ import fetch from 'node-fetch'
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
 test('validate anonymousAudienceChat', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
-    fetch(`${BASE_URI}/agent.json`)
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/playerMessage.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, anonymousAudienceChat)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, anonymousAudienceChat)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate day', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, day)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, day)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate firstMorning', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, firstMorning)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, firstMorning)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate firstMorning2', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, firstMorning2)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, firstMorning2)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate firstMorning3', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, firstMorning3)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, firstMorning3)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate firstMorning4', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, firstMorning4)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, firstMorning4)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate firstMorning5', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, firstMorning5)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, firstMorning5)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate flavorText', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, subSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/flavorTextMessage.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/playerMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, flavorText)
+  const mergedMainSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const mergedSubSchema = {
+    ... subSchema,
+    properties: {
+      ... subSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedMainSchema,
+      mergedSubSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/flavorTextMessage.json`, flavorText)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate myMessageOnChat', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/playerMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, myMessageOnChat)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, myMessageOnChat)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate night', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, night)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, night)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate onymousAudienceChat', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/playerMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, onymousAudienceChat)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, onymousAudienceChat)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate result', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, result)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, result)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
 test('validate theirMessageOnChat', async () => {
-  const ajv = new Ajv()
-
   expect.hasAssertions()
-  await Promise.all([
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/playerMessage.json`)
+      .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
       .then(res => res.json())
   ])
-    .then(schemas => {
-      const [schema, ... rest] = schemas
-      const validate = ajv
-        .addSchema(rest)
-        .validate(schema, theirMessageOnChat)
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, theirMessageOnChat)
 
-      expect(validate).toBe(true)
-    })
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
 })
