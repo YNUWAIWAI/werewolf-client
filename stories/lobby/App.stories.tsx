@@ -4,6 +4,7 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
+import {waitingPage} from './initialState'
 import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|App', module)
@@ -11,6 +12,19 @@ storiesOf('lobby|App', module)
   .add('default', () => {
     const store = createStore(
       reducer
+    )
+
+    const story =
+      <Provider store={store}>
+        <App />
+      </Provider>
+
+    return story
+  })
+  .add('waitingPage', () => {
+    const store = createStore(
+      reducer,
+      waitingPage
     )
 
     const story =
