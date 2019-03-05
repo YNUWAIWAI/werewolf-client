@@ -21,18 +21,18 @@ import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../../lobby/util'
 import middleware from './indexedDB'
 
-(window as any).indexedDB = FDB;
-(global as any).IDBCursor = FDBCursor;
-(global as any).IDBCursorWithValue = FDBCursorWithValue;
-(global as any).IDBDatabase = FDBDatabase;
-(global as any).IDBFactory = FDBFactory;
-(global as any).IDBIndex = FDBIndex;
-(global as any).IDBKeyRange = FDBKeyRange;
-(global as any).IDBObjectStore = FDBObjectStore;
-(global as any).IDBOpenDBRequest = FDBOpenDBRequest;
-(global as any).IDBRequest = FDBRequest;
-(global as any).IDBTransaction = FDBTransaction;
-(global as any).IDBVersionChangeEvent = FDBVersionChangeEvent
+(window as Record<string, unknown>).indexedDB = FDB;
+(global as Record<string, unknown>).IDBCursor = FDBCursor;
+(global as Record<string, unknown>).IDBCursorWithValue = FDBCursorWithValue;
+(global as Record<string, unknown>).IDBDatabase = FDBDatabase;
+(global as Record<string, unknown>).IDBFactory = FDBFactory;
+(global as Record<string, unknown>).IDBIndex = FDBIndex;
+(global as Record<string, unknown>).IDBKeyRange = FDBKeyRange;
+(global as Record<string, unknown>).IDBObjectStore = FDBObjectStore;
+(global as Record<string, unknown>).IDBOpenDBRequest = FDBOpenDBRequest;
+(global as Record<string, unknown>).IDBRequest = FDBRequest;
+(global as Record<string, unknown>).IDBTransaction = FDBTransaction;
+(global as Record<string, unknown>).IDBVersionChangeEvent = FDBVersionChangeEvent
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 const CLIENT2SERVER = `https://werewolf.world/lobby/schema/${VERSION}/client2server`
