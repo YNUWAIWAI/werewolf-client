@@ -364,6 +364,8 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'chatSettings': {
+        '@context': village.Context.ChatSettings,
+        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
         characterLimit: 140,
         limit: 10
       },
@@ -521,6 +523,8 @@ describe('POST_CHAT', () => {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'chatSettings': {
+        '@context': village.Context.ChatSettings,
+        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
         characterLimit: 140,
         limit: 10
       },
@@ -832,6 +836,8 @@ describe('SELECT_YES', () => {
       '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'chatSettings': {
+        '@context': village.Context.ChatSettings,
+        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
         characterLimit: 140,
         limit: 10
       },
