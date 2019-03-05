@@ -285,6 +285,12 @@ declare namespace village {
     isOver: boolean
   }
 
+  /*
+  'https://werewolf.world/context/0.2/chatSettings.jsonld'
+    dependency;
+      'https://werewolf.world/context/0.2/village.jsonld'
+  */
+
   interface ChatSettings {
     '@context': Context.ChatSettings
     '@id': string
