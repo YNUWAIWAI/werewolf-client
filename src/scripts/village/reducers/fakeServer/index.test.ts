@@ -135,7 +135,7 @@ test('validate firstMorning5', async () => {
       const [schema, ... rest] = schemas
       const validate = ajv
         .addSchema(rest)
-        .validate(schema, firstMorning4)
+        .validate(schema, firstMorning5)
 
       expect(validate).toBe(true)
     })

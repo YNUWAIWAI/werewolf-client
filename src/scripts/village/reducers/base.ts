@@ -15,7 +15,7 @@ export interface State {
   readonly token: village.Token
   readonly village: {
     readonly '@context': village.Context.Village
-    readonly '@id': string
+    readonly '@id': string // https://licos.online/state/0.2/village
     readonly chatSettings: {
       readonly characterLimit: number
       readonly limit: number

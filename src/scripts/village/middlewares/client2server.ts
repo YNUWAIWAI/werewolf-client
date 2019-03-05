@@ -24,6 +24,8 @@ const client2server: Middleware = store => next => action => {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
           'chatSettings': {
+            '@context': village.Context.ChatSettings,
+            '@id': `${state.base['@id']}/chatSettings`,
             characterLimit: state.base.village.chatSettings.characterLimit,
             limit: state.base.village.chatSettings.limit
           },
@@ -93,6 +95,8 @@ const client2server: Middleware = store => next => action => {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
           'chatSettings': {
+            '@context': village.Context.ChatSettings,
+            '@id': `${state.base['@id']}/chatSettings`,
             characterLimit: state.base.village.chatSettings.characterLimit,
             limit: state.base.village.chatSettings.limit
           },
@@ -170,6 +174,8 @@ const client2server: Middleware = store => next => action => {
           '@context': village.Context.Village,
           '@id': state.base.village['@id'],
           'chatSettings': {
+            '@context': village.Context.ChatSettings,
+            '@id': `${state.base['@id']}/chatSettings`,
             characterLimit: state.base.village.chatSettings.characterLimit,
             limit: state.base.village.chatSettings.limit
           },

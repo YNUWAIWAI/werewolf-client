@@ -108,6 +108,7 @@ declare namespace village {
     Board = 'https://werewolf.world/context/0.2/board.jsonld',
     BoardResult = 'https://werewolf.world/context/0.2/boardResult.jsonld',
     Chat = 'https://werewolf.world/context/0.2/chat.jsonld',
+    ChatSettings = 'https://werewolf.world/context/0.2/chatSettings.jsonld',
     Error = 'https://werewolf.world/context/0.2/error.jsonld',
     FlavorText = 'https://werewolf.world/context/0.2/flavorText.jsonld',
     Role = 'https://werewolf.world/context/0.2/role.jsonld',
@@ -153,7 +154,7 @@ declare namespace village {
     '@id': string
     isMine?: boolean
     name: LanguageMap
-    'full name'?: LanguageMap
+    fullName?: LanguageMap
     gender?: Gender
     image: string
     id: number
@@ -199,6 +200,8 @@ declare namespace village {
       '@context': Context.Village
       '@id': string
       chatSettings: {
+        '@context': ChatSettings['@context']
+        '@id': ChatSettings['@id']
         limit: number
         characterLimit: number
       }
@@ -280,6 +283,17 @@ declare namespace village {
     }
     characterLimit: number
     isOver: boolean
+  }
+
+  /*
+  'https://werewolf.world/context/0.2/chatSettings.jsonld'
+    dependency;
+      'https://werewolf.world/context/0.2/village.jsonld'
+  */
+
+  interface ChatSettings {
+    '@context': Context.ChatSettings
+    '@id': string
   }
 
   /*
