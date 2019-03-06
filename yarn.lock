@@ -1519,7 +1519,7 @@
     "@types/cheerio" "*"
     "@types/react" "*"
 
-"@types/indexeddb@./@types/indexeddb":
+"@types/indexeddb@./types/indexeddb":
   version "1.30.0"
 
 "@types/jest-diff@*":
@@ -1534,7 +1534,7 @@
   dependencies:
     "@types/jest-diff" "*"
 
-"@types/lobby@./@types/lobby":
+"@types/lobby@./types/lobby":
   version "1.26.0"
 
 "@types/node-fetch@^2.1.4":
@@ -1667,8 +1667,8 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@types/village@./@types/village":
-  version "1.34.0"
+"@types/village@./types/village":
+  version "1.35.0"
 
 "@types/webpack-env@*":
   version "1.13.8"
