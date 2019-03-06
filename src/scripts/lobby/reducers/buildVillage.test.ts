@@ -1,9 +1,7 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Ajv from 'ajv'
 import reducer, {initialState} from './buildVillage'
-import {VERSION} from '../constants/Version'
-import fetch from 'node-fetch'
+import {avatar2} from './fakeServer'
 
 describe('buildVillage/CHANGE_AVATAR', () => {
   test('fixed', () => {
@@ -950,35 +948,12 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   )
 })
 describe('scoket/MESSAGE', () => {
-  const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
-  const SERVER2CLIENT = `${BASE_URI}/server2client`
-  const payload: lobby.Payload = {
-    image: '/assets/images/avatar/default/user.png',
-    lang: lobby.Language.ja,
-    name: 'Kevin',
-    token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
-    type: lobby.PayloadType.avatar
-  }
-
-  test('validate the JSON of avatar', async () => {
-    expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${SERVER2CLIENT}/avatar.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, payload)
-
-    if (!validate) {
-      console.error(ajv.errors)
-    }
-    expect(validate).toBe(true)
-  })
-
-  test('reduce correctly', () => {
+  test('avatar', () => {
     expect(
       reducer(
         initialState,
         {
-          payload,
+          payload: avatar2,
           type: ActionTypes.socket.MESSAGE
         }
       )

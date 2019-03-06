@@ -1,9 +1,10 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Ajv from 'ajv'
+import {
+  avatar,
+  searchResult
+} from './fakeServer'
 import reducer, {initialState} from './advancedSearch'
-import {VERSION} from '../constants/Version'
-import fetch from 'node-fetch'
 
 test('ADVANCED_SEARCH', () => {
   expect(
@@ -1077,176 +1078,60 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   )
 })
 describe('socket/MESSAGE', () => {
-  describe('avatar', () => {
-    const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
-    const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const payload: lobby.Payload = {
-      image: '/assets/images/avatar/default/user.png',
-      lang: lobby.Language.ja,
-      name: 'Alice',
-      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
-      type: lobby.PayloadType.avatar
-    }
-
-    test('validate the JSON', async () => {
-      expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${SERVER2CLIENT}/avatar.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
-
-      if (!validate) {
-        console.error(ajv.errors)
-      }
-      expect(validate).toBe(true)
-    })
-
-    test('reduce correctly', () => {
-      expect(
-        reducer(
-          initialState,
-          {
-            payload,
-            type: ActionTypes.socket.MESSAGE
-          }
-        )
-      ).toEqual(
+  test('avatar', () => {
+    expect(
+      reducer(
+        initialState,
         {
-          checked: {
-            avatar: true,
-            comment: false,
-            hostName: false,
-            maximum: false,
-            minimum: false,
-            villageName: false
-          },
-          header: '',
-          image: '/assets/images/avatar/default/user.png',
-          isPlayer: true,
-          menuItems: [],
-          name: 'Alice',
-          searched: false,
-          validity: {
-            avatar: true,
-            comment: false,
-            hostName: false,
-            maximum: false,
-            minimum: false,
-            villageName: false
-          },
-          value: {
-            avatar: 'random',
-            comment: '',
-            hostName: '',
-            maximum: -1,
-            minimum: -1,
-            villageName: ''
-          },
-          villageItems: []
+          payload: avatar,
+          type: ActionTypes.socket.MESSAGE
         }
       )
-    })
+    ).toEqual(
+      {
+        checked: {
+          avatar: true,
+          comment: false,
+          hostName: false,
+          maximum: false,
+          minimum: false,
+          villageName: false
+        },
+        header: '',
+        image: '/assets/images/avatar/default/user.png',
+        isPlayer: true,
+        menuItems: [],
+        name: 'Alice',
+        searched: false,
+        validity: {
+          avatar: true,
+          comment: false,
+          hostName: false,
+          maximum: false,
+          minimum: false,
+          villageName: false
+        },
+        value: {
+          avatar: 'random',
+          comment: '',
+          hostName: '',
+          maximum: -1,
+          minimum: -1,
+          villageName: ''
+        },
+        villageItems: []
+      }
+    )
   })
   describe('searchResult', () => {
-    const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
-    const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const payload: lobby.Payload = {
-      error: null,
-      type: lobby.PayloadType.searchResult,
-      villages: [
+    expect(
+      reducer(
         {
-          avatar: lobby.Avatar.fixed,
-          comment: null,
-          hostPlayer: {
-            isAnonymous: false,
-            isHuman: true,
-            name: 'Alice'
-          },
-          id: 1,
-          idForSearching: 123,
-          name: 'Alice\'s village',
-          playerSetting: {
-            current: 8,
-            human: {
-              current: 5,
-              max: 8
-            },
-            number: 15,
-            robot: {
-              current: 3,
-              min: 7
-            }
-          },
-          roleSetting: {
-            hunter: 1,
-            madman: 1,
-            mason: 2,
-            medium: 1,
-            seer: 1,
-            villager: 6,
-            werehamster: 1,
-            werewolf: 2
-          }
-        }
-      ]
-    }
-
-    test('validate the JSON', async () => {
-      expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${SERVER2CLIENT}/searchResult.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
-
-      if (!validate) {
-        console.error(ajv.errors)
-      }
-      expect(validate).toBe(true)
-    })
-
-    test('reduce correctly', () => {
-      expect(
-        reducer(
-          {
-            ... initialState,
-            menuItems: [
-              {
-                id: 'Menu.search',
-                isLoading: true,
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
-              },
-              {
-                id: 'Menu.returnToLobbyForAudience',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
-              },
-              {
-                id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
-              }
-            ]
-          },
-          {
-            payload,
-            type: ActionTypes.socket.MESSAGE
-          }
-        )
-      ).toEqual(
-        {
-          checked: {
-            avatar: true,
-            comment: false,
-            hostName: false,
-            maximum: false,
-            minimum: false,
-            villageName: false
-          },
-          header: '',
-          image: '',
-          isPlayer: true,
+          ... initialState,
           menuItems: [
             {
               id: 'Menu.search',
-              isLoading: false,
+              isLoading: true,
               types: [ActionTypes.Target.ADVANCED_SEARCH]
             },
             {
@@ -1255,66 +1140,99 @@ describe('socket/MESSAGE', () => {
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.global.SHOW_MAIN]
-            }
-          ],
-          name: '',
-          searched: true,
-          validity: {
-            avatar: true,
-            comment: false,
-            hostName: false,
-            maximum: false,
-            minimum: false,
-            villageName: false
-          },
-          value: {
-            avatar: 'random',
-            comment: '',
-            hostName: '',
-            maximum: -1,
-            minimum: -1,
-            villageName: ''
-          },
-          villageItems: [
-            {
-              avatar: 'fixed',
-              comment: null,
-              hostPlayer: {
-                isAnonymous: false,
-                isHuman: true,
-                name: 'Alice'
-              },
-              id: 1,
-              idForSearching: 123,
-              name: 'Alice\'s village',
-              playerSetting: {
-                current: 8,
-                human: {
-                  current: 5,
-                  max: 8
-                },
-                number: 15,
-                robot: {
-                  current: 3,
-                  min: 7
-                }
-              },
-              roleSetting: {
-                hunter: 1,
-                madman: 1,
-                mason: 2,
-                medium: 1,
-                seer: 1,
-                villager: 6,
-                werehamster: 1,
-                werewolf: 2
-              }
+              types: [ActionTypes.Target.SHOW_MAIN]
             }
           ]
+        },
+        {
+          payload: searchResult,
+          type: ActionTypes.socket.MESSAGE
         }
       )
-    })
+    ).toEqual(
+      {
+        checked: {
+          avatar: true,
+          comment: false,
+          hostName: false,
+          maximum: false,
+          minimum: false,
+          villageName: false
+        },
+        header: '',
+        image: '',
+        isPlayer: true,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            isLoading: false,
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.global.SHOW_MAIN]
+          }
+        ],
+        name: '',
+        searched: true,
+        validity: {
+          avatar: true,
+          comment: false,
+          hostName: false,
+          maximum: false,
+          minimum: false,
+          villageName: false
+        },
+        value: {
+          avatar: 'random',
+          comment: '',
+          hostName: '',
+          maximum: -1,
+          minimum: -1,
+          villageName: ''
+        },
+        villageItems: [
+          {
+            avatar: 'fixed',
+            comment: null,
+            hostPlayer: {
+              isAnonymous: false,
+              isHuman: true,
+              name: 'Alice'
+            },
+            id: 1,
+            idForSearching: 123,
+            name: 'Alice\'s village',
+            playerSetting: {
+              current: 8,
+              human: {
+                current: 5,
+                max: 8
+              },
+              number: 15,
+              robot: {
+                current: 3,
+                min: 7
+              }
+            },
+            roleSetting: {
+              hunter: 1,
+              madman: 1,
+              mason: 2,
+              medium: 1,
+              seer: 1,
+              villager: 6,
+              werehamster: 1,
+              werewolf: 2
+            }
+          }
+        ]
+      }
+    )
   })
 })
 
