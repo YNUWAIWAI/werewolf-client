@@ -1,5 +1,4 @@
 /* global village */
-/* eslint sort-keys: 0 */
 import * as React from 'react'
 import Prediction, {Props} from '../../src/scripts/village/components/organisms/Prediction'
 import {action} from '@storybook/addon-actions'
@@ -11,81 +10,81 @@ storiesOf('village|Prediction', module)
   .add('13 players', () => {
     const playerStatus: Props['playerStatus'] = [
       {
-        'name': 'ヴァルター',
-        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'id': 1,
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'name': 'ヴァルター',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'モーリッツ',
-        'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
         'id': 2,
+        'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
+        'name': 'モーリッツ',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ジムゾン',
-        'image': 'https://werewolf.world/image/0.1/Simson.jpg',
         'id': 3,
+        'image': 'https://werewolf.world/image/0.1/Simson.jpg',
+        'name': 'ジムゾン',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'トーマス',
-        'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
         'id': 4,
+        'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
+        'name': 'トーマス',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ニコラス',
-        'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
         'id': 5,
+        'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
+        'name': 'ニコラス',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ディーター',
-        'image': 'https://werewolf.world/image/0.1/Dieter.jpg',
         'id': 6,
+        'image': 'https://werewolf.world/image/0.1/Dieter.jpg',
+        'name': 'ディーター',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ペーター',
-        'image': 'https://werewolf.world/image/0.1/Peter.jpg',
         'id': 7,
+        'image': 'https://werewolf.world/image/0.1/Peter.jpg',
+        'name': 'ペーター',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'リーザ',
-        'image': 'https://werewolf.world/image/0.1/Lisa.jpg',
         'id': 8,
+        'image': 'https://werewolf.world/image/0.1/Lisa.jpg',
+        'name': 'リーザ',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'アルビン',
-        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
         'id': 9,
+        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'name': 'アルビン',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'オットー',
-        'image': 'https://werewolf.world/image/0.1/Otto.jpg',
         'id': 11,
+        'image': 'https://werewolf.world/image/0.1/Otto.jpg',
+        'name': 'オットー',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ヨアヒム',
-        'image': 'https://werewolf.world/image/0.1/Joachim.jpg',
         'id': 12,
+        'image': 'https://werewolf.world/image/0.1/Joachim.jpg',
+        'name': 'ヨアヒム',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'パメラ',
-        'image': 'https://werewolf.world/image/0.1/Pamela.jpg',
         'id': 13,
+        'image': 'https://werewolf.world/image/0.1/Pamela.jpg',
+        'name': 'パメラ',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ヤコブ',
-        'image': 'https://werewolf.world/image/0.1/Jacob.jpg',
         'id': 14,
+        'image': 'https://werewolf.world/image/0.1/Jacob.jpg',
+        'name': 'ヤコブ',
         'status': village.AgentStatus.alive
       }
     ]
@@ -141,27 +140,7 @@ storiesOf('village|Prediction', module)
     ]
     const table: Props['table'] = {
       '1': {
-        villager: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.CIRCLE
-        },
-        medium: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
         hunter: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        mason: {
           date: 1,
           fixed: true,
           state: village.BoardState.FILL
@@ -171,81 +150,81 @@ storiesOf('village|Prediction', module)
           fixed: true,
           state: village.BoardState.FILL
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        medium: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.CIRCLE
+        },
+        villager: {
           date: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         werehamster: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        werewolf: {
           date: 1,
           fixed: true,
           state: village.BoardState.FILL
         }
       },
       '2': {
-        villager: {
+        hunter: {
           date: 1,
           fixed: false,
-          state: village.BoardState.TRIANGLE
+          state: village.BoardState.CROSS
         },
-        seer: {
+        madman: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         medium: {
           date: 1,
           fixed: false,
           state: village.BoardState.CIRCLE
         },
-        hunter: {
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
-          state: village.BoardState.CROSS
+          state: village.BoardState.TRIANGLE
         },
-        mason: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        madman: {
+        werehamster: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        werehamster: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '3': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -255,39 +234,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '4': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -297,39 +276,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '5': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -339,39 +318,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '6': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -381,39 +360,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '7': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -423,39 +402,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '8': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -465,39 +444,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '9': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -507,39 +486,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '11': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -549,39 +528,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '12': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -591,39 +570,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '13': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -633,39 +612,39 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '14': {
-        villager: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        seer: {
-          date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        medium: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
         hunter: {
-          date: 1,
-          fixed: false,
-          state: village.BoardState.QUESTION
-        },
-        mason: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -675,12 +654,32 @@ storiesOf('village|Prediction', module)
           fixed: false,
           state: village.BoardState.QUESTION
         },
-        werewolf: {
+        mason: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        medium: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        seer: {
+          date: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
+          date: 1,
+          fixed: false,
+          state: village.BoardState.QUESTION
+        },
+        werewolf: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -700,33 +699,33 @@ storiesOf('village|Prediction', module)
   .add('5 players', () => {
     const playerStatus: Props['playerStatus'] = [
       {
-        'name': 'ヴァルター',
-        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'id': 1,
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'name': 'ヴァルター',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'モーリッツ',
-        'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
         'id': 2,
+        'image': 'https://werewolf.world/image/0.1/Moritz.jpg',
+        'name': 'モーリッツ',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ジムゾン',
-        'image': 'https://werewolf.world/image/0.1/Simson.jpg',
         'id': 3,
+        'image': 'https://werewolf.world/image/0.1/Simson.jpg',
+        'name': 'ジムゾン',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'トーマス',
-        'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
         'id': 4,
+        'image': 'https://werewolf.world/image/0.1/Thomas.jpg',
+        'name': 'トーマス',
         'status': village.AgentStatus.alive
       },
       {
-        'name': 'ニコラス',
-        'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
         'id': 5,
+        'image': 'https://werewolf.world/image/0.1/Nicholas.jpg',
+        'name': 'ニコラス',
         'status': village.AgentStatus.alive
       }
     ]
@@ -758,7 +757,7 @@ storiesOf('village|Prediction', module)
     ]
     const table: Props['table'] = {
       '1': {
-        villager: {
+        madman: {
           date: 1,
           fixed: true,
           state: village.BoardState.FILL
@@ -768,7 +767,7 @@ storiesOf('village|Prediction', module)
           fixed: true,
           state: village.BoardState.CIRCLE
         },
-        madman: {
+        villager: {
           date: 1,
           fixed: true,
           state: village.BoardState.FILL
@@ -780,20 +779,20 @@ storiesOf('village|Prediction', module)
         }
       },
       '2': {
-        villager: {
+        madman: {
           date: 1,
           fixed: false,
-          state: village.BoardState.TRIANGLE
+          state: village.BoardState.QUESTION
         },
         seer: {
           date: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
-        madman: {
+        villager: {
           date: 1,
           fixed: false,
-          state: village.BoardState.QUESTION
+          state: village.BoardState.TRIANGLE
         },
         werewolf: {
           date: 1,
@@ -802,7 +801,7 @@ storiesOf('village|Prediction', module)
         }
       },
       '3': {
-        villager: {
+        madman: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -812,7 +811,7 @@ storiesOf('village|Prediction', module)
           fixed: true,
           state: village.BoardState.FILL
         },
-        madman: {
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -824,7 +823,7 @@ storiesOf('village|Prediction', module)
         }
       },
       '4': {
-        villager: {
+        madman: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -834,7 +833,7 @@ storiesOf('village|Prediction', module)
           fixed: true,
           state: village.BoardState.FILL
         },
-        madman: {
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -846,7 +845,7 @@ storiesOf('village|Prediction', module)
         }
       },
       '5': {
-        villager: {
+        madman: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
@@ -856,7 +855,7 @@ storiesOf('village|Prediction', module)
           fixed: true,
           state: village.BoardState.FILL
         },
-        madman: {
+        villager: {
           date: 1,
           fixed: false,
           state: village.BoardState.QUESTION
