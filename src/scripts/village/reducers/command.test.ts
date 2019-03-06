@@ -1,5 +1,3 @@
-/* global village */
-import * as ActionTypes from '../constants/ActionTypes'
 import {day, firstMorning, flavorText, night, result} from './fakeServer'
 import reducer, {Content, initialState} from './command'
 import {socket} from '../actions'

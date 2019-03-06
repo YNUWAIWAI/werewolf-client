@@ -1,5 +1,5 @@
 /* global lobby */
-const json: lobby.Payload$Played ={
+const json: lobby.Payload$Played = {
   lang: lobby.Language.ja,
   type: lobby.PayloadType.played
 }
