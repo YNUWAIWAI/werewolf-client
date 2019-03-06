@@ -22,18 +22,18 @@ import {getCastFromNumberOfPlayers} from '../util'
 import middleware from './indexedDB'
 import {waitingPage} from '../reducers/fakeServer'
 
-(window as any).indexedDB = FDB;
-(global as any).IDBCursor = FDBCursor;
-(global as any).IDBCursorWithValue = FDBCursorWithValue;
-(global as any).IDBDatabase = FDBDatabase;
-(global as any).IDBFactory = FDBFactory;
-(global as any).IDBIndex = FDBIndex;
-(global as any).IDBKeyRange = FDBKeyRange;
-(global as any).IDBObjectStore = FDBObjectStore;
-(global as any).IDBOpenDBRequest = FDBOpenDBRequest;
-(global as any).IDBRequest = FDBRequest;
-(global as any).IDBTransaction = FDBTransaction;
-(global as any).IDBVersionChangeEvent = FDBVersionChangeEvent
+(window as Record<string, unknown>).indexedDB = FDB;
+(global as Record<string, unknown>).IDBCursor = FDBCursor;
+(global as Record<string, unknown>).IDBCursorWithValue = FDBCursorWithValue;
+(global as Record<string, unknown>).IDBDatabase = FDBDatabase;
+(global as Record<string, unknown>).IDBFactory = FDBFactory;
+(global as Record<string, unknown>).IDBIndex = FDBIndex;
+(global as Record<string, unknown>).IDBKeyRange = FDBKeyRange;
+(global as Record<string, unknown>).IDBObjectStore = FDBObjectStore;
+(global as Record<string, unknown>).IDBOpenDBRequest = FDBOpenDBRequest;
+(global as Record<string, unknown>).IDBRequest = FDBRequest;
+(global as Record<string, unknown>).IDBTransaction = FDBTransaction;
+(global as Record<string, unknown>).IDBVersionChangeEvent = FDBVersionChangeEvent
 
 const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
 const CLIENT2SERVER = `${BASE_URI}/client2server`
@@ -322,16 +322,16 @@ describe('socket/MESSAGE', () => {
 
     store.dispatch = dispatch
     test('validate the JSON', async () => {
-      const ajv = new Ajv()
-
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/played.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/played.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, payload)
+      const validate = ajv.validate(schema, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', async () => {
       const spy = jest.spyOn(window.location, 'replace')
@@ -451,16 +451,16 @@ describe('socket/MESSAGE', () => {
       }
 
       test('validate the JSON', async () => {
-        const ajv = new Ajv()
-
         expect.hasAssertions()
-        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+        const ajv = new Ajv()
+        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
           .then(res => res.json())
-          .then(schema => {
-            const validate = ajv.validate(schema, payload)
+        const validate = ajv.validate(schema, payload)
 
-            expect(validate).toBe(true)
-          })
+        if (!validate) {
+          console.error(ajv.errors)
+        }
+        expect(validate).toBe(true)
       })
       test('dispatch correctly', async () => {
         actionHandler(action)
@@ -493,16 +493,16 @@ describe('socket/MESSAGE', () => {
       }
 
       test('validate the JSON', async () => {
-        const ajv = new Ajv()
-
         expect.hasAssertions()
-        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+        const ajv = new Ajv()
+        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
           .then(res => res.json())
-          .then(schema => {
-            const validate = ajv.validate(schema, payload)
+        const validate = ajv.validate(schema, payload)
 
-            expect(validate).toBe(true)
-          })
+        if (!validate) {
+          console.error(ajv.errors)
+        }
+        expect(validate).toBe(true)
       })
       test('dispatch correctly', async () => {
         actionHandler(action)
@@ -575,16 +575,16 @@ describe('socket/SEND', () => {
 
     store.dispatch = dispatch
     test('validate the JSON', async () => {
-      const ajv = new Ajv()
-
       expect.hasAssertions()
-      await fetch(`${CLIENT2SERVER}/buildVillage.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${CLIENT2SERVER}/buildVillage.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, payload)
+      const validate = ajv.validate(schema, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', async () => {
       actionHandler(action)

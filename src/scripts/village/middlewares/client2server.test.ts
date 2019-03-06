@@ -8,6 +8,7 @@ import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './client2server'
 
+const clientTimestamp = new Date('2006-10-07T12:06:56.568+09:00').toISOString()
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 
 describe('CHANGE_PREDICTION_BOARD', () => {
@@ -321,7 +322,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'ja': 'モーリッツ'
       }
     },
-    'clientTimestamp': expect.any(String),
+    clientTimestamp,
     'date': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
@@ -366,8 +367,8 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        characterLimit: 140,
-        limit: 10
+        'characterLimit': 140,
+        'limit': 10
       },
       'id': 3,
       'lang': village.Language.ja,
@@ -377,32 +378,55 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   }
 
   test('validate the JSON', async () => {
-    const ajv = new Ajv()
-
     expect.hasAssertions()
-    await Promise.all([
+    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
       fetch(`${BASE_URI}/boardMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
+      fetch(`${BASE_URI}/agent.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
       fetch(`${BASE_URI}/board.json`)
         .then(res => res.json()),
+      fetch(`${BASE_URI}/chat.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/chatSettings.json`)
+        .then(res => res.json()),
       fetch(`${BASE_URI}/role.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/time.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/village.json`)
         .then(res => res.json())
     ])
-      .then(schemas => {
-        const [schema, ... rest] = schemas
-        const validate = ajv
-          .addSchema(rest)
-          .validate(schema, payload)
+    const mergedSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(`${BASE_URI}/boardMessage.json`, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
+    const spy = jest.spyOn(Date.prototype, 'toISOString').mockReturnValue(clientTimestamp)
+
     actionHandler(action)
+    expect(spy).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
@@ -484,7 +508,7 @@ describe('POST_CHAT', () => {
       }
     },
     'characterLimit': 140,
-    'clientTimestamp': expect.any(String),
+    clientTimestamp,
     'date': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
@@ -525,8 +549,8 @@ describe('POST_CHAT', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        characterLimit: 140,
-        limit: 10
+        'characterLimit': 140,
+        'limit': 10
       },
       'id': 3,
       'lang': village.Language.ja,
@@ -536,30 +560,53 @@ describe('POST_CHAT', () => {
   }
 
   test('validate the JSON', async () => {
-    const ajv = new Ajv()
-
     expect.hasAssertions()
-    await Promise.all([
+    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
       fetch(`${BASE_URI}/playerMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
+      fetch(`${BASE_URI}/agent.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/chatSettings.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/role.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/time.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/village.json`)
         .then(res => res.json())
     ])
-      .then(schemas => {
-        const [schema, ... rest] = schemas
-        const validate = ajv
-          .addSchema(rest)
-          .validate(schema, payload)
+    const mergedSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
+    const spy = jest.spyOn(Date.prototype, 'toISOString').mockReturnValue(clientTimestamp)
+
     actionHandler(action)
+    expect(spy).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
@@ -803,7 +850,7 @@ describe('SELECT_YES', () => {
         'ja': 'モーリッツ'
       }
     },
-    'clientTimestamp': expect.any(String),
+    clientTimestamp,
     'date': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
@@ -838,8 +885,8 @@ describe('SELECT_YES', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        characterLimit: 140,
-        limit: 10
+        'characterLimit': 140,
+        'limit': 10
       },
       'id': 3,
       'lang': village.Language.ja,
@@ -849,30 +896,53 @@ describe('SELECT_YES', () => {
   }
 
   test('validate the JSON', async () => {
-    const ajv = new Ajv()
-
     expect.hasAssertions()
-    await Promise.all([
+    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
       fetch(`${BASE_URI}/voteMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
+      fetch(`${BASE_URI}/agent.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/chatSettings.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/role.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/time.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/village.json`)
         .then(res => res.json())
     ])
-      .then(schemas => {
-        const [schema, ... rest] = schemas
-        const validate = ajv
-          .addSchema(rest)
-          .validate(schema, payload)
+    const mergedSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(`${BASE_URI}/voteMessage.json`, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
+    const spy = jest.spyOn(Date.prototype, 'toISOString').mockReturnValue(clientTimestamp)
+
     actionHandler(action)
+    expect(spy).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
@@ -901,10 +971,8 @@ describe('socket/MESSAGE', () => {
     }
 
     test('validate the JSON of play', async () => {
-      const ajv = new Ajv()
-
       expect.hasAssertions()
-      await Promise.all([
+      const schemas = await Promise.all([
         fetch(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
@@ -914,14 +982,15 @@ describe('socket/MESSAGE', () => {
         fetch(`${BASE_URI}/village.json`)
           .then(res => res.json())
       ])
-        .then(schemas => {
-          const [schema, ... rest] = schemas
-          const validate = ajv
-            .addSchema(rest)
-            .validate(schema, payload)
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
       actionHandler(action)
@@ -952,10 +1021,8 @@ describe('socket/MESSAGE', () => {
     }
 
     test('validate the JSON of play', async () => {
-      const ajv = new Ajv()
-
       expect.hasAssertions()
-      await Promise.all([
+      const schemas = await Promise.all([
         fetch(`${BASE_URI}/receipt/receivedPlayerMessage.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
@@ -965,14 +1032,15 @@ describe('socket/MESSAGE', () => {
         fetch(`${BASE_URI}/village.json`)
           .then(res => res.json())
       ])
-        .then(schemas => {
-          const [schema, ... rest] = schemas
-          const validate = ajv
-            .addSchema(rest)
-            .validate(schema, payload)
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(`${BASE_URI}/receipt/receivedPlayerMessage.json`, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
       actionHandler(action)
@@ -1003,10 +1071,8 @@ describe('socket/MESSAGE', () => {
     }
 
     test('validate the JSON of play', async () => {
-      const ajv = new Ajv()
-
       expect.hasAssertions()
-      await Promise.all([
+      const schemas = await Promise.all([
         fetch(`${BASE_URI}/receipt/receivedSystemMessage.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
@@ -1016,14 +1082,15 @@ describe('socket/MESSAGE', () => {
         fetch(`${BASE_URI}/village.json`)
           .then(res => res.json())
       ])
-        .then(schemas => {
-          const [schema, ... rest] = schemas
-          const validate = ajv
-            .addSchema(rest)
-            .validate(schema, payload)
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(`${BASE_URI}/receipt/receivedSystemMessage.json`, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
       actionHandler(action)

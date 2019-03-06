@@ -27,7 +27,6 @@ const avatarToken = {
   onymousAudience: '3F2504E0-4F89-11D3-9A0C-0305E82C3311',
   robotPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
 }
-const ajv = new Ajv()
 
 describe('ADVANCED_SEARCH', () => {
   describe('validity: true', () => {
@@ -85,13 +84,15 @@ describe('ADVANCED_SEARCH', () => {
 
     test('validate the JSON of advancedSearch', async () => {
       expect.hasAssertions()
-      await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, advancedSearchPayload)
+      const validate = ajv.validate(schema, advancedSearchPayload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
       actionHandler(action)
@@ -153,13 +154,15 @@ describe('ADVANCED_SEARCH', () => {
 
     test('validate the JSON of advancedSearch', async () => {
       expect.hasAssertions()
-      await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, advancedSearchPayload)
+      const validate = ajv.validate(schema, advancedSearchPayload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
       actionHandler(action)
@@ -219,13 +222,15 @@ describe('BUILD_VILLAGE', () => {
 
   test('validate the JSON of buildVillage', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/buildVillage.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/buildVillage.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, buildVillagePayload)
+    const validate = ajv.validate(schema, buildVillagePayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -262,13 +267,15 @@ describe('CHANGE_LANGUAGE', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/changeLang.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/changeLang.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, changeLangPayload)
+    const validate = ajv.validate(schema, changeLangPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -305,13 +312,15 @@ describe('CHANGE_USER_EMAIL', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/changeUserEmail.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/changeUserEmail.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, changeUserEmailPayload)
+    const validate = ajv.validate(schema, changeUserEmailPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -348,13 +357,15 @@ describe('CHANGE_USER_NAME', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/changeUserName.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/changeUserName.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, changeUserNamePayload)
+    const validate = ajv.validate(schema, changeUserNamePayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -391,13 +402,15 @@ describe('CHANGE_USER_PASSWORD', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/changeUserPassword.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/changeUserPassword.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, changeUserPasswordPayload)
+    const validate = ajv.validate(schema, changeUserPasswordPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -440,13 +453,15 @@ describe('KICK_OUT_PLAYER', () => {
 
   test('validate the JSON of kickOutPlayer', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/kickOutPlayer.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/kickOutPlayer.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, kickOutPlayerPayload)
+    const validate = ajv.validate(schema, kickOutPlayerPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -534,13 +549,15 @@ describe('LEAVE_WAITING_PAGE', () => {
 
   test('validate the JSON of leaveWaitingPage', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/leaveWaitingPage.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/leaveWaitingPage.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, leaveWaitingPagePayload)
+    const validate = ajv.validate(schema, leaveWaitingPagePayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -627,13 +644,15 @@ describe('PLAY_GAME', () => {
 
   test('validate the JSON of play', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/play.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/play.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, playPayload)
+    const validate = ajv.validate(schema, playPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -676,13 +695,15 @@ describe('ID_SEARCH valid id', () => {
 
   test('validate the JSON of idSearch', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/idSearch.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/idSearch.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, idSearchPayload)
+    const validate = ajv.validate(schema, idSearchPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -745,13 +766,15 @@ describe('SELECT_VILLAGE', () => {
 
   test('validate the JSON of selectVillage', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/selectVillage.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/selectVillage.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, payload)
+    const validate = ajv.validate(schema, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -793,23 +816,27 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
 
   test('validate the JSON of enterLobby', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/enterLobby.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/enterLobby.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, enterLobbyPayload)
+    const validate = ajv.validate(schema, enterLobbyPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('validate the JSON of getAvatar', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/getAvatar.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/getAvatar.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, getAvatarPayload)
+    const validate = ajv.validate(schema, getAvatarPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -855,23 +882,27 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
 
   test('validate the JSON of enterLobby', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/enterLobby.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/enterLobby.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, enterLobbyPayload)
+    const validate = ajv.validate(schema, enterLobbyPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('validate the JSON of getAvatar', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/getAvatar.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/getAvatar.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, getAvatarPayload)
+    const validate = ajv.validate(schema, getAvatarPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -917,23 +948,27 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
 
   test('validate the JSON of enterLobby', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/enterLobby.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/enterLobby.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, enterLobbyPayload)
+    const validate = ajv.validate(schema, enterLobbyPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('validate the JSON of getAvatar', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/getAvatar.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/getAvatar.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, getAvatarPayload)
+    const validate = ajv.validate(schema, getAvatarPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -972,13 +1007,15 @@ describe('SHOW_SETTINGS', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/getSettings.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/getSettings.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, payload)
+    const validate = ajv.validate(schema, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -1028,23 +1065,27 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
 
   test('validate the JSON of ping', async () => {
     expect.hasAssertions()
-    await fetch(`${SERVER2CLIENT}/ping.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${SERVER2CLIENT}/ping.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, pingPayload)
+    const validate = ajv.validate(schema, pingPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('validate the JSON of pong', async () => {
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/pong.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(`${CLIENT2SERVER}/pong.json`)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, pongPayload)
+    const validate = ajv.validate(schema, pongPayload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)

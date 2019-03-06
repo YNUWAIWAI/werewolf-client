@@ -1,6 +1,6 @@
 {
   "name": "@types/indexeddb",
   "private": true,
-  "types": "index",
+  "types": "index.d.ts",
   "version": "1.30.0"
 }

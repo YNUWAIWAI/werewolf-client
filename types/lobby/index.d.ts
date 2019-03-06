@@ -1,4 +1,4 @@
-/* eslint no-unused-vars: 0 */
+/* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
 declare namespace lobby {
   const enum Avatar {
     fixed = 'fixed',
@@ -11,8 +11,8 @@ declare namespace lobby {
     C = 'C'
   }
   const enum Lobby {
-    human = 'human player',
     audience = 'onymous audience',
+    human = 'human player',
     robot = 'robot player'
   }
   const enum PingStatus {
@@ -126,9 +126,9 @@ declare namespace lobby {
     kickOutPlayer = 'kickOutPlayer',
     leaveWaitingPage = 'leaveWaitingPage',
     lobby = 'lobby',
+    ping = 'ping',
     play = 'play',
     played = 'played',
-    ping = 'ping',
     pong = 'pong',
     searchResult = 'searchResult',
     selectVillage = 'selectVillage',
