@@ -207,7 +207,6 @@ describe('socket/MESSAGE', () => {
   describe('played', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const ajv = new Ajv()
     const payload: lobby.Payload = {
       lang: lobby.Language.ja,
       type: lobby.PayloadType.played
@@ -215,13 +214,15 @@ describe('socket/MESSAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/played.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/played.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, payload)
+      const validate = ajv.validate(schema, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
 
     test('reduce correctly', () => {
@@ -278,18 +279,19 @@ describe('socket/MESSAGE', () => {
   describe('waitingPage', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const ajv = new Ajv()
 
     describe('isHost: true', () => {
       test('validate the JSON', async () => {
         expect.hasAssertions()
-        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+        const ajv = new Ajv()
+        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
           .then(res => res.json())
-          .then(schema => {
-            const validate = ajv.validate(schema, waitingPage2)
+        const validate = ajv.validate(schema, waitingPage2)
 
-            expect(validate).toBe(true)
-          })
+        if (!validate) {
+          console.error(ajv.errors)
+        }
+        expect(validate).toBe(true)
       })
 
       test('reduce correctly', () => {
@@ -444,13 +446,15 @@ describe('socket/MESSAGE', () => {
     describe('isHost: false', () => {
       test('validate the JSON', async () => {
         expect.hasAssertions()
-        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+        const ajv = new Ajv()
+        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
           .then(res => res.json())
-          .then(schema => {
-            const validate = ajv.validate(schema, waitingPage)
+        const validate = ajv.validate(schema, waitingPage2)
 
-            expect(validate).toBe(true)
-          })
+        if (!validate) {
+          console.error(ajv.errors)
+        }
+        expect(validate).toBe(true)
       })
 
       test('reduce correctly', () => {

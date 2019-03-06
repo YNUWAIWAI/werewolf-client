@@ -1080,7 +1080,6 @@ describe('socket/MESSAGE', () => {
   describe('avatar', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const ajv = new Ajv()
     const payload: lobby.Payload = {
       image: '/assets/images/avatar/default/user.png',
       lang: lobby.Language.ja,
@@ -1091,13 +1090,15 @@ describe('socket/MESSAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/avatar.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/avatar.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, payload)
+      const validate = ajv.validate(schema, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
 
     test('reduce correctly', () => {
@@ -1149,7 +1150,6 @@ describe('socket/MESSAGE', () => {
   describe('searchResult', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const ajv = new Ajv()
     const payload: lobby.Payload = {
       error: null,
       type: lobby.PayloadType.searchResult,
@@ -1193,13 +1193,15 @@ describe('socket/MESSAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/searchResult.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/searchResult.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, payload)
+      const validate = ajv.validate(schema, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
 
     test('reduce correctly', () => {

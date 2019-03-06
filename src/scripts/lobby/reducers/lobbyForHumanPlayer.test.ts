@@ -49,17 +49,18 @@ describe('socket/MESSAGE', () => {
   describe('human player', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const ajv = new Ajv()
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/lobby.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/lobby.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, enterHumanPlayerLobby)
+      const validate = ajv.validate(schema, enterHumanPlayerLobby)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('reduce correctly', () => {
       expect(
@@ -204,17 +205,18 @@ describe('socket/MESSAGE', () => {
   describe('robot player', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const ajv = new Ajv()
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/lobby.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/lobby.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, enterRobotPlayerLobby)
+      const validate = ajv.validate(schema, enterRobotPlayerLobby)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('reduce correctly', () => {
       expect(

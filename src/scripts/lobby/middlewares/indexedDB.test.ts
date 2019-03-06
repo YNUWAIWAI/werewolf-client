@@ -322,16 +322,16 @@ describe('socket/MESSAGE', () => {
 
     store.dispatch = dispatch
     test('validate the JSON', async () => {
-      const ajv = new Ajv()
-
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/played.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/played.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, payload)
+      const validate = ajv.validate(schema, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', async () => {
       const spy = jest.spyOn(window.location, 'replace')
@@ -451,16 +451,16 @@ describe('socket/MESSAGE', () => {
       }
 
       test('validate the JSON', async () => {
-        const ajv = new Ajv()
-
         expect.hasAssertions()
-        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+        const ajv = new Ajv()
+        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
           .then(res => res.json())
-          .then(schema => {
-            const validate = ajv.validate(schema, payload)
+        const validate = ajv.validate(schema, payload)
 
-            expect(validate).toBe(true)
-          })
+        if (!validate) {
+          console.error(ajv.errors)
+        }
+        expect(validate).toBe(true)
       })
       test('dispatch correctly', async () => {
         actionHandler(action)
@@ -493,16 +493,16 @@ describe('socket/MESSAGE', () => {
       }
 
       test('validate the JSON', async () => {
-        const ajv = new Ajv()
-
         expect.hasAssertions()
-        await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+        const ajv = new Ajv()
+        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
           .then(res => res.json())
-          .then(schema => {
-            const validate = ajv.validate(schema, payload)
+        const validate = ajv.validate(schema, payload)
 
-            expect(validate).toBe(true)
-          })
+        if (!validate) {
+          console.error(ajv.errors)
+        }
+        expect(validate).toBe(true)
       })
       test('dispatch correctly', async () => {
         actionHandler(action)
@@ -575,16 +575,16 @@ describe('socket/SEND', () => {
 
     store.dispatch = dispatch
     test('validate the JSON', async () => {
-      const ajv = new Ajv()
-
       expect.hasAssertions()
-      await fetch(`${CLIENT2SERVER}/buildVillage.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${CLIENT2SERVER}/buildVillage.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, payload)
+      const validate = ajv.validate(schema, payload)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('dispatch correctly', async () => {
       actionHandler(action)

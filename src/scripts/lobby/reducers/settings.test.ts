@@ -9,17 +9,18 @@ describe('scoket/MESSAGE', () => {
   describe('settings', () => {
     const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
     const SERVER2CLIENT = `${BASE_URI}/server2client`
-    const ajv = new Ajv()
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      await fetch(`${SERVER2CLIENT}/settings.json`)
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/settings.json`)
         .then(res => res.json())
-        .then(schema => {
-          const validate = ajv.validate(schema, settings)
+      const validate = ajv.validate(schema, settings)
 
-          expect(validate).toBe(true)
-        })
+      if (!validate) {
+        console.error(ajv.errors)
+      }
+      expect(validate).toBe(true)
     })
     test('reduce correctly', () => {
       expect(
