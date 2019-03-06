@@ -1,11 +1,126 @@
 /* global village */
-/* eslint sort-keys: 0 */
 const json: village.Payload$flavorTextMessage = {
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.FlavorText
   ],
   '@id': 'https://licos.online/state/0.2/village#3/flavorTextMessage',
+  'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+  'date': 0,
+  'directionality': village.Directionality.serverToClient,
+  'extensionalDisclosureRange': [],
+  'flavorText': [
+    {
+      '@context': [
+        village.BaseContext.Base,
+        village.BaseContext.Chat
+      ],
+      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
+      'agent': {
+        '@context': village.Context.Agent,
+        '@id': 'https://licos.online/state/0.2/village#3/agent',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+        'name': {
+          'en': 'Catalina',
+          'ja': 'カタリナ'
+        }
+      },
+      'characterLimit': 140,
+      'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'counter': 0,
+      'date': 1,
+      'directionality': village.Directionality.serverToClient,
+      'extensionalDisclosureRange': [],
+      'id': 1,
+      'intensionalDisclosureRange': village.Channel.public,
+      'interval': '5s',
+      'isMine': false,
+      'isOver': false,
+      'limit': 10,
+      'phase': village.Phase.morning,
+      'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+      'phaseTimeLimit': 600,
+      'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'text': {
+        '@language': village.Language.ja,
+        '@value': '最初のフレーバーテキストです'
+      },
+      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'village': {
+        '@context': village.Context.Village,
+        '@id': 'https://licos.online/state/0.2/village',
+        'chatSettings': {
+          '@context': village.Context.ChatSettings,
+          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          'characterLimit': 140,
+          'limit': 10
+        },
+        'id': 3,
+        'lang': village.Language.ja,
+        'name': '横国の森の奥にある時代に取り残された小さな村',
+        'totalNumberOfAgents': 15
+      }
+    },
+    {
+      '@context': [
+        village.BaseContext.Base,
+        village.BaseContext.Chat
+      ],
+      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
+      'agent': {
+        '@context': village.Context.Agent,
+        '@id': 'https://licos.online/state/0.2/village#3/agent',
+        'id': 1,
+        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+        'name': {
+          'en': 'Catalina',
+          'ja': 'カタリナ'
+        }
+      },
+      'characterLimit': 140,
+      'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'counter': 0,
+      'date': 1,
+      'directionality': village.Directionality.serverToClient,
+      'extensionalDisclosureRange': [],
+      'id': 2,
+      'intensionalDisclosureRange': village.Channel.public,
+      'interval': '5s',
+      'isMine': false,
+      'isOver': false,
+      'limit': 10,
+      'phase': village.Phase.morning,
+      'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+      'phaseTimeLimit': 600,
+      'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+      'text': {
+        '@language': village.Language.ja,
+        '@value': '２番目のフレーバーテキストです'
+      },
+      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'village': {
+        '@context': village.Context.Village,
+        '@id': 'https://licos.online/state/0.2/village',
+        'chatSettings': {
+          '@context': village.Context.ChatSettings,
+          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          'characterLimit': 140,
+          'limit': 10
+        },
+        'id': 3,
+        'lang': village.Language.ja,
+        'name': '横国の森の奥にある時代に取り残された小さな村',
+        'totalNumberOfAgents': 15
+      }
+    }
+  ],
+  'intensionalDisclosureRange': village.Channel.public,
+  'phase': village.Phase.flavorText,
+  'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+  'phaseTimeLimit': 600,
+  'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+  'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
     '@id': 'https://licos.online/state/0.2/village',
@@ -19,123 +134,7 @@ const json: village.Payload$flavorTextMessage = {
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
     'totalNumberOfAgents': 15
-  },
-  'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-  'phase': village.Phase.flavorText,
-  'date': 0,
-  'phaseTimeLimit': 600,
-  'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-  'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'directionality': village.Directionality.serverToClient,
-  'intensionalDisclosureRange': village.Channel.public,
-  'extensionalDisclosureRange': [],
-  'flavorText': [
-    {
-      '@context': [
-        village.BaseContext.Base,
-        village.BaseContext.Chat
-      ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
-      'village': {
-        '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
-        'chatSettings': {
-          '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
-        },
-        'id': 3,
-        'lang': village.Language.ja,
-        'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
-      },
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-      'phase': village.Phase.morning,
-      'date': 1,
-      'phaseTimeLimit': 600,
-      'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-      'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'directionality': village.Directionality.serverToClient,
-      'intensionalDisclosureRange': village.Channel.public,
-      'extensionalDisclosureRange': [],
-      'agent': {
-        '@context': village.Context.Agent,
-        '@id': 'https://licos.online/state/0.2/village#3/agent',
-        'id': 1,
-        'name': {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
-        },
-        'image': 'https://werewolf.world/image/0.2/Catalina.jpg'
-      },
-      'isMine': false,
-      'id': 1,
-      'counter': 0,
-      'limit': 10,
-      'interval': '5s',
-      'text': {
-        '@value': '最初のフレーバーテキストです',
-        '@language': village.Language.ja
-      },
-      'characterLimit': 140,
-      'isOver': false
-    },
-    {
-      '@context': [
-        village.BaseContext.Base,
-        village.BaseContext.Chat
-      ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
-      'village': {
-        '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
-        'chatSettings': {
-          '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
-        },
-        'id': 3,
-        'lang': village.Language.ja,
-        'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
-      },
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
-      'phase': village.Phase.morning,
-      'date': 1,
-      'phaseTimeLimit': 600,
-      'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
-      'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'directionality': village.Directionality.serverToClient,
-      'intensionalDisclosureRange': village.Channel.public,
-      'extensionalDisclosureRange': [],
-      'agent': {
-        '@context': village.Context.Agent,
-        '@id': 'https://licos.online/state/0.2/village#3/agent',
-        'id': 1,
-        'name': {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
-        },
-        'image': 'https://werewolf.world/image/0.2/Catalina.jpg'
-      },
-      'isMine': false,
-      'id': 2,
-      'counter': 0,
-      'limit': 10,
-      'interval': '5s',
-      'text': {
-        '@value': '２番目のフレーバーテキストです',
-        '@language': village.Language.ja
-      },
-      'characterLimit': 140,
-      'isOver': false
-    }
-  ]
+  }
 }
 
 export default json
