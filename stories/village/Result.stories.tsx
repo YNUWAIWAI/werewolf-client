@@ -1,5 +1,4 @@
 /* global village */
-/* eslint sort-keys: 0 */
 import * as React from 'react'
 import Result, {Props} from '../../src/scripts/village/components/organisms/Result'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
@@ -73,8 +72,8 @@ storiesOf('village|Result', module)
         'agentId': 5,
         'agentImage': 'https://werewolf.world/image/0.1/Nicholas.jpg',
         'agentName': 'ニコラス',
-        'avatarName': 'Watanabe',
         'avatarImage': 'https://werewolf.world/image/0.1/Erna.jpg',
+        'avatarName': 'Watanabe',
         'result': village.Result.lose,
         'roleImage': 'https://werewolf.world/image/0.1/werehamster.jpg',
         'roleName': 'ハムスター人間',
@@ -84,8 +83,8 @@ storiesOf('village|Result', module)
         'agentId': 6,
         'agentImage': 'https://werewolf.world/image/0.1/Dieter.jpg',
         'agentName': 'ディーター',
-        'avatarName': 'Yamamoto',
         'avatarImage': 'https://werewolf.world/image/0.1/Jacob.jpg',
+        'avatarName': 'Yamamoto',
         'result': village.Result.lose,
         'roleImage': 'https://werewolf.world/image/0.1/madman.jpg',
         'roleName': '狂人',
@@ -95,17 +94,17 @@ storiesOf('village|Result', module)
         'agentId': 7,
         'agentImage': 'https://werewolf.world/image/0.1/Peter.jpg',
         'agentName': 'ペーター',
-        'avatarName': 'Nakamura',
         'avatarImage': 'https://werewolf.world/image/0.1/Nicholas.jpg',
+        'avatarName': 'Nakamura',
         'result': village.Result.lose,
         'roleImage': 'https://werewolf.world/image/0.1/werewolf.jpg',
         'roleName': '人狼',
         'status': village.AgentStatus.unnaturalDeath
       },
       'agent7': {
+        'agentId': 8,
         'agentImage': 'https://werewolf.world/image/0.1/Lisa.jpg',
         'agentName': 'リーザ',
-        'agentId': 8,
         'avatarImage': 'https://werewolf.world/image/0.1/Peter.jpg',
         'avatarName': 'Kobayashi',
         'result': village.Result.win,
@@ -119,10 +118,10 @@ storiesOf('village|Result', module)
         'agentName': 'アルビン',
         'avatarImage': 'https://werewolf.world/image/0.1/Peter.jpg',
         'avatarName': 'Yoshida',
+        'result': village.Result.win,
         'roleImage': 'https://werewolf.world/image/0.1/villager.jpg',
         'roleName': '村人',
-        'status': village.AgentStatus.unnaturalDeath,
-        'result': village.Result.win
+        'status': village.AgentStatus.unnaturalDeath
       },
       'agent9': {
         'agentId': 11,
@@ -147,9 +146,9 @@ storiesOf('village|Result', module)
         'status': village.AgentStatus.deathByAttack
       },
       'agent11': {
-        'agentName': 'パメラ',
-        'agentImage': 'https://werewolf.world/image/0.1/Pamela.jpg',
         'agentId': 13,
+        'agentImage': 'https://werewolf.world/image/0.1/Pamela.jpg',
+        'agentName': 'パメラ',
         'avatarImage': 'https://werewolf.world/image/0.1/Joachim.jpg',
         'avatarName': '松本',
         'result': village.Result.win,
@@ -260,8 +259,8 @@ storiesOf('village|Result', module)
         'agentId': 5,
         'agentImage': 'https://werewolf.world/image/0.1/Nicholas.jpg',
         'agentName': 'ニコラス',
-        'avatarName': 'Watanabe',
         'avatarImage': 'https://werewolf.world/image/0.1/Erna.jpg',
+        'avatarName': 'Watanabe',
         'result': village.Result.lose,
         'roleImage': 'https://werewolf.world/image/0.1/werehamster.jpg',
         'roleName': 'ハムスター人間',

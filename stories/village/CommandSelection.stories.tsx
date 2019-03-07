@@ -1,4 +1,3 @@
-/* eslint sort-keys: 0 */
 import * as React from 'react'
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
@@ -65,8 +64,8 @@ storiesOf('village|Command/CommandSelection', module)
         name: 'リーザ'
       },
       {
-        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
         id: 9,
+        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
         name: 'アルビン'
       },
       {
