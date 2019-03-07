@@ -43,7 +43,7 @@ const getAllValue = async () => {
   const objectStore = transaction.objectStore('licosDB')
 
   return Promise.all([
-    getValue<lobby.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
+    getValue<lobby.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
     getValue<boolean>(objectStore, Key.isHost),
     getValue<lobby.Language>(objectStore, Key.lang),
     getValue<number>(objectStore, Key.nextGameVillageId),

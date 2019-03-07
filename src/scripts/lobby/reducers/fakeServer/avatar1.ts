@@ -1,5 +1,5 @@
 /* global lobby */
-const json: lobby.Payload$Avatar = {
+const json: lobby.Payload$avatar = {
   image: '/assets/images/avatar/default/user.png',
   lang: lobby.Language.ja,
   name: 'Alice',

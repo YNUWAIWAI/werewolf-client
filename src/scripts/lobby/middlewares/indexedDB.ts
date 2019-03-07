@@ -32,7 +32,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
           switch (whatToDoNextInLobby) {
             case WhatToDoNextInLobby.leaveWaitingPage: {
-              const payload: lobby.Payload$LeaveWaitingPage = {
+              const payload: lobby.Payload$leaveWaitingPage = {
                 lobby: villageInfo.lobbyType,
                 token: villageInfo.token,
                 type: lobby.PayloadType.leaveWaitingPage,
@@ -223,7 +223,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
               const transaction = db.transaction('licosDB', 'readwrite')
               const objectStore = transaction.objectStore('licosDB')
 
-              updateValue<lobby.Payload$BuildVillage>(
+              updateValue<lobby.Payload$buildVillage>(
                 objectStore,
                 Key.buildVillagePayload,
                 payload

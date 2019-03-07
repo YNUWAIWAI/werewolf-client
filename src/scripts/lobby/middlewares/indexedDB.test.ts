@@ -45,7 +45,7 @@ const getAllValue = async () => {
   const objectStore = transaction.objectStore('licosDB')
 
   return Promise.all([
-    getValue<lobby.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
+    getValue<lobby.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
     getValue<boolean>(objectStore, Key.isHost),
     getValue<lobby.Language>(objectStore, Key.lang),
     getValue<number>(objectStore, Key.nextGameVillageId),
@@ -142,7 +142,7 @@ describe('indexedDB/INIT', () => {
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }
-    const payload: lobby.Payload$LeaveWaitingPage = {
+    const payload: lobby.Payload$leaveWaitingPage = {
       lobby: village.lobbyType,
       token: village.token,
       type: lobby.PayloadType.leaveWaitingPage,

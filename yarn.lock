@@ -1797,7 +1797,7 @@
     "@types/jest-diff" "*"
 
 "@types/lobby@./types/lobby":
-  version "1.27.0"
+  version "1.28.0"
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -1934,7 +1934,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./types/village":
-  version "1.35.0"
+  version "1.36.0"
 
 "@types/webpack-env@*":
   version "1.13.8"
