@@ -6,6 +6,9 @@
       "target": "es2017",
       "jsx": "react"
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
       "src/**/*"
   ]
