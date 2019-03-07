@@ -1,5 +1,5 @@
 /* global lobby */
-const json: lobby.Payload$Settings = {
+const json: lobby.Payload$settings = {
   lang: lobby.Language.ja,
   type: lobby.PayloadType.settings,
   userEmail: 'kenhirai@ynu.jp',

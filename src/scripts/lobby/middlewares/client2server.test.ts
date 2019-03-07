@@ -1042,7 +1042,7 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const pingId = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
-  const pingPayload: lobby.Payload$Ping = {
+  const pingPayload: lobby.Payload$ping = {
     id: pingId,
     results: [
       {

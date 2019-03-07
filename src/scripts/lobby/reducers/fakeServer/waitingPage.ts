@@ -1,5 +1,5 @@
 /* global lobby */
-const json: lobby.Payload$WatingPage = {
+const json: lobby.Payload$watingPage = {
   error: null,
   players: [
     {

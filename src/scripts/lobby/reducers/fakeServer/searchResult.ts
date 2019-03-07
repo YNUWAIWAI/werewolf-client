@@ -1,5 +1,5 @@
 /* global lobby */
-const json: lobby.Payload$SearchResult = {
+const json: lobby.Payload$searchResult = {
   error: null,
   type: lobby.PayloadType.searchResult,
   villages: [

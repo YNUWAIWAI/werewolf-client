@@ -511,22 +511,22 @@ declare namespace village {
     }
   }
   interface Payload$buildVillage extends PayloadBase {
-    avatar: lobby.Payload$BuildVillage['avatar']
-    comment: lobby.Payload$BuildVillage['comment']
-    hostPlayer: lobby.Payload$BuildVillage['hostPlayer']
-    id: lobby.Payload$BuildVillage['id']
-    idForSearching: lobby.Payload$BuildVillage['idForSearching']
-    name: lobby.Payload$BuildVillage['name']
-    playerSetting: lobby.Payload$BuildVillage['playerSetting']
-    roleSetting: lobby.Payload$BuildVillage['roleSetting']
-    token: lobby.Payload$BuildVillage['token']
+    avatar: lobby.Payload$buildVillage['avatar']
+    comment: lobby.Payload$buildVillage['comment']
+    hostPlayer: lobby.Payload$buildVillage['hostPlayer']
+    id: lobby.Payload$buildVillage['id']
+    idForSearching: lobby.Payload$buildVillage['idForSearching']
+    name: lobby.Payload$buildVillage['name']
+    playerSetting: lobby.Payload$buildVillage['playerSetting']
+    roleSetting: lobby.Payload$buildVillage['roleSetting']
+    token: lobby.Payload$buildVillage['token']
     type: PayloadType.buildVillage
   }
   interface Payload$leaveWaitingPage extends PayloadBase {
-    lobby: lobby.Payload$LeaveWaitingPage['lobby']
-    token: lobby.Payload$LeaveWaitingPage['token']
+    lobby: lobby.Payload$leaveWaitingPage['lobby']
+    token: lobby.Payload$leaveWaitingPage['token']
     type: PayloadType.leaveWaitingPage
-    villageId: lobby.Payload$LeaveWaitingPage['villageId']
+    villageId: lobby.Payload$leaveWaitingPage['villageId']
   }
   interface Payload$ready extends PayloadBase {
     token: Token

@@ -88,28 +88,28 @@ declare namespace lobby {
     token: Token
   }
   type Payload =
-    | Payload$AdvancedSearch
-    | Payload$Avatar
-    | Payload$BuildVillage
-    | Payload$ChangeLang
-    | Payload$ChangeUserEmail
-    | Payload$ChangeUserName
-    | Payload$ChangeUserPassword
-    | Payload$EnterLobby
-    | Payload$GetAvatar
-    | Payload$GetSettings
-    | Payload$IdSearch
-    | Payload$KickOutPlayer
-    | Payload$LeaveWaitingPage
-    | Payload$Lobby
-    | Payload$Play
-    | Payload$Played
-    | Payload$Ping
-    | Payload$Pong
-    | Payload$SearchResult
-    | Payload$SelectVillage
-    | Payload$Settings
-    | Payload$WatingPage
+    | Payload$advancedSearch
+    | Payload$avatar
+    | Payload$buildVillage
+    | Payload$changeLang
+    | Payload$changeUserEmail
+    | Payload$changeUserName
+    | Payload$changeUserPassword
+    | Payload$enterLobby
+    | Payload$getAvatar
+    | Payload$getSettings
+    | Payload$idSearch
+    | Payload$kickOutPlayer
+    | Payload$leaveWaitingPage
+    | Payload$lobby
+    | Payload$play
+    | Payload$played
+    | Payload$ping
+    | Payload$pong
+    | Payload$searchResult
+    | Payload$selectVillage
+    | Payload$settings
+    | Payload$watingPage
 
   const enum PayloadType {
     advancedSearch = 'advancedSearch',
@@ -138,7 +138,7 @@ declare namespace lobby {
   interface PayloadBase {
     type: PayloadType
   }
-  interface Payload$AdvancedSearch extends PayloadBase {
+  interface Payload$advancedSearch extends PayloadBase {
     avatar: Avatar
     comment: string | null
     hostName: string | null
@@ -149,14 +149,14 @@ declare namespace lobby {
     type: PayloadType.advancedSearch
     villageName: string | null
   }
-  interface Payload$Avatar extends PayloadBase {
+  interface Payload$avatar extends PayloadBase {
     image: string
     lang: Language
     name: string
     token: Token
     type: PayloadType.avatar
   }
-  interface Payload$BuildVillage extends PayloadBase {
+  interface Payload$buildVillage extends PayloadBase {
     avatar: Avatar
     comment: string | null
     hostPlayer: HostPlayer
@@ -168,96 +168,96 @@ declare namespace lobby {
     token: Token
     type: PayloadType.buildVillage
   }
-  interface Payload$ChangeLang extends PayloadBase {
+  interface Payload$changeLang extends PayloadBase {
     lang: Language
     type: PayloadType.changeLang
   }
-  interface Payload$ChangeUserEmail extends PayloadBase {
+  interface Payload$changeUserEmail extends PayloadBase {
     type: PayloadType.changeUserEmail
     userEmail: string
   }
-  interface Payload$ChangeUserName extends PayloadBase {
+  interface Payload$changeUserName extends PayloadBase {
     type: PayloadType.changeUserName
     userName: string
   }
-  interface Payload$ChangeUserPassword extends PayloadBase {
+  interface Payload$changeUserPassword extends PayloadBase {
     type: PayloadType.changeUserPassword
     userPassword: string
   }
-  interface Payload$EnterLobby extends PayloadBase {
+  interface Payload$enterLobby extends PayloadBase {
     lobby: Lobby
     page: number
     token: Token
     type: PayloadType.enterLobby
   }
-  interface Payload$GetAvatar extends PayloadBase {
+  interface Payload$getAvatar extends PayloadBase {
     token: Token
     type: PayloadType.getAvatar
   }
-  interface Payload$GetSettings extends PayloadBase {
+  interface Payload$getSettings extends PayloadBase {
     type: PayloadType.getSettings
   }
-  interface Payload$IdSearch extends PayloadBase {
+  interface Payload$idSearch extends PayloadBase {
     idForSearching: number
     lobby: Lobby
     token: Token
     type: PayloadType.idSearch
   }
-  interface Payload$KickOutPlayer extends PayloadBase {
+  interface Payload$kickOutPlayer extends PayloadBase {
     players: {
       token: Token
     }[]
     token: Token
     type: PayloadType.kickOutPlayer
   }
-  interface Payload$LeaveWaitingPage extends PayloadBase {
+  interface Payload$leaveWaitingPage extends PayloadBase {
     lobby: Lobby
     token: Token
     type: PayloadType.leaveWaitingPage
     villageId: number
   }
-  interface Payload$Lobby extends PayloadBase {
+  interface Payload$lobby extends PayloadBase {
     error: string | null
     lobby: Lobby
     type: PayloadType.lobby
     villages: Village[]
   }
-  interface Payload$Play extends PayloadBase {
+  interface Payload$play extends PayloadBase {
     token: Token
     type: PayloadType.play
     villageId: number
   }
-  interface Payload$Played extends PayloadBase {
+  interface Payload$played extends PayloadBase {
     lang: Language
     type: PayloadType.played
   }
-  interface Payload$Ping extends PayloadBase {
+  interface Payload$ping extends PayloadBase {
     id: string
     results: PingResult[]
     type: PayloadType.ping
   }
-  interface Payload$Pong extends PayloadBase {
+  interface Payload$pong extends PayloadBase {
     id: string
     token: Token
     type: PayloadType.pong
   }
-  interface Payload$SearchResult extends PayloadBase {
+  interface Payload$searchResult extends PayloadBase {
     error: string | null
     type: PayloadType.searchResult
     villages: Village[]
   }
-  interface Payload$SelectVillage extends PayloadBase {
+  interface Payload$selectVillage extends PayloadBase {
     token: Token
     type: PayloadType.selectVillage
     villageId: number
   }
-  interface Payload$Settings extends PayloadBase {
+  interface Payload$settings extends PayloadBase {
     lang: Language
     type: PayloadType.settings
     userEmail: string
     userName: string
   }
-  interface Payload$WatingPage extends PayloadBase {
+  interface Payload$watingPage extends PayloadBase {
     error: string | null
     players: WaitingPlayer[]
     type: PayloadType.waitingPage

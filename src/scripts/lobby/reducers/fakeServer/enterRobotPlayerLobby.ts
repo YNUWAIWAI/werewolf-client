@@ -1,5 +1,5 @@
 /* global lobby */
-const json: lobby.Payload$Lobby = {
+const json: lobby.Payload$lobby = {
   error: null,
   lobby: lobby.Lobby.robot,
   type: lobby.PayloadType.lobby,
