@@ -15,6 +15,8 @@ script:
   - mkdir -p ../app/views
   - yarn build:development
   - yarn build:production
+  - yarn global add codecov
 after_success:
   - yarn eslint
   - yarn deploy-storybook --ci
+  - codecov
