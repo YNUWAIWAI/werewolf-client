@@ -5,10 +5,8 @@ import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 import {waitingPage} from './initialState'
-import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('lobby|App', module)
-  .addDecorator(withKnobs)
   .add('default', () => {
     const store = createStore(
       reducer

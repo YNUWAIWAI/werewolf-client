@@ -8,14 +8,12 @@ import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 const store = createStore(
   reducer
 )
 
 storiesOf('lobby|AdvancedSearch', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>
@@ -23,7 +21,7 @@ storiesOf('lobby|AdvancedSearch', module)
       </IntlProvider>
     </Provider>
   )
-  .add('検索前', () => {
+  .add('before search', () => {
     const checked = {
       avatar: true,
       comment: false,
@@ -83,7 +81,7 @@ storiesOf('lobby|AdvancedSearch', module)
 
     return story
   })
-  .add('検索後（0件）', () => {
+  .add('after search (0 items)', () => {
     const checked = {
       avatar: true,
       comment: false,
@@ -143,7 +141,7 @@ storiesOf('lobby|AdvancedSearch', module)
 
     return story
   })
-  .add('検索後（1件）', () => {
+  .add('after search (1 item)', () => {
     const checked = {
       avatar: true,
       comment: false,
@@ -239,7 +237,7 @@ storiesOf('lobby|AdvancedSearch', module)
 
     return story
   })
-  .add('検索後（2件）', () => {
+  .add('after search (2 items)', () => {
     const checked = {
       avatar: true,
       comment: false,

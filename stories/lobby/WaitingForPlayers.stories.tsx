@@ -8,7 +8,6 @@ import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 const store = createStore(
   reducer
@@ -182,7 +181,6 @@ const players: Props['players'] = [
 ]
 
 storiesOf('lobby|WaitingForPlayers', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>

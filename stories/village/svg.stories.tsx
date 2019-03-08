@@ -15,10 +15,8 @@ import TeamWerewolf from '../../src/scripts/village/components/atoms/svg/TeamWer
 import Triangle from '../../src/scripts/village/components/atoms/svg/Triangle'
 import Werewolf from '../../src/scripts/village/components/atoms/svg/Werewolf'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|svg', module)
-  .addDecorator(withKnobs)
   .addDecorator(story => {
     const style = {
       height: '300px',

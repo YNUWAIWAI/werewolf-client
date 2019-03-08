@@ -13,10 +13,8 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|App', module)
-  .addDecorator(withKnobs)
   .add('default', () => {
     const store = createStore(
       reducer
@@ -42,7 +40,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('朝（限定なし）', () => {
+  .add('morning (without limited chat)', () => {
     const store = createStore(
       reducer,
       morningWithoutLimitedChat
@@ -54,7 +52,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('朝（限定あり）', () => {
+  .add('morning (with limited chat)', () => {
     const store = createStore(
       reducer,
       morningWithLimitedChat
@@ -66,7 +64,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('昼', () => {
+  .add('day', () => {
     const store = createStore(
       reducer,
       day
@@ -78,7 +76,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('夜', () => {
+  .add('night', () => {
     const store = createStore(
       reducer,
       night
@@ -90,7 +88,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('墓場', () => {
+  .add('grave', () => {
     const store = createStore(
       reducer,
       grave
@@ -102,7 +100,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('結果', () => {
+  .add('result', () => {
     const store = createStore(
       reducer,
       result

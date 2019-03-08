@@ -3,10 +3,8 @@ import * as React from 'react'
 import Prediction, {Props} from '../../src/scripts/village/components/organisms/Prediction'
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 storiesOf('village|Prediction', module)
-  .addDecorator(withKnobs)
   .add('13 players', () => {
     const playerStatus: Props['playerStatus'] = [
       {

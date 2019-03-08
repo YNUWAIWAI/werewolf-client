@@ -5,14 +5,12 @@ import Timer from '../../src/scripts/village/containers/TimerContainer'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 const store = createStore(
   reducer
 )
 
 storiesOf('village|Timer', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>

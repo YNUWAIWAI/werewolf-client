@@ -6,14 +6,12 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 const store = createStore(
   reducer
 )
 
 storiesOf('village|Chat', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>
@@ -336,7 +334,7 @@ storiesOf('village|Chat', module)
 
     return story
   })
-  .add('区切り', () => {
+  .add('delimeter', () => {
     const allIds = ['delimeter1', 'chat1', 'chat0', 'delimeter0']
     const byId: Props['byId'] = {
       'chat0': {
@@ -379,7 +377,7 @@ storiesOf('village|Chat', module)
 
     return story
   })
-  .add('改行', () => {
+  .add('linebreak', () => {
     const allIds = ['delimeter1', 'chat3', 'chat2', 'chat1', 'chat0', 'delimeter0']
     const byId: Props['byId'] = {
       'chat0': {

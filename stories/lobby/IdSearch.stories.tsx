@@ -8,14 +8,12 @@ import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 const store = createStore(
   reducer
 )
 
 storiesOf('lobby|IdSearch', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>
@@ -23,7 +21,7 @@ storiesOf('lobby|IdSearch', module)
       </IntlProvider>
     </Provider>
   )
-  .add('検索前', () => {
+  .add('before search', () => {
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
@@ -60,7 +58,7 @@ storiesOf('lobby|IdSearch', module)
 
     return story
   })
-  .add('検索後(0件)', () => {
+  .add('after search (0 items)', () => {
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
@@ -97,7 +95,7 @@ storiesOf('lobby|IdSearch', module)
 
     return story
   })
-  .add('検索後(1件)', () => {
+  .add('after search (1 item)', () => {
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
