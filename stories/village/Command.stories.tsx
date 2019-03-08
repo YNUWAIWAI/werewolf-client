@@ -10,14 +10,12 @@ import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 const store = createStore(
   reducer
 )
 
 storiesOf('village|Command', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>
@@ -25,7 +23,7 @@ storiesOf('village|Command', module)
       </IntlProvider>
     </Provider>
   )
-  .add('昼（限定なし）', () => {
+  .add('morning (without limited chat)', () => {
     const props = {
       characterLimit: 140,
       handlePostChat: () => action('handlePostChat'),
@@ -47,7 +45,7 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('昼（限定あり）', () => {
+  .add('morning (with limited chat)', () => {
     const props = {
       characterLimit: 140,
       handlePostChat: () => action('handlePostChat'),
@@ -69,7 +67,7 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('感想戦(Host)', () => {
+  .add('post mortem(Host)', () => {
     const props = {
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
@@ -101,7 +99,7 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('感想戦(Guest) inactive', () => {
+  .add('post mortem (Guest) inactive', () => {
     const props = {
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
@@ -134,7 +132,7 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('感想戦(Guest) invisible', () => {
+  .add('post mortem (Guest) invisible', () => {
     const props = {
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
@@ -161,7 +159,7 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('墓地', () => {
+  .add('grave', () => {
     const props = {
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),

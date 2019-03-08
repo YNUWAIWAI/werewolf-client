@@ -1,6 +1,6 @@
 /* global village */
 import * as React from 'react'
-import {number, select, withKnobs} from '@storybook/addon-knobs'
+import {number, select} from '@storybook/addon-knobs'
 import InfoDay from '../../src/scripts/village/components/molecules/InfoDay'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
@@ -9,7 +9,6 @@ import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
 storiesOf('village|Info/InfoDay', module)
-  .addDecorator(withKnobs)
   .add('ja', () => {
     const store = createStore(
       reducer,
@@ -20,14 +19,14 @@ storiesOf('village|Info/InfoDay', module)
     const date = number('date', 0)
     const phase = select(
       'phase',
-      [
-        village.Phase.morning,
-        village.Phase.day,
-        village.Phase.night,
-        village.Phase.postMortem,
-        village.Phase.result,
-        village.Phase.flavorText
-      ],
+      {
+        day: village.Phase.day,
+        flavorText: village.Phase.flavorText,
+        morning: village.Phase.morning,
+        night: village.Phase.night,
+        postMortem: village.Phase.postMortem,
+        result: village.Phase.result
+      },
       village.Phase.day
     )
     const story =
@@ -54,14 +53,14 @@ storiesOf('village|Info/InfoDay', module)
     const date = number('date', 0)
     const phase = select(
       'phase',
-      [
-        village.Phase.morning,
-        village.Phase.day,
-        village.Phase.night,
-        village.Phase.postMortem,
-        village.Phase.result,
-        village.Phase.flavorText
-      ],
+      {
+        day: village.Phase.day,
+        flavorText: village.Phase.flavorText,
+        morning: village.Phase.morning,
+        night: village.Phase.night,
+        postMortem: village.Phase.postMortem,
+        result: village.Phase.result
+      },
       village.Phase.day
     )
     const story =

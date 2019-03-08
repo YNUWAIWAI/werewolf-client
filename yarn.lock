@@ -1280,15 +1280,6 @@
     prop-types "^15.6.2"
     qs "^6.5.2"
 
-"@storybook/addon-options@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-5.0.0.tgz#766ea212a04317fa2b90793812b51351eb26940c"
-  integrity sha512-2BT5qvzqCuk+j1M4fDrfcK1FzNP37VkP9cjM7p8e+xQ8hXIkEfHlf6Vbse+IJo5Ln0SLXPpozJwFNVbaQxkZ6Q==
-  dependencies:
-    "@storybook/addons" "5.0.0"
-    core-js "^2.6.2"
-    util-deprecate "^1.0.2"
-
 "@storybook/addons@5.0.0", "@storybook/addons@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.0.0.tgz#543b7d7166b9e2dd46467a3bc8f68074fa156cce"
@@ -1769,13 +1760,6 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/hoist-non-react-statics@*":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#a59c0c995cc885bef1b8ec2241b114f9b35b517b"
-  integrity sha512-O2OGyW9wlO2bbDmZRH17MecArQfsIa1g//ve2IJk6BnmwEglFz5kdhP1BlgeqjVNH5IHIhsc83DWFo8StCe8+Q==
-  dependencies:
-    "@types/react" "*"
-
 "@types/indexeddb@./types/indexeddb":
   version "1.30.0"
 
@@ -1838,12 +1822,11 @@
   resolved "https://registry.yarnpkg.com/@types/react-intl/-/react-intl-2.3.17.tgz#e1fc6e46e8af58bdef9531259d509380a8a99e8e"
   integrity sha512-FGd6J1GQ7zvl1GZ3BBev83B7nfak8dqoR2PZ+l5MoisKMpd4xOLhZJC1ugpmk3Rz5F85t6HbOg9mYqXW97BsNA==
 
-"@types/react-redux@^7.0.0":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.0.2.tgz#ac3726a94b64581224e9cfea1fb90aa2d72614ea"
-  integrity sha512-sIOvCQrR2fQBDwNmL+6YXKrqvjGvjdCTN4BxqCUsDYkhpXE7aAlrZaiTqH5r6u+r0o1MEx3J3oxZ0UQZp6lN1A==
+"@types/react-redux@7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.0.1.tgz#9dd2503be7a9861c5a092bf1c5050b7ade4dc62e"
+  integrity sha512-+DIH7TI2MT4Ke4lOrRMgNy//DzTDIzv5QwkJSD6AVrlsIgzf7yMM0JoWL5wJUXYwKQ2f1FgvwlvIVGD2QWQnew==
   dependencies:
-    "@types/hoist-non-react-statics" "*"
     "@types/react" "*"
     redux "^4.0.0"
 
@@ -1895,13 +1878,6 @@
   integrity sha512-vKYBgSB4hjjmxFN+wDTfrwXYHcduzMkvXNReiMxQNwlUmdHrcvonCTWNux0qQ/C5MRppi1u8Iz2ZkHK0odc8cQ==
   dependencies:
     "@types/react" "*"
-
-"@types/storybook__addon-options@^4.0.0":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@types/storybook__addon-options/-/storybook__addon-options-4.0.1.tgz#1f5b52ae64b8223ad1c1da394da0e51e89951592"
-  integrity sha512-o7MCVMfof+7O6iMeTJIRWnxUXnMEwAgpmom04OXe9d7CucllfRmIXgVqo9lPBgaxEvzOF/7brc8Hd0RkCysM+A==
-  dependencies:
-    "@types/storybook__react" "*"
 
 "@types/storybook__react@*", "@types/storybook__react@^4.0.0":
   version "4.0.1"

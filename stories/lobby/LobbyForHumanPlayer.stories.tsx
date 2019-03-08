@@ -8,14 +8,12 @@ import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
-import {withKnobs} from '@storybook/addon-knobs'
 
 const store = createStore(
   reducer
 )
 
 storiesOf('lobby|LobbyForHumanPlayer', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>
@@ -23,7 +21,7 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
       </IntlProvider>
     </Provider>
   )
-  .add('検索前', () => {
+  .add('default', () => {
     const menuItems = [
       {
         id: 'Menu.showBuildVillage',

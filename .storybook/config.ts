@@ -1,13 +1,15 @@
-import {addDecorator, configure} from '@storybook/react'
-import {withOptions} from '@storybook/addon-options'
+import {addDecorator, addParameters, configure} from '@storybook/react'
+import {withKnobs} from '@storybook/addon-knobs'
 import '../src/styles/village.css'
 import '../src/styles/lobby.css'
 
-addDecorator(
-  withOptions({
+addDecorator(withKnobs)
+
+addParameters({
+  options: {
     hierarchyRootSeparator: /\|/
-  })
-)
+  },
+});
 
 const req = require.context('../stories', true, /.stories.tsx?$/);
 function loadStories() {

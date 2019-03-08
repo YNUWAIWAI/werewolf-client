@@ -1,11 +1,11 @@
 /* global village */
 import * as React from 'react'
-import {number, withKnobs} from '@storybook/addon-knobs'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import {number} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
@@ -14,7 +14,6 @@ const store = createStore(
 )
 
 storiesOf('village|Command/CommandInput', module)
-  .addDecorator(withKnobs)
   .addDecorator(story =>
     <Provider store={store}>
       <IntlProvider>
