@@ -5,12 +5,6 @@ import '../src/styles/lobby.css'
 
 addDecorator(withKnobs)
 
-addParameters({
-  options: {
-    hierarchyRootSeparator: /\|/
-  },
-});
-
 const req = require.context('../stories', true, /.stories.tsx?$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
