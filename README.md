@@ -1,4 +1,4 @@
-# werewolf-client [![Build Status](https://travis-ci.org/YNUWAIWAI/werewolf-client.svg?branch=master)](https://travis-ci.org/YNUWAIWAI/werewolf-client)
+# werewolf-client [![Build Status](https://travis-ci.org/YNUWAIWAI/werewolf-client.svg?branch=master)](https://travis-ci.org/YNUWAIWAI/werewolf-client)[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://ynuwaiwai.github.io/werewolf-client)
 
 ## 必要なもの
 
