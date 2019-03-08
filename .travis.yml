@@ -9,7 +9,7 @@ addons:
 env:
   - TZ=Asia/Tokyo LC_ALL=ja_JP.UTF-8 LANG=ja_JP.UTF-8
 script:
-  - yarn test
+  - yarn test:ci
   - mkdir -p ../public/stylesheets
   - mkdir -p ../public/javascripts
   - mkdir -p ../app/views
@@ -18,3 +18,4 @@ script:
 after_success:
   - yarn eslint
   - yarn deploy-storybook --ci
+  - yarn coverage
