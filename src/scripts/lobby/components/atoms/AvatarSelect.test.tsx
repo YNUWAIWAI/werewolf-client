@@ -232,10 +232,8 @@ describe('<AvatarSelect />', () => {
         )
 
         wrapper.find(Select).props().onChange(null)
-        expect(handleChange).toHaveBeenCalledTimes(1)
-        expect(handleChange).toHaveBeenCalledWith(false)
-        expect(handleChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleChangeInner).toHaveBeenCalledWith('fixed')
+        expect(handleChange).toHaveBeenCalledTimes(0)
+        expect(handleChangeInner).toHaveBeenCalledTimes(0)
       })
       test('undefined', () => {
         const handleChangeInner = jest.fn()
@@ -250,10 +248,8 @@ describe('<AvatarSelect />', () => {
         )
 
         wrapper.find(Select).props().onChange(undefined)
-        expect(handleChange).toHaveBeenCalledTimes(1)
-        expect(handleChange).toHaveBeenCalledWith(false)
-        expect(handleChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleChangeInner).toHaveBeenCalledWith('fixed')
+        expect(handleChange).toHaveBeenCalledTimes(0)
+        expect(handleChangeInner).toHaveBeenCalledTimes(0)
       })
     })
   })
