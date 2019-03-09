@@ -2,7 +2,6 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   SocketClose,
   SocketError,
-  SocketMessage,
   SocketOpen
 } from '../actions'
 
@@ -13,7 +12,6 @@ export interface State {
 type Action =
   | SocketClose
   | SocketError
-  | SocketMessage
   | SocketOpen
 
 export const initialState: State = {
