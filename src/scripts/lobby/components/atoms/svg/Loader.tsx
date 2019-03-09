@@ -1,9 +1,13 @@
 import * as React from 'react'
 
-export default function Loader() {
+interface Props {
+  readonly className?: string
+}
+
+export default function Loader(props: Props) {
   return (
     <svg
-      className="loader"
+      className={`${props.className || ''} loader`}
       stroke="#000"
       viewBox="0 0 38 38"
       xmlns="http://www.w3.org/2000/svg"
