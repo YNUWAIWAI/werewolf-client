@@ -38,7 +38,7 @@ export interface Props {
 }
 
 export default function AdvancedSearchBox(props: Props) {
-  const handleChange = (propName: PropName) => (valid: boolean) => (value: boolean | number | string | lobby.Avatar) => {
+  const handleValueChange = (propName: PropName) => (valid: boolean) => (value: boolean | number | string | lobby.Avatar) => {
     switch (propName) {
       case 'avatar': {
         const avatar = [lobby.Avatar.fixed, lobby.Avatar.random, lobby.Avatar.unspecified]
@@ -73,7 +73,7 @@ export default function AdvancedSearchBox(props: Props) {
       props.handleValidityChange(propName)(false)
     }
   }
-  const handleClick = (propName: PropName) => (checked: boolean) => {
+  const handleCheckboxChange = (propName: PropName) => (checked: boolean) => {
     switch (propName) {
       case 'avatar':
         break
@@ -105,7 +105,7 @@ export default function AdvancedSearchBox(props: Props) {
     <div className="advanced-search">
       <AdvancedSearchProp
         checked={props.checked.villageName}
-        handleClick={handleClick('villageName')}
+        handleChange={handleCheckboxChange('villageName')}
         name="villageName"
         valid={props.validity.villageName}
       />
@@ -122,7 +122,7 @@ export default function AdvancedSearchBox(props: Props) {
             return (
               <TextInput
                 className="advanced-search--input"
-                handleChange={handleChange('villageName')}
+                handleChange={handleValueChange('villageName')}
                 initialValue=""
                 max={villageName.max}
                 min={villageName.min}
@@ -135,7 +135,7 @@ export default function AdvancedSearchBox(props: Props) {
       </FormattedMessage>
       <AdvancedSearchProp
         checked={props.checked.hostName}
-        handleClick={handleClick('hostName')}
+        handleChange={handleCheckboxChange('hostName')}
         name="hostName"
         valid={props.validity.hostName}
       />
@@ -152,7 +152,7 @@ export default function AdvancedSearchBox(props: Props) {
             return (
               <TextInput
                 className="advanced-search--input"
-                handleChange={handleChange('hostName')}
+                handleChange={handleValueChange('hostName')}
                 initialValue=""
                 max={hostName.max}
                 min={hostName.min}
@@ -165,7 +165,7 @@ export default function AdvancedSearchBox(props: Props) {
       </FormattedMessage>
       <AdvancedSearchProp
         checked={props.checked.minimum}
-        handleClick={handleClick('minimum')}
+        handleChange={handleCheckboxChange('minimum')}
         name="minimum"
         valid={props.validity.minimum}
       />
@@ -173,7 +173,7 @@ export default function AdvancedSearchBox(props: Props) {
         ascendingOrder
         className="advanced-search--input"
         from={4}
-        handleChange={handleChange('minimum')}
+        handleChange={handleValueChange('minimum')}
         name="minimum"
         to={15}
         type="player"
@@ -181,7 +181,7 @@ export default function AdvancedSearchBox(props: Props) {
 
       <AdvancedSearchProp
         checked={props.checked.maximum}
-        handleClick={handleClick('maximum')}
+        handleChange={handleCheckboxChange('maximum')}
         name="maximum"
         valid={props.validity.maximum}
       />
@@ -189,7 +189,7 @@ export default function AdvancedSearchBox(props: Props) {
         ascendingOrder={false}
         className="advanced-search--input"
         from={4}
-        handleChange={handleChange('maximum')}
+        handleChange={handleValueChange('maximum')}
         name="maximum"
         to={15}
         type="player"
@@ -197,20 +197,20 @@ export default function AdvancedSearchBox(props: Props) {
 
       <AdvancedSearchProp
         checked={props.checked.avatar}
-        handleClick={handleClick('avatar')}
+        handleChange={handleCheckboxChange('avatar')}
         name="avatar"
         valid={props.validity.avatar}
       />
       <AvatarSelect
         className="advanced-search--input"
         defaultValue={lobby.Avatar.random}
-        handleChange={handleChange('avatar')}
+        handleChange={handleValueChange('avatar')}
         type="advancedSearch"
       />
 
       <AdvancedSearchProp
         checked={props.checked.comment}
-        handleClick={handleClick('comment')}
+        handleChange={handleCheckboxChange('comment')}
         name="comment"
         valid={props.validity.comment}
       />
@@ -227,7 +227,7 @@ export default function AdvancedSearchBox(props: Props) {
             return (
               <TextareaInput
                 className="advanced-search--input"
-                handleChange={handleChange('comment')}
+                handleChange={handleValueChange('comment')}
                 initialValue=""
                 max={comment.max}
                 min={comment.min}
