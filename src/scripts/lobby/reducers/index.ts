@@ -9,6 +9,7 @@ import lobbyForAudience, {State as LobbyForAudienceState} from './lobbyForAudien
 import lobbyForHumanPlayer, {State as LobbyForHumanPlayerState} from './lobbyForHumanPlayer'
 import lobbyForRobotPlayer, {State as LobbyForRobotPlayerState} from './lobbyForRobotPlayer'
 import main, {State as MainState} from './main'
+import obfucator, {State as ObfucatorState} from './obfucator'
 import ping, {State as PingState} from './ping'
 import settings, {State as SettingsState} from './settings'
 import token, {State as TokenState} from './token'
@@ -27,6 +28,7 @@ export interface ReducerState {
   lobbyForHumanPlayer: LobbyForHumanPlayerState
   lobbyForRobotPlayer: LobbyForRobotPlayerState
   main: MainState
+  obfucator: ObfucatorState
   ping: PingState
   settings: SettingsState
   token: TokenState
@@ -45,6 +47,7 @@ const reducer = combineReducers({
   lobbyForHumanPlayer,
   lobbyForRobotPlayer,
   main,
+  obfucator,
   ping,
   settings,
   token,
