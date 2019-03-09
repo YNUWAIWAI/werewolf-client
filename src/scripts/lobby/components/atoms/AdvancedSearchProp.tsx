@@ -3,7 +3,7 @@ import {FormattedMessage} from 'react-intl'
 
 interface Props {
   readonly checked: boolean
-  readonly handleClick: (checked: boolean) => void
+  readonly handleChange: (checked: boolean) => void
   readonly name: string
   readonly valid: boolean
 }
@@ -15,7 +15,7 @@ export default function AdvancedSearchProp(props: Props) {
         checked={props.checked}
         disabled={!props.valid}
         id={props.name}
-        onChange={event => props.handleClick(event.target.checked)}
+        onChange={() => props.handleChange(!props.checked)}
         readOnly
         type="checkbox"
       />
