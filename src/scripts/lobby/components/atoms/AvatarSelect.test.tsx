@@ -106,83 +106,151 @@ describe('<AvatarSelect />', () => {
     })
   })
   describe('onChange', () => {
-    test('valid advancedSearch', () => {
-      const handleChangeInner = jest.fn()
-      const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = mountWithIntl(
-        <AvatarSelect
-          className="class"
-          defaultValue={lobby.Avatar.fixed}
-          handleChange={handleChange}
-          type="advancedSearch"
-        />
-      )
+    describe('advancedSearch', () => {
+      test('valid', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.fixed}
+            handleChange={handleChange}
+            type="advancedSearch"
+          />
+        )
 
-      wrapper.find(Select).props().onChange({
-        label: 'Unspecified',
-        value: 'unspecified'
+        wrapper.find(Select).props().onChange({
+          label: 'Unspecified',
+          value: 'unspecified'
+        })
+        expect(handleChange).toHaveBeenCalledTimes(1)
+        expect(handleChange).toHaveBeenCalledWith(true)
+        expect(handleChangeInner).toHaveBeenCalledTimes(1)
+        expect(handleChangeInner).toHaveBeenCalledWith('unspecified')
       })
-      expect(handleChange).toHaveBeenCalledTimes(1)
-      expect(handleChange).toHaveBeenCalledWith(true)
-      expect(handleChangeInner).toHaveBeenCalledTimes(1)
-      expect(handleChangeInner).toHaveBeenCalledWith('unspecified')
-    })
-    test('valid buildVillage', () => {
-      const handleChangeInner = jest.fn()
-      const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = mountWithIntl(
-        <AvatarSelect
-          className="class"
-          defaultValue={lobby.Avatar.fixed}
-          handleChange={handleChange}
-          type="buildVillage"
-        />
-      )
+      test('[]', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.fixed}
+            handleChange={handleChange}
+            type="advancedSearch"
+          />
+        )
 
-      wrapper.find(Select).props().onChange({
-        label: 'Random',
-        value: 'random'
+        wrapper.find(Select).props().onChange([])
+        expect(handleChange).toHaveBeenCalledTimes(1)
+        expect(handleChange).toHaveBeenCalledWith(true)
+        expect(handleChangeInner).toHaveBeenCalledTimes(1)
+        expect(handleChangeInner).toHaveBeenCalledWith('random')
       })
-      expect(handleChange).toHaveBeenCalledTimes(1)
-      expect(handleChange).toHaveBeenCalledWith(true)
-      expect(handleChangeInner).toHaveBeenCalledTimes(1)
-      expect(handleChangeInner).toHaveBeenCalledWith('random')
-    })
-    test('invalid advancedSearch', () => {
-      const handleChangeInner = jest.fn()
-      const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = mountWithIntl(
-        <AvatarSelect
-          className="class"
-          defaultValue={lobby.Avatar.fixed}
-          handleChange={handleChange}
-          type="advancedSearch"
-        />
-      )
+      test('null', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.fixed}
+            handleChange={handleChange}
+            type="advancedSearch"
+          />
+        )
 
-      wrapper.find(Select).props().onChange([])
-      expect(handleChange).toHaveBeenCalledTimes(1)
-      expect(handleChange).toHaveBeenCalledWith(true)
-      expect(handleChangeInner).toHaveBeenCalledTimes(1)
-      expect(handleChangeInner).toHaveBeenCalledWith('random')
-    })
-    test('invalid buildVillage', () => {
-      const handleChangeInner = jest.fn()
-      const handleChange = jest.fn(() => handleChangeInner)
-      const wrapper = mountWithIntl(
-        <AvatarSelect
-          className="class"
-          defaultValue={lobby.Avatar.random}
-          handleChange={handleChange}
-          type="buildVillage"
-        />
-      )
+        wrapper.find(Select).props().onChange(null)
+        expect(handleChange).toHaveBeenCalledTimes(0)
+        expect(handleChangeInner).toHaveBeenCalledTimes(0)
+      })
+      test('undefined', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.fixed}
+            handleChange={handleChange}
+            type="advancedSearch"
+          />
+        )
 
-      wrapper.find(Select).props().onChange([])
-      expect(handleChange).toHaveBeenCalledTimes(1)
-      expect(handleChange).toHaveBeenCalledWith(false)
-      expect(handleChangeInner).toHaveBeenCalledTimes(1)
-      expect(handleChangeInner).toHaveBeenCalledWith('fixed')
+        wrapper.find(Select).props().onChange(undefined)
+        expect(handleChange).toHaveBeenCalledTimes(0)
+        expect(handleChangeInner).toHaveBeenCalledTimes(0)
+      })
+    })
+    describe('buildVillage', () => {
+      test('valid', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.fixed}
+            handleChange={handleChange}
+            type="buildVillage"
+          />
+        )
+
+        wrapper.find(Select).props().onChange({
+          label: 'Random',
+          value: 'random'
+        })
+        expect(handleChange).toHaveBeenCalledTimes(1)
+        expect(handleChange).toHaveBeenCalledWith(true)
+        expect(handleChangeInner).toHaveBeenCalledTimes(1)
+        expect(handleChangeInner).toHaveBeenCalledWith('random')
+      })
+      test('[]', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.random}
+            handleChange={handleChange}
+            type="buildVillage"
+          />
+        )
+
+        wrapper.find(Select).props().onChange([])
+        expect(handleChange).toHaveBeenCalledTimes(1)
+        expect(handleChange).toHaveBeenCalledWith(false)
+        expect(handleChangeInner).toHaveBeenCalledTimes(1)
+        expect(handleChangeInner).toHaveBeenCalledWith('fixed')
+      })
+      test('null', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.random}
+            handleChange={handleChange}
+            type="buildVillage"
+          />
+        )
+
+        wrapper.find(Select).props().onChange(null)
+        expect(handleChange).toHaveBeenCalledTimes(0)
+        expect(handleChangeInner).toHaveBeenCalledTimes(0)
+      })
+      test('undefined', () => {
+        const handleChangeInner = jest.fn()
+        const handleChange = jest.fn(() => handleChangeInner)
+        const wrapper = mountWithIntl(
+          <AvatarSelect
+            className="class"
+            defaultValue={lobby.Avatar.random}
+            handleChange={handleChange}
+            type="buildVillage"
+          />
+        )
+
+        wrapper.find(Select).props().onChange(undefined)
+        expect(handleChange).toHaveBeenCalledTimes(0)
+        expect(handleChangeInner).toHaveBeenCalledTimes(0)
+      })
     })
   })
 })
