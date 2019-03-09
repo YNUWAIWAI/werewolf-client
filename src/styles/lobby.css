@@ -8,6 +8,7 @@
   --danger-color: rgb(219, 69, 69);
   --disabled-color: rgba(0, 0, 0, 0.3);
   --hover-color: rgba(0, 0, 0, 0.03);
+  --obfucator-color: rgba(0, 0, 0, 0.15);
   --regular-color: rgba(0, 0, 0, 0);
   --role-image-size: 50px;
   --safe-color: rgb(57, 170, 86);
@@ -303,6 +304,24 @@ body {
         background: var(--active-color);
       }
     }
+  }
+}
+
+.obfucator {
+  align-items: center;
+  background: var(--obfucator-color);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+
+  &--loader {
+    height: 10%;
+    width: 10%;
   }
 }
 
