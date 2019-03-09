@@ -1,5 +1,6 @@
 import * as React from 'react'
 import IntlProvider from './IntlProviderContainer'
+import Obfucator from './ObfucatorContainer'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -18,6 +19,7 @@ export default connect(
     return (
       <IntlProvider>
         <props.content />
+        <Obfucator />
       </IntlProvider>
     )
   }
