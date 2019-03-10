@@ -71,6 +71,8 @@ export default {
   'Menu.showAdvancedSearch': 'Advanced search',
   'Menu.showBuildVillage': 'Build your village',
   'Menu.showIdSearch': 'ID search',
+  'Modal.button.no': 'No',
+  'Modal.button.yes': 'Yes',
   'NumberSelect(player)': `{num, plural,
     =1 {# player}
     other {# players}
