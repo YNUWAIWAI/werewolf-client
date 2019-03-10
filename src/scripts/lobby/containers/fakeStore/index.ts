@@ -12,6 +12,7 @@ import {initialState as lobbyForAudience} from '../../reducers/lobbyForAudience'
 import {initialState as lobbyForHumanPlayer} from '../../reducers/lobbyForHumanPlayer'
 import {initialState as lobbyForRobotPlayer} from '../../reducers/lobbyForRobotPlayer'
 import {initialState as main} from '../../reducers/main'
+import {initialState as modal} from '../../reducers/modal'
 import {initialState as obfucator} from '../../reducers/obfucator'
 import {initialState as ping} from '../../reducers/ping'
 import {initialState as settings} from '../../reducers/settings'
@@ -31,6 +32,7 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     lobbyForHumanPlayer,
     lobbyForRobotPlayer,
     main,
+    modal,
     obfucator,
     ping,
     settings,
