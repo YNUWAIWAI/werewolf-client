@@ -154,9 +154,15 @@ export const kickOutPlayer = (token: lobby.Token): {token: lobby.Token, type: Ac
   token,
   type: ActionTypes.global.KICK_OUT_PLAYER
 })
+export const selectNo = (): {type: ActionTypes.global.SELECT_NO} => ({
+  type: ActionTypes.global.SELECT_NO
+})
 export const selectVillage = (id: number): {id: number, type: ActionTypes.global.SELECT_VILLAGE} => ({
   id,
   type: ActionTypes.global.SELECT_VILLAGE
+})
+export const selectYes = (): {type: ActionTypes.global.SELECT_YES} => ({
+  type: ActionTypes.global.SELECT_YES
 })
 export const submitLogout = (): {type: ActionTypes.global.LOGOUT} => ({
   type: ActionTypes.global.LOGOUT
@@ -190,7 +196,9 @@ export type ChangeUserPassword = ReturnType<typeof changeUserPassword>
 export type IdSearch$ChangeSearchId = ReturnType<typeof changeSearchId>
 export type IdSearch$ChangeValidity = ReturnType<ReturnType<ReturnType<typeof changeValidity>>>
 export type KickOutPlayer = ReturnType<typeof kickOutPlayer>
+export type SelectNo = ReturnType<typeof selectNo>
 export type SelectVillage = ReturnType<typeof selectVillage>
+export type SelectYes = ReturnType<typeof selectYes>
 export type SocketClose = ReturnType<typeof socket.close>
 export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
