@@ -18,8 +18,10 @@ export default connect(
   function App(props: StateProps) {
     return (
       <IntlProvider>
-        <props.content />
-        <Obfucator />
+        <>
+          <props.content />
+          <Obfucator />
+        </>
       </IntlProvider>
     )
   }
