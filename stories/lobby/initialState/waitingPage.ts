@@ -1,11 +1,15 @@
 /* global lobby */
-import {ReducerState} from '../../../src/scripts/lobby/reducers'
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
+import {ReducerState} from '../../../src/scripts/lobby/reducers'
 import WaitingForPlayers from '../../../src/scripts/lobby/containers/WaitingForPlayersContainer'
 
 const state: Partial<ReducerState> = {
   app: {
     content: WaitingForPlayers
+  },
+  obfucator: {
+    loading: false,
+    visible: false
   },
   waitingForPlayers: {
     isPlayer: true,
