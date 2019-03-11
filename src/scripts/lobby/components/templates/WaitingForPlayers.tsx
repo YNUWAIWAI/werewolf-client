@@ -24,7 +24,7 @@ export interface StateProps {
   readonly village?: lobby.Village
 }
 export interface DispatchProps {
-  readonly confirmKickOutPlayer: (token: lobby.Token) => () => void
+  readonly confirmKickOutPlayer: (values: {name: string, token: lobby.Token}) => () => void
   readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps {}
