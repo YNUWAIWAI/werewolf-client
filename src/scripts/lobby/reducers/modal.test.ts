@@ -13,6 +13,7 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
     )
   ).toEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
+    type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
     visible: true
   })
 })
@@ -21,6 +22,7 @@ test('SELECT_NO', () => {
     reducer(
       {
         descriptionId: 'Modal.description(kickOutPlayer)',
+        type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
         visible: true
       },
       {
@@ -29,6 +31,7 @@ test('SELECT_NO', () => {
     )
   ).toEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
+    type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
     visible: false
   })
 })
@@ -37,6 +40,7 @@ test('SELECT_YES', () => {
     reducer(
       {
         descriptionId: 'Modal.description(kickOutPlayer)',
+        type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
         visible: true
       },
       {
@@ -45,6 +49,7 @@ test('SELECT_YES', () => {
     )
   ).toEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
+    type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
     visible: false
   })
 })
