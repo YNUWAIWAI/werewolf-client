@@ -1,25 +1,35 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SelectNo, SelectYes, Transition} from '../actions'
+import {ConfirmKickOutPlayer, SelectNo, SelectYes} from '../actions'
 
 export interface State {
   readonly descriptionId: string
   readonly visible: boolean
 }
 type Action =
+  | ConfirmKickOutPlayer
   | SelectNo
   | SelectYes
-  | Transition
 
 export const initialState: State = {
-  descriptionId: 'Modal.description',
+  descriptionId: '',
   visible: false
 }
 const modal = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Target.CONFIRM_KICK_OUT_PLAYER:
+    case ActionTypes.global.CONFIRM_KICK_OUT_PLAYER:
       return {
-        descriptionId: 'Modal.description',
+        descriptionId: 'Modal.description(kickOutPlayer)',
         visible: true
+      }
+    case ActionTypes.global.SELECT_NO:
+      return {
+        ... state,
+        visible: false
+      }
+    case ActionTypes.global.SELECT_YES:
+      return {
+        ... state,
+        visible: false
       }
     default:
       return state
