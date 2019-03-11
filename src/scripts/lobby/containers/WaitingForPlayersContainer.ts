@@ -63,8 +63,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  confirmKickOutPlayer: token => () => {
-    dispatch(confirmKickOutPlayer(token))
+  confirmKickOutPlayer: values => () => {
+    dispatch(confirmKickOutPlayer(values))
   },
   transition: target => {
     dispatch(transition(target))
