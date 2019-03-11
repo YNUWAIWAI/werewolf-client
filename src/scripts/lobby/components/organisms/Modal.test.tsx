@@ -16,7 +16,7 @@ describe('render', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
-          descriptionId="Modal.Description.dayVote"
+          descriptionId="@dummy"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           visible
@@ -24,8 +24,6 @@ describe('render', () => {
       </Provider>
     )
 
-    expect(wrapper.find('AgentIcon').exists()).toBe(true)
-    expect(wrapper.find('Description').exists()).toBe(true)
     expect(wrapper.find('.modal--button')).toHaveLength(2)
     expect(wrapper.find('.modal--button.yes').exists()).toBe(true)
     expect(wrapper.find('.modal--button.yes').text()).toBe('はい')
@@ -40,7 +38,7 @@ describe('render', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
-          descriptionId="Modal.Description.dayVote"
+          descriptionId="@dummy"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           visible={false}
@@ -48,65 +46,43 @@ describe('render', () => {
       </Provider>
     )
 
-    expect(wrapper.find('.modal').hasClass('hidden')).toBe(true)
+    expect(wrapper.isEmptyRender()).toBe(true)
   })
 })
 test('handleClickNo', () => {
-  const handleClickNoMockFn = jest.fn()
-  const handleClickYesMockFn = jest.fn()
+  const handleClickNo = jest.fn()
+  const handleClickYes = jest.fn()
   const wrapper = mountWithIntl(
     <Provider store={store}>
       <Modal
-        descriptionId="Modal.Description.dayVote"
-        handleClickNo={handleClickNoMockFn}
-        handleClickYes={handleClickYesMockFn}
+        descriptionId="@dummy"
+        handleClickNo={handleClickNo}
+        handleClickYes={handleClickYes}
         visible
       />
     </Provider>
   )
 
-  expect(wrapper.find('.modal--button')).toHaveLength(2)
-  expect(wrapper.find('.modal--button.yes').exists()).toBe(true)
-  expect(wrapper.find('.modal--button.yes').text()).toBe('はい')
-  expect(wrapper.find('.modal--button.no').exists()).toBe(true)
-  expect(wrapper.find('.modal--button.no').text()).toBe('いいえ')
   wrapper.find('.modal--button.no').simulate('click')
-  expect(handleClickNoMockFn).toHaveBeenCalledTimes(1)
-  expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
-  expect(handleClickNoMockFn).toHaveBeenCalledWith()
-  expect(wrapper.find('.modal--button')).toHaveLength(2)
-  expect(wrapper.find('.modal--button.yes')).toHaveLength(1)
-  expect(wrapper.find('.modal--button.yes').text()).toBe('はい')
-  expect(wrapper.find('.modal--button.no')).toHaveLength(1)
-  expect(wrapper.find('.modal--button.no').text()).toBe('いいえ')
+  expect(handleClickNo).toHaveBeenCalledTimes(1)
+  expect(handleClickYes).toHaveBeenCalledTimes(0)
 })
 test('handleClickYes', () => {
-  const handleClickNoMockFn = jest.fn()
-  const handleClickYesMockFn = jest.fn()
+  const handleClickNo = jest.fn()
+  const handleClickYes = jest.fn()
   const wrapper = mountWithIntl(
     <Provider store={store}>
       <Modal
-        descriptionId="Modal.Description.dayVote"
-        handleClickNo={handleClickNoMockFn}
-        handleClickYes={handleClickYesMockFn}
+        descriptionId="@dummy"
+        handleClickNo={handleClickNo}
+        handleClickYes={handleClickYes}
         visible
       />
     </Provider>
   )
 
-  expect(wrapper.find('.modal--button')).toHaveLength(2)
-  expect(wrapper.find('.modal--button.yes').exists()).toBe(true)
-  expect(wrapper.find('.modal--button.yes').text()).toBe('はい')
-  expect(wrapper.find('.modal--button.no').exists()).toBe(true)
-  expect(wrapper.find('.modal--button.no').text()).toBe('いいえ')
   wrapper.find('.modal--button.yes').simulate('click')
-  expect(handleClickNoMockFn).toHaveBeenCalledTimes(0)
-  expect(handleClickYesMockFn).toHaveBeenCalledTimes(1)
-  expect(handleClickYesMockFn).toHaveBeenCalledWith(1)
-  expect(wrapper.find('.modal--button')).toHaveLength(2)
-  expect(wrapper.find('.modal--button.yes').exists()).toBe(true)
-  expect(wrapper.find('.modal--button.yes').text()).toBe('はい')
-  expect(wrapper.find('.modal--button.no').exists()).toBe(true)
-  expect(wrapper.find('.modal--button.no').text()).toBe('いいえ')
+  expect(handleClickNo).toHaveBeenCalledTimes(0)
+  expect(handleClickYes).toHaveBeenCalledTimes(1)
 })
 
