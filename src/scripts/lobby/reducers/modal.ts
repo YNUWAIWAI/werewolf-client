@@ -11,7 +11,7 @@ type Action =
   | SelectYes
 
 export const initialState: State = {
-  descriptionId: '',
+  descriptionId: '@dummy',
   visible: false
 }
 const modal = (state: State = initialState, action: Action): State => {
