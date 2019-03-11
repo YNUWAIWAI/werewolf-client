@@ -24,7 +24,7 @@ export interface StateProps {
   readonly village?: lobby.Village
 }
 export interface DispatchProps {
-  readonly kickOut: (token: lobby.Token) => () => void
+  readonly confirmKickOutPlayer: (token: lobby.Token) => () => void
   readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps {}
@@ -37,12 +37,12 @@ export default function WaitingForPlayers(props: Props) {
       <Header id="Header.waitingForPlayers" />
       <MainContent>
         {
-          props.village ?
+          typeof props.village === 'undefined' ?
+            null :
             <VillageItem
               {... props.village}
               isPlayer={props.isPlayer}
-            /> :
-            ''
+            />
         }
       </MainContent>
       <AsideContent
@@ -55,8 +55,8 @@ export default function WaitingForPlayers(props: Props) {
           transition={props.transition}
         />
         <AvatarList
+          confirmKickOutPlayer={props.confirmKickOutPlayer}
           items={props.players}
-          kickOut={props.kickOut}
         />
         <Menu
           class="compact-menu"
