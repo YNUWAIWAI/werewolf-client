@@ -41,7 +41,10 @@ describe('render', () => {
 
     expect(wrapper.children()).toHaveLength(1)
     expect(confirmKickOutPlayer).toHaveBeenCalledTimes(1)
-    expect(confirmKickOutPlayer).toHaveBeenCalledWith('token')
+    expect(confirmKickOutPlayer).toHaveBeenCalledWith({
+      name: 'name',
+      token: 'token'
+    })
   })
   test('2 items', () => {
     const items: Props['items'] = [
@@ -78,7 +81,13 @@ describe('render', () => {
 
     expect(wrapper.children()).toHaveLength(2)
     expect(confirmKickOutPlayer).toHaveBeenCalledTimes(2)
-    expect(confirmKickOutPlayer).toHaveBeenCalledWith('token1')
-    expect(confirmKickOutPlayer).toHaveBeenCalledWith('token2')
+    expect(confirmKickOutPlayer).toHaveBeenCalledWith({
+      name: 'name',
+      token: 'token1'
+    })
+    expect(confirmKickOutPlayer).toHaveBeenCalledWith({
+      name: 'name',
+      token: 'token2'
+    })
   })
 })
