@@ -3,19 +3,19 @@ import * as React from 'react'
 import AvatarList, {Props} from './AvatarList'
 import {shallow} from 'enzyme'
 
-describe('<AvatarList />', () => {
+describe('render', () => {
   test('0 items', () => {
     const items: Props['items'] = []
-    const kickOut = jest.fn()
+    const confirmKickOutPlayer = jest.fn()
     const wrapper = shallow(
       <AvatarList
+        confirmKickOutPlayer={confirmKickOutPlayer}
         items={items}
-        kickOut={kickOut}
       />
     )
 
     expect(wrapper.children()).toHaveLength(0)
-    expect(kickOut).toHaveBeenCalledTimes(0)
+    expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
   })
   test('1 items', () => {
     const items: Props['items'] = [
@@ -31,17 +31,17 @@ describe('<AvatarList />', () => {
         token: 'token'
       }
     ]
-    const kickOut = jest.fn()
+    const confirmKickOutPlayer = jest.fn()
     const wrapper = shallow(
       <AvatarList
+        confirmKickOutPlayer={confirmKickOutPlayer}
         items={items}
-        kickOut={kickOut}
       />
     )
 
     expect(wrapper.children()).toHaveLength(1)
-    expect(kickOut).toHaveBeenCalledTimes(1)
-    expect(kickOut).toHaveBeenCalledWith('token')
+    expect(confirmKickOutPlayer).toHaveBeenCalledTimes(1)
+    expect(confirmKickOutPlayer).toHaveBeenCalledWith('token')
   })
   test('2 items', () => {
     const items: Props['items'] = [
@@ -68,17 +68,17 @@ describe('<AvatarList />', () => {
         token: 'token2'
       }
     ]
-    const kickOut = jest.fn()
+    const confirmKickOutPlayer = jest.fn()
     const wrapper = shallow(
       <AvatarList
+        confirmKickOutPlayer={confirmKickOutPlayer}
         items={items}
-        kickOut={kickOut}
       />
     )
 
     expect(wrapper.children()).toHaveLength(2)
-    expect(kickOut).toHaveBeenCalledTimes(2)
-    expect(kickOut).toHaveBeenCalledWith('token1')
-    expect(kickOut).toHaveBeenCalledWith('token2')
+    expect(confirmKickOutPlayer).toHaveBeenCalledTimes(2)
+    expect(confirmKickOutPlayer).toHaveBeenCalledWith('token1')
+    expect(confirmKickOutPlayer).toHaveBeenCalledWith('token2')
   })
 })
