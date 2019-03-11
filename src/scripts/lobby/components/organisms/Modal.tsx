@@ -3,11 +3,12 @@ import {FormattedMessage} from 'react-intl'
 
 export interface StateProps {
   readonly descriptionId: string
+  readonly type: string
   readonly visible: boolean
 }
 export interface DispatchProps {
   readonly handleClickNo: () => void
-  readonly handleClickYes: () => void
+  readonly handleClickYes: (type: string) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
@@ -37,7 +38,7 @@ export default function Modal(props: Props) {
           text =>
             <button
               className="modal--button yes"
-              onClick={() => props.handleClickYes()}
+              onClick={() => props.handleClickYes(props.type)}
             >
               {text}
             </button>

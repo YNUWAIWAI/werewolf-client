@@ -19,6 +19,7 @@ describe('render', () => {
           descriptionId="@dummy"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
+          type="type"
           visible
         />
       </Provider>
@@ -41,6 +42,7 @@ describe('render', () => {
           descriptionId="@dummy"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
+          type="type"
           visible={false}
         />
       </Provider>
@@ -58,6 +60,7 @@ test('handleClickNo', () => {
         descriptionId="@dummy"
         handleClickNo={handleClickNo}
         handleClickYes={handleClickYes}
+        type="type"
         visible
       />
     </Provider>
@@ -76,6 +79,7 @@ test('handleClickYes', () => {
         descriptionId="@dummy"
         handleClickNo={handleClickNo}
         handleClickYes={handleClickYes}
+        type="type"
         visible
       />
     </Provider>
@@ -84,5 +88,6 @@ test('handleClickYes', () => {
   wrapper.find('.modal--button.yes').simulate('click')
   expect(handleClickNo).toHaveBeenCalledTimes(0)
   expect(handleClickYes).toHaveBeenCalledTimes(1)
+  expect(handleClickYes).toHaveBeenCalledWith('type')
 })
 
