@@ -15,6 +15,7 @@ describe('CHANGE_LOBBY', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         isPlayer: true,
         menuItems: [
           {
@@ -30,8 +31,7 @@ describe('CHANGE_LOBBY', () => {
             id: 'Menu.returnToMainPage',
             types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
-        ],
-        players: []
+        ]
       }
     )
   })
@@ -46,6 +46,7 @@ describe('CHANGE_LOBBY', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         isPlayer: false,
         menuItems: [
           {
@@ -61,8 +62,7 @@ describe('CHANGE_LOBBY', () => {
             id: 'Menu.returnToMainPage',
             types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
-        ],
-        players: []
+        ]
       }
     )
   })
@@ -77,6 +77,7 @@ describe('CHANGE_LOBBY', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         isPlayer: true,
         menuItems: [
           {
@@ -92,26 +93,39 @@ describe('CHANGE_LOBBY', () => {
             id: 'Menu.returnToMainPage',
             types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
-        ],
-        players: []
+        ]
       }
     )
   })
 })
+test('CONFIRM_KICK_OUT_PLAYER', () => {
+  expect(
+    reducer(
+      initialState,
+      {
+        name: 'Alice',
+        token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
+      }
+    )
+  ).toEqual(
+    {
+      ... initialState,
+      kickOutToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    }
+  )
+})
 test('SHOW_LOBBY_FOR_AUDIENCE', () => {
   expect(
     reducer(
-      {
-        isPlayer: true,
-        menuItems: [],
-        players: []
-      },
+      initialState,
       {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toEqual(
     {
+      ... initialState,
       isPlayer: false,
       menuItems: [
         {
@@ -127,25 +141,21 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
           id: 'Menu.returnToMainPage',
           types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
         }
-      ],
-      players: []
+      ]
     }
   )
 })
 test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   expect(
     reducer(
-      {
-        isPlayer: true,
-        menuItems: [],
-        players: []
-      },
+      initialState,
       {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toEqual(
     {
+      ... initialState,
       isPlayer: true,
       menuItems: [
         {
@@ -161,25 +171,21 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
           id: 'Menu.returnToMainPage',
           types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
         }
-      ],
-      players: []
+      ]
     }
   )
 })
 test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   expect(
     reducer(
-      {
-        isPlayer: true,
-        menuItems: [],
-        players: []
-      },
+      initialState,
       {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toEqual(
     {
+      ... initialState,
       isPlayer: true,
       menuItems: [
         {
@@ -195,8 +201,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
           id: 'Menu.returnToMainPage',
           types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
         }
-      ],
-      players: []
+      ]
     }
   )
 })
@@ -230,7 +235,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toEqual(
       {
-        isPlayer: true,
+        ... initialState,
         menuItems: [
           {
             disabled: false,
@@ -246,8 +251,7 @@ describe('socket/MESSAGE', () => {
             id: 'Menu.returnToMainPage',
             types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
           }
-        ],
-        players: []
+        ]
       }
     )
   })
@@ -256,7 +260,7 @@ describe('socket/MESSAGE', () => {
       expect(
         reducer(
           {
-            isPlayer: true,
+            ... initialState,
             menuItems: [
               {
                 disabled: true,
@@ -271,8 +275,7 @@ describe('socket/MESSAGE', () => {
                 id: 'Menu.returnToMainPage',
                 types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
-            ],
-            players: []
+            ]
           },
           {
             payload: waitingPage2,
@@ -281,7 +284,7 @@ describe('socket/MESSAGE', () => {
         )
       ).toEqual(
         {
-          isPlayer: true,
+          ... initialState,
           menuItems: [
             {
               disabled: false,
@@ -404,7 +407,7 @@ describe('socket/MESSAGE', () => {
       expect(
         reducer(
           {
-            isPlayer: true,
+            ... initialState,
             menuItems: [
               {
                 disabled: true,
@@ -419,8 +422,7 @@ describe('socket/MESSAGE', () => {
                 id: 'Menu.returnToMainPage',
                 types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
-            ],
-            players: []
+            ]
           },
           {
             payload: waitingPage,
@@ -429,7 +431,7 @@ describe('socket/MESSAGE', () => {
         )
       ).toEqual(
         {
-          isPlayer: true,
+          ... initialState,
           menuItems: [
             {
               disabled: true,
