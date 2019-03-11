@@ -2,6 +2,7 @@ import * as React from 'react'
 import AvatarItem from '../molecules/AvatarItem'
 
 export interface Props {
+  readonly confirmKickOutPlayer: (token: lobby.Token) => () => void
   readonly items: {
     readonly avatarImage: string
     readonly canKickOut: boolean
@@ -13,15 +14,14 @@ export interface Props {
     readonly pingStatus: lobby.PingStatus
     readonly token: lobby.Token
   }[]
-  readonly kickOut: (token: lobby.Token) => () => void
 }
 
 export default function AvatarList(props: Props) {
   const items = props.items.map(item =>
     <AvatarItem
+      confirmKickOutPlayer={props.confirmKickOutPlayer(item.token)}
       key={item.token}
       {... item}
-      kickOut={props.kickOut(item.token)}
     />
   )
 
