@@ -120,7 +120,7 @@ const client2server: Middleware = store => next => action => {
       const payload: lobby.Payload$kickOutPlayer = {
         players: [
           {
-            token: action.token
+            token: state.waitingForPlayers.kickOutToken
           }
         ],
         token: state.token[state.token.lobby],
