@@ -9,7 +9,7 @@ describe('<ModalContainer />', () => {
   test('visible', () => {
     const store = fakeStore({
       modal: {
-        descriptionId: '',
+        descriptionId: '@dummy',
         visible: true
       }
     })
@@ -26,7 +26,7 @@ describe('<ModalContainer />', () => {
   test('hidden', () => {
     const store = fakeStore({
       modal: {
-        descriptionId: '',
+        descriptionId: '@dummy',
         visible: false
       }
     })
