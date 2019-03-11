@@ -1,8 +1,8 @@
 /* global lobby */
 import {
-  KickOutPlayer,
+  ConfirmKickOutPlayer,
   Transition,
-  kickOutPlayer,
+  confirmKickOutPlayer,
   transition
 } from '../actions'
 import WaitingForPlayers, {DispatchProps, StateProps} from '../components/templates/WaitingForPlayers'
@@ -11,7 +11,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | KickOutPlayer
+  | ConfirmKickOutPlayer
   | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
@@ -63,8 +63,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  kickOut: token => () => {
-    dispatch(kickOutPlayer(token))
+  confirmKickOutPlayer: token => () => {
+    dispatch(confirmKickOutPlayer(token))
   },
   transition: target => {
     dispatch(transition(target))
