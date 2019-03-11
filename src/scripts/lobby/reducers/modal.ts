@@ -3,6 +3,7 @@ import {ConfirmKickOutPlayer, SelectNo, SelectYes} from '../actions'
 
 export interface State {
   readonly descriptionId: string
+  readonly type: string
   readonly visible: boolean
 }
 type Action =
@@ -12,6 +13,7 @@ type Action =
 
 export const initialState: State = {
   descriptionId: '@dummy',
+  type: '',
   visible: false
 }
 const modal = (state: State = initialState, action: Action): State => {
@@ -19,6 +21,7 @@ const modal = (state: State = initialState, action: Action): State => {
     case ActionTypes.global.CONFIRM_KICK_OUT_PLAYER:
       return {
         descriptionId: 'Modal.description(kickOutPlayer)',
+        type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
         visible: true
       }
     case ActionTypes.global.SELECT_NO:
