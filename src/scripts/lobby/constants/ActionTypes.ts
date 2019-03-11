@@ -77,7 +77,6 @@ export const enum socket {
 export const enum Target {
   ADVANCED_SEARCH = global.ADVANCED_SEARCH,
   BUILD_VILLAGE = global.BUILD_VILLAGE,
-  CONFIRM_KICK_OUT_PLAYER = global.BUILD_VILLAGE,
   ID_SEARCH = global.ID_SEARCH,
   LEAVE_WAITING_PAGE = global.LEAVE_WAITING_PAGE,
   PLAY_GAME = global.PLAY_GAME,

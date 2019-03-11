@@ -150,6 +150,10 @@ export const changeVillageName = (scope: ActionTypes.Scope.advancedSearch | Acti
     villageName
   }
 }
+export const confirmKickOutPlayer = (token: lobby.Token): {token: lobby.Token, type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER} => ({
+  token,
+  type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
+})
 export const kickOutPlayer = (token: lobby.Token): {token: lobby.Token, type: ActionTypes.global.KICK_OUT_PLAYER} => ({
   token,
   type: ActionTypes.global.KICK_OUT_PLAYER
@@ -193,6 +197,7 @@ export type ChangeToken = ReturnType<typeof changeToken>
 export type ChangeUserEmail = ReturnType<typeof changeUserEmail>
 export type ChangeUserName = ReturnType<typeof changeUserName>
 export type ChangeUserPassword = ReturnType<typeof changeUserPassword>
+export type ConfirmKickOutPlayer = ReturnType<typeof confirmKickOutPlayer>
 export type IdSearch$ChangeSearchId = ReturnType<typeof changeSearchId>
 export type IdSearch$ChangeValidity = ReturnType<ReturnType<ReturnType<typeof changeValidity>>>
 export type KickOutPlayer = ReturnType<typeof kickOutPlayer>
