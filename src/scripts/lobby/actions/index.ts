@@ -150,12 +150,12 @@ export const changeVillageName = (scope: ActionTypes.Scope.advancedSearch | Acti
     villageName
   }
 }
-export const confirmKickOutPlayer = (token: lobby.Token): {token: lobby.Token, type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER} => ({
-  token,
+export const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}): {name: string, token: lobby.Token, type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER} => ({
+  name: values.name,
+  token: values.token,
   type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
 })
-export const kickOutPlayer = (token: lobby.Token): {token: lobby.Token, type: ActionTypes.global.KICK_OUT_PLAYER} => ({
-  token,
+export const kickOutPlayer = (): {type: ActionTypes.global.KICK_OUT_PLAYER} => ({
   type: ActionTypes.global.KICK_OUT_PLAYER
 })
 export const selectNo = (): {type: ActionTypes.global.SELECT_NO} => ({
