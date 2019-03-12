@@ -20,11 +20,17 @@ storiesOf('lobby|Modal', module)
     </Provider>
   )
   .add('default', () => {
+    const values = {
+      name: 'Alice',
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    }
     const story =
       <Modal
-        descriptionId="Modal.Description"
+        descriptionId="Modal.description(kickOutPlayer)"
         handleClickNo={action('handleClickNo')}
         handleClickYes={action('handleClickYes')}
+        type="type"
+        values={values}
         visible
       />
 
