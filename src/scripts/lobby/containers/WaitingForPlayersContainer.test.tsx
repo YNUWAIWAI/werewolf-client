@@ -12,6 +12,7 @@ test('<WaitingForPlayersContainer />', () => {
     {
       waitingForPlayers: {
         isPlayer: true,
+        kickOutToken: '',
         menuItems: [
           {
             id: 'Menu.playGame',
