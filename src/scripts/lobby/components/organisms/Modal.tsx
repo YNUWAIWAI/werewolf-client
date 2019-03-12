@@ -1,9 +1,14 @@
+/* global lobby */
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 
 export interface StateProps {
   readonly descriptionId: string
   readonly type: string
+  readonly values: {
+    name: string
+    token: lobby.Token
+  }
   readonly visible: boolean
 }
 export interface DispatchProps {
@@ -21,6 +26,9 @@ export default function Modal(props: Props) {
     <div className="modal">
       <FormattedMessage
         id={props.descriptionId}
+        values={{
+          name: props.values.name
+        }}
       >
         {
           text =>
