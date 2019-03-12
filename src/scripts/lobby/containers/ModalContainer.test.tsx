@@ -116,5 +116,34 @@ describe('<ModalContainer />', () => {
         type: ActionTypes.global.KICK_OUT_PLAYER
       })
     })
+    test('default', () => {
+      const store = fakeStore({
+        modal: {
+          descriptionId: '@dummy',
+          type: 'type',
+          values: {
+            name: '',
+            token: ''
+          },
+          visible: false
+        }
+      })
+      const dispatch = jest.fn()
+
+      store.dispatch = dispatch
+      const wrapper = mount(
+        <Provider store={store} >
+          <IntlProviderContainer>
+            <ModalContainer />
+          </IntlProviderContainer>
+        </Provider>
+      )
+
+      wrapper.find(Modal).props().handleClickYes('ACTION')
+      expect(dispatch).toHaveBeenCalledTimes(1)
+      expect(dispatch).toHaveBeenCalledWith({
+        type: ActionTypes.global.SELECT_YES
+      })
+    })
   })
 })
