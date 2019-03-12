@@ -104,7 +104,7 @@ export const changeToken = ({lobby, token}: {lobby: lobby.Lobby, token: string})
   token,
   type: ActionTypes.global.CHANGE_TOKEN
 })
-export const changeUserEmail = (userEmail: string): {userEmail: string, type: ActionTypes.global.CHANGE_USER_EMAIL} => ({
+export const changeUserEmail = (userEmail: string): {type: ActionTypes.global.CHANGE_USER_EMAIL, userEmail: string} => ({
   type: ActionTypes.global.CHANGE_USER_EMAIL,
   userEmail
 })
