@@ -13,6 +13,10 @@ describe('render', () => {
   test('visible', () => {
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
+    const values = {
+      name: 'Alice',
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    }
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
@@ -20,6 +24,7 @@ describe('render', () => {
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           type="type"
+          values={values}
           visible
         />
       </Provider>
@@ -36,6 +41,10 @@ describe('render', () => {
   test('visible={false}', () => {
     const handleClickNoMockFn = jest.fn()
     const handleClickYesMockFn = jest.fn()
+    const values = {
+      name: 'Alice',
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    }
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
@@ -43,6 +52,7 @@ describe('render', () => {
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           type="type"
+          values={values}
           visible={false}
         />
       </Provider>
@@ -54,6 +64,10 @@ describe('render', () => {
 test('handleClickNo', () => {
   const handleClickNo = jest.fn()
   const handleClickYes = jest.fn()
+  const values = {
+    name: 'Alice',
+    token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+  }
   const wrapper = mountWithIntl(
     <Provider store={store}>
       <Modal
@@ -61,6 +75,7 @@ test('handleClickNo', () => {
         handleClickNo={handleClickNo}
         handleClickYes={handleClickYes}
         type="type"
+        values={values}
         visible
       />
     </Provider>
@@ -73,6 +88,10 @@ test('handleClickNo', () => {
 test('handleClickYes', () => {
   const handleClickNo = jest.fn()
   const handleClickYes = jest.fn()
+  const values = {
+    name: 'Alice',
+    token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+  }
   const wrapper = mountWithIntl(
     <Provider store={store}>
       <Modal
@@ -80,6 +99,7 @@ test('handleClickYes', () => {
         handleClickNo={handleClickNo}
         handleClickYes={handleClickYes}
         type="type"
+        values={values}
         visible
       />
     </Provider>
