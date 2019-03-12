@@ -15,7 +15,7 @@ type Action =
   | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const amIHost = state.waitingForPlayers.players.some(v => v.isHost && v.isMe)
+  const amIHost = state.waitingForPlayers.players.some(player => player.isHost && player.isMe)
   const players = state.waitingForPlayers.players.map(player => {
     const result = state.ping.results.find(r => r.token === player.token)
 
@@ -63,7 +63,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  confirmKickOutPlayer: values => () => {
+  confirmKickOutPlayer: values => {
     dispatch(confirmKickOutPlayer(values))
   },
   transition: target => {
