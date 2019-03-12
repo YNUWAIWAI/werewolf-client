@@ -422,12 +422,19 @@ describe('CHANGE_USER_PASSWORD', () => {
   })
 })
 describe('KICK_OUT_PLAYER', () => {
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const store = fakeStore({
     token: {
       'human player': avatarToken.humanPlayer,
       'lobby': lobby.Lobby.human,
       'onymous audience': avatarToken.onymousAudience,
       'robot player': avatarToken.robotPlayer
+    },
+    waitingForPlayers: {
+      isPlayer: true,
+      kickOutToken: token,
+      menuItems: [],
+      players: []
     }
   })
   const dispatch = jest.fn()
@@ -436,9 +443,7 @@ describe('KICK_OUT_PLAYER', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const action: KickOutPlayer = {
-    token,
     type: ActionTypes.global.KICK_OUT_PLAYER
   }
   const kickOutPlayerPayload = {
@@ -484,6 +489,7 @@ describe('LEAVE_WAITING_PAGE', () => {
     },
     waitingForPlayers: {
       isPlayer: true,
+      kickOutToken: '',
       menuItems: [],
       players: [
         {
@@ -580,6 +586,7 @@ describe('PLAY_GAME', () => {
     },
     waitingForPlayers: {
       isPlayer: true,
+      kickOutToken: '',
       menuItems: [],
       players: [
         {

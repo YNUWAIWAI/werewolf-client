@@ -1,4 +1,5 @@
 export default {
+  '@dummy': 'dummy', // You don't have to translate
   'AdvancedSearch.label(avatar)': 'Avatar',
   'AdvancedSearch.label(comment)': 'Comment',
   'AdvancedSearch.label(hostName)': 'Host Name',
@@ -71,6 +72,9 @@ export default {
   'Menu.showAdvancedSearch': 'Advanced Search',
   'Menu.showBuildVillage': 'Build your Village',
   'Menu.showIdSearch': 'ID Search',
+  'Modal.button.no': 'いいえ',
+  'Modal.button.yes': 'はい',
+  'Modal.description(kickOutPlayer)': '{name}を追い出しますか？',
   'NumberSelect(player)': `{num, plural,
     =1 {# player}
     other {# players}

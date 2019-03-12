@@ -1,21 +1,24 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangeLobby, SocketMessage, Transition} from '../actions'
+import {ChangeLobby, ConfirmKickOutPlayer, SocketMessage, Transition} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 
 export interface State {
   readonly isPlayer: boolean
+  readonly kickOutToken: lobby.Token
   readonly menuItems: MenuItem[]
   readonly players: lobby.WaitingPlayer[]
   readonly village?: lobby.Village
 }
 type Action =
   | ChangeLobby
+  | ConfirmKickOutPlayer
   | SocketMessage
   | Transition
 
 export const initialState = {
   isPlayer: true,
+  kickOutToken: '',
   menuItems: [],
   players: []
 }
@@ -85,6 +88,11 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           }
         default:
           return state
+      }
+    case ActionTypes.global.CONFIRM_KICK_OUT_PLAYER:
+      return {
+        ... state,
+        kickOutToken: action.token
       }
     case ActionTypes.Target.PLAY_GAME:
       return {

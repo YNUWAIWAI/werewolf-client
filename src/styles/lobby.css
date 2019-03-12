@@ -8,6 +8,7 @@
   --danger-color: rgb(219, 69, 69);
   --disabled-color: rgba(0, 0, 0, 0.3);
   --hover-color: rgba(0, 0, 0, 0.03);
+  --obfucator-color: rgba(0, 0, 0, 0.15);
   --regular-color: rgba(0, 0, 0, 0);
   --role-image-size: 50px;
   --safe-color: rgb(57, 170, 86);
@@ -303,6 +304,101 @@ body {
         background: var(--active-color);
       }
     }
+  }
+}
+
+.modal {
+  background: #fafafa;
+  display: grid;
+  gap: 0.5rem 0;
+  grid-template-areas:
+    'description description description description description'
+    '. yes . no .';
+  grid-template-columns: 1fr 5.5rem 1fr 5.5rem 1fr;
+  /*
+    5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
+  */
+  grid-template-rows: 4.5rem 3.25rem;
+  /*
+    15px = name's font-size(10px) * name's line-height(1.5)
+    4.5rem = font-size(1.5rem) * line-height(1.5) * number of lines(2)
+    3.25rem = font-size(1.5rem) * name's line-height(1.5) + padding-top(0.5rem) + padding-bottom(0.5rem)
+  */
+  left: 25vw;
+  padding: 1rem;
+  position: fixed;
+  top: 30vh;
+  width: 50vw;
+  z-index: 4;
+
+  &--button {
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0.5rem;
+
+    &.yes {
+      background: rgba(255, 0, 0, 0.5);
+      grid-area: yes;
+    }
+
+    &.no {
+      background: rgba(0, 0, 255, 0.5);
+      grid-area: no;
+    }
+
+    &:hover {
+      filter: opacity(85%);
+
+      &:active {
+        filter: brightness(85%);
+      }
+    }
+  }
+
+  &--description {
+    align-items: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    grid-area: description;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &--icon {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    grid-area: icon;
+    justify-content: center;
+
+    &--image {
+      height: var(--modal-image-size);
+      width: var(--modal-image-size);
+    }
+
+    &--name {
+      font-size: 10px;
+    }
+  }
+}
+
+.obfucator {
+  align-items: center;
+  background: var(--obfucator-color);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+
+  &--loader {
+    height: 10%;
+    width: 10%;
   }
 }
 

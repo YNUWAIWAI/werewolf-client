@@ -1,8 +1,8 @@
 /* global lobby */
 import {
-  KickOutPlayer,
+  ConfirmKickOutPlayer,
   Transition,
-  kickOutPlayer,
+  confirmKickOutPlayer,
   transition
 } from '../actions'
 import WaitingForPlayers, {DispatchProps, StateProps} from '../components/templates/WaitingForPlayers'
@@ -11,11 +11,11 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | KickOutPlayer
+  | ConfirmKickOutPlayer
   | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const amIHost = state.waitingForPlayers.players.some(v => v.isHost && v.isMe)
+  const amIHost = state.waitingForPlayers.players.some(player => player.isHost && player.isMe)
   const players = state.waitingForPlayers.players.map(player => {
     const result = state.ping.results.find(r => r.token === player.token)
 
@@ -63,8 +63,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  kickOut: token => () => {
-    dispatch(kickOutPlayer(token))
+  confirmKickOutPlayer: values => {
+    dispatch(confirmKickOutPlayer(values))
   },
   transition: target => {
     dispatch(transition(target))

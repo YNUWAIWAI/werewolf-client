@@ -1,14 +1,19 @@
 /* global lobby */
-import {ReducerState} from '../../../src/scripts/lobby/reducers'
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
+import {ReducerState} from '../../../src/scripts/lobby/reducers'
 import WaitingForPlayers from '../../../src/scripts/lobby/containers/WaitingForPlayersContainer'
 
 const state: Partial<ReducerState> = {
   app: {
     content: WaitingForPlayers
   },
+  obfucator: {
+    loading: false,
+    visible: false
+  },
   waitingForPlayers: {
     isPlayer: true,
+    kickOutToken: '',
     menuItems: [
       {
         disabled: true,
@@ -30,7 +35,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: true,
         isMe: true,
-        name: 'Anonymous',
+        name: 'Anonymous1',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       },
       {
@@ -38,7 +43,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous2',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
       },
       {
@@ -46,7 +51,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous3',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
       },
       {
@@ -54,7 +59,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous4',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
       },
       {
@@ -62,7 +67,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous5',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
       },
       {
@@ -70,7 +75,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous6',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
       },
       {
@@ -78,7 +83,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous7',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
       },
       {
@@ -86,7 +91,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous8',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
       },
       {
@@ -94,7 +99,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous9',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
       },
       {
@@ -102,7 +107,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous10',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
       },
       {
@@ -110,7 +115,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous11',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
       },
       {
@@ -118,7 +123,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous12',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
       },
       {
@@ -126,7 +131,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous13',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
       },
       {
@@ -134,7 +139,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous14',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
       },
       {
@@ -142,7 +147,7 @@ const state: Partial<ReducerState> = {
         isAnonymous: true,
         isHost: false,
         isMe: false,
-        name: 'Anonymous',
+        name: 'Anonymous15',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3315'
       }
     ],

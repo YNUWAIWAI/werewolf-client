@@ -7,30 +7,23 @@ import Warning from '../atoms/svg/Warning'
 export interface Props extends ReactIntl.InjectedIntlProps {
   readonly avatarImage: string
   readonly canKickOut: boolean
+  readonly confirmKickOutPlayer: (values: {name: string, token: lobby.Token}) => void
   readonly isAnonymous: boolean
   readonly isHost: boolean
   readonly isMe: boolean
-  readonly kickOut: () => void
   readonly name: string
   readonly ping: string
   readonly pingStatus: lobby.PingStatus
+  readonly token: lobby.Token
 }
 
 export default injectIntl(function AvatarItem(props: Props) {
   const handleClick = () => {
     if (props.canKickOut) {
-      const message = props.intl.formatMessage(
-        {
-          id: 'AvatarItem.kickout'
-        },
-        {
-          name: props.name
-        }
-      )
-
-      if (window.confirm(message)) {
-        props.kickOut()
-      }
+      props.confirmKickOutPlayer({
+        name: props.name,
+        token: props.token
+      })
     }
   }
   const Status = {
@@ -40,7 +33,10 @@ export default injectIntl(function AvatarItem(props: Props) {
   }[props.pingStatus]
 
   return (
-    <div className={`avatar-list--item ${props.isMe ? 'me' : ''}`} onClick={handleClick}>
+    <div
+      className={`avatar-list--item ${props.isMe ? 'me' : ''}`}
+      onClick={() => handleClick()}
+    >
       <div className="avatar-list--item--image">
         <img src={props.avatarImage} />
       </div>
@@ -72,7 +68,7 @@ export default injectIntl(function AvatarItem(props: Props) {
                 </div>
             }
           </FormattedMessage> :
-          ''
+          null
       }
       <div className="avatar-list--item--ping">
         <Status />

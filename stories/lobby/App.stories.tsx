@@ -9,7 +9,13 @@ import {waitingPage} from './initialState'
 storiesOf('lobby|App', module)
   .add('default', () => {
     const store = createStore(
-      reducer
+      reducer,
+      {
+        obfucator: {
+          loading: false,
+          visible: false
+        }
+      }
     )
 
     const story =
