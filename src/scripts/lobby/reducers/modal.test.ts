@@ -14,6 +14,10 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
   ).toEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
     type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
+    values: {
+      name: 'Alice',
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    },
     visible: true
   })
 })
@@ -23,6 +27,10 @@ test('SELECT_NO', () => {
       {
         descriptionId: 'Modal.description(kickOutPlayer)',
         type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
+        values: {
+          name: 'Alice',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+        },
         visible: true
       },
       {
@@ -32,6 +40,10 @@ test('SELECT_NO', () => {
   ).toEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
     type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
+    values: {
+      name: 'Alice',
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    },
     visible: false
   })
 })
@@ -41,6 +53,10 @@ test('SELECT_YES', () => {
       {
         descriptionId: 'Modal.description(kickOutPlayer)',
         type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
+        values: {
+          name: 'Alice',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+        },
         visible: true
       },
       {
@@ -50,6 +66,10 @@ test('SELECT_YES', () => {
   ).toEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
     type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
+    values: {
+      name: 'Alice',
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    },
     visible: false
   })
 })
