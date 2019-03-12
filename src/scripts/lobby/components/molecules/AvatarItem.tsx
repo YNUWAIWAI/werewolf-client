@@ -64,7 +64,7 @@ export default injectIntl(function AvatarItem(props: Props) {
                 </div>
             }
           </FormattedMessage> :
-          ''
+          null
       }
       <div className="avatar-list--item--ping">
         <Status />
