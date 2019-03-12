@@ -85,17 +85,7 @@ describe('<ModalContainer />', () => {
   })
   describe('handleClickYes', () => {
     test('KICK_OUT_PLAYER', () => {
-      const store = fakeStore({
-        modal: {
-          descriptionId: '@dummy',
-          type: 'type',
-          values: {
-            name: '',
-            token: ''
-          },
-          visible: false
-        }
-      })
+      const store = fakeStore()
       const dispatch = jest.fn()
 
       store.dispatch = dispatch
@@ -117,17 +107,7 @@ describe('<ModalContainer />', () => {
       })
     })
     test('default', () => {
-      const store = fakeStore({
-        modal: {
-          descriptionId: '@dummy',
-          type: 'type',
-          values: {
-            name: '',
-            token: ''
-          },
-          visible: false
-        }
-      })
+      const store = fakeStore()
       const dispatch = jest.fn()
 
       store.dispatch = dispatch
