@@ -7,19 +7,23 @@ import Warning from '../atoms/svg/Warning'
 export interface Props extends ReactIntl.InjectedIntlProps {
   readonly avatarImage: string
   readonly canKickOut: boolean
-  readonly confirmKickOutPlayer: () => void
+  readonly confirmKickOutPlayer: (values: {name: string, token: lobby.Token}) => void
   readonly isAnonymous: boolean
   readonly isHost: boolean
   readonly isMe: boolean
   readonly name: string
   readonly ping: string
   readonly pingStatus: lobby.PingStatus
+  readonly token: lobby.Token
 }
 
 export default injectIntl(function AvatarItem(props: Props) {
   const handleClick = () => {
     if (props.canKickOut) {
-      props.confirmKickOutPlayer()
+      props.confirmKickOutPlayer({
+        name: props.name,
+        token: props.token
+      })
     }
   }
   const Status = {
