@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  ConfirmKickOutPlayer,
+  SelectNo,
+  SelectYes,
   SocketClose,
   SocketError,
   SocketOpen
@@ -10,6 +13,9 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
+  | ConfirmKickOutPlayer
+  | SelectNo
+  | SelectYes
   | SocketClose
   | SocketError
   | SocketOpen
@@ -21,6 +27,17 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.global.CONFIRM_KICK_OUT_PLAYER:
+      return {
+        loading: false,
+        visible: true
+      }
+    case ActionTypes.global.SELECT_NO:
+    case ActionTypes.global.SELECT_YES:
+      return {
+        loading: false,
+        visible: false
+      }
     case ActionTypes.socket.CLOSE:
     case ActionTypes.socket.ERROR:
       return {
