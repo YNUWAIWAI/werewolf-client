@@ -20,6 +20,27 @@ describe('<LobbyForAudienceContainer />', () => {
 
     expect(wrapper.html()).toMatchSnapshot()
   })
+  test('selectVillage', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <LobbyForAudienceContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const id = 1
+
+    wrapper.find(LobbyForAudience).props().selectVillage(id)()
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      id,
+      type: ActionTypes.global.SELECT_VILLAGE
+    })
+  })
   test('transition', () => {
     const store = fakeStore()
     const dispatch = jest.fn()
