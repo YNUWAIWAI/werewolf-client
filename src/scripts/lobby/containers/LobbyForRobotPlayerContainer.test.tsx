@@ -1,19 +1,63 @@
+import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
+import LobbyForRobotPlayer from '../components/templates/LobbyForRobotPlayer'
 import LobbyForRobotPlayerContainer from './LobbyForRobotPlayerContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
-test('<LobbyForRobotPlayerContainer />', () => {
-  const store = fakeStore()
-  const wrapper = mount(
-    <Provider store={store} >
-      <IntlProviderContainer>
-        <LobbyForRobotPlayerContainer />
-      </IntlProviderContainer>
-    </Provider>
-  )
+describe('<LobbyForRobotPlayerContainer />', () => {
+  test('render', () => {
+    const store = fakeStore()
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <LobbyForRobotPlayerContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
 
-  expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+  test('selectVillage', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <LobbyForRobotPlayerContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const id = 1
+
+    wrapper.find(LobbyForRobotPlayer).props().selectVillage(id)()
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      id,
+      type: ActionTypes.global.SELECT_VILLAGE
+    })
+  })
+  test('transition', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <LobbyForRobotPlayerContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+
+    wrapper.find(LobbyForRobotPlayer).props().transition(ActionTypes.Target.SHOW_BUILD_VILLAGE)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      type: ActionTypes.Target.SHOW_BUILD_VILLAGE
+    })
+  })
 })
