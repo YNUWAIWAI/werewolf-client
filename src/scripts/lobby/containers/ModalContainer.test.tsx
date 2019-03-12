@@ -10,6 +10,7 @@ describe('<ModalContainer />', () => {
     const store = fakeStore({
       modal: {
         descriptionId: '@dummy',
+        type: 'type',
         visible: true
       }
     })
@@ -27,6 +28,7 @@ describe('<ModalContainer />', () => {
     const store = fakeStore({
       modal: {
         descriptionId: '@dummy',
+        type: 'type',
         visible: false
       }
     })
