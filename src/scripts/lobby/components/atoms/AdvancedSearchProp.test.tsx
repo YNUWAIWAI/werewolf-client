@@ -20,18 +20,34 @@ test('render', () => {
   expect(wrapper.find('input').exists()).toBe(true)
   expect(wrapper.find('label').exists()).toBe(true)
 })
-test('onChange', () => {
-  const handleChange = jest.fn()
-  const wrapper = mountWithIntl(
-    <AdvancedSearchProp
-      checked
-      handleChange={handleChange}
-      name="villageName"
-      valid
-    />
-  )
+describe('onChange', () => {
+  test('valid', () => {
+    const handleChange = jest.fn()
+    const wrapper = mountWithIntl(
+      <AdvancedSearchProp
+        checked
+        handleChange={handleChange}
+        name="villageName"
+        valid
+      />
+    )
 
-  wrapper.find('input').simulate('change')
-  expect(handleChange).toHaveBeenCalledTimes(1)
-  expect(handleChange).toHaveBeenCalledWith(false)
+    wrapper.find('input').simulate('change')
+    expect(handleChange).toHaveBeenCalledTimes(1)
+    expect(handleChange).toHaveBeenCalledWith(false)
+  })
+  test('invalid', () => {
+    const handleChange = jest.fn()
+    const wrapper = mountWithIntl(
+      <AdvancedSearchProp
+        checked
+        handleChange={handleChange}
+        name="villageName"
+        valid={false}
+      />
+    )
+
+    wrapper.find('input').simulate('change')
+    expect(handleChange).toHaveBeenCalledTimes(0)
+  })
 })
