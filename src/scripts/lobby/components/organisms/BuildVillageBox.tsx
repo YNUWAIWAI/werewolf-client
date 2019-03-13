@@ -23,7 +23,6 @@ export interface Props {
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
-    readonly hostName: boolean
     readonly numberOfPlayers: boolean
     readonly numberOfRobots: boolean
     readonly villageName: boolean
@@ -59,7 +58,6 @@ export default function BuildVillageBox(props: Props) {
         return
       }
       case 'comment':
-      case 'hostName':
       case 'villageName':
         if (typeof value === 'string') {
           props.handleTextChange(propName)(value)
