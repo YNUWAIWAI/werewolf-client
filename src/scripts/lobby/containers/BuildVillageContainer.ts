@@ -37,7 +37,7 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
-    const keys: (keyof ReducerState['buildVillage']['validity'])[] = ['avatar', 'comment', 'hostName', 'numberOfPlayers', 'numberOfRobots', 'villageName']
+    const keys: (keyof ReducerState['buildVillage']['validity'])[] = ['avatar', 'comment', 'numberOfPlayers', 'numberOfRobots', 'villageName']
 
     if (keys.every(key => state.buildVillage.validity[key])) {
       return state.buildVillage.menuItems
