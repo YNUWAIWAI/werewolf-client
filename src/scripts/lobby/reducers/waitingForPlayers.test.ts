@@ -115,6 +115,51 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
     }
   )
 })
+test('PLAY_GAME', () => {
+  expect(
+    reducer(
+      {
+        ... initialState,
+        menuItems: [
+          {
+            id: 'Menu.playGame',
+            types: [ActionTypes.Target.PLAY_GAME]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+          }
+        ]
+      },
+      {
+        type: ActionTypes.Target.PLAY_GAME
+      }
+    )
+  ).toEqual(
+    {
+      ... initialState,
+      menuItems: [
+        {
+          id: 'Menu.playGame',
+          isLoading: true,
+          types: [ActionTypes.Target.PLAY_GAME]
+        },
+        {
+          id: 'Menu.returnToLobbyForAudience',
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+        },
+        {
+          id: 'Menu.returnToMainPage',
+          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        }
+      ]
+    },
+  )
+})
 test('SHOW_LOBBY_FOR_AUDIENCE', () => {
   expect(
     reducer(
