@@ -107,7 +107,7 @@ export default function BuildVillageBox(props: Props) {
         }
       </FormattedMessage>
       {
-        props.value.avatar === 'fixed' ?
+        props.value.avatar === lobby.Avatar.fixed ?
           <FormattedMessage
             id="BuildVillage.placeholder"
             values={villageName}
@@ -156,7 +156,7 @@ export default function BuildVillageBox(props: Props) {
         }
       </FormattedMessage>
       {
-        props.value.avatar === 'fixed' ?
+        props.value.avatar === lobby.Avatar.fixed ?
           <div className="village--item--val host-name">
             {props.value.hostName}
           </div> :
