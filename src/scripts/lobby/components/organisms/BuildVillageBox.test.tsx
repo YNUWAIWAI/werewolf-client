@@ -392,6 +392,44 @@ describe('<BuildVillageBox />', () => {
         expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
     })
+    describe('member', () => {
+      test('valid', () => {
+        const handleAvatarChange = jest.fn()
+        const handleMemberChange = jest.fn()
+        const handleNumberChangeInner = jest.fn()
+        const handleNumberChange = jest.fn(() => handleNumberChangeInner)
+        const handleTextChangeInner = jest.fn()
+        const handleTextChange = jest.fn(() => handleTextChangeInner)
+        const handleValidityChangeInner = jest.fn()
+        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
+        const wrapper = mountWithIntl(
+          <BuildVillageBox
+            handleAvatarChange={handleAvatarChange}
+            handleMemberChange={handleMemberChange}
+            handleNumberChange={handleNumberChange}
+            handleTextChange={handleTextChange}
+            handleValidityChange={handleValidityChange}
+            validity={validity}
+            value={value}
+          />
+        )
+
+        wrapper.find('.village--item--member-select--role--radio > input').forEach(elem => elem.simulate('change'))
+        expect(handleAvatarChange).toHaveBeenCalledTimes(0)
+        expect(handleMemberChange).toHaveBeenCalledTimes(3)
+        expect(handleMemberChange).toHaveBeenCalledWith(lobby.Member.A)
+        expect(handleMemberChange).toHaveBeenCalledWith(lobby.Member.B)
+        expect(handleMemberChange).toHaveBeenCalledWith(lobby.Member.C)
+        expect(handleNumberChange).toHaveBeenCalledTimes(0)
+        expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
+        expect(handleTextChange).toHaveBeenCalledTimes(0)
+        expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
+        expect(handleValidityChange).toHaveBeenCalledTimes(3)
+        expect(handleValidityChange).toHaveBeenCalledWith('member')
+        expect(handleValidityChangeInner).toHaveBeenCalledTimes(3)
+        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
+      })
+    })
     describe('numberOfPlayers', () => {
       test('valid', () => {
         const handleAvatarChange = jest.fn()
