@@ -45,7 +45,6 @@ describe('<BuildVillageContainer />', () => {
             validity: {
               avatar: true,
               comment: true,
-              hostName: true,
               numberOfPlayers: true,
               numberOfRobots: true,
               villageName: true
@@ -85,7 +84,6 @@ describe('<BuildVillageContainer />', () => {
             validity: {
               avatar: false,
               comment: true,
-              hostName: true,
               numberOfPlayers: true,
               numberOfRobots: true,
               villageName: true
