@@ -255,6 +255,29 @@ describe('<BuildVillageContainer />', () => {
       })
     })
   })
+  test('handleValidityChange', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <BuildVillageContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const propName = 'villageName'
+    const validity = true
+
+    wrapper.find(BuildVillage).props().handleValidityChange(propName)(validity)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      propName,
+      type: ActionTypes.buildVillage.CHANGE_VALIDITY,
+      validity
+    })
+  })
   test('transition', () => {
     const store = fakeStore()
     const dispatch = jest.fn()
