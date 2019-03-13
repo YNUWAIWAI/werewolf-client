@@ -135,55 +135,55 @@ describe('<AdvancedSearchContainer />', () => {
   })
   test('handleAvatarChange', () => {
     const store = fakeStore(
-        {
-          advancedSearch: {
-            checked: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+      {
+        advancedSearch: {
+          checked: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          header: 'Header.idSearch(audience)',
+          image: '',
+          isPlayer: true,
+          menuItems: [
+            {
+              id: 'Menu.search',
+              types: [ActionTypes.Target.ADVANCED_SEARCH]
             },
-            header: 'Header.idSearch(audience)',
-            image: '',
-            isPlayer: true,
-            menuItems: [
-              {
-                id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
-              },
-              {
-                id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-              },
-              {
-                id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
-              }
-            ],
-            name: '',
-            searched: false,
-            validity: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+            {
+              id: 'Menu.returnToLobbyForHumanPlayer',
+              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
-            value: {
-              avatar: lobby.Avatar.random,
-              comment: '',
-              hostName: '',
-              maximum: -1,
-              minimum: -1,
-              villageName: ''
-            },
-            villageItems: []
-          }
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.Target.SHOW_MAIN]
+            }
+          ],
+          name: '',
+          searched: false,
+          validity: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          value: {
+            avatar: lobby.Avatar.random,
+            comment: '',
+            hostName: '',
+            maximum: -1,
+            minimum: -1,
+            villageName: ''
+          },
+          villageItems: []
         }
-      )
+      }
+    )
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
@@ -205,55 +205,55 @@ describe('<AdvancedSearchContainer />', () => {
   })
   test('handleCheckboxChange', () => {
     const store = fakeStore(
-        {
-          advancedSearch: {
-            checked: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+      {
+        advancedSearch: {
+          checked: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          header: 'Header.idSearch(audience)',
+          image: '',
+          isPlayer: true,
+          menuItems: [
+            {
+              id: 'Menu.search',
+              types: [ActionTypes.Target.ADVANCED_SEARCH]
             },
-            header: 'Header.idSearch(audience)',
-            image: '',
-            isPlayer: true,
-            menuItems: [
-              {
-                id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
-              },
-              {
-                id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-              },
-              {
-                id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
-              }
-            ],
-            name: '',
-            searched: false,
-            validity: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+            {
+              id: 'Menu.returnToLobbyForHumanPlayer',
+              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
-            value: {
-              avatar: lobby.Avatar.random,
-              comment: '',
-              hostName: '',
-              maximum: -1,
-              minimum: -1,
-              villageName: ''
-            },
-            villageItems: []
-          }
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.Target.SHOW_MAIN]
+            }
+          ],
+          name: '',
+          searched: false,
+          validity: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          value: {
+            avatar: lobby.Avatar.random,
+            comment: '',
+            hostName: '',
+            maximum: -1,
+            minimum: -1,
+            villageName: ''
+          },
+          villageItems: []
         }
-      )
+      }
+    )
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
@@ -631,55 +631,55 @@ describe('<AdvancedSearchContainer />', () => {
   })
   test('handleValidityChange', () => {
     const store = fakeStore(
-        {
-          advancedSearch: {
-            checked: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+      {
+        advancedSearch: {
+          checked: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          header: 'Header.idSearch(audience)',
+          image: '',
+          isPlayer: true,
+          menuItems: [
+            {
+              id: 'Menu.search',
+              types: [ActionTypes.Target.ADVANCED_SEARCH]
             },
-            header: 'Header.idSearch(audience)',
-            image: '',
-            isPlayer: true,
-            menuItems: [
-              {
-                id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
-              },
-              {
-                id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-              },
-              {
-                id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
-              }
-            ],
-            name: '',
-            searched: false,
-            validity: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+            {
+              id: 'Menu.returnToLobbyForHumanPlayer',
+              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
-            value: {
-              avatar: lobby.Avatar.random,
-              comment: '',
-              hostName: '',
-              maximum: -1,
-              minimum: -1,
-              villageName: ''
-            },
-            villageItems: []
-          }
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.Target.SHOW_MAIN]
+            }
+          ],
+          name: '',
+          searched: false,
+          validity: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          value: {
+            avatar: lobby.Avatar.random,
+            comment: '',
+            hostName: '',
+            maximum: -1,
+            minimum: -1,
+            villageName: ''
+          },
+          villageItems: []
         }
-      )
+      }
+    )
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
@@ -701,57 +701,127 @@ describe('<AdvancedSearchContainer />', () => {
       validity
     })
   })
+  test('selectVillage', () => {
+    const store = fakeStore(
+      {
+        advancedSearch: {
+          checked: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          header: 'Header.idSearch(audience)',
+          image: '',
+          isPlayer: true,
+          menuItems: [
+            {
+              id: 'Menu.search',
+              types: [ActionTypes.Target.ADVANCED_SEARCH]
+            },
+            {
+              id: 'Menu.returnToLobbyForHumanPlayer',
+              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            },
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.Target.SHOW_MAIN]
+            }
+          ],
+          name: '',
+          searched: false,
+          validity: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          value: {
+            avatar: lobby.Avatar.random,
+            comment: '',
+            hostName: '',
+            maximum: -1,
+            minimum: -1,
+            villageName: ''
+          },
+          villageItems: []
+        }
+      }
+    )
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <AdvancedSearchContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const id = 1
+
+    wrapper.find(AdvancedSearch).props().selectVillage(id)()
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      id,
+      type: ActionTypes.global.SELECT_VILLAGE
+    })
+  })
   test('transition', () => {
     const store = fakeStore(
-        {
-          advancedSearch: {
-            checked: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+      {
+        advancedSearch: {
+          checked: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          header: 'Header.idSearch(audience)',
+          image: '',
+          isPlayer: true,
+          menuItems: [
+            {
+              id: 'Menu.search',
+              types: [ActionTypes.Target.ADVANCED_SEARCH]
             },
-            header: 'Header.idSearch(audience)',
-            image: '',
-            isPlayer: true,
-            menuItems: [
-              {
-                id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
-              },
-              {
-                id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-              },
-              {
-                id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
-              }
-            ],
-            name: '',
-            searched: false,
-            validity: {
-              avatar: true,
-              comment: false,
-              hostName: false,
-              maximum: false,
-              minimum: false,
-              villageName: false
+            {
+              id: 'Menu.returnToLobbyForHumanPlayer',
+              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
-            value: {
-              avatar: lobby.Avatar.random,
-              comment: '',
-              hostName: '',
-              maximum: -1,
-              minimum: -1,
-              villageName: ''
-            },
-            villageItems: []
-          }
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.Target.SHOW_MAIN]
+            }
+          ],
+          name: '',
+          searched: false,
+          validity: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
+          value: {
+            avatar: lobby.Avatar.random,
+            comment: '',
+            hostName: '',
+            maximum: -1,
+            minimum: -1,
+            villageName: ''
+          },
+          villageItems: []
         }
-      )
+      }
+    )
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
