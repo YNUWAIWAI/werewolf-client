@@ -9,13 +9,19 @@ interface Props {
 }
 
 export default function AdvancedSearchProp(props: Props) {
+  const handleChange = () => {
+    if (props.valid) {
+      props.handleChange(!props.checked)
+    }
+  }
+
   return (
     <div className="advanced-search--prop">
       <input
         checked={props.checked}
         disabled={!props.valid}
         id={props.name}
-        onChange={() => props.handleChange(!props.checked)}
+        onChange={() => handleChange()}
         readOnly
         type="checkbox"
       />
