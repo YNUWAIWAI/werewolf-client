@@ -26,7 +26,6 @@ export interface State {
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
-    readonly hostName: boolean
     readonly numberOfPlayers: boolean
     readonly numberOfRobots: boolean
     readonly villageName: boolean
@@ -66,7 +65,6 @@ export const initialState: State = {
   validity: {
     avatar: true,
     comment: true,
-    hostName: true,
     numberOfPlayers: true,
     numberOfRobots: true,
     villageName: true
