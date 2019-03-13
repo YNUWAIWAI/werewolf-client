@@ -25,7 +25,6 @@ describe('buildVillage/CHANGE_AVATAR', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true
@@ -65,7 +64,6 @@ describe('buildVillage/CHANGE_AVATAR', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true
@@ -106,7 +104,6 @@ test('buildVillage/CHANGE_COMMENT', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -154,7 +151,6 @@ test('buildVillage/CHANGE_HOST_NAME', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -194,7 +190,6 @@ test('buildVillage/CHANGE_MEMBER', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -243,7 +238,6 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true
@@ -291,7 +285,6 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true
@@ -339,7 +332,6 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true
@@ -380,7 +372,6 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -422,7 +413,6 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         validity: {
           avatar: false,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true
@@ -463,48 +453,6 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         validity: {
           avatar: true,
           comment: false,
-          hostName: true,
-          numberOfPlayers: true,
-          numberOfRobots: true,
-          villageName: true
-        },
-        value: {
-          avatar: lobby.Avatar.random,
-          comment: '',
-          hostName: 'Anonymous',
-          isHuman: true,
-          member: lobby.Member.A,
-          numberOfHumans: 15,
-          numberOfPlayers: 15,
-          numberOfRobots: 0,
-          villageName: 'Cursed Village'
-        }
-      }
-    )
-  })
-  test('hostName', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'hostName',
-          type: ActionTypes.buildVillage.CHANGE_VALIDITY,
-          validity: false
-        }
-      )
-    ).toEqual(
-      {
-        image: '',
-        initialFixedValue: {
-          hostName: 'Alice',
-          villageName: 'Alice\'s village'
-        },
-        menuItems: [],
-        name: '',
-        validity: {
-          avatar: true,
-          comment: true,
-          hostName: false,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true
@@ -545,7 +493,6 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: false,
           numberOfRobots: true,
           villageName: true
@@ -586,7 +533,6 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: false,
           villageName: true
@@ -627,7 +573,6 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: false
@@ -676,7 +621,6 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -703,7 +647,6 @@ test('LEAVE_WAITING_PAGE', () => {
         validity: {
           avatar: false,
           comment: false,
-          hostName: false,
           numberOfPlayers: false,
           numberOfRobots: false,
           villageName: false
@@ -736,7 +679,6 @@ test('LEAVE_WAITING_PAGE', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -763,7 +705,6 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         validity: {
           avatar: false,
           comment: false,
-          hostName: false,
           numberOfPlayers: false,
           numberOfRobots: false,
           villageName: false
@@ -802,7 +743,6 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -829,7 +769,6 @@ test('SHOW_MAIN', () => {
         validity: {
           avatar: false,
           comment: false,
-          hostName: false,
           numberOfPlayers: false,
           numberOfRobots: false,
           villageName: false
@@ -862,7 +801,6 @@ test('SHOW_MAIN', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -889,7 +827,6 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         validity: {
           avatar: false,
           comment: false,
-          hostName: false,
           numberOfPlayers: false,
           numberOfRobots: false,
           villageName: false
@@ -928,7 +865,6 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       validity: {
         avatar: true,
         comment: true,
-        hostName: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
@@ -969,7 +905,6 @@ describe('scoket/MESSAGE', () => {
         validity: {
           avatar: true,
           comment: true,
-          hostName: true,
           numberOfPlayers: true,
           numberOfRobots: true,
           villageName: true

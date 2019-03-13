@@ -23,7 +23,6 @@ export interface Props {
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
-    readonly hostName: boolean
     readonly numberOfPlayers: boolean
     readonly numberOfRobots: boolean
     readonly villageName: boolean
@@ -59,7 +58,6 @@ export default function BuildVillageBox(props: Props) {
         return
       }
       case 'comment':
-      case 'hostName':
       case 'villageName':
         if (typeof value === 'string') {
           props.handleTextChange(propName)(value)
@@ -109,7 +107,7 @@ export default function BuildVillageBox(props: Props) {
         }
       </FormattedMessage>
       {
-        props.value.avatar === 'fixed' ?
+        props.value.avatar === lobby.Avatar.fixed ?
           <FormattedMessage
             id="BuildVillage.placeholder"
             values={villageName}
@@ -158,7 +156,7 @@ export default function BuildVillageBox(props: Props) {
         }
       </FormattedMessage>
       {
-        props.value.avatar === 'fixed' ?
+        props.value.avatar === lobby.Avatar.fixed ?
           <div className="village--item--val host-name">
             {props.value.hostName}
           </div> :

@@ -20,7 +20,6 @@ export interface StateProps {
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
-    readonly hostName: boolean
     readonly numberOfPlayers: boolean
     readonly numberOfRobots: boolean
     readonly villageName: boolean

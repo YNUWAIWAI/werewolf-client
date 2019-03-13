@@ -13,7 +13,6 @@ test('<BuildVillage />', () => {
   const validity = {
     avatar: true,
     comment: true,
-    hostName: true,
     numberOfPlayers: true,
     numberOfRobots: true,
     villageName: true
