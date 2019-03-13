@@ -23,7 +23,7 @@ describe('<BuildVillageContainer />', () => {
 
       expect(wrapper.html()).toMatchSnapshot()
     })
-    test('buildVillage is enable', () => {
+    test('buildVillage is enabled', () => {
       const store = fakeStore(
         {
           buildVillage: {
@@ -63,7 +63,7 @@ describe('<BuildVillageContainer />', () => {
 
       expect(wrapper.html()).toMatchSnapshot()
     })
-    test('buildVillage is disable', () => {
+    test('buildVillage is disabled', () => {
       const store = fakeStore(
         {
           buildVillage: {

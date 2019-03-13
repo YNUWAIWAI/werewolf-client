@@ -54,10 +54,10 @@ describe('<HistoryContainer />', () => {
       </Provider>
     )
 
-    wrapper.find(History).props().transition(ActionTypes.Target.SHOW_BUILD_VILLAGE)
+    wrapper.find(History).props().transition(ActionTypes.Target.SHOW_MAIN)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.Target.SHOW_BUILD_VILLAGE
+      type: ActionTypes.Target.SHOW_MAIN
     })
   })
 })
