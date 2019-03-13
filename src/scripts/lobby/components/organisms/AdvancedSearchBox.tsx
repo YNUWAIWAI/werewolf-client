@@ -79,9 +79,9 @@ export default function AdvancedSearchBox(props: Props) {
         break
       case 'comment':
       case 'hostName':
-      case 'villageName':
       case 'maximum':
       case 'minimum':
+      case 'villageName':
         props.handleCheckboxChange(propName)(checked)
         break
       default:
@@ -133,6 +133,7 @@ export default function AdvancedSearchBox(props: Props) {
           }
         }
       </FormattedMessage>
+
       <AdvancedSearchProp
         checked={props.checked.hostName}
         handleChange={handleCheckboxChange('hostName')}
@@ -163,6 +164,7 @@ export default function AdvancedSearchBox(props: Props) {
           }
         }
       </FormattedMessage>
+
       <AdvancedSearchProp
         checked={props.checked.minimum}
         handleChange={handleCheckboxChange('minimum')}
