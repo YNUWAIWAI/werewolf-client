@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {enterHumanPlayerLobby, enterOnymousAudienceLobby, enterRobotPlayerLobby} from './fakeServer'
+import {avatar, enterHumanPlayerLobby, enterOnymousAudienceLobby, enterRobotPlayerLobby} from './fakeServer'
 import reducer, {initialState} from './lobbyForHumanPlayer'
 
 test('REFRESH', () => {
@@ -43,6 +43,23 @@ test('REFRESH', () => {
   )
 })
 describe('socket/MESSAGE', () => {
+  test('avatar', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          payload: avatar,
+          type: ActionTypes.socket.MESSAGE
+        }
+      )
+    ).toEqual(
+      {
+        ... initialState,
+        image: '/assets/images/avatar/default/user.png',
+        name: 'Alice'
+      }
+    )
+  })
   test('human player', () => {
     expect(
       reducer(

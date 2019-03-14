@@ -906,6 +906,48 @@ test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
     }
   )
 })
+test('SHOW_ADVANCED_SEARCH', () => {
+  expect(
+    reducer(
+      {
+        ... initialState,
+        checked: {
+          avatar: true,
+          comment: true,
+          hostName: true,
+          maximum: true,
+          minimum: true,
+          villageName: true
+        },
+        searched: true,
+        validity: {
+          avatar: true,
+          comment: true,
+          hostName: true,
+          maximum: true,
+          minimum: true,
+          villageName: true
+        },
+        value: {
+          avatar: lobby.Avatar.random,
+          comment: 'comment',
+          hostName: 'hostName',
+          maximum: 10,
+          minimum: 5,
+          villageName: 'Cursed Village'
+        }
+      },
+      {
+        type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
+      }
+    )
+  ).toEqual(
+    {
+      ... initialState,
+      searched: false
+    }
+  )
+})
 test('SHOW_LOBBY_FOR_AUDIENCE', () => {
   expect(
     reducer(

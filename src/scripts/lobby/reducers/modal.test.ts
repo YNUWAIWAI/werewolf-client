@@ -60,7 +60,7 @@ test('SELECT_YES', () => {
         visible: true
       },
       {
-        type: ActionTypes.global.SELECT_NO
+        type: ActionTypes.global.SELECT_YES
       }
     )
   ).toEqual({

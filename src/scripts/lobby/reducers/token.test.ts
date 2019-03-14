@@ -2,6 +2,27 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './token'
 
+test('CHANGE_LOBBY', () => {
+  expect(
+    reducer(
+      {
+        ... initialState,
+        lobby: lobby.Lobby.human
+      },
+      {
+        lobby: lobby.Lobby.robot,
+        type: ActionTypes.global.CHANGE_LOBBY
+      }
+    )
+  ).toEqual(
+    {
+      [lobby.Lobby.human]: '',
+      lobby: lobby.Lobby.robot,
+      [lobby.Lobby.audience]: '',
+      [lobby.Lobby.robot]: ''
+    }
+  )
+})
 describe('CHANGE_TOKEN', () => {
   test('human player', () => {
     expect(

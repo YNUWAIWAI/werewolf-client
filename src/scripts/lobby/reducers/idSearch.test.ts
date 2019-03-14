@@ -6,6 +6,51 @@ import {
 } from './fakeServer'
 import reducer, {initialState} from './idSearch'
 
+test('ID_SEARCH', () => {
+  expect(
+    reducer(
+      {
+        ... initialState,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ID_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ]
+      },
+      {
+        type: ActionTypes.Target.ID_SEARCH
+      }
+    )
+  ).toEqual(
+    {
+      ... initialState,
+      menuItems: [
+        {
+          id: 'Menu.search',
+          isLoading: true,
+          types: [ActionTypes.Target.ID_SEARCH]
+        },
+        {
+          id: 'Menu.returnToLobbyForAudience',
+          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+        },
+        {
+          id: 'Menu.returnToMainPage',
+          types: [ActionTypes.Target.SHOW_MAIN]
+        }
+      ]
+    }
+  )
+})
 test('SHOW_LOBBY_FOR_AUDIENCE', () => {
   expect(
     reducer(
