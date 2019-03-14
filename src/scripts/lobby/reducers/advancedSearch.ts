@@ -68,7 +68,7 @@ export const initialState: State = {
     minimum: false,
     villageName: false
   },
-  header: '',
+  header: '@dummy',
   image: '',
   isPlayer: true,
   menuItems: [],

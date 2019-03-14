@@ -24,7 +24,8 @@ test('ADVANCED_SEARCH', () => {
             id: 'Menu.returnToMainPage',
             types: [ActionTypes.Target.SHOW_MAIN]
           }
-        ]
+        ],
+        searched: false
       },
       {
         type: ActionTypes.Target.ADVANCED_SEARCH
@@ -32,17 +33,7 @@ test('ADVANCED_SEARCH', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      header: '',
-      image: '',
-      isPlayer: true,
+      ... initialState,
       menuItems: [
         {
           id: 'Menu.search',
@@ -58,25 +49,7 @@ test('ADVANCED_SEARCH', () => {
           types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      value: {
-        avatar: 'random',
-        comment: '',
-        hostName: '',
-        maximum: -1,
-        minimum: -1,
-        villageName: ''
-      },
-      villageItems: []
+      searched: false
     }
   )
 })
@@ -91,37 +64,11 @@ test('advancedSearch/CHANGE_AVATAR', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      header: '',
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       value: {
-        avatar: 'fixed',
-        comment: '',
-        hostName: '',
-        maximum: -1,
-        minimum: -1,
-        villageName: ''
-      },
-      villageItems: []
+        ... initialState.value,
+        avatar: lobby.Avatar.fixed
+      }
     }
   )
 })
@@ -138,37 +85,11 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.checked,
+          avatar: true
+        }
       }
     )
   })
@@ -184,37 +105,11 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         checked: {
-          avatar: true,
-          comment: true,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.checked,
+          comment: true
+        }
       }
     )
   })
@@ -230,37 +125,11 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         checked: {
-          avatar: true,
-          comment: false,
-          hostName: true,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.checked,
+          hostName: true
+        }
       }
     )
   })
@@ -276,37 +145,11 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: true,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.checked,
+          maximum: true
+        }
       }
     )
   })
@@ -322,37 +165,11 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: true,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.checked,
+          minimum: true
+        }
       }
     )
   })
@@ -368,37 +185,11 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
       )
     ).toEqual(
       {
+        ... initialState,
         checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
+          ... initialState.checked,
           villageName: true
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+        }
       }
     )
   })
@@ -414,37 +205,11 @@ test('advancedSearch/CHANGE_COMMENT', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      header: '',
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       value: {
-        avatar: 'random',
-        comment: 'comment',
-        hostName: '',
-        maximum: -1,
-        minimum: -1,
-        villageName: ''
-      },
-      villageItems: []
+        ... initialState.value,
+        comment: 'comment'
+      }
     }
   )
 })
@@ -459,37 +224,11 @@ test('advancedSearch/CHANGE_HOST_NAME', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      header: '',
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       value: {
-        avatar: 'random',
-        comment: '',
-        hostName: 'hostName',
-        maximum: -1,
-        minimum: -1,
-        villageName: ''
-      },
-      villageItems: []
+        ... initialState.value,
+        hostName: 'hostName'
+      }
     }
   )
 })
@@ -504,37 +243,11 @@ test('advancedSearch/CHANGE_MAXIMUM', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      header: '',
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       value: {
-        avatar: 'random',
-        comment: '',
-        hostName: '',
-        maximum: 15,
-        minimum: -1,
-        villageName: ''
-      },
-      villageItems: []
+        ... initialState.value,
+        maximum: 15
+      }
     }
   )
 })
@@ -549,37 +262,11 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      header: '',
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       value: {
-        avatar: 'random',
-        comment: '',
-        hostName: '',
-        maximum: -1,
-        minimum: 4,
-        villageName: ''
-      },
-      villageItems: []
+        ... initialState.value,
+        minimum: 4
+      }
     }
   )
 })
@@ -596,37 +283,11 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
+        ... initialState,
         validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.validity,
+          avatar: true
+        }
       }
     )
   })
@@ -642,37 +303,11 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
+        ... initialState,
         validity: {
-          avatar: true,
-          comment: true,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.validity,
+          comment: true
+        }
       }
     )
   })
@@ -688,37 +323,11 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
+        ... initialState,
         validity: {
-          avatar: true,
-          comment: false,
-          hostName: true,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.validity,
+          hostName: true
+        }
       }
     )
   })
@@ -734,37 +343,11 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
+        ... initialState,
         validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: true,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.validity,
+          maximum: true
+        }
       }
     )
   })
@@ -780,37 +363,11 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
+        ... initialState,
         validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: true,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+          ... initialState.validity,
+          minimum: true
+        }
       }
     )
   })
@@ -826,37 +383,11 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
-        menuItems: [],
-        name: '',
-        searched: false,
+        ... initialState,
         validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
+          ... initialState.validity,
           villageName: true
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+        }
       }
     )
   })
@@ -872,37 +403,11 @@ test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      header: '',
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       value: {
-        avatar: 'random',
-        comment: '',
-        hostName: '',
-        maximum: -1,
-        minimum: -1,
+        ... initialState.value,
         villageName: 'villageName'
-      },
-      villageItems: []
+      }
     }
   )
 })
@@ -958,16 +463,8 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       header: 'Header.advancedSearch(audience)',
-      image: '',
       isPlayer: false,
       menuItems: [
         {
@@ -983,24 +480,6 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
           types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      value: {
-        avatar: 'random',
-        comment: '',
-        hostName: '',
-        maximum: -1,
-        minimum: -1,
-        villageName: ''
-      },
       villageItems: []
     }
   )
@@ -1015,16 +494,8 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       header: 'Header.advancedSearch(human player)',
-      image: '',
       isPlayer: true,
       menuItems: [
         {
@@ -1040,24 +511,6 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
           types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      value: {
-        avatar: 'random',
-        comment: '',
-        hostName: '',
-        maximum: -1,
-        minimum: -1,
-        villageName: ''
-      },
       villageItems: []
     }
   )
@@ -1072,16 +525,8 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     )
   ).toEqual(
     {
-      checked: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
+      ... initialState,
       header: 'Header.advancedSearch(robot player)',
-      image: '',
       isPlayer: true,
       menuItems: [
         {
@@ -1097,24 +542,6 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
           types: [ActionTypes.Target.SHOW_MAIN]
         }
       ],
-      name: '',
-      searched: false,
-      validity: {
-        avatar: true,
-        comment: false,
-        hostName: false,
-        maximum: false,
-        minimum: false,
-        villageName: false
-      },
-      value: {
-        avatar: 'random',
-        comment: '',
-        hostName: '',
-        maximum: -1,
-        minimum: -1,
-        villageName: ''
-      },
       villageItems: []
     }
   )
@@ -1131,37 +558,9 @@ describe('socket/MESSAGE', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
+        ... initialState,
         image: '/assets/images/avatar/default/user.png',
-        isPlayer: true,
-        menuItems: [],
-        name: 'Alice',
-        searched: false,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
-        villageItems: []
+        name: 'Alice'
       }
     )
   })
@@ -1193,17 +592,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toEqual(
       {
-        checked: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        header: '',
-        image: '',
-        isPlayer: true,
+        ... initialState,
         menuItems: [
           {
             id: 'Menu.search',
@@ -1219,24 +608,7 @@ describe('socket/MESSAGE', () => {
             types: [ActionTypes.global.SHOW_MAIN]
           }
         ],
-        name: '',
         searched: true,
-        validity: {
-          avatar: true,
-          comment: false,
-          hostName: false,
-          maximum: false,
-          minimum: false,
-          villageName: false
-        },
-        value: {
-          avatar: 'random',
-          comment: '',
-          hostName: '',
-          maximum: -1,
-          minimum: -1,
-          villageName: ''
-        },
         villageItems: [
           {
             avatar: 'fixed',
