@@ -3,7 +3,6 @@ import BuildVillage, {DispatchProps, StateProps} from '../components/templates/B
 import {
   BuildVillage$ChangeAvatar,
   BuildVillage$ChangeComment,
-  BuildVillage$ChangeHostName,
   BuildVillage$ChangeMember,
   BuildVillage$ChangeNumberOfPlayers,
   BuildVillage$ChangeNumberOfRobots,
@@ -12,7 +11,6 @@ import {
   Transition,
   changeAvatar,
   changeComment,
-  changeHostName,
   changeMember,
   changeNumberOfPlayers,
   changeNumberOfRobots,
@@ -27,7 +25,6 @@ import {connect} from 'react-redux'
 type Action =
   | BuildVillage$ChangeAvatar
   | BuildVillage$ChangeComment
-  | BuildVillage$ChangeHostName
   | BuildVillage$ChangeMember
   | BuildVillage$ChangeNumberOfPlayers
   | BuildVillage$ChangeNumberOfRobots
@@ -89,9 +86,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleTextChange: propName => value => {
     if (propName === 'comment') {
       dispatch(changeComment(ActionTypes.Scope.buildVillage)(value))
-    }
-    if (propName === 'hostName') {
-      dispatch(changeHostName(ActionTypes.Scope.buildVillage)(value))
     }
     if (propName === 'villageName') {
       dispatch(changeVillageName(ActionTypes.Scope.buildVillage)(value))

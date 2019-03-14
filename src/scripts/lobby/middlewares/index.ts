@@ -19,7 +19,6 @@ type Action =
   | actions.AdvancedSearch$ChangeVillageName
   | actions.BuildVillage$ChangeAvatar
   | actions.BuildVillage$ChangeComment
-  | actions.BuildVillage$ChangeHostName
   | actions.BuildVillage$ChangeMember
   | actions.BuildVillage$ChangeNumberOfPlayers
   | actions.BuildVillage$ChangeNumberOfRobots

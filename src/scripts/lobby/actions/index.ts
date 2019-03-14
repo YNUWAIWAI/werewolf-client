@@ -54,19 +54,10 @@ export const changeComment = (scope: ActionTypes.Scope.advancedSearch | ActionTy
     type: ActionTypes[scope].CHANGE_COMMENT
   }
 }
-export const changeHostName = (scope: ActionTypes.Scope.advancedSearch | ActionTypes.Scope.buildVillage) => (hostName: string): {hostName: string, type: ActionTypes.advancedSearch.CHANGE_HOST_NAME} | {hostName: string, type: ActionTypes.buildVillage.CHANGE_HOST_NAME} => {
-  if (scope === ActionTypes.Scope.advancedSearch) {
-    return {
-      hostName,
-      type: ActionTypes[scope].CHANGE_HOST_NAME
-    }
-  }
-
-  return {
-    hostName,
-    type: ActionTypes[scope].CHANGE_HOST_NAME
-  }
-}
+export const changeHostName = (scope: ActionTypes.Scope.advancedSearch) => (hostName: string): {hostName: string, type: ActionTypes.advancedSearch.CHANGE_HOST_NAME} => ({
+  hostName,
+  type: ActionTypes[scope].CHANGE_HOST_NAME
+})
 export const changeLanguage = (language: lobby.Language): {language: lobby.Language, type: ActionTypes.global.CHANGE_LANGUAGE} => ({
   language,
   type: ActionTypes.global.CHANGE_LANGUAGE
@@ -185,7 +176,6 @@ export type AdvancedSearch$ChangeValidity = ReturnType<ReturnType<ReturnType<typ
 export type AdvancedSearch$ChangeVillageName = ReturnType<ReturnType<typeof changeVillageName>>
 export type BuildVillage$ChangeAvatar = ReturnType<ReturnType<typeof changeAvatar>>
 export type BuildVillage$ChangeComment = ReturnType<ReturnType<typeof changeComment>>
-export type BuildVillage$ChangeHostName = ReturnType<ReturnType<typeof changeHostName>>
 export type BuildVillage$ChangeMember = ReturnType<ReturnType<typeof changeMember>>
 export type BuildVillage$ChangeNumberOfPlayers = ReturnType<ReturnType<typeof changeNumberOfPlayers>>
 export type BuildVillage$ChangeNumberOfRobots = ReturnType<ReturnType<typeof changeNumberOfRobots>>

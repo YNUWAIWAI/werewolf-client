@@ -210,27 +210,6 @@ describe('<BuildVillageContainer />', () => {
         type: ActionTypes.buildVillage.CHANGE_COMMENT
       })
     })
-    test('hostName', () => {
-      const store = fakeStore()
-      const dispatch = jest.fn()
-
-      store.dispatch = dispatch
-      const wrapper = mount(
-        <Provider store={store} >
-          <IntlProviderContainer>
-            <BuildVillageContainer />
-          </IntlProviderContainer>
-        </Provider>
-      )
-      const hostName = 'hostName'
-
-      wrapper.find(BuildVillage).props().handleTextChange('hostName')(hostName)
-      expect(dispatch).toHaveBeenCalledTimes(1)
-      expect(dispatch).toHaveBeenCalledWith({
-        hostName,
-        type: ActionTypes.buildVillage.CHANGE_HOST_NAME
-      })
-    })
     test('villageName', () => {
       const store = fakeStore()
       const dispatch = jest.fn()
