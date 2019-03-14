@@ -11,7 +11,7 @@ type PropName = 'avatar' | 'comment' | 'hostName' | 'member' | 'numberOfPlayers'
 
 type NumberPropName = Extract<PropName, 'numberOfPlayers' | 'numberOfRobots'>
 
-type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
+type TextPropName = Extract<PropName, 'comment' | 'villageName'>
 
 export interface StateProps {
   readonly image: string
