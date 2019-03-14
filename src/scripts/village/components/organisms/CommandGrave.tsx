@@ -14,7 +14,7 @@ export interface DispatchProps {
 }
 export interface Props extends StateProps, DispatchProps {}
 
-export default function CommandPostMortem(props: Props) {
+export default function CommandGrave(props: Props) {
   return (
     <>
       <CommandInput
