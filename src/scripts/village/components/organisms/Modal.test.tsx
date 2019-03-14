@@ -54,7 +54,7 @@ describe('<Modal />', () => {
       </Provider>
     )
 
-    expect(wrapper.find('.modal').hasClass('hidden')).toBe(true)
+    expect(wrapper.isEmptyRender()).toBe(true)
   })
   test('handleClickNo', () => {
     const handleClickNoMockFn = jest.fn()

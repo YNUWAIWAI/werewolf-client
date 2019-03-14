@@ -17,8 +17,12 @@ export interface DispatchProps {
 export interface Props extends StateProps, DispatchProps {}
 
 export default function Modal(props: Props) {
+  if (!props.visible) {
+    return null
+  }
+
   return (
-    <div className={`modal ${props.visible ? '' : 'hidden'}`}>
+    <div className="modal">
       <AgentIcon className="modal--icon" image={props.image} name={props.name} />
       <Description className="modal--description" id={props.descriptionId} />
       <FormattedMessage
