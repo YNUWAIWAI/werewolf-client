@@ -3,7 +3,6 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   BuildVillage$ChangeAvatar,
   BuildVillage$ChangeComment,
-  BuildVillage$ChangeHostName,
   BuildVillage$ChangeMember,
   BuildVillage$ChangeNumberOfPlayers,
   BuildVillage$ChangeNumberOfRobots,
@@ -45,7 +44,6 @@ export interface State {
 type Action =
   | BuildVillage$ChangeAvatar
   | BuildVillage$ChangeComment
-  | BuildVillage$ChangeHostName
   | BuildVillage$ChangeMember
   | BuildVillage$ChangeNumberOfPlayers
   | BuildVillage$ChangeNumberOfRobots
@@ -111,14 +109,6 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         value: {
           ... state.value,
           comment: action.comment
-        }
-      }
-    case ActionTypes.buildVillage.CHANGE_HOST_NAME:
-      return {
-        ... state,
-        value: {
-          ... state.value,
-          hostName: action.hostName
         }
       }
     case ActionTypes.buildVillage.CHANGE_MEMBER:
