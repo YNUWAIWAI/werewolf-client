@@ -197,6 +197,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -264,6 +265,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -331,6 +333,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -398,6 +401,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -465,6 +469,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -532,6 +537,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -599,6 +605,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -666,6 +673,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -733,6 +741,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -800,6 +809,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -867,6 +877,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },
@@ -934,6 +945,7 @@ storiesOf('lobby|WaitingForPlayers', module)
     }
     const menuItems = [
       {
+        disabled: true,
         id: 'Menu.playGame',
         types: [ActionTypes.Target.PLAY_GAME]
       },

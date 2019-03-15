@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage, injectIntl} from 'react-intl'
+import Close from '../atoms/svg/Close'
 import Danger from '../atoms/svg/Danger'
 import Safe from '../atoms/svg/Safe'
 import Warning from '../atoms/svg/Warning'
@@ -34,7 +35,7 @@ export default injectIntl(function AvatarItem(props: Props) {
 
   return (
     <div
-      className={`lo--avatar-list--item ${props.isMe ? 'me' : ''}`}
+      className={`lo--avatar-list--item ${props.isMe ? 'me' : ''} ${props.canKickOut ? 'can-kick-out' : ''}`}
       onClick={() => handleClick()}
     >
       <div className="lo--avatar-list--item--image">
@@ -74,6 +75,11 @@ export default injectIntl(function AvatarItem(props: Props) {
         <Status />
         {props.ping.padStart(8, '0')}
       </div>
+      {
+        props.canKickOut ?
+          <Close className="lo--avatar-list--item--kick-out" /> :
+          null
+      }
     </div>
   )
 })
