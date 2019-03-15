@@ -46,7 +46,7 @@ export interface Props extends StateProps, DispatchProps {}
 
 export default function BuildVillage(props: Props) {
   return (
-    <div className="grid">
+    <div className="lo--grid">
       <Header id="Header.buildVillage" />
       <Avatar image={props.image} name={props.name} />
       <MainContent>
@@ -62,8 +62,8 @@ export default function BuildVillage(props: Props) {
       </MainContent>
       <AsideContent>
         <Menu
-          class="compact-menu"
-          itemClass="compact-menu--item"
+          class="lo--compact-menu"
+          itemClass="lo--compact-menu--item"
           items={props.menuItems}
           transition={props.transition}
         />

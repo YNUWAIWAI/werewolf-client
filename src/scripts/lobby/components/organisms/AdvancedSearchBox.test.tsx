@@ -46,7 +46,7 @@ describe('<AdvancedSearchBox />', () => {
       />
     )
 
-    expect(wrapper.find('.advanced-search').children()).toHaveLength(12)
+    expect(wrapper.find('.lo--advanced-search').children()).toHaveLength(12)
   })
   describe('handleValueChange', () => {
     const checked = {
@@ -89,7 +89,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(9).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
           .onChange({
             label: 'Unspecified',
             value: lobby.Avatar.unspecified
@@ -127,7 +127,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(9).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
           .onChange([])
         expect(handleAvatarChange).toHaveBeenCalledTimes(1)
         expect(handleAvatarChange).toHaveBeenCalledWith(lobby.Avatar.random)
@@ -162,7 +162,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(9).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
           .onChange(undefined)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
@@ -192,7 +192,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(9).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
           .onChange(null)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
@@ -224,7 +224,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(11).find('textarea').simulate('change', {
+        wrapper.find('.lo--advanced-search').childAt(11).find('textarea').simulate('change', {
           target: {
             validity: {
               valid: true
@@ -267,7 +267,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(11).find('textarea').simulate('change', {
+        wrapper.find('.lo--advanced-search').childAt(11).find('textarea').simulate('change', {
           target: {
             validity: {
               valid: false
@@ -310,7 +310,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(11).find('textarea').simulate('change', {
+        wrapper.find('.lo--advanced-search').childAt(11).find('textarea').simulate('change', {
           target: {
             validity: {
               valid: true
@@ -355,7 +355,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(3).find('input').simulate('change', {
+        wrapper.find('.lo--advanced-search').childAt(3).find('input').simulate('change', {
           target: {
             validity: {
               valid: true
@@ -398,7 +398,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(3).find('input').simulate('change', {
+        wrapper.find('.lo--advanced-search').childAt(3).find('input').simulate('change', {
           target: {
             validity: {
               valid: false
@@ -443,7 +443,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(7).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
           .onChange({
             label: '4 players',
             value: 4
@@ -483,7 +483,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(7).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
           .onChange([])
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(1)
         expect(handleNumberChangeInner).toHaveBeenCalledWith(-1)
@@ -520,7 +520,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(7).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
           .onChange(undefined)
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -551,7 +551,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(7).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
           .onChange(null)
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -584,7 +584,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(5).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
           .onChange({
             label: '4 players',
             value: 4
@@ -624,7 +624,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(5).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
           .onChange([])
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(1)
         expect(handleNumberChangeInner).toHaveBeenCalledWith(-1)
@@ -661,7 +661,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(5).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
           .onChange(undefined)
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -692,7 +692,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(5).find(Select).props()
+        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
           .onChange(null)
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -725,7 +725,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(1).find('input').simulate('change', {
+        wrapper.find('.lo--advanced-search').childAt(1).find('input').simulate('change', {
           target: {
             validity: {
               valid: true
@@ -768,7 +768,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(1).find('input').simulate('change', {
+        wrapper.find('.lo--advanced-search').childAt(1).find('input').simulate('change', {
           target: {
             validity: {
               valid: false
@@ -832,7 +832,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(8).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(8).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
       })
@@ -859,7 +859,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(8).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(8).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
       })
@@ -888,7 +888,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(10).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(10).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
@@ -917,7 +917,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(10).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(10).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
       })
@@ -947,7 +947,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(2).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(2).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
@@ -976,7 +976,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(2).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(2).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
       })
@@ -1005,7 +1005,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(6).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(6).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
@@ -1035,7 +1035,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(6).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(6).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
       })
@@ -1064,7 +1064,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(4).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(4).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
@@ -1093,7 +1093,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(4).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(4).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
       })
@@ -1122,7 +1122,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(0).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(0).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
@@ -1151,7 +1151,7 @@ describe('<AdvancedSearchBox />', () => {
           />
         )
 
-        wrapper.find('.advanced-search').childAt(0).find('input').simulate('change')
+        wrapper.find('.lo--advanced-search').childAt(0).find('input').simulate('change')
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
       })

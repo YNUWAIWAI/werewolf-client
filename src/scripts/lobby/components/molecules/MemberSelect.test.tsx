@@ -58,7 +58,7 @@ test('render', () => {
   )
 
   expect(wrapper.children().children()).toHaveLength(5)
-  expect(wrapper.find('.village--item--member-select--human').text()).toBe('max 7 humans')
+  expect(wrapper.find('.lo--village--item--member-select--human').text()).toBe('max 7 humans')
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleMemberChangeInner).toHaveBeenCalledTimes(0)
   expect(handleNumberChange).toHaveBeenCalledTimes(0)

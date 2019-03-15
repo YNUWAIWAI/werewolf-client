@@ -6,7 +6,7 @@ interface Props {
 
 export default function MainContent(props: Props) {
   return (
-    <div className="main-content">
+    <div className="lo--main-content">
       {props.children}
     </div>
   )

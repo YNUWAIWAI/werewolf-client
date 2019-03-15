@@ -155,24 +155,24 @@ export default class SettingsBox extends React.Component<Props, State> {
   }
   public render() {
     return (
-      <div className="settings">
-        <div className="settings--bucket">
+      <div className="lo--settings">
+        <div className="lo--settings--bucket">
           <FormattedMessage
             id="Settings.head(language)"
           >
             {
               text =>
-                <div className="settings--bucket--head">
+                <div className="lo--settings--bucket--head">
                   {text}
                 </div>
             }
           </FormattedMessage>
           <form
-            className="settings--bucket--form"
+            className="lo--settings--bucket--form"
             onSubmit={event => this.handleSubmit(PropName.language)(event)}
           >
             <LanguageSelect
-              className="settings--bucket--form--field"
+              className="lo--settings--bucket--form--field"
               defaultValue={this.props.initialValue.language}
               handleChange={(() => this.handleChange(PropName.language))()}
             />
@@ -182,7 +182,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <button
-                    className="settings--bucket--form--button"
+                    className="lo--settings--bucket--form--button"
                     disabled={!this.state.language.valid}
                     type="submit"
                   >
@@ -192,19 +192,19 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
           </form>
         </div>
-        <div className="settings--bucket">
+        <div className="lo--settings--bucket">
           <FormattedMessage
             id="Settings.head(user)"
           >
             {
               text =>
-                <div className="settings--bucket--head">
+                <div className="lo--settings--bucket--head">
                   {text}
                 </div>
             }
           </FormattedMessage>
           <form
-            className="settings--bucket--form"
+            className="lo--settings--bucket--form"
             onSubmit={event => this.handleSubmit(PropName.userName)(event)}
           >
             <FormattedMessage
@@ -213,7 +213,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <label
-                    className="settings--bucket--form--label"
+                    className="lo--settings--bucket--form--label"
                     htmlFor="userName"
                   >
                     {text}
@@ -221,7 +221,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               }
             </FormattedMessage>
             <TextInput
-              className="settings--bucket--form--field"
+              className="lo--settings--bucket--form--field"
               handleChange={(() => this.handleChange(PropName.userName))()}
               id="userName"
               initialValue={this.props.initialValue.userName}
@@ -236,7 +236,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <button
-                    className="settings--bucket--form--button"
+                    className="lo--settings--bucket--form--button"
                     disabled={!this.state.userName.valid}
                     type="submit"
                   >
@@ -246,7 +246,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
           </form>
           <form
-            className="settings--bucket--form"
+            className="lo--settings--bucket--form"
             onSubmit={event => this.handleSubmit(PropName.userEmail)(event)}
           >
             <FormattedMessage
@@ -255,7 +255,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <label
-                    className="settings--bucket--form--label"
+                    className="lo--settings--bucket--form--label"
                     htmlFor="userEmail"
                   >
                     {text}
@@ -263,7 +263,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               }
             </FormattedMessage>
             <EmailInput
-              className="settings--bucket--form--field"
+              className="lo--settings--bucket--form--field"
               handleChange={(() => this.handleChange(PropName.userEmail))()}
               id="userEmail"
               initialValue={this.props.initialValue.userEmail}
@@ -274,7 +274,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <button
-                    className="settings--bucket--form--button"
+                    className="lo--settings--bucket--form--button"
                     disabled={!this.state.userEmail.valid}
                     type="submit"
                   >
@@ -284,7 +284,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
           </form>
           <form
-            className="settings--bucket--form"
+            className="lo--settings--bucket--form"
             onSubmit={event => this.handleSubmit(PropName.userPassword)(event)}
           >
             <FormattedMessage
@@ -293,7 +293,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <label
-                    className="settings--bucket--form--label"
+                    className="lo--settings--bucket--form--label"
                     htmlFor="userPassword"
                   >
                     {text}
@@ -301,7 +301,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               }
             </FormattedMessage>
             <PasswordInput
-              className="settings--bucket--form--field"
+              className="lo--settings--bucket--form--field"
               handleChange={(() => this.handleChange(PropName.userPassword))()}
               id="userPassword"
             />
@@ -311,7 +311,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <button
-                    className="settings--bucket--form--button"
+                    className="lo--settings--bucket--form--button"
                     disabled={!this.state.userPassword.valid}
                     type="submit"
                   >
@@ -321,19 +321,19 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
           </form>
         </div>
-        <div className="settings--bucket danger">
+        <div className="lo--settings--bucket danger">
           <FormattedMessage
             id="Settings.head(danger)"
           >
             {
               text =>
-                <div className="settings--bucket--head danger">
+                <div className="lo--settings--bucket--head danger">
                   {text}
                 </div>
             }
           </FormattedMessage>
           <form
-            className="settings--bucket--form danger"
+            className="lo--settings--bucket--form danger"
             onSubmit={event => this.handleSubmit(PropName.logout)(event)}
           >
             <FormattedMessage
@@ -342,7 +342,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <button
-                    className={`settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
+                    className={`lo--settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     type="submit"
                   >
                     {text}
@@ -351,7 +351,7 @@ export default class SettingsBox extends React.Component<Props, State> {
             </FormattedMessage>
           </form>
           <form
-            className="settings--bucket--form danger"
+            className="lo--settings--bucket--form danger"
             onSubmit={event => this.handleSubmit(PropName.deactivate)(event)}
           >
             <FormattedMessage
@@ -360,7 +360,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               {
                 text =>
                   <button
-                    className={`settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
+                    className={`lo--settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     disabled
                     type="submit"
                   >

@@ -29,7 +29,7 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item--name').text()).toBe('Anonymous')
+        expect(wrapper.find('.lo--avatar-list--item--name').text()).toBe('Anonymous')
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
       test('false', () => {
@@ -49,7 +49,7 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item--name').text()).toBe('name')
+        expect(wrapper.find('.lo--avatar-list--item--name').text()).toBe('name')
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
     })
@@ -71,8 +71,8 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item--host').exists()).toBe(true)
-        expect(wrapper.find('.avatar-list--item--host').text()).toBe('Host')
+        expect(wrapper.find('.lo--avatar-list--item--host').exists()).toBe(true)
+        expect(wrapper.find('.lo--avatar-list--item--host').text()).toBe('Host')
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
       test('false', () => {
@@ -92,7 +92,7 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item--host').exists()).toBe(false)
+        expect(wrapper.find('.lo--avatar-list--item--host').exists()).toBe(false)
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
     })
@@ -114,7 +114,7 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(true)
+        expect(wrapper.find('.lo--avatar-list--item').hasClass('me')).toBe(true)
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
       test('false', () => {
@@ -134,7 +134,7 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item').hasClass('me')).toBe(false)
+        expect(wrapper.find('.lo--avatar-list--item').hasClass('me')).toBe(false)
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
     })
@@ -156,8 +156,8 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item--ping').find(Danger).exists()).toBe(true)
-        expect(wrapper.find('.avatar-list--item--ping').text()).toBe('99.999 s')
+        expect(wrapper.find('.lo--avatar-list--item--ping').find(Danger).exists()).toBe(true)
+        expect(wrapper.find('.lo--avatar-list--item--ping').text()).toBe('99.999 s')
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
       test('safe', () => {
@@ -177,8 +177,8 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item--ping').find(Safe).exists()).toBe(true)
-        expect(wrapper.find('.avatar-list--item--ping').text()).toBe('00.500 s')
+        expect(wrapper.find('.lo--avatar-list--item--ping').find(Safe).exists()).toBe(true)
+        expect(wrapper.find('.lo--avatar-list--item--ping').text()).toBe('00.500 s')
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
       test('warning', () => {
@@ -198,8 +198,8 @@ describe('<AvatarItem />', () => {
           />
         )
 
-        expect(wrapper.find('.avatar-list--item--ping').find(Warning).exists()).toBe(true)
-        expect(wrapper.find('.avatar-list--item--ping').text()).toBe('01.000 s')
+        expect(wrapper.find('.lo--avatar-list--item--ping').find(Warning).exists()).toBe(true)
+        expect(wrapper.find('.lo--avatar-list--item--ping').text()).toBe('01.000 s')
         expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
       })
     })

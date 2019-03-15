@@ -8,7 +8,7 @@ describe('<TextareaInput />', () => {
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <TextareaInput
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         handleChange={handleChange}
         initialValue=""
         max={100}
@@ -27,7 +27,7 @@ describe('<TextareaInput />', () => {
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <TextareaInput
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         handleChange={handleChange}
         initialValue=""
         max={100}

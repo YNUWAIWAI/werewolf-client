@@ -23,7 +23,7 @@ export default function Modal(props: Props) {
   }
 
   return (
-    <div className="modal">
+    <div className="lo--modal">
       <FormattedMessage
         id={props.descriptionId}
         values={{
@@ -33,7 +33,7 @@ export default function Modal(props: Props) {
         {
           text =>
             <div
-              className="modal--description"
+              className="lo--modal--description"
             >
               {text}
             </div>
@@ -45,7 +45,7 @@ export default function Modal(props: Props) {
         {
           text =>
             <button
-              className="modal--button yes"
+              className="lo--modal--button yes"
               onClick={() => props.handleClickYes(props.type)}
             >
               {text}
@@ -58,7 +58,7 @@ export default function Modal(props: Props) {
         {
           text =>
             <button
-              className="modal--button no"
+              className="lo--modal--button no"
               onClick={() => props.handleClickNo()}
             >
               {text}

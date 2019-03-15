@@ -30,11 +30,11 @@ describe('render', () => {
       </Provider>
     )
 
-    expect(wrapper.find('.modal--button')).toHaveLength(2)
-    expect(wrapper.find('.modal--button.yes').exists()).toBe(true)
-    expect(wrapper.find('.modal--button.yes').text()).toBe('はい')
-    expect(wrapper.find('.modal--button.no').exists()).toBe(true)
-    expect(wrapper.find('.modal--button.no').text()).toBe('いいえ')
+    expect(wrapper.find('.lo--modal--button')).toHaveLength(2)
+    expect(wrapper.find('.lo--modal--button.yes').exists()).toBe(true)
+    expect(wrapper.find('.lo--modal--button.yes').text()).toBe('はい')
+    expect(wrapper.find('.lo--modal--button.no').exists()).toBe(true)
+    expect(wrapper.find('.lo--modal--button.no').text()).toBe('いいえ')
     expect(handleClickNoMockFn).toHaveBeenCalledTimes(0)
     expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
   })
@@ -81,7 +81,7 @@ test('handleClickNo', () => {
     </Provider>
   )
 
-  wrapper.find('.modal--button.no').simulate('click')
+  wrapper.find('.lo--modal--button.no').simulate('click')
   expect(handleClickNo).toHaveBeenCalledTimes(1)
   expect(handleClickYes).toHaveBeenCalledTimes(0)
 })
@@ -105,7 +105,7 @@ test('handleClickYes', () => {
     </Provider>
   )
 
-  wrapper.find('.modal--button.yes').simulate('click')
+  wrapper.find('.lo--modal--button.yes').simulate('click')
   expect(handleClickNo).toHaveBeenCalledTimes(0)
   expect(handleClickYes).toHaveBeenCalledTimes(1)
   expect(handleClickYes).toHaveBeenCalledWith('type')

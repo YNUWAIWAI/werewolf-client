@@ -15,7 +15,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
           name="minimum"
@@ -33,7 +33,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           defaultValue={0}
           from={4}
           handleChange={handleChange}
@@ -56,7 +56,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           defaultValue={1}
           from={4}
           handleChange={handleChange}
@@ -81,7 +81,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
           name="minimum"
@@ -105,7 +105,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           from={0}
           handleChange={handleChange}
           name="minimum"
@@ -129,7 +129,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
           name="minimum"
@@ -150,7 +150,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
           name="minimum"
@@ -169,7 +169,7 @@ describe('<NumberSelect />', () => {
       const wrapper = mountWithIntl(
         <NumberSelect
           ascendingOrder
-          className="advanced-search--input"
+          className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
           name="minimum"

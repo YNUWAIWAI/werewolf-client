@@ -8,7 +8,7 @@ describe('<TextInput />', () => {
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <TextInput
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         handleChange={handleChange}
         initialValue=""
         max={30}
@@ -26,7 +26,7 @@ describe('<TextInput />', () => {
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <TextInput
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         handleChange={handleChange}
         initialValue=""
         max={30}
@@ -54,7 +54,7 @@ describe('<TextInput />', () => {
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
       <TextInput
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         handleChange={handleChange}
         initialValue=""
         max={30}

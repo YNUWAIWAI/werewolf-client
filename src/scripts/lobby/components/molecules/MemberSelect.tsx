@@ -25,7 +25,7 @@ const getMember = (role: Readonly<lobby.RoleSetting>) =>
   ORDERED_ROLE_LIST
     .map(item =>
       <MemberRole
-        className="village--item--member-select--role--item"
+        className="lo--village--item--member-select--role--item"
         id={item.id}
         image={item.image}
         key={item.id}
@@ -42,12 +42,12 @@ export default function MemberSelect(props: Props) {
   }
 
   return (
-    <div className="village--item--member-select">
-      <div className={`village--item--member-select--robot ${props.validity.numberOfRobots ? '' : 'invalid'}`}>
+    <div className="lo--village--item--member-select">
+      <div className={`lo--village--item--member-select--robot ${props.validity.numberOfRobots ? '' : 'invalid'}`}>
         <FormattedMessage id="MemberSelect.min" />
         <NumberSelect
           ascendingOrder
-          className="village--item--member-select--robot--select"
+          className="lo--village--item--member-select--robot--select"
           defaultValue={props.numberOfRobots}
           from={0}
           handleChange={props.handleNumberChange}
@@ -64,13 +64,13 @@ export default function MemberSelect(props: Props) {
       >
         {
           text =>
-            <div className="village--item--member-select--human">
+            <div className="lo--village--item--member-select--human">
               {text}
             </div>
         }
       </FormattedMessage>
-      <label className="village--item--member-select--role" data-opt="A">
-        <div className="village--item--member-select--role--radio">
+      <label className="lo--village--item--member-select--role" data-opt="A">
+        <div className="lo--village--item--member-select--role--radio">
           <input
             defaultChecked
             name="member"
@@ -83,8 +83,8 @@ export default function MemberSelect(props: Props) {
         </div>
         {member.A}
       </label>
-      <label className="village--item--member-select--role" data-opt="B">
-        <div className="village--item--member-select--role--radio">
+      <label className="lo--village--item--member-select--role" data-opt="B">
+        <div className="lo--village--item--member-select--role--radio">
           <input
             name="member"
             onChange={() => props.handleMemberChange(true)(lobby.Member.B)}
@@ -96,8 +96,8 @@ export default function MemberSelect(props: Props) {
         </div>
         {member.B}
       </label>
-      <label className="village--item--member-select--role" data-opt="C">
-        <div className="village--item--member-select--role--radio">
+      <label className="lo--village--item--member-select--role" data-opt="C">
+        <div className="lo--village--item--member-select--role--radio">
           <input
             name="member"
             onChange={() => props.handleMemberChange(true)(lobby.Member.C)}

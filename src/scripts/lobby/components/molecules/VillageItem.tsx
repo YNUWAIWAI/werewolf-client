@@ -10,7 +10,7 @@ interface Props extends Readonly<lobby.Village> {
 export default function VillageItem(props: Props) {
   return (
     <div
-      className={`village--item ${typeof props.handleClick === 'function' ? 'clickable' : ''}`}
+      className={`lo--village--item ${typeof props.handleClick === 'function' ? 'clickable' : ''}`}
       onClick={props.handleClick}
     >
       <FormattedMessage
@@ -18,15 +18,15 @@ export default function VillageItem(props: Props) {
       >
         {
           text =>
-            <div className="village--item--prop village-name">
+            <div className="lo--village--item--prop village-name">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--val village-name">
+      <div className="lo--village--item--val village-name">
         {props.name}
       </div>
-      <div className="village--item--val id-for-searching">
+      <div className="lo--village--item--val id-for-searching">
         {Number.isInteger(props.idForSearching) ? `#${props.idForSearching}` : '####'}
       </div>
       <FormattedMessage
@@ -34,14 +34,14 @@ export default function VillageItem(props: Props) {
       >
         {
           text =>
-            <div className="village--item--prop host-name">
+            <div className="lo--village--item--prop host-name">
               {text}
             </div>
         }
       </FormattedMessage>
       {
         props.avatar === 'fixed' ?
-          <div className="village--item--val host-name">
+          <div className="lo--village--item--val host-name">
             {props.hostPlayer.name}
           </div> :
           <FormattedMessage
@@ -49,7 +49,7 @@ export default function VillageItem(props: Props) {
           >
             {
               text =>
-                <div className="village--item--val host-name">
+                <div className="lo--village--item--val host-name">
                   {text}
                 </div>
             }
@@ -60,7 +60,7 @@ export default function VillageItem(props: Props) {
       >
         {
           text =>
-            <div className="village--item--prop setup">
+            <div className="lo--village--item--prop setup">
               {text}
             </div>
         }
@@ -74,7 +74,7 @@ export default function VillageItem(props: Props) {
       >
         {
           text =>
-            <div className="village--item--val setup1">
+            <div className="lo--village--item--val setup1">
               {text}
             </div>
         }
@@ -84,7 +84,7 @@ export default function VillageItem(props: Props) {
       >
         {
           text =>
-            <div className="village--item--val setup2">
+            <div className="lo--village--item--val setup2">
               {text}
             </div>
         }
@@ -95,12 +95,12 @@ export default function VillageItem(props: Props) {
       >
         {
           text =>
-            <div className="village--item--prop comment">
+            <div className="lo--village--item--prop comment">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className="village--item--val comment">
+      <div className="lo--village--item--val comment">
         {props.comment}
       </div>
     </div>

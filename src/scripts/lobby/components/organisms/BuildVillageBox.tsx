@@ -95,13 +95,13 @@ export default function BuildVillageBox(props: Props) {
   }
 
   return (
-    <div className="village--item build">
+    <div className="lo--village--item build">
       <FormattedMessage
         id="BuildVillage.label(villageName)"
       >
         {
           text =>
-            <div className="village--item--prop village-name">
+            <div className="lo--village--item--prop village-name">
               {text}
             </div>
         }
@@ -120,7 +120,7 @@ export default function BuildVillageBox(props: Props) {
 
                 return (
                   <TextInput
-                    className={`village--item--val village-name ${props.validity.villageName ? '' : 'invalid'}`}
+                    className={`lo--village--item--val village-name ${props.validity.villageName ? '' : 'invalid'}`}
                     handleChange={handleChange('villageName')}
                     initialValue={props.value.villageName}
                     max={villageName.max}
@@ -138,7 +138,7 @@ export default function BuildVillageBox(props: Props) {
             {
               text =>
                 <div
-                  className="village--item--val village-name"
+                  className="lo--village--item--val village-name"
                 >
                   {text}
                 </div>
@@ -150,14 +150,14 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           text =>
-            <div className="village--item--prop host-name">
+            <div className="lo--village--item--prop host-name">
               {text}
             </div>
         }
       </FormattedMessage>
       {
         props.value.avatar === lobby.Avatar.fixed ?
-          <div className="village--item--val host-name">
+          <div className="lo--village--item--val host-name">
             {props.value.hostName}
           </div> :
           <FormattedMessage
@@ -165,7 +165,7 @@ export default function BuildVillageBox(props: Props) {
           >
             {
               text =>
-                <div className="village--item--val host-name">
+                <div className="lo--village--item--val host-name">
                   {text}
                 </div>
             }
@@ -176,15 +176,15 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           text =>
-            <div className="village--item--prop setup">
+            <div className="lo--village--item--prop setup">
               {text}
             </div>
         }
       </FormattedMessage>
-      <div className={`village--item--val setup1 build ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
+      <div className={`lo--village--item--val setup1 build ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
         <NumberSelect
           ascendingOrder={false}
-          className="village--item--val--setup1--select"
+          className="lo--village--item--val--setup1--select"
           defaultValue={props.value.numberOfPlayers}
           from={4}
           handleChange={handleChange('numberOfPlayers')}
@@ -193,9 +193,9 @@ export default function BuildVillageBox(props: Props) {
           type="player"
         />
       </div>
-      <div className={`village--item--val setup2 build ${props.validity.avatar ? '' : 'invalid'}`}>
+      <div className={`lo--village--item--val setup2 build ${props.validity.avatar ? '' : 'invalid'}`}>
         <AvatarSelect
-          className="village--item--val--setup2--select"
+          className="lo--village--item--val--setup2--select"
           defaultValue={props.value.avatar}
           handleChange={handleChange('avatar')}
           type="buildVillage"
@@ -219,7 +219,7 @@ export default function BuildVillageBox(props: Props) {
       >
         {
           text =>
-            <div className="village--item--prop comment">
+            <div className="lo--village--item--prop comment">
               {text}
             </div>
         }
@@ -236,7 +236,7 @@ export default function BuildVillageBox(props: Props) {
 
             return (
               <TextareaInput
-                className={`village--item--val comment ${props.validity.comment ? '' : 'invalid'}`}
+                className={`lo--village--item--val comment ${props.validity.comment ? '' : 'invalid'}`}
                 handleChange={handleChange('comment')}
                 initialValue={props.value.comment}
                 max={comment.max}

@@ -51,13 +51,13 @@ describe('<VillageItem />', () => {
       />
     )
 
-    expect(wrapper.find('.village--item.clickable').exists()).toBe(true)
-    expect(wrapper.find('.village--item--val.village-name').text()).toBe('name')
-    expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('#123')
-    expect(wrapper.find('.village--item--val.host-name').text()).toBe('hostPlayer name')
-    expect(wrapper.find('.village--item--val.setup1').text()).toBe('8 / 15 players')
-    expect(wrapper.find('.village--item--val.setup2').text()).toBe('Fixed Avatar')
-    expect(wrapper.find('.village--item--val.comment').text()).toBe('comment')
+    expect(wrapper.find('.lo--village--item.clickable').exists()).toBe(true)
+    expect(wrapper.find('.lo--village--item--val.village-name').text()).toBe('name')
+    expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('#123')
+    expect(wrapper.find('.lo--village--item--val.host-name').text()).toBe('hostPlayer name')
+    expect(wrapper.find('.lo--village--item--val.setup1').text()).toBe('8 / 15 players')
+    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed Avatar')
+    expect(wrapper.find('.lo--village--item--val.comment').text()).toBe('comment')
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('isPlayer: false', () => {
@@ -104,13 +104,13 @@ describe('<VillageItem />', () => {
       />
     )
 
-    expect(wrapper.find('.village--item.clickable').exists()).toBe(true)
-    expect(wrapper.find('.village--item--val.village-name').text()).toBe('name')
-    expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('#123')
-    expect(wrapper.find('.village--item--val.host-name').text()).toBe('hostPlayer name')
-    expect(wrapper.find('.village--item--val.setup1').text()).toBe('15 players')
-    expect(wrapper.find('.village--item--val.setup2').text()).toBe('Fixed Avatar')
-    expect(wrapper.find('.village--item--val.comment').text()).toBe('comment')
+    expect(wrapper.find('.lo--village--item.clickable').exists()).toBe(true)
+    expect(wrapper.find('.lo--village--item--val.village-name').text()).toBe('name')
+    expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('#123')
+    expect(wrapper.find('.lo--village--item--val.host-name').text()).toBe('hostPlayer name')
+    expect(wrapper.find('.lo--village--item--val.setup1').text()).toBe('15 players')
+    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed Avatar')
+    expect(wrapper.find('.lo--village--item--val.comment').text()).toBe('comment')
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('isPlayer: true, idForSearching is invalid', () => {
@@ -151,7 +151,7 @@ describe('<VillageItem />', () => {
     const handleClick = jest.fn()
     const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer />)
 
-    expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('####')
+    expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('####')
   })
   test('isPlayer: true, onClick', () => {
     const village: lobby.Village = {
@@ -289,12 +289,12 @@ describe('<VillageItem />', () => {
       />
     )
 
-    expect(wrapper.find('.village--item.clickable').exists()).toBe(false)
-    expect(wrapper.find('.village--item--val.village-name').text()).toBe('name')
-    expect(wrapper.find('.village--item--val.id-for-searching').text()).toBe('#123')
-    expect(wrapper.find('.village--item--val.host-name').text()).toBe('hostPlayer name')
-    expect(wrapper.find('.village--item--val.setup1').text()).toBe('8 / 15 players')
-    expect(wrapper.find('.village--item--val.setup2').text()).toBe('Fixed Avatar')
-    expect(wrapper.find('.village--item--val.comment').text()).toBe('comment')
+    expect(wrapper.find('.lo--village--item.clickable').exists()).toBe(false)
+    expect(wrapper.find('.lo--village--item--val.village-name').text()).toBe('name')
+    expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('#123')
+    expect(wrapper.find('.lo--village--item--val.host-name').text()).toBe('hostPlayer name')
+    expect(wrapper.find('.lo--village--item--val.setup1').text()).toBe('8 / 15 players')
+    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed Avatar')
+    expect(wrapper.find('.lo--village--item--val.comment').text()).toBe('comment')
   })
 })

@@ -102,7 +102,7 @@ export default function AdvancedSearchBox(props: Props) {
   }
 
   return (
-    <div className="advanced-search">
+    <div className="lo--advanced-search">
       <AdvancedSearchProp
         checked={props.checked.villageName}
         handleChange={handleCheckboxChange('villageName')}
@@ -121,7 +121,7 @@ export default function AdvancedSearchBox(props: Props) {
 
             return (
               <TextInput
-                className="advanced-search--input"
+                className="lo--advanced-search--input"
                 handleChange={handleValueChange('villageName')}
                 initialValue=""
                 max={villageName.max}
@@ -152,7 +152,7 @@ export default function AdvancedSearchBox(props: Props) {
 
             return (
               <TextInput
-                className="advanced-search--input"
+                className="lo--advanced-search--input"
                 handleChange={handleValueChange('hostName')}
                 initialValue=""
                 max={hostName.max}
@@ -173,7 +173,7 @@ export default function AdvancedSearchBox(props: Props) {
       />
       <NumberSelect
         ascendingOrder
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         from={4}
         handleChange={handleValueChange('minimum')}
         name="minimum"
@@ -189,7 +189,7 @@ export default function AdvancedSearchBox(props: Props) {
       />
       <NumberSelect
         ascendingOrder={false}
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         from={4}
         handleChange={handleValueChange('maximum')}
         name="maximum"
@@ -204,7 +204,7 @@ export default function AdvancedSearchBox(props: Props) {
         valid={props.validity.avatar}
       />
       <AvatarSelect
-        className="advanced-search--input"
+        className="lo--advanced-search--input"
         defaultValue={lobby.Avatar.random}
         handleChange={handleValueChange('avatar')}
         type="advancedSearch"
@@ -228,7 +228,7 @@ export default function AdvancedSearchBox(props: Props) {
 
             return (
               <TextareaInput
-                className="advanced-search--input"
+                className="lo--advanced-search--input"
                 handleChange={handleValueChange('comment')}
                 initialValue=""
                 max={comment.max}

@@ -26,11 +26,11 @@ describe('<SettingsBox />', () => {
       />
     )
 
-    expect(wrapper.find('.settings')).toHaveLength(1)
-    expect(wrapper.find('.settings--bucket')).toHaveLength(3)
-    expect(wrapper.find('.settings--bucket.danger')).toHaveLength(1)
-    expect(wrapper.find('.settings--bucket--form')).toHaveLength(6)
-    expect(wrapper.find('.settings--bucket--form.danger')).toHaveLength(2)
+    expect(wrapper.find('.lo--settings')).toHaveLength(1)
+    expect(wrapper.find('.lo--settings--bucket')).toHaveLength(3)
+    expect(wrapper.find('.lo--settings--bucket.danger')).toHaveLength(1)
+    expect(wrapper.find('.lo--settings--bucket--form')).toHaveLength(6)
+    expect(wrapper.find('.lo--settings--bucket--form.danger')).toHaveLength(2)
     expect(wrapper.state()).toEqual(
       {
         language: {
@@ -809,7 +809,7 @@ describe('<SettingsBox />', () => {
       />
     )
 
-    wrapper.find('.settings--bucket--form').forEach(node => {
+    wrapper.find('.lo--settings--bucket--form').forEach(node => {
       node.simulate('submit', {
         preventDefault: jest.fn()
       })

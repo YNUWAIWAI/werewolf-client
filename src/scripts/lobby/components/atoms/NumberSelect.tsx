@@ -47,7 +47,7 @@ export default injectIntl(function NumberSelect(props: Props) {
   return (
     <Select
       className={props.className}
-      classNamePrefix="react-select"
+      classNamePrefix="lo--react-select"
       defaultValue={
         typeof props.defaultValue === 'number' ?
           {

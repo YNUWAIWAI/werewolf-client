@@ -80,7 +80,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
   return (
     <Select
       className={props.className}
-      classNamePrefix="react-select"
+      classNamePrefix="lo--react-select"
       defaultValue={defaultValue}
       name="avatar"
       onChange={handleChange}

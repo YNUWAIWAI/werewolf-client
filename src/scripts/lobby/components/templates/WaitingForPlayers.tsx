@@ -33,7 +33,7 @@ export default function WaitingForPlayers(props: Props) {
   const [head, ... tail] = props.menuItems
 
   return (
-    <div className="grid">
+    <div className="lo--grid">
       <Header id="Header.waitingForPlayers" />
       <MainContent>
         {
@@ -49,8 +49,8 @@ export default function WaitingForPlayers(props: Props) {
         expand
       >
         <Menu
-          class="compact-menu"
-          itemClass="compact-menu--item"
+          class="lo--compact-menu"
+          itemClass="lo--compact-menu--item"
           items={[head]}
           transition={props.transition}
         />
@@ -59,8 +59,8 @@ export default function WaitingForPlayers(props: Props) {
           items={props.players}
         />
         <Menu
-          class="compact-menu"
-          itemClass="compact-menu--item"
+          class="lo--compact-menu"
+          itemClass="lo--compact-menu--item"
           items={tail}
           transition={props.transition}
         />

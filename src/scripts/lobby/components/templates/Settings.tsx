@@ -26,7 +26,7 @@ export interface Props extends StateProps, DispatchProps {}
 
 export default function Setting(props: Props) {
   return (
-    <div className="grid">
+    <div className="lo--grid">
       <Header id="Header.settings" />
       <MainContent>
         <SettingsBox
@@ -40,8 +40,8 @@ export default function Setting(props: Props) {
       </MainContent>
       <AsideContent>
         <Menu
-          class="compact-menu"
-          itemClass="compact-menu--item"
+          class="lo--compact-menu"
+          itemClass="lo--compact-menu--item"
           items={props.menuItems}
           transition={props.transition}
         />

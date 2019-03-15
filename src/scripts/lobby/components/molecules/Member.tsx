@@ -12,7 +12,7 @@ interface Props {
 export default function Member(props: Props) {
   const items = ORDERED_ROLE_LIST.map(item =>
     <MemberRole
-      className="village--item--member--role--item"
+      className="lo--village--item--member--role--item"
       id={item.id}
       image={item.image}
       key={item.id}
@@ -22,7 +22,7 @@ export default function Member(props: Props) {
   )
 
   return (
-    <div className="village--item--member">
+    <div className="lo--village--item--member">
       <FormattedMessage
         id="Member.min"
         values={{
@@ -31,7 +31,7 @@ export default function Member(props: Props) {
       >
         {
           text =>
-            <div className="village--item--member--robot">
+            <div className="lo--village--item--member--robot">
               {text}
             </div>
 
@@ -45,13 +45,13 @@ export default function Member(props: Props) {
       >
         {
           text =>
-            <div className="village--item--member--human">
+            <div className="lo--village--item--member--human">
               {text}
             </div>
 
         }
       </FormattedMessage>
-      <div className="village--item--member--role">
+      <div className="lo--village--item--member--role">
         {items}
       </div>
     </div>

@@ -27,12 +27,12 @@ export interface Props extends StateProps, DispatchProps {}
 
 export default function IdSearch(props: Props) {
   return (
-    <div className="grid">
+    <div className="lo--grid">
       <Header id={props.header} />
       <Avatar image={props.image} name={props.name} />
       <MainContent>
         <SearchResult
-          className="id-search"
+          className="lo--id-search"
           isPlayer={props.isPlayer}
           searched={props.searched}
           selectVillage={props.selectVillage}
@@ -46,8 +46,8 @@ export default function IdSearch(props: Props) {
           max={3}
         />
         <Menu
-          class="compact-menu"
-          itemClass="compact-menu--item"
+          class="lo--compact-menu"
+          itemClass="lo--compact-menu--item"
           items={props.menuItems}
           transition={props.transition}
         />

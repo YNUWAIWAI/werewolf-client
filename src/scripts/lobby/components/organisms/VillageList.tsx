@@ -18,7 +18,7 @@ export default function VillageList(props: Props) {
   )
 
   return (
-    <div className="village">
+    <div className="lo--village">
       {items}
     </div>
   )

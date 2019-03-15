@@ -18,7 +18,7 @@ describe('<IdSearchBox />', () => {
       />
     )
 
-    expect(wrapper.find('.id-search').children()).toHaveLength(3)
+    expect(wrapper.find('.lo--id-search').children()).toHaveLength(3)
     expect(handleSearchIdChange).toHaveBeenCalledTimes(0)
     expect(handleValidityChange).toHaveBeenCalledTimes(0)
   })
@@ -34,7 +34,7 @@ describe('<IdSearchBox />', () => {
         />
       )
 
-      wrapper.find('.id-search--input').simulate('change', {
+      wrapper.find('.lo--id-search--input').simulate('change', {
         target: {
           validity: {
             valid: true
@@ -58,7 +58,7 @@ describe('<IdSearchBox />', () => {
         />
       )
 
-      wrapper.find('.id-search--input').simulate('change', {
+      wrapper.find('.lo--id-search--input').simulate('change', {
         target: {
           validity: {
             valid: false

@@ -16,7 +16,7 @@ export default function AdvancedSearchProp(props: Props) {
   }
 
   return (
-    <div className="advanced-search--prop">
+    <div className="lo--advanced-search--prop">
       <input
         checked={props.checked}
         disabled={!props.valid}
