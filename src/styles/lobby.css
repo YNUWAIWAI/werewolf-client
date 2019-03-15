@@ -1,7 +1,3 @@
-* {
-  margin: 0;
-}
-
 :root {
   --active-color: rgba(0, 0, 0, 0.07);
   --avatar-image-size: 50px;
@@ -19,6 +15,7 @@
 
 body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  margin: 0;
 }
 
 .lo {
@@ -48,6 +45,7 @@ body {
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-top: 1px solid black;
+    cursor: clickable;
     margin-bottom: 1rem;
 
     &--item {
@@ -55,12 +53,14 @@ body {
       display: grid;
       font-size: 1.2rem;
       grid-gap: 0.5rem;
+      grid-template-areas: 'image name host ping';
       grid-template-columns: var(--avatar-image-size) 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
       height: var(--avatar-image-size);
 
       &--image {
         align-items: center;
         display: inline-flex;
+        grid-area: image;
         height: var(--avatar-image-size);
         justify-content: center;
         width: var(--avatar-image-size);
@@ -76,6 +76,7 @@ body {
         border: 1px solid black;
         border-radius: 1rem;
         display: inline-flex;
+        grid-area: host;
         justify-content: center;
         margin: 2px;
       }
@@ -83,6 +84,7 @@ body {
       &--name {
         align-items: center;
         display: inline-flex;
+        grid-area: name;
         justify-content: center;
       }
 
@@ -90,6 +92,7 @@ body {
         align-items: center;
         display: inline-flex;
         font-size: 0.8rem;
+        grid-area: ping;
         grid-column: 4 / 5;
         justify-content: center;
 
@@ -114,11 +117,33 @@ body {
       &.me {
         background: lightcyan;
       }
+
+      &--kick-out {
+        fill: transparent;
+        grid-area: image / image / ping / ping;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+
+        &:hover {
+          fill: red;
+          transition: fill 1.5s ease-out;
+        }
+      }
+
+      &.can-kick-out {
+        cursor: pointer;
+
+        &:hover {
+          background: var(--hover-color);
+        }
+      }
     }
   }
 
   &--compact-menu {
     list-style-type: none;
+    margin: 0;
     padding: 0;
 
     &--item {
@@ -287,6 +312,7 @@ body {
 
   &--menu {
     list-style-type: none;
+    margin: 0;
     padding: 1rem;
 
     &--item {
