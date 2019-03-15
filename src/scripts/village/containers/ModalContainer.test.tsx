@@ -95,7 +95,6 @@ describe('<ModalContainer />', () => {
           </Provider>
         )
 
-        expect(wrapper.find('.modal').hasClass('hidden')).toBe(false)
         expect(wrapper.html()).toMatchSnapshot()
       })
       describe('NIGHT', () => {
@@ -183,7 +182,6 @@ describe('<ModalContainer />', () => {
             </Provider>
           )
 
-          expect(wrapper.find('.modal').hasClass('hidden')).toBe(false)
           expect(wrapper.html()).toMatchSnapshot()
         })
         test('SEER', () => {
@@ -270,7 +268,6 @@ describe('<ModalContainer />', () => {
             </Provider>
           )
 
-          expect(wrapper.find('.modal').hasClass('hidden')).toBe(false)
           expect(wrapper.html()).toMatchSnapshot()
         })
         test('WEREWOLF', () => {
@@ -357,7 +354,6 @@ describe('<ModalContainer />', () => {
             </Provider>
           )
 
-          expect(wrapper.find('.modal').hasClass('hidden')).toBe(false)
           expect(wrapper.html()).toMatchSnapshot()
         })
         test('VILLAGER(default)', () => {
@@ -444,7 +440,6 @@ describe('<ModalContainer />', () => {
             </Provider>
           )
 
-          expect(wrapper.find('.modal').hasClass('hidden')).toBe(false)
           expect(wrapper.html()).toMatchSnapshot()
         })
       })
@@ -522,7 +517,6 @@ describe('<ModalContainer />', () => {
         </Provider>
       )
 
-      expect(wrapper.find('.modal').hasClass('hidden')).toBe(false)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })

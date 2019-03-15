@@ -17,9 +17,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--image')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--image')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(false)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="dead"', () => {
@@ -31,9 +31,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--image')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--image')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="death by execution"', () => {
@@ -45,9 +45,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--image')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--image')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="death by attack"', () => {
@@ -59,9 +59,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--image')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--image')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="death by fear"', () => {
@@ -73,9 +73,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--image')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--image')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="unnatural death"', () => {
@@ -87,9 +87,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--image')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--image')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
   })
@@ -103,9 +103,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(false)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('status="dead"', () => {
@@ -117,9 +117,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="death by execution"', () => {
@@ -131,9 +131,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="death by attack"', () => {
@@ -145,9 +145,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="death by fear"', () => {
@@ -159,9 +159,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
     test('<ResultCell image="image" status="unnatural death"', () => {
@@ -173,9 +173,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.containsMatchingElement(<img src="image" />)).toBe(true)
     })
   })
@@ -190,11 +190,11 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
-      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--roleImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(false)
+      expect(wrapper.find('.vi--result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="dead"', () => {
       const wrapper = mountWithIntl(
@@ -206,11 +206,11 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--roleImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="death by execution"', () => {
       const wrapper = mountWithIntl(
@@ -222,11 +222,11 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--roleImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="death by attack"', () => {
       const wrapper = mountWithIntl(
@@ -238,11 +238,11 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--roleImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="death by fear"', () => {
       const wrapper = mountWithIntl(
@@ -254,11 +254,11 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--roleImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--name').text()).toBe('name')
     })
     test('status="unnatural death"', () => {
       const wrapper = mountWithIntl(
@@ -270,11 +270,11 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--roleImage')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--image').exists()).toBe(true)
-      expect(wrapper.find('.result--cell--roleImage--name').text()).toBe('name')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--roleImage')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--image').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell--roleImage--name').text()).toBe('name')
     })
   })
   describe('type="caption"', () => {
@@ -287,10 +287,10 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
-      expect(wrapper.find('.result--cell--caption--team')).toHaveLength(1)
-      expect(wrapper.find('.result--cell').text()).toBe('敗者（村人陣営）')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--caption')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--caption--team')).toHaveLength(1)
+      expect(wrapper.find('.vi--result--cell').text()).toBe('敗者（村人陣営）')
     })
     test('loser(2)', () => {
       const wrapper = mountWithIntl(
@@ -301,10 +301,10 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
-      expect(wrapper.find('.result--cell--caption--team')).toHaveLength(2)
-      expect(wrapper.find('.result--cell').text()).toBe('敗者（村人陣営，ハムスター人間陣営）')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--caption')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--caption--team')).toHaveLength(2)
+      expect(wrapper.find('.vi--result--cell').text()).toBe('敗者（村人陣営，ハムスター人間陣営）')
     })
     test('winner', () => {
       const wrapper = mountWithIntl(
@@ -315,10 +315,10 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--caption')).toBe(true)
-      expect(wrapper.find('.result--cell--caption--team')).toHaveLength(1)
-      expect(wrapper.find('.result--cell').text()).toBe('勝者（村人陣営）')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--caption')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--caption--team')).toHaveLength(1)
+      expect(wrapper.find('.vi--result--cell').text()).toBe('勝者（村人陣営）')
     })
   })
   describe('type="summary"', () => {
@@ -332,10 +332,10 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
-      expect(wrapper.find('.result--cell--summary--team')).toHaveLength(1)
-      expect(wrapper.find('.result--cell').text()).toBe('人狼陣営が勝利しました')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--summary')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--summary--team')).toHaveLength(1)
+      expect(wrapper.find('.vi--result--cell').text()).toBe('人狼陣営が勝利しました')
     })
     test('player', () => {
       const wrapper = mountWithIntl(
@@ -347,10 +347,10 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--summary')).toBe(true)
-      expect(wrapper.find('.result--cell--summary--team')).toHaveLength(2)
-      expect(wrapper.find('.result--cell').text()).toBe('村人陣営のあなたは敗北しました。（人狼陣営の勝利）')
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--summary')).toBe(true)
+      expect(wrapper.find('.vi--result--cell--summary--team')).toHaveLength(2)
+      expect(wrapper.find('.vi--result--cell').text()).toBe('村人陣営のあなたは敗北しました。（人狼陣営の勝利）')
     })
   })
   describe('type="name"', () => {
@@ -363,9 +363,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--name')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--name')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(false)
       expect(wrapper.text()).toBe('text')
     })
     test('status="dead"', () => {
@@ -377,9 +377,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--name')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--name')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by execution"', () => {
@@ -391,9 +391,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--name')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--name')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by attack"', () => {
@@ -405,9 +405,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--name')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--name')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by fear"', () => {
@@ -419,9 +419,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--name')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--name')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="unnatural death"', () => {
@@ -433,9 +433,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--name')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--name')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
   })
@@ -448,9 +448,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--status')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(false)
       expect(wrapper.text()).toBe('生存')
     })
     test('status="dead', () => {
@@ -461,9 +461,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--status')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('死亡')
     })
     test('status="death by execution', () => {
@@ -474,9 +474,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--status')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('処刑死')
     })
     test('status="death by attack', () => {
@@ -487,9 +487,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--status')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('襲撃死')
     })
     test('status="death by fear', () => {
@@ -500,9 +500,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--status')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('恐怖死')
     })
     test('status="unnatural death', () => {
@@ -513,9 +513,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--status')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--status')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('不審死')
     })
   })
@@ -529,9 +529,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(false)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarName')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(false)
       expect(wrapper.text()).toBe('text')
     })
     test('status="dead"', () => {
@@ -543,9 +543,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarName')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by execution"', () => {
@@ -557,9 +557,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarName')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by attack"', () => {
@@ -571,9 +571,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarName')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="death by fear"', () => {
@@ -585,9 +585,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarName')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
     test('status="unnatural death"', () => {
@@ -599,9 +599,9 @@ describe('<ResultCell />', () => {
         />
       )
 
-      expect(wrapper.find('.result--cell').exists()).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('result--cell--avatarName')).toBe(true)
-      expect(wrapper.find('.result--cell').hasClass('dead')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').exists()).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('vi--result--cell--avatarName')).toBe(true)
+      expect(wrapper.find('.vi--result--cell').hasClass('dead')).toBe(true)
       expect(wrapper.text()).toBe('text')
     })
   })

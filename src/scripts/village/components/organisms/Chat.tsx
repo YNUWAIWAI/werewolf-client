@@ -12,7 +12,7 @@ export type Props = StateProps
 
 export default function Chat(props: Props) {
   return (
-    <div className="chat">
+    <div className="vi--chat">
       {
         props.allIds.map(id => {
           const item = props.byId[id]

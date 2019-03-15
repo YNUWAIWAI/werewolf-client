@@ -16,7 +16,7 @@ export default function ChatDelimeter(props: Props) {
       >
         {
           text =>
-            <div className="chat--delimeter">
+            <div className="vi--chat--delimeter">
               {text}
             </div>
         }
@@ -30,7 +30,7 @@ export default function ChatDelimeter(props: Props) {
     >
       {
         text =>
-          <div className="chat--delimeter">
+          <div className="vi--chat--delimeter">
             {text}
           </div>
       }

@@ -12,7 +12,7 @@ describe('<HideButton />', () => {
       />
     )
 
-    expect(wrapper.find('.hide-button--button').hasClass('hide')).toBe(true)
+    expect(wrapper.find('.vi--hide-button--button').hasClass('hide')).toBe(true)
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('hide={false}', () => {
@@ -24,7 +24,7 @@ describe('<HideButton />', () => {
       />
     )
 
-    expect(wrapper.find('.hide-button--button').hasClass('hide')).toBe(false)
+    expect(wrapper.find('.vi--hide-button--button').hasClass('hide')).toBe(false)
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   describe('onCLick', () => {
@@ -37,7 +37,7 @@ describe('<HideButton />', () => {
         />
       )
 
-      wrapper.find('.hide-button--button').simulate('click')
+      wrapper.find('.vi--hide-button--button').simulate('click')
       expect(handleClick).toHaveBeenCalledTimes(1)
       expect(handleClick).toHaveBeenCalledWith(false)
     })
@@ -50,7 +50,7 @@ describe('<HideButton />', () => {
         />
       )
 
-      wrapper.find('.hide-button--button').simulate('click')
+      wrapper.find('.vi--hide-button--button').simulate('click')
       expect(handleClick).toHaveBeenCalledTimes(1)
       expect(handleClick).toHaveBeenCalledWith(true)
     })

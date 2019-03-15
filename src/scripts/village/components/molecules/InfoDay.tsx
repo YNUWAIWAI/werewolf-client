@@ -14,8 +14,8 @@ export default function InfoDay(props: Props) {
   const phase = props.phase === village.Phase.flavorText ? village.Phase.night : props.phase
 
   return (
-    <div className="info--day">
-      <div className="info--day--text">
+    <div className="vi--info--day">
+      <div className="vi--info--day--text">
         <FormattedMessage
           id={`InfoDay.${spaceSeparatedToCamelCase(phase)}`}
           values={{

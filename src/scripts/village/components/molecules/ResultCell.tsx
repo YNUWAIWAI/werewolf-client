@@ -52,21 +52,21 @@ export default function ResultCell(props: Props) {
     case ResultCellType.avatarImage:
     case ResultCellType.image:
       return (
-        <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
+        <div className={`vi--result--cell vi--result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           <img
-            className={`result--cell--${props.type}--image`}
+            className={`vi--result--cell--${props.type}--image`}
             src={props.image}
           />
         </div>
       )
     case ResultCellType.roleImage:
       return (
-        <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
+        <div className={`vi--result--cell vi--result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           <img
-            className={`result--cell--${props.type}--image`}
+            className={`vi--result--cell--${props.type}--image`}
             src={props.image}
           />
-          <span className={`result--cell--${props.type}--name`}>
+          <span className={`vi--result--cell--${props.type}--name`}>
             {props.name}
           </span>
         </div>
@@ -84,19 +84,19 @@ export default function ResultCell(props: Props) {
             {
               loserTeam0:
                 <TeamIcon
-                  class={`result--cell--${props.type}--team`}
+                  class={`vi--result--cell--${props.type}--team`}
                   key="loserTeam0"
                   team={loserTeam[0]}
                 />,
               loserTeam1:
                 <TeamIcon
-                  class={`result--cell--${props.type}--team`}
+                  class={`vi--result--cell--${props.type}--team`}
                   key="loserTeam1"
                   team={loserTeam[1]}
                 />,
               winnerTeam:
                 <TeamIcon
-                  class={`result--cell--${props.type}--team`}
+                  class={`vi--result--cell--${props.type}--team`}
                   key="winnerTeam"
                   team={props.winnerTeam || ''}
                 />
@@ -106,7 +106,7 @@ export default function ResultCell(props: Props) {
           {
             (... text) =>
               <div
-                className={`result--cell result--cell--${props.type}`}
+                className={`vi--result--cell vi--result--cell--${props.type}`}
               >
                 {text}
               </div>
@@ -123,13 +123,13 @@ export default function ResultCell(props: Props) {
             {
               myTeam:
                 <TeamIcon
-                  class={`result--cell--${props.type}--team`}
+                  class={`vi--result--cell--${props.type}--team`}
                   key="myTeam"
                   team={props.myTeam || ''}
                 />,
               winnerTeam:
                 <TeamIcon
-                  class={`result--cell--${props.type}--team`}
+                  class={`vi--result--cell--${props.type}--team`}
                   key="winnerTeam"
                   team={props.winnerTeam}
                 />
@@ -139,7 +139,7 @@ export default function ResultCell(props: Props) {
           {
             (... text) =>
               <div
-                className={`result--cell result--cell--${props.type}`}
+                className={`vi--result--cell vi--result--cell--${props.type}`}
               >
                 {text}
               </div>
@@ -149,7 +149,7 @@ export default function ResultCell(props: Props) {
     case ResultCellType.avatarName:
     case ResultCellType.name:
       return (
-        <div className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
+        <div className={`vi--result--cell vi--result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}>
           {props.text}
         </div>
       )
@@ -162,7 +162,7 @@ export default function ResultCell(props: Props) {
           {
             text =>
               <div
-                className={`result--cell result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}
+                className={`vi--result--cell vi--result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}
               >
                 {text}
               </div>

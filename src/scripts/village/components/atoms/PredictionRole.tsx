@@ -9,18 +9,18 @@ interface Props {
 export default function PredictionRole(props: Props) {
 
   return (
-    <div className="prediction--role">
+    <div className="vi--prediction--role">
       <img
-        className="prediction--role--image"
+        className="vi--prediction--role--image"
         src={props.image}
       />
-      <div className="prediction--role--times">
+      <div className="vi--prediction--role--times">
         {'×'}
       </div>
-      <div className="prediction--role--number">
+      <div className="vi--prediction--role--number">
         {props.numberOfAgents}
       </div>
-      <div className="prediction--role--name">
+      <div className="vi--prediction--role--name">
         {props.name}
       </div>
     </div>

@@ -12,9 +12,9 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.prediction--player').hasClass('dead')).toBe(false)
-    expect(wrapper.find('.prediction--player--image').exists()).toBe(true)
-    expect(wrapper.find('.prediction--player--name').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(false)
+    expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
     expect(wrapper.text()).toBe('name')
   })
   test('image="image" name="name" status="dead"', () => {
@@ -26,9 +26,9 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.prediction--player').hasClass('dead')).toBe(true)
-    expect(wrapper.find('.prediction--player--image').exists()).toBe(true)
-    expect(wrapper.find('.prediction--player--name').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
     expect(wrapper.text()).toBe('name')
   })
   test('image="image" name="name" status="death by execution"', () => {
@@ -40,9 +40,9 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.prediction--player').hasClass('dead')).toBe(true)
-    expect(wrapper.find('.prediction--player--image').exists()).toBe(true)
-    expect(wrapper.find('.prediction--player--name').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
     expect(wrapper.text()).toBe('name')
   })
   test('image="image" name="name" status="death by attack"', () => {
@@ -54,9 +54,9 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.prediction--player').hasClass('dead')).toBe(true)
-    expect(wrapper.find('.prediction--player--image').exists()).toBe(true)
-    expect(wrapper.find('.prediction--player--name').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
     expect(wrapper.text()).toBe('name')
   })
   test('image="image" name="name" status="death by fear"', () => {
@@ -68,9 +68,9 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.prediction--player').hasClass('dead')).toBe(true)
-    expect(wrapper.find('.prediction--player--image').exists()).toBe(true)
-    expect(wrapper.find('.prediction--player--name').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
     expect(wrapper.text()).toBe('name')
   })
   test('image="image" name="name" status="unnatural death"', () => {
@@ -82,9 +82,9 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.prediction--player').hasClass('dead')).toBe(true)
-    expect(wrapper.find('.prediction--player--image').exists()).toBe(true)
-    expect(wrapper.find('.prediction--player--name').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
+    expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
     expect(wrapper.text()).toBe('name')
   })
 })

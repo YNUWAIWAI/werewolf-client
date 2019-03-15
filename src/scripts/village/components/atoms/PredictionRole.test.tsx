@@ -11,11 +11,11 @@ test('<PredictionRole />', () => {
     />
   )
 
-  expect(wrapper.find('.prediction--role').exists()).toBe(true)
-  expect(wrapper.find('.prediction--role--image').exists()).toBe(true)
-  expect(wrapper.find('.prediction--role--times').exists()).toBe(true)
-  expect(wrapper.find('.prediction--role--number').exists()).toBe(true)
-  expect(wrapper.find('.prediction--role--number').text()).toBe('1')
-  expect(wrapper.find('.prediction--role--name').exists()).toBe(true)
-  expect(wrapper.find('.prediction--role--name').text()).toBe('name')
+  expect(wrapper.find('.vi--prediction--role').exists()).toBe(true)
+  expect(wrapper.find('.vi--prediction--role--image').exists()).toBe(true)
+  expect(wrapper.find('.vi--prediction--role--times').exists()).toBe(true)
+  expect(wrapper.find('.vi--prediction--role--number').exists()).toBe(true)
+  expect(wrapper.find('.vi--prediction--role--number').text()).toBe('1')
+  expect(wrapper.find('.vi--prediction--role--name').exists()).toBe(true)
+  expect(wrapper.find('.vi--prediction--role--name').text()).toBe('name')
 })

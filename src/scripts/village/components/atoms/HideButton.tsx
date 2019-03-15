@@ -11,9 +11,9 @@ export interface Props extends StateProps, DispatchProps {}
 
 export default function HideButton(props: Props) {
   return (
-    <div className="hide-button">
+    <div className="vi--hide-button">
       <button
-        className={`hide-button--button ${props.hide ? 'hide' : ''}`}
+        className={`vi--hide-button--button ${props.hide ? 'hide' : ''}`}
         onClick={() => props.handleClick(!props.hide)}
       >
         <DownArrow />

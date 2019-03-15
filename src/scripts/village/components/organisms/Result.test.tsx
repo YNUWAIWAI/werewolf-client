@@ -192,7 +192,7 @@ test('<Result visible />', () => {
   )
 
   expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
-  expect(wrapper.find('.result').exists()).toBe(true)
+  expect(wrapper.find('.vi--result').exists()).toBe(true)
 })
 test('<Result visible={false} />', () => {
   const handleClickCloseButton = jest.fn()
@@ -209,5 +209,5 @@ test('<Result visible={false} />', () => {
   )
 
   expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
-  expect(wrapper.find('.result').exists()).toBe(false)
+  expect(wrapper.find('.vi--result').exists()).toBe(false)
 })

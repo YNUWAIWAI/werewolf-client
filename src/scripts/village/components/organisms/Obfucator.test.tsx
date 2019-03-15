@@ -12,7 +12,7 @@ describe('<Obfucator />', () => {
       />
     )
 
-    expect(wrapper.find('.obfucator').exists()).toBe(true)
+    expect(wrapper.find('.vi--obfucator').exists()).toBe(true)
     expect(wrapper.find(Loader).exists()).toBe(true)
   })
   test('loading visible={false}', () => {
@@ -23,7 +23,7 @@ describe('<Obfucator />', () => {
       />
     )
 
-    expect(wrapper.find('.obfucator').exists()).toBe(true)
+    expect(wrapper.find('.vi--obfucator').exists()).toBe(true)
     expect(wrapper.find(Loader).exists()).toBe(false)
   })
   test('loading loading={false} visible={false}', () => {
@@ -34,7 +34,7 @@ describe('<Obfucator />', () => {
       />
     )
 
-    expect(wrapper.find('.obfucator').exists()).toBe(false)
+    expect(wrapper.find('.vi--obfucator').exists()).toBe(false)
     expect(wrapper.find(Loader).exists()).toBe(false)
   })
 })

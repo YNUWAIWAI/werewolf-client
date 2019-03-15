@@ -48,7 +48,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -83,7 +83,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -118,7 +118,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -153,7 +153,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -188,7 +188,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -223,7 +223,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -258,7 +258,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -293,7 +293,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -328,7 +328,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -371,7 +371,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 
@@ -438,7 +438,7 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="activity">
+      <div className="vi--activity">
         <Chat allIds={allIds} byId={byId} />
       </div>
 

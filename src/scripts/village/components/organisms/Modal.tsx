@@ -22,16 +22,16 @@ export default function Modal(props: Props) {
   }
 
   return (
-    <div className="modal">
-      <AgentIcon className="modal--icon" image={props.image} name={props.name} />
-      <Description className="modal--description" id={props.descriptionId} />
+    <div className="vi--modal">
+      <AgentIcon className="vi--modal--icon" image={props.image} name={props.name} />
+      <Description className="vi--modal--description" id={props.descriptionId} />
       <FormattedMessage
         id="Modal.button.yes"
       >
         {
           text =>
             <button
-              className="modal--button yes"
+              className="vi--modal--button yes"
               onClick={() => props.handleClickYes(props.id)}
             >
               {text}
@@ -44,7 +44,7 @@ export default function Modal(props: Props) {
         {
           text =>
             <button
-              className="modal--button no"
+              className="vi--modal--button no"
               onClick={() => props.handleClickNo()}
             >
               {text}

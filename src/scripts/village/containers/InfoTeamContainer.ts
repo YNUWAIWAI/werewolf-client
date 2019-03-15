@@ -6,13 +6,13 @@ import {connect} from 'react-redux'
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.role) {
     return {
-      class: 'info--team',
+      class: 'vi--info--team',
       team: ''
     }
   }
 
   return {
-    class: 'info--team',
+    class: 'vi--info--team',
     team: getTeam(strToRoleId(state.mine.role.name.en))
   }
 }

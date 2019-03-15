@@ -6,14 +6,14 @@ import {getText} from '../util'
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.agent) {
     return {
-      className: 'info--agent',
+      className: 'vi--info--agent',
       image: '',
       name: ''
     }
   }
 
   return {
-    className: 'info--agent',
+    className: 'vi--info--agent',
     image: state.mine.agent.image,
     name: getText({
       language: state.language,

@@ -32,7 +32,7 @@ storiesOf('village|Info/InfoDay', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="info">
+          <div className="vi--info">
             <InfoDay
               date={date}
               phase={phase}
@@ -66,7 +66,7 @@ storiesOf('village|Info/InfoDay', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="info">
+          <div className="vi--info">
             <InfoDay
               date={date}
               phase={phase}

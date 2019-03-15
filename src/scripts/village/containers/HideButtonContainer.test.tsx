@@ -26,7 +26,7 @@ describe('<HideButtonContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.find('.hide-button--button').hasClass('hide')).toBe(true)
+    expect(wrapper.find('.vi--hide-button--button').hasClass('hide')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('handleSelectOption', () => {

@@ -6,14 +6,14 @@ import {getText} from '../util'
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.role) {
     return {
-      class: 'info--role',
+      class: 'vi--info--role',
       image: '',
       name: ''
     }
   }
 
   return {
-    class: 'info--role',
+    class: 'vi--info--role',
     image: state.mine.role.image,
     name: getText({
       language: state.language,
