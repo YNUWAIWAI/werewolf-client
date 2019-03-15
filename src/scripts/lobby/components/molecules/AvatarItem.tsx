@@ -34,10 +34,10 @@ export default injectIntl(function AvatarItem(props: Props) {
 
   return (
     <div
-      className={`avatar-list--item ${props.isMe ? 'me' : ''}`}
+      className={`lo--avatar-list--item ${props.isMe ? 'me' : ''}`}
       onClick={() => handleClick()}
     >
-      <div className="avatar-list--item--image">
+      <div className="lo--avatar-list--item--image">
         <img src={props.avatarImage} />
       </div>
       {
@@ -47,12 +47,12 @@ export default injectIntl(function AvatarItem(props: Props) {
           >
             {
               text =>
-                <div className="avatar-list--item--name">
+                <div className="lo--avatar-list--item--name">
                   {text}
                 </div>
             }
           </FormattedMessage> :
-          <div className="avatar-list--item--name">
+          <div className="lo--avatar-list--item--name">
             {props.name}
           </div>
       }
@@ -63,14 +63,14 @@ export default injectIntl(function AvatarItem(props: Props) {
           >
             {
               text =>
-                <div className="avatar-list--item--host">
+                <div className="lo--avatar-list--item--host">
                   {text}
                 </div>
             }
           </FormattedMessage> :
           null
       }
-      <div className="avatar-list--item--ping">
+      <div className="lo--avatar-list--item--ping">
         <Status />
         {props.ping.padStart(8, '0')}
       </div>

@@ -46,10 +46,10 @@ describe('<BuildVillageBox />', () => {
         />
       )
 
-      expect(wrapper.find('.village--item').children()).toHaveLength(10)
-      expect(wrapper.find('input.village--item--val.village-name').exists()).toBe(true)
-      expect(wrapper.find('div.village--item--val.village-name').exists()).toBe(false)
-      expect(wrapper.find('div.village--item--val.host-name').text()).toBe('Alice')
+      expect(wrapper.find('.lo--village--item').children()).toHaveLength(10)
+      expect(wrapper.find('input.lo--village--item--val.village-name').exists()).toBe(true)
+      expect(wrapper.find('div.lo--village--item--val.village-name').exists()).toBe(false)
+      expect(wrapper.find('div.lo--village--item--val.host-name').text()).toBe('Alice')
       expect(handleAvatarChange).toHaveBeenCalledTimes(0)
       expect(handleMemberChange).toHaveBeenCalledTimes(0)
       expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -96,10 +96,10 @@ describe('<BuildVillageBox />', () => {
         />
       )
 
-      expect(wrapper.find('.village--item').children()).toHaveLength(10)
-      expect(wrapper.find('input.village--item--val.village-name').exists()).toBe(false)
-      expect(wrapper.find('div.village--item--val.village-name').exists()).toBe(true)
-      expect(wrapper.find('div.village--item--val.host-name').text()).toBe('Anonymous')
+      expect(wrapper.find('.lo--village--item').children()).toHaveLength(10)
+      expect(wrapper.find('input.lo--village--item--val.village-name').exists()).toBe(false)
+      expect(wrapper.find('div.lo--village--item--val.village-name').exists()).toBe(true)
+      expect(wrapper.find('div.lo--village--item--val.host-name').text()).toBe('Anonymous')
       expect(handleAvatarChange).toHaveBeenCalledTimes(0)
       expect(handleMemberChange).toHaveBeenCalledTimes(0)
       expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -150,7 +150,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(6).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
           .onChange({
             label: 'Random',
             value: lobby.Avatar.random
@@ -188,7 +188,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(6).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
           .onChange([])
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -222,7 +222,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(6).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
           .onChange(undefined)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -254,7 +254,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(6).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
           .onChange(null)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -288,7 +288,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(9).find('textarea').simulate('change', {
+        wrapper.find('.lo--village--item').childAt(9).find('textarea').simulate('change', {
           target: {
             validity: {
               valid: true
@@ -330,7 +330,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(9).find('textarea').simulate('change', {
+        wrapper.find('.lo--village--item').childAt(9).find('textarea').simulate('change', {
           target: {
             validity: {
               valid: false
@@ -370,7 +370,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(9).find('textarea').simulate('change', {
+        wrapper.find('.lo--village--item').childAt(9).find('textarea').simulate('change', {
           target: {
             validity: {
               valid: true
@@ -414,7 +414,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item--member-select--role--radio > input').forEach(elem => elem.simulate('change'))
+        wrapper.find('.lo--village--item--member-select--role--radio > input').forEach(elem => elem.simulate('change'))
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(3)
         expect(handleMemberChange).toHaveBeenCalledWith(lobby.Member.A)
@@ -452,7 +452,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(5).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
           .onChange({
             label: '4 players',
             value: 4
@@ -491,7 +491,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(5).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
           .onChange([])
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -525,7 +525,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(5).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
           .onChange(undefined)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -557,7 +557,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(5).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
           .onChange(null)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -591,7 +591,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(7).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
           .onChange({
             label: '4 robots',
             value: 4
@@ -630,7 +630,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(7).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
           .onChange([])
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -664,7 +664,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(7).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
           .onChange(null)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -696,7 +696,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(7).find(Select).props()
+        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
           .onChange(null)
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -730,7 +730,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(1).find('input').simulate('change', {
+        wrapper.find('.lo--village--item').childAt(1).find('input').simulate('change', {
           target: {
             validity: {
               valid: true
@@ -772,7 +772,7 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.village--item').childAt(1).find('input').simulate('change', {
+        wrapper.find('.lo--village--item').childAt(1).find('input').simulate('change', {
           target: {
             validity: {
               valid: false

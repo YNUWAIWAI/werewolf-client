@@ -7,7 +7,7 @@ interface Props {
 
 export default function AsideContent(props: Props) {
   return (
-    <div className={`aside-content ${props.expand ? 'expand' : ''}`}>
+    <div className={`lo--aside-content ${props.expand ? 'expand' : ''}`}>
       {props.children}
     </div>
   )

@@ -13,8 +13,8 @@ export interface Props extends StateProps, DispatchProps {}
 export default function Main(props: Props) {
   return (
     <Menu
-      class="menu"
-      itemClass="menu--item"
+      class="lo--menu"
+      itemClass="lo--menu--item"
       items={props.menuItems}
       transition={props.transition}
     />

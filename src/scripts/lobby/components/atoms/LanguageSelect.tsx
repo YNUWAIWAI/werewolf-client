@@ -48,7 +48,7 @@ export default function LanguageSelect(props: Props) {
   return (
     <Select
       className={props.className}
-      classNamePrefix="react-select"
+      classNamePrefix="lo--react-select"
       defaultValue={defaultValue}
       onChange={handleChange}
       options={options}

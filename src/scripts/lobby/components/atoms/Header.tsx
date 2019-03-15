@@ -12,7 +12,7 @@ export default function Header(props: Props) {
     >
       {
         text =>
-          <div className="header">
+          <div className="lo--header">
             {text}
           </div>
       }

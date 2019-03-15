@@ -26,7 +26,7 @@ export default function AvatarList(props: Props) {
   )
 
   return (
-    <div className="avatar-list">
+    <div className="lo--avatar-list">
       {items}
     </div>
   )

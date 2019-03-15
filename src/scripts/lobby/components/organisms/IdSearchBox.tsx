@@ -16,8 +16,8 @@ export default function IdSearchBox(props: Props) {
   }
 
   return (
-    <div className="id-search">
-      <span className="id-search--sharp">
+    <div className="lo--id-search">
+      <span className="lo--id-search--sharp">
         {'#'}
       </span>
       <FormattedMessage
@@ -35,7 +35,7 @@ export default function IdSearchBox(props: Props) {
 
             return (
               <input
-                className="id-search--input"
+                className="lo--id-search--input"
                 maxLength={props.max}
                 minLength={1}
                 onChange={handleIdChange}
@@ -48,7 +48,7 @@ export default function IdSearchBox(props: Props) {
           }
         }
       </FormattedMessage>
-      <span className="id-search--validity" />
+      <span className="lo--id-search--validity" />
     </div>
   )
 }
