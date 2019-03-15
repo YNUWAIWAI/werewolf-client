@@ -45,7 +45,7 @@ export default function ChatDate(props: Props) {
     >
       {
         (... text) =>
-          <div className="chat--date">
+          <div className="vi--chat--date">
             {text}
           </div>
       }

@@ -18,7 +18,7 @@ describe('<CommandSelection />', () => {
     )
 
     expect(wrapper.find(Description).exists()).toBe(true)
-    expect(wrapper.find('.command--selection--select').children()).toHaveLength(0)
+    expect(wrapper.find('.vi--command--selection--select').children()).toHaveLength(0)
   })
   test('13 agents fixed={false}', () => {
     const agents = [
@@ -100,7 +100,7 @@ describe('<CommandSelection />', () => {
     )
 
     expect(wrapper.find(Description).exists()).toBe(true)
-    expect(wrapper.find('.command--selection--select').children(AgentIcon)).toHaveLength(13)
+    expect(wrapper.find('.vi--command--selection--select').children(AgentIcon)).toHaveLength(13)
   })
   test('1 agents fixed', () => {
     const agents = [
@@ -122,6 +122,6 @@ describe('<CommandSelection />', () => {
     )
 
     expect(wrapper.find(Description).exists()).toBe(true)
-    expect(wrapper.find('.command--selection--select').children(AgentIcon)).toHaveLength(1)
+    expect(wrapper.find('.vi--command--selection--select').children(AgentIcon)).toHaveLength(1)
   })
 })

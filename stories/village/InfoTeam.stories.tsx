@@ -21,9 +21,9 @@ storiesOf('village|Info/InfoTeam', module)
   )
   .add('villager', () => {
     const story =
-      <div className="info">
+      <div className="vi--info">
         <TeamIcon
-          class="info--team"
+          class="vi--info--team"
           team={village.Team.villager}
         />
       </div>
@@ -32,9 +32,9 @@ storiesOf('village|Info/InfoTeam', module)
   })
   .add('werehamster', () => {
     const story =
-      <div className="info">
+      <div className="vi--info">
         <TeamIcon
-          class="info--team"
+          class="vi--info--team"
           team={village.Team.werehamster}
         />
       </div>
@@ -43,9 +43,9 @@ storiesOf('village|Info/InfoTeam', module)
   })
   .add('werewolf', () => {
     const story =
-      <div className="info">
+      <div className="vi--info">
         <TeamIcon
-          class="info--team"
+          class="vi--info--team"
           team={village.Team.werewolf}
         />
       </div>

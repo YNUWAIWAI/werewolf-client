@@ -23,13 +23,13 @@ export default function ChatItem(props: Props) {
 
   return (
     <div
-      className={`chat--item ${props.isMine ? 'me' : ''} ${chatChannel}`}
+      className={`vi--chat--item ${props.isMine ? 'me' : ''} ${chatChannel}`}
       id={chatChannel === 'public' ? `message${String(props.id)}` : undefined}
     >
-      <div className="chat--arrow-box">
+      <div className="vi--chat--arrow-box">
         <ChatIcon
           channel={props.intensionalDisclosureRange}
-          className="chat--icon"
+          className="vi--chat--icon"
         />
         <ChatNum
           id={props.id}
@@ -45,7 +45,7 @@ export default function ChatItem(props: Props) {
         />
       </div>
       <AgentIcon
-        className="chat--agent"
+        className="vi--chat--agent"
         image={props.image}
         name={props.name}
       />

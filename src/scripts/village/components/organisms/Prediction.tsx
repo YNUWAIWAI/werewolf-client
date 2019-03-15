@@ -39,7 +39,7 @@ export default function Prediction(props: Props) {
   }
   const predictionTable = [
     <div
-      className="prediction--empty"
+      className="vi--prediction--empty"
       key="empty"
     />,
     ... props.roleStatus.map(role =>
@@ -75,7 +75,7 @@ export default function Prediction(props: Props) {
   }
 
   return (
-    <div className="prediction" style={style}>
+    <div className="vi--prediction" style={style}>
       {predictionTable}
     </div>
   )

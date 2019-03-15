@@ -23,7 +23,7 @@ export default function CommandNavigation(props: Props) {
       {
         text =>
           <button
-            className={`command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
+            className={`vi--command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
             disabled={item.disabled}
             onClick={() => {
               if (!item.disabled && !item.isLoading) {
@@ -42,7 +42,7 @@ export default function CommandNavigation(props: Props) {
   )
 
   return (
-    <div className="command--navigation">
+    <div className="vi--command--navigation">
       {items}
     </div>
   )

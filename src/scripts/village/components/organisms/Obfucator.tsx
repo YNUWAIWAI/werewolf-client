@@ -9,11 +9,11 @@ export type Props = StateProps
 
 export default function Obfucator(props: Props) {
   return props.visible ?
-    <div className="obfucator">
+    <div className="vi--obfucator">
       {
         props.loading ?
           <Loader
-            className="obfucator--loader"
+            className="vi--obfucator--loader"
           /> :
           ''
       }

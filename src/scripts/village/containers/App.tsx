@@ -11,7 +11,7 @@ import Result from './ResultContainer'
 export default function App() {
   return (
     <IntlProvider>
-      <div className="app">
+      <div className="vi--app">
         <Info />
         <Activity />
         <Command />

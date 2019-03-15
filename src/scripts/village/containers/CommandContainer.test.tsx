@@ -29,7 +29,7 @@ describe('<CommandContainer />', () => {
     )
 
     expect(wrapper.find(CommandGrave).exists()).toBe(true)
-    expect(wrapper.find('.command').hasClass('hidden')).toBe(false)
+    expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('CommandInputBox', () => {
@@ -50,7 +50,7 @@ describe('<CommandContainer />', () => {
     )
 
     expect(wrapper.find(CommandInputBox).exists()).toBe(true)
-    expect(wrapper.find('.command').hasClass('hidden')).toBe(false)
+    expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('CommandPostMortem', () => {
@@ -71,7 +71,7 @@ describe('<CommandContainer />', () => {
     )
 
     expect(wrapper.find(CommandPostMortem).exists()).toBe(true)
-    expect(wrapper.find('.command').hasClass('hidden')).toBe(false)
+    expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('CommandSelection', () => {
@@ -92,7 +92,7 @@ describe('<CommandContainer />', () => {
     )
 
     expect(wrapper.find(CommandSelection).exists()).toBe(true)
-    expect(wrapper.find('.command').hasClass('hidden')).toBe(false)
+    expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

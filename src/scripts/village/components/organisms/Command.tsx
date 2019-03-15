@@ -8,7 +8,7 @@ export type Props = StateProps
 
 export default function Command(props: Props) {
   return (
-    <div className={`command ${props.hide ? 'hidden' : ''}`}>
+    <div className={`vi--command ${props.hide ? 'hidden' : ''}`}>
       {props.content}
     </div>
   )

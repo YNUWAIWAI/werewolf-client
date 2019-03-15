@@ -18,19 +18,19 @@ export interface Props extends StateProps, DispatchProps {}
 
 export default function CommandSelection(props: Props) {
   return (
-    <div className="command--selection">
+    <div className="vi--command--selection">
       <Description
-        className="command--selection--description"
+        className="vi--command--selection--description"
         id={props.descriptionId}
       />
-      <div className="command--selection--select ">
+      <div className="vi--command--selection--select ">
         {
           props.fixed ?
             props.agents
               .map(a =>
                 <AgentIcon
                   additionalClass="fixed"
-                  className="command--selection--option"
+                  className="vi--command--selection--option"
                   image={a.image}
                   key={a.id}
                   name={a.name}
@@ -39,7 +39,7 @@ export default function CommandSelection(props: Props) {
             props.agents
               .map(a =>
                 <AgentIcon
-                  className="command--selection--option"
+                  className="vi--command--selection--option"
                   handleOnClick={props.handleSelectOption(a.id)}
                   image={a.image}
                   key={a.id}

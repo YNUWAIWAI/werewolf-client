@@ -86,7 +86,7 @@ export default class CommandInput extends React.Component<Props, State> {
 
   public render() {
     return (
-      <form className={`command--input ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
+      <form className={`vi--command--input ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
         <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
           {
             text => {
@@ -105,7 +105,7 @@ export default class CommandInput extends React.Component<Props, State> {
             }
           }
         </FormattedMessage>
-        <span className={`command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
+        <span className={`vi--command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
           {this.state.textCount}
         </span>
         <ChatIcon
@@ -113,11 +113,11 @@ export default class CommandInput extends React.Component<Props, State> {
             inputChannel: this.props.inputChannel,
             role: village.RoleId.werewolf
           })}
-          className="command--input--icon"
+          className="vi--command--input--icon"
         />
         {
           this.props.inputChannel === 'public' || this.props.inputChannel === 'limited' ?
-            <span className="command--input--counter">
+            <span className="vi--command--input--counter">
               {`${this.props.postCount}/${this.props.postCountLimit}`}
             </span> :
             null
@@ -125,7 +125,7 @@ export default class CommandInput extends React.Component<Props, State> {
         <FormattedMessage id="CommandInput.send">
           {
             text =>
-              <button className="command--input--send" disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
+              <button className="vi--command--input--send" disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
                 {text}
               </button>
           }

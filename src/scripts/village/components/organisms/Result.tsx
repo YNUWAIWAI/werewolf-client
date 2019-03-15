@@ -125,7 +125,7 @@ export default function Result(props: Props) {
     .map(id => getRow(props.agents[id]))
 
   return (
-    <div className="result">
+    <div className="vi--result">
       {
         [
           <ResultClose handleClick={props.handleClickCloseButton} key="close" />,

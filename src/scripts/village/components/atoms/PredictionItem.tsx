@@ -44,7 +44,7 @@ export default function PredictionItem(props: Props) {
 
   return (
     <div
-      className={`prediction--item ${props.fixed && props.state !== village.BoardState.FILL ? 'fixed' : ''}`}
+      className={`vi--prediction--item ${props.fixed && props.state !== village.BoardState.FILL ? 'fixed' : ''}`}
       data-date={props.date}
       data-state={props.state}
       onClick={handleBoardClick}

@@ -7,7 +7,7 @@ import InfoTeam from '../../containers/InfoTeamContainer'
 
 export default function Info() {
   return (
-    <div className="info">
+    <div className="vi--info">
       <InfoDay />
       <FormattedMessage
         id="Info.property.agent"
@@ -15,7 +15,7 @@ export default function Info() {
         {
           text =>
             <div
-              className="info--property agent"
+              className="vi--info--property agent"
             >
               {text}
             </div>
@@ -28,7 +28,7 @@ export default function Info() {
         {
           text =>
             <div
-              className="info--property role"
+              className="vi--info--property role"
             >
               {text}
             </div>
@@ -41,7 +41,7 @@ export default function Info() {
         {
           text =>
             <div
-              className="info--property team"
+              className="vi--info--property team"
             >
               {text}
             </div>

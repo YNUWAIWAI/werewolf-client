@@ -8,12 +8,12 @@ interface Props {
 
 export default function PredictionPlayer(props: Props) {
   return (
-    <div className={`prediction--player ${props.status === 'alive' ? '' : 'dead'}`}>
+    <div className={`vi--prediction--player ${props.status === 'alive' ? '' : 'dead'}`}>
       <img
-        className="prediction--player--image"
+        className="vi--prediction--player--image"
         src={props.image}
       />
-      <div className="prediction--player--name">
+      <div className="vi--prediction--player--name">
         {props.name}
       </div>
     </div>

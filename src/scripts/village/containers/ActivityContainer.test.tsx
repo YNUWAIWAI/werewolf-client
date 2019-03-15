@@ -16,7 +16,7 @@ describe('<ActivityContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.find('.activity').hasClass('expand')).toBe(false)
+    expect(wrapper.find('.vi--activity').hasClass('expand')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -36,7 +36,7 @@ describe('<ActivityContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.find('.activity').hasClass('expand')).toBe(true)
+    expect(wrapper.find('.vi--activity').hasClass('expand')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

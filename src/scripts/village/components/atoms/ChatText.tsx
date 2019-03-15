@@ -27,7 +27,7 @@ const parseChat = (text: string) =>
 
       return (
         <p
-          className="chat--text--chunk"
+          className="vi--chat--text--chunk"
           key={getChunkId()}
         >
           {parsedText}
@@ -41,7 +41,7 @@ interface Props {
 
 export default function ChatItem(props: Props) {
   return (
-    <div className="chat--text">
+    <div className="vi--chat--text">
       {parseChat(props.text)}
     </div>
   )

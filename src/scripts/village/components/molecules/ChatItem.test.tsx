@@ -20,14 +20,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="grave"', () => {
       const wrapper = shallow(
@@ -44,14 +44,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="hunter"', () => {
       const wrapper = shallow(
@@ -68,14 +68,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="master"', () => {
       const wrapper = shallow(
@@ -92,14 +92,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="onymousAudience"', () => {
       const wrapper = shallow(
@@ -116,14 +116,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="private"', () => {
       const wrapper = shallow(
@@ -140,14 +140,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="public"', () => {
       const wrapper = shallow(
@@ -164,14 +164,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="seer"', () => {
       const wrapper = shallow(
@@ -188,14 +188,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="werewolf"', () => {
       const wrapper = shallow(
@@ -212,14 +212,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
   })
   describe('isMine={false}', () => {
@@ -238,14 +238,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="grave"', () => {
       const wrapper = shallow(
@@ -262,14 +262,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="hunter"', () => {
       const wrapper = shallow(
@@ -286,14 +286,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="master"', () => {
       const wrapper = shallow(
@@ -310,14 +310,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="onymousAudience"', () => {
       const wrapper = shallow(
@@ -334,14 +334,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="private"', () => {
       const wrapper = shallow(
@@ -358,14 +358,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="public"', () => {
       const wrapper = shallow(
@@ -382,14 +382,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(true)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="seer"', () => {
       const wrapper = shallow(
@@ -406,14 +406,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
     test('intensionalDisclosureRange="werewolf"', () => {
       const wrapper = shallow(
@@ -430,14 +430,14 @@ describe('<ChatItem />', () => {
         />
       )
 
-      expect(wrapper.find('.chat--item').hasClass('me')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('public')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('grave')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('limited')).toBe(true)
-      expect(wrapper.find('.chat--item').hasClass('master')).toBe(false)
-      expect(wrapper.find('.chat--item').hasClass('private')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#message1')).toBe(false)
-      expect(wrapper.find('.chat--item').is('#messageundefiend')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('me')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('public')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('grave')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('limited')).toBe(true)
+      expect(wrapper.find('.vi--chat--item').hasClass('master')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
+      expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
     })
   })
 })

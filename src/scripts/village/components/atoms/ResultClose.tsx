@@ -8,7 +8,7 @@ interface Props {
 export default function ResultClose(props: Props) {
   return (
     <div
-      className="result--close"
+      className="vi--result--close"
       onClick={props.handleClick}
     >
       <Close />
