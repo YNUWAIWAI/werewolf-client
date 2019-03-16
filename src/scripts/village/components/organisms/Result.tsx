@@ -1,6 +1,7 @@
 /* global village */
 import * as React from 'react'
 import ResultCell, {ResultCellType} from '../molecules/ResultCell'
+import {CSSTransition} from 'react-transition-group'
 import ResultClose from '../atoms/ResultClose'
 
 export interface StateProps {
@@ -77,9 +78,6 @@ const getRow = (agent: Props['agents'][village.AgentId]) => [
 ]
 
 export default function Result(props: Props) {
-  if (!props.visible) {
-    return null
-  }
   const me = (() => {
     if (typeof props.me === 'undefined' || props.me === null) {
       return []
@@ -125,34 +123,44 @@ export default function Result(props: Props) {
     .map(id => getRow(props.agents[id]))
 
   return (
-    <div className="vi--result">
-      {
-        [
-          <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
-          <ResultCell
-            id={props.summary.description.summary}
-            key={ResultCellType.summary}
-            myTeam={props.summary.myTeam}
-            type={ResultCellType.summary}
-            winnerTeam={props.summary.winnerTeam}
-          />,
-          me,
-          <ResultCell
-            id={props.summary.description.winner}
-            key="caption winners"
-            type={ResultCellType.caption}
-            winnerTeam={props.summary.winnerTeam}
-          />,
-          ... winners,
-          <ResultCell
-            id={props.summary.description.loser}
-            key="caption losers"
-            loserTeam={props.summary.loserTeam}
-            type={ResultCellType.caption}
-          />,
-          ... losers
-        ]
-      }
-    </div>
+    <CSSTransition
+      classNames="vi--result--transition"
+      in={props.visible}
+      timeout={{
+        enter: 500,
+        exit: 250
+      }}
+      unmountOnExit
+    >
+      <div className="vi--result">
+        {
+          [
+            <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
+            <ResultCell
+              id={props.summary.description.summary}
+              key={ResultCellType.summary}
+              myTeam={props.summary.myTeam}
+              type={ResultCellType.summary}
+              winnerTeam={props.summary.winnerTeam}
+            />,
+            me,
+            <ResultCell
+              id={props.summary.description.winner}
+              key="caption winners"
+              type={ResultCellType.caption}
+              winnerTeam={props.summary.winnerTeam}
+            />,
+            ... winners,
+            <ResultCell
+              id={props.summary.description.loser}
+              key="caption losers"
+              loserTeam={props.summary.loserTeam}
+              type={ResultCellType.caption}
+            />,
+            ... losers
+          ]
+        }
+      </div>
+    </CSSTransition>
   )
 }
