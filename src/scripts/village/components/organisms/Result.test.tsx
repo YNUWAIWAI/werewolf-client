@@ -177,37 +177,39 @@ const winners: Props['winners'] = [
   'agent12'
 ]
 
-test('<Result visible />', () => {
-  const handleClickCloseButton = jest.fn()
-  const wrapper = shallow(
-    <Result
-      agents={agents}
-      handleClickCloseButton={handleClickCloseButton}
-      losers={losers}
-      me={me}
-      summary={summary}
-      visible
-      winners={winners}
-    />
-  )
+describe('<Result />', () => {
+  test('visible={true}', () => {
+    const handleClickCloseButton = jest.fn()
+    const wrapper = shallow(
+      <Result
+        agents={agents}
+        handleClickCloseButton={handleClickCloseButton}
+        losers={losers}
+        me={me}
+        summary={summary}
+        visible
+        winners={winners}
+      />
+    )
 
-  expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
-  expect(wrapper.find('.vi--result').exists()).toBe(true)
-})
-test('<Result visible={false} />', () => {
-  const handleClickCloseButton = jest.fn()
-  const wrapper = shallow(
-    <Result
-      agents={agents}
-      handleClickCloseButton={handleClickCloseButton}
-      losers={losers}
-      me={me}
-      summary={summary}
-      visible={false}
-      winners={winners}
-    />
-  )
+    expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
+    expect(wrapper.find('.vi--result').exists()).toBe(true)
+  })
+  test('visible={false}', () => {
+    const handleClickCloseButton = jest.fn()
+    const wrapper = shallow(
+      <Result
+        agents={agents}
+        handleClickCloseButton={handleClickCloseButton}
+        losers={losers}
+        me={me}
+        summary={summary}
+        visible={false}
+        winners={winners}
+      />
+    )
 
-  expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
-  expect(wrapper.find('.vi--result').exists()).toBe(false)
+    expect(handleClickCloseButton).toHaveBeenCalledTimes(0)
+    expect(wrapper.isEmptyRender()).toBe(false)
+  })
 })

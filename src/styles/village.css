@@ -27,6 +27,28 @@
   --background-color: white;
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translate(500%, 0);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+}
+
 body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
 }
@@ -118,6 +140,7 @@ body {
 
     &--delimeter {
       align-items: center;
+      animation: fadein 0.5s ease-out;
       border-bottom: 1px solid #d4d4d4;
       display: flex;
       font-size: 1.5rem;
@@ -140,6 +163,7 @@ body {
     }
 
     &--item {
+      animation: fadein 0.5s ease-out;
       display: grid;
       grid-template-areas: 'opp text me';
       grid-template-columns: 1fr 4fr 1fr;
@@ -465,6 +489,7 @@ body {
 
       &--option {
         align-items: center;
+        animation: slidein 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         cursor: pointer;
         display: inline-flex;
         flex-flow: column nowrap;
@@ -556,6 +581,7 @@ body {
     height: 100%;
 
     &--agent {
+      animation: fadein 0.5s ease-out;
       display: flex;
       flex-direction: column;
       grid-area: agent;
@@ -621,6 +647,7 @@ body {
     }
 
     &--role {
+      animation: fadein 0.5s ease-out;
       display: flex;
       flex-direction: column;
       grid-area: role;
@@ -642,6 +669,7 @@ body {
     }
 
     &--team {
+      animation: fadein 0.5s ease-out;
       display: flex;
       flex-direction: column;
       grid-area: team;
@@ -751,6 +779,16 @@ body {
         font-size: 10px;
       }
     }
+
+    &--transition {
+      &-enter {
+        animation: fadein 0.5s ease-out;
+      }
+
+      &-exit {
+        animation: fadein 0.3s reverse ease-out;
+      }
+    }
   }
 
   &--obfucator {
@@ -769,9 +807,20 @@ body {
       height: 10%;
       width: 10%;
     }
+
+    &--transition {
+      &-enter {
+        animation: fadein 0.5s ease-out;
+      }
+
+      &-exit {
+        animation: fadein 0.3s reverse ease-out;
+      }
+    }
   }
 
   &--prediction {
+    animation: fadein 0.5s ease-out;
     border: solid 1px black;
     display: grid;
     grid: 1fr / 1fr;
@@ -1082,6 +1131,16 @@ body {
         &:active {
           filter: opacity(50%);
         }
+      }
+    }
+
+    &--transition {
+      &-enter {
+        animation: fadein 0.5s ease-out;
+      }
+
+      &-exit {
+        animation: fadein 0.3s reverse ease-out;
       }
     }
   }

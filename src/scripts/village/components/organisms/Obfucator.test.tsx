@@ -4,7 +4,7 @@ import Obfucator from './Obfucator'
 import {shallow} from 'enzyme'
 
 describe('<Obfucator />', () => {
-  test('loading visible', () => {
+  test('loading={true} visible={true}', () => {
     const wrapper = shallow(
       <Obfucator
         loading
@@ -15,7 +15,7 @@ describe('<Obfucator />', () => {
     expect(wrapper.find('.vi--obfucator').exists()).toBe(true)
     expect(wrapper.find(Loader).exists()).toBe(true)
   })
-  test('loading visible={false}', () => {
+  test('loading={true} visible={false}', () => {
     const wrapper = shallow(
       <Obfucator
         loading={false}
@@ -26,7 +26,7 @@ describe('<Obfucator />', () => {
     expect(wrapper.find('.vi--obfucator').exists()).toBe(true)
     expect(wrapper.find(Loader).exists()).toBe(false)
   })
-  test('loading loading={false} visible={false}', () => {
+  test('loading={false} visible={false}', () => {
     const wrapper = shallow(
       <Obfucator
         loading={false}
@@ -34,7 +34,7 @@ describe('<Obfucator />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--obfucator').exists()).toBe(false)
+    expect(wrapper.isEmptyRender()).toBe(false)
     expect(wrapper.find(Loader).exists()).toBe(false)
   })
 })
