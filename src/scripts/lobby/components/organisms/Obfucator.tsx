@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {CSSTransition} from 'react-transition-group'
 import Loader from '../atoms/svg/Loader'
 
 export interface StateProps {
@@ -8,15 +9,25 @@ export interface StateProps {
 export type Props = StateProps
 
 export default function Obfucator(props: Props) {
-  return props.visible ?
-    <div className="lo--obfucator">
-      {
-        props.loading ?
-          <Loader
-            className="lo--obfucator--loader"
-          /> :
-          ''
-      }
-    </div> :
-    null
+  return (
+    <CSSTransition
+      classNames="lo--obfucator--transition"
+      in={props.visible}
+      timeout={{
+        enter: 500,
+        exit: 250
+      }}
+      unmountOnExit
+    >
+      <div className="lo--obfucator">
+        {
+          props.loading ?
+            <Loader
+              className="lo--obfucator--loader"
+            /> :
+            ''
+        }
+      </div>
+    </CSSTransition>
+  )
 }

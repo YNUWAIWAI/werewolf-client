@@ -13,6 +13,16 @@
   --warning-color: rgb(240, 210, 24);
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
 body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
   margin: 0;
@@ -393,6 +403,16 @@ body {
       justify-content: center;
       text-align: center;
     }
+
+    &--transition {
+      &-enter {
+        animation: fadein 0.5s ease-out;
+      }
+
+      &-exit {
+        animation: fadein 0.3s reverse ease-out;
+      }
+    }
   }
 
   &--obfucator {
@@ -410,6 +430,16 @@ body {
     &--loader {
       height: 10%;
       width: 10%;
+    }
+
+    &--transition {
+      &-enter {
+        animation: fadein 0.5s ease-out;
+      }
+
+      &-exit {
+        animation: fadein 0.3s reverse ease-out;
+      }
     }
   }
 
