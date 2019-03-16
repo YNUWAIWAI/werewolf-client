@@ -48,7 +48,7 @@ test('SELECT_NO', () => {
     )
   ).toEqual(
     {
-      id: -1,
+      id: 1,
       visible: false
     }
   )
@@ -67,7 +67,7 @@ test('SELECT_YES', () => {
     )
   ).toEqual(
     {
-      id: -1,
+      id: 1,
       visible: false
     }
   )

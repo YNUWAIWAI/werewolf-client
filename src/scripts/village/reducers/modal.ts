@@ -26,7 +26,7 @@ const modal = (state: State = initialState, action: Action): State => {
     case ActionTypes.global.SELECT_NO:
     case ActionTypes.global.SELECT_YES:
       return {
-        id: -1,
+        ... state,
         visible: false
       }
     default:
