@@ -179,7 +179,7 @@ const state: ReducerState = {
           'en': 'Thomas',
           'ja': 'トーマス'
         },
-        'status': village.AgentStatus.alive
+        'status': village.AgentStatus.dead
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#5',

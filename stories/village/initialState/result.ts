@@ -207,7 +207,7 @@ const state: ReducerState = {
           'en': 'Dieter',
           'ja': 'ディーター'
         },
-        'status': village.AgentStatus.alive
+        'status': village.AgentStatus.deathByFear
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#7',
@@ -217,7 +217,7 @@ const state: ReducerState = {
           'en': 'Peter',
           'ja': 'ペーター'
         },
-        'status': village.AgentStatus.alive
+        'status': village.AgentStatus.unnaturalDeath
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#8',
@@ -227,7 +227,7 @@ const state: ReducerState = {
           'en': 'Lisa',
           'ja': 'リーザ'
         },
-        'status': village.AgentStatus.alive
+        'status': village.AgentStatus.unnaturalDeath
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#9',
@@ -237,7 +237,7 @@ const state: ReducerState = {
           'en': 'Alvin',
           'ja': 'アルビン'
         },
-        'status': village.AgentStatus.alive
+        'status': village.AgentStatus.unnaturalDeath
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#11',
@@ -247,7 +247,7 @@ const state: ReducerState = {
           'en': 'Otto',
           'ja': 'オットー'
         },
-        'status': village.AgentStatus.alive
+        'status': village.AgentStatus.unnaturalDeath
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#12',
@@ -257,7 +257,7 @@ const state: ReducerState = {
           'en': 'Joachim',
           'ja': 'ヨアヒム'
         },
-        'status': village.AgentStatus.alive
+        'status': village.AgentStatus.deathByAttack
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#13',
