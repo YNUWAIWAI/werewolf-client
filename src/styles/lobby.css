@@ -264,6 +264,7 @@ body {
     border: black solid 1px;
     display: grid;
     font-size: 2rem;
+    grid-template-columns: minmax(13rem, 2fr) minmax(19rem, 3fr);
     margin: 0 0 1rem;
 
     &--input {
@@ -522,6 +523,7 @@ body {
         's-p s-v1 s-v2'
         'mem mem mem'
         'c-p c-v c-v';
+      grid-template-columns: minmax(13rem, 1fr) minmax(13rem, 1fr) minmax(13rem, 1fr);
       margin-bottom: 0.5rem;
 
       &.build {
@@ -531,7 +533,6 @@ body {
           's-p s-v1 s-v2'
           'mem mem mem'
           'c-p c-v c-v';
-        grid-template-columns: 1fr 1fr 1fr;
       }
 
       &.clickable {
@@ -738,8 +739,7 @@ body {
           'A A'
           'B B'
           'C C';
-        grid-template-columns: 1fr 1fr;
-        padding: 1rem;
+        grid-template-columns: minmax(13rem, 1fr) minmax(13rem, 1fr);
         width: 100%;
 
         &--robot {
@@ -749,13 +749,14 @@ body {
           font-size: inherit;
           grid-area: robot;
           justify-content: center;
+          margin: 1rem 0 1rem 1rem;
           padding: 1rem;
           text-align: center;
 
           &--select {
             font-size: inherit;
-            padding-left: 1rem;
-            width: 100%;
+            margin-left: 1rem;
+            width: calc(100% - 4rem - 10px);
           }
 
           &.invalid {
@@ -770,6 +771,7 @@ body {
           font-size: inherit;
           grid-area: human;
           justify-content: center;
+          margin: 1rem 1rem 1rem 0;
           padding: 1rem;
           text-align: center;
         }
