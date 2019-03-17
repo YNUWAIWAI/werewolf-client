@@ -29,6 +29,7 @@ export default function CommandSelection(props: Props) {
           props.agents
             .map(a =>
               <CSSTransition
+                appear
                 classNames="vi--command--selection--option--transition"
                 key={a.id}
                 timeout={{

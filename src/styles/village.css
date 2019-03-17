@@ -536,13 +536,26 @@ body {
         }
 
         &--transition {
+          &-appear {
+            opacity: 0;
+            transform: translate(500%, 0);
+          }
+
+          &-appear-active {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
           &-enter {
             opacity: 0;
+            transform: translate(500%, 0);
           }
 
           &-enter-active {
             opacity: 1;
-            transition: opacity 0.5s ease-out;
+            transform: translate(0, 0);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
           &-exit {
