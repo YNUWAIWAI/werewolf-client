@@ -1,5 +1,4 @@
 import * as React from 'react'
-import AgentIcon from '../atoms/AgentIcon'
 import CommandSelection from './CommandSelection'
 import Description from '../molecules/Description'
 import {shallow} from 'enzyme'
@@ -100,7 +99,7 @@ describe('<CommandSelection />', () => {
     )
 
     expect(wrapper.find(Description).exists()).toBe(true)
-    expect(wrapper.find('.vi--command--selection--select').children(AgentIcon)).toHaveLength(13)
+    expect(wrapper.find('.vi--command--selection--select').children()).toHaveLength(13)
   })
   test('1 agents fixed', () => {
     const agents = [
@@ -122,6 +121,6 @@ describe('<CommandSelection />', () => {
     )
 
     expect(wrapper.find(Description).exists()).toBe(true)
-    expect(wrapper.find('.vi--command--selection--select').children(AgentIcon)).toHaveLength(1)
+    expect(wrapper.find('.vi--command--selection--select').children()).toHaveLength(1)
   })
 })
