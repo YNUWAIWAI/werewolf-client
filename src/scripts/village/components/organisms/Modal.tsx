@@ -24,7 +24,7 @@ export default function Modal(props: Props) {
       in={props.visible}
       timeout={{
         enter: 500,
-        exit: 250
+        exit: 300
       }}
       unmountOnExit
     >
