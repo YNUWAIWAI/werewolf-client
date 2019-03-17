@@ -894,7 +894,7 @@ body {
       z-index: 1;
 
       &.dead {
-        animation: flash 1s 8 cubic-bezier(0.4, 0, 0.2, 1);
+        animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
         background-color: red;
         color: white;
       }
