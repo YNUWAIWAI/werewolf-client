@@ -44,6 +44,18 @@
   }
 }
 
+@keyframes flash {
+  from {
+    background: white;
+    color: black;
+  }
+
+  to {
+    background: red;
+    color: white;
+  }
+}
+
 body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
 }
@@ -882,6 +894,7 @@ body {
       z-index: 1;
 
       &.dead {
+        animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
         background-color: red;
         color: white;
       }
