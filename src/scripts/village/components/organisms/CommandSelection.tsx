@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import AgentIcon from '../atoms/AgentIcon'
 import Description from '../molecules/Description'
 
@@ -23,31 +24,30 @@ export default function CommandSelection(props: Props) {
         className="vi--command--selection--description"
         id={props.descriptionId}
       />
-      <div className="vi--command--selection--select ">
+      <TransitionGroup className="vi--command--selection--select">
         {
-          props.fixed ?
-            props.agents
-              .map(a =>
+          props.agents
+            .map(a =>
+              <CSSTransition
+                classNames="vi--command--selection--option--transition"
+                key={a.id}
+                timeout={{
+                  enter: 1000,
+                  exit: 400
+                }}
+                unmountOnExit
+              >
                 <AgentIcon
-                  additionalClass="fixed"
+                  additionalClass={props.fixed ? 'fixed' : ''}
                   className="vi--command--selection--option"
+                  handleOnClick={props.fixed ? undefined : props.handleSelectOption(a.id)}
                   image={a.image}
-                  key={a.id}
                   name={a.name}
                 />
-              ) :
-            props.agents
-              .map(a =>
-                <AgentIcon
-                  className="vi--command--selection--option"
-                  handleOnClick={props.handleSelectOption(a.id)}
-                  image={a.image}
-                  key={a.id}
-                  name={a.name}
-                />
-              )
+              </CSSTransition>
+            )
         }
-      </div>
+      </TransitionGroup>
     </div>
   )
 }
