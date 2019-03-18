@@ -1,19 +1,21 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {SelectVillage, SubmitLogout, Transition} from '../actions'
-import AdvancedSearch from '../containers/AdvancedSearchContainer'
-import BuildVillage from '../containers/BuildVillageContainer'
-import ConnectingToRobotPlayer from '../containers/ConnectingToRobotPlayerContainer'
-import History from '../containers/HistoryContainer'
-import IdSearch from '../containers/IdSearchContainer'
-import LobbyForAudience from '../containers/LobbyForAudienceContainer'
-import LobbyForHumanPlayer from '../containers/LobbyForHumanPlayerContainer'
-import LobbyForRobotPlayer from '../containers/LobbyForRobotPlayerContainer'
-import Main from '../containers/MainContainer'
-import Settings from '../containers/SettingsContainer'
-import WaitingForPlayers from '../containers/WaitingForPlayersContainer'
 
+export const enum Content {
+  AdvancedSearch = 'AdvancedSearch',
+  BuildVillage = 'BuildVillage',
+  ConnectingToRobotPlayer = 'ConnectingToRobotPlayer',
+  History = 'History',
+  IdSearch = 'IdSearch',
+  LobbyForAudience = 'LobbyForAudience',
+  LobbyForHumanPlayer = 'LobbyForHumanPlayer',
+  LobbyForRobotPlayer = 'LobbyForRobotPlayer',
+  Main = 'Main',
+  Settings = 'Settings',
+  WaitingForPlayers = 'WaitingForPlayers'
+}
 export interface State {
-  readonly content: React.ComponentType
+  readonly content: Content
 }
 type Action =
   | SelectVillage
@@ -21,7 +23,7 @@ type Action =
   | Transition
 
 export const initialState = {
-  content: Main
+  content: Content.Main
 }
 const app = (state: State = initialState, action: Action): State => {
   switch (action.type) {
@@ -34,19 +36,19 @@ const app = (state: State = initialState, action: Action): State => {
       window.onbeforeunload = () => ''
 
       return {
-        content: WaitingForPlayers
+        content: Content.WaitingForPlayers
       }
     case ActionTypes.Target.SHOW_ADVANCED_SEARCH:
       return {
-        content: AdvancedSearch
+        content: Content.AdvancedSearch
       }
     case ActionTypes.Target.SHOW_BUILD_VILLAGE:
       return {
-        content: BuildVillage
+        content: Content.BuildVillage
       }
     case ActionTypes.Target.SHOW_CONNECTING_TO_ROBOT_PLAYER:
       return {
-        content: ConnectingToRobotPlayer
+        content: Content.ConnectingToRobotPlayer
       }
     case ActionTypes.Target.SHOW_CREDITS: {
       const w = window.open(`${window.location.origin}/credits`, 'credits')
@@ -68,41 +70,41 @@ const app = (state: State = initialState, action: Action): State => {
     }
     case ActionTypes.Target.SHOW_HISTORY:
       return {
-        content: History
+        content: Content.History
       }
     case ActionTypes.Target.SHOW_ID_SEARCH:
       return {
-        content: IdSearch
+        content: Content.IdSearch
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
       window.onbeforeunload = null
 
       return {
-        content: LobbyForAudience
+        content: Content.LobbyForAudience
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       window.onbeforeunload = null
 
       return {
-        content: LobbyForHumanPlayer
+        content: Content.LobbyForHumanPlayer
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       window.onbeforeunload = null
 
       return {
-        content: LobbyForRobotPlayer
+        content: Content.LobbyForRobotPlayer
       }
     case ActionTypes.Target.SHOW_MAIN:
       window.onbeforeunload = null
 
       return {
-        content: Main
+        content: Content.Main
       }
     case ActionTypes.Target.SHOW_SETTINGS:
       window.onbeforeunload = () => ''
 
       return {
-        content: Settings
+        content: Content.Settings
       }
     default:
       return state
