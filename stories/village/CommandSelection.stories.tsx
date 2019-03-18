@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
@@ -93,6 +94,7 @@ storiesOf('village|Command/CommandSelection', module)
         descriptionId="CommandSelection.Description.dayVote.unfixed"
         fixed={false}
         handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
+        phase={village.Phase.day}
       />
 
     return story
