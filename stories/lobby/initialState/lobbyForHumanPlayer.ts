@@ -1,11 +1,11 @@
 /* global lobby */
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
-import LobbyForHumanPlayer from '../../../src/scripts/lobby/containers/LobbyForHumanPlayerContainer'
+import {Content} from '../../../src/scripts/lobby/reducers/app'
 import {ReducerState} from '../../../src/scripts/lobby/reducers'
 
 const state: Partial<ReducerState> = {
   app: {
-    content: LobbyForHumanPlayer
+    content: Content.LobbyForHumanPlayer
   },
   lobbyForHumanPlayer: {
     image: 'https://werewolf.world/image/0.1/Friedel.jpg',
