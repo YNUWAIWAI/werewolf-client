@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import AdvancedSearch from './AdvancedSearchContainer'
 import BuildVillage from './BuildVillageContainer'
 import ConnectingToRobotPlayer from './ConnectingToRobotPlayerContainer'
@@ -19,54 +20,66 @@ import {connect} from 'react-redux'
 
 interface StateProps {
   readonly content: React.ReactElement<unknown>
+  readonly name: Content
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   switch (state.app.content) {
     case Content.AdvancedSearch:
       return {
-        content: <AdvancedSearch />
+        content: <AdvancedSearch />,
+        name: state.app.content
       }
     case Content.BuildVillage:
       return {
-        content: <BuildVillage />
+        content: <BuildVillage />,
+        name: state.app.content
       }
     case Content.ConnectingToRobotPlayer:
       return {
-        content: <ConnectingToRobotPlayer />
+        content: <ConnectingToRobotPlayer />,
+        name: state.app.content
       }
     case Content.History:
       return {
-        content: <History />
+        content: <History />,
+        name: state.app.content
       }
     case Content.IdSearch:
       return {
-        content: <IdSearch />
+        content: <IdSearch />,
+        name: state.app.content
       }
     case Content.LobbyForAudience:
       return {
-        content: <LobbyForAudience />
+        content: <LobbyForAudience />,
+        name: state.app.content
       }
     case Content.LobbyForHumanPlayer:
       return {
-        content: <LobbyForHumanPlayer />
+        content: <LobbyForHumanPlayer />,
+        name: state.app.content
       }
     case Content.LobbyForRobotPlayer:
       return {
-        content: <LobbyForRobotPlayer />
+        content: <LobbyForRobotPlayer />,
+        name: state.app.content
       }
     case Content.Settings:
       return {
-        content: <Settings />
+        content: <Settings />,
+        name: state.app.content
       }
     case Content.WaitingForPlayers:
       return {
-        content: <WaitingForPlayers />
+        content: <WaitingForPlayers />,
+        name: state.app.content
       }
     case Content.Main:
     default:
       return {
-        content: <Main />
+        content: <Main />,
+        name: state.app.content
       }
   }
 }
@@ -78,7 +91,20 @@ export default connect(
     return (
       <IntlProvider>
         <>
-          {props.content}
+          <TransitionGroup
+            component={null}
+          >
+            <CSSTransition
+              appear
+              classNames="lo--app--transition"
+              exit={false}
+              key={props.name}
+              timeout={100}
+              unmountOnExit
+            >
+              {props.content}
+            </CSSTransition>
+          </TransitionGroup>
           <Obfucator />
           <Modal />
         </>
