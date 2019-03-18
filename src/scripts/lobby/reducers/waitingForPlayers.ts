@@ -8,7 +8,7 @@ export interface State {
   readonly kickOutToken: lobby.Token
   readonly menuItems: MenuItem[]
   readonly players: lobby.WaitingPlayer[]
-  readonly village?: lobby.Village
+  readonly village: lobby.Village | null
 }
 type Action =
   | ChangeLobby
@@ -20,7 +20,8 @@ export const initialState = {
   isPlayer: true,
   kickOutToken: '',
   menuItems: [],
-  players: []
+  players: [],
+  village: null
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {
