@@ -58,6 +58,7 @@
 
 body {
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  margin: 0;
 }
 
 .vi {
@@ -497,7 +498,6 @@ body {
 
       &--option {
         align-items: center;
-        animation: slidein 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         cursor: pointer;
         display: inline-flex;
         flex-flow: column nowrap;
@@ -523,6 +523,7 @@ body {
         }
 
         &.fixed {
+          animation: fadein 0.4s 2 alternate-reverse ease-in;
           cursor: default;
 
           &:hover {
@@ -531,6 +532,39 @@ body {
             &:active {
               filter: unset;
             }
+          }
+        }
+
+        &--transition {
+          &-appear {
+            opacity: 0;
+            transform: translate(500%, 0);
+          }
+
+          &-appear-active {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          &-enter {
+            opacity: 0;
+            transform: translate(500%, 0);
+          }
+
+          &-enter-active {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          &-exit {
+            opacity: 1;
+          }
+
+          &-exit-active {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
           }
         }
       }
@@ -791,11 +825,21 @@ body {
 
     &--transition {
       &-enter {
-        animation: fadein 0.5s ease-out;
+        opacity: 0;
+      }
+
+      &-enter-active {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
       }
 
       &-exit {
-        animation: fadein 0.3s reverse ease-out;
+        opacity: 1;
+      }
+
+      &-exit-active {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
       }
     }
   }
@@ -819,11 +863,21 @@ body {
 
     &--transition {
       &-enter {
-        animation: fadein 0.5s ease-out;
+        opacity: 0;
+      }
+
+      &-enter-active {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
       }
 
       &-exit {
-        animation: fadein 0.3s reverse ease-out;
+        opacity: 1;
+      }
+
+      &-exit-active {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
       }
     }
   }
@@ -1146,11 +1200,21 @@ body {
 
     &--transition {
       &-enter {
-        animation: fadein 0.5s ease-out;
+        opacity: 0;
+      }
+
+      &-enter-active {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
       }
 
       &-exit {
-        animation: fadein 0.3s reverse ease-out;
+        opacity: 1;
+      }
+
+      &-exit-active {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
       }
     }
   }

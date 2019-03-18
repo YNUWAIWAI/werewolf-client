@@ -43,7 +43,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     return {
       agents,
       descriptionId: 'CommandSelection.Description.wait',
-      fixed: state.commandSelection.fixed
+      fixed: state.commandSelection.fixed,
+      phase: state.base.phase
     }
   }
 
@@ -54,7 +55,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       state.mine.role.id,
       state.commandSelection.fixed,
     ),
-    fixed: state.commandSelection.fixed
+    fixed: state.commandSelection.fixed,
+    phase: state.base.phase
   }
 }
 
