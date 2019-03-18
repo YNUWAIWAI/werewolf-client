@@ -434,7 +434,8 @@ describe('KICK_OUT_PLAYER', () => {
       isPlayer: true,
       kickOutToken: token,
       menuItems: [],
-      players: []
+      players: [],
+      village: null
     }
   })
   const dispatch = jest.fn()
