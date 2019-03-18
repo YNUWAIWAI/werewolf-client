@@ -324,7 +324,7 @@ describe('<WaitingForPlayersContainer />', () => {
 
       expect(wrapper.html()).toMatchSnapshot()
     })
-    test('state.waitingForPlayers.village is undefined', () => {
+    test('state.waitingForPlayers.village is null', () => {
       const store = fakeStore(
         {
           waitingForPlayers: {
@@ -345,7 +345,8 @@ describe('<WaitingForPlayersContainer />', () => {
                 types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
               }
             ],
-            players: []
+            players: [],
+            village: null
           }
         }
       )
@@ -381,7 +382,8 @@ describe('<WaitingForPlayersContainer />', () => {
               types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
             }
           ],
-          players: []
+          players: [],
+          village: null
         }
       }
     )
@@ -428,7 +430,8 @@ describe('<WaitingForPlayersContainer />', () => {
               types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
             }
           ],
-          players: []
+          players: [],
+          village: null
         }
       }
     )
