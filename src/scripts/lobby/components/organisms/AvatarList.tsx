@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import AvatarItem from '../molecules/AvatarItem'
 
 export interface Props {
@@ -18,16 +19,26 @@ export interface Props {
 
 export default function AvatarList(props: Props) {
   const items = props.items.map(item =>
-    <AvatarItem
-      confirmKickOutPlayer={props.confirmKickOutPlayer}
+    <CSSTransition
+      appear
+      classNames="lo--avatar-list--item--transition"
       key={item.token}
-      {... item}
-    />
+      timeout={{
+        enter: 500,
+        exit: 300
+      }}
+      unmountOnExit
+    >
+      <AvatarItem
+        confirmKickOutPlayer={props.confirmKickOutPlayer}
+        {... item}
+      />
+    </CSSTransition>
   )
 
   return (
-    <div className="lo--avatar-list">
+    <TransitionGroup className="lo--avatar-list">
       {items}
-    </div>
+    </TransitionGroup>
   )
 }
