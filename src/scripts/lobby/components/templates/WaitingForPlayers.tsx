@@ -5,7 +5,7 @@ import AvatarList from '../organisms/AvatarList'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import {Target} from '../../constants/ActionTypes'
-import VillageItem from '../molecules/VillageItem'
+import VillageList from '../organisms/VillageList'
 
 export interface StateProps {
   readonly isPlayer: boolean
@@ -21,7 +21,7 @@ export interface StateProps {
     readonly pingStatus: lobby.PingStatus
     readonly token: lobby.Token
   }[]
-  readonly village?: lobby.Village
+  readonly village: lobby.Village | null
 }
 export interface DispatchProps {
   readonly confirmKickOutPlayer: (values: {name: string, token: lobby.Token}) => void
@@ -36,14 +36,14 @@ export default function WaitingForPlayers(props: Props) {
     <div className="lo--grid">
       <Header id="Header.waitingForPlayers" />
       <MainContent>
-        {
-          typeof props.village === 'undefined' ?
-            null :
-            <VillageItem
-              {... props.village}
-              isPlayer={props.isPlayer}
-            />
-        }
+        <VillageList
+          isPlayer={props.isPlayer}
+          items={
+            props.village === null ?
+              [] :
+              [props.village]
+          }
+        />
       </MainContent>
       <AsideContent
         expand
