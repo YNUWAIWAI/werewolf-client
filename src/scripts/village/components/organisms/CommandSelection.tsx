@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import AgentIcon from '../atoms/AgentIcon'
@@ -11,6 +12,7 @@ export interface StateProps {
   }[]
   readonly descriptionId: string
   readonly fixed: boolean
+  readonly phase: village.Phase
 }
 export interface DispatchProps {
   readonly handleSelectOption: (agentId: number) => () => void
@@ -31,7 +33,7 @@ export default function CommandSelection(props: Props) {
               <CSSTransition
                 appear
                 classNames="vi--command--selection--option--transition"
-                key={a.id}
+                key={`${a.id}${props.phase}`}
                 timeout={{
                   enter: 1000,
                   exit: 400

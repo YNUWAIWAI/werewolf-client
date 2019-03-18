@@ -1,3 +1,4 @@
+/* global village */
 import * as React from 'react'
 import CommandSelection from './CommandSelection'
 import Description from '../molecules/Description'
@@ -13,6 +14,7 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
+        phase={village.Phase.day}
       />
     )
 
@@ -95,6 +97,7 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
+        phase={village.Phase.day}
       />
     )
 
@@ -117,6 +120,7 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.dayVote.fixed"
         fixed
         handleSelectOption={handleSelectOption}
+        phase={village.Phase.day}
       />
     )
 
