@@ -47,19 +47,11 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
   })
 
-  if (state.waitingForPlayers.village) {
-    return {
-      isPlayer: state.waitingForPlayers.isPlayer,
-      menuItems: state.waitingForPlayers.menuItems,
-      players,
-      village: state.waitingForPlayers.village
-    }
-  }
-
   return {
     isPlayer: state.waitingForPlayers.isPlayer,
     menuItems: state.waitingForPlayers.menuItems,
-    players
+    players,
+    village: state.waitingForPlayers.village
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
