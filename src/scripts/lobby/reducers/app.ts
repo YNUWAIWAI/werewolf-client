@@ -28,7 +28,7 @@ export const initialState = {
 const app = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.global.LOGOUT:
-      window.location.assign(`${window.location.origin}/logout`)
+      window.location.replace(`${window.location.origin}/logout`)
 
       return state
     case ActionTypes.global.SELECT_VILLAGE:
