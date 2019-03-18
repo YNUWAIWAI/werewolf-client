@@ -18,55 +18,55 @@ import WaitingForPlayers from './WaitingForPlayersContainer'
 import {connect} from 'react-redux'
 
 interface StateProps {
-  readonly content: React.ComponentType
+  readonly content: React.ReactElement<unknown>
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   switch (state.app.content) {
     case Content.AdvancedSearch:
       return {
-        content: AdvancedSearch
+        content: <AdvancedSearch />
       }
     case Content.BuildVillage:
       return {
-        content: BuildVillage
+        content: <BuildVillage />
       }
     case Content.ConnectingToRobotPlayer:
       return {
-        content: ConnectingToRobotPlayer
+        content: <ConnectingToRobotPlayer />
       }
     case Content.History:
       return {
-        content: History
+        content: <History />
       }
     case Content.IdSearch:
       return {
-        content: IdSearch
+        content: <IdSearch />
       }
     case Content.LobbyForAudience:
       return {
-        content: LobbyForAudience
+        content: <LobbyForAudience />
       }
     case Content.LobbyForHumanPlayer:
       return {
-        content: LobbyForHumanPlayer
+        content: <LobbyForHumanPlayer />
       }
     case Content.LobbyForRobotPlayer:
       return {
-        content: LobbyForRobotPlayer
+        content: <LobbyForRobotPlayer />
       }
     case Content.Settings:
       return {
-        content: Settings
+        content: <Settings />
       }
     case Content.WaitingForPlayers:
       return {
-        content: WaitingForPlayers
+        content: <WaitingForPlayers />
       }
     case Content.Main:
     default:
       return {
-        content: Main
+        content: <Main />
       }
   }
 }
@@ -78,7 +78,7 @@ export default connect(
     return (
       <IntlProvider>
         <>
-          <props.content />
+          {props.content}
           <Obfucator />
           <Modal />
         </>
