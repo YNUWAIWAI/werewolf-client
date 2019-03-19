@@ -22,13 +22,15 @@ export default class Chat extends React.Component<Props, {}> {
       return
     }
     const isBottom = elem.scrollHeight <= (elem.scrollTop + elem.clientHeight)
+    const scrollable = !(elem.scrollTop === 0 && elem.clientHeight === elem.scrollHeight)
 
-    if (isBottom) {
+    if (isBottom || (scrollable && !this.scrollable)) {
       this.scrollToBottom()
     }
   }
 
   private chat = React.createRef<HTMLDivElement>()
+  private scrollable = false
 
   public scrollToBottom() {
     const elem = this.chat.current
@@ -36,7 +38,7 @@ export default class Chat extends React.Component<Props, {}> {
     if (!elem) {
       return
     }
-
+    this.scrollable = !(elem.scrollTop === 0 && elem.clientHeight === elem.scrollHeight)
     elem.scrollTop = elem.scrollHeight
   }
 
