@@ -49,7 +49,6 @@ export default class Chat extends React.Component<Props, State> {
     if (!elem) {
       return
     }
-
     elem.scrollTop = elem.scrollHeight
   }
 
