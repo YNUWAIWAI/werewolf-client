@@ -7,6 +7,7 @@ import client2server from './client2server'
 import indexedDB from './indexedDB'
 import logger from './logger'
 import socket from './socket'
+import windowLocation from './windowLocation'
 
 type Action =
   | actions.AdvancedSearch$ChangeAvatar
@@ -34,6 +35,7 @@ type Action =
   | actions.IdSearch$ChangeValidity
   | actions.KickOutPlayer
   | actions.SelectVillage
+  | actions.ShowVillage
   | actions.SocketClose
   | actions.SocketError
   | actions.SocketMessage
@@ -59,7 +61,8 @@ const middleware =
         url
       }),
       client2server,
-      indexedDB
+      indexedDB,
+      windowLocation
     ) :
     applyMiddleware(
       socket({
@@ -67,7 +70,8 @@ const middleware =
       }),
       client2server,
       indexedDB,
-      logger
+      logger,
+      windowLocation
     )
 
 export default middleware
