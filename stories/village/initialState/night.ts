@@ -27,7 +27,7 @@ const state: ReducerState = {
     }
   },
   chat: {
-    allIds: ['chat1', 'chat0'],
+    allIds: ['chat0', 'chat1'],
     byId: {
       'chat0': {
         'id': 1,
