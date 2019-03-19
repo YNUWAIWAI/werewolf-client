@@ -24,6 +24,7 @@ export default class Chat extends React.Component<Props, {}> {
     const isBottom = elem.scrollHeight <= (elem.scrollTop + elem.clientHeight)
     const scrollable = !(elem.scrollTop === 0 && elem.clientHeight === elem.scrollHeight)
 
+    console.log(isBottom, scrollable, !this.scrollable)
     if (isBottom || (scrollable && !this.scrollable)) {
       this.scrollToBottom()
     }
