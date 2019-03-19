@@ -1,7 +1,7 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
-import {activateNextButton, changeLanguage, ready, socket} from '../actions'
+import {activateNextButton, changeLanguage, ready, showLobby, socket} from '../actions'
 import {Middleware} from '.'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
@@ -23,8 +23,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.leaveWaitingPage),
             deleteValue(objectStore, Key.nextGameVillageId)
           ])
-          window.onbeforeunload = null
-          window.location.replace(`${window.location.origin}/lobby`)
+          store.dispatch(showLobby())
         })
         .catch(reason => console.error(reason))
 
@@ -44,8 +43,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           if (isHost) {
             store.dispatch(socket.send(buildVillagePayload))
           } else {
-            window.onbeforeunload = null
-            window.location.replace(`${window.location.origin}/lobby`)
+            store.dispatch(showLobby())
           }
         })
         .catch(reason => console.error(reason))
@@ -90,8 +88,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
             ])
 
             if (isHost) {
-              window.onbeforeunload = null
-              window.location.replace(`${window.location.origin}/lobby`)
+              store.dispatch(showLobby())
             } else {
               store.dispatch(activateNextButton(payload.villageId))
             }

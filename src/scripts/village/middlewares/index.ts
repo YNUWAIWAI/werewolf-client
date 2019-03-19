@@ -10,6 +10,7 @@ import logger from './logger'
 import socket from './socket'
 import timeWatcher from './timeWatcher'
 import timer from './timer'
+import windowLocation from './windowLocation'
 
 type Action =
   | actions.ActivateNextButton
@@ -25,6 +26,7 @@ type Action =
   | actions.Ready
   | actions.SelectNo
   | actions.SelectOption
+  | actions.ShowLobby
   | actions.SelectYes
   | actions.SocketClose
   | actions.SocketError
@@ -54,7 +56,8 @@ const middleware =
       flavorText,
       indexedDB,
       timer,
-      timeWatcher
+      timeWatcher,
+      windowLocation
     ) :
     applyMiddleware(
       socket({
@@ -65,7 +68,8 @@ const middleware =
       indexedDB,
       logger,
       timer,
-      timeWatcher
+      timeWatcher,
+      windowLocation
     )
 
 export default middleware

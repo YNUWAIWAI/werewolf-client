@@ -212,6 +212,10 @@ export const selectYes = (agentId: number): {agentId: number, type: ActionTypes.
   type: ActionTypes.global.SELECT_YES
 })
 
+export const showLobby = (): {type: ActionTypes.global.SHOW_LOBBY} => ({
+  type: ActionTypes.global.SHOW_LOBBY
+})
+
 export const tick = ({start, time}: {start: number, time: number}): {start: number, time: number, type: ActionTypes.global.TICK} => ({
   start,
   time,
@@ -232,6 +236,7 @@ export type Ready = ReturnType<typeof ready>
 export type SelectNo = ReturnType<typeof selectNo>
 export type SelectOption = ReturnType<typeof selectOption>
 export type SelectYes = ReturnType<typeof selectYes>
+export type ShowLobby = ReturnType<typeof showLobby>
 export type SocketClose = ReturnType<typeof socket.close>
 export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
