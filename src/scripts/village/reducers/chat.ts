@@ -46,7 +46,7 @@ const chat = (state: State = initialState, action: Action): State => {
 
           if (payload.intensionalDisclosureRange === village.Channel.anonymousAudience) {
             return {
-              allIds: [chatId, ... state.allIds],
+              allIds: [... state.allIds, chatId],
               byId: {
                 ... state.byId,
                 [chatId]: {
@@ -65,7 +65,7 @@ const chat = (state: State = initialState, action: Action): State => {
             }
           } else if (payload.intensionalDisclosureRange === village.Channel.onymousAudience) {
             return {
-              allIds: [chatId, ... state.allIds],
+              allIds: [... state.allIds, chatId],
               byId: {
                 ... state.byId,
                 [chatId]: {
@@ -85,7 +85,7 @@ const chat = (state: State = initialState, action: Action): State => {
           }
 
           return {
-            allIds: [chatId, ... state.allIds],
+            allIds: [... state.allIds, chatId],
             byId: {
               ... state.byId,
               [chatId]: {
@@ -111,7 +111,7 @@ const chat = (state: State = initialState, action: Action): State => {
       const delimeterId = getDelimeterId()
 
       return {
-        allIds: [delimeterId, ... state.allIds],
+        allIds: [... state.allIds, delimeterId],
         byId: {
           ... state.byId,
           [delimeterId]: {

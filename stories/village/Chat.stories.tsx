@@ -20,7 +20,7 @@ storiesOf('village|Chat', module)
     </Provider>
   )
   .add('anonymousAudience', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -55,7 +55,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('grave', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -90,7 +90,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('hunter',() => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -125,7 +125,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('master', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -160,7 +160,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('onymousAudience', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -195,7 +195,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('private', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -230,7 +230,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('public', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -265,7 +265,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('seer', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -300,7 +300,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('werewolf', () => {
-    const allIds = ['chat0', 'chat1']
+    const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -335,7 +335,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('delimeter', () => {
-    const allIds = ['delimeter1', 'chat1', 'chat0', 'delimeter0']
+    const allIds = ['delimeter0', 'chat0', 'chat1', 'delimeter1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
@@ -378,7 +378,7 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('linebreak', () => {
-    const allIds = ['delimeter1', 'chat3', 'chat2', 'chat1', 'chat0', 'delimeter0']
+    const allIds = ['delimeter0', 'chat0', 'chat1', 'chat2', 'chat3', 'delimeter1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,

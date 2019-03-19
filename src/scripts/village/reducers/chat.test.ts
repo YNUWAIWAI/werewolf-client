@@ -58,7 +58,7 @@ describe('socket/MESSAGE', () => {
         socket.message(theirMessageOnChat)
       )
     ).toEqual({
-      allIds: ['chat1', 'chat0'],
+      allIds: ['chat0', 'chat1'],
       byId: {
         chat0: {
           id: 12,
@@ -97,7 +97,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         {
-          allIds: ['chat1', 'chat0'],
+          allIds: ['chat0', 'chat1'],
           byId: {
             chat0: {
               id: 12,
@@ -134,7 +134,7 @@ describe('socket/MESSAGE', () => {
         socket.message(onymousAudienceChat)
       )
     ).toEqual({
-      allIds: ['chat2', 'chat1', 'chat0'],
+      allIds: ['chat0', 'chat1', 'chat2'],
       byId: {
         chat0: {
           id: 12,
@@ -185,7 +185,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         {
-          allIds: ['chat2', 'chat1', 'chat0'],
+          allIds: ['chat0', 'chat1', 'chat2'],
           byId: {
             chat0: {
               id: 12,
@@ -234,7 +234,7 @@ describe('socket/MESSAGE', () => {
         socket.message(anonymousAudienceChat)
       )
     ).toEqual({
-      allIds: ['chat3', 'chat2', 'chat1', 'chat0'],
+      allIds: ['chat0', 'chat1', 'chat2', 'chat3'],
       byId: {
         chat0: {
           id: 12,

@@ -27,7 +27,7 @@ const state: ReducerState = {
     }
   },
   chat: {
-    allIds: ['chat1', 'chat0'],
+    allIds: ['chat0', 'chat1', 'chat2', 'chat3', 'chat4'],
     byId: {
       'chat0': {
         'id': 1,
@@ -57,6 +57,51 @@ const state: ReducerState = {
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': '>>1 私はパメラが人狼だと思う。',
+        'type': 'item'
+      },
+      'chat2': {
+        'id': 3,
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'intensionalDisclosureRange': village.Channel.public,
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'phaseTimeLimit': 600,
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'text': 'それで、あなたは人狼が誰だと思うの？',
+        'type': 'item'
+      },
+      'chat3': {
+        'id': 4,
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'intensionalDisclosureRange': village.Channel.public,
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'phaseTimeLimit': 600,
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'text': 'それで、あなたは人狼が誰だと思うの？',
+        'type': 'item'
+      },
+      'chat4': {
+        'id': 5,
+        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'intensionalDisclosureRange': village.Channel.public,
+        'isMine': true,
+        'name': {
+          'en': 'Walter',
+          'ja': 'ヴァルター'
+        },
+        'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+        'phaseTimeLimit': 600,
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'text': '>>1 それで、あなたは人狼が誰だと思うの？',
         'type': 'item'
       }
     }
