@@ -9,29 +9,39 @@ export interface StateProps {
   }
 }
 export type Props = StateProps
+export interface State {
+  atBottom: boolean
+}
 
-export default class Chat extends React.Component<Props, {}> {
+export default class Chat extends React.Component<Props, State> {
+  public constructor(props: Props) {
+    super(props)
+    this.state = {
+      atBottom: true
+    }
+  }
   public componentDidMount() {
     this.scrollToBottom()
   }
 
   public componentDidUpdate() {
-    const elem = this.chat.current
-
-    if (!elem) {
-      return
-    }
-    const isBottom = elem.scrollHeight <= (elem.scrollTop + elem.clientHeight)
-    const scrollable = !(elem.scrollTop === 0 && elem.clientHeight === elem.scrollHeight)
-
-    console.log(isBottom, scrollable, !this.scrollable)
-    if (isBottom || (scrollable && !this.scrollable)) {
+    if (this.state.atBottom) {
       this.scrollToBottom()
     }
   }
 
   private chat = React.createRef<HTMLDivElement>()
-  private scrollable = false
+
+  public handleScroll() {
+    const elem = this.chat.current
+
+    if (!elem) {
+      return
+    }
+    this.setState({
+      atBottom: elem.scrollHeight <= elem.clientHeight + elem.scrollTop
+    })
+  }
 
   public scrollToBottom() {
     const elem = this.chat.current
@@ -39,7 +49,7 @@ export default class Chat extends React.Component<Props, {}> {
     if (!elem) {
       return
     }
-    this.scrollable = !(elem.scrollTop === 0 && elem.clientHeight === elem.scrollHeight)
+
     elem.scrollTop = elem.scrollHeight
   }
 
@@ -47,6 +57,7 @@ export default class Chat extends React.Component<Props, {}> {
     return (
       <div
         className="vi--chat"
+        onScroll={() => this.handleScroll()}
         ref={this.chat}
       >
         {
