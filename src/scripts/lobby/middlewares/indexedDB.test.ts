@@ -334,8 +334,6 @@ describe('socket/MESSAGE', () => {
       expect(validate).toBe(true)
     })
     test('dispatch correctly', async () => {
-      const spy = jest.spyOn(window.location, 'replace')
-
       actionHandler(action)
       const [
         buildVillagePayload,
@@ -352,7 +350,10 @@ describe('socket/MESSAGE', () => {
       expect(nextGameVillageId).toBeUndefined()
       expect(villageInfo).toBeUndefined()
       expect(whatToDoNextInLobby).toBeUndefined()
-      expect(spy).toHaveBeenCalled()
+      expect(dispatch).toHaveBeenCalled()
+      expect(dispatch).toHaveBeenCalledWith({
+        type: ActionTypes.global.SHOW_VILLAGE
+      })
     })
   })
   describe('waitingPage', () => {

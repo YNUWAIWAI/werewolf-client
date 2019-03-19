@@ -1,21 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {Content, initialState} from './app'
 
-// test('LOGOUT', () => {
-//   const spy = jest.spyOn(window.location, 'replace')
-
-//   expect(
-//     reducer(
-//       initialState,
-//       {
-//         type: ActionTypes.global.LOGOUT
-//       }
-//     )
-//   ).toEqual(
-//     initialState
-//   )
-//   expect(spy).toHaveBeenCalled()
-// })
 test('SELECT_VILLAGE', () => {
   expect(
     reducer(
@@ -87,32 +72,6 @@ test('SHOW_CONNECTING_TO_ROBOT_PLAYER', () => {
     }
   )
 })
-// test('SHOW_CREDITS', () => {
-//   const spy = jest.spyOn(window, 'open')
-
-//   expect(
-//     reducer(
-//       initialState,
-//       {
-//         type: ActionTypes.Target.SHOW_CREDITS
-//       }
-//     )
-//   ).toEqual(initialState)
-//   expect(spy).toHaveBeenCalled()
-// })
-// test('SHOW_HOW_TO_PLAY', () => {
-//   const spy = jest.spyOn(window, 'open')
-
-//   expect(
-//     reducer(
-//       initialState,
-//       {
-//         type: ActionTypes.Target.SHOW_HOW_TO_PLAY
-//       }
-//     )
-//   ).toEqual(initialState)
-//   expect(spy).toHaveBeenCalled()
-// })
 test('SHOW_HISTORY', () => {
   expect(
     reducer(

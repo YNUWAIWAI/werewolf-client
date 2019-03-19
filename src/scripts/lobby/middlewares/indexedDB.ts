@@ -1,7 +1,7 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
-import {changeLobby, selectVillage, socket} from '../actions'
+import {changeLobby, selectVillage, showVillage, socket} from '../actions'
 import {Middleware} from '.'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
@@ -167,8 +167,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
                 Key.lang,
                 payload.lang
               )
-              window.onbeforeunload = null
-              window.location.replace(`${window.location.origin}/village`)
+              store.dispatch(showVillage())
             })
             .catch(reason => console.error(reason))
 

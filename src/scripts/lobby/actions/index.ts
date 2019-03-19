@@ -159,6 +159,9 @@ export const selectVillage = (id: number): {id: number, type: ActionTypes.global
 export const selectYes = (): {type: ActionTypes.global.SELECT_YES} => ({
   type: ActionTypes.global.SELECT_YES
 })
+export const showVillage = (): {type: ActionTypes.global.SHOW_VILLAGE} => ({
+  type: ActionTypes.global.SHOW_VILLAGE
+})
 export const submitLogout = (): {type: ActionTypes.global.LOGOUT} => ({
   type: ActionTypes.global.LOGOUT
 })
@@ -194,6 +197,7 @@ export type KickOutPlayer = ReturnType<typeof kickOutPlayer>
 export type SelectNo = ReturnType<typeof selectNo>
 export type SelectVillage = ReturnType<typeof selectVillage>
 export type SelectYes = ReturnType<typeof selectYes>
+export type ShowVillage = ReturnType<typeof showVillage>
 export type SocketClose = ReturnType<typeof socket.close>
 export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
