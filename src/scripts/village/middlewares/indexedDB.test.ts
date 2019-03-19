@@ -87,7 +87,6 @@ test('RETURN_TO_LOBBY', async () => {
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
     villageId: 3
   }
-  const spy = jest.spyOn(window.location, 'replace')
 
   await updateValue<Village>(objectStore, Key.village, v)
   actionHandler(action)
@@ -106,7 +105,10 @@ test('RETURN_TO_LOBBY', async () => {
   expect(nextGameVillageId).toBeUndefined()
   expect(villageInfo).toEqual(v)
   expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.leaveWaitingPage)
-  expect(spy).toHaveBeenCalled()
+  expect(dispatch).toHaveBeenCalled()
+  expect(dispatch).toHaveBeenCalledWith({
+    type: ActionTypes.global.SHOW_LOBBY
+  })
 })
 describe('NEXT_GAME', () => {
   const avatarToken = {
@@ -198,7 +200,6 @@ describe('NEXT_GAME', () => {
     const dispatch = jest.fn()
 
     store.dispatch = dispatch
-    const spy = jest.spyOn(window.location, 'replace')
     const db = await connectDB()
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
@@ -223,7 +224,10 @@ describe('NEXT_GAME', () => {
     expect(nextGameVillageId).toBeUndefined()
     expect(villageInfo).toBeUndefined()
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
-    expect(spy).toHaveBeenCalled()
+    expect(dispatch).toHaveBeenCalled()
+    expect(dispatch).toHaveBeenCalledWith({
+      type: ActionTypes.global.SHOW_LOBBY
+    })
   })
 })
 describe('indexedDB/INIT', () => {
@@ -369,7 +373,6 @@ describe('socket/MESSAGE', () => {
     const db = await connectDB()
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
-    const spy = jest.spyOn(window.location, 'replace')
 
     await updateValue<boolean>(objectStore, Key.isHost, true)
     actionHandler(action)
@@ -388,7 +391,10 @@ describe('socket/MESSAGE', () => {
     expect(nextGameVillageId).toBe(3)
     expect(villageInfo).toBeUndefined()
     expect(whatToDoNextInLobby).toBeUndefined()
-    expect(spy).toHaveBeenCalled()
+    expect(dispatch).toHaveBeenCalled()
+    expect(dispatch).toHaveBeenCalledWith({
+      type: ActionTypes.global.SHOW_LOBBY
+    })
   })
   test('isHost: false', async () => {
     const dispatch = jest.fn()
