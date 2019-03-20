@@ -8,6 +8,7 @@
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
+  --hide-button-height: 24px;
   --obfucator-color: rgba(0, 0, 0, 0.15);
   --public-color: rgba(255, 165, 0, 0.4);
   --private-color: rgba(128, 128, 128, 0.3);
@@ -65,6 +66,7 @@ body {
   &--activity {
     display: grid;
     grid-area: activity;
+    grid-gap: 0 2vw;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'chat prediction';
 
@@ -87,7 +89,7 @@ body {
   &--chat {
     grid-area: chat;
     overflow: auto;
-    padding: 0 1vw;
+    padding: 0 1vw var(--hide-button-height);
     scroll-behavior: smooth;
 
     &--arrow-box {
@@ -586,7 +588,7 @@ body {
       background: #303030;
       border: 0;
       border-radius: 4px;
-      height: 24px;
+      height: var(--hide-button-height);
       left: 0;
       padding: 0;
       position: absolute;
@@ -891,7 +893,7 @@ body {
     grid-area: prediction;
     margin: 0 auto auto 1vw;
     max-height: 100%;
-    max-width: 48vw;
+    max-width: 47vw;
     overflow: auto;
 
     &--empty {
