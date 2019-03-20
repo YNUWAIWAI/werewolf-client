@@ -72,6 +72,7 @@
     "@types/react-intl": "^2.3.15",
     "@types/react-redux": "^7.0.1",
     "@types/react-select": "^2.0.15",
+    "@types/textarea-caret": "^3.0.0",
     "@types/village": "./types/village",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -79,6 +80,7 @@
     "react-redux": "^6.0.0",
     "react-select": "^2.4.2",
     "react-transition-group": "^2.6.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "textarea-caret": "^3.1.0"
   }
 }
