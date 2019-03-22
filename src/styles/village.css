@@ -19,7 +19,7 @@
   --villager--color: rgb(140, 198, 63);
   --werehamster--color: rgb(251, 176, 59);
   --werewolf--color: rgb(147, 39, 143);
-  --hover-color: rgba(0, 0, 0, 0.03);
+  --suggest-color: rgb(3, 169, 244);
   --dead-color: red;
   --background-color: white;
 }
@@ -389,9 +389,13 @@ body {
 
         &--list {
           background: white;
+          border: black 1px solid;
+          box-sizing: border-box;
           left: 0;
           margin: 1rem 0 0;
+          max-height: calc(1.15rem * 4);
           min-width: 5rem;
+          overflow: scroll;
           position: absolute;
           top: 0;
           z-index: 3;
@@ -399,15 +403,17 @@ body {
 
         &--item {
           background: white;
-          border: black 1px solid;
+          line-height: 1.15;
           padding: 0 0.25rem;
 
           &.selected {
-            background: var(--hover-color);
+            background: var(--suggest-color);
+            color: white;
           }
 
           &:hover {
-            background: var(--hover-color);
+            background: var(--suggest-color);
+            color: white;
           }
         }
       }

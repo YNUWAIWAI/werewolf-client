@@ -10,7 +10,8 @@ const enum Key {
   ArrowLeft = 'ArrowLeft',
   ArrowRight = 'ArrowRight',
   ArrowUp = 'ArrowUp',
-  Enter = 'Enter'
+  Enter = 'Enter',
+  Tab = 'Tab'
 }
 
 type Props = {
@@ -30,6 +31,7 @@ interface State {
   isSuggest: boolean
   sendable: boolean
   suggestLeft: number
+  suggestScrollTop: number
   suggestSelected: number
   suggestTop: number
   text: string
@@ -39,7 +41,13 @@ interface State {
 
 const data = [
   'A',
-  'B'
+  'B',
+  'C',
+  'D',
+  'E',
+  'FGHIJK',
+  'L',
+  'M'
 ]
 const countText = (text: string): number => Array.of(... text).length
 const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number = 1): boolean => {
@@ -59,6 +67,7 @@ export default class CommandInput extends React.Component<Props, State> {
       isSuggest: false,
       sendable: this.isSendable(),
       suggestLeft: 0,
+      suggestScrollTop: 0,
       suggestSelected: 0,
       suggestTop: 0,
       text,
@@ -67,7 +76,16 @@ export default class CommandInput extends React.Component<Props, State> {
     }
   }
 
-  private textareaRef = React.createRef()
+  public componentDidUpdate() {
+    const elem = this.suggestListRef.current
+
+    if (elem !== null) {
+      elem.scrollTop = this.state.suggestScrollTop
+    }
+  }
+
+  private suggestListRef = React.createRef<HTMLDivElement>()
+  private suggestItemsRef: HTMLDivElement[] = []
 
   public isSendable() {
     switch (this.props.inputChannel) {
@@ -93,7 +111,8 @@ export default class CommandInput extends React.Component<Props, State> {
       })
     } else {
       this.setState({
-        isSuggest: false
+        isSuggest: false,
+        suggestSelected: 0
       })
     }
   }
@@ -114,6 +133,13 @@ export default class CommandInput extends React.Component<Props, State> {
       caretPosition: elem.selectionEnd - 1,
       suggestLeft: left,
       suggestTop: top - elem.scrollTop
+    })
+  }
+
+  public handleBlur() {
+    this.setState({
+      isSuggest: false,
+      suggestSelected: 0
     })
   }
 
@@ -149,19 +175,46 @@ export default class CommandInput extends React.Component<Props, State> {
     if (this.state.isSuggest) {
       if (event.key === Key.ArrowLeft || event.key === Key.ArrowRight) {
         this.setState({
-          isSuggest: false
+          isSuggest: false,
+          suggestSelected: 0
         })
       } else if (event.key === Key.ArrowDown) {
         event.preventDefault()
-        this.setState(prevState => ({
-          suggestSelected: (prevState.suggestSelected + 1) % data.length
-        }))
+        const listElem = this.suggestListRef.current
+
+        if (listElem === null) {
+          return
+        }
+
+        this.setState(prevState => {
+          const suggestSelected = (prevState.suggestSelected + 1) % data.length
+          const itemElem = this.suggestItemsRef[suggestSelected]
+          const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
+
+          return {
+            suggestScrollTop: offsetBottom - listElem.clientHeight,
+            suggestSelected
+          }
+        })
       } else if (event.key === Key.ArrowUp) {
         event.preventDefault()
-        this.setState(prevState => ({
-          suggestSelected: (prevState.suggestSelected - 1 + data.length) % data.length
-        }))
-      } else if (event.key === Key.Enter) {
+        const listElem = this.suggestListRef.current
+
+        if (listElem === null) {
+          return
+        }
+
+        this.setState(prevState => {
+          const suggestSelected = (prevState.suggestSelected - 1 + data.length) % data.length
+          const itemElem = this.suggestItemsRef[suggestSelected]
+          const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
+
+          return {
+            suggestScrollTop: offsetBottom - listElem.clientHeight,
+            suggestSelected
+          }
+        })
+      } else if (event.key === Key.Enter || event.key === Key.Tab) {
         event.preventDefault()
         this.handleSuggestClick(data[this.state.suggestSelected])
       }
@@ -169,6 +222,7 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   public render() {
+    this.suggestItemsRef = []
     const SuggestStyle = {
       left: this.state.suggestLeft,
       top: this.state.suggestTop
@@ -179,6 +233,7 @@ export default class CommandInput extends React.Component<Props, State> {
       >
         <div
           className="vi--command--input--suggest--list"
+          ref={this.suggestListRef}
           style={SuggestStyle}
         >
           {
@@ -187,6 +242,11 @@ export default class CommandInput extends React.Component<Props, State> {
                 className={`vi--command--input--suggest--item ${index === this.state.suggestSelected ? 'selected' : ''}`}
                 key={item}
                 onClick={() => this.handleSuggestClick(item)}
+                ref={instance => {
+                  if (instance !== null) {
+                    this.suggestItemsRef = [... this.suggestItemsRef, instance]
+                  }
+                }}
               >
                 {item}
               </div>
@@ -207,6 +267,7 @@ export default class CommandInput extends React.Component<Props, State> {
               return (
                 <textarea
                   className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
+                  onBlur={() => this.handleBlur()}
                   onChange={event => this.handleTextChange(event)}
                   onKeyDown={event => this.handleKeyDown(event)}
                   placeholder={text}
