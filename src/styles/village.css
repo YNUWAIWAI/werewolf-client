@@ -395,10 +395,14 @@ body {
           margin: 1rem 0 0;
           max-height: calc(1.15rem * 4);
           min-width: 5rem;
-          overflow: scroll;
+          overflow: hidden;
           position: absolute;
           top: 0;
           z-index: 3;
+
+          &:hover {
+            overflow: auto;
+          }
         }
 
         &--item {
