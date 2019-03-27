@@ -12,6 +12,7 @@ import modal, {State as modalState} from './modal'
 import obfucator, {State as obfucatorState} from './obfucator'
 import prediction, {State as predictionState} from './prediction'
 import result, {State as resultState} from './result'
+import suggest, {State as suggestState} from './suggest'
 import timer, {State as timerState} from './timer'
 import {combineReducers} from 'redux'
 
@@ -30,6 +31,7 @@ const reducer = combineReducers({
   obfucator,
   prediction,
   result,
+  suggest,
   timer
 })
 
@@ -50,5 +52,6 @@ export interface ReducerState {
   readonly obfucator: obfucatorState
   readonly prediction: predictionState
   readonly result: resultState
+  readonly suggest: suggestState
   readonly timer: timerState
 }
