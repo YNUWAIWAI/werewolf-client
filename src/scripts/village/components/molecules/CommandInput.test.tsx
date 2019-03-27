@@ -14,10 +14,12 @@ describe('<CommandInput />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.grave}
+        language={village.Language.ja}
+        suggestData={[]}
       />
     )
 
-    expect(wrapper.find('.vi--command--input').hasClass('grave')).toBe(true)
+    expect(wrapper.find('.vi--command--input--textarea').hasClass('grave')).toBe(true)
     expect(wrapper.find('textarea').is('[placeholder="墓場"]')).toBe(true)
     expect(wrapper.find('textarea').is('[value=""]')).toBe(true)
     expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
@@ -33,12 +35,14 @@ describe('<CommandInput />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.limited}
+        language={village.Language.ja}
         postCount={0}
         postCountLimit={10}
+        suggestData={[]}
       />
     )
 
-    expect(wrapper.find('.vi--command--input').hasClass('limited')).toBe(true)
+    expect(wrapper.find('.vi--command--input--textarea').hasClass('limited')).toBe(true)
     expect(wrapper.find('textarea').is('[placeholder="人狼用"]')).toBe(true)
     expect(wrapper.find('textarea').is('[value=""]')).toBe(true)
     expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
@@ -55,10 +59,12 @@ describe('<CommandInput />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.private}
+        language={village.Language.ja}
+        suggestData={[]}
       />
     )
 
-    expect(wrapper.find('.vi--command--input').hasClass('private')).toBe(true)
+    expect(wrapper.find('.vi--command--input--textarea').hasClass('private')).toBe(true)
     expect(wrapper.find('textarea').is('[placeholder="非公開用"]')).toBe(true)
     expect(wrapper.find('textarea').is('[value=""]')).toBe(true)
     expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
@@ -74,10 +80,12 @@ describe('<CommandInput />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.postMortem}
+        language={village.Language.ja}
+        suggestData={[]}
       />
     )
 
-    expect(wrapper.find('.vi--command--input').hasClass('postMortem')).toBe(true)
+    expect(wrapper.find('.vi--command--input--textarea').hasClass('postMortem')).toBe(true)
     expect(wrapper.find('textarea').is('[placeholder="感想戦"]')).toBe(true)
     expect(wrapper.find('textarea').is('[value=""]')).toBe(true)
     expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
@@ -93,12 +101,14 @@ describe('<CommandInput />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.public}
+        language={village.Language.ja}
         postCount={0}
         postCountLimit={10}
+        suggestData={[]}
       />
     )
 
-    expect(wrapper.find('.vi--command--input').hasClass('public')).toBe(true)
+    expect(wrapper.find('.vi--command--input--textarea').hasClass('public')).toBe(true)
     expect(wrapper.find('textarea').is('[placeholder="公開用"]')).toBe(true)
     expect(wrapper.find('textarea').is('[value=""]')).toBe(true)
     expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
@@ -116,8 +126,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -163,8 +175,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={10}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -212,8 +226,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -241,8 +257,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -269,8 +287,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={10}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -297,8 +317,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={10}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -327,8 +349,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -364,8 +388,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 
@@ -401,8 +427,10 @@ describe('<CommandInput />', () => {
           characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
+          suggestData={[]}
         />
       )
 

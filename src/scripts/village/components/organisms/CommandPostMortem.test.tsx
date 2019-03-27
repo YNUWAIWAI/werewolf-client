@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
 import CommandPostMortem from './CommandPostMortem'
@@ -21,7 +22,9 @@ test('<CommandPostMortem />', () => {
       characterLimit={140}
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
+      language={village.Language.en}
       navigation={navigation}
+      suggestData={[]}
     />
   )
 

@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
 import CommandGrave, {Props} from './CommandGrave'
@@ -17,7 +18,9 @@ test('<CommandGrave />', () => {
       characterLimit={140}
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
+      language={village.Language.en}
       navigation={navigation}
+      suggestData={[]}
     />
   )
 
