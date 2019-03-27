@@ -74,6 +74,7 @@
     "@types/react-select": "^2.0.15",
     "@types/textarea-caret": "^3.0.0",
     "@types/village": "./types/village",
+    "fuse.js": "^3.4.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-intl": "^2.8.0",
