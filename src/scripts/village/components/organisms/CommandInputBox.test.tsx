@@ -16,7 +16,7 @@ describe('<CommandInputBox />', () => {
       public: {
         postCount: 0
       },
-      suggestData: []
+      suggesttedData: []
     }
     const handlePostChatEventHandler = jest.fn()
     const handlePostChat = jest.fn().mockReturnValueOnce(handlePostChatEventHandler)
@@ -41,7 +41,7 @@ describe('<CommandInputBox />', () => {
       public: {
         postCount: 0
       },
-      suggestData: []
+      suggesttedData: []
     }
     const handlePostChatEventHandler = jest.fn()
     const handlePostChat = jest.fn().mockReturnValueOnce(handlePostChatEventHandler)

@@ -15,7 +15,7 @@ describe('<CommandInput />', () => {
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.grave}
         language={village.Language.ja}
-        suggestData={[]}
+        suggesttedData={[]}
       />
     )
 
@@ -38,7 +38,7 @@ describe('<CommandInput />', () => {
         language={village.Language.ja}
         postCount={0}
         postCountLimit={10}
-        suggestData={[]}
+        suggesttedData={[]}
       />
     )
 
@@ -60,7 +60,7 @@ describe('<CommandInput />', () => {
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.private}
         language={village.Language.ja}
-        suggestData={[]}
+        suggesttedData={[]}
       />
     )
 
@@ -81,7 +81,7 @@ describe('<CommandInput />', () => {
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.postMortem}
         language={village.Language.ja}
-        suggestData={[]}
+        suggesttedData={[]}
       />
     )
 
@@ -104,7 +104,7 @@ describe('<CommandInput />', () => {
         language={village.Language.ja}
         postCount={0}
         postCountLimit={10}
-        suggestData={[]}
+        suggesttedData={[]}
       />
     )
 
@@ -129,7 +129,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -178,7 +178,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={10}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -229,7 +229,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -260,7 +260,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -290,7 +290,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={10}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -320,7 +320,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={10}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -352,7 +352,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -391,7 +391,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 
@@ -430,7 +430,7 @@ describe('<CommandInput />', () => {
           language={village.Language.ja}
           postCount={0}
           postCountLimit={10}
-          suggestData={[]}
+          suggesttedData={[]}
         />
       )
 

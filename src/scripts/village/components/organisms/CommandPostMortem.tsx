@@ -9,7 +9,7 @@ export interface StateProps {
   readonly characterLimit: number
   readonly language: village.Language
   readonly navigation: CommandNavigationProps['items']
-  readonly suggestData: State['data']
+  readonly suggesttedData: State['data']
 }
 export interface DispatchProps {
   readonly handleNavigationClick: (type: Navigation) => void
@@ -25,7 +25,7 @@ export default function CommandPostMortem(props: Props) {
         handlePostChat={props.handlePostChat(village.InputChannel.postMortem)}
         inputChannel={village.InputChannel.postMortem}
         language={props.language}
-        suggestData={props.suggestData}
+        suggesttedData={props.suggesttedData}
       />
       <CommandNavigation
         handleClick={props.handleNavigationClick}

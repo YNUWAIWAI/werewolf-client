@@ -12,7 +12,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   characterLimit: state.base.village.chatSettings.characterLimit,
   language: state.language,
   postCountLimit: state.base.village.chatSettings.limit,
-  suggestData: state.suggest.data
+  suggesttedData: state.suggest.data
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handlePostChat: channel => text => {

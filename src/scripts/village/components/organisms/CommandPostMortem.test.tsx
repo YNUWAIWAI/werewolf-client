@@ -24,7 +24,7 @@ test('<CommandPostMortem />', () => {
       handlePostChat={handlePostChat}
       language={village.Language.en}
       navigation={navigation}
-      suggestData={[]}
+      suggesttedData={[]}
     />
   )
 

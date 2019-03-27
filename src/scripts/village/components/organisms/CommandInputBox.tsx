@@ -14,7 +14,7 @@ export interface StateProps {
   readonly public: {
     readonly postCount: number
   }
-  readonly suggestData: State['data']
+  readonly suggesttedData: State['data']
 }
 export interface DispatchProps {
   readonly handlePostChat: (channel: village.InputChannel) => (text: string) => void
@@ -31,14 +31,14 @@ export default function CommandInputBox(props: Props) {
         language={props.language}
         postCount={props.public.postCount}
         postCountLimit={props.postCountLimit}
-        suggestData={props.suggestData}
+        suggesttedData={props.suggesttedData}
       />
       <CommandInput
         characterLimit={props.characterLimit}
         handlePostChat={props.handlePostChat(village.InputChannel.private)}
         inputChannel={village.InputChannel.private}
         language={props.language}
-        suggestData={props.suggestData}
+        suggesttedData={props.suggesttedData}
       />
       {
         props.limited.available ?
@@ -49,7 +49,7 @@ export default function CommandInputBox(props: Props) {
             language={props.language}
             postCount={props.limited.postCount}
             postCountLimit={props.postCountLimit}
-            suggestData={props.suggestData}
+            suggesttedData={props.suggesttedData}
           /> :
           null
       }

@@ -23,13 +23,13 @@ type Props = {
   readonly language: village.Language
   readonly postCount: number
   readonly postCountLimit: number
-  readonly suggestData: SuggestState['data']
+  readonly suggesttedData: SuggestState['data']
 } | {
   readonly characterLimit: number
   readonly handlePostChat: (value: string) => void
   readonly inputChannel: village.InputChannel.grave | village.InputChannel.postMortem | village.InputChannel.private
   readonly language: village.Language
-  readonly suggestData: SuggestState['data']
+  readonly suggesttedData: SuggestState['data']
 }
 
 interface State {
@@ -38,7 +38,7 @@ interface State {
   isProcessing: boolean
   isSuggest: boolean
   sendable: boolean
-  suggestData: SuggestState['data']
+  suggesttedData: SuggestState['data']
   suggestLeft: number
   suggestScrollTop: number
   suggestSelected: number
@@ -84,7 +84,7 @@ export default class CommandInput extends React.Component<Props, State> {
       isProcessing: false,
       isSuggest: false,
       sendable: this.isSendable(),
-      suggestData: props.suggestData,
+      suggesttedData: props.suggesttedData,
       suggestLeft: 0,
       suggestScrollTop: 0,
       suggestSelected: 0,
@@ -93,7 +93,7 @@ export default class CommandInput extends React.Component<Props, State> {
       textCount: countText(text),
       validTextLength: isValidTextLength(text, props.characterLimit)
     }
-    this.fuse = new Fuse(props.suggestData, options)
+    this.fuse = new Fuse(props.suggesttedData, options)
   }
 
   public componentDidUpdate() {
@@ -145,7 +145,7 @@ export default class CommandInput extends React.Component<Props, State> {
     } else {
       this.setState({
         isSuggest: false,
-        suggestData: this.props.suggestData,
+        suggesttedData: this.props.suggesttedData,
         suggestScrollTop: 0,
         suggestSelected: 0
       })
@@ -181,7 +181,7 @@ export default class CommandInput extends React.Component<Props, State> {
     if (this.state.isSuggest) {
       if (event.key === Key.ArrowLeft || event.key === Key.ArrowRight) {
         this.updateIsSuggest(false)
-      } else if (event.key === Key.ArrowDown && this.state.suggestData.length > 0) {
+      } else if (event.key === Key.ArrowDown && this.state.suggesttedData.length > 0) {
         event.preventDefault()
         const listElem = this.suggestListRef.current
 
@@ -190,7 +190,7 @@ export default class CommandInput extends React.Component<Props, State> {
         }
 
         this.setState(prevState => {
-          const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggestData.length
+          const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggesttedData.length
           const itemElem = this.suggestItemsRef[suggestSelected]
           const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
@@ -199,7 +199,7 @@ export default class CommandInput extends React.Component<Props, State> {
             suggestSelected
           }
         })
-      } else if (event.key === Key.ArrowUp && this.state.suggestData.length > 0) {
+      } else if (event.key === Key.ArrowUp && this.state.suggesttedData.length > 0) {
         event.preventDefault()
         const listElem = this.suggestListRef.current
 
@@ -208,7 +208,7 @@ export default class CommandInput extends React.Component<Props, State> {
         }
 
         this.setState(prevState => {
-          const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggestData.length) % prevState.suggestData.length
+          const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggesttedData.length) % prevState.suggesttedData.length
           const itemElem = this.suggestItemsRef[suggestSelected]
           const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
@@ -223,7 +223,7 @@ export default class CommandInput extends React.Component<Props, State> {
           getText(
             {
               language: this.props.language,
-              languageMap: this.state.suggestData[this.state.suggestSelected].name
+              languageMap: this.state.suggesttedData[this.state.suggestSelected].name
             }
           )
         )
@@ -265,10 +265,10 @@ export default class CommandInput extends React.Component<Props, State> {
       this.updateIsSuggest(false)
     } else if (this.state.isSuggest) {
       const atText = text.slice(this.state.atPosition + 1, event.target.selectionEnd)
-      const suggestData = this.fuse.search(atText)
+      const suggesttedData = this.fuse.search(atText)
 
       this.setState({
-        suggestData,
+        suggesttedData,
         suggestScrollTop: 0
       })
     }
@@ -290,7 +290,7 @@ export default class CommandInput extends React.Component<Props, State> {
           style={SuggestStyle}
         >
           {
-            this.state.suggestData.map((item, index) =>
+            this.state.suggesttedData.map((item, index) =>
               <div
                 className={`vi--command--input--suggest--item ${index === this.state.suggestSelected ? 'selected' : ''}`}
                 key={item.id}

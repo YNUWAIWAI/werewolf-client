@@ -20,7 +20,7 @@ test('<CommandGrave />', () => {
       handlePostChat={handlePostChat}
       language={village.Language.en}
       navigation={navigation}
-      suggestData={[]}
+      suggesttedData={[]}
     />
   )
 
