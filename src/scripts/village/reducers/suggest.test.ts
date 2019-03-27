@@ -96,7 +96,6 @@ describe('socket/MESSAGE', () => {
               'ja': 'ペーター'
             }
           },
-
           {
             id: 'Simson',
             name: {
