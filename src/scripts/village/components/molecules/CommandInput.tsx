@@ -3,6 +3,7 @@ import * as Fuse from 'fuse.js'
 import * as React from 'react'
 import {getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
+import CommandInputSuggest from './CommandInputSuggest'
 import {FormattedMessage} from 'react-intl'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
@@ -38,10 +39,9 @@ interface State {
   isProcessing: boolean
   isSuggest: boolean
   sendable: boolean
-  suggesttedData: SuggestState['data']
   suggestLeft: number
-  suggestScrollTop: number
   suggestSelected: number
+  suggesttedData: SuggestState['data']
   suggestTop: number
   text: string
   textCount: number
@@ -84,28 +84,16 @@ export default class CommandInput extends React.Component<Props, State> {
       isProcessing: false,
       isSuggest: false,
       sendable: this.isSendable(),
-      suggesttedData: props.suggesttedData,
       suggestLeft: 0,
-      suggestScrollTop: 0,
       suggestSelected: 0,
       suggestTop: 0,
+      suggesttedData: props.suggesttedData,
       text,
       textCount: countText(text),
       validTextLength: isValidTextLength(text, props.characterLimit)
     }
     this.fuse = new Fuse(props.suggesttedData, options)
   }
-
-  public componentDidUpdate() {
-    const elem = this.suggestListRef.current
-
-    if (elem !== null) {
-      elem.scrollTop = this.state.suggestScrollTop
-    }
-  }
-
-  private suggestListRef = React.createRef<HTMLDivElement>()
-  private suggestItemsRef: HTMLDivElement[] = []
 
   public isSendable() {
     switch (this.props.inputChannel) {
@@ -145,9 +133,8 @@ export default class CommandInput extends React.Component<Props, State> {
     } else {
       this.setState({
         isSuggest: false,
-        suggesttedData: this.props.suggesttedData,
-        suggestScrollTop: 0,
-        suggestSelected: 0
+        suggestSelected: 0,
+        suggesttedData: this.props.suggesttedData
       })
     }
   }
@@ -183,37 +170,20 @@ export default class CommandInput extends React.Component<Props, State> {
         this.updateIsSuggest(false)
       } else if (event.key === Key.ArrowDown && this.state.suggesttedData.length > 0) {
         event.preventDefault()
-        const listElem = this.suggestListRef.current
-
-        if (listElem === null) {
-          return
-        }
 
         this.setState(prevState => {
           const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggesttedData.length
-          const itemElem = this.suggestItemsRef[suggestSelected]
-          const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
           return {
-            suggestScrollTop: offsetBottom - listElem.clientHeight,
             suggestSelected
           }
         })
       } else if (event.key === Key.ArrowUp && this.state.suggesttedData.length > 0) {
         event.preventDefault()
-        const listElem = this.suggestListRef.current
-
-        if (listElem === null) {
-          return
-        }
-
         this.setState(prevState => {
           const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggesttedData.length) % prevState.suggesttedData.length
-          const itemElem = this.suggestItemsRef[suggestSelected]
-          const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
           return {
-            suggestScrollTop: offsetBottom - listElem.clientHeight,
             suggestSelected
           }
         })
@@ -268,59 +238,12 @@ export default class CommandInput extends React.Component<Props, State> {
       const suggesttedData = this.fuse.search(atText)
 
       this.setState({
-        suggesttedData,
-        suggestScrollTop: 0
+        suggesttedData
       })
     }
   }
 
   public render() {
-    this.suggestItemsRef = []
-    const SuggestStyle = {
-      left: this.state.suggestLeft,
-      top: this.state.suggestTop
-    }
-    const Suggest = () =>
-      <div
-        className="vi--command--input--suggest--container"
-      >
-        <div
-          className="vi--command--input--suggest--list"
-          ref={this.suggestListRef}
-          style={SuggestStyle}
-        >
-          {
-            this.state.suggesttedData.map((item, index) =>
-              <div
-                className={`vi--command--input--suggest--item ${index === this.state.suggestSelected ? 'selected' : ''}`}
-                key={item.id}
-                onClick={() => this.handleSuggestClick(
-                  getText(
-                    {
-                      language: this.props.language,
-                      languageMap: item.name
-                    }
-                  )
-                )}
-                ref={instance => {
-                  if (instance !== null) {
-                    this.suggestItemsRef = [... this.suggestItemsRef, instance]
-                  }
-                }}
-              >
-                {
-                  getText(
-                    {
-                      language: this.props.language,
-                      languageMap: item.name
-                    }
-                  )
-                }
-              </div>
-            )
-          }
-        </div>
-      </div>
 
     return (
       <div className="vi--command--input">
@@ -348,7 +271,14 @@ export default class CommandInput extends React.Component<Props, State> {
         </FormattedMessage>
         {
           this.state.isSuggest ?
-            <Suggest /> :
+            <CommandInputSuggest
+              data={this.state.suggesttedData}
+              handleSuggestClick={this.handleSuggestClick}
+              language={this.props.language}
+              left={this.state.suggestLeft}
+              selected={this.state.suggestSelected}
+              top={this.state.suggestTop}
+            /> :
             null
         }
         <span className={`vi--command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
