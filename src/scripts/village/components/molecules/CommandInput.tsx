@@ -170,7 +170,6 @@ export default class CommandInput extends React.Component<Props, State> {
         this.updateIsSuggest(false)
       } else if (event.key === Key.ArrowDown && this.state.suggesttedData.length > 0) {
         event.preventDefault()
-
         this.setState(prevState => {
           const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggesttedData.length
 
@@ -244,7 +243,6 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   public render() {
-
     return (
       <div className="vi--command--input">
         <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
