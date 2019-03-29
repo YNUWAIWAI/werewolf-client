@@ -15,7 +15,7 @@ import {storiesOf} from '@storybook/react'
 const store = createStore(
   reducer
 )
-const suggestData = [
+const suggesttedData = [
   {
     id: 'Alvin',
     name: {
@@ -144,7 +144,7 @@ storiesOf('village|Command', module)
       public: {
         postCount: 0
       },
-      suggestData
+      suggesttedData
     }
     const content = <CommandInputBox {... props} />
     const story =
@@ -168,7 +168,7 @@ storiesOf('village|Command', module)
       public: {
         postCount: 0
       },
-      suggestData
+      suggesttedData
     }
     const content = <CommandInputBox {... props} />
     const story =
@@ -202,7 +202,7 @@ storiesOf('village|Command', module)
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       ],
-      suggestData
+      suggesttedData
     }
     const content = <CommandPostMortem {... props} />
     const story =
@@ -237,7 +237,7 @@ storiesOf('village|Command', module)
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       ],
-      suggestData
+      suggesttedData
     }
     const content = <CommandPostMortem {... props} />
     const story =
@@ -266,7 +266,7 @@ storiesOf('village|Command', module)
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       ],
-      suggestData
+      suggesttedData
     }
     const content = <CommandPostMortem {... props} />
     const story =
@@ -290,7 +290,7 @@ storiesOf('village|Command', module)
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       ],
-      suggestData
+      suggesttedData
     }
     const content = <CommandGrave {... props} />
     const story =

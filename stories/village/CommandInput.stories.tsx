@@ -12,7 +12,7 @@ import {storiesOf} from '@storybook/react'
 const store = createStore(
   reducer
 )
-const suggestData = [
+const suggesttedData = [
   {
     id: 'Alvin',
     name: {
@@ -139,7 +139,7 @@ storiesOf('village|Command/CommandInput', module)
           handlePostChat={action('postChat')}
           inputChannel={village.InputChannel.grave}
           language={village.Language.ja}
-          suggestData={suggestData}
+          suggesttedData={suggesttedData}
         />
       </div>
 
@@ -164,7 +164,7 @@ storiesOf('village|Command/CommandInput', module)
         language={village.Language.ja}
         postCount={postCount}
         postCountLimit={10}
-        suggestData={suggestData}
+        suggesttedData={suggesttedData}
       />
     </div>
 
@@ -181,7 +181,7 @@ storiesOf('village|Command/CommandInput', module)
           handlePostChat={action('postChat')}
           inputChannel={village.InputChannel.private}
           language={village.Language.ja}
-          suggestData={suggestData}
+          suggesttedData={suggesttedData}
         />
       </div>
 
@@ -206,7 +206,7 @@ storiesOf('village|Command/CommandInput', module)
           language={village.Language.ja}
           postCount={postCount}
           postCountLimit={10}
-          suggestData={suggestData}
+          suggesttedData={suggesttedData}
         />
       </div>
 
