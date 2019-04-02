@@ -69,7 +69,6 @@ const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number 
 
   return textCount <= upperLimit && textCount >= lowerLimit
 }
-const isSendable = (postCount: number, postCountLimit: number): boolean => postCount < postCountLimit
 
 export default class CommandInput extends React.Component<Props, State> {
   private fuse: Fuse<SuggestState['data'][number]>
@@ -105,7 +104,7 @@ export default class CommandInput extends React.Component<Props, State> {
         return true
       case village.InputChannel.public:
       case village.InputChannel.limited:
-        return isSendable(this.props.postCount, this.props.postCountLimit)
+        return this.props.postCount < this.props.postCountLimit
       default:
         throw Error('props.inputChannel: unkonwn')
     }
@@ -133,6 +132,12 @@ export default class CommandInput extends React.Component<Props, State> {
     })
   }
 
+  public updateIsProcessing(isProcessing: boolean) {
+    this.setState({
+      isProcessing
+    })
+  }
+
   public updateIsSuggest(isSuggest: boolean) {
     if (isSuggest) {
       this.setState({
@@ -153,16 +158,6 @@ export default class CommandInput extends React.Component<Props, State> {
       text,
       textCount: countText(text),
       validTextLength: isValidTextLength(text, this.props.characterLimit)
-    })
-  }
-
-  public handleBlur() {
-    this.updateIsSuggest(false)
-  }
-
-  public handleComposition(isProcessing: boolean) {
-    this.setState({
-      isProcessing
     })
   }
 
@@ -268,8 +263,8 @@ export default class CommandInput extends React.Component<Props, State> {
                 <textarea
                   className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
                   onChange={event => this.handleTextChange(event)}
-                  onCompositionEnd={() => this.handleComposition(false)}
-                  onCompositionStart={() => this.handleComposition(true)}
+                  onCompositionEnd={() => this.updateIsProcessing(false)}
+                  onCompositionStart={() => this.updateIsProcessing(true)}
                   onKeyDown={event => this.handleKeyDown(event)}
                   placeholder={text}
                   ref={this.textareaRef}
