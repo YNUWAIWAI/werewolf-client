@@ -29,6 +29,9 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
   private itemsRef: HTMLDivElement[] = []
 
   public render() {
+    if (this.props.data.length <= 0) {
+      return null
+    }
     this.itemsRef = []
     const style = {
       left: this.props.left,

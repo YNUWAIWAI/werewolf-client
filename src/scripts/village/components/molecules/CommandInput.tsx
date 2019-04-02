@@ -196,6 +196,9 @@ export default class CommandInput extends React.Component<Props, State> {
         })
       } else if (event.key === Key.Enter || event.key === Key.Tab) {
         event.preventDefault()
+        if (this.state.suggesttedData.length <= 0) {
+          return
+        }
         this.handleSuggestClick(
           getText(
             {
@@ -308,7 +311,11 @@ export default class CommandInput extends React.Component<Props, State> {
         <FormattedMessage id="CommandInput.send">
           {
             text =>
-              <button className="vi--command--input--send" disabled={!(this.state.sendable && this.state.validTextLength)} onClick={() => this.handlePostChat()}>
+              <button
+                className="vi--command--input--send"
+                disabled={!(this.state.sendable && this.state.validTextLength)}
+                onClick={() => this.handlePostChat()}
+              >
                 {text}
               </button>
           }
