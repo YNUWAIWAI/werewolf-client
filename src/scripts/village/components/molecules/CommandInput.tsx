@@ -95,6 +95,8 @@ export default class CommandInput extends React.Component<Props, State> {
     this.fuse = new Fuse(props.suggesttedData, options)
   }
 
+  private textareaRef = React.createRef<HTMLTextAreaElement>()
+
   public isSendable() {
     switch (this.props.inputChannel) {
       case village.InputChannel.grave:
@@ -119,9 +121,15 @@ export default class CommandInput extends React.Component<Props, State> {
     })
   }
 
-  public updateCaretPosition(elem: HTMLTextAreaElement) {
+  public updateCaretPosition(caretPosition: number) {
     this.setState({
-      caretPosition: elem.selectionEnd - 1
+      caretPosition
+    }, () => {
+      if (this.textareaRef.current === null) {
+        return
+      }
+      this.textareaRef.current.focus()
+      this.textareaRef.current.setSelectionRange(this.state.caretPosition, this.state.caretPosition)
     })
   }
 
@@ -209,15 +217,16 @@ export default class CommandInput extends React.Component<Props, State> {
 
   public handleSuggestClick(suggest: string) {
     const text = this.state.text
-    const newText = text.slice(0, this.state.atPosition) + suggest + text.slice(this.state.caretPosition + 1)
+    const newText = text.slice(0, this.state.atPosition) + suggest + text.slice(this.state.caretPosition)
 
     this.updateText(newText)
+    this.updateCaretPosition(this.state.atPosition + countText(suggest))
     this.updateIsSuggest(false)
   }
 
   public handleTextChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
     this.updateText(event.target.value)
-    this.updateCaretPosition(event.target)
+    this.updateCaretPosition(event.target.selectionEnd)
     const pos = event.target.selectionEnd - 1
     const text = event.target.value
 
@@ -255,12 +264,12 @@ export default class CommandInput extends React.Component<Props, State> {
               return (
                 <textarea
                   className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
-                  onBlur={() => this.handleBlur()}
                   onChange={event => this.handleTextChange(event)}
                   onCompositionEnd={() => this.handleComposition(false)}
                   onCompositionStart={() => this.handleComposition(true)}
                   onKeyDown={event => this.handleKeyDown(event)}
                   placeholder={text}
+                  ref={this.textareaRef}
                   value={this.state.text}
                 />
               )
@@ -271,7 +280,7 @@ export default class CommandInput extends React.Component<Props, State> {
           this.state.isSuggest ?
             <CommandInputSuggest
               data={this.state.suggesttedData}
-              handleSuggestClick={this.handleSuggestClick}
+              handleSuggestClick={this.handleSuggestClick.bind(this)}
               language={this.props.language}
               left={this.state.suggestLeft}
               selected={this.state.suggestSelected}
