@@ -17,6 +17,10 @@ const enum Key {
   Tab = 'Tab'
 }
 
+const enum Triger {
+  At = '@'
+}
+
 type Props = {
   readonly characterLimit: number
   readonly handlePostChat: (value: string) => void
@@ -228,8 +232,8 @@ export default class CommandInput extends React.Component<Props, State> {
     const pos = event.target.selectionEnd - 1
     const text = event.target.value
 
-    if (text[pos] === '@') {
-      if (text[pos - 1] === '@') {
+    if (text[pos] === Triger.At) {
+      if (text[pos - 1] === Triger.At) {
         this.updateSuggestable(false)
       } else {
         this.updateTrigerPosition(event.target)
