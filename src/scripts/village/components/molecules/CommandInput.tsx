@@ -114,13 +114,18 @@ export default class CommandInput extends React.Component<Props, State> {
     }
   }
 
-  public updateTrigerPosition(elem: HTMLTextAreaElement) {
-    const {left, top} = getCaretCoordinates(elem, elem.selectionEnd)
+  public updateTrigerPosition(position: number) {
+    const elem = this.textareaRef.current
+
+    if (elem === null) {
+      return
+    }
+    const {left, top} = getCaretCoordinates(elem, position + 1)
 
     this.setState({
       suggestLeft: left,
       suggestTop: top - elem.scrollTop,
-      trigerPosition: elem.selectionEnd - 1
+      trigerPosition: position
     })
   }
 
@@ -169,13 +174,26 @@ export default class CommandInput extends React.Component<Props, State> {
     if (this.state.processing) {
       return
     }
-    if ((event.ctrlKey || event.metaKey) && event.key === Key.Enter) {
-      this.handlePostChat()
+    if (!this.state.suggestable || this.state.suggesttedData.length <= 0) {
+      if (
+        (event.ctrlKey || event.metaKey) &&
+        event.key === Key.Enter
+      ) {
+        this.handlePostChat()
+      }
+
+      return
     }
-    if (this.state.suggestable) {
-      if (event.key === Key.ArrowLeft || event.key === Key.ArrowRight) {
+    switch (event.key) {
+      case Key.ArrowLeft:
+      case Key.ArrowRight:
         this.updateSuggestable(false)
-      } else if (event.key === Key.ArrowDown && this.state.suggesttedData.length > 0) {
+
+        return
+      case Key.ArrowDown:
+        if (this.state.suggesttedData.length <= 0) {
+          return
+        }
         event.preventDefault()
         this.setState(prevState => {
           const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggesttedData.length
@@ -184,7 +202,12 @@ export default class CommandInput extends React.Component<Props, State> {
             suggestSelected
           }
         })
-      } else if (event.key === Key.ArrowUp && this.state.suggesttedData.length > 0) {
+
+        return
+      case Key.ArrowUp:
+        if (this.state.suggesttedData.length <= 0) {
+          return
+        }
         event.preventDefault()
         this.setState(prevState => {
           const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggesttedData.length) % prevState.suggesttedData.length
@@ -193,11 +216,14 @@ export default class CommandInput extends React.Component<Props, State> {
             suggestSelected
           }
         })
-      } else if (event.key === Key.Enter || event.key === Key.Tab) {
-        event.preventDefault()
+
+        return
+      case Key.Enter:
+      case Key.Tab:
         if (this.state.suggesttedData.length <= 0) {
           return
         }
+        event.preventDefault()
         this.handleSuggestClick(
           getText(
             {
@@ -206,7 +232,10 @@ export default class CommandInput extends React.Component<Props, State> {
             }
           )
         )
-      }
+
+        return
+      default:
+        return
     }
   }
 
@@ -236,7 +265,7 @@ export default class CommandInput extends React.Component<Props, State> {
       if (text[pos - 1] === Triger.At) {
         this.updateSuggestable(false)
       } else {
-        this.updateTrigerPosition(event.target)
+        this.updateTrigerPosition(event.target.selectionEnd - 1)
         this.updateSuggestable(true)
       }
     } else if (text[pos] === Triger.Space) {
@@ -250,6 +279,7 @@ export default class CommandInput extends React.Component<Props, State> {
       this.setState({
         suggesttedData
       })
+      this.updateTrigerPosition(this.state.trigerPosition)
     }
   }
 
