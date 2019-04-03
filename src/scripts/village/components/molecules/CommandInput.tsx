@@ -36,13 +36,13 @@ type Props = {
 interface State {
   atPosition: number
   caretPosition: number
-  isProcessing: boolean
-  isSuggest: boolean
+  processing: boolean
   sendable: boolean
   suggestLeft: number
   suggestSelected: number
   suggesttedData: SuggestState['data']
   suggestTop: number
+  suggestable: boolean
   text: string
   textCount: number
   validTextLength: boolean
@@ -80,12 +80,12 @@ export default class CommandInput extends React.Component<Props, State> {
     this.state = {
       atPosition: 0,
       caretPosition: 0,
-      isProcessing: false,
-      isSuggest: false,
+      processing: false,
       sendable: this.isSendable(),
       suggestLeft: 0,
       suggestSelected: 0,
       suggestTop: 0,
+      suggestable: false,
       suggesttedData: props.suggesttedData,
       text,
       textCount: countText(text),
@@ -132,21 +132,21 @@ export default class CommandInput extends React.Component<Props, State> {
     })
   }
 
-  public updateIsProcessing(isProcessing: boolean) {
+  public updateProcessing(processing: boolean) {
     this.setState({
-      isProcessing
+      processing
     })
   }
 
-  public updateIsSuggest(isSuggest: boolean) {
-    if (isSuggest) {
+  public updateSuggestable(suggestable: boolean) {
+    if (suggestable) {
       this.setState({
-        isSuggest: true
+        suggestable: true
       })
     } else {
       this.setState({
-        isSuggest: false,
         suggestSelected: 0,
+        suggestable: false,
         suggesttedData: this.props.suggesttedData
       })
     }
@@ -162,15 +162,15 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   public handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (this.state.isProcessing) {
+    if (this.state.processing) {
       return
     }
     if ((event.ctrlKey || event.metaKey) && event.key === Key.Enter) {
       this.handlePostChat()
     }
-    if (this.state.isSuggest) {
+    if (this.state.suggestable) {
       if (event.key === Key.ArrowLeft || event.key === Key.ArrowRight) {
-        this.updateIsSuggest(false)
+        this.updateSuggestable(false)
       } else if (event.key === Key.ArrowDown && this.state.suggesttedData.length > 0) {
         event.preventDefault()
         this.setState(prevState => {
@@ -219,7 +219,7 @@ export default class CommandInput extends React.Component<Props, State> {
 
     this.updateText(newText)
     this.updateCaretPosition(this.state.atPosition + countText(suggest))
-    this.updateIsSuggest(false)
+    this.updateSuggestable(false)
   }
 
   public handleTextChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -230,16 +230,16 @@ export default class CommandInput extends React.Component<Props, State> {
 
     if (text[pos] === '@') {
       if (text[pos - 1] === '@') {
-        this.updateIsSuggest(false)
+        this.updateSuggestable(false)
       } else {
         this.updateAtPosition(event.target)
-        this.updateIsSuggest(true)
+        this.updateSuggestable(true)
       }
     } else if (text[pos] === ' ') {
-      this.updateIsSuggest(false)
+      this.updateSuggestable(false)
     } else if (event.target.selectionEnd <= this.state.atPosition) {
-      this.updateIsSuggest(false)
-    } else if (this.state.isSuggest) {
+      this.updateSuggestable(false)
+    } else if (this.state.suggestable) {
       const atText = text.slice(this.state.atPosition + 1, event.target.selectionEnd)
       const suggesttedData = this.fuse.search(atText)
 
@@ -263,8 +263,8 @@ export default class CommandInput extends React.Component<Props, State> {
                 <textarea
                   className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
                   onChange={event => this.handleTextChange(event)}
-                  onCompositionEnd={() => this.updateIsProcessing(false)}
-                  onCompositionStart={() => this.updateIsProcessing(true)}
+                  onCompositionEnd={() => this.updateProcessing(false)}
+                  onCompositionStart={() => this.updateProcessing(true)}
                   onKeyDown={event => this.handleKeyDown(event)}
                   placeholder={text}
                   ref={this.textareaRef}
@@ -275,7 +275,7 @@ export default class CommandInput extends React.Component<Props, State> {
           }
         </FormattedMessage>
         {
-          this.state.isSuggest ?
+          this.state.suggestable ?
             <CommandInputSuggest
               data={this.state.suggesttedData}
               handleSuggestClick={this.handleSuggestClick.bind(this)}
