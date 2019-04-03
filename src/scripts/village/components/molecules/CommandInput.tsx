@@ -8,19 +8,6 @@ import {FormattedMessage} from 'react-intl'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
 
-const enum Key {
-  ArrowDown = 'ArrowDown',
-  ArrowLeft = 'ArrowLeft',
-  ArrowRight = 'ArrowRight',
-  ArrowUp = 'ArrowUp',
-  Enter = 'Enter',
-  Tab = 'Tab'
-}
-
-const enum Triger {
-  At = '@'
-}
-
 type Props = {
   readonly characterLimit: number
   readonly handlePostChat: (value: string) => void
@@ -52,6 +39,18 @@ interface State {
   validTextLength: boolean
 }
 
+const enum Key {
+  ArrowDown = 'ArrowDown',
+  ArrowLeft = 'ArrowLeft',
+  ArrowRight = 'ArrowRight',
+  ArrowUp = 'ArrowUp',
+  Enter = 'Enter',
+  Tab = 'Tab'
+}
+const enum Triger {
+  At = '@',
+  Space = ' '
+}
 const options = {
   distance: 100,
   keys: [
@@ -96,6 +95,7 @@ export default class CommandInput extends React.Component<Props, State> {
       validTextLength: isValidTextLength(text, props.characterLimit)
     }
     this.fuse = new Fuse(props.suggesttedData, options)
+    this.handleSuggestClick = this.handleSuggestClick.bind(this)
   }
 
   private textareaRef = React.createRef<HTMLTextAreaElement>()
@@ -239,7 +239,7 @@ export default class CommandInput extends React.Component<Props, State> {
         this.updateTrigerPosition(event.target)
         this.updateSuggestable(true)
       }
-    } else if (text[pos] === ' ') {
+    } else if (text[pos] === Triger.Space) {
       this.updateSuggestable(false)
     } else if (event.target.selectionEnd <= this.state.trigerPosition) {
       this.updateSuggestable(false)
@@ -282,7 +282,7 @@ export default class CommandInput extends React.Component<Props, State> {
           this.state.suggestable ?
             <CommandInputSuggest
               data={this.state.suggesttedData}
-              handleSuggestClick={this.handleSuggestClick.bind(this)}
+              handleSuggestClick={this.handleSuggestClick}
               language={this.props.language}
               left={this.state.suggestLeft}
               selected={this.state.suggestSelected}
