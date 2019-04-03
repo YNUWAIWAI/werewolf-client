@@ -34,7 +34,6 @@ type Props = {
 }
 
 interface State {
-  atPosition: number
   caretPosition: number
   processing: boolean
   sendable: boolean
@@ -45,6 +44,7 @@ interface State {
   suggestable: boolean
   text: string
   textCount: number
+  trigerPosition: number
   validTextLength: boolean
 }
 
@@ -78,7 +78,6 @@ export default class CommandInput extends React.Component<Props, State> {
     const text = ''
 
     this.state = {
-      atPosition: 0,
       caretPosition: 0,
       processing: false,
       sendable: this.isSendable(),
@@ -89,6 +88,7 @@ export default class CommandInput extends React.Component<Props, State> {
       suggesttedData: props.suggesttedData,
       text,
       textCount: countText(text),
+      trigerPosition: 0,
       validTextLength: isValidTextLength(text, props.characterLimit)
     }
     this.fuse = new Fuse(props.suggesttedData, options)
@@ -110,13 +110,13 @@ export default class CommandInput extends React.Component<Props, State> {
     }
   }
 
-  public updateAtPosition(elem: HTMLTextAreaElement) {
+  public updateTrigerPosition(elem: HTMLTextAreaElement) {
     const {left, top} = getCaretCoordinates(elem, elem.selectionEnd)
 
     this.setState({
-      atPosition: elem.selectionEnd - 1,
       suggestLeft: left,
-      suggestTop: top - elem.scrollTop
+      suggestTop: top - elem.scrollTop,
+      trigerPosition: elem.selectionEnd - 1
     })
   }
 
@@ -215,10 +215,10 @@ export default class CommandInput extends React.Component<Props, State> {
 
   public handleSuggestClick(suggest: string) {
     const text = this.state.text
-    const newText = text.slice(0, this.state.atPosition) + suggest + text.slice(this.state.caretPosition)
+    const newText = text.slice(0, this.state.trigerPosition) + suggest + text.slice(this.state.caretPosition)
 
     this.updateText(newText)
-    this.updateCaretPosition(this.state.atPosition + countText(suggest))
+    this.updateCaretPosition(this.state.trigerPosition + countText(suggest))
     this.updateSuggestable(false)
   }
 
@@ -232,15 +232,15 @@ export default class CommandInput extends React.Component<Props, State> {
       if (text[pos - 1] === '@') {
         this.updateSuggestable(false)
       } else {
-        this.updateAtPosition(event.target)
+        this.updateTrigerPosition(event.target)
         this.updateSuggestable(true)
       }
     } else if (text[pos] === ' ') {
       this.updateSuggestable(false)
-    } else if (event.target.selectionEnd <= this.state.atPosition) {
+    } else if (event.target.selectionEnd <= this.state.trigerPosition) {
       this.updateSuggestable(false)
     } else if (this.state.suggestable) {
-      const atText = text.slice(this.state.atPosition + 1, event.target.selectionEnd)
+      const atText = text.slice(this.state.trigerPosition + 1, event.target.selectionEnd)
       const suggesttedData = this.fuse.search(atText)
 
       this.setState({
