@@ -3,7 +3,7 @@ import * as Fuse from 'fuse.js'
 import * as React from 'react'
 import {getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
-import CommandInputSuggest from './CommandInputSuggest'
+import CommandInputSuggest from '../atoms/CommandInputSuggest'
 import {FormattedMessage} from 'react-intl'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
