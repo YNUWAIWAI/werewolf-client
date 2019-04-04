@@ -17,7 +17,7 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
   public componentDidUpdate() {
     const listElem = this.listRef.current
 
-    if (listElem === null || this.props.data.length <= 0) {
+    if (listElem === null || this.props.data.length <= 0 || !this.props.suggestable) {
       return
     }
     const itemElem = this.itemsRef[this.props.selected]
@@ -30,7 +30,7 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
   private itemsRef: HTMLDivElement[] = []
 
   public render() {
-    if (this.props.data.length <= 0 || this.props.suggestable) {
+    if (this.props.data.length <= 0 || !this.props.suggestable) {
       return null
     }
     this.itemsRef = []
