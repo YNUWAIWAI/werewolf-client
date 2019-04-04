@@ -1,10 +1,7 @@
 /* global village */
 import * as React from 'react'
 import CommandInputSuggest from './CommandInputSuggest'
-import {getMessages} from '../../../../i18n/village'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
-
-const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
+import {mount} from 'enzyme'
 
 describe('<CommandInputSuggest />', () => {
   describe('render', () => {
@@ -26,7 +23,7 @@ describe('<CommandInputSuggest />', () => {
         }
       ]
       const handleSuggestClick = jest.fn()
-      const wrapper = mountWithIntl(
+      const wrapper = mount(
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
@@ -43,7 +40,7 @@ describe('<CommandInputSuggest />', () => {
     })
     test('data.length <= 0', () => {
       const handleSuggestClick = jest.fn()
-      const wrapper = mountWithIntl(
+      const wrapper = mount(
         <CommandInputSuggest
           data={[]}
           handleSuggestClick={handleSuggestClick}
@@ -76,7 +73,7 @@ describe('<CommandInputSuggest />', () => {
         }
       ]
       const handleSuggestClick = jest.fn()
-      const wrapper = mountWithIntl(
+      const wrapper = mount(
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
@@ -111,7 +108,7 @@ describe('<CommandInputSuggest />', () => {
         }
       ]
       const handleSuggestClick = jest.fn()
-      const wrapper = mountWithIntl<CommandInputSuggest>(
+      const wrapper = mount<CommandInputSuggest>(
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
@@ -131,7 +128,7 @@ describe('<CommandInputSuggest />', () => {
     })
     test('data.length <= 0', () => {
       const handleSuggestClick = jest.fn()
-      const wrapper = mountWithIntl<CommandInputSuggest>(
+      const wrapper = mount<CommandInputSuggest>(
         <CommandInputSuggest
           data={[]}
           handleSuggestClick={handleSuggestClick}
@@ -167,7 +164,7 @@ describe('<CommandInputSuggest />', () => {
         }
       ]
       const handleSuggestClick = jest.fn()
-      const wrapper = mountWithIntl<CommandInputSuggest>(
+      const wrapper = mount<CommandInputSuggest>(
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
@@ -204,7 +201,7 @@ describe('<CommandInputSuggest />', () => {
       }
     ]
     const handleSuggestClick = jest.fn()
-    const wrapper = mountWithIntl(
+    const wrapper = mount(
       <CommandInputSuggest
         data={data}
         handleSuggestClick={handleSuggestClick}
