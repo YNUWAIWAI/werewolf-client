@@ -7,7 +7,7 @@ interface Props {
   readonly postCountLimit: number
 }
 
-export default function CommandInputCounnter(props: Props) {
+export default function CommandInputPostCounnter(props: Props) {
   switch (props.inputChannel) {
     case village.InputChannel.public:
     case village.InputChannel.limited:

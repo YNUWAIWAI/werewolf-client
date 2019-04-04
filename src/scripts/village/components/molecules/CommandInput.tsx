@@ -3,7 +3,7 @@ import * as Fuse from 'fuse.js'
 import * as React from 'react'
 import {getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
-import CommandInputCounter from '../atoms/CommandInputCounter'
+import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
 import CommandInputSuggest from '../atoms/CommandInputSuggest'
 import {FormattedMessage} from 'react-intl'
 import {State as SuggestState} from '../../reducers/suggest'
@@ -18,7 +18,6 @@ interface Props {
   readonly postCountLimit: number
   readonly suggesttedData: SuggestState['data']
 }
-
 interface State {
   caretPosition: number
   processing: boolean
@@ -33,7 +32,6 @@ interface State {
   trigerPosition: number
   validTextLength: boolean
 }
-
 const enum Key {
   ArrowDown = 'ArrowDown',
   ArrowLeft = 'ArrowLeft',
@@ -322,7 +320,7 @@ export default class CommandInput extends React.Component<Props, State> {
           })}
           className="vi--command--input--icon"
         />
-        <CommandInputCounter
+        <CommandInputPostCounter
           inputChannel={this.props.inputChannel}
           postCount={this.props.postCount}
           postCountLimit={this.props.postCountLimit}
