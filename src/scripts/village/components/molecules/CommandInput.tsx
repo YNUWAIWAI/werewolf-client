@@ -303,18 +303,15 @@ export default class CommandInput extends React.Component<Props, State> {
             }
           }
         </FormattedMessage>
-        {
-          this.state.suggestable ?
-            <CommandInputSuggest
-              data={this.state.suggesttedData}
-              handleSuggestClick={this.handleSuggestClick}
-              language={this.props.language}
-              left={this.state.suggestLeft}
-              selected={this.state.suggestSelected}
-              top={this.state.suggestTop}
-            /> :
-            null
-        }
+        <CommandInputSuggest
+          data={this.state.suggesttedData}
+          handleSuggestClick={this.handleSuggestClick}
+          language={this.props.language}
+          left={this.state.suggestLeft}
+          selected={this.state.suggestSelected}
+          suggestable={this.state.suggestable}
+          top={this.state.suggestTop}
+        />
         <span className={`vi--command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
           {this.state.textCount}
         </span>
