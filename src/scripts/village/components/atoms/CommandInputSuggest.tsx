@@ -9,6 +9,7 @@ interface Props {
   language: village.Language
   left: number
   selected: number
+  suggestable: boolean
   top: number
 }
 
@@ -29,7 +30,7 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
   private itemsRef: HTMLDivElement[] = []
 
   public render() {
-    if (this.props.data.length <= 0) {
+    if (this.props.data.length <= 0 || this.props.suggestable) {
       return null
     }
     this.itemsRef = []
