@@ -3,24 +3,19 @@ import * as Fuse from 'fuse.js'
 import * as React from 'react'
 import {getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
+import CommandInputCounter from '../atoms/CommandInputCounter'
 import CommandInputSuggest from '../atoms/CommandInputSuggest'
 import {FormattedMessage} from 'react-intl'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
 
-type Props = {
+interface Props {
   readonly characterLimit: number
   readonly handlePostChat: (value: string) => void
-  readonly inputChannel: village.InputChannel.public | village.InputChannel.limited
+  readonly inputChannel: village.InputChannel
   readonly language: village.Language
   readonly postCount: number
   readonly postCountLimit: number
-  readonly suggesttedData: SuggestState['data']
-} | {
-  readonly characterLimit: number
-  readonly handlePostChat: (value: string) => void
-  readonly inputChannel: village.InputChannel.grave | village.InputChannel.postMortem | village.InputChannel.private
-  readonly language: village.Language
   readonly suggesttedData: SuggestState['data']
 }
 
@@ -330,13 +325,11 @@ export default class CommandInput extends React.Component<Props, State> {
           })}
           className="vi--command--input--icon"
         />
-        {
-          this.props.inputChannel === 'public' || this.props.inputChannel === 'limited' ?
-            <span className="vi--command--input--counter">
-              {`${this.props.postCount}/${this.props.postCountLimit}`}
-            </span> :
-            null
-        }
+        <CommandInputCounter
+          inputChannel={this.props.inputChannel}
+          postCount={this.props.postCount}
+          postCountLimit={this.props.postCountLimit}
+        />
         <FormattedMessage id="CommandInput.send">
           {
             text =>
