@@ -25,6 +25,8 @@ export default function CommandPostMortem(props: Props) {
         handlePostChat={props.handlePostChat(village.InputChannel.postMortem)}
         inputChannel={village.InputChannel.postMortem}
         language={props.language}
+        postCount={-1}
+        postCountLimit={-1}
         suggesttedData={props.suggesttedData}
       />
       <CommandNavigation

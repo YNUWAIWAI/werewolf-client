@@ -38,6 +38,8 @@ export default function CommandInputBox(props: Props) {
         handlePostChat={props.handlePostChat(village.InputChannel.private)}
         inputChannel={village.InputChannel.private}
         language={props.language}
+        postCount={-1}
+        postCountLimit={-1}
         suggesttedData={props.suggesttedData}
       />
       {

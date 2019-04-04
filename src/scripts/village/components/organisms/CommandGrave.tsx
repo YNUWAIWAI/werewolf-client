@@ -25,6 +25,8 @@ export default function CommandGrave(props: Props) {
         handlePostChat={props.handlePostChat(village.InputChannel.grave)}
         inputChannel={village.InputChannel.grave}
         language={props.language}
+        postCount={-1}
+        postCountLimit={-1}
         suggesttedData={props.suggesttedData}
       />
       <CommandNavigation
