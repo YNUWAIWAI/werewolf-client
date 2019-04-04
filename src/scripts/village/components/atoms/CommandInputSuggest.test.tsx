@@ -33,6 +33,7 @@ describe('<CommandInputSuggest />', () => {
           language={village.Language.ja}
           left={0}
           selected={0}
+          suggestable
           top={0}
         />
       )
@@ -49,6 +50,40 @@ describe('<CommandInputSuggest />', () => {
           language={village.Language.ja}
           left={0}
           selected={0}
+          suggestable
+          top={0}
+        />
+      )
+
+      expect(wrapper.isEmptyRender()).toBe(true)
+      expect(handleSuggestClick).toHaveBeenCalledTimes(0)
+    })
+    test('suggestable={false}', () => {
+      const data = [
+        {
+          id: 'Alvin',
+          name: {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          }
+        },
+        {
+          id: 'Catalina',
+          name: {
+            'en': 'Catalina',
+            'ja': 'カタリナ'
+          }
+        }
+      ]
+      const handleSuggestClick = jest.fn()
+      const wrapper = mountWithIntl(
+        <CommandInputSuggest
+          data={data}
+          handleSuggestClick={handleSuggestClick}
+          language={village.Language.ja}
+          left={0}
+          selected={0}
+          suggestable={false}
           top={0}
         />
       )
@@ -83,6 +118,7 @@ describe('<CommandInputSuggest />', () => {
           language={village.Language.ja}
           left={0}
           selected={0}
+          suggestable
           top={0}
         />
       )
@@ -102,6 +138,7 @@ describe('<CommandInputSuggest />', () => {
           language={village.Language.ja}
           left={0}
           selected={0}
+          suggestable
           top={0}
         />
       )
@@ -109,6 +146,42 @@ describe('<CommandInputSuggest />', () => {
 
       wrapper.setProps({
         data: []
+      })
+      expect(spy).toHaveBeenCalled()
+    })
+    test('suggestable={false}', () => {
+      const data = [
+        {
+          id: 'Alvin',
+          name: {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          }
+        },
+        {
+          id: 'Catalina',
+          name: {
+            'en': 'Catalina',
+            'ja': 'カタリナ'
+          }
+        }
+      ]
+      const handleSuggestClick = jest.fn()
+      const wrapper = mountWithIntl<CommandInputSuggest>(
+        <CommandInputSuggest
+          data={data}
+          handleSuggestClick={handleSuggestClick}
+          language={village.Language.ja}
+          left={0}
+          selected={0}
+          suggestable
+          top={0}
+        />
+      )
+      const spy = jest.spyOn(CommandInputSuggest.prototype, 'componentDidUpdate')
+
+      wrapper.setProps({
+        suggestable: false
       })
       expect(spy).toHaveBeenCalled()
     })
@@ -138,6 +211,7 @@ describe('<CommandInputSuggest />', () => {
         language={village.Language.ja}
         left={0}
         selected={0}
+        suggestable
         top={0}
       />
     )
