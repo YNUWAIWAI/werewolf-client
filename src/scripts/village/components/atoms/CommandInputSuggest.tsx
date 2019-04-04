@@ -22,7 +22,7 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
     const itemElem = this.itemsRef[this.props.selected]
     const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
-    listElem.scrollTo(0, offsetBottom - listElem.clientHeight)
+    listElem.scrollTop = offsetBottom - listElem.clientHeight
   }
 
   private listRef = React.createRef<HTMLDivElement>()

@@ -57,4 +57,72 @@ describe('<CommandInputSuggest />', () => {
       expect(handleSuggestClick).toHaveBeenCalledTimes(0)
     })
   })
+  test('componentDidUpdate', () => {
+    const data = [
+      {
+        id: 'Alvin',
+        name: {
+          'en': 'Alvin',
+          'ja': 'アルビン'
+        }
+      },
+      {
+        id: 'Catalina',
+        name: {
+          'en': 'Catalina',
+          'ja': 'カタリナ'
+        }
+      }
+    ]
+    const handleSuggestClick = jest.fn()
+    const wrapper = mountWithIntl<CommandInputSuggest>(
+      <CommandInputSuggest
+        data={data}
+        handleSuggestClick={handleSuggestClick}
+        language={village.Language.ja}
+        left={0}
+        selected={0}
+        top={0}
+      />
+    )
+    const spy = jest.spyOn(CommandInputSuggest.prototype, 'componentDidUpdate')
+
+    wrapper.setProps({
+      selected: 1
+    })
+    expect(spy).toHaveBeenCalled()
+  })
+  test('handleSuggestClick', () => {
+    const data = [
+      {
+        id: 'Alvin',
+        name: {
+          'en': 'Alvin',
+          'ja': 'アルビン'
+        }
+      },
+      {
+        id: 'Catalina',
+        name: {
+          'en': 'Catalina',
+          'ja': 'カタリナ'
+        }
+      }
+    ]
+    const handleSuggestClick = jest.fn()
+    const wrapper = mountWithIntl(
+      <CommandInputSuggest
+        data={data}
+        handleSuggestClick={handleSuggestClick}
+        language={village.Language.ja}
+        left={0}
+        selected={0}
+        top={0}
+      />
+    )
+
+    wrapper.find('.vi--command--input--suggest--item.selected').simulate('click')
+    expect(handleSuggestClick).toHaveBeenCalledTimes(1)
+    expect(handleSuggestClick).toHaveBeenCalledWith('アルビン')
+  })
 })
