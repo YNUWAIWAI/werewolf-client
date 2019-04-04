@@ -57,40 +57,61 @@ describe('<CommandInputSuggest />', () => {
       expect(handleSuggestClick).toHaveBeenCalledTimes(0)
     })
   })
-  test('componentDidUpdate', () => {
-    const data = [
-      {
-        id: 'Alvin',
-        name: {
-          'en': 'Alvin',
-          'ja': 'アルビン'
+  describe('componentDidUpdate', () => {
+    test('data.length > 0', () => {
+      const data = [
+        {
+          id: 'Alvin',
+          name: {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          }
+        },
+        {
+          id: 'Catalina',
+          name: {
+            'en': 'Catalina',
+            'ja': 'カタリナ'
+          }
         }
-      },
-      {
-        id: 'Catalina',
-        name: {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
-        }
-      }
-    ]
-    const handleSuggestClick = jest.fn()
-    const wrapper = mountWithIntl<CommandInputSuggest>(
-      <CommandInputSuggest
-        data={data}
-        handleSuggestClick={handleSuggestClick}
-        language={village.Language.ja}
-        left={0}
-        selected={0}
-        top={0}
-      />
-    )
-    const spy = jest.spyOn(CommandInputSuggest.prototype, 'componentDidUpdate')
+      ]
+      const handleSuggestClick = jest.fn()
+      const wrapper = mountWithIntl<CommandInputSuggest>(
+        <CommandInputSuggest
+          data={data}
+          handleSuggestClick={handleSuggestClick}
+          language={village.Language.ja}
+          left={0}
+          selected={0}
+          top={0}
+        />
+      )
+      const spy = jest.spyOn(CommandInputSuggest.prototype, 'componentDidUpdate')
 
-    wrapper.setProps({
-      selected: 1
+      wrapper.setProps({
+        selected: 1
+      })
+      expect(spy).toHaveBeenCalled()
     })
-    expect(spy).toHaveBeenCalled()
+    test('data.length <= 0', () => {
+      const handleSuggestClick = jest.fn()
+      const wrapper = mountWithIntl<CommandInputSuggest>(
+        <CommandInputSuggest
+          data={[]}
+          handleSuggestClick={handleSuggestClick}
+          language={village.Language.ja}
+          left={0}
+          selected={0}
+          top={0}
+        />
+      )
+      const spy = jest.spyOn(CommandInputSuggest.prototype, 'componentDidUpdate')
+
+      wrapper.setProps({
+        data: []
+      })
+      expect(spy).toHaveBeenCalled()
+    })
   })
   test('handleSuggestClick', () => {
     const data = [
