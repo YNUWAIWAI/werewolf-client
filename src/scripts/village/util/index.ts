@@ -230,6 +230,12 @@ export const idGenerater = (prefix: string) => {
   }
 }
 
+export const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number): boolean => {
+  const textCount = countText(text)
+
+  return textCount <= upperLimit && textCount >= lowerLimit
+}
+
 export const just = <T>(value: T | undefined | null): T => {
   if (typeof value === 'undefined' || value === null) {
     throw Error('Nothing')

@@ -14,6 +14,7 @@ import {
   getTeam,
   getText,
   idGenerater,
+  isValidTextLength,
   just,
   spaceSeparatedToCamelCase,
   strToAgentStatus,
@@ -1144,6 +1145,23 @@ test('idGenerater', () => {
   expect(generateId()).toBe('id0')
   expect(generateId()).toBe('id1')
   expect(generateId()).toBe('id2')
+})
+describe('isValidTextLength', () => {
+  test('upperLimit < count', () => {
+    expect(isValidTextLength('text', 3, 1)).toBe(false)
+  })
+  test('upperLimit === count', () => {
+    expect(isValidTextLength('text', 4, 1)).toBe(true)
+  })
+  test('upperLimit > count > lowerLimit', () => {
+    expect(isValidTextLength('text', 140, 1)).toBe(true)
+  })
+  test('lowerLimit === count', () => {
+    expect(isValidTextLength('t', 140, 1)).toBe(true)
+  })
+  test('lowerLimit > count', () => {
+    expect(isValidTextLength('', 140, 1)).toBe(false)
+  })
 })
 test('just', () => {
   expect(just('just')).toBe('just')
