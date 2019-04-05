@@ -1,7 +1,7 @@
 /* global village */
 import * as Fuse from 'fuse.js'
 import * as React from 'react'
-import {countText, getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '../../util'
+import {countText, getChannelFromInputChennel, getText, isValidTextLength, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
 import CommandInputSuggest from '../atoms/CommandInputSuggest'
@@ -30,7 +30,6 @@ interface State {
   suggestable: boolean
   text: string
   trigerPosition: number
-  validTextLength: boolean
 }
 const enum Key {
   ArrowDown = 'ArrowDown',
@@ -59,11 +58,6 @@ const options = {
   shouldSort: true,
   threshold: 0.6
 }
-const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number = 1): boolean => {
-  const textCount = countText(text)
-
-  return textCount <= upperLimit && textCount >= lowerLimit
-}
 
 export default class CommandInput extends React.Component<Props, State> {
   private fuse: Fuse<SuggestState['data'][number]>
@@ -82,8 +76,7 @@ export default class CommandInput extends React.Component<Props, State> {
       suggestable: false,
       suggesttedData: props.suggesttedData,
       text,
-      trigerPosition: 0,
-      validTextLength: isValidTextLength(text, props.characterLimit)
+      trigerPosition: 0
     }
     this.fuse = new Fuse(props.suggesttedData, options)
     this.handleSuggestClick = this.handleSuggestClick.bind(this)
@@ -103,6 +96,10 @@ export default class CommandInput extends React.Component<Props, State> {
       default:
         throw Error('props.inputChannel: unkonwn')
     }
+  }
+
+  public isValidTextLength(text: string) {
+    return isValidTextLength(text, this.props.characterLimit, 1)
   }
 
   public updateTrigerPosition(position: number) {
@@ -155,8 +152,7 @@ export default class CommandInput extends React.Component<Props, State> {
   public updateText(text: string) {
     this.setState({
       sendable: this.isSendable(),
-      text,
-      validTextLength: isValidTextLength(text, this.props.characterLimit)
+      text
     })
   }
 
@@ -230,7 +226,7 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   public handlePostChat() {
-    if (this.state.sendable && this.state.validTextLength) {
+    if (this.state.sendable && this.isValidTextLength(this.state.text)) {
       this.props.handlePostChat(this.state.text)
       this.updateText('')
     }
@@ -309,7 +305,7 @@ export default class CommandInput extends React.Component<Props, State> {
         />
         <CommandInputTextCounter
           textCount={countText(this.state.text)}
-          valid={this.state.validTextLength}
+          valid={this.isValidTextLength(this.state.text)}
         />
         <ChatIcon
           channel={getChannelFromInputChennel({
@@ -328,7 +324,7 @@ export default class CommandInput extends React.Component<Props, State> {
             text =>
               <button
                 className="vi--command--input--send"
-                disabled={!(this.state.sendable && this.state.validTextLength)}
+                disabled={!(this.state.sendable && this.isValidTextLength(this.state.text))}
                 onClick={() => this.handlePostChat()}
               >
                 {text}

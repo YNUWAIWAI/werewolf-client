@@ -149,7 +149,6 @@ describe('<CommandInput />', () => {
 
       expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
       expect(wrapper.find('button').is('[disabled=true]')).toBe(true)
@@ -163,7 +162,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe(text)
-      expect(wrapper.state().validTextLength).toBe(true)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
       expect(wrapper.find('button').is('[disabled=false]')).toBe(true)
@@ -174,7 +172,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe(`${text}a`)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
       expect(wrapper.find('button').is('[disabled=true]')).toBe(true)
@@ -195,7 +192,6 @@ describe('<CommandInput />', () => {
 
       expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
       expect(wrapper.find('button').is('[disabled=true]')).toBe(true)
@@ -209,7 +205,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe(text)
-      expect(wrapper.state().validTextLength).toBe(true)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
       expect(wrapper.find('button').is('[disabled=true]')).toBe(true)
@@ -220,7 +215,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe(`${text}a`)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
       expect(wrapper.find('button').is('[disabled=true]')).toBe(true)
@@ -254,7 +248,6 @@ describe('<CommandInput />', () => {
       wrapper.find('button').simulate('click')
       expect(handlePostChat).toHaveBeenCalledTimes(1)
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
     })
     test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit + 1', () => {
@@ -283,7 +276,6 @@ describe('<CommandInput />', () => {
       })
       wrapper.find('button').simulate('click')
       expect(handlePostChat).toHaveBeenCalledTimes(0)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe(text)
     })
     test('kind="public" postCount={10} postCountLimit={10} handlePostChat textarea: charLimit', () => {
@@ -312,7 +304,6 @@ describe('<CommandInput />', () => {
       })
       wrapper.find('button').simulate('click')
       expect(handlePostChat).toHaveBeenCalledTimes(0)
-      expect(wrapper.state().validTextLength).toBe(true)
       expect(wrapper.state().text).toBe(text)
     })
     test('kind="public" postCount={10} postCountLimit={10} textarea: charLimit + 1', () => {
@@ -341,7 +332,6 @@ describe('<CommandInput />', () => {
       })
       wrapper.find('button').simulate('click')
       expect(handlePostChat).toHaveBeenCalledTimes(0)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe(text)
     })
   })
@@ -381,7 +371,6 @@ describe('<CommandInput />', () => {
       })
       expect(handlePostChat).toHaveBeenCalledTimes(1)
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
     })
     test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit key: metaKey & Enter', () => {
@@ -419,7 +408,6 @@ describe('<CommandInput />', () => {
       })
       expect(handlePostChat).toHaveBeenCalledTimes(1)
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
     })
     test('kind="public" postCount={0} postCountLimit={10} textarea: charLimitkey: metaKey & ctrlKey & Enter', () => {
@@ -457,7 +445,6 @@ describe('<CommandInput />', () => {
       })
       expect(handlePostChat).toHaveBeenCalledTimes(1)
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
     })
   })
