@@ -1,7 +1,7 @@
 /* global village */
 import * as Fuse from 'fuse.js'
 import * as React from 'react'
-import {getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '../../util'
+import {countText, getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
 import CommandInputSuggest from '../atoms/CommandInputSuggest'
@@ -59,7 +59,6 @@ const options = {
   shouldSort: true,
   threshold: 0.6
 }
-const countText = (text: string): number => Array.of(... text).length
 const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number = 1): boolean => {
   const textCount = countText(text)
 

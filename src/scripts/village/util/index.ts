@@ -5,6 +5,7 @@ import {
   WEREHAMSTER_TEAM
 } from '../constants/Role'
 
+export const countText = (text: string): number => Array.of(... text).length
 export const getBaseUri = (id: string): string => {
   const match = (/^([^\n]+)\/\w+$/).exec(id)
 

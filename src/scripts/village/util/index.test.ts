@@ -1,5 +1,6 @@
 /* global village */
 import {
+  countText,
   getAgent,
   getBaseUri,
   getChannelFromInputChennel,
@@ -22,6 +23,14 @@ import {
   xor
 } from './index'
 
+describe('countText', () => {
+  test('text', () => {
+    expect(countText('text')).toBe(4)
+  })
+  test('𠮷田 (surrogate pair)', () => {
+    expect(countText('𠮷田')).toBe(2)
+  })
+})
 describe('getAgent', () => {
   test('nominal', () => {
     const agents = [
