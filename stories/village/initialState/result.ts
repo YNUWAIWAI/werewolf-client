@@ -118,7 +118,7 @@ const state: ReducerState = {
   hideButton: {
     hide: false
   },
-  language: village.Language.ja,
+  language: village.Language.en,
   mine: {
     agent: {
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',

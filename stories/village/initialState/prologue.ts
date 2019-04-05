@@ -110,7 +110,7 @@ const state: ReducerState = {
   hideButton: {
     hide: false
   },
-  language: village.Language.ja,
+  language: village.Language.en,
   mine: {},
   modal: {
     id: -1,
