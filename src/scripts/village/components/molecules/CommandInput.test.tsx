@@ -149,7 +149,6 @@ describe('<CommandInput />', () => {
 
       expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().textCount).toBe(0)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
@@ -164,7 +163,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe(text)
-      expect(wrapper.state().textCount).toBe(charLimit)
       expect(wrapper.state().validTextLength).toBe(true)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
@@ -176,7 +174,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe(`${text}a`)
-      expect(wrapper.state().textCount).toBe(charLimit + 1)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
@@ -198,7 +195,6 @@ describe('<CommandInput />', () => {
 
       expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().textCount).toBe(0)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
@@ -213,7 +209,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe(text)
-      expect(wrapper.state().textCount).toBe(charLimit)
       expect(wrapper.state().validTextLength).toBe(true)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
@@ -225,7 +220,6 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe(`${text}a`)
-      expect(wrapper.state().textCount).toBe(charLimit + 1)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
@@ -262,7 +256,6 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().textCount).toBe(0)
     })
     test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit + 1', () => {
       const handlePostChat = jest.fn()
@@ -292,7 +285,6 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenCalledTimes(0)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe(text)
-      expect(wrapper.state().textCount).toBe(charLimit + 1)
     })
     test('kind="public" postCount={10} postCountLimit={10} handlePostChat textarea: charLimit', () => {
       const handlePostChat = jest.fn()
@@ -322,7 +314,6 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenCalledTimes(0)
       expect(wrapper.state().validTextLength).toBe(true)
       expect(wrapper.state().text).toBe(text)
-      expect(wrapper.state().textCount).toBe(charLimit)
     })
     test('kind="public" postCount={10} postCountLimit={10} textarea: charLimit + 1', () => {
       const handlePostChat = jest.fn()
@@ -352,7 +343,6 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenCalledTimes(0)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe(text)
-      expect(wrapper.state().textCount).toBe(charLimit + 1)
     })
   })
   describe('handleKeyDown', () => {
@@ -393,7 +383,6 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().textCount).toBe(0)
     })
     test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit key: metaKey & Enter', () => {
       const handlePostChat = jest.fn()
@@ -432,7 +421,6 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().textCount).toBe(0)
     })
     test('kind="public" postCount={0} postCountLimit={10} textarea: charLimitkey: metaKey & ctrlKey & Enter', () => {
       const handlePostChat = jest.fn()
@@ -471,7 +459,6 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenLastCalledWith(text)
       expect(wrapper.state().validTextLength).toBe(false)
       expect(wrapper.state().text).toBe('')
-      expect(wrapper.state().textCount).toBe(0)
     })
   })
 })

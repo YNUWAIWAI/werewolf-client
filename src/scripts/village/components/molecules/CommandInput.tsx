@@ -5,6 +5,7 @@ import {getChannelFromInputChennel, getText, spaceSeparatedToCamelCase} from '..
 import ChatIcon from '../atoms/ChatIcon'
 import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
 import CommandInputSuggest from '../atoms/CommandInputSuggest'
+import CommandInputTextCounter from '../atoms/CommandInputTextCounter'
 import {FormattedMessage} from 'react-intl'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
@@ -28,7 +29,6 @@ interface State {
   suggestTop: number
   suggestable: boolean
   text: string
-  textCount: number
   trigerPosition: number
   validTextLength: boolean
 }
@@ -83,7 +83,6 @@ export default class CommandInput extends React.Component<Props, State> {
       suggestable: false,
       suggesttedData: props.suggesttedData,
       text,
-      textCount: countText(text),
       trigerPosition: 0,
       validTextLength: isValidTextLength(text, props.characterLimit)
     }
@@ -158,7 +157,6 @@ export default class CommandInput extends React.Component<Props, State> {
     this.setState({
       sendable: this.isSendable(),
       text,
-      textCount: countText(text),
       validTextLength: isValidTextLength(text, this.props.characterLimit)
     })
   }
@@ -310,9 +308,10 @@ export default class CommandInput extends React.Component<Props, State> {
           suggestable={this.state.suggestable}
           top={this.state.suggestTop}
         />
-        <span className={`vi--command--input--char ${this.state.validTextLength ? '' : 'error'}`}>
-          {this.state.textCount}
-        </span>
+        <CommandInputTextCounter
+          textCount={countText(this.state.text)}
+          valid={this.state.validTextLength}
+        />
         <ChatIcon
           channel={getChannelFromInputChennel({
             inputChannel: this.props.inputChannel,
