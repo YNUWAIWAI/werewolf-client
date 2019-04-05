@@ -139,6 +139,8 @@ storiesOf('village|Command/CommandInput', module)
           handlePostChat={action('postChat')}
           inputChannel={village.InputChannel.grave}
           language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
           suggesttedData={suggesttedData}
         />
       </div>
@@ -181,6 +183,8 @@ storiesOf('village|Command/CommandInput', module)
           handlePostChat={action('postChat')}
           inputChannel={village.InputChannel.private}
           language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
           suggesttedData={suggesttedData}
         />
       </div>
