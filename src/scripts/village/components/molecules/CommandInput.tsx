@@ -121,11 +121,13 @@ export default class CommandInput extends React.Component<Props, State> {
     this.setState({
       caretPosition
     }, () => {
-      if (this.textareaRef.current === null) {
+      const elem = this.textareaRef.current
+
+      if (elem === null) {
         return
       }
-      this.textareaRef.current.focus()
-      this.textareaRef.current.setSelectionRange(this.state.caretPosition, this.state.caretPosition)
+      elem.focus()
+      elem.setSelectionRange(this.state.caretPosition, this.state.caretPosition)
     })
   }
 
@@ -138,12 +140,12 @@ export default class CommandInput extends React.Component<Props, State> {
   public updateSuggestable(suggestable: boolean) {
     if (suggestable) {
       this.setState({
-        suggestable: true
+        suggestable
       })
     } else {
       this.setState({
         suggestSelected: 0,
-        suggestable: false,
+        suggestable,
         suggesttedData: this.props.suggesttedData
       })
     }
