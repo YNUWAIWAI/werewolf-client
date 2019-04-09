@@ -82,79 +82,6 @@ export default class CommandInput extends React.Component<Props, State> {
 
   private textareaRef = React.createRef<HTMLTextAreaElement>()
 
-  public isSendable() {
-    switch (this.props.inputChannel) {
-      case village.InputChannel.grave:
-      case village.InputChannel.private:
-      case village.InputChannel.postMortem:
-        return true
-      case village.InputChannel.public:
-      case village.InputChannel.limited:
-        return this.props.postCount < this.props.postCountLimit
-      default:
-        throw Error('props.inputChannel: unkonwn')
-    }
-  }
-
-  public isValidTextLength(text: string) {
-    return isValidTextLength(text, this.props.characterLimit, 1)
-  }
-
-  public updateCaretPosition(caretPosition: number) {
-    this.setState({
-      caretPosition
-    }, () => {
-      const elem = this.textareaRef.current
-
-      if (elem === null) {
-        return
-      }
-      elem.focus()
-      elem.setSelectionRange(this.state.caretPosition, this.state.caretPosition)
-    })
-  }
-
-  public updateProcessing(processing: boolean) {
-    this.setState({
-      processing
-    })
-  }
-
-  public updateSuggestable(suggestable: boolean) {
-    if (suggestable) {
-      this.setState({
-        suggestable
-      })
-    } else {
-      this.setState({
-        suggestSelected: 0,
-        suggestable,
-        suggesttedData: this.props.suggesttedData
-      })
-    }
-  }
-
-  public updateText(text: string) {
-    this.setState({
-      text
-    })
-  }
-
-  public updateTrigerPosition(position: number) {
-    const elem = this.textareaRef.current
-
-    if (elem === null) {
-      return
-    }
-    const {left, top} = getCaretCoordinates(elem, position + 1)
-
-    this.setState({
-      suggestLeft: left,
-      suggestTop: top - elem.scrollTop,
-      trigerPosition: position
-    })
-  }
-
   public handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (this.state.processing) {
       return
@@ -225,7 +152,7 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   public handlePostChat() {
-    if (this.isSendable() && this.isValidTextLength(this.state.text)) {
+    if (this.isSendable() && this.isValidTextLength()) {
       this.props.handlePostChat(this.state.text)
       this.updateText('')
     }
@@ -268,6 +195,79 @@ export default class CommandInput extends React.Component<Props, State> {
     }
   }
 
+  public isSendable() {
+    switch (this.props.inputChannel) {
+      case village.InputChannel.grave:
+      case village.InputChannel.private:
+      case village.InputChannel.postMortem:
+        return true
+      case village.InputChannel.public:
+      case village.InputChannel.limited:
+        return this.props.postCount < this.props.postCountLimit
+      default:
+        throw Error('props.inputChannel: unkonwn')
+    }
+  }
+
+  public isValidTextLength() {
+    return isValidTextLength(this.state.text, this.props.characterLimit, 1)
+  }
+
+  public updateCaretPosition(caretPosition: number) {
+    this.setState({
+      caretPosition
+    }, () => {
+      const elem = this.textareaRef.current
+
+      if (elem === null) {
+        return
+      }
+      elem.focus()
+      elem.setSelectionRange(this.state.caretPosition, this.state.caretPosition)
+    })
+  }
+
+  public updateProcessing(processing: boolean) {
+    this.setState({
+      processing
+    })
+  }
+
+  public updateSuggestable(suggestable: boolean) {
+    if (suggestable) {
+      this.setState({
+        suggestable
+      })
+    } else {
+      this.setState({
+        suggestSelected: 0,
+        suggestable,
+        suggesttedData: this.props.suggesttedData
+      })
+    }
+  }
+
+  public updateText(text: string) {
+    this.setState({
+      text
+    })
+  }
+
+  public updateTrigerPosition(position: number) {
+    const elem = this.textareaRef.current
+
+    if (elem === null) {
+      return
+    }
+    const {left, top} = getCaretCoordinates(elem, position + 1)
+
+    this.setState({
+      suggestLeft: left,
+      suggestTop: top - elem.scrollTop,
+      trigerPosition: position
+    })
+  }
+
   public render() {
     return (
       <div className="vi--command--input">
@@ -304,7 +304,7 @@ export default class CommandInput extends React.Component<Props, State> {
         />
         <CommandInputTextCounter
           textCount={countText(this.state.text)}
-          valid={this.isValidTextLength(this.state.text)}
+          valid={this.isValidTextLength()}
         />
         <ChatIcon
           channel={getChannelFromInputChennel({
@@ -323,7 +323,7 @@ export default class CommandInput extends React.Component<Props, State> {
             text =>
               <button
                 className="vi--command--input--send"
-                disabled={!(this.isSendable() && this.isValidTextLength(this.state.text))}
+                disabled={!(this.isSendable() && this.isValidTextLength())}
                 onClick={() => this.handlePostChat()}
               >
                 {text}

@@ -249,7 +249,7 @@ describe('<CommandInput />', () => {
         text
       })
       expect(instance.isSendable()).toBe(true)
-      expect(instance.isValidTextLength(text)).toBe(true)
+      expect(instance.isValidTextLength()).toBe(true)
       instance.handlePostChat()
 
       expect(wrapper.state()).toEqual({
@@ -285,7 +285,7 @@ describe('<CommandInput />', () => {
         text
       })
       expect(instance.isSendable()).toBe(false)
-      expect(instance.isValidTextLength(text)).toBe(true)
+      expect(instance.isValidTextLength()).toBe(true)
       instance.handlePostChat()
 
       expect(wrapper.state()).toEqual({
@@ -321,7 +321,7 @@ describe('<CommandInput />', () => {
         text
       })
       expect(instance.isSendable()).toBe(true)
-      expect(instance.isValidTextLength(text)).toBe(false)
+      expect(instance.isValidTextLength()).toBe(false)
       instance.handlePostChat()
 
       expect(wrapper.state()).toEqual({
@@ -357,7 +357,7 @@ describe('<CommandInput />', () => {
         text
       })
       expect(instance.isSendable()).toBe(false)
-      expect(instance.isValidTextLength(text)).toBe(false)
+      expect(instance.isValidTextLength()).toBe(false)
       instance.handlePostChat()
 
       expect(wrapper.state()).toEqual({
@@ -493,6 +493,272 @@ describe('<CommandInput />', () => {
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
       expect(wrapper.find('button').is('[disabled=true]')).toBe(true)
+    })
+  })
+  describe('isSendable', () => {
+    test('inputChannel: grave', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.grave}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      expect(wrapper.instance().isSendable()).toBe(true)
+    })
+    describe('inputChannel: limited', () => {
+      test('postCount < postCountLimit', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.limited}
+            language={village.Language.ja}
+            postCount={0}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
+
+        expect(wrapper.instance().isSendable()).toBe(true)
+      })
+      test('postCount === postCountLimit', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.limited}
+            language={village.Language.ja}
+            postCount={10}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
+
+        expect(wrapper.instance().isSendable()).toBe(false)
+      })
+      test('postCount > postCountLimit', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.limited}
+            language={village.Language.ja}
+            postCount={11}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
+
+        expect(wrapper.instance().isSendable()).toBe(false)
+      })
+    })
+    test('inputChannel: private', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.private}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      expect(wrapper.instance().isSendable()).toBe(true)
+    })
+    test('inputChannel: postMortem', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.postMortem}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      expect(wrapper.instance().isSendable()).toBe(true)
+    })
+    describe('inputChannel: public', () => {
+      test('postCount < postCountLimit', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={0}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
+
+        expect(wrapper.instance().isSendable()).toBe(true)
+      })
+      test('postCount === postCountLimit', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={10}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
+
+        expect(wrapper.instance().isSendable()).toBe(false)
+      })
+      test('postCount > postCountLimit', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={11}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
+
+        expect(wrapper.instance().isSendable()).toBe(false)
+      })
+    })
+  })
+  describe('isValidTextLength', () => {
+    test('textCount === 0', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.grave}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.setState({
+        text: ''
+      })
+      expect(wrapper.instance().isValidTextLength()).toBe(false)
+    })
+    test('textCount === 1', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.grave}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.setState({
+        text: 'a'
+      })
+      expect(wrapper.instance().isValidTextLength()).toBe(true)
+    })
+    test('0 < textCount < characterLimit', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.grave}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.setState({
+        text: 'text'
+      })
+      expect(wrapper.instance().isValidTextLength()).toBe(true)
+    })
+    test('textCount === characterLimit', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.grave}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.setState({
+        text: 'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext'
+      })
+      expect(wrapper.instance().isValidTextLength()).toBe(true)
+    })
+    test('textCount === characterLimit + 1', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.grave}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.setState({
+        text: 'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextt'
+      })
+      expect(wrapper.instance().isValidTextLength()).toBe(false)
+    })
+    test('textCount > characterLimit', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.grave}
+          language={village.Language.ja}
+          postCount={-1}
+          postCountLimit={-1}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.setState({
+        text: 'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext'
+      })
+      expect(wrapper.instance().isValidTextLength()).toBe(false)
     })
   })
 })
