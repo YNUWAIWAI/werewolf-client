@@ -761,4 +761,112 @@ describe('<CommandInput />', () => {
       expect(wrapper.instance().isValidTextLength()).toBe(false)
     })
   })
+  test('updateCaretPosition', () => {
+    const handlePostChat = jest.fn()
+    const wrapper = mountWithIntl<CommandInput>(
+      <CommandInput
+        characterLimit={140}
+        handlePostChat={handlePostChat}
+        inputChannel={village.InputChannel.public}
+        language={village.Language.ja}
+        postCount={0}
+        postCountLimit={10}
+        suggesttedData={[]}
+      />
+    )
+
+    wrapper.instance().updateCaretPosition(1)
+    expect(wrapper.state().caretPosition).toBe(1)
+  })
+  test('updateProcessing', () => {
+    const handlePostChat = jest.fn()
+    const wrapper = mountWithIntl<CommandInput>(
+      <CommandInput
+        characterLimit={140}
+        handlePostChat={handlePostChat}
+        inputChannel={village.InputChannel.public}
+        language={village.Language.ja}
+        postCount={0}
+        postCountLimit={10}
+        suggesttedData={[]}
+      />
+    )
+
+    wrapper.instance().updateProcessing(true)
+    expect(wrapper.state().processing).toBe(true)
+  })
+  describe('updateSuggestable', () => {
+    test('true', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.instance().updateSuggestable(true)
+      expect(wrapper.state().suggestable).toBe(true)
+    })
+    test('false', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.instance().updateSuggestable(false)
+      expect(wrapper.state().suggestSelected).toBe(0)
+      expect(wrapper.state().suggestable).toBe(false)
+      expect(wrapper.state().suggesttedData).toEqual([])
+    })
+  })
+  test('updateText', () => {
+    const handlePostChat = jest.fn()
+    const wrapper = mountWithIntl<CommandInput>(
+      <CommandInput
+        characterLimit={140}
+        handlePostChat={handlePostChat}
+        inputChannel={village.InputChannel.public}
+        language={village.Language.ja}
+        postCount={0}
+        postCountLimit={10}
+        suggesttedData={[]}
+      />
+    )
+
+    wrapper.instance().updateText('text')
+    expect(wrapper.state().text).toBe('text')
+  })
+  test('updateTrigerPosition', () => {
+    const handlePostChat = jest.fn()
+    const wrapper = mountWithIntl<CommandInput>(
+      <CommandInput
+        characterLimit={140}
+        handlePostChat={handlePostChat}
+        inputChannel={village.InputChannel.public}
+        language={village.Language.ja}
+        postCount={0}
+        postCountLimit={10}
+        suggesttedData={[]}
+      />
+    )
+
+    wrapper.instance().updateTrigerPosition(0)
+    expect(wrapper.state().suggestLeft).toBe(1)
+    expect(wrapper.state().suggestTop).toBe(1)
+    expect(wrapper.state().trigerPosition).toBe(0)
+  })
 })
