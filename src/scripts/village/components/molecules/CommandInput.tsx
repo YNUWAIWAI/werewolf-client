@@ -102,21 +102,6 @@ export default class CommandInput extends React.Component<Props, State> {
     return isValidTextLength(text, this.props.characterLimit, 1)
   }
 
-  public updateTrigerPosition(position: number) {
-    const elem = this.textareaRef.current
-
-    if (elem === null) {
-      return
-    }
-    const {left, top} = getCaretCoordinates(elem, position + 1)
-
-    this.setState({
-      suggestLeft: left,
-      suggestTop: top - elem.scrollTop,
-      trigerPosition: position
-    })
-  }
-
   public updateCaretPosition(caretPosition: number) {
     this.setState({
       caretPosition
@@ -155,6 +140,21 @@ export default class CommandInput extends React.Component<Props, State> {
     this.setState({
       sendable: this.isSendable(),
       text
+    })
+  }
+
+  public updateTrigerPosition(position: number) {
+    const elem = this.textareaRef.current
+
+    if (elem === null) {
+      return
+    }
+    const {left, top} = getCaretCoordinates(elem, position + 1)
+
+    this.setState({
+      suggestLeft: left,
+      suggestTop: top - elem.scrollTop,
+      trigerPosition: position
     })
   }
 
