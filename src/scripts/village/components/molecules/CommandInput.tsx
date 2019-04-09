@@ -22,7 +22,6 @@ interface Props {
 interface State {
   caretPosition: number
   processing: boolean
-  sendable: boolean
   suggestLeft: number
   suggestSelected: number
   suggesttedData: SuggestState['data']
@@ -69,7 +68,6 @@ export default class CommandInput extends React.Component<Props, State> {
     this.state = {
       caretPosition: 0,
       processing: false,
-      sendable: this.isSendable(),
       suggestLeft: 0,
       suggestSelected: 0,
       suggestTop: 0,
@@ -138,7 +136,6 @@ export default class CommandInput extends React.Component<Props, State> {
 
   public updateText(text: string) {
     this.setState({
-      sendable: this.isSendable(),
       text
     })
   }
@@ -228,7 +225,7 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   public handlePostChat() {
-    if (this.state.sendable && this.isValidTextLength(this.state.text)) {
+    if (this.isSendable() && this.isValidTextLength(this.state.text)) {
       this.props.handlePostChat(this.state.text)
       this.updateText('')
     }
@@ -326,7 +323,7 @@ export default class CommandInput extends React.Component<Props, State> {
             text =>
               <button
                 className="vi--command--input--send"
-                disabled={!(this.state.sendable && this.isValidTextLength(this.state.text))}
+                disabled={!(this.isSendable() && this.isValidTextLength(this.state.text))}
                 onClick={() => this.handlePostChat()}
               >
                 {text}

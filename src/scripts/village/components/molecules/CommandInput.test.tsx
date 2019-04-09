@@ -229,7 +229,7 @@ describe('<CommandInput />', () => {
     })
   })
   describe('handlePostChat', () => {
-    test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit', () => {
+    test('sendable: true, validTextLength: true', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
@@ -242,23 +242,66 @@ describe('<CommandInput />', () => {
           suggesttedData={[]}
         />
       )
+      const instance = wrapper.instance()
+      const text = 'text'
 
-      wrapper.find('button').simulate('click')
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit)
-
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
+      wrapper.setState({
+        text
       })
-      wrapper.find('button').simulate('click')
-      expect(handlePostChat).toHaveBeenCalledTimes(1)
-      expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().text).toBe('')
+      expect(instance.isSendable()).toBe(true)
+      expect(instance.isValidTextLength(text)).toBe(true)
+      instance.handlePostChat()
+
+      expect(wrapper.state()).toEqual({
+        caretPosition: 0,
+        processing: false,
+        suggestLeft: 0,
+        suggestSelected: 0,
+        suggestTop: 0,
+        suggestable: false,
+        suggesttedData: [],
+        text: '',
+        trigerPosition: 0
+      })
+      expect(handlePostChat).toHaveBeenCalledWith('text')
     })
-    test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit + 1', () => {
+    test('sendable: false, validTextLength: true', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={10}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+      const instance = wrapper.instance()
+      const text = 'text'
+
+      wrapper.setState({
+        text
+      })
+      expect(instance.isSendable()).toBe(false)
+      expect(instance.isValidTextLength(text)).toBe(true)
+      instance.handlePostChat()
+
+      expect(wrapper.state()).toEqual({
+        caretPosition: 0,
+        processing: false,
+        suggestLeft: 0,
+        suggestSelected: 0,
+        suggestTop: 0,
+        suggestable: false,
+        suggesttedData: [],
+        text,
+        trigerPosition: 0
+      })
+      expect(handlePostChat).toHaveBeenCalledTimes(0)
+    })
+    test('sendable: true, validTextLength: false', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
@@ -271,22 +314,30 @@ describe('<CommandInput />', () => {
           suggesttedData={[]}
         />
       )
+      const instance = wrapper.instance()
+      const text = 'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextt'
 
-      wrapper.find('button').simulate('click')
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit + 1)
-
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
+      wrapper.setState({
+        text
       })
-      wrapper.find('button').simulate('click')
+      expect(instance.isSendable()).toBe(true)
+      expect(instance.isValidTextLength(text)).toBe(false)
+      instance.handlePostChat()
+
+      expect(wrapper.state()).toEqual({
+        caretPosition: 0,
+        processing: false,
+        suggestLeft: 0,
+        suggestSelected: 0,
+        suggestTop: 0,
+        suggestable: false,
+        suggesttedData: [],
+        text,
+        trigerPosition: 0
+      })
       expect(handlePostChat).toHaveBeenCalledTimes(0)
-      expect(wrapper.state().text).toBe(text)
     })
-    test('kind="public" postCount={10} postCountLimit={10} handlePostChat textarea: charLimit', () => {
+    test('sendable: false, validTextLength: false', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
@@ -299,48 +350,28 @@ describe('<CommandInput />', () => {
           suggesttedData={[]}
         />
       )
+      const instance = wrapper.instance()
+      const text = 'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextt'
 
-      wrapper.find('button').simulate('click')
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit)
-
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
+      wrapper.setState({
+        text
       })
-      wrapper.find('button').simulate('click')
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      expect(wrapper.state().text).toBe(text)
-    })
-    test('kind="public" postCount={10} postCountLimit={10} textarea: charLimit + 1', () => {
-      const handlePostChat = jest.fn()
-      const wrapper = mountWithIntl<CommandInput>(
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={handlePostChat}
-          inputChannel={village.InputChannel.public}
-          language={village.Language.ja}
-          postCount={10}
-          postCountLimit={10}
-          suggesttedData={[]}
-        />
-      )
+      expect(instance.isSendable()).toBe(false)
+      expect(instance.isValidTextLength(text)).toBe(false)
+      instance.handlePostChat()
 
-      wrapper.find('button').simulate('click')
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit + 1)
-
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
+      expect(wrapper.state()).toEqual({
+        caretPosition: 0,
+        processing: false,
+        suggestLeft: 0,
+        suggestSelected: 0,
+        suggestTop: 0,
+        suggestable: false,
+        suggesttedData: [],
+        text,
+        trigerPosition: 0
       })
-      wrapper.find('button').simulate('click')
       expect(handlePostChat).toHaveBeenCalledTimes(0)
-      expect(wrapper.state().text).toBe(text)
     })
   })
   test('handleSuggestClick', () => {
@@ -359,7 +390,6 @@ describe('<CommandInput />', () => {
 
     wrapper.setState({
       caretPosition: 5,
-      sendable: true,
       suggestLeft: 65,
       suggestSelected: 0,
       suggestTop: 20,
@@ -372,7 +402,6 @@ describe('<CommandInput />', () => {
     expect(wrapper.state()).toEqual({
       caretPosition: 11,
       processing: false,
-      sendable: true,
       suggestLeft: 65,
       suggestSelected: 0,
       suggestTop: 20,
@@ -397,7 +426,6 @@ describe('<CommandInput />', () => {
         />
       )
 
-      expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe('')
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
@@ -411,7 +439,6 @@ describe('<CommandInput />', () => {
           value: text
         }
       })
-      expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe(text)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
@@ -422,7 +449,6 @@ describe('<CommandInput />', () => {
           value: `${text}a`
         }
       })
-      expect(wrapper.state().sendable).toBe(true)
       expect(wrapper.state().text).toBe(`${text}a`)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
@@ -442,7 +468,6 @@ describe('<CommandInput />', () => {
         />
       )
 
-      expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe('')
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
@@ -455,7 +480,6 @@ describe('<CommandInput />', () => {
           value: text
         }
       })
-      expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe(text)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
@@ -465,7 +489,6 @@ describe('<CommandInput />', () => {
           value: `${text}a`
         }
       })
-      expect(wrapper.state().sendable).toBe(false)
       expect(wrapper.state().text).toBe(`${text}a`)
       expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
       expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
