@@ -1,7 +1,6 @@
 /* global village */
 import * as React from 'react'
 import CommandInput from './CommandInput'
-import {countText} from '../../util'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
@@ -115,7 +114,102 @@ describe('<CommandInput />', () => {
       expect(handlePostChat).toHaveBeenCalledTimes(0)
     })
   })
+  test('getSearchText', () => {
+    const handlePostChat = jest.fn()
+    const wrapper = mountWithIntl<CommandInput>(
+      <CommandInput
+        characterLimit={140}
+        handlePostChat={handlePostChat}
+        inputChannel={village.InputChannel.public}
+        language={village.Language.ja}
+        postCount={0}
+        postCountLimit={10}
+        suggesttedData={[]}
+      />
+    )
+
+    wrapper.setState({
+      trigerPosition: 0
+    })
+    expect(wrapper.instance().getSearchText('@text', 5)).toBe('text')
+    expect(wrapper.instance().getSearchText('@text', 4)).toBe('tex')
+  })
   describe('handleKeyDown', () => {
+    test('processing === true', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.instance().updateProcessing(true)
+      wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+        ctrlKey: true,
+        key: 'Enter',
+        metaKey: false
+      })
+      expect(wrapper.state()).toEqual({
+        caretPosition: 0,
+        processing: false,
+        suggestLeft: 0,
+        suggestSelected: 0,
+        suggestTop: 0,
+        suggestable: false,
+        suggesttedData: [],
+        text: '',
+        trigerPosition: 0
+      })
+    })
+    describe('postChat', () => {
+      test('suggestable === true && suggesttedData.length > 0', () => {
+        const suggesttedData = [
+          {
+            id: 'Alvin',
+            name: {
+              'en': 'Alvin',
+              'ja': 'アルビン'
+            }
+          }
+        ]
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={0}
+            postCountLimit={10}
+            suggesttedData={suggesttedData}
+          />
+        )
+
+        wrapper.instance().updateSuggestable(true)
+        wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+          ctrlKey: true,
+          key: 'Enter',
+          metaKey: false
+        })
+        expect(wrapper.state()).toEqual({
+          caretPosition: 0,
+          processing: false,
+          suggestLeft: 0,
+          suggestSelected: 0,
+          suggestTop: 0,
+          suggestable: false,
+          suggesttedData,
+          text: '',
+          trigerPosition: 0
+        })
+      })
+    })
     test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit, key: ctrlKey & Enter', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
@@ -130,7 +224,7 @@ describe('<CommandInput />', () => {
         />
       )
 
-      wrapper.find('textarea').simulate('keyDown', {
+      wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
         ctrlKey: true,
         key: 'Enter',
         metaKey: false
@@ -412,87 +506,317 @@ describe('<CommandInput />', () => {
     })
   })
   describe('handleTextChange', () => {
-    test('kind="public" postCount={0} postCountLimit={10} textarea: 0 -> charLimit -> charLimit + 1', () => {
-      const handlePostChat = jest.fn()
-      const wrapper = mountWithIntl<CommandInput>(
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={handlePostChat}
-          inputChannel={village.InputChannel.public}
-          language={village.Language.ja}
-          postCount={0}
-          postCountLimit={10}
-          suggesttedData={[]}
-        />
-      )
+    describe('text[pos] === Triger.At', () => {
+      describe('text[pos - 1] === Triger.At', () => {
+        test('"@" -> "@@"', () => {
+          const handlePostChat = jest.fn()
+          const wrapper = mountWithIntl<CommandInput>(
+            <CommandInput
+              characterLimit={140}
+              handlePostChat={handlePostChat}
+              inputChannel={village.InputChannel.public}
+              language={village.Language.ja}
+              postCount={0}
+              postCountLimit={10}
+              suggesttedData={[]}
+            />
+          )
 
-      expect(wrapper.state().text).toBe('')
-      expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
-      expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
-      expect(wrapper.find('.vi--command--input--send').is('[disabled=true]')).toBe(true)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit)
+          wrapper.instance().handleTextChange({
+            caretPosition: 1,
+            text: '@'
+          })
+          wrapper.instance().handleTextChange({
+            caretPosition: 2,
+            text: '@@'
+          })
+          expect(wrapper.state()).toEqual({
+            caretPosition: 2,
+            processing: false,
+            suggestLeft: 1,
+            suggestSelected: 0,
+            suggestTop: 1,
+            suggestable: false,
+            suggesttedData: [],
+            text: '@@',
+            trigerPosition: 0
+          })
+        })
+      })
+      describe('text[pos - 1] !== Triger.At', () => {
+        test('"@" -> "@a"', () => {
+          const handlePostChat = jest.fn()
+          const wrapper = mountWithIntl<CommandInput>(
+            <CommandInput
+              characterLimit={140}
+              handlePostChat={handlePostChat}
+              inputChannel={village.InputChannel.public}
+              language={village.Language.ja}
+              postCount={0}
+              postCountLimit={10}
+              suggesttedData={[]}
+            />
+          )
 
-      wrapper.find('.vi--command--input--textarea').simulate('change', {
-        target: {
-          selectionEnd: countText(text),
-          value: text
-        }
+          wrapper.instance().handleTextChange({
+            caretPosition: 1,
+            text: '@'
+          })
+          wrapper.instance().handleTextChange({
+            caretPosition: 2,
+            text: '@a'
+          })
+          expect(wrapper.state()).toEqual({
+            caretPosition: 2,
+            processing: false,
+            suggestLeft: 1,
+            suggestSelected: 0,
+            suggestTop: 1,
+            suggestable: true,
+            suggesttedData: [],
+            text: '@a',
+            trigerPosition: 0
+          })
+        })
       })
-      expect(wrapper.state().text).toBe(text)
-      expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
-      expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
-      expect(wrapper.find('.vi--command--input--send').is('[disabled=false]')).toBe(true)
-      wrapper.find('.vi--command--input--textarea').simulate('change', {
-        target: {
-          selectionEnd: countText(`${text}a`),
-          value: `${text}a`
-        }
-      })
-      expect(wrapper.state().text).toBe(`${text}a`)
-      expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
-      expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
-      expect(wrapper.find('.vi--command--input--send').is('[disabled=true]')).toBe(true)
     })
-    test('kind="public" postCount={10} postCountLimit={10} textarea: 0 -> charLimit -> charLimit + 1', () => {
-      const handlePostChat = jest.fn()
-      const wrapper = mountWithIntl<CommandInput>(
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={handlePostChat}
-          inputChannel={village.InputChannel.public}
-          language={village.Language.ja}
-          postCount={10}
-          postCountLimit={10}
-          suggesttedData={[]}
-        />
-      )
+    describe('text[pos] === Triger.Space', () => {
+      test('"@" -> "@ "', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={0}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
 
-      expect(wrapper.state().text).toBe('')
-      expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
-      expect(wrapper.find('.vi--command--input--char').text()).toBe('0')
-      expect(wrapper.find('.vi--command--input--send').is('[disabled=true]')).toBe(true)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit)
+        wrapper.instance().handleTextChange({
+          caretPosition: 1,
+          text: '@'
+        })
+        wrapper.instance().handleTextChange({
+          caretPosition: 2,
+          text: '@ '
+        })
+        expect(wrapper.state()).toEqual({
+          caretPosition: 2,
+          processing: false,
+          suggestLeft: 1,
+          suggestSelected: 0,
+          suggestTop: 1,
+          suggestable: false,
+          suggesttedData: [],
+          text: '@ ',
+          trigerPosition: 0
+        })
+      })
+    })
+    describe('caretPosition <= this.state.trigerPosition', () => {
+      test('"@" -> ""', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={0}
+            postCountLimit={10}
+            suggesttedData={[]}
+          />
+        )
 
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
+        wrapper.instance().handleTextChange({
+          caretPosition: 1,
+          text: '@'
+        })
+        wrapper.instance().handleTextChange({
+          caretPosition: 0,
+          text: ''
+        })
+        expect(wrapper.state()).toEqual({
+          caretPosition: 0,
+          processing: false,
+          suggestLeft: 1,
+          suggestSelected: 0,
+          suggestTop: 1,
+          suggestable: false,
+          suggesttedData: [],
+          text: '',
+          trigerPosition: 0
+        })
       })
-      expect(wrapper.state().text).toBe(text)
-      expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(false)
-      expect(wrapper.find('.vi--command--input--char').text()).toBe('140')
-      expect(wrapper.find('.vi--command--input--send').is('[disabled=true]')).toBe(true)
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: `${text}a`
+    })
+    describe('this.state.suggestable === true', () => {
+      const suggesttedData = [
+        {
+          id: 'Alvin',
+          name: {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          }
+        },
+        {
+          id: 'Catalina',
+          name: {
+            'en': 'Catalina',
+            'ja': 'カタリナ'
+          }
+        },
+        {
+          id: 'Dieter',
+          name: {
+            'en': 'Dieter',
+            'ja': 'ディーター'
+          }
+        },
+        {
+          id: 'Gert',
+          name: {
+            'en': 'Gert',
+            'ja': 'ゲルト'
+          }
+        },
+        {
+          id: 'Jacob',
+          name: {
+            'en': 'Jacob',
+            'ja': 'ヤコブ'
+          }
+        },
+        {
+          id: 'Joachim',
+          name: {
+            'en': 'Joachim',
+            'ja': 'ヨアヒム'
+          }
+        },
+        {
+          id: 'Lisa',
+          name: {
+            'en': 'Lisa',
+            'ja': 'リーザ'
+          }
+        },
+        {
+          id: 'Moritz',
+          name: {
+            'en': 'Moritz',
+            'ja': 'モーリッツ'
+          }
+        },
+        {
+          id: 'Nicholas',
+          name: {
+            'en': 'Nicholas',
+            'ja': 'ニコラス'
+          }
+        },
+        {
+          id: 'Otto',
+          name: {
+            'en': 'Otto',
+            'ja': 'オットー'
+          }
+        },
+        {
+          id: 'Pamela',
+          name: {
+            'en': 'Pamela',
+            'ja': 'パメラ'
+          }
+        },
+        {
+          id: 'Peter',
+          name: {
+            'en': 'Peter',
+            'ja': 'ペーター'
+          }
+        },
+        {
+          id: 'Simson',
+          name: {
+            'en': 'Simson',
+            'ja': 'ジムゾン'
+          }
+        },
+        {
+          id: 'Thomas',
+          name: {
+            'en': 'Thomas',
+            'ja': 'トーマス'
+          }
+        },
+        {
+          id: 'Walter',
+          name: {
+            'en': 'Walter',
+            'ja': 'ヴァルター'
+          }
         }
+      ]
+
+      test('"@" -> "@alvin"', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={0}
+            postCountLimit={10}
+            suggesttedData={suggesttedData}
+          />
+        )
+
+        wrapper.instance().handleTextChange({
+          caretPosition: 1,
+          text: '@'
+        })
+        wrapper.instance().handleTextChange({
+          caretPosition: 6,
+          text: '@alvin'
+        })
+        expect(wrapper.state()).toEqual({
+          caretPosition: 6,
+          processing: false,
+          suggestLeft: 1,
+          suggestSelected: 0,
+          suggestTop: 1,
+          suggestable: true,
+          suggesttedData: [
+            {
+              id: 'Alvin',
+              name: {
+                'en': 'Alvin',
+                'ja': 'アルビン'
+              }
+            },
+            {
+              id: 'Catalina',
+              name: {
+                'en': 'Catalina',
+                'ja': 'カタリナ'
+              }
+            },
+            {
+              id: 'Lisa',
+              name: {
+                'en': 'Lisa',
+                'ja': 'リーザ'
+              }
+            }
+          ],
+          text: '@alvin',
+          trigerPosition: 0
+        })
       })
-      expect(wrapper.state().text).toBe(`${text}a`)
-      expect(wrapper.find('.vi--command--input--char').hasClass('error')).toBe(true)
-      expect(wrapper.find('.vi--command--input--char').text()).toBe('141')
-      expect(wrapper.find('button').is('[disabled=true]')).toBe(true)
     })
   })
   describe('isSendable', () => {

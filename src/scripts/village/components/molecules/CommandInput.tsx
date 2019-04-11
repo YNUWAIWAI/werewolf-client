@@ -82,6 +82,10 @@ export default class CommandInput extends React.Component<Props, State> {
 
   private textareaRef = React.createRef<HTMLTextAreaElement>()
 
+  public getSearchText(text: string, caretPosition: number) {
+    return text.slice(this.state.trigerPosition + 1, caretPosition)
+  }
+
   public handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (this.state.processing) {
       return
@@ -167,26 +171,24 @@ export default class CommandInput extends React.Component<Props, State> {
     this.updateSuggestable(false)
   }
 
-  public handleTextChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    this.updateText(event.target.value)
-    this.updateCaretPosition(event.target.selectionEnd)
-    const pos = event.target.selectionEnd - 1
-    const text = event.target.value
+  public handleTextChange({caretPosition, text}: {caretPosition: number, text: string}) {
+    this.updateText(text)
+    this.updateCaretPosition(caretPosition)
+    const pos = caretPosition - 1
 
     if (text[pos] === Triger.At) {
       if (text[pos - 1] === Triger.At) {
         this.updateSuggestable(false)
       } else {
-        this.updateTrigerPosition(event.target.selectionEnd - 1)
+        this.updateTrigerPosition(caretPosition - 1)
         this.updateSuggestable(true)
       }
     } else if (text[pos] === Triger.Space) {
       this.updateSuggestable(false)
-    } else if (event.target.selectionEnd <= this.state.trigerPosition) {
+    } else if (caretPosition <= this.state.trigerPosition) {
       this.updateSuggestable(false)
     } else if (this.state.suggestable) {
-      const atText = text.slice(this.state.trigerPosition + 1, event.target.selectionEnd)
-      const suggesttedData = this.fuse.search(atText)
+      const suggesttedData = this.fuse.search(this.getSearchText(text, caretPosition))
 
       this.setState({
         suggesttedData
@@ -281,7 +283,10 @@ export default class CommandInput extends React.Component<Props, State> {
               return (
                 <textarea
                   className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
-                  onChange={event => this.handleTextChange(event)}
+                  onChange={event => this.handleTextChange({
+                    caretPosition: event.target.selectionEnd,
+                    text: event.target.value
+                  })}
                   onCompositionEnd={() => this.updateProcessing(false)}
                   onCompositionStart={() => this.updateProcessing(true)}
                   onKeyDown={event => this.handleKeyDown(event)}
