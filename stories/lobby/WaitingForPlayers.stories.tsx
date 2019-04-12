@@ -14,7 +14,7 @@ const store = createStore(
 )
 const players: Props['players'] = [
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: true,
@@ -36,7 +36,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -47,7 +47,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -58,7 +58,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -69,7 +69,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -80,7 +80,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -91,7 +91,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -102,7 +102,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -113,7 +113,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -124,7 +124,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -135,7 +135,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -146,7 +146,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -157,7 +157,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -168,7 +168,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
   },
   {
-    avatarImage: '',
+    avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -220,7 +220,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -288,7 +288,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -356,7 +356,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -424,7 +424,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -492,7 +492,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -560,7 +560,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -628,7 +628,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -696,7 +696,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -764,7 +764,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -832,7 +832,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -900,7 +900,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {
@@ -968,7 +968,7 @@ storiesOf('lobby|WaitingForPlayers', module)
       },
       id: 1,
       idForSearching: 123,
-      name: 'Fairytale village',
+      name: 'Fearwick',
       playerSetting: {
         current: 8,
         human: {

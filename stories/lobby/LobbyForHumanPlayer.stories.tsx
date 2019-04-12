@@ -89,7 +89,7 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
         },
         'id': 2,
         'idForSearching': 124,
-        'name': 'Ruined village',
+        'name': 'Loston',
         'playerSetting': {
           'current': 4,
           'human': {

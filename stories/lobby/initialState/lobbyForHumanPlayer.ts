@@ -79,7 +79,7 @@ const state: Partial<ReducerState> = {
         },
         id: 2,
         idForSearching: 456,
-        name: 'Ruined village',
+        name: 'Loston',
         playerSetting: {
           current: 4,
           human: {
