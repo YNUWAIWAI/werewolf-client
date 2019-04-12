@@ -41,7 +41,7 @@ const state: ReducerState = {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:07:56.568+09:00',
-        'text': 'それで、あなたは人狼が誰だと思うの？',
+        'text': 'Then, who are the werewolves?',
         'type': 'item'
       },
       'chat1': {
@@ -56,7 +56,7 @@ const state: ReducerState = {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:08:56.568+09:00',
-        'text': '>>1 私はパメラが人狼だと思う。',
+        'text': '>>1 I guess Pamela is a werewolf.',
         'type': 'item'
       },
       'chat2': {
@@ -71,7 +71,7 @@ const state: ReducerState = {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:09:56.568+09:00',
-        'text': '私は人狼なんです．',
+        'text': 'I am a werewolf.',
         'type': 'item'
       },
       'chat3': {
@@ -86,7 +86,7 @@ const state: ReducerState = {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:09:56.568+09:00',
-        'text': 'ふふふ',
+        'text': 'Hahaha',
         'type': 'item'
       },
       'chat4': {
@@ -101,7 +101,7 @@ const state: ReducerState = {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:11:56.568+09:00',
-        'text': 'じゃあ，わかんないや',
+        'text': 'Like I can\'t judge ...',
         'type': 'item'
       }
     }
