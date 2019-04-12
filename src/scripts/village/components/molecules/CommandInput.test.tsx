@@ -157,7 +157,7 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.state()).toEqual({
         caretPosition: 0,
-        processing: false,
+        processing: true,
         suggestLeft: 0,
         suggestSelected: 0,
         suggestTop: 0,
@@ -205,121 +205,10 @@ describe('<CommandInput />', () => {
           suggestTop: 0,
           suggestable: false,
           suggesttedData,
-          text: '',
+          text: 'アルビン',
           trigerPosition: 0
         })
       })
-    })
-    test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit, key: ctrlKey & Enter', () => {
-      const handlePostChat = jest.fn()
-      const wrapper = mountWithIntl<CommandInput>(
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={handlePostChat}
-          inputChannel={village.InputChannel.public}
-          language={village.Language.ja}
-          postCount={0}
-          postCountLimit={10}
-          suggesttedData={[]}
-        />
-      )
-
-      wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-        ctrlKey: true,
-        key: 'Enter',
-        metaKey: false
-      })
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit)
-
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
-      })
-      wrapper.find('textarea').simulate('keyDown', {
-        ctrlKey: true,
-        key: 'Enter',
-        metaKey: false
-      })
-      expect(handlePostChat).toHaveBeenCalledTimes(1)
-      expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().text).toBe('')
-    })
-    test('kind="public" postCount={0} postCountLimit={10} textarea: charLimit key: metaKey & Enter', () => {
-      const handlePostChat = jest.fn()
-      const wrapper = mountWithIntl<CommandInput>(
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={handlePostChat}
-          inputChannel={village.InputChannel.public}
-          language={village.Language.ja}
-          postCount={0}
-          postCountLimit={10}
-          suggesttedData={[]}
-        />
-      )
-
-      wrapper.find('textarea').simulate('keyDown', {
-        ctrlKey: false,
-        key: 'Enter',
-        metaKey: true
-      })
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit)
-
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
-      })
-      wrapper.find('textarea').simulate('keyDown', {
-        ctrlKey: false,
-        key: 'Enter',
-        metaKey: true
-      })
-      expect(handlePostChat).toHaveBeenCalledTimes(1)
-      expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().text).toBe('')
-    })
-    test('kind="public" postCount={0} postCountLimit={10} textarea: charLimitkey: metaKey & ctrlKey & Enter', () => {
-      const handlePostChat = jest.fn()
-      const wrapper = mountWithIntl<CommandInput>(
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={handlePostChat}
-          inputChannel={village.InputChannel.public}
-          language={village.Language.ja}
-          postCount={0}
-          postCountLimit={10}
-          suggesttedData={[]}
-        />
-      )
-
-      wrapper.find('textarea').simulate('keyDown', {
-        ctrlKey: true,
-        key: 'Enter',
-        metaKey: true
-      })
-      expect(handlePostChat).toHaveBeenCalledTimes(0)
-      const charLimit = 140
-      const text = 'a'.repeat(charLimit)
-
-      wrapper.find('textarea').simulate('change', {
-        target: {
-          value: text
-        }
-      })
-      wrapper.find('textarea').simulate('keyDown', {
-        ctrlKey: true,
-        key: 'Enter',
-        metaKey: true
-      })
-      expect(handlePostChat).toHaveBeenCalledTimes(1)
-      expect(handlePostChat).toHaveBeenLastCalledWith(text)
-      expect(wrapper.state().text).toBe('')
     })
   })
   describe('handlePostChat', () => {
