@@ -41,7 +41,7 @@ const state: ReducerState = {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'text': 'それで、あなたは人狼が誰だと思うの？',
+        'text': 'Then, who are the werewolves?',
         'type': 'item'
       },
       'chat1': {
@@ -56,7 +56,7 @@ const state: ReducerState = {
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'text': '>>1 私はパメラが人狼だと思う。',
+        'text': '>>1 I guess Pamela is a werewolf.',
         'type': 'item'
       },
       'delimeter0': {
@@ -1125,7 +1125,7 @@ const state: ReducerState = {
           ja: 'ヨアヒム'
         },
         avatarImage: 'https://werewolf.world/image/0.2/Otto.jpg',
-        avatarName: '山口',
+        avatarName: 'Yamaguchi',
         result: village.Result.win,
         roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
         roleName: {
@@ -1142,7 +1142,7 @@ const state: ReducerState = {
           ja: 'パメラ'
         },
         avatarImage: 'https://werewolf.world/image/0.2/Joachim.jpg',
-        avatarName: '松本',
+        avatarName: 'Matsumoto',
         result: village.Result.win,
         roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
         roleName: {
@@ -1159,7 +1159,7 @@ const state: ReducerState = {
           ja: 'ヤコブ'
         },
         avatarImage: 'https://werewolf.world/image/0.2/Catalina.jpg',
-        avatarName: '井上',
+        avatarName: 'Inoue',
         result: village.Result.win,
         roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
         roleName: {
