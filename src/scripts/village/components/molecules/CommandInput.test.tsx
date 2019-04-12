@@ -198,7 +198,7 @@ describe('<CommandInput />', () => {
           metaKey: false
         })
         expect(wrapper.state()).toEqual({
-          caretPosition: 0,
+          caretPosition: 4,
           processing: false,
           suggestLeft: 0,
           suggestSelected: 0,
