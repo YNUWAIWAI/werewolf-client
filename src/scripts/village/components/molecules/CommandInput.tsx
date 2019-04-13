@@ -30,7 +30,7 @@ interface State {
   text: string
   trigerPosition: number
 }
-const enum Key {
+export const enum Key {
   ArrowDown = 'ArrowDown',
   ArrowLeft = 'ArrowLeft',
   ArrowRight = 'ArrowRight',
@@ -38,7 +38,7 @@ const enum Key {
   Enter = 'Enter',
   Tab = 'Tab'
 }
-const enum Triger {
+export const enum Triger {
   At = '@',
   Space = ' '
 }
