@@ -107,9 +107,6 @@ export default class CommandInput extends React.Component<Props, State> {
 
         return
       case Key.ArrowDown:
-        if (this.state.suggesttedData.length <= 0) {
-          return
-        }
         event.preventDefault()
         this.setState(prevState => {
           const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggesttedData.length
@@ -121,9 +118,6 @@ export default class CommandInput extends React.Component<Props, State> {
 
         return
       case Key.ArrowUp:
-        if (this.state.suggesttedData.length <= 0) {
-          return
-        }
         event.preventDefault()
         this.setState(prevState => {
           const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggesttedData.length) % prevState.suggesttedData.length
@@ -136,9 +130,6 @@ export default class CommandInput extends React.Component<Props, State> {
         return
       case Key.Enter:
       case Key.Tab:
-        if (this.state.suggesttedData.length <= 0) {
-          return
-        }
         event.preventDefault()
         this.handleSuggestClick(
           getText(

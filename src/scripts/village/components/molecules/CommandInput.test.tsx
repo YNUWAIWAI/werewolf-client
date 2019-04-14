@@ -608,344 +608,200 @@ describe('<CommandInput />', () => {
             })
             expect(handlePostChat).toHaveBeenCalledTimes(0)
           })
-          describe('ArrowDown', () => {
-            test('suggesttedData.length <= 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={[]}
-                />
-              )
+          test('ArrowDown', () => {
+            const handlePostChat = jest.fn()
+            const wrapper = mountWithIntl<CommandInput>(
+              <CommandInput
+                characterLimit={140}
+                handlePostChat={handlePostChat}
+                inputChannel={village.InputChannel.public}
+                language={village.Language.ja}
+                postCount={0}
+                postCountLimit={10}
+                suggesttedData={suggesttedData}
+              />
+            )
 
-              wrapper.instance().updateText('text')
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(0)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowDown
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 0,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData: [],
-                text: 'text',
-                trigerPosition: 0
-              })
+            wrapper.instance().updateText('text')
+            wrapper.instance().updateSuggestable(true)
+            expect(wrapper.state().processing).toBe(false)
+            expect(wrapper.state().suggestable).toBe(true)
+            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.ArrowDown
             })
-            test('suggesttedData.length > 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={suggesttedData}
-                />
-              )
-
-              wrapper.instance().updateText('text')
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(3)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowDown
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 1,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData,
-                text: 'text',
-                trigerPosition: 0
-              })
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowDown
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 2,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData,
-                text: 'text',
-                trigerPosition: 0
-              })
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowDown
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 0,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData,
-                text: 'text',
-                trigerPosition: 0
-              })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 0,
+              processing: false,
+              suggestLeft: 0,
+              suggestSelected: 1,
+              suggestTop: 0,
+              suggestable: true,
+              suggesttedData,
+              text: 'text',
+              trigerPosition: 0
+            })
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.ArrowDown
+            })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 0,
+              processing: false,
+              suggestLeft: 0,
+              suggestSelected: 2,
+              suggestTop: 0,
+              suggestable: true,
+              suggesttedData,
+              text: 'text',
+              trigerPosition: 0
+            })
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.ArrowDown
+            })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 0,
+              processing: false,
+              suggestLeft: 0,
+              suggestSelected: 0,
+              suggestTop: 0,
+              suggestable: true,
+              suggesttedData,
+              text: 'text',
+              trigerPosition: 0
             })
           })
-          describe('ArrowUp', () => {
-            test('suggesttedData.length <= 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={[]}
-                />
-              )
+          test('ArrowUp', () => {
+            const handlePostChat = jest.fn()
+            const wrapper = mountWithIntl<CommandInput>(
+              <CommandInput
+                characterLimit={140}
+                handlePostChat={handlePostChat}
+                inputChannel={village.InputChannel.public}
+                language={village.Language.ja}
+                postCount={0}
+                postCountLimit={10}
+                suggesttedData={suggesttedData}
+              />
+            )
 
-              wrapper.instance().updateText('text')
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(0)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowUp
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 0,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData: [],
-                text: 'text',
-                trigerPosition: 0
-              })
+            wrapper.instance().updateText('text')
+            wrapper.instance().updateSuggestable(true)
+            expect(wrapper.state().processing).toBe(false)
+            expect(wrapper.state().suggestable).toBe(true)
+            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.ArrowUp
             })
-            test('suggesttedData.length > 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={suggesttedData}
-                />
-              )
-
-              wrapper.instance().updateText('text')
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(3)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowUp
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 2,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData,
-                text: 'text',
-                trigerPosition: 0
-              })
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowUp
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 1,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData,
-                text: 'text',
-                trigerPosition: 0
-              })
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.ArrowUp
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 0,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData,
-                text: 'text',
-                trigerPosition: 0
-              })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 0,
+              processing: false,
+              suggestLeft: 0,
+              suggestSelected: 2,
+              suggestTop: 0,
+              suggestable: true,
+              suggesttedData,
+              text: 'text',
+              trigerPosition: 0
+            })
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.ArrowUp
+            })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 0,
+              processing: false,
+              suggestLeft: 0,
+              suggestSelected: 1,
+              suggestTop: 0,
+              suggestable: true,
+              suggesttedData,
+              text: 'text',
+              trigerPosition: 0
+            })
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.ArrowUp
+            })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 0,
+              processing: false,
+              suggestLeft: 0,
+              suggestSelected: 0,
+              suggestTop: 0,
+              suggestable: true,
+              suggesttedData,
+              text: 'text',
+              trigerPosition: 0
             })
           })
-          describe('Enter', () => {
-            test('suggesttedData.length <= 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={[]}
-                />
-              )
+          test('Enter', () => {
+            const handlePostChat = jest.fn()
+            const wrapper = mountWithIntl<CommandInput>(
+              <CommandInput
+                characterLimit={140}
+                handlePostChat={handlePostChat}
+                inputChannel={village.InputChannel.public}
+                language={village.Language.ja}
+                postCount={0}
+                postCountLimit={10}
+                suggesttedData={suggesttedData}
+              />
+            )
 
-              wrapper.instance().updateText('@')
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(0)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.Enter
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 0,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData: [],
-                text: '@',
-                trigerPosition: 0
-              })
+            wrapper.instance().updateCaretPosition(1)
+            wrapper.instance().updateText('@')
+            wrapper.instance().updateTrigerPosition(0)
+            wrapper.instance().updateSuggestable(true)
+            expect(wrapper.state().processing).toBe(false)
+            expect(wrapper.state().suggestable).toBe(true)
+            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.Enter
             })
-            test('suggesttedData.length > 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={suggesttedData}
-                />
-              )
-
-              wrapper.instance().updateCaretPosition(1)
-              wrapper.instance().updateText('@')
-              wrapper.instance().updateTrigerPosition(0)
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(3)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.Enter
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 4,
-                processing: false,
-                suggestLeft: 1,
-                suggestSelected: 0,
-                suggestTop: 1,
-                suggestable: false,
-                suggesttedData,
-                text: 'アルビン',
-                trigerPosition: 0
-              })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 4,
+              processing: false,
+              suggestLeft: 1,
+              suggestSelected: 0,
+              suggestTop: 1,
+              suggestable: false,
+              suggesttedData,
+              text: 'アルビン',
+              trigerPosition: 0
             })
           })
-          describe('Tab', () => {
-            test('suggesttedData.length <= 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={[]}
-                />
-              )
+          test('Tab', () => {
+            const handlePostChat = jest.fn()
+            const wrapper = mountWithIntl<CommandInput>(
+              <CommandInput
+                characterLimit={140}
+                handlePostChat={handlePostChat}
+                inputChannel={village.InputChannel.public}
+                language={village.Language.ja}
+                postCount={0}
+                postCountLimit={10}
+                suggesttedData={suggesttedData}
+              />
+            )
 
-              wrapper.instance().updateText('@')
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(0)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.Tab
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 0,
-                processing: false,
-                suggestLeft: 0,
-                suggestSelected: 0,
-                suggestTop: 0,
-                suggestable: true,
-                suggesttedData: [],
-                text: '@',
-                trigerPosition: 0
-              })
+            wrapper.instance().updateCaretPosition(1)
+            wrapper.instance().updateText('@')
+            wrapper.instance().updateTrigerPosition(0)
+            wrapper.instance().updateSuggestable(true)
+            expect(wrapper.state().processing).toBe(false)
+            expect(wrapper.state().suggestable).toBe(true)
+            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+              key: Key.Tab
             })
-            test('suggesttedData.length > 0', () => {
-              const handlePostChat = jest.fn()
-              const wrapper = mountWithIntl<CommandInput>(
-                <CommandInput
-                  characterLimit={140}
-                  handlePostChat={handlePostChat}
-                  inputChannel={village.InputChannel.public}
-                  language={village.Language.ja}
-                  postCount={0}
-                  postCountLimit={10}
-                  suggesttedData={suggesttedData}
-                />
-              )
-
-              wrapper.instance().updateCaretPosition(1)
-              wrapper.instance().updateText('@')
-              wrapper.instance().updateTrigerPosition(0)
-              wrapper.instance().updateSuggestable(true)
-              expect(wrapper.state().processing).toBe(false)
-              expect(wrapper.state().suggestable).toBe(true)
-              expect(wrapper.state().suggesttedData).toHaveLength(3)
-              wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
-                key: Key.Tab
-              })
-              expect(wrapper.state()).toEqual({
-                caretPosition: 4,
-                processing: false,
-                suggestLeft: 1,
-                suggestSelected: 0,
-                suggestTop: 1,
-                suggestable: false,
-                suggesttedData,
-                text: 'アルビン',
-                trigerPosition: 0
-              })
+            expect(wrapper.state()).toEqual({
+              caretPosition: 4,
+              processing: false,
+              suggestLeft: 1,
+              suggestSelected: 0,
+              suggestTop: 1,
+              suggestable: false,
+              suggesttedData,
+              text: 'アルビン',
+              trigerPosition: 0
             })
           })
         })
