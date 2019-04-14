@@ -1010,6 +1010,7 @@ describe('<CommandInput />', () => {
         />
       )
 
+      wrapper.instance().updateText('text')
       wrapper.find('.vi--command--input--send').simulate('click')
       expect(wrapper.state()).toEqual({
         caretPosition: 0,
