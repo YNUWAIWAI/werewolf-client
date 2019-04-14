@@ -996,6 +996,33 @@ describe('<CommandInput />', () => {
       })
       expect(handlePostChat).toHaveBeenCalledTimes(0)
     })
+    test('onClick', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.find('.vi--command--input--send').simulate('click')
+      expect(wrapper.state()).toEqual({
+        caretPosition: 0,
+        processing: false,
+        suggestLeft: 0,
+        suggestSelected: 0,
+        suggestTop: 0,
+        suggestable: false,
+        suggesttedData: [],
+        text: '',
+        trigerPosition: 0
+      })
+    })
   })
   test('handleSuggestClick', () => {
     const handlePostChat = jest.fn()
@@ -1347,6 +1374,38 @@ describe('<CommandInput />', () => {
         })
       })
     })
+    test('onChange', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.find('.vi--command--input--textarea').simulate('change', {
+        target: {
+          selectionEnd: 1,
+          value: 'a'
+        }
+      })
+      expect(wrapper.state()).toEqual({
+        caretPosition: 1,
+        processing: false,
+        suggestLeft: 0,
+        suggestSelected: 0,
+        suggestTop: 0,
+        suggestable: false,
+        suggesttedData: [],
+        text: 'a',
+        trigerPosition: 0
+      })
+    })
   })
   describe('isSendable', () => {
     test('inputChannel: grave', () => {
@@ -1631,22 +1690,58 @@ describe('<CommandInput />', () => {
     wrapper.instance().updateCaretPosition(1)
     expect(wrapper.state().caretPosition).toBe(1)
   })
-  test('updateProcessing', () => {
-    const handlePostChat = jest.fn()
-    const wrapper = mountWithIntl<CommandInput>(
-      <CommandInput
-        characterLimit={140}
-        handlePostChat={handlePostChat}
-        inputChannel={village.InputChannel.public}
-        language={village.Language.ja}
-        postCount={0}
-        postCountLimit={10}
-        suggesttedData={[]}
-      />
-    )
+  describe('updateProcessing', () => {
+    test('updateProcessing', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
 
-    wrapper.instance().updateProcessing(true)
-    expect(wrapper.state().processing).toBe(true)
+      wrapper.instance().updateProcessing(true)
+      expect(wrapper.state().processing).toBe(true)
+    })
+    test('onCompositionEnd', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.find('.vi--command--input--textarea').simulate('compositionEnd')
+      expect(wrapper.state().processing).toBe(false)
+    })
+    test('onCompositionStart', () => {
+      const handlePostChat = jest.fn()
+      const wrapper = mountWithIntl<CommandInput>(
+        <CommandInput
+          characterLimit={140}
+          handlePostChat={handlePostChat}
+          inputChannel={village.InputChannel.public}
+          language={village.Language.ja}
+          postCount={0}
+          postCountLimit={10}
+          suggesttedData={[]}
+        />
+      )
+
+      wrapper.find('.vi--command--input--textarea').simulate('compositionStart')
+      expect(wrapper.state().processing).toBe(true)
+    })
   })
   describe('updateSuggestable', () => {
     test('true', () => {
