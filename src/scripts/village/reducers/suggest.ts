@@ -1,6 +1,7 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import {SocketMessage} from '../actions'
+import {strToRoleId} from '../util'
 
 export interface State {
   data: {
@@ -22,14 +23,20 @@ const suggest = (state: State = initialState, action: Action): State => {
 
       if (
         payload['@payload'] === village.Message.systemMessage &&
-        payload.agent
+        payload.agent &&
+        payload.role
       ) {
         const agent = payload.agent.map(item => ({
           id: item.name.en,
           name: item.name
         }))
+        const role = payload.role.map(item => ({
+          id: strToRoleId(item.name.en),
+          name: item.name
+        }))
         const data = [
-          ... agent
+          ... agent,
+          ... role
         ].sort((a, b) => {
           if (a.id > b.id) {
             return 1
