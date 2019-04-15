@@ -26,12 +26,6 @@ declare namespace lobby {
     it = 'it',
     ja = 'ja'
   }
-  interface LanguageMap {
-    [Language.en]: string
-    [Language.fr]?: string
-    [Language.it]?: string
-    [Language.ja]?: string
-  }
   interface Village {
     avatar: Avatar
     comment: string | null
