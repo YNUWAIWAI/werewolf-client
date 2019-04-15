@@ -21,10 +21,16 @@ declare namespace lobby {
     warning = 'warning'
   }
   const enum Language {
-    fr = 'fr',
     en = 'en',
+    fr = 'fr',
     it = 'it',
     ja = 'ja'
+  }
+  interface LanguageMap {
+    [Language.en]: string
+    [Language.fr]?: string
+    [Language.it]?: string
+    [Language.ja]?: string
   }
   interface Village {
     avatar: Avatar
