@@ -1,8 +1,6 @@
-/* global lobby */
 import {
   getAnonymousVillageName,
-  getCastFromNumberOfPlayers,
-  getText
+  getCastFromNumberOfPlayers
 } from '.'
 import Cast from '../constants/Cast'
 import {anonymousVillageName} from '../constants/AnonymousVillageName'
