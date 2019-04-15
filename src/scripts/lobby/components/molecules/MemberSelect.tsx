@@ -29,7 +29,6 @@ const getMember = (role: Readonly<lobby.RoleSetting>) =>
         id={item.id}
         image={item.image}
         key={item.id}
-        name={item.name.ja}
         numberOfAgents={role[item.id]}
       />
     )

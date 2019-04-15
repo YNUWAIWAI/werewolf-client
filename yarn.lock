@@ -1810,7 +1810,7 @@
     "@types/jest-diff" "*"
 
 "@types/lobby@./types/lobby":
-  version "1.28.0"
+  version "1.30.0"
 
 "@types/minimatch@*":
   version "3.0.3"

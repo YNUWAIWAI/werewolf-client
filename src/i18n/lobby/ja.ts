@@ -49,6 +49,14 @@ export default {
     =1 {# robot}
     other {# robots}
   }`,
+  'MemberRole(hunter)': 'ハンター',
+  'MemberRole(madman)': '狂人',
+  'MemberRole(mason)': '共有者',
+  'MemberRole(medium)': '霊媒師',
+  'MemberRole(seer)': '占い師',
+  'MemberRole(villager)': '村人',
+  'MemberRole(werehamster)': 'ハムスター人間',
+  'MemberRole(werewolf)': '人狼',
   'MemberSelect.max': `max {num, plural,
     =1 {# human}
     other {# humans}

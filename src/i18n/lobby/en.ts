@@ -49,6 +49,14 @@ export default {
     =1 {# robot}
     other {# robots}
   }`,
+  'MemberRole(hunter)': 'Hunter',
+  'MemberRole(madman)': 'Madman',
+  'MemberRole(mason)': 'Mason',
+  'MemberRole(medium)': 'Medium',
+  'MemberRole(seer)': 'Seer',
+  'MemberRole(villager)': 'Villager',
+  'MemberRole(werehamster)': 'Werehamster',
+  'MemberRole(werewolf)': 'Werewolf',
   'MemberSelect.max': `max {num, plural,
     =1 {# human}
     other {# humans}

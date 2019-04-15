@@ -21,8 +21,8 @@ declare namespace lobby {
     warning = 'warning'
   }
   const enum Language {
-    fr = 'fr',
     en = 'en',
+    fr = 'fr',
     it = 'it',
     ja = 'ja'
   }
