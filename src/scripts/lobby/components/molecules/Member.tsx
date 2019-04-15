@@ -16,7 +16,6 @@ export default function Member(props: Props) {
       id={item.id}
       image={item.image}
       key={item.id}
-      name={item.name.en} // FIXME
       numberOfAgents={props.role[item.id]}
     />
   )
