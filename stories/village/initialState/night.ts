@@ -1131,6 +1131,69 @@ const state: ReducerState = {
           'en': 'Walter',
           'ja': 'ヴァルター'
         }
+      },
+      {
+        id: 'hunter',
+        name: {
+          'en': 'Hunter',
+          'ja': '狩人'
+        }
+      },
+      {
+        id: 'madman',
+        name: {
+          'en': 'Madman',
+          'ja': '狂人'
+        }
+      },
+      {
+        id: 'mason',
+        name: {
+          'en': 'Mason',
+          'ja': '共有者'
+        }
+      },
+      {
+        id: 'master',
+        name: {
+          'en': 'Master',
+          'ja': 'マスター'
+        }
+      },
+      {
+        id: 'medium',
+        name: {
+          'en': 'Medium',
+          'ja': '霊媒師'
+        }
+      },
+      {
+        id: 'seer',
+        name: {
+          'en': 'Seer',
+          'ja': '占い師'
+        }
+      },
+      {
+        id: 'villager',
+        name: {
+          'en': 'Villager',
+          'ja': '村人'
+        }
+      },
+      {
+        id: 'werehamster',
+        name: {
+          'en': 'Werehamster',
+          'ja': 'ハムスター人間'
+        }
+      },
+      {
+        id: 'werewolf',
+        name: {
+          'en': 'Werewolf',
+          'ja': '人狼'
+        }
       }
     ]
   },
