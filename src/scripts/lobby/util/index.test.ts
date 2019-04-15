@@ -1,6 +1,8 @@
+/* global lobby */
 import {
   getAnonymousVillageName,
-  getCastFromNumberOfPlayers
+  getCastFromNumberOfPlayers,
+  getText
 } from '.'
 import Cast from '../constants/Cast'
 import {anonymousVillageName} from '../constants/AnonymousVillageName'
@@ -53,3 +55,49 @@ describe('getCastFromNumberOfPlayers', () => {
     expect(() => getCastFromNumberOfPlayers(3)).toThrow()
   })
 })
+describe('getText', () => {
+  test('en', () => {
+    const languageMap = {
+      en: 'English'
+    }
+
+    expect(
+      getText(
+        {
+          language: lobby.Language.en,
+          languageMap
+        }
+      )
+    ).toBe('English')
+  })
+  test('ja', () => {
+    const languageMap = {
+      en: 'English',
+      ja: '日本語'
+    }
+
+    expect(
+      getText(
+        {
+          language: lobby.Language.ja,
+          languageMap
+        }
+      )
+    ).toBe('日本語')
+  })
+  test('fallback', () => {
+    const languageMap = {
+      en: 'English'
+    }
+
+    expect(
+      getText(
+        {
+          language: lobby.Language.ja,
+          languageMap
+        }
+      )
+    ).toBe('English')
+  })
+})
+
