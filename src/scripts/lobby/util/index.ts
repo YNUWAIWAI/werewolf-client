@@ -12,14 +12,3 @@ export const getCastFromNumberOfPlayers = (numberOfPlayers: number): lobby.Cast[
   return Cast[maybe]
 }
 export const getAnonymousVillageName = () => anonymousVillageName[Math.floor(Math.random() * anonymousVillageName.length)]
-export const getText = ({language, languageMap}: {language: lobby.Language, languageMap: lobby.LanguageMap}): string => {
-  const maybe = languageMap[language]
-
-  if (!maybe) {
-    console.error(`Not found language: ${language}`)
-
-    return languageMap.en
-  }
-
-  return maybe
-}
