@@ -1916,6 +1916,11 @@
     "@types/react" "*"
     "@types/webpack-env" "*"
 
+"@types/textarea-caret@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/textarea-caret/-/textarea-caret-3.0.0.tgz#4c5c5e3de5c59511f93ffe929e5383471b828896"
+  integrity sha512-RNXko6Kl+oQibqxuQZJZ+RgsQAGez4VQxeC4zq+GXjUlHcfjy5EthnsPIQXC5wUSRf5WbyA+4+//mVSc6XwxNw==
+
 "@types/unist@*", "@types/unist@^2.0.0":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
@@ -5395,6 +5400,11 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+
+fuse.js@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.4.4.tgz#f98f55fcb3b595cf6a3e629c5ffaf10982103e95"
+  integrity sha512-pyLQo/1oR5Ywf+a/tY8z4JygnIglmRxVUOiyFAbd11o9keUDpUJSMGRWJngcnkURj30kDHPmhoKY8ChJiz3EpQ==
 
 fuzzy-search@^3.0.1:
   version "3.0.1"
@@ -11145,6 +11155,11 @@ text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+
+textarea-caret@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/textarea-caret/-/textarea-caret-3.1.0.tgz#5d5a35bb035fd06b2ff0e25d5359e97f2655087f"
+  integrity sha512-cXAvzO9pP5CGa6NKx0WYHl+8CHKZs8byMkt3PCJBCmq2a34YA9pO1NrQET5pzeqnBjBdToF5No4rrmkDUgQC2Q==
 
 throat@^4.0.0:
   version "4.1.0"

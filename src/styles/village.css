@@ -19,6 +19,7 @@
   --villager--color: rgb(140, 198, 63);
   --werehamster--color: rgb(251, 176, 59);
   --werewolf--color: rgb(147, 39, 143);
+  --suggest-color: rgb(3, 169, 244);
   --dead-color: red;
   --background-color: white;
 }
@@ -310,16 +311,6 @@ body {
       height: 100%;
       width: 30vw;
 
-      & textarea {
-        background: var(--public-color);
-        border-radius: 10px;
-        box-sizing: border-box;
-        grid-area: input;
-        padding: 1rem;
-        resize: none;
-        z-index: 2;
-      }
-
       &--char {
         align-items: flex-end;
         display: inline-flex;
@@ -388,16 +379,73 @@ body {
         }
       }
 
-      &.grave > textarea {
-        background: var(--grave-color);
+      &--suggest {
+        &--container {
+          grid-area: input;
+          height: 100%;
+          position: relative;
+          width: 100%;
+        }
+
+        &--list {
+          background: white;
+          border: black 1px solid;
+          box-sizing: border-box;
+          left: 0;
+          margin: 1rem 0 0;
+          max-height: calc(1.15rem * 4);
+          min-width: 5rem;
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          z-index: 3;
+
+          &:hover {
+            overflow: auto;
+          }
+        }
+
+        &--item {
+          background: white;
+          line-height: 1.15;
+          padding: 0 0.25rem;
+
+          &.selected {
+            background: var(--suggest-color);
+            color: white;
+          }
+
+          &:hover {
+            background: var(--suggest-color);
+            color: white;
+          }
+        }
       }
 
-      &.limited > textarea {
-        background: var(--limited-color);
-      }
+      &--textarea {
+        background: var(--public-color);
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        grid-area: input;
+        height: 100%;
+        line-height: 1.5;
+        padding: 1rem;
+        resize: none;
+        width: 100%;
+        z-index: 2;
 
-      &.private > textarea {
-        background: var(--private-color);
+        &.grave {
+          background: var(--grave-color);
+        }
+
+        &.limited {
+          background: var(--limited-color);
+        }
+
+        &.private {
+          background: var(--private-color);
+        }
       }
     }
 

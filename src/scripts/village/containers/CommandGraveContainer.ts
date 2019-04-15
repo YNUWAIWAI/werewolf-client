@@ -10,7 +10,9 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   ... state.commandGrave,
-  characterLimit: state.base.village.chatSettings.characterLimit
+  characterLimit: state.base.village.chatSettings.characterLimit,
+  language: state.language,
+  suggesttedData: state.suggest.data
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleNavigationClick: type => {

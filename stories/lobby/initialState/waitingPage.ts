@@ -31,15 +31,15 @@ const state: Partial<ReducerState> = {
     ],
     players: [
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
-        isAnonymous: true,
+        avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
+        isAnonymous: false,
         isHost: true,
         isMe: true,
-        name: 'Anonymous1',
+        name: 'Cathy',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
+        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
         isAnonymous: true,
         isHost: false,
         isMe: false,

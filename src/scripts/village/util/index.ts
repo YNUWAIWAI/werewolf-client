@@ -5,6 +5,7 @@ import {
   WEREHAMSTER_TEAM
 } from '../constants/Role'
 
+export const countText = (text: string): number => Array.of(... text).length
 export const getBaseUri = (id: string): string => {
   const match = (/^([^\n]+)\/\w+$/).exec(id)
 
@@ -227,6 +228,12 @@ export const idGenerater = (prefix: string) => {
 
     return `${prefix}${id}`
   }
+}
+
+export const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number): boolean => {
+  const textCount = countText(text)
+
+  return textCount <= upperLimit && textCount >= lowerLimit
 }
 
 export const just = <T>(value: T | undefined | null): T => {

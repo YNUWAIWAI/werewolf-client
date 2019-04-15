@@ -1,3 +1,4 @@
+/* global village */
 import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
 import * as React from 'react'
 import Command from '../../src/scripts/village/components/organisms/Command'
@@ -14,6 +15,113 @@ import {storiesOf} from '@storybook/react'
 const store = createStore(
   reducer
 )
+const suggesttedData = [
+  {
+    id: 'Alvin',
+    name: {
+      'en': 'Alvin',
+      'ja': 'アルビン'
+    }
+  },
+  {
+    id: 'Catalina',
+    name: {
+      'en': 'Catalina',
+      'ja': 'カタリナ'
+    }
+  },
+  {
+    id: 'Dieter',
+    name: {
+      'en': 'Dieter',
+      'ja': 'ディーター'
+    }
+  },
+  {
+    id: 'Gert',
+    name: {
+      'en': 'Gert',
+      'ja': 'ゲルト'
+    }
+  },
+  {
+    id: 'Jacob',
+    name: {
+      'en': 'Jacob',
+      'ja': 'ヤコブ'
+    }
+  },
+  {
+    id: 'Joachim',
+    name: {
+      'en': 'Joachim',
+      'ja': 'ヨアヒム'
+    }
+  },
+  {
+    id: 'Lisa',
+    name: {
+      'en': 'Lisa',
+      'ja': 'リーザ'
+    }
+  },
+  {
+    id: 'Moritz',
+    name: {
+      'en': 'Moritz',
+      'ja': 'モーリッツ'
+    }
+  },
+  {
+    id: 'Nicholas',
+    name: {
+      'en': 'Nicholas',
+      'ja': 'ニコラス'
+    }
+  },
+  {
+    id: 'Otto',
+    name: {
+      'en': 'Otto',
+      'ja': 'オットー'
+    }
+  },
+  {
+    id: 'Pamela',
+    name: {
+      'en': 'Pamela',
+      'ja': 'パメラ'
+    }
+  },
+  {
+    id: 'Peter',
+    name: {
+      'en': 'Peter',
+      'ja': 'ペーター'
+    }
+  },
+  {
+    id: 'Simson',
+    name: {
+      'en': 'Simson',
+      'ja': 'ジムゾン'
+    }
+  },
+  {
+    id: 'Thomas',
+    name: {
+      'en': 'Thomas',
+      'ja': 'トーマス'
+    }
+  },
+  {
+    id: 'Walter',
+    name: {
+      'en': 'Walter',
+      'ja': 'ヴァルター'
+    }
+  }
+]
 
 storiesOf('village|Command', module)
   .addDecorator(story =>
@@ -27,6 +135,7 @@ storiesOf('village|Command', module)
     const props = {
       characterLimit: 140,
       handlePostChat: () => action('handlePostChat'),
+      language: village.Language.ja,
       limited: {
         available: false,
         postCount: 0
@@ -34,7 +143,8 @@ storiesOf('village|Command', module)
       postCountLimit: 10,
       public: {
         postCount: 0
-      }
+      },
+      suggesttedData
     }
     const content = <CommandInputBox {... props} />
     const story =
@@ -49,6 +159,7 @@ storiesOf('village|Command', module)
     const props = {
       characterLimit: 140,
       handlePostChat: () => action('handlePostChat'),
+      language: village.Language.ja,
       limited: {
         available: true,
         postCount: 0
@@ -56,7 +167,8 @@ storiesOf('village|Command', module)
       postCountLimit: 10,
       public: {
         postCount: 0
-      }
+      },
+      suggesttedData
     }
     const content = <CommandInputBox {... props} />
     const story =
@@ -72,6 +184,7 @@ storiesOf('village|Command', module)
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
+      language: village.Language.ja,
       navigation: [
         {
           className: 'show-result',
@@ -88,7 +201,8 @@ storiesOf('village|Command', module)
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
-      ]
+      ],
+      suggesttedData
     }
     const content = <CommandPostMortem {... props} />
     const story =
@@ -104,6 +218,7 @@ storiesOf('village|Command', module)
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
+      language: village.Language.ja,
       navigation: [
         {
           className: 'show-result',
@@ -121,7 +236,8 @@ storiesOf('village|Command', module)
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
-      ]
+      ],
+      suggesttedData
     }
     const content = <CommandPostMortem {... props} />
     const story =
@@ -137,6 +253,7 @@ storiesOf('village|Command', module)
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
+      language: village.Language.ja,
       navigation: [
         {
           className: 'show-result',
@@ -148,7 +265,8 @@ storiesOf('village|Command', module)
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
-      ]
+      ],
+      suggesttedData
     }
     const content = <CommandPostMortem {... props} />
     const story =
@@ -164,13 +282,15 @@ storiesOf('village|Command', module)
       characterLimit: 140,
       handleNavigationClick: () => action('handleNavigationClick'),
       handlePostChat: () => action('handlePostChat'),
+      language: village.Language.ja,
       navigation: [
         {
           className: 'return-to-lobby expand',
           id: 'CommandNavigation.returnToLobby',
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
-      ]
+      ],
+      suggesttedData
     }
     const content = <CommandGrave {... props} />
     const story =
