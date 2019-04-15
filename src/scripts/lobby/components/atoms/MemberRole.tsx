@@ -1,10 +1,10 @@
 import * as React from 'react'
+import {FormattedMessage} from 'react-intl'
 
 interface Props {
   readonly className: string
   readonly id: string
   readonly image: string
-  readonly name: string
   readonly numberOfAgents: number
 }
 
@@ -25,11 +25,19 @@ export default function MemberRole(props: Props) {
       >
         {props.numberOfAgents}
       </span>
-      <span
-        className={`${props.className}--caption`}
+      <FormattedMessage
+        id={`MemberRole(${props.id})`}
       >
-        {props.name}
-      </span>
+        {
+          text =>
+            <span
+              className={`${props.className}--caption`}
+            >
+              {text}
+            </span>
+
+        }
+      </FormattedMessage>
     </div>
   )
 }
