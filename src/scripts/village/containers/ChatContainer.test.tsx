@@ -30,6 +30,7 @@ describe('<ChatContainer />', () => {
           allIds: ['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'],
           byId: {
             chat0: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
@@ -45,6 +46,7 @@ describe('<ChatContainer />', () => {
               type: 'item'
             },
             chat1: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: -1,
               image: 'https://werewolf.world/image/0.2/Regina.jpg',
               intensionalDisclosureRange: village.Channel.onymousAudience,
@@ -57,6 +59,7 @@ describe('<ChatContainer />', () => {
               type: 'item'
             },
             chat2: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: -1,
               image: 'Anonymous',
               intensionalDisclosureRange: village.Channel.anonymousAudience,

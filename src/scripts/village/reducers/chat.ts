@@ -10,6 +10,7 @@ export interface State {
   readonly allIds: string[]
   readonly byId: {
     readonly [id: string]: {
+      readonly clientTimestamp: string
       readonly id: number
       readonly image: string
       readonly intensionalDisclosureRange: village.Channel
@@ -50,6 +51,7 @@ const chat = (state: State = initialState, action: Action): State => {
               byId: {
                 ... state.byId,
                 [chatId]: {
+                  clientTimestamp: payload.clientTimestamp,
                   id,
                   image: 'Anonymous',
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
@@ -69,6 +71,7 @@ const chat = (state: State = initialState, action: Action): State => {
               byId: {
                 ... state.byId,
                 [chatId]: {
+                  clientTimestamp: payload.clientTimestamp,
                   id,
                   image: just(payload.avatar).image,
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
@@ -89,6 +92,7 @@ const chat = (state: State = initialState, action: Action): State => {
             byId: {
               ... state.byId,
               [chatId]: {
+                clientTimestamp: payload.clientTimestamp,
                 id,
                 image: just(payload.agent).image,
                 intensionalDisclosureRange: payload.intensionalDisclosureRange,
