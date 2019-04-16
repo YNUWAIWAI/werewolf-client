@@ -10,6 +10,7 @@ import myMessageOnChatJSON from './myMessageOnChat'
 import nightJSON from './night'
 import onymousAudienceChatJSON from './onymousAudienceChat'
 import resultJSON from './result'
+import starJSON from './star'
 import theirMessageOnChatJSON from './theirMessageOnChat'
 
 export const anonymousAudienceChat = anonymousAudienceChatJSON
@@ -24,4 +25,5 @@ export const myMessageOnChat = myMessageOnChatJSON
 export const night = nightJSON
 export const onymousAudienceChat = onymousAudienceChatJSON
 export const result = resultJSON
+export const star = starJSON
 export const theirMessageOnChat = theirMessageOnChatJSON
