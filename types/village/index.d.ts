@@ -113,6 +113,7 @@ declare namespace village {
     FlavorText = 'https://werewolf.world/context/0.2/flavorText.jsonld',
     Role = 'https://werewolf.world/context/0.2/role.jsonld',
     Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld',
+    Star = 'https://werewolf.world/context/0.2/star.jsonld',
     Village = 'https://werewolf.world/context/0.2/village.jsonld',
     Vote = 'https://werewolf.world/context/0.2/vote.jsonld',
     VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
@@ -127,6 +128,7 @@ declare namespace village {
     FlavorText = 'https://werewolf.world/context/0.2/flavorText.jsonld',
     Role = 'https://werewolf.world/context/0.2/role.jsonld',
     Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld',
+    Star = 'https://werewolf.world/context/0.2/star.jsonld',
     Vote = 'https://werewolf.world/context/0.2/vote.jsonld',
     VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
   }
@@ -136,6 +138,7 @@ declare namespace village {
     flavorTextMessage = 'flavorTextMessage',
     playerMessage = 'playerMessage',
     scrollMessage = 'scrollMessage',
+    starMessage = 'starMessage',
     systemMessage = 'systemMessage',
     voteMessage = 'voteMessage',
   }
@@ -336,6 +339,16 @@ declare namespace village {
   }
 
   /*
+  'https://werewolf.world/context/0.2/star.jsonld'
+    dependency:
+      starMessage
+  */
+  interface Star {
+    '@context': Context.Star
+    '@id': string
+  }
+
+  /*
   'https://werewolf.world/context/0.2/time.jsonld'
     dependency:
       'https://werewolf.world/context/0.2/agent.jsonld'
@@ -437,6 +450,17 @@ declare namespace village {
     isOver: NonNullable<Chat['isOver']>
     limit?: NonNullable<Chat['limit']>
     text: NonNullable<Chat['text']>
+  }
+  interface Payload$starMessage extends Base {
+    '@payload'?: Message.starMessage
+    myAgent: NonNullable<Base['myAgent']>
+    star: {
+      '@context': Star['@context']
+      '@id': Star['@id']
+      clientTimestamp: Base['clientTimestamp']
+      serverTimeStamp: Base['serverTimestamp']
+      token: Avatar['token']
+    }
   }
   interface Payload$scrollMessage extends Base, Scroll {
     '@payload'?: Message.scrollMessage
