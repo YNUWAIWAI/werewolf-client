@@ -231,9 +231,9 @@ const client2server: Middleware = store => next => action => {
       const payload: village.Payload$starMessage = {
         '@context': [
           village.BaseContext.Base,
-          village.BaseContext.Vote
+          village.BaseContext.Star
         ],
-        '@id': `${state.base['@id']}/voteMessage`,
+        '@id': `${state.base['@id']}/starMessage`,
         'clientTimestamp': getTimestamp(),
         'date': state.base.date,
         'directionality': village.Directionality.clientToServer,
