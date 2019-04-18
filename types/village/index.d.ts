@@ -246,8 +246,8 @@ declare namespace village {
       chatSettings: {
         '@context': ChatSettings['@context']
         '@id': ChatSettings['@id']
-        limit: number
         characterLimit: number
+        limit: number
       }
       id: number
       lang: Language
