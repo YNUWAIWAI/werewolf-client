@@ -15,6 +15,7 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0'],
       byId: {
         chat0: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
@@ -39,6 +40,7 @@ describe('socket/MESSAGE', () => {
           allIds: ['chat0'],
           byId: {
             chat0: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
@@ -61,6 +63,7 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0', 'chat1'],
       byId: {
         chat0: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
@@ -76,6 +79,7 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat1: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
@@ -100,6 +104,7 @@ describe('socket/MESSAGE', () => {
           allIds: ['chat0', 'chat1'],
           byId: {
             chat0: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
@@ -115,6 +120,7 @@ describe('socket/MESSAGE', () => {
               type: 'item'
             },
             chat1: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
@@ -137,6 +143,7 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0', 'chat1', 'chat2'],
       byId: {
         chat0: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
@@ -152,6 +159,7 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat1: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
@@ -167,6 +175,7 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat2: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: -1,
           image: 'https://werewolf.world/image/0.2/Regina.jpg',
           intensionalDisclosureRange: 'onymousAudience',
@@ -188,6 +197,7 @@ describe('socket/MESSAGE', () => {
           allIds: ['chat0', 'chat1', 'chat2'],
           byId: {
             chat0: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
@@ -203,6 +213,7 @@ describe('socket/MESSAGE', () => {
               type: 'item'
             },
             chat1: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
@@ -218,6 +229,7 @@ describe('socket/MESSAGE', () => {
               type: 'item'
             },
             chat2: {
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: -1,
               image: 'https://werewolf.world/image/0.2/Regina.jpg',
               intensionalDisclosureRange: village.Channel.onymousAudience,
@@ -237,6 +249,7 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0', 'chat1', 'chat2', 'chat3'],
       byId: {
         chat0: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
@@ -252,6 +265,7 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat1: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
@@ -267,6 +281,7 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat2: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: -1,
           image: 'https://werewolf.world/image/0.2/Regina.jpg',
           intensionalDisclosureRange: 'onymousAudience',
@@ -279,6 +294,7 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat3: {
+          clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: -1,
           image: 'Anonymous',
           intensionalDisclosureRange: 'anonymousAudience',

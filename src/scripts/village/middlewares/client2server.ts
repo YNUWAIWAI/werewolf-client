@@ -219,6 +219,71 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.global.STAR: {
+      const state = store.getState()
+      const chat = state.chat.byId[action.id]
+
+      if (chat.type !== 'item') {
+        return next(action)
+      }
+      const myAgent = just(state.mine.agent)
+      const myRole = just(state.mine.role)
+      const payload: village.Payload$starMessage = {
+        '@context': [
+          village.BaseContext.Base,
+          village.BaseContext.Star
+        ],
+        '@id': `${state.base['@id']}/starMessage`,
+        'clientTimestamp': getTimestamp(),
+        'date': state.base.date,
+        'directionality': village.Directionality.clientToServer,
+        'extensionalDisclosureRange': [],
+        'intensionalDisclosureRange': village.Channel.private,
+        'myAgent': {
+          '@context': village.Context.Agent,
+          '@id': myAgent['@id'],
+          'id': myAgent.id,
+          'image': myAgent.image,
+          'name': myAgent.name,
+          'role': {
+            '@context': village.Context.Role,
+            '@id': myRole['@id'],
+            'image': myRole.image,
+            'name': myRole.name
+          }
+        },
+        'phase': state.base.phase,
+        'phaseStartTime': state.base.phaseStartTime,
+        'phaseTimeLimit': state.base.phaseTimeLimit,
+        'serverTimestamp': state.base.serverTimestamp,
+        'star': {
+          '@context': village.Context.Star,
+          '@id': `${state.base['@id']}/star`,
+          'clientTimestamp': chat.clientTimestamp,
+          'serverTimestamp': chat.serverTimestamp,
+          'token': state.base.token
+        },
+        'token': state.base.token,
+        'village': {
+          '@context': village.Context.Village,
+          '@id': state.base.village['@id'],
+          'chatSettings': {
+            '@context': village.Context.ChatSettings,
+            '@id': `${state.base['@id']}/chatSettings`,
+            'characterLimit': state.base.village.chatSettings.characterLimit,
+            'limit': state.base.village.chatSettings.limit
+          },
+          'id': state.base.village.id,
+          'lang': state.base.village.lang,
+          'name': state.base.village.name,
+          'totalNumberOfAgents': state.base.village.totalNumberOfAgents
+        }
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.socket.MESSAGE: {
       switch (action.payload['@payload']) {
         case village.Message.flavorTextMessage: {

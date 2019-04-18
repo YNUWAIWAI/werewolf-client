@@ -20,6 +20,8 @@ export const enum global {
   SET_ROLE = 'SET_ROLE',
   SHOW_RESULT = 'SHOW_RESULT',
   SHOW_LOBBY = 'SHOW_LOBBY',
+  STAR = 'STAR',
+  UNSTAR = 'UNSTAR',
   TICK = 'TICK'
 }
 export const enum indexedDB {

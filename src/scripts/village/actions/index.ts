@@ -212,6 +212,11 @@ export const selectYes = (agentId: number): {agentId: number, type: ActionTypes.
   type: ActionTypes.global.SELECT_YES
 })
 
+export const starChat = (id: string): {id: string, type: ActionTypes.global.STAR} => ({
+  id,
+  type: ActionTypes.global.STAR
+})
+
 export const showLobby = (): {type: ActionTypes.global.SHOW_LOBBY} => ({
   type: ActionTypes.global.SHOW_LOBBY
 })
@@ -242,4 +247,5 @@ export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
+export type StarChat = ReturnType<typeof starChat>
 export type Tick = ReturnType<typeof tick>

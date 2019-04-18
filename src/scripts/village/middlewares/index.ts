@@ -33,6 +33,7 @@ type Action =
   | actions.SocketMessage
   | actions.SocketOpen
   | actions.SocketSend
+  | actions.StarChat
   | actions.Tick
   | {type: ActionTypes.indexedDB.INIT}
   | {type: ActionTypes.socket.INIT}

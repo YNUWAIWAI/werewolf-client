@@ -1944,7 +1944,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./types/village":
-  version "1.36.0"
+  version "1.40.0"
 
 "@types/webpack-env@*":
   version "1.13.8"

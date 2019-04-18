@@ -113,6 +113,7 @@ declare namespace village {
     FlavorText = 'https://werewolf.world/context/0.2/flavorText.jsonld',
     Role = 'https://werewolf.world/context/0.2/role.jsonld',
     Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld',
+    Star = 'https://werewolf.world/context/0.2/star.jsonld',
     Village = 'https://werewolf.world/context/0.2/village.jsonld',
     Vote = 'https://werewolf.world/context/0.2/vote.jsonld',
     VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
@@ -127,6 +128,7 @@ declare namespace village {
     FlavorText = 'https://werewolf.world/context/0.2/flavorText.jsonld',
     Role = 'https://werewolf.world/context/0.2/role.jsonld',
     Scroll = 'https://werewolf.world/context/0.2/scroll.jsonld',
+    Star = 'https://werewolf.world/context/0.2/star.jsonld',
     Vote = 'https://werewolf.world/context/0.2/vote.jsonld',
     VotingResult = 'https://werewolf.world/context/0.2/votingResult.jsonld'
   }
@@ -136,6 +138,7 @@ declare namespace village {
     flavorTextMessage = 'flavorTextMessage',
     playerMessage = 'playerMessage',
     scrollMessage = 'scrollMessage',
+    starMessage = 'starMessage',
     systemMessage = 'systemMessage',
     voteMessage = 'voteMessage',
   }
@@ -243,8 +246,8 @@ declare namespace village {
       chatSettings: {
         '@context': ChatSettings['@context']
         '@id': ChatSettings['@id']
-        limit: number
         characterLimit: number
+        limit: number
       }
       id: number
       lang: Language
@@ -333,6 +336,16 @@ declare namespace village {
     offsetHeight: number
     scrollTop: number
     scrollHeight: number
+  }
+
+  /*
+  'https://werewolf.world/context/0.2/star.jsonld'
+    dependency:
+      starMessage
+  */
+  interface Star {
+    '@context': Context.Star
+    '@id': string
   }
 
   /*
@@ -437,6 +450,17 @@ declare namespace village {
     isOver: NonNullable<Chat['isOver']>
     limit?: NonNullable<Chat['limit']>
     text: NonNullable<Chat['text']>
+  }
+  interface Payload$starMessage extends Base {
+    '@payload'?: Message.starMessage
+    myAgent: NonNullable<Base['myAgent']>
+    star: {
+      '@context': Star['@context']
+      '@id': Star['@id']
+      clientTimestamp: Base['clientTimestamp']
+      serverTimestamp: Base['serverTimestamp']
+      token: Avatar['token']
+    }
   }
   interface Payload$scrollMessage extends Base, Scroll {
     '@payload'?: Message.scrollMessage
@@ -577,6 +601,7 @@ declare namespace village {
     | Payload$receivedPlayerMessage
     | Payload$receivedSystemMessage
     | Payload$scrollMessage
+    | Payload$starMessage
     | Payload$systemMessage
     | Payload$voteMessage
 }
