@@ -601,6 +601,7 @@ declare namespace village {
     | Payload$receivedPlayerMessage
     | Payload$receivedSystemMessage
     | Payload$scrollMessage
+    | Payload$starMessage
     | Payload$systemMessage
     | Payload$voteMessage
 }
