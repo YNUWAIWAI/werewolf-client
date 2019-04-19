@@ -182,6 +182,7 @@ export default class CommandInput extends React.Component<Props, State> {
       const suggesttedData = this.fuse.search(this.getSearchText(text, caretPosition))
 
       this.setState({
+        suggestSelected: 0,
         suggesttedData
       })
       this.updateTrigerPosition(this.state.trigerPosition)
@@ -227,17 +228,11 @@ export default class CommandInput extends React.Component<Props, State> {
   }
 
   public updateSuggestable(suggestable: boolean) {
-    if (suggestable) {
-      this.setState({
-        suggestable
-      })
-    } else {
-      this.setState({
-        suggestSelected: 0,
-        suggestable,
-        suggesttedData: this.props.suggesttedData
-      })
-    }
+    this.setState({
+      suggestSelected: 0,
+      suggestable,
+      suggesttedData: this.props.suggesttedData
+    })
   }
 
   public updateText(text: string) {

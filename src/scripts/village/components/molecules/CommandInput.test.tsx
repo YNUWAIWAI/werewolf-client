@@ -1374,6 +1374,62 @@ describe('<CommandInput />', () => {
           trigerPosition: 0
         })
       })
+      test('"@" -> "@catalina", suggestSelected === 1', () => {
+        const handlePostChat = jest.fn()
+        const wrapper = mountWithIntl<CommandInput>(
+          <CommandInput
+            characterLimit={140}
+            handlePostChat={handlePostChat}
+            inputChannel={village.InputChannel.public}
+            language={village.Language.ja}
+            postCount={0}
+            postCountLimit={10}
+            suggesttedData={suggesttedData}
+          />
+        )
+
+        wrapper.instance().handleTextChange({
+          caretPosition: 1,
+          text: '@'
+        })
+        wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
+          key: Key.ArrowDown
+        })
+        expect(wrapper.state()).toEqual({
+          caretPosition: 1,
+          processing: false,
+          suggestLeft: 1,
+          suggestSelected: 1,
+          suggestTop: 1,
+          suggestable: true,
+          suggesttedData,
+          text: '@',
+          trigerPosition: 0
+        })
+        wrapper.instance().handleTextChange({
+          caretPosition: 9,
+          text: '@catalina'
+        })
+        expect(wrapper.state()).toEqual({
+          caretPosition: 9,
+          processing: false,
+          suggestLeft: 1,
+          suggestSelected: 0,
+          suggestTop: 1,
+          suggestable: true,
+          suggesttedData: [
+            {
+              id: 'Catalina',
+              name: {
+                'en': 'Catalina',
+                'ja': 'カタリナ'
+              }
+            }
+          ],
+          text: '@catalina',
+          trigerPosition: 0
+        })
+      })
     })
     test('onChange', () => {
       const handlePostChat = jest.fn()
@@ -1760,7 +1816,9 @@ describe('<CommandInput />', () => {
       )
 
       wrapper.instance().updateSuggestable(true)
+      expect(wrapper.state().suggestSelected).toBe(0)
       expect(wrapper.state().suggestable).toBe(true)
+      expect(wrapper.state().suggesttedData).toEqual([])
     })
     test('false', () => {
       const handlePostChat = jest.fn()
