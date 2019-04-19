@@ -30,6 +30,7 @@ const state: ReducerState = {
     allIds: ['chat0', 'chat1', 'chat2', 'chat3', 'chat4'],
     byId: {
       'chat0': {
+        'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 1,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.public,
@@ -45,6 +46,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat1': {
+        'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 2,
         'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
         'intensionalDisclosureRange': village.Channel.public,
@@ -60,6 +62,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat2': {
+        'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 3,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.werewolf,
@@ -75,6 +78,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat3': {
+        'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 3,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.private,
@@ -90,6 +94,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat4': {
+        'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 5,
         'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
         'intensionalDisclosureRange': village.Channel.public,

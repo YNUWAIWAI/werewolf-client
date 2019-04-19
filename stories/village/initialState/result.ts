@@ -30,6 +30,7 @@ const state: ReducerState = {
     allIds: ['delimeter0', 'chat0', 'chat1', 'delimeter1'],
     byId: {
       'chat0': {
+        'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 1,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.public,
@@ -45,6 +46,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat1': {
+        'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 2,
         'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
         'intensionalDisclosureRange': village.Channel.public,
