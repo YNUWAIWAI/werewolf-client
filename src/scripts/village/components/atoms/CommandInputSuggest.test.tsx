@@ -182,6 +182,42 @@ describe('<CommandInputSuggest />', () => {
       })
       expect(spy).toHaveBeenCalled()
     })
+    test('typeof itemElem === "undefined"', () => {
+      const data = [
+        {
+          id: 'Alvin',
+          name: {
+            'en': 'Alvin',
+            'ja': 'アルビン'
+          }
+        },
+        {
+          id: 'Catalina',
+          name: {
+            'en': 'Catalina',
+            'ja': 'カタリナ'
+          }
+        }
+      ]
+      const handleSuggestClick = jest.fn()
+      const wrapper = mount<CommandInputSuggest>(
+        <CommandInputSuggest
+          data={data}
+          handleSuggestClick={handleSuggestClick}
+          language={village.Language.ja}
+          left={0}
+          selected={2}
+          suggestable
+          top={0}
+        />
+      )
+      const spy = jest.spyOn(CommandInputSuggest.prototype, 'componentDidUpdate')
+
+      wrapper.setProps({
+        suggestable: true
+      })
+      expect(spy).toHaveBeenCalled()
+    })
   })
   test('handleSuggestClick', () => {
     const data = [

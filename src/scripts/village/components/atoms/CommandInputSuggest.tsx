@@ -16,11 +16,16 @@ interface Props {
 export default class CommandInputSuggest extends React.Component<Props, {}> {
   public componentDidUpdate() {
     const listElem = this.listRef.current
+    const itemElem = this.itemsRef[this.props.selected]
 
-    if (listElem === null || this.props.data.length <= 0 || !this.props.suggestable) {
+    if (
+      listElem === null ||
+      typeof itemElem === 'undefined' ||
+      this.props.data.length <= 0 ||
+      !this.props.suggestable
+    ) {
       return
     }
-    const itemElem = this.itemsRef[this.props.selected]
     const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
     listElem.scrollTop = offsetBottom - listElem.clientHeight
