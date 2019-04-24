@@ -229,8 +229,8 @@ const prediction = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         spec: {
-          role: state.spec.role,
-          visible: false
+          role: action.role,
+          visible: true
         }
       }
     }
