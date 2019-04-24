@@ -1,4 +1,3 @@
-/* global village */
 import {ChangePredictionBoard, handleBoardClick} from '../actions'
 import Prediction, {DispatchProps, StateProps} from '../components/organisms/Prediction'
 import {Dispatch} from 'redux'
@@ -28,10 +27,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     }),
     numberOfAgents: role.numberOfAgents
   })),
-  spec: {
-    role: village.RoleId.villager,
-    visible: false
-  },
+  spec: state.prediction.spec,
   table: state.prediction.table
 })
 

@@ -23,6 +23,10 @@ export interface State {
     readonly name: village.LanguageMap
     readonly numberOfAgents: number
   }[]
+  readonly spec: {
+    readonly role: village.RoleId
+    readonly visible: boolean
+  }
   readonly table: {
     [agentId in village.AgentId]: Partial<{
       [roleId in village.RoleId]: {
@@ -130,6 +134,10 @@ const initPredictionTable = (agents: Agents, roles: Roles): Table => {
 export const initialState = {
   playerStatus: [],
   roleStatus: [],
+  spec: {
+    role: village.RoleId.villager,
+    visible: false
+  },
   table: {}
 }
 
