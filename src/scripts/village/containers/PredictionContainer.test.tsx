@@ -104,6 +104,10 @@ describe('<PredictionContainer />', () => {
         'numberOfAgents': 1
       }
     ]
+    const spec = {
+      role: village.RoleId.villager,
+      visible: false
+    }
     const table = {
       '1': {
         madman: {
@@ -222,6 +226,7 @@ describe('<PredictionContainer />', () => {
         prediction: {
           playerStatus,
           roleStatus,
+          spec,
           table
         }
       }
