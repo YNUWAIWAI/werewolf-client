@@ -698,6 +698,8 @@ storiesOf('village|Prediction', module)
     const story =
       <Prediction
         handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+        handleMouseLeave={action('handleMouseLeave')}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
@@ -884,6 +886,8 @@ storiesOf('village|Prediction', module)
     const story =
       <Prediction
         handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+        handleMouseLeave={action('handleMouseLeave')}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
@@ -1578,6 +1582,8 @@ storiesOf('village|Prediction', module)
     const story =
       <Prediction
         handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+        handleMouseLeave={action('handleMouseLeave')}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
@@ -1764,6 +1770,8 @@ storiesOf('village|Prediction', module)
     const story =
       <Prediction
         handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+        handleMouseLeave={action('handleMouseLeave')}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
