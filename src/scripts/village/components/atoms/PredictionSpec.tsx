@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 interface Props {
-  style: React.CSSProperties
   role: village.RoleId
+  style: React.CSSProperties
   visible: boolean
 }
 
