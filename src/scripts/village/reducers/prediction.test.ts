@@ -253,6 +253,10 @@ describe('socket/MESSAGE', () => {
             'numberOfAgents': 1
           }
         ],
+        spec: {
+          role: village.RoleId.villager,
+          visible: false
+        },
         table: {
           '0': {
             hunter: {
@@ -1130,6 +1134,10 @@ describe('socket/MESSAGE', () => {
             'numberOfAgents': 1
           }
         ],
+        spec: {
+          role: village.RoleId.villager,
+          visible: false
+        },
         table: {
           '0': {
             hunter: {
@@ -1837,6 +1845,10 @@ describe('socket/MESSAGE', () => {
             'numberOfAgents': 1
           }
         ],
+        spec: {
+          role: village.RoleId.villager,
+          visible: false
+        },
         table: {
           '0': {
             villager: {
@@ -2028,6 +2040,10 @@ describe('socket/MESSAGE', () => {
             'numberOfAgents': 2
           }
         ],
+        spec: {
+          role: village.RoleId.villager,
+          visible: false
+        },
         table: {
           '0': {
             madman: {
