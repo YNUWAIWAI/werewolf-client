@@ -22,6 +22,24 @@
   --suggest-color: rgb(3, 169, 244);
   --dead-color: red;
   --background-color: white;
+
+  /* z-index */
+  --command--z-index: 2;
+  --command--input--char--z-index: 1;
+  --command--input--suggest--list--z-index: 3;
+  --command--input--textarea--z-index: 2;
+  --prediction--empty--z-index: 4;
+  --prediction--item--z-index: 0;
+  --prediction--player--z-index: 3;
+  --prediction--spec--z-index: 4;
+  --prediction--role--z-index: 3;
+  --prediction--role--image--z-index: 0;
+  --prediction--role--times--z-index: 1;
+  --prediction--role--number--z-index: 1;
+  --result--z-index: 5;
+  --obfuctor--z-index: 6;
+  --modal--z-index: 7;
+  --hide-button--z-index: 1;
 }
 
 @keyframes fadein {
@@ -299,7 +317,7 @@ body {
     grid-area: command;
     justify-content: space-around;
     position: relative;
-    z-index: 2;
+    z-index: var(--command--z-index);
 
     &--input {
       display: grid;
@@ -317,7 +335,7 @@ body {
         grid-area: input;
         justify-content: flex-end;
         padding: 5px 10px;
-        z-index: 1;
+        z-index: var(--command--input--char--z-index);
 
         &.error {
           color: red;
@@ -398,7 +416,7 @@ body {
           overflow: hidden;
           position: absolute;
           top: 0;
-          z-index: 3;
+          z-index: var(--command--input--suggest--list--z-index);
 
           &:hover {
             overflow: auto;
@@ -433,7 +451,7 @@ body {
         padding: 1rem;
         resize: none;
         width: 100%;
-        z-index: 2;
+        z-index: var(--command--input--textarea--z-index);
 
         &.grave {
           background: var(--grave-color);
@@ -630,7 +648,7 @@ body {
   &--hide-button {
     grid-area: command;
     position: relative;
-    z-index: 1;
+    z-index: var(--hide-button--z-index);
 
     &--button {
       background: #303030;
@@ -820,7 +838,7 @@ body {
     position: fixed;
     top: 30vh;
     width: 50vw;
-    z-index: 4;
+    z-index: var(--modal--z-index);
 
     &--button {
       border: none;
@@ -905,7 +923,7 @@ body {
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 3;
+    z-index: var(--obfucator--z-index);
 
     &--loader {
       height: 10%;
@@ -950,7 +968,7 @@ body {
       left: 0;
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: var(--prediction--empty--z-index);
     }
 
     &--item {
@@ -960,6 +978,7 @@ body {
       cursor: pointer;
       display: inline-flex;
       justify-content: center;
+      z-index: var(--prediction--item--z-index);
 
       &.fixed {
         box-shadow: inset 0 0 0 4px red;
@@ -996,7 +1015,7 @@ body {
       grid-template-columns: 1fr var(--prediction-image-size) 1fr;
       left: 0;
       position: sticky;
-      z-index: 1;
+      z-index: var(--prediction--player--z-index);
 
       &.dead {
         animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
@@ -1025,7 +1044,7 @@ body {
       grid-template: 1fr calc(var(--prediction-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--prediction-image-size) - 24px) 12px 12px 1fr;
       position: sticky;
       top: 0;
-      z-index: 1;
+      z-index: var(--prediction--role--z-index);
 
       &--name {
         font-size: 10px;
@@ -1040,7 +1059,7 @@ body {
         grid-row: 2 / 4;
         height: var(--prediction-image-size);
         width: var(--prediction-image-size);
-        z-index: -1;
+        z-index: var(--prediction--role--image--z-index);
       }
 
       &--times {
@@ -1052,7 +1071,7 @@ body {
         grid-row: 3;
         justify-content: center;
         line-height: 1;
-        z-index: 0;
+        z-index: var(--prediction--role--times--z-index);
       }
 
       &--number {
@@ -1061,8 +1080,19 @@ body {
         grid-column: 4;
         grid-row: 3;
         line-height: 1;
-        z-index: 0;
+        z-index: var(--prediction--role--number--z-index);
       }
+    }
+
+    &--spec {
+      align-content: stretch;
+      background: var(--background-color);
+      border: solid 1px black;
+      box-sizing: border-box;
+      grid-column: 1 / 3;
+      grid-row: 2;
+      padding: 1rem;
+      z-index: var(--prediction--spec--z-index);
     }
   }
 
@@ -1079,7 +1109,7 @@ body {
     position: fixed;
     top: 5vh;
     width: 90vw;
-    z-index: 4;
+    z-index: var(--result--z-index);
 
     &--cell {
       align-items: center;
