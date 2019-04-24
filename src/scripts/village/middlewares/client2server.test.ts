@@ -298,6 +298,10 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'numberOfAgents': 1
         }
       ],
+      spec: {
+        role: village.RoleId.villager,
+        visible: false
+      },
       table: {}
     }
   })
