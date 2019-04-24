@@ -10,11 +10,16 @@ describe('<Prediction />', () => {
     const playerStatus: Props['playerStatus'] = []
     const roleStatus: Props['roleStatus'] = []
     const table: Props['table'] = {}
+    const spec: Props['spec'] = {
+      role: village.RoleId.villager,
+      visible: false
+    }
     const wrapper = shallow(
       <Prediction
         handleBoardClick={handleBoardClick}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
+        spec={spec}
         table={table}
       />
     )
@@ -82,6 +87,10 @@ describe('<Prediction />', () => {
         numberOfAgents: 1
       }
     ]
+    const spec: Props['spec'] = {
+      role: village.RoleId.villager,
+      visible: false
+    }
     const table: Props['table'] = {
       '1': {
         madman: {
@@ -199,6 +208,7 @@ describe('<Prediction />', () => {
         handleBoardClick={handleBoardClick}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
+        spec={spec}
         table={table}
       />
     )
