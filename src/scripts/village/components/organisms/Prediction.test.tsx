@@ -7,6 +7,9 @@ describe('<Prediction />', () => {
   test('playerStatus.length === 0 || roleStatus.length === 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
+    const handleMouseEnterEventHandler = jest.fn()
+    const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
+    const handleMouseLeave = jest.fn()
     const playerStatus: Props['playerStatus'] = []
     const roleStatus: Props['roleStatus'] = []
     const table: Props['table'] = {}
@@ -17,6 +20,8 @@ describe('<Prediction />', () => {
     const wrapper = shallow(
       <Prediction
         handleBoardClick={handleBoardClick}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
@@ -29,6 +34,9 @@ describe('<Prediction />', () => {
   test('playerStatus.length !== 0 && roleStatus.length !== 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
+    const handleMouseEnterEventHandler = jest.fn()
+    const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
+    const handleMouseLeave = jest.fn()
     const playerStatus: Props['playerStatus'] = [
       {
         id: 1,
@@ -206,6 +214,8 @@ describe('<Prediction />', () => {
     const wrapper = shallow(
       <Prediction
         handleBoardClick={handleBoardClick}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}

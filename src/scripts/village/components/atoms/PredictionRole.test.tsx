@@ -3,8 +3,13 @@ import PredictionRole from './PredictionRole'
 import {shallow} from 'enzyme'
 
 test('<PredictionRole />', () => {
+  const handleMouseEnter = jest.fn()
+  const handleMouseLeave = jest.fn()
+
   const wrapper = shallow(
     <PredictionRole
+      handleMouseEnter={handleMouseEnter}
+      handleMouseLeave={handleMouseLeave}
       image="image"
       name="name"
       numberOfAgents={1}
