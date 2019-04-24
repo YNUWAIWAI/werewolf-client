@@ -9,7 +9,10 @@ interface Props {
 export default function PredictionRole(props: Props) {
 
   return (
-    <div className="vi--prediction--role">
+    <div
+      className="vi--prediction--role"
+      onMouseOver={() => console.log(props.name)}
+    >
       <img
         className="vi--prediction--role--image"
         src={props.image}

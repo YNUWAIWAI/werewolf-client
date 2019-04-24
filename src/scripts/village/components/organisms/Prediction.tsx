@@ -1,8 +1,8 @@
-/* global village */
 import * as React from 'react'
 import PredictionItem from '../atoms/PredictionItem'
 import PredictionPlayer from '../atoms/PredictionPlayer'
 import PredictionRole from '../atoms/PredictionRole'
+import PredictionSpec from '../atoms/PredictionSpec'
 import {just} from '../../util'
 
 export interface StateProps {
@@ -18,6 +18,10 @@ export interface StateProps {
     readonly name: string
     readonly numberOfAgents: number
   }[]
+  readonly spec: {
+    role: village.RoleId
+    visible: boolean
+  }
   readonly table: {
     readonly [agentId in village.AgentId]: Partial<{
       readonly [roleId in village.RoleId]: {
@@ -70,13 +74,25 @@ export default function Prediction(props: Props) {
       ]
     )
   ]
-  const style = {
-    grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
-  }
 
   return (
-    <div className="vi--prediction" style={style}>
-      {predictionTable}
-    </div>
+    <>
+      <div
+        className="vi--prediction"
+        style={{
+          grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
+        }}
+      >
+        {predictionTable}
+      </div>
+      <PredictionSpec
+        key="spec"
+        role={props.spec.role}
+        style={{
+          grid: `minmax(72px, min-content) max-content / minmax(72px, min-content) minmax(max-content, calc(72px * ${props.roleStatus.length}))`
+        }}
+        visible={props.spec.visible}
+      />
+    </>
   )
 }
