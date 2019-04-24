@@ -33,6 +33,8 @@ export interface StateProps {
   }
 }
 export interface DispatchProps {
+  handleMouseEnter: (role: village.RoleId) => () => void
+  handleMouseLeave: () => void
   handleBoardClick: (playerId: number, role: village.RoleId) => (state: village.BoardState) => void
 }
 export interface Props extends StateProps, DispatchProps {}
@@ -48,6 +50,8 @@ export default function Prediction(props: Props) {
     />,
     ... props.roleStatus.map(role =>
       <PredictionRole
+        handleMouseEnter={props.handleMouseEnter(role.id)}
+        handleMouseLeave={props.handleMouseLeave}
         image={role.image}
         key={role.id}
         name={role.name}

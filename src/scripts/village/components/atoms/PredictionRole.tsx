@@ -1,6 +1,8 @@
 import * as React from 'react'
 
 interface Props {
+  readonly handleMouseEnter: () => void
+  readonly handleMouseLeave: () => void
   readonly image: string
   readonly name: string
   readonly numberOfAgents: number
@@ -11,7 +13,8 @@ export default function PredictionRole(props: Props) {
   return (
     <div
       className="vi--prediction--role"
-      onMouseOver={() => console.log(props.name)}
+      onMouseEnter={() => props.handleMouseEnter()}
+      onMouseLeave={() => props.handleMouseLeave()}
     >
       <img
         className="vi--prediction--role--image"
