@@ -1,3 +1,4 @@
+/* global village */
 import {firstMorning, firstMorning3, firstMorning4, firstMorning5, flavorText} from './fakeServer'
 import reducer, {initialState} from './prediction'
 import {socket} from '../actions'
