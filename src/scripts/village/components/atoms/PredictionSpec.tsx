@@ -13,7 +13,7 @@ export default function PredictionSpec(props: Props) {
 
   return (
     <div
-      className="vi--prediction"
+      className="vi--prediction spec"
       style={props.style}
     >
       <div

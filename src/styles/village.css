@@ -28,17 +28,17 @@
   --command--input--char--z-index: 1;
   --command--input--suggest--list--z-index: 3;
   --command--input--textarea--z-index: 2;
-  --prediction--empty--z-index: 4;
+  --prediction--empty--z-index: 5;
   --prediction--item--z-index: 0;
-  --prediction--player--z-index: 3;
-  --prediction--spec--z-index: 4;
-  --prediction--role--z-index: 3;
+  --prediction--player--z-index: 2;
+  --prediction--spec--z-index: 3;
+  --prediction--role--z-index: 4;
   --prediction--role--image--z-index: 0;
   --prediction--role--times--z-index: 1;
   --prediction--role--number--z-index: 1;
-  --result--z-index: 5;
-  --obfuctor--z-index: 6;
-  --modal--z-index: 7;
+  --result--z-index: 6;
+  --obfuctor--z-index: 7;
+  --modal--z-index: 8;
   --hide-button--z-index: 1;
 }
 
@@ -965,6 +965,7 @@ body {
     &--empty {
       background: var(--background-color);
       border: solid 1px black;
+      box-sizing: border-box;
       left: 0;
       position: sticky;
       top: 0;
@@ -1005,6 +1006,7 @@ body {
     &--player {
       background: var(--background-color);
       border: solid 1px black;
+      box-sizing: border-box;
       display: grid;
       grid-template-areas:
         '. . .'
@@ -1040,6 +1042,7 @@ body {
     &--role {
       background: var(--background-color);
       border: solid 1px black;
+      box-sizing: border-box;
       display: grid;
       grid-template: 1fr calc(var(--prediction-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--prediction-image-size) - 24px) 12px 12px 1fr;
       position: sticky;
@@ -1082,6 +1085,10 @@ body {
         line-height: 1;
         z-index: var(--prediction--role--number--z-index);
       }
+    }
+
+    &.spec {
+      z-index: var(--prediction--spec--z-index);
     }
 
     &--spec {
