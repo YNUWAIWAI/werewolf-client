@@ -1092,7 +1092,6 @@ body {
     }
 
     &--spec {
-      align-content: stretch;
       background: var(--background-color);
       border: solid 1px black;
       box-sizing: border-box;
