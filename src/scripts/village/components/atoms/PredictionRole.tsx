@@ -9,7 +9,6 @@ interface Props {
 }
 
 export default function PredictionRole(props: Props) {
-
   return (
     <div
       className="vi--prediction--role"
