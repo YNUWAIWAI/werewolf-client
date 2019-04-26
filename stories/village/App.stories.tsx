@@ -5,6 +5,7 @@ import {
   morningWithLimitedChat,
   morningWithoutLimitedChat,
   night,
+  night2,
   prologue,
   result
 } from './initialState'
@@ -76,10 +77,22 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('night', () => {
+  .add('night(seer)', () => {
     const store = createStore(
       reducer,
       night
+    )
+    const story =
+      <Provider store={store}>
+        <App />
+      </Provider>
+
+    return story
+  })
+  .add('night(villager)', () => {
+    const store = createStore(
+      reducer,
+      night2
     )
     const story =
       <Provider store={store}>
