@@ -37,6 +37,7 @@ type Action =
   | actions.SocketSend
   | actions.StarChat
   | actions.Tick
+  | actions.UnstarChat
   | {type: ActionTypes.indexedDB.INIT}
   | {type: ActionTypes.socket.INIT}
   | {type: ActionTypes.global.PROLOGUE}
