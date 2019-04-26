@@ -1,6 +1,11 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangePredictionBoard, SocketMessage} from '../actions'
+import {
+  ChangePredictionBoard,
+  HidePredictionSpec,
+  ShowPredictionSpec,
+  SocketMessage
+} from '../actions'
 import {
   getPlayableRoles,
   strToAgentStatus,
@@ -23,6 +28,10 @@ export interface State {
     readonly name: village.LanguageMap
     readonly numberOfAgents: number
   }[]
+  readonly spec: {
+    readonly role: village.RoleId
+    readonly visible: boolean
+  }
   readonly table: {
     [agentId in village.AgentId]: Partial<{
       [roleId in village.RoleId]: {
@@ -37,8 +46,10 @@ type PlayerStatus = State['playerStatus']
 type RoleStatus = State['roleStatus']
 type Table = State['table']
 type Action =
-  | SocketMessage
   | ChangePredictionBoard
+  | HidePredictionSpec
+  | ShowPredictionSpec
+  | SocketMessage
 type Agents = NonNullable<village.Payload$systemMessage['agent']>
 type Roles = NonNullable<village.Payload$systemMessage['role']>
 
@@ -130,6 +141,10 @@ const initPredictionTable = (agents: Agents, roles: Roles): Table => {
 export const initialState = {
   playerStatus: [],
   roleStatus: [],
+  spec: {
+    role: village.RoleId.villager,
+    visible: false
+  },
   table: {}
 }
 
@@ -198,6 +213,24 @@ const prediction = (state: State = initialState, action: Action): State => {
               state: action.nextState
             }
           }
+        }
+      }
+    }
+    case ActionTypes.global.HIDE_PREDICTION_SPEC: {
+      return {
+        ... state,
+        spec: {
+          ... state.spec,
+          visible: false
+        }
+      }
+    }
+    case ActionTypes.global.SHOW_PREDICTION_SPEC: {
+      return {
+        ... state,
+        spec: {
+          role: action.role,
+          visible: true
         }
       }
     }

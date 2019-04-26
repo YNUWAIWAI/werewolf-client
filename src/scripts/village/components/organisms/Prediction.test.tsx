@@ -7,14 +7,24 @@ describe('<Prediction />', () => {
   test('playerStatus.length === 0 || roleStatus.length === 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
+    const handleMouseEnterEventHandler = jest.fn()
+    const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
+    const handleMouseLeave = jest.fn()
     const playerStatus: Props['playerStatus'] = []
     const roleStatus: Props['roleStatus'] = []
     const table: Props['table'] = {}
+    const spec: Props['spec'] = {
+      role: village.RoleId.villager,
+      visible: false
+    }
     const wrapper = shallow(
       <Prediction
         handleBoardClick={handleBoardClick}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
+        spec={spec}
         table={table}
       />
     )
@@ -24,6 +34,9 @@ describe('<Prediction />', () => {
   test('playerStatus.length !== 0 && roleStatus.length !== 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
+    const handleMouseEnterEventHandler = jest.fn()
+    const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
+    const handleMouseLeave = jest.fn()
     const playerStatus: Props['playerStatus'] = [
       {
         id: 1,
@@ -82,6 +95,10 @@ describe('<Prediction />', () => {
         numberOfAgents: 1
       }
     ]
+    const spec: Props['spec'] = {
+      role: village.RoleId.villager,
+      visible: false
+    }
     const table: Props['table'] = {
       '1': {
         madman: {
@@ -197,8 +214,11 @@ describe('<Prediction />', () => {
     const wrapper = shallow(
       <Prediction
         handleBoardClick={handleBoardClick}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
         playerStatus={playerStatus}
         roleStatus={roleStatus}
+        spec={spec}
         table={table}
       />
     )

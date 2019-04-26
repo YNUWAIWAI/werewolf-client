@@ -356,6 +356,10 @@ const state: ReducerState = {
         'numberOfAgents': 1
       }
     ],
+    spec: {
+      role: village.RoleId.villager,
+      visible: false
+    },
     table: {
       '1': {
         hunter: {

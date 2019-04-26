@@ -1,4 +1,11 @@
-import {ChangePredictionBoard, handleBoardClick} from '../actions'
+import {
+  ChangePredictionBoard,
+  HidePredictionSpec,
+  ShowPredictionSpec,
+  handleBoardClick,
+  hidePredictionSpec,
+  showPredictionSpec
+} from '../actions'
 import Prediction, {DispatchProps, StateProps} from '../components/organisms/Prediction'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
@@ -7,6 +14,8 @@ import {getText} from '../util'
 
 type Action =
   | ChangePredictionBoard
+  | HidePredictionSpec
+  | ShowPredictionSpec
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   playerStatus: state.prediction.playerStatus.map(player => ({
@@ -27,12 +36,19 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     }),
     numberOfAgents: role.numberOfAgents
   })),
+  spec: state.prediction.spec,
   table: state.prediction.table
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleBoardClick: (playerId, roleId) => nextState => {
     dispatch(handleBoardClick(nextState, playerId, roleId))
+  },
+  handleMouseEnter: role => () => {
+    dispatch(showPredictionSpec(role))
+  },
+  handleMouseLeave: () => {
+    dispatch(hidePredictionSpec())
   }
 })
 

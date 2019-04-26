@@ -104,6 +104,10 @@ describe('<PredictionContainer />', () => {
         'numberOfAgents': 1
       }
     ]
+    const spec = {
+      role: village.RoleId.villager,
+      visible: false
+    }
     const table = {
       '1': {
         madman: {
@@ -222,6 +226,7 @@ describe('<PredictionContainer />', () => {
         prediction: {
           playerStatus,
           roleStatus,
+          spec,
           table
         }
       }
@@ -264,6 +269,56 @@ describe('<PredictionContainer />', () => {
       playerId,
       roleId,
       type: ActionTypes.global.CHANGE_PREDICTION_BOARD
+    })
+  })
+  test('handleMouseEnter', () => {
+    const store = fakeStore(
+      {
+        language: village.Language.ja
+      }
+    )
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <PredictionContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const role = village.RoleId.villager
+
+    wrapper.find(Prediction).props().handleMouseEnter(role)()
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      role,
+      type: ActionTypes.global.SHOW_PREDICTION_SPEC
+    })
+  })
+  test('handleMouseLeave', () => {
+    const store = fakeStore(
+      {
+        language: village.Language.ja
+      }
+    )
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <PredictionContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+
+    wrapper.find(Prediction).props().handleMouseLeave()
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      type: ActionTypes.global.HIDE_PREDICTION_SPEC
     })
   })
 })

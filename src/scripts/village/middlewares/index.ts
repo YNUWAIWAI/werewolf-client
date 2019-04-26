@@ -21,12 +21,14 @@ type Action =
   | actions.ClickHideButton
   | actions.ClickNavigationButton
   | actions.DeactivateNextButton
+  | actions.HidePredictionSpec
   | actions.HideResult
   | actions.PostChat
   | actions.Ready
   | actions.SelectNo
   | actions.SelectOption
   | actions.ShowLobby
+  | actions.ShowPredictionSpec
   | actions.SelectYes
   | actions.SocketClose
   | actions.SocketError

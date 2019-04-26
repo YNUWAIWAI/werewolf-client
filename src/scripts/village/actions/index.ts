@@ -182,6 +182,10 @@ export const handleClickHideButton = (hide: boolean): {hide: boolean, type: Acti
   type: ActionTypes.global.CLICK_HIDE_BUTTON
 })
 
+export const hidePredictionSpec = (): {type: ActionTypes.global.HIDE_PREDICTION_SPEC} => ({
+  type: ActionTypes.global.HIDE_PREDICTION_SPEC
+})
+
 export const hideResult = (): {type: ActionTypes.global.HIDE_RESULT} => ({
   type: ActionTypes.global.HIDE_RESULT
 })
@@ -221,6 +225,11 @@ export const showLobby = (): {type: ActionTypes.global.SHOW_LOBBY} => ({
   type: ActionTypes.global.SHOW_LOBBY
 })
 
+export const showPredictionSpec = (role: village.RoleId): {role: village.RoleId, type: ActionTypes.global.SHOW_PREDICTION_SPEC} => ({
+  role,
+  type: ActionTypes.global.SHOW_PREDICTION_SPEC
+})
+
 export const tick = ({start, time}: {start: number, time: number}): {start: number, time: number, type: ActionTypes.global.TICK} => ({
   start,
   time,
@@ -235,6 +244,7 @@ export type ChangePredictionBoard = ReturnType<typeof handleBoardClick>
 export type ClickHideButton = ReturnType<typeof handleClickHideButton>
 export type ClickNavigationButton = ReturnType<typeof clickNavigationButton>
 export type DeactivateNextButton = ReturnType<typeof deactivateNextButton>
+export type HidePredictionSpec = ReturnType<typeof hidePredictionSpec>
 export type HideResult = ReturnType<typeof hideResult>
 export type PostChat = ReturnType<typeof postChat>
 export type Ready = ReturnType<typeof ready>
@@ -242,6 +252,7 @@ export type SelectNo = ReturnType<typeof selectNo>
 export type SelectOption = ReturnType<typeof selectOption>
 export type SelectYes = ReturnType<typeof selectYes>
 export type ShowLobby = ReturnType<typeof showLobby>
+export type ShowPredictionSpec = ReturnType<typeof showPredictionSpec>
 export type SocketClose = ReturnType<typeof socket.close>
 export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>

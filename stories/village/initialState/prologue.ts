@@ -125,6 +125,10 @@ const state: ReducerState = {
   prediction: {
     playerStatus: [],
     roleStatus: [],
+    spec: {
+      role: village.RoleId.villager,
+      visible: false
+    },
     table: {}
   },
   result: {
