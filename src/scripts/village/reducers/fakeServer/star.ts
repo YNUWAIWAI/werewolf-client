@@ -37,6 +37,7 @@ const json: village.Payload$starMessage = {
     '@context': village.Context.Star,
     '@id': 'https://licos.online/state/0.2/village#3/star',
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+    'isMarked': true,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   },

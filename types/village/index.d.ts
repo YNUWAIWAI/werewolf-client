@@ -458,6 +458,7 @@ declare namespace village {
       '@context': Star['@context']
       '@id': Star['@id']
       clientTimestamp: Base['clientTimestamp']
+      isMarked: boolean
       serverTimestamp: Base['serverTimestamp']
       token: Avatar['token']
     }

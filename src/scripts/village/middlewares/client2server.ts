@@ -219,7 +219,8 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.STAR: {
+    case ActionTypes.global.STAR:
+    case ActionTypes.global.UNSTAR: {
       const state = store.getState()
       const chat = state.chat.byId[action.id]
 
@@ -260,6 +261,7 @@ const client2server: Middleware = store => next => action => {
           '@context': village.Context.Star,
           '@id': `${state.base['@id']}/star`,
           'clientTimestamp': chat.clientTimestamp,
+          'isMarked': action.isMarked,
           'serverTimestamp': chat.serverTimestamp,
           'token': state.base.token
         },
