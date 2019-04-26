@@ -385,12 +385,12 @@ const state: ReducerState = {
         seer: {
           date: 1,
           fixed: true,
-          state: village.BoardState.CIRCLE
+          state: village.BoardState.FILL
         },
         villager: {
           date: 1,
           fixed: true,
-          state: village.BoardState.FILL
+          state: village.BoardState.CIRCLE
         },
         werehamster: {
           date: 1,
@@ -426,8 +426,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -468,8 +468,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -510,8 +510,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -552,8 +552,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -594,8 +594,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -636,8 +636,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -678,8 +678,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -720,8 +720,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -762,8 +762,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -804,8 +804,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -846,8 +846,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
@@ -888,8 +888,8 @@ const state: ReducerState = {
         },
         seer: {
           date: 1,
-          fixed: true,
-          state: village.BoardState.FILL
+          fixed: false,
+          state: village.BoardState.QUESTION
         },
         villager: {
           date: 1,
