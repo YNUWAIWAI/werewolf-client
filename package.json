@@ -59,6 +59,7 @@
     "coverage": "codecov -f coverage/*.json",
     "deploy-storybook": "storybook-to-ghpages",
     "eslint": "eslint src/**/*.ts* stories/**/*.ts*",
+    "stylelint": "stylelint src/styles",
     "start": "node tools/build.js -w",
     "storybook": "start-storybook -p 6006",
     "test": "jest",
