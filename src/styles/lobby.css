@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
   margin: 0;
 }
 
@@ -285,7 +285,7 @@ body {
     }
 
     &--input:invalid + &--validity::after {
-      color: #f00;
+      color: red;
       content: '✖';
       display: inline-block;
       font-size: 3rem;
@@ -294,7 +294,7 @@ body {
     }
 
     &--input:valid + &--validity::after {
-      color: #26b72b;
+      color: rgb(38, 183, 43);
       content: '✓';
       display: inline-block;
       font-size: 3rem;
@@ -389,22 +389,24 @@ body {
   }
 
   &--modal {
-    background: #fafafa;
+    background: rgb(250, 250, 250);
     display: grid;
     gap: 0.5rem 0;
     grid-template-areas:
       'description description description description description'
       '. yes . no .';
-    grid-template-columns: 1fr 5.5rem 1fr 5.5rem 1fr;
+
     /*
       5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
     */
-    grid-template-rows: 4.5rem 3.25rem;
+    grid-template-columns: 1fr 5.5rem 1fr 5.5rem 1fr;
+
     /*
       15px = name's font-size(10px) * name's line-height(1.5)
       4.5rem = font-size(1.5rem) * line-height(1.5) * number of lines(2)
       3.25rem = font-size(1.5rem) * name's line-height(1.5) + padding-top(0.5rem) + padding-bottom(0.5rem)
     */
+    grid-template-rows: 4.5rem 3.25rem;
     left: 25vw;
     padding: 1rem;
     position: fixed;
@@ -540,8 +542,7 @@ body {
         align-items: center;
         display: grid;
         gap: 1rem;
-        grid-template-areas:
-          'label field button';
+        grid-template-areas: 'label field button';
         grid-template-columns: 3fr 5fr 6rem;
         margin: 1rem;
 
@@ -798,7 +799,7 @@ body {
             }
 
             &--number {
-              color: #fefefe;
+              color: rgb(254, 254, 254);
               font-size: 1rem;
               grid-column: 4;
               grid-row: 3;
@@ -808,7 +809,7 @@ body {
 
             &--times {
               align-items: flex-end;
-              color: #fefefe;
+              color: rgb(254, 254, 254);
               display: inline-flex;
               font-size: 0.75rem;
               grid-column: 3;
@@ -877,15 +878,15 @@ body {
           overflow: auto;
           padding: 0.25rem;
 
-          &[ data-opt = 'A'] {
+          &[data-opt = 'A'] {
             grid-area: A;
           }
 
-          &[ data-opt = 'B'] {
+          &[data-opt = 'B'] {
             grid-area: B;
           }
 
-          &[ data-opt = 'C'] {
+          &[data-opt = 'C'] {
             grid-area: C;
           }
 
@@ -916,7 +917,7 @@ body {
             }
 
             &--number {
-              color: #fefefe;
+              color: rgb(254, 254, 254);
               font-size: 1rem;
               grid-column: 4;
               grid-row: 3;
@@ -926,7 +927,7 @@ body {
 
             &--times {
               align-items: flex-end;
-              color: #fefefe;
+              color: rgb(254, 254, 254);
               display: inline-flex;
               font-size: 0.75rem;
               grid-column: 3;
