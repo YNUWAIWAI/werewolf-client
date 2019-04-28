@@ -77,7 +77,7 @@
 }
 
 body {
-  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', 'monospace', 'sans-serif';
+  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
   margin: 0;
 }
 
@@ -86,8 +86,8 @@ body {
     display: grid;
     grid-area: activity;
     grid-gap: 0 2vw;
-    grid-template-columns: 1fr 1fr;
     grid-template-areas: 'chat prediction';
+    grid-template-columns: 1fr 1fr;
 
     &.expand {
       grid-area: activity / 1 / command / 1;
@@ -171,7 +171,7 @@ body {
     &--delimeter {
       align-items: center;
       animation: fadein 0.5s ease-out;
-      border-bottom: 1px solid #d4d4d4;
+      border-bottom: 1px solid rgb(212, 212, 212);
       display: flex;
       font-size: 1.5rem;
       justify-content: center;
@@ -470,7 +470,8 @@ body {
     &--navigation {
       display: grid;
       gap: 0.5rem 1rem;
-      grid-template-areas: 'show-result next-game'
+      grid-template-areas:
+        'show-result next-game'
         'show-result return-to-lobby';
 
       &--button {
@@ -651,7 +652,7 @@ body {
     z-index: var(--hide-button--z-index);
 
     &--button {
-      background: #303030;
+      background: rgb(48, 48, 48);
       border: 0;
       border-radius: 4px;
       height: var(--hide-button-height);
@@ -816,7 +817,7 @@ body {
   }
 
   &--modal {
-    background: #fafafa;
+    background: rgb(250, 250, 250);
     display: grid;
     gap: 0.5rem 0;
     grid-template-areas:
@@ -991,7 +992,7 @@ body {
         width: 100%;
       }
 
-      &[ data-state = 'fill' ] {
+      &[data-state = 'fill'] {
         background: black;
         cursor: default;
         font-size: 1.5rem;
@@ -1013,8 +1014,8 @@ body {
         '. image .'
         'name name name'
         '. . .';
-      grid-template-rows: 1fr var(--prediction-image-size) 15px 1fr;
       grid-template-columns: 1fr var(--prediction-image-size) 1fr;
+      grid-template-rows: 1fr var(--prediction-image-size) 15px 1fr;
       left: 0;
       position: sticky;
       z-index: var(--prediction--player--z-index);
@@ -1067,7 +1068,7 @@ body {
 
       &--times {
         align-items: flex-end;
-        color: #fefefe;
+        color: rgb(254, 254, 254);
         display: inline-flex;
         font-size: 0.75rem;
         grid-column: 3;
@@ -1078,7 +1079,7 @@ body {
       }
 
       &--number {
-        color: #fefefe;
+        color: rgb(254, 254, 254);
         font-size: 1rem;
         grid-column: 4;
         grid-row: 3;

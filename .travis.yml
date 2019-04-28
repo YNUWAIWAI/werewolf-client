@@ -17,5 +17,6 @@ script:
   - yarn build:production
 after_success:
   - yarn eslint
+  - yarn stylelint
   - yarn deploy-storybook --ci
   - yarn coverage
