@@ -11070,6 +11070,12 @@ style-search@^0.1.0:
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
+stylelint-config-nimiusrd@nimiusrd/stylelint-config-nimiusrd.git:
+  version "1.0.0"
+  resolved "https://codeload.github.com/nimiusrd/stylelint-config-nimiusrd/tar.gz/413e3f8fc034e981fdb151c070f0ce9fc19051c4"
+  dependencies:
+    stylelint-order "^3.0.0"
+
 stylelint-order@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-3.0.0.tgz#ec44afb93a3183dcf8c91540d4486de776250506"
