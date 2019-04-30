@@ -4820,6 +4820,10 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-config-nimiusrd@nimiusrd/eslint-config-nimiusrd.git:
+  version "1.0.0"
+  resolved "https://codeload.github.com/nimiusrd/eslint-config-nimiusrd/tar.gz/0ee62b1d1762778042c6bc60f369f787c186259c"
+
 eslint-plugin-jest@^22.4.1:
   version "22.5.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.5.1.tgz#a31dfe9f9513c6af7c17ece4c65535a1370f060b"
