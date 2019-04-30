@@ -89,7 +89,7 @@ storiesOf('village|Chat', module)
 
     return story
   })
-  .add('hunter',() => {
+  .add('hunter', () => {
     const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {

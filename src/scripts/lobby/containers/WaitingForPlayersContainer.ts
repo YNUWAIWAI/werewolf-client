@@ -44,7 +44,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       pingStatus: lobby.PingStatus.danger,
       token: player.token
     }
-
   })
 
   return {

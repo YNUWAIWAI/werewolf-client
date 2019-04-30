@@ -22,15 +22,18 @@ export default class TextInput extends React.Component<Props, State> {
       value: this.props.initialValue
     }
   }
+
   public shouldComponentUpdate() {
     return true
   }
+
   public handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       value: event.target.value
     })
     this.props.handleChange(event.target.validity.valid)(event.target.value)
   }
+
   public render() {
     return (
       <input

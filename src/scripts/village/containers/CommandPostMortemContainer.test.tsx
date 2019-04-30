@@ -71,5 +71,4 @@ describe('<CommandPostMortemContainer />', () => {
       type: ActionTypes.global.POST_CHAT
     })
   })
-
 })

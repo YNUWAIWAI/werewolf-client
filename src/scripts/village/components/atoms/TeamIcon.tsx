@@ -82,6 +82,5 @@ export default function TeamIcon(props: Props) {
           <Question />
         </div>
       )
-
   }
 }

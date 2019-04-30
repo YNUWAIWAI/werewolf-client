@@ -11,7 +11,8 @@ test('<AsideContent><div /></AsideContent>', () => {
   const wrapper = shallow(
     <AsideContent>
       <div />
-    </AsideContent>)
+    </AsideContent>
+  )
 
   expect(wrapper.children()).toHaveLength(1)
 })
