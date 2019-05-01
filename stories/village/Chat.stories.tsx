@@ -12,13 +12,13 @@ const store = createStore(
 )
 
 storiesOf('village|Chat', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('anonymousAudience', () => {
     const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
@@ -89,7 +89,7 @@ storiesOf('village|Chat', module)
 
     return story
   })
-  .add('hunter',() => {
+  .add('hunter', () => {
     const allIds = ['chat1', 'chat0']
     const byId: Props['byId'] = {
       'chat0': {

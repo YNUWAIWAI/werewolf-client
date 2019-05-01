@@ -22,15 +22,18 @@ export default class TextareaInput extends React.Component<Props, State> {
       value: this.props.initialValue
     }
   }
+
   public shouldComponentUpdate() {
     return true
   }
+
   public handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
     this.setState({
       value: event.target.value
     })
     this.props.handleChange(event.target.validity.valid)(event.target.value)
   }
+
   public render() {
     return (
       <textarea

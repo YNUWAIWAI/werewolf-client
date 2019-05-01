@@ -37,38 +37,41 @@ export default function Modal(props: Props) {
           }}
         >
           {
-            text =>
+            text => (
               <div
                 className="lo--modal--description"
               >
                 {text}
               </div>
+            )
           }
         </FormattedMessage>
         <FormattedMessage
           id="Modal.button.yes"
         >
           {
-            text =>
+            text => (
               <button
                 className="lo--modal--button yes"
                 onClick={() => props.handleClickYes(props.type)}
               >
                 {text}
               </button>
+            )
           }
         </FormattedMessage>
         <FormattedMessage
           id="Modal.button.no"
         >
           {
-            text =>
+            text => (
               <button
                 className="lo--modal--button no"
                 onClick={() => props.handleClickNo()}
               >
                 {text}
               </button>
+            )
           }
         </FormattedMessage>
       </div>

@@ -10,7 +10,6 @@ import {mount} from 'enzyme'
 
 describe('<HideButtonContainer />', () => {
   test('render', () => {
-
     const store = fakeStore(
       {
         hideButton: {

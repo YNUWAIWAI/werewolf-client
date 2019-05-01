@@ -1010,7 +1010,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('maximum')
-
       })
       test('disbled', () => {
         const validity = {

@@ -47,10 +47,11 @@ export default injectIntl(function AvatarItem(props: Props) {
             id="AvatarItem.name.anonymous"
           >
             {
-              text =>
+              text => (
                 <div className="lo--avatar-list--item--name">
                   {text}
                 </div>
+              )
             }
           </FormattedMessage> :
           <div className="lo--avatar-list--item--name">
@@ -63,10 +64,11 @@ export default injectIntl(function AvatarItem(props: Props) {
             id="AvatarItem.host"
           >
             {
-              text =>
+              text => (
                 <div className="lo--avatar-list--item--host">
                   {text}
                 </div>
+              )
             }
           </FormattedMessage> :
           null

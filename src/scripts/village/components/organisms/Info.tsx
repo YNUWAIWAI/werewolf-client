@@ -13,12 +13,13 @@ export default function Info() {
         id="Info.property.agent"
       >
         {
-          text =>
+          text => (
             <div
               className="vi--info--property agent"
             >
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <InfoAgent />
@@ -26,12 +27,13 @@ export default function Info() {
         id="Info.property.role"
       >
         {
-          text =>
+          text => (
             <div
               className="vi--info--property role"
             >
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <InfoRole />
@@ -39,12 +41,13 @@ export default function Info() {
         id="Info.property.team"
       >
         {
-          text =>
+          text => (
             <div
               className="vi--info--property team"
             >
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <InfoTeam />

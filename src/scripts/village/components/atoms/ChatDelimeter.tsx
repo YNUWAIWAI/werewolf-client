@@ -15,10 +15,11 @@ export default function ChatDelimeter(props: Props) {
         }}
       >
         {
-          text =>
+          text => (
             <div className="vi--chat--delimeter">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
     )
@@ -29,10 +30,11 @@ export default function ChatDelimeter(props: Props) {
       id="ChatContainer.postMortem"
     >
       {
-        text =>
+        text => (
           <div className="vi--chat--delimeter">
             {text}
           </div>
+        )
       }
     </FormattedMessage>
   )

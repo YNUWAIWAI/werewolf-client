@@ -121,13 +121,13 @@ const suggesttedData = [
 ]
 
 storiesOf('village|Command/CommandInput', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('grave', () => {
     const story =
       <div style={{

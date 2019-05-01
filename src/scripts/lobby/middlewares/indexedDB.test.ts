@@ -1,4 +1,5 @@
 /* global lobby */
+/* eslint no-extra-parens: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
 import * as FDB from 'fake-indexeddb'

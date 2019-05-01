@@ -7,7 +7,7 @@ const lang = (() => {
     return Language.fr
   } else if ((/^ita?/).test(navigator.language)) {
     return Language.it
-  } else if ((/^j(a(?!v)|pn)/).test(navigator.language)) {
+  } else if ((/^ja(?!v)|pn/).test(navigator.language)) {
     return Language.ja
   }
 

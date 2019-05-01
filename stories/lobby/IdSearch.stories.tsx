@@ -14,13 +14,13 @@ const store = createStore(
 )
 
 storiesOf('lobby|IdSearch', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('before search', () => {
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')

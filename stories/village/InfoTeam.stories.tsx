@@ -12,13 +12,13 @@ const store = createStore(
 )
 
 storiesOf('village|Info/InfoTeam', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('villager', () => {
     const story =
       <div className="vi--info">

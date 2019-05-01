@@ -20,6 +20,7 @@ export default class Chat extends React.Component<Props, State> {
       atBottom: true
     }
   }
+
   public componentDidMount() {
     this.scrollToBottom()
   }

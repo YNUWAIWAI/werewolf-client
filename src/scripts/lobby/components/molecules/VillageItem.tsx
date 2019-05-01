@@ -17,10 +17,11 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(villageName)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop village-name">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <div className="lo--village--item--val village-name">
@@ -33,10 +34,11 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(hostName)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop host-name">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       {
@@ -48,10 +50,11 @@ export default function VillageItem(props: Props) {
             id="VillageItem.hostName.anonymous"
           >
             {
-              text =>
+              text => (
                 <div className="lo--village--item--val host-name">
                   {text}
                 </div>
+              )
             }
           </FormattedMessage>
       }
@@ -59,10 +62,11 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(setup)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop setup">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <FormattedMessage
@@ -73,20 +77,22 @@ export default function VillageItem(props: Props) {
         }}
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--val setup1">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <FormattedMessage
         id={`VillageItem.val(avatar, ${props.avatar})`}
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--val setup2">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <Member human={props.playerSetting.human} robot={props.playerSetting.robot} role={props.roleSetting} />
@@ -94,10 +100,11 @@ export default function VillageItem(props: Props) {
         id="VillageItem.label(comment)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop comment">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <div className="lo--village--item--val comment">

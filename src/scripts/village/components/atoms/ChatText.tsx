@@ -3,37 +3,36 @@ import {idGenerater} from '../../util'
 
 const getChunkId = idGenerater('chunk')
 
-const parseChat = (text: string) =>
-  text
-    .split(/(?:\n|\r)+/)
-    .map(chunk => {
-      const parsedText = chunk
-        .split(/(>>\d+)/)
-        .map(t => {
-          const match = (/>>(\d+)/).exec(t)
+const parseChat = (text: string) => text
+  .split(/(?:\n|\r)+/)
+  .map(chunk => {
+    const parsedText = chunk
+      .split(/(?<id>>>\d+)/)
+      .map(t => {
+        const match = (/>>(?<id>\d+)/).exec(t)
 
-          if (match && match[1]) {
-            const id = match[1]
+        if (match && match.groups) {
+          const id = match.groups.id
 
-            return (
-              <a href={`#message${id}`} key={`#message${id}`}>
-                {`>>${id}`}
-              </a>
-            )
-          }
+          return (
+            <a href={`#message${id}`} key={`#message${id}`}>
+              {`>>${id}`}
+            </a>
+          )
+        }
 
-          return t
-        })
+        return t
+      })
 
-      return (
-        <p
-          className="vi--chat--text--chunk"
-          key={getChunkId()}
-        >
-          {parsedText}
-        </p>
-      )
-    })
+    return (
+      <p
+        className="vi--chat--text--chunk"
+        key={getChunkId()}
+      >
+        {parsedText}
+      </p>
+    )
+  })
 
 interface Props {
   readonly text: string

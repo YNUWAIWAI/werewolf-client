@@ -13,13 +13,13 @@ const store = createStore(
 )
 
 storiesOf('village|Result', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('13 players', () => {
     const agents: Props['agents'] = {
       'agent0': {

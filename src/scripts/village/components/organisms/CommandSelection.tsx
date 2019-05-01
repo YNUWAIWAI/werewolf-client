@@ -29,7 +29,7 @@ export default function CommandSelection(props: Props) {
       <TransitionGroup className="vi--command--selection--select">
         {
           props.agents
-            .map(a =>
+            .map(a => (
               <CSSTransition
                 appear
                 classNames="vi--command--selection--option--transition"
@@ -48,7 +48,7 @@ export default function CommandSelection(props: Props) {
                   name={a.name}
                 />
               </CSSTransition>
-            )
+            ))
         }
       </TransitionGroup>
     </div>

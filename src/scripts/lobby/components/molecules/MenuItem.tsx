@@ -18,7 +18,7 @@ export default function MenuItem(props: Props) {
       id={props.id}
     >
       {
-        text =>
+        text => (
           <li
             className={`${props.className} ${props.disabled ? 'disabled' : ''} ${props.isLoading ? 'loader' : ''}`}
             onClick={() => {
@@ -35,6 +35,7 @@ export default function MenuItem(props: Props) {
                 text
             }
           </li>
+        )
       }
     </FormattedMessage>
   )
