@@ -7,7 +7,7 @@ const parseChat = (text: string) => text
   .split(/(?:\n|\r)+/)
   .map(chunk => {
     const parsedText = chunk
-      .split(/>>\d+/)
+      .split(/(?<id>>>\d+)/)
       .map(t => {
         const match = (/>>(?<id>\d+)/).exec(t)
 
