@@ -15,13 +15,13 @@ export interface Props {
 }
 
 export default function CommandNavigation(props: Props) {
-  const items = props.items.map(item =>
+  const items = props.items.map(item => (
     <FormattedMessage
       id={item.id}
       key={item.id}
     >
       {
-        text =>
+        text => (
           <button
             className={`vi--command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
             disabled={item.disabled}
@@ -37,9 +37,10 @@ export default function CommandNavigation(props: Props) {
                 text
             }
           </button>
+        )
       }
     </FormattedMessage>
-  )
+  ))
 
   return (
     <div className="vi--command--navigation">

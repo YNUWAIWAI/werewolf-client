@@ -34,13 +34,13 @@ const store = createStore(
 )
 
 storiesOf('village|Info', module)
-  .addDecorator(getStory =>
+  .addDecorator(getStory => (
     <Provider store={store}>
       <IntlProvider>
         {getStory()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('default', () => {
     const story = <Info />
 

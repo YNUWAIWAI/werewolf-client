@@ -124,13 +124,13 @@ const suggesttedData = [
 ]
 
 storiesOf('village|Command', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('morning (without limited chat)', () => {
     const props = {
       characterLimit: 140,

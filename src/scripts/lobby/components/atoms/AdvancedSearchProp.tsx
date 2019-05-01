@@ -29,10 +29,11 @@ export default function AdvancedSearchProp(props: Props) {
         id={`AdvancedSearch.label(${props.name})`}
       >
         {
-          text =>
+          text => (
             <label htmlFor={props.name}>
               {text}
             </label>
+          )
         }
       </FormattedMessage>
     </div>

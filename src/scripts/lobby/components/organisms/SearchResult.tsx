@@ -20,10 +20,11 @@ export default function SearchResult(props: Props) {
         id="SearchResult.notFound"
       >
         {
-          text =>
+          text => (
             <div className={`${props.className}--not-found`}>
               {text}
             </div>
+          )
         }
       </FormattedMessage>
     )

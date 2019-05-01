@@ -29,13 +29,13 @@ export default function MemberRole(props: Props) {
         id={`MemberRole(${props.id})`}
       >
         {
-          text =>
+          text => (
             <span
               className={`${props.className}--caption`}
             >
               {text}
             </span>
-
+          )
         }
       </FormattedMessage>
     </div>

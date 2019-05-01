@@ -311,7 +311,7 @@ export default class CommandInput extends React.Component<Props, State> {
         />
         <FormattedMessage id="CommandInput.send">
           {
-            text =>
+            text => (
               <button
                 className="vi--command--input--send"
                 disabled={!(this.isSendable() && this.isValidTextLength())}
@@ -319,6 +319,7 @@ export default class CommandInput extends React.Component<Props, State> {
               >
                 {text}
               </button>
+            )
           }
         </FormattedMessage>
       </div>

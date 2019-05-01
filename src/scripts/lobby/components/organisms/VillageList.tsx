@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function VillageList(props: Props) {
-  const items = props.items.map(item =>
+  const items = props.items.map(item => (
     <CSSTransition
       appear
       classNames="lo--village--item--transition"
@@ -26,7 +26,7 @@ export default function VillageList(props: Props) {
         isPlayer={props.isPlayer}
       />
     </CSSTransition>
-  )
+  ))
 
   return (
     <TransitionGroup className="lo--village">

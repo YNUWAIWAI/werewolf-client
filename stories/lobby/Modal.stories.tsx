@@ -12,13 +12,13 @@ const store = createStore(
 )
 
 storiesOf('lobby|Modal', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('default', () => {
     const values = {
       name: 'Alice',

@@ -104,12 +104,13 @@ export default function ResultCell(props: Props) {
           }
         >
           {
-            (... text) =>
+            (... text) => (
               <div
                 className={`vi--result--cell vi--result--cell--${props.type}`}
               >
                 {text}
               </div>
+            )
           }
         </FormattedMessage>
       )
@@ -137,12 +138,13 @@ export default function ResultCell(props: Props) {
           }
         >
           {
-            (... text) =>
+            (... text) => (
               <div
                 className={`vi--result--cell vi--result--cell--${props.type}`}
               >
                 {text}
               </div>
+            )
           }
         </FormattedMessage>
       )
@@ -160,12 +162,13 @@ export default function ResultCell(props: Props) {
           key="status"
         >
           {
-            text =>
+            text => (
               <div
                 className={`vi--result--cell vi--result--cell--${props.type} ${props.status === 'alive' ? '' : 'dead'}`}
               >
                 {text}
               </div>
+            )
           }
         </FormattedMessage>
       )

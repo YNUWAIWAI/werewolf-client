@@ -181,13 +181,13 @@ const players: Props['players'] = [
 ]
 
 storiesOf('lobby|WaitingForPlayers', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('15 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)

@@ -48,7 +48,7 @@ export default function Prediction(props: Props) {
       className="vi--prediction--empty"
       key="empty"
     />,
-    ... props.roleStatus.map(role =>
+    ... props.roleStatus.map(role => (
       <PredictionRole
         handleMouseEnter={props.handleMouseEnter(role.id)}
         handleMouseLeave={props.handleMouseLeave}
@@ -57,26 +57,24 @@ export default function Prediction(props: Props) {
         name={role.name}
         numberOfAgents={role.numberOfAgents}
       />
-    ),
-    ... props.playerStatus.map(player =>
-      [
-        <PredictionPlayer
-          image={player.image}
-          key={player.id}
-          name={player.name}
-          status={player.status}
-        />,
-        ... props.roleStatus.map(role =>
-          <PredictionItem
-            date={just(props.table[String(player.id)][role.id]).date}
-            fixed={just(props.table[String(player.id)][role.id]).fixed}
-            handleBoardClick={props.handleBoardClick(player.id, role.id)}
-            key={player.id + role.id}
-            state={just(props.table[String(player.id)][role.id]).state}
-          />
-        )
-      ]
-    )
+    )),
+    ... props.playerStatus.map(player => [
+      <PredictionPlayer
+        image={player.image}
+        key={player.id}
+        name={player.name}
+        status={player.status}
+      />,
+      ... props.roleStatus.map(role => (
+        <PredictionItem
+          date={just(props.table[String(player.id)][role.id]).date}
+          fixed={just(props.table[String(player.id)][role.id]).fixed}
+          handleBoardClick={props.handleBoardClick(player.id, role.id)}
+          key={player.id + role.id}
+          state={just(props.table[String(player.id)][role.id]).state}
+        />
+      ))
+    ])
   ]
 
   return (

@@ -11,13 +11,13 @@ const store = createStore(
 )
 
 storiesOf('village|Timer', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('default', () => {
     const story = <Timer />
 

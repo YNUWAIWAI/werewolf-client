@@ -69,9 +69,11 @@ export default class SettingsBox extends React.Component<Props, State> {
       }
     }
   }
+
   public shouldComponentUpdate() {
     return true
   }
+
   public handleChange(propName: PropName): (valid: boolean) => (value: string) => void {
     switch (propName) {
       case PropName.language:
@@ -123,6 +125,7 @@ export default class SettingsBox extends React.Component<Props, State> {
         throw Error(`Unknown propName: ${propName}`)
     }
   }
+
   public handleSubmit(propName: PropName) {
     return (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault()
@@ -153,6 +156,7 @@ export default class SettingsBox extends React.Component<Props, State> {
       }
     }
   }
+
   public render() {
     return (
       <div className="lo--settings">
@@ -161,10 +165,11 @@ export default class SettingsBox extends React.Component<Props, State> {
             id="Settings.head(language)"
           >
             {
-              text =>
+              text => (
                 <div className="lo--settings--bucket--head">
                   {text}
                 </div>
+              )
             }
           </FormattedMessage>
           <form
@@ -180,7 +185,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                text =>
+                text => (
                   <button
                     className="lo--settings--bucket--form--button"
                     disabled={!this.state.language.valid}
@@ -188,6 +193,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                   >
                     {text}
                   </button>
+                )
               }
             </FormattedMessage>
           </form>
@@ -197,10 +203,11 @@ export default class SettingsBox extends React.Component<Props, State> {
             id="Settings.head(user)"
           >
             {
-              text =>
+              text => (
                 <div className="lo--settings--bucket--head">
                   {text}
                 </div>
+              )
             }
           </FormattedMessage>
           <form
@@ -211,13 +218,14 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.label(userName)"
             >
               {
-                text =>
+                text => (
                   <label
                     className="lo--settings--bucket--form--label"
                     htmlFor="userName"
                   >
                     {text}
                   </label>
+                )
               }
             </FormattedMessage>
             <TextInput
@@ -234,7 +242,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                text =>
+                text => (
                   <button
                     className="lo--settings--bucket--form--button"
                     disabled={!this.state.userName.valid}
@@ -242,6 +250,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                   >
                     {text}
                   </button>
+                )
               }
             </FormattedMessage>
           </form>
@@ -253,13 +262,14 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.label(userEmail)"
             >
               {
-                text =>
+                text => (
                   <label
                     className="lo--settings--bucket--form--label"
                     htmlFor="userEmail"
                   >
                     {text}
                   </label>
+                )
               }
             </FormattedMessage>
             <EmailInput
@@ -272,7 +282,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                text =>
+                text => (
                   <button
                     className="lo--settings--bucket--form--button"
                     disabled={!this.state.userEmail.valid}
@@ -280,6 +290,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                   >
                     {text}
                   </button>
+                )
               }
             </FormattedMessage>
           </form>
@@ -291,13 +302,14 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.label(userPassword)"
             >
               {
-                text =>
+                text => (
                   <label
                     className="lo--settings--bucket--form--label"
                     htmlFor="userPassword"
                   >
                     {text}
                   </label>
+                )
               }
             </FormattedMessage>
             <PasswordInput
@@ -309,7 +321,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(save)"
             >
               {
-                text =>
+                text => (
                   <button
                     className="lo--settings--bucket--form--button"
                     disabled={!this.state.userPassword.valid}
@@ -317,6 +329,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                   >
                     {text}
                   </button>
+                )
               }
             </FormattedMessage>
           </form>
@@ -326,10 +339,11 @@ export default class SettingsBox extends React.Component<Props, State> {
             id="Settings.head(danger)"
           >
             {
-              text =>
+              text => (
                 <div className="lo--settings--bucket--head danger">
                   {text}
                 </div>
+              )
             }
           </FormattedMessage>
           <form
@@ -340,13 +354,14 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(logout)"
             >
               {
-                text =>
+                text => (
                   <button
                     className={`lo--settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     type="submit"
                   >
                     {text}
                   </button>
+                )
               }
             </FormattedMessage>
           </form>
@@ -358,7 +373,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               id="Settings.button(deactivate)"
             >
               {
-                text =>
+                text => (
                   <button
                     className={`lo--settings--bucket--form--button ${this.state.language.valid ? '' : 'invalid'}`}
                     disabled
@@ -366,6 +381,7 @@ export default class SettingsBox extends React.Component<Props, State> {
                   >
                     {text}
                   </button>
+                )
               }
             </FormattedMessage>
           </form>

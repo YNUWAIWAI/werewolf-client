@@ -44,10 +44,11 @@ export default function ChatDate(props: Props) {
       }}
     >
       {
-        (... text) =>
+        (... text) => (
           <div className="vi--chat--date">
             {text}
           </div>
+        )
       }
     </FormattedMessage>
   )

@@ -11,10 +11,11 @@ export default function Header(props: Props) {
       id={props.id}
     >
       {
-        text =>
+        text => (
           <div className="lo--header">
             {text}
           </div>
+        )
       }
     </FormattedMessage>
   )

@@ -100,10 +100,11 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(villageName)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop village-name">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       {
@@ -136,12 +137,13 @@ export default function BuildVillageBox(props: Props) {
             id={`BuildVillage.villageName.anonymous(${props.value.villageName})`}
           >
             {
-              text =>
+              text => (
                 <div
                   className="lo--village--item--val village-name"
                 >
                   {text}
                 </div>
+              )
             }
           </FormattedMessage>
       }
@@ -149,10 +151,11 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(hostName)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop host-name">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       {
@@ -164,10 +167,11 @@ export default function BuildVillageBox(props: Props) {
             id="BuildVillage.hostName.anonymous"
           >
             {
-              text =>
+              text => (
                 <div className="lo--village--item--val host-name">
                   {text}
                 </div>
+              )
             }
           </FormattedMessage>
       }
@@ -175,10 +179,11 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(setup)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop setup">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <div className={`lo--village--item--val setup1 build ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
@@ -218,10 +223,11 @@ export default function BuildVillageBox(props: Props) {
         id="BuildVillage.label(comment)"
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--prop comment">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <FormattedMessage

@@ -21,17 +21,15 @@ interface Props {
   }
 }
 
-const getMember = (role: Readonly<lobby.RoleSetting>) =>
-  ORDERED_ROLE_LIST
-    .map(item =>
-      <MemberRole
-        className="lo--village--item--member-select--role--item"
-        id={item.id}
-        image={item.image}
-        key={item.id}
-        numberOfAgents={role[item.id]}
-      />
-    )
+const getMember = (role: Readonly<lobby.RoleSetting>) => ORDERED_ROLE_LIST.map(item => (
+  <MemberRole
+    className="lo--village--item--member-select--role--item"
+    id={item.id}
+    image={item.image}
+    key={item.id}
+    numberOfAgents={role[item.id]}
+  />
+))
 
 export default function MemberSelect(props: Props) {
   const member = {
@@ -62,10 +60,12 @@ export default function MemberSelect(props: Props) {
         }}
       >
         {
-          text =>
+          text => (
+
             <div className="lo--village--item--member-select--human">
               {text}
             </div>
+          )
         }
       </FormattedMessage>
       <label className="lo--village--item--member-select--role" data-opt="A">

@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function Member(props: Props) {
-  const items = ORDERED_ROLE_LIST.map(item =>
+  const items = ORDERED_ROLE_LIST.map(item => (
     <MemberRole
       className="lo--village--item--member--role--item"
       id={item.id}
@@ -18,7 +18,7 @@ export default function Member(props: Props) {
       key={item.id}
       numberOfAgents={props.role[item.id]}
     />
-  )
+  ))
 
   return (
     <div className="lo--village--item--member">
@@ -29,10 +29,11 @@ export default function Member(props: Props) {
         }}
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--member--robot">
               {text}
             </div>
+          )
 
         }
       </FormattedMessage>
@@ -43,10 +44,11 @@ export default function Member(props: Props) {
         }}
       >
         {
-          text =>
+          text => (
             <div className="lo--village--item--member--human">
               {text}
             </div>
+          )
 
         }
       </FormattedMessage>

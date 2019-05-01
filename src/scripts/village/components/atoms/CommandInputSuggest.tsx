@@ -32,6 +32,7 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
   }
 
   private listRef = React.createRef<HTMLDivElement>()
+
   private itemsRef: HTMLDivElement[] = []
 
   public render() {
@@ -52,7 +53,7 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
           style={style}
         >
           {
-            this.props.data.map((item, index) =>
+            this.props.data.map((item, index) => (
               <div
                 className={`vi--command--input--suggest--item ${index === this.props.selected ? 'selected' : ''}`}
                 key={item.id}
@@ -79,7 +80,7 @@ export default class CommandInputSuggest extends React.Component<Props, {}> {
                   )
                 }
               </div>
-            )
+            ))
           }
         </div>
       </div>

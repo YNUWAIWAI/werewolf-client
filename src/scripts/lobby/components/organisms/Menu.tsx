@@ -16,7 +16,7 @@ export interface Props {
 }
 
 export default function Menu(props: Props) {
-  const items = props.items.map(item =>
+  const items = props.items.map(item => (
     <MenuItem
       className={props.itemClass}
       disabled={item.disabled}
@@ -26,7 +26,7 @@ export default function Menu(props: Props) {
       transition={props.transition}
       types={item.types}
     />
-  )
+  ))
 
   return (
     <ul className={props.class}>

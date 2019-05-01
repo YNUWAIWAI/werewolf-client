@@ -68,7 +68,8 @@ test('HIDE_RESULT', () => {
     reducer(
       initialState,
       action
-    )).toEqual({
+    )
+  ).toEqual({
     loading: true,
     visible: false
   })

@@ -18,7 +18,7 @@ export interface Props {
 }
 
 export default function AvatarList(props: Props) {
-  const items = props.items.map(item =>
+  const items = props.items.map(item => (
     <CSSTransition
       appear
       classNames="lo--avatar-list--item--transition"
@@ -34,7 +34,7 @@ export default function AvatarList(props: Props) {
         {... item}
       />
     </CSSTransition>
-  )
+  ))
 
   return (
     <TransitionGroup className="lo--avatar-list">

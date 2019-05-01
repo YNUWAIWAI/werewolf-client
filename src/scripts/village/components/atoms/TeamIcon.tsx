@@ -26,10 +26,11 @@ export default function TeamIcon(props: Props) {
             id="TeamIcon.villager"
           >
             {
-              text =>
+              text => (
                 <span className={`${props.class}--name`}>
                   {text}
                 </span>
+              )
             }
           </FormattedMessage>
         </div>
@@ -46,10 +47,11 @@ export default function TeamIcon(props: Props) {
             id="TeamIcon.werehamster"
           >
             {
-              text =>
+              text => (
                 <span className={`${props.class}--name`}>
                   {text}
                 </span>
+              )
             }
           </FormattedMessage>
         </div>
@@ -66,10 +68,11 @@ export default function TeamIcon(props: Props) {
             id="TeamIcon.werewolf"
           >
             {
-              text =>
+              text => (
                 <span className={`${props.class}--name`}>
                   {text}
                 </span>
+              )
             }
           </FormattedMessage>
         </div>

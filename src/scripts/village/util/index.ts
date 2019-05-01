@@ -7,19 +7,19 @@ import {
 
 export const countText = (text: string): number => Array.of(... text).length
 export const getBaseUri = (id: string): string => {
-  const match = (/^([^\n]+)\/\w+$/).exec(id)
+  const match = (/^(?<baseUri>[^\n]+)\/\w+$/).exec(id)
 
-  if (match && match[1]) {
-    return match[1]
+  if (match && match.groups) {
+    return match.groups.baseUri
   }
 
   return ''
 }
 export const trimBaseUri = (id: string): string => {
-  const match = (/\/(\w+)$/).exec(id)
+  const match = (/\/(?<path>\w+)$/).exec(id)
 
-  if (match && match[1]) {
-    return match[1]
+  if (match && match.groups) {
+    return match.groups.path
   }
 
   return ''
@@ -244,7 +244,7 @@ export const just = <T>(value: T | undefined | null): T => {
   return value
 }
 
-export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(\w)/g, (_, p1) => p1.toUpperCase())
+export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(?<head>\w)/g, (_, p1) => p1.toUpperCase())
 
 export const strToAgentStatus = (str: string): village.AgentStatus => {
   const agentStatus = [

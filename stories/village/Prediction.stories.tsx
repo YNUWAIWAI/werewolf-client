@@ -5,13 +5,13 @@ import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 
 storiesOf('village|Prediction', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <div className="vi--app">
       <div className="vi--activity">
         {story()}
       </div>
     </div>
-  )
+  ))
   .add('13 players(spec is invisible)', () => {
     const playerStatus: Props['playerStatus'] = [
       {

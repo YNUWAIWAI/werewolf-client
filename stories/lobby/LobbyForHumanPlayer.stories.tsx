@@ -14,13 +14,13 @@ const store = createStore(
 )
 
 storiesOf('lobby|LobbyForHumanPlayer', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
         {story()}
       </IntlProvider>
     </Provider>
-  )
+  ))
   .add('default', () => {
     const menuItems = [
       {
