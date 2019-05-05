@@ -9,6 +9,7 @@ module.exports = {
     village: './src/scripts/village'
   },
   externals: {
+    'fuse.js': 'Fuse',
     'prop-types': 'PropTypes',
     'react': 'React',
     'react-dom': 'ReactDOM',
