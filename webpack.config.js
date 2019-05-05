@@ -9,11 +9,13 @@ module.exports = {
     village: './src/scripts/village'
   },
   externals: {
+    'fuse.js': 'Fuse',
     'prop-types': 'PropTypes',
     'react': 'React',
     'react-dom': 'ReactDOM',
     'react-intl': 'ReactIntl',
     'react-redux': 'ReactRedux',
+    'react-select': 'Select',
     'redux': 'Redux'
   },
   mode: 'production',
