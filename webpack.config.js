@@ -9,10 +9,12 @@ module.exports = {
     village: './src/scripts/village'
   },
   externals: {
+    'emotion': 'emotion',
     'fuse.js': 'Fuse',
     'prop-types': 'PropTypes',
     'react': 'React',
     'react-dom': 'ReactDOM',
+    'react-input-autosize': 'AutosizeInput',
     'react-intl': 'ReactIntl',
     'react-redux': 'ReactRedux',
     'react-select': 'Select',
