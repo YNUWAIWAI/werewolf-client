@@ -1,11 +1,14 @@
 /* global village */
 import * as React from 'react'
 import PredictionSpec from './PredictionSpec'
-import {shallow} from 'enzyme'
+import {getMessages} from '../../../../i18n/village'
+import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+
+const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 
 describe('<PredictionRole />', () => {
   test('visible={true}', () => {
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <PredictionSpec
         role={village.RoleId.villager}
         style={{}}
@@ -16,7 +19,7 @@ describe('<PredictionRole />', () => {
     expect(wrapper.isEmptyRender()).toBe(false)
   })
   test('visible={false}', () => {
-    const wrapper = shallow(
+    const wrapper = mountWithIntl(
       <PredictionSpec
         role={village.RoleId.villager}
         style={{}}
