@@ -1,4 +1,4 @@
-// import {Language, getMessages} from '../../i18n/landing'
+import {Language, getMessages} from '../../i18n/landing'
 
 const lang = (() => {
   if ((/^eng?/).test(navigator.language)) {
