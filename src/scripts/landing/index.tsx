@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as ReactDomServer from 'react-dom/server'
+import * as ReactDom from 'react-dom'
 import {Language, getMessages} from '../../i18n/landing'
 import Lead from './components/Lead'
 
@@ -44,4 +44,12 @@ const lang = (() => {
 
 // ids.forEach(insertText)
 
-console.log(ReactDomServer.renderToString(<Lead />))
+const lead = document.getElementById('lead')
+
+if (lead) {
+  ReactDom.render(
+    <Lead />,
+    lead
+  )
+}
+
