@@ -2,6 +2,8 @@
 @import models.UserModel
 @(loginForm: Form[UserModel], signupForm: Form[UserModel])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
 @scripts = {
+  <script crossorigin src="https://unpkg.com/react@@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
   <script defer src='@routes.Assets.at("javascripts/landing.js")'></script>
 }
 @template("Home", "landing.css", scripts) {

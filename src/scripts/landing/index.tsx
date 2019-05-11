@@ -1,4 +1,7 @@
+import * as React from 'react'
+import * as ReactDomServer from 'react-dom/server'
 import {Language, getMessages} from '../../i18n/landing'
+import Lead from './components/Lead'
 
 const lang = (() => {
   if ((/^eng?/).test(navigator.language)) {
@@ -40,9 +43,5 @@ const lang = (() => {
 // ]
 
 // ids.forEach(insertText)
-
-import * as React from 'react'
-import * as ReactDomServer from 'react-dom/server'
-import Lead from './components/Lead'
 
 console.log(ReactDomServer.renderToString(<Lead />))
