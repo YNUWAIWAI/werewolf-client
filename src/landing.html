@@ -10,24 +10,12 @@
 }
 @template("Home", "landing.css", scripts) {
   <div class="lead" id="lead"></div>
-  @form(action = routes.AuthController.loginResult(), 'class->"login", 'id->"login"') {
+  @form(action = routes.AuthController.loginResult(), 'class->"login") {
     @if(loginForm.hasErrors) {
       <p class="error" id="login-error"></p>
     }
-    <div class="field" id="login-field">
-      <dl id="login-email_field">
-        <dt><label class="label" for="login-email" id="login-label-email"><!-- signup-label-email --></label></dt>
-        <dd><input type="text" name="email" id="login-email" class="input" value="" autocomplete="off" autofocus required></dd>
-      </dl>
-    </div>
-    <div class="field">
-      <dl id="login-divassword_field">
-        <dt><label class="label" for="login-password" id="login-label-password"><!-- login-label-password --></label></dt>
-        <dd><input type="password" name="password" id="login-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
-      </dl>
-    </div>
+    <div id="login-filed"></div>
     @CSRF.formField
-    <button class="button" id="login-submit" type="submit"><!-- login-submit --></button>
   }
   @form(action = routes.AuthController.signupResult(), 'class->"signup") {
     @if(signupForm.hasErrors) {
