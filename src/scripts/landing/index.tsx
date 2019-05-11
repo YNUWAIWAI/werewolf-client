@@ -1,7 +1,13 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
+import * as en from 'react-intl/locale-data/en'
+import * as fr from 'react-intl/locale-data/fr'
+import * as it from 'react-intl/locale-data/it'
+import * as ja from 'react-intl/locale-data/ja'
+import {IntlProvider, addLocaleData} from 'react-intl'
 import {Language, getMessages} from '../../i18n/landing'
 import Lead from './components/Lead'
+import LoginError from './components/LoginError'
 
 const lang = (() => {
   if ((/^eng?/).test(navigator.language)) {
@@ -17,7 +23,8 @@ const lang = (() => {
   return Language.en
 })()
 
-// const messages = getMessages(lang)
+addLocaleData([... en, ... fr, ... it, ... ja])
+const messages = getMessages(lang)
 // const insertText = (id: string) => {
 //   const elem = document.getElementById(id)
 
@@ -45,11 +52,27 @@ const lang = (() => {
 // ids.forEach(insertText)
 
 const lead = document.getElementById('lead')
+const loginError = document.getElementById('login-error')
 
 if (lead) {
   ReactDom.render(
-    <Lead />,
+    <IntlProvider
+      locale={lang}
+      messages={messages}
+    >
+      <Lead />
+    </IntlProvider>,
     lead
   )
 }
-
+if (loginError) {
+  ReactDom.render(
+    <IntlProvider
+      locale={lang}
+      messages={messages}
+    >
+      <LoginError />
+    </IntlProvider>,
+    loginError
+  )
+}

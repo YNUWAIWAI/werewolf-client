@@ -10,7 +10,7 @@
   <div class="lead" id="lead"></div>
   @form(action = routes.AuthController.loginResult(), 'class->"login") {
     @if(loginForm.hasErrors) {
-      <p class="error" id="login-error"><!-- login-error --></p>
+      <p class="error" id="login-error"></p>
     }
     <div class="field">
       <dl id="login-email_field">
