@@ -10,11 +10,11 @@
 }
 @template("Home", "landing.css", scripts) {
   <div class="lead" id="lead"></div>
-  @form(action = routes.AuthController.loginResult(), 'class->"login") {
+  @form(action = routes.AuthController.loginResult(), 'class->"login", 'id->"login"') {
     @if(loginForm.hasErrors) {
       <p class="error" id="login-error"></p>
     }
-    <div class="field">
+    <div class="field" id="login-field">
       <dl id="login-email_field">
         <dt><label class="label" for="login-email" id="login-label-email"><!-- signup-label-email --></label></dt>
         <dd><input type="text" name="email" id="login-email" class="input" value="" autocomplete="off" autofocus required></dd>

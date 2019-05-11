@@ -8,6 +8,7 @@ import {IntlProvider, addLocaleData} from 'react-intl'
 import {Language, getMessages} from '../../i18n/landing'
 import Lead from './components/Lead'
 import LoginError from './components/LoginError'
+import LoginFiled from './components/LoginField'
 
 const lang = (() => {
   if ((/^eng?/).test(navigator.language)) {
@@ -53,6 +54,7 @@ const messages = getMessages(lang)
 
 const lead = document.getElementById('lead')
 const loginError = document.getElementById('login-error')
+const loginFiled = document.getElementById('login-filed')
 
 if (lead) {
   ReactDom.render(
@@ -72,6 +74,17 @@ if (loginError) {
       messages={messages}
     >
       <LoginError />
+    </IntlProvider>,
+    loginError
+  )
+}
+if (loginFiled) {
+  ReactDom.render(
+    <IntlProvider
+      locale={lang}
+      messages={messages}
+    >
+      <LoginFiled />
     </IntlProvider>,
     loginError
   )
