@@ -7,6 +7,7 @@ import {IntlProvider, addLocaleData} from 'react-intl'
 import {Language, getMessages} from '../../i18n/landing'
 import Lead from './components/Lead'
 import Login from './components/Login'
+import Signup from './components/Signup'
 
 addLocaleData([... en, ... fr, ... it, ... ja])
 
@@ -32,6 +33,11 @@ export default function App(props: Props) {
         action={props.loginAction}
         csrfToken={props.csrfToken}
         error={props.loginError}
+      />
+      <Signup
+        action={props.signupAction}
+        csrfToken={props.csrfToken}
+        error={props.signupError}
       />
     </IntlProvider>
   )
