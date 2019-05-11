@@ -111,7 +111,7 @@ export default class LoginField extends React.Component<Props, State> {
           {
             text => (
               <button
-                className="login-submit"
+                className="button"
                 type="submit"
               >
                 {text}
