@@ -91,15 +91,15 @@ export default class LoginField extends React.Component<Props, State> {
             <dd>
               <input
                 autoComplete="off"
-                autoFocus
                 className="input"
                 id="login-password"
+                minLength={8}
                 name="password"
                 onChange={
                   event => this.handlePasswordChange(event.target.value)
                 }
                 required
-                type="text"
+                type="password"
                 value={this.state.password}
               />
             </dd>
