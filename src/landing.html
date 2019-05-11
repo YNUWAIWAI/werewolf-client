@@ -15,7 +15,7 @@
       <p class="error" id="login-error"></p>
     }
     <div id="login-filed"></div>
-    @CSRF.formField
+    @CSRF.getToken
   }
   @form(action = routes.AuthController.signupResult(), 'class->"signup") {
     @if(signupForm.hasErrors) {
