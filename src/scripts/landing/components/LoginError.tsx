@@ -10,9 +10,9 @@ export default function LoginError(props: Props) {
     >
       {
         text => (
-          <>
+          <p className="error">
             {text}
-          </>
+          </p>
         )
       }
     </FormattedMessage>

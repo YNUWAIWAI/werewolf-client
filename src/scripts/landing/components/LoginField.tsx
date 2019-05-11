@@ -30,7 +30,7 @@ export default class LoginField extends React.Component<Props, State> {
 
   public render() {
     return (
-      <>
+      <div className="login-field">
         <div className="field">
           <dl>
             <dt>
@@ -119,7 +119,7 @@ export default class LoginField extends React.Component<Props, State> {
             )
           }
         </FormattedMessage>
-      </>
+      </div>
     )
   }
 }

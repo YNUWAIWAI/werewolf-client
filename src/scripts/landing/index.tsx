@@ -1,14 +1,5 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import * as en from 'react-intl/locale-data/en'
-import * as fr from 'react-intl/locale-data/fr'
-import * as it from 'react-intl/locale-data/it'
-import * as ja from 'react-intl/locale-data/ja'
-import {IntlProvider, addLocaleData} from 'react-intl'
-import {Language, getMessages} from '../../i18n/landing'
-import Lead from './components/Lead'
-import LoginError from './components/LoginError'
-import LoginFiled from './components/LoginField'
 
 const lang = (() => {
   if ((/^eng?/).test(navigator.language)) {
@@ -24,8 +15,6 @@ const lang = (() => {
   return Language.en
 })()
 
-addLocaleData([... en, ... fr, ... it, ... ja])
-const messages = getMessages(lang)
 // const insertText = (id: string) => {
 //   const elem = document.getElementById(id)
 
@@ -51,10 +40,6 @@ const messages = getMessages(lang)
 // ]
 
 // ids.forEach(insertText)
-
-const lead = document.getElementById('lead')
-const loginError = document.getElementById('login-error')
-const loginFiled = document.getElementById('login-filed')
 
 if (lead) {
   ReactDom.render(
