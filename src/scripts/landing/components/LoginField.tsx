@@ -58,6 +58,9 @@ export default class LoginField extends React.Component<Props, State> {
                 className="input"
                 id="login-email"
                 name="email"
+                onChange={
+                  event => this.handleEmailChange(event.target.value)
+                }
                 required
                 type="text"
                 value={this.state.email}
@@ -92,6 +95,9 @@ export default class LoginField extends React.Component<Props, State> {
                 className="input"
                 id="login-password"
                 name="password"
+                onChange={
+                  event => this.handlePasswordChange(event.target.value)
+                }
                 required
                 type="text"
                 value={this.state.password}
