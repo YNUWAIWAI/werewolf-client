@@ -1,9 +1,9 @@
 import * as React from 'react'
-import Confirmation from './Confirmation'
-import Csrf from './Csrf'
-import ErrorMessage from './ErrorMessage'
-import SubmitButton from './SubmitButton'
-import TextField from './TextField'
+import Confirmation from '../atoms/Confirmation'
+import Csrf from '../atoms/Csrf'
+import ErrorMessage from '../atoms/ErrorMessage'
+import SubmitButton from '../atoms/SubmitButton'
+import TextField from '../molecules/TextField'
 
 interface Props {
   action: string

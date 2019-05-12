@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Csrf from './Csrf'
-import ErrorMessage from './ErrorMessage'
-import SubmitButton from './SubmitButton'
-import TextField from './TextField'
+import Csrf from '../atoms/Csrf'
+import ErrorMessage from '../atoms/ErrorMessage'
+import SubmitButton from '../atoms/SubmitButton'
+import TextField from '../molecules/TextField'
 
 interface Props {
   action: string

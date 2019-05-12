@@ -4,10 +4,10 @@ import * as fr from 'react-intl/locale-data/fr'
 import * as it from 'react-intl/locale-data/it'
 import * as ja from 'react-intl/locale-data/ja'
 import {IntlProvider, addLocaleData} from 'react-intl'
-import {Language, getMessages} from '../../i18n/landing'
-import Lead from './components/Lead'
-import Login from './components/Login'
-import Signup from './components/Signup'
+import {Language, getMessages} from '../../../../i18n/landing'
+import Lead from '../organism/Lead'
+import Login from '../organism/Login'
+import Signup from '../organism/Signup'
 
 addLocaleData([... en, ... fr, ... it, ... ja])
 
