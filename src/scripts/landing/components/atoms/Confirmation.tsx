@@ -11,6 +11,7 @@ export default function Confirmation(props: Props) {
         link:
           <FormattedMessage
             id="signup-confirmation-link"
+            key="link"
           >
             {
               text => (
