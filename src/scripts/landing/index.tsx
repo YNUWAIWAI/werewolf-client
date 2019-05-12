@@ -17,32 +17,6 @@ const lang = (() => {
   return Language.en
 })()
 
-// const insertText = (id: string) => {
-//   const elem = document.getElementById(id)
-
-//   if (elem) {
-//     if (id === 'signup-confirmation') {
-//       elem.insertAdjacentHTML('afterbegin', messages[id])
-//     } else {
-//       elem.textContent = messages[id]
-//     }
-//   }
-// }
-// const ids = [
-//   'login-error',
-//   'login-label-email',
-//   'login-label-password',
-//   'login-submit',
-//   'signup-confirmation',
-//   'signup-error',
-//   'signup-label-email',
-//   'signup-label-name',
-//   'signup-label-password',
-//   'signup-submit'
-// ]
-
-// ids.forEach(insertText)
-
 const elem = document.getElementById('script')
 const root = document.getElementById('root')
 
@@ -70,8 +44,6 @@ if (!elem.dataset.signupAction) {
 if (!root) {
   throw Error('Not found: root element')
 }
-console.log(elem.dataset.loginError)
-console.log(elem.dataset.signupError)
 ReactDom.render(
   <App
     csrfToken={elem.dataset.csrfToken}
