@@ -26,6 +26,14 @@ export default class TextField extends React.Component<Props, State> {
     return 'text'
   }
 
+  public getMinLength() {
+    if (this.props.name === 'password') {
+      return 8
+    }
+
+    return undefined
+  }
+
   public handleTextChange(text: string) {
     this.setState({
       text
@@ -59,6 +67,7 @@ export default class TextField extends React.Component<Props, State> {
               autoFocus={this.props.autoFocus}
               className="input"
               id={`${this.props.type}-${this.props.name}`}
+              minLength={this.getMinLength()}
               name={this.props.name}
               onChange={
                 event => this.handleTextChange(event.target.value)
