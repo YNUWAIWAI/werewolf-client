@@ -1,6 +1,6 @@
 import * as React from 'react'
 import ErrorMessage from './ErrorMessage'
-import LoginField from './LoginField'
+import LoginForm from './LoginForm'
 
 interface Props {
   action: string
@@ -19,7 +19,7 @@ export default function Login(props: Props) {
         type="login"
         visible={props.error}
       />
-      <LoginField />
+      <LoginForm />
       <input
         name="csrfToken"
         type="hidden"
