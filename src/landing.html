@@ -3,8 +3,8 @@
 @(loginForm: Form[UserModel], signupForm: Form[UserModel])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
 @scripts = {
   <script crossorigin src="https://unpkg.com/prop-types@@15/prop-types.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react@@16/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react@@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-intl@@2/dist/react-intl.min.js"></script>
   <script defer src='@routes.Assets.at("javascripts/landing.js")' id="script" data-csrf-token='@CSRF.getToken.value' data-login-action='@routes.AuthController.loginResult()' data-login-error='@loginForm.hasErrors' data-signup-action='@routes.AuthController.signupResult()' data-signup-error='@signupForm.hasErrors'></script>
 }
