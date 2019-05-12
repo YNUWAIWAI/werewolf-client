@@ -4,7 +4,7 @@ interface Props {}
 
 export default function Lead(props: Props) {
   return (
-    <>
+    <div className="lead">
       <div className="title">
         <p>
           {'Werewolf: The Game'}
@@ -23,6 +23,6 @@ export default function Lead(props: Props) {
           </text>
         </svg>
       </div>
-    </>
+    </div>
   )
 }
