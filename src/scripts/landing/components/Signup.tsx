@@ -12,7 +12,7 @@ export default function Signup(props: Props) {
   return (
     <form
       action={props.action}
-      className="login"
+      className="signup"
       method="POST"
     >
       {
