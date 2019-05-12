@@ -46,3 +46,20 @@ describe('render', () => {
     expect(wrapper.find('.input').props().type).toBe('password')
   })
 })
+test('handleTextChange', () => {
+  const wrapper = mountWithIntl<TextField>(
+    <TextField
+      autoFocus
+      name="email"
+      type="signup"
+    />
+  )
+
+  expect(wrapper.state().text).toBe('')
+  wrapper.find('.input').simulate('change', {
+    target: {
+      value: 'text'
+    }
+  })
+  expect(wrapper.state().text).toBe('text')
+})
