@@ -28,17 +28,19 @@ export default function App(props: Props) {
       locale={props.lang}
       messages={messages}
     >
-      <Lead />
-      <Login
-        action={props.loginAction}
-        csrfToken={props.csrfToken}
-        error={props.loginError}
-      />
-      <Signup
-        action={props.signupAction}
-        csrfToken={props.csrfToken}
-        error={props.signupError}
-      />
+      <>
+        <Lead />
+        <Login
+          action={props.loginAction}
+          csrfToken={props.csrfToken}
+          error={props.loginError}
+        />
+        <Signup
+          action={props.signupAction}
+          csrfToken={props.csrfToken}
+          error={props.signupError}
+        />
+      </>
     </IntlProvider>
   )
 }
