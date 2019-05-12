@@ -172,7 +172,7 @@ export default class LoginField extends React.Component<Props, State> {
           }}
         >
           {
-            text => (
+            (... text) => (
               <p className="confirmation">
                 {text}
               </p>
