@@ -2,66 +2,12 @@
 @import models.UserModel
 @(loginForm: Form[UserModel], signupForm: Form[UserModel])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
 @scripts = {
-  <script defer src='@routes.Assets.at("javascripts/landing.js")'></script>
+  <script crossorigin src="https://unpkg.com/prop-types@@15/prop-types.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-intl@@2/dist/react-intl.min.js"></script>
+  <script defer src='@routes.Assets.at("javascripts/landing.js")' id="script" data-csrf-token='@CSRF.getToken.value' data-login-action='@routes.AuthController.loginResult()' data-login-error='@loginForm.hasErrors' data-signup-action='@routes.AuthController.signupResult()' data-signup-error='@signupForm.hasErrors'></script>
 }
 @template("Home", "landing.css", scripts) {
-  <div class="lead">
-    <div class="title">
-      <p>Werewolf: The Game</p>
-    </div>
-    <div class="flavor">
-      <p>* Flavor text *</p>
-    </div>
-    <div class="image">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50"/>
-        <text x="12.5" y="75" fill="white">絵</text>
-      </svg>
-    </div>
-  </div>
-  @form(action = routes.AuthController.loginResult(), 'class->"login") {
-    @if(loginForm.hasErrors) {
-      <p class="error" id="login-error"><!-- login-error --></p>
-    }
-    <div class="field">
-      <dl id="login-email_field">
-        <dt><label class="label" for="login-email" id="login-label-email"><!-- signup-label-email --></label></dt>
-        <dd><input type="text" name="email" id="login-email" class="input" value="" autocomplete="off" autofocus required></dd>
-      </dl>
-    </div>
-    <div class="field">
-      <dl id="login-divassword_field">
-        <dt><label class="label" for="login-password" id="login-label-password"><!-- login-label-password --></label></dt>
-        <dd><input type="password" name="password" id="login-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
-      </dl>
-    </div>
-    @CSRF.formField
-    <button class="button" id="login-submit" type="submit"><!-- login-submit --></button>
-  }
-  @form(action = routes.AuthController.signupResult(), 'class->"signup") {
-    @if(signupForm.hasErrors) {
-      <p class="error" id="signup-error"><!-- signup-error --></p>
-    }
-    <div class="field">
-      <dl id="signup-name_field">
-        <dt><label class="label" for="signup-name" id="signup-label-name"><!-- signup-label-name --></label></dt>
-        <dd><input type="text" name="name" id="signup-name" class="input" value="" autocomplete="off" required></dd>
-      </dl>
-    </div>
-    <div class="field">
-      <dl id="signup-email_field">
-        <dt><label class="label" for="signup-email" id="signup-label-email"><!-- signup-label-email --></label></dt>
-        <dd><input type="text" name="email" id="signup-email" class="input" value="" autocomplete="off" required></dd>
-      </dl>
-    </div>
-    <div class="field">
-      <dl id="signup-password_field">
-        <dt><label class="label" for="signup-password" id="signup-label-password"><!-- signup-label-password--></label></dt>
-        <dd><input type="password" name="password" id="signup-password" class="input" value="" autocomplete="off" minLength="8" required></dd>
-      </dl>
-    </div>
-    @CSRF.formField
-    <p class="confirmation" id="signup-confirmation"><!-- signup-confirmation --></p>
-    <button class="button" id="signup-submit" type="submit"><!-- signup-submit --></button>
-  }
+  <div class="landing" id="root"></div>
 }
