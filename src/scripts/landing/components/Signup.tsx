@@ -1,6 +1,6 @@
 import * as React from 'react'
 import ErrorMessage from './ErrorMessage'
-import SignupField from './SignupField'
+import SignupForm from './SignupForm'
 
 interface Props {
   action: string
@@ -19,7 +19,7 @@ export default function Signup(props: Props) {
         type="signup"
         visible={props.error}
       />
-      <SignupField />
+      <SignupForm />
       <input
         name="csrfToken"
         type="hidden"
