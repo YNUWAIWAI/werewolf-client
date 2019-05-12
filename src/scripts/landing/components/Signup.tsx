@@ -1,7 +1,7 @@
 import * as React from 'react'
+import Confirmation from './Confirmation'
 import Csrf from './Csrf'
 import ErrorMessage from './ErrorMessage'
-import {FormattedMessage} from 'react-intl'
 import SubmitButton from './SubmitButton'
 import TextField from './TextField'
 
@@ -37,35 +37,7 @@ export default function Signup(props: Props) {
         name="password"
         type="signup"
       />
-      <FormattedMessage
-        id="signup-confirmation"
-        values={{
-          link:
-            <FormattedMessage
-              id="signup-confirmation-link"
-            >
-              {
-                text => (
-                  <a
-                    href="terms"
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    {text}
-                  </a>
-                )
-              }
-            </FormattedMessage>
-        }}
-      >
-        {
-          (... text) => (
-            <p className="confirmation">
-              {text}
-            </p>
-          )
-        }
-      </FormattedMessage>
+      <Confirmation />
       <SubmitButton
         type="signup"
       />
