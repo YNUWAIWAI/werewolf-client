@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as ReactDom from 'react-dom'
+import * as ReactDOM from 'react-dom'
 import App from './App'
 import {Language} from '../../i18n/landing'
 
@@ -44,7 +44,7 @@ if (!elem.dataset.signupAction) {
 if (!root) {
   throw Error('Not found: root element')
 }
-ReactDom.render(
+ReactDOM.render(
   <App
     csrfToken={elem.dataset.csrfToken}
     lang={lang}
