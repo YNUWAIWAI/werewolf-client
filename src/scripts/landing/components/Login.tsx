@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Csrf from './Csrf'
 import ErrorMessage from './ErrorMessage'
-import {FormattedMessage} from 'react-intl'
+import SubmitButton from './SubmitButton'
 import TextField from './TextField'
 
 interface Props {
@@ -31,20 +31,9 @@ export default function Login(props: Props) {
         name="password"
         type="login"
       />
-      <FormattedMessage
-        id="login-submit"
-      >
-        {
-          text => (
-            <button
-              className="button"
-              type="submit"
-            >
-              {text}
-            </button>
-          )
-        }
-      </FormattedMessage>
+      <SubmitButton
+        type="login"
+      />
       <Csrf
         token={props.csrfToken}
       />
