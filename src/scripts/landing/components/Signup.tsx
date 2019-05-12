@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Csrf from './Csrf'
 import ErrorMessage from './ErrorMessage'
 import {FormattedMessage} from 'react-intl'
 import TextField from './TextField'
@@ -78,10 +79,8 @@ export default function Signup(props: Props) {
           )
         }
       </FormattedMessage>
-      <input
-        name="csrfToken"
-        type="hidden"
-        value={props.csrfToken}
+      <Csrf
+        token={props.csrfToken}
       />
     </form>
   )
