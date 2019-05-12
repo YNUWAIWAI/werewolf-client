@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function ErrorMessage(props: Props) {
-  if (props.visible) {
+  if (!props.visible) {
     return null
   }
 
