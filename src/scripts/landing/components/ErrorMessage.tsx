@@ -1,12 +1,14 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 
-interface Props {}
+interface Props {
+  type: 'login' | 'signup'
+}
 
-export default function LoginError(props: Props) {
+export default function ErrorMessage(props: Props) {
   return (
     <FormattedMessage
-      id="signup-error"
+      id={`${props.type}-error`}
     >
       {
         text => (

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import LoginError from './LoginError'
+import ErrorMessage from './ErrorMessage'
 import LoginField from './LoginField'
 
 interface Props {
@@ -16,7 +16,7 @@ export default function Login(props: Props) {
       method="POST"
     >
       {
-        props.error ? <LoginError /> : null
+        props.error ? <ErrorMessage type="login" /> : null
       }
       <LoginField />
       <input

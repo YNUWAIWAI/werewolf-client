@@ -1,5 +1,5 @@
 import * as React from 'react'
-import SignupError from './SignupError'
+import ErrorMessage from './ErrorMessage'
 import SignupField from './SignupField'
 
 interface Props {
@@ -16,7 +16,7 @@ export default function Signup(props: Props) {
       method="POST"
     >
       {
-        props.error ? <SignupError /> : null
+        props.error ? <ErrorMessage type="signup" /> : null
       }
       <SignupField />
       <input
