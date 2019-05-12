@@ -15,9 +15,10 @@ export default function Signup(props: Props) {
       className="signup"
       method="POST"
     >
-      {
-        props.error ? <ErrorMessage type="signup" /> : null
-      }
+      <ErrorMessage
+        type="signup"
+        visible={props.error}
+      />
       <SignupField />
       <input
         name="csrfToken"

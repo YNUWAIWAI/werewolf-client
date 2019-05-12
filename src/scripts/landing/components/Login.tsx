@@ -15,9 +15,10 @@ export default function Login(props: Props) {
       className="login"
       method="POST"
     >
-      {
-        props.error ? <ErrorMessage type="login" /> : null
-      }
+      <ErrorMessage
+        type="login"
+        visible={props.error}
+      />
       <LoginField />
       <input
         name="csrfToken"
