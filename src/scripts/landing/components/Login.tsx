@@ -1,6 +1,7 @@
 import * as React from 'react'
 import ErrorMessage from './ErrorMessage'
-import LoginForm from './LoginForm'
+import {FormattedMessage} from 'react-intl'
+import TextField from './TextField'
 
 interface Props {
   action: string
@@ -19,7 +20,30 @@ export default function Login(props: Props) {
         type="login"
         visible={props.error}
       />
-      <LoginForm />
+      <TextField
+        autoFocus
+        name="email"
+        type="login"
+      />
+      <TextField
+        autoFocus={false}
+        name="password"
+        type="login"
+      />
+      <FormattedMessage
+        id="login-submit"
+      >
+        {
+          text => (
+            <button
+              className="button"
+              type="submit"
+            >
+              {text}
+            </button>
+          )
+        }
+      </FormattedMessage>
       <input
         name="csrfToken"
         type="hidden"
