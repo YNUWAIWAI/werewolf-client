@@ -152,6 +152,24 @@ export default class LoginField extends React.Component<Props, State> {
         </div>
         <FormattedMessage
           id="signup-confirmation"
+          values={{
+            link:
+              <FormattedMessage
+                id="signup-confirmation"
+              >
+                {
+                  text => (
+                    <a
+                      href="terms"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                    >
+                      {text}
+                    </a>
+                  )
+                }
+              </FormattedMessage>
+          }}
         >
           {
             text => (
