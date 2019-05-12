@@ -9,5 +9,5 @@
   <script defer src='@routes.Assets.at("javascripts/landing.js")' id="script" data-csrf-token='@CSRF.getToken.value' data-login-action='@routes.AuthController.loginResult()' data-login-error='@loginForm.hasErrors' data-signup-action='@routes.AuthController.signupResult()' data-signup-error='@signupForm.hasErrors'></script>
 }
 @template("Home", "landing.css", scripts) {
-  <div id="root"></div>
+  <div class="landing" id="root"></div>
 }
