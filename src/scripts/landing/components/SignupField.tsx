@@ -155,7 +155,7 @@ export default class LoginField extends React.Component<Props, State> {
           values={{
             link:
               <FormattedMessage
-                id="signup-confirmation"
+                id="signup-confirmation-link"
               >
                 {
                   text => (
