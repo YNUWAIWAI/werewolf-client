@@ -7,7 +7,7 @@ const polorToRectangular = (cx: number, cy: number, r: number, deg: number): str
 export default function Star() {
   const cx = 25
   const cy = 25
-  const outerR = 23
+  const outerR = 22
   const innerR = outerR * Math.cos(72 / 180 * Math.PI) / Math.cos(36 / 180 * Math.PI)
 
   return (
@@ -30,7 +30,7 @@ export default function Star() {
           ${polorToRectangular(cx, cy, innerR, (36 * 9) - 90)}
           ${polorToRectangular(cx, cy, outerR, 0 - 90)}
         `}
-        strokeWidth="1"
+        strokeWidth="1.5"
       />
     </svg>
   )
