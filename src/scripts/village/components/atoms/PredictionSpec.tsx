@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {FormattedMessage} from 'react-intl'
 
 interface Props {
   role: village.RoleId
@@ -16,11 +17,19 @@ export default function PredictionSpec(props: Props) {
       className="vi--prediction spec"
       style={props.style}
     >
-      <div
-        className="vi--prediction--spec"
+      <FormattedMessage
+        id={`PredictionSpec(${props.role})`}
       >
-        {`${props.role}'s spec`}
-      </div>
+        {
+          text => (
+            <div
+              className="vi--prediction--spec"
+            >
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
     </div>
   )
 }

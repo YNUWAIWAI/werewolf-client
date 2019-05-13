@@ -1,4 +1,3 @@
-/// <reference types="village" />
 import en from './en'
 import fr from './fr'
 import it from './it'

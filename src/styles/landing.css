@@ -10,16 +10,19 @@
 }
 
 body {
-  display: grid;
   font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
-  grid-template-areas:
-    'lead login'
-    'lead signup';
-  grid-template-columns: 3fr 2fr;
 }
 
 .confirmation {
   margin-bottom: 0.5rem;
+}
+
+.landing {
+  display: grid;
+  grid-template-areas:
+    'lead login'
+    'lead signup';
+  grid-template-columns: 3fr 2fr;
 }
 
 .lead {
