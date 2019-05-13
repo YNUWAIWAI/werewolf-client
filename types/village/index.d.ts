@@ -67,15 +67,13 @@ declare namespace village {
     [Language.it]?: string
     [Language.ja]?: string
   }
-
   const enum Result {
     lose = 'lose',
     win = 'win'
   }
   type AgentId = string
-
+  type ChatId = string
   type Token = string
-
   const enum AgentStatus {
     alive = 'alive',
     dead = 'dead',
