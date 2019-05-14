@@ -22,6 +22,8 @@
   --suggest-color: rgb(3, 169, 244);
   --dead-color: red;
   --background-color: white;
+  --unmarked-star-color: rgb(158, 158, 158);
+  --marked-star-color: rgb(255, 235, 59);
 
   /* z-index */
   --command--z-index: 2;
@@ -117,9 +119,9 @@ body {
       display: grid;
       grid-area: text;
       grid-template-areas:
-        'num text'
-        'icon date';
-      grid-template-columns: 2.5rem 1fr;
+        'num text text'
+        'star icon date';
+      grid-template-columns: 2.5rem 2.5rem 1fr;
       position: relative;
 
       &::after {
@@ -157,6 +159,29 @@ body {
         text-align: center;
         width: 100%;
         word-break: keep-all;
+      }
+    }
+
+    &--star {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      & > .star {
+        fill: transparent;
+        height: 75%;
+        stroke: var(--unmarked-star-color);
+        width: 75%;
+
+        &:hover {
+          stroke: var(--marked-star-color);
+        }
+      }
+
+      &.marked {
+        & > .star {
+          fill: var(--marked-star-color);
+        }
       }
     }
 
