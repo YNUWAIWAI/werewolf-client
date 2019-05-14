@@ -56,7 +56,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -95,7 +95,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -134,7 +134,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -173,7 +173,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -212,7 +212,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -251,7 +251,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -290,7 +290,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -329,7 +329,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -368,7 +368,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -415,7 +415,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
@@ -488,7 +488,7 @@ storiesOf('village|Chat', module)
       <Chat
         allIds={allIds}
         byId={byId}
-        handleStar={item => action(`star${item.id}: ${item.isMarked}`)}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
       />
 
     return story
