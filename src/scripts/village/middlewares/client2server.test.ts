@@ -7,7 +7,6 @@ import {
   Ready,
   SelectYes,
   StarChat,
-  UnstarChat,
   socket
 } from '../actions'
 import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'

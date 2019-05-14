@@ -12,7 +12,8 @@ describe('<Chat />', () => {
     test('0 item', () => {
       const allIds: Props['allIds'] = []
       const byId: Props['byId'] = {}
-      const handleStar = jest.fn()
+      const handleStarInner = jest.fn()
+      const handleStar = jest.fn(() => handleStarInner)
       const wrapper = shallow(
         <Chat
           allIds={allIds}
@@ -22,6 +23,7 @@ describe('<Chat />', () => {
       )
 
       expect(wrapper.find('ChatItem')).toHaveLength(0)
+      expect(handleStarInner).toHaveBeenCalledTimes(0)
       expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('1 item', () => {
@@ -41,7 +43,8 @@ describe('<Chat />', () => {
           type: 'item'
         }
       }
-      const handleStar = jest.fn()
+      const handleStarInner = jest.fn()
+      const handleStar = jest.fn(() => handleStarInner)
       const wrapper = shallow(
         <Chat
           allIds={allIds}
@@ -51,11 +54,9 @@ describe('<Chat />', () => {
       )
 
       expect(wrapper.find('ChatItem')).toHaveLength(1)
+      expect(handleStarInner).toHaveBeenCalledTimes(0)
       expect(handleStar).toHaveBeenCalledTimes(1)
-      expect(handleStar).toHaveBeenCalledWith({
-        id: 'chat0',
-        isMarked: false
-      })
+      expect(handleStar).toHaveBeenCalledWith('chat0')
     })
     test('2 items', () => {
       const allIds: Props['allIds'] = ['chat1', 'chat0']
@@ -87,7 +88,8 @@ describe('<Chat />', () => {
           type: 'item'
         }
       }
-      const handleStar = jest.fn()
+      const handleStarInner = jest.fn()
+      const handleStar = jest.fn(() => handleStarInner)
       const wrapper = shallow(
         <Chat
           allIds={allIds}
@@ -98,15 +100,10 @@ describe('<Chat />', () => {
 
       expect(wrapper.find('ChatItem')).toHaveLength(2)
       expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([2, 1])
+      expect(handleStarInner).toHaveBeenCalledTimes(0)
       expect(handleStar).toHaveBeenCalledTimes(2)
-      expect(handleStar).toHaveBeenCalledWith({
-        id: 'chat0',
-        isMarked: false
-      })
-      expect(handleStar).toHaveBeenCalledWith({
-        id: 'chat1',
-        isMarked: false
-      })
+      expect(handleStar).toHaveBeenCalledWith('chat0')
+      expect(handleStar).toHaveBeenCalledWith('chat1')
     })
     test('3 items with 1 delimeter', () => {
       const allIds: Props['allIds'] = ['delimeter0', 'chat2', 'chat1', 'chat0']
@@ -155,7 +152,8 @@ describe('<Chat />', () => {
           type: 'delimeter'
         }
       }
-      const handleStar = jest.fn()
+      const handleStarInner = jest.fn()
+      const handleStar = jest.fn(() => handleStarInner)
       const wrapper = shallow(
         <Chat
           allIds={allIds}
@@ -167,19 +165,11 @@ describe('<Chat />', () => {
       expect(wrapper.find('ChatItem')).toHaveLength(3)
       expect(wrapper.find('ChatDelimeter')).toHaveLength(1)
       expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([3, 2, 1])
+      expect(handleStarInner).toHaveBeenCalledTimes(0)
       expect(handleStar).toHaveBeenCalledTimes(3)
-      expect(handleStar).toHaveBeenCalledWith({
-        id: 'chat0',
-        isMarked: false
-      })
-      expect(handleStar).toHaveBeenCalledWith({
-        id: 'chat1',
-        isMarked: false
-      })
-      expect(handleStar).toHaveBeenCalledWith({
-        id: 'chat2',
-        isMarked: false
-      })
+      expect(handleStar).toHaveBeenCalledWith('chat0')
+      expect(handleStar).toHaveBeenCalledWith('chat1')
+      expect(handleStar).toHaveBeenCalledWith('chat2')
     })
   })
   describe('handleScroll', () => {
@@ -201,7 +191,8 @@ describe('<Chat />', () => {
     }
 
     test('shallow', () => {
-      const handleStar = jest.fn()
+      const handleStarInner = jest.fn()
+      const handleStar = jest.fn(() => handleStarInner)
       const wrapper = shallow(
         <Chat
           allIds={allIds}
@@ -216,7 +207,8 @@ describe('<Chat />', () => {
       })
     })
     test('mount', () => {
-      const handleStar = jest.fn()
+      const handleStarInner = jest.fn()
+      const handleStar = jest.fn(() => handleStarInner)
       const wrapper = mountWithIntl(
         <Chat
           allIds={allIds}
