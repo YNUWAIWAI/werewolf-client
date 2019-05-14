@@ -995,6 +995,7 @@ describe('STAR', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: village.Channel.public,
+          isMarked: false,
           isMine: true,
           name: {
             en: 'Walter',
@@ -1186,6 +1187,7 @@ describe('UNSTAR', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: village.Channel.public,
+          isMarked: true,
           isMine: true,
           name: {
             en: 'Walter',

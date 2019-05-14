@@ -34,6 +34,7 @@ describe('<ChatContainer />', () => {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -50,6 +51,7 @@ describe('<ChatContainer />', () => {
               id: -1,
               image: 'https://werewolf.world/image/0.2/Regina.jpg',
               intensionalDisclosureRange: village.Channel.onymousAudience,
+              isMarked: false,
               isMine: true,
               name: 'Katoh',
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -63,6 +65,7 @@ describe('<ChatContainer />', () => {
               id: -1,
               image: 'Anonymous',
               intensionalDisclosureRange: village.Channel.anonymousAudience,
+              isMarked: false,
               isMine: true,
               name: 'Anonymous',
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',

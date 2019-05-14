@@ -12,9 +12,17 @@ describe('<Chat />', () => {
     test('0 item', () => {
       const allIds: Props['allIds'] = []
       const byId: Props['byId'] = {}
-      const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
+      const handleStar = jest.fn()
+      const wrapper = shallow(
+        <Chat
+          allIds={allIds}
+          byId={byId}
+          handleStar={handleStar}
+        />
+      )
 
       expect(wrapper.find('ChatItem')).toHaveLength(0)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('1 item', () => {
       const allIds: Props['allIds'] = ['chat0']
@@ -23,6 +31,7 @@ describe('<Chat />', () => {
           id: 1,
           image: 'image',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
+          isMarked: false,
           isMine: true,
           name: 'name',
           phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -32,9 +41,21 @@ describe('<Chat />', () => {
           type: 'item'
         }
       }
-      const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
+      const handleStar = jest.fn()
+      const wrapper = shallow(
+        <Chat
+          allIds={allIds}
+          byId={byId}
+          handleStar={handleStar}
+        />
+      )
 
       expect(wrapper.find('ChatItem')).toHaveLength(1)
+      expect(handleStar).toHaveBeenCalledTimes(1)
+      expect(handleStar).toHaveBeenCalledWith({
+        id: 'chat0',
+        isMarked: false
+      })
     })
     test('2 items', () => {
       const allIds: Props['allIds'] = ['chat1', 'chat0']
@@ -43,6 +64,7 @@ describe('<Chat />', () => {
           id: 1,
           image: 'image',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
+          isMarked: false,
           isMine: true,
           name: 'name',
           phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -55,6 +77,7 @@ describe('<Chat />', () => {
           id: 2,
           image: 'image',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
+          isMarked: false,
           isMine: true,
           name: 'name',
           phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -64,10 +87,26 @@ describe('<Chat />', () => {
           type: 'item'
         }
       }
-      const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
+      const handleStar = jest.fn()
+      const wrapper = shallow(
+        <Chat
+          allIds={allIds}
+          byId={byId}
+          handleStar={handleStar}
+        />
+      )
 
       expect(wrapper.find('ChatItem')).toHaveLength(2)
       expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([2, 1])
+      expect(handleStar).toHaveBeenCalledTimes(2)
+      expect(handleStar).toHaveBeenCalledWith({
+        id: 'chat0',
+        isMarked: false
+      })
+      expect(handleStar).toHaveBeenCalledWith({
+        id: 'chat1',
+        isMarked: false
+      })
     })
     test('3 items with 1 delimeter', () => {
       const allIds: Props['allIds'] = ['delimeter0', 'chat2', 'chat1', 'chat0']
@@ -76,6 +115,7 @@ describe('<Chat />', () => {
           id: 1,
           image: 'image',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
+          isMarked: false,
           isMine: true,
           name: 'name',
           phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -88,6 +128,7 @@ describe('<Chat />', () => {
           id: 2,
           image: 'image',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
+          isMarked: false,
           isMine: true,
           name: 'name',
           phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -100,6 +141,7 @@ describe('<Chat />', () => {
           id: 3,
           image: 'image',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
+          isMarked: false,
           isMine: true,
           name: 'name',
           phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -113,11 +155,31 @@ describe('<Chat />', () => {
           type: 'delimeter'
         }
       }
-      const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
+      const handleStar = jest.fn()
+      const wrapper = shallow(
+        <Chat
+          allIds={allIds}
+          byId={byId}
+          handleStar={handleStar}
+        />
+      )
 
       expect(wrapper.find('ChatItem')).toHaveLength(3)
       expect(wrapper.find('ChatDelimeter')).toHaveLength(1)
       expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([3, 2, 1])
+      expect(handleStar).toHaveBeenCalledTimes(3)
+      expect(handleStar).toHaveBeenCalledWith({
+        id: 'chat0',
+        isMarked: false
+      })
+      expect(handleStar).toHaveBeenCalledWith({
+        id: 'chat1',
+        isMarked: false
+      })
+      expect(handleStar).toHaveBeenCalledWith({
+        id: 'chat2',
+        isMarked: false
+      })
     })
   })
   describe('handleScroll', () => {
@@ -127,6 +189,7 @@ describe('<Chat />', () => {
         id: 1,
         image: 'image',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
+        isMarked: false,
         isMine: true,
         name: 'name',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -138,15 +201,29 @@ describe('<Chat />', () => {
     }
 
     test('shallow', () => {
-      const wrapper = shallow(<Chat allIds={allIds} byId={byId} />)
+      const handleStar = jest.fn()
+      const wrapper = shallow(
+        <Chat
+          allIds={allIds}
+          byId={byId}
+          handleStar={handleStar}
+        />
+      )
 
       wrapper.simulate('scroll')
       expect(wrapper.state()).toEqual({
         atBottom: true
       })
     })
-    test('mounnt', () => {
-      const wrapper = mountWithIntl(<Chat allIds={allIds} byId={byId} />)
+    test('mount', () => {
+      const handleStar = jest.fn()
+      const wrapper = mountWithIntl(
+        <Chat
+          allIds={allIds}
+          byId={byId}
+          handleStar={handleStar}
+        />
+      )
 
       wrapper.simulate('scroll')
       expect(wrapper.state()).toEqual({
