@@ -1,19 +1,20 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangeDate, SocketMessage} from '../actions'
+import {ChangeDate, SocketMessage, StarChat, UnstarChat} from '../actions'
 import {idGenerater, just} from '../util'
 
 const getChatId = idGenerater('chat')
 const getDelimeterId = idGenerater('delimeter')
 
 export interface State {
-  readonly allIds: string[]
+  readonly allIds: village.ChatId[]
   readonly byId: {
-    readonly [id: string]: {
+    readonly [id: string /* village.ChatId */]: {
       readonly clientTimestamp: string
       readonly id: number
       readonly image: string
       readonly intensionalDisclosureRange: village.Channel
+      readonly isMarked: boolean
       readonly isMine: boolean
       readonly name: village.LanguageMap | string
       readonly phaseStartTime: string
@@ -31,6 +32,8 @@ export interface State {
 type Action =
   | ChangeDate
   | SocketMessage
+  | StarChat
+  | UnstarChat
 
 export const initialState: State = {
   allIds: [],
@@ -55,6 +58,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   id,
                   image: 'Anonymous',
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
+                  isMarked: false,
                   isMine: payload.isMine,
                   name: 'Anonymous',
                   phaseStartTime: payload.phaseStartTime,
@@ -75,6 +79,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   id,
                   image: just(payload.avatar).image,
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
+                  isMarked: false,
                   isMine: payload.isMine,
                   name: just(payload.avatar).name,
                   phaseStartTime: payload.phaseStartTime,
@@ -96,6 +101,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 id,
                 image: just(payload.agent).image,
                 intensionalDisclosureRange: payload.intensionalDisclosureRange,
+                isMarked: false,
                 isMine: payload.isMine,
                 name: just(payload.agent).name,
                 phaseStartTime: payload.phaseStartTime,
@@ -121,6 +127,25 @@ const chat = (state: State = initialState, action: Action): State => {
           [delimeterId]: {
             date: action.to,
             type: 'delimeter'
+          }
+        }
+      }
+    }
+    case ActionTypes.global.STAR:
+    case ActionTypes.global.UNSTAR: {
+      const item = state.byId[action.id]
+
+      if (item.type === 'delimeter') {
+        return state
+      }
+
+      return {
+        ... state,
+        byId: {
+          ... state.byId,
+          [action.id]: {
+            ... item,
+            isMarked: action.isMarked
           }
         }
       }
