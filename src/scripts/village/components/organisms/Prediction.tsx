@@ -91,7 +91,7 @@ export default function Prediction(props: Props) {
         key="spec"
         role={props.spec.role}
         style={{
-          grid: `minmax(72px, min-content) max-content / minmax(72px, min-content) minmax(max-content, calc(72px * ${props.roleStatus.length}))`
+          grid: `minmax(72px, min-content) max-content / minmax(72px, min-content) minmax(calc(72px * ${props.roleStatus.length}), min-content)`
         }}
         visible={props.spec.visible}
       />
