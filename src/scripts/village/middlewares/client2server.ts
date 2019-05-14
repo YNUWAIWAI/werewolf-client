@@ -219,8 +219,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.STAR:
-    case ActionTypes.global.UNSTAR: {
+    case ActionTypes.global.STAR: {
       const state = store.getState()
       const chat = state.chat.byId[action.id]
 

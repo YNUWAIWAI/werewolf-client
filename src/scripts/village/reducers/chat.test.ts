@@ -19,6 +19,7 @@ describe('socket/MESSAGE', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
+          isMarked: false,
           isMine: true,
           name: {
             en: 'Walter',
@@ -44,6 +45,7 @@ describe('socket/MESSAGE', () => {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -67,6 +69,7 @@ describe('socket/MESSAGE', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
+          isMarked: false,
           isMine: true,
           name: {
             en: 'Walter',
@@ -83,6 +86,7 @@ describe('socket/MESSAGE', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
+          isMarked: false,
           isMine: false,
           name: {
             en: 'Walter',
@@ -108,6 +112,7 @@ describe('socket/MESSAGE', () => {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -124,6 +129,7 @@ describe('socket/MESSAGE', () => {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
               isMine: false,
               name: {
                 en: 'Walter',
@@ -147,6 +153,7 @@ describe('socket/MESSAGE', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
+          isMarked: false,
           isMine: true,
           name: {
             en: 'Walter',
@@ -163,6 +170,7 @@ describe('socket/MESSAGE', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
+          isMarked: false,
           isMine: false,
           name: {
             en: 'Walter',
@@ -179,6 +187,7 @@ describe('socket/MESSAGE', () => {
           id: -1,
           image: 'https://werewolf.world/image/0.2/Regina.jpg',
           intensionalDisclosureRange: 'onymousAudience',
+          isMarked: false,
           isMine: true,
           name: 'Katoh',
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -201,6 +210,7 @@ describe('socket/MESSAGE', () => {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
               isMine: true,
               name: {
                 en: 'Walter',
@@ -217,6 +227,7 @@ describe('socket/MESSAGE', () => {
               id: 12,
               image: 'https://werewolf.world/image/0.2/Walter.jpg',
               intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
               isMine: false,
               name: {
                 en: 'Walter',
@@ -233,6 +244,7 @@ describe('socket/MESSAGE', () => {
               id: -1,
               image: 'https://werewolf.world/image/0.2/Regina.jpg',
               intensionalDisclosureRange: village.Channel.onymousAudience,
+              isMarked: false,
               isMine: true,
               name: 'Katoh',
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -253,6 +265,7 @@ describe('socket/MESSAGE', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
+          isMarked: false,
           isMine: true,
           name: {
             en: 'Walter',
@@ -269,6 +282,7 @@ describe('socket/MESSAGE', () => {
           id: 12,
           image: 'https://werewolf.world/image/0.2/Walter.jpg',
           intensionalDisclosureRange: 'public',
+          isMarked: false,
           isMine: false,
           name: {
             en: 'Walter',
@@ -285,6 +299,7 @@ describe('socket/MESSAGE', () => {
           id: -1,
           image: 'https://werewolf.world/image/0.2/Regina.jpg',
           intensionalDisclosureRange: 'onymousAudience',
+          isMarked: false,
           isMine: true,
           name: 'Katoh',
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -298,6 +313,7 @@ describe('socket/MESSAGE', () => {
           id: -1,
           image: 'Anonymous',
           intensionalDisclosureRange: 'anonymousAudience',
+          isMarked: false,
           isMine: true,
           name: 'Anonymous',
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
@@ -330,3 +346,58 @@ test('CHANGE_DATE', () => {
     }
   })
 })
+test('STAR', () => {
+  expect(
+    reducer(
+      {
+        allIds: ['chat0'],
+        byId: {
+          chat0: {
+            clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+            id: 12,
+            image: 'https://werewolf.world/image/0.2/Walter.jpg',
+            intensionalDisclosureRange: village.Channel.public,
+            isMarked: false,
+            isMine: true,
+            name: {
+              en: 'Walter',
+              ja: 'ヴァルター'
+            },
+            phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+            phaseTimeLimit: 600,
+            serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+            text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+            type: 'item'
+          }
+        }
+      },
+      {
+        id: 'chat0',
+        isMarked: true,
+        type: ActionTypes.global.STAR
+      }
+    )
+  ).toEqual({
+    allIds: ['chat0'],
+    byId: {
+      chat0: {
+        clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+        id: 12,
+        image: 'https://werewolf.world/image/0.2/Walter.jpg',
+        intensionalDisclosureRange: 'public',
+        isMarked: true,
+        isMine: true,
+        name: {
+          en: 'Walter',
+          ja: 'ヴァルター'
+        },
+        phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+        phaseTimeLimit: 600,
+        serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+        text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+        type: 'item'
+      }
+    }
+  })
+})
+

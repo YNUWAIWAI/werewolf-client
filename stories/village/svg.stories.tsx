@@ -9,6 +9,7 @@ import Master from '../../src/scripts/village/components/atoms/svg/Master'
 import Private from '../../src/scripts/village/components/atoms/svg/Private'
 import Public from '../../src/scripts/village/components/atoms/svg/Public'
 import Question from '../../src/scripts/village/components/atoms/svg/Question'
+import Star from '../../src/scripts/village/components/atoms/svg/Star'
 import TeamVillager from '../../src/scripts/village/components/atoms/svg/TeamVillager'
 import TeamWerehamster from '../../src/scripts/village/components/atoms/svg/TeamWerehamster'
 import TeamWerewolf from '../../src/scripts/village/components/atoms/svg/TeamWerewolf'
@@ -39,6 +40,7 @@ storiesOf('village|svg', module)
   .add('Private', () => <Private />)
   .add('Public', () => <Public />)
   .add('Question', () => <Question />)
+  .add('Star', () => <Star />)
   .add('TeamVillagers', () => <TeamVillager />)
   .add('TeamWerehamster', () => <TeamWerehamster />)
   .add('TeamWerewolves', () => <TeamWerewolf />)

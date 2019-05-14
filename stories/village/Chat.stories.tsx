@@ -3,6 +3,7 @@ import * as React from 'react'
 import Chat, {Props} from '../../src/scripts/village/components/organisms/Chat'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
+import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
@@ -15,7 +16,9 @@ storiesOf('village|Chat', module)
   .addDecorator(story => (
     <Provider store={store}>
       <IntlProvider>
-        {story()}
+        <div className="vi--activity">
+          {story()}
+        </div>
       </IntlProvider>
     </Provider>
   ))
@@ -26,6 +29,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -38,6 +42,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -48,9 +53,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -61,6 +68,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.grave,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -73,6 +81,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.grave,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -83,9 +92,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -96,6 +107,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.hunter,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -108,6 +120,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.hunter,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -118,9 +131,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -131,6 +146,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.master,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -143,6 +159,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.master,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -153,9 +170,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -166,6 +185,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.onymousAudience,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -178,6 +198,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.onymousAudience,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -188,9 +209,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -201,6 +224,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.private,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -213,6 +237,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.private,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -223,9 +248,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -236,6 +263,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -248,6 +276,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -258,9 +287,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -271,6 +302,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.seer,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -283,6 +315,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.seer,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -293,9 +326,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -306,6 +341,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.werewolf,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -318,6 +354,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.werewolf,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -328,9 +365,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -341,6 +380,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -353,6 +393,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: true,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -371,9 +412,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
@@ -384,6 +427,7 @@ storiesOf('village|Chat', module)
         id: 1,
         image: 'https://werewolf.world/image/0.1/Gert.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: false,
         isMine: true,
         name: 'ゲルト',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -396,6 +440,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: false,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -408,6 +453,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: false,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -420,6 +466,7 @@ storiesOf('village|Chat', module)
         id: 2,
         image: 'https://werewolf.world/image/0.1/Walter.jpg',
         intensionalDisclosureRange: village.Channel.public,
+        isMarked: false,
         isMine: false,
         name: 'ヴァルター',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
@@ -438,9 +485,11 @@ storiesOf('village|Chat', module)
       }
     }
     const story =
-      <div className="vi--activity">
-        <Chat allIds={allIds} byId={byId} />
-      </div>
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+      />
 
     return story
   })
