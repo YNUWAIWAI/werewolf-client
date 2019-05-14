@@ -216,7 +216,7 @@ export const selectYes = (agentId: number): {agentId: number, type: ActionTypes.
   type: ActionTypes.global.SELECT_YES
 })
 
-export const starChat = (id: string): {id: string, isMarked: true, type: ActionTypes.global.STAR} => ({
+export const starChat = (id: village.ChatId): {id: village.ChatId, isMarked: true, type: ActionTypes.global.STAR} => ({
   id,
   isMarked: true,
   type: ActionTypes.global.STAR
@@ -237,7 +237,7 @@ export const tick = ({start, time}: {start: number, time: number}): {start: numb
   type: ActionTypes.global.TICK
 })
 
-export const unstarChat = (id: string): {id: string, isMarked: false, type: ActionTypes.global.UNSTAR} => ({
+export const unstarChat = (id: village.ChatId): {id: village.ChatId, isMarked: false, type: ActionTypes.global.UNSTAR} => ({
   id,
   isMarked: false,
   type: ActionTypes.global.UNSTAR
