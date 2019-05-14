@@ -143,7 +143,7 @@ body {
       display: flex;
       flex-direction: column;
       grid-area: opp;
-      justify-content: center;
+      justify-content: start;
       margin: 0 var(--arrow) 0 0;
 
       &--image {
