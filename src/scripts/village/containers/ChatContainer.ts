@@ -42,11 +42,11 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleStar: item => () => {
-    if (item.isMarked) {
-      dispatch(unstarChat(item.id))
+  handleStar: id => isMarked => {
+    if (isMarked) {
+      dispatch(unstarChat(id))
     } else {
-      dispatch(starChat(item.id))
+      dispatch(starChat(id))
     }
   }
 })

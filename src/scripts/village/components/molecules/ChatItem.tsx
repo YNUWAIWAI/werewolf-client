@@ -8,7 +8,7 @@ import ChatText from '../atoms/ChatText'
 import {getChatChannelFromChannel} from '../../util'
 
 export interface Props {
-  readonly handleStar: () => void
+  readonly handleStar: (isMarked: boolean) => void
   readonly id: number
   readonly image: string
   readonly intensionalDisclosureRange: village.Channel

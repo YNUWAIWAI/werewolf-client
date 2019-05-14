@@ -24,7 +24,7 @@ export interface StateProps {
   }
 }
 export interface DispatchProps {
-  readonly handleStar: (item: {id: village.ChatId, isMarked: boolean}) => () => void
+  readonly handleStar: (id: village.ChatId) => (isMarked: boolean) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 export interface State {
@@ -86,10 +86,7 @@ export default class Chat extends React.Component<Props, State> {
               case 'item':
                 return (
                   <ChatItem
-                    handleStar={this.props.handleStar({
-                      id,
-                      isMarked: false
-                    })}
+                    handleStar={this.props.handleStar(id)}
                     key={id}
                     {... item}
                   />
