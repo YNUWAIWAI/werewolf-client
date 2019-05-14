@@ -30,7 +30,7 @@
   --command--input--char--z-index: 1;
   --command--input--suggest--list--z-index: 3;
   --command--input--textarea--z-index: 2;
-  --prediction--empty--z-index: 5;
+  --prediction--help--z-index: 5;
   --prediction--item--z-index: 0;
   --prediction--player--z-index: 2;
   --prediction--spec--z-index: 3;
@@ -989,14 +989,22 @@ body {
     max-width: 47vw;
     overflow: auto;
 
-    &--empty {
+    &--help {
+      align-items: center;
       background: var(--background-color);
       border: solid 1px black;
       box-sizing: border-box;
+      display: flex;
+      justify-content: center;
       left: 0;
       position: sticky;
       top: 0;
-      z-index: var(--prediction--empty--z-index);
+      z-index: var(--prediction--help--z-index);
+
+      & > .help {
+        height: 80%;
+        width: 80%;
+      }
     }
 
     &--item {

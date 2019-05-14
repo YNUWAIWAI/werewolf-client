@@ -1,4 +1,5 @@
 import * as React from 'react'
+import PredictionHelp from '../atoms/PredictionHelp'
 import PredictionItem from '../atoms/PredictionItem'
 import PredictionPlayer from '../atoms/PredictionPlayer'
 import PredictionRole from '../atoms/PredictionRole'
@@ -44,9 +45,8 @@ export default function Prediction(props: Props) {
     return null
   }
   const predictionTable = [
-    <div
-      className="vi--prediction--empty"
-      key="empty"
+    <PredictionHelp
+      key="help"
     />,
     ... props.roleStatus.map(role => (
       <PredictionRole
