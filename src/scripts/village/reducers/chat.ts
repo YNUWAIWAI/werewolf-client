@@ -1,6 +1,6 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangeDate, SocketMessage, StarChat, UnstarChat} from '../actions'
+import {ChangeDate, SocketMessage, StarChat} from '../actions'
 import {idGenerater, just} from '../util'
 
 const getChatId = idGenerater('chat')
@@ -33,7 +33,6 @@ type Action =
   | ChangeDate
   | SocketMessage
   | StarChat
-  | UnstarChat
 
 export const initialState: State = {
   allIds: [],
@@ -131,8 +130,7 @@ const chat = (state: State = initialState, action: Action): State => {
         }
       }
     }
-    case ActionTypes.global.STAR:
-    case ActionTypes.global.UNSTAR: {
+    case ActionTypes.global.STAR: {
       const item = state.byId[action.id]
 
       if (item.type === 'delimeter') {

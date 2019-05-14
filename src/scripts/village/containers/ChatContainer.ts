@@ -1,5 +1,5 @@
 import Chat, {DispatchProps, StateProps} from '../components/organisms/Chat'
-import {StarChat, UnstarChat, starChat, unstarChat} from '../actions'
+import {StarChat, starChat} from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -7,7 +7,6 @@ import {getText} from '../util'
 
 type Action =
   | StarChat
-  | UnstarChat
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const byId: StateProps['byId'] = {}
@@ -43,11 +42,10 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleStar: id => isMarked => {
-    if (isMarked) {
-      dispatch(unstarChat(id))
-    } else {
-      dispatch(starChat(id))
-    }
+    dispatch(starChat({
+      id,
+      isMarked
+    }))
   }
 })
 const ChatContainer = connect(

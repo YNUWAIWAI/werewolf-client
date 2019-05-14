@@ -23,7 +23,6 @@ export const enum global {
   SHOW_PREDICTION_SPEC = 'SHOW_PREDICTION_SPEC',
   SHOW_RESULT = 'SHOW_RESULT',
   STAR = 'STAR',
-  UNSTAR = 'UNSTAR',
   TICK = 'TICK'
 }
 export const enum indexedDB {

@@ -10,7 +10,7 @@ export default function ChatNum(props: Props) {
   return (
     <div
       className={`vi--chat--star ${props.isMarked ? 'marked' : ''}`}
-      onClick={() => props.handleStar(props.isMarked)}
+      onClick={() => props.handleStar(!props.isMarked)}
     >
       <Star />
     </div>
