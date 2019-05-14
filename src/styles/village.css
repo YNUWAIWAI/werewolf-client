@@ -181,6 +181,7 @@ body {
       &.marked {
         & > .star {
           fill: var(--marked-star-color);
+          stroke: var(--marked-star-color);
         }
       }
     }
