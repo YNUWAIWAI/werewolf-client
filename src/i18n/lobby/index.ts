@@ -1,4 +1,3 @@
-/* global lobby */
 import en from './en'
 import fr from './fr'
 import it from './it'

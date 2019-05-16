@@ -1,7 +1,12 @@
-import Chat, {StateProps} from '../components/organisms/Chat'
+import Chat, {DispatchProps, StateProps} from '../components/organisms/Chat'
+import {StarChat, starChat} from '../actions'
+import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 import {getText} from '../util'
+
+type Action =
+  | StarChat
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const byId: StateProps['byId'] = {}
@@ -35,8 +40,17 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     byId
   }
 }
+const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleStar: id => isMarked => {
+    dispatch(starChat({
+      id,
+      isMarked
+    }))
+  }
+})
 const ChatContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Chat)
 
 export default ChatContainer

@@ -34,6 +34,7 @@ const state: ReducerState = {
         'id': 1,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.public,
+        'isMarked': false,
         'isMine': true,
         'name': {
           'en': 'Walter',
@@ -50,6 +51,7 @@ const state: ReducerState = {
         'id': 2,
         'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
         'intensionalDisclosureRange': village.Channel.public,
+        'isMarked': false,
         'isMine': false,
         'name': {
           'en': 'Alvin',
@@ -66,6 +68,7 @@ const state: ReducerState = {
         'id': 3,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.public,
+        'isMarked': false,
         'isMine': true,
         'name': {
           'en': 'Walter',
@@ -82,6 +85,7 @@ const state: ReducerState = {
         'id': 4,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.public,
+        'isMarked': false,
         'isMine': true,
         'name': {
           'en': 'Walter',
@@ -98,6 +102,7 @@ const state: ReducerState = {
         'id': 5,
         'image': 'https://werewolf.world/image/0.1/Walter.jpg',
         'intensionalDisclosureRange': village.Channel.public,
+        'isMarked': false,
         'isMine': true,
         'name': {
           'en': 'Walter',

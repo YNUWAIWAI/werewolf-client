@@ -3,13 +3,16 @@ import AgentIcon from '../atoms/AgentIcon'
 import ChatDate from '../atoms/ChatDate'
 import ChatIcon from '../atoms/ChatIcon'
 import ChatNum from '../atoms/ChatNum'
+import ChatStar from '../atoms/ChatStar'
 import ChatText from '../atoms/ChatText'
 import {getChatChannelFromChannel} from '../../util'
 
 export interface Props {
+  readonly handleStar: (isMarked: boolean) => void
   readonly id: number
   readonly image: string
   readonly intensionalDisclosureRange: village.Channel
+  readonly isMarked: boolean
   readonly isMine: boolean
   readonly name: string
   readonly phaseStartTime: string
@@ -42,6 +45,10 @@ export default function ChatItem(props: Props) {
           from={props.phaseStartTime}
           limit={props.phaseTimeLimit}
           to={props.serverTimestamp}
+        />
+        <ChatStar
+          handleStar={props.handleStar}
+          isMarked={props.isMarked}
         />
       </div>
       <AgentIcon

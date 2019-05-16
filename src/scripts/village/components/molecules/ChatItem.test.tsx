@@ -6,11 +6,14 @@ import {shallow} from 'enzyme'
 describe('<ChatItem />', () => {
   describe('isMine={true}', () => {
     test('iintensionalDisclosureRange="anonymousAudience"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -28,13 +31,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="grave"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.grave}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -52,13 +59,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="hunter"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.hunter}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -76,13 +87,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="master"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.master}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -100,13 +115,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="onymousAudience"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.onymousAudience}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -124,13 +143,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="private"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.private}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -148,13 +171,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="public"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.public}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -172,13 +199,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="seer"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.seer}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -196,13 +227,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="werewolf"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.werewolf}
+          isMarked={false}
           isMine
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -220,15 +255,19 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
   })
   describe('isMine={false}', () => {
     test('intensionalDisclosureRange="anonymousAudience"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -246,13 +285,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="grave"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.grave}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -270,13 +313,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="hunter"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.hunter}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -294,13 +341,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="master"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.master}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -318,13 +369,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="onymousAudience"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.onymousAudience}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -342,13 +397,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="private"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.private}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -366,13 +425,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="public"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.public}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -390,13 +453,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(true)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="seer"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.seer}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -414,13 +481,17 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
     test('intensionalDisclosureRange="werewolf"', () => {
+      const handleStar = jest.fn()
       const wrapper = shallow(
         <ChatItem
+          handleStar={handleStar}
           id={1}
           image="image"
           intensionalDisclosureRange={village.Channel.werewolf}
+          isMarked={false}
           isMine={false}
           name="name"
           phaseStartTime="2018-01-01T00:00:00.000Z"
@@ -438,6 +509,7 @@ describe('<ChatItem />', () => {
       expect(wrapper.find('.vi--chat--item').hasClass('private')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#message1')).toBe(false)
       expect(wrapper.find('.vi--chat--item').is('#messageundefiend')).toBe(false)
+      expect(handleStar).toHaveBeenCalledTimes(0)
     })
   })
 })

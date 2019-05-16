@@ -1,14 +1,32 @@
 import * as React from 'react'
-import ChatDelimeter, {Props as ChatDelimeterProps} from '../atoms/ChatDelimeter'
-import ChatItem, {Props as ChatItemProps} from '../molecules/ChatItem'
+import ChatDelimeter from '../atoms/ChatDelimeter'
+import ChatItem from '../molecules/ChatItem'
 
 export interface StateProps {
-  readonly allIds: string[]
+  readonly allIds: village.ChatId[]
   readonly byId: {
-    [id: string]: (ChatDelimeterProps & {type: 'delimeter'}) | (ChatItemProps & {type: 'item'})
+    [id: string /* village.ChatId */]: {
+      readonly id: number
+      readonly image: string
+      readonly intensionalDisclosureRange: village.Channel
+      readonly isMarked: boolean
+      readonly isMine: boolean
+      readonly name: string
+      readonly phaseStartTime: string
+      readonly phaseTimeLimit: number
+      readonly serverTimestamp: string
+      readonly text: string
+      readonly type: 'item'
+    } | {
+      readonly date: number
+      readonly type: 'delimeter'
+    }
   }
 }
-export type Props = StateProps
+export interface DispatchProps {
+  readonly handleStar: (id: village.ChatId) => (isMarked: boolean) => void
+}
+export interface Props extends StateProps, DispatchProps {}
 export interface State {
   atBottom: boolean
 }
@@ -68,6 +86,7 @@ export default class Chat extends React.Component<Props, State> {
               case 'item':
                 return (
                   <ChatItem
+                    handleStar={this.props.handleStar(id)}
                     key={id}
                     {... item}
                   />
