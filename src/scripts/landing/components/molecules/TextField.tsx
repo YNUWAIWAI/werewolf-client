@@ -43,41 +43,35 @@ export default class TextField extends React.Component<Props, State> {
   public render() {
     return (
       <div className="la--field">
-        <dl>
-          <dt>
-            <FormattedMessage
-              id={`${this.props.type}-label-${this.props.name}`}
-            >
-              {
-                text => (
-                  <label
-                    className="la--label"
-                    htmlFor={`${this.props.type}-${this.props.name}`}
-                  >
-                    {text}
-                  </label>
-                )
-              }
+        <FormattedMessage
+          id={`${this.props.type}-label-${this.props.name}`}
+        >
+          {
+            text => (
+              <label
+                className="la--label"
+                htmlFor={`${this.props.type}-${this.props.name}`}
+              >
+                {text}
+              </label>
+            )
+          }
 
-            </FormattedMessage>
-          </dt>
-          <dd>
-            <input
-              autoComplete="off"
-              autoFocus={this.props.autoFocus}
-              className="la--input"
-              id={`${this.props.type}-${this.props.name}`}
-              minLength={this.getMinLength()}
-              name={this.props.name}
-              onChange={
-                event => this.handleTextChange(event.target.value)
-              }
-              required
-              type={this.getType()}
-              value={this.state.text}
-            />
-          </dd>
-        </dl>
+        </FormattedMessage>
+        <input
+          autoComplete="off"
+          autoFocus={this.props.autoFocus}
+          className="la--input"
+          id={`${this.props.type}-${this.props.name}`}
+          minLength={this.getMinLength()}
+          name={this.props.name}
+          onChange={
+            event => this.handleTextChange(event.target.value)
+          }
+          required
+          type={this.getType()}
+          value={this.state.text}
+        />
       </div>
     )
   }

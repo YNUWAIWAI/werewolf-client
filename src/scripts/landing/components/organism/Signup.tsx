@@ -15,7 +15,7 @@ export default function Signup(props: Props) {
   return (
     <form
       action={props.action}
-      className="la--signup"
+      className="la--form"
       method="POST"
     >
       <ErrorMessage
@@ -23,7 +23,7 @@ export default function Signup(props: Props) {
         visible={props.error}
       />
       <TextField
-        autoFocus={false}
+        autoFocus
         name="name"
         type="signup"
       />
