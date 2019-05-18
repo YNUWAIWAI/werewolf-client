@@ -14,7 +14,7 @@ export default function FormNavigation(props: Props) {
       {
         text => (
           <button
-            className="la--mode-button"
+            className="la--form-navigation"
             onClick={() => {
               props.handleClick(!props.isSignup)
             }}

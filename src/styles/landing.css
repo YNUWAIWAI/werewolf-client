@@ -94,7 +94,7 @@ body {
     padding: 1rem;
   }
 
-  &--mode-button {
+  &--form-navigation {
     background: rgb(156, 204, 101);
     border-radius: 0 0 0 10px;
     color: white;
