@@ -4,6 +4,9 @@ import '../src/styles/village.css'
 import '../src/styles/lobby.css'
 import '../src/styles/landing.css'
 
+const options = {
+  showPanel: false
+}
 const viewport = {
   viewports: {
     FHD: {
@@ -59,6 +62,7 @@ const viewport = {
 
 addDecorator(withKnobs)
 addParameters({
+  options,
   viewport
 })
 
