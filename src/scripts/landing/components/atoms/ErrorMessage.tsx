@@ -17,7 +17,7 @@ export default function ErrorMessage(props: Props) {
     >
       {
         text => (
-          <p className="error">
+          <p className="la--error">
             {text}
           </p>
         )

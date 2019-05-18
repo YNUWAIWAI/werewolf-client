@@ -29,7 +29,7 @@ export default function Confirmation(props: Props) {
     >
       {
         (... text) => (
-          <p className="confirmation">
+          <p className="la--confirmation">
             {text}
           </p>
         )

@@ -14,7 +14,7 @@ export default function Login(props: Props) {
   return (
     <form
       action={props.action}
-      className="login"
+      className="la--form"
       method="POST"
     >
       <ErrorMessage
