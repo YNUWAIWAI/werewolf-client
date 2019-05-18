@@ -28,7 +28,7 @@ export default function App(props: Props) {
       locale={props.lang}
       messages={messages}
     >
-      <>
+      <div className="la--landing">
         <Lead />
         <Login
           action={props.loginAction}
@@ -40,7 +40,7 @@ export default function App(props: Props) {
           csrfToken={props.csrfToken}
           error={props.signupError}
         />
-      </>
+      </div>
     </IntlProvider>
   )
 }

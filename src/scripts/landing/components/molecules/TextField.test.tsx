@@ -16,8 +16,8 @@ describe('render', () => {
     )
 
     expect(wrapper.text()).toBe('Email')
-    expect(wrapper.find('.input').props().minLength).toBeUndefined()
-    expect(wrapper.find('.input').props().type).toBe('text')
+    expect(wrapper.find('.la--input').props().minLength).toBeUndefined()
+    expect(wrapper.find('.la--input').props().type).toBe('text')
   })
   test('name', () => {
     const wrapper = mountWithIntl<TextField>(
@@ -29,8 +29,8 @@ describe('render', () => {
     )
 
     expect(wrapper.text()).toBe('Name')
-    expect(wrapper.find('.input').props().minLength).toBeUndefined()
-    expect(wrapper.find('.input').props().type).toBe('text')
+    expect(wrapper.find('.la--input').props().minLength).toBeUndefined()
+    expect(wrapper.find('.la--input').props().type).toBe('text')
   })
   test('password', () => {
     const wrapper = mountWithIntl<TextField>(
@@ -42,8 +42,8 @@ describe('render', () => {
     )
 
     expect(wrapper.text()).toBe('Password')
-    expect(wrapper.find('.input').props().minLength).toBe(8)
-    expect(wrapper.find('.input').props().type).toBe('password')
+    expect(wrapper.find('.la--input').props().minLength).toBe(8)
+    expect(wrapper.find('.la--input').props().type).toBe('password')
   })
 })
 test('handleTextChange', () => {
@@ -56,7 +56,7 @@ test('handleTextChange', () => {
   )
 
   expect(wrapper.state().text).toBe('')
-  wrapper.find('.input').simulate('change', {
+  wrapper.find('.la--input').simulate('change', {
     target: {
       value: 'text'
     }

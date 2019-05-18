@@ -15,7 +15,7 @@ export default function Signup(props: Props) {
   return (
     <form
       action={props.action}
-      className="signup"
+      className="la--signup"
       method="POST"
     >
       <ErrorMessage

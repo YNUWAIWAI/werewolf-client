@@ -42,7 +42,7 @@ export default class TextField extends React.Component<Props, State> {
 
   public render() {
     return (
-      <div className="field">
+      <div className="la--field">
         <dl>
           <dt>
             <FormattedMessage
@@ -51,7 +51,7 @@ export default class TextField extends React.Component<Props, State> {
               {
                 text => (
                   <label
-                    className="label"
+                    className="la--label"
                     htmlFor={`${this.props.type}-${this.props.name}`}
                   >
                     {text}
@@ -65,7 +65,7 @@ export default class TextField extends React.Component<Props, State> {
             <input
               autoComplete="off"
               autoFocus={this.props.autoFocus}
-              className="input"
+              className="la--input"
               id={`${this.props.type}-${this.props.name}`}
               minLength={this.getMinLength()}
               name={this.props.name}

@@ -13,7 +13,7 @@ export default function SubmitButton(props: Props) {
       {
         text => (
           <button
-            className="button"
+            className="la--button"
             type="submit"
           >
             {text}
