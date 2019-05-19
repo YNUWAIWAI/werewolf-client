@@ -2,13 +2,6 @@ language: node_js
 node_js:
   - "11"
 cache: yarn
-script:
-  - mkdir -p ../public/stylesheets
-  - mkdir -p ../public/javascripts
-  - mkdir -p ../app/views
-  - yarn build:development
-  - yarn build:production
 after_success:
   - yarn eslint
   - yarn stylelint
-  - yarn deploy-storybook --ci
