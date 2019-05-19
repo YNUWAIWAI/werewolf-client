@@ -3,5 +3,7 @@ node_js:
   - "11"
 cache: yarn
 script:
+  - yarn
+after_success:
   - yarn eslint
   - yarn stylelint
