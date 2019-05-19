@@ -25,11 +25,11 @@ jobs:
       - run: yarn test:ci
       - run: yarn test:integration
       - store_artifacts:
-          path: integration/landing/__image_snapshots__/__diff_output__
+          path: integration/landing/__image_snapshots__
           destination: landing
       - store_artifacts:
-          path: integration/lobby/__image_snapshots__/__diff_output__
+          path: integration/lobby/__image_snapshots__
           destination: lobby
       - store_artifacts:
-          path: integration/village/__image_snapshots__/__diff_output__
+          path: integration/village/__image_snapshots__
           destination: village
