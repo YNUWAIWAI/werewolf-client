@@ -104,7 +104,7 @@ workflows:
       - unit-test
       - visual-test
       - deploy-storybook:
-        requires:
-          - build
-          - unit-test
-          - visual-test
+          requires:
+            - build
+            - unit-test
+            - visual-test
