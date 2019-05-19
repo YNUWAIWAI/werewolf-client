@@ -96,46 +96,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn deploy-storybook --ci
 
-  eslint:
-    docker:
-      - image: circleci/node:11-browsers
-        environment:
-          TZ: Asia/Tokyo
-          LC_ALL: ja_JP.UTF-8
-          LANG: ja_JP.UTF-8
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn eslint
-
-  stylelint:
-    docker:
-      - image: circleci/node:11-browsers
-        environment:
-          TZ: Asia/Tokyo
-          LC_ALL: ja_JP.UTF-8
-          LANG: ja_JP.UTF-8
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn stylelint
-
 workflows:
   version: 2
   test_accept_deploy:
@@ -148,5 +108,3 @@ workflows:
             - build
             - unit-test
             - visual-test
-      - eslint
-      - stylelint
