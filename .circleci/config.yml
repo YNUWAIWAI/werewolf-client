@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.4
 jobs:
   build:
     branches:
@@ -23,6 +25,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test:ci
+      - codecov/upload:
+          file: coverage
       - run: yarn test:integration
       - store_artifacts:
           path: integration/landing/__image_snapshots__
