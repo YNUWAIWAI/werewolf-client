@@ -23,7 +23,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test:ci
-      - run: yarn test:integration -w 2
+      - run: yarn test:integration
   # deploy:
   #   docker:
   #     - image: google/cloud-sdk
