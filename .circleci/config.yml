@@ -26,7 +26,7 @@ jobs:
       - run: yarn test:integration
       - store_artifacts:
         path: integration/landing/__image_snapshots__/__diff_output__
-        destination: prefix
+        destination: integration
 
   # deploy:
   #   docker:
