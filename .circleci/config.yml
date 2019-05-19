@@ -19,12 +19,12 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
-        command: |
-          mkdir -p ../public/stylesheets
-          mkdir -p ../public/javascripts
-          mkdir -p ../app/views
-          yarn build:development
-          yarn build:production
+          command: |
+            mkdir -p ../public/stylesheets
+            mkdir -p ../public/javascripts
+            mkdir -p ../app/views
+            yarn build:development
+            yarn build:production
   unit-test:
     docker:
       - image: circleci/node:11-browsers
@@ -78,9 +78,5 @@ workflows:
   build_accept_deploy:
     jobs:
       - build
-      - unit-test:
-          requires:
-            - build
-      - visual-test:
-          requires:
-            - build
+      - unit-test
+      - visual-test
