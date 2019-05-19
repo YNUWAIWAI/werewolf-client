@@ -5,6 +5,12 @@ module.exports = {
     'jest/globals': true,
     'node': true
   },
+  'globals': {
+    'page': true,
+    'browser': true,
+    'context': true,
+    'jestPuppeteer': true,
+  },
   'parser': '@typescript-eslint/parser',
   'parserOptions': {
     'ecmaFeatures': {
