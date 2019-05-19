@@ -24,6 +24,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test:ci
       - run: yarn test:integration
+      - store_artifacts:
+        path: integration/landing/__image_snapshots__/__diff_output__
+        destination: prefix
+
   # deploy:
   #   docker:
   #     - image: google/cloud-sdk
