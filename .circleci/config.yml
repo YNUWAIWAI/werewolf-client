@@ -22,7 +22,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn test:ci -w 2
+      - run: yarn test:ci
       - run: yarn test:integration -w 2
   # deploy:
   #   docker:
