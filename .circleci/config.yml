@@ -13,13 +13,12 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
-
       - run: yarn install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn test:ci
+      - run: yarn test:ci -w 2
   # deploy:
   #   docker:
   #     - image: google/cloud-sdk
