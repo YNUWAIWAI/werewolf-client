@@ -26,13 +26,10 @@ jobs:
       - run: yarn test:integration
       - store_artifacts:
           path: integration/landing/__image_snapshots__/__diff_output__
-          destination: integration
-
-  # deploy:
-  #   docker:
-  #     - image: google/cloud-sdk
-  #   steps:
-  #     - run: |
-  #         echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
-  #         gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-  #         gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+          destination: landing
+      - store_artifacts:
+          path: integration/lobby/__image_snapshots__/__diff_output__
+          destination: lobby
+      - store_artifacts:
+          path: integration/village/__image_snapshots__/__diff_output__
+          destination: village
