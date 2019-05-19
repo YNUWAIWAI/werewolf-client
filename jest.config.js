@@ -9,5 +9,8 @@ module.exports = {
   setupFilesAfterEnv: [
     './tools/setupTests.js'
   ],
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  testPathIgnorePatterns: [
+    'integration'
+  ]
 }
