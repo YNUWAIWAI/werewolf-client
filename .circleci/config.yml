@@ -1,16 +1,12 @@
 version: 2
 jobs:
   build:
-    branches:
-      ignore:
-        gh-pages
     docker:
       - image: circleci/node:11-browsers
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
           LANG: ja_JP.UTF-8
-    working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
@@ -22,8 +18,36 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+  unit-test:
+    docker:
+      - image: circleci/node:11-browsers
+        environment:
+          TZ: Asia/Tokyo
+          LC_ALL: ja_JP.UTF-8
+          LANG: ja_JP.UTF-8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
       - run: yarn test:ci
       - run: yarn coverage
+  visual-test:
+    docker:
+      - image: circleci/node:11-browsers
+        environment:
+          TZ: Asia/Tokyo
+          LC_ALL: ja_JP.UTF-8
+          LANG: ja_JP.UTF-8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
       - run: yarn test:integration
       - store_artifacts:
           path: integration/landing/__image_snapshots__
@@ -34,3 +58,14 @@ jobs:
       - store_artifacts:
           path: integration/village/__image_snapshots__
           destination: village
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - build
+      - unit-test:
+          requires:
+            - build
+      - visual-test:
+          requires:
+            - build
