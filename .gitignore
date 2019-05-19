@@ -60,3 +60,4 @@ typings/
 dest/
 .cache
 __diff_output__
+storybook-static

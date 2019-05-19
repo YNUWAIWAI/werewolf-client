@@ -1,4 +1,4 @@
-# werewolf-client [![Build Status](https://travis-ci.org/YNUWAIWAI/werewolf-client.svg?branch=master)](https://travis-ci.org/YNUWAIWAI/werewolf-client) [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://ynuwaiwai.github.io/werewolf-client) [![codecov](https://codecov.io/gh/YNUWAIWAI/werewolf-client/branch/master/graph/badge.svg)](https://codecov.io/gh/YNUWAIWAI/werewolf-client)
+# werewolf-client [![Build Status](https://travis-ci.org/YNUWAIWAI/werewolf-client.svg?branch=master)](https://travis-ci.org/YNUWAIWAI/werewolf-client) [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://ynuwaiwai.github.io/werewolf-client) [![codecov](https://codecov.io/gh/YNUWAIWAI/werewolf-client/branch/master/graph/badge.svg)](https://codecov.io/gh/YNUWAIWAI/werewolf-client) [![CircleCI](https://circleci.com/gh/YNUWAIWAI/werewolfguide.svg?style=svg)](https://circleci.com/gh/YNUWAIWAI/werewolfguide)
 
 ## 必要なもの
 
