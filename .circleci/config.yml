@@ -18,6 +18,13 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+        command: |
+          mkdir -p ../public/stylesheets
+          mkdir -p ../public/javascripts
+          mkdir -p ../app/views
+          yarn build:development
+          yarn build:production
   unit-test:
     docker:
       - image: circleci/node:11-browsers
@@ -32,6 +39,10 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test:ci
       - run: yarn coverage
   visual-test:
@@ -48,6 +59,10 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test:integration
       - store_artifacts:
           path: integration/landing/__image_snapshots__
