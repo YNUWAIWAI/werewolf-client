@@ -52,10 +52,12 @@ body {
     }
   }
 
-  &--image {
-    height: 50%;
+  &--trailer {
+    border: 0;
+    display: block;
     margin: 0 auto;
-    width: 50%;
+    min-height: 300px;
+    min-width: 500px;
   }
 
   &--input {
