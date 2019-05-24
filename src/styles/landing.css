@@ -54,6 +54,7 @@ body {
 
   &--trailer {
     border: 0;
+    display: block;
     margin: 0 auto;
     min-height: 300px;
     min-width: 500px;
