@@ -56,8 +56,8 @@
     border: 0;
     display: block;
     margin: 0 auto;
-    min-height: 300px;
-    min-width: 500px;
+    min-height: 315px;
+    min-width: 560px;
   }
 
   &--input {
