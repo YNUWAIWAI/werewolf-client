@@ -6,8 +6,8 @@
   --error-color: red;
 }
 
-body {
-  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+* {
+  font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
 }
 
 .la {

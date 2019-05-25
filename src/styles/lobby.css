@@ -13,8 +13,8 @@
   --warning-color: rgb(240, 210, 24);
 }
 
-body {
-  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+* {
+  font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
   margin: 0;
 }
 
