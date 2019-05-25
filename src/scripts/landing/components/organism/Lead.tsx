@@ -7,7 +7,7 @@ export default function Lead(props: Props) {
     <div className="la--lead">
       <div className="la--title">
         <p>
-          {'Werewolf: The Game'}
+          {'LiCOS: A Game Of Werewolves'}
         </p>
       </div>
       <div className="la--flavor">
