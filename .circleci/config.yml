@@ -107,4 +107,4 @@ workflows:
           requires:
             - build
             - unit-test
-            - visual-test
+            # - visual-test
