@@ -102,9 +102,9 @@ workflows:
     jobs:
       - build
       - unit-test
-      # - visual-test
+      - visual-test
       - deploy-storybook:
           requires:
             - build
             - unit-test
-            # - visual-test
+            - visual-test
