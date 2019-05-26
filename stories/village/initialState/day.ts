@@ -130,11 +130,11 @@ const state: ReducerState = {
     ]
   },
   commandInputBox: {
-    'limited': {
+    limited: {
       available: true,
       postCount: 0
     },
-    'public': {
+    public: {
       postCount: 0
     }
   },
@@ -308,8 +308,8 @@ const state: ReducerState = {
       'id': village.RoleId.seer,
       'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
       'name': {
-        en: 'Seer',
-        ja: '占い師'
+        'en': 'Seer',
+        'ja': '占い師'
       }
     }
   },
@@ -1209,108 +1209,101 @@ const state: ReducerState = {
   suggest: {
     data: [
       {
-        id: 'Alvin',
+        id: 'Adil',
         name: {
-          'en': 'Alvin',
-          'ja': 'アルビン'
+          'en': 'Adil',
+          'ja': 'アーディル'
         }
       },
       {
-        id: 'Catalina',
+        id: 'Borya',
         name: {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
+          'en': 'Borya',
+          'ja': 'ボーリャ'
         }
       },
       {
-        id: 'Dieter',
+        id: 'Chacha',
         name: {
-          'en': 'Dieter',
-          'ja': 'ディーター'
+          'en': 'Chacha',
+          'ja': 'チャチャ'
         }
       },
       {
-        id: 'Gert',
+        id: 'Devdatta',
         name: {
-          'en': 'Gert',
-          'ja': 'ゲルト'
+          'en': 'Devdatta',
+          'ja': 'デヴゥダッタ'
         }
       },
       {
-        id: 'Jacob',
+        id: 'Ekrem',
         name: {
-          'en': 'Jacob',
-          'ja': 'ヤコブ'
+          'en': 'Ekrem',
+          'ja': 'エクレム'
         }
       },
       {
-        id: 'Joachim',
+        id: 'Fernando',
         name: {
-          'en': 'Joachim',
-          'ja': 'ヨアヒム'
+          'en': 'Fernando',
+          'ja': 'フェルナンド'
         }
       },
       {
-        id: 'Lisa',
+        id: 'Gavriil',
         name: {
-          'en': 'Lisa',
-          'ja': 'リーザ'
+          'en': 'Gavriil',
+          'ja': 'ガブリール'
         }
       },
       {
-        id: 'Moritz',
+        id: 'Ileanna',
         name: {
-          'en': 'Moritz',
-          'ja': 'モーリッツ'
+          'en': 'Ileanna',
+          'ja': 'イレアナ'
         }
       },
       {
-        id: 'Nicholas',
+        id: 'Jasmin',
         name: {
-          'en': 'Nicholas',
-          'ja': 'ニコラス'
+          'en': 'Jasmin',
+          'ja': 'ジャスミン'
         }
       },
       {
-        id: 'Otto',
+        id: 'Kaiji',
         name: {
-          'en': 'Otto',
-          'ja': 'オットー'
+          'en': 'Kaiji',
+          'ja': '開司'
         }
       },
       {
-        id: 'Pamela',
+        id: 'Louise',
         name: {
-          'en': 'Pamela',
-          'ja': 'パメラ'
+          'en': 'Louise',
+          'ja': 'ルイーズ'
         }
       },
       {
-        id: 'Peter',
+        id: 'Marthe',
         name: {
-          'en': 'Peter',
-          'ja': 'ペーター'
+          'en': 'Marthe',
+          'ja': 'マーテ'
         }
       },
       {
-        id: 'Simson',
+        id: 'Nanyamka',
         name: {
-          'en': 'Simson',
-          'ja': 'ジムゾン'
+          'en': 'Nanyamka',
+          'ja': 'ナニャンカ'
         }
       },
       {
-        id: 'Thomas',
+        id: 'Oliwia',
         name: {
-          'en': 'Thomas',
-          'ja': 'トーマス'
-        }
-      },
-      {
-        id: 'Walter',
-        name: {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
+          'en': 'Oliwia',
+          'ja': 'オリビア'
         }
       },
       {
