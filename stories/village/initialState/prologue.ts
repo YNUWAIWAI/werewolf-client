@@ -32,13 +32,13 @@ const state: ReducerState = {
       'chat0': {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.1/Walter.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
         'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
+          'en': 'Adil',
+          'ja': 'アーディル'
         },
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
@@ -49,13 +49,13 @@ const state: ReducerState = {
       'chat1': {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'id': 2,
-        'image': 'https://werewolf.world/image/0.1/Alvin.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
         'name': {
-          'en': 'Alvin',
-          'ja': 'アルビン'
+          'en': 'Ileanna',
+          'ja': 'イレアナ'
         },
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
@@ -79,11 +79,11 @@ const state: ReducerState = {
     ]
   },
   commandInputBox: {
-    'limited': {
+    limited: {
       available: true,
       postCount: 0
     },
-    'public': {
+    public: {
       postCount: 0
     }
   },
