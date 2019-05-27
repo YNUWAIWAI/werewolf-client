@@ -19,7 +19,7 @@ export default function Lead(props: Props) {
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         className="la--trailer"
-        src="https://www.youtube.com/embed/PSeoJpc4J1s"
+        src="https://www.youtube.com/embed/VrxRKYTRZG8"
       />
     </div>
   )
