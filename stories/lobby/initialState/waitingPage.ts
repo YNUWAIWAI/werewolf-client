@@ -39,7 +39,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -47,7 +47,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -55,7 +55,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -63,7 +63,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -71,7 +71,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -79,7 +79,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -87,7 +87,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -95,7 +95,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -103,7 +103,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -111,7 +111,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -119,7 +119,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -127,7 +127,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -135,7 +135,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -143,7 +143,7 @@ const state: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
       },
       {
-        avatarImage: 'https://werewolf.world/image/0.1/master.jpg',
+        avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
         isAnonymous: true,
         isHost: false,
         isMe: false,
