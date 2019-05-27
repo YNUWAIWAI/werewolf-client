@@ -25,12 +25,12 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   },
   {
-    avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
+    avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png',
     canKickOut: false,
     isAnonymous: false,
     isHost: false,
     isMe: true,
-    name: 'Cathy',
+    name: 'Ryan',
     ping: '2.000 s',
     pingStatus: lobby.PingStatus.warning,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
