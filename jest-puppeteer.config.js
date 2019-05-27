@@ -1,6 +1,6 @@
 module.exports = {
   args: [
-    '--font-render-hinting=medium'
+    '--font-render-hinting=none'
   ],
   launch: {
     defaultViewport: {
