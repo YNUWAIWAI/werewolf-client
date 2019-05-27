@@ -14,6 +14,7 @@
   &--button {
     appearance: none;
     background: var(--regular-color);
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.25rem;
