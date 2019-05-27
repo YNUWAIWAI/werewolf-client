@@ -1,4 +1,8 @@
 module.exports = {
+  args: [
+    '--enable-font-antialiasing',
+    '--font-render-hinting=medium'
+  ],
   launch: {
     defaultViewport: {
       height: 1080,
