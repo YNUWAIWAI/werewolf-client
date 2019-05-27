@@ -14,16 +14,16 @@ const store = createStore(
       agent: {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
         'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
+          'en': 'Adil',
+          'ja': 'アーディル'
         }
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         'name': {
           'en': 'Seer',
           'ja': '占い師'
