@@ -68,10 +68,10 @@ storiesOf('lobby|AdvancedSearch', module)
         handleTextChange={handleTextChange}
         handleValidityChange={handleValidityChange}
         header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.1/Friedel.jpg"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
         isPlayer
         menuItems={menuItems}
-        name="Cathy"
+        name="Ryan"
         searched={false}
         selectVillage={selectVillage}
         transition={transition}
@@ -128,10 +128,10 @@ storiesOf('lobby|AdvancedSearch', module)
         handleTextChange={handleTextChange}
         handleValidityChange={handleValidityChange}
         header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.1/Friedel.jpg"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
         isPlayer
         menuItems={menuItems}
-        name="Cathy"
+        name="Ryan"
         searched
         selectVillage={selectVillage}
         transition={transition}
@@ -224,10 +224,10 @@ storiesOf('lobby|AdvancedSearch', module)
         handleTextChange={handleTextChange}
         handleValidityChange={handleValidityChange}
         header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.1/Friedel.jpg"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
         isPlayer
         menuItems={menuItems}
-        name="Cathy"
+        name="Ryan"
         searched
         selectVillage={selectVillage}
         transition={transition}
@@ -354,10 +354,10 @@ storiesOf('lobby|AdvancedSearch', module)
         handleTextChange={handleTextChange}
         handleValidityChange={handleValidityChange}
         header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.1/Friedel.jpg"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
         isPlayer
         menuItems={menuItems}
-        name="Cathy"
+        name="Ryan"
         searched
         selectVillage={selectVillage}
         transition={transition}

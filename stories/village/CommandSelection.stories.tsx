@@ -23,69 +23,74 @@ storiesOf('village|Command/CommandSelection', module)
   .add('default', () => {
     const agents = [
       {
-        id: 1,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
-        name: 'ヴァルター'
-      },
-      {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Moritz.jpg',
-        name: 'モーリッツ'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        name: 'Borya'
       },
       {
         id: 3,
-        image: 'https://werewolf.world/image/0.1/Simson.jpg',
-        name: 'ジムゾン'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        name: 'Chacha'
       },
       {
         id: 4,
-        image: 'https://werewolf.world/image/0.1/Thomas.jpg',
-        name: 'トーマス'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        name: 'Devdatta'
       },
       {
         id: 5,
-        image: 'https://werewolf.world/image/0.1/Nicholas.jpg',
-        name: 'ニコラス'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        name: 'Ekrem'
       },
       {
         id: 6,
-        image: 'https://werewolf.world/image/0.1/Dieter.jpg',
-        name: 'ディーター'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+        name: 'Fernando'
       },
       {
         id: 7,
-        image: 'https://werewolf.world/image/0.1/Peter.jpg',
-        name: 'ペーター'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
+        name: 'Gavriil'
       },
       {
         id: 8,
-        image: 'https://werewolf.world/image/0.1/Lisa.jpg',
-        name: 'リーザ'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
+        name: 'Henrik'
       },
       {
         id: 9,
-        image: 'https://werewolf.world/image/0.1/Alvin.jpg',
-        name: 'アルビン'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
+        name: 'Ileanna'
+      },
+      {
+        id: 10,
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
+        name: 'Jasmin'
       },
       {
         id: 11,
-        image: 'https://werewolf.world/image/0.1/Otto.jpg',
-        name: 'オットー'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
+        name: 'Kaiji'
       },
       {
         id: 12,
-        image: 'https://werewolf.world/image/0.1/Joachim.jpg',
-        name: 'ヨアヒム'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
+        name: 'Louise'
       },
       {
         id: 13,
-        image: 'https://werewolf.world/image/0.1/Pamela.jpg',
-        name: 'パメラ'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
+        name: 'Marthe'
       },
       {
         id: 14,
-        image: 'https://werewolf.world/image/0.1/Jacob.jpg',
-        name: 'ヤコブ'
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
+        name: 'Nanyamka'
+      },
+      {
+        id: 15,
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
+        name: 'Oliwia'
       }
     ]
     const story =

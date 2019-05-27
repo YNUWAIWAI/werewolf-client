@@ -8,7 +8,7 @@ const state: Partial<ReducerState> = {
     content: Content.LobbyForHumanPlayer
   },
   lobbyForHumanPlayer: {
-    image: 'https://werewolf.world/image/0.1/Friedel.jpg',
+    image: 'https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png',
     isPlayer: true,
     menuItems: [
       {
@@ -33,7 +33,7 @@ const state: Partial<ReducerState> = {
         types: [ActionTypes.Target.SHOW_MAIN]
       }
     ],
-    name: 'Cathy',
+    name: 'Ryan',
     villageItems: [
       {
         avatar: lobby.Avatar.fixed,

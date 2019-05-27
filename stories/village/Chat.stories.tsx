@@ -23,15 +23,15 @@ storiesOf('village|Chat', module)
     </Provider>
   ))
   .add('anonymousAudience', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -40,11 +40,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -62,15 +62,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('grave', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.grave,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -79,11 +79,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.grave,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -101,15 +101,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('hunter', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.hunter,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -118,11 +118,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.hunter,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -140,15 +140,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('master', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.master,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -157,11 +157,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.master,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -179,15 +179,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('onymousAudience', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.onymousAudience,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -196,11 +196,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.onymousAudience,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -218,15 +218,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('private', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.private,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -235,11 +235,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.private,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -257,15 +257,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('public', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -274,11 +274,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -296,15 +296,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('seer', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.seer,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -313,11 +313,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.seer,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -335,15 +335,15 @@ storiesOf('village|Chat', module)
     return story
   })
   .add('werewolf', () => {
-    const allIds = ['chat1', 'chat0']
+    const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.werewolf,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -352,11 +352,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.werewolf,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -378,11 +378,11 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -391,11 +391,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: true,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -425,11 +425,11 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.1/Gert.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: true,
-        name: 'ゲルト',
+        name: 'Adil',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
@@ -438,11 +438,11 @@ storiesOf('village|Chat', module)
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
@@ -451,11 +451,11 @@ storiesOf('village|Chat', module)
       },
       'chat2': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:09.000Z',
@@ -464,11 +464,11 @@ storiesOf('village|Chat', module)
       },
       'chat3': {
         id: 2,
-        image: 'https://werewolf.world/image/0.1/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: false,
-        name: 'ヴァルター',
+        name: 'Ileanna',
         phaseStartTime: '2018-01-01T00:00:00.000Z',
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:08.000Z',
