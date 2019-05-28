@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CommandSelectionContainer /> render DAY fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ投票先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render DAY fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ投票先はこちらです</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render DAY unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>投票先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render DAY unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>投票先を選んでください</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render NIGHT HUNTER fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ守護先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render NIGHT HUNTER fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ守護先はこちらです</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render NIGHT HUNTER unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>守護先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render NIGHT HUNTER unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>守護先を選んでください</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render NIGHT SEER fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ占い先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render NIGHT SEER fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ占い先はこちらです</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render NIGHT SEER unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>占い先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render NIGHT SEER unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>占い先を選んでください</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render NIGHT VILLAGER 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>待ってください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render NIGHT VILLAGER 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>待ってください</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render NIGHT WEREWOLF fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ襲撃先はこちらです</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render NIGHT WEREWOLF fixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>あなたの選んだ襲撃先はこちらです</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
 
-exports[`<CommandSelectionContainer /> render NIGHT WEREWOLF unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>襲撃先を選んでください</span><span>（<span>残り00'00</span>）</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;
+exports[`<CommandSelectionContainer /> render NIGHT WEREWOLF unfixed 1`] = `"<div class=\\"vi--command--selection\\"><div class=\\"vi--command--selection--description\\"><span>襲撃先を選んでください</span><span> (<span>残り00'00</span>)</span></div><div class=\\"vi--command--selection--select\\"></div></div>"`;

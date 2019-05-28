@@ -78,8 +78,20 @@
   }
 }
 
-body {
-  font-family: 'Noto Sans Japanese', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+@keyframes loader {
+  from {
+    transform: rotate(0);
+    transform-origin: center;
+  }
+
+  to {
+    transform: rotate(1turn);
+    transform-origin: center;
+  }
+}
+
+* {
+  font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
   margin: 0;
 }
 
@@ -468,6 +480,7 @@ body {
 
       &--textarea {
         background: var(--public-color);
+        border: 1px solid black;
         border-radius: 10px;
         box-sizing: border-box;
         font-size: 1rem;
@@ -1340,4 +1353,8 @@ body {
       }
     }
   }
+}
+
+.loader.animation {
+  animation: 1s linear loader infinite;
 }

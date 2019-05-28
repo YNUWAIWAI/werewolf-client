@@ -1,32 +1,38 @@
 describe('App', () => {
   test('default', async () => {
-    await page.goto('http://localhost:9009/iframe.html?id=landing-app--default')
-    await page.waitFor(1000)
+    await page.goto('http://localhost:9009/iframe.html?id=landing-app--default', {
+      waitUntil: 'networkidle2'
+    })
+    await page.evaluateHandle('document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 18,
-      failureThresholdType: 'pixel'
+      failureThreshold: 0.2,
+      failureThresholdType: 'percent'
     })
   })
   test('loginError', async () => {
-    await page.goto('http://localhost:9009/iframe.html?id=landing-app--loginerror')
-    await page.waitFor(1000)
+    await page.goto('http://localhost:9009/iframe.html?id=landing-app--loginerror', {
+      waitUntil: 'networkidle2'
+    })
+    await page.evaluateHandle('document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 18,
-      failureThresholdType: 'pixel'
+      failureThreshold: 0.23,
+      failureThresholdType: 'percent'
     })
   })
   test('signupError', async () => {
-    await page.goto('http://localhost:9009/iframe.html?id=landing-app--signuperror')
-    await page.waitFor(1000)
+    await page.goto('http://localhost:9009/iframe.html?id=landing-app--signuperror', {
+      waitUntil: 'networkidle2'
+    })
+    await page.evaluateHandle('document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 18,
-      failureThresholdType: 'pixel'
+      failureThreshold: 0.2,
+      failureThresholdType: 'percent'
     })
   })
 })
