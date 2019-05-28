@@ -155,7 +155,7 @@
       display: flex;
       flex-direction: column;
       grid-area: opp;
-      justify-content: start;
+      justify-content: flex-start;
       margin: 0 var(--arrow) 0 0;
 
       &--image {
