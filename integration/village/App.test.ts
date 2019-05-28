@@ -5,7 +5,10 @@ describe('App', () => {
     await page.waitFor(1000)
     const image = await page.screenshot()
 
-    expect(image).toMatchImageSnapshot()
+    expect(image).toMatchImageSnapshot({
+      failureThreshold: 0.1,
+      failureThresholdType: 'percent'
+    })
   })
   test('prologue', async () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--prologue')
