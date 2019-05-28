@@ -78,6 +78,18 @@
   }
 }
 
+@keyframes loader {
+  from {
+    transform: rotate(0);
+    transform-origin: center;
+  }
+
+  to {
+    transform: rotate(1turn);
+    transform-origin: center;
+  }
+}
+
 * {
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
   margin: 0;
@@ -1341,4 +1353,8 @@
       }
     }
   }
+}
+
+.loader.animation {
+  animation: 1s linear loader infinite;
 }
