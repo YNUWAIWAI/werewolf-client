@@ -1,7 +1,7 @@
 export default {
   'ChatContainer.date': 'Day {date}',
   'ChatContainer.postMortem': 'Post-mortem discussion',
-  'ChatDate': '{postTime}（{restTime} left）',
+  'ChatDate': '{postTime} ({restTime} left)',
   'CommandInput.placeholder.grave': 'Graveyard',
   'CommandInput.placeholder.limited': 'Werewolf',
   'CommandInput.placeholder.postMortem': 'Post-mortem',
