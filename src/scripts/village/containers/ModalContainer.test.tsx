@@ -40,30 +40,30 @@ describe('<ModalContainer />', () => {
             commandSelection: {
               agents: [
                 {
-                  '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#2',
                   'id': 2,
-                  'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                   'name': {
-                    'en': 'Moritz',
-                    'ja': 'モーリッツ'
+                    'en': 'Borya',
+                    'ja': 'ボーリャ'
                   }
                 },
                 {
-                  '@id': 'https://werewolf.world/resource/0.2/Simson',
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#3',
                   'id': 3,
-                  'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                   'name': {
-                    'en': 'Simson',
-                    'ja': 'ジムゾン'
+                    'en': 'Chacha',
+                    'ja': 'チャチャ'
                   }
                 },
                 {
-                  '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#4',
                   'id': 4,
-                  'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                   'name': {
-                    'en': 'Thomas',
-                    'ja': 'トーマス'
+                    'en': 'Devdatta',
+                    'ja': 'デヴゥダッタ'
                   }
                 }
               ],
@@ -71,10 +71,19 @@ describe('<ModalContainer />', () => {
             },
             language: village.Language.ja,
             mine: {
+              agent: {
+                '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                'id': 1,
+                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                'name': {
+                  'en': 'Adil',
+                  'ja': 'アーディル'
+                }
+              },
               role: {
-                '@id': 'https://werewolf.world/resource/0.2/seer',
+                '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                 'id': village.RoleId.seer,
-                'image': 'https://werewolf.world/image/0.2/seer.jpg',
+                'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                 'name': {
                   'en': 'Seer',
                   'ja': '占い師'
@@ -127,30 +136,30 @@ describe('<ModalContainer />', () => {
               commandSelection: {
                 agents: [
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
                     'id': 2,
-                    'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                     'name': {
-                      'en': 'Moritz',
-                      'ja': 'モーリッツ'
+                      'en': 'Borya',
+                      'ja': 'ボーリャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Simson',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
                     'id': 3,
-                    'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                     'name': {
-                      'en': 'Simson',
-                      'ja': 'ジムゾン'
+                      'en': 'Chacha',
+                      'ja': 'チャチャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
                     'id': 4,
-                    'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                     'name': {
-                      'en': 'Thomas',
-                      'ja': 'トーマス'
+                      'en': 'Devdatta',
+                      'ja': 'デヴゥダッタ'
                     }
                   }
                 ],
@@ -158,13 +167,22 @@ describe('<ModalContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
-                role: {
-                  '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
-                  'id': village.RoleId.hunter,
-                  'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   'name': {
-                    'en': 'Hunter',
-                    'ja': '狩人'
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
+                role: {
+                  '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+                  'id': village.RoleId.seer,
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
+                  'name': {
+                    'en': 'Seer',
+                    'ja': '占い師'
                   }
                 }
               },
@@ -213,30 +231,30 @@ describe('<ModalContainer />', () => {
               commandSelection: {
                 agents: [
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
                     'id': 2,
-                    'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                     'name': {
-                      'en': 'Moritz',
-                      'ja': 'モーリッツ'
+                      'en': 'Borya',
+                      'ja': 'ボーリャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Simson',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
                     'id': 3,
-                    'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                     'name': {
-                      'en': 'Simson',
-                      'ja': 'ジムゾン'
+                      'en': 'Chacha',
+                      'ja': 'チャチャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
                     'id': 4,
-                    'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                     'name': {
-                      'en': 'Thomas',
-                      'ja': 'トーマス'
+                      'en': 'Devdatta',
+                      'ja': 'デヴゥダッタ'
                     }
                   }
                 ],
@@ -244,10 +262,19 @@ describe('<ModalContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                  'name': {
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                   'id': village.RoleId.seer,
-                  'image': 'https://werewolf.world/image/0.2/seer.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   'name': {
                     'en': 'Seer',
                     'ja': '占い師'
@@ -299,30 +326,30 @@ describe('<ModalContainer />', () => {
               commandSelection: {
                 agents: [
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
                     'id': 2,
-                    'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                     'name': {
-                      'en': 'Moritz',
-                      'ja': 'モーリッツ'
+                      'en': 'Borya',
+                      'ja': 'ボーリャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Simson',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
                     'id': 3,
-                    'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                     'name': {
-                      'en': 'Simson',
-                      'ja': 'ジムゾン'
+                      'en': 'Chacha',
+                      'ja': 'チャチャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
                     'id': 4,
-                    'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                     'name': {
-                      'en': 'Thomas',
-                      'ja': 'トーマス'
+                      'en': 'Devdatta',
+                      'ja': 'デヴゥダッタ'
                     }
                   }
                 ],
@@ -333,7 +360,7 @@ describe('<ModalContainer />', () => {
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
                   'id': village.RoleId.werewolf,
-                  'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   'name': {
                     'en': 'Werewolf',
                     'ja': '人狼'
@@ -385,30 +412,30 @@ describe('<ModalContainer />', () => {
               commandSelection: {
                 agents: [
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
                     'id': 2,
-                    'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                     'name': {
-                      'en': 'Moritz',
-                      'ja': 'モーリッツ'
+                      'en': 'Borya',
+                      'ja': 'ボーリャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Simson',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
                     'id': 3,
-                    'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                     'name': {
-                      'en': 'Simson',
-                      'ja': 'ジムゾン'
+                      'en': 'Chacha',
+                      'ja': 'チャチャ'
                     }
                   },
                   {
-                    '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
                     'id': 4,
-                    'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                    'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                     'name': {
-                      'en': 'Thomas',
-                      'ja': 'トーマス'
+                      'en': 'Devdatta',
+                      'ja': 'デヴゥダッタ'
                     }
                   }
                 ],
@@ -419,7 +446,7 @@ describe('<ModalContainer />', () => {
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#villager',
                   'id': village.RoleId.villager,
-                  'image': 'https://werewolf.world/image/0.2/villager.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
                   'name': {
                     'en': 'Villager',
                     'ja': '村人'
@@ -473,30 +500,30 @@ describe('<ModalContainer />', () => {
           commandSelection: {
             agents: [
               {
-                '@id': 'https://werewolf.world/resource/0.2/Moritz',
+                '@id': 'https://licos.online/state/0.2/village#3/agent#2',
                 'id': 2,
-                'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                 'name': {
-                  'en': 'Moritz',
-                  'ja': 'モーリッツ'
+                  'en': 'Borya',
+                  'ja': 'ボーリャ'
                 }
               },
               {
-                '@id': 'https://werewolf.world/resource/0.2/Simson',
+                '@id': 'https://licos.online/state/0.2/village#3/agent#3',
                 'id': 3,
-                'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                 'name': {
-                  'en': 'Simson',
-                  'ja': 'ジムゾン'
+                  'en': 'Chacha',
+                  'ja': 'チャチャ'
                 }
               },
               {
-                '@id': 'https://werewolf.world/resource/0.2/Thomas',
+                '@id': 'https://licos.online/state/0.2/village#3/agent#4',
                 'id': 4,
-                'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                 'name': {
-                  'en': 'Thomas',
-                  'ja': 'トーマス'
+                  'en': 'Devdatta',
+                  'ja': 'デヴゥダッタ'
                 }
               }
             ],
