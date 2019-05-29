@@ -43,10 +43,19 @@ describe('<CommandSelectionContainer />', () => {
             },
             language: village.Language.ja,
             mine: {
+              agent: {
+                '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                'id': 1,
+                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                'name': {
+                  'en': 'Adil',
+                  'ja': 'アーディル'
+                }
+              },
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                 'id': village.RoleId.seer,
-                'image': 'https://werewolf.world/image/0.2/seer.jpg',
+                'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                 'name': {
                   'en': 'Seer',
                   'ja': '占い師'
@@ -97,10 +106,19 @@ describe('<CommandSelectionContainer />', () => {
             },
             language: village.Language.ja,
             mine: {
+              agent: {
+                '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                'id': 1,
+                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                'name': {
+                  'en': 'Adil',
+                  'ja': 'アーディル'
+                }
+              },
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                 'id': village.RoleId.seer,
-                'image': 'https://werewolf.world/image/0.2/seer.jpg',
+                'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                 'name': {
                   'en': 'Seer',
                   'ja': '占い師'
@@ -154,10 +172,19 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                  'name': {
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
                   'id': village.RoleId.hunter,
-                  'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   'name': {
                     'en': 'Hunter',
                     'ja': '狩人'
@@ -208,10 +235,19 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                  'name': {
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
                   'id': village.RoleId.hunter,
-                  'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   'name': {
                     'en': 'Hunter',
                     'ja': '狩人'
@@ -264,10 +300,19 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                  'name': {
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                   'id': village.RoleId.seer,
-                  'image': 'https://werewolf.world/image/0.2/seer.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   'name': {
                     'en': 'Seer',
                     'ja': '占い師'
@@ -318,10 +363,19 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                  'name': {
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                   'id': village.RoleId.seer,
-                  'image': 'https://werewolf.world/image/0.2/seer.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   'name': {
                     'en': 'Seer',
                     'ja': '占い師'
@@ -374,10 +428,19 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                  'name': {
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
                   'id': village.RoleId.werewolf,
-                  'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   'name': {
                     'en': 'Werewolf',
                     'ja': '人狼'
@@ -428,10 +491,19 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.ja,
               mine: {
+                agent: {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                  'id': 1,
+                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                  'name': {
+                    'en': 'Adil',
+                    'ja': 'アーディル'
+                  }
+                },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
                   'id': village.RoleId.werewolf,
-                  'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   'name': {
                     'en': 'Werewolf',
                     'ja': '人狼'
@@ -483,10 +555,19 @@ describe('<CommandSelectionContainer />', () => {
             },
             language: village.Language.ja,
             mine: {
+              agent: {
+                '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                'id': 1,
+                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+                'name': {
+                  'en': 'Adil',
+                  'ja': 'アーディル'
+                }
+              },
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#villager',
                 'id': village.RoleId.villager,
-                'image': 'https://werewolf.world/image/0.2/villager.jpg',
+                'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
                 'name': {
                   'en': 'Villager',
                   'ja': '村人'
