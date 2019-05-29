@@ -6,11 +6,10 @@ describe('App', () => {
     await page.evaluateHandle('document.fonts.ready')
     const image = await page.screenshot()
 
-    expect(image).toMatchImageSnapshot()
-    // expect(image).toMatchImageSnapshot({
-    //   failureThreshold: 0.2,
-    //   failureThresholdType: 'percent'
-    // })
+    expect(image).toMatchImageSnapshot({
+      failureThreshold: 2914,
+      failureThresholdType: 'pixel'
+    })
   })
   test('loginError', async () => {
     await page.goto('http://localhost:9009/iframe.html?id=landing-app--loginerror', {
@@ -19,11 +18,10 @@ describe('App', () => {
     await page.evaluateHandle('document.fonts.ready')
     const image = await page.screenshot()
 
-    expect(image).toMatchImageSnapshot()
-    // expect(image).toMatchImageSnapshot({
-    //   failureThreshold: 0.23,
-    //   failureThresholdType: 'percent'
-    // })
+    expect(image).toMatchImageSnapshot({
+      failureThreshold: 3691,
+      failureThresholdType: 'pixel'
+    })
   })
   test('signupError', async () => {
     await page.goto('http://localhost:9009/iframe.html?id=landing-app--signuperror', {
@@ -32,10 +30,9 @@ describe('App', () => {
     await page.evaluateHandle('document.fonts.ready')
     const image = await page.screenshot()
 
-    expect(image).toMatchImageSnapshot()
-    // expect(image).toMatchImageSnapshot({
-    //   failureThreshold: 0.2,
-    //   failureThresholdType: 'percent'
-    // })
+    expect(image).toMatchImageSnapshot({
+      failureThreshold: 2914,
+      failureThresholdType: 'pixel'
+    })
   })
 })
