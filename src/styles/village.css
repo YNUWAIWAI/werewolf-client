@@ -1123,13 +1123,13 @@
       border: solid 1px black;
       box-sizing: border-box;
       display: grid;
-      grid-template-areas:
-        '. . .'
-        '. image .'
-        'name name name'
-        '. . .';
-      grid-template-columns: 1fr var(--prediction-image-size) 1fr;
-      grid-template-rows: 1fr var(--prediction-image-size) 15px 1fr;
+      grid-template:
+        '. . . .' 1fr
+        '. image image .' var(--agent-initial-height)
+        '. image image .' calc(var(--prediction-image-size) - var(--agent-initial-height))
+        'name name name name' 15px
+        '. . . .' 1fr
+        / 1fr calc(var(--prediction-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
       left: 0;
       position: sticky;
       z-index: var(--prediction--player--z-index);
@@ -1146,11 +1146,22 @@
         width: var(--prediction-image-size);
       }
 
+      &--initial {
+        color: white;
+        font-size: 16px;
+        grid-area: 2 / 3;
+        line-height: 1.25;
+        text-align: center;
+        z-index: 2;
+      }
+
       &--name {
         font-size: 10px;
         grid-area: name;
         line-height: 1.5;
+        overflow: auto;
         text-align: center;
+        word-break: keep-all;
       }
     }
 
