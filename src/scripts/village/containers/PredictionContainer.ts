@@ -7,10 +7,10 @@ import {
   showPredictionSpec
 } from '../actions'
 import Prediction, {DispatchProps, StateProps} from '../components/organisms/Prediction'
+import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getText} from '../util'
 
 type Action =
   | ChangePredictionBoard
@@ -21,6 +21,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   playerStatus: state.prediction.playerStatus.map(player => ({
     id: player.id,
     image: player.image,
+    initial: getInitial(player.name.en),
     name: getText({
       language: state.language,
       languageMap: player.name
