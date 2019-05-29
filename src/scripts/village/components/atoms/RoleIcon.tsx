@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Question from './svg/Question'
 
 export interface Props {
   readonly additionalClass?: string

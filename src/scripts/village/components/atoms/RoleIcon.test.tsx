@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Question from './svg/Question'
 import RoleIcon from './RoleIcon'
 import {shallow} from 'enzyme'
 
