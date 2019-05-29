@@ -3,11 +3,12 @@ import PredictionPlayer from './PredictionPlayer'
 import {shallow} from 'enzyme'
 
 describe('<PredictionPlayer />', () => {
-  test('image="image" name="name" status="alive"', () => {
+  test('status="alive"', () => {
     const wrapper = shallow(
       <PredictionPlayer
-        image="image"
-        name="name"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        name="Adil"
         status="alive"
       />
     )
@@ -15,13 +16,13 @@ describe('<PredictionPlayer />', () => {
     expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(false)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
-    expect(wrapper.text()).toBe('name')
   })
-  test('image="image" name="name" status="dead"', () => {
+  test('status="dead"', () => {
     const wrapper = shallow(
       <PredictionPlayer
-        image="image"
-        name="name"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        name="Adil"
         status="dead"
       />
     )
@@ -29,13 +30,13 @@ describe('<PredictionPlayer />', () => {
     expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
-    expect(wrapper.text()).toBe('name')
   })
-  test('image="image" name="name" status="death by execution"', () => {
+  test('status="death by execution"', () => {
     const wrapper = shallow(
       <PredictionPlayer
-        image="image"
-        name="name"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        name="Adil"
         status="death by execution"
       />
     )
@@ -43,13 +44,13 @@ describe('<PredictionPlayer />', () => {
     expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
-    expect(wrapper.text()).toBe('name')
   })
-  test('image="image" name="name" status="death by attack"', () => {
+  test('status="death by attack"', () => {
     const wrapper = shallow(
       <PredictionPlayer
-        image="image"
-        name="name"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        name="Adil"
         status="death by attack"
       />
     )
@@ -57,13 +58,13 @@ describe('<PredictionPlayer />', () => {
     expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
-    expect(wrapper.text()).toBe('name')
   })
-  test('image="image" name="name" status="death by fear"', () => {
+  test('status="death by fear"', () => {
     const wrapper = shallow(
       <PredictionPlayer
-        image="image"
-        name="name"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        name="Adil"
         status="death by fear"
       />
     )
@@ -71,13 +72,13 @@ describe('<PredictionPlayer />', () => {
     expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
-    expect(wrapper.text()).toBe('name')
   })
-  test('image="image" name="name" status="unnatural death"', () => {
+  test('status="unnatural death"', () => {
     const wrapper = shallow(
       <PredictionPlayer
-        image="image"
-        name="name"
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        name="Adil"
         status="unnatural death"
       />
     )
@@ -85,6 +86,5 @@ describe('<PredictionPlayer />', () => {
     expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
-    expect(wrapper.text()).toBe('name')
   })
 })
