@@ -464,7 +464,7 @@
           border: black 1px solid;
           box-sizing: border-box;
           left: 0;
-          margin: 1rem 0 0;
+          margin: 1.5rem 0 0;
           max-height: calc(1.15rem * 4);
           min-width: 5rem;
           overflow: hidden;
