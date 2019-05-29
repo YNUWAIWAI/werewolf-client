@@ -8,6 +8,7 @@ export interface StateProps {
   readonly descriptionId: string
   readonly id: number
   readonly image: string
+  readonly initial: string
   readonly name: string
   readonly visible: boolean
 }
@@ -29,8 +30,16 @@ export default function Modal(props: Props) {
       unmountOnExit
     >
       <div className="vi--modal">
-        <AgentIcon className="vi--modal--icon" image={props.image} name={props.name} />
-        <Description className="vi--modal--description" id={props.descriptionId} />
+        <AgentIcon
+          className="vi--modal--icon"
+          image={props.image}
+          initial={props.initial}
+          name={props.name}
+        />
+        <Description
+          className="vi--modal--description"
+          id={props.descriptionId}
+        />
         <FormattedMessage
           id="Modal.button.yes"
         >
