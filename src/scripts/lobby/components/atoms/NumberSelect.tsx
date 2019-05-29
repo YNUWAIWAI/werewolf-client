@@ -1,3 +1,11 @@
+// Workaround for https://github.com/microsoft/TypeScript/issues/17002
+declare global {
+  interface ArrayConstructor {
+    isArray(arg: ReadonlyArray<any> | any): arg is ReadonlyArray<any>
+  }
+}
+// Workaround end
+
 import * as React from 'react'
 import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'
