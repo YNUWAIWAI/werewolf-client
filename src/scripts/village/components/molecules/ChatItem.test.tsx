@@ -11,11 +11,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -39,11 +40,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.grave}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -67,11 +69,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.hunter}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -95,11 +98,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.master}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -123,11 +127,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.onymousAudience}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -151,11 +156,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.private}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -179,11 +185,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.public}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -207,11 +214,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.seer}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -235,11 +243,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.werewolf}
           isMarked={false}
           isMine
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -265,11 +274,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -293,11 +303,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.grave}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -321,11 +332,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.hunter}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -349,11 +361,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.master}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -377,11 +390,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.onymousAudience}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -405,11 +419,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.private}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -433,11 +448,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.public}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -461,11 +477,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.seer}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"
@@ -489,11 +506,12 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="image"
+          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          initial="A"
           intensionalDisclosureRange={village.Channel.werewolf}
           isMarked={false}
           isMine={false}
-          name="name"
+          name="Adil"
           phaseStartTime="2018-01-01T00:00:00.000Z"
           phaseTimeLimit={50}
           serverTimestamp="2018-01-01T00:00:10.000Z"

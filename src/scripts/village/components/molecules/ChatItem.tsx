@@ -11,6 +11,7 @@ export interface Props {
   readonly handleStar: (isMarked: boolean) => void
   readonly id: number
   readonly image: string
+  readonly initial: string
   readonly intensionalDisclosureRange: village.Channel
   readonly isMarked: boolean
   readonly isMine: boolean
@@ -54,6 +55,7 @@ export default function ChatItem(props: Props) {
       <AgentIcon
         className="vi--chat--agent"
         image={props.image}
+        initial={props.initial}
         name={props.name}
       />
     </div>
