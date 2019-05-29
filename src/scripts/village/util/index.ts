@@ -15,6 +15,7 @@ export const getBaseUri = (id: string): string => {
 
   return ''
 }
+export const getInitial = (name: string) => name.toUpperCase()[0]
 export const trimBaseUri = (id: string): string => {
   const match = (/\/(?<path>\w+)$/).exec(id)
 

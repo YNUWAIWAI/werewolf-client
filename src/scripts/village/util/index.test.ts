@@ -5,6 +5,7 @@ import {
   getBaseUri,
   getChannelFromInputChennel,
   getChatChannelFromChannel,
+  getInitial,
   getInputChannelFromChannel,
   getMyAgent,
   getMyRole,
@@ -258,6 +259,11 @@ describe('getChatChannelFromChannel', () => {
   })
   test('werewolf', () => {
     expect(getChatChannelFromChannel(village.Channel.werewolf)).toBe('limited')
+  })
+})
+describe('getInitial', () => {
+  test('Adil', () => {
+    expect(getInitial('Adil')).toBe('A')
   })
 })
 describe('getInputChannelFromChannel', () => {

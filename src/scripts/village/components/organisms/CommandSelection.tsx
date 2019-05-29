@@ -8,6 +8,7 @@ export interface StateProps {
   readonly agents: {
     readonly id: number
     readonly image: string
+    readonly initial: string
     readonly name: string
   }[]
   readonly descriptionId: string
@@ -45,6 +46,7 @@ export default function CommandSelection(props: Props) {
                   className="vi--command--selection--option"
                   handleOnClick={props.fixed ? undefined : props.handleSelectOption(a.id)}
                   image={a.image}
+                  initial={a.initial}
                   name={a.name}
                 />
               </CSSTransition>

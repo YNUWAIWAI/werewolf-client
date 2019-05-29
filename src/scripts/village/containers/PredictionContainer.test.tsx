@@ -14,50 +14,50 @@ describe('<PredictionContainer />', () => {
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
         'name': {
-          en: 'Walter',
-          ja: 'ヴァルター'
+          'en': 'Adil',
+          'ja': 'アーディル'
         },
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#2',
         'id': 2,
-        'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
         'name': {
-          en: 'Moritz',
-          ja: 'モーリッツ'
+          'en': 'Borya',
+          'ja': 'ボーリャ'
         },
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#3',
         'id': 3,
-        'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
         'name': {
-          en: 'Simson',
-          ja: 'ジムゾン'
+          'en': 'Chacha',
+          'ja': 'チャチャ'
         },
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#4',
         'id': 4,
-        'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
         'name': {
-          en: 'Thomas',
-          ja: 'トーマス'
+          'en': 'Devdatta',
+          'ja': 'デヴゥダッタ'
         },
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#5',
         'id': 5,
-        'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
+        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
         'name': {
-          en: 'Nicholas',
-          ja: 'ニコラス'
+          'en': 'Ekrem',
+          'ja': 'エクレム'
         },
         'status': village.AgentStatus.alive
       }
@@ -66,40 +66,40 @@ describe('<PredictionContainer />', () => {
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#villager',
         'id': village.RoleId.villager,
-        'image': 'https://werewolf.world/image/0.2/villager.jpg',
+        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
         'name': {
-          en: 'Villager',
-          ja: '村人'
+          'en': 'Villager',
+          'ja': '村人'
         },
         'numberOfAgents': 2
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
+        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         'name': {
-          en: 'Seer',
-          ja: '占い師'
+          'en': 'Seer',
+          'ja': '占い師'
         },
         'numberOfAgents': 1
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#madman',
         'id': village.RoleId.madman,
-        'image': 'https://werewolf.world/image/0.2/madman.jpg',
+        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
         'name': {
-          en: 'Madman',
-          ja: '狂人'
+          'en': 'Madman',
+          'ja': '狂人'
         },
         'numberOfAgents': 1
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
         'id': village.RoleId.werewolf,
-        'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
         'name': {
-          en: 'Werewolf',
-          ja: '人狼'
+          'en': 'Werewolf',
+          'ja': '人狼'
         },
         'numberOfAgents': 1
       }

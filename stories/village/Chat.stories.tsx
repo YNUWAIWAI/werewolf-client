@@ -28,6 +28,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: false,
         isMine: true,
@@ -41,6 +42,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: true,
         isMine: false,
@@ -67,6 +69,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.grave,
         isMarked: false,
         isMine: true,
@@ -80,6 +83,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.grave,
         isMarked: true,
         isMine: false,
@@ -106,6 +110,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.hunter,
         isMarked: false,
         isMine: true,
@@ -119,6 +124,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.hunter,
         isMarked: true,
         isMine: false,
@@ -145,6 +151,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.master,
         isMarked: false,
         isMine: true,
@@ -158,6 +165,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.master,
         isMarked: true,
         isMine: false,
@@ -184,6 +192,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.onymousAudience,
         isMarked: false,
         isMine: true,
@@ -197,6 +206,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.onymousAudience,
         isMarked: true,
         isMine: false,
@@ -223,6 +233,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.private,
         isMarked: false,
         isMine: true,
@@ -236,6 +247,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.private,
         isMarked: true,
         isMine: false,
@@ -262,6 +274,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: true,
@@ -275,6 +288,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: true,
         isMine: false,
@@ -301,6 +315,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.seer,
         isMarked: false,
         isMine: true,
@@ -314,6 +329,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.seer,
         isMarked: true,
         isMine: false,
@@ -340,6 +356,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.werewolf,
         isMarked: false,
         isMine: true,
@@ -353,6 +370,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.werewolf,
         isMarked: true,
         isMine: false,
@@ -379,6 +397,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: true,
@@ -392,6 +411,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: true,
         isMine: false,
@@ -426,6 +446,7 @@ storiesOf('village|Chat', module)
       'chat0': {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        initial: 'A',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: true,
@@ -439,6 +460,7 @@ storiesOf('village|Chat', module)
       'chat1': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: false,
@@ -452,6 +474,7 @@ storiesOf('village|Chat', module)
       'chat2': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: false,
@@ -465,6 +488,7 @@ storiesOf('village|Chat', module)
       'chat3': {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
         isMine: false,

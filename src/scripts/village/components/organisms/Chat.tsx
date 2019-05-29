@@ -8,6 +8,7 @@ export interface StateProps {
     [id: string /* village.ChatId */]: {
       readonly id: number
       readonly image: string
+      readonly initial: string
       readonly intensionalDisclosureRange: village.Channel
       readonly isMarked: boolean
       readonly isMine: boolean
@@ -87,15 +88,25 @@ export default class Chat extends React.Component<Props, State> {
                 return (
                   <ChatItem
                     handleStar={this.props.handleStar(id)}
+                    id={item.id}
+                    image={item.image}
+                    initial={item.initial}
+                    intensionalDisclosureRange={item.intensionalDisclosureRange}
+                    isMarked={item.isMarked}
+                    isMine={item.isMine}
                     key={id}
-                    {... item}
+                    name={item.name}
+                    phaseStartTime={item.phaseStartTime}
+                    phaseTimeLimit={item.phaseTimeLimit}
+                    serverTimestamp={item.serverTimestamp}
+                    text={item.text}
                   />
                 )
               case 'delimeter':
                 return (
                   <ChatDelimeter
+                    date={item.date}
                     key={id}
-                    {... item}
                   />
                 )
               default:

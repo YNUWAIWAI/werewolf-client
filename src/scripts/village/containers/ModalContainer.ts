@@ -1,7 +1,7 @@
 /* global village */
 import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
 import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
-import {getText, just} from '../util'
+import {getInitial, getText, just} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -35,6 +35,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       descriptionId: 'Modal.Description.wait',
       id: -1,
       image: '',
+      initial: '',
       name: '',
       visible: state.modal.visible
     }
@@ -46,6 +47,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     descriptionId: getDescriptionId(state.base.phase, myRole.id),
     id: selectedAgent.id,
     image: selectedAgent.image,
+    initial: getInitial(selectedAgent.name.en),
     name: getText({
       language: state.language,
       languageMap: selectedAgent.name

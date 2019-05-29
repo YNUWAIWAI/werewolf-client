@@ -1,9 +1,9 @@
 import Chat, {DispatchProps, StateProps} from '../components/organisms/Chat'
 import {StarChat, starChat} from '../actions'
+import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getText} from '../util'
 
 type Action =
   | StarChat
@@ -19,11 +19,13 @@ const mapStateToProps = (state: ReducerState): StateProps => {
         if (typeof item.name === 'string') {
           byId[id] = {
             ... item,
+            initial: '',
             name: item.name
           }
         } else { // item.name: LanguageMap
           byId[id] = {
             ... item,
+            initial: getInitial(item.name.en),
             name: getText({
               language: state.language,
               languageMap: item.name

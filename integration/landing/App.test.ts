@@ -7,8 +7,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.2,
-      failureThresholdType: 'percent'
+      failureThreshold: 2914,
+      failureThresholdType: 'pixel'
     })
   })
   test('loginError', async () => {
@@ -19,8 +19,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.23,
-      failureThresholdType: 'percent'
+      failureThreshold: 3691,
+      failureThresholdType: 'pixel'
     })
   })
   test('signupError', async () => {
@@ -31,8 +31,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.2,
-      failureThresholdType: 'percent'
+      failureThreshold: 2914,
+      failureThresholdType: 'pixel'
     })
   })
 })

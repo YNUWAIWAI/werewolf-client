@@ -9,10 +9,10 @@ const json: village.Payload$playerMessage = {
     '@context': village.Context.Agent,
     '@id': 'https://licos.online/state/0.2/village#3/agent',
     'id': 1,
-    'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+    'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
     'name': {
-      'en': 'Walter',
-      'ja': 'ヴァルター'
+      'en': 'Adil',
+      'ja': 'アーディル'
     }
   },
   'characterLimit': 140,

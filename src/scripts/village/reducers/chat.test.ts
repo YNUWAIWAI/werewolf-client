@@ -17,13 +17,13 @@ describe('socket/MESSAGE', () => {
         chat0: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
           intensionalDisclosureRange: 'public',
           isMarked: false,
           isMine: true,
           name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
+            en: 'Adil',
+            ja: 'アーディル'
           },
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
@@ -43,13 +43,13 @@ describe('socket/MESSAGE', () => {
             chat0: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
-              image: 'https://werewolf.world/image/0.2/Walter.jpg',
+              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: true,
               name: {
-                en: 'Walter',
-                ja: 'ヴァルター'
+                en: 'Adil',
+                ja: 'アーディル'
               },
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
@@ -67,13 +67,13 @@ describe('socket/MESSAGE', () => {
         chat0: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
           intensionalDisclosureRange: 'public',
           isMarked: false,
           isMine: true,
           name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
+            en: 'Adil',
+            ja: 'アーディル'
           },
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
@@ -84,13 +84,13 @@ describe('socket/MESSAGE', () => {
         chat1: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
           intensionalDisclosureRange: 'public',
           isMarked: false,
           isMine: false,
           name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
+            en: 'Adil',
+            ja: 'アーディル'
           },
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
@@ -110,13 +110,13 @@ describe('socket/MESSAGE', () => {
             chat0: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
-              image: 'https://werewolf.world/image/0.2/Walter.jpg',
+              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: true,
               name: {
-                en: 'Walter',
-                ja: 'ヴァルター'
+                en: 'Adil',
+                ja: 'アーディル'
               },
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
@@ -127,13 +127,13 @@ describe('socket/MESSAGE', () => {
             chat1: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
-              image: 'https://werewolf.world/image/0.2/Walter.jpg',
+              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: false,
               name: {
-                en: 'Walter',
-                ja: 'ヴァルター'
+                en: 'Adil',
+                ja: 'アーディル'
               },
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
@@ -151,13 +151,13 @@ describe('socket/MESSAGE', () => {
         chat0: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
           intensionalDisclosureRange: 'public',
           isMarked: false,
           isMine: true,
           name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
+            en: 'Adil',
+            ja: 'アーディル'
           },
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
@@ -168,13 +168,13 @@ describe('socket/MESSAGE', () => {
         chat1: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
           intensionalDisclosureRange: 'public',
           isMarked: false,
           isMine: false,
           name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
+            en: 'Adil',
+            ja: 'アーディル'
           },
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
@@ -185,7 +185,7 @@ describe('socket/MESSAGE', () => {
         chat2: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: -1,
-          image: 'https://werewolf.world/image/0.2/Regina.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/y_120x120.png',
           intensionalDisclosureRange: 'onymousAudience',
           isMarked: false,
           isMine: true,
@@ -208,13 +208,13 @@ describe('socket/MESSAGE', () => {
             chat0: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
-              image: 'https://werewolf.world/image/0.2/Walter.jpg',
+              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: true,
               name: {
-                en: 'Walter',
-                ja: 'ヴァルター'
+                en: 'Adil',
+                ja: 'アーディル'
               },
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
@@ -225,13 +225,13 @@ describe('socket/MESSAGE', () => {
             chat1: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
-              image: 'https://werewolf.world/image/0.2/Walter.jpg',
+              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: false,
               name: {
-                en: 'Walter',
-                ja: 'ヴァルター'
+                en: 'Adil',
+                ja: 'アーディル'
               },
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
@@ -242,7 +242,7 @@ describe('socket/MESSAGE', () => {
             chat2: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: -1,
-              image: 'https://werewolf.world/image/0.2/Regina.jpg',
+              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/y_120x120.png',
               intensionalDisclosureRange: village.Channel.onymousAudience,
               isMarked: false,
               isMine: true,
@@ -263,13 +263,13 @@ describe('socket/MESSAGE', () => {
         chat0: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
           intensionalDisclosureRange: 'public',
           isMarked: false,
           isMine: true,
           name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
+            en: 'Adil',
+            ja: 'アーディル'
           },
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
@@ -280,13 +280,13 @@ describe('socket/MESSAGE', () => {
         chat1: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
           intensionalDisclosureRange: 'public',
           isMarked: false,
           isMine: false,
           name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
+            en: 'Adil',
+            ja: 'アーディル'
           },
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
@@ -297,7 +297,7 @@ describe('socket/MESSAGE', () => {
         chat2: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: -1,
-          image: 'https://werewolf.world/image/0.2/Regina.jpg',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/y_120x120.png',
           intensionalDisclosureRange: 'onymousAudience',
           isMarked: false,
           isMine: true,
@@ -311,7 +311,7 @@ describe('socket/MESSAGE', () => {
         chat3: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: -1,
-          image: 'Anonymous',
+          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
           intensionalDisclosureRange: 'anonymousAudience',
           isMarked: false,
           isMine: true,
@@ -355,13 +355,13 @@ test('STAR', () => {
           chat0: {
             clientTimestamp: '2006-10-07T12:06:56.568+09:00',
             id: 12,
-            image: 'https://werewolf.world/image/0.2/Walter.jpg',
+            image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
             intensionalDisclosureRange: village.Channel.public,
             isMarked: false,
             isMine: true,
             name: {
-              en: 'Walter',
-              ja: 'ヴァルター'
+              en: 'Adil',
+              ja: 'アーディル'
             },
             phaseStartTime: '2006-10-07T12:06:56.568+09:00',
             phaseTimeLimit: 600,
@@ -383,13 +383,13 @@ test('STAR', () => {
       chat0: {
         clientTimestamp: '2006-10-07T12:06:56.568+09:00',
         id: 12,
-        image: 'https://werewolf.world/image/0.2/Walter.jpg',
+        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         intensionalDisclosureRange: 'public',
         isMarked: true,
         isMine: true,
         name: {
-          en: 'Walter',
-          ja: 'ヴァルター'
+          en: 'Adil',
+          ja: 'アーディル'
         },
         phaseStartTime: '2006-10-07T12:06:56.568+09:00',
         phaseTimeLimit: 600,

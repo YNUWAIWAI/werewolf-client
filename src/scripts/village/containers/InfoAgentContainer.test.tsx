@@ -27,10 +27,10 @@ describe('<InfoAgentContainer />', () => {
           agent: {
             '@id': 'https://licos.online/state/0.2/village#3/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+            'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
             'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
+              'en': 'Adil',
+              'ja': 'アーディル'
             }
           }
         }

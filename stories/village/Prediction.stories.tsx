@@ -29,90 +29,105 @@ storiesOf('village|Prediction', module)
       {
         'id': 1,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'initial': 'A',
         'name': 'Adil',
         'status': village.AgentStatus.alive
       },
       {
         'id': 2,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'initial': 'B',
         'name': 'Borya',
         'status': village.AgentStatus.alive
       },
       {
         'id': 3,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'initial': 'C',
         'name': 'Chacha',
         'status': village.AgentStatus.alive
       },
       {
         'id': 4,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'initial': 'D',
         'name': 'Devdatta',
         'status': village.AgentStatus.alive
       },
       {
         'id': 5,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'initial': 'E',
         'name': 'Ekrem',
         'status': village.AgentStatus.alive
       },
       {
         'id': 6,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+        'initial': 'F',
         'name': 'Fernando',
         'status': village.AgentStatus.alive
       },
       {
         'id': 7,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
+        'initial': 'G',
         'name': 'Gavriil',
         'status': village.AgentStatus.alive
       },
       {
         'id': 8,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
+        'initial': 'H',
         'name': 'Henrik',
         'status': village.AgentStatus.alive
       },
       {
         'id': 9,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
+        'initial': 'I',
         'name': 'Ileanna',
         'status': village.AgentStatus.alive
       },
       {
         'id': 10,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
+        'initial': 'J',
         'name': 'Jasmin',
         'status': village.AgentStatus.alive
       },
       {
         'id': 11,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
+        'initial': 'K',
         'name': 'Kaiji',
         'status': village.AgentStatus.alive
       },
       {
         'id': 12,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
+        'initial': 'L',
         'name': 'Louise',
         'status': village.AgentStatus.alive
       },
       {
         'id': 13,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
+        'initial': 'M',
         'name': 'Marthe',
         'status': village.AgentStatus.alive
       },
       {
         'id': 14,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
+        'initial': 'N',
         'name': 'Nanyamka',
         'status': village.AgentStatus.alive
       },
       {
         'id': 15,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
+        'initial': 'O',
         'name': 'Oliwia',
         'status': village.AgentStatus.alive
       }
@@ -821,30 +836,35 @@ storiesOf('village|Prediction', module)
       {
         'id': 1,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'initial': 'A',
         'name': 'Adil',
         'status': village.AgentStatus.alive
       },
       {
         'id': 2,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'initial': 'B',
         'name': 'Borya',
         'status': village.AgentStatus.alive
       },
       {
         'id': 3,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'initial': 'C',
         'name': 'Chacha',
         'status': village.AgentStatus.alive
       },
       {
         'id': 4,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'initial': 'D',
         'name': 'Devdatta',
         'status': village.AgentStatus.alive
       },
       {
         'id': 5,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'initial': 'E',
         'name': 'Ekrem',
         'status': village.AgentStatus.alive
       }
@@ -1009,90 +1029,105 @@ storiesOf('village|Prediction', module)
       {
         'id': 1,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'initial': 'A',
         'name': 'Adil',
         'status': village.AgentStatus.alive
       },
       {
         'id': 2,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'initial': 'B',
         'name': 'Borya',
         'status': village.AgentStatus.alive
       },
       {
         'id': 3,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'initial': 'C',
         'name': 'Chacha',
         'status': village.AgentStatus.alive
       },
       {
         'id': 4,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'initial': 'D',
         'name': 'Devdatta',
         'status': village.AgentStatus.alive
       },
       {
         'id': 5,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'initial': 'E',
         'name': 'Ekrem',
         'status': village.AgentStatus.alive
       },
       {
         'id': 6,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+        'initial': 'F',
         'name': 'Fernando',
         'status': village.AgentStatus.alive
       },
       {
         'id': 7,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
+        'initial': 'G',
         'name': 'Gavriil',
         'status': village.AgentStatus.alive
       },
       {
         'id': 8,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
+        'initial': 'H',
         'name': 'Henrik',
         'status': village.AgentStatus.alive
       },
       {
         'id': 9,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
+        'initial': 'I',
         'name': 'Ileanna',
         'status': village.AgentStatus.alive
       },
       {
         'id': 10,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
+        'initial': 'J',
         'name': 'Jasmin',
         'status': village.AgentStatus.alive
       },
       {
         'id': 11,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
+        'initial': 'K',
         'name': 'Kaiji',
         'status': village.AgentStatus.alive
       },
       {
         'id': 12,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
+        'initial': 'L',
         'name': 'Louise',
         'status': village.AgentStatus.alive
       },
       {
         'id': 13,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
+        'initial': 'M',
         'name': 'Marthe',
         'status': village.AgentStatus.alive
       },
       {
         'id': 14,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
+        'initial': 'N',
         'name': 'Nanyamka',
         'status': village.AgentStatus.alive
       },
       {
         'id': 15,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
+        'initial': 'O',
         'name': 'Oliwia',
         'status': village.AgentStatus.alive
       }
@@ -1801,30 +1836,35 @@ storiesOf('village|Prediction', module)
       {
         'id': 1,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'initial': 'A',
         'name': 'Adil',
         'status': village.AgentStatus.alive
       },
       {
         'id': 2,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'initial': 'B',
         'name': 'Borya',
         'status': village.AgentStatus.alive
       },
       {
         'id': 3,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'initial': 'C',
         'name': 'Chacha',
         'status': village.AgentStatus.alive
       },
       {
         'id': 4,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'initial': 'D',
         'name': 'Devdatta',
         'status': village.AgentStatus.alive
       },
       {
         'id': 5,
         'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'initial': 'E',
         'name': 'Ekrem',
         'status': village.AgentStatus.alive
       }

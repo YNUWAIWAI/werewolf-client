@@ -21,7 +21,8 @@ describe('<Modal />', () => {
           handleClickYes={handleClickYesMockFn}
           id={1}
           image="image"
-          name="name"
+          initial="A"
+          name="Adil"
           visible
         />
       </Provider>
@@ -48,7 +49,8 @@ describe('<Modal />', () => {
           handleClickYes={handleClickYesMockFn}
           id={1}
           image="image"
-          name="name"
+          initial="A"
+          name="Adil"
           visible={false}
         />
       </Provider>
@@ -67,7 +69,8 @@ describe('<Modal />', () => {
           handleClickYes={handleClickYesMockFn}
           id={1}
           image="image"
-          name="name"
+          initial="A"
+          name="Adil"
           visible
         />
       </Provider>
@@ -99,7 +102,8 @@ describe('<Modal />', () => {
           handleClickYes={handleClickYesMockFn}
           id={1}
           image="image"
-          name="name"
+          initial="A"
+          name="Adil"
           visible
         />
       </Provider>

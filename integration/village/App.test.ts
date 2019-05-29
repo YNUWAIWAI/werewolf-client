@@ -7,8 +7,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.1,
-      failureThresholdType: 'percent'
+      failureThreshold: 1393,
+      failureThresholdType: 'pixel'
     })
   })
   test('prologue', async () => {
@@ -19,8 +19,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.28,
-      failureThresholdType: 'percent'
+      failureThreshold: 4723,
+      failureThresholdType: 'pixel'
     })
   })
   test('morning (without limited chat)', async () => {
@@ -31,8 +31,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.44,
-      failureThresholdType: 'percent'
+      failureThreshold: 8567,
+      failureThresholdType: 'pixel'
     })
   })
   test('morning (with limited chat)', async () => {
@@ -43,8 +43,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.58,
-      failureThresholdType: 'percent'
+      failureThreshold: 11525,
+      failureThresholdType: 'pixel'
     })
   })
   test('day', async () => {
@@ -55,8 +55,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.75,
-      failureThresholdType: 'percent'
+      failureThreshold: 15846,
+      failureThresholdType: 'pixel'
     })
   })
   test('night(seer)', async () => {
@@ -67,8 +67,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.57,
-      failureThresholdType: 'percent'
+      failureThreshold: 12281,
+      failureThresholdType: 'pixel'
     })
   })
   test('night(villager)', async () => {
@@ -79,8 +79,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.43,
-      failureThresholdType: 'percent'
+      failureThreshold: 8385,
+      failureThresholdType: 'pixel'
     })
   })
   test('grave', async () => {
@@ -91,8 +91,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.45,
-      failureThresholdType: 'percent'
+      failureThreshold: 8908,
+      failureThresholdType: 'pixel'
     })
   })
   test('result', async () => {
@@ -103,8 +103,8 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 0.45,
-      failureThresholdType: 'percent'
+      failureThreshold: 5915,
+      failureThresholdType: 'pixel'
     })
   })
 })

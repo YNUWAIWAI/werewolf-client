@@ -40,57 +40,62 @@ describe('<Prediction />', () => {
     const playerStatus: Props['playerStatus'] = [
       {
         id: 1,
-        image: 'https://werewolf.world/image/0.2/Walter.jpg',
-        name: 'ヴァルター',
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        initial: 'A',
+        name: 'Adil',
         status: village.AgentStatus.alive
       },
       {
         id: 2,
-        image: 'https://werewolf.world/image/0.2/Moritz.jpg',
-        name: 'モーリッツ',
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        initial: 'B',
+        name: 'Borya',
         status: village.AgentStatus.alive
       },
       {
         id: 3,
-        image: 'https://werewolf.world/image/0.2/Simson.jpg',
-        name: 'ジムゾン',
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        initial: 'C',
+        name: 'Chacha',
         status: village.AgentStatus.alive
       },
       {
         id: 4,
-        image: 'https://werewolf.world/image/0.2/Thomas.jpg',
-        name: 'トーマス',
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        initial: 'D',
+        name: 'Devdatta',
         status: village.AgentStatus.alive
       },
       {
         id: 5,
-        image: 'https://werewolf.world/image/0.2/Nicholas.jpg',
-        name: 'ニコラス',
+        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        initial: 'E',
+        name: 'Ekrem',
         status: village.AgentStatus.alive
       }
     ]
     const roleStatus: Props['roleStatus'] = [
       {
         id: village.RoleId.villager,
-        image: 'https://werewolf.world/image/0.2/villager.jpg',
+        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
         name: '村人',
         numberOfAgents: 2
       },
       {
         id: village.RoleId.seer,
-        image: 'https://werewolf.world/image/0.2/seer.jpg',
+        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         name: '占い師',
         numberOfAgents: 1
       },
       {
         id: village.RoleId.madman,
-        image: 'https://werewolf.world/image/0.2/madman.jpg',
+        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
         name: '狂人',
         numberOfAgents: 1
       },
       {
         id: village.RoleId.werewolf,
-        image: 'https://werewolf.world/image/0.2/werewolf.jpg',
+        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
         name: '人狼',
         numberOfAgents: 1
       }

@@ -1,10 +1,10 @@
 /* global village */
 import CommandSelection, {DispatchProps, StateProps} from '../components/organisms/CommandSelection'
 import {SelectOption, selectOption} from '../actions'
+import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getText} from '../util'
 
 type Action =
   | SelectOption
@@ -33,6 +33,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     .map(a => ({
       id: a.id,
       image: a.image,
+      initial: getInitial(a.name.en),
       name: getText({
         language: state.language,
         languageMap: a.name
