@@ -27,7 +27,7 @@ describe('<InfoRoleContainer />', () => {
           role: {
             '@id': 'https://licos.online/state/0.2/village#3/role#seer',
             'id': village.RoleId.seer,
-            'image': 'https://werewolf.world/image/0.2/seer.jpg',
+            'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
             'name': {
               'en': 'Seer',
               'ja': '占い師'
