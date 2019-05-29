@@ -625,9 +625,11 @@
         cursor: pointer;
         display: grid;
         grid-template:
+          '. . . .' 1fr
           '. image image .' var(--agent-initial-height)
           '. image image .' calc(var(--vote-image-size) - var(--agent-initial-height))
           'name name name name'
+          '. . . .' 1fr
           / 1fr calc(var(--vote-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
 
         &--image {
@@ -641,7 +643,7 @@
         &--initial {
           color: white;
           font-size: 16px;
-          grid-area: 1 / 3;
+          grid-area: 2 / 3;
           line-height: 1.25;
           text-align: center;
           z-index: 2;
