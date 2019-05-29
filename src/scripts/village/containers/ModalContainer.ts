@@ -34,7 +34,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     return {
       descriptionId: 'Modal.Description.wait',
       id: -1,
-      image: '',
+      image: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
       initial: '',
       name: '',
       visible: state.modal.visible
