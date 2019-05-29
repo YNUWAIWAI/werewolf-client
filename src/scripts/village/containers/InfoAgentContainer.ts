@@ -7,7 +7,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.agent) {
     return {
       className: 'vi--info--agent',
-      image: '',
+      image: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
       initial: '',
       name: ''
     }
