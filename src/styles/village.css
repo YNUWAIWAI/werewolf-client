@@ -794,6 +794,7 @@
 
       &--name {
         display: block;
+        font-size: 10px;
         grid-area: name;
         line-height: 1.5;
         overflow: auto;
