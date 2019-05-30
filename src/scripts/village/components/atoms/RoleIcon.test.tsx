@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Question from './svg/Question'
 import RoleIcon from './RoleIcon'
 import {shallow} from 'enzyme'
 
@@ -17,21 +16,6 @@ describe('<RoleIcon />', () => {
     expect(wrapper.find('.class').hasClass('undefined')).toBe(false)
     expect(wrapper.find('.class--image').exists()).toBe(true)
     expect(wrapper.find('.class--name').exists()).toBe(true)
-  })
-  test('Question', () => {
-    const wrapper = shallow(
-      <RoleIcon
-        class="class"
-        image=""
-        name="name"
-      />
-    )
-
-    expect(wrapper.find('.class').exists()).toBe(true)
-    expect(wrapper.find('.class').hasClass('undefined')).toBe(false)
-    expect(wrapper.find(Question).exists()).toBe(true)
-    expect(wrapper.find('.class--image').exists()).toBe(false)
-    expect(wrapper.find('.class--name').exists()).toBe(false)
   })
   test('additionalClass', () => {
     const wrapper = shallow(

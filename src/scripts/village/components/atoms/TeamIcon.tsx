@@ -1,7 +1,6 @@
 /* global village */
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import Question from './svg/Question'
 import TeamVillager from './svg/TeamVillager'
 import TeamWerehamster from './svg/TeamWerehamster'
 import TeamWerewolf from './svg/TeamWerewolf'
@@ -82,7 +81,10 @@ export default function TeamIcon(props: Props) {
         <div
           className={`${props.class} ${props.additionalClass || ''}`}
         >
-          <Question />
+          <img
+            className={`${props.class}--image`}
+            src="https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png"
+          />
         </div>
       )
   }

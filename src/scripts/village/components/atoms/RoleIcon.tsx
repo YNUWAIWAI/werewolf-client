@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Question from './svg/Question'
 
 export interface Props {
   readonly additionalClass?: string
@@ -10,16 +9,6 @@ export interface Props {
 }
 
 export default function RoleIcon(props: Props) {
-  if (props.image === '') {
-    return (
-      <div
-        className={`${props.class} ${props.additionalClass || ''}`}
-      >
-        <Question />
-      </div>
-    )
-  }
-
   return (
     <div
       className={`${props.class} ${props.additionalClass || ''}`}
