@@ -4,8 +4,8 @@ export interface Props {
   readonly additionalClass?: string
   readonly className: string
   readonly handleOnClick?: () => void
-  readonly initial: string
   readonly image: string
+  readonly initial: string
   readonly name: string
 }
 
