@@ -1,10 +1,10 @@
 import * as React from 'react'
 import PredictionPlayer from './PredictionPlayer'
-import {shallow} from 'enzyme'
+import {mount} from 'enzyme'
 
 describe('<PredictionPlayer />', () => {
   test('status="alive"', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
@@ -13,12 +13,12 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(false)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(false)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
   test('status="dead"', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
@@ -27,12 +27,12 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
   test('status="death by execution"', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
@@ -41,12 +41,12 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
   test('status="death by attack"', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
@@ -55,12 +55,12 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
   test('status="death by fear"', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
@@ -69,12 +69,12 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
   test('status="unnatural death"', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
@@ -83,7 +83,7 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
