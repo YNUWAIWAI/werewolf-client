@@ -1263,18 +1263,17 @@
     z-index: var(--result--z-index);
 
     &--cell {
-      align-items: center;
-      border: 1px solid black;
-      display: flex;
-      font-size: 2rem;
-      height: 100%;
-      justify-content: center;
-      line-height: 1.5;
-      overflow: auto;
-      text-align: center;
-
       &--summary {
+        align-items: center;
+        border: 1px solid black;
+        display: flex;
+        font-size: 2rem;
         grid-column: 1 / 7;
+        height: 100%;
+        justify-content: center;
+        line-height: 1.5;
+        overflow: auto;
+        text-align: center;
 
         &--team {
           display: inline-flex;
@@ -1312,7 +1311,16 @@
       }
 
       &--caption {
+        align-items: center;
+        border: 1px solid black;
+        display: flex;
+        font-size: 2rem;
         grid-column: 1 / 7;
+        height: 100%;
+        justify-content: center;
+        line-height: 1.5;
+        overflow: auto;
+        text-align: center;
 
         &--team {
           display: inline-flex;
@@ -1350,38 +1358,85 @@
       }
 
       &--avatarImage {
-        align-items: center;
+        border: 1px solid black;
         border-left: 4px double black;
-        display: inline-flex;
-        overflow: hidden;
+        display: grid;
+        grid-template:
+          '. . .' 1fr
+          '. image .' var(--result-image-size)
+          '. . .' 1fr
+          / 1fr var(--result-image-size) 1fr;
+        height: 100%;
 
         &--image {
+          grid-area: image;
           height: var(--result-image-size);
           width: var(--result-image-size);
         }
       }
 
       &--image {
-        align-items: center;
-        display: inline-flex;
-        overflow: hidden;
+        border: 1px solid black;
+        display: grid;
+        grid-template:
+          '. . . .' 1fr
+          '. image image .' var(--agent-initial-height)
+          '. image image .' calc(var(--result-image-size) - var(--agent-initial-height))
+          '. . . .' 1fr
+          / 1fr calc(var(--result-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
+        height: 100%;
 
         &--image {
+          grid-area: image;
           height: var(--result-image-size);
           width: var(--result-image-size);
+          z-index: 1;
+        }
+
+        &--initial {
+          color: white;
+          font-size: 16px;
+          grid-area: 2 / 3;
+          line-height: 1.25;
+          text-align: center;
+          z-index: 2;
         }
       }
 
+      &--avatarName {
+        align-items: center;
+        border: 1px solid black;
+        display: flex;
+        font-size: 2rem;
+        height: 100%;
+        justify-content: center;
+        line-height: 1.5;
+        overflow: auto;
+        text-align: center;
+      }
+
+      &--name {
+        align-items: center;
+        border: 1px solid black;
+        display: flex;
+        font-size: 2rem;
+        height: 100%;
+        justify-content: center;
+        line-height: 1.5;
+        overflow: auto;
+        text-align: center;
+      }
+
       &--roleImage {
+        border: 1px solid black;
         border-right: none;
         display: grid;
-        grid-template-areas:
-          '. . .'
-          '. image .'
-          'name name name'
-          '. . .';
-        grid-template-columns: 1fr var(--result-image-size) 1fr;
-        grid-template-rows: minmax(0.5rem, 1fr) var(--result-image-size) 12px auto;
+        grid-template:
+          '. . .' 1fr
+          '. image .' var(--result-image-size)
+          'name name name' minmax(12px, 1fr)
+          / 1fr var(--result-image-size) 1fr;
+        height: 100%;
         min-height: calc(var(--result-image-size) + 1.5rem);
         overflow: hidden;
         padding: 0;
@@ -1390,6 +1445,9 @@
           font-size: 10px;
           grid-area: name;
           line-height: 1.2;
+          overflow: auto;
+          text-align: center;
+          word-break: keep-all;
         }
 
         &--image {
@@ -1397,6 +1455,18 @@
           height: var(--result-image-size);
           width: var(--result-image-size);
         }
+      }
+
+      &--status {
+        align-items: center;
+        border: 1px solid black;
+        display: flex;
+        font-size: 2rem;
+        height: 100%;
+        justify-content: center;
+        line-height: 1.5;
+        overflow: auto;
+        text-align: center;
       }
 
       &.dead {
