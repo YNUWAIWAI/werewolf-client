@@ -13,7 +13,7 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(false)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(false)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
@@ -27,7 +27,7 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
@@ -41,7 +41,7 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
@@ -55,7 +55,7 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
@@ -69,7 +69,7 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
@@ -83,7 +83,7 @@ describe('<PredictionPlayer />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--prediction--player').hasClass('dead')).toBe(true)
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
   })
