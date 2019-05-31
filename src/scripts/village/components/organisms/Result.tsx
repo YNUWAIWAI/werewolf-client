@@ -3,12 +3,13 @@ import * as React from 'react'
 import {CSSTransition} from 'react-transition-group'
 import ResultCellAvatarImage from '../atoms/ResultCellAvatarImage'
 import ResultCellAvatarName from '../atoms/ResultCellAvatarName'
-import ResultCellCaption from '../atoms/ResultCellCaption'
 import ResultCellImage from '../atoms/ResultCellImage'
+import ResultCellLoserCaption from '../atoms/ResultCellLoserCaption'
 import ResultCellName from '../atoms/ResultCellName'
 import ResultCellRoleImage from '../atoms/ResultCellRoleImage'
 import ResultCellStatus from '../atoms/ResultCellStatus'
 import ResultCellSummary from '../atoms/ResultCellSummary'
+import ResultCellWinnerCaption from '../atoms/ResultCellWinnerCaption'
 import ResultClose from '../atoms/ResultClose'
 
 export interface StateProps {
@@ -28,10 +29,6 @@ export interface StateProps {
   readonly losers: string[]
   readonly me: string | null
   readonly summary: {
-    readonly description: {
-      loser: string
-      winner: string
-    }
     readonly loserTeam: Set<village.Team>
     readonly myTeam: village.Team | ''
     readonly winnerTeam: village.Team
@@ -143,16 +140,14 @@ export default function Result(props: Props) {
               winnerTeam={props.summary.winnerTeam}
             />,
             me,
-            <ResultCellCaption
-              id={props.summary.description.winner}
+            <ResultCellWinnerCaption
               key="caption winners"
-              winnerTeam={props.summary.winnerTeam}
+              team={props.summary.winnerTeam}
             />,
             ... winners,
-            <ResultCellCaption
-              id={props.summary.description.loser}
+            <ResultCellLoserCaption
               key="caption losers"
-              loserTeam={props.summary.loserTeam}
+              team={props.summary.loserTeam}
             />,
             ... losers
           ]
