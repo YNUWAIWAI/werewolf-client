@@ -196,11 +196,6 @@ storiesOf('village|Result', module)
     ]
     const me: Props['me'] = 'agent1'
     const summary: Props['summary'] = {
-      description: {
-        loser: 'Result.summary.loser(2)',
-        summary: 'Result.summary.description(player, win)',
-        winner: 'Result.summary.winner'
-      },
       loserTeam: new Set([village.Team.werewolf, village.Team.werehamster]),
       myTeam: village.Team.villager,
       winnerTeam: village.Team.villager
@@ -295,11 +290,6 @@ storiesOf('village|Result', module)
     ]
     const me: Props['me'] = 'agent1'
     const summary: Props['summary'] = {
-      description: {
-        loser: 'Result.summary.loser(2)',
-        summary: 'Result.summary.description(player, win)',
-        winner: 'Result.summary.winner'
-      },
       loserTeam: new Set([village.Team.werewolf, village.Team.werehamster]),
       myTeam: village.Team.villager,
       winnerTeam: village.Team.villager
