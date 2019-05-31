@@ -12,8 +12,6 @@ export default function ResultCellAvatarImage(props: Props) {
       additionalClass={props.status === 'alive' ? '' : 'dead'}
       className="vi--result--cell--avatarImage"
       image={props.image}
-      initial=""
-      name=""
     />
   )
 }

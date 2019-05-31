@@ -24,4 +24,44 @@ describe('<ResultCellAvatarImage />', () => {
 
     expect(warpper.html()).toMatchSnapshot()
   })
+  test('deathByAttack', () => {
+    const warpper = shallow(
+      <ResultCellAvatarImage
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        status={village.AgentStatus.deathByAttack}
+      />
+    )
+
+    expect(warpper.html()).toMatchSnapshot()
+  })
+  test('deathByExecution', () => {
+    const warpper = shallow(
+      <ResultCellAvatarImage
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        status={village.AgentStatus.deathByExecution}
+      />
+    )
+
+    expect(warpper.html()).toMatchSnapshot()
+  })
+  test('deathByFear', () => {
+    const warpper = shallow(
+      <ResultCellAvatarImage
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        status={village.AgentStatus.deathByFear}
+      />
+    )
+
+    expect(warpper.html()).toMatchSnapshot()
+  })
+  test('unnaturalDeath', () => {
+    const warpper = shallow(
+      <ResultCellAvatarImage
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        status={village.AgentStatus.unnaturalDeath}
+      />
+    )
+
+    expect(warpper.html()).toMatchSnapshot()
+  })
 })
