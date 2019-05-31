@@ -10,7 +10,6 @@ describe('<ResultCellSummary />', () => {
   test('audience', () => {
     const warpper = mountWithIntl(
       <ResultCellSummary
-        id="Result.summary.description(audience)"
         myTeam=""
         winnerTeam={village.Team.werewolf}
       />
@@ -21,7 +20,6 @@ describe('<ResultCellSummary />', () => {
   test('player lose', () => {
     const warpper = mountWithIntl(
       <ResultCellSummary
-        id="Result.summary.description(player, lose)"
         myTeam={village.Team.villager}
         winnerTeam={village.Team.werewolf}
       />
@@ -32,7 +30,6 @@ describe('<ResultCellSummary />', () => {
   test('player win', () => {
     const warpper = mountWithIntl(
       <ResultCellSummary
-        id="Result.summary.description(player, win)"
         myTeam={village.Team.villager}
         winnerTeam={village.Team.villager}
       />

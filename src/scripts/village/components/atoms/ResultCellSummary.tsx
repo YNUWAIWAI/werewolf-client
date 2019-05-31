@@ -3,15 +3,24 @@ import {FormattedMessage} from 'react-intl'
 import TeamIcon from '../atoms/TeamIcon'
 
 interface Props {
-  readonly id: string
   readonly myTeam: village.Team | ''
   readonly winnerTeam: village.Team
+}
+
+const getId = (myTeam: village.Team | '', winnerTeam: village.Team) => {
+  if (myTeam === '') {
+    return 'Result.summary.description(audience)'
+  } else if (myTeam === winnerTeam) {
+    return 'Result.summary.description(player, win)'
+  }
+
+  return 'Result.summary.description(player, lose)'
 }
 
 export default function ResultCellSummary(props: Props) {
   return (
     <FormattedMessage
-      id={props.id}
+      id={getId(props.myTeam, props.winnerTeam)}
       values={
         {
           myTeam:
