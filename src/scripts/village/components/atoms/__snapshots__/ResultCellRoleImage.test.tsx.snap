@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultCellRoleImage /> alive 1`] = `"<div class=\\"vi--result--cell--roleImage \\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
+
+exports[`<ResultCellRoleImage /> dead 1`] = `"<div class=\\"vi--result--cell--roleImage dead\\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
