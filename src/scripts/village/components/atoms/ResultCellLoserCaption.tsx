@@ -3,19 +3,17 @@ import {FormattedMessage} from 'react-intl'
 import TeamIcon from './TeamIcon'
 
 interface Props {
-  readonly id: string
-  readonly loserTeam?: Set<village.Team>
-  readonly winnerTeam?: village.Team
+  readonly team: Set<village.Team>
 }
 
-export default function ResultCellCaption(props: Props) {
+export default function ResultCellLoserCaption(props: Props) {
   // '' is dummy element
   // ex) ['werewolf', 'villager'], ['werewolf', ''], ['', '']
-  const loserTeam: (village.Team | '')[] = props.loserTeam ? [... props.loserTeam, ''] : ['', '']
+  const loserTeam: (village.Team | '')[] = [... props.team, '']
 
   return (
     <FormattedMessage
-      id={props.id}
+      id={`Result.summary.loser(${props.team.size})`}
       values={
         {
           loserTeam0:
@@ -29,12 +27,6 @@ export default function ResultCellCaption(props: Props) {
               class="vi--result--cell--caption--team"
               key="loserTeam1"
               team={loserTeam[1]}
-            />,
-          winnerTeam:
-            <TeamIcon
-              class="vi--result--cell--caption--team"
-              key="winnerTeam"
-              team={props.winnerTeam || ''}
             />
         }
       }
