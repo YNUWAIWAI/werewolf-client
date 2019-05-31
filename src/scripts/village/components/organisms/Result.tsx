@@ -30,7 +30,6 @@ export interface StateProps {
   readonly summary: {
     readonly description: {
       loser: string
-      summary: string
       winner: string
     }
     readonly loserTeam: Set<village.Team>
@@ -139,7 +138,6 @@ export default function Result(props: Props) {
           [
             <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
             <ResultCellSummary
-              id={props.summary.description.summary}
               key="summary"
               myTeam={props.summary.myTeam}
               winnerTeam={props.summary.winnerTeam}

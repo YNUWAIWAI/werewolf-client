@@ -158,7 +158,6 @@ const me: Props['me'] = 'agent0'
 const summary: Props['summary'] = {
   description: {
     loser: 'Result.summary.loser(2)',
-    summary: 'Result.summary.description(player, win)',
     winner: 'Result.summary.winner'
   },
   loserTeam: new Set([village.Team.werehamster, village.Team.werewolf]),
