@@ -6,46 +6,46 @@ describe('<RoleIcon />', () => {
   test('default', () => {
     const wrapper = shallow(
       <RoleIcon
-        class="class"
+        className="className"
         image="image"
         name="name"
       />
     )
 
-    expect(wrapper.find('.class').exists()).toBe(true)
-    expect(wrapper.find('.class').hasClass('undefined')).toBe(false)
-    expect(wrapper.find('.class--image').exists()).toBe(true)
-    expect(wrapper.find('.class--name').exists()).toBe(true)
+    expect(wrapper.find('.className').exists()).toBe(true)
+    expect(wrapper.find('.className').hasClass('undefined')).toBe(false)
+    expect(wrapper.find('.className--image').exists()).toBe(true)
+    expect(wrapper.find('.className--name').exists()).toBe(true)
   })
   test('additionalClass', () => {
     const wrapper = shallow(
       <RoleIcon
         additionalClass="additionalClass"
-        class="class"
+        className="className"
         image="image"
         name="name"
       />
     )
 
-    expect(wrapper.find('.class').exists()).toBe(true)
-    expect(wrapper.find('.class').hasClass('additionalClass')).toBe(true)
-    expect(wrapper.find('.class--image').exists()).toBe(true)
-    expect(wrapper.find('.class--name').exists()).toBe(true)
+    expect(wrapper.find('.className').exists()).toBe(true)
+    expect(wrapper.find('.className').hasClass('additionalClass')).toBe(true)
+    expect(wrapper.find('.className--image').exists()).toBe(true)
+    expect(wrapper.find('.className--name').exists()).toBe(true)
   })
   test('numberOfAgents', () => {
     const wrapper = shallow(
       <RoleIcon
-        class="class"
+        className="className"
         image="image"
         name="name"
         numberOfAgents={1}
       />
     )
 
-    expect(wrapper.find('.class').exists()).toBe(true)
-    expect(wrapper.find('.class--image').exists()).toBe(true)
-    expect(wrapper.find('.class--number').exists()).toBe(true)
-    expect(wrapper.find('.class--times').exists()).toBe(true)
-    expect(wrapper.find('.class--name').exists()).toBe(true)
+    expect(wrapper.find('.className').exists()).toBe(true)
+    expect(wrapper.find('.className--image').exists()).toBe(true)
+    expect(wrapper.find('.className--number').exists()).toBe(true)
+    expect(wrapper.find('.className--times').exists()).toBe(true)
+    expect(wrapper.find('.className--name').exists()).toBe(true)
   })
 })

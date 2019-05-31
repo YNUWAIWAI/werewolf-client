@@ -2,7 +2,7 @@ import * as React from 'react'
 
 export interface Props {
   readonly additionalClass?: string
-  readonly class: string
+  readonly className: string
   readonly image: string
   readonly name: string
   readonly numberOfAgents?: number
@@ -11,27 +11,27 @@ export interface Props {
 export default function RoleIcon(props: Props) {
   return (
     <div
-      className={`${props.class} ${props.additionalClass || ''}`}
+      className={`${props.className} ${props.additionalClass || ''}`}
     >
       <img
-        className={`${props.class}--image`}
+        className={`${props.className}--image`}
         src={props.image}
       />
       {
         typeof props.numberOfAgents === 'number' ?
-          <div className={`${props.class}--times`}>
+          <div className={`${props.className}--times`}>
             {'×'}
           </div> :
           null
       }
       {
         typeof props.numberOfAgents === 'number' ?
-          <div className={`${props.class}--number`}>
+          <div className={`${props.className}--number`}>
             {props.numberOfAgents}
           </div> :
           null
       }
-      <div className={`${props.class}--name`}>
+      <div className={`${props.className}--name`}>
         {props.name}
       </div>
     </div>

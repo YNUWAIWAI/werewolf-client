@@ -1,7 +1,15 @@
 /* global village */
 import * as React from 'react'
-import ResultCell, {ResultCellType} from '../molecules/ResultCell'
 import {CSSTransition} from 'react-transition-group'
+import ResultCellAvatarImage from '../atoms/ResultCellAvatarImage'
+import ResultCellAvatarName from '../atoms/ResultCellAvatarName'
+import ResultCellImage from '../atoms/ResultCellImage'
+import ResultCellLoserCaption from '../atoms/ResultCellLoserCaption'
+import ResultCellName from '../atoms/ResultCellName'
+import ResultCellRoleImage from '../atoms/ResultCellRoleImage'
+import ResultCellStatus from '../atoms/ResultCellStatus'
+import ResultCellSummary from '../atoms/ResultCellSummary'
+import ResultCellWinnerCaption from '../atoms/ResultCellWinnerCaption'
 import ResultClose from '../atoms/ResultClose'
 
 export interface StateProps {
@@ -21,11 +29,6 @@ export interface StateProps {
   readonly losers: string[]
   readonly me: string | null
   readonly summary: {
-    readonly description: {
-      loser: string
-      summary: string
-      winner: string
-    }
     readonly loserTeam: Set<village.Team>
     readonly myTeam: village.Team | ''
     readonly winnerTeam: village.Team
@@ -39,41 +42,36 @@ export interface DispatchProps {
 export interface Props extends StateProps, DispatchProps {}
 
 const getRow = (agent: Props['agents'][village.AgentId]) => [
-  <ResultCell
+  <ResultCellImage
     image={agent.agentImage}
+    initial=""
     key={`${agent.agentId}image`}
     status={agent.status}
-    type={ResultCellType.image}
   />,
-  <ResultCell
+  <ResultCellName
     key={`${agent.agentId}name`}
     status={agent.status}
     text={agent.agentName}
-    type={ResultCellType.name}
   />,
-  <ResultCell
+  <ResultCellStatus
     key={`${agent.agentId}status`}
     status={agent.status}
-    type={ResultCellType.status}
   />,
-  <ResultCell
+  <ResultCellRoleImage
     image={agent.roleImage}
     key={`${agent.agentId}roleImage`}
     name={agent.roleName}
     status={agent.status}
-    type={ResultCellType.roleImage}
   />,
-  <ResultCell
+  <ResultCellAvatarImage
     image={agent.avatarImage}
     key={`${agent.agentId}avatarImage`}
     status={agent.status}
-    type={ResultCellType.avatarImage}
   />,
-  <ResultCell
+  <ResultCellAvatarName
     key={`${agent.agentId}avatarName`}
     status={agent.status}
     text={agent.avatarName}
-    type={ResultCellType.avatarName}
   />
 ]
 
@@ -136,26 +134,20 @@ export default function Result(props: Props) {
         {
           [
             <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
-            <ResultCell
-              id={props.summary.description.summary}
-              key={ResultCellType.summary}
+            <ResultCellSummary
+              key="summary"
               myTeam={props.summary.myTeam}
-              type={ResultCellType.summary}
               winnerTeam={props.summary.winnerTeam}
             />,
             me,
-            <ResultCell
-              id={props.summary.description.winner}
+            <ResultCellWinnerCaption
               key="caption winners"
-              type={ResultCellType.caption}
-              winnerTeam={props.summary.winnerTeam}
+              team={props.summary.winnerTeam}
             />,
             ... winners,
-            <ResultCell
-              id={props.summary.description.loser}
+            <ResultCellLoserCaption
               key="caption losers"
-              loserTeam={props.summary.loserTeam}
-              type={ResultCellType.caption}
+              team={props.summary.loserTeam}
             />,
             ... losers
           ]

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultCellName /> alive 1`] = `"<div class=\\"vi--result--cell--name \\">Adil</div>"`;
+
+exports[`<ResultCellName /> dead 1`] = `"<div class=\\"vi--result--cell--name dead\\">Adil</div>"`;
+
+exports[`<ResultCellName /> deathByAttack 1`] = `"<div class=\\"vi--result--cell--name dead\\">Adil</div>"`;
+
+exports[`<ResultCellName /> deathByExecution 1`] = `"<div class=\\"vi--result--cell--name dead\\">Adil</div>"`;
+
+exports[`<ResultCellName /> deathByFear 1`] = `"<div class=\\"vi--result--cell--name dead\\">Adil</div>"`;
+
+exports[`<ResultCellName /> unnaturalDeath 1`] = `"<div class=\\"vi--result--cell--name dead\\">Adil</div>"`;

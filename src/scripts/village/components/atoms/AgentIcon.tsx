@@ -5,8 +5,8 @@ export interface Props {
   readonly className: string
   readonly handleOnClick?: () => void
   readonly image: string
-  readonly initial: string
-  readonly name: string
+  readonly initial?: string
+  readonly name?: string
 }
 
 export default function AgentIcon(props: Props) {
@@ -15,18 +15,26 @@ export default function AgentIcon(props: Props) {
       className={`${props.className} ${props.additionalClass || ''}`}
       onClick={props.handleOnClick}
     >
-      <div
-        className={`${props.className}--initial`}
-      >
-        {props.initial}
-      </div>
+      {
+        props.initial ?
+          <div
+            className={`${props.className}--initial`}
+          >
+            {props.initial}
+          </div> :
+          null
+      }
       <img
         className={`${props.className}--image`}
         src={props.image}
       />
-      <span className={`${props.className}--name`}>
-        {props.name}
-      </span>
+      {
+        props.name ?
+          <span className={`${props.className}--name`}>
+            {props.name}
+          </span> :
+          null
+      }
     </div>
   )
 }
