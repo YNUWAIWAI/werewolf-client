@@ -36,9 +36,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   const summary: StateProps['summary'] = {
     description: {
       loser: `Result.summary.loser(${state.result.summary.loserTeam.size})`,
-      summary: state.result.summary.kind === 'player' ?
-        `Result.summary.description(player, ${state.result.summary.result})` :
-        'Result.summary.description(audience)',
       winner: 'Result.summary.winner'
     },
     loserTeam: state.result.summary.loserTeam,
