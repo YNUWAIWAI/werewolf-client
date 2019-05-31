@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ResultCellAvatarImage /> alive 1`] = `"<div class=\\"vi--result--cell--avatarImage \\"><div class=\\"vi--result--cell--avatarImage--initial\\"></div><img class=\\"vi--result--cell--avatarImage--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/><span class=\\"vi--result--cell--avatarImage--name\\"></span></div>"`;
+exports[`<ResultCellAvatarImage /> alive 1`] = `"<div class=\\"vi--result--cell--avatarImage \\"><img class=\\"vi--result--cell--avatarImage--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;
 
-exports[`<ResultCellAvatarImage /> dead 1`] = `"<div class=\\"vi--result--cell--avatarImage dead\\"><div class=\\"vi--result--cell--avatarImage--initial\\"></div><img class=\\"vi--result--cell--avatarImage--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/><span class=\\"vi--result--cell--avatarImage--name\\"></span></div>"`;
+exports[`<ResultCellAvatarImage /> dead 1`] = `"<div class=\\"vi--result--cell--avatarImage dead\\"><img class=\\"vi--result--cell--avatarImage--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;
