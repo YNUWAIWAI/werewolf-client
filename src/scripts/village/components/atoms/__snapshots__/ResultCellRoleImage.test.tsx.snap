@@ -3,3 +3,11 @@
 exports[`<ResultCellRoleImage /> alive 1`] = `"<div class=\\"vi--result--cell--roleImage \\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
 
 exports[`<ResultCellRoleImage /> dead 1`] = `"<div class=\\"vi--result--cell--roleImage dead\\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
+
+exports[`<ResultCellRoleImage /> deathByAttack 1`] = `"<div class=\\"vi--result--cell--roleImage dead\\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
+
+exports[`<ResultCellRoleImage /> deathByExecution 1`] = `"<div class=\\"vi--result--cell--roleImage dead\\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
+
+exports[`<ResultCellRoleImage /> deathByFear 1`] = `"<div class=\\"vi--result--cell--roleImage dead\\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
+
+exports[`<ResultCellRoleImage /> unnaturalDeath 1`] = `"<div class=\\"vi--result--cell--roleImage dead\\"><img class=\\"vi--result--cell--roleImage--image\\" src=\\"https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png\\"/><div class=\\"vi--result--cell--roleImage--name\\">Villager</div></div>"`;
