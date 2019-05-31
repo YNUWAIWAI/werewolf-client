@@ -3,3 +3,11 @@
 exports[`<ResultCellImage /> alive 1`] = `"<div class=\\"vi--result--cell--image \\"><div class=\\"vi--result--cell--image--initial\\">A</div><img class=\\"vi--result--cell--image--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;
 
 exports[`<ResultCellImage /> dead 1`] = `"<div class=\\"vi--result--cell--image dead\\"><div class=\\"vi--result--cell--image--initial\\">A</div><img class=\\"vi--result--cell--image--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;
+
+exports[`<ResultCellImage /> deathByAttack 1`] = `"<div class=\\"vi--result--cell--image dead\\"><div class=\\"vi--result--cell--image--initial\\">A</div><img class=\\"vi--result--cell--image--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;
+
+exports[`<ResultCellImage /> deathByExecution 1`] = `"<div class=\\"vi--result--cell--image dead\\"><div class=\\"vi--result--cell--image--initial\\">A</div><img class=\\"vi--result--cell--image--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;
+
+exports[`<ResultCellImage /> deathByFear 1`] = `"<div class=\\"vi--result--cell--image dead\\"><div class=\\"vi--result--cell--image--initial\\">A</div><img class=\\"vi--result--cell--image--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;
+
+exports[`<ResultCellImage /> unnaturalDeath 1`] = `"<div class=\\"vi--result--cell--image dead\\"><div class=\\"vi--result--cell--image--initial\\">A</div><img class=\\"vi--result--cell--image--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"/></div>"`;

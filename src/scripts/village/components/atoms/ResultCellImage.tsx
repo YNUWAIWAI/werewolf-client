@@ -14,7 +14,6 @@ export default function ResultCellImage(props: Props) {
       className="vi--result--cell--image"
       image={props.image}
       initial={props.initial}
-      name=""
     />
   )
 }
