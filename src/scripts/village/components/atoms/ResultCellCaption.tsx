@@ -16,7 +16,6 @@ export default function ResultCellCaption(props: Props) {
   return (
     <FormattedMessage
       id={props.id}
-      key="caption"
       values={
         {
           loserTeam0:

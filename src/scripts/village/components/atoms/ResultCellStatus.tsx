@@ -9,7 +9,6 @@ export default function ResultCellStatus(props: Props) {
   return (
     <FormattedMessage
       id={`Result.status(${props.status})`}
-      key="status"
     >
       {
         text => (
