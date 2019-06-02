@@ -25,6 +25,7 @@ storiesOf('village|Result', module)
       agent1: {
         agentId: 1,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        agentInitial: 'A',
         agentName: 'Adil',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
         avatarName: 'Suzuki',
@@ -36,6 +37,7 @@ storiesOf('village|Result', module)
       agent2: {
         agentId: 2,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        agentInitial: 'B',
         agentName: 'Borya',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
         avatarName: 'Takahashi',
@@ -47,6 +49,7 @@ storiesOf('village|Result', module)
       agent3: {
         agentId: 3,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        agentInitial: 'C',
         agentName: 'Chacha',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png',
         avatarName: 'Tanaka',
@@ -58,6 +61,7 @@ storiesOf('village|Result', module)
       agent4: {
         agentId: 4,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        agentInitial: 'D',
         agentName: 'Devdatta',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
         avatarName: 'Ito',
@@ -69,6 +73,7 @@ storiesOf('village|Result', module)
       agent5: {
         agentId: 5,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        agentInitial: 'E',
         agentName: 'Ekrem',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/s_50x50.png',
         avatarName: 'Watanabe',
@@ -80,6 +85,7 @@ storiesOf('village|Result', module)
       agent6: {
         agentId: 6,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+        agentInitial: 'F',
         agentName: 'Fernando',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
         avatarName: 'Yamamoto',
@@ -91,6 +97,7 @@ storiesOf('village|Result', module)
       agent7: {
         agentId: 7,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
+        agentInitial: 'G',
         agentName: 'Gavriil',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
         avatarName: 'Nakamura',
@@ -102,6 +109,7 @@ storiesOf('village|Result', module)
       agent8: {
         agentId: 8,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
+        agentInitial: 'H',
         agentName: 'Henrik',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
         avatarName: 'Kobayashi',
@@ -113,6 +121,7 @@ storiesOf('village|Result', module)
       agent9: {
         agentId: 9,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
+        agentInitial: 'I',
         agentName: 'Ileanna',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
         avatarName: 'Yoshida',
@@ -124,6 +133,7 @@ storiesOf('village|Result', module)
       agent10: {
         agentId: 10,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
+        agentInitial: 'J',
         agentName: 'Jasmin',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/t_50x50.png',
         avatarName: 'Yamada',
@@ -135,6 +145,7 @@ storiesOf('village|Result', module)
       agent11: {
         agentId: 11,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
+        agentInitial: 'K',
         agentName: 'Kaiji',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
         avatarName: 'Sasaki',
@@ -146,6 +157,7 @@ storiesOf('village|Result', module)
       agent12: {
         agentId: 12,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
+        agentInitial: 'L',
         agentName: 'Louise',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
         avatarName: 'Yamaguchi',
@@ -157,6 +169,7 @@ storiesOf('village|Result', module)
       agent13: {
         agentId: 13,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
+        agentInitial: 'M',
         agentName: 'Marthe',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
         avatarName: 'Matsumoto',
@@ -168,6 +181,7 @@ storiesOf('village|Result', module)
       agent14: {
         agentId: 14,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
+        agentInitial: 'N',
         agentName: 'Nanyamka',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
         avatarName: 'Inoue',
@@ -179,6 +193,7 @@ storiesOf('village|Result', module)
       agent15: {
         agentId: 15,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
+        agentInitial: 'O',
         agentName: 'Oliwia',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
         avatarName: 'Sato',
@@ -231,6 +246,7 @@ storiesOf('village|Result', module)
       agent1: {
         agentId: 1,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        agentInitial: 'A',
         agentName: 'Adil',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
         avatarName: 'Suzuki',
@@ -242,6 +258,7 @@ storiesOf('village|Result', module)
       agent2: {
         agentId: 2,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        agentInitial: 'B',
         agentName: 'Borya',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
         avatarName: 'Takahashi',
@@ -253,6 +270,7 @@ storiesOf('village|Result', module)
       agent3: {
         agentId: 3,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        agentInitial: 'C',
         agentName: 'Chacha',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png',
         avatarName: 'Tanaka',
@@ -264,6 +282,7 @@ storiesOf('village|Result', module)
       agent4: {
         agentId: 4,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        agentInitial: 'D',
         agentName: 'Devdatta',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
         avatarName: 'Ito',
@@ -275,6 +294,7 @@ storiesOf('village|Result', module)
       agent5: {
         agentId: 5,
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        agentInitial: 'E',
         agentName: 'Ekrem',
         avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/s_50x50.png',
         avatarName: 'Watanabe',

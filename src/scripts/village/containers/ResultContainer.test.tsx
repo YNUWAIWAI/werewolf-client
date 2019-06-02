@@ -17,34 +17,17 @@ describe('<ResultContainer />', () => {
             language: village.Language.ja,
             result: {
               agents: {
-                agent0: {
-                  agentId: 0,
-                  agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
-                  agentName: {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
-                  },
-                  avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
-                  avatarName: 'Sato',
-                  result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
-                  roleName: {
-                    'en': 'Villager',
-                    'ja': '村人'
-                  },
-                  status: village.AgentStatus.alive
-                },
                 agent1: {
                   agentId: 1,
-                  agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   agentName: {
-                    en: 'Walter',
-                    ja: 'ヴァルター'
+                    'en': 'Adil',
+                    'ja': 'アーディル'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   avatarName: 'Suzuki',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   roleName: {
                     en: 'Seer',
                     ja: '占い師'
@@ -53,15 +36,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent2: {
                   agentId: 2,
-                  agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                   agentName: {
-                    en: 'Moritz',
-                    ja: 'モーリッツ'
+                    'en': 'Borya',
+                    'ja': 'ボーリャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
                   avatarName: 'Takahashi',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werewolf',
                     ja: '人狼'
@@ -70,15 +53,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent3: {
                   agentId: 3,
-                  agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                   agentName: {
-                    en: 'Simson',
-                    ja: 'ジムゾン'
+                    'en': 'Chacha',
+                    'ja': 'チャチャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png',
                   avatarName: 'Tanaka',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   roleName: {
                     en: 'Hunter',
                     ja: '狩人'
@@ -87,15 +70,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent4: {
                   agentId: 4,
-                  agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                   agentName: {
-                    en: 'Thomas',
-                    ja: 'トーマス'
+                    'en': 'Devdatta',
+                    'ja': 'デヴゥダッタ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
                   avatarName: 'Ito',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
                   roleName: {
                     en: 'Medium',
                     ja: '霊媒師'
@@ -104,15 +87,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent5: {
                   agentId: 5,
-                  agentImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
                   agentName: {
-                    en: 'Nicholas',
-                    ja: 'ニコラス'
+                    'en': 'Ekrem',
+                    'ja': 'エクレム'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/s_50x50.png',
                   avatarName: 'Watanabe',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
                   roleName: {
                     en: 'Werehamster',
                     ja: 'ハムスター人間'
@@ -121,7 +104,6 @@ describe('<ResultContainer />', () => {
                 }
               },
               allIds: [
-                'agent0',
                 'agent1',
                 'agent2',
                 'agent3',
@@ -142,7 +124,6 @@ describe('<ResultContainer />', () => {
               },
               visible: true,
               winners: [
-                'agent0',
                 'agent1',
                 'agent3',
                 'agent4'
@@ -168,15 +149,15 @@ describe('<ResultContainer />', () => {
               agents: {
                 agent0: {
                   agentId: 0,
-                  agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   agentName: {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
+                    'en': 'Adil',
+                    'ja': 'アーディル'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   avatarName: 'Sato',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
                   roleName: {
                     'en': 'Villager',
                     'ja': '村人'
@@ -185,15 +166,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent1: {
                   agentId: 1,
-                  agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                   agentName: {
-                    en: 'Walter',
-                    ja: 'ヴァルター'
+                    'en': 'Borya',
+                    'ja': 'ボーリャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Suzuki',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   roleName: {
                     en: 'Seer',
                     ja: '占い師'
@@ -202,15 +183,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent2: {
                   agentId: 2,
-                  agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                   agentName: {
-                    en: 'Moritz',
-                    ja: 'モーリッツ'
+                    'en': 'Chacha',
+                    'ja': 'チャチャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Takahashi',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werewolf',
                     ja: '人狼'
@@ -219,15 +200,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent3: {
                   agentId: 3,
-                  agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                   agentName: {
-                    en: 'Simson',
-                    ja: 'ジムゾン'
+                    'en': 'Devdatta',
+                    'ja': 'デヴゥダッタ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Tanaka',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   roleName: {
                     en: 'Hunter',
                     ja: '狩人'
@@ -236,15 +217,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent4: {
                   agentId: 4,
-                  agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
                   agentName: {
-                    en: 'Thomas',
-                    ja: 'トーマス'
+                    'en': 'Ekrem',
+                    'ja': 'エクレム'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Ito',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
                   roleName: {
                     en: 'Medium',
                     ja: '霊媒師'
@@ -253,15 +234,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent5: {
                   agentId: 5,
-                  agentImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   agentName: {
-                    en: 'Nicholas',
-                    ja: 'ニコラス'
+                    'en': 'Fernando',
+                    'ja': 'フェルナンド'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
                   avatarName: 'Watanabe',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werehamster',
                     ja: 'ハムスター人間'
@@ -317,15 +298,15 @@ describe('<ResultContainer />', () => {
               agents: {
                 agent0: {
                   agentId: 0,
-                  agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   agentName: {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
+                    'en': 'Adil',
+                    'ja': 'アーディル'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   avatarName: 'Sato',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
                   roleName: {
                     'en': 'Villager',
                     'ja': '村人'
@@ -334,15 +315,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent1: {
                   agentId: 1,
-                  agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                   agentName: {
-                    en: 'Walter',
-                    ja: 'ヴァルター'
+                    'en': 'Borya',
+                    'ja': 'ボーリャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Suzuki',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   roleName: {
                     en: 'Seer',
                     ja: '占い師'
@@ -351,15 +332,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent2: {
                   agentId: 2,
-                  agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                   agentName: {
-                    en: 'Moritz',
-                    ja: 'モーリッツ'
+                    'en': 'Chacha',
+                    'ja': 'チャチャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Takahashi',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werewolf',
                     ja: '人狼'
@@ -368,15 +349,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent3: {
                   agentId: 3,
-                  agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                   agentName: {
-                    en: 'Simson',
-                    ja: 'ジムゾン'
+                    'en': 'Devdatta',
+                    'ja': 'デヴゥダッタ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Tanaka',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   roleName: {
                     en: 'Hunter',
                     ja: '狩人'
@@ -385,15 +366,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent4: {
                   agentId: 4,
-                  agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
                   agentName: {
-                    en: 'Thomas',
-                    ja: 'トーマス'
+                    'en': 'Ekrem',
+                    'ja': 'エクレム'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Ito',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
                   roleName: {
                     en: 'Medium',
                     ja: '霊媒師'
@@ -402,15 +383,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent5: {
                   agentId: 5,
-                  agentImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
                   agentName: {
-                    en: 'Nicholas',
-                    ja: 'ニコラス'
+                    'en': 'Fernando',
+                    'ja': 'フェルナンド'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
                   avatarName: 'Watanabe',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werehamster',
                     ja: 'ハムスター人間'
@@ -466,15 +447,15 @@ describe('<ResultContainer />', () => {
               agents: {
                 agent0: {
                   agentId: 0,
-                  agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   agentName: {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
+                    'en': 'Adil',
+                    'ja': 'アーディル'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   avatarName: 'Sato',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
                   roleName: {
                     'en': 'Villager',
                     'ja': '村人'
@@ -483,15 +464,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent1: {
                   agentId: 1,
-                  agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                   agentName: {
-                    en: 'Walter',
-                    ja: 'ヴァルター'
+                    'en': 'Borya',
+                    'ja': 'ボーリャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Suzuki',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   roleName: {
                     en: 'Seer',
                     ja: '占い師'
@@ -500,15 +481,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent2: {
                   agentId: 2,
-                  agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                   agentName: {
-                    en: 'Moritz',
-                    ja: 'モーリッツ'
+                    'en': 'Chacha',
+                    'ja': 'チャチャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Takahashi',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werewolf',
                     ja: '人狼'
@@ -517,15 +498,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent3: {
                   agentId: 3,
-                  agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                   agentName: {
-                    en: 'Simson',
-                    ja: 'ジムゾン'
+                    'en': 'Devdatta',
+                    'ja': 'デヴゥダッタ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Tanaka',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   roleName: {
                     en: 'Hunter',
                     ja: '狩人'
@@ -534,15 +515,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent4: {
                   agentId: 4,
-                  agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
                   agentName: {
-                    en: 'Thomas',
-                    ja: 'トーマス'
+                    'en': 'Ekrem',
+                    'ja': 'エクレム'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Ito',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
                   roleName: {
                     en: 'Medium',
                     ja: '霊媒師'
@@ -596,15 +577,15 @@ describe('<ResultContainer />', () => {
               agents: {
                 agent0: {
                   agentId: 0,
-                  agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   agentName: {
                     'en': 'Gert',
                     'ja': 'ゲルト'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   avatarName: 'Sato',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
                   roleName: {
                     'en': 'Villager',
                     'ja': '村人'
@@ -613,15 +594,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent1: {
                   agentId: 1,
-                  agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                   agentName: {
-                    en: 'Walter',
-                    ja: 'ヴァルター'
+                    'en': 'Borya',
+                    'ja': 'ボーリャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Suzuki',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   roleName: {
                     en: 'Seer',
                     ja: '占い師'
@@ -630,15 +611,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent2: {
                   agentId: 2,
-                  agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                   agentName: {
-                    en: 'Moritz',
-                    ja: 'モーリッツ'
+                    'en': 'Chacha',
+                    'ja': 'チャチャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Takahashi',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werewolf',
                     ja: '人狼'
@@ -647,15 +628,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent3: {
                   agentId: 3,
-                  agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                   agentName: {
                     en: 'Simson',
                     ja: 'ジムゾン'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Tanaka',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   roleName: {
                     en: 'Hunter',
                     ja: '狩人'
@@ -664,15 +645,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent4: {
                   agentId: 4,
-                  agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
                   agentName: {
                     en: 'Thomas',
                     ja: 'トーマス'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Ito',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
                   roleName: {
                     en: 'Medium',
                     ja: '霊媒師'
@@ -728,15 +709,15 @@ describe('<ResultContainer />', () => {
               agents: {
                 agent0: {
                   agentId: 0,
-                  agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   agentName: {
-                    'en': 'Gert',
-                    'ja': 'ゲルト'
+                    'en': 'Adil',
+                    'ja': 'アーディル'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   avatarName: 'Sato',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
                   roleName: {
                     'en': 'Villager',
                     'ja': '村人'
@@ -745,15 +726,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent1: {
                   agentId: 1,
-                  agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
                   agentName: {
-                    en: 'Walter',
-                    ja: 'ヴァルター'
+                    'en': 'Borya',
+                    'ja': 'ボーリャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Suzuki',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
                   roleName: {
                     en: 'Seer',
                     ja: '占い師'
@@ -762,15 +743,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent2: {
                   agentId: 2,
-                  agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
                   agentName: {
-                    en: 'Moritz',
-                    ja: 'モーリッツ'
+                    'en': 'Chacha',
+                    'ja': 'チャチャ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Takahashi',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werewolf',
                     ja: '人狼'
@@ -779,15 +760,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent3: {
                   agentId: 3,
-                  agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
                   agentName: {
-                    en: 'Simson',
-                    ja: 'ジムゾン'
+                    'en': 'Devdatta',
+                    'ja': 'デヴゥダッタ'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Tanaka',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
                   roleName: {
                     en: 'Hunter',
                     ja: '狩人'
@@ -796,15 +777,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent4: {
                   agentId: 4,
-                  agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
                   agentName: {
-                    en: 'Thomas',
-                    ja: 'トーマス'
+                    'en': 'Ekrem',
+                    'ja': 'エクレム'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
                   avatarName: 'Ito',
                   result: village.Result.win,
-                  roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
                   roleName: {
                     en: 'Medium',
                     ja: '霊媒師'
@@ -813,15 +794,15 @@ describe('<ResultContainer />', () => {
                 },
                 agent5: {
                   agentId: 5,
-                  agentImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+                  agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
                   agentName: {
-                    en: 'Nicholas',
-                    ja: 'ニコラス'
+                    'en': 'Fernando',
+                    'ja': 'フェルナンド'
                   },
-                  avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
+                  avatarImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
                   avatarName: 'Watanabe',
                   result: village.Result.lose,
-                  roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
+                  roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
                   roleName: {
                     en: 'Werehamster',
                     ja: 'ハムスター人間'
