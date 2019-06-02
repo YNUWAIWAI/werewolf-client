@@ -1,9 +1,9 @@
 import {HideResult, hideResult} from '../actions'
 import Result, {DispatchProps, StateProps} from '../components/organisms/Result'
+import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-import {getText} from '../util'
 
 type Action =
   | HideResult
@@ -17,6 +17,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     agents[id] = {
       agentId: a.agentId,
       agentImage: a.agentImage,
+      agentInitial: getInitial(a.agentName.en),
       agentName: getText({
         language: state.language,
         languageMap: a.agentName
