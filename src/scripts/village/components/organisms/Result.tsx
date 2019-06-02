@@ -17,6 +17,7 @@ export interface StateProps {
     [agentId in village.AgentId]: {
       readonly agentName: string
       readonly agentImage: string
+      readonly agentInitial: string
       readonly agentId: number
       readonly avatarImage: string
       readonly avatarName: string
@@ -44,7 +45,7 @@ export interface Props extends StateProps, DispatchProps {}
 const getRow = (agent: Props['agents'][village.AgentId]) => [
   <ResultCellImage
     image={agent.agentImage}
-    initial=""
+    initial={agent.agentInitial}
     key={`${agent.agentId}image`}
     status={agent.status}
   />,
