@@ -63,16 +63,6 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     prediction: {
       playerStatus: [
         {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#0',
-          'id': 0,
-          'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-          'name': {
-            'en': 'Gert',
-            'ja': 'ゲルト'
-          },
-          'status': village.AgentStatus.alive
-        },
-        {
           '@id': 'https://licos.online/state/0.2/village#3/agent#1',
           'id': 1,
           'image': ImagePath.Agent.a,
@@ -168,6 +158,13 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           'id': 14,
           'image': ImagePath.Agent.n,
           'name': Agent.n,
+          'status': village.AgentStatus.alive
+        },
+        {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+          'id': 14,
+          'image': ImagePath.Agent.o,
+          'name': Agent.o,
           'status': village.AgentStatus.alive
         }
       ],
