@@ -1,8 +1,10 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
+import Agent from '../constants/Agent'
 import Chat from '../components/organisms/Chat'
 import ChatContainer from './ChatContainer'
+import ImagePath from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
@@ -35,14 +37,11 @@ describe('<ChatContainer />', () => {
               chat0: {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
                 id: 12,
-                image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+                image: ImagePath.Agent120x120.a,
                 intensionalDisclosureRange: village.Channel.public,
                 isMarked: false,
                 isMine: true,
-                name: {
-                  en: 'Adil',
-                  ja: 'アーディル'
-                },
+                name: Agent.a,
                 phaseStartTime: '2006-10-07T12:06:56.568+09:00',
                 phaseTimeLimit: 600,
                 serverTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -52,7 +51,7 @@ describe('<ChatContainer />', () => {
               chat1: {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
                 id: -1,
-                image: 'https://werewolf.world/image/0.3/agent_icons/120x120/y_120x120.png',
+                image: ImagePath.Agent120x120.y,
                 intensionalDisclosureRange: village.Channel.onymousAudience,
                 isMarked: false,
                 isMine: true,
@@ -66,7 +65,7 @@ describe('<ChatContainer />', () => {
               chat2: {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
                 id: -1,
-                image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
+                image: ImagePath.Agent120x120.anonymous,
                 intensionalDisclosureRange: village.Channel.anonymousAudience,
                 isMarked: false,
                 isMine: true,
@@ -110,14 +109,11 @@ describe('<ChatContainer />', () => {
             chat0: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: 12,
-              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+              image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: true,
-              name: {
-                en: 'Adil',
-                ja: 'アーディル'
-              },
+              name: Agent.a,
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -127,7 +123,7 @@ describe('<ChatContainer />', () => {
             chat1: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: -1,
-              image: 'https://werewolf.world/image/0.3/agent_icons/120x120/y_120x120.png',
+              image: ImagePath.Agent120x120.y,
               intensionalDisclosureRange: village.Channel.onymousAudience,
               isMarked: false,
               isMine: true,
@@ -141,7 +137,7 @@ describe('<ChatContainer />', () => {
             chat2: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               id: -1,
-              image: 'Anonymous',
+              image: ImagePath.Agent120x120.anonymous,
               intensionalDisclosureRange: village.Channel.anonymousAudience,
               isMarked: false,
               isMine: true,

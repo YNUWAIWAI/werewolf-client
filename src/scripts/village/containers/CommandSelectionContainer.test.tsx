@@ -1,10 +1,13 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
+import Agent from '../constants/Agent'
 import CommandSelection from '../components/organisms/CommandSelection'
 import CommandSelectionContainer from './CommandSelectionContainer'
+import ImagePath from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
+import {Role} from '../constants/Role'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
@@ -46,20 +49,14 @@ describe('<CommandSelectionContainer />', () => {
               agent: {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                 'id': 1,
-                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                'name': {
-                  'en': 'Adil',
-                  'ja': 'アーディル'
-                }
+                'image': ImagePath.Agent.a,
+                'name': Agent.a
               },
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                 'id': village.RoleId.seer,
-                'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
-                'name': {
-                  'en': 'Seer',
-                  'ja': '占い師'
-                }
+                'image': ImagePath.Role.seer,
+                'name': Role.seer
               }
             }
           }
@@ -109,20 +106,14 @@ describe('<CommandSelectionContainer />', () => {
               agent: {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                 'id': 1,
-                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                'name': {
-                  'en': 'Adil',
-                  'ja': 'アーディル'
-                }
+                'image': ImagePath.Agent.a,
+                'name': Agent.a
               },
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                 'id': village.RoleId.seer,
-                'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
-                'name': {
-                  'en': 'Seer',
-                  'ja': '占い師'
-                }
+                'image': ImagePath.Role.seer,
+                'name': Role.seer
               }
             }
           }
@@ -175,20 +166,14 @@ describe('<CommandSelectionContainer />', () => {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                   'id': 1,
-                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                  'name': {
-                    'en': 'Adil',
-                    'ja': 'アーディル'
-                  }
+                  'image': ImagePath.Agent.a,
+                  'name': Agent.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
                   'id': village.RoleId.hunter,
-                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
-                  'name': {
-                    'en': 'Hunter',
-                    'ja': '狩人'
-                  }
+                  'image': ImagePath.Role.hunter,
+                  'name': Role.hunter
                 }
               }
             }
@@ -238,20 +223,14 @@ describe('<CommandSelectionContainer />', () => {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                   'id': 1,
-                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                  'name': {
-                    'en': 'Adil',
-                    'ja': 'アーディル'
-                  }
+                  'image': ImagePath.Agent.a,
+                  'name': Agent.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
                   'id': village.RoleId.hunter,
-                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
-                  'name': {
-                    'en': 'Hunter',
-                    'ja': '狩人'
-                  }
+                  'image': ImagePath.Role.hunter,
+                  'name': Role.hunter
                 }
               }
             }
@@ -303,20 +282,14 @@ describe('<CommandSelectionContainer />', () => {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                   'id': 1,
-                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                  'name': {
-                    'en': 'Adil',
-                    'ja': 'アーディル'
-                  }
+                  'image': ImagePath.Agent.a,
+                  'name': Agent.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                   'id': village.RoleId.seer,
-                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
-                  'name': {
-                    'en': 'Seer',
-                    'ja': '占い師'
-                  }
+                  'image': ImagePath.Role.seer,
+                  'name': Role.seer
                 }
               }
             }
@@ -366,20 +339,14 @@ describe('<CommandSelectionContainer />', () => {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                   'id': 1,
-                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                  'name': {
-                    'en': 'Adil',
-                    'ja': 'アーディル'
-                  }
+                  'image': ImagePath.Agent.a,
+                  'name': Agent.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#seer',
                   'id': village.RoleId.seer,
-                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
-                  'name': {
-                    'en': 'Seer',
-                    'ja': '占い師'
-                  }
+                  'image': ImagePath.Role.seer,
+                  'name': Role.seer
                 }
               }
             }
@@ -431,20 +398,14 @@ describe('<CommandSelectionContainer />', () => {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                   'id': 1,
-                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                  'name': {
-                    'en': 'Adil',
-                    'ja': 'アーディル'
-                  }
+                  'image': ImagePath.Agent.a,
+                  'name': Agent.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
                   'id': village.RoleId.werewolf,
-                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
-                  'name': {
-                    'en': 'Werewolf',
-                    'ja': '人狼'
-                  }
+                  'image': ImagePath.Role.werewolf,
+                  'name': Role.werewolf
                 }
               }
             }
@@ -494,20 +455,14 @@ describe('<CommandSelectionContainer />', () => {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                   'id': 1,
-                  'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                  'name': {
-                    'en': 'Adil',
-                    'ja': 'アーディル'
-                  }
+                  'image': ImagePath.Agent.a,
+                  'name': Agent.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
                   'id': village.RoleId.werewolf,
-                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
-                  'name': {
-                    'en': 'Werewolf',
-                    'ja': '人狼'
-                  }
+                  'image': ImagePath.Role.werewolf,
+                  'name': Role.werewolf
                 }
               }
             }
@@ -558,20 +513,14 @@ describe('<CommandSelectionContainer />', () => {
               agent: {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#1',
                 'id': 1,
-                'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-                'name': {
-                  'en': 'Adil',
-                  'ja': 'アーディル'
-                }
+                'image': ImagePath.Agent.a,
+                'name': Agent.a
               },
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#villager',
                 'id': village.RoleId.villager,
-                'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-                'name': {
-                  'en': 'Villager',
-                  'ja': '村人'
-                }
+                'image': ImagePath.Role.villager,
+                'name': Role.villager
               }
             }
           }

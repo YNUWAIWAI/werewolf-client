@@ -1,10 +1,13 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
+import Agent from '../constants/Agent'
+import ImagePath from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
 import Prediction from '../components/organisms/Prediction'
 import PredictionContainer from './PredictionContainer'
 import {Provider} from 'react-redux'
+import {Role} from '../constants/Role'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
@@ -14,51 +17,36 @@ describe('<PredictionContainer />', () => {
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-        'name': {
-          'en': 'Adil',
-          'ja': 'アーディル'
-        },
+        'image': ImagePath.Agent.a,
+        'name': Agent.a,
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#2',
         'id': 2,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
-        'name': {
-          'en': 'Borya',
-          'ja': 'ボーリャ'
-        },
+        'image': ImagePath.Agent.b,
+        'name': Agent.b,
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#3',
         'id': 3,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
-        'name': {
-          'en': 'Chacha',
-          'ja': 'チャチャ'
-        },
+        'image': ImagePath.Agent.c,
+        'name': Agent.c,
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#4',
         'id': 4,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
-        'name': {
-          'en': 'Devdatta',
-          'ja': 'デヴゥダッタ'
-        },
+        'image': ImagePath.Agent.d,
+        'name': Agent.d,
         'status': village.AgentStatus.alive
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/agent#5',
         'id': 5,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
-        'name': {
-          'en': 'Ekrem',
-          'ja': 'エクレム'
-        },
+        'image': ImagePath.Agent.e,
+        'name': Agent.e,
         'status': village.AgentStatus.alive
       }
     ]
@@ -66,41 +54,29 @@ describe('<PredictionContainer />', () => {
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#villager',
         'id': village.RoleId.villager,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        'name': {
-          'en': 'Villager',
-          'ja': '村人'
-        },
+        'image': ImagePath.Role.villager,
+        'name': Role.villager,
         'numberOfAgents': 2
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        },
+        'image': ImagePath.Role.seer,
+        'name': Role.seer,
         'numberOfAgents': 1
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#madman',
         'id': village.RoleId.madman,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
-        'name': {
-          'en': 'Madman',
-          'ja': '狂人'
-        },
+        'image': ImagePath.Role.madman,
+        'name': Role.madman,
         'numberOfAgents': 1
       },
       {
         '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
         'id': village.RoleId.werewolf,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
-        'name': {
-          'en': 'Werewolf',
-          'ja': '人狼'
-        },
+        'image': ImagePath.Role.werewolf,
+        'name': Role.werewolf,
         'numberOfAgents': 1
       }
     ]
