@@ -1,4 +1,8 @@
 /* global village */
+import Agent from '../../constants/Agent'
+import ImagePath from '../../constants/ImagePath'
+import {Role} from '../../constants/Role'
+
 const json: village.Payload$flavorTextMessage = {
   '@context': [
     village.BaseContext.Base,
@@ -20,11 +24,8 @@ const json: village.Payload$flavorTextMessage = {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-        'name': {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
-        }
+        'image': ImagePath.Agent.j,
+        'name': Agent.j
       },
       'characterLimit': 140,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -72,11 +73,8 @@ const json: village.Payload$flavorTextMessage = {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-        'name': {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
-        }
+        'image': ImagePath.Agent.j,
+        'name': Agent.j
       },
       'characterLimit': 140,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',

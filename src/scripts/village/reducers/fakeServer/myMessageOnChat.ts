@@ -1,4 +1,7 @@
 /* global village */
+import Agent from '../../constants/Agent'
+import ImagePath from '../../constants/ImagePath'
+
 const json: village.Payload$playerMessage = {
   '@context': [
     village.BaseContext.Base,
@@ -9,11 +12,8 @@ const json: village.Payload$playerMessage = {
     '@context': village.Context.Agent,
     '@id': 'https://licos.online/state/0.2/village#3/agent',
     'id': 1,
-    'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
-    'name': {
-      'en': 'Adil',
-      'ja': 'アーディル'
-    }
+    'image': ImagePath.Agent120x120.a,
+    'name': Agent.a
   },
   'characterLimit': 140,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',

@@ -1,4 +1,8 @@
 /* global village */
+import Agent from '../../constants/Agent'
+import ImagePath from '../../constants/ImagePath'
+import {Role} from '../../constants/Role'
+
 const json: village.Payload$starMessage = {
   '@context': [
     village.BaseContext.Base,
@@ -14,19 +18,13 @@ const json: village.Payload$starMessage = {
     '@context': village.Context.Agent,
     '@id': 'https://licos.online/state/0.2/village#3/myAgent',
     'id': 1,
-    'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-    'name': {
-      'en': 'Walter',
-      'ja': 'ヴァルター'
-    },
+    'image': ImagePath.Agent.a,
+    'name': Agent.a,
     'role': {
       '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1/role',
-      'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
-      'name': {
-        'en': 'Werewolf',
-        'ja': '人狼'
-      }
+      'image': ImagePath.Role.werewolf,
+      'name': Role.werewolf
     }
   },
   'phase': village.Phase.morning,
