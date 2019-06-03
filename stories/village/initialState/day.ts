@@ -1258,6 +1258,13 @@ const state: ReducerState = {
         }
       },
       {
+        id: 'Henrik',
+        name: {
+          'en': 'Henrik',
+          'ja': 'ヘンリック'
+        }
+      },
+      {
         id: 'Ileanna',
         name: {
           'en': 'Ileanna',
