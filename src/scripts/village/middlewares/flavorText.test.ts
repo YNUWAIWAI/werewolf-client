@@ -1,6 +1,8 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as Ajv from 'ajv'
+import Agent from '../constants/Agent'
+import ImagePath from '../constants/ImagePath'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
@@ -29,11 +31,8 @@ describe('socket/MESSAGE', () => {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-        'name': {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
-        }
+        'image': ImagePath.Agent120x120.a,
+        'name': Agent.a
       },
       'characterLimit': 140,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -82,11 +81,8 @@ describe('socket/MESSAGE', () => {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-        'name': {
-          'en': 'Catalina',
-          'ja': 'カタリナ'
-        }
+        'image': ImagePath.Agent120x120.a,
+        'name': Agent.a
       },
       'characterLimit': 140,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
