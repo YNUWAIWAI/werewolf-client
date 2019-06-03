@@ -12,6 +12,7 @@ const Role = {
 }
 const Agent = {
   a: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+  anonymous: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
   b: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
   c: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
   d: 'https://werewolf.world/imdge/0.3/agent_icons/50x50/d_50x50.png',
@@ -35,6 +36,7 @@ const Agent = {
 }
 const Agent120x120 = {
   a: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+  anonymous: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
   b: 'https://werewolf.world/image/0.3/agent_icons/120x120/b_120x120.png',
   c: 'https://werewolf.world/image/0.3/agent_icons/120x120/c_120x120.png',
   d: 'https://werewolf.world/imdge/0.3/agent_icons/120x120/d_120x120.png',
