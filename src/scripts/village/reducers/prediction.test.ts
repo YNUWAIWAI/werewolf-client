@@ -7,7 +7,7 @@ import {
   firstMorning5,
   flavorText
 } from './fakeServer'
-import reducer, {initialState} from './prediction'
+import reducer, {State, initialState} from './prediction'
 import Agent from '../constants/Agent'
 import ImagePath from '../constants/ImagePath'
 import {Role} from '../constants/Role'
@@ -952,42 +952,42 @@ describe('socket/MESSAGE', () => {
         roleStatus: [
           {
             '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-            'id': 'villager',
+            'id': village.RoleId.villager,
             'image': ImagePath.Role.villager,
             'name': Role.villager,
             'numberOfAgents': 6
           },
           {
             '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-            'id': 'seer',
+            'id': village.RoleId.seer,
             'image': ImagePath.Role.seer,
             'name': Role.seer,
             'numberOfAgents': 1
           },
           {
             '@id': 'https://licos.online/state/0.2/village#3/role#medium',
-            'id': 'medium',
+            'id': village.RoleId.medium,
             'image': ImagePath.Role.medium,
             'name': Role.medium,
             'numberOfAgents': 1
           },
           {
             '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
-            'id': 'hunter',
+            'id': village.RoleId.hunter,
             'image': ImagePath.Role.hunter,
             'name': Role.hunter,
             'numberOfAgents': 1
           },
           {
             '@id': 'https://licos.online/state/0.2/village#3/role#mason',
-            'id': 'mason',
+            'id': village.RoleId.mason,
             'image': ImagePath.Role.mason,
             'name': Role.mason,
             'numberOfAgents': 2
           },
           {
             '@id': 'https://licos.online/state/0.2/village#3/role#madman',
-            'id': 'madman',
+            'id': village.RoleId.madman,
             'image': ImagePath.Role.madman,
             'name': Role.madman,
             'numberOfAgents': 1
@@ -1001,7 +1001,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
-            'id': 'werehamster',
+            'id': village.RoleId.werehamster,
             'image': ImagePath.Role.werehamster,
             'name': Role.werehamster,
             'numberOfAgents': 1
@@ -2134,283 +2134,172 @@ describe('socket/MESSAGE', () => {
   })
 })
 test('CHANGE_PREDICTION_BOARD', () => {
-  const playerStatus = [
-    {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#0',
-      'id': 0,
-      'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-      'name': {
-        en: 'Gert',
-        ja: 'ゲルト'
-      },
-      'status': village.AgentStatus.alive
-    },
+  const playerStatus: State['playerStatus'] = [
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
       'image': ImagePath.Agent.a,
-      'name': {
-        en: 'Walter',
-        ja: 'ヴァルター'
-      },
+      'name': Agent.a,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'id': 2,
       'image': ImagePath.Agent.b,
-      'name': {
-        en: 'Moritz',
-        ja: 'モーリッツ'
-      },
+      'name': Agent.b,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#3',
       'id': 3,
       'image': ImagePath.Agent.c,
-      'name': {
-        en: 'Simson',
-        ja: 'ジムゾン'
-      },
+      'name': Agent.c,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#4',
       'id': 4,
       'image': ImagePath.Agent.d,
-      'name': {
-        en: 'Thomas',
-        ja: 'トーマス'
-      },
+      'name': Agent.d,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#5',
       'id': 5,
       'image': ImagePath.Agent.e,
-      'name': {
-        en: 'Nicholas',
-        ja: 'ニコラス'
-      },
+      'name': Agent.e,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#6',
       'id': 6,
       'image': ImagePath.Agent.f,
-      'name': {
-        en: 'Dieter',
-        ja: 'ディーター'
-      },
+      'name': Agent.f,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#7',
       'id': 7,
       'image': ImagePath.Agent.g,
-      'name': {
-        en: 'Peter',
-        ja: 'ペーター'
-      },
+      'name': Agent.g,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#8',
       'id': 8,
       'image': ImagePath.Agent.h,
-      'name': {
-        en: 'Lisa',
-        ja: 'リーザ'
-      },
+      'name': Agent.h,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#9',
       'id': 9,
       'image': ImagePath.Agent.i,
-      'name': {
-        en: 'Alvin',
-        ja: 'アルビン'
-      },
+      'name': Agent.i,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#10',
       'id': 10,
       'image': ImagePath.Agent.j,
-      'name': {
-        en: 'Catalina',
-        ja: 'カタリナ'
-      },
+      'name': Agent.j,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#11',
       'id': 11,
       'image': ImagePath.Agent.k,
-      'name': {
-        en: 'Otto',
-        ja: 'オットー'
-      },
+      'name': Agent.k,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#12',
       'id': 12,
       'image': ImagePath.Agent.l,
-      'name': {
-        en: 'Joachim',
-        ja: 'ヨアヒム'
-      },
+      'name': Agent.l,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#13',
       'id': 13,
       'image': ImagePath.Agent.m,
-      'name': {
-        en: 'Pamela',
-        ja: 'パメラ'
-      },
+      'name': Agent.m,
       'status': village.AgentStatus.alive
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/agent#14',
       'id': 14,
       'image': ImagePath.Agent.n,
-      'name': {
-        en: 'Jacob',
-        ja: 'ヤコブ'
-      },
+      'name': Agent.n,
+      'status': village.AgentStatus.alive
+    },
+    {
+      '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+      'id': 15,
+      'image': ImagePath.Agent.o,
+      'name': Agent.o,
       'status': village.AgentStatus.alive
     }
   ]
-  const roleStatus = [
+  const roleStatus: State['roleStatus'] = [
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
       'id': village.RoleId.villager,
       'image': ImagePath.Role.villager,
-      'name': {
-        en: 'Villager',
-        ja: '村人'
-      },
+      'name': Role.villager,
       'numberOfAgents': 6
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#seer',
       'id': village.RoleId.seer,
       'image': ImagePath.Role.seer,
-      'name': {
-        en: 'Seer',
-        ja: '占い師'
-      },
+      'name': Role.seer,
       'numberOfAgents': 1
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#medium',
       'id': village.RoleId.medium,
       'image': ImagePath.Role.medium,
-      'name': {
-        en: 'Medium',
-        ja: '霊媒師'
-      },
+      'name': Role.medium,
       'numberOfAgents': 1
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
       'id': village.RoleId.hunter,
       'image': ImagePath.Role.hunter,
-      'name': {
-        en: 'Hunter',
-        ja: '狩人'
-      },
+      'name': Role.hunter,
       'numberOfAgents': 1
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#mason',
       'id': village.RoleId.mason,
       'image': ImagePath.Role.mason,
-      'name': {
-        en: 'Mason',
-        ja: '共有者'
-      },
+      'name': Role.mason,
       'numberOfAgents': 2
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#madman',
       'id': village.RoleId.madman,
       'image': ImagePath.Role.madman,
-      'name': {
-        en: 'Madman',
-        ja: '狂人'
-      },
+      'name': Role.madman,
       'numberOfAgents': 1
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
       'id': village.RoleId.werewolf,
       'image': ImagePath.Role.werewolf,
-      'name': {
-        en: 'Werewolf',
-        ja: '人狼'
-      },
+      'name': Role.werewolf,
       'numberOfAgents': 2
     },
     {
       '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
       'id': village.RoleId.werehamster,
       'image': ImagePath.Role.werehamster,
-      'name': {
-        en: 'Werehamster',
-        ja: 'ハムスター人間'
-      },
+      'name': Role.werehamster,
       'numberOfAgents': 1
     }
   ]
-  const table = {
-    '0': {
-      hunter: {
-        date: 1,
-        fixed: false,
-        state: village.BoardState.QUESTION
-      },
-      madman: {
-        date: 1,
-        fixed: false,
-        state: village.BoardState.QUESTION
-      },
-      mason: {
-        date: 1,
-        fixed: false,
-        state: village.BoardState.QUESTION
-      },
-      medium: {
-        date: 1,
-        fixed: false,
-        state: village.BoardState.QUESTION
-      },
-      seer: {
-        date: 1,
-        fixed: true,
-        state: village.BoardState.FILL
-      },
-      villager: {
-        date: 1,
-        fixed: false,
-        state: village.BoardState.QUESTION
-      },
-      werehamster: {
-        date: 1,
-        fixed: false,
-        state: village.BoardState.QUESTION
-      },
-      werewolf: {
-        date: 1,
-        fixed: false,
-        state: village.BoardState.QUESTION
-      }
-    },
+  const table: State['table'] = {
     '1': {
       hunter: {
         date: 1,
@@ -2998,6 +2887,48 @@ test('CHANGE_PREDICTION_BOARD', () => {
         fixed: false,
         state: village.BoardState.QUESTION
       }
+    },
+    '15': {
+      hunter: {
+        date: 1,
+        fixed: false,
+        state: village.BoardState.QUESTION
+      },
+      madman: {
+        date: 1,
+        fixed: false,
+        state: village.BoardState.QUESTION
+      },
+      mason: {
+        date: 1,
+        fixed: false,
+        state: village.BoardState.QUESTION
+      },
+      medium: {
+        date: 1,
+        fixed: false,
+        state: village.BoardState.QUESTION
+      },
+      seer: {
+        date: 1,
+        fixed: true,
+        state: village.BoardState.FILL
+      },
+      villager: {
+        date: 1,
+        fixed: false,
+        state: village.BoardState.QUESTION
+      },
+      werehamster: {
+        date: 1,
+        fixed: false,
+        state: village.BoardState.QUESTION
+      },
+      werewolf: {
+        date: 1,
+        fixed: false,
+        state: village.BoardState.QUESTION
+      }
     }
   }
 
@@ -3011,7 +2942,7 @@ test('CHANGE_PREDICTION_BOARD', () => {
       },
       {
         nextState: village.BoardState.CIRCLE,
-        playerId: 0,
+        playerId: 2,
         roleId: village.RoleId.villager,
         type: ActionTypes.global.CHANGE_PREDICTION_BOARD
       }
@@ -3022,10 +2953,10 @@ test('CHANGE_PREDICTION_BOARD', () => {
     roleStatus,
     table: {
       ... table,
-      '0': {
-        ... table['0'],
+      '2': {
+        ... table['2'],
         [village.RoleId.villager]: {
-          ... table['0'][village.RoleId.villager],
+          ... table['2'][village.RoleId.villager],
           state: village.BoardState.CIRCLE
         }
       }
