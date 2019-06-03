@@ -10,6 +10,9 @@ import {
   socket
 } from '../actions'
 import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'
+import Agent from '../constants/Agent'
+import ImagePath from '../constants/ImagePath'
+import {Role} from '../constants/Role'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
@@ -47,20 +50,14 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       agent: {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-        'name': {
-          en: 'Walter',
-          ja: 'ヴァルター'
-        }
+        'image': ImagePath.Agent.a,
+        'name': Agent.a
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     },
     prediction: {
@@ -78,141 +75,99 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#1',
           'id': 1,
-          'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-          'name': {
-            'en': 'Walter',
-            'ja': 'ヴァルター'
-          },
+          'image': ImagePath.Agent.a,
+          'name': Agent.a,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#2',
           'id': 2,
-          'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-          'name': {
-            'en': 'Moritz',
-            'ja': 'モーリッツ'
-          },
+          'image': ImagePath.Agent.b,
+          'name': Agent.b,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#3',
           'id': 3,
-          'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-          'name': {
-            'en': 'Simson',
-            'ja': 'ジムゾン'
-          },
+          'image': ImagePath.Agent.c,
+          'name': Agent.c,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#4',
           'id': 4,
-          'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-          'name': {
-            'en': 'Thomas',
-            'ja': 'トーマス'
-          },
+          'image': ImagePath.Agent.d,
+          'name': Agent.d,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#5',
           'id': 5,
-          'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
-          'name': {
-            'en': 'Nicholas',
-            'ja': 'ニコラス'
-          },
+          'image': ImagePath.Agent.e,
+          'name': Agent.e,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#6',
           'id': 6,
-          'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
-          'name': {
-            'en': 'Dieter',
-            'ja': 'ディーター'
-          },
+          'image': ImagePath.Agent.f,
+          'name': Agent.f,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#7',
           'id': 7,
-          'image': 'https://werewolf.world/image/0.2/Peter.jpg',
-          'name': {
-            'en': 'Peter',
-            'ja': 'ペーター'
-          },
+          'image': ImagePath.Agent.g,
+          'name': Agent.g,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#8',
           'id': 8,
-          'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
-          'name': {
-            'en': 'Lisa',
-            'ja': 'リーザ'
-          },
+          'image': ImagePath.Agent.h,
+          'name': Agent.h,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#9',
           'id': 9,
-          'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
-          'name': {
-            'en': 'Alvin',
-            'ja': 'アルビン'
-          },
+          'image': ImagePath.Agent.i,
+          'name': Agent.i,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#10',
           'id': 10,
-          'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-          'name': {
-            'en': 'Catalina',
-            'ja': 'カタリナ'
-          },
+          'image': ImagePath.Agent.j,
+          'name': Agent.j,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#11',
           'id': 11,
-          'image': 'https://werewolf.world/image/0.2/Otto.jpg',
-          'name': {
-            'en': 'Otto',
-            'ja': 'オットー'
-          },
+          'image': ImagePath.Agent.k,
+          'name': Agent.k,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#12',
           'id': 12,
-          'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
-          'name': {
-            'en': 'Joachim',
-            'ja': 'ヨアヒム'
-          },
+          'image': ImagePath.Agent.l,
+          'name': Agent.l,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#13',
           'id': 13,
-          'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
-          'name': {
-            'en': 'Pamela',
-            'ja': 'パメラ'
-          },
+          'image': ImagePath.Agent.m,
+          'name': Agent.m,
           'status': village.AgentStatus.alive
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#14',
           'id': 14,
-          'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
-          'name': {
-            'en': 'Jacob',
-            'ja': 'ヤコブ'
-          },
+          'image': ImagePath.Agent.n,
+          'name': Agent.n,
           'status': village.AgentStatus.alive
         }
       ],
@@ -220,81 +175,57 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#villager',
           'id': village.RoleId.villager,
-          'image': 'https://werewolf.world/image/0.2/villager.jpg',
-          'name': {
-            'en': 'Villager',
-            'ja': '村人'
-          },
+          'image': ImagePath.Role.villager,
+          'name': Role.villager,
           'numberOfAgents': 6
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#seer',
           'id': village.RoleId.seer,
-          'image': 'https://werewolf.world/image/0.2/seer.jpg',
-          'name': {
-            'en': 'Seer',
-            'ja': '占い師'
-          },
+          'image': ImagePath.Role.seer,
+          'name': Role.seer,
           'numberOfAgents': 1
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#medium',
           'id': village.RoleId.medium,
-          'image': 'https://werewolf.world/image/0.2/medium.jpg',
-          'name': {
-            'en': 'Medium',
-            'ja': '霊媒師'
-          },
+          'image': ImagePath.Role.medium,
+          'name': Role.medium,
           'numberOfAgents': 1
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
           'id': village.RoleId.hunter,
-          'image': 'https://werewolf.world/image/0.2/hunter.jpg',
-          'name': {
-            'en': 'Hunter',
-            'ja': '狩人'
-          },
+          'image': ImagePath.Role.hunter,
+          'name': Role.hunter,
           'numberOfAgents': 1
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#mason',
           'id': village.RoleId.mason,
-          'image': 'https://werewolf.world/image/0.2/mason.jpg',
-          'name': {
-            'en': 'Mason',
-            'ja': '共有者'
-          },
+          'image': ImagePath.Role.mason,
+          'name': Role.mason,
           'numberOfAgents': 2
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#madman',
           'id': village.RoleId.madman,
-          'image': 'https://werewolf.world/image/0.2/madman.jpg',
-          'name': {
-            'en': 'Madman',
-            'ja': '狂人'
-          },
+          'image': ImagePath.Role.madman,
+          'name': Role.madman,
           'numberOfAgents': 1
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
           'id': village.RoleId.werewolf,
-          'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
-          'name': {
-            'en': 'Werewolf',
-            'ja': '人狼'
-          },
+          'image': ImagePath.Role.werewolf,
+          'name': Role.werewolf,
           'numberOfAgents': 2
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
           'id': village.RoleId.werehamster,
-          'image': 'https://werewolf.world/image/0.2/werehamster.jpg',
-          'name': {
-            'en': 'Werehamster',
-            'ja': 'ハムスター人間'
-          },
+          'image': ImagePath.Role.werehamster,
+          'name': Role.werehamster,
           'numberOfAgents': 1
         }
       ],
@@ -327,11 +258,8 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'id': 2,
-      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-      'name': {
-        'en': 'Moritz',
-        'ja': 'モーリッツ'
-      }
+      'image': ImagePath.Agent.b,
+      'name': Agent.b
     },
     clientTimestamp,
     'date': 1,
@@ -342,19 +270,13 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-      'name': {
-        'en': 'Walter',
-        'ja': 'ヴァルター'
-      },
+      'image': ImagePath.Agent.a,
+      'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     },
     'phase': village.Phase.morning,
@@ -364,11 +286,8 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'role': {
       '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-      'image': 'https://werewolf.world/image/0.2/villager.jpg',
-      'name': {
-        'en': 'Villager',
-        'ja': '村人'
-      }
+      'image': ImagePath.Role.villager,
+      'name': Role.villager
     },
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
@@ -474,20 +393,14 @@ describe('POST_CHAT', () => {
       agent: {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-        'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        }
+        'image': ImagePath.Agent.a,
+        'name': Agent.a
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     }
   })
@@ -512,11 +425,8 @@ describe('POST_CHAT', () => {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-      'name': {
-        'en': 'Walter',
-        'ja': 'ヴァルター'
-      }
+      'image': ImagePath.Agent.a,
+      'name': Agent.a
     },
     'characterLimit': 140,
     clientTimestamp,
@@ -530,19 +440,13 @@ describe('POST_CHAT', () => {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-      'name': {
-        'en': 'Walter',
-        'ja': 'ヴァルター'
-      },
+      'image': ImagePath.Agent.a,
+      'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     },
     'phase': village.Phase.morning,
@@ -697,119 +601,80 @@ describe('SELECT_YES', () => {
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#2',
           'id': 2,
-          'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-          'name': {
-            en: 'Moritz',
-            ja: 'モーリッツ'
-          }
+          'image': ImagePath.Agent.b,
+          'name': Agent.b
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#3',
           'id': 3,
-          'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-          'name': {
-            en: 'Simson',
-            ja: 'ジムゾン'
-          }
+          'image': ImagePath.Agent.c,
+          'name': Agent.c
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#4',
           'id': 4,
-          'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-          'name': {
-            en: 'Thomas',
-            ja: 'トーマス'
-          }
+          'image': ImagePath.Agent.d,
+          'name': Agent.d
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#5',
           'id': 5,
-          'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
-          'name': {
-            en: 'Nicholas',
-            ja: 'ニコラス'
-          }
+          'image': ImagePath.Agent.e,
+          'name': Agent.e
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#6',
           'id': 6,
-          'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
-          'name': {
-            en: 'Dieter',
-            ja: 'ディーター'
-          }
+          'image': ImagePath.Agent.f,
+          'name': Agent.f
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#7',
           'id': 7,
-          'image': 'https://werewolf.world/image/0.2/Peter.jpg',
-          'name': {
-            en: 'Peter',
-            ja: 'ペーター'
-          }
+          'image': ImagePath.Agent.g,
+          'name': Agent.g
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#8',
           'id': 8,
-          'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
-          'name': {
-            en: 'Lisa',
-            ja: 'リーザ'
-          }
+          'image': ImagePath.Agent.h,
+          'name': Agent.h
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#9',
           'id': 9,
-          'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
-          'name': {
-            en: 'Alvin',
-            ja: 'アルビン'
-          }
+          'image': ImagePath.Agent.i,
+          'name': Agent.i
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#10',
           'id': 10,
-          'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-          'name': {
-            en: 'Catalina',
-            ja: 'カタリナ'
-          }
+          'image': ImagePath.Agent.j,
+          'name': Agent.j
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#11',
           'id': 11,
-          'image': 'https://werewolf.world/image/0.2/Otto.jpg',
-          'name': {
-            en: 'Otto',
-            ja: 'オットー'
-          }
+          'image': ImagePath.Agent.k,
+          'name': Agent.k
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#12',
           'id': 12,
-          'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
-          'name': {
-            en: 'Joachim',
-            ja: 'ヨアヒム'
-          }
+          'image': ImagePath.Agent.l,
+          'name': Agent.l
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#13',
           'id': 13,
-          'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
-          'name': {
-            en: 'Pamela',
-            ja: 'パメラ'
-          }
+          'image': ImagePath.Agent.m,
+          'name': Agent.m
         },
         {
           '@id': 'https://licos.online/state/0.2/village#3/agent#14',
           'id': 14,
-          'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
-          'name': {
-            en: 'Jacob',
-            ja: 'ヤコブ'
-          }
+          'image': ImagePath.Agent.n,
+          'name': Agent.n
         }
       ],
       fixed: true
@@ -818,20 +683,14 @@ describe('SELECT_YES', () => {
       agent: {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-        'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        }
+        'image': ImagePath.Agent.a,
+        'name': Agent.a
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     }
   })
@@ -855,11 +714,8 @@ describe('SELECT_YES', () => {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'id': 2,
-      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-      'name': {
-        'en': 'Moritz',
-        'ja': 'モーリッツ'
-      }
+      'image': ImagePath.Agent.b,
+      'name': Agent.b
     },
     clientTimestamp,
     'date': 1,
@@ -870,19 +726,13 @@ describe('SELECT_YES', () => {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-      'name': {
-        'en': 'Walter',
-        'ja': 'ヴァルター'
-      },
+      'image': ImagePath.Agent.a,
+      'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     },
     'phase': village.Phase.day,
@@ -992,14 +842,11 @@ describe('STAR', () => {
         chat0: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           id: 12,
-          image: 'https://werewolf.world/image/0.2/Walter.jpg',
+          image: ImagePath.Agent.a,
           intensionalDisclosureRange: village.Channel.public,
           isMarked: false,
           isMine: true,
-          name: {
-            en: 'Walter',
-            ja: 'ヴァルター'
-          },
+          name: Agent.a,
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -1012,20 +859,14 @@ describe('STAR', () => {
       agent: {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1',
         'id': 1,
-        'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-        'name': {
-          'en': 'Walter',
-          'ja': 'ヴァルター'
-        }
+        'image': ImagePath.Agent.a,
+        'name': Agent.a
       },
       role: {
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     }
   })
@@ -1055,19 +896,13 @@ describe('STAR', () => {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-      'name': {
-        'en': 'Walter',
-        'ja': 'ヴァルター'
-      },
+      'image': ImagePath.Agent.a,
+      'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'image': 'https://werewolf.world/image/0.2/seer.jpg',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        'image': ImagePath.Role.seer,
+        'name': Role.seer
       }
     },
     'phase': village.Phase.day,
