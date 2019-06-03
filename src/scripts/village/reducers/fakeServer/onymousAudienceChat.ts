@@ -1,4 +1,6 @@
 /* global village */
+import ImagePath from '../../constants/ImagePath'
+
 const json: village.Payload$playerMessage = {
   '@context': [
     village.BaseContext.Base,
@@ -8,7 +10,7 @@ const json: village.Payload$playerMessage = {
   'avatar': {
     '@context': village.Context.Avatar,
     '@id': 'https://licos.online/state/0.2/village#3/avatar',
-    'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/y_120x120.png',
+    'image': ImagePath.Agent120x120.y,
     'name': 'Katoh',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
   },

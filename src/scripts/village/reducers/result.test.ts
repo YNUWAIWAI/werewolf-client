@@ -1,5 +1,9 @@
+/* global village */
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './result'
+import Agent from '../constants/Agent'
+import ImagePath from '../constants/ImagePath'
+import {Role} from '../constants/Role'
 import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {
@@ -21,258 +25,168 @@ describe('socket/MESSAGE', () => {
       agents: {
         agent0: {
           agentId: 0,
-          agentImage: 'https://werewolf.world/image/0.2/Gert.jpg',
-          agentName: {
-            'en': 'Gert',
-            'ja': 'ゲルト'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+          agentImage: ImagePath.Agent.a,
+          agentName: Agent.a,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Sato',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
-          roleName: {
-            'en': 'Villager',
-            'ja': '村人'
-          },
-          status: 'alive'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.villager,
+          roleName: Role.villager,
+          status: village.AgentStatus.alive
         },
         agent1: {
           agentId: 1,
-          agentImage: 'https://werewolf.world/image/0.2/Walter.jpg',
-          agentName: {
-            en: 'Walter',
-            ja: 'ヴァルター'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Gert.jpg',
+          agentImage: ImagePath.Agent.b,
+          agentName: Agent.b,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Suzuki',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/seer.jpg',
-          roleName: {
-            en: 'Seer',
-            ja: '占い師'
-          },
-          status: 'alive'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.seer,
+          roleName: Role.seer,
+          status: village.AgentStatus.alive
         },
         agent2: {
           agentId: 2,
-          agentImage: 'https://werewolf.world/image/0.2/Moritz.jpg',
-          agentName: {
-            en: 'Moritz',
-            ja: 'モーリッツ'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
+          agentImage: ImagePath.Agent.c,
+          agentName: Agent.c,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Takahashi',
-          result: 'lose',
-          roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
-          roleName: {
-            en: 'Werewolf',
-            ja: '人狼'
-          },
-          status: 'alive'
+          result: village.Result.lose,
+          roleImage: ImagePath.Role.werewolf,
+          roleName: Role.werewolf,
+          status: village.AgentStatus.alive
         },
         agent3: {
           agentId: 3,
-          agentImage: 'https://werewolf.world/image/0.2/Simson.jpg',
-          agentName: {
-            en: 'Simson',
-            ja: 'ジムゾン'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Friedel.jpg',
+          agentImage: ImagePath.Agent.d,
+          agentName: Agent.d,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Tanaka',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/hunter.jpg',
-          roleName: {
-            en: 'Hunter',
-            ja: '狩人'
-          },
-          status: 'alive'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.hunter,
+          roleName: Role.hunter,
+          status: village.AgentStatus.alive
         },
         agent4: {
           agentId: 4,
-          agentImage: 'https://werewolf.world/image/0.2/Thomas.jpg',
-          agentName: {
-            en: 'Thomas',
-            ja: 'トーマス'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
+          agentImage: ImagePath.Agent.e,
+          agentName: Agent.e,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Ito',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/medium.jpg',
-          roleName: {
-            en: 'Medium',
-            ja: '霊媒師'
-          },
-          status: 'alive'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.medium,
+          roleName: Role.medium,
+          status: village.AgentStatus.alive
         },
         agent5: {
           agentId: 5,
-          agentImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
-          agentName: {
-            en: 'Nicholas',
-            ja: 'ニコラス'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Erna.jpg',
+          agentImage: ImagePath.Agent.f,
+          agentName: Agent.f,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Watanabe',
-          result: 'lose',
-          roleImage: 'https://werewolf.world/image/0.2/werehamster.jpg',
-          roleName: {
-            en: 'Werehamster',
-            ja: 'ハムスター人間'
-          },
-          status: 'death by fear'
+          result: village.Result.lose,
+          roleImage: ImagePath.Role.werehamster,
+          roleName: Role.werehamster,
+          status: village.AgentStatus.deathByFear
         },
         agent6: {
           agentId: 6,
-          agentImage: 'https://werewolf.world/image/0.2/Dieter.jpg',
-          agentName: {
-            en: 'Dieter',
-            ja: 'ディーター'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Jacob.jpg',
+          agentImage: ImagePath.Agent.g,
+          agentName: Agent.g,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Yamamoto',
-          result: 'lose',
-          roleImage: 'https://werewolf.world/image/0.2/madman.jpg',
-          roleName: {
-            en: 'Madman',
-            ja: '狂人'
-          },
-          status: 'death by execution'
+          result: village.Result.lose,
+          roleImage: ImagePath.Role.madman,
+          roleName: Role.madman,
+          status: village.AgentStatus.deathByExecution
         },
         agent7: {
           agentId: 7,
-          agentImage: 'https://werewolf.world/image/0.2/Peter.jpg',
-          agentName: {
-            en: 'Peter',
-            ja: 'ペーター'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Nicholas.jpg',
+          agentImage: ImagePath.Agent.h,
+          agentName: Agent.h,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Nakamura',
-          result: 'lose',
-          roleImage: 'https://werewolf.world/image/0.2/werewolf.jpg',
-          roleName: {
-            en: 'Werewolf',
-            ja: '人狼'
-          },
-          status: 'unnatural death'
+          result: village.Result.lose,
+          roleImage: ImagePath.Role.werewolf,
+          roleName: Role.werewolf,
+          status: village.AgentStatus.unnaturalDeath
         },
         agent8: {
           agentId: 8,
-          agentImage: 'https://werewolf.world/image/0.2/Lisa.jpg',
-          agentName: {
-            en: 'Lisa',
-            ja: 'リーザ'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Peter.jpg',
+          agentImage: ImagePath.Agent.i,
+          agentName: Agent.i,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Kobayashi',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
-          roleName: {
-            en: 'Villager',
-            ja: '村人'
-          },
-          status: 'unnatural death'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.villager,
+          roleName: Role.villager,
+          status: village.AgentStatus.unnaturalDeath
         },
         agent9: {
           agentId: 9,
-          agentImage: 'https://werewolf.world/image/0.2/Alvin.jpg',
-          agentName: {
-            en: 'Alvin',
-            ja: 'アルビン'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Peter.jpg',
+          agentImage: ImagePath.Agent.j,
+          agentName: Agent.j,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Yoshida',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
-          roleName: {
-            en: 'Villager',
-            ja: '村人'
-          },
-          status: 'unnatural death'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.villager,
+          roleName: Role.villager,
+          status: village.AgentStatus.unnaturalDeath
         },
         agent10: {
           agentId: 10,
-          agentImage: 'https://werewolf.world/image/0.2/Catalina.jpg',
-          agentName: {
-            'en': 'Catalina',
-            'ja': 'カタリナ'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Simon.jpg',
+          agentImage: ImagePath.Agent.k,
+          agentName: Agent.k,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Yamada',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/mason.jpg',
-          roleName: {
-            'en': 'Mason',
-            'ja': '共有者'
-          },
-          status: 'unnatural death'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.mason,
+          roleName: Role.mason,
+          status: village.AgentStatus.unnaturalDeath
         },
         agent11: {
           agentId: 11,
-          agentImage: 'https://werewolf.world/image/0.2/Otto.jpg',
-          agentName: {
-            en: 'Otto',
-            ja: 'オットー'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Simson.jpg',
+          agentImage: ImagePath.Agent.l,
+          agentName: Agent.l,
+          avatarImage: ImagePath.Agent.r,
           avatarName: 'Sasaki',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/mason.jpg',
-          roleName: {
-            en: 'Mason',
-            ja: '共有者'
-          },
-          status: 'unnatural death'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.mason,
+          roleName: Role.mason,
+          status: village.AgentStatus.unnaturalDeath
         },
         agent12: {
           agentId: 12,
-          agentImage: 'https://werewolf.world/image/0.2/Joachim.jpg',
-          agentName: {
-            en: 'Joachim',
-            ja: 'ヨアヒム'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Otto.jpg',
+          agentImage: ImagePath.Agent.m,
+          agentName: Agent.m,
+          avatarImage: ImagePath.Agent.r,
           avatarName: '山口',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
-          roleName: {
-            en: 'Villager',
-            ja: '村人'
-          },
-          status: 'death by attack'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.villager,
+          roleName: Role.villager,
+          status: village.AgentStatus.deathByAttack
         },
         agent13: {
           agentId: 13,
-          agentImage: 'https://werewolf.world/image/0.2/Pamela.jpg',
-          agentName: {
-            en: 'Pamela',
-            ja: 'パメラ'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Joachim.jpg',
+          agentImage: ImagePath.Agent.n,
+          agentName: Agent.n,
+          avatarImage: ImagePath.Agent.r,
           avatarName: '松本',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
-          roleName: {
-            en: 'Villager',
-            ja: '村人'
-          },
-          status: 'alive'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.villager,
+          roleName: Role.villager,
+          status: village.AgentStatus.alive
         },
         agent14: {
           agentId: 14,
-          agentImage: 'https://werewolf.world/image/0.2/Jacob.jpg',
-          agentName: {
-            en: 'Jacob',
-            ja: 'ヤコブ'
-          },
-          avatarImage: 'https://werewolf.world/image/0.2/Catalina.jpg',
+          agentImage: ImagePath.Agent.o,
+          agentName: Agent.o,
+          avatarImage: ImagePath.Agent.r,
           avatarName: '井上',
-          result: 'win',
-          roleImage: 'https://werewolf.world/image/0.2/villager.jpg',
-          roleName: {
-            en: 'Villager',
-            ja: '村人'
-          },
-          status: 'alive'
+          result: village.Result.win,
+          roleImage: ImagePath.Role.villager,
+          roleName: Role.villager,
+          status: village.AgentStatus.alive
         }
       },
       allIds: [
@@ -303,7 +217,7 @@ describe('socket/MESSAGE', () => {
         kind: 'player',
         loserTeam: new Set(['werewolf', 'werehamster']),
         myTeam: 'villager',
-        result: 'win',
+        result: village.Result.win,
         winnerTeam: 'villager'
       },
       visible: true,

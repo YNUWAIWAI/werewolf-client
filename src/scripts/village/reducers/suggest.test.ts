@@ -1,5 +1,6 @@
 import {firstMorning, flavorText, myMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './suggest'
+import Agent from '../constants/Agent'
 import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {
@@ -13,115 +14,70 @@ describe('socket/MESSAGE', () => {
       {
         data: [
           {
-            id: 'Alvin',
-            name: {
-              'en': 'Alvin',
-              'ja': 'アルビン'
-            }
+            id: Agent.a.en,
+            name: Agent.a
           },
           {
-            id: 'Catalina',
-            name: {
-              'en': 'Catalina',
-              'ja': 'カタリナ'
-            }
+            id: Agent.b.en,
+            name: Agent.b
           },
           {
-            id: 'Dieter',
-            name: {
-              'en': 'Dieter',
-              'ja': 'ディーター'
-            }
+            id: Agent.c.en,
+            name: Agent.c
           },
           {
-            id: 'Gert',
-            name: {
-              'en': 'Gert',
-              'ja': 'ゲルト'
-            }
+            id: Agent.d.en,
+            name: Agent.d
           },
           {
-            id: 'Jacob',
-            name: {
-              'en': 'Jacob',
-              'ja': 'ヤコブ'
-            }
+            id: Agent.e.en,
+            name: Agent.e
           },
           {
-            id: 'Joachim',
-            name: {
-              'en': 'Joachim',
-              'ja': 'ヨアヒム'
-            }
+            id: Agent.f.en,
+            name: Agent.f
           },
           {
-            id: 'Lisa',
-            name: {
-              'en': 'Lisa',
-              'ja': 'リーザ'
-            }
+            id: Agent.g.en,
+            name: Agent.g
           },
           {
-            id: 'Moritz',
-            name: {
-              'en': 'Moritz',
-              'ja': 'モーリッツ'
-            }
+            id: Agent.h.en,
+            name: Agent.h
           },
           {
-            id: 'Nicholas',
-            name: {
-              'en': 'Nicholas',
-              'ja': 'ニコラス'
-            }
+            id: Agent.i.en,
+            name: Agent.i
           },
           {
-            id: 'Otto',
-            name: {
-              'en': 'Otto',
-              'ja': 'オットー'
-            }
+            id: Agent.j.en,
+            name: Agent.j
           },
           {
-            id: 'Pamela',
-            name: {
-              'en': 'Pamela',
-              'ja': 'パメラ'
-            }
+            id: Agent.k.en,
+            name: Agent.k
           },
           {
-            id: 'Peter',
-            name: {
-              'en': 'Peter',
-              'ja': 'ペーター'
-            }
+            id: Agent.l.en,
+            name: Agent.l
           },
           {
-            id: 'Simson',
-            name: {
-              'en': 'Simson',
-              'ja': 'ジムゾン'
-            }
+            id: Agent.m.en,
+            name: Agent.m
           },
           {
-            id: 'Thomas',
-            name: {
-              'en': 'Thomas',
-              'ja': 'トーマス'
-            }
+            id: Agent.n.en,
+            name: Agent.n
           },
           {
-            id: 'Walter',
-            name: {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            id: Agent.o.en,
+            name: Agent.o
           },
           {
             id: 'hunter',
             name: {
               'en': 'Hunter',
-              'ja': '狩人'
+              'ja': 'ハンター'
             }
           },
           {

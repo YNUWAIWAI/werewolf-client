@@ -44,3 +44,43 @@ export const WEREWOLF_TEAM = [
 export const WEREHAMSTER_TEAM = [
   WEREHAMSTER
 ]
+
+// for testing
+export const Role = {
+  hunter: {
+    en: 'Hunter',
+    ja: 'ハンター'
+  },
+  madman: {
+    en: 'Madman',
+    ja: '狂人'
+  },
+  mason: {
+    en: 'Mason',
+    ja: '共有者'
+  },
+  master: {
+    en: 'Master',
+    ja: 'マスター'
+  },
+  medium: {
+    en: 'Medium',
+    ja: '霊媒師'
+  },
+  seer: {
+    en: 'Seer',
+    ja: '占い師'
+  },
+  villager: {
+    en: 'Villager',
+    ja: '村人'
+  },
+  werehamster: {
+    en: 'Werehamster',
+    ja: 'ハムスター人間'
+  },
+  werewolf: {
+    en: 'Werewolf',
+    ja: '人狼'
+  }
+}

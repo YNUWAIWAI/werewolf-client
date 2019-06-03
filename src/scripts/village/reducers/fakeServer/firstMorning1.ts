@@ -1,4 +1,8 @@
 /* global village */
+import Agent from '../../constants/Agent'
+import ImagePath from '../../constants/ImagePath'
+import {Role} from '../../constants/Role'
+
 const json: village.Payload$systemMessage = {
   '@context': [
     village.BaseContext.Base,
@@ -8,33 +12,12 @@ const json: village.Payload$systemMessage = {
   'agent': [
     {
       '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#0',
-      'id': 0,
-      'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-      'isAChoice': false,
-      'isMine': false,
-      'name': {
-        'en': 'Gert',
-        'ja': 'ゲルト'
-      },
-      'status': village.AgentStatus.alive,
-      'update': {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#0/update',
-        'date': 1,
-        'phase': village.Phase.morning
-      }
-    },
-    {
-      '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,
-      'image': 'https://werewolf.world/image/0.2/Walter.jpg',
+      'image': ImagePath.Agent.a,
       'isAChoice': false,
       'isMine': true,
-      'name': {
-        'en': 'Walter',
-        'ja': 'ヴァルター'
-      },
+      'name': Agent.a,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#1/update',
@@ -46,13 +29,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#2',
       'id': 2,
-      'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
+      'image': ImagePath.Agent.b,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Moritz',
-        'ja': 'モーリッツ'
-      },
+      'name': Agent.b,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#2/update',
@@ -64,13 +44,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#3',
       'id': 3,
-      'image': 'https://werewolf.world/image/0.2/Simson.jpg',
+      'image': ImagePath.Agent.c,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Simson',
-        'ja': 'ジムゾン'
-      },
+      'name': Agent.c,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#3/update',
@@ -82,13 +59,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#4',
       'id': 4,
-      'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
+      'image': ImagePath.Agent.d,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Thomas',
-        'ja': 'トーマス'
-      },
+      'name': Agent.d,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#4/update',
@@ -100,13 +74,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#5',
       'id': 5,
-      'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
+      'image': ImagePath.Agent.e,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Nicholas',
-        'ja': 'ニコラス'
-      },
+      'name': Agent.e,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#5/update',
@@ -118,13 +89,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#6',
       'id': 6,
-      'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
+      'image': ImagePath.Agent.f,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Dieter',
-        'ja': 'ディーター'
-      },
+      'name': Agent.f,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#6/update',
@@ -136,13 +104,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#7',
       'id': 7,
-      'image': 'https://werewolf.world/image/0.2/Peter.jpg',
+      'image': ImagePath.Agent.g,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Peter',
-        'ja': 'ペーター'
-      },
+      'name': Agent.g,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#7/update',
@@ -154,13 +119,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#8',
       'id': 8,
-      'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
+      'image': ImagePath.Agent.h,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Lisa',
-        'ja': 'リーザ'
-      },
+      'name': Agent.h,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#8/update',
@@ -172,13 +134,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#9',
       'id': 9,
-      'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
+      'image': ImagePath.Agent.i,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Alvin',
-        'ja': 'アルビン'
-      },
+      'name': Agent.i,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#9/update',
@@ -190,13 +149,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#10',
       'id': 10,
-      'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
+      'image': ImagePath.Agent.j,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Catalina',
-        'ja': 'カタリナ'
-      },
+      'name': Agent.j,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#10/update',
@@ -208,13 +164,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#11',
       'id': 11,
-      'image': 'https://werewolf.world/image/0.2/Otto.jpg',
+      'image': ImagePath.Agent.k,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Otto',
-        'ja': 'オットー'
-      },
+      'name': Agent.k,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#11/update',
@@ -226,13 +179,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#12',
       'id': 12,
-      'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
+      'image': ImagePath.Agent.l,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Joachim',
-        'ja': 'ヨアヒム'
-      },
+      'name': Agent.l,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#12/update',
@@ -244,13 +194,10 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#13',
       'id': 13,
-      'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
+      'image': ImagePath.Agent.m,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Pamela',
-        'ja': 'パメラ'
-      },
+      'name': Agent.m,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#13/update',
@@ -262,13 +209,25 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#14',
       'id': 14,
-      'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
+      'image': ImagePath.Agent.n,
       'isAChoice': false,
       'isMine': false,
-      'name': {
-        'en': 'Jacob',
-        'ja': 'ヤコブ'
-      },
+      'name': Agent.n,
+      'status': village.AgentStatus.alive,
+      'update': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#14/update',
+        'date': 1,
+        'phase': village.Phase.morning
+      }
+    },
+    {
+      '@context': village.Context.Agent,
+      '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+      'id': 15,
+      'image': ImagePath.Agent.o,
+      'isAChoice': true,
+      'isMine': false,
+      'name': Agent.o,
       'status': village.AgentStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/agent#14/update',
@@ -290,12 +249,9 @@ const json: village.Payload$systemMessage = {
       '@context': village.Context.Role,
       '@id': 'https://licos.online/state/0.2/village#3/role#master',
       'board': [],
-      'image': 'https://werewolf.world/image/0.2/master.jpg',
+      'image': ImagePath.Role.master,
       'isMine': false,
-      'name': {
-        'en': 'Master',
-        'ja': 'マスター'
-      },
+      'name': Role.master,
       'numberOfAgents': 1
     },
     {
@@ -309,23 +265,17 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/villager.jpg',
+      'image': ImagePath.Role.villager,
       'isMine': false,
-      'name': {
-        'en': 'Villager',
-        'ja': '村人'
-      },
+      'name': Role.villager,
       'numberOfAgents': 6
     },
     {
@@ -334,33 +284,13 @@ const json: village.Payload$systemMessage = {
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#0',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#0/agent#0',
-            'id': 0,
-            'image': 'https://werewolf.world/image/0.2/Gert.jpg',
-            'name': {
-              'en': 'Gert',
-              'ja': 'ゲルト'
-            }
-          },
-          'date': 1,
-          'phase': village.Phase.morning,
-          'polarity': village.Polarity.negative
-        },
-        {
-          '@context': village.Context.BoardResult,
           '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
           'agent': {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -373,11 +303,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#2/agent#2',
             'id': 2,
-            'image': 'https://werewolf.world/image/0.2/Moritz.jpg',
-            'name': {
-              'en': 'Moritz',
-              'ja': 'モーリッツ'
-            }
+            'image': ImagePath.Agent.b,
+            'name': Agent.b
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -390,11 +317,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#3/agent#3',
             'id': 3,
-            'image': 'https://werewolf.world/image/0.2/Simson.jpg',
-            'name': {
-              'en': 'Simson',
-              'ja': 'ジムゾン'
-            }
+            'image': ImagePath.Agent.c,
+            'name': Agent.c
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -407,11 +331,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#4/agent#4',
             'id': 4,
-            'image': 'https://werewolf.world/image/0.2/Thomas.jpg',
-            'name': {
-              'en': 'Thomas',
-              'ja': 'トーマス'
-            }
+            'image': ImagePath.Agent.d,
+            'name': Agent.d
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -424,11 +345,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#5/agent#5',
             'id': 5,
-            'image': 'https://werewolf.world/image/0.2/Nicholas.jpg',
-            'name': {
-              'en': 'Nicholas',
-              'ja': 'ニコラス'
-            }
+            'image': ImagePath.Agent.e,
+            'name': Agent.e
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -441,11 +359,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#6/agent#6',
             'id': 6,
-            'image': 'https://werewolf.world/image/0.2/Dieter.jpg',
-            'name': {
-              'en': 'Dieter',
-              'ja': 'ディーター'
-            }
+            'image': ImagePath.Agent.f,
+            'name': Agent.f
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -458,11 +373,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#7/agent#7',
             'id': 7,
-            'image': 'https://werewolf.world/image/0.2/Peter.jpg',
-            'name': {
-              'en': 'Peter',
-              'ja': 'ペーター'
-            }
+            'image': ImagePath.Agent.g,
+            'name': Agent.g
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -475,11 +387,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#8/agent#8',
             'id': 8,
-            'image': 'https://werewolf.world/image/0.2/Lisa.jpg',
-            'name': {
-              'en': 'Lisa',
-              'ja': 'リーザ'
-            }
+            'image': ImagePath.Agent.h,
+            'name': Agent.h
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -492,11 +401,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#9/agent#9',
             'id': 9,
-            'image': 'https://werewolf.world/image/0.2/Alvin.jpg',
-            'name': {
-              'en': 'Alvin',
-              'ja': 'アルビン'
-            }
+            'image': ImagePath.Agent.i,
+            'name': Agent.i
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -509,11 +415,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#10/agent#10',
             'id': 10,
-            'image': 'https://werewolf.world/image/0.2/Catalina.jpg',
-            'name': {
-              'en': 'Catalina',
-              'ja': 'カタリナ'
-            }
+            'image': ImagePath.Agent.j,
+            'name': Agent.j
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -526,11 +429,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#11/agent#11',
             'id': 11,
-            'image': 'https://werewolf.world/image/0.2/Otto.jpg',
-            'name': {
-              'en': 'Otto',
-              'ja': 'オットー'
-            }
+            'image': ImagePath.Agent.k,
+            'name': Agent.k
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -543,11 +443,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#12/agent#12',
             'id': 12,
-            'image': 'https://werewolf.world/image/0.2/Joachim.jpg',
-            'name': {
-              'en': 'Joachim',
-              'ja': 'ヨアヒム'
-            }
+            'image': ImagePath.Agent.l,
+            'name': Agent.l
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -560,11 +457,8 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#13/agent#13',
             'id': 13,
-            'image': 'https://werewolf.world/image/0.2/Pamela.jpg',
-            'name': {
-              'en': 'Pamela',
-              'ja': 'パメラ'
-            }
+            'image': ImagePath.Agent.m,
+            'name': Agent.m
           },
           'date': 1,
           'phase': village.Phase.morning,
@@ -577,23 +471,31 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#14/agent#14',
             'id': 14,
-            'image': 'https://werewolf.world/image/0.2/Jacob.jpg',
-            'name': {
-              'en': 'Jacob',
-              'ja': 'ヤコブ'
-            }
+            'image': ImagePath.Agent.n,
+            'name': Agent.n
+          },
+          'date': 1,
+          'phase': village.Phase.morning,
+          'polarity': village.Polarity.negative
+        },
+        {
+          '@context': village.Context.BoardResult,
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#15',
+          'agent': {
+            '@context': village.Context.Agent,
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#15/agent#15',
+            'id': 15,
+            'image': ImagePath.Agent.o,
+            'name': Agent.o
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/seer.jpg',
+      'image': ImagePath.Role.seer,
       'isMine': true,
-      'name': {
-        'en': 'Seer',
-        'ja': '占い師'
-      },
+      'name': Role.seer,
       'numberOfAgents': 1
     },
     {
@@ -607,23 +509,17 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#medium/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/medium.jpg',
+      'image': ImagePath.Role.medium,
       'isMine': false,
-      'name': {
-        'en': 'Medium',
-        'ja': '霊媒師'
-      },
+      'name': Role.medium,
       'numberOfAgents': 1
     },
     {
@@ -637,23 +533,17 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#hunter/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/hunter.jpg',
+      'image': ImagePath.Role.hunter,
       'isMine': false,
-      'name': {
-        'en': 'Hunter',
-        'ja': '狩人'
-      },
+      'name': Role.hunter,
       'numberOfAgents': 1
     },
     {
@@ -667,23 +557,17 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#mason/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/mason.jpg',
+      'image': ImagePath.Role.mason,
       'isMine': false,
-      'name': {
-        'en': 'Mason',
-        'ja': '共有者'
-      },
+      'name': Role.mason,
       'numberOfAgents': 2
     },
     {
@@ -697,23 +581,17 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#madman/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/madman.jpg',
+      'image': ImagePath.Role.madman,
       'isMine': false,
-      'name': {
-        'en': 'Madman',
-        'ja': '狂人'
-      },
+      'name': Role.madman,
       'numberOfAgents': 1
     },
     {
@@ -727,23 +605,17 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/werewolf.jpg',
+      'image': ImagePath.Role.werewolf,
       'isMine': false,
-      'name': {
-        'en': 'Werewolf',
-        'ja': '人狼'
-      },
+      'name': Role.werewolf,
       'numberOfAgents': 2
     },
     {
@@ -757,23 +629,17 @@ const json: village.Payload$systemMessage = {
             '@context': village.Context.Agent,
             '@id': 'https://licos.online/state/0.2/village#3/role#werehamster/board#1/agent#1',
             'id': 1,
-            'image': 'https://werewolf.world/image/0.2/Walter.jpg',
-            'name': {
-              'en': 'Walter',
-              'ja': 'ヴァルター'
-            }
+            'image': ImagePath.Agent.a,
+            'name': Agent.a
           },
           'date': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
       ],
-      'image': 'https://werewolf.world/image/0.2/werehamster.jpg',
+      'image': ImagePath.Role.werehamster,
       'isMine': false,
-      'name': {
-        'en': 'Werehamster',
-        'ja': 'ハムスター人間'
-      },
+      'name': Role.werehamster,
       'numberOfAgents': 1
     }
   ],
