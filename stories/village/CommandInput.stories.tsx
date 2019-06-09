@@ -1,17 +1,15 @@
 /* global village */
 import * as React from 'react'
+import {number, radios} from '@storybook/addon-knobs'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import {number} from '@storybook/addon-knobs'
+import language from '../language'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
 const suggesttedData = [
   {
     id: 'Adil',
@@ -177,29 +175,33 @@ const suggesttedData = [
 ]
 
 storiesOf('village|Command/CommandInput', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('grave', () => {
+    const value = radios(language.label, language.options, language.defaultValue)
+    const store = createStore(
+      reducer,
+      {
+        language: value
+      }
+    )
     const story =
-      <div style={{
-        height: '200px'
-      }}
-      >
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={action('postChat')}
-          inputChannel={village.InputChannel.grave}
-          language={village.Language.ja}
-          postCount={-1}
-          postCountLimit={-1}
-          suggesttedData={suggesttedData}
-        />
-      </div>
+      <Provider store={store}>
+        <IntlProvider>
+          <div style={{
+            height: '200px'
+          }}
+          >
+            <CommandInput
+              characterLimit={140}
+              handlePostChat={action('postChat')}
+              inputChannel={village.InputChannel.grave}
+              language={value}
+              postCount={-1}
+              postCountLimit={-1}
+              suggesttedData={suggesttedData}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -210,40 +212,62 @@ storiesOf('village|Command/CommandInput', module)
       range: false,
       step: 1
     })
+    const value = radios(language.label, language.options, language.defaultValue)
+    const store = createStore(
+      reducer,
+      {
+        language: value
+      }
+    )
     const story =
-    <div style={{
-      height: '200px'
-    }}
-    >
-      <CommandInput
-        characterLimit={140}
-        handlePostChat={action('postChat')}
-        inputChannel={village.InputChannel.public}
-        language={village.Language.ja}
-        postCount={postCount}
-        postCountLimit={10}
-        suggesttedData={suggesttedData}
-      />
-    </div>
+      <Provider store={store}>
+        <IntlProvider>
+          <div style={{
+            height: '200px'
+          }}
+          >
+            <CommandInput
+              characterLimit={140}
+              handlePostChat={action('postChat')}
+              inputChannel={village.InputChannel.public}
+              language={value}
+              postCount={postCount}
+              postCountLimit={10}
+              suggesttedData={suggesttedData}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
   .add('private', () => {
+    const value = radios(language.label, language.options, language.defaultValue)
+    const store = createStore(
+      reducer,
+      {
+        language: value
+      }
+    )
     const story =
-      <div style={{
-        height: '200px'
-      }}
-      >
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={action('postChat')}
-          inputChannel={village.InputChannel.private}
-          language={village.Language.ja}
-          postCount={-1}
-          postCountLimit={-1}
-          suggesttedData={suggesttedData}
-        />
-      </div>
+      <Provider store={store}>
+        <IntlProvider>
+          <div style={{
+            height: '200px'
+          }}
+          >
+            <CommandInput
+              characterLimit={140}
+              handlePostChat={action('postChat')}
+              inputChannel={village.InputChannel.private}
+              language={value}
+              postCount={-1}
+              postCountLimit={-1}
+              suggesttedData={suggesttedData}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -254,21 +278,32 @@ storiesOf('village|Command/CommandInput', module)
       range: false,
       step: 1
     })
+    const value = radios(language.label, language.options, language.defaultValue)
+    const store = createStore(
+      reducer,
+      {
+        language: value
+      }
+    )
     const story =
-      <div style={{
-        height: '200px'
-      }}
-      >
-        <CommandInput
-          characterLimit={140}
-          handlePostChat={action('postChat')}
-          inputChannel={village.InputChannel.limited}
-          language={village.Language.ja}
-          postCount={postCount}
-          postCountLimit={10}
-          suggesttedData={suggesttedData}
-        />
-      </div>
+      <Provider store={store}>
+        <IntlProvider>
+          <div style={{
+            height: '200px'
+          }}
+          >
+            <CommandInput
+              characterLimit={140}
+              handlePostChat={action('postChat')}
+              inputChannel={village.InputChannel.limited}
+              language={value}
+              postCount={postCount}
+              postCountLimit={10}
+              suggesttedData={suggesttedData}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
