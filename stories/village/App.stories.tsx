@@ -12,7 +12,7 @@ import {
 import App from '../../src/scripts/village/containers/App'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
-import language from '../language'
+import language from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'

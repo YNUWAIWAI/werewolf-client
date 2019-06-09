@@ -1,4 +1,3 @@
-/* global village */
 import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
 import * as React from 'react'
 import Command from '../../src/scripts/village/components/organisms/Command'
@@ -9,7 +8,7 @@ import IntlProvider from '../../src/scripts/village/containers/IntlProviderConta
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import language from '../language'
+import language from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
