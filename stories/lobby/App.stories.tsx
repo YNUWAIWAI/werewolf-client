@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {lobbyForHumanPlayer, waitingPage} from './initialState'
 import App from '../../src/scripts/lobby/containers/App'
-import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import language from './language'
@@ -23,9 +22,7 @@ storiesOf('lobby|App', module)
     )
     const story =
       <Provider store={store}>
-        <IntlProvider>
-          <App />
-        </IntlProvider>
+        <App />
       </Provider>
 
     return story
@@ -44,9 +41,7 @@ storiesOf('lobby|App', module)
     )
     const story =
       <Provider store={store}>
-        <IntlProvider>
-          <App />
-        </IntlProvider>
+        <App />
       </Provider>
 
     return story
@@ -65,9 +60,7 @@ storiesOf('lobby|App', module)
     )
     const story =
       <Provider store={store}>
-        <IntlProvider>
-          <App />
-        </IntlProvider>
+        <App />
       </Provider>
 
     return story
