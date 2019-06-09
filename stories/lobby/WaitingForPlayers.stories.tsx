@@ -6,12 +6,10 @@ import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContain
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
-
-const store = createStore(
-  reducer
-)
 
 const players: Props['players'] = [
   {
@@ -182,13 +180,6 @@ const players: Props['players'] = [
 ]
 
 storiesOf('lobby|WaitingForPlayers', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('15 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
@@ -245,15 +236,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -313,15 +314,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 14)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 14)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -381,15 +392,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 13)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 13)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -449,15 +470,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 12)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 12)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -517,15 +548,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 11)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 11)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -585,15 +626,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 10)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 10)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -653,15 +704,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 9)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 9)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -721,15 +782,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 8)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 8)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -789,15 +860,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 7)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 7)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -857,15 +938,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 6)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 6)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -925,15 +1016,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players.slice(0, 5)}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players.slice(0, 5)}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -993,15 +1094,25 @@ storiesOf('lobby|WaitingForPlayers', module)
         werewolf: 2
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <WaitingForPlayers
-        confirmKickOutPlayer={confirmKickOutPlayer}
-        isPlayer
-        menuItems={menuItems}
-        players={players}
-        transition={transition}
-        village={village}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <WaitingForPlayers
+            confirmKickOutPlayer={confirmKickOutPlayer}
+            isPlayer
+            menuItems={menuItems}
+            players={players}
+            transition={transition}
+            village={village}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
