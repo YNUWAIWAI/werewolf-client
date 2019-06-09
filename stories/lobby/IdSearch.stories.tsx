@@ -6,21 +6,12 @@ import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContain
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('lobby|IdSearch', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('before search', () => {
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
@@ -41,20 +32,30 @@ storiesOf('lobby|IdSearch', module)
         types: [ActionTypes.Target.SHOW_MAIN]
       }
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <IdSearch
-        handleSearchIdChange={handleSearchIdChange}
-        handleValidityChange={handleValidityChange}
-        header="Header.idSearch(human player)"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        searched={false}
-        selectVillage={selectVillage}
-        transition={transition}
-        villageItems={[]}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <IdSearch
+            handleSearchIdChange={handleSearchIdChange}
+            handleValidityChange={handleValidityChange}
+            header="Header.idSearch(human player)"
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            searched={false}
+            selectVillage={selectVillage}
+            transition={transition}
+            villageItems={[]}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -78,20 +79,30 @@ storiesOf('lobby|IdSearch', module)
         types: [ActionTypes.Target.SHOW_MAIN]
       }
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <IdSearch
-        handleSearchIdChange={handleSearchIdChange}
-        handleValidityChange={handleValidityChange}
-        header="Header.idSearch(human player)"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        searched
-        selectVillage={selectVillage}
-        transition={transition}
-        villageItems={[]}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <IdSearch
+            handleSearchIdChange={handleSearchIdChange}
+            handleValidityChange={handleValidityChange}
+            header="Header.idSearch(human player)"
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            searched
+            selectVillage={selectVillage}
+            transition={transition}
+            villageItems={[]}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -151,20 +162,30 @@ storiesOf('lobby|IdSearch', module)
         }
       }
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <IdSearch
-        handleSearchIdChange={handleSearchIdChange}
-        handleValidityChange={handleValidityChange}
-        header="Header.idSearch(human player)"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        searched
-        selectVillage={selectVillage}
-        transition={transition}
-        villageItems={villageItems}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <IdSearch
+            handleSearchIdChange={handleSearchIdChange}
+            handleValidityChange={handleValidityChange}
+            header="Header.idSearch(human player)"
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            searched
+            selectVillage={selectVillage}
+            transition={transition}
+            villageItems={villageItems}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
