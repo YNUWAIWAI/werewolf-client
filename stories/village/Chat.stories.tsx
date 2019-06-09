@@ -5,23 +5,12 @@ import IntlProvider from '../../src/scripts/village/containers/IntlProviderConta
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from '../language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('village|Chat', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        <div className="vi--activity">
-          {story()}
-        </div>
-      </IntlProvider>
-    </Provider>
-  ))
   .add('anonymousAudience', () => {
     const allIds = ['chat0', 'chat1']
     const byId: Props['byId'] = {
@@ -54,12 +43,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -95,12 +96,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -136,12 +149,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -177,12 +202,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -218,12 +255,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -259,12 +308,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -300,12 +361,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -341,12 +414,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -382,12 +467,24 @@ storiesOf('village|Chat', module)
         type: 'item'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -431,12 +528,24 @@ storiesOf('village|Chat', module)
         type: 'delimeter'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -508,12 +617,24 @@ storiesOf('village|Chat', module)
         type: 'delimeter'
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Chat
-        allIds={allIds}
-        byId={byId}
-        handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--activity">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
