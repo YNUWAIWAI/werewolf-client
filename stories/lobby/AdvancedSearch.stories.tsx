@@ -6,21 +6,12 @@ import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContain
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('lobby|AdvancedSearch', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('before search', () => {
     const checked = {
       avatar: true,
@@ -59,25 +50,35 @@ storiesOf('lobby|AdvancedSearch', module)
     const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <AdvancedSearch
-        checked={checked}
-        handleAvatarChange={handleAvatarChange}
-        handleCheckboxChange={handleCheckboxChange}
-        handleNumberChange={handleNumberChange}
-        handleTextChange={handleTextChange}
-        handleValidityChange={handleValidityChange}
-        header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        searched={false}
-        selectVillage={selectVillage}
-        transition={transition}
-        validity={validity}
-        villageItems={[]}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <AdvancedSearch
+            checked={checked}
+            handleAvatarChange={handleAvatarChange}
+            handleCheckboxChange={handleCheckboxChange}
+            handleNumberChange={handleNumberChange}
+            handleTextChange={handleTextChange}
+            handleValidityChange={handleValidityChange}
+            header="Header.advancedSearch(human player)"
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            searched={false}
+            selectVillage={selectVillage}
+            transition={transition}
+            validity={validity}
+            villageItems={[]}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -119,25 +120,35 @@ storiesOf('lobby|AdvancedSearch', module)
     const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <AdvancedSearch
-        checked={checked}
-        handleAvatarChange={handleAvatarChange}
-        handleCheckboxChange={handleCheckboxChange}
-        handleNumberChange={handleNumberChange}
-        handleTextChange={handleTextChange}
-        handleValidityChange={handleValidityChange}
-        header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        searched
-        selectVillage={selectVillage}
-        transition={transition}
-        validity={validity}
-        villageItems={[]}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <AdvancedSearch
+            checked={checked}
+            handleAvatarChange={handleAvatarChange}
+            handleCheckboxChange={handleCheckboxChange}
+            handleNumberChange={handleNumberChange}
+            handleTextChange={handleTextChange}
+            handleValidityChange={handleValidityChange}
+            header="Header.advancedSearch(human player)"
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            searched
+            selectVillage={selectVillage}
+            transition={transition}
+            validity={validity}
+            villageItems={[]}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -215,25 +226,35 @@ storiesOf('lobby|AdvancedSearch', module)
         }
       }
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <AdvancedSearch
-        checked={checked}
-        handleAvatarChange={handleAvatarChange}
-        handleCheckboxChange={handleCheckboxChange}
-        handleNumberChange={handleNumberChange}
-        handleTextChange={handleTextChange}
-        handleValidityChange={handleValidityChange}
-        header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        searched
-        selectVillage={selectVillage}
-        transition={transition}
-        validity={validity}
-        villageItems={villageItems}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <AdvancedSearch
+            checked={checked}
+            handleAvatarChange={handleAvatarChange}
+            handleCheckboxChange={handleCheckboxChange}
+            handleNumberChange={handleNumberChange}
+            handleTextChange={handleTextChange}
+            handleValidityChange={handleValidityChange}
+            header="Header.advancedSearch(human player)"
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            searched
+            selectVillage={selectVillage}
+            transition={transition}
+            validity={validity}
+            villageItems={villageItems}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -345,25 +366,35 @@ storiesOf('lobby|AdvancedSearch', module)
         }
       }
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <AdvancedSearch
-        checked={checked}
-        handleAvatarChange={handleAvatarChange}
-        handleCheckboxChange={handleCheckboxChange}
-        handleNumberChange={handleNumberChange}
-        handleTextChange={handleTextChange}
-        handleValidityChange={handleValidityChange}
-        header="Header.advancedSearch(human player)"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        searched
-        selectVillage={selectVillage}
-        transition={transition}
-        validity={validity}
-        villageItems={villageItems}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <AdvancedSearch
+            checked={checked}
+            handleAvatarChange={handleAvatarChange}
+            handleCheckboxChange={handleCheckboxChange}
+            handleNumberChange={handleNumberChange}
+            handleTextChange={handleTextChange}
+            handleValidityChange={handleValidityChange}
+            header="Header.advancedSearch(human player)"
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            searched
+            selectVillage={selectVillage}
+            transition={transition}
+            validity={validity}
+            villageItems={villageItems}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
