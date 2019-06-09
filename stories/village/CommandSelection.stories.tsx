@@ -5,21 +5,12 @@ import IntlProvider from '../../src/scripts/village/containers/IntlProviderConta
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from '../language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('village|Command/CommandSelection', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('default', () => {
     const agents = [
       {
@@ -107,14 +98,24 @@ storiesOf('village|Command/CommandSelection', module)
         name: 'Oliwia'
       }
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <CommandSelection
-        agents={agents}
-        descriptionId="CommandSelection.Description.dayVote.unfixed"
-        fixed={false}
-        handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
-        phase={village.Phase.day}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <CommandSelection
+            agents={agents}
+            descriptionId="CommandSelection.Description.dayVote.unfixed"
+            fixed={false}
+            handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
+            phase={village.Phase.day}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
