@@ -5,22 +5,19 @@ import IntlProvider from '../../src/scripts/village/containers/IntlProviderConta
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('village|Command/CommandNavigation', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('default', () => {
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const items = [
       {
         id: 'CommandNavigation.showResult',
@@ -31,7 +28,15 @@ storiesOf('village|Command/CommandNavigation', module)
         type: ActionTypes.Navigation.RETURN_TO_LOBBY
       }
     ]
-    const story = <CommandNavigation handleClick={type => action(`handleClick: ${type}`)} items={items} />
+    const story =
+      <Provider store={store}>
+        <IntlProvider>
+          <CommandNavigation
+            handleClick={type => action(`handleClick: ${type}`)}
+            items={items}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })

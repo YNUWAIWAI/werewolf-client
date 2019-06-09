@@ -6,21 +6,12 @@ import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContain
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('lobby|LobbyForHumanPlayer', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('default', () => {
     const menuItems = [
       {
@@ -116,16 +107,26 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
     ]
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const transition = action('transition')
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <LobbyForHumanPlayer
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
-        isPlayer
-        menuItems={menuItems}
-        name="Ryan"
-        selectVillage={selectVillage}
-        transition={transition}
-        villageItems={villageItems}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <LobbyForHumanPlayer
+            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            isPlayer
+            menuItems={menuItems}
+            name="Ryan"
+            selectVillage={selectVillage}
+            transition={transition}
+            villageItems={villageItems}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })

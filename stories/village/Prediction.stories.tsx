@@ -5,25 +5,12 @@ import IntlProvider from '../../src/scripts/village/containers/IntlProviderConta
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('village|Prediction', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        <div className="vi--app">
-          <div className="vi--activity">
-            {story()}
-          </div>
-        </div>
-      </IntlProvider>
-    </Provider>
-  ))
   .add('15 players(spec is invisible)', () => {
     const playerStatus: Props['playerStatus'] = [
       {
@@ -818,16 +805,30 @@ storiesOf('village|Prediction', module)
         }
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Prediction
-        handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
-        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-        handleMouseLeave={action('handleMouseLeave')}
-        playerStatus={playerStatus}
-        roleStatus={roleStatus}
-        spec={spec}
-        table={table}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--app">
+            <div className="vi--activity">
+              <Prediction
+                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+                handleMouseLeave={action('handleMouseLeave')}
+                playerStatus={playerStatus}
+                roleStatus={roleStatus}
+                spec={spec}
+                table={table}
+              />
+            </div>
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -1011,16 +1012,30 @@ storiesOf('village|Prediction', module)
         }
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Prediction
-        handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
-        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-        handleMouseLeave={action('handleMouseLeave')}
-        playerStatus={playerStatus}
-        roleStatus={roleStatus}
-        spec={spec}
-        table={table}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--app">
+            <div className="vi--activity">
+              <Prediction
+                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+                handleMouseLeave={action('handleMouseLeave')}
+                playerStatus={playerStatus}
+                roleStatus={roleStatus}
+                spec={spec}
+                table={table}
+              />
+            </div>
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -1818,16 +1833,30 @@ storiesOf('village|Prediction', module)
         }
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Prediction
-        handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
-        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-        handleMouseLeave={action('handleMouseLeave')}
-        playerStatus={playerStatus}
-        roleStatus={roleStatus}
-        spec={spec}
-        table={table}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--app">
+            <div className="vi--activity">
+              <Prediction
+                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+                handleMouseLeave={action('handleMouseLeave')}
+                playerStatus={playerStatus}
+                roleStatus={roleStatus}
+                spec={spec}
+                table={table}
+              />
+            </div>
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -2011,16 +2040,30 @@ storiesOf('village|Prediction', module)
         }
       }
     }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Prediction
-        handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
-        handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-        handleMouseLeave={action('handleMouseLeave')}
-        playerStatus={playerStatus}
-        roleStatus={roleStatus}
-        spec={spec}
-        table={table}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--app">
+            <div className="vi--activity">
+              <Prediction
+                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
+                handleMouseLeave={action('handleMouseLeave')}
+                playerStatus={playerStatus}
+                roleStatus={roleStatus}
+                spec={spec}
+                table={table}
+              />
+            </div>
+          </div>
+        </IntlProvider>
+      </Provider>
 
     return story
   })

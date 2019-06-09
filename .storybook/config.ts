@@ -5,7 +5,7 @@ import '../src/styles/lobby.css'
 import '../src/styles/landing.css'
 
 const options = {
-  showPanel: false
+  panelPosition: 'right'
 }
 const viewport = {
   viewports: {

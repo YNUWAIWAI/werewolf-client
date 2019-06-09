@@ -5,21 +5,12 @@ import IntlProvider from '../../src/scripts/village/containers/IntlProviderConta
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
-const store = createStore(
-  reducer
-)
-
 storiesOf('village|Result', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      <IntlProvider>
-        {story()}
-      </IntlProvider>
-    </Provider>
-  ))
   .add('15 players', () => {
     const agents: Props['agents'] = {
       agent1: {
@@ -228,16 +219,26 @@ storiesOf('village|Result', module)
       'agent14',
       'agent15'
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Result
-        agents={agents}
-        handleClickCloseButton={action('handleCloseClick')}
-        losers={losers}
-        me={me}
-        summary={summary}
-        visible
-        winners={winners}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <Result
+            agents={agents}
+            handleClickCloseButton={action('handleCloseClick')}
+            losers={losers}
+            me={me}
+            summary={summary}
+            visible
+            winners={winners}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })
@@ -319,16 +320,26 @@ storiesOf('village|Result', module)
       'agent3',
       'agent4'
     ]
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
     const story =
-      <Result
-        agents={agents}
-        handleClickCloseButton={action('handleCloseClick')}
-        losers={losers}
-        me={me}
-        summary={summary}
-        visible
-        winners={winners}
-      />
+      <Provider store={store}>
+        <IntlProvider>
+          <Result
+            agents={agents}
+            handleClickCloseButton={action('handleCloseClick')}
+            losers={losers}
+            me={me}
+            summary={summary}
+            visible
+            winners={winners}
+          />
+        </IntlProvider>
+      </Provider>
 
     return story
   })

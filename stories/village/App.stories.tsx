@@ -12,13 +12,18 @@ import {
 import App from '../../src/scripts/village/containers/App'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 
 storiesOf('village|App', module)
   .add('default', () => {
     const store = createStore(
-      reducer
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
 
     const story =
@@ -31,7 +36,10 @@ storiesOf('village|App', module)
   .add('prologue', () => {
     const store = createStore(
       reducer,
-      prologue
+      {
+        ... prologue,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
 
     const story =
@@ -44,7 +52,10 @@ storiesOf('village|App', module)
   .add('morning (without limited chat)', () => {
     const store = createStore(
       reducer,
-      morningWithoutLimitedChat
+      {
+        ... morningWithoutLimitedChat,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
     const story =
       <Provider store={store}>
@@ -56,7 +67,10 @@ storiesOf('village|App', module)
   .add('morning (with limited chat)', () => {
     const store = createStore(
       reducer,
-      morningWithLimitedChat
+      {
+        ... morningWithLimitedChat,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
     const story =
       <Provider store={store}>
@@ -68,7 +82,10 @@ storiesOf('village|App', module)
   .add('day', () => {
     const store = createStore(
       reducer,
-      day
+      {
+        ... day,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
     const story =
       <Provider store={store}>
@@ -80,7 +97,10 @@ storiesOf('village|App', module)
   .add('night(seer)', () => {
     const store = createStore(
       reducer,
-      night
+      {
+        ... night,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
     const story =
       <Provider store={store}>
@@ -92,7 +112,10 @@ storiesOf('village|App', module)
   .add('night(villager)', () => {
     const store = createStore(
       reducer,
-      night2
+      {
+        ... night2,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
     const story =
       <Provider store={store}>
@@ -104,7 +127,10 @@ storiesOf('village|App', module)
   .add('grave', () => {
     const store = createStore(
       reducer,
-      grave
+      {
+        ... grave,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
     const story =
       <Provider store={store}>
@@ -116,7 +142,10 @@ storiesOf('village|App', module)
   .add('result', () => {
     const store = createStore(
       reducer,
-      result
+      {
+        ... result,
+        language: radios(language.label, language.options, language.defaultValue)
+      }
     )
     const story =
       <Provider store={store}>

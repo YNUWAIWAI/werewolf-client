@@ -1,7 +1,7 @@
 import * as React from 'react'
 import App from '../../src/scripts/landing/components/templates/App'
-import {Language} from '../../src/i18n/landing'
-
+import language from './language'
+import {radios} from '@storybook/addon-knobs'
 import {storiesOf} from '@storybook/react'
 
 storiesOf('landing|App', module)
@@ -9,7 +9,7 @@ storiesOf('landing|App', module)
     const story =
       <App
         csrfToken="token"
-        lang={Language.en}
+        lang={radios(language.label, language.options, language.defaultValue)}
         loginAction="/login"
         loginError={false}
         signupAction="/signup"
@@ -22,7 +22,7 @@ storiesOf('landing|App', module)
     const story =
       <App
         csrfToken="token"
-        lang={Language.en}
+        lang={radios(language.label, language.options, language.defaultValue)}
         loginAction="/login"
         loginError
         signupAction="/signup"
@@ -35,7 +35,7 @@ storiesOf('landing|App', module)
     const story =
       <App
         csrfToken="token"
-        lang={Language.en}
+        lang={radios(language.label, language.options, language.defaultValue)}
         loginAction="/login"
         loginError={false}
         signupAction="/signup"
