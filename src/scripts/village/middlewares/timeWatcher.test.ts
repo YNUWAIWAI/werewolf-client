@@ -1,6 +1,6 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Ajv from 'ajv'
+import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as base} from '../reducers/base'
 import fakeStore from '../containers/fakeStore'

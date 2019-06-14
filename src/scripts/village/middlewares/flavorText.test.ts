@@ -1,7 +1,7 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Ajv from 'ajv'
 import Agent from '../constants/Agent'
+import Ajv from 'ajv'
 import ImagePath from '../constants/ImagePath'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
