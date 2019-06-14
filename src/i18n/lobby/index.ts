@@ -1,7 +1,7 @@
-import en from './en'
-import fr from './fr'
-import it from './it'
-import ja from './ja'
+import en from './en.json'
+import fr from './fr.json'
+import it from './it.json'
+import ja from './ja.json'
 
 export const getMessages = (locale: lobby.Language) => {
   switch (locale) {

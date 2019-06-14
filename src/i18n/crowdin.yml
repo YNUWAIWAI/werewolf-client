@@ -1,0 +1,45 @@
+project_identifier_env: CROWDIN_PROJECT_ID
+api_key_env: CROWDIN_API_KEY
+base_path : "./"
+preserve_hierarchy: true
+
+files:
+  -
+    source: '*/en.json'
+    translation: '%original_path%/%locale%.json'
+    languages_mapping:
+      locale:
+        'af': 'af'
+        'ar': 'ar'
+        'bs-BA': 'bs-BA'
+        'ca': 'ca'
+        'cs': 'cs'
+        'da': 'da'
+        'de': 'de'
+        'el': 'el'
+        'es-ES': 'es-ES'
+        'fa': 'fa-IR'
+        'fi': 'fi'
+        'fr': 'fr'
+        'he': 'he'
+        'hu': 'hu'
+        'id': 'id-ID'
+        'it': 'it'
+        'ja': 'ja'
+        'ko': 'ko'
+        'mr': 'mr-IN'
+        'nl': 'nl'
+        'no': 'no-NO'
+        'pl': 'pl'
+        'pt-BR': 'pt-BR'
+        'pt-PT': 'pt-PT'
+        'ro': 'ro'
+        'ru': 'ru'
+        'sk': 'sk-SK'
+        'sr': 'sr'
+        'sv-SE': 'sv-SE'
+        'tr': 'tr'
+        'uk': 'uk'
+        'vi': 'vi'
+        'zh-CN': 'zh-CN'
+        'zh-TW': 'zh-TW'
