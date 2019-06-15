@@ -5,7 +5,7 @@ import {Target} from '../../constants/ActionTypes'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
+const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 describe('<MenuItem />', () => {
   describe('render', () => {
@@ -20,7 +20,7 @@ describe('<MenuItem />', () => {
         />
       )
 
-      expect(wrapper.text()).toBe('Return to the Main Page')
+      expect(wrapper.text()).toBe('Return to the main page')
       expect(wrapper.find('li.className').exists()).toBe(true)
       expect(transition).toHaveBeenCalledTimes(0)
     })
@@ -36,7 +36,7 @@ describe('<MenuItem />', () => {
         />
       )
 
-      expect(wrapper.text()).toBe('Return to the Main Page')
+      expect(wrapper.text()).toBe('Return to the main page')
       expect(wrapper.find('li.className').hasClass('disabled')).toBe(true)
       expect(transition).toHaveBeenCalledTimes(0)
     })

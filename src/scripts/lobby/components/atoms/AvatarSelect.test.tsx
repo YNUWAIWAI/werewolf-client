@@ -5,7 +5,7 @@ import Select from 'react-select'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
+const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 describe('<AvatarSelect />', () => {
   describe('render', () => {
@@ -80,7 +80,7 @@ describe('<AvatarSelect />', () => {
 
       expect(wrapper.find(Select)).toHaveLength(1)
       expect(wrapper.find(Select).props().defaultValue).toEqual({
-        label: 'Random Avatar',
+        label: 'Random avatar',
         value: 'random'
       })
       expect(handleChange).toHaveBeenCalledTimes(0)
@@ -99,7 +99,7 @@ describe('<AvatarSelect />', () => {
 
       expect(wrapper.find(Select)).toHaveLength(1)
       expect(wrapper.find(Select).props().defaultValue).toEqual({
-        label: 'Fixed Avatar',
+        label: 'Fixed avatar',
         value: 'fixed'
       })
       expect(handleChange).toHaveBeenCalledTimes(0)
@@ -118,11 +118,19 @@ describe('<AvatarSelect />', () => {
             type="advancedSearch"
           />
         )
+        const onChange = wrapper.find(Select).props().onChange
 
-        wrapper.find(Select).props().onChange({
-          label: 'Unspecified',
-          value: 'unspecified'
-        })
+        if (onChange) {
+          onChange(
+            {
+              label: 'Unspecified',
+              value: 'unspecified'
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleChange).toHaveBeenCalledTimes(1)
         expect(handleChange).toHaveBeenCalledWith(true)
         expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -139,8 +147,17 @@ describe('<AvatarSelect />', () => {
             type="advancedSearch"
           />
         )
+        const onChange = wrapper.find(Select).props().onChange
 
-        wrapper.find(Select).props().onChange([])
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
+
         expect(handleChange).toHaveBeenCalledTimes(1)
         expect(handleChange).toHaveBeenCalledWith(true)
         expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -157,8 +174,17 @@ describe('<AvatarSelect />', () => {
             type="advancedSearch"
           />
         )
+        const onChange = wrapper.find(Select).props().onChange
 
-        wrapper.find(Select).props().onChange(null)
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
+
         expect(handleChange).toHaveBeenCalledTimes(0)
         expect(handleChangeInner).toHaveBeenCalledTimes(0)
       })
@@ -173,8 +199,17 @@ describe('<AvatarSelect />', () => {
             type="advancedSearch"
           />
         )
+        const onChange = wrapper.find(Select).props().onChange
 
-        wrapper.find(Select).props().onChange(undefined)
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
+
         expect(handleChange).toHaveBeenCalledTimes(0)
         expect(handleChangeInner).toHaveBeenCalledTimes(0)
       })
@@ -191,11 +226,20 @@ describe('<AvatarSelect />', () => {
             type="buildVillage"
           />
         )
+        const onChange = wrapper.find(Select).props().onChange
 
-        wrapper.find(Select).props().onChange({
-          label: 'Random',
-          value: 'random'
-        })
+        if (onChange) {
+          onChange(
+            {
+              label: 'Random',
+              value: 'random'
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
+
         expect(handleChange).toHaveBeenCalledTimes(1)
         expect(handleChange).toHaveBeenCalledWith(true)
         expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -212,8 +256,16 @@ describe('<AvatarSelect />', () => {
             type="buildVillage"
           />
         )
+        const onChange = wrapper.find(Select).props().onChange
 
-        wrapper.find(Select).props().onChange([])
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleChange).toHaveBeenCalledTimes(1)
         expect(handleChange).toHaveBeenCalledWith(false)
         expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -231,7 +283,16 @@ describe('<AvatarSelect />', () => {
           />
         )
 
-        wrapper.find(Select).props().onChange(null)
+        const onChange = wrapper.find(Select).props().onChange
+
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleChange).toHaveBeenCalledTimes(0)
         expect(handleChangeInner).toHaveBeenCalledTimes(0)
       })
@@ -247,7 +308,16 @@ describe('<AvatarSelect />', () => {
           />
         )
 
-        wrapper.find(Select).props().onChange(undefined)
+        const onChange = wrapper.find(Select).props().onChange
+
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleChange).toHaveBeenCalledTimes(0)
         expect(handleChangeInner).toHaveBeenCalledTimes(0)
       })

@@ -7,7 +7,7 @@ import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
 const store = fakeStore()
-const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
+const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 describe('render', () => {
   test('visible', () => {
@@ -32,9 +32,9 @@ describe('render', () => {
 
     expect(wrapper.find('.lo--modal--button')).toHaveLength(2)
     expect(wrapper.find('.lo--modal--button.yes').exists()).toBe(true)
-    expect(wrapper.find('.lo--modal--button.yes').text()).toBe('はい')
+    expect(wrapper.find('.lo--modal--button.yes').text()).toBe('Yes')
     expect(wrapper.find('.lo--modal--button.no').exists()).toBe(true)
-    expect(wrapper.find('.lo--modal--button.no').text()).toBe('いいえ')
+    expect(wrapper.find('.lo--modal--button.no').text()).toBe('No')
     expect(handleClickNoMockFn).toHaveBeenCalledTimes(0)
     expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
   })
