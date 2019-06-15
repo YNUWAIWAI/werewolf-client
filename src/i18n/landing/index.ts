@@ -1,7 +1,7 @@
-import enMessages from './en'
-import frMessages from './fr'
-import itMessages from './it'
-import jaMessages from './ja'
+import enMessages from './en.json'
+import frMessages from './fr.json'
+import itMessages from './it.json'
+import jaMessages from './ja.json'
 
 export const enum Language {
   en = 'en',

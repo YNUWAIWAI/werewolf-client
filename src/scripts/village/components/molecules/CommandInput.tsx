@@ -1,5 +1,4 @@
 /* global village */
-import * as Fuse from 'fuse.js'
 import * as React from 'react'
 import {countText, getChannelFromInputChennel, getText, isValidTextLength, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
@@ -7,6 +6,7 @@ import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
 import CommandInputSuggest from '../atoms/CommandInputSuggest'
 import CommandInputTextCounter from '../atoms/CommandInputTextCounter'
 import {FormattedMessage} from 'react-intl'
+import Fuse from 'fuse.js'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
 

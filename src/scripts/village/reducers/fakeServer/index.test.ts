@@ -1,4 +1,3 @@
-import * as Ajv from 'ajv'
 import {
   anonymousAudienceChat,
   day,
@@ -14,6 +13,7 @@ import {
   result,
   theirMessageOnChat
 } from '.'
+import Ajv from 'ajv'
 import {VERSION} from '../../constants/Version'
 import fetch from 'node-fetch'
 

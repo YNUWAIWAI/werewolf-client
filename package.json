@@ -68,6 +68,8 @@
     "coverage": "codecov -f coverage/*.json",
     "deploy-storybook": "storybook-to-ghpages",
     "eslint": "eslint src/**/*.ts* stories/**/*.ts*",
+    "i18n:download": "crowdin download -b client -c src/i18n/crowdin.yml",
+    "i18n:upload": "crowdin upload sources -b client -c src/i18n/crowdin.yml",
     "jest:integration": "jest -c integration/jest.config.js -w 2",
     "jest:integration:upgrade": "jest -c integration/jest.config.js -w 2 -u",
     "stylelint": "stylelint src/styles",

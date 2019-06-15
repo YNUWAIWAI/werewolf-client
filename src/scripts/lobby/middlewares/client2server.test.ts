@@ -1,6 +1,5 @@
 /* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
-import * as Ajv from 'ajv'
 import {
   ChangeLanguage,
   ChangeUserEmail,
@@ -10,6 +9,7 @@ import {
   SelectVillage,
   SocketMessage
 } from '../actions'
+import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as advancedSearch} from '../reducers/advancedSearch'
 import {initialState as buildVillage} from '../reducers/buildVillage'

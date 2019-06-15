@@ -4,40 +4,40 @@ import FormattedTime from './FormattedTime'
 import {getMessages} from '../../../../i18n/village'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
+const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
-test('time = 5999 => 残り99\'59', () => {
+test('time: 5999', () => {
   const wrapper = mountWithIntl(<FormattedTime time={5999} />)
 
-  expect(wrapper.text()).toBe('残り99\'59')
+  expect(wrapper.text()).toBe('99\'59 left')
 })
-test('time = 90 => 残り01\'30', () => {
+test('time: 90', () => {
   const wrapper = mountWithIntl(<FormattedTime time={90} />)
 
-  expect(wrapper.text()).toBe('残り01\'30')
+  expect(wrapper.text()).toBe('01\'30 left')
 })
-test('time = 30 => 残り00\'30', () => {
+test('time: 30', () => {
   const wrapper = mountWithIntl(<FormattedTime time={30} />)
 
-  expect(wrapper.text()).toBe('残り00\'30')
+  expect(wrapper.text()).toBe('00\'30 left')
 })
-test('time = 5 => 残り00\'05', () => {
+test('time: 5', () => {
   const wrapper = mountWithIntl(<FormattedTime time={5} />)
 
-  expect(wrapper.text()).toBe('残り00\'05')
+  expect(wrapper.text()).toBe('00\'05 left')
 })
-test('time = 0 => 残り00\'00', () => {
+test('time: 0', () => {
   const wrapper = mountWithIntl(<FormattedTime time={0} />)
 
-  expect(wrapper.text()).toBe('残り00\'00')
+  expect(wrapper.text()).toBe('00\'00 left')
 })
-test('time = -1 => 終了', () => {
+test('time: -1', () => {
   const wrapper = mountWithIntl(<FormattedTime time={-1} />)
 
-  expect(wrapper.text()).toBe('終了')
+  expect(wrapper.text()).toBe('Time\'s up')
 })
-test('time = 6000 => 残り100\'00', () => {
+test('time: 6000', () => {
   const wrapper = mountWithIntl(<FormattedTime time={6000} />)
 
-  expect(wrapper.text()).toBe('残り100\'00')
+  expect(wrapper.text()).toBe('100\'00 left')
 })

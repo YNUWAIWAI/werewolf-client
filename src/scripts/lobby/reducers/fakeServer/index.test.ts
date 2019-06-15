@@ -1,4 +1,3 @@
-import * as Ajv from 'ajv'
 import {
   avatar,
   avatar2,
@@ -12,6 +11,7 @@ import {
   waitingPage,
   waitingPage2
 } from '.'
+import Ajv from 'ajv'
 import {VERSION} from '../../constants/Version'
 import fetch from 'node-fetch'
 

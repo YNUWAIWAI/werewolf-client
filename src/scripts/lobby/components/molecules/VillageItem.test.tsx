@@ -4,7 +4,7 @@ import VillageItem from './VillageItem'
 import {getMessages} from '../../../../i18n/lobby'
 import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
 
-const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
+const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 describe('<VillageItem />', () => {
   test('isPlayer: true', () => {
@@ -56,7 +56,7 @@ describe('<VillageItem />', () => {
     expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('#123')
     expect(wrapper.find('.lo--village--item--val.host-name').text()).toBe('hostPlayer name')
     expect(wrapper.find('.lo--village--item--val.setup1').text()).toBe('8 / 15 players')
-    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed Avatar')
+    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed avatar')
     expect(wrapper.find('.lo--village--item--val.comment').text()).toBe('comment')
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
@@ -109,7 +109,7 @@ describe('<VillageItem />', () => {
     expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('#123')
     expect(wrapper.find('.lo--village--item--val.host-name').text()).toBe('hostPlayer name')
     expect(wrapper.find('.lo--village--item--val.setup1').text()).toBe('15 players')
-    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed Avatar')
+    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed avatar')
     expect(wrapper.find('.lo--village--item--val.comment').text()).toBe('comment')
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
@@ -294,7 +294,7 @@ describe('<VillageItem />', () => {
     expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('#123')
     expect(wrapper.find('.lo--village--item--val.host-name').text()).toBe('hostPlayer name')
     expect(wrapper.find('.lo--village--item--val.setup1').text()).toBe('8 / 15 players')
-    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed Avatar')
+    expect(wrapper.find('.lo--village--item--val.setup2').text()).toBe('Fixed avatar')
     expect(wrapper.find('.lo--village--item--val.comment').text()).toBe('comment')
   })
 })
