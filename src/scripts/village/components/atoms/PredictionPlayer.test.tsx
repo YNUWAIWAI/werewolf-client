@@ -8,6 +8,7 @@ describe('<PredictionPlayer />', () => {
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
+        isSilent={false}
         name="Adil"
         status="alive"
       />
@@ -22,6 +23,7 @@ describe('<PredictionPlayer />', () => {
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
+        isSilent={false}
         name="Adil"
         status="dead"
       />
@@ -36,6 +38,7 @@ describe('<PredictionPlayer />', () => {
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
+        isSilent={false}
         name="Adil"
         status="death by execution"
       />
@@ -50,6 +53,7 @@ describe('<PredictionPlayer />', () => {
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
+        isSilent={false}
         name="Adil"
         status="death by attack"
       />
@@ -64,6 +68,7 @@ describe('<PredictionPlayer />', () => {
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
+        isSilent={false}
         name="Adil"
         status="death by fear"
       />
@@ -78,6 +83,7 @@ describe('<PredictionPlayer />', () => {
       <PredictionPlayer
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
+        isSilent={false}
         name="Adil"
         status="unnatural death"
       />
@@ -86,5 +92,31 @@ describe('<PredictionPlayer />', () => {
     expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
     expect(wrapper.find('.vi--prediction--player--image').exists()).toBe(true)
     expect(wrapper.find('.vi--prediction--player--name').exists()).toBe(true)
+  })
+  test('isSilent=true, status="alive"', () => {
+    const wrapper = mount(
+      <PredictionPlayer
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        isSilent
+        name="Adil"
+        status="alive"
+      />
+    )
+
+    expect(wrapper.find('div.vi--prediction--player').hasClass('silent')).toBe(true)
+  })
+  test('isSilent=true, status="dead"', () => {
+    const wrapper = mount(
+      <PredictionPlayer
+        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        initial="A"
+        isSilent
+        name="Adil"
+        status="dead"
+      />
+    )
+
+    expect(wrapper.find('div.vi--prediction--player').hasClass('dead')).toBe(true)
   })
 })
