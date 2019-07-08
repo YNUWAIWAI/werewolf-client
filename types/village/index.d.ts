@@ -71,7 +71,7 @@ declare namespace village {
     lose = 'lose',
     win = 'win'
   }
-  type AgentId = number
+  type AgentId = string
   type ChatId = string
   type Token = string
   const enum AgentStatus {
