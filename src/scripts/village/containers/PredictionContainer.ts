@@ -22,6 +22,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     id: player.id,
     image: player.image,
     initial: getInitial(player.name.en),
+    isSilent: player.isSilent,
     name: getText({
       language: state.language,
       languageMap: player.name
