@@ -42,6 +42,7 @@ describe('<Prediction />', () => {
         id: 1,
         image: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
         initial: 'A',
+        isSilent: false,
         name: 'Adil',
         status: village.AgentStatus.alive
       },
@@ -49,6 +50,7 @@ describe('<Prediction />', () => {
         id: 2,
         image: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
         initial: 'B',
+        isSilent: false,
         name: 'Borya',
         status: village.AgentStatus.alive
       },
@@ -56,6 +58,7 @@ describe('<Prediction />', () => {
         id: 3,
         image: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
         initial: 'C',
+        isSilent: false,
         name: 'Chacha',
         status: village.AgentStatus.alive
       },
@@ -63,6 +66,7 @@ describe('<Prediction />', () => {
         id: 4,
         image: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
         initial: 'D',
+        isSilent: false,
         name: 'Devdatta',
         status: village.AgentStatus.alive
       },
@@ -70,6 +74,7 @@ describe('<Prediction />', () => {
         id: 5,
         image: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
         initial: 'E',
+        isSilent: false,
         name: 'Ekrem',
         status: village.AgentStatus.alive
       }

@@ -11,6 +11,7 @@ export interface StateProps {
     readonly id: number
     readonly image: string
     readonly initial: string
+    readonly isSilent: boolean
     readonly name: string
     readonly status: village.AgentStatus
   }[]
@@ -63,6 +64,7 @@ export default function Prediction(props: Props) {
       <PredictionPlayer
         image={player.image}
         initial={player.initial}
+        isSilent={player.isSilent}
         key={player.id}
         name={player.name}
         status={player.status}
