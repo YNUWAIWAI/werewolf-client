@@ -8,7 +8,7 @@ import {just} from '../../util'
 
 export interface StateProps {
   readonly playerStatus: {
-    readonly id: number
+    readonly id: village.AgentId
     readonly image: string
     readonly initial: string
     readonly isSilent: boolean
@@ -38,7 +38,7 @@ export interface StateProps {
 export interface DispatchProps {
   handleMouseEnter: (role: village.RoleId) => () => void
   handleMouseLeave: () => void
-  handleBoardClick: (playerId: number, role: village.RoleId) => (state: village.BoardState) => void
+  handleBoardClick: (playerId: village.AgentId, role: village.RoleId) => (state: village.BoardState) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
