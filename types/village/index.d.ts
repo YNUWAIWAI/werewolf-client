@@ -71,7 +71,7 @@ declare namespace village {
     lose = 'lose',
     win = 'win'
   }
-  type AgentId = string
+  type AgentId = number
   type ChatId = string
   type Token = string
   const enum AgentStatus {
@@ -155,7 +155,7 @@ declare namespace village {
     '@id': string
     fullName?: LanguageMap
     gender?: Gender
-    id: number
+    id: AgentId
     image: string
     isAChoice?: boolean
     isMine?: boolean
