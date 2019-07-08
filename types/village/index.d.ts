@@ -155,7 +155,7 @@ declare namespace village {
     '@id': string
     fullName?: LanguageMap
     gender?: Gender
-    id: AgentId
+    id: number
     image: string
     isAChoice?: boolean
     isMine?: boolean

@@ -2040,7 +2040,7 @@
     "@types/vfile-message" "*"
 
 "@types/village@./types/village":
-  version "1.44.0"
+  version "1.45.0"
 
 "@types/webpack-env@*":
   version "1.13.9"
