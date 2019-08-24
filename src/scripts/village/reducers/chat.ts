@@ -9,7 +9,7 @@ const getDelimeterId = idGenerater('delimeter')
 export interface State {
   readonly allIds: village.ChatId[]
   readonly byId: {
-    readonly [id: string /* village.ChatId */]: {
+    readonly [id in village.ChatId]: {
       readonly agentId?: village.AgentId
       readonly clientTimestamp: string
       readonly date: number
