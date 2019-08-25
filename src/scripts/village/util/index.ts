@@ -196,16 +196,6 @@ export const getAgent = <T extends {id: number, name: {en: string}}>(agents: T[]
   return maybe
 }
 
-export const getRole = <T extends {name: {en: string}}>(roles: T[], roleId: village.RoleId): T => {
-  const maybe = getPlayableRoles(roles).find(r => strToRoleId(r.name.en) === roleId)
-
-  if (!maybe) {
-    throw Error('Not found role.')
-  }
-
-  return maybe
-}
-
 export const getText = ({language, languageMap}: {language: village.Language, languageMap: village.LanguageMap}): string => {
   const maybe = languageMap[language]
 
