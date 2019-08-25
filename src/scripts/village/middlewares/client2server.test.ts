@@ -61,171 +61,201 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       }
     },
     prediction: {
-      playerStatus: [
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-          'id': 1,
-          'image': ImagePath.Agent.a,
-          'name': Agent.a,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-          'id': 2,
-          'image': ImagePath.Agent.b,
-          'name': Agent.b,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-          'id': 3,
-          'image': ImagePath.Agent.c,
-          'name': Agent.c,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-          'id': 4,
-          'image': ImagePath.Agent.d,
-          'name': Agent.d,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
-          'id': 5,
-          'image': ImagePath.Agent.e,
-          'name': Agent.e,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
-          'id': 6,
-          'image': ImagePath.Agent.f,
-          'name': Agent.f,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
-          'id': 7,
-          'image': ImagePath.Agent.g,
-          'name': Agent.g,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
-          'id': 8,
-          'image': ImagePath.Agent.h,
-          'name': Agent.h,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
-          'id': 9,
-          'image': ImagePath.Agent.i,
-          'name': Agent.i,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
-          'id': 10,
-          'image': ImagePath.Agent.j,
-          'name': Agent.j,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
-          'id': 11,
-          'image': ImagePath.Agent.k,
-          'name': Agent.k,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
-          'id': 12,
-          'image': ImagePath.Agent.l,
-          'name': Agent.l,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
-          'id': 13,
-          'image': ImagePath.Agent.m,
-          'name': Agent.m,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
-          'id': 14,
-          'image': ImagePath.Agent.n,
-          'name': Agent.n,
-          'status': village.AgentStatus.alive
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
-          'id': 14,
-          'image': ImagePath.Agent.o,
-          'name': Agent.o,
-          'status': village.AgentStatus.alive
+      playerStatus: {
+        allIds: [
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6',
+          '7',
+          '8',
+          '9',
+          '10',
+          '11',
+          '12',
+          '13',
+          '14'
+        ],
+        byId: {
+          '1': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+            'id': '1',
+            'image': ImagePath.Agent.a,
+            'name': Agent.a,
+            'status': village.AgentStatus.alive
+          },
+          '2': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+            'id': '2',
+            'image': ImagePath.Agent.b,
+            'name': Agent.b,
+            'status': village.AgentStatus.alive
+          },
+          '3': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+            'id': '3',
+            'image': ImagePath.Agent.c,
+            'name': Agent.c,
+            'status': village.AgentStatus.alive
+          },
+          '4': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+            'id': '4',
+            'image': ImagePath.Agent.d,
+            'name': Agent.d,
+            'status': village.AgentStatus.alive
+          },
+          '5': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+            'id': '5',
+            'image': ImagePath.Agent.e,
+            'name': Agent.e,
+            'status': village.AgentStatus.alive
+          },
+          '6': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+            'id': '6',
+            'image': ImagePath.Agent.f,
+            'name': Agent.f,
+            'status': village.AgentStatus.alive
+          },
+          '7': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+            'id': '7',
+            'image': ImagePath.Agent.g,
+            'name': Agent.g,
+            'status': village.AgentStatus.alive
+          },
+          '8': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+            'id': '8',
+            'image': ImagePath.Agent.h,
+            'name': Agent.h,
+            'status': village.AgentStatus.alive
+          },
+          '9': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+            'id': '9',
+            'image': ImagePath.Agent.i,
+            'name': Agent.i,
+            'status': village.AgentStatus.alive
+          },
+          '10': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+            'id': '10',
+            'image': ImagePath.Agent.j,
+            'name': Agent.j,
+            'status': village.AgentStatus.alive
+          },
+          '11': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+            'id': '11',
+            'image': ImagePath.Agent.k,
+            'name': Agent.k,
+            'status': village.AgentStatus.alive
+          },
+          '12': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+            'id': '12',
+            'image': ImagePath.Agent.l,
+            'name': Agent.l,
+            'status': village.AgentStatus.alive
+          },
+          '13': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+            'id': '13',
+            'image': ImagePath.Agent.m,
+            'name': Agent.m,
+            'status': village.AgentStatus.alive
+          },
+          '14': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+            'id': '14',
+            'image': ImagePath.Agent.n,
+            'name': Agent.n,
+            'status': village.AgentStatus.alive
+          },
+          '15': {
+            '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+            'id': '15',
+            'image': ImagePath.Agent.o,
+            'name': Agent.o,
+            'status': village.AgentStatus.alive
+          }
         }
-      ],
-      roleStatus: [
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-          'id': village.RoleId.villager,
-          'image': ImagePath.Role.villager,
-          'name': Role.villager,
-          'numberOfAgents': 6
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-          'id': village.RoleId.seer,
-          'image': ImagePath.Role.seer,
-          'name': Role.seer,
-          'numberOfAgents': 1
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#medium',
-          'id': village.RoleId.medium,
-          'image': ImagePath.Role.medium,
-          'name': Role.medium,
-          'numberOfAgents': 1
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
-          'id': village.RoleId.hunter,
-          'image': ImagePath.Role.hunter,
-          'name': Role.hunter,
-          'numberOfAgents': 1
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#mason',
-          'id': village.RoleId.mason,
-          'image': ImagePath.Role.mason,
-          'name': Role.mason,
-          'numberOfAgents': 2
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#madman',
-          'id': village.RoleId.madman,
-          'image': ImagePath.Role.madman,
-          'name': Role.madman,
-          'numberOfAgents': 1
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
-          'id': village.RoleId.werewolf,
-          'image': ImagePath.Role.werewolf,
-          'name': Role.werewolf,
-          'numberOfAgents': 2
-        },
-        {
-          '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
-          'id': village.RoleId.werehamster,
-          'image': ImagePath.Role.werehamster,
-          'name': Role.werehamster,
-          'numberOfAgents': 1
+      },
+      roleStatus: {
+        allIds: [
+          village.RoleId.villager,
+          village.RoleId.seer,
+          village.RoleId.medium,
+          village.RoleId.hunter,
+          village.RoleId.mason,
+          village.RoleId.madman,
+          village.RoleId.werewolf,
+          village.RoleId.werehamster
+        ],
+        byId: {
+          [village.RoleId.villager]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+            'id': village.RoleId.villager,
+            'image': ImagePath.Role.villager,
+            'name': Role.villager,
+            'numberOfAgents': 6
+          },
+          [village.RoleId.seer]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            'id': village.RoleId.seer,
+            'image': ImagePath.Role.seer,
+            'name': Role.seer,
+            'numberOfAgents': 1
+          },
+          [village.RoleId.medium]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+            'id': village.RoleId.medium,
+            'image': ImagePath.Role.medium,
+            'name': Role.medium,
+            'numberOfAgents': 1
+          },
+          [village.RoleId.hunter]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+            'id': village.RoleId.hunter,
+            'image': ImagePath.Role.hunter,
+            'name': Role.hunter,
+            'numberOfAgents': 1
+          },
+          [village.RoleId.mason]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+            'id': village.RoleId.mason,
+            'image': ImagePath.Role.mason,
+            'name': Role.mason,
+            'numberOfAgents': 2
+          },
+          [village.RoleId.madman]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+            'id': village.RoleId.madman,
+            'image': ImagePath.Role.madman,
+            'name': Role.madman,
+            'numberOfAgents': 1
+          },
+          [village.RoleId.werewolf]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+            'id': village.RoleId.werewolf,
+            'image': ImagePath.Role.werewolf,
+            'name': Role.werewolf,
+            'numberOfAgents': 2
+          },
+          [village.RoleId.werehamster]: {
+            '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+            'id': village.RoleId.werehamster,
+            'image': ImagePath.Role.werehamster,
+            'name': Role.werehamster,
+            'numberOfAgents': 1
+          }
         }
-      ],
+      },
       spec: {
         role: village.RoleId.villager,
         visible: false
@@ -241,7 +271,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   const actionHandler = nextHandler(dispatchAPI)
   const action: ChangePredictionBoard = {
     nextState: village.BoardState.CIRCLE,
-    playerId: 2,
+    playerId: '2',
     roleId: village.RoleId.villager,
     type: ActionTypes.global.CHANGE_PREDICTION_BOARD
   }
@@ -838,6 +868,7 @@ describe('STAR', () => {
       byId: {
         chat0: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+          date: 1,
           id: 12,
           image: ImagePath.Agent.a,
           intensionalDisclosureRange: village.Channel.public,
