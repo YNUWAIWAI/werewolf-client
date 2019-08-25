@@ -14,7 +14,7 @@ storiesOf('village|Result', module)
   .add('15 players', () => {
     const agents: Props['agents'] = {
       agent1: {
-        agentId: 1,
+        agentId: '1',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
         agentInitial: 'A',
         agentName: 'Adil',
@@ -26,7 +26,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent2: {
-        agentId: 2,
+        agentId: '2',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
         agentInitial: 'B',
         agentName: 'Borya',
@@ -38,7 +38,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent3: {
-        agentId: 3,
+        agentId: '3',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
         agentInitial: 'C',
         agentName: 'Chacha',
@@ -50,7 +50,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent4: {
-        agentId: 4,
+        agentId: '4',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
         agentInitial: 'D',
         agentName: 'Devdatta',
@@ -62,7 +62,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent5: {
-        agentId: 5,
+        agentId: '5',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
         agentInitial: 'E',
         agentName: 'Ekrem',
@@ -74,7 +74,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.deathByFear
       },
       agent6: {
-        agentId: 6,
+        agentId: '6',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
         agentInitial: 'F',
         agentName: 'Fernando',
@@ -86,7 +86,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.deathByExecution
       },
       agent7: {
-        agentId: 7,
+        agentId: '7',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
         agentInitial: 'G',
         agentName: 'Gavriil',
@@ -98,7 +98,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.unnaturalDeath
       },
       agent8: {
-        agentId: 8,
+        agentId: '8',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
         agentInitial: 'H',
         agentName: 'Henrik',
@@ -110,7 +110,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.unnaturalDeath
       },
       agent9: {
-        agentId: 9,
+        agentId: '9',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
         agentInitial: 'I',
         agentName: 'Ileanna',
@@ -122,7 +122,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.unnaturalDeath
       },
       agent10: {
-        agentId: 10,
+        agentId: '10',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
         agentInitial: 'J',
         agentName: 'Jasmin',
@@ -134,7 +134,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.unnaturalDeath
       },
       agent11: {
-        agentId: 11,
+        agentId: '11',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
         agentInitial: 'K',
         agentName: 'Kaiji',
@@ -146,7 +146,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.unnaturalDeath
       },
       agent12: {
-        agentId: 12,
+        agentId: '12',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
         agentInitial: 'L',
         agentName: 'Louise',
@@ -158,7 +158,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.deathByAttack
       },
       agent13: {
-        agentId: 13,
+        agentId: '13',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
         agentInitial: 'M',
         agentName: 'Marthe',
@@ -170,7 +170,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent14: {
-        agentId: 14,
+        agentId: '14',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
         agentInitial: 'N',
         agentName: 'Nanyamka',
@@ -182,7 +182,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent15: {
-        agentId: 15,
+        agentId: '15',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
         agentInitial: 'O',
         agentName: 'Oliwia',
@@ -245,7 +245,7 @@ storiesOf('village|Result', module)
   .add('5 players', () => {
     const agents: Props['agents'] = {
       agent1: {
-        agentId: 1,
+        agentId: '1',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
         agentInitial: 'A',
         agentName: 'Adil',
@@ -257,7 +257,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent2: {
-        agentId: 2,
+        agentId: '2',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
         agentInitial: 'B',
         agentName: 'Borya',
@@ -269,7 +269,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.deathByExecution
       },
       agent3: {
-        agentId: 3,
+        agentId: '3',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
         agentInitial: 'C',
         agentName: 'Chacha',
@@ -281,7 +281,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.alive
       },
       agent4: {
-        agentId: 4,
+        agentId: '4',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
         agentInitial: 'D',
         agentName: 'Devdatta',
@@ -293,7 +293,7 @@ storiesOf('village|Result', module)
         status: village.AgentStatus.deathByExecution
       },
       agent5: {
-        agentId: 5,
+        agentId: '5',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
         agentInitial: 'E',
         agentName: 'Ekrem',
