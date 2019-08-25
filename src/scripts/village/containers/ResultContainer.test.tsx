@@ -21,7 +21,7 @@ describe('<ResultContainer />', () => {
             result: {
               agents: {
                 agent1: {
-                  agentId: 1,
+                  agentId: '1',
                   agentImage: ImagePath.Agent.a,
                   agentName: Agent.a,
                   avatarImage: ImagePath.Agent.o,
@@ -32,7 +32,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent2: {
-                  agentId: 2,
+                  agentId: '2',
                   agentImage: ImagePath.Agent.b,
                   agentName: Agent.b,
                   avatarImage: ImagePath.Agent.i,
@@ -43,7 +43,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent3: {
-                  agentId: 3,
+                  agentId: '3',
                   agentImage: ImagePath.Agent.c,
                   agentName: Agent.c,
                   avatarImage: ImagePath.Agent.r,
@@ -54,7 +54,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent4: {
-                  agentId: 4,
+                  agentId: '4',
                   agentImage: ImagePath.Agent.d,
                   agentName: Agent.d,
                   avatarImage: ImagePath.Agent.f,
@@ -65,7 +65,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent5: {
-                  agentId: 5,
+                  agentId: '5',
                   agentImage: ImagePath.Agent.e,
                   agentName: Agent.e,
                   avatarImage: ImagePath.Agent.s,
@@ -121,7 +121,7 @@ describe('<ResultContainer />', () => {
             result: {
               agents: {
                 agent0: {
-                  agentId: 0,
+                  agentId: '0',
                   agentImage: ImagePath.Agent.a,
                   agentName: Agent.a,
                   avatarImage: ImagePath.Agent.o,
@@ -132,7 +132,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent1: {
-                  agentId: 1,
+                  agentId: '1',
                   agentImage: ImagePath.Agent.b,
                   agentName: Agent.b,
                   avatarImage: ImagePath.Agent.a,
@@ -143,7 +143,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent2: {
-                  agentId: 2,
+                  agentId: '2',
                   agentImage: ImagePath.Agent.c,
                   agentName: Agent.c,
                   avatarImage: ImagePath.Agent.a,
@@ -154,7 +154,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent3: {
-                  agentId: 3,
+                  agentId: '3',
                   agentImage: ImagePath.Agent.d,
                   agentName: Agent.d,
                   avatarImage: ImagePath.Agent.a,
@@ -165,7 +165,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent4: {
-                  agentId: 4,
+                  agentId: '4',
                   agentImage: ImagePath.Agent.e,
                   agentName: Agent.e,
                   avatarImage: ImagePath.Agent.a,
@@ -176,7 +176,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent5: {
-                  agentId: 5,
+                  agentId: '5',
                   agentImage: ImagePath.Agent.o,
                   agentName: Agent.f,
                   avatarImage: ImagePath.Agent.n,
@@ -234,7 +234,7 @@ describe('<ResultContainer />', () => {
             result: {
               agents: {
                 agent0: {
-                  agentId: 0,
+                  agentId: '0',
                   agentImage: ImagePath.Agent.a,
                   agentName: Agent.a,
                   avatarImage: ImagePath.Agent.o,
@@ -245,7 +245,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent1: {
-                  agentId: 1,
+                  agentId: '1',
                   agentImage: ImagePath.Agent.b,
                   agentName: Agent.b,
                   avatarImage: ImagePath.Agent.a,
@@ -256,7 +256,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent2: {
-                  agentId: 2,
+                  agentId: '2',
                   agentImage: ImagePath.Agent.c,
                   agentName: Agent.c,
                   avatarImage: ImagePath.Agent.a,
@@ -267,7 +267,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent3: {
-                  agentId: 3,
+                  agentId: '3',
                   agentImage: ImagePath.Agent.d,
                   agentName: Agent.d,
                   avatarImage: ImagePath.Agent.a,
@@ -278,7 +278,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent4: {
-                  agentId: 4,
+                  agentId: '4',
                   agentImage: ImagePath.Agent.e,
                   agentName: Agent.e,
                   avatarImage: ImagePath.Agent.a,
@@ -289,7 +289,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent5: {
-                  agentId: 5,
+                  agentId: '5',
                   agentImage: ImagePath.Agent.f,
                   agentName: Agent.f,
                   avatarImage: ImagePath.Agent.n,
@@ -347,7 +347,7 @@ describe('<ResultContainer />', () => {
             result: {
               agents: {
                 agent0: {
-                  agentId: 0,
+                  agentId: '0',
                   agentImage: ImagePath.Agent.a,
                   agentName: Agent.a,
                   avatarImage: ImagePath.Agent.o,
@@ -358,7 +358,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent1: {
-                  agentId: 1,
+                  agentId: '1',
                   agentImage: ImagePath.Agent.b,
                   agentName: Agent.b,
                   avatarImage: ImagePath.Agent.a,
@@ -369,7 +369,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent2: {
-                  agentId: 2,
+                  agentId: '2',
                   agentImage: ImagePath.Agent.c,
                   agentName: Agent.c,
                   avatarImage: ImagePath.Agent.a,
@@ -380,7 +380,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent3: {
-                  agentId: 3,
+                  agentId: '3',
                   agentImage: ImagePath.Agent.d,
                   agentName: Agent.d,
                   avatarImage: ImagePath.Agent.a,
@@ -391,7 +391,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent4: {
-                  agentId: 4,
+                  agentId: '4',
                   agentImage: ImagePath.Agent.e,
                   agentName: Agent.e,
                   avatarImage: ImagePath.Agent.a,
@@ -447,7 +447,7 @@ describe('<ResultContainer />', () => {
             result: {
               agents: {
                 agent0: {
-                  agentId: 0,
+                  agentId: '0',
                   agentImage: ImagePath.Agent.a,
                   agentName: Agent.a,
                   avatarImage: ImagePath.Agent.o,
@@ -458,7 +458,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent1: {
-                  agentId: 1,
+                  agentId: '1',
                   agentImage: ImagePath.Agent.b,
                   agentName: Agent.b,
                   avatarImage: ImagePath.Agent.a,
@@ -469,7 +469,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent2: {
-                  agentId: 2,
+                  agentId: '2',
                   agentImage: ImagePath.Agent.c,
                   agentName: Agent.c,
                   avatarImage: ImagePath.Agent.a,
@@ -480,7 +480,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent3: {
-                  agentId: 3,
+                  agentId: '3',
                   agentImage: ImagePath.Agent.d,
                   agentName: Agent.d,
                   avatarImage: ImagePath.Agent.a,
@@ -491,7 +491,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent4: {
-                  agentId: 4,
+                  agentId: '4',
                   agentImage: ImagePath.Agent.e,
                   agentName: Agent.e,
                   avatarImage: ImagePath.Agent.a,
@@ -549,7 +549,7 @@ describe('<ResultContainer />', () => {
             result: {
               agents: {
                 agent0: {
-                  agentId: 0,
+                  agentId: '0',
                   agentImage: ImagePath.Agent.a,
                   agentName: Agent.a,
                   avatarImage: ImagePath.Agent.o,
@@ -560,7 +560,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent1: {
-                  agentId: 1,
+                  agentId: '1',
                   agentImage: ImagePath.Agent.b,
                   agentName: Agent.b,
                   avatarImage: ImagePath.Agent.a,
@@ -571,7 +571,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent2: {
-                  agentId: 2,
+                  agentId: '2',
                   agentImage: ImagePath.Agent.c,
                   agentName: Agent.c,
                   avatarImage: ImagePath.Agent.a,
@@ -582,7 +582,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent3: {
-                  agentId: 3,
+                  agentId: '3',
                   agentImage: ImagePath.Agent.d,
                   agentName: Agent.d,
                   avatarImage: ImagePath.Agent.a,
@@ -593,7 +593,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent4: {
-                  agentId: 4,
+                  agentId: '4',
                   agentImage: ImagePath.Agent.e,
                   agentName: Agent.e,
                   avatarImage: ImagePath.Agent.a,
@@ -604,7 +604,7 @@ describe('<ResultContainer />', () => {
                   status: village.AgentStatus.alive
                 },
                 agent5: {
-                  agentId: 5,
+                  agentId: '5',
                   agentImage: ImagePath.Agent.o,
                   agentName: Agent.f,
                   avatarImage: ImagePath.Agent.n,
