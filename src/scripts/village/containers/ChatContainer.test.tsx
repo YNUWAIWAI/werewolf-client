@@ -35,7 +35,9 @@ describe('<ChatContainer />', () => {
             allIds: ['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'],
             byId: {
               chat0: {
+                agentId: '1',
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+                date: 1,
                 id: 12,
                 image: ImagePath.Agent120x120.a,
                 intensionalDisclosureRange: village.Channel.public,
@@ -50,6 +52,7 @@ describe('<ChatContainer />', () => {
               },
               chat1: {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+                date: 1,
                 id: -1,
                 image: ImagePath.Agent120x120.y,
                 intensionalDisclosureRange: village.Channel.onymousAudience,
@@ -64,6 +67,7 @@ describe('<ChatContainer />', () => {
               },
               chat2: {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+                date: 1,
                 id: -1,
                 image: ImagePath.Agent120x120.anonymous,
                 intensionalDisclosureRange: village.Channel.anonymousAudience,
@@ -107,7 +111,9 @@ describe('<ChatContainer />', () => {
           allIds: ['chat2', 'chat1', 'delimeter1', 'chat0', 'delimeter0'],
           byId: {
             chat0: {
+              agentId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+              date: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -122,6 +128,7 @@ describe('<ChatContainer />', () => {
             },
             chat1: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+              date: 1,
               id: -1,
               image: ImagePath.Agent120x120.y,
               intensionalDisclosureRange: village.Channel.onymousAudience,
@@ -136,6 +143,7 @@ describe('<ChatContainer />', () => {
             },
             chat2: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+              date: 1,
               id: -1,
               image: ImagePath.Agent120x120.anonymous,
               intensionalDisclosureRange: village.Channel.anonymousAudience,
