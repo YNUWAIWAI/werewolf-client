@@ -32,7 +32,7 @@ export interface State {
   readonly agents: {
     [id in village.AgentId]: {
       readonly agentImage: string
-      readonly agentId: number
+      readonly agentId: village.AgentId
       readonly agentName: village.LanguageMap
       readonly avatarImage: string
       readonly avatarName: string
@@ -96,7 +96,7 @@ const result = (state: State = initialState, action: Action): State => {
             const agentId = getAgentId()
 
             agents[agentId] = {
-              agentId: a.id,
+              agentId: String(a.id),
               agentImage: a.image,
               agentName: a.name,
               avatarImage: just(a.avatar).image,
