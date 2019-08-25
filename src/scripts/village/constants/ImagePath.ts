@@ -15,7 +15,7 @@ const Agent = {
   anonymous: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
   b: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
   c: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
-  d: 'https://werewolf.world/imdge/0.3/agent_icons/50x50/d_50x50.png',
+  d: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
   e: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
   f: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
   g: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
