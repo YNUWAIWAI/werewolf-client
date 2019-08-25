@@ -1,7 +1,9 @@
 /* global village */
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
+import Agent from '../../../src/scripts/village/constants/Agent'
 import {Content} from '../../../src/scripts/village/reducers/command'
 import {ReducerState} from '../../../src/scripts/village/reducers'
+
 const state: ReducerState = {
   base: {
     '@id': 'https://licos.online/state/0.2/village#3',
@@ -30,36 +32,34 @@ const state: ReducerState = {
     allIds: ['chat0', 'chat1'],
     byId: {
       'chat0': {
+        'agentId': '1',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'date': 1,
         'id': 1,
         'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
-        'name': {
-          'en': 'Adil',
-          'ja': 'アーディル'
-        },
+        'name': Agent.a,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
-        'serverTimestamp': '2006-10-07T12:07:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': 'Then, who are the werewolves?',
         'type': 'item'
       },
       'chat1': {
+        'agentId': '9',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'date': 1,
         'id': 2,
         'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
-        'name': {
-          'en': 'Ileanna',
-          'ja': 'イレアナ'
-        },
+        'name': Agent.i,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
-        'serverTimestamp': '2006-10-07T12:08:56.568+09:00',
+        'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': '>>1 I guess Pamela is a werewolf.',
         'type': 'item'
       }
@@ -125,8 +125,14 @@ const state: ReducerState = {
     visible: false
   },
   prediction: {
-    playerStatus: [],
-    roleStatus: [],
+    playerStatus: {
+      allIds: [],
+      byId: {}
+    },
+    roleStatus: {
+      allIds: [],
+      byId: {}
+    },
     spec: {
       role: village.RoleId.villager,
       visible: false
