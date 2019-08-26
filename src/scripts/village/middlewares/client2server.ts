@@ -1,6 +1,6 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import {getAgent, getChannelFromInputChennel, just, strToRoleId} from '../util'
+import {getChannelFromInputChennel, just, strToRoleId} from '../util'
 import {Middleware} from '.'
 import {socket} from '../actions'
 
@@ -164,7 +164,7 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.global.SELECT_YES: {
       const state = store.getState()
-      const votedAgent = getAgent(state.commandSelection.agents, action.agentId)
+      const votedAgent = state.commandSelection.byId[action.agentId]
       const myRole = just(state.mine.role)
       const myAgent = just(state.mine.agent)
       const payload: village.Payload$voteMessage = {
@@ -176,7 +176,7 @@ const client2server: Middleware = store => next => action => {
         'agent': {
           '@context': village.Context.Agent,
           '@id': votedAgent['@id'],
-          'id': votedAgent.id,
+          'id': Number(votedAgent.id),
           'image': votedAgent.image,
           'name': votedAgent.name
         },
