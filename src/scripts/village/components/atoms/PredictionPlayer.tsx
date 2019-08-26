@@ -4,9 +4,9 @@ import AgentIcon from './AgentIcon'
 interface Props {
   readonly image: string
   readonly initial: string
+  readonly isSilent: boolean
   readonly name: string
   readonly status: string
-  readonly isSilent: boolean
 }
 
 export default function PredictionPlayer(props: Props) {
