@@ -26,7 +26,6 @@ describe('<PredictionContainer />', () => {
           '@id': 'https://licos.online/state/0.2/village#3/agent#1',
           'id': '1',
           'image': ImagePath.Agent.a,
-          'isSilent': false,
           'name': Agent.a,
           'status': village.AgentStatus.alive
         },
@@ -34,7 +33,6 @@ describe('<PredictionContainer />', () => {
           '@id': 'https://licos.online/state/0.2/village#3/agent#2',
           'id': '2',
           'image': ImagePath.Agent.b,
-          'isSilent': false,
           'name': Agent.b,
           'status': village.AgentStatus.alive
         },
@@ -42,7 +40,6 @@ describe('<PredictionContainer />', () => {
           '@id': 'https://licos.online/state/0.2/village#3/agent#3',
           'id': '3',
           'image': ImagePath.Agent.c,
-          'isSilent': false,
           'name': Agent.c,
           'status': village.AgentStatus.alive
         },
@@ -50,7 +47,6 @@ describe('<PredictionContainer />', () => {
           '@id': 'https://licos.online/state/0.2/village#3/agent#4',
           'id': '4',
           'image': ImagePath.Agent.d,
-          'isSilent': false,
           'name': Agent.d,
           'status': village.AgentStatus.alive
         },
@@ -58,7 +54,6 @@ describe('<PredictionContainer />', () => {
           '@id': 'https://licos.online/state/0.2/village#3/agent#5',
           'id': '5',
           'image': ImagePath.Agent.e,
-          'isSilent': false,
           'name': Agent.e,
           'status': village.AgentStatus.alive
         }
