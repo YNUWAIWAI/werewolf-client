@@ -73,6 +73,7 @@ declare namespace village {
   }
   type AgentId = string
   type ChatId = string
+  type Payload$AgentId = number
   type Token = string
   const enum AgentStatus {
     alive = 'alive',
@@ -155,7 +156,7 @@ declare namespace village {
     '@id': string
     fullName?: LanguageMap
     gender?: Gender
-    id: number
+    id: Payload$AgentId
     image: string
     isAChoice?: boolean
     isMine?: boolean
