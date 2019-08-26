@@ -867,6 +867,7 @@ describe('STAR', () => {
       allIds: ['chat0'],
       byId: {
         chat0: {
+          agentId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           date: 1,
           id: 12,
