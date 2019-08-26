@@ -270,7 +270,6 @@ describe('socket/MESSAGE', () => {
         '5',
         '6',
         '7',
-        '8',
         '9',
         '10',
         '11',
@@ -315,12 +314,6 @@ describe('socket/MESSAGE', () => {
           'id': '7',
           'image': ImagePath.Agent.g,
           'name': Agent.g
-        },
-        '8': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
-          'id': '8',
-          'image': ImagePath.Agent.h,
-          'name': Agent.h
         },
         '9': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#9',
