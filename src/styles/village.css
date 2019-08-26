@@ -1493,10 +1493,19 @@
       width: 1.5rem;
       z-index: var(--result--close--z-index);
 
-      & > svg {
+      & > .close {
         height: 100%;
         width: 100%;
+
+        & > .close--circle {
+          fill: white;
+        }
+
+        & > .close--path {
+          fill: black;
+        }
       }
+
 
       &:hover {
         filter: opacity(100%);
