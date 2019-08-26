@@ -1,6 +1,6 @@
 /* global village */
 import {Agent} from '../../constants/Agent'
-import ImagePath from '../../constants/ImagePath'
+import {ImagePath} from '../../constants/ImagePath'
 
 const json: village.Payload$playerMessage = {
   '@context': [

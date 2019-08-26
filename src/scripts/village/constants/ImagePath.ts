@@ -59,7 +59,7 @@ const Agent120x120 = {
   y: 'https://werewolf.world/image/0.3/agent_icons/120x120/y_120x120.png'
 }
 
-export default {
+export const ImagePath = {
   Agent,
   Agent120x120,
   Role

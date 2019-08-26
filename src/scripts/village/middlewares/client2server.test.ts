@@ -11,7 +11,7 @@ import {
 import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'
 import {Agent} from '../constants/Agent'
 import Ajv from 'ajv'
-import ImagePath from '../constants/ImagePath'
+import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
