@@ -206,12 +206,12 @@ export const selectNo = (): {type: ActionTypes.global.SELECT_NO} => ({
   type: ActionTypes.global.SELECT_NO
 })
 
-export const selectOption = (agentId: number): {agentId: number, type: ActionTypes.global.SELECT_OPTION} => ({
+export const selectOption = (agentId: village.AgentId): {agentId: village.AgentId, type: ActionTypes.global.SELECT_OPTION} => ({
   agentId,
   type: ActionTypes.global.SELECT_OPTION
 })
 
-export const selectYes = (agentId: number): {agentId: number, type: ActionTypes.global.SELECT_YES} => ({
+export const selectYes = (agentId: village.AgentId): {agentId: village.AgentId, type: ActionTypes.global.SELECT_YES} => ({
   agentId,
   type: ActionTypes.global.SELECT_YES
 })
