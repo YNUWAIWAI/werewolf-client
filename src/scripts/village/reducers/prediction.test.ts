@@ -8,7 +8,7 @@ import {
   flavorText
 } from './fakeServer'
 import reducer, {State, initialState} from './prediction'
-import Agent from '../constants/Agent'
+import {Agent} from '../constants/Agent'
 import ImagePath from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {socket} from '../actions'

@@ -1,7 +1,7 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import Agent from '../constants/Agent'
+import {Agent} from '../constants/Agent'
 import Chat from '../components/organisms/Chat'
 import ChatContainer from './ChatContainer'
 import ImagePath from '../constants/ImagePath'

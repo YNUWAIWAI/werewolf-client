@@ -9,7 +9,7 @@ import {
   socket
 } from '../actions'
 import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'
-import Agent from '../constants/Agent'
+import {Agent} from '../constants/Agent'
 import Ajv from 'ajv'
 import ImagePath from '../constants/ImagePath'
 import {Role} from '../constants/Role'

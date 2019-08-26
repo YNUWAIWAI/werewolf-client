@@ -1,6 +1,6 @@
 /* global village */
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
-import Agent from '../../../src/scripts/village/constants/Agent'
+import {Agent} from '../../../src/scripts/village/constants/Agent'
 import {Content} from '../../../src/scripts/village/reducers/command'
 import {ReducerState} from '../../../src/scripts/village/reducers'
 
