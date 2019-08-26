@@ -29,16 +29,20 @@ const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boo
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const agents = state.commandSelection.agents
-    .map(a => ({
-      id: a.id,
-      image: a.image,
-      initial: getInitial(a.name.en),
-      name: getText({
-        language: state.language,
-        languageMap: a.name
-      })
-    }))
+  const agents = state.commandSelection.allIds
+    .map(agentId => {
+      const agent = state.commandSelection.byId[agentId]
+
+      return {
+        id: agent.id,
+        image: agent.image,
+        initial: getInitial(agent.name.en),
+        name: getText({
+          language: state.language,
+          languageMap: agent.name
+        })
+      }
+    })
 
   if (!state.mine.role) {
     return {
