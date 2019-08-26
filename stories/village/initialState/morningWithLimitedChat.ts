@@ -50,7 +50,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat1': {
-        'agentId': '1',
+        'agentId': '9',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'date': 1,
         'id': 2,
