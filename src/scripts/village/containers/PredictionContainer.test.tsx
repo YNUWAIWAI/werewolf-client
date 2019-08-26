@@ -215,6 +215,52 @@ describe('<PredictionContainer />', () => {
     }
     const store = fakeStore(
       {
+        base: {
+          '@id': 'https://licos.online/state/0.2/village#3',
+          'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+          'date': 1,
+          'intensionalDisclosureRange': village.Channel.private,
+          'phase': village.Phase.morning,
+          'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+          'phaseTimeLimit': 600,
+          'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+          'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+          'village': {
+            '@context': village.Context.Village,
+            '@id': 'https://licos.online/state/0.2/village',
+            'chatSettings': {
+              characterLimit: 140,
+              limit: 10
+            },
+            'id': 3,
+            'lang': village.Language.ja,
+            'name': '横国の森の奥にある時代に取り残された小さな村',
+            'totalNumberOfAgents': 15
+          }
+        },
+        chat: {
+          allIds: [
+            'chat0'
+          ],
+          byId: {
+            chat0: {
+              agentId: '1',
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+              date: 1,
+              id: 12,
+              image: ImagePath.Agent120x120.a,
+              intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
+              isMine: true,
+              name: Agent.a,
+              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+              phaseTimeLimit: 600,
+              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+              type: 'item'
+            }
+          }
+        },
         language: village.Language.ja,
         prediction: {
           playerStatus,
