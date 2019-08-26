@@ -24,7 +24,7 @@ storiesOf('village|Modal', module)
             descriptionId="Modal.Description.dayVote"
             handleClickNo={action('handleClickNo')}
             handleClickYes={action('handleClickYes')}
-            id={1}
+            id="1"
             image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
             initial="A"
             name="Adil"
