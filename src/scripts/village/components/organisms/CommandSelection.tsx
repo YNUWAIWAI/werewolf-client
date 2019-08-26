@@ -6,7 +6,7 @@ import Description from '../molecules/Description'
 
 export interface StateProps {
   readonly agents: {
-    readonly id: number
+    readonly id: village.AgentId
     readonly image: string
     readonly initial: string
     readonly name: string
@@ -16,7 +16,7 @@ export interface StateProps {
   readonly phase: village.Phase
 }
 export interface DispatchProps {
-  readonly handleSelectOption: (agentId: number) => () => void
+  readonly handleSelectOption: (agentId: village.AgentId) => () => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
