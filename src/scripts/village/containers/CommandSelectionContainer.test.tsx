@@ -41,7 +41,8 @@ describe('<CommandSelectionContainer />', () => {
               }
             },
             commandSelection: {
-              agents: [],
+              allIds: [],
+              byId: {},
               fixed: true
             },
             language: village.Language.ja,
@@ -98,7 +99,8 @@ describe('<CommandSelectionContainer />', () => {
               }
             },
             commandSelection: {
-              agents: [],
+              allIds: [],
+              byId: {},
               fixed: false
             },
             language: village.Language.ja,
@@ -158,7 +160,8 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [],
+                byId: {},
                 fixed: true
               },
               language: village.Language.ja,
@@ -215,7 +218,8 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [],
+                byId: {},
                 fixed: false
               },
               language: village.Language.ja,
@@ -274,7 +278,8 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [],
+                byId: {},
                 fixed: true
               },
               language: village.Language.ja,
@@ -331,7 +336,8 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [],
+                byId: {},
                 fixed: false
               },
               language: village.Language.ja,
@@ -390,7 +396,8 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [],
+                byId: {},
                 fixed: true
               },
               language: village.Language.ja,
@@ -447,7 +454,8 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [],
+                byId: {},
                 fixed: false
               },
               language: village.Language.ja,
@@ -505,7 +513,8 @@ describe('<CommandSelectionContainer />', () => {
               }
             },
             commandSelection: {
-              agents: [],
+              allIds: [],
+              byId: {},
               fixed: true
             },
             language: village.Language.ja,
@@ -554,7 +563,7 @@ describe('<CommandSelectionContainer />', () => {
         </IntlProviderContainer>
       </Provider>
     )
-    const agentId = 4
+    const agentId = '4'
 
     wrapper.find(CommandSelection).props().handleSelectOption(agentId)()
     expect(dispatch).toHaveBeenCalledTimes(1)
