@@ -1,6 +1,8 @@
+/* global village */
 import {firstMorning, flavorText, myMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './suggest'
 import {Agent} from '../constants/Agent'
+import {Role} from '../constants/Role'
 import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {
@@ -74,67 +76,40 @@ describe('socket/MESSAGE', () => {
             name: Agent.o
           },
           {
-            id: 'hunter',
-            name: {
-              'en': 'Hunter',
-              'ja': 'ハンター'
-            }
+            id: village.RoleId.hunter,
+            name: Role.hunter
           },
           {
-            id: 'madman',
-            name: {
-              'en': 'Madman',
-              'ja': '狂人'
-            }
+            id: village.RoleId.madman,
+            name: Role.madman
           },
           {
-            id: 'mason',
-            name: {
-              'en': 'Mason',
-              'ja': '共有者'
-            }
+            id: village.RoleId.mason,
+            name: Role.mason
           },
           {
-            id: 'master',
-            name: {
-              'en': 'Master',
-              'ja': 'マスター'
-            }
+            id: village.RoleId.master,
+            name: Role.master
           },
           {
-            id: 'medium',
-            name: {
-              'en': 'Medium',
-              'ja': '霊媒師'
-            }
+            id: village.RoleId.medium,
+            name: Role.medium
           },
           {
-            id: 'seer',
-            name: {
-              'en': 'Seer',
-              'ja': '占い師'
-            }
+            id: village.RoleId.seer,
+            name: Role.seer
           },
           {
-            id: 'villager',
-            name: {
-              'en': 'Villager',
-              'ja': '村人'
-            }
+            id: village.RoleId.villager,
+            name: Role.villager
           },
           {
-            id: 'werehamster',
-            name: {
-              'en': 'Werehamster',
-              'ja': 'ハムスター人間'
-            }
+            id: village.RoleId.werehamster,
+            name: Role.werehamster
           },
           {
-            id: 'werewolf',
-            name: {
-              'en': 'Werewolf',
-              'ja': '人狼'
-            }
+            id: village.RoleId.werewolf,
+            name: Role.werewolf
           }
         ]
       }

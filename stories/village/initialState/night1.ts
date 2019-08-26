@@ -1122,172 +1122,100 @@ const state: ReducerState = {
   suggest: {
     data: [
       {
-        id: 'Adil',
-        name: {
-          'en': 'Adil',
-          'ja': 'アーディル'
-        }
+        id: Agent.a.en,
+        name: Agent.a
       },
       {
-        id: 'Borya',
-        name: {
-          'en': 'Borya',
-          'ja': 'ボーリャ'
-        }
+        id: Agent.b.en,
+        name: Agent.b
       },
       {
-        id: 'Chacha',
-        name: {
-          'en': 'Chacha',
-          'ja': 'チャチャ'
-        }
+        id: Agent.c.en,
+        name: Agent.c
       },
       {
-        id: 'Devdatta',
-        name: {
-          'en': 'Devdatta',
-          'ja': 'デヴゥダッタ'
-        }
+        id: Agent.d.en,
+        name: Agent.d
       },
       {
-        id: 'Ekrem',
-        name: {
-          'en': 'Ekrem',
-          'ja': 'エクレム'
-        }
+        id: Agent.e.en,
+        name: Agent.e
       },
       {
-        id: 'Fernando',
-        name: {
-          'en': 'Fernando',
-          'ja': 'フェルナンド'
-        }
+        id: Agent.f.en,
+        name: Agent.f
       },
       {
-        id: 'Gavriil',
-        name: {
-          'en': 'Gavriil',
-          'ja': 'ガブリール'
-        }
+        id: Agent.g.en,
+        name: Agent.g
       },
       {
-        id: 'Henrik',
-        name: {
-          'en': 'Henrik',
-          'ja': 'ヘンリック'
-        }
+        id: Agent.h.en,
+        name: Agent.h
       },
       {
-        id: 'Ileanna',
-        name: {
-          'en': 'Ileanna',
-          'ja': 'イレアナ'
-        }
+        id: Agent.i.en,
+        name: Agent.i
       },
       {
-        id: 'Jasmin',
-        name: {
-          'en': 'Jasmin',
-          'ja': 'ジャスミン'
-        }
+        id: Agent.j.en,
+        name: Agent.j
       },
       {
-        id: 'Kaiji',
-        name: {
-          'en': 'Kaiji',
-          'ja': '開司'
-        }
+        id: Agent.k.en,
+        name: Agent.k
       },
       {
-        id: 'Louise',
-        name: {
-          'en': 'Louise',
-          'ja': 'ルイーズ'
-        }
+        id: Agent.l.en,
+        name: Agent.l
       },
       {
-        id: 'Marthe',
-        name: {
-          'en': 'Marthe',
-          'ja': 'マーテ'
-        }
+        id: Agent.m.en,
+        name: Agent.m
       },
       {
-        id: 'Nanyamka',
-        name: {
-          'en': 'Nanyamka',
-          'ja': 'ナニャンカ'
-        }
+        id: Agent.n.en,
+        name: Agent.n
       },
       {
-        id: 'Oliwia',
-        name: {
-          'en': 'Oliwia',
-          'ja': 'オリビア'
-        }
+        id: Agent.o.en,
+        name: Agent.o
       },
       {
-        id: 'hunter',
-        name: {
-          'en': 'Hunter',
-          'ja': '狩人'
-        }
+        id: village.RoleId.hunter,
+        name: Role.hunter
       },
       {
-        id: 'madman',
-        name: {
-          'en': 'Madman',
-          'ja': '狂人'
-        }
+        id: village.RoleId.madman,
+        name: Role.madman
       },
       {
-        id: 'mason',
-        name: {
-          'en': 'Mason',
-          'ja': '共有者'
-        }
+        id: village.RoleId.mason,
+        name: Role.mason
       },
       {
-        id: 'master',
-        name: {
-          'en': 'Master',
-          'ja': 'マスター'
-        }
+        id: village.RoleId.master,
+        name: Role.master
       },
       {
-        id: 'medium',
-        name: {
-          'en': 'Medium',
-          'ja': '霊媒師'
-        }
+        id: village.RoleId.medium,
+        name: Role.medium
       },
       {
-        id: 'seer',
-        name: {
-          'en': 'Seer',
-          'ja': '占い師'
-        }
+        id: village.RoleId.seer,
+        name: Role.seer
       },
       {
-        id: 'villager',
-        name: {
-          'en': 'Villager',
-          'ja': '村人'
-        }
+        id: village.RoleId.villager,
+        name: Role.villager
       },
       {
-        id: 'werehamster',
-        name: {
-          'en': 'Werehamster',
-          'ja': 'ハムスター人間'
-        }
+        id: village.RoleId.werehamster,
+        name: Role.werehamster
       },
       {
-        id: 'werewolf',
-        name: {
-          'en': 'Werewolf',
-          'ja': '人狼'
-        }
+        id: village.RoleId.werewolf,
+        name: Role.werewolf
       }
     ]
   },
