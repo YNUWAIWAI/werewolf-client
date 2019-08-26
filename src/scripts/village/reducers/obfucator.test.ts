@@ -91,7 +91,7 @@ test('SELECT_NO', () => {
 })
 test('SELECT_YES', () => {
   const action: SelectYes = {
-    agentId: 1,
+    agentId: '1',
     type: ActionTypes.global.SELECT_YES
   }
 
@@ -107,7 +107,7 @@ test('SELECT_YES', () => {
 })
 test('SELECT_OPTION', () => {
   const action: SelectOption = {
-    agentId: 1,
+    agentId: '1',
     type: ActionTypes.global.SELECT_OPTION
   }
 
