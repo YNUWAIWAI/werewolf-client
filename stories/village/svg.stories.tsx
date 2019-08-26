@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Audience from '../../src/scripts/village/components/atoms/svg/Audience'
 import Circle from '../../src/scripts/village/components/atoms/svg/Circle'
+import Close from '../../src/scripts/village/components/atoms/svg/Close'
 import Cross from '../../src/scripts/village/components/atoms/svg/Cross'
 import DownArrow from '../../src/scripts/village/components/atoms/svg/DownArrow'
 import Grave from '../../src/scripts/village/components/atoms/svg/Grave'
@@ -33,6 +34,16 @@ storiesOf('village|svg', module)
   })
   .add('Audience', () => <Audience />)
   .add('Circle', () => <Circle />)
+  .add('Close', () => (
+    <div
+      className="vi--result--close"
+      style={{
+        background: 'green'
+      }}
+    >
+      <Close />
+    </div>
+  ))
   .add('Cross', () => <Cross />)
   .add('DownArrow', () => <DownArrow />)
   .add('Grave', () => <Grave />)
