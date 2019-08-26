@@ -31,7 +31,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 8567,
+      failureThreshold: 8609,
       failureThresholdType: 'pixel'
     })
   })

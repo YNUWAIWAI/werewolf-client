@@ -1,7 +1,11 @@
 /* global village */
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
+import Agent from '../../../src/scripts/village/constants/Agent'
 import {Content} from '../../../src/scripts/village/reducers/command'
+import ImagePath from '../../../src/scripts/village/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/village/reducers'
+import {Role} from '../../../src/scripts/village/constants/Role'
+
 const state: ReducerState = {
   base: {
     '@id': 'https://licos.online/state/0.2/village#3',
@@ -30,16 +34,15 @@ const state: ReducerState = {
     allIds: ['delimeter0', 'chat0', 'chat1', 'delimeter1'],
     byId: {
       'chat0': {
+        'agentId': '1',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'date': 1,
         'id': 1,
         'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
-        'name': {
-          'en': 'Adil',
-          'ja': 'アーディル'
-        },
+        'name': Agent.a,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -47,16 +50,15 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat1': {
+        'agentId': '9',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+        'date': 1,
         'id': 2,
         'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
-        'name': {
-          'en': 'Ileanna',
-          'ja': 'イレアナ'
-        },
+        'name': Agent.i,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -152,240 +154,202 @@ const state: ReducerState = {
     visible: true
   },
   prediction: {
-    playerStatus: [
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-        'id': 1,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
-        'name': {
-          'en': 'Adil',
-          'ja': 'アーディル'
+    playerStatus: {
+      allIds: [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14',
+        '15'
+      ],
+      byId: {
+        '1': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': '1',
+          'image': ImagePath.Agent.a,
+          'name': Agent.a,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-        'id': 2,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
-        'name': {
-          'en': 'Borya',
-          'ja': 'ボーリャ'
+        '2': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          'id': '2',
+          'image': ImagePath.Agent.b,
+          'name': Agent.b,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-        'id': 3,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
-        'name': {
-          'en': 'Chacha',
-          'ja': 'チャチャ'
+        '3': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          'id': '3',
+          'image': ImagePath.Agent.c,
+          'name': Agent.c,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-        'id': 4,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
-        'name': {
-          'en': 'Devdatta',
-          'ja': 'デヴゥダッタ'
+        '4': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          'id': '4',
+          'image': ImagePath.Agent.d,
+          'name': Agent.d,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#5',
-        'id': 5,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
-        'name': {
-          'en': 'Ekrem',
-          'ja': 'エクレム'
+        '5': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          'id': '5',
+          'image': ImagePath.Agent.e,
+          'name': Agent.e,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#6',
-        'id': 6,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
-        'name': {
-          'en': 'Fernando',
-          'ja': 'フェルナンド'
+        '6': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+          'id': '6',
+          'image': ImagePath.Agent.f,
+          'name': Agent.f,
+          'status': village.AgentStatus.deathByFear
         },
-        'status': village.AgentStatus.deathByFear
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#7',
-        'id': 7,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
-        'name': {
-          'en': 'Gavriil',
-          'ja': 'ガブリール'
+        '7': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+          'id': '7',
+          'image': ImagePath.Agent.g,
+          'name': Agent.g,
+          'status': village.AgentStatus.unnaturalDeath
         },
-        'status': village.AgentStatus.unnaturalDeath
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#8',
-        'id': 8,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
-        'name': {
-          'en': 'Henrik',
-          'ja': 'ヘンリック'
+        '8': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+          'id': '8',
+          'image': ImagePath.Agent.h,
+          'name': Agent.h,
+          'status': village.AgentStatus.unnaturalDeath
         },
-        'status': village.AgentStatus.unnaturalDeath
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#9',
-        'id': 9,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
-        'name': {
-          'en': 'Ileanna',
-          'ja': 'イレアナ'
+        '9': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+          'id': '9',
+          'image': ImagePath.Agent.i,
+          'name': Agent.i,
+          'status': village.AgentStatus.unnaturalDeath
         },
-        'status': village.AgentStatus.unnaturalDeath
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#10',
-        'id': 10,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
-        'name': {
-          'en': 'Jasmin',
-          'ja': 'ジャスミン'
+        '10': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+          'id': '10',
+          'image': ImagePath.Agent.j,
+          'name': Agent.j,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#11',
-        'id': 11,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
-        'name': {
-          'en': 'Kaiji',
-          'ja': '開司'
+        '11': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+          'id': '11',
+          'image': ImagePath.Agent.k,
+          'name': Agent.k,
+          'status': village.AgentStatus.unnaturalDeath
         },
-        'status': village.AgentStatus.unnaturalDeath
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#12',
-        'id': 12,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
-        'name': {
-          'en': 'Louise',
-          'ja': 'ルイーズ'
+        '12': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+          'id': '12',
+          'image': ImagePath.Agent.l,
+          'name': Agent.l,
+          'status': village.AgentStatus.deathByAttack
         },
-        'status': village.AgentStatus.deathByAttack
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#13',
-        'id': 13,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
-        'name': {
-          'en': 'Marthe',
-          'ja': 'マーテ'
+        '13': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+          'id': '13',
+          'image': ImagePath.Agent.m,
+          'name': Agent.m,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#14',
-        'id': 14,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
-        'name': {
-          'en': 'Nanyamka',
-          'ja': 'ナニャンカ'
+        '14': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+          'id': '14',
+          'image': ImagePath.Agent.n,
+          'name': Agent.n,
+          'status': village.AgentStatus.alive
         },
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#15',
-        'id': 15,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
-        'name': {
-          'en': 'Oliwia',
-          'ja': 'オリビア'
-        },
-        'status': village.AgentStatus.alive
+        '15': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+          'id': '15',
+          'image': ImagePath.Agent.o,
+          'name': Agent.o,
+          'status': village.AgentStatus.alive
+        }
       }
-    ],
-    roleStatus: [
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-        'id': village.RoleId.villager,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        'name': {
-          'en': 'Villager',
-          'ja': '村人'
+    },
+    roleStatus: {
+      allIds: [
+        village.RoleId.villager,
+        village.RoleId.seer,
+        village.RoleId.medium,
+        village.RoleId.hunter,
+        village.RoleId.mason,
+        village.RoleId.madman,
+        village.RoleId.werewolf,
+        village.RoleId.werehamster
+      ],
+      byId: {
+        [village.RoleId.villager]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+          'id': village.RoleId.villager,
+          'image': ImagePath.Role.villager,
+          'name': Role.villager,
+          'numberOfAgents': 6
         },
-        'numberOfAgents': 6
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
-        'name': {
-          'en': 'Seer',
-          'ja': '占い師'
+        [village.RoleId.seer]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+          'id': village.RoleId.seer,
+          'image': ImagePath.Role.seer,
+          'name': Role.seer,
+          'numberOfAgents': 1
         },
-        'numberOfAgents': 1
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#medium',
-        'id': village.RoleId.medium,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
-        'name': {
-          'en': 'Medium',
-          'ja': '霊媒師'
+        [village.RoleId.medium]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+          'id': village.RoleId.medium,
+          'image': ImagePath.Role.medium,
+          'name': Role.medium,
+          'numberOfAgents': 1
         },
-        'numberOfAgents': 1
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
-        'id': village.RoleId.hunter,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
-        'name': {
-          'en': 'Hunter',
-          'ja': '狩人'
+        [village.RoleId.hunter]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+          'id': village.RoleId.hunter,
+          'image': ImagePath.Role.hunter,
+          'name': Role.hunter,
+          'numberOfAgents': 1
         },
-        'numberOfAgents': 1
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#mason',
-        'id': village.RoleId.mason,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
-        'name': {
-          'en': 'Mason',
-          'ja': '共有者'
+        [village.RoleId.mason]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+          'id': village.RoleId.mason,
+          'image': ImagePath.Role.mason,
+          'name': Role.mason,
+          'numberOfAgents': 2
         },
-        'numberOfAgents': 2
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#madman',
-        'id': village.RoleId.madman,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
-        'name': {
-          'en': 'Madman',
-          'ja': '狂人'
+        [village.RoleId.madman]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+          'id': village.RoleId.madman,
+          'image': ImagePath.Role.madman,
+          'name': Role.madman,
+          'numberOfAgents': 1
         },
-        'numberOfAgents': 1
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
-        'id': village.RoleId.werewolf,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
-        'name': {
-          'en': 'Werewolf',
-          'ja': '人狼'
+        [village.RoleId.werewolf]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+          'id': village.RoleId.werewolf,
+          'image': ImagePath.Role.werewolf,
+          'name': Role.werewolf,
+          'numberOfAgents': 2
         },
-        'numberOfAgents': 2
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
-        'id': village.RoleId.werehamster,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
-        'name': {
-          'en': 'Werehamster',
-          'ja': 'ハムスター人間'
-        },
-        'numberOfAgents': 1
+        [village.RoleId.werehamster]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+          'id': village.RoleId.werehamster,
+          'image': ImagePath.Role.werehamster,
+          'name': Role.werehamster,
+          'numberOfAgents': 1
+        }
       }
-    ],
+    },
     spec: {
       role: village.RoleId.villager,
       visible: false
@@ -1026,7 +990,7 @@ const state: ReducerState = {
   result: {
     agents: {
       agent1: {
-        agentId: 1,
+        agentId: '1',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
         agentName: {
           'en': 'Adil',
@@ -1043,7 +1007,7 @@ const state: ReducerState = {
         status: village.AgentStatus.alive
       },
       agent2: {
-        agentId: 2,
+        agentId: '2',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
         agentName: {
           'en': 'Borya',
@@ -1060,7 +1024,7 @@ const state: ReducerState = {
         status: village.AgentStatus.alive
       },
       agent3: {
-        agentId: 3,
+        agentId: '3',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
         agentName: {
           'en': 'Chacha',
@@ -1077,7 +1041,7 @@ const state: ReducerState = {
         status: village.AgentStatus.alive
       },
       agent4: {
-        agentId: 4,
+        agentId: '4',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
         agentName: {
           'en': 'Devdatta',
@@ -1094,7 +1058,7 @@ const state: ReducerState = {
         status: village.AgentStatus.alive
       },
       agent5: {
-        agentId: 5,
+        agentId: '5',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
         agentName: {
           'en': 'Ekrem',
@@ -1111,7 +1075,7 @@ const state: ReducerState = {
         status: village.AgentStatus.deathByFear
       },
       agent6: {
-        agentId: 6,
+        agentId: '6',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
         agentName: {
           'en': 'Fernando',
@@ -1128,7 +1092,7 @@ const state: ReducerState = {
         status: village.AgentStatus.deathByExecution
       },
       agent7: {
-        agentId: 7,
+        agentId: '7',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
         agentName: {
           'en': 'Gavriil',
@@ -1145,7 +1109,7 @@ const state: ReducerState = {
         status: village.AgentStatus.unnaturalDeath
       },
       agent8: {
-        agentId: 8,
+        agentId: '8',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
         agentName: {
           'en': 'Henrik',
@@ -1162,7 +1126,7 @@ const state: ReducerState = {
         status: village.AgentStatus.unnaturalDeath
       },
       agent9: {
-        agentId: 9,
+        agentId: '9',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
         agentName: {
           'en': 'Ileanna',
@@ -1179,7 +1143,7 @@ const state: ReducerState = {
         status: village.AgentStatus.unnaturalDeath
       },
       agent10: {
-        agentId: 10,
+        agentId: '10',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
         agentName: {
           'en': 'Jasmin',
@@ -1196,7 +1160,7 @@ const state: ReducerState = {
         status: village.AgentStatus.unnaturalDeath
       },
       agent11: {
-        agentId: 11,
+        agentId: '11',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
         agentName: {
           'en': 'Kaiji',
@@ -1213,7 +1177,7 @@ const state: ReducerState = {
         status: village.AgentStatus.unnaturalDeath
       },
       agent12: {
-        agentId: 12,
+        agentId: '12',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
         agentName: {
           'en': 'Louise',
@@ -1230,7 +1194,7 @@ const state: ReducerState = {
         status: village.AgentStatus.deathByAttack
       },
       agent13: {
-        agentId: 13,
+        agentId: '13',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
         agentName: {
           'en': 'Marthe',
@@ -1247,7 +1211,7 @@ const state: ReducerState = {
         status: village.AgentStatus.alive
       },
       agent14: {
-        agentId: 14,
+        agentId: '14',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
         agentName: {
           'en': 'Nanyamka',
@@ -1264,7 +1228,7 @@ const state: ReducerState = {
         status: village.AgentStatus.alive
       },
       agent15: {
-        agentId: 15,
+        agentId: '15',
         agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
         agentName: {
           'en': 'Oliwia',

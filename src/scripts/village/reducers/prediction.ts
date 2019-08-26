@@ -15,19 +15,29 @@ import {ORDERED_ROLE_LIST} from '../constants/Role'
 
 export interface State {
   readonly playerStatus: {
-    readonly '@id': string
-    readonly id: number
-    readonly image: string
-    readonly name: village.LanguageMap
-    readonly status: village.AgentStatus
-  }[]
+    readonly allIds: village.AgentId[]
+    readonly byId: {
+      [id in village.AgentId]: {
+        readonly '@id': string
+        readonly id: village.AgentId
+        readonly image: string
+        readonly name: village.LanguageMap
+        readonly status: village.AgentStatus
+      }
+    }
+  }
   readonly roleStatus: {
-    readonly '@id': string
-    readonly id: village.RoleId
-    readonly image: string
-    readonly name: village.LanguageMap
-    readonly numberOfAgents: number
-  }[]
+    readonly allIds: village.RoleId[]
+    readonly byId: Partial<{
+      [id in village.RoleId]: {
+        readonly '@id': string
+        readonly id: village.RoleId
+        readonly image: string
+        readonly name: village.LanguageMap
+        readonly numberOfAgents: number
+      }
+    }>
+  }
   readonly spec: {
     readonly role: village.RoleId
     readonly visible: boolean
@@ -138,9 +148,62 @@ const initPredictionTable = (agents: Agents, roles: Roles): Table => {
   return updatePredictionTable(roles, table)
 }
 
+const getRoleStatus = (roles: Roles): RoleStatus => {
+  const allIds: RoleStatus['allIds'] = []
+  const byId: RoleStatus['byId'] = {}
+
+  roles
+    .filter(role => role.numberOfAgents > 0)
+    .forEach(role => {
+      const id = strToRoleId(role.name.en)
+
+      allIds.push(id)
+      byId[id] = {
+        '@id': role['@id'],
+        id,
+        'image': role.image,
+        'name': role.name,
+        'numberOfAgents': role.numberOfAgents
+      }
+    })
+
+  return {
+    allIds,
+    byId
+  }
+}
+
+const getPlayerStatus = (agents: Agents): PlayerStatus => {
+  const allIds: PlayerStatus['allIds'] = []
+  const byId: PlayerStatus['byId'] = {}
+
+  agents
+    .forEach(agent => {
+      allIds.push(String(agent.id))
+      byId[agent.id] = {
+        '@id': agent['@id'],
+        'id': String(agent.id),
+        'image': agent.image,
+        'name': agent.name,
+        'status': strToAgentStatus(agent.status)
+      }
+    })
+
+  return {
+    allIds,
+    byId
+  }
+}
+
 export const initialState = {
-  playerStatus: [],
-  roleStatus: [],
+  playerStatus: {
+    allIds: [],
+    byId: {}
+  },
+  roleStatus: {
+    allIds: [],
+    byId: {}
+  },
   spec: {
     role: village.RoleId.villager,
     visible: false
@@ -151,54 +214,37 @@ export const initialState = {
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE:
-      if (action.payload['@payload'] === village.Message.systemMessage) {
-        const payload = action.payload
+      switch (action.payload['@payload']) {
+        case village.Message.systemMessage: {
+          const payload = action.payload
 
-        if (payload.date === 0) {
-          return state
-        }
-        if (!payload.agent || !payload.role) {
-          return state
-        }
-        const agents = payload.agent
-        const roles = getPlayableRoles(payload.role)
-          .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
-        const table = (() => {
-          if (payload.date === 1 && payload.phase === village.Phase.morning) {
-            return initPredictionTable(agents, roles)
+          if (payload.date === 0) {
+            return state
           }
+          if (!payload.agent || !payload.role) {
+            return state
+          }
+          const agents = payload.agent
+          const roles = getPlayableRoles(payload.role)
+            .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
+          const table = (() => {
+            if (payload.date === 1 && payload.phase === village.Phase.morning) {
+              return initPredictionTable(agents, roles)
+            }
 
-          return updatePredictionTable(roles, state.table)
-        })()
-        const roleStatus: RoleStatus =
-          roles
-            .filter(role => role.numberOfAgents > 0)
-            .map(role => ({
-              '@id': role['@id'],
-              'id': strToRoleId(role.name.en),
-              'image': role.image,
-              'name': role.name,
-              'numberOfAgents': role.numberOfAgents
-            }))
-        const playerStatus: PlayerStatus =
-          agents
-            .map(agent => ({
-              '@id': agent['@id'],
-              'id': agent.id,
-              'image': agent.image,
-              'name': agent.name,
-              'status': strToAgentStatus(agent.status)
-            }))
+            return updatePredictionTable(roles, state.table)
+          })()
 
-        return {
-          ... state,
-          playerStatus,
-          roleStatus,
-          table
+          return {
+            ... state,
+            playerStatus: getPlayerStatus(agents),
+            roleStatus: getRoleStatus(roles),
+            table
+          }
         }
+        default:
+          return state
       }
-
-      return state
     case ActionTypes.global.CHANGE_PREDICTION_BOARD: {
       const agentId = String(action.playerId)
 

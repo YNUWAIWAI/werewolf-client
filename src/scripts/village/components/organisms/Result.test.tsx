@@ -5,7 +5,7 @@ import {shallow} from 'enzyme'
 
 const agents: Props['agents'] = {
   agent1: {
-    agentId: 1,
+    agentId: '1',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
     agentInitial: 'A',
     agentName: 'Adil',
@@ -17,7 +17,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.alive
   },
   agent2: {
-    agentId: 2,
+    agentId: '2',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
     agentInitial: 'B',
     agentName: 'Borya',
@@ -29,7 +29,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.alive
   },
   agent3: {
-    agentId: 3,
+    agentId: '3',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
     agentInitial: 'C',
     agentName: 'Chacha',
@@ -41,7 +41,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.alive
   },
   agent4: {
-    agentId: 4,
+    agentId: '4',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
     agentInitial: 'D',
     agentName: 'Devdatta',
@@ -53,7 +53,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.alive
   },
   agent5: {
-    agentId: 5,
+    agentId: '5',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
     agentInitial: 'E',
     agentName: 'Ekrem',
@@ -65,7 +65,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.deathByFear
   },
   agent6: {
-    agentId: 6,
+    agentId: '6',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
     agentInitial: 'F',
     agentName: 'Fernando',
@@ -77,7 +77,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.deathByExecution
   },
   agent7: {
-    agentId: 7,
+    agentId: '7',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
     agentInitial: 'G',
     agentName: 'Gavriil',
@@ -89,7 +89,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.unnaturalDeath
   },
   agent8: {
-    agentId: 8,
+    agentId: '8',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
     agentInitial: 'H',
     agentName: 'Henrik',
@@ -101,7 +101,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.unnaturalDeath
   },
   agent9: {
-    agentId: 9,
+    agentId: '9',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
     agentInitial: 'I',
     agentName: 'Ileanna',
@@ -113,7 +113,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.unnaturalDeath
   },
   agent10: {
-    agentId: 10,
+    agentId: '10',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
     agentInitial: 'J',
     agentName: 'Jasmin',
@@ -125,7 +125,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.unnaturalDeath
   },
   agent11: {
-    agentId: 11,
+    agentId: '11',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
     agentInitial: 'K',
     agentName: 'Kaiji',
@@ -137,7 +137,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.unnaturalDeath
   },
   agent12: {
-    agentId: 12,
+    agentId: '12',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
     agentInitial: 'L',
     agentName: 'Louise',
@@ -149,7 +149,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.deathByAttack
   },
   agent13: {
-    agentId: 13,
+    agentId: '13',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
     agentInitial: 'M',
     agentName: 'Marthe',
@@ -161,7 +161,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.alive
   },
   agent14: {
-    agentId: 14,
+    agentId: '14',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
     agentInitial: 'N',
     agentName: 'Nanyamka',
@@ -173,7 +173,7 @@ const agents: Props['agents'] = {
     status: village.AgentStatus.alive
   },
   agent15: {
-    agentId: 15,
+    agentId: '15',
     agentImage: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
     agentInitial: 'O',
     agentName: 'Oliwia',

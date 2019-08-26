@@ -13,73 +13,90 @@ import {mount} from 'enzyme'
 
 describe('<PredictionContainer />', () => {
   test('render', () => {
-    const playerStatus = [
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
-        'id': 1,
-        'image': ImagePath.Agent.a,
-        'name': Agent.a,
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-        'id': 2,
-        'image': ImagePath.Agent.b,
-        'name': Agent.b,
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-        'id': 3,
-        'image': ImagePath.Agent.c,
-        'name': Agent.c,
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-        'id': 4,
-        'image': ImagePath.Agent.d,
-        'name': Agent.d,
-        'status': village.AgentStatus.alive
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#5',
-        'id': 5,
-        'image': ImagePath.Agent.e,
-        'name': Agent.e,
-        'status': village.AgentStatus.alive
+    const playerStatus = {
+      allIds: [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5'
+      ],
+      byId: {
+        '1': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          'id': '1',
+          'image': ImagePath.Agent.a,
+          'name': Agent.a,
+          'status': village.AgentStatus.alive
+        },
+        '2': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          'id': '2',
+          'image': ImagePath.Agent.b,
+          'name': Agent.b,
+          'status': village.AgentStatus.alive
+        },
+        '3': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          'id': '3',
+          'image': ImagePath.Agent.c,
+          'name': Agent.c,
+          'status': village.AgentStatus.alive
+        },
+        '4': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          'id': '4',
+          'image': ImagePath.Agent.d,
+          'name': Agent.d,
+          'status': village.AgentStatus.alive
+        },
+        '5': {
+          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          'id': '5',
+          'image': ImagePath.Agent.e,
+          'name': Agent.e,
+          'status': village.AgentStatus.alive
+        }
       }
-    ]
-    const roleStatus = [
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#villager',
-        'id': village.RoleId.villager,
-        'image': ImagePath.Role.villager,
-        'name': Role.villager,
-        'numberOfAgents': 2
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
-        'id': village.RoleId.seer,
-        'image': ImagePath.Role.seer,
-        'name': Role.seer,
-        'numberOfAgents': 1
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#madman',
-        'id': village.RoleId.madman,
-        'image': ImagePath.Role.madman,
-        'name': Role.madman,
-        'numberOfAgents': 1
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
-        'id': village.RoleId.werewolf,
-        'image': ImagePath.Role.werewolf,
-        'name': Role.werewolf,
-        'numberOfAgents': 1
+    }
+    const roleStatus = {
+      allIds: [
+        village.RoleId.villager,
+        village.RoleId.seer,
+        village.RoleId.madman,
+        village.RoleId.werewolf
+      ],
+      byId: {
+        [village.RoleId.villager]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+          'id': village.RoleId.villager,
+          'image': ImagePath.Role.villager,
+          'name': Role.villager,
+          'numberOfAgents': 2
+        },
+        [village.RoleId.seer]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+          'id': village.RoleId.seer,
+          'image': ImagePath.Role.seer,
+          'name': Role.seer,
+          'numberOfAgents': 1
+        },
+        [village.RoleId.madman]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+          'id': village.RoleId.madman,
+          'image': ImagePath.Role.madman,
+          'name': Role.madman,
+          'numberOfAgents': 1
+        },
+        [village.RoleId.werewolf]: {
+          '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+          'id': village.RoleId.werewolf,
+          'image': ImagePath.Role.werewolf,
+          'name': Role.werewolf,
+          'numberOfAgents': 1
+        }
       }
-    ]
+    }
     const spec = {
       role: village.RoleId.villager,
       visible: false
@@ -198,6 +215,52 @@ describe('<PredictionContainer />', () => {
     }
     const store = fakeStore(
       {
+        base: {
+          '@id': 'https://licos.online/state/0.2/village#3',
+          'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
+          'date': 1,
+          'intensionalDisclosureRange': village.Channel.private,
+          'phase': village.Phase.morning,
+          'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
+          'phaseTimeLimit': 600,
+          'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
+          'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+          'village': {
+            '@context': village.Context.Village,
+            '@id': 'https://licos.online/state/0.2/village',
+            'chatSettings': {
+              characterLimit: 140,
+              limit: 10
+            },
+            'id': 3,
+            'lang': village.Language.ja,
+            'name': '横国の森の奥にある時代に取り残された小さな村',
+            'totalNumberOfAgents': 15
+          }
+        },
+        chat: {
+          allIds: [
+            'chat0'
+          ],
+          byId: {
+            chat0: {
+              agentId: '1',
+              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+              date: 1,
+              id: 12,
+              image: ImagePath.Agent120x120.a,
+              intensionalDisclosureRange: village.Channel.public,
+              isMarked: false,
+              isMine: true,
+              name: Agent.a,
+              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
+              phaseTimeLimit: 600,
+              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
+              type: 'item'
+            }
+          }
+        },
         language: village.Language.ja,
         prediction: {
           playerStatus,
@@ -234,7 +297,7 @@ describe('<PredictionContainer />', () => {
         </IntlProviderContainer>
       </Provider>
     )
-    const playerId = 4
+    const playerId = '4'
     const roleId = village.RoleId.villager
     const nextState = village.BoardState.CROSS
 

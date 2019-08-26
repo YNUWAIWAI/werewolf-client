@@ -18,7 +18,7 @@ export interface StateProps {
       readonly agentName: string
       readonly agentImage: string
       readonly agentInitial: string
-      readonly agentId: number
+      readonly agentId: village.AgentId
       readonly avatarImage: string
       readonly avatarName: string
       readonly result: village.Result

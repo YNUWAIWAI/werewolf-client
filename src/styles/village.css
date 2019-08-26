@@ -23,6 +23,7 @@
   --werewolf--color: rgb(147, 39, 143);
   --suggest-color: rgb(3, 169, 244);
   --dead-color: red;
+  --silent-color: rgba(255, 215, 0, 0.8);
   --background-color: white;
   --unmarked-star-color: rgb(158, 158, 158);
   --marked-star-color: rgb(255, 235, 59);
@@ -1157,6 +1158,10 @@
         animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
         background-color: red;
         color: white;
+      }
+
+      &.silent {
+        background-color: var(--silent-color);
       }
 
       &--image {

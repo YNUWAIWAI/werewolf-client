@@ -18,25 +18,48 @@ type Action =
   | ShowPredictionSpec
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  playerStatus: state.prediction.playerStatus.map(player => ({
-    id: player.id,
-    image: player.image,
-    initial: getInitial(player.name.en),
-    name: getText({
-      language: state.language,
-      languageMap: player.name
-    }),
-    status: player.status
-  })),
-  roleStatus: state.prediction.roleStatus.map(role => ({
-    id: role.id,
-    image: role.image,
-    name: getText({
-      language: state.language,
-      languageMap: role.name
-    }),
-    numberOfAgents: role.numberOfAgents
-  })),
+  playerStatus: state.prediction.playerStatus.allIds.map(agentId => {
+    const player = state.prediction.playerStatus.byId[agentId]
+    const isChatted = state.chat.allIds.some(chatId => {
+      const chatItem = state.chat.byId[chatId]
+
+      return (
+        chatItem.type === 'item' &&
+        chatItem.date === state.base.date &&
+        chatItem.agentId === agentId
+      )
+    })
+    const isSilent = !isChatted
+
+    return {
+      id: player.id,
+      image: player.image,
+      initial: getInitial(player.name.en),
+      isSilent,
+      name: getText({
+        language: state.language,
+        languageMap: player.name
+      }),
+      status: player.status
+    }
+  }),
+  roleStatus: state.prediction.roleStatus.allIds.map(roleId => {
+    const role = state.prediction.roleStatus.byId[roleId]
+
+    if (!role) {
+      throw Error(`${roleId} is undefined in prediction.roleStatus.byId`)
+    }
+
+    return {
+      id: role.id,
+      image: role.image,
+      name: getText({
+        language: state.language,
+        languageMap: role.name
+      }),
+      numberOfAgents: role.numberOfAgents
+    }
+  }),
   spec: state.prediction.spec,
   table: state.prediction.table
 })

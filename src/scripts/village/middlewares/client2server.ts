@@ -1,6 +1,6 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
-import {getAgent, getChannelFromInputChennel, getRole, just, strToRoleId} from '../util'
+import {getAgent, getChannelFromInputChennel, just, strToRoleId} from '../util'
 import {Middleware} from '.'
 import {socket} from '../actions'
 
@@ -11,8 +11,12 @@ const client2server: Middleware = store => next => action => {
       const state = store.getState()
       const myRole = just(state.mine.role)
       const myAgent = just(state.mine.agent)
-      const boardAgent = getAgent(state.prediction.playerStatus, action.playerId)
-      const boardRole = getRole(state.prediction.roleStatus, action.roleId)
+      const boardAgent = state.prediction.playerStatus.byId[action.playerId]
+      const boardRole = state.prediction.roleStatus.byId[action.roleId]
+
+      if (!boardRole) {
+        return next(action)
+      }
       const payload: village.Payload$boardMessage = {
         '@context': [
           village.BaseContext.Base,
@@ -22,7 +26,7 @@ const client2server: Middleware = store => next => action => {
         'agent': {
           '@context': village.Context.Agent,
           '@id': boardAgent['@id'],
-          'id': boardAgent.id,
+          'id': Number(boardAgent.id),
           'image': boardAgent.image,
           'name': boardAgent.name
         },

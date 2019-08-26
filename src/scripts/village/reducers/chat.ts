@@ -9,8 +9,10 @@ const getDelimeterId = idGenerater('delimeter')
 export interface State {
   readonly allIds: village.ChatId[]
   readonly byId: {
-    readonly [id: string /* village.ChatId */]: {
+    readonly [id in village.ChatId]: {
+      readonly agentId?: village.AgentId
       readonly clientTimestamp: string
+      readonly date: number
       readonly id: number
       readonly image: string
       readonly intensionalDisclosureRange: village.Channel
@@ -54,6 +56,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 ... state.byId,
                 [chatId]: {
                   clientTimestamp: payload.clientTimestamp,
+                  date: payload.date,
                   id,
                   image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
@@ -75,6 +78,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 ... state.byId,
                 [chatId]: {
                   clientTimestamp: payload.clientTimestamp,
+                  date: payload.date,
                   id,
                   image: just(payload.avatar).image,
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
@@ -96,7 +100,9 @@ const chat = (state: State = initialState, action: Action): State => {
             byId: {
               ... state.byId,
               [chatId]: {
+                agentId: String(just(payload.agent).id),
                 clientTimestamp: payload.clientTimestamp,
+                date: payload.date,
                 id,
                 image: just(payload.agent).image,
                 intensionalDisclosureRange: payload.intensionalDisclosureRange,
