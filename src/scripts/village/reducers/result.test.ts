@@ -1,8 +1,8 @@
 /* global village */
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './result'
-import Agent from '../constants/Agent'
-import ImagePath from '../constants/ImagePath'
+import {Agent} from '../constants/Agent'
+import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {socket} from '../actions'
 

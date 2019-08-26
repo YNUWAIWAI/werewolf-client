@@ -1,10 +1,10 @@
 /* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import Agent from '../constants/Agent'
+import {Agent} from '../constants/Agent'
 import CommandSelection from '../components/organisms/CommandSelection'
 import CommandSelectionContainer from './CommandSelectionContainer'
-import ImagePath from '../constants/ImagePath'
+import {ImagePath} from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../constants/Role'

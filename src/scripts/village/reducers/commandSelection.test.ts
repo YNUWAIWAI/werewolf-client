@@ -2,8 +2,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {day, night} from './fakeServer'
 import reducer, {initialState} from './commandSelection'
-import Agent from '../constants/Agent'
-import ImagePath from '../constants/ImagePath'
+import {Agent} from '../constants/Agent'
+import {ImagePath} from '../constants/ImagePath'
 import {socket} from '../actions'
 
 test('CHANGE_PHASE', () => {

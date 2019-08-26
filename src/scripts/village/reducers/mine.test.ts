@@ -1,6 +1,6 @@
 import reducer, {initialState} from './mine'
-import Agent from '../constants/Agent'
-import ImagePath from '../constants/ImagePath'
+import {Agent} from '../constants/Agent'
+import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {firstMorning} from './fakeServer'
 import {socket} from '../actions'

@@ -1,7 +1,7 @@
 /* global village */
 import * as React from 'react'
-import Agent from '../constants/Agent'
-import ImagePath from '../constants/ImagePath'
+import {Agent} from '../constants/Agent'
+import {ImagePath} from '../constants/ImagePath'
 import InfoAgentContainer from './InfoAgentContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'

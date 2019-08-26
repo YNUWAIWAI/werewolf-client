@@ -1,6 +1,6 @@
 import {firstMorning, flavorText, myMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './suggest'
-import Agent from '../constants/Agent'
+import {Agent} from '../constants/Agent'
 import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {
