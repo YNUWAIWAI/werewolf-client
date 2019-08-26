@@ -42,8 +42,9 @@
   --prediction--role--times--z-index: 1;
   --prediction--role--number--z-index: 1;
   --result--z-index: 7;
+  --result--close--z-index: 8;
   --obfucator--z-index: 6;
-  --modal--z-index: 8;
+  --modal--z-index: 9;
   --hide-button--z-index: 1;
 }
 
@@ -1490,6 +1491,7 @@
       position: fixed;
       top: 5vh;
       width: 1.5rem;
+      z-index: var(--result--close--z-index);
 
       & > svg {
         height: 100%;
