@@ -1,7 +1,9 @@
 /* global village */
 import * as React from 'react'
+import {Agent} from '../../constants/Agent'
 import CommandSelection from './CommandSelection'
 import Description from '../molecules/Description'
+import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
 
 describe('<CommandSelection />', () => {
@@ -24,94 +26,94 @@ describe('<CommandSelection />', () => {
   test('15 agents fixed={false}', () => {
     const agents = [
       {
-        id: 1,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        id: '1',
+        image: ImagePath.Agent.a,
         initial: 'A',
-        name: 'Adil'
+        name: Agent.a.en
       },
       {
-        id: 2,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        id: '2',
+        image: ImagePath.Agent.b,
         initial: 'B',
-        name: 'Borya'
+        name: Agent.b.en
       },
       {
-        id: 3,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        id: '3',
+        image: ImagePath.Agent.c,
         initial: 'C',
-        name: 'Chacha'
+        name: Agent.c.en
       },
       {
-        id: 4,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        id: '4',
+        image: ImagePath.Agent.d,
         initial: 'D',
-        name: 'Devdatta'
+        name: Agent.d.en
       },
       {
-        id: 5,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        id: '5',
+        image: ImagePath.Agent.e,
         initial: 'E',
-        name: 'Ekrem'
+        name: Agent.e.en
       },
       {
-        id: 6,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+        id: '6',
+        image: ImagePath.Agent.f,
         initial: 'F',
-        name: 'Fernando'
+        name: Agent.f.en
       },
       {
-        id: 7,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
+        id: '7',
+        image: ImagePath.Agent.g,
         initial: 'G',
-        name: 'Gavriil'
+        name: Agent.g.en
       },
       {
-        id: 8,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
+        id: '8',
+        image: ImagePath.Agent.h,
         initial: 'H',
-        name: 'Henrik'
+        name: Agent.h.en
       },
       {
-        id: 9,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
+        id: '9',
+        image: ImagePath.Agent.i,
         initial: 'I',
-        name: 'Ileanna'
+        name: Agent.i.en
       },
       {
-        id: 10,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
+        id: '10',
+        image: ImagePath.Agent.j,
         initial: 'J',
-        name: 'Jasmin'
+        name: Agent.j.en
       },
       {
-        id: 11,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
+        id: '11',
+        image: ImagePath.Agent.k,
         initial: 'K',
-        name: 'Kaiji'
+        name: Agent.k.en
       },
       {
-        id: 12,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
+        id: '12',
+        image: ImagePath.Agent.l,
         initial: 'L',
-        name: 'Louise'
+        name: Agent.l.en
       },
       {
-        id: 13,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
+        id: '13',
+        image: ImagePath.Agent.m,
         initial: 'M',
-        name: 'Marthe'
+        name: Agent.m.en
       },
       {
-        id: 14,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
+        id: '14',
+        image: ImagePath.Agent.n,
         initial: 'N',
-        name: 'Nanyamka'
+        name: Agent.n.en
       },
       {
-        id: 15,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
+        id: '15',
+        image: ImagePath.Agent.o,
         initial: 'O',
-        name: 'Oliwia'
+        name: Agent.o.en
       }
     ]
     const handleSelectOptionEventHandler = jest.fn()
@@ -132,10 +134,10 @@ describe('<CommandSelection />', () => {
   test('1 agents fixed', () => {
     const agents = [
       {
-        id: 1,
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        id: '1',
+        image: ImagePath.Agent.a,
         initial: 'A',
-        name: 'Adil'
+        name: Agent.a.en
       }
     ]
     const handleSelectOptionEventHandler = jest.fn()

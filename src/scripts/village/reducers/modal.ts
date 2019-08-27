@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {ChangePhase, SelectNo, SelectOption, SelectYes} from '../actions'
 
 export interface State {
-  readonly id: number
+  readonly id: village.AgentId
   readonly visible: boolean
 }
 type Action =
@@ -12,7 +12,7 @@ type Action =
   | SelectYes
 
 export const initialState: State = {
-  id: -1,
+  id: '',
   visible: false
 }
 const modal = (state: State = initialState, action: Action): State => {

@@ -19,7 +19,7 @@ describe('<Modal />', () => {
           descriptionId="Modal.Description.dayVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
-          id={1}
+          id="1"
           image="image"
           initial="A"
           name="Adil"
@@ -47,7 +47,7 @@ describe('<Modal />', () => {
           descriptionId="Modal.Description.dayVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
-          id={1}
+          id="1"
           image="image"
           initial="A"
           name="Adil"
@@ -67,7 +67,7 @@ describe('<Modal />', () => {
           descriptionId="Modal.Description.dayVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
-          id={1}
+          id="1"
           image="image"
           initial="A"
           name="Adil"
@@ -100,7 +100,7 @@ describe('<Modal />', () => {
           descriptionId="Modal.Description.dayVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
-          id={1}
+          id="1"
           image="image"
           initial="A"
           name="Adil"
@@ -117,7 +117,7 @@ describe('<Modal />', () => {
     wrapper.find('.vi--modal--button.yes').simulate('click')
     expect(handleClickNoMockFn).toHaveBeenCalledTimes(0)
     expect(handleClickYesMockFn).toHaveBeenCalledTimes(1)
-    expect(handleClickYesMockFn).toHaveBeenCalledWith(1)
+    expect(handleClickYesMockFn).toHaveBeenCalledWith('1')
     expect(wrapper.find('.vi--modal--button')).toHaveLength(2)
     expect(wrapper.find('.vi--modal--button.yes').exists()).toBe(true)
     expect(wrapper.find('.vi--modal--button.yes').text()).toBe('はい')

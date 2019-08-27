@@ -118,7 +118,8 @@ const state: ReducerState = {
     ]
   },
   commandSelection: {
-    agents: [],
+    allIds: [],
+    byId: {},
     fixed: false
   },
   hideButton: {
@@ -146,7 +147,7 @@ const state: ReducerState = {
     }
   },
   modal: {
-    id: -1,
+    id: '',
     visible: false
   },
   obfucator: {

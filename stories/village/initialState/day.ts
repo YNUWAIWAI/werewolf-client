@@ -158,134 +158,108 @@ const state: ReducerState = {
     ]
   },
   commandSelection: {
-    agents: [
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-        'id': 2,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
-        'name': {
-          'en': 'Borya',
-          'ja': 'ボーリャ'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-        'id': 3,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
-        'name': {
-          'en': 'Chacha',
-          'ja': 'チャチャ'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-        'id': 4,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
-        'name': {
-          'en': 'Devdatta',
-          'ja': 'デヴゥダッタ'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#5',
-        'id': 5,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
-        'name': {
-          'en': 'Ekrem',
-          'ja': 'エクレム'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#6',
-        'id': 6,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
-        'name': {
-          'en': 'Fernando',
-          'ja': 'フェルナンド'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#7',
-        'id': 7,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
-        'name': {
-          'en': 'Gavriil',
-          'ja': 'ガブリール'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#8',
-        'id': 8,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
-        'name': {
-          'en': 'Henrik',
-          'ja': 'ヘンリック'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#9',
-        'id': 9,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
-        'name': {
-          'en': 'Ileanna',
-          'ja': 'イレアナ'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#10',
-        'id': 10,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
-        'name': {
-          'en': 'Jasmin',
-          'ja': 'ジャスミン'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#11',
-        'id': 11,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
-        'name': {
-          'en': 'Kaiji',
-          'ja': '開司'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#12',
-        'id': 12,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
-        'name': {
-          'en': 'Louise',
-          'ja': 'ルイーズ'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#13',
-        'id': 13,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
-        'name': {
-          'en': 'Marthe',
-          'ja': 'マーテ'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#14',
-        'id': 14,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
-        'name': {
-          'en': 'Nanyamka',
-          'ja': 'ナニャンカ'
-        }
-      },
-      {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#15',
-        'id': 15,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
-        'name': {
-          'en': 'Oliwia',
-          'ja': 'オリビア'
-        }
-      }
+    allIds: [
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '10',
+      '11',
+      '12',
+      '13',
+      '14',
+      '15'
     ],
+    byId: {
+      '2': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+        'id': '2',
+        'image': ImagePath.Agent.b,
+        'name': Agent.b
+      },
+      '3': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+        'id': '3',
+        'image': ImagePath.Agent.c,
+        'name': Agent.c
+      },
+      '4': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+        'id': '4',
+        'image': ImagePath.Agent.d,
+        'name': Agent.d
+      },
+      '5': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+        'id': '5',
+        'image': ImagePath.Agent.e,
+        'name': Agent.e
+      },
+      '6': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+        'id': '6',
+        'image': ImagePath.Agent.f,
+        'name': Agent.f
+      },
+      '7': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+        'id': '7',
+        'image': ImagePath.Agent.g,
+        'name': Agent.g
+      },
+      '8': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+        'id': '8',
+        'image': ImagePath.Agent.h,
+        'name': Agent.h
+      },
+      '9': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+        'id': '9',
+        'image': ImagePath.Agent.i,
+        'name': Agent.i
+      },
+      '10': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+        'id': '10',
+        'image': ImagePath.Agent.j,
+        'name': Agent.j
+      },
+      '11': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+        'id': '11',
+        'image': ImagePath.Agent.k,
+        'name': Agent.k
+      },
+      '12': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+        'id': '12',
+        'image': ImagePath.Agent.l,
+        'name': Agent.l
+      },
+      '13': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+        'id': '13',
+        'image': ImagePath.Agent.m,
+        'name': Agent.m
+      },
+      '14': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+        'id': '14',
+        'image': ImagePath.Agent.n,
+        'name': Agent.n
+      },
+      '15': {
+        '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+        'id': '15',
+        'image': ImagePath.Agent.o,
+        'name': Agent.o
+      }
+    },
     fixed: false
   },
   hideButton: {
@@ -313,7 +287,7 @@ const state: ReducerState = {
     }
   },
   modal: {
-    id: -1,
+    id: '',
     visible: false
   },
   obfucator: {

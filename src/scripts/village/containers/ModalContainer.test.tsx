@@ -41,26 +41,31 @@ describe('<ModalContainer />', () => {
               }
             },
             commandSelection: {
-              agents: [
-                {
+              allIds: [
+                '2',
+                '3',
+                '4'
+              ],
+              byId: {
+                '2': {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-                  'id': 2,
+                  'id': '2',
                   'image': ImagePath.Agent.b,
                   'name': Agent.b
                 },
-                {
+                '3': {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-                  'id': 3,
+                  'id': '3',
                   'image': ImagePath.Agent.c,
                   'name': Agent.c
                 },
-                {
+                '4': {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-                  'id': 4,
+                  'id': '4',
                   'image': ImagePath.Agent.d,
                   'name': Agent.d
                 }
-              ],
+              },
               fixed: false
             },
             language: village.Language.ja,
@@ -79,7 +84,7 @@ describe('<ModalContainer />', () => {
               }
             },
             modal: {
-              id: 2,
+              id: '2',
               visible: true
             }
           }
@@ -122,26 +127,31 @@ describe('<ModalContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [
-                  {
+                allIds: [
+                  '2',
+                  '3',
+                  '4'
+                ],
+                byId: {
+                  '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-                    'id': 2,
+                    'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
-                  {
+                  '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-                    'id': 3,
+                    'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
-                  {
+                  '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-                    'id': 4,
+                    'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   }
-                ],
+                },
                 fixed: false
               },
               language: village.Language.ja,
@@ -160,7 +170,7 @@ describe('<ModalContainer />', () => {
                 }
               },
               modal: {
-                id: 2,
+                id: '2',
                 visible: true
               }
             }
@@ -202,26 +212,31 @@ describe('<ModalContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [
-                  {
+                allIds: [
+                  '2',
+                  '3',
+                  '4'
+                ],
+                byId: {
+                  '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-                    'id': 2,
+                    'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
-                  {
+                  '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-                    'id': 3,
+                    'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
-                  {
+                  '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-                    'id': 4,
+                    'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   }
-                ],
+                },
                 fixed: false
               },
               language: village.Language.ja,
@@ -240,7 +255,7 @@ describe('<ModalContainer />', () => {
                 }
               },
               modal: {
-                id: 2,
+                id: '2',
                 visible: true
               }
             }
@@ -282,26 +297,31 @@ describe('<ModalContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [
-                  {
+                allIds: [
+                  '2',
+                  '3',
+                  '4'
+                ],
+                byId: {
+                  '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-                    'id': 2,
+                    'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
-                  {
+                  '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-                    'id': 3,
+                    'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
-                  {
+                  '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-                    'id': 4,
+                    'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   }
-                ],
+                },
                 fixed: false
               },
               language: village.Language.ja,
@@ -314,7 +334,7 @@ describe('<ModalContainer />', () => {
                 }
               },
               modal: {
-                id: 2,
+                id: '2',
                 visible: true
               }
             }
@@ -356,26 +376,31 @@ describe('<ModalContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [
-                  {
+                allIds: [
+                  '2',
+                  '3',
+                  '4'
+                ],
+                byId: {
+                  '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-                    'id': 2,
+                    'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
-                  {
+                  '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-                    'id': 3,
+                    'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
-                  {
+                  '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-                    'id': 4,
+                    'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   }
-                ],
+                },
                 fixed: false
               },
               language: village.Language.ja,
@@ -388,7 +413,7 @@ describe('<ModalContainer />', () => {
                 }
               },
               modal: {
-                id: 2,
+                id: '2',
                 visible: true
               }
             }
@@ -432,31 +457,36 @@ describe('<ModalContainer />', () => {
             }
           },
           commandSelection: {
-            agents: [
-              {
+            allIds: [
+              '2',
+              '3',
+              '4'
+            ],
+            byId: {
+              '2': {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#2',
-                'id': 2,
+                'id': '2',
                 'image': ImagePath.Agent.b,
                 'name': Agent.b
               },
-              {
+              '3': {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#3',
-                'id': 3,
+                'id': '3',
                 'image': ImagePath.Agent.c,
                 'name': Agent.c
               },
-              {
+              '4': {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#4',
-                'id': 4,
+                'id': '4',
                 'image': ImagePath.Agent.d,
                 'name': Agent.d
               }
-            ],
+            },
             fixed: false
           },
           language: village.Language.ja,
           modal: {
-            id: -1,
+            id: '',
             visible: true
           }
         }
@@ -513,7 +543,7 @@ describe('<ModalContainer />', () => {
         </IntlProviderContainer>
       </Provider>
     )
-    const agentId = 4
+    const agentId = '4'
 
     wrapper.find(Modal).props().handleClickYes(agentId)
     expect(dispatch).toHaveBeenCalledTimes(1)

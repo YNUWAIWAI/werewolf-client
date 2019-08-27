@@ -41,7 +41,35 @@ describe('<CommandSelectionContainer />', () => {
               }
             },
             commandSelection: {
-              agents: [],
+              allIds: [
+                '2'
+              ],
+              byId: {
+                '2': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                  'id': '2',
+                  'image': ImagePath.Agent.b,
+                  'name': Agent.b
+                },
+                '3': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                  'id': '3',
+                  'image': ImagePath.Agent.c,
+                  'name': Agent.c
+                },
+                '4': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                  'id': '4',
+                  'image': ImagePath.Agent.d,
+                  'name': Agent.d
+                },
+                '5': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                  'id': '5',
+                  'image': ImagePath.Agent.e,
+                  'name': Agent.e
+                }
+              },
               fixed: true
             },
             language: village.Language.ja,
@@ -98,7 +126,38 @@ describe('<CommandSelectionContainer />', () => {
               }
             },
             commandSelection: {
-              agents: [],
+              allIds: [
+                '2',
+                '3',
+                '4',
+                '5'
+              ],
+              byId: {
+                '2': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                  'id': '2',
+                  'image': ImagePath.Agent.b,
+                  'name': Agent.b
+                },
+                '3': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                  'id': '3',
+                  'image': ImagePath.Agent.c,
+                  'name': Agent.c
+                },
+                '4': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                  'id': '4',
+                  'image': ImagePath.Agent.d,
+                  'name': Agent.d
+                },
+                '5': {
+                  '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                  'id': '5',
+                  'image': ImagePath.Agent.e,
+                  'name': Agent.e
+                }
+              },
               fixed: false
             },
             language: village.Language.ja,
@@ -158,7 +217,35 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [
+                  '2'
+                ],
+                byId: {
+                  '2': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    'id': '2',
+                    'image': ImagePath.Agent.b,
+                    'name': Agent.b
+                  },
+                  '3': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    'id': '3',
+                    'image': ImagePath.Agent.c,
+                    'name': Agent.c
+                  },
+                  '4': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    'id': '4',
+                    'image': ImagePath.Agent.d,
+                    'name': Agent.d
+                  },
+                  '5': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    'id': '5',
+                    'image': ImagePath.Agent.e,
+                    'name': Agent.e
+                  }
+                },
                 fixed: true
               },
               language: village.Language.ja,
@@ -215,7 +302,38 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [
+                  '2',
+                  '3',
+                  '4',
+                  '5'
+                ],
+                byId: {
+                  '2': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    'id': '2',
+                    'image': ImagePath.Agent.b,
+                    'name': Agent.b
+                  },
+                  '3': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    'id': '3',
+                    'image': ImagePath.Agent.c,
+                    'name': Agent.c
+                  },
+                  '4': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    'id': '4',
+                    'image': ImagePath.Agent.d,
+                    'name': Agent.d
+                  },
+                  '5': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    'id': '5',
+                    'image': ImagePath.Agent.e,
+                    'name': Agent.e
+                  }
+                },
                 fixed: false
               },
               language: village.Language.ja,
@@ -274,7 +392,35 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [
+                  '2'
+                ],
+                byId: {
+                  '2': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    'id': '2',
+                    'image': ImagePath.Agent.b,
+                    'name': Agent.b
+                  },
+                  '3': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    'id': '3',
+                    'image': ImagePath.Agent.c,
+                    'name': Agent.c
+                  },
+                  '4': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    'id': '4',
+                    'image': ImagePath.Agent.d,
+                    'name': Agent.d
+                  },
+                  '5': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    'id': '5',
+                    'image': ImagePath.Agent.e,
+                    'name': Agent.e
+                  }
+                },
                 fixed: true
               },
               language: village.Language.ja,
@@ -331,7 +477,38 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [
+                  '2',
+                  '3',
+                  '4',
+                  '5'
+                ],
+                byId: {
+                  '2': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    'id': '2',
+                    'image': ImagePath.Agent.b,
+                    'name': Agent.b
+                  },
+                  '3': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    'id': '3',
+                    'image': ImagePath.Agent.c,
+                    'name': Agent.c
+                  },
+                  '4': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    'id': '4',
+                    'image': ImagePath.Agent.d,
+                    'name': Agent.d
+                  },
+                  '5': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    'id': '5',
+                    'image': ImagePath.Agent.e,
+                    'name': Agent.e
+                  }
+                },
                 fixed: false
               },
               language: village.Language.ja,
@@ -390,7 +567,35 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [
+                  '2'
+                ],
+                byId: {
+                  '2': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    'id': '2',
+                    'image': ImagePath.Agent.b,
+                    'name': Agent.b
+                  },
+                  '3': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    'id': '3',
+                    'image': ImagePath.Agent.c,
+                    'name': Agent.c
+                  },
+                  '4': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    'id': '4',
+                    'image': ImagePath.Agent.d,
+                    'name': Agent.d
+                  },
+                  '5': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    'id': '5',
+                    'image': ImagePath.Agent.e,
+                    'name': Agent.e
+                  }
+                },
                 fixed: true
               },
               language: village.Language.ja,
@@ -447,7 +652,38 @@ describe('<CommandSelectionContainer />', () => {
                 }
               },
               commandSelection: {
-                agents: [],
+                allIds: [
+                  '2',
+                  '3',
+                  '4',
+                  '5'
+                ],
+                byId: {
+                  '2': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    'id': '2',
+                    'image': ImagePath.Agent.b,
+                    'name': Agent.b
+                  },
+                  '3': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    'id': '3',
+                    'image': ImagePath.Agent.c,
+                    'name': Agent.c
+                  },
+                  '4': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    'id': '4',
+                    'image': ImagePath.Agent.d,
+                    'name': Agent.d
+                  },
+                  '5': {
+                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    'id': '5',
+                    'image': ImagePath.Agent.e,
+                    'name': Agent.e
+                  }
+                },
                 fixed: false
               },
               language: village.Language.ja,
@@ -505,7 +741,8 @@ describe('<CommandSelectionContainer />', () => {
               }
             },
             commandSelection: {
-              agents: [],
+              allIds: [],
+              byId: {},
               fixed: true
             },
             language: village.Language.ja,
@@ -554,7 +791,7 @@ describe('<CommandSelectionContainer />', () => {
         </IntlProviderContainer>
       </Provider>
     )
-    const agentId = 4
+    const agentId = '4'
 
     wrapper.find(CommandSelection).props().handleSelectOption(agentId)()
     expect(dispatch).toHaveBeenCalledTimes(1)

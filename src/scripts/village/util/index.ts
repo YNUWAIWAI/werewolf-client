@@ -186,16 +186,6 @@ export const getTeam = (role: village.RoleId): village.Team => {
   return village.Team.werewolf // WEREWOLF_TEAM.includes(role)
 }
 
-export const getAgent = <T extends {id: number, name: {en: string}}>(agents: T[], agentId: number): T => {
-  const maybe = getPlayableAgents(agents).find(a => a.id === agentId)
-
-  if (!maybe) {
-    throw Error('Not found agent.')
-  }
-
-  return maybe
-}
-
 export const getText = ({language, languageMap}: {language: village.Language, languageMap: village.LanguageMap}): string => {
   const maybe = languageMap[language]
 
