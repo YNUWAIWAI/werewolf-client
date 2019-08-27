@@ -60,7 +60,8 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     dispatch,
     getState,
     replaceReducer,
-    subscribe
+    subscribe,
+    [Symbol.observable]: (): any => {}
   }
 
   return store

@@ -20,10 +20,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     switch (type) {
       case ActionTypes.global.KICK_OUT_PLAYER:
         dispatch(kickOutPlayer())
-
-        return
+        break
       default:
-        return
     }
   }
 })

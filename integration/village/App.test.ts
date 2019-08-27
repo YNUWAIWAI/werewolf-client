@@ -3,11 +3,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--default', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 1393,
+      failureThreshold: 1391,
       failureThresholdType: 'pixel'
     })
   })
@@ -15,11 +15,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--prologue', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 4723,
+      failureThreshold: 4670,
       failureThresholdType: 'pixel'
     })
   })
@@ -27,11 +27,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--morning-without-limited-chat', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 8609,
+      failureThreshold: 8598,
       failureThresholdType: 'pixel'
     })
   })
@@ -39,11 +39,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--morning-with-limited-chat', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 11525,
+      failureThreshold: 11506,
       failureThresholdType: 'pixel'
     })
   })
@@ -51,11 +51,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--day', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 15846,
+      failureThreshold: 15863,
       failureThresholdType: 'pixel'
     })
   })
@@ -63,11 +63,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--night-seer', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 12281,
+      failureThreshold: 12267,
       failureThresholdType: 'pixel'
     })
   })
@@ -75,11 +75,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--night-villager', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 8385,
+      failureThreshold: 8358,
       failureThresholdType: 'pixel'
     })
   })
@@ -87,11 +87,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--grave', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 8908,
+      failureThreshold: 8887,
       failureThresholdType: 'pixel'
     })
   })
@@ -99,11 +99,11 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--result', {
       waitUntil: 'networkidle2'
     })
-    await page.evaluateHandle('document.fonts.ready')
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 6390,
+      failureThreshold: 6434,
       failureThresholdType: 'pixel'
     })
   })
