@@ -28,7 +28,7 @@ const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const selectedAgentId = state.commandSelection.allIds.find(a => a === state.modal.id)
+  const selectedAgentId = state.commandSelection.allIds.find(agentId => agentId === state.modal.id)
 
   if (typeof selectedAgentId === 'undefined') {
     return {
