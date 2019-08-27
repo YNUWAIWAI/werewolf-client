@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ModalContainer /> render hidden 1`] = `null`;
+exports[`<ModalContainer /> render hidden 1`] = `""`;
 
 exports[`<ModalContainer /> render visible 1`] = `"<div class=\\"lo--modal\\"><div class=\\"lo--modal--description\\">dummy</div><button class=\\"lo--modal--button yes\\">Yes</button><button class=\\"lo--modal--button no\\">No</button></div>"`;

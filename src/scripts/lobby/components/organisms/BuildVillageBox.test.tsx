@@ -149,12 +149,19 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(6).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
-          .onChange({
-            label: 'Random',
-            value: lobby.Avatar.random
-          })
+        if (onChange) {
+          onChange(
+            {
+              label: 'Random',
+              value: lobby.Avatar.random
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(1)
         expect(handleAvatarChange).toHaveBeenCalledWith(lobby.Avatar.random)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
@@ -188,8 +195,16 @@ describe('<BuildVillageBox />', () => {
           />
         )
 
-        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
-          .onChange([])
+        const onChange = wrapper.find('.lo--village--item').childAt(6).find(Select).props().onChange
+
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -221,9 +236,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(6).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
-          .onChange(undefined)
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -253,9 +275,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(6).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(6).find(Select).props()
-          .onChange(null)
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -451,12 +480,19 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
-          .onChange({
-            label: '4 players',
-            value: 4
-          })
+        if (onChange) {
+          onChange(
+            {
+              label: '4 players',
+              value: 4
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(1)
@@ -490,9 +526,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
-          .onChange([])
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -524,9 +567,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
-          .onChange(undefined)
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -556,9 +606,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(5).find(Select).props()
-          .onChange(null)
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -590,12 +647,19 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
-          .onChange({
-            label: '4 robots',
-            value: 4
-          })
+        if (onChange) {
+          onChange(
+            {
+              label: '4 robots',
+              value: 4
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(1)
@@ -629,9 +693,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
-          .onChange([])
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -663,9 +734,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
-          .onChange(null)
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
@@ -695,9 +773,16 @@ describe('<BuildVillageBox />', () => {
             value={value}
           />
         )
+        const onChange = wrapper.find('.lo--village--item').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--village--item').childAt(7).find(Select).props()
-          .onChange(null)
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleMemberChange).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)

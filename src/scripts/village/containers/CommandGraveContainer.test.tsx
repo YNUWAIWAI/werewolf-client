@@ -12,7 +12,7 @@ describe('<CommandGraveContainer />', () => {
   test('render', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const wrapper = mount(
