@@ -3,6 +3,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--default', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -14,6 +15,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--prologue', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -25,6 +27,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--morning-without-limited-chat', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -36,6 +39,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--morning-with-limited-chat', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -47,6 +51,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--day', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -58,6 +63,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--night-seer', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -69,6 +75,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--night-villager', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -80,6 +87,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--grave', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
@@ -91,6 +99,7 @@ describe('App', () => {
     await page.goto('http://localhost:9009/iframe.html?id=village-app--result', {
       waitUntil: 'networkidle2'
     })
+    await page.evaluateHandle(() => {}, 'document.fonts.ready')
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
