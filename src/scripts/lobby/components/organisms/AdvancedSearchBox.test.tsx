@@ -88,12 +88,20 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(9).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
-          .onChange({
-            label: 'Unspecified',
-            value: lobby.Avatar.unspecified
-          })
+        if (onChange) {
+          onChange(
+            {
+              label: 'Unspecified',
+              value: lobby.Avatar.unspecified
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
+
         expect(handleAvatarChange).toHaveBeenCalledTimes(1)
         expect(handleAvatarChange).toHaveBeenCalledWith(lobby.Avatar.unspecified)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(1)
@@ -126,9 +134,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(9).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
-          .onChange([])
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(1)
         expect(handleAvatarChange).toHaveBeenCalledWith(lobby.Avatar.random)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(1)
@@ -161,9 +176,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(9).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
-          .onChange(undefined)
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
@@ -191,9 +213,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(9).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(9).find(Select).props()
-          .onChange(null)
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
@@ -442,12 +471,19 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
-          .onChange({
-            label: '4 players',
-            value: 4
-          })
+        if (onChange) {
+          onChange(
+            {
+              label: '4 players',
+              value: 4
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(1)
         expect(handleNumberChangeInner).toHaveBeenCalledWith(4)
         expect(handleNumberChange).toHaveBeenCalledTimes(1)
@@ -482,9 +518,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
-          .onChange([])
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(1)
         expect(handleNumberChangeInner).toHaveBeenCalledWith(-1)
         expect(handleNumberChange).toHaveBeenCalledTimes(1)
@@ -519,9 +562,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
-          .onChange(undefined)
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
@@ -550,9 +600,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(7).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(7).find(Select).props()
-          .onChange(null)
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
@@ -583,12 +640,19 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
-          .onChange({
-            label: '4 players',
-            value: 4
-          })
+        if (onChange) {
+          onChange(
+            {
+              label: '4 players',
+              value: 4
+            },
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(1)
         expect(handleNumberChangeInner).toHaveBeenCalledWith(4)
         expect(handleNumberChange).toHaveBeenCalledTimes(1)
@@ -623,9 +687,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
-          .onChange([])
+        if (onChange) {
+          onChange(
+            [],
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(1)
         expect(handleNumberChangeInner).toHaveBeenCalledWith(-1)
         expect(handleNumberChange).toHaveBeenCalledTimes(1)
@@ -660,9 +731,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
-          .onChange(undefined)
+        if (onChange) {
+          onChange(
+            undefined,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
@@ -691,9 +769,16 @@ describe('<AdvancedSearchBox />', () => {
             validity={validity}
           />
         )
+        const onChange = wrapper.find('.lo--advanced-search').childAt(5).find(Select).props().onChange
 
-        wrapper.find('.lo--advanced-search').childAt(5).find(Select).props()
-          .onChange(null)
+        if (onChange) {
+          onChange(
+            null,
+            {
+              action: 'select-option'
+            }
+          )
+        }
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)

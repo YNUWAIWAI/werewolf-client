@@ -89,11 +89,19 @@ describe('<NumberSelect />', () => {
           type="player"
         />
       )
+      const onChange = wrapper.find(Select).props().onChange
 
-      wrapper.find(Select).props().onChange({
-        label: 4,
-        value: 4
-      })
+      if (onChange) {
+        onChange(
+          {
+            label: 4,
+            value: 4
+          },
+          {
+            action: 'select-option'
+          }
+        )
+      }
       expect(handleChange).toHaveBeenCalledTimes(1)
       expect(handleChange).toHaveBeenCalledWith(true)
       expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -113,11 +121,19 @@ describe('<NumberSelect />', () => {
           type="player"
         />
       )
+      const onChange = wrapper.find(Select).props().onChange
 
-      wrapper.find(Select).props().onChange({
-        label: 0,
-        value: 0
-      })
+      if (onChange) {
+        onChange(
+          {
+            label: 0,
+            value: 0
+          },
+          {
+            action: 'select-option'
+          }
+        )
+      }
       expect(handleChange).toHaveBeenCalledTimes(1)
       expect(handleChange).toHaveBeenCalledWith(true)
       expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -137,8 +153,17 @@ describe('<NumberSelect />', () => {
           type="player"
         />
       )
+      const onChange = wrapper.find(Select).props().onChange
 
-      wrapper.find(Select).props().onChange([])
+      if (onChange) {
+        onChange(
+          [],
+          {
+            action: 'select-option'
+          }
+        )
+      }
+
       expect(handleChange).toHaveBeenCalledTimes(1)
       expect(handleChange).toHaveBeenCalledWith(false)
       expect(handleChangeInner).toHaveBeenCalledTimes(1)
@@ -158,8 +183,16 @@ describe('<NumberSelect />', () => {
           type="player"
         />
       )
+      const onChange = wrapper.find(Select).props().onChange
 
-      wrapper.find(Select).props().onChange(null)
+      if (onChange) {
+        onChange(
+          null,
+          {
+            action: 'select-option'
+          }
+        )
+      }
       expect(handleChange).toHaveBeenCalledTimes(0)
       expect(handleChangeInner).toHaveBeenCalledTimes(0)
     })
@@ -177,8 +210,17 @@ describe('<NumberSelect />', () => {
           type="player"
         />
       )
+      const onChange = wrapper.find(Select).props().onChange
 
-      wrapper.find(Select).props().onChange(undefined)
+      if (onChange) {
+        onChange(
+          undefined,
+          {
+            action: 'select-option'
+          }
+        )
+      }
+
       expect(handleChange).toHaveBeenCalledTimes(0)
       expect(handleChangeInner).toHaveBeenCalledTimes(0)
     })
