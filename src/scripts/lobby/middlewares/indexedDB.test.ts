@@ -23,18 +23,18 @@ import {getCastFromNumberOfPlayers} from '../util'
 import middleware from './indexedDB'
 import {waitingPage} from '../reducers/fakeServer'
 
-(window as Record<string, unknown>).indexedDB = FDB;
-(global as Record<string, unknown>).IDBCursor = FDBCursor;
-(global as Record<string, unknown>).IDBCursorWithValue = FDBCursorWithValue;
-(global as Record<string, unknown>).IDBDatabase = FDBDatabase;
-(global as Record<string, unknown>).IDBFactory = FDBFactory;
-(global as Record<string, unknown>).IDBIndex = FDBIndex;
-(global as Record<string, unknown>).IDBKeyRange = FDBKeyRange;
-(global as Record<string, unknown>).IDBObjectStore = FDBObjectStore;
-(global as Record<string, unknown>).IDBOpenDBRequest = FDBOpenDBRequest;
-(global as Record<string, unknown>).IDBRequest = FDBRequest;
-(global as Record<string, unknown>).IDBTransaction = FDBTransaction;
-(global as Record<string, unknown>).IDBVersionChangeEvent = FDBVersionChangeEvent
+(window as Record<string, any>).indexedDB = FDB;
+(global as Record<string, any>).IDBCursor = FDBCursor;
+(global as Record<string, any>).IDBCursorWithValue = FDBCursorWithValue;
+(global as Record<string, any>).IDBDatabase = FDBDatabase;
+(global as Record<string, any>).IDBFactory = FDBFactory;
+(global as Record<string, any>).IDBIndex = FDBIndex;
+(global as Record<string, any>).IDBKeyRange = FDBKeyRange;
+(global as Record<string, any>).IDBObjectStore = FDBObjectStore;
+(global as Record<string, any>).IDBOpenDBRequest = FDBOpenDBRequest;
+(global as Record<string, any>).IDBRequest = FDBRequest;
+(global as Record<string, any>).IDBTransaction = FDBTransaction;
+(global as Record<string, any>).IDBVersionChangeEvent = FDBVersionChangeEvent
 
 const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
 const CLIENT2SERVER = `${BASE_URI}/client2server`
