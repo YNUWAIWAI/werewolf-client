@@ -31,7 +31,9 @@ module.exports = ({ config, mode }) => {
     }
   ]
   config.resolve.extensions.push('.ts', '.tsx', '.css')
-  config.resolve.plugins.push(new TsconfigPathsPlugin())
+  config.resolve.plugins= [
+    new TsconfigPathsPlugin()
+  ]
 
   return config
 }
