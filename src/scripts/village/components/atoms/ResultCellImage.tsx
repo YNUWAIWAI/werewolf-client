@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as village from 'types/village'
 import AgentIcon from './AgentIcon'
 
 interface Props {

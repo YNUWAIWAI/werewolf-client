@@ -1,4 +1,6 @@
 import * as React from 'react'
+import * as lobby from 'types/lobby'
+import * as village from 'types/village'
 import {IntlProvider, intlShape} from 'react-intl'
 import {MountRendererProps, ShallowRendererProps, mount, shallow} from 'enzyme'
 import {Language} from '../src/i18n/landing'

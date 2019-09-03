@@ -1,6 +1,7 @@
-/* global lobby, village */
-/* eslint no-extra-parens: 0 */
+import 'types/indexeddb'
 import * as ActionTypes from '../constants/ActionTypes'
+import * as lobby from 'types/lobby'
+import * as village from 'types/village'
 import {ClickNavigationButton, socket} from '../actions'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import Ajv from 'ajv'

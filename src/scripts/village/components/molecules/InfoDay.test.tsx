@@ -1,10 +1,10 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import InfoDay from './InfoDay'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
-import {getMessages} from '../../../../i18n/village'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+import {getMessages} from '@i18n/village'
+import {initRenderer} from '@tools/intl-enzyme-test-helper'
 
 const store = fakeStore()
 const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))

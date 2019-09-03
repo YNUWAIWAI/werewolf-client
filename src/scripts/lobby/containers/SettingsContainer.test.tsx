@@ -1,6 +1,6 @@
-/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import Settings from '../components/templates/Settings'

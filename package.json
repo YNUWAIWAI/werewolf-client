@@ -16,7 +16,6 @@
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/expect-puppeteer": "^3.3.1",
-    "@types/indexeddb": "./types/indexeddb",
     "@types/jest": "^24.0.11",
     "@types/jest-environment-puppeteer": "^4.0.0",
     "@types/jest-image-snapshot": "^2.8.0",
@@ -56,6 +55,7 @@
     "stylelint-config-nimiusrd": "nimiusrd/stylelint-config-nimiusrd.git",
     "terser-webpack-plugin": "^1.2.1",
     "ts-jest": "^24.0.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.2.4",
     "webpack": "^4.29.0"
   },
@@ -83,14 +83,12 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@types/lobby": "./types/lobby",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.0.11",
     "@types/react-intl": "^2.3.15",
     "@types/react-redux": "^7.0.1",
     "@types/react-select": "^2.0.15",
     "@types/textarea-caret": "^3.0.0",
-    "@types/village": "./types/village",
     "fuse.js": "^3.4.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

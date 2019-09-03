@@ -1,14 +1,27 @@
 {
   "compilerOptions": {
-      "sourceMap": true,
-      "module": "commonjs",
-      "strict": true,
-      "target": "es2017",
-      "jsx": "react",
-      "resolveJsonModule": true,
-      "esModuleInterop": true
+    "baseUrl": ".",
+    "paths": {
+      "@i18n/*": [
+        "src/i18n/*/index.ts"
+      ],
+      "@tools/intl-enzyme-test-helper": [
+        "tools/intl-enzyme-test-helper.ts"
+      ],
+      "types/*": [
+        "types/*/index.d.ts"
+      ]
+    },
+    "sourceMap": true,
+    "module": "commonjs",
+    "strict": true,
+    "target": "es2017",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "include": [
-      "src/**/*"
+    "src/**/*",
+    "stories/**/*"
   ]
 }

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import {FormattedMessage, injectIntl} from 'react-intl'
 import Close from '../atoms/svg/Close'
 import Danger from '../atoms/svg/Danger'

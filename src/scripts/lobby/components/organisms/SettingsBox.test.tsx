@@ -1,5 +1,5 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import SettingsBox, {PropName, Props} from './SettingsBox'
 import {shallow} from 'enzyme'
 

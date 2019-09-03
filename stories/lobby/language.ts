@@ -1,4 +1,5 @@
-/* global lobby */
+import * as lobby from 'types/lobby'
+
 const label = 'Language'
 const options = {
   en: lobby.Language.en,

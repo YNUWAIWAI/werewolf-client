@@ -1,5 +1,5 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import AvatarSelect from '../atoms/AvatarSelect'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'

@@ -1,5 +1,5 @@
-/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
+import * as village from 'types/village'
 import {getChannelFromInputChennel, just, strToRoleId} from '../util'
 import {Middleware} from '.'
 import {socket} from '../actions'

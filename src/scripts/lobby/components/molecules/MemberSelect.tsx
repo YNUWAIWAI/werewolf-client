@@ -1,5 +1,5 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
 import NumberSelect from '../atoms/NumberSelect'

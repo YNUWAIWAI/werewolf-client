@@ -1,5 +1,5 @@
-/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
+import * as lobby from 'types/lobby'
 import reducer, {initialState} from './buildVillage'
 import {avatar2} from './fakeServer'
 

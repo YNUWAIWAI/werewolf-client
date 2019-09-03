@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as village from 'types/village'
 
 interface Props {
   readonly id: number

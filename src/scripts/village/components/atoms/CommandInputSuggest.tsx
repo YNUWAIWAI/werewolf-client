@@ -1,5 +1,5 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import {State as SuggestState} from '../../reducers/suggest'
 import {getText} from '../../util'
 

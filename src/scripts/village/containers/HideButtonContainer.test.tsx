@@ -1,6 +1,6 @@
-/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
+import * as village from 'types/village'
 import HideButton from '../components/atoms/HideButton'
 import HideButtonContainer from './HideButtonContainer'
 import IntlProviderContainer from './IntlProviderContainer'

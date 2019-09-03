@@ -1,5 +1,5 @@
-/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
+import * as village from 'types/village'
 import {Agent} from '../constants/Agent'
 import Ajv from 'ajv'
 import {ImagePath} from '../constants/ImagePath'

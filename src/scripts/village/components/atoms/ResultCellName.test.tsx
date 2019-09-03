@@ -1,5 +1,5 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import ResultCellName from './ResultCellName'
 import {shallow} from 'enzyme'
 

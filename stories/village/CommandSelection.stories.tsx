@@ -1,5 +1,5 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import {Agent} from '../../src/scripts/village/constants/Agent'
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'

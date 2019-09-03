@@ -1,4 +1,4 @@
-/* global village */
+import * as village from 'types/village'
 import {changeDate, changePhase} from '../actions'
 import {Middleware} from '.'
 import {socket} from '../constants/ActionTypes'

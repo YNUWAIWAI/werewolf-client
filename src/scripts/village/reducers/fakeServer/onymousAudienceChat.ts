@@ -1,4 +1,4 @@
-/* global village */
+import * as village from 'types/village'
 import {ImagePath} from '../../constants/ImagePath'
 
 const json: village.Payload$playerMessage = {

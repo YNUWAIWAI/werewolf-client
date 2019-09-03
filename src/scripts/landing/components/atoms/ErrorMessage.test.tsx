@@ -1,7 +1,7 @@
 import * as React from 'react'
-import {Language, getMessages} from '../../../../i18n/landing'
+import {Language, getMessages} from '@i18n/landing'
 import ErrorMessage from './ErrorMessage'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+import {initRenderer} from '@tools/intl-enzyme-test-helper'
 
 const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))
 

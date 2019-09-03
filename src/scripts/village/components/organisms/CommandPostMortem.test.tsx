@@ -1,6 +1,6 @@
-/* global village */
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
+import * as village from 'types/village'
 import CommandPostMortem from './CommandPostMortem'
 import {shallow} from 'enzyme'
 

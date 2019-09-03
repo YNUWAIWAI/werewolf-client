@@ -1,6 +1,6 @@
-/* global village */
 import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
 import * as React from 'react'
+import * as village from 'types/village'
 import {Agent} from '../../src/scripts/village/constants/Agent'
 import Command from '../../src/scripts/village/components/organisms/Command'
 import CommandGrave from '../../src/scripts/village/components/organisms/CommandGrave'

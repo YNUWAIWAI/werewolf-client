@@ -1,5 +1,5 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import LanguageSelect from './LanguageSelect'
 import Select from 'react-select'
 import {shallow} from 'enzyme'

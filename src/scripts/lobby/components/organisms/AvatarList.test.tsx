@@ -1,5 +1,5 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import AvatarList, {Props} from './AvatarList'
 import {shallow} from 'enzyme'
 

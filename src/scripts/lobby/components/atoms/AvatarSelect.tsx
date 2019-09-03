@@ -6,8 +6,8 @@ declare global {
 }
 // Workaround end
 
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'
 import {injectIntl} from 'react-intl'

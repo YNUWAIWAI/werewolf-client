@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
