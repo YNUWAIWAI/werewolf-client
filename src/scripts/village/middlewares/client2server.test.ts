@@ -1,4 +1,4 @@
-/* global village */
+import * as village from 'types/village'
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangePredictionBoard,

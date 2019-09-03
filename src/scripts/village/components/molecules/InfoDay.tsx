@@ -1,5 +1,5 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import {FormattedMessage} from 'react-intl'
 import Timer from '../../containers/TimerContainer'
 import {spaceSeparatedToCamelCase} from '../../util'

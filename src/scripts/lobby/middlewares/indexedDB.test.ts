@@ -1,6 +1,6 @@
-/* global lobby */
 /* eslint no-extra-parens: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
+import * as lobby from 'types/lobby'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {SocketMessage, SocketSend, Transition} from '../actions'
 import Ajv from 'ajv'

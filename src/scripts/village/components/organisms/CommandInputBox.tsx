@@ -1,5 +1,5 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import CommandInput from '../molecules/CommandInput'
 import {State} from '../../reducers/suggest'
 

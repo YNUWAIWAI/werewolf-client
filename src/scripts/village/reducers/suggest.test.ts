@@ -1,4 +1,4 @@
-/* global village */
+import * as village from 'types/village'
 import {firstMorning, flavorText, myMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './suggest'
 import {Agent} from '../constants/Agent'

@@ -1,4 +1,4 @@
-/* global lobby */
+import * as lobby from 'types/lobby'
 import {
   ConfirmKickOutPlayer,
   Transition,

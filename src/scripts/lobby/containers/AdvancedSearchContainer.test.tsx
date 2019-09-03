@@ -1,6 +1,6 @@
-/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import AdvancedSearch from '../components/templates/AdvancedSearch'
 import AdvancedSearchContainer from './AdvancedSearchContainer'
 import IntlProviderContainer from './IntlProviderContainer'

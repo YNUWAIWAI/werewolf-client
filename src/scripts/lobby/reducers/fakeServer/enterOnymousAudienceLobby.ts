@@ -1,4 +1,4 @@
-/* global lobby */
+import * as lobby from 'types/lobby'
 const json: lobby.Payload$lobby = {
   error: null,
   lobby: lobby.Lobby.audience,

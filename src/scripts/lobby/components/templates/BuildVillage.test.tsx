@@ -1,5 +1,5 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import BuildVillage from './BuildVillage'
 import {shallow} from 'enzyme'
 

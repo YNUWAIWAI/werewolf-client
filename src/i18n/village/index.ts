@@ -1,3 +1,4 @@
+import * as village from 'types/village'
 import en from './en.json'
 import fr from './fr.json'
 import it from './it.json'

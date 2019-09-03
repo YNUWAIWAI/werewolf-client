@@ -1,8 +1,8 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import FormattedTime from './FormattedTime'
-import {getMessages} from '../../../../i18n/village'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+import {getMessages} from '@i18n/village'
+import {initRenderer} from '@tools/intl-enzyme-test-helper'
 
 const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 

@@ -1,5 +1,5 @@
 /* eslint no-process-env: 0 */
-/* global lobby */
+import * as lobby from 'types/lobby'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import {global, indexedDB, socket} from './constants/ActionTypes'

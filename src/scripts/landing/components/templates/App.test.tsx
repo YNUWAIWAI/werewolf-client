@@ -1,7 +1,7 @@
 import * as React from 'react'
 import App from './App'
 import FormNavigation from '../atoms/FormNavigation'
-import {Language} from '../../../../i18n/landing'
+import {Language} from '@i18n/landing'
 import Lead from '../organism/Lead'
 import Login from '../organism/Login'
 import Signup from '../organism/Signup'

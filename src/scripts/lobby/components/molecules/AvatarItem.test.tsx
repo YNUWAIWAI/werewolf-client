@@ -1,11 +1,11 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import AvatarItem from './AvatarItem'
 import Danger from '../atoms/svg/Danger'
 import Safe from '../atoms/svg/Safe'
 import Warning from '../atoms/svg/Warning'
-import {getMessages} from '../../../../i18n/lobby'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+import {getMessages} from '@i18n/lobby'
+import {initRenderer} from '@tools/intl-enzyme-test-helper'
 
 const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 

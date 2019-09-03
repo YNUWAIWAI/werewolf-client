@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {IntlProvider, addLocaleData} from 'react-intl'
-import {Language, getMessages} from '../../../../i18n/landing'
+import {Language, getMessages} from '@i18n/landing'
 import FormNavigation from '../atoms/FormNavigation'
 import Lead from '../organism/Lead'
 import Login from '../organism/Login'

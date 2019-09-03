@@ -1,5 +1,5 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import CommandInputSuggest from './CommandInputSuggest'
 import {mount} from 'enzyme'
 

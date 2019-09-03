@@ -1,8 +1,8 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import Header from './Header'
-import {getMessages} from '../../../../i18n/lobby'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+import {getMessages} from '@i18n/lobby'
+import {initRenderer} from '@tools/intl-enzyme-test-helper'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 

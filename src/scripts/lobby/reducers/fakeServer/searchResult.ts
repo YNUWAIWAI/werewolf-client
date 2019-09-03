@@ -1,4 +1,4 @@
-/* global lobby */
+import * as lobby from 'types/lobby'
 const json: lobby.Payload$searchResult = {
   error: null,
   type: lobby.PayloadType.searchResult,

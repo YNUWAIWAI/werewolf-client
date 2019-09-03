@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import AvatarItem from '../molecules/AvatarItem'
 

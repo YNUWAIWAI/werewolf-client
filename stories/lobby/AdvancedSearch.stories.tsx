@@ -1,6 +1,6 @@
-/* global lobby */
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import AdvancedSearch, {Props} from '../../src/scripts/lobby/components/templates/AdvancedSearch'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'

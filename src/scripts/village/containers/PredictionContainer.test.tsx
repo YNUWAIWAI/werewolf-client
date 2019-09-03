@@ -1,6 +1,6 @@
-/* global village */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
+import * as village from 'types/village'
 import {Agent} from '../constants/Agent'
 import {ImagePath} from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'

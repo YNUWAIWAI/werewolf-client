@@ -1,4 +1,4 @@
-/* global village */
+import * as village from 'types/village'
 import {Agent} from '../../constants/Agent'
 import {ImagePath} from '../../constants/ImagePath'
 

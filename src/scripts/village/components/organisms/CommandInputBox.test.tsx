@@ -1,5 +1,5 @@
-/* global village */
 import * as React from 'react'
+import * as village from 'types/village'
 import CommandInputBox from './CommandInputBox'
 import {shallow} from 'enzyme'
 

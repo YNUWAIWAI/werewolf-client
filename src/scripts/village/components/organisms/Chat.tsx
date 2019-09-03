@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as village from 'types/village'
 import ChatDelimeter from '../atoms/ChatDelimeter'
 import ChatItem from '../molecules/ChatItem'
 

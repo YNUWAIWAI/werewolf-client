@@ -1,4 +1,6 @@
 /* eslint no-console: 0 */
+import * as lobby from 'types/lobby'
+
 const VERSION = 2
 
 export const enum Key {

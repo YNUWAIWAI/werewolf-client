@@ -1,10 +1,10 @@
-/* global village */
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
+import * as village from 'types/village'
 import CommandNavigation from './CommandNavigation'
 import Loader from '../atoms/svg/Loader'
-import {getMessages} from '../../../../i18n/village'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+import {getMessages} from '@i18n/village'
+import {initRenderer} from '@tools/intl-enzyme-test-helper'
 
 const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
 

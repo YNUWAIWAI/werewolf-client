@@ -1,4 +1,5 @@
-/* global village */
+import * as village from 'types/village'
+
 const label = 'Language'
 const options = {
   en: village.Language.en,

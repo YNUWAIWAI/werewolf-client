@@ -1,10 +1,10 @@
-/* global lobby */
 import * as React from 'react'
+import * as lobby from 'types/lobby'
 import Modal from './Modal'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
-import {getMessages} from '../../../../i18n/lobby'
-import {initRenderer} from '../../../../../tools/intl-enzyme-test-helper'
+import {getMessages} from '@i18n/lobby'
+import {initRenderer} from '@tools/intl-enzyme-test-helper'
 
 const store = fakeStore()
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))

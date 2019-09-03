@@ -1,5 +1,5 @@
-/* global lobby */
 import * as ActionTypes from '../constants/ActionTypes'
+import * as lobby from 'types/lobby'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {SocketMessage} from '../actions'
 

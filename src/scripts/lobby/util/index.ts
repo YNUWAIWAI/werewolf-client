@@ -1,3 +1,4 @@
+import * as lobby from 'types/lobby'
 import Cast from '../constants/Cast'
 import {anonymousVillageName} from '../constants/AnonymousVillageName'
 
