@@ -9,7 +9,7 @@
         "tools/intl-enzyme-test-helper.ts"
       ],
       "types/*": [
-        "types/*/index.d.ts"
+        "types/*.d.ts"
       ]
     },
     "sourceMap": true,
