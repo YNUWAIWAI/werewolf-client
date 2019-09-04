@@ -1,6 +1,0 @@
-{
-  "name": "@types/lobby",
-  "private": true,
-  "types": "index.d.ts",
-  "version": "1.30.0"
-}
