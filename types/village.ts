@@ -72,10 +72,10 @@ export const enum Result {
   lose = 'lose',
   win = 'win'
 }
-type AgentId = string
-type ChatId = string
-type Payload$AgentId = number
-type Token = string
+export type AgentId = string
+export type ChatId = string
+export type Payload$AgentId = number
+export type Token = string
 export const enum AgentStatus {
   alive = 'alive',
   dead = 'dead',
