@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import Prediction, {Props} from './Prediction'
 import {shallow} from 'enzyme'
 

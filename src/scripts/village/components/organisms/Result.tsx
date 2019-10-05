@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import {CSSTransition} from 'react-transition-group'
 import ResultCellAvatarImage from '../atoms/ResultCellAvatarImage'
 import ResultCellAvatarName from '../atoms/ResultCellAvatarName'

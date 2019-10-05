@@ -1,5 +1,5 @@
-import * as village from 'types/village'
 import * as ActionTypes from '../constants/ActionTypes'
+import * as village from '../types'
 import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as base} from '../reducers/base'

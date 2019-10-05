@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../types'
 import {Agent} from '../constants/Agent'
 import Chat from '../components/organisms/Chat'
 import ChatContainer from './ChatContainer'

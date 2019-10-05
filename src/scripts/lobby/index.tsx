@@ -1,7 +1,7 @@
 /* eslint no-process-env: 0 */
-import * as lobby from 'types/lobby'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import * as lobby from './types'
 import {global, indexedDB, socket} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'

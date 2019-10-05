@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from 'types/village'
+import * as village from '../types'
 import {ChangePhase, SocketMessage} from '../actions'
 import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'

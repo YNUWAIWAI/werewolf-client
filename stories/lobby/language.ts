@@ -1,4 +1,4 @@
-import * as lobby from 'types/lobby'
+import * as lobby from './types'
 
 const label = 'Language'
 const options = {

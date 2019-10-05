@@ -1,4 +1,4 @@
-import * as lobby from 'types/lobby'
+import * as lobby from '../types'
 import Cast from '../constants/Cast'
 import {anonymousVillageName} from '../constants/AnonymousVillageName'
 

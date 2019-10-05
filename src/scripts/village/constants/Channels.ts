@@ -1,4 +1,4 @@
-import * as village from 'types/village'
+import * as village from '../types'
 export const AUDIENCE = [
   village.Channel.onymousAudience,
   village.Channel.anonymousAudience

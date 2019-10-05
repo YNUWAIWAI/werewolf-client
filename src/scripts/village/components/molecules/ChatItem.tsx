@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import AgentIcon from '../atoms/AgentIcon'
 import ChatDate from '../atoms/ChatDate'
 import ChatIcon from '../atoms/ChatIcon'

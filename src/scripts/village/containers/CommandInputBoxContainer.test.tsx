@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../types'
 import CommandInputBox from '../components/organisms/CommandInputBox'
 import CommandInputBoxContainer from './CommandInputBoxContainer'
 import IntlProviderContainer from './IntlProviderContainer'

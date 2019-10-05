@@ -1,5 +1,4 @@
 const TerserPlugin = require('terser-webpack-plugin')
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const path = require('path')
 const config = require('./config')
 
@@ -49,9 +48,6 @@ module.exports = {
     path: path.resolve(config.dest, 'javascripts')
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-    plugins: [
-      new TsconfigPathsPlugin()
-    ]
+    extensions: ['.ts', '.tsx', '.js', '.json']
   }
 }

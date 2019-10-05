@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from 'types/lobby'
+import * as lobby from '../types'
 import {
   avatar,
   searchResult

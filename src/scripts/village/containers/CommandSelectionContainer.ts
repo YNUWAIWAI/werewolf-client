@@ -1,4 +1,4 @@
-import * as village from 'types/village'
+import * as village from '../types'
 import CommandSelection, {DispatchProps, StateProps} from '../components/organisms/CommandSelection'
 import {SelectOption, selectOption} from '../actions'
 import {getInitial, getText} from '../util'

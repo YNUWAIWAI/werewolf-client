@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from 'types/lobby'
+import * as lobby from '../types'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {changeLobby, selectVillage, showVillage, socket} from '../actions'
 import {Middleware} from '.'

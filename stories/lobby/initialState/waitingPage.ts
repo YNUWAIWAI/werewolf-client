@@ -1,5 +1,5 @@
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
-import * as lobby from 'types/lobby'
+import * as lobby from '../types'
 import {Content} from '../../../src/scripts/lobby/reducers/app'
 import {ReducerState} from '../../../src/scripts/lobby/reducers'
 

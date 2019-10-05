@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from 'types/village'
+import * as village from '../types'
 import {Agent} from '../constants/Agent'
 import Ajv from 'ajv'
 import {ImagePath} from '../constants/ImagePath'

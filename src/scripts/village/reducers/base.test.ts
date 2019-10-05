@@ -1,4 +1,4 @@
-import * as village from 'types/village'
+import * as village from '../types'
 import reducer, {initialState} from './base'
 import {firstMorning} from './fakeServer'
 import {socket} from '../actions'

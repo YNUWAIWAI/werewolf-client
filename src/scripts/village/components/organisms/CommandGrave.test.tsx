@@ -1,6 +1,6 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import CommandGrave, {Props} from './CommandGrave'
 import {shallow} from 'enzyme'
 

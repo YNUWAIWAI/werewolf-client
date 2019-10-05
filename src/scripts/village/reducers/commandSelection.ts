@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from 'types/village'
+import * as village from '../types'
 import {ChangePhase, SelectYes, SocketMessage} from '../actions'
 import {VOTING_PHASE} from '../constants/Phase'
 import {just} from '../util'

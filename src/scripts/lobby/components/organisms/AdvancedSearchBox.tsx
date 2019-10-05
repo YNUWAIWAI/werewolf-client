@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from '../../types'
 import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
 import AvatarSelect from '../atoms/AvatarSelect'
 import {FormattedMessage} from 'react-intl'

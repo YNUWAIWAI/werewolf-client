@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import CommandNavigation, {Props as CommandNavigationProps} from '../molecules/CommandNavigation'
 import CommandInput from '../molecules/CommandInput'
 import {Navigation} from '../../constants/ActionTypes'

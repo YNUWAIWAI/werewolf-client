@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../types'
 import {ImagePath} from '../constants/ImagePath'
 import InfoRoleContainer from './InfoRoleContainer'
 import IntlProviderContainer from './IntlProviderContainer'

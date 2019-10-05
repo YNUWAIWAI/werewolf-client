@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import PredictionHelp from '../atoms/PredictionHelp'
 import PredictionItem from '../atoms/PredictionItem'
 import PredictionPlayer from '../atoms/PredictionPlayer'

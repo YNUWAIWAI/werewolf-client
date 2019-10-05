@@ -1,6 +1,6 @@
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from './types'
 import WaitingForPlayers, {Props} from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'

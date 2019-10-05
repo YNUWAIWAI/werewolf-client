@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from '../../types'
 import EmailInput from '../atoms/EmailInput'
 import {FormattedMessage} from 'react-intl'
 import LanguageSelect from '../atoms/LanguageSelect'

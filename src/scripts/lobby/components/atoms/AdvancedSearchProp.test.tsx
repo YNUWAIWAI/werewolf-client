@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from '../../types'
 import AdvancedSearchProp from './AdvancedSearchProp'
-import {getMessages} from '@i18n/lobby'
-import {initRenderer} from '@tools/intl-enzyme-test-helper'
+import {getMessages} from '../../i18n'
+import {initRenderer} from '../../tools'
 
 const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
 

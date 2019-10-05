@@ -1,4 +1,4 @@
-import * as village from 'types/village'
+import * as village from '../types'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,

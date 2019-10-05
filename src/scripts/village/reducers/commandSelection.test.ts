@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from 'types/village'
+import * as village from '../types'
 import {day, night} from './fakeServer'
 import reducer, {State, initialState} from './commandSelection'
 import {Agent} from '../constants/Agent'

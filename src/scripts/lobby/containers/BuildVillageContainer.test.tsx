@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from '../types'
 import BuildVillage from '../components/templates/BuildVillage'
 import BuildVillageContainer from './BuildVillageContainer'
 import IntlProviderContainer from './IntlProviderContainer'

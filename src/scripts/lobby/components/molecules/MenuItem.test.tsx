@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from '../../types'
 import MenuItem from './MenuItem'
 import {Target} from '../../constants/ActionTypes'
-import {getMessages} from '@i18n/lobby'
-import {initRenderer} from '@tools/intl-enzyme-test-helper'
+import {getMessages} from '../../i18n'
+import {initRenderer} from '../../tools'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 

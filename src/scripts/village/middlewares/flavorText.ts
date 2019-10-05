@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from 'types/village'
+import * as village from '../types'
 import {Middleware} from '.'
 import {just} from '../util'
 import {socket} from '../actions'
