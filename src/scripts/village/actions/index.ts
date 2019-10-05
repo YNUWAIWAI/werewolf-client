@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import * as village from 'types/village'
 import {strToMessage} from '../util'
 
-interface SocketMessageReturnType<T> {
+export interface SocketMessageReturnType<T> {
   payload: T
   type: ActionTypes.socket.MESSAGE
 }
