@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import Chat, {Props} from './Chat'
-import {getMessages} from '@i18n/village'
-import {initRenderer} from '@tools/intl-enzyme-test-helper'
+import {getMessages} from '../../i18n'
+import {initRenderer} from '../../tools'
 import {shallow} from 'enzyme'
 
 const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))

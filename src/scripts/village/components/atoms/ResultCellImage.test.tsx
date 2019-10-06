@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import ResultCellImage from './ResultCellImage'
 import {shallow} from 'enzyme'
 

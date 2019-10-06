@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from 'types/village'
+import * as village from '../types'
 import {ClickNavigationButton, HideResult, SocketMessage} from '../actions'
 import {
   getPlayableAgents,

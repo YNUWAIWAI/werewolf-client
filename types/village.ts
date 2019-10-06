@@ -1,5 +1,5 @@
 /* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
-import * as lobby from 'types/lobby'
+import * as lobby from './lobby'
 
 export const enum Directionality {
   serverToClient = 'server to client',

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from '../../types'
 import {FormattedMessage} from 'react-intl'
 import Member from './Member'
 

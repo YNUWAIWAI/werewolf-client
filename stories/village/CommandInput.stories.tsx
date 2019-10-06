@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from './types'
 import {number, radios} from '@storybook/addon-knobs'
 import {Agent} from '../../src/scripts/village/constants/Agent'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'

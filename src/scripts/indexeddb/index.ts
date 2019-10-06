@@ -1,5 +1,5 @@
 /* eslint no-console: 0 */
-import * as lobby from 'types/lobby'
+import * as lobby from './types/lobby'
 
 const VERSION = 2
 

@@ -1,4 +1,4 @@
-import * as village from 'types/village'
+import * as village from '../types'
 import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
 import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
 import {getInitial, getText, just} from '../util'

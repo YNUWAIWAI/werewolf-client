@@ -1,4 +1,4 @@
-import * as village from 'types/village'
+import * as village from '../../types'
 import * as React from 'react'
 import {countText, getChannelFromInputChennel, getText, isValidTextLength, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'

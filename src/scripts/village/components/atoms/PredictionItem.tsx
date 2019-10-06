@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from '../../types'
 import Circle from './svg/Circle'
 import Cross from './svg/Cross'
 import Question from './svg/Question'

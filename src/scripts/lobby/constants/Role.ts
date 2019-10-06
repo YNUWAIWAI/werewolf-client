@@ -1,4 +1,4 @@
-import * as lobby from 'types/lobby'
+import * as lobby from '../types'
 
 const BASE_URL = 'https://werewolf.world/image/0.3/role_icons/50x50withTI/'
 

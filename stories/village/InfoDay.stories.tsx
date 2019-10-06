@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from 'types/village'
+import * as village from './types'
 import {number, radios, select} from '@storybook/addon-knobs'
 import InfoDay from '../../src/scripts/village/components/molecules/InfoDay'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'

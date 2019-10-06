@@ -1,4 +1,4 @@
-import * as lobby from 'types/lobby'
+import * as lobby from '../../../types/lobby'
 import en from './en.json'
 import fr from './fr.json'
 import it from './it.json'

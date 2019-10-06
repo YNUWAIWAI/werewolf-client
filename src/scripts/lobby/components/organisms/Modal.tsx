@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as lobby from 'types/lobby'
+import * as lobby from '../../types'
 import {CSSTransition} from 'react-transition-group'
 import {FormattedMessage} from 'react-intl'
 
