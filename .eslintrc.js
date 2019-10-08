@@ -48,6 +48,22 @@ module.exports = {
         requireLast: false
       }
     }],
+    'jest/consistent-test-it': ['error', {
+      fn: 'test',
+      withinDescribe: 'test'
+    }],
+    'jest/expect-expect': 'error',
+    'jest/no-duplicate-hooks': 'error',
+    'jest/no-expect-resolves': 'error',
+    'jest/no-test-return-statement': 'error',
+    'jest/prefer-spy-on': 'error',
+    'jest/prefer-strict-equal': 'error',
+    'jest/prefer-to-be-null': 'error',
+    'jest/prefer-to-be-undefined': 'error',
+    'jest/prefer-to-contain': 'error',
+    'jest/prefer-to-have-length': 'error',
+    'jest/valid-expect-in-promise': 0,
+    'jest/no-export': 'error',
     'react/button-has-type': 0,
     'react/destructuring-assignment': 0,
     'react/forbid-component-props': 0,
