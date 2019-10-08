@@ -1,7 +1,7 @@
 // Workaround for https://github.com/microsoft/TypeScript/issues/17002
 declare global {
   interface ArrayConstructor {
-    isArray(arg: ReadonlyArray<any> | any): arg is ReadonlyArray<any>
+    isArray(arg: readonly any[] | any): arg is readonly any[]
   }
 }
 // Workaround end

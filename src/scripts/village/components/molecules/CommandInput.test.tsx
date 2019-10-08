@@ -156,7 +156,7 @@ describe('<CommandInput />', () => {
         key: Key.Enter,
         metaKey: false
       })
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         caretPosition: 0,
         processing: true,
         suggestLeft: 0,
@@ -193,7 +193,7 @@ describe('<CommandInput />', () => {
             key: Key.Enter,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -229,7 +229,7 @@ describe('<CommandInput />', () => {
             key: Key.Enter,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -265,7 +265,7 @@ describe('<CommandInput />', () => {
             key: Key.Tab,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -304,7 +304,7 @@ describe('<CommandInput />', () => {
             key: Key.Enter,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -341,7 +341,7 @@ describe('<CommandInput />', () => {
             key: Key.Enter,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -378,7 +378,7 @@ describe('<CommandInput />', () => {
             key: Key.Tab,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -426,7 +426,7 @@ describe('<CommandInput />', () => {
             key: Key.Enter,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -462,7 +462,7 @@ describe('<CommandInput />', () => {
             key: Key.Enter,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -498,7 +498,7 @@ describe('<CommandInput />', () => {
             key: Key.Tab,
             metaKey: false
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 0,
             processing: false,
             suggestLeft: 0,
@@ -560,7 +560,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowLeft
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -595,7 +595,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowRight
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -630,7 +630,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowDown
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -644,7 +644,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowDown
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -658,7 +658,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowDown
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -692,7 +692,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowUp
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -706,7 +706,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowUp
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -720,7 +720,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowUp
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 0,
               processing: false,
               suggestLeft: 0,
@@ -756,7 +756,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.Enter
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 4,
               processing: false,
               suggestLeft: 1,
@@ -792,7 +792,7 @@ describe('<CommandInput />', () => {
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.Tab
             })
-            expect(wrapper.state()).toEqual({
+            expect(wrapper.state()).toStrictEqual({
               caretPosition: 4,
               processing: false,
               suggestLeft: 1,
@@ -837,7 +837,7 @@ describe('<CommandInput />', () => {
           key: 'Enter',
           metaKey: false
         })
-        expect(wrapper.state()).toEqual({
+        expect(wrapper.state()).toStrictEqual({
           caretPosition: 4,
           processing: false,
           suggestLeft: 0,
@@ -875,7 +875,7 @@ describe('<CommandInput />', () => {
       expect(instance.isValidTextLength()).toBe(true)
       instance.handlePostChat()
 
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         caretPosition: 0,
         processing: false,
         suggestLeft: 0,
@@ -911,7 +911,7 @@ describe('<CommandInput />', () => {
       expect(instance.isValidTextLength()).toBe(true)
       instance.handlePostChat()
 
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         caretPosition: 0,
         processing: false,
         suggestLeft: 0,
@@ -947,7 +947,7 @@ describe('<CommandInput />', () => {
       expect(instance.isValidTextLength()).toBe(false)
       instance.handlePostChat()
 
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         caretPosition: 0,
         processing: false,
         suggestLeft: 0,
@@ -983,7 +983,7 @@ describe('<CommandInput />', () => {
       expect(instance.isValidTextLength()).toBe(false)
       instance.handlePostChat()
 
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         caretPosition: 0,
         processing: false,
         suggestLeft: 0,
@@ -1012,7 +1012,7 @@ describe('<CommandInput />', () => {
 
       wrapper.instance().updateText('text')
       wrapper.find('.vi--command--input--send').simulate('click')
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         caretPosition: 0,
         processing: false,
         suggestLeft: 0,
@@ -1050,7 +1050,7 @@ describe('<CommandInput />', () => {
     })
     wrapper.instance().handleSuggestClick('suggest')
 
-    expect(wrapper.state()).toEqual({
+    expect(wrapper.state()).toStrictEqual({
       caretPosition: 11,
       processing: false,
       suggestLeft: 65,
@@ -1087,7 +1087,7 @@ describe('<CommandInput />', () => {
             caretPosition: 2,
             text: '@@'
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 2,
             processing: false,
             suggestLeft: 1,
@@ -1123,7 +1123,7 @@ describe('<CommandInput />', () => {
             caretPosition: 2,
             text: '@a'
           })
-          expect(wrapper.state()).toEqual({
+          expect(wrapper.state()).toStrictEqual({
             caretPosition: 2,
             processing: false,
             suggestLeft: 1,
@@ -1160,7 +1160,7 @@ describe('<CommandInput />', () => {
           caretPosition: 2,
           text: '@ '
         })
-        expect(wrapper.state()).toEqual({
+        expect(wrapper.state()).toStrictEqual({
           caretPosition: 2,
           processing: false,
           suggestLeft: 1,
@@ -1196,7 +1196,7 @@ describe('<CommandInput />', () => {
           caretPosition: 0,
           text: ''
         })
-        expect(wrapper.state()).toEqual({
+        expect(wrapper.state()).toStrictEqual({
           caretPosition: 0,
           processing: false,
           suggestLeft: 1,
@@ -1340,7 +1340,7 @@ describe('<CommandInput />', () => {
           caretPosition: 6,
           text: '@alvin'
         })
-        expect(wrapper.state()).toEqual({
+        expect(wrapper.state()).toStrictEqual({
           caretPosition: 6,
           processing: false,
           suggestLeft: 1,
@@ -1395,7 +1395,7 @@ describe('<CommandInput />', () => {
         wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
           key: Key.ArrowDown
         })
-        expect(wrapper.state()).toEqual({
+        expect(wrapper.state()).toStrictEqual({
           caretPosition: 1,
           processing: false,
           suggestLeft: 1,
@@ -1410,7 +1410,7 @@ describe('<CommandInput />', () => {
           caretPosition: 9,
           text: '@catalina'
         })
-        expect(wrapper.state()).toEqual({
+        expect(wrapper.state()).toStrictEqual({
           caretPosition: 9,
           processing: false,
           suggestLeft: 1,
@@ -1451,7 +1451,7 @@ describe('<CommandInput />', () => {
           value: 'a'
         }
       })
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         caretPosition: 1,
         processing: false,
         suggestLeft: 0,
@@ -1818,7 +1818,7 @@ describe('<CommandInput />', () => {
       wrapper.instance().updateSuggestable(true)
       expect(wrapper.state().suggestSelected).toBe(0)
       expect(wrapper.state().suggestable).toBe(true)
-      expect(wrapper.state().suggesttedData).toEqual([])
+      expect(wrapper.state().suggesttedData).toStrictEqual([])
     })
     test('false', () => {
       const handlePostChat = jest.fn()
@@ -1837,7 +1837,7 @@ describe('<CommandInput />', () => {
       wrapper.instance().updateSuggestable(false)
       expect(wrapper.state().suggestSelected).toBe(0)
       expect(wrapper.state().suggestable).toBe(false)
-      expect(wrapper.state().suggesttedData).toEqual([])
+      expect(wrapper.state().suggesttedData).toStrictEqual([])
     })
   })
   test('updateText', () => {

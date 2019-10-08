@@ -11,7 +11,7 @@ test('CHANGE_LANGUAGE', () => {
         type: ActionTypes.global.CHANGE_LANGUAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     village.Language.ja
   )
 })

@@ -1,5 +1,5 @@
-import * as village from '../../types'
 import * as React from 'react'
+import * as village from '../../types'
 import {countText, getChannelFromInputChennel, getText, isValidTextLength, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import CommandInputPostCounter from '../atoms/CommandInputPostCounter'

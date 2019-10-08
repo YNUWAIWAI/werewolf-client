@@ -31,7 +31,7 @@ describe('<SettingsBox />', () => {
     expect(wrapper.find('.lo--settings--bucket.danger')).toHaveLength(1)
     expect(wrapper.find('.lo--settings--bucket--form')).toHaveLength(6)
     expect(wrapper.find('.lo--settings--bucket--form.danger')).toHaveLength(2)
-    expect(wrapper.state()).toEqual(
+    expect(wrapper.state()).toStrictEqual(
       {
         language: {
           valid: false,
@@ -83,7 +83,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.language)(true)(lobby.Language.en)
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: true,
@@ -128,7 +128,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.language)(true)(lobby.Language.ja)
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -173,7 +173,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.language)(false)(lobby.Language.en)
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -218,7 +218,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.language)(false)(lobby.Language.ja)
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -265,7 +265,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userEmail)(true)('another@example.com')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -310,7 +310,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userEmail)(true)('example@example.com')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -355,7 +355,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userEmail)(false)('another@example.com')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -400,7 +400,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userEmail)(false)('example@example.com')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -447,7 +447,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userName)(true)('anotherUserName')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -492,7 +492,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userName)(true)('userName')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -537,7 +537,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userName)(false)('anotherUserName')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -582,7 +582,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userName)(false)('userName')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -629,7 +629,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userPassword)(true)('userPassword')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -674,7 +674,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userPassword)(true)('')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -719,7 +719,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userPassword)(false)('userPassword')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
@@ -764,7 +764,7 @@ describe('<SettingsBox />', () => {
 
         wrapper.instance().handleChange(PropName.userPassword)(false)('')
 
-        expect(wrapper.state()).toEqual(
+        expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,

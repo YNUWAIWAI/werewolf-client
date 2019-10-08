@@ -20,7 +20,7 @@ describe('<SearchResult />', () => {
       />
     )
 
-    expect(wrapper.html()).toBe(null)
+    expect(wrapper.html()).toBeNull()
   })
   test('0 items (searched: true)', () => {
     const selectVillage = jest.fn()

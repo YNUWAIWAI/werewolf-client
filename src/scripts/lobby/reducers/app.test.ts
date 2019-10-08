@@ -10,7 +10,7 @@ test('SELECT_VILLAGE', () => {
         type: ActionTypes.global.SELECT_VILLAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.WaitingForPlayers
     }
@@ -24,7 +24,7 @@ test('BUILD_VILLAGE', () => {
         type: ActionTypes.Target.BUILD_VILLAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.WaitingForPlayers
     }
@@ -38,7 +38,7 @@ test('SHOW_ADVANCED_SEARCH', () => {
         type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.AdvancedSearch
     }
@@ -52,7 +52,7 @@ test('SHOW_BUILD_VILLAGE', () => {
         type: ActionTypes.Target.SHOW_BUILD_VILLAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.BuildVillage
     }
@@ -66,7 +66,7 @@ test('SHOW_CONNECTING_TO_ROBOT_PLAYER', () => {
         type: ActionTypes.Target.SHOW_CONNECTING_TO_ROBOT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.ConnectingToRobotPlayer
     }
@@ -80,7 +80,7 @@ test('SHOW_HISTORY', () => {
         type: ActionTypes.Target.SHOW_HISTORY
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.History
     }
@@ -94,7 +94,7 @@ test('SHOW_ID_SEARCH', () => {
         type: ActionTypes.Target.SHOW_ID_SEARCH
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.IdSearch
     }
@@ -108,7 +108,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.LobbyForAudience
     }
@@ -122,7 +122,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.LobbyForHumanPlayer
     }
@@ -136,7 +136,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.LobbyForRobotPlayer
     }
@@ -150,7 +150,7 @@ test('SHOW_MAIN', () => {
         type: ActionTypes.Target.SHOW_MAIN
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.Main
     }
@@ -164,7 +164,7 @@ test('SHOW_SETTINGS', () => {
         type: ActionTypes.Target.SHOW_SETTINGS
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       content: Content.Settings
     }

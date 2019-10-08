@@ -30,7 +30,7 @@ test('ID_SEARCH', () => {
         type: ActionTypes.Target.ID_SEARCH
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       menuItems: [
@@ -59,7 +59,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       header: 'Header.idSearch(audience)',
       id: -1,
@@ -94,7 +94,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       header: 'Header.idSearch(human player)',
       id: -1,
@@ -129,7 +129,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       header: 'Header.idSearch(robot player)',
       id: -1,
@@ -165,7 +165,7 @@ test('idSearch/CHANGE_SEARCH_ID', () => {
         type: ActionTypes.idSearch.CHANGE_SEARCH_ID
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       header: '',
       id: 123,
@@ -205,7 +205,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
         validity: true
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       header: '',
       id: -1,
@@ -242,7 +242,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         header: '',
         id: -1,
@@ -282,7 +282,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         header: '',
         id: -1,

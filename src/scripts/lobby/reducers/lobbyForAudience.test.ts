@@ -10,7 +10,7 @@ test('REFRESH', () => {
         type: ActionTypes.Target.REFRESH
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       image: '',
       isPlayer: false,
@@ -48,7 +48,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         image: '/assets/images/avatar/default/user.png',
@@ -65,7 +65,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       initialState
     )
   })
@@ -78,7 +78,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual({
+    ).toStrictEqual({
       image: '',
       isPlayer: false,
       menuItems: [
@@ -182,7 +182,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       initialState
     )
   })

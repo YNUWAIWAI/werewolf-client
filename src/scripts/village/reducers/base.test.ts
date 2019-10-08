@@ -9,7 +9,7 @@ test('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning)
     )
-  ).toEqual({
+  ).toStrictEqual({
     '@id': 'https://licos.online/state/0.2/village#3',
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
     'date': 1,

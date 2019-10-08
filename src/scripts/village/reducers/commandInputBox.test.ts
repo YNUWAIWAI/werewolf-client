@@ -9,7 +9,7 @@ describe('socket/MESSAGE', () => {
     expect(reducer(
       initialState,
       socket.message(myMessageOnChat)
-    )).toEqual({
+    )).toStrictEqual({
       limited: {
         available: false,
         postCount: 0
@@ -23,13 +23,13 @@ describe('socket/MESSAGE', () => {
     expect(reducer(
       initialState,
       socket.message(theirMessageOnChat)
-    )).toEqual(initialState)
+    )).toStrictEqual(initialState)
   })
   test('seer 1', () => {
     expect(reducer(
       initialState,
       socket.message(firstMorning)
-    )).toEqual({
+    )).toStrictEqual({
       limited: {
         available: false,
         postCount: 0
@@ -43,7 +43,7 @@ describe('socket/MESSAGE', () => {
     expect(reducer(
       initialState,
       socket.message(firstMorning2)
-    )).toEqual({
+    )).toStrictEqual({
       limited: {
         available: true,
         postCount: 0
@@ -70,7 +70,7 @@ test('CHANGE_DATE', () => {
       to: village.Phase.day,
       type: ActionTypes.global.CHANGE_PHASE
     }
-  )).toEqual({
+  )).toStrictEqual({
     limited: {
       available: true,
       postCount: 0

@@ -31,8 +31,16 @@ export default function AvatarList(props: Props) {
       unmountOnExit
     >
       <AvatarItem
+        avatarImage={item.avatarImage}
+        canKickOut={item.canKickOut}
         confirmKickOutPlayer={props.confirmKickOutPlayer}
-        {... item}
+        isAnonymous={item.isAnonymous}
+        isHost={item.isHost}
+        isMe={item.isMe}
+        name={item.name}
+        ping={item.ping}
+        pingStatus={item.pingStatus}
+        token={item.token}
       />
     </CSSTransition>
   ))

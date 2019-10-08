@@ -11,7 +11,7 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
         type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
     type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
     values: {
@@ -37,7 +37,7 @@ test('SELECT_NO', () => {
         type: ActionTypes.global.SELECT_NO
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
     type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
     values: {
@@ -63,7 +63,7 @@ test('SELECT_YES', () => {
         type: ActionTypes.global.SELECT_YES
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     descriptionId: 'Modal.description(kickOutPlayer)',
     type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
     values: {

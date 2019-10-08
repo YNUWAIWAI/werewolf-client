@@ -13,7 +13,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(firstMorning)
       )
-    ).toEqual(initialState)
+    ).toStrictEqual(initialState)
   })
   test('phase is result', () => {
     expect(
@@ -21,7 +21,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(result)
       )
-    ).toEqual({
+    ).toStrictEqual({
       agents: {
         agent0: {
           agentId: '0',

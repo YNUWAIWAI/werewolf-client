@@ -44,7 +44,7 @@ describe('<NumberSelect />', () => {
       )
 
       expect(wrapper.find(Select)).toHaveLength(1)
-      expect(wrapper.find(Select).props().defaultValue).toEqual({
+      expect(wrapper.find(Select).props().defaultValue).toStrictEqual({
         label: '0 players',
         value: 0
       })
@@ -67,7 +67,7 @@ describe('<NumberSelect />', () => {
       )
 
       expect(wrapper.find(Select)).toHaveLength(1)
-      expect(wrapper.find(Select).props().defaultValue).toEqual({
+      expect(wrapper.find(Select).props().defaultValue).toStrictEqual({
         label: '1 player',
         value: 1
       })

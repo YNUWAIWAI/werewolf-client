@@ -31,7 +31,7 @@ test('ADVANCED_SEARCH', () => {
         type: ActionTypes.Target.ADVANCED_SEARCH
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       menuItems: [
@@ -62,7 +62,7 @@ test('advancedSearch/CHANGE_AVATAR', () => {
         type: ActionTypes.advancedSearch.CHANGE_AVATAR
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -83,7 +83,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         checked: {
@@ -103,7 +103,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         checked: {
@@ -123,7 +123,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         checked: {
@@ -143,7 +143,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         checked: {
@@ -163,7 +163,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         checked: {
@@ -183,7 +183,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
           type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         checked: {
@@ -203,7 +203,7 @@ test('advancedSearch/CHANGE_COMMENT', () => {
         type: ActionTypes.advancedSearch.CHANGE_COMMENT
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -222,7 +222,7 @@ test('advancedSearch/CHANGE_HOST_NAME', () => {
         type: ActionTypes.advancedSearch.CHANGE_HOST_NAME
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -241,7 +241,7 @@ test('advancedSearch/CHANGE_MAXIMUM', () => {
         type: ActionTypes.advancedSearch.CHANGE_MAXIMUM
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -260,7 +260,7 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
         type: ActionTypes.advancedSearch.CHANGE_MINIMUM
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -281,7 +281,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           validity: true
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -301,7 +301,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           validity: true
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -321,7 +321,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           validity: true
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -341,7 +341,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           validity: true
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -361,7 +361,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           validity: true
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -381,7 +381,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
           validity: true
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -401,7 +401,7 @@ test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
         villageName: 'villageName'
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -446,7 +446,7 @@ test('SHOW_ADVANCED_SEARCH', () => {
         type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       searched: false
@@ -461,7 +461,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       header: 'Header.advancedSearch(audience)',
@@ -492,7 +492,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       header: 'Header.advancedSearch(human player)',
@@ -523,7 +523,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       header: 'Header.advancedSearch(robot player)',
@@ -556,7 +556,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         image: '/assets/images/avatar/default/user.png',
@@ -590,7 +590,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         menuItems: [

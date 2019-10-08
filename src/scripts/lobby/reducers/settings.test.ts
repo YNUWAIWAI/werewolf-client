@@ -12,7 +12,7 @@ describe('scoket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         initialValue: {
           language: 'ja',
