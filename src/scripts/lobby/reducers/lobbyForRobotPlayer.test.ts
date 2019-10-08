@@ -10,7 +10,7 @@ test('REFRESH', () => {
         type: ActionTypes.Target.REFRESH
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       image: '',
       isPlayer: true,
@@ -52,7 +52,7 @@ describe('scoket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         image: '/assets/images/avatar/default/user.png',
@@ -70,7 +70,7 @@ describe('scoket/MESSAGE', () => {
             type: ActionTypes.socket.MESSAGE
           }
         )
-      ).toEqual(
+      ).toStrictEqual(
         initialState
       )
     })
@@ -83,7 +83,7 @@ describe('scoket/MESSAGE', () => {
             type: ActionTypes.socket.MESSAGE
           }
         )
-      ).toEqual(
+      ).toStrictEqual(
         initialState
       )
     })
@@ -96,7 +96,7 @@ describe('scoket/MESSAGE', () => {
             type: ActionTypes.socket.MESSAGE
           }
         )
-      ).toEqual(
+      ).toStrictEqual(
         {
           image: '',
           isPlayer: true,

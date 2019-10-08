@@ -13,7 +13,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(myMessageOnChat)
       )
-    ).toEqual({
+    ).toStrictEqual({
       allIds: ['chat0'],
       byId: {
         chat0: {
@@ -61,7 +61,7 @@ describe('socket/MESSAGE', () => {
         },
         socket.message(theirMessageOnChat)
       )
-    ).toEqual({
+    ).toStrictEqual({
       allIds: ['chat0', 'chat1'],
       byId: {
         chat0: {
@@ -141,7 +141,7 @@ describe('socket/MESSAGE', () => {
         },
         socket.message(onymousAudienceChat)
       )
-    ).toEqual({
+    ).toStrictEqual({
       allIds: ['chat0', 'chat1', 'chat2'],
       byId: {
         chat0: {
@@ -251,7 +251,7 @@ describe('socket/MESSAGE', () => {
         },
         socket.message(anonymousAudienceChat)
       )
-    ).toEqual({
+    ).toStrictEqual({
       allIds: ['chat0', 'chat1', 'chat2', 'chat3'],
       byId: {
         chat0: {
@@ -330,7 +330,7 @@ test('CHANGE_DATE', () => {
         type: ActionTypes.global.CHANGE_DATE
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     allIds: ['delimeter0'],
     byId: {
       'delimeter0': {
@@ -373,7 +373,7 @@ test('STAR', () => {
         type: ActionTypes.global.STAR
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     allIds: ['chat0'],
     byId: {
       chat0: {

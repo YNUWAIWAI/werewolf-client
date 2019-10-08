@@ -1,7 +1,6 @@
 import * as village from '../../types'
 import {Agent} from '../../constants/Agent'
 import {ImagePath} from '../../constants/ImagePath'
-import {Role} from '../../constants/Role'
 
 const json: village.Payload$flavorTextMessage = {
   '@context': [

@@ -12,7 +12,7 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
         type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: true
   })
@@ -25,7 +25,7 @@ test('SELECT_NO', () => {
         type: ActionTypes.global.SELECT_NO
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: false
   })
@@ -38,7 +38,7 @@ test('SELECT_YES', () => {
         type: ActionTypes.global.SELECT_YES
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: false
   })
@@ -49,7 +49,7 @@ test('socket/CLOSE', () => {
       initialState,
       socket.close(new CloseEvent('error'))
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: true
   })
@@ -60,7 +60,7 @@ test('socket/ERROR', () => {
       initialState,
       socket.error(new Event('error'))
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: true
   })
@@ -71,7 +71,7 @@ test('socket/OPEN', () => {
       initialState,
       socket.open(new Event('open'))
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: false
   })

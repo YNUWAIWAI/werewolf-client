@@ -12,7 +12,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(firstMorning)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         data: [
           {
@@ -121,7 +121,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(flavorText)
       )
-    ).toEqual(
+    ).toStrictEqual(
       initialState
     )
   })
@@ -131,7 +131,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(myMessageOnChat)
       )
-    ).toEqual(
+    ).toStrictEqual(
       initialState
     )
   })

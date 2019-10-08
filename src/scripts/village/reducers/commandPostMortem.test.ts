@@ -9,7 +9,7 @@ describe('commandPostMortem', () => {
         initialState,
         activateNextButton(1)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         navigation: [
           {
@@ -37,7 +37,7 @@ describe('commandPostMortem', () => {
         initialState,
         deactivateNextButton()
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         navigation: [
           {
@@ -80,7 +80,7 @@ describe('commandPostMortem', () => {
           type: ActionTypes.Navigation.NEXT_GAME
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         navigation: [
           {
@@ -129,7 +129,7 @@ describe('commandPostMortem', () => {
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         navigation: [
           {

@@ -8,46 +8,43 @@ const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Langua
 
 describe('<VillageItem />', () => {
   test('isPlayer: true', () => {
-    const village: lobby.Village = {
-      avatar: lobby.Avatar.fixed,
-      comment: 'comment',
-      hostPlayer: {
-        isAnonymous: false,
-        isHuman: true,
-        name: 'hostPlayer name'
-      },
-      id: 1,
-      idForSearching: 123,
-      name: 'name',
-      playerSetting: {
-        current: 8,
-        human: {
-          current: 5,
-          max: 8
-        },
-        number: 15,
-        robot: {
-          current: 3,
-          min: 7
-        }
-      },
-      roleSetting: {
-        hunter: 1,
-        madman: 1,
-        mason: 2,
-        medium: 1,
-        seer: 1,
-        villager: 6,
-        werehamster: 1,
-        werewolf: 2
-      }
-    }
     const handleClick = jest.fn()
     const wrapper = mountWithIntl(
       <VillageItem
-        {... village}
+        avatar={lobby.Avatar.fixed}
+        comment="comment"
         handleClick={handleClick}
+        hostPlayer={{
+          isAnonymous: false,
+          isHuman: true,
+          name: 'hostPlayer name'
+        }}
+        id={1}
+        idForSearching={123}
         isPlayer
+        name="name"
+        playerSetting={{
+          current: 8,
+          human: {
+            current: 5,
+            max: 8
+          },
+          number: 15,
+          robot: {
+            current: 3,
+            min: 7
+          }
+        }}
+        roleSetting={{
+          hunter: 1,
+          madman: 1,
+          mason: 2,
+          medium: 1,
+          seer: 1,
+          villager: 6,
+          werehamster: 1,
+          werewolf: 2
+        }}
       />
     )
 
@@ -61,46 +58,43 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('isPlayer: false', () => {
-    const village: lobby.Village = {
-      avatar: lobby.Avatar.fixed,
-      comment: 'comment',
-      hostPlayer: {
-        isAnonymous: false,
-        isHuman: true,
-        name: 'hostPlayer name'
-      },
-      id: 1,
-      idForSearching: 123,
-      name: 'name',
-      playerSetting: {
-        current: 8,
-        human: {
-          current: 5,
-          max: 8
-        },
-        number: 15,
-        robot: {
-          current: 3,
-          min: 7
-        }
-      },
-      roleSetting: {
-        hunter: 1,
-        madman: 1,
-        mason: 2,
-        medium: 1,
-        seer: 1,
-        villager: 6,
-        werehamster: 1,
-        werewolf: 2
-      }
-    }
     const handleClick = jest.fn()
     const wrapper = mountWithIntl(
       <VillageItem
-        {... village}
+        avatar={lobby.Avatar.fixed}
+        comment="comment"
         handleClick={handleClick}
+        hostPlayer={{
+          isAnonymous: false,
+          isHuman: true,
+          name: 'hostPlayer name'
+        }}
+        id={1}
+        idForSearching={123}
         isPlayer={false}
+        name="name"
+        playerSetting={{
+          current: 8,
+          human: {
+            current: 5,
+            max: 8
+          },
+          number: 15,
+          robot: {
+            current: 3,
+            min: 7
+          }
+        }}
+        roleSetting={{
+          hunter: 1,
+          madman: 1,
+          mason: 2,
+          medium: 1,
+          seer: 1,
+          villager: 6,
+          werehamster: 1,
+          werewolf: 2
+        }}
       />
     )
 
@@ -114,86 +108,86 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('isPlayer: true, idForSearching is invalid', () => {
-    const village: lobby.Village = {
-      avatar: lobby.Avatar.fixed,
-      comment: 'comment',
-      hostPlayer: {
-        isAnonymous: false,
-        isHuman: true,
-        name: 'hostPlayer name'
-      },
-      id: 1,
-      idForSearching: 1.23,
-      name: 'name',
-      playerSetting: {
-        current: 8,
-        human: {
-          current: 5,
-          max: 8
-        },
-        number: 15,
-        robot: {
-          current: 3,
-          min: 7
-        }
-      },
-      roleSetting: {
-        hunter: 1,
-        madman: 1,
-        mason: 2,
-        medium: 1,
-        seer: 1,
-        villager: 6,
-        werehamster: 1,
-        werewolf: 2
-      }
-    }
     const handleClick = jest.fn()
-    const wrapper = mountWithIntl(<VillageItem {... village} handleClick={handleClick} isPlayer />)
+    const wrapper = mountWithIntl(
+      <VillageItem
+        avatar={lobby.Avatar.fixed}
+        comment="comment"
+        handleClick={handleClick}
+        hostPlayer={{
+          isAnonymous: false,
+          isHuman: true,
+          name: 'hostPlayer name'
+        }}
+        id={1}
+        idForSearching={1.23}
+        isPlayer
+        name="name"
+        playerSetting={{
+          current: 8,
+          human: {
+            current: 5,
+            max: 8
+          },
+          number: 15,
+          robot: {
+            current: 3,
+            min: 7
+          }
+        }}
+        roleSetting={{
+          hunter: 1,
+          madman: 1,
+          mason: 2,
+          medium: 1,
+          seer: 1,
+          villager: 6,
+          werehamster: 1,
+          werewolf: 2
+        }}
+      />
+    )
 
     expect(wrapper.find('.lo--village--item--val.id-for-searching').text()).toBe('####')
   })
   test('isPlayer: true, onClick', () => {
-    const village: lobby.Village = {
-      avatar: lobby.Avatar.fixed,
-      comment: 'comment',
-      hostPlayer: {
-        isAnonymous: false,
-        isHuman: true,
-        name: 'hostPlayer name'
-      },
-      id: 1,
-      idForSearching: 123,
-      name: 'name',
-      playerSetting: {
-        current: 8,
-        human: {
-          current: 5,
-          max: 8
-        },
-        number: 15,
-        robot: {
-          current: 3,
-          min: 7
-        }
-      },
-      roleSetting: {
-        hunter: 1,
-        madman: 1,
-        mason: 2,
-        medium: 1,
-        seer: 1,
-        villager: 6,
-        werehamster: 1,
-        werewolf: 2
-      }
-    }
     const handleClick = jest.fn()
     const wrapper = mountWithIntl(
       <VillageItem
-        {... village}
+        avatar={lobby.Avatar.fixed}
+        comment="comment"
         handleClick={handleClick}
+        hostPlayer={{
+          isAnonymous: false,
+          isHuman: true,
+          name: 'hostPlayer name'
+        }}
+        id={1}
+        idForSearching={123}
         isPlayer
+        name="name"
+        playerSetting={{
+          current: 8,
+          human: {
+            current: 5,
+            max: 8
+          },
+          number: 15,
+          robot: {
+            current: 3,
+            min: 7
+          }
+        }}
+        roleSetting={{
+          hunter: 1,
+          madman: 1,
+          mason: 2,
+          medium: 1,
+          seer: 1,
+          villager: 6,
+          werehamster: 1,
+          werewolf: 2
+        }}
       />
     )
 
@@ -201,46 +195,43 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
   test('isPlayer: false, onClick', () => {
-    const village: lobby.Village = {
-      avatar: lobby.Avatar.fixed,
-      comment: 'comment',
-      hostPlayer: {
-        isAnonymous: false,
-        isHuman: true,
-        name: 'hostPlayer name'
-      },
-      id: 1,
-      idForSearching: 123,
-      name: 'name',
-      playerSetting: {
-        current: 8,
-        human: {
-          current: 5,
-          max: 8
-        },
-        number: 15,
-        robot: {
-          current: 3,
-          min: 7
-        }
-      },
-      roleSetting: {
-        hunter: 1,
-        madman: 1,
-        mason: 2,
-        medium: 1,
-        seer: 1,
-        villager: 6,
-        werehamster: 1,
-        werewolf: 2
-      }
-    }
     const handleClick = jest.fn()
     const wrapper = mountWithIntl(
       <VillageItem
-        {... village}
+        avatar={lobby.Avatar.fixed}
+        comment="comment"
         handleClick={handleClick}
+        hostPlayer={{
+          isAnonymous: false,
+          isHuman: true,
+          name: 'hostPlayer name'
+        }}
+        id={1}
+        idForSearching={123}
         isPlayer={false}
+        name="name"
+        playerSetting={{
+          current: 8,
+          human: {
+            current: 5,
+            max: 8
+          },
+          number: 15,
+          robot: {
+            current: 3,
+            min: 7
+          }
+        }}
+        roleSetting={{
+          hunter: 1,
+          madman: 1,
+          mason: 2,
+          medium: 1,
+          seer: 1,
+          villager: 6,
+          werehamster: 1,
+          werewolf: 2
+        }}
       />
     )
 
@@ -248,44 +239,41 @@ describe('<VillageItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
   test('typeof handleClick !== "function"', () => {
-    const village: lobby.Village = {
-      avatar: lobby.Avatar.fixed,
-      comment: 'comment',
-      hostPlayer: {
-        isAnonymous: false,
-        isHuman: true,
-        name: 'hostPlayer name'
-      },
-      id: 1,
-      idForSearching: 123,
-      name: 'name',
-      playerSetting: {
-        current: 8,
-        human: {
-          current: 5,
-          max: 8
-        },
-        number: 15,
-        robot: {
-          current: 3,
-          min: 7
-        }
-      },
-      roleSetting: {
-        hunter: 1,
-        madman: 1,
-        mason: 2,
-        medium: 1,
-        seer: 1,
-        villager: 6,
-        werehamster: 1,
-        werewolf: 2
-      }
-    }
     const wrapper = mountWithIntl(
       <VillageItem
-        {... village}
+        avatar={lobby.Avatar.fixed}
+        comment="comment"
+        hostPlayer={{
+          isAnonymous: false,
+          isHuman: true,
+          name: 'hostPlayer name'
+        }}
+        id={1}
+        idForSearching={123}
         isPlayer
+        name="name"
+        playerSetting={{
+          current: 8,
+          human: {
+            current: 5,
+            max: 8
+          },
+          number: 15,
+          robot: {
+            current: 3,
+            min: 7
+          }
+        }}
+        roleSetting={{
+          hunter: 1,
+          madman: 1,
+          mason: 2,
+          medium: 1,
+          seer: 1,
+          villager: 6,
+          werehamster: 1,
+          werewolf: 2
+        }}
       />
     )
 

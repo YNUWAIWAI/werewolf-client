@@ -20,7 +20,7 @@ test('socket/MESSAGE', () => {
         type: ActionTypes.socket.MESSAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       isPlayer: false,
       menuItems: [

@@ -253,7 +253,7 @@ describe('getMyAgent', () => {
       }
     ]
 
-    expect(getMyAgent(agents)).toEqual({
+    expect(getMyAgent(agents)).toStrictEqual({
       '@id': 'https://werewolf.world/resource/0.2/Walter',
       'id': 1,
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -370,7 +370,7 @@ describe('getMyRole', () => {
       }
     ]
 
-    expect(getMyRole(roles)).toEqual(
+    expect(getMyRole(roles)).toStrictEqual(
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
         '@id': 'https://licos.online/state/0.2/village#3/role#seer',
@@ -520,7 +520,7 @@ test('getPlayableAgents', () => {
     }
   ]
 
-  expect(getPlayableAgents(agents)).toEqual([
+  expect(getPlayableAgents(agents)).toStrictEqual([
     {
       '@id': 'https://werewolf.world/resource/0.2/Gert',
       'id': 0,
@@ -663,7 +663,7 @@ test('getPlayableRoles', () => {
     }
   ]
 
-  expect(getPlayableRoles(roles)).toEqual([
+  expect(getPlayableRoles(roles)).toStrictEqual([
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
       '@id': 'https://licos.online/state/0.2/village#3/role#villager',

@@ -13,7 +13,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
           type: ActionTypes.buildVillage.CHANGE_AVATAR
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         value: {
@@ -34,7 +34,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
           type: ActionTypes.buildVillage.CHANGE_AVATAR
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         value: {
@@ -56,7 +56,7 @@ test('buildVillage/CHANGE_COMMENT', () => {
         type: ActionTypes.buildVillage.CHANGE_COMMENT
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -75,7 +75,7 @@ test('buildVillage/CHANGE_MEMBER', () => {
         type: ActionTypes.buildVillage.CHANGE_MEMBER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -103,7 +103,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         value: {
@@ -132,7 +132,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         value: {
@@ -161,7 +161,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
           type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         value: {
@@ -183,7 +183,7 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
         type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_ROBOTS
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -206,7 +206,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           validity: false
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -226,7 +226,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           validity: false
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -246,7 +246,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           validity: false
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -267,7 +267,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           validity: false
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -287,7 +287,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
           validity: false
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         validity: {
@@ -315,7 +315,7 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
         villageName: 'villageName'
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       value: {
@@ -355,7 +355,7 @@ test('LEAVE_WAITING_PAGE', () => {
         type: ActionTypes.Target.LEAVE_WAITING_PAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       validity: initialState.validity,
@@ -388,7 +388,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       menuItems: [
@@ -441,7 +441,7 @@ test('SHOW_MAIN', () => {
         type: ActionTypes.Target.SHOW_MAIN
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       validity: initialState.validity,
@@ -474,7 +474,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       menuItems: [
@@ -509,7 +509,7 @@ describe('scoket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         image: '/assets/images/avatar/default/user.png',

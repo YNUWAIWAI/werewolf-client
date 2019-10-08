@@ -10,7 +10,7 @@ describe('commandGrave', () => {
           type: ActionTypes.Navigation.RETURN_TO_LOBBY
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         navigation: [
           {

@@ -1,8 +1,6 @@
 import * as React from 'react'
 
-const polorToRectangular = (cx: number, cy: number, r: number, deg: number): string => {
-  return `${cx + (r * Math.cos(deg / 180 * Math.PI))}, ${cy + (r * Math.sin(deg / 180 * Math.PI))}`
-}
+const polorToRectangular = (cx: number, cy: number, r: number, deg: number): string => `${cx + (r * Math.cos(deg / 180 * Math.PI))}, ${cy + (r * Math.sin(deg / 180 * Math.PI))}`
 
 export default function Star() {
   const cx = 25

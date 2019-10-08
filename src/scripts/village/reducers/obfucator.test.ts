@@ -25,7 +25,7 @@ describe('CHANGE_PHASE', () => {
         initialState,
         action
       )
-    ).toEqual({
+    ).toStrictEqual({
       loading: true,
       visible: false
     })
@@ -42,7 +42,7 @@ describe('CHANGE_PHASE', () => {
         initialState,
         action
       )
-    ).toEqual(initialState)
+    ).toStrictEqual(initialState)
   })
   test('result -> postMortem', () => {
     const action: ChangePhase = {
@@ -56,7 +56,7 @@ describe('CHANGE_PHASE', () => {
         initialState,
         action
       )
-    ).toEqual(initialState)
+    ).toStrictEqual(initialState)
   })
 })
 test('HIDE_RESULT', () => {
@@ -69,7 +69,7 @@ test('HIDE_RESULT', () => {
       initialState,
       action
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: false
   })
@@ -84,7 +84,7 @@ test('SELECT_NO', () => {
       initialState,
       action
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: false
   })
@@ -100,7 +100,7 @@ test('SELECT_YES', () => {
       initialState,
       action
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: false
   })
@@ -116,7 +116,7 @@ test('SELECT_OPTION', () => {
       initialState,
       action
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: true
   })
@@ -131,7 +131,7 @@ test('SHOW_RESULT', () => {
       initialState,
       action
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: true
   })
@@ -142,7 +142,7 @@ test('socket/CLOSE', () => {
       initialState,
       socket.close(new CloseEvent('close event'))
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: true
   })
@@ -153,7 +153,7 @@ test('socket/ERROR', () => {
       initialState,
       socket.error(new Event('error'))
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: true
   })
@@ -164,7 +164,7 @@ test('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning)
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: true,
     visible: true
   })
@@ -173,7 +173,7 @@ test('socket/MESSAGE', () => {
       initialState,
       socket.message(result)
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: true
   })
@@ -184,7 +184,7 @@ test('socket/OPEN', () => {
       initialState,
       socket.open(new Event('open'))
     )
-  ).toEqual({
+  ).toStrictEqual({
     loading: false,
     visible: false
   })

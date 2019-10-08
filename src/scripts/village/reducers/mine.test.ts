@@ -11,7 +11,7 @@ test('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning)
     )
-  ).toEqual({
+  ).toStrictEqual({
     agent: {
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
       'id': 1,

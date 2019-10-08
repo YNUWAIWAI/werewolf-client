@@ -12,7 +12,7 @@ test('socket/MESSAGE watingPage', () => {
         type: ActionTypes.socket.MESSAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       id: '',
       myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
@@ -33,7 +33,7 @@ test('socket/MESSAGE ping', () => {
         type: ActionTypes.socket.MESSAGE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       id: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',

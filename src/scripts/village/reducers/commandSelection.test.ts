@@ -16,7 +16,7 @@ test('CHANGE_PHASE', () => {
         type: ActionTypes.global.CHANGE_PHASE
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     ... initialState,
     fixed: false
   })
@@ -137,7 +137,7 @@ test('SELECT_YES', () => {
         type: ActionTypes.global.SELECT_YES
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     allIds: [
       '2'
     ],
@@ -256,7 +256,7 @@ describe('socket/MESSAGE', () => {
           initialState,
           socket.message(day)
         )
-      ).toEqual({
+      ).toStrictEqual({
         allIds,
         byId,
         fixed: false
@@ -364,7 +364,7 @@ describe('socket/MESSAGE', () => {
           initialState,
           socket.message(night)
         )
-      ).toEqual({
+      ).toStrictEqual({
         allIds,
         byId,
         fixed: false

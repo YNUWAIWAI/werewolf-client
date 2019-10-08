@@ -12,7 +12,7 @@ test('CHANGE_PHASE', () => {
         type: ActionTypes.global.CHANGE_PHASE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       id: '',
       visible: false
@@ -28,7 +28,7 @@ test('SELECT_OPTION', () => {
         type: ActionTypes.global.SELECT_OPTION
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       id: '1',
       visible: true
@@ -46,7 +46,7 @@ test('SELECT_NO', () => {
         type: ActionTypes.global.SELECT_NO
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       id: '1',
       visible: false
@@ -65,7 +65,7 @@ test('SELECT_YES', () => {
         type: ActionTypes.global.SELECT_YES
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       id: '1',
       visible: false

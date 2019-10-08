@@ -22,7 +22,7 @@ describe('<AvatarSelect />', () => {
       )
 
       expect(wrapper.find(Select)).toHaveLength(1)
-      expect(wrapper.find(Select).props().defaultValue).toEqual({
+      expect(wrapper.find(Select).props().defaultValue).toStrictEqual({
         label: 'Fixed',
         value: 'fixed'
       })
@@ -41,7 +41,7 @@ describe('<AvatarSelect />', () => {
       )
 
       expect(wrapper.find(Select)).toHaveLength(1)
-      expect(wrapper.find(Select).props().defaultValue).toEqual({
+      expect(wrapper.find(Select).props().defaultValue).toStrictEqual({
         label: 'Random',
         value: 'random'
       })
@@ -60,7 +60,7 @@ describe('<AvatarSelect />', () => {
       )
 
       expect(wrapper.find(Select)).toHaveLength(1)
-      expect(wrapper.find(Select).props().defaultValue).toEqual({
+      expect(wrapper.find(Select).props().defaultValue).toStrictEqual({
         label: 'Unspecified',
         value: 'unspecified'
       })
@@ -79,7 +79,7 @@ describe('<AvatarSelect />', () => {
       )
 
       expect(wrapper.find(Select)).toHaveLength(1)
-      expect(wrapper.find(Select).props().defaultValue).toEqual({
+      expect(wrapper.find(Select).props().defaultValue).toStrictEqual({
         label: 'Random avatar',
         value: 'random'
       })
@@ -98,7 +98,7 @@ describe('<AvatarSelect />', () => {
       )
 
       expect(wrapper.find(Select)).toHaveLength(1)
-      expect(wrapper.find(Select).props().defaultValue).toEqual({
+      expect(wrapper.find(Select).props().defaultValue).toStrictEqual({
         label: 'Fixed avatar',
         value: 'fixed'
       })

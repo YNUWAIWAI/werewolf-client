@@ -210,7 +210,7 @@ describe('indexedDB/INIT', () => {
     expect(isHost).toBeUndefined()
     expect(lang).toBeUndefined()
     expect(nextGameVillageId).toBeUndefined()
-    expect(villageInfo).toEqual(village)
+    expect(villageInfo).toStrictEqual(village)
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.nothing)
 
     expect(dispatch).toHaveBeenCalledTimes(2)
@@ -254,7 +254,7 @@ describe('indexedDB/INIT', () => {
     expect(isHost).toBeUndefined()
     expect(lang).toBeUndefined()
     expect(nextGameVillageId).toBeUndefined()
-    expect(villageInfo).toEqual(village)
+    expect(villageInfo).toStrictEqual(village)
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.nothing)
 
     expect(dispatch).toHaveBeenCalledTimes(2)
@@ -480,7 +480,7 @@ describe('socket/MESSAGE', () => {
         expect(isHost).toBe(true)
         expect(lang).toBeUndefined()
         expect(nextGameVillageId).toBeUndefined()
-        expect(villageInfo).toEqual({
+        expect(villageInfo).toStrictEqual({
           lobbyType: lobby.Lobby.human,
           token: avatarToken.humanPlayer,
           villageId: 1
@@ -522,7 +522,7 @@ describe('socket/MESSAGE', () => {
         expect(isHost).toBe(false)
         expect(lang).toBeUndefined()
         expect(nextGameVillageId).toBeUndefined()
-        expect(villageInfo).toEqual({
+        expect(villageInfo).toStrictEqual({
           lobbyType: lobby.Lobby.human,
           token: avatarToken.humanPlayer,
           villageId: 1
@@ -600,7 +600,7 @@ describe('socket/SEND', () => {
         whatToDoNextInLobby
       ] = await getAllValue()
 
-      expect(buildVillagePayload).toEqual(payload)
+      expect(buildVillagePayload).toStrictEqual(payload)
       expect(isHost).toBeUndefined()
       expect(lang).toBeUndefined()
       expect(nextGameVillageId).toBeUndefined()

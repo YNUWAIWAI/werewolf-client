@@ -102,7 +102,7 @@ describe('<Chat />', () => {
       )
 
       expect(wrapper.find('ChatItem')).toHaveLength(2)
-      expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([2, 1])
+      expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toStrictEqual([2, 1])
       expect(handleStarInner).toHaveBeenCalledTimes(0)
       expect(handleStar).toHaveBeenCalledTimes(2)
       expect(handleStar).toHaveBeenCalledWith('chat0')
@@ -170,7 +170,7 @@ describe('<Chat />', () => {
 
       expect(wrapper.find('ChatItem')).toHaveLength(3)
       expect(wrapper.find('ChatDelimeter')).toHaveLength(1)
-      expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toEqual([3, 2, 1])
+      expect(wrapper.find('ChatItem').map(n => n.prop('id'))).toStrictEqual([3, 2, 1])
       expect(handleStarInner).toHaveBeenCalledTimes(0)
       expect(handleStar).toHaveBeenCalledTimes(3)
       expect(handleStar).toHaveBeenCalledWith('chat0')
@@ -209,7 +209,7 @@ describe('<Chat />', () => {
       )
 
       wrapper.simulate('scroll')
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         atBottom: true
       })
     })
@@ -225,7 +225,7 @@ describe('<Chat />', () => {
       )
 
       wrapper.simulate('scroll')
-      expect(wrapper.state()).toEqual({
+      expect(wrapper.state()).toStrictEqual({
         atBottom: true
       })
     })

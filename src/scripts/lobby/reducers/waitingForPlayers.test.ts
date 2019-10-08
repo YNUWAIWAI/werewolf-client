@@ -13,7 +13,7 @@ describe('CHANGE_LOBBY', () => {
           type: ActionTypes.global.CHANGE_LOBBY
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         isPlayer: true,
@@ -44,7 +44,7 @@ describe('CHANGE_LOBBY', () => {
           type: ActionTypes.global.CHANGE_LOBBY
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         isPlayer: false,
@@ -75,7 +75,7 @@ describe('CHANGE_LOBBY', () => {
           type: ActionTypes.global.CHANGE_LOBBY
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         isPlayer: true,
@@ -108,7 +108,7 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
         type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       kickOutToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
@@ -139,7 +139,7 @@ test('PLAY_GAME', () => {
         type: ActionTypes.Target.PLAY_GAME
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       menuItems: [
@@ -168,7 +168,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       isPlayer: false,
@@ -198,7 +198,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       isPlayer: true,
@@ -228,7 +228,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       ... initialState,
       isPlayer: true,
@@ -278,7 +278,7 @@ describe('socket/MESSAGE', () => {
           type: ActionTypes.socket.MESSAGE
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         ... initialState,
         menuItems: [
@@ -327,7 +327,7 @@ describe('socket/MESSAGE', () => {
             type: ActionTypes.socket.MESSAGE
           }
         )
-      ).toEqual(
+      ).toStrictEqual(
         {
           ... initialState,
           menuItems: [
@@ -474,7 +474,7 @@ describe('socket/MESSAGE', () => {
             type: ActionTypes.socket.MESSAGE
           }
         )
-      ).toEqual(
+      ).toStrictEqual(
         {
           ... initialState,
           menuItems: [

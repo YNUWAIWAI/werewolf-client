@@ -32,8 +32,7 @@ export default function Loader(props: Props) {
           />
           <path
             className="loader animation"
-            d={`M${width - (stokeWidth / 2)} ${width / 2} C${width - (stokeWidth / 2)} ${(width / 2) - (r * k)}, ${(width / 2) + (r * k)} ${0 + (stokeWidth / 2)}, ${width / 2} ${0 + (stokeWidth / 2)}`
-            }
+            d={`M${width - (stokeWidth / 2)} ${width / 2} C${width - (stokeWidth / 2)} ${(width / 2) - (r * k)}, ${(width / 2) + (r * k)} ${0 + (stokeWidth / 2)}, ${width / 2} ${0 + (stokeWidth / 2)}`}
           />
         </g>
       </g>

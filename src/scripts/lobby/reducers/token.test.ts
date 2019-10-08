@@ -14,7 +14,7 @@ test('CHANGE_LOBBY', () => {
         type: ActionTypes.global.CHANGE_LOBBY
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       [lobby.Lobby.human]: '',
       lobby: lobby.Lobby.robot,
@@ -34,7 +34,7 @@ describe('CHANGE_TOKEN', () => {
           type: ActionTypes.global.CHANGE_TOKEN
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         [lobby.Lobby.human]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
         lobby: lobby.Lobby.human,
@@ -53,7 +53,7 @@ describe('CHANGE_TOKEN', () => {
           type: ActionTypes.global.CHANGE_TOKEN
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         [lobby.Lobby.human]: '',
         lobby: lobby.Lobby.human,
@@ -72,7 +72,7 @@ describe('CHANGE_TOKEN', () => {
           type: ActionTypes.global.CHANGE_TOKEN
         }
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         [lobby.Lobby.human]: '',
         lobby: lobby.Lobby.human,
@@ -90,7 +90,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       [lobby.Lobby.human]: '',
       lobby: 'onymous audience',
@@ -107,7 +107,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       [lobby.Lobby.human]: '',
       lobby: lobby.Lobby.human,
@@ -124,7 +124,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       [lobby.Lobby.human]: '',
       lobby: lobby.Lobby.robot,

@@ -23,6 +23,7 @@ import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../../lobby/util'
 import middleware from './indexedDB'
 
+/* eslint no-extra-parens: 0 */
 (window as Record<string, any>).indexedDB = FDB;
 (global as Record<string, any>).IDBCursor = FDBCursor;
 (global as Record<string, any>).IDBCursorWithValue = FDBCursorWithValue;
@@ -105,7 +106,7 @@ test('RETURN_TO_LOBBY', async () => {
   expect(isHost).toBeUndefined()
   expect(lang).toBeUndefined()
   expect(nextGameVillageId).toBeUndefined()
-  expect(villageInfo).toEqual(v)
+  expect(villageInfo).toStrictEqual(v)
   expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.leaveWaitingPage)
   expect(dispatch).toHaveBeenCalled()
   expect(dispatch).toHaveBeenCalledWith({
@@ -187,7 +188,7 @@ describe('NEXT_GAME', () => {
       whatToDoNextInLobby
     ] = await getAllValue()
 
-    expect(buildVillagePayload).toEqual(payload)
+    expect(buildVillagePayload).toStrictEqual(payload)
     expect(isHost).toBe(true)
     expect(lang).toBeUndefined()
     expect(nextGameVillageId).toBeUndefined()
@@ -220,7 +221,7 @@ describe('NEXT_GAME', () => {
       whatToDoNextInLobby
     ] = await getAllValue()
 
-    expect(buildVillagePayload).toEqual(payload)
+    expect(buildVillagePayload).toStrictEqual(payload)
     expect(isHost).toBe(false)
     expect(lang).toBeUndefined()
     expect(nextGameVillageId).toBeUndefined()
@@ -273,7 +274,7 @@ describe('indexedDB/INIT', () => {
     expect(isHost).toBe(true)
     expect(lang).toBe('en')
     expect(nextGameVillageId).toBeUndefined()
-    expect(villageInfo).toEqual(v)
+    expect(villageInfo).toStrictEqual(v)
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,
@@ -321,7 +322,7 @@ describe('indexedDB/INIT', () => {
     expect(isHost).toBe(false)
     expect(lang).toBe('en')
     expect(nextGameVillageId).toBeUndefined()
-    expect(villageInfo).toEqual(v)
+    expect(villageInfo).toStrictEqual(v)
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,

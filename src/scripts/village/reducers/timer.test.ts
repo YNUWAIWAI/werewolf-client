@@ -13,7 +13,7 @@ test('TICK', () => {
         type: ActionTypes.global.TICK
       }
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       phaseStartTime: 0,
       phaseTimeLimit: 0,
@@ -28,7 +28,7 @@ test('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning)
     )
-  ).toEqual(
+  ).toStrictEqual(
     {
       phaseStartTime: 1160190416568,
       phaseTimeLimit: 600000,

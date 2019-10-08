@@ -9,7 +9,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(day)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         content: Content.CommandSelection,
         isDead: false
@@ -22,7 +22,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(firstMorning)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         content: Content.CommandInputBox,
         isDead: false
@@ -35,7 +35,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(flavorText)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         content: Content.CommandSelection,
         isDead: false
@@ -48,7 +48,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(night)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         content: Content.CommandSelection,
         isDead: false
@@ -61,7 +61,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(result)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         content: Content.CommandPostMortem,
         isDead: false

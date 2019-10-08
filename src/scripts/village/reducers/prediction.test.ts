@@ -20,7 +20,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(flavorText)
       )
-    ).toEqual(initialState)
+    ).toStrictEqual(initialState)
   })
   test('my role is seer (numberOfAgents === 1)', () => {
     const playerStatus: State['playerStatus'] = {
@@ -861,7 +861,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(firstMorning)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         playerStatus,
         roleStatus,
@@ -1709,7 +1709,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(firstMorning3)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         playerStatus,
         roleStatus,
@@ -1839,7 +1839,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(firstMorning4)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         playerStatus,
         roleStatus,
@@ -2241,7 +2241,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         socket.message(firstMorning5)
       )
-    ).toEqual(
+    ).toStrictEqual(
       {
         playerStatus,
         roleStatus,
@@ -3096,7 +3096,7 @@ test('CHANGE_PREDICTION_BOARD', () => {
         type: ActionTypes.global.CHANGE_PREDICTION_BOARD
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     ... initialState,
     playerStatus,
     roleStatus,
@@ -3126,7 +3126,7 @@ test('HIDE_PREDICTION_SPEC', () => {
         type: ActionTypes.global.HIDE_PREDICTION_SPEC
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     ... initialState,
     spec: {
       ... initialState.spec,
@@ -3143,7 +3143,7 @@ test('SHOW_PREDICTION_SPEC', () => {
         type: ActionTypes.global.SHOW_PREDICTION_SPEC
       }
     )
-  ).toEqual({
+  ).toStrictEqual({
     ... initialState,
     spec: {
       role: village.RoleId.hunter,
