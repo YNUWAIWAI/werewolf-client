@@ -28,7 +28,7 @@ describe('<CommandGraveContainer />', () => {
   test('handleNavigationClick', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()
@@ -52,7 +52,7 @@ describe('<CommandGraveContainer />', () => {
   test('handlePostChat', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

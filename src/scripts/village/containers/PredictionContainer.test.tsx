@@ -233,7 +233,7 @@ describe('<PredictionContainer />', () => {
               limit: 10
             },
             'id': 3,
-            'lang': village.Language.ja,
+            'lang': village.Language.en,
             'name': '横国の森の奥にある時代に取り残された小さな村',
             'totalNumberOfAgents': 15
           }
@@ -261,7 +261,7 @@ describe('<PredictionContainer />', () => {
             }
           }
         },
-        language: village.Language.ja,
+        language: village.Language.en,
         prediction: {
           playerStatus,
           roleStatus,
@@ -283,7 +283,7 @@ describe('<PredictionContainer />', () => {
   test('handleBoardClick', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()
@@ -313,7 +313,7 @@ describe('<PredictionContainer />', () => {
   test('handleMouseEnter', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()
@@ -339,7 +339,7 @@ describe('<PredictionContainer />', () => {
   test('handleMouseLeave', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

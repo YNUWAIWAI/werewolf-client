@@ -41,7 +41,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           limit: 10
         },
         'id': 3,
-        'lang': village.Language.ja,
+        'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -328,7 +328,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'limit': 10
       },
       'id': 3,
-      'lang': village.Language.ja,
+      'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -411,7 +411,7 @@ describe('POST_CHAT', () => {
           limit: 10
         },
         'id': 3,
-        'lang': village.Language.ja,
+        'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -495,7 +495,7 @@ describe('POST_CHAT', () => {
         'limit': 10
       },
       'id': 3,
-      'lang': village.Language.ja,
+      'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -618,7 +618,7 @@ describe('SELECT_YES', () => {
           limit: 10
         },
         'id': 3,
-        'lang': village.Language.ja,
+        'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -799,7 +799,7 @@ describe('SELECT_YES', () => {
         'limit': 10
       },
       'id': 3,
-      'lang': village.Language.ja,
+      'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }
@@ -880,7 +880,7 @@ describe('STAR', () => {
           limit: 10
         },
         'id': 3,
-        'lang': village.Language.ja,
+        'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfAgents': 15
       }
@@ -979,7 +979,7 @@ describe('STAR', () => {
         'limit': 10
       },
       'id': 3,
-      'lang': village.Language.ja,
+      'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfAgents': 15
     }

@@ -24,7 +24,7 @@ describe('<CommandPostMortemContainer />', () => {
   test('handleNavigationClick', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()
@@ -48,7 +48,7 @@ describe('<CommandPostMortemContainer />', () => {
   test('handlePostChat', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

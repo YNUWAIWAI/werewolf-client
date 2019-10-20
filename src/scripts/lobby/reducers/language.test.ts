@@ -8,12 +8,12 @@ test('CHANGE_LANGUAGE', () => {
     reducer(
       initialState,
       {
-        language: lobby.Language.ja,
+        language: lobby.Language.en,
         type: ActionTypes.global.CHANGE_LANGUAGE
       }
     )
   ).toStrictEqual(
-    lobby.Language.ja
+    lobby.Language.en
   )
 })
 describe('socket/MESSAGE', () => {

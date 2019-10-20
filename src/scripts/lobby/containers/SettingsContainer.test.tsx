@@ -33,7 +33,7 @@ describe('<SettingsContainer />', () => {
         </IntlProviderContainer>
       </Provider>
     )
-    const language = lobby.Language.ja
+    const language = lobby.Language.en
 
     wrapper.find(Settings).props().handleChangeLanguage(language)
     expect(dispatch).toHaveBeenCalledTimes(1)

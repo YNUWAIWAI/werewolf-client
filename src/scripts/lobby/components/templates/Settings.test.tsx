@@ -5,7 +5,7 @@ import {shallow} from 'enzyme'
 
 test('<Settings />', () => {
   const initialValue: Props['initialValue'] = {
-    language: lobby.Language.ja,
+    language: lobby.Language.en,
     userEmail: 'example@example.com',
     userName: 'userName'
   }

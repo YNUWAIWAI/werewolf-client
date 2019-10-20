@@ -15,7 +15,7 @@ describe('<ChatContainer />', () => {
     test('chat dosen\'t exist', () => {
       const store = fakeStore(
         {
-          language: village.Language.ja
+          language: village.Language.en
         }
       )
       const wrapper = mount(
@@ -90,7 +90,7 @@ describe('<ChatContainer />', () => {
               }
             }
           },
-          language: village.Language.ja
+          language: village.Language.en
         }
       )
       const wrapper = mount(
@@ -166,7 +166,7 @@ describe('<ChatContainer />', () => {
             }
           }
         },
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

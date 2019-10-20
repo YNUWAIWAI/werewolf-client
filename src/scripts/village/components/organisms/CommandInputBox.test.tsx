@@ -11,7 +11,7 @@ describe('<CommandInputBox />', () => {
       <CommandInputBox
         characterLimit={140}
         handlePostChat={handlePostChat}
-        language={village.Language.ja}
+        language={village.Language.en}
         limited={{
           available: false,
           postCount: 0
@@ -38,7 +38,7 @@ describe('<CommandInputBox />', () => {
       <CommandInputBox
         characterLimit={140}
         handlePostChat={handlePostChat}
-        language={village.Language.ja}
+        language={village.Language.en}
         limited={{
           available: true,
           postCount: 0

@@ -35,7 +35,7 @@ describe('<ModalContainer />', () => {
                   limit: 10
                 },
                 'id': 3,
-                'lang': village.Language.ja,
+                'lang': village.Language.en,
                 'name': '横国の森の奥にある時代に取り残された小さな村',
                 'totalNumberOfAgents': 15
               }
@@ -68,7 +68,7 @@ describe('<ModalContainer />', () => {
               },
               fixed: false
             },
-            language: village.Language.ja,
+            language: village.Language.en,
             mine: {
               agent: {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -121,7 +121,7 @@ describe('<ModalContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -154,7 +154,7 @@ describe('<ModalContainer />', () => {
                 },
                 fixed: false
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -206,7 +206,7 @@ describe('<ModalContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -239,7 +239,7 @@ describe('<ModalContainer />', () => {
                 },
                 fixed: false
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -291,7 +291,7 @@ describe('<ModalContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -324,7 +324,7 @@ describe('<ModalContainer />', () => {
                 },
                 fixed: false
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
@@ -370,7 +370,7 @@ describe('<ModalContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -403,7 +403,7 @@ describe('<ModalContainer />', () => {
                 },
                 fixed: false
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#villager',
@@ -451,7 +451,7 @@ describe('<ModalContainer />', () => {
                 limit: 10
               },
               'id': 3,
-              'lang': village.Language.ja,
+              'lang': village.Language.en,
               'name': '横国の森の奥にある時代に取り残された小さな村',
               'totalNumberOfAgents': 15
             }
@@ -484,7 +484,7 @@ describe('<ModalContainer />', () => {
             },
             fixed: false
           },
-          language: village.Language.ja,
+          language: village.Language.en,
           modal: {
             id: '',
             visible: true
@@ -505,7 +505,7 @@ describe('<ModalContainer />', () => {
   test('handleClickNo', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()
@@ -529,7 +529,7 @@ describe('<ModalContainer />', () => {
   test('handleClickYes', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

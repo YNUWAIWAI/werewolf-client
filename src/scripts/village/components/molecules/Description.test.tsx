@@ -7,7 +7,7 @@ import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 
 const store = fakeStore()
-const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
+const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
 test('<Description />', () => {
   const wrapper = mountWithIntl(
