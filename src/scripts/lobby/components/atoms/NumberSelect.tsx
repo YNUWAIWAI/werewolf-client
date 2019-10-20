@@ -7,7 +7,7 @@ declare global {
 // Workaround end
 
 import * as React from 'react'
-import {ActionMeta, ValueType} from 'react-select/lib/types'
+import {ActionMeta, ValueType} from 'react-select/src/types'
 import Select from 'react-select'
 import {useIntl} from 'react-intl'
 
