@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:11-browsers
+      - image: circleci/node:12
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
@@ -28,7 +28,7 @@ jobs:
 
   unit-test:
     docker:
-      - image: circleci/node:11-browsers
+      - image: circleci/node:12
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
@@ -50,7 +50,7 @@ jobs:
 
   visual-test:
     docker:
-      - image: circleci/node:11-browsers
+      - image: circleci/node:12
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
@@ -79,7 +79,7 @@ jobs:
 
   deploy-storybook:
     docker:
-      - image: circleci/node:11-browsers
+      - image: circleci/node:12
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
