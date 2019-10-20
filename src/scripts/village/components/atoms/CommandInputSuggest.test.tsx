@@ -251,6 +251,6 @@ describe('<CommandInputSuggest />', () => {
 
     wrapper.find('.vi--command--input--suggest--item.selected').simulate('click')
     expect(handleSuggestClick).toHaveBeenCalledTimes(1)
-    expect(handleSuggestClick).toHaveBeenCalledWith('アルビン')
+    expect(handleSuggestClick).toHaveBeenCalledWith('Alvin')
   })
 })

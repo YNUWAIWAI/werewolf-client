@@ -39,8 +39,8 @@ describe('<CommandNavigation />', () => {
 
     expect(handleClick).toHaveBeenCalledTimes(0)
     expect(wrapper.find('button')).toHaveLength(3)
-    expect(wrapper.find('button').at(0).text()).toBe('結果を表示')
-    expect(wrapper.find('button').at(1).text()).toBe('次のゲーム')
+    expect(wrapper.find('button').at(0).text()).toBe('Show results')
+    expect(wrapper.find('button').at(1).text()).toBe('Next Game')
     expect(wrapper.find('button').at(1).props().disabled).toBe(true)
     expect(wrapper.find('button').at(2).find(Loader).exists()).toBe(true)
   })

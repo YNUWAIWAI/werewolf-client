@@ -21,9 +21,9 @@ describe('<Day />', () => {
         </Provider>
       )
 
-      expect(wrapper.text()).toMatch('0日目 朝')
+      expect(wrapper.text()).toMatch('Day 0: morning')
     })
-    test('day', () => {
+    test('noon', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
@@ -33,7 +33,7 @@ describe('<Day />', () => {
         </Provider>
       )
 
-      expect(wrapper.text()).toMatch('1日目 昼')
+      expect(wrapper.text()).toMatch('Day 1: noon')
     })
     test('night', () => {
       const wrapper = mountWithIntl(
@@ -45,7 +45,7 @@ describe('<Day />', () => {
         </Provider>
       )
 
-      expect(wrapper.text()).toMatch('1日目 夜')
+      expect(wrapper.text()).toMatch('Day 1: night')
     })
     test('post mortem', () => {
       const wrapper = mountWithIntl(
@@ -57,7 +57,7 @@ describe('<Day />', () => {
         </Provider>
       )
 
-      expect(wrapper.text()).toMatch('感想戦')
+      expect(wrapper.text()).toMatch('Post-mortem discussion')
     })
     test('result', () => {
       const wrapper = mountWithIntl(
@@ -69,7 +69,7 @@ describe('<Day />', () => {
         </Provider>
       )
 
-      expect(wrapper.text()).toMatch('結果')
+      expect(wrapper.text()).toMatch('Result')
     })
     test('flavor text', () => {
       const wrapper = mountWithIntl(
@@ -81,7 +81,7 @@ describe('<Day />', () => {
         </Provider>
       )
 
-      expect(wrapper.text()).toMatch('1日目 夜')
+      expect(wrapper.text()).toMatch('Day 1: night')
     })
   })
 })

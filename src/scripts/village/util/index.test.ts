@@ -854,7 +854,7 @@ describe('getText', () => {
     expect(
       getText(
         {
-          language: village.Language.en,
+          language: village.Language.ja,
           languageMap
         }
       )

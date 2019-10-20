@@ -19,5 +19,5 @@ test('<Description />', () => {
     </Provider>
   )
 
-  expect(wrapper.text()).toBe('あなたの選んだ投票先はこちらです (残り00\'00)')
+  expect(wrapper.text()).toBe('This is the character you chose to put to death (00\'00 left)')
 })

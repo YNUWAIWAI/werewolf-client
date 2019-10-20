@@ -27,7 +27,7 @@ describe('socket/MESSAGE', () => {
         }
       )
     ).toStrictEqual(
-      'ja'
+      lobby.Language.en
     )
   })
 })
