@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as village from '../types'
-import {noon, night} from './fakeServer'
+import {night, noon} from './fakeServer'
 import reducer, {State, initialState} from './commandSelection'
 import {Agent} from '../constants/Agent'
 import {ImagePath} from '../constants/ImagePath'
