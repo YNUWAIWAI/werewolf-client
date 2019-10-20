@@ -757,7 +757,7 @@ describe('<CommandInput />', () => {
               key: Key.Enter
             })
             expect(wrapper.state()).toStrictEqual({
-              caretPosition: 4,
+              caretPosition: 5,
               processing: false,
               suggestLeft: 1,
               suggestSelected: 0,
@@ -793,7 +793,7 @@ describe('<CommandInput />', () => {
               key: Key.Tab
             })
             expect(wrapper.state()).toStrictEqual({
-              caretPosition: 4,
+              caretPosition: 5,
               processing: false,
               suggestLeft: 1,
               suggestSelected: 0,
@@ -838,7 +838,7 @@ describe('<CommandInput />', () => {
           metaKey: false
         })
         expect(wrapper.state()).toStrictEqual({
-          caretPosition: 4,
+          caretPosition: 5,
           processing: false,
           suggestLeft: 0,
           suggestSelected: 0,
