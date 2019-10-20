@@ -1,5 +1,3 @@
-const {compilerOptions} = require('./tsconfig')
-
 module.exports = {
   collectCoverageFrom: [
     'src/scripts/**/*.{ts,tsx}'
