@@ -35,7 +35,7 @@ describe('<CommandSelectionContainer />', () => {
                   limit: 10
                 },
                 'id': 3,
-                'lang': village.Language.ja,
+                'lang': village.Language.en,
                 'name': '横国の森の奥にある時代に取り残された小さな村',
                 'totalNumberOfAgents': 15
               }
@@ -72,7 +72,7 @@ describe('<CommandSelectionContainer />', () => {
               },
               fixed: true
             },
-            language: village.Language.ja,
+            language: village.Language.en,
             mine: {
               agent: {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -120,7 +120,7 @@ describe('<CommandSelectionContainer />', () => {
                   limit: 10
                 },
                 'id': 3,
-                'lang': village.Language.ja,
+                'lang': village.Language.en,
                 'name': '横国の森の奥にある時代に取り残された小さな村',
                 'totalNumberOfAgents': 15
               }
@@ -160,7 +160,7 @@ describe('<CommandSelectionContainer />', () => {
               },
               fixed: false
             },
-            language: village.Language.ja,
+            language: village.Language.en,
             mine: {
               agent: {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -211,7 +211,7 @@ describe('<CommandSelectionContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -248,7 +248,7 @@ describe('<CommandSelectionContainer />', () => {
                 },
                 fixed: true
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -296,7 +296,7 @@ describe('<CommandSelectionContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -336,7 +336,7 @@ describe('<CommandSelectionContainer />', () => {
                 },
                 fixed: false
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -386,7 +386,7 @@ describe('<CommandSelectionContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -423,7 +423,7 @@ describe('<CommandSelectionContainer />', () => {
                 },
                 fixed: true
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -471,7 +471,7 @@ describe('<CommandSelectionContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -511,7 +511,7 @@ describe('<CommandSelectionContainer />', () => {
                 },
                 fixed: false
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -561,7 +561,7 @@ describe('<CommandSelectionContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -598,7 +598,7 @@ describe('<CommandSelectionContainer />', () => {
                 },
                 fixed: true
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -646,7 +646,7 @@ describe('<CommandSelectionContainer />', () => {
                     limit: 10
                   },
                   'id': 3,
-                  'lang': village.Language.ja,
+                  'lang': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
                   'totalNumberOfAgents': 15
                 }
@@ -686,7 +686,7 @@ describe('<CommandSelectionContainer />', () => {
                 },
                 fixed: false
               },
-              language: village.Language.ja,
+              language: village.Language.en,
               mine: {
                 agent: {
                   '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -735,7 +735,7 @@ describe('<CommandSelectionContainer />', () => {
                   limit: 10
                 },
                 'id': 3,
-                'lang': village.Language.ja,
+                'lang': village.Language.en,
                 'name': '横国の森の奥にある時代に取り残された小さな村',
                 'totalNumberOfAgents': 15
               }
@@ -745,7 +745,7 @@ describe('<CommandSelectionContainer />', () => {
               byId: {},
               fixed: true
             },
-            language: village.Language.ja,
+            language: village.Language.en,
             mine: {
               agent: {
                 '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -777,7 +777,7 @@ describe('<CommandSelectionContainer />', () => {
   test('handleSelectOption', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

@@ -27,7 +27,7 @@ describe('<CommandInputSuggest />', () => {
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
-          language={village.Language.ja}
+          language={village.Language.en}
           left={0}
           selected={0}
           suggestable
@@ -44,7 +44,7 @@ describe('<CommandInputSuggest />', () => {
         <CommandInputSuggest
           data={[]}
           handleSuggestClick={handleSuggestClick}
-          language={village.Language.ja}
+          language={village.Language.en}
           left={0}
           selected={0}
           suggestable
@@ -77,7 +77,7 @@ describe('<CommandInputSuggest />', () => {
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
-          language={village.Language.ja}
+          language={village.Language.en}
           left={0}
           selected={0}
           suggestable={false}
@@ -112,7 +112,7 @@ describe('<CommandInputSuggest />', () => {
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
-          language={village.Language.ja}
+          language={village.Language.en}
           left={0}
           selected={0}
           suggestable
@@ -132,7 +132,7 @@ describe('<CommandInputSuggest />', () => {
         <CommandInputSuggest
           data={[]}
           handleSuggestClick={handleSuggestClick}
-          language={village.Language.ja}
+          language={village.Language.en}
           left={0}
           selected={0}
           suggestable
@@ -168,7 +168,7 @@ describe('<CommandInputSuggest />', () => {
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
-          language={village.Language.ja}
+          language={village.Language.en}
           left={0}
           selected={0}
           suggestable
@@ -204,7 +204,7 @@ describe('<CommandInputSuggest />', () => {
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
-          language={village.Language.ja}
+          language={village.Language.en}
           left={0}
           selected={2}
           suggestable
@@ -241,7 +241,7 @@ describe('<CommandInputSuggest />', () => {
       <CommandInputSuggest
         data={data}
         handleSuggestClick={handleSuggestClick}
-        language={village.Language.ja}
+        language={village.Language.en}
         left={0}
         selected={0}
         suggestable
@@ -251,6 +251,6 @@ describe('<CommandInputSuggest />', () => {
 
     wrapper.find('.vi--command--input--suggest--item.selected').simulate('click')
     expect(handleSuggestClick).toHaveBeenCalledTimes(1)
-    expect(handleSuggestClick).toHaveBeenCalledWith('アルビン')
+    expect(handleSuggestClick).toHaveBeenCalledWith('Alvin')
   })
 })

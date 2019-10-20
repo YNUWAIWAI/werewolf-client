@@ -17,7 +17,7 @@ describe('<ResultContainer />', () => {
       test('winner: villager loser: werewolf, werehamster', () => {
         const store = fakeStore(
           {
-            language: village.Language.ja,
+            language: village.Language.en,
             result: {
               agents: {
                 agent1: {
@@ -117,7 +117,7 @@ describe('<ResultContainer />', () => {
       test('winner: werehamster loser: villager, werewolf', () => {
         const store = fakeStore(
           {
-            language: village.Language.ja,
+            language: village.Language.en,
             result: {
               agents: {
                 agent0: {
@@ -230,7 +230,7 @@ describe('<ResultContainer />', () => {
       test('winner: werewolf loser: villager, werehamster', () => {
         const store = fakeStore(
           {
-            language: village.Language.ja,
+            language: village.Language.en,
             result: {
               agents: {
                 agent0: {
@@ -343,7 +343,7 @@ describe('<ResultContainer />', () => {
       test('winner: werewolf loser: villager', () => {
         const store = fakeStore(
           {
-            language: village.Language.ja,
+            language: village.Language.en,
             result: {
               agents: {
                 agent0: {
@@ -443,7 +443,7 @@ describe('<ResultContainer />', () => {
       test('winner: villager loser: werewolf', () => {
         const store = fakeStore(
           {
-            language: village.Language.ja,
+            language: village.Language.en,
             result: {
               agents: {
                 agent0: {
@@ -545,7 +545,7 @@ describe('<ResultContainer />', () => {
       test('winner: villager loser: werewolf, werehamster', () => {
         const store = fakeStore(
           {
-            language: village.Language.ja,
+            language: village.Language.en,
             result: {
               agents: {
                 agent0: {
@@ -658,7 +658,7 @@ describe('<ResultContainer />', () => {
   test('handleClickCloseButton', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

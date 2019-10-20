@@ -1,4 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import * as lobby from '../types'
 import reducer, {initialState} from './settings'
 import {settings} from './fakeServer'
 
@@ -15,7 +16,7 @@ describe('scoket/MESSAGE', () => {
     ).toStrictEqual(
       {
         initialValue: {
-          language: 'ja',
+          language: lobby.Language.en,
           userEmail: 'kenhirai@ynu.jp',
           userName: 'ken hirai'
         },

@@ -12,7 +12,15 @@ export default function Description(props: Props) {
     <div className={props.className}>
       <FormattedMessage
         id={props.id}
-      />
+      >
+        {
+          text => (
+            <span>
+              {text}
+            </span>
+          )
+        }
+      </FormattedMessage>
       <span>
         {' ('}
         <Timer />

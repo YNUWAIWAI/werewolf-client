@@ -6,7 +6,7 @@ import Loader from '../atoms/svg/Loader'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 
-const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
+const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
 describe('<CommandNavigation />', () => {
   test('render', () => {
@@ -39,8 +39,8 @@ describe('<CommandNavigation />', () => {
 
     expect(handleClick).toHaveBeenCalledTimes(0)
     expect(wrapper.find('button')).toHaveLength(3)
-    expect(wrapper.find('button').at(0).text()).toBe('結果を表示')
-    expect(wrapper.find('button').at(1).text()).toBe('次のゲーム')
+    expect(wrapper.find('button').at(0).text()).toBe('Show results')
+    expect(wrapper.find('button').at(1).text()).toBe('Next Game')
     expect(wrapper.find('button').at(1).props().disabled).toBe(true)
     expect(wrapper.find('button').at(2).find(Loader).exists()).toBe(true)
   })

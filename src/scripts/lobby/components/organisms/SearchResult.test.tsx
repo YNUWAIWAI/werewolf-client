@@ -5,7 +5,7 @@ import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {shallow} from 'enzyme'
 
-const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
+const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 describe('<SearchResult />', () => {
   test('0 items (searched: false)', () => {

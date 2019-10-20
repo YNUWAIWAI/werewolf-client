@@ -56,7 +56,6 @@ export default class TextField extends React.Component<Props, State> {
               </label>
             )
           }
-
         </FormattedMessage>
         <input
           autoComplete="off"

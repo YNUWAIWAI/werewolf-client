@@ -1,6 +1,6 @@
 import * as lobby from '../../types'
 const json: lobby.Payload$played = {
-  lang: lobby.Language.ja,
+  lang: lobby.Language.en,
   type: lobby.PayloadType.played
 }
 

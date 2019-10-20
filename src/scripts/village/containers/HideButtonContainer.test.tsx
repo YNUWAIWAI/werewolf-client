@@ -31,7 +31,7 @@ describe('<HideButtonContainer />', () => {
   test('handleSelectOption', () => {
     const store = fakeStore(
       {
-        language: village.Language.ja
+        language: village.Language.en
       }
     )
     const dispatch = jest.fn()

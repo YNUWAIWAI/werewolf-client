@@ -1,5 +1,5 @@
 module.exports = {
   extends: [
-    'stylelint-config-nimiusrd'
+    '@nimiusrd/stylelint-config'
   ]
 }

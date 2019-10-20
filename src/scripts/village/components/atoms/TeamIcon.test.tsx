@@ -4,7 +4,7 @@ import TeamIcon from './TeamIcon'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 
-const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
+const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
 describe('<TeamIcon />', () => {
   test('default', () => {

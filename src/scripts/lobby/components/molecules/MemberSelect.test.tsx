@@ -4,7 +4,7 @@ import MemberSelect from './MemberSelect'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 
-const {mountWithIntl} = initRenderer(lobby.Language.ja, getMessages(lobby.Language.ja))
+const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 test('render', () => {
   const handleMemberChangeInner = jest.fn()

@@ -11,7 +11,7 @@ describe('<LanguageSelect />', () => {
     const wrapper = shallow(
       <LanguageSelect
         className="className"
-        defaultValue={lobby.Language.ja}
+        defaultValue={lobby.Language.en}
         handleChange={handleChange}
       />
     )
@@ -26,7 +26,7 @@ describe('<LanguageSelect />', () => {
       const wrapper = shallow(
         <LanguageSelect
           className="className"
-          defaultValue={lobby.Language.ja}
+          defaultValue={lobby.Language.en}
           handleChange={handleChange}
         />
       )
@@ -46,7 +46,7 @@ describe('<LanguageSelect />', () => {
       const wrapper = shallow(
         <LanguageSelect
           className="className"
-          defaultValue={lobby.Language.ja}
+          defaultValue={lobby.Language.en}
           handleChange={handleChange}
         />
       )
@@ -63,7 +63,7 @@ describe('<LanguageSelect />', () => {
       const wrapper = shallow(
         <LanguageSelect
           className="className"
-          defaultValue={lobby.Language.ja}
+          defaultValue={lobby.Language.en}
           handleChange={handleChange}
         />
       )
@@ -78,7 +78,7 @@ describe('<LanguageSelect />', () => {
       const wrapper = shallow(
         <LanguageSelect
           className="className"
-          defaultValue={lobby.Language.ja}
+          defaultValue={lobby.Language.en}
           handleChange={handleChange}
         />
       )

@@ -29,7 +29,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   'extends': [
-    'nimiusrd',
+    '@nimiusrd',
     'plugin:jest/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/all'

@@ -4,7 +4,7 @@ import ChatDelimeter from './ChatDelimeter'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 
-const {mountWithIntl} = initRenderer(village.Language.ja, getMessages(village.Language.ja))
+const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
 describe('<ChatDelimeter />', () => {
   test('date=1', () => {
@@ -14,7 +14,7 @@ describe('<ChatDelimeter />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--chat--delimeter').text()).toBe('1日目')
+    expect(wrapper.find('.vi--chat--delimeter').text()).toBe('Day 1')
   })
   test('date=0', () => {
     const wrapper = mountWithIntl(
@@ -23,7 +23,7 @@ describe('<ChatDelimeter />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--chat--delimeter').text()).toBe('0日目')
+    expect(wrapper.find('.vi--chat--delimeter').text()).toBe('Day 0')
   })
   test('date=-1', () => {
     const wrapper = mountWithIntl(
@@ -32,6 +32,6 @@ describe('<ChatDelimeter />', () => {
       />
     )
 
-    expect(wrapper.find('.vi--chat--delimeter').text()).toBe('感想戦')
+    expect(wrapper.find('.vi--chat--delimeter').text()).toBe('Post-mortem discussion')
   })
 })

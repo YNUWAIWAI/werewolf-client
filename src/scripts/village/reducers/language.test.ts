@@ -7,11 +7,11 @@ test('CHANGE_LANGUAGE', () => {
     reducer(
       initialState,
       {
-        language: village.Language.ja,
+        language: village.Language.en,
         type: ActionTypes.global.CHANGE_LANGUAGE
       }
     )
   ).toStrictEqual(
-    village.Language.ja
+    village.Language.en
   )
 })
