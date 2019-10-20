@@ -14,7 +14,7 @@ test('<Description />', () => {
     <Provider store={store}>
       <Description
         className="className"
-        id="CommandSelection.Description.dayVote.fixed"
+        id="CommandSelection.Description.noonVote.fixed"
       />
     </Provider>
   )

@@ -28,7 +28,7 @@ describe('<Day />', () => {
         <Provider store={store}>
           <InfoDay
             date={1}
-            phase={village.Phase.day}
+            phase={village.Phase.noon}
           />
         </Provider>
       )

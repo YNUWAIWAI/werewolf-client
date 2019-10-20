@@ -39,7 +39,7 @@ const command = (state: State = initialState, action: Action): State => {
         })()
 
         switch (action.payload.phase) {
-          case village.Phase.day:
+          case village.Phase.noon:
           case village.Phase.night:
             if (isDead) {
               return {

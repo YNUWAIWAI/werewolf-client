@@ -7,7 +7,7 @@ test('CHANGE_PHASE', () => {
     reducer(
       initialState,
       {
-        from: village.Phase.day,
+        from: village.Phase.noon,
         to: village.Phase.night,
         type: ActionTypes.global.CHANGE_PHASE
       }

@@ -16,7 +16,7 @@ describe('<Modal />', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
-          descriptionId="Modal.Description.dayVote"
+          descriptionId="Modal.Description.noonVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           id="1"
@@ -44,7 +44,7 @@ describe('<Modal />', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
-          descriptionId="Modal.Description.dayVote"
+          descriptionId="Modal.Description.noonVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           id="1"
@@ -64,7 +64,7 @@ describe('<Modal />', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
-          descriptionId="Modal.Description.dayVote"
+          descriptionId="Modal.Description.noonVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           id="1"
@@ -97,7 +97,7 @@ describe('<Modal />', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
-          descriptionId="Modal.Description.dayVote"
+          descriptionId="Modal.Description.noonVote"
           handleClickNo={handleClickNoMockFn}
           handleClickYes={handleClickYesMockFn}
           id="1"

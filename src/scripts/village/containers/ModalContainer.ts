@@ -11,8 +11,8 @@ type Action =
   | SelectYes
 
 const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
-  if (phase === village.Phase.day) {
-    return 'Modal.Description.dayVote'
+  if (phase === village.Phase.noon) {
+    return 'Modal.Description.noonVote'
   }
 
   switch (role) { // phase === NIGHT

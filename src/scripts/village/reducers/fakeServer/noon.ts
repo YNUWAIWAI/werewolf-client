@@ -241,7 +241,7 @@ const json: village.Payload$systemMessage = {
   'directionality': village.Directionality.serverToClient,
   'extensionalDisclosureRange': [],
   'intensionalDisclosureRange': village.Channel.private,
-  'phase': village.Phase.day,
+  'phase': village.Phase.noon,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'phaseTimeLimit': 180,
   'role': [

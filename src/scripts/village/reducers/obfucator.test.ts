@@ -13,9 +13,9 @@ import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './obfucator'
 
 describe('CHANGE_PHASE', () => {
-  test('day -> night', () => {
+  test('noon -> night', () => {
     const action: ChangePhase = {
-      from: village.Phase.day,
+      from: village.Phase.noon,
       to: village.Phase.night,
       type: ActionTypes.global.CHANGE_PHASE
     }
