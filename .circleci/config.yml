@@ -40,7 +40,7 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: yarn install
-      - run: NODE_ICU_DATA=`yarn node-icu-data-path`
+      - run: NODE_ICU_DATA=`yarn node-full-icu-path`
       - save_cache:
           paths:
             - node_modules
