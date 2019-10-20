@@ -21,7 +21,7 @@ storiesOf('village|Modal', module)
       <Provider store={store}>
         <IntlProvider>
           <Modal
-            descriptionId="Modal.Description.dayVote"
+            descriptionId="Modal.Description.noonVote"
             handleClickNo={action('handleClickNo')}
             handleClickYes={action('handleClickYes')}
             id="1"

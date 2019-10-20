@@ -111,7 +111,7 @@ storiesOf('village|Command/CommandSelection', module)
         <IntlProvider>
           <CommandSelection
             agents={agents}
-            descriptionId="CommandSelection.Description.dayVote.unfixed"
+            descriptionId="CommandSelection.Description.noonVote.unfixed"
             fixed={false}
             handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
             phase={village.Phase.day}

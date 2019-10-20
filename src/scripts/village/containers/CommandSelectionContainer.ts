@@ -13,7 +13,7 @@ const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boo
   const fixedState = fixed ? 'fixed' : 'unfixed'
 
   if (phase === village.Phase.day) {
-    return `CommandSelection.Description.dayVote.${fixedState}`
+    return `CommandSelection.Description.noonVote.${fixedState}`
   }
 
   switch (role) {

@@ -13,7 +13,7 @@ describe('<CommandSelection />', () => {
     const wrapper = shallow(
       <CommandSelection
         agents={[]}
-        descriptionId="CommandSelection.Description.dayVote.fixed"
+        descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
         phase={village.Phase.day}
@@ -121,7 +121,7 @@ describe('<CommandSelection />', () => {
     const wrapper = shallow(
       <CommandSelection
         agents={agents}
-        descriptionId="CommandSelection.Description.dayVote.fixed"
+        descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
         phase={village.Phase.day}
@@ -145,7 +145,7 @@ describe('<CommandSelection />', () => {
     const wrapper = shallow(
       <CommandSelection
         agents={agents}
-        descriptionId="CommandSelection.Description.dayVote.fixed"
+        descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed
         handleSelectOption={handleSelectOption}
         phase={village.Phase.day}
