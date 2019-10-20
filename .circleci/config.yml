@@ -3,10 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:12-browsers
-        environment:
-          TZ: Asia/Tokyo
-          LC_ALL: ja_JP.UTF-8
-          LANG: ja_JP.UTF-8
     steps:
       - checkout
       - restore_cache:
@@ -29,10 +25,6 @@ jobs:
   unit-test:
     docker:
       - image: circleci/node:12-browsers
-        environment:
-          TZ: Asia/Tokyo
-          LC_ALL: ja_JP.UTF-8
-          LANG: ja_JP.UTF-8
     steps:
       - checkout
       - restore_cache:
@@ -50,10 +42,6 @@ jobs:
   visual-test:
     docker:
       - image: circleci/node:12-browsers
-        environment:
-          TZ: Asia/Tokyo
-          LC_ALL: ja_JP.UTF-8
-          LANG: ja_JP.UTF-8
     steps:
       - checkout
       - restore_cache:
@@ -79,10 +67,6 @@ jobs:
   deploy-storybook:
     docker:
       - image: circleci/node:12-browsers
-        environment:
-          TZ: Asia/Tokyo
-          LC_ALL: ja_JP.UTF-8
-          LANG: ja_JP.UTF-8
     steps:
       - checkout
       - restore_cache:
