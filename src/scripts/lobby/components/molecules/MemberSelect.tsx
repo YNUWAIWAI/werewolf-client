@@ -41,7 +41,15 @@ export default function MemberSelect(props: Props) {
   return (
     <div className="lo--village--item--member-select">
       <div className={`lo--village--item--member-select--robot ${props.validity.numberOfRobots ? '' : 'invalid'}`}>
-        <FormattedMessage id="MemberSelect.min" />
+        <FormattedMessage id="MemberSelect.min">
+          {
+            text => (
+              <span>
+                {text}
+              </span>
+            )
+          }
+        </FormattedMessage>
         <NumberSelect
           ascendingOrder
           className="lo--village--item--member-select--robot--select"

@@ -21,7 +21,15 @@ export default function InfoDay(props: Props) {
           values={{
             date: props.date
           }}
-        />
+        >
+          {
+            text => (
+              <span>
+                {text}
+              </span>
+            )
+          }
+        </FormattedMessage>
         <Timer />
       </div>
     </div>
