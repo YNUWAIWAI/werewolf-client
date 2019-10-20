@@ -116,14 +116,14 @@ const suggesttedData = [
 ]
 
 storiesOf('village|Command', module)
-  .add('morning (without limited chat)', () => {
+  .add('morning (without werewolf chat)', () => {
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
         characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        limited={{
+        werewolf={{
           available: false,
           postCount: 0
         }}
@@ -151,14 +151,14 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('morning (with limited chat)', () => {
+  .add('morning (with werewolf chat)', () => {
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
         characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        limited={{
+        werewolf={{
           available: true,
           postCount: 0
         }}

@@ -5,7 +5,7 @@ import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 
 export interface State {
-  readonly limited: {
+  readonly werewolf: {
     readonly available: boolean
     readonly postCount: number
   }
@@ -18,7 +18,7 @@ export type Action =
  | SocketMessage
 
 export const initialState: State = {
-  limited: {
+  werewolf: {
     available: false,
     postCount: 0
   },
@@ -32,8 +32,8 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
     case ActionTypes.global.CHANGE_PHASE: {
       return {
         ... state,
-        limited: {
-          ... state.limited,
+        werewolf: {
+          ... state.werewolf,
           postCount: 0
         },
         public: {
@@ -52,11 +52,11 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           const inputChannel = getInputChannelFromChannel(action.payload.intensionalDisclosureRange)
 
           switch (inputChannel) {
-            case village.InputChannel.limited:
+            case village.InputChannel.werewolf:
               return {
                 ... state,
-                limited: {
-                  ... state.limited,
+                werewolf: {
+                  ... state.werewolf,
                   postCount: just(action.payload.counter)
                 }
               }
@@ -87,8 +87,8 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           ) {
             return {
               ... state,
-              limited: {
-                ... state.limited,
+              werewolf: {
+                ... state.werewolf,
                 available: true
               }
             }

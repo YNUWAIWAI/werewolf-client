@@ -18,14 +18,14 @@ export const enum Channel {
 }
 export const enum ChatChannel {
   grave = 'grave',
-  limited = 'limited',
+  werewolf = 'werewolf',
   master = 'master',
   private = 'private',
   public = 'public'
 }
 export const enum InputChannel {
   grave = 'grave',
-  limited = 'limited',
+  werewolf = 'werewolf',
   postMortem = 'post mortem',
   private = 'private',
   public = 'public'

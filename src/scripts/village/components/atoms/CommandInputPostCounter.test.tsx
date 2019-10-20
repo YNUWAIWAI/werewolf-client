@@ -18,7 +18,7 @@ describe('<CommandInputPostCounter />', () => {
   test('limted', () => {
     const wrapper = shallow(
       <CommandInputPostCounter
-        inputChannel={village.InputChannel.limited}
+        inputChannel={village.InputChannel.werewolf}
         postCount={0}
         postCountLimit={10}
       />

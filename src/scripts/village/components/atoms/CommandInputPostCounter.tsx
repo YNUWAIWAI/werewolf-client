@@ -10,7 +10,7 @@ interface Props {
 export default function CommandInputPostCounnter(props: Props) {
   switch (props.inputChannel) {
     case village.InputChannel.public:
-    case village.InputChannel.limited:
+    case village.InputChannel.werewolf:
       return (
         <span className="vi--command--input--counter">
           {`${props.postCount}/${props.postCountLimit}`}

@@ -3,7 +3,7 @@
   "ChatContainer.postMortem": "Post-mortem discussion",
   "ChatDate": "{postTime} ({restTime} left)",
   "CommandInput.placeholder.grave": "Graveyard",
-  "CommandInput.placeholder.limited": "Werewolf",
+  "CommandInput.placeholder.werewolf": "Werewolf",
   "CommandInput.placeholder.postMortem": "Post-mortem",
   "CommandInput.placeholder.private": "Private",
   "CommandInput.placeholder.public": "Public",
