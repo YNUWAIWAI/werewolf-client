@@ -8,7 +8,7 @@ import {Language} from '../src/i18n/landing'
 const defaultLocale = 'en'
 
 export const initRenderer = (locale: lobby.Language | village.Language | Language, messages: {[key: string]: string}) => ({
-  mountWithIntl: <C>(node: React.ReactElement) => mount<C>(
+  mountWithIntl: <C extends React.Component>(node: React.ReactElement) => mount<C>(
     node,
     {
       wrappingComponent: IntlProvider,
@@ -19,7 +19,7 @@ export const initRenderer = (locale: lobby.Language | village.Language | Languag
       }
     }
   ),
-  shallowWithIntl: <C>(node: React.ReactElement) => shallow<C>(
+  shallowWithIntl: <C extends React.Component>(node: React.ReactElement) => shallow<C>(
     node,
     {
       wrappingComponent: IntlProvider,
