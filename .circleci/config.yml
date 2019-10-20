@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:12-browsers
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
@@ -28,7 +28,7 @@ jobs:
 
   unit-test:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:12-browsers
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
@@ -40,7 +40,7 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: yarn install
-      - run: node -e 'console.log(process.config.variables)'
+      - run: NODE_ICU_DATA=`yarn node-icu-data-path`
       - save_cache:
           paths:
             - node_modules
@@ -50,7 +50,7 @@ jobs:
 
   visual-test:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:12-browsers
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
@@ -79,7 +79,7 @@ jobs:
 
   deploy-storybook:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:12-browsers
         environment:
           TZ: Asia/Tokyo
           LC_ALL: ja_JP.UTF-8
