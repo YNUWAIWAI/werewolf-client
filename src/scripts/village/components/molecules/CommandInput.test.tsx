@@ -800,7 +800,7 @@ describe('<CommandInput />', () => {
               suggestTop: 1,
               suggestable: false,
               suggesttedData,
-              text: 'アルビン',
+              text: 'Alvin',
               trigerPosition: 0
             })
           })
