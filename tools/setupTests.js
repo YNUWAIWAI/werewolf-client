@@ -25,19 +25,4 @@ global.requestAnimationFrame = cb => setTimeout(cb, 0)
 global.cancelAnimationFrame = id => {
   clearTimeout(id)
 }
-if (!global.Intl.PluralRules) {
-  require('@formatjs/intl-pluralrules/polyfill')
-  require('@formatjs/intl-pluralrules/dist/locale-data/en')
-  require('@formatjs/intl-pluralrules/dist/locale-data/fr')
-  require('@formatjs/intl-pluralrules/dist/locale-data/it')
-  require('@formatjs/intl-pluralrules/dist/locale-data/ja')
-}
-
-if (!global.Intl.RelativeTimeFormat) {
-  require('@formatjs/intl-relativetimeformat/polyfill')
-  require('@formatjs/intl-relativetimeformat/dist/locale-data/en')
-  require('@formatjs/intl-relativetimeformat/dist/locale-data/fr')
-  require('@formatjs/intl-relativetimeformat/dist/locale-data/it')
-  require('@formatjs/intl-relativetimeformat/dist/locale-data/ja')
-}
 copyProps(window, global)
