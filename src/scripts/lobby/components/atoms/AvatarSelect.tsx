@@ -10,9 +10,9 @@ import * as React from 'react'
 import * as lobby from '../../types'
 import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'
-import {injectIntl} from 'react-intl'
+import {useIntl} from 'react-intl'
 
-interface Props extends ReactIntl.InjectedIntlProps {
+interface Props {
   readonly className: string
   readonly defaultValue: lobby.Avatar
   readonly handleChange: (valid: boolean) => (avatar: lobby.Avatar) => void
@@ -24,7 +24,8 @@ interface Option {
   readonly value: lobby.Avatar
 }
 
-export default injectIntl(function AvatarSelect(props: Props) {
+export default function AvatarSelect(props: Props) {
+  const intl = useIntl()
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
     if (!selectedOption) { // selectedOption: null | undifined
       return
@@ -40,7 +41,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
   const options: Option[] = {
     advancedSearch: [
       {
-        label: props.intl.formatMessage(
+        label: intl.formatMessage(
           {
             id: 'AvatarSelect.advancedSearch(random)'
           }
@@ -48,7 +49,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
         value: lobby.Avatar.random
       },
       {
-        label: props.intl.formatMessage(
+        label: intl.formatMessage(
           {
             id: 'AvatarSelect.advancedSearch(fixed)'
           }
@@ -56,7 +57,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
         value: lobby.Avatar.fixed
       },
       {
-        label: props.intl.formatMessage(
+        label: intl.formatMessage(
           {
             id: 'AvatarSelect.advancedSearch(unspecified)'
           }
@@ -66,7 +67,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
     ],
     buildVillage: [
       {
-        label: props.intl.formatMessage(
+        label: intl.formatMessage(
           {
             id: 'AvatarSelect.buildVillage(fixed)'
           }
@@ -74,7 +75,7 @@ export default injectIntl(function AvatarSelect(props: Props) {
         value: lobby.Avatar.fixed
       },
       {
-        label: props.intl.formatMessage(
+        label: intl.formatMessage(
           {
             id: 'AvatarSelect.buildVillage(random)'
           }
@@ -95,4 +96,4 @@ export default injectIntl(function AvatarSelect(props: Props) {
       options={options}
     />
   )
-})
+}

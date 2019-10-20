@@ -1,12 +1,12 @@
 import * as React from 'react'
 import * as lobby from '../../types'
-import {FormattedMessage, injectIntl} from 'react-intl'
+import {FormattedMessage} from 'react-intl'
 import Close from '../atoms/svg/Close'
 import Danger from '../atoms/svg/Danger'
 import Safe from '../atoms/svg/Safe'
 import Warning from '../atoms/svg/Warning'
 
-export interface Props extends ReactIntl.InjectedIntlProps {
+export interface Props {
   readonly avatarImage: string
   readonly canKickOut: boolean
   readonly confirmKickOutPlayer: (values: {name: string, token: lobby.Token}) => void
@@ -19,7 +19,7 @@ export interface Props extends ReactIntl.InjectedIntlProps {
   readonly token: lobby.Token
 }
 
-export default injectIntl(function AvatarItem(props: Props) {
+export default function AvatarItem(props: Props) {
   const handleClick = () => {
     if (props.canKickOut) {
       props.confirmKickOutPlayer({
@@ -85,4 +85,4 @@ export default injectIntl(function AvatarItem(props: Props) {
       }
     </div>
   )
-})
+}

@@ -9,9 +9,9 @@ declare global {
 import * as React from 'react'
 import {ActionMeta, ValueType} from 'react-select/lib/types'
 import Select from 'react-select'
-import {injectIntl} from 'react-intl'
+import {useIntl} from 'react-intl'
 
-interface Props extends ReactIntl.InjectedIntlProps {
+interface Props {
   readonly ascendingOrder: boolean
   readonly className: string
   readonly defaultValue?: number
@@ -27,7 +27,8 @@ interface Option {
   readonly value: number
 }
 
-export default injectIntl(function NumberSelect(props: Props) {
+export default function NumberSelect(props: Props) {
+  const intl = useIntl()
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
     if (!selectedOption) { // selectedOption: null | undifined
       return
@@ -41,7 +42,7 @@ export default injectIntl(function NumberSelect(props: Props) {
   const options: Option[] = [... Array(props.to - props.from + 1).keys()]
     .map(e => e + props.from)
     .map(option => ({
-      label: props.intl.formatMessage(
+      label: intl.formatMessage(
         {
           id: `NumberSelect(${props.type})`
         },
@@ -59,7 +60,7 @@ export default injectIntl(function NumberSelect(props: Props) {
       defaultValue={
         typeof props.defaultValue === 'number' ?
           {
-            label: props.intl.formatMessage(
+            label: intl.formatMessage(
               {
                 id: `NumberSelect(${props.type})`
               },
@@ -76,4 +77,4 @@ export default injectIntl(function NumberSelect(props: Props) {
       options={props.ascendingOrder ? options : options.reverse()}
     />
   )
-})
+}
