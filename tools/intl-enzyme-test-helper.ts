@@ -1,14 +1,14 @@
 import * as React from 'react'
 import * as lobby from '../types/lobby'
 import * as village from '../types/village'
-import {MountRendererProps, ShallowRendererProps, mount, shallow} from 'enzyme'
+import {mount, shallow} from 'enzyme'
 import {IntlProvider} from 'react-intl'
 import {Language} from '../src/i18n/landing'
 
 const defaultLocale = 'en'
 
 export const initRenderer = (locale: lobby.Language | village.Language | Language, messages: {[key: string]: string}) => ({
-  mountWithIntl: <C extends React.Component>(node: React.ReactElement): MountRendererProps => mount<C>(
+  mountWithIntl: <C extends React.Component>(node: React.ReactElement) => mount<C>(
     node,
     {
       wrappingComponent: IntlProvider,
@@ -19,7 +19,7 @@ export const initRenderer = (locale: lobby.Language | village.Language | Languag
       }
     }
   ),
-  shallowWithIntl: <C extends React.Component>(node: React.ReactElement): ShallowRendererProps => shallow<C>(
+  shallowWithIntl: <C extends React.Component>(node: React.ReactElement) => shallow<C>(
     node,
     {
       wrappingComponent: IntlProvider,
