@@ -5,6 +5,13 @@ module.exports = {
   coverageReporters: [
     'json'
   ],
+  globals: {
+    'ts-jest': {
+      tsConfig: {
+        sourceMap: false
+      }
+    }
+  },
   preset: 'ts-jest',
   setupFilesAfterEnv: [
     './tools/setupTests.js'
