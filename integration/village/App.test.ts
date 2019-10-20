@@ -48,7 +48,7 @@ describe('App', () => {
     })
   })
   test('day', async () => {
-    await page.goto('http://localhost:9009/iframe.html?id=village-app--day', {
+    await page.goto('http://localhost:9009/iframe.html?id=village-app--noon', {
       waitUntil: 'networkidle2'
     })
     await page.evaluateHandle(() => {}, 'document.fonts.ready')
