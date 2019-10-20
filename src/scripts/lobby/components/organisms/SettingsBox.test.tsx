@@ -6,7 +6,7 @@ import {shallow} from 'enzyme'
 describe('<SettingsBox />', () => {
   test('render', () => {
     const initialValue: Props['initialValue'] = {
-      language: lobby.Language.en,
+      language: lobby.Language.ja,
       userEmail: 'example@example.com',
       userName: 'userName'
     }
@@ -61,7 +61,7 @@ describe('<SettingsBox />', () => {
     describe('language', () => {
       test('valid: true, value: en', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -106,7 +106,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: true, value: ja', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -126,13 +126,13 @@ describe('<SettingsBox />', () => {
           />
         )
 
-        wrapper.instance().handleChange(PropName.language)(true)(lobby.Language.en)
+        wrapper.instance().handleChange(PropName.language)(true)(lobby.Language.ja)
 
         expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
-              value: lobby.Language.en
+              value: lobby.Language.ja
             },
             userEmail: {
               valid: false,
@@ -151,7 +151,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: en', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -196,7 +196,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: ja', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -216,13 +216,13 @@ describe('<SettingsBox />', () => {
           />
         )
 
-        wrapper.instance().handleChange(PropName.language)(false)(lobby.Language.en)
+        wrapper.instance().handleChange(PropName.language)(false)(lobby.Language.ja)
 
         expect(wrapper.state()).toStrictEqual(
           {
             language: {
               valid: false,
-              value: lobby.Language.en
+              value: lobby.Language.ja
             },
             userEmail: {
               valid: false,
@@ -243,7 +243,7 @@ describe('<SettingsBox />', () => {
     describe('userEmail', () => {
       test('valid: true, value: another@example.com', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -288,7 +288,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: true, value: example@example.com', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -333,7 +333,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: another@example.com', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -378,7 +378,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: example@example.com', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -425,7 +425,7 @@ describe('<SettingsBox />', () => {
     describe('userName', () => {
       test('valid: true, value: anotherUserName', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -470,7 +470,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: true, value: userName', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -515,7 +515,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: anotherUserName', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -560,7 +560,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: userName', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -607,7 +607,7 @@ describe('<SettingsBox />', () => {
     describe('userPassword', () => {
       test('valid: true, value: userPassword', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -652,7 +652,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: true, value: \'\'', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -697,7 +697,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: userPassword', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -742,7 +742,7 @@ describe('<SettingsBox />', () => {
       })
       test('valid: false, value: \'\'', () => {
         const initialValue: Props['initialValue'] = {
-          language: lobby.Language.en,
+          language: lobby.Language.ja,
           userEmail: 'example@example.com',
           userName: 'userName'
         }
@@ -789,7 +789,7 @@ describe('<SettingsBox />', () => {
   })
   test('handleSubmit', () => {
     const initialValue: Props['initialValue'] = {
-      language: lobby.Language.en,
+      language: lobby.Language.ja,
       userEmail: 'example@example.com',
       userName: 'userName'
     }
