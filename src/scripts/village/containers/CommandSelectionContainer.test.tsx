@@ -13,7 +13,7 @@ import {mount} from 'enzyme'
 
 describe('<CommandSelectionContainer />', () => {
   describe('render', () => {
-    describe('DAY', () => {
+    describe('NOON', () => {
       test('fixed', () => {
         const store = fakeStore(
           {
@@ -22,7 +22,7 @@ describe('<CommandSelectionContainer />', () => {
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
               'date': 1,
               'intensionalDisclosureRange': village.Channel.private,
-              'phase': village.Phase.day,
+              'phase': village.Phase.noon,
               'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
               'phaseTimeLimit': 100,
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -107,7 +107,7 @@ describe('<CommandSelectionContainer />', () => {
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
               'date': 1,
               'intensionalDisclosureRange': village.Channel.private,
-              'phase': village.Phase.day,
+              'phase': village.Phase.noon,
               'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
               'phaseTimeLimit': 100,
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',

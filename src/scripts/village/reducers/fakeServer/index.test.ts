@@ -1,6 +1,5 @@
 import {
   anonymousAudienceChat,
-  day,
   firstMorning,
   firstMorning2,
   firstMorning3,
@@ -9,6 +8,7 @@ import {
   flavorText,
   myMessageOnChat,
   night,
+  noon,
   onymousAudienceChat,
   result,
   theirMessageOnChat
@@ -56,53 +56,6 @@ test('validate anonymousAudienceChat', async () => {
     ]
   })
   const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, anonymousAudienceChat)
-
-  if (!validate) {
-    console.error(ajv.errors)
-  }
-  expect(validate).toBe(true)
-})
-test('validate day', async () => {
-  expect.hasAssertions()
-  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-    fetch(`${BASE_URI}/systemMessage.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/base.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/agent.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/avatar.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/boardResult.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/chat.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/chatSettings.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/role.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/time.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/village.json`)
-      .then(res => res.json()),
-    fetch(`${BASE_URI}/votingResult.json`)
-      .then(res => res.json())
-  ])
-  const mergedSchema = {
-    ... mainSchema,
-    properties: {
-      ... mainSchema.properties,
-      ... baseSchema.definitions
-    }
-  }
-  const ajv = new Ajv({
-    schemas: [
-      mergedSchema,
-      baseSchema,
-      ... schemas
-    ]
-  })
-  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, day)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -481,6 +434,53 @@ test('validate night', async () => {
     ]
   })
   const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, night)
+
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
+})
+test('validate noon', async () => {
+  expect.hasAssertions()
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    fetch(`${BASE_URI}/systemMessage.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/base.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/agent.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chat.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/chatSettings.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/role.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/time.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/village.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/votingResult.json`)
+      .then(res => res.json())
+  ])
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, noon)
 
   if (!validate) {
     console.error(ajv.errors)

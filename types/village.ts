@@ -31,10 +31,10 @@ export const enum InputChannel {
   public = 'public'
 }
 export const enum Phase {
-  day = 'day',
   flavorText = 'flavor text',
   morning = 'morning',
   night = 'night',
+  noon = 'noon',
   postMortem = 'post mortem',
   result = 'result'
 }

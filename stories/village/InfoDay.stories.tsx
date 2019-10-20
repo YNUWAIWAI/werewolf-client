@@ -21,14 +21,14 @@ storiesOf('village|Info/InfoDay', module)
     const phase = select(
       'phase',
       {
-        day: village.Phase.day,
+        noon: village.Phase.noon,
         flavorText: village.Phase.flavorText,
         morning: village.Phase.morning,
         night: village.Phase.night,
         postMortem: village.Phase.postMortem,
         result: village.Phase.result
       },
-      village.Phase.day
+      village.Phase.noon
     )
     const story =
       <Provider store={store}>

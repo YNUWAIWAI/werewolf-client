@@ -25,7 +25,7 @@
   "Info.property.agent": "あなた:",
   "Info.property.role": "役職:",
   "Info.property.team": "陣営:",
-  "InfoDay.day": "{date}日目 昼",
+  "InfoDay.noon": "{date}日目 昼",
   "InfoDay.morning": "{date}日目 朝",
   "InfoDay.night": "{date}日目 夜",
   "InfoDay.postMortem": "感想戦",

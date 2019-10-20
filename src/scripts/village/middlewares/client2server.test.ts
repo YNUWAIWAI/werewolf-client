@@ -605,7 +605,7 @@ describe('SELECT_YES', () => {
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
       'intensionalDisclosureRange': village.Channel.private,
-      'phase': village.Phase.day,
+      'phase': village.Phase.noon,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -784,7 +784,7 @@ describe('SELECT_YES', () => {
         'name': Role.seer
       }
     },
-    'phase': village.Phase.day,
+    'phase': village.Phase.noon,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -867,7 +867,7 @@ describe('STAR', () => {
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'date': 1,
       'intensionalDisclosureRange': village.Channel.private,
-      'phase': village.Phase.day,
+      'phase': village.Phase.noon,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -956,7 +956,7 @@ describe('STAR', () => {
         'name': Role.seer
       }
     },
-    'phase': village.Phase.day,
+    'phase': village.Phase.noon,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',

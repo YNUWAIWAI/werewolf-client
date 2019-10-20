@@ -12,7 +12,7 @@ type Action =
 const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boolean) => {
   const fixedState = fixed ? 'fixed' : 'unfixed'
 
-  if (phase === village.Phase.day) {
+  if (phase === village.Phase.noon) {
     return `CommandSelection.Description.noonVote.${fixedState}`
   }
 

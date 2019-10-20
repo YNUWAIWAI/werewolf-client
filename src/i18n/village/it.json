@@ -25,7 +25,7 @@
   "Info.property.agent": "You:",
   "Info.property.role": "Role:",
   "Info.property.team": "Team:",
-  "InfoDay.day": "Day {date}: noon",
+  "InfoDay.noon": "Day {date}: noon",
   "InfoDay.morning": "Day {date}: morning",
   "InfoDay.night": "Day {date}: night",
   "InfoDay.postMortem": "Post-mortem discussion",

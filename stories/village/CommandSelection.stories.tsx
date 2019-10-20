@@ -114,7 +114,7 @@ storiesOf('village|Command/CommandSelection', module)
             descriptionId="CommandSelection.Description.noonVote.unfixed"
             fixed={false}
             handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
-            phase={village.Phase.day}
+            phase={village.Phase.noon}
           />
         </IntlProvider>
       </Provider>

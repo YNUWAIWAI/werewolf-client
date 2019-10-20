@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {
-  day,
+  noon,
   grave,
   morningWithLimitedChat,
   morningWithoutLimitedChat,
@@ -79,11 +79,11 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('day', () => {
+  .add('noon', () => {
     const store = createStore(
       reducer,
       {
-        ... day,
+        ... noon,
         language: radios(language.label, language.options, language.defaultValue)
       }
     )

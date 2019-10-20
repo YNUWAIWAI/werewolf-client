@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as village from '../types'
-import {day, night} from './fakeServer'
+import {noon, night} from './fakeServer'
 import reducer, {State, initialState} from './commandSelection'
 import {Agent} from '../constants/Agent'
 import {ImagePath} from '../constants/ImagePath'
@@ -11,7 +11,7 @@ test('CHANGE_PHASE', () => {
     reducer(
       initialState,
       {
-        from: village.Phase.day,
+        from: village.Phase.noon,
         to: village.Phase.night,
         type: ActionTypes.global.CHANGE_PHASE
       }
@@ -147,7 +147,7 @@ test('SELECT_YES', () => {
 })
 describe('socket/MESSAGE', () => {
   describe('systemMessage', () => {
-    test('phase: day', () => {
+    test('phase: noon', () => {
       const allIds: State['allIds'] = [
         '2',
         '3',
@@ -254,7 +254,7 @@ describe('socket/MESSAGE', () => {
       expect(
         reducer(
           initialState,
-          socket.message(day)
+          socket.message(noon)
         )
       ).toStrictEqual({
         allIds,

@@ -16,7 +16,7 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
-        phase={village.Phase.day}
+        phase={village.Phase.noon}
       />
     )
 
@@ -124,7 +124,7 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
-        phase={village.Phase.day}
+        phase={village.Phase.noon}
       />
     )
 
@@ -148,7 +148,7 @@ describe('<CommandSelection />', () => {
         descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed
         handleSelectOption={handleSelectOption}
-        phase={village.Phase.day}
+        phase={village.Phase.noon}
       />
     )
 
