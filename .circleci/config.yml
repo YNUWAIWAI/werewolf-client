@@ -40,7 +40,7 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: yarn install
-      - node -e 'console.log(process.config.variables)'
+      - run: node -e 'console.log(process.config.variables)'
       - save_cache:
           paths:
             - node_modules
