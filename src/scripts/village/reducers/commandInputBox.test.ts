@@ -10,12 +10,12 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(myMessageOnChat)
     )).toStrictEqual({
+      public: {
+        postCount: 7
+      },
       werewolf: {
         available: false,
         postCount: 0
-      },
-      public: {
-        postCount: 7
       }
     })
   })
@@ -30,11 +30,11 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning)
     )).toStrictEqual({
-      werewolf: {
-        available: false,
+      public: {
         postCount: 0
       },
-      public: {
+      werewolf: {
+        available: false,
         postCount: 0
       }
     })
@@ -44,11 +44,11 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning2)
     )).toStrictEqual({
-      werewolf: {
-        available: true,
+      public: {
         postCount: 0
       },
-      public: {
+      werewolf: {
+        available: true,
         postCount: 0
       }
     })
@@ -57,11 +57,11 @@ describe('socket/MESSAGE', () => {
 test('CHANGE_DATE', () => {
   expect(reducer(
     {
-      werewolf: {
-        available: true,
+      public: {
         postCount: 10
       },
-      public: {
+      werewolf: {
+        available: true,
         postCount: 10
       }
     },
@@ -71,11 +71,11 @@ test('CHANGE_DATE', () => {
       type: ActionTypes.global.CHANGE_PHASE
     }
   )).toStrictEqual({
-    werewolf: {
-      available: true,
+    public: {
       postCount: 0
     },
-    public: {
+    werewolf: {
+      available: true,
       postCount: 0
     }
   })
