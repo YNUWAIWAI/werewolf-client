@@ -18,17 +18,17 @@ export const enum Channel {
 }
 export const enum ChatChannel {
   grave = 'grave',
-  werewolf = 'werewolf',
   master = 'master',
   private = 'private',
-  public = 'public'
+  public = 'public',
+  werewolf = 'werewolf'
 }
 export const enum InputChannel {
   grave = 'grave',
-  werewolf = 'werewolf',
   postMortem = 'post mortem',
   private = 'private',
-  public = 'public'
+  public = 'public',
+  werewolf = 'werewolf'
 }
 export const enum Phase {
   flavorText = 'flavor text',

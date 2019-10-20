@@ -12,15 +12,15 @@ describe('<CommandInputBox />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         language={village.Language.en}
-        werewolf={{
-          available: false,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={[]}
+        werewolf={{
+          available: false,
+          postCount: 0
+        }}
       />
     )
 
@@ -39,15 +39,15 @@ describe('<CommandInputBox />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         language={village.Language.en}
-        werewolf={{
-          available: true,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={[]}
+        werewolf={{
+          available: true,
+          postCount: 0
+        }}
       />
     )
 

@@ -6,15 +6,15 @@ import {State} from '../../reducers/suggest'
 export interface StateProps {
   readonly characterLimit: number
   readonly language: village.Language
-  readonly werewolf: {
-    readonly available: boolean
-    readonly postCount: number
-  }
   readonly postCountLimit: number
   readonly public: {
     readonly postCount: number
   }
   readonly suggesttedData: State['data']
+  readonly werewolf: {
+    readonly available: boolean
+    readonly postCount: number
+  }
 }
 export interface DispatchProps {
   readonly handlePostChat: (channel: village.InputChannel) => (text: string) => void

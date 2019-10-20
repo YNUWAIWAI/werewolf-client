@@ -18,11 +18,11 @@ export type Action =
  | SocketMessage
 
 export const initialState: State = {
-  werewolf: {
-    available: false,
+  public: {
     postCount: 0
   },
-  public: {
+  werewolf: {
+    available: false,
     postCount: 0
   }
 }
@@ -32,12 +32,12 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
     case ActionTypes.global.CHANGE_PHASE: {
       return {
         ... state,
-        werewolf: {
-          ... state.werewolf,
-          postCount: 0
-        },
         public: {
           ... state.public,
+          postCount: 0
+        },
+        werewolf: {
+          ... state.werewolf,
           postCount: 0
         }
       }
@@ -52,19 +52,19 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           const inputChannel = getInputChannelFromChannel(action.payload.intensionalDisclosureRange)
 
           switch (inputChannel) {
-            case village.InputChannel.werewolf:
-              return {
-                ... state,
-                werewolf: {
-                  ... state.werewolf,
-                  postCount: just(action.payload.counter)
-                }
-              }
             case village.InputChannel.public:
               return {
                 ... state,
                 public: {
                   ... state.public,
+                  postCount: just(action.payload.counter)
+                }
+              }
+            case village.InputChannel.werewolf:
+              return {
+                ... state,
+                werewolf: {
+                  ... state.werewolf,
                   postCount: just(action.payload.counter)
                 }
               }

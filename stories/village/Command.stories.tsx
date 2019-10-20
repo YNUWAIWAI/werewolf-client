@@ -123,15 +123,15 @@ storiesOf('village|Command', module)
         characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        werewolf={{
-          available: false,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={suggesttedData}
+        werewolf={{
+          available: false,
+          postCount: 0
+        }}
       />
     const store = createStore(
       reducer,
@@ -158,15 +158,15 @@ storiesOf('village|Command', module)
         characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        werewolf={{
-          available: true,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={suggesttedData}
+        werewolf={{
+          available: true,
+          postCount: 0
+        }}
       />
     const store = createStore(
       reducer,

@@ -82,10 +82,10 @@ export const getChannelFromInputChennel = ({inputChannel, role, publicChannel}: 
 export const getChatChannelFromChannel = (channel: village.Channel): village.ChatChannel => {
   const chatChannel = [
     village.ChatChannel.grave,
-    village.ChatChannel.werewolf,
     village.ChatChannel.master,
     village.ChatChannel.private,
-    village.ChatChannel.public
+    village.ChatChannel.public,
+    village.ChatChannel.werewolf
   ]
   const table = {
     [village.Channel.anonymousAudience]: village.ChatChannel.public,
