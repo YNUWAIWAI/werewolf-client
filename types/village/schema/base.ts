@@ -4,8 +4,7 @@
 import {
   BaseContext,
   Channel,
-  Directionality,
-  PayloadBase
+  Directionality
 } from '..'
 import {Avatar} from './avatar'
 import {Character} from './character'
@@ -15,7 +14,7 @@ import {Role} from './role'
 import {Time} from './time'
 import {Village} from './village'
 
-export interface Base extends PayloadBase {
+export interface Base {
   '@context': BaseContext[]
   '@id': string
   avatar: {
