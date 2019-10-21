@@ -137,6 +137,10 @@ export const enum RoleId {
   werehamster = 'werehamster',
   werewolf = 'werewolf'
 }
+export const enum Severity {
+  error = 'error',
+  warning = 'warning'
+}
 export const enum Team {
   villager = 'villager',
   werehamster = 'werehamster',
@@ -229,17 +233,6 @@ export interface Base extends PayloadBase {
   serverTimestamp: string
   token: NonNullable<Avatar['token']>
   village: Village
-}
-
-/*
-'https://werewolf.world/context/0.3/error.jsonld'
-  dependency:
-    'errorMessage'
-*/
-export interface Error {
-  content: LanguageMap
-  severity: 'error' | 'warning'
-  source: string
 }
 
 /*
