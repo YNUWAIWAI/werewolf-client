@@ -105,6 +105,7 @@ export const enum Message {
   voteMessage = 'voteMessage',
 }
 export type Payload$AgentId = number
+export type Payload$ChatId = number
 export const enum Phase {
   flavorText = 'flavor text',
   morning = 'morning',
@@ -228,25 +229,6 @@ export interface Base extends PayloadBase {
   serverTimestamp: string
   token: NonNullable<Avatar['token']>
   village: Village
-}
-
-/*
-'https://werewolf.world/context/0.3/chat.jsonld'
-  dependency;
-    'playerMessage'
-*/
-export interface Chat {
-  characterLimit: number
-  counter?: number
-  id?: number
-  interval?: string
-  isMine: boolean
-  isOver: boolean
-  limit?: number
-  text: {
-    '@language': Language
-    '@value': string
-  }
 }
 
 /*
