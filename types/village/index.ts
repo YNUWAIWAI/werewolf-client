@@ -236,18 +236,6 @@ export interface Base extends PayloadBase {
 }
 
 /*
-'https://werewolf.world/context/0.3/scroll.jsonld'
-  dependency:
-    scrollMessage
-*/
-export interface Scroll {
-  nodeId: string
-  offsetHeight: number
-  scrollTop: number
-  scrollHeight: number
-}
-
-/*
 'https://werewolf.world/context/0.3/star.jsonld'
   dependency:
     starMessage
