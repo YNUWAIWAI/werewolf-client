@@ -232,17 +232,6 @@ export interface Base extends PayloadBase {
 }
 
 /*
-'https://werewolf.world/context/0.3/chatSettings.jsonld'
-  dependency;
-    'https://werewolf.world/context/0.3/village.jsonld'
-*/
-
-export interface ChatSettings {
-  '@context': Context.ChatSettings
-  '@id': string
-}
-
-/*
 'https://werewolf.world/context/0.3/error.jsonld'
   dependency:
     'errorMessage'
