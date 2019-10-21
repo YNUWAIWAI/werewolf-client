@@ -164,7 +164,6 @@ export const enum Team {
 export type Token = string
 export type VillageId = number
 
-
 export interface Payload$boardMessage extends Base {
   '@payload'?: Message.boardMessage
   agent: {
