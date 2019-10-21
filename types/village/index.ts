@@ -150,64 +150,6 @@ export type Token = string
 export type VillageId = number
 
 /*
-  'https://werewolf.world/context/0.3/base.jsonld'
-    dependency:
-      'boardMessage'
-      'errorMessage'
-      'flavorTextMessage'
-      'playerMessage'
-      'scrollMessage'
-      'systemMessage'
-      'voteMessage'
-*/
-export interface Base extends PayloadBase {
-  '@id': string
-  '@context': BaseContext[]
-  avatar?: {
-    '@context': NonNullable<Avatar['@context']>
-    '@id': NonNullable<Avatar['@id']>
-    token: NonNullable<Avatar['token']>
-    name: NonNullable<Avatar['name']>
-    image: NonNullable<Avatar['image']>
-  }
-  clientTimestamp: string
-  date: NonNullable<Time['date']>
-  directionality: Directionality
-  extensionalDisclosureRange: {
-    '@id': NonNullable<Agent['@id']>
-    id: NonNullable<Agent['id']>
-    image: NonNullable<Agent['image']>
-    name: NonNullable<Agent['name']>
-    role: {
-      '@id': NonNullable<Role['@id']>
-      image: NonNullable<Role['image']>
-      name: NonNullable<Role['name']>
-    }
-    status: NonNullable<Agent['status']>
-  }[]
-  intensionalDisclosureRange: Channel
-  myAgent?: {
-    '@context': NonNullable<Agent['@context']>
-    '@id': NonNullable<Agent['@id']>
-    id: NonNullable<Agent['id']>
-    image: NonNullable<Agent['image']>
-    name: NonNullable<Agent['name']>
-    role: {
-      '@context': NonNullable<Role['@context']>
-      '@id': NonNullable<Role['@id']>
-      image: NonNullable<Role['image']>
-      name: NonNullable<Role['name']>
-    }
-  }
-  phase: NonNullable<Time['phase']>
-  phaseStartTime: string
-  phaseTimeLimit: number
-  serverTimestamp: string
-  token: NonNullable<Avatar['token']>
-  village: Village
-}
-
-/*
 'https://werewolf.world/context/0.3/votingResult.jsonld'
   dependency:
     'systemMessage'

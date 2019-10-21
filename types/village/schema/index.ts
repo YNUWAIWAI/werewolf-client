@@ -1,5 +1,6 @@
 export {AllCharacters} from './allCharacters'
 export {Avatar} from './avatar'
+export {Base} from './base'
 export {Board} from './board'
 export {BoardResult} from './boardResult'
 export {Character} from './character'
