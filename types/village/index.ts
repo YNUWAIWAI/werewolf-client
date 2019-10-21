@@ -147,6 +147,7 @@ export const enum Team {
   werewolf = 'werewolf'
 }
 export type Token = string
+export type VillageId = number
 
 /*
   'https://werewolf.world/village/context/0.3/agent.jsonld'
@@ -233,16 +234,6 @@ export interface Base extends PayloadBase {
   serverTimestamp: string
   token: NonNullable<Avatar['token']>
   village: Village
-}
-
-/*
-'https://werewolf.world/context/0.3/star.jsonld'
-  dependency:
-    starMessage
-*/
-export interface Star {
-  '@context': Context.Star
-  '@id': string
 }
 
 /*
