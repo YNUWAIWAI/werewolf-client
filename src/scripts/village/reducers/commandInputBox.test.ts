@@ -83,7 +83,7 @@ describe('socket/MESSAGE', () => {
         postCount: 0
       },
       werewolf: {
-        available: false,
+        available: true,
         postCount: 0
       }
     })

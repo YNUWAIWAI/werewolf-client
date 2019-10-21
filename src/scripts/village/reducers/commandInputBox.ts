@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import * as village from '../types'
 import {ChangePhase, SocketMessage} from '../actions'
 import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
-import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
+import {AVAILABLE_FOR_WEREWOLF_CHAT} from '../constants/Role'
 
 export interface State {
   readonly public: {
@@ -81,7 +81,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
 
           if (
             role.numberOfAgents > 1 &&
-            AVAILABLE_FOR_LIMITED_CHAT.includes(strToRoleId(role.name.en))
+            AVAILABLE_FOR_WEREWOLF_CHAT.includes(strToRoleId(role.name.en))
           ) {
             return {
               ... state,
