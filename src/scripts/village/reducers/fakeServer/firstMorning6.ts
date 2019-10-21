@@ -298,7 +298,7 @@ const json: village.Payload$systemMessage = {
         }
       ],
       'image': ImagePath.Role.seer,
-      'isMine': true,
+      'isMine': false,
       'name': Role.seer,
       'numberOfAgents': 1
     },
