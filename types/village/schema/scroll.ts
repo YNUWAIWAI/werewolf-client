@@ -7,4 +7,3 @@ export interface Scroll {
   scrollTop: number
   scrollHeight: number
 }
-
