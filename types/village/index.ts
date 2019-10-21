@@ -150,35 +150,6 @@ export type Token = string
 export type VillageId = number
 
 /*
-  'https://werewolf.world/village/context/0.3/agent.jsonld'
-    dependency:
-      'https://werewolf.world/village/context/0.3/base.jsonld'
-      'boardMessage'
-      'playerMessage'
-      'systemMessage'
-      'voteMessage'
-      'https://werewolf.world/village/context/0.3/votingResult.jsonld'
-*/
-export interface Agent {
-  '@context': Context.Agent
-  '@id': string
-  fullName?: LanguageMap
-  gender?: Gender
-  id: Payload$AgentId
-  image: string
-  isAChoice?: boolean
-  isMine?: boolean
-  name: LanguageMap
-  result?: Result
-  status?: AgentStatus
-  update?: {
-    '@id': NonNullable<Time['@id']>
-    date: NonNullable<Time['date']>
-    phase: NonNullable<Time['phase']>
-  }
-}
-
-/*
   'https://werewolf.world/context/0.3/base.jsonld'
     dependency:
       'boardMessage'
@@ -234,24 +205,6 @@ export interface Base extends PayloadBase {
   serverTimestamp: string
   token: NonNullable<Avatar['token']>
   village: Village
-}
-
-/*
-'https://werewolf.world/schema/0.3/village.jsonld'
-*/
-export interface Village {
-  '@context': Context.Village
-  '@id': string
-  chatSettings: {
-    '@context': ChatSettings['@context']
-    '@id': ChatSettings['@id']
-    characterLimit: number
-    limit: number
-  }
-  id: number
-  lang: Language
-  name: string
-  totalNumberOfCharacters: number
 }
 
 /*
