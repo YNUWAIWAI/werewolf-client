@@ -14,7 +14,7 @@
   --obfucator-color: rgba(0, 0, 0, 0.15);
   --public-color: rgba(255, 165, 0, 0.4);
   --private-color: rgba(128, 128, 128, 0.3);
-  --limited-color: rgba(255, 0, 0, 0.4);
+  --werewolf-color: rgba(255, 0, 0, 0.4);
   --master-color: rgba(0, 255, 0, 0.4);
   --grave-color: rgba(0, 0, 255, 0.3);
   --win-color: hsla(51, 100%, 50%, 0.7);
@@ -271,13 +271,13 @@
         }
       }
 
-      &.limited {
+      &.werewolf {
         & > .vi--chat--arrow-box {
-          background: var(--limited-color);
+          background: var(--werewolf-color);
 
           &::after {
             border-left-color: transparent;
-            border-right-color: var(--limited-color);
+            border-right-color: var(--werewolf-color);
           }
         }
       }
@@ -306,8 +306,8 @@
           border-right-color: transparent;
         }
 
-        &.limited > .vi--chat--arrow-box::after {
-          border-left-color: var(--limited-color);
+        &.werewolf > .vi--chat--arrow-box::after {
+          border-left-color: var(--werewolf-color);
           border-right-color: transparent;
         }
 
@@ -514,8 +514,8 @@
           background: var(--grave-color);
         }
 
-        &.limited {
-          background: var(--limited-color);
+        &.werewolf {
+          background: var(--werewolf-color);
         }
 
         &.private {

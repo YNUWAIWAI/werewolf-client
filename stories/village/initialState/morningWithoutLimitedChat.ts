@@ -81,11 +81,11 @@ const state: ReducerState = {
     ]
   },
   commandInputBox: {
-    limited: {
-      available: false,
+    public: {
       postCount: 0
     },
-    public: {
+    werewolf: {
+      available: false,
       postCount: 0
     }
   },

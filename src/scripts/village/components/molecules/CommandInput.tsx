@@ -196,7 +196,7 @@ export default class CommandInput extends React.Component<Props, State> {
       case village.InputChannel.postMortem:
         return true
       case village.InputChannel.public:
-      case village.InputChannel.limited:
+      case village.InputChannel.werewolf:
         return this.props.postCount < this.props.postCountLimit
       default:
         throw Error('props.inputChannel: unkonwn')

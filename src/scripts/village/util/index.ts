@@ -48,7 +48,7 @@ export const getChannelFromInputChennel = ({inputChannel, role, publicChannel}: 
   ]
   const maybe = channel.find(v => {
     switch (inputChannel) {
-      case village.InputChannel.limited: {
+      case village.InputChannel.werewolf: {
         switch (role) {
           case village.RoleId.hunter:
             return v === village.Channel.hunter
@@ -82,21 +82,21 @@ export const getChannelFromInputChennel = ({inputChannel, role, publicChannel}: 
 export const getChatChannelFromChannel = (channel: village.Channel): village.ChatChannel => {
   const chatChannel = [
     village.ChatChannel.grave,
-    village.ChatChannel.limited,
     village.ChatChannel.master,
     village.ChatChannel.private,
-    village.ChatChannel.public
+    village.ChatChannel.public,
+    village.ChatChannel.werewolf
   ]
   const table = {
     [village.Channel.anonymousAudience]: village.ChatChannel.public,
     [village.Channel.grave]: village.ChatChannel.grave,
-    [village.Channel.hunter]: village.ChatChannel.limited,
+    [village.Channel.hunter]: village.ChatChannel.werewolf,
     [village.Channel.master]: village.ChatChannel.master,
     [village.Channel.onymousAudience]: village.ChatChannel.public,
     [village.Channel.private]: village.ChatChannel.private,
     [village.Channel.public]: village.ChatChannel.public,
-    [village.Channel.seer]: village.ChatChannel.limited,
-    [village.Channel.werewolf]: village.ChatChannel.limited
+    [village.Channel.seer]: village.ChatChannel.werewolf,
+    [village.Channel.werewolf]: village.ChatChannel.werewolf
   }
   const maybe = chatChannel.find(v => v === table[channel])
 
@@ -111,16 +111,22 @@ export const getInputChannelFromChannel = (channel: village.Channel): village.In
   if (channel === village.Channel.master) {
     throw new Error(`channel === '${channel}' is undefined behavior`)
   }
-  const inputChannel = [village.InputChannel.grave, village.InputChannel.limited, village.InputChannel.postMortem, village.InputChannel.private, village.InputChannel.public]
+  const inputChannel = [
+    village.InputChannel.grave,
+    village.InputChannel.postMortem,
+    village.InputChannel.private,
+    village.InputChannel.public,
+    village.InputChannel.werewolf
+  ]
   const table = {
     [village.Channel.anonymousAudience]: village.InputChannel.public,
     [village.Channel.grave]: village.InputChannel.grave,
-    [village.Channel.hunter]: village.InputChannel.limited,
+    [village.Channel.hunter]: village.InputChannel.public,
     [village.Channel.onymousAudience]: village.InputChannel.public,
     [village.Channel.private]: village.InputChannel.private,
     [village.Channel.public]: village.InputChannel.public,
-    [village.Channel.seer]: village.InputChannel.limited,
-    [village.Channel.werewolf]: village.InputChannel.limited
+    [village.Channel.seer]: village.InputChannel.public,
+    [village.Channel.werewolf]: village.InputChannel.werewolf
   }
   const maybe = inputChannel.find(v => v === table[channel])
 

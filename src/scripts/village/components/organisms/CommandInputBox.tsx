@@ -6,15 +6,15 @@ import {State} from '../../reducers/suggest'
 export interface StateProps {
   readonly characterLimit: number
   readonly language: village.Language
-  readonly limited: {
-    readonly available: boolean
-    readonly postCount: number
-  }
   readonly postCountLimit: number
   readonly public: {
     readonly postCount: number
   }
   readonly suggesttedData: State['data']
+  readonly werewolf: {
+    readonly available: boolean
+    readonly postCount: number
+  }
 }
 export interface DispatchProps {
   readonly handlePostChat: (channel: village.InputChannel) => (text: string) => void
@@ -43,13 +43,13 @@ export default function CommandInputBox(props: Props) {
         suggesttedData={props.suggesttedData}
       />
       {
-        props.limited.available ?
+        props.werewolf.available ?
           <CommandInput
             characterLimit={props.characterLimit}
-            handlePostChat={props.handlePostChat(village.InputChannel.limited)}
-            inputChannel={village.InputChannel.limited}
+            handlePostChat={props.handlePostChat(village.InputChannel.werewolf)}
+            inputChannel={village.InputChannel.werewolf}
             language={props.language}
-            postCount={props.limited.postCount}
+            postCount={props.werewolf.postCount}
             postCountLimit={props.postCountLimit}
             suggesttedData={props.suggesttedData}
           /> :

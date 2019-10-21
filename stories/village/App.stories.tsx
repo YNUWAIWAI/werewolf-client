@@ -49,7 +49,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('morning (without limited chat)', () => {
+  .add('morning (without werewolf chat)', () => {
     const store = createStore(
       reducer,
       {
@@ -64,7 +64,7 @@ storiesOf('village|App', module)
 
     return story
   })
-  .add('morning (with limited chat)', () => {
+  .add('morning (with werewolf chat)', () => {
     const store = createStore(
       reducer,
       {

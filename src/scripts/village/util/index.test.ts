@@ -35,52 +35,52 @@ test('getBaseUri', () => {
   expect(getBaseUri('https://licos.online/state/0.2/village#3/boardMessage')).toBe('https://licos.online/state/0.2/village#3')
 })
 describe('getChannelFromInputChennel', () => {
-  describe('inputChannel: \'limited\'', () => {
+  describe('inputChannel: \'werewolf\'', () => {
     test('role: villager', () => {
       expect(() => getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.villager
       })).toThrow()
     })
     test('role: seer', () => {
       expect(getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.seer
       })).toBe('seer')
     })
     test('role: medium', () => {
       expect(() => getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.medium
       })).toThrow()
     })
     test('role: hunter', () => {
       expect(getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.hunter
       })).toBe('hunter')
     })
     test('role: mason', () => {
       expect(() => getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.mason
       })).toThrow()
     })
     test('role: madman', () => {
       expect(() => getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.madman
       })).toThrow()
     })
     test('role: werewolf', () => {
       expect(getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.werewolf
       })).toBe('werewolf')
     })
     test('role: werehamster', () => {
       expect(() => getChannelFromInputChennel({
-        inputChannel: village.InputChannel.limited,
+        inputChannel: village.InputChannel.werewolf,
         role: village.RoleId.werehamster
       })).toThrow()
     })
@@ -129,7 +129,7 @@ describe('getChatChannelFromChannel', () => {
     expect(getChatChannelFromChannel(village.Channel.grave)).toBe('grave')
   })
   test('hunter', () => {
-    expect(getChatChannelFromChannel(village.Channel.hunter)).toBe('limited')
+    expect(getChatChannelFromChannel(village.Channel.hunter)).toBe('werewolf')
   })
   test('master', () => {
     expect(getChatChannelFromChannel(village.Channel.master)).toBe('master')
@@ -144,10 +144,10 @@ describe('getChatChannelFromChannel', () => {
     expect(getChatChannelFromChannel(village.Channel.public)).toBe('public')
   })
   test('seer', () => {
-    expect(getChatChannelFromChannel(village.Channel.seer)).toBe('limited')
+    expect(getChatChannelFromChannel(village.Channel.seer)).toBe('werewolf')
   })
   test('werewolf', () => {
-    expect(getChatChannelFromChannel(village.Channel.werewolf)).toBe('limited')
+    expect(getChatChannelFromChannel(village.Channel.werewolf)).toBe('werewolf')
   })
 })
 describe('getInitial', () => {
@@ -163,7 +163,7 @@ describe('getInputChannelFromChannel', () => {
     expect(getInputChannelFromChannel(village.Channel.grave)).toBe('grave')
   })
   test('hunter', () => {
-    expect(getInputChannelFromChannel(village.Channel.hunter)).toBe('limited')
+    expect(getInputChannelFromChannel(village.Channel.hunter)).toBe('public')
   })
   test('master', () => {
     expect(() => getInputChannelFromChannel(village.Channel.master)).toThrow()
@@ -178,10 +178,10 @@ describe('getInputChannelFromChannel', () => {
     expect(getInputChannelFromChannel(village.Channel.public)).toBe('public')
   })
   test('seer', () => {
-    expect(getInputChannelFromChannel(village.Channel.seer)).toBe('limited')
+    expect(getInputChannelFromChannel(village.Channel.seer)).toBe('public')
   })
   test('werewolf', () => {
-    expect(getInputChannelFromChannel(village.Channel.werewolf)).toBe('limited')
+    expect(getInputChannelFromChannel(village.Channel.werewolf)).toBe('werewolf')
   })
 })
 describe('getMyAgent', () => {

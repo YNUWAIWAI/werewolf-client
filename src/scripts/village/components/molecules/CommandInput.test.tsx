@@ -29,13 +29,13 @@ describe('<CommandInput />', () => {
       expect(wrapper.find('.vi--command--input--send').text()).toBe('Send')
       expect(handlePostChat).toHaveBeenCalledTimes(0)
     })
-    test('inputChannel="limited"', () => {
+    test('inputChannel="werewolf"', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl(
         <CommandInput
           characterLimit={140}
           handlePostChat={handlePostChat}
-          inputChannel={village.InputChannel.limited}
+          inputChannel={village.InputChannel.werewolf}
           language={village.Language.en}
           postCount={0}
           postCountLimit={10}
@@ -43,7 +43,7 @@ describe('<CommandInput />', () => {
         />
       )
 
-      expect(wrapper.find('.vi--command--input--textarea').hasClass('limited')).toBe(true)
+      expect(wrapper.find('.vi--command--input--textarea').hasClass('werewolf')).toBe(true)
       expect(wrapper.find('.vi--command--input--textarea').is('[placeholder="Werewolf"]')).toBe(true)
       expect(wrapper.find('.vi--command--input--textarea').is('[value=""]')).toBe(true)
       expect(wrapper.find('.vi--command--input--send').is('[disabled=true]')).toBe(true)
@@ -1481,14 +1481,14 @@ describe('<CommandInput />', () => {
 
       expect(wrapper.instance().isSendable()).toBe(true)
     })
-    describe('inputChannel: limited', () => {
+    describe('inputChannel: werewolf', () => {
       test('postCount < postCountLimit', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
             characterLimit={140}
             handlePostChat={handlePostChat}
-            inputChannel={village.InputChannel.limited}
+            inputChannel={village.InputChannel.werewolf}
             language={village.Language.en}
             postCount={0}
             postCountLimit={10}
@@ -1504,7 +1504,7 @@ describe('<CommandInput />', () => {
           <CommandInput
             characterLimit={140}
             handlePostChat={handlePostChat}
-            inputChannel={village.InputChannel.limited}
+            inputChannel={village.InputChannel.werewolf}
             language={village.Language.en}
             postCount={10}
             postCountLimit={10}
@@ -1520,7 +1520,7 @@ describe('<CommandInput />', () => {
           <CommandInput
             characterLimit={140}
             handlePostChat={handlePostChat}
-            inputChannel={village.InputChannel.limited}
+            inputChannel={village.InputChannel.werewolf}
             language={village.Language.en}
             postCount={11}
             postCountLimit={10}

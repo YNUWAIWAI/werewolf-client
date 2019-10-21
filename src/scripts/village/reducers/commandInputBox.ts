@@ -2,14 +2,14 @@ import * as ActionTypes from '../constants/ActionTypes'
 import * as village from '../types'
 import {ChangePhase, SocketMessage} from '../actions'
 import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
-import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
+import {AVAILABLE_FOR_WEREWOLF_CHAT} from '../constants/Role'
 
 export interface State {
-  readonly limited: {
-    readonly available: boolean
+  readonly public: {
     readonly postCount: number
   }
-  readonly public: {
+  readonly werewolf: {
+    readonly available: boolean
     readonly postCount: number
   }
 }
@@ -18,11 +18,11 @@ export type Action =
  | SocketMessage
 
 export const initialState: State = {
-  limited: {
-    available: false,
+  public: {
     postCount: 0
   },
-  public: {
+  werewolf: {
+    available: false,
     postCount: 0
   }
 }
@@ -32,12 +32,11 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
     case ActionTypes.global.CHANGE_PHASE: {
       return {
         ... state,
-        limited: {
-          ... state.limited,
+        public: {
           postCount: 0
         },
-        public: {
-          ... state.public,
+        werewolf: {
+          ... state.werewolf,
           postCount: 0
         }
       }
@@ -52,19 +51,18 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           const inputChannel = getInputChannelFromChannel(action.payload.intensionalDisclosureRange)
 
           switch (inputChannel) {
-            case village.InputChannel.limited:
-              return {
-                ... state,
-                limited: {
-                  ... state.limited,
-                  postCount: just(action.payload.counter)
-                }
-              }
             case village.InputChannel.public:
               return {
                 ... state,
                 public: {
-                  ... state.public,
+                  postCount: just(action.payload.counter)
+                }
+              }
+            case village.InputChannel.werewolf:
+              return {
+                ... state,
+                werewolf: {
+                  ... state.werewolf,
                   postCount: just(action.payload.counter)
                 }
               }
@@ -83,12 +81,12 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
 
           if (
             role.numberOfAgents > 1 &&
-            AVAILABLE_FOR_LIMITED_CHAT.includes(strToRoleId(role.name.en))
+            AVAILABLE_FOR_WEREWOLF_CHAT.includes(strToRoleId(role.name.en))
           ) {
             return {
               ... state,
-              limited: {
-                ... state.limited,
+              werewolf: {
+                ... state.werewolf,
                 available: true
               }
             }

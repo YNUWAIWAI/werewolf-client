@@ -208,7 +208,7 @@ storiesOf('village|Command/CommandInput', module)
 
     return story
   })
-  .add('limited', () => {
+  .add('werewolf', () => {
     const postCount = number('postCount', 0, {
       max: 10,
       min: 0,
@@ -232,7 +232,7 @@ storiesOf('village|Command/CommandInput', module)
             <CommandInput
               characterLimit={140}
               handlePostChat={action('postChat')}
-              inputChannel={village.InputChannel.limited}
+              inputChannel={village.InputChannel.werewolf}
               language={value}
               postCount={postCount}
               postCountLimit={10}

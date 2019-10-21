@@ -1,6 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as village from '../types'
-import {firstMorning, firstMorning2, myMessageOnChat, theirMessageOnChat} from './fakeServer'
+import {
+  firstMorning,
+  firstMorning2,
+  firstMorning6,
+  firstMorning7,
+  myMessageOnChat,
+  theirMessageOnChat
+} from './fakeServer'
 import reducer, {initialState} from './commandInputBox'
 import {socket} from '../actions'
 
@@ -10,12 +17,12 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(myMessageOnChat)
     )).toStrictEqual({
-      limited: {
-        available: false,
-        postCount: 0
-      },
       public: {
         postCount: 7
+      },
+      werewolf: {
+        available: false,
+        postCount: 0
       }
     })
   })
@@ -30,11 +37,11 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning)
     )).toStrictEqual({
-      limited: {
-        available: false,
+      public: {
         postCount: 0
       },
-      public: {
+      werewolf: {
+        available: false,
         postCount: 0
       }
     })
@@ -44,11 +51,39 @@ describe('socket/MESSAGE', () => {
       initialState,
       socket.message(firstMorning2)
     )).toStrictEqual({
-      limited: {
-        available: true,
+      public: {
         postCount: 0
       },
+      werewolf: {
+        available: false,
+        postCount: 0
+      }
+    })
+  })
+  test('werewolf 1', () => {
+    expect(reducer(
+      initialState,
+      socket.message(firstMorning6)
+    )).toStrictEqual({
       public: {
+        postCount: 0
+      },
+      werewolf: {
+        available: false,
+        postCount: 0
+      }
+    })
+  })
+  test('werewolf 2', () => {
+    expect(reducer(
+      initialState,
+      socket.message(firstMorning7)
+    )).toStrictEqual({
+      public: {
+        postCount: 0
+      },
+      werewolf: {
+        available: true,
         postCount: 0
       }
     })
@@ -57,11 +92,11 @@ describe('socket/MESSAGE', () => {
 test('CHANGE_DATE', () => {
   expect(reducer(
     {
-      limited: {
-        available: true,
+      public: {
         postCount: 10
       },
-      public: {
+      werewolf: {
+        available: true,
         postCount: 10
       }
     },
@@ -71,11 +106,11 @@ test('CHANGE_DATE', () => {
       type: ActionTypes.global.CHANGE_PHASE
     }
   )).toStrictEqual({
-    limited: {
-      available: true,
+    public: {
       postCount: 0
     },
-    public: {
+    werewolf: {
+      available: true,
       postCount: 0
     }
   })

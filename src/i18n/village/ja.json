@@ -3,7 +3,7 @@
   "ChatContainer.postMortem": "感想戦",
   "ChatDate": "{postTime} (残り{restTime})",
   "CommandInput.placeholder.grave": "墓場",
-  "CommandInput.placeholder.limited": "人狼用",
+  "CommandInput.placeholder.werewolf": "人狼用",
   "CommandInput.placeholder.postMortem": "感想戦",
   "CommandInput.placeholder.private": "非公開用",
   "CommandInput.placeholder.public": "公開用",

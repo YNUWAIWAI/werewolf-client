@@ -116,22 +116,22 @@ const suggesttedData = [
 ]
 
 storiesOf('village|Command', module)
-  .add('morning (without limited chat)', () => {
+  .add('morning (without werewolf chat)', () => {
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
         characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        limited={{
-          available: false,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={suggesttedData}
+        werewolf={{
+          available: false,
+          postCount: 0
+        }}
       />
     const store = createStore(
       reducer,
@@ -151,22 +151,22 @@ storiesOf('village|Command', module)
 
     return story
   })
-  .add('morning (with limited chat)', () => {
+  .add('morning (with werewolf chat)', () => {
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
         characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        limited={{
-          available: true,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={suggesttedData}
+        werewolf={{
+          available: true,
+          postCount: 0
+        }}
       />
     const store = createStore(
       reducer,

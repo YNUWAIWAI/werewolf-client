@@ -22,10 +22,8 @@ export const ORDERED_ROLE_LIST = [
   WEREWOLF,
   WEREHAMSTER
 ]
-export const AVAILABLE_FOR_LIMITED_CHAT = [
-  WEREWOLF,
-  SEER,
-  HUNTER
+export const AVAILABLE_FOR_WEREWOLF_CHAT = [
+  WEREWOLF
 ]
 
 export const VILLAGER_TEAM = [

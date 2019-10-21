@@ -4,7 +4,7 @@ import CommandInputBox from './CommandInputBox'
 import {shallow} from 'enzyme'
 
 describe('<CommandInputBox />', () => {
-  test('limited is unavailable', () => {
+  test('werewolf is unavailable', () => {
     const handlePostChatEventHandler = jest.fn()
     const handlePostChat = jest.fn().mockReturnValueOnce(handlePostChatEventHandler)
     const wrapper = shallow(
@@ -12,15 +12,15 @@ describe('<CommandInputBox />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         language={village.Language.en}
-        limited={{
-          available: false,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={[]}
+        werewolf={{
+          available: false,
+          postCount: 0
+        }}
       />
     )
 
@@ -28,10 +28,10 @@ describe('<CommandInputBox />', () => {
     expect(handlePostChat).toHaveBeenCalledTimes(2)
     expect(handlePostChat).toHaveBeenCalledWith('public')
     expect(handlePostChat).toHaveBeenCalledWith('private')
-    expect(handlePostChat).not.toHaveBeenCalledWith('limited')
+    expect(handlePostChat).not.toHaveBeenCalledWith('werewolf')
     expect(handlePostChatEventHandler).toHaveBeenCalledTimes(0)
   })
-  test('limited is available', () => {
+  test('werewolf is available', () => {
     const handlePostChatEventHandler = jest.fn()
     const handlePostChat = jest.fn().mockReturnValueOnce(handlePostChatEventHandler)
     const wrapper = shallow(
@@ -39,15 +39,15 @@ describe('<CommandInputBox />', () => {
         characterLimit={140}
         handlePostChat={handlePostChat}
         language={village.Language.en}
-        limited={{
-          available: true,
-          postCount: 0
-        }}
         postCountLimit={10}
         public={{
           postCount: 0
         }}
         suggesttedData={[]}
+        werewolf={{
+          available: true,
+          postCount: 0
+        }}
       />
     )
 
@@ -55,7 +55,7 @@ describe('<CommandInputBox />', () => {
     expect(handlePostChat).toHaveBeenCalledTimes(3)
     expect(handlePostChat).toHaveBeenCalledWith('public')
     expect(handlePostChat).toHaveBeenCalledWith('private')
-    expect(handlePostChat).toHaveBeenCalledWith('limited')
+    expect(handlePostChat).toHaveBeenCalledWith('werewolf')
     expect(handlePostChatEventHandler).toHaveBeenCalledTimes(0)
   })
 })
