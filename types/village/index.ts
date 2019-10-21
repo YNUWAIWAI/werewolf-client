@@ -236,22 +236,6 @@ export interface Base extends PayloadBase {
 }
 
 /*
-'https://werewolf.world/context/0.3/role.jsonld'
-  dependency:
-    'https://werewolf.world/context/0.3/base.jsonld'
-    'boardMessage'
-    'systemMessage'
-*/
-export interface Role {
-  '@context': Context.Role
-  '@id': string
-  image: string
-  isMine?: boolean
-  name: LanguageMap
-  numberOfAgents?: number
-}
-
-/*
 'https://werewolf.world/context/0.3/scroll.jsonld'
   dependency:
     scrollMessage
