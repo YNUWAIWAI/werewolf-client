@@ -3,8 +3,9 @@
 */
 import {Base} from './base'
 import {Error} from './error'
+import {PayloadBase} from '../payload'
 
-export interface ErrorMessage {
+export interface ErrorMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
   clientTimestamp: Base['clientTimestamp']

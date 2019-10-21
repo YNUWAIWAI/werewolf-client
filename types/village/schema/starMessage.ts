@@ -3,9 +3,10 @@
 */
 import {Avatar} from './avatar'
 import {Base} from './base'
+import {PayloadBase} from '../payload'
 import {Star} from './star'
 
-export interface StarMessage {
+export interface StarMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
   clientTimestamp: Base['clientTimestamp']

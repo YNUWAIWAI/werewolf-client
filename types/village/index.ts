@@ -1,6 +1,7 @@
 /* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
 import * as lobby from '../lobby'
 export * from './schema'
+export * from './payload'
 
 export type AgentId = string
 export const enum AgentStatus {
@@ -96,18 +97,13 @@ export interface LanguageMap {
 }
 export const enum Message {
   boardMessage = 'boardMessage',
+  chatMessage = 'chatMessage',
   errorMessage = 'errorMessage',
   flavorTextMessage = 'flavorTextMessage',
-  playerMessage = 'playerMessage',
   scrollMessage = 'scrollMessage',
   starMessage = 'starMessage',
   systemMessage = 'systemMessage',
   voteMessage = 'voteMessage',
-}
-export interface PayloadBase {
-  '@id'?: string
-  '@payload'?: Message | PayloadType
-  'type'?: PayloadType
 }
 export const enum PayloadType {
   buildVillage = 'buildVillage',
@@ -164,132 +160,6 @@ export const enum Team {
 export type Token = string
 export type VillageId = number
 
-export interface Payload$boardMessage extends Base {
-  '@payload'?: Message.boardMessage
-  agent: {
-    '@context': NonNullable<Agent['@context']>
-    '@id': NonNullable<Agent['@id']>
-    id: NonNullable<Agent['id']>
-    image: NonNullable<Agent['image']>
-    name: NonNullable<Agent['name']>
-  }
-  prediction: Board['prediction']
-  role: {
-    '@context': NonNullable<Role['@context']>
-    '@id': NonNullable<Role['@id']>
-    image: NonNullable<Role['image']>
-    name: NonNullable<Role['name']>
-  }
-}
-export interface Payload$errorMessage extends Base, Error {
-  '@payload'?: Message.errorMessage
-}
-export interface Payload$flavorTextMessage extends Base {
-  '@payload'?: Message.flavorTextMessage
-  flavorText: Payload$playerMessage[]
-}
-export interface Payload$playerMessage extends Base {
-  '@payload'?: Message.playerMessage
-  agent?: {
-    '@context': NonNullable<Agent['@context']>
-    '@id': NonNullable<Agent['@id']>
-    id: NonNullable<Agent['id']>
-    image: NonNullable<Agent['image']>
-    name: NonNullable<Agent['name']>
-  }
-  characterLimit: NonNullable<Chat['characterLimit']>
-  counter?: NonNullable<Chat['counter']>
-  id?: NonNullable<Chat['id']>
-  interval?: NonNullable<Chat['interval']>
-  isMine: NonNullable<Chat['isMine']>
-  isOver: NonNullable<Chat['isOver']>
-  limit?: NonNullable<Chat['limit']>
-  text: NonNullable<Chat['text']>
-}
-export interface Payload$starMessage extends Base {
-  '@payload'?: Message.starMessage
-  myAgent: NonNullable<Base['myAgent']>
-  star: {
-    '@context': Star['@context']
-    '@id': Star['@id']
-    clientTimestamp: Base['clientTimestamp']
-    isMarked: boolean
-    serverTimestamp: Base['serverTimestamp']
-    token: Avatar['token']
-  }
-}
-export interface Payload$scrollMessage extends Base, Scroll {
-  '@payload'?: Message.scrollMessage
-}
-export interface Payload$systemMessage extends Base {
-  '@payload'?: Message.systemMessage
-  agent?: {
-    '@context': NonNullable<Agent['@context']>
-    '@id': NonNullable<Agent['@id']>
-    isMine: NonNullable<Agent['isMine']>
-    name: NonNullable<Agent['name']>
-    image: NonNullable<Agent['image']>
-    id: NonNullable<Agent['id']>
-    status: NonNullable<Agent['status']>
-    update?: NonNullable<Agent['update']>
-    isAChoice?: NonNullable<Agent['isAChoice']>
-    result?: NonNullable<Agent['result']>
-    avatar?: {
-      '@context': NonNullable<Avatar['@context']>
-      '@id': NonNullable<Avatar['@id']>
-      token: NonNullable<Avatar['token']>
-      name: NonNullable<Avatar['name']>
-      image: NonNullable<Avatar['image']>
-    }
-    role?: {
-      '@context': NonNullable<Role['@context']>
-      '@id': NonNullable<Role['@id']>
-      name: NonNullable<Role['name']>
-      image: NonNullable<Role['image']>
-    }
-  }[]
-  role?: {
-    '@context': NonNullable<Role['@context']>
-    '@id': NonNullable<Role['@id']>
-    agent?: {
-      '@context': NonNullable<Agent['@context']>
-      '@id': NonNullable<Agent['@id']>
-      id: NonNullable<Agent['id']>
-      image: NonNullable<Agent['image']>
-      name: NonNullable<Agent['name']>
-    }[]
-    board?: {
-      '@context': NonNullable<Board['@context']>
-      '@id': string
-      agent: {
-        '@context': NonNullable<Agent['@context']>
-        '@id': NonNullable<Agent['@id']>
-        id: NonNullable<Agent['id']>
-        image: NonNullable<Agent['image']>
-        name: NonNullable<Agent['name']>
-      }
-      date: NonNullable<Time['date']>
-      phase: NonNullable<Time['phase']>
-      polarity: NonNullable<Board['polarity']>
-    }[]
-    image: NonNullable<Role['image']>
-    isMine: NonNullable<Role['isMine']>
-    name: NonNullable<Role['name']>
-    numberOfAgents: NonNullable<Role['numberOfAgents']>
-  }[]
-  votingResultsSummary?: NonNullable<VotingResult['votingResultsSummary']>
-  votingResultsDetails?: NonNullable<VotingResult['votingResultsDetails']>
-}
-export interface Payload$voteMessage extends Base {
-  '@payload'?: Message.voteMessage
-  agent?: {
-    '@context': NonNullable<Agent['@context']>
-    '@id': NonNullable<Agent['@id']>
-    id: NonNullable<Agent['id']>
-    image: NonNullable<Agent['image']>
-    name: NonNullable<Agent['name']>
-  }
-}
 export interface Payload$buildVillage extends PayloadBase {
   avatar: lobby.Payload$buildVillage['avatar']
   comment: lobby.Payload$buildVillage['comment']
