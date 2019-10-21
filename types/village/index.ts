@@ -231,19 +231,6 @@ export interface Base extends PayloadBase {
 }
 
 /*
-'https://werewolf.world/context/0.3/board.jsonld'
-  dependency:
-    'boardMessage'
-    'systemMessage'
-*/
-export interface Board {
-  '@context'?: Context.BoardResult
-  '@id'?: string
-  polarity?: Polarity
-  prediction?: BoardState
-}
-
-/*
 'https://werewolf.world/context/0.3/chat.jsonld'
   dependency;
     'playerMessage'

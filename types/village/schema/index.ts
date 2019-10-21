@@ -1,4 +1,6 @@
 export {AllCharacters} from './allCharacters'
 export {Avatar} from './avatar'
+export {Board} from './board'
+export {BoardResult} from './boardResult'
 export {Character} from './character'
 export {Time} from './time'
