@@ -163,7 +163,7 @@ describe('getInputChannelFromChannel', () => {
     expect(getInputChannelFromChannel(village.Channel.grave)).toBe('grave')
   })
   test('hunter', () => {
-    expect(getInputChannelFromChannel(village.Channel.hunter)).toBe('werewolf')
+    expect(getInputChannelFromChannel(village.Channel.hunter)).toBe('public')
   })
   test('master', () => {
     expect(() => getInputChannelFromChannel(village.Channel.master)).toThrow()
@@ -178,7 +178,7 @@ describe('getInputChannelFromChannel', () => {
     expect(getInputChannelFromChannel(village.Channel.public)).toBe('public')
   })
   test('seer', () => {
-    expect(getInputChannelFromChannel(village.Channel.seer)).toBe('werewolf')
+    expect(getInputChannelFromChannel(village.Channel.seer)).toBe('public')
   })
   test('werewolf', () => {
     expect(getInputChannelFromChannel(village.Channel.werewolf)).toBe('werewolf')

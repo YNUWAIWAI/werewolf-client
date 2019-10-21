@@ -4,6 +4,8 @@ import firstMorning2JSON from './firstMorning2'
 import firstMorning3JSON from './firstMorning3'
 import firstMorning4JSON from './firstMorning4'
 import firstMorning5JSON from './firstMorning5'
+import firstMorning6JSON from './firstMorning6'
+import firstMorning7JSON from './firstMorning7'
 import flavorTextJSON from './flavorText'
 import myMessageOnChatJSON from './myMessageOnChat'
 import nightJSON from './night'
@@ -19,6 +21,8 @@ export const firstMorning2 = firstMorning2JSON
 export const firstMorning3 = firstMorning3JSON
 export const firstMorning4 = firstMorning4JSON
 export const firstMorning5 = firstMorning5JSON
+export const firstMorning6 = firstMorning6JSON
+export const firstMorning7 = firstMorning7JSON
 export const flavorText = flavorTextJSON
 export const myMessageOnChat = myMessageOnChatJSON
 export const night = nightJSON

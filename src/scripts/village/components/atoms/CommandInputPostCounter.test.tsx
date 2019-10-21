@@ -15,7 +15,7 @@ describe('<CommandInputPostCounter />', () => {
 
     expect(wrapper.isEmptyRender()).toBe(true)
   })
-  test('limted', () => {
+  test('werewolf', () => {
     const wrapper = shallow(
       <CommandInputPostCounter
         inputChannel={village.InputChannel.werewolf}

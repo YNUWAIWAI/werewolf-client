@@ -5,11 +5,11 @@ import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
 import {AVAILABLE_FOR_LIMITED_CHAT} from '../constants/Role'
 
 export interface State {
-  readonly werewolf: {
-    readonly available: boolean
+  readonly public: {
     readonly postCount: number
   }
-  readonly public: {
+  readonly werewolf: {
+    readonly available: boolean
     readonly postCount: number
   }
 }
@@ -33,7 +33,6 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
       return {
         ... state,
         public: {
-          ... state.public,
           postCount: 0
         },
         werewolf: {
@@ -56,7 +55,6 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
               return {
                 ... state,
                 public: {
-                  ... state.public,
                   postCount: just(action.payload.counter)
                 }
               }

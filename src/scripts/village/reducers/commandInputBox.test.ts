@@ -1,6 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as village from '../types'
-import {firstMorning, firstMorning2, myMessageOnChat, theirMessageOnChat} from './fakeServer'
+import {
+  firstMorning,
+  firstMorning2,
+  firstMorning6,
+  firstMorning7,
+  myMessageOnChat,
+  theirMessageOnChat
+} from './fakeServer'
 import reducer, {initialState} from './commandInputBox'
 import {socket} from '../actions'
 
@@ -48,7 +55,35 @@ describe('socket/MESSAGE', () => {
         postCount: 0
       },
       werewolf: {
-        available: true,
+        available: false,
+        postCount: 0
+      }
+    })
+  })
+  test('werewolf 1', () => {
+    expect(reducer(
+      initialState,
+      socket.message(firstMorning6)
+    )).toStrictEqual({
+      public: {
+        postCount: 0
+      },
+      werewolf: {
+        available: false,
+        postCount: 0
+      }
+    })
+  })
+  test('werewolf 2', () => {
+    expect(reducer(
+      initialState,
+      socket.message(firstMorning7)
+    )).toStrictEqual({
+      public: {
+        postCount: 0
+      },
+      werewolf: {
+        available: false,
         postCount: 0
       }
     })

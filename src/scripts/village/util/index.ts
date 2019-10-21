@@ -111,15 +111,21 @@ export const getInputChannelFromChannel = (channel: village.Channel): village.In
   if (channel === village.Channel.master) {
     throw new Error(`channel === '${channel}' is undefined behavior`)
   }
-  const inputChannel = [village.InputChannel.grave, village.InputChannel.werewolf, village.InputChannel.postMortem, village.InputChannel.private, village.InputChannel.public]
+  const inputChannel = [
+    village.InputChannel.grave,
+    village.InputChannel.postMortem,
+    village.InputChannel.private,
+    village.InputChannel.public,
+    village.InputChannel.werewolf
+  ]
   const table = {
     [village.Channel.anonymousAudience]: village.InputChannel.public,
     [village.Channel.grave]: village.InputChannel.grave,
-    [village.Channel.hunter]: village.InputChannel.werewolf,
+    [village.Channel.hunter]: village.InputChannel.public,
     [village.Channel.onymousAudience]: village.InputChannel.public,
     [village.Channel.private]: village.InputChannel.private,
     [village.Channel.public]: village.InputChannel.public,
-    [village.Channel.seer]: village.InputChannel.werewolf,
+    [village.Channel.seer]: village.InputChannel.public,
     [village.Channel.werewolf]: village.InputChannel.werewolf
   }
   const maybe = inputChannel.find(v => v === table[channel])
