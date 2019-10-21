@@ -104,6 +104,21 @@ export const enum Message {
   systemMessage = 'systemMessage',
   voteMessage = 'voteMessage',
 }
+export interface PayloadBase {
+  '@id'?: string
+  '@payload'?: Message | PayloadType
+  'type'?: PayloadType
+}
+export const enum PayloadType {
+  buildVillage = 'buildVillage',
+  leaveWaitingPage = 'leaveWaitingPage',
+  nextGameInvitation = 'nextGameInvitation',
+  nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
+  ready = 'ready',
+  receivedFlavorTextMessage = 'receivedFlavorTextMessage',
+  receivedPlayerMessage = 'receivedPlayerMessage',
+  receivedSystemMessage = 'receivedSystemMessage'
+}
 export type Payload$AgentId = number
 export type Payload$ChatId = number
 export const enum Phase {
@@ -149,54 +164,7 @@ export const enum Team {
 export type Token = string
 export type VillageId = number
 
-/*
-'https://werewolf.world/context/0.3/votingResult.jsonld'
-  dependency:
-    'systemMessage'
-*/
-export interface VotingResult {
-  votingResultsDetails?: {
-    '@id': string
-    sourceAgent: {
-      '@id': NonNullable<Agent['@id']>
-      id: NonNullable<Agent['id']>
-      image: NonNullable<Agent['image']>
-      name: NonNullable<Agent['name']>
-    }
-    targetAgent: {
-      '@id': NonNullable<Agent['@id']>
-      id: NonNullable<Agent['id']>
-      image: NonNullable<Agent['image']>
-      name: NonNullable<Agent['name']>
-    }
-  }[]
-  votingResultsSummary?: {
-    '@id': string
-    agentToLynch: {
-      '@id': NonNullable<Agent['@id']>
-      id: NonNullable<Agent['id']>
-      image: NonNullable<Agent['image']>
-      name: NonNullable<Agent['name']>
-    }
-    numberOfVotes: number
-    rankOfVotes: number
-  }[]
-}
-export const enum PayloadType {
-  buildVillage = 'buildVillage',
-  leaveWaitingPage = 'leaveWaitingPage',
-  nextGameInvitation = 'nextGameInvitation',
-  nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
-  ready = 'ready',
-  receivedFlavorTextMessage = 'receivedFlavorTextMessage',
-  receivedPlayerMessage = 'receivedPlayerMessage',
-  receivedSystemMessage = 'receivedSystemMessage'
-}
-export interface PayloadBase {
-  '@id'?: string
-  '@payload'?: Message | PayloadType
-  'type'?: PayloadType
-}
+
 export interface Payload$boardMessage extends Base {
   '@payload'?: Message.boardMessage
   agent: {
