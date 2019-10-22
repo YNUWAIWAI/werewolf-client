@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/selectVillage.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/selectVillage.json'
 */
 import {
   PayloadType,

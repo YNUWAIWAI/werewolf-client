@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/getAvatar.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/getAvatar.json'
 */
 import {
   PayloadType,

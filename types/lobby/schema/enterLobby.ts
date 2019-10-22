@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/enterLobby.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/enterLobby.json'
 */
 import {
   Lobby,

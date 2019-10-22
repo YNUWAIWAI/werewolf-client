@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/changeUserPassword.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/changeUserPassword.json'
 */
 import {
   PayloadType

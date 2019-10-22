@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/leaveWaitingPage.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/leaveWaitingPage.json'
 */
 import {
   Lobby,

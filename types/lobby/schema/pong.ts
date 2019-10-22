@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/pong.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/pong.json'
 */
 import {
   PayloadType,

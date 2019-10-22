@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/buildVillage.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/buildVillage.json'
 */
 import {
   Avatar,

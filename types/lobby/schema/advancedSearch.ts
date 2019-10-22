@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/lobby/schema/0.3/advancedSearch.json'
+  'https://werewolf.world/lobby/schema/0.3/client2server/advancedSearch.json'
 */
 import {
   Avatar,
