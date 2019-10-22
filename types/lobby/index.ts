@@ -130,6 +130,7 @@ export const enum PayloadType {
   play = 'play',
   played = 'played',
   pong = 'pong',
+  ready = 'ready',
   searchResult = 'searchResult',
   selectVillage = 'selectVillage',
   settings = 'settings',
