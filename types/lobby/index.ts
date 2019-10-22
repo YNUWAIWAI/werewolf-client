@@ -1,4 +1,5 @@
 /* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
+export * from './schema'
 export const enum Avatar {
   fixed = 'fixed',
   random = 'random',
