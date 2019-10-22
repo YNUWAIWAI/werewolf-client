@@ -1,4 +1,5 @@
 export {AdvancedSearch} from './advancedSearch'
+export {Avatar} from './avatar'
 export {BuildVillage} from './buildVillage'
 export {ChangeLang} from './changeLang'
 export {ChangeUserEmail} from './changeUserEmail'
