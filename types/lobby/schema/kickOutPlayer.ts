@@ -6,7 +6,6 @@ import {
   Token
 } from '..'
 
-
 export interface KickOutPlayer {
   players: {
     token: Token
