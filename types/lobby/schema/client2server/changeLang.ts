@@ -4,7 +4,7 @@
 import {
   Language,
   PayloadType
-} from '..'
+} from '../..'
 
 export interface ChangeLang {
   lang: Language

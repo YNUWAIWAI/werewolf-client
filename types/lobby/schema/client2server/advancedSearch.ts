@@ -6,7 +6,7 @@ import {
   Lobby,
   PayloadType,
   Token
-} from '..'
+} from '../..'
 
 export interface AdvancedSearch {
   avatar: Avatar

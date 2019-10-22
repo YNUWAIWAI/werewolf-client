@@ -8,7 +8,7 @@ import {
   PlayerSetting,
   RoleSetting,
   Token
-} from '..'
+} from '../..'
 
 export interface BuildVillage {
   avatar: Avatar

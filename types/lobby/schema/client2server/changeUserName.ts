@@ -3,7 +3,7 @@
 */
 import {
   PayloadType
-} from '..'
+} from '../..'
 
 export interface ChangeUserName {
   type: PayloadType.changeUserName

@@ -4,7 +4,7 @@
 import {
   PayloadType,
   Token
-} from '..'
+} from '../..'
 
 export interface Pong {
   id: string

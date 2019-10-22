@@ -5,7 +5,7 @@ import {
   Lobby,
   PayloadType,
   Token
-} from '..'
+} from '../..'
 
 export interface EnterLobby {
   lobby: Lobby

@@ -5,7 +5,7 @@ import {
   Language,
   PayloadType,
   Token
-} from '..'
+} from '../..'
 
 export interface Avatar {
   image: string
