@@ -1,4 +1,5 @@
 export * from './invitation'
+export * from './receipt'
 export {AllCharacters} from './allCharacters'
 export {AllRoles} from './allRoles'
 export {Avatar} from './avatar'
