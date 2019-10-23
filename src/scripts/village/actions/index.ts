@@ -20,9 +20,9 @@ export const socket = {
     if (typeof payload['@id'] === 'undefined') {
       switch (payload.type) {
         case village.PayloadType.nextGameInvitation: {
-          const action: SocketMessageReturnType<village.Payload$nextGameInvitation> = {
+          const action: SocketMessageReturnType<village.Payload$NextGameInvitation> = {
             payload: {
-              ... payload as village.Payload$nextGameInvitation,
+              ... payload as village.Payload$NextGameInvitation,
               '@payload': village.PayloadType.nextGameInvitation
             },
             type: ActionTypes.socket.MESSAGE
@@ -31,9 +31,9 @@ export const socket = {
           return action
         }
         case village.PayloadType.nextGameInvitationIsClosed: {
-          const action: SocketMessageReturnType<village.Payload$nextGameInvitationIsClosed> = {
+          const action: SocketMessageReturnType<village.Payload$NextGameInvitationIsClosed> = {
             payload: {
-              ... payload as village.Payload$nextGameInvitationIsClosed,
+              ... payload as village.Payload$NextGameInvitationIsClosed,
               '@payload': village.PayloadType.nextGameInvitationIsClosed
             },
             type: ActionTypes.socket.MESSAGE
@@ -49,9 +49,9 @@ export const socket = {
 
     switch (message) {
       case village.Message.boardMessage: {
-        const action: SocketMessageReturnType<village.Payload$boardMessage> = {
+        const action: SocketMessageReturnType<village.Payload$BoardMessage> = {
           payload: {
-            ... payload as village.Payload$boardMessage,
+            ... payload as village.Payload$BoardMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
@@ -71,9 +71,9 @@ export const socket = {
         return action
       }
       case village.Message.errorMessage: {
-        const action: SocketMessageReturnType<village.Payload$errorMessage> = {
+        const action: SocketMessageReturnType<village.Payload$ErrorMessage> = {
           payload: {
-            ... payload as village.Payload$errorMessage,
+            ... payload as village.Payload$ErrorMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
@@ -82,9 +82,9 @@ export const socket = {
         return action
       }
       case village.Message.flavorTextMessage: {
-        const action: SocketMessageReturnType<village.Payload$flavorTextMessage> = {
+        const action: SocketMessageReturnType<village.Payload$FlavorTextMessage> = {
           payload: {
-            ... payload as village.Payload$flavorTextMessage,
+            ... payload as village.Payload$FlavorTextMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
@@ -93,9 +93,9 @@ export const socket = {
         return action
       }
       case village.Message.scrollMessage: {
-        const action: SocketMessageReturnType<village.Payload$scrollMessage> = {
+        const action: SocketMessageReturnType<village.Payload$ScrollMessage> = {
           payload: {
-            ... payload as village.Payload$scrollMessage,
+            ... payload as village.Payload$ScrollMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
@@ -104,9 +104,9 @@ export const socket = {
         return action
       }
       case village.Message.systemMessage: {
-        const action: SocketMessageReturnType<village.Payload$systemMessage> = {
+        const action: SocketMessageReturnType<village.Payload$SystemMessage> = {
           payload: {
-            ... payload as village.Payload$systemMessage,
+            ... payload as village.Payload$SystemMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
@@ -115,9 +115,9 @@ export const socket = {
         return action
       }
       case village.Message.voteMessage: {
-        const action: SocketMessageReturnType<village.Payload$voteMessage> = {
+        const action: SocketMessageReturnType<village.Payload$VoteMessage> = {
           payload: {
-            ... payload as village.Payload$voteMessage,
+            ... payload as village.Payload$VoteMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE
@@ -169,9 +169,9 @@ export const deactivateNextButton = (): {type: ActionTypes.global.DEACTIVATE_NEX
   type: ActionTypes.global.DEACTIVATE_NEXT_BUTTON
 })
 
-export const handleBoardClick = (nextState: village.BoardState, playerId: village.AgentId, roleId: village.RoleId): {nextState: village.BoardState, playerId: village.AgentId, roleId: village.RoleId, type: ActionTypes.global.CHANGE_PREDICTION_BOARD} => ({
+export const handleBoardClick = (nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId): {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId, type: ActionTypes.global.CHANGE_PREDICTION_BOARD} => ({
+  characterId,
   nextState,
-  playerId,
   roleId,
   type: ActionTypes.global.CHANGE_PREDICTION_BOARD
 })
@@ -205,13 +205,13 @@ export const selectNo = (): {type: ActionTypes.global.SELECT_NO} => ({
   type: ActionTypes.global.SELECT_NO
 })
 
-export const selectOption = (agentId: village.AgentId): {agentId: village.AgentId, type: ActionTypes.global.SELECT_OPTION} => ({
-  agentId,
+export const selectOption = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.global.SELECT_OPTION} => ({
+  characterId,
   type: ActionTypes.global.SELECT_OPTION
 })
 
-export const selectYes = (agentId: village.AgentId): {agentId: village.AgentId, type: ActionTypes.global.SELECT_YES} => ({
-  agentId,
+export const selectYes = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.global.SELECT_YES} => ({
+  characterId,
   type: ActionTypes.global.SELECT_YES
 })
 
