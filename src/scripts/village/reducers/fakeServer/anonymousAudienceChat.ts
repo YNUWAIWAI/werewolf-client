@@ -1,19 +1,20 @@
 import {village} from '../../types'
 
-const json: village.Payload$ChatMessage = {
+export const anonymousAudienceChat: village.Payload$ChatMessage = {
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.Chat
   ],
   '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
-  'characterLimit': 140,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'date': 1,
+  'day': 1,
   'directionality': village.Directionality.clientToServer,
   'extensionalDisclosureRange': [],
   'intensionalDisclosureRange': village.Channel.anonymousAudience,
+  'isFromServer': true,
   'isMine': true,
   'isOver': false,
+  'maxLengthOfUnicodeCodePoints': 140,
   'phase': village.Phase.morning,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'phaseTimeLimit': 600,
@@ -29,14 +30,12 @@ const json: village.Payload$ChatMessage = {
     'chatSettings': {
       '@context': village.Context.ChatSettings,
       '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-      'characterLimit': 140,
-      'limit': 10
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10
     },
     'id': 3,
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfAgents': 15
+    'totalNumberOfCharacters': 15
   }
 }
-
-export default json

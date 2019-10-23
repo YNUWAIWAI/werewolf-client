@@ -3,26 +3,26 @@ import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
 import {village} from '../../types'
 
-const json: village.Payload$starMessage = {
+export const star: village.Payload$StarMessage = {
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.Star
   ],
   '@id': 'https://licos.online/state/0.2/village#3/starMessage',
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'date': 2,
+  'day': 2,
   'directionality': village.Directionality.clientToServer,
   'extensionalDisclosureRange': [],
   'intensionalDisclosureRange': village.Channel.private,
-  'myAgent': {
-    '@context': village.Context.Agent,
-    '@id': 'https://licos.online/state/0.2/village#3/myAgent',
+  'myCharacter': {
+    '@context': village.Context.Character,
+    '@id': 'https://licos.online/state/0.2/village#3/myCharacter',
     'id': 1,
     'image': ImagePath.Agent.a,
     'name': Agent.a,
     'role': {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1/role',
+      '@id': 'https://licos.online/state/0.2/village#3/character#1/role',
       'image': ImagePath.Role.werewolf,
       'name': Role.werewolf
     }
@@ -46,14 +46,12 @@ const json: village.Payload$starMessage = {
     'chatSettings': {
       '@context': village.Context.ChatSettings,
       '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-      'characterLimit': 140,
-      'limit': 10
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10
     },
     'id': 3,
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfAgents': 15
+    'totalNumberOfCharacters': 15
   }
 }
-
-export default json

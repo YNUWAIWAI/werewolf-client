@@ -1,33 +1,16 @@
-import anonymousAudienceChatJSON from './anonymousAudienceChat'
-import firstMorning1JSON from './firstMorning1'
-import firstMorning2JSON from './firstMorning2'
-import firstMorning3JSON from './firstMorning3'
-import firstMorning4JSON from './firstMorning4'
-import firstMorning5JSON from './firstMorning5'
-import firstMorning6JSON from './firstMorning6'
-import firstMorning7JSON from './firstMorning7'
-import flavorTextJSON from './flavorText'
-import myMessageOnChatJSON from './myMessageOnChat'
-import nightJSON from './night'
-import noonJSON from './noon'
-import onymousAudienceChatJSON from './onymousAudienceChat'
-import resultJSON from './result'
-import starJSON from './star'
-import theirMessageOnChatJSON from './theirMessageOnChat'
-
-export const anonymousAudienceChat = anonymousAudienceChatJSON
-export const firstMorning = firstMorning1JSON
-export const firstMorning2 = firstMorning2JSON
-export const firstMorning3 = firstMorning3JSON
-export const firstMorning4 = firstMorning4JSON
-export const firstMorning5 = firstMorning5JSON
-export const firstMorning6 = firstMorning6JSON
-export const firstMorning7 = firstMorning7JSON
-export const flavorText = flavorTextJSON
-export const myMessageOnChat = myMessageOnChatJSON
-export const night = nightJSON
-export const noon = noonJSON
-export const onymousAudienceChat = onymousAudienceChatJSON
-export const result = resultJSON
-export const star = starJSON
-export const theirMessageOnChat = theirMessageOnChatJSON
+export {anonymousAudienceChat} from './anonymousAudienceChat'
+export {firstMorning} from './firstMorning1'
+export {firstMorning2} from './firstMorning2'
+export {firstMorning3} from './firstMorning3'
+export {firstMorning4} from './firstMorning4'
+export {firstMorning5} from './firstMorning5'
+export {firstMorning6} from './firstMorning6'
+export {firstMorning7} from './firstMorning7'
+export {flavorText} from './flavorText'
+export {myMessageOnChat} from './myMessageOnChat'
+export {night} from './night'
+export {noon} from './noon'
+export {onymousAudienceChat} from './onymousAudienceChat'
+export {result} from './result'
+export {star} from './star'
+export {theirMessageOnChat} from './theirMessageOnChat'
