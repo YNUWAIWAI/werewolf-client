@@ -22,7 +22,7 @@ import {
   SelectVillage,
   Settings,
   WatingPage
-} from '../schema'
+} from '..'
 
 export interface PayloadBase {
   type: PayloadType
