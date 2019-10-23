@@ -13,6 +13,6 @@ export interface ReceivedFlavorTextMessage extends PayloadBase {
   day: Time['day']
   phase: Time['phase']
   token: Avatar['token']
-  type: PayloadType.nextGameInvitationIsClosed
+  type: PayloadType.receivedFlavorTextMessage
   villageId: Village['id']
 }

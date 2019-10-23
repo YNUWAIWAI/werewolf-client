@@ -13,6 +13,6 @@ export interface ReceivedPlayerMessage extends PayloadBase {
   clientTimestamp: Base['clientTimestamp']
   serverTimestamp: Base['serverTimestamp']
   token: Avatar['token']
-  type: PayloadType.nextGameInvitationIsClosed
+  type: PayloadType.receivedPlayerMessage
   villageId: Village['id']
 }
