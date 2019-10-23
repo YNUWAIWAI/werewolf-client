@@ -2,7 +2,6 @@
 export * from './schema'
 export * from './payload'
 
-export type AgentId = string
 export const enum AgentStatus {
   alive = 'alive',
   dead = 'dead',
@@ -42,6 +41,7 @@ export const enum Channel {
   seer = 'seer',
   werewolf = 'werewolf'
 }
+export type CharacterId = string
 export const enum ChatChannel {
   grave = 'grave',
   master = 'master',
