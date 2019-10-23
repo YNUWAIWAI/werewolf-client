@@ -2,11 +2,12 @@
   'https://werewolf.world/lobby/schema/0.3/client2server/selectVillage.json'
 */
 import {
+  PayloadBase,
   PayloadType,
   Token
 } from '../..'
 
-export interface SelectVillage {
+export interface SelectVillage extends PayloadBase {
   token: Token
   type: PayloadType.selectVillage
   villageId: number

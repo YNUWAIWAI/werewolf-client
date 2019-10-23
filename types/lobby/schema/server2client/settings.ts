@@ -3,10 +3,11 @@
 */
 import {
   Language,
+  PayloadBase,
   PayloadType
 } from '../..'
 
-export interface Settings {
+export interface Settings extends PayloadBase {
   lang: Language
   type: PayloadType.settings
   userEmail: string

@@ -4,13 +4,14 @@
 import {
   Avatar,
   HostPlayer,
+  PayloadBase,
   PayloadType,
   PlayerSetting,
   RoleSetting,
   Token
 } from '../..'
 
-export interface BuildVillage {
+export interface BuildVillage extends PayloadBase {
   avatar: Avatar
   comment: string | null
   hostPlayer: HostPlayer

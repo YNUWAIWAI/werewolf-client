@@ -3,10 +3,11 @@
 */
 import {
   Language,
+  PayloadBase,
   PayloadType
 } from '../..'
 
-export interface Played {
+export interface Played extends PayloadBase {
   lang: Language
   type: PayloadType.played
 }

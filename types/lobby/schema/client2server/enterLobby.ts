@@ -3,11 +3,12 @@
 */
 import {
   Lobby,
+  PayloadBase,
   PayloadType,
   Token
 } from '../..'
 
-export interface EnterLobby {
+export interface EnterLobby extends PayloadBase {
   lobby: Lobby
   page: number
   token: Token

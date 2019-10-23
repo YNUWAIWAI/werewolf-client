@@ -3,11 +3,12 @@
 */
 import {
   Language,
+  PayloadBase,
   PayloadType,
   Token
 } from '../..'
 
-export interface Avatar {
+export interface Avatar extends PayloadBase{
   image: string
   lang: Language
   name: string

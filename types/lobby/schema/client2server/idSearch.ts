@@ -3,11 +3,12 @@
 */
 import {
   Lobby,
+  PayloadBase,
   PayloadType,
   Token
 } from '../..'
 
-export interface IdSearch {
+export interface IdSearch extends PayloadBase {
   idForSearching: number
   lobby: Lobby
   token: Token

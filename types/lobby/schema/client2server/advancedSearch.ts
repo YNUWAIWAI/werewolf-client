@@ -4,11 +4,12 @@
 import {
   Avatar,
   Lobby,
+  PayloadBase,
   PayloadType,
   Token
 } from '../..'
 
-export interface AdvancedSearch {
+export interface AdvancedSearch extends PayloadBase {
   avatar: Avatar
   comment: string | null
   hostName: string | null

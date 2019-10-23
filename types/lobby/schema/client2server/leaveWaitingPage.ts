@@ -3,11 +3,12 @@
 */
 import {
   Lobby,
+  PayloadBase,
   PayloadType,
   Token
 } from '../..'
 
-export interface LeaveWaitingPage {
+export interface LeaveWaitingPage extends PayloadBase {
   lobby: Lobby
   token: Token
   type: PayloadType.leaveWaitingPage
