@@ -8,6 +8,7 @@ import {PayloadBase} from '../payload'
 export interface ErrorMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
+  avatar?: Base['avatar']
   clientTimestamp: Base['clientTimestamp']
   content: Error['content']
   day: Base['day']
@@ -15,6 +16,7 @@ export interface ErrorMessage extends PayloadBase {
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   intensionalDisclosureRange: Base['intensionalDisclosureRange']
   isFromServer: Error['isFromServer']
+  myCharacter?: Base['myCharacter']
   phase: Base['phase']
   phaseStartTime: Base['phaseStartTime']
   phaseTimeLimit: Base['phaseTimeLimit']

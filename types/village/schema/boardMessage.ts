@@ -10,6 +10,7 @@ import {Role} from './role'
 export interface BoardMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
+  avatar?: Base['avatar']
   character: {
     '@context': Character['@context']
     '@id': Character['@id']
@@ -22,6 +23,7 @@ export interface BoardMessage extends PayloadBase {
   directionality: Base['directionality']
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   intensionalDisclosureRange: Base['intensionalDisclosureRange']
+  myCharacter?: Base['myCharacter']
   phase: Base['phase']
   phaseStartTime: Base['phaseStartTime']
   phaseTimeLimit: Base['phaseTimeLimit']

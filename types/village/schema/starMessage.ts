@@ -9,6 +9,7 @@ import {Star} from './star'
 export interface StarMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
+  avatar?: Base['avatar']
   clientTimestamp: Base['clientTimestamp']
   day: Base['day']
   directionality: Base['directionality']

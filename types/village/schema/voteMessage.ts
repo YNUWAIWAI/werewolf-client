@@ -8,6 +8,7 @@ import {PayloadBase} from '../payload'
 export interface VoteMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
+  avatar?: Base['avatar']
   character?: {
     '@context': Character['@context']
     '@id': Character['@id']
@@ -20,6 +21,7 @@ export interface VoteMessage extends PayloadBase {
   directionality: Base['directionality']
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   intensionalDisclosureRange: Base['intensionalDisclosureRange']
+  myCharacter?: Base['myCharacter']
   phase: Base['phase']
   phaseStartTime: Base['phaseStartTime']
   phaseTimeLimit: Base['phaseTimeLimit']

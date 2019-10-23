@@ -9,6 +9,7 @@ import {PayloadBase} from '../payload'
 export interface ChatMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
+  avatar?: Base['avatar']
   character?: {
     '@context': Character['@context']
     '@id': Character['@id']
@@ -29,6 +30,7 @@ export interface ChatMessage extends PayloadBase {
   isOver: Chat['isOver']
   maxLengthOfUnicodeCodePoints: Chat['maxLengthOfUnicodeCodePoints']
   maxNumberOfChatMessages?: Chat['maxNumberOfChatMessages']
+  myCharacter?: Base['myCharacter']
   phase: Base['phase']
   phaseStartTime: Base['phaseStartTime']
   phaseTimeLimit: Base['phaseTimeLimit']
