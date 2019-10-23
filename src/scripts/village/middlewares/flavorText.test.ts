@@ -19,7 +19,7 @@ describe('socket/MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const flavorTextPayload: village.Payload$playerMessage[] = [
+  const flavorTextPayload: village.Payload$ChatMessage[] = [
     {
       '@context': [
         village.BaseContext.Base,

@@ -442,7 +442,7 @@ describe('POST_CHAT', () => {
     text: 'text',
     type: ActionTypes.global.POST_CHAT
   }
-  const payload: village.Payload$playerMessage = {
+  const payload: village.Payload$ChatMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Chat

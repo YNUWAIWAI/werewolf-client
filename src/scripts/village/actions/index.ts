@@ -83,9 +83,9 @@ export const socket = {
         return action
       }
       case village.Message.playerMessage: {
-        const action: SocketMessageReturnType<village.Payload$playerMessage> = {
+        const action: SocketMessageReturnType<village.Payload$ChatMessage> = {
           payload: {
-            ... payload as village.Payload$playerMessage,
+            ... payload as village.Payload$ChatMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE

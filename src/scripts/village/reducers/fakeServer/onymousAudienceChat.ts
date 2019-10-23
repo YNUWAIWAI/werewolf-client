@@ -1,7 +1,7 @@
 import {ImagePath} from '../../constants/ImagePath'
 import {village} from '../../types'
 
-const json: village.Payload$playerMessage = {
+const json: village.Payload$ChatMessage = {
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.Chat

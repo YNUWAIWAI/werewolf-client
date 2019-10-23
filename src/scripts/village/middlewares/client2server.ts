@@ -88,7 +88,7 @@ const client2server: Middleware = store => next => action => {
         inputChannel: action.channel,
         role: strToRoleId(myRole.name.en)
       })
-      const payload: village.Payload$playerMessage = {
+      const payload: village.Payload$ChatMessage = {
         '@context': [
           village.BaseContext.Base,
           village.BaseContext.Chat
