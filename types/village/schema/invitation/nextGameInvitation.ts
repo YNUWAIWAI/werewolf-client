@@ -6,7 +6,7 @@ import {
   PayloadType
 } from '../..'
 
-export interface NextGameInvitation extends PayloadBase{
+export interface NextGameInvitation extends PayloadBase {
   type: PayloadType.nextGameInvitation
   villageId: number
 }
