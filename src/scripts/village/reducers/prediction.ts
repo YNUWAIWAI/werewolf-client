@@ -15,11 +15,11 @@ import {village} from '../types'
 
 export interface State {
   readonly playerStatus: {
-    readonly allIds: village.AgentId[]
+    readonly allIds: village.CharacterId[]
     readonly byId: {
-      [id in village.AgentId]: {
+      [id in village.CharacterId]: {
         readonly '@id': string
-        readonly id: village.AgentId
+        readonly id: village.CharacterId
         readonly image: string
         readonly name: village.LanguageMap
         readonly status: village.AgentStatus
@@ -43,9 +43,9 @@ export interface State {
     readonly visible: boolean
   }
   readonly table: {
-    [agentId in village.AgentId]: Partial<{
+    [agentId in village.CharacterId]: Partial<{
       [roleId in village.RoleId]: {
-        readonly date: number
+        readonly day: number
         readonly fixed: boolean
         readonly state: village.BoardState
       }
@@ -60,12 +60,12 @@ type Action =
   | HidePredictionSpec
   | ShowPredictionSpec
   | SocketMessage
-type Agents = NonNullable<village.Payload$systemMessage['agent']>
-type Roles = NonNullable<village.Payload$systemMessage['role']>
+type Characters = NonNullable<village.Payload$SystemMessage['character']>
+type Roles = NonNullable<village.Payload$SystemMessage['role']>
 
 const updatePredictionTable = (roles: Roles, table: Table): Table => {
   roles
-    .filter(role => role.numberOfAgents > 0)
+    .filter(role => role.numberOfCharacters > 0)
     .forEach(role => {
       if (typeof role.board === 'undefined') {
         return
@@ -73,48 +73,48 @@ const updatePredictionTable = (roles: Roles, table: Table): Table => {
       const roleId = strToRoleId(role.name.en)
 
       role.board.forEach(b => {
-        const agentId = String(b.agent.id)
+        const characterId = String(b.character.id)
 
         switch (b.polarity) {
           case village.Polarity.circle:
-            table[agentId][roleId] = {
-              date: b.date,
+            table[characterId][roleId] = {
+              day: b.day,
               fixed: false,
               state: village.BoardState.CIRCLE
             }
             break
           case village.Polarity.cross:
-            table[agentId][roleId] = {
-              date: b.date,
+            table[characterId][roleId] = {
+              day: b.day,
               fixed: false,
               state: village.BoardState.CROSS
             }
             break
           case village.Polarity.negative:
-            table[agentId][roleId] = {
-              date: b.date,
+            table[characterId][roleId] = {
+              day: b.day,
               fixed: true,
               state: village.BoardState.FILL
             }
             break
           case village.Polarity.positive:
-            table[agentId][roleId] = {
-              date: b.date,
+            table[characterId][roleId] = {
+              day: b.day,
               fixed: true,
               state: village.BoardState.CIRCLE
             }
             break
           case village.Polarity.triangle:
-            table[agentId][roleId] = {
-              date: b.date,
+            table[characterId][roleId] = {
+              day: b.day,
               fixed: false,
               state: village.BoardState.TRIANGLE
             }
             break
           case village.Polarity.question:
           default:
-            table[agentId][roleId] = {
-              date: b.date,
+            table[characterId][roleId] = {
+              day: b.day,
               fixed: false,
               state: village.BoardState.QUESTION
             }
@@ -125,20 +125,20 @@ const updatePredictionTable = (roles: Roles, table: Table): Table => {
   return table
 }
 
-const initPredictionTable = (agents: Agents, roles: Roles): Table => {
+const initPredictionTable = (characters: Characters, roles: Roles): Table => {
   const table: Table = {}
 
-  agents.forEach(agent => {
-    const agentId = String(agent.id)
+  characters.forEach(character => {
+    const characterId = String(character.id)
 
-    table[agentId] = {}
+    table[characterId] = {}
     roles
-      .filter(role => role.numberOfAgents > 0)
+      .filter(role => role.numberOfCharacters > 0)
       .forEach(role => {
         const roleId = strToRoleId(role.name.en)
 
-        table[agentId][roleId] = {
-          date: 1,
+        table[characterId][roleId] = {
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
@@ -153,7 +153,7 @@ const getRoleStatus = (roles: Roles): RoleStatus => {
   const byId: RoleStatus['byId'] = {}
 
   roles
-    .filter(role => role.numberOfAgents > 0)
+    .filter(role => role.numberOfCharacters > 0)
     .forEach(role => {
       const id = strToRoleId(role.name.en)
 
@@ -163,7 +163,7 @@ const getRoleStatus = (roles: Roles): RoleStatus => {
         id,
         'image': role.image,
         'name': role.name,
-        'numberOfAgents': role.numberOfAgents
+        'numberOfAgents': role.numberOfCharacters
       }
     })
 
@@ -173,19 +173,19 @@ const getRoleStatus = (roles: Roles): RoleStatus => {
   }
 }
 
-const getPlayerStatus = (agents: Agents): PlayerStatus => {
+const getPlayerStatus = (characters: Characters): PlayerStatus => {
   const allIds: PlayerStatus['allIds'] = []
   const byId: PlayerStatus['byId'] = {}
 
-  agents
-    .forEach(agent => {
-      allIds.push(String(agent.id))
-      byId[agent.id] = {
-        '@id': agent['@id'],
-        'id': String(agent.id),
-        'image': agent.image,
-        'name': agent.name,
-        'status': strToAgentStatus(agent.status)
+  characters
+    .forEach(character => {
+      allIds.push(String(character.id))
+      byId[character.id] = {
+        '@id': character['@id'],
+        'id': String(character.id),
+        'image': character.image,
+        'name': character.name,
+        'status': strToAgentStatus(character.status)
       }
     })
 
@@ -218,18 +218,18 @@ const prediction = (state: State = initialState, action: Action): State => {
         case village.Message.systemMessage: {
           const payload = action.payload
 
-          if (payload.date === 0) {
+          if (payload.day === 0) {
             return state
           }
-          if (!payload.agent || !payload.role) {
+          if (!payload.character || !payload.role) {
             return state
           }
-          const agents = payload.agent
+          const characters = payload.character
           const roles = getPlayableRoles(payload.role)
             .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
           const table = (() => {
-            if (payload.date === 1 && payload.phase === village.Phase.morning) {
-              return initPredictionTable(agents, roles)
+            if (payload.day === 1 && payload.phase === village.Phase.morning) {
+              return initPredictionTable(characters, roles)
             }
 
             return updatePredictionTable(roles, state.table)
@@ -237,7 +237,7 @@ const prediction = (state: State = initialState, action: Action): State => {
 
           return {
             ... state,
-            playerStatus: getPlayerStatus(agents),
+            playerStatus: getPlayerStatus(characters),
             roleStatus: getRoleStatus(roles),
             table
           }
@@ -246,16 +246,16 @@ const prediction = (state: State = initialState, action: Action): State => {
           return state
       }
     case ActionTypes.global.CHANGE_PREDICTION_BOARD: {
-      const agentId = String(action.playerId)
+      const characterId = String(action.characterId)
 
       return {
         ... state,
         table: {
           ... state.table,
-          [action.playerId]: {
-            ... state.table[agentId],
+          [action.characterId]: {
+            ... state.table[characterId],
             [action.roleId]: {
-              ... state.table[agentId][action.roleId],
+              ... state.table[characterId][action.roleId],
               state: action.nextState
             }
           }
