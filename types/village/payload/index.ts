@@ -3,26 +3,29 @@ import {
   ChatMessage,
   ErrorMessage,
   FlavorTextMessage,
+  Message,
+  PayloadType,
   ScrollMessage,
   StarMessage,
   SystemMessage,
   VoteMessage
-} from '../schema'
-import {
-  Message,
-  PayloadType
 } from '..'
+import {
+  BuildVillage,
+  LeaveWaitingPage,
+  Ready
+} from '../../lobby'
 
 export type Payload =
-  // | Payload$buildVillage
   | Payload$BoardMessage
+  | Payload$BuildVillage
+  | Payload$ChatMessage
   | Payload$ErrorMessage
   | Payload$FlavorTextMessage
-  // | Payload$leaveWaitingPage
-  | Payload$ChatMessage
+  | Payload$LeaveWaitingPage
   // | Payload$nextGameInvitation
   // | Payload$nextGameInvitationIsClosed
-  // | Payload$ready
+  | Payload$Ready
   // | Payload$receivedFlavorTextMessage
   // | Payload$receivedPlayerMessage
   // | Payload$receivedSystemMessage
@@ -38,15 +41,18 @@ export interface PayloadBase {
 export interface Payload$BoardMessage extends BoardMessage {
   '@payload'?: Message.boardMessage
 }
+export interface Payload$BuildVillage extends BuildVillage {}
+export interface Payload$ChatMessage extends ChatMessage {
+  '@payload'?: Message.chatMessage
+}
 export interface Payload$ErrorMessage extends ErrorMessage {
   '@payload'?: Message.errorMessage
 }
 export interface Payload$FlavorTextMessage extends FlavorTextMessage {
   '@payload'?: Message.flavorTextMessage
 }
-export interface Payload$ChatMessage extends ChatMessage {
-  '@payload'?: Message.chatMessage
-}
+export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
+export interface Payload$Ready extends Ready {}
 export interface Payload$ScrollMessage extends ScrollMessage {
   '@payload'?: Message.scrollMessage
 }

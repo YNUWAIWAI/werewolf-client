@@ -1,5 +1,4 @@
 /* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
-import * as lobby from '../lobby'
 export * from './schema'
 export * from './payload'
 
@@ -213,20 +212,3 @@ export interface Payload$receivedSystemMessage extends PayloadBase {
   type: PayloadType.receivedSystemMessage
   villageId: number
 }
-export type Payload =
-  | Payload$buildVillage
-  | Payload$boardMessage
-  | Payload$errorMessage
-  | Payload$flavorTextMessage
-  | Payload$leaveWaitingPage
-  | Payload$playerMessage
-  | Payload$nextGameInvitation
-  | Payload$nextGameInvitationIsClosed
-  | Payload$ready
-  | Payload$receivedFlavorTextMessage
-  | Payload$receivedPlayerMessage
-  | Payload$receivedSystemMessage
-  | Payload$scrollMessage
-  | Payload$starMessage
-  | Payload$systemMessage
-  | Payload$voteMessage
