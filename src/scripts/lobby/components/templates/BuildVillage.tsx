@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
@@ -7,6 +6,7 @@ import BuildVillageBox from '../organisms/BuildVillageBox'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import {Target} from '../../constants/ActionTypes'
+import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'member' | 'numberOfPlayers' | 'numberOfRobots' | 'villageName'
 

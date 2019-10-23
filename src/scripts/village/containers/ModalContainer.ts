@@ -1,10 +1,10 @@
-import * as village from '../types'
 import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
 import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
 import {getInitial, getText, just} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {village} from '../types'
 
 type Action =
   | SelectNo

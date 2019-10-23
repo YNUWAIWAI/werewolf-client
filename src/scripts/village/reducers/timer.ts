@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {SocketMessage, Tick} from '../actions'
+import {village} from '../types'
 
 export interface State {
   readonly phaseStartTime: number // unixtime

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ChatIcon from './ChatIcon'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ChatIcon />', () => {
   test('anonymousAudience', () => {

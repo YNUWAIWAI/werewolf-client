@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Result, {Props} from './Result'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 const agents: Props['agents'] = {
   agent1: {

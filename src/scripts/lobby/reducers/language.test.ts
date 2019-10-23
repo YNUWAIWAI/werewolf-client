@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import reducer, {initialState} from './language'
 import {avatar} from './fakeServer'
+import {lobby} from '../types'
 
 test('CHANGE_LANGUAGE', () => {
   expect(

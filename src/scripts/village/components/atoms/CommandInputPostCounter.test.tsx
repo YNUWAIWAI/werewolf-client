@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import CommandInputPostCounter from './CommandInputPostCounter'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<CommandInputPostCounter />', () => {
   test('grave', () => {

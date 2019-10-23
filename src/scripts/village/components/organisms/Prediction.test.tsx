@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Prediction, {Props} from './Prediction'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<Prediction />', () => {
   test('playerStatus.length === 0 || roleStatus.length === 0', () => {

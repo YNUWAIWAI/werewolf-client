@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
+import {lobby} from '../types'
 
 export const socket = {
   close: (event: CloseEvent): {event: CloseEvent, type: ActionTypes.socket.CLOSE} => ({

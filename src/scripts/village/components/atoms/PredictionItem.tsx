@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Circle from './svg/Circle'
 import Cross from './svg/Cross'
 import Question from './svg/Question'
 import Triangle from './svg/Triangle'
+import {village} from '../../types'
 
 interface Props {
   readonly date: number

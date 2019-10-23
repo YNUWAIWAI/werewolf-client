@@ -1,4 +1,4 @@
-import * as lobby from '../../types'
+import {lobby} from '../../types'
 const json: lobby.Payload$settings = {
   lang: lobby.Language.en,
   type: lobby.PayloadType.settings,

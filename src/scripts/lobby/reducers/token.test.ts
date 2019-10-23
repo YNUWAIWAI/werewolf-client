@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import reducer, {initialState} from './token'
+import {lobby} from '../types'
 
 test('CHANGE_LOBBY', () => {
   expect(

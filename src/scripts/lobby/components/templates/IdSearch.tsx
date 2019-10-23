@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
@@ -8,6 +7,7 @@ import IdSearchBox from '../organisms/IdSearchBox'
 import MainContent from '../atoms/MainContent'
 import SearchResult from '../organisms/SearchResult'
 import {Target} from '../../constants/ActionTypes'
+import {lobby} from '../../types'
 
 export interface StateProps {
   readonly header: string

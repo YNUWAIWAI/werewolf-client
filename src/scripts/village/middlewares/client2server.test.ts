@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   ChangePredictionBoard,
   PostChat,
@@ -17,6 +16,7 @@ import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './client2server'
+import {village} from '../types'
 
 const clientTimestamp = new Date('2006-10-07T12:06:56.568+09:00').toISOString()
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`

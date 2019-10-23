@@ -1,6 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as village from '../types'
 import {Agent} from '../constants/Agent'
 import {ImagePath} from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -10,6 +9,7 @@ import ResultContainer from './ResultContainer'
 import {Role} from '../constants/Role'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
+import {village} from '../types'
 
 describe('<ResultContainer />', () => {
   describe('render', () => {

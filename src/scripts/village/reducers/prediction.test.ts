@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   firstMorning,
   firstMorning3,
@@ -12,6 +11,7 @@ import {Agent} from '../constants/Agent'
 import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {socket} from '../actions'
+import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
   test('flavor text', () => {

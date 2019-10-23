@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {CSSTransition} from 'react-transition-group'
 import ResultCellAvatarImage from '../atoms/ResultCellAvatarImage'
 import ResultCellAvatarName from '../atoms/ResultCellAvatarName'
@@ -11,6 +10,7 @@ import ResultCellStatus from '../atoms/ResultCellStatus'
 import ResultCellSummary from '../atoms/ResultCellSummary'
 import ResultCellWinnerCaption from '../atoms/ResultCellWinnerCaption'
 import ResultClose from '../atoms/ResultClose'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly agents: {

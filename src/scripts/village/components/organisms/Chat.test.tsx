@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Chat, {Props} from './Chat'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 

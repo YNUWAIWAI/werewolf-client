@@ -1,10 +1,10 @@
 import * as React from 'react'
-import * as village from '../types'
 import InfoDayContainer from './InfoDayContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
+import {village} from '../types'
 
 test('<InfoDayContainer />', () => {
   const store = fakeStore(

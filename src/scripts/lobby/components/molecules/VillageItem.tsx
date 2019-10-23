@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import {FormattedMessage} from 'react-intl'
 import Member from './Member'
+import {lobby} from '../../types'
 
 interface Props extends Readonly<lobby.Village> {
   readonly handleClick?: () => void

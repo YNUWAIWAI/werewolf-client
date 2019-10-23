@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {countText, getChannelFromInputChennel, getText, isValidTextLength, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
@@ -9,6 +8,7 @@ import {FormattedMessage} from 'react-intl'
 import Fuse from 'fuse.js'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
+import {village} from '../../types'
 
 interface Props {
   readonly characterLimit: number

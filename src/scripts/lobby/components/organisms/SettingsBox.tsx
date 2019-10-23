@@ -1,10 +1,10 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import EmailInput from '../atoms/EmailInput'
 import {FormattedMessage} from 'react-intl'
 import LanguageSelect from '../atoms/LanguageSelect'
 import PasswordInput from '../atoms/PasswordInput'
 import TextInput from '../atoms/TextInput'
+import {lobby} from '../../types'
 
 export enum PropName {
   deactivate = 'deactivate',

@@ -1,6 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
-import {ClickNavigationButton, HideResult, SocketMessage} from '../actions'
+import {
+  ClickNavigationButton,
+  HideResult,
+  SocketMessage
+} from '../actions'
 import {
   getPlayableAgents,
   getTeam,
@@ -9,6 +12,7 @@ import {
   strToAgentStatus,
   strToRoleId
 } from '../util'
+import {village} from '../types'
 
 const getAgentId = idGenerater('agent')
 

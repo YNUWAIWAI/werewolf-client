@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {Middleware} from '.'
 import {getCastFromNumberOfPlayers} from '../util'
+import {lobby} from '../types'
 import {socket} from '../actions'
 
 const client2server: Middleware = store => next => action => {

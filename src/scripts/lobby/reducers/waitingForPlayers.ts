@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {ChangeLobby, ConfirmKickOutPlayer, SocketMessage, Transition} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
+import {lobby} from '../types'
 
 export interface State {
   readonly isPlayer: boolean

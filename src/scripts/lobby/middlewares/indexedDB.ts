@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {changeLobby, selectVillage, showVillage, socket} from '../actions'
 import {Middleware} from '.'
+import {lobby} from '../types'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {

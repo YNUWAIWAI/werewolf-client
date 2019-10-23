@@ -1,4 +1,5 @@
-import * as village from '../../types'
+import {village} from '../../types'
+
 const json: village.Payload$playerMessage = {
   '@context': [
     village.BaseContext.Base,

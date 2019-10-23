@@ -1,4 +1,3 @@
-import * as village from '../types'
 import {
   countText,
   getBaseUri,
@@ -22,6 +21,7 @@ import {
   trimBaseUri,
   xor
 } from './index'
+import {village} from '../types'
 
 describe('countText', () => {
   test('text', () => {

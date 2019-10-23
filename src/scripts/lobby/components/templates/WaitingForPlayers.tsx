@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import AvatarList from '../organisms/AvatarList'
@@ -7,6 +6,7 @@ import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import {Target} from '../../constants/ActionTypes'
 import VillageList from '../organisms/VillageList'
+import {lobby} from '../../types'
 
 export interface StateProps {
   readonly isPlayer: boolean

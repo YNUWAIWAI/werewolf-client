@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {Agent} from '../constants/Agent'
 import Ajv from 'ajv'
 import {ImagePath} from '../constants/ImagePath'
@@ -8,6 +7,7 @@ import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './flavorText'
 import {socket} from '../actions'
+import {village} from '../types'
 
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 

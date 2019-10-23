@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {ChangePhase, SocketMessage} from '../actions'
 import {getInputChannelFromChannel, getMyRole, just, strToRoleId} from '../util'
 import {AVAILABLE_FOR_WEREWOLF_CHAT} from '../constants/Role'
+import {village} from '../types'
 
 export interface State {
   readonly public: {

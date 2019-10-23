@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as village from '../../types'
+import {village} from '../../types'
 
 interface Props {
   readonly status: village.AgentStatus

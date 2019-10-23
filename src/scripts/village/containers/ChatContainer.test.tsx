@@ -1,6 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as village from '../types'
 import {Agent} from '../constants/Agent'
 import Chat from '../components/organisms/Chat'
 import ChatContainer from './ChatContainer'
@@ -9,6 +8,7 @@ import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
+import {village} from '../types'
 
 describe('<ChatContainer />', () => {
   describe('render', () => {

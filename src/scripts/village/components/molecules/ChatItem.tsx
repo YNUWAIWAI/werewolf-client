@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as village from '../../types'
 import AgentIcon from '../atoms/AgentIcon'
 import ChatDate from '../atoms/ChatDate'
 import ChatIcon from '../atoms/ChatIcon'
@@ -7,6 +6,7 @@ import ChatNum from '../atoms/ChatNum'
 import ChatStar from '../atoms/ChatStar'
 import ChatText from '../atoms/ChatText'
 import {getChatChannelFromChannel} from '../../util'
+import {village} from '../../types'
 
 export interface Props {
   readonly handleStar: (isMarked: boolean) => void

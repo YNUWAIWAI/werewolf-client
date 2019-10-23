@@ -1,10 +1,10 @@
-import * as village from '../types'
 import CommandSelection, {DispatchProps, StateProps} from '../components/organisms/CommandSelection'
 import {SelectOption, selectOption} from '../actions'
 import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {village} from '../types'
 
 type Action =
   | SelectOption

@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {FormattedMessage} from 'react-intl'
 import TeamVillager from './svg/TeamVillager'
 import TeamWerehamster from './svg/TeamWerehamster'
 import TeamWerewolf from './svg/TeamWerewolf'
+import {village} from '../../types'
 
 export interface Props {
   readonly additionalClass?: string

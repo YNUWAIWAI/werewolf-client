@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {
   BuildVillage$ChangeAvatar,
   BuildVillage$ChangeComment,
@@ -13,6 +12,7 @@ import {
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {getAnonymousVillageName} from '../util'
+import {lobby} from '../types'
 
 export interface State {
   readonly image: string

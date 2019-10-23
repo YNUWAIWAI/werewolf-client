@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import CommandInput from '../molecules/CommandInput'
 import {State} from '../../reducers/suggest'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly characterLimit: number

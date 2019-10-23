@@ -1,7 +1,7 @@
-import * as village from '../types'
 import {changeDate, changePhase} from '../actions'
 import {Middleware} from '.'
 import {socket} from '../constants/ActionTypes'
+import {village} from '../types'
 
 const timeWatcher: Middleware = store => next => action => {
   if (action.type === socket.MESSAGE) {

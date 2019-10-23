@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   ChangePhase,
   ClickNavigationButton,
@@ -11,6 +10,7 @@ import {
 } from '../actions'
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './obfucator'
+import {village} from '../types'
 
 describe('CHANGE_PHASE', () => {
   test('noon -> night', () => {

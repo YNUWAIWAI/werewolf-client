@@ -1,11 +1,11 @@
 import * as React from 'react'
-import * as village from '../../types'
 import PredictionHelp from '../atoms/PredictionHelp'
 import PredictionItem from '../atoms/PredictionItem'
 import PredictionPlayer from '../atoms/PredictionPlayer'
 import PredictionRole from '../atoms/PredictionRole'
 import PredictionSpec from '../atoms/PredictionSpec'
 import {just} from '../../util'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly playerStatus: {

@@ -1,11 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as lobby from '../types'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import Settings from '../components/templates/Settings'
 import SettingsContainer from './SettingsContainer'
 import fakeStore from './fakeStore'
+import {lobby} from '../types'
 import {mount} from 'enzyme'
 
 describe('<SettingsContainer />', () => {

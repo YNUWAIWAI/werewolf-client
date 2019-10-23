@@ -1,6 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as village from '../types'
 import {Agent} from '../constants/Agent'
 import CommandSelection from '../components/organisms/CommandSelection'
 import CommandSelectionContainer from './CommandSelectionContainer'
@@ -10,6 +9,7 @@ import {Provider} from 'react-redux'
 import {Role} from '../constants/Role'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
+import {village} from '../types'
 
 describe('<CommandSelectionContainer />', () => {
   describe('render', () => {

@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
+import {lobby} from '../../types'
 
 interface Props {
   readonly human: Readonly<lobby.Human>

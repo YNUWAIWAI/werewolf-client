@@ -1,8 +1,8 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
-import * as village from '../../types'
 import CommandGrave, {Props} from './CommandGrave'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 test('<CommandGrave />', () => {
   const handleNavigationClick = jest.fn()

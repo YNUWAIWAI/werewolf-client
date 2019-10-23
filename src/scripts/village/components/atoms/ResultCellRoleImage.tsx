@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as village from '../../types'
 import RoleIcon from './RoleIcon'
+import {village} from '../../types'
 
 interface Props {
   readonly image: string

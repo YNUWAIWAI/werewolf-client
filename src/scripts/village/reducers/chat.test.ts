@@ -1,10 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {anonymousAudienceChat, myMessageOnChat, onymousAudienceChat, theirMessageOnChat} from './fakeServer'
 import reducer, {initialState} from './chat'
 import {Agent} from '../constants/Agent'
 import {ImagePath} from '../constants/ImagePath'
 import {socket} from '../actions'
+import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
   test('myMessageOnChat', () => {

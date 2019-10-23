@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {SocketMessage} from '../actions'
 import {getBaseUri} from '../util'
+import {village} from '../types'
 
 export interface State {
   readonly '@id': string // ^https://licos.online/state/0.2/village#[0-9]+$

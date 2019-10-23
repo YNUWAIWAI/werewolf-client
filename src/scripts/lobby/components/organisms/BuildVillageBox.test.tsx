@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as lobby from '../../types'
+import {lobby} from '../../types'
 import BuildVillageBox, {Props} from './BuildVillageBox'
 import Select from 'react-select'
 import {getMessages} from '../../i18n'

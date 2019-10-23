@@ -1,7 +1,7 @@
-import * as village from '../../types'
 import {Agent} from '../../constants/Agent'
 import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
+import {village} from '../../types'
 
 const json: village.Payload$starMessage = {
   '@context': [

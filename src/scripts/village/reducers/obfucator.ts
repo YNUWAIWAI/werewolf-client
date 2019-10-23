@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   ChangePhase,
   ClickNavigationButton,
@@ -12,6 +11,7 @@ import {
   SocketMessage,
   SocketOpen
 } from '../actions'
+import {village} from '../types'
 
 export interface State {
   readonly loading: boolean

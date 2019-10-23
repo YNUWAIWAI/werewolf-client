@@ -1,4 +1,4 @@
-import * as lobby from '../../types'
+import {lobby} from '../../types'
 const json: lobby.Payload$avatar = {
   image: '/assets/images/avatar/default/user.png',
   lang: lobby.Language.en,

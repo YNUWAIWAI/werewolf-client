@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {ChangeLanguage} from '../actions'
+import {village} from '../types'
 
 export type State = village.Language
 type Action =

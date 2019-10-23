@@ -1,9 +1,19 @@
 import '../../../../types/indexeddb'
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types/lobby'
-import * as village from '../types'
 import {ClickNavigationButton, socket} from '../actions'
-import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
+import {
+  Key,
+  Village,
+  WhatToDoNextInLobby,
+  connectDB,
+  deleteValue,
+  getValue,
+  updateValue
+} from '../../indexeddb'
+import {
+  lobby,
+  village
+} from '../types'
 import Ajv from 'ajv'
 import FDB from 'fake-indexeddb'
 import FDBCursor from 'fake-indexeddb/lib/FDBCursor'

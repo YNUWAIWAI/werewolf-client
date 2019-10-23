@@ -1,7 +1,7 @@
-import * as village from '../types'
 import reducer, {initialState} from './base'
 import {firstMorning} from './fakeServer'
 import {socket} from '../actions'
+import {village} from '../types'
 
 test('socket/MESSAGE', () => {
   expect(

@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {ChangePhase, SelectNo, SelectOption, SelectYes} from '../actions'
+import {village} from '../types'
 
 export interface State {
   readonly id: village.AgentId

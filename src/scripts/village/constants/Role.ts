@@ -1,4 +1,4 @@
-import * as village from '../types'
+import {village} from '../types'
 const MASTER = village.RoleId.master
 const VILLAGER = village.RoleId.villager
 const SEER = village.RoleId.seer

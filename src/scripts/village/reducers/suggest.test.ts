@@ -1,9 +1,13 @@
-import * as village from '../types'
-import {firstMorning, flavorText, myMessageOnChat} from './fakeServer'
+import {
+  firstMorning,
+  flavorText,
+  myMessageOnChat
+} from './fakeServer'
 import reducer, {initialState} from './suggest'
 import {Agent} from '../constants/Agent'
 import {Role} from '../constants/Role'
 import {socket} from '../actions'
+import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
   test('firstMorning', () => {

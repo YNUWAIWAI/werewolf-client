@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {ChangeDate, SocketMessage, StarChat} from '../actions'
 import {idGenerater, just} from '../util'
+import {village} from '../types'
 
 const getChatId = idGenerater('chat')
 const getDelimeterId = idGenerater('delimeter')

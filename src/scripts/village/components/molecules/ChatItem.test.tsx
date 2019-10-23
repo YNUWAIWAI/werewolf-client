@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ChatItem from './ChatItem'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ChatItem />', () => {
   describe('isMine={true}', () => {

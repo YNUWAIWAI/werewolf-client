@@ -1,12 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as village from '../types'
 import CommandGrave from '../components/organisms/CommandGrave'
 import CommandGraveContainer from './CommandGraveContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
+import {village} from '../types'
 
 describe('<CommandGraveContainer />', () => {
   test('render', () => {

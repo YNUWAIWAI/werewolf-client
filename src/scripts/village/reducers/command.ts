@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {SocketMessage} from '../actions'
+import {village} from '../types'
 
 export const enum Content {
   CommandGrave = 'CommandGrave',

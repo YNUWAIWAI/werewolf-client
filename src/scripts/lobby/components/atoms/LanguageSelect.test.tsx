@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import LanguageSelect from './LanguageSelect'
 import Select from 'react-select'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 describe('<LanguageSelect />', () => {

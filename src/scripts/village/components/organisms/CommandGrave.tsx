@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as village from '../../types'
 import CommandNavigation, {Props as CommandNavigationProps} from '../molecules/CommandNavigation'
 import CommandInput from '../molecules/CommandInput'
 import {Navigation} from '../../constants/ActionTypes'
 import {State} from '../../reducers/suggest'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly characterLimit: number

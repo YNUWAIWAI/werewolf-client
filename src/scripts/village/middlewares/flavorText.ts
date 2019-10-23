@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {Middleware} from '.'
 import {just} from '../util'
 import {socket} from '../actions'
+import {village} from '../types'
 
 const flavorText: Middleware = store => next => action => {
   switch (action.type) {

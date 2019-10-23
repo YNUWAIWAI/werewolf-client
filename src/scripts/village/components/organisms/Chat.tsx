@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ChatDelimeter from '../atoms/ChatDelimeter'
 import ChatItem from '../molecules/ChatItem'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly allIds: village.ChatId[]

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ResultCellAvatarName from './ResultCellAvatarName'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ResultCellAvatarName />', () => {
   test('alive', () => {

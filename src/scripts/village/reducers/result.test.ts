@@ -1,10 +1,10 @@
-import * as village from '../types'
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './result'
 import {Agent} from '../constants/Agent'
 import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {socket} from '../actions'
+import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
   test('phase is not result', () => {

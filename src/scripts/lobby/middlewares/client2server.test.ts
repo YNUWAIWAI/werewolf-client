@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {
   ChangeLanguage,
   ChangeUserEmail,
@@ -17,6 +16,7 @@ import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../util'
 import {initialState as idSearch} from '../reducers/idSearch'
+import {lobby} from '../types'
 import middleware from './client2server'
 
 const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`

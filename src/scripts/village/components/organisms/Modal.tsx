@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as village from '../../types'
 import AgentIcon from '../atoms/AgentIcon'
 import {CSSTransition} from 'react-transition-group'
 import Description from '../molecules/Description'
 import {FormattedMessage} from 'react-intl'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly descriptionId: string

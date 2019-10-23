@@ -1,4 +1,3 @@
-import * as lobby from '../types'
 import {
   ConfirmKickOutPlayer,
   Transition,
@@ -9,6 +8,7 @@ import WaitingForPlayers, {DispatchProps, StateProps} from '../components/templa
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {lobby} from '../types'
 
 type Action =
   | ConfirmKickOutPlayer

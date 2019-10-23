@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import VillageItem from '../molecules/VillageItem'
+import {lobby} from '../../types'
 
 interface Props {
   readonly isPlayer: boolean

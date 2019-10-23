@@ -1,10 +1,10 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Modal from './Modal'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {village} from '../../types'
 
 const store = fakeStore()
 const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))

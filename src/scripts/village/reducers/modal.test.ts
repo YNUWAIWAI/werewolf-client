@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import reducer, {initialState} from './modal'
+import {village} from '../types'
 
 test('CHANGE_PHASE', () => {
   expect(

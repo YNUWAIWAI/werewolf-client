@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {SocketMessage} from '../actions'
 import {strToRoleId} from '../util'
+import {village} from '../types'
 
 export interface State {
   data: {

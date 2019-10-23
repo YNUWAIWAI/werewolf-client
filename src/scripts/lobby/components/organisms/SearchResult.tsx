@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import {FormattedMessage} from 'react-intl'
 import VillageList from './VillageList'
+import {lobby} from '../../types'
 
 interface Props {
   readonly className: string

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ChatNum from './ChatNum'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ChatNum />', () => {
   describe('id={1}', () => {

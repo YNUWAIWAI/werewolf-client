@@ -1,9 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {
   ChangeLanguage,
   SocketMessage
 } from '../actions'
+import {lobby} from '../types'
 
 export type State = lobby.Language
 type Action =

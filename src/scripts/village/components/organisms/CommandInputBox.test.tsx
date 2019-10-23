@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import CommandInputBox from './CommandInputBox'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<CommandInputBox />', () => {
   test('werewolf is unavailable', () => {

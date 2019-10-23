@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {SocketMessage} from '../actions'
+import {lobby} from '../types'
 
 export interface State {
   readonly initialValue: {

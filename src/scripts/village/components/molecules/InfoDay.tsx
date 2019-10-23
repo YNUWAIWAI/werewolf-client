@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {FormattedMessage} from 'react-intl'
 import Timer from '../../containers/TimerContainer'
 import {spaceSeparatedToCamelCase} from '../../util'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly date: number

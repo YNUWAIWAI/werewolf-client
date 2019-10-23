@@ -1,10 +1,10 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {Agent} from '../../constants/Agent'
 import CommandSelection from './CommandSelection'
 import Description from '../molecules/Description'
 import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<CommandSelection />', () => {
   test('agents={[]}', () => {

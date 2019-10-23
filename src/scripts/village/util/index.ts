@@ -1,9 +1,9 @@
-import * as village from '../types'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
   WEREHAMSTER_TEAM
 } from '../constants/Role'
+import {village} from '../types'
 
 export const countText = (text: string): number => Array.of(... text).length
 export const getBaseUri = (id: string): string => {

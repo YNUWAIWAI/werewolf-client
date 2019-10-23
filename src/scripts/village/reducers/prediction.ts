@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   ChangePredictionBoard,
   HidePredictionSpec,
@@ -12,6 +11,7 @@ import {
   strToRoleId
 } from '../util'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
+import {village} from '../types'
 
 export interface State {
   readonly playerStatus: {

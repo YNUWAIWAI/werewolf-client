@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
 import NumberSelect from '../atoms/NumberSelect'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
+import {lobby} from '../../types'
 
 interface Props {
   readonly handleMemberChange: (valid: boolean) => (value: lobby.Member) => void

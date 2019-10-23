@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import PredictionItem from './PredictionItem'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<PredictionItem />', () => {
   test('render', () => {

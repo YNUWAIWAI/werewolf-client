@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   firstMorning,
   firstMorning2,
@@ -10,6 +9,7 @@ import {
 } from './fakeServer'
 import reducer, {initialState} from './commandInputBox'
 import {socket} from '../actions'
+import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
   test('isMine={true}', () => {

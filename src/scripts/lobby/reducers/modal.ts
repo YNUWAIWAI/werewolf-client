@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {ConfirmKickOutPlayer, SelectNo, SelectYes} from '../actions'
+import {lobby} from '../types'
 
 export interface State {
   readonly descriptionId: string

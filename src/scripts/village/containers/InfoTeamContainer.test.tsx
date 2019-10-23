@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as village from '../types'
 import {ImagePath} from '../constants/ImagePath'
 import InfoTeamContainer from './InfoTeamContainer'
 import IntlProviderContainer from './IntlProviderContainer'
@@ -7,6 +6,7 @@ import {Provider} from 'react-redux'
 import {Role} from '../constants/Role'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
+import {village} from '../types'
 
 describe('<InfoTeamContainer />', () => {
   test('initialState', () => {

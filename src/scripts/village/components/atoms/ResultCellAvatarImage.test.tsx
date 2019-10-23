@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ResultCellAvatarImage from './ResultCellAvatarImage'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ResultCellAvatarImage />', () => {
   test('alive', () => {

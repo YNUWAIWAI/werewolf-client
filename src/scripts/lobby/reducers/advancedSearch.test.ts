@@ -1,10 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {
   avatar,
   searchResult
 } from './fakeServer'
 import reducer, {initialState} from './advancedSearch'
+import {lobby} from '../types'
 
 test('ADVANCED_SEARCH', () => {
   expect(

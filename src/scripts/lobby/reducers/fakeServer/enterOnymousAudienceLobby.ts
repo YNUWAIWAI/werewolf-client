@@ -1,4 +1,4 @@
-import * as lobby from '../../types'
+import {lobby} from '../../types'
 const json: lobby.Payload$lobby = {
   error: null,
   lobby: lobby.Lobby.audience,

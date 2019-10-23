@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import AgentIcon from '../atoms/AgentIcon'
 import Description from '../molecules/Description'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly agents: {

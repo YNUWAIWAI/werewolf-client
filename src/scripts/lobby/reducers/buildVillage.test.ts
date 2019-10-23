@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import reducer, {initialState} from './buildVillage'
 import {avatar2} from './fakeServer'
+import {lobby} from '../types'
 
 describe('buildVillage/CHANGE_AVATAR', () => {
   test('fixed', () => {
