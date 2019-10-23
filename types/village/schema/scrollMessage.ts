@@ -9,7 +9,7 @@ export interface ScrollMessage extends PayloadBase {
   '@context': Base['@context']
   '@id': Base['@id']
   clientTimestamp: Base['clientTimestamp']
-  date: Base['date']
+  day: Base['day']
   directionality: Base['directionality']
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   intensionalDisclosureRange: Base['intensionalDisclosureRange']

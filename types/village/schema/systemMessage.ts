@@ -39,7 +39,7 @@ export interface SystemMessage extends PayloadBase {
     update?: Character['update']
   }[]
   clientTimestamp: Base['clientTimestamp']
-  date: Base['date']
+  day: Base['day']
   directionality: Base['directionality']
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   intensionalDisclosureRange: Base['intensionalDisclosureRange']
@@ -59,7 +59,7 @@ export interface SystemMessage extends PayloadBase {
         image: Character['image']
         name: Character['name']
       }
-      date: Time['date']
+      day: Time['day']
       phase: Time['phase']
       polarity: BoardResult['polarity']
     }[]

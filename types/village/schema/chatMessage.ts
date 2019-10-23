@@ -18,7 +18,7 @@ export interface ChatMessage extends PayloadBase {
   }
   clientTimestamp: Base['clientTimestamp']
   counter: Chat['counter']
-  date: Base['date']
+  day: Base['day']
   directionality: Base['directionality']
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   id: Chat['id']

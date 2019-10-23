@@ -18,7 +18,7 @@ export interface BoardMessage extends PayloadBase {
     name: Character['name']
   }
   clientTimestamp: Base['clientTimestamp']
-  date: Base['date']
+  day: Base['day']
   directionality: Base['directionality']
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   intensionalDisclosureRange: Base['intensionalDisclosureRange']

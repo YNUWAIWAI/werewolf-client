@@ -7,6 +7,6 @@ import {
 
 export interface Time {
   '@id': string
-  date: number
+  day: number
   phase: Phase
 }

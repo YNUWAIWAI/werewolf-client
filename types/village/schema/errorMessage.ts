@@ -10,7 +10,7 @@ export interface ErrorMessage extends PayloadBase {
   '@id': Base['@id']
   clientTimestamp: Base['clientTimestamp']
   content: Error['content']
-  date: Base['date']
+  day: Base['day']
   directionality: Base['directionality']
   extensionalDisclosureRange: Base['extensionalDisclosureRange']
   intensionalDisclosureRange: Base['intensionalDisclosureRange']

@@ -25,7 +25,7 @@ export interface Base {
     image: Avatar['image']
   }
   clientTimestamp: string
-  date: Time['date']
+  day: Time['day']
   directionality: Directionality
   extensionalDisclosureRange: {
     '@context': Character['@context']

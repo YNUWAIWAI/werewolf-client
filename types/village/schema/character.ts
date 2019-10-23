@@ -25,7 +25,7 @@ export interface Character {
   status: AgentStatus
   update: {
     '@id': Time['@id']
-    date: Time['date']
+    day: Time['day']
     phase: Time['phase']
   }
 }
