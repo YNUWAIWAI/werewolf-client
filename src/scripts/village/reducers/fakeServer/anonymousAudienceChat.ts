@@ -5,7 +5,7 @@ const json: village.Payload$ChatMessage = {
     village.BaseContext.Base,
     village.BaseContext.Chat
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/playerMessage',
+  '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
   'characterLimit': 140,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
   'date': 1,

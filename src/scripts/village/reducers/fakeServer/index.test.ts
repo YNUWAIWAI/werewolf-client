@@ -22,7 +22,7 @@ const BASE_URI = `https://werewolf.world/schema/${VERSION}`
 test('validate anonymousAudienceChat', async () => {
   expect.hasAssertions()
   const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-    fetch(`${BASE_URI}/playerMessage.json`)
+    fetch(`${BASE_URI}/chatMessage.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
@@ -55,7 +55,7 @@ test('validate anonymousAudienceChat', async () => {
       ... schemas
     ]
   })
-  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, anonymousAudienceChat)
+  const validate = ajv.validate(`${BASE_URI}/chatMessage.json`, anonymousAudienceChat)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -302,7 +302,7 @@ test('validate flavorText', async () => {
   const [mainSchema, subSchema, baseSchema, ... schemas] = await Promise.all([
     fetch(`${BASE_URI}/flavorTextMessage.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/playerMessage.json`)
+    fetch(`${BASE_URI}/chatMessage.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
@@ -353,7 +353,7 @@ test('validate flavorText', async () => {
 test('validate myMessageOnChat', async () => {
   expect.hasAssertions()
   const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-    fetch(`${BASE_URI}/playerMessage.json`)
+    fetch(`${BASE_URI}/chatMessage.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
@@ -386,7 +386,7 @@ test('validate myMessageOnChat', async () => {
       ... schemas
     ]
   })
-  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, myMessageOnChat)
+  const validate = ajv.validate(`${BASE_URI}/chatMessage.json`, myMessageOnChat)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -490,7 +490,7 @@ test('validate noon', async () => {
 test('validate onymousAudienceChat', async () => {
   expect.hasAssertions()
   const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-    fetch(`${BASE_URI}/playerMessage.json`)
+    fetch(`${BASE_URI}/chatMessage.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
@@ -523,7 +523,7 @@ test('validate onymousAudienceChat', async () => {
       ... schemas
     ]
   })
-  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, onymousAudienceChat)
+  const validate = ajv.validate(`${BASE_URI}/chatMessage.json`, onymousAudienceChat)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -580,7 +580,7 @@ test('validate result', async () => {
 test('validate theirMessageOnChat', async () => {
   expect.hasAssertions()
   const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-    fetch(`${BASE_URI}/playerMessage.json`)
+    fetch(`${BASE_URI}/chatMessage.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
@@ -613,7 +613,7 @@ test('validate theirMessageOnChat', async () => {
       ... schemas
     ]
   })
-  const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, theirMessageOnChat)
+  const validate = ajv.validate(`${BASE_URI}/chatMessage.json`, theirMessageOnChat)
 
   if (!validate) {
     console.error(ajv.errors)

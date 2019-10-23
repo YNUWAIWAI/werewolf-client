@@ -7,9 +7,9 @@ const timeWatcher: Middleware = store => next => action => {
   if (action.type === socket.MESSAGE) {
     if (
       action.payload['@payload'] === village.Message.boardMessage ||
+      action.payload['@payload'] === village.Message.chatMessage ||
       action.payload['@payload'] === village.Message.errorMessage ||
       action.payload['@payload'] === village.Message.flavorTextMessage ||
-      action.payload['@payload'] === village.Message.playerMessage ||
       action.payload['@payload'] === village.Message.scrollMessage ||
       action.payload['@payload'] === village.Message.systemMessage ||
       action.payload['@payload'] === village.Message.voteMessage

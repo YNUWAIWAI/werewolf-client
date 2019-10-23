@@ -18,7 +18,7 @@ const json: village.Payload$flavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
+      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/chatMessage',
       'agent': {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
@@ -67,7 +67,7 @@ const json: village.Payload$flavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
+      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/chatMessage',
       'agent': {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',

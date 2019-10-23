@@ -43,7 +43,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
     }
     case ActionTypes.socket.MESSAGE:
       switch (action.payload['@payload']) {
-        case village.Message.playerMessage: {
+        case village.Message.chatMessage: {
           if (!action.payload.isMine) {
             return state
           }

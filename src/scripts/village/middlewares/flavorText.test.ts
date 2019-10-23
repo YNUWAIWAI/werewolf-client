@@ -25,8 +25,8 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/playerMessage',
-      '@payload': village.Message.playerMessage,
+      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/chatMessage',
+      '@payload': village.Message.chatMessage,
       'agent': {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
@@ -75,8 +75,8 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#2/playerMessage',
-      '@payload': village.Message.playerMessage,
+      '@id': 'https://licos.online/state/0.2/village#3/flavorText#2/chatMessage',
+      '@payload': village.Message.chatMessage,
       'agent': {
         '@context': village.Context.Agent,
         '@id': 'https://licos.online/state/0.2/village#3/agent',
@@ -159,7 +159,7 @@ describe('socket/MESSAGE', () => {
     const [mainSchema, subSchema, baseSchema, ... schemas] = await Promise.all([
       fetch(`${BASE_URI}/flavorTextMessage.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/playerMessage.json`)
+      fetch(`${BASE_URI}/chatMessage.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),

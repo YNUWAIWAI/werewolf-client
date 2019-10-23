@@ -59,7 +59,17 @@ export const socket = {
 
         return action
       }
+      case village.Message.chatMessage: {
+        const action: SocketMessageReturnType<village.Payload$ChatMessage> = {
+          payload: {
+            ... payload as village.Payload$ChatMessage,
+            '@payload': message
+          },
+          type: ActionTypes.socket.MESSAGE
+        }
 
+        return action
+      }
       case village.Message.errorMessage: {
         const action: SocketMessageReturnType<village.Payload$errorMessage> = {
           payload: {
@@ -75,17 +85,6 @@ export const socket = {
         const action: SocketMessageReturnType<village.Payload$flavorTextMessage> = {
           payload: {
             ... payload as village.Payload$flavorTextMessage,
-            '@payload': message
-          },
-          type: ActionTypes.socket.MESSAGE
-        }
-
-        return action
-      }
-      case village.Message.playerMessage: {
-        const action: SocketMessageReturnType<village.Payload$ChatMessage> = {
-          payload: {
-            ... payload as village.Payload$ChatMessage,
             '@payload': message
           },
           type: ActionTypes.socket.MESSAGE

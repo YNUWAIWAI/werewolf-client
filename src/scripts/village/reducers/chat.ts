@@ -44,7 +44,7 @@ const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.socket.MESSAGE: {
       switch (action.payload['@payload']) {
-        case village.Message.playerMessage: {
+        case village.Message.chatMessage: {
           const payload = action.payload
           const chatId = getChatId()
           const id = payload.intensionalDisclosureRange === village.Channel.public ? just(payload.id) : -1

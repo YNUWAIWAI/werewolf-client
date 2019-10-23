@@ -759,8 +759,8 @@ describe('strToMessage', () => {
   test('flavorTextMessage', () => {
     expect(strToMessage('https://licos.online/state/0.2/village#3/flavorTextMessage')).toBe('flavorTextMessage')
   })
-  test('playerMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
+  test('chatMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/chatMessage')).toBe('chatMessage')
   })
   test('scrollMessage', () => {
     expect(strToMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')

@@ -93,7 +93,7 @@ const client2server: Middleware = store => next => action => {
           village.BaseContext.Base,
           village.BaseContext.Chat
         ],
-        '@id': `${state.base['@id']}/playerMessage`,
+        '@id': `${state.base['@id']}/chatMessage`,
         'agent': {
           '@context': village.Context.Agent,
           '@id': myAgent['@id'],
@@ -291,12 +291,15 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.socket.MESSAGE: {
       switch (action.payload['@payload']) {
-        case village.Message.flavorTextMessage: {
-          const payload: village.Payload$receivedFlavorTextMessage = {
-            date: action.payload.date,
-            phase: action.payload.phase,
+        case village.Message.chatMessage: {
+          if (action.payload.phase === village.Phase.flavorText || action.payload.phase === village.Phase.result) {
+            return next(action)
+          }
+          const payload: village.Payload$ReceivedChatMessage = {
+            clientTimestamp: action.payload.clientTimestamp,
+            serverTimestamp: action.payload.serverTimestamp,
             token: action.payload.token,
-            type: village.PayloadType.receivedFlavorTextMessage,
+            type: village.PayloadType.receivedChatMessage,
             villageId: action.payload.village.id
           }
 
@@ -304,15 +307,13 @@ const client2server: Middleware = store => next => action => {
 
           return next(action)
         }
-        case village.Message.playerMessage: {
-          if (action.payload.phase === village.Phase.flavorText || action.payload.phase === village.Phase.result) {
-            return next(action)
-          }
-          const payload: village.Payload$receivedPlayerMessage = {
-            clientTimestamp: action.payload.clientTimestamp,
-            serverTimestamp: action.payload.serverTimestamp,
+
+        case village.Message.flavorTextMessage: {
+          const payload: village.Payload$receivedFlavorTextMessage = {
+            date: action.payload.date,
+            phase: action.payload.phase,
             token: action.payload.token,
-            type: village.PayloadType.receivedPlayerMessage,
+            type: village.PayloadType.receivedFlavorTextMessage,
             villageId: action.payload.village.id
           }
 

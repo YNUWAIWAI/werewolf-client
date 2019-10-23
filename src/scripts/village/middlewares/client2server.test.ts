@@ -447,7 +447,7 @@ describe('POST_CHAT', () => {
       village.BaseContext.Base,
       village.BaseContext.Chat
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/playerMessage',
+    '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
     'agent': {
       '@context': village.Context.Agent,
       '@id': 'https://licos.online/state/0.2/village#3/agent#1',
@@ -504,7 +504,7 @@ describe('POST_CHAT', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-      fetch(`${BASE_URI}/playerMessage.json`)
+      fetch(`${BASE_URI}/chatMessage.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
@@ -537,7 +537,7 @@ describe('POST_CHAT', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, payload)
+    const validate = ajv.validate(`${BASE_URI}/chatMessage.json`, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -1090,7 +1090,7 @@ describe('socket/MESSAGE', () => {
       })
     })
   })
-  describe('receivedPlayerMessage', () => {
+  describe('receivedchatMessage', () => {
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -1101,18 +1101,18 @@ describe('socket/MESSAGE', () => {
     const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
     const villageId = 3
     const action = socket.message(myMessageOnChat)
-    const payload: village.Payload$receivedPlayerMessage = {
+    const payload: village.Payload$receivedchatMessage = {
       clientTimestamp: '2006-10-07T12:06:56.568+09:00',
       serverTimestamp: '2006-10-07T12:06:56.568+09:00',
       token,
-      type: village.PayloadType.receivedPlayerMessage,
+      type: village.PayloadType.receivedchatMessage,
       villageId
     }
 
     test('validate the JSON of play', async () => {
       expect.hasAssertions()
       const schemas = await Promise.all([
-        fetch(`${BASE_URI}/receipt/receivedPlayerMessage.json`)
+        fetch(`${BASE_URI}/receipt/receivedchatMessage.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
@@ -1124,7 +1124,7 @@ describe('socket/MESSAGE', () => {
       const ajv = new Ajv({
         schemas
       })
-      const validate = ajv.validate(`${BASE_URI}/receipt/receivedPlayerMessage.json`, payload)
+      const validate = ajv.validate(`${BASE_URI}/receipt/receivedchatMessage.json`, payload)
 
       if (!validate) {
         console.error(ajv.errors)

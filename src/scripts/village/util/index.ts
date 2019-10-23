@@ -254,9 +254,9 @@ export const strToAgentStatus = (str: string): village.AgentStatus => {
 export const strToMessage = (str: string): village.Message => {
   const message = [
     village.Message.boardMessage,
+    village.Message.chatMessage,
     village.Message.errorMessage,
     village.Message.flavorTextMessage,
-    village.Message.playerMessage,
     village.Message.scrollMessage,
     village.Message.systemMessage,
     village.Message.voteMessage

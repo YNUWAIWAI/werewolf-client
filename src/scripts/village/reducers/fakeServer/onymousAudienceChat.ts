@@ -6,7 +6,7 @@ const json: village.Payload$ChatMessage = {
     village.BaseContext.Base,
     village.BaseContext.Chat
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/playerMessage',
+  '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
   'avatar': {
     '@context': village.Context.Avatar,
     '@id': 'https://licos.online/state/0.2/village#3/avatar',
