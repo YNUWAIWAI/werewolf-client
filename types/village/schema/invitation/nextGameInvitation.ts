@@ -3,10 +3,11 @@
 */
 import {
   PayloadBase,
-  PayloadType
+  PayloadType,
+  Village
 } from '../..'
 
 export interface NextGameInvitation extends PayloadBase {
   type: PayloadType.nextGameInvitation
-  villageId: number
+  villageId: Village['id']
 }
