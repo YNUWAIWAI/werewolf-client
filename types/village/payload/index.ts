@@ -4,7 +4,12 @@ import {
   ErrorMessage,
   FlavorTextMessage,
   Message,
+  NextGameInvitation,
+  NextGameInvitationIsClosed,
   PayloadType,
+  ReceivedFlavorTextMessage,
+  ReceivedPlayerMessage,
+  ReceivedSystemMessage,
   ScrollMessage,
   StarMessage,
   SystemMessage,
@@ -23,12 +28,12 @@ export type Payload =
   | Payload$ErrorMessage
   | Payload$FlavorTextMessage
   | Payload$LeaveWaitingPage
-  // | Payload$nextGameInvitation
-  // | Payload$nextGameInvitationIsClosed
+  | Payload$NextGameInvitation
+  | Payload$NextGameInvitationIsClosed
   | Payload$Ready
-  // | Payload$receivedFlavorTextMessage
-  // | Payload$receivedPlayerMessage
-  // | Payload$receivedSystemMessage
+  | Payload$ReceivedFlavorTextMessage
+  | Payload$ReceivedPlayerMessage
+  | Payload$ReceivedSystemMessage
   | Payload$ScrollMessage
   | Payload$StarMessage
   | Payload$SystemMessage
@@ -53,6 +58,11 @@ export interface Payload$FlavorTextMessage extends FlavorTextMessage {
 }
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
 export interface Payload$Ready extends Ready {}
+export interface Payload$NextGameInvitation extends NextGameInvitation {}
+export interface Payload$NextGameInvitationIsClosed extends NextGameInvitationIsClosed {}
+export interface Payload$ReceivedFlavorTextMessage extends ReceivedFlavorTextMessage {}
+export interface Payload$ReceivedPlayerMessage extends ReceivedPlayerMessage {}
+export interface Payload$ReceivedSystemMessage extends ReceivedSystemMessage {}
 export interface Payload$ScrollMessage extends ScrollMessage {
   '@payload'?: Message.scrollMessage
 }
