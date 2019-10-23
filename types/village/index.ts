@@ -110,8 +110,8 @@ export const enum PayloadType {
   nextGameInvitation = 'nextGameInvitation',
   nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
   ready = 'ready',
+  receivedChatMessage = 'receivedChatMessage',
   receivedFlavorTextMessage = 'receivedFlavorTextMessage',
-  receivedPlayerMessage = 'receivedPlayerMessage',
   receivedSystemMessage = 'receivedSystemMessage'
 }
 export type Payload$AgentId = number

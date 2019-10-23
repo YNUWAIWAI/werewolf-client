@@ -1,3 +1,3 @@
 export {ReceivedFlavorTextMessage} from './receivedFlavorTextMessage'
-export {ReceivedPlayerMessage} from './receivedPlayerMessage'
+export {ReceivedChatMessage} from './receivedChatMessage'
 export {ReceivedSystemMessage} from './receivedSystemMessage'

@@ -7,8 +7,8 @@ import {
   NextGameInvitation,
   NextGameInvitationIsClosed,
   PayloadType,
+  ReceivedChatMessage,
   ReceivedFlavorTextMessage,
-  ReceivedPlayerMessage,
   ReceivedSystemMessage,
   ScrollMessage,
   StarMessage,
@@ -31,8 +31,8 @@ export type Payload =
   | Payload$NextGameInvitation
   | Payload$NextGameInvitationIsClosed
   | Payload$Ready
+  | Payload$ReceivedChatMessage
   | Payload$ReceivedFlavorTextMessage
-  | Payload$ReceivedPlayerMessage
   | Payload$ReceivedSystemMessage
   | Payload$ScrollMessage
   | Payload$StarMessage
@@ -60,8 +60,8 @@ export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
 export interface Payload$Ready extends Ready {}
 export interface Payload$NextGameInvitation extends NextGameInvitation {}
 export interface Payload$NextGameInvitationIsClosed extends NextGameInvitationIsClosed {}
+export interface Payload$ReceivedChatMessage extends ReceivedChatMessage {}
 export interface Payload$ReceivedFlavorTextMessage extends ReceivedFlavorTextMessage {}
-export interface Payload$ReceivedPlayerMessage extends ReceivedPlayerMessage {}
 export interface Payload$ReceivedSystemMessage extends ReceivedSystemMessage {}
 export interface Payload$ScrollMessage extends ScrollMessage {
   '@payload'?: Message.scrollMessage

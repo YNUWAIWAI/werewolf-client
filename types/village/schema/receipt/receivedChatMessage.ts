@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/village/schema/0.3/invitation/receivedPlayerMessage.json'
+  'https://werewolf.world/village/schema/0.3/invitation/receivedChatMessage.json'
 */
 import {
   Avatar,
@@ -9,10 +9,10 @@ import {
   Village
 } from '../..'
 
-export interface ReceivedPlayerMessage extends PayloadBase {
+export interface ReceivedChatMessage extends PayloadBase {
   clientTimestamp: Base['clientTimestamp']
   serverTimestamp: Base['serverTimestamp']
   token: Avatar['token']
-  type: PayloadType.receivedPlayerMessage
+  type: PayloadType.receivedChatMessage
   villageId: Village['id']
 }
