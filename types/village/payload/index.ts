@@ -46,7 +46,9 @@ export interface PayloadBase {
 export interface Payload$BoardMessage extends BoardMessage {
   '@payload'?: Message.boardMessage
 }
-export interface Payload$BuildVillage extends BuildVillage {}
+export interface Payload$BuildVillage extends BuildVillage {
+  '@payload'?: PayloadType.buildVillage
+}
 export interface Payload$ChatMessage extends ChatMessage {
   '@payload'?: Message.chatMessage
 }
@@ -56,13 +58,27 @@ export interface Payload$ErrorMessage extends ErrorMessage {
 export interface Payload$FlavorTextMessage extends FlavorTextMessage {
   '@payload'?: Message.flavorTextMessage
 }
-export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
-export interface Payload$Ready extends Ready {}
-export interface Payload$NextGameInvitation extends NextGameInvitation {}
-export interface Payload$NextGameInvitationIsClosed extends NextGameInvitationIsClosed {}
-export interface Payload$ReceivedChatMessage extends ReceivedChatMessage {}
-export interface Payload$ReceivedFlavorTextMessage extends ReceivedFlavorTextMessage {}
-export interface Payload$ReceivedSystemMessage extends ReceivedSystemMessage {}
+export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {
+  '@payload'?: PayloadType.leaveWaitingPage
+}
+export interface Payload$Ready extends Ready {
+  '@payload'?: PayloadType.ready
+}
+export interface Payload$NextGameInvitation extends NextGameInvitation {
+  '@payload'?: PayloadType.nextGameInvitation
+}
+export interface Payload$NextGameInvitationIsClosed extends NextGameInvitationIsClosed {
+  '@payload'?: PayloadType.nextGameInvitationIsClosed
+}
+export interface Payload$ReceivedChatMessage extends ReceivedChatMessage {
+  '@payload'?: PayloadType.receivedChatMessage
+}
+export interface Payload$ReceivedFlavorTextMessage extends ReceivedFlavorTextMessage {
+  '@payload'?: PayloadType.receivedFlavorTextMessage
+}
+export interface Payload$ReceivedSystemMessage extends ReceivedSystemMessage {
+  '@payload'?: PayloadType.receivedSystemMessage
+}
 export interface Payload$ScrollMessage extends ScrollMessage {
   '@payload'?: Message.scrollMessage
 }
