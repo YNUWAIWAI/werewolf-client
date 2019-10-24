@@ -25,11 +25,11 @@ const command = (state: State = initialState, action: Action): State => {
       if (action.payload['@payload'] === village.Message.systemMessage) {
         const payload = action.payload
         const isDead = (() => {
-          if (typeof payload.agent === 'undefined') {
+          if (typeof payload.character === 'undefined') {
             return state.isDead
           }
 
-          const maybe = payload.agent.find(a => a.isMine)
+          const maybe = payload.character.find(c => c.isMine)
 
           if (!maybe) {
             return false
@@ -60,12 +60,12 @@ const command = (state: State = initialState, action: Action): State => {
               }
             }
 
-            if (payload.date === 0) {
+            if (payload.day === 0) {
               return {
                 content: Content.CommandSelection,
                 isDead
               }
-            } else if (payload.date === -1) {
+            } else if (payload.day === -1) {
               return {
                 content: Content.CommandPostMortem,
                 isDead
