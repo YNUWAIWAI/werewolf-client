@@ -13,7 +13,7 @@ test('socket/MESSAGE', () => {
     )
   ).toStrictEqual({
     agent: {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a
