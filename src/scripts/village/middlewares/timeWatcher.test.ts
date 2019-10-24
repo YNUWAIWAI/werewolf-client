@@ -117,7 +117,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.global.CHANGE_DATE
+        type: ActionTypes.global.CHANGE_DAY
       })
     })
   })
@@ -431,7 +431,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.global.CHANGE_DATE
+        type: ActionTypes.global.CHANGE_DAY
       })
     })
   })

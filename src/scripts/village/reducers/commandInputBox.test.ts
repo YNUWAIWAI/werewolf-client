@@ -89,7 +89,7 @@ describe('socket/MESSAGE', () => {
     })
   })
 })
-test('CHANGE_DATE', () => {
+test('CHANGE_DAY', () => {
   expect(reducer(
     {
       public: {

@@ -149,10 +149,10 @@ export const changeLanguage = (language: village.Language): {language: village.L
   type: ActionTypes.global.CHANGE_LANGUAGE
 })
 
-export const changeDate = ({from, to}: {from: number, to: number}): {from: number, to: number, type: ActionTypes.global.CHANGE_DATE} => ({
+export const changeDate = ({from, to}: {from: number, to: number}): {from: number, to: number, type: ActionTypes.global.CHANGE_DAY} => ({
   from,
   to,
-  type: ActionTypes.global.CHANGE_DATE
+  type: ActionTypes.global.CHANGE_DAY
 })
 
 export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}): {from: village.Phase, to: village.Phase, type: ActionTypes.global.CHANGE_PHASE} => ({
