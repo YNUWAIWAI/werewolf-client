@@ -190,49 +190,49 @@ describe('socket/MESSAGE', () => {
         }
       },
       allIds: [
-        'agent0',
-        'agent1',
-        'agent2',
-        'agent3',
-        'agent4',
-        'agent5',
-        'agent6',
-        'agent7',
-        'agent8',
-        'agent9',
-        'agent10',
-        'agent11',
-        'agent12',
-        'agent13',
-        'agent14'
+        '0',
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14'
       ],
       losers: [
-        'agent2',
-        'agent5',
-        'agent6',
-        'agent7'
+        '2',
+        '5',
+        '6',
+        '7'
       ],
-      me: 'agent1',
+      me: '1',
       summary: {
         kind: 'player',
-        loserTeam: new Set(['werewolf', 'werehamster']),
-        myTeam: 'villager',
+        loserTeam: new Set([village.Team.werehamster, village.Team.werewolf]),
+        myTeam: village.Team.villager,
         result: village.Result.win,
-        winnerTeam: 'villager'
+        winnerTeam: village.Team.villager
       },
       visible: true,
       winners: [
-        'agent0',
-        'agent1',
-        'agent3',
-        'agent4',
-        'agent8',
-        'agent9',
-        'agent10',
-        'agent11',
-        'agent12',
-        'agent13',
-        'agent14'
+        '0',
+        '1',
+        '3',
+        '4',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14'
       ]
     })
   })
