@@ -24,7 +24,7 @@ test('SELECT_OPTION', () => {
     reducer(
       initialState,
       {
-        agentId: '1',
+        characterId: '1',
         type: ActionTypes.global.SELECT_OPTION
       }
     )
@@ -61,7 +61,7 @@ test('SELECT_YES', () => {
         visible: true
       },
       {
-        agentId: '1',
+        characterId: '1',
         type: ActionTypes.global.SELECT_YES
       }
     )

@@ -3,7 +3,7 @@ import {ChangePhase, SelectNo, SelectOption, SelectYes} from '../actions'
 import {village} from '../types'
 
 export interface State {
-  readonly id: village.AgentId
+  readonly id: village.CharacterId
   readonly visible: boolean
 }
 type Action =
@@ -20,7 +20,7 @@ const modal = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.global.SELECT_OPTION:
       return {
-        id: action.agentId,
+        id: action.characterId,
         visible: true
       }
     case ActionTypes.global.CHANGE_PHASE:
