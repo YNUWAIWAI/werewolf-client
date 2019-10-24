@@ -6,7 +6,7 @@ import {village} from '../types'
 export interface State {
   readonly '@id': string // ^https://licos.online/state/0.2/village#[0-9]+$
   readonly clientTimestamp: string
-  readonly date: number
+  readonly day: number
   readonly intensionalDisclosureRange: village.Channel
   readonly phase: village.Phase
   readonly phaseStartTime: string
@@ -14,16 +14,15 @@ export interface State {
   readonly serverTimestamp: string
   readonly token: village.Token
   readonly village: {
-    readonly '@context': village.Context.Village
     readonly '@id': string // https://licos.online/state/0.2/village
     readonly chatSettings: {
-      readonly characterLimit: number
-      readonly limit: number
+      readonly maxLengthOfUnicodeCodePoints: number
+      readonly maxNumberOfChatMessages: number
     }
     readonly id: number
     readonly lang: village.Language
     readonly name: string
-    readonly totalNumberOfAgents: number
+    readonly totalNumberOfCharacters: number
   }
 }
 type Action =
@@ -32,7 +31,7 @@ type Action =
 export const initialState: State = {
   '@id': '',
   'clientTimestamp': '',
-  'date': 0,
+  'day': 0,
   'intensionalDisclosureRange': village.Channel.public,
   'phase': village.Phase.night,
   'phaseStartTime': '',
@@ -40,16 +39,15 @@ export const initialState: State = {
   'serverTimestamp': '',
   'token': '',
   'village': {
-    '@context': village.Context.Village,
     '@id': '',
     'chatSettings': {
-      'characterLimit': 140,
-      'limit': 10
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10
     },
     'id': 0,
     'lang': village.Language.en,
     'name': '',
-    'totalNumberOfAgents': 0
+    'totalNumberOfCharacters': 0
   }
 }
 const base = (state: State = initialState, action: Action): State => {
@@ -65,7 +63,7 @@ const base = (state: State = initialState, action: Action): State => {
       return {
         '@id': getBaseUri(action.payload['@id']),
         'clientTimestamp': action.payload.clientTimestamp,
-        'date': action.payload.date,
+        'day': action.payload.day,
         'intensionalDisclosureRange': action.payload.intensionalDisclosureRange,
         'phase': action.payload.phase,
         'phaseStartTime': action.payload.phaseStartTime,
@@ -73,16 +71,15 @@ const base = (state: State = initialState, action: Action): State => {
         'serverTimestamp': action.payload.serverTimestamp,
         'token': action.payload.token,
         'village': {
-          '@context': action.payload.village['@context'],
           '@id': action.payload.village['@id'],
           'chatSettings': {
-            characterLimit: action.payload.village.chatSettings.characterLimit,
-            limit: action.payload.village.chatSettings.limit
+            maxLengthOfUnicodeCodePoints: action.payload.village.chatSettings.maxLengthOfUnicodeCodePoints,
+            maxNumberOfChatMessages: action.payload.village.chatSettings.maxNumberOfChatMessages
           },
           'id': action.payload.village.id,
           'lang': action.payload.village.lang,
           'name': action.payload.village.name,
-          'totalNumberOfAgents': action.payload.village.totalNumberOfAgents
+          'totalNumberOfCharacters': action.payload.village.totalNumberOfCharacters
         }
       }
     }

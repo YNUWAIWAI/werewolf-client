@@ -1,8 +1,6 @@
 import reducer, {initialState} from './base'
 import {firstMorning} from './fakeServer'
 import {socket} from '../actions'
-import {village} from '../types'
-
 test('socket/MESSAGE', () => {
   expect(
     reducer(
@@ -12,7 +10,7 @@ test('socket/MESSAGE', () => {
   ).toStrictEqual({
     '@id': 'https://licos.online/state/0.2/village#3',
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'date': 1,
+    'day': 1,
     'intensionalDisclosureRange': 'private',
     'phase': 'morning',
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -20,16 +18,15 @@ test('socket/MESSAGE', () => {
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
-      '@context': village.Context.Village,
       '@id': 'https://licos.online/state/0.2/village',
       'chatSettings': {
-        characterLimit: 140,
-        limit: 10
+        maxLengthOfUnicodeCodePoints: 140,
+        maxNumberOfChatMessages: 10
       },
       'id': 3,
       'lang': 'ja',
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   })
 })
