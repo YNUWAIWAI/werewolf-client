@@ -4,11 +4,11 @@ import {strToRoleId} from '../util'
 import {village} from '../types'
 
 export interface State {
-  readonly agent?: {
-    '@id': village.Agent['@id']
-    id: village.Agent['id']
-    image: village.Agent['image']
-    name: village.Agent['name']
+  readonly character?: {
+    '@id': village.Character['@id']
+    id: village.Character['id']
+    image: village.Character['image']
+    name: village.Character['name']
   }
   readonly role?: {
     '@id': village.Role['@id']
@@ -26,12 +26,12 @@ const mine = (state: State = initialState, action: Action): State => {
     case ActionTypes.socket.MESSAGE:
       if (action.payload['@payload'] === village.Message.systemMessage) {
         const payload = action.payload
-        const agent = (() => {
-          if (typeof payload.agent === 'undefined') {
-            return payload.agent
+        const character = (() => {
+          if (typeof payload.character === 'undefined') {
+            return payload.character
           }
 
-          const maybe = payload.agent.find(a => a.isMine)
+          const maybe = payload.character.find(c => c.isMine)
 
           if (typeof maybe === 'undefined') {
             return maybe
@@ -64,7 +64,7 @@ const mine = (state: State = initialState, action: Action): State => {
         })()
 
         return {
-          agent,
+          character,
           role
         }
       }
