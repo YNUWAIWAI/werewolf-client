@@ -5,11 +5,11 @@ import {just} from '../util'
 import {village} from '../types'
 
 export interface State {
-  readonly allIds: village.AgentId[]
+  readonly allIds: village.CharacterId[]
   readonly byId: {
-    [id in village.AgentId]: {
+    [id in village.CharacterId]: {
       readonly '@id': string
-      readonly id: village.AgentId
+      readonly id: village.CharacterId
       readonly image: string
       readonly name: village.LanguageMap
     }
@@ -36,7 +36,7 @@ const commandSelection = (state: State = initialState, action: Action): State =>
     case ActionTypes.global.SELECT_YES: {
       return {
         ... state,
-        allIds: state.allIds.filter(agentId => agentId === action.agentId),
+        allIds: state.allIds.filter(characterId => characterId === action.characterId),
         fixed: true
       }
     }
@@ -46,19 +46,19 @@ const commandSelection = (state: State = initialState, action: Action): State =>
         VOTING_PHASE.includes(action.payload.phase)
       ) {
         const byId: State['byId'] = {}
-        const allIds = just(action.payload.agent)
+        const allIds = just(action.payload.character)
           .filter(a => just(a.isAChoice))
           .map(a => {
-            const agentId = String(a.id)
+            const characterId = String(a.id)
 
-            byId[agentId] = {
+            byId[characterId] = {
               '@id': a['@id'],
-              'id': agentId,
+              'id': characterId,
               'image': a.image,
               'name': a.name
             }
 
-            return agentId
+            return characterId
           })
 
         return {
