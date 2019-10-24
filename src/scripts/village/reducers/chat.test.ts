@@ -17,9 +17,9 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0'],
       byId: {
         chat0: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent120x120.a,
           intensionalDisclosureRange: 'public',
@@ -42,9 +42,9 @@ describe('socket/MESSAGE', () => {
           allIds: ['chat0'],
           byId: {
             chat0: {
-              agentId: '1',
+              characterId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -65,9 +65,9 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0', 'chat1'],
       byId: {
         chat0: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent120x120.a,
           intensionalDisclosureRange: 'public',
@@ -81,9 +81,9 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat1: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent120x120.a,
           intensionalDisclosureRange: 'public',
@@ -106,9 +106,9 @@ describe('socket/MESSAGE', () => {
           allIds: ['chat0', 'chat1'],
           byId: {
             chat0: {
-              agentId: '1',
+              characterId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -122,9 +122,9 @@ describe('socket/MESSAGE', () => {
               type: 'item'
             },
             chat1: {
-              agentId: '1',
+              characterId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -145,9 +145,9 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0', 'chat1', 'chat2'],
       byId: {
         chat0: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent120x120.a,
           intensionalDisclosureRange: 'public',
@@ -161,9 +161,9 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat1: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent120x120.a,
           intensionalDisclosureRange: 'public',
@@ -178,7 +178,7 @@ describe('socket/MESSAGE', () => {
         },
         chat2: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: -1,
           image: ImagePath.Agent120x120.y,
           intensionalDisclosureRange: 'onymousAudience',
@@ -201,9 +201,9 @@ describe('socket/MESSAGE', () => {
           allIds: ['chat0', 'chat1', 'chat2'],
           byId: {
             chat0: {
-              agentId: '1',
+              characterId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -217,9 +217,9 @@ describe('socket/MESSAGE', () => {
               type: 'item'
             },
             chat1: {
-              agentId: '1',
+              characterId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -234,7 +234,7 @@ describe('socket/MESSAGE', () => {
             },
             chat2: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: -1,
               image: ImagePath.Agent120x120.y,
               intensionalDisclosureRange: village.Channel.onymousAudience,
@@ -255,9 +255,9 @@ describe('socket/MESSAGE', () => {
       allIds: ['chat0', 'chat1', 'chat2', 'chat3'],
       byId: {
         chat0: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent120x120.a,
           intensionalDisclosureRange: 'public',
@@ -271,9 +271,9 @@ describe('socket/MESSAGE', () => {
           type: 'item'
         },
         chat1: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent120x120.a,
           intensionalDisclosureRange: 'public',
@@ -288,7 +288,7 @@ describe('socket/MESSAGE', () => {
         },
         chat2: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: -1,
           image: ImagePath.Agent120x120.y,
           intensionalDisclosureRange: 'onymousAudience',
@@ -303,7 +303,7 @@ describe('socket/MESSAGE', () => {
         },
         chat3: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: -1,
           image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
           intensionalDisclosureRange: 'anonymousAudience',
@@ -320,21 +320,21 @@ describe('socket/MESSAGE', () => {
     })
   })
 })
-test('CHANGE_DATE', () => {
+test('CHANGE_day', () => {
   expect(
     reducer(
       initialState,
       {
         from: 0,
         to: 1,
-        type: ActionTypes.global.CHANGE_DATE
+        type: ActionTypes.global.CHANGE_DAY
       }
     )
   ).toStrictEqual({
     allIds: ['delimeter0'],
     byId: {
       'delimeter0': {
-        date: 1,
+        day: 1,
         type: 'delimeter'
       }
     }
@@ -347,9 +347,9 @@ test('STAR', () => {
         allIds: ['chat0'],
         byId: {
           chat0: {
-            agentId: '1',
+            characterId: '1',
             clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-            date: 1,
+            day: 1,
             id: 12,
             image: ImagePath.Agent120x120.a,
             intensionalDisclosureRange: village.Channel.public,
@@ -377,9 +377,9 @@ test('STAR', () => {
     allIds: ['chat0'],
     byId: {
       chat0: {
-        agentId: '1',
+        characterId: '1',
         clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-        date: 1,
+        day: 1,
         id: 12,
         image: ImagePath.Agent120x120.a,
         intensionalDisclosureRange: 'public',

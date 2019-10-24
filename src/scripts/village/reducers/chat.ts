@@ -10,9 +10,9 @@ export interface State {
   readonly allIds: village.ChatId[]
   readonly byId: {
     readonly [id in village.ChatId]: {
-      readonly agentId?: village.AgentId
+      readonly characterId?: village.CharacterId
       readonly clientTimestamp: string
-      readonly date: number
+      readonly day: number
       readonly id: number
       readonly image: string
       readonly intensionalDisclosureRange: village.Channel
@@ -26,7 +26,7 @@ export interface State {
       readonly type: 'item'
     } |
     {
-      readonly date: number
+      readonly day: number
       readonly type: 'delimeter'
     }
   }
@@ -56,7 +56,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 ... state.byId,
                 [chatId]: {
                   clientTimestamp: payload.clientTimestamp,
-                  date: payload.date,
+                  day: payload.day,
                   id,
                   image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
@@ -78,7 +78,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 ... state.byId,
                 [chatId]: {
                   clientTimestamp: payload.clientTimestamp,
-                  date: payload.date,
+                  day: payload.day,
                   id,
                   image: just(payload.avatar).image,
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
@@ -100,15 +100,15 @@ const chat = (state: State = initialState, action: Action): State => {
             byId: {
               ... state.byId,
               [chatId]: {
-                agentId: String(just(payload.agent).id),
+                characterId: String(just(payload.character).id),
                 clientTimestamp: payload.clientTimestamp,
-                date: payload.date,
+                day: payload.day,
                 id,
-                image: just(payload.agent).image,
+                image: just(payload.character).image,
                 intensionalDisclosureRange: payload.intensionalDisclosureRange,
                 isMarked: false,
                 isMine: payload.isMine,
-                name: just(payload.agent).name,
+                name: just(payload.character).name,
                 phaseStartTime: payload.phaseStartTime,
                 phaseTimeLimit: payload.phaseTimeLimit,
                 serverTimestamp: payload.serverTimestamp,
@@ -122,7 +122,7 @@ const chat = (state: State = initialState, action: Action): State => {
           return state
       }
     }
-    case ActionTypes.global.CHANGE_DATE: {
+    case ActionTypes.global.CHANGE_DAY: {
       const delimeterId = getDelimeterId()
 
       return {
@@ -130,7 +130,7 @@ const chat = (state: State = initialState, action: Action): State => {
         byId: {
           ... state.byId,
           [delimeterId]: {
-            date: action.to,
+            day: action.to,
             type: 'delimeter'
           }
         }
