@@ -169,7 +169,7 @@ export const deactivateNextButton = (): {type: ActionTypes.global.DEACTIVATE_NEX
   type: ActionTypes.global.DEACTIVATE_NEXT_BUTTON
 })
 
-export const handleBoardClick = (nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId): {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId, type: ActionTypes.global.CHANGE_PREDICTION_BOARD} => ({
+export const handleBoardClick = (nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId): {characterId: village.CharacterId, nextState: village.BoardState, roleId: village.RoleId, type: ActionTypes.global.CHANGE_PREDICTION_BOARD} => ({
   characterId,
   nextState,
   roleId,
