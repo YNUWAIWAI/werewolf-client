@@ -1,11 +1,11 @@
 import * as React from 'react'
-import PredictionPlayer from './PredictionPlayer'
+import PredictionCharacter from './PredictionCharacter'
 import {mount} from 'enzyme'
 
-describe('<PredictionPlayer />', () => {
+describe('<PredictionCharacter />', () => {
   test('status="alive"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
@@ -20,7 +20,7 @@ describe('<PredictionPlayer />', () => {
   })
   test('status="dead"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
@@ -35,7 +35,7 @@ describe('<PredictionPlayer />', () => {
   })
   test('status="death by execution"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
@@ -50,7 +50,7 @@ describe('<PredictionPlayer />', () => {
   })
   test('status="death by attack"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
@@ -65,7 +65,7 @@ describe('<PredictionPlayer />', () => {
   })
   test('status="death by fear"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
@@ -80,7 +80,7 @@ describe('<PredictionPlayer />', () => {
   })
   test('status="unnatural death"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
@@ -95,7 +95,7 @@ describe('<PredictionPlayer />', () => {
   })
   test('isSilent=true, status="alive"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent
@@ -108,7 +108,7 @@ describe('<PredictionPlayer />', () => {
   })
   test('isSilent=true, status="dead"', () => {
     const wrapper = mount(
-      <PredictionPlayer
+      <PredictionCharacter
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
         isSilent
