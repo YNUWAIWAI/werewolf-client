@@ -12,12 +12,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -33,12 +33,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.werewolf}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -54,12 +54,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.private}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -75,12 +75,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.postMortem}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -96,12 +96,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -118,12 +118,12 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl<CommandInput>(
       <CommandInput
-        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.public}
         language={village.Language.en}
-        postCount={0}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
+        numberOfChatMessages={0}
         suggesttedData={[]}
       />
     )
@@ -139,12 +139,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -174,12 +174,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -210,12 +210,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -246,12 +246,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -284,12 +284,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -321,12 +321,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -358,12 +358,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -407,12 +407,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={suggesttedData}
             />
           )
@@ -443,12 +443,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -479,12 +479,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -542,12 +542,12 @@ describe('<CommandInput />', () => {
             const handlePostChat = jest.fn()
             const wrapper = mountWithIntl<CommandInput>(
               <CommandInput
-                characterLimit={140}
                 handlePostChat={handlePostChat}
                 inputChannel={village.InputChannel.public}
                 language={village.Language.en}
-                postCount={0}
-                postCountLimit={10}
+                maxLengthOfUnicodeCodePoints={140}
+                maxNumberOfChatMessages={10}
+                numberOfChatMessages={0}
                 suggesttedData={suggesttedData}
               />
             )
@@ -577,12 +577,12 @@ describe('<CommandInput />', () => {
             const handlePostChat = jest.fn()
             const wrapper = mountWithIntl<CommandInput>(
               <CommandInput
-                characterLimit={140}
                 handlePostChat={handlePostChat}
                 inputChannel={village.InputChannel.public}
                 language={village.Language.en}
-                postCount={0}
-                postCountLimit={10}
+                maxLengthOfUnicodeCodePoints={140}
+                maxNumberOfChatMessages={10}
+                numberOfChatMessages={0}
                 suggesttedData={suggesttedData}
               />
             )
@@ -612,12 +612,12 @@ describe('<CommandInput />', () => {
             const handlePostChat = jest.fn()
             const wrapper = mountWithIntl<CommandInput>(
               <CommandInput
-                characterLimit={140}
                 handlePostChat={handlePostChat}
                 inputChannel={village.InputChannel.public}
                 language={village.Language.en}
-                postCount={0}
-                postCountLimit={10}
+                maxLengthOfUnicodeCodePoints={140}
+                maxNumberOfChatMessages={10}
+                numberOfChatMessages={0}
                 suggesttedData={suggesttedData}
               />
             )
@@ -674,12 +674,12 @@ describe('<CommandInput />', () => {
             const handlePostChat = jest.fn()
             const wrapper = mountWithIntl<CommandInput>(
               <CommandInput
-                characterLimit={140}
                 handlePostChat={handlePostChat}
                 inputChannel={village.InputChannel.public}
                 language={village.Language.en}
-                postCount={0}
-                postCountLimit={10}
+                maxLengthOfUnicodeCodePoints={140}
+                maxNumberOfChatMessages={10}
+                numberOfChatMessages={0}
                 suggesttedData={suggesttedData}
               />
             )
@@ -736,12 +736,12 @@ describe('<CommandInput />', () => {
             const handlePostChat = jest.fn()
             const wrapper = mountWithIntl<CommandInput>(
               <CommandInput
-                characterLimit={140}
                 handlePostChat={handlePostChat}
                 inputChannel={village.InputChannel.public}
                 language={village.Language.en}
-                postCount={0}
-                postCountLimit={10}
+                maxLengthOfUnicodeCodePoints={140}
+                maxNumberOfChatMessages={10}
+                numberOfChatMessages={0}
                 suggesttedData={suggesttedData}
               />
             )
@@ -772,12 +772,12 @@ describe('<CommandInput />', () => {
             const handlePostChat = jest.fn()
             const wrapper = mountWithIntl<CommandInput>(
               <CommandInput
-                characterLimit={140}
                 handlePostChat={handlePostChat}
                 inputChannel={village.InputChannel.public}
                 language={village.Language.en}
-                postCount={0}
-                postCountLimit={10}
+                maxLengthOfUnicodeCodePoints={140}
+                maxNumberOfChatMessages={10}
+                numberOfChatMessages={0}
                 suggesttedData={suggesttedData}
               />
             )
@@ -821,12 +821,12 @@ describe('<CommandInput />', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={0}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={0}
             suggesttedData={suggesttedData}
           />
         )
@@ -856,12 +856,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -892,12 +892,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={10}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={10}
           suggesttedData={[]}
         />
       )
@@ -928,12 +928,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -964,12 +964,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={10}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={10}
           suggesttedData={[]}
         />
       )
@@ -1000,12 +1000,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -1029,12 +1029,12 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl<CommandInput>(
       <CommandInput
-        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.public}
         language={village.Language.en}
-        postCount={0}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
+        numberOfChatMessages={0}
         suggesttedData={[]}
       />
     )
@@ -1069,12 +1069,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -1105,12 +1105,12 @@ describe('<CommandInput />', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
             <CommandInput
-              characterLimit={140}
               handlePostChat={handlePostChat}
               inputChannel={village.InputChannel.public}
               language={village.Language.en}
-              postCount={0}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={0}
               suggesttedData={[]}
             />
           )
@@ -1142,12 +1142,12 @@ describe('<CommandInput />', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={0}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={0}
             suggesttedData={[]}
           />
         )
@@ -1178,12 +1178,12 @@ describe('<CommandInput />', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={0}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={0}
             suggesttedData={[]}
           />
         )
@@ -1322,12 +1322,12 @@ describe('<CommandInput />', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={0}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={0}
             suggesttedData={suggesttedData}
           />
         )
@@ -1378,12 +1378,12 @@ describe('<CommandInput />', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={0}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={0}
             suggesttedData={suggesttedData}
           />
         )
@@ -1435,12 +1435,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -1469,12 +1469,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1482,48 +1482,48 @@ describe('<CommandInput />', () => {
       expect(wrapper.instance().isSendable()).toBe(true)
     })
     describe('inputChannel: werewolf', () => {
-      test('postCount < postCountLimit', () => {
+      test('numberOfChatMessages < maxNumberOfChatMessages', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.werewolf}
             language={village.Language.en}
-            postCount={0}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={0}
             suggesttedData={[]}
           />
         )
 
         expect(wrapper.instance().isSendable()).toBe(true)
       })
-      test('postCount === postCountLimit', () => {
+      test('numberOfChatMessages === maxNumberOfChatMessages', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.werewolf}
             language={village.Language.en}
-            postCount={10}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={10}
             suggesttedData={[]}
           />
         )
 
         expect(wrapper.instance().isSendable()).toBe(false)
       })
-      test('postCount > postCountLimit', () => {
+      test('numberOfChatMessages > maxNumberOfChatMessages', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.werewolf}
             language={village.Language.en}
-            postCount={11}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={11}
             suggesttedData={[]}
           />
         )
@@ -1535,12 +1535,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.private}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1551,12 +1551,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.postMortem}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1564,48 +1564,48 @@ describe('<CommandInput />', () => {
       expect(wrapper.instance().isSendable()).toBe(true)
     })
     describe('inputChannel: public', () => {
-      test('postCount < postCountLimit', () => {
+      test('numberOfChatMessages < maxNumberOfChatMessages', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={0}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={0}
             suggesttedData={[]}
           />
         )
 
         expect(wrapper.instance().isSendable()).toBe(true)
       })
-      test('postCount === postCountLimit', () => {
+      test('numberOfChatMessages === maxNumberOfChatMessages', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={10}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={10}
             suggesttedData={[]}
           />
         )
 
         expect(wrapper.instance().isSendable()).toBe(false)
       })
-      test('postCount > postCountLimit', () => {
+      test('numberOfChatMessages > maxNumberOfChatMessages', () => {
         const handlePostChat = jest.fn()
         const wrapper = mountWithIntl<CommandInput>(
           <CommandInput
-            characterLimit={140}
             handlePostChat={handlePostChat}
             inputChannel={village.InputChannel.public}
             language={village.Language.en}
-            postCount={11}
-            postCountLimit={10}
+            maxLengthOfUnicodeCodePoints={140}
+            maxNumberOfChatMessages={10}
+            numberOfChatMessages={11}
             suggesttedData={[]}
           />
         )
@@ -1619,12 +1619,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1638,12 +1638,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1653,16 +1653,16 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.instance().isValidTextLength()).toBe(true)
     })
-    test('0 < textCount < characterLimit', () => {
+    test('0 < textCount < maxLengthOfUnicodeCodePoints', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1672,16 +1672,16 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.instance().isValidTextLength()).toBe(true)
     })
-    test('textCount === characterLimit', () => {
+    test('textCount === maxLengthOfUnicodeCodePoints', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1691,16 +1691,16 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.instance().isValidTextLength()).toBe(true)
     })
-    test('textCount === characterLimit + 1', () => {
+    test('textCount === maxLengthOfUnicodeCodePoints + 1', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1710,16 +1710,16 @@ describe('<CommandInput />', () => {
       })
       expect(wrapper.instance().isValidTextLength()).toBe(false)
     })
-    test('textCount > characterLimit', () => {
+    test('textCount > maxLengthOfUnicodeCodePoints', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.grave}
           language={village.Language.en}
-          postCount={-1}
-          postCountLimit={-1}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={-1}
+          numberOfChatMessages={-1}
           suggesttedData={[]}
         />
       )
@@ -1734,12 +1734,12 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl<CommandInput>(
       <CommandInput
-        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.public}
         language={village.Language.en}
-        postCount={0}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
+        numberOfChatMessages={0}
         suggesttedData={[]}
       />
     )
@@ -1752,12 +1752,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -1769,12 +1769,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -1786,12 +1786,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -1805,12 +1805,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -1824,12 +1824,12 @@ describe('<CommandInput />', () => {
       const handlePostChat = jest.fn()
       const wrapper = mountWithIntl<CommandInput>(
         <CommandInput
-          characterLimit={140}
           handlePostChat={handlePostChat}
           inputChannel={village.InputChannel.public}
           language={village.Language.en}
-          postCount={0}
-          postCountLimit={10}
+          maxLengthOfUnicodeCodePoints={140}
+          maxNumberOfChatMessages={10}
+          numberOfChatMessages={0}
           suggesttedData={[]}
         />
       )
@@ -1844,12 +1844,12 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl<CommandInput>(
       <CommandInput
-        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.public}
         language={village.Language.en}
-        postCount={0}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
+        numberOfChatMessages={0}
         suggesttedData={[]}
       />
     )
@@ -1861,12 +1861,12 @@ describe('<CommandInput />', () => {
     const handlePostChat = jest.fn()
     const wrapper = mountWithIntl<CommandInput>(
       <CommandInput
-        characterLimit={140}
         handlePostChat={handlePostChat}
         inputChannel={village.InputChannel.public}
         language={village.Language.en}
-        postCount={0}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
+        numberOfChatMessages={0}
         suggesttedData={[]}
       />
     )
