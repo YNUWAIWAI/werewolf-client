@@ -10,7 +10,7 @@ import {village} from '../../types'
 
 export interface Props {
   readonly handleStar: (isMarked: boolean) => void
-  readonly id: number
+  readonly id: village.ChatId
   readonly image: string
   readonly initial: string
   readonly intensionalDisclosureRange: village.Channel
@@ -29,7 +29,7 @@ export default function ChatItem(props: Props) {
   return (
     <div
       className={`vi--chat--item ${props.isMine ? 'me' : ''} ${chatChannel}`}
-      id={chatChannel === 'public' ? `message${String(props.id)}` : undefined}
+      id={chatChannel === 'public' ? `message${props.id}` : undefined}
     >
       <div className="vi--chat--arrow-box">
         <ChatIcon
