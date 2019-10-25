@@ -9,9 +9,9 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   ... state.commandInputBox,
-  maxLengthOfUnicodeCodePoints: state.base.village.chatSettings.characterLimit,
   language: state.language,
-  postCountLimit: state.base.village.chatSettings.limit,
+  maxLengthOfUnicodeCodePoints: state.base.village.chatSettings.maxLengthOfUnicodeCodePoints,
+  maxNumberOfChatMessages: state.base.village.chatSettings.maxNumberOfChatMessages,
   suggesttedData: state.suggest.data
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
