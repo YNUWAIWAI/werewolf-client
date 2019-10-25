@@ -20,7 +20,6 @@ test('<InfoDayContainer />', () => {
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
         'village': {
-          '@context': village.Context.Village,
           '@id': 'https://licos.online/state/0.2/village',
           'chatSettings': {
             maxLengthOfUnicodeCodePoints: 140,
