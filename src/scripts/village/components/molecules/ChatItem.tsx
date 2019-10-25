@@ -1,6 +1,6 @@
 import * as React from 'react'
 import AgentIcon from '../atoms/AgentIcon'
-import ChatDate from '../atoms/ChatDate'
+import ChatDay from '../atoms/ChatDay'
 import ChatIcon from '../atoms/ChatIcon'
 import ChatNum from '../atoms/ChatNum'
 import ChatStar from '../atoms/ChatStar'
@@ -43,7 +43,7 @@ export default function ChatItem(props: Props) {
         <ChatText
           text={props.text}
         />
-        <ChatDate
+        <ChatDay
           from={props.phaseStartTime}
           limit={props.phaseTimeLimit}
           to={props.serverTimestamp}
