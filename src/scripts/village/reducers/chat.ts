@@ -13,7 +13,7 @@ export interface State {
       readonly characterId?: village.CharacterId
       readonly clientTimestamp: string
       readonly day: number
-      readonly id: number
+      readonly id: village.Payload$ChatId
       readonly image: string
       readonly intensionalDisclosureRange: village.Channel
       readonly isMarked: boolean
