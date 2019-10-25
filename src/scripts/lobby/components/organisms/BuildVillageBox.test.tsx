@@ -1,9 +1,9 @@
 import * as React from 'react'
-import {lobby} from '../../types'
 import BuildVillageBox, {Props} from './BuildVillageBox'
 import Select from 'react-select'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
