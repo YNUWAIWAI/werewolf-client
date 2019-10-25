@@ -4,13 +4,13 @@ import {shallow} from 'enzyme'
 import {village} from '../../types'
 
 describe('<Prediction />', () => {
-  test('playerStatus.length === 0 || roleStatus.length === 0', () => {
+  test('characterStatus.length === 0 || roleStatus.length === 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
     const handleMouseEnterEventHandler = jest.fn()
     const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
     const handleMouseLeave = jest.fn()
-    const playerStatus: Props['playerStatus'] = []
+    const characterStatus: Props['characterStatus'] = []
     const roleStatus: Props['roleStatus'] = []
     const table: Props['table'] = {}
     const spec: Props['spec'] = {
@@ -19,10 +19,10 @@ describe('<Prediction />', () => {
     }
     const wrapper = shallow(
       <Prediction
+        characterStatus={characterStatus}
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
-        playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
         table={table}
@@ -31,20 +31,20 @@ describe('<Prediction />', () => {
 
     expect(wrapper.text()).toBe('')
   })
-  test('playerStatus.length !== 0 && roleStatus.length !== 0', () => {
+  test('characterStatus.length !== 0 && roleStatus.length !== 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
     const handleMouseEnterEventHandler = jest.fn()
     const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
     const handleMouseLeave = jest.fn()
-    const playerStatus: Props['playerStatus'] = [
+    const characterStatus: Props['characterStatus'] = [
       {
         id: '1',
         image: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
         initial: 'A',
         isSilent: false,
         name: 'Adil',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '2',
@@ -52,7 +52,7 @@ describe('<Prediction />', () => {
         initial: 'B',
         isSilent: false,
         name: 'Borya',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '3',
@@ -60,7 +60,7 @@ describe('<Prediction />', () => {
         initial: 'C',
         isSilent: false,
         name: 'Chacha',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '4',
@@ -68,7 +68,7 @@ describe('<Prediction />', () => {
         initial: 'D',
         isSilent: false,
         name: 'Devdatta',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '5',
@@ -76,7 +76,7 @@ describe('<Prediction />', () => {
         initial: 'E',
         isSilent: false,
         name: 'Ekrem',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       }
     ]
     const roleStatus: Props['roleStatus'] = [
@@ -223,10 +223,10 @@ describe('<Prediction />', () => {
     }
     const wrapper = shallow(
       <Prediction
+        characterStatus={characterStatus}
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
-        playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
         table={table}

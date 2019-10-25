@@ -1,20 +1,20 @@
 import * as React from 'react'
+import PredictionCharacter from '../atoms/PredictionCharacter'
 import PredictionHelp from '../atoms/PredictionHelp'
 import PredictionItem from '../atoms/PredictionItem'
-import PredictionPlayer from '../atoms/PredictionPlayer'
 import PredictionRole from '../atoms/PredictionRole'
 import PredictionSpec from '../atoms/PredictionSpec'
 import {just} from '../../util'
 import {village} from '../../types'
 
 export interface StateProps {
-  readonly playerStatus: {
-    readonly id: village.AgentId
+  readonly characterStatus: {
+    readonly id: village.CharacterId
     readonly image: string
     readonly initial: string
     readonly isSilent: boolean
     readonly name: string
-    readonly status: village.AgentStatus
+    readonly status: village.CharacterStatus
   }[]
   readonly roleStatus: {
     readonly id: village.RoleId
@@ -27,7 +27,7 @@ export interface StateProps {
     visible: boolean
   }
   readonly table: {
-    readonly [agentId in village.AgentId]: Partial<{
+    readonly [agentId in village.CharacterId]: Partial<{
       readonly [roleId in village.RoleId]: {
         readonly date: number
         readonly fixed: boolean
@@ -39,12 +39,12 @@ export interface StateProps {
 export interface DispatchProps {
   handleMouseEnter: (role: village.RoleId) => () => void
   handleMouseLeave: () => void
-  handleBoardClick: (playerId: village.AgentId, role: village.RoleId) => (state: village.BoardState) => void
+  handleBoardClick: (ids: {characterId: village.CharacterId, roleId: village.RoleId}) => (state: village.BoardState) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
 export default function Prediction(props: Props) {
-  if (props.playerStatus.length === 0 || props.roleStatus.length === 0) {
+  if (props.characterStatus.length === 0 || props.roleStatus.length === 0) {
     return null
   }
   const predictionTable = [
@@ -61,22 +61,25 @@ export default function Prediction(props: Props) {
         numberOfAgents={role.numberOfAgents}
       />
     )),
-    ... props.playerStatus.map(player => [
-      <PredictionPlayer
-        image={player.image}
-        initial={player.initial}
-        isSilent={player.isSilent}
-        key={player.id}
-        name={player.name}
-        status={player.status}
+    ... props.characterStatus.map(character => [
+      <PredictionCharacter
+        image={character.image}
+        initial={character.initial}
+        isSilent={character.isSilent}
+        key={character.id}
+        name={character.name}
+        status={character.status}
       />,
       ... props.roleStatus.map(role => (
         <PredictionItem
-          date={just(props.table[String(player.id)][role.id]).date}
-          fixed={just(props.table[String(player.id)][role.id]).fixed}
-          handleBoardClick={props.handleBoardClick(player.id, role.id)}
-          key={player.id + role.id}
-          state={just(props.table[String(player.id)][role.id]).state}
+          date={just(props.table[String(character.id)][role.id]).date}
+          fixed={just(props.table[String(character.id)][role.id]).fixed}
+          handleBoardClick={props.handleBoardClick({
+            characterId: character.id,
+            roleId: role.id
+          })}
+          key={character.id + role.id}
+          state={just(props.table[String(character.id)][role.id]).state}
         />
       ))
     ])
@@ -87,7 +90,7 @@ export default function Prediction(props: Props) {
       <div
         className="vi--prediction"
         style={{
-          grid: `repeat(${1 + props.playerStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
+          grid: `repeat(${1 + props.characterStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
         }}
       >
         {predictionTable}
