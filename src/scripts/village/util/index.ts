@@ -233,19 +233,19 @@ export const just = <T>(value: T | undefined | null): T => {
 
 export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(?<head>\w)/g, (_, p1) => p1.toUpperCase())
 
-export const strToAgentStatus = (str: string): village.AgentStatus => {
+export const strToCharacterStatus = (str: string): village.CharacterStatus => {
   const agentStatus = [
-    village.AgentStatus.alive,
-    village.AgentStatus.dead,
-    village.AgentStatus.deathByAttack,
-    village.AgentStatus.deathByExecution,
-    village.AgentStatus.deathByFear,
-    village.AgentStatus.unnaturalDeath
+    village.CharacterStatus.alive,
+    village.CharacterStatus.dead,
+    village.CharacterStatus.deathByAttack,
+    village.CharacterStatus.deathByExecution,
+    village.CharacterStatus.deathByFear,
+    village.CharacterStatus.unnaturalDeath
   ]
   const maybe = agentStatus.find(v => v === str)
 
   if (!maybe) {
-    throw new Error(`Unexpected AgentStatus: ${str}`)
+    throw new Error(`Unexpected CharacterStatus: ${str}`)
   }
 
   return maybe

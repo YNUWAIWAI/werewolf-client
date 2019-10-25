@@ -9,7 +9,7 @@ describe('<ResultCellImage />', () => {
       <ResultCellImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
-        status={village.AgentStatus.alive}
+        status={village.CharacterStatus.alive}
       />
     )
 
@@ -20,7 +20,7 @@ describe('<ResultCellImage />', () => {
       <ResultCellImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
-        status={village.AgentStatus.dead}
+        status={village.CharacterStatus.dead}
       />
     )
 
@@ -31,7 +31,7 @@ describe('<ResultCellImage />', () => {
       <ResultCellImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
-        status={village.AgentStatus.deathByAttack}
+        status={village.CharacterStatus.deathByAttack}
       />
     )
 
@@ -42,7 +42,7 @@ describe('<ResultCellImage />', () => {
       <ResultCellImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
-        status={village.AgentStatus.deathByExecution}
+        status={village.CharacterStatus.deathByExecution}
       />
     )
 
@@ -53,7 +53,7 @@ describe('<ResultCellImage />', () => {
       <ResultCellImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
-        status={village.AgentStatus.deathByFear}
+        status={village.CharacterStatus.deathByFear}
       />
     )
 
@@ -64,7 +64,7 @@ describe('<ResultCellImage />', () => {
       <ResultCellImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
         initial="A"
-        status={village.AgentStatus.unnaturalDeath}
+        status={village.CharacterStatus.unnaturalDeath}
       />
     )
 

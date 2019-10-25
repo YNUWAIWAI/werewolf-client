@@ -32,7 +32,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
         agent1: {
           agentId: '1',
@@ -43,7 +43,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.seer,
           roleName: Role.seer,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
         agent2: {
           agentId: '2',
@@ -54,7 +54,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.lose,
           roleImage: ImagePath.Role.werewolf,
           roleName: Role.werewolf,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
         agent3: {
           agentId: '3',
@@ -65,7 +65,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.hunter,
           roleName: Role.hunter,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
         agent4: {
           agentId: '4',
@@ -76,7 +76,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.medium,
           roleName: Role.medium,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
         agent5: {
           agentId: '5',
@@ -87,7 +87,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.lose,
           roleImage: ImagePath.Role.werehamster,
           roleName: Role.werehamster,
-          status: village.AgentStatus.deathByFear
+          status: village.CharacterStatus.deathByFear
         },
         agent6: {
           agentId: '6',
@@ -98,7 +98,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.lose,
           roleImage: ImagePath.Role.madman,
           roleName: Role.madman,
-          status: village.AgentStatus.deathByExecution
+          status: village.CharacterStatus.deathByExecution
         },
         agent7: {
           agentId: '7',
@@ -109,7 +109,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.lose,
           roleImage: ImagePath.Role.werewolf,
           roleName: Role.werewolf,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
         agent8: {
           agentId: '8',
@@ -120,7 +120,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
         agent9: {
           agentId: '9',
@@ -131,7 +131,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
         agent10: {
           agentId: '10',
@@ -142,7 +142,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.mason,
           roleName: Role.mason,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
         agent11: {
           agentId: '11',
@@ -153,7 +153,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.mason,
           roleName: Role.mason,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
         agent12: {
           agentId: '12',
@@ -164,7 +164,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.deathByAttack
+          status: village.CharacterStatus.deathByAttack
         },
         agent13: {
           agentId: '13',
@@ -175,7 +175,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
         agent14: {
           agentId: '14',
@@ -186,7 +186,7 @@ describe('socket/MESSAGE', () => {
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         }
       },
       allIds: [

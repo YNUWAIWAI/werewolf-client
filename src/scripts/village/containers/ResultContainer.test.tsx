@@ -29,7 +29,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.seer,
                   roleName: Role.seer,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent2: {
                   agentId: '2',
@@ -40,7 +40,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werewolf,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent3: {
                   agentId: '3',
@@ -51,7 +51,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.hunter,
                   roleName: Role.hunter,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent4: {
                   agentId: '4',
@@ -62,7 +62,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.medium,
                   roleName: Role.medium,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent5: {
                   agentId: '5',
@@ -73,7 +73,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.werehamster,
                   roleName: Role.werehamster,
-                  status: village.AgentStatus.deathByFear
+                  status: village.CharacterStatus.deathByFear
                 }
               },
               allIds: [
@@ -129,7 +129,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.villager,
                   roleName: Role.villager,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent1: {
                   agentId: '1',
@@ -140,7 +140,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.seer,
                   roleName: Role.seer,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent2: {
                   agentId: '2',
@@ -151,7 +151,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werewolf,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent3: {
                   agentId: '3',
@@ -162,7 +162,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.hunter,
                   roleName: Role.hunter,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent4: {
                   agentId: '4',
@@ -173,7 +173,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.medium,
                   roleName: Role.medium,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent5: {
                   agentId: '5',
@@ -184,7 +184,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werehamster,
-                  status: village.AgentStatus.deathByFear
+                  status: village.CharacterStatus.deathByFear
                 }
               },
               allIds: [
@@ -242,7 +242,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.villager,
                   roleName: Role.villager,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent1: {
                   agentId: '1',
@@ -253,7 +253,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.seer,
                   roleName: Role.seer,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent2: {
                   agentId: '2',
@@ -264,7 +264,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werewolf,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent3: {
                   agentId: '3',
@@ -275,7 +275,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.hunter,
                   roleName: Role.hunter,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent4: {
                   agentId: '4',
@@ -286,7 +286,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.medium,
                   roleName: Role.medium,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent5: {
                   agentId: '5',
@@ -297,7 +297,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werehamster,
-                  status: village.AgentStatus.deathByFear
+                  status: village.CharacterStatus.deathByFear
                 }
               },
               allIds: [
@@ -355,7 +355,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.villager,
                   roleName: Role.villager,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent1: {
                   agentId: '1',
@@ -366,7 +366,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.seer,
                   roleName: Role.seer,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent2: {
                   agentId: '2',
@@ -377,7 +377,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werewolf,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent3: {
                   agentId: '3',
@@ -388,7 +388,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.hunter,
                   roleName: Role.hunter,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent4: {
                   agentId: '4',
@@ -399,7 +399,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.medium,
                   roleName: Role.medium,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 }
               },
               allIds: [
@@ -455,7 +455,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.villager,
                   roleName: Role.villager,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent1: {
                   agentId: '1',
@@ -466,7 +466,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.seer,
                   roleName: Role.seer,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent2: {
                   agentId: '2',
@@ -477,7 +477,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werewolf,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent3: {
                   agentId: '3',
@@ -488,7 +488,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.hunter,
                   roleName: Role.hunter,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent4: {
                   agentId: '4',
@@ -499,7 +499,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.medium,
                   roleName: Role.medium,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 }
               },
               allIds: [
@@ -557,7 +557,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.villager,
                   roleName: Role.villager,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent1: {
                   agentId: '1',
@@ -568,7 +568,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.seer,
                   roleName: Role.seer,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent2: {
                   agentId: '2',
@@ -579,7 +579,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werewolf,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent3: {
                   agentId: '3',
@@ -590,7 +590,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.hunter,
                   roleName: Role.hunter,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent4: {
                   agentId: '4',
@@ -601,7 +601,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.win,
                   roleImage: ImagePath.Role.medium,
                   roleName: Role.medium,
-                  status: village.AgentStatus.alive
+                  status: village.CharacterStatus.alive
                 },
                 agent5: {
                   agentId: '5',
@@ -612,7 +612,7 @@ describe('<ResultContainer />', () => {
                   result: village.Result.lose,
                   roleImage: ImagePath.Role.werewolf,
                   roleName: Role.werehamster,
-                  status: village.AgentStatus.deathByFear
+                  status: village.CharacterStatus.deathByFear
                 }
               },
               allIds: [

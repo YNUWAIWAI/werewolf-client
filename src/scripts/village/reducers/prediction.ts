@@ -7,7 +7,7 @@ import {
 } from '../actions'
 import {
   getPlayableRoles,
-  strToAgentStatus,
+  strToCharacterStatus,
   strToRoleId
 } from '../util'
 import {ORDERED_ROLE_LIST} from '../constants/Role'
@@ -22,7 +22,7 @@ export interface State {
         readonly id: village.CharacterId
         readonly image: string
         readonly name: village.LanguageMap
-        readonly status: village.AgentStatus
+        readonly status: village.CharacterStatus
       }
     }
   }
@@ -185,7 +185,7 @@ const getCharacterStatus = (characters: Characters): CharacterStatus => {
         'id': String(character.id),
         'image': character.image,
         'name': character.name,
-        'status': strToAgentStatus(character.status)
+        'status': strToCharacterStatus(character.status)
       }
     })
 

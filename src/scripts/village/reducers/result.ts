@@ -8,7 +8,7 @@ import {
   getPlayableAgents,
   getTeam,
   just,
-  strToAgentStatus,
+  strToCharacterStatus,
   strToRoleId
 } from '../util'
 import {village} from '../types'
@@ -39,7 +39,7 @@ export interface State {
       readonly result: village.Result
       readonly roleImage: string
       readonly roleName: village.LanguageMap
-      readonly status: village.AgentStatus
+      readonly status: village.CharacterStatus
     }
   }
   readonly losers: village.CharacterId[]
@@ -105,7 +105,7 @@ const result = (state: State = initialState, action: Action): State => {
               result: just(c.result),
               roleImage: role.image,
               roleName: role.name,
-              status: strToAgentStatus(c.status)
+              status: strToCharacterStatus(c.status)
             }
             if (c.result === village.Result.win) {
               winners.push(characterId)

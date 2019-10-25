@@ -18,7 +18,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'isAChoice': false,
       'isMine': true,
       'name': Agent.a,
-      'status': village.AgentStatus.alive,
+      'status': village.CharacterStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/character#1/update',
         'day': 1,
@@ -33,7 +33,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'isAChoice': false,
       'isMine': false,
       'name': Agent.b,
-      'status': village.AgentStatus.alive,
+      'status': village.CharacterStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/character#2/update',
         'day': 1,
@@ -48,7 +48,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'isAChoice': false,
       'isMine': false,
       'name': Agent.c,
-      'status': village.AgentStatus.alive,
+      'status': village.CharacterStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/character#3/update',
         'day': 1,
@@ -63,7 +63,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'isAChoice': false,
       'isMine': false,
       'name': Agent.d,
-      'status': village.AgentStatus.alive,
+      'status': village.CharacterStatus.alive,
       'update': {
         '@id': 'https://licos.online/state/0.2/village#3/character#4/update',
         'day': 1,

@@ -5,7 +5,7 @@ import {village} from '../../types'
 interface Props {
   readonly image: string
   readonly name: string
-  readonly status: village.AgentStatus
+  readonly status: village.CharacterStatus
 }
 
 export default function ResultCellRoleImage(props: Props) {

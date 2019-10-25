@@ -14,7 +14,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
     roleName: 'Seer',
-    status: village.AgentStatus.alive
+    status: village.CharacterStatus.alive
   },
   agent2: {
     agentId: '2',
@@ -26,7 +26,7 @@ const agents: Props['agents'] = {
     result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
     roleName: 'Werewolf',
-    status: village.AgentStatus.alive
+    status: village.CharacterStatus.alive
   },
   agent3: {
     agentId: '3',
@@ -38,7 +38,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
     roleName: 'Hunter',
-    status: village.AgentStatus.alive
+    status: village.CharacterStatus.alive
   },
   agent4: {
     agentId: '4',
@@ -50,7 +50,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
     roleName: 'Medium',
-    status: village.AgentStatus.alive
+    status: village.CharacterStatus.alive
   },
   agent5: {
     agentId: '5',
@@ -62,7 +62,7 @@ const agents: Props['agents'] = {
     result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
     roleName: 'Werehamster',
-    status: village.AgentStatus.deathByFear
+    status: village.CharacterStatus.deathByFear
   },
   agent6: {
     agentId: '6',
@@ -74,7 +74,7 @@ const agents: Props['agents'] = {
     result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
     roleName: 'Madman',
-    status: village.AgentStatus.deathByExecution
+    status: village.CharacterStatus.deathByExecution
   },
   agent7: {
     agentId: '7',
@@ -86,7 +86,7 @@ const agents: Props['agents'] = {
     result: village.Result.lose,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
     roleName: 'Werewolf',
-    status: village.AgentStatus.unnaturalDeath
+    status: village.CharacterStatus.unnaturalDeath
   },
   agent8: {
     agentId: '8',
@@ -98,7 +98,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
     roleName: 'Villager',
-    status: village.AgentStatus.unnaturalDeath
+    status: village.CharacterStatus.unnaturalDeath
   },
   agent9: {
     agentId: '9',
@@ -110,7 +110,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
     roleName: 'Villager',
-    status: village.AgentStatus.unnaturalDeath
+    status: village.CharacterStatus.unnaturalDeath
   },
   agent10: {
     agentId: '10',
@@ -122,7 +122,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
     roleName: 'Mason',
-    status: village.AgentStatus.unnaturalDeath
+    status: village.CharacterStatus.unnaturalDeath
   },
   agent11: {
     agentId: '11',
@@ -134,7 +134,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
     roleName: 'Mason',
-    status: village.AgentStatus.unnaturalDeath
+    status: village.CharacterStatus.unnaturalDeath
   },
   agent12: {
     agentId: '12',
@@ -146,7 +146,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
     roleName: 'Villager',
-    status: village.AgentStatus.deathByAttack
+    status: village.CharacterStatus.deathByAttack
   },
   agent13: {
     agentId: '13',
@@ -158,7 +158,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
     roleName: 'Villager',
-    status: village.AgentStatus.alive
+    status: village.CharacterStatus.alive
   },
   agent14: {
     agentId: '14',
@@ -170,7 +170,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
     roleName: 'Villager',
-    status: village.AgentStatus.alive
+    status: village.CharacterStatus.alive
   },
   agent15: {
     agentId: '15',
@@ -182,7 +182,7 @@ const agents: Props['agents'] = {
     result: village.Result.win,
     roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
     roleName: 'Villager',
-    status: village.AgentStatus.alive
+    status: village.CharacterStatus.alive
   }
 }
 const losers: Props['losers'] = [

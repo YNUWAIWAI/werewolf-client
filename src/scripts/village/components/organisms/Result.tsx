@@ -24,7 +24,7 @@ export interface StateProps {
       readonly result: village.Result
       readonly roleImage: string
       readonly roleName: string
-      readonly status: village.AgentStatus
+      readonly status: village.CharacterStatus
     }
   }
   readonly losers: string[]
@@ -99,13 +99,13 @@ export default function Result(props: Props) {
   const compareStatus = (a: village.AgentId, b: village.AgentId) => {
     const agents = props.agents
 
-    if (agents[a].status === village.AgentStatus.alive && agents[b].status === village.AgentStatus.alive) {
+    if (agents[a].status === village.CharacterStatus.alive && agents[b].status === village.CharacterStatus.alive) {
       return 0
     }
-    if (agents[a].status !== village.AgentStatus.alive && agents[b].status === village.AgentStatus.alive) {
+    if (agents[a].status !== village.CharacterStatus.alive && agents[b].status === village.CharacterStatus.alive) {
       return 1
     }
-    if (agents[a].status === village.AgentStatus.alive && agents[b].status !== village.AgentStatus.alive) {
+    if (agents[a].status === village.CharacterStatus.alive && agents[b].status !== village.CharacterStatus.alive) {
       return -1
     }
 

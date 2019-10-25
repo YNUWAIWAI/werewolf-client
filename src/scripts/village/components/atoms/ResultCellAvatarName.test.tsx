@@ -7,7 +7,7 @@ describe('<ResultCellAvatarName />', () => {
   test('alive', () => {
     const warpper = shallow(
       <ResultCellAvatarName
-        status={village.AgentStatus.alive}
+        status={village.CharacterStatus.alive}
         text="Adil"
       />
     )
@@ -17,7 +17,7 @@ describe('<ResultCellAvatarName />', () => {
   test('dead', () => {
     const warpper = shallow(
       <ResultCellAvatarName
-        status={village.AgentStatus.dead}
+        status={village.CharacterStatus.dead}
         text="Adil"
       />
     )

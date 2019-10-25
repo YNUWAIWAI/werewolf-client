@@ -15,7 +15,7 @@ import {
   isValidTextLength,
   just,
   spaceSeparatedToCamelCase,
-  strToAgentStatus,
+  strToCharacterStatus,
   strToMessage,
   strToRoleId,
   trimBaseUri,
@@ -726,27 +726,27 @@ test('getPlayableRoles', () => {
     }
   ])
 })
-describe('strToAgentStatus', () => {
+describe('strToCharacterStatus', () => {
   test('alive', () => {
-    expect(strToAgentStatus('alive')).toBe('alive')
+    expect(strToCharacterStatus('alive')).toBe('alive')
   })
   test('dead', () => {
-    expect(strToAgentStatus('dead')).toBe('dead')
+    expect(strToCharacterStatus('dead')).toBe('dead')
   })
   test('death by execution', () => {
-    expect(strToAgentStatus('death by execution')).toBe('death by execution')
+    expect(strToCharacterStatus('death by execution')).toBe('death by execution')
   })
   test('death by attack', () => {
-    expect(strToAgentStatus('death by attack')).toBe('death by attack')
+    expect(strToCharacterStatus('death by attack')).toBe('death by attack')
   })
   test('death by fear', () => {
-    expect(strToAgentStatus('death by fear')).toBe('death by fear')
+    expect(strToCharacterStatus('death by fear')).toBe('death by fear')
   })
   test('unnatural death', () => {
-    expect(strToAgentStatus('unnatural death')).toBe('unnatural death')
+    expect(strToCharacterStatus('unnatural death')).toBe('unnatural death')
   })
   test('throw Exception', () => {
-    expect(() => strToAgentStatus('throw Exception')).toThrow()
+    expect(() => strToCharacterStatus('throw Exception')).toThrow()
   })
 })
 describe('strToMessage', () => {

@@ -8,7 +8,7 @@ describe('<ResultCellAvatarImage />', () => {
     const warpper = shallow(
       <ResultCellAvatarImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
-        status={village.AgentStatus.alive}
+        status={village.CharacterStatus.alive}
       />
     )
 
@@ -18,7 +18,7 @@ describe('<ResultCellAvatarImage />', () => {
     const warpper = shallow(
       <ResultCellAvatarImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
-        status={village.AgentStatus.dead}
+        status={village.CharacterStatus.dead}
       />
     )
 
@@ -28,7 +28,7 @@ describe('<ResultCellAvatarImage />', () => {
     const warpper = shallow(
       <ResultCellAvatarImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
-        status={village.AgentStatus.deathByAttack}
+        status={village.CharacterStatus.deathByAttack}
       />
     )
 
@@ -38,7 +38,7 @@ describe('<ResultCellAvatarImage />', () => {
     const warpper = shallow(
       <ResultCellAvatarImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
-        status={village.AgentStatus.deathByExecution}
+        status={village.CharacterStatus.deathByExecution}
       />
     )
 
@@ -48,7 +48,7 @@ describe('<ResultCellAvatarImage />', () => {
     const warpper = shallow(
       <ResultCellAvatarImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
-        status={village.AgentStatus.deathByFear}
+        status={village.CharacterStatus.deathByFear}
       />
     )
 
@@ -58,7 +58,7 @@ describe('<ResultCellAvatarImage />', () => {
     const warpper = shallow(
       <ResultCellAvatarImage
         image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
-        status={village.AgentStatus.unnaturalDeath}
+        status={village.CharacterStatus.unnaturalDeath}
       />
     )
 

@@ -4,7 +4,7 @@ import {village} from '../../types'
 
 interface Props {
   readonly image: string
-  readonly status: village.AgentStatus
+  readonly status: village.CharacterStatus
 }
 
 export default function ResultCellAvatarImage(props: Props) {

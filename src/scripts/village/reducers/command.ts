@@ -35,7 +35,7 @@ const command = (state: State = initialState, action: Action): State => {
             return false
           }
 
-          return maybe.status !== village.AgentStatus.alive
+          return maybe.status !== village.CharacterStatus.alive
         })()
 
         switch (action.payload.phase) {

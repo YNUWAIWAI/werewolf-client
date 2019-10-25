@@ -31,7 +31,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.villager,
         'name': Role.villager
       },
-      'status': village.AgentStatus.alive
+      'status': village.CharacterStatus.alive
     },
     {
       '@context': village.Context.Character,
@@ -54,7 +54,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.seer,
         'name': Role.seer
       },
-      'status': village.AgentStatus.alive
+      'status': village.CharacterStatus.alive
     },
     {
       '@context': village.Context.Character,
@@ -77,7 +77,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.werewolf,
         'name': Role.werewolf
       },
-      'status': village.AgentStatus.alive
+      'status': village.CharacterStatus.alive
     },
     {
       '@context': village.Context.Character,
@@ -100,7 +100,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.hunter,
         'name': Role.hunter
       },
-      'status': village.AgentStatus.alive
+      'status': village.CharacterStatus.alive
     },
     {
       '@context': village.Context.Character,
@@ -123,7 +123,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.medium,
         'name': Role.medium
       },
-      'status': village.AgentStatus.alive
+      'status': village.CharacterStatus.alive
     },
     {
       '@context': village.Context.Character,
@@ -146,7 +146,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.werehamster,
         'name': Role.werehamster
       },
-      'status': village.AgentStatus.deathByFear
+      'status': village.CharacterStatus.deathByFear
     },
     {
       '@context': village.Context.Character,
@@ -169,7 +169,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.madman,
         'name': Role.madman
       },
-      'status': village.AgentStatus.deathByExecution
+      'status': village.CharacterStatus.deathByExecution
     },
     {
       '@context': village.Context.Character,
@@ -192,7 +192,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.werewolf,
         'name': Role.werewolf
       },
-      'status': village.AgentStatus.unnaturalDeath
+      'status': village.CharacterStatus.unnaturalDeath
     },
     {
       '@context': village.Context.Character,
@@ -215,7 +215,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.villager,
         'name': Role.villager
       },
-      'status': village.AgentStatus.unnaturalDeath
+      'status': village.CharacterStatus.unnaturalDeath
     },
     {
       '@context': village.Context.Character,
@@ -238,7 +238,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.villager,
         'name': Role.villager
       },
-      'status': village.AgentStatus.unnaturalDeath
+      'status': village.CharacterStatus.unnaturalDeath
     },
     {
       '@context': village.Context.Character,
@@ -261,7 +261,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.mason,
         'name': Role.mason
       },
-      'status': village.AgentStatus.unnaturalDeath
+      'status': village.CharacterStatus.unnaturalDeath
     },
     {
       '@context': village.Context.Character,
@@ -284,7 +284,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.mason,
         'name': Role.mason
       },
-      'status': village.AgentStatus.unnaturalDeath
+      'status': village.CharacterStatus.unnaturalDeath
     },
     {
       '@context': village.Context.Character,
@@ -307,7 +307,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.villager,
         'name': Role.villager
       },
-      'status': village.AgentStatus.deathByAttack
+      'status': village.CharacterStatus.deathByAttack
     },
     {
       '@context': village.Context.Character,
@@ -330,7 +330,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.villager,
         'name': Role.villager
       },
-      'status': village.AgentStatus.alive
+      'status': village.CharacterStatus.alive
     },
     {
       '@context': village.Context.Character,
@@ -353,7 +353,7 @@ export const result: village.Payload$SystemMessage = {
         'image': ImagePath.Role.villager,
         'name': Role.villager
       },
-      'status': village.AgentStatus.alive
+      'status': village.CharacterStatus.alive
     }
   ],
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
