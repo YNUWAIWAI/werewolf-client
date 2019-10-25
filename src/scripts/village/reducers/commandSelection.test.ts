@@ -133,7 +133,7 @@ test('SELECT_YES', () => {
         fixed: false
       },
       {
-        agentId: '2',
+        characterId: '2',
         type: ActionTypes.global.SELECT_YES
       }
     )
