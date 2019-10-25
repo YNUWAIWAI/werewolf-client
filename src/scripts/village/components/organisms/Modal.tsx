@@ -7,7 +7,7 @@ import {village} from '../../types'
 
 export interface StateProps {
   readonly descriptionId: string
-  readonly id: village.AgentId
+  readonly id: village.CharacterId
   readonly image: string
   readonly initial: string
   readonly name: string
@@ -15,7 +15,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleClickNo: () => void
-  readonly handleClickYes: (agentId: village.AgentId) => void
+  readonly handleClickYes: (characterId: village.CharacterId) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
