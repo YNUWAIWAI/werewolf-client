@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangeDate, SocketMessage, StarChat} from '../actions'
+import {ChangeDay, SocketMessage, StarChat} from '../actions'
 import {idGenerater, just} from '../util'
 import {village} from '../types'
 
@@ -23,16 +23,16 @@ export interface State {
       readonly phaseTimeLimit: number
       readonly serverTimestamp: string
       readonly text: string
-      readonly type: 'item'
+      readonly type: village.ChatItemType.item
     } |
     {
       readonly day: number
-      readonly type: 'delimeter'
+      readonly type: village.ChatItemType.delimeter
     }
   }
 }
 type Action =
-  | ChangeDate
+  | ChangeDay
   | SocketMessage
   | StarChat
 
@@ -67,7 +67,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   phaseTimeLimit: payload.phaseTimeLimit,
                   serverTimestamp: payload.serverTimestamp,
                   text: payload.text['@value'],
-                  type: 'item'
+                  type: village.ChatItemType.item
                 }
               }
             }
@@ -89,7 +89,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   phaseTimeLimit: payload.phaseTimeLimit,
                   serverTimestamp: payload.serverTimestamp,
                   text: payload.text['@value'],
-                  type: 'item'
+                  type: village.ChatItemType.item
                 }
               }
             }
@@ -113,7 +113,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 phaseTimeLimit: payload.phaseTimeLimit,
                 serverTimestamp: payload.serverTimestamp,
                 text: payload.text['@value'],
-                type: 'item'
+                type: village.ChatItemType.item
               }
             }
           }
@@ -131,7 +131,7 @@ const chat = (state: State = initialState, action: Action): State => {
           ... state.byId,
           [delimeterId]: {
             day: action.to,
-            type: 'delimeter'
+            type: village.ChatItemType.delimeter
           }
         }
       }
@@ -139,7 +139,7 @@ const chat = (state: State = initialState, action: Action): State => {
     case ActionTypes.global.STAR: {
       const item = state.byId[action.id]
 
-      if (item.type === 'delimeter') {
+      if (item.type === village.ChatItemType.delimeter) {
         return state
       }
 

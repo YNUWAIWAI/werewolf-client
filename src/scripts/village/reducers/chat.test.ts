@@ -55,7 +55,7 @@ describe('socket/MESSAGE', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             }
           }
         },
@@ -78,7 +78,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         chat1: {
           characterId: '1',
@@ -94,7 +94,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
     })
@@ -119,7 +119,7 @@ describe('socket/MESSAGE', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             },
             chat1: {
               characterId: '1',
@@ -135,7 +135,7 @@ describe('socket/MESSAGE', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             }
           }
         },
@@ -158,7 +158,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         chat1: {
           characterId: '1',
@@ -174,7 +174,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         chat2: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -189,7 +189,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
     })
@@ -214,7 +214,7 @@ describe('socket/MESSAGE', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             },
             chat1: {
               characterId: '1',
@@ -230,7 +230,7 @@ describe('socket/MESSAGE', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             },
             chat2: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -245,7 +245,7 @@ describe('socket/MESSAGE', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             }
           }
         },
@@ -268,7 +268,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         chat1: {
           characterId: '1',
@@ -284,7 +284,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         chat2: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -299,7 +299,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         chat3: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -314,7 +314,7 @@ describe('socket/MESSAGE', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
     })
@@ -335,7 +335,7 @@ test('CHANGE_day', () => {
     byId: {
       'delimeter0': {
         day: 1,
-        type: 'delimeter'
+        type: village.ChatItemType.delimeter
       }
     }
   })
@@ -355,15 +355,12 @@ test('STAR', () => {
             intensionalDisclosureRange: village.Channel.public,
             isMarked: false,
             isMine: true,
-            name: {
-              en: 'Adil',
-              ja: 'アーディル'
-            },
+            name: Agent.a,
             phaseStartTime: '2006-10-07T12:06:56.568+09:00',
             phaseTimeLimit: 600,
             serverTimestamp: '2006-10-07T12:06:56.568+09:00',
             text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-            type: 'item'
+            type: village.ChatItemType.item
           }
         }
       },
@@ -385,15 +382,12 @@ test('STAR', () => {
         intensionalDisclosureRange: 'public',
         isMarked: true,
         isMine: true,
-        name: {
-          en: 'Adil',
-          ja: 'アーディル'
-        },
+        name: Agent.a,
         phaseStartTime: '2006-10-07T12:06:56.568+09:00',
         phaseTimeLimit: 600,
         serverTimestamp: '2006-10-07T12:06:56.568+09:00',
         text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
   })
