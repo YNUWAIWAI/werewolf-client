@@ -23,10 +23,10 @@ const suggest = (state: State = initialState, action: Action): State => {
 
       if (
         payload['@payload'] === village.Message.systemMessage &&
-        payload.agent &&
+        payload.character &&
         payload.role
       ) {
-        const agent = payload.agent.map(item => ({
+        const character = payload.character.map(item => ({
           id: item.name.en,
           name: item.name
         }))
@@ -35,7 +35,7 @@ const suggest = (state: State = initialState, action: Action): State => {
           name: item.name
         }))
         const data = [
-          ... agent,
+          ... character,
           ... role
         ].sort((a, b) => {
           if (a.id > b.id) {
