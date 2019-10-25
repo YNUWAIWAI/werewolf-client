@@ -112,110 +112,110 @@ describe('<Prediction />', () => {
     const table: Props['table'] = {
       '1': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.CIRCLE
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         }
       },
       '2': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.TRIANGLE
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '3': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '4': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '5': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }

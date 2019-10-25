@@ -29,7 +29,7 @@ export interface StateProps {
   readonly table: {
     readonly [agentId in village.CharacterId]: Partial<{
       readonly [roleId in village.RoleId]: {
-        readonly date: number
+        readonly day: number
         readonly fixed: boolean
         readonly state: village.BoardState
       }
@@ -72,7 +72,7 @@ export default function Prediction(props: Props) {
       />,
       ... props.roleStatus.map(role => (
         <PredictionItem
-          date={just(props.table[String(character.id)][role.id]).date}
+          date={just(props.table[String(character.id)][role.id]).day}
           fixed={just(props.table[String(character.id)][role.id]).fixed}
           handleBoardClick={props.handleBoardClick({
             characterId: character.id,
