@@ -14,7 +14,7 @@ import {ORDERED_ROLE_LIST} from '../constants/Role'
 import {village} from '../types'
 
 export interface State {
-  readonly playerStatus: {
+  readonly characterStatus: {
     readonly allIds: village.CharacterId[]
     readonly byId: {
       [id in village.CharacterId]: {
@@ -52,7 +52,7 @@ export interface State {
     }>
   }
 }
-type PlayerStatus = State['playerStatus']
+type CharacterStatus = State['characterStatus']
 type RoleStatus = State['roleStatus']
 type Table = State['table']
 type Action =
@@ -173,9 +173,9 @@ const getRoleStatus = (roles: Roles): RoleStatus => {
   }
 }
 
-const getPlayerStatus = (characters: Characters): PlayerStatus => {
-  const allIds: PlayerStatus['allIds'] = []
-  const byId: PlayerStatus['byId'] = {}
+const getCharacterStatus = (characters: Characters): CharacterStatus => {
+  const allIds: CharacterStatus['allIds'] = []
+  const byId: CharacterStatus['byId'] = {}
 
   characters
     .forEach(character => {
@@ -196,7 +196,7 @@ const getPlayerStatus = (characters: Characters): PlayerStatus => {
 }
 
 export const initialState = {
-  playerStatus: {
+  characterStatus: {
     allIds: [],
     byId: {}
   },
@@ -237,7 +237,7 @@ const prediction = (state: State = initialState, action: Action): State => {
 
           return {
             ... state,
-            playerStatus: getPlayerStatus(characters),
+            characterStatus: getCharacterStatus(characters),
             roleStatus: getRoleStatus(roles),
             table
           }

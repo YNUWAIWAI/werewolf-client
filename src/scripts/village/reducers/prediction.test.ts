@@ -23,7 +23,7 @@ describe('socket/MESSAGE', () => {
     ).toStrictEqual(initialState)
   })
   test('my role is seer (numberOfAgents === 1)', () => {
-    const playerStatus: State['playerStatus'] = {
+    const characterStatus: State['characterStatus'] = {
       allIds: [
         '1',
         '2',
@@ -863,7 +863,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        playerStatus,
+        characterStatus,
         roleStatus,
         spec,
         table
@@ -871,7 +871,7 @@ describe('socket/MESSAGE', () => {
     )
   })
   test('my role is villager', () => {
-    const playerStatus: State['playerStatus'] = {
+    const characterStatus: State['characterStatus'] = {
       allIds: [
         '1',
         '2',
@@ -1711,7 +1711,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        playerStatus,
+        characterStatus,
         roleStatus,
         spec,
         table
@@ -1719,7 +1719,7 @@ describe('socket/MESSAGE', () => {
     )
   })
   test('ignore the role that is not exists', () => {
-    const playerStatus: State['playerStatus'] = {
+    const characterStatus: State['characterStatus'] = {
       allIds: [
         '1',
         '2',
@@ -1841,7 +1841,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        playerStatus,
+        characterStatus,
         roleStatus,
         spec,
         table
@@ -1849,7 +1849,7 @@ describe('socket/MESSAGE', () => {
     )
   })
   test('my role is mason', () => {
-    const playerStatus: State['playerStatus'] = {
+    const characterStatus: State['characterStatus'] = {
       allIds: [
         '7',
         '5',
@@ -2243,7 +2243,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        playerStatus,
+        characterStatus,
         roleStatus,
         spec,
         table
@@ -2252,7 +2252,7 @@ describe('socket/MESSAGE', () => {
   })
 })
 test('CHANGE_PREDICTION_BOARD', () => {
-  const playerStatus: State['playerStatus'] = {
+  const characterStatus: State['characterStatus'] = {
     allIds: [
       '1',
       '2',
@@ -3085,7 +3085,7 @@ test('CHANGE_PREDICTION_BOARD', () => {
     reducer(
       {
         ... initialState,
-        playerStatus,
+        characterStatus,
         roleStatus,
         table
       },
@@ -3098,7 +3098,7 @@ test('CHANGE_PREDICTION_BOARD', () => {
     )
   ).toStrictEqual({
     ... initialState,
-    playerStatus,
+    characterStatus,
     roleStatus,
     table: {
       ... table,
