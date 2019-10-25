@@ -10,25 +10,25 @@ describe('<ChatDelimeter />', () => {
   test('date=1', () => {
     const wrapper = mountWithIntl(
       <ChatDelimeter
-        date={1}
+        day={1}
       />
     )
 
     expect(wrapper.find('.vi--chat--delimeter').text()).toBe('Day 1')
   })
-  test('date=0', () => {
+  test('day=0', () => {
     const wrapper = mountWithIntl(
       <ChatDelimeter
-        date={0}
+        day={0}
       />
     )
 
     expect(wrapper.find('.vi--chat--delimeter').text()).toBe('Day 0')
   })
-  test('date=-1', () => {
+  test('day=-1', () => {
     const wrapper = mountWithIntl(
       <ChatDelimeter
-        date={-1}
+        day={-1}
       />
     )
 
