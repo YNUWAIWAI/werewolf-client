@@ -149,7 +149,7 @@ export const changeLanguage = (language: village.Language): {language: village.L
   type: ActionTypes.global.CHANGE_LANGUAGE
 })
 
-export const changeDate = ({from, to}: {from: number, to: number}): {from: number, to: number, type: ActionTypes.global.CHANGE_DAY} => ({
+export const changeDay = ({from, to}: {from: number, to: number}): {from: number, to: number, type: ActionTypes.global.CHANGE_DAY} => ({
   from,
   to,
   type: ActionTypes.global.CHANGE_DAY
@@ -237,7 +237,7 @@ export const tick = ({start, time}: {start: number, time: number}): {start: numb
 })
 
 export type ActivateNextButton = ReturnType<typeof activateNextButton>
-export type ChangeDate = ReturnType<typeof changeDate>
+export type ChangeDay = ReturnType<typeof changeDay>
 export type ChangeLanguage = ReturnType<typeof changeLanguage>
 export type ChangePhase = ReturnType<typeof changePhase>
 export type ChangePredictionBoard = ReturnType<typeof handleBoardClick>
