@@ -10,7 +10,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
@@ -39,7 +39,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.grave}
@@ -68,7 +68,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.hunter}
@@ -97,7 +97,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.master}
@@ -126,7 +126,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.onymousAudience}
@@ -155,7 +155,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.private}
@@ -184,7 +184,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.public}
@@ -213,7 +213,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.seer}
@@ -242,7 +242,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.werewolf}
@@ -273,7 +273,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
@@ -302,7 +302,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.grave}
@@ -331,7 +331,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.hunter}
@@ -360,7 +360,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.master}
@@ -389,7 +389,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.onymousAudience}
@@ -418,7 +418,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.private}
@@ -447,7 +447,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.public}
@@ -476,7 +476,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.seer}
@@ -505,7 +505,7 @@ describe('<ChatItem />', () => {
       const wrapper = shallow(
         <ChatItem
           handleStar={handleStar}
-          id="1"
+          id={1}
           image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.werewolf}
