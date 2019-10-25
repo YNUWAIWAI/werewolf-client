@@ -3,8 +3,8 @@ import {village} from '../../types'
 
 interface Props {
   readonly inputChannel: village.InputChannel
-  readonly postCount: number
-  readonly postCountLimit: number
+  readonly maxNumberOfChatMessages: number
+  readonly numberOfChatMessages: number
 }
 
 export default function CommandInputPostCounnter(props: Props) {
@@ -13,7 +13,7 @@ export default function CommandInputPostCounnter(props: Props) {
     case village.InputChannel.werewolf:
       return (
         <span className="vi--command--input--counter">
-          {`${props.postCount}/${props.postCountLimit}`}
+          {`${props.numberOfChatMessages}/${props.maxNumberOfChatMessages}`}
         </span>
       )
     case village.InputChannel.grave:
