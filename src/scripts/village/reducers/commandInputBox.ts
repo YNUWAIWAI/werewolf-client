@@ -6,11 +6,11 @@ import {village} from '../types'
 
 export interface State {
   readonly public: {
-    readonly postCount: number
+    readonly numberOfChatMessages: number
   }
   readonly werewolf: {
     readonly available: boolean
-    readonly postCount: number
+    readonly numberOfChatMessages: number
   }
 }
 export type Action =
@@ -19,11 +19,11 @@ export type Action =
 
 export const initialState: State = {
   public: {
-    postCount: 0
+    numberOfChatMessages: 0
   },
   werewolf: {
     available: false,
-    postCount: 0
+    numberOfChatMessages: 0
   }
 }
 
@@ -33,11 +33,11 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
       return {
         ... state,
         public: {
-          postCount: 0
+          numberOfChatMessages: 0
         },
         werewolf: {
           ... state.werewolf,
-          postCount: 0
+          numberOfChatMessages: 0
         }
       }
     }
@@ -55,7 +55,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
               return {
                 ... state,
                 public: {
-                  postCount: just(action.payload.counter)
+                  numberOfChatMessages: just(action.payload.counter)
                 }
               }
             case village.InputChannel.werewolf:
@@ -63,7 +63,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
                 ... state,
                 werewolf: {
                   ... state.werewolf,
-                  postCount: just(action.payload.counter)
+                  numberOfChatMessages: just(action.payload.counter)
                 }
               }
             case village.InputChannel.grave:

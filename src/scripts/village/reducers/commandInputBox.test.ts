@@ -18,11 +18,11 @@ describe('socket/MESSAGE', () => {
       socket.message(myMessageOnChat)
     )).toStrictEqual({
       public: {
-        postCount: 7
+        numberOfChatMessages: 7
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -38,11 +38,11 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -52,11 +52,11 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning2)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -66,11 +66,11 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning6)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -80,11 +80,11 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning7)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: true,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -93,11 +93,11 @@ test('CHANGE_DAY', () => {
   expect(reducer(
     {
       public: {
-        postCount: 10
+        numberOfChatMessages: 10
       },
       werewolf: {
         available: true,
-        postCount: 10
+        numberOfChatMessages: 10
       }
     },
     {
@@ -107,11 +107,11 @@ test('CHANGE_DAY', () => {
     }
   )).toStrictEqual({
     public: {
-      postCount: 0
+      numberOfChatMessages: 0
     },
     werewolf: {
       available: true,
-      postCount: 0
+      numberOfChatMessages: 0
     }
   })
 })
