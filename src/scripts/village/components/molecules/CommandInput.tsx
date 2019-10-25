@@ -80,6 +80,10 @@ export default class CommandInput extends React.Component<Props, State> {
     this.handleSuggestClick = this.handleSuggestClick.bind(this)
   }
 
+  public shouldComponentUpdate() {
+    return true
+  }
+
   private textareaRef = React.createRef<HTMLTextAreaElement>()
 
   public getSearchText(text: string, caretPosition: number) {
