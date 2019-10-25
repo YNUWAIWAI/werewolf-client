@@ -1,4 +1,4 @@
-import {changeDate, changePhase} from '../actions'
+import {changeDay, changePhase} from '../actions'
 import {Middleware} from '.'
 import {socket} from '../constants/ActionTypes'
 import {village} from '../types'
@@ -16,10 +16,10 @@ const timeWatcher: Middleware = store => next => action => {
     ) {
       const base = store.getState().base
 
-      if (action.payload.date !== base.date) {
-        store.dispatch(changeDate({
-          from: base.date,
-          to: action.payload.date
+      if (action.payload.day !== base.day) {
+        store.dispatch(changeDay({
+          from: base.day,
+          to: action.payload.day
         }))
       }
       if (action.payload.phase !== base.phase) {
