@@ -26,7 +26,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     base: {
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -43,12 +43,12 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     mine: {
       agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
@@ -80,105 +80,105 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         ],
         byId: {
           '1': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+            '@id': 'https://licos.online/state/0.2/village#3/character#1',
             'id': '1',
             'image': ImagePath.Agent.a,
             'name': Agent.a,
             'status': village.AgentStatus.alive
           },
           '2': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+            '@id': 'https://licos.online/state/0.2/village#3/character#2',
             'id': '2',
             'image': ImagePath.Agent.b,
             'name': Agent.b,
             'status': village.AgentStatus.alive
           },
           '3': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+            '@id': 'https://licos.online/state/0.2/village#3/character#3',
             'id': '3',
             'image': ImagePath.Agent.c,
             'name': Agent.c,
             'status': village.AgentStatus.alive
           },
           '4': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+            '@id': 'https://licos.online/state/0.2/village#3/character#4',
             'id': '4',
             'image': ImagePath.Agent.d,
             'name': Agent.d,
             'status': village.AgentStatus.alive
           },
           '5': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+            '@id': 'https://licos.online/state/0.2/village#3/character#5',
             'id': '5',
             'image': ImagePath.Agent.e,
             'name': Agent.e,
             'status': village.AgentStatus.alive
           },
           '6': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+            '@id': 'https://licos.online/state/0.2/village#3/character#6',
             'id': '6',
             'image': ImagePath.Agent.f,
             'name': Agent.f,
             'status': village.AgentStatus.alive
           },
           '7': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+            '@id': 'https://licos.online/state/0.2/village#3/character#7',
             'id': '7',
             'image': ImagePath.Agent.g,
             'name': Agent.g,
             'status': village.AgentStatus.alive
           },
           '8': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+            '@id': 'https://licos.online/state/0.2/village#3/character#8',
             'id': '8',
             'image': ImagePath.Agent.h,
             'name': Agent.h,
             'status': village.AgentStatus.alive
           },
           '9': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+            '@id': 'https://licos.online/state/0.2/village#3/character#9',
             'id': '9',
             'image': ImagePath.Agent.i,
             'name': Agent.i,
             'status': village.AgentStatus.alive
           },
           '10': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+            '@id': 'https://licos.online/state/0.2/village#3/character#10',
             'id': '10',
             'image': ImagePath.Agent.j,
             'name': Agent.j,
             'status': village.AgentStatus.alive
           },
           '11': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+            '@id': 'https://licos.online/state/0.2/village#3/character#11',
             'id': '11',
             'image': ImagePath.Agent.k,
             'name': Agent.k,
             'status': village.AgentStatus.alive
           },
           '12': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+            '@id': 'https://licos.online/state/0.2/village#3/character#12',
             'id': '12',
             'image': ImagePath.Agent.l,
             'name': Agent.l,
             'status': village.AgentStatus.alive
           },
           '13': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+            '@id': 'https://licos.online/state/0.2/village#3/character#13',
             'id': '13',
             'image': ImagePath.Agent.m,
             'name': Agent.m,
             'status': village.AgentStatus.alive
           },
           '14': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+            '@id': 'https://licos.online/state/0.2/village#3/character#14',
             'id': '14',
             'image': ImagePath.Agent.n,
             'name': Agent.n,
             'status': village.AgentStatus.alive
           },
           '15': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+            '@id': 'https://licos.online/state/0.2/village#3/character#15',
             'id': '15',
             'image': ImagePath.Agent.o,
             'name': Agent.o,
@@ -203,56 +203,56 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'id': village.RoleId.villager,
             'image': ImagePath.Role.villager,
             'name': Role.villager,
-            'numberOfAgents': 6
+            'numberOfCharacters': 6
           },
           [village.RoleId.seer]: {
             '@id': 'https://licos.online/state/0.2/village#3/role#seer',
             'id': village.RoleId.seer,
             'image': ImagePath.Role.seer,
             'name': Role.seer,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.medium]: {
             '@id': 'https://licos.online/state/0.2/village#3/role#medium',
             'id': village.RoleId.medium,
             'image': ImagePath.Role.medium,
             'name': Role.medium,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.hunter]: {
             '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
             'id': village.RoleId.hunter,
             'image': ImagePath.Role.hunter,
             'name': Role.hunter,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.mason]: {
             '@id': 'https://licos.online/state/0.2/village#3/role#mason',
             'id': village.RoleId.mason,
             'image': ImagePath.Role.mason,
             'name': Role.mason,
-            'numberOfAgents': 2
+            'numberOfCharacters': 2
           },
           [village.RoleId.madman]: {
             '@id': 'https://licos.online/state/0.2/village#3/role#madman',
             'id': village.RoleId.madman,
             'image': ImagePath.Role.madman,
             'name': Role.madman,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.werewolf]: {
             '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
             'id': village.RoleId.werewolf,
             'image': ImagePath.Role.werewolf,
             'name': Role.werewolf,
-            'numberOfAgents': 2
+            'numberOfCharacters': 2
           },
           [village.RoleId.werehamster]: {
             '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
             'id': village.RoleId.werehamster,
             'image': ImagePath.Role.werehamster,
             'name': Role.werehamster,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           }
         }
       },
@@ -270,32 +270,32 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: ChangePredictionBoard = {
+    characterId: '2',
     nextState: village.BoardState.CIRCLE,
-    playerId: '2',
     roleId: village.RoleId.villager,
     type: ActionTypes.global.CHANGE_PREDICTION_BOARD
   }
-  const payload: village.Payload$boardMessage = {
+  const payload: village.Payload$BoardMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Board
     ],
     '@id': 'https://licos.online/state/0.2/village#3/boardMessage',
-    'agent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+    'character': {
+      '@context': village.Context.Character,
+      '@id': 'https://licos.online/state/0.2/village#3/character#2',
       'id': 2,
       'image': ImagePath.Agent.b,
       'name': Agent.b
     },
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
-    'myAgent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+    'myCharacter': {
+      '@context': village.Context.Character,
+      '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
@@ -324,13 +324,13 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
@@ -396,7 +396,7 @@ describe('POST_CHAT', () => {
     base: {
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -413,12 +413,12 @@ describe('POST_CHAT', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     mine: {
       agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
@@ -450,14 +450,14 @@ describe('POST_CHAT', () => {
     '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
     'agent': {
       '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a
     },
     'characterLimit': 140,
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.public,
@@ -465,7 +465,7 @@ describe('POST_CHAT', () => {
     'isOver': false,
     'myAgent': {
       '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
@@ -497,7 +497,7 @@ describe('POST_CHAT', () => {
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
@@ -603,7 +603,7 @@ describe('SELECT_YES', () => {
     base: {
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.noon,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -620,7 +620,7 @@ describe('SELECT_YES', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     commandSelection: {
@@ -642,85 +642,85 @@ describe('SELECT_YES', () => {
       ],
       byId: {
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          '@id': 'https://licos.online/state/0.2/village#3/character#2',
           'id': '2',
           'image': ImagePath.Agent.b,
           'name': Agent.b
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          '@id': 'https://licos.online/state/0.2/village#3/character#3',
           'id': '3',
           'image': ImagePath.Agent.c,
           'name': Agent.c
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          '@id': 'https://licos.online/state/0.2/village#3/character#4',
           'id': '4',
           'image': ImagePath.Agent.d,
           'name': Agent.d
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          '@id': 'https://licos.online/state/0.2/village#3/character#5',
           'id': '5',
           'image': ImagePath.Agent.e,
           'name': Agent.e
         },
         '6': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+          '@id': 'https://licos.online/state/0.2/village#3/character#6',
           'id': '6',
           'image': ImagePath.Agent.f,
           'name': Agent.f
         },
         '7': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+          '@id': 'https://licos.online/state/0.2/village#3/character#7',
           'id': '7',
           'image': ImagePath.Agent.g,
           'name': Agent.g
         },
         '8': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+          '@id': 'https://licos.online/state/0.2/village#3/character#8',
           'id': '8',
           'image': ImagePath.Agent.h,
           'name': Agent.h
         },
         '9': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+          '@id': 'https://licos.online/state/0.2/village#3/character#9',
           'id': '9',
           'image': ImagePath.Agent.i,
           'name': Agent.i
         },
         '10': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+          '@id': 'https://licos.online/state/0.2/village#3/character#10',
           'id': '10',
           'image': ImagePath.Agent.j,
           'name': Agent.j
         },
         '11': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+          '@id': 'https://licos.online/state/0.2/village#3/character#11',
           'id': '11',
           'image': ImagePath.Agent.k,
           'name': Agent.k
         },
         '12': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+          '@id': 'https://licos.online/state/0.2/village#3/character#12',
           'id': '12',
           'image': ImagePath.Agent.l,
           'name': Agent.l
         },
         '13': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+          '@id': 'https://licos.online/state/0.2/village#3/character#13',
           'id': '13',
           'image': ImagePath.Agent.m,
           'name': Agent.m
         },
         '14': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+          '@id': 'https://licos.online/state/0.2/village#3/character#14',
           'id': '14',
           'image': ImagePath.Agent.n,
           'name': Agent.n
         },
         '15': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+          '@id': 'https://licos.online/state/0.2/village#3/character#15',
           'id': '15',
           'image': ImagePath.Agent.o,
           'name': Agent.o
@@ -730,7 +730,7 @@ describe('SELECT_YES', () => {
     },
     mine: {
       agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
@@ -761,19 +761,19 @@ describe('SELECT_YES', () => {
     '@id': 'https://licos.online/state/0.2/village#3/voteMessage',
     'agent': {
       '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+      '@id': 'https://licos.online/state/0.2/village#3/character#2',
       'id': 2,
       'image': ImagePath.Agent.b,
       'name': Agent.b
     },
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
     'myAgent': {
       '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
@@ -801,7 +801,7 @@ describe('SELECT_YES', () => {
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
@@ -865,7 +865,7 @@ describe('STAR', () => {
     base: {
       '@id': 'https://licos.online/state/0.2/village#3',
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.noon,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -882,7 +882,7 @@ describe('STAR', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     chat: {
@@ -908,7 +908,7 @@ describe('STAR', () => {
     },
     mine: {
       agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+        '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
@@ -939,13 +939,13 @@ describe('STAR', () => {
     ],
     '@id': 'https://licos.online/state/0.2/village#3/starMessage',
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
     'myAgent': {
       '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
@@ -981,7 +981,7 @@ describe('STAR', () => {
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
