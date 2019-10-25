@@ -28,13 +28,13 @@ const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const selectedAgentId = state.commandSelection.allIds.find(agentId => agentId === state.modal.id)
+  const selectedAgentId = state.commandSelection.allIds.find(characterId => characterId === state.modal.id)
 
   if (typeof selectedAgentId === 'undefined') {
     return {
       descriptionId: 'Modal.Description.wait',
       id: '',
-      image: 'https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png',
+      image: 'https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png',
       initial: '',
       name: '',
       visible: state.modal.visible

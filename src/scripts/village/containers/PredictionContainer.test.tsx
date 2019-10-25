@@ -23,35 +23,35 @@ describe('<PredictionContainer />', () => {
       ],
       byId: {
         '1': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          '@id': 'https://licos.online/state/0.2/village#3/character#1',
           'id': '1',
           'image': ImagePath.Agent.a,
           'name': Agent.a,
           'status': village.CharacterStatus.alive
         },
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          '@id': 'https://licos.online/state/0.2/village#3/character#2',
           'id': '2',
           'image': ImagePath.Agent.b,
           'name': Agent.b,
           'status': village.CharacterStatus.alive
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          '@id': 'https://licos.online/state/0.2/village#3/character#3',
           'id': '3',
           'image': ImagePath.Agent.c,
           'name': Agent.c,
           'status': village.CharacterStatus.alive
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          '@id': 'https://licos.online/state/0.2/village#3/character#4',
           'id': '4',
           'image': ImagePath.Agent.d,
           'name': Agent.d,
           'status': village.CharacterStatus.alive
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          '@id': 'https://licos.online/state/0.2/village#3/character#5',
           'id': '5',
           'image': ImagePath.Agent.e,
           'name': Agent.e,

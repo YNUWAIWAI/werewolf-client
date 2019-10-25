@@ -20,7 +20,7 @@ describe('<CommandSelectionContainer />', () => {
             base: {
               '@id': 'https://licos.online/state/0.2/village#3',
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-              'date': 1,
+              'day': 1,
               'intensionalDisclosureRange': village.Channel.private,
               'phase': village.Phase.noon,
               'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -28,11 +28,10 @@ describe('<CommandSelectionContainer />', () => {
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
               'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
               'village': {
-                '@context': village.Context.Village,
                 '@id': 'https://licos.online/state/0.2/village',
                 'chatSettings': {
-                  characterLimit: 140,
-                  limit: 10
+                  maxLengthOfUnicodeCodePoints: 140,
+                  maxNumberOfChatMessages: 10
                 },
                 'id': 3,
                 'lang': village.Language.en,
@@ -46,25 +45,25 @@ describe('<CommandSelectionContainer />', () => {
               ],
               byId: {
                 '2': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#2',
                   'id': '2',
                   'image': ImagePath.Agent.b,
                   'name': Agent.b
                 },
                 '3': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#3',
                   'id': '3',
                   'image': ImagePath.Agent.c,
                   'name': Agent.c
                 },
                 '4': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#4',
                   'id': '4',
                   'image': ImagePath.Agent.d,
                   'name': Agent.d
                 },
                 '5': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#5',
                   'id': '5',
                   'image': ImagePath.Agent.e,
                   'name': Agent.e
@@ -74,8 +73,8 @@ describe('<CommandSelectionContainer />', () => {
             },
             language: village.Language.en,
             mine: {
-              agent: {
-                '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+              character: {
+                '@id': 'https://licos.online/state/0.2/village#3/character#1',
                 'id': 1,
                 'image': ImagePath.Agent.a,
                 'name': Agent.a
@@ -105,7 +104,7 @@ describe('<CommandSelectionContainer />', () => {
             base: {
               '@id': 'https://licos.online/state/0.2/village#3',
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-              'date': 1,
+              'day': 1,
               'intensionalDisclosureRange': village.Channel.private,
               'phase': village.Phase.noon,
               'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -113,11 +112,10 @@ describe('<CommandSelectionContainer />', () => {
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
               'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
               'village': {
-                '@context': village.Context.Village,
                 '@id': 'https://licos.online/state/0.2/village',
                 'chatSettings': {
-                  characterLimit: 140,
-                  limit: 10
+                  maxLengthOfUnicodeCodePoints: 140,
+                  maxNumberOfChatMessages: 10
                 },
                 'id': 3,
                 'lang': village.Language.en,
@@ -134,25 +132,25 @@ describe('<CommandSelectionContainer />', () => {
               ],
               byId: {
                 '2': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#2',
                   'id': '2',
                   'image': ImagePath.Agent.b,
                   'name': Agent.b
                 },
                 '3': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#3',
                   'id': '3',
                   'image': ImagePath.Agent.c,
                   'name': Agent.c
                 },
                 '4': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#4',
                   'id': '4',
                   'image': ImagePath.Agent.d,
                   'name': Agent.d
                 },
                 '5': {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                  '@id': 'https://licos.online/state/0.2/village#3/character#5',
                   'id': '5',
                   'image': ImagePath.Agent.e,
                   'name': Agent.e
@@ -162,8 +160,8 @@ describe('<CommandSelectionContainer />', () => {
             },
             language: village.Language.en,
             mine: {
-              agent: {
-                '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+              character: {
+                '@id': 'https://licos.online/state/0.2/village#3/character#1',
                 'id': 1,
                 'image': ImagePath.Agent.a,
                 'name': Agent.a
@@ -196,7 +194,7 @@ describe('<CommandSelectionContainer />', () => {
               base: {
                 '@id': 'https://licos.online/state/0.2/village#3',
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-                'date': 1,
+                'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
                 'phase': village.Phase.night,
                 'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -204,11 +202,10 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@context': village.Context.Village,
                   '@id': 'https://licos.online/state/0.2/village',
                   'chatSettings': {
-                    characterLimit: 140,
-                    limit: 10
+                    maxLengthOfUnicodeCodePoints: 140,
+                    maxNumberOfChatMessages: 10
                   },
                   'id': 3,
                   'lang': village.Language.en,
@@ -222,25 +219,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
                     'id': '5',
                     'image': ImagePath.Agent.e,
                     'name': Agent.e
@@ -250,8 +247,8 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.en,
               mine: {
-                agent: {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                character: {
+                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
                   'image': ImagePath.Agent.a,
                   'name': Agent.a
@@ -281,7 +278,7 @@ describe('<CommandSelectionContainer />', () => {
               base: {
                 '@id': 'https://licos.online/state/0.2/village#3',
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-                'date': 1,
+                'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
                 'phase': village.Phase.night,
                 'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -289,11 +286,10 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@context': village.Context.Village,
                   '@id': 'https://licos.online/state/0.2/village',
                   'chatSettings': {
-                    characterLimit: 140,
-                    limit: 10
+                    maxLengthOfUnicodeCodePoints: 140,
+                    maxNumberOfChatMessages: 10
                   },
                   'id': 3,
                   'lang': village.Language.en,
@@ -310,25 +306,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
                     'id': '5',
                     'image': ImagePath.Agent.e,
                     'name': Agent.e
@@ -338,8 +334,8 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.en,
               mine: {
-                agent: {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                character: {
+                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
                   'image': ImagePath.Agent.a,
                   'name': Agent.a
@@ -371,7 +367,7 @@ describe('<CommandSelectionContainer />', () => {
               base: {
                 '@id': 'https://licos.online/state/0.2/village#3',
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-                'date': 1,
+                'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
                 'phase': village.Phase.night,
                 'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -379,11 +375,10 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@context': village.Context.Village,
                   '@id': 'https://licos.online/state/0.2/village',
                   'chatSettings': {
-                    characterLimit: 140,
-                    limit: 10
+                    maxLengthOfUnicodeCodePoints: 140,
+                    maxNumberOfChatMessages: 10
                   },
                   'id': 3,
                   'lang': village.Language.en,
@@ -397,25 +392,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
                     'id': '5',
                     'image': ImagePath.Agent.e,
                     'name': Agent.e
@@ -425,8 +420,8 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.en,
               mine: {
-                agent: {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                character: {
+                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
                   'image': ImagePath.Agent.a,
                   'name': Agent.a
@@ -456,7 +451,7 @@ describe('<CommandSelectionContainer />', () => {
               base: {
                 '@id': 'https://licos.online/state/0.2/village#3',
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-                'date': 1,
+                'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
                 'phase': village.Phase.night,
                 'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -464,11 +459,10 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@context': village.Context.Village,
                   '@id': 'https://licos.online/state/0.2/village',
                   'chatSettings': {
-                    characterLimit: 140,
-                    limit: 10
+                    maxLengthOfUnicodeCodePoints: 140,
+                    maxNumberOfChatMessages: 10
                   },
                   'id': 3,
                   'lang': village.Language.en,
@@ -485,25 +479,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
                     'id': '5',
                     'image': ImagePath.Agent.e,
                     'name': Agent.e
@@ -513,8 +507,8 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.en,
               mine: {
-                agent: {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                character: {
+                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
                   'image': ImagePath.Agent.a,
                   'name': Agent.a
@@ -546,7 +540,7 @@ describe('<CommandSelectionContainer />', () => {
               base: {
                 '@id': 'https://licos.online/state/0.2/village#3',
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-                'date': 1,
+                'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
                 'phase': village.Phase.night,
                 'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -554,11 +548,10 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@context': village.Context.Village,
                   '@id': 'https://licos.online/state/0.2/village',
                   'chatSettings': {
-                    characterLimit: 140,
-                    limit: 10
+                    maxLengthOfUnicodeCodePoints: 140,
+                    maxNumberOfChatMessages: 10
                   },
                   'id': 3,
                   'lang': village.Language.en,
@@ -572,25 +565,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
                     'id': '5',
                     'image': ImagePath.Agent.e,
                     'name': Agent.e
@@ -600,8 +593,8 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.en,
               mine: {
-                agent: {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                character: {
+                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
                   'image': ImagePath.Agent.a,
                   'name': Agent.a
@@ -631,7 +624,7 @@ describe('<CommandSelectionContainer />', () => {
               base: {
                 '@id': 'https://licos.online/state/0.2/village#3',
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-                'date': 1,
+                'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
                 'phase': village.Phase.night,
                 'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -639,11 +632,10 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@context': village.Context.Village,
                   '@id': 'https://licos.online/state/0.2/village',
                   'chatSettings': {
-                    characterLimit: 140,
-                    limit: 10
+                    maxLengthOfUnicodeCodePoints: 140,
+                    maxNumberOfChatMessages: 10
                   },
                   'id': 3,
                   'lang': village.Language.en,
@@ -660,25 +652,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
                     'image': ImagePath.Agent.b,
                     'name': Agent.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
                     'image': ImagePath.Agent.c,
                     'name': Agent.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
                     'image': ImagePath.Agent.d,
                     'name': Agent.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
                     'id': '5',
                     'image': ImagePath.Agent.e,
                     'name': Agent.e
@@ -688,8 +680,8 @@ describe('<CommandSelectionContainer />', () => {
               },
               language: village.Language.en,
               mine: {
-                agent: {
-                  '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+                character: {
+                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
                   'image': ImagePath.Agent.a,
                   'name': Agent.a
@@ -720,7 +712,7 @@ describe('<CommandSelectionContainer />', () => {
             base: {
               '@id': 'https://licos.online/state/0.2/village#3',
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-              'date': 1,
+              'day': 1,
               'intensionalDisclosureRange': village.Channel.private,
               'phase': village.Phase.night,
               'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -728,11 +720,10 @@ describe('<CommandSelectionContainer />', () => {
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
               'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
               'village': {
-                '@context': village.Context.Village,
                 '@id': 'https://licos.online/state/0.2/village',
                 'chatSettings': {
-                  characterLimit: 140,
-                  limit: 10
+                  maxLengthOfUnicodeCodePoints: 140,
+                  maxNumberOfChatMessages: 10
                 },
                 'id': 3,
                 'lang': village.Language.en,
@@ -747,8 +738,8 @@ describe('<CommandSelectionContainer />', () => {
             },
             language: village.Language.en,
             mine: {
-              agent: {
-                '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+              character: {
+                '@id': 'https://licos.online/state/0.2/village#3/character#1',
                 'id': 1,
                 'image': ImagePath.Agent.a,
                 'name': Agent.a
@@ -791,12 +782,12 @@ describe('<CommandSelectionContainer />', () => {
         </IntlProviderContainer>
       </Provider>
     )
-    const agentId = '4'
+    const characterId = '4'
 
-    wrapper.find(CommandSelection).props().handleSelectOption(agentId)()
+    wrapper.find(CommandSelection).props().handleSelectOption(characterId)()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      agentId,
+      characterId,
       type: ActionTypes.global.SELECT_OPTION
     })
   })

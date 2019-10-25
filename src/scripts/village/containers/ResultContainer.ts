@@ -9,18 +9,18 @@ type Action =
   | HideResult
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const agents: StateProps['agents'] = {}
+  const characters: StateProps['characters'] = {}
 
   state.result.allIds.forEach(id => {
-    const a = state.result.agents[id]
+    const a = state.result.characters[id]
 
-    agents[id] = {
-      agentId: a.agentId,
-      agentImage: a.agentImage,
-      agentInitial: getInitial(a.agentName.en),
-      agentName: getText({
+    characters[id] = {
+      characterId: a.characterId,
+      characterImage: a.characterImage,
+      characterInitial: getInitial(a.characterName.en),
+      characterName: getText({
         language: state.language,
-        languageMap: a.agentName
+        languageMap: a.characterName
       }),
       avatarImage: a.avatarImage,
       avatarName: a.avatarName,
@@ -41,7 +41,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 
   return {
-    agents,
+    characters,
     losers: state.result.losers,
     me: state.result.me,
     summary,

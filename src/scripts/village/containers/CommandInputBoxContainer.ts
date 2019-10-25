@@ -9,7 +9,7 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   ... state.commandInputBox,
-  characterLimit: state.base.village.chatSettings.characterLimit,
+  maxLengthOfUnicodeCodePoints: state.base.village.chatSettings.characterLimit,
   language: state.language,
   postCountLimit: state.base.village.chatSettings.limit,
   suggesttedData: state.suggest.data

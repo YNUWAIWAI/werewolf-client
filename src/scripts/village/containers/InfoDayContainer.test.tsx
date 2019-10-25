@@ -12,7 +12,7 @@ test('<InfoDayContainer />', () => {
       base: {
         '@id': 'https://licos.online/state/0.2/village#3',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'date': 1,
+        'day': 1,
         'intensionalDisclosureRange': village.Channel.private,
         'phase': village.Phase.morning,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -23,8 +23,8 @@ test('<InfoDayContainer />', () => {
           '@context': village.Context.Village,
           '@id': 'https://licos.online/state/0.2/village',
           'chatSettings': {
-            characterLimit: 140,
-            limit: 10
+            maxLengthOfUnicodeCodePoints: 140,
+            maxNumberOfChatMessages: 10
           },
           'id': 3,
           'lang': village.Language.en,

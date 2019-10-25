@@ -21,13 +21,13 @@ describe('<InfoAgentContainer />', () => {
 
     expect(wrapper.html()).toMatchSnapshot()
   })
-  test('mine.agent exists', () => {
+  test('mine.character exists', () => {
     const store = fakeStore(
       {
         language: village.Language.en,
         mine: {
-          agent: {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          character: {
+            '@id': 'https://licos.online/state/0.2/village#3/character#1',
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a

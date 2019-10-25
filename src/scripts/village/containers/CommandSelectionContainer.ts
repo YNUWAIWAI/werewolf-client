@@ -29,24 +29,24 @@ const getDescriptionId = (phase: village.Phase, role: village.RoleId, fixed: boo
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const agents = state.commandSelection.allIds
-    .map(agentId => {
-      const agent = state.commandSelection.byId[agentId]
+  const characters = state.commandSelection.allIds
+    .map(characterId => {
+      const character = state.commandSelection.byId[characterId]
 
       return {
-        id: agent.id,
-        image: agent.image,
-        initial: getInitial(agent.name.en),
+        id: character.id,
+        image: character.image,
+        initial: getInitial(character.name.en),
         name: getText({
           language: state.language,
-          languageMap: agent.name
+          languageMap: character.name
         })
       }
     })
 
   if (!state.mine.role) {
     return {
-      agents,
+      characters,
       descriptionId: 'CommandSelection.Description.wait',
       fixed: state.commandSelection.fixed,
       phase: state.base.phase
@@ -54,7 +54,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 
   return {
-    agents,
+    characters,
     descriptionId: getDescriptionId(
       state.base.phase,
       state.mine.role.id,
@@ -66,9 +66,9 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleSelectOption: agentId => () => {
+  handleSelectOption: characterId => () => {
     dispatch(
-      selectOption(agentId)
+      selectOption(characterId)
     )
   }
 })
