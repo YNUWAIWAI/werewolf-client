@@ -234,7 +234,7 @@ describe('<Prediction />', () => {
     )
 
     expect(wrapper.find('PredictionRole')).toHaveLength(4)
-    expect(wrapper.find('PredictionPlayer')).toHaveLength(5)
+    expect(wrapper.find('PredictionCharacter')).toHaveLength(5)
     expect(wrapper.find('PredictionItem')).toHaveLength(4 * 5)
   })
 })
