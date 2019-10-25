@@ -15,7 +15,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={0}
+            day={0}
             phase={village.Phase.morning}
           />
         </Provider>
@@ -27,7 +27,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={1}
+            day={1}
             phase={village.Phase.noon}
           />
         </Provider>
@@ -39,7 +39,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={1}
+            day={1}
             phase={village.Phase.night}
           />
         </Provider>
@@ -51,7 +51,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={-1}
+            day={-1}
             phase={village.Phase.postMortem}
           />
         </Provider>
@@ -63,7 +63,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={-1}
+            day={-1}
             phase={village.Phase.result}
           />
         </Provider>
@@ -75,7 +75,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={1}
+            day={1}
             phase={village.Phase.flavorText}
           />
         </Provider>
