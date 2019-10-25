@@ -2,14 +2,6 @@
 export * from './schema'
 export * from './payload'
 
-export const enum AgentStatus {
-  alive = 'alive',
-  dead = 'dead',
-  deathByAttack = 'death by attack',
-  deathByExecution = 'death by execution',
-  deathByFear = 'death by fear',
-  unnaturalDeath = 'unnatural death'
-}
 export const enum BaseContext {
   Base = 'https://werewolf.world/context/0.3/base.jsonld',
   Board = 'https://werewolf.world/context/0.3/board.jsonld',
@@ -42,6 +34,14 @@ export const enum Channel {
   werewolf = 'werewolf'
 }
 export type CharacterId = string
+export const enum CharacterStatus {
+  alive = 'alive',
+  dead = 'dead',
+  deathByAttack = 'death by attack',
+  deathByExecution = 'death by execution',
+  deathByFear = 'death by fear',
+  unnaturalDeath = 'unnatural death'
+}
 export const enum ChatChannel {
   grave = 'grave',
   master = 'master',
