@@ -10,7 +10,7 @@ import {village} from '../../types'
 
 export interface Props {
   readonly handleStar: (isMarked: boolean) => void
-  readonly id: village.ChatId
+  readonly id: village.Payload$ChatId
   readonly image: string
   readonly initial: string
   readonly intensionalDisclosureRange: village.Channel
