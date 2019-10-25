@@ -13,7 +13,7 @@ import {village} from '../types'
 
 describe('<PredictionContainer />', () => {
   test('render', () => {
-    const playerStatus = {
+    const characterStatus = {
       allIds: [
         '1',
         '2',
@@ -27,35 +27,35 @@ describe('<PredictionContainer />', () => {
           'id': '1',
           'image': ImagePath.Agent.a,
           'name': Agent.a,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '2': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#2',
           'id': '2',
           'image': ImagePath.Agent.b,
           'name': Agent.b,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '3': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#3',
           'id': '3',
           'image': ImagePath.Agent.c,
           'name': Agent.c,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '4': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#4',
           'id': '4',
           'image': ImagePath.Agent.d,
           'name': Agent.d,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '5': {
           '@id': 'https://licos.online/state/0.2/village#3/agent#5',
           'id': '5',
           'image': ImagePath.Agent.e,
           'name': Agent.e,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         }
       }
     }
@@ -104,110 +104,110 @@ describe('<PredictionContainer />', () => {
     const table = {
       '1': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.CIRCLE
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         }
       },
       '2': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.TRIANGLE
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '3': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '4': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '5': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
@@ -218,7 +218,7 @@ describe('<PredictionContainer />', () => {
         base: {
           '@id': 'https://licos.online/state/0.2/village#3',
           'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-          'date': 1,
+          'day': 1,
           'intensionalDisclosureRange': village.Channel.private,
           'phase': village.Phase.morning,
           'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -226,11 +226,10 @@ describe('<PredictionContainer />', () => {
           'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
           'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
           'village': {
-            '@context': village.Context.Village,
             '@id': 'https://licos.online/state/0.2/village',
             'chatSettings': {
-              characterLimit: 140,
-              limit: 10
+              maxLengthOfUnicodeCodePoints: 140,
+              maxNumberOfChatMessages: 10
             },
             'id': 3,
             'lang': village.Language.en,
@@ -244,9 +243,9 @@ describe('<PredictionContainer />', () => {
           ],
           byId: {
             chat0: {
-              agentId: '1',
+              characterId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -257,13 +256,13 @@ describe('<PredictionContainer />', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             }
           }
         },
         language: village.Language.en,
         prediction: {
-          playerStatus,
+          characterStatus,
           roleStatus,
           spec,
           table
@@ -297,15 +296,18 @@ describe('<PredictionContainer />', () => {
         </IntlProviderContainer>
       </Provider>
     )
-    const playerId = '4'
+    const characterId = '4'
     const roleId = village.RoleId.villager
     const nextState = village.BoardState.CROSS
 
-    wrapper.find(Prediction).props().handleBoardClick(playerId, roleId)(nextState)
+    wrapper.find(Prediction).props().handleBoardClick({
+      characterId,
+      roleId
+    })(nextState)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
+      characterId,
       nextState,
-      playerId,
       roleId,
       type: ActionTypes.global.CHANGE_PREDICTION_BOARD
     })
