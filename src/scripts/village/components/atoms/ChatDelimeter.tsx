@@ -2,16 +2,16 @@ import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 
 export interface Props {
-  readonly date: number
+  readonly day: number
 }
 
 export default function ChatDelimeter(props: Props) {
-  if (props.date >= 0) {
+  if (props.day >= 0) {
     return (
       <FormattedMessage
-        id="ChatContainer.date"
+        id="ChatContainer.day"
         values={{
-          date: props.date
+          day: props.day
         }}
       >
         {
