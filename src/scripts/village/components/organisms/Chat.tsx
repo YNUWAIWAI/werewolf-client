@@ -6,8 +6,8 @@ import {village} from '../../types'
 export interface StateProps {
   readonly allIds: village.ChatId[]
   readonly byId: {
-    [id: string /* village.ChatId */]: {
-      readonly id: number
+    readonly [id in village.ChatId]: {
+      readonly id: village.Payload$ChatId
       readonly image: string
       readonly initial: string
       readonly intensionalDisclosureRange: village.Channel
@@ -18,10 +18,10 @@ export interface StateProps {
       readonly phaseTimeLimit: number
       readonly serverTimestamp: string
       readonly text: string
-      readonly type: 'item'
+      readonly type: village.ChatItemType.item
     } | {
-      readonly date: number
-      readonly type: 'delimeter'
+      readonly day: number
+      readonly type: village.ChatItemType.delimeter
     }
   }
 }
@@ -43,6 +43,10 @@ export default class Chat extends React.Component<Props, State> {
 
   public componentDidMount() {
     this.scrollToBottom()
+  }
+
+  public shouldComponentUpdate() {
+    return true
   }
 
   public componentDidUpdate() {
@@ -106,7 +110,7 @@ export default class Chat extends React.Component<Props, State> {
               case 'delimeter':
                 return (
                   <ChatDelimeter
-                    date={item.date}
+                    day={item.day}
                     key={id}
                   />
                 )

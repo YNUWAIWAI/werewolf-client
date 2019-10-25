@@ -41,7 +41,7 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
       const handleStarInner = jest.fn()
@@ -74,7 +74,7 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'chat1': {
           id: 2,
@@ -88,7 +88,7 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
       const handleStarInner = jest.fn()
@@ -123,7 +123,7 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'chat1': {
           id: 2,
@@ -137,7 +137,7 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'chat2': {
           id: 3,
@@ -151,11 +151,11 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'delimeter0': {
-          date: 1,
-          type: 'delimeter'
+          day: 1,
+          type: village.ChatItemType.delimeter
         }
       }
       const handleStarInner = jest.fn()
@@ -193,7 +193,7 @@ describe('<Chat />', () => {
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
 
