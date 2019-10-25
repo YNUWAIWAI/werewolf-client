@@ -10,7 +10,7 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   ... state.commandGrave,
-  maxLengthOfUnicodeCodePoints: state.base.village.chatSettings.characterLimit,
+  maxLengthOfUnicodeCodePoints: state.base.village.chatSettings.maxLengthOfUnicodeCodePoints,
   language: state.language,
   suggesttedData: state.suggest.data
 })
