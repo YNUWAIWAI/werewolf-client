@@ -9,7 +9,7 @@ import middleware from './flavorText'
 import {socket} from '../actions'
 import {village} from '../types'
 
-const BASE_URI = `https://werewolf.world/schema/${VERSION}`
+const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('socket/MESSAGE', () => {
   const store = fakeStore()
@@ -27,25 +27,26 @@ describe('socket/MESSAGE', () => {
       ],
       '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/chatMessage',
       '@payload': village.Message.chatMessage,
-      'agent': {
-        '@context': village.Context.Agent,
-        '@id': 'https://licos.online/state/0.2/village#3/agent',
+      'character': {
+        '@context': village.Context.Character,
+        '@id': 'https://licos.online/state/0.2/village#3/character',
         'id': 1,
         'image': ImagePath.Agent120x120.a,
         'name': Agent.a
       },
-      'characterLimit': 140,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,
-      'date': 1,
+      'day': 1,
       'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'id': 1,
       'intensionalDisclosureRange': village.Channel.public,
       'interval': '5s',
+      'isFromServer': true,
       'isMine': false,
       'isOver': false,
-      'limit': 10,
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
@@ -61,8 +62,8 @@ describe('socket/MESSAGE', () => {
         'chatSettings': {
           '@context': village.Context.ChatSettings,
           '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
+          'maxLengthOfUnicodeCodePoints': 140,
+          'maxNumberOfChatMessages': 10
         },
         'id': 3,
         'lang': village.Language.en,
@@ -77,25 +78,26 @@ describe('socket/MESSAGE', () => {
       ],
       '@id': 'https://licos.online/state/0.2/village#3/flavorText#2/chatMessage',
       '@payload': village.Message.chatMessage,
-      'agent': {
-        '@context': village.Context.Agent,
-        '@id': 'https://licos.online/state/0.2/village#3/agent',
+      'character': {
+        '@context': village.Context.Character,
+        '@id': 'https://licos.online/state/0.2/village#3/character',
         'id': 1,
         'image': ImagePath.Agent120x120.a,
         'name': Agent.a
       },
-      'characterLimit': 140,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,
-      'date': 1,
+      'day': 1,
       'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'id': 1,
       'intensionalDisclosureRange': village.Channel.public,
       'interval': '5s',
+      'isFromServer': true,
       'isMine': false,
       'isOver': false,
-      'limit': 10,
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
@@ -111,8 +113,8 @@ describe('socket/MESSAGE', () => {
         'chatSettings': {
           '@context': village.Context.ChatSettings,
           '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
+          'maxLengthOfUnicodeCodePoints': 140,
+          'maxNumberOfChatMessages': 10
         },
         'id': 3,
         'lang': village.Language.en,
@@ -121,14 +123,14 @@ describe('socket/MESSAGE', () => {
       }
     }
   ]
-  const payload: village.Payload$flavorTextMessage = {
+  const payload: village.Payload$FlavorTextMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.FlavorText
     ],
     '@id': 'https://licos.online/state/0.2/village#3/flavorTextMessage',
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.serverToClient,
     'extensionalDisclosureRange': [],
     'flavorText': flavorTextPayload,
@@ -144,8 +146,8 @@ describe('socket/MESSAGE', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
@@ -163,7 +165,7 @@ describe('socket/MESSAGE', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
