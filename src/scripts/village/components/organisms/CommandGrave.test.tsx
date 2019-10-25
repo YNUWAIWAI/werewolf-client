@@ -15,10 +15,10 @@ test('<CommandGrave />', () => {
   ]
   const wrapper = shallow(
     <CommandGrave
-      characterLimit={140}
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
       language={village.Language.en}
+      maxLengthOfUnicodeCodePoints={140}
       navigation={navigation}
       suggesttedData={[]}
     />
