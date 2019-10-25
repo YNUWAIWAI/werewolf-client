@@ -7,7 +7,7 @@ interface Props {
   readonly to: string
 }
 
-export default function ChatDate(props: Props) {
+export default function ChatDay(props: Props) {
   const f = new Date(props.from)
   const t = new Date(props.to)
   const restTimeValue = f.getTime() - t.getTime() + props.limit * 1000
@@ -37,7 +37,7 @@ export default function ChatDate(props: Props) {
 
   return (
     <FormattedMessage
-      id="ChatDate"
+      id="ChatDay"
       values={{
         postTime,
         restTime
@@ -45,7 +45,7 @@ export default function ChatDate(props: Props) {
     >
       {
         (... text) => (
-          <div className="vi--chat--date">
+          <div className="vi--chat--day">
             {text}
           </div>
         )

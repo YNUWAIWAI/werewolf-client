@@ -136,7 +136,7 @@
       grid-area: text;
       grid-template-areas:
         'num text text'
-        'star icon date';
+        'star icon day';
       grid-template-columns: 2.5rem 2.5rem 1fr;
       position: relative;
 
@@ -216,10 +216,10 @@
       }
     }
 
-    &--date {
+    &--day {
       display: inline-flex;
       flex-flow: column-reverse;
-      grid-area: date;
+      grid-area: day;
       padding: 0 1rem 1rem 0;
       text-align: right;
     }
