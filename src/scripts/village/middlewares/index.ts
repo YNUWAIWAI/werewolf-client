@@ -14,7 +14,7 @@ import windowLocation from './windowLocation'
 
 type Action =
   | actions.ActivateNextButton
-  | actions.ChangeDate
+  | actions.ChangeDay
   | actions.ChangeLanguage
   | actions.ChangePhase
   | actions.ChangePredictionBoard
