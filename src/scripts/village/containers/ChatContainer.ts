@@ -4,6 +4,7 @@ import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {village} from '../types'
 
 type Action =
   | StarChat
@@ -15,7 +16,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     .forEach(id => {
       const item = state.chat.byId[id]
 
-      if (item.type === 'item') {
+      if (item.type === village.ChatItemType.item) {
         if (typeof item.name === 'string') {
           byId[id] = {
             ... item,
@@ -32,7 +33,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
             })
           }
         }
-      } else { // item.type === 'delimeter'
+      } else { // item.type === village.ChatItemType.delimeter
         byId[id] = item
       }
     })
