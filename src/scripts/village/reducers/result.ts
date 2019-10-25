@@ -43,7 +43,7 @@ export interface State {
     }
   }
   readonly losers: village.CharacterId[]
-  readonly me: string
+  readonly me: village.CharacterId | null
   readonly summary: Summary
   readonly visible: boolean
   readonly winners: village.CharacterId[]
