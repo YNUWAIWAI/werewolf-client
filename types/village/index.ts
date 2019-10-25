@@ -50,6 +50,10 @@ export const enum ChatChannel {
   werewolf = 'werewolf'
 }
 export type ChatId = string
+export const enum ChatItemType {
+  delimeter = 'delimeter',
+  item = 'item'
+}
 export const enum Context {
   Avatar = 'https://werewolf.world/context/0.3/avatar.jsonld',
   Base = 'https://werewolf.world/context/0.3/base.jsonld',
