@@ -7,7 +7,15 @@ import {
   StarChat,
   socket
 } from '../actions'
-import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'
+import {
+  firstMorning,
+  flavorText,
+  myMessageOnChat
+} from '../reducers/fakeServer'
+import {
+  lobby,
+  village
+} from '../types'
 import {Agent} from '../constants/Agent'
 import Ajv from 'ajv'
 import {ImagePath} from '../constants/ImagePath'
@@ -16,7 +24,6 @@ import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './client2server'
-import {village} from '../types'
 
 const clientTimestamp = new Date('2006-10-07T12:06:56.568+09:00').toISOString()
 const BASE_URI = `https://werewolf.world/schema/${VERSION}`
@@ -34,11 +41,10 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
@@ -47,7 +53,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       }
     },
     mine: {
-      agent: {
+      character: {
         '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
@@ -61,7 +67,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       }
     },
     prediction: {
-      playerStatus: {
+      characterStatus: {
         allIds: [
           '1',
           '2',
@@ -404,11 +410,10 @@ describe('POST_CHAT', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
@@ -417,7 +422,7 @@ describe('POST_CHAT', () => {
       }
     },
     mine: {
-      agent: {
+      character: {
         '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
@@ -448,23 +453,24 @@ describe('POST_CHAT', () => {
       village.BaseContext.Chat
     ],
     '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
-    'agent': {
-      '@context': village.Context.Agent,
+    'character': {
+      '@context': village.Context.Character,
       '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a
     },
-    'characterLimit': 140,
     clientTimestamp,
     'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.public,
+    'isFromServer': true,
     'isMine': true,
     'isOver': false,
-    'myAgent': {
-      '@context': village.Context.Agent,
+    'maxLengthOfUnicodeCodePoints': 140,
+    'myCharacter': {
+      '@context': village.Context.Character,
       '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
@@ -491,8 +497,8 @@ describe('POST_CHAT', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
@@ -571,9 +577,9 @@ describe('READY', () => {
     type: ActionTypes.global.READY,
     villageId
   }
-  const payload: village.Payload$ready = {
+  const payload: village.Payload$Ready = {
     token,
-    type: village.PayloadType.ready,
+    type: lobby.PayloadType.ready,
     villageId
   }
 
@@ -611,11 +617,10 @@ describe('SELECT_YES', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
@@ -729,7 +734,7 @@ describe('SELECT_YES', () => {
       fixed: true
     },
     mine: {
-      agent: {
+      character: {
         '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
@@ -750,17 +755,17 @@ describe('SELECT_YES', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: SelectYes = {
-    agentId: '2',
+    characterId: '2',
     type: ActionTypes.global.SELECT_YES
   }
-  const payload: village.Payload$voteMessage = {
+  const payload: village.Payload$VoteMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Vote
     ],
     '@id': 'https://licos.online/state/0.2/village#3/voteMessage',
-    'agent': {
-      '@context': village.Context.Agent,
+    'character': {
+      '@context': village.Context.Character,
       '@id': 'https://licos.online/state/0.2/village#3/character#2',
       'id': 2,
       'image': ImagePath.Agent.b,
@@ -771,8 +776,8 @@ describe('SELECT_YES', () => {
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
-    'myAgent': {
-      '@context': village.Context.Agent,
+    'myCharacter': {
+      '@context': village.Context.Character,
       '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
@@ -795,8 +800,8 @@ describe('SELECT_YES', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
@@ -873,11 +878,10 @@ describe('STAR', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
         '@id': 'https://licos.online/state/0.2/village',
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
@@ -889,9 +893,9 @@ describe('STAR', () => {
       allIds: ['chat0'],
       byId: {
         chat0: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
           image: ImagePath.Agent.a,
           intensionalDisclosureRange: village.Channel.public,
@@ -902,12 +906,12 @@ describe('STAR', () => {
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
     },
     mine: {
-      agent: {
+      character: {
         '@id': 'https://licos.online/state/0.2/village#3/character#1',
         'id': 1,
         'image': ImagePath.Agent.a,
@@ -932,7 +936,7 @@ describe('STAR', () => {
     isMarked: true,
     type: ActionTypes.global.STAR
   }
-  const payload: village.Payload$starMessage = {
+  const payload: village.Payload$StarMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Star
@@ -943,8 +947,8 @@ describe('STAR', () => {
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
-    'myAgent': {
-      '@context': village.Context.Agent,
+    'myCharacter': {
+      '@context': village.Context.Character,
       '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': ImagePath.Agent.a,
@@ -975,8 +979,8 @@ describe('STAR', () => {
       'chatSettings': {
         '@context': village.Context.ChatSettings,
         '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
@@ -1051,8 +1055,8 @@ describe('socket/MESSAGE', () => {
     const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
     const villageId = 3
     const action = socket.message(flavorText)
-    const payload: village.Payload$receivedFlavorTextMessage = {
-      date: 0,
+    const payload: village.Payload$ReceivedFlavorTextMessage = {
+      day: 0,
       phase: village.Phase.flavorText,
       token,
       type: village.PayloadType.receivedFlavorTextMessage,
@@ -1090,7 +1094,7 @@ describe('socket/MESSAGE', () => {
       })
     })
   })
-  describe('receivedchatMessage', () => {
+  describe('receivedChatMessage', () => {
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -1101,18 +1105,18 @@ describe('socket/MESSAGE', () => {
     const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
     const villageId = 3
     const action = socket.message(myMessageOnChat)
-    const payload: village.Payload$receivedchatMessage = {
+    const payload: village.Payload$ReceivedChatMessage = {
       clientTimestamp: '2006-10-07T12:06:56.568+09:00',
       serverTimestamp: '2006-10-07T12:06:56.568+09:00',
       token,
-      type: village.PayloadType.receivedchatMessage,
+      type: village.PayloadType.receivedChatMessage,
       villageId
     }
 
     test('validate the JSON of play', async () => {
       expect.hasAssertions()
       const schemas = await Promise.all([
-        fetch(`${BASE_URI}/receipt/receivedchatMessage.json`)
+        fetch(`${BASE_URI}/receipt/receivedChatMessage.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
@@ -1124,7 +1128,7 @@ describe('socket/MESSAGE', () => {
       const ajv = new Ajv({
         schemas
       })
-      const validate = ajv.validate(`${BASE_URI}/receipt/receivedchatMessage.json`, payload)
+      const validate = ajv.validate(`${BASE_URI}/receipt/receivedChatMessage.json`, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -1151,8 +1155,8 @@ describe('socket/MESSAGE', () => {
     const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
     const villageId = 3
     const action = socket.message(firstMorning)
-    const payload: village.Payload$receivedSystemMessage = {
-      date: 1,
+    const payload: village.Payload$ReceivedSystemMessage = {
+      day: 1,
       phase: village.Phase.morning,
       token,
       type: village.PayloadType.receivedSystemMessage,
