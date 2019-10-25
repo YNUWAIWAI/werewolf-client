@@ -5,8 +5,8 @@ import Description from '../molecules/Description'
 import {village} from '../../types'
 
 export interface StateProps {
-  readonly agents: {
-    readonly id: village.AgentId
+  readonly characters: {
+    readonly id: village.CharacterId
     readonly image: string
     readonly initial: string
     readonly name: string
@@ -16,7 +16,7 @@ export interface StateProps {
   readonly phase: village.Phase
 }
 export interface DispatchProps {
-  readonly handleSelectOption: (agentId: village.AgentId) => () => void
+  readonly handleSelectOption: (characterId: village.CharacterId) => () => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
@@ -29,12 +29,12 @@ export default function CommandSelection(props: Props) {
       />
       <TransitionGroup className="vi--command--selection--select">
         {
-          props.agents
-            .map(a => (
+          props.characters
+            .map(character => (
               <CSSTransition
                 appear
                 classNames="vi--command--selection--option--transition"
-                key={`${a.id}${props.phase}`}
+                key={`${character.id}${props.phase}`}
                 timeout={{
                   enter: 1000,
                   exit: 400
@@ -44,10 +44,10 @@ export default function CommandSelection(props: Props) {
                 <AgentIcon
                   additionalClass={props.fixed ? 'fixed' : ''}
                   className="vi--command--selection--option"
-                  handleOnClick={props.fixed ? undefined : props.handleSelectOption(a.id)}
-                  image={a.image}
-                  initial={a.initial}
-                  name={a.name}
+                  handleOnClick={props.fixed ? undefined : props.handleSelectOption(character.id)}
+                  image={character.image}
+                  initial={character.initial}
+                  name={character.name}
                 />
               </CSSTransition>
             ))

@@ -7,12 +7,12 @@ import {shallow} from 'enzyme'
 import {village} from '../../types'
 
 describe('<CommandSelection />', () => {
-  test('agents={[]}', () => {
+  test('characters={[]}', () => {
     const handleSelectOptionEventHandler = jest.fn()
     const handleSelectOption = jest.fn(handleSelectOptionEventHandler)
     const wrapper = shallow(
       <CommandSelection
-        agents={[]}
+        characters={[]}
         descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
@@ -24,7 +24,7 @@ describe('<CommandSelection />', () => {
     expect(wrapper.find('.vi--command--selection--select').children()).toHaveLength(0)
   })
   test('15 agents fixed={false}', () => {
-    const agents = [
+    const characters = [
       {
         id: '1',
         image: ImagePath.Agent.a,
@@ -120,7 +120,7 @@ describe('<CommandSelection />', () => {
     const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
     const wrapper = shallow(
       <CommandSelection
-        agents={agents}
+        characters={characters}
         descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed={false}
         handleSelectOption={handleSelectOption}
@@ -131,8 +131,8 @@ describe('<CommandSelection />', () => {
     expect(wrapper.find(Description).exists()).toBe(true)
     expect(wrapper.find('.vi--command--selection--select').children()).toHaveLength(15)
   })
-  test('1 agents fixed', () => {
-    const agents = [
+  test('1 characters fixed', () => {
+    const characters = [
       {
         id: '1',
         image: ImagePath.Agent.a,
@@ -144,7 +144,7 @@ describe('<CommandSelection />', () => {
     const handleSelectOption = jest.fn().mockReturnValueOnce(handleSelectOptionEventHandler)
     const wrapper = shallow(
       <CommandSelection
-        agents={agents}
+        characters={characters}
         descriptionId="CommandSelection.Description.noonVote.fixed"
         fixed
         handleSelectOption={handleSelectOption}
