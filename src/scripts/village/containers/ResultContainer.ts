@@ -15,6 +15,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     const a = state.result.characters[id]
 
     characters[id] = {
+      avatarImage: a.avatarImage,
+      avatarName: a.avatarName,
       characterId: a.characterId,
       characterImage: a.characterImage,
       characterInitial: getInitial(a.characterName.en),
@@ -22,8 +24,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
         language: state.language,
         languageMap: a.characterName
       }),
-      avatarImage: a.avatarImage,
-      avatarName: a.avatarName,
       result: a.result,
       roleImage: a.roleImage,
       roleName: getText({
