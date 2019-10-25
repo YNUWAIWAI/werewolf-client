@@ -6,8 +6,8 @@ import {State} from '../../reducers/suggest'
 import {village} from '../../types'
 
 export interface StateProps {
-  readonly characterLimit: number
   readonly language: village.Language
+  readonly maxLengthOfUnicodeCodePoints: number
   readonly navigation: CommandNavigationProps['items']
   readonly suggesttedData: State['data']
 }
@@ -21,12 +21,12 @@ export default function CommandPostMortem(props: Props) {
   return (
     <>
       <CommandInput
-        characterLimit={props.characterLimit}
         handlePostChat={props.handlePostChat(village.InputChannel.postMortem)}
         inputChannel={village.InputChannel.postMortem}
         language={props.language}
-        postCount={-1}
-        postCountLimit={-1}
+        maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
+        maxNumberOfChatMessages={-1}
+        numberOfChatMessages={-1}
         suggesttedData={props.suggesttedData}
       />
       <CommandNavigation
