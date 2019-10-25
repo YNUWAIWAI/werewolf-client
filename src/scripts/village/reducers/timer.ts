@@ -29,7 +29,7 @@ const timer = (state: State = initialState, action: Action): State => {
     case ActionTypes.socket.MESSAGE:
       if (
         action.payload['@payload'] === village.Message.systemMessage ||
-        (action.payload['@payload'] === village.Message.flavorTextMessage && action.payload.date === 0)
+        (action.payload['@payload'] === village.Message.flavorTextMessage && action.payload.day === 0)
       ) {
         return {
           ... state,
