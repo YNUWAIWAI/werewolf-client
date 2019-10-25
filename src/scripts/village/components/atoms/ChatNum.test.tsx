@@ -4,11 +4,11 @@ import {shallow} from 'enzyme'
 import {village} from '../../types'
 
 describe('<ChatNum />', () => {
-  describe('id={1}', () => {
+  describe('id="1"', () => {
     test('intensionalDisclosureRange="anonymousAudience"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
         />
       )
@@ -18,7 +18,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="grave"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.grave}
         />
       )
@@ -28,7 +28,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="hunter"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.hunter}
         />
       )
@@ -38,7 +38,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="master"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.master}
         />
       )
@@ -48,7 +48,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="onymousAudience"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.onymousAudience}
         />
       )
@@ -58,7 +58,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="private"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.private}
         />
       )
@@ -68,7 +68,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="public"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.public}
         />
       )
@@ -78,7 +78,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="seer"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.seer}
         />
       )
@@ -88,7 +88,7 @@ describe('<ChatNum />', () => {
     test('intensionalDisclosureRange="werewolf"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={1}
+          id="1"
           intensionalDisclosureRange={village.Channel.werewolf}
         />
       )
@@ -96,11 +96,11 @@ describe('<ChatNum />', () => {
       expect(wrapper.text()).toBe('')
     })
   })
-  describe('id={0}', () => {
+  describe('id="0"', () => {
     test('intensionalDisclosureRange="public"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={0}
+          id="0"
           intensionalDisclosureRange={village.Channel.public}
         />
       )
@@ -108,11 +108,11 @@ describe('<ChatNum />', () => {
       expect(wrapper.text()).toBe('')
     })
   })
-  describe('id={-1}', () => {
+  describe('id="-1"', () => {
     test('intensionalDisclosureRange="public"', () => {
       const wrapper = shallow(
         <ChatNum
-          id={-1}
+          id="-1"
           intensionalDisclosureRange={village.Channel.public}
         />
       )
