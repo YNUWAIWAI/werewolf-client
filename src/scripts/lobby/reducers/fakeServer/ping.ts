@@ -1,5 +1,6 @@
 import {lobby} from '../../types'
-const json: lobby.Payload$ping = {
+
+export const ping: lobby.Payload$Ping = {
   id: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
   results: [
     {
@@ -55,5 +56,3 @@ const json: lobby.Payload$ping = {
   ],
   type: lobby.PayloadType.ping
 }
-
-export default json

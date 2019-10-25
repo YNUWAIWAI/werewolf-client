@@ -1,5 +1,6 @@
 import {lobby} from '../../types'
-const json: lobby.Payload$lobby = {
+
+export const enterRobotPlayerLobby: lobby.Payload$Lobby = {
   error: null,
   lobby: lobby.Lobby.robot,
   type: lobby.PayloadType.lobby,
@@ -74,5 +75,3 @@ const json: lobby.Payload$lobby = {
     }
   ]
 }
-
-export default json

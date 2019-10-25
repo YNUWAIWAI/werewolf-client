@@ -1,5 +1,6 @@
 import {lobby} from '../../types'
-const json: lobby.Payload$watingPage = {
+
+export const waitingPage2: lobby.Payload$WatingPage = {
   error: null,
   players: [
     {
@@ -103,5 +104,3 @@ const json: lobby.Payload$watingPage = {
     }
   }
 }
-
-export default json

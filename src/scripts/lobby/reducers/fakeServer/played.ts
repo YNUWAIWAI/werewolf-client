@@ -1,7 +1,6 @@
 import {lobby} from '../../types'
-const json: lobby.Payload$played = {
+
+export const played: lobby.Payload$Played = {
   lang: lobby.Language.en,
   type: lobby.PayloadType.played
 }
-
-export default json

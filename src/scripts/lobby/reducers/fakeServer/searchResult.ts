@@ -1,5 +1,6 @@
 import {lobby} from '../../types'
-const json: lobby.Payload$searchResult = {
+
+export const searchResult: lobby.Payload$SearchResult = {
   error: null,
   type: lobby.PayloadType.searchResult,
   villages: [
@@ -39,5 +40,3 @@ const json: lobby.Payload$searchResult = {
     }
   ]
 }
-
-export default json
