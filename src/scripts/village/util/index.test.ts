@@ -306,7 +306,7 @@ describe('getMyRole', () => {
           'en': 'Master',
           'ja': 'マスター'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -336,7 +336,7 @@ describe('getMyRole', () => {
           'en': 'Villager',
           'ja': '村人'
         },
-        'numberOfAgents': 6
+        'numberOfCharacters': 6
       },
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -366,7 +366,7 @@ describe('getMyRole', () => {
           'en': 'Seer',
           'ja': '占い師'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     ]
 
@@ -399,7 +399,7 @@ describe('getMyRole', () => {
           'en': 'Seer',
           'ja': '占い師'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     )
   })
@@ -415,7 +415,7 @@ describe('getMyRole', () => {
           'en': 'Master',
           'ja': 'マスター'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -445,7 +445,7 @@ describe('getMyRole', () => {
           'en': 'Villager',
           'ja': '村人'
         },
-        'numberOfAgents': 6
+        'numberOfCharacters': 6
       }
     ]
 
@@ -599,7 +599,7 @@ test('getPlayableRoles', () => {
         'en': 'Master',
         'ja': 'マスター'
       },
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     },
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -629,7 +629,7 @@ test('getPlayableRoles', () => {
         'en': 'Villager',
         'ja': '村人'
       },
-      'numberOfAgents': 6
+      'numberOfCharacters': 6
     },
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -659,7 +659,7 @@ test('getPlayableRoles', () => {
         'en': 'Seer',
         'ja': '占い師'
       },
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     }
   ]
 
@@ -692,7 +692,7 @@ test('getPlayableRoles', () => {
         'en': 'Villager',
         'ja': '村人'
       },
-      'numberOfAgents': 6
+      'numberOfCharacters': 6
     },
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -722,7 +722,7 @@ test('getPlayableRoles', () => {
         'en': 'Seer',
         'ja': '占い師'
       },
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     }
   ])
 })

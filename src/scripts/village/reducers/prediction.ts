@@ -34,7 +34,7 @@ export interface State {
         readonly id: village.RoleId
         readonly image: string
         readonly name: village.LanguageMap
-        readonly numberOfAgents: number
+        readonly numberOfCharacters: number
       }
     }>
   }
@@ -163,7 +163,7 @@ const getRoleStatus = (roles: Roles): RoleStatus => {
         id,
         'image': role.image,
         'name': role.name,
-        'numberOfAgents': role.numberOfCharacters
+        'numberOfCharacters': role.numberOfCharacters
       }
     })
 

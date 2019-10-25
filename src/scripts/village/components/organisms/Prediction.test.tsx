@@ -84,25 +84,25 @@ describe('<Prediction />', () => {
         id: village.RoleId.villager,
         image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
         name: '村人',
-        numberOfAgents: 2
+        numberOfCharacters: 2
       },
       {
         id: village.RoleId.seer,
         image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         name: '占い師',
-        numberOfAgents: 1
+        numberOfCharacters: 1
       },
       {
         id: village.RoleId.madman,
         image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
         name: '狂人',
-        numberOfAgents: 1
+        numberOfCharacters: 1
       },
       {
         id: village.RoleId.werewolf,
         image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
         name: '人狼',
-        numberOfAgents: 1
+        numberOfCharacters: 1
       }
     ]
     const spec: Props['spec'] = {

@@ -72,7 +72,7 @@ const client2server: Middleware = store => next => action => {
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
-          'totalNumberOfAgents': state.base.village.totalNumberOfAgents
+          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
         }
       }
 
@@ -143,7 +143,7 @@ const client2server: Middleware = store => next => action => {
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
-          'totalNumberOfAgents': state.base.village.totalNumberOfAgents
+          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
         }
       }
 
@@ -215,7 +215,7 @@ const client2server: Middleware = store => next => action => {
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
-          'totalNumberOfAgents': state.base.village.totalNumberOfAgents
+          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
         }
       }
 
@@ -281,7 +281,7 @@ const client2server: Middleware = store => next => action => {
           'id': state.base.village.id,
           'lang': state.base.village.lang,
           'name': state.base.village.name,
-          'totalNumberOfAgents': state.base.village.totalNumberOfAgents
+          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
         }
       }
 

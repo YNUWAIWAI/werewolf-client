@@ -5,7 +5,7 @@ export interface Props {
   readonly className: string
   readonly image: string
   readonly name: string
-  readonly numberOfAgents?: number
+  readonly numberOfCharacters?: number
 }
 
 export default function RoleIcon(props: Props) {
@@ -18,16 +18,16 @@ export default function RoleIcon(props: Props) {
         src={props.image}
       />
       {
-        typeof props.numberOfAgents === 'number' ?
+        typeof props.numberOfCharacters === 'number' ?
           <div className={`${props.className}--times`}>
             {'×'}
           </div> :
           null
       }
       {
-        typeof props.numberOfAgents === 'number' ?
+        typeof props.numberOfCharacters === 'number' ?
           <div className={`${props.className}--number`}>
-            {props.numberOfAgents}
+            {props.numberOfCharacters}
           </div> :
           null
       }

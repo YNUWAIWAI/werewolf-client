@@ -72,28 +72,28 @@ describe('<PredictionContainer />', () => {
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
-          'numberOfAgents': 2
+          'numberOfCharacters': 2
         },
         [village.RoleId.seer]: {
           '@id': 'https://licos.online/state/0.2/village#3/role#seer',
           'id': village.RoleId.seer,
           'image': ImagePath.Role.seer,
           'name': Role.seer,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         },
         [village.RoleId.madman]: {
           '@id': 'https://licos.online/state/0.2/village#3/role#madman',
           'id': village.RoleId.madman,
           'image': ImagePath.Role.madman,
           'name': Role.madman,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         },
         [village.RoleId.werewolf]: {
           '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         }
       }
     }
@@ -235,7 +235,7 @@ describe('<PredictionContainer />', () => {
             'id': 3,
             'lang': village.Language.en,
             'name': '横国の森の奥にある時代に取り残された小さな村',
-            'totalNumberOfAgents': 15
+            'totalNumberOfCharacters': 15
           }
         },
         chat: {

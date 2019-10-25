@@ -57,7 +57,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
         language: state.language,
         languageMap: role.name
       }),
-      numberOfAgents: role.numberOfAgents
+      numberOfCharacters: role.numberOfCharacters
     }
   }),
   spec: state.prediction.spec,
