@@ -13,66 +13,66 @@ import ResultClose from '../atoms/ResultClose'
 import {village} from '../../types'
 
 export interface StateProps {
-  readonly agents: {
-    [agentId in village.AgentId]: {
-      readonly agentName: string
-      readonly agentImage: string
-      readonly agentInitial: string
-      readonly agentId: village.AgentId
+  readonly characters: {
+    [characterId in village.CharacterId]: {
       readonly avatarImage: string
       readonly avatarName: string
+      readonly characterName: string
+      readonly characterImage: string
+      readonly characterInitial: string
+      readonly characterId: village.CharacterId
       readonly result: village.Result
       readonly roleImage: string
       readonly roleName: string
       readonly status: village.CharacterStatus
     }
   }
-  readonly losers: string[]
-  readonly me: string | null
+  readonly losers: village.CharacterId[]
+  readonly me: village.CharacterId | null
   readonly summary: {
     readonly loserTeam: Set<village.Team>
     readonly myTeam: village.Team | ''
     readonly winnerTeam: village.Team
   }
   readonly visible: boolean
-  readonly winners: string[]
+  readonly winners: village.CharacterId[]
 }
 export interface DispatchProps {
   readonly handleClickCloseButton: () => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
-const getRow = (agent: Props['agents'][village.AgentId]) => [
+const getRow = (character: Props['characters'][village.CharacterId]) => [
   <ResultCellImage
-    image={agent.agentImage}
-    initial={agent.agentInitial}
-    key={`${agent.agentId}image`}
-    status={agent.status}
+    image={character.characterImage}
+    initial={character.characterInitial}
+    key={`${character.characterId}image`}
+    status={character.status}
   />,
   <ResultCellName
-    key={`${agent.agentId}name`}
-    status={agent.status}
-    text={agent.agentName}
+    key={`${character.characterId}name`}
+    status={character.status}
+    text={character.characterName}
   />,
   <ResultCellStatus
-    key={`${agent.agentId}status`}
-    status={agent.status}
+    key={`${character.characterId}status`}
+    status={character.status}
   />,
   <ResultCellRoleImage
-    image={agent.roleImage}
-    key={`${agent.agentId}roleImage`}
-    name={agent.roleName}
-    status={agent.status}
+    image={character.roleImage}
+    key={`${character.characterId}roleImage`}
+    name={character.roleName}
+    status={character.status}
   />,
   <ResultCellAvatarImage
-    image={agent.avatarImage}
-    key={`${agent.agentId}avatarImage`}
-    status={agent.status}
+    image={character.avatarImage}
+    key={`${character.characterId}avatarImage`}
+    status={character.status}
   />,
   <ResultCellAvatarName
-    key={`${agent.agentId}avatarName`}
-    status={agent.status}
-    text={agent.avatarName}
+    key={`${character.characterId}avatarName`}
+    status={character.status}
+    text={character.avatarName}
   />
 ]
 
@@ -82,44 +82,44 @@ export default function Result(props: Props) {
       return []
     }
 
-    return getRow(props.agents[props.me])
+    return getRow(props.characters[props.me])
   })()
-  const compareAgentName = (a: village.AgentId, b: village.AgentId) => {
-    const agents = props.agents
+  const compareCharacterName = (a: village.CharacterId, b: village.CharacterId) => {
+    const characters = props.characters
 
-    if (agents[a].agentName < agents[b].agentName) {
+    if (characters[a].characterName < characters[b].characterName) {
       return -1
     }
-    if (agents[a].agentName > agents[b].agentName) {
+    if (characters[a].characterName > characters[b].characterName) {
       return 1
     }
 
     return 0
   }
-  const compareStatus = (a: village.AgentId, b: village.AgentId) => {
-    const agents = props.agents
+  const compareStatus = (a: village.CharacterId, b: village.CharacterId) => {
+    const characters = props.characters
 
-    if (agents[a].status === village.CharacterStatus.alive && agents[b].status === village.CharacterStatus.alive) {
+    if (characters[a].status === village.CharacterStatus.alive && characters[b].status === village.CharacterStatus.alive) {
       return 0
     }
-    if (agents[a].status !== village.CharacterStatus.alive && agents[b].status === village.CharacterStatus.alive) {
+    if (characters[a].status !== village.CharacterStatus.alive && characters[b].status === village.CharacterStatus.alive) {
       return 1
     }
-    if (agents[a].status === village.CharacterStatus.alive && agents[b].status !== village.CharacterStatus.alive) {
+    if (characters[a].status === village.CharacterStatus.alive && characters[b].status !== village.CharacterStatus.alive) {
       return -1
     }
 
     return 0
   }
   const losers = props.losers
-    .sort(compareAgentName)
+    .sort(compareCharacterName)
     .sort(compareStatus)
-    .map(id => getRow(props.agents[id]))
+    .map(id => getRow(props.characters[id]))
 
   const winners = [... props.winners]
-    .sort(compareAgentName)
+    .sort(compareCharacterName)
     .sort(compareStatus)
-    .map(id => getRow(props.agents[id]))
+    .map(id => getRow(props.characters[id]))
 
   return (
     <CSSTransition
