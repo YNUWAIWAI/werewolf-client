@@ -37,7 +37,7 @@ describe('<ChatContainer />', () => {
               chat0: {
                 characterId: '1',
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-                date: 1,
+                day: 1,
                 id: 12,
                 image: ImagePath.Agent120x120.a,
                 intensionalDisclosureRange: village.Channel.public,
@@ -48,11 +48,11 @@ describe('<ChatContainer />', () => {
                 phaseTimeLimit: 600,
                 serverTimestamp: '2006-10-07T12:06:56.568+09:00',
                 text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-                type: 'item'
+                type: village.ChatItemType.item
               },
               chat1: {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-                date: 1,
+                day: 1,
                 id: -1,
                 image: ImagePath.Agent120x120.y,
                 intensionalDisclosureRange: village.Channel.onymousAudience,
@@ -63,11 +63,11 @@ describe('<ChatContainer />', () => {
                 phaseTimeLimit: 600,
                 serverTimestamp: '2006-10-07T12:06:56.568+09:00',
                 text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-                type: 'item'
+                type: village.ChatItemType.item
               },
               chat2: {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-                date: 1,
+                day: 1,
                 id: -1,
                 image: ImagePath.Agent120x120.anonymous,
                 intensionalDisclosureRange: village.Channel.anonymousAudience,
@@ -78,15 +78,15 @@ describe('<ChatContainer />', () => {
                 phaseTimeLimit: 600,
                 serverTimestamp: '2006-10-07T12:06:56.568+09:00',
                 text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-                type: 'item'
+                type: village.ChatItemType.item
               },
               delimeter0: {
-                date: 1,
-                type: 'delimeter'
+                day: 1,
+                type: village.ChatItemType.delimeter
               },
               delimeter1: {
-                date: -1,
-                type: 'delimeter'
+                day: -1,
+                type: village.ChatItemType.delimeter
               }
             }
           },
@@ -113,7 +113,7 @@ describe('<ChatContainer />', () => {
             chat0: {
               characterId: '1',
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: 12,
               image: ImagePath.Agent120x120.a,
               intensionalDisclosureRange: village.Channel.public,
@@ -124,11 +124,11 @@ describe('<ChatContainer />', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             },
             chat1: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: -1,
               image: ImagePath.Agent120x120.y,
               intensionalDisclosureRange: village.Channel.onymousAudience,
@@ -139,11 +139,11 @@ describe('<ChatContainer />', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             },
             chat2: {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              date: 1,
+              day: 1,
               id: -1,
               image: ImagePath.Agent120x120.anonymous,
               intensionalDisclosureRange: village.Channel.anonymousAudience,
@@ -154,15 +154,15 @@ describe('<ChatContainer />', () => {
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
               text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: 'item'
+              type: village.ChatItemType.item
             },
             delimeter0: {
-              date: 1,
-              type: 'delimeter'
+              day: 1,
+              type: village.ChatItemType.delimeter
             },
             delimeter1: {
-              date: -1,
-              type: 'delimeter'
+              day: -1,
+              type: village.ChatItemType.delimeter
             }
           }
         },
