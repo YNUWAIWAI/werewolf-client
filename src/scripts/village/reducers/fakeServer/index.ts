@@ -1,5 +1,5 @@
 export {anonymousAudienceChat} from './anonymousAudienceChat'
-export {firstMorning} from './firstMorning1'
+export {firstMorning} from './firstMorning'
 export {firstMorning2} from './firstMorning2'
 export {firstMorning3} from './firstMorning3'
 export {firstMorning4} from './firstMorning4'
