@@ -8,7 +8,7 @@ import middleware from './timeWatcher'
 import {socket} from '../actions'
 import {village} from '../types'
 
-const BASE_URI = `https://werewolf.world/schema/${VERSION}`
+const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('socket/MESSAGE', () => {
   describe('phase: night -> morning, day: 0 -> 1', () => {
@@ -30,7 +30,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
       'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 1,
@@ -45,10 +45,10 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
           'maxLengthOfUnicodeCodePoints': 140,
           'maxNumberOfChatMessages': 10
         },
@@ -140,7 +140,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
       'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 0,
@@ -155,10 +155,10 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
           'maxLengthOfUnicodeCodePoints': 140,
           'maxNumberOfChatMessages': 10
         },
@@ -245,7 +245,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.FlavorText
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorTextMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/flavorTextMessage`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 0,
       'directionality': village.Directionality.serverToClient,
@@ -259,10 +259,10 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
           'maxLengthOfUnicodeCodePoints': 140,
           'maxNumberOfChatMessages': 10
         },
@@ -349,7 +349,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
       'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 1,
@@ -364,10 +364,10 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
           'maxLengthOfUnicodeCodePoints': 140,
           'maxNumberOfChatMessages': 10
         },
@@ -454,7 +454,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
       'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 0,
@@ -469,10 +469,10 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
           'maxLengthOfUnicodeCodePoints': 140,
           'maxNumberOfChatMessages': 10
         },
