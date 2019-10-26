@@ -66,11 +66,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -176,11 +176,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -280,11 +280,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -385,11 +385,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -490,11 +490,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
