@@ -72,7 +72,7 @@ export default function Prediction(props: Props) {
       />,
       ... props.roleStatus.map(role => (
         <PredictionItem
-          date={just(props.table[String(character.id)][role.id]).day}
+          day={just(props.table[String(character.id)][role.id]).day}
           fixed={just(props.table[String(character.id)][role.id]).fixed}
           handleBoardClick={props.handleBoardClick({
             characterId: character.id,
