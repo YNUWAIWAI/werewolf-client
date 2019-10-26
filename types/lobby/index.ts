@@ -10,8 +10,9 @@ export const enum Member {
   B = 'B',
   C = 'C'
 }
-export const enum Lobby {
-  audience = 'onymous audience',
+export const enum LobbyType {
+  // anonymousAudience = 'anonymous audience',
+  onymousAudience = 'onymous audience',
   human = 'human player',
   robot = 'robot player'
 }
