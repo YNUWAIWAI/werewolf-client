@@ -26,12 +26,12 @@ import fetch from 'node-fetch'
 import middleware from './client2server'
 
 const clientTimestamp = new Date('2006-10-07T12:06:56.568+09:00').toISOString()
-const BASE_URI = `https://werewolf.world/schema/${VERSION}`
+const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('CHANGE_PREDICTION_BOARD', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
@@ -41,7 +41,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           maxLengthOfUnicodeCodePoints: 140,
           maxNumberOfChatMessages: 10
@@ -54,13 +54,13 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     },
     mine: {
       character: {
-        '@id': 'https://licos.online/state/0.2/village#3/character#1',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
@@ -86,105 +86,105 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         ],
         byId: {
           '1': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#1',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
             'id': '1',
             'image': ImagePath.Agent.a,
             'name': Agent.a,
             'status': village.CharacterStatus.alive
           },
           '2': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#2',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
             'id': '2',
             'image': ImagePath.Agent.b,
             'name': Agent.b,
             'status': village.CharacterStatus.alive
           },
           '3': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#3',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
             'id': '3',
             'image': ImagePath.Agent.c,
             'name': Agent.c,
             'status': village.CharacterStatus.alive
           },
           '4': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#4',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
             'id': '4',
             'image': ImagePath.Agent.d,
             'name': Agent.d,
             'status': village.CharacterStatus.alive
           },
           '5': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#5',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
             'id': '5',
             'image': ImagePath.Agent.e,
             'name': Agent.e,
             'status': village.CharacterStatus.alive
           },
           '6': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#6',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
             'id': '6',
             'image': ImagePath.Agent.f,
             'name': Agent.f,
             'status': village.CharacterStatus.alive
           },
           '7': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#7',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
             'id': '7',
             'image': ImagePath.Agent.g,
             'name': Agent.g,
             'status': village.CharacterStatus.alive
           },
           '8': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#8',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
             'id': '8',
             'image': ImagePath.Agent.h,
             'name': Agent.h,
             'status': village.CharacterStatus.alive
           },
           '9': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#9',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
             'id': '9',
             'image': ImagePath.Agent.i,
             'name': Agent.i,
             'status': village.CharacterStatus.alive
           },
           '10': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#10',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
             'id': '10',
             'image': ImagePath.Agent.j,
             'name': Agent.j,
             'status': village.CharacterStatus.alive
           },
           '11': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#11',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
             'id': '11',
             'image': ImagePath.Agent.k,
             'name': Agent.k,
             'status': village.CharacterStatus.alive
           },
           '12': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#12',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
             'id': '12',
             'image': ImagePath.Agent.l,
             'name': Agent.l,
             'status': village.CharacterStatus.alive
           },
           '13': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#13',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
             'id': '13',
             'image': ImagePath.Agent.m,
             'name': Agent.m,
             'status': village.CharacterStatus.alive
           },
           '14': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#14',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
             'id': '14',
             'image': ImagePath.Agent.n,
             'name': Agent.n,
             'status': village.CharacterStatus.alive
           },
           '15': {
-            '@id': 'https://licos.online/state/0.2/village#3/character#15',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
             'id': '15',
             'image': ImagePath.Agent.o,
             'name': Agent.o,
@@ -205,56 +205,56 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         ],
         byId: {
           [village.RoleId.villager]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
             'id': village.RoleId.villager,
             'image': ImagePath.Role.villager,
             'name': Role.villager,
             'numberOfCharacters': 6
           },
           [village.RoleId.seer]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
             'id': village.RoleId.seer,
             'image': ImagePath.Role.seer,
             'name': Role.seer,
             'numberOfCharacters': 1
           },
           [village.RoleId.medium]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
             'id': village.RoleId.medium,
             'image': ImagePath.Role.medium,
             'name': Role.medium,
             'numberOfCharacters': 1
           },
           [village.RoleId.hunter]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
             'id': village.RoleId.hunter,
             'image': ImagePath.Role.hunter,
             'name': Role.hunter,
             'numberOfCharacters': 1
           },
           [village.RoleId.mason]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
             'id': village.RoleId.mason,
             'image': ImagePath.Role.mason,
             'name': Role.mason,
             'numberOfCharacters': 2
           },
           [village.RoleId.madman]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
             'id': village.RoleId.madman,
             'image': ImagePath.Role.madman,
             'name': Role.madman,
             'numberOfCharacters': 1
           },
           [village.RoleId.werewolf]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
             'id': village.RoleId.werewolf,
             'image': ImagePath.Role.werewolf,
             'name': Role.werewolf,
             'numberOfCharacters': 2
           },
           [village.RoleId.werehamster]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
             'id': village.RoleId.werehamster,
             'image': ImagePath.Role.werehamster,
             'name': Role.werehamster,
@@ -286,10 +286,10 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       village.BaseContext.Base,
       village.BaseContext.Board
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/boardMessage',
+    '@id': `https://licos.online/state/${VERSION}/village#3/boardMessage`,
     'character': {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#2',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
       'id': 2,
       'image': ImagePath.Agent.b,
       'name': Agent.b
@@ -301,13 +301,13 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'intensionalDisclosureRange': village.Channel.private,
     'myCharacter': {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#1',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -318,7 +318,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'prediction': village.BoardState.CIRCLE,
     'role': {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
       'image': ImagePath.Role.villager,
       'name': Role.villager
     },
@@ -326,10 +326,10 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
         'maxLengthOfUnicodeCodePoints': 140,
         'maxNumberOfChatMessages': 10
       },
@@ -347,7 +347,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
@@ -400,7 +400,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
 describe('POST_CHAT', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
@@ -410,7 +410,7 @@ describe('POST_CHAT', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           maxLengthOfUnicodeCodePoints: 140,
           maxNumberOfChatMessages: 10
@@ -423,13 +423,13 @@ describe('POST_CHAT', () => {
     },
     mine: {
       character: {
-        '@id': 'https://licos.online/state/0.2/village#3/character#1',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
@@ -452,10 +452,10 @@ describe('POST_CHAT', () => {
       village.BaseContext.Base,
       village.BaseContext.Chat
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
+    '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
     'character': {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#1',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a
@@ -471,13 +471,13 @@ describe('POST_CHAT', () => {
     'maxLengthOfUnicodeCodePoints': 140,
     'myCharacter': {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#1',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -493,10 +493,10 @@ describe('POST_CHAT', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
         'maxLengthOfUnicodeCodePoints': 140,
         'maxNumberOfChatMessages': 10
       },
@@ -514,7 +514,7 @@ describe('POST_CHAT', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
@@ -607,7 +607,7 @@ describe('READY', () => {
 describe('SELECT_YES', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
@@ -617,7 +617,7 @@ describe('SELECT_YES', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           maxLengthOfUnicodeCodePoints: 140,
           maxNumberOfChatMessages: 10
@@ -647,85 +647,85 @@ describe('SELECT_YES', () => {
       ],
       byId: {
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#2',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
           'id': '2',
           'image': ImagePath.Agent.b,
           'name': Agent.b
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#3',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
           'id': '3',
           'image': ImagePath.Agent.c,
           'name': Agent.c
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#4',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
           'id': '4',
           'image': ImagePath.Agent.d,
           'name': Agent.d
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#5',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
           'id': '5',
           'image': ImagePath.Agent.e,
           'name': Agent.e
         },
         '6': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#6',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
           'id': '6',
           'image': ImagePath.Agent.f,
           'name': Agent.f
         },
         '7': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#7',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
           'id': '7',
           'image': ImagePath.Agent.g,
           'name': Agent.g
         },
         '8': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#8',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
           'id': '8',
           'image': ImagePath.Agent.h,
           'name': Agent.h
         },
         '9': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#9',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
           'id': '9',
           'image': ImagePath.Agent.i,
           'name': Agent.i
         },
         '10': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#10',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
           'id': '10',
           'image': ImagePath.Agent.j,
           'name': Agent.j
         },
         '11': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#11',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
           'id': '11',
           'image': ImagePath.Agent.k,
           'name': Agent.k
         },
         '12': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#12',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
           'id': '12',
           'image': ImagePath.Agent.l,
           'name': Agent.l
         },
         '13': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#13',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
           'id': '13',
           'image': ImagePath.Agent.m,
           'name': Agent.m
         },
         '14': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#14',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
           'id': '14',
           'image': ImagePath.Agent.n,
           'name': Agent.n
         },
         '15': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#15',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
           'id': '15',
           'image': ImagePath.Agent.o,
           'name': Agent.o
@@ -735,13 +735,13 @@ describe('SELECT_YES', () => {
     },
     mine: {
       character: {
-        '@id': 'https://licos.online/state/0.2/village#3/character#1',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
@@ -763,10 +763,10 @@ describe('SELECT_YES', () => {
       village.BaseContext.Base,
       village.BaseContext.Vote
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/voteMessage',
+    '@id': `https://licos.online/state/${VERSION}/village#3/voteMessage`,
     'character': {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#2',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
       'id': 2,
       'image': ImagePath.Agent.b,
       'name': Agent.b
@@ -778,13 +778,13 @@ describe('SELECT_YES', () => {
     'intensionalDisclosureRange': village.Channel.private,
     'myCharacter': {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#1',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -796,10 +796,10 @@ describe('SELECT_YES', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
         'maxLengthOfUnicodeCodePoints': 140,
         'maxNumberOfChatMessages': 10
       },
@@ -817,7 +817,7 @@ describe('SELECT_YES', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
@@ -868,7 +868,7 @@ describe('SELECT_YES', () => {
 describe('STAR', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
@@ -878,7 +878,7 @@ describe('STAR', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           maxLengthOfUnicodeCodePoints: 140,
           maxNumberOfChatMessages: 10
@@ -912,13 +912,13 @@ describe('STAR', () => {
     },
     mine: {
       character: {
-        '@id': 'https://licos.online/state/0.2/village#3/character#1',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
         'image': ImagePath.Agent.a,
         'name': Agent.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
@@ -941,7 +941,7 @@ describe('STAR', () => {
       village.BaseContext.Base,
       village.BaseContext.Star
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/starMessage',
+    '@id': `https://licos.online/state/${VERSION}/village#3/starMessage`,
     clientTimestamp,
     'day': 1,
     'directionality': village.Directionality.clientToServer,
@@ -949,13 +949,13 @@ describe('STAR', () => {
     'intensionalDisclosureRange': village.Channel.private,
     'myCharacter': {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#1',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
       'image': ImagePath.Agent.a,
       'name': Agent.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -966,7 +966,7 @@ describe('STAR', () => {
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'star': {
       '@context': village.Context.Star,
-      '@id': 'https://licos.online/state/0.2/village#3/star',
+      '@id': `https://licos.online/state/${VERSION}/village#3/star`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'isMarked': true,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -975,10 +975,10 @@ describe('STAR', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
         'maxLengthOfUnicodeCodePoints': 140,
         'maxNumberOfChatMessages': 10
       },
@@ -996,7 +996,7 @@ describe('STAR', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
