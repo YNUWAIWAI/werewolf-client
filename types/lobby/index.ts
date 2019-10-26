@@ -3,7 +3,6 @@ export {
   PayloadBase
 } from '../village'
 export * from './payload'
-export * from './schema'
 export const enum Avatar {
   fixed = 'fixed',
   random = 'random',
