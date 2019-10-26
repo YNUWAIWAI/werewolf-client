@@ -6,7 +6,7 @@ import Triangle from './svg/Triangle'
 import {village} from '../../types'
 
 interface Props {
-  readonly date: number
+  readonly day: number
   readonly fixed: boolean
   readonly handleBoardClick: (state: village.BoardState) => void
   readonly state: village.BoardState
@@ -45,7 +45,7 @@ export default function PredictionItem(props: Props) {
   return (
     <div
       className={`vi--prediction--item ${props.fixed && props.state !== village.BoardState.FILL ? 'fixed' : ''}`}
-      data-date={props.date}
+      data-day={props.day}
       data-state={props.state}
       onClick={handleBoardClick}
     >
