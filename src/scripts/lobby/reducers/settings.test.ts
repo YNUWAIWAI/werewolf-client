@@ -10,7 +10,7 @@ describe('scoket/MESSAGE', () => {
         initialState,
         {
           payload: settings,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(

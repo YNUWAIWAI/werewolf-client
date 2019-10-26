@@ -51,22 +51,22 @@ interface Option {
 
 const socketMiddleware: (optoin: Option) => Middleware = option => store => next => action => {
   switch (action.type) {
-    case ActionTypes.socket.OPEN:
+    case ActionTypes.Socket.OPEN:
       return next(action)
-    case ActionTypes.socket.CLOSE:
+    case ActionTypes.Socket.CLOSE:
       return next(action)
-    case ActionTypes.socket.ERROR:
+    case ActionTypes.Socket.ERROR:
       return next(action)
-    case ActionTypes.socket.INIT:
+    case ActionTypes.Socket.INIT:
       connectWebSocket(option.url, store)
         .catch(reason => {
           console.error(reason)
         })
 
       return next(action)
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       return next(action)
-    case ActionTypes.socket.SEND:
+    case ActionTypes.Socket.SEND:
       connectWebSocket(option.url, store)
         .then(socket => {
           socket.send(JSON.stringify(action.payload))

@@ -6,7 +6,7 @@ import {lobby} from '../types'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.indexedDB.INIT: {
+    case ActionTypes.IndexedDB.INIT: {
       connectDB()
         .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
@@ -152,7 +152,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       switch (action.payload.type) {
         case lobby.PayloadType.played: {
           const payload = action.payload
@@ -212,7 +212,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           return next(action)
       }
     }
-    case ActionTypes.socket.SEND:
+    case ActionTypes.Socket.SEND:
       switch (action.payload.type) {
         case lobby.PayloadType.buildVillage: {
           const payload = action.payload

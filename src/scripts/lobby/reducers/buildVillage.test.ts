@@ -10,7 +10,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
         initialState,
         {
           avatar: lobby.Avatar.fixed,
-          type: ActionTypes.buildVillage.CHANGE_AVATAR
+          type: ActionTypes.BuildVillage.CHANGE_AVATAR
         }
       )
     ).toStrictEqual(
@@ -31,7 +31,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
         initialState,
         {
           avatar: lobby.Avatar.random,
-          type: ActionTypes.buildVillage.CHANGE_AVATAR
+          type: ActionTypes.BuildVillage.CHANGE_AVATAR
         }
       )
     ).toStrictEqual(
@@ -53,7 +53,7 @@ test('buildVillage/CHANGE_COMMENT', () => {
       initialState,
       {
         comment: 'comment',
-        type: ActionTypes.buildVillage.CHANGE_COMMENT
+        type: ActionTypes.BuildVillage.CHANGE_COMMENT
       }
     )
   ).toStrictEqual(
@@ -72,7 +72,7 @@ test('buildVillage/CHANGE_MEMBER', () => {
       initialState,
       {
         member: lobby.Member.B,
-        type: ActionTypes.buildVillage.CHANGE_MEMBER
+        type: ActionTypes.BuildVillage.CHANGE_MEMBER
       }
     )
   ).toStrictEqual(
@@ -100,7 +100,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
         },
         {
           numberOfPlayers: 5,
-          type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS
+          type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
         }
       )
     ).toStrictEqual(
@@ -129,7 +129,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
         },
         {
           numberOfPlayers: 8,
-          type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS
+          type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
         }
       )
     ).toStrictEqual(
@@ -158,7 +158,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
         },
         {
           numberOfPlayers: 10,
-          type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS
+          type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
         }
       )
     ).toStrictEqual(
@@ -180,7 +180,7 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
       initialState,
       {
         numberOfRobots: 8,
-        type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_ROBOTS
+        type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS
       }
     )
   ).toStrictEqual(
@@ -202,7 +202,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'avatar',
-          type: ActionTypes.buildVillage.CHANGE_VALIDITY,
+          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
           validity: false
         }
       )
@@ -222,7 +222,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'comment',
-          type: ActionTypes.buildVillage.CHANGE_VALIDITY,
+          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
           validity: false
         }
       )
@@ -242,7 +242,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'numberOfPlayers',
-          type: ActionTypes.buildVillage.CHANGE_VALIDITY,
+          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
           validity: false
         }
       )
@@ -263,7 +263,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'numberOfRobots',
-          type: ActionTypes.buildVillage.CHANGE_VALIDITY,
+          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
           validity: false
         }
       )
@@ -283,7 +283,7 @@ describe('buildVillage/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'villageName',
-          type: ActionTypes.buildVillage.CHANGE_VALIDITY,
+          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
           validity: false
         }
       )
@@ -311,7 +311,7 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
         }
       },
       {
-        type: ActionTypes.buildVillage.CHANGE_VILLAGE_NAME,
+        type: ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME,
         villageName: 'villageName'
       }
     )
@@ -506,7 +506,7 @@ describe('scoket/MESSAGE', () => {
         initialState,
         {
           payload: avatar2,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(

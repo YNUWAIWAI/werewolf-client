@@ -9,7 +9,7 @@ test('CHANGE_LANGUAGE', () => {
       initialState,
       {
         language: lobby.Language.en,
-        type: ActionTypes.global.CHANGE_LANGUAGE
+        type: ActionTypes.App.CHANGE_LANGUAGE
       }
     )
   ).toStrictEqual(
@@ -23,7 +23,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: avatar,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(

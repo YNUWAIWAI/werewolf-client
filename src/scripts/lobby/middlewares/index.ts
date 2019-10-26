@@ -43,8 +43,8 @@ type Action =
   | actions.SocketSend
   | actions.SubmitLogout
   | actions.Transition
-  | {type: ActionTypes.indexedDB.INIT}
-  | {type: ActionTypes.socket.INIT}
+  | {type: ActionTypes.IndexedDB.INIT}
+  | {type: ActionTypes.Socket.INIT}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 

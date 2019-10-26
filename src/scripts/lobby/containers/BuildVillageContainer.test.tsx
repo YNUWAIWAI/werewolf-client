@@ -120,7 +120,7 @@ describe('<BuildVillageContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       avatar,
-      type: ActionTypes.buildVillage.CHANGE_AVATAR
+      type: ActionTypes.BuildVillage.CHANGE_AVATAR
     })
   })
   test('handleMemberChange', () => {
@@ -141,7 +141,7 @@ describe('<BuildVillageContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       member,
-      type: ActionTypes.buildVillage.CHANGE_MEMBER
+      type: ActionTypes.BuildVillage.CHANGE_MEMBER
     })
   })
   describe('handleNumberChange', () => {
@@ -163,7 +163,7 @@ describe('<BuildVillageContainer />', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         numberOfPlayers,
-        type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS
+        type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
       })
     })
     test('numberOfRobots', () => {
@@ -184,7 +184,7 @@ describe('<BuildVillageContainer />', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         numberOfRobots,
-        type: ActionTypes.buildVillage.CHANGE_NUMBER_OF_ROBOTS
+        type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS
       })
     })
   })
@@ -207,7 +207,7 @@ describe('<BuildVillageContainer />', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         comment,
-        type: ActionTypes.buildVillage.CHANGE_COMMENT
+        type: ActionTypes.BuildVillage.CHANGE_COMMENT
       })
     })
     test('villageName', () => {
@@ -227,7 +227,7 @@ describe('<BuildVillageContainer />', () => {
       wrapper.find(BuildVillage).props().handleTextChange('villageName')(villageName)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.buildVillage.CHANGE_VILLAGE_NAME,
+        type: ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME,
         villageName
       })
     })
@@ -251,7 +251,7 @@ describe('<BuildVillageContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       propName,
-      type: ActionTypes.buildVillage.CHANGE_VALIDITY,
+      type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
       validity
     })
   })

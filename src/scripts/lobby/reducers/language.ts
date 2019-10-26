@@ -13,9 +13,9 @@ type Action =
 export const initialState: State = lobby.Language.en
 const language = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_LANGUAGE:
+    case ActionTypes.App.CHANGE_LANGUAGE:
       return action.language
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.avatar: {
           return action.payload.lang

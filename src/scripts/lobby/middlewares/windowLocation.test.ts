@@ -18,7 +18,7 @@ test('LOGOUT', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: SubmitLogout = {
-    type: ActionTypes.global.LOGOUT
+    type: ActionTypes.App.LOGOUT
   }
 
   actionHandler(action)
@@ -34,7 +34,7 @@ test('SELECT_VILLAGE', () => {
   const actionHandler = nextHandler(dispatchAPI)
   const action: SelectVillage = {
     id: 4,
-    type: ActionTypes.global.SELECT_VILLAGE
+    type: ActionTypes.App.SELECT_VILLAGE
   }
 
   actionHandler(action)
@@ -159,7 +159,7 @@ test('SHOW_VILLAGE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: ShowVillage = {
-    type: ActionTypes.global.SHOW_VILLAGE
+    type: ActionTypes.App.SHOW_VILLAGE
   }
 
   actionHandler(action)

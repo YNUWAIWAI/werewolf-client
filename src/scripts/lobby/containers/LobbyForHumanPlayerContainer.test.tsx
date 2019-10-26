@@ -38,7 +38,7 @@ describe('<LobbyForHumanPlayerContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       id,
-      type: ActionTypes.global.SELECT_VILLAGE
+      type: ActionTypes.App.SELECT_VILLAGE
     })
   })
   test('transition', () => {

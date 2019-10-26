@@ -58,7 +58,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.CHANGE_LANGUAGE: {
+    case ActionTypes.App.CHANGE_LANGUAGE: {
       const payload: lobby.Payload$changeLang = {
         lang: action.language,
         type: lobby.PayloadType.changeLang
@@ -68,7 +68,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.CHANGE_USER_EMAIL: {
+    case ActionTypes.App.CHANGE_USER_EMAIL: {
       const payload: lobby.Payload$changeUserEmail = {
         type: lobby.PayloadType.changeUserEmail,
         userEmail: action.userEmail
@@ -78,7 +78,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.CHANGE_USER_NAME: {
+    case ActionTypes.App.CHANGE_USER_NAME: {
       const payload: lobby.Payload$changeUserName = {
         type: lobby.PayloadType.changeUserName,
         userName: action.userName
@@ -88,7 +88,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.CHANGE_USER_PASSWORD: {
+    case ActionTypes.App.CHANGE_USER_PASSWORD: {
       const payload: lobby.Payload$changeUserPassword = {
         type: lobby.PayloadType.changeUserPassword,
         userPassword: action.userPassword
@@ -115,7 +115,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.KICK_OUT_PLAYER: {
+    case ActionTypes.App.KICK_OUT_PLAYER: {
       const state = store.getState()
       const payload: lobby.Payload$kickOutPlayer = {
         players: [
@@ -164,7 +164,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.SELECT_VILLAGE: {
+    case ActionTypes.App.SELECT_VILLAGE: {
       const state = store.getState()
       const payload: lobby.Payload$selectVillage = {
         token: state.token[state.token.lobby],
@@ -239,7 +239,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.ping: {
           const state = store.getState()

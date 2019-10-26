@@ -110,7 +110,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         }),
         searched: false
       }
-    case ActionTypes.advancedSearch.CHANGE_AVATAR:
+    case ActionTypes.AdvancedSearch.CHANGE_AVATAR:
       return {
         ... state,
         value: {
@@ -118,7 +118,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           avatar: action.avatar
         }
       }
-    case ActionTypes.advancedSearch.CHANGE_CHECKBOX:
+    case ActionTypes.AdvancedSearch.CHANGE_CHECKBOX:
       return {
         ... state,
         checked: {
@@ -126,7 +126,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           [action.propName]: action.checked
         }
       }
-    case ActionTypes.advancedSearch.CHANGE_COMMENT:
+    case ActionTypes.AdvancedSearch.CHANGE_COMMENT:
       return {
         ... state,
         value: {
@@ -134,7 +134,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           comment: action.comment
         }
       }
-    case ActionTypes.advancedSearch.CHANGE_HOST_NAME:
+    case ActionTypes.AdvancedSearch.CHANGE_HOST_NAME:
       return {
         ... state,
         value: {
@@ -142,7 +142,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           hostName: action.hostName
         }
       }
-    case ActionTypes.advancedSearch.CHANGE_MAXIMUM:
+    case ActionTypes.AdvancedSearch.CHANGE_MAXIMUM:
       return {
         ... state,
         value: {
@@ -150,7 +150,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           maximum: action.maximum
         }
       }
-    case ActionTypes.advancedSearch.CHANGE_MINIMUM:
+    case ActionTypes.AdvancedSearch.CHANGE_MINIMUM:
       return {
         ... state,
         value: {
@@ -158,7 +158,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           minimum: action.minimum
         }
       }
-    case ActionTypes.advancedSearch.CHANGE_VALIDITY:
+    case ActionTypes.AdvancedSearch.CHANGE_VALIDITY:
       return {
         ... state,
         validity: {
@@ -166,7 +166,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           [action.propName]: action.validity
         }
       }
-    case ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME:
+    case ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME:
       return {
         ... state,
         value: {
@@ -245,7 +245,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         ],
         villageItems: []
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.avatar: {
           const payload = action.payload

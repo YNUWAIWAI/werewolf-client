@@ -77,8 +77,8 @@ describe('indexedDB/INIT', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.indexedDB.INIT} = {
-    type: ActionTypes.indexedDB.INIT
+  const action: {type: ActionTypes.IndexedDB.INIT} = {
+    type: ActionTypes.IndexedDB.INIT
   }
 
   test('default', async () => {
@@ -175,7 +175,7 @@ describe('indexedDB/INIT', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
   test('whatToDoNextInLobby: selectNextVillage', async () => {
@@ -216,11 +216,11 @@ describe('indexedDB/INIT', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       lobby: village.lobbyType,
-      type: ActionTypes.global.CHANGE_LOBBY
+      type: ActionTypes.App.CHANGE_LOBBY
     })
     expect(dispatch).toHaveBeenCalledWith({
       id: 4,
-      type: ActionTypes.global.SELECT_VILLAGE
+      type: ActionTypes.App.SELECT_VILLAGE
     })
   })
   test('whatToDoNextInLobby: selectVillage', async () => {
@@ -260,11 +260,11 @@ describe('indexedDB/INIT', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       lobby: village.lobbyType,
-      type: ActionTypes.global.CHANGE_LOBBY
+      type: ActionTypes.App.CHANGE_LOBBY
     })
     expect(dispatch).toHaveBeenCalledWith({
       id: village.villageId,
-      type: ActionTypes.global.SELECT_VILLAGE
+      type: ActionTypes.App.SELECT_VILLAGE
     })
   })
 })
@@ -318,7 +318,7 @@ describe('socket/MESSAGE', () => {
     }
     const action: SocketMessage = {
       payload,
-      type: ActionTypes.socket.MESSAGE
+      type: ActionTypes.Socket.MESSAGE
     }
     const dispatch = jest.fn()
 
@@ -354,7 +354,7 @@ describe('socket/MESSAGE', () => {
       expect(whatToDoNextInLobby).toBeUndefined()
       expect(dispatch).toHaveBeenCalled()
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.global.SHOW_VILLAGE
+        type: ActionTypes.App.SHOW_VILLAGE
       })
     })
   })
@@ -450,7 +450,7 @@ describe('socket/MESSAGE', () => {
       }
       const action: SocketMessage = {
         payload,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
 
       test('validate the JSON', async () => {
@@ -492,7 +492,7 @@ describe('socket/MESSAGE', () => {
       const payload = waitingPage
       const action: SocketMessage = {
         payload,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
 
       test('validate the JSON', async () => {
@@ -572,7 +572,7 @@ describe('socket/SEND', () => {
     }
     const action: SocketSend = {
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     }
     const dispatch = jest.fn()
 

@@ -22,12 +22,12 @@ export const initialState: State = {
 
 const token = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_LOBBY:
+    case ActionTypes.App.CHANGE_LOBBY:
       return {
         ... state,
         lobby: action.lobby
       }
-    case ActionTypes.global.CHANGE_TOKEN:
+    case ActionTypes.App.CHANGE_TOKEN:
       return {
         ... state,
         [action.lobby]: action.token

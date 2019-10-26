@@ -109,13 +109,13 @@ const idSearch = (state: State = initialState, action: Action): State => {
         searched: false,
         villageItems: []
       }
-    case ActionTypes.idSearch.CHANGE_SEARCH_ID:
+    case ActionTypes.IdSearch.CHANGE_SEARCH_ID:
       return {
         ... state,
         id: action.id,
         searched: false
       }
-    case ActionTypes.idSearch.CHANGE_VALIDITY: {
+    case ActionTypes.IdSearch.CHANGE_VALIDITY: {
       const disabled = !action.validity
 
       return {
@@ -146,7 +146,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
           return item
         })
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.avatar: {
           const payload = action.payload

@@ -27,22 +27,22 @@ export const initialState: State = {
 }
 const modal = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CONFIRM_KICK_OUT_PLAYER:
+    case ActionTypes.App.CONFIRM_KICK_OUT_PLAYER:
       return {
         descriptionId: 'Modal.description(kickOutPlayer)',
-        type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER,
+        type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER,
         values: {
           name: action.name,
           token: action.token
         },
         visible: true
       }
-    case ActionTypes.global.SELECT_NO:
+    case ActionTypes.App.SELECT_NO:
       return {
         ... state,
         visible: false
       }
-    case ActionTypes.global.SELECT_YES:
+    case ActionTypes.App.SELECT_YES:
       return {
         ... state,
         visible: false

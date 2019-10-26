@@ -162,7 +162,7 @@ test('idSearch/CHANGE_SEARCH_ID', () => {
       initialState,
       {
         id: 123,
-        type: ActionTypes.idSearch.CHANGE_SEARCH_ID
+        type: ActionTypes.IdSearch.CHANGE_SEARCH_ID
       }
     )
   ).toStrictEqual(
@@ -201,7 +201,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
       },
       {
         propName: 'id',
-        type: ActionTypes.idSearch.CHANGE_VALIDITY,
+        type: ActionTypes.IdSearch.CHANGE_VALIDITY,
         validity: true
       }
     )
@@ -239,7 +239,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: avatar,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(
@@ -279,7 +279,7 @@ describe('socket/MESSAGE', () => {
         },
         {
           payload: searchResult,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(

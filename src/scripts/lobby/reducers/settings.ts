@@ -29,7 +29,7 @@ export const initialState: State = {
 }
 const settings = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       switch (action.payload.type) {
         case lobby.PayloadType.settings: {
           const payload = action.payload

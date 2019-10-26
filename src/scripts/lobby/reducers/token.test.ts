@@ -11,7 +11,7 @@ test('CHANGE_LOBBY', () => {
       },
       {
         lobby: lobby.Lobby.robot,
-        type: ActionTypes.global.CHANGE_LOBBY
+        type: ActionTypes.App.CHANGE_LOBBY
       }
     )
   ).toStrictEqual(
@@ -31,7 +31,7 @@ describe('CHANGE_TOKEN', () => {
         {
           lobby: lobby.Lobby.human,
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-          type: ActionTypes.global.CHANGE_TOKEN
+          type: ActionTypes.App.CHANGE_TOKEN
         }
       )
     ).toStrictEqual(
@@ -50,7 +50,7 @@ describe('CHANGE_TOKEN', () => {
         {
           lobby: lobby.Lobby.robot,
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-          type: ActionTypes.global.CHANGE_TOKEN
+          type: ActionTypes.App.CHANGE_TOKEN
         }
       )
     ).toStrictEqual(
@@ -69,7 +69,7 @@ describe('CHANGE_TOKEN', () => {
         {
           lobby: lobby.Lobby.audience,
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-          type: ActionTypes.global.CHANGE_TOKEN
+          type: ActionTypes.App.CHANGE_TOKEN
         }
       )
     ).toStrictEqual(

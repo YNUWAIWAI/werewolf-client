@@ -9,7 +9,7 @@ test('socket/MESSAGE watingPage', () => {
       initialState,
       {
         payload: waitingPage,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
     )
   ).toStrictEqual(
@@ -30,7 +30,7 @@ test('socket/MESSAGE ping', () => {
       },
       {
         payload: ping,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
     )
   ).toStrictEqual(

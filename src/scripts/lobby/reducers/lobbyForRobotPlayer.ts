@@ -62,7 +62,7 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
           return item
         })
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.avatar: {
           const payload = action.payload

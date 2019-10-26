@@ -99,7 +99,7 @@ describe('ADVANCED_SEARCH', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload: advancedSearchPayload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })
@@ -169,7 +169,7 @@ describe('ADVANCED_SEARCH', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload: advancedSearchPayload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })
@@ -237,7 +237,7 @@ describe('BUILD_VILLAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: buildVillagePayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -258,7 +258,7 @@ describe('CHANGE_LANGUAGE', () => {
   const actionHandler = nextHandler(dispatchAPI)
   const action: ChangeLanguage = {
     language: lobby.Language.ja,
-    type: ActionTypes.global.CHANGE_LANGUAGE
+    type: ActionTypes.App.CHANGE_LANGUAGE
   }
   const changeLangPayload = {
     lang: 'ja',
@@ -282,7 +282,7 @@ describe('CHANGE_LANGUAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: changeLangPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -302,7 +302,7 @@ describe('CHANGE_USER_EMAIL', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: ChangeUserEmail = {
-    type: ActionTypes.global.CHANGE_USER_EMAIL,
+    type: ActionTypes.App.CHANGE_USER_EMAIL,
     userEmail: 'example@example.com'
   }
   const changeUserEmailPayload = {
@@ -327,7 +327,7 @@ describe('CHANGE_USER_EMAIL', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: changeUserEmailPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -347,7 +347,7 @@ describe('CHANGE_USER_NAME', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: ChangeUserName = {
-    type: ActionTypes.global.CHANGE_USER_NAME,
+    type: ActionTypes.App.CHANGE_USER_NAME,
     userName: 'userName'
   }
   const changeUserNamePayload = {
@@ -372,7 +372,7 @@ describe('CHANGE_USER_NAME', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: changeUserNamePayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -392,7 +392,7 @@ describe('CHANGE_USER_PASSWORD', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: ChangeUserPassword = {
-    type: ActionTypes.global.CHANGE_USER_PASSWORD,
+    type: ActionTypes.App.CHANGE_USER_PASSWORD,
     userPassword: 'userPassword'
   }
   const changeUserPasswordPayload = {
@@ -417,7 +417,7 @@ describe('CHANGE_USER_PASSWORD', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: changeUserPasswordPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -445,7 +445,7 @@ describe('KICK_OUT_PLAYER', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: KickOutPlayer = {
-    type: ActionTypes.global.KICK_OUT_PLAYER
+    type: ActionTypes.App.KICK_OUT_PLAYER
   }
   const kickOutPlayerPayload = {
     players: [
@@ -474,7 +474,7 @@ describe('KICK_OUT_PLAYER', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: kickOutPlayerPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -571,7 +571,7 @@ describe('LEAVE_WAITING_PAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: leaveWaitingPagePayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -667,7 +667,7 @@ describe('PLAY_GAME', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: playPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -718,7 +718,7 @@ describe('ID_SEARCH valid id', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: idSearchPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -764,7 +764,7 @@ describe('SELECT_VILLAGE', () => {
   const villageId = 1
   const action: SelectVillage = {
     id: villageId,
-    type: ActionTypes.global.SELECT_VILLAGE
+    type: ActionTypes.App.SELECT_VILLAGE
   }
   const payload = {
     token: avatarToken.humanPlayer,
@@ -789,7 +789,7 @@ describe('SELECT_VILLAGE', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -851,11 +851,11 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       payload: enterLobbyPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
     expect(dispatch).toHaveBeenCalledWith({
       payload: getAvatarPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -917,11 +917,11 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       payload: enterLobbyPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
     expect(dispatch).toHaveBeenCalledWith({
       payload: getAvatarPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -983,11 +983,11 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       payload: enterLobbyPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
     expect(dispatch).toHaveBeenCalledWith({
       payload: getAvatarPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -1030,7 +1030,7 @@ describe('SHOW_SETTINGS', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -1063,7 +1063,7 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
   }
   const action: SocketMessage = {
     payload: pingPayload,
-    type: ActionTypes.socket.MESSAGE
+    type: ActionTypes.Socket.MESSAGE
   }
   const pongPayload = {
     id: pingId,
@@ -1100,7 +1100,7 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload: pongPayload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })

@@ -27,24 +27,24 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CONFIRM_KICK_OUT_PLAYER:
+    case ActionTypes.App.CONFIRM_KICK_OUT_PLAYER:
       return {
         loading: false,
         visible: true
       }
-    case ActionTypes.global.SELECT_NO:
-    case ActionTypes.global.SELECT_YES:
+    case ActionTypes.App.SELECT_NO:
+    case ActionTypes.App.SELECT_YES:
       return {
         loading: false,
         visible: false
       }
-    case ActionTypes.socket.CLOSE:
-    case ActionTypes.socket.ERROR:
+    case ActionTypes.Socket.CLOSE:
+    case ActionTypes.Socket.ERROR:
       return {
         loading: true,
         visible: true
       }
-    case ActionTypes.socket.OPEN:
+    case ActionTypes.Socket.OPEN:
       return {
         loading: false,
         visible: false
