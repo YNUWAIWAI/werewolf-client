@@ -155,6 +155,10 @@ export const enum Severity {
   error = 'error',
   warning = 'warning'
 }
+export const enum SummaryType {
+  audience = 'audience',
+  character = 'character'
+}
 export const enum Team {
   villager = 'villager',
   werehamster = 'werehamster',
