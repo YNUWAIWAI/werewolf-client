@@ -1,5 +1,6 @@
 import {Agent} from '../../constants/Agent'
 import {ImagePath} from '../../constants/ImagePath'
+import {VERSION} from '../../constants/Version'
 import {village} from '../../types'
 
 export const flavorText: village.Payload$FlavorTextMessage = {
@@ -7,7 +8,7 @@ export const flavorText: village.Payload$FlavorTextMessage = {
     village.BaseContext.Base,
     village.BaseContext.FlavorText
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/flavorTextMessage',
+  '@id': `https://licos.online/state/${VERSION}/village#3/flavorTextMessage`,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
   'day': 0,
   'directionality': village.Directionality.serverToClient,
@@ -18,10 +19,10 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/chatMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
       'character': {
         '@context': village.Context.Character,
-        '@id': 'https://licos.online/state/0.2/village#3/character',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character`,
         'id': 1,
         'image': ImagePath.Agent.j,
         'name': Agent.j
@@ -50,10 +51,10 @@ export const flavorText: village.Payload$FlavorTextMessage = {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
           'maxLengthOfUnicodeCodePoints': 140,
           'maxNumberOfChatMessages': 10
         },
@@ -68,10 +69,10 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorText#1/chatMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
       'character': {
         '@context': village.Context.Character,
-        '@id': 'https://licos.online/state/0.2/village#3/character',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character`,
         'id': 1,
         'image': ImagePath.Agent.j,
         'name': Agent.j
@@ -100,10 +101,10 @@ export const flavorText: village.Payload$FlavorTextMessage = {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
           'maxLengthOfUnicodeCodePoints': 140,
           'maxNumberOfChatMessages': 10
         },
@@ -122,10 +123,10 @@ export const flavorText: village.Payload$FlavorTextMessage = {
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
       'maxLengthOfUnicodeCodePoints': 140,
       'maxNumberOfChatMessages': 10
     },

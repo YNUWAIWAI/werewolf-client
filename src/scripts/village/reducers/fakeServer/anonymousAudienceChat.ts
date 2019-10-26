@@ -1,3 +1,4 @@
+import {VERSION} from '../../constants/Version'
 import {village} from '../../types'
 
 export const anonymousAudienceChat: village.Payload$ChatMessage = {
@@ -5,7 +6,7 @@ export const anonymousAudienceChat: village.Payload$ChatMessage = {
     village.BaseContext.Base,
     village.BaseContext.Chat
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
+  '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
   'day': 1,
   'directionality': village.Directionality.clientToServer,
@@ -26,10 +27,10 @@ export const anonymousAudienceChat: village.Payload$ChatMessage = {
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
       'maxLengthOfUnicodeCodePoints': 140,
       'maxNumberOfChatMessages': 10
     },

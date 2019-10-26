@@ -1,6 +1,7 @@
 import {Agent} from '../../constants/Agent'
 import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
+import {VERSION} from '../../constants/Version'
 import {village} from '../../types'
 
 export const star: village.Payload$StarMessage = {
@@ -8,7 +9,7 @@ export const star: village.Payload$StarMessage = {
     village.BaseContext.Base,
     village.BaseContext.Star
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/starMessage',
+  '@id': `https://licos.online/state/${VERSION}/village#3/starMessage`,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
   'day': 2,
   'directionality': village.Directionality.clientToServer,
@@ -16,13 +17,13 @@ export const star: village.Payload$StarMessage = {
   'intensionalDisclosureRange': village.Channel.private,
   'myCharacter': {
     '@context': village.Context.Character,
-    '@id': 'https://licos.online/state/0.2/village#3/myCharacter',
+    '@id': `https://licos.online/state/${VERSION}/village#3/myCharacter`,
     'id': 1,
     'image': ImagePath.Agent.a,
     'name': Agent.a,
     'role': {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/character#1/role',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1/role`,
       'image': ImagePath.Role.werewolf,
       'name': Role.werewolf
     }
@@ -33,7 +34,7 @@ export const star: village.Payload$StarMessage = {
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
   'star': {
     '@context': village.Context.Star,
-    '@id': 'https://licos.online/state/0.2/village#3/star',
+    '@id': `https://licos.online/state/${VERSION}/village#3/star`,
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
     'isMarked': true,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -42,10 +43,10 @@ export const star: village.Payload$StarMessage = {
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
       'maxLengthOfUnicodeCodePoints': 140,
       'maxNumberOfChatMessages': 10
     },

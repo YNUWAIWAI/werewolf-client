@@ -1,6 +1,7 @@
 import {Agent} from '../../constants/Agent'
 import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
+import {VERSION} from '../../constants/Version'
 import {village} from '../../types'
 
 export const firstMorning4: village.Payload$SystemMessage = {
@@ -8,11 +9,11 @@ export const firstMorning4: village.Payload$SystemMessage = {
     village.BaseContext.Base,
     village.BaseContext.VotingResult
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
+  '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
   'character': [
     {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#1',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
       'image': ImagePath.Agent.a,
       'isAChoice': false,
@@ -20,14 +21,14 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'name': Agent.a,
       'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#3/character#1/update',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1/update`,
         'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#2',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
       'id': 2,
       'image': ImagePath.Agent.b,
       'isAChoice': false,
@@ -35,14 +36,14 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'name': Agent.b,
       'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#3/character#2/update',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#2/update`,
         'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
       'id': 3,
       'image': ImagePath.Agent.c,
       'isAChoice': false,
@@ -50,14 +51,14 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'name': Agent.c,
       'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#3/character#3/update',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#3/update`,
         'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
       '@context': village.Context.Character,
-      '@id': 'https://licos.online/state/0.2/village#3/character#4',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
       'id': 4,
       'image': ImagePath.Agent.d,
       'isAChoice': false,
@@ -65,7 +66,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'name': Agent.d,
       'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#3/character#4/update',
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#4/update`,
         'day': 1,
         'phase': village.Phase.morning
       }
@@ -82,7 +83,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
   'role': [
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#master',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#master`,
       'board': [],
       'image': ImagePath.Role.master,
       'isMine': false,
@@ -91,14 +92,14 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1/agent#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -115,7 +116,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
       'board': [],
       'image': ImagePath.Role.seer,
       'isMine': false,
@@ -124,7 +125,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
       'board': [],
       'image': ImagePath.Role.medium,
       'isMine': false,
@@ -133,7 +134,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
       'board': [],
       'image': ImagePath.Role.hunter,
       'isMine': false,
@@ -142,7 +143,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
       'board': [],
       'image': ImagePath.Role.mason,
       'isMine': false,
@@ -151,7 +152,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
       'board': [],
       'image': ImagePath.Role.madman,
       'isMine': false,
@@ -160,14 +161,14 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/board#1',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': 'https://licos.online/state/0.2/village#3/role#werewolf/board#1/agent#1',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1/agent#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -184,7 +185,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
       'board': [],
       'image': ImagePath.Role.werehamster,
       'isMine': false,
@@ -196,10 +197,10 @@ export const firstMorning4: village.Payload$SystemMessage = {
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
       'maxLengthOfUnicodeCodePoints': 140,
       'maxNumberOfChatMessages': 10
     },

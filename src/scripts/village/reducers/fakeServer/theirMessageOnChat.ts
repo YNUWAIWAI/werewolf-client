@@ -1,5 +1,6 @@
 import {Agent} from '../../constants/Agent'
 import {ImagePath} from '../../constants/ImagePath'
+import {VERSION} from '../../constants/Version'
 import {village} from '../../types'
 
 export const theirMessageOnChat: village.Payload$ChatMessage = {
@@ -7,10 +8,10 @@ export const theirMessageOnChat: village.Payload$ChatMessage = {
     village.BaseContext.Base,
     village.BaseContext.Chat
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/chatMessage',
+  '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
   'character': {
     '@context': village.Context.Character,
-    '@id': 'https://licos.online/state/0.2/village#3/character',
+    '@id': `https://licos.online/state/${VERSION}/village#3/character`,
     'id': 1,
     'image': ImagePath.Agent120x120.a,
     'name': Agent.a
@@ -39,10 +40,10 @@ export const theirMessageOnChat: village.Payload$ChatMessage = {
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
       'maxLengthOfUnicodeCodePoints': 140,
       'maxNumberOfChatMessages': 10
     },

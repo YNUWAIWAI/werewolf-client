@@ -26,9 +26,9 @@ test('validate anonymousAudienceChat', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -69,11 +69,11 @@ test('validate firstMorning', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -116,11 +116,11 @@ test('validate firstMorning2', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -163,11 +163,11 @@ test('validate firstMorning3', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -210,11 +210,11 @@ test('validate firstMorning4', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -257,11 +257,11 @@ test('validate firstMorning5', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -306,9 +306,9 @@ test('validate flavorText', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -357,9 +357,9 @@ test('validate myMessageOnChat', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -400,11 +400,11 @@ test('validate night', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -447,11 +447,11 @@ test('validate noon', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -494,9 +494,9 @@ test('validate onymousAudienceChat', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -537,11 +537,11 @@ test('validate result', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/boardResult.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
@@ -584,9 +584,9 @@ test('validate theirMessageOnChat', async () => {
       .then(res => res.json()),
     fetch(`${BASE_URI}/base.json`)
       .then(res => res.json()),
-    fetch(`${BASE_URI}/character.json`)
-      .then(res => res.json()),
     fetch(`${BASE_URI}/avatar.json`)
+      .then(res => res.json()),
+    fetch(`${BASE_URI}/character.json`)
       .then(res => res.json()),
     fetch(`${BASE_URI}/chat.json`)
       .then(res => res.json()),
