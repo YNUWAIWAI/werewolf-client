@@ -1185,7 +1185,7 @@
 
         &::after {
           color: white;
-          content: attr(data-date);
+          content: attr(data-day);
         }
       }
     }
