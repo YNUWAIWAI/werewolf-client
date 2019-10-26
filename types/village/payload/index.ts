@@ -49,6 +49,7 @@ export interface Payload$BoardMessage extends BoardMessage {
   '@payload'?: Message.boardMessage
 }
 export interface Payload$BuildVillage extends BuildVillage {
+  '@id'?: undefined
   '@payload'?: PayloadType.buildVillage
 }
 export interface Payload$ChatMessage extends ChatMessage {
@@ -61,9 +62,11 @@ export interface Payload$FlavorTextMessage extends FlavorTextMessage {
   '@payload'?: Message.flavorTextMessage
 }
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {
+  '@id'?: undefined
   '@payload'?: PayloadType.leaveWaitingPage
 }
 export interface Payload$Ready extends Ready {
+  '@id'?: undefined
   '@payload'?: PayloadType.ready
 }
 export interface Payload$NextGameInvitation extends NextGameInvitation {
