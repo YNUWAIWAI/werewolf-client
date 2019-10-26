@@ -1,6 +1,9 @@
 import '../../../../types/indexeddb'
 import * as ActionTypes from '../constants/ActionTypes'
-import {ClickNavigationButton, socket} from '../actions'
+import {
+  ClickNavigationButton,
+  socket
+} from '../actions'
 import {
   Key,
   Village,
@@ -56,7 +59,7 @@ const getAllValue = async () => {
   const objectStore = transaction.objectStore('licosDB')
 
   return Promise.all([
-    getValue<lobby.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
+    getValue<lobby.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
     getValue<boolean>(objectStore, Key.isHost),
     getValue<lobby.Language>(objectStore, Key.lang),
     getValue<number>(objectStore, Key.nextGameVillageId),
@@ -186,7 +189,7 @@ describe('NEXT_GAME', () => {
 
     await Promise.all([
       updateValue<boolean>(objectStore, Key.isHost, true),
-      updateValue<village.Payload$buildVillage>(objectStore, Key.buildVillagePayload, payload)
+      updateValue<village.Payload$BuildVillage>(objectStore, Key.buildVillagePayload, payload)
     ])
     actionHandler(action)
     const [
@@ -219,7 +222,7 @@ describe('NEXT_GAME', () => {
 
     await Promise.all([
       updateValue<boolean>(objectStore, Key.isHost, false),
-      updateValue<village.Payload$buildVillage>(objectStore, Key.buildVillagePayload, payload)
+      updateValue<village.Payload$BuildVillage>(objectStore, Key.buildVillagePayload, payload)
     ])
     actionHandler(action)
     const [
@@ -350,7 +353,7 @@ describe('socket/MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const payload: village.Payload$nextGameInvitation = {
+  const payload: village.Payload$NextGameInvitation = {
     '@payload': village.PayloadType.nextGameInvitation,
     'type': village.PayloadType.nextGameInvitation,
     'villageId': 3

@@ -1,8 +1,25 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
-import {activateNextButton, changeLanguage, ready, showLobby, socket} from '../actions'
+import {
+  Key,
+  Village,
+  WhatToDoNextInLobby,
+  connectDB,
+  deleteValue,
+  getValue,
+  updateValue
+} from '../../indexeddb'
+import {
+  activateNextButton,
+  changeLanguage,
+  ready,
+  showLobby,
+  socket
+} from '../actions'
+import {
+  lobby,
+  village
+} from '../types'
 import {Middleware} from '.'
-import {village} from '../types'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
@@ -16,7 +33,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           store.dispatch(socket.send({
             lobby: villageInfo.lobbyType,
             token: villageInfo.token,
-            type: village.PayloadType.leaveWaitingPage,
+            type: lobby.PayloadType.leaveWaitingPage,
             villageId: villageInfo.villageId
           }))
           await Promise.all([
@@ -36,7 +53,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const objectStore = transaction.objectStore('licosDB')
           const [isHost, buildVillagePayload] = await Promise.all([
             getValue<boolean>(objectStore, Key.isHost),
-            getValue<village.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
+            getValue<village.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
             updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.selectNextVillage)
           ])
 
