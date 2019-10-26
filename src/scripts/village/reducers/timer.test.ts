@@ -10,7 +10,7 @@ test('TICK', () => {
       {
         start: 10000,
         time: 1000,
-        type: ActionTypes.TICK
+        type: ActionTypes.App.TICK
       }
     )
   ).toStrictEqual(

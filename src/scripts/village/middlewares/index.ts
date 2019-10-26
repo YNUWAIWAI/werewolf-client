@@ -39,7 +39,7 @@ type Action =
   | actions.Tick
   | {type: ActionTypes.IndexedDB.INIT}
   | {type: ActionTypes.Socket.INIT}
-  | {type: ActionTypes.PROLOGUE}
+  | {type: ActionTypes.App.PROLOGUE}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 

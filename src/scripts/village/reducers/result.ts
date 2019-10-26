@@ -73,7 +73,7 @@ const result = (state: State = initialState, action: Action): State => {
         ... state,
         visible: true
       }
-    case ActionTypes.HIDE_RESULT:
+    case ActionTypes.App.HIDE_RESULT:
       return {
         ... state,
         visible: false

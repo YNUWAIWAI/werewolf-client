@@ -185,7 +185,7 @@ describe('<ChatContainer />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       id: 'chat2',
       isMarked: true,
-      type: ActionTypes.STAR
+      type: ActionTypes.App.STAR
     })
   })
 })

@@ -20,7 +20,7 @@ export const initialState = {
 }
 const timer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.TICK:
+    case ActionTypes.App.TICK:
       return {
         ... state,
         start: action.start,

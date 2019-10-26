@@ -788,7 +788,7 @@ describe('<CommandSelectionContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       characterId,
-      type: ActionTypes.SELECT_OPTION
+      type: ActionTypes.App.SELECT_OPTION
     })
   })
 })

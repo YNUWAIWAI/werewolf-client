@@ -44,7 +44,7 @@ describe('<CommandInputBoxContainer />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       channel: village.InputChannel.public,
       text: 'text',
-      type: ActionTypes.POST_CHAT
+      type: ActionTypes.App.POST_CHAT
     })
   })
 })

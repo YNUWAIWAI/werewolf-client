@@ -123,7 +123,7 @@ test('RETURN_TO_LOBBY', async () => {
   expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.leaveWaitingPage)
   expect(dispatch).toHaveBeenCalled()
   expect(dispatch).toHaveBeenCalledWith({
-    type: ActionTypes.SHOW_LOBBY
+    type: ActionTypes.App.SHOW_LOBBY
   })
 })
 describe('NEXT_GAME', () => {
@@ -242,7 +242,7 @@ describe('NEXT_GAME', () => {
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
     expect(dispatch).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.SHOW_LOBBY
+      type: ActionTypes.App.SHOW_LOBBY
     })
   })
 })
@@ -291,15 +291,15 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,
-      type: ActionTypes.CHANGE_LANGUAGE
+      type: ActionTypes.App.CHANGE_LANGUAGE
     })
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.ACTIVATE_NEXT_BUTTON,
+      type: ActionTypes.App.ACTIVATE_NEXT_BUTTON,
       villageId: -1
     })
     expect(dispatch).toHaveBeenCalledWith({
       token: v.token,
-      type: ActionTypes.READY,
+      type: ActionTypes.App.READY,
       villageId: v.villageId
     })
   })
@@ -339,11 +339,11 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,
-      type: ActionTypes.CHANGE_LANGUAGE
+      type: ActionTypes.App.CHANGE_LANGUAGE
     })
     expect(dispatch).toHaveBeenCalledWith({
       token: v.token,
-      type: ActionTypes.READY,
+      type: ActionTypes.App.READY,
       villageId: v.villageId
     })
   })
@@ -409,7 +409,7 @@ describe('socket/MESSAGE', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.SHOW_LOBBY
+      type: ActionTypes.App.SHOW_LOBBY
     })
   })
   test('isHost: false', async () => {

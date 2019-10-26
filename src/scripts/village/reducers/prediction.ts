@@ -245,7 +245,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         default:
           return state
       }
-    case ActionTypes.CHANGE_PREDICTION_BOARD: {
+    case ActionTypes.App.CHANGE_PREDICTION_BOARD: {
       const characterId = String(action.characterId)
 
       return {
@@ -262,7 +262,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         }
       }
     }
-    case ActionTypes.HIDE_PREDICTION_SPEC: {
+    case ActionTypes.App.HIDE_PREDICTION_SPEC: {
       return {
         ... state,
         spec: {
@@ -271,7 +271,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         }
       }
     }
-    case ActionTypes.SHOW_PREDICTION_SPEC: {
+    case ActionTypes.App.SHOW_PREDICTION_SPEC: {
       return {
         ... state,
         spec: {

@@ -9,7 +9,7 @@ test('CHANGE_PHASE', () => {
       {
         from: village.Phase.noon,
         to: village.Phase.night,
-        type: ActionTypes.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       }
     )
   ).toStrictEqual(
@@ -25,7 +25,7 @@ test('SELECT_OPTION', () => {
       initialState,
       {
         characterId: '1',
-        type: ActionTypes.SELECT_OPTION
+        type: ActionTypes.App.SELECT_OPTION
       }
     )
   ).toStrictEqual(
@@ -43,7 +43,7 @@ test('SELECT_NO', () => {
         visible: true
       },
       {
-        type: ActionTypes.SELECT_NO
+        type: ActionTypes.App.SELECT_NO
       }
     )
   ).toStrictEqual(
@@ -62,7 +62,7 @@ test('SELECT_YES', () => {
       },
       {
         characterId: '1',
-        type: ActionTypes.SELECT_YES
+        type: ActionTypes.App.SELECT_YES
       }
     )
   ).toStrictEqual(

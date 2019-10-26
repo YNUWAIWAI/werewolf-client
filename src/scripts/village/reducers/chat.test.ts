@@ -327,7 +327,7 @@ test('CHANGE_day', () => {
       {
         from: 0,
         to: 1,
-        type: ActionTypes.CHANGE_DAY
+        type: ActionTypes.App.CHANGE_DAY
       }
     )
   ).toStrictEqual({
@@ -367,7 +367,7 @@ test('STAR', () => {
       {
         id: 'chat0',
         isMarked: true,
-        type: ActionTypes.STAR
+        type: ActionTypes.App.STAR
       }
     )
   ).toStrictEqual({

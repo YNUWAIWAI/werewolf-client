@@ -8,7 +8,7 @@ test('CHANGE_LANGUAGE', () => {
       initialState,
       {
         language: village.Language.en,
-        type: ActionTypes.CHANGE_LANGUAGE
+        type: ActionTypes.App.CHANGE_LANGUAGE
       }
     )
   ).toStrictEqual(

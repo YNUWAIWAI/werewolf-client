@@ -517,7 +517,7 @@ describe('<ModalContainer />', () => {
     wrapper.find(Modal).props().handleClickNo()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.SELECT_NO
+      type: ActionTypes.App.SELECT_NO
     })
   })
   test('handleClickYes', () => {
@@ -543,7 +543,7 @@ describe('<ModalContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       characterId,
-      type: ActionTypes.SELECT_YES
+      type: ActionTypes.App.SELECT_YES
     })
   })
 })

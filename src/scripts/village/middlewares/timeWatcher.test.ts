@@ -112,12 +112,12 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'morning',
-        type: ActionTypes.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       })
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.CHANGE_DAY
+        type: ActionTypes.App.CHANGE_DAY
       })
     })
   })
@@ -222,7 +222,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'morning',
-        type: ActionTypes.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       })
     })
   })
@@ -326,7 +326,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'flavor text',
-        type: ActionTypes.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       })
     })
   })
@@ -431,7 +431,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.CHANGE_DAY
+        type: ActionTypes.App.CHANGE_DAY
       })
     })
   })

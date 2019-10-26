@@ -37,7 +37,7 @@ export const initialState: State = {
 }
 const commandPostMortem = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.ACTIVATE_NEXT_BUTTON:
+    case ActionTypes.App.ACTIVATE_NEXT_BUTTON:
       return {
         navigation: [
           {
@@ -57,7 +57,7 @@ const commandPostMortem = (state: State = initialState, action: Action): State =
           }
         ]
       }
-    case ActionTypes.DEACTIVATE_NEXT_BUTTON:
+    case ActionTypes.App.DEACTIVATE_NEXT_BUTTON:
       return {
         navigation: [
           {

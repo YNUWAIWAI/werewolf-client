@@ -14,7 +14,7 @@ test('CHANGE_PHASE', () => {
       {
         from: village.Phase.noon,
         to: village.Phase.night,
-        type: ActionTypes.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       }
     )
   ).toStrictEqual({
@@ -135,7 +135,7 @@ test('SELECT_YES', () => {
       },
       {
         characterId: '2',
-        type: ActionTypes.SELECT_YES
+        type: ActionTypes.App.SELECT_YES
       }
     )
   ).toStrictEqual({

@@ -122,7 +122,7 @@ const chat = (state: State = initialState, action: Action): State => {
           return state
       }
     }
-    case ActionTypes.CHANGE_DAY: {
+    case ActionTypes.App.CHANGE_DAY: {
       const delimeterId = getDelimeterId()
 
       return {
@@ -136,7 +136,7 @@ const chat = (state: State = initialState, action: Action): State => {
         }
       }
     }
-    case ActionTypes.STAR: {
+    case ActionTypes.App.STAR: {
       const item = state.byId[action.id]
 
       if (item.type === village.ChatItemType.delimeter) {

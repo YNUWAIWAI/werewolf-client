@@ -309,7 +309,7 @@ describe('<PredictionContainer />', () => {
       characterId,
       nextState,
       roleId,
-      type: ActionTypes.CHANGE_PREDICTION_BOARD
+      type: ActionTypes.App.CHANGE_PREDICTION_BOARD
     })
   })
   test('handleMouseEnter', () => {
@@ -335,7 +335,7 @@ describe('<PredictionContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       role,
-      type: ActionTypes.SHOW_PREDICTION_SPEC
+      type: ActionTypes.App.SHOW_PREDICTION_SPEC
     })
   })
   test('handleMouseLeave', () => {
@@ -359,7 +359,7 @@ describe('<PredictionContainer />', () => {
     wrapper.find(Prediction).props().handleMouseLeave()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.HIDE_PREDICTION_SPEC
+      type: ActionTypes.App.HIDE_PREDICTION_SPEC
     })
   })
 })

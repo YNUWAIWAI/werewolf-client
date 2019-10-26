@@ -676,7 +676,7 @@ describe('<ResultContainer />', () => {
     wrapper.find(Result).props().handleClickCloseButton()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.HIDE_RESULT
+      type: ActionTypes.App.HIDE_RESULT
     })
   })
 })

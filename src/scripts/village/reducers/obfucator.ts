@@ -36,7 +36,7 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.CHANGE_PHASE:
+    case ActionTypes.App.CHANGE_PHASE:
       if (action.to === village.Phase.result || action.from === village.Phase.result) {
         return state
       }
@@ -45,14 +45,14 @@ const obfucator = (state: State = initialState, action: Action): State => {
         ... state,
         visible: false
       }
-    case ActionTypes.HIDE_RESULT:
-    case ActionTypes.SELECT_NO:
-    case ActionTypes.SELECT_YES:
+    case ActionTypes.App.HIDE_RESULT:
+    case ActionTypes.App.SELECT_NO:
+    case ActionTypes.App.SELECT_YES:
       return {
         ... state,
         visible: false
       }
-    case ActionTypes.SELECT_OPTION:
+    case ActionTypes.App.SELECT_OPTION:
     case ActionTypes.Navigation.SHOW_RESULT:
       return {
         loading: false,

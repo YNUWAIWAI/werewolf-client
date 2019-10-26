@@ -28,12 +28,12 @@ export const initialState: State = {
 }
 const commandSelection = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.CHANGE_PHASE:
+    case ActionTypes.App.CHANGE_PHASE:
       return {
         ... state,
         fixed: false
       }
-    case ActionTypes.SELECT_YES: {
+    case ActionTypes.App.SELECT_YES: {
       return {
         ... state,
         allIds: state.allIds.filter(characterId => characterId === action.characterId),

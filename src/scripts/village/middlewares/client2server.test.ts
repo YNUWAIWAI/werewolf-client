@@ -279,7 +279,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     characterId: '2',
     nextState: village.BoardState.CIRCLE,
     roleId: village.RoleId.villager,
-    type: ActionTypes.CHANGE_PREDICTION_BOARD
+    type: ActionTypes.App.CHANGE_PREDICTION_BOARD
   }
   const payload: village.Payload$BoardMessage = {
     '@context': [
@@ -445,7 +445,7 @@ describe('POST_CHAT', () => {
   const action: PostChat = {
     channel: village.InputChannel.public,
     text: 'text',
-    type: ActionTypes.POST_CHAT
+    type: ActionTypes.App.POST_CHAT
   }
   const payload: village.Payload$ChatMessage = {
     '@context': [
@@ -574,7 +574,7 @@ describe('READY', () => {
   const villageId = 3
   const action: Ready = {
     token,
-    type: ActionTypes.READY,
+    type: ActionTypes.App.READY,
     villageId
   }
   const payload: village.Payload$Ready = {
@@ -756,7 +756,7 @@ describe('SELECT_YES', () => {
   const actionHandler = nextHandler(dispatchAPI)
   const action: SelectYes = {
     characterId: '2',
-    type: ActionTypes.SELECT_YES
+    type: ActionTypes.App.SELECT_YES
   }
   const payload: village.Payload$VoteMessage = {
     '@context': [
@@ -934,7 +934,7 @@ describe('STAR', () => {
   const action: StarChat = {
     id: 'chat0',
     isMarked: true,
-    type: ActionTypes.STAR
+    type: ActionTypes.App.STAR
   }
   const payload: village.Payload$StarMessage = {
     '@context': [

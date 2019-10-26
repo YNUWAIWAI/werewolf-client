@@ -51,7 +51,7 @@ describe('<HideButtonContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       hide,
-      type: ActionTypes.CLICK_HIDE_BUTTON
+      type: ActionTypes.App.CLICK_HIDE_BUTTON
     })
   })
 })
