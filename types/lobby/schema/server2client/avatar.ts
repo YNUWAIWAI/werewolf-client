@@ -8,7 +8,7 @@ import {
   Token
 } from '../..'
 
-export interface Avatar extends PayloadBase{
+export interface Avatar extends PayloadBase {
   image: string
   lang: Language
   name: string
