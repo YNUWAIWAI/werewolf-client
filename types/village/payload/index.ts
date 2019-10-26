@@ -3,10 +3,8 @@ import {
   ChatMessage,
   ErrorMessage,
   FlavorTextMessage,
-  Message,
   NextGameInvitation,
   NextGameInvitationIsClosed,
-  PayloadType,
   ReceivedChatMessage,
   ReceivedFlavorTextMessage,
   ReceivedSystemMessage,
@@ -14,12 +12,16 @@ import {
   StarMessage,
   SystemMessage,
   VoteMessage
-} from '..'
+} from '../schema'
 import {
   BuildVillage,
   LeaveWaitingPage,
   Ready
-} from '../../lobby'
+} from '../../lobby/schema'
+import {
+  Message,
+  PayloadType
+} from '..'
 
 export type Payload =
   | Payload$BoardMessage

@@ -1,5 +1,4 @@
 /* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
-export * from './schema'
 export * from './payload'
 
 export const enum BaseContext {
