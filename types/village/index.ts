@@ -3,17 +3,17 @@ export * from './schema'
 export * from './payload'
 
 export const enum BaseContext {
-  Base = 'https://werewolf.world/context/0.3/base.jsonld',
-  Board = 'https://werewolf.world/context/0.3/board.jsonld',
-  Character = 'https://werewolf.world/context/0.3/character.jsonld',
-  Chat = 'https://werewolf.world/context/0.3/chat.jsonld',
-  Error = 'https://werewolf.world/context/0.3/error.jsonld',
-  FlavorText = 'https://werewolf.world/context/0.3/flavorText.jsonld',
-  Role = 'https://werewolf.world/context/0.3/role.jsonld',
-  Scroll = 'https://werewolf.world/context/0.3/scroll.jsonld',
-  Star = 'https://werewolf.world/context/0.3/star.jsonld',
-  Vote = 'https://werewolf.world/context/0.3/vote.jsonld',
-  VotingResult = 'https://werewolf.world/context/0.3/votingResult.jsonld'
+  Base = 'https://werewolf.world/village/context/0.3/base.jsonld',
+  Board = 'https://werewolf.world/village/context/0.3/board.jsonld',
+  Character = 'https://werewolf.world/village/context/0.3/character.jsonld',
+  Chat = 'https://werewolf.world/village/context/0.3/chat.jsonld',
+  Error = 'https://werewolf.world/village/context/0.3/error.jsonld',
+  FlavorText = 'https://werewolf.world/village/context/0.3/flavorText.jsonld',
+  Role = 'https://werewolf.world/village/context/0.3/role.jsonld',
+  Scroll = 'https://werewolf.world/village/context/0.3/scroll.jsonld',
+  Star = 'https://werewolf.world/village/context/0.3/star.jsonld',
+  Vote = 'https://werewolf.world/village/context/0.3/vote.jsonld',
+  VotingResult = 'https://werewolf.world/village/context/0.3/votingResult.jsonld'
 }
 export const enum BoardState {
   CIRCLE = 'O',
@@ -55,21 +55,21 @@ export const enum ChatItemType {
   item = 'item'
 }
 export const enum Context {
-  Avatar = 'https://werewolf.world/context/0.3/avatar.jsonld',
-  Base = 'https://werewolf.world/context/0.3/base.jsonld',
-  Board = 'https://werewolf.world/context/0.3/board.jsonld',
-  BoardResult = 'https://werewolf.world/context/0.3/boardResult.jsonld',
-  Character = 'https://werewolf.world/context/0.3/character.jsonld',
-  Chat = 'https://werewolf.world/context/0.3/chat.jsonld',
-  ChatSettings = 'https://werewolf.world/context/0.3/chatSettings.jsonld',
-  Error = 'https://werewolf.world/context/0.3/error.jsonld',
-  FlavorText = 'https://werewolf.world/context/0.3/flavorText.jsonld',
-  Role = 'https://werewolf.world/context/0.3/role.jsonld',
-  Scroll = 'https://werewolf.world/context/0.3/scroll.jsonld',
-  Star = 'https://werewolf.world/context/0.3/star.jsonld',
-  Village = 'https://werewolf.world/context/0.3/village.jsonld',
-  Vote = 'https://werewolf.world/context/0.3/vote.jsonld',
-  VotingResult = 'https://werewolf.world/context/0.3/votingResult.jsonld'
+  Avatar = 'https://werewolf.world/village/context/0.3/avatar.jsonld',
+  Base = 'https://werewolf.world/village/context/0.3/base.jsonld',
+  Board = 'https://werewolf.world/village/context/0.3/board.jsonld',
+  BoardResult = 'https://werewolf.world/village/context/0.3/boardResult.jsonld',
+  Character = 'https://werewolf.world/village/context/0.3/character.jsonld',
+  Chat = 'https://werewolf.world/village/context/0.3/chat.jsonld',
+  ChatSettings = 'https://werewolf.world/village/context/0.3/chatSettings.jsonld',
+  Error = 'https://werewolf.world/village/context/0.3/error.jsonld',
+  FlavorText = 'https://werewolf.world/village/context/0.3/flavorText.jsonld',
+  Role = 'https://werewolf.world/village/context/0.3/role.jsonld',
+  Scroll = 'https://werewolf.world/village/context/0.3/scroll.jsonld',
+  Star = 'https://werewolf.world/village/context/0.3/star.jsonld',
+  Village = 'https://werewolf.world/village/context/0.3/village.jsonld',
+  Vote = 'https://werewolf.world/village/context/0.3/vote.jsonld',
+  VotingResult = 'https://werewolf.world/village/context/0.3/votingResult.jsonld'
 }
 export const enum Directionality {
   serverToClient = 'server to client',
