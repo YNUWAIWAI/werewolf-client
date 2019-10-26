@@ -347,11 +347,11 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/board.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
         .then(res => res.json()),
@@ -817,9 +817,9 @@ describe('SELECT_YES', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
         .then(res => res.json()),
@@ -996,9 +996,9 @@ describe('STAR', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
         .then(res => res.json()),
