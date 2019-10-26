@@ -12,7 +12,7 @@ export const enum Key {
   whatToDoNextInLobby = 'whatToDoNextInLobby'
 }
 export interface Village {
-  lobbyType: lobby.Lobby
+  lobbyType: lobby.LobbyType
   token: string
   villageId: number
 }

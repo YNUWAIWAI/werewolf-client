@@ -9,7 +9,7 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.human,
+          lobby: lobby.LobbyType.human,
           type: ActionTypes.App.CHANGE_LOBBY
         }
       )
@@ -40,7 +40,7 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.audience,
+          lobby: lobby.LobbyType.onymousAudience,
           type: ActionTypes.App.CHANGE_LOBBY
         }
       )
@@ -71,7 +71,7 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.robot,
+          lobby: lobby.LobbyType.robot,
           type: ActionTypes.App.CHANGE_LOBBY
         }
       )

@@ -7,19 +7,19 @@ test('CHANGE_LOBBY', () => {
     reducer(
       {
         ... initialState,
-        lobby: lobby.Lobby.human
+        lobby: lobby.LobbyType.human
       },
       {
-        lobby: lobby.Lobby.robot,
+        lobby: lobby.LobbyType.robot,
         type: ActionTypes.App.CHANGE_LOBBY
       }
     )
   ).toStrictEqual(
     {
-      [lobby.Lobby.human]: '',
-      lobby: lobby.Lobby.robot,
-      [lobby.Lobby.audience]: '',
-      [lobby.Lobby.robot]: ''
+      [lobby.LobbyType.human]: '',
+      lobby: lobby.LobbyType.robot,
+      [lobby.LobbyType.onymousAudience]: '',
+      [lobby.LobbyType.robot]: ''
     }
   )
 })
@@ -29,17 +29,17 @@ describe('CHANGE_TOKEN', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.human,
+          lobby: lobby.LobbyType.human,
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
           type: ActionTypes.App.CHANGE_TOKEN
         }
       )
     ).toStrictEqual(
       {
-        [lobby.Lobby.human]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-        lobby: lobby.Lobby.human,
-        [lobby.Lobby.audience]: '',
-        [lobby.Lobby.robot]: ''
+        [lobby.LobbyType.human]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        lobby: lobby.LobbyType.human,
+        [lobby.LobbyType.onymousAudience]: '',
+        [lobby.LobbyType.robot]: ''
       }
     )
   })
@@ -48,17 +48,17 @@ describe('CHANGE_TOKEN', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.robot,
+          lobby: lobby.LobbyType.robot,
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
           type: ActionTypes.App.CHANGE_TOKEN
         }
       )
     ).toStrictEqual(
       {
-        [lobby.Lobby.human]: '',
-        lobby: lobby.Lobby.human,
-        [lobby.Lobby.audience]: '',
-        [lobby.Lobby.robot]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+        [lobby.LobbyType.human]: '',
+        lobby: lobby.LobbyType.human,
+        [lobby.LobbyType.onymousAudience]: '',
+        [lobby.LobbyType.robot]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
       }
     )
   })
@@ -67,17 +67,17 @@ describe('CHANGE_TOKEN', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.audience,
+          lobby: lobby.LobbyType.onymousAudience,
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
           type: ActionTypes.App.CHANGE_TOKEN
         }
       )
     ).toStrictEqual(
       {
-        [lobby.Lobby.human]: '',
-        lobby: lobby.Lobby.human,
-        [lobby.Lobby.audience]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-        [lobby.Lobby.robot]: ''
+        [lobby.LobbyType.human]: '',
+        lobby: lobby.LobbyType.human,
+        [lobby.LobbyType.onymousAudience]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        [lobby.LobbyType.robot]: ''
       }
     )
   })
@@ -92,10 +92,10 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     )
   ).toStrictEqual(
     {
-      [lobby.Lobby.human]: '',
+      [lobby.LobbyType.human]: '',
       lobby: 'onymous audience',
-      [lobby.Lobby.audience]: '',
-      [lobby.Lobby.robot]: ''
+      [lobby.LobbyType.onymousAudience]: '',
+      [lobby.LobbyType.robot]: ''
     }
   )
 })
@@ -109,10 +109,10 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     )
   ).toStrictEqual(
     {
-      [lobby.Lobby.human]: '',
-      lobby: lobby.Lobby.human,
-      [lobby.Lobby.audience]: '',
-      [lobby.Lobby.robot]: ''
+      [lobby.LobbyType.human]: '',
+      lobby: lobby.LobbyType.human,
+      [lobby.LobbyType.onymousAudience]: '',
+      [lobby.LobbyType.robot]: ''
     }
   )
 })
@@ -126,10 +126,10 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     )
   ).toStrictEqual(
     {
-      [lobby.Lobby.human]: '',
-      lobby: lobby.Lobby.robot,
-      [lobby.Lobby.audience]: '',
-      [lobby.Lobby.robot]: ''
+      [lobby.LobbyType.human]: '',
+      lobby: lobby.LobbyType.robot,
+      [lobby.LobbyType.onymousAudience]: '',
+      [lobby.LobbyType.robot]: ''
     }
   )
 })

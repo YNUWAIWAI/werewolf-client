@@ -2,7 +2,7 @@ import {lobby} from '../../types'
 
 export const enterHumanPlayerLobby: lobby.Payload$Lobby = {
   error: null,
-  lobby: lobby.Lobby.human,
+  lobby: lobby.LobbyType.human,
   type: lobby.PayloadType.lobby,
   villages: [
     {

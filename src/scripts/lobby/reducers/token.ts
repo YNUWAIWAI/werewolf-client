@@ -3,10 +3,10 @@ import {ChangeLobby, ChangeToken, Transition} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
-  [lobby.Lobby.human]: string
-  lobby: lobby.Lobby
-  [lobby.Lobby.audience]: string
-  [lobby.Lobby.robot]: string
+  [lobby.LobbyType.human]: string
+  lobby: lobby.LobbyType
+  [lobby.LobbyType.onymousAudience]: string
+  [lobby.LobbyType.robot]: string
 }
 type Action =
   | ChangeLobby
@@ -14,10 +14,10 @@ type Action =
   | Transition
 
 export const initialState: State = {
-  [lobby.Lobby.human]: '',
-  lobby: lobby.Lobby.human,
-  [lobby.Lobby.audience]: '',
-  [lobby.Lobby.robot]: ''
+  [lobby.LobbyType.human]: '',
+  lobby: lobby.LobbyType.human,
+  [lobby.LobbyType.onymousAudience]: '',
+  [lobby.LobbyType.robot]: ''
 }
 
 const token = (state: State = initialState, action: Action): State => {
@@ -35,17 +35,17 @@ const token = (state: State = initialState, action: Action): State => {
     case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
-        lobby: lobby.Lobby.audience
+        lobby: lobby.LobbyType.onymousAudience
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
-        lobby: lobby.Lobby.human
+        lobby: lobby.LobbyType.human
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
-        lobby: lobby.Lobby.robot
+        lobby: lobby.LobbyType.robot
       }
     default:
       return state

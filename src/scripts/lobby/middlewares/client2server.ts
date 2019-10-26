@@ -179,7 +179,7 @@ const client2server: Middleware = store => next => action => {
     case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE: {
       const state = store.getState()
       const enterLobby: lobby.Payload$EnterLobby = {
-        lobby: lobby.Lobby.audience,
+        lobby: lobby.LobbyType.onymousAudience,
         page: 1,
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.enterLobby
@@ -197,7 +197,7 @@ const client2server: Middleware = store => next => action => {
     case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
       const state = store.getState()
       const enterLobby: lobby.Payload$EnterLobby = {
-        lobby: lobby.Lobby.human,
+        lobby: lobby.LobbyType.human,
         page: 1,
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.enterLobby
@@ -215,7 +215,7 @@ const client2server: Middleware = store => next => action => {
     case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
       const state = store.getState()
       const enterLobby: lobby.Payload$EnterLobby = {
-        lobby: lobby.Lobby.robot,
+        lobby: lobby.LobbyType.robot,
         page: 1,
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.enterLobby

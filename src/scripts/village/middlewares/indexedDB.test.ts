@@ -50,7 +50,7 @@ import middleware from './indexedDB'
 (global as Record<string, any>).IDBTransaction = FDBTransaction;
 (global as Record<string, any>).IDBVersionChangeEvent = FDBVersionChangeEvent
 
-const BASE_URI = `https://werewolf.world/schema/${VERSION}`
+const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 const CLIENT2SERVER = `https://werewolf.world/lobby/schema/${VERSION}/client2server`
 
 const getAllValue = async () => {
@@ -99,7 +99,7 @@ test('RETURN_TO_LOBBY', async () => {
   const transaction = db.transaction('licosDB', 'readwrite')
   const objectStore = transaction.objectStore('licosDB')
   const v = {
-    lobbyType: lobby.Lobby.human,
+    lobbyType: lobby.LobbyType.human,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
     villageId: 3
   }
@@ -139,7 +139,7 @@ describe('NEXT_GAME', () => {
   const action: ClickNavigationButton = {
     type: ActionTypes.Navigation.NEXT_GAME
   }
-  const payload: village.Payload = {
+  const payload: village.Payload$BuildVillage = {
     avatar: lobby.Avatar.random,
     comment: '',
     hostPlayer: {
@@ -164,7 +164,7 @@ describe('NEXT_GAME', () => {
     },
     roleSetting: getCastFromNumberOfPlayers(15)[lobby.Member.A],
     token: avatarToken.humanPlayer,
-    type: village.PayloadType.buildVillage
+    type: lobby.PayloadType.buildVillage
   }
 
   test('validate the JSON', async () => {
@@ -263,7 +263,7 @@ describe('indexedDB/INIT', () => {
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
     const v = {
-      lobbyType: lobby.Lobby.human,
+      lobbyType: lobby.LobbyType.human,
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }
@@ -311,7 +311,7 @@ describe('indexedDB/INIT', () => {
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
     const v = {
-      lobbyType: lobby.Lobby.human,
+      lobbyType: lobby.LobbyType.human,
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }

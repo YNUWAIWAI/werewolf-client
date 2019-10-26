@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(changeSearchId(id))
   },
   handleValidityChange: validity => {
-    dispatch(changeValidity(Scope.idSearch)('id')(validity))
+    dispatch(changeValidity(Scope.IdSearch)('id')(validity))
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))

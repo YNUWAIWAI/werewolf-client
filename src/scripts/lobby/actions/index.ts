@@ -63,7 +63,7 @@ export const changeLanguage = (language: lobby.Language): {language: lobby.Langu
   language,
   type: ActionTypes.App.CHANGE_LANGUAGE
 })
-export const changeLobby = (lobby: lobby.Lobby): {lobby: lobby.Lobby, type: ActionTypes.App.CHANGE_LOBBY} => ({
+export const changeLobby = (lobby: lobby.LobbyType): {lobby: lobby.LobbyType, type: ActionTypes.App.CHANGE_LOBBY} => ({
   lobby,
   type: ActionTypes.App.CHANGE_LOBBY
 })
@@ -91,7 +91,7 @@ export const changeSearchId = (id: number): {id: number, type: ActionTypes.IdSea
   id,
   type: ActionTypes.IdSearch.CHANGE_SEARCH_ID
 })
-export const changeToken = ({lobby, token}: {lobby: lobby.Lobby, token: string}): {lobby: lobby.Lobby, token: string, type: ActionTypes.App.CHANGE_TOKEN} => ({
+export const changeToken = ({lobby, token}: {lobby: lobby.LobbyType, token: string}): {lobby: lobby.LobbyType, token: string, type: ActionTypes.App.CHANGE_TOKEN} => ({
   lobby,
   token,
   type: ActionTypes.App.CHANGE_TOKEN

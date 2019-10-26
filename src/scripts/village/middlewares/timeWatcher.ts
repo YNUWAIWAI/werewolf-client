@@ -1,10 +1,10 @@
+import * as ActionTypes from '../constants/ActionTypes'
 import {changeDay, changePhase} from '../actions'
 import {Middleware} from '.'
-import {socket} from '../constants/ActionTypes'
 import {village} from '../types'
 
 const timeWatcher: Middleware = store => next => action => {
-  if (action.type === socket.MESSAGE) {
+  if (action.type === ActionTypes.Socket.MESSAGE) {
     if (
       action.payload['@payload'] === village.Message.boardMessage ||
       action.payload['@payload'] === village.Message.chatMessage ||

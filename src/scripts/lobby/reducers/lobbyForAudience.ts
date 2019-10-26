@@ -72,7 +72,7 @@ const lobbyForAudience = (state: State = initialState, action: Action): State =>
         case lobby.PayloadType.lobby: {
           const payload = action.payload
 
-          if (payload.lobby === 'onymous audience') {
+          if (payload.lobby === lobby.LobbyType.onymousAudience) {
             return {
               ... state,
               menuItems: state.menuItems.map(item => {
