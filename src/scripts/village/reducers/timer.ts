@@ -20,13 +20,13 @@ export const initialState = {
 }
 const timer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.TICK:
+    case ActionTypes.TICK:
       return {
         ... state,
         start: action.start,
         time: action.time
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       if (
         action.payload['@payload'] === village.Message.systemMessage ||
         (action.payload['@payload'] === village.Message.flavorTextMessage && action.payload.day === 0)

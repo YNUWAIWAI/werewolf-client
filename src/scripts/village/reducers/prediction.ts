@@ -213,7 +213,7 @@ export const initialState = {
 
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload['@payload']) {
         case village.Message.systemMessage: {
           const payload = action.payload
@@ -245,7 +245,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         default:
           return state
       }
-    case ActionTypes.global.CHANGE_PREDICTION_BOARD: {
+    case ActionTypes.CHANGE_PREDICTION_BOARD: {
       const characterId = String(action.characterId)
 
       return {
@@ -262,7 +262,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         }
       }
     }
-    case ActionTypes.global.HIDE_PREDICTION_SPEC: {
+    case ActionTypes.HIDE_PREDICTION_SPEC: {
       return {
         ... state,
         spec: {
@@ -271,7 +271,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         }
       }
     }
-    case ActionTypes.global.SHOW_PREDICTION_SPEC: {
+    case ActionTypes.SHOW_PREDICTION_SPEC: {
       return {
         ... state,
         spec: {

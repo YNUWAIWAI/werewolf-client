@@ -17,7 +17,7 @@ describe('CHANGE_PHASE', () => {
     const action: ChangePhase = {
       from: village.Phase.noon,
       to: village.Phase.night,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.CHANGE_PHASE
     }
 
     expect(
@@ -34,7 +34,7 @@ describe('CHANGE_PHASE', () => {
     const action: ChangePhase = {
       from: village.Phase.night,
       to: village.Phase.result,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.CHANGE_PHASE
     }
 
     expect(
@@ -48,7 +48,7 @@ describe('CHANGE_PHASE', () => {
     const action: ChangePhase = {
       from: village.Phase.result,
       to: village.Phase.postMortem,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.CHANGE_PHASE
     }
 
     expect(
@@ -61,7 +61,7 @@ describe('CHANGE_PHASE', () => {
 })
 test('HIDE_RESULT', () => {
   const action: HideResult = {
-    type: ActionTypes.global.HIDE_RESULT
+    type: ActionTypes.HIDE_RESULT
   }
 
   expect(
@@ -76,7 +76,7 @@ test('HIDE_RESULT', () => {
 })
 test('SELECT_NO', () => {
   const action: SelectNo = {
-    type: ActionTypes.global.SELECT_NO
+    type: ActionTypes.SELECT_NO
   }
 
   expect(
@@ -92,7 +92,7 @@ test('SELECT_NO', () => {
 test('SELECT_YES', () => {
   const action: SelectYes = {
     characterId: '1',
-    type: ActionTypes.global.SELECT_YES
+    type: ActionTypes.SELECT_YES
   }
 
   expect(
@@ -108,7 +108,7 @@ test('SELECT_YES', () => {
 test('SELECT_OPTION', () => {
   const action: SelectOption = {
     characterId: '1',
-    type: ActionTypes.global.SELECT_OPTION
+    type: ActionTypes.SELECT_OPTION
   }
 
   expect(

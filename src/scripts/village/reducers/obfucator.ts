@@ -36,7 +36,7 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_PHASE:
+    case ActionTypes.CHANGE_PHASE:
       if (action.to === village.Phase.result || action.from === village.Phase.result) {
         return state
       }
@@ -45,26 +45,26 @@ const obfucator = (state: State = initialState, action: Action): State => {
         ... state,
         visible: false
       }
-    case ActionTypes.global.HIDE_RESULT:
-    case ActionTypes.global.SELECT_NO:
-    case ActionTypes.global.SELECT_YES:
+    case ActionTypes.HIDE_RESULT:
+    case ActionTypes.SELECT_NO:
+    case ActionTypes.SELECT_YES:
       return {
         ... state,
         visible: false
       }
-    case ActionTypes.global.SELECT_OPTION:
+    case ActionTypes.SELECT_OPTION:
     case ActionTypes.Navigation.SHOW_RESULT:
       return {
         loading: false,
         visible: true
       }
-    case ActionTypes.socket.CLOSE:
-    case ActionTypes.socket.ERROR:
+    case ActionTypes.Socket.CLOSE:
+    case ActionTypes.Socket.ERROR:
       return {
         loading: true,
         visible: true
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       if (
         action.payload['@payload'] === village.Message.systemMessage &&
         action.payload.phase === village.Phase.result
@@ -76,7 +76,7 @@ const obfucator = (state: State = initialState, action: Action): State => {
       }
 
       return state
-    case ActionTypes.socket.OPEN:
+    case ActionTypes.Socket.OPEN:
       return {
         loading: false,
         visible: false

@@ -18,7 +18,7 @@ export const initialState: State = {
 
 const suggest = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       const payload = action.payload
 
       if (

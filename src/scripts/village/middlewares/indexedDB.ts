@@ -67,7 +67,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.indexedDB.INIT: {
+    case ActionTypes.IndexedDB.INIT: {
       connectDB()
         .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
@@ -91,7 +91,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       if (action.payload['@payload'] === village.PayloadType.nextGameInvitation) {
         const payload = action.payload
 

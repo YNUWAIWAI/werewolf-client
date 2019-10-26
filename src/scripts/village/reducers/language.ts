@@ -9,7 +9,7 @@ type Action =
 export const initialState: State = village.Language.en
 const language = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_LANGUAGE:
+    case ActionTypes.CHANGE_LANGUAGE:
       return action.language
     default:
       return state

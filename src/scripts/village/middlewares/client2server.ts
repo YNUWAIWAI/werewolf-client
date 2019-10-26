@@ -14,7 +14,7 @@ import {socket} from '../actions'
 const getTimestamp = () => new Date().toISOString()
 const client2server: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_PREDICTION_BOARD: {
+    case ActionTypes.CHANGE_PREDICTION_BOARD: {
       const state = store.getState()
       const myRole = just(state.mine.role)
       const myCharacter = just(state.mine.character)
@@ -87,7 +87,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.POST_CHAT: {
+    case ActionTypes.POST_CHAT: {
       const state = store.getState()
       const myRole = just(state.mine.role)
       const myCharacter = just(state.mine.character)
@@ -159,7 +159,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.READY: {
+    case ActionTypes.READY: {
       const payload: village.Payload$Ready = {
         token: action.token,
         type: lobby.PayloadType.ready,
@@ -170,7 +170,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.SELECT_YES: {
+    case ActionTypes.SELECT_YES: {
       const state = store.getState()
       const votedCharacter = state.commandSelection.byId[action.characterId]
       const myRole = just(state.mine.role)
@@ -231,7 +231,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.global.STAR: {
+    case ActionTypes.STAR: {
       const state = store.getState()
       const chat = state.chat.byId[action.id]
 
@@ -297,7 +297,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       switch (action.payload['@payload']) {
         case village.Message.chatMessage: {
           if (action.payload.phase === village.Phase.flavorText || action.payload.phase === village.Phase.result) {

@@ -6,7 +6,7 @@ import {village} from '../types'
 
 const flavorText: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       if (action.payload['@payload'] === village.Message.flavorTextMessage) {
         const payload = action.payload
 

@@ -23,7 +23,7 @@ type Action =
 export const initialState = {}
 const mine = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       if (action.payload['@payload'] === village.Message.systemMessage) {
         const payload = action.payload
         const character = (() => {

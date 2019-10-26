@@ -103,7 +103,7 @@ test('CHANGE_DAY', () => {
     {
       from: village.Phase.morning,
       to: village.Phase.noon,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.CHANGE_PHASE
     }
   )).toStrictEqual({
     public: {

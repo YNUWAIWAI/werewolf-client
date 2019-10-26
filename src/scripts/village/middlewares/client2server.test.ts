@@ -279,7 +279,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     characterId: '2',
     nextState: village.BoardState.CIRCLE,
     roleId: village.RoleId.villager,
-    type: ActionTypes.global.CHANGE_PREDICTION_BOARD
+    type: ActionTypes.CHANGE_PREDICTION_BOARD
   }
   const payload: village.Payload$BoardMessage = {
     '@context': [
@@ -393,7 +393,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -445,7 +445,7 @@ describe('POST_CHAT', () => {
   const action: PostChat = {
     channel: village.InputChannel.public,
     text: 'text',
-    type: ActionTypes.global.POST_CHAT
+    type: ActionTypes.POST_CHAT
   }
   const payload: village.Payload$ChatMessage = {
     '@context': [
@@ -558,7 +558,7 @@ describe('POST_CHAT', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -574,7 +574,7 @@ describe('READY', () => {
   const villageId = 3
   const action: Ready = {
     token,
-    type: ActionTypes.global.READY,
+    type: ActionTypes.READY,
     villageId
   }
   const payload: village.Payload$Ready = {
@@ -600,7 +600,7 @@ describe('READY', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -756,7 +756,7 @@ describe('SELECT_YES', () => {
   const actionHandler = nextHandler(dispatchAPI)
   const action: SelectYes = {
     characterId: '2',
-    type: ActionTypes.global.SELECT_YES
+    type: ActionTypes.SELECT_YES
   }
   const payload: village.Payload$VoteMessage = {
     '@context': [
@@ -861,7 +861,7 @@ describe('SELECT_YES', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -934,7 +934,7 @@ describe('STAR', () => {
   const action: StarChat = {
     id: 'chat0',
     isMarked: true,
-    type: ActionTypes.global.STAR
+    type: ActionTypes.STAR
   }
   const payload: village.Payload$StarMessage = {
     '@context': [
@@ -1039,7 +1039,7 @@ describe('STAR', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -1090,7 +1090,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })
@@ -1140,7 +1140,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })
@@ -1190,7 +1190,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })

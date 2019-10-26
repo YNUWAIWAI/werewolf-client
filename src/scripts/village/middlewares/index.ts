@@ -37,9 +37,9 @@ type Action =
   | actions.SocketSend
   | actions.StarChat
   | actions.Tick
-  | {type: ActionTypes.indexedDB.INIT}
-  | {type: ActionTypes.socket.INIT}
-  | {type: ActionTypes.global.PROLOGUE}
+  | {type: ActionTypes.IndexedDB.INIT}
+  | {type: ActionTypes.Socket.INIT}
+  | {type: ActionTypes.PROLOGUE}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 

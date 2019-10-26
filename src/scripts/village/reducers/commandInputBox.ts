@@ -29,7 +29,7 @@ export const initialState: State = {
 
 const commandInputBox = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_PHASE: {
+    case ActionTypes.CHANGE_PHASE: {
       return {
         ... state,
         public: {
@@ -41,7 +41,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
         }
       }
     }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload['@payload']) {
         case village.Message.chatMessage: {
           if (!action.payload.isMine) {

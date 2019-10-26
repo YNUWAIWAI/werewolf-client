@@ -3094,7 +3094,7 @@ test('CHANGE_PREDICTION_BOARD', () => {
         characterId: '2',
         nextState: village.BoardState.CIRCLE,
         roleId: village.RoleId.villager,
-        type: ActionTypes.global.CHANGE_PREDICTION_BOARD
+        type: ActionTypes.CHANGE_PREDICTION_BOARD
       }
     )
   ).toStrictEqual({
@@ -3124,7 +3124,7 @@ test('HIDE_PREDICTION_SPEC', () => {
         }
       },
       {
-        type: ActionTypes.global.HIDE_PREDICTION_SPEC
+        type: ActionTypes.HIDE_PREDICTION_SPEC
       }
     )
   ).toStrictEqual({
@@ -3141,7 +3141,7 @@ test('SHOW_PREDICTION_SPEC', () => {
       initialState,
       {
         role: village.RoleId.hunter,
-        type: ActionTypes.global.SHOW_PREDICTION_SPEC
+        type: ActionTypes.SHOW_PREDICTION_SPEC
       }
     )
   ).toStrictEqual({

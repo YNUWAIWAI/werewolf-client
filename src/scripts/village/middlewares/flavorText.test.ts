@@ -217,7 +217,7 @@ describe('socket/MESSAGE', () => {
     flavorTextPayload.forEach(item => {
       expect(dispatch).toHaveBeenCalledWith({
         payload: item,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       })
     })
   })

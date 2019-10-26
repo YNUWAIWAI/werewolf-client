@@ -4,17 +4,17 @@ import {village} from '../types'
 
 export interface SocketMessageReturnType<T> {
   payload: T
-  type: ActionTypes.socket.MESSAGE
+  type: ActionTypes.Socket.MESSAGE
 }
 
 export const socket = {
-  close: (event: CloseEvent): {event: CloseEvent, type: ActionTypes.socket.CLOSE} => ({
+  close: (event: CloseEvent): {event: CloseEvent, type: ActionTypes.Socket.CLOSE} => ({
     event,
-    type: ActionTypes.socket.CLOSE
+    type: ActionTypes.Socket.CLOSE
   }),
-  error: (event: Event): {event: Event, type: ActionTypes.socket.ERROR} => ({
+  error: (event: Event): {event: Event, type: ActionTypes.Socket.ERROR} => ({
     event,
-    type: ActionTypes.socket.ERROR
+    type: ActionTypes.Socket.ERROR
   }),
   message: (payload: village.Payload) => {
     if (typeof payload['@id'] === 'undefined') {
@@ -25,7 +25,7 @@ export const socket = {
               ... payload as village.Payload$NextGameInvitation,
               '@payload': village.PayloadType.nextGameInvitation
             },
-            type: ActionTypes.socket.MESSAGE
+            type: ActionTypes.Socket.MESSAGE
           }
 
           return action
@@ -36,7 +36,7 @@ export const socket = {
               ... payload as village.Payload$NextGameInvitationIsClosed,
               '@payload': village.PayloadType.nextGameInvitationIsClosed
             },
-            type: ActionTypes.socket.MESSAGE
+            type: ActionTypes.Socket.MESSAGE
           }
 
           return action
@@ -54,7 +54,7 @@ export const socket = {
             ... payload as village.Payload$BoardMessage,
             '@payload': message
           },
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
 
         return action
@@ -65,7 +65,7 @@ export const socket = {
             ... payload as village.Payload$ChatMessage,
             '@payload': message
           },
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
 
         return action
@@ -76,7 +76,7 @@ export const socket = {
             ... payload as village.Payload$ErrorMessage,
             '@payload': message
           },
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
 
         return action
@@ -87,7 +87,7 @@ export const socket = {
             ... payload as village.Payload$FlavorTextMessage,
             '@payload': message
           },
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
 
         return action
@@ -98,7 +98,7 @@ export const socket = {
             ... payload as village.Payload$ScrollMessage,
             '@payload': message
           },
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
 
         return action
@@ -109,7 +109,7 @@ export const socket = {
             ... payload as village.Payload$SystemMessage,
             '@payload': message
           },
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
 
         return action
@@ -120,7 +120,7 @@ export const socket = {
             ... payload as village.Payload$VoteMessage,
             '@payload': message
           },
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
 
         return action
@@ -129,111 +129,111 @@ export const socket = {
         throw Error('Unkonown Message')
     }
   },
-  open: (event: Event): {event: Event, type: ActionTypes.socket.OPEN} => ({
+  open: (event: Event): {event: Event, type: ActionTypes.Socket.OPEN} => ({
     event,
-    type: ActionTypes.socket.OPEN
+    type: ActionTypes.Socket.OPEN
   }),
-  send: (payload: village.Payload): {payload: village.Payload, type: ActionTypes.socket.SEND} => ({
+  send: (payload: village.Payload): {payload: village.Payload, type: ActionTypes.Socket.SEND} => ({
     payload,
-    type: ActionTypes.socket.SEND
+    type: ActionTypes.Socket.SEND
   })
 }
 
-export const activateNextButton = (villageId: number): {type: ActionTypes.global.ACTIVATE_NEXT_BUTTON, villageId: number} => ({
-  type: ActionTypes.global.ACTIVATE_NEXT_BUTTON,
+export const activateNextButton = (villageId: number): {type: ActionTypes.ACTIVATE_NEXT_BUTTON, villageId: number} => ({
+  type: ActionTypes.ACTIVATE_NEXT_BUTTON,
   villageId
 })
 
-export const changeLanguage = (language: village.Language): {language: village.Language, type: ActionTypes.global.CHANGE_LANGUAGE} => ({
+export const changeLanguage = (language: village.Language): {language: village.Language, type: ActionTypes.CHANGE_LANGUAGE} => ({
   language,
-  type: ActionTypes.global.CHANGE_LANGUAGE
+  type: ActionTypes.CHANGE_LANGUAGE
 })
 
-export const changeDay = ({from, to}: {from: number, to: number}): {from: number, to: number, type: ActionTypes.global.CHANGE_DAY} => ({
+export const changeDay = ({from, to}: {from: number, to: number}): {from: number, to: number, type: ActionTypes.CHANGE_DAY} => ({
   from,
   to,
-  type: ActionTypes.global.CHANGE_DAY
+  type: ActionTypes.CHANGE_DAY
 })
 
-export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}): {from: village.Phase, to: village.Phase, type: ActionTypes.global.CHANGE_PHASE} => ({
+export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}): {from: village.Phase, to: village.Phase, type: ActionTypes.CHANGE_PHASE} => ({
   from,
   to,
-  type: ActionTypes.global.CHANGE_PHASE
+  type: ActionTypes.CHANGE_PHASE
 })
 
 export const clickNavigationButton = (type: ActionTypes.Navigation): {type: ActionTypes.Navigation} => ({
   type
 })
 
-export const deactivateNextButton = (): {type: ActionTypes.global.DEACTIVATE_NEXT_BUTTON} => ({
-  type: ActionTypes.global.DEACTIVATE_NEXT_BUTTON
+export const deactivateNextButton = (): {type: ActionTypes.DEACTIVATE_NEXT_BUTTON} => ({
+  type: ActionTypes.DEACTIVATE_NEXT_BUTTON
 })
 
-export const handleBoardClick = ({nextState, characterId, roleId}: {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId}): {characterId: village.CharacterId, nextState: village.BoardState, roleId: village.RoleId, type: ActionTypes.global.CHANGE_PREDICTION_BOARD} => ({
+export const handleBoardClick = ({nextState, characterId, roleId}: {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId}): {characterId: village.CharacterId, nextState: village.BoardState, roleId: village.RoleId, type: ActionTypes.CHANGE_PREDICTION_BOARD} => ({
   characterId,
   nextState,
   roleId,
-  type: ActionTypes.global.CHANGE_PREDICTION_BOARD
+  type: ActionTypes.CHANGE_PREDICTION_BOARD
 })
 
-export const handleClickHideButton = (hide: boolean): {hide: boolean, type: ActionTypes.global.CLICK_HIDE_BUTTON} => ({
+export const handleClickHideButton = (hide: boolean): {hide: boolean, type: ActionTypes.CLICK_HIDE_BUTTON} => ({
   hide,
-  type: ActionTypes.global.CLICK_HIDE_BUTTON
+  type: ActionTypes.CLICK_HIDE_BUTTON
 })
 
-export const hidePredictionSpec = (): {type: ActionTypes.global.HIDE_PREDICTION_SPEC} => ({
-  type: ActionTypes.global.HIDE_PREDICTION_SPEC
+export const hidePredictionSpec = (): {type: ActionTypes.HIDE_PREDICTION_SPEC} => ({
+  type: ActionTypes.HIDE_PREDICTION_SPEC
 })
 
-export const hideResult = (): {type: ActionTypes.global.HIDE_RESULT} => ({
-  type: ActionTypes.global.HIDE_RESULT
+export const hideResult = (): {type: ActionTypes.HIDE_RESULT} => ({
+  type: ActionTypes.HIDE_RESULT
 })
 
-export const postChat = ({channel, text}: {channel: village.InputChannel, text: string}): {channel: village.InputChannel, text: string, type: ActionTypes.global.POST_CHAT} => ({
+export const postChat = ({channel, text}: {channel: village.InputChannel, text: string}): {channel: village.InputChannel, text: string, type: ActionTypes.POST_CHAT} => ({
   channel,
   text,
-  type: ActionTypes.global.POST_CHAT
+  type: ActionTypes.POST_CHAT
 })
 
-export const ready = ({token, villageId}: {token: string, villageId: number}): {token: string, type: ActionTypes.global.READY, villageId: number} => ({
+export const ready = ({token, villageId}: {token: string, villageId: number}): {token: string, type: ActionTypes.READY, villageId: number} => ({
   token,
-  type: ActionTypes.global.READY,
+  type: ActionTypes.READY,
   villageId
 })
 
-export const selectNo = (): {type: ActionTypes.global.SELECT_NO} => ({
-  type: ActionTypes.global.SELECT_NO
+export const selectNo = (): {type: ActionTypes.SELECT_NO} => ({
+  type: ActionTypes.SELECT_NO
 })
 
-export const selectOption = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.global.SELECT_OPTION} => ({
+export const selectOption = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.SELECT_OPTION} => ({
   characterId,
-  type: ActionTypes.global.SELECT_OPTION
+  type: ActionTypes.SELECT_OPTION
 })
 
-export const selectYes = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.global.SELECT_YES} => ({
+export const selectYes = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.SELECT_YES} => ({
   characterId,
-  type: ActionTypes.global.SELECT_YES
+  type: ActionTypes.SELECT_YES
 })
 
-export const starChat = (item: {id: village.ChatId, isMarked: boolean}): {id: village.ChatId, isMarked: boolean, type: ActionTypes.global.STAR} => ({
+export const starChat = (item: {id: village.ChatId, isMarked: boolean}): {id: village.ChatId, isMarked: boolean, type: ActionTypes.STAR} => ({
   id: item.id,
   isMarked: item.isMarked,
-  type: ActionTypes.global.STAR
+  type: ActionTypes.STAR
 })
 
-export const showLobby = (): {type: ActionTypes.global.SHOW_LOBBY} => ({
-  type: ActionTypes.global.SHOW_LOBBY
+export const showLobby = (): {type: ActionTypes.SHOW_LOBBY} => ({
+  type: ActionTypes.SHOW_LOBBY
 })
 
-export const showPredictionSpec = (role: village.RoleId): {role: village.RoleId, type: ActionTypes.global.SHOW_PREDICTION_SPEC} => ({
+export const showPredictionSpec = (role: village.RoleId): {role: village.RoleId, type: ActionTypes.SHOW_PREDICTION_SPEC} => ({
   role,
-  type: ActionTypes.global.SHOW_PREDICTION_SPEC
+  type: ActionTypes.SHOW_PREDICTION_SPEC
 })
 
-export const tick = ({start, time}: {start: number, time: number}): {start: number, time: number, type: ActionTypes.global.TICK} => ({
+export const tick = ({start, time}: {start: number, time: number}): {start: number, time: number, type: ActionTypes.TICK} => ({
   start,
   time,
-  type: ActionTypes.global.TICK
+  type: ActionTypes.TICK
 })
 
 export type ActivateNextButton = ReturnType<typeof activateNextButton>

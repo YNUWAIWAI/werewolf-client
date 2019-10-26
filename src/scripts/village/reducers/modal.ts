@@ -18,14 +18,14 @@ export const initialState: State = {
 }
 const modal = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.SELECT_OPTION:
+    case ActionTypes.SELECT_OPTION:
       return {
         id: action.characterId,
         visible: true
       }
-    case ActionTypes.global.CHANGE_PHASE:
-    case ActionTypes.global.SELECT_NO:
-    case ActionTypes.global.SELECT_YES:
+    case ActionTypes.CHANGE_PHASE:
+    case ActionTypes.SELECT_NO:
+    case ActionTypes.SELECT_YES:
       return {
         ... state,
         visible: false

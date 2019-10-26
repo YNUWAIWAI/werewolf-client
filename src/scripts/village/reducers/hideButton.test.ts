@@ -8,7 +8,7 @@ test('CLICK_HIDE_BUTTON hide={true}', () => {
     },
     {
       hide: true,
-      type: ActionTypes.global.CLICK_HIDE_BUTTON
+      type: ActionTypes.CLICK_HIDE_BUTTON
     })
   ).toStrictEqual({
     hide: true
@@ -21,7 +21,7 @@ test('CLICK_HIDE_BUTTON hide={false}', () => {
     },
     {
       hide: false,
-      type: ActionTypes.global.CLICK_HIDE_BUTTON
+      type: ActionTypes.CLICK_HIDE_BUTTON
     })
   ).toStrictEqual({
     hide: false

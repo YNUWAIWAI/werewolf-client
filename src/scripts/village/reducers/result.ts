@@ -73,12 +73,12 @@ const result = (state: State = initialState, action: Action): State => {
         ... state,
         visible: true
       }
-    case ActionTypes.global.HIDE_RESULT:
+    case ActionTypes.HIDE_RESULT:
       return {
         ... state,
         visible: false
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       if (
         action.payload['@payload'] === village.Message.systemMessage &&
         action.payload.phase === village.Phase.result

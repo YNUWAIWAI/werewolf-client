@@ -42,7 +42,7 @@ export const initialState: State = {
 }
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       switch (action.payload['@payload']) {
         case village.Message.chatMessage: {
           const payload = action.payload
@@ -122,7 +122,7 @@ const chat = (state: State = initialState, action: Action): State => {
           return state
       }
     }
-    case ActionTypes.global.CHANGE_DAY: {
+    case ActionTypes.CHANGE_DAY: {
       const delimeterId = getDelimeterId()
 
       return {
@@ -136,7 +136,7 @@ const chat = (state: State = initialState, action: Action): State => {
         }
       }
     }
-    case ActionTypes.global.STAR: {
+    case ActionTypes.STAR: {
       const item = state.byId[action.id]
 
       if (item.type === village.ChatItemType.delimeter) {

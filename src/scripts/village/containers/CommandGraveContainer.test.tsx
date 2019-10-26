@@ -72,7 +72,7 @@ describe('<CommandGraveContainer />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       channel: village.InputChannel.public,
       text: 'text',
-      type: ActionTypes.global.POST_CHAT
+      type: ActionTypes.POST_CHAT
     })
   })
 })

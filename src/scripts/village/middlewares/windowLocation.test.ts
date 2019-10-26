@@ -13,8 +13,8 @@ test('PROLOGUE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.global.PROLOGUE} = {
-    type: ActionTypes.global.PROLOGUE
+  const action: {type: ActionTypes.PROLOGUE} = {
+    type: ActionTypes.PROLOGUE
   }
 
   actionHandler(action)
@@ -30,7 +30,7 @@ test('SHOW_LOBBY', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: ShowLobby = {
-    type: ActionTypes.global.SHOW_LOBBY
+    type: ActionTypes.SHOW_LOBBY
   }
 
   actionHandler(action)

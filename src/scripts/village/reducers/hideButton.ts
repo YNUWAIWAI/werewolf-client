@@ -11,7 +11,7 @@ export const initialState: State = {
   hide: false
 }
 const hideButton = (state: State = initialState, action: Action): State => {
-  if (action.type === ActionTypes.global.CLICK_HIDE_BUTTON) {
+  if (action.type === ActionTypes.CLICK_HIDE_BUTTON) {
     return {
       hide: action.hide
     }

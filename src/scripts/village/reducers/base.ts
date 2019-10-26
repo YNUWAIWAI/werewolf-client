@@ -51,7 +51,7 @@ export const initialState: State = {
   }
 }
 const base = (state: State = initialState, action: Action): State => {
-  if (action.type === ActionTypes.socket.MESSAGE) {
+  if (action.type === ActionTypes.Socket.MESSAGE) {
     if (
       action.payload['@payload'] === village.Message.boardMessage ||
       action.payload['@payload'] === village.Message.errorMessage ||

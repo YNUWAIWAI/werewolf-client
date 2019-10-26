@@ -123,7 +123,7 @@ test('RETURN_TO_LOBBY', async () => {
   expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.leaveWaitingPage)
   expect(dispatch).toHaveBeenCalled()
   expect(dispatch).toHaveBeenCalledWith({
-    type: ActionTypes.global.SHOW_LOBBY
+    type: ActionTypes.SHOW_LOBBY
   })
 })
 describe('NEXT_GAME', () => {
@@ -209,7 +209,7 @@ describe('NEXT_GAME', () => {
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
   test('isHost: false', async () => {
@@ -242,7 +242,7 @@ describe('NEXT_GAME', () => {
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
     expect(dispatch).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.SHOW_LOBBY
+      type: ActionTypes.SHOW_LOBBY
     })
   })
 })
@@ -251,8 +251,8 @@ describe('indexedDB/INIT', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.indexedDB.INIT} = {
-    type: ActionTypes.indexedDB.INIT
+  const action: {type: ActionTypes.IndexedDB.INIT} = {
+    type: ActionTypes.IndexedDB.INIT
   }
 
   test('isHost: true', async () => {
@@ -291,15 +291,15 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,
-      type: ActionTypes.global.CHANGE_LANGUAGE
+      type: ActionTypes.CHANGE_LANGUAGE
     })
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.ACTIVATE_NEXT_BUTTON,
+      type: ActionTypes.ACTIVATE_NEXT_BUTTON,
       villageId: -1
     })
     expect(dispatch).toHaveBeenCalledWith({
       token: v.token,
-      type: ActionTypes.global.READY,
+      type: ActionTypes.READY,
       villageId: v.villageId
     })
   })
@@ -339,11 +339,11 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,
-      type: ActionTypes.global.CHANGE_LANGUAGE
+      type: ActionTypes.CHANGE_LANGUAGE
     })
     expect(dispatch).toHaveBeenCalledWith({
       token: v.token,
-      type: ActionTypes.global.READY,
+      type: ActionTypes.READY,
       villageId: v.villageId
     })
   })
@@ -409,7 +409,7 @@ describe('socket/MESSAGE', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.SHOW_LOBBY
+      type: ActionTypes.SHOW_LOBBY
     })
   })
   test('isHost: false', async () => {

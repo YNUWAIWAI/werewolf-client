@@ -28,19 +28,19 @@ export const initialState: State = {
 }
 const commandSelection = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_PHASE:
+    case ActionTypes.CHANGE_PHASE:
       return {
         ... state,
         fixed: false
       }
-    case ActionTypes.global.SELECT_YES: {
+    case ActionTypes.SELECT_YES: {
       return {
         ... state,
         allIds: state.allIds.filter(characterId => characterId === action.characterId),
         fixed: true
       }
     }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       if (
         action.payload['@payload'] === village.Message.systemMessage &&
         VOTING_PHASE.includes(action.payload.phase)
