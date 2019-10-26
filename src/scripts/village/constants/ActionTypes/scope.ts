@@ -1,4 +1,4 @@
 export const enum Scope {
-  indexedDB = 'indexedDB',
-  socket = 'socket'
+  IndexedDB = 'IndexedDB',
+  Socket = 'Socket'
 }

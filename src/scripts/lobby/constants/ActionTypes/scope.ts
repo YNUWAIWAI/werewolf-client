@@ -1,7 +1,7 @@
 export const enum Scope {
-  advancedSearch = 'advancedSearch',
-  buildVillage = 'buildVillage',
-  idSearch = 'idSearch',
-  indexedDB = 'indexedDB',
-  socket = 'socket'
+  AdvancedSearch = 'AdvancedSearch',
+  BuildVillage = 'BuildVillage',
+  IdSearch = 'IdSearch',
+  IndexedDB = 'IndexedDB',
+  Socket = 'Socket'
 }
