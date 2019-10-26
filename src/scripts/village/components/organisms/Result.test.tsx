@@ -191,7 +191,7 @@ const losers: Props['losers'] = [
   '6',
   '7'
 ]
-const me: Props['me'] = 'agent1'
+const me: Props['me'] = '1'
 const summary: Props['summary'] = {
   loserTeam: new Set([village.Team.werehamster, village.Team.werewolf]),
   myTeam: village.Team.villager,
