@@ -4,7 +4,7 @@ import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-
+import {village} from '../types'
 type Action =
   | HideResult
 
@@ -33,7 +33,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       status: a.status
     }
   })
-  const myTeam = state.result.summary.kind === 'audience' ? '' : state.result.summary.myTeam // '' => 'audience'
+  const myTeam = state.result.summary.kind === village.SummaryType.audience ? '' : state.result.summary.myTeam // '' => 'audience'
   const summary: StateProps['summary'] = {
     loserTeam: state.result.summary.loserTeam,
     myTeam,
