@@ -8,7 +8,7 @@ const client2server: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.Target.ADVANCED_SEARCH: {
       const state = store.getState()
-      const payload: lobby.Payload$advancedSearch = {
+      const payload: lobby.Payload$AdvancedSearch = {
         avatar: state.advancedSearch.validity.avatar ? state.advancedSearch.value.avatar : lobby.Avatar.random,
         comment: state.advancedSearch.validity.comment ? state.advancedSearch.value.comment : null,
         hostName: state.advancedSearch.validity.hostName ? state.advancedSearch.value.hostName : null,
@@ -26,7 +26,7 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.Target.BUILD_VILLAGE: {
       const state = store.getState()
-      const payload: lobby.Payload$buildVillage = {
+      const payload: lobby.Payload$BuildVillage = {
         avatar: state.buildVillage.value.avatar,
         comment: state.buildVillage.value.comment,
         hostPlayer: {
@@ -59,7 +59,7 @@ const client2server: Middleware = store => next => action => {
       return next(action)
     }
     case ActionTypes.App.CHANGE_LANGUAGE: {
-      const payload: lobby.Payload$changeLang = {
+      const payload: lobby.Payload$ChangeLang = {
         lang: action.language,
         type: lobby.PayloadType.changeLang
       }
@@ -69,7 +69,7 @@ const client2server: Middleware = store => next => action => {
       return next(action)
     }
     case ActionTypes.App.CHANGE_USER_EMAIL: {
-      const payload: lobby.Payload$changeUserEmail = {
+      const payload: lobby.Payload$ChangeUserEmail = {
         type: lobby.PayloadType.changeUserEmail,
         userEmail: action.userEmail
       }
@@ -79,7 +79,7 @@ const client2server: Middleware = store => next => action => {
       return next(action)
     }
     case ActionTypes.App.CHANGE_USER_NAME: {
-      const payload: lobby.Payload$changeUserName = {
+      const payload: lobby.Payload$ChangeUserName = {
         type: lobby.PayloadType.changeUserName,
         userName: action.userName
       }
@@ -89,7 +89,7 @@ const client2server: Middleware = store => next => action => {
       return next(action)
     }
     case ActionTypes.App.CHANGE_USER_PASSWORD: {
-      const payload: lobby.Payload$changeUserPassword = {
+      const payload: lobby.Payload$ChangeUserPassword = {
         type: lobby.PayloadType.changeUserPassword,
         userPassword: action.userPassword
       }
@@ -104,7 +104,7 @@ const client2server: Middleware = store => next => action => {
       if (state.idSearch.id === -1) {
         return next(action)
       }
-      const payload: lobby.Payload$idSearch = {
+      const payload: lobby.Payload$IdSearch = {
         idForSearching: state.idSearch.id,
         lobby: state.token.lobby,
         token: state.token[state.token.lobby],
@@ -117,7 +117,7 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.App.KICK_OUT_PLAYER: {
       const state = store.getState()
-      const payload: lobby.Payload$kickOutPlayer = {
+      const payload: lobby.Payload$KickOutPlayer = {
         players: [
           {
             token: state.waitingForPlayers.kickOutToken
@@ -136,7 +136,7 @@ const client2server: Middleware = store => next => action => {
       const me = state.waitingForPlayers.players.find(v => v.isMe)
 
       if (me && state.waitingForPlayers.village) {
-        const payload: lobby.Payload$leaveWaitingPage = {
+        const payload: lobby.Payload$LeaveWaitingPage = {
           lobby: state.token.lobby,
           token: me.token,
           type: lobby.PayloadType.leaveWaitingPage,
@@ -154,7 +154,7 @@ const client2server: Middleware = store => next => action => {
       if (!state.waitingForPlayers.village) {
         return next(action)
       }
-      const payload: lobby.Payload$play = {
+      const payload: lobby.Payload$Play = {
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.play,
         villageId: state.waitingForPlayers.village.id
@@ -166,7 +166,7 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.App.SELECT_VILLAGE: {
       const state = store.getState()
-      const payload: lobby.Payload$selectVillage = {
+      const payload: lobby.Payload$SelectVillage = {
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.selectVillage,
         villageId: action.id
@@ -178,13 +178,13 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE: {
       const state = store.getState()
-      const enterLobby: lobby.Payload$enterLobby = {
+      const enterLobby: lobby.Payload$EnterLobby = {
         lobby: lobby.Lobby.audience,
         page: 1,
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.enterLobby
       }
-      const getAvatar: lobby.Payload$getAvatar = {
+      const getAvatar: lobby.Payload$GetAvatar = {
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.getAvatar
       }
@@ -196,13 +196,13 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
       const state = store.getState()
-      const enterLobby: lobby.Payload$enterLobby = {
+      const enterLobby: lobby.Payload$EnterLobby = {
         lobby: lobby.Lobby.human,
         page: 1,
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.enterLobby
       }
-      const getAvatar: lobby.Payload$getAvatar = {
+      const getAvatar: lobby.Payload$GetAvatar = {
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.getAvatar
       }
@@ -214,13 +214,13 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
       const state = store.getState()
-      const enterLobby: lobby.Payload$enterLobby = {
+      const enterLobby: lobby.Payload$EnterLobby = {
         lobby: lobby.Lobby.robot,
         page: 1,
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.enterLobby
       }
-      const getAvatar: lobby.Payload$getAvatar = {
+      const getAvatar: lobby.Payload$GetAvatar = {
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.getAvatar
       }
@@ -231,7 +231,7 @@ const client2server: Middleware = store => next => action => {
       return next(action)
     }
     case ActionTypes.Target.SHOW_SETTINGS: {
-      const payload: lobby.Payload$getSettings = {
+      const payload: lobby.Payload$GetSettings = {
         type: lobby.PayloadType.getSettings
       }
 
@@ -243,7 +243,7 @@ const client2server: Middleware = store => next => action => {
       switch (action.payload.type) {
         case lobby.PayloadType.ping: {
           const state = store.getState()
-          const payload: lobby.Payload$pong = {
+          const payload: lobby.Payload$Pong = {
             id: action.payload.id,
             token: state.token[state.token.lobby],
             type: lobby.PayloadType.pong
