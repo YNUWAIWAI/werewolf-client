@@ -14,12 +14,12 @@ import {
 import {village} from '../types'
 
 interface AudienceSummary {
-  readonly kind: 'audience'
+  readonly kind: village.SummaryType.audience
   readonly loserTeam: Set<village.Team>
   readonly winnerTeam: village.Team
 }
 interface CharacterSummary {
-  readonly kind: 'character'
+  readonly kind: village.SummaryType.character
   readonly loserTeam: Set<village.Team>
   readonly myTeam: village.Team
   readonly result: village.Result
@@ -59,7 +59,7 @@ export const initialState: State = {
   losers: [],
   me: null,
   summary: {
-    kind: 'audience',
+    kind: village.SummaryType.audience,
     loserTeam: new Set(),
     winnerTeam: village.Team.villager
   },
@@ -126,18 +126,18 @@ const result = (state: State = initialState, action: Action): State => {
           const loserTeam = new Set(losers.map(loser => getTeam(strToRoleId(characters[loser].roleName.en))))
 
           if (typeof me === 'string') {
-            const playerSummary: CharacterSummary = {
-              kind: 'character',
+            const characterSummary: CharacterSummary = {
+              kind: village.SummaryType.character,
               loserTeam,
               myTeam: getTeam(strToRoleId(characters[me].roleName.en)),
               result: characters[me].result,
               winnerTeam
             }
 
-            return playerSummary
+            return characterSummary
           }
           const audienceSummary: AudienceSummary = {
-            kind: 'audience',
+            kind: village.SummaryType.audience,
             loserTeam,
             winnerTeam
           }

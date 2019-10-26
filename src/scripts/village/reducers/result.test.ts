@@ -214,7 +214,7 @@ describe('socket/MESSAGE', () => {
       ],
       me: '1',
       summary: {
-        kind: 'character',
+        kind: village.SummaryType.character,
         loserTeam: new Set([village.Team.werehamster, village.Team.werewolf]),
         myTeam: village.Team.villager,
         result: village.Result.win,
