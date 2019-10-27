@@ -5,12 +5,13 @@ import {Content} from '../../../src/scripts/village/reducers/command'
 import {ImagePath} from '../../../src/scripts/village/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/village/reducers'
 import {Role} from '../../../src/scripts/village/constants/Role'
+import {VERSION} from '../../../src/scripts/village/constants/Version'
 
-const state: ReducerState = {
+export const result: ReducerState = {
   base: {
-    '@id': 'https://licos.online/state/0.2/village#3',
+    '@id': `https://licos.online/state/${VERSION}/village#3`,
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'date': -1,
+    'day': -1,
     'intensionalDisclosureRange': village.Channel.private,
     'phase': village.Phase.result,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -18,16 +19,15 @@ const state: ReducerState = {
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
-      '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
-        characterLimit: 140,
-        limit: 10
+        maxLengthOfUnicodeCodePoints: 140,
+        maxNumberOfChatMessages: 10
       },
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   },
   chat: {
@@ -36,9 +36,9 @@ const state: ReducerState = {
       'chat0': {
         'characterId': '1',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'date': 1,
+        'day': 1,
         'id': 1,
-        'image': 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/a_120x120.png`,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
@@ -47,14 +47,14 @@ const state: ReducerState = {
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': 'Then, who are the werewolves?',
-        'type': 'item'
+        'type': village.ChatItemType.item
       },
       'chat1': {
         'characterId': '9',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'date': 1,
+        'day': 1,
         'id': 2,
-        'image': 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/i_120x120.png`,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
@@ -63,14 +63,14 @@ const state: ReducerState = {
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': '>>1 I guess Pamela is a werewolf.',
-        'type': 'item'
+        'type': village.ChatItemType.item
       },
       'delimeter0': {
-        date: 1,
+        day: 1,
         type: 'delimeter'
       },
       'delimeter1': {
-        date: -1,
+        day: -1,
         type: 'delimeter'
       }
     }
@@ -90,11 +90,11 @@ const state: ReducerState = {
   },
   commandInputBox: {
     public: {
-      postCount: 0
+      numberOfChatMessages: 0
     },
     werewolf: {
       available: true,
-      postCount: 0
+      numberOfChatMessages: 0
     }
   },
   commandPostMortem: {
@@ -128,18 +128,18 @@ const state: ReducerState = {
   language: village.Language.en,
   mine: {
     character: {
-      '@id': 'https://licos.online/state/0.2/village#3/character#1',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+      'image': `https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`,
       'name': {
         'en': 'Adil',
         'ja': 'アーディル'
       }
     },
     role: {
-      '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
       'id': village.RoleId.seer,
-      'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
+      'image': `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/seer_50x50.png`,
       'name': {
         'en': 'Seer',
         'ja': '占い師'
@@ -155,7 +155,7 @@ const state: ReducerState = {
     visible: true
   },
   prediction: {
-    playerStatus: {
+    characterStatus: {
       allIds: [
         '1',
         '2',
@@ -175,109 +175,109 @@ const state: ReducerState = {
       ],
       byId: {
         '1': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#1',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
           'id': '1',
           'image': ImagePath.Agent.a,
           'name': Agent.a,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#2',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
           'id': '2',
           'image': ImagePath.Agent.b,
           'name': Agent.b,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#3',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
           'id': '3',
           'image': ImagePath.Agent.c,
           'name': Agent.c,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#4',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
           'id': '4',
           'image': ImagePath.Agent.d,
           'name': Agent.d,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#5',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
           'id': '5',
           'image': ImagePath.Agent.e,
           'name': Agent.e,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '6': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#6',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
           'id': '6',
           'image': ImagePath.Agent.f,
           'name': Agent.f,
-          'status': village.AgentStatus.deathByFear
+          'status': village.CharacterStatus.deathByFear
         },
         '7': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#7',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
           'id': '7',
           'image': ImagePath.Agent.g,
           'name': Agent.g,
-          'status': village.AgentStatus.unnaturalDeath
+          'status': village.CharacterStatus.unnaturalDeath
         },
         '8': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#8',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
           'id': '8',
           'image': ImagePath.Agent.h,
           'name': Agent.h,
-          'status': village.AgentStatus.unnaturalDeath
+          'status': village.CharacterStatus.unnaturalDeath
         },
         '9': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#9',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
           'id': '9',
           'image': ImagePath.Agent.i,
           'name': Agent.i,
-          'status': village.AgentStatus.unnaturalDeath
+          'status': village.CharacterStatus.unnaturalDeath
         },
         '10': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#10',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
           'id': '10',
           'image': ImagePath.Agent.j,
           'name': Agent.j,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '11': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#11',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
           'id': '11',
           'image': ImagePath.Agent.k,
           'name': Agent.k,
-          'status': village.AgentStatus.unnaturalDeath
+          'status': village.CharacterStatus.unnaturalDeath
         },
         '12': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#12',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
           'id': '12',
           'image': ImagePath.Agent.l,
           'name': Agent.l,
-          'status': village.AgentStatus.deathByAttack
+          'status': village.CharacterStatus.deathByAttack
         },
         '13': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#13',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
           'id': '13',
           'image': ImagePath.Agent.m,
           'name': Agent.m,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '14': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#14',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
           'id': '14',
           'image': ImagePath.Agent.n,
           'name': Agent.n,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         },
         '15': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#15',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
           'id': '15',
           'image': ImagePath.Agent.o,
           'name': Agent.o,
-          'status': village.AgentStatus.alive
+          'status': village.CharacterStatus.alive
         }
       }
     },
@@ -294,60 +294,60 @@ const state: ReducerState = {
       ],
       byId: {
         [village.RoleId.villager]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
-          'numberOfAgents': 6
+          'numberOfCharacters': 6
         },
         [village.RoleId.seer]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
           'id': village.RoleId.seer,
           'image': ImagePath.Role.seer,
           'name': Role.seer,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         },
         [village.RoleId.medium]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
           'id': village.RoleId.medium,
           'image': ImagePath.Role.medium,
           'name': Role.medium,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         },
         [village.RoleId.hunter]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
           'id': village.RoleId.hunter,
           'image': ImagePath.Role.hunter,
           'name': Role.hunter,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         },
         [village.RoleId.mason]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
           'id': village.RoleId.mason,
           'image': ImagePath.Role.mason,
           'name': Role.mason,
-          'numberOfAgents': 2
+          'numberOfCharacters': 2
         },
         [village.RoleId.madman]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
           'id': village.RoleId.madman,
           'image': ImagePath.Role.madman,
           'name': Role.madman,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         },
         [village.RoleId.werewolf]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
-          'numberOfAgents': 2
+          'numberOfCharacters': 2
         },
         [village.RoleId.werehamster]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
           'id': village.RoleId.werehamster,
           'image': ImagePath.Role.werehamster,
           'name': Role.werehamster,
-          'numberOfAgents': 1
+          'numberOfCharacters': 1
         }
       }
     },
@@ -358,630 +358,630 @@ const state: ReducerState = {
     table: {
       '1': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.CIRCLE
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         }
       },
       '2': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.CROSS
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.CIRCLE
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.TRIANGLE
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '3': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '4': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '5': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '6': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '7': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '8': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '9': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '10': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '11': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '12': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '13': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '14': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '15': {
         hunter: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         mason: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         medium: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werehamster: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
@@ -989,263 +989,6 @@ const state: ReducerState = {
     }
   },
   result: {
-    characters: {
-      character1: {
-        characterId: '1',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
-        characterName: {
-          'en': 'Adil',
-          'ja': 'アーディル'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
-        avatarName: 'Suzuki',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
-        roleName: {
-          en: 'Seer',
-          ja: '占い師'
-        },
-        status: village.AgentStatus.alive
-      },
-      character2: {
-        characterId: '2',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
-        characterName: {
-          'en': 'Borya',
-          'ja': 'ボーリャ'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
-        avatarName: 'Takahashi',
-        result: village.Result.lose,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
-        roleName: {
-          en: 'Werewolf',
-          ja: '人狼'
-        },
-        status: village.AgentStatus.alive
-      },
-      character3: {
-        characterId: '3',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
-        characterName: {
-          'en': 'Chacha',
-          'ja': 'チャチャ'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/r_50x50.png',
-        avatarName: 'Tanaka',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
-        roleName: {
-          en: 'Hunter',
-          ja: '狩人'
-        },
-        status: village.AgentStatus.alive
-      },
-      character4: {
-        characterId: '4',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
-        characterName: {
-          'en': 'Devdatta',
-          'ja': 'デヴゥダッタ'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
-        avatarName: 'Ito',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
-        roleName: {
-          en: 'Medium',
-          ja: '霊媒師'
-        },
-        status: village.AgentStatus.alive
-      },
-      character5: {
-        characterId: '5',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
-        characterName: {
-          'en': 'Ekrem',
-          'ja': 'エクレム'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/s_50x50.png',
-        avatarName: 'Watanabe',
-        result: village.Result.lose,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
-        roleName: {
-          en: 'Werehamster',
-          ja: 'ハムスター人間'
-        },
-        status: village.AgentStatus.deathByFear
-      },
-      character6: {
-        characterId: '6',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
-        characterName: {
-          'en': 'Fernando',
-          'ja': 'フェルナンド'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
-        avatarName: 'Yamamoto',
-        result: village.Result.lose,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
-        roleName: {
-          en: 'Madman',
-          ja: '狂人'
-        },
-        status: village.AgentStatus.deathByExecution
-      },
-      character7: {
-        characterId: '7',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
-        characterName: {
-          'en': 'Gavriil',
-          'ja': 'ガブリール'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
-        avatarName: 'Nakamura',
-        result: village.Result.lose,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
-        roleName: {
-          en: 'Werewolf',
-          ja: '人狼'
-        },
-        status: village.AgentStatus.unnaturalDeath
-      },
-      character8: {
-        characterId: '8',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
-        characterName: {
-          'en': 'Henrik',
-          'ja': 'ヘンリック'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
-        avatarName: 'Kobayashi',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
-        status: village.AgentStatus.unnaturalDeath
-      },
-      character9: {
-        characterId: '9',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
-        characterName: {
-          'en': 'Ileanna',
-          'ja': 'イレアナ'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
-        avatarName: 'Yoshida',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
-        status: village.AgentStatus.unnaturalDeath
-      },
-      character10: {
-        characterId: '10',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
-        characterName: {
-          'en': 'Jasmin',
-          'ja': 'ジャスミン'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/t_50x50.png',
-        avatarName: 'Yamada',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
-        roleName: {
-          'en': 'Mason',
-          'ja': '共有者'
-        },
-        status: village.AgentStatus.unnaturalDeath
-      },
-      character11: {
-        characterId: '11',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
-        characterName: {
-          'en': 'Kaiji',
-          'ja': '開司'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
-        avatarName: 'Sasaki',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
-        roleName: {
-          en: 'Mason',
-          ja: '共有者'
-        },
-        status: village.AgentStatus.unnaturalDeath
-      },
-      character12: {
-        characterId: '12',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
-        characterName: {
-          'en': 'Louise',
-          'ja': 'ルイーズ'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
-        avatarName: 'Yamaguchi',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
-        status: village.AgentStatus.deathByAttack
-      },
-      character13: {
-        characterId: '13',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
-        characterName: {
-          'en': 'Marthe',
-          'ja': 'マーテ'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
-        avatarName: 'Matsumoto',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
-        status: village.AgentStatus.alive
-      },
-      character14: {
-        characterId: '14',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
-        characterName: {
-          'en': 'Nanyamka',
-          'ja': 'ナニャンカ'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
-        avatarName: 'Inoue',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
-        status: village.AgentStatus.alive
-      },
-      character15: {
-        characterId: '15',
-        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
-        characterName: {
-          'en': 'Oliwia',
-          'ja': 'オリビア'
-        },
-        avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
-        avatarName: 'Sato',
-        result: village.Result.win,
-        roleImage: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
-        roleName: {
-          'en': 'Villager',
-          'ja': '村人'
-        },
-        status: village.AgentStatus.alive
-      }
-    },
     allIds: [
       'character1',
       'character2',
@@ -1263,6 +1006,263 @@ const state: ReducerState = {
       'character14',
       'character15'
     ],
+    characters: {
+      character1: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/o_50x50.png`,
+        avatarName: 'Suzuki',
+        characterId: '1',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`,
+        characterName: {
+          'en': 'Adil',
+          'ja': 'アーディル'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/seer_50x50.png`,
+        roleName: {
+          en: 'Seer',
+          ja: '占い師'
+        },
+        status: village.CharacterStatus.alive
+      },
+      character2: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/i_50x50.png`,
+        avatarName: 'Takahashi',
+        characterId: '2',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/b_50x50.png`,
+        characterName: {
+          'en': 'Borya',
+          'ja': 'ボーリャ'
+        },
+        result: village.Result.lose,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/werewolf_50x50.png`,
+        roleName: {
+          en: 'Werewolf',
+          ja: '人狼'
+        },
+        status: village.CharacterStatus.alive
+      },
+      character3: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`,
+        avatarName: 'Tanaka',
+        characterId: '3',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/c_50x50.png`,
+        characterName: {
+          'en': 'Chacha',
+          'ja': 'チャチャ'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/hunter_50x50.png`,
+        roleName: {
+          en: 'Hunter',
+          ja: '狩人'
+        },
+        status: village.CharacterStatus.alive
+      },
+      character4: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/f_50x50.png`,
+        avatarName: 'Ito',
+        characterId: '4',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/d_50x50.png`,
+        characterName: {
+          'en': 'Devdatta',
+          'ja': 'デヴゥダッタ'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/medium_50x50.png`,
+        roleName: {
+          en: 'Medium',
+          ja: '霊媒師'
+        },
+        status: village.CharacterStatus.alive
+      },
+      character5: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/s_50x50.png`,
+        avatarName: 'Watanabe',
+        characterId: '5',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/e_50x50.png`,
+        characterName: {
+          'en': 'Ekrem',
+          'ja': 'エクレム'
+        },
+        result: village.Result.lose,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/werehamster_50x50.png`,
+        roleName: {
+          en: 'Werehamster',
+          ja: 'ハムスター人間'
+        },
+        status: village.CharacterStatus.deathByFear
+      },
+      character6: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/n_50x50.png`,
+        avatarName: 'Yamamoto',
+        characterId: '6',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/f_50x50.png`,
+        characterName: {
+          'en': 'Fernando',
+          'ja': 'フェルナンド'
+        },
+        result: village.Result.lose,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/madman_50x50.png`,
+        roleName: {
+          en: 'Madman',
+          ja: '狂人'
+        },
+        status: village.CharacterStatus.deathByExecution
+      },
+      character7: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/e_50x50.png`,
+        avatarName: 'Nakamura',
+        characterId: '7',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/g_50x50.png`,
+        characterName: {
+          'en': 'Gavriil',
+          'ja': 'ガブリール'
+        },
+        result: village.Result.lose,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/werewolf_50x50.png`,
+        roleName: {
+          en: 'Werewolf',
+          ja: '人狼'
+        },
+        status: village.CharacterStatus.unnaturalDeath
+      },
+      character8: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/g_50x50.png`,
+        avatarName: 'Kobayashi',
+        characterId: '8',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/h_50x50.png`,
+        characterName: {
+          'en': 'Henrik',
+          'ja': 'ヘンリック'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: village.CharacterStatus.unnaturalDeath
+      },
+      character9: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/g_50x50.png`,
+        avatarName: 'Yoshida',
+        characterId: '9',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/i_50x50.png`,
+        characterName: {
+          'en': 'Ileanna',
+          'ja': 'イレアナ'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: village.CharacterStatus.unnaturalDeath
+      },
+      character10: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/t_50x50.png`,
+        avatarName: 'Yamada',
+        characterId: '10',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/j_50x50.png`,
+        characterName: {
+          'en': 'Jasmin',
+          'ja': 'ジャスミン'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/mason_50x50.png`,
+        roleName: {
+          'en': 'Mason',
+          'ja': '共有者'
+        },
+        status: village.CharacterStatus.unnaturalDeath
+      },
+      character11: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/c_50x50.png`,
+        avatarName: 'Sasaki',
+        characterId: '11',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/k_50x50.png`,
+        characterName: {
+          'en': 'Kaiji',
+          'ja': '開司'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/mason_50x50.png`,
+        roleName: {
+          en: 'Mason',
+          ja: '共有者'
+        },
+        status: village.CharacterStatus.unnaturalDeath
+      },
+      character12: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/k_50x50.png`,
+        avatarName: 'Yamaguchi',
+        characterId: '12',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/l_50x50.png`,
+        characterName: {
+          'en': 'Louise',
+          'ja': 'ルイーズ'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: village.CharacterStatus.deathByAttack
+      },
+      character13: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/l_50x50.png`,
+        avatarName: 'Matsumoto',
+        characterId: '13',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/m_50x50.png`,
+        characterName: {
+          'en': 'Marthe',
+          'ja': 'マーテ'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: village.CharacterStatus.alive
+      },
+      character14: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/j_50x50.png`,
+        avatarName: 'Inoue',
+        characterId: '14',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/n_50x50.png`,
+        characterName: {
+          'en': 'Nanyamka',
+          'ja': 'ナニャンカ'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
+        roleName: {
+          en: 'Villager',
+          ja: '村人'
+        },
+        status: village.CharacterStatus.alive
+      },
+      character15: {
+        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/e_50x50.png`,
+        avatarName: 'Sato',
+        characterId: '15',
+        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/o_50x50.png`,
+        characterName: {
+          'en': 'Oliwia',
+          'ja': 'オリビア'
+        },
+        result: village.Result.win,
+        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
+        roleName: {
+          'en': 'Villager',
+          'ja': '村人'
+        },
+        status: village.CharacterStatus.alive
+      }
+    },
     losers: [
       'character2',
       'character5',
@@ -1271,7 +1271,7 @@ const state: ReducerState = {
     ],
     me: 'character1',
     summary: {
-      kind: 'player',
+      kind: village.SummaryType.character,
       loserTeam: new Set([village.Team.werewolf, village.Team.werehamster]),
       myTeam: village.Team.villager,
       result: village.Result.win,
@@ -1399,5 +1399,3 @@ const state: ReducerState = {
     time: 0
   }
 }
-
-export default state
