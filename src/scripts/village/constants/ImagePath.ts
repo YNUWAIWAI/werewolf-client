@@ -10,7 +10,7 @@ const Role = {
   werehamster: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
   werewolf: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png'
 }
-const Agent = {
+const Character = {
   a: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
   anonymous: 'https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png',
   b: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
@@ -34,7 +34,7 @@ const Agent = {
   v: 'https://werewolf.world/image/0.3/character_icons/50x50/v_50x50.png',
   y: 'https://werewolf.world/image/0.3/character_icons/50x50/y_50x50.png'
 }
-const Agent120x120 = {
+const Character120x120 = {
   a: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
   anonymous: 'https://werewolf.world/image/0.3/character_icons/120x120/anonymous_120x120.png',
   b: 'https://werewolf.world/image/0.3/character_icons/120x120/b_120x120.png',
@@ -60,7 +60,7 @@ const Agent120x120 = {
 }
 
 export const ImagePath = {
-  Agent,
-  Agent120x120,
+  Character,
+  Character120x120,
   Role
 }

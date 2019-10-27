@@ -1,20 +1,21 @@
 import * as React from 'react'
-import {Agent} from '../constants/Agent'
+import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
-import InfoAgentContainer from './InfoAgentContainer'
+import InfoCharacterContainer from './InfoCharacterContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
+import {VERSION} from '../constants/Version'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 import {village} from '../types'
 
-describe('<InfoAgentContainer />', () => {
+describe('<InfoCharacterContainer />', () => {
   test('initialState', () => {
     const store = fakeStore()
     const wrapper = mount(
       <Provider store={store} >
         <IntlProviderContainer>
-          <InfoAgentContainer />
+          <InfoCharacterContainer />
         </IntlProviderContainer>
       </Provider>
     )
@@ -27,10 +28,10 @@ describe('<InfoAgentContainer />', () => {
         language: village.Language.en,
         mine: {
           character: {
-            '@id': 'https://licos.online/state/0.2/village#3/character#1',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           }
         }
       }
@@ -38,7 +39,7 @@ describe('<InfoAgentContainer />', () => {
     const wrapper = mount(
       <Provider store={store} >
         <IntlProviderContainer>
-          <InfoAgentContainer />
+          <InfoCharacterContainer />
         </IntlProviderContainer>
       </Provider>
     )

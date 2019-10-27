@@ -1,6 +1,6 @@
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
 import * as village from '../types'
-import {Agent} from '../../../src/scripts/village/constants/Agent'
+import {Agent} from '../../../src/scripts/village/constants/Character'
 import {Content} from '../../../src/scripts/village/reducers/command'
 import {ImagePath} from '../../../src/scripts/village/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/village/reducers'

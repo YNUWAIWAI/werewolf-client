@@ -1,13 +1,14 @@
 import CharacterIcon, {Props as StateProps} from '../components/atoms/CharacterIcon'
 import {getInitial, getText} from '../util'
 import {ReducerState} from '../reducers'
+import {VERSION} from '../constants/Version'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.character) {
     return {
       className: 'vi--info--character',
-      image: 'https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png',
+      image: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
       initial: '',
       name: ''
     }
@@ -24,8 +25,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 
-const InfoAgentContainer = connect(
+const InfoCharacterContainer = connect(
   mapStateToProps
 )(CharacterIcon)
 
-export default InfoAgentContainer
+export default InfoCharacterContainer

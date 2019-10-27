@@ -1,6 +1,6 @@
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
 import * as village from '../types'
-import {Agent} from '../../../src/scripts/village/constants/Agent'
+import {Character} from '../../../src/scripts/village/constants/Character'
 import {Content} from '../../../src/scripts/village/reducers/command'
 import {ReducerState} from '../../../src/scripts/village/reducers'
 import {VERSION} from '../../../src/scripts/village/constants/Version'
@@ -40,7 +40,7 @@ export const prologue: ReducerState = {
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
-        'name': Agent.a,
+        'name': Character.a,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -56,7 +56,7 @@ export const prologue: ReducerState = {
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
-        'name': Agent.i,
+        'name': Character.i,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -141,8 +141,8 @@ export const prologue: ReducerState = {
     table: {}
   },
   result: {
-    characters: {},
     allIds: [],
+    characters: {},
     losers: [],
     me: null,
     summary: {

@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import {Agent} from '../constants/Agent'
+import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
 import Prediction from '../components/organisms/Prediction'
@@ -25,36 +25,36 @@ describe('<PredictionContainer />', () => {
         '1': {
           '@id': 'https://licos.online/state/0.2/village#3/character#1',
           'id': '1',
-          'image': ImagePath.Agent.a,
-          'name': Agent.a,
+          'image': ImagePath.Character.a,
+          'name': Character.a,
           'status': village.CharacterStatus.alive
         },
         '2': {
           '@id': 'https://licos.online/state/0.2/village#3/character#2',
           'id': '2',
-          'image': ImagePath.Agent.b,
-          'name': Agent.b,
+          'image': ImagePath.Character.b,
+          'name': Character.b,
           'status': village.CharacterStatus.alive
         },
         '3': {
           '@id': 'https://licos.online/state/0.2/village#3/character#3',
           'id': '3',
-          'image': ImagePath.Agent.c,
-          'name': Agent.c,
+          'image': ImagePath.Character.c,
+          'name': Character.c,
           'status': village.CharacterStatus.alive
         },
         '4': {
           '@id': 'https://licos.online/state/0.2/village#3/character#4',
           'id': '4',
-          'image': ImagePath.Agent.d,
-          'name': Agent.d,
+          'image': ImagePath.Character.d,
+          'name': Character.d,
           'status': village.CharacterStatus.alive
         },
         '5': {
           '@id': 'https://licos.online/state/0.2/village#3/character#5',
           'id': '5',
-          'image': ImagePath.Agent.e,
-          'name': Agent.e,
+          'image': ImagePath.Character.e,
+          'name': Character.e,
           'status': village.CharacterStatus.alive
         }
       }
@@ -247,11 +247,11 @@ describe('<PredictionContainer />', () => {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               day: 1,
               id: 12,
-              image: ImagePath.Agent120x120.a,
+              image: ImagePath.Character120x120.a,
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: true,
-              name: Agent.a,
+              name: Character.a,
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',

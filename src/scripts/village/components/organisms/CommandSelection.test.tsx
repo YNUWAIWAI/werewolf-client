@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import CommandSelection from './CommandSelection'
 import Description from '../molecules/Description'
 import {ImagePath} from '../../constants/ImagePath'
@@ -27,93 +27,93 @@ describe('<CommandSelection />', () => {
     const characters = [
       {
         id: '1',
-        image: ImagePath.Agent.a,
+        image: ImagePath.Character.a,
         initial: 'A',
-        name: Agent.a.en
+        name: Character.a.en
       },
       {
         id: '2',
-        image: ImagePath.Agent.b,
+        image: ImagePath.Character.b,
         initial: 'B',
-        name: Agent.b.en
+        name: Character.b.en
       },
       {
         id: '3',
-        image: ImagePath.Agent.c,
+        image: ImagePath.Character.c,
         initial: 'C',
-        name: Agent.c.en
+        name: Character.c.en
       },
       {
         id: '4',
-        image: ImagePath.Agent.d,
+        image: ImagePath.Character.d,
         initial: 'D',
-        name: Agent.d.en
+        name: Character.d.en
       },
       {
         id: '5',
-        image: ImagePath.Agent.e,
+        image: ImagePath.Character.e,
         initial: 'E',
-        name: Agent.e.en
+        name: Character.e.en
       },
       {
         id: '6',
-        image: ImagePath.Agent.f,
+        image: ImagePath.Character.f,
         initial: 'F',
-        name: Agent.f.en
+        name: Character.f.en
       },
       {
         id: '7',
-        image: ImagePath.Agent.g,
+        image: ImagePath.Character.g,
         initial: 'G',
-        name: Agent.g.en
+        name: Character.g.en
       },
       {
         id: '8',
-        image: ImagePath.Agent.h,
+        image: ImagePath.Character.h,
         initial: 'H',
-        name: Agent.h.en
+        name: Character.h.en
       },
       {
         id: '9',
-        image: ImagePath.Agent.i,
+        image: ImagePath.Character.i,
         initial: 'I',
-        name: Agent.i.en
+        name: Character.i.en
       },
       {
         id: '10',
-        image: ImagePath.Agent.j,
+        image: ImagePath.Character.j,
         initial: 'J',
-        name: Agent.j.en
+        name: Character.j.en
       },
       {
         id: '11',
-        image: ImagePath.Agent.k,
+        image: ImagePath.Character.k,
         initial: 'K',
-        name: Agent.k.en
+        name: Character.k.en
       },
       {
         id: '12',
-        image: ImagePath.Agent.l,
+        image: ImagePath.Character.l,
         initial: 'L',
-        name: Agent.l.en
+        name: Character.l.en
       },
       {
         id: '13',
-        image: ImagePath.Agent.m,
+        image: ImagePath.Character.m,
         initial: 'M',
-        name: Agent.m.en
+        name: Character.m.en
       },
       {
         id: '14',
-        image: ImagePath.Agent.n,
+        image: ImagePath.Character.n,
         initial: 'N',
-        name: Agent.n.en
+        name: Character.n.en
       },
       {
         id: '15',
-        image: ImagePath.Agent.o,
+        image: ImagePath.Character.o,
         initial: 'O',
-        name: Agent.o.en
+        name: Character.o.en
       }
     ]
     const handleSelectOptionEventHandler = jest.fn()
@@ -135,9 +135,9 @@ describe('<CommandSelection />', () => {
     const characters = [
       {
         id: '1',
-        image: ImagePath.Agent.a,
+        image: ImagePath.Character.a,
         initial: 'A',
-        name: Agent.a.en
+        name: Character.a.en
       }
     ]
     const handleSelectOptionEventHandler = jest.fn()

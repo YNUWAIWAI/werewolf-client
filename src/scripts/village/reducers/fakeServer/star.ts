@@ -1,4 +1,4 @@
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
 import {VERSION} from '../../constants/Version'
@@ -19,8 +19,8 @@ export const star: village.Payload$StarMessage = {
     '@context': village.Context.Character,
     '@id': `https://licos.online/state/${VERSION}/village#3/myCharacter`,
     'id': 1,
-    'image': ImagePath.Agent.a,
-    'name': Agent.a,
+    'image': ImagePath.Character.a,
+    'name': Character.a,
     'role': {
       '@context': village.Context.Role,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#1/role`,

@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {Agent} from '../constants/Agent'
 import Ajv from 'ajv'
+import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
@@ -31,8 +31,8 @@ describe('socket/MESSAGE', () => {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
         'id': 1,
-        'image': ImagePath.Agent120x120.a,
-        'name': Agent.a
+        'image': ImagePath.Character120x120.a,
+        'name': Character.a
       },
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,
@@ -82,8 +82,8 @@ describe('socket/MESSAGE', () => {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
         'id': 1,
-        'image': ImagePath.Agent120x120.a,
-        'name': Agent.a
+        'image': ImagePath.Character120x120.a,
+        'name': Character.a
       },
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,

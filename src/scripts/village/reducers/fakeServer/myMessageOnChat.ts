@@ -1,4 +1,4 @@
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import {ImagePath} from '../../constants/ImagePath'
 import {VERSION} from '../../constants/Version'
 import {village} from '../../types'
@@ -13,8 +13,8 @@ export const myMessageOnChat: village.Payload$ChatMessage = {
     '@context': village.Context.Character,
     '@id': `https://licos.online/state/${VERSION}/village#3/character`,
     'id': 1,
-    'image': ImagePath.Agent120x120.a,
-    'name': Agent.a
+    'image': ImagePath.Character120x120.a,
+    'name': Character.a
   },
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
   'counter': 7,

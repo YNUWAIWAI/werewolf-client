@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import {Agent} from '../constants/Agent'
+import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
 import Modal from '../components/organisms/Modal'
@@ -13,7 +13,7 @@ import {village} from '../types'
 
 describe('<ModalContainer />', () => {
   describe('render', () => {
-    describe('selectedAgent exists', () => {
+    describe('selectedCharacter exists', () => {
       test('DAY', () => {
         const store = fakeStore(
           {
@@ -49,20 +49,20 @@ describe('<ModalContainer />', () => {
                 '2': {
                   '@id': 'https://licos.online/state/0.2/village#3/character#2',
                   'id': '2',
-                  'image': ImagePath.Agent.b,
-                  'name': Agent.b
+                  'image': ImagePath.Character.b,
+                  'name': Character.b
                 },
                 '3': {
                   '@id': 'https://licos.online/state/0.2/village#3/character#3',
                   'id': '3',
-                  'image': ImagePath.Agent.c,
-                  'name': Agent.c
+                  'image': ImagePath.Character.c,
+                  'name': Character.c
                 },
                 '4': {
                   '@id': 'https://licos.online/state/0.2/village#3/character#4',
                   'id': '4',
-                  'image': ImagePath.Agent.d,
-                  'name': Agent.d
+                  'image': ImagePath.Character.d,
+                  'name': Character.d
                 }
               },
               fixed: false
@@ -72,8 +72,8 @@ describe('<ModalContainer />', () => {
               character: {
                 '@id': 'https://licos.online/state/0.2/village#3/character#1',
                 'id': 1,
-                'image': ImagePath.Agent.a,
-                'name': Agent.a
+                'image': ImagePath.Character.a,
+                'name': Character.a
               },
               role: {
                 '@id': 'https://licos.online/state/0.2/village#3/role#seer',
@@ -134,20 +134,20 @@ describe('<ModalContainer />', () => {
                   '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
-                    'image': ImagePath.Agent.b,
-                    'name': Agent.b
+                    'image': ImagePath.Character.b,
+                    'name': Character.b
                   },
                   '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
-                    'image': ImagePath.Agent.c,
-                    'name': Agent.c
+                    'image': ImagePath.Character.c,
+                    'name': Character.c
                   },
                   '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
-                    'image': ImagePath.Agent.d,
-                    'name': Agent.d
+                    'image': ImagePath.Character.d,
+                    'name': Character.d
                   }
                 },
                 fixed: false
@@ -157,8 +157,8 @@ describe('<ModalContainer />', () => {
                 character: {
                   '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
-                  'image': ImagePath.Agent.a,
-                  'name': Agent.a
+                  'image': ImagePath.Character.a,
+                  'name': Character.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#seer',
@@ -218,20 +218,20 @@ describe('<ModalContainer />', () => {
                   '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
-                    'image': ImagePath.Agent.b,
-                    'name': Agent.b
+                    'image': ImagePath.Character.b,
+                    'name': Character.b
                   },
                   '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
-                    'image': ImagePath.Agent.c,
-                    'name': Agent.c
+                    'image': ImagePath.Character.c,
+                    'name': Character.c
                   },
                   '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
-                    'image': ImagePath.Agent.d,
-                    'name': Agent.d
+                    'image': ImagePath.Character.d,
+                    'name': Character.d
                   }
                 },
                 fixed: false
@@ -241,8 +241,8 @@ describe('<ModalContainer />', () => {
                 character: {
                   '@id': 'https://licos.online/state/0.2/village#3/character#1',
                   'id': 1,
-                  'image': ImagePath.Agent.a,
-                  'name': Agent.a
+                  'image': ImagePath.Character.a,
+                  'name': Character.a
                 },
                 role: {
                   '@id': 'https://licos.online/state/0.2/village#3/role#seer',
@@ -302,20 +302,20 @@ describe('<ModalContainer />', () => {
                   '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
-                    'image': ImagePath.Agent.b,
-                    'name': Agent.b
+                    'image': ImagePath.Character.b,
+                    'name': Character.b
                   },
                   '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
-                    'image': ImagePath.Agent.c,
-                    'name': Agent.c
+                    'image': ImagePath.Character.c,
+                    'name': Character.c
                   },
                   '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
-                    'image': ImagePath.Agent.d,
-                    'name': Agent.d
+                    'image': ImagePath.Character.d,
+                    'name': Character.d
                   }
                 },
                 fixed: false
@@ -380,20 +380,20 @@ describe('<ModalContainer />', () => {
                   '2': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#2',
                     'id': '2',
-                    'image': ImagePath.Agent.b,
-                    'name': Agent.b
+                    'image': ImagePath.Character.b,
+                    'name': Character.b
                   },
                   '3': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#3',
                     'id': '3',
-                    'image': ImagePath.Agent.c,
-                    'name': Agent.c
+                    'image': ImagePath.Character.c,
+                    'name': Character.c
                   },
                   '4': {
                     '@id': 'https://licos.online/state/0.2/village#3/character#4',
                     'id': '4',
-                    'image': ImagePath.Agent.d,
-                    'name': Agent.d
+                    'image': ImagePath.Character.d,
+                    'name': Character.d
                   }
                 },
                 fixed: false
@@ -425,7 +425,7 @@ describe('<ModalContainer />', () => {
         })
       })
     })
-    test('selectedAgent doesn\'t exist', () => {
+    test('selectedCharacter doesn\'t exist', () => {
       const store = fakeStore(
         {
           base: {
@@ -460,20 +460,20 @@ describe('<ModalContainer />', () => {
               '2': {
                 '@id': 'https://licos.online/state/0.2/village#3/character#2',
                 'id': '2',
-                'image': ImagePath.Agent.b,
-                'name': Agent.b
+                'image': ImagePath.Character.b,
+                'name': Character.b
               },
               '3': {
                 '@id': 'https://licos.online/state/0.2/village#3/character#3',
                 'id': '3',
-                'image': ImagePath.Agent.c,
-                'name': Agent.c
+                'image': ImagePath.Character.c,
+                'name': Character.c
               },
               '4': {
                 '@id': 'https://licos.online/state/0.2/village#3/character#4',
                 'id': '4',
-                'image': ImagePath.Agent.d,
-                'name': Agent.d
+                'image': ImagePath.Character.d,
+                'name': Character.d
               }
             },
             fixed: false

@@ -4,7 +4,7 @@ import {
   myMessageOnChat
 } from './fakeServer'
 import reducer, {initialState} from './suggest'
-import {Agent} from '../constants/Agent'
+import {Character} from '../constants/Character'
 import {Role} from '../constants/Role'
 import {socket} from '../actions'
 import {village} from '../types'
@@ -20,64 +20,64 @@ describe('socket/MESSAGE', () => {
       {
         data: [
           {
-            id: Agent.a.en,
-            name: Agent.a
+            id: Character.a.en,
+            name: Character.a
           },
           {
-            id: Agent.b.en,
-            name: Agent.b
+            id: Character.b.en,
+            name: Character.b
           },
           {
-            id: Agent.c.en,
-            name: Agent.c
+            id: Character.c.en,
+            name: Character.c
           },
           {
-            id: Agent.d.en,
-            name: Agent.d
+            id: Character.d.en,
+            name: Character.d
           },
           {
-            id: Agent.e.en,
-            name: Agent.e
+            id: Character.e.en,
+            name: Character.e
           },
           {
-            id: Agent.f.en,
-            name: Agent.f
+            id: Character.f.en,
+            name: Character.f
           },
           {
-            id: Agent.g.en,
-            name: Agent.g
+            id: Character.g.en,
+            name: Character.g
           },
           {
-            id: Agent.h.en,
-            name: Agent.h
+            id: Character.h.en,
+            name: Character.h
           },
           {
-            id: Agent.i.en,
-            name: Agent.i
+            id: Character.i.en,
+            name: Character.i
           },
           {
-            id: Agent.j.en,
-            name: Agent.j
+            id: Character.j.en,
+            name: Character.j
           },
           {
-            id: Agent.k.en,
-            name: Agent.k
+            id: Character.k.en,
+            name: Character.k
           },
           {
-            id: Agent.l.en,
-            name: Agent.l
+            id: Character.l.en,
+            name: Character.l
           },
           {
-            id: Agent.m.en,
-            name: Agent.m
+            id: Character.m.en,
+            name: Character.m
           },
           {
-            id: Agent.n.en,
-            name: Agent.n
+            id: Character.n.en,
+            name: Character.n
           },
           {
-            id: Agent.o.en,
-            name: Agent.o
+            id: Character.o.en,
+            name: Character.o
           },
           {
             id: village.RoleId.hunter,

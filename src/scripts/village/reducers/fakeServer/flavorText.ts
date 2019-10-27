@@ -1,4 +1,4 @@
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import {ImagePath} from '../../constants/ImagePath'
 import {VERSION} from '../../constants/Version'
 import {village} from '../../types'
@@ -24,8 +24,8 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
         'id': 1,
-        'image': ImagePath.Agent.j,
-        'name': Agent.j
+        'image': ImagePath.Character.j,
+        'name': Character.j
       },
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,
@@ -74,8 +74,8 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
         'id': 1,
-        'image': ImagePath.Agent.j,
-        'name': Agent.j
+        'image': ImagePath.Character.j,
+        'name': Character.j
       },
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'counter': 0,

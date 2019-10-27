@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import {Agent} from '../constants/Agent'
+import {Character} from '../constants/Character'
 import Chat from '../components/organisms/Chat'
 import ChatContainer from './ChatContainer'
 import {ImagePath} from '../constants/ImagePath'
@@ -39,11 +39,11 @@ describe('<ChatContainer />', () => {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
                 day: 1,
                 id: 12,
-                image: ImagePath.Agent120x120.a,
+                image: ImagePath.Character120x120.a,
                 intensionalDisclosureRange: village.Channel.public,
                 isMarked: false,
                 isMine: true,
-                name: Agent.a,
+                name: Character.a,
                 phaseStartTime: '2006-10-07T12:06:56.568+09:00',
                 phaseTimeLimit: 600,
                 serverTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -54,7 +54,7 @@ describe('<ChatContainer />', () => {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
                 day: 1,
                 id: -1,
-                image: ImagePath.Agent120x120.y,
+                image: ImagePath.Character120x120.y,
                 intensionalDisclosureRange: village.Channel.onymousAudience,
                 isMarked: false,
                 isMine: true,
@@ -69,7 +69,7 @@ describe('<ChatContainer />', () => {
                 clientTimestamp: '2006-10-07T12:06:56.568+09:00',
                 day: 1,
                 id: -1,
-                image: ImagePath.Agent120x120.anonymous,
+                image: ImagePath.Character120x120.anonymous,
                 intensionalDisclosureRange: village.Channel.anonymousAudience,
                 isMarked: false,
                 isMine: true,
@@ -115,11 +115,11 @@ describe('<ChatContainer />', () => {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               day: 1,
               id: 12,
-              image: ImagePath.Agent120x120.a,
+              image: ImagePath.Character120x120.a,
               intensionalDisclosureRange: village.Channel.public,
               isMarked: false,
               isMine: true,
-              name: Agent.a,
+              name: Character.a,
               phaseStartTime: '2006-10-07T12:06:56.568+09:00',
               phaseTimeLimit: 600,
               serverTimestamp: '2006-10-07T12:06:56.568+09:00',
@@ -130,7 +130,7 @@ describe('<ChatContainer />', () => {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               day: 1,
               id: -1,
-              image: ImagePath.Agent120x120.y,
+              image: ImagePath.Character120x120.y,
               intensionalDisclosureRange: village.Channel.onymousAudience,
               isMarked: false,
               isMine: true,
@@ -145,7 +145,7 @@ describe('<ChatContainer />', () => {
               clientTimestamp: '2006-10-07T12:06:56.568+09:00',
               day: 1,
               id: -1,
-              image: ImagePath.Agent120x120.anonymous,
+              image: ImagePath.Character120x120.anonymous,
               intensionalDisclosureRange: village.Channel.anonymousAudience,
               isMarked: false,
               isMine: true,

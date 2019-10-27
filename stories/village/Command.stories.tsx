@@ -1,7 +1,7 @@
 import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
 import * as React from 'react'
 import * as village from './types'
-import {Agent} from '../../src/scripts/village/constants/Agent'
+import {Character} from '../../src/scripts/village/constants/Character'
 import Command from '../../src/scripts/village/components/organisms/Command'
 import CommandGrave from '../../src/scripts/village/components/organisms/CommandGrave'
 import CommandInputBox from '../../src/scripts/village/components/organisms/CommandInputBox'
@@ -18,64 +18,64 @@ import {storiesOf} from '@storybook/react'
 
 const suggesttedData = [
   {
-    id: Agent.a.en,
-    name: Agent.a
+    id: Character.a.en,
+    name: Character.a
   },
   {
-    id: Agent.b.en,
-    name: Agent.b
+    id: Character.b.en,
+    name: Character.b
   },
   {
-    id: Agent.c.en,
-    name: Agent.c
+    id: Character.c.en,
+    name: Character.c
   },
   {
-    id: Agent.d.en,
-    name: Agent.d
+    id: Character.d.en,
+    name: Character.d
   },
   {
-    id: Agent.e.en,
-    name: Agent.e
+    id: Character.e.en,
+    name: Character.e
   },
   {
-    id: Agent.f.en,
-    name: Agent.f
+    id: Character.f.en,
+    name: Character.f
   },
   {
-    id: Agent.g.en,
-    name: Agent.g
+    id: Character.g.en,
+    name: Character.g
   },
   {
-    id: Agent.h.en,
-    name: Agent.h
+    id: Character.h.en,
+    name: Character.h
   },
   {
-    id: Agent.i.en,
-    name: Agent.i
+    id: Character.i.en,
+    name: Character.i
   },
   {
-    id: Agent.j.en,
-    name: Agent.j
+    id: Character.j.en,
+    name: Character.j
   },
   {
-    id: Agent.k.en,
-    name: Agent.k
+    id: Character.k.en,
+    name: Character.k
   },
   {
-    id: Agent.l.en,
-    name: Agent.l
+    id: Character.l.en,
+    name: Character.l
   },
   {
-    id: Agent.m.en,
-    name: Agent.m
+    id: Character.m.en,
+    name: Character.m
   },
   {
-    id: Agent.n.en,
-    name: Agent.n
+    id: Character.n.en,
+    name: Character.n
   },
   {
-    id: Agent.o.en,
-    name: Agent.o
+    id: Character.o.en,
+    name: Character.o
   },
   {
     id: village.RoleId.hunter,
@@ -120,17 +120,17 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
-        characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
         public={{
-          postCount: 0
+          numberOfChatMessages: 0
         }}
         suggesttedData={suggesttedData}
         werewolf={{
           available: false,
-          postCount: 0
+          numberOfChatMessages: 0
         }}
       />
     const store = createStore(
@@ -155,17 +155,17 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
-        characterLimit={140}
         handlePostChat={() => action('handlePostChat')}
         language={value}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
         public={{
-          postCount: 0
+          numberOfChatMessages: 0
         }}
         suggesttedData={suggesttedData}
         werewolf={{
           available: true,
-          postCount: 0
+          numberOfChatMessages: 0
         }}
       />
     const store = createStore(
@@ -190,10 +190,10 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandPostMortem
-        characterLimit={140}
         handleNavigationClick={() => action('handleNavigationClick')}
         handlePostChat={() => action('handlePostChat')}
         language={value}
+        maxLengthOfUnicodeCodePoints={140}
         navigation={[
           {
             className: 'show-result',
@@ -235,10 +235,10 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandPostMortem
-        characterLimit={140}
         handleNavigationClick={() => action('handleNavigationClick')}
         handlePostChat={() => action('handlePostChat')}
         language={value}
+        maxLengthOfUnicodeCodePoints={140}
         navigation={[
           {
             className: 'show-result',
@@ -281,10 +281,10 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandPostMortem
-        characterLimit={140}
         handleNavigationClick={() => action('handleNavigationClick')}
         handlePostChat={() => action('handlePostChat')}
         language={value}
+        maxLengthOfUnicodeCodePoints={140}
         navigation={[
           {
             className: 'show-result',
@@ -321,10 +321,10 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandGrave
-        characterLimit={140}
         handleNavigationClick={() => action('handleNavigationClick')}
         handlePostChat={() => action('handlePostChat')}
         language={value}
+        maxLengthOfUnicodeCodePoints={140}
         navigation={[
           {
             className: 'return-to-lobby expand',

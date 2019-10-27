@@ -1,5 +1,5 @@
 // for testing
-export const Agent = {
+export const Character = {
   a: {
     'en': 'Adil',
     'ja': 'アーディル'

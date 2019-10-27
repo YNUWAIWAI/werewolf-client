@@ -1,4 +1,4 @@
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
 import {VERSION} from '../../constants/Version'
@@ -15,10 +15,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': ImagePath.Agent.a,
+      'image': ImagePath.Character.a,
       'isAChoice': false,
       'isMine': true,
-      'name': Agent.a,
+      'name': Character.a,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#1/update`,
@@ -30,10 +30,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
       'id': 2,
-      'image': ImagePath.Agent.b,
+      'image': ImagePath.Character.b,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.b,
+      'name': Character.b,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#2/update`,
@@ -45,10 +45,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
       'id': 3,
-      'image': ImagePath.Agent.c,
+      'image': ImagePath.Character.c,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.c,
+      'name': Character.c,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#3/update`,
@@ -60,10 +60,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
       'id': 4,
-      'image': ImagePath.Agent.d,
+      'image': ImagePath.Character.d,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.d,
+      'name': Character.d,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#4/update`,
@@ -75,10 +75,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
       'id': 5,
-      'image': ImagePath.Agent.e,
+      'image': ImagePath.Character.e,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.e,
+      'name': Character.e,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#5/update`,
@@ -90,10 +90,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
       'id': 6,
-      'image': ImagePath.Agent.f,
+      'image': ImagePath.Character.f,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.f,
+      'name': Character.f,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#6/update`,
@@ -105,10 +105,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
       'id': 7,
-      'image': ImagePath.Agent.g,
+      'image': ImagePath.Character.g,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.g,
+      'name': Character.g,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#7/update`,
@@ -120,10 +120,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
       'id': 8,
-      'image': ImagePath.Agent.h,
+      'image': ImagePath.Character.h,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.h,
+      'name': Character.h,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#8/update`,
@@ -135,10 +135,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
       'id': 9,
-      'image': ImagePath.Agent.i,
+      'image': ImagePath.Character.i,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.i,
+      'name': Character.i,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#9/update`,
@@ -150,10 +150,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
       'id': 10,
-      'image': ImagePath.Agent.j,
+      'image': ImagePath.Character.j,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.j,
+      'name': Character.j,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#10/update`,
@@ -165,10 +165,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
       'id': 11,
-      'image': ImagePath.Agent.k,
+      'image': ImagePath.Character.k,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.k,
+      'name': Character.k,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#11/update`,
@@ -180,10 +180,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
       'id': 12,
-      'image': ImagePath.Agent.l,
+      'image': ImagePath.Character.l,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.l,
+      'name': Character.l,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#12/update`,
@@ -195,10 +195,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
       'id': 13,
-      'image': ImagePath.Agent.m,
+      'image': ImagePath.Character.m,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.m,
+      'name': Character.m,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#13/update`,
@@ -210,10 +210,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
       'id': 14,
-      'image': ImagePath.Agent.n,
+      'image': ImagePath.Character.n,
       'isAChoice': false,
       'isMine': false,
-      'name': Agent.n,
+      'name': Character.n,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#14/update`,
@@ -225,10 +225,10 @@ export const firstMorning2: village.Payload$SystemMessage = {
       '@context': village.Context.Character,
       '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
       'id': 15,
-      'image': ImagePath.Agent.o,
+      'image': ImagePath.Character.o,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.o,
+      'name': Character.o,
       'status': village.CharacterStatus.alive,
       'update': {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#14/update`,
@@ -266,8 +266,8 @@ export const firstMorning2: village.Payload$SystemMessage = {
             '@context': village.Context.Character,
             '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
           'day': 1,
           'phase': village.Phase.morning,
@@ -290,8 +290,8 @@ export const firstMorning2: village.Payload$SystemMessage = {
             '@context': village.Context.Character,
             '@id': `https://licos.online/state/${VERSION}/village#3/role#seer/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
           'day': 1,
           'phase': village.Phase.morning,
@@ -314,8 +314,8 @@ export const firstMorning2: village.Payload$SystemMessage = {
             '@context': village.Context.Character,
             '@id': `https://licos.online/state/${VERSION}/village#3/role#medium/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
           'day': 1,
           'phase': village.Phase.morning,
@@ -338,8 +338,8 @@ export const firstMorning2: village.Payload$SystemMessage = {
             '@context': village.Context.Character,
             '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
           'day': 1,
           'phase': village.Phase.morning,
@@ -362,8 +362,8 @@ export const firstMorning2: village.Payload$SystemMessage = {
             '@context': village.Context.Character,
             '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
           'day': 1,
           'phase': village.Phase.morning,
@@ -386,8 +386,8 @@ export const firstMorning2: village.Payload$SystemMessage = {
             '@context': village.Context.Character,
             '@id': `https://licos.online/state/${VERSION}/village#3/role#madman/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
           'day': 1,
           'phase': village.Phase.morning,
@@ -410,8 +410,8 @@ export const firstMorning2: village.Payload$SystemMessage = {
             '@context': village.Context.Character,
             '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
           'day': 1,
           'phase': village.Phase.morning,

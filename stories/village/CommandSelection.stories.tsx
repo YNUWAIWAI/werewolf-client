@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as village from './types'
-import {Agent} from '../../src/scripts/village/constants/Agent'
+import {Agent} from '../../src/scripts/village/constants/Character'
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
