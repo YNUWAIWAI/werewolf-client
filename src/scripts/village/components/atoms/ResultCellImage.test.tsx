@@ -7,7 +7,7 @@ describe('<ResultCellImage />', () => {
   test('alive', () => {
     const warpper = shallow(
       <ResultCellImage
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         status={village.CharacterStatus.alive}
       />
@@ -18,7 +18,7 @@ describe('<ResultCellImage />', () => {
   test('dead', () => {
     const warpper = shallow(
       <ResultCellImage
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         status={village.CharacterStatus.dead}
       />
@@ -29,7 +29,7 @@ describe('<ResultCellImage />', () => {
   test('deathByAttack', () => {
     const warpper = shallow(
       <ResultCellImage
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         status={village.CharacterStatus.deathByAttack}
       />
@@ -40,7 +40,7 @@ describe('<ResultCellImage />', () => {
   test('deathByExecution', () => {
     const warpper = shallow(
       <ResultCellImage
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         status={village.CharacterStatus.deathByExecution}
       />
@@ -51,7 +51,7 @@ describe('<ResultCellImage />', () => {
   test('deathByFear', () => {
     const warpper = shallow(
       <ResultCellImage
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         status={village.CharacterStatus.deathByFear}
       />
@@ -62,7 +62,7 @@ describe('<ResultCellImage />', () => {
   test('unnaturalDeath', () => {
     const warpper = shallow(
       <ResultCellImage
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         status={village.CharacterStatus.unnaturalDeath}
       />

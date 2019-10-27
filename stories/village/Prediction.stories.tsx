@@ -15,7 +15,7 @@ storiesOf('village|Prediction', module)
     const playerStatus: Props['playerStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
         'initial': 'A',
         'isSilent': true,
         'name': 'Adil',
@@ -23,7 +23,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -31,7 +31,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -39,7 +39,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -47,7 +47,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
@@ -55,7 +55,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '6',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
         'initial': 'F',
         'isSilent': true,
         'name': 'Fernando',
@@ -63,7 +63,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '7',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
         'initial': 'G',
         'isSilent': false,
         'name': 'Gavriil',
@@ -71,7 +71,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '8',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
         'initial': 'H',
         'isSilent': false,
         'name': 'Henrik',
@@ -79,7 +79,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '9',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
         'initial': 'I',
         'isSilent': false,
         'name': 'Ileanna',
@@ -87,7 +87,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '10',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
         'initial': 'J',
         'isSilent': false,
         'name': 'Jasmin',
@@ -95,7 +95,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '11',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
         'initial': 'K',
         'isSilent': false,
         'name': 'Kaiji',
@@ -103,7 +103,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '12',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
         'initial': 'L',
         'isSilent': false,
         'name': 'Louise',
@@ -111,7 +111,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '13',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
         'initial': 'M',
         'isSilent': false,
         'name': 'Marthe',
@@ -119,7 +119,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '14',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
         'initial': 'N',
         'isSilent': false,
         'name': 'Nanyamka',
@@ -127,7 +127,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '15',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
         'initial': 'O',
         'isSilent': false,
         'name': 'Oliwia',
@@ -851,7 +851,7 @@ storiesOf('village|Prediction', module)
     const playerStatus: Props['playerStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
@@ -859,7 +859,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -867,7 +867,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -875,7 +875,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -883,7 +883,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
@@ -1063,7 +1063,7 @@ storiesOf('village|Prediction', module)
     const playerStatus: Props['playerStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
@@ -1071,7 +1071,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -1079,7 +1079,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -1087,7 +1087,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -1095,7 +1095,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
@@ -1103,7 +1103,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '6',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
         'initial': 'F',
         'isSilent': false,
         'name': 'Fernando',
@@ -1111,7 +1111,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '7',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/g_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
         'initial': 'G',
         'isSilent': false,
         'name': 'Gavriil',
@@ -1119,7 +1119,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '8',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/h_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
         'initial': 'H',
         'isSilent': false,
         'name': 'Henrik',
@@ -1127,7 +1127,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '9',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/i_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
         'initial': 'I',
         'isSilent': false,
         'name': 'Ileanna',
@@ -1135,7 +1135,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '10',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/j_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
         'initial': 'J',
         'isSilent': false,
         'name': 'Jasmin',
@@ -1143,7 +1143,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '11',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/k_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
         'initial': 'K',
         'isSilent': false,
         'name': 'Kaiji',
@@ -1151,7 +1151,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '12',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/l_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
         'initial': 'L',
         'isSilent': false,
         'name': 'Louise',
@@ -1159,7 +1159,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '13',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/m_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
         'initial': 'M',
         'isSilent': false,
         'name': 'Marthe',
@@ -1167,7 +1167,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '14',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/n_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
         'initial': 'N',
         'isSilent': false,
         'name': 'Nanyamka',
@@ -1175,7 +1175,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '15',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/o_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
         'initial': 'O',
         'isSilent': false,
         'name': 'Oliwia',
@@ -1899,7 +1899,7 @@ storiesOf('village|Prediction', module)
     const playerStatus: Props['playerStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
@@ -1907,7 +1907,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -1915,7 +1915,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -1923,7 +1923,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -1931,7 +1931,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',

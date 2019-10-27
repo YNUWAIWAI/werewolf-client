@@ -11,7 +11,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
           isMarked={false}
@@ -40,7 +40,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.grave}
           isMarked={false}
@@ -69,7 +69,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.hunter}
           isMarked={false}
@@ -98,7 +98,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.master}
           isMarked={false}
@@ -127,7 +127,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.onymousAudience}
           isMarked={false}
@@ -156,7 +156,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.private}
           isMarked={false}
@@ -185,7 +185,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.public}
           isMarked={false}
@@ -214,7 +214,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.seer}
           isMarked={false}
@@ -243,7 +243,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.werewolf}
           isMarked={false}
@@ -274,7 +274,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.anonymousAudience}
           isMarked={false}
@@ -303,7 +303,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.grave}
           isMarked={false}
@@ -332,7 +332,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.hunter}
           isMarked={false}
@@ -361,7 +361,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.master}
           isMarked={false}
@@ -390,7 +390,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.onymousAudience}
           isMarked={false}
@@ -419,7 +419,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.private}
           isMarked={false}
@@ -448,7 +448,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.public}
           isMarked={false}
@@ -477,7 +477,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.seer}
           isMarked={false}
@@ -506,7 +506,7 @@ describe('<ChatItem />', () => {
         <ChatItem
           handleStar={handleStar}
           id={1}
-          image="https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png"
+          image="https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png"
           initial="A"
           intensionalDisclosureRange={village.Channel.werewolf}
           isMarked={false}

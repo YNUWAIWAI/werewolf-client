@@ -58,7 +58,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   clientTimestamp: payload.clientTimestamp,
                   day: payload.day,
                   id,
-                  image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
+                  image: 'https://werewolf.world/image/0.3/character_icons/120x120/anonymous_120x120.png',
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
                   isMarked: false,
                   isMine: payload.isMine,

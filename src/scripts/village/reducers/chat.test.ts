@@ -305,7 +305,7 @@ describe('socket/MESSAGE', () => {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
           id: -1,
-          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
+          image: 'https://werewolf.world/image/0.3/character_icons/120x120/anonymous_120x120.png',
           intensionalDisclosureRange: 'anonymousAudience',
           isMarked: false,
           isMine: true,

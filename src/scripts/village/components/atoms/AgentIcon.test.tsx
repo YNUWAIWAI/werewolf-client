@@ -7,7 +7,7 @@ describe('<AgentIcon />', () => {
     const wrapper = shallow(
       <AgentIcon
         className="className"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         name="Adil"
       />
@@ -22,7 +22,7 @@ describe('<AgentIcon />', () => {
     const wrapper = shallow(
       <AgentIcon
         className="className"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
       />
     )
@@ -36,7 +36,7 @@ describe('<AgentIcon />', () => {
     const wrapper = shallow(
       <AgentIcon
         className="className"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         name="Adil"
       />
     )
@@ -50,7 +50,7 @@ describe('<AgentIcon />', () => {
     const wrapper = shallow(
       <AgentIcon
         className="className"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
       />
     )
 
@@ -64,7 +64,7 @@ describe('<AgentIcon />', () => {
       <AgentIcon
         additionalClass="additionalClass"
         className="className"
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         name="Adil"
       />
@@ -83,7 +83,7 @@ describe('<AgentIcon />', () => {
       <AgentIcon
         className="className"
         handleOnClick={handleOnClick}
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         name="Adil"
       />

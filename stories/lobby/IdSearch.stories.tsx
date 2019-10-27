@@ -45,7 +45,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            image="https://werewolf.world/image/0.3/character_icons/50x50/r_50x50.png"
             isPlayer
             menuItems={menuItems}
             name="Ryan"
@@ -92,7 +92,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            image="https://werewolf.world/image/0.3/character_icons/50x50/r_50x50.png"
             isPlayer
             menuItems={menuItems}
             name="Ryan"
@@ -175,7 +175,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            image="https://werewolf.world/image/0.3/character_icons/50x50/r_50x50.png"
             isPlayer
             menuItems={menuItems}
             name="Ryan"

@@ -6,7 +6,7 @@ describe('<PredictionCharacter />', () => {
   test('status="alive"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
         name="Adil"
@@ -21,7 +21,7 @@ describe('<PredictionCharacter />', () => {
   test('status="dead"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
         name="Adil"
@@ -36,7 +36,7 @@ describe('<PredictionCharacter />', () => {
   test('status="death by execution"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
         name="Adil"
@@ -51,7 +51,7 @@ describe('<PredictionCharacter />', () => {
   test('status="death by attack"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
         name="Adil"
@@ -66,7 +66,7 @@ describe('<PredictionCharacter />', () => {
   test('status="death by fear"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
         name="Adil"
@@ -81,7 +81,7 @@ describe('<PredictionCharacter />', () => {
   test('status="unnatural death"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent={false}
         name="Adil"
@@ -96,7 +96,7 @@ describe('<PredictionCharacter />', () => {
   test('isSilent=true, status="alive"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent
         name="Adil"
@@ -109,7 +109,7 @@ describe('<PredictionCharacter />', () => {
   test('isSilent=true, status="dead"', () => {
     const wrapper = mount(
       <PredictionCharacter
-        image="https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png"
+        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
         initial="A"
         isSilent
         name="Adil"

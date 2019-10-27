@@ -83,7 +83,7 @@ export default function TeamIcon(props: Props) {
         >
           <img
             className={`${props.class}--image`}
-            src="https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png"
+            src="https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png"
           />
         </div>
       )

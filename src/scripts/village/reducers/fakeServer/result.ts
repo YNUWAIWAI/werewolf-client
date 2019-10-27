@@ -137,7 +137,7 @@ export const result: village.Payload$SystemMessage = {
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI5'
       },
       'id': 5,
-      'image': 'https://werewolf.world/image/0.3/agent_icons/50x50/f_50x50.png',
+      'image': 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
       'isMine': false,
       'name': Agent.f,
       'result': village.Result.lose,
