@@ -21,7 +21,7 @@ const flavorText: Middleware = store => next => action => {
           }
 
           setTimeout(() => {
-            store.dispatch(socket.message(value))
+            store.dispatch(socket.message(value as village.Payload$ChatMessage))
           }, interval * index)
         })
       }
