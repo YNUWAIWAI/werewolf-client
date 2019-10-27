@@ -1,10 +1,10 @@
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
-import * as lobby from '../types'
 import {Content} from '../../../src/scripts/lobby/reducers/app'
 import {ReducerState} from '../../../src/scripts/lobby/reducers'
 import {VERSION} from '../../../src/scripts/lobby/constants/Version'
+import {lobby} from '../types'
 
-const state: Partial<ReducerState> = {
+export const waitingPage: Partial<ReducerState> = {
   app: {
     content: Content.WaitingForPlayers
   },
@@ -188,5 +188,3 @@ const state: Partial<ReducerState> = {
     }
   }
 }
-
-export default state
