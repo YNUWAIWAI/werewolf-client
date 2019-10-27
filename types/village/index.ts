@@ -97,7 +97,7 @@ export interface LanguageMap {
   [Language.it]?: string
   [Language.ja]?: string
 }
-export type Payload$AgentId = number
+export type Payload$CharacterId = number
 export type Payload$ChatId = number
 export const enum Phase {
   flavorText = 'flavor text',
