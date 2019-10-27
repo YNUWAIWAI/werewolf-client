@@ -7,6 +7,7 @@ import Prediction from '../components/organisms/Prediction'
 import PredictionContainer from './PredictionContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../constants/Role'
+import {VERSION} from '../constants/Version'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 import {village} from '../types'
@@ -23,35 +24,35 @@ describe('<PredictionContainer />', () => {
       ],
       byId: {
         '1': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#1',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
           'id': '1',
           'image': ImagePath.Character.a,
           'name': Character.a,
           'status': village.CharacterStatus.alive
         },
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#2',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
           'id': '2',
           'image': ImagePath.Character.b,
           'name': Character.b,
           'status': village.CharacterStatus.alive
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#3',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
           'id': '3',
           'image': ImagePath.Character.c,
           'name': Character.c,
           'status': village.CharacterStatus.alive
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#4',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
           'id': '4',
           'image': ImagePath.Character.d,
           'name': Character.d,
           'status': village.CharacterStatus.alive
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/character#5',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
           'id': '5',
           'image': ImagePath.Character.e,
           'name': Character.e,
@@ -68,28 +69,28 @@ describe('<PredictionContainer />', () => {
       ],
       byId: {
         [village.RoleId.villager]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
           'numberOfCharacters': 2
         },
         [village.RoleId.seer]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
           'id': village.RoleId.seer,
           'image': ImagePath.Role.seer,
           'name': Role.seer,
           'numberOfCharacters': 1
         },
         [village.RoleId.madman]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
           'id': village.RoleId.madman,
           'image': ImagePath.Role.madman,
           'name': Role.madman,
           'numberOfCharacters': 1
         },
         [village.RoleId.werewolf]: {
-          '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
@@ -216,7 +217,7 @@ describe('<PredictionContainer />', () => {
     const store = fakeStore(
       {
         base: {
-          '@id': 'https://licos.online/state/0.2/village#3',
+          '@id': `https://licos.online/state/${VERSION}/village#3`,
           'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
           'day': 1,
           'intensionalDisclosureRange': village.Channel.private,
@@ -226,7 +227,7 @@ describe('<PredictionContainer />', () => {
           'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
           'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
           'village': {
-            '@id': 'https://licos.online/state/0.2/village',
+            '@id': `https://licos.online/state/${VERSION}/village`,
             'chatSettings': {
               maxLengthOfUnicodeCodePoints: 140,
               maxNumberOfChatMessages: 10

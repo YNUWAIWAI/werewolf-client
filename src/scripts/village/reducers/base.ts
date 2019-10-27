@@ -4,7 +4,7 @@ import {getBaseUri} from '../util'
 import {village} from '../types'
 
 export interface State {
-  readonly '@id': string // ^https://licos.online/state/0.2/village#[0-9]+$
+  readonly '@id': string // ^https://licos.online/state/0.3/village#[0-9]+$
   readonly clientTimestamp: string
   readonly day: number
   readonly intensionalDisclosureRange: village.Channel
@@ -14,7 +14,7 @@ export interface State {
   readonly serverTimestamp: string
   readonly token: village.Token
   readonly village: {
-    readonly '@id': string // https://licos.online/state/0.2/village
+    readonly '@id': string // https://licos.online/state/0.3/village
     readonly chatSettings: {
       readonly maxLengthOfUnicodeCodePoints: number
       readonly maxNumberOfChatMessages: number

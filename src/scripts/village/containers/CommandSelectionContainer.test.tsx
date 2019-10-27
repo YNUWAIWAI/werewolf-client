@@ -7,6 +7,7 @@ import {ImagePath} from '../constants/ImagePath'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../constants/Role'
+import {VERSION} from '../constants/Version'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 import {village} from '../types'
@@ -18,7 +19,7 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              '@id': 'https://licos.online/state/0.2/village#3',
+              '@id': `https://licos.online/state/${VERSION}/village#3`,
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
               'day': 1,
               'intensionalDisclosureRange': village.Channel.private,
@@ -28,7 +29,7 @@ describe('<CommandSelectionContainer />', () => {
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
               'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
               'village': {
-                '@id': 'https://licos.online/state/0.2/village',
+                '@id': `https://licos.online/state/${VERSION}/village`,
                 'chatSettings': {
                   maxLengthOfUnicodeCodePoints: 140,
                   maxNumberOfChatMessages: 10
@@ -45,25 +46,25 @@ describe('<CommandSelectionContainer />', () => {
               ],
               byId: {
                 '2': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                   'id': '2',
                   'image': ImagePath.Character.b,
                   'name': Character.b
                 },
                 '3': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                   'id': '3',
                   'image': ImagePath.Character.c,
                   'name': Character.c
                 },
                 '4': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                   'id': '4',
                   'image': ImagePath.Character.d,
                   'name': Character.d
                 },
                 '5': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                   'id': '5',
                   'image': ImagePath.Character.e,
                   'name': Character.e
@@ -74,13 +75,13 @@ describe('<CommandSelectionContainer />', () => {
             language: village.Language.en,
             mine: {
               character: {
-                '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                 'id': 1,
                 'image': ImagePath.Character.a,
                 'name': Character.a
               },
               role: {
-                '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+                '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
                 'id': village.RoleId.seer,
                 'image': ImagePath.Role.seer,
                 'name': Role.seer
@@ -102,7 +103,7 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              '@id': 'https://licos.online/state/0.2/village#3',
+              '@id': `https://licos.online/state/${VERSION}/village#3`,
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
               'day': 1,
               'intensionalDisclosureRange': village.Channel.private,
@@ -112,7 +113,7 @@ describe('<CommandSelectionContainer />', () => {
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
               'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
               'village': {
-                '@id': 'https://licos.online/state/0.2/village',
+                '@id': `https://licos.online/state/${VERSION}/village`,
                 'chatSettings': {
                   maxLengthOfUnicodeCodePoints: 140,
                   maxNumberOfChatMessages: 10
@@ -132,25 +133,25 @@ describe('<CommandSelectionContainer />', () => {
               ],
               byId: {
                 '2': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                   'id': '2',
                   'image': ImagePath.Character.b,
                   'name': Character.b
                 },
                 '3': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                   'id': '3',
                   'image': ImagePath.Character.c,
                   'name': Character.c
                 },
                 '4': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                   'id': '4',
                   'image': ImagePath.Character.d,
                   'name': Character.d
                 },
                 '5': {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                   'id': '5',
                   'image': ImagePath.Character.e,
                   'name': Character.e
@@ -161,13 +162,13 @@ describe('<CommandSelectionContainer />', () => {
             language: village.Language.en,
             mine: {
               character: {
-                '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                 'id': 1,
                 'image': ImagePath.Character.a,
                 'name': Character.a
               },
               role: {
-                '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+                '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
                 'id': village.RoleId.seer,
                 'image': ImagePath.Role.seer,
                 'name': Role.seer
@@ -192,7 +193,7 @@ describe('<CommandSelectionContainer />', () => {
           const store = fakeStore(
             {
               base: {
-                '@id': 'https://licos.online/state/0.2/village#3',
+                '@id': `https://licos.online/state/${VERSION}/village#3`,
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
@@ -202,7 +203,7 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@id': 'https://licos.online/state/0.2/village',
+                  '@id': `https://licos.online/state/${VERSION}/village`,
                   'chatSettings': {
                     maxLengthOfUnicodeCodePoints: 140,
                     maxNumberOfChatMessages: 10
@@ -219,25 +220,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                     'id': '2',
                     'image': ImagePath.Character.b,
                     'name': Character.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                     'id': '3',
                     'image': ImagePath.Character.c,
                     'name': Character.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                     'id': '4',
                     'image': ImagePath.Character.d,
                     'name': Character.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                     'id': '5',
                     'image': ImagePath.Character.e,
                     'name': Character.e
@@ -248,13 +249,13 @@ describe('<CommandSelectionContainer />', () => {
               language: village.Language.en,
               mine: {
                 character: {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                   'id': 1,
                   'image': ImagePath.Character.a,
                   'name': Character.a
                 },
                 role: {
-                  '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
                   'id': village.RoleId.hunter,
                   'image': ImagePath.Role.hunter,
                   'name': Role.hunter
@@ -276,7 +277,7 @@ describe('<CommandSelectionContainer />', () => {
           const store = fakeStore(
             {
               base: {
-                '@id': 'https://licos.online/state/0.2/village#3',
+                '@id': `https://licos.online/state/${VERSION}/village#3`,
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
@@ -286,7 +287,7 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@id': 'https://licos.online/state/0.2/village',
+                  '@id': `https://licos.online/state/${VERSION}/village`,
                   'chatSettings': {
                     maxLengthOfUnicodeCodePoints: 140,
                     maxNumberOfChatMessages: 10
@@ -306,25 +307,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                     'id': '2',
                     'image': ImagePath.Character.b,
                     'name': Character.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                     'id': '3',
                     'image': ImagePath.Character.c,
                     'name': Character.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                     'id': '4',
                     'image': ImagePath.Character.d,
                     'name': Character.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                     'id': '5',
                     'image': ImagePath.Character.e,
                     'name': Character.e
@@ -335,13 +336,13 @@ describe('<CommandSelectionContainer />', () => {
               language: village.Language.en,
               mine: {
                 character: {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                   'id': 1,
                   'image': ImagePath.Character.a,
                   'name': Character.a
                 },
                 role: {
-                  '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
                   'id': village.RoleId.hunter,
                   'image': ImagePath.Role.hunter,
                   'name': Role.hunter
@@ -365,7 +366,7 @@ describe('<CommandSelectionContainer />', () => {
           const store = fakeStore(
             {
               base: {
-                '@id': 'https://licos.online/state/0.2/village#3',
+                '@id': `https://licos.online/state/${VERSION}/village#3`,
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
@@ -375,7 +376,7 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@id': 'https://licos.online/state/0.2/village',
+                  '@id': `https://licos.online/state/${VERSION}/village`,
                   'chatSettings': {
                     maxLengthOfUnicodeCodePoints: 140,
                     maxNumberOfChatMessages: 10
@@ -392,25 +393,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                     'id': '2',
                     'image': ImagePath.Character.b,
                     'name': Character.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                     'id': '3',
                     'image': ImagePath.Character.c,
                     'name': Character.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                     'id': '4',
                     'image': ImagePath.Character.d,
                     'name': Character.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                     'id': '5',
                     'image': ImagePath.Character.e,
                     'name': Character.e
@@ -421,13 +422,13 @@ describe('<CommandSelectionContainer />', () => {
               language: village.Language.en,
               mine: {
                 character: {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                   'id': 1,
                   'image': ImagePath.Character.a,
                   'name': Character.a
                 },
                 role: {
-                  '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
                   'id': village.RoleId.seer,
                   'image': ImagePath.Role.seer,
                   'name': Role.seer
@@ -449,7 +450,7 @@ describe('<CommandSelectionContainer />', () => {
           const store = fakeStore(
             {
               base: {
-                '@id': 'https://licos.online/state/0.2/village#3',
+                '@id': `https://licos.online/state/${VERSION}/village#3`,
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
@@ -459,7 +460,7 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@id': 'https://licos.online/state/0.2/village',
+                  '@id': `https://licos.online/state/${VERSION}/village`,
                   'chatSettings': {
                     maxLengthOfUnicodeCodePoints: 140,
                     maxNumberOfChatMessages: 10
@@ -479,25 +480,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                     'id': '2',
                     'image': ImagePath.Character.b,
                     'name': Character.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                     'id': '3',
                     'image': ImagePath.Character.c,
                     'name': Character.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                     'id': '4',
                     'image': ImagePath.Character.d,
                     'name': Character.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                     'id': '5',
                     'image': ImagePath.Character.e,
                     'name': Character.e
@@ -508,13 +509,13 @@ describe('<CommandSelectionContainer />', () => {
               language: village.Language.en,
               mine: {
                 character: {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                   'id': 1,
                   'image': ImagePath.Character.a,
                   'name': Character.a
                 },
                 role: {
-                  '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
                   'id': village.RoleId.seer,
                   'image': ImagePath.Role.seer,
                   'name': Role.seer
@@ -538,7 +539,7 @@ describe('<CommandSelectionContainer />', () => {
           const store = fakeStore(
             {
               base: {
-                '@id': 'https://licos.online/state/0.2/village#3',
+                '@id': `https://licos.online/state/${VERSION}/village#3`,
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
@@ -548,7 +549,7 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@id': 'https://licos.online/state/0.2/village',
+                  '@id': `https://licos.online/state/${VERSION}/village`,
                   'chatSettings': {
                     maxLengthOfUnicodeCodePoints: 140,
                     maxNumberOfChatMessages: 10
@@ -565,25 +566,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                     'id': '2',
                     'image': ImagePath.Character.b,
                     'name': Character.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                     'id': '3',
                     'image': ImagePath.Character.c,
                     'name': Character.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                     'id': '4',
                     'image': ImagePath.Character.d,
                     'name': Character.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                     'id': '5',
                     'image': ImagePath.Character.e,
                     'name': Character.e
@@ -594,13 +595,13 @@ describe('<CommandSelectionContainer />', () => {
               language: village.Language.en,
               mine: {
                 character: {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                   'id': 1,
                   'image': ImagePath.Character.a,
                   'name': Character.a
                 },
                 role: {
-                  '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
                   'id': village.RoleId.werewolf,
                   'image': ImagePath.Role.werewolf,
                   'name': Role.werewolf
@@ -622,7 +623,7 @@ describe('<CommandSelectionContainer />', () => {
           const store = fakeStore(
             {
               base: {
-                '@id': 'https://licos.online/state/0.2/village#3',
+                '@id': `https://licos.online/state/${VERSION}/village#3`,
                 'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'day': 1,
                 'intensionalDisclosureRange': village.Channel.private,
@@ -632,7 +633,7 @@ describe('<CommandSelectionContainer />', () => {
                 'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
                 'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
                 'village': {
-                  '@id': 'https://licos.online/state/0.2/village',
+                  '@id': `https://licos.online/state/${VERSION}/village`,
                   'chatSettings': {
                     maxLengthOfUnicodeCodePoints: 140,
                     maxNumberOfChatMessages: 10
@@ -652,25 +653,25 @@ describe('<CommandSelectionContainer />', () => {
                 ],
                 byId: {
                   '2': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#2',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
                     'id': '2',
                     'image': ImagePath.Character.b,
                     'name': Character.b
                   },
                   '3': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#3',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
                     'id': '3',
                     'image': ImagePath.Character.c,
                     'name': Character.c
                   },
                   '4': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#4',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
                     'id': '4',
                     'image': ImagePath.Character.d,
                     'name': Character.d
                   },
                   '5': {
-                    '@id': 'https://licos.online/state/0.2/village#3/character#5',
+                    '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
                     'id': '5',
                     'image': ImagePath.Character.e,
                     'name': Character.e
@@ -681,13 +682,13 @@ describe('<CommandSelectionContainer />', () => {
               language: village.Language.en,
               mine: {
                 character: {
-                  '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                   'id': 1,
                   'image': ImagePath.Character.a,
                   'name': Character.a
                 },
                 role: {
-                  '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+                  '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
                   'id': village.RoleId.werewolf,
                   'image': ImagePath.Role.werewolf,
                   'name': Role.werewolf
@@ -710,7 +711,7 @@ describe('<CommandSelectionContainer />', () => {
         const store = fakeStore(
           {
             base: {
-              '@id': 'https://licos.online/state/0.2/village#3',
+              '@id': `https://licos.online/state/${VERSION}/village#3`,
               'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
               'day': 1,
               'intensionalDisclosureRange': village.Channel.private,
@@ -720,7 +721,7 @@ describe('<CommandSelectionContainer />', () => {
               'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
               'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
               'village': {
-                '@id': 'https://licos.online/state/0.2/village',
+                '@id': `https://licos.online/state/${VERSION}/village`,
                 'chatSettings': {
                   maxLengthOfUnicodeCodePoints: 140,
                   maxNumberOfChatMessages: 10
@@ -739,13 +740,13 @@ describe('<CommandSelectionContainer />', () => {
             language: village.Language.en,
             mine: {
               character: {
-                '@id': 'https://licos.online/state/0.2/village#3/character#1',
+                '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
                 'id': 1,
                 'image': ImagePath.Character.a,
                 'name': Character.a
               },
               role: {
-                '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+                '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
                 'id': village.RoleId.villager,
                 'image': ImagePath.Role.villager,
                 'name': Role.villager

@@ -3,6 +3,7 @@ import * as village from './types'
 import Info from '../../src/scripts/village/components/organisms/Info'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
+import {VERSION} from '../../src/scripts/village/constants/Version'
 import {createStore} from 'redux'
 import language from './language'
 import {radios} from '@storybook/addon-knobs'
@@ -17,7 +18,7 @@ storiesOf('village|Info', module)
         language: radios(language.label, language.options, language.defaultValue),
         mine: {
           character: {
-            '@id': 'https://licos.online/state/0.2/village#3/character#1',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
             'id': 1,
             'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
             'name': {
@@ -26,7 +27,7 @@ storiesOf('village|Info', module)
             }
           },
           role: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
             'id': village.RoleId.seer,
             'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
             'name': {

@@ -4,6 +4,7 @@ import InfoTeamContainer from './InfoTeamContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../constants/Role'
+import {VERSION} from '../constants/Version'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 import {village} from '../types'
@@ -26,7 +27,7 @@ describe('<InfoTeamContainer />', () => {
       {
         mine: {
           role: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
             'id': village.RoleId.seer,
             'image': ImagePath.Role.seer,
             'name': Role.seer

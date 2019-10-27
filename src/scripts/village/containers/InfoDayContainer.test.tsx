@@ -2,6 +2,7 @@ import * as React from 'react'
 import InfoDayContainer from './InfoDayContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
+import {VERSION} from '../constants/Version'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 import {village} from '../types'
@@ -10,7 +11,7 @@ test('<InfoDayContainer />', () => {
   const store = fakeStore(
     {
       base: {
-        '@id': 'https://licos.online/state/0.2/village#3',
+        '@id': `https://licos.online/state/${VERSION}/village#3`,
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'day': 1,
         'intensionalDisclosureRange': village.Channel.private,
@@ -20,7 +21,7 @@ test('<InfoDayContainer />', () => {
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
         'village': {
-          '@id': 'https://licos.online/state/0.2/village',
+          '@id': `https://licos.online/state/${VERSION}/village`,
           'chatSettings': {
             maxLengthOfUnicodeCodePoints: 140,
             maxNumberOfChatMessages: 10
