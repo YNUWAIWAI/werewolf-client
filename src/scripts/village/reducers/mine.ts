@@ -5,16 +5,16 @@ import {village} from '../types'
 
 export interface State {
   readonly character?: {
-    '@id': village.Character['@id']
-    id: village.Character['id']
-    image: village.Character['image']
-    name: village.Character['name']
+    '@id': string
+    id: village.Payload$AgentId
+    image: string
+    name: village.LanguageMap
   }
   readonly role?: {
-    '@id': village.Role['@id']
+    '@id': string
     id: village.RoleId
-    name: village.Role['name']
-    image: village.Role['image']
+    name: village.LanguageMap
+    image: string
   }
 }
 type Action =
