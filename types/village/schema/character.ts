@@ -2,14 +2,14 @@
   'https://werewolf.world/village/schema/0.3/character.json'
 */
 import {
-  AgentStatus,
+  CharacterStatus,
   Context,
   Gender,
   LanguageMap,
   Payload$AgentId,
-  Result,
-  Time
+  Result
 } from '..'
+import {Time} from './time'
 
 export interface Character {
   '@context': Context.Character
@@ -22,7 +22,7 @@ export interface Character {
   isMine: boolean
   name: LanguageMap
   result: Result
-  status: AgentStatus
+  status: CharacterStatus
   update: {
     '@id': Time['@id']
     day: Time['day']
