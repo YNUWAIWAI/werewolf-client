@@ -25,7 +25,7 @@ import {
 } from '../schema'
 
 export interface PayloadBase {
-  // type: PayloadType
+  type: PayloadType
 }
 export const enum PayloadType {
   advancedSearch = 'advancedSearch',

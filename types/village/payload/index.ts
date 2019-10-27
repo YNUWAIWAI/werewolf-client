@@ -18,11 +18,27 @@ import {
   LeaveWaitingPage,
   Ready
 } from '../../lobby/schema'
-import {
-  Message,
-  PayloadType
-} from '..'
 
+export const enum Message {
+  boardMessage = 'boardMessage',
+  chatMessage = 'chatMessage',
+  errorMessage = 'errorMessage',
+  flavorTextMessage = 'flavorTextMessage',
+  scrollMessage = 'scrollMessage',
+  starMessage = 'starMessage',
+  systemMessage = 'systemMessage',
+  voteMessage = 'voteMessage',
+}
+export const enum PayloadType {
+  buildVillage = 'buildVillage',
+  leaveWaitingPage = 'leaveWaitingPage',
+  nextGameInvitation = 'nextGameInvitation',
+  nextGameInvitationIsClosed = 'nextGameInvitationIsClosed',
+  ready = 'ready',
+  receivedChatMessage = 'receivedChatMessage',
+  receivedFlavorTextMessage = 'receivedFlavorTextMessage',
+  receivedSystemMessage = 'receivedSystemMessage'
+}
 export type Payload =
   | Payload$BoardMessage
   | Payload$BuildVillage
