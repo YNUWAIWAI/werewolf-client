@@ -4,8 +4,8 @@
   --result-image-size: 50px;
   --vote-image-size: 50px;
   --modal-image-size: 50px;
-  --agent-initial-height: 20px;
-  --agent-initial-width: 20px;
+  --character-initial-height: 20px;
+  --character-initial-width: 20px;
 
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
@@ -155,14 +155,14 @@
       }
     }
 
-    &--agent {
+    &--character {
       display: grid;
       grid-area: opp;
       grid-template:
-        '. image image .' var(--agent-initial-height)
-        '. image image .' calc(var(--chat-image-size) - var(--agent-initial-height))
+        '. image image .' var(--character-initial-height)
+        '. image image .' calc(var(--chat-image-size) - var(--character-initial-height))
         'name name name name'
-        / 1fr calc(var(--chat-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
+        / 1fr calc(var(--chat-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
       margin: 0 var(--arrow) 0 0;
 
       &--image {
@@ -321,7 +321,7 @@
           border-right-color: transparent;
         }
 
-        & > .vi--chat--agent {
+        & > .vi--chat--character {
           grid-area: me;
           margin: 0 0 0 var(--arrow);
 
@@ -628,11 +628,11 @@
         display: grid;
         grid-template:
           '. . . .' 1fr
-          '. image image .' var(--agent-initial-height)
-          '. image image .' calc(var(--vote-image-size) - var(--agent-initial-height))
+          '. image image .' var(--character-initial-height)
+          '. image image .' calc(var(--vote-image-size) - var(--character-initial-height))
           'name name name name'
           '. . . .' 1fr
-          / 1fr calc(var(--vote-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
+          / 1fr calc(var(--vote-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
 
         &--image {
           display: block;
@@ -764,22 +764,22 @@
     grid-area: info;
     grid-template-areas:
       '. . . . . . . .'
-      'day property-agent agent property-role role property-team team .';
+      'day property-character character property-role role property-team team .';
     grid-template-columns: 3fr 1fr calc(var(--info-image-size) + 40px) 1fr calc(var(--info-image-size) + 40px) 1fr calc(var(--info-image-size) + 40px) 0.25fr;
     grid-template-rows: 2vh minmax(calc(3.25rem + 4px + 15px), 5vh);
     height: 100%;
 
-    &--agent {
+    &--character {
       animation: fadein 0.5s ease-out;
       display: grid;
-      grid-area: agent;
+      grid-area: character;
       grid-template:
         '. . . .' 1fr
-        '. image image .' var(--agent-initial-height)
-        '. image image .' calc(var(--info-image-size) - var(--agent-initial-height))
+        '. image image .' var(--character-initial-height)
+        '. image image .' calc(var(--info-image-size) - var(--character-initial-height))
         'name name name name' 15px
         '. . . .' 1fr
-        / 1fr calc(var(--info-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
+        / 1fr calc(var(--info-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
 
       &--image {
         display: block;
@@ -840,8 +840,8 @@
       font-size: 1.5rem;
       justify-content: flex-end;
 
-      &.agent {
-        grid-area: property-agent;
+      &.character {
+        grid-area: property-character;
       }
 
       &.role {
@@ -988,10 +988,10 @@
       display: grid;
       grid-area: icon;
       grid-template:
-        '. image image .' var(--agent-initial-height)
-        '. image image .' calc(var(--modal-image-size) - var(--agent-initial-height))
+        '. image image .' var(--character-initial-height)
+        '. image image .' calc(var(--modal-image-size) - var(--character-initial-height))
         'name name name name'
-        / 1fr calc(var(--modal-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
+        / 1fr calc(var(--modal-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
 
       &--image {
         display: block;
@@ -1097,11 +1097,11 @@
       display: grid;
       grid-template:
         '. . . .' 1fr
-        '. image image .' var(--agent-initial-height)
-        '. image image .' calc(var(--prediction-image-size) - var(--agent-initial-height))
+        '. image image .' var(--character-initial-height)
+        '. image image .' calc(var(--prediction-image-size) - var(--character-initial-height))
         'name name name name' 15px
         '. . . .' 1fr
-        / 1fr calc(var(--prediction-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
+        / 1fr calc(var(--prediction-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
       left: 0;
       position: sticky;
       z-index: var(--prediction--character--z-index);
@@ -1386,10 +1386,10 @@
         display: grid;
         grid-template:
           '. . . .' 1fr
-          '. image image .' var(--agent-initial-height)
-          '. image image .' calc(var(--result-image-size) - var(--agent-initial-height))
+          '. image image .' var(--character-initial-height)
+          '. image image .' calc(var(--result-image-size) - var(--character-initial-height))
           '. . . .' 1fr
-          / 1fr calc(var(--result-image-size) - var(--agent-initial-width)) var(--agent-initial-width) 1fr;
+          / 1fr calc(var(--result-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
         height: 100%;
 
         &--image {
