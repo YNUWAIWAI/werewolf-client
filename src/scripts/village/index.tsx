@@ -1,7 +1,7 @@
 /* eslint no-process-env: 0 */
+import * as ActionTypes from './constants/ActionTypes'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import {global, indexedDB, socket} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
@@ -21,13 +21,13 @@ const store =
     )
 
 store.dispatch({
-  type: socket.INIT
+  type: ActionTypes.Socket.INIT
 })
 store.dispatch({
-  type: indexedDB.INIT
+  type: ActionTypes.IndexedDB.INIT
 })
 store.dispatch({
-  type: global.PROLOGUE
+  type: ActionTypes.App.PROLOGUE
 })
 
 const root = document.getElementById('root')
