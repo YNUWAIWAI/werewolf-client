@@ -22,7 +22,7 @@
   "CommandSelection.Description.werewolfVote.unfixed": "Choose a character to attack",
   "FormattedTime.end": "Time's up",
   "FormattedTime.time": "{minute}'{second} left",
-  "Info.property.agent": "You:",
+  "Info.property.character": "You:",
   "Info.property.role": "Role:",
   "Info.property.team": "Team:",
   "InfoDay.noon": "Day {day}: noon",

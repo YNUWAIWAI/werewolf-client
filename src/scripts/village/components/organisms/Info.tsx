@@ -10,7 +10,7 @@ export default function Info() {
     <div className="vi--info">
       <InfoDay />
       <FormattedMessage
-        id="Info.property.agent"
+        id="Info.property.character"
       >
         {
           text => (
