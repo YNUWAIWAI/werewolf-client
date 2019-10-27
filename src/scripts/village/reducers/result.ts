@@ -5,7 +5,7 @@ import {
   SocketMessage
 } from '../actions'
 import {
-  getPlayableAgents,
+  getPlayableCharacters,
   getTeam,
   just,
   strToCharacterStatus,
@@ -90,7 +90,7 @@ const result = (state: State = initialState, action: Action): State => {
         let me: State['me'] = null
         const winners: State['winners'] = []
 
-        getPlayableAgents(just(payload.character))
+        getPlayableCharacters(just(payload.character))
           .forEach(c => {
             const avatar = just(c.avatar)
             const characterId = String(c.id)

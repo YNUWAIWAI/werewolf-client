@@ -158,7 +158,7 @@ export const strToRoleId = (str: string): village.RoleId => {
   return maybe
 }
 
-export const getMyAgent = <T extends {name: village.LanguageMap, isMine?: boolean}>(characters: T[]): T => {
+export const getMyCharacter = <T extends {name: village.LanguageMap, isMine?: boolean}>(characters: T[]): T => {
   const maybe = characters.find(a => typeof a.isMine !== 'undefined' && a.isMine)
 
   if (!maybe) {
@@ -168,7 +168,7 @@ export const getMyAgent = <T extends {name: village.LanguageMap, isMine?: boolea
   return maybe
 }
 
-export const getPlayableAgents = <T extends {name: village.LanguageMap}>(characters: T[]): T[] => characters
+export const getPlayableCharacters = <T extends {name: village.LanguageMap}>(characters: T[]): T[] => characters
 
 export const getPlayableRoles = <T extends {name: village.LanguageMap}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(strToRoleId(r.name.en)))
 

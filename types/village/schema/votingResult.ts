@@ -12,7 +12,7 @@ export interface VotingResult {
       image: Character['image']
       name: Character['name']
     }
-    targetAgent: {
+    targetCharacter: {
       '@id': Character['@id']
       id: Character['id']
       image: Character['image']

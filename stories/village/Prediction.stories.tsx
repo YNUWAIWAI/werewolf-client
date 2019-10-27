@@ -19,7 +19,7 @@ storiesOf('village|Prediction', module)
         'initial': 'A',
         'isSilent': true,
         'name': 'Adil',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '2',
@@ -27,7 +27,7 @@ storiesOf('village|Prediction', module)
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
-        'status': village.AgentStatus.dead
+        'status': village.CharacterStatus.dead
       },
       {
         'id': '3',
@@ -35,7 +35,7 @@ storiesOf('village|Prediction', module)
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '4',
@@ -43,7 +43,7 @@ storiesOf('village|Prediction', module)
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '5',
@@ -51,7 +51,7 @@ storiesOf('village|Prediction', module)
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '6',
@@ -59,7 +59,7 @@ storiesOf('village|Prediction', module)
         'initial': 'F',
         'isSilent': true,
         'name': 'Fernando',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '7',
@@ -67,7 +67,7 @@ storiesOf('village|Prediction', module)
         'initial': 'G',
         'isSilent': false,
         'name': 'Gavriil',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '8',
@@ -75,7 +75,7 @@ storiesOf('village|Prediction', module)
         'initial': 'H',
         'isSilent': false,
         'name': 'Henrik',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '9',
@@ -83,7 +83,7 @@ storiesOf('village|Prediction', module)
         'initial': 'I',
         'isSilent': false,
         'name': 'Ileanna',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '10',
@@ -91,7 +91,7 @@ storiesOf('village|Prediction', module)
         'initial': 'J',
         'isSilent': false,
         'name': 'Jasmin',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '11',
@@ -99,7 +99,7 @@ storiesOf('village|Prediction', module)
         'initial': 'K',
         'isSilent': false,
         'name': 'Kaiji',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '12',
@@ -107,7 +107,7 @@ storiesOf('village|Prediction', module)
         'initial': 'L',
         'isSilent': false,
         'name': 'Louise',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '13',
@@ -115,7 +115,7 @@ storiesOf('village|Prediction', module)
         'initial': 'M',
         'isSilent': false,
         'name': 'Marthe',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '14',
@@ -123,7 +123,7 @@ storiesOf('village|Prediction', module)
         'initial': 'N',
         'isSilent': false,
         'name': 'Nanyamka',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '15',
@@ -131,7 +131,7 @@ storiesOf('village|Prediction', module)
         'initial': 'O',
         'isSilent': false,
         'name': 'Oliwia',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       }
     ]
     const roleStatus: Props['roleStatus'] = [
@@ -855,7 +855,7 @@ storiesOf('village|Prediction', module)
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '2',
@@ -863,7 +863,7 @@ storiesOf('village|Prediction', module)
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '3',
@@ -871,7 +871,7 @@ storiesOf('village|Prediction', module)
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '4',
@@ -879,7 +879,7 @@ storiesOf('village|Prediction', module)
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '5',
@@ -887,7 +887,7 @@ storiesOf('village|Prediction', module)
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       }
     ]
     const roleStatus: Props['roleStatus'] = [
@@ -1067,7 +1067,7 @@ storiesOf('village|Prediction', module)
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '2',
@@ -1075,7 +1075,7 @@ storiesOf('village|Prediction', module)
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '3',
@@ -1083,7 +1083,7 @@ storiesOf('village|Prediction', module)
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '4',
@@ -1091,7 +1091,7 @@ storiesOf('village|Prediction', module)
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '5',
@@ -1099,7 +1099,7 @@ storiesOf('village|Prediction', module)
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '6',
@@ -1107,7 +1107,7 @@ storiesOf('village|Prediction', module)
         'initial': 'F',
         'isSilent': false,
         'name': 'Fernando',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '7',
@@ -1115,7 +1115,7 @@ storiesOf('village|Prediction', module)
         'initial': 'G',
         'isSilent': false,
         'name': 'Gavriil',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '8',
@@ -1123,7 +1123,7 @@ storiesOf('village|Prediction', module)
         'initial': 'H',
         'isSilent': false,
         'name': 'Henrik',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '9',
@@ -1131,7 +1131,7 @@ storiesOf('village|Prediction', module)
         'initial': 'I',
         'isSilent': false,
         'name': 'Ileanna',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '10',
@@ -1139,7 +1139,7 @@ storiesOf('village|Prediction', module)
         'initial': 'J',
         'isSilent': false,
         'name': 'Jasmin',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '11',
@@ -1147,7 +1147,7 @@ storiesOf('village|Prediction', module)
         'initial': 'K',
         'isSilent': false,
         'name': 'Kaiji',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '12',
@@ -1155,7 +1155,7 @@ storiesOf('village|Prediction', module)
         'initial': 'L',
         'isSilent': false,
         'name': 'Louise',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '13',
@@ -1163,7 +1163,7 @@ storiesOf('village|Prediction', module)
         'initial': 'M',
         'isSilent': false,
         'name': 'Marthe',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '14',
@@ -1171,7 +1171,7 @@ storiesOf('village|Prediction', module)
         'initial': 'N',
         'isSilent': false,
         'name': 'Nanyamka',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '15',
@@ -1179,7 +1179,7 @@ storiesOf('village|Prediction', module)
         'initial': 'O',
         'isSilent': false,
         'name': 'Oliwia',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       }
     ]
     const roleStatus: Props['roleStatus'] = [
@@ -1903,7 +1903,7 @@ storiesOf('village|Prediction', module)
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '2',
@@ -1911,7 +1911,7 @@ storiesOf('village|Prediction', module)
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '3',
@@ -1919,7 +1919,7 @@ storiesOf('village|Prediction', module)
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '4',
@@ -1927,7 +1927,7 @@ storiesOf('village|Prediction', module)
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       },
       {
         'id': '5',
@@ -1935,7 +1935,7 @@ storiesOf('village|Prediction', module)
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
-        'status': village.AgentStatus.alive
+        'status': village.CharacterStatus.alive
       }
     ]
     const roleStatus: Props['roleStatus'] = [

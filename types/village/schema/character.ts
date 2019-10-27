@@ -6,7 +6,7 @@ import {
   Context,
   Gender,
   LanguageMap,
-  Payload$AgentId,
+  Payload$CharacterId,
   Result
 } from '..'
 import {Time} from './time'
@@ -16,7 +16,7 @@ export interface Character {
   '@id': string
   fullName: LanguageMap
   gender: Gender
-  id: Payload$AgentId
+  id: Payload$CharacterId
   image: string
   isAChoice: boolean
   isMine: boolean

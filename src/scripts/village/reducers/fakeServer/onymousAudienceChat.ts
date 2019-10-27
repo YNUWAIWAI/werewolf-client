@@ -11,7 +11,7 @@ export const onymousAudienceChat: village.Payload$ChatMessage = {
   'avatar': {
     '@context': village.Context.Avatar,
     '@id': `https://licos.online/state/${VERSION}/village#3/avatar`,
-    'image': ImagePath.Agent120x120.y,
+    'image': ImagePath.Character120x120.y,
     'name': 'Katoh',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
   },

@@ -18,7 +18,7 @@ const client2server: Middleware = store => next => action => {
       const state = store.getState()
       const myRole = just(state.mine.role)
       const myCharacter = just(state.mine.character)
-      const boardAgent = state.prediction.characterStatus.byId[action.characterId]
+      const boardCharacter = state.prediction.characterStatus.byId[action.characterId]
       const boardRole = state.prediction.roleStatus.byId[action.roleId]
 
       if (!boardRole) {
@@ -32,10 +32,10 @@ const client2server: Middleware = store => next => action => {
         '@id': `${state.base['@id']}/boardMessage`,
         'character': {
           '@context': village.Context.Character,
-          '@id': boardAgent['@id'],
-          'id': Number(boardAgent.id),
-          'image': boardAgent.image,
-          'name': boardAgent.name
+          '@id': boardCharacter['@id'],
+          'id': Number(boardCharacter.id),
+          'image': boardCharacter.image,
+          'name': boardCharacter.name
         },
         'clientTimestamp': getTimestamp(),
         'day': state.base.day,

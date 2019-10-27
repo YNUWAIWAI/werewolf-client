@@ -3,6 +3,7 @@ import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
 import {getInitial, getText, just} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
+import {VERSION} from '../constants/Version'
 import {connect} from 'react-redux'
 import {village} from '../types'
 
@@ -28,30 +29,30 @@ const getDescriptionId = (phase: village.Phase, role: village.RoleId) => {
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const selectedAgentId = state.commandSelection.allIds.find(characterId => characterId === state.modal.id)
+  const selectedCharacterId = state.commandSelection.allIds.find(characterId => characterId === state.modal.id)
 
-  if (typeof selectedAgentId === 'undefined') {
+  if (typeof selectedCharacterId === 'undefined') {
     return {
       descriptionId: 'Modal.Description.wait',
       id: '',
-      image: 'https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png',
+      image: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
       initial: '',
       name: '',
       visible: state.modal.visible
     }
   }
 
-  const selectedAgent = state.commandSelection.byId[selectedAgentId]
+  const selectedCharacter = state.commandSelection.byId[selectedCharacterId]
   const myRole = just(state.mine.role)
 
   return {
     descriptionId: getDescriptionId(state.base.phase, myRole.id),
-    id: selectedAgent.id,
-    image: selectedAgent.image,
-    initial: getInitial(selectedAgent.name.en),
+    id: selectedCharacter.id,
+    image: selectedCharacter.image,
+    initial: getInitial(selectedCharacter.name.en),
     name: getText({
       language: state.language,
-      languageMap: selectedAgent.name
+      languageMap: selectedCharacter.name
     }),
     visible: state.modal.visible
   }
@@ -60,8 +61,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleClickNo: () => {
     dispatch(selectNo())
   },
-  handleClickYes: selectedAgent => {
-    dispatch(selectYes(selectedAgent))
+  handleClickYes: selectedCharacter => {
+    dispatch(selectYes(selectedCharacter))
   }
 })
 const ModalContainer = connect(

@@ -5,9 +5,9 @@ import {
   getChatChannelFromChannel,
   getInitial,
   getInputChannelFromChannel,
-  getMyAgent,
+  getMyCharacter,
   getMyRole,
-  getPlayableAgents,
+  getPlayableCharacters,
   getPlayableRoles,
   getTeam,
   getText,
@@ -184,7 +184,7 @@ describe('getInputChannelFromChannel', () => {
     expect(getInputChannelFromChannel(village.Channel.werewolf)).toBe('werewolf')
   })
 })
-describe('getMyAgent', () => {
+describe('getMyCharacter', () => {
   test('nominal', () => {
     const characters = [
       {
@@ -253,7 +253,7 @@ describe('getMyAgent', () => {
       }
     ]
 
-    expect(getMyAgent(characters)).toStrictEqual({
+    expect(getMyCharacter(characters)).toStrictEqual({
       '@id': 'https://werewolf.world/resource/0.2/Walter',
       'id': 1,
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -290,7 +290,7 @@ describe('getMyAgent', () => {
       }
     ]
 
-    expect(() => getMyAgent(characters)).toThrow()
+    expect(() => getMyCharacter(characters)).toThrow()
   })
 })
 describe('getMyRole', () => {
@@ -452,7 +452,7 @@ describe('getMyRole', () => {
     expect(() => getMyRole(roles)).toThrow()
   })
 })
-test('getPlayableAgents', () => {
+test('getPlayableCharacters', () => {
   const characters = [
     {
       '@id': 'https://werewolf.world/resource/0.2/Gert',
@@ -520,7 +520,7 @@ test('getPlayableAgents', () => {
     }
   ]
 
-  expect(getPlayableAgents(characters)).toStrictEqual([
+  expect(getPlayableCharacters(characters)).toStrictEqual([
     {
       '@id': 'https://werewolf.world/resource/0.2/Gert',
       'id': 0,

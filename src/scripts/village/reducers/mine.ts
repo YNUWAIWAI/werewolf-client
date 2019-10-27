@@ -6,7 +6,7 @@ import {village} from '../types'
 export interface State {
   readonly character?: {
     '@id': string
-    id: village.Payload$AgentId
+    id: village.Payload$CharacterId
     image: string
     name: village.LanguageMap
   }
