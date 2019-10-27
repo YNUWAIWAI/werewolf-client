@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as village from './types'
 import Chat, {Props} from '../../src/scripts/village/components/organisms/Chat'
+import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
@@ -16,7 +17,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: false,
@@ -26,11 +27,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: true,
@@ -40,7 +41,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -69,7 +70,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.grave,
         isMarked: false,
@@ -79,11 +80,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.grave,
         isMarked: true,
@@ -93,7 +94,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -122,7 +123,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.hunter,
         isMarked: false,
@@ -132,11 +133,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.hunter,
         isMarked: true,
@@ -146,7 +147,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -175,7 +176,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.master,
         isMarked: false,
@@ -185,11 +186,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.master,
         isMarked: true,
@@ -199,7 +200,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -228,7 +229,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.onymousAudience,
         isMarked: false,
@@ -238,11 +239,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.onymousAudience,
         isMarked: true,
@@ -252,7 +253,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -281,7 +282,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.private,
         isMarked: false,
@@ -291,11 +292,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.private,
         isMarked: true,
@@ -305,7 +306,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -334,7 +335,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
@@ -344,11 +345,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: true,
@@ -358,7 +359,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -387,7 +388,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.seer,
         isMarked: false,
@@ -397,11 +398,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.seer,
         isMarked: true,
@@ -411,7 +412,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -440,7 +441,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.werewolf,
         isMarked: false,
@@ -450,11 +451,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.werewolf,
         isMarked: true,
@@ -464,7 +465,7 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
     const store = createStore(
@@ -488,12 +489,12 @@ storiesOf('village|Chat', module)
 
     return story
   })
-  .add('delimeter', () => {
+  .add(village.ChatItemType.delimeter, () => {
     const allIds = ['delimeter0', 'chat0', 'chat1', 'delimeter1']
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
@@ -503,11 +504,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: true,
@@ -517,15 +518,15 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'delimeter0': {
-        date: 1,
-        type: 'delimeter'
+        day: 1,
+        type: village.ChatItemType.delimeter
       },
       'delimeter1': {
-        date: -1,
-        type: 'delimeter'
+        day: -1,
+        type: village.ChatItemType.delimeter
       }
     }
     const store = createStore(
@@ -554,7 +555,7 @@ storiesOf('village|Chat', module)
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character120x120.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
@@ -564,11 +565,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:20.000Z',
         text: 'text\ntext',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat1': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
@@ -578,11 +579,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: '改行\n\r\n複数',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat2': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
@@ -592,11 +593,11 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:09.000Z',
         text: 'longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongtext\ntext',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'chat3': {
         id: 2,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/i_120x120.png',
+        image: ImagePath.Character120x120.i,
         initial: 'I',
         intensionalDisclosureRange: village.Channel.public,
         isMarked: false,
@@ -606,15 +607,15 @@ storiesOf('village|Chat', module)
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:08.000Z',
         text: '最後\n改行\n',
-        type: 'item'
+        type: village.ChatItemType.item
       },
       'delimeter0': {
-        date: 1,
-        type: 'delimeter'
+        day: 1,
+        type: village.ChatItemType.delimeter
       },
       'delimeter1': {
-        date: -1,
-        type: 'delimeter'
+        day: -1,
+        type: village.ChatItemType.delimeter
       }
     }
     const store = createStore(

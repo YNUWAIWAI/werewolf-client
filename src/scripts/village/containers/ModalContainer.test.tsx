@@ -326,7 +326,7 @@ describe('<ModalContainer />', () => {
                 role: {
                   '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
                   'id': village.RoleId.werewolf,
-                  'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
+                  'image': ImagePath.Role.werewolf,
                   'name': Role.werewolf
                 }
               },

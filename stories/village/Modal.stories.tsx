@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import Modal from '../../src/scripts/village/components/organisms/Modal'
 import {Provider} from 'react-redux'
@@ -25,7 +26,7 @@ storiesOf('village|Modal', module)
             handleClickNo={action('handleClickNo')}
             handleClickYes={action('handleClickYes')}
             id="1"
-            image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
+            image={ImagePath.Character.a}
             initial="A"
             name="Adil"
             visible

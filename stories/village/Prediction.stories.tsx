@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as village from './types'
 import Prediction, {Props} from '../../src/scripts/village/components/organisms/Prediction'
+import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
@@ -15,7 +16,7 @@ storiesOf('village|Prediction', module)
     const characterStatus: Props['characterStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+        'image': ImagePath.Character.a,
         'initial': 'A',
         'isSilent': true,
         'name': 'Adil',
@@ -23,7 +24,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+        'image': ImagePath.Character.b,
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -31,7 +32,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+        'image': ImagePath.Character.c,
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -39,7 +40,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+        'image': ImagePath.Character.d,
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -47,7 +48,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+        'image': ImagePath.Character.e,
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
@@ -55,7 +56,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '6',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
+        'image': ImagePath.Character.f,
         'initial': 'F',
         'isSilent': true,
         'name': 'Fernando',
@@ -63,7 +64,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '7',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
+        'image': ImagePath.Character.g,
         'initial': 'G',
         'isSilent': false,
         'name': 'Gavriil',
@@ -71,7 +72,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '8',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
+        'image': ImagePath.Character.h,
         'initial': 'H',
         'isSilent': false,
         'name': 'Henrik',
@@ -79,7 +80,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '9',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
+        'image': ImagePath.Character.i,
         'initial': 'I',
         'isSilent': false,
         'name': 'Ileanna',
@@ -87,7 +88,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '10',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
+        'image': ImagePath.Character.j,
         'initial': 'J',
         'isSilent': false,
         'name': 'Jasmin',
@@ -95,7 +96,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '11',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
+        'image': ImagePath.Character.k,
         'initial': 'K',
         'isSilent': false,
         'name': 'Kaiji',
@@ -103,7 +104,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '12',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
+        'image': ImagePath.Character.l,
         'initial': 'L',
         'isSilent': false,
         'name': 'Louise',
@@ -111,7 +112,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '13',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
+        'image': ImagePath.Character.m,
         'initial': 'M',
         'isSilent': false,
         'name': 'Marthe',
@@ -119,7 +120,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '14',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
+        'image': ImagePath.Character.n,
         'initial': 'N',
         'isSilent': false,
         'name': 'Nanyamka',
@@ -127,7 +128,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '15',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
+        'image': ImagePath.Character.o,
         'initial': 'O',
         'isSilent': false,
         'name': 'Oliwia',
@@ -137,49 +138,49 @@ storiesOf('village|Prediction', module)
     const roleStatus: Props['roleStatus'] = [
       {
         'id': village.RoleId.villager,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
+        'image': ImagePath.Role.villager,
         'name': '村人',
         'numberOfCharacters': 4
       },
       {
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
+        'image': ImagePath.Role.seer,
         'name': '占い師',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.medium,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
+        'image': ImagePath.Role.medium,
         'name': '霊媒師',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.hunter,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
+        'image': ImagePath.Role.hunter,
         'name': '狩人',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.mason,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
+        'image': ImagePath.Role.mason,
         'name': '共有者',
         'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.madman,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
+        'image': ImagePath.Role.madman,
         'name': '狂人',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
+        'image': ImagePath.Role.werewolf,
         'name': '人狼',
         'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.werehamster,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
+        'image': ImagePath.Role.werehamster,
         'name': 'ハムスター人間',
         'numberOfCharacters': 1
       }
@@ -851,7 +852,7 @@ storiesOf('village|Prediction', module)
     const characterStatus: Props['characterStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+        'image': ImagePath.Character.a,
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
@@ -859,7 +860,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+        'image': ImagePath.Character.b,
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -867,7 +868,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+        'image': ImagePath.Character.c,
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -875,7 +876,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+        'image': ImagePath.Character.d,
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -883,7 +884,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+        'image': ImagePath.Character.e,
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
@@ -893,25 +894,25 @@ storiesOf('village|Prediction', module)
     const roleStatus: Props['roleStatus'] = [
       {
         'id': village.RoleId.villager,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
+        'image': ImagePath.Role.villager,
         'name': '村人',
         'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
+        'image': ImagePath.Role.seer,
         'name': '占い師',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.madman,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
+        'image': ImagePath.Role.madman,
         'name': '狂人',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
+        'image': ImagePath.Role.werewolf,
         'name': '人狼',
         'numberOfCharacters': 1
       }
@@ -1063,7 +1064,7 @@ storiesOf('village|Prediction', module)
     const characterStatus: Props['characterStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+        'image': ImagePath.Character.a,
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
@@ -1071,7 +1072,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+        'image': ImagePath.Character.b,
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -1079,7 +1080,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+        'image': ImagePath.Character.c,
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -1087,7 +1088,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+        'image': ImagePath.Character.d,
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -1095,7 +1096,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+        'image': ImagePath.Character.e,
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
@@ -1103,7 +1104,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '6',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
+        'image': ImagePath.Character.f,
         'initial': 'F',
         'isSilent': false,
         'name': 'Fernando',
@@ -1111,7 +1112,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '7',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
+        'image': ImagePath.Character.g,
         'initial': 'G',
         'isSilent': false,
         'name': 'Gavriil',
@@ -1119,7 +1120,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '8',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
+        'image': ImagePath.Character.h,
         'initial': 'H',
         'isSilent': false,
         'name': 'Henrik',
@@ -1127,7 +1128,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '9',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
+        'image': ImagePath.Character.i,
         'initial': 'I',
         'isSilent': false,
         'name': 'Ileanna',
@@ -1135,7 +1136,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '10',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
+        'image': ImagePath.Character.j,
         'initial': 'J',
         'isSilent': false,
         'name': 'Jasmin',
@@ -1143,7 +1144,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '11',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
+        'image': ImagePath.Character.k,
         'initial': 'K',
         'isSilent': false,
         'name': 'Kaiji',
@@ -1151,7 +1152,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '12',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
+        'image': ImagePath.Character.l,
         'initial': 'L',
         'isSilent': false,
         'name': 'Louise',
@@ -1159,7 +1160,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '13',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
+        'image': ImagePath.Character.m,
         'initial': 'M',
         'isSilent': false,
         'name': 'Marthe',
@@ -1167,7 +1168,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '14',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
+        'image': ImagePath.Character.n,
         'initial': 'N',
         'isSilent': false,
         'name': 'Nanyamka',
@@ -1175,7 +1176,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '15',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
+        'image': ImagePath.Character.o,
         'initial': 'O',
         'isSilent': false,
         'name': 'Oliwia',
@@ -1185,49 +1186,49 @@ storiesOf('village|Prediction', module)
     const roleStatus: Props['roleStatus'] = [
       {
         'id': village.RoleId.villager,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
+        'image': ImagePath.Role.villager,
         'name': '村人',
         'numberOfCharacters': 4
       },
       {
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
+        'image': ImagePath.Role.seer,
         'name': '占い師',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.medium,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
+        'image': ImagePath.Role.medium,
         'name': '霊媒師',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.hunter,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
+        'image': ImagePath.Role.hunter,
         'name': '狩人',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.mason,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
+        'image': ImagePath.Role.mason,
         'name': '共有者',
         'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.madman,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
+        'image': ImagePath.Role.madman,
         'name': '狂人',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
+        'image': ImagePath.Role.werewolf,
         'name': '人狼',
         'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.werehamster,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
+        'image': ImagePath.Role.werehamster,
         'name': 'ハムスター人間',
         'numberOfCharacters': 1
       }
@@ -1899,7 +1900,7 @@ storiesOf('village|Prediction', module)
     const characterStatus: Props['characterStatus'] = [
       {
         'id': '1',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+        'image': ImagePath.Character.a,
         'initial': 'A',
         'isSilent': false,
         'name': 'Adil',
@@ -1907,7 +1908,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '2',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+        'image': ImagePath.Character.b,
         'initial': 'B',
         'isSilent': false,
         'name': 'Borya',
@@ -1915,7 +1916,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '3',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+        'image': ImagePath.Character.c,
         'initial': 'C',
         'isSilent': false,
         'name': 'Chacha',
@@ -1923,7 +1924,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '4',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+        'image': ImagePath.Character.d,
         'initial': 'D',
         'isSilent': false,
         'name': 'Devdatta',
@@ -1931,7 +1932,7 @@ storiesOf('village|Prediction', module)
       },
       {
         'id': '5',
-        'image': 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+        'image': ImagePath.Character.e,
         'initial': 'E',
         'isSilent': false,
         'name': 'Ekrem',
@@ -1941,25 +1942,25 @@ storiesOf('village|Prediction', module)
     const roleStatus: Props['roleStatus'] = [
       {
         'id': village.RoleId.villager,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
+        'image': ImagePath.Role.villager,
         'name': '村人',
         'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.seer,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
+        'image': ImagePath.Role.seer,
         'name': '占い師',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.madman,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
+        'image': ImagePath.Role.madman,
         'name': '狂人',
         'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
-        'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
+        'image': ImagePath.Role.werewolf,
         'name': '人狼',
         'numberOfCharacters': 1
       }

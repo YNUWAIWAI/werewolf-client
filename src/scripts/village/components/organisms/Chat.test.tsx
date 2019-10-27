@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Chat, {Props} from './Chat'
+import {ImagePath} from '../../constants/ImagePath'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {shallow} from 'enzyme'
@@ -31,7 +32,7 @@ describe('<Chat />', () => {
       const byId: Props['byId'] = {
         'chat0': {
           id: 1,
-          image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -64,7 +65,7 @@ describe('<Chat />', () => {
       const byId: Props['byId'] = {
         'chat0': {
           id: 1,
-          image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -78,7 +79,7 @@ describe('<Chat />', () => {
         },
         'chat1': {
           id: 2,
-          image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -113,7 +114,7 @@ describe('<Chat />', () => {
       const byId: Props['byId'] = {
         'chat0': {
           id: 1,
-          image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -127,7 +128,7 @@ describe('<Chat />', () => {
         },
         'chat1': {
           id: 2,
-          image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -141,7 +142,7 @@ describe('<Chat />', () => {
         },
         'chat2': {
           id: 3,
-          image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -183,7 +184,7 @@ describe('<Chat />', () => {
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png',
+        image: ImagePath.Character.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: false,
