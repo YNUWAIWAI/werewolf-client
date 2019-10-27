@@ -99,7 +99,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -168,7 +168,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a

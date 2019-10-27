@@ -1,6 +1,6 @@
 import * as React from 'react'
-import CharacterIcon from '../atoms/CharacterIcon'
 import {CSSTransition} from 'react-transition-group'
+import CharacterIcon from '../atoms/CharacterIcon'
 import Description from '../molecules/Description'
 import {FormattedMessage} from 'react-intl'
 import {village} from '../../types'

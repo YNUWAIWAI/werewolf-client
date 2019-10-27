@@ -12,12 +12,12 @@ import {storiesOf} from '@storybook/react'
 
 storiesOf('village|Result', module)
   .add('15 players', () => {
-    const agents: Props['agents'] = {
-      agent1: {
-        agentId: '1',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
-        agentInitial: 'A',
-        agentName: 'Adil',
+    const characters: Props['characters'] = {
+      character1: {
+        characterId: '1',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+        characterInitial: 'A',
+        characterName: 'Adil',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
         avatarName: 'Suzuki',
         result: village.Result.win,
@@ -25,11 +25,11 @@ storiesOf('village|Result', module)
         roleName: 'Seer',
         status: village.AgentStatus.alive
       },
-      agent2: {
-        agentId: '2',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
-        agentInitial: 'B',
-        agentName: 'Borya',
+      character2: {
+        characterId: '2',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+        characterInitial: 'B',
+        characterName: 'Borya',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
         avatarName: 'Takahashi',
         result: village.Result.lose,
@@ -37,11 +37,11 @@ storiesOf('village|Result', module)
         roleName: 'Werewolf',
         status: village.AgentStatus.alive
       },
-      agent3: {
-        agentId: '3',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
-        agentInitial: 'C',
-        agentName: 'Chacha',
+      character3: {
+        characterId: '3',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+        characterInitial: 'C',
+        characterName: 'Chacha',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/r_50x50.png',
         avatarName: 'Tanaka',
         result: village.Result.win,
@@ -49,11 +49,11 @@ storiesOf('village|Result', module)
         roleName: 'Hunter',
         status: village.AgentStatus.alive
       },
-      agent4: {
-        agentId: '4',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
-        agentInitial: 'D',
-        agentName: 'Devdatta',
+      character4: {
+        characterId: '4',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+        characterInitial: 'D',
+        characterName: 'Devdatta',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
         avatarName: 'Ito',
         result: village.Result.win,
@@ -61,11 +61,11 @@ storiesOf('village|Result', module)
         roleName: 'Medium',
         status: village.AgentStatus.alive
       },
-      agent5: {
-        agentId: '5',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
-        agentInitial: 'E',
-        agentName: 'Ekrem',
+      character5: {
+        characterId: '5',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+        characterInitial: 'E',
+        characterName: 'Ekrem',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/s_50x50.png',
         avatarName: 'Watanabe',
         result: village.Result.lose,
@@ -73,11 +73,11 @@ storiesOf('village|Result', module)
         roleName: 'Werehamster',
         status: village.AgentStatus.deathByFear
       },
-      agent6: {
-        agentId: '6',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
-        agentInitial: 'F',
-        agentName: 'Fernando',
+      character6: {
+        characterId: '6',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
+        characterInitial: 'F',
+        characterName: 'Fernando',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
         avatarName: 'Yamamoto',
         result: village.Result.lose,
@@ -85,11 +85,11 @@ storiesOf('village|Result', module)
         roleName: 'Madman',
         status: village.AgentStatus.deathByExecution
       },
-      agent7: {
-        agentId: '7',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
-        agentInitial: 'G',
-        agentName: 'Gavriil',
+      character7: {
+        characterId: '7',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
+        characterInitial: 'G',
+        characterName: 'Gavriil',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
         avatarName: 'Nakamura',
         result: village.Result.lose,
@@ -97,11 +97,11 @@ storiesOf('village|Result', module)
         roleName: 'Werewolf',
         status: village.AgentStatus.unnaturalDeath
       },
-      agent8: {
-        agentId: '8',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
-        agentInitial: 'H',
-        agentName: 'Henrik',
+      character8: {
+        characterId: '8',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
+        characterInitial: 'H',
+        characterName: 'Henrik',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
         avatarName: 'Kobayashi',
         result: village.Result.win,
@@ -109,11 +109,11 @@ storiesOf('village|Result', module)
         roleName: 'Villager',
         status: village.AgentStatus.unnaturalDeath
       },
-      agent9: {
-        agentId: '9',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
-        agentInitial: 'I',
-        agentName: 'Ileanna',
+      character9: {
+        characterId: '9',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
+        characterInitial: 'I',
+        characterName: 'Ileanna',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
         avatarName: 'Yoshida',
         result: village.Result.win,
@@ -121,11 +121,11 @@ storiesOf('village|Result', module)
         roleName: 'Villager',
         status: village.AgentStatus.unnaturalDeath
       },
-      agent10: {
-        agentId: '10',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
-        agentInitial: 'J',
-        agentName: 'Jasmin',
+      character10: {
+        characterId: '10',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
+        characterInitial: 'J',
+        characterName: 'Jasmin',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/t_50x50.png',
         avatarName: 'Yamada',
         result: village.Result.win,
@@ -133,11 +133,11 @@ storiesOf('village|Result', module)
         roleName: 'Mason',
         status: village.AgentStatus.unnaturalDeath
       },
-      agent11: {
-        agentId: '11',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
-        agentInitial: 'K',
-        agentName: 'Kaiji',
+      character11: {
+        characterId: '11',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
+        characterInitial: 'K',
+        characterName: 'Kaiji',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
         avatarName: 'Sasaki',
         result: village.Result.win,
@@ -145,11 +145,11 @@ storiesOf('village|Result', module)
         roleName: 'Mason',
         status: village.AgentStatus.unnaturalDeath
       },
-      agent12: {
-        agentId: '12',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
-        agentInitial: 'L',
-        agentName: 'Louise',
+      character12: {
+        characterId: '12',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
+        characterInitial: 'L',
+        characterName: 'Louise',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
         avatarName: 'Yamaguchi',
         result: village.Result.win,
@@ -157,11 +157,11 @@ storiesOf('village|Result', module)
         roleName: 'Villager',
         status: village.AgentStatus.deathByAttack
       },
-      agent13: {
-        agentId: '13',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
-        agentInitial: 'M',
-        agentName: 'Marthe',
+      character13: {
+        characterId: '13',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
+        characterInitial: 'M',
+        characterName: 'Marthe',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
         avatarName: 'Matsumoto',
         result: village.Result.win,
@@ -169,11 +169,11 @@ storiesOf('village|Result', module)
         roleName: 'Villager',
         status: village.AgentStatus.alive
       },
-      agent14: {
-        agentId: '14',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
-        agentInitial: 'N',
-        agentName: 'Nanyamka',
+      character14: {
+        characterId: '14',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
+        characterInitial: 'N',
+        characterName: 'Nanyamka',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
         avatarName: 'Inoue',
         result: village.Result.win,
@@ -181,11 +181,11 @@ storiesOf('village|Result', module)
         roleName: 'Villager',
         status: village.AgentStatus.alive
       },
-      agent15: {
-        agentId: '15',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
-        agentInitial: 'O',
-        agentName: 'Oliwia',
+      character15: {
+        characterId: '15',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
+        characterInitial: 'O',
+        characterName: 'Oliwia',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
         avatarName: 'Sato',
         result: village.Result.win,
@@ -195,29 +195,29 @@ storiesOf('village|Result', module)
       }
     }
     const losers: Props['losers'] = [
-      'agent2',
-      'agent5',
-      'agent6',
-      'agent7'
+      'character2',
+      'character5',
+      'character6',
+      'character7'
     ]
-    const me: Props['me'] = 'agent1'
+    const me: Props['me'] = 'character1'
     const summary: Props['summary'] = {
       loserTeam: new Set([village.Team.werewolf, village.Team.werehamster]),
       myTeam: village.Team.villager,
       winnerTeam: village.Team.villager
     }
     const winners: Props['winners'] = [
-      'agent1',
-      'agent3',
-      'agent4',
-      'agent8',
-      'agent9',
-      'agent10',
-      'agent11',
-      'agent12',
-      'agent13',
-      'agent14',
-      'agent15'
+      'character1',
+      'character3',
+      'character4',
+      'character8',
+      'character9',
+      'character10',
+      'character11',
+      'character12',
+      'character13',
+      'character14',
+      'character15'
     ]
     const store = createStore(
       reducer,
@@ -229,7 +229,7 @@ storiesOf('village|Result', module)
       <Provider store={store}>
         <IntlProvider>
           <Result
-            agents={agents}
+            characters={characters}
             handleClickCloseButton={action('handleCloseClick')}
             losers={losers}
             me={me}
@@ -243,12 +243,12 @@ storiesOf('village|Result', module)
     return story
   })
   .add('5 players', () => {
-    const agents: Props['agents'] = {
-      agent1: {
-        agentId: '1',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
-        agentInitial: 'A',
-        agentName: 'Adil',
+    const characters: Props['characters'] = {
+      character1: {
+        characterId: '1',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+        characterInitial: 'A',
+        characterName: 'Adil',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
         avatarName: 'Suzuki',
         result: village.Result.win,
@@ -256,11 +256,11 @@ storiesOf('village|Result', module)
         roleName: 'Seer',
         status: village.AgentStatus.alive
       },
-      agent2: {
-        agentId: '2',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
-        agentInitial: 'B',
-        agentName: 'Borya',
+      character2: {
+        characterId: '2',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+        characterInitial: 'B',
+        characterName: 'Borya',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
         avatarName: 'Takahashi',
         result: village.Result.lose,
@@ -268,11 +268,11 @@ storiesOf('village|Result', module)
         roleName: 'Werewolf',
         status: village.AgentStatus.deathByExecution
       },
-      agent3: {
-        agentId: '3',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
-        agentInitial: 'C',
-        agentName: 'Chacha',
+      character3: {
+        characterId: '3',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+        characterInitial: 'C',
+        characterName: 'Chacha',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/r_50x50.png',
         avatarName: 'Tanaka',
         result: village.Result.win,
@@ -280,11 +280,11 @@ storiesOf('village|Result', module)
         roleName: 'Hunter',
         status: village.AgentStatus.alive
       },
-      agent4: {
-        agentId: '4',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
-        agentInitial: 'D',
-        agentName: 'Devdatta',
+      character4: {
+        characterId: '4',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+        characterInitial: 'D',
+        characterName: 'Devdatta',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
         avatarName: 'Ito',
         result: village.Result.win,
@@ -292,11 +292,11 @@ storiesOf('village|Result', module)
         roleName: 'Medium',
         status: village.AgentStatus.deathByExecution
       },
-      agent5: {
-        agentId: '5',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
-        agentInitial: 'E',
-        agentName: 'Ekrem',
+      character5: {
+        characterId: '5',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+        characterInitial: 'E',
+        characterName: 'Ekrem',
         avatarImage: 'https://werewolf.world/image/0.3/character_icons/50x50/s_50x50.png',
         avatarName: 'Watanabe',
         result: village.Result.lose,
@@ -306,19 +306,19 @@ storiesOf('village|Result', module)
       }
     }
     const losers: Props['losers'] = [
-      'agent2',
-      'agent5'
+      'character2',
+      'character5'
     ]
-    const me: Props['me'] = 'agent1'
+    const me: Props['me'] = 'character1'
     const summary: Props['summary'] = {
       loserTeam: new Set([village.Team.werewolf, village.Team.werehamster]),
       myTeam: village.Team.villager,
       winnerTeam: village.Team.villager
     }
     const winners: Props['winners'] = [
-      'agent1',
-      'agent3',
-      'agent4'
+      'character1',
+      'character3',
+      'character4'
     ]
     const store = createStore(
       reducer,
@@ -330,7 +330,7 @@ storiesOf('village|Result', module)
       <Provider store={store}>
         <IntlProvider>
           <Result
-            agents={agents}
+            characters={characters}
             handleClickCloseButton={action('handleCloseClick')}
             losers={losers}
             me={me}

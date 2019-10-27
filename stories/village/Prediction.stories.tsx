@@ -832,7 +832,7 @@ storiesOf('village|Prediction', module)
           <div className="vi--app">
             <div className="vi--activity">
               <Prediction
-                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleBoardClick={(characterId, roleId) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
                 handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
                 handleMouseLeave={action('handleMouseLeave')}
                 playerStatus={playerStatus}
@@ -1044,7 +1044,7 @@ storiesOf('village|Prediction', module)
           <div className="vi--app">
             <div className="vi--activity">
               <Prediction
-                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleBoardClick={(characterId, roleId) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
                 handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
                 handleMouseLeave={action('handleMouseLeave')}
                 playerStatus={playerStatus}
@@ -1880,7 +1880,7 @@ storiesOf('village|Prediction', module)
           <div className="vi--app">
             <div className="vi--activity">
               <Prediction
-                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleBoardClick={(characterId, roleId) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
                 handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
                 handleMouseLeave={action('handleMouseLeave')}
                 playerStatus={playerStatus}
@@ -2092,7 +2092,7 @@ storiesOf('village|Prediction', module)
           <div className="vi--app">
             <div className="vi--activity">
               <Prediction
-                handleBoardClick={(agentId, roleId) => action(`handleBoardClick [${agentId}, ${roleId}]`)}
+                handleBoardClick={(characterId, roleId) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
                 handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
                 handleMouseLeave={action('handleMouseLeave')}
                 playerStatus={playerStatus}

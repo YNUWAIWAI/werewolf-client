@@ -43,7 +43,7 @@ export interface State {
     readonly visible: boolean
   }
   readonly table: {
-    [agentId in village.CharacterId]: Partial<{
+    [characterId in village.CharacterId]: Partial<{
       [roleId in village.RoleId]: {
         readonly day: number
         readonly fixed: boolean

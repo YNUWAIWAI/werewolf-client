@@ -381,42 +381,42 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/agent#0`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#0`,
           'id': 0,
           'image': ImagePath.Agent.a,
           'name': Agent.a
         },
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/agent#8`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#8`,
           'id': 8,
           'image': ImagePath.Agent.h,
           'name': Agent.h
         },
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/agent#9`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#9`,
           'id': 9,
           'image': ImagePath.Agent.i,
           'name': Agent.i
         },
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/agent#12`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#12`,
           'id': 12,
           'image': ImagePath.Agent.l,
           'name': Agent.l
         },
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/agent#13`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#13`,
           'id': 13,
           'image': ImagePath.Agent.m,
           'name': Agent.m
         },
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/agent#14`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#14`,
           'id': 14,
           'image': ImagePath.Agent.n,
           'name': Agent.n
@@ -433,7 +433,7 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#seer/agent#1`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#seer/character#1`,
           'id': 1,
           'image': ImagePath.Agent.a,
           'name': Agent.a
@@ -450,7 +450,7 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#medium/agent#4`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#medium/character#4`,
           'id': 4,
           'image': ImagePath.Agent.d,
           'name': Agent.d
@@ -467,7 +467,7 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter/agent#3`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter/character#3`,
           'id': 3,
           'image': ImagePath.Agent.c,
           'name': Agent.c
@@ -484,14 +484,14 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/agent#10`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/character#10`,
           'id': 10,
           'image': ImagePath.Agent.j,
           'name': Agent.j
         },
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/agent#11`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/character#11`,
           'id': 11,
           'image': ImagePath.Agent.k,
           'name': Agent.k
@@ -508,7 +508,7 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#madman/agent#6`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#madman/character#6`,
           'id': 6,
           'image': ImagePath.Agent.f,
           'name': Agent.f
@@ -525,14 +525,14 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/agent#2`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/character#2`,
           'id': 2,
           'image': ImagePath.Agent.b,
           'name': Agent.b
         },
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/agent#7`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/character#7`,
           'id': 7,
           'image': ImagePath.Agent.g,
           'name': Agent.g
@@ -549,7 +549,7 @@ export const result: village.Payload$SystemMessage = {
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster/agent#5`,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster/character#5`,
           'id': 5,
           'image': ImagePath.Agent.e,
           'name': Agent.e

@@ -13,9 +13,9 @@ test('<Info />', () => {
 
   expect(wrapper.children()).toHaveLength(7)
   expect(wrapper.find(FormattedMessage)).toHaveLength(3)
-  const [agent, role, team] = wrapper.find(FormattedMessage).getElements().map(elem => mountWithIntl(elem))
+  const [character, role, team] = wrapper.find(FormattedMessage).getElements().map(elem => mountWithIntl(elem))
 
-  expect(agent.text()).toBe('You:')
+  expect(character.text()).toBe('You:')
   expect(role.text()).toBe('Role:')
   expect(team.text()).toBe('Team:')
 })

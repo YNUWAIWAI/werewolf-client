@@ -32,7 +32,7 @@ const state: ReducerState = {
     allIds: ['chat0', 'chat1'],
     byId: {
       'chat0': {
-        'agentId': '1',
+        'characterId': '1',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'date': 1,
         'id': 1,
@@ -48,7 +48,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat1': {
-        'agentId': '9',
+        'characterId': '9',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'date': 1,
         'id': 2,
@@ -141,7 +141,7 @@ const state: ReducerState = {
     table: {}
   },
   result: {
-    agents: {},
+    characters: {},
     allIds: [],
     losers: [],
     me: null,

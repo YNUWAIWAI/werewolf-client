@@ -23,7 +23,7 @@ describe('<CommandSelection />', () => {
     expect(wrapper.find(Description).exists()).toBe(true)
     expect(wrapper.find('.vi--command--selection--select').children()).toHaveLength(0)
   })
-  test('15 agents fixed={false}', () => {
+  test('15 characters fixed={false}', () => {
     const characters = [
       {
         id: '1',

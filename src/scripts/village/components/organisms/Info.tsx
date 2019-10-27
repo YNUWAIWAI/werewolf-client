@@ -15,7 +15,7 @@ export default function Info() {
         {
           text => (
             <div
-              className="vi--info--property agent"
+              className="vi--info--property character"
             >
               {text}
             </div>

@@ -16,8 +16,8 @@ storiesOf('village|Info', module)
       {
         language: radios(language.label, language.options, language.defaultValue),
         mine: {
-          agent: {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          character: {
+            '@id': 'https://licos.online/state/0.2/village#3/character#1',
             'id': 1,
             'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
             'name': {

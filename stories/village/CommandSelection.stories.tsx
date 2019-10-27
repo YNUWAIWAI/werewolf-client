@@ -14,7 +14,7 @@ import {storiesOf} from '@storybook/react'
 
 storiesOf('village|Command/CommandSelection', module)
   .add('default', () => {
-    const agents = [
+    const characters = [
       {
         id: '2',
         image: ImagePath.Agent.b,
@@ -110,7 +110,7 @@ storiesOf('village|Command/CommandSelection', module)
       <Provider store={store}>
         <IntlProvider>
           <CommandSelection
-            agents={agents}
+            characters={characters}
             descriptionId="CommandSelection.Description.noonVote.unfixed"
             fixed={false}
             handleSelectOption={id => action(`handleSelectOption id: ${id}`)}

@@ -264,7 +264,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -288,7 +288,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#seer/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#seer/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#seer/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -312,7 +312,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#medium/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#medium/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#medium/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -336,7 +336,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -360,7 +360,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#mason/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -384,7 +384,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#madman/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#madman/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#madman/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -408,7 +408,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a
@@ -432,7 +432,7 @@ export const night: village.Payload$SystemMessage = {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster/board#1`,
           'character': {
             '@context': village.Context.Character,
-            '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster/board#1/agent#1`,
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster/board#1/character#1`,
             'id': 1,
             'image': ImagePath.Agent.a,
             'name': Agent.a

@@ -34,7 +34,7 @@ const state: ReducerState = {
     allIds: ['delimeter0', 'chat0', 'chat1', 'delimeter1'],
     byId: {
       'chat0': {
-        'agentId': '1',
+        'characterId': '1',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'date': 1,
         'id': 1,
@@ -50,7 +50,7 @@ const state: ReducerState = {
         'type': 'item'
       },
       'chat1': {
-        'agentId': '9',
+        'characterId': '9',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'date': 1,
         'id': 2,
@@ -127,8 +127,8 @@ const state: ReducerState = {
   },
   language: village.Language.en,
   mine: {
-    agent: {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+    character: {
+      '@id': 'https://licos.online/state/0.2/village#3/character#1',
       'id': 1,
       'image': 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
       'name': {
@@ -175,105 +175,105 @@ const state: ReducerState = {
       ],
       byId: {
         '1': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+          '@id': 'https://licos.online/state/0.2/village#3/character#1',
           'id': '1',
           'image': ImagePath.Agent.a,
           'name': Agent.a,
           'status': village.AgentStatus.alive
         },
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          '@id': 'https://licos.online/state/0.2/village#3/character#2',
           'id': '2',
           'image': ImagePath.Agent.b,
           'name': Agent.b,
           'status': village.AgentStatus.alive
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          '@id': 'https://licos.online/state/0.2/village#3/character#3',
           'id': '3',
           'image': ImagePath.Agent.c,
           'name': Agent.c,
           'status': village.AgentStatus.alive
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          '@id': 'https://licos.online/state/0.2/village#3/character#4',
           'id': '4',
           'image': ImagePath.Agent.d,
           'name': Agent.d,
           'status': village.AgentStatus.alive
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          '@id': 'https://licos.online/state/0.2/village#3/character#5',
           'id': '5',
           'image': ImagePath.Agent.e,
           'name': Agent.e,
           'status': village.AgentStatus.alive
         },
         '6': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+          '@id': 'https://licos.online/state/0.2/village#3/character#6',
           'id': '6',
           'image': ImagePath.Agent.f,
           'name': Agent.f,
           'status': village.AgentStatus.deathByFear
         },
         '7': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+          '@id': 'https://licos.online/state/0.2/village#3/character#7',
           'id': '7',
           'image': ImagePath.Agent.g,
           'name': Agent.g,
           'status': village.AgentStatus.unnaturalDeath
         },
         '8': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+          '@id': 'https://licos.online/state/0.2/village#3/character#8',
           'id': '8',
           'image': ImagePath.Agent.h,
           'name': Agent.h,
           'status': village.AgentStatus.unnaturalDeath
         },
         '9': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+          '@id': 'https://licos.online/state/0.2/village#3/character#9',
           'id': '9',
           'image': ImagePath.Agent.i,
           'name': Agent.i,
           'status': village.AgentStatus.unnaturalDeath
         },
         '10': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+          '@id': 'https://licos.online/state/0.2/village#3/character#10',
           'id': '10',
           'image': ImagePath.Agent.j,
           'name': Agent.j,
           'status': village.AgentStatus.alive
         },
         '11': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+          '@id': 'https://licos.online/state/0.2/village#3/character#11',
           'id': '11',
           'image': ImagePath.Agent.k,
           'name': Agent.k,
           'status': village.AgentStatus.unnaturalDeath
         },
         '12': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+          '@id': 'https://licos.online/state/0.2/village#3/character#12',
           'id': '12',
           'image': ImagePath.Agent.l,
           'name': Agent.l,
           'status': village.AgentStatus.deathByAttack
         },
         '13': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+          '@id': 'https://licos.online/state/0.2/village#3/character#13',
           'id': '13',
           'image': ImagePath.Agent.m,
           'name': Agent.m,
           'status': village.AgentStatus.alive
         },
         '14': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+          '@id': 'https://licos.online/state/0.2/village#3/character#14',
           'id': '14',
           'image': ImagePath.Agent.n,
           'name': Agent.n,
           'status': village.AgentStatus.alive
         },
         '15': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+          '@id': 'https://licos.online/state/0.2/village#3/character#15',
           'id': '15',
           'image': ImagePath.Agent.o,
           'name': Agent.o,
@@ -989,11 +989,11 @@ const state: ReducerState = {
     }
   },
   result: {
-    agents: {
-      agent1: {
-        agentId: '1',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
-        agentName: {
+    characters: {
+      character1: {
+        characterId: '1',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+        characterName: {
           'en': 'Adil',
           'ja': 'アーディル'
         },
@@ -1007,10 +1007,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.alive
       },
-      agent2: {
-        agentId: '2',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
-        agentName: {
+      character2: {
+        characterId: '2',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+        characterName: {
           'en': 'Borya',
           'ja': 'ボーリャ'
         },
@@ -1024,10 +1024,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.alive
       },
-      agent3: {
-        agentId: '3',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
-        agentName: {
+      character3: {
+        characterId: '3',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+        characterName: {
           'en': 'Chacha',
           'ja': 'チャチャ'
         },
@@ -1041,10 +1041,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.alive
       },
-      agent4: {
-        agentId: '4',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
-        agentName: {
+      character4: {
+        characterId: '4',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+        characterName: {
           'en': 'Devdatta',
           'ja': 'デヴゥダッタ'
         },
@@ -1058,10 +1058,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.alive
       },
-      agent5: {
-        agentId: '5',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
-        agentName: {
+      character5: {
+        characterId: '5',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+        characterName: {
           'en': 'Ekrem',
           'ja': 'エクレム'
         },
@@ -1075,10 +1075,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.deathByFear
       },
-      agent6: {
-        agentId: '6',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
-        agentName: {
+      character6: {
+        characterId: '6',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
+        characterName: {
           'en': 'Fernando',
           'ja': 'フェルナンド'
         },
@@ -1092,10 +1092,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.deathByExecution
       },
-      agent7: {
-        agentId: '7',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
-        agentName: {
+      character7: {
+        characterId: '7',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
+        characterName: {
           'en': 'Gavriil',
           'ja': 'ガブリール'
         },
@@ -1109,10 +1109,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.unnaturalDeath
       },
-      agent8: {
-        agentId: '8',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
-        agentName: {
+      character8: {
+        characterId: '8',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
+        characterName: {
           'en': 'Henrik',
           'ja': 'ヘンリック'
         },
@@ -1126,10 +1126,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.unnaturalDeath
       },
-      agent9: {
-        agentId: '9',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
-        agentName: {
+      character9: {
+        characterId: '9',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
+        characterName: {
           'en': 'Ileanna',
           'ja': 'イレアナ'
         },
@@ -1143,10 +1143,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.unnaturalDeath
       },
-      agent10: {
-        agentId: '10',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
-        agentName: {
+      character10: {
+        characterId: '10',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
+        characterName: {
           'en': 'Jasmin',
           'ja': 'ジャスミン'
         },
@@ -1160,10 +1160,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.unnaturalDeath
       },
-      agent11: {
-        agentId: '11',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
-        agentName: {
+      character11: {
+        characterId: '11',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
+        characterName: {
           'en': 'Kaiji',
           'ja': '開司'
         },
@@ -1177,10 +1177,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.unnaturalDeath
       },
-      agent12: {
-        agentId: '12',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
-        agentName: {
+      character12: {
+        characterId: '12',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
+        characterName: {
           'en': 'Louise',
           'ja': 'ルイーズ'
         },
@@ -1194,10 +1194,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.deathByAttack
       },
-      agent13: {
-        agentId: '13',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
-        agentName: {
+      character13: {
+        characterId: '13',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
+        characterName: {
           'en': 'Marthe',
           'ja': 'マーテ'
         },
@@ -1211,10 +1211,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.alive
       },
-      agent14: {
-        agentId: '14',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
-        agentName: {
+      character14: {
+        characterId: '14',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
+        characterName: {
           'en': 'Nanyamka',
           'ja': 'ナニャンカ'
         },
@@ -1228,10 +1228,10 @@ const state: ReducerState = {
         },
         status: village.AgentStatus.alive
       },
-      agent15: {
-        agentId: '15',
-        agentImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
-        agentName: {
+      character15: {
+        characterId: '15',
+        characterImage: 'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
+        characterName: {
           'en': 'Oliwia',
           'ja': 'オリビア'
         },
@@ -1247,29 +1247,29 @@ const state: ReducerState = {
       }
     },
     allIds: [
-      'agent1',
-      'agent2',
-      'agent3',
-      'agent4',
-      'agent5',
-      'agent6',
-      'agent7',
-      'agent8',
-      'agent9',
-      'agent10',
-      'agent11',
-      'agent12',
-      'agent13',
-      'agent14',
-      'agent15'
+      'character1',
+      'character2',
+      'character3',
+      'character4',
+      'character5',
+      'character6',
+      'character7',
+      'character8',
+      'character9',
+      'character10',
+      'character11',
+      'character12',
+      'character13',
+      'character14',
+      'character15'
     ],
     losers: [
-      'agent2',
-      'agent5',
-      'agent6',
-      'agent7'
+      'character2',
+      'character5',
+      'character6',
+      'character7'
     ],
-    me: 'agent1',
+    me: 'character1',
     summary: {
       kind: 'player',
       loserTeam: new Set([village.Team.werewolf, village.Team.werehamster]),
@@ -1279,17 +1279,17 @@ const state: ReducerState = {
     },
     visible: true,
     winners: [
-      'agent1',
-      'agent3',
-      'agent4',
-      'agent8',
-      'agent9',
-      'agent10',
-      'agent11',
-      'agent12',
-      'agent13',
-      'agent14',
-      'agent15'
+      'character1',
+      'character3',
+      'character4',
+      'character8',
+      'character9',
+      'character10',
+      'character11',
+      'character12',
+      'character13',
+      'character14',
+      'character15'
     ]
   },
   suggest: {
