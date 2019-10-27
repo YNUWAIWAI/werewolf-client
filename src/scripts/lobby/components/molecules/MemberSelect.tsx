@@ -27,7 +27,7 @@ const getMember = (role: Readonly<lobby.RoleSetting>) => ORDERED_ROLE_LIST.map(i
     id={item.id}
     image={item.image}
     key={item.id}
-    numberOfAgents={role[item.id]}
+    numberOfCharacters={role[item.id]}
   />
 ))
 

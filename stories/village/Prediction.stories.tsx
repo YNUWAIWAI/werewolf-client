@@ -139,49 +139,49 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
         'name': '村人',
-        'numberOfAgents': 4
+        'numberOfCharacters': 4
       },
       {
         'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         'name': '占い師',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.medium,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
         'name': '霊媒師',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.hunter,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
         'name': '狩人',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.mason,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
         'name': '共有者',
-        'numberOfAgents': 2
+        'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.madman,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
         'name': '狂人',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
         'name': '人狼',
-        'numberOfAgents': 2
+        'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.werehamster,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
         'name': 'ハムスター人間',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     ]
     const spec: Props['spec'] = {
@@ -895,25 +895,25 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
         'name': '村人',
-        'numberOfAgents': 2
+        'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         'name': '占い師',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.madman,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
         'name': '狂人',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
         'name': '人狼',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     ]
     const spec: Props['spec'] = {
@@ -1187,49 +1187,49 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
         'name': '村人',
-        'numberOfAgents': 4
+        'numberOfCharacters': 4
       },
       {
         'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         'name': '占い師',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.medium,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/medium_50x50.png',
         'name': '霊媒師',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.hunter,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/hunter_50x50.png',
         'name': '狩人',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.mason,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/mason_50x50.png',
         'name': '共有者',
-        'numberOfAgents': 2
+        'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.madman,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
         'name': '狂人',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
         'name': '人狼',
-        'numberOfAgents': 2
+        'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.werehamster,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werehamster_50x50.png',
         'name': 'ハムスター人間',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     ]
     const spec: Props['spec'] = {
@@ -1943,25 +1943,25 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
         'name': '村人',
-        'numberOfAgents': 2
+        'numberOfCharacters': 2
       },
       {
         'id': village.RoleId.seer,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
         'name': '占い師',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.madman,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
         'name': '狂人',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
         'name': '人狼',
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     ]
     const spec: Props['spec'] = {
