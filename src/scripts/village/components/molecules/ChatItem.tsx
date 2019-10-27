@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AgentIcon from '../atoms/AgentIcon'
+import CharacterIcon from '../atoms/CharacterIcon'
 import ChatDay from '../atoms/ChatDay'
 import ChatIcon from '../atoms/ChatIcon'
 import ChatNum from '../atoms/ChatNum'
@@ -53,8 +53,8 @@ export default function ChatItem(props: Props) {
           isMarked={props.isMarked}
         />
       </div>
-      <AgentIcon
-        className="vi--chat--agent"
+      <CharacterIcon
+        className="vi--chat--character"
         image={props.image}
         initial={props.initial}
         name={props.name}

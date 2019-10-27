@@ -28,7 +28,7 @@ describe('<Modal />', () => {
       </Provider>
     )
 
-    expect(wrapper.find('AgentIcon').exists()).toBe(true)
+    expect(wrapper.find('CharacterIcon').exists()).toBe(true)
     expect(wrapper.find('Description').exists()).toBe(true)
     expect(wrapper.find('.vi--modal--button')).toHaveLength(2)
     expect(wrapper.find('.vi--modal--button.yes').exists()).toBe(true)

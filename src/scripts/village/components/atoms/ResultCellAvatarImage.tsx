@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AgentIcon from './AgentIcon'
+import CharacterIcon from './CharacterIcon'
 import {village} from '../../types'
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 export default function ResultCellAvatarImage(props: Props) {
   return (
-    <AgentIcon
+    <CharacterIcon
       additionalClass={props.status === 'alive' ? '' : 'dead'}
       className="vi--result--cell--avatarImage"
       image={props.image}

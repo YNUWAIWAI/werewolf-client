@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AgentIcon from './AgentIcon'
+import CharacterIcon from './CharacterIcon'
 
 interface Props {
   readonly image: string
@@ -13,7 +13,7 @@ export default function PredictionCharacter(props: Props) {
   const isSilent = props.isSilent ? 'silent' : ''
 
   return (
-    <AgentIcon
+    <CharacterIcon
       additionalClass={props.status === 'alive' ? isSilent : 'dead'}
       className="vi--prediction--character"
       image={props.image}

@@ -1,4 +1,4 @@
-import AgentIcon, {Props as StateProps} from '../components/atoms/AgentIcon'
+import CharacterIcon, {Props as StateProps} from '../components/atoms/CharacterIcon'
 import {getInitial, getText} from '../util'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -26,6 +26,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
 const InfoAgentContainer = connect(
   mapStateToProps
-)(AgentIcon)
+)(CharacterIcon)
 
 export default InfoAgentContainer

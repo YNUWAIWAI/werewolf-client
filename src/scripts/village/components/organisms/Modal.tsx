@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AgentIcon from '../atoms/AgentIcon'
+import CharacterIcon from '../atoms/CharacterIcon'
 import {CSSTransition} from 'react-transition-group'
 import Description from '../molecules/Description'
 import {FormattedMessage} from 'react-intl'
@@ -31,7 +31,7 @@ export default function Modal(props: Props) {
       unmountOnExit
     >
       <div className="vi--modal">
-        <AgentIcon
+        <CharacterIcon
           className="vi--modal--icon"
           image={props.image}
           initial={props.initial}

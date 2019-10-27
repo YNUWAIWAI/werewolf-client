@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
-import AgentIcon from '../atoms/AgentIcon'
+import CharacterIcon from '../atoms/CharacterIcon'
 import Description from '../molecules/Description'
 import {village} from '../../types'
 
@@ -41,7 +41,7 @@ export default function CommandSelection(props: Props) {
                 }}
                 unmountOnExit
               >
-                <AgentIcon
+                <CharacterIcon
                   additionalClass={props.fixed ? 'fixed' : ''}
                   className="vi--command--selection--option"
                   handleOnClick={props.fixed ? undefined : props.handleSelectOption(character.id)}
