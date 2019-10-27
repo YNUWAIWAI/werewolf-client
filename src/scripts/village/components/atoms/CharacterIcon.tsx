@@ -9,7 +9,7 @@ export interface Props {
   readonly name?: string
 }
 
-export default function AgentIcon(props: Props) {
+export default function CharacterIcon(props: Props) {
   return (
     <div
       className={`${props.className} ${props.additionalClass || ''}`}

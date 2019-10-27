@@ -1,13 +1,14 @@
 import * as React from 'react'
-import AgentIcon from './AgentIcon'
+import CharacterIcon from './CharacterIcon'
+import {VERSION} from '../../constants/Version'
 import {shallow} from 'enzyme'
 
-describe('<AgentIcon />', () => {
+describe('<CharacterIcon />', () => {
   test('defined props: initial, name', () => {
     const wrapper = shallow(
-      <AgentIcon
+      <CharacterIcon
         className="className"
-        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
+        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
         initial="A"
         name="Adil"
       />
@@ -20,9 +21,9 @@ describe('<AgentIcon />', () => {
   })
   test('defined props: initial', () => {
     const wrapper = shallow(
-      <AgentIcon
+      <CharacterIcon
         className="className"
-        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
+        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
         initial="A"
       />
     )
@@ -34,9 +35,9 @@ describe('<AgentIcon />', () => {
   })
   test('defined props: name', () => {
     const wrapper = shallow(
-      <AgentIcon
+      <CharacterIcon
         className="className"
-        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
+        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
         name="Adil"
       />
     )
@@ -48,9 +49,9 @@ describe('<AgentIcon />', () => {
   })
   test('defined props: nothing', () => {
     const wrapper = shallow(
-      <AgentIcon
+      <CharacterIcon
         className="className"
-        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
+        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
       />
     )
 
@@ -61,10 +62,10 @@ describe('<AgentIcon />', () => {
   })
   test('additionalClass', () => {
     const wrapper = shallow(
-      <AgentIcon
+      <CharacterIcon
         additionalClass="additionalClass"
         className="className"
-        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
+        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
         initial="A"
         name="Adil"
       />
@@ -80,10 +81,10 @@ describe('<AgentIcon />', () => {
   test('handleOnClick', () => {
     const handleOnClick = jest.fn()
     const wrapper = shallow(
-      <AgentIcon
+      <CharacterIcon
         className="className"
         handleOnClick={handleOnClick}
-        image="https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png"
+        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
         initial="A"
         name="Adil"
       />
