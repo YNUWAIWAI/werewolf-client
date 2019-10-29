@@ -3,10 +3,12 @@
 */
 import {
   LobbyType,
-  PayloadBase,
-  PayloadType,
   Village
 } from '../..'
+import {
+  PayloadBase,
+  PayloadType
+} from '../../payload'
 
 export interface Lobby extends PayloadBase {
   error: string | null

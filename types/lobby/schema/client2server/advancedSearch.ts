@@ -4,10 +4,12 @@
 import {
   Avatar,
   LobbyType,
-  PayloadBase,
-  PayloadType,
   Token
 } from '../..'
+import {
+  PayloadBase,
+  PayloadType
+} from '../../payload'
 
 export interface AdvancedSearch extends PayloadBase {
   avatar: Avatar

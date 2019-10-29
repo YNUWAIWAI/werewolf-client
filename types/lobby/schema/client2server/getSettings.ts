@@ -4,7 +4,7 @@
 import {
   PayloadBase,
   PayloadType
-} from '../..'
+} from '../../payload'
 
 export interface GetSettings extends PayloadBase {
   type: PayloadType.getSettings

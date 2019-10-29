@@ -3,7 +3,9 @@
 */
 import {
   PayloadBase,
-  PayloadType,
+  PayloadType
+} from '../../payload'
+import {
   Village,
   WaitingPlayer
 } from '../..'

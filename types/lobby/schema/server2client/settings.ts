@@ -2,9 +2,11 @@
   'https://werewolf.world/lobby/schema/0.3/server2client/settings.json'
 */
 import {
-  Language,
   PayloadBase,
   PayloadType
+} from '../../payload'
+import {
+  Language
 } from '../..'
 
 export interface Settings extends PayloadBase {

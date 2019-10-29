@@ -2,9 +2,11 @@
   'https://werewolf.world/lobby/schema/0.3/client2server/changeLang.json'
 */
 import {
-  Language,
   PayloadBase,
   PayloadType
+} from '../../payload'
+import {
+  Language
 } from '../..'
 
 export interface ChangeLang extends PayloadBase {

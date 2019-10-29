@@ -4,7 +4,7 @@
 import {
   PayloadBase,
   PayloadType
-} from '../..'
+} from '../../payload'
 
 export interface ChangeUserEmail extends PayloadBase {
   type: PayloadType.changeUserEmail

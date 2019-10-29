@@ -1,5 +1,30 @@
-/* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
-export * from './payload'
+export {
+  Payload,
+  PayloadType,
+  Payload$AdvancedSearch,
+  Payload$BuildVillage,
+  Payload$Avatar,
+  Payload$ChangeLang,
+  Payload$ChangeUserEmail,
+  Payload$ChangeUserName,
+  Payload$ChangeUserPassword,
+  Payload$EnterLobby,
+  Payload$GetAvatar,
+  Payload$GetSettings,
+  Payload$IdSearch,
+  Payload$KickOutPlayer,
+  Payload$LeaveWaitingPage,
+  Payload$Lobby,
+  Payload$Ping,
+  Payload$Play,
+  Payload$Played,
+  Payload$Pong,
+  Payload$Ready,
+  Payload$SearchResult,
+  Payload$SelectVillage,
+  Payload$Settings,
+  Payload$WatingPage
+} from './payload'
 export const enum Avatar {
   fixed = 'fixed',
   random = 'random',

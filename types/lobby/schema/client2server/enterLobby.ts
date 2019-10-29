@@ -3,12 +3,14 @@
 */
 import {
   LobbyType,
-  PayloadBase,
-  PayloadType,
   Token
 } from '../..'
+import {
+  PayloadBase,
+  PayloadType
+} from '../../payload'
 
-export interface EnterType extends PayloadBase {
+export interface EnterLobby extends PayloadBase {
   lobby: LobbyType
   page: number
   token: Token

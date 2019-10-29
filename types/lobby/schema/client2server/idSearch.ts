@@ -3,10 +3,12 @@
 */
 import {
   LobbyType,
-  PayloadBase,
-  PayloadType,
   Token
 } from '../..'
+import {
+  PayloadBase,
+  PayloadType
+} from '../../payload'
 
 export interface IdSearch extends PayloadBase {
   idForSearching: number
