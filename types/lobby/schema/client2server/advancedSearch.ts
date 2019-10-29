@@ -3,7 +3,7 @@
 */
 import {
   Avatar,
-  Lobby,
+  LobbyType,
   PayloadBase,
   PayloadType,
   Token
@@ -13,7 +13,7 @@ export interface AdvancedSearch extends PayloadBase {
   avatar: Avatar
   comment: string | null
   hostName: string | null
-  lobby: Lobby
+  lobby: LobbyType
   maximum: number | null
   minimum: number | null
   token: Token
