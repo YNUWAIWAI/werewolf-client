@@ -8,7 +8,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.role) {
     return {
       className: 'vi--info--role',
-      image: `https://werewolf.world/image/${VERSION}/agent_icons/50x50/anonymous_50x50.png`,
+      image: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
       name: ''
     }
   }
