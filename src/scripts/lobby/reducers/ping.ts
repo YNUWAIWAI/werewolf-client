@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {SocketMessage, Transition} from '../actions'
+import {lobby} from '../types'
 
 export interface State {
   readonly myToken: string
@@ -18,7 +18,7 @@ export const initialState: State = {
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.waitingPage: {
           const payload = action.payload

@@ -1,13 +1,13 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ResultCellName from './ResultCellName'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ResultCellName />', () => {
   test('alive', () => {
     const warpper = shallow(
       <ResultCellName
-        status={village.AgentStatus.alive}
+        status={village.CharacterStatus.alive}
         text="Adil"
       />
     )
@@ -17,7 +17,7 @@ describe('<ResultCellName />', () => {
   test('dead', () => {
     const warpper = shallow(
       <ResultCellName
-        status={village.AgentStatus.dead}
+        status={village.CharacterStatus.dead}
         text="Adil"
       />
     )
@@ -27,7 +27,7 @@ describe('<ResultCellName />', () => {
   test('deathByAttack', () => {
     const warpper = shallow(
       <ResultCellName
-        status={village.AgentStatus.deathByAttack}
+        status={village.CharacterStatus.deathByAttack}
         text="Adil"
       />
     )
@@ -37,7 +37,7 @@ describe('<ResultCellName />', () => {
   test('deathByExecution', () => {
     const warpper = shallow(
       <ResultCellName
-        status={village.AgentStatus.deathByExecution}
+        status={village.CharacterStatus.deathByExecution}
         text="Adil"
       />
     )
@@ -47,7 +47,7 @@ describe('<ResultCellName />', () => {
   test('deathByFear', () => {
     const warpper = shallow(
       <ResultCellName
-        status={village.AgentStatus.deathByFear}
+        status={village.CharacterStatus.deathByFear}
         text="Adil"
       />
     )
@@ -57,7 +57,7 @@ describe('<ResultCellName />', () => {
   test('unnaturalDeath', () => {
     const warpper = shallow(
       <ResultCellName
-        status={village.AgentStatus.unnaturalDeath}
+        status={village.CharacterStatus.unnaturalDeath}
         text="Adil"
       />
     )

@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import reducer, {initialState} from './modal'
+import {village} from '../types'
 
 test('CHANGE_PHASE', () => {
   expect(
@@ -9,7 +9,7 @@ test('CHANGE_PHASE', () => {
       {
         from: village.Phase.noon,
         to: village.Phase.night,
-        type: ActionTypes.global.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       }
     )
   ).toStrictEqual(
@@ -24,8 +24,8 @@ test('SELECT_OPTION', () => {
     reducer(
       initialState,
       {
-        agentId: '1',
-        type: ActionTypes.global.SELECT_OPTION
+        characterId: '1',
+        type: ActionTypes.App.SELECT_OPTION
       }
     )
   ).toStrictEqual(
@@ -43,7 +43,7 @@ test('SELECT_NO', () => {
         visible: true
       },
       {
-        type: ActionTypes.global.SELECT_NO
+        type: ActionTypes.App.SELECT_NO
       }
     )
   ).toStrictEqual(
@@ -61,8 +61,8 @@ test('SELECT_YES', () => {
         visible: true
       },
       {
-        agentId: '1',
-        type: ActionTypes.global.SELECT_YES
+        characterId: '1',
+        type: ActionTypes.App.SELECT_YES
       }
     )
   ).toStrictEqual(

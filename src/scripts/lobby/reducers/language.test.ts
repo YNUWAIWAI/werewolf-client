@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import reducer, {initialState} from './language'
 import {avatar} from './fakeServer'
+import {lobby} from '../types'
 
 test('CHANGE_LANGUAGE', () => {
   expect(
@@ -9,7 +9,7 @@ test('CHANGE_LANGUAGE', () => {
       initialState,
       {
         language: lobby.Language.en,
-        type: ActionTypes.global.CHANGE_LANGUAGE
+        type: ActionTypes.App.CHANGE_LANGUAGE
       }
     )
   ).toStrictEqual(
@@ -23,7 +23,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: avatar,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(

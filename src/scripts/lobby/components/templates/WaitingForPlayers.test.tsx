@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import WaitingForPlayers, {Props} from './WaitingForPlayers'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 describe('render', () => {

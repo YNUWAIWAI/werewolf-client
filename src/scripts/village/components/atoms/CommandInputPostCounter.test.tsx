@@ -1,15 +1,15 @@
 import * as React from 'react'
-import * as village from '../../types'
 import CommandInputPostCounter from './CommandInputPostCounter'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<CommandInputPostCounter />', () => {
   test('grave', () => {
     const wrapper = shallow(
       <CommandInputPostCounter
         inputChannel={village.InputChannel.grave}
-        postCount={-1}
-        postCountLimit={-1}
+        maxNumberOfChatMessages={-1}
+        numberOfChatMessages={-1}
       />
     )
 
@@ -19,8 +19,8 @@ describe('<CommandInputPostCounter />', () => {
     const wrapper = shallow(
       <CommandInputPostCounter
         inputChannel={village.InputChannel.werewolf}
-        postCount={0}
-        postCountLimit={10}
+        maxNumberOfChatMessages={10}
+        numberOfChatMessages={0}
       />
     )
 
@@ -30,8 +30,8 @@ describe('<CommandInputPostCounter />', () => {
     const wrapper = shallow(
       <CommandInputPostCounter
         inputChannel={village.InputChannel.postMortem}
-        postCount={-1}
-        postCountLimit={-1}
+        maxNumberOfChatMessages={-1}
+        numberOfChatMessages={-1}
       />
     )
 
@@ -41,8 +41,8 @@ describe('<CommandInputPostCounter />', () => {
     const wrapper = shallow(
       <CommandInputPostCounter
         inputChannel={village.InputChannel.private}
-        postCount={-1}
-        postCountLimit={-1}
+        maxNumberOfChatMessages={-1}
+        numberOfChatMessages={-1}
       />
     )
 
@@ -52,8 +52,8 @@ describe('<CommandInputPostCounter />', () => {
     const wrapper = shallow(
       <CommandInputPostCounter
         inputChannel={village.InputChannel.public}
-        postCount={0}
-        postCountLimit={10}
+        maxNumberOfChatMessages={10}
+        numberOfChatMessages={0}
       />
     )
 

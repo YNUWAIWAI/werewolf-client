@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
-import {ChangeDate, SocketMessage, StarChat} from '../actions'
+import {ChangeDay, SocketMessage, StarChat} from '../actions'
 import {idGenerater, just} from '../util'
+import {village} from '../types'
 
 const getChatId = idGenerater('chat')
 const getDelimeterId = idGenerater('delimeter')
@@ -10,10 +10,10 @@ export interface State {
   readonly allIds: village.ChatId[]
   readonly byId: {
     readonly [id in village.ChatId]: {
-      readonly agentId?: village.AgentId
+      readonly characterId?: village.CharacterId
       readonly clientTimestamp: string
-      readonly date: number
-      readonly id: number
+      readonly day: number
+      readonly id: village.Payload$ChatId
       readonly image: string
       readonly intensionalDisclosureRange: village.Channel
       readonly isMarked: boolean
@@ -23,16 +23,16 @@ export interface State {
       readonly phaseTimeLimit: number
       readonly serverTimestamp: string
       readonly text: string
-      readonly type: 'item'
+      readonly type: village.ChatItemType.item
     } |
     {
-      readonly date: number
-      readonly type: 'delimeter'
+      readonly day: number
+      readonly type: village.ChatItemType.delimeter
     }
   }
 }
 type Action =
-  | ChangeDate
+  | ChangeDay
   | SocketMessage
   | StarChat
 
@@ -42,9 +42,9 @@ export const initialState: State = {
 }
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       switch (action.payload['@payload']) {
-        case village.Message.playerMessage: {
+        case village.Message.chatMessage: {
           const payload = action.payload
           const chatId = getChatId()
           const id = payload.intensionalDisclosureRange === village.Channel.public ? just(payload.id) : -1
@@ -56,9 +56,9 @@ const chat = (state: State = initialState, action: Action): State => {
                 ... state.byId,
                 [chatId]: {
                   clientTimestamp: payload.clientTimestamp,
-                  date: payload.date,
+                  day: payload.day,
                   id,
-                  image: 'https://werewolf.world/image/0.3/agent_icons/120x120/anonymous_120x120.png',
+                  image: 'https://werewolf.world/image/0.3/character_icons/120x120/anonymous_120x120.png',
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
                   isMarked: false,
                   isMine: payload.isMine,
@@ -67,7 +67,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   phaseTimeLimit: payload.phaseTimeLimit,
                   serverTimestamp: payload.serverTimestamp,
                   text: payload.text['@value'],
-                  type: 'item'
+                  type: village.ChatItemType.item
                 }
               }
             }
@@ -78,7 +78,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 ... state.byId,
                 [chatId]: {
                   clientTimestamp: payload.clientTimestamp,
-                  date: payload.date,
+                  day: payload.day,
                   id,
                   image: just(payload.avatar).image,
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
@@ -89,7 +89,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   phaseTimeLimit: payload.phaseTimeLimit,
                   serverTimestamp: payload.serverTimestamp,
                   text: payload.text['@value'],
-                  type: 'item'
+                  type: village.ChatItemType.item
                 }
               }
             }
@@ -100,20 +100,20 @@ const chat = (state: State = initialState, action: Action): State => {
             byId: {
               ... state.byId,
               [chatId]: {
-                agentId: String(just(payload.agent).id),
+                characterId: String(just(payload.character).id),
                 clientTimestamp: payload.clientTimestamp,
-                date: payload.date,
+                day: payload.day,
                 id,
-                image: just(payload.agent).image,
+                image: just(payload.character).image,
                 intensionalDisclosureRange: payload.intensionalDisclosureRange,
                 isMarked: false,
                 isMine: payload.isMine,
-                name: just(payload.agent).name,
+                name: just(payload.character).name,
                 phaseStartTime: payload.phaseStartTime,
                 phaseTimeLimit: payload.phaseTimeLimit,
                 serverTimestamp: payload.serverTimestamp,
                 text: payload.text['@value'],
-                type: 'item'
+                type: village.ChatItemType.item
               }
             }
           }
@@ -122,7 +122,7 @@ const chat = (state: State = initialState, action: Action): State => {
           return state
       }
     }
-    case ActionTypes.global.CHANGE_DATE: {
+    case ActionTypes.App.CHANGE_DAY: {
       const delimeterId = getDelimeterId()
 
       return {
@@ -130,16 +130,16 @@ const chat = (state: State = initialState, action: Action): State => {
         byId: {
           ... state.byId,
           [delimeterId]: {
-            date: action.to,
-            type: 'delimeter'
+            day: action.to,
+            type: village.ChatItemType.delimeter
           }
         }
       }
     }
-    case ActionTypes.global.STAR: {
+    case ActionTypes.App.STAR: {
       const item = state.byId[action.id]
 
-      if (item.type === 'delimeter') {
+      if (item.type === village.ChatItemType.delimeter) {
         return state
       }
 

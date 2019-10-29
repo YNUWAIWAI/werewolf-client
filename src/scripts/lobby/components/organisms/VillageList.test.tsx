@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import VillageList from './VillageList'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 test('<VillageList isPlayer /> 0 item', () => {

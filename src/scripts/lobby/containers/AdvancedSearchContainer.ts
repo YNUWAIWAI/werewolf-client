@@ -72,32 +72,32 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
-    dispatch(changeAvatar(ActionTypes.Scope.advancedSearch)(value))
+    dispatch(changeAvatar(ActionTypes.Scope.AdvancedSearch)(value))
   },
   handleCheckboxChange: propName => checked => {
-    dispatch(changeCheckbox(ActionTypes.Scope.advancedSearch)(propName)(checked))
+    dispatch(changeCheckbox(ActionTypes.Scope.AdvancedSearch)(propName)(checked))
   },
   handleNumberChange: propName => value => {
     if (propName === 'maximum') {
-      dispatch(changeMaximum(ActionTypes.Scope.advancedSearch)(value))
+      dispatch(changeMaximum(ActionTypes.Scope.AdvancedSearch)(value))
     }
     if (propName === 'minimum') {
-      dispatch(changeMinimum(ActionTypes.Scope.advancedSearch)(value))
+      dispatch(changeMinimum(ActionTypes.Scope.AdvancedSearch)(value))
     }
   },
   handleTextChange: propName => value => {
     if (propName === 'comment') {
-      dispatch(changeComment(ActionTypes.Scope.advancedSearch)(value))
+      dispatch(changeComment(ActionTypes.Scope.AdvancedSearch)(value))
     }
     if (propName === 'hostName') {
-      dispatch(changeHostName(ActionTypes.Scope.advancedSearch)(value))
+      dispatch(changeHostName(ActionTypes.Scope.AdvancedSearch)(value))
     }
     if (propName === 'villageName') {
-      dispatch(changeVillageName(ActionTypes.Scope.advancedSearch)(value))
+      dispatch(changeVillageName(ActionTypes.Scope.AdvancedSearch)(value))
     }
   },
   handleValidityChange: propName => validity => {
-    dispatch(changeValidity(ActionTypes.Scope.advancedSearch)(propName)(validity))
+    dispatch(changeValidity(ActionTypes.Scope.AdvancedSearch)(propName)(validity))
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))

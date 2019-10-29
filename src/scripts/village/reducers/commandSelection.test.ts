@@ -1,10 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {night, noon} from './fakeServer'
 import reducer, {State, initialState} from './commandSelection'
-import {Agent} from '../constants/Agent'
+import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
+import {VERSION} from '../constants/Version'
 import {socket} from '../actions'
+import {village} from '../types'
 
 test('CHANGE_PHASE', () => {
   expect(
@@ -13,7 +14,7 @@ test('CHANGE_PHASE', () => {
       {
         from: village.Phase.noon,
         to: village.Phase.night,
-        type: ActionTypes.global.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       }
     )
   ).toStrictEqual({
@@ -40,88 +41,88 @@ test('SELECT_YES', () => {
   ]
   const byId: State['byId'] = {
     '2': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
       'id': '2',
-      'image': ImagePath.Agent.b,
-      'name': Agent.b
+      'image': ImagePath.Character.b,
+      'name': Character.b
     },
     '3': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
       'id': '3',
-      'image': ImagePath.Agent.c,
-      'name': Agent.c
+      'image': ImagePath.Character.c,
+      'name': Character.c
     },
     '4': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
       'id': '4',
-      'image': ImagePath.Agent.d,
-      'name': Agent.d
+      'image': ImagePath.Character.d,
+      'name': Character.d
     },
     '5': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
       'id': '5',
-      'image': ImagePath.Agent.e,
-      'name': Agent.e
+      'image': ImagePath.Character.e,
+      'name': Character.e
     },
     '6': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
       'id': '6',
-      'image': ImagePath.Agent.f,
-      'name': Agent.f
+      'image': ImagePath.Character.f,
+      'name': Character.f
     },
     '7': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
       'id': '7',
-      'image': ImagePath.Agent.g,
-      'name': Agent.g
+      'image': ImagePath.Character.g,
+      'name': Character.g
     },
     '8': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
       'id': '8',
-      'image': ImagePath.Agent.h,
-      'name': Agent.h
+      'image': ImagePath.Character.h,
+      'name': Character.h
     },
     '9': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
       'id': '9',
-      'image': ImagePath.Agent.i,
-      'name': Agent.i
+      'image': ImagePath.Character.i,
+      'name': Character.i
     },
     '10': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
       'id': '10',
-      'image': ImagePath.Agent.j,
-      'name': Agent.j
+      'image': ImagePath.Character.j,
+      'name': Character.j
     },
     '11': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
       'id': '11',
-      'image': ImagePath.Agent.k,
-      'name': Agent.k
+      'image': ImagePath.Character.k,
+      'name': Character.k
     },
     '12': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
       'id': '12',
-      'image': ImagePath.Agent.l,
-      'name': Agent.l
+      'image': ImagePath.Character.l,
+      'name': Character.l
     },
     '13': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
       'id': '13',
-      'image': ImagePath.Agent.m,
-      'name': Agent.m
+      'image': ImagePath.Character.m,
+      'name': Character.m
     },
     '14': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
       'id': '14',
-      'image': ImagePath.Agent.n,
-      'name': Agent.n
+      'image': ImagePath.Character.n,
+      'name': Character.n
     },
     '15': {
-      '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
       'id': '15',
-      'image': ImagePath.Agent.o,
-      'name': Agent.o
+      'image': ImagePath.Character.o,
+      'name': Character.o
     }
   }
 
@@ -133,8 +134,8 @@ test('SELECT_YES', () => {
         fixed: false
       },
       {
-        agentId: '2',
-        type: ActionTypes.global.SELECT_YES
+        characterId: '2',
+        type: ActionTypes.App.SELECT_YES
       }
     )
   ).toStrictEqual({
@@ -166,88 +167,88 @@ describe('socket/MESSAGE', () => {
       ]
       const byId: State['byId'] = {
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
           'id': '2',
-          'image': ImagePath.Agent.b,
-          'name': Agent.b
+          'image': ImagePath.Character.b,
+          'name': Character.b
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
           'id': '3',
-          'image': ImagePath.Agent.c,
-          'name': Agent.c
+          'image': ImagePath.Character.c,
+          'name': Character.c
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
           'id': '4',
-          'image': ImagePath.Agent.d,
-          'name': Agent.d
+          'image': ImagePath.Character.d,
+          'name': Character.d
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
           'id': '5',
-          'image': ImagePath.Agent.e,
-          'name': Agent.e
+          'image': ImagePath.Character.e,
+          'name': Character.e
         },
         '6': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
           'id': '6',
-          'image': ImagePath.Agent.f,
-          'name': Agent.f
+          'image': ImagePath.Character.f,
+          'name': Character.f
         },
         '7': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
           'id': '7',
-          'image': ImagePath.Agent.g,
-          'name': Agent.g
+          'image': ImagePath.Character.g,
+          'name': Character.g
         },
         '8': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
           'id': '8',
-          'image': ImagePath.Agent.h,
-          'name': Agent.h
+          'image': ImagePath.Character.h,
+          'name': Character.h
         },
         '9': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
           'id': '9',
-          'image': ImagePath.Agent.i,
-          'name': Agent.i
+          'image': ImagePath.Character.i,
+          'name': Character.i
         },
         '10': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
           'id': '10',
-          'image': ImagePath.Agent.j,
-          'name': Agent.j
+          'image': ImagePath.Character.j,
+          'name': Character.j
         },
         '11': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
           'id': '11',
-          'image': ImagePath.Agent.k,
-          'name': Agent.k
+          'image': ImagePath.Character.k,
+          'name': Character.k
         },
         '12': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
           'id': '12',
-          'image': ImagePath.Agent.l,
-          'name': Agent.l
+          'image': ImagePath.Character.l,
+          'name': Character.l
         },
         '13': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
           'id': '13',
-          'image': ImagePath.Agent.m,
-          'name': Agent.m
+          'image': ImagePath.Character.m,
+          'name': Character.m
         },
         '14': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
           'id': '14',
-          'image': ImagePath.Agent.n,
-          'name': Agent.n
+          'image': ImagePath.Character.n,
+          'name': Character.n
         },
         '15': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
           'id': '15',
-          'image': ImagePath.Agent.o,
-          'name': Agent.o
+          'image': ImagePath.Character.o,
+          'name': Character.o
         }
       }
 
@@ -280,82 +281,82 @@ describe('socket/MESSAGE', () => {
       ]
       const byId: State['byId'] = {
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
           'id': '2',
-          'image': ImagePath.Agent.b,
-          'name': Agent.b
+          'image': ImagePath.Character.b,
+          'name': Character.b
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
           'id': '3',
-          'image': ImagePath.Agent.c,
-          'name': Agent.c
+          'image': ImagePath.Character.c,
+          'name': Character.c
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
           'id': '4',
-          'image': ImagePath.Agent.d,
-          'name': Agent.d
+          'image': ImagePath.Character.d,
+          'name': Character.d
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
           'id': '5',
-          'image': ImagePath.Agent.e,
-          'name': Agent.e
+          'image': ImagePath.Character.e,
+          'name': Character.e
         },
         '6': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
           'id': '6',
-          'image': ImagePath.Agent.f,
-          'name': Agent.f
+          'image': ImagePath.Character.f,
+          'name': Character.f
         },
         '7': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
           'id': '7',
-          'image': ImagePath.Agent.g,
-          'name': Agent.g
+          'image': ImagePath.Character.g,
+          'name': Character.g
         },
         '9': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
           'id': '9',
-          'image': ImagePath.Agent.i,
-          'name': Agent.i
+          'image': ImagePath.Character.i,
+          'name': Character.i
         },
         '10': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
           'id': '10',
-          'image': ImagePath.Agent.j,
-          'name': Agent.j
+          'image': ImagePath.Character.j,
+          'name': Character.j
         },
         '11': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
           'id': '11',
-          'image': ImagePath.Agent.k,
-          'name': Agent.k
+          'image': ImagePath.Character.k,
+          'name': Character.k
         },
         '12': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
           'id': '12',
-          'image': ImagePath.Agent.l,
-          'name': Agent.l
+          'image': ImagePath.Character.l,
+          'name': Character.l
         },
         '13': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
           'id': '13',
-          'image': ImagePath.Agent.m,
-          'name': Agent.m
+          'image': ImagePath.Character.m,
+          'name': Character.m
         },
         '14': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
           'id': '14',
-          'image': ImagePath.Agent.n,
-          'name': Agent.n
+          'image': ImagePath.Character.n,
+          'name': Character.n
         },
         '15': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
           'id': '15',
-          'image': ImagePath.Agent.o,
-          'name': Agent.o
+          'image': ImagePath.Character.o,
+          'name': Character.o
         }
       }
 

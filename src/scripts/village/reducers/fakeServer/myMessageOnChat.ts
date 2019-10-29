@@ -1,32 +1,34 @@
-import * as village from '../../types'
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import {ImagePath} from '../../constants/ImagePath'
+import {VERSION} from '../../constants/Version'
+import {village} from '../../types'
 
-const json: village.Payload$playerMessage = {
+export const myMessageOnChat: village.Payload$ChatMessage = {
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.Chat
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/playerMessage',
-  'agent': {
-    '@context': village.Context.Agent,
-    '@id': 'https://licos.online/state/0.2/village#3/agent',
+  '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
+  'character': {
+    '@context': village.Context.Character,
+    '@id': `https://licos.online/state/${VERSION}/village#3/character`,
     'id': 1,
-    'image': ImagePath.Agent120x120.a,
-    'name': Agent.a
+    'image': ImagePath.Character120x120.a,
+    'name': Character.a
   },
-  'characterLimit': 140,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
   'counter': 7,
-  'date': 1,
+  'day': 1,
   'directionality': village.Directionality.serverToClient,
   'extensionalDisclosureRange': [],
   'id': 12,
   'intensionalDisclosureRange': village.Channel.public,
   'interval': '5s',
+  'isFromServer': true,
   'isMine': true,
   'isOver': false,
-  'limit': 10,
+  'maxLengthOfUnicodeCodePoints': 140,
+  'maxNumberOfChatMessages': 10,
   'phase': village.Phase.morning,
   'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
   'phaseTimeLimit': 600,
@@ -38,18 +40,16 @@ const json: village.Payload$playerMessage = {
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-      'characterLimit': 140,
-      'limit': 10
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10
     },
     'id': 3,
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfAgents': 15
+    'totalNumberOfCharacters': 15
   }
 }
-
-export default json

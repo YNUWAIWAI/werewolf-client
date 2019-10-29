@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {SocketMessage, Tick} from '../actions'
+import {village} from '../types'
 
 export interface State {
   readonly phaseStartTime: number // unixtime
@@ -20,16 +20,16 @@ export const initialState = {
 }
 const timer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.TICK:
+    case ActionTypes.App.TICK:
       return {
         ... state,
         start: action.start,
         time: action.time
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       if (
         action.payload['@payload'] === village.Message.systemMessage ||
-        (action.payload['@payload'] === village.Message.flavorTextMessage && action.payload.date === 0)
+        (action.payload['@payload'] === village.Message.flavorTextMessage && action.payload.day === 0)
       ) {
         return {
           ... state,

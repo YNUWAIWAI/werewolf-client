@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import Settings, {Props} from './Settings'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 test('<Settings />', () => {

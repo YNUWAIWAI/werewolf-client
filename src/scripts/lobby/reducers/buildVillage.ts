@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {
   BuildVillage$ChangeAvatar,
   BuildVillage$ChangeComment,
@@ -13,6 +12,7 @@ import {
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {getAnonymousVillageName} from '../util'
+import {lobby} from '../types'
 
 export interface State {
   readonly image: string
@@ -81,7 +81,7 @@ export const initialState: State = {
 }
 const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.buildVillage.CHANGE_AVATAR:
+    case ActionTypes.BuildVillage.CHANGE_AVATAR:
       if (action.avatar === lobby.Avatar.fixed) {
         return {
           ... state,
@@ -103,7 +103,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: getAnonymousVillageName()
         }
       }
-    case ActionTypes.buildVillage.CHANGE_COMMENT:
+    case ActionTypes.BuildVillage.CHANGE_COMMENT:
       return {
         ... state,
         value: {
@@ -111,7 +111,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           comment: action.comment
         }
       }
-    case ActionTypes.buildVillage.CHANGE_MEMBER:
+    case ActionTypes.BuildVillage.CHANGE_MEMBER:
       return {
         ... state,
         value: {
@@ -119,7 +119,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           member: action.member
         }
       }
-    case ActionTypes.buildVillage.CHANGE_NUMBER_OF_PLAYERS:
+    case ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS:
       if (action.numberOfPlayers < state.value.numberOfRobots) {
         return {
           ... state,
@@ -140,7 +140,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           numberOfPlayers: action.numberOfPlayers
         }
       }
-    case ActionTypes.buildVillage.CHANGE_NUMBER_OF_ROBOTS:
+    case ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS:
       return {
         ... state,
         value: {
@@ -149,7 +149,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           numberOfRobots: action.numberOfRobots
         }
       }
-    case ActionTypes.buildVillage.CHANGE_VALIDITY:
+    case ActionTypes.BuildVillage.CHANGE_VALIDITY:
       return {
         ... state,
         validity: {
@@ -157,7 +157,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           [action.propName]: action.validity
         }
       }
-    case ActionTypes.buildVillage.CHANGE_VILLAGE_NAME:
+    case ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME:
       return {
         ... state,
         value: {
@@ -231,7 +231,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           isHuman: false
         }
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.avatar: {
           const payload = action.payload

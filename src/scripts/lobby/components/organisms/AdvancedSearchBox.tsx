@@ -1,11 +1,11 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
 import AvatarSelect from '../atoms/AvatarSelect'
 import {FormattedMessage} from 'react-intl'
 import NumberSelect from '../atoms/NumberSelect'
 import TextInput from '../atoms/TextInput'
 import TextareaInput from '../atoms/TextareaInput'
+import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
 

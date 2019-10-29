@@ -27,7 +27,7 @@ export const initialState = {
 }
 const app = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.SELECT_VILLAGE:
+    case ActionTypes.App.SELECT_VILLAGE:
     case ActionTypes.Target.BUILD_VILLAGE:
       return {
         content: Content.WaitingForPlayers

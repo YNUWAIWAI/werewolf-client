@@ -1,9 +1,10 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Chat, {Props} from './Chat'
+import {ImagePath} from '../../constants/ImagePath'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
@@ -31,7 +32,7 @@ describe('<Chat />', () => {
       const byId: Props['byId'] = {
         'chat0': {
           id: 1,
-          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -41,7 +42,7 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
       const handleStarInner = jest.fn()
@@ -64,7 +65,7 @@ describe('<Chat />', () => {
       const byId: Props['byId'] = {
         'chat0': {
           id: 1,
-          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -74,11 +75,11 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'chat1': {
           id: 2,
-          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -88,7 +89,7 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
       const handleStarInner = jest.fn()
@@ -113,7 +114,7 @@ describe('<Chat />', () => {
       const byId: Props['byId'] = {
         'chat0': {
           id: 1,
-          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -123,11 +124,11 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'chat1': {
           id: 2,
-          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -137,11 +138,11 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'chat2': {
           id: 3,
-          image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+          image: ImagePath.Character.a,
           initial: 'A',
           intensionalDisclosureRange: village.Channel.anonymousAudience,
           isMarked: false,
@@ -151,11 +152,11 @@ describe('<Chat />', () => {
           phaseTimeLimit: 50,
           serverTimestamp: '2018-01-01T00:00:10.000Z',
           text: 'text',
-          type: 'item'
+          type: village.ChatItemType.item
         },
         'delimeter0': {
-          date: 1,
-          type: 'delimeter'
+          day: 1,
+          type: village.ChatItemType.delimeter
         }
       }
       const handleStarInner = jest.fn()
@@ -183,7 +184,7 @@ describe('<Chat />', () => {
     const byId: Props['byId'] = {
       'chat0': {
         id: 1,
-        image: 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        image: ImagePath.Character.a,
         initial: 'A',
         intensionalDisclosureRange: village.Channel.anonymousAudience,
         isMarked: false,
@@ -193,7 +194,7 @@ describe('<Chat />', () => {
         phaseTimeLimit: 50,
         serverTimestamp: '2018-01-01T00:00:10.000Z',
         text: 'text',
-        type: 'item'
+        type: village.ChatItemType.item
       }
     }
 

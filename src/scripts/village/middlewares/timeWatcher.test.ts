@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
 import {initialState as base} from '../reducers/base'
@@ -7,15 +6,16 @@ import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import middleware from './timeWatcher'
 import {socket} from '../actions'
+import {village} from '../types'
 
-const BASE_URI = `https://werewolf.world/schema/${VERSION}`
+const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('socket/MESSAGE', () => {
-  describe('phase: night -> morning, date: 0 -> 1', () => {
+  describe('phase: night -> morning, day: 0 -> 1', () => {
     const store = fakeStore({
       base: {
         ... base,
-        date: 0,
+        day: 0,
         phase: village.Phase.night
       }
     })
@@ -25,15 +25,15 @@ describe('socket/MESSAGE', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload: village.Payload$systemMessage = {
+    const payload: village.Payload$SystemMessage = {
       '@context': [
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
-      'agent': [],
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
+      'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'intensionalDisclosureRange': village.Channel.private,
@@ -45,17 +45,17 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+          'maxLengthOfUnicodeCodePoints': 140,
+          'maxNumberOfChatMessages': 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     }
 
@@ -66,11 +66,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/agent.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -112,20 +112,20 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'morning',
-        type: ActionTypes.global.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       })
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.global.CHANGE_DATE
+        type: ActionTypes.App.CHANGE_DAY
       })
     })
   })
-  describe('phase: night -> morning, date: 0', () => {
+  describe('phase: night -> morning, day: 0', () => {
     const store = fakeStore({
       base: {
         ... base,
-        date: 0,
+        day: 0,
         phase: village.Phase.night
       }
     })
@@ -135,15 +135,15 @@ describe('socket/MESSAGE', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload: village.Payload$systemMessage = {
+    const payload: village.Payload$SystemMessage = {
       '@context': [
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
-      'agent': [],
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
+      'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 0,
+      'day': 0,
       'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'intensionalDisclosureRange': village.Channel.private,
@@ -155,17 +155,17 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+          'maxLengthOfUnicodeCodePoints': 140,
+          'maxNumberOfChatMessages': 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     }
 
@@ -176,11 +176,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/agent.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -222,15 +222,15 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'morning',
-        type: ActionTypes.global.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       })
     })
   })
-  describe('phase: night -> flavor text, date: 0', () => {
+  describe('phase: night -> flavor text, day: 0', () => {
     const store = fakeStore({
       base: {
         ... base,
-        date: 0,
+        day: 0,
         phase: village.Phase.night
       }
     })
@@ -240,14 +240,14 @@ describe('socket/MESSAGE', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload: village.Payload$flavorTextMessage = {
+    const payload: village.Payload$FlavorTextMessage = {
       '@context': [
         village.BaseContext.Base,
         village.BaseContext.FlavorText
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/flavorTextMessage',
+      '@id': `https://licos.online/state/${VERSION}/village#3/flavorTextMessage`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 0,
+      'day': 0,
       'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'flavorText': [],
@@ -259,17 +259,17 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+          'maxLengthOfUnicodeCodePoints': 140,
+          'maxNumberOfChatMessages': 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     }
 
@@ -280,11 +280,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/agent.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -326,15 +326,15 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
         to: 'flavor text',
-        type: ActionTypes.global.CHANGE_PHASE
+        type: ActionTypes.App.CHANGE_PHASE
       })
     })
   })
-  describe('phase: night, date: 0 -> 1', () => {
+  describe('phase: night, day: 0 -> 1', () => {
     const store = fakeStore({
       base: {
         ... base,
-        date: 0,
+        day: 0,
         phase: village.Phase.night
       }
     })
@@ -344,15 +344,15 @@ describe('socket/MESSAGE', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload: village.Payload$systemMessage = {
+    const payload: village.Payload$SystemMessage = {
       '@context': [
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
-      'agent': [],
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
+      'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'intensionalDisclosureRange': village.Channel.private,
@@ -364,17 +364,17 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+          'maxLengthOfUnicodeCodePoints': 140,
+          'maxNumberOfChatMessages': 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     }
 
@@ -385,11 +385,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/agent.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),
@@ -431,15 +431,15 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
         to: 1,
-        type: ActionTypes.global.CHANGE_DATE
+        type: ActionTypes.App.CHANGE_DAY
       })
     })
   })
-  describe('phase: night, date: 0', () => {
+  describe('phase: night, day: 0', () => {
     const store = fakeStore({
       base: {
         ... base,
-        date: 0,
+        day: 0,
         phase: village.Phase.night
       }
     })
@@ -449,15 +449,15 @@ describe('socket/MESSAGE', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload: village.Payload$systemMessage = {
+    const payload: village.Payload$SystemMessage = {
       '@context': [
         village.BaseContext.Base,
         village.BaseContext.VotingResult
       ],
-      '@id': 'https://licos.online/state/0.2/village#3/systemMessage',
-      'agent': [],
+      '@id': `https://licos.online/state/${VERSION}/village#3/systemMessage`,
+      'character': [],
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 0,
+      'day': 0,
       'directionality': village.Directionality.serverToClient,
       'extensionalDisclosureRange': [],
       'intensionalDisclosureRange': village.Channel.private,
@@ -469,17 +469,17 @@ describe('socket/MESSAGE', () => {
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
         '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
           '@context': village.Context.ChatSettings,
-          '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-          'characterLimit': 140,
-          'limit': 10
+          '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+          'maxLengthOfUnicodeCodePoints': 140,
+          'maxNumberOfChatMessages': 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     }
 
@@ -490,11 +490,11 @@ describe('socket/MESSAGE', () => {
           .then(res => res.json()),
         fetch(`${BASE_URI}/base.json`)
           .then(res => res.json()),
-        fetch(`${BASE_URI}/agent.json`)
-          .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/boardResult.json`)
+          .then(res => res.json()),
+        fetch(`${BASE_URI}/character.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/chat.json`)
           .then(res => res.json()),

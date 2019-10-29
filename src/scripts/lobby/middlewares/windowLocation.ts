@@ -3,11 +3,11 @@ import {Middleware} from '.'
 
 const windowLocation: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.global.LOGOUT:
+    case ActionTypes.App.LOGOUT:
       window.location.replace(`${window.location.origin}/logout`)
 
       return next(action)
-    case ActionTypes.global.SELECT_VILLAGE:
+    case ActionTypes.App.SELECT_VILLAGE:
     case ActionTypes.Target.BUILD_VILLAGE:
     case ActionTypes.Target.SHOW_SETTINGS:
       window.onbeforeunload = () => ''
@@ -38,7 +38,7 @@ const windowLocation: Middleware = store => next => action => {
       window.onbeforeunload = null
 
       return next(action)
-    case ActionTypes.global.SHOW_VILLAGE:
+    case ActionTypes.App.SHOW_VILLAGE:
       window.onbeforeunload = null
       window.location.replace(`${window.location.origin}/village`)
 

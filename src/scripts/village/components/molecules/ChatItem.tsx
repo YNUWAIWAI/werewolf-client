@@ -1,16 +1,16 @@
 import * as React from 'react'
-import * as village from '../../types'
-import AgentIcon from '../atoms/AgentIcon'
-import ChatDate from '../atoms/ChatDate'
+import CharacterIcon from '../atoms/CharacterIcon'
+import ChatDay from '../atoms/ChatDay'
 import ChatIcon from '../atoms/ChatIcon'
 import ChatNum from '../atoms/ChatNum'
 import ChatStar from '../atoms/ChatStar'
 import ChatText from '../atoms/ChatText'
 import {getChatChannelFromChannel} from '../../util'
+import {village} from '../../types'
 
 export interface Props {
   readonly handleStar: (isMarked: boolean) => void
-  readonly id: number
+  readonly id: village.Payload$ChatId
   readonly image: string
   readonly initial: string
   readonly intensionalDisclosureRange: village.Channel
@@ -29,7 +29,7 @@ export default function ChatItem(props: Props) {
   return (
     <div
       className={`vi--chat--item ${props.isMine ? 'me' : ''} ${chatChannel}`}
-      id={chatChannel === 'public' ? `message${String(props.id)}` : undefined}
+      id={chatChannel === 'public' ? `message${props.id}` : undefined}
     >
       <div className="vi--chat--arrow-box">
         <ChatIcon
@@ -43,7 +43,7 @@ export default function ChatItem(props: Props) {
         <ChatText
           text={props.text}
         />
-        <ChatDate
+        <ChatDay
           from={props.phaseStartTime}
           limit={props.phaseTimeLimit}
           to={props.serverTimestamp}
@@ -53,8 +53,8 @@ export default function ChatItem(props: Props) {
           isMarked={props.isMarked}
         />
       </div>
-      <AgentIcon
-        className="vi--chat--agent"
+      <CharacterIcon
+        className="vi--chat--character"
         image={props.image}
         initial={props.initial}
         name={props.name}

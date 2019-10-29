@@ -1,7 +1,8 @@
-import * as lobby from '../../types'
-const json: lobby.Payload$lobby = {
+import {lobby} from '../../types'
+
+export const enterHumanPlayerLobby: lobby.Payload$Lobby = {
   error: null,
-  lobby: lobby.Lobby.human,
+  lobby: lobby.LobbyType.human,
   type: lobby.PayloadType.lobby,
   villages: [
     {
@@ -74,5 +75,3 @@ const json: lobby.Payload$lobby = {
     }
   ]
 }
-
-export default json

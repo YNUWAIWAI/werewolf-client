@@ -1,7 +1,24 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
-import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
-import {activateNextButton, changeLanguage, ready, showLobby, socket} from '../actions'
+import {
+  Key,
+  Village,
+  WhatToDoNextInLobby,
+  connectDB,
+  deleteValue,
+  getValue,
+  updateValue
+} from '../../indexeddb'
+import {
+  activateNextButton,
+  changeLanguage,
+  ready,
+  showLobby,
+  socket
+} from '../actions'
+import {
+  lobby,
+  village
+} from '../types'
 import {Middleware} from '.'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
@@ -16,7 +33,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           store.dispatch(socket.send({
             lobby: villageInfo.lobbyType,
             token: villageInfo.token,
-            type: village.PayloadType.leaveWaitingPage,
+            type: lobby.PayloadType.leaveWaitingPage,
             villageId: villageInfo.villageId
           }))
           await Promise.all([
@@ -36,7 +53,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           const objectStore = transaction.objectStore('licosDB')
           const [isHost, buildVillagePayload] = await Promise.all([
             getValue<boolean>(objectStore, Key.isHost),
-            getValue<village.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
+            getValue<village.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
             updateValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby, WhatToDoNextInLobby.selectNextVillage)
           ])
 
@@ -50,7 +67,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.indexedDB.INIT: {
+    case ActionTypes.IndexedDB.INIT: {
       connectDB()
         .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
@@ -74,7 +91,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       if (action.payload['@payload'] === village.PayloadType.nextGameInvitation) {
         const payload = action.payload
 

@@ -11,6 +11,7 @@ import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
+import {village} from '../types'
 
 type Action =
   | ChangePredictionBoard
@@ -18,29 +19,29 @@ type Action =
   | ShowPredictionSpec
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  playerStatus: state.prediction.playerStatus.allIds.map(agentId => {
-    const player = state.prediction.playerStatus.byId[agentId]
+  characterStatus: state.prediction.characterStatus.allIds.map(characterId => {
+    const character = state.prediction.characterStatus.byId[characterId]
     const isChatted = state.chat.allIds.some(chatId => {
       const chatItem = state.chat.byId[chatId]
 
       return (
-        chatItem.type === 'item' &&
-        chatItem.date === state.base.date &&
-        chatItem.agentId === agentId
+        chatItem.type === village.ChatItemType.item &&
+        chatItem.day === state.base.day &&
+        chatItem.characterId === characterId
       )
     })
     const isSilent = !isChatted
 
     return {
-      id: player.id,
-      image: player.image,
-      initial: getInitial(player.name.en),
+      id: character.id,
+      image: character.image,
+      initial: getInitial(character.name.en),
       isSilent,
       name: getText({
         language: state.language,
-        languageMap: player.name
+        languageMap: character.name
       }),
-      status: player.status
+      status: character.status
     }
   }),
   roleStatus: state.prediction.roleStatus.allIds.map(roleId => {
@@ -57,7 +58,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
         language: state.language,
         languageMap: role.name
       }),
-      numberOfAgents: role.numberOfAgents
+      numberOfCharacters: role.numberOfCharacters
     }
   }),
   spec: state.prediction.spec,
@@ -65,8 +66,14 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleBoardClick: (playerId, roleId) => nextState => {
-    dispatch(handleBoardClick(nextState, playerId, roleId))
+  handleBoardClick: ({characterId, roleId}) => nextState => {
+    dispatch(
+      handleBoardClick({
+        characterId,
+        nextState,
+        roleId
+      })
+    )
   },
   handleMouseEnter: role => () => {
     dispatch(showPredictionSpec(role))

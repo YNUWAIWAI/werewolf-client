@@ -1,77 +1,77 @@
 import * as React from 'react'
-import * as village from './types'
 import {number, radios} from '@storybook/addon-knobs'
-import {Agent} from '../../src/scripts/village/constants/Agent'
+import {Character} from '../../src/scripts/village/constants/Character'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../../src/scripts/village/constants/Role'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import language from './language'
+import {language} from './language'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+import {village} from './types'
 
 const suggesttedData = [
   {
-    id: Agent.a.en,
-    name: Agent.a
+    id: Character.a.en,
+    name: Character.a
   },
   {
-    id: Agent.b.en,
-    name: Agent.b
+    id: Character.b.en,
+    name: Character.b
   },
   {
-    id: Agent.c.en,
-    name: Agent.c
+    id: Character.c.en,
+    name: Character.c
   },
   {
-    id: Agent.d.en,
-    name: Agent.d
+    id: Character.d.en,
+    name: Character.d
   },
   {
-    id: Agent.e.en,
-    name: Agent.e
+    id: Character.e.en,
+    name: Character.e
   },
   {
-    id: Agent.f.en,
-    name: Agent.f
+    id: Character.f.en,
+    name: Character.f
   },
   {
-    id: Agent.g.en,
-    name: Agent.g
+    id: Character.g.en,
+    name: Character.g
   },
   {
-    id: Agent.h.en,
-    name: Agent.h
+    id: Character.h.en,
+    name: Character.h
   },
   {
-    id: Agent.i.en,
-    name: Agent.i
+    id: Character.i.en,
+    name: Character.i
   },
   {
-    id: Agent.j.en,
-    name: Agent.j
+    id: Character.j.en,
+    name: Character.j
   },
   {
-    id: Agent.k.en,
-    name: Agent.k
+    id: Character.k.en,
+    name: Character.k
   },
   {
-    id: Agent.l.en,
-    name: Agent.l
+    id: Character.l.en,
+    name: Character.l
   },
   {
-    id: Agent.m.en,
-    name: Agent.m
+    id: Character.m.en,
+    name: Character.m
   },
   {
-    id: Agent.n.en,
-    name: Agent.n
+    id: Character.n.en,
+    name: Character.n
   },
   {
-    id: Agent.o.en,
-    name: Agent.o
+    id: Character.o.en,
+    name: Character.o
   },
   {
     id: village.RoleId.hunter,
@@ -128,12 +128,12 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              characterLimit={140}
               handlePostChat={action('postChat')}
               inputChannel={village.InputChannel.grave}
               language={value}
-              postCount={-1}
-              postCountLimit={-1}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={-1}
+              numberOfChatMessages={-1}
               suggesttedData={suggesttedData}
             />
           </div>
@@ -164,12 +164,12 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              characterLimit={140}
               handlePostChat={action('postChat')}
               inputChannel={village.InputChannel.public}
               language={value}
-              postCount={postCount}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={postCount}
               suggesttedData={suggesttedData}
             />
           </div>
@@ -194,12 +194,12 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              characterLimit={140}
               handlePostChat={action('postChat')}
               inputChannel={village.InputChannel.private}
               language={value}
-              postCount={-1}
-              postCountLimit={-1}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={-1}
+              numberOfChatMessages={-1}
               suggesttedData={suggesttedData}
             />
           </div>
@@ -230,12 +230,12 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              characterLimit={140}
               handlePostChat={action('postChat')}
               inputChannel={village.InputChannel.werewolf}
               language={value}
-              postCount={postCount}
-              postCountLimit={10}
+              maxLengthOfUnicodeCodePoints={140}
+              maxNumberOfChatMessages={10}
+              numberOfChatMessages={postCount}
               suggesttedData={suggesttedData}
             />
           </div>

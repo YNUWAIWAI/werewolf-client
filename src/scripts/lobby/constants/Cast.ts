@@ -1,4 +1,4 @@
-import * as lobby from '../types'
+import {lobby} from '../types'
 
 const Cast: lobby.Cast = {
   '4': {

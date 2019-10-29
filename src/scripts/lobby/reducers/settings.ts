@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {SocketMessage} from '../actions'
+import {lobby} from '../types'
 
 export interface State {
   readonly initialValue: {
@@ -29,7 +29,7 @@ export const initialState: State = {
 }
 const settings = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       switch (action.payload.type) {
         case lobby.PayloadType.settings: {
           const payload = action.payload

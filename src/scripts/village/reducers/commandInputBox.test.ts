@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   firstMorning,
   firstMorning2,
@@ -10,6 +9,7 @@ import {
 } from './fakeServer'
 import reducer, {initialState} from './commandInputBox'
 import {socket} from '../actions'
+import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
   test('isMine={true}', () => {
@@ -18,11 +18,11 @@ describe('socket/MESSAGE', () => {
       socket.message(myMessageOnChat)
     )).toStrictEqual({
       public: {
-        postCount: 7
+        numberOfChatMessages: 7
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -38,11 +38,11 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -52,11 +52,11 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning2)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -66,11 +66,11 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning6)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: false,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
@@ -80,38 +80,38 @@ describe('socket/MESSAGE', () => {
       socket.message(firstMorning7)
     )).toStrictEqual({
       public: {
-        postCount: 0
+        numberOfChatMessages: 0
       },
       werewolf: {
         available: true,
-        postCount: 0
+        numberOfChatMessages: 0
       }
     })
   })
 })
-test('CHANGE_DATE', () => {
+test('CHANGE_DAY', () => {
   expect(reducer(
     {
       public: {
-        postCount: 10
+        numberOfChatMessages: 10
       },
       werewolf: {
         available: true,
-        postCount: 10
+        numberOfChatMessages: 10
       }
     },
     {
       from: village.Phase.morning,
       to: village.Phase.noon,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.App.CHANGE_PHASE
     }
   )).toStrictEqual({
     public: {
-      postCount: 0
+      numberOfChatMessages: 0
     },
     werewolf: {
       available: true,
-      postCount: 0
+      numberOfChatMessages: 0
     }
   })
 })

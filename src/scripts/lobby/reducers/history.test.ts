@@ -17,7 +17,7 @@ test('socket/MESSAGE', () => {
       },
       {
         payload: enterHumanPlayerLobby,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
     )
   ).toStrictEqual(

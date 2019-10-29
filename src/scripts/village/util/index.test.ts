@@ -1,4 +1,3 @@
-import * as village from '../types'
 import {
   countText,
   getBaseUri,
@@ -6,9 +5,9 @@ import {
   getChatChannelFromChannel,
   getInitial,
   getInputChannelFromChannel,
-  getMyAgent,
+  getMyCharacter,
   getMyRole,
-  getPlayableAgents,
+  getPlayableCharacters,
   getPlayableRoles,
   getTeam,
   getText,
@@ -16,12 +15,13 @@ import {
   isValidTextLength,
   just,
   spaceSeparatedToCamelCase,
-  strToAgentStatus,
+  strToCharacterStatus,
   strToMessage,
   strToRoleId,
   trimBaseUri,
   xor
 } from './index'
+import {village} from '../types'
 
 describe('countText', () => {
   test('text', () => {
@@ -184,9 +184,9 @@ describe('getInputChannelFromChannel', () => {
     expect(getInputChannelFromChannel(village.Channel.werewolf)).toBe('werewolf')
   })
 })
-describe('getMyAgent', () => {
+describe('getMyCharacter', () => {
   test('nominal', () => {
-    const agents = [
+    const characters = [
       {
         '@id': 'https://werewolf.world/resource/0.2/Gert',
         'id': 0,
@@ -253,7 +253,7 @@ describe('getMyAgent', () => {
       }
     ]
 
-    expect(getMyAgent(agents)).toStrictEqual({
+    expect(getMyCharacter(characters)).toStrictEqual({
       '@id': 'https://werewolf.world/resource/0.2/Walter',
       'id': 1,
       'image': 'https://werewolf.world/image/0.2/Walter.jpg',
@@ -271,7 +271,7 @@ describe('getMyAgent', () => {
     })
   })
   test('throw Exception', () => {
-    const agents = [
+    const characters = [
       {
         '@id': 'https://werewolf.world/resource/0.2/Gert',
         'id': 0,
@@ -290,7 +290,7 @@ describe('getMyAgent', () => {
       }
     ]
 
-    expect(() => getMyAgent(agents)).toThrow()
+    expect(() => getMyCharacter(characters)).toThrow()
   })
 })
 describe('getMyRole', () => {
@@ -306,7 +306,7 @@ describe('getMyRole', () => {
           'en': 'Master',
           'ja': 'マスター'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -315,9 +315,9 @@ describe('getMyRole', () => {
           {
             '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
-            'agent': {
-              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-              '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+            'character': {
+              '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/character#1',
               'id': 1,
               'image': 'https://werewolf.world/image/0.2/Walter.jpg',
               'name': {
@@ -336,7 +336,7 @@ describe('getMyRole', () => {
           'en': 'Villager',
           'ja': '村人'
         },
-        'numberOfAgents': 6
+        'numberOfCharacters': 6
       },
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -345,9 +345,9 @@ describe('getMyRole', () => {
           {
             '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
             '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
-            'agent': {
-              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-              '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+            'character': {
+              '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/character#1',
               'id': 1,
               'image': 'https://werewolf.world/image/0.2/Walter.jpg',
               'name': {
@@ -366,7 +366,7 @@ describe('getMyRole', () => {
           'en': 'Seer',
           'ja': '占い師'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     ]
 
@@ -378,9 +378,9 @@ describe('getMyRole', () => {
           {
             '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
             '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
-            'agent': {
-              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-              '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+            'character': {
+              '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/character#1',
               'id': 1,
               'image': 'https://werewolf.world/image/0.2/Walter.jpg',
               'name': {
@@ -399,7 +399,7 @@ describe('getMyRole', () => {
           'en': 'Seer',
           'ja': '占い師'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       }
     )
   })
@@ -415,7 +415,7 @@ describe('getMyRole', () => {
           'en': 'Master',
           'ja': 'マスター'
         },
-        'numberOfAgents': 1
+        'numberOfCharacters': 1
       },
       {
         '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -424,9 +424,9 @@ describe('getMyRole', () => {
           {
             '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
             '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
-            'agent': {
-              '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-              '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+            'character': {
+              '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+              '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/character#1',
               'id': 1,
               'image': 'https://werewolf.world/image/0.2/Walter.jpg',
               'name': {
@@ -445,15 +445,15 @@ describe('getMyRole', () => {
           'en': 'Villager',
           'ja': '村人'
         },
-        'numberOfAgents': 6
+        'numberOfCharacters': 6
       }
     ]
 
     expect(() => getMyRole(roles)).toThrow()
   })
 })
-test('getPlayableAgents', () => {
-  const agents = [
+test('getPlayableCharacters', () => {
+  const characters = [
     {
       '@id': 'https://werewolf.world/resource/0.2/Gert',
       'id': 0,
@@ -520,7 +520,7 @@ test('getPlayableAgents', () => {
     }
   ]
 
-  expect(getPlayableAgents(agents)).toStrictEqual([
+  expect(getPlayableCharacters(characters)).toStrictEqual([
     {
       '@id': 'https://werewolf.world/resource/0.2/Gert',
       'id': 0,
@@ -599,7 +599,7 @@ test('getPlayableRoles', () => {
         'en': 'Master',
         'ja': 'マスター'
       },
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     },
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -608,9 +608,9 @@ test('getPlayableRoles', () => {
         {
           '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
-          'agent': {
-            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+          'character': {
+            '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/character#1',
             'id': 1,
             'image': 'https://werewolf.world/image/0.2/Walter.jpg',
             'name': {
@@ -629,7 +629,7 @@ test('getPlayableRoles', () => {
         'en': 'Villager',
         'ja': '村人'
       },
-      'numberOfAgents': 6
+      'numberOfCharacters': 6
     },
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -638,9 +638,9 @@ test('getPlayableRoles', () => {
         {
           '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
           '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
-          'agent': {
-            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+          'character': {
+            '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/character#1',
             'id': 1,
             'image': 'https://werewolf.world/image/0.2/Walter.jpg',
             'name': {
@@ -659,7 +659,7 @@ test('getPlayableRoles', () => {
         'en': 'Seer',
         'ja': '占い師'
       },
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     }
   ]
 
@@ -671,9 +671,9 @@ test('getPlayableRoles', () => {
         {
           '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
           '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1',
-          'agent': {
-            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/agent#1',
+          'character': {
+            '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#villager/board#1/character#1',
             'id': 1,
             'image': 'https://werewolf.world/image/0.2/Walter.jpg',
             'name': {
@@ -692,7 +692,7 @@ test('getPlayableRoles', () => {
         'en': 'Villager',
         'ja': '村人'
       },
-      'numberOfAgents': 6
+      'numberOfCharacters': 6
     },
     {
       '@context': 'https://werewolf.world/context/0.2/role.jsonld',
@@ -701,9 +701,9 @@ test('getPlayableRoles', () => {
         {
           '@context': 'https://werewolf.world/context/0.2/boardResult.jsonld',
           '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1',
-          'agent': {
-            '@context': 'https://werewolf.world/context/0.2/agent.jsonld',
-            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/agent#1',
+          'character': {
+            '@context': 'https://werewolf.world/context/0.2/character.jsonld',
+            '@id': 'https://licos.online/state/0.2/village#3/role#seer/board#1/character#1',
             'id': 1,
             'image': 'https://werewolf.world/image/0.2/Walter.jpg',
             'name': {
@@ -722,31 +722,31 @@ test('getPlayableRoles', () => {
         'en': 'Seer',
         'ja': '占い師'
       },
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     }
   ])
 })
-describe('strToAgentStatus', () => {
+describe('strToCharacterStatus', () => {
   test('alive', () => {
-    expect(strToAgentStatus('alive')).toBe('alive')
+    expect(strToCharacterStatus('alive')).toBe('alive')
   })
   test('dead', () => {
-    expect(strToAgentStatus('dead')).toBe('dead')
+    expect(strToCharacterStatus('dead')).toBe('dead')
   })
   test('death by execution', () => {
-    expect(strToAgentStatus('death by execution')).toBe('death by execution')
+    expect(strToCharacterStatus('death by execution')).toBe('death by execution')
   })
   test('death by attack', () => {
-    expect(strToAgentStatus('death by attack')).toBe('death by attack')
+    expect(strToCharacterStatus('death by attack')).toBe('death by attack')
   })
   test('death by fear', () => {
-    expect(strToAgentStatus('death by fear')).toBe('death by fear')
+    expect(strToCharacterStatus('death by fear')).toBe('death by fear')
   })
   test('unnatural death', () => {
-    expect(strToAgentStatus('unnatural death')).toBe('unnatural death')
+    expect(strToCharacterStatus('unnatural death')).toBe('unnatural death')
   })
   test('throw Exception', () => {
-    expect(() => strToAgentStatus('throw Exception')).toThrow()
+    expect(() => strToCharacterStatus('throw Exception')).toThrow()
   })
 })
 describe('strToMessage', () => {
@@ -759,8 +759,8 @@ describe('strToMessage', () => {
   test('flavorTextMessage', () => {
     expect(strToMessage('https://licos.online/state/0.2/village#3/flavorTextMessage')).toBe('flavorTextMessage')
   })
-  test('playerMessage', () => {
-    expect(strToMessage('https://licos.online/state/0.2/village#3/playerMessage')).toBe('playerMessage')
+  test('chatMessage', () => {
+    expect(strToMessage('https://licos.online/state/0.2/village#3/chatMessage')).toBe('chatMessage')
   })
   test('scrollMessage', () => {
     expect(strToMessage('https://licos.online/state/0.2/village#3/scrollMessage')).toBe('scrollMessage')

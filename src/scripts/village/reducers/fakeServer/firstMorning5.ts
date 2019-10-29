@@ -1,138 +1,139 @@
-import * as village from '../../types'
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
+import {VERSION} from '../../constants/Version'
+import {village} from '../../types'
 
-const json: village.Payload$systemMessage = {
+export const firstMorning5: village.Payload$SystemMessage = {
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.VotingResult
   ],
-  '@id': 'https://licos.online/state/0.2/village#29/systemMessage',
-  'agent': [
+  '@id': `https://licos.online/state/${VERSION}/village#29/systemMessage`,
+  'character': [
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#7',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#7`,
       'id': 7,
-      'image': ImagePath.Agent.a,
+      'image': ImagePath.Character.a,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.a,
-      'status': village.AgentStatus.alive,
+      'name': Character.a,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#7/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#7/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#5',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#5`,
       'id': 5,
-      'image': ImagePath.Agent.f,
+      'image': ImagePath.Character.f,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.f,
-      'status': village.AgentStatus.alive,
+      'name': Character.f,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#5/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#5/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#2',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#2`,
       'id': 2,
-      'image': ImagePath.Agent.g,
+      'image': ImagePath.Character.g,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.g,
-      'status': village.AgentStatus.alive,
+      'name': Character.g,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#2/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#2/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#4',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#4`,
       'id': 4,
-      'image': ImagePath.Agent.h,
+      'image': ImagePath.Character.h,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.h,
-      'status': village.AgentStatus.alive,
+      'name': Character.h,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#4/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#4/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#6',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#6`,
       'id': 6,
-      'image': ImagePath.Agent.j,
+      'image': ImagePath.Character.j,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.j,
-      'status': village.AgentStatus.alive,
+      'name': Character.j,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#6/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#6/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#3',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#3`,
       'id': 3,
-      'image': ImagePath.Agent.o,
+      'image': ImagePath.Character.o,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.o,
-      'status': village.AgentStatus.alive,
+      'name': Character.o,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#3/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#3/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#0',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#0`,
       'id': 0,
-      'image': ImagePath.Agent.r,
+      'image': ImagePath.Character.r,
       'isAChoice': false,
       'isMine': true,
-      'name': Agent.r,
-      'status': village.AgentStatus.alive,
+      'name': Character.r,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#0/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#0/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     },
     {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#29/agent#1',
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#29/character#1`,
       'id': 1,
-      'image': ImagePath.Agent.s,
+      'image': ImagePath.Character.s,
       'isAChoice': true,
       'isMine': false,
-      'name': Agent.s,
-      'status': village.AgentStatus.alive,
+      'name': Character.s,
+      'status': village.CharacterStatus.alive,
       'update': {
-        '@id': 'https://licos.online/state/0.2/village#29/agent#1/update',
-        'date': 1,
+        '@id': `https://licos.online/state/${VERSION}/village#29/character#1/update`,
+        'day': 1,
         'phase': village.Phase.morning
       }
     }
   ],
   'clientTimestamp': '2019-02-02T17:31:19.865+09:00',
-  'date': 1,
+  'day': 1,
   'directionality': village.Directionality.serverToClient,
   'extensionalDisclosureRange': [],
   'intensionalDisclosureRange': village.Channel.public,
@@ -142,42 +143,42 @@ const json: village.Payload$systemMessage = {
   'role': [
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#master',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#master`,
       'board': [],
       'image': ImagePath.Role.master,
       'isMine': false,
       'name': Role.master,
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#29/role#madman',
+      '@id': `https://licos.online/state/${VERSION}/village#29/role#madman`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#madman/board#0',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#madman/board#0/agent#0',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#madman/board#0`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#madman/board#0/character#0`,
             'id': 0,
-            'image': ImagePath.Agent.r,
-            'name': Agent.r
+            'image': ImagePath.Character.r,
+            'name': Character.r
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#6`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#6/character#6`,
             'id': 6,
-            'image': ImagePath.Agent.j,
-            'name': Agent.j
+            'image': ImagePath.Character.j,
+            'name': Character.j
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
@@ -185,121 +186,121 @@ const json: village.Payload$systemMessage = {
       'image': ImagePath.Role.madman,
       'isMine': false,
       'name': Role.madman,
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#29/role#mason',
+      '@id': `https://licos.online/state/${VERSION}/village#29/role#mason`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#0',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#0/agent#0',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#0`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#0/character#0`,
             'id': 0,
-            'image': ImagePath.Agent.r,
-            'name': Agent.r
+            'image': ImagePath.Character.r,
+            'name': Character.r
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.positive
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#1',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#1/agent#1',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#1`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.s,
-            'name': Agent.s
+            'image': ImagePath.Character.s,
+            'name': Character.s
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#2',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#2/agent#2',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#2`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#2/character#2`,
             'id': 2,
-            'image': ImagePath.Agent.g,
-            'name': Agent.g
+            'image': ImagePath.Character.g,
+            'name': Character.g
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#3',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#3/agent#3',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#3`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#3/character#3`,
             'id': 3,
-            'image': ImagePath.Agent.o,
-            'name': Agent.o
+            'image': ImagePath.Character.o,
+            'name': Character.o
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#4',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#4/agent#4',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#4`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#4/character#4`,
             'id': 4,
-            'image': ImagePath.Agent.h,
-            'name': Agent.h
+            'image': ImagePath.Character.h,
+            'name': Character.h
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#5',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#5/agent#5',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#5`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#5/character#5`,
             'id': 5,
-            'image': ImagePath.Agent.f,
-            'name': Agent.f
+            'image': ImagePath.Character.f,
+            'name': Character.f
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#6`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#6/character#6`,
             'id': 6,
-            'image': ImagePath.Agent.j,
-            'name': Agent.j
+            'image': ImagePath.Character.j,
+            'name': Character.j
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.positive
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#7',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#7/agent#7',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#7`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#7/character#7`,
             'id': 7,
-            'image': ImagePath.Agent.a,
-            'name': Agent.a
+            'image': ImagePath.Character.a,
+            'name': Character.a
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
@@ -307,37 +308,37 @@ const json: village.Payload$systemMessage = {
       'image': ImagePath.Role.mason,
       'isMine': true,
       'name': Role.mason,
-      'numberOfAgents': 2
+      'numberOfCharacters': 2
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#29/role#medium',
+      '@id': `https://licos.online/state/${VERSION}/village#29/role#medium`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#medium/board#0',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#medium/board#0/agent#0',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#medium/board#0`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#medium/board#0/character#0`,
             'id': 0,
-            'image': ImagePath.Agent.r,
-            'name': Agent.r
+            'image': ImagePath.Character.r,
+            'name': Character.r
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#6`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#6/character#6`,
             'id': 6,
-            'image': ImagePath.Agent.j,
-            'name': Agent.j
+            'image': ImagePath.Character.j,
+            'name': Character.j
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
@@ -345,37 +346,37 @@ const json: village.Payload$systemMessage = {
       'image': ImagePath.Role.medium,
       'isMine': false,
       'name': Role.medium,
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#29/role#seer',
+      '@id': `https://licos.online/state/${VERSION}/village#29/role#seer`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#seer/board#0',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#seer/board#0/agent#0',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#seer/board#0`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#seer/board#0/character#0`,
             'id': 0,
-            'image': ImagePath.Agent.r,
-            'name': Agent.r
+            'image': ImagePath.Character.r,
+            'name': Character.r
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#6`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#6/character#6`,
             'id': 6,
-            'image': ImagePath.Agent.j,
-            'name': Agent.j
+            'image': ImagePath.Character.j,
+            'name': Character.j
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
@@ -383,93 +384,93 @@ const json: village.Payload$systemMessage = {
       'image': ImagePath.Role.seer,
       'isMine': false,
       'name': Role.seer,
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#29/role#villager',
+      '@id': `https://licos.online/state/${VERSION}/village#29/role#villager`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#villager/board#0',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#villager/board#0/agent#0',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#villager/board#0`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#villager/board#0/character#0`,
             'id': 0,
-            'image': ImagePath.Agent.r,
-            'name': Agent.r
+            'image': ImagePath.Character.r,
+            'name': Character.r
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#1',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#1/agent#1',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#1`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#1/character#1`,
             'id': 1,
-            'image': ImagePath.Agent.s,
-            'name': Agent.s
+            'image': ImagePath.Character.s,
+            'name': Character.s
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.circle
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#2',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#2/agent#2',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#2`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#2/character#2`,
             'id': 2,
-            'image': ImagePath.Agent.g,
-            'name': Agent.g
+            'image': ImagePath.Character.g,
+            'name': Character.g
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.cross
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#3',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#3/agent#3',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#3`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#3/character#3`,
             'id': 3,
-            'image': ImagePath.Agent.o,
-            'name': Agent.o
+            'image': ImagePath.Character.o,
+            'name': Character.o
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.question
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#4',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#4/agent#4',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#4`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#4/character#4`,
             'id': 4,
-            'image': ImagePath.Agent.h,
-            'name': Agent.h
+            'image': ImagePath.Character.h,
+            'name': Character.h
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.triangle
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#6`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#6/character#6`,
             'id': 6,
-            'image': ImagePath.Agent.j,
-            'name': Agent.j
+            'image': ImagePath.Character.j,
+            'name': Character.j
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
@@ -477,37 +478,37 @@ const json: village.Payload$systemMessage = {
       'image': ImagePath.Role.villager,
       'isMine': false,
       'name': Role.villager,
-      'numberOfAgents': 1
+      'numberOfCharacters': 1
     },
     {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#29/role#werewolf',
+      '@id': `https://licos.online/state/${VERSION}/village#29/role#werewolf`,
       'board': [
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#werewolf/board#0',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#werewolf/board#0/agent#0',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#werewolf/board#0`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#werewolf/board#0/character#0`,
             'id': 0,
-            'image': ImagePath.Agent.r,
-            'name': Agent.r
+            'image': ImagePath.Character.r,
+            'name': Character.r
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         },
         {
           '@context': village.Context.BoardResult,
-          '@id': 'https://licos.online/state/0.2/village29/role#mason/board#6',
-          'agent': {
-            '@context': village.Context.Agent,
-            '@id': 'https://licos.online/state/0.2/village#29/role#mason/board#6/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village29/role#mason/board#6`,
+          'character': {
+            '@context': village.Context.Character,
+            '@id': `https://licos.online/state/${VERSION}/village#29/role#mason/board#6/character#6`,
             'id': 6,
-            'image': ImagePath.Agent.j,
-            'name': Agent.j
+            'image': ImagePath.Character.j,
+            'name': Character.j
           },
-          'date': 1,
+          'day': 1,
           'phase': village.Phase.morning,
           'polarity': village.Polarity.negative
         }
@@ -515,27 +516,25 @@ const json: village.Payload$systemMessage = {
       'image': ImagePath.Role.werewolf,
       'isMine': false,
       'name': Role.werewolf,
-      'numberOfAgents': 2
+      'numberOfCharacters': 2
     }
   ],
   'serverTimestamp': '2019-02-02T17:31:19.865+09:00',
   'token': '13bc61d8-9fce-492b-a528-ca8682ae1746',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-      'characterLimit': 140,
-      'limit': 10
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10
     },
     'id': 29,
     'lang': village.Language.en,
     'name': 'Doubtful Village',
-    'totalNumberOfAgents': 8
+    'totalNumberOfCharacters': 8
   },
   'votingResultsDetails': [],
   'votingResultsSummary': []
 }
-
-export default json

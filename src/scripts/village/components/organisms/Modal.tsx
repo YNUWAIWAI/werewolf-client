@@ -1,13 +1,13 @@
 import * as React from 'react'
-import * as village from '../../types'
-import AgentIcon from '../atoms/AgentIcon'
 import {CSSTransition} from 'react-transition-group'
+import CharacterIcon from '../atoms/CharacterIcon'
 import Description from '../molecules/Description'
 import {FormattedMessage} from 'react-intl'
+import {village} from '../../types'
 
 export interface StateProps {
   readonly descriptionId: string
-  readonly id: village.AgentId
+  readonly id: village.CharacterId
   readonly image: string
   readonly initial: string
   readonly name: string
@@ -15,7 +15,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleClickNo: () => void
-  readonly handleClickYes: (agentId: village.AgentId) => void
+  readonly handleClickYes: (characterId: village.CharacterId) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
@@ -31,7 +31,7 @@ export default function Modal(props: Props) {
       unmountOnExit
     >
       <div className="vi--modal">
-        <AgentIcon
+        <CharacterIcon
           className="vi--modal--icon"
           image={props.image}
           initial={props.initial}

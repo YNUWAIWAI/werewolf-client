@@ -1,13 +1,13 @@
 /* eslint no-process-env: 0 */
+import * as ActionTypes from './constants/ActionTypes'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as lobby from './types'
-import {global, indexedDB, socket} from './constants/ActionTypes'
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import {changeToken} from './actions'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {createStore} from 'redux'
+import {lobby} from './types'
 import middleware from './middlewares'
 import reducer from './reducers'
 
@@ -23,7 +23,7 @@ const store =
     )
 
 store.dispatch({
-  type: global.SHOW_MAIN
+  type: ActionTypes.App.SHOW_MAIN
 })
 const elem = document.getElementById('script')
 
@@ -34,21 +34,21 @@ if (!elem || !elem.dataset || !elem.dataset.humanPlayerToken) {
   throw Error('Not found: data-human-player-token')
 }
 store.dispatch(changeToken({
-  lobby: lobby.Lobby.human,
+  lobby: lobby.LobbyType.human,
   token: elem.dataset.humanPlayerToken
 }))
 if (!elem || !elem.dataset || !elem.dataset.robotPlayerToken) {
   throw Error('Not found: data-robot-player-token')
 }
 store.dispatch(changeToken({
-  lobby: lobby.Lobby.robot,
+  lobby: lobby.LobbyType.robot,
   token: elem.dataset.robotPlayerToken
 }))
 if (!elem || !elem.dataset || !elem.dataset.onymousAudienceToken) {
   throw Error('Not found: data-onymous-audience-token')
 }
 store.dispatch(changeToken({
-  lobby: lobby.Lobby.audience,
+  lobby: lobby.LobbyType.onymousAudience,
   token: elem.dataset.onymousAudienceToken
 }))
 
@@ -58,10 +58,10 @@ if (!root) {
   throw Error('Not found: root element')
 }
 store.dispatch({
-  type: socket.INIT
+  type: ActionTypes.Socket.INIT
 })
 store.dispatch({
-  type: indexedDB.INIT
+  type: ActionTypes.IndexedDB.INIT
 })
 
 ReactDOM.render(

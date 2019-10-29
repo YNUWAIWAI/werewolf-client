@@ -1,11 +1,11 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import AvatarItem from './AvatarItem'
 import Danger from '../atoms/svg/Danger'
 import Safe from '../atoms/svg/Safe'
 import Warning from '../atoms/svg/Warning'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 

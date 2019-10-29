@@ -1,0 +1,7 @@
+export {Avatar} from './avatar'
+export {Lobby} from './lobby'
+export {Played} from './played'
+export {Ping} from './ping'
+export {SearchResult} from './searchResult'
+export {Settings} from './settings'
+export {WatingPage} from './waitingPage'

@@ -1,20 +1,20 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {SocketMessage} from '../actions'
 import {strToRoleId} from '../util'
+import {village} from '../types'
 
 export interface State {
-  readonly agent?: {
-    '@id': village.Agent['@id']
-    id: village.Agent['id']
-    image: village.Agent['image']
-    name: village.Agent['name']
+  readonly character?: {
+    '@id': string
+    id: village.Payload$CharacterId
+    image: string
+    name: village.LanguageMap
   }
   readonly role?: {
-    '@id': village.Role['@id']
+    '@id': string
     id: village.RoleId
-    name: village.Role['name']
-    image: village.Role['image']
+    name: village.LanguageMap
+    image: string
   }
 }
 type Action =
@@ -23,15 +23,15 @@ type Action =
 export const initialState = {}
 const mine = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       if (action.payload['@payload'] === village.Message.systemMessage) {
         const payload = action.payload
-        const agent = (() => {
-          if (typeof payload.agent === 'undefined') {
-            return payload.agent
+        const character = (() => {
+          if (typeof payload.character === 'undefined') {
+            return payload.character
           }
 
-          const maybe = payload.agent.find(a => a.isMine)
+          const maybe = payload.character.find(c => c.isMine)
 
           if (typeof maybe === 'undefined') {
             return maybe
@@ -64,7 +64,7 @@ const mine = (state: State = initialState, action: Action): State => {
         })()
 
         return {
-          agent,
+          character,
           role
         }
       }

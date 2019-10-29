@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {played, waitingPage, waitingPage2} from './fakeServer'
 import reducer, {initialState} from './waitingForPlayers'
+import {lobby} from '../types'
 
 describe('CHANGE_LOBBY', () => {
   test('human player', () => {
@@ -9,8 +9,8 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.human,
-          type: ActionTypes.global.CHANGE_LOBBY
+          lobby: lobby.LobbyType.human,
+          type: ActionTypes.App.CHANGE_LOBBY
         }
       )
     ).toStrictEqual(
@@ -40,8 +40,8 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.audience,
-          type: ActionTypes.global.CHANGE_LOBBY
+          lobby: lobby.LobbyType.onymousAudience,
+          type: ActionTypes.App.CHANGE_LOBBY
         }
       )
     ).toStrictEqual(
@@ -71,8 +71,8 @@ describe('CHANGE_LOBBY', () => {
       reducer(
         initialState,
         {
-          lobby: lobby.Lobby.robot,
-          type: ActionTypes.global.CHANGE_LOBBY
+          lobby: lobby.LobbyType.robot,
+          type: ActionTypes.App.CHANGE_LOBBY
         }
       )
     ).toStrictEqual(
@@ -105,7 +105,7 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
       {
         name: 'Alice',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-        type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
+        type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
       }
     )
   ).toStrictEqual(
@@ -275,7 +275,7 @@ describe('socket/MESSAGE', () => {
         },
         {
           payload: played,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(
@@ -324,7 +324,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             payload: waitingPage2,
-            type: ActionTypes.socket.MESSAGE
+            type: ActionTypes.Socket.MESSAGE
           }
         )
       ).toStrictEqual(
@@ -471,7 +471,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             payload: waitingPage,
-            type: ActionTypes.socket.MESSAGE
+            type: ActionTypes.Socket.MESSAGE
           }
         )
       ).toStrictEqual(

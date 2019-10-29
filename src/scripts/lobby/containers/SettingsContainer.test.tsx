@@ -1,11 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as lobby from '../types'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import Settings from '../components/templates/Settings'
 import SettingsContainer from './SettingsContainer'
 import fakeStore from './fakeStore'
+import {lobby} from '../types'
 import {mount} from 'enzyme'
 
 describe('<SettingsContainer />', () => {
@@ -39,7 +39,7 @@ describe('<SettingsContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       language,
-      type: ActionTypes.global.CHANGE_LANGUAGE
+      type: ActionTypes.App.CHANGE_LANGUAGE
     })
   })
   test('handleChangeUserEmail', () => {
@@ -59,7 +59,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleChangeUserEmail(userEmail)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.CHANGE_USER_EMAIL,
+      type: ActionTypes.App.CHANGE_USER_EMAIL,
       userEmail
     })
   })
@@ -80,7 +80,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleChangeUserName(userName)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.CHANGE_USER_NAME,
+      type: ActionTypes.App.CHANGE_USER_NAME,
       userName
     })
   })
@@ -101,7 +101,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleChangeUserPassword(userPassword)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.CHANGE_USER_PASSWORD,
+      type: ActionTypes.App.CHANGE_USER_PASSWORD,
       userPassword
     })
   })
@@ -121,7 +121,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleSubmitLogout()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.LOGOUT
+      type: ActionTypes.App.LOGOUT
     })
   })
   test('transition', () => {

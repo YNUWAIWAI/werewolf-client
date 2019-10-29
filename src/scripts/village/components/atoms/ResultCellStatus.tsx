@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {FormattedMessage} from 'react-intl'
+import {village} from '../../types'
 
 interface Props {
-  readonly status: village.AgentStatus
+  readonly status: village.CharacterStatus
 }
 
 export default function ResultCellStatus(props: Props) {

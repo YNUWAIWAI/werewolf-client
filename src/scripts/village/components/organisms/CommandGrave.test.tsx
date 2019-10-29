@@ -1,8 +1,8 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
-import * as village from '../../types'
 import CommandGrave, {Props} from './CommandGrave'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 test('<CommandGrave />', () => {
   const handleNavigationClick = jest.fn()
@@ -15,10 +15,10 @@ test('<CommandGrave />', () => {
   ]
   const wrapper = shallow(
     <CommandGrave
-      characterLimit={140}
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
       language={village.Language.en}
+      maxLengthOfUnicodeCodePoints={140}
       navigation={navigation}
       suggesttedData={[]}
     />

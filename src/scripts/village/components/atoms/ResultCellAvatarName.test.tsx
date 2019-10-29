@@ -1,13 +1,13 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ResultCellAvatarName from './ResultCellAvatarName'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ResultCellAvatarName />', () => {
   test('alive', () => {
     const warpper = shallow(
       <ResultCellAvatarName
-        status={village.AgentStatus.alive}
+        status={village.CharacterStatus.alive}
         text="Adil"
       />
     )
@@ -17,7 +17,7 @@ describe('<ResultCellAvatarName />', () => {
   test('dead', () => {
     const warpper = shallow(
       <ResultCellAvatarName
-        status={village.AgentStatus.dead}
+        status={village.CharacterStatus.dead}
         text="Adil"
       />
     )

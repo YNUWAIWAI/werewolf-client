@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {FormattedMessage} from 'react-intl'
 import TeamVillager from './svg/TeamVillager'
 import TeamWerehamster from './svg/TeamWerehamster'
 import TeamWerewolf from './svg/TeamWerewolf'
+import {village} from '../../types'
 
 export interface Props {
   readonly additionalClass?: string
@@ -83,7 +83,7 @@ export default function TeamIcon(props: Props) {
         >
           <img
             className={`${props.class}--image`}
-            src="https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png"
+            src="https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png"
           />
         </div>
       )

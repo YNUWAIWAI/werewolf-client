@@ -1,10 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {
   avatar,
   searchResult
 } from './fakeServer'
 import reducer, {initialState} from './advancedSearch'
+import {lobby} from '../types'
 
 test('ADVANCED_SEARCH', () => {
   expect(
@@ -59,7 +59,7 @@ test('advancedSearch/CHANGE_AVATAR', () => {
       initialState,
       {
         avatar: lobby.Avatar.fixed,
-        type: ActionTypes.advancedSearch.CHANGE_AVATAR
+        type: ActionTypes.AdvancedSearch.CHANGE_AVATAR
       }
     )
   ).toStrictEqual(
@@ -80,7 +80,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         {
           checked: true,
           propName: 'avatar',
-          type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
+          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
         }
       )
     ).toStrictEqual(
@@ -100,7 +100,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         {
           checked: true,
           propName: 'comment',
-          type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
+          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
         }
       )
     ).toStrictEqual(
@@ -120,7 +120,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         {
           checked: true,
           propName: 'hostName',
-          type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
+          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
         }
       )
     ).toStrictEqual(
@@ -140,7 +140,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         {
           checked: true,
           propName: 'maximum',
-          type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
+          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
         }
       )
     ).toStrictEqual(
@@ -160,7 +160,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         {
           checked: true,
           propName: 'minimum',
-          type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
+          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
         }
       )
     ).toStrictEqual(
@@ -180,7 +180,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
         {
           checked: true,
           propName: 'villageName',
-          type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
+          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
         }
       )
     ).toStrictEqual(
@@ -200,7 +200,7 @@ test('advancedSearch/CHANGE_COMMENT', () => {
       initialState,
       {
         comment: 'comment',
-        type: ActionTypes.advancedSearch.CHANGE_COMMENT
+        type: ActionTypes.AdvancedSearch.CHANGE_COMMENT
       }
     )
   ).toStrictEqual(
@@ -219,7 +219,7 @@ test('advancedSearch/CHANGE_HOST_NAME', () => {
       initialState,
       {
         hostName: 'hostName',
-        type: ActionTypes.advancedSearch.CHANGE_HOST_NAME
+        type: ActionTypes.AdvancedSearch.CHANGE_HOST_NAME
       }
     )
   ).toStrictEqual(
@@ -238,7 +238,7 @@ test('advancedSearch/CHANGE_MAXIMUM', () => {
       initialState,
       {
         maximum: 15,
-        type: ActionTypes.advancedSearch.CHANGE_MAXIMUM
+        type: ActionTypes.AdvancedSearch.CHANGE_MAXIMUM
       }
     )
   ).toStrictEqual(
@@ -257,7 +257,7 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
       initialState,
       {
         minimum: 4,
-        type: ActionTypes.advancedSearch.CHANGE_MINIMUM
+        type: ActionTypes.AdvancedSearch.CHANGE_MINIMUM
       }
     )
   ).toStrictEqual(
@@ -277,7 +277,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'avatar',
-          type: ActionTypes.advancedSearch.CHANGE_VALIDITY,
+          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
           validity: true
         }
       )
@@ -297,7 +297,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'comment',
-          type: ActionTypes.advancedSearch.CHANGE_VALIDITY,
+          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
           validity: true
         }
       )
@@ -317,7 +317,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'hostName',
-          type: ActionTypes.advancedSearch.CHANGE_VALIDITY,
+          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
           validity: true
         }
       )
@@ -337,7 +337,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'maximum',
-          type: ActionTypes.advancedSearch.CHANGE_VALIDITY,
+          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
           validity: true
         }
       )
@@ -357,7 +357,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'minimum',
-          type: ActionTypes.advancedSearch.CHANGE_VALIDITY,
+          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
           validity: true
         }
       )
@@ -377,7 +377,7 @@ describe('advancedSearch/CHANGE_VALIDITY', () => {
         initialState,
         {
           propName: 'villageName',
-          type: ActionTypes.advancedSearch.CHANGE_VALIDITY,
+          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
           validity: true
         }
       )
@@ -397,7 +397,7 @@ test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME,
+        type: ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME,
         villageName: 'villageName'
       }
     )
@@ -553,7 +553,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: avatar,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(
@@ -587,7 +587,7 @@ describe('socket/MESSAGE', () => {
         },
         {
           payload: searchResult,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(
@@ -605,7 +605,7 @@ describe('socket/MESSAGE', () => {
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.global.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: true,

@@ -1,10 +1,10 @@
 import * as React from 'react'
-import * as lobby from '../../types'
-import {FormattedMessage} from 'react-intl'
 import Close from '../atoms/svg/Close'
 import Danger from '../atoms/svg/Danger'
+import {FormattedMessage} from 'react-intl'
 import Safe from '../atoms/svg/Safe'
 import Warning from '../atoms/svg/Warning'
+import {lobby} from '../../types'
 
 export interface Props {
   readonly avatarImage: string

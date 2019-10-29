@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import AvatarSelect from '../atoms/AvatarSelect'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'
@@ -7,6 +6,7 @@ import NumberSelect from '../atoms/NumberSelect'
 import TextInput from '../atoms/TextInput'
 import TextareaInput from '../atoms/TextareaInput'
 import {getCastFromNumberOfPlayers} from '../../util'
+import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'member' | 'numberOfPlayers' | 'numberOfRobots' | 'villageName'
 

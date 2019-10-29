@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import BuildVillage from './BuildVillage'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 test('<BuildVillage />', () => {

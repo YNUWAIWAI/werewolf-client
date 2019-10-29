@@ -1,12 +1,13 @@
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
-import * as lobby from './types'
 import IdSearch, {Props} from '../../src/scripts/lobby/components/templates/IdSearch'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
+import {VERSION} from '../../src/scripts/lobby/constants/Version'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import language from './language'
+import {language} from './language'
+import {lobby} from './types'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
@@ -45,7 +46,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
@@ -92,7 +93,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
@@ -175,7 +176,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image="https://werewolf.world/image/0.3/agent_icons/50x50/r_50x50.png"
+            image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`}
             isPlayer
             menuItems={menuItems}
             name="Ryan"

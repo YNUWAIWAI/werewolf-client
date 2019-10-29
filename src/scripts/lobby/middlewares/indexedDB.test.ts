@@ -1,7 +1,6 @@
 /* eslint no-extra-parens: 0 */
 import '../../../../types/indexeddb'
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {SocketMessage, SocketSend, Transition} from '../actions'
 import Ajv from 'ajv'
@@ -21,6 +20,7 @@ import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../util'
+import {lobby} from '../types'
 import middleware from './indexedDB'
 import {waitingPage} from '../reducers/fakeServer'
 
@@ -47,7 +47,7 @@ const getAllValue = async () => {
   const objectStore = transaction.objectStore('licosDB')
 
   return Promise.all([
-    getValue<lobby.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
+    getValue<lobby.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
     getValue<boolean>(objectStore, Key.isHost),
     getValue<lobby.Language>(objectStore, Key.lang),
     getValue<number>(objectStore, Key.nextGameVillageId),
@@ -77,8 +77,8 @@ describe('indexedDB/INIT', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.indexedDB.INIT} = {
-    type: ActionTypes.indexedDB.INIT
+  const action: {type: ActionTypes.IndexedDB.INIT} = {
+    type: ActionTypes.IndexedDB.INIT
   }
 
   test('default', async () => {
@@ -140,11 +140,11 @@ describe('indexedDB/INIT', () => {
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
     const village = {
-      lobbyType: lobby.Lobby.human,
+      lobbyType: lobby.LobbyType.human,
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }
-    const payload: lobby.Payload$leaveWaitingPage = {
+    const payload: lobby.Payload$LeaveWaitingPage = {
       lobby: village.lobbyType,
       token: village.token,
       type: lobby.PayloadType.leaveWaitingPage,
@@ -175,7 +175,7 @@ describe('indexedDB/INIT', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
   test('whatToDoNextInLobby: selectNextVillage', async () => {
@@ -186,7 +186,7 @@ describe('indexedDB/INIT', () => {
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
     const village = {
-      lobbyType: lobby.Lobby.human,
+      lobbyType: lobby.LobbyType.human,
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }
@@ -216,11 +216,11 @@ describe('indexedDB/INIT', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       lobby: village.lobbyType,
-      type: ActionTypes.global.CHANGE_LOBBY
+      type: ActionTypes.App.CHANGE_LOBBY
     })
     expect(dispatch).toHaveBeenCalledWith({
       id: 4,
-      type: ActionTypes.global.SELECT_VILLAGE
+      type: ActionTypes.App.SELECT_VILLAGE
     })
   })
   test('whatToDoNextInLobby: selectVillage', async () => {
@@ -231,7 +231,7 @@ describe('indexedDB/INIT', () => {
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
     const village = {
-      lobbyType: lobby.Lobby.human,
+      lobbyType: lobby.LobbyType.human,
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }
@@ -260,11 +260,11 @@ describe('indexedDB/INIT', () => {
     expect(dispatch).toHaveBeenCalledTimes(2)
     expect(dispatch).toHaveBeenCalledWith({
       lobby: village.lobbyType,
-      type: ActionTypes.global.CHANGE_LOBBY
+      type: ActionTypes.App.CHANGE_LOBBY
     })
     expect(dispatch).toHaveBeenCalledWith({
       id: village.villageId,
-      type: ActionTypes.global.SELECT_VILLAGE
+      type: ActionTypes.App.SELECT_VILLAGE
     })
   })
 })
@@ -283,7 +283,7 @@ test('LEAVE_WAITING_PAGE', async () => {
   const transaction = db.transaction('licosDB', 'readwrite')
   const objectStore = transaction.objectStore('licosDB')
   const village = {
-    lobbyType: lobby.Lobby.human,
+    lobbyType: lobby.LobbyType.human,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
     villageId: 3
   }
@@ -318,7 +318,7 @@ describe('socket/MESSAGE', () => {
     }
     const action: SocketMessage = {
       payload,
-      type: ActionTypes.socket.MESSAGE
+      type: ActionTypes.Socket.MESSAGE
     }
     const dispatch = jest.fn()
 
@@ -354,7 +354,7 @@ describe('socket/MESSAGE', () => {
       expect(whatToDoNextInLobby).toBeUndefined()
       expect(dispatch).toHaveBeenCalled()
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.global.SHOW_VILLAGE
+        type: ActionTypes.App.SHOW_VILLAGE
       })
     })
   })
@@ -367,7 +367,7 @@ describe('socket/MESSAGE', () => {
     const store = fakeStore({
       token: {
         'human player': avatarToken.humanPlayer,
-        'lobby': lobby.Lobby.human,
+        'lobby': lobby.LobbyType.human,
         'onymous audience': avatarToken.onymousAudience,
         'robot player': avatarToken.robotPlayer
       }
@@ -450,7 +450,7 @@ describe('socket/MESSAGE', () => {
       }
       const action: SocketMessage = {
         payload,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
 
       test('validate the JSON', async () => {
@@ -481,7 +481,7 @@ describe('socket/MESSAGE', () => {
         expect(lang).toBeUndefined()
         expect(nextGameVillageId).toBeUndefined()
         expect(villageInfo).toStrictEqual({
-          lobbyType: lobby.Lobby.human,
+          lobbyType: lobby.LobbyType.human,
           token: avatarToken.humanPlayer,
           villageId: 1
         })
@@ -492,7 +492,7 @@ describe('socket/MESSAGE', () => {
       const payload = waitingPage
       const action: SocketMessage = {
         payload,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
 
       test('validate the JSON', async () => {
@@ -523,7 +523,7 @@ describe('socket/MESSAGE', () => {
         expect(lang).toBeUndefined()
         expect(nextGameVillageId).toBeUndefined()
         expect(villageInfo).toStrictEqual({
-          lobbyType: lobby.Lobby.human,
+          lobbyType: lobby.LobbyType.human,
           token: avatarToken.humanPlayer,
           villageId: 1
         })
@@ -572,7 +572,7 @@ describe('socket/SEND', () => {
     }
     const action: SocketSend = {
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     }
     const dispatch = jest.fn()
 

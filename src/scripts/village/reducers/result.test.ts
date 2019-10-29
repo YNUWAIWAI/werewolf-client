@@ -1,10 +1,10 @@
-import * as village from '../types'
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './result'
-import {Agent} from '../constants/Agent'
+import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {socket} from '../actions'
+import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
   test('phase is not result', () => {
@@ -22,217 +22,217 @@ describe('socket/MESSAGE', () => {
         socket.message(result)
       )
     ).toStrictEqual({
-      agents: {
-        agent0: {
-          agentId: '0',
-          agentImage: ImagePath.Agent.a,
-          agentName: Agent.a,
-          avatarImage: ImagePath.Agent.r,
+      allIds: [
+        '0',
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14'
+      ],
+      characters: {
+        '0': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Sato',
+          characterId: '0',
+          characterImage: ImagePath.Character.a,
+          characterName: Character.a,
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
-        agent1: {
-          agentId: '1',
-          agentImage: ImagePath.Agent.b,
-          agentName: Agent.b,
-          avatarImage: ImagePath.Agent.r,
+        '1': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Suzuki',
+          characterId: '1',
+          characterImage: ImagePath.Character.b,
+          characterName: Character.b,
           result: village.Result.win,
           roleImage: ImagePath.Role.seer,
           roleName: Role.seer,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
-        agent2: {
-          agentId: '2',
-          agentImage: ImagePath.Agent.c,
-          agentName: Agent.c,
-          avatarImage: ImagePath.Agent.r,
+        '2': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Takahashi',
+          characterId: '2',
+          characterImage: ImagePath.Character.c,
+          characterName: Character.c,
           result: village.Result.lose,
           roleImage: ImagePath.Role.werewolf,
           roleName: Role.werewolf,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
-        agent3: {
-          agentId: '3',
-          agentImage: ImagePath.Agent.d,
-          agentName: Agent.d,
-          avatarImage: ImagePath.Agent.r,
+        '3': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Tanaka',
+          characterId: '3',
+          characterImage: ImagePath.Character.d,
+          characterName: Character.d,
           result: village.Result.win,
           roleImage: ImagePath.Role.hunter,
           roleName: Role.hunter,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
-        agent4: {
-          agentId: '4',
-          agentImage: ImagePath.Agent.e,
-          agentName: Agent.e,
-          avatarImage: ImagePath.Agent.r,
+        '4': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Ito',
+          characterId: '4',
+          characterImage: ImagePath.Character.e,
+          characterName: Character.e,
           result: village.Result.win,
           roleImage: ImagePath.Role.medium,
           roleName: Role.medium,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
-        agent5: {
-          agentId: '5',
-          agentImage: ImagePath.Agent.f,
-          agentName: Agent.f,
-          avatarImage: ImagePath.Agent.r,
+        '5': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Watanabe',
+          characterId: '5',
+          characterImage: ImagePath.Character.f,
+          characterName: Character.f,
           result: village.Result.lose,
           roleImage: ImagePath.Role.werehamster,
           roleName: Role.werehamster,
-          status: village.AgentStatus.deathByFear
+          status: village.CharacterStatus.deathByFear
         },
-        agent6: {
-          agentId: '6',
-          agentImage: ImagePath.Agent.g,
-          agentName: Agent.g,
-          avatarImage: ImagePath.Agent.r,
+        '6': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Yamamoto',
+          characterId: '6',
+          characterImage: ImagePath.Character.g,
+          characterName: Character.g,
           result: village.Result.lose,
           roleImage: ImagePath.Role.madman,
           roleName: Role.madman,
-          status: village.AgentStatus.deathByExecution
+          status: village.CharacterStatus.deathByExecution
         },
-        agent7: {
-          agentId: '7',
-          agentImage: ImagePath.Agent.h,
-          agentName: Agent.h,
-          avatarImage: ImagePath.Agent.r,
+        '7': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Nakamura',
+          characterId: '7',
+          characterImage: ImagePath.Character.h,
+          characterName: Character.h,
           result: village.Result.lose,
           roleImage: ImagePath.Role.werewolf,
           roleName: Role.werewolf,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
-        agent8: {
-          agentId: '8',
-          agentImage: ImagePath.Agent.i,
-          agentName: Agent.i,
-          avatarImage: ImagePath.Agent.r,
+        '8': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Kobayashi',
+          characterId: '8',
+          characterImage: ImagePath.Character.i,
+          characterName: Character.i,
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
-        agent9: {
-          agentId: '9',
-          agentImage: ImagePath.Agent.j,
-          agentName: Agent.j,
-          avatarImage: ImagePath.Agent.r,
+        '9': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Yoshida',
+          characterId: '9',
+          characterImage: ImagePath.Character.j,
+          characterName: Character.j,
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
-        agent10: {
-          agentId: '10',
-          agentImage: ImagePath.Agent.k,
-          agentName: Agent.k,
-          avatarImage: ImagePath.Agent.r,
+        '10': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Yamada',
+          characterId: '10',
+          characterImage: ImagePath.Character.k,
+          characterName: Character.k,
           result: village.Result.win,
           roleImage: ImagePath.Role.mason,
           roleName: Role.mason,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
-        agent11: {
-          agentId: '11',
-          agentImage: ImagePath.Agent.l,
-          agentName: Agent.l,
-          avatarImage: ImagePath.Agent.r,
+        '11': {
+          avatarImage: ImagePath.Character.r,
           avatarName: 'Sasaki',
+          characterId: '11',
+          characterImage: ImagePath.Character.l,
+          characterName: Character.l,
           result: village.Result.win,
           roleImage: ImagePath.Role.mason,
           roleName: Role.mason,
-          status: village.AgentStatus.unnaturalDeath
+          status: village.CharacterStatus.unnaturalDeath
         },
-        agent12: {
-          agentId: '12',
-          agentImage: ImagePath.Agent.m,
-          agentName: Agent.m,
-          avatarImage: ImagePath.Agent.r,
+        '12': {
+          avatarImage: ImagePath.Character.r,
           avatarName: '山口',
+          characterId: '12',
+          characterImage: ImagePath.Character.m,
+          characterName: Character.m,
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.deathByAttack
+          status: village.CharacterStatus.deathByAttack
         },
-        agent13: {
-          agentId: '13',
-          agentImage: ImagePath.Agent.n,
-          agentName: Agent.n,
-          avatarImage: ImagePath.Agent.r,
+        '13': {
+          avatarImage: ImagePath.Character.r,
           avatarName: '松本',
+          characterId: '13',
+          characterImage: ImagePath.Character.n,
+          characterName: Character.n,
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         },
-        agent14: {
-          agentId: '14',
-          agentImage: ImagePath.Agent.o,
-          agentName: Agent.o,
-          avatarImage: ImagePath.Agent.r,
+        '14': {
+          avatarImage: ImagePath.Character.r,
           avatarName: '井上',
+          characterId: '14',
+          characterImage: ImagePath.Character.o,
+          characterName: Character.o,
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
-          status: village.AgentStatus.alive
+          status: village.CharacterStatus.alive
         }
       },
-      allIds: [
-        'agent0',
-        'agent1',
-        'agent2',
-        'agent3',
-        'agent4',
-        'agent5',
-        'agent6',
-        'agent7',
-        'agent8',
-        'agent9',
-        'agent10',
-        'agent11',
-        'agent12',
-        'agent13',
-        'agent14'
-      ],
       losers: [
-        'agent2',
-        'agent5',
-        'agent6',
-        'agent7'
+        '2',
+        '5',
+        '6',
+        '7'
       ],
-      me: 'agent1',
+      me: '1',
       summary: {
-        kind: 'player',
-        loserTeam: new Set(['werewolf', 'werehamster']),
-        myTeam: 'villager',
+        kind: village.SummaryType.character,
+        loserTeam: new Set([village.Team.werehamster, village.Team.werewolf]),
+        myTeam: village.Team.villager,
         result: village.Result.win,
-        winnerTeam: 'villager'
+        winnerTeam: village.Team.villager
       },
       visible: true,
       winners: [
-        'agent0',
-        'agent1',
-        'agent3',
-        'agent4',
-        'agent8',
-        'agent9',
-        'agent10',
-        'agent11',
-        'agent12',
-        'agent13',
-        'agent14'
+        '0',
+        '1',
+        '3',
+        '4',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14'
       ]
     })
   })

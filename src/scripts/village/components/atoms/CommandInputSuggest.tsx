@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {State as SuggestState} from '../../reducers/suggest'
 import {getText} from '../../util'
+import {village} from '../../types'
 
 interface Props {
   data: SuggestState['data']

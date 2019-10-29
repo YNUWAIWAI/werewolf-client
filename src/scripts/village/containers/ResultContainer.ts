@@ -4,26 +4,26 @@ import {getInitial, getText} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-
+import {village} from '../types'
 type Action =
   | HideResult
 
 const mapStateToProps = (state: ReducerState): StateProps => {
-  const agents: StateProps['agents'] = {}
+  const characters: StateProps['characters'] = {}
 
   state.result.allIds.forEach(id => {
-    const a = state.result.agents[id]
+    const a = state.result.characters[id]
 
-    agents[id] = {
-      agentId: a.agentId,
-      agentImage: a.agentImage,
-      agentInitial: getInitial(a.agentName.en),
-      agentName: getText({
-        language: state.language,
-        languageMap: a.agentName
-      }),
+    characters[id] = {
       avatarImage: a.avatarImage,
       avatarName: a.avatarName,
+      characterId: a.characterId,
+      characterImage: a.characterImage,
+      characterInitial: getInitial(a.characterName.en),
+      characterName: getText({
+        language: state.language,
+        languageMap: a.characterName
+      }),
       result: a.result,
       roleImage: a.roleImage,
       roleName: getText({
@@ -33,7 +33,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       status: a.status
     }
   })
-  const myTeam = state.result.summary.kind === 'audience' ? '' : state.result.summary.myTeam // '' => 'audience'
+  const myTeam = state.result.summary.kind === village.SummaryType.audience ? '' : state.result.summary.myTeam // '' => 'audience'
   const summary: StateProps['summary'] = {
     loserTeam: state.result.summary.loserTeam,
     myTeam,
@@ -41,7 +41,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 
   return {
-    agents,
+    characters,
     losers: state.result.losers,
     me: state.result.me,
     summary,

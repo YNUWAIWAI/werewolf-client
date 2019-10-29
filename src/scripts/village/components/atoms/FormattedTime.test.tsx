@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as village from '../../types'
 import FormattedTime from './FormattedTime'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {village} from '../../types'
 
 const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 

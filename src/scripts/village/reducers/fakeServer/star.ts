@@ -1,28 +1,29 @@
-import * as village from '../../types'
-import {Agent} from '../../constants/Agent'
+import {Character} from '../../constants/Character'
 import {ImagePath} from '../../constants/ImagePath'
 import {Role} from '../../constants/Role'
+import {VERSION} from '../../constants/Version'
+import {village} from '../../types'
 
-const json: village.Payload$starMessage = {
+export const star: village.Payload$StarMessage = {
   '@context': [
     village.BaseContext.Base,
     village.BaseContext.Star
   ],
-  '@id': 'https://licos.online/state/0.2/village#3/starMessage',
+  '@id': `https://licos.online/state/${VERSION}/village#3/starMessage`,
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-  'date': 2,
+  'day': 2,
   'directionality': village.Directionality.clientToServer,
   'extensionalDisclosureRange': [],
   'intensionalDisclosureRange': village.Channel.private,
-  'myAgent': {
-    '@context': village.Context.Agent,
-    '@id': 'https://licos.online/state/0.2/village#3/myAgent',
+  'myCharacter': {
+    '@context': village.Context.Character,
+    '@id': `https://licos.online/state/${VERSION}/village#3/myCharacter`,
     'id': 1,
-    'image': ImagePath.Agent.a,
-    'name': Agent.a,
+    'image': ImagePath.Character.a,
+    'name': Character.a,
     'role': {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1/role',
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1/role`,
       'image': ImagePath.Role.werewolf,
       'name': Role.werewolf
     }
@@ -33,7 +34,7 @@ const json: village.Payload$starMessage = {
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
   'star': {
     '@context': village.Context.Star,
-    '@id': 'https://licos.online/state/0.2/village#3/star',
+    '@id': `https://licos.online/state/${VERSION}/village#3/star`,
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
     'isMarked': true,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -42,18 +43,16 @@ const json: village.Payload$starMessage = {
   'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
   'village': {
     '@context': village.Context.Village,
-    '@id': 'https://licos.online/state/0.2/village',
+    '@id': `https://licos.online/state/${VERSION}/village`,
     'chatSettings': {
       '@context': village.Context.ChatSettings,
-      '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-      'characterLimit': 140,
-      'limit': 10
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+      'maxLengthOfUnicodeCodePoints': 140,
+      'maxNumberOfChatMessages': 10
     },
     'id': 3,
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfAgents': 15
+    'totalNumberOfCharacters': 15
   }
 }
-
-export default json

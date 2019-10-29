@@ -1,10 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {
   SocketMessage,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
+import {lobby} from '../types'
 
 export interface State {
   readonly image: string
@@ -62,7 +62,7 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
           return item
         })
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.avatar: {
           const payload = action.payload

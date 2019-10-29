@@ -1,103 +1,103 @@
 import * as React from 'react'
-import * as village from './types'
-import {Agent} from '../../src/scripts/village/constants/Agent'
+import {Character} from '../../src/scripts/village/constants/Character'
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import language from './language'
+import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+import {village} from './types'
 
 storiesOf('village|Command/CommandSelection', module)
   .add('default', () => {
-    const agents = [
+    const characters = [
       {
         id: '2',
-        image: ImagePath.Agent.b,
+        image: ImagePath.Character.b,
         initial: 'B',
-        name: Agent.b.en
+        name: Character.b.en
       },
       {
         id: '3',
-        image: ImagePath.Agent.c,
+        image: ImagePath.Character.c,
         initial: 'C',
-        name: Agent.c.en
+        name: Character.c.en
       },
       {
         id: '4',
-        image: ImagePath.Agent.d,
+        image: ImagePath.Character.d,
         initial: 'D',
-        name: Agent.d.en
+        name: Character.d.en
       },
       {
         id: '5',
-        image: ImagePath.Agent.e,
+        image: ImagePath.Character.e,
         initial: 'E',
-        name: Agent.e.en
+        name: Character.e.en
       },
       {
         id: '6',
-        image: ImagePath.Agent.f,
+        image: ImagePath.Character.f,
         initial: 'F',
-        name: Agent.f.en
+        name: Character.f.en
       },
       {
         id: '7',
-        image: ImagePath.Agent.g,
+        image: ImagePath.Character.g,
         initial: 'G',
-        name: Agent.g.en
+        name: Character.g.en
       },
       {
         id: '8',
-        image: ImagePath.Agent.h,
+        image: ImagePath.Character.h,
         initial: 'H',
-        name: Agent.h.en
+        name: Character.h.en
       },
       {
         id: '9',
-        image: ImagePath.Agent.i,
+        image: ImagePath.Character.i,
         initial: 'I',
-        name: Agent.i.en
+        name: Character.i.en
       },
       {
         id: '10',
-        image: ImagePath.Agent.j,
+        image: ImagePath.Character.j,
         initial: 'J',
-        name: Agent.j.en
+        name: Character.j.en
       },
       {
         id: '11',
-        image: ImagePath.Agent.k,
+        image: ImagePath.Character.k,
         initial: 'K',
-        name: Agent.k.en
+        name: Character.k.en
       },
       {
         id: '12',
-        image: ImagePath.Agent.l,
+        image: ImagePath.Character.l,
         initial: 'L',
-        name: Agent.l.en
+        name: Character.l.en
       },
       {
         id: '13',
-        image: ImagePath.Agent.m,
+        image: ImagePath.Character.m,
         initial: 'M',
-        name: Agent.m.en
+        name: Character.m.en
       },
       {
         id: '14',
-        image: ImagePath.Agent.n,
+        image: ImagePath.Character.n,
         initial: 'N',
-        name: Agent.n.en
+        name: Character.n.en
       },
       {
         id: '15',
-        image: ImagePath.Agent.o,
+        image: ImagePath.Character.o,
         initial: 'O',
-        name: Agent.o.en
+        name: Character.o.en
       }
     ]
     const store = createStore(
@@ -110,7 +110,7 @@ storiesOf('village|Command/CommandSelection', module)
       <Provider store={store}>
         <IntlProvider>
           <CommandSelection
-            agents={agents}
+            characters={characters}
             descriptionId="CommandSelection.Description.noonVote.unfixed"
             fixed={false}
             handleSelectOption={id => action(`handleSelectOption id: ${id}`)}

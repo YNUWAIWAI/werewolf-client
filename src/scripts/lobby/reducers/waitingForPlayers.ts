@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {ChangeLobby, ConfirmKickOutPlayer, SocketMessage, Transition} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
+import {lobby} from '../types'
 
 export interface State {
   readonly isPlayer: boolean
@@ -25,7 +25,7 @@ export const initialState = {
 }
 const waitingForPlayers = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.CHANGE_LOBBY:
+    case ActionTypes.App.CHANGE_LOBBY:
       switch (action.lobby) {
         case 'human player':
           return {
@@ -90,7 +90,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         default:
           return state
       }
-    case ActionTypes.global.CONFIRM_KICK_OUT_PLAYER:
+    case ActionTypes.App.CONFIRM_KICK_OUT_PLAYER:
       return {
         ... state,
         kickOutToken: action.token
@@ -169,7 +169,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           }
         ]
       }
-    case ActionTypes.socket.MESSAGE:
+    case ActionTypes.Socket.MESSAGE:
       switch (action.payload.type) {
         case lobby.PayloadType.played: {
           return {

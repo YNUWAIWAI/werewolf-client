@@ -3,7 +3,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  date: state.base.date,
+  day: state.base.day,
   phase: state.base.phase
 })
 const InfoDayContainer = connect(

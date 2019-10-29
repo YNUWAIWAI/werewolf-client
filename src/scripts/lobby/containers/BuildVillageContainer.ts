@@ -70,29 +70,29 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
-    dispatch(changeAvatar(ActionTypes.Scope.buildVillage)(value))
+    dispatch(changeAvatar(ActionTypes.Scope.BuildVillage)(value))
   },
   handleMemberChange: value => {
-    dispatch(changeMember(ActionTypes.Scope.buildVillage)(value))
+    dispatch(changeMember(ActionTypes.Scope.BuildVillage)(value))
   },
   handleNumberChange: propName => value => {
     if (propName === 'numberOfPlayers') {
-      dispatch(changeNumberOfPlayers(ActionTypes.Scope.buildVillage)(value))
+      dispatch(changeNumberOfPlayers(ActionTypes.Scope.BuildVillage)(value))
     }
     if (propName === 'numberOfRobots') {
-      dispatch(changeNumberOfRobots(ActionTypes.Scope.buildVillage)(value))
+      dispatch(changeNumberOfRobots(ActionTypes.Scope.BuildVillage)(value))
     }
   },
   handleTextChange: propName => value => {
     if (propName === 'comment') {
-      dispatch(changeComment(ActionTypes.Scope.buildVillage)(value))
+      dispatch(changeComment(ActionTypes.Scope.BuildVillage)(value))
     }
     if (propName === 'villageName') {
-      dispatch(changeVillageName(ActionTypes.Scope.buildVillage)(value))
+      dispatch(changeVillageName(ActionTypes.Scope.BuildVillage)(value))
     }
   },
   handleValidityChange: propName => validity => {
-    dispatch(changeValidity(ActionTypes.Scope.buildVillage)(propName)(validity))
+    dispatch(changeValidity(ActionTypes.Scope.BuildVillage)(propName)(validity))
   },
   transition: target => {
     dispatch(transition(target))

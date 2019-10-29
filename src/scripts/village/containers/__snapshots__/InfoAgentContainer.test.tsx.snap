@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<InfoAgentContainer /> initialState 1`] = `"<div class=\\"vi--info--agent \\"><img class=\\"vi--info--agent--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/anonymous_50x50.png\\"></div>"`;
-
-exports[`<InfoAgentContainer /> mine.agent exists 1`] = `"<div class=\\"vi--info--agent \\"><div class=\\"vi--info--agent--initial\\">A</div><img class=\\"vi--info--agent--image\\" src=\\"https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png\\"><span class=\\"vi--info--agent--name\\">Adil</span></div>"`;

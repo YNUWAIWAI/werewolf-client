@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as village from '../../types'
 import ResultCellStatus from './ResultCellStatus'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {village} from '../../types'
 
 const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
@@ -10,7 +10,7 @@ describe('<ResultCellStatus />', () => {
   test('alive', () => {
     const warpper = mountWithIntl(
       <ResultCellStatus
-        status={village.AgentStatus.alive}
+        status={village.CharacterStatus.alive}
       />
     )
 
@@ -19,7 +19,7 @@ describe('<ResultCellStatus />', () => {
   test('dead', () => {
     const warpper = mountWithIntl(
       <ResultCellStatus
-        status={village.AgentStatus.dead}
+        status={village.CharacterStatus.dead}
       />
     )
 
@@ -28,7 +28,7 @@ describe('<ResultCellStatus />', () => {
   test('deathByAttack', () => {
     const warpper = mountWithIntl(
       <ResultCellStatus
-        status={village.AgentStatus.deathByAttack}
+        status={village.CharacterStatus.deathByAttack}
       />
     )
 
@@ -37,7 +37,7 @@ describe('<ResultCellStatus />', () => {
   test('deathByExecution', () => {
     const warpper = mountWithIntl(
       <ResultCellStatus
-        status={village.AgentStatus.deathByExecution}
+        status={village.CharacterStatus.deathByExecution}
       />
     )
 
@@ -46,7 +46,7 @@ describe('<ResultCellStatus />', () => {
   test('deathByFear', () => {
     const warpper = mountWithIntl(
       <ResultCellStatus
-        status={village.AgentStatus.deathByFear}
+        status={village.CharacterStatus.deathByFear}
       />
     )
 
@@ -55,7 +55,7 @@ describe('<ResultCellStatus />', () => {
   test('unnaturalDeath', () => {
     const warpper = mountWithIntl(
       <ResultCellStatus
-        status={village.AgentStatus.unnaturalDeath}
+        status={village.CharacterStatus.unnaturalDeath}
       />
     )
 

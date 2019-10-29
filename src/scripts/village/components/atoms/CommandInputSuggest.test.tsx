@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import CommandInputSuggest from './CommandInputSuggest'
 import {mount} from 'enzyme'
+import {village} from '../../types'
 
 describe('<CommandInputSuggest />', () => {
   describe('render', () => {

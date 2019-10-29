@@ -1,10 +1,10 @@
 import * as React from 'react'
-import * as village from '../../types'
 import InfoDay from './InfoDay'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {village} from '../../types'
 
 const store = fakeStore()
 const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
@@ -15,7 +15,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={0}
+            day={0}
             phase={village.Phase.morning}
           />
         </Provider>
@@ -27,7 +27,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={1}
+            day={1}
             phase={village.Phase.noon}
           />
         </Provider>
@@ -39,7 +39,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={1}
+            day={1}
             phase={village.Phase.night}
           />
         </Provider>
@@ -51,7 +51,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={-1}
+            day={-1}
             phase={village.Phase.postMortem}
           />
         </Provider>
@@ -63,7 +63,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={-1}
+            day={-1}
             phase={village.Phase.result}
           />
         </Provider>
@@ -75,7 +75,7 @@ describe('<Day />', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <InfoDay
-            date={1}
+            day={1}
             phase={village.Phase.flavorText}
           />
         </Provider>

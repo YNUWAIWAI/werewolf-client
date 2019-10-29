@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {FormattedMessage} from 'react-intl'
 import TeamIcon from '../atoms/TeamIcon'
+import {village} from '../../types'
 
 interface Props {
   readonly myTeam: village.Team | ''

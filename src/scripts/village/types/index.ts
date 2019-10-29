@@ -1,1 +1,4 @@
-export * from '../../../../types/village'
+export {
+  lobby,
+  village
+} from '../../../../types'

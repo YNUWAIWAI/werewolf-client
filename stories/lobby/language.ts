@@ -1,4 +1,4 @@
-import * as lobby from './types'
+import {lobby} from './types'
 
 const label = 'Language'
 const options = {
@@ -7,7 +7,7 @@ const options = {
 }
 const defaultValue = options.en
 
-export default {
+export const language = {
   defaultValue,
   label,
   options

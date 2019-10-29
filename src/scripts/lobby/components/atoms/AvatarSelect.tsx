@@ -7,9 +7,9 @@ declare global {
 // Workaround end
 
 import * as React from 'react'
-import * as lobby from '../../types'
 import {ActionMeta, ValueType} from 'react-select/src/types'
 import Select from 'react-select'
+import {lobby} from '../../types'
 import {useIntl} from 'react-intl'
 
 interface Props {

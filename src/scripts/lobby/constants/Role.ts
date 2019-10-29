@@ -1,6 +1,7 @@
-import * as lobby from '../types'
+import {VERSION} from './Version'
+import {lobby} from '../types'
 
-const BASE_URL = 'https://werewolf.world/image/0.3/role_icons/50x50withTI/'
+const BASE_URL = `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/`
 
 export const VILLAGER = {
   id: lobby.RoleId.villager,

@@ -5,7 +5,7 @@ interface Props {
   readonly className: string
   readonly id: string
   readonly image: string
-  readonly numberOfAgents: number
+  readonly numberOfCharacters: number
 }
 
 export default function MemberRole(props: Props) {
@@ -23,7 +23,7 @@ export default function MemberRole(props: Props) {
       <span
         className={`${props.className}--number`}
       >
-        {props.numberOfAgents}
+        {props.numberOfCharacters}
       </span>
       <FormattedMessage
         id={`MemberRole(${props.id})`}

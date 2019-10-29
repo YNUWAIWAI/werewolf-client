@@ -1,9 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {ChangePhase, SelectNo, SelectOption, SelectYes} from '../actions'
+import {village} from '../types'
 
 export interface State {
-  readonly id: village.AgentId
+  readonly id: village.CharacterId
   readonly visible: boolean
 }
 type Action =
@@ -18,14 +18,14 @@ export const initialState: State = {
 }
 const modal = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.global.SELECT_OPTION:
+    case ActionTypes.App.SELECT_OPTION:
       return {
-        id: action.agentId,
+        id: action.characterId,
         visible: true
       }
-    case ActionTypes.global.CHANGE_PHASE:
-    case ActionTypes.global.SELECT_NO:
-    case ActionTypes.global.SELECT_YES:
+    case ActionTypes.App.CHANGE_PHASE:
+    case ActionTypes.App.SELECT_NO:
+    case ActionTypes.App.SELECT_YES:
       return {
         ... state,
         visible: false

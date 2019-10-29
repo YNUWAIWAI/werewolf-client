@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleClickYes: type => {
     dispatch(selectYes())
     switch (type) {
-      case ActionTypes.global.KICK_OUT_PLAYER:
+      case ActionTypes.App.KICK_OUT_PLAYER:
         dispatch(kickOutPlayer())
         break
       default:

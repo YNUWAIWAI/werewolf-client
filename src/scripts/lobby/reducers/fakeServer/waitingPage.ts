@@ -1,5 +1,6 @@
-import * as lobby from '../../types'
-const json: lobby.Payload$watingPage = {
+import {lobby} from '../../types'
+
+export const waitingPage: lobby.Payload$WatingPage = {
   error: null,
   players: [
     {
@@ -103,5 +104,3 @@ const json: lobby.Payload$watingPage = {
     }
   }
 }
-
-export default json

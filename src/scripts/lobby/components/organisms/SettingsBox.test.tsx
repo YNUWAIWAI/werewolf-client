@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import SettingsBox, {PropName, Props} from './SettingsBox'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 describe('<SettingsBox />', () => {

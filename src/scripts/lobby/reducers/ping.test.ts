@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {ping, waitingPage} from './fakeServer'
 import reducer, {initialState} from './ping'
+import {lobby} from '../types'
 
 test('socket/MESSAGE watingPage', () => {
   expect(
@@ -9,7 +9,7 @@ test('socket/MESSAGE watingPage', () => {
       initialState,
       {
         payload: waitingPage,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
     )
   ).toStrictEqual(
@@ -30,7 +30,7 @@ test('socket/MESSAGE ping', () => {
       },
       {
         payload: ping,
-        type: ActionTypes.socket.MESSAGE
+        type: ActionTypes.Socket.MESSAGE
       }
     )
   ).toStrictEqual(

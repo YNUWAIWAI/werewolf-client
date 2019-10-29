@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import InfoAgent from '../../containers/InfoAgentContainer'
+import InfoCharacter from '../../containers/InfoCharacterContainer'
 import InfoDay from '../../containers/InfoDayContainer'
 import InfoRole from '../../containers/InfoRoleContainer'
 import InfoTeam from '../../containers/InfoTeamContainer'
@@ -10,19 +10,19 @@ export default function Info() {
     <div className="vi--info">
       <InfoDay />
       <FormattedMessage
-        id="Info.property.agent"
+        id="Info.property.character"
       >
         {
           text => (
             <div
-              className="vi--info--property agent"
+              className="vi--info--property character"
             >
               {text}
             </div>
           )
         }
       </FormattedMessage>
-      <InfoAgent />
+      <InfoCharacter />
       <FormattedMessage
         id="Info.property.role"
       >

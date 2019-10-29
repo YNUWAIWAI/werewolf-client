@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as village from '../../types'
 import CommandInputBox from './CommandInputBox'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<CommandInputBox />', () => {
   test('werewolf is unavailable', () => {
@@ -9,17 +9,17 @@ describe('<CommandInputBox />', () => {
     const handlePostChat = jest.fn().mockReturnValueOnce(handlePostChatEventHandler)
     const wrapper = shallow(
       <CommandInputBox
-        characterLimit={140}
         handlePostChat={handlePostChat}
         language={village.Language.en}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
         public={{
-          postCount: 0
+          numberOfChatMessages: 0
         }}
         suggesttedData={[]}
         werewolf={{
           available: false,
-          postCount: 0
+          numberOfChatMessages: 0
         }}
       />
     )
@@ -36,17 +36,17 @@ describe('<CommandInputBox />', () => {
     const handlePostChat = jest.fn().mockReturnValueOnce(handlePostChatEventHandler)
     const wrapper = shallow(
       <CommandInputBox
-        characterLimit={140}
         handlePostChat={handlePostChat}
         language={village.Language.en}
-        postCountLimit={10}
+        maxLengthOfUnicodeCodePoints={140}
+        maxNumberOfChatMessages={10}
         public={{
-          postCount: 0
+          numberOfChatMessages: 0
         }}
         suggesttedData={[]}
         werewolf={{
           available: true,
-          postCount: 0
+          numberOfChatMessages: 0
         }}
       />
     )

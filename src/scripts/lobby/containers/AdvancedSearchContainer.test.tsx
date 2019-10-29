@@ -1,11 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as lobby from '../types'
 import AdvancedSearch from '../components/templates/AdvancedSearch'
 import AdvancedSearchContainer from './AdvancedSearchContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
+import {lobby} from '../types'
 import {mount} from 'enzyme'
 
 describe('<AdvancedSearchContainer />', () => {
@@ -200,7 +200,7 @@ describe('<AdvancedSearchContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       avatar,
-      type: ActionTypes.advancedSearch.CHANGE_AVATAR
+      type: ActionTypes.AdvancedSearch.CHANGE_AVATAR
     })
   })
   test('handleCheckboxChange', () => {
@@ -272,7 +272,7 @@ describe('<AdvancedSearchContainer />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       checked,
       propName,
-      type: ActionTypes.advancedSearch.CHANGE_CHECKBOX
+      type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
     })
   })
   describe('handleNumberChange', () => {
@@ -343,7 +343,7 @@ describe('<AdvancedSearchContainer />', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         maximum,
-        type: ActionTypes.advancedSearch.CHANGE_MAXIMUM
+        type: ActionTypes.AdvancedSearch.CHANGE_MAXIMUM
       })
     })
     test('minimum', () => {
@@ -413,7 +413,7 @@ describe('<AdvancedSearchContainer />', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         minimum,
-        type: ActionTypes.advancedSearch.CHANGE_MINIMUM
+        type: ActionTypes.AdvancedSearch.CHANGE_MINIMUM
       })
     })
   })
@@ -485,7 +485,7 @@ describe('<AdvancedSearchContainer />', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         comment,
-        type: ActionTypes.advancedSearch.CHANGE_COMMENT
+        type: ActionTypes.AdvancedSearch.CHANGE_COMMENT
       })
     })
     test('hostName', () => {
@@ -555,7 +555,7 @@ describe('<AdvancedSearchContainer />', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         hostName,
-        type: ActionTypes.advancedSearch.CHANGE_HOST_NAME
+        type: ActionTypes.AdvancedSearch.CHANGE_HOST_NAME
       })
     })
     test('villageName', () => {
@@ -624,7 +624,7 @@ describe('<AdvancedSearchContainer />', () => {
       wrapper.find(AdvancedSearch).props().handleTextChange('villageName')(villageName)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.advancedSearch.CHANGE_VILLAGE_NAME,
+        type: ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME,
         villageName
       })
     })
@@ -697,7 +697,7 @@ describe('<AdvancedSearchContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       propName,
-      type: ActionTypes.advancedSearch.CHANGE_VALIDITY,
+      type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
       validity
     })
   })
@@ -768,7 +768,7 @@ describe('<AdvancedSearchContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       id,
-      type: ActionTypes.global.SELECT_VILLAGE
+      type: ActionTypes.App.SELECT_VILLAGE
     })
   })
   test('transition', () => {

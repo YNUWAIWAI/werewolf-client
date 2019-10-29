@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import IdSearch, {Props} from './IdSearch'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 describe('<IdSearch />', () => {

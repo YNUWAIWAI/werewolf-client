@@ -1,9 +1,22 @@
 import '../../../../types/indexeddb'
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types/lobby'
-import * as village from '../types'
-import {ClickNavigationButton, socket} from '../actions'
-import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
+import {
+  ClickNavigationButton,
+  socket
+} from '../actions'
+import {
+  Key,
+  Village,
+  WhatToDoNextInLobby,
+  connectDB,
+  deleteValue,
+  getValue,
+  updateValue
+} from '../../indexeddb'
+import {
+  lobby,
+  village
+} from '../types'
 import Ajv from 'ajv'
 import FDB from 'fake-indexeddb'
 import FDBCursor from 'fake-indexeddb/lib/FDBCursor'
@@ -37,7 +50,7 @@ import middleware from './indexedDB'
 (global as Record<string, any>).IDBTransaction = FDBTransaction;
 (global as Record<string, any>).IDBVersionChangeEvent = FDBVersionChangeEvent
 
-const BASE_URI = `https://werewolf.world/schema/${VERSION}`
+const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 const CLIENT2SERVER = `https://werewolf.world/lobby/schema/${VERSION}/client2server`
 
 const getAllValue = async () => {
@@ -46,7 +59,7 @@ const getAllValue = async () => {
   const objectStore = transaction.objectStore('licosDB')
 
   return Promise.all([
-    getValue<lobby.Payload$buildVillage>(objectStore, Key.buildVillagePayload),
+    getValue<lobby.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
     getValue<boolean>(objectStore, Key.isHost),
     getValue<lobby.Language>(objectStore, Key.lang),
     getValue<number>(objectStore, Key.nextGameVillageId),
@@ -86,7 +99,7 @@ test('RETURN_TO_LOBBY', async () => {
   const transaction = db.transaction('licosDB', 'readwrite')
   const objectStore = transaction.objectStore('licosDB')
   const v = {
-    lobbyType: lobby.Lobby.human,
+    lobbyType: lobby.LobbyType.human,
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
     villageId: 3
   }
@@ -110,7 +123,7 @@ test('RETURN_TO_LOBBY', async () => {
   expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.leaveWaitingPage)
   expect(dispatch).toHaveBeenCalled()
   expect(dispatch).toHaveBeenCalledWith({
-    type: ActionTypes.global.SHOW_LOBBY
+    type: ActionTypes.App.SHOW_LOBBY
   })
 })
 describe('NEXT_GAME', () => {
@@ -126,7 +139,7 @@ describe('NEXT_GAME', () => {
   const action: ClickNavigationButton = {
     type: ActionTypes.Navigation.NEXT_GAME
   }
-  const payload: village.Payload = {
+  const payload: village.Payload$BuildVillage = {
     avatar: lobby.Avatar.random,
     comment: '',
     hostPlayer: {
@@ -151,7 +164,7 @@ describe('NEXT_GAME', () => {
     },
     roleSetting: getCastFromNumberOfPlayers(15)[lobby.Member.A],
     token: avatarToken.humanPlayer,
-    type: village.PayloadType.buildVillage
+    type: lobby.PayloadType.buildVillage
   }
 
   test('validate the JSON', async () => {
@@ -176,7 +189,7 @@ describe('NEXT_GAME', () => {
 
     await Promise.all([
       updateValue<boolean>(objectStore, Key.isHost, true),
-      updateValue<village.Payload$buildVillage>(objectStore, Key.buildVillagePayload, payload)
+      updateValue<village.Payload$BuildVillage>(objectStore, Key.buildVillagePayload, payload)
     ])
     actionHandler(action)
     const [
@@ -196,7 +209,7 @@ describe('NEXT_GAME', () => {
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
   test('isHost: false', async () => {
@@ -209,7 +222,7 @@ describe('NEXT_GAME', () => {
 
     await Promise.all([
       updateValue<boolean>(objectStore, Key.isHost, false),
-      updateValue<village.Payload$buildVillage>(objectStore, Key.buildVillagePayload, payload)
+      updateValue<village.Payload$BuildVillage>(objectStore, Key.buildVillagePayload, payload)
     ])
     actionHandler(action)
     const [
@@ -229,7 +242,7 @@ describe('NEXT_GAME', () => {
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
     expect(dispatch).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.SHOW_LOBBY
+      type: ActionTypes.App.SHOW_LOBBY
     })
   })
 })
@@ -238,8 +251,8 @@ describe('indexedDB/INIT', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.indexedDB.INIT} = {
-    type: ActionTypes.indexedDB.INIT
+  const action: {type: ActionTypes.IndexedDB.INIT} = {
+    type: ActionTypes.IndexedDB.INIT
   }
 
   test('isHost: true', async () => {
@@ -250,7 +263,7 @@ describe('indexedDB/INIT', () => {
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
     const v = {
-      lobbyType: lobby.Lobby.human,
+      lobbyType: lobby.LobbyType.human,
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }
@@ -278,15 +291,15 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,
-      type: ActionTypes.global.CHANGE_LANGUAGE
+      type: ActionTypes.App.CHANGE_LANGUAGE
     })
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.ACTIVATE_NEXT_BUTTON,
+      type: ActionTypes.App.ACTIVATE_NEXT_BUTTON,
       villageId: -1
     })
     expect(dispatch).toHaveBeenCalledWith({
       token: v.token,
-      type: ActionTypes.global.READY,
+      type: ActionTypes.App.READY,
       villageId: v.villageId
     })
   })
@@ -298,7 +311,7 @@ describe('indexedDB/INIT', () => {
     const transaction = db.transaction('licosDB', 'readwrite')
     const objectStore = transaction.objectStore('licosDB')
     const v = {
-      lobbyType: lobby.Lobby.human,
+      lobbyType: lobby.LobbyType.human,
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
       villageId: 3
     }
@@ -326,11 +339,11 @@ describe('indexedDB/INIT', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalledWith({
       language: village.Language.en,
-      type: ActionTypes.global.CHANGE_LANGUAGE
+      type: ActionTypes.App.CHANGE_LANGUAGE
     })
     expect(dispatch).toHaveBeenCalledWith({
       token: v.token,
-      type: ActionTypes.global.READY,
+      type: ActionTypes.App.READY,
       villageId: v.villageId
     })
   })
@@ -340,7 +353,7 @@ describe('socket/MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const payload: village.Payload$nextGameInvitation = {
+  const payload: village.Payload$NextGameInvitation = {
     '@payload': village.PayloadType.nextGameInvitation,
     'type': village.PayloadType.nextGameInvitation,
     'villageId': 3
@@ -396,7 +409,7 @@ describe('socket/MESSAGE', () => {
     expect(whatToDoNextInLobby).toBeUndefined()
     expect(dispatch).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.SHOW_LOBBY
+      type: ActionTypes.App.SHOW_LOBBY
     })
   })
   test('isHost: false', async () => {

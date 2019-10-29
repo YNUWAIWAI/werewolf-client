@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 
 const logger: Middleware = store => next => action => {
-  if (action.type === ActionTypes.global.TICK) {
+  if (action.type === ActionTypes.App.TICK) {
     return next(action)
   }
   console.group(action.type)

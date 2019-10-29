@@ -1,15 +1,17 @@
 import * as React from 'react'
-import * as village from '../../types'
+import {ImagePath} from '../../constants/ImagePath'
 import ResultCellRoleImage from './ResultCellRoleImage'
+import {Role} from '../../constants/Role'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<ResultCellRoleImage />', () => {
   test('alive', () => {
     const warpper = shallow(
       <ResultCellRoleImage
-        image="https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png"
-        name="Villager"
-        status={village.AgentStatus.alive}
+        image={ImagePath.Role.villager}
+        name={Role.villager.en}
+        status={village.CharacterStatus.alive}
       />
     )
 
@@ -18,9 +20,9 @@ describe('<ResultCellRoleImage />', () => {
   test('dead', () => {
     const warpper = shallow(
       <ResultCellRoleImage
-        image="https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png"
-        name="Villager"
-        status={village.AgentStatus.dead}
+        image={ImagePath.Role.villager}
+        name={Role.villager.en}
+        status={village.CharacterStatus.dead}
       />
     )
 
@@ -29,9 +31,9 @@ describe('<ResultCellRoleImage />', () => {
   test('deathByAttack', () => {
     const warpper = shallow(
       <ResultCellRoleImage
-        image="https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png"
-        name="Villager"
-        status={village.AgentStatus.deathByAttack}
+        image={ImagePath.Role.villager}
+        name={Role.villager.en}
+        status={village.CharacterStatus.deathByAttack}
       />
     )
 
@@ -40,9 +42,9 @@ describe('<ResultCellRoleImage />', () => {
   test('deathByExecution', () => {
     const warpper = shallow(
       <ResultCellRoleImage
-        image="https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png"
-        name="Villager"
-        status={village.AgentStatus.deathByExecution}
+        image={ImagePath.Role.villager}
+        name={Role.villager.en}
+        status={village.CharacterStatus.deathByExecution}
       />
     )
 
@@ -51,9 +53,9 @@ describe('<ResultCellRoleImage />', () => {
   test('deathByFear', () => {
     const warpper = shallow(
       <ResultCellRoleImage
-        image="https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png"
-        name="Villager"
-        status={village.AgentStatus.deathByFear}
+        image={ImagePath.Role.villager}
+        name={Role.villager.en}
+        status={village.CharacterStatus.deathByFear}
       />
     )
 
@@ -62,9 +64,9 @@ describe('<ResultCellRoleImage />', () => {
   test('unnaturalDeath', () => {
     const warpper = shallow(
       <ResultCellRoleImage
-        image="https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png"
-        name="Villager"
-        status={village.AgentStatus.unnaturalDeath}
+        image={ImagePath.Role.villager}
+        name={Role.villager.en}
+        status={village.CharacterStatus.unnaturalDeath}
       />
     )
 

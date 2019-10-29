@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   ChangePhase,
   ClickNavigationButton,
@@ -11,13 +10,14 @@ import {
 } from '../actions'
 import {firstMorning, result} from './fakeServer'
 import reducer, {initialState} from './obfucator'
+import {village} from '../types'
 
 describe('CHANGE_PHASE', () => {
   test('noon -> night', () => {
     const action: ChangePhase = {
       from: village.Phase.noon,
       to: village.Phase.night,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.App.CHANGE_PHASE
     }
 
     expect(
@@ -34,7 +34,7 @@ describe('CHANGE_PHASE', () => {
     const action: ChangePhase = {
       from: village.Phase.night,
       to: village.Phase.result,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.App.CHANGE_PHASE
     }
 
     expect(
@@ -48,7 +48,7 @@ describe('CHANGE_PHASE', () => {
     const action: ChangePhase = {
       from: village.Phase.result,
       to: village.Phase.postMortem,
-      type: ActionTypes.global.CHANGE_PHASE
+      type: ActionTypes.App.CHANGE_PHASE
     }
 
     expect(
@@ -61,7 +61,7 @@ describe('CHANGE_PHASE', () => {
 })
 test('HIDE_RESULT', () => {
   const action: HideResult = {
-    type: ActionTypes.global.HIDE_RESULT
+    type: ActionTypes.App.HIDE_RESULT
   }
 
   expect(
@@ -76,7 +76,7 @@ test('HIDE_RESULT', () => {
 })
 test('SELECT_NO', () => {
   const action: SelectNo = {
-    type: ActionTypes.global.SELECT_NO
+    type: ActionTypes.App.SELECT_NO
   }
 
   expect(
@@ -91,8 +91,8 @@ test('SELECT_NO', () => {
 })
 test('SELECT_YES', () => {
   const action: SelectYes = {
-    agentId: '1',
-    type: ActionTypes.global.SELECT_YES
+    characterId: '1',
+    type: ActionTypes.App.SELECT_YES
   }
 
   expect(
@@ -107,8 +107,8 @@ test('SELECT_YES', () => {
 })
 test('SELECT_OPTION', () => {
   const action: SelectOption = {
-    agentId: '1',
-    type: ActionTypes.global.SELECT_OPTION
+    characterId: '1',
+    type: ActionTypes.App.SELECT_OPTION
   }
 
   expect(

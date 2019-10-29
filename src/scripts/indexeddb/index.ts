@@ -1,5 +1,5 @@
 /* eslint no-console: 0 */
-import * as lobby from './types/lobby'
+import {lobby} from './types'
 
 const VERSION = 2
 
@@ -12,7 +12,7 @@ export const enum Key {
   whatToDoNextInLobby = 'whatToDoNextInLobby'
 }
 export interface Village {
-  lobbyType: lobby.Lobby
+  lobbyType: lobby.LobbyType
   token: string
   villageId: number
 }

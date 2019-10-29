@@ -22,10 +22,10 @@ buildVillageをしたときにサーバーに送られるJSON
 ### 値
 
 schema:
-https://werewolf.world/lobby/schema/0.2/client2server/buildVillage.json
+https://werewolf.world/lobby/schema/0.3/client2server/buildVillage.json
 
 example:
-https://werewolf.world/lobby/example/0.2/client2server/buildVillage.json
+https://werewolf.world/lobby/example/0.3/client2server/buildVillage.json
 
 ## nextGameVillageId
 

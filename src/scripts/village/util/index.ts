@@ -1,9 +1,9 @@
-import * as village from '../types'
 import {
   UNPLAYABLE_ROLE,
   VILLAGER_TEAM,
   WEREHAMSTER_TEAM
 } from '../constants/Role'
+import {village} from '../types'
 
 export const countText = (text: string): number => Array.of(... text).length
 export const getBaseUri = (id: string): string => {
@@ -158,17 +158,17 @@ export const strToRoleId = (str: string): village.RoleId => {
   return maybe
 }
 
-export const getMyAgent = <T extends {name: village.LanguageMap, isMine?: boolean}>(agents: T[]): T => {
-  const maybe = agents.find(a => typeof a.isMine !== 'undefined' && a.isMine)
+export const getMyCharacter = <T extends {name: village.LanguageMap, isMine?: boolean}>(characters: T[]): T => {
+  const maybe = characters.find(a => typeof a.isMine !== 'undefined' && a.isMine)
 
   if (!maybe) {
-    throw Error('Not found my agent.')
+    throw Error('Not found my character.')
   }
 
   return maybe
 }
 
-export const getPlayableAgents = <T extends {name: village.LanguageMap}>(agents: T[]): T[] => agents
+export const getPlayableCharacters = <T extends {name: village.LanguageMap}>(characters: T[]): T[] => characters
 
 export const getPlayableRoles = <T extends {name: village.LanguageMap}>(roles: T[]): T[] => roles.filter(r => !UNPLAYABLE_ROLE.includes(strToRoleId(r.name.en)))
 
@@ -233,19 +233,19 @@ export const just = <T>(value: T | undefined | null): T => {
 
 export const spaceSeparatedToCamelCase = (str: string) => str.trim().replace(/\s+(?<head>\w)/g, (_, p1) => p1.toUpperCase())
 
-export const strToAgentStatus = (str: string): village.AgentStatus => {
-  const agentStatus = [
-    village.AgentStatus.alive,
-    village.AgentStatus.dead,
-    village.AgentStatus.deathByAttack,
-    village.AgentStatus.deathByExecution,
-    village.AgentStatus.deathByFear,
-    village.AgentStatus.unnaturalDeath
+export const strToCharacterStatus = (str: string): village.CharacterStatus => {
+  const characterStatus = [
+    village.CharacterStatus.alive,
+    village.CharacterStatus.dead,
+    village.CharacterStatus.deathByAttack,
+    village.CharacterStatus.deathByExecution,
+    village.CharacterStatus.deathByFear,
+    village.CharacterStatus.unnaturalDeath
   ]
-  const maybe = agentStatus.find(v => v === str)
+  const maybe = characterStatus.find(v => v === str)
 
   if (!maybe) {
-    throw new Error(`Unexpected AgentStatus: ${str}`)
+    throw new Error(`Unexpected CharacterStatus: ${str}`)
   }
 
   return maybe
@@ -254,9 +254,9 @@ export const strToAgentStatus = (str: string): village.AgentStatus => {
 export const strToMessage = (str: string): village.Message => {
   const message = [
     village.Message.boardMessage,
+    village.Message.chatMessage,
     village.Message.errorMessage,
     village.Message.flavorTextMessage,
-    village.Message.playerMessage,
     village.Message.scrollMessage,
     village.Message.systemMessage,
     village.Message.voteMessage

@@ -1,18 +1,18 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import MemberRole from './MemberRole'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('<MemberRole class="class" id="id" image="image" name="name" numberOfAgents={0} />', () => {
+test('<MemberRole class="class" id="id" image="image" name="name" numberOfCharacters={0} />', () => {
   const wrapper = mountWithIntl(
     <MemberRole
       className="class"
       id="villager"
       image="image"
-      numberOfAgents={0}
+      numberOfCharacters={0}
     />
   )
 

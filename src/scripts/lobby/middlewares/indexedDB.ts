@@ -1,12 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as lobby from '../types'
 import {Key, Village, WhatToDoNextInLobby, connectDB, deleteValue, getValue, updateValue} from '../../indexeddb'
 import {changeLobby, selectVillage, showVillage, socket} from '../actions'
 import {Middleware} from '.'
+import {lobby} from '../types'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.indexedDB.INIT: {
+    case ActionTypes.IndexedDB.INIT: {
       connectDB()
         .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
@@ -32,7 +32,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
           switch (whatToDoNextInLobby) {
             case WhatToDoNextInLobby.leaveWaitingPage: {
-              const payload: lobby.Payload$leaveWaitingPage = {
+              const payload: lobby.Payload$LeaveWaitingPage = {
                 lobby: villageInfo.lobbyType,
                 token: villageInfo.token,
                 type: lobby.PayloadType.leaveWaitingPage,
@@ -152,7 +152,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.socket.MESSAGE: {
+    case ActionTypes.Socket.MESSAGE: {
       switch (action.payload.type) {
         case lobby.PayloadType.played: {
           const payload = action.payload
@@ -212,7 +212,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           return next(action)
       }
     }
-    case ActionTypes.socket.SEND:
+    case ActionTypes.Socket.SEND:
       switch (action.payload.type) {
         case lobby.PayloadType.buildVillage: {
           const payload = action.payload
@@ -222,7 +222,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
               const transaction = db.transaction('licosDB', 'readwrite')
               const objectStore = transaction.objectStore('licosDB')
 
-              updateValue<lobby.Payload$buildVillage>(
+              updateValue<lobby.Payload$BuildVillage>(
                 objectStore,
                 Key.buildVillagePayload,
                 payload

@@ -1,5 +1,4 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import {
   ChangePredictionBoard,
   PostChat,
@@ -8,9 +7,17 @@ import {
   StarChat,
   socket
 } from '../actions'
-import {firstMorning, flavorText, myMessageOnChat} from '../reducers/fakeServer'
-import {Agent} from '../constants/Agent'
+import {
+  firstMorning,
+  flavorText,
+  myMessageOnChat
+} from '../reducers/fakeServer'
+import {
+  lobby,
+  village
+} from '../types'
 import Ajv from 'ajv'
+import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {VERSION} from '../constants/Version'
@@ -19,14 +26,14 @@ import fetch from 'node-fetch'
 import middleware from './client2server'
 
 const clientTimestamp = new Date('2006-10-07T12:06:56.568+09:00').toISOString()
-const BASE_URI = `https://werewolf.world/schema/${VERSION}`
+const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('CHANGE_PREDICTION_BOARD', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -34,34 +41,33 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     mine: {
-      agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      character: {
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
-        'image': ImagePath.Agent.a,
-        'name': Agent.a
+        'image': ImagePath.Character.a,
+        'name': Character.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
     },
     prediction: {
-      playerStatus: {
+      characterStatus: {
         allIds: [
           '1',
           '2',
@@ -80,109 +86,109 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         ],
         byId: {
           '1': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
             'id': '1',
-            'image': ImagePath.Agent.a,
-            'name': Agent.a,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.a,
+            'name': Character.a,
+            'status': village.CharacterStatus.alive
           },
           '2': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
             'id': '2',
-            'image': ImagePath.Agent.b,
-            'name': Agent.b,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.b,
+            'name': Character.b,
+            'status': village.CharacterStatus.alive
           },
           '3': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
             'id': '3',
-            'image': ImagePath.Agent.c,
-            'name': Agent.c,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.c,
+            'name': Character.c,
+            'status': village.CharacterStatus.alive
           },
           '4': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
             'id': '4',
-            'image': ImagePath.Agent.d,
-            'name': Agent.d,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.d,
+            'name': Character.d,
+            'status': village.CharacterStatus.alive
           },
           '5': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
             'id': '5',
-            'image': ImagePath.Agent.e,
-            'name': Agent.e,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.e,
+            'name': Character.e,
+            'status': village.CharacterStatus.alive
           },
           '6': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
             'id': '6',
-            'image': ImagePath.Agent.f,
-            'name': Agent.f,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.f,
+            'name': Character.f,
+            'status': village.CharacterStatus.alive
           },
           '7': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
             'id': '7',
-            'image': ImagePath.Agent.g,
-            'name': Agent.g,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.g,
+            'name': Character.g,
+            'status': village.CharacterStatus.alive
           },
           '8': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
             'id': '8',
-            'image': ImagePath.Agent.h,
-            'name': Agent.h,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.h,
+            'name': Character.h,
+            'status': village.CharacterStatus.alive
           },
           '9': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
             'id': '9',
-            'image': ImagePath.Agent.i,
-            'name': Agent.i,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.i,
+            'name': Character.i,
+            'status': village.CharacterStatus.alive
           },
           '10': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
             'id': '10',
-            'image': ImagePath.Agent.j,
-            'name': Agent.j,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.j,
+            'name': Character.j,
+            'status': village.CharacterStatus.alive
           },
           '11': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
             'id': '11',
-            'image': ImagePath.Agent.k,
-            'name': Agent.k,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.k,
+            'name': Character.k,
+            'status': village.CharacterStatus.alive
           },
           '12': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
             'id': '12',
-            'image': ImagePath.Agent.l,
-            'name': Agent.l,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.l,
+            'name': Character.l,
+            'status': village.CharacterStatus.alive
           },
           '13': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
             'id': '13',
-            'image': ImagePath.Agent.m,
-            'name': Agent.m,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.m,
+            'name': Character.m,
+            'status': village.CharacterStatus.alive
           },
           '14': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
             'id': '14',
-            'image': ImagePath.Agent.n,
-            'name': Agent.n,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.n,
+            'name': Character.n,
+            'status': village.CharacterStatus.alive
           },
           '15': {
-            '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+            '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
             'id': '15',
-            'image': ImagePath.Agent.o,
-            'name': Agent.o,
-            'status': village.AgentStatus.alive
+            'image': ImagePath.Character.o,
+            'name': Character.o,
+            'status': village.CharacterStatus.alive
           }
         }
       },
@@ -199,60 +205,60 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         ],
         byId: {
           [village.RoleId.villager]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
             'id': village.RoleId.villager,
             'image': ImagePath.Role.villager,
             'name': Role.villager,
-            'numberOfAgents': 6
+            'numberOfCharacters': 6
           },
           [village.RoleId.seer]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
             'id': village.RoleId.seer,
             'image': ImagePath.Role.seer,
             'name': Role.seer,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.medium]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#medium',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
             'id': village.RoleId.medium,
             'image': ImagePath.Role.medium,
             'name': Role.medium,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.hunter]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#hunter',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
             'id': village.RoleId.hunter,
             'image': ImagePath.Role.hunter,
             'name': Role.hunter,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.mason]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#mason',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
             'id': village.RoleId.mason,
             'image': ImagePath.Role.mason,
             'name': Role.mason,
-            'numberOfAgents': 2
+            'numberOfCharacters': 2
           },
           [village.RoleId.madman]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#madman',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
             'id': village.RoleId.madman,
             'image': ImagePath.Role.madman,
             'name': Role.madman,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           },
           [village.RoleId.werewolf]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#werewolf',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
             'id': village.RoleId.werewolf,
             'image': ImagePath.Role.werewolf,
             'name': Role.werewolf,
-            'numberOfAgents': 2
+            'numberOfCharacters': 2
           },
           [village.RoleId.werehamster]: {
-            '@id': 'https://licos.online/state/0.2/village#3/role#werehamster',
+            '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
             'id': village.RoleId.werehamster,
             'image': ImagePath.Role.werehamster,
             'name': Role.werehamster,
-            'numberOfAgents': 1
+            'numberOfCharacters': 1
           }
         }
       },
@@ -270,38 +276,38 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: ChangePredictionBoard = {
+    characterId: '2',
     nextState: village.BoardState.CIRCLE,
-    playerId: '2',
     roleId: village.RoleId.villager,
-    type: ActionTypes.global.CHANGE_PREDICTION_BOARD
+    type: ActionTypes.App.CHANGE_PREDICTION_BOARD
   }
-  const payload: village.Payload$boardMessage = {
+  const payload: village.Payload$BoardMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Board
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/boardMessage',
-    'agent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+    '@id': `https://licos.online/state/${VERSION}/village#3/boardMessage`,
+    'character': {
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
       'id': 2,
-      'image': ImagePath.Agent.b,
-      'name': Agent.b
+      'image': ImagePath.Character.b,
+      'name': Character.b
     },
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
-    'myAgent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+    'myCharacter': {
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': ImagePath.Agent.a,
-      'name': Agent.a,
+      'image': ImagePath.Character.a,
+      'name': Character.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -312,7 +318,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'prediction': village.BoardState.CIRCLE,
     'role': {
       '@context': village.Context.Role,
-      '@id': 'https://licos.online/state/0.2/village#3/role#villager',
+      '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
       'image': ImagePath.Role.villager,
       'name': Role.villager
     },
@@ -320,17 +326,17 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
@@ -341,11 +347,11 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
-        .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/board.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
         .then(res => res.json()),
@@ -387,16 +393,16 @@ describe('CHANGE_PREDICTION_BOARD', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
 describe('POST_CHAT', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.morning,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -404,27 +410,26 @@ describe('POST_CHAT', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     mine: {
-      agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      character: {
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
-        'image': ImagePath.Agent.a,
-        'name': Agent.a
+        'image': ImagePath.Character.a,
+        'name': Character.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
@@ -440,38 +445,39 @@ describe('POST_CHAT', () => {
   const action: PostChat = {
     channel: village.InputChannel.public,
     text: 'text',
-    type: ActionTypes.global.POST_CHAT
+    type: ActionTypes.App.POST_CHAT
   }
-  const payload: village.Payload$playerMessage = {
+  const payload: village.Payload$ChatMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Chat
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/playerMessage',
-    'agent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+    '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
+    'character': {
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': ImagePath.Agent.a,
-      'name': Agent.a
+      'image': ImagePath.Character.a,
+      'name': Character.a
     },
-    'characterLimit': 140,
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.public,
+    'isFromServer': true,
     'isMine': true,
     'isOver': false,
-    'myAgent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+    'maxLengthOfUnicodeCodePoints': 140,
+    'myCharacter': {
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': ImagePath.Agent.a,
-      'name': Agent.a,
+      'image': ImagePath.Character.a,
+      'name': Character.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -487,28 +493,28 @@ describe('POST_CHAT', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-      fetch(`${BASE_URI}/playerMessage.json`)
+      fetch(`${BASE_URI}/chatMessage.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
         .then(res => res.json()),
@@ -537,7 +543,7 @@ describe('POST_CHAT', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(`${BASE_URI}/playerMessage.json`, payload)
+    const validate = ajv.validate(`${BASE_URI}/chatMessage.json`, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -552,7 +558,7 @@ describe('POST_CHAT', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -568,12 +574,12 @@ describe('READY', () => {
   const villageId = 3
   const action: Ready = {
     token,
-    type: ActionTypes.global.READY,
+    type: ActionTypes.App.READY,
     villageId
   }
-  const payload: village.Payload$ready = {
+  const payload: village.Payload$Ready = {
     token,
-    type: village.PayloadType.ready,
+    type: lobby.PayloadType.ready,
     villageId
   }
 
@@ -594,16 +600,16 @@ describe('READY', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
 describe('SELECT_YES', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.noon,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -611,16 +617,15 @@ describe('SELECT_YES', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     commandSelection: {
@@ -642,101 +647,101 @@ describe('SELECT_YES', () => {
       ],
       byId: {
         '2': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
           'id': '2',
-          'image': ImagePath.Agent.b,
-          'name': Agent.b
+          'image': ImagePath.Character.b,
+          'name': Character.b
         },
         '3': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#3',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#3`,
           'id': '3',
-          'image': ImagePath.Agent.c,
-          'name': Agent.c
+          'image': ImagePath.Character.c,
+          'name': Character.c
         },
         '4': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#4',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#4`,
           'id': '4',
-          'image': ImagePath.Agent.d,
-          'name': Agent.d
+          'image': ImagePath.Character.d,
+          'name': Character.d
         },
         '5': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#5',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#5`,
           'id': '5',
-          'image': ImagePath.Agent.e,
-          'name': Agent.e
+          'image': ImagePath.Character.e,
+          'name': Character.e
         },
         '6': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#6',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#6`,
           'id': '6',
-          'image': ImagePath.Agent.f,
-          'name': Agent.f
+          'image': ImagePath.Character.f,
+          'name': Character.f
         },
         '7': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#7',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#7`,
           'id': '7',
-          'image': ImagePath.Agent.g,
-          'name': Agent.g
+          'image': ImagePath.Character.g,
+          'name': Character.g
         },
         '8': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#8',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#8`,
           'id': '8',
-          'image': ImagePath.Agent.h,
-          'name': Agent.h
+          'image': ImagePath.Character.h,
+          'name': Character.h
         },
         '9': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#9',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#9`,
           'id': '9',
-          'image': ImagePath.Agent.i,
-          'name': Agent.i
+          'image': ImagePath.Character.i,
+          'name': Character.i
         },
         '10': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#10',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#10`,
           'id': '10',
-          'image': ImagePath.Agent.j,
-          'name': Agent.j
+          'image': ImagePath.Character.j,
+          'name': Character.j
         },
         '11': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#11',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#11`,
           'id': '11',
-          'image': ImagePath.Agent.k,
-          'name': Agent.k
+          'image': ImagePath.Character.k,
+          'name': Character.k
         },
         '12': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#12',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#12`,
           'id': '12',
-          'image': ImagePath.Agent.l,
-          'name': Agent.l
+          'image': ImagePath.Character.l,
+          'name': Character.l
         },
         '13': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#13',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#13`,
           'id': '13',
-          'image': ImagePath.Agent.m,
-          'name': Agent.m
+          'image': ImagePath.Character.m,
+          'name': Character.m
         },
         '14': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#14',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#14`,
           'id': '14',
-          'image': ImagePath.Agent.n,
-          'name': Agent.n
+          'image': ImagePath.Character.n,
+          'name': Character.n
         },
         '15': {
-          '@id': 'https://licos.online/state/0.2/village#3/agent#15',
+          '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
           'id': '15',
-          'image': ImagePath.Agent.o,
-          'name': Agent.o
+          'image': ImagePath.Character.o,
+          'name': Character.o
         }
       },
       fixed: true
     },
     mine: {
-      agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      character: {
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
-        'image': ImagePath.Agent.a,
-        'name': Agent.a
+        'image': ImagePath.Character.a,
+        'name': Character.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
@@ -750,36 +755,36 @@ describe('SELECT_YES', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: SelectYes = {
-    agentId: '2',
-    type: ActionTypes.global.SELECT_YES
+    characterId: '2',
+    type: ActionTypes.App.SELECT_YES
   }
-  const payload: village.Payload$voteMessage = {
+  const payload: village.Payload$VoteMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Vote
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/voteMessage',
-    'agent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#2',
+    '@id': `https://licos.online/state/${VERSION}/village#3/voteMessage`,
+    'character': {
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#2`,
       'id': 2,
-      'image': ImagePath.Agent.b,
-      'name': Agent.b
+      'image': ImagePath.Character.b,
+      'name': Character.b
     },
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
-    'myAgent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+    'myCharacter': {
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': ImagePath.Agent.a,
-      'name': Agent.a,
+      'image': ImagePath.Character.a,
+      'name': Character.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -791,17 +796,17 @@ describe('SELECT_YES', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
@@ -812,9 +817,9 @@ describe('SELECT_YES', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
-        .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
         .then(res => res.json()),
@@ -856,16 +861,16 @@ describe('SELECT_YES', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
 describe('STAR', () => {
   const store = fakeStore({
     base: {
-      '@id': 'https://licos.online/state/0.2/village#3',
+      '@id': `https://licos.online/state/${VERSION}/village#3`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'date': 1,
+      'day': 1,
       'intensionalDisclosureRange': village.Channel.private,
       'phase': village.Phase.noon,
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -873,48 +878,47 @@ describe('STAR', () => {
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
       'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
       'village': {
-        '@context': village.Context.Village,
-        '@id': 'https://licos.online/state/0.2/village',
+        '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
-          characterLimit: 140,
-          limit: 10
+          maxLengthOfUnicodeCodePoints: 140,
+          maxNumberOfChatMessages: 10
         },
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfAgents': 15
+        'totalNumberOfCharacters': 15
       }
     },
     chat: {
       allIds: ['chat0'],
       byId: {
         chat0: {
-          agentId: '1',
+          characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-          date: 1,
+          day: 1,
           id: 12,
-          image: ImagePath.Agent.a,
+          image: ImagePath.Character.a,
           intensionalDisclosureRange: village.Channel.public,
           isMarked: false,
           isMine: true,
-          name: Agent.a,
+          name: Character.a,
           phaseStartTime: '2006-10-07T12:06:56.568+09:00',
           phaseTimeLimit: 600,
           serverTimestamp: '2006-10-07T12:06:56.568+09:00',
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-          type: 'item'
+          type: village.ChatItemType.item
         }
       }
     },
     mine: {
-      agent: {
-        '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+      character: {
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
         'id': 1,
-        'image': ImagePath.Agent.a,
-        'name': Agent.a
+        'image': ImagePath.Character.a,
+        'name': Character.a
       },
       role: {
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer
@@ -930,28 +934,28 @@ describe('STAR', () => {
   const action: StarChat = {
     id: 'chat0',
     isMarked: true,
-    type: ActionTypes.global.STAR
+    type: ActionTypes.App.STAR
   }
-  const payload: village.Payload$starMessage = {
+  const payload: village.Payload$StarMessage = {
     '@context': [
       village.BaseContext.Base,
       village.BaseContext.Star
     ],
-    '@id': 'https://licos.online/state/0.2/village#3/starMessage',
+    '@id': `https://licos.online/state/${VERSION}/village#3/starMessage`,
     clientTimestamp,
-    'date': 1,
+    'day': 1,
     'directionality': village.Directionality.clientToServer,
     'extensionalDisclosureRange': [],
     'intensionalDisclosureRange': village.Channel.private,
-    'myAgent': {
-      '@context': village.Context.Agent,
-      '@id': 'https://licos.online/state/0.2/village#3/agent#1',
+    'myCharacter': {
+      '@context': village.Context.Character,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': ImagePath.Agent.a,
-      'name': Agent.a,
+      'image': ImagePath.Character.a,
+      'name': Character.a,
       'role': {
         '@context': village.Context.Role,
-        '@id': 'https://licos.online/state/0.2/village#3/role#seer',
+        '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'image': ImagePath.Role.seer,
         'name': Role.seer
       }
@@ -962,7 +966,7 @@ describe('STAR', () => {
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'star': {
       '@context': village.Context.Star,
-      '@id': 'https://licos.online/state/0.2/village#3/star',
+      '@id': `https://licos.online/state/${VERSION}/village#3/star`,
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'isMarked': true,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -971,17 +975,17 @@ describe('STAR', () => {
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
       '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
         '@context': village.Context.ChatSettings,
-        '@id': 'https://licos.online/state/0.2/village#3/chatSettings',
-        'characterLimit': 140,
-        'limit': 10
+        '@id': `https://licos.online/state/${VERSION}/village#3/chatSettings`,
+        'maxLengthOfUnicodeCodePoints': 140,
+        'maxNumberOfChatMessages': 10
       },
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   }
 
@@ -992,9 +996,9 @@ describe('STAR', () => {
         .then(res => res.json()),
       fetch(`${BASE_URI}/base.json`)
         .then(res => res.json()),
-      fetch(`${BASE_URI}/agent.json`)
-        .then(res => res.json()),
       fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/character.json`)
         .then(res => res.json()),
       fetch(`${BASE_URI}/chat.json`)
         .then(res => res.json()),
@@ -1035,7 +1039,7 @@ describe('STAR', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       payload,
-      type: ActionTypes.socket.SEND
+      type: ActionTypes.Socket.SEND
     })
   })
 })
@@ -1051,8 +1055,8 @@ describe('socket/MESSAGE', () => {
     const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
     const villageId = 3
     const action = socket.message(flavorText)
-    const payload: village.Payload$receivedFlavorTextMessage = {
-      date: 0,
+    const payload: village.Payload$ReceivedFlavorTextMessage = {
+      day: 0,
       phase: village.Phase.flavorText,
       token,
       type: village.PayloadType.receivedFlavorTextMessage,
@@ -1086,11 +1090,11 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })
-  describe('receivedPlayerMessage', () => {
+  describe('receivedChatMessage', () => {
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -1101,18 +1105,18 @@ describe('socket/MESSAGE', () => {
     const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
     const villageId = 3
     const action = socket.message(myMessageOnChat)
-    const payload: village.Payload$receivedPlayerMessage = {
+    const payload: village.Payload$ReceivedChatMessage = {
       clientTimestamp: '2006-10-07T12:06:56.568+09:00',
       serverTimestamp: '2006-10-07T12:06:56.568+09:00',
       token,
-      type: village.PayloadType.receivedPlayerMessage,
+      type: village.PayloadType.receivedChatMessage,
       villageId
     }
 
     test('validate the JSON of play', async () => {
       expect.hasAssertions()
       const schemas = await Promise.all([
-        fetch(`${BASE_URI}/receipt/receivedPlayerMessage.json`)
+        fetch(`${BASE_URI}/receipt/receivedChatMessage.json`)
           .then(res => res.json()),
         fetch(`${BASE_URI}/avatar.json`)
           .then(res => res.json()),
@@ -1124,7 +1128,7 @@ describe('socket/MESSAGE', () => {
       const ajv = new Ajv({
         schemas
       })
-      const validate = ajv.validate(`${BASE_URI}/receipt/receivedPlayerMessage.json`, payload)
+      const validate = ajv.validate(`${BASE_URI}/receipt/receivedChatMessage.json`, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -1136,7 +1140,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })
@@ -1151,8 +1155,8 @@ describe('socket/MESSAGE', () => {
     const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
     const villageId = 3
     const action = socket.message(firstMorning)
-    const payload: village.Payload$receivedSystemMessage = {
-      date: 1,
+    const payload: village.Payload$ReceivedSystemMessage = {
+      day: 1,
       phase: village.Phase.morning,
       token,
       type: village.PayloadType.receivedSystemMessage,
@@ -1186,7 +1190,7 @@ describe('socket/MESSAGE', () => {
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         payload,
-        type: ActionTypes.socket.SEND
+        type: ActionTypes.Socket.SEND
       })
     })
   })

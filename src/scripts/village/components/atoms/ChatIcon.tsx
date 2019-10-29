@@ -1,11 +1,11 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Audience from './svg/Audience'
 import Grave from './svg/Grave'
 import Master from './svg/Master'
 import Private from './svg/Private'
 import Public from './svg/Public'
 import Werewolf from './svg/Werewolf'
+import {village} from '../../types'
 
 export interface Props {
   readonly channel: village.Channel

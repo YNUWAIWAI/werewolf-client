@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import * as village from '../types'
 import reducer, {initialState} from './language'
+import {village} from '../types'
 
 test('CHANGE_LANGUAGE', () => {
   expect(
@@ -8,7 +8,7 @@ test('CHANGE_LANGUAGE', () => {
       initialState,
       {
         language: village.Language.en,
-        type: ActionTypes.global.CHANGE_LANGUAGE
+        type: ActionTypes.App.CHANGE_LANGUAGE
       }
     )
   ).toStrictEqual(

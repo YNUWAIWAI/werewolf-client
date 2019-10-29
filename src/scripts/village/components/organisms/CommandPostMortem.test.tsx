@@ -1,8 +1,8 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
-import * as village from '../../types'
 import CommandPostMortem from './CommandPostMortem'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 test('<CommandPostMortem />', () => {
   const handleNavigationClick = jest.fn()
@@ -19,10 +19,10 @@ test('<CommandPostMortem />', () => {
   ]
   const wrapper = shallow(
     <CommandPostMortem
-      characterLimit={140}
       handleNavigationClick={handleNavigationClick}
       handlePostChat={handlePostChat}
       language={village.Language.en}
+      maxLengthOfUnicodeCodePoints={140}
       navigation={navigation}
       suggesttedData={[]}
     />

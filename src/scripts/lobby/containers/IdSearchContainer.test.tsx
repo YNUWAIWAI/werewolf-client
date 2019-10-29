@@ -64,7 +64,7 @@ describe('<IdSearchContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       id,
-      type: ActionTypes.idSearch.CHANGE_SEARCH_ID
+      type: ActionTypes.IdSearch.CHANGE_SEARCH_ID
     })
   })
   test('handleValidityChange', () => {
@@ -98,7 +98,7 @@ describe('<IdSearchContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       propName: 'id',
-      type: ActionTypes.idSearch.CHANGE_VALIDITY,
+      type: ActionTypes.IdSearch.CHANGE_VALIDITY,
       validity
     })
   })
@@ -133,7 +133,7 @@ describe('<IdSearchContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       id,
-      type: ActionTypes.global.SELECT_VILLAGE
+      type: ActionTypes.App.SELECT_VILLAGE
     })
   })
   test('transition', () => {

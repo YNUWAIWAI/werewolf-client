@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as village from '../../types'
 import {countText, getChannelFromInputChennel, getText, isValidTextLength, spaceSeparatedToCamelCase} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
@@ -9,14 +8,15 @@ import {FormattedMessage} from 'react-intl'
 import Fuse from 'fuse.js'
 import {State as SuggestState} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
+import {village} from '../../types'
 
 interface Props {
-  readonly characterLimit: number
   readonly handlePostChat: (value: string) => void
   readonly inputChannel: village.InputChannel
   readonly language: village.Language
-  readonly postCount: number
-  readonly postCountLimit: number
+  readonly maxLengthOfUnicodeCodePoints: number
+  readonly maxNumberOfChatMessages: number
+  readonly numberOfChatMessages: number
   readonly suggesttedData: SuggestState['data']
 }
 interface State {
@@ -78,6 +78,10 @@ export default class CommandInput extends React.Component<Props, State> {
     }
     this.fuse = new Fuse(props.suggesttedData, options)
     this.handleSuggestClick = this.handleSuggestClick.bind(this)
+  }
+
+  public shouldComponentUpdate() {
+    return true
   }
 
   private textareaRef = React.createRef<HTMLTextAreaElement>()
@@ -197,14 +201,14 @@ export default class CommandInput extends React.Component<Props, State> {
         return true
       case village.InputChannel.public:
       case village.InputChannel.werewolf:
-        return this.props.postCount < this.props.postCountLimit
+        return this.props.numberOfChatMessages < this.props.maxNumberOfChatMessages
       default:
         throw Error('props.inputChannel: unkonwn')
     }
   }
 
   public isValidTextLength() {
-    return isValidTextLength(this.state.text, this.props.characterLimit, 1)
+    return isValidTextLength(this.state.text, this.props.maxLengthOfUnicodeCodePoints, 1)
   }
 
   public updateCaretPosition(caretPosition: number) {
@@ -306,8 +310,8 @@ export default class CommandInput extends React.Component<Props, State> {
         />
         <CommandInputPostCounter
           inputChannel={this.props.inputChannel}
-          postCount={this.props.postCount}
-          postCountLimit={this.props.postCountLimit}
+          maxNumberOfChatMessages={this.props.maxNumberOfChatMessages}
+          numberOfChatMessages={this.props.numberOfChatMessages}
         />
         <FormattedMessage id="CommandInput.send">
           {

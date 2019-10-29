@@ -49,7 +49,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: avatar,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(
@@ -66,7 +66,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: enterHumanPlayerLobby,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(
@@ -176,7 +176,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: enterOnymousAudienceLobby,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(
@@ -189,7 +189,7 @@ describe('socket/MESSAGE', () => {
         initialState,
         {
           payload: enterRobotPlayerLobby,
-          type: ActionTypes.socket.MESSAGE
+          type: ActionTypes.Socket.MESSAGE
         }
       )
     ).toStrictEqual(

@@ -4,7 +4,7 @@ import {tick} from '../actions'
 
 const timer: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.global.PROLOGUE:
+    case ActionTypes.App.PROLOGUE:
       setInterval(
         () => {
           store.dispatch(tick({

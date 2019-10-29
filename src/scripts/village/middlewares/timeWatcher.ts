@@ -1,25 +1,25 @@
-import * as village from '../types'
-import {changeDate, changePhase} from '../actions'
+import * as ActionTypes from '../constants/ActionTypes'
+import {changeDay, changePhase} from '../actions'
 import {Middleware} from '.'
-import {socket} from '../constants/ActionTypes'
+import {village} from '../types'
 
 const timeWatcher: Middleware = store => next => action => {
-  if (action.type === socket.MESSAGE) {
+  if (action.type === ActionTypes.Socket.MESSAGE) {
     if (
       action.payload['@payload'] === village.Message.boardMessage ||
+      action.payload['@payload'] === village.Message.chatMessage ||
       action.payload['@payload'] === village.Message.errorMessage ||
       action.payload['@payload'] === village.Message.flavorTextMessage ||
-      action.payload['@payload'] === village.Message.playerMessage ||
       action.payload['@payload'] === village.Message.scrollMessage ||
       action.payload['@payload'] === village.Message.systemMessage ||
       action.payload['@payload'] === village.Message.voteMessage
     ) {
       const base = store.getState().base
 
-      if (action.payload.date !== base.date) {
-        store.dispatch(changeDate({
-          from: base.date,
-          to: action.payload.date
+      if (action.payload.day !== base.day) {
+        store.dispatch(changeDay({
+          from: base.day,
+          to: action.payload.day
         }))
       }
       if (action.payload.phase !== base.phase) {

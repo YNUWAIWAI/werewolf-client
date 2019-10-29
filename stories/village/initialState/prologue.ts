@@ -1,14 +1,15 @@
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
-import * as village from '../types'
-import {Agent} from '../../../src/scripts/village/constants/Agent'
+import {Character} from '../../../src/scripts/village/constants/Character'
 import {Content} from '../../../src/scripts/village/reducers/command'
 import {ReducerState} from '../../../src/scripts/village/reducers'
+import {VERSION} from '../../../src/scripts/village/constants/Version'
 
-const state: ReducerState = {
+import {village} from '../types'
+export const prologue: ReducerState = {
   base: {
-    '@id': 'https://licos.online/state/0.2/village#3',
+    '@id': `https://licos.online/state/${VERSION}/village#3`,
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'date': 0,
+    'day': 0,
     'intensionalDisclosureRange': village.Channel.private,
     'phase': village.Phase.flavorText,
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
@@ -16,52 +17,51 @@ const state: ReducerState = {
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
     'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
     'village': {
-      '@context': village.Context.Village,
-      '@id': 'https://licos.online/state/0.2/village',
+      '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
-        characterLimit: 140,
-        limit: 10
+        maxLengthOfUnicodeCodePoints: 140,
+        maxNumberOfChatMessages: 10
       },
       'id': 3,
       'lang': village.Language.ja,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfAgents': 15
+      'totalNumberOfCharacters': 15
     }
   },
   chat: {
     allIds: ['chat0', 'chat1'],
     byId: {
       'chat0': {
-        'agentId': '1',
+        'characterId': '1',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'date': 1,
+        'day': 1,
         'id': 1,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/a_120x120.png',
+        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/a_120x120.png`,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
-        'name': Agent.a,
+        'name': Character.a,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': 'Then, who are the werewolves?',
-        'type': 'item'
+        'type': village.ChatItemType.item
       },
       'chat1': {
-        'agentId': '9',
+        'characterId': '9',
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
-        'date': 1,
+        'day': 1,
         'id': 2,
-        'image': 'https://werewolf.world/image/0.3/agent_icons/120x120/i_120x120.png',
+        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/i_120x120.png`,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
-        'name': Agent.i,
+        'name': Character.i,
         'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
         'phaseTimeLimit': 600,
         'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
         'text': '>>1 I guess Pamela is a werewolf.',
-        'type': 'item'
+        'type': village.ChatItemType.item
       }
     }
   },
@@ -80,11 +80,11 @@ const state: ReducerState = {
   },
   commandInputBox: {
     public: {
-      postCount: 0
+      numberOfChatMessages: 0
     },
     werewolf: {
       available: true,
-      postCount: 0
+      numberOfChatMessages: 0
     }
   },
   commandPostMortem: {
@@ -126,7 +126,7 @@ const state: ReducerState = {
     visible: false
   },
   prediction: {
-    playerStatus: {
+    characterStatus: {
       allIds: [],
       byId: {}
     },
@@ -141,12 +141,12 @@ const state: ReducerState = {
     table: {}
   },
   result: {
-    agents: {},
     allIds: [],
+    characters: {},
     losers: [],
     me: null,
     summary: {
-      kind: 'audience',
+      kind: village.SummaryType.audience,
       loserTeam: new Set(),
       winnerTeam: village.Team.villager
     },
@@ -163,5 +163,3 @@ const state: ReducerState = {
     time: 0
   }
 }
-
-export default state

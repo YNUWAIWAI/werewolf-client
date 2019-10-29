@@ -1,1 +1,1 @@
-export * from '../../../types/lobby'
+export {lobby} from '../../../types'

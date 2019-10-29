@@ -1,16 +1,17 @@
 import * as React from 'react'
-import * as village from '../../types'
 import Prediction, {Props} from './Prediction'
+import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
+import {village} from '../../types'
 
 describe('<Prediction />', () => {
-  test('playerStatus.length === 0 || roleStatus.length === 0', () => {
+  test('characterStatus.length === 0 || roleStatus.length === 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
     const handleMouseEnterEventHandler = jest.fn()
     const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
     const handleMouseLeave = jest.fn()
-    const playerStatus: Props['playerStatus'] = []
+    const characterStatus: Props['characterStatus'] = []
     const roleStatus: Props['roleStatus'] = []
     const table: Props['table'] = {}
     const spec: Props['spec'] = {
@@ -19,10 +20,10 @@ describe('<Prediction />', () => {
     }
     const wrapper = shallow(
       <Prediction
+        characterStatus={characterStatus}
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
-        playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
         table={table}
@@ -31,78 +32,78 @@ describe('<Prediction />', () => {
 
     expect(wrapper.text()).toBe('')
   })
-  test('playerStatus.length !== 0 && roleStatus.length !== 0', () => {
+  test('characterStatus.length !== 0 && roleStatus.length !== 0', () => {
     const handleBoardClickEventHandler = jest.fn()
     const handleBoardClick = jest.fn(handleBoardClickEventHandler)
     const handleMouseEnterEventHandler = jest.fn()
     const handleMouseEnter = jest.fn(handleMouseEnterEventHandler)
     const handleMouseLeave = jest.fn()
-    const playerStatus: Props['playerStatus'] = [
+    const characterStatus: Props['characterStatus'] = [
       {
         id: '1',
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/a_50x50.png',
+        image: ImagePath.Character.a,
         initial: 'A',
         isSilent: false,
         name: 'Adil',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '2',
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/b_50x50.png',
+        image: ImagePath.Character.b,
         initial: 'B',
         isSilent: false,
         name: 'Borya',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '3',
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/c_50x50.png',
+        image: ImagePath.Character.c,
         initial: 'C',
         isSilent: false,
         name: 'Chacha',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '4',
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/d_50x50.png',
+        image: ImagePath.Character.d,
         initial: 'D',
         isSilent: false,
         name: 'Devdatta',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       },
       {
         id: '5',
-        image: 'https://werewolf.world/image/0.3/agent_icons/50x50/e_50x50.png',
+        image: ImagePath.Character.e,
         initial: 'E',
         isSilent: false,
         name: 'Ekrem',
-        status: village.AgentStatus.alive
+        status: village.CharacterStatus.alive
       }
     ]
     const roleStatus: Props['roleStatus'] = [
       {
         id: village.RoleId.villager,
-        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/villager_50x50.png',
+        image: ImagePath.Role.villager,
         name: '村人',
-        numberOfAgents: 2
+        numberOfCharacters: 2
       },
       {
         id: village.RoleId.seer,
-        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/seer_50x50.png',
+        image: ImagePath.Role.seer,
         name: '占い師',
-        numberOfAgents: 1
+        numberOfCharacters: 1
       },
       {
         id: village.RoleId.madman,
-        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/madman_50x50.png',
+        image: ImagePath.Role.madman,
         name: '狂人',
-        numberOfAgents: 1
+        numberOfCharacters: 1
       },
       {
         id: village.RoleId.werewolf,
-        image: 'https://werewolf.world/image/0.3/role_icons/50x50withTI/werewolf_50x50.png',
+        image: ImagePath.Role.werewolf,
         name: '人狼',
-        numberOfAgents: 1
+        numberOfCharacters: 1
       }
     ]
     const spec: Props['spec'] = {
@@ -112,110 +113,110 @@ describe('<Prediction />', () => {
     const table: Props['table'] = {
       '1': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.CIRCLE
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         }
       },
       '2': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.TRIANGLE
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '3': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '4': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
       },
       '5': {
         madman: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         seer: {
-          date: 1,
+          day: 1,
           fixed: true,
           state: village.BoardState.FILL
         },
         villager: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         },
         werewolf: {
-          date: 1,
+          day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
         }
@@ -223,10 +224,10 @@ describe('<Prediction />', () => {
     }
     const wrapper = shallow(
       <Prediction
+        characterStatus={characterStatus}
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
-        playerStatus={playerStatus}
         roleStatus={roleStatus}
         spec={spec}
         table={table}
@@ -234,7 +235,7 @@ describe('<Prediction />', () => {
     )
 
     expect(wrapper.find('PredictionRole')).toHaveLength(4)
-    expect(wrapper.find('PredictionPlayer')).toHaveLength(5)
+    expect(wrapper.find('PredictionCharacter')).toHaveLength(5)
     expect(wrapper.find('PredictionItem')).toHaveLength(4 * 5)
   })
 })

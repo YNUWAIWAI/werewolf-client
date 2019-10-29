@@ -7,7 +7,7 @@ test('SELECT_VILLAGE', () => {
       initialState,
       {
         id: 4,
-        type: ActionTypes.global.SELECT_VILLAGE
+        type: ActionTypes.App.SELECT_VILLAGE
       }
     )
   ).toStrictEqual(

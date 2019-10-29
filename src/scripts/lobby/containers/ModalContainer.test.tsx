@@ -80,7 +80,7 @@ describe('<ModalContainer />', () => {
     wrapper.find(Modal).props().handleClickNo()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.global.SELECT_NO
+      type: ActionTypes.App.SELECT_NO
     })
   })
   describe('handleClickYes', () => {
@@ -97,13 +97,13 @@ describe('<ModalContainer />', () => {
         </Provider>
       )
 
-      wrapper.find(Modal).props().handleClickYes(ActionTypes.global.KICK_OUT_PLAYER)
+      wrapper.find(Modal).props().handleClickYes(ActionTypes.App.KICK_OUT_PLAYER)
       expect(dispatch).toHaveBeenCalledTimes(2)
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.global.SELECT_YES
+        type: ActionTypes.App.SELECT_YES
       })
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.global.KICK_OUT_PLAYER
+        type: ActionTypes.App.KICK_OUT_PLAYER
       })
     })
     test('default', () => {
@@ -122,7 +122,7 @@ describe('<ModalContainer />', () => {
       wrapper.find(Modal).props().handleClickYes('ACTION')
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.global.SELECT_YES
+        type: ActionTypes.App.SELECT_YES
       })
     })
   })

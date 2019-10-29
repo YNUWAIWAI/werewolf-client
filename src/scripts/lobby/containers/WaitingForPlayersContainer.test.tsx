@@ -1,11 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import * as lobby from '../types'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import WaitingForPlayers from '../components/templates/WaitingForPlayers'
 import WaitingForPlayersContainer from './WaitingForPlayersContainer'
 import fakeStore from './fakeStore'
+import {lobby} from '../types'
 import {mount} from 'enzyme'
 
 describe('<WaitingForPlayersContainer />', () => {
@@ -406,7 +406,7 @@ describe('<WaitingForPlayersContainer />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       name: 'Alice',
       token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-      type: ActionTypes.global.CONFIRM_KICK_OUT_PLAYER
+      type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
     })
   })
   test('transition', () => {

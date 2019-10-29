@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AdvancedSearchBox from '../organisms/AdvancedSearchBox'
 import AsideContent from '../atoms/AsideContent'
@@ -8,6 +7,7 @@ import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import SearchResult from '../organisms/SearchResult'
 import {Target} from '../../constants/ActionTypes'
+import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
 

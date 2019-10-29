@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as lobby from '../../types'
 import SearchResult from './SearchResult'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
+import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))

@@ -1,16 +1,16 @@
 import * as React from 'react'
-import * as village from '../../types'
-import AgentIcon from './AgentIcon'
+import CharacterIcon from './CharacterIcon'
+import {village} from '../../types'
 
 interface Props {
   readonly image: string
   readonly initial: string
-  readonly status: village.AgentStatus
+  readonly status: village.CharacterStatus
 }
 
 export default function ResultCellImage(props: Props) {
   return (
-    <AgentIcon
+    <CharacterIcon
       additionalClass={props.status === 'alive' ? '' : 'dead'}
       className="vi--result--cell--image"
       image={props.image}
