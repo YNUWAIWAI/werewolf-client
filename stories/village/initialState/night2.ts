@@ -981,8 +981,8 @@ export const night2: ReducerState = {
     }
   },
   result: {
-    characters: {},
     allIds: [],
+    characters: {},
     losers: [],
     me: null,
     summary: {
