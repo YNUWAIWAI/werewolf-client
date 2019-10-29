@@ -86,18 +86,23 @@ export interface Payload$Ready extends Ready {
   '@payload'?: PayloadType.ready
 }
 export interface Payload$NextGameInvitation extends NextGameInvitation {
+  '@id'?: undefined
   '@payload'?: PayloadType.nextGameInvitation
 }
 export interface Payload$NextGameInvitationIsClosed extends NextGameInvitationIsClosed {
+  '@id'?: undefined
   '@payload'?: PayloadType.nextGameInvitationIsClosed
 }
 export interface Payload$ReceivedChatMessage extends ReceivedChatMessage {
+  '@id'?: undefined
   '@payload'?: PayloadType.receivedChatMessage
 }
 export interface Payload$ReceivedFlavorTextMessage extends ReceivedFlavorTextMessage {
+  '@id'?: undefined
   '@payload'?: PayloadType.receivedFlavorTextMessage
 }
 export interface Payload$ReceivedSystemMessage extends ReceivedSystemMessage {
+  '@id'?: undefined
   '@payload'?: PayloadType.receivedSystemMessage
 }
 export interface Payload$ScrollMessage extends ScrollMessage {
