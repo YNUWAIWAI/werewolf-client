@@ -1,5 +1,25 @@
 /* eslint no-unused-vars: 0, @typescript-eslint/no-unused-vars: 0 */
-export * from './payload'
+export {
+  Message,
+  Payload,
+  PayloadType,
+  Payload$BoardMessage,
+  Payload$BuildVillage,
+  Payload$ChatMessage,
+  Payload$ErrorMessage,
+  Payload$FlavorTextMessage,
+  Payload$LeaveWaitingPage,
+  Payload$NextGameInvitation,
+  Payload$NextGameInvitationIsClosed,
+  Payload$Ready,
+  Payload$ReceivedChatMessage,
+  Payload$ReceivedFlavorTextMessage,
+  Payload$ReceivedSystemMessage,
+  Payload$ScrollMessage,
+  Payload$StarMessage,
+  Payload$SystemMessage,
+  Payload$VoteMessage
+} from './payload'
 
 export const enum BaseContext {
   Base = 'https://werewolf.world/village/context/0.3/base.jsonld',
