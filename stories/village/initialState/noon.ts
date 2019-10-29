@@ -1129,8 +1129,8 @@ export const noon: ReducerState = {
     }
   },
   result: {
-    characters: {},
     allIds: [],
+    characters: {},
     losers: [],
     me: null,
     summary: {
