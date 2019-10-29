@@ -2,12 +2,12 @@
   'https://werewolf.world/village/schema/0.3/invitation/receivedFlavorTextMessage.json'
 */
 import {
-  Avatar,
   PayloadBase,
-  PayloadType,
-  Time,
-  Village
-} from '../..'
+  PayloadType
+} from '../../payload'
+import {Avatar} from '../avatar'
+import {Time} from '../time'
+import {Village} from '../village'
 
 export interface ReceivedFlavorTextMessage extends PayloadBase {
   day: Time['day']
