@@ -1,6 +1,6 @@
 import * as React from 'react'
 import CharacterIcon from './CharacterIcon'
-import {VERSION} from '../../constants/Version'
+import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
 
 describe('<CharacterIcon />', () => {
@@ -8,7 +8,7 @@ describe('<CharacterIcon />', () => {
     const wrapper = shallow(
       <CharacterIcon
         className="className"
-        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
+        image={ImagePath.Character.a}
         initial="A"
         name="Adil"
       />
@@ -23,7 +23,7 @@ describe('<CharacterIcon />', () => {
     const wrapper = shallow(
       <CharacterIcon
         className="className"
-        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
+        image={ImagePath.Character.a}
         initial="A"
       />
     )
@@ -37,7 +37,7 @@ describe('<CharacterIcon />', () => {
     const wrapper = shallow(
       <CharacterIcon
         className="className"
-        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
+        image={ImagePath.Character.a}
         name="Adil"
       />
     )
@@ -51,7 +51,7 @@ describe('<CharacterIcon />', () => {
     const wrapper = shallow(
       <CharacterIcon
         className="className"
-        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
+        image={ImagePath.Character.a}
       />
     )
 
@@ -65,7 +65,7 @@ describe('<CharacterIcon />', () => {
       <CharacterIcon
         additionalClass="additionalClass"
         className="className"
-        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
+        image={ImagePath.Character.a}
         initial="A"
         name="Adil"
       />
@@ -84,7 +84,7 @@ describe('<CharacterIcon />', () => {
       <CharacterIcon
         className="className"
         handleOnClick={handleOnClick}
-        image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`}
+        image={ImagePath.Character.a}
         initial="A"
         name="Adil"
       />
