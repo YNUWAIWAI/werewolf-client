@@ -1,6 +1,5 @@
 import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
 import * as React from 'react'
-import * as village from './types'
 import {Character} from '../../src/scripts/village/constants/Character'
 import Command from '../../src/scripts/village/components/organisms/Command'
 import CommandGrave from '../../src/scripts/village/components/organisms/CommandGrave'
@@ -11,10 +10,11 @@ import {Provider} from 'react-redux'
 import {Role} from '../../src/scripts/village/constants/Role'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import language from './language'
+import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+import {village} from './types'
 
 const suggesttedData = [
   {

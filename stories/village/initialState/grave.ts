@@ -1,11 +1,11 @@
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
-import * as village from '../types'
 import {Character} from '../../../src/scripts/village/constants/Character'
 import {Content} from '../../../src/scripts/village/reducers/command'
 import {ImagePath} from '../../../src/scripts/village/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/village/reducers'
 import {Role} from '../../../src/scripts/village/constants/Role'
 import {VERSION} from '../../../src/scripts/village/constants/Version'
+import {village} from '../types'
 
 export const grave: ReducerState = {
   base: {

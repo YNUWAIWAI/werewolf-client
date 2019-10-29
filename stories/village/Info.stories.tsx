@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as village from './types'
 import {Character} from '../../src/scripts/village/constants/Character'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import Info from '../../src/scripts/village/components/organisms/Info'
@@ -8,10 +7,11 @@ import {Provider} from 'react-redux'
 import {Role} from '../../src/scripts/village/constants/Role'
 import {VERSION} from '../../src/scripts/village/constants/Version'
 import {createStore} from 'redux'
-import language from './language'
+import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+import {village} from './types'
 
 storiesOf('village|Info', module)
   .add('default', () => {

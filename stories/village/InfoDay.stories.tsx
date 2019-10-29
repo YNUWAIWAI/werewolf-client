@@ -1,13 +1,13 @@
 import * as React from 'react'
-import * as village from './types'
 import {number, radios, select} from '@storybook/addon-knobs'
 import InfoDay from '../../src/scripts/village/components/molecules/InfoDay'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
-import language from './language'
+import {language} from './language'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+import {village} from './types'
 
 storiesOf('village|Info/InfoDay', module)
   .add('default', () => {
@@ -17,14 +17,14 @@ storiesOf('village|Info/InfoDay', module)
         language: radios(language.label, language.options, language.defaultValue)
       }
     )
-    const date = number('date', 0)
+    const day = number('day', 0)
     const phase = select(
       'phase',
       {
-        noon: village.Phase.noon,
         flavorText: village.Phase.flavorText,
         morning: village.Phase.morning,
         night: village.Phase.night,
+        noon: village.Phase.noon,
         postMortem: village.Phase.postMortem,
         result: village.Phase.result
       },
@@ -35,7 +35,7 @@ storiesOf('village|Info/InfoDay', module)
         <IntlProvider>
           <div className="vi--info">
             <InfoDay
-              date={date}
+              day={day}
               phase={phase}
             />
           </div>

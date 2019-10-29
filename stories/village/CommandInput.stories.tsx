@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as village from './types'
 import {number, radios} from '@storybook/addon-knobs'
 import {Character} from '../../src/scripts/village/constants/Character'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
@@ -8,9 +7,10 @@ import {Provider} from 'react-redux'
 import {Role} from '../../src/scripts/village/constants/Role'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
-import language from './language'
+import {language} from './language'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+import {village} from './types'
 
 const suggesttedData = [
   {

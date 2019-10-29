@@ -1,1 +1,1 @@
-export * from '../../../types/village'
+export {village} from '../../../types'
