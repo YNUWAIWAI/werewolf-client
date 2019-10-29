@@ -3,9 +3,9 @@
 */
 import {
   PayloadBase,
-  PayloadType,
-  Village
-} from '../..'
+  PayloadType
+} from '../../payload'
+import {Village} from '../village'
 
 export interface NextGameInvitation extends PayloadBase {
   type: PayloadType.nextGameInvitation

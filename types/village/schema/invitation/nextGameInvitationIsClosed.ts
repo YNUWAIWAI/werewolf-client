@@ -4,7 +4,7 @@
 import {
   PayloadBase,
   PayloadType
-} from '../..'
+} from '../../payload'
 
 export interface NextGameInvitationIsClosed extends PayloadBase {
   type: PayloadType.nextGameInvitationIsClosed
