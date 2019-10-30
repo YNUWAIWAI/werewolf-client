@@ -11,7 +11,6 @@ import {
   getPlayableRoles,
   getTeam,
   getText,
-  idGenerater,
   isValidTextLength,
   just,
   spaceSeparatedToCamelCase,
@@ -874,13 +873,6 @@ describe('getText', () => {
       )
     ).toBe('English')
   })
-})
-test('idGenerater', () => {
-  const generateId = idGenerater('id')
-
-  expect(generateId()).toBe('id0')
-  expect(generateId()).toBe('id1')
-  expect(generateId()).toBe('id2')
 })
 describe('isValidTextLength', () => {
   test('upperLimit < count', () => {
