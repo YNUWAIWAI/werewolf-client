@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.2.2",
-    "@nimiusrd/eslint-config": "^2.0.0",
+    "@nimiusrd/eslint-config": "^2.1.0",
     "@nimiusrd/stylelint-config": "^1.0.1",
     "@storybook/addon-actions": "^5.0.2",
     "@storybook/addon-knobs": "^5.0.2",

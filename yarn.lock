@@ -1364,10 +1364,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nimiusrd/eslint-config@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@nimiusrd/eslint-config/-/eslint-config-2.0.0.tgz#50f69ead373a213693c041a7da05f06b0be3d1ff"
-  integrity sha512-bvLcNCZAkd2h96Yx8/6fuYVRe7d5LfVGsZlkQ0d2lWB5a0fqW7n8x4JtfGwXMCREGwICCfVHcKnDeAPKMCfAOw==
+"@nimiusrd/eslint-config@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nimiusrd/eslint-config/-/eslint-config-2.1.0.tgz#47d56d880c18690a2962437bf92c5106f5078e13"
+  integrity sha512-qKwkFB3Fpcav4z6glJ6CqOMD7nlOwMGYZ4hKerXJhW+HK7CcEC+T7rMQOvg8Kr4l7Vz6SznuoeHc67J7279zmA==
 
 "@nimiusrd/stylelint-config@^1.0.1":
   version "1.0.4"
