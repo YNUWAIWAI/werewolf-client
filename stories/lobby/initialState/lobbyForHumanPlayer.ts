@@ -1,7 +1,7 @@
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
 import {Content} from '../../../src/scripts/lobby/reducers/app'
+import {ImagePath} from '../../../src/scripts/lobby/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/lobby/reducers'
-import {VERSION} from '../../../src/scripts/lobby/constants/Version'
 import {lobby} from '../types'
 
 export const lobbyForHumanPlayer: Partial<ReducerState> = {
@@ -9,7 +9,7 @@ export const lobbyForHumanPlayer: Partial<ReducerState> = {
     content: Content.LobbyForHumanPlayer
   },
   lobbyForHumanPlayer: {
-    image: `https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`,
+    image: ImagePath.Character.r,
     isPlayer: true,
     menuItems: [
       {

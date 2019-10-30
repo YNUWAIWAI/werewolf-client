@@ -2,8 +2,8 @@ import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
 import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
 import {getInitial, getText, just} from '../util'
 import {Dispatch} from 'redux'
+import {ImagePath} from '../constants/ImagePath'
 import {ReducerState} from '../reducers'
-import {VERSION} from '../constants/Version'
 import {connect} from 'react-redux'
 import {village} from '../types'
 
@@ -35,7 +35,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     return {
       descriptionId: 'Modal.Description.wait',
       id: '',
-      image: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+      image: ImagePath.Character.anonymous,
       initial: '',
       name: '',
       visible: state.modal.visible

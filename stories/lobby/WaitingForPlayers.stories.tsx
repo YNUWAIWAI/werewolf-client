@@ -1,9 +1,9 @@
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
 import WaitingForPlayers, {Props} from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
+import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import {VERSION} from '../../src/scripts/lobby/constants/Version'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
@@ -14,7 +14,7 @@ import {storiesOf} from '@storybook/react'
 
 const players: Props['players'] = [
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: true,
@@ -25,7 +25,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`,
+    avatarImage: ImagePath.Character.r,
     canKickOut: false,
     isAnonymous: false,
     isHost: false,
@@ -36,7 +36,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -47,7 +47,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -58,7 +58,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -69,7 +69,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -80,7 +80,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -91,7 +91,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -102,7 +102,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -113,7 +113,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -124,7 +124,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -135,7 +135,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -146,7 +146,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -157,7 +157,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,
@@ -168,7 +168,7 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
   },
   {
-    avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+    avatarImage: ImagePath.Character.anonymous,
     canKickOut: false,
     isAnonymous: true,
     isHost: false,

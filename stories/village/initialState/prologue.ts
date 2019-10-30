@@ -1,6 +1,7 @@
 import * as ActionTypes from '../../../src/scripts/village/constants/ActionTypes'
 import {Character} from '../../../src/scripts/village/constants/Character'
 import {Content} from '../../../src/scripts/village/reducers/command'
+import {ImagePath} from '../../../src/scripts/village/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/village/reducers'
 import {VERSION} from '../../../src/scripts/village/constants/Version'
 
@@ -36,7 +37,7 @@ export const prologue: ReducerState = {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'day': 1,
         'id': 1,
-        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/a_120x120.png`,
+        'image': ImagePath.Character120x120.a,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
@@ -52,7 +53,7 @@ export const prologue: ReducerState = {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'day': 1,
         'id': 2,
-        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/i_120x120.png`,
+        'image': ImagePath.Character120x120.i,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,

@@ -1,14 +1,14 @@
 import CharacterIcon, {Props as StateProps} from '../components/atoms/CharacterIcon'
 import {getInitial, getText} from '../util'
+import {ImagePath} from '../constants/ImagePath'
 import {ReducerState} from '../reducers'
-import {VERSION} from '../constants/Version'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.character) {
     return {
       className: 'vi--info--character',
-      image: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+      image: ImagePath.Character.anonymous,
       initial: '',
       name: ''
     }
