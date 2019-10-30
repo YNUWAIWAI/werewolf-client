@@ -1,39 +1,37 @@
-import {VERSION} from './Version'
+import {ImagePath} from './ImagePath'
 import {lobby} from '../types'
-
-const BASE_URL = `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/`
 
 export const VILLAGER = {
   id: lobby.RoleId.villager,
-  image: `${BASE_URL}/villager_50x50.png`
+  image: ImagePath.Role.villager
 }
 export const SEER = {
   id: lobby.RoleId.seer,
-  image: `${BASE_URL}/seer_50x50.png`
+  image: ImagePath.Role.seer
 }
 export const MEDIUM = {
   id: lobby.RoleId.medium,
-  image: `${BASE_URL}/medium_50x50.png`
+  image: ImagePath.Role.medium
 }
 export const HUNTER = {
   id: lobby.RoleId.hunter,
-  image: `${BASE_URL}/hunter_50x50.png`
+  image: ImagePath.Role.hunter
 }
 export const MASON = {
   id: lobby.RoleId.mason,
-  image: `${BASE_URL}/mason_50x50.png`
+  image: ImagePath.Role.mason
 }
 export const MADMAN = {
   id: lobby.RoleId.madman,
-  image: `${BASE_URL}/madman_50x50.png`
+  image: ImagePath.Role.madman
 }
 export const WEREWOLF = {
   id: lobby.RoleId.werewolf,
-  image: `${BASE_URL}/werewolf_50x50.png`
+  image: ImagePath.Role.werewolf
 }
 export const WEREHAMSTER = {
   id: lobby.RoleId.werehamster,
-  image: `${BASE_URL}/werehamster_50x50.png`
+  image: ImagePath.Role.werehamster
 }
 
 export const ORDERED_ROLE_LIST = [
