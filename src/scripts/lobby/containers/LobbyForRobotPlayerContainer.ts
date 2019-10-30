@@ -1,4 +1,7 @@
-import LobbyForRobotPlayer, {DispatchProps, StateProps} from '../components/templates/LobbyForRobotPlayer'
+import LobbyForRobotPlayer, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/LobbyForRobotPlayer'
 import {
   SelectVillage,
   Transition,

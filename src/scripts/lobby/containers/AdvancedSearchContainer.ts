@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import AdvancedSearch, {DispatchProps, StateProps} from '../components/templates/AdvancedSearch'
+import AdvancedSearch, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/AdvancedSearch'
 import {
   AdvancedSearch$ChangeAvatar,
   AdvancedSearch$ChangeCheckbox,

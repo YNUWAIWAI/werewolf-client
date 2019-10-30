@@ -1,4 +1,7 @@
-import ConnectingToRobotPlayer, {DispatchProps, StateProps} from '../components/templates/ConnectingToRobotPlayer'
+import ConnectingToRobotPlayer, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/ConnectingToRobotPlayer'
 import {
   Transition,
   transition

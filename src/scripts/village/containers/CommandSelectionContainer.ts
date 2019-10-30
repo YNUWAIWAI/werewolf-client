@@ -1,6 +1,15 @@
-import CommandSelection, {DispatchProps, StateProps} from '../components/organisms/CommandSelection'
-import {SelectOption, selectOption} from '../actions'
-import {getInitial, getText} from '../util'
+import CommandSelection, {
+  DispatchProps,
+  StateProps
+} from '../components/organisms/CommandSelection'
+import {
+  SelectOption,
+  selectOption
+} from '../actions'
+import {
+  getInitial,
+  getText
+} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

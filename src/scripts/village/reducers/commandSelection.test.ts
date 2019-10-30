@@ -1,6 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {night, noon} from './fakeServer'
-import reducer, {State, initialState} from './commandSelection'
+import {
+  night,
+  noon
+} from './fakeServer'
+import reducer, {
+  State,
+  initialState
+} from './commandSelection'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {VERSION} from '../constants/Version'

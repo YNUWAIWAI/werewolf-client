@@ -1,5 +1,9 @@
 import * as React from 'react'
-import {FormattedDate, FormattedMessage, FormattedTime} from 'react-intl'
+import {
+  FormattedDate,
+  FormattedMessage,
+  FormattedTime
+} from 'react-intl'
 
 interface Props {
   readonly from: string

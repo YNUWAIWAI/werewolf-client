@@ -1,5 +1,8 @@
 import * as React from 'react'
-import {CSSTransition, TransitionGroup} from 'react-transition-group'
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group'
 import AdvancedSearch from './AdvancedSearchContainer'
 import BuildVillage from './BuildVillageContainer'
 import ConnectingToRobotPlayer from './ConnectingToRobotPlayerContainer'

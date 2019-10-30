@@ -1,5 +1,8 @@
 import CharacterIcon, {Props as StateProps} from '../components/atoms/CharacterIcon'
-import {getInitial, getText} from '../util'
+import {
+  getInitial,
+  getText
+} from '../util'
 import {ImagePath} from '../constants/ImagePath'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

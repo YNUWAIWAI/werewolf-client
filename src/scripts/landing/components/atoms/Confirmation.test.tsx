@@ -1,5 +1,8 @@
 import * as React from 'react'
-import {Language, getMessages} from '../../i18n'
+import {
+  Language,
+  getMessages
+} from '../../i18n'
 import Confirmation from './Confirmation'
 import {initRenderer} from '../../tools'
 

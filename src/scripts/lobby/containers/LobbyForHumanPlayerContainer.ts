@@ -1,4 +1,7 @@
-import LobbyForHumanPlayer, {DispatchProps, StateProps} from '../components/templates/LobbyForHumanPlayer'
+import LobbyForHumanPlayer, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/LobbyForHumanPlayer'
 import {
   SelectVillage,
   Transition,

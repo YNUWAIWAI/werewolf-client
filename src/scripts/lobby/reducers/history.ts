@@ -1,8 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {
-  SocketMessage
-} from '../actions'
+import {SocketMessage} from '../actions'
 import {lobby} from '../types'
 
 export interface State {

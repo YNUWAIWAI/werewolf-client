@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SocketMessage, Transition} from '../actions'
+import {
+  SocketMessage,
+  Transition
+} from '../actions'
 import {lobby} from '../types'
 
 export interface State {

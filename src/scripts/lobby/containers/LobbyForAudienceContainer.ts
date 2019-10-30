@@ -1,4 +1,7 @@
-import LobbyForAudience, {DispatchProps, StateProps} from '../components/templates/LobbyForAudience'
+import LobbyForAudience, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/LobbyForAudience'
 import {
   SelectVillage,
   Transition,

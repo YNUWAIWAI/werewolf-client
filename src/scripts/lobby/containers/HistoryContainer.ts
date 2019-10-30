@@ -1,4 +1,7 @@
-import History, {DispatchProps, StateProps} from '../components/templates/History'
+import History, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/History'
 import {
   SelectVillage,
   Transition,

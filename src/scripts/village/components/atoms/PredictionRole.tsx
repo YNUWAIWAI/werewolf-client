@@ -9,6 +9,8 @@ interface Props {
 }
 
 export default function PredictionRole(props: Props) {
+  const times = '×'
+
   return (
     <div
       className="vi--prediction--role"
@@ -20,7 +22,7 @@ export default function PredictionRole(props: Props) {
         src={props.image}
       />
       <div className="vi--prediction--role--times">
-        {'×'}
+        {times}
       </div>
       <div className="vi--prediction--role--number">
         {props.numberOfCharacters}

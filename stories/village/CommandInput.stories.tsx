@@ -1,5 +1,8 @@
 import * as React from 'react'
-import {number, radios} from '@storybook/addon-knobs'
+import {
+  number,
+  radios
+} from '@storybook/addon-knobs'
 import {Character} from '../../src/scripts/village/constants/Character'
 import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'

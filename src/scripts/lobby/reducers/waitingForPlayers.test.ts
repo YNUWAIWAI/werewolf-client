@@ -1,5 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {played, waitingPage, waitingPage2} from './fakeServer'
+import {
+  played,
+  waitingPage,
+  waitingPage2
+} from './fakeServer'
 import reducer, {initialState} from './waitingForPlayers'
 import {lobby} from '../types'
 

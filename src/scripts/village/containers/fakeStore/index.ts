@@ -1,5 +1,9 @@
 /* eslint no-console: 0 */
-import {Action, Dispatch, Store} from 'redux'
+import {
+  Action,
+  Dispatch,
+  Store
+} from 'redux'
 import {ReducerState} from '../../reducers'
 import {initialState as base} from '../../reducers/base'
 import {initialState as chat} from '../../reducers/chat'

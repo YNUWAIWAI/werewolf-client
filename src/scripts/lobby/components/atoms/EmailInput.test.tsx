@@ -1,5 +1,8 @@
 import * as React from 'react'
-import EmailInput, {Props, State} from './EmailInput'
+import EmailInput, {
+  Props,
+  State
+} from './EmailInput'
 import {shallow} from 'enzyme'
 
 describe('<EmailInput />', () => {

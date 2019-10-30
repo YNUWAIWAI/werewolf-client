@@ -40,8 +40,6 @@ const connectWebSocket = (() => {
 
     setTimeout(reject, timeout, 'timeout')
     wait()
-
-    return
   })
 })()
 

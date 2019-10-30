@@ -12,7 +12,10 @@ import {
   submitLogout,
   transition
 } from '../actions'
-import Settings, {DispatchProps, StateProps} from '../components/templates/Settings'
+import Settings, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/Settings'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

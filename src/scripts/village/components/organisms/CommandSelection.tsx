@@ -1,5 +1,8 @@
 import * as React from 'react'
-import {CSSTransition, TransitionGroup} from 'react-transition-group'
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group'
 import CharacterIcon from '../atoms/CharacterIcon'
 import Description from '../molecules/Description'
 import {village} from '../../types'

@@ -14,11 +14,13 @@ export interface DispatchProps {
 export interface Props extends StateProps, DispatchProps {}
 
 export default function ConnectingToRobotPlayer(props: Props) {
+  const content = 'TODO'
+
   return (
     <div className="lo--grid">
       <Header id="Header.connectingToRobotPlayer" />
       <MainContent>
-        {'TODO'}
+        {content}
       </MainContent>
       <AsideContent>
         <Menu

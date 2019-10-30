@@ -14,16 +14,17 @@ export default function IdSearchBox(props: Props) {
       props.handleSearchIdChange(Number(event.target.value))
     }
   }
+  const sharp = '#'
 
   return (
     <div className="lo--id-search">
       <span className="lo--id-search--sharp">
-        {'#'}
+        {sharp}
       </span>
       <FormattedMessage
         id="IdSearch.placeholder"
         values={{
-          max: 10 ** props.max - 1,
+          max: 10 ** (props.max - 1),
           min: 1
         }}
       >

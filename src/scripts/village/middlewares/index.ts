@@ -1,7 +1,11 @@
 /* eslint no-process-env: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import * as actions from '../actions'
-import {Dispatch, MiddlewareAPI, applyMiddleware} from 'redux'
+import {
+  Dispatch,
+  MiddlewareAPI,
+  applyMiddleware
+} from 'redux'
 import {ReducerState} from '../reducers'
 import client2server from './client2server'
 import flavorText from './flavorText'

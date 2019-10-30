@@ -9,6 +9,8 @@ interface Props {
 }
 
 export default function MemberRole(props: Props) {
+  const times = '✕'
+
   return (
     <div className={props.className} data-id={props.id}>
       <img
@@ -18,7 +20,7 @@ export default function MemberRole(props: Props) {
       <span
         className={`${props.className}--times`}
       >
-        {'✕'}
+        {times}
       </span>
       <span
         className={`${props.className}--number`}

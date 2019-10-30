@@ -1,5 +1,11 @@
 import * as React from 'react'
-import {countText, getChannelFromInputChennel, getText, isValidTextLength, spaceSeparatedToCamelCase} from '../../util'
+import {
+  countText,
+  getChannelFromInputChennel,
+  getText,
+  isValidTextLength,
+  spaceSeparatedToCamelCase
+} from '../../util'
 import ChatIcon from '../atoms/ChatIcon'
 import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
 import CommandInputSuggest from '../atoms/CommandInputSuggest'

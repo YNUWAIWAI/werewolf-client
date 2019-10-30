@@ -1,4 +1,7 @@
-import {firstMorning, result} from './fakeServer'
+import {
+  firstMorning,
+  result
+} from './fakeServer'
 import reducer, {initialState} from './result'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'

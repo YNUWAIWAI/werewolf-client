@@ -1,6 +1,15 @@
-import Chat, {DispatchProps, StateProps} from '../components/organisms/Chat'
-import {StarChat, starChat} from '../actions'
-import {getInitial, getText} from '../util'
+import Chat, {
+  DispatchProps,
+  StateProps
+} from '../components/organisms/Chat'
+import {
+  StarChat,
+  starChat
+} from '../actions'
+import {
+  getInitial,
+  getText
+} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

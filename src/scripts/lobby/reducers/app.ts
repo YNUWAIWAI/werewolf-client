@@ -1,5 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SelectVillage, SubmitLogout, Transition} from '../actions'
+import {
+  SelectVillage,
+  SubmitLogout,
+  Transition
+} from '../actions'
 
 export const enum Content {
   AdvancedSearch = 'AdvancedSearch',
