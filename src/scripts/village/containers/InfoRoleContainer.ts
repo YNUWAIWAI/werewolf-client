@@ -1,6 +1,6 @@
 import RoleIcon, {Props as StateProps} from '../components/atoms/RoleIcon'
+import {ImagePath} from '../constants/ImagePath'
 import {ReducerState} from '../reducers'
-import {VERSION} from '../constants/Version'
 import {connect} from 'react-redux'
 import {getText} from '../util'
 
@@ -8,7 +8,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   if (!state.mine.role) {
     return {
       className: 'vi--info--role',
-      image: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+      image: ImagePath.Character.anonymous,
       name: ''
     }
   }

@@ -38,7 +38,7 @@ export const night2: ReducerState = {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'day': 1,
         'id': 1,
-        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/a_120x120.png`,
+        'image': ImagePath.Character120x120.a,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
@@ -54,7 +54,7 @@ export const night2: ReducerState = {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'day': 1,
         'id': 2,
-        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/i_120x120.png`,
+        'image': ImagePath.Character120x120.i,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
@@ -122,20 +122,14 @@ export const night2: ReducerState = {
     character: {
       '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': `https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`,
-      'name': {
-        'en': 'Adil',
-        'ja': 'アーディル'
-      }
+      'image': ImagePath.Character120x120.a,
+      'name': Character.a
     },
     role: {
       '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
       'id': village.RoleId.villager,
-      'image': `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
-      'name': {
-        'en': 'Villager',
-        'ja': '村人'
-      }
+      'image': ImagePath.Role.villager,
+      'name': Role.villager
     }
   },
   modal: {

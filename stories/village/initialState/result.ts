@@ -38,7 +38,7 @@ export const result: ReducerState = {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'day': 1,
         'id': 1,
-        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/a_120x120.png`,
+        'image': ImagePath.Character120x120.a,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': true,
@@ -54,7 +54,7 @@ export const result: ReducerState = {
         'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
         'day': 1,
         'id': 2,
-        'image': `https://werewolf.world/image/${VERSION}/character_icons/120x120/i_120x120.png`,
+        'image': ImagePath.Character120x120.i,
         'intensionalDisclosureRange': village.Channel.public,
         'isMarked': false,
         'isMine': false,
@@ -130,20 +130,14 @@ export const result: ReducerState = {
     character: {
       '@id': `https://licos.online/state/${VERSION}/village#3/character#1`,
       'id': 1,
-      'image': `https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`,
-      'name': {
-        'en': 'Adil',
-        'ja': 'アーディル'
-      }
+      'image': ImagePath.Character.a,
+      'name': Character.a
     },
     role: {
       '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
       'id': village.RoleId.seer,
-      'image': `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/seer_50x50.png`,
-      'name': {
-        'en': 'Seer',
-        'ja': '占い師'
-      }
+      'image': ImagePath.Role.seer,
+      'name': Role.seer
     }
   },
   modal: {
@@ -1008,258 +1002,168 @@ export const result: ReducerState = {
     ],
     characters: {
       character1: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/o_50x50.png`,
+        avatarImage: ImagePath.Character.o,
         avatarName: 'Suzuki',
         characterId: '1',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/a_50x50.png`,
-        characterName: {
-          'en': 'Adil',
-          'ja': 'アーディル'
-        },
+        characterImage: ImagePath.Character.a,
+        characterName: Character.a,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/seer_50x50.png`,
-        roleName: {
-          en: 'Seer',
-          ja: '占い師'
-        },
+        roleImage: ImagePath.Role.seer,
+        roleName: Role.seer,
         status: village.CharacterStatus.alive
       },
       character2: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/i_50x50.png`,
+        avatarImage: ImagePath.Character.i,
         avatarName: 'Takahashi',
         characterId: '2',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/b_50x50.png`,
-        characterName: {
-          'en': 'Borya',
-          'ja': 'ボーリャ'
-        },
+        characterImage: ImagePath.Character.b,
+        characterName: Character.b,
         result: village.Result.lose,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/werewolf_50x50.png`,
-        roleName: {
-          en: 'Werewolf',
-          ja: '人狼'
-        },
+        roleImage: ImagePath.Role.werewolf,
+        roleName: Role.werewolf,
         status: village.CharacterStatus.alive
       },
       character3: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`,
+        avatarImage: ImagePath.Character.r,
         avatarName: 'Tanaka',
         characterId: '3',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/c_50x50.png`,
-        characterName: {
-          'en': 'Chacha',
-          'ja': 'チャチャ'
-        },
+        characterImage: ImagePath.Character.c,
+        characterName: Character.c,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/hunter_50x50.png`,
-        roleName: {
-          en: 'Hunter',
-          ja: '狩人'
-        },
+        roleImage: ImagePath.Role.hunter,
+        roleName: Role.hunter,
         status: village.CharacterStatus.alive
       },
       character4: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/f_50x50.png`,
+        avatarImage: ImagePath.Character.f,
         avatarName: 'Ito',
         characterId: '4',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/d_50x50.png`,
-        characterName: {
-          'en': 'Devdatta',
-          'ja': 'デヴゥダッタ'
-        },
+        characterImage: ImagePath.Character.d,
+        characterName: Character.d,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/medium_50x50.png`,
-        roleName: {
-          en: 'Medium',
-          ja: '霊媒師'
-        },
+        roleImage: ImagePath.Role.medium,
+        roleName: Role.medium,
         status: village.CharacterStatus.alive
       },
       character5: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/s_50x50.png`,
+        avatarImage: ImagePath.Character.s,
         avatarName: 'Watanabe',
         characterId: '5',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/e_50x50.png`,
-        characterName: {
-          'en': 'Ekrem',
-          'ja': 'エクレム'
-        },
+        characterImage: ImagePath.Character.e,
+        characterName: Character.e,
         result: village.Result.lose,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/werehamster_50x50.png`,
-        roleName: {
-          en: 'Werehamster',
-          ja: 'ハムスター人間'
-        },
+        roleImage: ImagePath.Role.werehamster,
+        roleName: Role.werehamster,
         status: village.CharacterStatus.deathByFear
       },
       character6: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/n_50x50.png`,
+        avatarImage: ImagePath.Character.n,
         avatarName: 'Yamamoto',
         characterId: '6',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/f_50x50.png`,
-        characterName: {
-          'en': 'Fernando',
-          'ja': 'フェルナンド'
-        },
+        characterImage: ImagePath.Character.f,
+        characterName: Character.f,
         result: village.Result.lose,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/madman_50x50.png`,
-        roleName: {
-          en: 'Madman',
-          ja: '狂人'
-        },
+        roleImage: ImagePath.Role.madman,
+        roleName: Role.madman,
         status: village.CharacterStatus.deathByExecution
       },
       character7: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/e_50x50.png`,
+        avatarImage: ImagePath.Character.e,
         avatarName: 'Nakamura',
         characterId: '7',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/g_50x50.png`,
-        characterName: {
-          'en': 'Gavriil',
-          'ja': 'ガブリール'
-        },
+        characterImage: ImagePath.Character.g,
+        characterName: Character.g,
         result: village.Result.lose,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/werewolf_50x50.png`,
-        roleName: {
-          en: 'Werewolf',
-          ja: '人狼'
-        },
+        roleImage: ImagePath.Role.werewolf,
+        roleName: Role.werewolf,
         status: village.CharacterStatus.unnaturalDeath
       },
       character8: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/g_50x50.png`,
+        avatarImage: ImagePath.Character.g,
         avatarName: 'Kobayashi',
         characterId: '8',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/h_50x50.png`,
-        characterName: {
-          'en': 'Henrik',
-          'ja': 'ヘンリック'
-        },
+        characterImage: ImagePath.Character.h,
+        characterName: Character.h,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
+        roleImage: ImagePath.Role.villager,
+        roleName: Role.villager,
         status: village.CharacterStatus.unnaturalDeath
       },
       character9: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/g_50x50.png`,
+        avatarImage: ImagePath.Character.g,
         avatarName: 'Yoshida',
         characterId: '9',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/i_50x50.png`,
-        characterName: {
-          'en': 'Ileanna',
-          'ja': 'イレアナ'
-        },
+        characterImage: ImagePath.Character.i,
+        characterName: Character.i,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
+        roleImage: ImagePath.Role.villager,
+        roleName: Role.villager,
         status: village.CharacterStatus.unnaturalDeath
       },
       character10: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/t_50x50.png`,
+        avatarImage: ImagePath.Character.t,
         avatarName: 'Yamada',
         characterId: '10',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/j_50x50.png`,
-        characterName: {
-          'en': 'Jasmin',
-          'ja': 'ジャスミン'
-        },
+        characterImage: ImagePath.Character.j,
+        characterName: Character.j,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/mason_50x50.png`,
-        roleName: {
-          'en': 'Mason',
-          'ja': '共有者'
-        },
+        roleImage: ImagePath.Role.mason,
+        roleName: Role.mason,
         status: village.CharacterStatus.unnaturalDeath
       },
       character11: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/c_50x50.png`,
+        avatarImage: ImagePath.Character.c,
         avatarName: 'Sasaki',
         characterId: '11',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/k_50x50.png`,
-        characterName: {
-          'en': 'Kaiji',
-          'ja': '開司'
-        },
+        characterImage: ImagePath.Character.k,
+        characterName: Character.k,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/mason_50x50.png`,
-        roleName: {
-          en: 'Mason',
-          ja: '共有者'
-        },
+        roleImage: ImagePath.Role.mason,
+        roleName: Role.mason,
         status: village.CharacterStatus.unnaturalDeath
       },
       character12: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/k_50x50.png`,
+        avatarImage: ImagePath.Character.k,
         avatarName: 'Yamaguchi',
         characterId: '12',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/l_50x50.png`,
-        characterName: {
-          'en': 'Louise',
-          'ja': 'ルイーズ'
-        },
+        characterImage: ImagePath.Character.l,
+        characterName: Character.l,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
+        roleImage: ImagePath.Role.villager,
+        roleName: Role.villager,
         status: village.CharacterStatus.deathByAttack
       },
       character13: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/l_50x50.png`,
+        avatarImage: ImagePath.Character.l,
         avatarName: 'Matsumoto',
         characterId: '13',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/m_50x50.png`,
-        characterName: {
-          'en': 'Marthe',
-          'ja': 'マーテ'
-        },
+        characterImage: ImagePath.Character.m,
+        characterName: Character.m,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
+        roleImage: ImagePath.Role.villager,
+        roleName: Role.villager,
         status: village.CharacterStatus.alive
       },
       character14: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/j_50x50.png`,
+        avatarImage: ImagePath.Character.j,
         avatarName: 'Inoue',
         characterId: '14',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/n_50x50.png`,
-        characterName: {
-          'en': 'Nanyamka',
-          'ja': 'ナニャンカ'
-        },
+        characterImage: ImagePath.Character.n,
+        characterName: Character.n,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
-        roleName: {
-          en: 'Villager',
-          ja: '村人'
-        },
+        roleImage: ImagePath.Role.villager,
+        roleName: Role.villager,
         status: village.CharacterStatus.alive
       },
       character15: {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/e_50x50.png`,
+        avatarImage: ImagePath.Character.e,
         avatarName: 'Sato',
         characterId: '15',
-        characterImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/o_50x50.png`,
-        characterName: {
-          'en': 'Oliwia',
-          'ja': 'オリビア'
-        },
+        characterImage: ImagePath.Character.o,
+        characterName: Character.o,
         result: village.Result.win,
-        roleImage: `https://werewolf.world/image/${VERSION}/role_icons/50x50withTI/villager_50x50.png`,
-        roleName: {
-          'en': 'Villager',
-          'ja': '村人'
-        },
+        roleImage: ImagePath.Role.villager,
+        roleName: Role.villager,
         status: village.CharacterStatus.alive
       }
     },
