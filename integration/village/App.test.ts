@@ -7,7 +7,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 1307,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -19,7 +19,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 4686,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -31,7 +31,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 8514,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -43,7 +43,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 11522,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -55,7 +55,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 15879,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -67,7 +67,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 12283,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -79,7 +79,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 8374,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -91,7 +91,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 8903,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
@@ -103,7 +103,7 @@ describe('App', () => {
     const image = await page.screenshot()
 
     expect(image).toMatchImageSnapshot({
-      failureThreshold: 6450,
+      failureThreshold: 0,
       failureThresholdType: 'pixel'
     })
   })
