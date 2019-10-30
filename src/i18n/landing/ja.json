@@ -1,4 +1,6 @@
 {
+  "lead-flavor": "* Flavor text *",
+  "lead-title": "LiCOS: A Game Of Werewolves",
   "login-error": "メールアドレス，またはパスワードが正しくないです",
   "login-label-email": "メールアドレス",
   "login-label-password": "パスワード",

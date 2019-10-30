@@ -1,21 +1,35 @@
 import * as React from 'react'
+import {FormattedMessage} from 'react-intl'
 
 export default function Lead() {
-  const title = 'LiCOS: A Game Of Werewolves'
-  const flavor = '* Flavor text *'
-
   return (
     <div className="la--lead">
-      <div className="la--title">
-        <p>
-          {title}
-        </p>
-      </div>
-      <div className="la--flavor">
-        <p>
-          {flavor}
-        </p>
-      </div>
+      <FormattedMessage
+        id="lead-title"
+      >
+        {
+          text => (
+            <div className="la--title">
+              <p>
+                {text}
+              </p>
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="lead-flavor"
+      >
+        {
+          text => (
+            <div className="la--flavor">
+              <p>
+                {text}
+              </p>
+            </div>
+          )
+        }
+      </FormattedMessage>
       <iframe
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
