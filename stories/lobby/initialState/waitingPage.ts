@@ -1,7 +1,7 @@
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
 import {Content} from '../../../src/scripts/lobby/reducers/app'
+import {ImagePath} from '../../../src/scripts/lobby/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/lobby/reducers'
-import {VERSION} from '../../../src/scripts/lobby/constants/Version'
 import {lobby} from '../types'
 
 export const waitingPage: Partial<ReducerState> = {
@@ -32,7 +32,7 @@ export const waitingPage: Partial<ReducerState> = {
     ],
     players: [
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`,
+        avatarImage: ImagePath.Character.r,
         isAnonymous: false,
         isHost: true,
         isMe: true,
@@ -40,7 +40,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -48,7 +48,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -56,7 +56,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -64,7 +64,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -72,7 +72,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -80,7 +80,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -88,7 +88,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -96,7 +96,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -104,7 +104,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -112,7 +112,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -120,7 +120,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -128,7 +128,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -136,7 +136,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,
@@ -144,7 +144,7 @@ export const waitingPage: Partial<ReducerState> = {
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
       },
       {
-        avatarImage: `https://werewolf.world/image/${VERSION}/character_icons/50x50/anonymous_50x50.png`,
+        avatarImage: ImagePath.Character.anonymous,
         isAnonymous: true,
         isHost: false,
         isMe: false,

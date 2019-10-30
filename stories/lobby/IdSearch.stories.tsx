@@ -1,9 +1,9 @@
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
 import IdSearch, {Props} from '../../src/scripts/lobby/components/templates/IdSearch'
+import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import {VERSION} from '../../src/scripts/lobby/constants/Version'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
@@ -46,7 +46,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`}
+            image={ImagePath.Character.r}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
@@ -93,7 +93,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`}
+            image={ImagePath.Character.r}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
@@ -176,7 +176,7 @@ storiesOf('lobby|IdSearch', module)
             handleSearchIdChange={handleSearchIdChange}
             handleValidityChange={handleValidityChange}
             header="Header.idSearch(human player)"
-            image={`https://werewolf.world/image/${VERSION}/character_icons/50x50/r_50x50.png`}
+            image={ImagePath.Character.r}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
