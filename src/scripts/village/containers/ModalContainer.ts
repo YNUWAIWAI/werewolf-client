@@ -1,6 +1,18 @@
-import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
-import {SelectNo, SelectYes, selectNo, selectYes} from '../actions'
-import {getInitial, getText, just} from '../util'
+import Modal, {
+  DispatchProps,
+  StateProps
+} from '../components/organisms/Modal'
+import {
+  SelectNo,
+  SelectYes,
+  selectNo,
+  selectYes
+} from '../actions'
+import {
+  getInitial,
+  getText,
+  just
+} from '../util'
 import {Dispatch} from 'redux'
 import {ImagePath} from '../constants/ImagePath'
 import {ReducerState} from '../reducers'

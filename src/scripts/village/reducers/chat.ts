@@ -1,6 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangeDay, SocketMessage, StarChat} from '../actions'
-import {idGenerater, just} from '../util'
+import {
+  ChangeDay,
+  SocketMessage,
+  StarChat
+} from '../actions'
+import {
+  idGenerater,
+  just
+} from '../util'
 import {village} from '../types'
 
 const getChatId = idGenerater('chat')

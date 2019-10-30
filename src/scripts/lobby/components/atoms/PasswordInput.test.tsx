@@ -1,5 +1,8 @@
 import * as React from 'react'
-import PasswordInput, {Props, State} from './PasswordInput'
+import PasswordInput, {
+  Props,
+  State
+} from './PasswordInput'
 import {shallow} from 'enzyme'
 
 describe('<PasswordInput />', () => {

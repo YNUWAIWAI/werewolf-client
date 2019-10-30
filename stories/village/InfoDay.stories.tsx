@@ -1,5 +1,9 @@
 import * as React from 'react'
-import {number, radios, select} from '@storybook/addon-knobs'
+import {
+  number,
+  radios,
+  select
+} from '@storybook/addon-knobs'
 import InfoDay from '../../src/scripts/village/components/molecules/InfoDay'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'

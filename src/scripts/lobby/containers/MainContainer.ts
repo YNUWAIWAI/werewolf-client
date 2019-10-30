@@ -1,4 +1,7 @@
-import Main, {DispatchProps, StateProps} from '../components/templates/Main'
+import Main, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/Main'
 import {
   Transition,
   transition

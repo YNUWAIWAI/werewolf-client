@@ -1,5 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ConfirmKickOutPlayer, SelectNo, SelectYes} from '../actions'
+import {
+  ConfirmKickOutPlayer,
+  SelectNo,
+  SelectYes
+} from '../actions'
 import {lobby} from '../types'
 
 export interface State {

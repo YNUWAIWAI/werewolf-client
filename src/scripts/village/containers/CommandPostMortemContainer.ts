@@ -1,5 +1,13 @@
-import {ClickNavigationButton, PostChat, clickNavigationButton, postChat} from '../actions'
-import CommandPostMortem, {DispatchProps, StateProps} from '../components/organisms/CommandPostMortem'
+import {
+  ClickNavigationButton,
+  PostChat,
+  clickNavigationButton,
+  postChat
+} from '../actions'
+import CommandPostMortem, {
+  DispatchProps,
+  StateProps
+} from '../components/organisms/CommandPostMortem'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

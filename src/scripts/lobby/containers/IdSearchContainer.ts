@@ -1,4 +1,7 @@
-import IdSearch, {DispatchProps, StateProps} from '../components/templates/IdSearch'
+import IdSearch, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/IdSearch'
 import {
   IdSearch$ChangeSearchId,
   IdSearch$ChangeValidity,

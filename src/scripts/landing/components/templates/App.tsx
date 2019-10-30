@@ -1,7 +1,10 @@
 import * as React from 'react'
-import {IntlProvider} from 'react-intl'
-import {Language, getMessages} from '../../i18n'
+import {
+  Language,
+  getMessages
+} from '../../i18n'
 import FormNavigation from '../atoms/FormNavigation'
+import {IntlProvider} from 'react-intl'
 import Lead from '../organism/Lead'
 import Login from '../organism/Login'
 import Signup from '../organism/Signup'

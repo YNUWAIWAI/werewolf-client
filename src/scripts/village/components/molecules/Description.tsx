@@ -8,6 +8,9 @@ interface Props {
 }
 
 export default function Description(props: Props) {
+  const lparen = ' ('
+  const rparen = ')'
+
   return (
     <div className={props.className}>
       <FormattedMessage
@@ -22,9 +25,9 @@ export default function Description(props: Props) {
         }
       </FormattedMessage>
       <span>
-        {' ('}
+        {lparen}
         <Timer />
-        {')'}
+        {rparen}
       </span>
     </div>
   )

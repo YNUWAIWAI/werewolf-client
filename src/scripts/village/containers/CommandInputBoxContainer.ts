@@ -1,5 +1,11 @@
-import CommandInputBox, {DispatchProps, StateProps} from '../components/organisms/CommandInputBox'
-import {PostChat, postChat} from '../actions'
+import CommandInputBox, {
+  DispatchProps,
+  StateProps
+} from '../components/organisms/CommandInputBox'
+import {
+  PostChat,
+  postChat
+} from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

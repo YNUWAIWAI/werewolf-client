@@ -1,5 +1,8 @@
 import * as React from 'react'
-import {CSSTransition, TransitionGroup} from 'react-transition-group'
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group'
 import AvatarItem from '../molecules/AvatarItem'
 import {lobby} from '../../types'
 

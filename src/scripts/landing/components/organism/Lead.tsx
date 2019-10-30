@@ -1,18 +1,19 @@
 import * as React from 'react'
 
-interface Props {}
+export default function Lead() {
+  const title = 'LiCOS: A Game Of Werewolves'
+  const flavor = '* Flavor text *'
 
-export default function Lead(props: Props) {
   return (
     <div className="la--lead">
       <div className="la--title">
         <p>
-          {'LiCOS: A Game Of Werewolves'}
+          {title}
         </p>
       </div>
       <div className="la--flavor">
         <p>
-          {'* Flavor text *'}
+          {flavor}
         </p>
       </div>
       <iframe

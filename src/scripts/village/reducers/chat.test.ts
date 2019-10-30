@@ -1,5 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {anonymousAudienceChat, myMessageOnChat, onymousAudienceChat, theirMessageOnChat} from './fakeServer'
+import {
+  anonymousAudienceChat,
+  myMessageOnChat,
+  onymousAudienceChat,
+  theirMessageOnChat
+} from './fakeServer'
 import reducer, {initialState} from './chat'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'

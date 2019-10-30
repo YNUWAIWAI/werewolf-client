@@ -1,5 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangeLobby, ChangeToken, Transition} from '../actions'
+import {
+  ChangeLobby,
+  ChangeToken,
+  Transition
+} from '../actions'
 import {lobby} from '../types'
 
 export interface State {

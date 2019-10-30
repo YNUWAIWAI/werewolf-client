@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import reducer, {Content, initialState} from './app'
+import reducer, {
+  Content,
+  initialState
+} from './app'
 
 test('SELECT_VILLAGE', () => {
   expect(

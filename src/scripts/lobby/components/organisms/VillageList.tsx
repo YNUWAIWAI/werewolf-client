@@ -1,5 +1,8 @@
 import * as React from 'react'
-import {CSSTransition, TransitionGroup} from 'react-transition-group'
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group'
 import VillageItem from '../molecules/VillageItem'
 import {lobby} from '../../types'
 

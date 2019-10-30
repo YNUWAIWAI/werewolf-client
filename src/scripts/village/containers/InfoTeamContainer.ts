@@ -1,5 +1,8 @@
 import TeamIcon, {Props as StateProps} from '../components/atoms/TeamIcon'
-import {getTeam, strToRoleId} from '../util'
+import {
+  getTeam,
+  strToRoleId
+} from '../util'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 

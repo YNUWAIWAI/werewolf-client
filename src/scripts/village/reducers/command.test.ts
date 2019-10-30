@@ -1,5 +1,14 @@
-import {firstMorning, flavorText, night, noon, result} from './fakeServer'
-import reducer, {Content, initialState} from './command'
+import {
+  firstMorning,
+  flavorText,
+  night,
+  noon,
+  result
+} from './fakeServer'
+import reducer, {
+  Content,
+  initialState
+} from './command'
 import {socket} from '../actions'
 
 describe('socket/MESSAGE', () => {

@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {activateNextButton, deactivateNextButton} from '../actions'
+import {
+  activateNextButton,
+  deactivateNextButton
+} from '../actions'
 import reducer, {initialState} from './commandPostMortem'
 
 describe('commandPostMortem', () => {

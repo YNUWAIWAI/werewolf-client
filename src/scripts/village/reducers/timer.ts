@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SocketMessage, Tick} from '../actions'
+import {
+  SocketMessage,
+  Tick
+} from '../actions'
 import {village} from '../types'
 
 export interface State {

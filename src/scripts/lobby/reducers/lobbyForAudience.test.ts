@@ -1,5 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {avatar, enterHumanPlayerLobby, enterOnymousAudienceLobby, enterRobotPlayerLobby} from './fakeServer'
+import {
+  avatar,
+  enterHumanPlayerLobby,
+  enterOnymousAudienceLobby,
+  enterRobotPlayerLobby
+} from './fakeServer'
 import reducer, {initialState} from './lobbyForAudience'
 
 test('REFRESH', () => {

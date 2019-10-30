@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {changeDay, changePhase} from '../actions'
+import {
+  changeDay,
+  changePhase
+} from '../actions'
 import {Middleware} from '.'
 import {village} from '../types'
 

@@ -6,8 +6,14 @@ import {
   hidePredictionSpec,
   showPredictionSpec
 } from '../actions'
-import Prediction, {DispatchProps, StateProps} from '../components/organisms/Prediction'
-import {getInitial, getText} from '../util'
+import Prediction, {
+  DispatchProps,
+  StateProps
+} from '../components/organisms/Prediction'
+import {
+  getInitial,
+  getText
+} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

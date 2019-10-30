@@ -9,6 +9,8 @@ export interface Props {
 }
 
 export default function RoleIcon(props: Props) {
+  const times = '×'
+
   return (
     <div
       className={`${props.className} ${props.additionalClass || ''}`}
@@ -20,7 +22,7 @@ export default function RoleIcon(props: Props) {
       {
         typeof props.numberOfCharacters === 'number' ?
           <div className={`${props.className}--times`}>
-            {'×'}
+            {times}
           </div> :
           null
       }

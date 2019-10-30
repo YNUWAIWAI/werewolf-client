@@ -1,5 +1,8 @@
 import * as React from 'react'
-import SettingsBox, {PropName, Props} from './SettingsBox'
+import SettingsBox, {
+  PropName,
+  Props
+} from './SettingsBox'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 

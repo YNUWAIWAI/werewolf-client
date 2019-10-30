@@ -4,7 +4,10 @@ import {
   confirmKickOutPlayer,
   transition
 } from '../actions'
-import WaitingForPlayers, {DispatchProps, StateProps} from '../components/templates/WaitingForPlayers'
+import WaitingForPlayers, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/WaitingForPlayers'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

@@ -1,5 +1,8 @@
 import * as React from 'react'
-import {lobbyForHumanPlayer, waitingPage} from './initialState'
+import {
+  lobbyForHumanPlayer,
+  waitingPage
+} from './initialState'
 import App from '../../src/scripts/lobby/containers/App'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'

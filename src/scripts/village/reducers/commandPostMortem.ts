@@ -1,5 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ActivateNextButton, ClickNavigationButton, DeactivateNextButton} from '../actions'
+import {
+  ActivateNextButton,
+  ClickNavigationButton,
+  DeactivateNextButton
+} from '../actions'
 
 export interface State {
   readonly navigation: {

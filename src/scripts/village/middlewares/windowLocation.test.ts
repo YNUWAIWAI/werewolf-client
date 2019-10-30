@@ -1,7 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {
-  ShowLobby
-} from '../actions'
+import {ShowLobby} from '../actions'
 import fakeStore from '../containers/fakeStore'
 import middleware from './windowLocation'
 

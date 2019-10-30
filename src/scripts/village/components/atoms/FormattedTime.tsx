@@ -34,12 +34,12 @@ export default function FormattedTime(props: Props) {
       }}
     >
       {
-          text => (
-            <span>
-              {text}
-            </span>
-          )
-        }
+        text => (
+          <span>
+            {text}
+          </span>
+        )
+      }
     </FormattedMessage>
   )
 }

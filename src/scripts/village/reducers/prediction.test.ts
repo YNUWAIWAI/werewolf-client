@@ -6,7 +6,10 @@ import {
   firstMorning5,
   flavorText
 } from './fakeServer'
-import reducer, {State, initialState} from './prediction'
+import reducer, {
+  State,
+  initialState
+} from './prediction'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'

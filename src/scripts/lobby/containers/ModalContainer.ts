@@ -1,6 +1,15 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {KickOutPlayer, SelectNo, SelectYes, kickOutPlayer, selectNo, selectYes} from '../actions'
-import Modal, {DispatchProps, StateProps} from '../components/organisms/Modal'
+import {
+  KickOutPlayer,
+  SelectNo,
+  SelectYes,
+  kickOutPlayer,
+  selectNo,
+  selectYes
+} from '../actions'
+import Modal, {
+  DispatchProps, StateProps
+} from '../components/organisms/Modal'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

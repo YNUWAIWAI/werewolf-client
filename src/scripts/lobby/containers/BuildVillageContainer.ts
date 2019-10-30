@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import BuildVillage, {DispatchProps, StateProps} from '../components/templates/BuildVillage'
+import BuildVillage, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/BuildVillage'
 import {
   BuildVillage$ChangeAvatar,
   BuildVillage$ChangeComment,

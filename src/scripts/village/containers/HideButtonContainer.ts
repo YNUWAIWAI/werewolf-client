@@ -1,5 +1,11 @@
-import {ClickHideButton, handleClickHideButton} from '../actions'
-import HideButton, {DispatchProps, StateProps} from '../components/atoms/HideButton'
+import {
+  ClickHideButton,
+  handleClickHideButton
+} from '../actions'
+import HideButton, {
+  DispatchProps,
+  StateProps
+} from '../components/atoms/HideButton'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'

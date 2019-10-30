@@ -1,5 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ChangePhase, SelectNo, SelectOption, SelectYes} from '../actions'
+import {
+  ChangePhase,
+  SelectNo,
+  SelectOption,
+  SelectYes
+} from '../actions'
 import {village} from '../types'
 
 export interface State {

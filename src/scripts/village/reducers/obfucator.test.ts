@@ -8,7 +8,10 @@ import {
   SelectYes,
   socket
 } from '../actions'
-import {firstMorning, result} from './fakeServer'
+import {
+  firstMorning,
+  result
+} from './fakeServer'
 import reducer, {initialState} from './obfucator'
 import {village} from '../types'
 

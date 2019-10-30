@@ -1,6 +1,15 @@
-import {HideResult, hideResult} from '../actions'
-import Result, {DispatchProps, StateProps} from '../components/organisms/Result'
-import {getInitial, getText} from '../util'
+import {
+  HideResult,
+  hideResult
+} from '../actions'
+import Result, {
+  DispatchProps,
+  StateProps
+} from '../components/organisms/Result'
+import {
+  getInitial,
+  getText
+} from '../util'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
