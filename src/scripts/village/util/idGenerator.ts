@@ -3,7 +3,17 @@ import uuidv5 from 'uuid/v5'
 
 export const idGenerator = (isTest?: boolean) => {
   if (typeof isTest === 'boolean' && isTest) {
-    return () => uuidv5('for test', uuidv5.DNS)
+    const infiniteList = (function* infiniteListGenerator() {
+      let index: number
+
+      index = 0
+      while (true) {
+        index += 1
+        yield uuidv5(String(index), uuidv5.URL)
+      }
+    })()
+
+    return () => infiniteList.next().value
   }
 
   return () => uuidv4()
