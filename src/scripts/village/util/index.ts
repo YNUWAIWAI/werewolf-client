@@ -5,6 +5,7 @@ import {
 } from '../constants/Role'
 import {village} from '../types'
 
+export {idGenerator} from './idGenerator'
 export const countText = (text: string): number => Array.of(... text).length
 export const getBaseUri = (id: string): string => {
   const match = (/^(?<baseUri>[^\n]+)\/\w+$/).exec(id)
@@ -202,19 +203,6 @@ export const getText = ({language, languageMap}: {language: village.Language, la
   }
 
   return maybe
-}
-
-export const idGenerater = (prefix: string) => {
-  let id: number | undefined
-
-  return () => {
-    if (typeof id === 'undefined') {
-      id = -1
-    }
-    id += 1
-
-    return `${prefix}${id}`
-  }
 }
 
 export const isValidTextLength = (text: string, upperLimit: number, lowerLimit: number): boolean => {

@@ -5,23 +5,40 @@ import {
   onymousAudienceChat,
   theirMessageOnChat
 } from './fakeServer'
-import reducer, {initialState} from './chat'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
+import {idGenerator} from '../util'
+import {initialState} from './chat'
 import {socket} from '../actions'
 import {village} from '../types'
 
+jest.mock('../util', () => {
+  const originalModule = jest.requireActual('../util')
+
+  return {
+    ... originalModule,
+    idGenerator: jest.fn(() => originalModule.idGenerator(true))
+  }
+})
+beforeEach(() => {
+  jest.resetModules()
+})
 describe('socket/MESSAGE', () => {
-  test('myMessageOnChat', () => {
+  test('myMessageOnChat', async () => {
+    const getAllId = idGenerator(true)
+    const allIds = [... Array(1)].map(() => getAllId())
+    const module = await import('./chat')
+    const reducer = module.default
+
     expect(
       reducer(
         initialState,
         socket.message(myMessageOnChat)
       )
     ).toStrictEqual({
-      allIds: ['chat0'],
+      allIds,
       byId: {
-        chat0: {
+        [allIds[0]]: {
           characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
@@ -40,36 +57,24 @@ describe('socket/MESSAGE', () => {
       }
     })
   })
-  test('theirMessageOnChat', () => {
+  test('theirMessageOnChat', async () => {
+    const getAllId = idGenerator(true)
+    const allIds = [... Array(2)].map(() => getAllId())
+    const module = await import('./chat')
+    const reducer = module.default
+
     expect(
       reducer(
-        {
-          allIds: ['chat0'],
-          byId: {
-            chat0: {
-              characterId: '1',
-              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              day: 1,
-              id: 12,
-              image: ImagePath.Character120x120.a,
-              intensionalDisclosureRange: village.Channel.public,
-              isMarked: false,
-              isMine: true,
-              name: Character.a,
-              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-              phaseTimeLimit: 600,
-              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: village.ChatItemType.item
-            }
-          }
-        },
+        reducer(
+          initialState,
+          socket.message(myMessageOnChat)
+        ),
         socket.message(theirMessageOnChat)
       )
     ).toStrictEqual({
-      allIds: ['chat0', 'chat1'],
+      allIds,
       byId: {
-        chat0: {
+        [allIds[0]]: {
           characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
@@ -85,7 +90,7 @@ describe('socket/MESSAGE', () => {
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
           type: village.ChatItemType.item
         },
-        chat1: {
+        [allIds[1]]: {
           characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
@@ -104,52 +109,27 @@ describe('socket/MESSAGE', () => {
       }
     })
   })
-  test('onymousAudienceChat', () => {
+  test('onymousAudienceChat', async () => {
+    const getAllId = idGenerator(true)
+    const allIds = [... Array(3)].map(() => getAllId())
+    const module = await import('./chat')
+    const reducer = module.default
+
     expect(
       reducer(
-        {
-          allIds: ['chat0', 'chat1'],
-          byId: {
-            chat0: {
-              characterId: '1',
-              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              day: 1,
-              id: 12,
-              image: ImagePath.Character120x120.a,
-              intensionalDisclosureRange: village.Channel.public,
-              isMarked: false,
-              isMine: true,
-              name: Character.a,
-              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-              phaseTimeLimit: 600,
-              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: village.ChatItemType.item
-            },
-            chat1: {
-              characterId: '1',
-              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              day: 1,
-              id: 12,
-              image: ImagePath.Character120x120.a,
-              intensionalDisclosureRange: village.Channel.public,
-              isMarked: false,
-              isMine: false,
-              name: Character.a,
-              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-              phaseTimeLimit: 600,
-              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: village.ChatItemType.item
-            }
-          }
-        },
+        reducer(
+          reducer(
+            initialState,
+            socket.message(myMessageOnChat)
+          ),
+          socket.message(theirMessageOnChat)
+        ),
         socket.message(onymousAudienceChat)
       )
     ).toStrictEqual({
-      allIds: ['chat0', 'chat1', 'chat2'],
+      allIds,
       byId: {
-        chat0: {
+        [allIds[0]]: {
           characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
@@ -165,7 +145,7 @@ describe('socket/MESSAGE', () => {
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
           type: village.ChatItemType.item
         },
-        chat1: {
+        [allIds[1]]: {
           characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
@@ -181,7 +161,7 @@ describe('socket/MESSAGE', () => {
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
           type: village.ChatItemType.item
         },
-        chat2: {
+        [allIds[2]]: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
           id: -1,
@@ -199,67 +179,30 @@ describe('socket/MESSAGE', () => {
       }
     })
   })
-  test('anonymousAudienceChat', () => {
+  test('anonymousAudienceChat', async () => {
+    const getAllId = idGenerator(true)
+    const allIds = [... Array(4)].map(() => getAllId())
+    const module = await import('./chat')
+    const reducer = module.default
+
     expect(
       reducer(
-        {
-          allIds: ['chat0', 'chat1', 'chat2'],
-          byId: {
-            chat0: {
-              characterId: '1',
-              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              day: 1,
-              id: 12,
-              image: ImagePath.Character120x120.a,
-              intensionalDisclosureRange: village.Channel.public,
-              isMarked: false,
-              isMine: true,
-              name: Character.a,
-              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-              phaseTimeLimit: 600,
-              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: village.ChatItemType.item
-            },
-            chat1: {
-              characterId: '1',
-              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              day: 1,
-              id: 12,
-              image: ImagePath.Character120x120.a,
-              intensionalDisclosureRange: village.Channel.public,
-              isMarked: false,
-              isMine: false,
-              name: Character.a,
-              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-              phaseTimeLimit: 600,
-              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: village.ChatItemType.item
-            },
-            chat2: {
-              clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-              day: 1,
-              id: -1,
-              image: ImagePath.Character120x120.y,
-              intensionalDisclosureRange: village.Channel.onymousAudience,
-              isMarked: false,
-              isMine: true,
-              name: 'Katoh',
-              phaseStartTime: '2006-10-07T12:06:56.568+09:00',
-              phaseTimeLimit: 600,
-              serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-              text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
-              type: village.ChatItemType.item
-            }
-          }
-        },
+        reducer(
+          reducer(
+            reducer(
+              initialState,
+              socket.message(myMessageOnChat)
+            ),
+            socket.message(theirMessageOnChat)
+          ),
+          socket.message(onymousAudienceChat)
+        ),
         socket.message(anonymousAudienceChat)
       )
     ).toStrictEqual({
-      allIds: ['chat0', 'chat1', 'chat2', 'chat3'],
+      allIds,
       byId: {
-        chat0: {
+        [allIds[0]]: {
           characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
@@ -275,7 +218,7 @@ describe('socket/MESSAGE', () => {
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
           type: village.ChatItemType.item
         },
-        chat1: {
+        [allIds[1]]: {
           characterId: '1',
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
@@ -291,7 +234,7 @@ describe('socket/MESSAGE', () => {
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
           type: village.ChatItemType.item
         },
-        chat2: {
+        [allIds[2]]: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
           id: -1,
@@ -306,7 +249,7 @@ describe('socket/MESSAGE', () => {
           text: '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。',
           type: village.ChatItemType.item
         },
-        chat3: {
+        [allIds[3]]: {
           clientTimestamp: '2006-10-07T12:06:56.568+09:00',
           day: 1,
           id: -1,
@@ -325,7 +268,12 @@ describe('socket/MESSAGE', () => {
     })
   })
 })
-test('CHANGE_day', () => {
+test('CHANGE_day', async () => {
+  const getAllId = idGenerator(true)
+  const allIds = [... Array(1)].map(() => getAllId())
+  const module = await import('./chat')
+  const reducer = module.default
+
   expect(
     reducer(
       initialState,
@@ -336,22 +284,27 @@ test('CHANGE_day', () => {
       }
     )
   ).toStrictEqual({
-    allIds: ['delimeter0'],
+    allIds,
     byId: {
-      'delimeter0': {
+      [allIds[0]]: {
         day: 1,
         type: village.ChatItemType.delimeter
       }
     }
   })
 })
-test('STAR', () => {
+test('STAR', async () => {
+  const getAllId = idGenerator(true)
+  const allIds = [... Array(1)].map(() => getAllId())
+  const module = await import('./chat')
+  const reducer = module.default
+
   expect(
     reducer(
       {
-        allIds: ['chat0'],
+        allIds,
         byId: {
-          chat0: {
+          [allIds[0]]: {
             characterId: '1',
             clientTimestamp: '2006-10-07T12:06:56.568+09:00',
             day: 1,
@@ -370,15 +323,15 @@ test('STAR', () => {
         }
       },
       {
-        id: 'chat0',
+        id: allIds[0],
         isMarked: true,
         type: ActionTypes.App.STAR
       }
     )
   ).toStrictEqual({
-    allIds: ['chat0'],
+    allIds,
     byId: {
-      chat0: {
+      [allIds[0]]: {
         characterId: '1',
         clientTimestamp: '2006-10-07T12:06:56.568+09:00',
         day: 1,

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import {idGenerater} from '../../util'
+import {idGenerator} from '../../util'
 
-const getChunkId = idGenerater('chunk')
+const getChunkId = idGenerator()
 
 const parseChat = (text: string) => text
   .split(/(?:\n|\r)+/)
