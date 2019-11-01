@@ -32,7 +32,7 @@ export const connectDB = (() => {
 
       return
     }
-    const request = window.indexedDB.open('licosDB', VERSION)
+    const request = indexedDB.open('licosDB', VERSION)
 
     request.onerror = () => {
       console.error(request.error)

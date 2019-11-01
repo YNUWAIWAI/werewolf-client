@@ -6,6 +6,9 @@ module.exports = {
     'json'
   ],
   preset: 'ts-jest',
+  setupFiles: [
+    'fake-indexeddb/auto'
+  ],
   setupFilesAfterEnv: [
     './tools/setupTests.js'
   ],
