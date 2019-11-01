@@ -5,9 +5,7 @@ import {
   PayloadBase,
   PayloadType
 } from '../../payload'
-import {
-  Token
-} from '../..'
+import {Token} from '../..'
 
 export interface Play extends PayloadBase{
   token: Token
