@@ -1,5 +1,3 @@
-/* eslint no-extra-parens: 0 */
-import '../../../../types/indexeddb'
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   Key,
@@ -16,18 +14,6 @@ import {
   Transition
 } from '../actions'
 import Ajv from 'ajv'
-import FDB from 'fake-indexeddb'
-import FDBCursor from 'fake-indexeddb/lib/FDBCursor'
-import FDBCursorWithValue from 'fake-indexeddb/lib/FDBCursorWithValue'
-import FDBDatabase from 'fake-indexeddb/lib/FDBDatabase'
-import FDBFactory from 'fake-indexeddb/lib/FDBFactory'
-import FDBIndex from 'fake-indexeddb/lib/FDBIndex'
-import FDBKeyRange from 'fake-indexeddb/lib/FDBKeyRange'
-import FDBObjectStore from 'fake-indexeddb/lib/FDBObjectStore'
-import FDBOpenDBRequest from 'fake-indexeddb/lib/FDBOpenDBRequest'
-import FDBRequest from 'fake-indexeddb/lib/FDBRequest'
-import FDBTransaction from 'fake-indexeddb/lib/FDBTransaction'
-import FDBVersionChangeEvent from 'fake-indexeddb/lib/FDBVersionChangeEvent'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
@@ -35,19 +21,6 @@ import {getCastFromNumberOfPlayers} from '../util'
 import {lobby} from '../types'
 import middleware from './indexedDB'
 import {waitingPage} from '../reducers/fakeServer'
-
-(window as Record<string, any>).indexedDB = FDB;
-(global as Record<string, any>).IDBCursor = FDBCursor;
-(global as Record<string, any>).IDBCursorWithValue = FDBCursorWithValue;
-(global as Record<string, any>).IDBDatabase = FDBDatabase;
-(global as Record<string, any>).IDBFactory = FDBFactory;
-(global as Record<string, any>).IDBIndex = FDBIndex;
-(global as Record<string, any>).IDBKeyRange = FDBKeyRange;
-(global as Record<string, any>).IDBObjectStore = FDBObjectStore;
-(global as Record<string, any>).IDBOpenDBRequest = FDBOpenDBRequest;
-(global as Record<string, any>).IDBRequest = FDBRequest;
-(global as Record<string, any>).IDBTransaction = FDBTransaction;
-(global as Record<string, any>).IDBVersionChangeEvent = FDBVersionChangeEvent
 
 const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
 const CLIENT2SERVER = `${BASE_URI}/client2server`
