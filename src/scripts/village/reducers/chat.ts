@@ -5,13 +5,12 @@ import {
   StarChat
 } from '../actions'
 import {
-  idGenerater,
+  idGenerator,
   just
 } from '../util'
 import {village} from '../types'
 
-const getChatId = idGenerater('chat')
-const getDelimeterId = idGenerater('delimeter')
+const getId = idGenerator()
 
 export interface State {
   readonly allIds: village.ChatId[]
@@ -53,7 +52,7 @@ const chat = (state: State = initialState, action: Action): State => {
       switch (action.payload['@payload']) {
         case village.Message.chatMessage: {
           const payload = action.payload
-          const chatId = getChatId()
+          const chatId = getId()
           const id = payload.intensionalDisclosureRange === village.Channel.public ? just(payload.id) : -1
 
           if (payload.intensionalDisclosureRange === village.Channel.anonymousAudience) {
@@ -130,7 +129,7 @@ const chat = (state: State = initialState, action: Action): State => {
       }
     }
     case ActionTypes.App.CHANGE_DAY: {
-      const delimeterId = getDelimeterId()
+      const delimeterId = getId()
 
       return {
         allIds: [... state.allIds, delimeterId],
