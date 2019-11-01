@@ -5,9 +5,7 @@ import {
   PayloadBase,
   PayloadType
 } from '../../payload'
-import {
-  Token
-} from '../..'
+import {Token} from '../..'
 
 export interface SelectVillage extends PayloadBase {
   token: Token

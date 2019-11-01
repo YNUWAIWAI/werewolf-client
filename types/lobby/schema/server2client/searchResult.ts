@@ -5,9 +5,7 @@ import {
   PayloadBase,
   PayloadType
 } from '../../payload'
-import {
-  Village
-} from '../..'
+import {Village} from '../..'
 
 export interface SearchResult extends PayloadBase {
   error: string | null

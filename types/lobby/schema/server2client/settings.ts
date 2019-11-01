@@ -5,9 +5,7 @@ import {
   PayloadBase,
   PayloadType
 } from '../../payload'
-import {
-  Language
-} from '../..'
+import {Language} from '../..'
 
 export interface Settings extends PayloadBase {
   lang: Language

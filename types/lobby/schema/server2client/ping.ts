@@ -5,9 +5,7 @@ import {
   PayloadBase,
   PayloadType
 } from '../../payload'
-import {
-  PingResult
-} from '../..'
+import {PingResult} from '../..'
 
 export interface Ping extends PayloadBase {
   id: string

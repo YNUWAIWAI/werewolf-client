@@ -1,9 +1,7 @@
 /*
   'https://werewolf.world/village/schema/0.3/allRoles.json'
 */
-import {
-  Context
-} from '..'
+import {Context} from '..'
 import {Role} from './role'
 
 export interface AllRoles {

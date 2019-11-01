@@ -5,9 +5,7 @@ import {
   PayloadBase,
   PayloadType
 } from '../../payload'
-import {
-  Language
-} from '../..'
+import {Language} from '../..'
 
 export interface Played extends PayloadBase {
   lang: Language
