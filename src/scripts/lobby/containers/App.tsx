@@ -3,10 +3,16 @@ import {
   CSSTransition,
   TransitionGroup
 } from 'react-transition-group'
+import {
+  Route,
+  Router,
+  Switch
+} from 'react-router-dom'
 import AdvancedSearch from './AdvancedSearchContainer'
 import BuildVillage from './BuildVillageContainer'
 import ConnectingToRobotPlayer from './ConnectingToRobotPlayerContainer'
 import {Content} from '../reducers/app'
+import {History as H} from 'history'
 import History from './HistoryContainer'
 import IdSearch from './IdSearchContainer'
 import IntlProvider from './IntlProviderContainer'
@@ -19,14 +25,46 @@ import Obfucator from './ObfucatorContainer'
 import {ReducerState} from '../reducers'
 import Settings from './SettingsContainer'
 import WaitingForPlayers from './WaitingForPlayersContainer'
-import {connect} from 'react-redux'
 
 interface StateProps {
-  readonly content: React.ReactElement<unknown>
-  readonly name: Content
+  readonly history: H
 }
 
-const mapStateToProps = (state: ReducerState): StateProps => {
+const routes = (
+  <Switch>
+    <Route path="/:lobbyType/advancedSearch">
+      <AdvancedSearch />
+    </Route>
+    <Route path="/:lobbyType/buildVillage">
+      <BuildVillage />
+    </Route>
+    <Route path="/history">
+      <History />
+    </Route>
+    <Route path="/:lobbyType/idSearch">
+      <IdSearch />
+    </Route>
+    <Route path="/audience/lobby">
+      <LobbyForAudience />
+    </Route>
+    <Route path="/human/lobby">
+      <LobbyForHumanPlayer />
+    </Route>
+    <Route path="/robot/lobby">
+      <LobbyForRobotPlayer />
+    </Route>
+    <Route path="/settings">
+      <Settings />
+    </Route>
+    <Route path="/:lobbyType/waitingForPlayers">
+      <WaitingForPlayers />
+    </Route>
+    <Route path="/">
+      <Main />
+    </Route>
+  </Switch>
+)
+const mapStateToProps = (state: ReducerState) => {
   switch (state.app.content) {
     case Content.AdvancedSearch:
       return {
@@ -87,31 +125,26 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 
-export default connect(
-  mapStateToProps
-)(
-  function App(props: StateProps) {
-    return (
-      <IntlProvider>
-        <>
-          <TransitionGroup
-            component={null}
+export default function App(props: StateProps) {
+  return (
+    <IntlProvider>
+      <Router history={props.history}>
+        <TransitionGroup
+          component={null}
+        >
+          <CSSTransition
+            appear
+            classNames="lo--app--transition"
+            exit={false}
+            timeout={100}
+            unmountOnExit
           >
-            <CSSTransition
-              appear
-              classNames="lo--app--transition"
-              exit={false}
-              key={props.name}
-              timeout={100}
-              unmountOnExit
-            >
-              {props.content}
-            </CSSTransition>
-          </TransitionGroup>
-          <Obfucator />
-          <Modal />
-        </>
-      </IntlProvider>
-    )
-  }
-)
+            {routes}
+          </CSSTransition>
+        </TransitionGroup>
+        <Obfucator />
+        <Modal />
+      </Router>
+    </IntlProvider>
+  )
+}

@@ -6,10 +6,13 @@ import {
   MiddlewareAPI,
   applyMiddleware
 } from 'redux'
+import {History} from 'history'
 import {ReducerState} from '../reducers'
 import client2server from './client2server'
+import {composeWithDevTools} from 'redux-devtools-extension'
 import indexedDB from './indexedDB'
 import logger from './logger'
+import router from './router'
 import socket from './socket'
 import windowLocation from './windowLocation'
 
@@ -49,33 +52,43 @@ type Action =
   | actions.Transition
   | {type: ActionTypes.IndexedDB.INIT}
   | {type: ActionTypes.Socket.INIT}
+  | {type: ActionTypes.App.INIT}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 
-const elem = document.getElementById('script')
-
-if (!elem || !elem.dataset || !elem.dataset.url) {
-  throw Error('Not found data-url attribute.')
+interface Options {
+  history: History
+  url: string
 }
-const url = elem.dataset.url
-const middleware =
-  process.env.NODE_ENV === 'production' ?
-    applyMiddleware(
+export const createMiddleware = ({history, url}: Options) => {
+  if (process.env.NODE_ENV === 'production') {
+    return applyMiddleware(
       socket({
         url
       }),
+      router(history),
       client2server,
       indexedDB,
       windowLocation
-    ) :
+    )
+  }
+
+  return composeWithDevTools(
     applyMiddleware(
       socket({
         url
       }),
+      router(history),
       client2server,
       indexedDB,
       logger,
       windowLocation
     )
-
-export default middleware
+  )
+}
+export const createRouterMiddleware = (history: Options['history']) => {
+  return applyMiddleware(
+    router(history),
+    logger
+  )
+}
