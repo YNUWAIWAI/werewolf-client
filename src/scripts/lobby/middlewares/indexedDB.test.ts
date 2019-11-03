@@ -351,10 +351,11 @@ describe('socket/MESSAGE', () => {
     }
     const store = fakeStore({
       token: {
-        'human player': avatarToken.humanPlayer,
+        [lobby.LobbyType.anonymousAudience]: '',
+        [lobby.LobbyType.human]: avatarToken.humanPlayer,
         'lobby': lobby.LobbyType.human,
-        'onymous audience': avatarToken.onymousAudience,
-        'robot player': avatarToken.robotPlayer
+        [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+        [lobby.LobbyType.robot]: avatarToken.robotPlayer
       }
     })
     const nextHandler = middleware(store)

@@ -60,10 +60,11 @@ describe('ADVANCED_SEARCH', () => {
         value
       },
       token: {
-        'human player': avatarToken.humanPlayer,
+        [lobby.LobbyType.anonymousAudience]: '',
+        [lobby.LobbyType.human]: avatarToken.humanPlayer,
         'lobby': lobby.LobbyType.human,
-        'onymous audience': avatarToken.onymousAudience,
-        'robot player': avatarToken.robotPlayer
+        [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+        [lobby.LobbyType.robot]: avatarToken.robotPlayer
       }
     })
     const dispatch = jest.fn()
@@ -125,10 +126,11 @@ describe('ADVANCED_SEARCH', () => {
         }
       },
       token: {
-        'human player': avatarToken.humanPlayer,
+        [lobby.LobbyType.anonymousAudience]: '',
+        [lobby.LobbyType.human]: avatarToken.humanPlayer,
         'lobby': lobby.LobbyType.human,
-        'onymous audience': avatarToken.onymousAudience,
-        'robot player': avatarToken.robotPlayer
+        [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+        [lobby.LobbyType.robot]: avatarToken.robotPlayer
       }
     })
     const dispatch = jest.fn()
@@ -177,10 +179,11 @@ describe('ADVANCED_SEARCH', () => {
 describe('BUILD_VILLAGE', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -244,10 +247,11 @@ describe('BUILD_VILLAGE', () => {
 describe('CHANGE_LANGUAGE', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -289,10 +293,11 @@ describe('CHANGE_LANGUAGE', () => {
 describe('CHANGE_USER_EMAIL', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -334,10 +339,11 @@ describe('CHANGE_USER_EMAIL', () => {
 describe('CHANGE_USER_NAME', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -379,10 +385,11 @@ describe('CHANGE_USER_NAME', () => {
 describe('CHANGE_USER_PASSWORD', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -425,10 +432,11 @@ describe('KICK_OUT_PLAYER', () => {
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     },
     waitingForPlayers: {
       isPlayer: true,
@@ -483,10 +491,11 @@ describe('LEAVE_WAITING_PAGE', () => {
   const villageId = 1
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     },
     waitingForPlayers: {
       isPlayer: true,
@@ -580,10 +589,11 @@ describe('PLAY_GAME', () => {
   const villageId = 1
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     },
     waitingForPlayers: {
       isPlayer: true,
@@ -679,10 +689,11 @@ describe('ID_SEARCH valid id', () => {
       id: idForSearching
     },
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -725,10 +736,11 @@ describe('ID_SEARCH valid id', () => {
 describe('ID_SEARCH invalid id(=-1)', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -749,10 +761,11 @@ describe('ID_SEARCH invalid id(=-1)', () => {
 describe('SELECT_VILLAGE', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -796,10 +809,11 @@ describe('SELECT_VILLAGE', () => {
 describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -862,10 +876,11 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
 describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -928,10 +943,11 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
 describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -994,10 +1010,11 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
 describe('SHOW_SETTINGS', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
@@ -1037,10 +1054,11 @@ describe('SHOW_SETTINGS', () => {
 describe('socket/MESSAGE tyoe: "ping"', () => {
   const store = fakeStore({
     token: {
-      'human player': avatarToken.humanPlayer,
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
       'lobby': lobby.LobbyType.human,
-      'onymous audience': avatarToken.onymousAudience,
-      'robot player': avatarToken.robotPlayer
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
     }
   })
   const dispatch = jest.fn()
