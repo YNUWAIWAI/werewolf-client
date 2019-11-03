@@ -7,10 +7,11 @@ import {
 import {lobby} from '../types'
 
 export interface State {
-  [lobby.LobbyType.human]: string
+  [lobby.LobbyType.anonymousAudience]: lobby.Token
+  [lobby.LobbyType.human]: lobby.Token
   lobby: lobby.LobbyType
-  [lobby.LobbyType.onymousAudience]: string
-  [lobby.LobbyType.robot]: string
+  [lobby.LobbyType.onymousAudience]: lobby.Token
+  [lobby.LobbyType.robot]: lobby.Token
 }
 type Action =
   | ChangeLobby
@@ -18,6 +19,7 @@ type Action =
   | Transition
 
 export const initialState: State = {
+  [lobby.LobbyType.anonymousAudience]: '',
   [lobby.LobbyType.human]: '',
   lobby: lobby.LobbyType.human,
   [lobby.LobbyType.onymousAudience]: '',
