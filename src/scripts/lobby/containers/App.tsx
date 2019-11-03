@@ -10,8 +10,7 @@ import {
 } from 'react-router-dom'
 import AdvancedSearch from './AdvancedSearchContainer'
 import BuildVillage from './BuildVillageContainer'
-import ConnectingToRobotPlayer from './ConnectingToRobotPlayerContainer'
-import {Content} from '../reducers/app'
+// import ConnectingToRobotPlayer from './ConnectingToRobotPlayerContainer'
 import {History as H} from 'history'
 import History from './HistoryContainer'
 import IdSearch from './IdSearchContainer'
@@ -22,7 +21,6 @@ import LobbyForRobotPlayer from './LobbyForRobotPlayerContainer'
 import Main from './MainContainer'
 import Modal from './ModalContainer'
 import Obfucator from './ObfucatorContainer'
-import {ReducerState} from '../reducers'
 import Settings from './SettingsContainer'
 import WaitingForPlayers from './WaitingForPlayersContainer'
 
@@ -64,66 +62,6 @@ const routes = (
     </Route>
   </Switch>
 )
-const mapStateToProps = (state: ReducerState) => {
-  switch (state.app.content) {
-    case Content.AdvancedSearch:
-      return {
-        content: <AdvancedSearch />,
-        name: state.app.content
-      }
-    case Content.BuildVillage:
-      return {
-        content: <BuildVillage />,
-        name: state.app.content
-      }
-    case Content.ConnectingToRobotPlayer:
-      return {
-        content: <ConnectingToRobotPlayer />,
-        name: state.app.content
-      }
-    case Content.History:
-      return {
-        content: <History />,
-        name: state.app.content
-      }
-    case Content.IdSearch:
-      return {
-        content: <IdSearch />,
-        name: state.app.content
-      }
-    case Content.LobbyForAudience:
-      return {
-        content: <LobbyForAudience />,
-        name: state.app.content
-      }
-    case Content.LobbyForHumanPlayer:
-      return {
-        content: <LobbyForHumanPlayer />,
-        name: state.app.content
-      }
-    case Content.LobbyForRobotPlayer:
-      return {
-        content: <LobbyForRobotPlayer />,
-        name: state.app.content
-      }
-    case Content.Settings:
-      return {
-        content: <Settings />,
-        name: state.app.content
-      }
-    case Content.WaitingForPlayers:
-      return {
-        content: <WaitingForPlayers />,
-        name: state.app.content
-      }
-    case Content.Main:
-    default:
-      return {
-        content: <Main />,
-        name: state.app.content
-      }
-  }
-}
 
 export default function App(props: StateProps) {
   return (
