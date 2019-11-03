@@ -8,6 +8,7 @@ import {
   AdvancedSearch$ChangeMinimum,
   AdvancedSearch$ChangeValidity,
   AdvancedSearch$ChangeVillageName,
+  ChangeLobby,
   SocketMessage,
   Transition
 } from '../actions'
@@ -56,6 +57,7 @@ type Action =
   | AdvancedSearch$ChangeMinimum
   | AdvancedSearch$ChangeValidity
   | AdvancedSearch$ChangeVillageName
+  | ChangeLobby
   | SocketMessage
   | Transition
 
@@ -91,6 +93,50 @@ export const initialState: State = {
     villageName: ''
   },
   villageItems: []
+}
+const menuItems = {
+  audience: [
+    {
+      id: 'Menu.search',
+      types: [ActionTypes.Target.ADVANCED_SEARCH]
+    },
+    {
+      id: 'Menu.returnToLobbyForAudience',
+      types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+    },
+    {
+      id: 'Menu.returnToMainPage',
+      types: [ActionTypes.Target.SHOW_MAIN]
+    }
+  ],
+  human: [
+    {
+      id: 'Menu.search',
+      types: [ActionTypes.Target.ADVANCED_SEARCH]
+    },
+    {
+      id: 'Menu.returnToLobbyForHumanPlayer',
+      types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+    },
+    {
+      id: 'Menu.returnToMainPage',
+      types: [ActionTypes.Target.SHOW_MAIN]
+    }
+  ],
+  robot: [
+    {
+      id: 'Menu.search',
+      types: [ActionTypes.Target.ADVANCED_SEARCH]
+    },
+    {
+      id: 'Menu.returnToLobbyForRobotPlayer',
+      types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+    },
+    {
+      id: 'Menu.returnToMainPage',
+      types: [ActionTypes.Target.SHOW_MAIN]
+    }
+  ]
 }
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
@@ -174,6 +220,36 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           villageName: action.villageName
         }
       }
+    case ActionTypes.App.CHANGE_LOBBY:
+      switch (action.lobby) {
+        case lobby.LobbyType.anonymousAudience:
+        case lobby.LobbyType.onymousAudience:
+          return {
+            ... state,
+            header: 'Header.advancedSearch(audience)',
+            isPlayer: false,
+            menuItems: menuItems.audience,
+            villageItems: []
+          }
+        case lobby.LobbyType.human:
+          return {
+            ... state,
+            header: 'Header.advancedSearch(human player)',
+            isPlayer: true,
+            menuItems: menuItems.human,
+            villageItems: []
+          }
+        case lobby.LobbyType.robot:
+          return {
+            ... state,
+            header: 'Header.advancedSearch(robot player)',
+            isPlayer: true,
+            menuItems: menuItems.robot,
+            villageItems: []
+          }
+        default:
+          return state
+      }
     case ActionTypes.Target.SHOW_ADVANCED_SEARCH:
       return {
         ... state,
@@ -187,20 +263,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         ... state,
         header: 'Header.advancedSearch(audience)',
         isPlayer: false,
-        menuItems: [
-          {
-            id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
-          },
-          {
-            id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
-          },
-          {
-            id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
-          }
-        ],
+        menuItems: menuItems.audience,
         villageItems: []
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
@@ -208,20 +271,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         ... state,
         header: 'Header.advancedSearch(human player)',
         isPlayer: true,
-        menuItems: [
-          {
-            id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
-          },
-          {
-            id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-          },
-          {
-            id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
-          }
-        ],
+        menuItems: menuItems.human,
         villageItems: []
       }
     case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
@@ -229,20 +279,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         ... state,
         header: 'Header.advancedSearch(robot player)',
         isPlayer: true,
-        menuItems: [
-          {
-            id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
-          },
-          {
-            id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
-          },
-          {
-            id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
-          }
-        ],
+        menuItems: menuItems.robot,
         villageItems: []
       }
     case ActionTypes.Socket.MESSAGE:

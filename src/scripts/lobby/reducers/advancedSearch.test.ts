@@ -53,6 +53,135 @@ test('ADVANCED_SEARCH', () => {
     }
   )
 })
+describe('CHANGE_LOBBY', () => {
+  test('anonymousAudience', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.anonymousAudience,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        ... initialState,
+        header: 'Header.advancedSearch(audience)',
+        isPlayer: false,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        searched: false
+      }
+    )
+  })
+  test('human', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.human,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        ... initialState,
+        header: 'Header.advancedSearch(human player)',
+        isPlayer: true,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForHumanPlayer',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        searched: false
+      }
+    )
+  })
+  test('onymousAudience', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.onymousAudience,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        ... initialState,
+        header: 'Header.advancedSearch(audience)',
+        isPlayer: false,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        searched: false
+      }
+    )
+  })
+  test('robot', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.robot,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        ... initialState,
+        header: 'Header.advancedSearch(robot player)',
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForRobotPlayer',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        searched: false
+      }
+    )
+  })
+})
 test('advancedSearch/CHANGE_AVATAR', () => {
   expect(
     reducer(
