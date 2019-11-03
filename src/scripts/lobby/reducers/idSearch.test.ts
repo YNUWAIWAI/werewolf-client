@@ -151,7 +151,6 @@ describe('CHANGE_LOBBY', () => {
       }
     )
   })
-
 })
 test('ID_SEARCH', () => {
   expect(
