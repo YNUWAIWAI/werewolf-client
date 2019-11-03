@@ -1,5 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  ChangeLobby,
   IdSearch$ChangeSearchId,
   IdSearch$ChangeValidity,
   SocketMessage,
@@ -19,6 +20,7 @@ export interface State {
   readonly villageItems: lobby.Village[]
 }
 type Action =
+  | ChangeLobby
   | IdSearch$ChangeSearchId
   | IdSearch$ChangeValidity
   | SocketMessage
@@ -37,6 +39,84 @@ export const initialState: State = {
 
 const idSearch = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.App.CHANGE_LOBBY:
+      switch (action.lobby) {
+        case lobby.LobbyType.anonymousAudience:
+        case lobby.LobbyType.onymousAudience:
+          return {
+            ... state,
+            header: 'Header.idSearch(audience)',
+            id: -1,
+            isPlayer: false,
+            menuItems: [
+              {
+                disabled: true,
+                id: 'Menu.search',
+                types: [ActionTypes.Target.ID_SEARCH]
+              },
+              {
+                id: 'Menu.returnToLobbyForAudience',
+                types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.Target.SHOW_MAIN]
+              }
+            ],
+            searched: false,
+            villageItems: []
+          }
+        case lobby.LobbyType.human:
+          return {
+            ... state,
+            header: 'Header.idSearch(human player)',
+            id: -1,
+            isPlayer: true,
+            menuItems: [
+              {
+                disabled: true,
+                id: 'Menu.search',
+                types: [ActionTypes.Target.ID_SEARCH]
+              },
+              {
+                id: 'Menu.returnToLobbyForHumanPlayer',
+                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.Target.SHOW_MAIN]
+              }
+            ],
+            searched: false,
+            villageItems: []
+          }
+        case lobby.LobbyType.robot:
+          return {
+            ... state,
+            header: 'Header.idSearch(robot player)',
+            id: -1,
+            isPlayer: true,
+            menuItems: [
+              {
+                disabled: true,
+                id: 'Menu.search',
+                types: [ActionTypes.Target.ID_SEARCH]
+              },
+              {
+                id: 'Menu.returnToLobbyForRobotPlayer',
+                types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.Target.SHOW_MAIN]
+              }
+            ],
+            searched: false,
+            villageItems: []
+          }
+        default:
+          return state
+      }
     case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
