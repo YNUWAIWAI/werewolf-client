@@ -58,6 +58,8 @@ storiesOf('lobby|App', module)
         <App history={history} />
       </Provider>
 
+    history.push('/human/waitingForPlayers')
+
     return story
   })
   .add('lobbyForHumanPlayer', () => {
@@ -78,6 +80,8 @@ storiesOf('lobby|App', module)
       <Provider store={store}>
         <App history={history} />
       </Provider>
+
+    history.push('/human/lobby')
 
     return story
   })
