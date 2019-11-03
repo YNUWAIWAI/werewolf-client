@@ -6,12 +6,12 @@ import {changeLobby} from '../actions'
 import {lobby} from '../types'
 import {matchPath} from 'react-router'
 
-const enum LobbyType {
+export const enum LobbyType {
   audience = 'audience',
   human = 'human',
   robot = 'robot'
 }
-const getLobbyType = (pathname: string) => {
+export const getLobbyType = (pathname: string) => {
   const match = matchPath<{lobbyType: LobbyType}>(pathname, {
     exact: false,
     path: '/:lobbyType',
@@ -32,17 +32,19 @@ const router: (history: History) => Middleware = history => store => next => act
       switch (lobbyType) {
         case LobbyType.audience:
           store.dispatch(changeLobby(lobby.LobbyType.onymousAudience))
-          break
+
+          return next(action)
         case LobbyType.human:
           store.dispatch(changeLobby(lobby.LobbyType.human))
-          break
+
+          return next(action)
         case LobbyType.robot:
           store.dispatch(changeLobby(lobby.LobbyType.robot))
-          break
+
+          return next(action)
         default:
-          break
+          return next(action)
       }
-      break
     }
     case ActionTypes.App.SELECT_VILLAGE:
     case ActionTypes.Target.BUILD_VILLAGE: {
@@ -53,7 +55,8 @@ const router: (history: History) => Middleware = history => store => next => act
       } else {
         history.replace('/')
       }
-      break
+
+      return next(action)
     }
     case ActionTypes.Target.SHOW_ADVANCED_SEARCH: {
       const lobbyType = getLobbyType(history.location.pathname)
@@ -63,7 +66,8 @@ const router: (history: History) => Middleware = history => store => next => act
       } else {
         history.push('/')
       }
-      break
+
+      return next(action)
     }
     case ActionTypes.Target.SHOW_BUILD_VILLAGE: {
       const lobbyType = getLobbyType(history.location.pathname)
@@ -73,14 +77,17 @@ const router: (history: History) => Middleware = history => store => next => act
       } else {
         history.push('/')
       }
-      break
+
+      return next(action)
     }
     case ActionTypes.Target.SHOW_CONNECTING_TO_ROBOT_PLAYER:
       history.push('/')
-      break
+
+      return next(action)
     case ActionTypes.Target.SHOW_HISTORY:
       history.push('/history')
-      break
+
+      return next(action)
     case ActionTypes.Target.SHOW_ID_SEARCH: {
       const lobbyType = getLobbyType(history.location.pathname)
 
@@ -89,28 +96,33 @@ const router: (history: History) => Middleware = history => store => next => act
       } else {
         history.push('/')
       }
-      break
+
+      return next(action)
     }
     case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
       history.push('/audience/lobby')
-      break
+
+      return next(action)
     case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       history.push('/human/lobby')
-      break
+
+      return next(action)
     case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       history.push('/robot/lobby')
-      break
+
+      return next(action)
     case ActionTypes.Target.SHOW_MAIN:
       history.push('/')
-      break
+
+      return next(action)
     case ActionTypes.Target.SHOW_SETTINGS:
       history.push('/settings')
-      break
-    default:
-      break
-  }
 
-  return next(action)
+      return next(action)
+    default:
+
+      return next(action)
+  }
 }
 
 export default router
