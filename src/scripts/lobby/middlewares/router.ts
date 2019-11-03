@@ -3,8 +3,8 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {History} from 'history'
 import {Middleware} from '.'
 import {changeLobby} from '../actions'
-import {matchPath} from 'react-router'
 import {lobby} from '../types'
+import {matchPath} from 'react-router'
 
 const enum LobbyType {
   audience = 'audience',
@@ -24,7 +24,6 @@ const getLobbyType = (pathname: string) => {
 
   return null
 }
-
 const router: (history: History) => Middleware = history => store => next => action => {
   switch (action.type) {
     case ActionTypes.App.INIT: {
@@ -50,9 +49,9 @@ const router: (history: History) => Middleware = history => store => next => act
       const lobbyType = getLobbyType(history.location.pathname)
 
       if (lobbyType) {
-        history.push(`/${lobbyType}/waitingForPlayers`)
+        history.replace(`/${lobbyType}/waitingForPlayers`)
       } else {
-        history.push('/')
+        history.replace('/')
       }
       break
     }
