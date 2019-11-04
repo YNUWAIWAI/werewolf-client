@@ -58,7 +58,7 @@ storiesOf('lobby|App', module)
         <App history={history} />
       </Provider>
 
-    history.push('/human/waitingForPlayers')
+    history.replace('/human/waitingForPlayers')
 
     return story
   })
@@ -81,7 +81,7 @@ storiesOf('lobby|App', module)
         <App history={history} />
       </Provider>
 
-    history.push('/human/lobby')
+    history.replace('/human/lobby')
 
     return story
   })
