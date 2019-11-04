@@ -7,6 +7,7 @@ import {
   BuildVillage$ChangeNumberOfRobots,
   BuildVillage$ChangeValidity,
   BuildVillage$ChangeVillageName,
+  ChangeLobby,
   SocketMessage,
   Transition
 } from '../actions'
@@ -49,6 +50,7 @@ type Action =
   | BuildVillage$ChangeNumberOfRobots
   | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
+  | ChangeLobby
   | SocketMessage
   | Transition
 
@@ -81,6 +83,57 @@ export const initialState: State = {
 }
 const buildVillage = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.App.CHANGE_LOBBY:
+      switch (action.lobby) {
+        case lobby.LobbyType.human:
+          return {
+            ... state,
+            menuItems: [
+              {
+                id: 'Menu.buildVillage',
+                types: [ActionTypes.Target.BUILD_VILLAGE]
+              },
+              {
+                id: 'Menu.returnToLobbyForHumanPlayer',
+                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.Target.SHOW_MAIN]
+              }
+            ],
+            validity: initialState.validity,
+            value: {
+              ... state.value,
+              isHuman: true
+            }
+          }
+        case lobby.LobbyType.robot:
+          return {
+            ... state,
+            menuItems: [
+              {
+                id: 'Menu.buildVillage',
+                types: [ActionTypes.Target.BUILD_VILLAGE]
+              },
+              {
+                id: 'Menu.returnToLobbyForRobotPlayer',
+                types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.Target.SHOW_MAIN]
+              }
+            ],
+            validity: initialState.validity,
+            value: {
+              ... state.value,
+              isHuman: false
+            }
+          }
+        default:
+          return state
+      }
     case ActionTypes.BuildVillage.CHANGE_AVATAR:
       if (action.avatar === lobby.Avatar.fixed) {
         return {
