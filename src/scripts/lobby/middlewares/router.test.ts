@@ -1,10 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import middleware, {
-  LobbyType,
-  getLobbyType
-} from './router'
-import {ChangeLobby} from '../actions'
-import {createHashHistory} from 'history'
+import middleware, {getLobbyType} from './router'
+import {createMemoryHistory} from 'history'
 import fakeStore from '../containers/fakeStore'
 import {lobby} from '../types'
 
@@ -24,7 +20,7 @@ describe('getLobbyType', () => {
 })
 describe('INIT', () => {
   test('/audience', () => {
-    const history = createHashHistory()
+    const history = createMemoryHistory()
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -45,7 +41,7 @@ describe('INIT', () => {
     })
   })
   test('/human', () => {
-    const history = createHashHistory()
+    const history = createMemoryHistory()
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -65,7 +61,7 @@ describe('INIT', () => {
     })
   })
   test('/robot', () => {
-    const history = createHashHistory()
+    const history = createMemoryHistory()
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -85,7 +81,7 @@ describe('INIT', () => {
     })
   })
   test('/', () => {
-    const history = createHashHistory()
+    const history = createMemoryHistory()
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -100,4 +96,310 @@ describe('INIT', () => {
     })
     expect(dispatch).toHaveBeenCalledTimes(0)
   })
+})
+describe('SELECT_VILLAGE', () => {
+  test('lobbyType: human', () => {
+    const history = createMemoryHistory()
+    const replace = jest.fn()
+    const store = fakeStore()
+
+    history.push('/human/lobby')
+    history.replace = replace
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      id: 1,
+      type: ActionTypes.App.SELECT_VILLAGE
+    })
+    expect(replace).toHaveBeenCalled()
+    expect(replace).toHaveBeenCalledWith('/human/waitingForPlayers')
+  })
+  test('lobbyType: null', () => {
+    const history = createMemoryHistory()
+    const replace = jest.fn()
+    const store = fakeStore()
+
+    history.replace = replace
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      id: 1,
+      type: ActionTypes.App.SELECT_VILLAGE
+    })
+    expect(replace).toHaveBeenCalled()
+    expect(replace).toHaveBeenCalledWith('/')
+  })
+})
+describe('BUILD_VILLAGE', () => {
+  test('lobbyType: human', () => {
+    const history = createMemoryHistory()
+    const replace = jest.fn()
+    const store = fakeStore()
+
+    history.push('/human/buildVillage')
+    history.replace = replace
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.BUILD_VILLAGE
+    })
+    expect(replace).toHaveBeenCalled()
+    expect(replace).toHaveBeenCalledWith('/human/waitingForPlayers')
+  })
+  test('lobbyType: null', () => {
+    const history = createMemoryHistory()
+    const replace = jest.fn()
+    const store = fakeStore()
+
+    history.replace = replace
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.BUILD_VILLAGE
+    })
+    expect(replace).toHaveBeenCalled()
+    expect(replace).toHaveBeenCalledWith('/')
+  })
+})
+describe('SHOW_ADVANCED_SEARCH', () => {
+  test('lobbyType: human', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push('/human/lobby')
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/human/advancedSearch')
+  })
+  test('lobbyType: null', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/')
+  })
+})
+describe('SHOW_BUILD_VILLAGE', () => {
+  test('lobbyType: human', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push('/human/lobby')
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.SHOW_BUILD_VILLAGE
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/human/buildVillage')
+  })
+  test('lobbyType: null', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.SHOW_BUILD_VILLAGE
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/')
+  })
+})
+test('SHOW_CONNECTING_TO_ROBOT_PLAYER', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.Target.SHOW_CONNECTING_TO_ROBOT_PLAYER
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/')
+})
+test('SHOW_HISTORY', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.Target.SHOW_HISTORY
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/history')
+})
+describe('SHOW_ID_SEARCH', () => {
+  test('lobbyType: human', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push('/human/lobby')
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.SHOW_ID_SEARCH
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/human/idSearch')
+  })
+  test('lobbyType: null', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.Target.SHOW_ID_SEARCH
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/')
+  })
+})
+test('SHOW_LOBBY_FOR_AUDIENCE', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/audience/lobby')
+})
+test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/human/lobby')
+})
+test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/robot/lobby')
+})
+test('SHOW_MAIN', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.Target.SHOW_MAIN
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/')
+})
+test('SHOW_SETTINGS', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.Target.SHOW_SETTINGS
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/settings')
 })

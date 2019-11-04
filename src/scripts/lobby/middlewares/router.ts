@@ -6,11 +6,12 @@ import {changeLobby} from '../actions'
 import {lobby} from '../types'
 import {matchPath} from 'react-router'
 
-export const enum LobbyType {
+const enum LobbyType {
   audience = 'audience',
   human = 'human',
   robot = 'robot'
 }
+
 export const getLobbyType = (pathname: string) => {
   const match = matchPath<{lobbyType: LobbyType}>(pathname, {
     exact: false,
