@@ -59,6 +59,9 @@ storiesOf('lobby|App', module)
       </Provider>
 
     history.replace('/human/waitingForPlayers')
+    store.dispatch({
+      type: ActionTypes.App.INIT
+    })
 
     return story
   })
@@ -82,6 +85,9 @@ storiesOf('lobby|App', module)
       </Provider>
 
     history.replace('/human/lobby')
+    store.dispatch({
+      type: ActionTypes.App.INIT
+    })
 
     return story
   })
