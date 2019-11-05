@@ -5,6 +5,7 @@ import {
 } from '../constants/Role'
 import {village} from '../types'
 
+export {convertImageUrl} from './convertImageUrl'
 export {idGenerator} from './idGenerator'
 export const countText = (text: string): number => Array.of(... text).length
 export const getBaseUri = (id: string): string => {

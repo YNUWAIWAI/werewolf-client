@@ -13,7 +13,7 @@ export const theirMessageOnChat: village.Payload$ChatMessage = {
     '@context': village.Context.Character,
     '@id': `https://licos.online/state/${VERSION}/village#3/character`,
     'id': 1,
-    'image': ImagePath.Character120x120.a,
+    'image': ImagePath.Character.a,
     'name': Character.a
   },
   'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
