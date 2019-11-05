@@ -27,7 +27,7 @@ type Action =
   | Transition
 
 export const initialState: State = {
-  header: '',
+  header: '@dummy',
   id: -1,
   image: '',
   isPlayer: true,

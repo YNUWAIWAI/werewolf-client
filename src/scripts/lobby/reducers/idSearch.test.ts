@@ -313,14 +313,9 @@ test('idSearch/CHANGE_SEARCH_ID', () => {
     )
   ).toStrictEqual(
     {
-      header: '',
+      ... initialState,
       id: 123,
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      villageItems: []
+      searched: false
     }
   )
 })
@@ -353,10 +348,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
     )
   ).toStrictEqual(
     {
-      header: '',
-      id: -1,
-      image: '',
-      isPlayer: true,
+      ... initialState,
       menuItems: [
         {
           disabled: false,
@@ -371,10 +363,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
           id: 'Menu.returnToMainPage',
           types: [ActionTypes.Target.SHOW_MAIN]
         }
-      ],
-      name: '',
-      searched: false,
-      villageItems: []
+      ]
     }
   )
 })
@@ -390,14 +379,9 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        header: '',
-        id: -1,
+        ... initialState,
         image: '/assets/images/avatar/default/user.png',
-        isPlayer: true,
-        menuItems: [],
-        name: 'Alice',
-        searched: false,
-        villageItems: []
+        name: 'Alice'
       }
     )
   })
@@ -430,10 +414,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        header: '',
-        id: -1,
-        image: '',
-        isPlayer: true,
+        ... initialState,
         menuItems: [
           {
             disabled: false,
@@ -450,7 +431,6 @@ describe('socket/MESSAGE', () => {
             types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
-        name: '',
         searched: true,
         villageItems: [
           {
