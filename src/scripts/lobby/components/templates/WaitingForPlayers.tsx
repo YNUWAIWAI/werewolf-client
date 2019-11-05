@@ -52,7 +52,11 @@ export default function WaitingForPlayers(props: Props) {
         <Menu
           class="lo--compact-menu"
           itemClass="lo--compact-menu--item"
-          items={[head]}
+          items={
+            typeof head === 'undefined' ?
+              [] :
+              [head]
+          }
           transition={props.transition}
         />
         <AvatarList

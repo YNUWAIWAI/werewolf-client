@@ -16,6 +16,7 @@ test('CHANGE_LOBBY', () => {
     )
   ).toStrictEqual(
     {
+      [lobby.LobbyType.anonymousAudience]: '',
       [lobby.LobbyType.human]: '',
       lobby: lobby.LobbyType.robot,
       [lobby.LobbyType.onymousAudience]: '',
@@ -36,6 +37,7 @@ describe('CHANGE_TOKEN', () => {
       )
     ).toStrictEqual(
       {
+        [lobby.LobbyType.anonymousAudience]: '',
         [lobby.LobbyType.human]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
         lobby: lobby.LobbyType.human,
         [lobby.LobbyType.onymousAudience]: '',
@@ -55,6 +57,7 @@ describe('CHANGE_TOKEN', () => {
       )
     ).toStrictEqual(
       {
+        [lobby.LobbyType.anonymousAudience]: '',
         [lobby.LobbyType.human]: '',
         lobby: lobby.LobbyType.human,
         [lobby.LobbyType.onymousAudience]: '',
@@ -74,6 +77,7 @@ describe('CHANGE_TOKEN', () => {
       )
     ).toStrictEqual(
       {
+        [lobby.LobbyType.anonymousAudience]: '',
         [lobby.LobbyType.human]: '',
         lobby: lobby.LobbyType.human,
         [lobby.LobbyType.onymousAudience]: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
@@ -92,6 +96,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     )
   ).toStrictEqual(
     {
+      [lobby.LobbyType.anonymousAudience]: '',
       [lobby.LobbyType.human]: '',
       lobby: 'onymous audience',
       [lobby.LobbyType.onymousAudience]: '',
@@ -109,6 +114,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     )
   ).toStrictEqual(
     {
+      [lobby.LobbyType.anonymousAudience]: '',
       [lobby.LobbyType.human]: '',
       lobby: lobby.LobbyType.human,
       [lobby.LobbyType.onymousAudience]: '',
@@ -126,6 +132,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     )
   ).toStrictEqual(
     {
+      [lobby.LobbyType.anonymousAudience]: '',
       [lobby.LobbyType.human]: '',
       lobby: lobby.LobbyType.robot,
       [lobby.LobbyType.onymousAudience]: '',

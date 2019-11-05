@@ -1,5 +1,4 @@
 import advancedSearch, {State as AdvancedSearchState} from './advancedSearch'
-import app, {State as AppState} from './app'
 import buildVillage, {State as BuildVillageState} from './buildVillage'
 import connectingToRobotPlayer, {State as ConnectingToRobotPlayerState} from './connectingToRobotPlayer'
 import history, {State as HistoryState} from './history'
@@ -19,7 +18,6 @@ import {combineReducers} from 'redux'
 
 export interface ReducerState {
   advancedSearch: AdvancedSearchState
-  app: AppState
   buildVillage: BuildVillageState
   connectingToRobotPlayer: ConnectingToRobotPlayerState
   history: HistoryState
@@ -39,7 +37,6 @@ export interface ReducerState {
 
 const reducer = combineReducers({
   advancedSearch,
-  app,
   buildVillage,
   connectingToRobotPlayer,
   history,

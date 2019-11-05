@@ -5,26 +5,12 @@ import * as ReactDOM from 'react-dom'
 import App from './containers/App'
 import {Provider} from 'react-redux'
 import {changeToken} from './actions'
-import {composeWithDevTools} from 'redux-devtools-extension'
+import {createHashHistory} from 'history'
+import {createMiddleware} from './middlewares'
 import {createStore} from 'redux'
 import {lobby} from './types'
-import middleware from './middlewares'
 import reducer from './reducers'
 
-const store =
-  process.env.NODE_ENV === 'production' ?
-    createStore(
-      reducer,
-      middleware
-    ) :
-    createStore(
-      reducer,
-      composeWithDevTools(middleware)
-    )
-
-store.dispatch({
-  type: ActionTypes.App.SHOW_MAIN
-})
 const elem = document.getElementById('script')
 
 if (!elem) {
@@ -33,6 +19,20 @@ if (!elem) {
 if (!elem || !elem.dataset || !elem.dataset.humanPlayerToken) {
   throw Error('Not found: data-human-player-token')
 }
+if (!elem || !elem.dataset || !elem.dataset.url) {
+  throw Error('Not found: data-url attribute')
+}
+const url = elem.dataset.url
+const history = createHashHistory()
+const store =
+  createStore(
+    reducer,
+    createMiddleware({
+      history,
+      url
+    })
+  )
+
 store.dispatch(changeToken({
   lobby: lobby.LobbyType.human,
   token: elem.dataset.humanPlayerToken
@@ -63,10 +63,13 @@ store.dispatch({
 store.dispatch({
   type: ActionTypes.IndexedDB.INIT
 })
+store.dispatch({
+  type: ActionTypes.App.INIT
+})
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App history={history} />
   </Provider>,
   root
 )

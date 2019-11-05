@@ -32,7 +32,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
   switch (action.type) {
     case ActionTypes.App.CHANGE_LOBBY:
       switch (action.lobby) {
-        case 'human player':
+        case lobby.LobbyType.human:
           return {
             ... state,
             isPlayer: true,
@@ -52,7 +52,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
               }
             ]
           }
-        case 'onymous audience':
+        case lobby.LobbyType.onymousAudience:
           return {
             ... state,
             isPlayer: false,
@@ -72,7 +72,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
               }
             ]
           }
-        case 'robot player':
+        case lobby.LobbyType.robot:
           return {
             ... state,
             isPlayer: true,

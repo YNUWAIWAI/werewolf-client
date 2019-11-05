@@ -6,6 +6,152 @@ import {
 import reducer, {initialState} from './idSearch'
 import {lobby} from '../types'
 
+describe('CHANGE_LOBBY', () => {
+  test('anonymousAudience', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.anonymousAudience,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        header: 'Header.idSearch(audience)',
+        id: -1,
+        image: '',
+        isPlayer: false,
+        menuItems: [
+          {
+            disabled: true,
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ID_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        name: '',
+        searched: false,
+        villageItems: []
+      }
+    )
+  })
+  test('human', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.human,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        header: 'Header.idSearch(human player)',
+        id: -1,
+        image: '',
+        isPlayer: true,
+        menuItems: [
+          {
+            disabled: true,
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ID_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForHumanPlayer',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        name: '',
+        searched: false,
+        villageItems: []
+      }
+    )
+  })
+  test('onymousAudience', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.onymousAudience,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        header: 'Header.idSearch(audience)',
+        id: -1,
+        image: '',
+        isPlayer: false,
+        menuItems: [
+          {
+            disabled: true,
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ID_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        name: '',
+        searched: false,
+        villageItems: []
+      }
+    )
+  })
+  test('robot', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.robot,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        header: 'Header.idSearch(robot player)',
+        id: -1,
+        image: '',
+        isPlayer: true,
+        menuItems: [
+          {
+            disabled: true,
+            id: 'Menu.search',
+            types: [ActionTypes.Target.ID_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForRobotPlayer',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        name: '',
+        searched: false,
+        villageItems: []
+      }
+    )
+  })
+})
 test('ID_SEARCH', () => {
   expect(
     reducer(
@@ -167,14 +313,9 @@ test('idSearch/CHANGE_SEARCH_ID', () => {
     )
   ).toStrictEqual(
     {
-      header: '',
+      ... initialState,
       id: 123,
-      image: '',
-      isPlayer: true,
-      menuItems: [],
-      name: '',
-      searched: false,
-      villageItems: []
+      searched: false
     }
   )
 })
@@ -207,10 +348,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
     )
   ).toStrictEqual(
     {
-      header: '',
-      id: -1,
-      image: '',
-      isPlayer: true,
+      ... initialState,
       menuItems: [
         {
           disabled: false,
@@ -225,10 +363,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
           id: 'Menu.returnToMainPage',
           types: [ActionTypes.Target.SHOW_MAIN]
         }
-      ],
-      name: '',
-      searched: false,
-      villageItems: []
+      ]
     }
   )
 })
@@ -244,14 +379,9 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        header: '',
-        id: -1,
+        ... initialState,
         image: '/assets/images/avatar/default/user.png',
-        isPlayer: true,
-        menuItems: [],
-        name: 'Alice',
-        searched: false,
-        villageItems: []
+        name: 'Alice'
       }
     )
   })
@@ -284,10 +414,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(
       {
-        header: '',
-        id: -1,
-        image: '',
-        isPlayer: true,
+        ... initialState,
         menuItems: [
           {
             disabled: false,
@@ -304,7 +431,6 @@ describe('socket/MESSAGE', () => {
             types: [ActionTypes.Target.SHOW_MAIN]
           }
         ],
-        name: '',
         searched: true,
         villageItems: [
           {

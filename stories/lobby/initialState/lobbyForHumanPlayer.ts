@@ -1,13 +1,9 @@
 import * as ActionTypes from '../../../src/scripts/lobby/constants/ActionTypes'
-import {Content} from '../../../src/scripts/lobby/reducers/app'
 import {ImagePath} from '../../../src/scripts/lobby/constants/ImagePath'
 import {ReducerState} from '../../../src/scripts/lobby/reducers'
 import {lobby} from '../types'
 
 export const lobbyForHumanPlayer: Partial<ReducerState> = {
-  app: {
-    content: Content.LobbyForHumanPlayer
-  },
   lobbyForHumanPlayer: {
     image: ImagePath.Character.r,
     isPlayer: true,

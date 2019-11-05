@@ -6,7 +6,6 @@ import {
 } from 'redux'
 import {ReducerState} from '../../reducers'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
-import {initialState as app} from '../../reducers/app'
 import {initialState as buildVillage} from '../../reducers/buildVillage'
 import {initialState as connectingToRobotPlayer} from '../../reducers/connectingToRobotPlayer'
 import {initialState as history} from '../../reducers/history'
@@ -26,7 +25,6 @@ import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayer
 export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unknown>> => {
   const initialState: ReducerState = {
     advancedSearch,
-    app,
     buildVillage,
     connectingToRobotPlayer,
     history,

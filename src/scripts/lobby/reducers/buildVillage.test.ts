@@ -3,6 +3,102 @@ import reducer, {initialState} from './buildVillage'
 import {avatar2} from './fakeServer'
 import {lobby} from '../types'
 
+describe('CHANGE_LOBBY', () => {
+  test('anonymousAudience', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.anonymousAudience,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      initialState
+    )
+  })
+  test('human', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.human,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        ... initialState,
+        menuItems: [
+          {
+            id: 'Menu.buildVillage',
+            types: [ActionTypes.Target.BUILD_VILLAGE]
+          },
+          {
+            id: 'Menu.returnToLobbyForHumanPlayer',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        validity: initialState.validity,
+        value: {
+          ... initialState.value,
+          isHuman: true
+        }
+      }
+    )
+  })
+  test('onymousAudience', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.onymousAudience,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      initialState
+    )
+  })
+  test('robot', () => {
+    expect(
+      reducer(
+        initialState,
+        {
+          lobby: lobby.LobbyType.robot,
+          type: ActionTypes.App.CHANGE_LOBBY
+        }
+      )
+    ).toStrictEqual(
+      {
+        ... initialState,
+        menuItems: [
+          {
+            id: 'Menu.buildVillage',
+            types: [ActionTypes.Target.BUILD_VILLAGE]
+          },
+          {
+            id: 'Menu.returnToLobbyForRobotPlayer',
+            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.Target.SHOW_MAIN]
+          }
+        ],
+        validity: initialState.validity,
+        value: {
+          ... initialState.value,
+          isHuman: false
+        }
+      }
+    )
+  })
+})
 describe('buildVillage/CHANGE_AVATAR', () => {
   test('fixed', () => {
     expect(

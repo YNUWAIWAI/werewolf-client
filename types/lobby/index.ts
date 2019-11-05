@@ -36,7 +36,7 @@ export const enum Member {
   C = 'C'
 }
 export const enum LobbyType {
-  // anonymousAudience = 'anonymous audience',
+  anonymousAudience = 'anonymous audience',
   onymousAudience = 'onymous audience',
   human = 'human player',
   robot = 'robot player'
