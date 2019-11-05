@@ -33,9 +33,6 @@ const store =
     })
   )
 
-store.dispatch({
-  type: ActionTypes.App.SHOW_MAIN
-})
 store.dispatch(changeToken({
   lobby: lobby.LobbyType.human,
   token: elem.dataset.humanPlayerToken
