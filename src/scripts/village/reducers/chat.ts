@@ -5,6 +5,7 @@ import {
   StarChat
 } from '../actions'
 import {
+  convertImageUrl,
   idGenerator,
   just
 } from '../util'
@@ -64,7 +65,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   clientTimestamp: payload.clientTimestamp,
                   day: payload.day,
                   id,
-                  image: 'https://werewolf.world/image/0.3/character_icons/120x120/anonymous_120x120.png',
+                  image: convertImageUrl('https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png'),
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
                   isMarked: false,
                   isMine: payload.isMine,
@@ -86,7 +87,7 @@ const chat = (state: State = initialState, action: Action): State => {
                   clientTimestamp: payload.clientTimestamp,
                   day: payload.day,
                   id,
-                  image: just(payload.avatar).image,
+                  image: convertImageUrl(just(payload.avatar).image),
                   intensionalDisclosureRange: payload.intensionalDisclosureRange,
                   isMarked: false,
                   isMine: payload.isMine,
@@ -110,7 +111,7 @@ const chat = (state: State = initialState, action: Action): State => {
                 clientTimestamp: payload.clientTimestamp,
                 day: payload.day,
                 id,
-                image: just(payload.character).image,
+                image: convertImageUrl(just(payload.character).image),
                 intensionalDisclosureRange: payload.intensionalDisclosureRange,
                 isMarked: false,
                 isMine: payload.isMine,
