@@ -10,6 +10,7 @@ export interface State {
       [key in string]: {
         readonly checked: boolean
         readonly name: string
+        readonly testStatus: lobby.TestStatus
       }
     }
   }
