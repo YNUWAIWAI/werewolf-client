@@ -13,8 +13,11 @@ import {connect} from 'react-redux'
 type Action =
   | Transition
 
-const mapStateToProps = (state: ReducerState): StateProps => state.selectHumanAvatar
+const mapStateToProps = (state: ReducerState): StateProps => state.selectRobotAvatar
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleAvatarNameChange: valid => value => {
+    console.log(valid, value)
+  },
   transition: target => {
     dispatch(transition(target))
   }

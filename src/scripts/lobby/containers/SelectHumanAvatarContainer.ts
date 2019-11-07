@@ -15,6 +15,9 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => state.selectHumanAvatar
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleAvatarNameChange: valid => value => {
+    console.log(valid, value)
+  },
   transition: target => {
     dispatch(transition(target))
   }
