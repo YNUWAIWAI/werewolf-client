@@ -21,11 +21,13 @@ storiesOf('lobby|SelectRobotAvatar', module)
             allIds: ['a1', 'a2'],
             byId: {
               'a1': {
+                automation: lobby.Automation.full,
                 checked: false,
                 name: 'avatar1',
                 testStatus: lobby.TestStatus.notPassed
               },
               'a2': {
+                automation: lobby.Automation.semi,
                 checked: false,
                 name: 'avatar2',
                 testStatus: lobby.TestStatus.passed
