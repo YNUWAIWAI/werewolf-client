@@ -8,13 +8,73 @@ interface Props {
 export default function SelectRobotAvatarTableHeader(props: Props) {
   return (
     <div className="lo--select-avatar--table--header">
-      <div>header1</div>
-      <div>header2</div>
-      <div>header3</div>
-      <div>header4</div>
-      <div>header5</div>
-      <div>header6</div>
-      <div>header7</div>
+      <div />
+      <FormattedMessage
+        id="SelectAvatarTableHeader(avatarName)"
+      >
+        {
+          text => (
+            <div>
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="SelectAvatarTableHeader(status)"
+      >
+        {
+          text => (
+            <div>
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="SelectAvatarTableHeader(authorized)"
+      >
+        {
+          text => (
+            <div>
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="SelectAvatarTableHeader(test)"
+      >
+        {
+          text => (
+            <div>
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="SelectAvatarTableHeader(automation)"
+      >
+        {
+          text => (
+            <div>
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
+        id="SelectAvatarTableHeader(accessToken)"
+      >
+        {
+          text => (
+            <div>
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
     </div>
   )
 }

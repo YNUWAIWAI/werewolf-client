@@ -7,8 +7,18 @@ interface Props {}
 export default function SelectHumanAvatarTableHeader(props: Props) {
   return (
     <div className="lo--select-avatar--table--header human">
-      <div>header1</div>
-      <div>header2</div>
+      <div />
+      <FormattedMessage
+        id="SelectAvatarTableHeader(avatarName)"
+      >
+        {
+          text => (
+            <div>
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
     </div>
   )
 }
