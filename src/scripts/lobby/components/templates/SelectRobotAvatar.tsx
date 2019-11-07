@@ -14,6 +14,7 @@ export interface Avatar {
     readonly [id: string]: {
       readonly checked: boolean
       readonly name: string
+      readonly testStatus: lobby.TestStatus
     }
   }
 }
