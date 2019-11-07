@@ -5,6 +5,7 @@ import {Provider} from 'react-redux'
 import SelectRobotAvatar from '../../src/scripts/lobby/containers/SelectRobotAvatarContainer'
 import {createStore} from 'redux'
 import {language} from './language'
+import {lobby} from './types'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
@@ -21,11 +22,13 @@ storiesOf('lobby|SelectRobotAvatar', module)
             byId: {
               'a1': {
                 checked: false,
-                name: 'avatar1'
+                name: 'avatar1',
+                testStatus: lobby.TestStatus.notPassed
               },
               'a2': {
                 checked: false,
-                name: 'avatar2'
+                name: 'avatar2',
+                testStatus: lobby.TestStatus.passed
               }
             }
           },
