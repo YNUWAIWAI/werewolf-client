@@ -1,9 +1,16 @@
 import * as React from 'react'
+import {
+  Avatar,
+  DispatchProps
+} from '../templates/SelectHumanAvatar'
 import {FormattedMessage} from 'react-intl'
 import SelectHumanAvatarTable from './SelectHumanAvatarTable'
 import {lobby} from '../../types'
 
-interface Props {}
+interface Props {
+  readonly avatar: Avatar
+  readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+}
 
 export default function SelectHumanAvatarBox(props: Props) {
   return (
@@ -19,7 +26,10 @@ export default function SelectHumanAvatarBox(props: Props) {
           )
         }
       </FormattedMessage>
-      <SelectHumanAvatarTable />
+      <SelectHumanAvatarTable
+        avatar={props.avatar}
+        handleAvatarNameChange={props.handleAvatarNameChange}
+      />
     </>
   )
 }

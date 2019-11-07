@@ -1,9 +1,16 @@
 import * as React from 'react'
+import {
+  Avatar,
+  DispatchProps
+} from '../templates/SelectRobotAvatar'
 import {FormattedMessage} from 'react-intl'
 import SelectRobotAvatarTable from '../organisms/SelectRobotAvatarTable'
 import {lobby} from '../../types'
 
-interface Props {}
+interface Props {
+  readonly avatar: Avatar
+  readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+}
 
 export default function SelectRobotAvatarBox(props: Props) {
   return (
@@ -19,7 +26,10 @@ export default function SelectRobotAvatarBox(props: Props) {
           )
         }
       </FormattedMessage>
-      <SelectRobotAvatarTable />
+      <SelectRobotAvatarTable
+        avatar={props.avatar}
+        handleAvatarNameChange={props.handleAvatarNameChange}
+      />
     </>
   )
 }

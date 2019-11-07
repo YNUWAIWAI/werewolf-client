@@ -1,4 +1,8 @@
 import * as React from 'react'
+import {
+  Avatar,
+  DispatchProps
+} from '../templates/SelectRobotAvatar'
 import SelectAvatarTableBodyAccessToken from '../atoms/SelectAvatarTableBodyAccessToken'
 import SelectAvatarTableBodyAuthorized from '../atoms/SelectAvatarTableBodyAuthorized'
 import SelectAvatarTableBodyAutomation from '../atoms/SelectAvatarTableBodyAutomation'
@@ -8,25 +12,39 @@ import SelectAvatarTableBodyStatus from '../atoms/SelectAvatarTableBodyStatus'
 import SelectAvatarTableBodyTest from '../atoms/SelectAvatarTableBodyTest'
 import {lobby} from '../../types'
 
-interface Props {}
+interface Props {
+  readonly avatar: Avatar
+  readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+}
 
 export default function SelectRobotAvatarTableBody(props: Props) {
+  const rows = props.avatar.allIds.map(id => {
+    const avatar = props.avatar.byId[id]
+
+    return (
+      <div
+        className="lo--select-avatar--table--body--row"
+        key={id}
+      >
+        <SelectAvatarTableBodyCheckBox
+          checked={avatar.checked}
+        />
+        <SelectAvatarTableBodyAvatarName
+          handleChange={props.handleAvatarNameChange}
+          name={avatar.name}
+        />
+        <SelectAvatarTableBodyStatus />
+        <SelectAvatarTableBodyAuthorized />
+        <SelectAvatarTableBodyTest />
+        <SelectAvatarTableBodyAutomation />
+        <SelectAvatarTableBodyAccessToken />
+      </div>
+    )
+  })
+
   return (
     <div className="lo--select-avatar--table--body">
-      <SelectAvatarTableBodyCheckBox />
-      <SelectAvatarTableBodyAvatarName />
-      <SelectAvatarTableBodyStatus />
-      <SelectAvatarTableBodyAuthorized />
-      <SelectAvatarTableBodyTest />
-      <SelectAvatarTableBodyAutomation />
-      <SelectAvatarTableBodyAccessToken />
-      <SelectAvatarTableBodyCheckBox />
-      <SelectAvatarTableBodyAvatarName />
-      <SelectAvatarTableBodyStatus />
-      <SelectAvatarTableBodyAuthorized />
-      <SelectAvatarTableBodyTest />
-      <SelectAvatarTableBodyAutomation />
-      <SelectAvatarTableBodyAccessToken />
+      {rows}
     </div>
   )
 }

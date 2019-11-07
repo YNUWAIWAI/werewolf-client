@@ -2,8 +2,7 @@ import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../types'
 
-interface Props {
-}
+interface Props {}
 
 export default function SelectRobotAvatarTableHeader(props: Props) {
   return (

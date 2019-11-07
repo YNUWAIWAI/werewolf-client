@@ -8,10 +8,21 @@ import SelectRobotAvatarBox from '../organisms/SelectRobotAvatarBox'
 import {Target} from '../../constants/ActionTypes'
 import {lobby} from '../../types'
 
+export interface Avatar {
+  readonly allIds: string[]
+  readonly byId: {
+    readonly [id: string]: {
+      readonly checked: boolean
+      readonly name: string
+    }
+  }
+}
 export interface StateProps {
+  readonly avatar: Avatar
   readonly menuItems: MenuItem[]
 }
 export interface DispatchProps {
+  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
   readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps {}
@@ -21,7 +32,10 @@ export default function SelectRobotAvatar(props: Props) {
     <div className="lo--grid">
       <Header id="Header.selectRobotAvatar" />
       <MainContent>
-        <SelectRobotAvatarBox />
+        <SelectRobotAvatarBox
+          avatar={props.avatar}
+          handleAvatarNameChange={props.handleAvatarNameChange}
+        />
         <CreateNewRobotAvatar />
       </MainContent>
       <AsideContent>

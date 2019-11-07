@@ -525,8 +525,6 @@
 
       &--body {
         border: 1px solid black;
-        display: grid;
-        grid-template-columns: 24px repeat(6, 1fr);
 
         &--item {
           align-items: center;
@@ -546,8 +544,13 @@
           }
         }
 
-        &.human {
-          grid-template-columns: 24px 1fr;
+        &--row {
+          display: grid;
+          grid-template-columns: 24px repeat(6, 1fr);
+
+          &.human {
+            grid-template-columns: 24px 1fr;
+          }
         }
       }
 
