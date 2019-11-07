@@ -8,13 +8,13 @@ interface Props {
 export default function SelectRobotAvatarTableHeader(props: Props) {
   return (
     <div className="lo--select-avatar--table--header">
-      <div />
+      <div className="lo--select-avatar--table--header--item check-box" />
       <FormattedMessage
         id="SelectAvatarTableHeader(avatarName)"
       >
         {
           text => (
-            <div>
+            <div className="lo--select-avatar--table--header--item avatar-item">
               {text}
             </div>
           )
@@ -25,7 +25,7 @@ export default function SelectRobotAvatarTableHeader(props: Props) {
       >
         {
           text => (
-            <div>
+            <div className="lo--select-avatar--table--header--item status">
               {text}
             </div>
           )
@@ -36,7 +36,7 @@ export default function SelectRobotAvatarTableHeader(props: Props) {
       >
         {
           text => (
-            <div>
+            <div className="lo--select-avatar--table--header--item authorized">
               {text}
             </div>
           )
@@ -47,7 +47,7 @@ export default function SelectRobotAvatarTableHeader(props: Props) {
       >
         {
           text => (
-            <div>
+            <div className="lo--select-avatar--table--header--item test">
               {text}
             </div>
           )
@@ -58,7 +58,7 @@ export default function SelectRobotAvatarTableHeader(props: Props) {
       >
         {
           text => (
-            <div>
+            <div className="lo--select-avatar--table--header--item automation">
               {text}
             </div>
           )
@@ -69,7 +69,7 @@ export default function SelectRobotAvatarTableHeader(props: Props) {
       >
         {
           text => (
-            <div>
+            <div className="lo--select-avatar--table--header--item access-token">
               {text}
             </div>
           )

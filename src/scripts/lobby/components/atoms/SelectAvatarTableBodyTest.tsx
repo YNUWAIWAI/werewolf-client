@@ -4,7 +4,7 @@ interface Props {}
 
 export default function SelectAvatarTableBodyTest(props: Props) {
   return (
-    <div className="lo--select-avatar--table--body--test">
+    <div className="lo--select-avatar--table--body--item test">
       test
     </div>
   )

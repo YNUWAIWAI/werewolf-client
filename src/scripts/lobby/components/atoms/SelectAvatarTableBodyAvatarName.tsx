@@ -4,8 +4,9 @@ interface Props {}
 
 export default function SelectAvatarTableBodyAvatarName(props: Props) {
   return (
-    <div className="lo--select-avatar--table--body--avatar-name">
+    <div className="lo--select-avatar--table--body--item avatar-name">
       <input
+        className="input"
         type="text"
       />
     </div>

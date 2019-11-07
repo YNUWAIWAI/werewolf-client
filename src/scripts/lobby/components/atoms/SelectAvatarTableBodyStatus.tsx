@@ -4,7 +4,7 @@ interface Props {}
 
 export default function SelectAvatarTableBodyStatus(props: Props) {
   return (
-    <div className="lo--select-avatar--table--body--status">
+    <div className="lo--select-avatar--table--body--item status">
       status
     </div>
   )
