@@ -4,12 +4,25 @@ import {SocketMessage} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
+  readonly avatar: {
+    readonly allIds: string[]
+    readonly byId: {
+      [key in string]: {
+        readonly checked: boolean
+        readonly name: string
+      }
+    }
+  }
   readonly menuItems: MenuItem[]
 }
 type Action =
   | SocketMessage
 
 export const initialState: State = {
+  avatar: {
+    allIds: [],
+    byId: {}
+  },
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
