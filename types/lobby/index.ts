@@ -113,3 +113,7 @@ export interface PingResult {
   status: PingStatus
   token: Token
 }
+export const enum TestStatus {
+  notPassed = 'not passed',
+  passed = 'passed'
+}
