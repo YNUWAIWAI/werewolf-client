@@ -81,6 +81,8 @@
   "NumberSelect(player)": "{num, plural, =1 {# player} other {# players}}",
   "NumberSelect(robot)": "{num, plural, =1 {# robot} other {# robots}}",
   "SearchResult.notFound": "Not Found",
+  "SelectAvatarTableBodyAutomation.automation(full)": "Fully-automated",
+  "SelectAvatarTableBodyAutomation.automation(semi)": "Semi-automated",
   "SelectAvatarTableBodyTest.status(not passed)": "Not passed",
   "SelectAvatarTableBodyTest.status(passed)": "Passed",
   "SelectAvatarTableHeader(accessToken)": "Access Token",
