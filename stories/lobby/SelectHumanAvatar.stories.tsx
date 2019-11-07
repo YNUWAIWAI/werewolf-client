@@ -1,3 +1,4 @@
+import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
@@ -13,7 +14,28 @@ storiesOf('lobby|SelectHumanAvatar', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        selectHumanAvatar: {
+          avatar: {
+            allIds: ['a1', 'a2'],
+            byId: {
+              'a1': {
+                checked: false,
+                name: 'avatar1'
+              },
+              'a2': {
+                checked: false,
+                name: 'avatar2'
+              }
+            }
+          },
+          menuItems: [
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.Target.SHOW_MAIN]
+            }
+          ]
+        }
       }
     )
     const story =
