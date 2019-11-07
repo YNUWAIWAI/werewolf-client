@@ -12,6 +12,7 @@ export interface Avatar {
   readonly allIds: string[]
   readonly byId: {
     readonly [id: string]: {
+      readonly automation: lobby.Automation
       readonly checked: boolean
       readonly name: string
       readonly testStatus: lobby.TestStatus

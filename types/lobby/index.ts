@@ -117,3 +117,7 @@ export const enum TestStatus {
   notPassed = 'not passed',
   passed = 'passed'
 }
+export const enum Automation {
+  full = 'full',
+  semi = 'semi'
+}
