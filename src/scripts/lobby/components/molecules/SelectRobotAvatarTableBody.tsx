@@ -1,5 +1,11 @@
 import * as React from 'react'
-import {FormattedMessage} from 'react-intl'
+import SelectAvatarTableBodyAccessToken from '../atoms/SelectAvatarTableBodyAccessToken'
+import SelectAvatarTableBodyAuthorized from '../atoms/SelectAvatarTableBodyAuthorized'
+import SelectAvatarTableBodyAutomation from '../atoms/SelectAvatarTableBodyAutomation'
+import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
+import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTableBodyCheckBox'
+import SelectAvatarTableBodyStatus from '../atoms/SelectAvatarTableBodyStatus'
+import SelectAvatarTableBodyTest from '../atoms/SelectAvatarTableBodyTest'
 import {lobby} from '../../types'
 
 interface Props {}
@@ -7,20 +13,20 @@ interface Props {}
 export default function SelectRobotAvatarTableBody(props: Props) {
   return (
     <div className="lo--select-avatar--table--body">
-      <div>body1-1</div>
-      <div>body1-2</div>
-      <div>body1-3</div>
-      <div>body1-4</div>
-      <div>body1-5</div>
-      <div>body1-6</div>
-      <div>body1-7</div>
-      <div>body2-1</div>
-      <div>body2-2</div>
-      <div>body2-3</div>
-      <div>body2-4</div>
-      <div>body2-5</div>
-      <div>body2-6</div>
-      <div>body2-7</div>
+      <SelectAvatarTableBodyCheckBox />
+      <SelectAvatarTableBodyAvatarName />
+      <SelectAvatarTableBodyStatus />
+      <SelectAvatarTableBodyAuthorized />
+      <SelectAvatarTableBodyTest />
+      <SelectAvatarTableBodyAutomation />
+      <SelectAvatarTableBodyAccessToken />
+      <SelectAvatarTableBodyCheckBox />
+      <SelectAvatarTableBodyAvatarName />
+      <SelectAvatarTableBodyStatus />
+      <SelectAvatarTableBodyAuthorized />
+      <SelectAvatarTableBodyTest />
+      <SelectAvatarTableBodyAutomation />
+      <SelectAvatarTableBodyAccessToken />
     </div>
   )
 }
