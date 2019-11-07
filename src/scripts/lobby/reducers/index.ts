@@ -11,6 +11,8 @@ import main, {State as MainState} from './main'
 import modal, {State as ModalState} from './modal'
 import obfucator, {State as ObfucatorState} from './obfucator'
 import ping, {State as PingState} from './ping'
+import selectHumanAvatar, {State as SelectHumanAvatar} from './selectHumanAvatar'
+import selectRobotAvatar, {State as SelectRobotAvatar} from './selectRobotAvatar'
 import settings, {State as SettingsState} from './settings'
 import token, {State as TokenState} from './token'
 import waitingForPlayers, {State as WaitingForPlayersState} from './waitingForPlayers'
@@ -30,6 +32,8 @@ export interface ReducerState {
   modal: ModalState
   obfucator: ObfucatorState
   ping: PingState
+  selectHumanAvatar: SelectHumanAvatar
+  selectRobotAvatar: SelectRobotAvatar
   settings: SettingsState
   token: TokenState
   waitingForPlayers: WaitingForPlayersState
@@ -49,6 +53,8 @@ const reducer = combineReducers({
   modal,
   obfucator,
   ping,
+  selectHumanAvatar,
+  selectRobotAvatar,
   settings,
   token,
   waitingForPlayers

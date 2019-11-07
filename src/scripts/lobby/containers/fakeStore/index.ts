@@ -18,6 +18,8 @@ import {initialState as main} from '../../reducers/main'
 import {initialState as modal} from '../../reducers/modal'
 import {initialState as obfucator} from '../../reducers/obfucator'
 import {initialState as ping} from '../../reducers/ping'
+import {initialState as selectHumanAvatar} from '../../reducers/selectHumanAvatar'
+import {initialState as selectRobotAvatar} from '../../reducers/selectRobotAvatar'
 import {initialState as settings} from '../../reducers/settings'
 import {initialState as token} from '../../reducers/token'
 import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayers'
@@ -37,6 +39,8 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     modal,
     obfucator,
     ping,
+    selectHumanAvatar,
+    selectRobotAvatar,
     settings,
     token,
     waitingForPlayers
