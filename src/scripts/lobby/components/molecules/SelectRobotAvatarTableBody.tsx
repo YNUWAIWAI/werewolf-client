@@ -16,6 +16,7 @@ interface Props {
   readonly avatar: Avatar
   readonly handleAccept: DispatchProps['handleAccept']
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+  readonly renewAccessToken: DispatchProps['renewAccessToken']
 }
 
 export default function SelectRobotAvatarTableBody(props: Props) {
@@ -45,7 +46,10 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         <SelectAvatarTableBodyAutomation
           automation={avatar.automation}
         />
-        <SelectAvatarTableBodyAccessToken />
+        <SelectAvatarTableBodyAccessToken
+          renewAccessToken={props.renewAccessToken}
+          token={avatar.accessToken}
+        />
       </div>
     )
   })
