@@ -9,6 +9,7 @@ export interface State {
     readonly byId: {
       [key in string]: {
         readonly automation: lobby.Automation
+        readonly authorized: lobby.Authorized
         readonly checked: boolean
         readonly name: string
         readonly testStatus: lobby.TestStatus
