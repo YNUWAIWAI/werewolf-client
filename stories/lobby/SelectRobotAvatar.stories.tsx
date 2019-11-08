@@ -18,18 +18,27 @@ storiesOf('lobby|SelectRobotAvatar', module)
         language: radios(language.label, language.options, language.defaultValue),
         selectRobotAvatar: {
           avatar: {
-            allIds: ['a1', 'a2'],
+            allIds: ['a1', 'a2', 'a3'],
             byId: {
               'a1': {
+                authorized: lobby.Authorized.no,
                 automation: lobby.Automation.full,
                 checked: false,
                 name: 'avatar1',
                 testStatus: lobby.TestStatus.notPassed
               },
               'a2': {
+                authorized: lobby.Authorized.yes,
                 automation: lobby.Automation.semi,
                 checked: false,
                 name: 'avatar2',
+                testStatus: lobby.TestStatus.passed
+              },
+              'a3': {
+                authorized: lobby.Authorized.waitForAcceptance,
+                automation: lobby.Automation.semi,
+                checked: false,
+                name: 'avatar3',
                 testStatus: lobby.TestStatus.passed
               }
             }
