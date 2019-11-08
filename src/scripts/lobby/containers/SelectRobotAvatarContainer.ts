@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarNameChange: valid => value => {
     console.log(valid, value)
   },
+  renewAccessToken: () => {
+    console.log('renewAccessToken')
+  },
   transition: target => {
     dispatch(transition(target))
   }
