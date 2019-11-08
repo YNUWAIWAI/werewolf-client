@@ -121,3 +121,8 @@ export const enum Automation {
   full = 'full',
   semi = 'semi'
 }
+export const enum Authorized {
+  no = 'no',
+  yes = 'yes',
+  waitForAcceptance = 'wait for acceptance',
+}
