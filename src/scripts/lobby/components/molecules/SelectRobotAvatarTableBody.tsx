@@ -14,6 +14,7 @@ import {lobby} from '../../types'
 
 interface Props {
   readonly avatar: Avatar
+  readonly handleAccept: DispatchProps['handleAccept']
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
 }
 
@@ -36,6 +37,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         <SelectAvatarTableBodyStatus />
         <SelectAvatarTableBodyAuthorized
           authorized={avatar.authorized}
+          handleClick={props.handleAccept}
         />
         <SelectAvatarTableBodyTest
           test={avatar.testStatus}

@@ -25,6 +25,7 @@ export interface StateProps {
   readonly menuItems: MenuItem[]
 }
 export interface DispatchProps {
+  readonly handleAccept: () => void
   readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
   readonly transition: (target: Target) => void
 }
@@ -37,6 +38,7 @@ export default function SelectRobotAvatar(props: Props) {
       <MainContent>
         <SelectRobotAvatarBox
           avatar={props.avatar}
+          handleAccept={props.handleAccept}
           handleAvatarNameChange={props.handleAvatarNameChange}
         />
         <CreateNewRobotAvatar />

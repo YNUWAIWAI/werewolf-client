@@ -15,6 +15,9 @@ type Action =
 
 const mapStateToProps = (state: ReducerState): StateProps => state.selectRobotAvatar
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleAccept: () => {
+    console.log('accept')
+  },
   handleAvatarNameChange: valid => value => {
     console.log(valid, value)
   },
