@@ -34,7 +34,9 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           name={avatar.name}
         />
         <SelectAvatarTableBodyStatus />
-        <SelectAvatarTableBodyAuthorized />
+        <SelectAvatarTableBodyAuthorized
+          authorized={avatar.authorized}
+        />
         <SelectAvatarTableBodyTest
           test={avatar.testStatus}
         />
