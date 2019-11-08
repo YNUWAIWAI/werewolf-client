@@ -36,7 +36,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         <SelectAvatarTableBodyStatus />
         <SelectAvatarTableBodyAuthorized />
         <SelectAvatarTableBodyTest
-          status={avatar.testStatus}
+          test={avatar.testStatus}
         />
         <SelectAvatarTableBodyAutomation
           automation={avatar.automation}

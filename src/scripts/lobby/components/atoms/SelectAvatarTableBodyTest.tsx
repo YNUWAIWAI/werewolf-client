@@ -3,13 +3,13 @@ import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../types'
 
 interface Props {
-  status: lobby.TestStatus
+  test: lobby.TestStatus
 }
 
 export default function SelectAvatarTableBodyTest(props: Props) {
   return (
     <FormattedMessage
-      id={`SelectAvatarTableBodyTest.status(${props.status})`}
+      id={`SelectAvatarTableBodyTest.test(${props.test})`}
     >
       {
         text => (
