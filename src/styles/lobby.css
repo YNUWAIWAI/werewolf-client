@@ -546,7 +546,7 @@
 
         &--row {
           display: grid;
-          grid-template-columns: 24px repeat(6, 1fr);
+          grid-template-columns: 24px repeat(5, 1fr) 2fr;
 
           &.human {
             grid-template-columns: 24px 1fr;
@@ -557,7 +557,7 @@
       &--header {
         border: 1px solid black;
         display: grid;
-        grid-template-columns: 24px repeat(6, 1fr);
+        grid-template-columns: 24px repeat(5, 1fr) 2fr;
 
         &--item {
           align-items: center;
