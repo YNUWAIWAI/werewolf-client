@@ -21,6 +21,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
             allIds: ['a1', 'a2', 'a3'],
             byId: {
               'a1': {
+                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
                 authorized: lobby.Authorized.no,
                 automation: lobby.Automation.full,
                 checked: false,
@@ -28,6 +29,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
                 testStatus: lobby.TestStatus.notPassed
               },
               'a2': {
+                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
                 authorized: lobby.Authorized.yes,
                 automation: lobby.Automation.semi,
                 checked: false,
@@ -35,6 +37,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
                 testStatus: lobby.TestStatus.passed
               },
               'a3': {
+                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
                 authorized: lobby.Authorized.waitForAcceptance,
                 automation: lobby.Automation.semi,
                 checked: false,
