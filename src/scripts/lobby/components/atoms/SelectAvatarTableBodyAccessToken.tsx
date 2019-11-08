@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Copy from './svg/Copy'
 import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../types'
 
@@ -25,11 +26,12 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
       />
       {
         navigator.clipboard ?
-          <button
+          <div
+            className="copy"
             onClick={copy}
           >
-            copy
-          </button> :
+            <Copy />
+          </div> :
           null
       }
       <FormattedMessage

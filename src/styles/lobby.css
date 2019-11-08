@@ -533,6 +533,14 @@
           padding: 1rem;
           text-align: center;
 
+          &.access-token {
+            & > .copy {
+              cursor: pointer;
+              height: 24px;
+              width: 24px;
+            }
+          }
+
           &.avatar-name {
             & > .input {
               width: 100%;
