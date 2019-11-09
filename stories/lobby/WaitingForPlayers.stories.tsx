@@ -185,9 +185,6 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const transition = () => {
-      action('transition')
-    }
     const menuItems = [
       {
         disabled: true,
@@ -251,7 +248,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -262,9 +258,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('14 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -329,7 +322,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 14)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -340,9 +332,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('13 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -407,7 +396,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 13)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -418,9 +406,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('12 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -485,7 +470,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 12)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -496,9 +480,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('11 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -563,7 +544,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 11)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -574,9 +554,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('10 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -641,7 +618,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 10)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -652,9 +628,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('9 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -719,7 +692,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 9)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -730,9 +702,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('8 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -797,7 +766,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 8)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -808,9 +776,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('7 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -875,7 +840,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 7)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -886,9 +850,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('6 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -953,7 +914,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 6)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -964,9 +924,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('5 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -1031,7 +988,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players.slice(0, 5)}
-            transition={transition}
             village={village}
           />
         </IntlProvider>
@@ -1042,9 +998,6 @@ storiesOf('lobby|WaitingForPlayers', module)
   .add('long comment', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
-    }
-    const transition = () => {
-      action('transition')
     }
     const menuItems = [
       {
@@ -1109,7 +1062,6 @@ storiesOf('lobby|WaitingForPlayers', module)
             isPlayer
             menuItems={menuItems}
             players={players}
-            transition={transition}
             village={village}
           />
         </IntlProvider>

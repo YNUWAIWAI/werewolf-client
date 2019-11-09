@@ -17,7 +17,6 @@ storiesOf('lobby|IdSearch', module)
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
-    const transition = action('transition')
     const menuItems = [
       {
         disabled: true,
@@ -52,7 +51,6 @@ storiesOf('lobby|IdSearch', module)
             name="Ryan"
             searched={false}
             selectVillage={selectVillage}
-            transition={transition}
             villageItems={[]}
           />
         </IntlProvider>
@@ -64,7 +62,6 @@ storiesOf('lobby|IdSearch', module)
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
-    const transition = action('transition')
     const menuItems = [
       {
         disabled: true,
@@ -99,7 +96,6 @@ storiesOf('lobby|IdSearch', module)
             name="Ryan"
             searched
             selectVillage={selectVillage}
-            transition={transition}
             villageItems={[]}
           />
         </IntlProvider>
@@ -111,7 +107,6 @@ storiesOf('lobby|IdSearch', module)
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
-    const transition = action('transition')
     const menuItems = [
       {
         disabled: true,
@@ -182,7 +177,6 @@ storiesOf('lobby|IdSearch', module)
             name="Ryan"
             searched
             selectVillage={selectVillage}
-            transition={transition}
             villageItems={villageItems}
           />
         </IntlProvider>
