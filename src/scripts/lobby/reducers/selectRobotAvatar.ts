@@ -18,6 +18,7 @@ export interface State {
       }
     }
   }
+  readonly command: MenuItem[]
   readonly menuItems: MenuItem[]
 }
 type Action =
@@ -28,6 +29,7 @@ export const initialState: State = {
     allIds: [],
     byId: {}
   },
+  command: [],
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
