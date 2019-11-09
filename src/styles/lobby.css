@@ -15,7 +15,6 @@
 
 * {
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
-  margin: 0;
 }
 
 .lo {
@@ -520,6 +519,32 @@
   }
 
   &--select-avatar {
+    &--command {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-around;
+      list-style: none;
+      margin: 1rem;
+      padding: 0;
+      text-align: center;
+
+      &--item {
+        border: 1px solid black;
+        cursor: pointer;
+        padding: 1rem;
+        user-select: none;
+
+        &:hover {
+          background: var(--hover-color);
+
+          &:active {
+            background: var(--active-color);
+          }
+        }
+      }
+    }
+
     &--table {
       border: 1px solid black;
 
