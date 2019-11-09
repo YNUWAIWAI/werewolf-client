@@ -1,11 +1,11 @@
 import * as React from 'react'
-import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import CreateNewHumanAvatar from '../organisms/CreateNewHumanAvatar'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
+import Menu from '../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import SelectHumanAvatarBox from '../organisms/SelectHumanAvatarBox'
-import {Target} from '../../constants/ActionTypes'
 
 export interface Avatar {
   readonly allIds: string[]
@@ -23,7 +23,6 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
-  readonly transition: (target: Target) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
@@ -36,16 +35,14 @@ export default function SelectHumanAvatar(props: Props) {
           avatar={props.avatar}
           command={props.command}
           handleAvatarNameChange={props.handleAvatarNameChange}
-          transition={props.transition}
         />
         <CreateNewHumanAvatar />
       </MainContent>
       <AsideContent>
         <Menu
-          class="lo--compact-menu"
-          itemClass="lo--compact-menu--item"
+          className="lo--compact-menu"
+          itemClassName="lo--compact-menu--item"
           items={props.menuItems}
-          transition={props.transition}
         />
       </AsideContent>
     </div>

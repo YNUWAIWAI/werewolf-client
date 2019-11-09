@@ -3,15 +3,15 @@ import {
   Avatar,
   DispatchProps
 } from '../templates/SelectHumanAvatar'
-import Menu, {MenuItemProps as MenuItem} from './Menu'
 import {FormattedMessage} from 'react-intl'
+import Menu from '../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from './Menu'
 import SelectHumanAvatarTable from './SelectHumanAvatarTable'
 
 interface Props {
   readonly avatar: Avatar
   readonly command: MenuItem[]
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
-  readonly transition: DispatchProps['transition']
 }
 
 export default function SelectHumanAvatarBox(props: Props) {
@@ -33,10 +33,9 @@ export default function SelectHumanAvatarBox(props: Props) {
         handleAvatarNameChange={props.handleAvatarNameChange}
       />
       <Menu
-        class="lo--select-avatar--command human"
-        itemClass="lo--select-avatar--command--item"
+        className="lo--select-avatar--command human"
+        itemClassName="lo--select-avatar--command--item"
         items={props.command}
-        transition={props.transition}
       />
     </>
   )
