@@ -41,23 +41,4 @@ describe('<HistoryContainer />', () => {
       type: ActionTypes.App.SELECT_VILLAGE
     })
   })
-  test('transition', () => {
-    const store = fakeStore()
-    const dispatch = jest.fn()
-
-    store.dispatch = dispatch
-    const wrapper = mount(
-      <Provider store={store} >
-        <IntlProviderContainer>
-          <HistoryContainer />
-        </IntlProviderContainer>
-      </Provider>
-    )
-
-    wrapper.find(History).props().transition(ActionTypes.Target.SHOW_MAIN)
-    expect(dispatch).toHaveBeenCalledTimes(1)
-    expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.Target.SHOW_MAIN
-    })
-  })
 })

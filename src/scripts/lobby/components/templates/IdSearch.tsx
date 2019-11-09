@@ -1,12 +1,12 @@
 import * as React from 'react'
-import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
 import Header from '../atoms/Header'
 import IdSearchBox from '../organisms/IdSearchBox'
 import MainContent from '../atoms/MainContent'
+import Menu from '../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import SearchResult from '../organisms/SearchResult'
-import {Target} from '../../constants/ActionTypes'
 import {lobby} from '../../types'
 
 export interface StateProps {
@@ -22,9 +22,8 @@ export interface DispatchProps {
   readonly handleSearchIdChange: (id: number) => void
   readonly handleValidityChange: (valid: boolean) => void
   readonly selectVillage: (id: number) => () => void
-  readonly transition: (target: Target) => void
 }
-export interface Props extends StateProps, DispatchProps {}
+export type Props = StateProps & DispatchProps
 
 export default function IdSearch(props: Props) {
   return (
@@ -47,10 +46,9 @@ export default function IdSearch(props: Props) {
           max={3}
         />
         <Menu
-          class="lo--compact-menu"
-          itemClass="lo--compact-menu--item"
+          className="lo--compact-menu"
+          itemClassName="lo--compact-menu--item"
           items={props.menuItems}
-          transition={props.transition}
         />
       </AsideContent>
     </div>

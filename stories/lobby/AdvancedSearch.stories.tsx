@@ -50,7 +50,6 @@ storiesOf('lobby|AdvancedSearch', module)
     const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
     const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
-    const transition = action('transition')
     const store = createStore(
       reducer,
       {
@@ -74,7 +73,6 @@ storiesOf('lobby|AdvancedSearch', module)
             name="Ryan"
             searched={false}
             selectVillage={selectVillage}
-            transition={transition}
             validity={validity}
             villageItems={[]}
           />
@@ -120,7 +118,6 @@ storiesOf('lobby|AdvancedSearch', module)
     const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
     const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
-    const transition = action('transition')
     const store = createStore(
       reducer,
       {
@@ -144,7 +141,6 @@ storiesOf('lobby|AdvancedSearch', module)
             name="Ryan"
             searched
             selectVillage={selectVillage}
-            transition={transition}
             validity={validity}
             villageItems={[]}
           />
@@ -190,7 +186,6 @@ storiesOf('lobby|AdvancedSearch', module)
     const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
     const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
-    const transition = action('transition')
     const villageItems: Props['villageItems'] = [
       {
         avatar: lobby.Avatar.fixed,
@@ -250,7 +245,6 @@ storiesOf('lobby|AdvancedSearch', module)
             name="Ryan"
             searched
             selectVillage={selectVillage}
-            transition={transition}
             validity={validity}
             villageItems={villageItems}
           />
@@ -296,7 +290,6 @@ storiesOf('lobby|AdvancedSearch', module)
     const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
     const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
-    const transition = action('transition')
     const villageItems: Props['villageItems'] = [
       {
         avatar: lobby.Avatar.fixed,
@@ -390,7 +383,6 @@ storiesOf('lobby|AdvancedSearch', module)
             name="Ryan"
             searched
             selectVillage={selectVillage}
-            transition={transition}
             validity={validity}
             villageItems={villageItems}
           />

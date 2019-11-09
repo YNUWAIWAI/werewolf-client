@@ -8,17 +8,20 @@ export interface MenuItemProps {
   readonly isLoading?: MenuItemProps_['isLoading']
   readonly types: MenuItemProps_['types']
 }
-export interface Props {
-  readonly class: string
-  readonly itemClass: string
+export interface OwnProps {
+  readonly className: string
+  readonly itemClassName: string
   readonly items: MenuItemProps[]
+}
+export interface DispatchProps {
   readonly transition: (target: Target) => void
 }
+export type Props = OwnProps & DispatchProps
 
 export default function Menu(props: Props) {
   const items = props.items.map(item => (
     <MenuItem
-      className={props.itemClass}
+      className={props.itemClassName}
       disabled={item.disabled}
       id={item.id}
       isLoading={item.isLoading}
@@ -29,7 +32,7 @@ export default function Menu(props: Props) {
   ))
 
   return (
-    <ul className={props.class}>
+    <ul className={props.className}>
       {items}
     </ul>
   )

@@ -1,5 +1,12 @@
 import * as React from 'react'
 import IdSearch, {Props} from './IdSearch'
+import AsideContent from '../atoms/AsideContent'
+import Avatar from '../atoms/Avatar'
+import Header from '../atoms/Header'
+import IdSearchBox from '../organisms/IdSearchBox'
+import MainContent from '../atoms/MainContent'
+import Menu from '../../containers/MenuContainer'
+import SearchResult from '../organisms/SearchResult'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
@@ -8,7 +15,6 @@ describe('<IdSearch />', () => {
     const handleSearchIdChange = jest.fn()
     const handleValidityChange = jest.fn()
     const selectVillage = jest.fn()
-    const transition = jest.fn()
     const wrapper = shallow(
       <IdSearch
         handleSearchIdChange={handleSearchIdChange}
@@ -20,26 +26,24 @@ describe('<IdSearch />', () => {
         name="name"
         searched={false}
         selectVillage={selectVillage}
-        transition={transition}
         villageItems={[]}
       />
     )
 
     expect(wrapper.children()).toHaveLength(4)
-    expect(wrapper.find('Header').exists()).toBe(true)
-    expect(wrapper.find('MainContent').exists()).toBe(true)
-    expect(wrapper.find('MainContent').find('SearchResult').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('IdSearchBox').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
+    expect(wrapper.find(Header).exists()).toBe(true)
+    expect(wrapper.find(Avatar).exists()).toBe(true)
+    expect(wrapper.find(MainContent).exists()).toBe(true)
+    expect(wrapper.find(MainContent).find(SearchResult).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(IdSearchBox).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
     expect(selectVillage).toHaveBeenCalledTimes(0)
-    expect(transition).toHaveBeenCalledTimes(0)
   })
   test('1 item', () => {
     const handleSearchIdChange = jest.fn()
     const handleValidityChange = jest.fn()
     const selectVillage = jest.fn()
-    const transition = jest.fn()
     const villageItems: Props['villageItems'] = [
       {
         avatar: lobby.Avatar.fixed,
@@ -87,19 +91,18 @@ describe('<IdSearch />', () => {
         name="name"
         searched
         selectVillage={selectVillage}
-        transition={transition}
         villageItems={villageItems}
       />
     )
 
     expect(wrapper.children()).toHaveLength(4)
-    expect(wrapper.find('Header').exists()).toBe(true)
-    expect(wrapper.find('MainContent').exists()).toBe(true)
-    expect(wrapper.find('MainContent').find('SearchResult').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('IdSearchBox').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
+    expect(wrapper.find(Header).exists()).toBe(true)
+    expect(wrapper.find(Avatar).exists()).toBe(true)
+    expect(wrapper.find(MainContent).exists()).toBe(true)
+    expect(wrapper.find(MainContent).find(SearchResult).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(IdSearchBox).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
     expect(selectVillage).toHaveBeenCalledTimes(0)
-    expect(transition).toHaveBeenCalledTimes(0)
   })
 })

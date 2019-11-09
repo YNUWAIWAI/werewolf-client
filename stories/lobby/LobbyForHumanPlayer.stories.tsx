@@ -107,7 +107,6 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
       }
     ]
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
-    const transition = action('transition')
     const store = createStore(
       reducer,
       {
@@ -123,7 +122,6 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
             menuItems={menuItems}
             name="Ryan"
             selectVillage={selectVillage}
-            transition={transition}
             villageItems={villageItems}
           />
         </IntlProvider>
