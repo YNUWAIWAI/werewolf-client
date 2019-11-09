@@ -67,6 +67,24 @@ storiesOf('lobby|SelectRobotAvatar', module)
               }
             }
           },
+          command: [
+            {
+              id: 'Command.runInTheForeground',
+              types: []
+            },
+            {
+              id: 'Command.runInTheBackground',
+              types: []
+            },
+            {
+              id: 'Command.stop',
+              types: []
+            },
+            {
+              id: 'Command.delete',
+              types: []
+            }
+          ],
           menuItems: [
             {
               id: 'Menu.returnToMainPage',

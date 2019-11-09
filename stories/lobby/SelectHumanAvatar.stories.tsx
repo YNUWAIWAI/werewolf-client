@@ -29,6 +29,16 @@ storiesOf('lobby|SelectHumanAvatar', module)
               }
             }
           },
+          command: [
+            {
+              id: 'Command.select',
+              types: []
+            },
+            {
+              id: 'Command.delete',
+              types: []
+            }
+          ],
           menuItems: [
             {
               id: 'Menu.returnToMainPage',
