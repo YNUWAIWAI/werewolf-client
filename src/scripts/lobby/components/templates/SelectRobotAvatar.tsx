@@ -17,6 +17,7 @@ export interface Avatar {
       readonly authorized: lobby.Authorized
       readonly checked: boolean
       readonly name: string
+      readonly status: lobby.AvatarStatus
       readonly testStatus: lobby.TestStatus
     }
   }

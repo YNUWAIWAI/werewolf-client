@@ -35,7 +35,9 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           handleChange={props.handleAvatarNameChange}
           name={avatar.name}
         />
-        <SelectAvatarTableBodyStatus />
+        <SelectAvatarTableBodyStatus
+          status={avatar.status}
+        />
         <SelectAvatarTableBodyAuthorized
           authorized={avatar.authorized}
           handleClick={props.handleAccept}
