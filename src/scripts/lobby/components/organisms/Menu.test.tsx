@@ -9,8 +9,8 @@ describe('<Menu />', () => {
     const items: Props['items'] = []
     const wrapper = shallow(
       <Menu
-        class="class"
-        itemClass="itemClass"
+        className="className"
+        itemClassName="itemClassName"
         items={items}
         transition={transition}
       />
@@ -29,8 +29,8 @@ describe('<Menu />', () => {
     ]
     const wrapper = shallow(
       <Menu
-        class="class"
-        itemClass="itemClass"
+        className="className"
+        itemClassName="itemClassName"
         items={items}
         transition={transition}
       />
@@ -53,8 +53,8 @@ describe('<Menu />', () => {
     ]
     const wrapper = shallow(
       <Menu
-        class="class"
-        itemClass="itemClass"
+        className="className"
+        itemClassName="itemClassName"
         items={items}
         transition={transition}
       />
