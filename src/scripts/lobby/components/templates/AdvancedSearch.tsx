@@ -1,12 +1,12 @@
 import * as React from 'react'
-import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AdvancedSearchBox from '../organisms/AdvancedSearchBox'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
+import Menu from '../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import SearchResult from '../organisms/SearchResult'
-import {Target} from '../../constants/ActionTypes'
 import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
@@ -47,9 +47,8 @@ export interface DispatchProps {
   readonly handleTextChange: (propName: TextPropName) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (value: boolean) => void
   readonly selectVillage: (id: number) => () => void
-  readonly transition: (target: Target) => void
 }
-export interface Props extends StateProps, DispatchProps {}
+export type Props = StateProps & DispatchProps
 
 export default function AdvancedSearch(props: Props) {
   return (
@@ -76,10 +75,9 @@ export default function AdvancedSearch(props: Props) {
       </MainContent>
       <AsideContent>
         <Menu
-          class="lo--compact-menu"
-          itemClass="lo--compact-menu--item"
+          className="lo--compact-menu"
+          itemClassName="lo--compact-menu--item"
           items={props.menuItems}
-          transition={props.transition}
         />
       </AsideContent>
     </div>
