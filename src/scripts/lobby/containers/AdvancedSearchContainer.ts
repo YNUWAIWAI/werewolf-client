@@ -21,8 +21,7 @@ import {
   changeMinimum,
   changeValidity,
   changeVillageName,
-  selectVillage,
-  transition
+  selectVillage
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'

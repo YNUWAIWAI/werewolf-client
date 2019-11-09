@@ -17,8 +17,7 @@ import {
   changeNumberOfPlayers,
   changeNumberOfRobots,
   changeValidity,
-  changeVillageName,
-  transition
+  changeVillageName
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
