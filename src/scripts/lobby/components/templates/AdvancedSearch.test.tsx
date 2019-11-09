@@ -1,5 +1,12 @@
 import * as React from 'react'
 import AdvancedSearch from './AdvancedSearch'
+import AdvancedSearchBox from '../organisms/AdvancedSearchBox'
+import AsideContent from '../atoms/AsideContent'
+import Avatar from '../atoms/Avatar'
+import Header from '../atoms/Header'
+import MainContent from '../atoms/MainContent'
+import Menu from '../../containers/MenuContainer'
+import SearchResult from '../organisms/SearchResult'
 import {shallow} from 'enzyme'
 
 test('<AdvancedSearch />', () => {
@@ -9,7 +16,6 @@ test('<AdvancedSearch />', () => {
   const handleTextChange = jest.fn()
   const handleValidityChange = jest.fn()
   const selectVillage = jest.fn()
-  const transition = jest.fn()
   const checked = {
     avatar: true,
     comment: false,
@@ -41,19 +47,18 @@ test('<AdvancedSearch />', () => {
       name="name"
       searched={false}
       selectVillage={selectVillage}
-      transition={transition}
       validity={validity}
       villageItems={[]}
     />
   )
 
   expect(wrapper.children()).toHaveLength(4)
-  expect(wrapper.find('Header').exists()).toBe(true)
-  expect(wrapper.find('MainContent').exists()).toBe(true)
-  expect(wrapper.find('MainContent').find('AdvancedSearchBox').exists()).toBe(true)
-  expect(wrapper.find('MainContent').find('SearchResult').exists()).toBe(true)
-  expect(wrapper.find('AsideContent').exists()).toBe(true)
-  expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
+  expect(wrapper.find(Header).exists()).toBe(true)
+  expect(wrapper.find(Avatar).exists()).toBe(true)
+  expect(wrapper.find(MainContent).exists()).toBe(true)
+  expect(wrapper.find(MainContent).find(AdvancedSearchBox).exists()).toBe(true)
+  expect(wrapper.find(MainContent).find(SearchResult).exists()).toBe(true)
+  expect(wrapper.find(AsideContent).exists()).toBe(true)
+  expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
   expect(selectVillage).toHaveBeenCalledTimes(0)
-  expect(transition).toHaveBeenCalledTimes(0)
 })

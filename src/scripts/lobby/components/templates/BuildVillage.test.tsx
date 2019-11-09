@@ -1,5 +1,11 @@
 import * as React from 'react'
+import AsideContent from '../atoms/AsideContent'
+import Avatar from '../atoms/Avatar'
 import BuildVillage from './BuildVillage'
+import BuildVillageBox from '../organisms/BuildVillageBox'
+import Header from '../atoms/Header'
+import MainContent from '../atoms/MainContent'
+import Menu from '../../containers/MenuContainer'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
@@ -9,7 +15,6 @@ test('<BuildVillage />', () => {
   const handleNumberChange = jest.fn()
   const handleTextChange = jest.fn()
   const handleValidityChange = jest.fn()
-  const transition = jest.fn()
   const validity = {
     avatar: true,
     comment: true,
@@ -36,31 +41,20 @@ test('<BuildVillage />', () => {
       image=""
       menuItems={[]}
       name=""
-      transition={transition}
       validity={validity}
       value={value}
     />
   )
 
-  expect(wrapper.find('Header').exists()).toBe(true)
-  expect(wrapper.find('MainContent').exists()).toBe(true)
-  expect(
-    wrapper
-      .find('MainContent')
-      .find('BuildVillageBox')
-      .exists()
-  ).toBe(true)
-  expect(wrapper.find('AsideContent').exists()).toBe(true)
-  expect(
-    wrapper
-      .find('AsideContent')
-      .find('Menu')
-      .exists()
-  ).toBe(true)
+  expect(wrapper.find(Header).exists()).toBe(true)
+  expect(wrapper.find(Avatar).exists()).toBe(true)
+  expect(wrapper.find(MainContent).exists()).toBe(true)
+  expect(wrapper.find(MainContent).find(BuildVillageBox).exists()).toBe(true)
+  expect(wrapper.find(AsideContent).exists()).toBe(true)
+  expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
   expect(handleAvatarChange).toHaveBeenCalledTimes(0)
   expect(handleMemberChange).toHaveBeenCalledTimes(0)
   expect(handleNumberChange).toHaveBeenCalledTimes(0)
   expect(handleTextChange).toHaveBeenCalledTimes(0)
   expect(handleValidityChange).toHaveBeenCalledTimes(0)
-  expect(transition).toHaveBeenCalledTimes(0)
 })
