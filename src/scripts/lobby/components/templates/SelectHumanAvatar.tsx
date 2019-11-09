@@ -6,7 +6,6 @@ import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import SelectHumanAvatarBox from '../organisms/SelectHumanAvatarBox'
 import {Target} from '../../constants/ActionTypes'
-import {lobby} from '../../types'
 
 export interface Avatar {
   readonly allIds: string[]
@@ -19,6 +18,7 @@ export interface Avatar {
 }
 export interface StateProps {
   readonly avatar: Avatar
+  readonly command: MenuItem[]
   readonly menuItems: MenuItem[]
 }
 export interface DispatchProps {
@@ -34,7 +34,9 @@ export default function SelectHumanAvatar(props: Props) {
       <MainContent>
         <SelectHumanAvatarBox
           avatar={props.avatar}
+          command={props.command}
           handleAvatarNameChange={props.handleAvatarNameChange}
+          transition={props.transition}
         />
         <CreateNewHumanAvatar />
       </MainContent>
