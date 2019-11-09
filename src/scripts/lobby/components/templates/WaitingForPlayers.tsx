@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import AvatarList from '../organisms/AvatarList'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import {Target} from '../../constants/ActionTypes'
+import Menu from '../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import VillageList from '../organisms/VillageList'
 import {lobby} from '../../types'
 
@@ -26,9 +26,8 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly confirmKickOutPlayer: (values: {name: string, token: lobby.Token}) => void
-  readonly transition: (target: Target) => void
 }
-export interface Props extends StateProps, DispatchProps {}
+export type Props = StateProps & DispatchProps
 
 export default function WaitingForPlayers(props: Props) {
   const [head, ... tail] = props.menuItems
@@ -50,24 +49,22 @@ export default function WaitingForPlayers(props: Props) {
         expand
       >
         <Menu
-          class="lo--compact-menu"
-          itemClass="lo--compact-menu--item"
+          className="lo--compact-menu"
+          itemClassName="lo--compact-menu--item"
           items={
             typeof head === 'undefined' ?
               [] :
               [head]
           }
-          transition={props.transition}
         />
         <AvatarList
           confirmKickOutPlayer={props.confirmKickOutPlayer}
           items={props.players}
         />
         <Menu
-          class="lo--compact-menu"
-          itemClass="lo--compact-menu--item"
+          className="lo--compact-menu"
+          itemClassName="lo--compact-menu--item"
           items={tail}
-          transition={props.transition}
         />
       </AsideContent>
     </div>

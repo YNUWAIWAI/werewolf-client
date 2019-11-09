@@ -11,15 +11,13 @@ import {
   BuildVillage$ChangeNumberOfRobots,
   BuildVillage$ChangeValidity,
   BuildVillage$ChangeVillageName,
-  Transition,
   changeAvatar,
   changeComment,
   changeMember,
   changeNumberOfPlayers,
   changeNumberOfRobots,
   changeValidity,
-  changeVillageName,
-  transition
+  changeVillageName
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
@@ -33,7 +31,6 @@ type Action =
   | BuildVillage$ChangeNumberOfRobots
   | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
-  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
@@ -96,9 +93,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   },
   handleValidityChange: propName => validity => {
     dispatch(changeValidity(ActionTypes.Scope.BuildVillage)(propName)(validity))
-  },
-  transition: target => {
-    dispatch(transition(target))
   }
 })
 const BuildVillageContainer = connect(

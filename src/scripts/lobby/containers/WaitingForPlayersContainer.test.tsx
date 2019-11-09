@@ -409,47 +409,4 @@ describe('<WaitingForPlayersContainer />', () => {
       type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
     })
   })
-  test('transition', () => {
-    const store = fakeStore(
-      {
-        waitingForPlayers: {
-          isPlayer: true,
-          kickOutToken: '',
-          menuItems: [
-            {
-              id: 'Menu.playGame',
-              isLoading: false,
-              types: [ActionTypes.Target.PLAY_GAME]
-            },
-            {
-              id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-            },
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
-            }
-          ],
-          players: [],
-          village: null
-        }
-      }
-    )
-    const dispatch = jest.fn()
-
-    store.dispatch = dispatch
-    const wrapper = mount(
-      <Provider store={store} >
-        <IntlProviderContainer>
-          <WaitingForPlayersContainer />
-        </IntlProviderContainer>
-      </Provider>
-    )
-
-    wrapper.find(WaitingForPlayers).props().transition(ActionTypes.Target.PLAY_GAME)
-    expect(dispatch).toHaveBeenCalledTimes(1)
-    expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.Target.PLAY_GAME
-    })
-  })
 })

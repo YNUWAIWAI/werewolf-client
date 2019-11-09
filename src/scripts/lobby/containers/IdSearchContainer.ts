@@ -6,11 +6,9 @@ import {
   IdSearch$ChangeSearchId,
   IdSearch$ChangeValidity,
   SelectVillage,
-  Transition,
   changeSearchId,
   changeValidity,
-  selectVillage,
-  transition
+  selectVillage
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
@@ -21,7 +19,6 @@ type Action =
   | IdSearch$ChangeSearchId
   | IdSearch$ChangeValidity
   | SelectVillage
-  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => state.idSearch
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
@@ -33,9 +30,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))
-  },
-  transition: target => {
-    dispatch(transition(target))
   }
 })
 const IdSearchContainer = connect(

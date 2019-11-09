@@ -1,11 +1,16 @@
 import * as React from 'react'
 import WaitingForPlayers, {Props} from './WaitingForPlayers'
+import AsideContent from '../atoms/AsideContent'
+import AvatarList from '../organisms/AvatarList'
+import Header from '../atoms/Header'
+import MainContent from '../atoms/MainContent'
+import Menu from '../../containers/MenuContainer'
+import VillageList from '../organisms/VillageList'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
 describe('render', () => {
   test('village={defined}', () => {
-    const transition = jest.fn()
     const village: Props['village'] = {
       avatar: lobby.Avatar.fixed,
       comment: 'comment',
@@ -47,23 +52,20 @@ describe('render', () => {
         isPlayer
         menuItems={[]}
         players={[]}
-        transition={transition}
         village={village}
       />
     )
 
     expect(wrapper.children()).toHaveLength(3)
-    expect(wrapper.find('Header').exists()).toBe(true)
-    expect(wrapper.find('MainContent').exists()).toBe(true)
-    expect(wrapper.find('MainContent').find('VillageList').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('AvatarList').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
-    expect(transition).toHaveBeenCalledTimes(0)
+    expect(wrapper.find(Header).exists()).toBe(true)
+    expect(wrapper.find(MainContent).exists()).toBe(true)
+    expect(wrapper.find(MainContent).find(VillageList).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(AvatarList).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(Menu)).toHaveLength(2)
     expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
   })
   test('village={undefined}', () => {
-    const transition = jest.fn()
     const confirmKickOutPlayer = jest.fn()
     const wrapper = shallow(
       <WaitingForPlayers
@@ -71,19 +73,17 @@ describe('render', () => {
         isPlayer
         menuItems={[]}
         players={[]}
-        transition={transition}
         village={null}
       />
     )
 
     expect(wrapper.children()).toHaveLength(3)
-    expect(wrapper.find('Header').exists()).toBe(true)
-    expect(wrapper.find('MainContent').exists()).toBe(true)
-    expect(wrapper.find('MainContent').find('VillageList').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('AvatarList').exists()).toBe(true)
-    expect(wrapper.find('AsideContent').find('Menu').exists()).toBe(true)
-    expect(transition).toHaveBeenCalledTimes(0)
+    expect(wrapper.find(Header).exists()).toBe(true)
+    expect(wrapper.find(MainContent).exists()).toBe(true)
+    expect(wrapper.find(MainContent).find(VillageList).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(AvatarList).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(Menu)).toHaveLength(2)
     expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
   })
 })

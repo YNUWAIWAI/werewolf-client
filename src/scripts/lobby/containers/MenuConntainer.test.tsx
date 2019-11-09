@@ -1,26 +1,30 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
 import IntlProviderContainer from './IntlProviderContainer'
-import LobbyForHumanPlayer from '../components/templates/LobbyForHumanPlayer'
-import LobbyForHumanPlayerContainer from './LobbyForHumanPlayerContainer'
+import Menu from '../components/organisms/Menu'
+import MenuContainer from './MenuContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 
-describe('<LobbyForHumanPlayerContainer />', () => {
+describe('<MenuContainer />', () => {
   test('render', () => {
     const store = fakeStore()
     const wrapper = mount(
       <Provider store={store} >
         <IntlProviderContainer>
-          <LobbyForHumanPlayerContainer />
+          <MenuContainer
+            className="className"
+            itemClassName="itemClassName"
+            items={[]}
+          />
         </IntlProviderContainer>
       </Provider>
     )
 
     expect(wrapper.html()).toMatchSnapshot()
   })
-  test('selectVillage', () => {
+  test('transition', () => {
     const store = fakeStore()
     const dispatch = jest.fn()
 
@@ -28,17 +32,19 @@ describe('<LobbyForHumanPlayerContainer />', () => {
     const wrapper = mount(
       <Provider store={store} >
         <IntlProviderContainer>
-          <LobbyForHumanPlayerContainer />
+          <MenuContainer
+            className="className"
+            itemClassName="itemClassName"
+            items={[]}
+          />
         </IntlProviderContainer>
       </Provider>
     )
-    const id = 1
 
-    wrapper.find(LobbyForHumanPlayer).props().selectVillage(id)()
+    wrapper.find(Menu).props().transition(ActionTypes.Target.ADVANCED_SEARCH)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      id,
-      type: ActionTypes.App.SELECT_VILLAGE
+      type: ActionTypes.Target.ADVANCED_SEARCH
     })
   })
 })

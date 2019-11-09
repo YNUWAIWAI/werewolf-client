@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Menu, {MenuItemProps as MenuItem} from '../organisms/Menu'
 import AsideContent from '../atoms/AsideContent'
 import Avatar from '../atoms/Avatar'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
-import {Target} from '../../constants/ActionTypes'
+import Menu from '../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import VillageList from '../organisms/VillageList'
 import {lobby} from '../../types'
 
@@ -17,9 +17,8 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly selectVillage: (id: number) => () => void
-  readonly transition: (target: Target) => void
 }
-export interface Props extends StateProps, DispatchProps {}
+export type Props = StateProps & DispatchProps
 
 export default function LobbyForAudience(props: Props) {
   return (
@@ -35,10 +34,9 @@ export default function LobbyForAudience(props: Props) {
       </MainContent>
       <AsideContent>
         <Menu
-          class="lo--compact-menu"
-          itemClass="lo--compact-menu--item"
+          className="lo--compact-menu"
+          itemClassName="lo--compact-menu--item"
           items={props.menuItems}
-          transition={props.transition}
         />
       </AsideContent>
     </div>
