@@ -136,36 +136,4 @@ describe('<IdSearchContainer />', () => {
       type: ActionTypes.App.SELECT_VILLAGE
     })
   })
-  test('transition', () => {
-    const store = fakeStore(
-      {
-        idSearch: {
-          header: 'Header.idSearch(human player)',
-          id: -1,
-          image: '',
-          isPlayer: true,
-          menuItems: [],
-          name: '',
-          searched: false,
-          villageItems: []
-        }
-      }
-    )
-    const dispatch = jest.fn()
-
-    store.dispatch = dispatch
-    const wrapper = mount(
-      <Provider store={store} >
-        <IntlProviderContainer>
-          <IdSearchContainer />
-        </IntlProviderContainer>
-      </Provider>
-    )
-
-    wrapper.find(IdSearch).props().transition(ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE)
-    expect(dispatch).toHaveBeenCalledTimes(1)
-    expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
-    })
-  })
 })
