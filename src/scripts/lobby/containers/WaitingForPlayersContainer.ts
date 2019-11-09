@@ -1,8 +1,6 @@
 import {
   ConfirmKickOutPlayer,
-  Transition,
-  confirmKickOutPlayer,
-  transition
+  confirmKickOutPlayer
 } from '../actions'
 import WaitingForPlayers, {
   DispatchProps,
@@ -15,7 +13,6 @@ import {lobby} from '../types'
 
 type Action =
   | ConfirmKickOutPlayer
-  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const amIHost = state.waitingForPlayers.players.some(player => player.isHost && player.isMe)
@@ -59,9 +56,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   confirmKickOutPlayer: values => {
     dispatch(confirmKickOutPlayer(values))
-  },
-  transition: target => {
-    dispatch(transition(target))
   }
 })
 const WaitingForPlayersContainer = connect(

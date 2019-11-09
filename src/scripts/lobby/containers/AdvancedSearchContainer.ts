@@ -13,7 +13,6 @@ import {
   AdvancedSearch$ChangeValidity,
   AdvancedSearch$ChangeVillageName,
   SelectVillage,
-  Transition,
   changeAvatar,
   changeCheckbox,
   changeComment,
@@ -39,7 +38,6 @@ type Action =
   | AdvancedSearch$ChangeValidity
   | AdvancedSearch$ChangeVillageName
   | SelectVillage
-  | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
@@ -104,9 +102,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))
-  },
-  transition: target => {
-    dispatch(transition(target))
   }
 })
 const AdvancedSearchContainer = connect(
