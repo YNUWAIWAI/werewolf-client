@@ -16,12 +16,12 @@ export default function SelectAvatarTableBodyAuthorized(props: Props) {
         {
           text => (
             <div className="lo--select-avatar--table--body--item authorized">
-              <button
-                className="button"
+              <div
+                className="accept"
                 onClick={props.handleClick}
               >
                 {text}
-              </button>
+              </div>
             </div>
           )
         }

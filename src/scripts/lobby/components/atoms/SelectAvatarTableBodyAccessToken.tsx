@@ -39,12 +39,12 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
       >
         {
           text => (
-            <button
+            <div
               className="renew"
               onClick={props.renewAccessToken}
             >
               {text}
-            </button>
+            </div>
           )
         }
       </FormattedMessage>
