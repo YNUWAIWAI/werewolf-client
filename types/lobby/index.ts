@@ -126,3 +126,10 @@ export const enum Authorized {
   yes = 'yes',
   waitForAcceptance = 'wait for acceptance',
 }
+export const enum AvatarStatus {
+  awaitingAuthorization = 'awaiting authorization',
+  awaitingCommunicationTest = 'awaiting communication test',
+  connected = 'connected',
+  runningInTheBackground = 'running in the background',
+  runningInTheForeground = 'running in the foreground'
+}
