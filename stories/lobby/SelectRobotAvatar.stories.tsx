@@ -69,19 +69,19 @@ storiesOf('lobby|SelectRobotAvatar', module)
           },
           command: [
             {
-              id: 'Command.runInTheForeground',
+              id: 'AvatarSelectCommand.runInTheForeground',
               types: []
             },
             {
-              id: 'Command.runInTheBackground',
+              id: 'AvatarSelectCommand.runInTheBackground',
               types: []
             },
             {
-              id: 'Command.stop',
+              id: 'AvatarSelectCommand.stop',
               types: []
             },
             {
-              id: 'Command.delete',
+              id: 'AvatarSelectCommand.delete',
               types: []
             }
           ],

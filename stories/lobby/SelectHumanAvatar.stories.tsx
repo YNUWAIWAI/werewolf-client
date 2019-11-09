@@ -31,11 +31,11 @@ storiesOf('lobby|SelectHumanAvatar', module)
           },
           command: [
             {
-              id: 'Command.select',
+              id: 'AvatarSelectCommand.select',
               types: []
             },
             {
-              id: 'Command.delete',
+              id: 'AvatarSelectCommand.delete',
               types: []
             }
           ],
