@@ -1,7 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {SocketMessage} from '../actions'
-import {lobby} from '../types'
 
 export interface State {
   readonly avatar: {
@@ -28,7 +27,7 @@ export const initialState: State = {
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.Target.SHOW_MAIN]
+      types: [ActionTypes.App.SHOW_MAIN]
     }
   ]
 }

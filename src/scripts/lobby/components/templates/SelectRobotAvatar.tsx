@@ -6,7 +6,6 @@ import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import SelectRobotAvatarBox from '../organisms/SelectRobotAvatarBox'
-import {Target} from '../../constants/ActionTypes'
 import {lobby} from '../../types'
 
 export interface Avatar {
