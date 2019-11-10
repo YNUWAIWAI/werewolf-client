@@ -166,7 +166,27 @@ export const showVillage = (): {type: ActionTypes.App.SHOW_VILLAGE} => ({
 export const submitLogout = (): {type: ActionTypes.App.LOGOUT} => ({
   type: ActionTypes.App.LOGOUT
 })
-export const transition = (target: ActionTypes.Target): {type: ActionTypes.Target} => ({
+export type Target =
+  | ActionTypes.App.ADVANCED_SEARCH
+  | ActionTypes.App.BUILD_VILLAGE
+  | ActionTypes.App.ID_SEARCH
+  | ActionTypes.App.LEAVE_WAITING_PAGE
+  | ActionTypes.App.PLAY_GAME
+  | ActionTypes.App.REFRESH
+  | ActionTypes.App.SHOW_ADVANCED_SEARCH
+  | ActionTypes.App.SHOW_BUILD_VILLAGE
+  | ActionTypes.App.SHOW_CONNECTING_TO_ROBOT_PLAYER
+  | ActionTypes.App.SHOW_CREDITS
+  | ActionTypes.App.SHOW_HISTORY
+  | ActionTypes.App.SHOW_HOW_TO_PLAY
+  | ActionTypes.App.SHOW_ID_SEARCH
+  | ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
+  | ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
+  | ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
+  | ActionTypes.App.SHOW_MAIN
+  | ActionTypes.App.SHOW_SETTINGS
+  | ActionTypes.App.SHOW_VILLAGE
+export const transition = (target: Target): {type: Target} => ({
   type: target
 })
 

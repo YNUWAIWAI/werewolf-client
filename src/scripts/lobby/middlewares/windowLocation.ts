@@ -8,12 +8,12 @@ const windowLocation: Middleware = store => next => action => {
 
       return next(action)
     case ActionTypes.App.SELECT_VILLAGE:
-    case ActionTypes.Target.BUILD_VILLAGE:
-    case ActionTypes.Target.SHOW_SETTINGS:
+    case ActionTypes.App.BUILD_VILLAGE:
+    case ActionTypes.App.SHOW_SETTINGS:
       window.onbeforeunload = () => ''
 
       return next(action)
-    case ActionTypes.Target.SHOW_CREDITS: {
+    case ActionTypes.App.SHOW_CREDITS: {
       const w = window.open(`${window.location.origin}/credits`, 'credits')
 
       if (w) {
@@ -22,7 +22,7 @@ const windowLocation: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_HOW_TO_PLAY: {
+    case ActionTypes.App.SHOW_HOW_TO_PLAY: {
       const w = window.open(`${window.location.origin}/how-to-play`, 'how-to-play')
 
       if (w) {
@@ -31,10 +31,10 @@ const windowLocation: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
-    case ActionTypes.Target.SHOW_MAIN:
+    case ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_MAIN:
       window.onbeforeunload = null
 
       return next(action)

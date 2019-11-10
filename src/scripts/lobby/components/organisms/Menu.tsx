@@ -1,6 +1,6 @@
 import * as React from 'react'
 import MenuItem, {Props as MenuItemProps_} from '../molecules/MenuItem'
-import {Target} from '../../constants/ActionTypes'
+import {Target} from '../../actions'
 
 export interface MenuItemProps {
   readonly disabled?: MenuItemProps_['disabled']

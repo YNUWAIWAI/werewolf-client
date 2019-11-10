@@ -21,7 +21,7 @@ type Action =
   | SocketMessage
   | Transition
 
-export const initialState = {
+export const initialState: State = {
   isPlayer: true,
   kickOutToken: '',
   menuItems: [],
@@ -40,15 +40,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
               {
                 disabled: true,
                 id: 'Menu.playGame',
-                types: [ActionTypes.Target.PLAY_GAME]
+                types: [ActionTypes.App.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
               }
             ]
           }
@@ -60,15 +60,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
               {
                 disabled: true,
                 id: 'Menu.playGame',
-                types: [ActionTypes.Target.PLAY_GAME]
+                types: [ActionTypes.App.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForAudience',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
               }
             ]
           }
@@ -80,15 +80,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
               {
                 disabled: true,
                 id: 'Menu.playGame',
-                types: [ActionTypes.Target.PLAY_GAME]
+                types: [ActionTypes.App.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
               }
             ]
           }
@@ -100,11 +100,11 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
         ... state,
         kickOutToken: action.token
       }
-    case ActionTypes.Target.PLAY_GAME:
+    case ActionTypes.App.PLAY_GAME:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.Target.PLAY_GAME)) {
+          if (item.types.includes(ActionTypes.App.PLAY_GAME)) {
             return {
               ... item,
               isLoading: true
@@ -114,7 +114,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           return item
         })
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
         isPlayer: false,
@@ -122,19 +122,19 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           {
             disabled: true,
             id: 'Menu.playGame',
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         isPlayer: true,
@@ -142,19 +142,19 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           {
             disabled: true,
             id: 'Menu.playGame',
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         isPlayer: true,
@@ -162,15 +162,15 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           {
             disabled: true,
             id: 'Menu.playGame',
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       }
@@ -180,7 +180,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           return {
             ... state,
             menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.Target.PLAY_GAME)) {
+              if (item.types.includes(ActionTypes.App.PLAY_GAME)) {
                 return {
                   ... item,
                   isLoading: false
@@ -198,7 +198,7 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
             return {
               ... state,
               menuItems: state.menuItems.map(item => {
-                if (item.types.includes(ActionTypes.Target.PLAY_GAME)) {
+                if (item.types.includes(ActionTypes.App.PLAY_GAME)) {
                   return {
                     ... item,
                     disabled: false

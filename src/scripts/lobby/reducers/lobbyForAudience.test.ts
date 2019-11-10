@@ -12,7 +12,7 @@ test('REFRESH', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.REFRESH
+        type: ActionTypes.App.REFRESH
       }
     )
   ).toStrictEqual(
@@ -22,20 +22,20 @@ test('REFRESH', () => {
       menuItems: [
         {
           id: 'Menu.showIdSearch',
-          types: [ActionTypes.Target.SHOW_ID_SEARCH]
+          types: [ActionTypes.App.SHOW_ID_SEARCH]
         },
         {
           id: 'Menu.showAdvancedSearch',
-          types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
+          types: [ActionTypes.App.SHOW_ADVANCED_SEARCH]
         },
         {
           id: 'Menu.refresh',
           isLoading: true,
-          types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.REFRESH, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       name: '',
@@ -89,20 +89,20 @@ describe('socket/MESSAGE', () => {
       menuItems: [
         {
           id: 'Menu.showIdSearch',
-          types: [ActionTypes.Target.SHOW_ID_SEARCH]
+          types: [ActionTypes.App.SHOW_ID_SEARCH]
         },
         {
           id: 'Menu.showAdvancedSearch',
-          types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
+          types: [ActionTypes.App.SHOW_ADVANCED_SEARCH]
         },
         {
           id: 'Menu.refresh',
           isLoading: false,
-          types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.REFRESH, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       name: '',

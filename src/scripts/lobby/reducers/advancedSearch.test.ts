@@ -14,21 +14,21 @@ test('ADVANCED_SEARCH', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
+            types: [ActionTypes.App.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false
       },
       {
-        type: ActionTypes.Target.ADVANCED_SEARCH
+        type: ActionTypes.App.ADVANCED_SEARCH
       }
     )
   ).toStrictEqual(
@@ -38,15 +38,15 @@ test('ADVANCED_SEARCH', () => {
         {
           id: 'Menu.search',
           isLoading: true,
-          types: [ActionTypes.Target.ADVANCED_SEARCH]
+          types: [ActionTypes.App.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       searched: false
@@ -71,15 +71,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
+            types: [ActionTypes.App.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false
@@ -103,15 +103,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
+            types: [ActionTypes.App.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false
@@ -135,15 +135,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
+            types: [ActionTypes.App.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false
@@ -166,15 +166,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
+            types: [ActionTypes.App.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false
@@ -572,7 +572,7 @@ test('SHOW_ADVANCED_SEARCH', () => {
         }
       },
       {
-        type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
+        type: ActionTypes.App.SHOW_ADVANCED_SEARCH
       }
     )
   ).toStrictEqual(
@@ -587,7 +587,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+        type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toStrictEqual(
@@ -598,15 +598,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.Target.ADVANCED_SEARCH]
+          types: [ActionTypes.App.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       villageItems: []
@@ -618,7 +618,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toStrictEqual(
@@ -629,15 +629,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.Target.ADVANCED_SEARCH]
+          types: [ActionTypes.App.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       villageItems: []
@@ -649,7 +649,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toStrictEqual(
@@ -660,15 +660,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.Target.ADVANCED_SEARCH]
+          types: [ActionTypes.App.ADVANCED_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       villageItems: []
@@ -702,15 +702,15 @@ describe('socket/MESSAGE', () => {
             {
               id: 'Menu.search',
               isLoading: true,
-              types: [ActionTypes.Target.ADVANCED_SEARCH]
+              types: [ActionTypes.App.ADVANCED_SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForAudience',
-              types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+              types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ]
         },
@@ -726,11 +726,11 @@ describe('socket/MESSAGE', () => {
           {
             id: 'Menu.search',
             isLoading: false,
-            types: [ActionTypes.Target.ADVANCED_SEARCH]
+            types: [ActionTypes.App.ADVANCED_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',

@@ -31,15 +31,15 @@ describe('<BuildVillageContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.Target.BUILD_VILLAGE]
+                types: [ActionTypes.App.BUILD_VILLAGE]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             validity: {
@@ -70,15 +70,15 @@ describe('<BuildVillageContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.Target.BUILD_VILLAGE]
+                types: [ActionTypes.App.BUILD_VILLAGE]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             validity: {

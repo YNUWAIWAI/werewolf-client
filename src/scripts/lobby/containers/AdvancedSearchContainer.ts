@@ -47,7 +47,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     }
 
     return state.advancedSearch.menuItems.map(item => {
-      if (item.types.includes(ActionTypes.Target.ADVANCED_SEARCH)) {
+      if (item.types.includes(ActionTypes.App.ADVANCED_SEARCH)) {
         return {
           ... item,
           disabled: true

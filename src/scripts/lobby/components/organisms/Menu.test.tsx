@@ -1,6 +1,6 @@
+import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
 import Menu, {Props} from './Menu'
-import {Target} from '../../constants/ActionTypes'
 import {shallow} from 'enzyme'
 
 describe('<Menu />', () => {
@@ -24,7 +24,7 @@ describe('<Menu />', () => {
     const items: Props['items'] = [
       {
         id: 'Menu.returnToMainPage',
-        types: [Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const wrapper = shallow(
@@ -44,11 +44,11 @@ describe('<Menu />', () => {
     const items: Props['items'] = [
       {
         id: 'Menu.returnToMainPage',
-        types: [Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const wrapper = shallow(

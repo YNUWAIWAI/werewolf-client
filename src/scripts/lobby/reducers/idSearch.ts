@@ -52,15 +52,15 @@ const idSearch = (state: State = initialState, action: Action): State => {
               {
                 disabled: true,
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ID_SEARCH]
+                types: [ActionTypes.App.ID_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForAudience',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             searched: false,
@@ -76,15 +76,15 @@ const idSearch = (state: State = initialState, action: Action): State => {
               {
                 disabled: true,
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ID_SEARCH]
+                types: [ActionTypes.App.ID_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             searched: false,
@@ -100,15 +100,15 @@ const idSearch = (state: State = initialState, action: Action): State => {
               {
                 disabled: true,
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ID_SEARCH]
+                types: [ActionTypes.App.ID_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             searched: false,
@@ -117,7 +117,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
         default:
           return state
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
         header: 'Header.idSearch(audience)',
@@ -127,21 +127,21 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false,
         villageItems: []
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         header: 'Header.idSearch(human player)',
@@ -151,21 +151,21 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false,
         villageItems: []
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         header: 'Header.idSearch(robot player)',
@@ -175,15 +175,15 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: false,
@@ -201,7 +201,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.Target.ID_SEARCH)) {
+          if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
             return {
               ... item,
               disabled
@@ -212,11 +212,11 @@ const idSearch = (state: State = initialState, action: Action): State => {
         })
       }
     }
-    case ActionTypes.Target.ID_SEARCH:
+    case ActionTypes.App.ID_SEARCH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.Target.ID_SEARCH)) {
+          if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
             return {
               ... item,
               isLoading: true
@@ -243,7 +243,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
           return {
             ... state,
             menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.Target.ID_SEARCH)) {
+              if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
                 return {
                   ... item,
                   isLoading: false

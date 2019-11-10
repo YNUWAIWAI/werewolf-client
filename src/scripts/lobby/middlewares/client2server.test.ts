@@ -6,7 +6,8 @@ import {
   ChangeUserPassword,
   KickOutPlayer,
   SelectVillage,
-  SocketMessage
+  SocketMessage,
+  Transition
 } from '../actions'
 import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
@@ -73,8 +74,8 @@ describe('ADVANCED_SEARCH', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const action = {
-      type: ActionTypes.Target.ADVANCED_SEARCH
+    const action: Transition = {
+      type: ActionTypes.App.ADVANCED_SEARCH
     }
     const advancedSearchPayload = {
       ... value,
@@ -139,8 +140,8 @@ describe('ADVANCED_SEARCH', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const action = {
-      type: ActionTypes.Target.ADVANCED_SEARCH
+    const action: Transition = {
+      type: ActionTypes.App.ADVANCED_SEARCH
     }
     const advancedSearchPayload = {
       avatar: 'random',
@@ -192,8 +193,8 @@ describe('BUILD_VILLAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.BUILD_VILLAGE
+  const action: Transition = {
+    type: ActionTypes.App.BUILD_VILLAGE
   }
   const buildVillagePayload = {
     avatar: buildVillage.value.avatar,
@@ -553,8 +554,8 @@ describe('LEAVE_WAITING_PAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.LEAVE_WAITING_PAGE
+  const action: Transition = {
+    type: ActionTypes.App.LEAVE_WAITING_PAGE
   }
   const leaveWaitingPagePayload = {
     lobby: 'human player',
@@ -651,8 +652,8 @@ describe('PLAY_GAME', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.PLAY_GAME
+  const action: Transition = {
+    type: ActionTypes.App.PLAY_GAME
   }
   const playPayload = {
     token: avatarToken.humanPlayer,
@@ -702,8 +703,8 @@ describe('ID_SEARCH valid id', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.ID_SEARCH
+  const action: Transition = {
+    type: ActionTypes.App.ID_SEARCH
   }
   const idSearchPayload = {
     idForSearching,
@@ -749,8 +750,8 @@ describe('ID_SEARCH invalid id(=-1)', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.ID_SEARCH
+  const action: Transition = {
+    type: ActionTypes.App.ID_SEARCH
   }
 
   test('dispatch correctly', () => {
@@ -822,8 +823,8 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+  const action: Transition = {
+    type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
   }
   const enterLobbyPayload = {
     lobby: 'onymous audience',
@@ -889,8 +890,8 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+  const action: Transition = {
+    type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
   }
   const enterLobbyPayload = {
     lobby: lobby.LobbyType.human,
@@ -956,8 +957,8 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+  const action: Transition = {
+    type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
   }
   const enterLobbyPayload = {
     lobby: 'robot player',
@@ -1023,8 +1024,8 @@ describe('SHOW_SETTINGS', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action = {
-    type: ActionTypes.Target.SHOW_SETTINGS
+  const action: Transition = {
+    type: ActionTypes.App.SHOW_SETTINGS
   }
   const payload = {
     type: 'getSettings'

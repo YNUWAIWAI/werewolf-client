@@ -32,15 +32,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.Target.BUILD_VILLAGE]
+            types: [ActionTypes.App.BUILD_VILLAGE]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         validity: initialState.validity,
@@ -79,15 +79,15 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.Target.BUILD_VILLAGE]
+            types: [ActionTypes.App.BUILD_VILLAGE]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         validity: initialState.validity,
@@ -448,7 +448,7 @@ test('LEAVE_WAITING_PAGE', () => {
         }
       },
       {
-        type: ActionTypes.Target.LEAVE_WAITING_PAGE
+        type: ActionTypes.App.LEAVE_WAITING_PAGE
       }
     )
   ).toStrictEqual(
@@ -481,7 +481,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         }
       },
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toStrictEqual(
@@ -490,15 +490,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.buildVillage',
-          types: [ActionTypes.Target.BUILD_VILLAGE]
+          types: [ActionTypes.App.BUILD_VILLAGE]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       validity: initialState.validity,
@@ -534,7 +534,7 @@ test('SHOW_MAIN', () => {
         }
       },
       {
-        type: ActionTypes.Target.SHOW_MAIN
+        type: ActionTypes.App.SHOW_MAIN
       }
     )
   ).toStrictEqual(
@@ -567,7 +567,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         }
       },
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toStrictEqual(
@@ -576,15 +576,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.buildVillage',
-          types: [ActionTypes.Target.BUILD_VILLAGE]
+          types: [ActionTypes.App.BUILD_VILLAGE]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       validity: initialState.validity,

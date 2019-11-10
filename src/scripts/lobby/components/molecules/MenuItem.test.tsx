@@ -1,6 +1,6 @@
+import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
 import MenuItem from './MenuItem'
-import {Target} from '../../constants/ActionTypes'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
@@ -16,7 +16,7 @@ describe('<MenuItem />', () => {
           className="className"
           id="Menu.returnToMainPage"
           transition={transition}
-          types={[Target.SHOW_MAIN]}
+          types={[ActionTypes.App.SHOW_MAIN]}
         />
       )
 
@@ -32,7 +32,7 @@ describe('<MenuItem />', () => {
           disabled
           id="Menu.returnToMainPage"
           transition={transition}
-          types={[Target.SHOW_MAIN]}
+          types={[ActionTypes.App.SHOW_MAIN]}
         />
       )
 
@@ -48,7 +48,7 @@ describe('<MenuItem />', () => {
           id="Menu.returnToMainPage"
           isLoading
           transition={transition}
-          types={[Target.SHOW_MAIN]}
+          types={[ActionTypes.App.SHOW_MAIN]}
         />
       )
 
@@ -65,7 +65,7 @@ describe('<MenuItem />', () => {
           className="className"
           id="Menu.returnToMainPage"
           transition={transition}
-          types={[Target.SHOW_MAIN]}
+          types={[ActionTypes.App.SHOW_MAIN]}
         />
       )
 
@@ -81,7 +81,7 @@ describe('<MenuItem />', () => {
           disabled
           id="Menu.returnToMainPage"
           transition={transition}
-          types={[Target.SHOW_MAIN]}
+          types={[ActionTypes.App.SHOW_MAIN]}
         />
       )
 
@@ -96,7 +96,7 @@ describe('<MenuItem />', () => {
           id="Menu.returnToMainPage"
           isLoading
           transition={transition}
-          types={[Target.SHOW_MAIN]}
+          types={[ActionTypes.App.SHOW_MAIN]}
         />
       )
 

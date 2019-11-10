@@ -91,7 +91,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+        type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toStrictEqual(
@@ -109,7 +109,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toStrictEqual(
@@ -127,7 +127,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toStrictEqual(

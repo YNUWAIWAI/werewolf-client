@@ -38,17 +38,17 @@ const token = (state: State = initialState, action: Action): State => {
         ... state,
         [action.lobby]: action.token
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
         lobby: lobby.LobbyType.onymousAudience
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         lobby: lobby.LobbyType.human
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         lobby: lobby.LobbyType.robot
