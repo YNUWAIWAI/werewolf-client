@@ -15,15 +15,15 @@ export const waitingPage: Partial<ReducerState> = {
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ],
     players: [

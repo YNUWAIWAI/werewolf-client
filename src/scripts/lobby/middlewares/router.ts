@@ -48,7 +48,7 @@ const router: (history: History) => Middleware = history => store => next => act
       }
     }
     case ActionTypes.App.SELECT_VILLAGE:
-    case ActionTypes.Target.BUILD_VILLAGE: {
+    case ActionTypes.App.BUILD_VILLAGE: {
       const lobbyType = getLobbyType(history.location.pathname)
 
       if (lobbyType) {
@@ -59,7 +59,7 @@ const router: (history: History) => Middleware = history => store => next => act
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_ADVANCED_SEARCH: {
+    case ActionTypes.App.SHOW_ADVANCED_SEARCH: {
       const lobbyType = getLobbyType(history.location.pathname)
 
       if (lobbyType) {
@@ -70,7 +70,7 @@ const router: (history: History) => Middleware = history => store => next => act
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_BUILD_VILLAGE: {
+    case ActionTypes.App.SHOW_BUILD_VILLAGE: {
       const lobbyType = getLobbyType(history.location.pathname)
 
       if (lobbyType) {
@@ -81,15 +81,15 @@ const router: (history: History) => Middleware = history => store => next => act
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_CONNECTING_TO_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_CONNECTING_TO_ROBOT_PLAYER:
       history.push('/')
 
       return next(action)
-    case ActionTypes.Target.SHOW_HISTORY:
+    case ActionTypes.App.SHOW_HISTORY:
       history.push('/history')
 
       return next(action)
-    case ActionTypes.Target.SHOW_ID_SEARCH: {
+    case ActionTypes.App.SHOW_ID_SEARCH: {
       const lobbyType = getLobbyType(history.location.pathname)
 
       if (lobbyType) {
@@ -100,23 +100,23 @@ const router: (history: History) => Middleware = history => store => next => act
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE:
       history.push('/audience/lobby')
 
       return next(action)
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       history.push('/human/lobby')
 
       return next(action)
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       history.push('/robot/lobby')
 
       return next(action)
-    case ActionTypes.Target.SHOW_MAIN:
+    case ActionTypes.App.SHOW_MAIN:
       history.push('/')
 
       return next(action)
-    case ActionTypes.Target.SHOW_SETTINGS:
+    case ActionTypes.App.SHOW_SETTINGS:
       history.push('/settings')
 
       return next(action)

@@ -3,6 +3,7 @@ import * as React from 'react'
 import IdSearch, {Props} from '../../src/scripts/lobby/components/templates/IdSearch'
 import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
+import {MenuItemProps} from '../../src/scripts/lobby/components/organisms/Menu'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
@@ -17,19 +18,19 @@ storiesOf('lobby|IdSearch', module)
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.search',
-        types: [ActionTypes.Target.ID_SEARCH]
+        types: [ActionTypes.App.ID_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const store = createStore(
@@ -62,19 +63,19 @@ storiesOf('lobby|IdSearch', module)
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.search',
-        types: [ActionTypes.Target.ID_SEARCH]
+        types: [ActionTypes.App.ID_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const store = createStore(
@@ -107,19 +108,19 @@ storiesOf('lobby|IdSearch', module)
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
     const selectVillage = (id: number) => action(`selectVillage: ${id}`)
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.search',
-        types: [ActionTypes.Target.ID_SEARCH]
+        types: [ActionTypes.App.ID_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const villageItems: Props['villageItems'] = [

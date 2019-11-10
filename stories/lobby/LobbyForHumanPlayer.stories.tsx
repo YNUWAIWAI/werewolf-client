@@ -3,6 +3,7 @@ import * as React from 'react'
 import LobbyForHumanPlayer, {Props} from '../../src/scripts/lobby/components/templates/LobbyForHumanPlayer'
 import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
+import {MenuItemProps} from '../../src/scripts/lobby/components/organisms/Menu'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
@@ -14,26 +15,26 @@ import {storiesOf} from '@storybook/react'
 
 storiesOf('lobby|LobbyForHumanPlayer', module)
   .add('default', () => {
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.showBuildVillage',
-        types: [ActionTypes.Target.SHOW_BUILD_VILLAGE]
+        types: [ActionTypes.App.SHOW_BUILD_VILLAGE]
       },
       {
         id: 'Menu.showIdSearch',
-        types: [ActionTypes.Target.SHOW_ID_SEARCH]
+        types: [ActionTypes.App.SHOW_ID_SEARCH]
       },
       {
         id: 'Menu.showAdvancedSearch',
-        types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
+        types: [ActionTypes.App.SHOW_ADVANCED_SEARCH]
       },
       {
         id: 'Menu.refresh',
-        types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.REFRESH, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const villageItems: Props['villageItems'] = [

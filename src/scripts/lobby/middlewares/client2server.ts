@@ -6,7 +6,7 @@ import {socket} from '../actions'
 
 const client2server: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.Target.ADVANCED_SEARCH: {
+    case ActionTypes.App.ADVANCED_SEARCH: {
       const state = store.getState()
       const payload: lobby.Payload$AdvancedSearch = {
         avatar: state.advancedSearch.validity.avatar ? state.advancedSearch.value.avatar : lobby.Avatar.random,
@@ -24,7 +24,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.BUILD_VILLAGE: {
+    case ActionTypes.App.BUILD_VILLAGE: {
       const state = store.getState()
       const payload: lobby.Payload$BuildVillage = {
         avatar: state.buildVillage.value.avatar,
@@ -98,7 +98,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.ID_SEARCH: {
+    case ActionTypes.App.ID_SEARCH: {
       const state = store.getState()
 
       if (state.idSearch.id === -1) {
@@ -131,7 +131,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.LEAVE_WAITING_PAGE: {
+    case ActionTypes.App.LEAVE_WAITING_PAGE: {
       const state = store.getState()
       const me = state.waitingForPlayers.players.find(v => v.isMe)
 
@@ -148,7 +148,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.PLAY_GAME: {
+    case ActionTypes.App.PLAY_GAME: {
       const state = store.getState()
 
       if (!state.waitingForPlayers.village) {
@@ -176,7 +176,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE: {
+    case ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE: {
       const state = store.getState()
       const enterLobby: lobby.Payload$EnterLobby = {
         lobby: lobby.LobbyType.onymousAudience,
@@ -194,7 +194,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER: {
       const state = store.getState()
       const enterLobby: lobby.Payload$EnterLobby = {
         lobby: lobby.LobbyType.human,
@@ -212,7 +212,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER: {
       const state = store.getState()
       const enterLobby: lobby.Payload$EnterLobby = {
         lobby: lobby.LobbyType.robot,
@@ -230,7 +230,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Target.SHOW_SETTINGS: {
+    case ActionTypes.App.SHOW_SETTINGS: {
       const payload: lobby.Payload$GetSettings = {
         type: lobby.PayloadType.getSettings
       }

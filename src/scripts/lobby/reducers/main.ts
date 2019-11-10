@@ -8,35 +8,35 @@ export interface State {
 type Action =
   | SocketMessage
 
-export const initialState = {
+export const initialState: State = {
   menuItems: [
     {
       id: 'Menu.lobbyForAudience',
-      types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+      types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
     },
     {
       id: 'Menu.lobbyForRobotPlayer',
-      types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+      types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
     },
     {
       id: 'Menu.lobbyForHumanPlayer',
-      types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+      types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
     },
     {
       id: 'Menu.history',
-      types: [ActionTypes.Target.SHOW_HISTORY]
+      types: [ActionTypes.App.SHOW_HISTORY]
     },
     {
       id: 'Menu.settings',
-      types: [ActionTypes.Target.SHOW_SETTINGS]
+      types: [ActionTypes.App.SHOW_SETTINGS]
     },
     {
       id: 'Menu.howToPlay',
-      types: [ActionTypes.Target.SHOW_HOW_TO_PLAY]
+      types: [ActionTypes.App.SHOW_HOW_TO_PLAY]
     },
     {
       id: 'Menu.credits',
-      types: [ActionTypes.Target.SHOW_CREDITS]
+      types: [ActionTypes.App.SHOW_CREDITS]
     }
   ]
 }
