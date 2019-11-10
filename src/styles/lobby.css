@@ -530,8 +530,11 @@
       text-align: center;
 
       &--item {
+        align-items: center;
         border: 1px solid black;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
         padding: 1rem;
         user-select: none;
 
