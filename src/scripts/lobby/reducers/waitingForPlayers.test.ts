@@ -25,15 +25,15 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.playGame',
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       }
@@ -56,15 +56,15 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.playGame',
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       }
@@ -87,15 +87,15 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.playGame',
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       }
@@ -127,20 +127,20 @@ test('PLAY_GAME', () => {
         menuItems: [
           {
             id: 'Menu.playGame',
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       },
       {
-        type: ActionTypes.Target.PLAY_GAME
+        type: ActionTypes.App.PLAY_GAME
       }
     )
   ).toStrictEqual(
@@ -150,15 +150,15 @@ test('PLAY_GAME', () => {
         {
           id: 'Menu.playGame',
           isLoading: true,
-          types: [ActionTypes.Target.PLAY_GAME]
+          types: [ActionTypes.App.PLAY_GAME]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
         }
       ]
     },
@@ -169,7 +169,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+        type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toStrictEqual(
@@ -180,15 +180,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         {
           disabled: true,
           id: 'Menu.playGame',
-          types: [ActionTypes.Target.PLAY_GAME]
+          types: [ActionTypes.App.PLAY_GAME]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
         }
       ]
     }
@@ -199,7 +199,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toStrictEqual(
@@ -210,15 +210,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.playGame',
-          types: [ActionTypes.Target.PLAY_GAME]
+          types: [ActionTypes.App.PLAY_GAME]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
         }
       ]
     }
@@ -229,7 +229,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toStrictEqual(
@@ -240,15 +240,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.playGame',
-          types: [ActionTypes.Target.PLAY_GAME]
+          types: [ActionTypes.App.PLAY_GAME]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
         }
       ]
     }
@@ -265,15 +265,15 @@ describe('socket/MESSAGE', () => {
               disabled: false,
               id: 'Menu.playGame',
               isLoading: true,
-              types: [ActionTypes.Target.PLAY_GAME]
+              types: [ActionTypes.App.PLAY_GAME]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
             }
           ]
         },
@@ -290,15 +290,15 @@ describe('socket/MESSAGE', () => {
             disabled: false,
             id: 'Menu.playGame',
             isLoading: false,
-            types: [ActionTypes.Target.PLAY_GAME]
+            types: [ActionTypes.App.PLAY_GAME]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
           }
         ]
       }
@@ -314,15 +314,15 @@ describe('socket/MESSAGE', () => {
               {
                 disabled: true,
                 id: 'Menu.playGame',
-                types: [ActionTypes.Target.PLAY_GAME]
+                types: [ActionTypes.App.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
               }
             ]
           },
@@ -338,15 +338,15 @@ describe('socket/MESSAGE', () => {
             {
               disabled: false,
               id: 'Menu.playGame',
-              types: [ActionTypes.Target.PLAY_GAME]
+              types: [ActionTypes.App.PLAY_GAME]
             },
             {
               id: 'Menu.returnToLobbyForRobotPlayer',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
             }
           ],
           players: [
@@ -461,15 +461,15 @@ describe('socket/MESSAGE', () => {
               {
                 disabled: true,
                 id: 'Menu.playGame',
-                types: [ActionTypes.Target.PLAY_GAME]
+                types: [ActionTypes.App.PLAY_GAME]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
               }
             ]
           },
@@ -485,15 +485,15 @@ describe('socket/MESSAGE', () => {
             {
               disabled: true,
               id: 'Menu.playGame',
-              types: [ActionTypes.Target.PLAY_GAME]
+              types: [ActionTypes.App.PLAY_GAME]
             },
             {
               id: 'Menu.returnToLobbyForRobotPlayer',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
             }
           ],
           players: [

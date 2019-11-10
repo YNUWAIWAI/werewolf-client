@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import Loader from '../atoms/svg/Loader'
-import {Target} from '../../constants/ActionTypes'
+import {Target} from '../../actions'
 
 export interface Props {
   readonly className: string

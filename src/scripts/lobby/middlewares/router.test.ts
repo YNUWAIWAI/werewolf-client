@@ -150,7 +150,7 @@ describe('BUILD_VILLAGE', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.BUILD_VILLAGE
+      type: ActionTypes.App.BUILD_VILLAGE
     })
     expect(replace).toHaveBeenCalled()
     expect(replace).toHaveBeenCalledWith('/human/waitingForPlayers')
@@ -167,7 +167,7 @@ describe('BUILD_VILLAGE', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.BUILD_VILLAGE
+      type: ActionTypes.App.BUILD_VILLAGE
     })
     expect(replace).toHaveBeenCalled()
     expect(replace).toHaveBeenCalledWith('/')
@@ -187,7 +187,7 @@ describe('SHOW_ADVANCED_SEARCH', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
+      type: ActionTypes.App.SHOW_ADVANCED_SEARCH
     })
     expect(push).toHaveBeenCalled()
     expect(push).toHaveBeenCalledWith('/human/advancedSearch')
@@ -204,7 +204,7 @@ describe('SHOW_ADVANCED_SEARCH', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.SHOW_ADVANCED_SEARCH
+      type: ActionTypes.App.SHOW_ADVANCED_SEARCH
     })
     expect(push).toHaveBeenCalled()
     expect(push).toHaveBeenCalledWith('/')
@@ -224,7 +224,7 @@ describe('SHOW_BUILD_VILLAGE', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.SHOW_BUILD_VILLAGE
+      type: ActionTypes.App.SHOW_BUILD_VILLAGE
     })
     expect(push).toHaveBeenCalled()
     expect(push).toHaveBeenCalledWith('/human/buildVillage')
@@ -241,7 +241,7 @@ describe('SHOW_BUILD_VILLAGE', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.SHOW_BUILD_VILLAGE
+      type: ActionTypes.App.SHOW_BUILD_VILLAGE
     })
     expect(push).toHaveBeenCalled()
     expect(push).toHaveBeenCalledWith('/')
@@ -259,7 +259,7 @@ test('SHOW_CONNECTING_TO_ROBOT_PLAYER', () => {
   const actionHandler = nextHandler(dispatchAPI)
 
   actionHandler({
-    type: ActionTypes.Target.SHOW_CONNECTING_TO_ROBOT_PLAYER
+    type: ActionTypes.App.SHOW_CONNECTING_TO_ROBOT_PLAYER
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/')
@@ -276,7 +276,7 @@ test('SHOW_HISTORY', () => {
   const actionHandler = nextHandler(dispatchAPI)
 
   actionHandler({
-    type: ActionTypes.Target.SHOW_HISTORY
+    type: ActionTypes.App.SHOW_HISTORY
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/history')
@@ -295,7 +295,7 @@ describe('SHOW_ID_SEARCH', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.SHOW_ID_SEARCH
+      type: ActionTypes.App.SHOW_ID_SEARCH
     })
     expect(push).toHaveBeenCalled()
     expect(push).toHaveBeenCalledWith('/human/idSearch')
@@ -312,7 +312,7 @@ describe('SHOW_ID_SEARCH', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.Target.SHOW_ID_SEARCH
+      type: ActionTypes.App.SHOW_ID_SEARCH
     })
     expect(push).toHaveBeenCalled()
     expect(push).toHaveBeenCalledWith('/')
@@ -330,7 +330,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
   const actionHandler = nextHandler(dispatchAPI)
 
   actionHandler({
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+    type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/audience/lobby')
@@ -347,7 +347,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   const actionHandler = nextHandler(dispatchAPI)
 
   actionHandler({
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+    type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/human/lobby')
@@ -364,7 +364,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   const actionHandler = nextHandler(dispatchAPI)
 
   actionHandler({
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+    type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/robot/lobby')
@@ -381,7 +381,7 @@ test('SHOW_MAIN', () => {
   const actionHandler = nextHandler(dispatchAPI)
 
   actionHandler({
-    type: ActionTypes.Target.SHOW_MAIN
+    type: ActionTypes.App.SHOW_MAIN
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/')
@@ -398,7 +398,7 @@ test('SHOW_SETTINGS', () => {
   const actionHandler = nextHandler(dispatchAPI)
 
   actionHandler({
-    type: ActionTypes.Target.SHOW_SETTINGS
+    type: ActionTypes.App.SHOW_SETTINGS
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/settings')

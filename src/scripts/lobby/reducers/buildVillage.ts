@@ -91,15 +91,15 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.Target.BUILD_VILLAGE]
+                types: [ActionTypes.App.BUILD_VILLAGE]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             validity: initialState.validity,
@@ -114,15 +114,15 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.Target.BUILD_VILLAGE]
+                types: [ActionTypes.App.BUILD_VILLAGE]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             validity: initialState.validity,
@@ -218,7 +218,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: action.villageName
         }
       }
-    case ActionTypes.Target.LEAVE_WAITING_PAGE:
+    case ActionTypes.App.LEAVE_WAITING_PAGE:
       return {
         ... state,
         validity: initialState.validity,
@@ -228,21 +228,21 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: getAnonymousVillageName()
         }
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.Target.BUILD_VILLAGE]
+            types: [ActionTypes.App.BUILD_VILLAGE]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         validity: initialState.validity,
@@ -251,7 +251,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           isHuman: true
         }
       }
-    case ActionTypes.Target.SHOW_MAIN:
+    case ActionTypes.App.SHOW_MAIN:
       return {
         ... state,
         validity: initialState.validity,
@@ -261,21 +261,21 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: getAnonymousVillageName()
         }
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.Target.BUILD_VILLAGE]
+            types: [ActionTypes.App.BUILD_VILLAGE]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         validity: initialState.validity,

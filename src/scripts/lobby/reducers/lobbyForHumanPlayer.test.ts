@@ -12,7 +12,7 @@ test('REFRESH', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.REFRESH
+        type: ActionTypes.App.REFRESH
       }
     )
   ).toStrictEqual(
@@ -22,24 +22,24 @@ test('REFRESH', () => {
       menuItems: [
         {
           id: 'Menu.showBuildVillage',
-          types: [ActionTypes.Target.SHOW_BUILD_VILLAGE]
+          types: [ActionTypes.App.SHOW_BUILD_VILLAGE]
         },
         {
           id: 'Menu.showIdSearch',
-          types: [ActionTypes.Target.SHOW_ID_SEARCH]
+          types: [ActionTypes.App.SHOW_ID_SEARCH]
         },
         {
           id: 'Menu.showAdvancedSearch',
-          types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
+          types: [ActionTypes.App.SHOW_ADVANCED_SEARCH]
         },
         {
           id: 'Menu.refresh',
           isLoading: true,
-          types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.App.REFRESH, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       name: '',
@@ -81,24 +81,24 @@ describe('socket/MESSAGE', () => {
         menuItems: [
           {
             id: 'Menu.showBuildVillage',
-            types: [ActionTypes.Target.SHOW_BUILD_VILLAGE]
+            types: [ActionTypes.App.SHOW_BUILD_VILLAGE]
           },
           {
             id: 'Menu.showIdSearch',
-            types: [ActionTypes.Target.SHOW_ID_SEARCH]
+            types: [ActionTypes.App.SHOW_ID_SEARCH]
           },
           {
             id: 'Menu.showAdvancedSearch',
-            types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
+            types: [ActionTypes.App.SHOW_ADVANCED_SEARCH]
           },
           {
             id: 'Menu.refresh',
             isLoading: false,
-            types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.REFRESH, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         name: '',

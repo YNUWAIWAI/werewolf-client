@@ -41,10 +41,10 @@ describe('<MenuContainer />', () => {
       </Provider>
     )
 
-    wrapper.find(Menu).props().transition(ActionTypes.Target.ADVANCED_SEARCH)
+    wrapper.find(Menu).props().transition(ActionTypes.App.ADVANCED_SEARCH)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.Target.ADVANCED_SEARCH
+      type: ActionTypes.App.ADVANCED_SEARCH
     })
   })
 })

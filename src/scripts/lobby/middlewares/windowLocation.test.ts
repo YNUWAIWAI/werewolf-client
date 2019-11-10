@@ -49,7 +49,7 @@ test('BUILD_VILLAGE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.Target.BUILD_VILLAGE
+    type: ActionTypes.App.BUILD_VILLAGE
   }
 
   actionHandler(action)
@@ -64,7 +64,7 @@ test('SHOW_SETTINGS', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.Target.SHOW_SETTINGS
+    type: ActionTypes.App.SHOW_SETTINGS
   }
 
   actionHandler(action)
@@ -80,7 +80,7 @@ test('SHOW_CREDITS', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.Target.SHOW_CREDITS
+    type: ActionTypes.App.SHOW_CREDITS
   }
 
   actionHandler(action)
@@ -97,7 +97,7 @@ test('SHOW_HOW_TO_PLAY', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.Target.SHOW_HOW_TO_PLAY
+    type: ActionTypes.App.SHOW_HOW_TO_PLAY
   }
 
   actionHandler(action)
@@ -113,7 +113,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+    type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
   }
 
   actionHandler(action)
@@ -128,7 +128,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+    type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
   }
 
   actionHandler(action)
@@ -143,7 +143,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+    type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
   }
 
   actionHandler(action)

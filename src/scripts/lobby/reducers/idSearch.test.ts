@@ -26,15 +26,15 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         name: '',
@@ -62,15 +62,15 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         name: '',
@@ -98,15 +98,15 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         name: '',
@@ -134,15 +134,15 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         name: '',
@@ -160,20 +160,20 @@ test('ID_SEARCH', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ]
       },
       {
-        type: ActionTypes.Target.ID_SEARCH
+        type: ActionTypes.App.ID_SEARCH
       }
     )
   ).toStrictEqual(
@@ -183,15 +183,15 @@ test('ID_SEARCH', () => {
         {
           id: 'Menu.search',
           isLoading: true,
-          types: [ActionTypes.Target.ID_SEARCH]
+          types: [ActionTypes.App.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ]
     }
@@ -202,7 +202,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE
+        type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
       }
     )
   ).toStrictEqual(
@@ -215,15 +215,15 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.Target.ID_SEARCH]
+          types: [ActionTypes.App.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       name: '',
@@ -237,7 +237,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
       }
     )
   ).toStrictEqual(
@@ -250,15 +250,15 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.Target.ID_SEARCH]
+          types: [ActionTypes.App.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       name: '',
@@ -272,7 +272,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER
+        type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
       }
     )
   ).toStrictEqual(
@@ -285,15 +285,15 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.Target.ID_SEARCH]
+          types: [ActionTypes.App.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       name: '',
@@ -328,15 +328,15 @@ test('idSearch/CHANGE_VALIDITY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ]
       },
@@ -353,15 +353,15 @@ test('idSearch/CHANGE_VALIDITY', () => {
         {
           disabled: false,
           id: 'Menu.search',
-          types: [ActionTypes.Target.ID_SEARCH]
+          types: [ActionTypes.App.ID_SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
-          types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
         },
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ]
     }
@@ -395,15 +395,15 @@ describe('socket/MESSAGE', () => {
               disabled: false,
               id: 'Menu.search',
               isLoading: true,
-              types: [ActionTypes.Target.ID_SEARCH]
+              types: [ActionTypes.App.ID_SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ]
         },
@@ -420,15 +420,15 @@ describe('socket/MESSAGE', () => {
             disabled: false,
             id: 'Menu.search',
             isLoading: false,
-            types: [ActionTypes.Target.ID_SEARCH]
+            types: [ActionTypes.App.ID_SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
-            types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
           },
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         searched: true,

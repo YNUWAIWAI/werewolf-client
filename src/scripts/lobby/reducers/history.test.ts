@@ -10,7 +10,7 @@ test('socket/MESSAGE', () => {
         menuItems: [
           {
             id: 'Menu.returnToMainPage',
-            types: [ActionTypes.Target.SHOW_MAIN]
+            types: [ActionTypes.App.SHOW_MAIN]
           }
         ],
         villageItems: []
@@ -26,7 +26,7 @@ test('socket/MESSAGE', () => {
       menuItems: [
         {
           id: 'Menu.returnToMainPage',
-          types: [ActionTypes.Target.SHOW_MAIN]
+          types: [ActionTypes.App.SHOW_MAIN]
         }
       ],
       villageItems: [

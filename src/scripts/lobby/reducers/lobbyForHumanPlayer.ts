@@ -17,29 +17,29 @@ type Action =
   | SocketMessage
   | Transition
 
-export const initialState = {
+export const initialState: State = {
   image: '',
   isPlayer: true,
   menuItems: [
     {
       id: 'Menu.showBuildVillage',
-      types: [ActionTypes.Target.SHOW_BUILD_VILLAGE]
+      types: [ActionTypes.App.SHOW_BUILD_VILLAGE]
     },
     {
       id: 'Menu.showIdSearch',
-      types: [ActionTypes.Target.SHOW_ID_SEARCH]
+      types: [ActionTypes.App.SHOW_ID_SEARCH]
     },
     {
       id: 'Menu.showAdvancedSearch',
-      types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
+      types: [ActionTypes.App.SHOW_ADVANCED_SEARCH]
     },
     {
       id: 'Menu.refresh',
-      types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+      types: [ActionTypes.App.REFRESH, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
     },
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.Target.SHOW_MAIN]
+      types: [ActionTypes.App.SHOW_MAIN]
     }
   ],
   name: '',
@@ -48,11 +48,11 @@ export const initialState = {
 
 const lobbyForHumanPlayer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Target.REFRESH:
+    case ActionTypes.App.REFRESH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.Target.REFRESH) && item.types.includes(ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER)) {
+          if (item.types.includes(ActionTypes.App.REFRESH) && item.types.includes(ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER)) {
             return {
               ... item,
               isLoading: true
@@ -80,7 +80,7 @@ const lobbyForHumanPlayer = (state: State = initialState, action: Action): State
             return {
               ... state,
               menuItems: state.menuItems.map(item => {
-                if (item.types.includes(ActionTypes.Target.REFRESH) && item.types.includes(ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER)) {
+                if (item.types.includes(ActionTypes.App.REFRESH) && item.types.includes(ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER)) {
                   return {
                     ... item,
                     isLoading: false

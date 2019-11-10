@@ -10,7 +10,7 @@ export const initialState: State = {
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.Target.SHOW_MAIN]
+      types: [ActionTypes.App.SHOW_MAIN]
     }
   ]
 }

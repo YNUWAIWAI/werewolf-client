@@ -17,25 +17,25 @@ type Action =
   | SocketMessage
   | Transition
 
-export const initialState = {
+export const initialState: State = {
   image: '',
   isPlayer: false,
   menuItems: [
     {
       id: 'Menu.showIdSearch',
-      types: [ActionTypes.Target.SHOW_ID_SEARCH]
+      types: [ActionTypes.App.SHOW_ID_SEARCH]
     },
     {
       id: 'Menu.showAdvancedSearch',
-      types: [ActionTypes.Target.SHOW_ADVANCED_SEARCH]
+      types: [ActionTypes.App.SHOW_ADVANCED_SEARCH]
     },
     {
       id: 'Menu.refresh',
-      types: [ActionTypes.Target.REFRESH, ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
+      types: [ActionTypes.App.REFRESH, ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
     },
     {
       id: 'Menu.returnToMainPage',
-      types: [ActionTypes.Target.SHOW_MAIN]
+      types: [ActionTypes.App.SHOW_MAIN]
     }
   ],
   name: '',
@@ -44,11 +44,11 @@ export const initialState = {
 
 const lobbyForAudience = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Target.REFRESH:
+    case ActionTypes.App.REFRESH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.Target.REFRESH) && item.types.includes(ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE)) {
+          if (item.types.includes(ActionTypes.App.REFRESH) && item.types.includes(ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE)) {
             return {
               ... item,
               isLoading: true
@@ -76,7 +76,7 @@ const lobbyForAudience = (state: State = initialState, action: Action): State =>
             return {
               ... state,
               menuItems: state.menuItems.map(item => {
-                if (item.types.includes(ActionTypes.Target.REFRESH) && item.types.includes(ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE)) {
+                if (item.types.includes(ActionTypes.App.REFRESH) && item.types.includes(ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE)) {
                   return {
                     ... item,
                     isLoading: false

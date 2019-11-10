@@ -28,15 +28,15 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
+                types: [ActionTypes.App.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             name: '',
@@ -89,15 +89,15 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
+                types: [ActionTypes.App.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             name: '',
@@ -151,15 +151,15 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.Target.ADVANCED_SEARCH]
+              types: [ActionTypes.App.ADVANCED_SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ],
           name: '',
@@ -221,15 +221,15 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.Target.ADVANCED_SEARCH]
+              types: [ActionTypes.App.ADVANCED_SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ],
           name: '',
@@ -294,15 +294,15 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
+                types: [ActionTypes.App.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             name: '',
@@ -364,15 +364,15 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
+                types: [ActionTypes.App.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             name: '',
@@ -436,15 +436,15 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
+                types: [ActionTypes.App.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             name: '',
@@ -506,15 +506,15 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
+                types: [ActionTypes.App.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             name: '',
@@ -576,15 +576,15 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.Target.ADVANCED_SEARCH]
+                types: [ActionTypes.App.ADVANCED_SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
-                types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
               },
               {
                 id: 'Menu.returnToMainPage',
-                types: [ActionTypes.Target.SHOW_MAIN]
+                types: [ActionTypes.App.SHOW_MAIN]
               }
             ],
             name: '',
@@ -647,15 +647,15 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.Target.ADVANCED_SEARCH]
+              types: [ActionTypes.App.ADVANCED_SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ],
           name: '',
@@ -719,15 +719,15 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.Target.ADVANCED_SEARCH]
+              types: [ActionTypes.App.ADVANCED_SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
             },
             {
               id: 'Menu.returnToMainPage',
-              types: [ActionTypes.Target.SHOW_MAIN]
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ],
           name: '',

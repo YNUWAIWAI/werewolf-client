@@ -94,58 +94,14 @@ export const initialState: State = {
   },
   villageItems: []
 }
-const menuItems = {
-  audience: [
-    {
-      id: 'Menu.search',
-      types: [ActionTypes.Target.ADVANCED_SEARCH]
-    },
-    {
-      id: 'Menu.returnToLobbyForAudience',
-      types: [ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE]
-    },
-    {
-      id: 'Menu.returnToMainPage',
-      types: [ActionTypes.Target.SHOW_MAIN]
-    }
-  ],
-  human: [
-    {
-      id: 'Menu.search',
-      types: [ActionTypes.Target.ADVANCED_SEARCH]
-    },
-    {
-      id: 'Menu.returnToLobbyForHumanPlayer',
-      types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-    },
-    {
-      id: 'Menu.returnToMainPage',
-      types: [ActionTypes.Target.SHOW_MAIN]
-    }
-  ],
-  robot: [
-    {
-      id: 'Menu.search',
-      types: [ActionTypes.Target.ADVANCED_SEARCH]
-    },
-    {
-      id: 'Menu.returnToLobbyForRobotPlayer',
-      types: [ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER]
-    },
-    {
-      id: 'Menu.returnToMainPage',
-      types: [ActionTypes.Target.SHOW_MAIN]
-    }
-  ]
-}
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Target.ADVANCED_SEARCH:
+    case ActionTypes.App.ADVANCED_SEARCH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.Target.ADVANCED_SEARCH)) {
+          if (item.types.includes(ActionTypes.App.ADVANCED_SEARCH)) {
             return {
               ... item,
               isLoading: true
@@ -228,7 +184,20 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             ... state,
             header: 'Header.advancedSearch(audience)',
             isPlayer: false,
-            menuItems: menuItems.audience,
+            menuItems: [
+              {
+                id: 'Menu.search',
+                types: [ActionTypes.App.ADVANCED_SEARCH]
+              },
+              {
+                id: 'Menu.returnToLobbyForAudience',
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.App.SHOW_MAIN]
+              }
+            ],
             villageItems: []
           }
         case lobby.LobbyType.human:
@@ -236,7 +205,20 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             ... state,
             header: 'Header.advancedSearch(human player)',
             isPlayer: true,
-            menuItems: menuItems.human,
+            menuItems: [
+              {
+                id: 'Menu.search',
+                types: [ActionTypes.App.ADVANCED_SEARCH]
+              },
+              {
+                id: 'Menu.returnToLobbyForHumanPlayer',
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.App.SHOW_MAIN]
+              }
+            ],
             villageItems: []
           }
         case lobby.LobbyType.robot:
@@ -244,13 +226,26 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             ... state,
             header: 'Header.advancedSearch(robot player)',
             isPlayer: true,
-            menuItems: menuItems.robot,
+            menuItems: [
+              {
+                id: 'Menu.search',
+                types: [ActionTypes.App.ADVANCED_SEARCH]
+              },
+              {
+                id: 'Menu.returnToLobbyForRobotPlayer',
+                types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+              },
+              {
+                id: 'Menu.returnToMainPage',
+                types: [ActionTypes.App.SHOW_MAIN]
+              }
+            ],
             villageItems: []
           }
         default:
           return state
       }
-    case ActionTypes.Target.SHOW_ADVANCED_SEARCH:
+    case ActionTypes.App.SHOW_ADVANCED_SEARCH:
       return {
         ... state,
         checked: initialState.checked,
@@ -258,28 +253,67 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         validity: initialState.validity,
         value: initialState.value
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_AUDIENCE:
+    case ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE:
       return {
         ... state,
         header: 'Header.advancedSearch(audience)',
         isPlayer: false,
-        menuItems: menuItems.audience,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.App.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForAudience',
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.App.SHOW_MAIN]
+          }
+        ],
         villageItems: []
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER:
       return {
         ... state,
         header: 'Header.advancedSearch(human player)',
         isPlayer: true,
-        menuItems: menuItems.human,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.App.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForHumanPlayer',
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.App.SHOW_MAIN]
+          }
+        ],
         villageItems: []
       }
-    case ActionTypes.Target.SHOW_LOBBY_FOR_ROBOT_PLAYER:
+    case ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER:
       return {
         ... state,
         header: 'Header.advancedSearch(robot player)',
         isPlayer: true,
-        menuItems: menuItems.robot,
+        menuItems: [
+          {
+            id: 'Menu.search',
+            types: [ActionTypes.App.ADVANCED_SEARCH]
+          },
+          {
+            id: 'Menu.returnToLobbyForRobotPlayer',
+            types: [ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER]
+          },
+          {
+            id: 'Menu.returnToMainPage',
+            types: [ActionTypes.App.SHOW_MAIN]
+          }
+        ],
         villageItems: []
       }
     case ActionTypes.Socket.MESSAGE:
@@ -299,7 +333,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
           return {
             ... state,
             menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.Target.ADVANCED_SEARCH)) {
+              if (item.types.includes(ActionTypes.App.ADVANCED_SEARCH)) {
                 return {
                   ... item,
                   isLoading: false
