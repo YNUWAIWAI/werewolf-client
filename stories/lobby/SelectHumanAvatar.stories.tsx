@@ -32,11 +32,11 @@ storiesOf('lobby|SelectHumanAvatar', module)
           command: [
             {
               id: 'AvatarSelectCommand.select',
-              types: []
+              types: [ActionTypes.SelectHumanAvatar.SELECT]
             },
             {
               id: 'AvatarSelectCommand.delete',
-              types: []
+              types: [ActionTypes.SelectHumanAvatar.DELETE]
             }
           ],
           menuItems: [

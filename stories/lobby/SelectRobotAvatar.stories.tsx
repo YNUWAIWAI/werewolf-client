@@ -70,19 +70,19 @@ storiesOf('lobby|SelectRobotAvatar', module)
           command: [
             {
               id: 'AvatarSelectCommand.runInTheForeground',
-              types: []
+              types: [ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND]
             },
             {
               id: 'AvatarSelectCommand.runInTheBackground',
-              types: []
+              types: [ActionTypes.SelectRobotAvatar.RUN_IN_THE_BACKGROUND]
             },
             {
               id: 'AvatarSelectCommand.stop',
-              types: []
+              types: [ActionTypes.SelectRobotAvatar.STOP]
             },
             {
               id: 'AvatarSelectCommand.delete',
-              types: []
+              types: [ActionTypes.SelectRobotAvatar.DELETE]
             }
           ],
           menuItems: [
