@@ -186,6 +186,12 @@ export type Target =
   | ActionTypes.App.SHOW_MAIN
   | ActionTypes.App.SHOW_SETTINGS
   | ActionTypes.App.SHOW_VILLAGE
+  | ActionTypes.SelectHumanAvatar.DELETE
+  | ActionTypes.SelectHumanAvatar.SELECT
+  | ActionTypes.SelectRobotAvatar.DELETE
+  | ActionTypes.SelectRobotAvatar.RUN_IN_THE_BACKGROUND
+  | ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND
+  | ActionTypes.SelectRobotAvatar.STOP
 export const transition = (target: Target): {type: Target} => ({
   type: target
 })
