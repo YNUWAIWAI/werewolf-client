@@ -3,6 +3,7 @@ import * as React from 'react'
 import WaitingForPlayers, {Props} from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
 import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
+import {MenuItemProps} from '../../src/scripts/lobby/components/organisms/Menu'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
@@ -185,19 +186,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -259,19 +260,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -333,19 +334,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -407,19 +408,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -481,19 +482,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -555,19 +556,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -629,19 +630,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -703,19 +704,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -777,19 +778,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -851,19 +852,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -925,19 +926,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -999,19 +1000,19 @@ storiesOf('lobby|WaitingForPlayers', module)
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.Target.PLAY_GAME]
+        types: [ActionTypes.App.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.LEAVE_WAITING_PAGE, ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {

@@ -3,6 +3,7 @@ import * as React from 'react'
 import AdvancedSearch, {Props} from '../../src/scripts/lobby/components/templates/AdvancedSearch'
 import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
+import {MenuItemProps} from '../../src/scripts/lobby/components/organisms/Menu'
 import {Provider} from 'react-redux'
 import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
@@ -30,18 +31,18 @@ storiesOf('lobby|AdvancedSearch', module)
       minimum: false,
       villageName: false
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.Target.ADVANCED_SEARCH]
+        types: [ActionTypes.App.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
@@ -98,18 +99,18 @@ storiesOf('lobby|AdvancedSearch', module)
       minimum: false,
       villageName: false
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.Target.ADVANCED_SEARCH]
+        types: [ActionTypes.App.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
@@ -166,18 +167,18 @@ storiesOf('lobby|AdvancedSearch', module)
       minimum: false,
       villageName: false
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.Target.ADVANCED_SEARCH]
+        types: [ActionTypes.App.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
@@ -270,18 +271,18 @@ storiesOf('lobby|AdvancedSearch', module)
       minimum: false,
       villageName: false
     }
-    const menuItems = [
+    const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.Target.ADVANCED_SEARCH]
+        types: [ActionTypes.App.ADVANCED_SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.Target.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.Target.SHOW_MAIN]
+        types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
     const handleAvatarChange = action('handleAvatarChange')
