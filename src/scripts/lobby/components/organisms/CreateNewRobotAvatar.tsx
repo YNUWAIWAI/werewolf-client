@@ -24,21 +24,39 @@ export default function CreateNewRobotAvatar(props: Props) {
           )
         }
       </FormattedMessage>
-      <TextInput
-        className="lo--create-new-avatar--input"
-        handleChange={() => () => {}}
-        id="newAvatarName"
-        initialValue=""
-        max={15}
-        min={5}
-        placeholder=""
-        required
-      />
-      <Menu
-        className="lo--create-new-avatar--command"
-        itemClassName="lo--create-new-avatar--command--item"
-        items={props.command}
-      />
+      <div
+        className="lo--create-new-avatar--body"
+      >
+        <FormattedMessage
+          id="CreateNewAvatar.label"
+        >
+          {
+            text => (
+              <label
+                className="lo--create-new-avatar--label"
+                htmlFor="newAvatarName"
+              >
+                {text}
+              </label>
+            )
+          }
+        </FormattedMessage>
+        <TextInput
+          className="lo--create-new-avatar--input"
+          handleChange={() => () => {}}
+          id="newAvatarName"
+          initialValue=""
+          max={15}
+          min={5}
+          placeholder=""
+          required
+        />
+        <Menu
+          className="lo--create-new-avatar--command"
+          itemClassName="lo--create-new-avatar--command--item"
+          items={props.command}
+        />
+      </div>
     </>
   )
 }
