@@ -9,6 +9,8 @@
   "AdvancedSearch.placeholder(comment)": "{min}-{max} chars",
   "AdvancedSearch.placeholder(hostName)": "{min}-{max} chars",
   "AdvancedSearch.placeholder(villageName)": "{min}-{max} chars",
+  "AutomationSelect.full": "Fully-automated",
+  "AutomationSelect.semi": "Semi-automated",
   "AvatarItem.host": "Host",
   "AvatarItem.kickout": "{name}を退出させます",
   "AvatarItem.name.anonymous": "Anonymous",

@@ -1,8 +1,10 @@
 import * as React from 'react'
+import AutomationSelect from '../atoms/AutomationSelect'
 import {FormattedMessage} from 'react-intl'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import TextInput from '../atoms/TextInput'
+import {lobby} from '../../types'
 
 interface Props {
   command: MenuItem[]
@@ -50,6 +52,11 @@ export default function CreateNewRobotAvatar(props: Props) {
           min={5}
           placeholder=""
           required
+        />
+        <AutomationSelect
+          className="lo--create-new-avatar--select"
+          defaultValue={lobby.Automation.full}
+          handleChange={() => () => {}}
         />
         <Menu
           className="lo--create-new-avatar--command"
