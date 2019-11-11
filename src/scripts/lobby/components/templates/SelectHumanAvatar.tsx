@@ -18,6 +18,9 @@ export interface Avatar {
 }
 export interface StateProps {
   readonly avatar: Avatar
+  readonly createNewAvatar: {
+    readonly command: MenuItem[]
+  }
   readonly command: MenuItem[]
   readonly menuItems: MenuItem[]
 }
@@ -36,7 +39,9 @@ export default function SelectHumanAvatar(props: Props) {
           command={props.command}
           handleAvatarNameChange={props.handleAvatarNameChange}
         />
-        <CreateNewHumanAvatar />
+        <CreateNewHumanAvatar
+          command={props.createNewAvatar.command}
+        />
       </MainContent>
       <AsideContent>
         <Menu

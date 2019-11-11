@@ -186,8 +186,10 @@ export type Target =
   | ActionTypes.App.SHOW_MAIN
   | ActionTypes.App.SHOW_SETTINGS
   | ActionTypes.App.SHOW_VILLAGE
+  | ActionTypes.SelectHumanAvatar.CREATE
   | ActionTypes.SelectHumanAvatar.DELETE
   | ActionTypes.SelectHumanAvatar.SELECT
+  | ActionTypes.SelectRobotAvatar.CREATE
   | ActionTypes.SelectRobotAvatar.DELETE
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_BACKGROUND
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND

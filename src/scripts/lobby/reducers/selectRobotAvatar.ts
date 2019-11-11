@@ -19,6 +19,9 @@ export interface State {
     }
   }
   readonly command: MenuItem[]
+  readonly createNewAvatar: {
+    readonly command: MenuItem[]
+  }
   readonly menuItems: MenuItem[]
 }
 type Action =
@@ -30,6 +33,14 @@ export const initialState: State = {
     byId: {}
   },
   command: [],
+  createNewAvatar: {
+    command: [
+      {
+        id: 'CreateNewAvatar.create',
+        types: [ActionTypes.SelectRobotAvatar.CREATE]
+      }
+    ]
+  },
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
