@@ -85,6 +85,14 @@ storiesOf('lobby|SelectRobotAvatar', module)
               types: [ActionTypes.SelectRobotAvatar.DELETE]
             }
           ],
+          createNewAvatar: {
+            command: [
+              {
+                id: 'CreateNewAvatar.create',
+                types: [ActionTypes.SelectRobotAvatar.CREATE]
+              }
+            ]
+          },
           menuItems: [
             {
               id: 'Menu.returnToMainPage',
