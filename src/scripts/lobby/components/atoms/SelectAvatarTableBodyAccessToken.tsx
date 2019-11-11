@@ -9,11 +9,11 @@ interface Props {
 }
 
 export default function SelectAvatarTableBodyAccessToken(props: Props) {
-  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
-    event.target.select()
-  }
   const copy = () => {
     navigator.clipboard.writeText(props.token)
+  }
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
+    event.target.select()
   }
 
   return (
