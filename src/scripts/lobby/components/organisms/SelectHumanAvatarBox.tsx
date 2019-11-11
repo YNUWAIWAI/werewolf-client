@@ -22,7 +22,9 @@ export default function SelectHumanAvatarBox(props: Props) {
       >
         {
           text => (
-            <div>
+            <div
+              className="lo--select-avatar--header"
+            >
               {text}
             </div>
           )

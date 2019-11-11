@@ -16,7 +16,9 @@ export default function CreateNewRobotAvatar(props: Props) {
       >
         {
           text => (
-            <div>
+            <div
+              className="lo--select-avatar--header"
+            >
               {text}
             </div>
           )

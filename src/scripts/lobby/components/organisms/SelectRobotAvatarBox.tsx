@@ -24,7 +24,9 @@ export default function SelectRobotAvatarBox(props: Props) {
       >
         {
           text => (
-            <div>
+            <div
+              className="lo--select-avatar--header"
+            >
               {text}
             </div>
           )

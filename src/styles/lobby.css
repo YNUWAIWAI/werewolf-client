@@ -281,6 +281,11 @@
         }
       }
     }
+
+    &--header {
+      font-size: 2rem;
+      padding: 0.5rem;
+    }
   }
 
   &--grid {
@@ -577,6 +582,11 @@
           }
         }
       }
+    }
+
+    &--header {
+      font-size: 2rem;
+      padding: 0.5rem;
     }
 
     &--table {
