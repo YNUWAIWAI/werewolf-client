@@ -7,28 +7,12 @@ import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import SelectHumanAvatarBox from '../organisms/SelectHumanAvatarBox'
 
-export interface Avatar {
-  readonly allIds: string[]
-  readonly byId: {
-    readonly [id: string]: {
-      readonly checked: boolean
-      readonly name: string
-    }
-  }
-}
 export interface StateProps {
-  readonly avatar: Avatar
-  readonly createNewAvatar: {
-    readonly command: MenuItem[]
-  }
-  readonly command: MenuItem[]
+  readonly createNewAvatarCommand: MenuItem[]
   readonly menuItems: MenuItem[]
+  readonly selectAvatarCommand: MenuItem[]
 }
-export interface DispatchProps {
-  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
-  readonly handleSelectAvatar: (id: string) => () => void
-}
-export interface Props extends StateProps, DispatchProps {}
+export type Props = StateProps
 
 export default function SelectHumanAvatar(props: Props) {
   return (
@@ -36,13 +20,10 @@ export default function SelectHumanAvatar(props: Props) {
       <Header id="Header.selectHumanAvatar" />
       <MainContent>
         <SelectHumanAvatarBox
-          avatar={props.avatar}
-          command={props.command}
-          handleAvatarNameChange={props.handleAvatarNameChange}
-          handleSelectAvatar={props.handleSelectAvatar}
+          command={props.selectAvatarCommand}
         />
         <CreateNewHumanAvatar
-          command={props.createNewAvatar.command}
+          command={props.createNewAvatarCommand}
         />
       </MainContent>
       <AsideContent>

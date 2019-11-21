@@ -1,17 +1,23 @@
 import * as React from 'react'
-import {
-  Avatar,
-  DispatchProps
-} from '../templates/SelectHumanAvatar'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
 import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTableBodyCheckBox'
-import {lobby} from '../../types'
 
-interface Props {
-  readonly avatar: Avatar
-  readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
-  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
+export interface StateProps {
+  readonly avatar: {
+    readonly allIds: string[]
+    readonly byId: {
+      readonly [id: string]: {
+        readonly checked: boolean
+        readonly name: string
+      }
+    }
+  }
 }
+export interface DispatchProps {
+  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleSelectAvatar: (id: string) => () => void
+}
+export type Props = StateProps & DispatchProps
 
 export default function SelectHumanAvatarTableBody(props: Props) {
   const rows = props.avatar.allIds.map(id => {

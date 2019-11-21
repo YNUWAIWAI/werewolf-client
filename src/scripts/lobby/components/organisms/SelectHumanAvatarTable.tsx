@@ -1,28 +1,12 @@
 import * as React from 'react'
-import {
-  Avatar,
-  DispatchProps
-} from '../templates/SelectHumanAvatar'
-import {FormattedMessage} from 'react-intl'
-import SelectHumanAvatarTableBody from '../molecules/SelectHumanAvatarTableBody'
+import SelectHumanAvatarTableBody from '../../containers/SelectHumanAvatarTableBodyContainer'
 import SelectHumanAvatarTableHeader from '../molecules/SelectHumanAvatarTableHeader'
-import {lobby} from '../../types'
 
-interface Props {
-  readonly avatar: Avatar
-  readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
-  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
-}
-
-export default function SelectHumanAvatarTable(props: Props) {
+export default function SelectHumanAvatarTable() {
   return (
     <div className="lo--select-avatar--table">
       <SelectHumanAvatarTableHeader />
-      <SelectHumanAvatarTableBody
-        avatar={props.avatar}
-        handleAvatarNameChange={props.handleAvatarNameChange}
-        handleSelectAvatar={props.handleSelectAvatar}
-      />
+      <SelectHumanAvatarTableBody />
     </div>
   )
 }
