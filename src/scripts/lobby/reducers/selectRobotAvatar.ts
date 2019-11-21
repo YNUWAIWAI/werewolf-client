@@ -21,11 +21,9 @@ export interface State {
       }
     }
   }
-  readonly command: MenuItem[]
-  readonly createNewAvatar: {
-    readonly command: MenuItem[]
-  }
+  readonly createNewAvatarCommand: MenuItem[]
   readonly menuItems: MenuItem[]
+  readonly selectAvatarCommand: MenuItem[]
 }
 type Action =
   | SelectRobotAvatar$ChangeAvatarCheckbox
@@ -36,21 +34,19 @@ export const initialState: State = {
     allIds: [],
     byId: {}
   },
-  command: [],
-  createNewAvatar: {
-    command: [
-      {
-        id: 'CreateNewAvatar.create',
-        types: [ActionTypes.SelectRobotAvatar.CREATE]
-      }
-    ]
-  },
+  createNewAvatarCommand: [
+    {
+      id: 'CreateNewAvatar.create',
+      types: [ActionTypes.SelectRobotAvatar.CREATE]
+    }
+  ],
   menuItems: [
     {
       id: 'Menu.returnToMainPage',
       types: [ActionTypes.App.SHOW_MAIN]
     }
-  ]
+  ],
+  selectAvatarCommand: []
 }
 const selectRobotAvatar = (state: State = initialState, action: Action): State => {
   switch (action.type) {

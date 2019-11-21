@@ -6,37 +6,13 @@ import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import SelectRobotAvatarBox from '../organisms/SelectRobotAvatarBox'
-import {lobby} from '../../types'
 
-export interface Avatar {
-  readonly allIds: string[]
-  readonly byId: {
-    readonly [id: string]: {
-      readonly accessToken: lobby.Token
-      readonly automation: lobby.Automation
-      readonly authorized: lobby.Authorized
-      readonly checked: boolean
-      readonly name: string
-      readonly status: lobby.AvatarStatus
-      readonly testStatus: lobby.TestStatus
-    }
-  }
-}
 export interface StateProps {
-  readonly avatar: Avatar
-  readonly createNewAvatar: {
-    readonly command: MenuItem[]
-  }
-  readonly command: MenuItem[]
+  readonly createNewAvatarCommand: MenuItem[]
   readonly menuItems: MenuItem[]
+  readonly selectAvatarCommand: MenuItem[]
 }
-export interface DispatchProps {
-  readonly handleAccept: () => void
-  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
-  readonly handleSelectAvatar: (id: string) => () => void
-  readonly renewAccessToken: () => void
-}
-export interface Props extends StateProps, DispatchProps {}
+export type Props = StateProps
 
 export default function SelectRobotAvatar(props: Props) {
   return (
@@ -44,15 +20,10 @@ export default function SelectRobotAvatar(props: Props) {
       <Header id="Header.selectRobotAvatar" />
       <MainContent>
         <SelectRobotAvatarBox
-          avatar={props.avatar}
-          command={props.command}
-          handleAccept={props.handleAccept}
-          handleAvatarNameChange={props.handleAvatarNameChange}
-          handleSelectAvatar={props.handleSelectAvatar}
-          renewAccessToken={props.renewAccessToken}
+          command={props.createNewAvatarCommand}
         />
         <CreateNewRobotAvatar
-          command={props.createNewAvatar.command}
+          command={props.selectAvatarCommand}
         />
       </MainContent>
       <AsideContent>

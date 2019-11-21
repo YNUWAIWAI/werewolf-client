@@ -1,20 +1,11 @@
 import * as React from 'react'
-import {
-  Avatar,
-  DispatchProps
-} from '../templates/SelectRobotAvatar'
 import {FormattedMessage} from 'react-intl'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from './Menu'
 import SelectRobotAvatarTable from '../organisms/SelectRobotAvatarTable'
 
 interface Props {
-  readonly avatar: Avatar
   readonly command: MenuItem[]
-  readonly handleAccept: DispatchProps['handleAccept']
-  readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
-  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
-  readonly renewAccessToken: DispatchProps['renewAccessToken']
 }
 
 export default function SelectRobotAvatarBox(props: Props) {
@@ -33,13 +24,7 @@ export default function SelectRobotAvatarBox(props: Props) {
           )
         }
       </FormattedMessage>
-      <SelectRobotAvatarTable
-        avatar={props.avatar}
-        handleAccept={props.handleAccept}
-        handleAvatarNameChange={props.handleAvatarNameChange}
-        handleSelectAvatar={props.handleSelectAvatar}
-        renewAccessToken={props.renewAccessToken}
-      />
+      <SelectRobotAvatarTable />
       <Menu
         className="lo--select-avatar--command"
         itemClassName="lo--select-avatar--command--item"

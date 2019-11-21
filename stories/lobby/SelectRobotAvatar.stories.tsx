@@ -67,7 +67,19 @@ storiesOf('lobby|SelectRobotAvatar', module)
               }
             }
           },
-          command: [
+          createNewAvatarCommand: [
+            {
+              id: 'CreateNewAvatar.create',
+              types: [ActionTypes.SelectRobotAvatar.CREATE]
+            }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
+            }
+          ],
+          selectAvatarCommand: [
             {
               id: 'AvatarSelectCommand.runInTheForeground',
               types: [ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND]
@@ -83,20 +95,6 @@ storiesOf('lobby|SelectRobotAvatar', module)
             {
               id: 'AvatarSelectCommand.delete',
               types: [ActionTypes.SelectRobotAvatar.DELETE]
-            }
-          ],
-          createNewAvatar: {
-            command: [
-              {
-                id: 'CreateNewAvatar.create',
-                types: [ActionTypes.SelectRobotAvatar.CREATE]
-              }
-            ]
-          },
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
             }
           ]
         }

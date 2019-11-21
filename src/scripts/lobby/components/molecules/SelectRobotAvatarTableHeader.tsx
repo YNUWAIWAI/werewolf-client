@@ -1,10 +1,7 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {lobby} from '../../types'
 
-interface Props {}
-
-export default function SelectRobotAvatarTableHeader(props: Props) {
+export default function SelectRobotAvatarTableHeader() {
   return (
     <div className="lo--select-avatar--table--header">
       <div className="lo--select-avatar--table--header--item check-box" />

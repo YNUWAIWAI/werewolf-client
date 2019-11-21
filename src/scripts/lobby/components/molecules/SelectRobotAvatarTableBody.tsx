@@ -1,8 +1,4 @@
 import * as React from 'react'
-import {
-  Avatar,
-  DispatchProps
-} from '../templates/SelectRobotAvatar'
 import SelectAvatarTableBodyAccessToken from '../atoms/SelectAvatarTableBodyAccessToken'
 import SelectAvatarTableBodyAuthorized from '../atoms/SelectAvatarTableBodyAuthorized'
 import SelectAvatarTableBodyAutomation from '../atoms/SelectAvatarTableBodyAutomation'
@@ -12,13 +8,29 @@ import SelectAvatarTableBodyStatus from '../atoms/SelectAvatarTableBodyStatus'
 import SelectAvatarTableBodyTest from '../atoms/SelectAvatarTableBodyTest'
 import {lobby} from '../../types'
 
-interface Props {
-  readonly avatar: Avatar
-  readonly handleAccept: DispatchProps['handleAccept']
-  readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
-  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
-  readonly renewAccessToken: DispatchProps['renewAccessToken']
+export interface StateProps {
+  readonly avatar: {
+    readonly allIds: string[]
+    readonly byId: {
+      readonly [id: string]: {
+        readonly accessToken: lobby.Token
+        readonly automation: lobby.Automation
+        readonly authorized: lobby.Authorized
+        readonly checked: boolean
+        readonly name: string
+        readonly status: lobby.AvatarStatus
+        readonly testStatus: lobby.TestStatus
+      }
+    }
+  }
 }
+export interface DispatchProps {
+  readonly handleAccept: () => void
+  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleSelectAvatar: (id: string) => () => void
+  readonly renewAccessToken: () => void
+}
+export type Props = StateProps & DispatchProps
 
 export default function SelectRobotAvatarTableBody(props: Props) {
   const rows = props.avatar.allIds.map(id => {
