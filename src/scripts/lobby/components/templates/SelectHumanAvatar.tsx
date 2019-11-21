@@ -26,6 +26,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleSelectAvatar: (id: string) => () => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
@@ -38,6 +39,7 @@ export default function SelectHumanAvatar(props: Props) {
           avatar={props.avatar}
           command={props.command}
           handleAvatarNameChange={props.handleAvatarNameChange}
+          handleSelectAvatar={props.handleSelectAvatar}
         />
         <CreateNewHumanAvatar
           command={props.createNewAvatar.command}

@@ -16,6 +16,7 @@ interface Props {
   readonly avatar: Avatar
   readonly handleAccept: DispatchProps['handleAccept']
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
   readonly renewAccessToken: DispatchProps['renewAccessToken']
 }
 
@@ -30,6 +31,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
       >
         <SelectAvatarTableBodyCheckBox
           checked={avatar.checked}
+          handleClick={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyAvatarName
           handleChange={props.handleAvatarNameChange}

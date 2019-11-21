@@ -33,6 +33,7 @@ export interface StateProps {
 export interface DispatchProps {
   readonly handleAccept: () => void
   readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleSelectAvatar: (id: string) => () => void
   readonly renewAccessToken: () => void
 }
 export interface Props extends StateProps, DispatchProps {}
@@ -47,6 +48,7 @@ export default function SelectRobotAvatar(props: Props) {
           command={props.command}
           handleAccept={props.handleAccept}
           handleAvatarNameChange={props.handleAvatarNameChange}
+          handleSelectAvatar={props.handleSelectAvatar}
           renewAccessToken={props.renewAccessToken}
         />
         <CreateNewRobotAvatar

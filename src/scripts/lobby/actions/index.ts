@@ -197,6 +197,21 @@ export type Target =
 export const transition = (target: Target): {type: Target} => ({
   type: target
 })
+type ChangeAvatarCheckboxScope = ActionTypes.Scope.SelectHumanAvatar | ActionTypes.Scope.SelectRobotAvatar
+type ChangeAvatarCheckboxType = ActionTypes.SelectHumanAvatar.CHANGE_CHECKBOX | ActionTypes.SelectRobotAvatar.CHANGE_CHECKBOX
+export const changeAvatarCheckbox = (scope: ChangeAvatarCheckboxScope) => (id: string): {id: string, type: ChangeAvatarCheckboxType} => {
+  if (scope === ActionTypes.Scope.SelectHumanAvatar) {
+    return {
+      id,
+      type: ActionTypes[scope].CHANGE_CHECKBOX
+    }
+  }
+
+  return {
+    id,
+    type: ActionTypes[scope].CHANGE_CHECKBOX
+  }
+}
 
 export type AdvancedSearch$ChangeAvatar = ReturnType<ReturnType<typeof changeAvatar>>
 export type AdvancedSearch$ChangeCheckbox = ReturnType<ReturnType<ReturnType<typeof changeCheckbox>>>
@@ -233,4 +248,6 @@ export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
 export type SubmitLogout = ReturnType<typeof submitLogout>
+export type SelectHumanAvatar$ChangeAvatarCheckbox = ReturnType<ReturnType<typeof changeAvatarCheckbox>>
+export type SelectRobotAvatar$ChangeAvatarCheckbox = ReturnType<ReturnType<typeof changeAvatarCheckbox>>
 export type Transition = ReturnType<typeof transition>

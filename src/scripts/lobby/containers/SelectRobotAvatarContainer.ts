@@ -1,13 +1,18 @@
+import * as ActionTypes from '../constants/ActionTypes'
 import SelectRobotAvatar, {
   DispatchProps,
   StateProps
 } from '../components/templates/SelectRobotAvatar'
+import {
+  SelectRobotAvatar$ChangeAvatarCheckbox,
+  changeAvatarCheckbox
+} from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | {type: string}
+  | SelectRobotAvatar$ChangeAvatarCheckbox
 
 const mapStateToProps = (state: ReducerState): StateProps => state.selectRobotAvatar
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
@@ -16,6 +21,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   },
   handleAvatarNameChange: valid => value => {
     console.log(valid, value)
+  },
+  handleSelectAvatar: id => () => {
+    dispatch(changeAvatarCheckbox(ActionTypes.Scope.SelectRobotAvatar)(id))
   },
   renewAccessToken: () => {
     console.log('renewAccessToken')

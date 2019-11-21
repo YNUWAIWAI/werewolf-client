@@ -12,6 +12,7 @@ interface Props {
   readonly avatar: Avatar
   readonly command: MenuItem[]
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
 }
 
 export default function SelectHumanAvatarBox(props: Props) {
@@ -33,6 +34,7 @@ export default function SelectHumanAvatarBox(props: Props) {
       <SelectHumanAvatarTable
         avatar={props.avatar}
         handleAvatarNameChange={props.handleAvatarNameChange}
+        handleSelectAvatar={props.handleSelectAvatar}
       />
       <Menu
         className="lo--select-avatar--command human"

@@ -1,5 +1,6 @@
 export const enum SelectRobotAvatar {
   ACCEPT_AUTHORIZATIION = 'selectRobotAvatar/ACCEPT_AUTHORIZATIION',
+  CHANGE_CHECKBOX = 'selectRobotAvatar/CHANGE_CHECKBOX',
   CREATE = 'selectRobotAvatar/CREATE',
   DELETE = 'selectRobotAvatar/DELETE',
   RUN_IN_THE_BACKGROUND = 'selectRobotAvatar/RUN_IN_THE_BACKGROUND',

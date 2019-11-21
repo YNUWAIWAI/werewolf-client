@@ -10,6 +10,7 @@ import {lobby} from '../../types'
 interface Props {
   readonly avatar: Avatar
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
 }
 
 export default function SelectHumanAvatarTableBody(props: Props) {
@@ -23,6 +24,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
       >
         <SelectAvatarTableBodyCheckBox
           checked={avatar.checked}
+          handleClick={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyAvatarName
           handleChange={props.handleAvatarNameChange}

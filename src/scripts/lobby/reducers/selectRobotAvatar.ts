@@ -1,6 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import {
+  SelectRobotAvatar$ChangeAvatarCheckbox,
+  SocketMessage
+} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {SocketMessage} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
@@ -25,6 +28,7 @@ export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
+  | SelectRobotAvatar$ChangeAvatarCheckbox
   | SocketMessage
 
 export const initialState: State = {
@@ -50,6 +54,20 @@ export const initialState: State = {
 }
 const selectRobotAvatar = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.SelectRobotAvatar.CHANGE_CHECKBOX:
+      return {
+        ... state,
+        avatar: {
+          ... state.avatar,
+          byId: {
+            ... state.avatar.byId,
+            [action.id]: {
+              ... state.avatar.byId[action.id],
+              checked: !state.avatar.byId[action.id].checked
+            }
+          }
+        }
+      }
     default:
       return state
   }

@@ -11,6 +11,7 @@ import {lobby} from '../../types'
 interface Props {
   readonly avatar: Avatar
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
 }
 
 export default function SelectHumanAvatarTable(props: Props) {
@@ -20,6 +21,7 @@ export default function SelectHumanAvatarTable(props: Props) {
       <SelectHumanAvatarTableBody
         avatar={props.avatar}
         handleAvatarNameChange={props.handleAvatarNameChange}
+        handleSelectAvatar={props.handleSelectAvatar}
       />
     </div>
   )

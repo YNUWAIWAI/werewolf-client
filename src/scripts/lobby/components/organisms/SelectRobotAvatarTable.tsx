@@ -3,7 +3,6 @@ import {
   Avatar,
   DispatchProps
 } from '../templates/SelectRobotAvatar'
-import {FormattedMessage} from 'react-intl'
 import SelectRobotAvatarTableBody from '../molecules/SelectRobotAvatarTableBody'
 import SelectRobotAvatarTableHeader from '../molecules/SelectRobotAvatarTableHeader'
 import {lobby} from '../../types'
@@ -12,6 +11,7 @@ interface Props {
   readonly avatar: Avatar
   readonly handleAccept: DispatchProps['handleAccept']
   readonly handleAvatarNameChange: DispatchProps['handleAvatarNameChange']
+  readonly handleSelectAvatar: DispatchProps['handleSelectAvatar']
   readonly renewAccessToken: DispatchProps['renewAccessToken']
 }
 
@@ -23,6 +23,7 @@ export default function SelectRobotAvatarTable(props: Props) {
         avatar={props.avatar}
         handleAccept={props.handleAccept}
         handleAvatarNameChange={props.handleAvatarNameChange}
+        handleSelectAvatar={props.handleSelectAvatar}
         renewAccessToken={props.renewAccessToken}
       />
     </div>
