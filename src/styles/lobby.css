@@ -598,6 +598,7 @@
 
       &--body {
         border: 1px solid black;
+        cursor: default;
 
         &--item {
           align-items: center;
@@ -669,6 +670,7 @@
 
       &--header {
         border: 1px solid black;
+        cursor: default;
         display: grid;
         grid-template-columns: 24px repeat(5, 1fr) 2fr;
 
