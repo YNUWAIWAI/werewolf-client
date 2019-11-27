@@ -205,7 +205,7 @@ export const firstMorning4: village.Payload$SystemMessage = {
       'maxNumberOfChatMessages': 10
     },
     'id': 3,
-    'lang': village.Language.ja,
+    'language': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
     'totalNumberOfPlayers': 4
   },

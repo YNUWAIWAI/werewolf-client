@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom'
 import App from './components/templates/App'
 import {Language} from './i18n'
 
-const lang = (() => {
+const language = (() => {
   if ((/^eng?/).test(navigator.language)) {
     return Language.en
   } else if ((/^fr[ae]?/).test(navigator.language)) {
@@ -47,7 +47,7 @@ if (!root) {
 ReactDOM.render(
   <App
     csrfToken={elem.dataset.csrfToken}
-    lang={lang}
+    language={language}
     loginAction={elem.dataset.loginAction}
     loginError={elem.dataset.loginError === 'true'}
     signupAction={elem.dataset.signupAction}

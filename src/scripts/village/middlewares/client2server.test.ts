@@ -47,7 +47,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfPlayers': 15
       }
@@ -334,7 +334,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfPlayers': 15
     }
@@ -416,7 +416,7 @@ describe('POST_CHAT', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfPlayers': 15
       }
@@ -501,7 +501,7 @@ describe('POST_CHAT', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfPlayers': 15
     }
@@ -623,7 +623,7 @@ describe('SELECT_YES', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfPlayers': 15
       }
@@ -804,7 +804,7 @@ describe('SELECT_YES', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfPlayers': 15
     }
@@ -884,7 +884,7 @@ describe('STAR', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
         'totalNumberOfPlayers': 15
       }
@@ -983,7 +983,7 @@ describe('STAR', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
       'totalNumberOfPlayers': 15
     }

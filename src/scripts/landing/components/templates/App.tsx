@@ -11,7 +11,7 @@ import Signup from '../organism/Signup'
 
 interface Props {
   csrfToken: string
-  lang: Language
+  language: Language
   loginAction: string
   loginError: boolean
   signupAction: string
@@ -19,12 +19,12 @@ interface Props {
 }
 
 export default function App(props: Props) {
-  const messages = getMessages(props.lang)
+  const messages = getMessages(props.language)
   const [isSignup, setIsSignup] = React.useState(false)
 
   return (
     <IntlProvider
-      locale={props.lang}
+      locale={props.language}
       messages={messages}
     >
       <div className="la--landing">

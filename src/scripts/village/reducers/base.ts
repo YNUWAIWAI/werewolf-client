@@ -20,7 +20,7 @@ export interface State {
       readonly maxNumberOfChatMessages: number
     }
     readonly id: number
-    readonly lang: village.Language
+    readonly language: village.Language
     readonly name: string
     readonly totalNumberOfPlayers: number
   }
@@ -45,7 +45,7 @@ export const initialState: State = {
       'maxNumberOfChatMessages': 10
     },
     'id': 0,
-    'lang': village.Language.en,
+    'language': village.Language.en,
     'name': '',
     'totalNumberOfPlayers': 0
   }
@@ -77,7 +77,7 @@ const base = (state: State = initialState, action: Action): State => {
             maxNumberOfChatMessages: action.payload.village.chatSettings.maxNumberOfChatMessages
           },
           'id': action.payload.village.id,
-          'lang': action.payload.village.lang,
+          'language': action.payload.village.language,
           'name': action.payload.village.name,
           'totalNumberOfPlayers': action.payload.village.totalNumberOfPlayers
         }

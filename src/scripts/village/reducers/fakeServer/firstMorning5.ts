@@ -531,7 +531,7 @@ export const firstMorning5: village.Payload$SystemMessage = {
       'maxNumberOfChatMessages': 10
     },
     'id': 29,
-    'lang': village.Language.en,
+    'language': village.Language.en,
     'name': 'Doubtful Village',
     'totalNumberOfPlayers': 8
   },
