@@ -1,14 +1,15 @@
 import * as React from 'react'
 
 interface Props {
-  checked: boolean
-  handleClick: () => void
+  readonly additionalClassName: string[]
+  readonly checked: boolean
+  readonly handleClick: () => void
 }
 
 export default function SelectAvatarTableBodyCheckBox(props: Props) {
   return (
     <div
-      className="lo--select-avatar--table--body--item check-box"
+      className={`lo--select-avatar--table--body--item check-box ${props.additionalClassName.join(' ')}`}
       onClick={props.handleClick}
     >
       <input

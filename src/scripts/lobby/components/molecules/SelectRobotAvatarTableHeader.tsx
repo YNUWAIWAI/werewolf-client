@@ -3,7 +3,7 @@ import {FormattedMessage} from 'react-intl'
 
 export default function SelectRobotAvatarTableHeader() {
   return (
-    <div className="lo--select-avatar--table--header">
+    <>
       <div className="lo--select-avatar--table--header--item check-box" />
       <FormattedMessage
         id="SelectAvatarTableHeader(avatarName)"
@@ -71,6 +71,6 @@ export default function SelectRobotAvatarTableHeader() {
           )
         }
       </FormattedMessage>
-    </div>
+    </>
   )
 }

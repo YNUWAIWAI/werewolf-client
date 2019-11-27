@@ -3,7 +3,9 @@ import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../types'
 
 interface Props {
-  status: lobby.AvatarStatus
+  readonly additionalClassName: string[]
+  readonly handleSelect: () => void
+  readonly status: lobby.AvatarStatus
 }
 
 export default function SelectAvatarTableBodyStatus(props: Props) {
@@ -13,7 +15,10 @@ export default function SelectAvatarTableBodyStatus(props: Props) {
     >
       {
         text => (
-          <div className="lo--select-avatar--table--body--item status">
+          <div
+            className={`lo--select-avatar--table--body--item status ${props.additionalClassName.join(' ')}`}
+            onClick={props.handleSelect}
+          >
             {text}
           </div>
         )

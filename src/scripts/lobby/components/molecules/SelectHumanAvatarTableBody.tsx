@@ -8,6 +8,7 @@ export interface StateProps {
     readonly byId: {
       readonly [id: string]: {
         readonly checked: boolean
+        readonly isHover: boolean
         readonly name: string
       }
     }
@@ -22,27 +23,31 @@ export type Props = StateProps & DispatchProps
 export default function SelectHumanAvatarTableBody(props: Props) {
   const rows = props.avatar.allIds.map(id => {
     const avatar = props.avatar.byId[id]
+    const additionalClassName = [
+      avatar.isHover ? 'hover' : '',
+      avatar.checked ? 'selected' : ''
+    ]
 
     return (
-      <div
-        className="lo--select-avatar--table--body--row human"
-        key={id}
-      >
+      <>
         <SelectAvatarTableBodyCheckBox
+          additionalClassName={additionalClassName}
           checked={avatar.checked}
           handleClick={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyAvatarName
+          additionalClassName={additionalClassName}
           handleChange={props.handleAvatarNameChange}
+          handleSelect={props.handleSelectAvatar(id)}
           name={avatar.name}
         />
-      </div>
+      </>
     )
   })
 
   return (
-    <div className="lo--select-avatar--table--body">
+    <>
       {rows}
-    </div>
+    </>
   )
 }

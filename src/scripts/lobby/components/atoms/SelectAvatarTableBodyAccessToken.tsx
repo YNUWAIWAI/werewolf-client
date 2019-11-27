@@ -4,8 +4,10 @@ import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../types'
 
 interface Props {
-  renewAccessToken: () => void
-  token: lobby.Token
+  readonly additionalClassName: string[]
+  readonly handleSelect: () => void
+  readonly renewAccessToken: () => void
+  readonly token: lobby.Token
 }
 
 export default function SelectAvatarTableBodyAccessToken(props: Props) {
@@ -15,9 +17,17 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
   const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
     event.target.select()
   }
+  const handleSelect = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (event.target === event.currentTarget) {
+      props.handleSelect()
+    }
+  }
 
   return (
-    <div className="lo--select-avatar--table--body--item access-token">
+    <div
+      className={`lo--select-avatar--table--body--item access-token ${props.additionalClassName.join(' ')}`}
+      onClick={handleSelect}
+    >
       <input
         onFocus={handleFocus}
         readOnly

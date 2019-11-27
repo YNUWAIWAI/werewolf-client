@@ -16,6 +16,7 @@ export interface StateProps {
         readonly accessToken: lobby.Token
         readonly automation: lobby.Automation
         readonly authorized: lobby.Authorized
+        readonly isHover: boolean
         readonly checked: boolean
         readonly name: string
         readonly status: lobby.AvatarStatus
@@ -35,44 +36,58 @@ export type Props = StateProps & DispatchProps
 export default function SelectRobotAvatarTableBody(props: Props) {
   const rows = props.avatar.allIds.map(id => {
     const avatar = props.avatar.byId[id]
+    const additionalClassName = [
+      avatar.isHover ? 'hover' : '',
+      avatar.checked ? 'selected' : ''
+    ]
 
     return (
-      <div
-        className="lo--select-avatar--table--body--row"
-        key={id}
-      >
+      <>
         <SelectAvatarTableBodyCheckBox
+          additionalClassName={additionalClassName}
           checked={avatar.checked}
           handleClick={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyAvatarName
+          additionalClassName={additionalClassName}
           handleChange={props.handleAvatarNameChange}
+          handleSelect={props.handleSelectAvatar(id)}
           name={avatar.name}
         />
         <SelectAvatarTableBodyStatus
+          additionalClassName={additionalClassName}
+          handleSelect={props.handleSelectAvatar(id)}
           status={avatar.status}
         />
         <SelectAvatarTableBodyAuthorized
+          additionalClassName={additionalClassName}
           authorized={avatar.authorized}
           handleClick={props.handleAccept}
+          handleSelect={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyTest
+          additionalClassName={additionalClassName}
+          handleSelect={props.handleSelectAvatar(id)}
           test={avatar.testStatus}
         />
         <SelectAvatarTableBodyAutomation
+          additionalClassName={additionalClassName}
           automation={avatar.automation}
+          handleSelect={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyAccessToken
+          additionalClassName={additionalClassName}
+          handleSelect={props.handleSelectAvatar(id)}
           renewAccessToken={props.renewAccessToken}
           token={avatar.accessToken}
         />
-      </div>
+      </>
     )
   })
 
   return (
-    <div className="lo--select-avatar--table--body">
+    <>
       {rows}
-    </div>
+    </>
   )
 }

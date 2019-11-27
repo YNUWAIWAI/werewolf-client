@@ -3,11 +3,20 @@ import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../types'
 
 interface Props {
+  readonly additionalClassName: string[]
   readonly authorized: lobby.Authorized
   readonly handleClick: () => void
+  readonly handleSelect: () => void
 }
 
 export default function SelectAvatarTableBodyAuthorized(props: Props) {
+  const className = `lo--select-avatar--table--body--item authorized ${props.additionalClassName.join(' ')}`
+  const handleSelect = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (event.target === event.currentTarget) {
+      props.handleSelect()
+    }
+  }
+
   if (props.authorized === lobby.Authorized.waitForAcceptance) {
     return (
       <FormattedMessage
@@ -15,7 +24,10 @@ export default function SelectAvatarTableBodyAuthorized(props: Props) {
       >
         {
           text => (
-            <div className="lo--select-avatar--table--body--item authorized">
+            <div
+              className={className}
+              onClick={handleSelect}
+            >
               <div
                 className="accept"
                 onClick={props.handleClick}
@@ -35,7 +47,10 @@ export default function SelectAvatarTableBodyAuthorized(props: Props) {
     >
       {
         text => (
-          <div className="lo--select-avatar--table--body--item authorized">
+          <div
+            className={className}
+            onClick={handleSelect}
+          >
             {text}
           </div>
         )

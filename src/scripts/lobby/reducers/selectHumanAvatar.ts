@@ -11,6 +11,7 @@ export interface State {
     readonly byId: {
       [key in string]: {
         readonly checked: boolean
+        readonly isHover: boolean
         readonly name: string
       }
     }

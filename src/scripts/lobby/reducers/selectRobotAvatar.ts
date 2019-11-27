@@ -15,6 +15,7 @@ export interface State {
         readonly automation: lobby.Automation
         readonly authorized: lobby.Authorized
         readonly checked: boolean
+        readonly isHover: boolean
         readonly name: string
         readonly status: lobby.AvatarStatus
         readonly testStatus: lobby.TestStatus

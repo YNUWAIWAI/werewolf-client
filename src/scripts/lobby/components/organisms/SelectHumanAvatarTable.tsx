@@ -4,7 +4,7 @@ import SelectHumanAvatarTableHeader from '../molecules/SelectHumanAvatarTableHea
 
 export default function SelectHumanAvatarTable() {
   return (
-    <div className="lo--select-avatar--table">
+    <div className="lo--select-avatar--table human">
       <SelectHumanAvatarTableHeader />
       <SelectHumanAvatarTableBody />
     </div>
