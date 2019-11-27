@@ -28,6 +28,7 @@ export interface StateProps {
 export interface DispatchProps {
   readonly handleAccept: () => void
   readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
   readonly renewAccessToken: () => void
 }
@@ -42,7 +43,9 @@ export default function SelectRobotAvatarTableBody(props: Props) {
     ]
 
     return (
-      <>
+      <React.Fragment
+        key={id}
+      >
         <SelectAvatarTableBodyCheckBox
           additionalClassName={additionalClassName}
           checked={avatar.checked}
@@ -81,7 +84,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           renewAccessToken={props.renewAccessToken}
           token={avatar.accessToken}
         />
-      </>
+      </React.Fragment>
     )
   })
 

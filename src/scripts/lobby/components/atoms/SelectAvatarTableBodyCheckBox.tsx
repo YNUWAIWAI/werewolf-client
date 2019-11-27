@@ -14,6 +14,7 @@ export default function SelectAvatarTableBodyCheckBox(props: Props) {
     >
       <input
         checked={props.checked}
+        readOnly
         type="checkbox"
       />
     </div>

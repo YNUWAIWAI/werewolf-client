@@ -618,8 +618,10 @@
           }
 
           & > .renew {
-            background: white;
+            background: var(--regular-color);
             border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 2px 2px 1px 0 grey;
             cursor: pointer;
             padding: 0 0.5rem;
             user-select: none;
@@ -642,8 +644,9 @@
 
         &.authorized {
           & > .accept {
-            background: white;
             border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 2px 2px 1px 0 grey;
             cursor: pointer;
             padding: 0 0.5rem;
             user-select: none;

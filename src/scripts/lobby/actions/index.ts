@@ -147,6 +147,31 @@ export const confirmKickOutPlayer = (values: {name: string, token: lobby.Token})
   token: values.token,
   type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
 })
+type HoverAvatarScope =
+  | ActionTypes.Scope.SelectHumanAvatar
+  | ActionTypes.Scope.SelectRobotAvatar
+type HoverAvatarType =
+  | {
+    id: string
+    type: ActionTypes.SelectHumanAvatar.HOVER_AVATAR
+  }
+  | {
+    id: string
+    type: ActionTypes.SelectRobotAvatar.HOVER_AVATAR
+  }
+export const hoverAvatar = (scope: HoverAvatarScope) => (id: string): HoverAvatarType => {
+  if (scope === ActionTypes.Scope.SelectHumanAvatar) {
+    return {
+      id,
+      type: ActionTypes[scope].HOVER_AVATAR
+    }
+  }
+
+  return {
+    id,
+    type: ActionTypes[scope].HOVER_AVATAR
+  }
+}
 export const kickOutPlayer = (): {type: ActionTypes.App.KICK_OUT_PLAYER} => ({
   type: ActionTypes.App.KICK_OUT_PLAYER
 })
@@ -197,9 +222,19 @@ export type Target =
 export const transition = (target: Target): {type: Target} => ({
   type: target
 })
-type ChangeAvatarCheckboxScope = ActionTypes.Scope.SelectHumanAvatar | ActionTypes.Scope.SelectRobotAvatar
-type ChangeAvatarCheckboxType = ActionTypes.SelectHumanAvatar.CHANGE_CHECKBOX | ActionTypes.SelectRobotAvatar.CHANGE_CHECKBOX
-export const changeAvatarCheckbox = (scope: ChangeAvatarCheckboxScope) => (id: string): {id: string, type: ChangeAvatarCheckboxType} => {
+type ChangeAvatarCheckboxScope =
+  | ActionTypes.Scope.SelectHumanAvatar
+  | ActionTypes.Scope.SelectRobotAvatar
+type ChangeAvatarCheckboxType =
+  | {
+    id: string
+    type: ActionTypes.SelectHumanAvatar.CHANGE_CHECKBOX
+  }
+  | {
+    id: string
+    type: ActionTypes.SelectRobotAvatar.CHANGE_CHECKBOX
+  }
+export const changeAvatarCheckbox = (scope: ChangeAvatarCheckboxScope) => (id: string): ChangeAvatarCheckboxType => {
   if (scope === ActionTypes.Scope.SelectHumanAvatar) {
     return {
       id,
@@ -249,5 +284,7 @@ export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
 export type SubmitLogout = ReturnType<typeof submitLogout>
 export type SelectHumanAvatar$ChangeAvatarCheckbox = ReturnType<ReturnType<typeof changeAvatarCheckbox>>
+export type SelectHumanAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
 export type SelectRobotAvatar$ChangeAvatarCheckbox = ReturnType<ReturnType<typeof changeAvatarCheckbox>>
+export type SelectRobotAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
 export type Transition = ReturnType<typeof transition>
