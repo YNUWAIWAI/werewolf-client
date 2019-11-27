@@ -298,7 +298,7 @@ describe('socket/MESSAGE', () => {
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
     const payload: lobby.Payload = {
-      language: lobby.Language.en,
+      lang: lobby.Language.en,
       type: lobby.PayloadType.played
     }
     const action: SocketMessage = {
@@ -333,7 +333,7 @@ describe('socket/MESSAGE', () => {
 
       expect(buildVillagePayload).toBeUndefined()
       expect(isHost).toBeUndefined()
-      expect(language).toBe(payload.language)
+      expect(language).toBe(payload.lang)
       expect(nextGameVillageId).toBeUndefined()
       expect(villageInfo).toBeUndefined()
       expect(whatToDoNextInLobby).toBeUndefined()
