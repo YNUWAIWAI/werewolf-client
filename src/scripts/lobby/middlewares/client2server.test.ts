@@ -1073,7 +1073,7 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
     id: pingId,
     results: [
       {
-        ping: '99.999 s',
+        ping: '99.999',
         status: lobby.PingStatus.danger,
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       }
