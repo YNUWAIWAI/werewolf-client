@@ -12,9 +12,12 @@ describe('render', () => {
     const navigatorClipBoard = navigator.clipboard;
 
     (navigator as any).clipboard = {}
+    const handleSelect = jest.fn()
     const renewAccessToken = jest.fn()
     const wrapper = mountWithIntl(
       <SelectAvatarTableBodyAccessToken
+        additionalClassName={[]}
+        handleSelect={handleSelect}
         renewAccessToken={renewAccessToken}
         token="token"
       />
@@ -24,9 +27,12 @@ describe('render', () => {
     (navigator as any).clipboard = navigatorClipBoard
   })
   test('navigator.clipboard === undefined', () => {
+    const handleSelect = jest.fn()
     const renewAccessToken = jest.fn()
     const wrapper = mountWithIntl(
       <SelectAvatarTableBodyAccessToken
+        additionalClassName={[]}
+        handleSelect={handleSelect}
         renewAccessToken={renewAccessToken}
         token="token"
       />
@@ -42,9 +48,12 @@ test('copy', () => {
   (navigator as any).clipboard = {
     writeText
   }
+  const handleSelect = jest.fn()
   const renewAccessToken = jest.fn()
   const wrapper = mountWithIntl(
     <SelectAvatarTableBodyAccessToken
+      additionalClassName={[]}
+      handleSelect={handleSelect}
       renewAccessToken={renewAccessToken}
       token="token"
     />
@@ -56,9 +65,12 @@ test('copy', () => {
   (navigator as any).clipboard = navigatorClipBoard
 })
 test('handleFocus', () => {
+  const handleSelect = jest.fn()
   const renewAccessToken = jest.fn()
   const wrapper = mountWithIntl(
     <SelectAvatarTableBodyAccessToken
+      additionalClassName={[]}
+      handleSelect={handleSelect}
       renewAccessToken={renewAccessToken}
       token="token"
     />
@@ -73,9 +85,12 @@ test('handleFocus', () => {
   expect(select).toHaveBeenCalledTimes(1)
 })
 test('renewAccessToken', () => {
+  const handleSelect = jest.fn()
   const renewAccessToken = jest.fn()
   const wrapper = mountWithIntl(
     <SelectAvatarTableBodyAccessToken
+      additionalClassName={[]}
+      handleSelect={handleSelect}
       renewAccessToken={renewAccessToken}
       token="token"
     />
