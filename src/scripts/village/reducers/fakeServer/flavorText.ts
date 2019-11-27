@@ -19,7 +19,7 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       'character': {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
@@ -69,7 +69,7 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       'character': {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
