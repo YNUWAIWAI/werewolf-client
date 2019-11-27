@@ -23,7 +23,7 @@ export const theirMessageOnChat: village.Payload$ChatMessage = {
   'extensionalDisclosureRange': [],
   'id': 12,
   'intensionalDisclosureRange': village.Channel.public,
-  'interval': '5s',
+  'interval': 5,
   'isFromServer': true,
   'isMine': false,
   'isOver': false,
