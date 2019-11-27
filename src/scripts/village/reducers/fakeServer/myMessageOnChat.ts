@@ -50,6 +50,6 @@ export const myMessageOnChat: village.Payload$ChatMessage = {
     'id': 3,
     'lang': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfCharacters': 15
+    'totalNumberOfPlayers': 15
   }
 }

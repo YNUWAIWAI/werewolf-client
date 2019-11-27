@@ -13,5 +13,5 @@ export interface Village {
   id: VillageId
   lang: Language
   name: string
-  totalNumberOfCharacters: number
+  totalNumberOfPlayers: number
 }

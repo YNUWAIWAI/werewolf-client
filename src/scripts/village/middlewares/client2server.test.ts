@@ -49,7 +49,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     mine: {
@@ -336,7 +336,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 
@@ -418,7 +418,7 @@ describe('POST_CHAT', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     mine: {
@@ -503,7 +503,7 @@ describe('POST_CHAT', () => {
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 
@@ -625,7 +625,7 @@ describe('SELECT_YES', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     commandSelection: {
@@ -806,7 +806,7 @@ describe('SELECT_YES', () => {
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 
@@ -886,7 +886,7 @@ describe('STAR', () => {
         'id': 3,
         'lang': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     chat: {
@@ -985,7 +985,7 @@ describe('STAR', () => {
       'id': 3,
       'lang': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 

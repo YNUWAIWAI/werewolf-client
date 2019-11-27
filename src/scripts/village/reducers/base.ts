@@ -22,7 +22,7 @@ export interface State {
     readonly id: number
     readonly lang: village.Language
     readonly name: string
-    readonly totalNumberOfCharacters: number
+    readonly totalNumberOfPlayers: number
   }
 }
 type Action =
@@ -47,7 +47,7 @@ export const initialState: State = {
     'id': 0,
     'lang': village.Language.en,
     'name': '',
-    'totalNumberOfCharacters': 0
+    'totalNumberOfPlayers': 0
   }
 }
 const base = (state: State = initialState, action: Action): State => {
@@ -79,7 +79,7 @@ const base = (state: State = initialState, action: Action): State => {
           'id': action.payload.village.id,
           'lang': action.payload.village.lang,
           'name': action.payload.village.name,
-          'totalNumberOfCharacters': action.payload.village.totalNumberOfCharacters
+          'totalNumberOfPlayers': action.payload.village.totalNumberOfPlayers
         }
       }
     }

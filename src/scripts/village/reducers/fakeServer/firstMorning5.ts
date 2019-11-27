@@ -533,7 +533,7 @@ export const firstMorning5: village.Payload$SystemMessage = {
     'id': 29,
     'lang': village.Language.en,
     'name': 'Doubtful Village',
-    'totalNumberOfCharacters': 8
+    'totalNumberOfPlayers': 8
   },
   'votingResultsDetails': [],
   'votingResultsSummary': []
