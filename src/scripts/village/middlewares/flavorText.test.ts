@@ -25,7 +25,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       '@payload': village.Message.chatMessage,
       'character': {
         '@context': village.Context.Character,
@@ -76,7 +76,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#2/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       '@payload': village.Message.chatMessage,
       'character': {
         '@context': village.Context.Character,
