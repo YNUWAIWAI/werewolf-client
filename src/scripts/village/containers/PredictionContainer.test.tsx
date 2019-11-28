@@ -73,28 +73,28 @@ describe('<PredictionContainer />', () => {
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
-          'numberOfCharacters': 2
+          'numberOfPlayers': 2
         },
         [village.RoleId.seer]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
           'id': village.RoleId.seer,
           'image': ImagePath.Role.seer,
           'name': Role.seer,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.madman]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
           'id': village.RoleId.madman,
           'image': ImagePath.Role.madman,
           'name': Role.madman,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.werewolf]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         }
       }
     }

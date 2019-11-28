@@ -75,7 +75,7 @@ export interface SystemMessage extends PayloadBase {
     isMine: Role['isMine']
     image: Role['image']
     name: Role['name']
-    numberOfCharacters: Role['numberOfCharacters']
+    numberOfPlayers: Role['numberOfPlayers']
   }[]
   serverTimestamp: Base['serverTimestamp']
   token: Base['token']

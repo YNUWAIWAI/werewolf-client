@@ -253,7 +253,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.master,
       'isMine': false,
       'name': Role.master,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -277,7 +277,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.villager,
       'isMine': false,
       'name': Role.villager,
-      'numberOfCharacters': 7
+      'numberOfPlayers': 7
     },
     {
       '@context': village.Context.Role,
@@ -301,7 +301,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.seer,
       'isMine': false,
       'name': Role.seer,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -325,7 +325,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.medium,
       'isMine': false,
       'name': Role.medium,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -349,7 +349,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.hunter,
       'isMine': false,
       'name': Role.hunter,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -373,7 +373,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.mason,
       'isMine': false,
       'name': Role.mason,
-      'numberOfCharacters': 2
+      'numberOfPlayers': 2
     },
     {
       '@context': village.Context.Role,
@@ -397,7 +397,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.madman,
       'isMine': false,
       'name': Role.madman,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -421,7 +421,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.werewolf,
       'isMine': true,
       'name': Role.werewolf,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -445,7 +445,7 @@ export const firstMorning6: village.Payload$SystemMessage = {
       'image': ImagePath.Role.werehamster,
       'isMine': false,
       'name': Role.werehamster,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     }
   ],
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',

@@ -12,7 +12,7 @@ describe('<PredictionRole />', () => {
         handleMouseLeave={handleMouseLeave}
         image="image"
         name="name"
-        numberOfCharacters={1}
+        numberOfPlayers={1}
       />
     )
 
@@ -35,7 +35,7 @@ describe('<PredictionRole />', () => {
         handleMouseLeave={handleMouseLeave}
         image="image"
         name="name"
-        numberOfCharacters={1}
+        numberOfPlayers={1}
       />
     )
 
@@ -52,7 +52,7 @@ describe('<PredictionRole />', () => {
         handleMouseLeave={handleMouseLeave}
         image="image"
         name="name"
-        numberOfCharacters={1}
+        numberOfPlayers={1}
       />
     )
 

@@ -20,7 +20,7 @@ export interface StateProps {
     readonly id: village.RoleId
     readonly image: string
     readonly name: string
-    readonly numberOfCharacters: number
+    readonly numberOfPlayers: number
   }[]
   readonly spec: {
     role: village.RoleId
@@ -58,7 +58,7 @@ export default function Prediction(props: Props) {
         image={role.image}
         key={role.id}
         name={role.name}
-        numberOfCharacters={role.numberOfCharacters}
+        numberOfPlayers={role.numberOfPlayers}
       />
     )),
     ... props.characterStatus.map(character => [

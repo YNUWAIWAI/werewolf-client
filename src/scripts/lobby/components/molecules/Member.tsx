@@ -17,7 +17,7 @@ export default function Member(props: Props) {
       id={item.id}
       image={item.image}
       key={item.id}
-      numberOfCharacters={props.role[item.id]}
+      numberOfPlayers={props.role[item.id]}
     />
   ))
 
