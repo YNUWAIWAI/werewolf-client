@@ -13,14 +13,7 @@ import {
   AdvancedSearch$ChangeValidity,
   AdvancedSearch$ChangeVillageName,
   SelectVillage,
-  changeAvatar,
-  changeCheckbox,
-  changeComment,
-  changeHostName,
-  changeMaximum,
-  changeMinimum,
-  changeValidity,
-  changeVillageName,
+  advancedSearch,
   selectVillage
 } from '../actions'
 import {Dispatch} from 'redux'
@@ -72,32 +65,32 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
-    dispatch(changeAvatar(ActionTypes.Scope.AdvancedSearch)(value))
+    dispatch(advancedSearch.changeAvatar(value))
   },
   handleCheckboxChange: propName => checked => {
-    dispatch(changeCheckbox(ActionTypes.Scope.AdvancedSearch)(propName)(checked))
+    dispatch(advancedSearch.changeCheckbox(propName)(checked))
   },
   handleNumberChange: propName => value => {
     if (propName === 'maximum') {
-      dispatch(changeMaximum(ActionTypes.Scope.AdvancedSearch)(value))
+      dispatch(advancedSearch.changeMaximum(value))
     }
     if (propName === 'minimum') {
-      dispatch(changeMinimum(ActionTypes.Scope.AdvancedSearch)(value))
+      dispatch(advancedSearch.changeMinimum(value))
     }
   },
   handleTextChange: propName => value => {
     if (propName === 'comment') {
-      dispatch(changeComment(ActionTypes.Scope.AdvancedSearch)(value))
+      dispatch(advancedSearch.changeComment(value))
     }
     if (propName === 'hostName') {
-      dispatch(changeHostName(ActionTypes.Scope.AdvancedSearch)(value))
+      dispatch(advancedSearch.changeHostName(value))
     }
     if (propName === 'villageName') {
-      dispatch(changeVillageName(ActionTypes.Scope.AdvancedSearch)(value))
+      dispatch(advancedSearch.changeVillageName(value))
     }
   },
   handleValidityChange: propName => validity => {
-    dispatch(changeValidity(ActionTypes.Scope.AdvancedSearch)(propName)(validity))
+    dispatch(advancedSearch.changeValidity(propName)(validity))
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))
