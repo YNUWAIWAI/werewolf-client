@@ -12,6 +12,8 @@ import LobbyForAudience from './LobbyForAudienceContainer'
 import LobbyForHumanPlayer from './LobbyForHumanPlayerContainer'
 import LobbyForRobotPlayer from './LobbyForRobotPlayerContainer'
 import Main from './MainContainer'
+import SelectHumanAvatar from './SelectHumanAvatarContainer'
+import SelectRobotAvatar from './SelectRobotAvatarContainer'
 import Settings from './SettingsContainer'
 import WaitingForPlayers from './WaitingForPlayersContainer'
 
@@ -30,11 +32,17 @@ export default function Routes() {
       <Route path="/audience/lobby">
         <LobbyForAudience />
       </Route>
+      <Route path="/human/selectAvatar">
+        <SelectHumanAvatar />
+      </Route>
       <Route path="/human/lobby">
         <LobbyForHumanPlayer />
       </Route>
       <Route path="/robot/lobby">
         <LobbyForRobotPlayer />
+      </Route>
+      <Route path="/robot/selectAvatar">
+        <SelectRobotAvatar />
       </Route>
       <Route path={
         [

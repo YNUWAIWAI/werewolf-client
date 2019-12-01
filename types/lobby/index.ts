@@ -113,3 +113,23 @@ export interface PingResult {
   status: PingStatus
   token: Token
 }
+export const enum TestStatus {
+  notPassed = 'not passed',
+  passed = 'passed'
+}
+export const enum Automation {
+  full = 'full',
+  semi = 'semi'
+}
+export const enum Authorized {
+  no = 'no',
+  yes = 'yes',
+  waitForAcceptance = 'wait for acceptance',
+}
+export const enum AvatarStatus {
+  awaitingAuthorization = 'awaiting authorization',
+  awaitingCommunicationTest = 'awaiting communication test',
+  connected = 'connected',
+  runningInTheBackground = 'running in the background',
+  runningInTheForeground = 'running in the foreground'
+}
