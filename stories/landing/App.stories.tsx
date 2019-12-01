@@ -9,7 +9,7 @@ storiesOf('landing|App', module)
     const story =
       <App
         csrfToken="token"
-        lang={radios(language.label, language.options, language.defaultValue)}
+        language={radios(language.label, language.options, language.defaultValue)}
         loginAction="/login"
         loginError={false}
         signupAction="/signup"
@@ -22,7 +22,7 @@ storiesOf('landing|App', module)
     const story =
       <App
         csrfToken="token"
-        lang={radios(language.label, language.options, language.defaultValue)}
+        language={radios(language.label, language.options, language.defaultValue)}
         loginAction="/login"
         loginError
         signupAction="/signup"
@@ -35,7 +35,7 @@ storiesOf('landing|App', module)
     const story =
       <App
         csrfToken="token"
-        lang={radios(language.label, language.options, language.defaultValue)}
+        language={radios(language.label, language.options, language.defaultValue)}
         loginAction="/login"
         loginError={false}
         signupAction="/signup"

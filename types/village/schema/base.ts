@@ -72,7 +72,7 @@ export interface Base {
     }
     id: Village['id']
     name: Village['name']
-    lang: Village['lang']
-    totalNumberOfCharacters: Village['totalNumberOfCharacters']
+    language: Village['language']
+    totalNumberOfPlayers: Village['totalNumberOfPlayers']
   }
 }

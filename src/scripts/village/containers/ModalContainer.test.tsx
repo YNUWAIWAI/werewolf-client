@@ -35,9 +35,9 @@ describe('<ModalContainer />', () => {
                   maxNumberOfChatMessages: 10
                 },
                 'id': 3,
-                'lang': village.Language.en,
+                'language': village.Language.en,
                 'name': '横国の森の奥にある時代に取り残された小さな村',
-                'totalNumberOfCharacters': 15
+                'totalNumberOfPlayers': 15
               }
             },
             commandSelection: {
@@ -120,9 +120,9 @@ describe('<ModalContainer />', () => {
                     maxNumberOfChatMessages: 10
                   },
                   'id': 3,
-                  'lang': village.Language.en,
+                  'language': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
-                  'totalNumberOfCharacters': 15
+                  'totalNumberOfPlayers': 15
                 }
               },
               commandSelection: {
@@ -204,9 +204,9 @@ describe('<ModalContainer />', () => {
                     maxNumberOfChatMessages: 10
                   },
                   'id': 3,
-                  'lang': village.Language.en,
+                  'language': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
-                  'totalNumberOfCharacters': 15
+                  'totalNumberOfPlayers': 15
                 }
               },
               commandSelection: {
@@ -288,9 +288,9 @@ describe('<ModalContainer />', () => {
                     maxNumberOfChatMessages: 10
                   },
                   'id': 3,
-                  'lang': village.Language.en,
+                  'language': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
-                  'totalNumberOfCharacters': 15
+                  'totalNumberOfPlayers': 15
                 }
               },
               commandSelection: {
@@ -366,9 +366,9 @@ describe('<ModalContainer />', () => {
                     maxNumberOfChatMessages: 10
                   },
                   'id': 3,
-                  'lang': village.Language.en,
+                  'language': village.Language.en,
                   'name': '横国の森の奥にある時代に取り残された小さな村',
-                  'totalNumberOfCharacters': 15
+                  'totalNumberOfPlayers': 15
                 }
               },
               commandSelection: {
@@ -446,9 +446,9 @@ describe('<ModalContainer />', () => {
                 maxNumberOfChatMessages: 10
               },
               'id': 3,
-              'lang': village.Language.en,
+              'language': village.Language.en,
               'name': '横国の森の奥にある時代に取り残された小さな村',
-              'totalNumberOfCharacters': 15
+              'totalNumberOfPlayers': 15
             }
           },
           commandSelection: {

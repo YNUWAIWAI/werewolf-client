@@ -19,7 +19,7 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       'character': {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
@@ -34,7 +34,7 @@ export const flavorText: village.Payload$FlavorTextMessage = {
       'extensionalDisclosureRange': [],
       'id': 1,
       'intensionalDisclosureRange': village.Channel.public,
-      'interval': '5s',
+      'interval': 5,
       'isFromServer': true,
       'isMine': false,
       'isOver': false,
@@ -59,9 +59,9 @@ export const flavorText: village.Payload$FlavorTextMessage = {
           'maxNumberOfChatMessages': 10
         },
         'id': 3,
-        'lang': village.Language.ja,
+        'language': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     {
@@ -69,7 +69,7 @@ export const flavorText: village.Payload$FlavorTextMessage = {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       'character': {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
@@ -84,7 +84,7 @@ export const flavorText: village.Payload$FlavorTextMessage = {
       'extensionalDisclosureRange': [],
       'id': 2,
       'intensionalDisclosureRange': village.Channel.public,
-      'interval': '5s',
+      'interval': 5,
       'isFromServer': true,
       'isMine': false,
       'isOver': false,
@@ -109,9 +109,9 @@ export const flavorText: village.Payload$FlavorTextMessage = {
           'maxNumberOfChatMessages': 10
         },
         'id': 3,
-        'lang': village.Language.ja,
+        'language': village.Language.ja,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     }
   ],
@@ -131,8 +131,8 @@ export const flavorText: village.Payload$FlavorTextMessage = {
       'maxNumberOfChatMessages': 10
     },
     'id': 3,
-    'lang': village.Language.ja,
+    'language': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfCharacters': 15
+    'totalNumberOfPlayers': 15
   }
 }

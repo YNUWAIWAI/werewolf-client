@@ -1,7 +1,5 @@
 /*
-'https://werewolf.world/village/context/0.3/chat.jsonld'
-  dependency;
-    'playerMessage'
+  'https://werewolf.world/village/context/0.3/chat.jsonld'
 */
 import {
   Language,
@@ -11,7 +9,7 @@ import {
 export interface Chat {
   counter: number
   id: Payload$ChatId
-  interval: string
+  interval: number
   isFromServer: boolean
   isMine: boolean
   isOver: boolean

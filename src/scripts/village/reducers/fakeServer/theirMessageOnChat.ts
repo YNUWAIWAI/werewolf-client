@@ -23,7 +23,7 @@ export const theirMessageOnChat: village.Payload$ChatMessage = {
   'extensionalDisclosureRange': [],
   'id': 12,
   'intensionalDisclosureRange': village.Channel.public,
-  'interval': '5s',
+  'interval': 5,
   'isFromServer': true,
   'isMine': false,
   'isOver': false,
@@ -48,8 +48,8 @@ export const theirMessageOnChat: village.Payload$ChatMessage = {
       'maxNumberOfChatMessages': 10
     },
     'id': 3,
-    'lang': village.Language.ja,
+    'language': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfCharacters': 15
+    'totalNumberOfPlayers': 15
   }
 }

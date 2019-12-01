@@ -47,9 +47,9 @@ describe('CHANGE_PREDICTION_BOARD', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     mine: {
@@ -209,56 +209,56 @@ describe('CHANGE_PREDICTION_BOARD', () => {
             'id': village.RoleId.villager,
             'image': ImagePath.Role.villager,
             'name': Role.villager,
-            'numberOfCharacters': 6
+            'numberOfPlayers': 6
           },
           [village.RoleId.seer]: {
             '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
             'id': village.RoleId.seer,
             'image': ImagePath.Role.seer,
             'name': Role.seer,
-            'numberOfCharacters': 1
+            'numberOfPlayers': 1
           },
           [village.RoleId.medium]: {
             '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
             'id': village.RoleId.medium,
             'image': ImagePath.Role.medium,
             'name': Role.medium,
-            'numberOfCharacters': 1
+            'numberOfPlayers': 1
           },
           [village.RoleId.hunter]: {
             '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
             'id': village.RoleId.hunter,
             'image': ImagePath.Role.hunter,
             'name': Role.hunter,
-            'numberOfCharacters': 1
+            'numberOfPlayers': 1
           },
           [village.RoleId.mason]: {
             '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
             'id': village.RoleId.mason,
             'image': ImagePath.Role.mason,
             'name': Role.mason,
-            'numberOfCharacters': 2
+            'numberOfPlayers': 2
           },
           [village.RoleId.madman]: {
             '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
             'id': village.RoleId.madman,
             'image': ImagePath.Role.madman,
             'name': Role.madman,
-            'numberOfCharacters': 1
+            'numberOfPlayers': 1
           },
           [village.RoleId.werewolf]: {
             '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
             'id': village.RoleId.werewolf,
             'image': ImagePath.Role.werewolf,
             'name': Role.werewolf,
-            'numberOfCharacters': 2
+            'numberOfPlayers': 2
           },
           [village.RoleId.werehamster]: {
             '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
             'id': village.RoleId.werehamster,
             'image': ImagePath.Role.werehamster,
             'name': Role.werehamster,
-            'numberOfCharacters': 1
+            'numberOfPlayers': 1
           }
         }
       },
@@ -334,9 +334,9 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 
@@ -416,9 +416,9 @@ describe('POST_CHAT', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     mine: {
@@ -501,9 +501,9 @@ describe('POST_CHAT', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 
@@ -623,9 +623,9 @@ describe('SELECT_YES', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     commandSelection: {
@@ -804,9 +804,9 @@ describe('SELECT_YES', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 
@@ -884,9 +884,9 @@ describe('STAR', () => {
           maxNumberOfChatMessages: 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     chat: {
@@ -983,9 +983,9 @@ describe('STAR', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 
