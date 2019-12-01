@@ -5,7 +5,7 @@ interface Props {
   readonly handleMouseLeave: () => void
   readonly image: string
   readonly name: string
-  readonly numberOfCharacters: number
+  readonly numberOfPlayers: number
 }
 
 export default function PredictionRole(props: Props) {
@@ -25,7 +25,7 @@ export default function PredictionRole(props: Props) {
         {times}
       </div>
       <div className="vi--prediction--role--number">
-        {props.numberOfCharacters}
+        {props.numberOfPlayers}
       </div>
       <div className="vi--prediction--role--name">
         {props.name}

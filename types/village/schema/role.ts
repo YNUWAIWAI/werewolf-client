@@ -12,5 +12,5 @@ export interface Role {
   image: string
   isMine: boolean
   name: LanguageMap
-  numberOfCharacters: number
+  numberOfPlayers: number
 }

@@ -6,13 +6,13 @@ import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('<MemberRole class="class" id="id" image="image" name="name" numberOfCharacters={0} />', () => {
+test('<MemberRole />', () => {
   const wrapper = mountWithIntl(
     <MemberRole
-      className="class"
+      className="className"
       id="villager"
       image="image"
-      numberOfCharacters={0}
+      numberOfPlayers={0}
     />
   )
 

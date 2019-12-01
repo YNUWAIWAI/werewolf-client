@@ -140,49 +140,49 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': ImagePath.Role.villager,
         'name': '村人',
-        'numberOfCharacters': 4
+        'numberOfPlayers': 4
       },
       {
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': '占い師',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.medium,
         'image': ImagePath.Role.medium,
         'name': '霊媒師',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.hunter,
         'image': ImagePath.Role.hunter,
         'name': '狩人',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.mason,
         'image': ImagePath.Role.mason,
         'name': '共有者',
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       {
         'id': village.RoleId.madman,
         'image': ImagePath.Role.madman,
         'name': '狂人',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': ImagePath.Role.werewolf,
         'name': '人狼',
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       {
         'id': village.RoleId.werehamster,
         'image': ImagePath.Role.werehamster,
         'name': 'ハムスター人間',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       }
     ]
     const spec: Props['spec'] = {
@@ -896,25 +896,25 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': ImagePath.Role.villager,
         'name': '村人',
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       {
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': '占い師',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.madman,
         'image': ImagePath.Role.madman,
         'name': '狂人',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': ImagePath.Role.werewolf,
         'name': '人狼',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       }
     ]
     const spec: Props['spec'] = {
@@ -1188,49 +1188,49 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': ImagePath.Role.villager,
         'name': '村人',
-        'numberOfCharacters': 4
+        'numberOfPlayers': 4
       },
       {
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': '占い師',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.medium,
         'image': ImagePath.Role.medium,
         'name': '霊媒師',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.hunter,
         'image': ImagePath.Role.hunter,
         'name': '狩人',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.mason,
         'image': ImagePath.Role.mason,
         'name': '共有者',
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       {
         'id': village.RoleId.madman,
         'image': ImagePath.Role.madman,
         'name': '狂人',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': ImagePath.Role.werewolf,
         'name': '人狼',
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       {
         'id': village.RoleId.werehamster,
         'image': ImagePath.Role.werehamster,
         'name': 'ハムスター人間',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       }
     ]
     const spec: Props['spec'] = {
@@ -1944,25 +1944,25 @@ storiesOf('village|Prediction', module)
         'id': village.RoleId.villager,
         'image': ImagePath.Role.villager,
         'name': '村人',
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       {
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': '占い師',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.madman,
         'image': ImagePath.Role.madman,
         'name': '狂人',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       {
         'id': village.RoleId.werewolf,
         'image': ImagePath.Role.werewolf,
         'name': '人狼',
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       }
     ]
     const spec: Props['spec'] = {

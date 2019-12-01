@@ -88,7 +88,7 @@ const commandInputBox = (state: State = initialState, action: Action): State => 
           const role = getMyRole(action.payload.role)
 
           if (
-            role.numberOfCharacters > 1 &&
+            role.numberOfPlayers > 1 &&
             AVAILABLE_FOR_WEREWOLF_CHAT.includes(strToRoleId(role.name.en))
           ) {
             return {

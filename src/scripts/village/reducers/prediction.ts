@@ -34,7 +34,7 @@ export interface State {
         readonly id: village.RoleId
         readonly image: string
         readonly name: village.LanguageMap
-        readonly numberOfCharacters: number
+        readonly numberOfPlayers: number
       }
     }>
   }
@@ -65,7 +65,7 @@ type Roles = NonNullable<village.Payload$SystemMessage['role']>
 
 const updatePredictionTable = (roles: Roles, table: Table): Table => {
   roles
-    .filter(role => role.numberOfCharacters > 0)
+    .filter(role => role.numberOfPlayers > 0)
     .forEach(role => {
       if (typeof role.board === 'undefined') {
         return
@@ -133,7 +133,7 @@ const initPredictionTable = (characters: Characters, roles: Roles): Table => {
 
     table[characterId] = {}
     roles
-      .filter(role => role.numberOfCharacters > 0)
+      .filter(role => role.numberOfPlayers > 0)
       .forEach(role => {
         const roleId = strToRoleId(role.name.en)
 
@@ -153,7 +153,7 @@ const getRoleStatus = (roles: Roles): RoleStatus => {
   const byId: RoleStatus['byId'] = {}
 
   roles
-    .filter(role => role.numberOfCharacters > 0)
+    .filter(role => role.numberOfPlayers > 0)
     .forEach(role => {
       const id = strToRoleId(role.name.en)
 
@@ -163,7 +163,7 @@ const getRoleStatus = (roles: Roles): RoleStatus => {
         id,
         'image': role.image,
         'name': role.name,
-        'numberOfCharacters': role.numberOfCharacters
+        'numberOfPlayers': role.numberOfPlayers
       }
     })
 

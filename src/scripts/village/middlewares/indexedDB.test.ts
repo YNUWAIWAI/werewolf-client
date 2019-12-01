@@ -34,7 +34,7 @@ const getAllValue = async () => {
   return Promise.all([
     getValue<lobby.Payload$BuildVillage>(objectStore, Key.buildVillagePayload),
     getValue<boolean>(objectStore, Key.isHost),
-    getValue<lobby.Language>(objectStore, Key.lang),
+    getValue<lobby.Language>(objectStore, Key.language),
     getValue<number>(objectStore, Key.nextGameVillageId),
     getValue<Village>(objectStore, Key.village),
     getValue<WhatToDoNextInLobby>(objectStore, Key.whatToDoNextInLobby)
@@ -49,7 +49,7 @@ const deleteAllValue = async () => {
   return Promise.all([
     deleteValue(objectStore, Key.buildVillagePayload),
     deleteValue(objectStore, Key.isHost),
-    deleteValue(objectStore, Key.lang),
+    deleteValue(objectStore, Key.language),
     deleteValue(objectStore, Key.nextGameVillageId),
     deleteValue(objectStore, Key.village),
     deleteValue(objectStore, Key.whatToDoNextInLobby)
@@ -82,7 +82,7 @@ test('RETURN_TO_LOBBY', async () => {
   const [
     buildVillagePayload,
     isHost,
-    lang,
+    language,
     nextGameVillageId,
     villageInfo,
     whatToDoNextInLobby
@@ -90,7 +90,7 @@ test('RETURN_TO_LOBBY', async () => {
 
   expect(buildVillagePayload).toBeUndefined()
   expect(isHost).toBeUndefined()
-  expect(lang).toBeUndefined()
+  expect(language).toBeUndefined()
   expect(nextGameVillageId).toBeUndefined()
   expect(villageInfo).toStrictEqual(v)
   expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.leaveWaitingPage)
@@ -168,7 +168,7 @@ describe('NEXT_GAME', () => {
     const [
       buildVillagePayload,
       isHost,
-      lang,
+      language,
       nextGameVillageId,
       villageInfo,
       whatToDoNextInLobby
@@ -176,7 +176,7 @@ describe('NEXT_GAME', () => {
 
     expect(buildVillagePayload).toStrictEqual(payload)
     expect(isHost).toBe(true)
-    expect(lang).toBeUndefined()
+    expect(language).toBeUndefined()
     expect(nextGameVillageId).toBeUndefined()
     expect(villageInfo).toBeUndefined()
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
@@ -201,7 +201,7 @@ describe('NEXT_GAME', () => {
     const [
       buildVillagePayload,
       isHost,
-      lang,
+      language,
       nextGameVillageId,
       villageInfo,
       whatToDoNextInLobby
@@ -209,7 +209,7 @@ describe('NEXT_GAME', () => {
 
     expect(buildVillagePayload).toStrictEqual(payload)
     expect(isHost).toBe(false)
-    expect(lang).toBeUndefined()
+    expect(language).toBeUndefined()
     expect(nextGameVillageId).toBeUndefined()
     expect(villageInfo).toBeUndefined()
     expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectNextVillage)
@@ -242,7 +242,7 @@ describe('indexedDB/INIT', () => {
     }
 
     await Promise.all([
-      updateValue<village.Language>(objectStore, Key.lang, village.Language.en),
+      updateValue<village.Language>(objectStore, Key.language, village.Language.en),
       updateValue<boolean>(objectStore, Key.isHost, true),
       updateValue<Village>(objectStore, Key.village, v)
     ])
@@ -250,7 +250,7 @@ describe('indexedDB/INIT', () => {
     const [
       buildVillagePayload,
       isHost,
-      lang,
+      language,
       nextGameVillageId,
       villageInfo,
       whatToDoNextInLobby
@@ -258,7 +258,7 @@ describe('indexedDB/INIT', () => {
 
     expect(buildVillagePayload).toBeUndefined()
     expect(isHost).toBe(true)
-    expect(lang).toBe('en')
+    expect(language).toBe('en')
     expect(nextGameVillageId).toBeUndefined()
     expect(villageInfo).toStrictEqual(v)
     expect(whatToDoNextInLobby).toBeUndefined()
@@ -290,7 +290,7 @@ describe('indexedDB/INIT', () => {
     }
 
     await Promise.all([
-      updateValue<village.Language>(objectStore, Key.lang, village.Language.en),
+      updateValue<village.Language>(objectStore, Key.language, village.Language.en),
       updateValue<boolean>(objectStore, Key.isHost, false),
       updateValue<Village>(objectStore, Key.village, v)
     ])
@@ -298,7 +298,7 @@ describe('indexedDB/INIT', () => {
     const [
       buildVillagePayload,
       isHost,
-      lang,
+      language,
       nextGameVillageId,
       villageInfo,
       whatToDoNextInLobby
@@ -306,7 +306,7 @@ describe('indexedDB/INIT', () => {
 
     expect(buildVillagePayload).toBeUndefined()
     expect(isHost).toBe(false)
-    expect(lang).toBe('en')
+    expect(language).toBe('en')
     expect(nextGameVillageId).toBeUndefined()
     expect(villageInfo).toStrictEqual(v)
     expect(whatToDoNextInLobby).toBeUndefined()
@@ -368,7 +368,7 @@ describe('socket/MESSAGE', () => {
     const [
       buildVillagePayload,
       isHost,
-      lang,
+      language,
       nextGameVillageId,
       villageInfo,
       whatToDoNextInLobby
@@ -376,7 +376,7 @@ describe('socket/MESSAGE', () => {
 
     expect(buildVillagePayload).toBeUndefined()
     expect(isHost).toBe(true)
-    expect(lang).toBeUndefined()
+    expect(language).toBeUndefined()
     expect(nextGameVillageId).toBe(3)
     expect(villageInfo).toBeUndefined()
     expect(whatToDoNextInLobby).toBeUndefined()
@@ -398,7 +398,7 @@ describe('socket/MESSAGE', () => {
     const [
       buildVillagePayload,
       isHost,
-      lang,
+      language,
       nextGameVillageId,
       villageInfo,
       whatToDoNextInLobby
@@ -406,7 +406,7 @@ describe('socket/MESSAGE', () => {
 
     expect(buildVillagePayload).toBeUndefined()
     expect(isHost).toBe(false)
-    expect(lang).toBeUndefined()
+    expect(language).toBeUndefined()
     expect(nextGameVillageId).toBe(3)
     expect(villageInfo).toBeUndefined()
     expect(whatToDoNextInLobby).toBeUndefined()

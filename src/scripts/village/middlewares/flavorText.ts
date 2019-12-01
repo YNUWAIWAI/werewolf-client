@@ -11,14 +11,7 @@ const flavorText: Middleware = store => next => action => {
         const payload = action.payload
 
         payload.flavorText.forEach((value, index) => {
-          const match = (/(?<interval>\d+)s/).exec(just(value.interval))
-          let interval: number
-
-          if (match && match.groups) {
-            interval = Number(match.groups.interval) * 1000
-          } else {
-            interval = 5000
-          }
+          const interval = just(value.interval) * 1000
 
           setTimeout(() => {
             store.dispatch(socket.message(value as village.Payload$ChatMessage))

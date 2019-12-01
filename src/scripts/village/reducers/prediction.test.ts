@@ -26,7 +26,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual(initialState)
   })
-  test('my role is seer (numberOfCharacters === 1)', () => {
+  test('my role is seer (numberOfPlayers === 1)', () => {
     const characterStatus: State['characterStatus'] = {
       allIds: [
         '1',
@@ -170,56 +170,56 @@ describe('socket/MESSAGE', () => {
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
-          'numberOfCharacters': 6
+          'numberOfPlayers': 6
         },
         [village.RoleId.seer]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
           'id': village.RoleId.seer,
           'image': ImagePath.Role.seer,
           'name': Role.seer,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.medium]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
           'id': village.RoleId.medium,
           'image': ImagePath.Role.medium,
           'name': Role.medium,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.hunter]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
           'id': village.RoleId.hunter,
           'image': ImagePath.Role.hunter,
           'name': Role.hunter,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.mason]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
           'id': village.RoleId.mason,
           'image': ImagePath.Role.mason,
           'name': Role.mason,
-          'numberOfCharacters': 2
+          'numberOfPlayers': 2
         },
         [village.RoleId.madman]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
           'id': village.RoleId.madman,
           'image': ImagePath.Role.madman,
           'name': Role.madman,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.werewolf]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
-          'numberOfCharacters': 2
+          'numberOfPlayers': 2
         },
         [village.RoleId.werehamster]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
           'id': village.RoleId.werehamster,
           'image': ImagePath.Role.werehamster,
           'name': Role.werehamster,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         }
       }
     }
@@ -1018,56 +1018,56 @@ describe('socket/MESSAGE', () => {
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
-          'numberOfCharacters': 6
+          'numberOfPlayers': 6
         },
         [village.RoleId.seer]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
           'id': village.RoleId.seer,
           'image': ImagePath.Role.seer,
           'name': Role.seer,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.medium]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
           'id': village.RoleId.medium,
           'image': ImagePath.Role.medium,
           'name': Role.medium,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.hunter]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
           'id': village.RoleId.hunter,
           'image': ImagePath.Role.hunter,
           'name': Role.hunter,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.mason]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
           'id': village.RoleId.mason,
           'image': ImagePath.Role.mason,
           'name': Role.mason,
-          'numberOfCharacters': 2
+          'numberOfPlayers': 2
         },
         [village.RoleId.madman]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
           'id': village.RoleId.madman,
           'image': ImagePath.Role.madman,
           'name': Role.madman,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.werewolf]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
-          'numberOfCharacters': 2
+          'numberOfPlayers': 2
         },
         [village.RoleId.werehamster]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
           'id': village.RoleId.werehamster,
           'image': ImagePath.Role.werehamster,
           'name': Role.werehamster,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         }
       }
     }
@@ -1772,14 +1772,14 @@ describe('socket/MESSAGE', () => {
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
-          'numberOfCharacters': 3
+          'numberOfPlayers': 3
         },
         [village.RoleId.werewolf]: {
           '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         }
       }
     }
@@ -1938,42 +1938,42 @@ describe('socket/MESSAGE', () => {
           'id': village.RoleId.villager,
           'image': ImagePath.Role.villager,
           'name': Role.villager,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.seer]: {
           '@id': `https://licos.online/state/${VERSION}/village#29/role#seer`,
           'id': village.RoleId.seer,
           'image': ImagePath.Role.seer,
           'name': Role.seer,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.medium]: {
           '@id': `https://licos.online/state/${VERSION}/village#29/role#medium`,
           'id': village.RoleId.medium,
           'image': ImagePath.Role.medium,
           'name': Role.medium,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.mason]: {
           '@id': `https://licos.online/state/${VERSION}/village#29/role#mason`,
           'id': village.RoleId.mason,
           'image': ImagePath.Role.mason,
           'name': Role.mason,
-          'numberOfCharacters': 2
+          'numberOfPlayers': 2
         },
         [village.RoleId.madman]: {
           '@id': `https://licos.online/state/${VERSION}/village#29/role#madman`,
           'id': village.RoleId.madman,
           'image': ImagePath.Role.madman,
           'name': Role.madman,
-          'numberOfCharacters': 1
+          'numberOfPlayers': 1
         },
         [village.RoleId.werewolf]: {
           '@id': `https://licos.online/state/${VERSION}/village#29/role#werewolf`,
           'id': village.RoleId.werewolf,
           'image': ImagePath.Role.werewolf,
           'name': Role.werewolf,
-          'numberOfCharacters': 2
+          'numberOfPlayers': 2
         }
       }
     }
@@ -2399,56 +2399,56 @@ test('CHANGE_PREDICTION_BOARD', () => {
         'id': village.RoleId.villager,
         'image': ImagePath.Role.villager,
         'name': Role.villager,
-        'numberOfCharacters': 6
+        'numberOfPlayers': 6
       },
       [village.RoleId.seer]: {
         '@id': `https://licos.online/state/${VERSION}/village#3/role#seer`,
         'id': village.RoleId.seer,
         'image': ImagePath.Role.seer,
         'name': Role.seer,
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       [village.RoleId.medium]: {
         '@id': `https://licos.online/state/${VERSION}/village#3/role#medium`,
         'id': village.RoleId.medium,
         'image': ImagePath.Role.medium,
         'name': Role.medium,
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       [village.RoleId.hunter]: {
         '@id': `https://licos.online/state/${VERSION}/village#3/role#hunter`,
         'id': village.RoleId.hunter,
         'image': ImagePath.Role.hunter,
         'name': Role.hunter,
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       [village.RoleId.mason]: {
         '@id': `https://licos.online/state/${VERSION}/village#3/role#mason`,
         'id': village.RoleId.mason,
         'image': ImagePath.Role.mason,
         'name': Role.mason,
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       [village.RoleId.madman]: {
         '@id': `https://licos.online/state/${VERSION}/village#3/role#madman`,
         'id': village.RoleId.madman,
         'image': ImagePath.Role.madman,
         'name': Role.madman,
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       },
       [village.RoleId.werewolf]: {
         '@id': `https://licos.online/state/${VERSION}/village#3/role#werewolf`,
         'id': village.RoleId.werewolf,
         'image': ImagePath.Role.werewolf,
         'name': Role.werewolf,
-        'numberOfCharacters': 2
+        'numberOfPlayers': 2
       },
       [village.RoleId.werehamster]: {
         '@id': `https://licos.online/state/${VERSION}/village#3/role#werehamster`,
         'id': village.RoleId.werehamster,
         'image': ImagePath.Role.werehamster,
         'name': Role.werehamster,
-        'numberOfCharacters': 1
+        'numberOfPlayers': 1
       }
     }
   }

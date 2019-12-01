@@ -25,7 +25,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#1/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       '@payload': village.Message.chatMessage,
       'character': {
         '@context': village.Context.Character,
@@ -41,7 +41,7 @@ describe('socket/MESSAGE', () => {
       'extensionalDisclosureRange': [],
       'id': 1,
       'intensionalDisclosureRange': village.Channel.public,
-      'interval': '5s',
+      'interval': 5,
       'isFromServer': true,
       'isMine': false,
       'isOver': false,
@@ -66,9 +66,9 @@ describe('socket/MESSAGE', () => {
           'maxNumberOfChatMessages': 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     },
     {
@@ -76,7 +76,7 @@ describe('socket/MESSAGE', () => {
         village.BaseContext.Base,
         village.BaseContext.Chat
       ],
-      '@id': `https://licos.online/state/${VERSION}/village#3/flavorText#2/chatMessage`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
       '@payload': village.Message.chatMessage,
       'character': {
         '@context': village.Context.Character,
@@ -92,7 +92,7 @@ describe('socket/MESSAGE', () => {
       'extensionalDisclosureRange': [],
       'id': 1,
       'intensionalDisclosureRange': village.Channel.public,
-      'interval': '5s',
+      'interval': 5,
       'isFromServer': true,
       'isMine': false,
       'isOver': false,
@@ -117,9 +117,9 @@ describe('socket/MESSAGE', () => {
           'maxNumberOfChatMessages': 10
         },
         'id': 3,
-        'lang': village.Language.en,
+        'language': village.Language.en,
         'name': '横国の森の奥にある時代に取り残された小さな村',
-        'totalNumberOfCharacters': 15
+        'totalNumberOfPlayers': 15
       }
     }
   ]
@@ -150,9 +150,9 @@ describe('socket/MESSAGE', () => {
         'maxNumberOfChatMessages': 10
       },
       'id': 3,
-      'lang': village.Language.en,
+      'language': village.Language.en,
       'name': '横国の森の奥にある時代に取り残された小さな村',
-      'totalNumberOfCharacters': 15
+      'totalNumberOfPlayers': 15
     }
   }
 

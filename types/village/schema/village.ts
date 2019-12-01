@@ -11,7 +11,7 @@ export interface Village {
   '@context': Context.Village
   '@id': string
   id: VillageId
-  lang: Language
+  language: Language
   name: string
-  totalNumberOfCharacters: number
+  totalNumberOfPlayers: number
 }

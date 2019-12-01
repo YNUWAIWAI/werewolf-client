@@ -77,9 +77,9 @@ const client2server: Middleware = store => next => action => {
             'maxNumberOfChatMessages': state.base.village.chatSettings.maxNumberOfChatMessages
           },
           'id': state.base.village.id,
-          'lang': state.base.village.lang,
+          'language': state.base.village.language,
           'name': state.base.village.name,
-          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
+          'totalNumberOfPlayers': state.base.village.totalNumberOfPlayers
         }
       }
 
@@ -149,9 +149,9 @@ const client2server: Middleware = store => next => action => {
             'maxNumberOfChatMessages': state.base.village.chatSettings.maxNumberOfChatMessages
           },
           'id': state.base.village.id,
-          'lang': state.base.village.lang,
+          'language': state.base.village.language,
           'name': state.base.village.name,
-          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
+          'totalNumberOfPlayers': state.base.village.totalNumberOfPlayers
         }
       }
 
@@ -221,9 +221,9 @@ const client2server: Middleware = store => next => action => {
             'maxNumberOfChatMessages': state.base.village.chatSettings.maxNumberOfChatMessages
           },
           'id': state.base.village.id,
-          'lang': state.base.village.lang,
+          'language': state.base.village.language,
           'name': state.base.village.name,
-          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
+          'totalNumberOfPlayers': state.base.village.totalNumberOfPlayers
         }
       }
 
@@ -287,9 +287,9 @@ const client2server: Middleware = store => next => action => {
             'maxNumberOfChatMessages': state.base.village.chatSettings.maxNumberOfChatMessages
           },
           'id': state.base.village.id,
-          'lang': state.base.village.lang,
+          'language': state.base.village.language,
           'name': state.base.village.name,
-          'totalNumberOfCharacters': state.base.village.totalNumberOfCharacters
+          'totalNumberOfPlayers': state.base.village.totalNumberOfPlayers
         }
       }
 

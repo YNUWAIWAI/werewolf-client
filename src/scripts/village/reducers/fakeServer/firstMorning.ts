@@ -253,7 +253,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.master,
       'isMine': false,
       'name': Role.master,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -277,7 +277,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.villager,
       'isMine': false,
       'name': Role.villager,
-      'numberOfCharacters': 6
+      'numberOfPlayers': 6
     },
     {
       '@context': village.Context.Role,
@@ -497,7 +497,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.seer,
       'isMine': true,
       'name': Role.seer,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -521,7 +521,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.medium,
       'isMine': false,
       'name': Role.medium,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -545,7 +545,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.hunter,
       'isMine': false,
       'name': Role.hunter,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -569,7 +569,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.mason,
       'isMine': false,
       'name': Role.mason,
-      'numberOfCharacters': 2
+      'numberOfPlayers': 2
     },
     {
       '@context': village.Context.Role,
@@ -593,7 +593,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.madman,
       'isMine': false,
       'name': Role.madman,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     },
     {
       '@context': village.Context.Role,
@@ -617,7 +617,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.werewolf,
       'isMine': false,
       'name': Role.werewolf,
-      'numberOfCharacters': 2
+      'numberOfPlayers': 2
     },
     {
       '@context': village.Context.Role,
@@ -641,7 +641,7 @@ export const firstMorning: village.Payload$SystemMessage = {
       'image': ImagePath.Role.werehamster,
       'isMine': false,
       'name': Role.werehamster,
-      'numberOfCharacters': 1
+      'numberOfPlayers': 1
     }
   ],
   'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
@@ -656,9 +656,9 @@ export const firstMorning: village.Payload$SystemMessage = {
       'maxNumberOfChatMessages': 10
     },
     'id': 3,
-    'lang': village.Language.ja,
+    'language': village.Language.ja,
     'name': '横国の森の奥にある時代に取り残された小さな村',
-    'totalNumberOfCharacters': 15
+    'totalNumberOfPlayers': 15
   },
   'votingResultsDetails': [],
   'votingResultsSummary': []

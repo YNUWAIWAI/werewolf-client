@@ -78,8 +78,8 @@ export default class SettingsBox extends React.Component<Props, State> {
     switch (propName) {
       case PropName.language:
         return valid => value => {
-          const lang = [lobby.Language.en, lobby.Language.fr, lobby.Language.it, lobby.Language.ja]
-          const maybe = lang.find(v => v === value)
+          const language = [lobby.Language.en, lobby.Language.fr, lobby.Language.it, lobby.Language.ja]
+          const maybe = language.find(v => v === value)
 
           if (maybe) {
             this.setState({

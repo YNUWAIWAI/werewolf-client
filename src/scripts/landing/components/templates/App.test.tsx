@@ -11,7 +11,7 @@ test('render', () => {
   const wrapper = shallow(
     <App
       csrfToken="token"
-      lang={Language.en}
+      language={Language.en}
       loginAction="/login"
       loginError={false}
       signupAction="/signup"
@@ -28,7 +28,7 @@ test('setIsSignup', () => {
   const wrapper = shallow(
     <App
       csrfToken="token"
-      lang={Language.en}
+      language={Language.en}
       loginAction="/login"
       loginError={false}
       signupAction="/signup"

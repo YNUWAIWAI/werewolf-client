@@ -1,12 +1,12 @@
 /* eslint no-console: 0 */
 import {lobby} from './types'
 
-const VERSION = 2
+const VERSION = 3
 
 export const enum Key {
   buildVillagePayload = 'buildVillagePayload',
   isHost = 'isHost',
-  lang = 'lang',
+  language = 'language',
   nextGameVillageId = 'nextGameVillageId',
   village = 'village',
   whatToDoNextInLobby = 'whatToDoNextInLobby'

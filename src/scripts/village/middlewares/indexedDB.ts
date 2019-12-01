@@ -72,13 +72,13 @@ const indexedDBMiddleware: Middleware = store => next => action => {
         .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')
           const objectStore = transaction.objectStore('licosDB')
-          const [lang, isHost, villageInfo] = await Promise.all([
-            getValue<village.Language>(objectStore, Key.lang),
+          const [language, isHost, villageInfo] = await Promise.all([
+            getValue<village.Language>(objectStore, Key.language),
             getValue<village.Language>(objectStore, Key.isHost),
             getValue<Village>(objectStore, Key.village)
           ])
 
-          store.dispatch(changeLanguage(lang))
+          store.dispatch(changeLanguage(language))
           if (isHost) {
             store.dispatch(activateNextButton(-1))
           }

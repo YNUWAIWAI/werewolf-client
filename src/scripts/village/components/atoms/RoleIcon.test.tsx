@@ -32,13 +32,13 @@ describe('<RoleIcon />', () => {
     expect(wrapper.find('.className--image').exists()).toBe(true)
     expect(wrapper.find('.className--name').exists()).toBe(true)
   })
-  test('numberOfCharacters', () => {
+  test('numberOfPlayers', () => {
     const wrapper = shallow(
       <RoleIcon
         className="className"
         image="image"
         name="name"
-        numberOfCharacters={1}
+        numberOfPlayers={1}
       />
     )
 
