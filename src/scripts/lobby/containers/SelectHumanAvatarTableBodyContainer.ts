@@ -1,8 +1,6 @@
-
-import * as ActionTypes from '../constants/ActionTypes'
 import {
-  SelectHumanAvatar$ChangeAvatarCheckbox,
-  changeAvatarCheckbox
+  SelectHumanAvatar$ChangeCheckbox,
+  selectHumanAvatar
 } from '../actions'
 import SelectHumanAvatarTableBody, {
   DispatchProps,
@@ -13,7 +11,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | SelectHumanAvatar$ChangeAvatarCheckbox
+  | SelectHumanAvatar$ChangeCheckbox
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectHumanAvatar.avatar
@@ -23,7 +21,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     console.log(valid, value)
   },
   handleSelectAvatar: id => () => {
-    dispatch(changeAvatarCheckbox(ActionTypes.Scope.SelectHumanAvatar)(id))
+    dispatch(selectHumanAvatar.changeCheckbox(id))
   }
 })
 const SelectHumanAvatarTableBodyContainer = connect(

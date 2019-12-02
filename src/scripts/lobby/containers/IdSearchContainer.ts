@@ -11,7 +11,6 @@ import {
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
-import {Scope} from '../constants/ActionTypes'
 import {connect} from 'react-redux'
 
 type Action =
