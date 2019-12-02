@@ -5,12 +5,11 @@ import {Avatar} from './avatar'
 import {Base} from './base'
 import {BoardResult} from './boardResult'
 import {Character} from './character'
-import {PayloadBase} from '../payload'
 import {Role} from './role'
 import {Time} from './time'
 import {VotingResult} from './votingResult'
 
-export interface SystemMessage extends PayloadBase {
+export interface SystemMessage {
   '@context': Base['@context']
   '@id': Base['@id']
   avatar?: Base['avatar']

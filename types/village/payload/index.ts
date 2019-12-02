@@ -56,17 +56,21 @@ export type Payload =
   | Payload$StarMessage
   | Payload$SystemMessage
   | Payload$VoteMessage
-export interface PayloadBase {
-  '@id'?: string
-  'type'?: PayloadType
+export interface Payload$BoardMessage extends BoardMessage {
+  type?: undefined
 }
-export interface Payload$BoardMessage extends BoardMessage {}
 export interface Payload$BuildVillage extends BuildVillage {
   '@id'?: undefined
 }
-export interface Payload$ChatMessage extends ChatMessage {}
-export interface Payload$ErrorMessage extends ErrorMessage {}
-export interface Payload$FlavorTextMessage extends FlavorTextMessage {}
+export interface Payload$ChatMessage extends ChatMessage {
+  type?: undefined
+}
+export interface Payload$ErrorMessage extends ErrorMessage {
+  type?: undefined
+}
+export interface Payload$FlavorTextMessage extends FlavorTextMessage {
+  type?: undefined
+}
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {
   '@id'?: undefined
 }
@@ -88,7 +92,15 @@ export interface Payload$ReceivedFlavorTextMessage extends ReceivedFlavorTextMes
 export interface Payload$ReceivedSystemMessage extends ReceivedSystemMessage {
   '@id'?: undefined
 }
-export interface Payload$ScrollMessage extends ScrollMessage {}
-export interface Payload$StarMessage extends StarMessage {}
-export interface Payload$SystemMessage extends SystemMessage {}
-export interface Payload$VoteMessage extends VoteMessage {}
+export interface Payload$ScrollMessage extends ScrollMessage {
+  type?: undefined
+}
+export interface Payload$StarMessage extends StarMessage {
+  type?: undefined
+}
+export interface Payload$SystemMessage extends SystemMessage {
+  type?: undefined
+}
+export interface Payload$VoteMessage extends VoteMessage {
+  type?: undefined
+}

@@ -4,10 +4,9 @@
 import {Base} from './base'
 import {Board} from './board'
 import {Character} from './character'
-import {PayloadBase} from '../payload'
 import {Role} from './role'
 
-export interface BoardMessage extends PayloadBase {
+export interface BoardMessage {
   '@context': Base['@context']
   '@id': Base['@id']
   avatar?: Base['avatar']

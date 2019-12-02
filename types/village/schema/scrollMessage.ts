@@ -2,10 +2,9 @@
   'https://werewolf.world/village/schema/0.3/scrollMessage.json'
 */
 import {Base} from './base'
-import {PayloadBase} from '../payload'
 import {Scroll} from './scroll'
 
-export interface ScrollMessage extends PayloadBase {
+export interface ScrollMessage {
   '@context': Base['@context']
   '@id': Base['@id']
   avatar?: Base['avatar']

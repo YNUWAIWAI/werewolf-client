@@ -3,9 +3,8 @@
 */
 import {Base} from './base'
 import {ChatMessage} from './chatMessage'
-import {PayloadBase} from '../payload'
 
-export interface FlavorTextMessage extends PayloadBase {
+export interface FlavorTextMessage {
   '@context': Base['@context']
   '@id': Base['@id']
   avatar?: Base['avatar']

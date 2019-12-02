@@ -4,9 +4,8 @@
 import {Base} from './base'
 import {Character} from './character'
 import {Chat} from './chat'
-import {PayloadBase} from '../payload'
 
-export interface ChatMessage extends PayloadBase {
+export interface ChatMessage {
   '@context': Base['@context']
   '@id': Base['@id']
   avatar?: Base['avatar']
