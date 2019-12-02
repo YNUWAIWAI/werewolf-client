@@ -165,65 +165,59 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Socket.MESSAGE: {
-      switch (action.payload.type) {
-        case lobby.PayloadType.played: {
-          const payload = action.payload
+    case ActionTypes.Message.PLAYED: {
+      const payload = action.payload
 
-          connectDB()
-            .then(async db => {
-              const transaction = db.transaction('licosDB', 'readwrite')
-              const objectStore = transaction.objectStore('licosDB')
+      connectDB()
+        .then(async db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
 
-              await updateValue<lobby.Language>(
-                objectStore,
-                Key.language,
-                payload.lang
-              )
-              store.dispatch(showVillage())
-            })
-            .catch(reason => console.error(reason))
+          await updateValue<lobby.Language>(
+            objectStore,
+            Key.language,
+            payload.lang
+          )
+          store.dispatch(showVillage())
+        })
+        .catch(reason => console.error(reason))
 
-          return next(action)
-        }
-        case lobby.PayloadType.waitingPage: {
-          const payload = action.payload
-          const state = store.getState()
+      return next(action)
+    }
+    case ActionTypes.Message.WAITING_PAGE: {
+      const payload = action.payload
+      const state = store.getState()
 
-          connectDB()
-            .then(db => {
-              const transaction = db.transaction('licosDB', 'readwrite')
-              const objectStore = transaction.objectStore('licosDB')
+      connectDB()
+        .then(db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
 
-              Promise.all([
-                updateValue<Village>(
-                  objectStore,
-                  Key.village,
-                  {
-                    lobbyType: state.token.lobby,
-                    token: state.token[state.token.lobby],
-                    villageId: payload.village.id
-                  }
-                ),
-                updateValue<boolean>(
-                  objectStore,
-                  Key.isHost,
-                  payload.players.some(player => player.isHost && player.isMe)
-                ),
-                updateValue<WhatToDoNextInLobby>(
-                  objectStore,
-                  Key.whatToDoNextInLobby,
-                  WhatToDoNextInLobby.selectVillage
-                )
-              ])
-            })
-            .catch(reason => console.error(reason))
+          Promise.all([
+            updateValue<Village>(
+              objectStore,
+              Key.village,
+              {
+                lobbyType: state.token.lobby,
+                token: state.token[state.token.lobby],
+                villageId: payload.village.id
+              }
+            ),
+            updateValue<boolean>(
+              objectStore,
+              Key.isHost,
+              payload.players.some(player => player.isHost && player.isMe)
+            ),
+            updateValue<WhatToDoNextInLobby>(
+              objectStore,
+              Key.whatToDoNextInLobby,
+              WhatToDoNextInLobby.selectVillage
+            )
+          ])
+        })
+        .catch(reason => console.error(reason))
 
-          return next(action)
-        }
-        default:
-          return next(action)
-      }
+      return next(action)
     }
     case ActionTypes.Socket.SEND:
       switch (action.payload.type) {
