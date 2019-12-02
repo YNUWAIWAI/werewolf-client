@@ -2,7 +2,8 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangeLobby,
   ConfirmKickOutPlayer,
-  SocketMessage,
+  Message$Played,
+  Message$WaitingPage,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -18,7 +19,8 @@ export interface State {
 type Action =
   | ChangeLobby
   | ConfirmKickOutPlayer
-  | SocketMessage
+  | Message$Played
+  | Message$WaitingPage
   | Transition
 
 export const initialState: State = {
@@ -174,53 +176,48 @@ const waitingForPlayers = (state: State = initialState, action: Action): State =
           }
         ]
       }
-    case ActionTypes.Socket.MESSAGE:
-      switch (action.payload.type) {
-        case lobby.PayloadType.played: {
-          return {
-            ... state,
-            menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.App.PLAY_GAME)) {
-                return {
-                  ... item,
-                  isLoading: false
-                }
-              }
-
-              return item
-            })
-          }
-        }
-        case lobby.PayloadType.waitingPage: {
-          const payload = action.payload
-
-          if (payload.players.some(player => player.isHost && player.isMe)) {
+    case ActionTypes.Message.PLAYED: {
+      return {
+        ... state,
+        menuItems: state.menuItems.map(item => {
+          if (item.types.includes(ActionTypes.App.PLAY_GAME)) {
             return {
-              ... state,
-              menuItems: state.menuItems.map(item => {
-                if (item.types.includes(ActionTypes.App.PLAY_GAME)) {
-                  return {
-                    ... item,
-                    disabled: false
-                  }
-                }
-
-                return item
-              }),
-              players: payload.players,
-              village: payload.village
+              ... item,
+              isLoading: false
             }
           }
 
-          return {
-            ... state,
-            players: payload.players,
-            village: payload.village
-          }
-        }
-        default:
-          return state
+          return item
+        })
       }
+    }
+    case ActionTypes.Message.WAITING_PAGE: {
+      const payload = action.payload
+
+      if (payload.players.some(player => player.isHost && player.isMe)) {
+        return {
+          ... state,
+          menuItems: state.menuItems.map(item => {
+            if (item.types.includes(ActionTypes.App.PLAY_GAME)) {
+              return {
+                ... item,
+                disabled: false
+              }
+            }
+
+            return item
+          }),
+          players: payload.players,
+          village: payload.village
+        }
+      }
+
+      return {
+        ... state,
+        players: payload.players,
+        village: payload.village
+      }
+    }
     default:
       return state
   }
