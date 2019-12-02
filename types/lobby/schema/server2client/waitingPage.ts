@@ -7,7 +7,7 @@ import {
 } from '../..'
 import {PayloadType} from '../../payload'
 
-export interface WatingPage {
+export interface WaitingPage {
   error: string | null
   players: WaitingPlayer[]
   type: PayloadType.waitingPage

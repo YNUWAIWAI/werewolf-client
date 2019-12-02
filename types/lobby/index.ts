@@ -23,7 +23,7 @@ export {
   Payload$SearchResult,
   Payload$SelectVillage,
   Payload$Settings,
-  Payload$WatingPage
+  Payload$WaitingPage
 } from './payload'
 export const enum Avatar {
   fixed = 'fixed',

@@ -1,6 +1,6 @@
 import {lobby} from '../../types'
 
-export const waitingPage2: lobby.Payload$WatingPage = {
+export const waitingPage2: lobby.Payload$WaitingPage = {
   error: null,
   players: [
     {
