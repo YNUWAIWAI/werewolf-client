@@ -8,7 +8,7 @@ import {
   BuildVillage$ChangeValidity,
   BuildVillage$ChangeVillageName,
   ChangeLobby,
-  SocketMessage,
+  Message$Avatar,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -51,7 +51,7 @@ type Action =
   | BuildVillage$ChangeValidity
   | BuildVillage$ChangeVillageName
   | ChangeLobby
-  | SocketMessage
+  | Message$Avatar
   | Transition
 
 export const initialState: State = {
@@ -284,24 +284,19 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           isHuman: false
         }
       }
-    case ActionTypes.Socket.MESSAGE:
-      switch (action.payload.type) {
-        case lobby.PayloadType.avatar: {
-          const payload = action.payload
+    case ActionTypes.Message.AVATAR: {
+      const payload = action.payload
 
-          return {
-            ... state,
-            image: payload.image,
-            initialFixedValue: {
-              hostName: payload.name,
-              villageName: `${payload.name}'s village`
-            },
-            name: payload.name
-          }
-        }
-        default:
-          return state
+      return {
+        ... state,
+        image: payload.image,
+        initialFixedValue: {
+          hostName: payload.name,
+          villageName: `${payload.name}'s village`
+        },
+        name: payload.name
       }
+    }
     default:
       return state
   }
