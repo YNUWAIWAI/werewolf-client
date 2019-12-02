@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './timer'
 import {firstMorning} from './fakeServer'
-import {socket} from '../actions'
+import {message} from '../actions'
 
 test('TICK', () => {
   expect(
@@ -22,11 +22,11 @@ test('TICK', () => {
     }
   )
 })
-test('socket/MESSAGE', () => {
+test('message/SYSTEM_MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      socket.message(firstMorning)
+      message.systemMessage(firstMorning)
     )
   ).toStrictEqual(
     {

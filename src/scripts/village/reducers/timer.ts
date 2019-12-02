@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  SocketMessage,
+  Message$FlavorTextMessage,
+  Message$SystemMessage,
   Tick
 } from '../actions'
 import {village} from '../types'
@@ -12,7 +13,8 @@ export interface State {
   readonly time: DOMHighResTimeStamp
 }
 type Action =
-  | SocketMessage
+  | Message$SystemMessage
+  | Message$FlavorTextMessage
   | Tick
 
 export const initialState = {
@@ -29,11 +31,8 @@ const timer = (state: State = initialState, action: Action): State => {
         start: action.start,
         time: action.time
       }
-    case ActionTypes.Socket.MESSAGE:
-      if (
-        action.payload['@payload'] === village.Message.systemMessage ||
-        (action.payload['@payload'] === village.Message.flavorTextMessage && action.payload.day === 0)
-      ) {
+    case ActionTypes.Message.FLAVOR_TEXT_MESSAGE:
+      if (action.payload.day === 0) {
         return {
           ... state,
           phaseStartTime: new Date(action.payload.phaseStartTime).getTime(),
@@ -42,6 +41,12 @@ const timer = (state: State = initialState, action: Action): State => {
       }
 
       return state
+    case ActionTypes.Message.SYSTEM_MESSAGE:
+      return {
+        ... state,
+        phaseStartTime: new Date(action.payload.phaseStartTime).getTime(),
+        phaseTimeLimit: action.payload.phaseTimeLimit * 1000
+      }
     default:
       return state
   }
