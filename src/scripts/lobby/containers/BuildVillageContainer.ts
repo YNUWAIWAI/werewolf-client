@@ -11,13 +11,7 @@ import {
   BuildVillage$ChangeNumberOfRobots,
   BuildVillage$ChangeValidity,
   BuildVillage$ChangeVillageName,
-  changeAvatar,
-  changeComment,
-  changeMember,
-  changeNumberOfPlayers,
-  changeNumberOfRobots,
-  changeValidity,
-  changeVillageName
+  buildVillage
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
@@ -70,29 +64,29 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarChange: value => {
-    dispatch(changeAvatar(ActionTypes.Scope.BuildVillage)(value))
+    dispatch(buildVillage.changeAvatar(value))
   },
   handleMemberChange: value => {
-    dispatch(changeMember(ActionTypes.Scope.BuildVillage)(value))
+    dispatch(buildVillage.changeMember(value))
   },
   handleNumberChange: propName => value => {
     if (propName === 'numberOfPlayers') {
-      dispatch(changeNumberOfPlayers(ActionTypes.Scope.BuildVillage)(value))
+      dispatch(buildVillage.changeNumberOfPlayers(value))
     }
     if (propName === 'numberOfRobots') {
-      dispatch(changeNumberOfRobots(ActionTypes.Scope.BuildVillage)(value))
+      dispatch(buildVillage.changeNumberOfRobots(value))
     }
   },
   handleTextChange: propName => value => {
     if (propName === 'comment') {
-      dispatch(changeComment(ActionTypes.Scope.BuildVillage)(value))
+      dispatch(buildVillage.changeComment(value))
     }
     if (propName === 'villageName') {
-      dispatch(changeVillageName(ActionTypes.Scope.BuildVillage)(value))
+      dispatch(buildVillage.changeVillageName(value))
     }
   },
   handleValidityChange: propName => validity => {
-    dispatch(changeValidity(ActionTypes.Scope.BuildVillage)(propName)(validity))
+    dispatch(buildVillage.changeValidity(propName)(validity))
   }
 })
 const BuildVillageContainer = connect(
