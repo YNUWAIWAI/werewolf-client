@@ -3,6 +3,7 @@ export const enum Scope {
   BuildVillage = 'BuildVillage',
   IdSearch = 'IdSearch',
   IndexedDB = 'IndexedDB',
+  Message = 'Message',
   SelectHumanAvatar = 'SelectHumanAvatar',
   SelectRobotAvatar = 'SelectRobotAvatar',
   Socket = 'Socket'
