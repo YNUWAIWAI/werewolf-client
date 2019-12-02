@@ -5,6 +5,7 @@ import {
 } from './fakeServer'
 import reducer, {initialState} from './advancedSearch'
 import {lobby} from '../types'
+import {message} from '../actions'
 
 test('ADVANCED_SEARCH', () => {
   expect(
@@ -675,57 +676,29 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     }
   )
 })
-describe('socket/MESSAGE', () => {
-  test('avatar', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          payload: avatar,
-          type: ActionTypes.Socket.MESSAGE
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        image: '/assets/images/avatar/default/user.png',
-        name: 'Alice'
-      }
+test('message/AVATAR', () => {
+  expect(
+    reducer(
+      initialState,
+      message.avatar(avatar)
     )
-  })
-  describe('searchResult', () => {
-    expect(
-      reducer(
-        {
-          ... initialState,
-          menuItems: [
-            {
-              id: 'Menu.search',
-              isLoading: true,
-              types: [ActionTypes.App.ADVANCED_SEARCH]
-            },
-            {
-              id: 'Menu.returnToLobbyForAudience',
-              types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
-            },
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ]
-        },
-        {
-          payload: searchResult,
-          type: ActionTypes.Socket.MESSAGE
-        }
-      )
-    ).toStrictEqual(
+  ).toStrictEqual(
+    {
+      ... initialState,
+      image: '/assets/images/avatar/default/user.png',
+      name: 'Alice'
+    }
+  )
+})
+test('searchResult', () => {
+  expect(
+    reducer(
       {
         ... initialState,
         menuItems: [
           {
             id: 'Menu.search',
-            isLoading: false,
+            isLoading: true,
             types: [ActionTypes.App.ADVANCED_SEARCH]
           },
           {
@@ -736,46 +709,66 @@ describe('socket/MESSAGE', () => {
             id: 'Menu.returnToMainPage',
             types: [ActionTypes.App.SHOW_MAIN]
           }
-        ],
-        searched: true,
-        villageItems: [
-          {
-            avatar: 'fixed',
-            comment: null,
-            hostPlayer: {
-              isAnonymous: false,
-              isHuman: true,
-              name: 'Alice'
-            },
-            id: 1,
-            idForSearching: 123,
-            name: 'Alice\'s village',
-            playerSetting: {
-              current: 8,
-              human: {
-                current: 5,
-                max: 8
-              },
-              number: 15,
-              robot: {
-                current: 3,
-                min: 7
-              }
-            },
-            roleSetting: {
-              hunter: 1,
-              madman: 1,
-              mason: 2,
-              medium: 1,
-              seer: 1,
-              villager: 6,
-              werehamster: 1,
-              werewolf: 2
-            }
-          }
         ]
-      }
+      },
+      message.searchResult(searchResult)
     )
-  })
+  ).toStrictEqual(
+    {
+      ... initialState,
+      menuItems: [
+        {
+          id: 'Menu.search',
+          isLoading: false,
+          types: [ActionTypes.App.ADVANCED_SEARCH]
+        },
+        {
+          id: 'Menu.returnToLobbyForAudience',
+          types: [ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE]
+        },
+        {
+          id: 'Menu.returnToMainPage',
+          types: [ActionTypes.App.SHOW_MAIN]
+        }
+      ],
+      searched: true,
+      villageItems: [
+        {
+          avatar: 'fixed',
+          comment: null,
+          hostPlayer: {
+            isAnonymous: false,
+            isHuman: true,
+            name: 'Alice'
+          },
+          id: 1,
+          idForSearching: 123,
+          name: 'Alice\'s village',
+          playerSetting: {
+            current: 8,
+            human: {
+              current: 5,
+              max: 8
+            },
+            number: 15,
+            robot: {
+              current: 3,
+              min: 7
+            }
+          },
+          roleSetting: {
+            hunter: 1,
+            madman: 1,
+            mason: 2,
+            medium: 1,
+            seer: 1,
+            villager: 6,
+            werehamster: 1,
+            werewolf: 2
+          }
+        }
+      ]
+    }
+  )
 })
 
