@@ -86,9 +86,7 @@ export const createMiddleware = ({history, url}: Options) => {
     )
   )
 }
-export const createRouterMiddleware = (history: Options['history']) => {
-  return applyMiddleware(
-    router(history),
-    logger
-  )
-}
+export const createRouterMiddleware = (history: Options['history']) => applyMiddleware(
+  router(history),
+  logger
+)

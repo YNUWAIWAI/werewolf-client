@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangePhase,
-  SelectYes,
-  Message$SystemMessage
+  Message$SystemMessage,
+  SelectYes
 } from '../actions'
 import {VOTING_PHASE} from '../constants/Phase'
 import {just} from '../util'
