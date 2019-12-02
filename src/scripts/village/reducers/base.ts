@@ -1,5 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SocketMessage} from '../actions'
+import {
+  Message$BoardMessage,
+  Message$ErrorMessage,
+  Message$FlavorTextMessage,
+  Message$ScrollMessage,
+  Message$SystemMessage,
+  Message$VoteMessage
+} from '../actions'
 import {getBaseUri} from '../util'
 import {village} from '../types'
 
@@ -26,7 +33,12 @@ export interface State {
   }
 }
 type Action =
-  | SocketMessage
+  | Message$BoardMessage
+  | Message$ErrorMessage
+  | Message$FlavorTextMessage
+  | Message$ScrollMessage
+  | Message$SystemMessage
+  | Message$VoteMessage
 
 export const initialState: State = {
   '@id': '',
@@ -51,15 +63,13 @@ export const initialState: State = {
   }
 }
 const base = (state: State = initialState, action: Action): State => {
-  if (action.type === ActionTypes.Socket.MESSAGE) {
-    if (
-      action.payload['@payload'] === village.Message.boardMessage ||
-      action.payload['@payload'] === village.Message.errorMessage ||
-      action.payload['@payload'] === village.Message.flavorTextMessage ||
-      action.payload['@payload'] === village.Message.scrollMessage ||
-      action.payload['@payload'] === village.Message.systemMessage ||
-      action.payload['@payload'] === village.Message.voteMessage
-    ) {
+  switch (action.type) {
+    case ActionTypes.Message.BOARD_MESSAGE:
+    case ActionTypes.Message.ERROR_MESSAGE:
+    case ActionTypes.Message.FLAVOR_TEXT_MESSAGE:
+    case ActionTypes.Message.SCROLL_MESSAGE:
+    case ActionTypes.Message.SYSTEM_MESSAGE:
+    case ActionTypes.Message.VOTE_MESSAGE: {
       return {
         '@id': getBaseUri(action.payload['@id']),
         'clientTimestamp': action.payload.clientTimestamp,
@@ -83,9 +93,9 @@ const base = (state: State = initialState, action: Action): State => {
         }
       }
     }
+    default:
+      return state
   }
-
-  return state
 }
 
 export default base

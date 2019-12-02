@@ -1,14 +1,14 @@
 import reducer, {initialState} from './base'
 import {VERSION} from '../constants/Version'
 import {firstMorning} from './fakeServer'
-import {socket} from '../actions'
+import {message} from '../actions'
 import {village} from '../types'
 
 test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      socket.message(firstMorning)
+      message.systemMessage(firstMorning)
     )
   ).toStrictEqual({
     '@id': `https://licos.online/state/${VERSION}/village#3`,
