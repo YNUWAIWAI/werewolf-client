@@ -1,4 +1,3 @@
-/* eslint no-console: 0 */
 import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 import {message as messageAction} from '../actions'

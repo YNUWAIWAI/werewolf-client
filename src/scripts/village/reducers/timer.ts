@@ -4,7 +4,6 @@ import {
   Message$SystemMessage,
   Tick
 } from '../actions'
-import {village} from '../types'
 
 export interface State {
   readonly phaseStartTime: number // unixtime
