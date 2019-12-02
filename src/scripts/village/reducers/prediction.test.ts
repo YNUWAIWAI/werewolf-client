@@ -14,15 +14,15 @@ import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {VERSION} from '../constants/Version'
-import {socket} from '../actions'
+import {message} from '../actions'
 import {village} from '../types'
 
-describe('socket/MESSAGE', () => {
+describe('message/SYSTEM_MESSAGE', () => {
   test('flavor text', () => {
     expect(
       reducer(
         initialState,
-        socket.message(flavorText)
+        message.systemMessage(flavorText)
       )
     ).toStrictEqual(initialState)
   })
@@ -863,7 +863,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(firstMorning)
+        message.systemMessage(firstMorning)
       )
     ).toStrictEqual(
       {
@@ -1711,7 +1711,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(firstMorning3)
+        message.systemMessage(firstMorning3)
       )
     ).toStrictEqual(
       {
@@ -1841,7 +1841,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(firstMorning4)
+        message.systemMessage(firstMorning4)
       )
     ).toStrictEqual(
       {
@@ -2243,7 +2243,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(firstMorning5)
+        message.systemMessage(firstMorning5)
       )
     ).toStrictEqual(
       {
