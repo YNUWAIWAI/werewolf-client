@@ -4,13 +4,13 @@ import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
 import {VERSION} from '../constants/Version'
 import {firstMorning} from './fakeServer'
-import {socket} from '../actions'
+import {message} from '../actions'
 
 test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      socket.message(firstMorning)
+      message.systemMessage(firstMorning)
     )
   ).toStrictEqual({
     character: {

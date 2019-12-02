@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SocketMessage} from '../actions'
+import {Message$SystemMessage} from '../actions'
 import {strToRoleId} from '../util'
 import {village} from '../types'
 
@@ -18,58 +18,55 @@ export interface State {
   }
 }
 type Action =
-  | SocketMessage
+  | Message$SystemMessage
 
 export const initialState = {}
 const mine = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Socket.MESSAGE:
-      if (action.payload['@payload'] === village.Message.systemMessage) {
-        const payload = action.payload
-        const character = (() => {
-          if (typeof payload.character === 'undefined') {
-            return payload.character
-          }
+    case ActionTypes.Message.SYSTEM_MESSAGE: {
+      const payload = action.payload
+      const character = (() => {
+        if (typeof payload.character === 'undefined') {
+          return payload.character
+        }
 
-          const maybe = payload.character.find(c => c.isMine)
+        const maybe = payload.character.find(c => c.isMine)
 
-          if (typeof maybe === 'undefined') {
-            return maybe
-          }
-
-          return {
-            '@id': maybe['@id'],
-            'id': maybe.id,
-            'image': maybe.image,
-            'name': maybe.name
-          }
-        })()
-        const role = (() => {
-          if (typeof payload.role === 'undefined') {
-            return payload.role
-          }
-
-          const maybe = payload.role.find(r => r.isMine)
-
-          if (typeof maybe === 'undefined') {
-            return maybe
-          }
-
-          return {
-            '@id': maybe['@id'],
-            'id': strToRoleId(maybe.name.en),
-            'image': maybe.image,
-            'name': maybe.name
-          }
-        })()
+        if (typeof maybe === 'undefined') {
+          return maybe
+        }
 
         return {
-          character,
-          role
+          '@id': maybe['@id'],
+          'id': maybe.id,
+          'image': maybe.image,
+          'name': maybe.name
         }
-      }
+      })()
+      const role = (() => {
+        if (typeof payload.role === 'undefined') {
+          return payload.role
+        }
 
-      return state
+        const maybe = payload.role.find(r => r.isMine)
+
+        if (typeof maybe === 'undefined') {
+          return maybe
+        }
+
+        return {
+          '@id': maybe['@id'],
+          'id': strToRoleId(maybe.name.en),
+          'image': maybe.image,
+          'name': maybe.name
+        }
+      })()
+
+      return {
+        character,
+        role
+      }
+    }
     default:
       return state
   }
