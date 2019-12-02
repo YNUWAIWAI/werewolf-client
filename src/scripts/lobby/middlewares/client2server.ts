@@ -239,23 +239,18 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Socket.MESSAGE:
-      switch (action.payload.type) {
-        case lobby.PayloadType.ping: {
-          const state = store.getState()
-          const payload: lobby.Payload$Pong = {
-            id: action.payload.id,
-            token: state.token[state.token.lobby],
-            type: lobby.PayloadType.pong
-          }
-
-          store.dispatch(socket.send(payload))
-
-          return next(action)
-        }
-        default:
-          return next(action)
+    case ActionTypes.Message.PING: {
+      const state = store.getState()
+      const payload: lobby.Payload$Pong = {
+        id: action.payload.id,
+        token: state.token[state.token.lobby],
+        type: lobby.PayloadType.pong
       }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     default:
       return next(action)
   }
