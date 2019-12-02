@@ -27,6 +27,15 @@ type Action =
   | actions.DeactivateNextButton
   | actions.HidePredictionSpec
   | actions.HideResult
+  | actions.Message$BoardMessage
+  | actions.Message$ChatMessage
+  | actions.Message$ErrorMessage
+  | actions.Message$FlavorTextMessage
+  | actions.Message$NextGameInvitation
+  | actions.Message$NextGameInvitationIsClosed
+  | actions.Message$ScrollMessage
+  | actions.Message$SystemMessage
+  | actions.Message$VoteMessage
   | actions.PostChat
   | actions.Ready
   | actions.SelectNo
