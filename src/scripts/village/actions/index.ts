@@ -13,23 +13,23 @@ export const activateNextButton = (villageId: number): ActivateNextButton => ({
 })
 
 export type ChangeDay = {
-  language: village.Language
-  type: ActionTypes.App.CHANGE_LANGUAGE
-}
-export const changeLanguage = (language: village.Language): ChangeDay => ({
-  language,
-  type: ActionTypes.App.CHANGE_LANGUAGE
-})
-
-export type ChangeLanguage = {
   from: number
   to: number
   type: ActionTypes.App.CHANGE_DAY
 }
-export const changeDay = ({from, to}: {from: number, to: number}): ChangeLanguage => ({
+export const changeDay = ({from, to}: {from: number, to: number}): ChangeDay => ({
   from,
   to,
   type: ActionTypes.App.CHANGE_DAY
+})
+
+export type ChangeLanguage = {
+  language: village.Language
+  type: ActionTypes.App.CHANGE_LANGUAGE
+}
+export const changeLanguage = (language: village.Language): ChangeLanguage => ({
+  language,
+  type: ActionTypes.App.CHANGE_LANGUAGE
 })
 
 export type ChangePhase = {
