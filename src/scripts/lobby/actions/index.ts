@@ -118,6 +118,7 @@ export type SubmitLogout = {
 export const submitLogout = (): SubmitLogout => ({
   type: ActionTypes.App.LOGOUT
 })
+
 export type Target =
   | ActionTypes.App.ADVANCED_SEARCH
   | ActionTypes.App.BUILD_VILLAGE
@@ -146,7 +147,6 @@ export type Target =
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_BACKGROUND
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND
   | ActionTypes.SelectRobotAvatar.STOP
-
 export type Transition = {
   type: Target
 }
