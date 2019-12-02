@@ -6,6 +6,7 @@ import {
   SelectNo,
   SelectOption,
   SelectYes,
+  message,
   socket
 } from '../actions'
 import {
@@ -161,11 +162,11 @@ test('socket/ERROR', () => {
     visible: true
   })
 })
-test('socket/MESSAGE', () => {
+test('message/SYSTEM_MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      socket.message(firstMorning)
+      message.systemMessage(firstMorning)
     )
   ).toStrictEqual({
     loading: true,
@@ -174,7 +175,7 @@ test('socket/MESSAGE', () => {
   expect(
     reducer(
       initialState,
-      socket.message(result)
+      message.systemMessage(result)
     )
   ).toStrictEqual({
     loading: false,
