@@ -2,15 +2,12 @@
   'https://werewolf.world/lobby/schema/0.3/server2client/watingPage.json'
 */
 import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
-import {
   Village,
   WaitingPlayer
 } from '../..'
+import {PayloadType} from '../../payload'
 
-export interface WatingPage extends PayloadBase {
+export interface WatingPage {
   error: string | null
   players: WaitingPlayer[]
   type: PayloadType.waitingPage

@@ -6,12 +6,9 @@ import {
   LobbyType,
   Token
 } from '../..'
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
+import {PayloadType} from '../../payload'
 
-export interface AdvancedSearch extends PayloadBase {
+export interface AdvancedSearch {
   avatar: Avatar
   comment: string | null
   hostName: string | null

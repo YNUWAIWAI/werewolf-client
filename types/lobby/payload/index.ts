@@ -24,9 +24,6 @@ import {
   WatingPage
 } from '../schema'
 
-export interface PayloadBase {
-  type: PayloadType
-}
 export const enum PayloadType {
   advancedSearch = 'advancedSearch',
   avatar = 'avatar',

@@ -5,12 +5,9 @@ import {
   LobbyType,
   Token
 } from '../..'
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
+import {PayloadType} from '../../payload'
 
-export interface LeaveWaitingPage extends PayloadBase {
+export interface LeaveWaitingPage {
   lobby: LobbyType
   token: Token
   type: PayloadType.leaveWaitingPage

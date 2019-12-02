@@ -5,12 +5,9 @@ import {
   LobbyType,
   Token
 } from '../..'
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
+import {PayloadType} from '../../payload'
 
-export interface IdSearch extends PayloadBase {
+export interface IdSearch {
   idForSearching: number
   lobby: LobbyType
   token: Token
