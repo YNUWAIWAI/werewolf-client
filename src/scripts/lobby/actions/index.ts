@@ -4,6 +4,8 @@ import {lobby} from '../types'
 export * from './advancedSearch'
 export * from './buildVillage'
 export * from './idSearch'
+export * from './selectHumanAvatar'
+export * from './selectRobotAvatar'
 export * from './socket'
 
 export const changeLanguage = (language: lobby.Language): {language: lobby.Language, type: ActionTypes.App.CHANGE_LANGUAGE} => ({
@@ -111,31 +113,6 @@ export type Target =
 export const transition = (target: Target): {type: Target} => ({
   type: target
 })
-type ChangeAvatarCheckboxScope =
-  | ActionTypes.Scope.SelectHumanAvatar
-  | ActionTypes.Scope.SelectRobotAvatar
-type ChangeAvatarCheckboxType =
-  | {
-    id: string
-    type: ActionTypes.SelectHumanAvatar.CHANGE_CHECKBOX
-  }
-  | {
-    id: string
-    type: ActionTypes.SelectRobotAvatar.CHANGE_CHECKBOX
-  }
-export const changeAvatarCheckbox = (scope: ChangeAvatarCheckboxScope) => (id: string): ChangeAvatarCheckboxType => {
-  if (scope === ActionTypes.Scope.SelectHumanAvatar) {
-    return {
-      id,
-      type: ActionTypes[scope].CHANGE_CHECKBOX
-    }
-  }
-
-  return {
-    id,
-    type: ActionTypes[scope].CHANGE_CHECKBOX
-  }
-}
 
 export type ChangeLanguage = ReturnType<typeof changeLanguage>
 export type ChangeLobby = ReturnType<typeof changeLobby>
@@ -150,8 +127,6 @@ export type SelectVillage = ReturnType<typeof selectVillage>
 export type SelectYes = ReturnType<typeof selectYes>
 export type ShowVillage = ReturnType<typeof showVillage>
 export type SubmitLogout = ReturnType<typeof submitLogout>
-export type SelectHumanAvatar$ChangeAvatarCheckbox = ReturnType<ReturnType<typeof changeAvatarCheckbox>>
 export type SelectHumanAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
-export type SelectRobotAvatar$ChangeAvatarCheckbox = ReturnType<ReturnType<typeof changeAvatarCheckbox>>
 export type SelectRobotAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
 export type Transition = ReturnType<typeof transition>
