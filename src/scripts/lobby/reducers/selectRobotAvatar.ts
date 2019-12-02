@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  SelectRobotAvatar$ChangeAvatarCheckbox,
+  SelectRobotAvatar$ChangeCheckbox,
   SocketMessage
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -27,7 +27,7 @@ export interface State {
   readonly selectAvatarCommand: MenuItem[]
 }
 type Action =
-  | SelectRobotAvatar$ChangeAvatarCheckbox
+  | SelectRobotAvatar$ChangeCheckbox
   | SocketMessage
 
 export const initialState: State = {
