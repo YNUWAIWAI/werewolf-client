@@ -1,13 +1,10 @@
 /*
   'https://werewolf.world/lobby/schema/0.3/client2server/kickOutPlayer.json'
 */
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
+import {PayloadType} from '../../payload'
 import {Token} from '../..'
 
-export interface KickOutPlayer extends PayloadBase{
+export interface KickOutPlayer {
   players: {
     token: Token
   }[]

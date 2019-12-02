@@ -8,12 +8,9 @@ import {
   RoleSetting,
   Token
 } from '../..'
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
+import {PayloadType} from '../../payload'
 
-export interface BuildVillage extends PayloadBase {
+export interface BuildVillage {
   avatar: Avatar
   comment: string | null
   hostPlayer: HostPlayer

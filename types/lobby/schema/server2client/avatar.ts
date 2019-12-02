@@ -5,12 +5,9 @@ import {
   Language,
   Token
 } from '../..'
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
+import {PayloadType} from '../../payload'
 
-export interface Avatar extends PayloadBase {
+export interface Avatar {
   image: string
   lang: Language
   name: string

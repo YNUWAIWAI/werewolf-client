@@ -5,12 +5,9 @@ import {
   LobbyType,
   Village
 } from '../..'
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
+import {PayloadType} from '../../payload'
 
-export interface Lobby extends PayloadBase {
+export interface Lobby {
   error: string | null
   lobby: LobbyType
   type: PayloadType.lobby
