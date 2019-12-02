@@ -139,124 +139,184 @@ export const socket = {
   })
 }
 
-export const activateNextButton = (villageId: number): {type: ActionTypes.App.ACTIVATE_NEXT_BUTTON, villageId: number} => ({
+export type ActivateNextButton = {
+  type: ActionTypes.App.ACTIVATE_NEXT_BUTTON
+  villageId: number
+}
+export const activateNextButton = (villageId: number): ActivateNextButton => ({
   type: ActionTypes.App.ACTIVATE_NEXT_BUTTON,
   villageId
 })
 
-export const changeLanguage = (language: village.Language): {language: village.Language, type: ActionTypes.App.CHANGE_LANGUAGE} => ({
+export type ChangeDay = {
+  language: village.Language
+  type: ActionTypes.App.CHANGE_LANGUAGE
+}
+export const changeLanguage = (language: village.Language): ChangeDay => ({
   language,
   type: ActionTypes.App.CHANGE_LANGUAGE
 })
 
-export const changeDay = ({from, to}: {from: number, to: number}): {from: number, to: number, type: ActionTypes.App.CHANGE_DAY} => ({
+export type ChangeLanguage = {
+  from: number
+  to: number
+  type: ActionTypes.App.CHANGE_DAY
+}
+export const changeDay = ({from, to}: {from: number, to: number}): ChangeLanguage => ({
   from,
   to,
   type: ActionTypes.App.CHANGE_DAY
 })
 
-export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}): {from: village.Phase, to: village.Phase, type: ActionTypes.App.CHANGE_PHASE} => ({
+export type ChangePhase = {
+  from: village.Phase
+  to: village.Phase
+  type: ActionTypes.App.CHANGE_PHASE
+}
+export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}): ChangePhase => ({
   from,
   to,
   type: ActionTypes.App.CHANGE_PHASE
 })
 
-export const clickNavigationButton = (type: ActionTypes.Navigation): {type: ActionTypes.Navigation} => ({
+export type ChangePredictionBoard = {
+  type: ActionTypes.Navigation
+}
+export const clickNavigationButton = (type: ActionTypes.Navigation): ChangePredictionBoard => ({
   type
 })
 
-export const deactivateNextButton = (): {type: ActionTypes.App.DEACTIVATE_NEXT_BUTTON} => ({
+export type ClickHideButton = {
+  type: ActionTypes.App.DEACTIVATE_NEXT_BUTTON
+}
+export const deactivateNextButton = (): ClickHideButton => ({
   type: ActionTypes.App.DEACTIVATE_NEXT_BUTTON
 })
 
-export const handleBoardClick = ({nextState, characterId, roleId}: {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId}): {characterId: village.CharacterId, nextState: village.BoardState, roleId: village.RoleId, type: ActionTypes.App.CHANGE_PREDICTION_BOARD} => ({
-  characterId,
-  nextState,
-  roleId,
+export type ClickNavigationButton = {
+  characterId: village.CharacterId
+  nextState: village.BoardState
+  roleId: village.RoleId
+  type: ActionTypes.App.CHANGE_PREDICTION_BOARD
+}
+export const handleBoardClick = (item: {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId}): ClickNavigationButton => ({
+  characterId: item.characterId,
+  nextState: item.nextState,
+  roleId: item.roleId,
   type: ActionTypes.App.CHANGE_PREDICTION_BOARD
 })
 
-export const handleClickHideButton = (hide: boolean): {hide: boolean, type: ActionTypes.App.CLICK_HIDE_BUTTON} => ({
+export type DeactivateNextButton = {
+  hide: boolean
+  type: ActionTypes.App.CLICK_HIDE_BUTTON
+}
+export const handleClickHideButton = (hide: boolean): DeactivateNextButton => ({
   hide,
   type: ActionTypes.App.CLICK_HIDE_BUTTON
 })
 
-export const hidePredictionSpec = (): {type: ActionTypes.App.HIDE_PREDICTION_SPEC} => ({
+export type HidePredictionSpec = {
+  type: ActionTypes.App.HIDE_PREDICTION_SPEC
+}
+export const hidePredictionSpec = (): HidePredictionSpec => ({
   type: ActionTypes.App.HIDE_PREDICTION_SPEC
 })
 
-export const hideResult = (): {type: ActionTypes.App.HIDE_RESULT} => ({
+export type HideResult = {
+  type: ActionTypes.App.HIDE_RESULT
+}
+export const hideResult = (): HideResult => ({
   type: ActionTypes.App.HIDE_RESULT
 })
 
-export const postChat = ({channel, text}: {channel: village.InputChannel, text: string}): {channel: village.InputChannel, text: string, type: ActionTypes.App.POST_CHAT} => ({
+export type PostChat = {
+  channel: village.InputChannel
+  text: string
+  type: ActionTypes.App.POST_CHAT
+}
+export const postChat = ({channel, text}: {channel: village.InputChannel, text: string}): PostChat => ({
   channel,
   text,
   type: ActionTypes.App.POST_CHAT
 })
 
-export const ready = ({token, villageId}: {token: string, villageId: number}): {token: string, type: ActionTypes.App.READY, villageId: number} => ({
+export type Ready = {
+  token: string
+  type: ActionTypes.App.READY
+  villageId: number
+}
+export const ready = ({token, villageId}: {token: string, villageId: number}): Ready => ({
   token,
   type: ActionTypes.App.READY,
   villageId
 })
 
-export const selectNo = (): {type: ActionTypes.App.SELECT_NO} => ({
+export type SelectNo = {
+  type: ActionTypes.App.SELECT_NO
+}
+export const selectNo = (): SelectNo => ({
   type: ActionTypes.App.SELECT_NO
 })
 
-export const selectOption = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.App.SELECT_OPTION} => ({
+export type SelectOption = {
+  characterId: village.CharacterId
+  type: ActionTypes.App.SELECT_OPTION
+}
+export const selectOption = (characterId: village.CharacterId): SelectOption => ({
   characterId,
   type: ActionTypes.App.SELECT_OPTION
 })
 
-export const selectYes = (characterId: village.CharacterId): {characterId: village.CharacterId, type: ActionTypes.App.SELECT_YES} => ({
+export type SelectYes = {
+  characterId: village.CharacterId
+  type: ActionTypes.App.SELECT_YES
+}
+export const selectYes = (characterId: village.CharacterId): SelectYes => ({
   characterId,
   type: ActionTypes.App.SELECT_YES
 })
 
-export const starChat = (item: {id: village.ChatId, isMarked: boolean}): {id: village.ChatId, isMarked: boolean, type: ActionTypes.App.STAR} => ({
+export type StarChat = {
+  id: village.ChatId
+  isMarked: boolean
+  type: ActionTypes.App.STAR
+}
+export const starChat = (item: {id: village.ChatId, isMarked: boolean}): StarChat => ({
   id: item.id,
   isMarked: item.isMarked,
   type: ActionTypes.App.STAR
 })
 
-export const showLobby = (): {type: ActionTypes.App.SHOW_LOBBY} => ({
+export type ShowLobby = {
+  type: ActionTypes.App.SHOW_LOBBY
+}
+export const showLobby = (): ShowLobby => ({
   type: ActionTypes.App.SHOW_LOBBY
 })
 
-export const showPredictionSpec = (role: village.RoleId): {role: village.RoleId, type: ActionTypes.App.SHOW_PREDICTION_SPEC} => ({
+export type ShowPredictionSpec = {
+  role: village.RoleId
+  type: ActionTypes.App.SHOW_PREDICTION_SPEC
+}
+export const showPredictionSpec = (role: village.RoleId): ShowPredictionSpec => ({
   role,
   type: ActionTypes.App.SHOW_PREDICTION_SPEC
 })
 
-export const tick = ({start, time}: {start: number, time: number}): {start: number, time: number, type: ActionTypes.App.TICK} => ({
+export type Tick = {
+  start: number
+  time: number
+  type: ActionTypes.App.TICK
+}
+export const tick = ({start, time}: {start: number, time: number}): Tick => ({
   start,
   time,
   type: ActionTypes.App.TICK
 })
 
-export type ActivateNextButton = ReturnType<typeof activateNextButton>
-export type ChangeDay = ReturnType<typeof changeDay>
-export type ChangeLanguage = ReturnType<typeof changeLanguage>
-export type ChangePhase = ReturnType<typeof changePhase>
-export type ChangePredictionBoard = ReturnType<typeof handleBoardClick>
-export type ClickHideButton = ReturnType<typeof handleClickHideButton>
-export type ClickNavigationButton = ReturnType<typeof clickNavigationButton>
-export type DeactivateNextButton = ReturnType<typeof deactivateNextButton>
-export type HidePredictionSpec = ReturnType<typeof hidePredictionSpec>
-export type HideResult = ReturnType<typeof hideResult>
-export type PostChat = ReturnType<typeof postChat>
-export type Ready = ReturnType<typeof ready>
-export type SelectNo = ReturnType<typeof selectNo>
-export type SelectOption = ReturnType<typeof selectOption>
-export type SelectYes = ReturnType<typeof selectYes>
-export type ShowLobby = ReturnType<typeof showLobby>
-export type ShowPredictionSpec = ReturnType<typeof showPredictionSpec>
 export type SocketClose = ReturnType<typeof socket.close>
 export type SocketError = ReturnType<typeof socket.error>
 export type SocketMessage = ReturnType<typeof socket.message>
 export type SocketOpen = ReturnType<typeof socket.open>
 export type SocketSend = ReturnType<typeof socket.send>
-export type StarChat = ReturnType<typeof starChat>
-export type Tick = ReturnType<typeof tick>
+
