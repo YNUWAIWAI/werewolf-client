@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ClickNavigationButton,
-  socket
+  message
 } from '../actions'
 import {
   Key,
@@ -321,7 +321,7 @@ describe('indexedDB/INIT', () => {
     })
   })
 })
-describe('socket/MESSAGE', () => {
+describe('message/NEXT_GAME_INVITATION', () => {
   const store = fakeStore()
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
@@ -331,7 +331,7 @@ describe('socket/MESSAGE', () => {
     'type': village.PayloadType.nextGameInvitation,
     'villageId': 3
   }
-  const action = socket.message(payload)
+  const action = message.nextGameInvitation(payload)
 
   test('validate the JSON', async () => {
     const ajv = new Ajv()

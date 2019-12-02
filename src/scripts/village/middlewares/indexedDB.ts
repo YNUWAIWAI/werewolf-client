@@ -91,27 +91,25 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Socket.MESSAGE: {
-      if (action.payload['@payload'] === village.PayloadType.nextGameInvitation) {
-        const payload = action.payload
+    case ActionTypes.Message.NEXT_GAME_INVITATION: {
+      const payload = action.payload
 
-        connectDB()
-          .then(async db => {
-            const transaction = db.transaction('licosDB', 'readwrite')
-            const objectStore = transaction.objectStore('licosDB')
-            const [isHost] = await Promise.all([
-              getValue<boolean>(objectStore, Key.isHost),
-              updateValue<number>(objectStore, Key.nextGameVillageId, payload.villageId)
-            ])
+      connectDB()
+        .then(async db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
+          const [isHost] = await Promise.all([
+            getValue<boolean>(objectStore, Key.isHost),
+            updateValue<number>(objectStore, Key.nextGameVillageId, payload.villageId)
+          ])
 
-            if (isHost) {
-              store.dispatch(showLobby())
-            } else {
-              store.dispatch(activateNextButton(payload.villageId))
-            }
-          })
-          .catch(reason => console.error(reason))
-      }
+          if (isHost) {
+            store.dispatch(showLobby())
+          } else {
+            store.dispatch(activateNextButton(payload.villageId))
+          }
+        })
+        .catch(reason => console.error(reason))
 
       return next(action)
     }
