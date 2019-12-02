@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './settings'
 import {lobby} from '../types'
+import {message} from '../actions'
 import {settings} from './fakeServer'
 
 describe('scoket/MESSAGE', () => {
@@ -8,10 +9,7 @@ describe('scoket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: settings,
-          type: ActionTypes.Socket.MESSAGE
-        }
+        message.settings(settings)
       )
     ).toStrictEqual(
       {
