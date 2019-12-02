@@ -5,13 +5,13 @@ import {ImagePath} from '../constants/ImagePath'
 import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
+import {message} from '../actions'
 import middleware from './flavorText'
-import {socket} from '../actions'
 import {village} from '../types'
 
 const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
-describe('socket/MESSAGE', () => {
+describe('message/FLAVOR_TEXT_MESSAGE', () => {
   const store = fakeStore()
   const dispatch = jest.fn()
 
@@ -211,7 +211,7 @@ describe('socket/MESSAGE', () => {
   })
   test('dispatch correctly', () => {
     jest.useFakeTimers()
-    actionHandler(socket.message(payload))
+    actionHandler(message.flavorTextMessage(payload))
     jest.runAllTimers()
     expect(dispatch).toHaveBeenCalledTimes(2)
     flavorTextPayload.forEach(item => {

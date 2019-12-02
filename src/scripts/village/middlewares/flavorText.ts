@@ -6,18 +6,14 @@ import {village} from '../types'
 
 const flavorText: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.Socket.MESSAGE: {
-      if (action.payload['@payload'] === village.Message.flavorTextMessage) {
-        const payload = action.payload
+    case ActionTypes.Message.FLAVOR_TEXT_MESSAGE: {
+      action.payload.flavorText.forEach((value, index) => {
+        const interval = just(value.interval) * 1000
 
-        payload.flavorText.forEach((value, index) => {
-          const interval = just(value.interval) * 1000
-
-          setTimeout(() => {
-            store.dispatch(socket.message(value as village.Payload$ChatMessage))
-          }, interval * index)
-        })
-      }
+        setTimeout(() => {
+          store.dispatch(socket.message(value as village.Payload$ChatMessage))
+        }, interval * index)
+      })
 
       return next(action)
     }
