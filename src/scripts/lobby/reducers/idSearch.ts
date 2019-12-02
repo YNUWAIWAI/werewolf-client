@@ -3,7 +3,8 @@ import {
   ChangeLobby,
   IdSearch$ChangeSearchId,
   IdSearch$ChangeValidity,
-  SocketMessage,
+  Message$Avatar,
+  Message$SearchResult,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -23,7 +24,8 @@ type Action =
   | ChangeLobby
   | IdSearch$ChangeSearchId
   | IdSearch$ChangeValidity
-  | SocketMessage
+  | Message$Avatar
+  | Message$SearchResult
   | Transition
 
 export const initialState: State = {
@@ -226,39 +228,34 @@ const idSearch = (state: State = initialState, action: Action): State => {
           return item
         })
       }
-    case ActionTypes.Socket.MESSAGE:
-      switch (action.payload.type) {
-        case lobby.PayloadType.avatar: {
-          const payload = action.payload
+    case ActionTypes.Message.AVATAR: {
+      const payload = action.payload
 
-          return {
-            ... state,
-            image: payload.image,
-            name: payload.name
-          }
-        }
-        case lobby.PayloadType.searchResult: {
-          const payload = action.payload
-
-          return {
-            ... state,
-            menuItems: state.menuItems.map(item => {
-              if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
-                return {
-                  ... item,
-                  isLoading: false
-                }
-              }
-
-              return item
-            }),
-            searched: true,
-            villageItems: payload.villages
-          }
-        }
-        default:
-          return state
+      return {
+        ... state,
+        image: payload.image,
+        name: payload.name
       }
+    }
+    case ActionTypes.Message.SEARCH_RESULT: {
+      const payload = action.payload
+
+      return {
+        ... state,
+        menuItems: state.menuItems.map(item => {
+          if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
+            return {
+              ... item,
+              isLoading: false
+            }
+          }
+
+          return item
+        }),
+        searched: true,
+        villageItems: payload.villages
+      }
+    }
     default:
       return state
   }
