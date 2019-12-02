@@ -8,36 +8,73 @@ export * from './selectHumanAvatar'
 export * from './selectRobotAvatar'
 export * from './socket'
 
-export const changeLanguage = (language: lobby.Language): {language: lobby.Language, type: ActionTypes.App.CHANGE_LANGUAGE} => ({
+export type ChangeLanguage = {
+  language: lobby.Language
+  type: ActionTypes.App.CHANGE_LANGUAGE
+}
+export const changeLanguage = (language: lobby.Language): ChangeLanguage => ({
   language,
   type: ActionTypes.App.CHANGE_LANGUAGE
 })
-export const changeLobby = (lobby: lobby.LobbyType): {lobby: lobby.LobbyType, type: ActionTypes.App.CHANGE_LOBBY} => ({
+
+export type ChangeLobby = {
+  lobby: lobby.LobbyType
+  type: ActionTypes.App.CHANGE_LOBBY
+}
+export const changeLobby = (lobby: lobby.LobbyType): ChangeLobby => ({
   lobby,
   type: ActionTypes.App.CHANGE_LOBBY
 })
-export const changeToken = ({lobby, token}: {lobby: lobby.LobbyType, token: string}): {lobby: lobby.LobbyType, token: string, type: ActionTypes.App.CHANGE_TOKEN} => ({
+
+export type ChangeToken = {
+  lobby: lobby.LobbyType
+  token: string
+  type: ActionTypes.App.CHANGE_TOKEN
+}
+export const changeToken = ({lobby, token}: {lobby: lobby.LobbyType, token: string}): ChangeToken => ({
   lobby,
   token,
   type: ActionTypes.App.CHANGE_TOKEN
 })
-export const changeUserEmail = (userEmail: string): {type: ActionTypes.App.CHANGE_USER_EMAIL, userEmail: string} => ({
+
+export type ChangeUserEmail = {
+  type: ActionTypes.App.CHANGE_USER_EMAIL
+  userEmail: string
+}
+export const changeUserEmail = (userEmail: string): ChangeUserEmail => ({
   type: ActionTypes.App.CHANGE_USER_EMAIL,
   userEmail
 })
-export const changeUserName = (userName: string): {userName: string, type: ActionTypes.App.CHANGE_USER_NAME} => ({
+
+export type ChangeUserName = {
+  userName: string
+  type: ActionTypes.App.CHANGE_USER_NAME
+}
+export const changeUserName = (userName: string): ChangeUserName => ({
   type: ActionTypes.App.CHANGE_USER_NAME,
   userName
 })
-export const changeUserPassword = (userPassword: string): {userPassword: string, type: ActionTypes.App.CHANGE_USER_PASSWORD} => ({
+
+export type ChangeUserPassword = {
+  userPassword: string
+  type: ActionTypes.App.CHANGE_USER_PASSWORD
+}
+export const changeUserPassword = (userPassword: string): ChangeUserPassword => ({
   type: ActionTypes.App.CHANGE_USER_PASSWORD,
   userPassword
 })
-export const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}): {name: string, token: lobby.Token, type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER} => ({
+
+export type ConfirmKickOutPlayer = {
+  name: string
+  token: lobby.Token
+  type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
+}
+export const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}): ConfirmKickOutPlayer => ({
   name: values.name,
   token: values.token,
   type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
 })
+
 type HoverAvatarScope =
   | ActionTypes.Scope.SelectHumanAvatar
   | ActionTypes.Scope.SelectRobotAvatar
@@ -63,23 +100,48 @@ export const hoverAvatar = (scope: HoverAvatarScope) => (id: string): HoverAvata
     type: ActionTypes[scope].HOVER_AVATAR
   }
 }
-export const kickOutPlayer = (): {type: ActionTypes.App.KICK_OUT_PLAYER} => ({
+
+export type KickOutPlayer = {
+  type: ActionTypes.App.KICK_OUT_PLAYER
+}
+export const kickOutPlayer = (): KickOutPlayer => ({
   type: ActionTypes.App.KICK_OUT_PLAYER
 })
-export const selectNo = (): {type: ActionTypes.App.SELECT_NO} => ({
+
+export type SelectNo = {
+  type: ActionTypes.App.SELECT_NO
+}
+export const selectNo = (): SelectNo => ({
   type: ActionTypes.App.SELECT_NO
 })
-export const selectVillage = (id: number): {id: number, type: ActionTypes.App.SELECT_VILLAGE} => ({
+
+export type SelectVillage = {
+  id: number
+  type: ActionTypes.App.SELECT_VILLAGE
+}
+export const selectVillage = (id: number): SelectVillage => ({
   id,
   type: ActionTypes.App.SELECT_VILLAGE
 })
-export const selectYes = (): {type: ActionTypes.App.SELECT_YES} => ({
+
+export type SelectYes = {
+  type: ActionTypes.App.SELECT_YES
+}
+export const selectYes = (): SelectYes => ({
   type: ActionTypes.App.SELECT_YES
 })
-export const showVillage = (): {type: ActionTypes.App.SHOW_VILLAGE} => ({
+
+export type ShowVillage = {
+  type: ActionTypes.App.SHOW_VILLAGE
+}
+export const showVillage = (): ShowVillage => ({
   type: ActionTypes.App.SHOW_VILLAGE
 })
-export const submitLogout = (): {type: ActionTypes.App.LOGOUT} => ({
+
+export type SubmitLogout = {
+  type: ActionTypes.App.LOGOUT
+}
+export const submitLogout = (): SubmitLogout => ({
   type: ActionTypes.App.LOGOUT
 })
 export type Target =
@@ -110,23 +172,13 @@ export type Target =
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_BACKGROUND
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND
   | ActionTypes.SelectRobotAvatar.STOP
-export const transition = (target: Target): {type: Target} => ({
+
+export type Transition = {
+  type: Target
+}
+export const transition = (target: Target): Transition => ({
   type: target
 })
 
-export type ChangeLanguage = ReturnType<typeof changeLanguage>
-export type ChangeLobby = ReturnType<typeof changeLobby>
-export type ChangeToken = ReturnType<typeof changeToken>
-export type ChangeUserEmail = ReturnType<typeof changeUserEmail>
-export type ChangeUserName = ReturnType<typeof changeUserName>
-export type ChangeUserPassword = ReturnType<typeof changeUserPassword>
-export type ConfirmKickOutPlayer = ReturnType<typeof confirmKickOutPlayer>
-export type KickOutPlayer = ReturnType<typeof kickOutPlayer>
-export type SelectNo = ReturnType<typeof selectNo>
-export type SelectVillage = ReturnType<typeof selectVillage>
-export type SelectYes = ReturnType<typeof selectYes>
-export type ShowVillage = ReturnType<typeof showVillage>
-export type SubmitLogout = ReturnType<typeof submitLogout>
 export type SelectHumanAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
 export type SelectRobotAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
-export type Transition = ReturnType<typeof transition>
