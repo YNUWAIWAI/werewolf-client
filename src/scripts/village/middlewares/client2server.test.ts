@@ -5,8 +5,7 @@ import {
   Ready,
   SelectYes,
   StarChat,
-  message,
-  socket
+  message
 } from '../actions'
 import {
   firstMorning,
