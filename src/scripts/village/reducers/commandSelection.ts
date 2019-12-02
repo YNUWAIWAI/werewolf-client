@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangePhase,
   SelectYes,
-  SocketMessage
+  Message$SystemMessage
 } from '../actions'
 import {VOTING_PHASE} from '../constants/Phase'
 import {just} from '../util'
@@ -22,7 +22,7 @@ export interface State {
 }
 type Action =
  | ChangePhase
- | SocketMessage
+ | Message$SystemMessage
  | SelectYes
 
 export const initialState: State = {
@@ -44,11 +44,8 @@ const commandSelection = (state: State = initialState, action: Action): State =>
         fixed: true
       }
     }
-    case ActionTypes.Socket.MESSAGE:
-      if (
-        action.payload['@payload'] === village.Message.systemMessage &&
-        VOTING_PHASE.includes(action.payload.phase)
-      ) {
+    case ActionTypes.Message.SYSTEM_MESSAGE:
+      if (VOTING_PHASE.includes(action.payload.phase)) {
         const byId: State['byId'] = {}
         const allIds = just(action.payload.character)
           .filter(a => just(a.isAChoice))
