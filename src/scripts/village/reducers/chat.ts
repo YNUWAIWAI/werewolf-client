@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangeDay,
-  SocketMessage,
+  Message$ChatMessage,
   StarChat
 } from '../actions'
 import {
@@ -40,7 +40,7 @@ export interface State {
 }
 type Action =
   | ChangeDay
-  | SocketMessage
+  | Message$ChatMessage
   | StarChat
 
 export const initialState: State = {
@@ -49,84 +49,78 @@ export const initialState: State = {
 }
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Socket.MESSAGE: {
-      switch (action.payload['@payload']) {
-        case village.Message.chatMessage: {
-          const payload = action.payload
-          const chatId = getId()
-          const id = payload.intensionalDisclosureRange === village.Channel.public ? just(payload.id) : -1
+    case ActionTypes.Message.CHAT_MESSAGE: {
+      const payload = action.payload
+      const chatId = getId()
+      const id = payload.intensionalDisclosureRange === village.Channel.public ? just(payload.id) : -1
 
-          if (payload.intensionalDisclosureRange === village.Channel.anonymousAudience) {
-            return {
-              allIds: [... state.allIds, chatId],
-              byId: {
-                ... state.byId,
-                [chatId]: {
-                  clientTimestamp: payload.clientTimestamp,
-                  day: payload.day,
-                  id,
-                  image: convertImageUrl('https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png'),
-                  intensionalDisclosureRange: payload.intensionalDisclosureRange,
-                  isMarked: false,
-                  isMine: payload.isMine,
-                  name: 'Anonymous',
-                  phaseStartTime: payload.phaseStartTime,
-                  phaseTimeLimit: payload.phaseTimeLimit,
-                  serverTimestamp: payload.serverTimestamp,
-                  text: payload.text['@value'],
-                  type: village.ChatItemType.item
-                }
-              }
-            }
-          } else if (payload.intensionalDisclosureRange === village.Channel.onymousAudience) {
-            return {
-              allIds: [... state.allIds, chatId],
-              byId: {
-                ... state.byId,
-                [chatId]: {
-                  clientTimestamp: payload.clientTimestamp,
-                  day: payload.day,
-                  id,
-                  image: convertImageUrl(just(payload.avatar).image),
-                  intensionalDisclosureRange: payload.intensionalDisclosureRange,
-                  isMarked: false,
-                  isMine: payload.isMine,
-                  name: just(payload.avatar).name,
-                  phaseStartTime: payload.phaseStartTime,
-                  phaseTimeLimit: payload.phaseTimeLimit,
-                  serverTimestamp: payload.serverTimestamp,
-                  text: payload.text['@value'],
-                  type: village.ChatItemType.item
-                }
-              }
-            }
-          }
-
-          return {
-            allIds: [... state.allIds, chatId],
-            byId: {
-              ... state.byId,
-              [chatId]: {
-                characterId: String(just(payload.character).id),
-                clientTimestamp: payload.clientTimestamp,
-                day: payload.day,
-                id,
-                image: convertImageUrl(just(payload.character).image),
-                intensionalDisclosureRange: payload.intensionalDisclosureRange,
-                isMarked: false,
-                isMine: payload.isMine,
-                name: just(payload.character).name,
-                phaseStartTime: payload.phaseStartTime,
-                phaseTimeLimit: payload.phaseTimeLimit,
-                serverTimestamp: payload.serverTimestamp,
-                text: payload.text['@value'],
-                type: village.ChatItemType.item
-              }
+      if (payload.intensionalDisclosureRange === village.Channel.anonymousAudience) {
+        return {
+          allIds: [... state.allIds, chatId],
+          byId: {
+            ... state.byId,
+            [chatId]: {
+              clientTimestamp: payload.clientTimestamp,
+              day: payload.day,
+              id,
+              image: convertImageUrl('https://werewolf.world/image/0.3/character_icons/50x50/anonymous_50x50.png'),
+              intensionalDisclosureRange: payload.intensionalDisclosureRange,
+              isMarked: false,
+              isMine: payload.isMine,
+              name: 'Anonymous',
+              phaseStartTime: payload.phaseStartTime,
+              phaseTimeLimit: payload.phaseTimeLimit,
+              serverTimestamp: payload.serverTimestamp,
+              text: payload.text['@value'],
+              type: village.ChatItemType.item
             }
           }
         }
-        default:
-          return state
+      } else if (payload.intensionalDisclosureRange === village.Channel.onymousAudience) {
+        return {
+          allIds: [... state.allIds, chatId],
+          byId: {
+            ... state.byId,
+            [chatId]: {
+              clientTimestamp: payload.clientTimestamp,
+              day: payload.day,
+              id,
+              image: convertImageUrl(just(payload.avatar).image),
+              intensionalDisclosureRange: payload.intensionalDisclosureRange,
+              isMarked: false,
+              isMine: payload.isMine,
+              name: just(payload.avatar).name,
+              phaseStartTime: payload.phaseStartTime,
+              phaseTimeLimit: payload.phaseTimeLimit,
+              serverTimestamp: payload.serverTimestamp,
+              text: payload.text['@value'],
+              type: village.ChatItemType.item
+            }
+          }
+        }
+      }
+
+      return {
+        allIds: [... state.allIds, chatId],
+        byId: {
+          ... state.byId,
+          [chatId]: {
+            characterId: String(just(payload.character).id),
+            clientTimestamp: payload.clientTimestamp,
+            day: payload.day,
+            id,
+            image: convertImageUrl(just(payload.character).image),
+            intensionalDisclosureRange: payload.intensionalDisclosureRange,
+            isMarked: false,
+            isMine: payload.isMine,
+            name: just(payload.character).name,
+            phaseStartTime: payload.phaseStartTime,
+            phaseTimeLimit: payload.phaseTimeLimit,
+            serverTimestamp: payload.serverTimestamp,
+            text: payload.text['@value'],
+            type: village.ChatItemType.item
+          }
+        }
       }
     }
     case ActionTypes.App.CHANGE_DAY: {
