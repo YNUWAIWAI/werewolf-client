@@ -2,6 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {village} from '../types'
 
 export * from './socket'
+export * from './message'
 
 export type ActivateNextButton = {
   type: ActionTypes.App.ACTIVATE_NEXT_BUTTON

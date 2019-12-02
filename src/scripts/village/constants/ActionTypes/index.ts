@@ -1,5 +1,6 @@
 export {App} from './app'
 export {IndexedDB} from './indexedDB'
 export {Navigation} from './navigation'
+export {Message} from './message'
 export {Scope} from './scope'
 export {Socket} from './socket'
