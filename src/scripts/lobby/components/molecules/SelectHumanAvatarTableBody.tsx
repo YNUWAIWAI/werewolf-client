@@ -16,6 +16,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
 }
 export type Props = StateProps & DispatchProps

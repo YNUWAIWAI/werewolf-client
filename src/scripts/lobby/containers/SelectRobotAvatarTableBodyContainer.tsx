@@ -2,7 +2,6 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   SelectRobotAvatar$ChangeCheckbox,
   SelectRobotAvatar$HoverAvatar,
-  hoverAvatar,
   selectRobotAvatar
 } from '../actions'
 import SelectRobotAvatarTableBody, {
@@ -28,7 +27,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     console.log(valid, value)
   },
   handleHoverAvatar: id => () => {
-    dispatch(hoverAvatar(ActionTypes.Scope.SelectRobotAvatar)(id))
+    dispatch(selectRobotAvatar.hoverAvatar(id))
   },
   handleSelectAvatar: id => () => {
     dispatch(selectRobotAvatar.changeCheckbox(id))
