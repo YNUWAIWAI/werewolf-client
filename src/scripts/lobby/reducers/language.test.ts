@@ -2,6 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './language'
 import {avatar} from './fakeServer'
 import {lobby} from '../types'
+import {message} from '../actions'
 
 test('CHANGE_LANGUAGE', () => {
   expect(
@@ -16,19 +17,14 @@ test('CHANGE_LANGUAGE', () => {
     lobby.Language.en
   )
 })
-describe('socket/MESSAGE', () => {
-  test('avatar', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          payload: avatar,
-          type: ActionTypes.Socket.MESSAGE
-        }
-      )
-    ).toStrictEqual(
-      lobby.Language.en
+test('message/AVATAR', () => {
+  expect(
+    reducer(
+      initialState,
+      message.avatar(avatar)
     )
-  })
+  ).toStrictEqual(
+    lobby.Language.en
+  )
 })
 
