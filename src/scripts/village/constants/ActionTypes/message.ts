@@ -1,11 +1,11 @@
 export const enum Message {
-  BoardMessage = 'message/BoardMessage',
-  ChatMessage = 'message/ChatMessage',
-  ErrorMessage = 'message/ErrorMessage',
-  FlavorTextMessage = 'message/FlavorTextMessage',
-  NextGameInvitation = 'message/NextGameInvitation',
-  NextGameInvitationIsClosed = 'message/NextGameInvitationIsClosed',
-  ScrollMessage = 'message/ScrollMessage',
-  SystemMessage = 'message/SystemMessage',
-  VoteMessage = 'message/VoteMessage',
+  BOARD_MESSAGE = 'message/BOARD_MESSAGE',
+  CHAT_MESSAGE = 'message/CHAT_MESSAGE',
+  ERROR_MESSAGE = 'message/ERROR_MESSAGE',
+  FLAVOR_TEXT_MESSAGE = 'message/FLAVOR_TEXT_MESSAGE',
+  NEXT_GAME_INVITATION = 'message/NEXT_GAME_INVITATION',
+  NEXT_GAME_INVITATION_IS_CLOSED = 'message/NEXT_GAME_INVITATION_IS_CLOSED',
+  SCROLL_MESSAGE = 'message/SCROLL_MESSAGE',
+  SYSTEM_MESSAGE = 'message/SYSTEM_MESSAGE',
+  VOTE_MESSAGE = 'message/VOTE_MESSAGE'
 }
