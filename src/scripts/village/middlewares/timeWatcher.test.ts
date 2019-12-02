@@ -4,13 +4,13 @@ import {VERSION} from '../constants/Version'
 import {initialState as base} from '../reducers/base'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
+import {message} from '../actions'
 import middleware from './timeWatcher'
-import {socket} from '../actions'
 import {village} from '../types'
 
 const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
-describe('socket/MESSAGE', () => {
+describe('message/SYSTEM_MESSAGE', () => {
   describe('phase: night -> morning, day: 0 -> 1', () => {
     const store = fakeStore({
       base: {
@@ -107,7 +107,7 @@ describe('socket/MESSAGE', () => {
       expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
-      actionHandler(socket.message(payload))
+      actionHandler(message.systemMessage(payload))
       expect(dispatch).toHaveBeenCalledTimes(2)
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
@@ -217,7 +217,7 @@ describe('socket/MESSAGE', () => {
       expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
-      actionHandler(socket.message(payload))
+      actionHandler(message.systemMessage(payload))
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
@@ -321,7 +321,7 @@ describe('socket/MESSAGE', () => {
       expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
-      actionHandler(socket.message(payload))
+      actionHandler(message.systemMessage(payload))
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         from: 'night',
@@ -426,7 +426,7 @@ describe('socket/MESSAGE', () => {
       expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
-      actionHandler(socket.message(payload))
+      actionHandler(message.systemMessage(payload))
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         from: 0,
@@ -531,7 +531,7 @@ describe('socket/MESSAGE', () => {
       expect(validate).toBe(true)
     })
     test('dispatch correctly', () => {
-      actionHandler(socket.message(payload))
+      actionHandler(message.systemMessage(payload))
       expect(dispatch).toHaveBeenCalledTimes(0)
     })
   })

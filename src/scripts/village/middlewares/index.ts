@@ -11,6 +11,7 @@ import client2server from './client2server'
 import flavorText from './flavorText'
 import indexedDB from './indexedDB'
 import logger from './logger'
+import message from './message'
 import socket from './socket'
 import timeWatcher from './timeWatcher'
 import timer from './timer'
@@ -27,6 +28,15 @@ type Action =
   | actions.DeactivateNextButton
   | actions.HidePredictionSpec
   | actions.HideResult
+  | actions.Message$BoardMessage
+  | actions.Message$ChatMessage
+  | actions.Message$ErrorMessage
+  | actions.Message$FlavorTextMessage
+  | actions.Message$NextGameInvitation
+  | actions.Message$NextGameInvitationIsClosed
+  | actions.Message$ScrollMessage
+  | actions.Message$SystemMessage
+  | actions.Message$VoteMessage
   | actions.PostChat
   | actions.Ready
   | actions.SelectNo
@@ -62,6 +72,7 @@ const middleware =
       client2server,
       flavorText,
       indexedDB,
+      message,
       timer,
       timeWatcher,
       windowLocation
@@ -74,6 +85,7 @@ const middleware =
       flavorText,
       indexedDB,
       logger,
+      message,
       timer,
       timeWatcher,
       windowLocation

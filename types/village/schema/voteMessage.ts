@@ -3,9 +3,8 @@
 */
 import {Base} from './base'
 import {Character} from './character'
-import {PayloadBase} from '../payload'
 
-export interface VoteMessage extends PayloadBase {
+export interface VoteMessage {
   '@context': Base['@context']
   '@id': Base['@id']
   avatar?: Base['avatar']

@@ -2,8 +2,8 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangePredictionBoard,
   HidePredictionSpec,
-  ShowPredictionSpec,
-  SocketMessage
+  Message$SystemMessage,
+  ShowPredictionSpec
 } from '../actions'
 import {
   getPlayableRoles,
@@ -58,8 +58,8 @@ type Table = State['table']
 type Action =
   | ChangePredictionBoard
   | HidePredictionSpec
+  | Message$SystemMessage
   | ShowPredictionSpec
-  | SocketMessage
 type Characters = NonNullable<village.Payload$SystemMessage['character']>
 type Roles = NonNullable<village.Payload$SystemMessage['role']>
 
@@ -213,38 +213,33 @@ export const initialState = {
 
 const prediction = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Socket.MESSAGE:
-      switch (action.payload['@payload']) {
-        case village.Message.systemMessage: {
-          const payload = action.payload
+    case ActionTypes.Message.SYSTEM_MESSAGE: {
+      const payload = action.payload
 
-          if (payload.day === 0) {
-            return state
-          }
-          if (!payload.character || !payload.role) {
-            return state
-          }
-          const characters = payload.character
-          const roles = getPlayableRoles(payload.role)
-            .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
-          const table = (() => {
-            if (payload.day === 1 && payload.phase === village.Phase.morning) {
-              return initPredictionTable(characters, roles)
-            }
-
-            return updatePredictionTable(roles, state.table)
-          })()
-
-          return {
-            ... state,
-            characterStatus: getCharacterStatus(characters),
-            roleStatus: getRoleStatus(roles),
-            table
-          }
-        }
-        default:
-          return state
+      if (payload.day === 0) {
+        return state
       }
+      if (!payload.character || !payload.role) {
+        return state
+      }
+      const characters = payload.character
+      const roles = getPlayableRoles(payload.role)
+        .sort((r1, r2) => ORDERED_ROLE_LIST.indexOf(strToRoleId(r1.name.en)) - ORDERED_ROLE_LIST.indexOf(strToRoleId(r2.name.en)))
+      const table = (() => {
+        if (payload.day === 1 && payload.phase === village.Phase.morning) {
+          return initPredictionTable(characters, roles)
+        }
+
+        return updatePredictionTable(roles, state.table)
+      })()
+
+      return {
+        ... state,
+        characterStatus: getCharacterStatus(characters),
+        roleStatus: getRoleStatus(roles),
+        table
+      }
+    }
     case ActionTypes.App.CHANGE_PREDICTION_BOARD: {
       const characterId = String(action.characterId)
 

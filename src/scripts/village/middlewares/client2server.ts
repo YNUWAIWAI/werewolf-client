@@ -297,54 +297,47 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.Socket.MESSAGE: {
-      switch (action.payload['@payload']) {
-        case village.Message.chatMessage: {
-          if (action.payload.phase === village.Phase.flavorText || action.payload.phase === village.Phase.result) {
-            return next(action)
-          }
-          const payload: village.Payload$ReceivedChatMessage = {
-            clientTimestamp: action.payload.clientTimestamp,
-            serverTimestamp: action.payload.serverTimestamp,
-            token: action.payload.token,
-            type: village.PayloadType.receivedChatMessage,
-            villageId: action.payload.village.id
-          }
-
-          store.dispatch(socket.send(payload))
-
-          return next(action)
-        }
-
-        case village.Message.flavorTextMessage: {
-          const payload: village.Payload$ReceivedFlavorTextMessage = {
-            day: action.payload.day,
-            phase: action.payload.phase,
-            token: action.payload.token,
-            type: village.PayloadType.receivedFlavorTextMessage,
-            villageId: action.payload.village.id
-          }
-
-          store.dispatch(socket.send(payload))
-
-          return next(action)
-        }
-        case village.Message.systemMessage: {
-          const payload: village.Payload$ReceivedSystemMessage = {
-            day: action.payload.day,
-            phase: action.payload.phase,
-            token: action.payload.token,
-            type: village.PayloadType.receivedSystemMessage,
-            villageId: action.payload.village.id
-          }
-
-          store.dispatch(socket.send(payload))
-
-          return next(action)
-        }
-        default:
-          return next(action)
+    case ActionTypes.Message.CHAT_MESSAGE: {
+      if (action.payload.phase === village.Phase.flavorText || action.payload.phase === village.Phase.result) {
+        return next(action)
       }
+      const payload: village.Payload$ReceivedChatMessage = {
+        clientTimestamp: action.payload.clientTimestamp,
+        serverTimestamp: action.payload.serverTimestamp,
+        token: action.payload.token,
+        type: village.PayloadType.receivedChatMessage,
+        villageId: action.payload.village.id
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.Message.FLAVOR_TEXT_MESSAGE: {
+      const payload: village.Payload$ReceivedFlavorTextMessage = {
+        day: action.payload.day,
+        phase: action.payload.phase,
+        token: action.payload.token,
+        type: village.PayloadType.receivedFlavorTextMessage,
+        villageId: action.payload.village.id
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.Message.SYSTEM_MESSAGE: {
+      const payload: village.Payload$ReceivedSystemMessage = {
+        day: action.payload.day,
+        phase: action.payload.phase,
+        token: action.payload.token,
+        type: village.PayloadType.receivedSystemMessage,
+        villageId: action.payload.village.id
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
     }
     default:
       return next(action)

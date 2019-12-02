@@ -3,12 +3,12 @@ import {
   ChangePhase,
   ClickNavigationButton,
   HideResult,
+  Message$SystemMessage,
   SelectNo,
   SelectOption,
   SelectYes,
   SocketClose,
   SocketError,
-  SocketMessage,
   SocketOpen
 } from '../actions'
 import {village} from '../types'
@@ -21,12 +21,12 @@ type Action =
   | ChangePhase
   | ClickNavigationButton
   | HideResult
+  | Message$SystemMessage
   | SelectNo
   | SelectOption
   | SelectYes
   | SocketClose
   | SocketError
-  | SocketMessage
   | SocketOpen
 
 export const initialState: State = {
@@ -64,11 +64,8 @@ const obfucator = (state: State = initialState, action: Action): State => {
         loading: true,
         visible: true
       }
-    case ActionTypes.Socket.MESSAGE:
-      if (
-        action.payload['@payload'] === village.Message.systemMessage &&
-        action.payload.phase === village.Phase.result
-      ) {
+    case ActionTypes.Message.SYSTEM_MESSAGE:
+      if (action.payload.phase === village.Phase.result) {
         return {
           loading: false,
           visible: true

@@ -1,15 +1,12 @@
 /*
   'https://werewolf.world/village/schema/0.3/invitation/receivedChatMessage.json'
 */
-import {
-  PayloadBase,
-  PayloadType
-} from '../../payload'
 import {Avatar} from '../avatar'
 import {Base} from '../base'
+import {PayloadType} from '../../payload'
 import {Village} from '../village'
 
-export interface ReceivedChatMessage extends PayloadBase {
+export interface ReceivedChatMessage {
   clientTimestamp: Base['clientTimestamp']
   serverTimestamp: Base['serverTimestamp']
   token: Avatar['token']

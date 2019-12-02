@@ -9,7 +9,7 @@ import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {idGenerator} from '../util'
 import {initialState} from './chat'
-import {socket} from '../actions'
+import {message} from '../actions'
 import {village} from '../types'
 
 jest.mock('../util', () => {
@@ -23,7 +23,7 @@ jest.mock('../util', () => {
 beforeEach(() => {
   jest.resetModules()
 })
-describe('socket/MESSAGE', () => {
+describe('message/CHAT_MESSAGE', () => {
   test('myMessageOnChat', async () => {
     const getAllId = idGenerator(true)
     const allIds = [... Array(1)].map(() => getAllId())
@@ -33,7 +33,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(myMessageOnChat)
+        message.chatMessage(myMessageOnChat)
       )
     ).toStrictEqual({
       allIds,
@@ -67,9 +67,9 @@ describe('socket/MESSAGE', () => {
       reducer(
         reducer(
           initialState,
-          socket.message(myMessageOnChat)
+          message.chatMessage(myMessageOnChat)
         ),
-        socket.message(theirMessageOnChat)
+        message.chatMessage(theirMessageOnChat)
       )
     ).toStrictEqual({
       allIds,
@@ -120,11 +120,11 @@ describe('socket/MESSAGE', () => {
         reducer(
           reducer(
             initialState,
-            socket.message(myMessageOnChat)
+            message.chatMessage(myMessageOnChat)
           ),
-          socket.message(theirMessageOnChat)
+          message.chatMessage(theirMessageOnChat)
         ),
-        socket.message(onymousAudienceChat)
+        message.chatMessage(onymousAudienceChat)
       )
     ).toStrictEqual({
       allIds,
@@ -191,13 +191,13 @@ describe('socket/MESSAGE', () => {
           reducer(
             reducer(
               initialState,
-              socket.message(myMessageOnChat)
+              message.chatMessage(myMessageOnChat)
             ),
-            socket.message(theirMessageOnChat)
+            message.chatMessage(theirMessageOnChat)
           ),
-          socket.message(onymousAudienceChat)
+          message.chatMessage(onymousAudienceChat)
         ),
-        socket.message(anonymousAudienceChat)
+        message.chatMessage(anonymousAudienceChat)
       )
     ).toStrictEqual({
       allIds,

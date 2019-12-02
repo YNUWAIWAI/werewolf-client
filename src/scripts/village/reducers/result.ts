@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   ClickNavigationButton,
   HideResult,
-  SocketMessage
+  Message$SystemMessage
 } from '../actions'
 import {
   getPlayableCharacters,
@@ -50,8 +50,8 @@ export interface State {
 }
 type Action =
   | ClickNavigationButton
-  | SocketMessage
   | HideResult
+  | Message$SystemMessage
 
 export const initialState: State = {
   allIds: [],
@@ -78,85 +78,82 @@ const result = (state: State = initialState, action: Action): State => {
         ... state,
         visible: false
       }
-    case ActionTypes.Socket.MESSAGE:
-      if (
-        action.payload['@payload'] === village.Message.systemMessage &&
-        action.payload.phase === village.Phase.result
-      ) {
-        const payload = action.payload
-        const characters: State['characters'] = {}
-        const allIds: State['allIds'] = []
-        const losers: State['losers'] = []
-        let me: State['me'] = null
-        const winners: State['winners'] = []
+    case ActionTypes.Message.SYSTEM_MESSAGE: {
+      if (action.payload.phase !== village.Phase.result) {
+        return state
+      }
+      const payload = action.payload
+      const characters: State['characters'] = {}
+      const allIds: State['allIds'] = []
+      const losers: State['losers'] = []
+      let me: State['me'] = null
+      const winners: State['winners'] = []
 
-        getPlayableCharacters(just(payload.character))
-          .forEach(c => {
-            const avatar = just(c.avatar)
-            const characterId = String(c.id)
-            const role = just(c.role)
+      getPlayableCharacters(just(payload.character))
+        .forEach(c => {
+          const avatar = just(c.avatar)
+          const characterId = String(c.id)
+          const role = just(c.role)
 
-            characters[characterId] = {
-              avatarImage: avatar.image,
-              avatarName: avatar.name,
-              characterId,
-              characterImage: c.image,
-              characterName: c.name,
-              result: just(c.result),
-              roleImage: role.image,
-              roleName: role.name,
-              status: strToCharacterStatus(c.status)
-            }
-            if (c.result === village.Result.win) {
-              winners.push(characterId)
-            }
-            if (c.result === village.Result.lose) {
-              losers.push(characterId)
-            }
-            if (c.isMine) {
-              me = characterId
-            }
-            allIds.push(characterId)
-          })
-        const summary = (() => {
-          if (winners.length === 0) {
-            throw Error('Unexpected Result: no winners')
+          characters[characterId] = {
+            avatarImage: avatar.image,
+            avatarName: avatar.name,
+            characterId,
+            characterImage: c.image,
+            characterName: c.name,
+            result: just(c.result),
+            roleImage: role.image,
+            roleName: role.name,
+            status: strToCharacterStatus(c.status)
           }
-          const winnerTeam = getTeam(strToRoleId(characters[winners[0]].roleName.en))
-          const loserTeam = new Set(losers.map(loser => getTeam(strToRoleId(characters[loser].roleName.en))))
-
-          if (typeof me === 'string') {
-            const characterSummary: CharacterSummary = {
-              kind: village.SummaryType.character,
-              loserTeam,
-              myTeam: getTeam(strToRoleId(characters[me].roleName.en)),
-              result: characters[me].result,
-              winnerTeam
-            }
-
-            return characterSummary
+          if (c.result === village.Result.win) {
+            winners.push(characterId)
           }
-          const audienceSummary: AudienceSummary = {
-            kind: village.SummaryType.audience,
+          if (c.result === village.Result.lose) {
+            losers.push(characterId)
+          }
+          if (c.isMine) {
+            me = characterId
+          }
+          allIds.push(characterId)
+        })
+      const summary = (() => {
+        if (winners.length === 0) {
+          throw Error('Unexpected Result: no winners')
+        }
+        const winnerTeam = getTeam(strToRoleId(characters[winners[0]].roleName.en))
+        const loserTeam = new Set(losers.map(loser => getTeam(strToRoleId(characters[loser].roleName.en))))
+
+        if (typeof me === 'string') {
+          const characterSummary: CharacterSummary = {
+            kind: village.SummaryType.character,
             loserTeam,
+            myTeam: getTeam(strToRoleId(characters[me].roleName.en)),
+            result: characters[me].result,
             winnerTeam
           }
 
-          return audienceSummary
-        })()
-
-        return {
-          allIds,
-          characters,
-          losers,
-          me,
-          summary,
-          visible: true,
-          winners
+          return characterSummary
         }
-      }
+        const audienceSummary: AudienceSummary = {
+          kind: village.SummaryType.audience,
+          loserTeam,
+          winnerTeam
+        }
 
-      return state
+        return audienceSummary
+      })()
+
+      return {
+        allIds,
+        characters,
+        losers,
+        me,
+        summary,
+        visible: true,
+        winners
+      }
+    }
     default:
       return state
   }

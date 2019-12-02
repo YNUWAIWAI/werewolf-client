@@ -4,19 +4,16 @@ import {
   changePhase
 } from '../actions'
 import {Middleware} from '.'
-import {village} from '../types'
 
 const timeWatcher: Middleware = store => next => action => {
-  if (action.type === ActionTypes.Socket.MESSAGE) {
-    if (
-      action.payload['@payload'] === village.Message.boardMessage ||
-      action.payload['@payload'] === village.Message.chatMessage ||
-      action.payload['@payload'] === village.Message.errorMessage ||
-      action.payload['@payload'] === village.Message.flavorTextMessage ||
-      action.payload['@payload'] === village.Message.scrollMessage ||
-      action.payload['@payload'] === village.Message.systemMessage ||
-      action.payload['@payload'] === village.Message.voteMessage
-    ) {
+  switch (action.type) {
+    case ActionTypes.Message.BOARD_MESSAGE:
+    case ActionTypes.Message.CHAT_MESSAGE:
+    case ActionTypes.Message.ERROR_MESSAGE:
+    case ActionTypes.Message.FLAVOR_TEXT_MESSAGE:
+    case ActionTypes.Message.SCROLL_MESSAGE:
+    case ActionTypes.Message.SYSTEM_MESSAGE:
+    case ActionTypes.Message.VOTE_MESSAGE: {
       const base = store.getState().base
 
       if (action.payload.day !== base.day) {
@@ -31,10 +28,12 @@ const timeWatcher: Middleware = store => next => action => {
           to: action.payload.phase
         }))
       }
-    }
-  }
 
-  return next(action)
+      return next(action)
+    }
+    default:
+      return next(action)
+  }
 }
 
 export default timeWatcher

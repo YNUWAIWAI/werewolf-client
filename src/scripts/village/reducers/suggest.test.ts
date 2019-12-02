@@ -6,15 +6,15 @@ import {
 import reducer, {initialState} from './suggest'
 import {Character} from '../constants/Character'
 import {Role} from '../constants/Role'
-import {socket} from '../actions'
+import {message} from '../actions'
 import {village} from '../types'
 
-describe('socket/MESSAGE', () => {
+describe('message/SYSTEM_MESSAGE', () => {
   test('firstMorning', () => {
     expect(
       reducer(
         initialState,
-        socket.message(firstMorning)
+        message.systemMessage(firstMorning)
       )
     ).toStrictEqual(
       {
@@ -123,7 +123,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(flavorText)
+        message.systemMessage(flavorText)
       )
     ).toStrictEqual(
       initialState
@@ -133,7 +133,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(myMessageOnChat)
+        message.systemMessage(myMessageOnChat)
       )
     ).toStrictEqual(
       initialState

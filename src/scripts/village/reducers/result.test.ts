@@ -6,7 +6,7 @@ import reducer, {initialState} from './result'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {Role} from '../constants/Role'
-import {socket} from '../actions'
+import {message} from '../actions'
 import {village} from '../types'
 
 describe('socket/MESSAGE', () => {
@@ -14,7 +14,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(firstMorning)
+        message.systemMessage(firstMorning)
       )
     ).toStrictEqual(initialState)
   })
@@ -22,7 +22,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(result)
+        message.systemMessage(result)
       )
     ).toStrictEqual({
       allIds: [

@@ -56,64 +56,51 @@ export type Payload =
   | Payload$StarMessage
   | Payload$SystemMessage
   | Payload$VoteMessage
-export interface PayloadBase {
-  '@id'?: string
-  '@payload'?: Message | PayloadType
-  'type'?: PayloadType
-}
 export interface Payload$BoardMessage extends BoardMessage {
-  '@payload'?: Message.boardMessage
+  type?: undefined
 }
 export interface Payload$BuildVillage extends BuildVillage {
   '@id'?: undefined
-  '@payload'?: PayloadType.buildVillage
 }
 export interface Payload$ChatMessage extends ChatMessage {
-  '@payload'?: Message.chatMessage
+  type?: undefined
 }
 export interface Payload$ErrorMessage extends ErrorMessage {
-  '@payload'?: Message.errorMessage
+  type?: undefined
 }
 export interface Payload$FlavorTextMessage extends FlavorTextMessage {
-  '@payload'?: Message.flavorTextMessage
+  type?: undefined
 }
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {
   '@id'?: undefined
-  '@payload'?: PayloadType.leaveWaitingPage
 }
 export interface Payload$Ready extends Ready {
   '@id'?: undefined
-  '@payload'?: PayloadType.ready
 }
 export interface Payload$NextGameInvitation extends NextGameInvitation {
   '@id'?: undefined
-  '@payload'?: PayloadType.nextGameInvitation
 }
 export interface Payload$NextGameInvitationIsClosed extends NextGameInvitationIsClosed {
   '@id'?: undefined
-  '@payload'?: PayloadType.nextGameInvitationIsClosed
 }
 export interface Payload$ReceivedChatMessage extends ReceivedChatMessage {
   '@id'?: undefined
-  '@payload'?: PayloadType.receivedChatMessage
 }
 export interface Payload$ReceivedFlavorTextMessage extends ReceivedFlavorTextMessage {
   '@id'?: undefined
-  '@payload'?: PayloadType.receivedFlavorTextMessage
 }
 export interface Payload$ReceivedSystemMessage extends ReceivedSystemMessage {
   '@id'?: undefined
-  '@payload'?: PayloadType.receivedSystemMessage
 }
 export interface Payload$ScrollMessage extends ScrollMessage {
-  '@payload'?: Message.scrollMessage
+  type?: undefined
 }
 export interface Payload$StarMessage extends StarMessage {
-  '@payload'?: Message.starMessage
+  type?: undefined
 }
 export interface Payload$SystemMessage extends SystemMessage {
-  '@payload'?: Message.systemMessage
+  type?: undefined
 }
 export interface Payload$VoteMessage extends VoteMessage {
-  '@payload'?: Message.voteMessage
+  type?: undefined
 }

@@ -8,14 +8,14 @@ import {
   theirMessageOnChat
 } from './fakeServer'
 import reducer, {initialState} from './commandInputBox'
-import {socket} from '../actions'
+import {message} from '../actions'
 import {village} from '../types'
 
-describe('socket/MESSAGE', () => {
+describe('message/CHAT_MESSAGE', () => {
   test('isMine={true}', () => {
     expect(reducer(
       initialState,
-      socket.message(myMessageOnChat)
+      message.chatMessage(myMessageOnChat)
     )).toStrictEqual({
       public: {
         numberOfChatMessages: 7
@@ -29,13 +29,15 @@ describe('socket/MESSAGE', () => {
   test('isMine={false}', () => {
     expect(reducer(
       initialState,
-      socket.message(theirMessageOnChat)
+      message.chatMessage(theirMessageOnChat)
     )).toStrictEqual(initialState)
   })
+})
+describe('message/SYSTEM_MESSAGE', () => {
   test('seer 1', () => {
     expect(reducer(
       initialState,
-      socket.message(firstMorning)
+      message.systemMessage(firstMorning)
     )).toStrictEqual({
       public: {
         numberOfChatMessages: 0
@@ -49,7 +51,7 @@ describe('socket/MESSAGE', () => {
   test('seer 2', () => {
     expect(reducer(
       initialState,
-      socket.message(firstMorning2)
+      message.systemMessage(firstMorning2)
     )).toStrictEqual({
       public: {
         numberOfChatMessages: 0
@@ -63,7 +65,7 @@ describe('socket/MESSAGE', () => {
   test('werewolf 1', () => {
     expect(reducer(
       initialState,
-      socket.message(firstMorning6)
+      message.systemMessage(firstMorning6)
     )).toStrictEqual({
       public: {
         numberOfChatMessages: 0
@@ -77,7 +79,7 @@ describe('socket/MESSAGE', () => {
   test('werewolf 2', () => {
     expect(reducer(
       initialState,
-      socket.message(firstMorning7)
+      message.systemMessage(firstMorning7)
     )).toStrictEqual({
       public: {
         numberOfChatMessages: 0

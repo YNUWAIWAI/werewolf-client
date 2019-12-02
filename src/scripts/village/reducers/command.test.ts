@@ -9,14 +9,14 @@ import reducer, {
   Content,
   initialState
 } from './command'
-import {socket} from '../actions'
+import {message} from '../actions'
 
-describe('socket/MESSAGE', () => {
+describe('message/SYSTEM_MESSAGE', () => {
   test('noon', () => {
     expect(
       reducer(
         initialState,
-        socket.message(noon)
+        message.systemMessage(noon)
       )
     ).toStrictEqual(
       {
@@ -29,7 +29,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(firstMorning)
+        message.systemMessage(firstMorning)
       )
     ).toStrictEqual(
       {
@@ -42,7 +42,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(flavorText)
+        message.systemMessage(flavorText)
       )
     ).toStrictEqual(
       {
@@ -55,7 +55,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(night)
+        message.systemMessage(night)
       )
     ).toStrictEqual(
       {
@@ -68,7 +68,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        socket.message(result)
+        message.systemMessage(result)
       )
     ).toStrictEqual(
       {

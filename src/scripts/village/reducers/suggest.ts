@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {SocketMessage} from '../actions'
+import {Message$SystemMessage} from '../actions'
 import {strToRoleId} from '../util'
 import {village} from '../types'
 
@@ -10,7 +10,7 @@ export interface State {
   }[]
 }
 type Action =
-  | SocketMessage
+  | Message$SystemMessage
 
 export const initialState: State = {
   data: []
@@ -18,11 +18,10 @@ export const initialState: State = {
 
 const suggest = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Socket.MESSAGE: {
+    case ActionTypes.Message.SYSTEM_MESSAGE: {
       const payload = action.payload
 
       if (
-        payload['@payload'] === village.Message.systemMessage &&
         payload.character &&
         payload.role
       ) {
