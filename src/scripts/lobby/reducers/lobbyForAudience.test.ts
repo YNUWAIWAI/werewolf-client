@@ -6,6 +6,7 @@ import {
   enterRobotPlayerLobby
 } from './fakeServer'
 import reducer, {initialState} from './lobbyForAudience'
+import {message} from '../actions'
 
 test('REFRESH', () => {
   expect(
@@ -43,32 +44,26 @@ test('REFRESH', () => {
     }
   )
 })
-describe('socket/MESSAGE', () => {
-  test('avatar', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          payload: avatar,
-          type: ActionTypes.Socket.MESSAGE
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        image: '/assets/images/avatar/default/user.png',
-        name: 'Alice'
-      }
+test('message/AVATAR', () => {
+  expect(
+    reducer(
+      initialState,
+      message.avatar(avatar)
     )
-  })
+  ).toStrictEqual(
+    {
+      ... initialState,
+      image: '/assets/images/avatar/default/user.png',
+      name: 'Alice'
+    }
+  )
+})
+describe('message/LOBBY', () => {
   test('human player', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: enterHumanPlayerLobby,
-          type: ActionTypes.Socket.MESSAGE
-        }
+        message.lobby(enterHumanPlayerLobby)
       )
     ).toStrictEqual(
       initialState
@@ -78,10 +73,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: enterOnymousAudienceLobby,
-          type: ActionTypes.Socket.MESSAGE
-        }
+        message.lobby(enterOnymousAudienceLobby)
       )
     ).toStrictEqual({
       image: '',
@@ -182,10 +174,7 @@ describe('socket/MESSAGE', () => {
     expect(
       reducer(
         initialState,
-        {
-          payload: enterRobotPlayerLobby,
-          type: ActionTypes.Socket.MESSAGE
-        }
+        message.lobby(enterRobotPlayerLobby)
       )
     ).toStrictEqual(
       initialState

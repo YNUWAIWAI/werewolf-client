@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {SocketMessage} from '../actions'
+import {Message$Lobby} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
@@ -9,7 +9,7 @@ export interface State {
   readonly villageItems: lobby.Village[]
 }
 type Action =
-  | SocketMessage
+  | Message$Lobby
 
 export const initialState: State = {
   isPlayer: false,
@@ -24,18 +24,14 @@ export const initialState: State = {
 
 const history = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.Socket.MESSAGE:
-      if (action.payload.type === lobby.PayloadType.lobby) {
-        const payload = action.payload
+    case ActionTypes.Message.LOBBY: {
+      const payload = action.payload
 
-        return {
-          ... state,
-          villageItems: payload.villages
-        }
+      return {
+        ... state,
+        villageItems: payload.villages
       }
-
-      return state
-
+    }
     default:
       return state
   }

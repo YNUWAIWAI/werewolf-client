@@ -21,7 +21,7 @@ import {
   SearchResult,
   SelectVillage,
   Settings,
-  WatingPage
+  WaitingPage
 } from '../schema'
 
 export const enum PayloadType {
@@ -72,7 +72,7 @@ export type Payload =
   | Payload$SearchResult
   | Payload$SelectVillage
   | Payload$Settings
-  | Payload$WatingPage
+  | Payload$WaitingPage
 
 export interface Payload$AdvancedSearch extends AdvancedSearch {}
 export interface Payload$Avatar extends Avatar {}
@@ -97,4 +97,4 @@ export interface Payload$Ready extends Ready {}
 export interface Payload$SearchResult extends SearchResult {}
 export interface Payload$SelectVillage extends SelectVillage {}
 export interface Payload$Settings extends Settings {}
-export interface Payload$WatingPage extends WatingPage {}
+export interface Payload$WaitingPage extends WaitingPage {}

@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  SocketMessage,
+  Message$Avatar,
+  Message$Lobby,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -14,7 +15,8 @@ export interface State {
   readonly villageItems: lobby.Village[]
 }
 type Action =
-  | SocketMessage
+  | Message$Avatar
+  | Message$Lobby
   | Transition
 
 export const initialState: State = {
@@ -62,42 +64,37 @@ const lobbyForRobotPlayer = (state: State = initialState, action: Action): State
           return item
         })
       }
-    case ActionTypes.Socket.MESSAGE:
-      switch (action.payload.type) {
-        case lobby.PayloadType.avatar: {
-          const payload = action.payload
+    case ActionTypes.Message.AVATAR: {
+      const payload = action.payload
 
-          return {
-            ... state,
-            image: payload.image,
-            name: payload.name
-          }
-        }
-        case lobby.PayloadType.lobby: {
-          const payload = action.payload
-
-          if (payload.lobby === 'robot player') {
-            return {
-              ... state,
-              menuItems: state.menuItems.map(item => {
-                if (item.types.includes(ActionTypes.App.REFRESH) && item.types.includes(ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER)) {
-                  return {
-                    ... item,
-                    isLoading: false
-                  }
-                }
-
-                return item
-              }),
-              villageItems: payload.villages
-            }
-          }
-
-          return state
-        }
-        default:
-          return state
+      return {
+        ... state,
+        image: payload.image,
+        name: payload.name
       }
+    }
+    case ActionTypes.Message.LOBBY: {
+      const payload = action.payload
+
+      if (payload.lobby === 'robot player') {
+        return {
+          ... state,
+          menuItems: state.menuItems.map(item => {
+            if (item.types.includes(ActionTypes.App.REFRESH) && item.types.includes(ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER)) {
+              return {
+                ... item,
+                isLoading: false
+              }
+            }
+
+            return item
+          }),
+          villageItems: payload.villages
+        }
+      }
+
+      return state
+    }
     default:
       return state
   }

@@ -5,25 +5,10 @@ import {
 } from './fakeServer'
 import reducer, {initialState} from './ping'
 import {lobby} from '../types'
+import {message} from '../actions'
 
-test('socket/MESSAGE watingPage', () => {
-  expect(
-    reducer(
-      initialState,
-      {
-        payload: waitingPage,
-        type: ActionTypes.Socket.MESSAGE
-      }
-    )
-  ).toStrictEqual(
-    {
-      id: '',
-      myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
-      results: []
-    }
-  )
-})
-test('socket/MESSAGE ping', () => {
+
+test('message/PING', () => {
   expect(
     reducer(
       {
@@ -31,10 +16,7 @@ test('socket/MESSAGE ping', () => {
         myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
         results: []
       },
-      {
-        payload: ping,
-        type: ActionTypes.Socket.MESSAGE
-      }
+      message.ping(ping)
     )
   ).toStrictEqual(
     {
@@ -92,6 +74,20 @@ test('socket/MESSAGE ping', () => {
           token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
         }
       ]
+    }
+  )
+})
+test('message/WAITNG_PAGE', () => {
+  expect(
+    reducer(
+      initialState,
+      message.waitingPage(waitingPage)
+    )
+  ).toStrictEqual(
+    {
+      id: '',
+      myToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
+      results: []
     }
   )
 })

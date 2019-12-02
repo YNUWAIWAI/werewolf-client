@@ -12,6 +12,7 @@ import client2server from './client2server'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import indexedDB from './indexedDB'
 import logger from './logger'
+import message from './message'
 import router from './router'
 import socket from './socket'
 import windowLocation from './windowLocation'
@@ -41,6 +42,13 @@ type Action =
   | actions.IdSearch$ChangeSearchId
   | actions.IdSearch$ChangeValidity
   | actions.KickOutPlayer
+  | actions.Message$Avatar
+  | actions.Message$Lobby
+  | actions.Message$Ping
+  | actions.Message$Played
+  | actions.Message$SearchResult
+  | actions.Message$Settings
+  | actions.Message$WaitingPage
   | actions.SelectVillage
   | actions.ShowVillage
   | actions.SocketClose
@@ -69,6 +77,7 @@ export const createMiddleware = ({history, url}: Options) => {
       router(history),
       client2server,
       indexedDB,
+      message,
       windowLocation
     )
   }
@@ -82,6 +91,7 @@ export const createMiddleware = ({history, url}: Options) => {
       client2server,
       indexedDB,
       logger,
+      message,
       windowLocation
     )
   )

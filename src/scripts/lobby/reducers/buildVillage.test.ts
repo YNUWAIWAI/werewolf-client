@@ -2,6 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './buildVillage'
 import {avatar2} from './fakeServer'
 import {lobby} from '../types'
+import {message} from '../actions'
 
 describe('CHANGE_LOBBY', () => {
   test('anonymousAudience', () => {
@@ -595,26 +596,21 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
     }
   )
 })
-describe('scoket/MESSAGE', () => {
-  test('avatar', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          payload: avatar2,
-          type: ActionTypes.Socket.MESSAGE
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        image: '/assets/images/avatar/default/user.png',
-        initialFixedValue: {
-          hostName: 'Kevin',
-          villageName: 'Kevin\'s village'
-        },
-        name: 'Kevin'
-      }
+test('message/AVATAR', () => {
+  expect(
+    reducer(
+      initialState,
+      message.avatar(avatar2)
     )
-  })
+  ).toStrictEqual(
+    {
+      ... initialState,
+      image: '/assets/images/avatar/default/user.png',
+      initialFixedValue: {
+        hostName: 'Kevin',
+        villageName: 'Kevin\'s village'
+      },
+      name: 'Kevin'
+    }
+  )
 })

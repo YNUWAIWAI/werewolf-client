@@ -6,8 +6,8 @@ import {
   ChangeUserPassword,
   KickOutPlayer,
   SelectVillage,
-  SocketMessage,
-  Transition
+  Transition,
+  message
 } from '../actions'
 import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
@@ -1052,7 +1052,7 @@ describe('SHOW_SETTINGS', () => {
     })
   })
 })
-describe('socket/MESSAGE tyoe: "ping"', () => {
+describe('message/PING', () => {
   const store = fakeStore({
     token: {
       [lobby.LobbyType.anonymousAudience]: '',
@@ -1080,14 +1080,11 @@ describe('socket/MESSAGE tyoe: "ping"', () => {
     ],
     type: lobby.PayloadType.ping
   }
-  const action: SocketMessage = {
-    payload: pingPayload,
-    type: ActionTypes.Socket.MESSAGE
-  }
-  const pongPayload = {
+  const action = message.ping(pingPayload)
+  const pongPayload: lobby.Payload$Pong = {
     id: pingId,
     token: avatarToken.humanPlayer,
-    type: 'pong'
+    type: lobby.PayloadType.pong
   }
 
   test('validate the JSON of ping', async () => {

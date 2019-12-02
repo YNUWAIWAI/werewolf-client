@@ -9,9 +9,9 @@ import {
   updateValue
 } from '../../indexeddb'
 import {
-  SocketMessage,
   SocketSend,
-  Transition
+  Transition,
+  message
 } from '../actions'
 import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
@@ -291,27 +291,151 @@ test('LEAVE_WAITING_PAGE', async () => {
   expect(villageInfo).toBeUndefined()
   expect(whatToDoNextInLobby).toBeUndefined()
 })
-describe('socket/MESSAGE', () => {
-  describe('played', () => {
-    const store = fakeStore()
-    const nextHandler = middleware(store)
-    const dispatchAPI = jest.fn()
-    const actionHandler = nextHandler(dispatchAPI)
-    const payload: lobby.Payload = {
-      lang: lobby.Language.en,
-      type: lobby.PayloadType.played
-    }
-    const action: SocketMessage = {
-      payload,
-      type: ActionTypes.Socket.MESSAGE
-    }
-    const dispatch = jest.fn()
+describe('message/PLAYED', () => {
+  const store = fakeStore()
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const payload: lobby.Payload$Played = {
+    lang: lobby.Language.en,
+    type: lobby.PayloadType.played
+  }
+  const action = message.played(payload)
+  const dispatch = jest.fn()
 
-    store.dispatch = dispatch
+  store.dispatch = dispatch
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    const ajv = new Ajv()
+    const schema = await fetch(`${SERVER2CLIENT}/played.json`)
+      .then(res => res.json())
+    const validate = ajv.validate(schema, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', async () => {
+    actionHandler(action)
+    const [
+      buildVillagePayload,
+      isHost,
+      language,
+      nextGameVillageId,
+      villageInfo,
+      whatToDoNextInLobby
+    ] = await getAllValue()
+
+    expect(buildVillagePayload).toBeUndefined()
+    expect(isHost).toBeUndefined()
+    expect(language).toBe(payload.lang)
+    expect(nextGameVillageId).toBeUndefined()
+    expect(villageInfo).toBeUndefined()
+    expect(whatToDoNextInLobby).toBeUndefined()
+    expect(dispatch).toHaveBeenCalled()
+    expect(dispatch).toHaveBeenCalledWith({
+      type: ActionTypes.App.SHOW_VILLAGE
+    })
+  })
+})
+describe('message/WAINTING_PAGE', () => {
+  const avatarToken = {
+    humanPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
+    onymousAudience: '3F2504E0-4F89-11D3-9A0C-0305E82C3311',
+    robotPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
+  }
+  const store = fakeStore({
+    token: {
+      [lobby.LobbyType.anonymousAudience]: '',
+      [lobby.LobbyType.human]: avatarToken.humanPlayer,
+      'lobby': lobby.LobbyType.human,
+      [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
+      [lobby.LobbyType.robot]: avatarToken.robotPlayer
+    }
+  })
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  describe('isHost: true', () => {
+    const payload: lobby.Payload$WaitingPage = {
+      ... waitingPage,
+      players: [
+        {
+          avatarImage: '/assets/images/avatar/default/user.png',
+          isAnonymous: true,
+          isHost: true,
+          isMe: true,
+          name: 'Anonymous',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+        },
+        {
+          avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
+          isAnonymous: true,
+          isHost: false,
+          isMe: false,
+          name: 'Cathy',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
+        },
+        {
+          avatarImage: '/assets/images/avatar/default/user.png',
+          isAnonymous: true,
+          isHost: false,
+          isMe: false,
+          name: 'Anonymous',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
+        },
+        {
+          avatarImage: '/assets/images/avatar/default/user.png',
+          isAnonymous: true,
+          isHost: false,
+          isMe: false,
+          name: 'Anonymous',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
+        },
+        {
+          avatarImage: '/assets/images/avatar/default/user.png',
+          isAnonymous: true,
+          isHost: false,
+          isMe: false,
+          name: 'Anonymous',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
+        },
+        {
+          avatarImage: '/assets/images/avatar/default/user.png',
+          isAnonymous: true,
+          isHost: false,
+          isMe: false,
+          name: 'Anonymous',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
+        },
+        {
+          avatarImage: '/assets/images/avatar/default/user.png',
+          isAnonymous: true,
+          isHost: false,
+          isMe: false,
+          name: 'Anonymous',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
+        },
+        {
+          avatarImage: '/assets/images/avatar/default/user.png',
+          isAnonymous: true,
+          isHost: false,
+          isMe: false,
+          name: 'Anonymous',
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
+        }
+      ]
+    }
+    const action = message.waitingPage(payload)
+
     test('validate the JSON', async () => {
       expect.hasAssertions()
       const ajv = new Ajv()
-      const schema = await fetch(`${SERVER2CLIENT}/played.json`)
+      const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
         .then(res => res.json())
       const validate = ajv.validate(schema, payload)
 
@@ -332,189 +456,54 @@ describe('socket/MESSAGE', () => {
       ] = await getAllValue()
 
       expect(buildVillagePayload).toBeUndefined()
-      expect(isHost).toBeUndefined()
-      expect(language).toBe(payload.lang)
+      expect(isHost).toBe(true)
+      expect(language).toBeUndefined()
       expect(nextGameVillageId).toBeUndefined()
-      expect(villageInfo).toBeUndefined()
-      expect(whatToDoNextInLobby).toBeUndefined()
-      expect(dispatch).toHaveBeenCalled()
-      expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.App.SHOW_VILLAGE
+      expect(villageInfo).toStrictEqual({
+        lobbyType: lobby.LobbyType.human,
+        token: avatarToken.humanPlayer,
+        villageId: 1
       })
+      expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectVillage)
     })
   })
-  describe('waitingPage', () => {
-    const avatarToken = {
-      humanPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
-      onymousAudience: '3F2504E0-4F89-11D3-9A0C-0305E82C3311',
-      robotPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
-    }
-    const store = fakeStore({
-      token: {
-        [lobby.LobbyType.anonymousAudience]: '',
-        [lobby.LobbyType.human]: avatarToken.humanPlayer,
-        'lobby': lobby.LobbyType.human,
-        [lobby.LobbyType.onymousAudience]: avatarToken.onymousAudience,
-        [lobby.LobbyType.robot]: avatarToken.robotPlayer
+  describe('isHost: false', () => {
+    const payload = waitingPage
+    const action = message.waitingPage(payload)
+
+    test('validate the JSON', async () => {
+      expect.hasAssertions()
+      const ajv = new Ajv()
+      const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
+        .then(res => res.json())
+      const validate = ajv.validate(schema, payload)
+
+      if (!validate) {
+        console.error(ajv.errors)
       }
+      expect(validate).toBe(true)
     })
-    const nextHandler = middleware(store)
-    const dispatchAPI = jest.fn()
-    const actionHandler = nextHandler(dispatchAPI)
-    const dispatch = jest.fn()
+    test('dispatch correctly', async () => {
+      actionHandler(action)
+      const [
+        buildVillagePayload,
+        isHost,
+        language,
+        nextGameVillageId,
+        villageInfo,
+        whatToDoNextInLobby
+      ] = await getAllValue()
 
-    store.dispatch = dispatch
-    describe('isHost: true', () => {
-      const payload = {
-        ... waitingPage,
-        players: [
-          {
-            avatarImage: '/assets/images/avatar/default/user.png',
-            isAnonymous: true,
-            isHost: true,
-            isMe: true,
-            name: 'Anonymous',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
-          },
-          {
-            avatarImage: 'https://werewolf.world/image/0.1/Friedel.jpg',
-            isAnonymous: true,
-            isHost: false,
-            isMe: false,
-            name: 'Cathy',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
-          },
-          {
-            avatarImage: '/assets/images/avatar/default/user.png',
-            isAnonymous: true,
-            isHost: false,
-            isMe: false,
-            name: 'Anonymous',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
-          },
-          {
-            avatarImage: '/assets/images/avatar/default/user.png',
-            isAnonymous: true,
-            isHost: false,
-            isMe: false,
-            name: 'Anonymous',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
-          },
-          {
-            avatarImage: '/assets/images/avatar/default/user.png',
-            isAnonymous: true,
-            isHost: false,
-            isMe: false,
-            name: 'Anonymous',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
-          },
-          {
-            avatarImage: '/assets/images/avatar/default/user.png',
-            isAnonymous: true,
-            isHost: false,
-            isMe: false,
-            name: 'Anonymous',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
-          },
-          {
-            avatarImage: '/assets/images/avatar/default/user.png',
-            isAnonymous: true,
-            isHost: false,
-            isMe: false,
-            name: 'Anonymous',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
-          },
-          {
-            avatarImage: '/assets/images/avatar/default/user.png',
-            isAnonymous: true,
-            isHost: false,
-            isMe: false,
-            name: 'Anonymous',
-            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
-          }
-        ]
-      }
-      const action: SocketMessage = {
-        payload,
-        type: ActionTypes.Socket.MESSAGE
-      }
-
-      test('validate the JSON', async () => {
-        expect.hasAssertions()
-        const ajv = new Ajv()
-        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-          .then(res => res.json())
-        const validate = ajv.validate(schema, payload)
-
-        if (!validate) {
-          console.error(ajv.errors)
-        }
-        expect(validate).toBe(true)
+      expect(buildVillagePayload).toBeUndefined()
+      expect(isHost).toBe(false)
+      expect(language).toBeUndefined()
+      expect(nextGameVillageId).toBeUndefined()
+      expect(villageInfo).toStrictEqual({
+        lobbyType: lobby.LobbyType.human,
+        token: avatarToken.humanPlayer,
+        villageId: 1
       })
-      test('dispatch correctly', async () => {
-        actionHandler(action)
-        const [
-          buildVillagePayload,
-          isHost,
-          language,
-          nextGameVillageId,
-          villageInfo,
-          whatToDoNextInLobby
-        ] = await getAllValue()
-
-        expect(buildVillagePayload).toBeUndefined()
-        expect(isHost).toBe(true)
-        expect(language).toBeUndefined()
-        expect(nextGameVillageId).toBeUndefined()
-        expect(villageInfo).toStrictEqual({
-          lobbyType: lobby.LobbyType.human,
-          token: avatarToken.humanPlayer,
-          villageId: 1
-        })
-        expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectVillage)
-      })
-    })
-    describe('isHost: false', () => {
-      const payload = waitingPage
-      const action: SocketMessage = {
-        payload,
-        type: ActionTypes.Socket.MESSAGE
-      }
-
-      test('validate the JSON', async () => {
-        expect.hasAssertions()
-        const ajv = new Ajv()
-        const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-          .then(res => res.json())
-        const validate = ajv.validate(schema, payload)
-
-        if (!validate) {
-          console.error(ajv.errors)
-        }
-        expect(validate).toBe(true)
-      })
-      test('dispatch correctly', async () => {
-        actionHandler(action)
-        const [
-          buildVillagePayload,
-          isHost,
-          language,
-          nextGameVillageId,
-          villageInfo,
-          whatToDoNextInLobby
-        ] = await getAllValue()
-
-        expect(buildVillagePayload).toBeUndefined()
-        expect(isHost).toBe(false)
-        expect(language).toBeUndefined()
-        expect(nextGameVillageId).toBeUndefined()
-        expect(villageInfo).toStrictEqual({
-          lobbyType: lobby.LobbyType.human,
-          token: avatarToken.humanPlayer,
-          villageId: 1
-        })
-        expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectVillage)
-      })
+      expect(whatToDoNextInLobby).toBe(WhatToDoNextInLobby.selectVillage)
     })
   })
 })
@@ -529,7 +518,7 @@ describe('socket/SEND', () => {
     const nextHandler = middleware(store)
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
-    const payload: lobby.Payload = {
+    const payload: lobby.Payload$BuildVillage = {
       avatar: lobby.Avatar.random,
       comment: '',
       hostPlayer: {

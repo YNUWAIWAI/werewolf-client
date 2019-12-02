@@ -1,5 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {enterHumanPlayerLobby} from './fakeServer'
+import {message} from '../actions'
 import reducer from './history'
 
 test('socket/MESSAGE', () => {
@@ -15,10 +16,7 @@ test('socket/MESSAGE', () => {
         ],
         villageItems: []
       },
-      {
-        payload: enterHumanPlayerLobby,
-        type: ActionTypes.Socket.MESSAGE
-      }
+      message.lobby(enterHumanPlayerLobby)
     )
   ).toStrictEqual(
     {
