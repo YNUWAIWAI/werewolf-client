@@ -9,6 +9,16 @@ const changeCheckbox = (id: string): SelectRobotAvatar$ChangeCheckbox => ({
   type: SelectRobotAvatar.CHANGE_CHECKBOX
 })
 
+export type SelectRobotAvatar$HoverAvatar = {
+  id: string
+  type: SelectRobotAvatar.HOVER_AVATAR
+}
+const hoverAvatar = (id: string): SelectRobotAvatar$HoverAvatar => ({
+  id,
+  type: SelectRobotAvatar.HOVER_AVATAR
+})
+
 export const selectRobotAvatar = {
-  changeCheckbox
+  changeCheckbox,
+  hoverAvatar
 }

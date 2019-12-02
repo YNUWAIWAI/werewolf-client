@@ -75,32 +75,6 @@ export const confirmKickOutPlayer = (values: {name: string, token: lobby.Token})
   type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
 })
 
-type HoverAvatarScope =
-  | ActionTypes.Scope.SelectHumanAvatar
-  | ActionTypes.Scope.SelectRobotAvatar
-type HoverAvatarType =
-  | {
-    id: string
-    type: ActionTypes.SelectHumanAvatar.HOVER_AVATAR
-  }
-  | {
-    id: string
-    type: ActionTypes.SelectRobotAvatar.HOVER_AVATAR
-  }
-export const hoverAvatar = (scope: HoverAvatarScope) => (id: string): HoverAvatarType => {
-  if (scope === ActionTypes.Scope.SelectHumanAvatar) {
-    return {
-      id,
-      type: ActionTypes[scope].HOVER_AVATAR
-    }
-  }
-
-  return {
-    id,
-    type: ActionTypes[scope].HOVER_AVATAR
-  }
-}
-
 export type KickOutPlayer = {
   type: ActionTypes.App.KICK_OUT_PLAYER
 }
@@ -179,6 +153,3 @@ export type Transition = {
 export const transition = (target: Target): Transition => ({
   type: target
 })
-
-export type SelectHumanAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
-export type SelectRobotAvatar$HoverAvatar = ReturnType<ReturnType<typeof hoverAvatar>>
