@@ -32,6 +32,13 @@ export const changeLanguage = (language: village.Language): ChangeLanguage => ({
   type: ActionTypes.App.CHANGE_LANGUAGE
 })
 
+export type ClickNavigationButton = {
+  type: ActionTypes.Navigation
+}
+export const clickNavigationButton = (type: ActionTypes.Navigation): ClickNavigationButton => ({
+  type
+})
+
 export type ChangePhase = {
   from: village.Phase
   to: village.Phase
@@ -43,40 +50,33 @@ export const changePhase = ({from, to}: {from: village.Phase, to: village.Phase}
   type: ActionTypes.App.CHANGE_PHASE
 })
 
-export type ChangePredictionBoard = {
-  type: ActionTypes.Navigation
-}
-export const clickNavigationButton = (type: ActionTypes.Navigation): ChangePredictionBoard => ({
-  type
-})
-
 export type ClickHideButton = {
+  hide: boolean
+  type: ActionTypes.App.CLICK_HIDE_BUTTON
+}
+export const handleClickHideButton = (hide: boolean): ClickHideButton => ({
+  hide,
+  type: ActionTypes.App.CLICK_HIDE_BUTTON
+})
+
+export type DeactivateNextButton = {
   type: ActionTypes.App.DEACTIVATE_NEXT_BUTTON
 }
-export const deactivateNextButton = (): ClickHideButton => ({
+export const deactivateNextButton = (): DeactivateNextButton => ({
   type: ActionTypes.App.DEACTIVATE_NEXT_BUTTON
 })
 
-export type ClickNavigationButton = {
+export type ChangePredictionBoard = {
   characterId: village.CharacterId
   nextState: village.BoardState
   roleId: village.RoleId
   type: ActionTypes.App.CHANGE_PREDICTION_BOARD
 }
-export const handleBoardClick = (item: {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId}): ClickNavigationButton => ({
+export const handleBoardClick = (item: {nextState: village.BoardState, characterId: village.CharacterId, roleId: village.RoleId}): ChangePredictionBoard => ({
   characterId: item.characterId,
   nextState: item.nextState,
   roleId: item.roleId,
   type: ActionTypes.App.CHANGE_PREDICTION_BOARD
-})
-
-export type DeactivateNextButton = {
-  hide: boolean
-  type: ActionTypes.App.CLICK_HIDE_BUTTON
-}
-export const handleClickHideButton = (hide: boolean): DeactivateNextButton => ({
-  hide,
-  type: ActionTypes.App.CLICK_HIDE_BUTTON
 })
 
 export type HidePredictionSpec = {
