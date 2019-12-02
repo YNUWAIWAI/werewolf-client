@@ -327,7 +327,6 @@ describe('message/NEXT_GAME_INVITATION', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const payload: village.Payload$NextGameInvitation = {
-    '@payload': village.PayloadType.nextGameInvitation,
     'type': village.PayloadType.nextGameInvitation,
     'villageId': 3
   }

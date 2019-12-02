@@ -26,7 +26,6 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
         village.BaseContext.Chat
       ],
       '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
-      '@payload': village.Message.chatMessage,
       'character': {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
@@ -77,7 +76,6 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
         village.BaseContext.Chat
       ],
       '@id': `https://licos.online/state/${VERSION}/village#3/chatMessage`,
-      '@payload': village.Message.chatMessage,
       'character': {
         '@context': village.Context.Character,
         '@id': `https://licos.online/state/${VERSION}/village#3/character`,
