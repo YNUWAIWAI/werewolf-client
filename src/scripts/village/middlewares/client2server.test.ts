@@ -5,6 +5,7 @@ import {
   Ready,
   SelectYes,
   StarChat,
+  message,
   socket
 } from '../actions'
 import {
@@ -1043,155 +1044,153 @@ describe('STAR', () => {
     })
   })
 })
-describe('socket/MESSAGE', () => {
-  describe('receivedFlavorTextMessage', () => {
-    const store = fakeStore()
-    const dispatch = jest.fn()
+describe('message/ChatMessage', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
 
-    store.dispatch = dispatch
-    const nextHandler = middleware(store)
-    const dispatchAPI = jest.fn()
-    const actionHandler = nextHandler(dispatchAPI)
-    const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
-    const villageId = 3
-    const action = socket.message(flavorText)
-    const payload: village.Payload$ReceivedFlavorTextMessage = {
-      day: 0,
-      phase: village.Phase.flavorText,
-      token,
-      type: village.PayloadType.receivedFlavorTextMessage,
-      villageId
-    }
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const villageId = 3
+  const action = message.chatMessage(myMessageOnChat)
+  const payload: village.Payload$ReceivedChatMessage = {
+    clientTimestamp: '2006-10-07T12:06:56.568+09:00',
+    serverTimestamp: '2006-10-07T12:06:56.568+09:00',
+    token,
+    type: village.PayloadType.receivedChatMessage,
+    villageId
+  }
 
-    test('validate the JSON of play', async () => {
-      expect.hasAssertions()
-      const schemas = await Promise.all([
-        fetch(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/time.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json())
-      ])
-      const ajv = new Ajv({
-        schemas
-      })
-      const validate = ajv.validate(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`, payload)
-
-      if (!validate) {
-        console.error(ajv.errors)
-      }
-      expect(validate).toBe(true)
+  test('validate the JSON of play', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      fetch(`${BASE_URI}/receipt/receivedChatMessage.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/base.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/village.json`)
+        .then(res => res.json())
+    ])
+    const ajv = new Ajv({
+      schemas
     })
-    test('dispatch correctly', () => {
-      actionHandler(action)
-      expect(dispatch).toHaveBeenCalledTimes(1)
-      expect(dispatch).toHaveBeenCalledWith({
-        payload,
-        type: ActionTypes.Socket.SEND
-      })
+    const validate = ajv.validate(`${BASE_URI}/receipt/receivedChatMessage.json`, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
     })
   })
-  describe('receivedChatMessage', () => {
-    const store = fakeStore()
-    const dispatch = jest.fn()
+})
+describe('message/FlavorTextMessage', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
 
-    store.dispatch = dispatch
-    const nextHandler = middleware(store)
-    const dispatchAPI = jest.fn()
-    const actionHandler = nextHandler(dispatchAPI)
-    const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
-    const villageId = 3
-    const action = socket.message(myMessageOnChat)
-    const payload: village.Payload$ReceivedChatMessage = {
-      clientTimestamp: '2006-10-07T12:06:56.568+09:00',
-      serverTimestamp: '2006-10-07T12:06:56.568+09:00',
-      token,
-      type: village.PayloadType.receivedChatMessage,
-      villageId
-    }
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const villageId = 3
+  const action = message.flavorTextMessage(flavorText)
+  const payload: village.Payload$ReceivedFlavorTextMessage = {
+    day: 0,
+    phase: village.Phase.flavorText,
+    token,
+    type: village.PayloadType.receivedFlavorTextMessage,
+    villageId
+  }
 
-    test('validate the JSON of play', async () => {
-      expect.hasAssertions()
-      const schemas = await Promise.all([
-        fetch(`${BASE_URI}/receipt/receivedChatMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/base.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json())
-      ])
-      const ajv = new Ajv({
-        schemas
-      })
-      const validate = ajv.validate(`${BASE_URI}/receipt/receivedChatMessage.json`, payload)
-
-      if (!validate) {
-        console.error(ajv.errors)
-      }
-      expect(validate).toBe(true)
+  test('validate the JSON of play', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      fetch(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/time.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/village.json`)
+        .then(res => res.json())
+    ])
+    const ajv = new Ajv({
+      schemas
     })
-    test('dispatch correctly', () => {
-      actionHandler(action)
-      expect(dispatch).toHaveBeenCalledTimes(1)
-      expect(dispatch).toHaveBeenCalledWith({
-        payload,
-        type: ActionTypes.Socket.SEND
-      })
+    const validate = ajv.validate(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
     })
   })
-  describe('receivedSystemMessage', () => {
-    const store = fakeStore()
-    const dispatch = jest.fn()
+})
+describe('message/SystemMessage', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
 
-    store.dispatch = dispatch
-    const nextHandler = middleware(store)
-    const dispatchAPI = jest.fn()
-    const actionHandler = nextHandler(dispatchAPI)
-    const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
-    const villageId = 3
-    const action = socket.message(firstMorning)
-    const payload: village.Payload$ReceivedSystemMessage = {
-      day: 1,
-      phase: village.Phase.morning,
-      token,
-      type: village.PayloadType.receivedSystemMessage,
-      villageId
-    }
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const villageId = 3
+  const action = message.systemMessage(firstMorning)
+  const payload: village.Payload$ReceivedSystemMessage = {
+    day: 1,
+    phase: village.Phase.morning,
+    token,
+    type: village.PayloadType.receivedSystemMessage,
+    villageId
+  }
 
-    test('validate the JSON of play', async () => {
-      expect.hasAssertions()
-      const schemas = await Promise.all([
-        fetch(`${BASE_URI}/receipt/receivedSystemMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/time.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json())
-      ])
-      const ajv = new Ajv({
-        schemas
-      })
-      const validate = ajv.validate(`${BASE_URI}/receipt/receivedSystemMessage.json`, payload)
-
-      if (!validate) {
-        console.error(ajv.errors)
-      }
-      expect(validate).toBe(true)
+  test('validate the JSON of play', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      fetch(`${BASE_URI}/receipt/receivedSystemMessage.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/avatar.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/time.json`)
+        .then(res => res.json()),
+      fetch(`${BASE_URI}/village.json`)
+        .then(res => res.json())
+    ])
+    const ajv = new Ajv({
+      schemas
     })
-    test('dispatch correctly', () => {
-      actionHandler(action)
-      expect(dispatch).toHaveBeenCalledTimes(1)
-      expect(dispatch).toHaveBeenCalledWith({
-        payload,
-        type: ActionTypes.Socket.SEND
-      })
+    const validate = ajv.validate(`${BASE_URI}/receipt/receivedSystemMessage.json`, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
     })
   })
 })
