@@ -1044,7 +1044,7 @@ describe('STAR', () => {
     })
   })
 })
-describe('message/ChatMessage', () => {
+describe('message/CHAT_MESSAGE', () => {
   const store = fakeStore()
   const dispatch = jest.fn()
 
@@ -1094,7 +1094,7 @@ describe('message/ChatMessage', () => {
     })
   })
 })
-describe('message/FlavorTextMessage', () => {
+describe('message/FLAVOR_TEXT_MESSAGE', () => {
   const store = fakeStore()
   const dispatch = jest.fn()
 
@@ -1144,7 +1144,7 @@ describe('message/FlavorTextMessage', () => {
     })
   })
 })
-describe('message/SystemMessage', () => {
+describe('message/SYSTEM_MESSAGE', () => {
   const store = fakeStore()
   const dispatch = jest.fn()
 
