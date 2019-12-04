@@ -17,9 +17,9 @@ export default function ErrorMessage(props: Props) {
     >
       {
         text => (
-          <p className="la--error">
+          <div className="la--error">
             {text}
-          </p>
+          </div>
         )
       }
     </FormattedMessage>
