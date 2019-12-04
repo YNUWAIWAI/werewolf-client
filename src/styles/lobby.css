@@ -18,6 +18,10 @@
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 .lo {
   &--app--transition {
     &-appear {
