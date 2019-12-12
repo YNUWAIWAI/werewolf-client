@@ -2,7 +2,7 @@ import * as React from 'react'
 import AutomationSelect from '../atoms/AutomationSelect'
 import {FormattedMessage} from 'react-intl'
 import Menu from '../../containers/MenuContainer'
-import {MenuItemProps as MenuItem} from '../organisms/Menu'
+import {MenuItemProps as MenuItem} from './Menu'
 import TextInput from '../atoms/TextInput'
 import {lobby} from '../../types'
 
@@ -10,7 +10,7 @@ interface Props {
   command: MenuItem[]
 }
 
-export default function CreateNewRobotAvatar(props: Props) {
+export default function CreateNewRobotAvatarBox(props: Props) {
   return (
     <>
       <FormattedMessage
