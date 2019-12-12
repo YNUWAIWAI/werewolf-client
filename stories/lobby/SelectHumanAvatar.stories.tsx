@@ -29,19 +29,7 @@ storiesOf('lobby|SelectHumanAvatar', module)
               }
             }
           },
-          createNewAvatarCommand: [
-            {
-              id: 'CreateNewAvatar.create',
-              types: [ActionTypes.SelectHumanAvatar.CREATE]
-            }
-          ],
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ],
-          selectAvatarCommand: [
+          command: [
             {
               id: 'AvatarSelectCommand.select',
               types: [ActionTypes.SelectHumanAvatar.SELECT]
@@ -49,6 +37,12 @@ storiesOf('lobby|SelectHumanAvatar', module)
             {
               id: 'AvatarSelectCommand.delete',
               types: [ActionTypes.SelectHumanAvatar.DELETE]
+            }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ]
         }

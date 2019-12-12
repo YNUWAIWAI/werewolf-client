@@ -117,19 +117,7 @@ storiesOf('lobby|App', module)
               }
             }
           },
-          createNewAvatarCommand: [
-            {
-              id: 'CreateNewAvatar.create',
-              types: [ActionTypes.SelectHumanAvatar.CREATE]
-            }
-          ],
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ],
-          selectAvatarCommand: [
+          command: [
             {
               id: 'AvatarSelectCommand.select',
               types: [ActionTypes.SelectHumanAvatar.SELECT]
@@ -137,6 +125,12 @@ storiesOf('lobby|App', module)
             {
               id: 'AvatarSelectCommand.delete',
               types: [ActionTypes.SelectHumanAvatar.DELETE]
+            }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ]
         }
@@ -217,19 +211,7 @@ storiesOf('lobby|App', module)
               }
             }
           },
-          createNewAvatarCommand: [
-            {
-              id: 'CreateNewAvatar.create',
-              types: [ActionTypes.SelectRobotAvatar.CREATE]
-            }
-          ],
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ],
-          selectAvatarCommand: [
+          command: [
             {
               id: 'AvatarSelectCommand.runInTheForeground',
               types: [ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND]
@@ -246,6 +228,12 @@ storiesOf('lobby|App', module)
               id: 'AvatarSelectCommand.delete',
               types: [ActionTypes.SelectRobotAvatar.DELETE]
             }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
+            }
           ]
         }
       },
@@ -257,6 +245,86 @@ storiesOf('lobby|App', module)
       </Provider>
 
     history.replace('/robot/selectAvatar')
+    store.dispatch({
+      type: ActionTypes.App.INIT
+    })
+
+    return story
+  })
+  .add('createNewHumanAvatar', () => {
+    const history = createHashHistory()
+    const store = createStore(
+      reducer,
+      {
+        ... lobbyForHumanPlayer,
+        createNewHumanAvatar: {
+          command: [
+            {
+              id: 'CreateNewAvatar.create',
+              types: [ActionTypes.SelectRobotAvatar.CREATE]
+            }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
+            }
+          ]
+        },
+        language: radios(language.label, language.options, language.defaultValue),
+        obfucator: {
+          loading: false,
+          visible: false
+        }
+      },
+      createRouterMiddleware(history)
+    )
+    const story =
+      <Provider store={store}>
+        <App history={history} />
+      </Provider>
+
+    history.replace('/human/createNewAvatar')
+    store.dispatch({
+      type: ActionTypes.App.INIT
+    })
+
+    return story
+  })
+  .add('createNewRobotAvatar', () => {
+    const history = createHashHistory()
+    const store = createStore(
+      reducer,
+      {
+        ... lobbyForHumanPlayer,
+        createNewRobotAvatar: {
+          command: [
+            {
+              id: 'CreateNewAvatar.create',
+              types: [ActionTypes.SelectRobotAvatar.CREATE]
+            }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
+            }
+          ]
+        },
+        language: radios(language.label, language.options, language.defaultValue),
+        obfucator: {
+          loading: false,
+          visible: false
+        }
+      },
+      createRouterMiddleware(history)
+    )
+    const story =
+      <Provider store={store}>
+        <App history={history} />
+      </Provider>
+
+    history.replace('/robot/createNewAvatar')
     store.dispatch({
       type: ActionTypes.App.INIT
     })
