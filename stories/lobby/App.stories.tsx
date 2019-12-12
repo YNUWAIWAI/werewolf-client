@@ -129,6 +129,10 @@ storiesOf('lobby|App', module)
           ],
           menuItems: [
             {
+              id: 'Menu.createNewAvatar',
+              types: [ActionTypes.App.SHOW_CREATE_NEW_AVATAR]
+            },
+            {
               id: 'Menu.returnToMainPage',
               types: [ActionTypes.App.SHOW_MAIN]
             }
@@ -231,6 +235,10 @@ storiesOf('lobby|App', module)
           ],
           menuItems: [
             {
+              id: 'Menu.createNewAvatar',
+              types: [ActionTypes.App.SHOW_CREATE_NEW_AVATAR]
+            },
+            {
               id: 'Menu.returnToMainPage',
               types: [ActionTypes.App.SHOW_MAIN]
             }
@@ -245,86 +253,6 @@ storiesOf('lobby|App', module)
       </Provider>
 
     history.replace('/robot/selectAvatar')
-    store.dispatch({
-      type: ActionTypes.App.INIT
-    })
-
-    return story
-  })
-  .add('createNewHumanAvatar', () => {
-    const history = createHashHistory()
-    const store = createStore(
-      reducer,
-      {
-        ... lobbyForHumanPlayer,
-        createNewHumanAvatar: {
-          command: [
-            {
-              id: 'CreateNewAvatar.create',
-              types: [ActionTypes.SelectRobotAvatar.CREATE]
-            }
-          ],
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ]
-        },
-        language: radios(language.label, language.options, language.defaultValue),
-        obfucator: {
-          loading: false,
-          visible: false
-        }
-      },
-      createRouterMiddleware(history)
-    )
-    const story =
-      <Provider store={store}>
-        <App history={history} />
-      </Provider>
-
-    history.replace('/human/createNewAvatar')
-    store.dispatch({
-      type: ActionTypes.App.INIT
-    })
-
-    return story
-  })
-  .add('createNewRobotAvatar', () => {
-    const history = createHashHistory()
-    const store = createStore(
-      reducer,
-      {
-        ... lobbyForHumanPlayer,
-        createNewRobotAvatar: {
-          command: [
-            {
-              id: 'CreateNewAvatar.create',
-              types: [ActionTypes.SelectRobotAvatar.CREATE]
-            }
-          ],
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ]
-        },
-        language: radios(language.label, language.options, language.defaultValue),
-        obfucator: {
-          loading: false,
-          visible: false
-        }
-      },
-      createRouterMiddleware(history)
-    )
-    const story =
-      <Provider store={store}>
-        <App history={history} />
-      </Provider>
-
-    history.replace('/robot/createNewAvatar')
     store.dispatch({
       type: ActionTypes.App.INIT
     })

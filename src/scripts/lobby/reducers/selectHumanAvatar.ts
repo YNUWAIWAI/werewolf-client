@@ -27,6 +27,10 @@ export const initialState: State = {
   command: [],
   menuItems: [
     {
+      id: 'Menu.createNewAvatar',
+      types: [ActionTypes.App.SHOW_SELECT_HUMAN_AVATAR]
+    },
+    {
       id: 'Menu.returnToMainPage',
       types: [ActionTypes.App.SHOW_MAIN]
     }

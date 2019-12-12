@@ -85,6 +85,17 @@ const router: (history: History) => Middleware = history => store => next => act
       history.push('/')
 
       return next(action)
+    case ActionTypes.App.SHOW_CREATE_NEW_AVATAR: {
+      const lobbyType = getLobbyType(history.location.pathname)
+
+      if (lobbyType) {
+        history.push(`/${lobbyType}/createNewAvatar`)
+      } else {
+        history.push('/')
+      }
+
+      return next(action)
+    }
     case ActionTypes.App.SHOW_HISTORY:
       history.push('/history')
 
@@ -114,6 +125,14 @@ const router: (history: History) => Middleware = history => store => next => act
       return next(action)
     case ActionTypes.App.SHOW_MAIN:
       history.push('/')
+
+      return next(action)
+    case ActionTypes.App.SHOW_SELECT_HUMAN_AVATAR:
+      history.push('/human/selectAvatar')
+
+      return next(action)
+    case ActionTypes.App.SHOW_SELECT_ROBOT_AVATAR:
+      history.push('/robot/selectAvatar')
 
       return next(action)
     case ActionTypes.App.SHOW_SETTINGS:

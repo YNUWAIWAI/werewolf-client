@@ -130,6 +130,7 @@ export type Target =
   | ActionTypes.App.SHOW_ADVANCED_SEARCH
   | ActionTypes.App.SHOW_BUILD_VILLAGE
   | ActionTypes.App.SHOW_CONNECTING_TO_ROBOT_PLAYER
+  | ActionTypes.App.SHOW_CREATE_NEW_AVATAR
   | ActionTypes.App.SHOW_CREDITS
   | ActionTypes.App.SHOW_HISTORY
   | ActionTypes.App.SHOW_HOW_TO_PLAY
@@ -138,6 +139,8 @@ export type Target =
   | ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
   | ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
   | ActionTypes.App.SHOW_MAIN
+  | ActionTypes.App.SHOW_SELECT_HUMAN_AVATAR
+  | ActionTypes.App.SHOW_SELECT_ROBOT_AVATAR
   | ActionTypes.App.SHOW_SETTINGS
   | ActionTypes.App.SHOW_VILLAGE
   | ActionTypes.SelectHumanAvatar.CREATE

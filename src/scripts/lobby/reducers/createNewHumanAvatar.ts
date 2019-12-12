@@ -18,6 +18,10 @@ export const initialState: State = {
   ],
   menuItems: [
     {
+      id: 'Menu.selectAvatar',
+      types: [ActionTypes.App.SHOW_SELECT_HUMAN_AVATAR]
+    },
+    {
       id: 'Menu.returnToMainPage',
       types: [ActionTypes.App.SHOW_MAIN]
     }
