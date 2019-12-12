@@ -15,7 +15,7 @@ export type Props = StateProps
 export default function CreateNewHumanAvatar(props: Props) {
   return (
     <div className="lo--grid">
-      <Header id="Header.createHumanAvatar" />
+      <Header id="Header.selectHumanAvatar" />
       <MainContent>
         <CreateNewHumanAvatarBox
           command={props.command}

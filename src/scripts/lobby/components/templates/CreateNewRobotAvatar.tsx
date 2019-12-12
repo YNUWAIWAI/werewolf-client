@@ -15,7 +15,7 @@ export type Props = StateProps
 export default function CreateNewRobotAvatar(props: Props) {
   return (
     <div className="lo--grid">
-      <Header id="Header.createRobotAvatar" />
+      <Header id="Header.selectRobotAvatar" />
       <MainContent>
         <CreateNewRobotAvatarBox
           command={props.command}
