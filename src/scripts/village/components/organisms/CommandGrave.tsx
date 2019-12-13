@@ -9,7 +9,7 @@ export interface StateProps {
   readonly language: village.Language
   readonly maxLengthOfUnicodeCodePoints: number
   readonly navigation: CommandNavigationProps['items']
-  readonly suggesttedData: State['data']
+  readonly suggestedData: State['data']
 }
 export interface DispatchProps {
   readonly handleNavigationClick: (type: Navigation) => void
@@ -27,7 +27,7 @@ export default function CommandGrave(props: Props) {
         maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
         maxNumberOfChatMessages={-1}
         numberOfChatMessages={-1}
-        suggesttedData={props.suggesttedData}
+        suggestedData={props.suggestedData}
       />
       <CommandNavigation
         handleClick={props.handleNavigationClick}

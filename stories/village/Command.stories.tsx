@@ -16,7 +16,7 @@ import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
 import {village} from './types'
 
-const suggesttedData = [
+const suggestedData = [
   {
     id: Character.a.en,
     name: Character.a
@@ -127,7 +127,7 @@ storiesOf('village|Command', module)
         public={{
           numberOfChatMessages: 0
         }}
-        suggesttedData={suggesttedData}
+        suggestedData={suggestedData}
         werewolf={{
           available: false,
           numberOfChatMessages: 0
@@ -162,7 +162,7 @@ storiesOf('village|Command', module)
         public={{
           numberOfChatMessages: 0
         }}
-        suggesttedData={suggesttedData}
+        suggestedData={suggestedData}
         werewolf={{
           available: true,
           numberOfChatMessages: 0
@@ -211,7 +211,7 @@ storiesOf('village|Command', module)
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
           }
         ]}
-        suggesttedData={suggesttedData}
+        suggestedData={suggestedData}
       />
     const store = createStore(
       reducer,
@@ -257,7 +257,7 @@ storiesOf('village|Command', module)
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
           }
         ]}
-        suggesttedData={suggesttedData}
+        suggestedData={suggestedData}
       />
     const store = createStore(
       reducer,
@@ -297,7 +297,7 @@ storiesOf('village|Command', module)
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
           }
         ]}
-        suggesttedData={suggesttedData}
+        suggestedData={suggestedData}
       />
     const store = createStore(
       reducer,
@@ -332,7 +332,7 @@ storiesOf('village|Command', module)
             type: ActionTypes.Navigation.RETURN_TO_LOBBY
           }
         ]}
-        suggesttedData={suggesttedData}
+        suggestedData={suggestedData}
       />
     const store = createStore(
       reducer,

@@ -18,7 +18,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   language: state.language,
   maxLengthOfUnicodeCodePoints: state.base.village.chatSettings.maxLengthOfUnicodeCodePoints,
   maxNumberOfChatMessages: state.base.village.chatSettings.maxNumberOfChatMessages,
-  suggesttedData: state.suggest.data
+  suggestedData: state.suggest.data
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handlePostChat: channel => text => {

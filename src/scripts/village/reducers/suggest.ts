@@ -3,11 +3,12 @@ import {Message$SystemMessage} from '../actions'
 import {strToRoleId} from '../util'
 import {village} from '../types'
 
+export interface SuggestedData {
+  readonly id: village.LanguageMap['en']
+  readonly name: village.LanguageMap
+}
 export interface State {
-  data: {
-    id: village.LanguageMap['en']
-    name: village.LanguageMap
-  }[]
+  readonly data: SuggestedData[]
 }
 type Action =
   | Message$SystemMessage
