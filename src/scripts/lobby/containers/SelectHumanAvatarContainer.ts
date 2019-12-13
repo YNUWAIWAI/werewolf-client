@@ -3,9 +3,8 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  createNewAvatarCommand: state.selectHumanAvatar.createNewAvatarCommand,
-  menuItems: state.selectHumanAvatar.menuItems,
-  selectAvatarCommand: state.selectHumanAvatar.selectAvatarCommand
+  command: state.selectHumanAvatar.command,
+  menuItems: state.selectHumanAvatar.menuItems
 })
 const SelectHumanAvatarContainer = connect(
   mapStateToProps

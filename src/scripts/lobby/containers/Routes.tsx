@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom'
 import AdvancedSearch from './AdvancedSearchContainer'
 import BuildVillage from './BuildVillageContainer'
+import CreateNewHumanAvatar from './CreateNewHumanAvatarContainer'
+import CreateNewRobotAvatar from './CreateNewRobotAvatarContainer'
 // import ConnectingToRobotPlayer from './ConnectingToRobotPlayerContainer'
 import History from './HistoryContainer'
 import IdSearch from './IdSearchContainer'
@@ -35,14 +37,20 @@ export default function Routes() {
       <Route path="/human/selectAvatar">
         <SelectHumanAvatar />
       </Route>
+      <Route path="/robot/selectAvatar">
+        <SelectRobotAvatar />
+      </Route>
       <Route path="/human/lobby">
         <LobbyForHumanPlayer />
       </Route>
       <Route path="/robot/lobby">
         <LobbyForRobotPlayer />
       </Route>
-      <Route path="/robot/selectAvatar">
-        <SelectRobotAvatar />
+      <Route path="/human/createNewAvatar">
+        <CreateNewHumanAvatar />
+      </Route>
+      <Route path="/robot/createNewAvatar">
+        <CreateNewRobotAvatar />
       </Route>
       <Route path={
         [

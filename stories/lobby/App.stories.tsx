@@ -117,19 +117,7 @@ storiesOf('lobby|App', module)
               }
             }
           },
-          createNewAvatarCommand: [
-            {
-              id: 'CreateNewAvatar.create',
-              types: [ActionTypes.SelectHumanAvatar.CREATE]
-            }
-          ],
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ],
-          selectAvatarCommand: [
+          command: [
             {
               id: 'AvatarSelectCommand.select',
               types: [ActionTypes.SelectHumanAvatar.SELECT]
@@ -137,6 +125,16 @@ storiesOf('lobby|App', module)
             {
               id: 'AvatarSelectCommand.delete',
               types: [ActionTypes.SelectHumanAvatar.DELETE]
+            }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.createNewAvatar',
+              types: [ActionTypes.App.SHOW_CREATE_NEW_AVATAR]
+            },
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ]
         }
@@ -217,19 +215,7 @@ storiesOf('lobby|App', module)
               }
             }
           },
-          createNewAvatarCommand: [
-            {
-              id: 'CreateNewAvatar.create',
-              types: [ActionTypes.SelectRobotAvatar.CREATE]
-            }
-          ],
-          menuItems: [
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ],
-          selectAvatarCommand: [
+          command: [
             {
               id: 'AvatarSelectCommand.runInTheForeground',
               types: [ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND]
@@ -245,6 +231,16 @@ storiesOf('lobby|App', module)
             {
               id: 'AvatarSelectCommand.delete',
               types: [ActionTypes.SelectRobotAvatar.DELETE]
+            }
+          ],
+          menuItems: [
+            {
+              id: 'Menu.createNewAvatar',
+              types: [ActionTypes.App.SHOW_CREATE_NEW_AVATAR]
+            },
+            {
+              id: 'Menu.returnToMainPage',
+              types: [ActionTypes.App.SHOW_MAIN]
             }
           ]
         }

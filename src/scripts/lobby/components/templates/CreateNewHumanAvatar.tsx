@@ -1,11 +1,10 @@
 import * as React from 'react'
 import AsideContent from '../atoms/AsideContent'
-import CreateNewRobotAvatar from '../organisms/CreateNewRobotAvatarBox'
+import CreateNewHumanAvatarBox from '../organisms/CreateNewHumanAvatarBox'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
-import SelectRobotAvatarBox from '../organisms/SelectRobotAvatarBox'
 
 export interface StateProps {
   readonly command: MenuItem[]
@@ -13,12 +12,12 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export default function SelectRobotAvatar(props: Props) {
+export default function CreateNewHumanAvatar(props: Props) {
   return (
     <div className="lo--grid">
-      <Header id="Header.selectRobotAvatar" />
+      <Header id="Header.selectHumanAvatar" />
       <MainContent>
-        <SelectRobotAvatarBox
+        <CreateNewHumanAvatarBox
           command={props.command}
         />
       </MainContent>

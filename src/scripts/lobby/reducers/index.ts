@@ -1,6 +1,8 @@
 import advancedSearch, {State as AdvancedSearchState} from './advancedSearch'
 import buildVillage, {State as BuildVillageState} from './buildVillage'
 import connectingToRobotPlayer, {State as ConnectingToRobotPlayerState} from './connectingToRobotPlayer'
+import createNewHumanAvatar, {State as CreateNewHumanAvatar} from './createNewHumanAvatar'
+import createNewRobotAvatar, {State as CreateNewRobotAvatar} from './createNewRobotAvatar'
 import history, {State as HistoryState} from './history'
 import idSearch, {State as IdSearchState} from './idSearch'
 import language, {State as LanguageState} from './language'
@@ -22,6 +24,8 @@ export interface ReducerState {
   advancedSearch: AdvancedSearchState
   buildVillage: BuildVillageState
   connectingToRobotPlayer: ConnectingToRobotPlayerState
+  createNewHumanAvatar: CreateNewHumanAvatar
+  createNewRobotAvatar: CreateNewRobotAvatar
   history: HistoryState
   idSearch: IdSearchState
   language: LanguageState
@@ -43,6 +47,8 @@ const reducer = combineReducers({
   advancedSearch,
   buildVillage,
   connectingToRobotPlayer,
+  createNewHumanAvatar,
+  createNewRobotAvatar,
   history,
   idSearch,
   language,

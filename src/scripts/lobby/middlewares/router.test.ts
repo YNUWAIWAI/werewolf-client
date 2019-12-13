@@ -264,6 +264,44 @@ test('SHOW_CONNECTING_TO_ROBOT_PLAYER', () => {
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/')
 })
+describe('SHOW_CREATE_NEW_AVATAR', () => {
+  test('lobbyType: human', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push('/human/selectAvatar')
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.App.SHOW_CREATE_NEW_AVATAR
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/human/createNewAvatar')
+  })
+  test('lobbyType: robot', () => {
+    const history = createMemoryHistory()
+    const push = jest.fn()
+    const store = fakeStore()
+
+    history.push('/robot/selectAvatar')
+    history.push = push
+
+    const nextHandler = middleware(history)(store)
+    const dispatchAPI = jest.fn()
+    const actionHandler = nextHandler(dispatchAPI)
+
+    actionHandler({
+      type: ActionTypes.App.SHOW_CREATE_NEW_AVATAR
+    })
+    expect(push).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/robot/createNewAvatar')
+  })
+})
 test('SHOW_HISTORY', () => {
   const history = createMemoryHistory()
   const push = jest.fn()
@@ -385,6 +423,40 @@ test('SHOW_MAIN', () => {
   })
   expect(push).toHaveBeenCalled()
   expect(push).toHaveBeenCalledWith('/')
+})
+test('SHOW_SELECT_HUMAN_AVATAR', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.App.SHOW_SELECT_HUMAN_AVATAR
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/human/selectAvatar')
+})
+test('SHOW_SELECT_ROBOT_AVATAR', () => {
+  const history = createMemoryHistory()
+  const push = jest.fn()
+  const store = fakeStore()
+
+  history.push = push
+
+  const nextHandler = middleware(history)(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+
+  actionHandler({
+    type: ActionTypes.App.SHOW_SELECT_ROBOT_AVATAR
+  })
+  expect(push).toHaveBeenCalled()
+  expect(push).toHaveBeenCalledWith('/robot/selectAvatar')
 })
 test('SHOW_SETTINGS', () => {
   const history = createMemoryHistory()

@@ -1,14 +1,14 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import Menu from '../../containers/MenuContainer'
-import {MenuItemProps as MenuItem} from '../organisms/Menu'
+import {MenuItemProps as MenuItem} from './Menu'
 import TextInput from '../atoms/TextInput'
 
 interface Props {
   command: MenuItem[]
 }
 
-export default function CreateNewHumanAvatar(props: Props) {
+export default function CreateNewHumanAvatarBox(props: Props) {
   return (
     <>
       <FormattedMessage

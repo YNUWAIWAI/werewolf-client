@@ -13,9 +13,8 @@ export interface State {
       }
     }
   }
-  readonly createNewAvatarCommand: MenuItem[]
+  readonly command: MenuItem[]
   readonly menuItems: MenuItem[]
-  readonly selectAvatarCommand: MenuItem[]
 }
 type Action =
   | SelectHumanAvatar$ChangeCheckbox
@@ -25,19 +24,17 @@ export const initialState: State = {
     allIds: [],
     byId: {}
   },
-  createNewAvatarCommand: [
-    {
-      id: 'CreateNewAvatar.create',
-      types: [ActionTypes.SelectHumanAvatar.CREATE]
-    }
-  ],
+  command: [],
   menuItems: [
+    {
+      id: 'Menu.createNewAvatar',
+      types: [ActionTypes.App.SHOW_SELECT_HUMAN_AVATAR]
+    },
     {
       id: 'Menu.returnToMainPage',
       types: [ActionTypes.App.SHOW_MAIN]
     }
-  ],
-  selectAvatarCommand: []
+  ]
 }
 const selectHumanAvatar = (state: State = initialState, action: Action): State => {
   switch (action.type) {
