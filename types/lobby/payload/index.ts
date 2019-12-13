@@ -1,5 +1,8 @@
 import {
   AdvancedSearch,
+  AuthorizationRequest,
+  AuthorizationRequestAccepted,
+  AuthorizationRequestAcceptedResponse,
   Avatar,
   BuildVillage,
   ChangeLang,
@@ -26,6 +29,9 @@ import {
 
 export const enum PayloadType {
   advancedSearch = 'advancedSearch',
+  authorizationRequest = 'authorizationRequest',
+  authorizationRequestAccepted = 'authorizationRequestAccepted',
+  authorizationRequestAcceptedResponse = 'authorizationRequestAcceptedResponse',
   avatar = 'avatar',
   buildVillage = 'buildVillage',
   changeLang = 'changeLang',
@@ -51,6 +57,9 @@ export const enum PayloadType {
 }
 export type Payload =
   | Payload$AdvancedSearch
+  | Payload$AuthorizationRequest
+  | Payload$AuthorizationRequestAccepted
+  | Payload$AuthorizationRequestAcceptedResponse
   | Payload$Avatar
   | Payload$BuildVillage
   | Payload$ChangeLang
@@ -75,6 +84,9 @@ export type Payload =
   | Payload$WaitingPage
 
 export interface Payload$AdvancedSearch extends AdvancedSearch {}
+export interface Payload$AuthorizationRequest extends AuthorizationRequest {}
+export interface Payload$AuthorizationRequestAccepted extends AuthorizationRequestAccepted {}
+export interface Payload$AuthorizationRequestAcceptedResponse extends AuthorizationRequestAcceptedResponse {}
 export interface Payload$Avatar extends Avatar {}
 export interface Payload$BuildVillage extends BuildVillage {}
 export interface Payload$ChangeLang extends ChangeLang {}
