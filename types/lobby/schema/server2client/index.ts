@@ -1,3 +1,5 @@
+export {AuthorizationRequest} from './authorizationRequest'
+export {AuthorizationRequestAcceptedResponse} from './authorizationRequestAcceptedResponse'
 export {Avatar} from './avatar'
 export {Lobby} from './lobby'
 export {Played} from './played'
