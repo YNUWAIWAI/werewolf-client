@@ -18,7 +18,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -39,7 +39,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -60,7 +60,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -81,7 +81,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -102,7 +102,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -124,7 +124,7 @@ describe('<CommandInput />', () => {
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
         numberOfChatMessages={0}
-        suggesttedData={[]}
+        suggestedData={[]}
       />
     )
 
@@ -145,7 +145,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -163,13 +163,13 @@ describe('<CommandInput />', () => {
         suggestSelected: 0,
         suggestTop: 0,
         suggestable: false,
-        suggesttedData: [],
+        suggestedData: [],
         text: '',
         trigerPosition: 0
       })
     })
     describe('processing === false', () => {
-      describe('suggestable === false, suggesttedData.length <= 0', () => {
+      describe('suggestable === false, suggestedData.length <= 0', () => {
         test('(event.ctrlKey || event.metaKey) === true, event.key === Key.Enter', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
@@ -180,14 +180,14 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
           wrapper.instance().updateText('text')
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(false)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: true,
             key: Key.Enter,
@@ -200,7 +200,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: false,
-            suggesttedData: [],
+            suggestedData: [],
             text: '',
             trigerPosition: 0
           })
@@ -216,14 +216,14 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
           wrapper.instance().updateText('text')
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(false)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: false,
             key: Key.Enter,
@@ -236,7 +236,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: false,
-            suggesttedData: [],
+            suggestedData: [],
             text: 'text',
             trigerPosition: 0
           })
@@ -252,14 +252,14 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
           wrapper.instance().updateText('text')
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(false)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: true,
             key: Key.Tab,
@@ -272,14 +272,14 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: false,
-            suggesttedData: [],
+            suggestedData: [],
             text: 'text',
             trigerPosition: 0
           })
           expect(handlePostChat).toHaveBeenCalledTimes(0)
         })
       })
-      describe('suggestable === true, suggesttedData.length <= 0', () => {
+      describe('suggestable === true, suggestedData.length <= 0', () => {
         test('(event.ctrlKey || event.metaKey) === true, event.key === Key.Enter', () => {
           const handlePostChat = jest.fn()
           const wrapper = mountWithIntl<CommandInput>(
@@ -290,7 +290,7 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
@@ -298,7 +298,7 @@ describe('<CommandInput />', () => {
           wrapper.instance().updateSuggestable(true)
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(true)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: true,
             key: Key.Enter,
@@ -311,7 +311,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: true,
-            suggesttedData: [],
+            suggestedData: [],
             text: '',
             trigerPosition: 0
           })
@@ -327,7 +327,7 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
@@ -335,7 +335,7 @@ describe('<CommandInput />', () => {
           wrapper.instance().updateSuggestable(true)
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(true)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: false,
             key: Key.Enter,
@@ -348,7 +348,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: true,
-            suggesttedData: [],
+            suggestedData: [],
             text: 'text',
             trigerPosition: 0
           })
@@ -364,7 +364,7 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
@@ -372,7 +372,7 @@ describe('<CommandInput />', () => {
           wrapper.instance().updateSuggestable(true)
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(true)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: true,
             key: Key.Tab,
@@ -385,15 +385,15 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: true,
-            suggesttedData: [],
+            suggestedData: [],
             text: 'text',
             trigerPosition: 0
           })
           expect(handlePostChat).toHaveBeenCalledTimes(0)
         })
       })
-      describe('suggestable === false, suggesttedData.length > 0', () => {
-        const suggesttedData = [
+      describe('suggestable === false, suggestedData.length > 0', () => {
+        const suggestedData = [
           {
             id: 'Alvin',
             name: {
@@ -413,14 +413,14 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={suggesttedData}
+              suggestedData={suggestedData}
             />
           )
 
           wrapper.instance().updateText('text')
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(false)
-          expect(wrapper.state().suggesttedData).toHaveLength(1)
+          expect(wrapper.state().suggestedData).toHaveLength(1)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: true,
             key: Key.Enter,
@@ -433,7 +433,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: false,
-            suggesttedData,
+            suggestedData,
             text: '',
             trigerPosition: 0
           })
@@ -449,14 +449,14 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
           wrapper.instance().updateText('text')
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(false)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: false,
             key: Key.Enter,
@@ -469,7 +469,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: false,
-            suggesttedData: [],
+            suggestedData: [],
             text: 'text',
             trigerPosition: 0
           })
@@ -485,14 +485,14 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
           wrapper.instance().updateText('text')
           expect(wrapper.state().processing).toBe(false)
           expect(wrapper.state().suggestable).toBe(false)
-          expect(wrapper.state().suggesttedData).toHaveLength(0)
+          expect(wrapper.state().suggestedData).toHaveLength(0)
           wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
             ctrlKey: true,
             key: Key.Tab,
@@ -505,15 +505,15 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 0,
             suggestable: false,
-            suggesttedData: [],
+            suggestedData: [],
             text: 'text',
             trigerPosition: 0
           })
           expect(handlePostChat).toHaveBeenCalledTimes(0)
         })
       })
-      describe('suggestable === true, suggesttedData.length > 0', () => {
-        const suggesttedData = [
+      describe('suggestable === true, suggestedData.length > 0', () => {
+        const suggestedData = [
           {
             id: 'Alvin',
             name: {
@@ -548,7 +548,7 @@ describe('<CommandInput />', () => {
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
                 numberOfChatMessages={0}
-                suggesttedData={suggesttedData}
+                suggestedData={suggestedData}
               />
             )
 
@@ -556,7 +556,7 @@ describe('<CommandInput />', () => {
             wrapper.instance().updateSuggestable(true)
             expect(wrapper.state().processing).toBe(false)
             expect(wrapper.state().suggestable).toBe(true)
-            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            expect(wrapper.state().suggestedData).toHaveLength(3)
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowLeft
             })
@@ -567,7 +567,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 0,
               suggestTop: 0,
               suggestable: false,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -583,7 +583,7 @@ describe('<CommandInput />', () => {
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
                 numberOfChatMessages={0}
-                suggesttedData={suggesttedData}
+                suggestedData={suggestedData}
               />
             )
 
@@ -591,7 +591,7 @@ describe('<CommandInput />', () => {
             wrapper.instance().updateSuggestable(true)
             expect(wrapper.state().processing).toBe(false)
             expect(wrapper.state().suggestable).toBe(true)
-            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            expect(wrapper.state().suggestedData).toHaveLength(3)
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowRight
             })
@@ -602,7 +602,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 0,
               suggestTop: 0,
               suggestable: false,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -618,7 +618,7 @@ describe('<CommandInput />', () => {
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
                 numberOfChatMessages={0}
-                suggesttedData={suggesttedData}
+                suggestedData={suggestedData}
               />
             )
 
@@ -626,7 +626,7 @@ describe('<CommandInput />', () => {
             wrapper.instance().updateSuggestable(true)
             expect(wrapper.state().processing).toBe(false)
             expect(wrapper.state().suggestable).toBe(true)
-            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            expect(wrapper.state().suggestedData).toHaveLength(3)
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowDown
             })
@@ -637,7 +637,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 1,
               suggestTop: 0,
               suggestable: true,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -651,7 +651,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 2,
               suggestTop: 0,
               suggestable: true,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -665,7 +665,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 0,
               suggestTop: 0,
               suggestable: true,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -680,7 +680,7 @@ describe('<CommandInput />', () => {
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
                 numberOfChatMessages={0}
-                suggesttedData={suggesttedData}
+                suggestedData={suggestedData}
               />
             )
 
@@ -688,7 +688,7 @@ describe('<CommandInput />', () => {
             wrapper.instance().updateSuggestable(true)
             expect(wrapper.state().processing).toBe(false)
             expect(wrapper.state().suggestable).toBe(true)
-            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            expect(wrapper.state().suggestedData).toHaveLength(3)
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.ArrowUp
             })
@@ -699,7 +699,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 2,
               suggestTop: 0,
               suggestable: true,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -713,7 +713,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 1,
               suggestTop: 0,
               suggestable: true,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -727,7 +727,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 0,
               suggestTop: 0,
               suggestable: true,
-              suggesttedData,
+              suggestedData,
               text: 'text',
               trigerPosition: 0
             })
@@ -742,7 +742,7 @@ describe('<CommandInput />', () => {
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
                 numberOfChatMessages={0}
-                suggesttedData={suggesttedData}
+                suggestedData={suggestedData}
               />
             )
 
@@ -752,7 +752,7 @@ describe('<CommandInput />', () => {
             wrapper.instance().updateSuggestable(true)
             expect(wrapper.state().processing).toBe(false)
             expect(wrapper.state().suggestable).toBe(true)
-            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            expect(wrapper.state().suggestedData).toHaveLength(3)
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.Enter
             })
@@ -763,7 +763,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 0,
               suggestTop: 1,
               suggestable: false,
-              suggesttedData,
+              suggestedData,
               text: 'Alvin',
               trigerPosition: 0
             })
@@ -778,7 +778,7 @@ describe('<CommandInput />', () => {
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
                 numberOfChatMessages={0}
-                suggesttedData={suggesttedData}
+                suggestedData={suggestedData}
               />
             )
 
@@ -788,7 +788,7 @@ describe('<CommandInput />', () => {
             wrapper.instance().updateSuggestable(true)
             expect(wrapper.state().processing).toBe(false)
             expect(wrapper.state().suggestable).toBe(true)
-            expect(wrapper.state().suggesttedData).toHaveLength(3)
+            expect(wrapper.state().suggestedData).toHaveLength(3)
             wrapper.find('.vi--command--input--textarea').simulate('keyDown', {
               key: Key.Tab
             })
@@ -799,7 +799,7 @@ describe('<CommandInput />', () => {
               suggestSelected: 0,
               suggestTop: 1,
               suggestable: false,
-              suggesttedData,
+              suggestedData,
               text: 'Alvin',
               trigerPosition: 0
             })
@@ -808,8 +808,8 @@ describe('<CommandInput />', () => {
       })
     })
     describe('postChat', () => {
-      test('suggestable === true && suggesttedData.length > 0', () => {
-        const suggesttedData = [
+      test('suggestable === true && suggestedData.length > 0', () => {
+        const suggestedData = [
           {
             id: 'Alvin',
             name: {
@@ -827,7 +827,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={0}
-            suggesttedData={suggesttedData}
+            suggestedData={suggestedData}
           />
         )
 
@@ -844,7 +844,7 @@ describe('<CommandInput />', () => {
           suggestSelected: 0,
           suggestTop: 0,
           suggestable: false,
-          suggesttedData,
+          suggestedData,
           text: 'Alvin',
           trigerPosition: 0
         })
@@ -862,7 +862,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
       const instance = wrapper.instance()
@@ -882,7 +882,7 @@ describe('<CommandInput />', () => {
         suggestSelected: 0,
         suggestTop: 0,
         suggestable: false,
-        suggesttedData: [],
+        suggestedData: [],
         text: '',
         trigerPosition: 0
       })
@@ -898,7 +898,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={10}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
       const instance = wrapper.instance()
@@ -918,7 +918,7 @@ describe('<CommandInput />', () => {
         suggestSelected: 0,
         suggestTop: 0,
         suggestable: false,
-        suggesttedData: [],
+        suggestedData: [],
         text,
         trigerPosition: 0
       })
@@ -934,7 +934,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
       const instance = wrapper.instance()
@@ -954,7 +954,7 @@ describe('<CommandInput />', () => {
         suggestSelected: 0,
         suggestTop: 0,
         suggestable: false,
-        suggesttedData: [],
+        suggestedData: [],
         text,
         trigerPosition: 0
       })
@@ -970,7 +970,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={10}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
       const instance = wrapper.instance()
@@ -990,7 +990,7 @@ describe('<CommandInput />', () => {
         suggestSelected: 0,
         suggestTop: 0,
         suggestable: false,
-        suggesttedData: [],
+        suggestedData: [],
         text,
         trigerPosition: 0
       })
@@ -1006,7 +1006,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1019,7 +1019,7 @@ describe('<CommandInput />', () => {
         suggestSelected: 0,
         suggestTop: 0,
         suggestable: false,
-        suggesttedData: [],
+        suggestedData: [],
         text: '',
         trigerPosition: 0
       })
@@ -1035,7 +1035,7 @@ describe('<CommandInput />', () => {
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
         numberOfChatMessages={0}
-        suggesttedData={[]}
+        suggestedData={[]}
       />
     )
 
@@ -1057,7 +1057,7 @@ describe('<CommandInput />', () => {
       suggestSelected: 0,
       suggestTop: 20,
       suggestable: false,
-      suggesttedData: [],
+      suggestedData: [],
       text: 'aaaasuggest',
       trigerPosition: 4
     })
@@ -1075,7 +1075,7 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
@@ -1094,7 +1094,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 1,
             suggestable: false,
-            suggesttedData: [],
+            suggestedData: [],
             text: '@@',
             trigerPosition: 0
           })
@@ -1111,7 +1111,7 @@ describe('<CommandInput />', () => {
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
               numberOfChatMessages={0}
-              suggesttedData={[]}
+              suggestedData={[]}
             />
           )
 
@@ -1130,7 +1130,7 @@ describe('<CommandInput />', () => {
             suggestSelected: 0,
             suggestTop: 1,
             suggestable: true,
-            suggesttedData: [],
+            suggestedData: [],
             text: '@a',
             trigerPosition: 0
           })
@@ -1148,7 +1148,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={0}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1167,7 +1167,7 @@ describe('<CommandInput />', () => {
           suggestSelected: 0,
           suggestTop: 1,
           suggestable: false,
-          suggesttedData: [],
+          suggestedData: [],
           text: '@ ',
           trigerPosition: 0
         })
@@ -1184,7 +1184,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={0}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1203,14 +1203,14 @@ describe('<CommandInput />', () => {
           suggestSelected: 0,
           suggestTop: 1,
           suggestable: false,
-          suggesttedData: [],
+          suggestedData: [],
           text: '',
           trigerPosition: 0
         })
       })
     })
     describe('suggestable === true', () => {
-      const suggesttedData = [
+      const suggestedData = [
         {
           id: 'Alvin',
           name: {
@@ -1328,7 +1328,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={0}
-            suggesttedData={suggesttedData}
+            suggestedData={suggestedData}
           />
         )
 
@@ -1347,7 +1347,7 @@ describe('<CommandInput />', () => {
           suggestSelected: 0,
           suggestTop: 1,
           suggestable: true,
-          suggesttedData: [
+          suggestedData: [
             {
               id: 'Alvin',
               name: {
@@ -1384,7 +1384,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={0}
-            suggesttedData={suggesttedData}
+            suggestedData={suggestedData}
           />
         )
 
@@ -1402,7 +1402,7 @@ describe('<CommandInput />', () => {
           suggestSelected: 1,
           suggestTop: 1,
           suggestable: true,
-          suggesttedData,
+          suggestedData,
           text: '@',
           trigerPosition: 0
         })
@@ -1417,7 +1417,7 @@ describe('<CommandInput />', () => {
           suggestSelected: 0,
           suggestTop: 1,
           suggestable: true,
-          suggesttedData: [
+          suggestedData: [
             {
               id: 'Catalina',
               name: {
@@ -1441,7 +1441,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1458,7 +1458,7 @@ describe('<CommandInput />', () => {
         suggestSelected: 0,
         suggestTop: 0,
         suggestable: false,
-        suggesttedData: [],
+        suggestedData: [],
         text: 'a',
         trigerPosition: 0
       })
@@ -1475,7 +1475,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1492,7 +1492,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={0}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1508,7 +1508,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={10}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1524,7 +1524,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={11}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1541,7 +1541,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1557,7 +1557,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1574,7 +1574,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={0}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1590,7 +1590,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={10}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1606,7 +1606,7 @@ describe('<CommandInput />', () => {
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
             numberOfChatMessages={11}
-            suggesttedData={[]}
+            suggestedData={[]}
           />
         )
 
@@ -1625,7 +1625,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1644,7 +1644,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1663,7 +1663,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1682,7 +1682,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1701,7 +1701,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1720,7 +1720,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
           numberOfChatMessages={-1}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1740,7 +1740,7 @@ describe('<CommandInput />', () => {
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
         numberOfChatMessages={0}
-        suggesttedData={[]}
+        suggestedData={[]}
       />
     )
 
@@ -1758,7 +1758,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1775,7 +1775,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1792,7 +1792,7 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
@@ -1811,14 +1811,14 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
       wrapper.instance().updateSuggestable(true)
       expect(wrapper.state().suggestSelected).toBe(0)
       expect(wrapper.state().suggestable).toBe(true)
-      expect(wrapper.state().suggesttedData).toStrictEqual([])
+      expect(wrapper.state().suggestedData).toStrictEqual([])
     })
     test('false', () => {
       const handlePostChat = jest.fn()
@@ -1830,14 +1830,14 @@ describe('<CommandInput />', () => {
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
           numberOfChatMessages={0}
-          suggesttedData={[]}
+          suggestedData={[]}
         />
       )
 
       wrapper.instance().updateSuggestable(false)
       expect(wrapper.state().suggestSelected).toBe(0)
       expect(wrapper.state().suggestable).toBe(false)
-      expect(wrapper.state().suggesttedData).toStrictEqual([])
+      expect(wrapper.state().suggestedData).toStrictEqual([])
     })
   })
   test('updateText', () => {
@@ -1850,7 +1850,7 @@ describe('<CommandInput />', () => {
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
         numberOfChatMessages={0}
-        suggesttedData={[]}
+        suggestedData={[]}
       />
     )
 
@@ -1867,7 +1867,7 @@ describe('<CommandInput />', () => {
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
         numberOfChatMessages={0}
-        suggesttedData={[]}
+        suggestedData={[]}
       />
     )
 

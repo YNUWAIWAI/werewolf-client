@@ -10,7 +10,7 @@ export interface StateProps {
   readonly public: {
     readonly numberOfChatMessages: number
   }
-  readonly suggesttedData: State['data']
+  readonly suggestedData: State['data']
   readonly werewolf: {
     readonly available: boolean
     readonly numberOfChatMessages: number
@@ -31,7 +31,7 @@ export default function CommandInputBox(props: Props) {
         maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
         maxNumberOfChatMessages={props.maxNumberOfChatMessages}
         numberOfChatMessages={props.public.numberOfChatMessages}
-        suggesttedData={props.suggesttedData}
+        suggestedData={props.suggestedData}
       />
       <CommandInput
         handlePostChat={props.handlePostChat(village.InputChannel.private)}
@@ -40,7 +40,7 @@ export default function CommandInputBox(props: Props) {
         maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
         maxNumberOfChatMessages={-1}
         numberOfChatMessages={-1}
-        suggesttedData={props.suggesttedData}
+        suggestedData={props.suggestedData}
       />
       {
         props.werewolf.available ?
@@ -51,7 +51,7 @@ export default function CommandInputBox(props: Props) {
             maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
             maxNumberOfChatMessages={props.maxNumberOfChatMessages}
             numberOfChatMessages={props.werewolf.numberOfChatMessages}
-            suggesttedData={props.suggesttedData}
+            suggestedData={props.suggestedData}
           /> :
           null
       }

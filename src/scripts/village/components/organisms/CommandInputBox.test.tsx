@@ -16,7 +16,7 @@ describe('<CommandInputBox />', () => {
         public={{
           numberOfChatMessages: 0
         }}
-        suggesttedData={[]}
+        suggestedData={[]}
         werewolf={{
           available: false,
           numberOfChatMessages: 0
@@ -43,7 +43,7 @@ describe('<CommandInputBox />', () => {
         public={{
           numberOfChatMessages: 0
         }}
-        suggesttedData={[]}
+        suggestedData={[]}
         werewolf={{
           available: true,
           numberOfChatMessages: 0

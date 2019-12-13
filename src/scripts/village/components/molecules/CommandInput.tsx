@@ -12,7 +12,7 @@ import CommandInputSuggest from '../atoms/CommandInputSuggest'
 import CommandInputTextCounter from '../atoms/CommandInputTextCounter'
 import {FormattedMessage} from 'react-intl'
 import Fuse from 'fuse.js'
-import {State as SuggestState} from '../../reducers/suggest'
+import {SuggestedData} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
 import {village} from '../../types'
 
@@ -23,14 +23,14 @@ interface Props {
   readonly maxLengthOfUnicodeCodePoints: number
   readonly maxNumberOfChatMessages: number
   readonly numberOfChatMessages: number
-  readonly suggesttedData: SuggestState['data']
+  readonly suggestedData: SuggestedData[]
 }
 interface State {
   caretPosition: number
   processing: boolean
   suggestLeft: number
   suggestSelected: number
-  suggesttedData: SuggestState['data']
+  suggestedData: SuggestedData[]
   suggestTop: number
   suggestable: boolean
   text: string
@@ -48,7 +48,7 @@ export const enum Triger {
   At = '@',
   Space = ' '
 }
-const options = {
+const options: Fuse.FuseOptions<SuggestedData> = {
   distance: 100,
   keys: [
     'id',
@@ -65,7 +65,7 @@ const options = {
 }
 
 export default class CommandInput extends React.Component<Props, State> {
-  private fuse: Fuse<SuggestState['data'][number]>
+  private fuse: Fuse<SuggestedData, Fuse.FuseOptions<SuggestedData>>
 
   public constructor(props: Props) {
     super(props)
@@ -78,11 +78,11 @@ export default class CommandInput extends React.Component<Props, State> {
       suggestSelected: 0,
       suggestTop: 0,
       suggestable: false,
-      suggesttedData: props.suggesttedData,
+      suggestedData: props.suggestedData,
       text,
       trigerPosition: 0
     }
-    this.fuse = new Fuse(props.suggesttedData, options)
+    this.fuse = new Fuse(props.suggestedData, options)
     this.handleSuggestClick = this.handleSuggestClick.bind(this)
   }
 
@@ -100,7 +100,7 @@ export default class CommandInput extends React.Component<Props, State> {
     if (this.state.processing) {
       return
     }
-    if (!this.state.suggestable || this.state.suggesttedData.length <= 0) {
+    if (!this.state.suggestable || this.state.suggestedData.length <= 0) {
       if (
         (event.ctrlKey || event.metaKey) &&
         event.key === Key.Enter
@@ -119,7 +119,7 @@ export default class CommandInput extends React.Component<Props, State> {
       case Key.ArrowDown:
         event.preventDefault()
         this.setState(prevState => {
-          const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggesttedData.length
+          const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggestedData.length
 
           return {
             suggestSelected
@@ -130,7 +130,7 @@ export default class CommandInput extends React.Component<Props, State> {
       case Key.ArrowUp:
         event.preventDefault()
         this.setState(prevState => {
-          const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggesttedData.length) % prevState.suggesttedData.length
+          const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggestedData.length) % prevState.suggestedData.length
 
           return {
             suggestSelected
@@ -145,7 +145,7 @@ export default class CommandInput extends React.Component<Props, State> {
           getText(
             {
               language: this.props.language,
-              languageMap: this.state.suggesttedData[this.state.suggestSelected].name
+              languageMap: this.state.suggestedData[this.state.suggestSelected].name
             }
           )
         )
@@ -189,11 +189,11 @@ export default class CommandInput extends React.Component<Props, State> {
     } else if (caretPosition <= this.state.trigerPosition) {
       this.updateSuggestable(false)
     } else if (this.state.suggestable) {
-      const suggesttedData = this.fuse.search(this.getSearchText(text, caretPosition))
+      const suggestedData = this.fuse.search<SuggestedData, false, false>(this.getSearchText(text, caretPosition))
 
       this.setState({
         suggestSelected: 0,
-        suggesttedData
+        suggestedData
       })
       this.updateTrigerPosition(this.state.trigerPosition)
     }
@@ -241,7 +241,7 @@ export default class CommandInput extends React.Component<Props, State> {
     this.setState({
       suggestSelected: 0,
       suggestable,
-      suggesttedData: this.props.suggesttedData
+      suggestedData: this.props.suggestedData
     })
   }
 
@@ -295,7 +295,7 @@ export default class CommandInput extends React.Component<Props, State> {
           }
         </FormattedMessage>
         <CommandInputSuggest
-          data={this.state.suggesttedData}
+          data={this.state.suggestedData}
           handleSuggestClick={this.handleSuggestClick}
           language={this.props.language}
           left={this.state.suggestLeft}

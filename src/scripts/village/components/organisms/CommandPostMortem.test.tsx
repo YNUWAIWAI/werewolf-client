@@ -24,7 +24,7 @@ test('<CommandPostMortem />', () => {
       language={village.Language.en}
       maxLengthOfUnicodeCodePoints={140}
       navigation={navigation}
-      suggesttedData={[]}
+      suggestedData={[]}
     />
   )
 
