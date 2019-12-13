@@ -15,6 +15,7 @@ module.exports = {
     'react-dom': 'ReactDOM',
     'react-intl': 'ReactIntl',
     'react-redux': 'ReactRedux',
+    'react-router-dom': 'ReactRouterDOM',
     'redux': 'Redux'
   },
   mode: 'production',
