@@ -84,6 +84,38 @@ test('handleFocus', () => {
   })
   expect(select).toHaveBeenCalledTimes(1)
 })
+describe('handleSelect', () => {
+  test('event.target === event.currentTarget', () => {
+    const handleSelect = jest.fn()
+    const renewAccessToken = jest.fn()
+    const wrapper = mountWithIntl(
+      <SelectAvatarTableBodyAccessToken
+        additionalClassName={[]}
+        handleSelect={handleSelect}
+        renewAccessToken={renewAccessToken}
+        token="token"
+      />
+    )
+
+    wrapper.find('.lo--select-avatar--table--body--item.access-token').simulate('click')
+    expect(handleSelect).toHaveBeenCalledTimes(1)
+  })
+  test('event.target !== event.currentTarget', () => {
+    const handleSelect = jest.fn()
+    const renewAccessToken = jest.fn()
+    const wrapper = mountWithIntl(
+      <SelectAvatarTableBodyAccessToken
+        additionalClassName={[]}
+        handleSelect={handleSelect}
+        renewAccessToken={renewAccessToken}
+        token="token"
+      />
+    )
+
+    wrapper.find('input').simulate('click')
+    expect(handleSelect).toHaveBeenCalledTimes(0)
+  })
+})
 test('renewAccessToken', () => {
   const handleSelect = jest.fn()
   const renewAccessToken = jest.fn()
