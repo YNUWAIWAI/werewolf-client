@@ -65,7 +65,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         <SelectAvatarTableBodyAuthorized
           additionalClassName={additionalClassName}
           authorized={avatar.authorized}
-          handleClick={props.handleAccept}
+          handleAccept={props.handleAccept}
           handleSelect={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyTest
