@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<div class=\\"lo--select-avatar--table--body--item avatar-name \\"><input class=\\"input\\" maxlength=\\"15\\" minlength=\\"5\\" placeholder=\\"Alice\\" required=\\"\\" type=\\"text\\" value=\\"Alice\\"></div>"`;
