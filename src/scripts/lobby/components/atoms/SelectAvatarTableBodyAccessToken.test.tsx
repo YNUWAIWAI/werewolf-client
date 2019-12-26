@@ -23,7 +23,8 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.find(Copy).exists()).toBe(true);
+    expect(wrapper.find(Copy).exists()).toBe(true)
+    expect(wrapper.html()).toMatchSnapshot();
     (navigator as any).clipboard = navigatorClipBoard
   })
   test('navigator.clipboard === undefined', () => {
@@ -39,6 +40,7 @@ describe('render', () => {
     )
 
     expect(wrapper.find(Copy).exists()).toBe(false)
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
 test('copy', () => {
