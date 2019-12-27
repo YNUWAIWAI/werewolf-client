@@ -1,4 +1,3 @@
-import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
 import SelectHumanAvatarTableBody, {StateProps} from './SelectHumanAvatarTableBody'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
