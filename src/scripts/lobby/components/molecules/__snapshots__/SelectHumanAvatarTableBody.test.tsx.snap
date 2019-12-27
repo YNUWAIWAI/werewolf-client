@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1 avatar 1`] = `"<div class=\\"lo--select-avatar--table--body--item check-box  \\"><input readonly=\\"\\" type=\\"checkbox\\"></div><div class=\\"lo--select-avatar--table--body--item avatar-name  \\"><input class=\\"input\\" maxlength=\\"15\\" minlength=\\"5\\" placeholder=\\"Alice\\" required=\\"\\" type=\\"text\\" value=\\"Alice\\"></div>"`;
+
+exports[`render 2 avatar 1`] = `"<div class=\\"lo--select-avatar--table--body--item check-box  \\"><input readonly=\\"\\" type=\\"checkbox\\"></div><div class=\\"lo--select-avatar--table--body--item avatar-name  \\"><input class=\\"input\\" maxlength=\\"15\\" minlength=\\"5\\" placeholder=\\"Alice\\" required=\\"\\" type=\\"text\\" value=\\"Alice\\"></div><div class=\\"lo--select-avatar--table--body--item check-box  selected\\"><input readonly=\\"\\" type=\\"checkbox\\" checked=\\"\\"></div><div class=\\"lo--select-avatar--table--body--item avatar-name  selected\\"><input class=\\"input\\" maxlength=\\"15\\" minlength=\\"5\\" placeholder=\\"Bob\\" required=\\"\\" type=\\"text\\" value=\\"Bob\\"></div>"`;
