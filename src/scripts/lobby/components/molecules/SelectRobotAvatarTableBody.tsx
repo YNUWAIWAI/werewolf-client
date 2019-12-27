@@ -14,10 +14,10 @@ export interface StateProps {
     readonly byId: {
       readonly [id: string]: {
         readonly accessToken: lobby.Token
-        readonly automation: lobby.Automation
         readonly authorized: lobby.Authorized
-        readonly isHover: boolean
+        readonly automation: lobby.Automation
         readonly checked: boolean
+        readonly isHover: boolean
         readonly name: string
         readonly status: lobby.AvatarStatus
         readonly testStatus: lobby.TestStatus
