@@ -29,24 +29,25 @@ export default function SelectHumanAvatarTableBody(props: Props) {
       avatar.checked ? 'selected' : ''
     ]
 
-    return (
-      <>
-        <SelectAvatarTableBodyCheckBox
-          additionalClassName={additionalClassName}
-          checked={avatar.checked}
-          handleClick={props.handleSelectAvatar(id)}
-        />
-        <SelectAvatarTableBodyAvatarName
-          additionalClassName={additionalClassName}
-          handleChange={props.handleAvatarNameChange}
-          handleSelect={props.handleSelectAvatar(id)}
-          name={avatar.name}
-        />
-      </>
-    )
+    return [
+      <SelectAvatarTableBodyCheckBox
+        additionalClassName={additionalClassName}
+        checked={avatar.checked}
+        handleClick={props.handleSelectAvatar(id)}
+        key={`checkBox${id}`}
+      />,
+      <SelectAvatarTableBodyAvatarName
+        additionalClassName={additionalClassName}
+        handleChange={props.handleAvatarNameChange}
+        handleSelect={props.handleSelectAvatar(id)}
+        key={`avatarName${id}`}
+        name={avatar.name}
+      />
+    ]
   })
 
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {rows}
     </>
