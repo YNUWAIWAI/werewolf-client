@@ -605,10 +605,6 @@ body {
       display: grid;
       grid-template-columns: 24px repeat(5, 1fr) 2fr;
 
-      &.human {
-        grid-template-columns: 24px 1fr;
-      }
-
       &--body--item {
         align-items: center;
         display: flex;

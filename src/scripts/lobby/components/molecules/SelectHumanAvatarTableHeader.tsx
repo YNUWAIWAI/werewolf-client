@@ -16,6 +16,11 @@ export default function SelectHumanAvatarTableHeader() {
           )
         }
       </FormattedMessage>
+      <div className="lo--select-avatar--table--header--item spacer" />
+      <div className="lo--select-avatar--table--header--item spacer" />
+      <div className="lo--select-avatar--table--header--item spacer" />
+      <div className="lo--select-avatar--table--header--item spacer" />
+      <div className="lo--select-avatar--table--header--item spacer" />
     </>
   )
 }

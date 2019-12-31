@@ -1,6 +1,7 @@
 import * as React from 'react'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
 import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTableBodyCheckBox'
+import SelectAvatarTableBodySpacer from '../atoms/SelectAvatarTableBodySpacer'
 
 export interface StateProps {
   readonly avatar: {
@@ -42,6 +43,31 @@ export default function SelectHumanAvatarTableBody(props: Props) {
         handleSelect={props.handleSelectAvatar(id)}
         key={`avatarName${id}`}
         name={avatar.name}
+      />,
+      <SelectAvatarTableBodySpacer
+        additionalClassName={additionalClassName}
+        handleSelect={props.handleSelectAvatar(id)}
+        key={`spacer${id}-1`}
+      />,
+      <SelectAvatarTableBodySpacer
+        additionalClassName={additionalClassName}
+        handleSelect={props.handleSelectAvatar(id)}
+        key={`spacer${id}-2`}
+      />,
+      <SelectAvatarTableBodySpacer
+        additionalClassName={additionalClassName}
+        handleSelect={props.handleSelectAvatar(id)}
+        key={`spacer${id}-3`}
+      />,
+      <SelectAvatarTableBodySpacer
+        additionalClassName={additionalClassName}
+        handleSelect={props.handleSelectAvatar(id)}
+        key={`spacer${id}-4`}
+      />,
+      <SelectAvatarTableBodySpacer
+        additionalClassName={additionalClassName}
+        handleSelect={props.handleSelectAvatar(id)}
+        key={`spacer${id}-5`}
       />
     ]
   })
