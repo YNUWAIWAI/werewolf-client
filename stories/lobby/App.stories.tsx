@@ -35,7 +35,7 @@ storiesOf('lobby|App', module)
       </Provider>
 
     store.dispatch({
-      type: ActionTypes.App.INIT
+      type: ActionTypes.App.SHOW_MAIN
     })
 
     return story
@@ -59,10 +59,10 @@ storiesOf('lobby|App', module)
         <App history={history} />
       </Provider>
 
-    history.replace('/human/waitingForPlayers')
     store.dispatch({
-      type: ActionTypes.App.INIT
+      type: ActionTypes.App.SHOW_MAIN
     })
+    history.replace('/human/waitingForPlayers')
 
     return story
   })
@@ -85,10 +85,10 @@ storiesOf('lobby|App', module)
         <App history={history} />
       </Provider>
 
-    history.replace('/human/lobby')
     store.dispatch({
-      type: ActionTypes.App.INIT
+      type: ActionTypes.App.SHOW_MAIN
     })
+    history.replace('/human/lobby')
 
     return story
   })
@@ -109,10 +109,12 @@ storiesOf('lobby|App', module)
             byId: {
               'a1': {
                 checked: false,
+                isHover: false,
                 name: 'avatar1'
               },
               'a2': {
                 checked: false,
+                isHover: false,
                 name: 'avatar2'
               }
             }
@@ -146,10 +148,10 @@ storiesOf('lobby|App', module)
         <App history={history} />
       </Provider>
 
-    history.replace('/human/selectAvatar')
     store.dispatch({
-      type: ActionTypes.App.INIT
+      type: ActionTypes.App.SHOW_MAIN
     })
+    history.replace('/human/selectAvatar')
 
     return story
   })
@@ -173,6 +175,7 @@ storiesOf('lobby|App', module)
                 authorized: lobby.Authorized.no,
                 automation: lobby.Automation.full,
                 checked: false,
+                isHover: false,
                 name: 'avatar1',
                 status: lobby.AvatarStatus.awaitingAuthorization,
                 testStatus: lobby.TestStatus.notPassed
@@ -182,6 +185,7 @@ storiesOf('lobby|App', module)
                 authorized: lobby.Authorized.yes,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar2',
                 status: lobby.AvatarStatus.awaitingCommunicationTest,
                 testStatus: lobby.TestStatus.passed
@@ -191,6 +195,7 @@ storiesOf('lobby|App', module)
                 authorized: lobby.Authorized.waitForAcceptance,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar3',
                 status: lobby.AvatarStatus.connected,
                 testStatus: lobby.TestStatus.passed
@@ -200,6 +205,7 @@ storiesOf('lobby|App', module)
                 authorized: lobby.Authorized.waitForAcceptance,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar4',
                 status: lobby.AvatarStatus.runningInTheBackground,
                 testStatus: lobby.TestStatus.passed
@@ -209,6 +215,7 @@ storiesOf('lobby|App', module)
                 authorized: lobby.Authorized.waitForAcceptance,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar5',
                 status: lobby.AvatarStatus.runningInTheForeground,
                 testStatus: lobby.TestStatus.passed
@@ -252,10 +259,10 @@ storiesOf('lobby|App', module)
         <App history={history} />
       </Provider>
 
-    history.replace('/robot/selectAvatar')
     store.dispatch({
-      type: ActionTypes.App.INIT
+      type: ActionTypes.App.SHOW_MAIN
     })
+    history.replace('/robot/selectAvatar')
 
     return story
   })

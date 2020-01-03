@@ -25,6 +25,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
                 authorized: lobby.Authorized.no,
                 automation: lobby.Automation.full,
                 checked: false,
+                isHover: false,
                 name: 'avatar1',
                 status: lobby.AvatarStatus.awaitingAuthorization,
                 testStatus: lobby.TestStatus.notPassed
@@ -34,6 +35,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
                 authorized: lobby.Authorized.yes,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar2',
                 status: lobby.AvatarStatus.awaitingCommunicationTest,
                 testStatus: lobby.TestStatus.passed
@@ -43,6 +45,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
                 authorized: lobby.Authorized.waitForAcceptance,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar3',
                 status: lobby.AvatarStatus.connected,
                 testStatus: lobby.TestStatus.passed
@@ -52,6 +55,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
                 authorized: lobby.Authorized.waitForAcceptance,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar4',
                 status: lobby.AvatarStatus.runningInTheBackground,
                 testStatus: lobby.TestStatus.passed
@@ -61,6 +65,7 @@ storiesOf('lobby|SelectRobotAvatar', module)
                 authorized: lobby.Authorized.waitForAcceptance,
                 automation: lobby.Automation.semi,
                 checked: false,
+                isHover: false,
                 name: 'avatar5',
                 status: lobby.AvatarStatus.runningInTheForeground,
                 testStatus: lobby.TestStatus.passed

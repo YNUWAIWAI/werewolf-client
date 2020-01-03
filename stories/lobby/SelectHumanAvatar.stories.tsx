@@ -21,10 +21,12 @@ storiesOf('lobby|SelectHumanAvatar', module)
             byId: {
               'a1': {
                 checked: false,
+                isHover: false,
                 name: 'avatar1'
               },
               'a2': {
                 checked: false,
+                isHover: false,
                 name: 'avatar2'
               }
             }
