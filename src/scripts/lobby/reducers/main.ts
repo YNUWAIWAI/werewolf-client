@@ -1,12 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import {Init} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {SocketMessage} from '../actions'
 
 export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
-  | SocketMessage
+  | Init
 
 export const initialState: State = {
   menuItems: [

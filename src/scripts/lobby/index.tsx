@@ -1,9 +1,12 @@
 /* eslint no-process-env: 0 */
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import {
+  changeToken,
+  init
+} from './actions'
 import App from './containers/App'
 import {Provider} from 'react-redux'
-import {changeToken} from './actions'
 import {createHashHistory} from 'history'
 import {createMiddleware} from './middlewares'
 import {createStore} from 'redux'
@@ -57,6 +60,7 @@ if (!root) {
   throw Error('Not found: root element')
 }
 
+store.dispatch(init())
 ReactDOM.render(
   <Provider store={store}>
     <App history={history} />

@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangeDay,
+  Init,
   Message$ChatMessage,
   StarChat
 } from '../actions'
@@ -40,6 +41,7 @@ export interface State {
 }
 type Action =
   | ChangeDay
+  | Init
   | Message$ChatMessage
   | StarChat
 
@@ -49,6 +51,8 @@ export const initialState: State = {
 }
 const chat = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.App.INIT:
+      return initialState
     case ActionTypes.Message.CHAT_MESSAGE: {
       const payload = action.payload
       const chatId = getId()
