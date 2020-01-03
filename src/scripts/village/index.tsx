@@ -1,5 +1,4 @@
 /* eslint no-process-env: 0 */
-import * as ActionTypes from './constants/ActionTypes'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import App from './containers/App'
