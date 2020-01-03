@@ -49,18 +49,18 @@ interface Option {
 
 const socketMiddleware: (optoin: Option) => Middleware = option => store => next => action => {
   switch (action.type) {
-    case ActionTypes.Socket.OPEN:
-      return next(action)
-    case ActionTypes.Socket.CLOSE:
-      return next(action)
-    case ActionTypes.Socket.ERROR:
-      return next(action)
-    case ActionTypes.Socket.INIT:
+    case ActionTypes.App.INIT:
       connectWebSocket(option.url, store)
         .catch(reason => {
           console.error(reason)
         })
 
+      return next(action)
+    case ActionTypes.Socket.OPEN:
+      return next(action)
+    case ActionTypes.Socket.CLOSE:
+      return next(action)
+    case ActionTypes.Socket.ERROR:
       return next(action)
     case ActionTypes.Socket.MESSAGE:
       return next(action)

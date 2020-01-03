@@ -6,6 +6,7 @@ import App from './containers/App'
 import {Provider} from 'react-redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {createStore} from 'redux'
+import {init} from './actions'
 import middleware from './middlewares'
 import reducer from './reducers'
 
@@ -20,15 +21,7 @@ const store =
       composeWithDevTools(middleware)
     )
 
-store.dispatch({
-  type: ActionTypes.Socket.INIT
-})
-store.dispatch({
-  type: ActionTypes.IndexedDB.INIT
-})
-store.dispatch({
-  type: ActionTypes.App.PROLOGUE
-})
+init()
 
 const root = document.getElementById('root')
 

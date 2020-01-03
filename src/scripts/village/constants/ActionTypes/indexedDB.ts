@@ -4,7 +4,6 @@ export const enum IndexedDB {
   CLOSE = 'indexedDB/CLOSE',
   COMPLETE = 'indexedDB/COMPLETE',
   ERROR = 'indexedDB/ERROR',
-  INIT = 'indexedDB/INIT',
   SUCCESS = 'indexedDB/SUCCESS',
   UPGRADE_NEEDED = 'indexedDB/UPGRADE_NEEDED',
   VERSION_CHANGE = 'indexedDB/VERSION_CHANGE'

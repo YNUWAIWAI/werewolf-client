@@ -94,6 +94,13 @@ export const hideResult = (): HideResult => ({
   type: ActionTypes.App.HIDE_RESULT
 })
 
+export type Init = {
+  type: ActionTypes.App.INIT
+}
+export const init = (): Init => ({
+  type: ActionTypes.App.INIT
+})
+
 export type PostChat = {
   channel: village.InputChannel
   text: string

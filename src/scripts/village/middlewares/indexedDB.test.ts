@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ClickNavigationButton,
+  init,
   message
 } from '../actions'
 import {
@@ -57,6 +58,106 @@ const deleteAllValue = async () => {
 }
 
 beforeEach(() => deleteAllValue())
+describe('INIT', () => {
+  const store = fakeStore()
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action = init()
+
+  test('isHost: true', async () => {
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const db = await connectDB()
+    const transaction = db.transaction('licosDB', 'readwrite')
+    const objectStore = transaction.objectStore('licosDB')
+    const v = {
+      lobbyType: lobby.LobbyType.human,
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
+      villageId: 3
+    }
+
+    await Promise.all([
+      updateValue<village.Language>(objectStore, Key.language, village.Language.en),
+      updateValue<boolean>(objectStore, Key.isHost, true),
+      updateValue<Village>(objectStore, Key.village, v)
+    ])
+    actionHandler(action)
+    const [
+      buildVillagePayload,
+      isHost,
+      language,
+      nextGameVillageId,
+      villageInfo,
+      whatToDoNextInLobby
+    ] = await getAllValue()
+
+    expect(buildVillagePayload).toBeUndefined()
+    expect(isHost).toBe(true)
+    expect(language).toBe('en')
+    expect(nextGameVillageId).toBeUndefined()
+    expect(villageInfo).toStrictEqual(v)
+    expect(whatToDoNextInLobby).toBeUndefined()
+    expect(dispatch).toHaveBeenCalledWith({
+      language: village.Language.en,
+      type: ActionTypes.App.CHANGE_LANGUAGE
+    })
+    expect(dispatch).toHaveBeenCalledWith({
+      type: ActionTypes.App.ACTIVATE_NEXT_BUTTON,
+      villageId: -1
+    })
+    expect(dispatch).toHaveBeenCalledWith({
+      token: v.token,
+      type: ActionTypes.App.READY,
+      villageId: v.villageId
+    })
+  })
+  test('isHost: false', async () => {
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const db = await connectDB()
+    const transaction = db.transaction('licosDB', 'readwrite')
+    const objectStore = transaction.objectStore('licosDB')
+    const v = {
+      lobbyType: lobby.LobbyType.human,
+      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
+      villageId: 3
+    }
+
+    await Promise.all([
+      updateValue<village.Language>(objectStore, Key.language, village.Language.en),
+      updateValue<boolean>(objectStore, Key.isHost, false),
+      updateValue<Village>(objectStore, Key.village, v)
+    ])
+    actionHandler(action)
+    const [
+      buildVillagePayload,
+      isHost,
+      language,
+      nextGameVillageId,
+      villageInfo,
+      whatToDoNextInLobby
+    ] = await getAllValue()
+
+    expect(buildVillagePayload).toBeUndefined()
+    expect(isHost).toBe(false)
+    expect(language).toBe('en')
+    expect(nextGameVillageId).toBeUndefined()
+    expect(villageInfo).toStrictEqual(v)
+    expect(whatToDoNextInLobby).toBeUndefined()
+    expect(dispatch).toHaveBeenCalledWith({
+      language: village.Language.en,
+      type: ActionTypes.App.CHANGE_LANGUAGE
+    })
+    expect(dispatch).toHaveBeenCalledWith({
+      token: v.token,
+      type: ActionTypes.App.READY,
+      villageId: v.villageId
+    })
+  })
+})
 test('RETURN_TO_LOBBY', async () => {
   const store = fakeStore()
   const nextHandler = middleware(store)
@@ -216,108 +317,6 @@ describe('NEXT_GAME', () => {
     expect(dispatch).toHaveBeenCalled()
     expect(dispatch).toHaveBeenCalledWith({
       type: ActionTypes.App.SHOW_LOBBY
-    })
-  })
-})
-describe('indexedDB/INIT', () => {
-  const store = fakeStore()
-  const nextHandler = middleware(store)
-  const dispatchAPI = jest.fn()
-  const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.IndexedDB.INIT} = {
-    type: ActionTypes.IndexedDB.INIT
-  }
-
-  test('isHost: true', async () => {
-    const dispatch = jest.fn()
-
-    store.dispatch = dispatch
-    const db = await connectDB()
-    const transaction = db.transaction('licosDB', 'readwrite')
-    const objectStore = transaction.objectStore('licosDB')
-    const v = {
-      lobbyType: lobby.LobbyType.human,
-      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
-      villageId: 3
-    }
-
-    await Promise.all([
-      updateValue<village.Language>(objectStore, Key.language, village.Language.en),
-      updateValue<boolean>(objectStore, Key.isHost, true),
-      updateValue<Village>(objectStore, Key.village, v)
-    ])
-    actionHandler(action)
-    const [
-      buildVillagePayload,
-      isHost,
-      language,
-      nextGameVillageId,
-      villageInfo,
-      whatToDoNextInLobby
-    ] = await getAllValue()
-
-    expect(buildVillagePayload).toBeUndefined()
-    expect(isHost).toBe(true)
-    expect(language).toBe('en')
-    expect(nextGameVillageId).toBeUndefined()
-    expect(villageInfo).toStrictEqual(v)
-    expect(whatToDoNextInLobby).toBeUndefined()
-    expect(dispatch).toHaveBeenCalledWith({
-      language: village.Language.en,
-      type: ActionTypes.App.CHANGE_LANGUAGE
-    })
-    expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.App.ACTIVATE_NEXT_BUTTON,
-      villageId: -1
-    })
-    expect(dispatch).toHaveBeenCalledWith({
-      token: v.token,
-      type: ActionTypes.App.READY,
-      villageId: v.villageId
-    })
-  })
-  test('isHost: false', async () => {
-    const dispatch = jest.fn()
-
-    store.dispatch = dispatch
-    const db = await connectDB()
-    const transaction = db.transaction('licosDB', 'readwrite')
-    const objectStore = transaction.objectStore('licosDB')
-    const v = {
-      lobbyType: lobby.LobbyType.human,
-      token: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
-      villageId: 3
-    }
-
-    await Promise.all([
-      updateValue<village.Language>(objectStore, Key.language, village.Language.en),
-      updateValue<boolean>(objectStore, Key.isHost, false),
-      updateValue<Village>(objectStore, Key.village, v)
-    ])
-    actionHandler(action)
-    const [
-      buildVillagePayload,
-      isHost,
-      language,
-      nextGameVillageId,
-      villageInfo,
-      whatToDoNextInLobby
-    ] = await getAllValue()
-
-    expect(buildVillagePayload).toBeUndefined()
-    expect(isHost).toBe(false)
-    expect(language).toBe('en')
-    expect(nextGameVillageId).toBeUndefined()
-    expect(villageInfo).toStrictEqual(v)
-    expect(whatToDoNextInLobby).toBeUndefined()
-    expect(dispatch).toHaveBeenCalledWith({
-      language: village.Language.en,
-      type: ActionTypes.App.CHANGE_LANGUAGE
-    })
-    expect(dispatch).toHaveBeenCalledWith({
-      token: v.token,
-      type: ActionTypes.App.READY,
-      villageId: v.villageId
     })
   })
 })

@@ -28,6 +28,7 @@ type Action =
   | actions.DeactivateNextButton
   | actions.HidePredictionSpec
   | actions.HideResult
+  | actions.Init
   | actions.Message$BoardMessage
   | actions.Message$ChatMessage
   | actions.Message$ErrorMessage
@@ -51,9 +52,6 @@ type Action =
   | actions.SocketSend
   | actions.StarChat
   | actions.Tick
-  | {type: ActionTypes.IndexedDB.INIT}
-  | {type: ActionTypes.Socket.INIT}
-  | {type: ActionTypes.App.PROLOGUE}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 

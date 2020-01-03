@@ -3,7 +3,7 @@ import {Middleware} from '.'
 
 const windowLocation: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.App.PROLOGUE:
+    case ActionTypes.App.INIT:
       window.onbeforeunload = () => ''
 
       return next(action)
