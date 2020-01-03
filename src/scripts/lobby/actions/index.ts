@@ -70,7 +70,7 @@ export type ConfirmKickOutPlayer = {
   token: Lobby.Token
   type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
 }
-export const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}): ConfirmKickOutPlayer => ({
+export const confirmKickOutPlayer = (values: {name: string, token: Lobby.Token}): ConfirmKickOutPlayer => ({
   name: values.name,
   token: values.token,
   type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
