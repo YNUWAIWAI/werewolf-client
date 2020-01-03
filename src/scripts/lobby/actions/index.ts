@@ -67,7 +67,7 @@ export const changeUserPassword = (userPassword: string): ChangeUserPassword => 
 
 export type ConfirmKickOutPlayer = {
   name: string
-  token: lobby.Token
+  token: Lobby.Token
   type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
 }
 export const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}): ConfirmKickOutPlayer => ({
