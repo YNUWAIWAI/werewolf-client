@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {lobby} from '../types'
+import {lobby as Lobby} from '../types'
 
 export * from './advancedSearch'
 export * from './buildVillage'
@@ -10,29 +10,29 @@ export * from './selectRobotAvatar'
 export * from './socket'
 
 export type ChangeLanguage = {
-  language: lobby.Language
+  language: Lobby.Language
   type: ActionTypes.App.CHANGE_LANGUAGE
 }
-export const changeLanguage = (language: lobby.Language): ChangeLanguage => ({
+export const changeLanguage = (language: Lobby.Language): ChangeLanguage => ({
   language,
   type: ActionTypes.App.CHANGE_LANGUAGE
 })
 
 export type ChangeLobby = {
-  lobby: lobby.LobbyType
+  lobby: Lobby.LobbyType
   type: ActionTypes.App.CHANGE_LOBBY
 }
-export const changeLobby = (lobby: lobby.LobbyType): ChangeLobby => ({
+export const changeLobby = (lobby: Lobby.LobbyType): ChangeLobby => ({
   lobby,
   type: ActionTypes.App.CHANGE_LOBBY
 })
 
 export type ChangeToken = {
-  lobby: lobby.LobbyType
+  lobby: Lobby.LobbyType
   token: string
   type: ActionTypes.App.CHANGE_TOKEN
 }
-export const changeToken = ({lobby, token}: {lobby: lobby.LobbyType, token: string}): ChangeToken => ({
+export const changeToken = ({lobby, token}: {lobby: Lobby.LobbyType, token: string}): ChangeToken => ({
   lobby,
   token,
   type: ActionTypes.App.CHANGE_TOKEN
