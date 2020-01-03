@@ -20,15 +20,13 @@ const store =
       reducer,
       composeWithDevTools(middleware)
     )
-
-init()
-
 const root = document.getElementById('root')
 
 if (!root) {
   throw Error('Not found root element.')
 }
 
+store.dispatch(init())
 ReactDOM.render(
   <Provider store={store}>
     <App />
