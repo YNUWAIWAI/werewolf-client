@@ -41,6 +41,7 @@ type Action =
   | actions.ChangeUserPassword
   | actions.IdSearch$ChangeSearchId
   | actions.IdSearch$ChangeValidity
+  | actions.Init
   | actions.KickOutPlayer
   | actions.Message$Avatar
   | actions.Message$Lobby
@@ -58,9 +59,6 @@ type Action =
   | actions.SocketSend
   | actions.SubmitLogout
   | actions.Transition
-  | {type: ActionTypes.IndexedDB.INIT}
-  | {type: ActionTypes.Socket.INIT}
-  | {type: ActionTypes.App.INIT}
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 

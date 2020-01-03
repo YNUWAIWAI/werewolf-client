@@ -83,6 +83,13 @@ export const kickOutPlayer = (): KickOutPlayer => ({
   type: ActionTypes.App.KICK_OUT_PLAYER
 })
 
+export type Init = {
+  type: ActionTypes.App.INIT
+}
+export const init = (): Init => ({
+  type: ActionTypes.App.INIT
+})
+
 export type SelectNo = {
   type: ActionTypes.App.SELECT_NO
 }

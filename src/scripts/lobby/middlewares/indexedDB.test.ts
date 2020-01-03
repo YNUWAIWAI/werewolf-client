@@ -11,6 +11,7 @@ import {
 import {
   SocketSend,
   Transition,
+  init,
   message
 } from '../actions'
 import Ajv from 'ajv'
@@ -57,14 +58,12 @@ const deleteAllValue = async () => {
 }
 
 beforeEach(() => deleteAllValue())
-describe('indexedDB/INIT', () => {
+describe('INIT', () => {
   const store = fakeStore()
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.IndexedDB.INIT} = {
-    type: ActionTypes.IndexedDB.INIT
-  }
+  const action = init()
 
   test('default', async () => {
     const dispatch = jest.fn()
