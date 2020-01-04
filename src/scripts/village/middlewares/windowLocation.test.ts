@@ -3,7 +3,7 @@ import {ShowLobby} from '../actions'
 import fakeStore from '../containers/fakeStore'
 import middleware from './windowLocation'
 
-test('PROLOGUE', () => {
+test('INIT', () => {
   const store = fakeStore()
   const dispatch = jest.fn()
 
@@ -11,8 +11,8 @@ test('PROLOGUE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: {type: ActionTypes.App.PROLOGUE} = {
-    type: ActionTypes.App.PROLOGUE
+  const action: {type: ActionTypes.App.INIT} = {
+    type: ActionTypes.App.INIT
   }
 
   actionHandler(action)

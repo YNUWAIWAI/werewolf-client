@@ -5,11 +5,14 @@ import {
   onymousAudienceChat,
   theirMessageOnChat
 } from './fakeServer'
+import {
+  init,
+  message
+} from '../actions'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {idGenerator} from '../util'
 import {initialState} from './chat'
-import {message} from '../actions'
 import {village} from '../types'
 
 jest.mock('../util', () => {
@@ -22,6 +25,19 @@ jest.mock('../util', () => {
 })
 beforeEach(() => {
   jest.resetModules()
+})
+test('INIT', async () => {
+  const module = await import('./chat')
+  const reducer = module.default
+
+  expect(
+    reducer(
+      initialState,
+      init()
+    )
+  ).toStrictEqual(
+    initialState
+  )
 })
 describe('message/CHAT_MESSAGE', () => {
   test('myMessageOnChat', async () => {

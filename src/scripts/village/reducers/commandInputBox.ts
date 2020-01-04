@@ -23,9 +23,9 @@ export interface State {
   }
 }
 export type Action =
- | ChangePhase
- | Message$ChatMessage
- | Message$SystemMessage
+  | ChangePhase
+  | Message$ChatMessage
+  | Message$SystemMessage
 
 export const initialState: State = {
   public: {

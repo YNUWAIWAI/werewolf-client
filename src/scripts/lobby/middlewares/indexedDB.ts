@@ -19,7 +19,7 @@ import {lobby} from '../types'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.IndexedDB.INIT: {
+    case ActionTypes.App.INIT: {
       connectDB()
         .then(async db => {
           const transaction = db.transaction('licosDB', 'readwrite')

@@ -23,6 +23,30 @@ import {Middleware} from '.'
 
 const indexedDBMiddleware: Middleware = store => next => action => {
   switch (action.type) {
+    case ActionTypes.App.INIT: {
+      connectDB()
+        .then(async db => {
+          const transaction = db.transaction('licosDB', 'readwrite')
+          const objectStore = transaction.objectStore('licosDB')
+          const [language, isHost, villageInfo] = await Promise.all([
+            getValue<village.Language>(objectStore, Key.language),
+            getValue<village.Language>(objectStore, Key.isHost),
+            getValue<Village>(objectStore, Key.village)
+          ])
+
+          store.dispatch(changeLanguage(language))
+          if (isHost) {
+            store.dispatch(activateNextButton(-1))
+          }
+          store.dispatch(ready({
+            token: villageInfo.token,
+            villageId: villageInfo.villageId
+          }))
+        })
+        .catch(reason => console.error(reason))
+
+      return next(action)
+    }
     case ActionTypes.Navigation.RETURN_TO_LOBBY: {
       connectDB()
         .then(async db => {
@@ -62,30 +86,6 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           } else {
             store.dispatch(showLobby())
           }
-        })
-        .catch(reason => console.error(reason))
-
-      return next(action)
-    }
-    case ActionTypes.IndexedDB.INIT: {
-      connectDB()
-        .then(async db => {
-          const transaction = db.transaction('licosDB', 'readwrite')
-          const objectStore = transaction.objectStore('licosDB')
-          const [language, isHost, villageInfo] = await Promise.all([
-            getValue<village.Language>(objectStore, Key.language),
-            getValue<village.Language>(objectStore, Key.isHost),
-            getValue<Village>(objectStore, Key.village)
-          ])
-
-          store.dispatch(changeLanguage(language))
-          if (isHost) {
-            store.dispatch(activateNextButton(-1))
-          }
-          store.dispatch(ready({
-            token: villageInfo.token,
-            villageId: villageInfo.villageId
-          }))
         })
         .catch(reason => console.error(reason))
 

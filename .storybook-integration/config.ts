@@ -6,7 +6,7 @@ import '../src/styles/landing.css'
 
 addDecorator(withKnobs)
 
-const req = require.context('../stories', true, /.stories.tsx?$/);
+const req = (require as NodeRequire).context('../stories', true, /.stories.tsx?$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
