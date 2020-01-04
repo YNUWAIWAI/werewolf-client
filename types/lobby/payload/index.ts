@@ -16,11 +16,13 @@ import {
   KickOutPlayer,
   LeaveWaitingPage,
   Lobby,
+  NewAvatarToken,
   Ping,
   Play,
   Played,
   Pong,
   Ready,
+  RenewAvatarToken,
   SearchResult,
   SelectVillage,
   Settings,
@@ -75,11 +77,13 @@ export type Payload =
   | Payload$KickOutPlayer
   | Payload$LeaveWaitingPage
   | Payload$Lobby
+  | Payload$NewAvatarToken
   | Payload$Ping
   | Payload$Play
   | Payload$Played
   | Payload$Pong
   | Payload$Ready
+  | Payload$RenewAvatarToken
   | Payload$SearchResult
   | Payload$SelectVillage
   | Payload$Settings
@@ -102,12 +106,13 @@ export interface Payload$IdSearch extends IdSearch {}
 export interface Payload$KickOutPlayer extends KickOutPlayer {}
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
 export interface Payload$Lobby extends Lobby {}
+export interface Payload$NewAvatarToken extends NewAvatarToken {}
 export interface Payload$Ping extends Ping {}
 export interface Payload$Play extends Play {}
 export interface Payload$Played extends Played {}
 export interface Payload$Pong extends Pong {}
-export interface Payload$Play extends Play {}
 export interface Payload$Ready extends Ready {}
+export interface Payload$RenewAvatarToken extends RenewAvatarToken {}
 export interface Payload$SearchResult extends SearchResult {}
 export interface Payload$SelectVillage extends SelectVillage {}
 export interface Payload$Settings extends Settings {}
