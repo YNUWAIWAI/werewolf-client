@@ -24,7 +24,7 @@ export const anonymousAudienceChat: village.Payload$ChatMessage = {
     '@language': village.Language.ja,
     '@value': '>>11\nそれで、あなたは人狼が誰だと思うの？\n\n私はパメラが人狼だと思う。'
   },
-  'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+  'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
   'village': {
     '@context': village.Context.Village,
     '@id': `https://licos.online/state/${VERSION}/village`,

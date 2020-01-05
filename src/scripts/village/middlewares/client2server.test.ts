@@ -39,7 +39,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -323,7 +323,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'name': Role.villager
     },
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -408,7 +408,7 @@ describe('POST_CHAT', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -490,7 +490,7 @@ describe('POST_CHAT', () => {
       '@language': village.Language.en,
       '@value': 'text'
     },
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -615,7 +615,7 @@ describe('SELECT_YES', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -793,7 +793,7 @@ describe('SELECT_YES', () => {
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -876,7 +876,7 @@ describe('STAR', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -970,9 +970,9 @@ describe('STAR', () => {
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'isMarked': true,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
     },
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -1051,7 +1051,7 @@ describe('message/CHAT_MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
   const villageId = 3
   const action = message.chatMessage(myMessageOnChat)
   const payload: village.Payload$ReceivedChatMessage = {
@@ -1101,7 +1101,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
   const villageId = 3
   const action = message.flavorTextMessage(flavorText)
   const payload: village.Payload$ReceivedFlavorTextMessage = {
@@ -1151,7 +1151,7 @@ describe('message/SYSTEM_MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
   const villageId = 3
   const action = message.systemMessage(firstMorning)
   const payload: village.Payload$ReceivedSystemMessage = {
