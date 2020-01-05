@@ -13,7 +13,7 @@ const receipt = {
   receivedSystemMessage: `${RECEIPT}/receivedSystemMessage.json`
 }
 
-export const VILLAGE = {
+export const VILLAGE_SCHEMA = {
   allCharacters: `${VILLAGE_BASE}/allCharacters.json`,
   allRoles: `${VILLAGE_BASE}/allRoles.json`,
   avatar: `${VILLAGE_BASE}/avatar.json`,
@@ -41,4 +41,4 @@ export const VILLAGE = {
   voteMessage: `${VILLAGE_BASE}/voteMessage.json`,
   votingResult: `${VILLAGE_BASE}/votingResult.json`
 }
-export {LOBBY} from '../../lobby/constants/SchemaPath'
+export {LOBBY_SCHEMA} from '../../lobby/constants/SchemaPath'

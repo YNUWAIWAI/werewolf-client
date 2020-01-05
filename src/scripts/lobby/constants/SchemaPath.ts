@@ -36,8 +36,8 @@ const server2client = {
   waitingPage: `${SERVER2CLIENT}/waitingPage.json`
 }
 
-export const LOBBY = {
+export const LOBBY_SCHEMA = {
   client2server,
   server2client
 }
-export {VILLAGE} from '../../village/constants/SchemaPath'
+export {VILLAGE_SCHEMA} from '../../village/constants/SchemaPath'
