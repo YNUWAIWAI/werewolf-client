@@ -1,5 +1,5 @@
 /*
-  'https://werewolf.world/village/schema/0.3/invitation/receivedSystemMessage.json'
+  'https://werewolf.world/village/schema/0.3/reciept/receivedSystemMessage.json'
 */
 import {Avatar} from '../avatar'
 import {PayloadType} from '../../payload'
