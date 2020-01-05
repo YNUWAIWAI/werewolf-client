@@ -354,7 +354,7 @@ describe('message/NEXT_GAME_INVITATION', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(VILLAGE_SCHEMA.boardMessage, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.invitation.nextGameInvitation, payload)
 
     if (!validate) {
       console.error(ajv.errors)
