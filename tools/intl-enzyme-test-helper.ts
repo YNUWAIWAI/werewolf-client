@@ -1,7 +1,10 @@
 import * as React from 'react'
 import * as lobby from '../types/lobby'
 import * as village from '../types/village'
-import {mount, shallow} from 'enzyme'
+import {
+  mount,
+  shallow
+} from 'enzyme'
 import {IntlProvider} from 'react-intl'
 import {Language} from '../src/i18n/landing'
 
