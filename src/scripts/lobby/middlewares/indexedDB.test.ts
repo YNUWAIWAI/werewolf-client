@@ -9,23 +9,22 @@ import {
   updateValue
 } from '../../indexeddb'
 import {
+  LOBBY_SCHEMA,
+  VILLAGE_SCHEMA
+} from '../constants/SchemaPath'
+import {
   SocketSend,
   Transition,
   init,
   message
 } from '../actions'
 import Ajv from 'ajv'
-import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../util'
 import {lobby} from '../types'
 import middleware from './indexedDB'
 import {waitingPage} from '../reducers/fakeServer'
-
-const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
-const CLIENT2SERVER = `${BASE_URI}/client2server`
-const SERVER2CLIENT = `${BASE_URI}/server2client`
 
 const getAllValue = async () => {
   const db = await connectDB()
@@ -305,10 +304,28 @@ describe('message/PLAYED', () => {
   store.dispatch = dispatch
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${SERVER2CLIENT}/played.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, payload)
+    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+      LOBBY_SCHEMA.server2client.played,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const mergedSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.server2client.played, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -433,10 +450,28 @@ describe('message/WAINTING_PAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
+      const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+        LOBBY_SCHEMA.server2client.waitingPage,
+        VILLAGE_SCHEMA.village
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const mergedSchema = {
+        ... mainSchema,
+        properties: {
+          ... mainSchema.properties,
+          ... baseSchema.definitions
+        }
+      }
+      const ajv = new Ajv({
+        schemas: [
+          mergedSchema,
+          baseSchema,
+          ... schemas
+        ]
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -472,10 +507,28 @@ describe('message/WAINTING_PAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
+      const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+        LOBBY_SCHEMA.server2client.waitingPage,
+        VILLAGE_SCHEMA.village
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const mergedSchema = {
+        ... mainSchema,
+        properties: {
+          ... mainSchema.properties,
+          ... baseSchema.definitions
+        }
+      }
+      const ajv = new Ajv({
+        schemas: [
+          mergedSchema,
+          baseSchema,
+          ... schemas
+        ]
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -553,10 +606,29 @@ describe('socket/SEND', () => {
     store.dispatch = dispatch
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${CLIENT2SERVER}/buildVillage.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
+      const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+        LOBBY_SCHEMA.client2server.buildVillage,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.village
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const mergedSchema = {
+        ... mainSchema,
+        properties: {
+          ... mainSchema.properties,
+          ... baseSchema.definitions
+        }
+      }
+      const ajv = new Ajv({
+        schemas: [
+          mergedSchema,
+          baseSchema,
+          ... schemas
+        ]
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.client2server.buildVillage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
