@@ -14,18 +14,18 @@ import {
   updateValue
 } from '../../indexeddb'
 import {
+  LOBBY_SCHEMA,
+  VILLAGE_SCHEMA
+} from '../constants/SchemaPath'
+import {
   lobby,
   village
 } from '../types'
 import Ajv from 'ajv'
-import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../../lobby/util'
 import middleware from './indexedDB'
-
-const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
-const CLIENT2SERVER = `https://werewolf.world/lobby/schema/${VERSION}/client2server`
 
 const getAllValue = async () => {
   const db = await connectDB()
@@ -242,16 +242,16 @@ describe('NEXT_GAME', () => {
   }
 
   test('validate the JSON', async () => {
-    const ajv = new Ajv()
-
     expect.hasAssertions()
-    await fetch(`${CLIENT2SERVER}/buildVillage.json`)
+    const ajv = new Ajv()
+    const schema = await fetch(LOBBY_SCHEMA.client2server.buildVillage)
       .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, payload)
+    const validate = ajv.validate(schema, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('isHost: true', async () => {
     const dispatch = jest.fn()
@@ -332,26 +332,34 @@ describe('message/NEXT_GAME_INVITATION', () => {
   const action = message.nextGameInvitation(payload)
 
   test('validate the JSON', async () => {
-    const ajv = new Ajv()
-
     expect.hasAssertions()
-    await Promise.all([
-      fetch(`${BASE_URI}/invitation/nextGameInvitation.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+      VILLAGE_SCHEMA.invitation.nextGameInvitation,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
-      .then(schemas => {
-        const [schema, ... rest] = schemas
-        const validate = ajv
-          .addSchema(rest)
-          .validate(schema, {
-            type: payload.type,
-            villageId: payload.villageId
-          })
+    ))
+    const mergedSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(VILLAGE_SCHEMA.boardMessage, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('isHost: true', async () => {
     const dispatch = jest.fn()
