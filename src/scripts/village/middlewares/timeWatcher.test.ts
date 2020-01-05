@@ -1,14 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import Ajv from 'ajv'
 import {VERSION} from '../constants/Version'
+import {VILLAGE_SCHEMA} from '../constants/SchemaPath'
 import {initialState as base} from '../reducers/base'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import {message} from '../actions'
 import middleware from './timeWatcher'
 import {village} from '../types'
-
-const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('message/SYSTEM_MESSAGE', () => {
   describe('phase: night -> morning, day: 0 -> 1', () => {
@@ -62,29 +61,21 @@ describe('message/SYSTEM_MESSAGE', () => {
     test('validate the JSON', async () => {
       expect.hasAssertions()
       const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-        fetch(`${BASE_URI}/systemMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/base.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/boardResult.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chat.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chatSettings.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/role.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/time.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/votingResult.json`)
+        VILLAGE_SCHEMA.systemMessage,
+        VILLAGE_SCHEMA.base,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.boardResult,
+        VILLAGE_SCHEMA.character,
+        VILLAGE_SCHEMA.chat,
+        VILLAGE_SCHEMA.chatSettings,
+        VILLAGE_SCHEMA.role,
+        VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.village,
+        VILLAGE_SCHEMA.votingResult
+      ].map(
+        schema => fetch(schema)
           .then(res => res.json())
-      ])
+      ))
       const mergedSchema = {
         ... mainSchema,
         properties: {
@@ -99,7 +90,7 @@ describe('message/SYSTEM_MESSAGE', () => {
           ... schemas
         ]
       })
-      const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, payload)
+      const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -172,29 +163,21 @@ describe('message/SYSTEM_MESSAGE', () => {
     test('validate the JSON', async () => {
       expect.hasAssertions()
       const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-        fetch(`${BASE_URI}/systemMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/base.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/boardResult.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chat.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chatSettings.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/role.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/time.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/votingResult.json`)
+        VILLAGE_SCHEMA.systemMessage,
+        VILLAGE_SCHEMA.base,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.boardResult,
+        VILLAGE_SCHEMA.character,
+        VILLAGE_SCHEMA.chat,
+        VILLAGE_SCHEMA.chatSettings,
+        VILLAGE_SCHEMA.role,
+        VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.village,
+        VILLAGE_SCHEMA.votingResult
+      ].map(
+        schema => fetch(schema)
           .then(res => res.json())
-      ])
+      ))
       const mergedSchema = {
         ... mainSchema,
         properties: {
@@ -209,7 +192,7 @@ describe('message/SYSTEM_MESSAGE', () => {
           ... schemas
         ]
       })
-      const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, payload)
+      const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -276,29 +259,21 @@ describe('message/SYSTEM_MESSAGE', () => {
     test('validate the JSON', async () => {
       expect.hasAssertions()
       const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-        fetch(`${BASE_URI}/systemMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/base.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/boardResult.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chat.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chatSettings.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/role.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/time.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/votingResult.json`)
+        VILLAGE_SCHEMA.systemMessage,
+        VILLAGE_SCHEMA.base,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.boardResult,
+        VILLAGE_SCHEMA.character,
+        VILLAGE_SCHEMA.chat,
+        VILLAGE_SCHEMA.chatSettings,
+        VILLAGE_SCHEMA.role,
+        VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.village,
+        VILLAGE_SCHEMA.votingResult
+      ].map(
+        schema => fetch(schema)
           .then(res => res.json())
-      ])
+      ))
       const mergedSchema = {
         ... mainSchema,
         properties: {
@@ -313,7 +288,7 @@ describe('message/SYSTEM_MESSAGE', () => {
           ... schemas
         ]
       })
-      const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, payload)
+      const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -381,29 +356,21 @@ describe('message/SYSTEM_MESSAGE', () => {
     test('validate the JSON', async () => {
       expect.hasAssertions()
       const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-        fetch(`${BASE_URI}/systemMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/base.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/boardResult.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chat.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chatSettings.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/role.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/time.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/votingResult.json`)
+        VILLAGE_SCHEMA.systemMessage,
+        VILLAGE_SCHEMA.base,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.boardResult,
+        VILLAGE_SCHEMA.character,
+        VILLAGE_SCHEMA.chat,
+        VILLAGE_SCHEMA.chatSettings,
+        VILLAGE_SCHEMA.role,
+        VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.village,
+        VILLAGE_SCHEMA.votingResult
+      ].map(
+        schema => fetch(schema)
           .then(res => res.json())
-      ])
+      ))
       const mergedSchema = {
         ... mainSchema,
         properties: {
@@ -418,7 +385,7 @@ describe('message/SYSTEM_MESSAGE', () => {
           ... schemas
         ]
       })
-      const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, payload)
+      const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -486,29 +453,21 @@ describe('message/SYSTEM_MESSAGE', () => {
     test('validate the JSON', async () => {
       expect.hasAssertions()
       const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-        fetch(`${BASE_URI}/systemMessage.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/base.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/avatar.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/boardResult.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/character.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chat.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/chatSettings.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/role.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/time.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/village.json`)
-          .then(res => res.json()),
-        fetch(`${BASE_URI}/votingResult.json`)
+        VILLAGE_SCHEMA.systemMessage,
+        VILLAGE_SCHEMA.base,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.boardResult,
+        VILLAGE_SCHEMA.character,
+        VILLAGE_SCHEMA.chat,
+        VILLAGE_SCHEMA.chatSettings,
+        VILLAGE_SCHEMA.role,
+        VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.village,
+        VILLAGE_SCHEMA.votingResult
+      ].map(
+        schema => fetch(schema)
           .then(res => res.json())
-      ])
+      ))
       const mergedSchema = {
         ... mainSchema,
         properties: {
@@ -523,7 +482,7 @@ describe('message/SYSTEM_MESSAGE', () => {
           ... schemas
         ]
       })
-      const validate = ajv.validate(`${BASE_URI}/systemMessage.json`, payload)
+      const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
