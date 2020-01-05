@@ -94,6 +94,7 @@ export default function AvatarSelect(props: Props) {
       className={props.className}
       classNamePrefix="lo--react-select"
       defaultValue={defaultValue}
+      isSearchable={false}
       name="avatar"
       onChange={handleChange}
       options={options}
