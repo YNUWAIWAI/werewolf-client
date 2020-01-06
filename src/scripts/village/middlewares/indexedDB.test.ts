@@ -243,7 +243,7 @@ describe('NEXT_GAME', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    const schemas = await Promise.all([
       LOBBY_SCHEMA.client2server.buildVillage,
       VILLAGE_SCHEMA.avatar,
       VILLAGE_SCHEMA.village
@@ -251,22 +251,10 @@ describe('NEXT_GAME', () => {
       schema => fetch(schema)
         .then(res => res.json())
     ))
-    const mergedSchema = {
-      ... mainSchema,
-      properties: {
-        ... mainSchema.properties,
-        ... baseSchema.definitions
-      }
-    }
     const ajv = new Ajv({
-      schemas: [
-        mergedSchema,
-        baseSchema,
-        ... schemas
-      ]
+      schemas
     })
     const validate = ajv.validate(LOBBY_SCHEMA.client2server.buildVillage, payload)
-
 
     if (!validate) {
       console.error(ajv.errors)
@@ -353,26 +341,15 @@ describe('message/NEXT_GAME_INVITATION', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    const schemas = await Promise.all([
       VILLAGE_SCHEMA.invitation.nextGameInvitation,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
         .then(res => res.json())
     ))
-    const mergedSchema = {
-      ... mainSchema,
-      properties: {
-        ... mainSchema.properties,
-        ... baseSchema.definitions
-      }
-    }
     const ajv = new Ajv({
-      schemas: [
-        mergedSchema,
-        baseSchema,
-        ... schemas
-      ]
+      schemas
     })
     const validate = ajv.validate(VILLAGE_SCHEMA.invitation.nextGameInvitation, payload)
 
