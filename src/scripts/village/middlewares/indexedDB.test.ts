@@ -243,10 +243,30 @@ describe('NEXT_GAME', () => {
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(LOBBY_SCHEMA.client2server.buildVillage)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, payload)
+    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+      LOBBY_SCHEMA.client2server.buildVillage,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const mergedSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.buildVillage, payload)
+
 
     if (!validate) {
       console.error(ajv.errors)
