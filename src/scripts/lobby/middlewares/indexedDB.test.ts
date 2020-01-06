@@ -452,6 +452,7 @@ describe('message/WAINTING_PAGE', () => {
       expect.hasAssertions()
       const [mainSchema, baseSchema, ... schemas] = await Promise.all([
         LOBBY_SCHEMA.server2client.waitingPage,
+        VILLAGE_SCHEMA.avatar,
         VILLAGE_SCHEMA.village
       ].map(
         schema => fetch(schema)
@@ -509,6 +510,7 @@ describe('message/WAINTING_PAGE', () => {
       expect.hasAssertions()
       const [mainSchema, baseSchema, ... schemas] = await Promise.all([
         LOBBY_SCHEMA.server2client.waitingPage,
+        VILLAGE_SCHEMA.avatar,
         VILLAGE_SCHEMA.village
       ].map(
         schema => fetch(schema)
