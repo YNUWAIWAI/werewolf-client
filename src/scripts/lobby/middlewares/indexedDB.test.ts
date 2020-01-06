@@ -304,26 +304,15 @@ describe('message/PLAYED', () => {
   store.dispatch = dispatch
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    const schemas = await Promise.all([
       LOBBY_SCHEMA.server2client.played,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
         .then(res => res.json())
     ))
-    const mergedSchema = {
-      ... mainSchema,
-      properties: {
-        ... mainSchema.properties,
-        ... baseSchema.definitions
-      }
-    }
     const ajv = new Ajv({
-      schemas: [
-        mergedSchema,
-        baseSchema,
-        ... schemas
-      ]
+      schemas
     })
     const validate = ajv.validate(LOBBY_SCHEMA.server2client.played, payload)
 
@@ -450,7 +439,7 @@ describe('message/WAINTING_PAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+      const schemas = await Promise.all([
         LOBBY_SCHEMA.server2client.waitingPage,
         VILLAGE_SCHEMA.avatar,
         VILLAGE_SCHEMA.village
@@ -458,19 +447,8 @@ describe('message/WAINTING_PAGE', () => {
         schema => fetch(schema)
           .then(res => res.json())
       ))
-      const mergedSchema = {
-        ... mainSchema,
-        properties: {
-          ... mainSchema.properties,
-          ... baseSchema.definitions
-        }
-      }
       const ajv = new Ajv({
-        schemas: [
-          mergedSchema,
-          baseSchema,
-          ... schemas
-        ]
+        schemas
       })
       const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, payload)
 
@@ -508,7 +486,7 @@ describe('message/WAINTING_PAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+      const schemas = await Promise.all([
         LOBBY_SCHEMA.server2client.waitingPage,
         VILLAGE_SCHEMA.avatar,
         VILLAGE_SCHEMA.village
@@ -516,19 +494,8 @@ describe('message/WAINTING_PAGE', () => {
         schema => fetch(schema)
           .then(res => res.json())
       ))
-      const mergedSchema = {
-        ... mainSchema,
-        properties: {
-          ... mainSchema.properties,
-          ... baseSchema.definitions
-        }
-      }
       const ajv = new Ajv({
-        schemas: [
-          mergedSchema,
-          baseSchema,
-          ... schemas
-        ]
+        schemas
       })
       const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, payload)
 
@@ -608,7 +575,7 @@ describe('socket/SEND', () => {
     store.dispatch = dispatch
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+      const schemas = await Promise.all([
         LOBBY_SCHEMA.client2server.buildVillage,
         VILLAGE_SCHEMA.avatar,
         VILLAGE_SCHEMA.village
@@ -616,19 +583,8 @@ describe('socket/SEND', () => {
         schema => fetch(schema)
           .then(res => res.json())
       ))
-      const mergedSchema = {
-        ... mainSchema,
-        properties: {
-          ... mainSchema.properties,
-          ... baseSchema.definitions
-        }
-      }
       const ajv = new Ajv({
-        schemas: [
-          mergedSchema,
-          baseSchema,
-          ... schemas
-        ]
+        schemas
       })
       const validate = ajv.validate(LOBBY_SCHEMA.client2server.buildVillage, payload)
 
