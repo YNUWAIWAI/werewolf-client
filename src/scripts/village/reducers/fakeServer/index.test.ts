@@ -594,7 +594,7 @@ test('validate star', async () => {
     VILLAGE_SCHEMA.star,
     VILLAGE_SCHEMA.time,
     VILLAGE_SCHEMA.timestamp,
-    VILLAGE_SCHEMA.village,
+    VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
       .then(res => res.json())
