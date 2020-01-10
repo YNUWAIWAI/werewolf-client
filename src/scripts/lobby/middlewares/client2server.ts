@@ -59,8 +59,8 @@ const client2server: Middleware = store => next => action => {
       return next(action)
     }
     case ActionTypes.App.CHANGE_LANGUAGE: {
-      const payload: lobby.Payload$ChangeLang = {
-        lang: action.language,
+      const payload: lobby.Payload$ChangeLanguage = {
+        language: action.language,
         type: lobby.PayloadType.changeLang
       }
 

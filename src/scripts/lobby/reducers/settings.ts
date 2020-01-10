@@ -35,7 +35,7 @@ const settings = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         initialValue: {
-          language: payload.lang,
+          language: payload.language,
           userEmail: payload.userEmail,
           userName: payload.userName
         }

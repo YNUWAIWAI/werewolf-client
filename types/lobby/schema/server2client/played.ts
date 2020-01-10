@@ -5,6 +5,6 @@ import {Language} from '../..'
 import {PayloadType} from '../../payload'
 
 export interface Played {
-  lang: Language
+  language: Language
   type: PayloadType.played
 }

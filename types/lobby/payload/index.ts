@@ -5,7 +5,7 @@ import {
   AuthorizationRequestAcceptedResponse,
   Avatar,
   BuildVillage,
-  ChangeLang,
+  ChangeLanguage,
   ChangeUserEmail,
   ChangeUserName,
   ChangeUserPassword,
@@ -66,7 +66,7 @@ export type Payload =
   | Payload$AuthorizationRequestAcceptedResponse
   | Payload$Avatar
   | Payload$BuildVillage
-  | Payload$ChangeLang
+  | Payload$ChangeLanguage
   | Payload$ChangeUserEmail
   | Payload$ChangeUserName
   | Payload$ChangeUserPassword
@@ -95,7 +95,7 @@ export interface Payload$AuthorizationRequestAccepted extends AuthorizationReque
 export interface Payload$AuthorizationRequestAcceptedResponse extends AuthorizationRequestAcceptedResponse {}
 export interface Payload$Avatar extends Avatar {}
 export interface Payload$BuildVillage extends BuildVillage {}
-export interface Payload$ChangeLang extends ChangeLang {}
+export interface Payload$ChangeLanguage extends ChangeLanguage {}
 export interface Payload$ChangeUserEmail extends ChangeUserEmail {}
 export interface Payload$ChangeUserName extends ChangeUserName {}
 export interface Payload$ChangeUserPassword extends ChangeUserPassword {}

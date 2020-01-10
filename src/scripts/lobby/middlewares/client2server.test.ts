@@ -295,7 +295,7 @@ describe('CHANGE_LANGUAGE', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const schemas = await Promise.all([
-      LOBBY_SCHEMA.client2server.changeLang,
+      LOBBY_SCHEMA.client2server.changeLanguage,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
@@ -304,7 +304,7 @@ describe('CHANGE_LANGUAGE', () => {
     const ajv = new Ajv({
       schemas
     })
-    const validate = ajv.validate(LOBBY_SCHEMA.client2server.changeLang, payload)
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.changeLanguage, payload)
 
     if (!validate) {
       console.error(ajv.errors)

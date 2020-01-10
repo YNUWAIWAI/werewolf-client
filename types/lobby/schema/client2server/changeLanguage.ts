@@ -4,7 +4,7 @@
 import {Language} from '../..'
 import {PayloadType} from '../../payload'
 
-export interface ChangeLang {
-  lang: Language
+export interface ChangeLanguage {
+  language: Language
   type: PayloadType.changeLang
 }

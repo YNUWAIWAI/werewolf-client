@@ -6,7 +6,7 @@ const client2server = {
   advancedSearch: `${CLIENT2SERVER}/advancedSearch.json`,
   authorizationRequestAccepted: `${CLIENT2SERVER}/authorizationRequestAccepted.json`,
   buildVillage: `${CLIENT2SERVER}/buildVillage.json`,
-  changeLang: `${CLIENT2SERVER}/changeLang.json`,
+  changeLanguage: `${CLIENT2SERVER}/changeLanguage.json`,
   changeUserEmail: `${CLIENT2SERVER}/changeUserEmail.json`,
   changeUserName: `${CLIENT2SERVER}/changeUserName.json`,
   changeUserPassword: `${CLIENT2SERVER}/changeUserPassword.json`,
