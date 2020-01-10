@@ -12,6 +12,7 @@ import {Chat} from './chat'
 import {ChatSettings} from './chatSettings'
 import {Role} from './role'
 import {Time} from './time'
+import {Timestamp} from './timestamp'
 import {Village} from './village'
 
 export interface Base {
@@ -24,7 +25,7 @@ export interface Base {
     name: Avatar['name']
     image: Avatar['image']
   }
-  clientTimestamp: string
+  clientTimestamp: Timestamp['phaseStartTime']
   day: Time['day']
   directionality: Directionality
   extensionalDisclosureRange: {
@@ -57,9 +58,9 @@ export interface Base {
     }
   }
   phase: Time['phase']
-  phaseStartTime: string
+  phaseStartTime: Timestamp['phaseStartTime']
   phaseTimeLimit: number
-  serverTimestamp: string
+  serverTimestamp: Timestamp['phaseStartTime']
   token: Avatar['token']
   village: {
     '@context': Village['@context']

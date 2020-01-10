@@ -16,7 +16,7 @@ const language = (state: State = initialState, action: Action): State => {
     case ActionTypes.App.CHANGE_LANGUAGE:
       return action.language
     case ActionTypes.Message.AVATAR:
-      return action.payload.lang
+      return action.payload.language
     default:
       return state
   }

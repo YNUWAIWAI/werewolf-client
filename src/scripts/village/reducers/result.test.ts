@@ -26,7 +26,7 @@ describe('socket/MESSAGE', () => {
       )
     ).toStrictEqual({
       allIds: [
-        '0',
+        '15',
         '1',
         '2',
         '3',
@@ -43,17 +43,6 @@ describe('socket/MESSAGE', () => {
         '14'
       ],
       characters: {
-        '0': {
-          avatarImage: ImagePath.Character.r,
-          avatarName: 'Sato',
-          characterId: '0',
-          characterImage: ImagePath.Character.a,
-          characterName: Character.a,
-          result: village.Result.win,
-          roleImage: ImagePath.Role.villager,
-          roleName: Role.villager,
-          status: village.CharacterStatus.alive
-        },
         '1': {
           avatarImage: ImagePath.Character.r,
           avatarName: 'Suzuki',
@@ -89,7 +78,7 @@ describe('socket/MESSAGE', () => {
         },
         '4': {
           avatarImage: ImagePath.Character.r,
-          avatarName: 'Ito',
+          avatarName: 'Ito00',
           characterId: '4',
           characterImage: ImagePath.Character.e,
           characterName: Character.e,
@@ -177,7 +166,7 @@ describe('socket/MESSAGE', () => {
         },
         '12': {
           avatarImage: ImagePath.Character.r,
-          avatarName: '山口',
+          avatarName: 'yamaguchi',
           characterId: '12',
           characterImage: ImagePath.Character.m,
           characterName: Character.m,
@@ -188,7 +177,7 @@ describe('socket/MESSAGE', () => {
         },
         '13': {
           avatarImage: ImagePath.Character.r,
-          avatarName: '松本',
+          avatarName: 'matsumoto',
           characterId: '13',
           characterImage: ImagePath.Character.n,
           characterName: Character.n,
@@ -199,10 +188,21 @@ describe('socket/MESSAGE', () => {
         },
         '14': {
           avatarImage: ImagePath.Character.r,
-          avatarName: '井上',
+          avatarName: 'inoue',
           characterId: '14',
           characterImage: ImagePath.Character.o,
           characterName: Character.o,
+          result: village.Result.win,
+          roleImage: ImagePath.Role.villager,
+          roleName: Role.villager,
+          status: village.CharacterStatus.alive
+        },
+        '15': {
+          avatarImage: ImagePath.Character.r,
+          avatarName: 'Sato0',
+          characterId: '15',
+          characterImage: ImagePath.Character.a,
+          characterName: Character.a,
           result: village.Result.win,
           roleImage: ImagePath.Role.villager,
           roleName: Role.villager,
@@ -225,7 +225,7 @@ describe('socket/MESSAGE', () => {
       },
       visible: true,
       winners: [
-        '0',
+        '15',
         '1',
         '3',
         '4',

@@ -8,6 +8,10 @@ import {
   message
 } from '../actions'
 import {
+  LOBBY_SCHEMA,
+  VILLAGE_SCHEMA
+} from '../constants/SchemaPath'
+import {
   firstMorning,
   flavorText,
   myMessageOnChat
@@ -26,7 +30,6 @@ import fetch from 'node-fetch'
 import middleware from './client2server'
 
 const clientTimestamp = new Date('2006-10-07T12:06:56.568+09:00').toISOString()
-const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('CHANGE_PREDICTION_BOARD', () => {
   const store = fakeStore({
@@ -39,7 +42,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -323,7 +326,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       'name': Role.villager
     },
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -343,27 +346,21 @@ describe('CHANGE_PREDICTION_BOARD', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-      fetch(`${BASE_URI}/boardMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/base.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/board.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chat.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chatSettings.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/role.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/time.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.boardMessage,
+      VILLAGE_SCHEMA.base,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.board,
+      VILLAGE_SCHEMA.character,
+      VILLAGE_SCHEMA.chat,
+      VILLAGE_SCHEMA.chatSettings,
+      VILLAGE_SCHEMA.role,
+      VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const mergedSchema = {
       ... mainSchema,
       properties: {
@@ -378,7 +375,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(`${BASE_URI}/boardMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.boardMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -408,7 +405,7 @@ describe('POST_CHAT', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -490,7 +487,7 @@ describe('POST_CHAT', () => {
       '@language': village.Language.en,
       '@value': 'text'
     },
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -510,25 +507,20 @@ describe('POST_CHAT', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-      fetch(`${BASE_URI}/chatMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/base.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chat.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chatSettings.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/role.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/time.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.chatMessage,
+      VILLAGE_SCHEMA.base,
+      VILLAGE_SCHEMA.character,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.chat,
+      VILLAGE_SCHEMA.chatSettings,
+      VILLAGE_SCHEMA.role,
+      VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const mergedSchema = {
       ... mainSchema,
       properties: {
@@ -543,7 +535,7 @@ describe('POST_CHAT', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(`${BASE_URI}/chatMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.chatMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -584,16 +576,35 @@ describe('READY', () => {
   }
 
   test('validate the JSON of play', async () => {
-    const ajv = new Ajv()
-
     expect.hasAssertions()
-    await fetch(`https://werewolf.world/lobby/schema/${VERSION}/client2server/ready.json`)
-      .then(res => res.json())
-      .then(schema => {
-        const validate = ajv.validate(schema, payload)
+    const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+      LOBBY_SCHEMA.client2server.ready,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const mergedSchema = {
+      ... mainSchema,
+      properties: {
+        ... mainSchema.properties,
+        ... baseSchema.definitions
+      }
+    }
+    const ajv = new Ajv({
+      schemas: [
+        mergedSchema,
+        baseSchema,
+        ... schemas
+      ]
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.ready, payload)
 
-        expect(validate).toBe(true)
-      })
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
   })
   test('dispatch correctly', () => {
     actionHandler(action)
@@ -615,7 +626,7 @@ describe('SELECT_YES', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -793,7 +804,7 @@ describe('SELECT_YES', () => {
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -813,25 +824,20 @@ describe('SELECT_YES', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-      fetch(`${BASE_URI}/voteMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/base.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chat.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chatSettings.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/role.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/time.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.voteMessage,
+      VILLAGE_SCHEMA.base,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.character,
+      VILLAGE_SCHEMA.chat,
+      VILLAGE_SCHEMA.chatSettings,
+      VILLAGE_SCHEMA.role,
+      VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const mergedSchema = {
       ... mainSchema,
       properties: {
@@ -846,7 +852,7 @@ describe('SELECT_YES', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(`${BASE_URI}/voteMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.voteMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -876,7 +882,7 @@ describe('STAR', () => {
       'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
       'phaseTimeLimit': 600,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@id': `https://licos.online/state/${VERSION}/village`,
         'chatSettings': {
@@ -970,9 +976,9 @@ describe('STAR', () => {
       'clientTimestamp': '2006-10-07T12:06:56.568+09:00',
       'isMarked': true,
       'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
     },
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -992,27 +998,21 @@ describe('STAR', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const [mainSchema, baseSchema, ... schemas] = await Promise.all([
-      fetch(`${BASE_URI}/starMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/base.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chat.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chatSettings.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/role.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/star.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/time.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.starMessage,
+      VILLAGE_SCHEMA.base,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.character,
+      VILLAGE_SCHEMA.chat,
+      VILLAGE_SCHEMA.chatSettings,
+      VILLAGE_SCHEMA.role,
+      VILLAGE_SCHEMA.star,
+      VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const mergedSchema = {
       ... mainSchema,
       properties: {
@@ -1027,7 +1027,7 @@ describe('STAR', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(`${BASE_URI}/starMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.starMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -1051,7 +1051,7 @@ describe('message/CHAT_MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
   const villageId = 3
   const action = message.chatMessage(myMessageOnChat)
   const payload: village.Payload$ReceivedChatMessage = {
@@ -1065,19 +1065,19 @@ describe('message/CHAT_MESSAGE', () => {
   test('validate the JSON of play', async () => {
     expect.hasAssertions()
     const schemas = await Promise.all([
-      fetch(`${BASE_URI}/receipt/receivedChatMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/base.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.receipt.receivedChatMessage,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.base,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const ajv = new Ajv({
       schemas
     })
-    const validate = ajv.validate(`${BASE_URI}/receipt/receivedChatMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.receipt.receivedChatMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -1101,7 +1101,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
   const villageId = 3
   const action = message.flavorTextMessage(flavorText)
   const payload: village.Payload$ReceivedFlavorTextMessage = {
@@ -1115,19 +1115,19 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
   test('validate the JSON of play', async () => {
     expect.hasAssertions()
     const schemas = await Promise.all([
-      fetch(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/time.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.receipt.receivedFlavorTextMessage,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const ajv = new Ajv({
       schemas
     })
-    const validate = ajv.validate(`${BASE_URI}/receipt/receivedFlavorTextMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.receipt.receivedFlavorTextMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -1151,7 +1151,7 @@ describe('message/SYSTEM_MESSAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const token = 'eFVr3O93oLhmnE8OqTMl5VSVGIV'
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
   const villageId = 3
   const action = message.systemMessage(firstMorning)
   const payload: village.Payload$ReceivedSystemMessage = {
@@ -1165,19 +1165,19 @@ describe('message/SYSTEM_MESSAGE', () => {
   test('validate the JSON of play', async () => {
     expect.hasAssertions()
     const schemas = await Promise.all([
-      fetch(`${BASE_URI}/receipt/receivedSystemMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/time.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.receipt.receivedSystemMessage,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const ajv = new Ajv({
       schemas
     })
-    const validate = ajv.validate(`${BASE_URI}/receipt/receivedSystemMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.receipt.receivedSystemMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)

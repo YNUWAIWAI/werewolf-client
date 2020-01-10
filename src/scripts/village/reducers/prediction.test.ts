@@ -1861,17 +1861,10 @@ describe('message/SYSTEM_MESSAGE', () => {
         '4',
         '6',
         '3',
-        '0',
+        '8',
         '1'
       ],
       byId: {
-        '0': {
-          '@id': `https://licos.online/state/${VERSION}/village#29/character#0`,
-          'id': '0',
-          'image': ImagePath.Character.r,
-          'name': Character.r,
-          'status': village.CharacterStatus.alive
-        },
         '1': {
           '@id': `https://licos.online/state/${VERSION}/village#29/character#1`,
           'id': '1',
@@ -1919,6 +1912,13 @@ describe('message/SYSTEM_MESSAGE', () => {
           'id': '7',
           'image': ImagePath.Character.a,
           'name': Character.a,
+          'status': village.CharacterStatus.alive
+        },
+        '8': {
+          '@id': `https://licos.online/state/${VERSION}/village#29/character#8`,
+          'id': '8',
+          'image': ImagePath.Character.r,
+          'name': Character.r,
           'status': village.CharacterStatus.alive
         }
       }
@@ -1982,38 +1982,6 @@ describe('message/SYSTEM_MESSAGE', () => {
       visible: false
     }
     const table: State['table'] = {
-      '0': {
-        madman: {
-          day: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        mason: {
-          day: 1,
-          fixed: true,
-          state: village.BoardState.CIRCLE
-        },
-        medium: {
-          day: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        seer: {
-          day: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        villager: {
-          day: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        },
-        werewolf: {
-          day: 1,
-          fixed: true,
-          state: village.BoardState.FILL
-        }
-      },
       '1': {
         madman: {
           day: 1,
@@ -2236,6 +2204,38 @@ describe('message/SYSTEM_MESSAGE', () => {
           day: 1,
           fixed: false,
           state: village.BoardState.QUESTION
+        }
+      },
+      '8': {
+        madman: {
+          day: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        mason: {
+          day: 1,
+          fixed: true,
+          state: village.BoardState.CIRCLE
+        },
+        medium: {
+          day: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        seer: {
+          day: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        villager: {
+          day: 1,
+          fixed: true,
+          state: village.BoardState.FILL
+        },
+        werewolf: {
+          day: 1,
+          fixed: true,
+          state: village.BoardState.FILL
         }
       }
     }

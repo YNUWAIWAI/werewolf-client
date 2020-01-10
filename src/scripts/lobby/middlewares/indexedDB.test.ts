@@ -9,23 +9,22 @@ import {
   updateValue
 } from '../../indexeddb'
 import {
+  LOBBY_SCHEMA,
+  VILLAGE_SCHEMA
+} from '../constants/SchemaPath'
+import {
   SocketSend,
   Transition,
   init,
   message
 } from '../actions'
 import Ajv from 'ajv'
-import {VERSION} from '../constants/Version'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import {getCastFromNumberOfPlayers} from '../util'
 import {lobby} from '../types'
 import middleware from './indexedDB'
 import {waitingPage} from '../reducers/fakeServer'
-
-const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
-const CLIENT2SERVER = `${BASE_URI}/client2server`
-const SERVER2CLIENT = `${BASE_URI}/server2client`
 
 const getAllValue = async () => {
   const db = await connectDB()
@@ -296,7 +295,7 @@ describe('message/PLAYED', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const payload: lobby.Payload$Played = {
-    lang: lobby.Language.en,
+    language: lobby.Language.en,
     type: lobby.PayloadType.played
   }
   const action = message.played(payload)
@@ -305,10 +304,17 @@ describe('message/PLAYED', () => {
   store.dispatch = dispatch
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${SERVER2CLIENT}/played.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, payload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.server2client.played,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.server2client.played, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -328,7 +334,7 @@ describe('message/PLAYED', () => {
 
     expect(buildVillagePayload).toBeUndefined()
     expect(isHost).toBeUndefined()
-    expect(language).toBe(payload.lang)
+    expect(language).toBe(payload.language)
     expect(nextGameVillageId).toBeUndefined()
     expect(villageInfo).toBeUndefined()
     expect(whatToDoNextInLobby).toBeUndefined()
@@ -433,10 +439,18 @@ describe('message/WAINTING_PAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
+      const schemas = await Promise.all([
+        LOBBY_SCHEMA.server2client.waitingPage,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.village
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -472,10 +486,18 @@ describe('message/WAINTING_PAGE', () => {
 
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
+      const schemas = await Promise.all([
+        LOBBY_SCHEMA.server2client.waitingPage,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.village
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -553,10 +575,18 @@ describe('socket/SEND', () => {
     store.dispatch = dispatch
     test('validate the JSON', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${CLIENT2SERVER}/buildVillage.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, payload)
+      const schemas = await Promise.all([
+        LOBBY_SCHEMA.client2server.buildVillage,
+        VILLAGE_SCHEMA.avatar,
+        VILLAGE_SCHEMA.village
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.client2server.buildVillage, payload)
 
       if (!validate) {
         console.error(ajv.errors)

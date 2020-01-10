@@ -5,7 +5,7 @@ import {Language} from '../..'
 import {PayloadType} from '../../payload'
 
 export interface Settings {
-  lang: Language
+  language: Language
   type: PayloadType.settings
   userEmail: string
   userName: string

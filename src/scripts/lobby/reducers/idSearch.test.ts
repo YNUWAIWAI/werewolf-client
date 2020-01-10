@@ -377,7 +377,7 @@ test('message/AVATAR', () => {
   ).toStrictEqual(
     {
       ... initialState,
-      image: '/assets/images/avatar/default/user.png',
+      image: 'https://werewolf.world/image/0.3/user.jpg',
       name: 'Alice'
     }
   )

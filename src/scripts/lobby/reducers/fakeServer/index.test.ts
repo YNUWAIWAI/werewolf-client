@@ -1,4 +1,8 @@
 import {
+  LOBBY_SCHEMA,
+  VILLAGE_SCHEMA
+} from '../../constants/SchemaPath'
+import {
   avatar,
   avatar2,
   enterHumanPlayerLobby,
@@ -12,18 +16,23 @@ import {
   waitingPage2
 } from '.'
 import Ajv from 'ajv'
-import {VERSION} from '../../constants/Version'
 import fetch from 'node-fetch'
-
-const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
-const SERVER2CLIENT = `${BASE_URI}/server2client`
 
 test('validate avatar', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/avatar.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, avatar)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.avatar,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.avatar, avatar)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -32,10 +41,19 @@ test('validate avatar', async () => {
 })
 test('validate avatar2', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/avatar.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, avatar2)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.avatar,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.avatar, avatar2)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -44,10 +62,18 @@ test('validate avatar2', async () => {
 })
 test('validate enterHumanPlayerLobby', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/lobby.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, enterHumanPlayerLobby)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.lobby,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.lobby, enterHumanPlayerLobby)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -56,10 +82,18 @@ test('validate enterHumanPlayerLobby', async () => {
 })
 test('validate enterOnymousAudienceLobby', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/lobby.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, enterOnymousAudienceLobby)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.lobby,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.lobby, enterOnymousAudienceLobby)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -68,10 +102,18 @@ test('validate enterOnymousAudienceLobby', async () => {
 })
 test('validate enterRobotPlayerLobby', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/lobby.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, enterRobotPlayerLobby)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.lobby,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.lobby, enterRobotPlayerLobby)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -80,10 +122,18 @@ test('validate enterRobotPlayerLobby', async () => {
 })
 test('validate ping', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/ping.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, ping)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.ping,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.ping, ping)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -92,10 +142,18 @@ test('validate ping', async () => {
 })
 test('validate played', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/played.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, played)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.played,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.played, played)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -104,10 +162,19 @@ test('validate played', async () => {
 })
 test('validate searchResult', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/searchResult.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, searchResult)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.searchResult,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.searchResult, searchResult)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -116,10 +183,18 @@ test('validate searchResult', async () => {
 })
 test('validate settings', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/settings.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, settings)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.settings,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.settings, settings)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -128,10 +203,19 @@ test('validate settings', async () => {
 })
 test('validate waitingPage', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, waitingPage)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.waitingPage,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, waitingPage)
 
   if (!validate) {
     console.error(ajv.errors)
@@ -140,10 +224,19 @@ test('validate waitingPage', async () => {
 })
 test('validate waitingPage2', async () => {
   expect.hasAssertions()
-  const ajv = new Ajv()
-  const schema = await fetch(`${SERVER2CLIENT}/waitingPage.json`)
-    .then(res => res.json())
-  const validate = ajv.validate(schema, waitingPage2)
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.waitingPage,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.waitingPage, waitingPage2)
 
   if (!validate) {
     console.error(ajv.errors)

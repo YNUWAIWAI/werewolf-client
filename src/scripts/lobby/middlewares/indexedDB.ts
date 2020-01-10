@@ -176,7 +176,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
           await updateValue<lobby.Language>(
             objectStore,
             Key.language,
-            payload.lang
+            payload.language
           )
           store.dispatch(showVillage())
         })
