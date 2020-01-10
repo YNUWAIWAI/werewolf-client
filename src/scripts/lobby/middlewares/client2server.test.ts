@@ -287,9 +287,9 @@ describe('CHANGE_LANGUAGE', () => {
     language: lobby.Language.ja,
     type: ActionTypes.App.CHANGE_LANGUAGE
   }
-  const payload: lobby.Payload$ChangeLang = {
-    lang: lobby.Language.ja,
-    type: lobby.PayloadType.changeLang
+  const payload: lobby.Payload$ChangeLanguage = {
+    language: lobby.Language.ja,
+    type: lobby.PayloadType.changeLanguage
   }
 
   test('validate the JSON', async () => {

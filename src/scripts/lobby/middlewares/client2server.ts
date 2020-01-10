@@ -61,7 +61,7 @@ const client2server: Middleware = store => next => action => {
     case ActionTypes.App.CHANGE_LANGUAGE: {
       const payload: lobby.Payload$ChangeLanguage = {
         language: action.language,
-        type: lobby.PayloadType.changeLang
+        type: lobby.PayloadType.changeLanguage
       }
 
       store.dispatch(socket.send(payload))

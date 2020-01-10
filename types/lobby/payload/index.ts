@@ -36,7 +36,7 @@ export const enum PayloadType {
   authorizationRequestAcceptedResponse = 'authorizationRequestAcceptedResponse',
   avatar = 'avatar',
   buildVillage = 'buildVillage',
-  changeLang = 'changeLang',
+  changeLanguage = 'changeLanguage',
   changeUserEmail = 'changeUserEmail',
   changeUserName = 'changeUserName',
   changeUserPassword = 'changeUserPassword',

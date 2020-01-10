@@ -6,5 +6,5 @@ import {PayloadType} from '../../payload'
 
 export interface ChangeLanguage {
   language: Language
-  type: PayloadType.changeLang
+  type: PayloadType.changeLanguage
 }
