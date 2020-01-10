@@ -47,7 +47,7 @@ export const WEREHAMSTER_TEAM = [
 export const Role = {
   hunter: {
     en: 'Hunter',
-    ja: 'ハンター'
+    ja: '狩人'
   },
   madman: {
     en: 'Madman',
@@ -56,10 +56,6 @@ export const Role = {
   mason: {
     en: 'Mason',
     ja: '共有者'
-  },
-  master: {
-    en: 'Master',
-    ja: 'マスター'
   },
   medium: {
     en: 'Medium',

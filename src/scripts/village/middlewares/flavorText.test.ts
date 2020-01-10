@@ -3,13 +3,12 @@ import Ajv from 'ajv'
 import {Character} from '../constants/Character'
 import {ImagePath} from '../constants/ImagePath'
 import {VERSION} from '../constants/Version'
+import {VILLAGE_SCHEMA} from '../constants/SchemaPath'
 import fakeStore from '../containers/fakeStore'
 import fetch from 'node-fetch'
 import {message} from '../actions'
 import middleware from './flavorText'
 import {village} from '../types'
-
-const BASE_URI = `https://werewolf.world/village/schema/${VERSION}`
 
 describe('message/FLAVOR_TEXT_MESSAGE', () => {
   const store = fakeStore()
@@ -54,7 +53,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
         '@language': village.Language.en,
         '@value': '最初のフレーバーテキストです'
       },
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@context': village.Context.Village,
         '@id': `https://licos.online/state/${VERSION}/village`,
@@ -104,7 +103,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
         '@language': village.Language.en,
         '@value': '２番目のフレーバーテキストです'
       },
-      'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+      'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
       'village': {
         '@context': village.Context.Village,
         '@id': `https://licos.online/state/${VERSION}/village`,
@@ -137,7 +136,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@context': village.Context.Village,
       '@id': `https://licos.online/state/${VERSION}/village`,
@@ -157,27 +156,21 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const [mainSchema, subSchema, baseSchema, ... schemas] = await Promise.all([
-      fetch(`${BASE_URI}/flavorTextMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chatMessage.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/base.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/character.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/avatar.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chat.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/chatSettings.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/role.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/time.json`)
-        .then(res => res.json()),
-      fetch(`${BASE_URI}/village.json`)
+      VILLAGE_SCHEMA.flavorTextMessage,
+      VILLAGE_SCHEMA.chatMessage,
+      VILLAGE_SCHEMA.base,
+      VILLAGE_SCHEMA.character,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.chat,
+      VILLAGE_SCHEMA.chatSettings,
+      VILLAGE_SCHEMA.role,
+      VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
         .then(res => res.json())
-    ])
+    ))
     const mergedMainSchema = {
       ... mainSchema,
       properties: {
@@ -200,7 +193,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
         ... schemas
       ]
     })
-    const validate = ajv.validate(`${BASE_URI}/flavorTextMessage.json`, payload)
+    const validate = ajv.validate(VILLAGE_SCHEMA.flavorTextMessage, payload)
 
     if (!validate) {
       console.error(ajv.errors)

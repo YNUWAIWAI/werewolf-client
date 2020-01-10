@@ -17,7 +17,7 @@ export const morningWithoutLimitedChat: ReducerState = {
     'phaseStartTime': '2006-10-07T12:06:56.568+09:00',
     'phaseTimeLimit': 600,
     'serverTimestamp': '2006-10-07T12:06:56.568+09:00',
-    'token': 'eFVr3O93oLhmnE8OqTMl5VSVGIV',
+    'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
     'village': {
       '@id': `https://licos.online/state/${VERSION}/village`,
       'chatSettings': {
@@ -1060,10 +1060,6 @@ export const morningWithoutLimitedChat: ReducerState = {
       {
         id: village.RoleId.mason,
         name: Role.mason
-      },
-      {
-        id: village.RoleId.master,
-        name: Role.master
       },
       {
         id: village.RoleId.medium,

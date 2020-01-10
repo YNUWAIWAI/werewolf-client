@@ -9,8 +9,11 @@ import {
   Transition,
   message
 } from '../actions'
+import {
+  LOBBY_SCHEMA,
+  VILLAGE_SCHEMA
+} from '../constants/SchemaPath'
 import Ajv from 'ajv'
-import {VERSION} from '../constants/Version'
 import {initialState as advancedSearch} from '../reducers/advancedSearch'
 import {initialState as buildVillage} from '../reducers/buildVillage'
 import fakeStore from '../containers/fakeStore'
@@ -20,9 +23,6 @@ import {initialState as idSearch} from '../reducers/idSearch'
 import {lobby} from '../types'
 import middleware from './client2server'
 
-const BASE_URI = `https://werewolf.world/lobby/schema/${VERSION}`
-const CLIENT2SERVER = `${BASE_URI}/client2server`
-const SERVER2CLIENT = `${BASE_URI}/server2client`
 const avatarToken = {
   humanPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
   onymousAudience: '3F2504E0-4F89-11D3-9A0C-0305E82C3311',
@@ -77,19 +77,26 @@ describe('ADVANCED_SEARCH', () => {
     const action: Transition = {
       type: ActionTypes.App.ADVANCED_SEARCH
     }
-    const advancedSearchPayload = {
+    const payload: lobby.Payload$AdvancedSearch = {
       ... value,
       lobby: lobby.LobbyType.human,
       token: avatarToken.humanPlayer,
-      type: 'advancedSearch'
+      type: lobby.PayloadType.advancedSearch
     }
 
     test('validate the JSON of advancedSearch', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, advancedSearchPayload)
+      const schemas = await Promise.all([
+        LOBBY_SCHEMA.client2server.advancedSearch,
+        VILLAGE_SCHEMA.avatar
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.client2server.advancedSearch, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -100,7 +107,7 @@ describe('ADVANCED_SEARCH', () => {
       actionHandler(action)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
-        payload: advancedSearchPayload,
+        payload,
         type: ActionTypes.Socket.SEND
       })
     })
@@ -143,24 +150,31 @@ describe('ADVANCED_SEARCH', () => {
     const action: Transition = {
       type: ActionTypes.App.ADVANCED_SEARCH
     }
-    const advancedSearchPayload = {
-      avatar: 'random',
+    const payload: lobby.Payload$AdvancedSearch = {
+      avatar: lobby.Avatar.random,
       comment: null,
       hostName: null,
-      lobby: 'human player',
+      lobby: lobby.LobbyType.human,
       maximum: null,
       minimum: null,
       token: avatarToken.humanPlayer,
-      type: 'advancedSearch',
+      type: lobby.PayloadType.advancedSearch,
       villageName: null
     }
 
-    test('validate the JSON of advancedSearch', async () => {
+    test('validate the JSON', async () => {
       expect.hasAssertions()
-      const ajv = new Ajv()
-      const schema = await fetch(`${CLIENT2SERVER}/advancedSearch.json`)
-        .then(res => res.json())
-      const validate = ajv.validate(schema, advancedSearchPayload)
+      const schemas = await Promise.all([
+        LOBBY_SCHEMA.client2server.advancedSearch,
+        VILLAGE_SCHEMA.avatar
+      ].map(
+        schema => fetch(schema)
+          .then(res => res.json())
+      ))
+      const ajv = new Ajv({
+        schemas
+      })
+      const validate = ajv.validate(LOBBY_SCHEMA.client2server.advancedSearch, payload)
 
       if (!validate) {
         console.error(ajv.errors)
@@ -171,7 +185,7 @@ describe('ADVANCED_SEARCH', () => {
       actionHandler(action)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
-        payload: advancedSearchPayload,
+        payload,
         type: ActionTypes.Socket.SEND
       })
     })
@@ -196,7 +210,7 @@ describe('BUILD_VILLAGE', () => {
   const action: Transition = {
     type: ActionTypes.App.BUILD_VILLAGE
   }
-  const buildVillagePayload = {
+  const payload: lobby.Payload$BuildVillage = {
     avatar: buildVillage.value.avatar,
     comment: buildVillage.value.comment,
     hostPlayer: {
@@ -221,15 +235,23 @@ describe('BUILD_VILLAGE', () => {
     },
     roleSetting: getCastFromNumberOfPlayers(buildVillage.value.numberOfPlayers)[buildVillage.value.member],
     token: avatarToken.humanPlayer,
-    type: 'buildVillage'
+    type: lobby.PayloadType.buildVillage
   }
 
   test('validate the JSON of buildVillage', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/buildVillage.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, buildVillagePayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.buildVillage,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.buildVillage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -240,7 +262,7 @@ describe('BUILD_VILLAGE', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: buildVillagePayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -265,17 +287,24 @@ describe('CHANGE_LANGUAGE', () => {
     language: lobby.Language.ja,
     type: ActionTypes.App.CHANGE_LANGUAGE
   }
-  const changeLangPayload = {
-    lang: 'ja',
-    type: 'changeLang'
+  const payload: lobby.Payload$ChangeLanguage = {
+    language: lobby.Language.ja,
+    type: lobby.PayloadType.changeLanguage
   }
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/changeLang.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, changeLangPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.changeLanguage,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.changeLanguage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -286,7 +315,7 @@ describe('CHANGE_LANGUAGE', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: changeLangPayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -311,17 +340,17 @@ describe('CHANGE_USER_EMAIL', () => {
     type: ActionTypes.App.CHANGE_USER_EMAIL,
     userEmail: 'example@example.com'
   }
-  const changeUserEmailPayload = {
-    type: 'changeUserEmail',
+  const payload: lobby.Payload$ChangeUserEmail = {
+    type: lobby.PayloadType.changeUserEmail,
     userEmail: 'example@example.com'
   }
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/changeUserEmail.json`)
+    const schema = await fetch(LOBBY_SCHEMA.client2server.changeUserEmail)
       .then(res => res.json())
-    const validate = ajv.validate(schema, changeUserEmailPayload)
+    const validate = ajv.validate(schema, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -332,7 +361,7 @@ describe('CHANGE_USER_EMAIL', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: changeUserEmailPayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -357,17 +386,17 @@ describe('CHANGE_USER_NAME', () => {
     type: ActionTypes.App.CHANGE_USER_NAME,
     userName: 'userName'
   }
-  const changeUserNamePayload = {
-    type: 'changeUserName',
+  const payload: lobby.Payload$ChangeUserName = {
+    type: lobby.PayloadType.changeUserName,
     userName: 'userName'
   }
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/changeUserName.json`)
+    const schema = await fetch(LOBBY_SCHEMA.client2server.changeUserName)
       .then(res => res.json())
-    const validate = ajv.validate(schema, changeUserNamePayload)
+    const validate = ajv.validate(schema, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -378,7 +407,7 @@ describe('CHANGE_USER_NAME', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: changeUserNamePayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -403,17 +432,17 @@ describe('CHANGE_USER_PASSWORD', () => {
     type: ActionTypes.App.CHANGE_USER_PASSWORD,
     userPassword: 'userPassword'
   }
-  const changeUserPasswordPayload = {
-    type: 'changeUserPassword',
+  const payload: lobby.Payload$ChangeUserPassword = {
+    type: lobby.PayloadType.changeUserPassword,
     userPassword: 'userPassword'
   }
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/changeUserPassword.json`)
+    const schema = await fetch(LOBBY_SCHEMA.client2server.changeUserPassword)
       .then(res => res.json())
-    const validate = ajv.validate(schema, changeUserPasswordPayload)
+    const validate = ajv.validate(schema, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -424,7 +453,7 @@ describe('CHANGE_USER_PASSWORD', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: changeUserPasswordPayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -456,22 +485,29 @@ describe('KICK_OUT_PLAYER', () => {
   const action: KickOutPlayer = {
     type: ActionTypes.App.KICK_OUT_PLAYER
   }
-  const kickOutPlayerPayload = {
+  const payload: lobby.Payload$KickOutPlayer = {
     players: [
       {
         token
       }
     ],
     token: avatarToken.humanPlayer,
-    type: 'kickOutPlayer'
+    type: lobby.PayloadType.kickOutPlayer
   }
 
   test('validate the JSON of kickOutPlayer', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/kickOutPlayer.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, kickOutPlayerPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.kickOutPlayer,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.kickOutPlayer, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -482,7 +518,7 @@ describe('KICK_OUT_PLAYER', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: kickOutPlayerPayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -557,19 +593,27 @@ describe('LEAVE_WAITING_PAGE', () => {
   const action: Transition = {
     type: ActionTypes.App.LEAVE_WAITING_PAGE
   }
-  const leaveWaitingPagePayload = {
-    lobby: 'human player',
+  const payload: lobby.Payload$LeaveWaitingPage = {
+    lobby: lobby.LobbyType.human,
     token,
-    type: 'leaveWaitingPage',
+    type: lobby.PayloadType.leaveWaitingPage,
     villageId
   }
 
   test('validate the JSON of leaveWaitingPage', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/leaveWaitingPage.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, leaveWaitingPagePayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.leaveWaitingPage,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.leaveWaitingPage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -580,7 +624,7 @@ describe('LEAVE_WAITING_PAGE', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: leaveWaitingPagePayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -655,18 +699,26 @@ describe('PLAY_GAME', () => {
   const action: Transition = {
     type: ActionTypes.App.PLAY_GAME
   }
-  const playPayload = {
+  const payload: lobby.Payload$Play = {
     token: avatarToken.humanPlayer,
-    type: 'play',
+    type: lobby.PayloadType.play,
     villageId
   }
 
   test('validate the JSON of play', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/play.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, playPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.play,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.play, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -677,7 +729,7 @@ describe('PLAY_GAME', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: playPayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -706,19 +758,26 @@ describe('ID_SEARCH valid id', () => {
   const action: Transition = {
     type: ActionTypes.App.ID_SEARCH
   }
-  const idSearchPayload = {
+  const payload: lobby.Payload$IdSearch = {
     idForSearching,
-    lobby: 'human player',
+    lobby: lobby.LobbyType.human,
     token: avatarToken.humanPlayer,
-    type: 'idSearch'
+    type: lobby.PayloadType.idSearch
   }
 
   test('validate the JSON of idSearch', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/idSearch.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, idSearchPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.idSearch,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.idSearch, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -729,7 +788,7 @@ describe('ID_SEARCH valid id', () => {
     actionHandler(action)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      payload: idSearchPayload,
+      payload,
       type: ActionTypes.Socket.SEND
     })
   })
@@ -780,18 +839,26 @@ describe('SELECT_VILLAGE', () => {
     id: villageId,
     type: ActionTypes.App.SELECT_VILLAGE
   }
-  const payload = {
+  const payload: lobby.Payload$SelectVillage = {
     token: avatarToken.humanPlayer,
-    type: 'selectVillage',
+    type: lobby.PayloadType.selectVillage,
     villageId
   }
 
   test('validate the JSON of selectVillage', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/selectVillage.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, payload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.selectVillage,
+      VILLAGE_SCHEMA.avatar,
+      VILLAGE_SCHEMA.village
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.selectVillage, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -826,23 +893,30 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
   const action: Transition = {
     type: ActionTypes.App.SHOW_LOBBY_FOR_AUDIENCE
   }
-  const enterLobbyPayload = {
-    lobby: 'onymous audience',
+  const enterLobbyPayload: lobby.Payload$EnterLobby = {
+    lobby: lobby.LobbyType.onymousAudience,
     page: 1,
     token: avatarToken.humanPlayer,
-    type: 'enterLobby'
+    type: lobby.PayloadType.enterLobby
   }
-  const getAvatarPayload = {
+  const getAvatarPayload: lobby.Payload$GetAvatar = {
     token: avatarToken.humanPlayer,
-    type: 'getAvatar'
+    type: lobby.PayloadType.getAvatar
   }
 
   test('validate the JSON of enterLobby', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/enterLobby.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, enterLobbyPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.enterLobby,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.enterLobby, enterLobbyPayload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -851,10 +925,17 @@ describe('SHOW_LOBBY_FOR_AUDIENCE', () => {
   })
   test('validate the JSON of getAvatar', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/getAvatar.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, getAvatarPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.getAvatar,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.getAvatar, getAvatarPayload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -893,23 +974,30 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   const action: Transition = {
     type: ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER
   }
-  const enterLobbyPayload = {
+  const enterLobbyPayload: lobby.Payload$EnterLobby = {
     lobby: lobby.LobbyType.human,
     page: 1,
     token: avatarToken.humanPlayer,
-    type: 'enterLobby'
+    type: lobby.PayloadType.enterLobby
   }
-  const getAvatarPayload = {
+  const getAvatarPayload: lobby.Payload$GetAvatar = {
     token: avatarToken.humanPlayer,
-    type: 'getAvatar'
+    type: lobby.PayloadType.getAvatar
   }
 
   test('validate the JSON of enterLobby', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/enterLobby.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, enterLobbyPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.enterLobby,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.enterLobby, enterLobbyPayload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -918,10 +1006,17 @@ describe('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
   })
   test('validate the JSON of getAvatar', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/getAvatar.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, getAvatarPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.getAvatar,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.getAvatar, getAvatarPayload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -960,23 +1055,30 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   const action: Transition = {
     type: ActionTypes.App.SHOW_LOBBY_FOR_ROBOT_PLAYER
   }
-  const enterLobbyPayload = {
-    lobby: 'robot player',
+  const enterLobbyPayload: lobby.Payload$EnterLobby = {
+    lobby: lobby.LobbyType.robot,
     page: 1,
     token: avatarToken.humanPlayer,
-    type: 'enterLobby'
+    type: lobby.PayloadType.enterLobby
   }
-  const getAvatarPayload = {
+  const getAvatarPayload: lobby.Payload$GetAvatar = {
     token: avatarToken.humanPlayer,
-    type: 'getAvatar'
+    type: lobby.PayloadType.getAvatar
   }
 
   test('validate the JSON of enterLobby', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/enterLobby.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, enterLobbyPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.enterLobby,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.enterLobby, enterLobbyPayload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -985,10 +1087,17 @@ describe('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   })
   test('validate the JSON of getAvatar', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/getAvatar.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, getAvatarPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.getAvatar,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.getAvatar, getAvatarPayload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -1034,7 +1143,7 @@ describe('SHOW_SETTINGS', () => {
   test('validate the JSON', async () => {
     expect.hasAssertions()
     const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/getSettings.json`)
+    const schema = await fetch(LOBBY_SCHEMA.client2server.getSettings)
       .then(res => res.json())
     const validate = ajv.validate(schema, payload)
 
@@ -1089,10 +1198,17 @@ describe('message/PING', () => {
 
   test('validate the JSON of ping', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${SERVER2CLIENT}/ping.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, pingPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.server2client.ping,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.server2client.ping, pingPayload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -1101,10 +1217,17 @@ describe('message/PING', () => {
   })
   test('validate the JSON of pong', async () => {
     expect.hasAssertions()
-    const ajv = new Ajv()
-    const schema = await fetch(`${CLIENT2SERVER}/pong.json`)
-      .then(res => res.json())
-    const validate = ajv.validate(schema, pongPayload)
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.pong,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.pong, pongPayload)
 
     if (!validate) {
       console.error(ajv.errors)

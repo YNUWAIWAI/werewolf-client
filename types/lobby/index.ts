@@ -4,7 +4,7 @@ export {
   Payload$AdvancedSearch,
   Payload$BuildVillage,
   Payload$Avatar,
-  Payload$ChangeLang,
+  Payload$ChangeLanguage,
   Payload$ChangeUserEmail,
   Payload$ChangeUserName,
   Payload$ChangeUserPassword,

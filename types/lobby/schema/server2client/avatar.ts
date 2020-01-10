@@ -9,7 +9,7 @@ import {PayloadType} from '../../payload'
 
 export interface Avatar {
   image: string
-  lang: Language
+  language: Language
   name: string
   token: Token
   type: PayloadType.avatar
