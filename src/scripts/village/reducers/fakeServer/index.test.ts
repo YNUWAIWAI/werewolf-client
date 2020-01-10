@@ -28,6 +28,7 @@ test('validate anonymousAudienceChat', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -66,6 +67,7 @@ test('validate firstMorning', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -105,6 +107,7 @@ test('validate firstMorning2', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -144,6 +147,7 @@ test('validate firstMorning3', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -183,6 +187,7 @@ test('validate firstMorning4', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -222,6 +227,7 @@ test('validate firstMorning5', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -261,6 +267,7 @@ test('validate flavorText', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -306,6 +313,7 @@ test('validate myMessageOnChat', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -344,6 +352,7 @@ test('validate night', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -383,6 +392,7 @@ test('validate noon', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -421,6 +431,7 @@ test('validate onymousAudienceChat', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -459,6 +470,7 @@ test('validate result', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village,
     VILLAGE_SCHEMA.votingResult
   ].map(
@@ -497,6 +509,7 @@ test('validate theirMessageOnChat', async () => {
     VILLAGE_SCHEMA.chatSettings,
     VILLAGE_SCHEMA.role,
     VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)

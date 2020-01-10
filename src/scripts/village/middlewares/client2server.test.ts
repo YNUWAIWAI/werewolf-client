@@ -355,6 +355,7 @@ describe('CHANGE_PREDICTION_BOARD', () => {
       VILLAGE_SCHEMA.chatSettings,
       VILLAGE_SCHEMA.role,
       VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
@@ -514,6 +515,7 @@ describe('POST_CHAT', () => {
       VILLAGE_SCHEMA.chatSettings,
       VILLAGE_SCHEMA.role,
       VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
@@ -830,6 +832,7 @@ describe('SELECT_YES', () => {
       VILLAGE_SCHEMA.chatSettings,
       VILLAGE_SCHEMA.role,
       VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
@@ -1004,6 +1007,7 @@ describe('STAR', () => {
       VILLAGE_SCHEMA.role,
       VILLAGE_SCHEMA.star,
       VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
@@ -1064,6 +1068,7 @@ describe('message/CHAT_MESSAGE', () => {
       VILLAGE_SCHEMA.receipt.receivedChatMessage,
       VILLAGE_SCHEMA.avatar,
       VILLAGE_SCHEMA.base,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
@@ -1113,6 +1118,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
       VILLAGE_SCHEMA.receipt.receivedFlavorTextMessage,
       VILLAGE_SCHEMA.avatar,
       VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
@@ -1162,6 +1168,7 @@ describe('message/SYSTEM_MESSAGE', () => {
       VILLAGE_SCHEMA.receipt.receivedSystemMessage,
       VILLAGE_SCHEMA.avatar,
       VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)

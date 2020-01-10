@@ -37,6 +37,7 @@ export const VILLAGE_SCHEMA = {
   starMessage: `${VILLAGE_BASE}/starMessage.json`,
   systemMessage: `${VILLAGE_BASE}/systemMessage.json`,
   time: `${VILLAGE_BASE}/time.json`,
+  timestamp: `${VILLAGE_BASE}/timestamp.json`,
   village: `${VILLAGE_BASE}/village.json`,
   voteMessage: `${VILLAGE_BASE}/voteMessage.json`,
   votingResult: `${VILLAGE_BASE}/votingResult.json`

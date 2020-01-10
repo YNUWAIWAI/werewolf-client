@@ -70,6 +70,7 @@ describe('message/SYSTEM_MESSAGE', () => {
         VILLAGE_SCHEMA.chatSettings,
         VILLAGE_SCHEMA.role,
         VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.timestamp,
         VILLAGE_SCHEMA.village,
         VILLAGE_SCHEMA.votingResult
       ].map(
@@ -172,6 +173,7 @@ describe('message/SYSTEM_MESSAGE', () => {
         VILLAGE_SCHEMA.chatSettings,
         VILLAGE_SCHEMA.role,
         VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.timestamp,
         VILLAGE_SCHEMA.village,
         VILLAGE_SCHEMA.votingResult
       ].map(
@@ -268,6 +270,7 @@ describe('message/SYSTEM_MESSAGE', () => {
         VILLAGE_SCHEMA.chatSettings,
         VILLAGE_SCHEMA.role,
         VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.timestamp,
         VILLAGE_SCHEMA.village,
         VILLAGE_SCHEMA.votingResult
       ].map(
@@ -365,6 +368,7 @@ describe('message/SYSTEM_MESSAGE', () => {
         VILLAGE_SCHEMA.chatSettings,
         VILLAGE_SCHEMA.role,
         VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.timestamp,
         VILLAGE_SCHEMA.village,
         VILLAGE_SCHEMA.votingResult
       ].map(
@@ -462,6 +466,7 @@ describe('message/SYSTEM_MESSAGE', () => {
         VILLAGE_SCHEMA.chatSettings,
         VILLAGE_SCHEMA.role,
         VILLAGE_SCHEMA.time,
+        VILLAGE_SCHEMA.timestamp,
         VILLAGE_SCHEMA.village,
         VILLAGE_SCHEMA.votingResult
       ].map(

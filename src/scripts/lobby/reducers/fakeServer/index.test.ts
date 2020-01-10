@@ -23,6 +23,7 @@ test('validate avatar', async () => {
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.avatar,
     VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -43,6 +44,7 @@ test('validate avatar2', async () => {
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.avatar,
     VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -62,6 +64,7 @@ test('validate enterHumanPlayerLobby', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.lobby,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -81,6 +84,7 @@ test('validate enterOnymousAudienceLobby', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.lobby,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -100,6 +104,7 @@ test('validate enterRobotPlayerLobby', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.lobby,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -119,7 +124,8 @@ test('validate ping', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.ping,
-    VILLAGE_SCHEMA.avatar
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp
   ].map(
     schema => fetch(schema)
       .then(res => res.json())
@@ -138,6 +144,7 @@ test('validate played', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.played,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -158,6 +165,7 @@ test('validate searchResult', async () => {
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.searchResult,
     VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -177,6 +185,7 @@ test('validate settings', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.settings,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -197,6 +206,7 @@ test('validate waitingPage', async () => {
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.waitingPage,
     VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)
@@ -217,6 +227,7 @@ test('validate waitingPage2', async () => {
   const schemas = await Promise.all([
     LOBBY_SCHEMA.server2client.waitingPage,
     VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.timestamp,
     VILLAGE_SCHEMA.village
   ].map(
     schema => fetch(schema)

@@ -165,6 +165,7 @@ describe('message/FLAVOR_TEXT_MESSAGE', () => {
       VILLAGE_SCHEMA.chatSettings,
       VILLAGE_SCHEMA.role,
       VILLAGE_SCHEMA.time,
+      VILLAGE_SCHEMA.timestamp,
       VILLAGE_SCHEMA.village
     ].map(
       schema => fetch(schema)
