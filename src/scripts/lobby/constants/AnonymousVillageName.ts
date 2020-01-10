@@ -1,5 +1,5 @@
 export const anonymousVillageName = [
-  'Cursed Village',
-  'Secret Village',
-  'Doubtful Village'
+  'Cursed village',
+  'Secret village',
+  'Doubtful village'
 ]

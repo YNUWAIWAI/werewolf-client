@@ -35,7 +35,7 @@ describe('<SearchResult />', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('Not Found')
+    expect(wrapper.text()).toBe('Not found')
   })
   test('1 item', () => {
     const selectVillage = jest.fn()
