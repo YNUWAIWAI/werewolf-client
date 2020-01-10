@@ -248,15 +248,6 @@ export const noon: village.Payload$SystemMessage = {
   'role': [
     {
       '@context': village.Context.Role,
-      '@id': `https://licos.online/state/${VERSION}/village#3/role#master`,
-      'board': [],
-      'image': ImagePath.Role.master,
-      'isMine': false,
-      'name': Role.master,
-      'numberOfPlayers': 1
-    },
-    {
-      '@context': village.Context.Role,
       '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
       'board': [
         {

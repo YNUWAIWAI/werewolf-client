@@ -13,22 +13,22 @@ export const result: village.Payload$SystemMessage = {
   'character': [
     {
       '@context': village.Context.Character,
-      '@id': `https://licos.online/state/${VERSION}/village#3/character#0`,
+      '@id': `https://licos.online/state/${VERSION}/village#3/character#15`,
       'avatar': {
         '@context': village.Context.Avatar,
-        '@id': `https://licos.online/state/${VERSION}/village#3/character#0/avatar`,
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#15/avatar`,
         'image': ImagePath.Character.r,
-        'name': 'Sato',
+        'name': 'Sato0',
         'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
       },
-      'id': 0,
+      'id': 15,
       'image': ImagePath.Character.a,
       'isMine': false,
       'name': Character.a,
       'result': village.Result.win,
       'role': {
         '@context': village.Context.Role,
-        '@id': `https://licos.online/state/${VERSION}/village#3/character#0/role`,
+        '@id': `https://licos.online/state/${VERSION}/village#3/character#15/role`,
         'image': ImagePath.Role.villager,
         'name': Role.villager
       },
@@ -42,7 +42,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#1/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Suzuki',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI1'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       },
       'id': 1,
       'image': ImagePath.Character.b,
@@ -65,7 +65,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#2/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Takahashi',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI2'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
       },
       'id': 2,
       'image': ImagePath.Character.c,
@@ -88,7 +88,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#3/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Tanaka',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI3'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
       },
       'id': 3,
       'image': ImagePath.Character.d,
@@ -110,8 +110,8 @@ export const result: village.Payload$SystemMessage = {
         '@context': village.Context.Avatar,
         '@id': `https://licos.online/state/${VERSION}/village#3/character#4/avatar`,
         'image': ImagePath.Character.r,
-        'name': 'Ito',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI4'
+        'name': 'Ito00',
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
       },
       'id': 4,
       'image': ImagePath.Character.e,
@@ -134,7 +134,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#5/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Watanabe',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI5'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3305'
       },
       'id': 5,
       'image': ImagePath.Character.f,
@@ -157,7 +157,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#6/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Yamamoto',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI6'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3306'
       },
       'id': 6,
       'image': ImagePath.Character.g,
@@ -180,7 +180,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#7/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Nakamura',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI7'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3307'
       },
       'id': 7,
       'image': ImagePath.Character.h,
@@ -203,7 +203,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#8/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Kobayashi',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI8'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3308'
       },
       'id': 8,
       'image': ImagePath.Character.i,
@@ -226,7 +226,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#9/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Yoshida',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVGI9'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3309'
       },
       'id': 9,
       'image': ImagePath.Character.j,
@@ -249,7 +249,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#10/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Yamada',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVG10'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3310'
       },
       'id': 10,
       'image': ImagePath.Character.k,
@@ -272,7 +272,7 @@ export const result: village.Payload$SystemMessage = {
         '@id': `https://licos.online/state/${VERSION}/village#3/character#11/avatar`,
         'image': ImagePath.Character.r,
         'name': 'Sasaki',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVG11'
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3311'
       },
       'id': 11,
       'image': ImagePath.Character.l,
@@ -294,8 +294,8 @@ export const result: village.Payload$SystemMessage = {
         '@context': village.Context.Avatar,
         '@id': `https://licos.online/state/${VERSION}/village#3/character#12/avatar`,
         'image': ImagePath.Character.r,
-        'name': '山口',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVG12'
+        'name': 'yamaguchi',
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3312'
       },
       'id': 12,
       'image': ImagePath.Character.m,
@@ -317,8 +317,8 @@ export const result: village.Payload$SystemMessage = {
         '@context': village.Context.Avatar,
         '@id': `https://licos.online/state/${VERSION}/village#3/character#13/avatar`,
         'image': ImagePath.Character.r,
-        'name': '松本',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVG13'
+        'name': 'matsumoto',
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3313'
       },
       'id': 13,
       'image': ImagePath.Character.n,
@@ -340,8 +340,8 @@ export const result: village.Payload$SystemMessage = {
         '@context': village.Context.Avatar,
         '@id': `https://licos.online/state/${VERSION}/village#3/character#14/avatar`,
         'image': ImagePath.Character.r,
-        'name': '井上',
-        'token': 'eFVr3O93oLhmnE8OqTMl5VSVG14'
+        'name': 'inoue',
+        'token': '3F2504E0-4F89-11D3-9A0C-0305E82C3314'
       },
       'id': 14,
       'image': ImagePath.Character.o,
@@ -368,21 +368,12 @@ export const result: village.Payload$SystemMessage = {
   'role': [
     {
       '@context': village.Context.Role,
-      '@id': `https://licos.online/state/${VERSION}/village#3/role#master`,
-      'board': [],
-      'image': ImagePath.Role.master,
-      'isMine': false,
-      'name': Role.master,
-      'numberOfPlayers': 1
-    },
-    {
-      '@context': village.Context.Role,
       '@id': `https://licos.online/state/${VERSION}/village#3/role#villager`,
       'character': [
         {
           '@context': village.Context.Character,
-          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#0`,
-          'id': 0,
+          '@id': `https://licos.online/state/${VERSION}/village#3/role#villager/character#15`,
+          'id': 15,
           'image': ImagePath.Character.a,
           'name': Character.a
         },
