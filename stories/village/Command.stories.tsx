@@ -90,10 +90,6 @@ const suggestedData = [
     name: Role.mason
   },
   {
-    id: village.RoleId.master,
-    name: Role.master
-  },
-  {
     id: village.RoleId.medium,
     name: Role.medium
   },
