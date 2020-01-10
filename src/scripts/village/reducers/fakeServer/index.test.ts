@@ -5,12 +5,15 @@ import {
   firstMorning3,
   firstMorning4,
   firstMorning5,
+  firstMorning6,
+  firstMorning7,
   flavorText,
   myMessageOnChat,
   night,
   noon,
   onymousAudienceChat,
   result,
+  star,
   theirMessageOnChat
 } from '.'
 import Ajv from 'ajv'
@@ -255,6 +258,86 @@ test('validate firstMorning5', async () => {
   }
   expect(validate).toBe(true)
 })
+test('validate firstMorning6', async () => {
+  expect.hasAssertions()
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    VILLAGE_SCHEMA.systemMessage,
+    VILLAGE_SCHEMA.base,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.boardResult,
+    VILLAGE_SCHEMA.character,
+    VILLAGE_SCHEMA.chat,
+    VILLAGE_SCHEMA.chatSettings,
+    VILLAGE_SCHEMA.role,
+    VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village,
+    VILLAGE_SCHEMA.votingResult
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, firstMorning6)
+
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
+})
+test('validate firstMorning7', async () => {
+  expect.hasAssertions()
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    VILLAGE_SCHEMA.systemMessage,
+    VILLAGE_SCHEMA.base,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.boardResult,
+    VILLAGE_SCHEMA.character,
+    VILLAGE_SCHEMA.chat,
+    VILLAGE_SCHEMA.chatSettings,
+    VILLAGE_SCHEMA.role,
+    VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village,
+    VILLAGE_SCHEMA.votingResult
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, firstMorning7)
+
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
+})
 test('validate flavorText', async () => {
   expect.hasAssertions()
   const [mainSchema, subSchema, baseSchema, ... schemas] = await Promise.all([
@@ -492,6 +575,45 @@ test('validate result', async () => {
     ]
   })
   const validate = ajv.validate(VILLAGE_SCHEMA.systemMessage, result)
+
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
+})
+test('validate star', async () => {
+  expect.hasAssertions()
+  const [mainSchema, baseSchema, ... schemas] = await Promise.all([
+    VILLAGE_SCHEMA.starMessage,
+    VILLAGE_SCHEMA.base,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.character,
+    VILLAGE_SCHEMA.chat,
+    VILLAGE_SCHEMA.chatSettings,
+    VILLAGE_SCHEMA.role,
+    VILLAGE_SCHEMA.star,
+    VILLAGE_SCHEMA.time,
+    VILLAGE_SCHEMA.timestamp,
+    VILLAGE_SCHEMA.village,
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const mergedSchema = {
+    ... mainSchema,
+    properties: {
+      ... mainSchema.properties,
+      ... baseSchema.definitions
+    }
+  }
+  const ajv = new Ajv({
+    schemas: [
+      mergedSchema,
+      baseSchema,
+      ... schemas
+    ]
+  })
+  const validate = ajv.validate(VILLAGE_SCHEMA.starMessage, star)
 
   if (!validate) {
     console.error(ajv.errors)
