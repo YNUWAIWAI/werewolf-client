@@ -5,6 +5,7 @@ import NumberSelect from '../atoms/NumberSelect'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
 import {lobby} from '../../types'
 
+type RoleSetting = Readonly<lobby.Payload$BuildVillage['roleSetting']>
 interface Props {
   readonly handleMemberChange: (valid: boolean) => (value: lobby.Member) => void
   readonly handleNumberChange: (valid: boolean) => (value: number) => void
@@ -12,16 +13,16 @@ interface Props {
   readonly numberOfPlayers: number
   readonly numberOfRobots: number
   readonly role: {
-    readonly A: Readonly<lobby.RoleSetting>
-    readonly B: Readonly<lobby.RoleSetting>
-    readonly C: Readonly<lobby.RoleSetting>
+    readonly A: RoleSetting
+    readonly B: RoleSetting
+    readonly C: RoleSetting
   }
   readonly validity: {
     readonly numberOfRobots: boolean
   }
 }
 
-const getMember = (role: Readonly<lobby.RoleSetting>) => ORDERED_ROLE_LIST.map(item => (
+const getMember = (role: RoleSetting) => ORDERED_ROLE_LIST.map(item => (
   <MemberRole
     className="lo--village--item--member-select--role--item"
     id={item.id}
