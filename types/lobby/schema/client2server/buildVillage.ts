@@ -3,22 +3,46 @@
 */
 import {
   Avatar,
-  HostPlayer,
-  PlayerSetting,
-  RoleSetting,
-  Token
+  RoleId
 } from '../..'
+import {
+  Avatar as AvatarSchema,
+  Village
+} from '../../../village/schema'
 import {PayloadType} from '../../payload'
+
+interface HostPlayer {
+  isAnonymous: boolean
+  isHuman: boolean
+  name: AvatarSchema['name']
+}
+interface Human {
+  current: number
+  max: number
+}
+interface Robot {
+  current: number
+  min: number
+}
+interface PlayerSetting {
+  current: number
+  human: Human
+  number: number
+  robot: Robot
+}
+type RoleSetting = {
+  [key in RoleId]: number
+}
 
 export interface BuildVillage {
   avatar: Avatar
   comment: string | null
   hostPlayer: HostPlayer
-  id: number
+  id: Village['id']
   idForSearching: number
-  name: string
+  name: Village['name']
   playerSetting: PlayerSetting
   roleSetting: RoleSetting
-  token: Token
+  token: AvatarSchema['token']
   type: PayloadType.buildVillage
 }

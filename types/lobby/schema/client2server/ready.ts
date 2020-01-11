@@ -1,11 +1,14 @@
 /*
   'https://werewolf.world/lobby/schema/0.3/client2server/ready.json'
 */
+import {
+  Avatar,
+  Village
+} from '../../../village/schema'
 import {PayloadType} from '../../payload'
-import {Token} from '../..'
 
 export interface Ready {
-  token: Token
+  token: Avatar['token']
   type: PayloadType.ready
-  villageId: number
+  villageId: Village['id']
 }

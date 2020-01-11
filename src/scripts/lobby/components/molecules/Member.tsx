@@ -4,10 +4,13 @@ import MemberRole from '../atoms/MemberRole'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
 import {lobby} from '../../types'
 
+type Human = Readonly<lobby.Payload$BuildVillage['playerSetting']['human']>
+type Robot = Readonly<lobby.Payload$BuildVillage['playerSetting']['robot']>
+type RoleSetting = Readonly<lobby.Payload$BuildVillage['roleSetting']>
 interface Props {
-  readonly human: Readonly<lobby.Human>
-  readonly robot: Readonly<lobby.Robot>
-  readonly role: Readonly<lobby.RoleSetting>
+  readonly human: Human
+  readonly robot: Robot
+  readonly role: RoleSetting
 }
 
 export default function Member(props: Props) {

@@ -1,11 +1,11 @@
 /*
   'https://werewolf.world/lobby/schema/0.3/client2server/pong.json'
 */
+import {Avatar} from '../../../village/schema'
 import {PayloadType} from '../../payload'
-import {Token} from '../..'
 
 export interface Pong {
-  id: string
-  token: Token
+  id: Avatar['token']
+  token: Avatar['token']
   type: PayloadType.pong
 }

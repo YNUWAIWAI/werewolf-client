@@ -1,10 +1,10 @@
 /*
   'https://werewolf.world/lobby/schema/0.3/client2server/changeLang.json'
 */
-import {Language} from '../..'
 import {PayloadType} from '../../payload'
+import {Village} from '../../../village/schema'
 
 export interface ChangeLanguage {
-  language: Language
+  language: Village['language']
   type: PayloadType.changeLanguage
 }
