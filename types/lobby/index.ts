@@ -1,8 +1,6 @@
-import {
-  Avatar as AvatarScehma,
-  Village as VillageSchema
-} from '../village/schema'
+import {Avatar as AvatarScehma} from '../village/schema'
 import {BuildVillage} from './schema'
+
 export {
   Payload,
   PayloadType,
@@ -30,6 +28,7 @@ export {
   Payload$Settings,
   Payload$WaitingPage
 } from './payload'
+export {Language} from '../village'
 export const enum Avatar {
   fixed = 'fixed',
   random = 'random',
@@ -51,7 +50,6 @@ export const enum PingStatus {
   safe = 'safe',
   warning = 'warning'
 }
-export type Language = VillageSchema['language']
 export const enum RoleId {
   hunter = 'hunter',
   madman = 'madman',
