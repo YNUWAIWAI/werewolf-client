@@ -3,9 +3,9 @@
 */
 import {
   Avatar,
-  LobbyType,
-  Token
+  LobbyType
 } from '../..'
+import {Avatar as AvatarSchema} from '../../../village/schema'
 import {PayloadType} from '../../payload'
 
 export interface AdvancedSearch {
@@ -15,7 +15,7 @@ export interface AdvancedSearch {
   lobby: LobbyType
   maximum: number | null
   minimum: number | null
-  token: Token
+  token: AvatarSchema['token']
   type: PayloadType.advancedSearch
   villageName: string | null
 }

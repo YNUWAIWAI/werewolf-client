@@ -9,23 +9,33 @@ import {
   ChangeUserEmail,
   ChangeUserName,
   ChangeUserPassword,
+  CreateHumanPlayer,
+  CreateOnymousAudience,
+  CreateRobotPlayer,
+  DeleteAvatar,
   EnterLobby,
   GetAvatar,
   GetSettings,
+  HumanPlayerSelectionPage,
   IdSearch,
   KickOutPlayer,
   LeaveWaitingPage,
   Lobby,
   NewAvatarToken,
+  OnymousAudienceSelectionPage,
   Ping,
   Play,
   Played,
   Pong,
   Ready,
   RenewAvatarToken,
+  RobotPlayerSelectionPage,
+  RunRobotPlayerInTheBackground,
   SearchResult,
   SelectVillage,
   Settings,
+  StopRobotPlayer,
+  UpdateAvatar,
   WaitingPage
 } from '../schema'
 
@@ -40,23 +50,33 @@ export const enum PayloadType {
   changeUserEmail = 'changeUserEmail',
   changeUserName = 'changeUserName',
   changeUserPassword = 'changeUserPassword',
+  createHumanPlayer = 'createHumanPlayer',
+  createOnymousAudience = 'createOnymousAudience',
+  createRobotPlayer = 'createRobotPlayer',
+  deleteAvatar = 'deleteAvatar',
   enterLobby = 'enterLobby',
   getAvatar = 'getAvatar',
   getSettings = 'getSettings',
+  humanPlayerSelectionPage = 'humanPlayerSelectionPage',
   idSearch = 'idSearch',
   kickOutPlayer = 'kickOutPlayer',
   leaveWaitingPage = 'leaveWaitingPage',
   lobby = 'lobby',
   newAvatarToken = 'newAvatarToken',
+  onymousAudienceSelectionPage = 'onymousAudienceSelectionPage',
   ping = 'ping',
   play = 'play',
   played = 'played',
   pong = 'pong',
   ready = 'ready',
   renewAvatarToken = 'renewAvatarToken',
+  robotPlayerSelectionPage = 'robotPlayerSelectionPage',
+  runRobotPlayerInTheBackground = 'runRobotPlayerInTheBackground',
   searchResult = 'searchResult',
   selectVillage = 'selectVillage',
   settings = 'settings',
+  stopRobotPlayer = 'stopRobotPlayer',
+  updateAvatar = 'updateAvatar',
   waitingPage = 'waitingPage'
 }
 export type Payload =
@@ -70,25 +90,36 @@ export type Payload =
   | Payload$ChangeUserEmail
   | Payload$ChangeUserName
   | Payload$ChangeUserPassword
+  | Payload$CreateHumanPlayer
+  | Payload$CreateOnymousAudience
+  | Payload$CreateRobotPlayer
+  | Payload$DeleteAvatar
   | Payload$EnterLobby
   | Payload$GetAvatar
   | Payload$GetSettings
+  | Payload$HumanPlayerSelectionPage
   | Payload$IdSearch
   | Payload$KickOutPlayer
   | Payload$LeaveWaitingPage
   | Payload$Lobby
   | Payload$NewAvatarToken
+  | Payload$OnymousAudienceSelectionPage
   | Payload$Ping
   | Payload$Play
   | Payload$Played
   | Payload$Pong
   | Payload$Ready
   | Payload$RenewAvatarToken
+  | Payload$RobotPlayerSelectionPage
+  | Payload$RunRobotPlayerInTheBackground
   | Payload$SearchResult
   | Payload$SelectVillage
   | Payload$Settings
+  | Payload$StopRobotPlayer
+  | Payload$UpdateAvatar
   | Payload$WaitingPage
 
+/* eslint-disable @typescript-eslint/no-empty-interface */
 export interface Payload$AdvancedSearch extends AdvancedSearch {}
 export interface Payload$AuthorizationRequest extends AuthorizationRequest {}
 export interface Payload$AuthorizationRequestAccepted extends AuthorizationRequestAccepted {}
@@ -99,21 +130,31 @@ export interface Payload$ChangeLanguage extends ChangeLanguage {}
 export interface Payload$ChangeUserEmail extends ChangeUserEmail {}
 export interface Payload$ChangeUserName extends ChangeUserName {}
 export interface Payload$ChangeUserPassword extends ChangeUserPassword {}
+export interface Payload$CreateHumanPlayer extends CreateHumanPlayer {}
+export interface Payload$CreateOnymousAudience extends CreateOnymousAudience {}
+export interface Payload$CreateRobotPlayer extends CreateRobotPlayer {}
+export interface Payload$DeleteAvatar extends DeleteAvatar {}
 export interface Payload$EnterLobby extends EnterLobby {}
 export interface Payload$GetAvatar extends GetAvatar {}
 export interface Payload$GetSettings extends GetSettings {}
+export interface Payload$HumanPlayerSelectionPage extends HumanPlayerSelectionPage {}
 export interface Payload$IdSearch extends IdSearch {}
 export interface Payload$KickOutPlayer extends KickOutPlayer {}
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
 export interface Payload$Lobby extends Lobby {}
 export interface Payload$NewAvatarToken extends NewAvatarToken {}
+export interface Payload$OnymousAudienceSelectionPage extends OnymousAudienceSelectionPage {}
 export interface Payload$Ping extends Ping {}
 export interface Payload$Play extends Play {}
 export interface Payload$Played extends Played {}
 export interface Payload$Pong extends Pong {}
 export interface Payload$Ready extends Ready {}
 export interface Payload$RenewAvatarToken extends RenewAvatarToken {}
+export interface Payload$RobotPlayerSelectionPage extends RobotPlayerSelectionPage {}
+export interface Payload$RunRobotPlayerInTheBackground extends RunRobotPlayerInTheBackground {}
 export interface Payload$SearchResult extends SearchResult {}
 export interface Payload$SelectVillage extends SelectVillage {}
 export interface Payload$Settings extends Settings {}
+export interface Payload$StopRobotPlayer extends StopRobotPlayer {}
+export interface Payload$UpdateAvatar extends UpdateAvatar {}
 export interface Payload$WaitingPage extends WaitingPage {}

@@ -1,3 +1,6 @@
+import {Avatar as AvatarScehma} from '../village/schema'
+import {BuildVillage} from './schema'
+
 export {
   Payload,
   PayloadType,
@@ -25,6 +28,7 @@ export {
   Payload$Settings,
   Payload$WaitingPage
 } from './payload'
+export {Language} from '../village'
 export const enum Avatar {
   fixed = 'fixed',
   random = 'random',
@@ -46,41 +50,6 @@ export const enum PingStatus {
   safe = 'safe',
   warning = 'warning'
 }
-export const enum Language {
-  en = 'en',
-  fr = 'fr',
-  it = 'it',
-  ja = 'ja'
-}
-export interface Village {
-  avatar: Avatar
-  comment: string | null
-  hostPlayer: HostPlayer
-  id: number
-  idForSearching: number
-  name: string
-  playerSetting: PlayerSetting
-  roleSetting: RoleSetting
-}
-export interface HostPlayer {
-  isAnonymous: boolean
-  isHuman: boolean
-  name: string
-}
-export interface PlayerSetting {
-  current: number
-  human: Human
-  number: number
-  robot: Robot
-}
-export interface Robot {
-  current: number
-  min: number
-}
-export interface Human {
-  current: number
-  max: number
-}
 export const enum RoleId {
   hunter = 'hunter',
   madman = 'madman',
@@ -91,15 +60,13 @@ export const enum RoleId {
   werehamster = 'werehamster',
   werewolf = 'werewolf'
 }
-export type RoleSetting = {
-  [key in RoleId]: number
-}
+export type Village = Omit<BuildVillage, 'token' | 'type'>
 export interface Cast {
   [numberOfPlayers: string]: {
-    [member in Member]: RoleSetting
+    [member in Member]: BuildVillage['roleSetting']
   }
 }
-export type Token = string
+export type Token = AvatarScehma['token']
 export interface WaitingPlayer {
   avatarImage: string
   isAnonymous: boolean
@@ -111,7 +78,7 @@ export interface WaitingPlayer {
 export interface PingResult {
   ping: string
   status: PingStatus
-  token: Token
+  token: AvatarScehma['token']
 }
 export const enum TestStatus {
   notPassed = 'not passed',

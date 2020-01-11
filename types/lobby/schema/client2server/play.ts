@@ -1,11 +1,14 @@
 /*
   'https://werewolf.world/lobby/schema/0.3/client2server/play.json'
 */
+import {
+  Avatar,
+  Village
+} from '../../../village/schema'
 import {PayloadType} from '../../payload'
-import {Token} from '../..'
 
 export interface Play {
-  token: Token
+  token: Avatar['token']
   type: PayloadType.play
-  villageId: number
+  villageId: Village['id']
 }

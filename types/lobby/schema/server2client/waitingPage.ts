@@ -13,4 +13,3 @@ export interface WaitingPage {
   type: PayloadType.waitingPage
   village: Village
 }
-

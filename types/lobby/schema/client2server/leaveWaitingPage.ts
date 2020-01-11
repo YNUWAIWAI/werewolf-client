@@ -2,14 +2,15 @@
   'https://werewolf.world/lobby/schema/0.3/client2server/leaveWaitingPage.json'
 */
 import {
-  LobbyType,
-  Token
-} from '../..'
+  Avatar,
+  Village
+} from '../../../village/schema'
+import {LobbyType} from '../..'
 import {PayloadType} from '../../payload'
 
 export interface LeaveWaitingPage {
   lobby: LobbyType
-  token: Token
+  token: Avatar['token']
   type: PayloadType.leaveWaitingPage
-  villageId: number
+  villageId: Village['id']
 }
