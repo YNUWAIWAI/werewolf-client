@@ -30,7 +30,7 @@ export interface DispatchProps {
   readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
-  readonly renewAccessToken: () => void
+  readonly renewAccessToken: (token: lobby.Token) => () => void
 }
 export type Props = StateProps & DispatchProps
 
@@ -81,7 +81,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         <SelectAvatarTableBodyAccessToken
           additionalClassName={additionalClassName}
           handleSelect={props.handleSelectAvatar(id)}
-          renewAccessToken={props.renewAccessToken}
+          renewAccessToken={props.renewAccessToken(avatar.accessToken)}
           token={avatar.accessToken}
         />
       </React.Fragment>
@@ -89,6 +89,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
   })
 
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {rows}
     </>
