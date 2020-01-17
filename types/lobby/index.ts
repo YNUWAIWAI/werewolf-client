@@ -1,33 +1,7 @@
 import {Avatar as AvatarScehma} from '../village/schema'
 import {BuildVillage} from './schema'
 
-export {
-  Payload,
-  PayloadType,
-  Payload$AdvancedSearch,
-  Payload$BuildVillage,
-  Payload$Avatar,
-  Payload$ChangeLanguage,
-  Payload$ChangeUserEmail,
-  Payload$ChangeUserName,
-  Payload$ChangeUserPassword,
-  Payload$EnterLobby,
-  Payload$GetAvatar,
-  Payload$GetSettings,
-  Payload$IdSearch,
-  Payload$KickOutPlayer,
-  Payload$LeaveWaitingPage,
-  Payload$Lobby,
-  Payload$Ping,
-  Payload$Play,
-  Payload$Played,
-  Payload$Pong,
-  Payload$Ready,
-  Payload$SearchResult,
-  Payload$SelectVillage,
-  Payload$Settings,
-  Payload$WaitingPage
-} from './payload'
+export * from './payload'
 export {Language} from '../village'
 export const enum Avatar {
   fixed = 'fixed',
