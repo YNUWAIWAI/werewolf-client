@@ -50,6 +50,7 @@ type Action =
   | actions.Message$SearchResult
   | actions.Message$Settings
   | actions.Message$WaitingPage
+  | actions.SelectRobotAvatar$RenewAccessToken
   | actions.SelectVillage
   | actions.ShowVillage
   | actions.SocketClose
