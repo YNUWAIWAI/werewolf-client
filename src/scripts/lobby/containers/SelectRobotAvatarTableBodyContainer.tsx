@@ -1,7 +1,7 @@
 import {
   SelectRobotAvatar$ChangeCheckbox,
   SelectRobotAvatar$HoverAvatar,
-  SelectRobotAvatar$RenewAccessToken,
+  SelectRobotAvatar$RenewAvatarToken,
   selectRobotAvatar
 } from '../actions'
 import SelectRobotAvatarTableBody, {
@@ -13,7 +13,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | SelectRobotAvatar$RenewAccessToken
+  | SelectRobotAvatar$RenewAvatarToken
   | SelectRobotAvatar$ChangeCheckbox
   | SelectRobotAvatar$HoverAvatar
 
@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(selectRobotAvatar.changeCheckbox(id))
   },
   renewAccessToken: token => () => {
-    dispatch(selectRobotAvatar.renewAccessToken(token))
+    dispatch(selectRobotAvatar.renewAvatarToken(token))
   }
 })
 const SelectRobotAvatarTableBodyContainer = connect(

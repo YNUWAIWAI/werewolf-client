@@ -251,7 +251,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.SelectRobotAvatar.RENEW_ACCESS_TOKEN: {
+    case ActionTypes.SelectRobotAvatar.RENEW_AVATAR_TOKEN: {
       const payload: lobby.Payload$RenewAvatarToken = {
         token: action.token,
         type: lobby.PayloadType.renewAvatarToken

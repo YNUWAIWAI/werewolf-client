@@ -19,6 +19,15 @@ const lobby = (payload: lobbyType.Payload): Message$Lobby => ({
   type: Message.LOBBY
 })
 
+export interface Message$NewAvatarToken {
+  payload: lobbyType.Payload$NewAvatarToken
+  type: Message.NEW_AVATAR_TOKEN
+}
+const newAvatarToken = (payload: lobbyType.Payload): Message$NewAvatarToken => ({
+  payload: payload as lobbyType.Payload$NewAvatarToken,
+  type: Message.NEW_AVATAR_TOKEN
+})
+
 export interface Message$Ping {
   payload: lobbyType.Payload$Ping
   type: Message.PING
@@ -67,6 +76,7 @@ const waitingPage = (payload: lobbyType.Payload): Message$WaitingPage => ({
 export const message = {
   avatar,
   lobby,
+  newAvatarToken,
   ping,
   played,
   searchResult,

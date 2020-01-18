@@ -19,17 +19,17 @@ const hoverAvatar = (id: string): SelectRobotAvatar$HoverAvatar => ({
   type: SelectRobotAvatar.HOVER_AVATAR
 })
 
-export type SelectRobotAvatar$RenewAccessToken = {
+export type SelectRobotAvatar$RenewAvatarToken = {
   token: lobby.Token
-  type: SelectRobotAvatar.RENEW_ACCESS_TOKEN
+  type: SelectRobotAvatar.RENEW_AVATAR_TOKEN
 }
-const renewAccessToken = (token: lobby.Token): SelectRobotAvatar$RenewAccessToken => ({
+const renewAvatarToken = (token: lobby.Token): SelectRobotAvatar$RenewAvatarToken => ({
   token,
-  type: SelectRobotAvatar.RENEW_ACCESS_TOKEN
+  type: SelectRobotAvatar.RENEW_AVATAR_TOKEN
 })
 
 export const selectRobotAvatar = {
   changeCheckbox,
   hoverAvatar,
-  renewAccessToken
+  renewAvatarToken
 }
