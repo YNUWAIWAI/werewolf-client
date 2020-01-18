@@ -21,7 +21,6 @@ import {
   KickOutPlayer,
   LeaveWaitingPage,
   Lobby,
-  NewAvatarToken,
   OnymousAudienceSelectionPage,
   Ping,
   Play,
@@ -62,7 +61,6 @@ export const enum PayloadType {
   kickOutPlayer = 'kickOutPlayer',
   leaveWaitingPage = 'leaveWaitingPage',
   lobby = 'lobby',
-  newAvatarToken = 'newAvatarToken',
   onymousAudienceSelectionPage = 'onymousAudienceSelectionPage',
   ping = 'ping',
   play = 'play',
@@ -102,7 +100,6 @@ export type Payload =
   | Payload$KickOutPlayer
   | Payload$LeaveWaitingPage
   | Payload$Lobby
-  | Payload$NewAvatarToken
   | Payload$OnymousAudienceSelectionPage
   | Payload$Ping
   | Payload$Play
@@ -142,7 +139,6 @@ export interface Payload$IdSearch extends IdSearch {}
 export interface Payload$KickOutPlayer extends KickOutPlayer {}
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
 export interface Payload$Lobby extends Lobby {}
-export interface Payload$NewAvatarToken extends NewAvatarToken {}
 export interface Payload$OnymousAudienceSelectionPage extends OnymousAudienceSelectionPage {}
 export interface Payload$Ping extends Ping {}
 export interface Payload$Play extends Play {}

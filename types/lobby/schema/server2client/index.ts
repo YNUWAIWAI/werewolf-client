@@ -3,7 +3,6 @@ export {AuthorizationRequestAcceptedResponse} from './authorizationRequestAccept
 export {Avatar} from './avatar'
 export {HumanPlayerSelectionPage} from './humanPlayerSelectionPage'
 export {Lobby} from './lobby'
-export {NewAvatarToken} from './newAvatarToken'
 export {OnymousAudienceSelectionPage} from './onymousAudienceSelectionPage'
 export {Ping} from './ping'
 export {Played} from './played'
