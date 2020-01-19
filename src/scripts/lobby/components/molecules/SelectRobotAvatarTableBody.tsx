@@ -13,14 +13,16 @@ export interface StateProps {
     readonly allIds: string[]
     readonly byId: {
       readonly [id: string]: {
-        readonly accessToken: lobby.Token
-        readonly authorized: lobby.Authorized
-        readonly automation: lobby.Automation
         readonly checked: boolean
+        readonly image: string
+        readonly isAuthorized: boolean
+        readonly isFullyAutomated: boolean
         readonly isHover: boolean
+        readonly isTestPassed: boolean
+        readonly language: lobby.Language
         readonly name: string
         readonly status: lobby.AvatarStatus
-        readonly testStatus: lobby.TestStatus
+        readonly token: lobby.Token
       }
     }
   }
@@ -41,6 +43,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
       avatar.isHover ? 'hover' : '',
       avatar.checked ? 'selected' : ''
     ]
+    const authorized = avatar.isAuthorized ? lobby.Authorized.yes : lobby.Authorized.waitForAcceptance
 
     return (
       <React.Fragment
@@ -64,25 +67,25 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         />
         <SelectAvatarTableBodyAuthorized
           additionalClassName={additionalClassName}
-          authorized={avatar.authorized}
+          authorized={authorized}
           handleAccept={props.handleAccept}
           handleSelect={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyTest
           additionalClassName={additionalClassName}
           handleSelect={props.handleSelectAvatar(id)}
-          test={avatar.testStatus}
+          isTestPassed={avatar.isTestPassed}
         />
         <SelectAvatarTableBodyAutomation
           additionalClassName={additionalClassName}
-          automation={avatar.automation}
           handleSelect={props.handleSelectAvatar(id)}
+          isFullyAutomated={avatar.isFullyAutomated}
         />
         <SelectAvatarTableBodyAccessToken
           additionalClassName={additionalClassName}
           handleSelect={props.handleSelectAvatar(id)}
-          renewAccessToken={props.renewAccessToken(avatar.accessToken)}
-          token={avatar.accessToken}
+          renewAccessToken={props.renewAccessToken(avatar.token)}
+          token={avatar.token}
         />
       </React.Fragment>
     )

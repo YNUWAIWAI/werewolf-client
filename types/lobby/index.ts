@@ -54,14 +54,6 @@ export interface PingResult {
   status: PingStatus
   token: AvatarScehma['token']
 }
-export const enum TestStatus {
-  notPassed = 'not passed',
-  passed = 'passed'
-}
-export const enum Automation {
-  full = 'full',
-  semi = 'semi'
-}
 export const enum Authorized {
   no = 'no',
   yes = 'yes',

@@ -1,17 +1,16 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {lobby} from '../../types'
 
 interface Props {
   readonly additionalClassName: string[]
   readonly handleSelect: () => void
-  readonly test: lobby.TestStatus
+  readonly isTestPassed: boolean
 }
 
 export default function SelectAvatarTableBodyTest(props: Props) {
   return (
     <FormattedMessage
-      id={`SelectAvatarTableBodyTest.test(${props.test})`}
+      id={`SelectAvatarTableBodyTest.test(${props.isTestPassed ? 'passed' : 'not passed'})`}
     >
       {
         text => (

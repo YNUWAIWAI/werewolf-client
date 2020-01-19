@@ -19,15 +19,6 @@ const lobby = (payload: lobbyType.Payload): Message$Lobby => ({
   type: Message.LOBBY
 })
 
-export interface Message$NewAvatarToken {
-  payload: lobbyType.Payload$NewAvatarToken
-  type: Message.NEW_AVATAR_TOKEN
-}
-const newAvatarToken = (payload: lobbyType.Payload): Message$NewAvatarToken => ({
-  payload: payload as lobbyType.Payload$NewAvatarToken,
-  type: Message.NEW_AVATAR_TOKEN
-})
-
 export interface Message$Ping {
   payload: lobbyType.Payload$Ping
   type: Message.PING
@@ -44,6 +35,15 @@ export interface Message$Played {
 const played = (payload: lobbyType.Payload): Message$Played => ({
   payload: payload as lobbyType.Payload$Played,
   type: Message.PLAYED
+})
+
+export interface Message$RobotPlayerSelectionPage {
+  payload: lobbyType.Payload$RobotPlayerSelectionPage
+  type: Message.ROBOT_PLAYER_SELECTION_PAGE
+}
+const robotPlayerSelectionPage = (payload: lobbyType.Payload): Message$RobotPlayerSelectionPage => ({
+  payload: payload as lobbyType.Payload$RobotPlayerSelectionPage,
+  type: Message.ROBOT_PLAYER_SELECTION_PAGE
 })
 
 export interface Message$SearchResult {
@@ -76,9 +76,9 @@ const waitingPage = (payload: lobbyType.Payload): Message$WaitingPage => ({
 export const message = {
   avatar,
   lobby,
-  newAvatarToken,
   ping,
   played,
+  robotPlayerSelectionPage,
   searchResult,
   settings,
   waitingPage
