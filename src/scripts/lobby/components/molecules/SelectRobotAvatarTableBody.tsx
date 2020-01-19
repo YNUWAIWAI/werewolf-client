@@ -43,7 +43,9 @@ export default function SelectRobotAvatarTableBody(props: Props) {
       avatar.isHover ? 'hover' : '',
       avatar.checked ? 'selected' : ''
     ]
+    const automation = avatar.isFullyAutomated ? lobby.Automation.full : lobby.Automation.semi
     const authorized = avatar.isAuthorized ? lobby.Authorized.yes : lobby.Authorized.waitForAcceptance
+    const test = avatar.isTestPassed ? lobby.TestStatus.passed : lobby.TestStatus.notPassed
 
     return (
       <React.Fragment
@@ -74,12 +76,12 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         <SelectAvatarTableBodyTest
           additionalClassName={additionalClassName}
           handleSelect={props.handleSelectAvatar(id)}
-          isTestPassed={avatar.isTestPassed}
+          test={test}
         />
         <SelectAvatarTableBodyAutomation
           additionalClassName={additionalClassName}
+          automation={automation}
           handleSelect={props.handleSelectAvatar(id)}
-          isFullyAutomated={avatar.isFullyAutomated}
         />
         <SelectAvatarTableBodyAccessToken
           additionalClassName={additionalClassName}
