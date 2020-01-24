@@ -24,7 +24,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAccept: accessToken => () => {
-    selectRobotAvatar.autorizationRequestAccepted(accessToken)
+    dispatch(selectRobotAvatar.autorizationRequestAccepted(accessToken))
   },
   handleAvatarNameChange: valid => value => {
     console.log(valid, value)

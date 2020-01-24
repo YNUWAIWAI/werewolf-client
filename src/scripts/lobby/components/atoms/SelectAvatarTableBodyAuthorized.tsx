@@ -11,9 +11,6 @@ interface Props {
 
 export default function SelectAvatarTableBodyAuthorized(props: Props) {
   const className = `lo--select-avatar--table--body--item authorized ${props.additionalClassName.join(' ')}`
-  const handleClick = () => {
-    props.handleAccept()
-  }
   const handleSelect = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
       props.handleSelect()
@@ -33,7 +30,7 @@ export default function SelectAvatarTableBodyAuthorized(props: Props) {
             >
               <div
                 className="accept"
-                onClick={handleClick}
+                onClick={props.handleAccept}
               >
                 {text}
               </div>
