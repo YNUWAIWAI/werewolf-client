@@ -28,12 +28,6 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
       className={`lo--select-avatar--table--body--item access-token ${props.additionalClassName.join(' ')}`}
       onClick={handleSelect}
     >
-      <input
-        onFocus={handleFocus}
-        readOnly
-        type="text"
-        value={props.token}
-      />
       {
         navigator.clipboard ?
           <div
@@ -44,6 +38,12 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
           </div> :
           null
       }
+      <input
+        onFocus={handleFocus}
+        readOnly
+        type="text"
+        value={props.token}
+      />
       <FormattedMessage
         id="SelectAvatarTableBodyAccessToken.renew"
       >
