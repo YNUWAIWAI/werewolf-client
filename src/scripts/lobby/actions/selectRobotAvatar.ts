@@ -1,6 +1,15 @@
 import {SelectRobotAvatar} from '../constants/ActionTypes'
 import {lobby} from '../types'
 
+export type SelectRobotAvatar$AutorizationRequestAccepted = {
+  accessToken: lobby.Token
+  type: SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED
+}
+const autorizationRequestAccepted = (accessToken: lobby.Token): SelectRobotAvatar$AutorizationRequestAccepted => ({
+  accessToken,
+  type: SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED
+})
+
 export type SelectRobotAvatar$ChangeCheckbox = {
   id: string
   type: SelectRobotAvatar.CHANGE_CHECKBOX
@@ -29,6 +38,7 @@ const renewAvatarToken = (token: lobby.Token): SelectRobotAvatar$RenewAvatarToke
 })
 
 export const selectRobotAvatar = {
+  autorizationRequestAccepted,
   changeCheckbox,
   hoverAvatar,
   renewAvatarToken
