@@ -37,6 +37,28 @@ const renewAvatarToken = (token: lobby.Token): SelectRobotAvatar$RenewAvatarToke
   type: SelectRobotAvatar.RENEW_AVATAR_TOKEN
 })
 
+export type SelectRobotAvatar$UpdateAvatarImage = {
+  image: string
+  token: lobby.Token
+  type: SelectRobotAvatar.UPDATE_AVATAR_IMAGE
+}
+const updateAvatarImage = (token: lobby.Token) => (image: string): SelectRobotAvatar$UpdateAvatarImage => ({
+  image,
+  token,
+  type: SelectRobotAvatar.UPDATE_AVATAR_IMAGE
+})
+
+export type SelectRobotAvatar$UpdateAvatarLanguage = {
+  language: lobby.Language
+  token: lobby.Token
+  type: SelectRobotAvatar.UPDATE_AVATAR_LANGUAGE
+}
+const updateAvatarLanguage = (token: lobby.Token) => (language: lobby.Language): SelectRobotAvatar$UpdateAvatarLanguage => ({
+  language,
+  token,
+  type: SelectRobotAvatar.UPDATE_AVATAR_LANGUAGE
+})
+
 export type SelectRobotAvatar$UpdateAvatarName = {
   name: string
   token: lobby.Token
@@ -53,5 +75,7 @@ export const selectRobotAvatar = {
   changeCheckbox,
   hoverAvatar,
   renewAvatarToken,
+  updateAvatarImage,
+  updateAvatarLanguage,
   updateAvatarName
 }
