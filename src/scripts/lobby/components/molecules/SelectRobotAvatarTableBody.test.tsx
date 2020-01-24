@@ -1,5 +1,6 @@
 import * as React from 'react'
 import SelectRobotAvatarTableBody, {StateProps} from './SelectRobotAvatarTableBody'
+import {ImagePath} from '../../constants/ImagePath'
 import SelectAvatarTableBodyAccessToken from '../atoms/SelectAvatarTableBodyAccessToken'
 import SelectAvatarTableBodyAuthorized from '../atoms/SelectAvatarTableBodyAuthorized'
 import SelectAvatarTableBodyAutomation from '../atoms/SelectAvatarTableBodyAutomation'
@@ -17,18 +18,21 @@ describe('render', () => {
   test('1 avatar', () => {
     const avatar: StateProps['avatar'] = {
       allIds: [
-        'a1'
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
       ],
       byId: {
-        'a1': {
-          accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-          authorized: lobby.Authorized.no,
-          automation: lobby.Automation.full,
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
           checked: false,
+          image: ImagePath.Character.a,
+          isAuthorized: false,
+          isFullyAutomated: true,
           isHover: false,
+          isReadyForAcceptance: false,
+          isTestPassed: false,
+          language: lobby.Language.en,
           name: 'Alice',
           status: lobby.AvatarStatus.awaitingAuthorization,
-          testStatus: lobby.TestStatus.notPassed
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
         }
       }
     }
@@ -60,29 +64,35 @@ describe('render', () => {
   test('2 avatar', () => {
     const avatar: StateProps['avatar'] = {
       allIds: [
-        'a1',
-        'a2'
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       ],
       byId: {
-        'a1': {
-          accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-          authorized: lobby.Authorized.no,
-          automation: lobby.Automation.full,
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
           checked: false,
+          image: ImagePath.Character.a,
+          isAuthorized: false,
+          isFullyAutomated: true,
           isHover: false,
+          isReadyForAcceptance: false,
+          isTestPassed: false,
+          language: lobby.Language.en,
           name: 'Alice',
           status: lobby.AvatarStatus.awaitingAuthorization,
-          testStatus: lobby.TestStatus.notPassed
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
         },
-        'a2': {
-          accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
-          authorized: lobby.Authorized.no,
-          automation: lobby.Automation.full,
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3301': {
           checked: false,
+          image: ImagePath.Character.a,
+          isAuthorized: false,
+          isFullyAutomated: true,
           isHover: false,
+          isReadyForAcceptance: false,
+          isTestPassed: false,
+          language: lobby.Language.en,
           name: 'Bob',
           status: lobby.AvatarStatus.awaitingAuthorization,
-          testStatus: lobby.TestStatus.notPassed
+          token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
         }
       }
     }

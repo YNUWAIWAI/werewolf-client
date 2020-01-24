@@ -18,6 +18,7 @@ export interface StateProps {
         readonly isAuthorized: boolean
         readonly isFullyAutomated: boolean
         readonly isHover: boolean
+        readonly isReadyForAcceptance: boolean
         readonly isTestPassed: boolean
         readonly language: lobby.Language
         readonly name: string
@@ -44,7 +45,16 @@ export default function SelectRobotAvatarTableBody(props: Props) {
       avatar.checked ? 'selected' : ''
     ]
     const automation = avatar.isFullyAutomated ? lobby.Automation.full : lobby.Automation.semi
-    const authorized = avatar.isAuthorized ? lobby.Authorized.yes : lobby.Authorized.waitForAcceptance
+    const authorized = (() => {
+      if (avatar.isAuthorized) {
+        return lobby.Authorized.yes
+      }
+      if (avatar.isReadyForAcceptance) {
+        return lobby.Authorized.waitForAcceptance
+      }
+
+      return lobby.Authorized.no
+    })()
     const test = avatar.isTestPassed ? lobby.TestStatus.passed : lobby.TestStatus.notPassed
 
     return (
