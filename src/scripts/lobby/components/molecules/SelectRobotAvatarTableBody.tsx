@@ -30,7 +30,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleAccept: (accessToken: lobby.Token) => () => void
-  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
   readonly renewAccessToken: (token: lobby.Token) => () => void
@@ -68,7 +68,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         />
         <SelectAvatarTableBodyAvatarName
           additionalClassName={additionalClassName}
-          handleChange={props.handleAvatarNameChange}
+          handleChange={props.handleAvatarNameChange(avatar.token)}
           handleSelect={props.handleSelectAvatar(id)}
           name={avatar.name}
         />

@@ -3,7 +3,8 @@ import {
   Message$AuthorizationRequest,
   Message$RobotPlayerSelectionPage,
   SelectRobotAvatar$ChangeCheckbox,
-  SelectRobotAvatar$RenewAvatarToken
+  SelectRobotAvatar$RenewAvatarToken,
+  SelectRobotAvatar$UpdateAvatarName
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {lobby} from '../types'
@@ -35,6 +36,7 @@ type Action =
   | Message$RobotPlayerSelectionPage
   | SelectRobotAvatar$ChangeCheckbox
   | SelectRobotAvatar$RenewAvatarToken
+  | SelectRobotAvatar$UpdateAvatarName
 
 export const initialState: State = {
   avatar: {

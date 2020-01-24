@@ -51,6 +51,7 @@ type Action =
   | actions.Message$WaitingPage
   | actions.SelectRobotAvatar$AutorizationRequestAccepted
   | actions.SelectRobotAvatar$RenewAvatarToken
+  | actions.SelectRobotAvatar$UpdateAvatarName
   | actions.SelectVillage
   | actions.ShowVillage
   | actions.SocketClose

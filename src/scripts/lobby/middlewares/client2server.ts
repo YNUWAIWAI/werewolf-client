@@ -271,6 +271,19 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.SelectRobotAvatar.UPDATE_AVATAR_NAME: {
+      const payload: lobby.Payload$UpdateAvatar = {
+        image: null,
+        language: null,
+        name: action.name,
+        token: action.token,
+        type: lobby.PayloadType.updateAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     default:
       return next(action)
   }

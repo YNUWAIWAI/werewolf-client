@@ -22,7 +22,7 @@ export default function SelectAvatarTableBodyAvatarName(props: Props) {
     >
       <TextInput
         className="input"
-        handleChange={props.handleChange}
+        handleBlur={props.handleChange}
         initialValue={props.name}
         max={15}
         min={5}

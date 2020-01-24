@@ -37,9 +37,21 @@ const renewAvatarToken = (token: lobby.Token): SelectRobotAvatar$RenewAvatarToke
   type: SelectRobotAvatar.RENEW_AVATAR_TOKEN
 })
 
+export type SelectRobotAvatar$UpdateAvatarName = {
+  name: string
+  token: lobby.Token
+  type: SelectRobotAvatar.UPDATE_AVATAR_NAME
+}
+const updateAvatarName = (token: lobby.Token) => (name: string): SelectRobotAvatar$UpdateAvatarName => ({
+  name,
+  token,
+  type: SelectRobotAvatar.UPDATE_AVATAR_NAME
+})
+
 export const selectRobotAvatar = {
   autorizationRequestAccepted,
   changeCheckbox,
   hoverAvatar,
-  renewAvatarToken
+  renewAvatarToken,
+  updateAvatarName
 }
