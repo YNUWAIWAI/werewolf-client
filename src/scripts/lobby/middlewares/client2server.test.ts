@@ -1243,3 +1243,89 @@ describe('message/PING', () => {
     })
   })
 })
+describe('selectRobotAvatar/AUTHORIZATION_REQUEST_ACCEPTED', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const accessToken = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+  const payload: lobby.Payload$AuthorizationRequest = {
+    accessToken,
+    type: lobby.PayloadType.authorizationRequest
+  }
+  const action = message.ping(payload)
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.authorizationRequestAccepted,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.pong, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
+    })
+  })
+})
+describe('selectRobotAvatar/RENEW_AVATAR_TOKEN', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+  const payload: lobby.Payload$RenewAvatarToken = {
+    token,
+    type: lobby.PayloadType.renewAvatarToken
+  }
+  const action = message.ping(payload)
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.renewAvatarToken,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.pong, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
+    })
+  })
+})
