@@ -7,7 +7,8 @@ import {
   KickOutPlayer,
   SelectVillage,
   Transition,
-  message
+  message,
+  selectRobotAvatar
 } from '../actions'
 import {
   LOBBY_SCHEMA,
@@ -1256,7 +1257,7 @@ describe('selectRobotAvatar/AUTHORIZATION_REQUEST_ACCEPTED', () => {
     accessToken,
     type: lobby.PayloadType.authorizationRequest
   }
-  const action = message.ping(payload)
+  const action = selectRobotAvatar.autorizationRequestAccepted(accessToken)
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
@@ -1299,7 +1300,7 @@ describe('selectRobotAvatar/RENEW_AVATAR_TOKEN', () => {
     token,
     type: lobby.PayloadType.renewAvatarToken
   }
-  const action = message.ping(payload)
+  const action = selectRobotAvatar.renewAvatarToken(token)
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
