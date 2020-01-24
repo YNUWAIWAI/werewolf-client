@@ -1,5 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  Message$AuthorizationRequest,
   Message$RobotPlayerSelectionPage,
   SelectRobotAvatar$ChangeCheckbox,
   SelectRobotAvatar$RenewAvatarToken
@@ -17,6 +18,7 @@ export interface State {
         readonly isAuthorized: boolean
         readonly isFullyAutomated: boolean
         readonly isHover: boolean
+        readonly isReadyForAcceptance: boolean
         readonly isTestPassed: boolean
         readonly language: lobby.Language
         readonly name: string
@@ -29,6 +31,7 @@ export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
+  | Message$AuthorizationRequest
   | Message$RobotPlayerSelectionPage
   | SelectRobotAvatar$ChangeCheckbox
   | SelectRobotAvatar$RenewAvatarToken
@@ -52,6 +55,21 @@ export const initialState: State = {
 }
 const selectRobotAvatar = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.Message.AUTHORIZATION_REQUEST: {
+      return {
+        ... state,
+        avatar: {
+          ... state.avatar,
+          byId: {
+            ... state.avatar.byId,
+            [action.payload.accessToken]: {
+              ... state.avatar.byId[action.payload.accessToken],
+              isReadyForAcceptance: true
+            }
+          }
+        }
+      }
+    }
     case ActionTypes.Message.ROBOT_PLAYER_SELECTION_PAGE: {
       const allIds = action.payload.avatar.map(a => a.token)
       const byId: State['avatar']['byId'] = {
@@ -68,6 +86,7 @@ const selectRobotAvatar = (state: State = initialState, action: Action): State =
           isAuthorized: a.isAuthorized,
           isFullyAutomated: a.isFullyAutomated,
           isHover,
+          isReadyForAcceptance: false,
           isTestPassed: a.isTestPassed,
           language: a.language,
           name: a.name,
