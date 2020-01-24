@@ -1253,9 +1253,9 @@ describe('selectRobotAvatar/AUTHORIZATION_REQUEST_ACCEPTED', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const accessToken = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
-  const payload: lobby.Payload$AuthorizationRequest = {
+  const payload: lobby.Payload$AuthorizationRequestAccepted = {
     accessToken,
-    type: lobby.PayloadType.authorizationRequest
+    type: lobby.PayloadType.authorizationRequestAccepted
   }
   const action = selectRobotAvatar.autorizationRequestAccepted(accessToken)
 
