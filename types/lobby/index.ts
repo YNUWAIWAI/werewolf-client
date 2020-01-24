@@ -71,6 +71,7 @@ export const enum AvatarStatus {
   awaitingAuthorization = 'awaiting authorization',
   awaitingCommunicationTest = 'awaiting communication test',
   connected = 'connected',
+  disconnected = 'disconnected',
   runningInTheBackground = 'running in the background',
   runningInTheForeground = 'running in the foreground'
 }
