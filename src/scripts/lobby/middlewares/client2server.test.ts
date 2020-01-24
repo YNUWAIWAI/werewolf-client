@@ -1270,7 +1270,7 @@ describe('selectRobotAvatar/AUTHORIZATION_REQUEST_ACCEPTED', () => {
     const ajv = new Ajv({
       schemas
     })
-    const validate = ajv.validate(LOBBY_SCHEMA.client2server.pong, payload)
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.authorizationRequestAccepted, payload)
 
     if (!validate) {
       console.error(ajv.errors)
@@ -1313,7 +1313,7 @@ describe('selectRobotAvatar/RENEW_AVATAR_TOKEN', () => {
     const ajv = new Ajv({
       schemas
     })
-    const validate = ajv.validate(LOBBY_SCHEMA.client2server.pong, payload)
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.renewAvatarToken, payload)
 
     if (!validate) {
       console.error(ajv.errors)
