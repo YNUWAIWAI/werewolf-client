@@ -49,6 +49,7 @@ type Action =
   | actions.Message$SearchResult
   | actions.Message$Settings
   | actions.Message$WaitingPage
+  | actions.SelectRobotAvatar$AutorizationRequestAccepted
   | actions.SelectRobotAvatar$RenewAvatarToken
   | actions.SelectVillage
   | actions.ShowVillage

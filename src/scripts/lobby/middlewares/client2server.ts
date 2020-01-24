@@ -251,6 +251,16 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED: {
+      const payload: lobby.Payload$AuthorizationRequestAccepted = {
+        accessToken: action.accessToken,
+        type: lobby.PayloadType.authorizationRequestAccepted
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.SelectRobotAvatar.RENEW_AVATAR_TOKEN: {
       const payload: lobby.Payload$RenewAvatarToken = {
         token: action.token,

@@ -1,4 +1,5 @@
 import {
+  SelectRobotAvatar$AutorizationRequestAccepted,
   SelectRobotAvatar$ChangeCheckbox,
   SelectRobotAvatar$HoverAvatar,
   SelectRobotAvatar$RenewAvatarToken,
@@ -13,6 +14,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
+  | SelectRobotAvatar$AutorizationRequestAccepted
   | SelectRobotAvatar$RenewAvatarToken
   | SelectRobotAvatar$ChangeCheckbox
   | SelectRobotAvatar$HoverAvatar
@@ -21,8 +23,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectRobotAvatar.avatar
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleAccept: () => {
-    console.log('accept')
+  handleAccept: accessToken => () => {
+    selectRobotAvatar.autorizationRequestAccepted(accessToken)
   },
   handleAvatarNameChange: valid => value => {
     console.log(valid, value)
