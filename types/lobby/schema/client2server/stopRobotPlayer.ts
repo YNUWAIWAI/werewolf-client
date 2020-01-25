@@ -5,6 +5,6 @@ import {Avatar} from '../../../village/schema'
 import {PayloadType} from '../../payload'
 
 export interface StopRobotPlayer {
-  token: Avatar['token']
+  token: Avatar['token'][]
   type: PayloadType.stopRobotPlayer
 }

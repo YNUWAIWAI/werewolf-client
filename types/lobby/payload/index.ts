@@ -5,6 +5,7 @@ import {
   AuthorizationRequestAcceptedResponse,
   Avatar,
   BuildVillage,
+  ChangeAvatar,
   ChangeLanguage,
   ChangeUserEmail,
   ChangeUserName,
@@ -34,7 +35,6 @@ import {
   SelectVillage,
   Settings,
   StopRobotPlayer,
-  UpdateAvatar,
   WaitingPage
 } from '../schema'
 
@@ -45,6 +45,7 @@ export const enum PayloadType {
   authorizationRequestAcceptedResponse = 'authorizationRequestAcceptedResponse',
   avatar = 'avatar',
   buildVillage = 'buildVillage',
+  changeAvatar = 'changeAvatar',
   changeLanguage = 'changeLanguage',
   changeUserEmail = 'changeUserEmail',
   changeUserName = 'changeUserName',
@@ -74,7 +75,6 @@ export const enum PayloadType {
   selectVillage = 'selectVillage',
   settings = 'settings',
   stopRobotPlayer = 'stopRobotPlayer',
-  updateAvatar = 'updateAvatar',
   waitingPage = 'waitingPage'
 }
 export type Payload =
@@ -84,6 +84,7 @@ export type Payload =
   | Payload$AuthorizationRequestAcceptedResponse
   | Payload$Avatar
   | Payload$BuildVillage
+  | Payload$ChangeAvatar
   | Payload$ChangeLanguage
   | Payload$ChangeUserEmail
   | Payload$ChangeUserName
@@ -113,7 +114,6 @@ export type Payload =
   | Payload$SelectVillage
   | Payload$Settings
   | Payload$StopRobotPlayer
-  | Payload$UpdateAvatar
   | Payload$WaitingPage
 
 /* eslint-disable @typescript-eslint/no-empty-interface */
@@ -123,6 +123,7 @@ export interface Payload$AuthorizationRequestAccepted extends AuthorizationReque
 export interface Payload$AuthorizationRequestAcceptedResponse extends AuthorizationRequestAcceptedResponse {}
 export interface Payload$Avatar extends Avatar {}
 export interface Payload$BuildVillage extends BuildVillage {}
+export interface Payload$ChangeAvatar extends ChangeAvatar {}
 export interface Payload$ChangeLanguage extends ChangeLanguage {}
 export interface Payload$ChangeUserEmail extends ChangeUserEmail {}
 export interface Payload$ChangeUserName extends ChangeUserName {}
@@ -152,5 +153,4 @@ export interface Payload$SearchResult extends SearchResult {}
 export interface Payload$SelectVillage extends SelectVillage {}
 export interface Payload$Settings extends Settings {}
 export interface Payload$StopRobotPlayer extends StopRobotPlayer {}
-export interface Payload$UpdateAvatar extends UpdateAvatar {}
 export interface Payload$WaitingPage extends WaitingPage {}
