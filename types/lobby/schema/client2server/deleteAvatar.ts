@@ -5,6 +5,6 @@ import {Avatar} from '../../../village/schema'
 import {PayloadType} from '../../payload'
 
 export interface DeleteAvatar {
-  token: Avatar['token']
+  token: Avatar['token'][]
   type: PayloadType.deleteAvatar
 }
