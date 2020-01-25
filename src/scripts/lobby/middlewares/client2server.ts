@@ -264,17 +264,15 @@ const client2server: Middleware = store => next => action => {
     case ActionTypes.SelectRobotAvatar.DELETE: {
       const state = store.getState()
       const avatar = state.selectRobotAvatar.avatar
-
-      avatar.allIds
+      const token = avatar.allIds
         .filter(id => avatar.byId[id].checked)
-        .forEach(id => {
-          const payload: lobby.Payload$DeleteAvatar = {
-            token: avatar.byId[id].token,
-            type: lobby.PayloadType.deleteAvatar
-          }
+        .map(id => avatar.byId[id].token)
+      const payload: lobby.Payload$DeleteAvatar = {
+        token,
+        type: lobby.PayloadType.deleteAvatar
+      }
 
-          store.dispatch(socket.send(payload))
-        })
+      store.dispatch(socket.send(payload))
 
       return next(action)
     }
