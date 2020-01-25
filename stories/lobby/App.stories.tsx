@@ -113,7 +113,7 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... selectRobotAvatar,
-        language: radios(language.label, language.options, language.defaultValue),
+        language: radios(language.label, language.options, language.defaultValue)
       },
       createRouterMiddleware(history)
     )
