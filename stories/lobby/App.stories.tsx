@@ -7,13 +7,11 @@ import {
   waitingPage
 } from './initialState'
 import App from '../../src/scripts/lobby/containers/App'
-import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import {Provider} from 'react-redux'
 import {createHashHistory} from 'history'
 import {createRouterMiddleware} from '../../src/scripts/lobby/middlewares'
 import {createStore} from 'redux'
 import {language} from './language'
-import {lobby} from './types'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
