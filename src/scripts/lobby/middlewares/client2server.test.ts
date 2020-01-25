@@ -23,6 +23,7 @@ import {getCastFromNumberOfPlayers} from '../util'
 import {initialState as idSearch} from '../reducers/idSearch'
 import {lobby} from '../types'
 import middleware from './client2server'
+import { ImagePath } from '../constants/ImagePath'
 
 const avatarToken = {
   humanPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
@@ -1315,6 +1316,147 @@ describe('selectRobotAvatar/RENEW_AVATAR_TOKEN', () => {
       schemas
     })
     const validate = ajv.validate(LOBBY_SCHEMA.client2server.renewAvatarToken, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
+    })
+  })
+})
+describe('selectRobotAvatar/UPDATE_AVATAR_IMAGE', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const image = ImagePath.Character.a
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+  const payload: lobby.Payload$UpdateAvatar = {
+    image,
+    language: null,
+    name: null,
+    token,
+    type: lobby.PayloadType.updateAvatar
+  }
+  const action = selectRobotAvatar.updateAvatarImage(token)(image)
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.updateAvatar,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.updateAvatar, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
+    })
+  })
+})
+describe('selectRobotAvatar/UPDATE_AVATAR_LANGUAGE', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const language = lobby.Language.en
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+  const payload: lobby.Payload$UpdateAvatar = {
+    image: null,
+    language,
+    name: null,
+    token,
+    type: lobby.PayloadType.updateAvatar
+  }
+  const action = selectRobotAvatar.updateAvatarLanguage(token)(language)
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.updateAvatar,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.updateAvatar, payload)
+
+    if (!validate) {
+      console.error(ajv.errors)
+    }
+    expect(validate).toBe(true)
+  })
+  test('dispatch correctly', () => {
+    actionHandler(action)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      payload,
+      type: ActionTypes.Socket.SEND
+    })
+  })
+})
+describe('selectRobotAvatar/UPDATE_AVATAR_NAME', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const name = 'Avatar'
+  const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+  const payload: lobby.Payload$UpdateAvatar = {
+    image: null,
+    language: null,
+    name,
+    token,
+    type: lobby.PayloadType.updateAvatar
+  }
+  const action = selectRobotAvatar.updateAvatarLanguage(token)(name)
+
+  test('validate the JSON', async () => {
+    expect.hasAssertions()
+    const schemas = await Promise.all([
+      LOBBY_SCHEMA.client2server.updateAvatar,
+      VILLAGE_SCHEMA.avatar
+    ].map(
+      schema => fetch(schema)
+        .then(res => res.json())
+    ))
+    const ajv = new Ajv({
+      schemas
+    })
+    const validate = ajv.validate(LOBBY_SCHEMA.client2server.updateAvatar, payload)
 
     if (!validate) {
       console.error(ajv.errors)
