@@ -325,6 +325,21 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.SelectRobotAvatar.STOP: {
+      const state = store.getState()
+      const avatar = state.selectRobotAvatar.avatar
+      const token = avatar.allIds
+        .filter(id => avatar.byId[id].checked)
+        .map(id => avatar.byId[id].token)
+      const payload: lobby.Payload$StopRobotPlayer = {
+        token,
+        type: lobby.PayloadType.stopRobotPlayer
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     default:
       return next(action)
   }

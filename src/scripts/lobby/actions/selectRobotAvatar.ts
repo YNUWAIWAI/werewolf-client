@@ -77,6 +77,15 @@ const renewAvatarToken = (token: lobby.Token): SelectRobotAvatar$RenewAvatarToke
   type: SelectRobotAvatar.RENEW_AVATAR_TOKEN
 })
 
+export type SelectRobotAvatar$StopAvatar = {
+  token: lobby.Token
+  type: SelectRobotAvatar.STOP
+}
+const stopAvatar = (token: lobby.Token): SelectRobotAvatar$StopAvatar => ({
+  token,
+  type: SelectRobotAvatar.STOP
+})
+
 export const selectRobotAvatar = {
   autorizationRequestAccepted,
   changeAvatarImage,
@@ -85,5 +94,6 @@ export const selectRobotAvatar = {
   changeCheckbox,
   deleteAvatar,
   hoverAvatar,
-  renewAvatarToken
+  renewAvatarToken,
+  stopAvatar
 }
