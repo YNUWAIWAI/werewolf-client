@@ -15,6 +15,7 @@ import {
   VILLAGE_SCHEMA
 } from '../constants/SchemaPath'
 import Ajv from 'ajv'
+import {ImagePath} from '../constants/ImagePath'
 import {initialState as advancedSearch} from '../reducers/advancedSearch'
 import {initialState as buildVillage} from '../reducers/buildVillage'
 import fakeStore from '../containers/fakeStore'
@@ -23,7 +24,6 @@ import {getCastFromNumberOfPlayers} from '../util'
 import {initialState as idSearch} from '../reducers/idSearch'
 import {lobby} from '../types'
 import middleware from './client2server'
-import { ImagePath } from '../constants/ImagePath'
 
 const avatarToken = {
   humanPlayer: '3F2504E0-4F89-11D3-9A0C-0305E82C3310',
@@ -1442,7 +1442,7 @@ describe('selectRobotAvatar/UPDATE_AVATAR_NAME', () => {
     token,
     type: lobby.PayloadType.updateAvatar
   }
-  const action = selectRobotAvatar.updateAvatarLanguage(token)(name)
+  const action = selectRobotAvatar.updateAvatarName(token)(name)
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
