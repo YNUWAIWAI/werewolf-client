@@ -6,6 +6,7 @@ const client2server = {
   advancedSearch: `${CLIENT2SERVER}/advancedSearch.json`,
   authorizationRequestAccepted: `${CLIENT2SERVER}/authorizationRequestAccepted.json`,
   buildVillage: `${CLIENT2SERVER}/buildVillage.json`,
+  changeAvatar: `${CLIENT2SERVER}/changeAvatar.json`,
   changeLanguage: `${CLIENT2SERVER}/changeLanguage.json`,
   changeUserEmail: `${CLIENT2SERVER}/changeUserEmail.json`,
   changeUserName: `${CLIENT2SERVER}/changeUserName.json`,
@@ -26,8 +27,7 @@ const client2server = {
   renewAvatarToken: `${CLIENT2SERVER}/renewAvatarToken.json`,
   runRobotPlayerInTheBackground: `${CLIENT2SERVER}/runRobotPlayerInTheBackground.json`,
   selectVillage: `${CLIENT2SERVER}/selectVillage.json`,
-  stopRobotPlayer: `${CLIENT2SERVER}/stopRobotPlayer.json`,
-  updateAvatar: `${CLIENT2SERVER}/updateAvatar.json`
+  stopRobotPlayer: `${CLIENT2SERVER}/stopRobotPlayer.json`
 }
 const SERVER2CLIENT = `${LOBBY_BASE}/server2client`
 const server2client = {

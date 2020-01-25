@@ -1,9 +1,9 @@
 import {
   SelectRobotAvatar$AutorizationRequestAccepted,
+  SelectRobotAvatar$ChangeAvatarName,
   SelectRobotAvatar$ChangeCheckbox,
   SelectRobotAvatar$HoverAvatar,
   SelectRobotAvatar$RenewAvatarToken,
-  SelectRobotAvatar$UpdateAvatarName,
   selectRobotAvatar
 } from '../actions'
 import SelectRobotAvatarTableBody, {
@@ -16,10 +16,10 @@ import {connect} from 'react-redux'
 
 type Action =
   | SelectRobotAvatar$AutorizationRequestAccepted
-  | SelectRobotAvatar$RenewAvatarToken
+  | SelectRobotAvatar$ChangeAvatarName
   | SelectRobotAvatar$ChangeCheckbox
   | SelectRobotAvatar$HoverAvatar
-  | SelectRobotAvatar$UpdateAvatarName
+  | SelectRobotAvatar$RenewAvatarToken
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectRobotAvatar.avatar
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   },
   handleAvatarNameChange: token => valid => value => {
     if (valid) {
-      dispatch(selectRobotAvatar.updateAvatarName(token)(value))
+      dispatch(selectRobotAvatar.changeAvatarName(token)(value))
     }
   },
   handleHoverAvatar: id => () => {

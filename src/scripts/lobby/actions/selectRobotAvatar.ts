@@ -10,6 +10,39 @@ const autorizationRequestAccepted = (accessToken: lobby.Token): SelectRobotAvata
   type: SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED
 })
 
+export type SelectRobotAvatar$ChangeAvatarImage = {
+  image: string
+  token: lobby.Token
+  type: SelectRobotAvatar.CHANGE_AVATAR_IMAGE
+}
+const changeAvatarImage = (token: lobby.Token) => (image: string): SelectRobotAvatar$ChangeAvatarImage => ({
+  image,
+  token,
+  type: SelectRobotAvatar.CHANGE_AVATAR_IMAGE
+})
+
+export type SelectRobotAvatar$ChangeAvatarLanguage = {
+  language: lobby.Language
+  token: lobby.Token
+  type: SelectRobotAvatar.CHANGE_AVATAR_LANGUAGE
+}
+const changeAvatarLanguage = (token: lobby.Token) => (language: lobby.Language): SelectRobotAvatar$ChangeAvatarLanguage => ({
+  language,
+  token,
+  type: SelectRobotAvatar.CHANGE_AVATAR_LANGUAGE
+})
+
+export type SelectRobotAvatar$ChangeAvatarName = {
+  name: string
+  token: lobby.Token
+  type: SelectRobotAvatar.CHANGE_AVATAR_NAME
+}
+const changeAvatarName = (token: lobby.Token) => (name: string): SelectRobotAvatar$ChangeAvatarName => ({
+  name,
+  token,
+  type: SelectRobotAvatar.CHANGE_AVATAR_NAME
+})
+
 export type SelectRobotAvatar$ChangeCheckbox = {
   id: string
   type: SelectRobotAvatar.CHANGE_CHECKBOX
@@ -44,46 +77,13 @@ const renewAvatarToken = (token: lobby.Token): SelectRobotAvatar$RenewAvatarToke
   type: SelectRobotAvatar.RENEW_AVATAR_TOKEN
 })
 
-export type SelectRobotAvatar$UpdateAvatarImage = {
-  image: string
-  token: lobby.Token
-  type: SelectRobotAvatar.UPDATE_AVATAR_IMAGE
-}
-const updateAvatarImage = (token: lobby.Token) => (image: string): SelectRobotAvatar$UpdateAvatarImage => ({
-  image,
-  token,
-  type: SelectRobotAvatar.UPDATE_AVATAR_IMAGE
-})
-
-export type SelectRobotAvatar$UpdateAvatarLanguage = {
-  language: lobby.Language
-  token: lobby.Token
-  type: SelectRobotAvatar.UPDATE_AVATAR_LANGUAGE
-}
-const updateAvatarLanguage = (token: lobby.Token) => (language: lobby.Language): SelectRobotAvatar$UpdateAvatarLanguage => ({
-  language,
-  token,
-  type: SelectRobotAvatar.UPDATE_AVATAR_LANGUAGE
-})
-
-export type SelectRobotAvatar$UpdateAvatarName = {
-  name: string
-  token: lobby.Token
-  type: SelectRobotAvatar.UPDATE_AVATAR_NAME
-}
-const updateAvatarName = (token: lobby.Token) => (name: string): SelectRobotAvatar$UpdateAvatarName => ({
-  name,
-  token,
-  type: SelectRobotAvatar.UPDATE_AVATAR_NAME
-})
-
 export const selectRobotAvatar = {
   autorizationRequestAccepted,
+  changeAvatarImage,
+  changeAvatarLanguage,
+  changeAvatarName,
   changeCheckbox,
   deleteAvatar,
   hoverAvatar,
-  renewAvatarToken,
-  updateAvatarImage,
-  updateAvatarLanguage,
-  updateAvatarName
+  renewAvatarToken
 }

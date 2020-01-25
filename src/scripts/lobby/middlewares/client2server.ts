@@ -261,6 +261,45 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.SelectRobotAvatar.CHANGE_AVATAR_IMAGE: {
+      const payload: lobby.Payload$ChangeAvatar = {
+        image: action.image,
+        language: null,
+        name: null,
+        token: action.token,
+        type: lobby.PayloadType.changeAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.CHANGE_AVATAR_LANGUAGE: {
+      const payload: lobby.Payload$ChangeAvatar = {
+        image: null,
+        language: action.language,
+        name: null,
+        token: action.token,
+        type: lobby.PayloadType.changeAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.CHANGE_AVATAR_NAME: {
+      const payload: lobby.Payload$ChangeAvatar = {
+        image: null,
+        language: null,
+        name: action.name,
+        token: action.token,
+        type: lobby.PayloadType.changeAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.SelectRobotAvatar.DELETE: {
       const state = store.getState()
       const avatar = state.selectRobotAvatar.avatar
@@ -280,45 +319,6 @@ const client2server: Middleware = store => next => action => {
       const payload: lobby.Payload$RenewAvatarToken = {
         token: action.token,
         type: lobby.PayloadType.renewAvatarToken
-      }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
-    }
-    case ActionTypes.SelectRobotAvatar.UPDATE_AVATAR_IMAGE: {
-      const payload: lobby.Payload$UpdateAvatar = {
-        image: action.image,
-        language: null,
-        name: null,
-        token: action.token,
-        type: lobby.PayloadType.updateAvatar
-      }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
-    }
-    case ActionTypes.SelectRobotAvatar.UPDATE_AVATAR_LANGUAGE: {
-      const payload: lobby.Payload$UpdateAvatar = {
-        image: null,
-        language: action.language,
-        name: null,
-        token: action.token,
-        type: lobby.PayloadType.updateAvatar
-      }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
-    }
-    case ActionTypes.SelectRobotAvatar.UPDATE_AVATAR_NAME: {
-      const payload: lobby.Payload$UpdateAvatar = {
-        image: null,
-        language: null,
-        name: action.name,
-        token: action.token,
-        type: lobby.PayloadType.updateAvatar
       }
 
       store.dispatch(socket.send(payload))
