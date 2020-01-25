@@ -55,6 +55,7 @@ type Action =
   | actions.SelectRobotAvatar$ChangeAvatarName
   | actions.SelectRobotAvatar$Delete
   | actions.SelectRobotAvatar$RenewAvatarToken
+  | actions.SelectRobotAvatar$RunInTheBackround
   | actions.SelectRobotAvatar$StopAvatar
   | actions.SelectVillage
   | actions.ShowVillage

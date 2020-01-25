@@ -77,6 +77,13 @@ const renewAvatarToken = (token: lobby.Token): SelectRobotAvatar$RenewAvatarToke
   type: SelectRobotAvatar.RENEW_AVATAR_TOKEN
 })
 
+export type SelectRobotAvatar$RunInTheBackround = {
+  type: SelectRobotAvatar.RUN_IN_THE_BACKGROUND
+}
+const runInTheBackground = (): SelectRobotAvatar$RunInTheBackround => ({
+  type: SelectRobotAvatar.RUN_IN_THE_BACKGROUND
+})
+
 export type SelectRobotAvatar$StopAvatar = {
   token: lobby.Token
   type: SelectRobotAvatar.STOP
@@ -95,5 +102,6 @@ export const selectRobotAvatar = {
   deleteAvatar,
   hoverAvatar,
   renewAvatarToken,
+  runInTheBackground,
   stopAvatar
 }
