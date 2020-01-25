@@ -19,6 +19,13 @@ const changeCheckbox = (id: string): SelectRobotAvatar$ChangeCheckbox => ({
   type: SelectRobotAvatar.CHANGE_CHECKBOX
 })
 
+export type SelectRobotAvatar$Delete = {
+  type: SelectRobotAvatar.DELETE
+}
+const deleteAvatar = (): SelectRobotAvatar$Delete => ({
+  type: SelectRobotAvatar.DELETE
+})
+
 export type SelectRobotAvatar$HoverAvatar = {
   id: string
   type: SelectRobotAvatar.HOVER_AVATAR
@@ -73,6 +80,7 @@ const updateAvatarName = (token: lobby.Token) => (name: string): SelectRobotAvat
 export const selectRobotAvatar = {
   autorizationRequestAccepted,
   changeCheckbox,
+  deleteAvatar,
   hoverAvatar,
   renewAvatarToken,
   updateAvatarImage,

@@ -50,6 +50,7 @@ type Action =
   | actions.Message$Settings
   | actions.Message$WaitingPage
   | actions.SelectRobotAvatar$AutorizationRequestAccepted
+  | actions.SelectRobotAvatar$Delete
   | actions.SelectRobotAvatar$RenewAvatarToken
   | actions.SelectRobotAvatar$UpdateAvatarImage
   | actions.SelectRobotAvatar$UpdateAvatarLanguage
