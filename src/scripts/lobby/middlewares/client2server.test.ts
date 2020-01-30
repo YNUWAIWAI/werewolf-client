@@ -1301,6 +1301,7 @@ describe('selectRobotAvatar/CHANGE_AVATAR_IMAGE', () => {
   const payload: lobby.Payload$ChangeAvatar = {
     image,
     language: null,
+    lobby: lobby.LobbyType.robot,
     name: null,
     token,
     type: lobby.PayloadType.changeAvatar
@@ -1348,6 +1349,7 @@ describe('selectRobotAvatar/CHANGE_AVATAR_LANGUAGE', () => {
   const payload: lobby.Payload$ChangeAvatar = {
     image: null,
     language,
+    lobby: lobby.LobbyType.robot,
     name: null,
     token,
     type: lobby.PayloadType.changeAvatar
@@ -1395,6 +1397,7 @@ describe('selectRobotAvatar/CHANGE_AVATAR_NAME', () => {
   const payload: lobby.Payload$ChangeAvatar = {
     image: null,
     language: null,
+    lobby: lobby.LobbyType.robot,
     name,
     token,
     type: lobby.PayloadType.changeAvatar
@@ -1523,6 +1526,7 @@ describe('selectRobotAvatar/DELETE', () => {
     '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
   ]
   const payload: lobby.Payload$DeleteAvatar = {
+    lobby: lobby.LobbyType.robot,
     token,
     type: lobby.PayloadType.deleteAvatar
   }
@@ -1566,6 +1570,7 @@ describe('selectRobotAvatar/RENEW_AVATAR_TOKEN', () => {
   const actionHandler = nextHandler(dispatchAPI)
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const payload: lobby.Payload$RenewAvatarToken = {
+    lobby: lobby.LobbyType.robot,
     token,
     type: lobby.PayloadType.renewAvatarToken
   }
@@ -1600,7 +1605,88 @@ describe('selectRobotAvatar/RENEW_AVATAR_TOKEN', () => {
   })
 })
 describe('selectRobotAvatar/RUN_IN_THE_BACKGROUND', () => {
-  const store = fakeStore()
+  const store = fakeStore({
+    selectRobotAvatar: {
+      avatar: {
+        allIds: [
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3303',
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
+        ],
+        byId: {
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
+            checked: true,
+            image: ImagePath.Character.a,
+            isAuthorized: false,
+            isFullyAutomated: true,
+            isHover: false,
+            isReadyForAcceptance: false,
+            isTestPassed: false,
+            language: lobby.Language.en,
+            name: 'avatar1',
+            status: lobby.AvatarStatus.awaitingAuthorization,
+            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+          },
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3301': {
+            checked: false,
+            image: ImagePath.Character.a,
+            isAuthorized: true,
+            isFullyAutomated: false,
+            isHover: false,
+            isReadyForAcceptance: false,
+            isTestPassed: true,
+            language: lobby.Language.en,
+            name: 'avatar2',
+            status: lobby.AvatarStatus.awaitingCommunicationTest,
+            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+          },
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3302': {
+            checked: true,
+            image: ImagePath.Character.a,
+            isAuthorized: false,
+            isFullyAutomated: false,
+            isHover: false,
+            isReadyForAcceptance: true,
+            isTestPassed: true,
+            language: lobby.Language.en,
+            name: 'avatar3',
+            status: lobby.AvatarStatus.connected,
+            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
+          },
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3303': {
+            checked: false,
+            image: ImagePath.Character.a,
+            isAuthorized: false,
+            isFullyAutomated: false,
+            isHover: false,
+            isReadyForAcceptance: true,
+            isTestPassed: true,
+            language: lobby.Language.en,
+            name: 'avatar4',
+            status: lobby.AvatarStatus.runningInTheBackground,
+            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
+          },
+          '3F2504E0-4F89-11D3-9A0C-0305E82C3304': {
+            checked: false,
+            image: ImagePath.Character.a,
+            isAuthorized: false,
+            isFullyAutomated: false,
+            isHover: false,
+            isReadyForAcceptance: true,
+            isTestPassed: true,
+            language: lobby.Language.en,
+            name: 'avatar5',
+            status: lobby.AvatarStatus.runningInTheForeground,
+            token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
+          }
+        }
+      },
+      command: [],
+      menuItems: []
+    }
+  })
   const dispatch = jest.fn()
 
   store.dispatch = dispatch

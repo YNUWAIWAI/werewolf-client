@@ -265,6 +265,7 @@ const client2server: Middleware = store => next => action => {
       const payload: lobby.Payload$ChangeAvatar = {
         image: action.image,
         language: null,
+        lobby: lobby.LobbyType.robot,
         name: null,
         token: action.token,
         type: lobby.PayloadType.changeAvatar
@@ -278,6 +279,7 @@ const client2server: Middleware = store => next => action => {
       const payload: lobby.Payload$ChangeAvatar = {
         image: null,
         language: action.language,
+        lobby: lobby.LobbyType.robot,
         name: null,
         token: action.token,
         type: lobby.PayloadType.changeAvatar
@@ -291,6 +293,7 @@ const client2server: Middleware = store => next => action => {
       const payload: lobby.Payload$ChangeAvatar = {
         image: null,
         language: null,
+        lobby: lobby.LobbyType.robot,
         name: action.name,
         token: action.token,
         type: lobby.PayloadType.changeAvatar
@@ -307,6 +310,7 @@ const client2server: Middleware = store => next => action => {
         .filter(id => avatar.byId[id].checked)
         .map(id => avatar.byId[id].token)
       const payload: lobby.Payload$DeleteAvatar = {
+        lobby: lobby.LobbyType.robot,
         token,
         type: lobby.PayloadType.deleteAvatar
       }
@@ -317,6 +321,7 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.SelectRobotAvatar.RENEW_AVATAR_TOKEN: {
       const payload: lobby.Payload$RenewAvatarToken = {
+        lobby: lobby.LobbyType.robot,
         token: action.token,
         type: lobby.PayloadType.renewAvatarToken
       }
