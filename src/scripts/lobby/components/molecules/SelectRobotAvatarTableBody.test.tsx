@@ -71,7 +71,7 @@ describe('render', () => {
         '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
           checked: false,
           image: ImagePath.Character.a,
-          isAuthorized: false,
+          isAuthorized: true,
           isFullyAutomated: true,
           isHover: false,
           isReadyForAcceptance: false,
@@ -87,7 +87,7 @@ describe('render', () => {
           isAuthorized: false,
           isFullyAutomated: true,
           isHover: false,
-          isReadyForAcceptance: false,
+          isReadyForAcceptance: true,
           isTestPassed: false,
           language: lobby.Language.en,
           name: 'Bob',
