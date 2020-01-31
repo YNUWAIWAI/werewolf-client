@@ -1,5 +1,4 @@
 /* eslint no-process-env: 0 */
-import * as ActionTypes from '../constants/ActionTypes'
 import * as actions from '../actions'
 import {
   Dispatch,
@@ -50,6 +49,14 @@ type Action =
   | actions.Message$SearchResult
   | actions.Message$Settings
   | actions.Message$WaitingPage
+  | actions.SelectRobotAvatar$AutorizationRequestAccepted
+  | actions.SelectRobotAvatar$ChangeAvatarImage
+  | actions.SelectRobotAvatar$ChangeAvatarLanguage
+  | actions.SelectRobotAvatar$ChangeAvatarName
+  | actions.SelectRobotAvatar$Delete
+  | actions.SelectRobotAvatar$RenewAvatarToken
+  | actions.SelectRobotAvatar$RunInTheBackround
+  | actions.SelectRobotAvatar$StopAvatar
   | actions.SelectVillage
   | actions.ShowVillage
   | actions.SocketClose

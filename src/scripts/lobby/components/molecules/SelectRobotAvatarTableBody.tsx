@@ -13,24 +13,27 @@ export interface StateProps {
     readonly allIds: string[]
     readonly byId: {
       readonly [id: string]: {
-        readonly accessToken: lobby.Token
-        readonly authorized: lobby.Authorized
-        readonly automation: lobby.Automation
         readonly checked: boolean
+        readonly image: string
+        readonly isAuthorized: boolean
+        readonly isFullyAutomated: boolean
         readonly isHover: boolean
+        readonly isReadyForAcceptance: boolean
+        readonly isTestPassed: boolean
+        readonly language: lobby.Language
         readonly name: string
         readonly status: lobby.AvatarStatus
-        readonly testStatus: lobby.TestStatus
+        readonly token: lobby.Token
       }
     }
   }
 }
 export interface DispatchProps {
-  readonly handleAccept: () => void
-  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleAccept: (accessToken: lobby.Token) => () => void
+  readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
-  readonly renewAccessToken: () => void
+  readonly renewAccessToken: (token: lobby.Token) => () => void
 }
 export type Props = StateProps & DispatchProps
 
@@ -41,6 +44,18 @@ export default function SelectRobotAvatarTableBody(props: Props) {
       avatar.isHover ? 'hover' : '',
       avatar.checked ? 'selected' : ''
     ]
+    const automation = avatar.isFullyAutomated ? lobby.Automation.full : lobby.Automation.semi
+    const authorized = (() => {
+      if (avatar.isAuthorized) {
+        return lobby.Authorized.yes
+      }
+      if (avatar.isReadyForAcceptance) {
+        return lobby.Authorized.waitForAcceptance
+      }
+
+      return lobby.Authorized.no
+    })()
+    const test = avatar.isTestPassed ? lobby.TestStatus.passed : lobby.TestStatus.notPassed
 
     return (
       <React.Fragment
@@ -53,7 +68,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         />
         <SelectAvatarTableBodyAvatarName
           additionalClassName={additionalClassName}
-          handleChange={props.handleAvatarNameChange}
+          handleChange={props.handleAvatarNameChange(avatar.token)}
           handleSelect={props.handleSelectAvatar(id)}
           name={avatar.name}
         />
@@ -64,31 +79,32 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         />
         <SelectAvatarTableBodyAuthorized
           additionalClassName={additionalClassName}
-          authorized={avatar.authorized}
-          handleAccept={props.handleAccept}
+          authorized={authorized}
+          handleAccept={props.handleAccept(avatar.token)}
           handleSelect={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyTest
           additionalClassName={additionalClassName}
           handleSelect={props.handleSelectAvatar(id)}
-          test={avatar.testStatus}
+          test={test}
         />
         <SelectAvatarTableBodyAutomation
           additionalClassName={additionalClassName}
-          automation={avatar.automation}
+          automation={automation}
           handleSelect={props.handleSelectAvatar(id)}
         />
         <SelectAvatarTableBodyAccessToken
           additionalClassName={additionalClassName}
           handleSelect={props.handleSelectAvatar(id)}
-          renewAccessToken={props.renewAccessToken}
-          token={avatar.accessToken}
+          renewAccessToken={props.renewAccessToken(avatar.token)}
+          token={avatar.token}
         />
       </React.Fragment>
     )
   })
 
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {rows}
     </>

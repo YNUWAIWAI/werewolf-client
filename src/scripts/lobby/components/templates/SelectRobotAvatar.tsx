@@ -1,6 +1,5 @@
 import * as React from 'react'
 import AsideContent from '../atoms/AsideContent'
-import CreateNewRobotAvatar from '../organisms/CreateNewRobotAvatarBox'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'

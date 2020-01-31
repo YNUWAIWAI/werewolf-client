@@ -1,5 +1,6 @@
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
+import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import SelectRobotAvatar from '../../src/scripts/lobby/containers/SelectRobotAvatarContainer'
@@ -18,57 +19,72 @@ storiesOf('lobby|SelectRobotAvatar', module)
         language: radios(language.label, language.options, language.defaultValue),
         selectRobotAvatar: {
           avatar: {
-            allIds: ['a1', 'a2', 'a3', 'a4', 'a5'],
+            allIds: ['3F2504E0-4F89-11D3-9A0C-0305E82C3300', '3F2504E0-4F89-11D3-9A0C-0305E82C3301', '3F2504E0-4F89-11D3-9A0C-0305E82C3302', '3F2504E0-4F89-11D3-9A0C-0305E82C3303', '3F2504E0-4F89-11D3-9A0C-0305E82C3304'],
             byId: {
-              'a1': {
-                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
-                authorized: lobby.Authorized.no,
-                automation: lobby.Automation.full,
+              '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
                 checked: false,
+                image: ImagePath.Character.a,
+                isAuthorized: false,
+                isFullyAutomated: true,
                 isHover: false,
+                isReadyForAcceptance: false,
+                isTestPassed: false,
+                language: lobby.Language.en,
                 name: 'avatar1',
                 status: lobby.AvatarStatus.awaitingAuthorization,
-                testStatus: lobby.TestStatus.notPassed
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
               },
-              'a2': {
-                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3301',
-                authorized: lobby.Authorized.yes,
-                automation: lobby.Automation.semi,
+              '3F2504E0-4F89-11D3-9A0C-0305E82C3301': {
                 checked: false,
+                image: ImagePath.Character.a,
+                isAuthorized: true,
+                isFullyAutomated: false,
                 isHover: false,
+                isReadyForAcceptance: false,
+                isTestPassed: true,
+                language: lobby.Language.en,
                 name: 'avatar2',
                 status: lobby.AvatarStatus.awaitingCommunicationTest,
-                testStatus: lobby.TestStatus.passed
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
               },
-              'a3': {
-                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3302',
-                authorized: lobby.Authorized.waitForAcceptance,
-                automation: lobby.Automation.semi,
+              '3F2504E0-4F89-11D3-9A0C-0305E82C3302': {
                 checked: false,
+                image: ImagePath.Character.a,
+                isAuthorized: false,
+                isFullyAutomated: false,
                 isHover: false,
+                isReadyForAcceptance: true,
+                isTestPassed: true,
+                language: lobby.Language.en,
                 name: 'avatar3',
                 status: lobby.AvatarStatus.connected,
-                testStatus: lobby.TestStatus.passed
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3302'
               },
-              'a4': {
-                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3303',
-                authorized: lobby.Authorized.waitForAcceptance,
-                automation: lobby.Automation.semi,
+              '3F2504E0-4F89-11D3-9A0C-0305E82C3303': {
                 checked: false,
+                image: ImagePath.Character.a,
+                isAuthorized: false,
+                isFullyAutomated: false,
                 isHover: false,
+                isReadyForAcceptance: true,
+                isTestPassed: true,
+                language: lobby.Language.en,
                 name: 'avatar4',
                 status: lobby.AvatarStatus.runningInTheBackground,
-                testStatus: lobby.TestStatus.passed
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3303'
               },
-              'a5': {
-                accessToken: '3F2504E0-4F89-11D3-9A0C-0305E82C3304',
-                authorized: lobby.Authorized.waitForAcceptance,
-                automation: lobby.Automation.semi,
+              '3F2504E0-4F89-11D3-9A0C-0305E82C3304': {
                 checked: false,
+                image: ImagePath.Character.a,
+                isAuthorized: false,
+                isFullyAutomated: false,
                 isHover: false,
+                isReadyForAcceptance: true,
+                isTestPassed: true,
+                language: lobby.Language.en,
                 name: 'avatar5',
                 status: lobby.AvatarStatus.runningInTheForeground,
-                testStatus: lobby.TestStatus.passed
+                token: '3F2504E0-4F89-11D3-9A0C-0305E82C3304'
               }
             }
           },
@@ -91,6 +107,10 @@ storiesOf('lobby|SelectRobotAvatar', module)
             }
           ],
           menuItems: [
+            {
+              id: 'Menu.createNewAvatar',
+              types: [ActionTypes.App.SHOW_CREATE_NEW_AVATAR]
+            },
             {
               id: 'Menu.returnToMainPage',
               types: [ActionTypes.App.SHOW_MAIN]

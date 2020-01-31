@@ -251,6 +251,115 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED: {
+      const payload: lobby.Payload$AuthorizationRequestAccepted = {
+        accessToken: action.accessToken,
+        type: lobby.PayloadType.authorizationRequestAccepted
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.CHANGE_AVATAR_IMAGE: {
+      const payload: lobby.Payload$ChangeAvatar = {
+        image: action.image,
+        language: null,
+        lobby: lobby.LobbyType.robot,
+        name: null,
+        token: action.token,
+        type: lobby.PayloadType.changeAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.CHANGE_AVATAR_LANGUAGE: {
+      const payload: lobby.Payload$ChangeAvatar = {
+        image: null,
+        language: action.language,
+        lobby: lobby.LobbyType.robot,
+        name: null,
+        token: action.token,
+        type: lobby.PayloadType.changeAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.CHANGE_AVATAR_NAME: {
+      const payload: lobby.Payload$ChangeAvatar = {
+        image: null,
+        language: null,
+        lobby: lobby.LobbyType.robot,
+        name: action.name,
+        token: action.token,
+        type: lobby.PayloadType.changeAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.DELETE: {
+      const state = store.getState()
+      const avatar = state.selectRobotAvatar.avatar
+      const token = avatar.allIds
+        .filter(id => avatar.byId[id].checked)
+        .map(id => avatar.byId[id].token)
+      const payload: lobby.Payload$DeleteAvatar = {
+        lobby: lobby.LobbyType.robot,
+        token,
+        type: lobby.PayloadType.deleteAvatar
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.RENEW_AVATAR_TOKEN: {
+      const payload: lobby.Payload$RenewAvatarToken = {
+        lobby: lobby.LobbyType.robot,
+        token: action.token,
+        type: lobby.PayloadType.renewAvatarToken
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.RUN_IN_THE_BACKGROUND: {
+      const state = store.getState()
+      const avatar = state.selectRobotAvatar.avatar
+      const token = avatar.allIds
+        .filter(id => avatar.byId[id].checked)
+        .map(id => avatar.byId[id].token)
+      const payload: lobby.Payload$RunRobotPlayerInTheBackground = {
+        token,
+        type: lobby.PayloadType.runRobotPlayerInTheBackground
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.SelectRobotAvatar.STOP: {
+      const state = store.getState()
+      const avatar = state.selectRobotAvatar.avatar
+      const token = avatar.allIds
+        .filter(id => avatar.byId[id].checked)
+        .map(id => avatar.byId[id].token)
+      const payload: lobby.Payload$StopRobotPlayer = {
+        token,
+        type: lobby.PayloadType.stopRobotPlayer
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     default:
       return next(action)
   }

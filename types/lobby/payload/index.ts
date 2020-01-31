@@ -5,6 +5,7 @@ import {
   AuthorizationRequestAcceptedResponse,
   Avatar,
   BuildVillage,
+  ChangeAvatar,
   ChangeLanguage,
   ChangeUserEmail,
   ChangeUserName,
@@ -21,7 +22,6 @@ import {
   KickOutPlayer,
   LeaveWaitingPage,
   Lobby,
-  NewAvatarToken,
   OnymousAudienceSelectionPage,
   Ping,
   Play,
@@ -35,7 +35,6 @@ import {
   SelectVillage,
   Settings,
   StopRobotPlayer,
-  UpdateAvatar,
   WaitingPage
 } from '../schema'
 
@@ -46,6 +45,7 @@ export const enum PayloadType {
   authorizationRequestAcceptedResponse = 'authorizationRequestAcceptedResponse',
   avatar = 'avatar',
   buildVillage = 'buildVillage',
+  changeAvatar = 'changeAvatar',
   changeLanguage = 'changeLanguage',
   changeUserEmail = 'changeUserEmail',
   changeUserName = 'changeUserName',
@@ -62,7 +62,6 @@ export const enum PayloadType {
   kickOutPlayer = 'kickOutPlayer',
   leaveWaitingPage = 'leaveWaitingPage',
   lobby = 'lobby',
-  newAvatarToken = 'newAvatarToken',
   onymousAudienceSelectionPage = 'onymousAudienceSelectionPage',
   ping = 'ping',
   play = 'play',
@@ -76,7 +75,6 @@ export const enum PayloadType {
   selectVillage = 'selectVillage',
   settings = 'settings',
   stopRobotPlayer = 'stopRobotPlayer',
-  updateAvatar = 'updateAvatar',
   waitingPage = 'waitingPage'
 }
 export type Payload =
@@ -86,6 +84,7 @@ export type Payload =
   | Payload$AuthorizationRequestAcceptedResponse
   | Payload$Avatar
   | Payload$BuildVillage
+  | Payload$ChangeAvatar
   | Payload$ChangeLanguage
   | Payload$ChangeUserEmail
   | Payload$ChangeUserName
@@ -102,7 +101,6 @@ export type Payload =
   | Payload$KickOutPlayer
   | Payload$LeaveWaitingPage
   | Payload$Lobby
-  | Payload$NewAvatarToken
   | Payload$OnymousAudienceSelectionPage
   | Payload$Ping
   | Payload$Play
@@ -116,7 +114,6 @@ export type Payload =
   | Payload$SelectVillage
   | Payload$Settings
   | Payload$StopRobotPlayer
-  | Payload$UpdateAvatar
   | Payload$WaitingPage
 
 /* eslint-disable @typescript-eslint/no-empty-interface */
@@ -126,6 +123,7 @@ export interface Payload$AuthorizationRequestAccepted extends AuthorizationReque
 export interface Payload$AuthorizationRequestAcceptedResponse extends AuthorizationRequestAcceptedResponse {}
 export interface Payload$Avatar extends Avatar {}
 export interface Payload$BuildVillage extends BuildVillage {}
+export interface Payload$ChangeAvatar extends ChangeAvatar {}
 export interface Payload$ChangeLanguage extends ChangeLanguage {}
 export interface Payload$ChangeUserEmail extends ChangeUserEmail {}
 export interface Payload$ChangeUserName extends ChangeUserName {}
@@ -142,7 +140,6 @@ export interface Payload$IdSearch extends IdSearch {}
 export interface Payload$KickOutPlayer extends KickOutPlayer {}
 export interface Payload$LeaveWaitingPage extends LeaveWaitingPage {}
 export interface Payload$Lobby extends Lobby {}
-export interface Payload$NewAvatarToken extends NewAvatarToken {}
 export interface Payload$OnymousAudienceSelectionPage extends OnymousAudienceSelectionPage {}
 export interface Payload$Ping extends Ping {}
 export interface Payload$Play extends Play {}
@@ -156,5 +153,4 @@ export interface Payload$SearchResult extends SearchResult {}
 export interface Payload$SelectVillage extends SelectVillage {}
 export interface Payload$Settings extends Settings {}
 export interface Payload$StopRobotPlayer extends StopRobotPlayer {}
-export interface Payload$UpdateAvatar extends UpdateAvatar {}
 export interface Payload$WaitingPage extends WaitingPage {}

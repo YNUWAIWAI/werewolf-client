@@ -1,6 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import {
+  Message$AuthorizationRequest,
+  Message$RobotPlayerSelectionPage,
+  SelectRobotAvatar$ChangeAvatarName,
+  SelectRobotAvatar$ChangeCheckbox,
+  SelectRobotAvatar$RenewAvatarToken
+} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {SelectRobotAvatar$ChangeCheckbox} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
@@ -8,14 +14,17 @@ export interface State {
     readonly allIds: string[]
     readonly byId: {
       [key in string]: {
-        readonly accessToken: lobby.Token
-        readonly automation: lobby.Automation
-        readonly authorized: lobby.Authorized
         readonly checked: boolean
+        readonly image: string
+        readonly isAuthorized: boolean
+        readonly isFullyAutomated: boolean
         readonly isHover: boolean
+        readonly isReadyForAcceptance: boolean
+        readonly isTestPassed: boolean
+        readonly language: lobby.Language
         readonly name: string
         readonly status: lobby.AvatarStatus
-        readonly testStatus: lobby.TestStatus
+        readonly token: lobby.Token
       }
     }
   }
@@ -23,7 +32,11 @@ export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
+  | Message$AuthorizationRequest
+  | Message$RobotPlayerSelectionPage
+  | SelectRobotAvatar$ChangeAvatarName
   | SelectRobotAvatar$ChangeCheckbox
+  | SelectRobotAvatar$RenewAvatarToken
 
 export const initialState: State = {
   avatar: {
@@ -44,6 +57,54 @@ export const initialState: State = {
 }
 const selectRobotAvatar = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.Message.AUTHORIZATION_REQUEST: {
+      return {
+        ... state,
+        avatar: {
+          ... state.avatar,
+          byId: {
+            ... state.avatar.byId,
+            [action.payload.accessToken]: {
+              ... state.avatar.byId[action.payload.accessToken],
+              isReadyForAcceptance: true
+            }
+          }
+        }
+      }
+    }
+    case ActionTypes.Message.ROBOT_PLAYER_SELECTION_PAGE: {
+      const allIds = action.payload.avatar.map(a => a.token)
+      const byId: State['avatar']['byId'] = {
+        ... state.avatar.byId
+      }
+
+      action.payload.avatar.forEach(a => {
+        const checked = byId[a.token] ? byId[a.token].checked : false
+        const isHover = byId[a.token] ? byId[a.token].isHover : false
+
+        byId[a.token] = {
+          checked,
+          image: a.image,
+          isAuthorized: a.isAuthorized,
+          isFullyAutomated: a.isFullyAutomated,
+          isHover,
+          isReadyForAcceptance: false,
+          isTestPassed: a.isTestPassed,
+          language: a.language,
+          name: a.name,
+          status: a.status,
+          token: a.token
+        }
+      })
+
+      return {
+        ... state,
+        avatar: {
+          allIds,
+          byId
+        }
+      }
+    }
     case ActionTypes.SelectRobotAvatar.CHANGE_CHECKBOX:
       return {
         ... state,
