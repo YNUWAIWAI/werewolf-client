@@ -10,7 +10,9 @@ export interface StateProps {
     readonly byId: {
       readonly [id: string]: {
         readonly checked: boolean
+        readonly image: string
         readonly isHover: boolean
+        readonly language: lobby.Language
         readonly name: string
       }
     }
