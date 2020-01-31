@@ -1,4 +1,5 @@
 import {
+  SelectHumanAvatar$ChangeAvatarName,
   SelectHumanAvatar$ChangeCheckbox,
   SelectHumanAvatar$HoverAvatar,
   selectHumanAvatar
@@ -12,6 +13,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
+  | SelectHumanAvatar$ChangeAvatarName
   | SelectHumanAvatar$ChangeCheckbox
   | SelectHumanAvatar$HoverAvatar
 
@@ -19,8 +21,10 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectHumanAvatar.avatar
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleAvatarNameChange: valid => value => {
-    console.log(valid, value)
+  handleAvatarNameChange: token => valid => value => {
+    if (valid) {
+      dispatch(selectHumanAvatar.changeAvatarName(token)(value))
+    }
   },
   handleHoverAvatar: id => () => {
     dispatch(selectHumanAvatar.hoverAvatar(id))

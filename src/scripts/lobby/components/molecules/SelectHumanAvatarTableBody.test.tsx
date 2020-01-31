@@ -1,5 +1,6 @@
 import * as React from 'react'
 import SelectHumanAvatarTableBody, {StateProps} from './SelectHumanAvatarTableBody'
+import {ImagePath} from '../../constants/ImagePath'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
 import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTableBodyCheckBox'
 import {getMessages} from '../../i18n'
@@ -12,12 +13,14 @@ describe('render', () => {
   test('1 avatar', () => {
     const avatar: StateProps['avatar'] = {
       allIds: [
-        'a1'
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
       ],
       byId: {
-        'a1': {
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
           checked: false,
+          image: ImagePath.Character.a,
           isHover: false,
+          language: lobby.Language.en,
           name: 'Alice'
         }
       }
@@ -41,18 +44,22 @@ describe('render', () => {
   test('2 avatar', () => {
     const avatar: StateProps['avatar'] = {
       allIds: [
-        'a1',
-        'a2'
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
       ],
       byId: {
-        'a1': {
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
           checked: false,
+          image: ImagePath.Character.a,
           isHover: false,
+          language: lobby.Language.en,
           name: 'Alice'
         },
-        'a2': {
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3301': {
           checked: true,
+          image: ImagePath.Character.b,
           isHover: false,
+          language: lobby.Language.en,
           name: 'Bob'
         }
       }

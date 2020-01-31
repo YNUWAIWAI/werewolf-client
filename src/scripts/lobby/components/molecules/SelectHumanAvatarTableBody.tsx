@@ -2,6 +2,7 @@ import * as React from 'react'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
 import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTableBodyCheckBox'
 import SelectAvatarTableBodySpacer from '../atoms/SelectAvatarTableBodySpacer'
+import {lobby} from '../../types'
 
 export interface StateProps {
   readonly avatar: {
@@ -9,14 +10,16 @@ export interface StateProps {
     readonly byId: {
       readonly [id: string]: {
         readonly checked: boolean
+        readonly image: string
         readonly isHover: boolean
+        readonly language: lobby.Language
         readonly name: string
       }
     }
   }
 }
 export interface DispatchProps {
-  readonly handleAvatarNameChange: (valid: boolean) => (value: string) => void
+  readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
 }
@@ -39,7 +42,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
       />,
       <SelectAvatarTableBodyAvatarName
         additionalClassName={additionalClassName}
-        handleChange={props.handleAvatarNameChange}
+        handleChange={props.handleAvatarNameChange(id)}
         handleSelect={props.handleSelectAvatar(id)}
         key={`avatarName${id}`}
         name={avatar.name}

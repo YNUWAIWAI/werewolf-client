@@ -1,6 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import {
+  Message$HumanPlayerSelectionPage,
+  SelectHumanAvatar$ChangeCheckbox
+} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {SelectHumanAvatar$ChangeCheckbox} from '../actions'
+import {lobby} from '../types'
 
 export interface State {
   readonly avatar: {
@@ -8,6 +12,8 @@ export interface State {
     readonly byId: {
       [key in string]: {
         readonly checked: boolean
+        readonly image: string
+        readonly language: lobby.Language
         readonly isHover: boolean
         readonly name: string
       }
@@ -17,6 +23,7 @@ export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
+  | Message$HumanPlayerSelectionPage
   | SelectHumanAvatar$ChangeCheckbox
 
 export const initialState: State = {
@@ -38,6 +45,33 @@ export const initialState: State = {
 }
 const selectHumanAvatar = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.Message.HUMAN_PLAYER_SELECTION_PAGE: {
+      const allIds = action.payload.avatar.map(a => a.token)
+      const byId: State['avatar']['byId'] = {
+        ... state.avatar.byId
+      }
+
+      action.payload.avatar.forEach(a => {
+        const checked = byId[a.token] ? byId[a.token].checked : false
+        const isHover = byId[a.token] ? byId[a.token].isHover : false
+
+        byId[a.token] = {
+          checked,
+          image: a.image,
+          isHover,
+          language: a.language,
+          name: a.name
+        }
+      })
+
+      return {
+        ... state,
+        avatar: {
+          allIds,
+          byId
+        }
+      }
+    }
     case ActionTypes.SelectHumanAvatar.CHANGE_CHECKBOX:
       return {
         ... state,

@@ -8,8 +8,10 @@ import {
   enterHumanPlayerLobby,
   enterOnymousAudienceLobby,
   enterRobotPlayerLobby,
+  humanPlayerSelectionPage,
   ping,
   played,
+  robotPlayerSelectionPage,
   searchResult,
   settings,
   waitingPage,
@@ -120,6 +122,26 @@ test('validate enterRobotPlayerLobby', async () => {
   }
   expect(validate).toBe(true)
 })
+test('validate humanPlayerSelectionPage', async () => {
+  expect.hasAssertions()
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.humanPlayerSelectionPage,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.humanPlayerSelectionPage, humanPlayerSelectionPage)
+
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
+})
 test('validate ping', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
@@ -160,6 +182,27 @@ test('validate played', async () => {
   }
   expect(validate).toBe(true)
 })
+test('validate robotPlayerSelectionPage', async () => {
+  expect.hasAssertions()
+  const schemas = await Promise.all([
+    LOBBY_SCHEMA.server2client.robotPlayerSelectionPage,
+    VILLAGE_SCHEMA.avatar,
+    VILLAGE_SCHEMA.village
+  ].map(
+    schema => fetch(schema)
+      .then(res => res.json())
+  ))
+  const ajv = new Ajv({
+    schemas
+  })
+  const validate = ajv.validate(LOBBY_SCHEMA.server2client.robotPlayerSelectionPage, robotPlayerSelectionPage)
+
+  if (!validate) {
+    console.error(ajv.errors)
+  }
+  expect(validate).toBe(true)
+})
+
 test('validate searchResult', async () => {
   expect.hasAssertions()
   const schemas = await Promise.all([
