@@ -1,4 +1,38 @@
 import {SelectHumanAvatar} from '../constants/ActionTypes'
+import {lobby} from '../types'
+
+export type SelectHumanAvatar$ChangeAvatarImage = {
+  image: string
+  token: lobby.Token
+  type: SelectHumanAvatar.CHANGE_AVATAR_IMAGE
+}
+const changeAvatarImage = (token: lobby.Token) => (image: string): SelectHumanAvatar$ChangeAvatarImage => ({
+  image,
+  token,
+  type: SelectHumanAvatar.CHANGE_AVATAR_IMAGE
+})
+
+export type SelectHumanAvatar$ChangeAvatarLanguage = {
+  language: lobby.Language
+  token: lobby.Token
+  type: SelectHumanAvatar.CHANGE_AVATAR_LANGUAGE
+}
+const changeAvatarLanguage = (token: lobby.Token) => (language: lobby.Language): SelectHumanAvatar$ChangeAvatarLanguage => ({
+  language,
+  token,
+  type: SelectHumanAvatar.CHANGE_AVATAR_LANGUAGE
+})
+
+export type SelectHumanAvatar$ChangeAvatarName = {
+  name: string
+  token: lobby.Token
+  type: SelectHumanAvatar.CHANGE_AVATAR_NAME
+}
+const changeAvatarName = (token: lobby.Token) => (name: string): SelectHumanAvatar$ChangeAvatarName => ({
+  name,
+  token,
+  type: SelectHumanAvatar.CHANGE_AVATAR_NAME
+})
 
 export type SelectHumanAvatar$ChangeCheckbox = {
   id: string
@@ -19,6 +53,9 @@ const hoverAvatar = (id: string): SelectHumanAvatar$HoverAvatar => ({
 })
 
 export const selectHumanAvatar = {
+  changeAvatarImage,
+  changeAvatarLanguage,
+  changeAvatarName,
   changeCheckbox,
   hoverAvatar
 }
