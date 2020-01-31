@@ -85,10 +85,10 @@ const runInTheBackground = (): SelectRobotAvatar$RunInTheBackround => ({
 })
 
 export type SelectRobotAvatar$StopAvatar = {
-  token: lobby.Token
+  token: lobby.Token[]
   type: SelectRobotAvatar.STOP
 }
-const stopAvatar = (token: lobby.Token): SelectRobotAvatar$StopAvatar => ({
+const stopAvatar = (token: lobby.Token[]): SelectRobotAvatar$StopAvatar => ({
   token,
   type: SelectRobotAvatar.STOP
 })
