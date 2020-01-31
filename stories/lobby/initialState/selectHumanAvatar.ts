@@ -8,14 +8,17 @@ export const selectHumanAvatar: Partial<ReducerState> = {
   },
   selectHumanAvatar: {
     avatar: {
-      allIds: ['a1', 'a2'],
+      allIds: [
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
+      ],
       byId: {
-        'a1': {
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3300': {
           checked: false,
           isHover: false,
           name: 'avatar1'
         },
-        'a2': {
+        '3F2504E0-4F89-11D3-9A0C-0305E82C3301': {
           checked: false,
           isHover: false,
           name: 'avatar2'
