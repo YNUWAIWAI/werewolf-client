@@ -41,6 +41,35 @@ storiesOf('lobby|App', module)
 
     return story
   })
+  .add('movie', () => {
+    const history = createHashHistory()
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue),
+        obfucator: {
+          loading: false,
+          visible: false
+        }
+      },
+      createRouterMiddleware(history)
+    )
+    const story =
+      <div style={{position: 'relative'}}>
+        <Provider store={store}>
+          <App history={history} />
+        </Provider>
+        <video autoPlay loop style={{position: 'fixed', top: 0, left: 0, width: '150%', zIndex: -1}}>
+          <source src="./lobby-background-neurons.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+    store.dispatch({
+      type: ActionTypes.App.SHOW_MAIN
+    })
+
+    return story
+  })
   .add('waitingPage', () => {
     const history = createHashHistory()
     const store = createStore(

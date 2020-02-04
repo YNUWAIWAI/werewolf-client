@@ -69,7 +69,7 @@
     "jest:integration:upgrade": "jest -c integration/jest.config.js -w 2 -u",
     "stylelint": "stylelint src/styles",
     "start": "node tools/build.js -w",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public,./stories/lobby/movie",
     "storybook:integration": "start-storybook -p 9009 -c .storybook-integration --ci",
     "test": "jest",
     "test:ci": "jest --coverage -w 2",
