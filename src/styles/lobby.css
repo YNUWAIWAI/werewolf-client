@@ -417,7 +417,7 @@ body {
 
     &--item {
       background: var(--regular-color);
-      border: 1px solid white;
+      border: 2px solid white;
       cursor: pointer;
       font-size: 4rem;
       font-weight: 100;
