@@ -59,7 +59,7 @@
     "build:development": "node tools/build.js -d",
     "build:production": "node tools/build.js",
     "build:watch": "node tools/build.js -w",
-    "build-storybook": "build-storybook -s ./public,./stories/lobby/movie",
+    "build-storybook": "build-storybook -s ./stories/lobby/movie",
     "coverage": "codecov -f coverage/*.json",
     "deploy-storybook": "storybook-to-ghpages",
     "eslint": "eslint 'types/**/*.ts*' 'stories/**/*.ts*' 'src/**/*.ts*'",

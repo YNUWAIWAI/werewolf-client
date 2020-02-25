@@ -59,7 +59,7 @@ storiesOf('lobby|App', module)
         <Provider store={store}>
           <App history={history} />
         </Provider>
-        <video autoPlay loop style={{position: 'fixed', top: 0, left: 0, width: '150%', zIndex: -1}}>
+        <video autoPlay loop style={{position: 'fixed', top: 0, bottom: 0, right: 0, left: 0, zIndex: -1}}>
           <source src="./lobby-background-neurons.mp4" type="video/mp4" />
         </video>
       </div>
