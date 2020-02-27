@@ -304,7 +304,7 @@ body {
     grid-template-areas:
       'header avatar'
       'main aside';
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(600px, 2fr) minmax(300px, 1fr);
     margin: 1rem;
   }
 
@@ -603,7 +603,9 @@ body {
     &--table {
       border: 2px solid black;
       display: grid;
-      grid-template-columns: 24px repeat(5, 1fr) 2fr;
+      grid-template-columns: 24px repeat(5, minmax(8rem, 1fr)) minmax(16rem, 2fr);
+      overflow: auto;
+      padding: 0 0 1rem;
 
       &--body--item {
         align-items: center;
@@ -665,7 +667,17 @@ body {
         }
 
         &.check-box {
+          left: 0;
           padding: 0;
+          position: sticky;
+        }
+
+        &.language {
+          padding: 0;
+
+          & > .input {
+            width: 100%;
+          }
         }
 
         &.selected {
