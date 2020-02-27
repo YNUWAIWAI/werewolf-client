@@ -25,12 +25,14 @@ describe('render', () => {
         }
       }
     }
+    const handleAvatarLanguageChange = jest.fn()
     const handleAvatarNameChange = jest.fn()
     const handleHoverAvatar = jest.fn()
     const handleSelectAvatar = jest.fn()
     const wrapper = mountWithIntl(
       <SelectHumanAvatarTableBody
         avatar={avatar}
+        handleAvatarLanguageChange={handleAvatarLanguageChange}
         handleAvatarNameChange={handleAvatarNameChange}
         handleHoverAvatar={handleHoverAvatar}
         handleSelectAvatar={handleSelectAvatar}
@@ -64,12 +66,14 @@ describe('render', () => {
         }
       }
     }
+    const handleAvatarLanguageChange = jest.fn()
     const handleAvatarNameChange = jest.fn()
     const handleHoverAvatar = jest.fn()
     const handleSelectAvatar = jest.fn()
     const wrapper = mountWithIntl(
       <SelectHumanAvatarTableBody
         avatar={avatar}
+        handleAvatarLanguageChange={handleAvatarLanguageChange}
         handleAvatarNameChange={handleAvatarNameChange}
         handleHoverAvatar={handleHoverAvatar}
         handleSelectAvatar={handleSelectAvatar}
