@@ -25,6 +25,7 @@ export default function SelectAvatarTableBodyLanguage(props: Props) {
         className="input"
         defaultValue={props.language}
         handleChange={props.handleChange}
+        menuPosition="fixed"
       />
     </div>
   )

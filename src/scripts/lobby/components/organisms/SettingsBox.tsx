@@ -180,6 +180,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               className="lo--settings--bucket--form--field"
               defaultValue={this.props.initialValue.language}
               handleChange={(() => this.handleChange(PropName.language))()}
+              menuPosition="absolute"
             />
             <FormattedMessage
               id="Settings.button(save)"

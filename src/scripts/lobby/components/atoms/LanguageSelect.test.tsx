@@ -13,6 +13,7 @@ describe('<LanguageSelect />', () => {
         className="className"
         defaultValue={lobby.Language.en}
         handleChange={handleChange}
+        menuPosition="absolute"
       />
     )
 
@@ -28,6 +29,7 @@ describe('<LanguageSelect />', () => {
           className="className"
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
+          menuPosition="absolute"
         />
       )
 
@@ -48,6 +50,7 @@ describe('<LanguageSelect />', () => {
           className="className"
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
+          menuPosition="absolute"
         />
       )
 
@@ -65,6 +68,7 @@ describe('<LanguageSelect />', () => {
           className="className"
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
+          menuPosition="absolute"
         />
       )
 
@@ -80,6 +84,7 @@ describe('<LanguageSelect />', () => {
           className="className"
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
+          menuPosition="absolute"
         />
       )
 

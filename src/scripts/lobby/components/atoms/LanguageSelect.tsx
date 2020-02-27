@@ -18,6 +18,7 @@ interface Props {
   readonly className: string
   readonly defaultValue: lobby.Language
   readonly handleChange: (valid: boolean) => (value: lobby.Language) => void
+  readonly menuPosition: 'absolute' | 'fixed'
 }
 
 interface Option {
@@ -61,6 +62,7 @@ export default function LanguageSelect(props: Props) {
       className={props.className}
       classNamePrefix="lo--react-select"
       defaultValue={defaultValue}
+      menuPosition={props.menuPosition}
       onChange={handleChange}
       options={options}
     />
