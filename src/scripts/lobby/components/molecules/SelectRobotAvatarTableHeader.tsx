@@ -1,98 +1,18 @@
 import * as React from 'react'
-import {FormattedMessage} from 'react-intl'
+import SelectAvatarTableHeaderItem from '../atoms/SelectAvatarTable/SelectAvatarTableHeaderItem'
 
 export default function SelectRobotAvatarTableHeader() {
   return (
     <>
-      <div className="lo--select-avatar--table--header--item check-box" />
-      <FormattedMessage
-        id="SelectAvatarTableHeader(avatarName)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item avatar-item">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="SelectAvatarTableHeader(language)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item language">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="SelectAvatarTableHeader(image)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item image">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="SelectAvatarTableHeader(status)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item status">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="SelectAvatarTableHeader(authorized)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item authorized">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="SelectAvatarTableHeader(test)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item test">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="SelectAvatarTableHeader(automation)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item automation">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="SelectAvatarTableHeader(accessToken)"
-      >
-        {
-          text => (
-            <div className="lo--select-avatar--table--header--item access-token">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+      <SelectAvatarTableHeaderItem type="check-box" />
+      <SelectAvatarTableHeaderItem type="avatar-name" />
+      <SelectAvatarTableHeaderItem type="language" />
+      <SelectAvatarTableHeaderItem type="image" />
+      <SelectAvatarTableHeaderItem type="status" />
+      <SelectAvatarTableHeaderItem type="authorized" />
+      <SelectAvatarTableHeaderItem type="test" />
+      <SelectAvatarTableHeaderItem type="automation" />
+      <SelectAvatarTableHeaderItem type="access-token" />
     </>
   )
 }
