@@ -84,6 +84,15 @@ const runInTheBackground = (): SelectRobotAvatar$RunInTheBackround => ({
   type: SelectRobotAvatar.RUN_IN_THE_BACKGROUND
 })
 
+export type SelectRobotAvatar$ShowAvatarImageSelect = {
+  token: lobby.Token
+  type: SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
+}
+const showAvatarImageSelect = (token: lobby.Token): SelectRobotAvatar$ShowAvatarImageSelect => ({
+  token,
+  type: SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
+})
+
 export type SelectRobotAvatar$StopAvatar = {
   token: lobby.Token[]
   type: SelectRobotAvatar.STOP
@@ -103,5 +112,6 @@ export const selectRobotAvatar = {
   hoverAvatar,
   renewAvatarToken,
   runInTheBackground,
+  showAvatarImageSelect,
   stopAvatar
 }

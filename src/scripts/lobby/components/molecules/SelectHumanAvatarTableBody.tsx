@@ -21,8 +21,9 @@ export interface StateProps {
   }
 }
 export interface DispatchProps {
-  readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
+  readonly handleAvatarImageClick: (token: lobby.Token) => () => void
   readonly handleAvatarLanguageChange: (token: lobby.Token) => (valid: boolean) => (value: lobby.Language) => void
+  readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
 }
@@ -59,6 +60,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
       />,
       <SelectAvatarTableBodyImage
         additionalClassName={additionalClassName}
+        handleClick={props.handleAvatarImageClick(id)}
         handleSelect={props.handleSelectAvatar(id)}
         image={avatar.image}
         key={`image${id}`}

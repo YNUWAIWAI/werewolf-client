@@ -6,5 +6,6 @@ export const enum SelectHumanAvatar {
   CREATE = 'selectHumanAvatar/CREATE',
   DELETE = 'selectHumanAvatar/DELETE',
   HOVER_AVATAR = 'selectHumanAvatar/HOVER_AVATAR',
-  SELECT = 'selectHumanAvatar/SELECT'
+  SELECT = 'selectHumanAvatar/SELECT',
+  SHOW_AVATAR_IMAGE_SELECT = 'selectHumanAvatar/SHOW_AVATAR_IMAGE_SELECT'
 }

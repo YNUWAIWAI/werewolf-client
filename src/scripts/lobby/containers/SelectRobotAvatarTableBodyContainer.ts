@@ -5,6 +5,7 @@ import {
   SelectRobotAvatar$ChangeCheckbox,
   SelectRobotAvatar$HoverAvatar,
   SelectRobotAvatar$RenewAvatarToken,
+  SelectRobotAvatar$ShowAvatarImageSelect,
   selectRobotAvatar
 } from '../actions'
 import SelectRobotAvatarTableBody, {
@@ -22,6 +23,7 @@ type Action =
   | SelectRobotAvatar$ChangeCheckbox
   | SelectRobotAvatar$HoverAvatar
   | SelectRobotAvatar$RenewAvatarToken
+  | SelectRobotAvatar$ShowAvatarImageSelect
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectRobotAvatar.avatar
@@ -29,6 +31,9 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAccept: accessToken => () => {
     dispatch(selectRobotAvatar.autorizationRequestAccepted(accessToken))
+  },
+  handleAvatarImageClick: token => () => {
+    dispatch(selectRobotAvatar.showAvatarImageSelect(token))
   },
   handleAvatarLanguageChange: token => valid => value => {
     if (valid) {
