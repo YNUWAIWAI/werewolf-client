@@ -1,6 +1,6 @@
 import * as React from 'react'
-import LanguageSelect from './LanguageSelect'
-import {lobby} from '../../types'
+import LanguageSelect from '../LanguageSelect'
+import {lobby} from '../../../types'
 
 interface Props {
   readonly additionalClassName: string[]

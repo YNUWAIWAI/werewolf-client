@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {lobby} from '../../types'
+import {lobby} from '../../../types'
 
 interface Props {
   readonly additionalClassName: string[]

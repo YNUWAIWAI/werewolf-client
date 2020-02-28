@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Copy from './svg/Copy'
+import Copy from '../svg/Copy'
 import {FormattedMessage} from 'react-intl'
-import {lobby} from '../../types'
+import {lobby} from '../../../types'
 
 interface Props {
   readonly additionalClassName: string[]

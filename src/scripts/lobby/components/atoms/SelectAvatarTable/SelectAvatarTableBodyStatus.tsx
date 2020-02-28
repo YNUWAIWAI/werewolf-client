@@ -1,22 +1,22 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {lobby} from '../../types'
+import {lobby} from '../../../types'
 
 interface Props {
   readonly additionalClassName: string[]
-  readonly automation: lobby.Automation
   readonly handleSelect: () => void
+  readonly status: lobby.AvatarStatus
 }
 
-export default function SelectAvatarTableBodyAutomation(props: Props) {
+export default function SelectAvatarTableBodyStatus(props: Props) {
   return (
     <FormattedMessage
-      id={`SelectAvatarTableBodyAutomation.automation(${props.automation})`}
+      id={`SelectAvatarTableBodyStatus.status(${props.status})`}
     >
       {
         text => (
           <div
-            className={`lo--select-avatar--table--body--item automation ${props.additionalClassName.join(' ')}`}
+            className={`lo--select-avatar--table--body--item status ${props.additionalClassName.join(' ')}`}
             onClick={props.handleSelect}
           >
             {text}
