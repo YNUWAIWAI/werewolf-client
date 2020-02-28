@@ -1,9 +1,9 @@
 import * as React from 'react'
-import Copy from './svg/Copy'
+import Copy from '../svg/Copy'
 import SelectAvatarTableBodyAccessToken from './SelectAvatarTableBodyAccessToken'
-import {getMessages} from '../../i18n'
-import {initRenderer} from '../../tools'
-import {lobby} from '../../types'
+import {getMessages} from '../../../i18n'
+import {initRenderer} from '../../../tools'
+import {lobby} from '../../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import TextInput from './TextInput'
+import TextInput from '../TextInput'
 
 interface Props {
   readonly additionalClassName: string[]
