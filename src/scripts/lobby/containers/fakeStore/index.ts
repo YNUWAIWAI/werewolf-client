@@ -7,7 +7,6 @@ import {
 import {ReducerState} from '../../reducers'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
 import {initialState as buildVillage} from '../../reducers/buildVillage'
-import {initialState as connectingToRobotPlayer} from '../../reducers/connectingToRobotPlayer'
 import {initialState as createNewHumanAvatar} from '../../reducers/createNewHumanAvatar'
 import {initialState as createNewRobotAvatar} from '../../reducers/createNewRobotAvatar'
 import {initialState as history} from '../../reducers/history'
@@ -30,7 +29,6 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
   const initialState: ReducerState = {
     advancedSearch,
     buildVillage,
-    connectingToRobotPlayer,
     createNewHumanAvatar,
     createNewRobotAvatar,
     history,
