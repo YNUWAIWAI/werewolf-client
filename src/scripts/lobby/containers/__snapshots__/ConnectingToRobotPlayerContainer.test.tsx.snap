@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<ConnectingToRobotPlayerContainer /> render 1`] = `"<div class=\\"lo--grid\\"><div class=\\"lo--header\\">Connecting to the robot player</div><div class=\\"lo--main-content\\">TODO</div><div class=\\"lo--aside-content \\"><ul class=\\"lo--compact-menu\\"><li class=\\"lo--compact-menu--item  \\">Return to the main page</li></ul></div></div>"`;

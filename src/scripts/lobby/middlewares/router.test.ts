@@ -247,23 +247,6 @@ describe('SHOW_BUILD_VILLAGE', () => {
     expect(push).toHaveBeenCalledWith('/')
   })
 })
-test('SHOW_CONNECTING_TO_ROBOT_PLAYER', () => {
-  const history = createMemoryHistory()
-  const push = jest.fn()
-  const store = fakeStore()
-
-  history.push = push
-
-  const nextHandler = middleware(history)(store)
-  const dispatchAPI = jest.fn()
-  const actionHandler = nextHandler(dispatchAPI)
-
-  actionHandler({
-    type: ActionTypes.App.SHOW_CONNECTING_TO_ROBOT_PLAYER
-  })
-  expect(push).toHaveBeenCalled()
-  expect(push).toHaveBeenCalledWith('/')
-})
 describe('SHOW_CREATE_NEW_AVATAR', () => {
   test('lobbyType: human', () => {
     const history = createMemoryHistory()

@@ -136,7 +136,6 @@ export type Target =
   | ActionTypes.App.REFRESH
   | ActionTypes.App.SHOW_ADVANCED_SEARCH
   | ActionTypes.App.SHOW_BUILD_VILLAGE
-  | ActionTypes.App.SHOW_CONNECTING_TO_ROBOT_PLAYER
   | ActionTypes.App.SHOW_CREATE_NEW_AVATAR
   | ActionTypes.App.SHOW_CREDITS
   | ActionTypes.App.SHOW_HISTORY
