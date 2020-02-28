@@ -10,5 +10,6 @@ export const enum SelectRobotAvatar {
   RUN_IN_THE_BACKGROUND = 'selectRobotAvatar/RUN_IN_THE_BACKGROUND',
   RUN_IN_THE_FOREGROUND = 'selectRobotAvatar/RUN_IN_THE_FOREGROUND',
   RENEW_AVATAR_TOKEN = 'selectRobotAvatar/RENEW_AVATAR_TOKEN',
+  SHOW_AVATAR_IMAGE_SELECT = 'selectRobotAvatar/CHANGE_AVATAR_IMAGE',
   STOP = 'selectRobotAvatar/STOP'
 }

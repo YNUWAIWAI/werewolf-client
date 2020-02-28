@@ -42,6 +42,27 @@ describe('<SelectRobotAvatarTableBodyContainer />', () => {
       type: ActionTypes.SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED
     })
   })
+  test('handleAvatarImageClick', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <SelectRobotAvatarTableBodyContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+
+    wrapper.find(SelectRobotAvatarTableBody).props().handleAvatarImageClick(token)()
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      token,
+      type: ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
+    })
+  })
   test('handleAvatarLanguageChange', () => {
     const store = fakeStore()
     const dispatch = jest.fn()

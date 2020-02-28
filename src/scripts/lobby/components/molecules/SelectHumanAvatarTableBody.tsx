@@ -1,6 +1,7 @@
 import * as React from 'react'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
 import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTableBodyCheckBox'
+import SelectAvatarTableBodyImage from '../atoms/SelectAvatarTableBodyImage'
 import SelectAvatarTableBodyLanguage from '../atoms/SelectAvatarTableBodyLanguage'
 import SelectAvatarTableBodySpacer from '../atoms/SelectAvatarTableBodySpacer'
 import {lobby} from '../../types'
@@ -20,8 +21,9 @@ export interface StateProps {
   }
 }
 export interface DispatchProps {
-  readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
+  readonly handleAvatarImageClick: (token: lobby.Token) => () => void
   readonly handleAvatarLanguageChange: (token: lobby.Token) => (valid: boolean) => (value: lobby.Language) => void
+  readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void
   readonly handleSelectAvatar: (id: string) => () => void
 }
@@ -55,6 +57,13 @@ export default function SelectHumanAvatarTableBody(props: Props) {
         handleSelect={props.handleSelectAvatar(id)}
         key={`language${id}`}
         language={avatar.language}
+      />,
+      <SelectAvatarTableBodyImage
+        additionalClassName={additionalClassName}
+        handleClick={props.handleAvatarImageClick(id)}
+        handleSelect={props.handleSelectAvatar(id)}
+        image={avatar.image}
+        key={`image${id}`}
       />,
       <SelectAvatarTableBodySpacer
         additionalClassName={additionalClassName}

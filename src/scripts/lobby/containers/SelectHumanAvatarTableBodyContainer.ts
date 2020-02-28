@@ -3,6 +3,7 @@ import {
   SelectHumanAvatar$ChangeAvatarName,
   SelectHumanAvatar$ChangeCheckbox,
   SelectHumanAvatar$HoverAvatar,
+  SelectHumanAvatar$ShowAvatarImageSelect,
   selectHumanAvatar
 } from '../actions'
 import SelectHumanAvatarTableBody, {
@@ -18,11 +19,15 @@ type Action =
   | SelectHumanAvatar$ChangeAvatarName
   | SelectHumanAvatar$ChangeCheckbox
   | SelectHumanAvatar$HoverAvatar
+  | SelectHumanAvatar$ShowAvatarImageSelect
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectHumanAvatar.avatar
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleAvatarImageClick: token => () => {
+    dispatch(selectHumanAvatar.showAvatarImageSelect(token))
+  },
   handleAvatarLanguageChange: token => valid => value => {
     if (valid) {
       dispatch(selectHumanAvatar.changeAvatarLanguage(token)(value))

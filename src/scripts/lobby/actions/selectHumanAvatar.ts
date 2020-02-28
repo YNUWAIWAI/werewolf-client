@@ -52,10 +52,20 @@ const hoverAvatar = (id: string): SelectHumanAvatar$HoverAvatar => ({
   type: SelectHumanAvatar.HOVER_AVATAR
 })
 
+export type SelectHumanAvatar$ShowAvatarImageSelect = {
+  token: lobby.Token
+  type: SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
+}
+const showAvatarImageSelect = (token: lobby.Token): SelectHumanAvatar$ShowAvatarImageSelect => ({
+  token,
+  type: SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
+})
+
 export const selectHumanAvatar = {
   changeAvatarImage,
   changeAvatarLanguage,
   changeAvatarName,
   changeCheckbox,
-  hoverAvatar
+  hoverAvatar,
+  showAvatarImageSelect
 }

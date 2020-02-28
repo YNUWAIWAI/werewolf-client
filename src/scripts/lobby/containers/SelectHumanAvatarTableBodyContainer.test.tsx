@@ -21,6 +21,27 @@ describe('<SelectHumanAvatarTableBodyContainer />', () => {
 
     expect(wrapper.html()).toMatchSnapshot()
   })
+  test('handleAvatarImageClick', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <SelectHumanAvatarTableBodyContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+
+    wrapper.find(SelectHumanAvatarTableBody).props().handleAvatarImageClick(token)()
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      token,
+      type: ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
+    })
+  })
   test('handleAvatarLanguageChange', () => {
     const store = fakeStore()
     const dispatch = jest.fn()

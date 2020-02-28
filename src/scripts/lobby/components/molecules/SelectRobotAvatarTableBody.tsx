@@ -4,6 +4,7 @@ import SelectAvatarTableBodyAuthorized from '../atoms/SelectAvatarTableBodyAutho
 import SelectAvatarTableBodyAutomation from '../atoms/SelectAvatarTableBodyAutomation'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTableBodyAvatarName'
 import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTableBodyCheckBox'
+import SelectAvatarTableBodyImage from '../atoms/SelectAvatarTableBodyImage'
 import SelectAvatarTableBodyLanguage from '../atoms/SelectAvatarTableBodyLanguage'
 import SelectAvatarTableBodyStatus from '../atoms/SelectAvatarTableBodyStatus'
 import SelectAvatarTableBodyTest from '../atoms/SelectAvatarTableBodyTest'
@@ -31,6 +32,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleAccept: (accessToken: lobby.Token) => () => void
+  readonly handleAvatarImageClick: (token: lobby.Token) => () => void
   readonly handleAvatarLanguageChange: (token: lobby.Token) => (valid: boolean) => (value: lobby.Language) => void
   readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void
@@ -79,6 +81,12 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           handleChange={props.handleAvatarLanguageChange(id)}
           handleSelect={props.handleSelectAvatar(id)}
           language={avatar.language}
+        />
+        <SelectAvatarTableBodyImage
+          additionalClassName={additionalClassName}
+          handleClick={props.handleAvatarImageClick(id)}
+          handleSelect={props.handleSelectAvatar(id)}
+          image={avatar.image}
         />
         <SelectAvatarTableBodyStatus
           additionalClassName={additionalClassName}

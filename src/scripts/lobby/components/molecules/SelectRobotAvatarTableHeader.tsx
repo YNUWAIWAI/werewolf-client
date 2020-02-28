@@ -28,6 +28,17 @@ export default function SelectRobotAvatarTableHeader() {
         }
       </FormattedMessage>
       <FormattedMessage
+        id="SelectAvatarTableHeader(image)"
+      >
+        {
+          text => (
+            <div className="lo--select-avatar--table--header--item image">
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
         id="SelectAvatarTableHeader(status)"
       >
         {
