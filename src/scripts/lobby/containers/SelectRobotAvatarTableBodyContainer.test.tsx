@@ -5,6 +5,7 @@ import {Provider} from 'react-redux'
 import SelectRobotAvatarTableBody from '../components/molecules/SelectRobotAvatarTableBody'
 import SelectRobotAvatarTableBodyContainer from './SelectRobotAvatarTableBodyContainer'
 import fakeStore from './fakeStore'
+import {lobby} from '../types'
 import {mount} from 'enzyme'
 
 describe('<SelectRobotAvatarTableBodyContainer />', () => {
@@ -39,6 +40,29 @@ describe('<SelectRobotAvatarTableBodyContainer />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       accessToken,
       type: ActionTypes.SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED
+    })
+  })
+  test('handleAvatarLanguageChange', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <SelectRobotAvatarTableBodyContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    const language = lobby.Language.en
+
+    wrapper.find(SelectRobotAvatarTableBody).props().handleAvatarLanguageChange(token)(true)(language)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      language,
+      token,
+      type: ActionTypes.SelectRobotAvatar.CHANGE_AVATAR_LANGUAGE
     })
   })
   describe('handleAvatarNameChange', () => {

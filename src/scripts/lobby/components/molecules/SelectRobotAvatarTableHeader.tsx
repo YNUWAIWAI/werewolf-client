@@ -17,6 +17,17 @@ export default function SelectRobotAvatarTableHeader() {
         }
       </FormattedMessage>
       <FormattedMessage
+        id="SelectAvatarTableHeader(language)"
+      >
+        {
+          text => (
+            <div className="lo--select-avatar--table--header--item language">
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
+      <FormattedMessage
         id="SelectAvatarTableHeader(status)"
       >
         {

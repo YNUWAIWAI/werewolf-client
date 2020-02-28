@@ -1,4 +1,5 @@
 import {
+  SelectHumanAvatar$ChangeAvatarLanguage,
   SelectHumanAvatar$ChangeAvatarName,
   SelectHumanAvatar$ChangeCheckbox,
   SelectHumanAvatar$HoverAvatar,
@@ -13,6 +14,7 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
+  | SelectHumanAvatar$ChangeAvatarLanguage
   | SelectHumanAvatar$ChangeAvatarName
   | SelectHumanAvatar$ChangeCheckbox
   | SelectHumanAvatar$HoverAvatar
@@ -21,6 +23,11 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectHumanAvatar.avatar
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleAvatarLanguageChange: token => valid => value => {
+    if (valid) {
+      dispatch(selectHumanAvatar.changeAvatarLanguage(token)(value))
+    }
+  },
   handleAvatarNameChange: token => valid => value => {
     if (valid) {
       dispatch(selectHumanAvatar.changeAvatarName(token)(value))

@@ -5,6 +5,7 @@ import {Provider} from 'react-redux'
 import SelectHumanAvatarTableBody from '../components/molecules/SelectHumanAvatarTableBody'
 import SelectHumanAvatarTableBodyContainer from './SelectHumanAvatarTableBodyContainer'
 import fakeStore from './fakeStore'
+import {lobby} from '../types'
 import {mount} from 'enzyme'
 
 describe('<SelectHumanAvatarTableBodyContainer />', () => {
@@ -19,6 +20,29 @@ describe('<SelectHumanAvatarTableBodyContainer />', () => {
     )
 
     expect(wrapper.html()).toMatchSnapshot()
+  })
+  test('handleAvatarLanguageChange', () => {
+    const store = fakeStore()
+    const dispatch = jest.fn()
+
+    store.dispatch = dispatch
+    const wrapper = mount(
+      <Provider store={store} >
+        <IntlProviderContainer>
+          <SelectHumanAvatarTableBodyContainer />
+        </IntlProviderContainer>
+      </Provider>
+    )
+    const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    const language = lobby.Language.en
+
+    wrapper.find(SelectHumanAvatarTableBody).props().handleAvatarLanguageChange(token)(true)(language)
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({
+      language,
+      token,
+      type: ActionTypes.SelectHumanAvatar.CHANGE_AVATAR_LANGUAGE
+    })
   })
   describe('handleAvatarNameChange', () => {
     test('valid', () => {

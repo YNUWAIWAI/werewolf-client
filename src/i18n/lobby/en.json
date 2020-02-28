@@ -108,6 +108,7 @@
   "SelectAvatarTableHeader(authorized)": "Authorized",
   "SelectAvatarTableHeader(automation)": "Automation",
   "SelectAvatarTableHeader(avatarName)": "Avatar name",
+  "SelectAvatarTableHeader(language)": "Language",
   "SelectAvatarTableHeader(status)": "Status",
   "SelectAvatarTableHeader(test)": "Test",
   "SelectHumanAvatarBox.header": "Select an avatar…",
