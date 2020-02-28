@@ -81,10 +81,6 @@ const router: (history: History) => Middleware = history => store => next => act
 
       return next(action)
     }
-    case ActionTypes.App.SHOW_CONNECTING_TO_ROBOT_PLAYER:
-      history.push('/')
-
-      return next(action)
     case ActionTypes.App.SHOW_CREATE_NEW_AVATAR: {
       const lobbyType = getLobbyType(history.location.pathname)
 
