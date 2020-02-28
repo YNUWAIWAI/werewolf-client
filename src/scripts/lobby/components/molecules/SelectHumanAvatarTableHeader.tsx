@@ -27,6 +27,17 @@ export default function SelectHumanAvatarTableHeader() {
           )
         }
       </FormattedMessage>
+      <FormattedMessage
+        id="SelectAvatarTableHeader(image)"
+      >
+        {
+          text => (
+            <div className="lo--select-avatar--table--header--item image">
+              {text}
+            </div>
+          )
+        }
+      </FormattedMessage>
       <div className="lo--select-avatar--table--header--item spacer" />
       <div className="lo--select-avatar--table--header--item spacer" />
       <div className="lo--select-avatar--table--header--item spacer" />
