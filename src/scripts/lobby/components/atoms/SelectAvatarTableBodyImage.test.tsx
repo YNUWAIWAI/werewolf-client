@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {ImagePath} from '../../constants/ImagePath'
 import SelectAvatarTableBodyImage from './SelectAvatarTableBodyImage'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
@@ -14,7 +15,7 @@ test('render', () => {
       additionalClassName={[]}
       handleClick={handleClick}
       handleSelect={handleSelect}
-      image=""
+      image={ImagePath.Character.a}
     />
   )
 
@@ -28,11 +29,11 @@ test('handleClick', () => {
       additionalClassName={[]}
       handleClick={handleClick}
       handleSelect={handleSelect}
-      image=""
+      image={ImagePath.Character.a}
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item. > img').simulate('click')
+  wrapper.find('.lo--select-avatar--table--body--item > img').simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)
 })
 test('handleSelect', () => {
@@ -43,7 +44,7 @@ test('handleSelect', () => {
       additionalClassName={[]}
       handleClick={handleClick}
       handleSelect={handleSelect}
-      image=""
+      image={ImagePath.Character.a}
     />
   )
 
