@@ -62,7 +62,7 @@ describe('<SelectRobotAvatarTableBodyContainer />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       language,
       token,
-      type: ActionTypes.SelectHumanAvatar.CHANGE_AVATAR_NAME
+      type: ActionTypes.SelectHumanAvatar.CHANGE_AVATAR_LANGUAGE
     })
   })
   describe('handleAvatarNameChange', () => {
