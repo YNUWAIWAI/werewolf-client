@@ -37,6 +37,7 @@ describe('render', () => {
       }
     }
     const handleAccept = jest.fn()
+    const handleAvatarImageClick = jest.fn()
     const handleAvatarLanguageChange = jest.fn()
     const handleAvatarNameChange = jest.fn()
     const handleHoverAvatar = jest.fn()
@@ -46,6 +47,7 @@ describe('render', () => {
       <SelectRobotAvatarTableBody
         avatar={avatar}
         handleAccept={handleAccept}
+        handleAvatarImageClick={handleAvatarImageClick}
         handleAvatarLanguageChange={handleAvatarLanguageChange}
         handleAvatarNameChange={handleAvatarNameChange}
         handleHoverAvatar={handleHoverAvatar}
@@ -99,6 +101,7 @@ describe('render', () => {
       }
     }
     const handleAccept = jest.fn()
+    const handleAvatarImageClick = jest.fn()
     const handleAvatarLanguageChange = jest.fn()
     const handleAvatarNameChange = jest.fn()
     const handleHoverAvatar = jest.fn()
@@ -108,6 +111,7 @@ describe('render', () => {
       <SelectRobotAvatarTableBody
         avatar={avatar}
         handleAccept={handleAccept}
+        handleAvatarImageClick={handleAvatarImageClick}
         handleAvatarLanguageChange={handleAvatarLanguageChange}
         handleAvatarNameChange={handleAvatarNameChange}
         handleHoverAvatar={handleHoverAvatar}
