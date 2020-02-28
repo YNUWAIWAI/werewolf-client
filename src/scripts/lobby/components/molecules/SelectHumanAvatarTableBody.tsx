@@ -59,6 +59,11 @@ export default function SelectHumanAvatarTableBody(props: Props) {
       <SelectAvatarTableBodySpacer
         additionalClassName={additionalClassName}
         handleSelect={props.handleSelectAvatar(id)}
+        key={`spacer${id}-1`}
+      />,
+      <SelectAvatarTableBodySpacer
+        additionalClassName={additionalClassName}
+        handleSelect={props.handleSelectAvatar(id)}
         key={`spacer${id}-2`}
       />,
       <SelectAvatarTableBodySpacer
