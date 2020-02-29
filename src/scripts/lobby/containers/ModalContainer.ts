@@ -1,42 +1,12 @@
-import * as ActionTypes from '../constants/ActionTypes'
-import {
-  KickOutPlayer,
-  SelectNo,
-  SelectYes,
-  kickOutPlayer,
-  selectNo,
-  selectYes
-} from '../actions'
-import Modal, {
-  DispatchProps, StateProps
-} from '../components/organisms/Modal'
-import {Dispatch} from 'redux'
+import Modal, {StateProps} from '../components/organisms/Modal'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
-type Action =
-  | KickOutPlayer
-  | SelectNo
-  | SelectYes
-
-const mapStateToProps = (state: ReducerState): StateProps => state.modal
-const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleClickNo: () => {
-    dispatch(selectNo())
-  },
-  handleClickYes: type => {
-    dispatch(selectYes())
-    switch (type) {
-      case ActionTypes.App.KICK_OUT_PLAYER:
-        dispatch(kickOutPlayer())
-        break
-      default:
-    }
-  }
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  visible: state.modal.visible
 })
 const ModalContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Modal)
 
 export default ModalContainer
