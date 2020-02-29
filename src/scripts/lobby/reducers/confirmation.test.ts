@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import reducer, {initialState} from './modal'
+import reducer, {initialState} from './confirmation'
 
 test('CONFIRM_KICK_OUT_PLAYER', () => {
   expect(
