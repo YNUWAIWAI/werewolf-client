@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConfirmationContainer /> render 1`] = `"<div class=\\"lo--modal\\"><div class=\\"lo--modal--description\\">dummy</div><button class=\\"lo--modal--button yes\\">Yes</button><button class=\\"lo--modal--button no\\">No</button></div>"`;
