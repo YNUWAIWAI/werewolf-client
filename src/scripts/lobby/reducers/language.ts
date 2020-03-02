@@ -1,13 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  ChangeLanguage,
-  Message
+  Message,
+  Settings
 } from '../actions'
 import {lobby} from '../types'
 
 export type State = lobby.Language
 type Action =
-  | ChangeLanguage
+  | Settings.ChangeLanguage
   | Message.Avatar
 
 export const initialState: State = lobby.Language.en

@@ -1,46 +1,38 @@
-import {
-  ChangeLanguage,
-  ChangeUserEmail,
-  ChangeUserName,
-  ChangeUserPassword,
-  SubmitLogout,
-  changeLanguage,
-  changeUserEmail,
-  changeUserName,
-  changeUserPassword,
-  submitLogout
-} from '../actions'
 import Component, {
   DispatchProps,
   StateProps
 } from '../components/templates/Settings'
+import {
+  Settings,
+  settings
+} from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | ChangeLanguage
-  | ChangeUserEmail
-  | ChangeUserName
-  | ChangeUserPassword
-  | SubmitLogout
+  | Settings.ChangeLanguage
+  | Settings.ChangeUserEmail
+  | Settings.ChangeUserName
+  | Settings.ChangeUserPassword
+  | Settings.SubmitLogout
 
 const mapStateToProps = (state: ReducerState): StateProps => state.settings
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleChangeLanguage: value => {
-    dispatch(changeLanguage(value))
+    dispatch(settings.changeLanguage(value))
   },
   handleChangeUserEmail: value => {
-    dispatch(changeUserEmail(value))
+    dispatch(settings.changeUserEmail(value))
   },
   handleChangeUserName: value => {
-    dispatch(changeUserName(value))
+    dispatch(settings.changeUserName(value))
   },
   handleChangeUserPassword: value => {
-    dispatch(changeUserPassword(value))
+    dispatch(settings.changeUserPassword(value))
   },
   handleSubmitLogout: () => {
-    dispatch(submitLogout())
+    dispatch(settings.submitLogout())
   }
 })
 const SettingsContainer = connect(
