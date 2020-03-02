@@ -3,10 +3,11 @@ import {FormattedMessage} from 'react-intl'
 import {convertImageUrl} from '../../util'
 
 export interface StateProps {
-  selectedImage: string
-  imageList: string[]
+  readonly selectedImage: string
+  readonly imageList: string[]
 }
 export interface DispatchProps {
+  readonly handleImageSelect: (image: string) => void
 }
 export type Props = StateProps & DispatchProps
 
@@ -38,6 +39,7 @@ export default function AvatarImageSelect(props: Props) {
               >
                 <img
                   className={`lo--avatar-image-select--image-list--item--image ${image === props.selectedImage ? 'selected' : ''}`}
+                  onClick={() => props.handleImageSelect(image)}
                   src={convertImageUrl(image)}
                 />
               </div>
