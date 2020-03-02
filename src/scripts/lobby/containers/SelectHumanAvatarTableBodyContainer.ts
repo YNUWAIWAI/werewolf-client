@@ -25,8 +25,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectHumanAvatar.avatar
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleAvatarImageClick: token => () => {
-    dispatch(selectHumanAvatar.showAvatarImageSelect(token))
+  handleAvatarImageClick: token => image => {
+    dispatch(selectHumanAvatar.showAvatarImageSelect(token)(image))
   },
   handleAvatarLanguageChange: token => valid => value => {
     if (valid) {

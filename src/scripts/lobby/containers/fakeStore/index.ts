@@ -6,6 +6,7 @@ import {
 } from 'redux'
 import {ReducerState} from '../../reducers'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
+import {initialState as avatarImageList} from '../../reducers/avatarImageList'
 import {initialState as buildVillage} from '../../reducers/buildVillage'
 import {initialState as confirmation} from '../../reducers/confirmation'
 import {initialState as createNewHumanAvatar} from '../../reducers/createNewHumanAvatar'
@@ -29,6 +30,7 @@ import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayer
 export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unknown>> => {
   const initialState: ReducerState = {
     advancedSearch,
+    avatarImageList,
     buildVillage,
     confirmation,
     createNewHumanAvatar,

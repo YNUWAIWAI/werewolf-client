@@ -32,7 +32,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleAccept: (accessToken: lobby.Token) => () => void
-  readonly handleAvatarImageClick: (token: lobby.Token) => () => void
+  readonly handleAvatarImageClick: (token: lobby.Token) => (image: string) => void
   readonly handleAvatarLanguageChange: (token: lobby.Token) => (valid: boolean) => (value: lobby.Language) => void
   readonly handleAvatarNameChange: (token: lobby.Token) => (valid: boolean) => (value: string) => void
   readonly handleHoverAvatar: (id: string) => () => void

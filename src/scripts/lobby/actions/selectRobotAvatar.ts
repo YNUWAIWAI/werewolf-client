@@ -85,10 +85,12 @@ const runInTheBackground = (): SelectRobotAvatar$RunInTheBackround => ({
 })
 
 export type SelectRobotAvatar$ShowAvatarImageSelect = {
+  image: string
   token: lobby.Token
   type: SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
 }
-const showAvatarImageSelect = (token: lobby.Token): SelectRobotAvatar$ShowAvatarImageSelect => ({
+const showAvatarImageSelect = (token: lobby.Token) => (image: string): SelectRobotAvatar$ShowAvatarImageSelect => ({
+  image,
   token,
   type: SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
 })

@@ -32,8 +32,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAccept: accessToken => () => {
     dispatch(selectRobotAvatar.autorizationRequestAccepted(accessToken))
   },
-  handleAvatarImageClick: token => () => {
-    dispatch(selectRobotAvatar.showAvatarImageSelect(token))
+  handleAvatarImageClick: token => image => {
+    dispatch(selectRobotAvatar.showAvatarImageSelect(token)(image))
   },
   handleAvatarLanguageChange: token => valid => value => {
     if (valid) {
