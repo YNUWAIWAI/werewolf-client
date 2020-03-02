@@ -1,14 +1,12 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ConfirmKickOutPlayer,
-  SelectAvatarImage$CloseModal,
-  SelectHumanAvatar$ShowAvatarImageSelect,
+  SelectAvatarImage,
+  SelectHumanAvatar,
   SelectNo,
-  SelectRobotAvatar$ShowAvatarImageSelect,
+  SelectRobotAvatar,
   SelectYes,
-  SocketClose,
-  SocketError,
-  SocketOpen
+  Socket
 } from '../actions'
 
 export interface State {
@@ -17,14 +15,14 @@ export interface State {
 }
 type Action =
   | ConfirmKickOutPlayer
-  | SelectAvatarImage$CloseModal
-  | SelectHumanAvatar$ShowAvatarImageSelect
+  | SelectAvatarImage.CloseModal
+  | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectNo
-  | SelectRobotAvatar$ShowAvatarImageSelect
+  | SelectRobotAvatar.ShowAvatarImageSelect
   | SelectYes
-  | SocketClose
-  | SocketError
-  | SocketOpen
+  | Socket.Close
+  | Socket.Error
+  | Socket.Open
 
 export const initialState: State = {
   loading: true,

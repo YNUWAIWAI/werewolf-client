@@ -1,4 +1,4 @@
-import Modal, {StateProps} from '../components/organisms/Modal'
+import Component, {StateProps} from '../components/organisms/Modal'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -8,6 +8,6 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 })
 const ModalContainer = connect(
   mapStateToProps
-)(Modal)
+)(Component)
 
 export default ModalContainer

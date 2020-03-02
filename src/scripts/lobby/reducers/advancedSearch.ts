@@ -1,16 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  AdvancedSearch$ChangeAvatar,
-  AdvancedSearch$ChangeCheckbox,
-  AdvancedSearch$ChangeComment,
-  AdvancedSearch$ChangeHostName,
-  AdvancedSearch$ChangeMaximum,
-  AdvancedSearch$ChangeMinimum,
-  AdvancedSearch$ChangeValidity,
-  AdvancedSearch$ChangeVillageName,
+  AdvancedSearch,
   ChangeLobby,
-  Message$Avatar,
-  Message$SearchResult,
+  Message,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -50,17 +42,17 @@ export interface State {
   readonly villageItems: lobby.Village[]
 }
 type Action =
-  | AdvancedSearch$ChangeAvatar
-  | AdvancedSearch$ChangeCheckbox
-  | AdvancedSearch$ChangeComment
-  | AdvancedSearch$ChangeHostName
-  | AdvancedSearch$ChangeMaximum
-  | AdvancedSearch$ChangeMinimum
-  | AdvancedSearch$ChangeValidity
-  | AdvancedSearch$ChangeVillageName
+  | AdvancedSearch.ChangeAvatar
+  | AdvancedSearch.ChangeCheckbox
+  | AdvancedSearch.ChangeComment
+  | AdvancedSearch.ChangeHostName
+  | AdvancedSearch.ChangeMaximum
+  | AdvancedSearch.ChangeMinimum
+  | AdvancedSearch.ChangeValidity
+  | AdvancedSearch.ChangeVillageName
   | ChangeLobby
-  | Message$Avatar
-  | Message$SearchResult
+  | Message.Avatar
+  | Message.SearchResult
   | Transition
 
 export const initialState: State = {

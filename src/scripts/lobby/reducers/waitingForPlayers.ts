@@ -2,8 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangeLobby,
   ConfirmKickOutPlayer,
-  Message$Played,
-  Message$WaitingPage,
+  Message,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -19,8 +18,8 @@ export interface State {
 type Action =
   | ChangeLobby
   | ConfirmKickOutPlayer
-  | Message$Played
-  | Message$WaitingPage
+  | Message.Played
+  | Message.WaitingPage
   | Transition
 
 export const initialState: State = {

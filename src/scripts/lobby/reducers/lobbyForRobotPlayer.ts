@@ -1,7 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  Message$Avatar,
-  Message$Lobby,
+  Message,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -15,8 +14,8 @@ export interface State {
   readonly villageItems: lobby.Village[]
 }
 type Action =
-  | Message$Avatar
-  | Message$Lobby
+  | Message.Avatar
+  | Message.Lobby
   | Transition
 
 export const initialState: State = {

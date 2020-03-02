@@ -1,10 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangeLobby,
-  IdSearch$ChangeSearchId,
-  IdSearch$ChangeValidity,
-  Message$Avatar,
-  Message$SearchResult,
+  IdSearch,
+  Message,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -22,10 +20,10 @@ export interface State {
 }
 type Action =
   | ChangeLobby
-  | IdSearch$ChangeSearchId
-  | IdSearch$ChangeValidity
-  | Message$Avatar
-  | Message$SearchResult
+  | IdSearch.ChangeSearchId
+  | IdSearch.ChangeValidity
+  | Message.Avatar
+  | Message.SearchResult
   | Transition
 
 export const initialState: State = {

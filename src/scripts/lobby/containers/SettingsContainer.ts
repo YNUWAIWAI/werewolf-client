@@ -10,7 +10,7 @@ import {
   changeUserPassword,
   submitLogout
 } from '../actions'
-import Settings, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/templates/Settings'
@@ -46,6 +46,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const SettingsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Settings)
+)(Component)
 
 export default SettingsContainer

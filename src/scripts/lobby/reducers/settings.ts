@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {Message$Settings} from '../actions'
+import {Message} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
@@ -12,7 +12,7 @@ export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
-  | Message$Settings
+  | Message.Settings
 
 export const initialState: State = {
   initialValue: {

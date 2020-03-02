@@ -1,34 +1,27 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import AdvancedSearch, {
-  DispatchProps,
-  StateProps
-} from '../components/templates/AdvancedSearch'
 import {
-  AdvancedSearch$ChangeAvatar,
-  AdvancedSearch$ChangeCheckbox,
-  AdvancedSearch$ChangeComment,
-  AdvancedSearch$ChangeHostName,
-  AdvancedSearch$ChangeMaximum,
-  AdvancedSearch$ChangeMinimum,
-  AdvancedSearch$ChangeValidity,
-  AdvancedSearch$ChangeVillageName,
+  AdvancedSearch,
   SelectVillage,
   advancedSearch,
   selectVillage
 } from '../actions'
+import Component, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/AdvancedSearch'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | AdvancedSearch$ChangeAvatar
-  | AdvancedSearch$ChangeCheckbox
-  | AdvancedSearch$ChangeComment
-  | AdvancedSearch$ChangeHostName
-  | AdvancedSearch$ChangeMaximum
-  | AdvancedSearch$ChangeMinimum
-  | AdvancedSearch$ChangeValidity
-  | AdvancedSearch$ChangeVillageName
+  | AdvancedSearch.ChangeAvatar
+  | AdvancedSearch.ChangeCheckbox
+  | AdvancedSearch.ChangeComment
+  | AdvancedSearch.ChangeHostName
+  | AdvancedSearch.ChangeMaximum
+  | AdvancedSearch.ChangeMinimum
+  | AdvancedSearch.ChangeValidity
+  | AdvancedSearch.ChangeVillageName
   | SelectVillage
 
 const mapStateToProps = (state: ReducerState): StateProps => {
@@ -99,6 +92,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const AdvancedSearchContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AdvancedSearch)
+)(Component)
 
 export default AdvancedSearchContainer

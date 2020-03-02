@@ -1,4 +1,4 @@
-import Menu, {DispatchProps} from '../components/organisms/Menu'
+import Component, {DispatchProps} from '../components/organisms/Menu'
 import {
   Transition,
   transition
@@ -17,6 +17,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const MenuContainer = connect(
   null,
   mapDispatchToProps
-)(Menu)
+)(Component)
 
 export default MenuContainer

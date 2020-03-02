@@ -1,25 +1,21 @@
-import {
-  SelectHumanAvatar$ChangeAvatarLanguage,
-  SelectHumanAvatar$ChangeAvatarName,
-  SelectHumanAvatar$ChangeCheckbox,
-  SelectHumanAvatar$HoverAvatar,
-  SelectHumanAvatar$ShowAvatarImageSelect,
-  selectHumanAvatar
-} from '../actions'
-import SelectHumanAvatarTableBody, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/molecules/SelectHumanAvatarTableBody'
+import {
+  SelectHumanAvatar,
+  selectHumanAvatar
+} from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | SelectHumanAvatar$ChangeAvatarLanguage
-  | SelectHumanAvatar$ChangeAvatarName
-  | SelectHumanAvatar$ChangeCheckbox
-  | SelectHumanAvatar$HoverAvatar
-  | SelectHumanAvatar$ShowAvatarImageSelect
+  | SelectHumanAvatar.ChangeAvatarLanguage
+  | SelectHumanAvatar.ChangeAvatarName
+  | SelectHumanAvatar.ChangeCheckbox
+  | SelectHumanAvatar.HoverAvatar
+  | SelectHumanAvatar.ShowAvatarImageSelect
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectHumanAvatar.avatar
@@ -48,6 +44,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const SelectHumanAvatarTableBodyContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SelectHumanAvatarTableBody)
+)(Component)
 
 export default SelectHumanAvatarTableBodyContainer

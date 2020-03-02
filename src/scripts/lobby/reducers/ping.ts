@@ -1,7 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  Message$Ping,
-  Message$WaitingPage,
+  Message,
   Transition
 } from '../actions'
 import {lobby} from '../types'
@@ -12,8 +11,8 @@ export interface State {
   readonly results: lobby.PingResult[]
 }
 type Action =
-  | Message$Ping
-  | Message$WaitingPage
+  | Message.Ping
+  | Message.WaitingPage
   | Transition
 
 export const initialState: State = {

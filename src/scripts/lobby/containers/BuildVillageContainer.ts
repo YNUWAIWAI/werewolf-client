@@ -1,30 +1,24 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import BuildVillage, {
+import {
+  BuildVillage,
+  buildVillage
+} from '../actions'
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/templates/BuildVillage'
-import {
-  BuildVillage$ChangeAvatar,
-  BuildVillage$ChangeComment,
-  BuildVillage$ChangeMember,
-  BuildVillage$ChangeNumberOfPlayers,
-  BuildVillage$ChangeNumberOfRobots,
-  BuildVillage$ChangeValidity,
-  BuildVillage$ChangeVillageName,
-  buildVillage
-} from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | BuildVillage$ChangeAvatar
-  | BuildVillage$ChangeComment
-  | BuildVillage$ChangeMember
-  | BuildVillage$ChangeNumberOfPlayers
-  | BuildVillage$ChangeNumberOfRobots
-  | BuildVillage$ChangeValidity
-  | BuildVillage$ChangeVillageName
+  | BuildVillage.ChangeAvatar
+  | BuildVillage.ChangeComment
+  | BuildVillage.ChangeMember
+  | BuildVillage.ChangeNumberOfPlayers
+  | BuildVillage.ChangeNumberOfRobots
+  | BuildVillage.ChangeValidity
+  | BuildVillage.ChangeVillageName
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
@@ -92,6 +86,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const BuildVillageContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(BuildVillage)
+)(Component)
 
 export default BuildVillageContainer

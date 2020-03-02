@@ -1,4 +1,4 @@
-import CreateNewRobotAvatar, {StateProps} from '../components/templates/CreateNewRobotAvatar'
+import Component, {StateProps} from '../components/templates/CreateNewRobotAvatar'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -8,6 +8,6 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 })
 const CreateNewRobotAvatarContainer = connect(
   mapStateToProps
-)(CreateNewRobotAvatar)
+)(Component)
 
 export default CreateNewRobotAvatarContainer

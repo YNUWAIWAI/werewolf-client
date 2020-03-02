@@ -13,7 +13,7 @@ import {
   VILLAGE_SCHEMA
 } from '../constants/SchemaPath'
 import {
-  SocketSend,
+  Socket,
   Transition,
   init,
   message
@@ -566,7 +566,7 @@ describe('socket/SEND', () => {
       token: avatarToken.humanPlayer,
       type: lobby.PayloadType.buildVillage
     }
-    const action: SocketSend = {
+    const action: Socket.Send = {
       payload,
       type: ActionTypes.Socket.SEND
     }

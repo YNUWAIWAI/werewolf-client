@@ -1,22 +1,25 @@
-import {IdSearch} from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 
-export type IdSearch$ChangeSearchId = {
-  id: number
-  type: IdSearch.CHANGE_SEARCH_ID
+// eslint-disable-next-line @typescript-eslint/no-namespace
+export declare namespace IdSearch {
+  type ChangeSearchId = {
+    id: number
+    type: ActionTypes.IdSearch.CHANGE_SEARCH_ID
+  }
+  type ChangeValidity = {
+    propName: string
+    type: ActionTypes.IdSearch.CHANGE_VALIDITY
+    validity: boolean
+  }
 }
-export const changeSearchId = (id: number): IdSearch$ChangeSearchId => ({
+
+const changeSearchId = (id: number): IdSearch.ChangeSearchId => ({
   id,
-  type: IdSearch.CHANGE_SEARCH_ID
+  type: ActionTypes.IdSearch.CHANGE_SEARCH_ID
 })
-
-export type IdSearch$ChangeValidity = {
-  propName: string
-  type: IdSearch.CHANGE_VALIDITY
-  validity: boolean
-}
-const changeValidity = (propName: string) => (validity: boolean): IdSearch$ChangeValidity => ({
+const changeValidity = (propName: string) => (validity: boolean): IdSearch.ChangeValidity => ({
   propName,
-  type: IdSearch.CHANGE_VALIDITY,
+  type: ActionTypes.IdSearch.CHANGE_VALIDITY,
   validity
 })
 

@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
-import {Message$Lobby} from '../actions'
+import {Message} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
@@ -9,7 +9,7 @@ export interface State {
   readonly villageItems: lobby.Village[]
 }
 type Action =
-  | Message$Lobby
+  | Message.Lobby
 
 export const initialState: State = {
   isPlayer: false,

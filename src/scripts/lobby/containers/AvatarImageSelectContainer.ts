@@ -1,10 +1,9 @@
-import AvatarImageSelect, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/organisms/AvatarImageSelect'
 import {
-  SelectAvatarImage$CloseModal,
-  SelectAvatarImage$SelectAvatar,
+  SelectAvatarImage,
   selectAvatarImage
 } from '../actions'
 import {Dispatch} from 'redux'
@@ -12,8 +11,8 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | SelectAvatarImage$CloseModal
-  | SelectAvatarImage$SelectAvatar
+  | SelectAvatarImage.CloseModal
+  | SelectAvatarImage.SelectAvatar
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   imageList: state.avatarImageList.imageList,
@@ -31,6 +30,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const AvatarImageSelectContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AvatarImageSelect)
+)(Component)
 
 export default AvatarImageSelectContainer
