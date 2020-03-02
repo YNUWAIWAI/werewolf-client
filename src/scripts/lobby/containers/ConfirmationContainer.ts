@@ -3,12 +3,10 @@ import Component, {
   DispatchProps, StateProps
 } from '../components/organisms/Confirmation'
 import {
+  Confirmation,
   KickOutPlayer,
-  SelectNo,
-  SelectYes,
-  kickOutPlayer,
-  selectNo,
-  selectYes
+  confirmation,
+  kickOutPlayer
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
@@ -16,16 +14,16 @@ import {connect} from 'react-redux'
 
 type Action =
   | KickOutPlayer
-  | SelectNo
-  | SelectYes
+  | Confirmation.SelectNo
+  | Confirmation.SelectYes
 
 const mapStateToProps = (state: ReducerState): StateProps => state.confirmation
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleClickNo: () => {
-    dispatch(selectNo())
+    dispatch(confirmation.selectNo())
   },
   handleClickYes: type => {
-    dispatch(selectYes())
+    dispatch(confirmation.selectYes())
     switch (type) {
       case ActionTypes.App.KICK_OUT_PLAYER:
         dispatch(kickOutPlayer())

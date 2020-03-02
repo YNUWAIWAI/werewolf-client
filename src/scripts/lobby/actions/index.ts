@@ -3,6 +3,7 @@ import {lobby as Lobby} from '../types'
 
 export * from './advancedSearch'
 export * from './buildVillage'
+export * from './confirmation'
 export * from './idSearch'
 export * from './message'
 export * from './selectAvatarImage'
@@ -56,13 +57,6 @@ export const init = (): Init => ({
   type: ActionTypes.App.INIT
 })
 
-export type SelectNo = {
-  type: ActionTypes.App.SELECT_NO
-}
-export const selectNo = (): SelectNo => ({
-  type: ActionTypes.App.SELECT_NO
-})
-
 export type SelectVillage = {
   id: number
   type: ActionTypes.App.SELECT_VILLAGE
@@ -70,13 +64,6 @@ export type SelectVillage = {
 export const selectVillage = (id: number): SelectVillage => ({
   id,
   type: ActionTypes.App.SELECT_VILLAGE
-})
-
-export type SelectYes = {
-  type: ActionTypes.App.SELECT_YES
-}
-export const selectYes = (): SelectYes => ({
-  type: ActionTypes.App.SELECT_YES
 })
 
 export type ShowVillage = {
