@@ -1,4 +1,5 @@
 import * as React from 'react'
+import AvatarImageSelect from './AvatarImageSelect'
 import Confirmation from './Confirmation'
 import Modal from './Modal'
 import {Provider} from 'react-redux'
@@ -11,17 +12,31 @@ const store = fakeStore()
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 describe('render', () => {
-  test('visible', () => {
-    const wrapper = mountWithIntl(
-      <Provider store={store}>
-        <Modal
-          type={lobby.ModalType.confirmation}
-          visible
-        />
-      </Provider>
-    )
+  describe('visible', () => {
+    test('confirmation', () => {
+      const wrapper = mountWithIntl(
+        <Provider store={store}>
+          <Modal
+            type={lobby.ModalType.confirmation}
+            visible
+          />
+        </Provider>
+      )
 
-    expect(wrapper.find(Confirmation).exists()).toBe(true)
+      expect(wrapper.find(Confirmation).exists()).toBe(true)
+    })
+    test('avatarImageSelect', () => {
+      const wrapper = mountWithIntl(
+        <Provider store={store}>
+          <Modal
+            type={lobby.ModalType.avatarImageSelect}
+            visible
+          />
+        </Provider>
+      )
+
+      expect(wrapper.find(AvatarImageSelect).exists()).toBe(true)
+    })
   })
   test('visible={false}', () => {
     const wrapper = mountWithIntl(
