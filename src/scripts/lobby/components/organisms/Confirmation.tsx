@@ -18,7 +18,7 @@ export type Props = StateProps & DispatchProps
 
 export default function Confirmation(props: Props) {
   return (
-    <div className="lo--modal">
+    <div className="lo--confirmation">
       <FormattedMessage
         id={props.descriptionId}
         values={{
@@ -28,7 +28,7 @@ export default function Confirmation(props: Props) {
         {
           text => (
             <div
-              className="lo--modal--description"
+              className="lo--confirmation--description"
             >
               {text}
             </div>
@@ -41,7 +41,7 @@ export default function Confirmation(props: Props) {
         {
           text => (
             <button
-              className="lo--modal--button yes"
+              className="lo--confirmation--button yes"
               onClick={() => props.handleClickYes(props.type)}
             >
               {text}
@@ -55,7 +55,7 @@ export default function Confirmation(props: Props) {
         {
           text => (
             <button
-              className="lo--modal--button no"
+              className="lo--confirmation--button no"
               onClick={() => props.handleClickNo()}
             >
               {text}
