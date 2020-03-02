@@ -286,7 +286,7 @@ describe('CHANGE_LANGUAGE', () => {
   const actionHandler = nextHandler(dispatchAPI)
   const action: Settings.ChangeLanguage = {
     language: lobby.Language.ja,
-    type: ActionTypes.App.CHANGE_LANGUAGE
+    type: ActionTypes.Settings.CHANGE_LANGUAGE
   }
   const payload: lobby.Payload$ChangeLanguage = {
     language: lobby.Language.ja,
@@ -338,7 +338,7 @@ describe('CHANGE_USER_EMAIL', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Settings.ChangeUserEmail = {
-    type: ActionTypes.App.CHANGE_USER_EMAIL,
+    type: ActionTypes.Settings.CHANGE_USER_EMAIL,
     userEmail: 'example@example.com'
   }
   const payload: lobby.Payload$ChangeUserEmail = {
@@ -384,7 +384,7 @@ describe('CHANGE_USER_NAME', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Settings.ChangeUserName = {
-    type: ActionTypes.App.CHANGE_USER_NAME,
+    type: ActionTypes.Settings.CHANGE_USER_NAME,
     userName: 'userName'
   }
   const payload: lobby.Payload$ChangeUserName = {
@@ -430,7 +430,7 @@ describe('CHANGE_USER_PASSWORD', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Settings.ChangeUserPassword = {
-    type: ActionTypes.App.CHANGE_USER_PASSWORD,
+    type: ActionTypes.Settings.CHANGE_USER_PASSWORD,
     userPassword: 'userPassword'
   }
   const payload: lobby.Payload$ChangeUserPassword = {

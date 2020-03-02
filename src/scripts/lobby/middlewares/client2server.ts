@@ -58,7 +58,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.CHANGE_LANGUAGE: {
+    case ActionTypes.Settings.CHANGE_LANGUAGE: {
       const payload: lobby.Payload$ChangeLanguage = {
         language: action.language,
         type: lobby.PayloadType.changeLanguage
@@ -68,7 +68,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.CHANGE_USER_EMAIL: {
+    case ActionTypes.Settings.CHANGE_USER_EMAIL: {
       const payload: lobby.Payload$ChangeUserEmail = {
         type: lobby.PayloadType.changeUserEmail,
         userEmail: action.userEmail
@@ -78,7 +78,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.CHANGE_USER_NAME: {
+    case ActionTypes.Settings.CHANGE_USER_NAME: {
       const payload: lobby.Payload$ChangeUserName = {
         type: lobby.PayloadType.changeUserName,
         userName: action.userName
@@ -88,7 +88,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.CHANGE_USER_PASSWORD: {
+    case ActionTypes.Settings.CHANGE_USER_PASSWORD: {
       const payload: lobby.Payload$ChangeUserPassword = {
         type: lobby.PayloadType.changeUserPassword,
         userPassword: action.userPassword

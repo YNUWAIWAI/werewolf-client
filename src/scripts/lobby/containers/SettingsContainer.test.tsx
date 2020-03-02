@@ -39,7 +39,7 @@ describe('<SettingsContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       language,
-      type: ActionTypes.App.CHANGE_LANGUAGE
+      type: ActionTypes.Settings.CHANGE_LANGUAGE
     })
   })
   test('handleChangeUserEmail', () => {
@@ -59,7 +59,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleChangeUserEmail(userEmail)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.App.CHANGE_USER_EMAIL,
+      type: ActionTypes.Settings.CHANGE_USER_EMAIL,
       userEmail
     })
   })
@@ -80,7 +80,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleChangeUserName(userName)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.App.CHANGE_USER_NAME,
+      type: ActionTypes.Settings.CHANGE_USER_NAME,
       userName
     })
   })
@@ -101,7 +101,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleChangeUserPassword(userPassword)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.App.CHANGE_USER_PASSWORD,
+      type: ActionTypes.Settings.CHANGE_USER_PASSWORD,
       userPassword
     })
   })
@@ -121,7 +121,7 @@ describe('<SettingsContainer />', () => {
     wrapper.find(Settings).props().handleSubmitLogout()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.App.LOGOUT
+      type: ActionTypes.Settings.LOGOUT
     })
   })
 })
