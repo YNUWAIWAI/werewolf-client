@@ -28,11 +28,11 @@ test('render', () => {
     </Provider>
   )
 
-  expect(wrapper.find('.lo--modal--button')).toHaveLength(2)
-  expect(wrapper.find('.lo--modal--button.yes').exists()).toBe(true)
-  expect(wrapper.find('.lo--modal--button.yes').text()).toBe('Yes')
-  expect(wrapper.find('.lo--modal--button.no').exists()).toBe(true)
-  expect(wrapper.find('.lo--modal--button.no').text()).toBe('No')
+  expect(wrapper.find('.lo--confirmation--button')).toHaveLength(2)
+  expect(wrapper.find('.lo--confirmation--button.yes').exists()).toBe(true)
+  expect(wrapper.find('.lo--confirmation--button.yes').text()).toBe('Yes')
+  expect(wrapper.find('.lo--confirmation--button.no').exists()).toBe(true)
+  expect(wrapper.find('.lo--confirmation--button.no').text()).toBe('No')
   expect(handleClickNoMockFn).toHaveBeenCalledTimes(0)
   expect(handleClickYesMockFn).toHaveBeenCalledTimes(0)
 })
@@ -55,7 +55,7 @@ test('handleClickNo', () => {
     </Provider>
   )
 
-  wrapper.find('.lo--modal--button.no').simulate('click')
+  wrapper.find('.lo--confirmation--button.no').simulate('click')
   expect(handleClickNo).toHaveBeenCalledTimes(1)
   expect(handleClickYes).toHaveBeenCalledTimes(0)
 })
@@ -78,7 +78,7 @@ test('handleClickYes', () => {
     </Provider>
   )
 
-  wrapper.find('.lo--modal--button.yes').simulate('click')
+  wrapper.find('.lo--confirmation--button.yes').simulate('click')
   expect(handleClickNo).toHaveBeenCalledTimes(0)
   expect(handleClickYes).toHaveBeenCalledTimes(1)
   expect(handleClickYes).toHaveBeenCalledWith('type')

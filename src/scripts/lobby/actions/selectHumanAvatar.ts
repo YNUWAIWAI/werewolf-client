@@ -53,10 +53,12 @@ const hoverAvatar = (id: string): SelectHumanAvatar$HoverAvatar => ({
 })
 
 export type SelectHumanAvatar$ShowAvatarImageSelect = {
+  image: string
   token: lobby.Token
   type: SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
 }
-const showAvatarImageSelect = (token: lobby.Token): SelectHumanAvatar$ShowAvatarImageSelect => ({
+const showAvatarImageSelect = (token: lobby.Token) => (image: string): SelectHumanAvatar$ShowAvatarImageSelect => ({
+  image,
   token,
   type: SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
 })

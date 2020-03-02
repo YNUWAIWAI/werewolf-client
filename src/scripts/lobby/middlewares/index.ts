@@ -49,6 +49,7 @@ type Action =
   | actions.Message$SearchResult
   | actions.Message$Settings
   | actions.Message$WaitingPage
+  | actions.SelectAvatarImage$SelectAvatar
   | actions.SelectRobotAvatar$AutorizationRequestAccepted
   | actions.SelectRobotAvatar$ChangeAvatarImage
   | actions.SelectRobotAvatar$ChangeAvatarLanguage

@@ -1,6 +1,7 @@
 :root {
   --active-color: rgba(0, 0, 0, 0.07);
   --avatar-image-size: 50px;
+  --avatar-image-size--L: 120px;
   --danger-color: rgb(219, 69, 69);
   --disabled-color: rgba(0, 0, 0, 0.3);
   --hover-color: rgba(0, 0, 0, 0.03);
@@ -434,7 +435,77 @@ body {
     }
   }
 
+  &--avatar-image-select {
+    background: rgb(250, 250, 250);
+    bottom: 10%;
+    left: 10%;
+    padding: 1rem;
+    position: fixed;
+    right: 10%;
+    top: 10%;
+    z-index: 4;
+
+    &--close {
+      height: 1.5rem;
+      left: 0.5rem;
+      position: absolute;
+      top: 0.5rem;
+      width: 1.5rem;
+    }
+
+    &--description {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+
+    &--image-list {
+      display: grid;
+      grid-gap: 0.5rem;
+      grid-template-columns: repeat(5, minmax(calc(var(--avatar-image-size--L) + 0.5rem), 1fr));
+      grid-template-rows: repeat(1000, calc(var(--avatar-image-size--L) + 0.5rem));
+      height: calc(100% - 5rem);
+      overflow: auto;
+
+      &--item {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        &--image {
+          height: var(--avatar-image-size--L);
+          width: var(--avatar-image-size--L);
+
+          &.selected {
+            outline: green solid 0.25rem;
+          }
+        }
+      }
+    }
+  }
+
   &--modal {
+    &--transition {
+      &-enter {
+        opacity: 0;
+      }
+
+      &-enter-active {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+      }
+
+      &-exit {
+        opacity: 1;
+      }
+
+      &-exit-active {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+    }
+  }
+
+  &--confirmation {
     background: rgb(250, 250, 250);
     display: grid;
     gap: 0.5rem 0;
@@ -493,26 +564,6 @@ body {
       grid-area: description;
       justify-content: center;
       text-align: center;
-    }
-
-    &--transition {
-      &-enter {
-        opacity: 0;
-      }
-
-      &-enter-active {
-        opacity: 1;
-        transition: opacity 0.5s ease-out;
-      }
-
-      &-exit {
-        opacity: 1;
-      }
-
-      &-exit-active {
-        opacity: 0;
-        transition: opacity 0.3s ease-in;
-      }
     }
   }
 

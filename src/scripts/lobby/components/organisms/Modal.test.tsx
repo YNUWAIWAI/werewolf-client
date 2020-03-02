@@ -1,4 +1,6 @@
 import * as React from 'react'
+import AvatarImageSelect from './AvatarImageSelect'
+import Confirmation from './Confirmation'
 import Modal from './Modal'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
@@ -10,25 +12,37 @@ const store = fakeStore()
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 describe('render', () => {
-  test('visible', () => {
-    const wrapper = mountWithIntl(
-      <Provider store={store}>
-        <Modal
-          visible
-        />
-      </Provider>
-    )
+  describe('visible', () => {
+    test('confirmation', () => {
+      const wrapper = mountWithIntl(
+        <Provider store={store}>
+          <Modal
+            type={lobby.ModalType.confirmation}
+            visible
+          />
+        </Provider>
+      )
 
-    expect(wrapper.find('.lo--modal--button')).toHaveLength(2)
-    expect(wrapper.find('.lo--modal--button.yes').exists()).toBe(true)
-    expect(wrapper.find('.lo--modal--button.yes').text()).toBe('Yes')
-    expect(wrapper.find('.lo--modal--button.no').exists()).toBe(true)
-    expect(wrapper.find('.lo--modal--button.no').text()).toBe('No')
+      expect(wrapper.find(Confirmation).exists()).toBe(true)
+    })
+    test('avatarImageSelect', () => {
+      const wrapper = mountWithIntl(
+        <Provider store={store}>
+          <Modal
+            type={lobby.ModalType.avatarImageSelect}
+            visible
+          />
+        </Provider>
+      )
+
+      expect(wrapper.find(AvatarImageSelect).exists()).toBe(true)
+    })
   })
   test('visible={false}', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
+          type={lobby.ModalType.confirmation}
           visible={false}
         />
       </Provider>

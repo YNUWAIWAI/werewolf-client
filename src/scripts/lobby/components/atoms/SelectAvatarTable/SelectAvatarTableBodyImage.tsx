@@ -3,7 +3,7 @@ import * as React from 'react'
 interface Props {
   readonly additionalClassName: string[]
   readonly handleSelect: () => void
-  readonly handleClick: () => void
+  readonly handleClick: (image: string) => void
   readonly image: string
 }
 
@@ -20,7 +20,7 @@ export default function SelectAvatarTableBodyImage(props: Props) {
       onClick={handleSelect}
     >
       <img
-        onClick={props.handleClick}
+        onClick={() => props.handleClick(props.image)}
         src={props.image}
       />
     </div>

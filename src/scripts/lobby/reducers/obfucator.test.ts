@@ -1,5 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './obfucator'
+import {ImagePath} from '../constants/ImagePath'
 import {socket} from '../actions'
 
 test('CONFIRM_KICK_OUT_PLAYER', () => {
@@ -10,6 +11,36 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
         name: 'Alice',
         token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
         type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
+      }
+    )
+  ).toStrictEqual({
+    loading: false,
+    visible: true
+  })
+})
+test('selectHumanAvatar/SHOW_AVATAR_IMAGE_SELECT', () => {
+  expect(
+    reducer(
+      initialState,
+      {
+        image: ImagePath.Character.a,
+        token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        type: ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
+      }
+    )
+  ).toStrictEqual({
+    loading: false,
+    visible: true
+  })
+})
+test('selectRobotAvatar/SHOW_AVATAR_IMAGE_SELECT', () => {
+  expect(
+    reducer(
+      initialState,
+      {
+        image: ImagePath.Character.a,
+        token: '3F2504E0-4F89-11D3-9A0C-0305E82C3300',
+        type: ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
       }
     )
   ).toStrictEqual({

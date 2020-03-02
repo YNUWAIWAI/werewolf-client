@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Close from '../../src/scripts/lobby/components/atoms/svg/Close'
 import Copy from '../../src/scripts/lobby/components/atoms/svg/Copy'
 import Danger from '../../src/scripts/lobby/components/atoms/svg/Danger'
 import Loader from '../../src/scripts/lobby/components/atoms/svg/Loader'
@@ -19,6 +20,7 @@ storiesOf('lobby|svg', module)
       </div>
     )
   })
+  .add('Close', () => <Close />)
   .add('Copy', () => <Copy />)
   .add('Danger', () => <Danger />)
   .add('Loader', () => <Loader />)

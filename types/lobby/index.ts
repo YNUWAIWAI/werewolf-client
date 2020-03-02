@@ -19,6 +19,10 @@ export const enum LobbyType {
   human = 'human player',
   robot = 'robot player'
 }
+export const enum ModalType {
+  avatarImageSelect = 'avatarImageSelect',
+  confirmation = 'confirmation'
+}
 export const enum PingStatus {
   danger = 'danger',
   safe = 'safe',

@@ -1,4 +1,5 @@
 import advancedSearch, {State as AdvancedSearchState} from './advancedSearch'
+import avatarImageList, {State as AvatarImageListState} from './avatarImageList'
 import buildVillage, {State as BuildVillageState} from './buildVillage'
 import confirmation, {State as Confirmation} from './confirmation'
 import createNewHumanAvatar, {State as CreateNewHumanAvatar} from './createNewHumanAvatar'
@@ -22,6 +23,7 @@ import {combineReducers} from 'redux'
 
 export interface ReducerState {
   advancedSearch: AdvancedSearchState
+  avatarImageList: AvatarImageListState
   buildVillage: BuildVillageState
   confirmation: Confirmation
   createNewHumanAvatar: CreateNewHumanAvatar
@@ -45,6 +47,7 @@ export interface ReducerState {
 
 const reducer = combineReducers({
   advancedSearch,
+  avatarImageList,
   buildVillage,
   confirmation,
   createNewHumanAvatar,

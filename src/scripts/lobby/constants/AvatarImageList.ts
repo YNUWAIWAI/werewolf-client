@@ -1,0 +1,23 @@
+export const AvatarImageList = [
+  'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/b_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/c_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/d_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/e_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/f_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/g_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/h_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/i_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/j_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/k_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/l_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/m_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/n_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/o_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/r_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/s_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/t_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/u_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/v_50x50.png',
+  'https://werewolf.world/image/0.3/character_icons/50x50/y_50x50.png'
+]

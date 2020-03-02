@@ -11,6 +11,7 @@
   "AdvancedSearch.placeholder(villageName)": "{min}-{max} chars",
   "AutomationSelect.full": "Fully automated",
   "AutomationSelect.semi": "Semi-automated",
+  "AvatarImageSelect.description": "Choose an image",
   "AvatarItem.host": "Host",
   "AvatarItem.kickout": "Kick {name} out",
   "AvatarItem.name.anonymous": "Anonymous",

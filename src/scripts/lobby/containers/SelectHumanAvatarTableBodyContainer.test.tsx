@@ -34,10 +34,12 @@ describe('<SelectHumanAvatarTableBodyContainer />', () => {
       </Provider>
     )
     const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3300'
+    const image = 'image'
 
-    wrapper.find(SelectHumanAvatarTableBody).props().handleAvatarImageClick(token)()
+    wrapper.find(SelectHumanAvatarTableBody).props().handleAvatarImageClick(token)(image)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
+      image,
       token,
       type: ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
     })

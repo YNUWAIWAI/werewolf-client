@@ -1,3 +1,4 @@
+export {convertImageUrl} from '../../village/util'
 import Cast from '../constants/Cast'
 import {anonymousVillageName} from '../constants/AnonymousVillageName'
 import {lobby} from '../types'
