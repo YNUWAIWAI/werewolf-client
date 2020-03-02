@@ -8,8 +8,8 @@ export interface StateProps {
   readonly imageList: string[]
 }
 export interface DispatchProps {
-  readonly handleImageSelect: (image: string) => void
   readonly handleCloseButtonClick: () => void
+  readonly handleImageSelect: (image: string) => void
 }
 export type Props = StateProps & DispatchProps
 
