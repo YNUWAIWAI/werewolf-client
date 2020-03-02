@@ -1,5 +1,4 @@
 import * as React from 'react'
-import {AvatarImageList} from '../../constants/AvatarImageList'
 import {FormattedMessage} from 'react-intl'
 import {convertImageUrl} from '../../util'
 
@@ -31,13 +30,14 @@ export default function AvatarImageSelect(props: Props) {
         className="lo--avatar-image-select--image-list"
       >
         {
-          AvatarImageList
+          props.imageList
             .map(image => (
               <div
                 className="lo--avatar-image-select--image-list--item"
                 key={image}
               >
                 <img
+                  className={`lo--avatar-image-select--image-list--item--image ${image === props.selectedImage ? 'selected' : ''}`}
                   src={convertImageUrl(image)}
                 />
               </div>

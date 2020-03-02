@@ -1,6 +1,7 @@
 :root {
   --active-color: rgba(0, 0, 0, 0.07);
   --avatar-image-size: 50px;
+  --avatar-image-size--L: 120px;
   --danger-color: rgb(219, 69, 69);
   --disabled-color: rgba(0, 0, 0, 0.3);
   --hover-color: rgba(0, 0, 0, 0.03);
@@ -452,14 +453,24 @@ body {
     &--image-list {
       display: grid;
       grid-gap: 0.5rem;
-      grid-template-columns: repeat(5, minmax(120px, 1fr));
-      grid-template-rows: repeat(1000, 120px);
+      grid-template-columns: repeat(5, minmax(calc(var(--avatar-image-size--L) + 0.5rem), 1fr));
+      grid-template-rows: repeat(1000, calc(var(--avatar-image-size--L) + 0.5rem));
       height: calc(100% - 5rem);
       overflow: auto;
 
       &--item {
+        align-items: center;
         display: flex;
         justify-content: center;
+
+        &--image {
+          height: var(--avatar-image-size--L);
+          width: var(--avatar-image-size--L);
+
+          &.selected {
+            outline: green solid 0.25rem;
+          }
+        }
       }
     }
   }
