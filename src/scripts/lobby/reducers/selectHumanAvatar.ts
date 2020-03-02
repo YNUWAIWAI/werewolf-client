@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  Message$HumanPlayerSelectionPage,
-  SelectHumanAvatar$ChangeCheckbox
+  Message,
+  SelectHumanAvatar
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {lobby} from '../types'
@@ -23,8 +23,8 @@ export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
-  | Message$HumanPlayerSelectionPage
-  | SelectHumanAvatar$ChangeCheckbox
+  | Message.HumanPlayerSelectionPage
+  | SelectHumanAvatar.ChangeCheckbox
 
 export const initialState: State = {
   avatar: {

@@ -446,7 +446,7 @@ describe('waitingPage', () => {
       }
     )
   })
-  describe('isHost: false', () => {
+  test('isHost: false', () => {
     expect(
       reducer(
         {

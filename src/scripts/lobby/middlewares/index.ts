@@ -17,54 +17,54 @@ import socket from './socket'
 import windowLocation from './windowLocation'
 
 type Action =
-  | actions.AdvancedSearch$ChangeAvatar
-  | actions.AdvancedSearch$ChangeCheckbox
-  | actions.AdvancedSearch$ChangeComment
-  | actions.AdvancedSearch$ChangeHostName
-  | actions.AdvancedSearch$ChangeMaximum
-  | actions.AdvancedSearch$ChangeMinimum
-  | actions.AdvancedSearch$ChangeValidity
-  | actions.AdvancedSearch$ChangeVillageName
-  | actions.BuildVillage$ChangeAvatar
-  | actions.BuildVillage$ChangeComment
-  | actions.BuildVillage$ChangeMember
-  | actions.BuildVillage$ChangeNumberOfPlayers
-  | actions.BuildVillage$ChangeNumberOfRobots
-  | actions.BuildVillage$ChangeValidity
-  | actions.BuildVillage$ChangeVillageName
+  | actions.AdvancedSearch.ChangeAvatar
+  | actions.AdvancedSearch.ChangeCheckbox
+  | actions.AdvancedSearch.ChangeComment
+  | actions.AdvancedSearch.ChangeHostName
+  | actions.AdvancedSearch.ChangeMaximum
+  | actions.AdvancedSearch.ChangeMinimum
+  | actions.AdvancedSearch.ChangeValidity
+  | actions.AdvancedSearch.ChangeVillageName
+  | actions.BuildVillage.ChangeAvatar
+  | actions.BuildVillage.ChangeComment
+  | actions.BuildVillage.ChangeMember
+  | actions.BuildVillage.ChangeNumberOfPlayers
+  | actions.BuildVillage.ChangeNumberOfRobots
+  | actions.BuildVillage.ChangeValidity
+  | actions.BuildVillage.ChangeVillageName
   | actions.ChangeLanguage
   | actions.ChangeLobby
   | actions.ChangeToken
   | actions.ChangeUserEmail
   | actions.ChangeUserName
   | actions.ChangeUserPassword
-  | actions.IdSearch$ChangeSearchId
-  | actions.IdSearch$ChangeValidity
+  | actions.IdSearch.ChangeSearchId
+  | actions.IdSearch.ChangeValidity
   | actions.Init
   | actions.KickOutPlayer
-  | actions.Message$Avatar
-  | actions.Message$Lobby
-  | actions.Message$Ping
-  | actions.Message$Played
-  | actions.Message$SearchResult
-  | actions.Message$Settings
-  | actions.Message$WaitingPage
-  | actions.SelectAvatarImage$SelectAvatar
-  | actions.SelectRobotAvatar$AutorizationRequestAccepted
-  | actions.SelectRobotAvatar$ChangeAvatarImage
-  | actions.SelectRobotAvatar$ChangeAvatarLanguage
-  | actions.SelectRobotAvatar$ChangeAvatarName
-  | actions.SelectRobotAvatar$Delete
-  | actions.SelectRobotAvatar$RenewAvatarToken
-  | actions.SelectRobotAvatar$RunInTheBackround
-  | actions.SelectRobotAvatar$StopAvatar
+  | actions.Message.Avatar
+  | actions.Message.Lobby
+  | actions.Message.Ping
+  | actions.Message.Played
+  | actions.Message.SearchResult
+  | actions.Message.Settings
+  | actions.Message.WaitingPage
+  | actions.SelectAvatarImage.SelectAvatar
+  | actions.SelectRobotAvatar.AutorizationRequestAccepted
+  | actions.SelectRobotAvatar.ChangeAvatarImage
+  | actions.SelectRobotAvatar.ChangeAvatarLanguage
+  | actions.SelectRobotAvatar.ChangeAvatarName
+  | actions.SelectRobotAvatar.Delete
+  | actions.SelectRobotAvatar.RenewAvatarToken
+  | actions.SelectRobotAvatar.RunInTheBackround
+  | actions.SelectRobotAvatar.StopAvatar
   | actions.SelectVillage
   | actions.ShowVillage
-  | actions.SocketClose
-  | actions.SocketError
-  | actions.SocketMessage
-  | actions.SocketOpen
-  | actions.SocketSend
+  | actions.Socket.Close
+  | actions.Socket.Error
+  | actions.Socket.Message
+  | actions.Socket.Open
+  | actions.Socket.Send
   | actions.SubmitLogout
   | actions.Transition
 

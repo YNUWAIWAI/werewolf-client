@@ -1,10 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ConfirmKickOutPlayer,
-  SelectAvatarImage$CloseModal,
-  SelectHumanAvatar$ShowAvatarImageSelect,
+  SelectAvatarImage,
+  SelectHumanAvatar,
   SelectNo,
-  SelectRobotAvatar$ShowAvatarImageSelect,
+  SelectRobotAvatar,
   SelectYes
 } from '../actions'
 import {lobby} from '../types'
@@ -15,10 +15,10 @@ export interface State {
 }
 type Action =
   | ConfirmKickOutPlayer
-  | SelectAvatarImage$CloseModal
-  | SelectHumanAvatar$ShowAvatarImageSelect
+  | SelectAvatarImage.CloseModal
+  | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectNo
-  | SelectRobotAvatar$ShowAvatarImageSelect
+  | SelectRobotAvatar.ShowAvatarImageSelect
   | SelectYes
 
 export const initialState: State = {

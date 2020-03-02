@@ -1,10 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  Message$AuthorizationRequest,
-  Message$RobotPlayerSelectionPage,
-  SelectRobotAvatar$ChangeAvatarName,
-  SelectRobotAvatar$ChangeCheckbox,
-  SelectRobotAvatar$RenewAvatarToken
+  Message,
+  SelectRobotAvatar
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {lobby} from '../types'
@@ -32,11 +29,11 @@ export interface State {
   readonly menuItems: MenuItem[]
 }
 type Action =
-  | Message$AuthorizationRequest
-  | Message$RobotPlayerSelectionPage
-  | SelectRobotAvatar$ChangeAvatarName
-  | SelectRobotAvatar$ChangeCheckbox
-  | SelectRobotAvatar$RenewAvatarToken
+  | Message.AuthorizationRequest
+  | Message.RobotPlayerSelectionPage
+  | SelectRobotAvatar.ChangeAvatarName
+  | SelectRobotAvatar.ChangeCheckbox
+  | SelectRobotAvatar.RenewAvatarToken
 
 export const initialState: State = {
   avatar: {

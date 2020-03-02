@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  SelectAvatarImage$SelectAvatar,
-  SelectHumanAvatar$ShowAvatarImageSelect,
-  SelectRobotAvatar$ShowAvatarImageSelect
+  SelectAvatarImage,
+  SelectHumanAvatar,
+  SelectRobotAvatar
 } from '../actions'
 import {AvatarImageList} from '../constants/AvatarImageList'
 import {lobby} from '../types'
@@ -14,9 +14,9 @@ export interface State {
   readonly token: string
 }
 type Action =
-  | SelectAvatarImage$SelectAvatar
-  | SelectHumanAvatar$ShowAvatarImageSelect
-  | SelectRobotAvatar$ShowAvatarImageSelect
+  | SelectAvatarImage.SelectAvatar
+  | SelectHumanAvatar.ShowAvatarImageSelect
+  | SelectRobotAvatar.ShowAvatarImageSelect
 
 export const initialState: State = {
   imageList: AvatarImageList,

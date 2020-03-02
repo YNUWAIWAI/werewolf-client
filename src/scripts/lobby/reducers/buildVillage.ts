@@ -1,14 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  BuildVillage$ChangeAvatar,
-  BuildVillage$ChangeComment,
-  BuildVillage$ChangeMember,
-  BuildVillage$ChangeNumberOfPlayers,
-  BuildVillage$ChangeNumberOfRobots,
-  BuildVillage$ChangeValidity,
-  BuildVillage$ChangeVillageName,
+  BuildVillage,
   ChangeLobby,
-  Message$Avatar,
+  Message,
   Transition
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
@@ -43,15 +37,15 @@ export interface State {
   }
 }
 type Action =
-  | BuildVillage$ChangeAvatar
-  | BuildVillage$ChangeComment
-  | BuildVillage$ChangeMember
-  | BuildVillage$ChangeNumberOfPlayers
-  | BuildVillage$ChangeNumberOfRobots
-  | BuildVillage$ChangeValidity
-  | BuildVillage$ChangeVillageName
+  | BuildVillage.ChangeAvatar
+  | BuildVillage.ChangeComment
+  | BuildVillage.ChangeMember
+  | BuildVillage.ChangeNumberOfPlayers
+  | BuildVillage.ChangeNumberOfRobots
+  | BuildVillage.ChangeValidity
+  | BuildVillage.ChangeVillageName
   | ChangeLobby
-  | Message$Avatar
+  | Message.Avatar
   | Transition
 
 export const initialState: State = {
