@@ -32,12 +32,8 @@ type Action =
   | actions.BuildVillage.ChangeNumberOfRobots
   | actions.BuildVillage.ChangeValidity
   | actions.BuildVillage.ChangeVillageName
-  | actions.ChangeLanguage
   | actions.ChangeLobby
   | actions.ChangeToken
-  | actions.ChangeUserEmail
-  | actions.ChangeUserName
-  | actions.ChangeUserPassword
   | actions.IdSearch.ChangeSearchId
   | actions.IdSearch.ChangeValidity
   | actions.Init
@@ -59,13 +55,17 @@ type Action =
   | actions.SelectRobotAvatar.RunInTheBackround
   | actions.SelectRobotAvatar.StopAvatar
   | actions.SelectVillage
+  | actions.Settings.ChangeLanguage
+  | actions.Settings.ChangeUserEmail
+  | actions.Settings.ChangeUserName
+  | actions.Settings.ChangeUserPassword
+  | actions.Settings.SubmitLogout
   | actions.ShowVillage
   | actions.Socket.Close
   | actions.Socket.Error
   | actions.Socket.Message
   | actions.Socket.Open
   | actions.Socket.Send
-  | actions.SubmitLogout
   | actions.Transition
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action

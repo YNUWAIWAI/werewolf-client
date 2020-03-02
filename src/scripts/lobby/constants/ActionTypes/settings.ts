@@ -1,0 +1,7 @@
+export const enum Settings {
+  CHANGE_LANGUAGE = 'settings/CHANGE_LANGUAGE',
+  CHANGE_USER_EMAIL = 'settings/CHANGE_USER_EMAIL',
+  CHANGE_USER_NAME = 'settings/CHANGE_USER_NAME',
+  CHANGE_USER_PASSWORD = 'settings/CHANGE_USER_PASSWORD',
+  LOGOUT = 'settings/LOGOUT'
+}

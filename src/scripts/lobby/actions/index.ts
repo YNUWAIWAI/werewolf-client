@@ -8,16 +8,8 @@ export * from './message'
 export * from './selectAvatarImage'
 export * from './selectHumanAvatar'
 export * from './selectRobotAvatar'
+export * from './settings'
 export * from './socket'
-
-export type ChangeLanguage = {
-  language: Lobby.Language
-  type: ActionTypes.App.CHANGE_LANGUAGE
-}
-export const changeLanguage = (language: Lobby.Language): ChangeLanguage => ({
-  language,
-  type: ActionTypes.App.CHANGE_LANGUAGE
-})
 
 export type ChangeLobby = {
   lobby: Lobby.LobbyType
@@ -37,33 +29,6 @@ export const changeToken = ({lobby, token}: {lobby: Lobby.LobbyType, token: stri
   lobby,
   token,
   type: ActionTypes.App.CHANGE_TOKEN
-})
-
-export type ChangeUserEmail = {
-  type: ActionTypes.App.CHANGE_USER_EMAIL
-  userEmail: string
-}
-export const changeUserEmail = (userEmail: string): ChangeUserEmail => ({
-  type: ActionTypes.App.CHANGE_USER_EMAIL,
-  userEmail
-})
-
-export type ChangeUserName = {
-  userName: string
-  type: ActionTypes.App.CHANGE_USER_NAME
-}
-export const changeUserName = (userName: string): ChangeUserName => ({
-  type: ActionTypes.App.CHANGE_USER_NAME,
-  userName
-})
-
-export type ChangeUserPassword = {
-  userPassword: string
-  type: ActionTypes.App.CHANGE_USER_PASSWORD
-}
-export const changeUserPassword = (userPassword: string): ChangeUserPassword => ({
-  type: ActionTypes.App.CHANGE_USER_PASSWORD,
-  userPassword
 })
 
 export type ConfirmKickOutPlayer = {
@@ -119,13 +84,6 @@ export type ShowVillage = {
 }
 export const showVillage = (): ShowVillage => ({
   type: ActionTypes.App.SHOW_VILLAGE
-})
-
-export type SubmitLogout = {
-  type: ActionTypes.App.LOGOUT
-}
-export const submitLogout = (): SubmitLogout => ({
-  type: ActionTypes.App.LOGOUT
 })
 
 export type Target =

@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import Confirmation, {
+import Component, {
   DispatchProps, StateProps
 } from '../components/organisms/Confirmation'
 import {
@@ -37,6 +37,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const ConfirmationContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Confirmation)
+)(Component)
 
 export default ConfirmationContainer

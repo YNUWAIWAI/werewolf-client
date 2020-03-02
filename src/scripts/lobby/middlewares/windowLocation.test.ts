@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   SelectVillage,
+  Settings,
   ShowVillage,
-  SubmitLogout,
   Transition
 } from '../actions'
 import fakeStore from '../containers/fakeStore'
@@ -17,7 +17,7 @@ test('LOGOUT', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: SubmitLogout = {
+  const action: Settings.SubmitLogout = {
     type: ActionTypes.App.LOGOUT
   }
 

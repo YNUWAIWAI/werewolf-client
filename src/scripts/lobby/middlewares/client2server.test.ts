@@ -1,11 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  ChangeLanguage,
-  ChangeUserEmail,
-  ChangeUserName,
-  ChangeUserPassword,
   KickOutPlayer,
   SelectVillage,
+  Settings,
   Transition,
   message,
   selectAvatarImage,
@@ -287,7 +284,7 @@ describe('CHANGE_LANGUAGE', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: ChangeLanguage = {
+  const action: Settings.ChangeLanguage = {
     language: lobby.Language.ja,
     type: ActionTypes.App.CHANGE_LANGUAGE
   }
@@ -340,7 +337,7 @@ describe('CHANGE_USER_EMAIL', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: ChangeUserEmail = {
+  const action: Settings.ChangeUserEmail = {
     type: ActionTypes.App.CHANGE_USER_EMAIL,
     userEmail: 'example@example.com'
   }
@@ -386,7 +383,7 @@ describe('CHANGE_USER_NAME', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: ChangeUserName = {
+  const action: Settings.ChangeUserName = {
     type: ActionTypes.App.CHANGE_USER_NAME,
     userName: 'userName'
   }
@@ -432,7 +429,7 @@ describe('CHANGE_USER_PASSWORD', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: ChangeUserPassword = {
+  const action: Settings.ChangeUserPassword = {
     type: ActionTypes.App.CHANGE_USER_PASSWORD,
     userPassword: 'userPassword'
   }
