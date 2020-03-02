@@ -8,22 +8,6 @@ import {
 import fakeStore from '../containers/fakeStore'
 import middleware from './windowLocation'
 
-test('LOGOUT', () => {
-  const spy = jest.spyOn(window.location, 'replace').mockImplementation(() => '')
-  const store = fakeStore()
-  const dispatch = jest.fn()
-
-  store.dispatch = dispatch
-  const nextHandler = middleware(store)
-  const dispatchAPI = jest.fn()
-  const actionHandler = nextHandler(dispatchAPI)
-  const action: Settings.SubmitLogout = {
-    type: ActionTypes.App.LOGOUT
-  }
-
-  actionHandler(action)
-  expect(spy).toHaveBeenCalled()
-})
 test('SELECT_VILLAGE', () => {
   const store = fakeStore()
   const dispatch = jest.fn()
@@ -164,5 +148,21 @@ test('SHOW_VILLAGE', () => {
 
   actionHandler(action)
   expect(window.onbeforeunload).toBeNull()
+  expect(spy).toHaveBeenCalled()
+})
+test('settings/LOGOUT', () => {
+  const spy = jest.spyOn(window.location, 'replace').mockImplementation(() => '')
+  const store = fakeStore()
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const nextHandler = middleware(store)
+  const dispatchAPI = jest.fn()
+  const actionHandler = nextHandler(dispatchAPI)
+  const action: Settings.SubmitLogout = {
+    type: ActionTypes.Settings.LOGOUT
+  }
+
+  actionHandler(action)
   expect(spy).toHaveBeenCalled()
 })

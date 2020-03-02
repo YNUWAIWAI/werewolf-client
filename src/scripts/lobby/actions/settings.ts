@@ -5,43 +5,43 @@ import {lobby} from '../types'
 export declare namespace Settings {
   type ChangeLanguage = {
     language: lobby.Language
-    type: ActionTypes.App.CHANGE_LANGUAGE
+    type: ActionTypes.Settings.CHANGE_LANGUAGE
   }
   type ChangeUserEmail = {
-    type: ActionTypes.App.CHANGE_USER_EMAIL
+    type: ActionTypes.Settings.CHANGE_USER_EMAIL
     userEmail: string
   }
   type ChangeUserName = {
     userName: string
-    type: ActionTypes.App.CHANGE_USER_NAME
+    type: ActionTypes.Settings.CHANGE_USER_NAME
   }
   type ChangeUserPassword = {
     userPassword: string
-    type: ActionTypes.App.CHANGE_USER_PASSWORD
+    type: ActionTypes.Settings.CHANGE_USER_PASSWORD
   }
   type SubmitLogout = {
-    type: ActionTypes.App.LOGOUT
+    type: ActionTypes.Settings.LOGOUT
   }
 }
 
 const changeLanguage = (language: lobby.Language): Settings.ChangeLanguage => ({
   language,
-  type: ActionTypes.App.CHANGE_LANGUAGE
+  type: ActionTypes.Settings.CHANGE_LANGUAGE
 })
 const changeUserEmail = (userEmail: string): Settings.ChangeUserEmail => ({
-  type: ActionTypes.App.CHANGE_USER_EMAIL,
+  type: ActionTypes.Settings.CHANGE_USER_EMAIL,
   userEmail
 })
 const changeUserName = (userName: string): Settings.ChangeUserName => ({
-  type: ActionTypes.App.CHANGE_USER_NAME,
+  type: ActionTypes.Settings.CHANGE_USER_NAME,
   userName
 })
 const changeUserPassword = (userPassword: string): Settings.ChangeUserPassword => ({
-  type: ActionTypes.App.CHANGE_USER_PASSWORD,
+  type: ActionTypes.Settings.CHANGE_USER_PASSWORD,
   userPassword
 })
 const submitLogout = (): Settings.SubmitLogout => ({
-  type: ActionTypes.App.LOGOUT
+  type: ActionTypes.Settings.LOGOUT
 })
 
 export const settings = {

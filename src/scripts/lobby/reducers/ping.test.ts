@@ -1,4 +1,3 @@
-import * as ActionTypes from '../constants/ActionTypes'
 import {
   ping,
   waitingPage
@@ -6,7 +5,6 @@ import {
 import reducer, {initialState} from './ping'
 import {lobby} from '../types'
 import {message} from '../actions'
-
 
 test('message/PING', () => {
   expect(

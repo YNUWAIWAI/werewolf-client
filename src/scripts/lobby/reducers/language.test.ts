@@ -10,7 +10,7 @@ test('CHANGE_LANGUAGE', () => {
       initialState,
       {
         language: lobby.Language.en,
-        type: ActionTypes.App.CHANGE_LANGUAGE
+        type: ActionTypes.Settings.CHANGE_LANGUAGE
       }
     )
   ).toStrictEqual(
