@@ -53,7 +53,7 @@ test('SELECT_NO', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.App.SELECT_NO
+        type: ActionTypes.Confirmation.SELECT_NO
       }
     )
   ).toStrictEqual({
@@ -66,7 +66,7 @@ test('SELECT_YES', () => {
     reducer(
       initialState,
       {
-        type: ActionTypes.App.SELECT_YES
+        type: ActionTypes.Confirmation.SELECT_YES
       }
     )
   ).toStrictEqual({

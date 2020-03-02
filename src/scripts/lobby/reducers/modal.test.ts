@@ -26,7 +26,7 @@ test('SELECT_NO', () => {
         visible: true
       },
       {
-        type: ActionTypes.App.SELECT_NO
+        type: ActionTypes.Confirmation.SELECT_NO
       }
     )
   ).toStrictEqual({
@@ -42,7 +42,7 @@ test('SELECT_YES', () => {
         visible: true
       },
       {
-        type: ActionTypes.App.SELECT_YES
+        type: ActionTypes.Confirmation.SELECT_YES
       }
     )
   ).toStrictEqual({

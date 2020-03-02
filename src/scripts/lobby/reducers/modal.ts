@@ -32,8 +32,8 @@ const modal = (state: State = initialState, action: Action): State => {
         type: lobby.ModalType.confirmation,
         visible: true
       }
-    case ActionTypes.App.SELECT_NO:
-    case ActionTypes.App.SELECT_YES:
+    case ActionTypes.Confirmation.SELECT_NO:
+    case ActionTypes.Confirmation.SELECT_YES:
       return {
         type: lobby.ModalType.confirmation,
         visible: false
