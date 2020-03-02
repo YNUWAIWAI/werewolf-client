@@ -3,6 +3,7 @@ import IntlProviderContainer from './IntlProviderContainer'
 import ModalContainer from './ModalContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
+import {lobby} from '../types'
 import {mount} from 'enzyme'
 
 describe('<ModalContainer />', () => {
@@ -10,7 +11,7 @@ describe('<ModalContainer />', () => {
     test('visible', () => {
       const store = fakeStore({
         modal: {
-          type: 'confirmation',
+          type: lobby.ModalType.confirmation,
           visible: true
         }
       })
@@ -27,7 +28,7 @@ describe('<ModalContainer />', () => {
     test('hidden', () => {
       const store = fakeStore({
         modal: {
-          type: 'confirmation',
+          type: lobby.ModalType.confirmation,
           visible: false
         }
       })

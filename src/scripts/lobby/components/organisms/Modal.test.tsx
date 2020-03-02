@@ -14,6 +14,7 @@ describe('render', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
+          type={lobby.ModalType.confirmation}
           visible
         />
       </Provider>
@@ -29,6 +30,7 @@ describe('render', () => {
     const wrapper = mountWithIntl(
       <Provider store={store}>
         <Modal
+          type={lobby.ModalType.confirmation}
           visible={false}
         />
       </Provider>

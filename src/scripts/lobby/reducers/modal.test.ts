@@ -1,5 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import reducer, {initialState} from './modal'
+import {lobby} from '../types'
 
 test('CONFIRM_KICK_OUT_PLAYER', () => {
   expect(
@@ -12,7 +13,7 @@ test('CONFIRM_KICK_OUT_PLAYER', () => {
       }
     )
   ).toStrictEqual({
-    type: 'confirmation',
+    type: lobby.ModalType.confirmation,
     visible: true
   })
 })
@@ -20,7 +21,7 @@ test('SELECT_NO', () => {
   expect(
     reducer(
       {
-        type: 'confirmation',
+        type: lobby.ModalType.confirmation,
         visible: true
       },
       {
@@ -28,7 +29,7 @@ test('SELECT_NO', () => {
       }
     )
   ).toStrictEqual({
-    type: 'confirmation',
+    type: lobby.ModalType.confirmation,
     visible: false
   })
 })
@@ -36,7 +37,7 @@ test('SELECT_YES', () => {
   expect(
     reducer(
       {
-        type: 'confirmation',
+        type: lobby.ModalType.confirmation,
         visible: true
       },
       {
@@ -44,7 +45,7 @@ test('SELECT_YES', () => {
       }
     )
   ).toStrictEqual({
-    type: 'confirmation',
+    type: lobby.ModalType.confirmation,
     visible: false
   })
 })
