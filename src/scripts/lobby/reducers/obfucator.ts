@@ -1,11 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ConfirmKickOutPlayer,
+  Confirmation,
   SelectAvatarImage,
   SelectHumanAvatar,
-  SelectNo,
   SelectRobotAvatar,
-  SelectYes,
   Socket
 } from '../actions'
 
@@ -15,11 +14,11 @@ export interface State {
 }
 type Action =
   | ConfirmKickOutPlayer
+  | Confirmation.SelectNo
+  | Confirmation.SelectYes
   | SelectAvatarImage.CloseModal
   | SelectHumanAvatar.ShowAvatarImageSelect
-  | SelectNo
   | SelectRobotAvatar.ShowAvatarImageSelect
-  | SelectYes
   | Socket.Close
   | Socket.Error
   | Socket.Open
