@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Confirmation from './Confirmation'
 import Modal from './Modal'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
@@ -20,11 +21,7 @@ describe('render', () => {
       </Provider>
     )
 
-    expect(wrapper.find('.lo--modal--button')).toHaveLength(2)
-    expect(wrapper.find('.lo--modal--button.yes').exists()).toBe(true)
-    expect(wrapper.find('.lo--modal--button.yes').text()).toBe('Yes')
-    expect(wrapper.find('.lo--modal--button.no').exists()).toBe(true)
-    expect(wrapper.find('.lo--modal--button.no').text()).toBe('No')
+    expect(wrapper.find(Confirmation).exists()).toBe(true)
   })
   test('visible={false}', () => {
     const wrapper = mountWithIntl(
