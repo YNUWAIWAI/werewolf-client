@@ -1,29 +1,23 @@
-import {
-  SelectRobotAvatar$AutorizationRequestAccepted,
-  SelectRobotAvatar$ChangeAvatarLanguage,
-  SelectRobotAvatar$ChangeAvatarName,
-  SelectRobotAvatar$ChangeCheckbox,
-  SelectRobotAvatar$HoverAvatar,
-  SelectRobotAvatar$RenewAvatarToken,
-  SelectRobotAvatar$ShowAvatarImageSelect,
-  selectRobotAvatar
-} from '../actions'
-import SelectRobotAvatarTableBody, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/molecules/SelectRobotAvatarTableBody'
+import {
+  SelectRobotAvatar,
+  selectRobotAvatar
+} from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | SelectRobotAvatar$AutorizationRequestAccepted
-  | SelectRobotAvatar$ChangeAvatarLanguage
-  | SelectRobotAvatar$ChangeAvatarName
-  | SelectRobotAvatar$ChangeCheckbox
-  | SelectRobotAvatar$HoverAvatar
-  | SelectRobotAvatar$RenewAvatarToken
-  | SelectRobotAvatar$ShowAvatarImageSelect
+  | SelectRobotAvatar.AutorizationRequestAccepted
+  | SelectRobotAvatar.ChangeAvatarLanguage
+  | SelectRobotAvatar.ChangeAvatarName
+  | SelectRobotAvatar.ChangeCheckbox
+  | SelectRobotAvatar.HoverAvatar
+  | SelectRobotAvatar.RenewAvatarToken
+  | SelectRobotAvatar.ShowAvatarImageSelect
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
   avatar: state.selectRobotAvatar.avatar
@@ -58,6 +52,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const SelectRobotAvatarTableBodyContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SelectRobotAvatarTableBody)
+)(Component)
 
 export default SelectRobotAvatarTableBodyContainer

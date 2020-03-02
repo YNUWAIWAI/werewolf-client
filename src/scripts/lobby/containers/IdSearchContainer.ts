@@ -1,10 +1,9 @@
-import IdSearch, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/templates/IdSearch'
 import {
-  IdSearch$ChangeSearchId,
-  IdSearch$ChangeValidity,
+  IdSearch,
   SelectVillage,
   idSearch,
   selectVillage
@@ -14,8 +13,8 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | IdSearch$ChangeSearchId
-  | IdSearch$ChangeValidity
+  | IdSearch.ChangeSearchId
+  | IdSearch.ChangeValidity
   | SelectVillage
 
 const mapStateToProps = (state: ReducerState): StateProps => state.idSearch
@@ -33,6 +32,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const IdSearchContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(IdSearch)
+)(Component)
 
 export default IdSearchContainer

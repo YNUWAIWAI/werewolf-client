@@ -1,11 +1,11 @@
+import Component, {
+  DispatchProps,
+  StateProps
+} from '../components/templates/WaitingForPlayers'
 import {
   ConfirmKickOutPlayer,
   confirmKickOutPlayer
 } from '../actions'
-import WaitingForPlayers, {
-  DispatchProps,
-  StateProps
-} from '../components/templates/WaitingForPlayers'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -61,6 +61,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const WaitingForPlayersContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(WaitingForPlayers)
+)(Component)
 
 export default WaitingForPlayersContainer

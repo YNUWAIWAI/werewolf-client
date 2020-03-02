@@ -1,4 +1,4 @@
-import History, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/templates/History'
@@ -22,6 +22,6 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 const HistoryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(History)
+)(Component)
 
 export default HistoryContainer

@@ -1,4 +1,4 @@
-import SelectHumanAvatar, {StateProps} from '../components/templates/SelectHumanAvatar'
+import Component, {StateProps} from '../components/templates/SelectHumanAvatar'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -8,6 +8,6 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 })
 const SelectHumanAvatarContainer = connect(
   mapStateToProps
-)(SelectHumanAvatar)
+)(Component)
 
 export default SelectHumanAvatarContainer
