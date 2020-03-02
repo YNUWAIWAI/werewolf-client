@@ -1,19 +1,23 @@
-import {SelectAvatarImage} from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 
-export type SelectAvatarImage$CloseModal = {
-  type: SelectAvatarImage.CLOSE_MODAL
+// eslint-disable-next-line @typescript-eslint/no-namespace
+export declare namespace SelectAvatarImage {
+  type CloseModal = {
+    type: ActionTypes.SelectAvatarImage.CLOSE_MODAL
+  }
+  type SelectAvatar = {
+    image: string
+    type: ActionTypes.SelectAvatarImage.SELECT_AVATAR
+  }
 }
-const closeModal = (): SelectAvatarImage$CloseModal => ({
-  type: SelectAvatarImage.CLOSE_MODAL
+
+const closeModal = (): SelectAvatarImage.CloseModal => ({
+  type: ActionTypes.SelectAvatarImage.CLOSE_MODAL
 })
 
-export type SelectAvatarImage$SelectAvatar = {
-  image: string
-  type: SelectAvatarImage.SELECT_AVATAR
-}
-const selectAvatar = (image: string): SelectAvatarImage$SelectAvatar => ({
+const selectAvatar = (image: string): SelectAvatarImage.SelectAvatar => ({
   image,
-  type: SelectAvatarImage.SELECT_AVATAR
+  type: ActionTypes.SelectAvatarImage.SELECT_AVATAR
 })
 
 export const selectAvatarImage = {

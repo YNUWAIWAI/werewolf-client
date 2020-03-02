@@ -1,49 +1,49 @@
-import {Socket} from '../constants/ActionTypes'
+import * as ActionTypes from '../constants/ActionTypes'
 import {lobby} from '../types'
 
-export type SocketClose = {
-  event: CloseEvent
-  type: Socket.CLOSE
+// eslint-disable-next-line @typescript-eslint/no-namespace
+export declare namespace Socket {
+  type Close = {
+    event: CloseEvent
+    type: ActionTypes.Socket.CLOSE
+  }
+  type Error = {
+    event: Event
+    type: ActionTypes.Socket.ERROR
+  }
+  type Message = {
+    payload: lobby.Payload
+    type: ActionTypes.Socket.MESSAGE
+  }
+  type Open = {
+    event: Event
+    type: ActionTypes.Socket.OPEN
+  }
+  type Send = {
+    payload: lobby.Payload
+    type: ActionTypes.Socket.SEND
+  }
 }
-const close = (event: CloseEvent): SocketClose => ({
-  event,
-  type: Socket.CLOSE
-})
 
-export type SocketError = {
-  event: Event
-  type: Socket.ERROR
-}
-const error = (event: Event): SocketError => ({
+const close = (event: CloseEvent): Socket.Close => ({
   event,
-  type: Socket.ERROR
+  type: ActionTypes.Socket.CLOSE
 })
-
-export type SocketMessage = {
-  payload: lobby.Payload
-  type: Socket.MESSAGE
-}
-const message = (event: MessageEvent): SocketMessage => ({
+const error = (event: Event): Socket.Error => ({
+  event,
+  type: ActionTypes.Socket.ERROR
+})
+const message = (event: MessageEvent): Socket.Message => ({
   payload: JSON.parse(event.data),
-  type: Socket.MESSAGE
+  type: ActionTypes.Socket.MESSAGE
 })
-
-export type SocketOpen = {
-  event: Event
-  type: Socket.OPEN
-}
-const open = (event: Event): SocketOpen => ({
+const open = (event: Event): Socket.Open => ({
   event,
-  type: Socket.OPEN
+  type: ActionTypes.Socket.OPEN
 })
-
-export type SocketSend = {
-  payload: lobby.Payload
-  type: Socket.SEND
-}
-const send = (payload: lobby.Payload): SocketSend => ({
+const send = (payload: lobby.Payload): Socket.Send => ({
   payload,
-  type: Socket.SEND
+  type: ActionTypes.Socket.SEND
 })
 
 export const socket = {
