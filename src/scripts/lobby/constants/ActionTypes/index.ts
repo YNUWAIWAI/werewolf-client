@@ -1,6 +1,7 @@
 export {AdvancedSearch} from './advancedSearch'
 export {App} from './app'
 export {BuildVillage} from './buildVillage'
+export {Confirmation} from './confirmation'
 export {IdSearch} from './idSearch'
 export {Message} from './message'
 export {IndexedDB} from './indexedDB'

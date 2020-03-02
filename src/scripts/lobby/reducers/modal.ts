@@ -1,11 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ConfirmKickOutPlayer,
+  Confirmation,
   SelectAvatarImage,
   SelectHumanAvatar,
-  SelectNo,
-  SelectRobotAvatar,
-  SelectYes
+  SelectRobotAvatar
 } from '../actions'
 import {lobby} from '../types'
 
@@ -15,11 +14,11 @@ export interface State {
 }
 type Action =
   | ConfirmKickOutPlayer
+  | Confirmation.SelectNo
+  | Confirmation.SelectYes
   | SelectAvatarImage.CloseModal
   | SelectHumanAvatar.ShowAvatarImageSelect
-  | SelectNo
   | SelectRobotAvatar.ShowAvatarImageSelect
-  | SelectYes
 
 export const initialState: State = {
   type: lobby.ModalType.confirmation,
@@ -32,8 +31,8 @@ const modal = (state: State = initialState, action: Action): State => {
         type: lobby.ModalType.confirmation,
         visible: true
       }
-    case ActionTypes.App.SELECT_NO:
-    case ActionTypes.App.SELECT_YES:
+    case ActionTypes.Confirmation.SELECT_NO:
+    case ActionTypes.Confirmation.SELECT_YES:
       return {
         type: lobby.ModalType.confirmation,
         visible: false

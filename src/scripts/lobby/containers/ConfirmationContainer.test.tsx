@@ -54,7 +54,7 @@ describe('<ConfirmationContainer />', () => {
     wrapper.find(Confirmation).props().handleClickNo()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.App.SELECT_NO
+      type: ActionTypes.Confirmation.SELECT_NO
     })
   })
   describe('handleClickYes', () => {
@@ -74,7 +74,7 @@ describe('<ConfirmationContainer />', () => {
       wrapper.find(Confirmation).props().handleClickYes(ActionTypes.App.KICK_OUT_PLAYER)
       expect(dispatch).toHaveBeenCalledTimes(2)
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.App.SELECT_YES
+        type: ActionTypes.Confirmation.SELECT_YES
       })
       expect(dispatch).toHaveBeenCalledWith({
         type: ActionTypes.App.KICK_OUT_PLAYER
@@ -96,7 +96,7 @@ describe('<ConfirmationContainer />', () => {
       wrapper.find(Confirmation).props().handleClickYes('ACTION')
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.App.SELECT_YES
+        type: ActionTypes.Confirmation.SELECT_YES
       })
     })
   })
