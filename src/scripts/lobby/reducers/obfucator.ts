@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ConfirmKickOutPlayer,
+  SelectAvatarImage$CloseModal,
   SelectHumanAvatar$ShowAvatarImageSelect,
   SelectNo,
   SelectRobotAvatar$ShowAvatarImageSelect,
@@ -16,6 +17,7 @@ export interface State {
 }
 type Action =
   | ConfirmKickOutPlayer
+  | SelectAvatarImage$CloseModal
   | SelectHumanAvatar$ShowAvatarImageSelect
   | SelectNo
   | SelectRobotAvatar$ShowAvatarImageSelect
@@ -40,6 +42,11 @@ const obfucator = (state: State = initialState, action: Action): State => {
       }
     case ActionTypes.App.SELECT_NO:
     case ActionTypes.App.SELECT_YES:
+      return {
+        loading: false,
+        visible: false
+      }
+    case ActionTypes.SelectAvatarImage.CLOSE_MODAL:
       return {
         loading: false,
         visible: false
