@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  Confirmation,
   AvatarImageSelect,
+  Confirmation,
   SelectHumanAvatar,
   SelectRobotAvatar,
   WaitingPage
@@ -13,9 +13,9 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
+  | AvatarImageSelect.CloseModal
   | Confirmation.SelectNo
   | Confirmation.SelectYes
-  | AvatarImageSelect.CloseModal
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
   | WaitingPage.ConfirmKickOutPlayer
