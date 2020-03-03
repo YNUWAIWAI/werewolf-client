@@ -4,18 +4,16 @@ import Component, {
 } from '../components/organisms/Confirmation'
 import {
   Confirmation,
-  KickOutPlayer,
+  WaitingPage,
   confirmation,
-  kickOutPlayer
+  waitingPage
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
-  | KickOutPlayer
-  | Confirmation.SelectNo
-  | Confirmation.SelectYes
+  | WaitingPage.KickOutPlayer
 
 const mapStateToProps = (state: ReducerState): StateProps => state.confirmation
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
@@ -26,7 +24,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(confirmation.selectYes())
     switch (type) {
       case ActionTypes.WaitingPage.KICK_OUT_PLAYER:
-        dispatch(kickOutPlayer())
+        dispatch(waitingPage.kickOutPlayer())
         break
       default:
     }
