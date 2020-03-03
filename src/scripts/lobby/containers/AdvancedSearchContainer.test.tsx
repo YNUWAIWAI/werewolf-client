@@ -28,7 +28,7 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -89,7 +89,7 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -151,7 +151,7 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.App.ADVANCED_SEARCH]
+              types: [ActionTypes.AdvancedSearch.SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
@@ -221,7 +221,7 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.App.ADVANCED_SEARCH]
+              types: [ActionTypes.AdvancedSearch.SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
@@ -294,7 +294,7 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -364,7 +364,7 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -436,7 +436,7 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -506,7 +506,7 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -576,7 +576,7 @@ describe('<AdvancedSearchContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -647,7 +647,7 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.App.ADVANCED_SEARCH]
+              types: [ActionTypes.AdvancedSearch.SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',
@@ -719,7 +719,7 @@ describe('<AdvancedSearchContainer />', () => {
           menuItems: [
             {
               id: 'Menu.search',
-              types: [ActionTypes.App.ADVANCED_SEARCH]
+              types: [ActionTypes.AdvancedSearch.SEARCH]
             },
             {
               id: 'Menu.returnToLobbyForHumanPlayer',

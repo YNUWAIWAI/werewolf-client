@@ -31,7 +31,7 @@ describe('<BuildVillageContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.App.BUILD_VILLAGE]
+                types: [ActionTypes.BuildVillage.BUILD]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -70,7 +70,7 @@ describe('<BuildVillageContainer />', () => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.App.BUILD_VILLAGE]
+                types: [ActionTypes.BuildVillage.BUILD]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',

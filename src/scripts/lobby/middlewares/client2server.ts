@@ -6,7 +6,7 @@ import {socket} from '../actions'
 
 const client2server: Middleware = store => next => action => {
   switch (action.type) {
-    case ActionTypes.App.ADVANCED_SEARCH: {
+    case ActionTypes.AdvancedSearch.SEARCH: {
       const state = store.getState()
       const payload: lobby.Payload$AdvancedSearch = {
         avatar: state.advancedSearch.validity.avatar ? state.advancedSearch.value.avatar : lobby.Avatar.random,
@@ -24,7 +24,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.BUILD_VILLAGE: {
+    case ActionTypes.BuildVillage.BUILD: {
       const state = store.getState()
       const payload: lobby.Payload$BuildVillage = {
         avatar: state.buildVillage.value.avatar,
@@ -52,6 +52,23 @@ const client2server: Middleware = store => next => action => {
         roleSetting: getCastFromNumberOfPlayers(state.buildVillage.value.numberOfPlayers)[state.buildVillage.value.member],
         token: state.token[state.token.lobby],
         type: lobby.PayloadType.buildVillage
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
+    case ActionTypes.IdSearch.SEARCH: {
+      const state = store.getState()
+
+      if (state.idSearch.id === -1) {
+        return next(action)
+      }
+      const payload: lobby.Payload$IdSearch = {
+        idForSearching: state.idSearch.id,
+        lobby: state.token.lobby,
+        token: state.token[state.token.lobby],
+        type: lobby.PayloadType.idSearch
       }
 
       store.dispatch(socket.send(payload))
@@ -92,23 +109,6 @@ const client2server: Middleware = store => next => action => {
       const payload: lobby.Payload$ChangeUserPassword = {
         type: lobby.PayloadType.changeUserPassword,
         userPassword: action.userPassword
-      }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
-    }
-    case ActionTypes.App.ID_SEARCH: {
-      const state = store.getState()
-
-      if (state.idSearch.id === -1) {
-        return next(action)
-      }
-      const payload: lobby.Payload$IdSearch = {
-        idForSearching: state.idSearch.id,
-        lobby: state.token.lobby,
-        token: state.token[state.token.lobby],
-        type: lobby.PayloadType.idSearch
       }
 
       store.dispatch(socket.send(payload))

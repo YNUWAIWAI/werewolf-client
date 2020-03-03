@@ -34,7 +34,7 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.App.ADVANCED_SEARCH]
+        types: [ActionTypes.AdvancedSearch.SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
@@ -102,7 +102,7 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.App.ADVANCED_SEARCH]
+        types: [ActionTypes.AdvancedSearch.SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
@@ -170,7 +170,7 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.App.ADVANCED_SEARCH]
+        types: [ActionTypes.AdvancedSearch.SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
@@ -274,7 +274,7 @@ storiesOf('lobby|AdvancedSearch', module)
     const menuItems: MenuItemProps[] = [
       {
         id: 'Menu.search',
-        types: [ActionTypes.App.ADVANCED_SEARCH]
+        types: [ActionTypes.AdvancedSearch.SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',

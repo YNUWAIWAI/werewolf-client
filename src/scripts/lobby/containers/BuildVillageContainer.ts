@@ -29,7 +29,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     }
 
     return state.buildVillage.menuItems.map(item => {
-      if (item.types.includes(ActionTypes.App.BUILD_VILLAGE)) {
+      if (item.types.includes(ActionTypes.BuildVillage.BUILD)) {
         return {
           ... item,
           disabled: true

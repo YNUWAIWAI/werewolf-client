@@ -1,4 +1,5 @@
 export const enum BuildVillage {
+  BUILD = 'buildVillage/BUILD',
   CHANGE_AVATAR = 'buildVillage/CHANGE_AVATAR',
   CHANGE_COMMENT = 'buildVillage/CHANGE_COMMENT',
   CHANGE_HOST_NAME = 'buildVillage/CHANGE_HOST_NAME',

@@ -74,9 +74,7 @@ export const showVillage = (): ShowVillage => ({
 })
 
 export type Target =
-  | ActionTypes.App.ADVANCED_SEARCH
-  | ActionTypes.App.BUILD_VILLAGE
-  | ActionTypes.App.ID_SEARCH
+  | ActionTypes.AdvancedSearch.SEARCH
   | ActionTypes.App.LEAVE_WAITING_PAGE
   | ActionTypes.App.PLAY_GAME
   | ActionTypes.App.REFRESH
@@ -95,6 +93,8 @@ export type Target =
   | ActionTypes.App.SHOW_SELECT_ROBOT_AVATAR
   | ActionTypes.App.SHOW_SETTINGS
   | ActionTypes.App.SHOW_VILLAGE
+  | ActionTypes.BuildVillage.BUILD
+  | ActionTypes.IdSearch.SEARCH
   | ActionTypes.SelectHumanAvatar.CREATE
   | ActionTypes.SelectHumanAvatar.DELETE
   | ActionTypes.SelectHumanAvatar.SELECT

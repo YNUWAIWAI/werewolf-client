@@ -33,7 +33,7 @@ test('BUILD_VILLAGE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.BUILD_VILLAGE
+    type: ActionTypes.BuildVillage.BUILD
   }
 
   actionHandler(action)

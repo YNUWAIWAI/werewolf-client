@@ -22,7 +22,7 @@ storiesOf('lobby|IdSearch', module)
       {
         disabled: true,
         id: 'Menu.search',
-        types: [ActionTypes.App.ID_SEARCH]
+        types: [ActionTypes.IdSearch.SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
@@ -67,7 +67,7 @@ storiesOf('lobby|IdSearch', module)
       {
         disabled: true,
         id: 'Menu.search',
-        types: [ActionTypes.App.ID_SEARCH]
+        types: [ActionTypes.IdSearch.SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
@@ -112,7 +112,7 @@ storiesOf('lobby|IdSearch', module)
       {
         disabled: true,
         id: 'Menu.search',
-        types: [ActionTypes.App.ID_SEARCH]
+        types: [ActionTypes.IdSearch.SEARCH]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',

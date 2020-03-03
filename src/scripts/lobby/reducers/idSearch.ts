@@ -52,7 +52,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
               {
                 disabled: true,
                 id: 'Menu.search',
-                types: [ActionTypes.App.ID_SEARCH]
+                types: [ActionTypes.IdSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForAudience',
@@ -76,7 +76,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
               {
                 disabled: true,
                 id: 'Menu.search',
-                types: [ActionTypes.App.ID_SEARCH]
+                types: [ActionTypes.IdSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -100,7 +100,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
               {
                 disabled: true,
                 id: 'Menu.search',
-                types: [ActionTypes.App.ID_SEARCH]
+                types: [ActionTypes.IdSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
@@ -127,7 +127,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -151,7 +151,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
@@ -175,7 +175,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
@@ -201,7 +201,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
+          if (item.types.includes(ActionTypes.IdSearch.SEARCH)) {
             return {
               ... item,
               disabled
@@ -212,11 +212,11 @@ const idSearch = (state: State = initialState, action: Action): State => {
         })
       }
     }
-    case ActionTypes.App.ID_SEARCH:
+    case ActionTypes.IdSearch.SEARCH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
+          if (item.types.includes(ActionTypes.IdSearch.SEARCH)) {
             return {
               ... item,
               isLoading: true
@@ -241,7 +241,7 @@ const idSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.App.ID_SEARCH)) {
+          if (item.types.includes(ActionTypes.IdSearch.SEARCH)) {
             return {
               ... item,
               isLoading: false
