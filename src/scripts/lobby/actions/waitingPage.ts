@@ -23,7 +23,7 @@ const kickOutPlayer = (): WaitingPage.KickOutPlayer => ({
   type: ActionTypes.WaitingPage.KICK_OUT_PLAYER
 })
 
-export const waitinngPage = {
+export const waitingPage = {
   confirmKickOutPlayer,
   kickOutPlayer
 }

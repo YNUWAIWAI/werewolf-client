@@ -1,5 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {ConfirmKickOutPlayer} from '../actions'
+import {WaitingPage} from '../actions'
 import {lobby} from '../types'
 
 export interface State {
@@ -11,7 +11,7 @@ export interface State {
   }
 }
 type Action =
-  | ConfirmKickOutPlayer
+  | WaitingPage.ConfirmKickOutPlayer
 
 export const initialState: State = {
   descriptionId: '@dummy',

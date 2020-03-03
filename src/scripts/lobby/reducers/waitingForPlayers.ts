@@ -1,9 +1,9 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangeLobby,
-  ConfirmKickOutPlayer,
   Message,
-  Transition
+  Transition,
+  WaitingPage
 } from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {lobby} from '../types'
@@ -17,7 +17,7 @@ export interface State {
 }
 type Action =
   | ChangeLobby
-  | ConfirmKickOutPlayer
+  | WaitingPage.ConfirmKickOutPlayer
   | Message.Played
   | Message.WaitingPage
   | Transition
