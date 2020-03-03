@@ -13,6 +13,8 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
+  | Confirmation.SelectNo
+  | Confirmation.SelectYes
   | WaitingPage.KickOutPlayer
 
 const mapStateToProps = (state: ReducerState): StateProps => state.confirmation
