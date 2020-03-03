@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  AvatarImageSelect,
   Confirmation,
-  SelectAvatarImage,
   SelectHumanAvatar,
   SelectRobotAvatar,
   Socket,
@@ -13,9 +13,9 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
+  | AvatarImageSelect.CloseModal
   | Confirmation.SelectNo
   | Confirmation.SelectYes
-  | SelectAvatarImage.CloseModal
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
   | Socket.Close
@@ -30,6 +30,11 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.AvatarImageSelect.CLOSE_MODAL:
+      return {
+        loading: false,
+        visible: false
+      }
     case ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER:
     case ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
@@ -39,11 +44,6 @@ const obfucator = (state: State = initialState, action: Action): State => {
       }
     case ActionTypes.Confirmation.SELECT_NO:
     case ActionTypes.Confirmation.SELECT_YES:
-      return {
-        loading: false,
-        visible: false
-      }
-    case ActionTypes.SelectAvatarImage.CLOSE_MODAL:
       return {
         loading: false,
         visible: false

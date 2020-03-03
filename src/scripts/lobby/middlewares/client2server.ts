@@ -251,7 +251,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.SelectAvatarImage.SELECT_AVATAR: {
+    case ActionTypes.AvatarImageSelect.SELECT_AVATAR: {
       const state = store.getState()
       const payload: lobby.Payload$ChangeAvatar = {
         image: action.image,

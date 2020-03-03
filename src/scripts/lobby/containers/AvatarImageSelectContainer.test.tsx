@@ -55,7 +55,7 @@ describe('<AvatarImageSelectContainer />', () => {
     wrapper.find(AvatarImageSelect).props().handleCloseButtonClick()
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
-      type: ActionTypes.SelectAvatarImage.CLOSE_MODAL
+      type: ActionTypes.AvatarImageSelect.CLOSE_MODAL
     })
   })
   test('handleImageSelect', () => {
@@ -84,7 +84,7 @@ describe('<AvatarImageSelectContainer />', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       image,
-      type: ActionTypes.SelectAvatarImage.SELECT_AVATAR
+      type: ActionTypes.AvatarImageSelect.SELECT_AVATAR
     })
   })
 })

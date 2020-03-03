@@ -8,8 +8,8 @@ import {
   Settings,
   Transition,
   WaitingPage,
+  avatarImageSelect,
   message,
-  selectAvatarImage,
   selectRobotAvatar
 } from '../actions'
 import Ajv from 'ajv'
@@ -1244,7 +1244,7 @@ describe('message/PING', () => {
     })
   })
 })
-describe('selectAvatarImage/SELECT_AVATAR', () => {
+describe('avatarImageSelect/SELECT_AVATAR', () => {
   const token = '3F2504E0-4F89-11D3-9A0C-0305E82C3301'
   const store = fakeStore({
     avatarImageList: {
@@ -1268,7 +1268,7 @@ describe('selectAvatarImage/SELECT_AVATAR', () => {
     token,
     type: lobby.PayloadType.changeAvatar
   }
-  const action = selectAvatarImage.selectAvatar(image)
+  const action = avatarImageSelect.selectAvatar(image)
 
   test('validate the JSON', async () => {
     expect.hasAssertions()
