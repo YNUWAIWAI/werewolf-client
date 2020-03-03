@@ -11,6 +11,7 @@ export * from './selectHumanAvatar'
 export * from './selectRobotAvatar'
 export * from './settings'
 export * from './socket'
+export * from './waitingPage'
 
 export type ChangeLobby = {
   lobby: Lobby.LobbyType
@@ -30,24 +31,6 @@ export const changeToken = ({lobby, token}: {lobby: Lobby.LobbyType, token: stri
   lobby,
   token,
   type: ActionTypes.App.CHANGE_TOKEN
-})
-
-export type ConfirmKickOutPlayer = {
-  name: string
-  token: Lobby.Token
-  type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
-}
-export const confirmKickOutPlayer = (values: {name: string, token: Lobby.Token}): ConfirmKickOutPlayer => ({
-  name: values.name,
-  token: values.token,
-  type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER
-})
-
-export type KickOutPlayer = {
-  type: ActionTypes.App.KICK_OUT_PLAYER
-}
-export const kickOutPlayer = (): KickOutPlayer => ({
-  type: ActionTypes.App.KICK_OUT_PLAYER
 })
 
 export type Init = {
@@ -75,8 +58,6 @@ export const showVillage = (): ShowVillage => ({
 
 export type Target =
   | ActionTypes.AdvancedSearch.SEARCH
-  | ActionTypes.App.LEAVE_WAITING_PAGE
-  | ActionTypes.App.PLAY_GAME
   | ActionTypes.App.REFRESH
   | ActionTypes.App.SHOW_ADVANCED_SEARCH
   | ActionTypes.App.SHOW_BUILD_VILLAGE
@@ -103,6 +84,8 @@ export type Target =
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_BACKGROUND
   | ActionTypes.SelectRobotAvatar.RUN_IN_THE_FOREGROUND
   | ActionTypes.SelectRobotAvatar.STOP
+  | ActionTypes.WaitingPage.LEAVE_WAITING_PAGE
+  | ActionTypes.WaitingPage.PLAY_GAME
 export type Transition = {
   type: Target
 }

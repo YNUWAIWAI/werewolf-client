@@ -484,7 +484,7 @@ describe('KICK_OUT_PLAYER', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: KickOutPlayer = {
-    type: ActionTypes.App.KICK_OUT_PLAYER
+    type: ActionTypes.WaitingPage.KICK_OUT_PLAYER
   }
   const payload: lobby.Payload$KickOutPlayer = {
     players: [
@@ -592,7 +592,7 @@ describe('LEAVE_WAITING_PAGE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.LEAVE_WAITING_PAGE
+    type: ActionTypes.WaitingPage.LEAVE_WAITING_PAGE
   }
   const payload: lobby.Payload$LeaveWaitingPage = {
     lobby: lobby.LobbyType.human,
@@ -698,7 +698,7 @@ describe('PLAY_GAME', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.PLAY_GAME
+    type: ActionTypes.WaitingPage.PLAY_GAME
   }
   const payload: lobby.Payload$Play = {
     token: avatarToken.humanPlayer,

@@ -23,10 +23,10 @@ export const initialState: State = {
 }
 const modal = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.App.CONFIRM_KICK_OUT_PLAYER:
+    case ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER:
       return {
         descriptionId: 'Modal.description(kickOutPlayer)',
-        type: ActionTypes.App.CONFIRM_KICK_OUT_PLAYER,
+        type: ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER,
         values: {
           name: action.name,
           token: action.token

@@ -115,7 +115,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.KICK_OUT_PLAYER: {
+    case ActionTypes.WaitingPage.KICK_OUT_PLAYER: {
       const state = store.getState()
       const payload: lobby.Payload$KickOutPlayer = {
         players: [
@@ -131,7 +131,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.LEAVE_WAITING_PAGE: {
+    case ActionTypes.WaitingPage.LEAVE_WAITING_PAGE: {
       const state = store.getState()
       const me = state.waitingForPlayers.players.find(v => v.isMe)
 
@@ -148,7 +148,7 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.PLAY_GAME: {
+    case ActionTypes.WaitingPage.PLAY_GAME: {
       const state = store.getState()
 
       if (!state.waitingForPlayers.village) {

@@ -212,7 +212,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
           villageName: action.villageName
         }
       }
-    case ActionTypes.App.LEAVE_WAITING_PAGE:
+    case ActionTypes.WaitingPage.LEAVE_WAITING_PAGE:
       return {
         ... state,
         validity: initialState.validity,

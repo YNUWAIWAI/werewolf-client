@@ -257,7 +257,7 @@ test('LEAVE_WAITING_PAGE', async () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.LEAVE_WAITING_PAGE
+    type: ActionTypes.WaitingPage.LEAVE_WAITING_PAGE
   }
   const dispatch = jest.fn()
 

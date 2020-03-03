@@ -190,15 +190,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -264,15 +264,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -338,15 +338,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -412,15 +412,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -486,15 +486,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -560,15 +560,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -634,15 +634,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -708,15 +708,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -782,15 +782,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -856,15 +856,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -930,15 +930,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {
@@ -1004,15 +1004,15 @@ storiesOf('lobby|WaitingForPlayers', module)
       {
         disabled: true,
         id: 'Menu.playGame',
-        types: [ActionTypes.App.PLAY_GAME]
+        types: [ActionTypes.WaitingPage.PLAY_GAME]
       },
       {
         id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
       },
       {
         id: 'Menu.returnToMainPage',
-        types: [ActionTypes.App.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
       }
     ]
     const village: Props['village'] = {

@@ -1,10 +1,10 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  ConfirmKickOutPlayer,
   Confirmation,
   SelectAvatarImage,
   SelectHumanAvatar,
-  SelectRobotAvatar
+  SelectRobotAvatar,
+  WaitingPage
 } from '../actions'
 import {lobby} from '../types'
 
@@ -13,12 +13,12 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
-  | ConfirmKickOutPlayer
   | Confirmation.SelectNo
   | Confirmation.SelectYes
   | SelectAvatarImage.CloseModal
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
+  | WaitingPage.ConfirmKickOutPlayer
 
 export const initialState: State = {
   type: lobby.ModalType.confirmation,
@@ -26,11 +26,6 @@ export const initialState: State = {
 }
 const modal = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.App.CONFIRM_KICK_OUT_PLAYER:
-      return {
-        type: lobby.ModalType.confirmation,
-        visible: true
-      }
     case ActionTypes.Confirmation.SELECT_NO:
     case ActionTypes.Confirmation.SELECT_YES:
       return {
@@ -46,6 +41,11 @@ const modal = (state: State = initialState, action: Action): State => {
     case ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
       return {
         type: lobby.ModalType.avatarImageSelect,
+        visible: true
+      }
+    case ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER:
+      return {
+        type: lobby.ModalType.confirmation,
         visible: true
       }
     default:

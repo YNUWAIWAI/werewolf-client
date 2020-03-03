@@ -71,13 +71,13 @@ describe('<ConfirmationContainer />', () => {
         </Provider>
       )
 
-      wrapper.find(Confirmation).props().handleClickYes(ActionTypes.App.KICK_OUT_PLAYER)
+      wrapper.find(Confirmation).props().handleClickYes(ActionTypes.WaitingPage.KICK_OUT_PLAYER)
       expect(dispatch).toHaveBeenCalledTimes(2)
       expect(dispatch).toHaveBeenCalledWith({
         type: ActionTypes.Confirmation.SELECT_YES
       })
       expect(dispatch).toHaveBeenCalledWith({
-        type: ActionTypes.App.KICK_OUT_PLAYER
+        type: ActionTypes.WaitingPage.KICK_OUT_PLAYER
       })
     })
     test('default', () => {
