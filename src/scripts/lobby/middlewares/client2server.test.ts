@@ -757,7 +757,7 @@ describe('ID_SEARCH valid id', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.ID_SEARCH
+    type: ActionTypes.IdSearch.SEARCH
   }
   const payload: lobby.Payload$IdSearch = {
     idForSearching,
@@ -811,7 +811,7 @@ describe('ID_SEARCH invalid id(=-1)', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.ID_SEARCH
+    type: ActionTypes.IdSearch.SEARCH
   }
 
   test('dispatch correctly', () => {

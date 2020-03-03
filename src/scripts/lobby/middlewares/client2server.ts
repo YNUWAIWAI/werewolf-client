@@ -58,6 +58,23 @@ const client2server: Middleware = store => next => action => {
 
       return next(action)
     }
+    case ActionTypes.IdSearch.SEARCH: {
+      const state = store.getState()
+
+      if (state.idSearch.id === -1) {
+        return next(action)
+      }
+      const payload: lobby.Payload$IdSearch = {
+        idForSearching: state.idSearch.id,
+        lobby: state.token.lobby,
+        token: state.token[state.token.lobby],
+        type: lobby.PayloadType.idSearch
+      }
+
+      store.dispatch(socket.send(payload))
+
+      return next(action)
+    }
     case ActionTypes.Settings.CHANGE_LANGUAGE: {
       const payload: lobby.Payload$ChangeLanguage = {
         language: action.language,
@@ -92,23 +109,6 @@ const client2server: Middleware = store => next => action => {
       const payload: lobby.Payload$ChangeUserPassword = {
         type: lobby.PayloadType.changeUserPassword,
         userPassword: action.userPassword
-      }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
-    }
-    case ActionTypes.App.ID_SEARCH: {
-      const state = store.getState()
-
-      if (state.idSearch.id === -1) {
-        return next(action)
-      }
-      const payload: lobby.Payload$IdSearch = {
-        idForSearching: state.idSearch.id,
-        lobby: state.token.lobby,
-        token: state.token[state.token.lobby],
-        type: lobby.PayloadType.idSearch
       }
 
       store.dispatch(socket.send(payload))

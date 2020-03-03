@@ -27,7 +27,7 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -63,7 +63,7 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
@@ -99,7 +99,7 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -135,7 +135,7 @@ describe('CHANGE_LOBBY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
@@ -161,7 +161,7 @@ test('ID_SEARCH', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -174,7 +174,7 @@ test('ID_SEARCH', () => {
         ]
       },
       {
-        type: ActionTypes.App.ID_SEARCH
+        type: ActionTypes.IdSearch.SEARCH
       }
     )
   ).toStrictEqual(
@@ -184,7 +184,7 @@ test('ID_SEARCH', () => {
         {
           id: 'Menu.search',
           isLoading: true,
-          types: [ActionTypes.App.ID_SEARCH]
+          types: [ActionTypes.IdSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
@@ -216,7 +216,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.App.ID_SEARCH]
+          types: [ActionTypes.IdSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
@@ -251,7 +251,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.App.ID_SEARCH]
+          types: [ActionTypes.IdSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
@@ -286,7 +286,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
         {
           disabled: true,
           id: 'Menu.search',
-          types: [ActionTypes.App.ID_SEARCH]
+          types: [ActionTypes.IdSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
@@ -329,7 +329,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
           {
             disabled: true,
             id: 'Menu.search',
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -354,7 +354,7 @@ test('idSearch/CHANGE_VALIDITY', () => {
         {
           disabled: false,
           id: 'Menu.search',
-          types: [ActionTypes.App.ID_SEARCH]
+          types: [ActionTypes.IdSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
@@ -392,7 +392,7 @@ test('message/SEARCH_RESULT', () => {
             disabled: false,
             id: 'Menu.search',
             isLoading: true,
-            types: [ActionTypes.App.ID_SEARCH]
+            types: [ActionTypes.IdSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
@@ -414,7 +414,7 @@ test('message/SEARCH_RESULT', () => {
           disabled: false,
           id: 'Menu.search',
           isLoading: false,
-          types: [ActionTypes.App.ID_SEARCH]
+          types: [ActionTypes.IdSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
