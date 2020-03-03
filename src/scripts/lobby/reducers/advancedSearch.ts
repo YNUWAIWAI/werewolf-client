@@ -91,11 +91,11 @@ export const initialState: State = {
 
 const advancedSearch = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.App.ADVANCED_SEARCH:
+    case ActionTypes.AdvancedSearch.SEARCH:
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.App.ADVANCED_SEARCH)) {
+          if (item.types.includes(ActionTypes.AdvancedSearch.SEARCH)) {
             return {
               ... item,
               isLoading: true
@@ -181,7 +181,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForAudience',
@@ -202,7 +202,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -223,7 +223,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
             menuItems: [
               {
                 id: 'Menu.search',
-                types: [ActionTypes.App.ADVANCED_SEARCH]
+                types: [ActionTypes.AdvancedSearch.SEARCH]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
@@ -255,7 +255,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -276,7 +276,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
@@ -297,7 +297,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
@@ -325,7 +325,7 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
       return {
         ... state,
         menuItems: state.menuItems.map(item => {
-          if (item.types.includes(ActionTypes.App.ADVANCED_SEARCH)) {
+          if (item.types.includes(ActionTypes.AdvancedSearch.SEARCH)) {
             return {
               ... item,
               isLoading: false

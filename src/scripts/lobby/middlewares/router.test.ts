@@ -150,7 +150,7 @@ describe('BUILD_VILLAGE', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.App.BUILD_VILLAGE
+      type: ActionTypes.BuildVillage.BUILD
     })
     expect(replace).toHaveBeenCalled()
     expect(replace).toHaveBeenCalledWith('/human/waitingForPlayers')
@@ -167,7 +167,7 @@ describe('BUILD_VILLAGE', () => {
     const actionHandler = nextHandler(dispatchAPI)
 
     actionHandler({
-      type: ActionTypes.App.BUILD_VILLAGE
+      type: ActionTypes.BuildVillage.BUILD
     })
     expect(replace).toHaveBeenCalled()
     expect(replace).toHaveBeenCalledWith('/')

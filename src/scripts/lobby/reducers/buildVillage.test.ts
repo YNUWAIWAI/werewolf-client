@@ -33,7 +33,7 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.App.BUILD_VILLAGE]
+            types: [ActionTypes.BuildVillage.BUILD]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
@@ -80,7 +80,7 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.App.BUILD_VILLAGE]
+            types: [ActionTypes.BuildVillage.BUILD]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
@@ -491,7 +491,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.buildVillage',
-          types: [ActionTypes.App.BUILD_VILLAGE]
+          types: [ActionTypes.BuildVillage.BUILD]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
@@ -577,7 +577,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.buildVillage',
-          types: [ActionTypes.App.BUILD_VILLAGE]
+          types: [ActionTypes.BuildVillage.BUILD]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',

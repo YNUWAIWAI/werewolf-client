@@ -4,8 +4,8 @@ import {Middleware} from '.'
 const windowLocation: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.App.SELECT_VILLAGE:
-    case ActionTypes.App.BUILD_VILLAGE:
     case ActionTypes.App.SHOW_SETTINGS:
+    case ActionTypes.BuildVillage.BUILD:
       window.onbeforeunload = () => ''
 
       return next(action)

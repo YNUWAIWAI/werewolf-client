@@ -85,7 +85,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.App.BUILD_VILLAGE]
+                types: [ActionTypes.BuildVillage.BUILD]
               },
               {
                 id: 'Menu.returnToLobbyForHumanPlayer',
@@ -108,7 +108,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
             menuItems: [
               {
                 id: 'Menu.buildVillage',
-                types: [ActionTypes.App.BUILD_VILLAGE]
+                types: [ActionTypes.BuildVillage.BUILD]
               },
               {
                 id: 'Menu.returnToLobbyForRobotPlayer',
@@ -228,7 +228,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.App.BUILD_VILLAGE]
+            types: [ActionTypes.BuildVillage.BUILD]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
@@ -261,7 +261,7 @@ const buildVillage = (state: State = initialState, action: Action): State => {
         menuItems: [
           {
             id: 'Menu.buildVillage',
-            types: [ActionTypes.App.BUILD_VILLAGE]
+            types: [ActionTypes.BuildVillage.BUILD]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',

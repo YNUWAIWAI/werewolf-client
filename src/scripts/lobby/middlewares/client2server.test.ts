@@ -76,7 +76,7 @@ describe('ADVANCED_SEARCH', () => {
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
     const action: Transition = {
-      type: ActionTypes.App.ADVANCED_SEARCH
+      type: ActionTypes.AdvancedSearch.SEARCH
     }
     const payload: lobby.Payload$AdvancedSearch = {
       ... value,
@@ -149,7 +149,7 @@ describe('ADVANCED_SEARCH', () => {
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
     const action: Transition = {
-      type: ActionTypes.App.ADVANCED_SEARCH
+      type: ActionTypes.AdvancedSearch.SEARCH
     }
     const payload: lobby.Payload$AdvancedSearch = {
       avatar: lobby.Avatar.random,
@@ -209,7 +209,7 @@ describe('BUILD_VILLAGE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.BUILD_VILLAGE
+    type: ActionTypes.BuildVillage.BUILD
   }
   const payload: lobby.Payload$BuildVillage = {
     avatar: buildVillage.value.avatar,

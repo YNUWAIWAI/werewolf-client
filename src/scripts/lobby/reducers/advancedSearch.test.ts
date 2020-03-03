@@ -15,7 +15,7 @@ test('ADVANCED_SEARCH', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -29,7 +29,7 @@ test('ADVANCED_SEARCH', () => {
         searched: false
       },
       {
-        type: ActionTypes.App.ADVANCED_SEARCH
+        type: ActionTypes.AdvancedSearch.SEARCH
       }
     )
   ).toStrictEqual(
@@ -39,7 +39,7 @@ test('ADVANCED_SEARCH', () => {
         {
           id: 'Menu.search',
           isLoading: true,
-          types: [ActionTypes.App.ADVANCED_SEARCH]
+          types: [ActionTypes.AdvancedSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
@@ -72,7 +72,7 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -104,7 +104,7 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForHumanPlayer',
@@ -136,7 +136,7 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -167,7 +167,7 @@ describe('CHANGE_LOBBY', () => {
         menuItems: [
           {
             id: 'Menu.search',
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForRobotPlayer',
@@ -599,7 +599,7 @@ test('SHOW_LOBBY_FOR_AUDIENCE', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.App.ADVANCED_SEARCH]
+          types: [ActionTypes.AdvancedSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',
@@ -630,7 +630,7 @@ test('SHOW_LOBBY_FOR_HUMAN_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.App.ADVANCED_SEARCH]
+          types: [ActionTypes.AdvancedSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForHumanPlayer',
@@ -661,7 +661,7 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
       menuItems: [
         {
           id: 'Menu.search',
-          types: [ActionTypes.App.ADVANCED_SEARCH]
+          types: [ActionTypes.AdvancedSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForRobotPlayer',
@@ -699,7 +699,7 @@ test('searchResult', () => {
           {
             id: 'Menu.search',
             isLoading: true,
-            types: [ActionTypes.App.ADVANCED_SEARCH]
+            types: [ActionTypes.AdvancedSearch.SEARCH]
           },
           {
             id: 'Menu.returnToLobbyForAudience',
@@ -720,7 +720,7 @@ test('searchResult', () => {
         {
           id: 'Menu.search',
           isLoading: false,
-          types: [ActionTypes.App.ADVANCED_SEARCH]
+          types: [ActionTypes.AdvancedSearch.SEARCH]
         },
         {
           id: 'Menu.returnToLobbyForAudience',

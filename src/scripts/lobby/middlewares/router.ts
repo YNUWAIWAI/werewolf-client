@@ -48,7 +48,7 @@ const router: (history: History) => Middleware = history => store => next => act
       }
     }
     case ActionTypes.App.SELECT_VILLAGE:
-    case ActionTypes.App.BUILD_VILLAGE: {
+    case ActionTypes.BuildVillage.BUILD: {
       const lobbyType = getLobbyType(history.location.pathname)
 
       if (lobbyType) {
