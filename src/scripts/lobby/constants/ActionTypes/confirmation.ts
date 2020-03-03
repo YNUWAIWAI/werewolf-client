@@ -1,4 +1,4 @@
 export const enum Confirmation {
-  SELECT_NO = 'SELECT_NO',
-  SELECT_YES = 'SELECT_YES',
+  SELECT_NO = 'confirmation/SELECT_NO',
+  SELECT_YES = 'confirmation/SELECT_YES',
 }

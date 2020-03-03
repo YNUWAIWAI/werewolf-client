@@ -150,7 +150,7 @@ const indexedDBMiddleware: Middleware = store => next => action => {
 
       return next(action)
     }
-    case ActionTypes.App.LEAVE_WAITING_PAGE: {
+    case ActionTypes.WaitingPage.LEAVE_WAITING_PAGE: {
       connectDB()
         .then(db => {
           const transaction = db.transaction('licosDB', 'readwrite')

@@ -449,7 +449,7 @@ test('LEAVE_WAITING_PAGE', () => {
         }
       },
       {
-        type: ActionTypes.App.LEAVE_WAITING_PAGE
+        type: ActionTypes.WaitingPage.LEAVE_WAITING_PAGE
       }
     )
   ).toStrictEqual(

@@ -3,8 +3,8 @@ import Component, {
   StateProps
 } from '../components/templates/WaitingForPlayers'
 import {
-  ConfirmKickOutPlayer,
-  confirmKickOutPlayer
+  WaitingPage,
+  waitingPage
 } from '../actions'
 import {Dispatch} from 'redux'
 import {ReducerState} from '../reducers'
@@ -12,7 +12,7 @@ import {connect} from 'react-redux'
 import {lobby} from '../types'
 
 type Action =
-  | ConfirmKickOutPlayer
+  | WaitingPage.ConfirmKickOutPlayer
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const amIHost = state.waitingForPlayers.players.some(player => player.isHost && player.isMe)
@@ -55,7 +55,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   confirmKickOutPlayer: values => {
-    dispatch(confirmKickOutPlayer(values))
+    dispatch(waitingPage.confirmKickOutPlayer(values))
   }
 })
 const WaitingForPlayersContainer = connect(

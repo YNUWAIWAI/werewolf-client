@@ -37,7 +37,6 @@ type Action =
   | actions.IdSearch.ChangeSearchId
   | actions.IdSearch.ChangeValidity
   | actions.Init
-  | actions.KickOutPlayer
   | actions.Message.Avatar
   | actions.Message.Lobby
   | actions.Message.Ping
@@ -67,6 +66,7 @@ type Action =
   | actions.Socket.Open
   | actions.Socket.Send
   | actions.Transition
+  | actions.WaitingPage.KickOutPlayer
 
 export type Middleware = (store: MiddlewareAPI<Dispatch<Action>, ReducerState>) => (next: Dispatch<Action>) => (action: Action) => Action
 

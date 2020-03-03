@@ -1,11 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  ConfirmKickOutPlayer,
   Confirmation,
   SelectAvatarImage,
   SelectHumanAvatar,
   SelectRobotAvatar,
-  Socket
+  Socket,
+  WaitingPage
 } from '../actions'
 
 export interface State {
@@ -13,7 +13,6 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
-  | ConfirmKickOutPlayer
   | Confirmation.SelectNo
   | Confirmation.SelectYes
   | SelectAvatarImage.CloseModal
@@ -22,6 +21,7 @@ type Action =
   | Socket.Close
   | Socket.Error
   | Socket.Open
+  | WaitingPage.ConfirmKickOutPlayer
 
 export const initialState: State = {
   loading: true,
@@ -30,7 +30,7 @@ export const initialState: State = {
 
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.App.CONFIRM_KICK_OUT_PLAYER:
+    case ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER:
     case ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
       return {

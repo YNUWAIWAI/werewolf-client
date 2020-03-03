@@ -1,17 +1,17 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  KickOutPlayer,
+  LOBBY_SCHEMA,
+  VILLAGE_SCHEMA
+} from '../constants/SchemaPath'
+import {
   SelectVillage,
   Settings,
   Transition,
+  WaitingPage,
   message,
   selectAvatarImage,
   selectRobotAvatar
 } from '../actions'
-import {
-  LOBBY_SCHEMA,
-  VILLAGE_SCHEMA
-} from '../constants/SchemaPath'
 import Ajv from 'ajv'
 import {ImagePath} from '../constants/ImagePath'
 import {initialState as advancedSearch} from '../reducers/advancedSearch'
@@ -483,8 +483,8 @@ describe('KICK_OUT_PLAYER', () => {
   const nextHandler = middleware(store)
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
-  const action: KickOutPlayer = {
-    type: ActionTypes.App.KICK_OUT_PLAYER
+  const action: WaitingPage.KickOutPlayer = {
+    type: ActionTypes.WaitingPage.KICK_OUT_PLAYER
   }
   const payload: lobby.Payload$KickOutPlayer = {
     players: [
@@ -592,7 +592,7 @@ describe('LEAVE_WAITING_PAGE', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.LEAVE_WAITING_PAGE
+    type: ActionTypes.WaitingPage.LEAVE_WAITING_PAGE
   }
   const payload: lobby.Payload$LeaveWaitingPage = {
     lobby: lobby.LobbyType.human,
@@ -698,7 +698,7 @@ describe('PLAY_GAME', () => {
   const dispatchAPI = jest.fn()
   const actionHandler = nextHandler(dispatchAPI)
   const action: Transition = {
-    type: ActionTypes.App.PLAY_GAME
+    type: ActionTypes.WaitingPage.PLAY_GAME
   }
   const payload: lobby.Payload$Play = {
     token: avatarToken.humanPlayer,
