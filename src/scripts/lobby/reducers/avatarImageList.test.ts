@@ -3,13 +3,13 @@ import reducer, {initialState} from './avatarImageList'
 import {ImagePath} from '../constants/ImagePath'
 import {lobby} from '../types'
 
-test('selectAvatarImage/SELECT_AVATAR', () => {
+test('avatarImageSelect/SELECT_AVATAR', () => {
   expect(
     reducer(
       initialState,
       {
         image: ImagePath.Character.a,
-        type: ActionTypes.SelectAvatarImage.SELECT_AVATAR
+        type: ActionTypes.AvatarImageSelect.SELECT_AVATAR
       }
     )
   ).toStrictEqual({

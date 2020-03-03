@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  SelectAvatarImage,
+  AvatarImageSelect,
   SelectHumanAvatar,
   SelectRobotAvatar
 } from '../actions'
@@ -14,7 +14,7 @@ export interface State {
   readonly token: string
 }
 type Action =
-  | SelectAvatarImage.SelectAvatar
+  | AvatarImageSelect.SelectAvatar
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
 
@@ -24,9 +24,9 @@ export const initialState: State = {
   selectedImage: '',
   token: ''
 }
-const avatarImageList = (state: State = initialState, action: Action): State => {
+const avatarImageSelect = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.SelectAvatarImage.SELECT_AVATAR:
+    case ActionTypes.AvatarImageSelect.SELECT_AVATAR:
       return {
         ... state,
         selectedImage: action.image
@@ -50,4 +50,4 @@ const avatarImageList = (state: State = initialState, action: Action): State => 
   }
 }
 
-export default avatarImageList
+export default avatarImageSelect

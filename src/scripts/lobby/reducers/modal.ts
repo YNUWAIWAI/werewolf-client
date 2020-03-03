@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  AvatarImageSelect,
   Confirmation,
-  SelectAvatarImage,
   SelectHumanAvatar,
   SelectRobotAvatar,
   WaitingPage
@@ -13,9 +13,9 @@ export interface State {
   readonly visible: boolean
 }
 type Action =
+  | AvatarImageSelect.CloseModal
   | Confirmation.SelectNo
   | Confirmation.SelectYes
-  | SelectAvatarImage.CloseModal
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
   | WaitingPage.ConfirmKickOutPlayer
@@ -32,7 +32,7 @@ const modal = (state: State = initialState, action: Action): State => {
         type: lobby.ModalType.confirmation,
         visible: false
       }
-    case ActionTypes.SelectAvatarImage.CLOSE_MODAL:
+    case ActionTypes.AvatarImageSelect.CLOSE_MODAL:
       return {
         type: lobby.ModalType.avatarImageSelect,
         visible: false

@@ -50,12 +50,12 @@ test('SELECT_YES', () => {
     visible: false
   })
 })
-test('selectAvatarImage/CLOSE_MODAL', () => {
+test('avatarImageSelect/CLOSE_MODAL', () => {
   expect(
     reducer(
       initialState,
       {
-        type: ActionTypes.SelectAvatarImage.CLOSE_MODAL
+        type: ActionTypes.AvatarImageSelect.CLOSE_MODAL
       }
     )
   ).toStrictEqual({

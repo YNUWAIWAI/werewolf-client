@@ -25,6 +25,7 @@ type Action =
   | actions.AdvancedSearch.ChangeMinimum
   | actions.AdvancedSearch.ChangeValidity
   | actions.AdvancedSearch.ChangeVillageName
+  | actions.AvatarImageSelect.SelectAvatar
   | actions.BuildVillage.ChangeAvatar
   | actions.BuildVillage.ChangeComment
   | actions.BuildVillage.ChangeMember
@@ -44,7 +45,6 @@ type Action =
   | actions.Message.SearchResult
   | actions.Message.Settings
   | actions.Message.WaitingPage
-  | actions.SelectAvatarImage.SelectAvatar
   | actions.SelectRobotAvatar.AutorizationRequestAccepted
   | actions.SelectRobotAvatar.ChangeAvatarImage
   | actions.SelectRobotAvatar.ChangeAvatarLanguage
