@@ -10,6 +10,7 @@ import Obfucator from './containers/ObfucatorContainer'
 import {Router} from 'react-router-dom'
 import Routes from './containers/Routes'
 import Theme from './containers/ThemeContainer'
+import Video from './containers/VideoContainer'
 
 interface Props {
   readonly history: H
@@ -35,6 +36,7 @@ export default function App(props: Props) {
           </TransitionGroup>
           <Obfucator />
           <Modal />
+          <Video />
         </Router>
       </Theme>
     </IntlProvider>
