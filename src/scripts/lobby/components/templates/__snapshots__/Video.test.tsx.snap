@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<video autoplay=\\"\\" class=\\"lo--video\\" loop=\\"\\" muted=\\"\\"><source src=\\"https://werewolf.world/video/0.3/neurochip.mp4\\" type=\\"video/mp4\\"/></video>"`;
