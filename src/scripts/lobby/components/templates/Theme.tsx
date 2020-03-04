@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export interface StateProps {
-  readonly theme: 'dark' | 'light'
+  readonly theme: lobby.Theme
 }
 export type Props = React.PropsWithChildren<StateProps>
 
