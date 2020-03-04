@@ -24,6 +24,7 @@ import {initialState as ping} from '../../reducers/ping'
 import {initialState as selectHumanAvatar} from '../../reducers/selectHumanAvatar'
 import {initialState as selectRobotAvatar} from '../../reducers/selectRobotAvatar'
 import {initialState as settings} from '../../reducers/settings'
+import {initialState as theme} from '../../reducers/theme'
 import {initialState as token} from '../../reducers/token'
 import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayers'
 
@@ -48,6 +49,7 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     selectHumanAvatar,
     selectRobotAvatar,
     settings,
+    theme,
     token,
     waitingForPlayers
   }

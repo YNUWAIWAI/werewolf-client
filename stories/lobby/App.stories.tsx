@@ -6,7 +6,7 @@ import {
   selectRobotAvatar,
   waitingPage
 } from './initialState'
-import App from '../../src/scripts/lobby/containers/App'
+import App from '../../src/scripts/lobby/App'
 import {Provider} from 'react-redux'
 import {createHashHistory} from 'history'
 import {createRouterMiddleware} from '../../src/scripts/lobby/middlewares'

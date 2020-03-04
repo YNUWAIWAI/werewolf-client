@@ -38,6 +38,10 @@ export const enum RoleId {
   werehamster = 'werehamster',
   werewolf = 'werewolf'
 }
+export const enum Theme {
+  dark = 'dark',
+  light = 'light'
+}
 export type Village = Omit<BuildVillage, 'token' | 'type'>
 export interface Cast {
   [numberOfPlayers: string]: {
