@@ -22,6 +22,15 @@ export const changeLobby = (lobby: Lobby.LobbyType): ChangeLobby => ({
   type: ActionTypes.App.CHANGE_LOBBY
 })
 
+export type ChangeTheme = {
+  theme: Lobby.Theme
+  type: ActionTypes.App.CHANGE_THEME
+}
+export const changeTheme = (theme: Lobby.Theme): ChangeTheme => ({
+  theme,
+  type: ActionTypes.App.CHANGE_THEME
+})
+
 export type ChangeToken = {
   lobby: Lobby.LobbyType
   token: string

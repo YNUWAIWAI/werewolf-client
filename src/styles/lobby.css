@@ -1,4 +1,6 @@
-:root {
+.lo {
+
+  /* variables */
   --active-color: rgba(0, 0, 0, 0.07);
   --avatar-image-size: 50px;
   --avatar-image-size--L: 120px;
@@ -13,17 +15,10 @@
   --settings-bucket-color: rgb(230, 230, 230);
   --settings-bucket-danger-color: rgba(255, 0, 0, 0.6);
   --warning-color: rgb(240, 210, 24);
-}
 
-* {
+  /* font */
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
-}
 
-body {
-  margin: 0;
-}
-
-.lo {
   &--app--transition {
     &-appear {
       opacity: 0;
