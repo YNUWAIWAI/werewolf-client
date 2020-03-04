@@ -7,7 +7,7 @@ type Action =
   | ChangeTheme
 
 export const initialState: State = lobby.Theme.dark
-const language = (state: State = initialState, action: Action): State => {
+const theme = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.App.CHANGE_THEME:
       return action.theme
@@ -16,4 +16,4 @@ const language = (state: State = initialState, action: Action): State => {
   }
 }
 
-export default language
+export default theme
