@@ -13,6 +13,7 @@ import obfucator, {State as obfucatorState} from './obfucator'
 import prediction, {State as predictionState} from './prediction'
 import result, {State as resultState} from './result'
 import suggest, {State as suggestState} from './suggest'
+import theme, {State as themeState} from './theme'
 import timer, {State as timerState} from './timer'
 import {combineReducers} from 'redux'
 
@@ -32,6 +33,7 @@ const reducer = combineReducers({
   prediction,
   result,
   suggest,
+  theme,
   timer
 })
 
@@ -53,5 +55,6 @@ export interface ReducerState {
   readonly prediction: predictionState
   readonly result: resultState
   readonly suggest: suggestState
+  readonly theme: themeState
   readonly timer: timerState
 }

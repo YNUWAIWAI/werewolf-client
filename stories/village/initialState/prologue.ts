@@ -6,7 +6,7 @@ import {ReducerState} from '../../../src/scripts/village/reducers'
 import {VERSION} from '../../../src/scripts/village/constants/Version'
 
 import {village} from '../types'
-export const prologue: ReducerState = {
+export const prologue: Partial<ReducerState> = {
   base: {
     '@id': `https://licos.online/state/${VERSION}/village#3`,
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',

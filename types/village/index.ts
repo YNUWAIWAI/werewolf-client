@@ -163,5 +163,9 @@ export const enum Team {
   werehamster = 'werehamster',
   werewolf = 'werewolf'
 }
+export const enum Theme {
+  dark = 'dark',
+  light = 'light'
+}
 export type Token = string
 export type VillageId = number

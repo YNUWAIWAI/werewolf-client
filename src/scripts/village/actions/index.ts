@@ -33,6 +33,15 @@ export const changeLanguage = (language: village.Language): ChangeLanguage => ({
   type: ActionTypes.App.CHANGE_LANGUAGE
 })
 
+export type ChangeTheme = {
+  theme: village.Theme
+  type: ActionTypes.App.CHANGE_THEME
+}
+export const changeTheme = (theme: village.Theme): ChangeTheme => ({
+  theme,
+  type: ActionTypes.App.CHANGE_THEME
+})
+
 export type ClickNavigationButton = {
   type: ActionTypes.Navigation
 }

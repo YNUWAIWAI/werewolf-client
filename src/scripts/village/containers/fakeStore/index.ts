@@ -20,6 +20,7 @@ import {initialState as obfucator} from '../../reducers/obfucator'
 import {initialState as prediction} from '../../reducers/prediction'
 import {initialState as result} from '../../reducers/result'
 import {initialState as suggest} from '../../reducers/suggest'
+import {initialState as theme} from '../../reducers/theme'
 import {initialState as timer} from '../../reducers/timer'
 
 export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unknown>> => {
@@ -39,6 +40,7 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     prediction,
     result,
     suggest,
+    theme,
     timer
   }
   const dispatch: Dispatch<Action<unknown>> = action => {
