@@ -15,6 +15,7 @@ import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
+import {theme} from './theme'
 
 storiesOf('lobby|App', module)
   .add('default', () => {
@@ -26,7 +27,8 @@ storiesOf('lobby|App', module)
         obfucator: {
           loading: false,
           visible: false
-        }
+        },
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
     )
@@ -47,7 +49,8 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... waitingPage,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
     )
@@ -69,7 +72,8 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... lobbyForHumanPlayer,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
     )
@@ -91,7 +95,8 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... selectHumanAvatar,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
     )
@@ -113,7 +118,8 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... selectRobotAvatar,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
     )
