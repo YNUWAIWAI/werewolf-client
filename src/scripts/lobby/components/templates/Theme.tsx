@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {lobby} from '../../types'
 
 export interface StateProps {
   readonly theme: lobby.Theme
