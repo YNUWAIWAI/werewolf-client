@@ -7,7 +7,7 @@ import {Role} from '../../../src/scripts/village/constants/Role'
 import {VERSION} from '../../../src/scripts/village/constants/Version'
 import {village} from '../types'
 
-export const night2: ReducerState = {
+export const night2: Partial<ReducerState> = {
   base: {
     '@id': `https://licos.online/state/${VERSION}/village#3`,
     'clientTimestamp': '2006-10-07T12:06:56.568+09:00',

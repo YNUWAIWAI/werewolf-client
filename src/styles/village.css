@@ -1,4 +1,52 @@
-:root {
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translate(500%, 0);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes flash {
+  from {
+    background: white;
+    color: black;
+  }
+
+  to {
+    background: red;
+    color: white;
+  }
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0);
+    transform-origin: center;
+  }
+
+  to {
+    transform: rotate(1turn);
+    transform-origin: center;
+  }
+}
+
+.vi {
+
+  /* variables */
   --info-image-size: 50px;
   --prediction-image-size: 50px;
   --result-image-size: 50px;
@@ -46,63 +94,10 @@
   --obfucator--z-index: 6;
   --modal--z-index: 9;
   --hide-button--z-index: 1;
-}
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 100%;
-  }
-}
-
-@keyframes slidein {
-  from {
-    opacity: 0;
-    transform: translate(500%, 0);
-  }
-
-  to {
-    opacity: 100%;
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes flash {
-  from {
-    background: white;
-    color: black;
-  }
-
-  to {
-    background: red;
-    color: white;
-  }
-}
-
-@keyframes loader {
-  from {
-    transform: rotate(0);
-    transform-origin: center;
-  }
-
-  to {
-    transform: rotate(1turn);
-    transform-origin: center;
-  }
-}
-
-* {
+  /* font */
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
-}
 
-body {
-  margin: 0;
-}
-
-.vi {
   &--activity {
     display: grid;
     grid-area: activity;
