@@ -16,13 +16,15 @@ import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
+import {theme} from './theme'
 
 storiesOf('village|App', module)
   .add('default', () => {
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
 
@@ -38,7 +40,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... prologue,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
 
@@ -54,7 +57,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... morningWithoutLimitedChat,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
     const story =
@@ -69,7 +73,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... morningWithLimitedChat,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
     const story =
@@ -84,7 +89,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... noon,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
     const story =
@@ -99,7 +105,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... night,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
     const story =
@@ -114,7 +121,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... night2,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
     const story =
@@ -129,7 +137,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... grave,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
     const story =
@@ -144,7 +153,8 @@ storiesOf('village|App', module)
       reducer,
       {
         ... result,
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
       }
     )
     const story =
