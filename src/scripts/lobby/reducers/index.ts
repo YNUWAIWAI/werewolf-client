@@ -17,6 +17,7 @@ import ping, {State as PingState} from './ping'
 import selectHumanAvatar, {State as SelectHumanAvatar} from './selectHumanAvatar'
 import selectRobotAvatar, {State as SelectRobotAvatar} from './selectRobotAvatar'
 import settings, {State as SettingsState} from './settings'
+import sound, {State as SoundState} from './sound'
 import theme, {State as ThemeState} from './theme'
 import token, {State as TokenState} from './token'
 import waitingForPlayers, {State as WaitingForPlayersState} from './waitingForPlayers'
@@ -42,6 +43,7 @@ export interface ReducerState {
   selectHumanAvatar: SelectHumanAvatar
   selectRobotAvatar: SelectRobotAvatar
   settings: SettingsState
+  sound: SoundState
   theme: ThemeState
   token: TokenState
   waitingForPlayers: WaitingForPlayersState
@@ -67,6 +69,7 @@ const reducer = combineReducers({
   selectHumanAvatar,
   selectRobotAvatar,
   settings,
+  sound,
   theme,
   token,
   waitingForPlayers

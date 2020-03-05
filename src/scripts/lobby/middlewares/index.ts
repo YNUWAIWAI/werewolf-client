@@ -7,6 +7,7 @@ import {
 } from 'redux'
 import {History} from 'history'
 import {ReducerState} from '../reducers'
+import audio from './audio'
 import client2server from './client2server'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import indexedDB from './indexedDB'
@@ -35,6 +36,7 @@ type Action =
   | actions.BuildVillage.ChangeVillageName
   | actions.ChangeLobby
   | actions.ChangeToken
+  | actions.ChangeVolume
   | actions.IdSearch.ChangeSearchId
   | actions.IdSearch.ChangeValidity
   | actions.Init
@@ -77,6 +79,7 @@ interface Options {
 export const createMiddleware = ({history, url}: Options) => {
   if (process.env.NODE_ENV === 'production') {
     return applyMiddleware(
+      audio,
       socket({
         url
       }),
@@ -90,6 +93,7 @@ export const createMiddleware = ({history, url}: Options) => {
 
   return composeWithDevTools(
     applyMiddleware(
+      audio,
       socket({
         url
       }),
@@ -103,6 +107,7 @@ export const createMiddleware = ({history, url}: Options) => {
   )
 }
 export const createRouterMiddleware = (history: Options['history']) => applyMiddleware(
+  audio,
   router(history),
   logger
 )

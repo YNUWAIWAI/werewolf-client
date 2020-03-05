@@ -42,6 +42,15 @@ export const changeToken = ({lobby, token}: {lobby: Lobby.LobbyType, token: stri
   type: ActionTypes.App.CHANGE_TOKEN
 })
 
+export type ChangeVolume = {
+  type: ActionTypes.App.CHANGE_VOLUME
+  volume: number
+}
+export const changeVolume = (volume: number): ChangeVolume => ({
+  type: ActionTypes.App.CHANGE_VOLUME,
+  volume
+})
+
 export type Init = {
   type: ActionTypes.App.INIT
 }

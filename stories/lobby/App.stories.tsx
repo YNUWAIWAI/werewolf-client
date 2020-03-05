@@ -6,14 +6,18 @@ import {
   selectRobotAvatar,
   waitingPage
 } from './initialState'
+import {
+  number,
+  radios
+} from '@storybook/addon-knobs'
 import App from '../../src/scripts/lobby/App'
 import {Provider} from 'react-redux'
 import {createHashHistory} from 'history'
 import {createRouterMiddleware} from '../../src/scripts/lobby/middlewares'
 import {createStore} from 'redux'
 import {language} from './language'
-import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
+import {sound} from './sound'
 import {storiesOf} from '@storybook/react'
 import {theme} from './theme'
 
@@ -27,6 +31,9 @@ storiesOf('lobby|App', module)
         obfucator: {
           loading: false,
           visible: false
+        },
+        sound: {
+          volume: number(sound.label, sound.defaultValue, sound.options)
         },
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
@@ -50,6 +57,9 @@ storiesOf('lobby|App', module)
       {
         ... waitingPage,
         language: radios(language.label, language.options, language.defaultValue),
+        sound: {
+          volume: number(sound.label, sound.defaultValue, sound.options)
+        },
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
@@ -73,6 +83,9 @@ storiesOf('lobby|App', module)
       {
         ... lobbyForHumanPlayer,
         language: radios(language.label, language.options, language.defaultValue),
+        sound: {
+          volume: number(sound.label, sound.defaultValue, sound.options)
+        },
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
@@ -96,6 +109,9 @@ storiesOf('lobby|App', module)
       {
         ... selectHumanAvatar,
         language: radios(language.label, language.options, language.defaultValue),
+        sound: {
+          volume: number(sound.label, sound.defaultValue, sound.options)
+        },
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
@@ -119,6 +135,9 @@ storiesOf('lobby|App', module)
       {
         ... selectRobotAvatar,
         language: radios(language.label, language.options, language.defaultValue),
+        sound: {
+          volume: number(sound.label, sound.defaultValue, sound.options)
+        },
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
