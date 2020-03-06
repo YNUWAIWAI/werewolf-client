@@ -4,6 +4,8 @@ import Copy from '../../src/scripts/lobby/components/atoms/svg/Copy'
 import Danger from '../../src/scripts/lobby/components/atoms/svg/Danger'
 import Loader from '../../src/scripts/lobby/components/atoms/svg/Loader'
 import Safe from '../../src/scripts/lobby/components/atoms/svg/Safe'
+import VolumeOff from '../../src/scripts/lobby/components/atoms/svg/VolumeOff'
+import VolumeOn from '../../src/scripts/lobby/components/atoms/svg/VolumeOn'
 import Warning from '../../src/scripts/lobby/components/atoms/svg/Warning'
 import {storiesOf} from '@storybook/react'
 
@@ -25,4 +27,6 @@ storiesOf('lobby|svg', module)
   .add('Danger', () => <Danger />)
   .add('Loader', () => <Loader />)
   .add('Safe', () => <Safe />)
+  .add('VolumeOff', () => <VolumeOff />)
+  .add('VolumeOn', () => <VolumeOn />)
   .add('Warning', () => <Warning />)
