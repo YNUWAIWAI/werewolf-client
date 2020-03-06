@@ -51,6 +51,13 @@ export const changeVolume = (volume: number): ChangeVolume => ({
   volume
 })
 
+export type Mute = {
+  type: ActionTypes.App.MUTE
+}
+export const mute = (): Mute => ({
+  type: ActionTypes.App.MUTE
+})
+
 export type Init = {
   type: ActionTypes.App.INIT
 }
@@ -72,6 +79,13 @@ export type ShowVillage = {
 }
 export const showVillage = (): ShowVillage => ({
   type: ActionTypes.App.SHOW_VILLAGE
+})
+
+export type Unmute = {
+  type: ActionTypes.App.UNMUTE
+}
+export const unmute = (): Unmute => ({
+  type: ActionTypes.App.UNMUTE
 })
 
 export type Target =
