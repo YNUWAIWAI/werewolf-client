@@ -83,7 +83,6 @@ export const toggleMute = (muted: boolean): ToggleMute => ({
   type: ActionTypes.App.TOGGLE_MUTE
 })
 
-
 export type Target =
   | ActionTypes.AdvancedSearch.SEARCH
   | ActionTypes.App.REFRESH
