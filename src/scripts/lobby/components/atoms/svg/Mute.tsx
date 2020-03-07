@@ -1,9 +1,13 @@
 import * as React from 'react'
 
-export default function VolumeOff() {
+interface Props {
+  readonly className?: string
+}
+
+export default function Mute(props: Props) {
   return (
     <svg
-      className="volume-off"
+      className={`mute ${props.className}`}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
