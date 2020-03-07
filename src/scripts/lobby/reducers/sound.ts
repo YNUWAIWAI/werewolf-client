@@ -1,8 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   ChangeVolume,
-  Mute,
-  Unmute
+  ToggleMute
 } from '../actions'
 
 export type State = {
@@ -11,8 +10,7 @@ export type State = {
 }
 type Action =
   | ChangeVolume
-  | Mute
-  | Unmute
+  | ToggleMute
 
 export const initialState: State = {
   muted: true,
@@ -25,15 +23,10 @@ const sound = (state: State = initialState, action: Action): State => {
         muted: false,
         volume: action.volume
       }
-    case ActionTypes.App.MUTE:
+    case ActionTypes.App.TOGGLE_MUTE:
       return {
         ... state,
-        muted: true
-      }
-    case ActionTypes.App.UNMUTE:
-      return {
-        ... state,
-        muted: false
+        muted: action.muted
       }
     default:
       return state

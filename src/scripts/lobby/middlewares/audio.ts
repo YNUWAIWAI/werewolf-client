@@ -72,6 +72,14 @@ const audio: Middleware = store => next => action => {
       volumeNode.gain.value = action.volume
 
       return next(action)
+    case ActionTypes.App.TOGGLE_MUTE:
+      if (action.muted) {
+        volumeNode.gain.value = 0
+      } else {
+        volumeNode.gain.value = store.getState().sound.volume
+      }
+
+      return next(action)
     default:
       return next(action)
   }

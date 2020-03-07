@@ -51,13 +51,6 @@ export const changeVolume = (volume: number): ChangeVolume => ({
   volume
 })
 
-export type Mute = {
-  type: ActionTypes.App.MUTE
-}
-export const mute = (): Mute => ({
-  type: ActionTypes.App.MUTE
-})
-
 export type Init = {
   type: ActionTypes.App.INIT
 }
@@ -81,12 +74,15 @@ export const showVillage = (): ShowVillage => ({
   type: ActionTypes.App.SHOW_VILLAGE
 })
 
-export type Unmute = {
-  type: ActionTypes.App.UNMUTE
+export type ToggleMute = {
+  muted: boolean
+  type: ActionTypes.App.TOGGLE_MUTE
 }
-export const unmute = (): Unmute => ({
-  type: ActionTypes.App.UNMUTE
+export const toggleMute = (muted: boolean): ToggleMute => ({
+  muted,
+  type: ActionTypes.App.TOGGLE_MUTE
 })
+
 
 export type Target =
   | ActionTypes.AdvancedSearch.SEARCH

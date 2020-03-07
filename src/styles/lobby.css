@@ -833,6 +833,14 @@
     }
   }
 
+  &--mute-button {
+    bottom: 0;
+    height: 2rem;
+    left: 0;
+    position: fixed;
+    width: 2rem;
+  }
+
   &--video {
     bottom: 0;
     left: 0;

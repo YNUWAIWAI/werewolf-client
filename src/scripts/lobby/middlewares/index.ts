@@ -67,6 +67,7 @@ type Action =
   | actions.Socket.Message
   | actions.Socket.Open
   | actions.Socket.Send
+  | actions.ToggleMute
   | actions.Transition
   | actions.WaitingPage.KickOutPlayer
 
