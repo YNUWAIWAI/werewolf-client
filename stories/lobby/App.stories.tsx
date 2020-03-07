@@ -33,6 +33,7 @@ storiesOf('lobby|App', module)
           visible: false
         },
         sound: {
+          muted: true,
           volume: number(sound.label, sound.defaultValue, sound.options)
         },
         theme: radios(theme.label, theme.options, theme.defaultValue)
@@ -58,6 +59,7 @@ storiesOf('lobby|App', module)
         ... waitingPage,
         language: radios(language.label, language.options, language.defaultValue),
         sound: {
+          muted: true,
           volume: number(sound.label, sound.defaultValue, sound.options)
         },
         theme: radios(theme.label, theme.options, theme.defaultValue)
@@ -84,6 +86,7 @@ storiesOf('lobby|App', module)
         ... lobbyForHumanPlayer,
         language: radios(language.label, language.options, language.defaultValue),
         sound: {
+          muted: true,
           volume: number(sound.label, sound.defaultValue, sound.options)
         },
         theme: radios(theme.label, theme.options, theme.defaultValue)
@@ -110,6 +113,7 @@ storiesOf('lobby|App', module)
         ... selectHumanAvatar,
         language: radios(language.label, language.options, language.defaultValue),
         sound: {
+          muted: true,
           volume: number(sound.label, sound.defaultValue, sound.options)
         },
         theme: radios(theme.label, theme.options, theme.defaultValue)
@@ -136,6 +140,7 @@ storiesOf('lobby|App', module)
         ... selectRobotAvatar,
         language: radios(language.label, language.options, language.defaultValue),
         sound: {
+          muted: true,
           volume: number(sound.label, sound.defaultValue, sound.options)
         },
         theme: radios(theme.label, theme.options, theme.defaultValue)
