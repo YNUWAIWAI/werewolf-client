@@ -28,3 +28,16 @@ describe('render', () => {
     expect(wrapper.find(Unmute).exists()).toBe(true)
   })
 })
+test('handleClick', () => {
+  const handleClick = jest.fn()
+  const wrapper = shallow(
+    <MuteButton
+      handleClick={handleClick}
+      muted
+    />
+  )
+
+  wrapper.find('.lo--mute-button').simulate('click')
+  expect(handleClick).toHaveBeenCalledTimes(1)
+  expect(handleClick).toHaveBeenCalledWith(false)
+})
