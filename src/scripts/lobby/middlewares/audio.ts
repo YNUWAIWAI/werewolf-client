@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 
 const createVolumeNode = () => {
-  // eslint-disable-next-line no-extra-parens
+  // eslint-disable-next-line no-extra-parens, @typescript-eslint/no-explicit-any
   const AudioContext = window.AudioContext || (window as any).webkitAudioContext
   const context = new AudioContext()
   const volumeNode = context.createGain()
