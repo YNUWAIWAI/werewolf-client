@@ -1,42 +1,53 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 
-// eslint-disable-next-line no-extra-parens
-const AudioContext = window.AudioContext || (window as any).webkitAudioContext
-const context = new AudioContext()
+const createVolumeNode = () => {
+  // eslint-disable-next-line no-extra-parens
+  const AudioContext = window.AudioContext || (window as any).webkitAudioContext
+  const context = new AudioContext()
+  const volumeNode = context.createGain()
 
-const volumeNode = context.createGain()
+  volumeNode.gain.value = 1
+  volumeNode.connect(context.destination)
 
-volumeNode.gain.value = 1
-volumeNode.connect(context.destination)
-
-const createSource = async (url: string) => {
-  const res = await fetch(url)
-  const buffer = await res.arrayBuffer()
-  const source = context.createBufferSource()
-  const gainNode = context.createGain()
-
-  source.buffer = await context.decodeAudioData(buffer)
-  source.loop = true
-  gainNode.gain.value = 0
-  source.connect(gainNode)
-  gainNode.connect(volumeNode)
-  source.start()
-
-  const fadein = () => {
-    gainNode.gain.setTargetAtTime(1, source.context.currentTime + 1, 0.5)
+  const changeVolume = (value: number) => {
+    volumeNode.gain.value = value
   }
-  const fadeout = () => {
-    gainNode.gain.setTargetAtTime(0, source.context.currentTime + 1, 0.5)
+  const createSource = async (url: string) => {
+    const res = await fetch(url)
+    const buffer = await res.arrayBuffer()
+    const source = context.createBufferSource()
+    const gainNode = context.createGain()
+
+    source.buffer = await context.decodeAudioData(buffer)
+    source.loop = true
+    gainNode.gain.value = 0
+    source.connect(gainNode)
+    gainNode.connect(volumeNode)
+    source.start()
+
+    const fadein = () => {
+      gainNode.gain.setTargetAtTime(1, source.context.currentTime + 1, 0.5)
+    }
+    const fadeout = () => {
+      gainNode.gain.setTargetAtTime(0, source.context.currentTime + 1, 0.5)
+    }
+
+    return {
+      fadein,
+      fadeout
+    }
   }
 
   return {
-    fadein,
-    fadeout
+    changeVolume,
+    createSource
   }
 }
 
+const {changeVolume, createSource} = createVolumeNode()
 const lobby = createSource('https://werewolf.world/sound/0.3/lobby/lobby-darkness.mp3')
+const video = createSource('https://werewolf.world/video/0.3/neurochip.mp4')
 const waitingPage = createSource('https://werewolf.world/sound/0.3/lobby/waitingPage-ticktock.mp3')
 
 const audio: Middleware = store => next => action => {
@@ -52,7 +63,11 @@ const audio: Middleware = store => next => action => {
         .then(({fadeout}) => {
           fadeout()
         })
-      volumeNode.gain.value = store.getState().audio.volume
+      video
+        .then(({fadein}) => {
+          fadein()
+        })
+      changeVolume(store.getState().audio.volume)
 
       return next(action)
     case ActionTypes.App.SELECT_VILLAGE:
@@ -65,18 +80,22 @@ const audio: Middleware = store => next => action => {
         .then(({fadein}) => {
           fadein()
         })
-      volumeNode.gain.value = store.getState().audio.volume
+      video
+        .then(({fadein}) => {
+          fadein()
+        })
+      changeVolume(store.getState().audio.volume)
 
       return next(action)
     case ActionTypes.App.CHANGE_VOLUME:
-      volumeNode.gain.value = action.volume
+      changeVolume(action.volume)
 
       return next(action)
     case ActionTypes.App.TOGGLE_MUTE:
       if (action.muted) {
-        volumeNode.gain.value = 0
+        changeVolume(0)
       } else {
-        volumeNode.gain.value = store.getState().audio.volume
+        changeVolume(store.getState().audio.volume)
       }
 
       return next(action)
