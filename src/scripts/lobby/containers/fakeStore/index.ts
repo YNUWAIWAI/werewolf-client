@@ -6,6 +6,7 @@ import {
 } from 'redux'
 import {ReducerState} from '../../reducers'
 import {initialState as advancedSearch} from '../../reducers/advancedSearch'
+import {initialState as audio} from '../../reducers/audio'
 import {initialState as avatarImageList} from '../../reducers/avatarImageList'
 import {initialState as buildVillage} from '../../reducers/buildVillage'
 import {initialState as confirmation} from '../../reducers/confirmation'
@@ -24,7 +25,6 @@ import {initialState as ping} from '../../reducers/ping'
 import {initialState as selectHumanAvatar} from '../../reducers/selectHumanAvatar'
 import {initialState as selectRobotAvatar} from '../../reducers/selectRobotAvatar'
 import {initialState as settings} from '../../reducers/settings'
-import {initialState as sound} from '../../reducers/sound'
 import {initialState as theme} from '../../reducers/theme'
 import {initialState as token} from '../../reducers/token'
 import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayers'
@@ -32,6 +32,7 @@ import {initialState as waitingForPlayers} from '../../reducers/waitingForPlayer
 export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unknown>> => {
   const initialState: ReducerState = {
     advancedSearch,
+    audio,
     avatarImageList,
     buildVillage,
     confirmation,
@@ -50,7 +51,6 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     selectHumanAvatar,
     selectRobotAvatar,
     settings,
-    sound,
     theme,
     token,
     waitingForPlayers

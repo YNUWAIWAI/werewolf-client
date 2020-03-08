@@ -2,7 +2,7 @@ import {
   changeVolume,
   toggleMute
 } from '../actions'
-import reducer, {initialState} from './sound'
+import reducer, {initialState} from './audio'
 
 test('CHANGE_VOLUME', () => {
   expect(

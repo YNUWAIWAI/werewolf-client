@@ -10,7 +10,7 @@ import {mount} from 'enzyme'
 describe('render', () => {
   test('muted', () => {
     const store = fakeStore({
-      sound: {
+      audio: {
         muted: true,
         volume: 1
       }
@@ -27,7 +27,7 @@ describe('render', () => {
   })
   test('unmuted', () => {
     const store = fakeStore({
-      sound: {
+      audio: {
         muted: false,
         volume: 1
       }
@@ -45,7 +45,7 @@ describe('render', () => {
 })
 test('handleClick', () => {
   const store = fakeStore({
-    sound: {
+    audio: {
       muted: false,
       volume: 1
     }

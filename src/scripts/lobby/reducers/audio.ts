@@ -16,7 +16,7 @@ export const initialState: State = {
   muted: true,
   volume: 1
 }
-const sound = (state: State = initialState, action: Action): State => {
+const audio = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.App.CHANGE_VOLUME:
       return {
@@ -33,4 +33,4 @@ const sound = (state: State = initialState, action: Action): State => {
   }
 }
 
-export default sound
+export default audio

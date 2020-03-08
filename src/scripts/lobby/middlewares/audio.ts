@@ -52,7 +52,7 @@ const audio: Middleware = store => next => action => {
         .then(({fadeout}) => {
           fadeout()
         })
-      volumeNode.gain.value = store.getState().sound.volume
+      volumeNode.gain.value = store.getState().audio.volume
 
       return next(action)
     case ActionTypes.App.SELECT_VILLAGE:
@@ -65,7 +65,7 @@ const audio: Middleware = store => next => action => {
         .then(({fadein}) => {
           fadein()
         })
-      volumeNode.gain.value = store.getState().sound.volume
+      volumeNode.gain.value = store.getState().audio.volume
 
       return next(action)
     case ActionTypes.App.CHANGE_VOLUME:
@@ -76,7 +76,7 @@ const audio: Middleware = store => next => action => {
       if (action.muted) {
         volumeNode.gain.value = 0
       } else {
-        volumeNode.gain.value = store.getState().sound.volume
+        volumeNode.gain.value = store.getState().audio.volume
       }
 
       return next(action)

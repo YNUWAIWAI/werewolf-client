@@ -14,7 +14,7 @@ type Action =
   | ToggleMute
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  muted: state.sound.muted
+  muted: state.audio.muted
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleClick: muted => {

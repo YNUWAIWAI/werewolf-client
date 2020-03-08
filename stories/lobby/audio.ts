@@ -7,7 +7,7 @@ const options = {
 }
 const defaultValue = 0
 
-export const sound = {
+export const audio = {
   defaultValue,
   label,
   options

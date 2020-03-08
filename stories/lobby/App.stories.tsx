@@ -12,12 +12,12 @@ import {
 } from '@storybook/addon-knobs'
 import App from '../../src/scripts/lobby/App'
 import {Provider} from 'react-redux'
+import {audio} from './audio'
 import {createHashHistory} from 'history'
 import {createRouterMiddleware} from '../../src/scripts/lobby/middlewares'
 import {createStore} from 'redux'
 import {language} from './language'
 import reducer from '../../src/scripts/lobby/reducers'
-import {sound} from './sound'
 import {storiesOf} from '@storybook/react'
 import {theme} from './theme'
 
@@ -27,14 +27,14 @@ storiesOf('lobby|App', module)
     const store = createStore(
       reducer,
       {
+        audio: {
+          muted: true,
+          volume: number(audio.label, audio.defaultValue, audio.options)
+        },
         language: radios(language.label, language.options, language.defaultValue),
         obfucator: {
           loading: false,
           visible: false
-        },
-        sound: {
-          muted: true,
-          volume: number(sound.label, sound.defaultValue, sound.options)
         },
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
@@ -57,11 +57,11 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... waitingPage,
-        language: radios(language.label, language.options, language.defaultValue),
-        sound: {
+        audio: {
           muted: true,
-          volume: number(sound.label, sound.defaultValue, sound.options)
+          volume: number(audio.label, audio.defaultValue, audio.options)
         },
+        language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
@@ -84,11 +84,11 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... lobbyForHumanPlayer,
-        language: radios(language.label, language.options, language.defaultValue),
-        sound: {
+        audio: {
           muted: true,
-          volume: number(sound.label, sound.defaultValue, sound.options)
+          volume: number(audio.label, audio.defaultValue, audio.options)
         },
+        language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
@@ -111,11 +111,11 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... selectHumanAvatar,
-        language: radios(language.label, language.options, language.defaultValue),
-        sound: {
+        audio: {
           muted: true,
-          volume: number(sound.label, sound.defaultValue, sound.options)
+          volume: number(audio.label, audio.defaultValue, audio.options)
         },
+        language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
@@ -138,11 +138,11 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... selectRobotAvatar,
-        language: radios(language.label, language.options, language.defaultValue),
-        sound: {
+        audio: {
           muted: true,
-          volume: number(sound.label, sound.defaultValue, sound.options)
+          volume: number(audio.label, audio.defaultValue, audio.options)
         },
+        language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
       createRouterMiddleware(history)
