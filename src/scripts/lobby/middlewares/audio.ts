@@ -17,6 +17,15 @@ const createAudioContext = () => new Promise<AudioContext>(resolve => {
     }
   )
 })
+const getAudioData = async (url: string) => {
+  const res = await fetch(url)
+  const buffer = await res.arrayBuffer()
+
+  return {
+    buffer,
+    ok: res.ok
+  }
+}
 const createVolumeNode = async () => {
   const context = await createAudioContext()
   const volumeNode = context.createGain()
@@ -27,10 +36,8 @@ const createVolumeNode = async () => {
   const changeVolume = (value: number) => {
     volumeNode.gain.value = value
   }
-  const createSource = async (url: string) => {
-    const res = await fetch(url)
-
-    if (!res.ok) {
+  const createSource = async (buffer: ArrayBuffer, ok: Response['ok']) => {
+    if (!ok) {
       return {
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         fadein: () => {},
@@ -38,7 +45,6 @@ const createVolumeNode = async () => {
         fadeout: () => {}
       }
     }
-    const buffer = await res.arrayBuffer()
     const source = context.createBufferSource()
     const gainNode = context.createGain()
 
@@ -67,13 +73,22 @@ const createVolumeNode = async () => {
     createSource
   }
 }
-
-const controller = createVolumeNode()
-  .then(({changeVolume, createSource}) => ({
+const controller = Promise.all([
+  createVolumeNode(),
+  getAudioData('https://werewolf.world/sound/0.3/lobby/lobby-darkness.mp3'),
+  getAudioData('https://werewolf.world/video/0.3/neurochip.mp4'),
+  getAudioData('https://werewolf.world/sound/0.3/lobby/waitingPage-ticktock.mp3')
+])
+  .then(([
+    {changeVolume, createSource},
+    lobby,
+    video,
+    waitingPage
+  ]) => ({
     changeVolume,
-    lobbySource: createSource('https://werewolf.world/sound/0.3/lobby/lobby-darkness.mp3'),
-    videoSource: createSource('https://werewolf.world/video/0.3/neurochip.mp4'),
-    waitingPageSource: createSource('https://werewolf.world/sound/0.3/lobby/waitingPage-ticktock.mp3')
+    lobbySource: createSource(lobby.buffer, lobby.ok),
+    videoSource: createSource(video.buffer, video.ok),
+    waitingPageSource: createSource(waitingPage.buffer, waitingPage.ok)
   }))
 
 const audio: Middleware = store => next => action => {
