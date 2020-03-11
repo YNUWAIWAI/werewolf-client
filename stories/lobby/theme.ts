@@ -5,7 +5,7 @@ const options = {
   dark: lobby.Theme.dark,
   light: lobby.Theme.light
 }
-const defaultValue = options.dark
+const defaultValue = options.light
 
 export const theme = {
   defaultValue,

@@ -1,10 +1,24 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 
-const createVolumeNode = () => {
+const createAudioContext = () => new Promise<AudioContext>(resolve => {
   // eslint-disable-next-line no-extra-parens, @typescript-eslint/no-explicit-any
   const AudioContext = window.AudioContext || (window as any).webkitAudioContext
-  const context = new AudioContext()
+
+  window.addEventListener(
+    'click',
+    () => {
+      const context = new AudioContext()
+
+      resolve(context)
+    },
+    {
+      once: true
+    }
+  )
+})
+const createVolumeNode = async () => {
+  const context = await createAudioContext()
   const volumeNode = context.createGain()
 
   volumeNode.gain.value = 1
@@ -15,6 +29,15 @@ const createVolumeNode = () => {
   }
   const createSource = async (url: string) => {
     const res = await fetch(url)
+
+    if (!res.ok) {
+      return {
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        fadein: () => {},
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        fadeout: () => {}
+      }
+    }
     const buffer = await res.arrayBuffer()
     const source = context.createBufferSource()
     const gainNode = context.createGain()
@@ -45,58 +68,73 @@ const createVolumeNode = () => {
   }
 }
 
-const {changeVolume, createSource} = createVolumeNode()
-const lobby = createSource('https://werewolf.world/sound/0.3/lobby/lobby-darkness.mp3')
-const video = createSource('https://werewolf.world/video/0.3/neurochip.mp4')
-const waitingPage = createSource('https://werewolf.world/sound/0.3/lobby/waitingPage-ticktock.mp3')
+const controller = createVolumeNode()
+  .then(({changeVolume, createSource}) => ({
+    changeVolume,
+    lobbySource: createSource('https://werewolf.world/sound/0.3/lobby/lobby-darkness.mp3'),
+    videoSource: createSource('https://werewolf.world/video/0.3/neurochip.mp4'),
+    waitingPageSource: createSource('https://werewolf.world/sound/0.3/lobby/waitingPage-ticktock.mp3')
+  }))
 
 const audio: Middleware = store => next => action => {
   switch (action.type) {
     case ActionTypes.App.INIT:
     case ActionTypes.WaitingPage.LEAVE_WAITING_PAGE:
     case ActionTypes.App.SHOW_MAIN:
-      lobby
-        .then(({fadein}) => {
-          fadein()
+      controller
+        .then(({changeVolume, lobbySource, videoSource, waitingPageSource}) => {
+          changeVolume(store.getState().audio.volume)
+          lobbySource
+            .then(({fadein}) => {
+              fadein()
+            })
+          videoSource
+            .then(({fadein}) => {
+              fadein()
+            })
+          waitingPageSource
+            .then(({fadeout}) => {
+              fadeout()
+            })
         })
-      waitingPage
-        .then(({fadeout}) => {
-          fadeout()
-        })
-      video
-        .then(({fadein}) => {
-          fadein()
-        })
-      changeVolume(store.getState().audio.volume)
 
       return next(action)
     case ActionTypes.App.SELECT_VILLAGE:
     case ActionTypes.BuildVillage.BUILD:
-      lobby
-        .then(({fadeout}) => {
-          fadeout()
+      controller
+        .then(({changeVolume, lobbySource, videoSource, waitingPageSource}) => {
+          changeVolume(store.getState().audio.volume)
+          lobbySource
+            .then(({fadeout}) => {
+              fadeout()
+            })
+          videoSource
+            .then(({fadein}) => {
+              fadein()
+            })
+          waitingPageSource
+            .then(({fadein}) => {
+              fadein()
+            })
         })
-      waitingPage
-        .then(({fadein}) => {
-          fadein()
-        })
-      video
-        .then(({fadein}) => {
-          fadein()
-        })
-      changeVolume(store.getState().audio.volume)
 
       return next(action)
     case ActionTypes.App.CHANGE_VOLUME:
-      changeVolume(action.volume)
+      controller
+        .then(({changeVolume}) => {
+          changeVolume(action.volume)
+        })
 
       return next(action)
     case ActionTypes.App.TOGGLE_MUTE:
-      if (action.muted) {
-        changeVolume(0)
-      } else {
-        changeVolume(store.getState().audio.volume)
-      }
+      controller
+        .then(({changeVolume}) => {
+          if (action.muted) {
+            changeVolume(0)
+          } else {
+            changeVolume(store.getState().audio.volume)
+          }
+        })
 
       return next(action)
     default:
