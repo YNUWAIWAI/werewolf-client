@@ -6,6 +6,7 @@ import {
 import {History as H} from 'history'
 import IntlProvider from './containers/IntlProviderContainer'
 import Modal from './containers/ModalContainer'
+import MuteButton from './containers/MuteButtonContainer'
 import Obfucator from './containers/ObfucatorContainer'
 import {Router} from 'react-router-dom'
 import Routes from './containers/Routes'
@@ -36,6 +37,7 @@ export default function App(props: Props) {
           </TransitionGroup>
           <Obfucator />
           <Modal />
+          <MuteButton />
           <Video />
         </Router>
       </Theme>

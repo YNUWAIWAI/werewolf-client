@@ -1,4 +1,5 @@
 import advancedSearch, {State as AdvancedSearchState} from './advancedSearch'
+import audio, {State as AudioState} from './audio'
 import avatarImageList, {State as AvatarImageListState} from './avatarImageList'
 import buildVillage, {State as BuildVillageState} from './buildVillage'
 import confirmation, {State as Confirmation} from './confirmation'
@@ -24,6 +25,7 @@ import {combineReducers} from 'redux'
 
 export interface ReducerState {
   advancedSearch: AdvancedSearchState
+  audio: AudioState
   avatarImageList: AvatarImageListState
   buildVillage: BuildVillageState
   confirmation: Confirmation
@@ -49,6 +51,7 @@ export interface ReducerState {
 
 const reducer = combineReducers({
   advancedSearch,
+  audio,
   avatarImageList,
   buildVillage,
   confirmation,

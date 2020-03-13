@@ -6,13 +6,17 @@ import {
   selectRobotAvatar,
   waitingPage
 } from './initialState'
+import {
+  number,
+  radios
+} from '@storybook/addon-knobs'
 import App from '../../src/scripts/lobby/App'
 import {Provider} from 'react-redux'
+import {audio} from './audio'
 import {createHashHistory} from 'history'
 import {createRouterMiddleware} from '../../src/scripts/lobby/middlewares'
 import {createStore} from 'redux'
 import {language} from './language'
-import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
 import {theme} from './theme'
@@ -23,6 +27,10 @@ storiesOf('lobby|App', module)
     const store = createStore(
       reducer,
       {
+        audio: {
+          muted: true,
+          volume: number(audio.label, audio.defaultValue, audio.options)
+        },
         language: radios(language.label, language.options, language.defaultValue),
         obfucator: {
           loading: false,
@@ -49,6 +57,10 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... waitingPage,
+        audio: {
+          muted: true,
+          volume: number(audio.label, audio.defaultValue, audio.options)
+        },
         language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
@@ -72,6 +84,10 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... lobbyForHumanPlayer,
+        audio: {
+          muted: true,
+          volume: number(audio.label, audio.defaultValue, audio.options)
+        },
         language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
@@ -95,6 +111,10 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... selectHumanAvatar,
+        audio: {
+          muted: true,
+          volume: number(audio.label, audio.defaultValue, audio.options)
+        },
         language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
@@ -118,6 +138,10 @@ storiesOf('lobby|App', module)
       reducer,
       {
         ... selectRobotAvatar,
+        audio: {
+          muted: true,
+          volume: number(audio.label, audio.defaultValue, audio.options)
+        },
         language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       },
