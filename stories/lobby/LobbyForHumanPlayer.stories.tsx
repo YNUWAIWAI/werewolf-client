@@ -19,13 +19,9 @@ storiesOf('lobby|LobbyForHumanPlayer', module)
     return (
       <div
         className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
-        style={{
-          background: 'var(--color--background)',
-          height: '100vh',
-          width: '100vw'
-        }}
       >
         {story()}
+        <div className="lo--video" />
       </div>
     )
   })
