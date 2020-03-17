@@ -889,24 +889,19 @@
           grid-area: button;
           line-height: 2;
 
-          &:disabled {
-            background: var(--color--disabled);
-            cursor: not-allowed;
-
-            &:hover {
-              background: var(--color--disabled);
-
-              &:active {
-                background: var(--color--disabled);
-              }
-            }
-          }
-
           &:hover {
             background: var(--color--hover);
 
+            &:disabled {
+              background: var(--color--disabled);
+            }
+
             &:active {
               background: var(--color--active);
+
+              &:disabled {
+                background: var(--color--disabled);
+              }
             }
           }
         }
