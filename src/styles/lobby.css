@@ -347,6 +347,7 @@
 
       &--item {
         align-items: center;
+        background: var(--color--background);
         border: 1px solid var(--color--border);
         cursor: pointer;
         display: flex;
@@ -712,6 +713,7 @@
 
       &--item {
         align-items: center;
+        background: var(--color--background);
         border: 1px solid var(--color--border);
         cursor: pointer;
         display: flex;
