@@ -48,8 +48,8 @@ export default function CustomizedSelect(props: Props<any>) {
           primary: 'var(--color--primary)',
           primary25: 'var(--color--primary25)',
           primary50: 'var(--color--primary50)',
-          // primary75: 'var(--color--primary75)',
-          text: 'var(--font-color)',
+          primary75: 'var(--color--primary75)',
+          text: 'var(--font-color)'
         }
       })}
     />
