@@ -12,8 +12,23 @@ import {lobby} from './types'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
+import {theme} from './theme'
 
 storiesOf('lobby|LobbyForHumanPlayer', module)
+  .addDecorator(story => {
+    return (
+      <div
+        className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
+        style={{
+          background: 'var(--color--background)',
+          height: '100vh',
+          width: '100vw'
+        }}
+      >
+        {story()}
+      </div>
+    )
+  })
   .add('default', () => {
     const menuItems: MenuItemProps[] = [
       {
