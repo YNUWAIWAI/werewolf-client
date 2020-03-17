@@ -11,7 +11,7 @@ import {
   ActionMeta,
   ValueType
 } from 'react-select/src/types'
-import Select from 'react-select'
+import Select from './CustomizedSelect'
 import {useIntl} from 'react-intl'
 
 interface Props {
@@ -59,7 +59,6 @@ export default function NumberSelect(props: Props) {
   return (
     <Select
       className={props.className}
-      classNamePrefix="lo--react-select"
       defaultValue={
         typeof props.defaultValue === 'number' ?
           {

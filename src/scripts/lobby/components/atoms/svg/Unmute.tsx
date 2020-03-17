@@ -7,7 +7,7 @@ interface Props {
 export default function Unmute(props: Props) {
   return (
     <svg
-      className={`unmute ${props.className}`}
+      className={`unmute ${props.className || ''}`}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

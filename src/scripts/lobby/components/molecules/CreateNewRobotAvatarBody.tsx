@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AutomationSelect from '../atoms/AutomationSelect'
+import AutomationSelect from '../atoms/Select/AutomationSelect'
 import {FormattedMessage} from 'react-intl'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'

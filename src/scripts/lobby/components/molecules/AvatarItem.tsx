@@ -76,7 +76,7 @@ export default function AvatarItem(props: Props) {
       }
       <div className="lo--avatar-list--item--ping">
         <Status />
-        {props.ping.padStart(8, '0')}
+        {`${props.ping} s`}
       </div>
       {
         props.canKickOut ?

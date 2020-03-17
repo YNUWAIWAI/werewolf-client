@@ -11,8 +11,8 @@ import {
   ActionMeta,
   ValueType
 } from 'react-select/src/types'
-import Select from 'react-select'
-import {lobby} from '../../types'
+import Select from './CustomizedSelect'
+import {lobby} from '../../../types'
 
 interface Props {
   readonly className: string
@@ -60,9 +60,9 @@ export default function LanguageSelect(props: Props) {
   return (
     <Select
       className={props.className}
-      classNamePrefix="lo--react-select"
       defaultValue={defaultValue}
       menuPosition={props.menuPosition}
+      name="language"
       onChange={handleChange}
       options={options}
     />

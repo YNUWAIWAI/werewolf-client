@@ -1,7 +1,7 @@
 import * as React from 'react'
 import EmailInput from '../atoms/EmailInput'
 import {FormattedMessage} from 'react-intl'
-import LanguageSelect from '../atoms/LanguageSelect'
+import LanguageSelect from '../atoms/Select/LanguageSelect'
 import PasswordInput from '../atoms/PasswordInput'
 import TextInput from '../atoms/TextInput'
 import {lobby} from '../../types'
@@ -230,7 +230,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               }
             </FormattedMessage>
             <TextInput
-              className="lo--settings--bucket--form--field"
+              className="lo--settings--bucket--form--field input"
               handleChange={(() => this.handleChange(PropName.userName))()}
               id="userName"
               initialValue={this.props.initialValue.userName}
@@ -274,7 +274,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               }
             </FormattedMessage>
             <EmailInput
-              className="lo--settings--bucket--form--field"
+              className="lo--settings--bucket--form--field input"
               handleChange={(() => this.handleChange(PropName.userEmail))()}
               id="userEmail"
               initialValue={this.props.initialValue.userEmail}
@@ -314,7 +314,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               }
             </FormattedMessage>
             <PasswordInput
-              className="lo--settings--bucket--form--field"
+              className="lo--settings--bucket--form--field input"
               handleChange={(() => this.handleChange(PropName.userPassword))()}
               id="userPassword"
             />
