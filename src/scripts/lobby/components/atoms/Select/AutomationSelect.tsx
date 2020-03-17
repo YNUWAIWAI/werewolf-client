@@ -11,8 +11,8 @@ import {
   ActionMeta,
   ValueType
 } from 'react-select/src/types'
-import Select from 'react-select'
-import {lobby} from '../../types'
+import Select from './CustomizedSelect'
+import {lobby} from '../../../types'
 import {useIntl} from 'react-intl'
 
 interface Props {
@@ -57,9 +57,8 @@ export default function AutomationSelect(props: Props) {
   return (
     <Select
       className={props.className}
-      classNamePrefix="lo--react-select"
       defaultValue={defaultValue}
-      name="automation"
+      isSearchable
       onChange={handleChange}
       options={options}
     />

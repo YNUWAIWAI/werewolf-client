@@ -1,8 +1,8 @@
 import * as React from 'react'
-import AvatarSelect from '../atoms/AvatarSelect'
+import AvatarSelect from '../atoms/Select/AvatarSelect'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'
-import NumberSelect from '../atoms/NumberSelect'
+import NumberSelect from '../atoms/Select/NumberSelect'
 import TextInput from '../atoms/TextInput'
 import TextareaInput from '../atoms/TextareaInput'
 import {getCastFromNumberOfPlayers} from '../../util'
@@ -193,7 +193,6 @@ export default function BuildVillageBox(props: Props) {
           defaultValue={props.value.numberOfPlayers}
           from={4}
           handleChange={handleChange('numberOfPlayers')}
-          name="numberOfPlayers"
           to={15}
           type="player"
         />

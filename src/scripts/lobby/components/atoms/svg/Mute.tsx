@@ -7,7 +7,7 @@ interface Props {
 export default function Mute(props: Props) {
   return (
     <svg
-      className={`mute ${props.className}`}
+      className={`mute ${props.className || ''}`}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

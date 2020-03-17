@@ -1,5 +1,5 @@
 import * as React from 'react'
-import LanguageSelect from '../LanguageSelect'
+import LanguageSelect from '../Select/LanguageSelect'
 import {lobby} from '../../../types'
 
 interface Props {

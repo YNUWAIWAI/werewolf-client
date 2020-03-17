@@ -40,12 +40,12 @@ export default function Confirmation(props: Props) {
       >
         {
           text => (
-            <button
+            <div
               className="lo--confirmation--button yes"
               onClick={() => props.handleClickYes(props.type)}
             >
               {text}
-            </button>
+            </div>
           )
         }
       </FormattedMessage>
@@ -54,12 +54,12 @@ export default function Confirmation(props: Props) {
       >
         {
           text => (
-            <button
+            <div
               className="lo--confirmation--button no"
               onClick={() => props.handleClickNo()}
             >
               {text}
-            </button>
+            </div>
           )
         }
       </FormattedMessage>

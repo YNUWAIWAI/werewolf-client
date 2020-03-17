@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import MemberRole from '../atoms/MemberRole'
-import NumberSelect from '../atoms/NumberSelect'
+import NumberSelect from '../atoms/Select/NumberSelect'
 import {ORDERED_ROLE_LIST} from '../../constants/Role'
 import {lobby} from '../../types'
 
@@ -57,7 +57,6 @@ export default function MemberSelect(props: Props) {
           defaultValue={props.numberOfRobots}
           from={0}
           handleChange={props.handleNumberChange}
-          name="numberOfRobots"
           to={props.numberOfPlayers}
           type="robot"
         />

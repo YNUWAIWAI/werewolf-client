@@ -2,4 +2,4 @@
 
 exports[`<ModalContainer /> render hidden 1`] = `""`;
 
-exports[`<ModalContainer /> render visible 1`] = `"<div class=\\"lo--confirmation\\"><div class=\\"lo--confirmation--description\\">dummy</div><button class=\\"lo--confirmation--button yes\\">Yes</button><button class=\\"lo--confirmation--button no\\">No</button></div>"`;
+exports[`<ModalContainer /> render visible 1`] = `"<div class=\\"lo--confirmation\\"><div class=\\"lo--confirmation--description\\">dummy</div><div class=\\"lo--confirmation--button yes\\">Yes</div><div class=\\"lo--confirmation--button no\\">No</div></div>"`;

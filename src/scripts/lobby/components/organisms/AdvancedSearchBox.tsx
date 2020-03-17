@@ -1,8 +1,8 @@
 import * as React from 'react'
 import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
-import AvatarSelect from '../atoms/AvatarSelect'
+import AvatarSelect from '../atoms/Select/AvatarSelect'
 import {FormattedMessage} from 'react-intl'
-import NumberSelect from '../atoms/NumberSelect'
+import NumberSelect from '../atoms/Select/NumberSelect'
 import TextInput from '../atoms/TextInput'
 import TextareaInput from '../atoms/TextareaInput'
 import {lobby} from '../../types'
@@ -176,7 +176,6 @@ export default function AdvancedSearchBox(props: Props) {
         className="lo--advanced-search--input"
         from={4}
         handleChange={handleValueChange('minimum')}
-        name="minimum"
         to={15}
         type="player"
       />
@@ -192,7 +191,6 @@ export default function AdvancedSearchBox(props: Props) {
         className="lo--advanced-search--input"
         from={4}
         handleChange={handleValueChange('maximum')}
-        name="maximum"
         to={15}
         type="player"
       />

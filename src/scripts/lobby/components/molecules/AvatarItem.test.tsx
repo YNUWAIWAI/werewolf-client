@@ -23,7 +23,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe={false}
             name="name"
-            ping="99.999 s"
+            ping="99.999"
             pingStatus={lobby.PingStatus.danger}
             token="token"
           />
@@ -43,7 +43,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe={false}
             name="name"
-            ping="99.999 s"
+            ping="99.999"
             pingStatus={lobby.PingStatus.danger}
             token="token"
           />
@@ -65,7 +65,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe
             name="name"
-            ping="99.999 s"
+            ping="99.999"
             pingStatus={lobby.PingStatus.danger}
             token="token"
           />
@@ -86,7 +86,7 @@ describe('<AvatarItem />', () => {
             isHost={false}
             isMe
             name="name"
-            ping="99.999 s"
+            ping="99.999"
             pingStatus={lobby.PingStatus.danger}
             token="token"
           />
@@ -108,7 +108,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe
             name="name"
-            ping="99.999 s"
+            ping="99.999"
             pingStatus={lobby.PingStatus.danger}
             token="token"
           />
@@ -128,7 +128,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe={false}
             name="name"
-            ping="99.999 s"
+            ping="99.999"
             pingStatus={lobby.PingStatus.danger}
             token="token"
           />
@@ -150,7 +150,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe
             name="name"
-            ping="99.999 s"
+            ping="99.999"
             pingStatus={lobby.PingStatus.danger}
             token="token"
           />
@@ -171,7 +171,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe
             name="name"
-            ping="0.500 s"
+            ping="00.500"
             pingStatus={lobby.PingStatus.safe}
             token="token"
           />
@@ -192,7 +192,7 @@ describe('<AvatarItem />', () => {
             isHost
             isMe
             name="name"
-            ping="1.000 s"
+            ping="01.000"
             pingStatus={lobby.PingStatus.warning}
             token="token"
           />
@@ -216,7 +216,7 @@ describe('<AvatarItem />', () => {
           isHost={false}
           isMe
           name="name"
-          ping="99.999 s"
+          ping="99.999"
           pingStatus={lobby.PingStatus.danger}
           token="token"
         />
@@ -236,7 +236,7 @@ describe('<AvatarItem />', () => {
           isHost={false}
           isMe
           name="name"
-          ping="99.999 s"
+          ping="99.999"
           pingStatus={lobby.PingStatus.danger}
           token="token"
         />

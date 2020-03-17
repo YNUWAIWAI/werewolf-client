@@ -12,8 +12,17 @@ import {lobby} from './types'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/lobby/reducers'
 import {storiesOf} from '@storybook/react'
+import {theme} from './theme'
 
 storiesOf('lobby|IdSearch', module)
+  .addDecorator(story => (
+    <div
+      className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
+    >
+      {story()}
+      <div className="lo--video" />
+    </div>
+  ))
   .add('before search', () => {
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')

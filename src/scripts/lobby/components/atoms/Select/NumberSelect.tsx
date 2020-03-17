@@ -11,7 +11,7 @@ import {
   ActionMeta,
   ValueType
 } from 'react-select/src/types'
-import Select from 'react-select'
+import Select from './CustomizedSelect'
 import {useIntl} from 'react-intl'
 
 interface Props {
@@ -20,7 +20,6 @@ interface Props {
   readonly defaultValue?: number
   readonly from: number
   readonly handleChange: (valid: boolean) => (value: number) => void
-  readonly name: string
   readonly to: number
   readonly type: 'player' | 'robot'
 }
@@ -59,7 +58,6 @@ export default function NumberSelect(props: Props) {
   return (
     <Select
       className={props.className}
-      classNamePrefix="lo--react-select"
       defaultValue={
         typeof props.defaultValue === 'number' ?
           {
@@ -75,7 +73,6 @@ export default function NumberSelect(props: Props) {
           } :
           []
       }
-      name={props.name}
       onChange={handleChange}
       options={props.ascendingOrder ? options : options.reverse()}
     />
