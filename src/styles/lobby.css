@@ -56,6 +56,7 @@
     --color--safe: rgb(102, 187, 106);
     --color--warning: rgb(255, 238, 88);
     --color--background--modal: var(--color--neutral90);
+    --color--background--button--modal: var(--color--neutral80);
     --color--font--modal: var(--color--neutral10);
     --color--obfucator--loader: var(--color--neutral90);
   }
@@ -81,6 +82,7 @@
     --color--safe: rgb(76, 175, 80);
     --color--warning: rgb(255, 235, 59);
     --color--background--modal: var(--color--neutral10);
+    --color--background--button--modal: var(--color--neutral20);
     --color--font--modal: var(--color--neutral90);
     --color--obfucator--loader: var(--color--neutral10);
   }
@@ -602,6 +604,7 @@
       '. yes . no .' 3.25rem
       / 1fr 5.5rem 1fr 5.5rem 1fr;
     left: 25vw;
+    min-width: 300px;
     padding: 1rem;
     position: fixed;
     top: 30vh;
@@ -610,17 +613,19 @@
 
     &--button {
       border: none;
+      border-radius: 4px;
       font-size: 1.5rem;
       line-height: 1.5;
       padding: 0.5rem;
+      text-align: center;
 
       &.yes {
-        background: rgba(255, 0, 0, 0.5);
+        background: var(--color--background--button--modal);
         grid-area: yes;
       }
 
       &.no {
-        background: rgba(0, 0, 255, 0.5);
+        background: var(--color--background--button--modal);
         grid-area: no;
       }
 
