@@ -62,7 +62,6 @@ export default function LanguageSelect(props: Props) {
       className={props.className}
       defaultValue={defaultValue}
       menuPosition={props.menuPosition}
-      name="language"
       onChange={handleChange}
       options={options}
     />

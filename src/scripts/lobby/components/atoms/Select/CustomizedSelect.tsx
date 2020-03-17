@@ -15,7 +15,6 @@ export interface Props<T> {
   readonly isSearchable?: boolean
   readonly menuPosition?: 'absolute' | 'fixed'
   readonly onChange: (selectedOption: ValueType<Option<T>>, action: ActionMeta) => void
-  readonly name: string
   readonly options: Option<T>[]
 }
 
@@ -27,7 +26,6 @@ export default function CustomizedSelect(props: Props<any>) {
       defaultValue={props.defaultValue}
       isSearchable={props.isSearchable}
       menuPosition={props.menuPosition}
-      name={props.name}
       onChange={props.onChange}
       options={props.options}
       theme={theme => ({

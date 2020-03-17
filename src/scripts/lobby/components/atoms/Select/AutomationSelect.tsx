@@ -59,7 +59,6 @@ export default function AutomationSelect(props: Props) {
       className={props.className}
       defaultValue={defaultValue}
       isSearchable
-      name="automation"
       onChange={handleChange}
       options={options}
     />

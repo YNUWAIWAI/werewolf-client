@@ -95,7 +95,6 @@ export default function AvatarSelect(props: Props) {
       className={props.className}
       defaultValue={defaultValue}
       isSearchable={false}
-      name="avatar"
       onChange={handleChange}
       options={options}
     />

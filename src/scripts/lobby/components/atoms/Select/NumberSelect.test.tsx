@@ -18,7 +18,6 @@ describe('<NumberSelect />', () => {
           className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />
@@ -37,7 +36,6 @@ describe('<NumberSelect />', () => {
           defaultValue={0}
           from={4}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />
@@ -60,7 +58,6 @@ describe('<NumberSelect />', () => {
           defaultValue={1}
           from={4}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />
@@ -84,7 +81,6 @@ describe('<NumberSelect />', () => {
           className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />
@@ -116,7 +112,6 @@ describe('<NumberSelect />', () => {
           className="lo--advanced-search--input"
           from={0}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />
@@ -148,7 +143,6 @@ describe('<NumberSelect />', () => {
           className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />
@@ -178,7 +172,6 @@ describe('<NumberSelect />', () => {
           className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />
@@ -205,7 +198,6 @@ describe('<NumberSelect />', () => {
           className="lo--advanced-search--input"
           from={4}
           handleChange={handleChange}
-          name="minimum"
           to={15}
           type="player"
         />

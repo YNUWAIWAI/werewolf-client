@@ -57,7 +57,6 @@ export default function MemberSelect(props: Props) {
           defaultValue={props.numberOfRobots}
           from={0}
           handleChange={props.handleNumberChange}
-          name="numberOfRobots"
           to={props.numberOfPlayers}
           type="robot"
         />

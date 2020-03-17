@@ -193,7 +193,6 @@ export default function BuildVillageBox(props: Props) {
           defaultValue={props.value.numberOfPlayers}
           from={4}
           handleChange={handleChange('numberOfPlayers')}
-          name="numberOfPlayers"
           to={15}
           type="player"
         />

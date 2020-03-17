@@ -20,7 +20,6 @@ interface Props {
   readonly defaultValue?: number
   readonly from: number
   readonly handleChange: (valid: boolean) => (value: number) => void
-  readonly name: string
   readonly to: number
   readonly type: 'player' | 'robot'
 }
@@ -74,7 +73,6 @@ export default function NumberSelect(props: Props) {
           } :
           []
       }
-      name={props.name}
       onChange={handleChange}
       options={props.ascendingOrder ? options : options.reverse()}
     />
