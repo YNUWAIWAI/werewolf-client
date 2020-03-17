@@ -34,6 +34,7 @@
   color: var(--color--font);
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
 
+  /* stylelint-disable color-named */
   &.dark {
     --color--neutral0: hsl(0, 0%, 0%);
     --color--neutral5: hsl(0, 0%, 5%);
@@ -83,6 +84,7 @@
     --color--font--modal: var(--color--neutral90);
     --color--obfucator--loader: var(--color--neutral10);
   }
+  /* stylelint-enable color-named */
 
   &--app--transition {
     &-appear {
@@ -588,21 +590,17 @@
     color: var(--color--font--modal);
     display: grid;
     gap: 0.5rem 0;
-    grid-template-areas:
-      'description description description description description'
-      '. yes . no .';
 
     /*
       5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
-    */
-    grid-template-columns: 1fr 5.5rem 1fr 5.5rem 1fr;
-
-    /*
       15px = name's font-size(10px) * name's line-height(1.5)
       4.5rem = font-size(1.5rem) * line-height(1.5) * number of lines(2)
       3.25rem = font-size(1.5rem) * name's line-height(1.5) + padding-top(0.5rem) + padding-bottom(0.5rem)
     */
-    grid-template-rows: 4.5rem 3.25rem;
+    grid-template:
+      'description description description description description' 4.5rem
+      '. yes . no .' 3.25rem
+      / 1fr 5.5rem 1fr 5.5rem 1fr;
     left: 25vw;
     padding: 1rem;
     position: fixed;
@@ -888,6 +886,11 @@
           font-size: 1.5rem;
           grid-area: button;
           line-height: 2;
+
+          &:disabled {
+            background: var(--color--disabled);
+            cursor: not-allowed;
+          }
 
           &:hover {
             background: var(--color--hover);
