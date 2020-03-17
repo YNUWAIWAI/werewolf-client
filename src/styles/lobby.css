@@ -17,6 +17,8 @@
   --color--me: var(--color--primary);
   --color--obfucator: rgba(0, 0, 0, 0.8);
   --color--selected: var(--color--primary25);
+  --filter--active: opacity(60%);
+  --filter--hover: opacity(70%);
   --size--avatar-image: 50px;
   --size--avatar-image--L: 120px;
   --size--role-image: 50px;
@@ -997,8 +999,16 @@
         &:hover {
           background: var(--color--hover);
 
+          & img {
+            filter: var(--filter--hover);
+          }
+
           &:active {
             background: var(--color--active);
+
+            & img {
+              filter: var(--filter--active);
+            }
           }
         }
       }
