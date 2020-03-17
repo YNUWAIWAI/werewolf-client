@@ -1,8 +1,9 @@
 .lo {
 
   /* variables */
-  --color--active: var(--color--neutral30);
+  --color--active: var(--color--neutral40);
   --color--background: var(--color--neutral0);
+  --color--background--button: var(--color--neutral20);
   --color--background--me: var(--color--primary);
   --color--border: var(--color--neutral90);
   --color--border--input: var(--color--neutral20);
@@ -11,7 +12,7 @@
   --color--font--me: var(--color--neutral0);
   --color--font--input: var(--color--neutral80);
   --color--font--role-image: rgb(254, 254, 254);
-  --color--hover: var(--color--neutral20);
+  --color--hover: var(--color--neutral30);
   --color--me: var(--color--primary);
   --color--obfucator: rgba(0, 0, 0, 0.8);
   --color--selected: var(--color--primary25);
@@ -748,11 +749,13 @@
           }
 
           & > .renew {
-            background: var(--color--background);
-            border: 1px solid var(--color--border);
-            border-radius: 5px;
-            box-shadow: 2px 2px 1px 0 grey;
+            appearance: none;
+            background: var(--color--background--button);
+            border: none;
+            border-radius: 4px;
+            color: var(--color--neutral80);
             cursor: pointer;
+            line-height: 2;
             margin: 0 0 0 0.5rem;
             padding: 0 0.5rem;
             user-select: none;
@@ -775,10 +778,14 @@
 
         &.authorized {
           & > .accept {
-            border: 1px solid var(--color--border);
-            border-radius: 5px;
-            box-shadow: 2px 2px 1px 0 grey;
+            appearance: none;
+            background: var(--color--background--button);
+            border: none;
+            border-radius: 4px;
+            color: var(--color--neutral80);
             cursor: pointer;
+            font-size: 1.5rem;
+            line-height: 2;
             padding: 0 0.5rem;
             user-select: none;
 
@@ -861,8 +868,8 @@
 
         &--button {
           appearance: none;
-          background: var(--color--neutral10);
-          border: 1px solid var(--color--neutral20);
+          background: var(--color--background--button);
+          border: none;
           border-radius: 4px;
           color: var(--color--neutral80);
           cursor: pointer;
