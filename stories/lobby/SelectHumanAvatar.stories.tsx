@@ -13,16 +13,14 @@ import {storiesOf} from '@storybook/react'
 import {theme} from './theme'
 
 storiesOf('lobby|SelectHumanAvatar', module)
-  .addDecorator(story => {
-    return (
-      <div
-        className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
-      >
-        {story()}
-        <div className="lo--video" />
-      </div>
-    )
-  })
+  .addDecorator(story => (
+    <div
+      className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
+    >
+      {story()}
+      <div className="lo--video" />
+    </div>
+  ))
   .add('default', () => {
     const store = createStore(
       reducer,

@@ -183,16 +183,14 @@ const players: Props['players'] = [
 ]
 
 storiesOf('lobby|WaitingForPlayers', module)
-  .addDecorator(story => {
-    return (
-      <div
-        className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
-      >
-        {story()}
-        <div className="lo--video" />
-      </div>
-    )
-  })
+  .addDecorator(story => (
+    <div
+      className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
+    >
+      {story()}
+      <div className="lo--video" />
+    </div>
+  ))
   .add('15 players', () => {
     const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
       action(`kick out ${values.name},${values.token}`)

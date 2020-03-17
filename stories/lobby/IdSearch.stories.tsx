@@ -15,16 +15,14 @@ import {storiesOf} from '@storybook/react'
 import {theme} from './theme'
 
 storiesOf('lobby|IdSearch', module)
-  .addDecorator(story => {
-    return (
-      <div
-        className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
-      >
-        {story()}
-        <div className="lo--video" />
-      </div>
-    )
-  })
+  .addDecorator(story => (
+    <div
+      className={`lo ${radios(theme.label, theme.options, theme.defaultValue)}`}
+    >
+      {story()}
+      <div className="lo--video" />
+    </div>
+  ))
   .add('before search', () => {
     const handleSearchIdChange = action('handleSearchIdChange')
     const handleValidityChange = action('handleValidityChange')
