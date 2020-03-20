@@ -13,7 +13,7 @@ export default function App() {
   return (
     <IntlProvider>
       <Theme>
-        <div className="vi--app">
+        <div className="vi--grid">
           <Info />
           <Activity />
           <Command />
@@ -22,6 +22,7 @@ export default function App() {
           <Result />
           <Obfucator />
         </div>
+        <div className="vi--background" />
       </Theme>
     </IntlProvider>
   )

@@ -47,56 +47,104 @@
 .vi {
 
   /* variables */
-  --info-image-size: 50px;
-  --prediction-image-size: 50px;
-  --result-image-size: 50px;
-  --vote-image-size: 50px;
-  --modal-image-size: 50px;
+  --size--info-image: 50px;
+  --size--prediction-image: 50px;
+  --size--result-image: 50px;
+  --size--vote-image: 50px;
+  --size--modal-image: 50px;
   --character-initial-height: 20px;
   --character-initial-width: 20px;
+  --color--border: var(--color--neutral90);
 
   /* 100vw * (2/5) * (1/4) - 2 */
   --chat-image-size: 6vw;
   --arrow: 2vw;
   --hide-button-height: 24px;
-  --obfucator-color: rgba(0, 0, 0, 0.15);
-  --public-color: rgba(255, 165, 0, 0.4);
-  --private-color: rgba(128, 128, 128, 0.3);
-  --werewolf-color: rgba(255, 0, 0, 0.4);
-  --master-color: rgba(0, 255, 0, 0.4);
-  --grave-color: rgba(0, 0, 255, 0.3);
-  --win-color: hsla(51, 100%, 50%, 0.7);
-  --villager--color: rgb(17, 95, 57);
-  --werehamster--color: rgb(127, 77, 39);
-  --werewolf--color: rgb(147, 39, 143);
-  --suggest-color: rgb(3, 169, 244);
-  --dead-color: red;
-  --silent-color: rgba(255, 215, 0, 0.8);
-  --background-color: white;
-  --unmarked-star-color: rgb(158, 158, 158);
-  --marked-star-color: rgb(255, 235, 59);
+  --color--chat--private: rgba(128, 128, 128, 0.3);
+  --color--chat--werewolf: rgba(255, 0, 0, 0.4);
+  --color--chat--master: rgba(0, 255, 0, 0.4);
+  --color--chat--grave: rgba(0, 0, 255, 0.3);
+  --color--win: hsla(51, 100%, 50%, 0.7);
+  --color--villager: rgb(17, 95, 57);
+  --color--werehamster: rgb(127, 77, 39);
+  --color--werewolf: rgb(147, 39, 143);
+  --color--suggest: rgb(3, 169, 244);
+  --color--dead: red;
+  --color--silent: rgba(255, 215, 0, 0.8);
+  --color--star--unmarked: rgb(158, 158, 158);
+  --color--star--marked: rgb(255, 235, 59);
 
   /* z-index */
-  --command--z-index: 2;
-  --command--input--char--z-index: 1;
-  --command--input--suggest--list--z-index: 3;
-  --command--input--textarea--z-index: 2;
-  --prediction--character--z-index: 2;
-  --prediction--help--z-index: 5;
-  --prediction--item--z-index: 0;
-  --prediction--spec--z-index: 3;
-  --prediction--role--z-index: 4;
-  --prediction--role--image--z-index: 0;
-  --prediction--role--times--z-index: 1;
-  --prediction--role--number--z-index: 1;
-  --result--z-index: 7;
-  --result--close--z-index: 8;
-  --obfucator--z-index: 6;
-  --modal--z-index: 9;
-  --hide-button--z-index: 1;
+  --z-index--background: -1;
+  --z-index--command: 2;
+  --z-index--command--input--char: 1;
+  --z-index--command--input--suggest--list: 3;
+  --z-index--command--input--textarea: 2;
+  --z-index--prediction--character: 2;
+  --z-index--prediction--help: 5;
+  --z-index--prediction--item: 0;
+  --z-index--prediction--spec: 3;
+  --z-index--prediction--role: 4;
+  --z-index--prediction--role--image: 0;
+  --z-index--prediction--role--times: 1;
+  --z-index--prediction--role--number: 1;
+  --z-index--result: 7;
+  --z-index--result--close: 8;
+  --z-index--obfucator: 6;
+  --z-index--modal: 9;
+  --z-index--hide-button: 1;
 
-  /* font */
+  /* properties */
+  color: var(--color--font);
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+
+  /* stylelint-disable color-named */
+  &.dark {
+    --color--neutral0: hsl(0, 0%, 0%);
+    --color--neutral5: hsl(0, 0%, 5%);
+    --color--neutral10: hsl(0, 0%, 10%);
+    --color--neutral20: hsl(0, 0%, 20%);
+    --color--neutral30: hsl(0, 0%, 30%);
+    --color--neutral40: hsl(0, 0%, 40%);
+    --color--neutral50: hsl(0, 0%, 50%);
+    --color--neutral60: hsl(0, 0%, 60%);
+    --color--neutral70: hsl(0, 0%, 70%);
+    --color--neutral80: hsl(0, 0%, 80%);
+    --color--neutral90: hsl(0, 0%, 90%);
+    --color--neutral100: hsl(0, 0%, 100%);
+    --color--primary: rgba(38, 132, 255, 1);
+    --color--primary25: rgba(38, 132, 255, 0.25);
+    --color--primary50: rgba(38, 132, 255, 0.5);
+    --color--primary75: rgba(38, 132, 255, 0.75);
+    --color--background: var(--color--neutral0);
+    --color--font: var(--color--neutral90);
+    --color--public: rgba(255, 165, 0, 0.4);
+    --color--obfucator: rgba(0, 0, 0, 0.8);
+  }
+
+  &.light {
+    --color--neutral0: hsl(0, 0%, 100%);
+    --color--neutral5: hsl(0, 0%, 95%);
+    --color--neutral10: hsl(0, 0%, 90%);
+    --color--neutral20: hsl(0, 0%, 80%);
+    --color--neutral30: hsl(0, 0%, 70%);
+    --color--neutral40: hsl(0, 0%, 60%);
+    --color--neutral50: hsl(0, 0%, 50%);
+    --color--neutral60: hsl(0, 0%, 40%);
+    --color--neutral70: hsl(0, 0%, 30%);
+    --color--neutral80: hsl(0, 0%, 20%);
+    --color--neutral90: hsl(0, 0%, 10%);
+    --color--neutral100: hsl(0, 0%, 0%);
+    --color--primary: rgba(38, 132, 255, 1);
+    --color--primary25: rgba(38, 132, 255, 0.25);
+    --color--primary50: rgba(38, 132, 255, 0.5);
+    --color--primary75: rgba(38, 132, 255, 0.75);
+    --color--background: var(--color--neutral0);
+    --color--font: var(--color--neutral90);
+    --color--public: rgba(255, 165, 0, 0.4);
+    --color--obfucator: rgba(0, 0, 0, 0.8);
+  }
+  /* stylelint-enable color-named */
 
   &--activity {
     display: grid;
@@ -110,7 +158,17 @@
     }
   }
 
-  &--app {
+  &--background {
+    background: var(--color--background);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: var(--z-index--background);
+  }
+
+  &--grid {
     display: grid;
     gap: 1vh 0;
     grid-template-areas:
@@ -119,6 +177,7 @@
       'command';
     grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 68vh) minmax(130px, 20vh);
     height: 100vh;
+    min-width: 900px;
   }
 
   &--chat {
@@ -128,7 +187,7 @@
     scroll-behavior: smooth;
 
     &--arrow-box {
-      background: var(--public-color);
+      background: var(--color--public);
       border-radius: 5px;
       display: grid;
       grid-area: text;
@@ -140,7 +199,7 @@
 
       &::after {
         border: solid transparent;
-        border-right-color: var(--public-color);
+        border-right-color: var(--color--public);
         border-width: var(--arrow);
         content: '';
         height: 0;
@@ -198,18 +257,18 @@
       & > .star {
         fill: transparent;
         height: 75%;
-        stroke: var(--unmarked-star-color);
+        stroke: var(--color--star--unmarked);
         width: 75%;
 
         &:hover {
-          stroke: var(--marked-star-color);
+          stroke: var(--color--star--marked);
         }
       }
 
       &.marked {
         & > .star {
-          fill: var(--marked-star-color);
-          stroke: var(--marked-star-color);
+          fill: var(--color--star--marked);
+          stroke: var(--color--star--marked);
         }
       }
     }
@@ -260,62 +319,62 @@
 
       &.grave {
         & > .vi--chat--arrow-box {
-          background: var(--grave-color);
+          background: var(--color--chat--grave);
 
           &::after {
             border-left-color: transparent;
-            border-right-color: var(--grave-color);
+            border-right-color: var(--color--chat--grave);
           }
         }
       }
 
       &.werewolf {
         & > .vi--chat--arrow-box {
-          background: var(--werewolf-color);
+          background: var(--color--chat--werewolf);
 
           &::after {
             border-left-color: transparent;
-            border-right-color: var(--werewolf-color);
+            border-right-color: var(--color--chat--werewolf);
           }
         }
       }
 
       &.master {
         & > .vi--chat--arrow-box {
-          background: var(--master-color);
+          background: var(--color--chat--master);
 
           &::after {
             border-left-color: transparent;
-            border-right-color: var(--master-color);
+            border-right-color: var(--color--chat--master);
           }
         }
       }
 
       &.me {
         & > .vi--chat--arrow-box::after {
-          border-left-color: var(--public-color);
+          border-left-color: var(--color--public);
           border-right-color: transparent;
           left: 100%;
           right: unset;
         }
 
         &.grave > .vi--chat--arrow-box::after {
-          border-left-color: var(--grave-color);
+          border-left-color: var(--color--chat--grave);
           border-right-color: transparent;
         }
 
         &.werewolf > .vi--chat--arrow-box::after {
-          border-left-color: var(--werewolf-color);
+          border-left-color: var(--color--chat--werewolf);
           border-right-color: transparent;
         }
 
         &.master > .vi--chat--arrow-box::after {
-          border-left-color: var(--master-color);
+          border-left-color: var(--color--chat--master);
           border-right-color: transparent;
         }
 
         &.private > .vi--chat--arrow-box::after {
-          border-left-color: var(--private-color);
+          border-left-color: var(--color--chat--private);
           border-right-color: transparent;
         }
 
@@ -333,11 +392,11 @@
 
       &.private {
         & > .vi--chat--arrow-box {
-          background: var(--private-color);
+          background: var(--color--chat--private);
 
           &::after {
             border-left-color: transparent;
-            border-right-color: var(--private-color);
+            border-right-color: var(--color--chat--private);
           }
         }
       }
@@ -371,7 +430,7 @@
     grid-area: command;
     justify-content: space-around;
     position: relative;
-    z-index: var(--command--z-index);
+    z-index: var(--z-index--command);
 
     &--input {
       display: grid;
@@ -389,7 +448,7 @@
         grid-area: input;
         justify-content: flex-end;
         padding: 5px 10px;
-        z-index: var(--command--input--char--z-index);
+        z-index: var(--z-index--command--input--char);
 
         &.error {
           color: red;
@@ -470,7 +529,7 @@
           overflow: hidden;
           position: absolute;
           top: 0;
-          z-index: var(--command--input--suggest--list--z-index);
+          z-index: var(--z-index--command--input--suggest--list);
 
           &:hover {
             overflow: auto;
@@ -483,19 +542,19 @@
           padding: 0 0.25rem;
 
           &.selected {
-            background: var(--suggest-color);
+            background: var(--color--suggest);
             color: white;
           }
 
           &:hover {
-            background: var(--suggest-color);
+            background: var(--color--suggest);
             color: white;
           }
         }
       }
 
       &--textarea {
-        background: var(--public-color);
+        background: var(--color--public);
         border: 1px solid black;
         border-radius: 10px;
         box-sizing: border-box;
@@ -506,18 +565,18 @@
         padding: 1rem;
         resize: none;
         width: 100%;
-        z-index: var(--command--input--textarea--z-index);
+        z-index: var(--z-index--command--input--textarea);
 
         &.grave {
-          background: var(--grave-color);
+          background: var(--color--chat--grave);
         }
 
         &.werewolf {
-          background: var(--werewolf-color);
+          background: var(--color--chat--werewolf);
         }
 
         &.private {
-          background: var(--private-color);
+          background: var(--color--chat--private);
         }
       }
     }
@@ -627,16 +686,16 @@
         grid-template:
           '. . . .' 1fr
           '. image image .' var(--character-initial-height)
-          '. image image .' calc(var(--vote-image-size) - var(--character-initial-height))
+          '. image image .' calc(var(--size--vote-image) - var(--character-initial-height))
           'name name name name'
           '. . . .' 1fr
-          / 1fr calc(var(--vote-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+          / 1fr calc(var(--size--vote-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
 
         &--image {
           display: block;
           grid-area: image;
-          height: var(--vote-image-size);
-          width: var(--vote-image-size);
+          height: var(--size--vote-image);
+          width: var(--size--vote-image);
           z-index: 1;
         }
 
@@ -761,10 +820,8 @@
     gap: 0;
     grid-area: info;
     grid-template-areas:
-      '. . . . . . . .'
-      'day property-character character property-role role property-team team .';
-    grid-template-columns: 3fr 1fr calc(var(--info-image-size) + 40px) 1fr calc(var(--info-image-size) + 40px) 1fr calc(var(--info-image-size) + 40px) 0.25fr;
-    grid-template-rows: 2vh minmax(calc(3.25rem + 4px + 15px), 5vh);
+      'day property-character character property-role role property-team team';
+    grid-template-columns: minmax(405px, 3fr) minmax(135px, 1fr) calc(var(--size--info-image) + 40px) minmax(135px, 1fr) calc(var(--size--info-image) + 40px) minmax(135px, 1fr) calc(var(--size--info-image) + 40px);
     height: 100%;
 
     &--character {
@@ -774,16 +831,16 @@
       grid-template:
         '. . . .' 1fr
         '. image image .' var(--character-initial-height)
-        '. image image .' calc(var(--info-image-size) - var(--character-initial-height))
+        '. image image .' calc(var(--size--info-image) - var(--character-initial-height))
         'name name name name' 15px
         '. . . .' 1fr
-        / 1fr calc(var(--info-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+        / 1fr calc(var(--size--info-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--info-image-size);
-        width: var(--info-image-size);
+        height: var(--size--info-image);
+        width: var(--size--info-image);
         z-index: 1;
       }
 
@@ -815,7 +872,7 @@
       min-height: calc(3.25rem + 4px);
 
       &--text {
-        border: 2px solid black;
+        border: 2px solid var(--color--border);
         border-radius: 1.5rem;
         display: grid;
         font-size: 1.5rem;
@@ -857,16 +914,16 @@
       grid-area: role;
       grid-template:
         '. . .' 1fr
-        '. image .' var(--info-image-size)
+        '. image .' var(--size--info-image)
         'name name name' 15px
         '. . .' 1fr
-        / 1fr var(--info-image-size) 1fr;
+        / 1fr var(--size--info-image) 1fr;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--info-image-size);
-        width: var(--info-image-size);
+        height: var(--size--info-image);
+        width: var(--size--info-image);
       }
 
       &--name {
@@ -886,27 +943,27 @@
       grid-area: team;
       grid-template:
         '. . .' 1fr
-        '. image .' var(--info-image-size)
+        '. image .' var(--size--info-image)
         'name name name' 15px
         '. . .' 1fr
-        / 1fr var(--info-image-size) 1fr;
+        / 1fr var(--size--info-image) 1fr;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--info-image-size);
-        width: var(--info-image-size);
+        height: var(--size--info-image);
+        width: var(--size--info-image);
 
         &.teamVillager {
-          fill: var(--villager--color);
+          fill: var(--color--villager);
         }
 
         &.teamWerehamster {
-          fill: var(--werehamster--color);
+          fill: var(--color--werehamster);
         }
 
         &.teamWerewolf {
-          fill: var(--werewolf--color);
+          fill: var(--color--werewolf);
         }
       }
 
@@ -934,7 +991,7 @@
     /*
       5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
     */
-    grid-template-rows: calc(var(--modal-image-size) + 15px) 4.5rem 3.25rem;
+    grid-template-rows: calc(var(--size--modal-image) + 15px) 4.5rem 3.25rem;
     /*
       15px = name's font-size(10px) * name's line-height(1.5)
       4.5rem = font-size(1.5rem) * line-height(1.5) * number of lines(2)
@@ -987,15 +1044,15 @@
       grid-area: icon;
       grid-template:
         '. image image .' var(--character-initial-height)
-        '. image image .' calc(var(--modal-image-size) - var(--character-initial-height))
+        '. image image .' calc(var(--size--modal-image) - var(--character-initial-height))
         'name name name name'
-        / 1fr calc(var(--modal-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+        / 1fr calc(var(--size--modal-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--modal-image-size);
-        width: var(--modal-image-size);
+        height: var(--size--modal-image);
+        width: var(--size--modal-image);
         z-index: 1;
       }
 
@@ -1041,7 +1098,7 @@
 
   &--obfucator {
     align-items: center;
-    background: var(--obfucator-color);
+    background: var(--color--obfucator);
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -1089,20 +1146,20 @@
     overflow: auto;
 
     &--character {
-      background: var(--background-color);
+      background: var(--color--background);
       border: solid 1px black;
       box-sizing: border-box;
       display: grid;
       grid-template:
         '. . . .' 1fr
         '. image image .' var(--character-initial-height)
-        '. image image .' calc(var(--prediction-image-size) - var(--character-initial-height))
+        '. image image .' calc(var(--size--prediction-image) - var(--character-initial-height))
         'name name name name' 15px
         '. . . .' 1fr
-        / 1fr calc(var(--prediction-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+        / 1fr calc(var(--size--prediction-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
       left: 0;
       position: sticky;
-      z-index: var(--prediction--character--z-index);
+      z-index: var(--z-index--prediction--character);
 
       &.dead {
         animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
@@ -1111,13 +1168,13 @@
       }
 
       &.silent {
-        background-color: var(--silent-color);
+        background-color: var(--color--silent);
       }
 
       &--image {
         grid-area: image;
-        height: var(--prediction-image-size);
-        width: var(--prediction-image-size);
+        height: var(--size--prediction-image);
+        width: var(--size--prediction-image);
       }
 
       &--initial {
@@ -1141,7 +1198,7 @@
 
     &--help {
       align-items: center;
-      background: var(--background-color);
+      background: var(--color--background);
       border: solid 1px black;
       box-sizing: border-box;
       display: flex;
@@ -1149,7 +1206,7 @@
       left: 0;
       position: sticky;
       top: 0;
-      z-index: var(--prediction--help--z-index);
+      z-index: var(--z-index--prediction--help);
 
       & > .help {
         height: 80%;
@@ -1164,7 +1221,7 @@
       cursor: pointer;
       display: inline-flex;
       justify-content: center;
-      z-index: var(--prediction--item--z-index);
+      z-index: var(--z-index--prediction--item);
 
       &.fixed {
         box-shadow: inset 0 0 0 4px red;
@@ -1189,14 +1246,14 @@
     }
 
     &--role {
-      background: var(--background-color);
+      background: var(--color--background);
       border: solid 1px black;
       box-sizing: border-box;
       display: grid;
-      grid-template: 1fr calc(var(--prediction-image-size) - 16px) 16px 15px 1fr / 1fr calc(var(--prediction-image-size) - 24px) 12px 12px 1fr;
+      grid-template: 1fr calc(var(--size--prediction-image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--prediction-image) - 24px) 12px 12px 1fr;
       position: sticky;
       top: 0;
-      z-index: var(--prediction--role--z-index);
+      z-index: var(--z-index--prediction--role);
 
       &--name {
         font-size: 10px;
@@ -1209,9 +1266,9 @@
       &--image {
         grid-column: 2 / 4;
         grid-row: 2 / 4;
-        height: var(--prediction-image-size);
-        width: var(--prediction-image-size);
-        z-index: var(--prediction--role--image--z-index);
+        height: var(--size--prediction-image);
+        width: var(--size--prediction-image);
+        z-index: var(--z-index--prediction--role--image);
       }
 
       &--times {
@@ -1223,7 +1280,7 @@
         grid-row: 3;
         justify-content: center;
         line-height: 1;
-        z-index: var(--prediction--role--times--z-index);
+        z-index: var(--z-index--prediction--role--times);
       }
 
       &--number {
@@ -1232,22 +1289,22 @@
         grid-column: 4;
         grid-row: 3;
         line-height: 1;
-        z-index: var(--prediction--role--number--z-index);
+        z-index: var(--z-index--prediction--role--number);
       }
     }
 
     &.spec {
-      z-index: var(--prediction--spec--z-index);
+      z-index: var(--z-index--prediction--spec);
     }
 
     &--spec {
-      background: var(--background-color);
+      background: var(--color--background);
       border: solid 1px black;
       box-sizing: border-box;
       grid-column: 1 / 3;
       grid-row: 2;
       padding: 1rem;
-      z-index: var(--prediction--spec--z-index);
+      z-index: var(--z-index--prediction--spec);
     }
   }
 
@@ -1256,7 +1313,7 @@
     border: 2px solid black;
     border-radius: 8px;
     display: grid;
-    grid-template-columns: calc(var(--result-image-size) + 1.5rem + 2px) 1fr 1fr calc(var(--result-image-size) + 1.5rem + 2px) calc(5px + var(--result-image-size) + 1.5rem) 1fr;
+    grid-template-columns: calc(var(--size--result-image) + 1.5rem + 2px) 1fr 1fr calc(var(--size--result-image) + 1.5rem + 2px) calc(5px + var(--size--result-image) + 1.5rem) 1fr;
     grid-template-rows: 100px;
     left: 5vw;
     max-height: 90vh;
@@ -1288,20 +1345,20 @@
 
           &--image {
             display: block;
-            height: var(--info-image-size);
+            height: var(--size--info-image);
             padding: 15px 20px 0;
-            width: var(--info-image-size);
+            width: var(--size--info-image);
 
             &.teamVillager {
-              fill: var(--villager--color);
+              fill: var(--color--villager);
             }
 
             &.teamWerehamster {
-              fill: var(--werehamster--color);
+              fill: var(--color--werehamster);
             }
 
             &.teamWerewolf {
-              fill: var(--werewolf--color);
+              fill: var(--color--werewolf);
             }
           }
 
@@ -1335,20 +1392,20 @@
 
           &--image {
             display: block;
-            height: var(--info-image-size);
+            height: var(--size--info-image);
             padding: 15px 20px 0;
-            width: var(--info-image-size);
+            width: var(--size--info-image);
 
             &.teamVillager {
-              fill: var(--villager--color);
+              fill: var(--color--villager);
             }
 
             &.teamWerehamster {
-              fill: var(--werehamster--color);
+              fill: var(--color--werehamster);
             }
 
             &.teamWerewolf {
-              fill: var(--werewolf--color);
+              fill: var(--color--werewolf);
             }
           }
 
@@ -1367,15 +1424,15 @@
         display: grid;
         grid-template:
           '. . .' 1fr
-          '. image .' var(--result-image-size)
+          '. image .' var(--size--result-image)
           '. . .' 1fr
-          / 1fr var(--result-image-size) 1fr;
+          / 1fr var(--size--result-image) 1fr;
         height: 100%;
 
         &--image {
           grid-area: image;
-          height: var(--result-image-size);
-          width: var(--result-image-size);
+          height: var(--size--result-image);
+          width: var(--size--result-image);
         }
       }
 
@@ -1385,15 +1442,15 @@
         grid-template:
           '. . . .' 1fr
           '. image image .' var(--character-initial-height)
-          '. image image .' calc(var(--result-image-size) - var(--character-initial-height))
+          '. image image .' calc(var(--size--result-image) - var(--character-initial-height))
           '. . . .' 1fr
-          / 1fr calc(var(--result-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+          / 1fr calc(var(--size--result-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
         height: 100%;
 
         &--image {
           grid-area: image;
-          height: var(--result-image-size);
-          width: var(--result-image-size);
+          height: var(--size--result-image);
+          width: var(--size--result-image);
           z-index: 1;
         }
 
@@ -1437,11 +1494,11 @@
         display: grid;
         grid-template:
           '. . .' 1fr
-          '. image .' var(--result-image-size)
+          '. image .' var(--size--result-image)
           'name name name' minmax(12px, 1fr)
-          / 1fr var(--result-image-size) 1fr;
+          / 1fr var(--size--result-image) 1fr;
         height: 100%;
-        min-height: calc(var(--result-image-size) + 1.5rem);
+        min-height: calc(var(--size--result-image) + 1.5rem);
         overflow: hidden;
         padding: 0;
 
@@ -1456,8 +1513,8 @@
 
         &--image {
           grid-area: image;
-          height: var(--result-image-size);
-          width: var(--result-image-size);
+          height: var(--size--result-image);
+          width: var(--size--result-image);
         }
       }
 
@@ -1474,7 +1531,7 @@
       }
 
       &.dead {
-        color: var(--dead-color);
+        color: var(--color--dead);
       }
     }
 
