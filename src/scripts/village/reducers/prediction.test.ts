@@ -224,6 +224,10 @@ describe('message/SYSTEM_MESSAGE', () => {
       }
     }
     const spec: State['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -1072,6 +1076,10 @@ describe('message/SYSTEM_MESSAGE', () => {
       }
     }
     const spec: State['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -1784,6 +1792,10 @@ describe('message/SYSTEM_MESSAGE', () => {
       }
     }
     const spec: State['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -1978,6 +1990,10 @@ describe('message/SYSTEM_MESSAGE', () => {
       }
     }
     const spec: State['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -3143,6 +3159,10 @@ test('SHOW_PREDICTION_SPEC', () => {
     reducer(
       initialState,
       {
+        position: {
+          left: 0,
+          top: 0
+        },
         role: village.RoleId.hunter,
         type: ActionTypes.App.SHOW_PREDICTION_SPEC
       }
@@ -3150,6 +3170,10 @@ test('SHOW_PREDICTION_SPEC', () => {
   ).toStrictEqual({
     ... initialState,
     spec: {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.hunter,
       visible: true
     }
