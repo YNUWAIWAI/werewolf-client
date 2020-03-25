@@ -136,6 +136,10 @@ export const prologue: Partial<ReducerState> = {
       byId: {}
     },
     spec: {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     },
