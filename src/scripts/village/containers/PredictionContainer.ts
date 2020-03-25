@@ -81,8 +81,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
       })
     )
   },
-  handleMouseEnter: role => () => {
-    dispatch(showPredictionSpec(role))
+  handleMouseEnter: role => position => {
+    dispatch(showPredictionSpec(role, position))
   },
   handleMouseLeave: () => {
     dispatch(hidePredictionSpec())

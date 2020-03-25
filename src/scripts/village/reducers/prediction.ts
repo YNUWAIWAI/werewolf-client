@@ -39,6 +39,10 @@ export interface State {
     }>
   }
   readonly spec: {
+    readonly position: {
+      readonly left: number
+      readonly top: number
+    }
     readonly role: village.RoleId
     readonly visible: boolean
   }
@@ -205,6 +209,10 @@ export const initialState = {
     byId: {}
   },
   spec: {
+    position: {
+      left: 0,
+      top: 0
+    },
     role: village.RoleId.villager,
     visible: false
   },
@@ -271,6 +279,7 @@ const prediction = (state: State = initialState, action: Action): State => {
         ... state,
         spec: {
           role: action.role,
+          position: action.position,
           visible: true
         }
       }

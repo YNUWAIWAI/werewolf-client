@@ -61,6 +61,7 @@
   --size--modal-image: 50px;
   --size--image-initial: 20px;
   --arrow: 20px;
+  --arrow--border: calc(var(--arrow) + 2px);
   --hide-button-height: 24px;
   --color--chat--private: rgba(128, 128, 128, 0.3);
   --color--chat--werewolf: rgba(255, 0, 0, 0.4);
@@ -1375,18 +1376,46 @@
     }
 
     &--spec {
-      grid-area: prediction;
-      position: absolute;
+      --left: 0;
+      --top: 0;
+      position: fixed;
+      right: 1rem;
+      top: var(--top);
+      width: 50%;
       z-index: var(--z-index--prediction--spec);
 
       &--body {
         background: var(--color--background);
         border: solid 1px var(--color--border);
+        border-radius: 0.5rem;
         box-sizing: border-box;
         grid-column: 1 / 3;
         grid-row: 2;
+        margin-top: var(--arrow);
         padding: 1rem;
         z-index: var(--z-index--prediction--spec);
+
+        &::after {
+          border: var(--arrow) solid transparent;
+          border-bottom-color: var(--color--background);
+          content: '';
+          left: calc(var(--left) - var(--arrow));
+          margin-top: calc(var(--arrow) * -1);
+          pointer-events: none;
+          position: fixed;
+          top: calc(var(--top) + 1px);
+        }
+
+        &::before {
+          border: var(--arrow--border) solid transparent;
+          border-bottom-color: var(--color--border);
+          content: '';
+          left: calc(var(--left) - var(--arrow) - 2px);
+          margin-top: calc(var(--arrow--border) * -1);
+          pointer-events: none;
+          position: fixed;
+          top: calc(var(--top) - 1px);
+        }
       }
     }
   }

@@ -175,11 +175,17 @@ export const showLobby = (): ShowLobby => ({
   type: ActionTypes.App.SHOW_LOBBY
 })
 
+interface Position {
+  left: number
+  top: number
+}
 export type ShowPredictionSpec = {
+  position: Position
   role: village.RoleId
   type: ActionTypes.App.SHOW_PREDICTION_SPEC
 }
-export const showPredictionSpec = (role: village.RoleId): ShowPredictionSpec => ({
+export const showPredictionSpec = (role: village.RoleId, position: Position): ShowPredictionSpec => ({
+  position,
   role,
   type: ActionTypes.App.SHOW_PREDICTION_SPEC
 })
