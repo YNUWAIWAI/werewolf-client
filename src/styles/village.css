@@ -47,29 +47,27 @@
 .vi {
 
   /* variables */
-  --size--info-image: 50px;
-  --size--prediction-image: 50px;
+  --font-size--image-initial: 16px;
+  --font-size--image-name: 10px;
+  --size--image: 50px;
+  --size--image--L: 120px;
+  --size--image-initial: 20px;
+  --size--image-initial--L: 20px;
+  --size--image-name: 15px;
+  --size--image-name--L: 15px;
+  --size--image: 50px;
   --size--result-image: 50px;
   --size--vote-image: 50px;
   --size--modal-image: 50px;
-  --character-initial-height: 20px;
-  --character-initial-width: 20px;
-  --color--border: var(--color--neutral90);
-
-  /* 100vw * (2/5) * (1/4) - 2 */
-  --chat-image-size: 6vw;
-  --arrow: 2vw;
+  --size--image-initial: 20px;
+  --arrow: 20px;
   --hide-button-height: 24px;
   --color--chat--private: rgba(128, 128, 128, 0.3);
   --color--chat--werewolf: rgba(255, 0, 0, 0.4);
   --color--chat--master: rgba(0, 255, 0, 0.4);
   --color--chat--grave: rgba(0, 0, 255, 0.3);
   --color--win: hsla(51, 100%, 50%, 0.7);
-  --color--villager: rgb(17, 95, 57);
-  --color--werehamster: rgb(127, 77, 39);
-  --color--werewolf: rgb(147, 39, 143);
   --color--suggest: rgb(3, 169, 244);
-  --color--dead: red;
   --color--silent: rgba(255, 215, 0, 0.8);
   --color--star--unmarked: rgb(158, 158, 158);
   --color--star--marked: rgb(255, 235, 59);
@@ -100,6 +98,9 @@
 
   /* stylelint-disable color-named */
   &.dark {
+
+    /* base */
+    --color--danger: rgb(239, 83, 80);
     --color--neutral0: hsl(0, 0%, 0%);
     --color--neutral5: hsl(0, 0%, 5%);
     --color--neutral10: hsl(0, 0%, 10%);
@@ -112,17 +113,34 @@
     --color--neutral80: hsl(0, 0%, 80%);
     --color--neutral90: hsl(0, 0%, 90%);
     --color--neutral100: hsl(0, 0%, 100%);
+    --color--obfucator: rgba(0, 0, 0, 0.8);
     --color--primary: rgba(38, 132, 255, 1);
     --color--primary25: rgba(38, 132, 255, 0.25);
     --color--primary50: rgba(38, 132, 255, 0.5);
     --color--primary75: rgba(38, 132, 255, 0.75);
-    --color--background: var(--color--neutral0);
-    --color--font: var(--color--neutral90);
     --color--public: rgba(255, 165, 0, 0.4);
-    --color--obfucator: rgba(0, 0, 0, 0.8);
+    --color--team--villager: rgb(17, 95, 57);
+    --color--team--werehamster: rgb(127, 77, 39);
+    --color--team--werewolf: rgb(147, 39, 143);
+
+    /* ailias */
+    --color--background: var(--color--neutral0);
+    --color--border: var(--color--neutral90);
+    --color--dead: var(--color--danger);
+    --color--font: var(--color--neutral90);
+    --color--font--image-initial: var(--color--neutral90);
+    --color--font--prediction--fill: var(--color--neutral10);
+    --color--prediction--circle: var(--color--danger);
+    --color--prediction--cross: var(--color--danger);
+    --color--prediction--fill: var(--color--neutral90);
+    --color--prediction--question: var(--color--neutral90);
+    --color--prediction--triangle: var(--color--danger);
   }
 
   &.light {
+
+    /* base */
+    --color--danger: rgb(244, 67, 54);
     --color--neutral0: hsl(0, 0%, 100%);
     --color--neutral5: hsl(0, 0%, 95%);
     --color--neutral10: hsl(0, 0%, 90%);
@@ -139,19 +157,33 @@
     --color--primary25: rgba(38, 132, 255, 0.25);
     --color--primary50: rgba(38, 132, 255, 0.5);
     --color--primary75: rgba(38, 132, 255, 0.75);
-    --color--background: var(--color--neutral0);
-    --color--font: var(--color--neutral90);
     --color--public: rgba(255, 165, 0, 0.4);
     --color--obfucator: rgba(0, 0, 0, 0.8);
+    --color--team--villager: rgb(17, 95, 57);
+    --color--team--werehamster: rgb(127, 77, 39);
+    --color--team--werewolf: rgb(147, 39, 143);
+
+    /* ailias */
+    --color--background: var(--color--neutral0);
+    --color--border: var(--color--neutral90);
+    --color--dead: var(--color--danger);
+    --color--font: var(--color--neutral90);
+    --color--font--image-initial: var(--color--neutral10);
+    --color--font--prediction--fill: var(--color--neutral10);
+    --color--prediction--circle: var(--color--danger);
+    --color--prediction--cross: var(--color--danger);
+    --color--prediction--fill: var(--color--neutral90);
+    --color--prediction--question: var(--color--neutral90);
+    --color--prediction--triangle: var(--color--danger);
   }
   /* stylelint-enable color-named */
 
   &--activity {
     display: grid;
     grid-area: activity;
-    grid-gap: 0 2vw;
     grid-template-areas: 'chat prediction';
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr fit-content(50%);
+    padding: 0 1rem;
 
     &.expand {
       grid-area: activity / 1 / command / 1;
@@ -175,7 +207,7 @@
       'info'
       'activity'
       'command';
-    grid-template-rows: minmax(calc(3.25rem + 19px + 2vh), 12vh) minmax(300px, 68vh) minmax(130px, 20vh);
+    grid-template-rows: minmax(90px, 12vh) minmax(300px, 68vh) minmax(130px, 20vh);
     height: 100vh;
     min-width: 900px;
   }
@@ -207,7 +239,7 @@
         pointer-events: none;
         position: absolute;
         right: 100%;
-        top: calc(var(--chat-image-size) / 2);
+        top: calc(var(--size--image) / 2);
         width: 0;
       }
     }
@@ -216,23 +248,22 @@
       display: grid;
       grid-area: opp;
       grid-template:
-        '. image image .' var(--character-initial-height)
-        '. image image .' calc(var(--chat-image-size) - var(--character-initial-height))
-        'name name name name'
-        / 1fr calc(var(--chat-image-size) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+        '. image image .' var(--size--image-initial--L)
+        '. image image .' calc(var(--size--image--L) - var(--size--image-initial--L))
+        'name name name name' var(--size--image-name--L)
+        / 1fr calc(var(--size--image--L) - var(--size--image-initial--L)) var(--size--image-initial--L) 1fr;
       margin: 0 var(--arrow) 0 0;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--chat-image-size);
-        width: var(--chat-image-size);
-        z-index: 1;
+        height: var(--size--image--L);
+        width: var(--size--image--L);
       }
 
       &--initial {
-        color: white;
-        font-size: 16px;
+        color: var(--color--font--image-initial);
+        font-size: var(--font-size--image-initial);
         grid-area: 1 / 3;
         line-height: 1.25;
         text-align: center;
@@ -240,7 +271,7 @@
       }
 
       &--name {
-        font-size: 10px;
+        font-size: var(--font-size--image-name);
         grid-area: name;
         line-height: 1.5;
         overflow: auto;
@@ -309,9 +340,9 @@
       animation: fadein 0.5s ease-out;
       display: grid;
       grid-template-areas: 'opp text me';
-      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-columns: calc(var(--size--image--L) + var(--arrow)) 1fr calc(var(--size--image--L) + var(--arrow));
       margin-top: 1rem;
-      min-height: calc(var(--chat-image-size) + 1rem);
+      min-height: calc(var(--size--image) + 1rem);
 
       &:first-child {
         margin-top: 0;
@@ -685,11 +716,11 @@
         display: grid;
         grid-template:
           '. . . .' 1fr
-          '. image image .' var(--character-initial-height)
-          '. image image .' calc(var(--size--vote-image) - var(--character-initial-height))
+          '. image image .' var(--size--image-initial)
+          '. image image .' calc(var(--size--vote-image) - var(--size--image-initial))
           'name name name name'
           '. . . .' 1fr
-          / 1fr calc(var(--size--vote-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+          / 1fr calc(var(--size--vote-image) - var(--size--image-initial)) var(--size--image-initial) 1fr;
 
         &--image {
           display: block;
@@ -700,8 +731,8 @@
         }
 
         &--initial {
-          color: white;
-          font-size: 16px;
+          color: var(--color--font--image-initial);
+          font-size: var(--font-size--image-initial);
           grid-area: 2 / 3;
           line-height: 1.25;
           text-align: center;
@@ -819,9 +850,8 @@
     display: grid;
     gap: 0;
     grid-area: info;
-    grid-template-areas:
-      'day property-character character property-role role property-team team';
-    grid-template-columns: minmax(405px, 3fr) minmax(135px, 1fr) calc(var(--size--info-image) + 40px) minmax(135px, 1fr) calc(var(--size--info-image) + 40px) minmax(135px, 1fr) calc(var(--size--info-image) + 40px);
+    grid-template-areas: 'day property-character character property-role role property-team team';
+    grid-template-columns: minmax(405px, 3fr) minmax(135px, 1fr) calc(var(--size--image) + 40px) minmax(135px, 1fr) calc(var(--size--image) + 40px) minmax(135px, 1fr) calc(var(--size--image) + 40px);
     height: 100%;
 
     &--character {
@@ -830,24 +860,24 @@
       grid-area: character;
       grid-template:
         '. . . .' 1fr
-        '. image image .' var(--character-initial-height)
-        '. image image .' calc(var(--size--info-image) - var(--character-initial-height))
-        'name name name name' 15px
+        '. . . .' var(--size--image-name)
+        '. image image .' var(--size--image-initial)
+        '. image image .' calc(var(--size--image) - var(--size--image-initial))
+        'name name name name' var(--size--image-name)
         '. . . .' 1fr
-        / 1fr calc(var(--size--info-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+        / 1fr calc(var(--size--image) - var(--size--image-initial)) var(--size--image-initial) 1fr;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--size--info-image);
-        width: var(--size--info-image);
-        z-index: 1;
+        height: var(--size--image);
+        width: var(--size--image);
       }
 
       &--initial {
-        color: white;
-        font-size: 16px;
-        grid-area: 2 / 3;
+        color: var(--color--font--image-initial);
+        font-size: var(--font-size--image-initial);
+        grid-area: 3 / 3;
         line-height: 1.25;
         text-align: center;
         z-index: 2;
@@ -855,7 +885,7 @@
 
       &--name {
         display: block;
-        font-size: 10px;
+        font-size: var(--font-size--image-name);
         grid-area: name;
         line-height: 1.5;
         overflow: auto;
@@ -865,9 +895,9 @@
     }
 
     &--day {
+      align-items: center;
       display: flex;
       grid-area: day;
-      height: 5vh;
       justify-content: center;
       min-height: calc(3.25rem + 4px);
 
@@ -914,21 +944,22 @@
       grid-area: role;
       grid-template:
         '. . .' 1fr
-        '. image .' var(--size--info-image)
-        'name name name' 15px
+        '. . .' var(--size--image-initial)
+        '. image .' var(--size--image)
+        'name name name' var(--size--image-initial)
         '. . .' 1fr
-        / 1fr var(--size--info-image) 1fr;
+        / 1fr var(--size--image) 1fr;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--size--info-image);
-        width: var(--size--info-image);
+        height: var(--size--image);
+        width: var(--size--image);
       }
 
       &--name {
         display: block;
-        font-size: 10px;
+        font-size: var(--font-size--image-name);
         grid-area: name;
         line-height: 1.5;
         overflow: auto;
@@ -943,33 +974,34 @@
       grid-area: team;
       grid-template:
         '. . .' 1fr
-        '. image .' var(--size--info-image)
-        'name name name' 15px
+        '. . .' var(--size--image-name)
+        '. image .' var(--size--image)
+        'name name name' var(--size--image-name)
         '. . .' 1fr
-        / 1fr var(--size--info-image) 1fr;
+        / 1fr var(--size--image) 1fr;
 
       &--image {
         display: block;
         grid-area: image;
-        height: var(--size--info-image);
-        width: var(--size--info-image);
+        height: var(--size--image);
+        width: var(--size--image);
 
         &.teamVillager {
-          fill: var(--color--villager);
+          fill: var(--color--team--villager);
         }
 
         &.teamWerehamster {
-          fill: var(--color--werehamster);
+          fill: var(--color--team--werehamster);
         }
 
         &.teamWerewolf {
-          fill: var(--color--werewolf);
+          fill: var(--color--team--werewolf);
         }
       }
 
       &--name {
         display: block;
-        font-size: 10px;
+        font-size: var(--font-size--image-name);
         grid-area: name;
         line-height: 1.5;
         overflow: auto;
@@ -1043,10 +1075,10 @@
       display: grid;
       grid-area: icon;
       grid-template:
-        '. image image .' var(--character-initial-height)
-        '. image image .' calc(var(--size--modal-image) - var(--character-initial-height))
+        '. image image .' var(--size--image-initial)
+        '. image image .' calc(var(--size--modal-image) - var(--size--image-initial))
         'name name name name'
-        / 1fr calc(var(--size--modal-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+        / 1fr calc(var(--size--modal-image) - var(--size--image-initial)) var(--size--image-initial) 1fr;
 
       &--image {
         display: block;
@@ -1057,8 +1089,8 @@
       }
 
       &--initial {
-        color: white;
-        font-size: 16px;
+        color: var(--color--font--image-initial);
+        font-size: var(--font-size--image-initial);
         grid-area: 1 / 3;
         line-height: 1.25;
         text-align: center;
@@ -1136,34 +1168,34 @@
 
   &--prediction {
     animation: fadein 0.5s ease-out;
-    border: solid 1px black;
+    border: solid 1px var(--color--border);
     display: grid;
     grid: 1fr / 1fr;
     grid-area: prediction;
-    margin: 0 auto auto 1vw;
     max-height: 100%;
     max-width: 47vw;
     overflow: auto;
+    position: relative;
 
     &--character {
       background: var(--color--background);
-      border: solid 1px black;
+      border: solid 1px var(--color--border);
       box-sizing: border-box;
       display: grid;
       grid-template:
         '. . . .' 1fr
-        '. image image .' var(--character-initial-height)
-        '. image image .' calc(var(--size--prediction-image) - var(--character-initial-height))
-        'name name name name' 15px
+        '. image image .' var(--size--image-initial)
+        '. image image .' calc(var(--size--image) - var(--size--image-initial))
+        'name name name name' var(--size--image-name)
         '. . . .' 1fr
-        / 1fr calc(var(--size--prediction-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+        / 1fr calc(var(--size--image) - var(--size--image-initial)) var(--size--image-initial) 1fr;
       left: 0;
       position: sticky;
       z-index: var(--z-index--prediction--character);
 
       &.dead {
         animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
-        background-color: red;
+        background-color: var(--color--dead);
         color: white;
       }
 
@@ -1173,13 +1205,13 @@
 
       &--image {
         grid-area: image;
-        height: var(--size--prediction-image);
-        width: var(--size--prediction-image);
+        height: var(--size--image);
+        width: var(--size--image);
       }
 
       &--initial {
-        color: white;
-        font-size: 16px;
+        color: var(--color--font--image-initial);
+        font-size: var(--font-size--image-initial);
         grid-area: 2 / 3;
         line-height: 1.25;
         text-align: center;
@@ -1187,7 +1219,7 @@
       }
 
       &--name {
-        font-size: 10px;
+        font-size: var(--font-size--image-name);
         grid-area: name;
         line-height: 1.5;
         overflow: auto;
@@ -1199,7 +1231,7 @@
     &--help {
       align-items: center;
       background: var(--color--background);
-      border: solid 1px black;
+      border: solid 1px var(--color--border);
       box-sizing: border-box;
       display: flex;
       justify-content: center;
@@ -1209,6 +1241,7 @@
       z-index: var(--z-index--prediction--help);
 
       & > .help {
+        fill: var(--color--font);
         height: 80%;
         width: 80%;
       }
@@ -1216,7 +1249,7 @@
 
     &--item {
       align-items: center;
-      border: solid 1px black;
+      border: solid 1px var(--color--border);
       box-sizing: border-box;
       cursor: pointer;
       display: inline-flex;
@@ -1228,29 +1261,77 @@
         cursor: default;
       }
 
-      & > svg {
+      & > .circle {
         height: 100%;
         width: 100%;
+
+        & > .line {
+          fill: var(--color--prediction--circle);
+        }
+      }
+
+      & > .cross {
+        height: 100%;
+        width: 100%;
+
+        & > .line {
+          stroke: var(--color--prediction--cross);
+        }
+      }
+
+      & > .question {
+        height: 100%;
+        width: 100%;
+
+        & > .line {
+          fill: var(--color--background);
+          stroke: var(--color--prediction--question);
+        }
+      }
+
+      & > .triangle {
+        height: 100%;
+        width: 100%;
+
+        & > .line {
+          fill: var(--color--prediction--triangle);
+        }
       }
 
       &[data-state = 'fill'] {
-        background: black;
+        background: var(--color--prediction--fill);
         cursor: default;
-        font-size: 1.5rem;
 
         &::after {
-          color: white;
+          color: var(--color--font--prediction--fill);
           content: attr(data-day);
+          font-size: 1.5rem;
         }
+      }
+
+      &[data-state = 'circle'] {
+        fill: var(--color--prediction--circle);
+      }
+
+      &[data-state = 'cross'] {
+        fill: var(--color--prediction--cross);
+      }
+
+      &[data-state = 'question'] {
+        stroke: var(--color--prediction--question);
+      }
+
+      &[data-state = 'triangle'] {
+        fill: var(--color--prediction--triangle);
       }
     }
 
     &--role {
       background: var(--color--background);
-      border: solid 1px black;
+      border: solid 1px var(--color--border);
       box-sizing: border-box;
       display: grid;
-      grid-template: 1fr calc(var(--size--prediction-image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--prediction-image) - 24px) 12px 12px 1fr;
+      grid-template: 1fr calc(var(--size--image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--image) - 24px) 12px 12px 1fr;
       position: sticky;
       top: 0;
       z-index: var(--z-index--prediction--role);
@@ -1266,8 +1347,8 @@
       &--image {
         grid-column: 2 / 4;
         grid-row: 2 / 4;
-        height: var(--size--prediction-image);
-        width: var(--size--prediction-image);
+        height: var(--size--image);
+        width: var(--size--image);
         z-index: var(--z-index--prediction--role--image);
       }
 
@@ -1293,24 +1374,26 @@
       }
     }
 
-    &.spec {
-      z-index: var(--z-index--prediction--spec);
-    }
-
     &--spec {
-      background: var(--color--background);
-      border: solid 1px black;
-      box-sizing: border-box;
-      grid-column: 1 / 3;
-      grid-row: 2;
-      padding: 1rem;
+      grid-area: prediction;
+      position: absolute;
       z-index: var(--z-index--prediction--spec);
+
+      &--body {
+        background: var(--color--background);
+        border: solid 1px var(--color--border);
+        box-sizing: border-box;
+        grid-column: 1 / 3;
+        grid-row: 2;
+        padding: 1rem;
+        z-index: var(--z-index--prediction--spec);
+      }
     }
   }
 
   &--result {
     background: white;
-    border: 2px solid black;
+    border: 2px solid var(--color--border);
     border-radius: 8px;
     display: grid;
     grid-template-columns: calc(var(--size--result-image) + 1.5rem + 2px) 1fr 1fr calc(var(--size--result-image) + 1.5rem + 2px) calc(5px + var(--size--result-image) + 1.5rem) 1fr;
@@ -1326,7 +1409,7 @@
     &--cell {
       &--summary {
         align-items: center;
-        border: 1px solid black;
+        border: 1px solid var(--color--border);
         display: flex;
         font-size: 2rem;
         grid-column: 1 / 7;
@@ -1345,20 +1428,20 @@
 
           &--image {
             display: block;
-            height: var(--size--info-image);
+            height: var(--size--image);
             padding: 15px 20px 0;
-            width: var(--size--info-image);
+            width: var(--size--image);
 
             &.teamVillager {
-              fill: var(--color--villager);
+              fill: var(--color--team--villager);
             }
 
             &.teamWerehamster {
-              fill: var(--color--werehamster);
+              fill: var(--color--team--werehamster);
             }
 
             &.teamWerewolf {
-              fill: var(--color--werewolf);
+              fill: var(--color--team--werewolf);
             }
           }
 
@@ -1373,7 +1456,7 @@
 
       &--caption {
         align-items: center;
-        border: 1px solid black;
+        border: 1px solid var(--color--border);
         display: flex;
         font-size: 2rem;
         grid-column: 1 / 7;
@@ -1392,20 +1475,20 @@
 
           &--image {
             display: block;
-            height: var(--size--info-image);
+            height: var(--size--image);
             padding: 15px 20px 0;
-            width: var(--size--info-image);
+            width: var(--size--image);
 
             &.teamVillager {
-              fill: var(--color--villager);
+              fill: var(--color--team--villager);
             }
 
             &.teamWerehamster {
-              fill: var(--color--werehamster);
+              fill: var(--color--team--werehamster);
             }
 
             &.teamWerewolf {
-              fill: var(--color--werewolf);
+              fill: var(--color--team--werewolf);
             }
           }
 
@@ -1419,8 +1502,8 @@
       }
 
       &--avatarImage {
-        border: 1px solid black;
-        border-left: 4px double black;
+        border: 1px solid var(--color--border);
+        border-left: 4px double var(--color--border);
         display: grid;
         grid-template:
           '. . .' 1fr
@@ -1437,14 +1520,14 @@
       }
 
       &--image {
-        border: 1px solid black;
+        border: 1px solid var(--color--border);
         display: grid;
         grid-template:
           '. . . .' 1fr
-          '. image image .' var(--character-initial-height)
-          '. image image .' calc(var(--size--result-image) - var(--character-initial-height))
+          '. image image .' var(--size--image-initial)
+          '. image image .' calc(var(--size--result-image) - var(--size--image-initial))
           '. . . .' 1fr
-          / 1fr calc(var(--size--result-image) - var(--character-initial-width)) var(--character-initial-width) 1fr;
+          / 1fr calc(var(--size--result-image) - var(--size--image-initial)) var(--size--image-initial) 1fr;
         height: 100%;
 
         &--image {
@@ -1455,8 +1538,8 @@
         }
 
         &--initial {
-          color: white;
-          font-size: 16px;
+          color: var(--color--font--image-initial);
+          font-size: var(--font-size--image-initial);
           grid-area: 2 / 3;
           line-height: 1.25;
           text-align: center;
@@ -1466,7 +1549,7 @@
 
       &--avatarName {
         align-items: center;
-        border: 1px solid black;
+        border: 1px solid var(--color--border);
         display: flex;
         font-size: 2rem;
         height: 100%;
@@ -1478,7 +1561,7 @@
 
       &--name {
         align-items: center;
-        border: 1px solid black;
+        border: 1px solid var(--color--border);
         display: flex;
         font-size: 2rem;
         height: 100%;
@@ -1489,7 +1572,7 @@
       }
 
       &--roleImage {
-        border: 1px solid black;
+        border: 1px solid var(--color--border);
         border-right: none;
         display: grid;
         grid-template:
@@ -1520,7 +1603,7 @@
 
       &--status {
         align-items: center;
-        border: 1px solid black;
+        border: 1px solid var(--color--border);
         display: flex;
         font-size: 2rem;
         height: 100%;
@@ -1590,6 +1673,14 @@
         transition: opacity 0.3s ease-in;
       }
     }
+  }
+
+  @media (max-width: 1200px) {
+    --size--image--L: 100px;
+  }
+
+  @media (max-width: 900px) {
+    --size--image--L: 80px;
   }
 }
 

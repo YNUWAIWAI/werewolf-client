@@ -2,6 +2,7 @@ import * as React from 'react'
 import {
   grave,
   morningWithLimitedChat,
+  morningWithLimitedChat2,
   morningWithoutLimitedChat,
   night,
   night2,
@@ -153,6 +154,22 @@ storiesOf('village|App', module)
       reducer,
       {
         ... result,
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
+      }
+    )
+    const story =
+      <Provider store={store}>
+        <App />
+      </Provider>
+
+    return story
+  })
+  .add('5 players in village', () => {
+    const store = createStore(
+      reducer,
+      {
+        ... morningWithLimitedChat2,
         language: radios(language.label, language.options, language.defaultValue),
         theme: radios(theme.label, theme.options, theme.defaultValue)
       }
