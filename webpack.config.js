@@ -1,5 +1,7 @@
 const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
+const postcssNested = require('postcss-nested')
+const autoprefixer = require('autoprefixer')
 const config = require('./config')
 
 module.exports = {
@@ -29,6 +31,29 @@ module.exports = {
         enforce: 'pre',
         loader: 'source-map-loader',
         test: /\.js$/
+      },
+      {
+        include: path.resolve(__dirname, './src/styles'),
+        loaders: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                postcssNested(),
+                autoprefixer()
+              ]
+            }
+          }
+        ],
+        test: /\.css$/
       }
     ]
   },
@@ -49,6 +74,6 @@ module.exports = {
     path: path.resolve(config.dest, 'javascripts')
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json', '.css']
   }
 }

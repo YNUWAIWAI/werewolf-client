@@ -1,0 +1,10 @@
+.lo--react-select {
+  &__control {
+    height: 100%;
+  }
+
+  &__value-container {
+    display: inline-flex;
+    justify-content: center;
+  }
+}

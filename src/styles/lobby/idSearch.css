@@ -1,0 +1,45 @@
+.lo--id-search {
+  align-items: center;
+  display: inline-flex;
+  font-size: 3rem;
+  justify-content: center;
+  margin: 1rem 0;
+  width: 100%;
+
+  &--input {
+    background: var(--color--background--input);
+    color: var(--color--font--input);
+    font-size: 3rem;
+    height: 4.5rem; /* font-size * line-height */
+    text-align: center;
+    width: 12rem; /* (number_of_digit + 1) * font-size */
+  }
+
+  &--input:invalid + &--validity::after {
+    color: var(--color--danger);
+    content: '✖';
+    display: inline-block;
+    font-size: 3rem;
+    padding-left: 0.5rem;
+    width: 3rem;
+  }
+
+  &--input:valid + &--validity::after {
+    color: var(--color--safe);
+    content: '✓';
+    display: inline-block;
+    font-size: 3rem;
+    padding-left: 0.5rem;
+    width: 3rem;
+  }
+
+  &--not-found {
+    color: var(--color--neutral60);
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  &--sharp {
+    padding-right: 0.5rem;
+  }
+}

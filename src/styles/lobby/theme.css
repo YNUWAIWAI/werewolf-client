@@ -1,0 +1,90 @@
+.lo {
+
+  /* variables */
+  --color--active: var(--color--neutral40);
+  --color--background: var(--color--neutral0);
+  --color--background--button: var(--color--neutral20);
+  --color--background--input: var(--color--neutral10);
+  --color--background--me: var(--color--primary);
+  --color--border: var(--color--neutral90);
+  --color--border--input: var(--color--neutral20);
+  --color--disabled: var(--color--neutral50);
+  --color--font: var(--color--neutral90);
+  --color--font--me: var(--color--neutral0);
+  --color--font--input: var(--color--neutral80);
+  --color--font--role-image: rgb(254, 254, 254);
+  --color--hover: var(--color--neutral30);
+  --color--me: var(--color--primary);
+  --color--obfucator: rgba(0, 0, 0, 0.8);
+  --color--selected: var(--color--primary25);
+  --filter--active: opacity(60%);
+  --filter--hover: opacity(70%);
+  --size--avatar-image: 50px;
+  --size--avatar-image--L: 120px;
+  --size--role-image: 50px;
+  --z-index--background: -1;
+  --z-index--kick-out: 2;
+  --z-index--obfucator: 3;
+  --z-index--modal: 4;
+  --z-index--member--image: 0;
+  --z-index--member--text: 1;
+  --z-index--village--select: 2;
+
+  /* properties */
+  color: var(--color--font);
+  font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+
+  /* stylelint-disable color-named */
+  &.dark {
+    --color--neutral0: hsl(0, 0%, 0%);
+    --color--neutral5: hsl(0, 0%, 5%);
+    --color--neutral10: hsl(0, 0%, 10%);
+    --color--neutral20: hsl(0, 0%, 20%);
+    --color--neutral30: hsl(0, 0%, 30%);
+    --color--neutral40: hsl(0, 0%, 40%);
+    --color--neutral50: hsl(0, 0%, 50%);
+    --color--neutral60: hsl(0, 0%, 60%);
+    --color--neutral70: hsl(0, 0%, 70%);
+    --color--neutral80: hsl(0, 0%, 80%);
+    --color--neutral90: hsl(0, 0%, 90%);
+    --color--neutral100: hsl(0, 0%, 100%);
+    --color--primary: rgba(38, 132, 255, 1);
+    --color--primary25: rgba(38, 132, 255, 0.25);
+    --color--primary50: rgba(38, 132, 255, 0.5);
+    --color--primary75: rgba(38, 132, 255, 0.75);
+    --color--danger: rgb(239, 83, 80);
+    --color--safe: rgb(102, 187, 106);
+    --color--warning: rgb(255, 238, 88);
+    --color--background--modal: var(--color--neutral90);
+    --color--background--button--modal: var(--color--neutral80);
+    --color--font--modal: var(--color--neutral10);
+    --color--obfucator--loader: var(--color--neutral90);
+  }
+
+  &.light {
+    --color--neutral0: hsl(0, 0%, 100%);
+    --color--neutral5: hsl(0, 0%, 95%);
+    --color--neutral10: hsl(0, 0%, 90%);
+    --color--neutral20: hsl(0, 0%, 80%);
+    --color--neutral30: hsl(0, 0%, 70%);
+    --color--neutral40: hsl(0, 0%, 60%);
+    --color--neutral50: hsl(0, 0%, 50%);
+    --color--neutral60: hsl(0, 0%, 40%);
+    --color--neutral70: hsl(0, 0%, 30%);
+    --color--neutral80: hsl(0, 0%, 20%);
+    --color--neutral90: hsl(0, 0%, 10%);
+    --color--neutral100: hsl(0, 0%, 0%);
+    --color--primary: rgba(38, 132, 255, 1);
+    --color--primary25: rgba(38, 132, 255, 0.25);
+    --color--primary50: rgba(38, 132, 255, 0.5);
+    --color--primary75: rgba(38, 132, 255, 0.75);
+    --color--danger: rgb(244, 67, 54);
+    --color--safe: rgb(76, 175, 80);
+    --color--warning: rgb(255, 235, 59);
+    --color--background--modal: var(--color--neutral10);
+    --color--background--button--modal: var(--color--neutral20);
+    --color--font--modal: var(--color--neutral90);
+    --color--obfucator--loader: var(--color--neutral10);
+  }
+  /* stylelint-enable color-named */
+}

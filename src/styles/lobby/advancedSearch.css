@@ -1,0 +1,48 @@
+.lo--advanced-search {
+  border: var(--color--border) solid 1px;
+  display: grid;
+  font-size: 2rem;
+  grid-template-columns: minmax(240px, 2fr) minmax(360px, 3fr);
+  margin: 0 0 1rem;
+
+  &--input {
+    background: var(--color--background--input);
+    border: var(--color--border) solid 1px;
+    box-sizing: border-box;
+    color: var(--color--font--input);
+    font-size: inherit;
+    grid-column: 2 / 5;
+    text-align: center;
+    width: 100%;
+
+    textarea& {
+      padding: 0 1rem;
+      resize: vertical;
+    }
+
+    &:invalid {
+      color: var(--color--danger);
+      outline-color: var(--color--danger);
+      outline-offset: -2px;
+    }
+  }
+
+  &--not-found {
+    color: var(--color--neutral60);
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  &--prop {
+    align-items: center;
+    background: var(--color--background);
+    border: var(--color--border) solid 1px;
+    display: inline-flex;
+    grid-column: 1 / 2;
+    padding: 1rem 1rem 1rem 0;
+
+    & > input {
+      margin: 0 1rem;
+    }
+  }
+}

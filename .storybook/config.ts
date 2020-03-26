@@ -1,8 +1,8 @@
 import {addDecorator, addParameters, configure} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
-import '../src/styles/village.css'
-import '../src/styles/lobby.css'
-import '../src/styles/landing.css'
+import '../src/styles/village'
+import '../src/styles/lobby'
+import '../src/styles/landing'
 
 const options = {
   panelPosition: 'right'

@@ -1,0 +1,13 @@
+.lo--avatar {
+  align-items: center;
+  display: inline-flex;
+  grid-area: avatar;
+
+  &--image {
+    height: 3rem;
+  }
+
+  &--name {
+    font-size: 2.5rem;
+  }
+}

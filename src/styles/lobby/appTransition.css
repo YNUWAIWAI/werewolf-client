@@ -1,0 +1,23 @@
+.lo--app--transition {
+  &-appear {
+    opacity: 0;
+    transform: translate(0, -1vh);
+  }
+
+  &-appear-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 0.1s ease-out;
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translate(0, -1vh);
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 0.1s ease-out;
+  }
+}

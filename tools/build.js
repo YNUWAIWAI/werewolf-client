@@ -27,32 +27,6 @@ const mkdir = dir => {
   })
 }
 
-const buildCSS = (src, dest) => {
-  fs.readFile(src, (err, css) => {
-    if (err) {
-      throw err
-    }
-    postcss([nested, autoprefixer])
-      .process(css, {
-        from: src,
-        to: dest
-      })
-      .then(result => {
-        mkdir(dest)
-          .then(() => {
-            fs.writeFile(dest, result.css, err => {
-              if (err) {
-                throw err
-              }
-            })
-          })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  })
-}
-
 const buildHTML = (src, dest) => {
   fs.readFile(src, (err, data) => {
     if (err) {
@@ -70,12 +44,7 @@ const buildHTML = (src, dest) => {
 }
 
 const build = destDir => {
-  const CSSfiles = glob.sync('src/**/*.css')
-  const HTMLfiles = glob.sync('src/**/*.html')
-
-  CSSfiles.forEach(file => {
-    buildCSS(file, `${path.resolve(destDir, 'stylesheets')}/${path.relative('src/styles', file)}`)
-  })
+  const HTMLfiles = glob.sync('src/*.html')
 
   HTMLfiles.forEach(file => {
     buildHTML(file, `${path.resolve(destDir, '../app/views')}/${path.parse(file).name}.scala.html`)
