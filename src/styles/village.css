@@ -126,9 +126,12 @@
 
     /* ailias */
     --color--background: var(--color--neutral0);
+    --color--background--modal: var(--color--neutral90);
     --color--border: var(--color--neutral90);
+    --color--border--modal: var(--color--neutral10);
     --color--dead: var(--color--danger);
     --color--font: var(--color--neutral90);
+    --color--font--modal: var(--color--neutral10);
     --color--font--image-initial: var(--color--neutral90);
     --color--font--prediction--fill: var(--color--neutral10);
     --color--prediction--circle: var(--color--danger);
@@ -166,9 +169,12 @@
 
     /* ailias */
     --color--background: var(--color--neutral0);
+    --color--background--modal: var(--color--neutral10);
     --color--border: var(--color--neutral90);
+    --color--border--modal: var(--color--neutral90);
     --color--dead: var(--color--danger);
     --color--font: var(--color--neutral90);
+    --color--font--modal: var(--color--neutral90);
     --color--font--image-initial: var(--color--neutral10);
     --color--font--prediction--fill: var(--color--neutral10);
     --color--prediction--circle: var(--color--danger);
@@ -1139,7 +1145,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: var(--obfucator--z-index);
+    z-index: var(--z-index--obfucator);
 
     &--loader {
       height: 10%;
@@ -1379,7 +1385,7 @@
       --left: 0;
       --top: 0;
       position: fixed;
-      right: 1rem;
+      right: 0.5rem;
       top: var(--top);
       width: 50%;
       z-index: var(--z-index--prediction--spec);
@@ -1421,9 +1427,10 @@
   }
 
   &--result {
-    background: white;
-    border: 2px solid var(--color--border);
+    background: var(--color--background--modal);
+    border: 2px solid var(--color--border--modal);
     border-radius: 8px;
+    color: var(--color--font--modal);
     display: grid;
     grid-template-columns: calc(var(--size--result-image) + 1.5rem + 2px) 1fr 1fr calc(var(--size--result-image) + 1.5rem + 2px) calc(5px + var(--size--result-image) + 1.5rem) 1fr;
     grid-template-rows: 100px;
@@ -1433,12 +1440,12 @@
     position: fixed;
     top: 5vh;
     width: 90vw;
-    z-index: var(--result--z-index);
+    z-index: var(--z-index--result);
 
     &--cell {
       &--summary {
         align-items: center;
-        border: 1px solid var(--color--border);
+        border: 1px solid var(--color--border--modal);
         display: flex;
         font-size: 2rem;
         grid-column: 1 / 7;
@@ -1485,7 +1492,7 @@
 
       &--caption {
         align-items: center;
-        border: 1px solid var(--color--border);
+        border: 1px solid var(--color--border--modal);
         display: flex;
         font-size: 2rem;
         grid-column: 1 / 7;
@@ -1531,8 +1538,8 @@
       }
 
       &--avatarImage {
-        border: 1px solid var(--color--border);
-        border-left: 4px double var(--color--border);
+        border: 1px solid var(--color--border--modal);
+        border-left: 4px double var(--color--border--modal);
         display: grid;
         grid-template:
           '. . .' 1fr
@@ -1549,7 +1556,7 @@
       }
 
       &--image {
-        border: 1px solid var(--color--border);
+        border: 1px solid var(--color--border--modal);
         display: grid;
         grid-template:
           '. . . .' 1fr
@@ -1578,7 +1585,7 @@
 
       &--avatarName {
         align-items: center;
-        border: 1px solid var(--color--border);
+        border: 1px solid var(--color--border--modal);
         display: flex;
         font-size: 2rem;
         height: 100%;
@@ -1590,7 +1597,7 @@
 
       &--name {
         align-items: center;
-        border: 1px solid var(--color--border);
+        border: 1px solid var(--color--border--modal);
         display: flex;
         font-size: 2rem;
         height: 100%;
@@ -1601,7 +1608,7 @@
       }
 
       &--roleImage {
-        border: 1px solid var(--color--border);
+        border: 1px solid var(--color--border--modal);
         border-right: none;
         display: grid;
         grid-template:
@@ -1632,7 +1639,7 @@
 
       &--status {
         align-items: center;
-        border: 1px solid var(--color--border);
+        border: 1px solid var(--color--border--modal);
         display: flex;
         font-size: 2rem;
         height: 100%;
