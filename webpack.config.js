@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 const postcssNested = require('postcss-nested')

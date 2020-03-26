@@ -1,8 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires, no-console */
 const fs = require('fs')
 const path = require('path')
-const postcss = require('postcss')
-const nested = require('postcss-nested')
-const autoprefixer = require('autoprefixer')
 const glob = require('glob')
 const config = require('../config')
 const webpack = require('webpack')
@@ -10,7 +8,7 @@ const webpackConfig = require('../webpack.config.js')
 
 const mkdir = dir => {
   return new Promise((resolve, reject) => {
-    fs.stat(path.dirname(dir), (err, stats) => {
+    fs.stat(path.dirname(dir), (err) => {
       if (err) {
         if (err.code === 'ENOENT') {
           fs.mkdir(path.dirname(dir), err => {

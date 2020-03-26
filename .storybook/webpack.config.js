@@ -11,7 +11,7 @@ module.exports = ({ config, mode }) => {
           loader: 'postcss-loader',
           options: {
             ident: 'postcss',
-            plugins: (loader) => [
+            plugins: () => [
               require('postcss-nested')(),
               require('autoprefixer')()
             ]
