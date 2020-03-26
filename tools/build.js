@@ -1,8 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires, no-console */
 const fs = require('fs')
 const path = require('path')
-const postcss = require('postcss')
-const nested = require('postcss-nested')
-const autoprefixer = require('autoprefixer')
 const glob = require('glob')
 const config = require('../config')
 const webpack = require('webpack')
@@ -10,7 +8,7 @@ const webpackConfig = require('../webpack.config.js')
 
 const mkdir = dir => {
   return new Promise((resolve, reject) => {
-    fs.stat(path.dirname(dir), (err, stats) => {
+    fs.stat(path.dirname(dir), (err) => {
       if (err) {
         if (err.code === 'ENOENT') {
           fs.mkdir(path.dirname(dir), err => {
@@ -24,32 +22,6 @@ const mkdir = dir => {
       }
       resolve()
     })
-  })
-}
-
-const buildCSS = (src, dest) => {
-  fs.readFile(src, (err, css) => {
-    if (err) {
-      throw err
-    }
-    postcss([nested, autoprefixer])
-      .process(css, {
-        from: src,
-        to: dest
-      })
-      .then(result => {
-        mkdir(dest)
-          .then(() => {
-            fs.writeFile(dest, result.css, err => {
-              if (err) {
-                throw err
-              }
-            })
-          })
-      })
-      .catch(err => {
-        console.log(err)
-      })
   })
 }
 
@@ -70,12 +42,7 @@ const buildHTML = (src, dest) => {
 }
 
 const build = destDir => {
-  const CSSfiles = glob.sync('src/**/*.css')
-  const HTMLfiles = glob.sync('src/**/*.html')
-
-  CSSfiles.forEach(file => {
-    buildCSS(file, `${path.resolve(destDir, 'stylesheets')}/${path.relative('src/styles', file)}`)
-  })
+  const HTMLfiles = glob.sync('src/*.html')
 
   HTMLfiles.forEach(file => {
     buildHTML(file, `${path.resolve(destDir, '../app/views')}/${path.parse(file).name}.scala.html`)

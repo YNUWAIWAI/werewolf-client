@@ -1,0 +1,16 @@
+.lo--mute-button {
+  bottom: 0;
+  cursor: pointer;
+  height: 2rem;
+  position: fixed;
+  right: 0;
+  width: 2rem;
+
+  & > .mute {
+    fill: var(--color--font);
+  }
+
+  & > .unmute {
+    fill: var(--color--font);
+  }
+}

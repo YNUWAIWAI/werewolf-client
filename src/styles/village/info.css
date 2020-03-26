@@ -1,0 +1,164 @@
+.vi--info {
+  display: grid;
+  gap: 0;
+  grid-area: info;
+  grid-template-areas: 'day property-character character property-role role property-team team';
+  grid-template-columns: minmax(405px, 3fr) minmax(135px, 1fr) calc(var(--size--image) + 40px) minmax(135px, 1fr) calc(var(--size--image) + 40px) minmax(135px, 1fr) calc(var(--size--image) + 40px);
+  height: 100%;
+
+  &--character {
+    animation: fadein 0.5s ease-out;
+    display: grid;
+    grid-area: character;
+    grid-template:
+      '. . . .' 1fr
+      '. . . .' var(--size--image-name)
+      '. image image .' var(--size--image-initial)
+      '. image image .' calc(var(--size--image) - var(--size--image-initial))
+      'name name name name' var(--size--image-name)
+      '. . . .' 1fr
+      / 1fr calc(var(--size--image) - var(--size--image-initial)) var(--size--image-initial) 1fr;
+
+    &--image {
+      display: block;
+      grid-area: image;
+      height: var(--size--image);
+      width: var(--size--image);
+    }
+
+    &--initial {
+      color: var(--color--font--image-initial);
+      font-size: var(--font-size--image-initial);
+      grid-area: 3 / 3;
+      line-height: 1.25;
+      text-align: center;
+      z-index: 2;
+    }
+
+    &--name {
+      display: block;
+      font-size: var(--font-size--image-name);
+      grid-area: name;
+      line-height: 1.5;
+      overflow: auto;
+      text-align: center;
+      word-break: keep-all;
+    }
+  }
+
+  &--day {
+    align-items: center;
+    display: flex;
+    grid-area: day;
+    justify-content: center;
+    min-height: calc(3.25rem + 4px);
+
+    &--text {
+      border: 2px solid var(--color--border);
+      border-radius: 1.5rem;
+      display: grid;
+      font-size: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      min-height: 2.25rem;
+      min-width: calc(90% - 3rem);
+      padding: 0.5rem 1.5rem;
+
+      & > span {
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &--property {
+    align-items: center;
+    display: inline-flex;
+    font-size: 1.5rem;
+    justify-content: flex-end;
+
+    &.character {
+      grid-area: property-character;
+    }
+
+    &.role {
+      grid-area: property-role;
+    }
+
+    &.team {
+      grid-area: property-team;
+    }
+  }
+
+  &--role {
+    animation: fadein 0.5s ease-out;
+    display: grid;
+    grid-area: role;
+    grid-template:
+      '. . .' 1fr
+      '. . .' var(--size--image-initial)
+      '. image .' var(--size--image)
+      'name name name' var(--size--image-initial)
+      '. . .' 1fr
+      / 1fr var(--size--image) 1fr;
+
+    &--image {
+      display: block;
+      grid-area: image;
+      height: var(--size--image);
+      width: var(--size--image);
+    }
+
+    &--name {
+      display: block;
+      font-size: var(--font-size--image-name);
+      grid-area: name;
+      line-height: 1.5;
+      overflow: auto;
+      text-align: center;
+      word-break: keep-all;
+    }
+  }
+
+  &--team {
+    animation: fadein 0.5s ease-out;
+    display: grid;
+    grid-area: team;
+    grid-template:
+      '. . .' 1fr
+      '. . .' var(--size--image-name)
+      '. image .' var(--size--image)
+      'name name name' var(--size--image-name)
+      '. . .' 1fr
+      / 1fr var(--size--image) 1fr;
+
+    &--image {
+      display: block;
+      grid-area: image;
+      height: var(--size--image);
+      width: var(--size--image);
+
+      &.teamVillager {
+        fill: var(--color--team--villager);
+      }
+
+      &.teamWerehamster {
+        fill: var(--color--team--werehamster);
+      }
+
+      &.teamWerewolf {
+        fill: var(--color--team--werewolf);
+      }
+    }
+
+    &--name {
+      display: block;
+      font-size: var(--font-size--image-name);
+      grid-area: name;
+      line-height: 1.5;
+      overflow: auto;
+      text-align: center;
+      word-break: keep-all;
+    }
+  }
+}

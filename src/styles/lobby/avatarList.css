@@ -1,0 +1,134 @@
+.lo--avatar-list {
+  border-left: 1px solid var(--color--border);
+  border-right: 1px solid var(--color--border);
+  border-top: 1px solid var(--color--border);
+  cursor: clickable;
+  margin-bottom: 1rem;
+
+  &--item {
+    background: var(--color--background);
+    border-bottom: 1px solid var(--color--border);
+    display: grid;
+    font-size: 1.2rem;
+    grid-gap: 0.5rem;
+    grid-template-areas: 'image name host ping';
+    grid-template-columns: var(--size--avatar-image) 3fr 1fr minmax(5.2rem, 1fr); /* 5.2rem = 0.8rem * 4 + 2rem */
+    height: var(--size--avatar-image);
+
+    &--image {
+      align-items: center;
+      display: inline-flex;
+      grid-area: image;
+      height: var(--size--avatar-image);
+      justify-content: center;
+      width: var(--size--avatar-image);
+
+      & > img {
+        height: var(--size--avatar-image);
+        width: var(--size--avatar-image);
+      }
+    }
+
+    &--host {
+      align-items: center;
+      border: 1px solid var(--color--font);
+      border-radius: 1rem;
+      display: inline-flex;
+      grid-area: host;
+      justify-content: center;
+      margin: 2px;
+    }
+
+    &--name {
+      align-items: center;
+      display: inline-flex;
+      grid-area: name;
+      justify-content: center;
+    }
+
+    &--ping {
+      align-items: center;
+      display: inline-flex;
+      font-size: 0.8rem;
+      grid-area: ping;
+      grid-column: 4 / 5;
+      justify-content: center;
+
+      & > svg {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      & > .danger {
+        fill: var(--color--danger);
+      }
+
+      & > .safe {
+        fill: var(--color--safe);
+      }
+
+      & > .warning {
+        fill: var(--color--warning);
+      }
+    }
+
+    &.me {
+      background: var(--color--background--me);
+      color: var(--color--font--me);
+    }
+
+    &.me > &--host {
+      border-color: var(--color--font--me);
+    }
+
+    &--kick-out {
+      fill: transparent;
+      grid-area: image / image / ping / ping;
+      height: 100%;
+      width: 100%;
+      z-index: var(--z-index--kick-out);
+
+      &:hover {
+        fill: red;
+        transition: fill 1.5s ease-out;
+      }
+    }
+
+    &.can-kick-out {
+      cursor: pointer;
+
+      &:hover {
+        background: var(--color--hover);
+      }
+    }
+
+    &--transition {
+      &-appear {
+        opacity: 0;
+      }
+
+      &-appear-active {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+      }
+
+      &-enter {
+        opacity: 0;
+      }
+
+      &-enter-active {
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+      }
+
+      &-exit {
+        opacity: 1;
+      }
+
+      &-exit-active {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 /* eslint no-process-env: 0 */
+import '../../styles/lobby'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import {

@@ -1,0 +1,116 @@
+.vi--modal {
+  background: rgb(250, 250, 250);
+  display: grid;
+  gap: 0.5rem 0;
+  grid-template-areas:
+    '. icon icon icon  .'
+    'description description description description description'
+    '. yes . no .';
+  grid-template-columns: 1fr 5.5rem 1fr 5.5rem 1fr;
+  /*
+    5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
+  */
+  grid-template-rows: calc(var(--size--modal-image) + 15px) 4.5rem 3.25rem;
+  /*
+    15px = name's font-size(10px) * name's line-height(1.5)
+    4.5rem = font-size(1.5rem) * line-height(1.5) * number of lines(2)
+    3.25rem = font-size(1.5rem) * name's line-height(1.5) + padding-top(0.5rem) + padding-bottom(0.5rem)
+  */
+  left: 25vw;
+  padding: 1rem;
+  position: fixed;
+  top: 30vh;
+  width: 50vw;
+  z-index: var(--modal--z-index);
+
+  &--button {
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0.5rem;
+
+    &.yes {
+      background: rgba(255, 0, 0, 0.5);
+      grid-area: yes;
+    }
+
+    &.no {
+      background: rgba(0, 0, 255, 0.5);
+      grid-area: no;
+    }
+
+    &:hover {
+      filter: opacity(85%);
+
+      &:active {
+        filter: brightness(85%);
+      }
+    }
+  }
+
+  &--description {
+    align-items: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    grid-area: description;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &--icon {
+    display: grid;
+    grid-area: icon;
+    grid-template:
+      '. image image .' var(--size--image-initial)
+      '. image image .' calc(var(--size--modal-image) - var(--size--image-initial))
+      'name name name name'
+      / 1fr calc(var(--size--modal-image) - var(--size--image-initial)) var(--size--image-initial) 1fr;
+
+    &--image {
+      display: block;
+      grid-area: image;
+      height: var(--size--modal-image);
+      width: var(--size--modal-image);
+      z-index: 1;
+    }
+
+    &--initial {
+      color: var(--color--font--image-initial);
+      font-size: var(--font-size--image-initial);
+      grid-area: 1 / 3;
+      line-height: 1.25;
+      text-align: center;
+      z-index: 2;
+    }
+
+    &--name {
+      font-size: 10px;
+      grid-area: name;
+      line-height: 1.5;
+      overflow: auto;
+      text-align: center;
+      word-break: keep-all;
+    }
+  }
+
+  &--transition {
+    &-enter {
+      opacity: 0;
+    }
+
+    &-enter-active {
+      opacity: 1;
+      transition: opacity 0.5s ease-out;
+    }
+
+    &-exit {
+      opacity: 1;
+    }
+
+    &-exit-active {
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+  }
+}

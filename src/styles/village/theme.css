@@ -1,0 +1,149 @@
+.vi {
+
+  /* variables */
+  --font-size--image-initial: 16px;
+  --font-size--image-name: 10px;
+  --size--image: 50px;
+  --size--image--L: 120px;
+  --size--image-initial: 20px;
+  --size--image-initial--L: 20px;
+  --size--image-name: 15px;
+  --size--image-name--L: 15px;
+  --size--image: 50px;
+  --size--result-image: 50px;
+  --size--vote-image: 50px;
+  --size--modal-image: 50px;
+  --size--image-initial: 20px;
+  --arrow: 20px;
+  --arrow--border: calc(var(--arrow) + 2px);
+  --hide-button-height: 24px;
+  --color--chat--private: rgba(128, 128, 128, 0.3);
+  --color--chat--werewolf: rgba(255, 0, 0, 0.4);
+  --color--chat--master: rgba(0, 255, 0, 0.4);
+  --color--chat--grave: rgba(0, 0, 255, 0.3);
+  --color--win: hsla(51, 100%, 50%, 0.7);
+  --color--suggest: rgb(3, 169, 244);
+  --color--silent: rgba(255, 215, 0, 0.8);
+  --color--star--unmarked: rgb(158, 158, 158);
+  --color--star--marked: rgb(255, 235, 59);
+
+  /* z-index */
+  --z-index--background: -1;
+  --z-index--command: 2;
+  --z-index--command--input--char: 1;
+  --z-index--command--input--suggest--list: 3;
+  --z-index--command--input--textarea: 2;
+  --z-index--prediction--character: 2;
+  --z-index--prediction--help: 5;
+  --z-index--prediction--item: 0;
+  --z-index--prediction--spec: 3;
+  --z-index--prediction--role: 4;
+  --z-index--prediction--role--image: 0;
+  --z-index--prediction--role--times: 1;
+  --z-index--prediction--role--number: 1;
+  --z-index--result: 7;
+  --z-index--result--close: 8;
+  --z-index--obfucator: 6;
+  --z-index--modal: 9;
+  --z-index--hide-button: 1;
+
+  /* properties */
+  color: var(--color--font);
+  font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+
+  /* stylelint-disable color-named */
+  &.dark {
+
+    /* base */
+    --color--danger: rgb(239, 83, 80);
+    --color--neutral0: hsl(0, 0%, 0%);
+    --color--neutral5: hsl(0, 0%, 5%);
+    --color--neutral10: hsl(0, 0%, 10%);
+    --color--neutral20: hsl(0, 0%, 20%);
+    --color--neutral30: hsl(0, 0%, 30%);
+    --color--neutral40: hsl(0, 0%, 40%);
+    --color--neutral50: hsl(0, 0%, 50%);
+    --color--neutral60: hsl(0, 0%, 60%);
+    --color--neutral70: hsl(0, 0%, 70%);
+    --color--neutral80: hsl(0, 0%, 80%);
+    --color--neutral90: hsl(0, 0%, 90%);
+    --color--neutral100: hsl(0, 0%, 100%);
+    --color--obfucator: rgba(0, 0, 0, 0.8);
+    --color--primary: rgba(38, 132, 255, 1);
+    --color--primary25: rgba(38, 132, 255, 0.25);
+    --color--primary50: rgba(38, 132, 255, 0.5);
+    --color--primary75: rgba(38, 132, 255, 0.75);
+    --color--public: rgba(255, 165, 0, 0.4);
+    --color--team--villager: rgb(17, 95, 57);
+    --color--team--werehamster: rgb(127, 77, 39);
+    --color--team--werewolf: rgb(147, 39, 143);
+
+    /* ailias */
+    --color--background: var(--color--neutral0);
+    --color--background--modal: var(--color--neutral90);
+    --color--border: var(--color--neutral90);
+    --color--border--modal: var(--color--neutral10);
+    --color--dead: var(--color--danger);
+    --color--font: var(--color--neutral90);
+    --color--font--modal: var(--color--neutral10);
+    --color--font--image-initial: var(--color--neutral90);
+    --color--font--prediction--fill: var(--color--neutral10);
+    --color--prediction--circle: var(--color--danger);
+    --color--prediction--cross: var(--color--danger);
+    --color--prediction--fill: var(--color--neutral90);
+    --color--prediction--question: var(--color--neutral90);
+    --color--prediction--triangle: var(--color--danger);
+  }
+
+  &.light {
+
+    /* base */
+    --color--danger: rgb(244, 67, 54);
+    --color--neutral0: hsl(0, 0%, 100%);
+    --color--neutral5: hsl(0, 0%, 95%);
+    --color--neutral10: hsl(0, 0%, 90%);
+    --color--neutral20: hsl(0, 0%, 80%);
+    --color--neutral30: hsl(0, 0%, 70%);
+    --color--neutral40: hsl(0, 0%, 60%);
+    --color--neutral50: hsl(0, 0%, 50%);
+    --color--neutral60: hsl(0, 0%, 40%);
+    --color--neutral70: hsl(0, 0%, 30%);
+    --color--neutral80: hsl(0, 0%, 20%);
+    --color--neutral90: hsl(0, 0%, 10%);
+    --color--neutral100: hsl(0, 0%, 0%);
+    --color--primary: rgba(38, 132, 255, 1);
+    --color--primary25: rgba(38, 132, 255, 0.25);
+    --color--primary50: rgba(38, 132, 255, 0.5);
+    --color--primary75: rgba(38, 132, 255, 0.75);
+    --color--public: rgba(255, 165, 0, 0.4);
+    --color--obfucator: rgba(0, 0, 0, 0.8);
+    --color--team--villager: rgb(17, 95, 57);
+    --color--team--werehamster: rgb(127, 77, 39);
+    --color--team--werewolf: rgb(147, 39, 143);
+
+    /* ailias */
+    --color--background: var(--color--neutral0);
+    --color--background--modal: var(--color--neutral10);
+    --color--border: var(--color--neutral90);
+    --color--border--modal: var(--color--neutral90);
+    --color--dead: var(--color--danger);
+    --color--font: var(--color--neutral90);
+    --color--font--modal: var(--color--neutral90);
+    --color--font--image-initial: var(--color--neutral10);
+    --color--font--prediction--fill: var(--color--neutral10);
+    --color--prediction--circle: var(--color--danger);
+    --color--prediction--cross: var(--color--danger);
+    --color--prediction--fill: var(--color--neutral90);
+    --color--prediction--question: var(--color--neutral90);
+    --color--prediction--triangle: var(--color--danger);
+  }
+  /* stylelint-enable color-named */
+
+  @media (max-width: 1200px) {
+    --size--image--L: 100px;
+  }
+
+  @media (max-width: 900px) {
+    --size--image--L: 80px;
+  }
+}

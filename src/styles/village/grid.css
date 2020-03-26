@@ -1,0 +1,11 @@
+.vi--grid {
+  display: grid;
+  gap: 1vh 0;
+  grid-template-areas:
+    'info'
+    'activity'
+    'command';
+  grid-template-rows: minmax(90px, 12vh) minmax(300px, 68vh) minmax(130px, 20vh);
+  height: 100vh;
+  min-width: 900px;
+}
