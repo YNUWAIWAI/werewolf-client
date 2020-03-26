@@ -23,8 +23,12 @@ export interface StateProps {
     readonly numberOfPlayers: number
   }[]
   readonly spec: {
-    role: village.RoleId
-    visible: boolean
+    readonly role: village.RoleId
+    readonly position: {
+      readonly left: number
+      readonly top: number
+    }
+    readonly visible: boolean
   }
   readonly table: {
     readonly [characterId in village.CharacterId]: Partial<{
@@ -37,7 +41,7 @@ export interface StateProps {
   }
 }
 export interface DispatchProps {
-  handleMouseEnter: (role: village.RoleId) => () => void
+  handleMouseEnter: (role: village.RoleId) => (position: {top: number, left: number}) => void
   handleMouseLeave: () => void
   handleBoardClick: (ids: {characterId: village.CharacterId, roleId: village.RoleId}) => (state: village.BoardState) => void
 }
@@ -99,8 +103,9 @@ export default function Prediction(props: Props) {
         key="spec"
         role={props.spec.role}
         style={{
-          grid: `minmax(72px, min-content) max-content / minmax(72px, min-content) minmax(calc(72px * ${props.roleStatus.length}), min-content)`
-        }}
+          '--left': `${props.spec.position.left}px`,
+          '--top': `${props.spec.position.top}px`
+        } as React.CSSProperties}
         visible={props.spec.visible}
       />
     </>

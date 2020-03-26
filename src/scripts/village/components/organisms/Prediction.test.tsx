@@ -15,6 +15,10 @@ describe('<Prediction />', () => {
     const roleStatus: Props['roleStatus'] = []
     const table: Props['table'] = {}
     const spec: Props['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -107,6 +111,10 @@ describe('<Prediction />', () => {
       }
     ]
     const spec: Props['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }

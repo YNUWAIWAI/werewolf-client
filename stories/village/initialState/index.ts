@@ -1,5 +1,6 @@
 export {grave} from './grave'
 export {morningWithLimitedChat} from './morningWithLimitedChat'
+export {morningWithLimitedChat2} from './morningWithLimitedChat2'
 export {morningWithoutLimitedChat} from './morningWithoutLimitedChat'
 export {night} from './night'
 export {night2} from './night2'

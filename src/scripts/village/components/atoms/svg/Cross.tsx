@@ -3,13 +3,13 @@ import * as React from 'react'
 export default function Cross() {
   return (
     <svg
-      fill="#000"
+      className="cross"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <line
-        stroke="red"
+        className="line"
         strokeWidth="15"
         x1="20"
         x2="80"
@@ -17,7 +17,7 @@ export default function Cross() {
         y2="80"
       />
       <line
-        stroke="red"
+        className="line"
         strokeWidth="15"
         x1="80"
         x2="20"

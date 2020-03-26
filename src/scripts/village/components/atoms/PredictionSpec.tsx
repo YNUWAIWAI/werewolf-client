@@ -15,7 +15,7 @@ export default function PredictionSpec(props: Props) {
 
   return (
     <div
-      className="vi--prediction spec"
+      className="vi--prediction--spec"
       style={props.style}
     >
       <FormattedMessage
@@ -24,7 +24,7 @@ export default function PredictionSpec(props: Props) {
         {
           text => (
             <div
-              className="vi--prediction--spec"
+              className="vi--prediction--spec--body"
             >
               {text}
             </div>

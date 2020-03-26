@@ -186,6 +186,10 @@ storiesOf('village|Prediction', module)
       }
     ]
     const spec: Props['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -918,6 +922,10 @@ storiesOf('village|Prediction', module)
       }
     ]
     const spec: Props['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -1234,6 +1242,10 @@ storiesOf('village|Prediction', module)
       }
     ]
     const spec: Props['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: true
     }
@@ -1966,6 +1978,10 @@ storiesOf('village|Prediction', module)
       }
     ]
     const spec: Props['spec'] = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: true
     }

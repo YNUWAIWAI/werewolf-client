@@ -338,6 +338,10 @@ export const grave: Partial<ReducerState> = {
       }
     },
     spec: {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     },

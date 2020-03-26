@@ -3,7 +3,7 @@ import * as React from 'react'
 export default function Circle() {
   return (
     <svg
-      fill="#000"
+      className="circle"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -15,9 +15,9 @@ export default function Circle() {
         </mask>
       </defs>
       <circle
+        className="line"
         cx="50"
         cy="50"
-        fill="red"
         id="donut"
         mask="url(#circleHole)"
         r="40"

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 interface Props {
-  readonly handleMouseEnter: () => void
+  readonly handleMouseEnter: (position: {left: number, top: number}) => void
   readonly handleMouseLeave: () => void
   readonly image: string
   readonly name: string
@@ -10,11 +10,24 @@ interface Props {
 
 export default function PredictionRole(props: Props) {
   const times = '×'
+  const handleMouseEnter = (event: React.MouseEvent) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+
+    if (window.innerWidth - rect.right < 0) {
+      return
+    }
+    const position = {
+      left: (rect.left + rect.right) / 2,
+      top: rect.top + rect.height
+    }
+
+    props.handleMouseEnter(position)
+  }
 
   return (
     <div
       className="vi--prediction--role"
-      onMouseEnter={() => props.handleMouseEnter()}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => props.handleMouseLeave()}
     >
       <img

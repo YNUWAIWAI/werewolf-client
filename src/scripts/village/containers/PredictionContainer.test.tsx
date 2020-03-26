@@ -99,6 +99,10 @@ describe('<PredictionContainer />', () => {
       }
     }
     const spec = {
+      position: {
+        left: 0,
+        top: 0
+      },
       role: village.RoleId.villager,
       visible: false
     }
@@ -331,10 +335,15 @@ describe('<PredictionContainer />', () => {
       </Provider>
     )
     const role = village.RoleId.villager
+    const position = {
+      left: 0,
+      top: 0
+    }
 
-    wrapper.find(Prediction).props().handleMouseEnter(role)()
+    wrapper.find(Prediction).props().handleMouseEnter(role)(position)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
+      position,
       role,
       type: ActionTypes.App.SHOW_PREDICTION_SPEC
     })
