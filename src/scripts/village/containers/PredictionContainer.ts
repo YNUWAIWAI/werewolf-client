@@ -50,6 +50,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
       status: character.status
     }
   }),
+  expand: state.hideButton.hide,
   roleStatus: state.prediction.roleStatus.allIds.map(roleId => {
     const role = state.prediction.roleStatus.byId[roleId]
 

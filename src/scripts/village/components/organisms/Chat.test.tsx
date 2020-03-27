@@ -19,6 +19,7 @@ describe('<Chat />', () => {
         <Chat
           allIds={allIds}
           byId={byId}
+          expand={false}
           handleStar={handleStar}
         />
       )
@@ -51,6 +52,7 @@ describe('<Chat />', () => {
         <Chat
           allIds={allIds}
           byId={byId}
+          expand={false}
           handleStar={handleStar}
         />
       )
@@ -98,6 +100,7 @@ describe('<Chat />', () => {
         <Chat
           allIds={allIds}
           byId={byId}
+          expand={false}
           handleStar={handleStar}
         />
       )
@@ -165,6 +168,7 @@ describe('<Chat />', () => {
         <Chat
           allIds={allIds}
           byId={byId}
+          expand={false}
           handleStar={handleStar}
         />
       )
@@ -205,6 +209,7 @@ describe('<Chat />', () => {
         <Chat
           allIds={allIds}
           byId={byId}
+          expand={false}
           handleStar={handleStar}
         />
       )
@@ -221,6 +226,7 @@ describe('<Chat />', () => {
         <Chat
           allIds={allIds}
           byId={byId}
+          expand={false}
           handleStar={handleStar}
         />
       )

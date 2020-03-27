@@ -53,10 +53,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -106,10 +107,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -159,10 +161,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -212,10 +215,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -265,10 +269,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -318,10 +323,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -371,10 +377,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -424,10 +431,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -477,10 +485,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -538,10 +547,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>
@@ -627,10 +637,11 @@ storiesOf('village|Chat', module)
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <div className="vi--activity">
+          <div className="vi--grid">
             <Chat
               allIds={allIds}
               byId={byId}
+              expand={false}
               handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
             />
           </div>

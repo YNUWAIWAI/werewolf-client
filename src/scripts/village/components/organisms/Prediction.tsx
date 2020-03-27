@@ -16,6 +16,7 @@ export interface StateProps {
     readonly name: string
     readonly status: village.CharacterStatus
   }[]
+  readonly expand: boolean
   readonly roleStatus: {
     readonly id: village.RoleId
     readonly image: string
@@ -92,7 +93,7 @@ export default function Prediction(props: Props) {
   return (
     <>
       <div
-        className="vi--prediction"
+        className={`vi--prediction ${props.expand ? 'expand' : ''}`}
         style={{
           grid: `repeat(${1 + props.characterStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
         }}
