@@ -36,7 +36,12 @@ module.exports = {
       {
         include: path.resolve(__dirname, './src/styles'),
         loaders: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: {
+              injectType: 'singletonStyleTag'
+            }
+          },
           {
             loader: 'css-loader',
             options: {

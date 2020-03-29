@@ -5,8 +5,18 @@ module.exports = ({ config, mode }) => {
     {
       test: /\.css$/,
       loaders: [
-        'style-loader',
-        { loader: 'css-loader', options: { importLoaders: 1 } },
+        {
+          loader: 'style-loader',
+          options: {
+            injectType: 'singletonStyleTag'
+          }
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1
+          }
+        },
         {
           loader: 'postcss-loader',
           options: {
