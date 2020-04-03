@@ -7,20 +7,20 @@
 
   &--input {
     display: grid;
-    gap: 10px;
     grid-template:
-      'input input input input' auto
-      'icon . counter send' 2.25rem
-      / 2.25rem auto 3rem 20%;
+      'input input input input input' auto
+      'input input input input input' fit-content(2rem)
+      '. . . . .' 10px
+      'icon . counter send send' 2.25rem
+      / 2.25rem auto fit-content(4rem) auto fit-content(1rem);
     height: 100%;
     width: 30vw;
 
     &--char {
-      align-items: flex-end;
-      display: inline-flex;
-      grid-area: input;
-      justify-content: flex-end;
-      padding: 5px 10px;
+      font-size: 1rem;
+      grid-area: 2 / 5;
+      padding: 0 0.5rem 0.5rem 0;
+      user-select: none;
       z-index: var(--z-index--command--input--char);
 
       &.error {
@@ -34,6 +34,7 @@
       font-size: 1.5rem;
       grid-area: counter;
       justify-content: flex-end;
+      padding: 0 0.5rem 0 0;
     }
 
     &--icon {
@@ -43,6 +44,7 @@
       justify-content: left;
 
       & > svg {
+        fill: var(--color--font);
         height: calc(100% - 4px);
         padding: 2px;
         width: 100%;
@@ -50,36 +52,31 @@
     }
 
     &--send {
-      background-color: rgb(128, 216, 255);
+      background: var(--color--primary);
       border: none;
       border-radius: 5px;
-      box-shadow: 2px 2px 1px 0 grey;
       cursor: pointer;
+      font-size: 1rem;
       grid-area: send;
-      width: 90%;
+      margin: 0 0.5rem 0 0;
+      padding: 0 1rem;
 
-      &:hover {
-        filter: opacity(85%);
-
-        &:active {
-          box-shadow: inset 2px 2px 1px 0 grey;
-          filter: brightness(85%);
-        }
+      &:focus {
+        box-shadow: var(--box-shadow--focus-ring);
+        outline: none;
       }
 
       &:disabled {
-        box-shadow: inset 2px 2px 1px 0 grey;
+        background: var(--color--primary50);
         cursor: not-allowed;
-        filter: brightness(50%);
+      }
 
-        &:hover {
-          filter: brightness(50%);
+      &:hover {
+        background: var(--color--primary75);
+      }
 
-          &:active {
-            box-shadow: inset 2px 2px 1px 0 grey;
-            filter: brightness(50%);
-          }
-        }
+      &:disabled:hover {
+        background: var(--color--primary50);
       }
     }
 
@@ -127,10 +124,11 @@
     }
 
     &--textarea {
-      background: var(--color--public);
+      background: var(--color--background--public);
       border: 1px solid black;
       border-radius: 10px;
       box-sizing: border-box;
+      color: var(--color--font--public);
       font-size: 1rem;
       grid-area: input;
       height: 100%;
@@ -141,15 +139,26 @@
       z-index: var(--z-index--command--input--textarea);
 
       &.grave {
-        background: var(--color--chat--grave);
+        background: var(--color--background--grave);
+        color: var(--color--font--grave);
       }
 
       &.werewolf {
-        background: var(--color--chat--werewolf);
+        background: var(--color--background--werewolf);
+        color: var(--color--font--werewolf);
       }
 
       &.private {
-        background: var(--color--chat--private);
+        background: var(--color--background--private);
+      }
+
+      &:focus {
+        box-shadow: var(--box-shadow--focus-ring);
+        outline: none;
+      }
+
+      &::placeholder {
+        color: var(--color--font--placeholder);
       }
     }
   }

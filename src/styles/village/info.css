@@ -32,6 +32,7 @@
       grid-area: 3 / 3;
       line-height: 1.25;
       text-align: center;
+      user-select: none;
       z-index: 2;
     }
 
@@ -133,6 +134,7 @@
       / 1fr var(--size--image) 1fr;
 
     &--image {
+      background: var(--color--background--team);
       display: block;
       grid-area: image;
       height: var(--size--image);

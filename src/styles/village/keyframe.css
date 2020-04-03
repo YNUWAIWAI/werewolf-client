@@ -22,13 +22,13 @@
 
 @keyframes flash {
   from {
-    background: white;
-    color: black;
+    background: var(--color--background);
+    color: var(--color--font);
   }
 
   to {
-    background: red;
-    color: white;
+    background: var(--color--danger);
+    color: var(--color--font);
   }
 }
 

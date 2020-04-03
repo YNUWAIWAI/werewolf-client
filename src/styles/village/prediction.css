@@ -5,7 +5,7 @@
   display: grid;
   grid: 1fr / 1fr;
   grid-area: prediction;
-  margin: 0 auto;
+  margin: 0 auto auto;
   max-height: 100%;
   max-width: 100%;
   overflow: auto;
@@ -28,12 +28,13 @@
 
     &.dead {
       animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
-      background-color: var(--color--dead);
-      color: white;
+      background: var(--color--dead);
+      color: var(--color--font--dead);
     }
 
     &.silent {
-      background-color: var(--color--silent);
+      background: var(--color--background--silent);
+      color: var(--color--font--silent);
     }
 
     &--image {
@@ -48,6 +49,7 @@
       grid-area: 2 / 3;
       line-height: 1.25;
       text-align: center;
+      user-select: none;
       z-index: 2;
     }
 
@@ -90,7 +92,7 @@
     z-index: var(--z-index--prediction--item);
 
     &.fixed {
-      box-shadow: inset 0 0 0 4px red;
+      box-shadow: inset 0 0 0 4px var(--color--danger);
       cursor: default;
     }
 
@@ -187,22 +189,24 @@
 
     &--times {
       align-items: flex-end;
-      color: rgb(254, 254, 254);
+      color: var(--color--font--white);
       display: inline-flex;
-      font-size: 0.75rem;
+      font-size: var(--font-size--image-times);
       grid-column: 3;
       grid-row: 3;
       justify-content: center;
       line-height: 1;
+      user-select: none;
       z-index: var(--z-index--prediction--role--times);
     }
 
     &--number {
-      color: rgb(254, 254, 254);
-      font-size: 1rem;
+      color: var(--color--font--white);
+      font-size: var(--font-size--image-number);
       grid-column: 4;
       grid-row: 3;
       line-height: 1;
+      user-select: none;
       z-index: var(--z-index--prediction--role--number);
     }
   }

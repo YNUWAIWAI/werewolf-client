@@ -1,8 +1,19 @@
 .vi {
 
-  /* variables */
+  /* focus-ring */
+  --box-shadow--focus-ring: 0 0 3px 2px var(--color--primary);
+
+  /* font-color */
+  --color--font--black: hsl(0, 0%, 10%);
+  --color--font--white: hsl(0, 0%, 90%);
+
+  /* font-size */
   --font-size--image-initial: 16px;
   --font-size--image-name: 10px;
+  --font-size--image-times: 12px;
+  --font-size--image-number: 16px;
+
+  /* image-size */
   --size--image: 50px;
   --size--image--L: 120px;
   --size--image-initial: 20px;
@@ -14,23 +25,27 @@
   --size--vote-image: 50px;
   --size--modal-image: 50px;
   --size--image-initial: 20px;
+
+  /* arrow */
   --arrow: 20px;
   --arrow--border: calc(var(--arrow) + 2px);
+
+  /* team-icon */
+  --color--background--team: white;
+  --color--team--villager: rgb(17, 95, 57);
+  --color--team--werehamster: rgb(127, 77, 39);
+  --color--team--werewolf: rgb(147, 39, 143);
+
   --hide-button-height: 24px;
-  --color--chat--private: rgba(128, 128, 128, 0.3);
-  --color--chat--werewolf: rgba(255, 0, 0, 0.4);
-  --color--chat--master: rgba(0, 255, 0, 0.4);
-  --color--chat--grave: rgba(0, 0, 255, 0.3);
   --color--win: hsla(51, 100%, 50%, 0.7);
   --color--suggest: rgb(3, 169, 244);
-  --color--silent: rgba(255, 215, 0, 0.8);
   --color--star--unmarked: rgb(158, 158, 158);
   --color--star--marked: rgb(255, 235, 59);
 
   /* z-index */
   --z-index--background: -1;
   --z-index--command: 2;
-  --z-index--command--input--char: 1;
+  --z-index--command--input--char: 2;
   --z-index--command--input--suggest--list: 3;
   --z-index--command--input--textarea: 2;
   --z-index--prediction--character: 2;
@@ -55,6 +70,12 @@
   &.dark {
 
     /* base */
+    --color--background--grave: rgb(0, 0, 77);
+    --color--background--master: rgb(0, 102, 0);
+    --color--background--private: rgb(38, 38, 38);
+    --color--background--public: rgb(102, 66, 0);
+    --color--background--silent: rgb(204, 172, 0);
+    --color--background--werewolf: rgb(102, 0, 0);
     --color--danger: rgb(239, 83, 80);
     --color--neutral0: hsl(0, 0%, 0%);
     --color--neutral5: hsl(0, 0%, 5%);
@@ -73,10 +94,7 @@
     --color--primary25: rgba(38, 132, 255, 0.25);
     --color--primary50: rgba(38, 132, 255, 0.5);
     --color--primary75: rgba(38, 132, 255, 0.75);
-    --color--public: rgba(255, 165, 0, 0.4);
-    --color--team--villager: rgb(17, 95, 57);
-    --color--team--werehamster: rgb(127, 77, 39);
-    --color--team--werewolf: rgb(147, 39, 143);
+    --color--win: hsla(51, 100%, 50%, 0.7);
 
     /* ailias */
     --color--background: var(--color--neutral0);
@@ -84,10 +102,17 @@
     --color--border: var(--color--neutral90);
     --color--border--modal: var(--color--neutral10);
     --color--dead: var(--color--danger);
-    --color--font: var(--color--neutral90);
-    --color--font--modal: var(--color--neutral10);
-    --color--font--image-initial: var(--color--neutral90);
-    --color--font--prediction--fill: var(--color--neutral10);
+    --color--font: var(--color--font--white);
+    --color--font--dead: var(--color--font--black);
+    --color--font--grave: var(--color--font--white);
+    --color--font--image-initial: var(--color--font--white);
+    --color--font--modal: var(--color--font--black);
+    --color--font--placeholder: var(--color--neutral50);
+    --color--font--prediction--fill: var(--color--font--black);
+    --color--font--private: var(--color--font--white);
+    --color--font--public: var(--color--font--white);
+    --color--font--silent: var(--color--font--black);
+    --color--font--werewolf: var(--color--font--white);
     --color--prediction--circle: var(--color--danger);
     --color--prediction--cross: var(--color--danger);
     --color--prediction--fill: var(--color--neutral90);
@@ -98,6 +123,12 @@
   &.light {
 
     /* base */
+    --color--background--grave: rgb(179, 179, 255);
+    --color--background--master: rgb(153, 255, 153);
+    --color--background--private: rgb(217, 217, 217);
+    --color--background--public: rgb(255, 219, 153);
+    --color--background--silent: rgb(255, 223, 51);
+    --color--background--werewolf: rgb(255, 153, 153);
     --color--danger: rgb(244, 67, 54);
     --color--neutral0: hsl(0, 0%, 100%);
     --color--neutral5: hsl(0, 0%, 95%);
@@ -115,11 +146,8 @@
     --color--primary25: rgba(38, 132, 255, 0.25);
     --color--primary50: rgba(38, 132, 255, 0.5);
     --color--primary75: rgba(38, 132, 255, 0.75);
-    --color--public: rgba(255, 165, 0, 0.4);
-    --color--obfucator: rgba(0, 0, 0, 0.8);
-    --color--team--villager: rgb(17, 95, 57);
-    --color--team--werehamster: rgb(127, 77, 39);
-    --color--team--werewolf: rgb(147, 39, 143);
+    --color--obfucator: rgb(51, 51, 51);
+    --color--silent: rgb(204, 172, 0);
 
     /* ailias */
     --color--background: var(--color--neutral0);
@@ -127,10 +155,17 @@
     --color--border: var(--color--neutral90);
     --color--border--modal: var(--color--neutral90);
     --color--dead: var(--color--danger);
-    --color--font: var(--color--neutral90);
-    --color--font--modal: var(--color--neutral90);
-    --color--font--image-initial: var(--color--neutral10);
-    --color--font--prediction--fill: var(--color--neutral10);
+    --color--font: var(--color--font--black);
+    --color--font--dead: var(--color--font--black);
+    --color--font--grave: var(--color--font--black);
+    --color--font--image-initial: var(--color--font--white);
+    --color--font--modal: var(--color--font--black);
+    --color--font--private: var(--color--font--black);
+    --color--font--public: var(--color--font--black);
+    --color--font--placeholder: var(--color--neutral50);
+    --color--font--prediction--fill: var(--color--font--white);
+    --color--font--silent: var(--color--font--black);
+    --color--font--werewolf: var(--color--font--black);
     --color--prediction--circle: var(--color--danger);
     --color--prediction--cross: var(--color--danger);
     --color--prediction--fill: var(--color--neutral90);
