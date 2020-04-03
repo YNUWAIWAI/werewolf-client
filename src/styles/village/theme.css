@@ -99,7 +99,7 @@
     /* ailias */
     --color--background: var(--color--neutral5);
     --color--background--body: var(--color--neutral0);
-    --color--background--modal: var(--color--neutral90);
+    --color--background--modal: var(--color--neutral100);
     --color--border: var(--color--neutral90);
     --color--border--modal: var(--color--neutral10);
     --color--dead: var(--color--danger);
@@ -153,7 +153,7 @@
     /* ailias */
     --color--background: var(--color--neutral0);
     --color--background--body: var(--color--neutral5);
-    --color--background--modal: var(--color--neutral10);
+    --color--background--modal: var(--color--neutral0);
     --color--border: var(--color--neutral90);
     --color--border--modal: var(--color--neutral90);
     --color--dead: var(--color--danger);

@@ -165,6 +165,10 @@
       line-height: 1.5;
       overflow: auto;
       text-align: center;
+
+      &.dead {
+        color: var(--color--dead);
+      }
     }
 
     &--name {
@@ -177,6 +181,10 @@
       line-height: 1.5;
       overflow: auto;
       text-align: center;
+
+      &.dead {
+        color: var(--color--dead);
+      }
     }
 
     &--roleImage {
@@ -219,10 +227,10 @@
       line-height: 1.5;
       overflow: auto;
       text-align: center;
-    }
 
-    &.dead {
-      color: var(--color--dead);
+      &.dead {
+        color: var(--color--dead);
+      }
     }
   }
 
