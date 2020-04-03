@@ -1,14 +1,20 @@
 .vi--prediction {
   animation: fadein 0.5s ease-out;
-  border: solid 1px var(--color--border);
-  box-sizing: border-box;
-  display: grid;
-  grid: 1fr / 1fr;
+  background: var(--color--background--body);
   grid-area: prediction;
-  margin: 8px auto auto;
-  max-height: calc(100% - 16px);
-  max-width: calc(100% - 16px);
-  overflow: auto;
+  padding: 8px;
+
+  &--container {
+    border: solid 1px var(--color--border);
+    box-sizing: border-box;
+    display: grid;
+    grid: 1fr / 1fr;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    width: fit-content;
+  }
 
   &--character {
     background: var(--color--background);

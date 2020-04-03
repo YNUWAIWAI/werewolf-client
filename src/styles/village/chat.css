@@ -1,4 +1,5 @@
 .vi--chat {
+  background: var(--color--background--body);
   grid-area: chat;
   overflow: auto;
   padding: 0 1vw var(--hide-button-height);

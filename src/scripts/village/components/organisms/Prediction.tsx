@@ -91,9 +91,11 @@ export default function Prediction(props: Props) {
   ]
 
   return (
-    <>
+    <div
+      className={`vi--prediction ${props.expand ? 'expand' : ''}`}
+    >
       <div
-        className={`vi--prediction ${props.expand ? 'expand' : ''}`}
+        className="vi--prediction--container"
         style={{
           grid: `repeat(${1 + props.characterStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
         }}
@@ -109,6 +111,6 @@ export default function Prediction(props: Props) {
         } as React.CSSProperties}
         visible={props.spec.visible}
       />
-    </>
+    </div>
   )
 }

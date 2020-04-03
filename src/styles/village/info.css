@@ -1,5 +1,4 @@
 .vi--info {
-  background: var(--color--background--info);
   display: grid;
   gap: 0;
   grid-area: info;

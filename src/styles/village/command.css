@@ -1,5 +1,4 @@
 .vi--command {
-  background: var(--color--background--command);
   display: flex;
   grid-area: command;
   justify-content: space-around;
