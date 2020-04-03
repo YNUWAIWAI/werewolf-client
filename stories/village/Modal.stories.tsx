@@ -8,9 +8,18 @@ import {createStore} from 'redux'
 import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
+import {theme} from './theme'
 import {storiesOf} from '@storybook/react'
 
 storiesOf('village|Modal', module)
+  .addDecorator(story => (
+    <div
+      className={`vi ${radios(theme.label, theme.options, theme.defaultValue)}`}
+    >
+      {story()}
+      <div className="vi--background" />
+    </div>
+  ))
   .add('default', () => {
     const store = createStore(
       reducer,
