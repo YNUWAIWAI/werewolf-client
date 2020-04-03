@@ -98,6 +98,8 @@
 
     /* ailias */
     --color--background: var(--color--neutral0);
+    --color--background--info: var(--color--neutral5);
+    --color--background--command: var(--color--neutral5);
     --color--background--modal: var(--color--neutral90);
     --color--border: var(--color--neutral90);
     --color--border--modal: var(--color--neutral10);
@@ -150,7 +152,9 @@
     --color--silent: rgb(204, 172, 0);
 
     /* ailias */
-    --color--background: var(--color--neutral0);
+    --color--background: var(--color--neutral5);
+    --color--background--info: var(--color--neutral0);
+    --color--background--command: var(--color--neutral0);
     --color--background--modal: var(--color--neutral10);
     --color--border: var(--color--neutral90);
     --color--border--modal: var(--color--neutral90);

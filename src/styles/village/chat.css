@@ -133,10 +133,6 @@
     margin-top: 1rem;
     min-height: calc(var(--size--image) + 1rem);
 
-    &:first-child {
-      margin-top: 0;
-    }
-
     &.grave {
       color: var(--color--font--grave);
 

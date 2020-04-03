@@ -1,8 +1,7 @@
 .vi--grid {
   display: grid;
-  gap: 1vh 0;
   grid-template:
-    'info info' minmax(90px, 12vh)
+    'info info' minmax(106px, 12vh)
     'chat prediction' minmax(300px, 68vh)
     'command command' minmax(130px, 20vh)
     / minmax(450px, 50vw) minmax(450px, 50vw);

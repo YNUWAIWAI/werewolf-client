@@ -1,10 +1,11 @@
 .vi--info {
+  background: var(--color--background--info);
   display: grid;
   gap: 0;
   grid-area: info;
   grid-template-areas: 'day property-character character property-role role property-team team';
   grid-template-columns: minmax(330px, 33fr) minmax(100px, 10fr) calc(var(--size--image) + 40px) minmax(100px, 10fr) calc(var(--size--image) + 40px) minmax(100px, 10fr) calc(var(--size--image) + 40px);
-  height: 100%;
+  padding: 8px;
 
   &--character {
     animation: fadein 0.5s ease-out;

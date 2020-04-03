@@ -1,7 +1,9 @@
 .vi--command {
+  background: var(--color--background--command);
   display: flex;
   grid-area: command;
   justify-content: space-around;
+  padding: 8px;
   position: relative;
   z-index: var(--z-index--command);
 
@@ -24,7 +26,7 @@
       z-index: var(--z-index--command--input--char);
 
       &.error {
-        color: red;
+        color: var(--color--danger);
       }
     }
 
