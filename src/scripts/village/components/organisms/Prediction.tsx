@@ -50,7 +50,7 @@ export interface Props extends StateProps, DispatchProps {}
 
 export default function Prediction(props: Props) {
   if (props.characterStatus.length === 0 || props.roleStatus.length === 0) {
-    return null
+    return <div className={`vi--prediction ${props.expand ? 'expand' : ''}`} />
   }
   const predictionTable = [
     <PredictionHelp
