@@ -15,7 +15,8 @@
     width: 48px;
 
     &:focus {
-      outline: unset;
+      box-shadow: var(--box-shadow--focus-ring);
+      outline: none;
     }
 
     &.hide {

@@ -1,27 +1,26 @@
 .vi--modal {
-  background: rgb(250, 250, 250);
+  background: var(--color--background--modal);
   display: grid;
   gap: 0.5rem 0;
-  grid-template-areas:
-    '. icon icon icon  .'
-    'description description description description description'
-    '. yes . no .';
-  grid-template-columns: 1fr 5.5rem 1fr 5.5rem 1fr;
+
   /*
     5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
-  */
-  grid-template-rows: calc(var(--size--modal-image) + 15px) 4.5rem 3.25rem;
-  /*
     15px = name's font-size(10px) * name's line-height(1.5)
     4.5rem = font-size(1.5rem) * line-height(1.5) * number of lines(2)
     3.25rem = font-size(1.5rem) * name's line-height(1.5) + padding-top(0.5rem) + padding-bottom(0.5rem)
   */
+  grid-template:
+    '. icon icon icon  .' calc(var(--size--modal-image) + 15px)
+    'description description description description description' 4.5rem
+    '. yes . no .' 3.25rem
+    / 1fr 5.5rem 1fr 5.5rem 1fr;
   left: 25vw;
+  min-width: 450px;
   padding: 1rem;
-  position: fixed;
+  position: absolute;
   top: 30vh;
   width: 50vw;
-  z-index: var(--modal--z-index);
+  z-index: var(--z-index--modal);
 
   &--button {
     border: none;
@@ -50,6 +49,7 @@
 
   &--description {
     align-items: center;
+    color: var(--color--font--modal);
     display: inline-flex;
     flex-wrap: wrap;
     font-size: 1.5rem;
@@ -85,6 +85,7 @@
     }
 
     &--name {
+      color: var(--color--font--modal);
       font-size: 10px;
       grid-area: name;
       line-height: 1.5;

@@ -53,9 +53,10 @@
     }
 
     &--send {
-      background: var(--color--primary);
+      background: var(--color--background--primary-button);
       border: none;
       border-radius: 5px;
+      color: var(--color--font--primary-button);
       cursor: pointer;
       font-size: 1rem;
       grid-area: send;
@@ -68,16 +69,16 @@
       }
 
       &:disabled {
-        background: var(--color--primary50);
+        background: var(--color--background--primary-button--disabled);
         cursor: not-allowed;
       }
 
       &:hover {
-        background: var(--color--primary75);
+        background: var(--color--background--primary-button--hover);
       }
 
       &:disabled:hover {
-        background: var(--color--primary50);
+        background: var(--color--background--primary-button--disabled);
       }
     }
 
@@ -173,10 +174,10 @@
 
     &--button {
       align-items: center;
-      background: lightgreen;
+      background: var(--color--background--primary-button);
       border: none;
       border-radius: 8px;
-      box-shadow: 2px 2px 1px 0 grey;
+      color: var(--color--font--primary-button);
       cursor: pointer;
       display: inline-flex;
       font-size: 1.5rem;
@@ -202,45 +203,39 @@
       }
 
       &.isLoading {
-        box-shadow: inset 2px 2px 1px 0 grey;
-        cursor: wait;
-        filter: brightness(50%);
+        background: var(--color--background--primary-button--disabled);
 
         & > .loader {
           height: 2.25rem;
+          position: absolute;
           width: 2.25rem;
         }
 
-        &:hover {
-          filter: brightness(50%);
-
-          &:active {
-            filter: brightness(50%);
-          }
+        &:disabled {
+          cursor: wait;
         }
+
+        &:hover {
+          background: var(--color--background--primary-button--disabled);
+        }
+      }
+
+      &:focus {
+        box-shadow: var(--box-shadow--focus-ring);
+        outline: none;
       }
 
       &:disabled {
-        box-shadow: inset 2px 2px 1px 0 grey;
+        background: var(--color--background--primary-button--disabled);
         cursor: not-allowed;
-        filter: brightness(50%);
-
-        &:hover {
-          filter: brightness(50%);
-
-          &:active {
-            filter: brightness(50%);
-          }
-        }
       }
 
       &:hover {
-        filter: opacity(85%);
+        background: var(--color--background--primary-button--hover);
+      }
 
-        &:active {
-          box-shadow: inset 2px 2px 1px 0 grey;
-          filter: brightness(85%);
-        }
+      &:disabled:hover {
+        background: var(--color--background--primary-button--disabled);
       }
     }
   }
