@@ -111,15 +111,15 @@
     --color--background--primary-button--hover: var(--color--primary40);
     --color--background: var(--color--neutral5);
     --color--background--body: var(--color--neutral0);
-    --color--background--modal: var(--color--neutral100);
+    --color--background--modal: var(--color--neutral0);
     --color--border: var(--color--neutral90);
-    --color--border--modal: var(--color--neutral10);
+    --color--border--modal: var(--color--neutral90);
     --color--dead: var(--color--danger);
     --color--font: var(--color--font--white);
     --color--font--dead: var(--color--font--black);
     --color--font--grave: var(--color--font--white);
     --color--font--image-initial: var(--color--font--white);
-    --color--font--modal: var(--color--font--black);
+    --color--font--modal: var(--color--font--white);
     --color--font--placeholder: var(--color--neutral50);
     --color--font--prediction--fill: var(--color--font--black);
     --color--font--primary-button: var(--color--font--white);
