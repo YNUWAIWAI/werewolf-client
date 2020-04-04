@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<ActivityContainer /> expand: false 1`] = `"<div class=\\"vi--activity \\"><div class=\\"vi--chat\\"></div></div>"`;
-
-exports[`<ActivityContainer /> expand: true 1`] = `"<div class=\\"vi--activity expand\\"><div class=\\"vi--chat\\"></div></div>"`;
