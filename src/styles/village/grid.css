@@ -6,7 +6,7 @@
     'command command' minmax(130px, 20vh)
     / minmax(450px, 50vw) minmax(450px, 50vw);
   height: 100vh;
-  min-height: 536px;
-  min-width: 900px;
+  min-height: var(--min-height--window);
+  min-width: var(--min-width--window);
   padding: 0 8px;
 }

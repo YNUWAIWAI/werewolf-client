@@ -1,7 +1,7 @@
 .vi--modal {
-  background: var(--color--background--modal);
+  background: var(--color--background);
+  border-radius: 8px;
   display: grid;
-  gap: 0.5rem 0;
 
   /*
     5.5rem = font-size(1.5rem) * 3 chars + padding-left(0.5rem) + padding-right(0.5rem)
@@ -10,12 +10,15 @@
     3.25rem = font-size(1.5rem) * name's line-height(1.5) + padding-top(0.5rem) + padding-bottom(0.5rem)
   */
   grid-template:
+    '. . . . .' 1fr
     '. icon icon icon  .' calc(var(--size--modal-image) + 15px)
-    'description description description description description' 4.5rem
+    'description description description description description' fit-content(4.5rem)
     '. yes . no .' 3.25rem
+    '. . . . .' 1fr
     / 1fr 5.5rem 1fr 5.5rem 1fr;
   left: 25vw;
-  min-width: 450px;
+  min-height: calc(var(--min-height--window) / 2);
+  min-width: calc(var(--min-width--window) / 2);
   padding: 1rem;
   position: absolute;
   top: 30vh;
@@ -23,27 +26,29 @@
   z-index: var(--z-index--modal);
 
   &--button {
+    background: var(--color--background--button);
     border: none;
+    border-radius: 8px;
+    color: var(--color--font--button);
     font-size: 1.5rem;
     line-height: 1.5;
     padding: 0.5rem;
 
     &.yes {
-      background: rgba(255, 0, 0, 0.5);
       grid-area: yes;
     }
 
     &.no {
-      background: rgba(0, 0, 255, 0.5);
       grid-area: no;
     }
 
-    &:hover {
-      filter: opacity(85%);
+    &:focus {
+      box-shadow: var(--box-shadow--focus-ring);
+      outline: none;
+    }
 
-      &:active {
-        filter: brightness(85%);
-      }
+    &:hover {
+      background: var(--color--background--button--hover);
     }
   }
 
@@ -55,6 +60,7 @@
     font-size: 1.5rem;
     grid-area: description;
     justify-content: center;
+    padding: 1rem;
     text-align: center;
   }
 

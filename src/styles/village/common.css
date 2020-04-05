@@ -1,4 +1,6 @@
 .vi {
+  --min-height--window: 536px;
+  --min-width--window: 900px;
 
   /* focus-ring */
   --box-shadow--focus-ring: 0 0 3px 2px var(--color--primary);

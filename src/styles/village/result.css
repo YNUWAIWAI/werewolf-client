@@ -8,7 +8,7 @@
   grid-template-rows: fit-content(100px);
   left: 5vw;
   max-height: 90vh;
-  min-width: 810px;
+  min-width: calc(var(--min-width--window) * 0.9);
   overflow: auto;
   position: absolute;
   top: 5vh;
