@@ -33,7 +33,9 @@ export default function CommandNavigation(props: Props) {
           >
             {
               item.isLoading ?
-                <Loader>{text}</Loader> :
+                <Loader>
+                  {text}
+                </Loader> :
                 text
             }
           </button>
