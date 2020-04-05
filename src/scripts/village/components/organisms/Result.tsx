@@ -9,7 +9,7 @@ import ResultCellRoleImage from '../atoms/ResultCellRoleImage'
 import ResultCellStatus from '../atoms/ResultCellStatus'
 import ResultCellSummary from '../atoms/ResultCellSummary'
 import ResultCellWinnerCaption from '../atoms/ResultCellWinnerCaption'
-import ResultClose from '../atoms/ResultClose'
+import ResultHeader from '../atoms/ResultHeader'
 import {village} from '../../types'
 
 export interface StateProps {
@@ -134,7 +134,10 @@ export default function Result(props: Props) {
       <div className="vi--result">
         {
           [
-            <ResultClose handleClick={props.handleClickCloseButton} key="close" />,
+            <ResultHeader
+              handleClick={props.handleClickCloseButton}
+              key="close"
+            />,
             <ResultCellSummary
               key="summary"
               myTeam={props.summary.myTeam}
