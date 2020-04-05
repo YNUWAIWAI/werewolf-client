@@ -5,11 +5,12 @@
   color: var(--color--font);
   display: grid;
   grid-template-columns: calc(var(--size--result-image) + 1.5rem + 2px) 1fr 1fr calc(var(--size--result-image) + 1.5rem + 2px) calc(5px + var(--size--result-image) + 1.5rem) 1fr;
-  grid-template-rows: 100px;
+  grid-template-rows: fit-content(100px);
   left: 5vw;
   max-height: 90vh;
+  min-width: 810px;
   overflow: auto;
-  position: fixed;
+  position: absolute;
   top: 5vh;
   width: 90vw;
   z-index: var(--z-index--result);
@@ -83,7 +84,7 @@
         margin: 0.5rem 0;
 
         &--image {
-          background: var(--color--border);
+          background: var(--color--background--team);
           display: block;
           height: var(--size--image);
           margin: 15px 20px 0;
@@ -112,8 +113,8 @@
     }
 
     &--avatarImage {
-      border: 1px solid var(--color--border--modal);
-      border-left: 4px double var(--color--border--modal);
+      border: 1px solid var(--color--border);
+      border-left: 4px double var(--color--border);
       display: grid;
       grid-template:
         '. . .' 1fr
@@ -130,7 +131,7 @@
     }
 
     &--image {
-      border: 1px solid var(--color--border--modal);
+      border: 1px solid var(--color--border);
       display: grid;
       grid-template:
         '. . . .' 1fr
@@ -144,7 +145,7 @@
         grid-area: image;
         height: var(--size--result-image);
         width: var(--size--result-image);
-        z-index: 1;
+        z-index: var(--z-index--result--character-image);
       }
 
       &--initial {
@@ -153,13 +154,13 @@
         grid-area: 2 / 3;
         line-height: 1.25;
         text-align: center;
-        z-index: 2;
+        z-index: var(--z-index--result--character-initial);
       }
     }
 
     &--avatarName {
       align-items: center;
-      border: 1px solid var(--color--border--modal);
+      border: 1px solid var(--color--border);
       display: flex;
       font-size: 2rem;
       height: 100%;
@@ -175,7 +176,7 @@
 
     &--name {
       align-items: center;
-      border: 1px solid var(--color--border--modal);
+      border: 1px solid var(--color--border);
       display: flex;
       font-size: 2rem;
       height: 100%;
@@ -190,7 +191,7 @@
     }
 
     &--roleImage {
-      border: 1px solid var(--color--border--modal);
+      border: 1px solid var(--color--border);
       border-right: none;
       display: grid;
       grid-template:
@@ -221,7 +222,7 @@
 
     &--status {
       align-items: center;
-      border: 1px solid var(--color--border--modal);
+      border: 1px solid var(--color--border);
       display: flex;
       font-size: 2rem;
       height: 100%;
@@ -236,38 +237,58 @@
     }
   }
 
-  &--close {
-    align-items: center;
-    cursor: pointer;
-    display: inline-flex;
-    filter: opacity(75%);
+  &--header {
+    background: var(--color--background);
+    border: 1px solid var(--color--border);
+    border-radius: 5px 5px 0 0;
+    grid-column: 1 / 7;
     height: 1.5rem;
-    justify-content: center;
-    left: 5vw;
-    position: fixed;
-    top: 5vh;
-    width: 1.5rem;
-    z-index: var(--result--close--z-index);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index--result--close);
 
-    & > .close {
-      height: 100%;
-      width: 100%;
+    &--close {
+      background: var(--color--background);
+      border: none;
+      line-height: 0;
+      padding: 0;
 
-      & > .close--circle {
-        fill: white;
+      & > .close {
+        cursor: pointer;
+        height: 1.5rem;
+        width: 1.5rem;
+
+        & > .close--circle {
+          fill: var(--color--background--close-button);
+        }
+
+        & > .close--path {
+          fill: var(--color--line--close-button);
+        }
+
+        &:hover {
+          & > .close--circle {
+            fill: var(--color--background--close-button--hover);
+          }
+
+          & > .close--path {
+            fill: var(--color--line--close-button--hover);
+          }
+        }
       }
 
-      & > .close--path {
-        fill: black;
-      }
-    }
+      &:focus {
+        outline: none;
 
+        & > .close {
+          & > .close--circle {
+            fill: var(--color--background--close-button--hover);
+          }
 
-    &:hover {
-      filter: opacity(100%);
-
-      &:active {
-        filter: opacity(50%);
+          & > .close--path {
+            fill: var(--color--line--close-button--hover);
+          }
+        }
       }
     }
   }

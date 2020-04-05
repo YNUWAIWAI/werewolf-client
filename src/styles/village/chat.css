@@ -2,7 +2,7 @@
   background: var(--color--background--body);
   grid-area: chat;
   overflow: auto;
-  padding: 0 1vw var(--hide-button-height);
+  padding: 0 8px var(--height--hide-button) 8px;
   scroll-behavior: smooth;
 
   &--arrow-box {

@@ -17,7 +17,7 @@
   }
 
   &--character {
-    background: var(--color--background);
+    background: var(--color--background--body);
     border: solid 1px var(--color--border);
     box-sizing: border-box;
     display: grid;
@@ -71,7 +71,7 @@
 
   &--help {
     align-items: center;
-    background: var(--color--background);
+    background: var(--color--background--body);
     border: solid 1px var(--color--border);
     box-sizing: border-box;
     display: flex;
@@ -168,7 +168,7 @@
   }
 
   &--role {
-    background: var(--color--background);
+    background: var(--color--background--body);
     border: solid 1px var(--color--border);
     box-sizing: border-box;
     display: grid;
