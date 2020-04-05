@@ -11,6 +11,7 @@
   --color--neutral0: hsl(0, 0%, 100%);
   --color--neutral5: hsl(0, 0%, 95%);
   --color--neutral10: hsl(0, 0%, 90%);
+  --color--neutral15: hsl(0, 0%, 85%);
   --color--neutral20: hsl(0, 0%, 80%);
   --color--neutral25: hsl(0, 0%, 75%);
   --color--neutral30: hsl(0, 0%, 70%);
@@ -44,6 +45,9 @@
   --color--background--primary-button: var(--color--primary60);
   --color--background--primary-button--disabled: var(--color--primary20);
   --color--background--primary-button--hover: var(--color--primary40);
+  --color--background--suggest: var(--color--background);
+  --color--background--suggest--hover: var(--color--primary80);
+  --color--background--suggest--selected: var(--color--primary60);
   --color--background: var(--color--neutral0);
   --color--background--body: var(--color--neutral5);
   --color--border: var(--color--neutral90);
@@ -62,6 +66,9 @@
   --color--font--private: var(--color--font--black);
   --color--font--public: var(--color--font--black);
   --color--font--silent: var(--color--font--black);
+  --color--font--suggest: var(--color--font--black);
+  --color--font--suggest--hover: var(--color--font--black);
+  --color--font--suggest--selected: var(--color--font--black);
   --color--font--werewolf: var(--color--font--black);
   --color--line--close-button: var(--color--border);
   --color--line--close-button--hover: var(--color--neutral70);
@@ -70,4 +77,6 @@
   --color--prediction--fill: var(--color--neutral90);
   --color--prediction--question: var(--color--neutral90);
   --color--prediction--triangle: var(--color--danger);
+  --color--star--marked: rgb(255, 235, 59);
+  --color--star--unmarked: rgb(158, 158, 158);
 }

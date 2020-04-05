@@ -11,6 +11,7 @@
   --color--neutral0: hsl(0, 0%, 0%);
   --color--neutral5: hsl(0, 0%, 5%);
   --color--neutral10: hsl(0, 0%, 10%);
+  --color--neutral15: hsl(0, 0%, 15%);
   --color--neutral20: hsl(0, 0%, 20%);
   --color--neutral25: hsl(0, 0%, 25%);
   --color--neutral30: hsl(0, 0%, 30%);
@@ -37,13 +38,16 @@
   /* stylelint-enable color-named */
   /* ailias */
   --color--background--button: var(--color--neutral25);
-  --color--background--button--disabled: var(--color--neutral10);
+  --color--background--button--disabled: var(--color--neutral15);
   --color--background--button--hover: var(--color--neutral40);
   --color--background--close-button: var(--color--background);
   --color--background--close-button--hover: var(--color--neutral30);
   --color--background--primary-button: var(--color--primary50);
   --color--background--primary-button--disabled: var(--color--primary20);
   --color--background--primary-button--hover: var(--color--primary40);
+  --color--background--suggest: var(--color--background);
+  --color--background--suggest--hover: var(--color--primary80);
+  --color--background--suggest--selected: var(--color--primary60);
   --color--background: var(--color--neutral10);
   --color--background--body: var(--color--neutral0);
   --color--border: var(--color--neutral90);
@@ -62,6 +66,9 @@
   --color--font--private: var(--color--font--white);
   --color--font--public: var(--color--font--white);
   --color--font--silent: var(--color--font--black);
+  --color--font--suggest: var(--color--font--white);
+  --color--font--suggest--hover: var(--color--font--white);
+  --color--font--suggest--selected: var(--color--font--white);
   --color--font--werewolf: var(--color--font--white);
   --color--line--close-button: var(--color--border);
   --color--line--close-button--hover: var(--color--neutral70);
@@ -70,4 +77,6 @@
   --color--prediction--fill: var(--color--neutral90);
   --color--prediction--question: var(--color--neutral90);
   --color--prediction--triangle: var(--color--danger);
+  --color--star--marked: rgb(255, 235, 59);
+  --color--star--unmarked: rgb(158, 158, 158);
 }
