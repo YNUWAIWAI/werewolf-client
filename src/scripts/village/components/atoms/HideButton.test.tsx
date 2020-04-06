@@ -9,6 +9,7 @@ describe('<HideButton />', () => {
       <HideButton
         handleClick={handleClick}
         hide
+        navigatable
       />
     )
 
@@ -21,6 +22,7 @@ describe('<HideButton />', () => {
       <HideButton
         handleClick={handleClick}
         hide={false}
+        navigatable
       />
     )
 
@@ -34,6 +36,7 @@ describe('<HideButton />', () => {
         <HideButton
           handleClick={handleClick}
           hide
+          navigatable
         />
       )
 
@@ -47,6 +50,7 @@ describe('<HideButton />', () => {
         <HideButton
           handleClick={handleClick}
           hide={false}
+          navigatable
         />
       )
 

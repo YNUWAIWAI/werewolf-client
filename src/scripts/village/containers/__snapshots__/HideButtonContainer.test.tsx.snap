@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HideButtonContainer /> render 1`] = `"<div class=\\"vi--hide-button\\"><button class=\\"vi--hide-button--button hide\\"><svg class=\\"down-arrow\\" fill=\\"#000\\" viewBox=\\"0 0 100 50\\" xmlns=\\"http://www.w3.org/2000/svg\\" xmlns:xlink=\\"http://www.w3.org/1999/xlink\\"><polygon points=\\"30,18.34 70,18.34 50,38.33\\"></polygon></svg></button></div>"`;
+exports[`<HideButtonContainer /> render 1`] = `"<div class=\\"vi--hide-button\\"><button class=\\"vi--hide-button--button hide\\" tabindex=\\"-1\\"><svg class=\\"down-arrow\\" fill=\\"#000\\" viewBox=\\"0 0 100 50\\" xmlns=\\"http://www.w3.org/2000/svg\\" xmlns:xlink=\\"http://www.w3.org/1999/xlink\\"><polygon points=\\"30,18.34 70,18.34 50,38.33\\"></polygon></svg></button></div>"`;
