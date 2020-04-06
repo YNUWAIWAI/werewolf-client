@@ -12,15 +12,25 @@
       'input input input input input' auto
       'input input input input input' fit-content(2rem)
       '. . . . .' 10px
-      'icon . counter send send' 2.25rem
-      / 2.25rem auto fit-content(4rem) auto fit-content(1rem);
+      'icon . counter send .' 2.25rem
+      / 2.25rem auto fit-content(4rem) 8rem fit-content(2rem);
     height: 100%;
     width: 30vw;
+
+    &::before {
+      content: '111';
+      font-size: 1rem;
+      grid-area: 2 / 5;
+      padding: 0 0.5rem 0.5rem 0;
+      text-align: right;
+      visibility: hidden;
+    }
 
     &--char {
       font-size: 1rem;
       grid-area: 2 / 5;
       padding: 0 0.5rem 0.5rem 0;
+      text-align: right;
       user-select: none;
       z-index: var(--z-index--command--input--char);
 
@@ -30,12 +40,10 @@
     }
 
     &--counter {
-      align-items: center;
-      display: inline-flex;
       font-size: 1.5rem;
       grid-area: counter;
-      justify-content: flex-end;
       padding: 0 0.5rem 0 0;
+      text-align: right;
     }
 
     &--icon {
@@ -60,7 +68,6 @@
       cursor: pointer;
       font-size: 1rem;
       grid-area: send;
-      margin: 0 0.5rem 0 0;
       padding: 0 1rem;
 
       &:focus {
@@ -165,6 +172,10 @@
       &::placeholder {
         color: var(--color--font--placeholder);
       }
+    }
+
+    @media (max-width: 900px) {
+      width: calc(var(--min-width--window) * 0.3);
     }
   }
 
