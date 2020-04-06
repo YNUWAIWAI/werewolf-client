@@ -3,8 +3,8 @@
   gap: 0;
   grid-area: info;
   grid-template-areas: 'day property-character character property-role role property-team team';
-  grid-template-columns: minmax(405px, 3fr) minmax(135px, 1fr) calc(var(--size--image) + 40px) minmax(135px, 1fr) calc(var(--size--image) + 40px) minmax(135px, 1fr) calc(var(--size--image) + 40px);
-  height: 100%;
+  grid-template-columns: minmax(330px, 33fr) minmax(100px, 10fr) calc(var(--size--image) + 40px) minmax(100px, 10fr) calc(var(--size--image) + 40px) minmax(100px, 10fr) calc(var(--size--image) + 40px);
+  padding: 8px;
 
   &--character {
     animation: fadein 0.5s ease-out;
@@ -32,6 +32,7 @@
       grid-area: 3 / 3;
       line-height: 1.25;
       text-align: center;
+      user-select: none;
       z-index: 2;
     }
 
@@ -133,6 +134,7 @@
       / 1fr var(--size--image) 1fr;
 
     &--image {
+      background: var(--color--background--team);
       display: block;
       grid-area: image;
       height: var(--size--image);

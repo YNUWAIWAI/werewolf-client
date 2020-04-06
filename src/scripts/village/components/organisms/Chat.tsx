@@ -24,6 +24,7 @@ export interface StateProps {
       readonly type: village.ChatItemType.delimeter
     }
   }
+  readonly expand: boolean
 }
 export interface DispatchProps {
   readonly handleStar: (id: village.ChatId) => (isMarked: boolean) => void
@@ -80,7 +81,7 @@ export default class Chat extends React.Component<Props, State> {
   public render() {
     return (
       <div
-        className="vi--chat"
+        className={`vi--chat ${this.props.expand ? 'expand' : ''}`}
         onScroll={() => this.handleScroll()}
         ref={this.chat}
       >

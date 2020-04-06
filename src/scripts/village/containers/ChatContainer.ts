@@ -49,7 +49,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
 
   return {
     allIds: state.chat.allIds,
-    byId
+    byId,
+    expand: state.hideButton.hide
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({

@@ -1,7 +1,7 @@
-@import './activity';
 @import './background';
 @import './chat';
 @import './command';
+@import './common';
 @import './grid';
 @import './hideButton';
 @import './info';
@@ -11,4 +11,5 @@
 @import './obfucator';
 @import './prediction';
 @import './result';
-@import './theme';
+@import './theme/dark';
+@import './theme/light';

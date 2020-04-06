@@ -1,11 +1,11 @@
 import * as React from 'react'
-import ResultClose from './ResultClose'
+import ResultHeader from './ResultHeader'
 import {shallow} from 'enzyme'
 
-test('<ResultClose class="class" text="text" />', () => {
+test('ResultHeader', () => {
   const handleClick = jest.fn()
   const wrapper = shallow(
-    <ResultClose
+    <ResultHeader
       handleClick={handleClick}
     />
   )

@@ -9,33 +9,42 @@ const r = 18
 const stokeWidth = 2
 const width = (r * 2) + stokeWidth // === height
 
-export default function Loader(props: Props) {
+export default function Loader(props: React.PropsWithChildren<Props>) {
   return (
-    <svg
-      className={`${props.className || ''} loader`}
-      stroke="#000"
-      viewBox={`0 0 ${width} ${width}`}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        fill="none"
-        fillRule="evenodd"
+    <>
+      <svg
+        className={`${props.className || ''} loader`}
+        stroke="#000"
+        viewBox={`0 0 ${width} ${width}`}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <g
-          strokeWidth={stokeWidth}
+          fill="none"
+          fillRule="evenodd"
         >
-          <circle
-            cx={width / 2}
-            cy={width / 2}
-            r={r}
-            strokeOpacity=".5"
-          />
-          <path
-            className="loader animation"
-            d={`M${width - (stokeWidth / 2)} ${width / 2} C${width - (stokeWidth / 2)} ${(width / 2) - (r * k)}, ${(width / 2) + (r * k)} ${0 + (stokeWidth / 2)}, ${width / 2} ${0 + (stokeWidth / 2)}`}
-          />
+          <g
+            strokeWidth={stokeWidth}
+          >
+            <circle
+              cx={width / 2}
+              cy={width / 2}
+              r={r}
+              strokeOpacity=".5"
+            />
+            <path
+              className="loader animation"
+              d={`M${width - (stokeWidth / 2)} ${width / 2} C${width - (stokeWidth / 2)} ${(width / 2) - (r * k)}, ${(width / 2) + (r * k)} ${0 + (stokeWidth / 2)}, ${width / 2} ${0 + (stokeWidth / 2)}`}
+            />
+          </g>
         </g>
-      </g>
-    </svg>
+      </svg>
+      <span
+        style={{
+          visibility: 'hidden'
+        }}
+      >
+        {props.children}
+      </span>
+    </>
   )
 }

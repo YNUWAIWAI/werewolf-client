@@ -16,6 +16,7 @@ export interface StateProps {
     readonly name: string
     readonly status: village.CharacterStatus
   }[]
+  readonly expand: boolean
   readonly roleStatus: {
     readonly id: village.RoleId
     readonly image: string
@@ -49,7 +50,7 @@ export interface Props extends StateProps, DispatchProps {}
 
 export default function Prediction(props: Props) {
   if (props.characterStatus.length === 0 || props.roleStatus.length === 0) {
-    return null
+    return <div className={`vi--prediction ${props.expand ? 'expand' : ''}`} />
   }
   const predictionTable = [
     <PredictionHelp
@@ -90,9 +91,11 @@ export default function Prediction(props: Props) {
   ]
 
   return (
-    <>
+    <div
+      className={`vi--prediction ${props.expand ? 'expand' : ''}`}
+    >
       <div
-        className="vi--prediction"
+        className="vi--prediction--container"
         style={{
           grid: `repeat(${1 + props.characterStatus.length}, minmax(72px, min-content)) / repeat(${1 + props.roleStatus.length}, minmax(72px, min-content))`
         }}
@@ -108,6 +111,6 @@ export default function Prediction(props: Props) {
         } as React.CSSProperties}
         visible={props.spec.visible}
       />
-    </>
+    </div>
   )
 }

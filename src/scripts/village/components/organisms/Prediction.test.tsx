@@ -25,6 +25,7 @@ describe('<Prediction />', () => {
     const wrapper = shallow(
       <Prediction
         characterStatus={characterStatus}
+        expand={false}
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
@@ -233,6 +234,7 @@ describe('<Prediction />', () => {
     const wrapper = shallow(
       <Prediction
         characterStatus={characterStatus}
+        expand={false}
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}

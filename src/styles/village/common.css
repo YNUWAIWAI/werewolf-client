@@ -1,0 +1,82 @@
+.vi {
+  --min-height--window: 536px;
+  --min-width--window: 900px;
+
+  /* focus-ring */
+  --box-shadow--focus-ring: 0 0 3px 2px var(--color--primary);
+
+  /* font-color */
+  --color--font--black: hsl(0, 0%, 10%);
+  --color--font--gray: hsl(0, 0%, 50%);
+  --color--font--white: hsl(0, 0%, 90%);
+
+  /* font-size */
+  --font-size--image-initial: 16px;
+  --font-size--image-name: 10px;
+  --font-size--image-times: 12px;
+  --font-size--image-number: 16px;
+
+  /* image-size */
+  --size--image: 50px;
+  --size--image--L: 120px;
+  --size--image-initial: 20px;
+  --size--image-initial--L: 20px;
+  --size--image-name: 15px;
+  --size--image-name--L: 15px;
+  --size--image: 50px;
+  --size--result-image: 50px;
+  --size--vote-image: 50px;
+  --size--modal-image: 50px;
+  --size--image-initial: 20px;
+
+  /* arrow */
+  --arrow: 20px;
+  --arrow--border: calc(var(--arrow) + 2px);
+
+  /* team-icon */
+  --color--background--team: white;
+  --color--team--villager: rgb(17, 95, 57);
+  --color--team--werehamster: rgb(127, 77, 39);
+  --color--team--werewolf: rgb(147, 39, 143);
+
+  /* hide-button */
+  --height--hide-button: 24px;
+  --width--hide-button: 48px;
+
+  /* obfucator */
+  --color--obfucator: rgba(0, 0, 0, 0.8);
+
+  /* z-index */
+  --z-index--background: -1;
+  --z-index--command: 2;
+  --z-index--command--input--char: 2;
+  --z-index--command--input--suggest--list: 3;
+  --z-index--command--input--textarea: 2;
+  --z-index--hide-button: 1;
+  --z-index--modal: 9;
+  --z-index--obfucator: 6;
+  --z-index--prediction--character: 2;
+  --z-index--prediction--help: 5;
+  --z-index--prediction--item: 0;
+  --z-index--prediction--spec: 3;
+  --z-index--prediction--role: 4;
+  --z-index--prediction--role--image: 0;
+  --z-index--prediction--role--times: 1;
+  --z-index--prediction--role--number: 1;
+  --z-index--result: 7;
+  --z-index--result--close: 10;
+  --z-index--result--character-image: 8;
+  --z-index--result--character-initial: 9;
+
+  /* properties */
+  color: var(--color--font);
+  font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+
+  @media (max-width: 1200px) {
+    --size--image--L: 100px;
+  }
+
+  @media (max-width: 900px) {
+    --size--image--L: 80px;
+  }
+}

@@ -24,7 +24,7 @@ export default function CommandNavigation(props: Props) {
         text => (
           <button
             className={`vi--command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
-            disabled={item.disabled}
+            disabled={item.disabled || item.isLoading}
             onClick={() => {
               if (!item.disabled && !item.isLoading) {
                 props.handleClick(item.type)
@@ -33,7 +33,9 @@ export default function CommandNavigation(props: Props) {
           >
             {
               item.isLoading ?
-                <Loader /> :
+                <Loader>
+                  {text}
+                </Loader> :
                 text
             }
           </button>

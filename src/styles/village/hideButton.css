@@ -1,21 +1,27 @@
 .vi--hide-button {
   grid-area: command;
   position: relative;
-  z-index: var(--hide-button--z-index);
+  z-index: var(--z-index--hide-button);
 
   &--button {
     background: rgb(48, 48, 48);
     border: 0;
     border-radius: 4px;
-    height: var(--hide-button-height);
+    height: var(--height--hide-button);
     left: 0;
     padding: 0;
     position: absolute;
-    top: -24px;
-    width: 48px;
+    top: calc(-1 * var(--height--hide-button));
+    width: var(--width--hide-button);
+
+    & > svg {
+      fill: white;
+      width: 100%;
+    }
 
     &:focus {
-      outline: unset;
+      box-shadow: var(--box-shadow--focus-ring);
+      outline: none;
     }
 
     &.hide {
@@ -25,11 +31,6 @@
       & > svg {
         transform: rotate(0.5turn);
       }
-    }
-
-    & > svg {
-      fill: white;
-      width: 100%;
     }
   }
 }
