@@ -1,12 +1,17 @@
 import * as React from 'react'
 import Help from './svg/Help'
 
-export default function PredictionHelp() {
+interface Props {
+  navigatable: boolean
+}
+
+export default function PredictionHelp(props: Props) {
   return (
     <a
       className="vi--prediction--help"
-      href="how-to-play"
+      href="https://werewolfguide.netlify.com/docs/en/introduction"
       rel="noreferrer noopener"
+      tabIndex={props.navigatable ? 0 : -1}
       target="_blank"
     >
       <Help />

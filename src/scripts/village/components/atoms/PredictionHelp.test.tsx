@@ -4,7 +4,7 @@ import {shallow} from 'enzyme'
 
 test('render', () => {
   const wrapper = shallow(
-    <PredictionHelp />
+    <PredictionHelp navigatable />
   )
 
   expect(wrapper.isEmptyRender()).toBe(false)
