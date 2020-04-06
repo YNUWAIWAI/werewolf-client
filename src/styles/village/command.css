@@ -9,18 +9,18 @@
   &--input {
     display: grid;
     grid-template:
-      'input input input input input' auto
-      'input input input input input' fit-content(2rem)
-      '. . . . .' 10px
-      'icon . counter send .' 2.25rem
-      / 2.25rem auto fit-content(4rem) 8rem fit-content(2rem);
+      'input input input input' auto
+      'input input input input' fit-content(2rem)
+      '. . . .' 10px
+      'icon counter send .' 2.25rem
+      / 2.25rem auto 8rem fit-content(2rem);
     height: 100%;
     width: 30vw;
 
     &::before {
       content: '111';
       font-size: 1rem;
-      grid-area: 2 / 5;
+      grid-area: 2 / 4;
       padding: 0 0.5rem 0.5rem 0;
       text-align: right;
       visibility: hidden;
@@ -28,7 +28,7 @@
 
     &--char {
       font-size: 1rem;
-      grid-area: 2 / 5;
+      grid-area: 2 / 4;
       padding: 0 0.5rem 0.5rem 0;
       text-align: right;
       user-select: none;
