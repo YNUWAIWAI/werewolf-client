@@ -2,11 +2,11 @@
 
   /* stylelint-disable color-named */
   --color--background--grave: rgb(0, 0, 77);
-  --color--background--master: rgb(0, 102, 0);
+  --color--background--master: rgb(0, 82, 0);
   --color--background--private: rgb(38, 38, 38);
   --color--background--public: rgb(102, 66, 0);
   --color--background--silent: rgb(204, 172, 0);
-  --color--background--werewolf: rgb(102, 0, 0);
+  --color--background--werewolf: rgb(80, 0, 0);
   --color--danger: rgb(239, 83, 80);
   --color--neutral0: hsl(0, 0%, 0%);
   --color--neutral5: hsl(0, 0%, 5%);

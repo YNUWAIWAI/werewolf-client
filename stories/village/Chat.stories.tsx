@@ -659,3 +659,155 @@ storiesOf('village|Chat', module)
 
     return story
   })
+  .add('all', () => {
+    const allIds = ['chat0', 'chat1', 'chat2', 'chat3', 'chat4', 'chat5', 'chat6', 'chat7', 'chat8']
+    const byId: Props['byId'] = {
+      'chat0': {
+        id: 1,
+        image: ImagePath.Character120x120.a,
+        initial: 'A',
+        intensionalDisclosureRange: village.Channel.anonymousAudience,
+        isMarked: false,
+        isMine: true,
+        name: 'Adil',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:20.000Z',
+        text: 'anonymousAudience',
+        type: village.ChatItemType.item
+      },
+      'chat1': {
+        id: 2,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.grave,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'grave',
+        type: village.ChatItemType.item
+      },
+      'chat2': {
+        id: 3,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.hunter,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'hunter',
+        type: village.ChatItemType.item
+      },
+      'chat3': {
+        id: 4,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.master,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'master',
+        type: village.ChatItemType.item
+      },
+      'chat4': {
+        id: 5,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.onymousAudience,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'onymousAudience',
+        type: village.ChatItemType.item
+      },
+      'chat5': {
+        id: 6,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.private,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'private',
+        type: village.ChatItemType.item
+      },
+      'chat6': {
+        id: 7,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.public,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'public',
+        type: village.ChatItemType.item
+      },
+      'chat7': {
+        id: 8,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.seer,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'seer',
+        type: village.ChatItemType.item
+      },
+      'chat8': {
+        id: 9,
+        image: ImagePath.Character120x120.i,
+        initial: 'I',
+        intensionalDisclosureRange: village.Channel.werewolf,
+        isMarked: true,
+        isMine: false,
+        name: 'Ileanna',
+        phaseStartTime: '2018-01-01T00:00:00.000Z',
+        phaseTimeLimit: 50,
+        serverTimestamp: '2018-01-01T00:00:10.000Z',
+        text: 'werewolf',
+        type: village.ChatItemType.item
+      }
+    }
+    const store = createStore(
+      reducer,
+      {
+        language: radios(language.label, language.options, language.defaultValue)
+      }
+    )
+    const story =
+      <Provider store={store}>
+        <IntlProvider>
+          <div className="vi--grid">
+            <Chat
+              allIds={allIds}
+              byId={byId}
+              expand={false}
+              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+            />
+          </div>
+        </IntlProvider>
+      </Provider>
+
+    return story
+  })

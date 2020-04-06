@@ -173,6 +173,17 @@
       }
     }
 
+    &.private {
+      & > .vi--chat--arrow-box {
+        background: var(--color--background--private);
+
+        &::after {
+          border-left-color: transparent;
+          border-right-color: var(--color--background--private);
+        }
+      }
+    }
+
     &.me {
       & > .vi--chat--arrow-box::after {
         border-left-color: var(--color--background--public);
@@ -209,17 +220,6 @@
           left: unset;
           right: 0;
           transform: scale(-1, 1);
-        }
-      }
-    }
-
-    &.private {
-      & > .vi--chat--arrow-box {
-        background: var(--color--background--private);
-
-        &::after {
-          border-left-color: transparent;
-          border-right-color: var(--color--background--private);
         }
       }
     }
