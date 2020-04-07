@@ -3,7 +3,7 @@ import {idGenerator} from '../../util'
 
 const getChunkId = idGenerator()
 
-const parseChat = (text: string) => text
+const parseChat = (text: string, navigatable: boolean) => text
   .split(/(?:\n|\r)+/)
   .map(chunk => {
     const parsedText = chunk
@@ -15,7 +15,11 @@ const parseChat = (text: string) => text
           const id = match.groups.id
 
           return (
-            <a href={`#message${id}`} key={`#message${id}`}>
+            <a
+              href={`#message${id}`}
+              key={`#message${id}`}
+              tabIndex={navigatable ? 0 : -1}
+            >
               {`>>${id}`}
             </a>
           )
@@ -34,14 +38,18 @@ const parseChat = (text: string) => text
     )
   })
 
-interface Props {
+export interface StateProps {
+  readonly navigatable: boolean
+}
+interface OwnProps {
   readonly text: string
 }
+type Props = StateProps & OwnProps
 
 export default function ChatItem(props: Props) {
   return (
     <div className="vi--chat--text">
-      {parseChat(props.text)}
+      {parseChat(props.text, props.navigatable)}
     </div>
   )
 }

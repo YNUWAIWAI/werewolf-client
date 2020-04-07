@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChatText /> navigatable false 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\"><a href=\\"#message1\\" tabindex=\\"-1\\">&gt;&gt;1</a> text</p></div>"`;
+
+exports[`<ChatText /> navigatable true 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\"><a href=\\"#message1\\" tabindex=\\"0\\">&gt;&gt;1</a> text</p></div>"`;
+
+exports[`<ChatText /> text >>1 >>2 >>3 text 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\"><a href=\\"#message1\\" tabindex=\\"0\\">&gt;&gt;1</a> <a href=\\"#message2\\" tabindex=\\"0\\">&gt;&gt;2</a> <a href=\\"#message3\\" tabindex=\\"0\\">&gt;&gt;3</a> text</p></div>"`;
+
+exports[`<ChatText /> text >>1 text 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\"><a href=\\"#message1\\" tabindex=\\"0\\">&gt;&gt;1</a> text</p></div>"`;
+
+exports[`<ChatText /> text >>1text 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\"><a href=\\"#message1\\" tabindex=\\"0\\">&gt;&gt;1</a>text</p></div>"`;
+
+exports[`<ChatText /> text >>n text 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">&gt;&gt;n text</p></div>"`;
+
+exports[`<ChatText /> text text 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div>"`;
+
+exports[`<ChatText /> text text>>>1\\ntext 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text<a href=\\"#message1\\" tabindex=\\"0\\">&gt;&gt;1</a></p><p class=\\"vi--chat--text--chunk\\">text</p></div>"`;
+
+exports[`<ChatText /> text text\\n\\r\\ntext 1`] = `"<div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p><p class=\\"vi--chat--text--chunk\\">text</p></div>"`;
