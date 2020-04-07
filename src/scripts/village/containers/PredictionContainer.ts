@@ -51,6 +51,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
     }
   }),
   expand: state.hideButton.hide,
+  navigatable: !state.obfucator.visible,
   roleStatus: state.prediction.roleStatus.allIds.map(roleId => {
     const role = state.prediction.roleStatus.byId[roleId]
 

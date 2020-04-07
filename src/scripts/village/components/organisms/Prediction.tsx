@@ -17,6 +17,7 @@ export interface StateProps {
     readonly status: village.CharacterStatus
   }[]
   readonly expand: boolean
+  readonly navigatable: boolean
   readonly roleStatus: {
     readonly id: village.RoleId
     readonly image: string
@@ -55,6 +56,7 @@ export default function Prediction(props: Props) {
   const predictionTable = [
     <PredictionHelp
       key="help"
+      navigatable={props.navigatable}
     />,
     ... props.roleStatus.map(role => (
       <PredictionRole
