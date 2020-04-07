@@ -17,6 +17,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -38,6 +39,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -59,6 +61,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -80,6 +83,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -101,6 +105,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -123,6 +128,7 @@ describe('<CommandInput />', () => {
         language={village.Language.en}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         numberOfChatMessages={0}
         suggestedData={[]}
       />
@@ -144,6 +150,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -179,6 +186,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -215,6 +223,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -251,6 +260,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -289,6 +299,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -326,6 +337,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -363,6 +375,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -412,6 +425,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={suggestedData}
             />
@@ -448,6 +462,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -484,6 +499,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -547,6 +563,7 @@ describe('<CommandInput />', () => {
                 language={village.Language.en}
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
+                navigatable
                 numberOfChatMessages={0}
                 suggestedData={suggestedData}
               />
@@ -582,6 +599,7 @@ describe('<CommandInput />', () => {
                 language={village.Language.en}
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
+                navigatable
                 numberOfChatMessages={0}
                 suggestedData={suggestedData}
               />
@@ -617,6 +635,7 @@ describe('<CommandInput />', () => {
                 language={village.Language.en}
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
+                navigatable
                 numberOfChatMessages={0}
                 suggestedData={suggestedData}
               />
@@ -679,6 +698,7 @@ describe('<CommandInput />', () => {
                 language={village.Language.en}
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
+                navigatable
                 numberOfChatMessages={0}
                 suggestedData={suggestedData}
               />
@@ -741,6 +761,7 @@ describe('<CommandInput />', () => {
                 language={village.Language.en}
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
+                navigatable
                 numberOfChatMessages={0}
                 suggestedData={suggestedData}
               />
@@ -777,6 +798,7 @@ describe('<CommandInput />', () => {
                 language={village.Language.en}
                 maxLengthOfUnicodeCodePoints={140}
                 maxNumberOfChatMessages={10}
+                navigatable
                 numberOfChatMessages={0}
                 suggestedData={suggestedData}
               />
@@ -826,6 +848,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={0}
             suggestedData={suggestedData}
           />
@@ -861,6 +884,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -897,6 +921,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={10}
           suggestedData={[]}
         />
@@ -933,6 +958,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -969,6 +995,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={10}
           suggestedData={[]}
         />
@@ -1005,6 +1032,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -1034,6 +1062,7 @@ describe('<CommandInput />', () => {
         language={village.Language.en}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         numberOfChatMessages={0}
         suggestedData={[]}
       />
@@ -1074,6 +1103,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -1110,6 +1140,7 @@ describe('<CommandInput />', () => {
               language={village.Language.en}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={0}
               suggestedData={[]}
             />
@@ -1147,6 +1178,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={0}
             suggestedData={[]}
           />
@@ -1183,6 +1215,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={0}
             suggestedData={[]}
           />
@@ -1327,6 +1360,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={0}
             suggestedData={suggestedData}
           />
@@ -1383,6 +1417,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={0}
             suggestedData={suggestedData}
           />
@@ -1440,6 +1475,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -1474,6 +1510,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1491,6 +1528,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={0}
             suggestedData={[]}
           />
@@ -1507,6 +1545,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={10}
             suggestedData={[]}
           />
@@ -1523,6 +1562,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={11}
             suggestedData={[]}
           />
@@ -1540,6 +1580,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1556,6 +1597,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1573,6 +1615,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={0}
             suggestedData={[]}
           />
@@ -1589,6 +1632,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={10}
             suggestedData={[]}
           />
@@ -1605,6 +1649,7 @@ describe('<CommandInput />', () => {
             language={village.Language.en}
             maxLengthOfUnicodeCodePoints={140}
             maxNumberOfChatMessages={10}
+            navigatable
             numberOfChatMessages={11}
             suggestedData={[]}
           />
@@ -1624,6 +1669,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1643,6 +1689,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1662,6 +1709,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1681,6 +1729,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1700,6 +1749,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1719,6 +1769,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={-1}
+          navigatable
           numberOfChatMessages={-1}
           suggestedData={[]}
         />
@@ -1739,6 +1790,7 @@ describe('<CommandInput />', () => {
         language={village.Language.en}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         numberOfChatMessages={0}
         suggestedData={[]}
       />
@@ -1757,6 +1809,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -1774,6 +1827,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -1791,6 +1845,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -1810,6 +1865,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -1829,6 +1885,7 @@ describe('<CommandInput />', () => {
           language={village.Language.en}
           maxLengthOfUnicodeCodePoints={140}
           maxNumberOfChatMessages={10}
+          navigatable
           numberOfChatMessages={0}
           suggestedData={[]}
         />
@@ -1849,6 +1906,7 @@ describe('<CommandInput />', () => {
         language={village.Language.en}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         numberOfChatMessages={0}
         suggestedData={[]}
       />
@@ -1866,6 +1924,7 @@ describe('<CommandInput />', () => {
         language={village.Language.en}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         numberOfChatMessages={0}
         suggestedData={[]}
       />

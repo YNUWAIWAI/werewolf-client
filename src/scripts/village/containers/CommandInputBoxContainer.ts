@@ -18,6 +18,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   language: state.language,
   maxLengthOfUnicodeCodePoints: state.base.village.chatSettings.maxLengthOfUnicodeCodePoints,
   maxNumberOfChatMessages: state.base.village.chatSettings.maxNumberOfChatMessages,
+  navigatable: !state.obfucator.visible,
   suggestedData: state.suggest.data
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({

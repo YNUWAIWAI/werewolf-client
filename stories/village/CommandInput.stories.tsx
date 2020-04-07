@@ -141,6 +141,7 @@ storiesOf('village|Command/CommandInput', module)
               language={value}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={-1}
+              navigatable
               numberOfChatMessages={-1}
               suggestedData={suggestedData}
             />
@@ -177,6 +178,7 @@ storiesOf('village|Command/CommandInput', module)
               language={value}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={postCount}
               suggestedData={suggestedData}
             />
@@ -207,6 +209,7 @@ storiesOf('village|Command/CommandInput', module)
               language={value}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={-1}
+              navigatable
               numberOfChatMessages={-1}
               suggestedData={suggestedData}
             />
@@ -243,6 +246,7 @@ storiesOf('village|Command/CommandInput', module)
               language={value}
               maxLengthOfUnicodeCodePoints={140}
               maxNumberOfChatMessages={10}
+              navigatable
               numberOfChatMessages={postCount}
               suggestedData={suggestedData}
             />

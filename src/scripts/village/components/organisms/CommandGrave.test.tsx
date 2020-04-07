@@ -19,6 +19,7 @@ test('<CommandGrave />', () => {
       handlePostChat={handlePostChat}
       language={village.Language.en}
       maxLengthOfUnicodeCodePoints={140}
+      navigatable
       navigation={navigation}
       suggestedData={[]}
     />

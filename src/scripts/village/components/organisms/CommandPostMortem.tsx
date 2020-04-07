@@ -8,6 +8,7 @@ import {village} from '../../types'
 export interface StateProps {
   readonly language: village.Language
   readonly maxLengthOfUnicodeCodePoints: number
+  readonly navigatable: boolean
   readonly navigation: CommandNavigationProps['items']
   readonly suggestedData: State['data']
 }
@@ -26,12 +27,14 @@ export default function CommandPostMortem(props: Props) {
         language={props.language}
         maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
         maxNumberOfChatMessages={-1}
+        navigatable={props.navigatable}
         numberOfChatMessages={-1}
         suggestedData={props.suggestedData}
       />
       <CommandNavigation
         handleClick={props.handleNavigationClick}
         items={props.navigation}
+        navigatable={props.navigatable}
       />
     </>
   )

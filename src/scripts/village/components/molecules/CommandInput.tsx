@@ -22,6 +22,7 @@ interface Props {
   readonly language: village.Language
   readonly maxLengthOfUnicodeCodePoints: number
   readonly maxNumberOfChatMessages: number
+  readonly navigatable: boolean
   readonly numberOfChatMessages: number
   readonly suggestedData: SuggestedData[]
 }
@@ -288,6 +289,7 @@ export default class CommandInput extends React.Component<Props, State> {
                   onKeyDown={event => this.handleKeyDown(event)}
                   placeholder={text}
                   ref={this.textareaRef}
+                  tabIndex={this.props.navigatable ? 0 : -1}
                   value={this.state.text}
                 />
               )
@@ -326,6 +328,7 @@ export default class CommandInput extends React.Component<Props, State> {
                 className="vi--command--input--send"
                 disabled={!(this.isSendable() && this.isValidTextLength())}
                 onClick={() => this.handlePostChat()}
+                tabIndex={this.props.navigatable ? 0 : -1}
               >
                 {text}
               </button>
