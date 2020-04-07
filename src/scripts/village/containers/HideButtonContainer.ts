@@ -2,7 +2,7 @@ import {
   ClickHideButton,
   handleClickHideButton
 } from '../actions'
-import HideButton, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/atoms/HideButton'
@@ -22,9 +22,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(handleClickHideButton(hide))
   }
 })
-const HideButtonContainer = connect(
+const Container = connect(
   mapStateToProps,
   mapDispatchToProps
-)(HideButton)
+)(Component)
 
-export default HideButtonContainer
+export default Container

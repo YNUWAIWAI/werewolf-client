@@ -15,8 +15,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   locale: state.language,
   messages: getMessages(state.language)
 })
-const IntlProviderContainer = connect(
+const Container = connect(
   mapStateToProps
 )(IntlProvider)
 
-export default IntlProviderContainer
+export default Container

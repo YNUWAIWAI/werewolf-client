@@ -1,4 +1,4 @@
-import TeamIcon, {Props as StateProps} from '../components/atoms/TeamIcon'
+import Component, {Props as StateProps} from '../components/atoms/TeamIcon'
 import {
   getTeam,
   strToRoleId
@@ -20,8 +20,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 
-const InfoTeamContainer = connect(
+const Container = connect(
   mapStateToProps
-)(TeamIcon)
+)(Component)
 
-export default InfoTeamContainer
+export default Container
