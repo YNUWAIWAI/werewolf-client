@@ -6,7 +6,7 @@ import {village} from '../../types'
 export interface StateProps {
   readonly allIds: village.ChatId[]
   readonly byId: {
-    readonly [id in village.ChatId]: {
+    [id in village.ChatId]: {
       readonly id: village.Payload$ChatId
       readonly image: string
       readonly initial: string
