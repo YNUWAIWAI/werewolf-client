@@ -35,7 +35,6 @@
   }
 
   &--table {
-    background: var(--color--background);
     border: 2px solid var(--color--border);
     display: grid;
     grid-template-columns: 24px repeat(7, minmax(8rem, 1fr)) minmax(16rem, 2fr);
@@ -68,19 +67,21 @@
           background: var(--color--background--button);
           border: none;
           border-radius: 4px;
-          color: var(--color--neutral80);
+          color: var(--color--font--button);
           cursor: pointer;
+          font-size: 1rem;
           line-height: 2;
           margin: 0 0 0 0.5rem;
           padding: 0 0.5rem;
           user-select: none;
 
-          &:hover {
-            background: var(--color--hover);
+          &:focus {
+            box-shadow: var(--box-shadow--focus-ring);
+            outline: none;
+          }
 
-            &:active {
-              background: var(--color--active);
-            }
+          &:hover {
+            background: var(--color--background--button--hover);
           }
         }
       }
@@ -97,19 +98,20 @@
           background: var(--color--background--button);
           border: none;
           border-radius: 4px;
-          color: var(--color--neutral80);
+          color: var(--color--font--button);
           cursor: pointer;
-          font-size: 1.5rem;
+          font-size: 1rem;
           line-height: 2;
           padding: 0 0.5rem;
           user-select: none;
 
-          &:hover {
-            background: var(--color--hover);
+          &:focus {
+            box-shadow: var(--box-shadow--focus-ring);
+            outline: none;
+          }
 
-            &:active {
-              background: var(--color--active);
-            }
+          &:hover {
+            background: var(--color--background--button--hover);
           }
         }
       }

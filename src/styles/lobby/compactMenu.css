@@ -16,31 +16,33 @@
     user-select: none;
 
     &.disabled {
-      background: var(--color--disabled);
+      background: var(--color--background--button--disabled);
+      color: var(--color--font--button--disabled);
       cursor: not-allowed;
 
       &:hover {
-        background: var(--color--disabled);
-
-        &:active {
-          background: var(--color--disabled);
-        }
+        background: var(--color--background--button--disabled);
       }
+    }
+
+    &:focus {
+      background: var(--color--background--button--hover);
+    }
+
+    &:hover {
+      background: var(--color--background--button--hover);
     }
 
     &.loader {
       align-items: center;
-      background: var(--color--active);
+      background: var(--color--background--button--disabled);
+      color: var(--color--font--button--disabled);
       cursor: wait;
       display: flex;
       justify-content: center;
 
       &:hover {
-        background: var(--color--active);
-
-        &:active {
-          background: var(--color--active);
-        }
+        background: var(--color--background--button--disabled);
       }
     }
 
@@ -51,14 +53,6 @@
 
     & > .loader {
       stroke: var(--color--neutral90);
-    }
-
-    &:hover {
-      background: var(--color--hover);
-
-      &:active {
-        background: var(--color--active);
-      }
     }
   }
 }
