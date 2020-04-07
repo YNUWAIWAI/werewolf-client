@@ -850,6 +850,7 @@ storiesOf('village|Prediction', module)
               handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
               handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
               handleMouseLeave={action('handleMouseLeave')}
+              navigatable
               roleStatus={roleStatus}
               spec={spec}
               table={table}
@@ -1065,6 +1066,7 @@ storiesOf('village|Prediction', module)
               handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
               handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
               handleMouseLeave={action('handleMouseLeave')}
+              navigatable
               roleStatus={roleStatus}
               spec={spec}
               table={table}
@@ -1904,6 +1906,7 @@ storiesOf('village|Prediction', module)
               handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
               handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
               handleMouseLeave={action('handleMouseLeave')}
+              navigatable
               roleStatus={roleStatus}
               spec={spec}
               table={table}
@@ -2119,6 +2122,7 @@ storiesOf('village|Prediction', module)
               handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
               handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
               handleMouseLeave={action('handleMouseLeave')}
+              navigatable
               roleStatus={roleStatus}
               spec={spec}
               table={table}
