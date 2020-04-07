@@ -7,6 +7,7 @@ export interface StateProps {
   readonly language: village.Language
   readonly maxLengthOfUnicodeCodePoints: number
   readonly maxNumberOfChatMessages: number
+  readonly navigatable: boolean
   readonly public: {
     readonly numberOfChatMessages: number
   }
@@ -30,6 +31,7 @@ export default function CommandInputBox(props: Props) {
         language={props.language}
         maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
         maxNumberOfChatMessages={props.maxNumberOfChatMessages}
+        navigatable={props.navigatable}
         numberOfChatMessages={props.public.numberOfChatMessages}
         suggestedData={props.suggestedData}
       />
@@ -39,6 +41,7 @@ export default function CommandInputBox(props: Props) {
         language={props.language}
         maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
         maxNumberOfChatMessages={-1}
+        navigatable={props.navigatable}
         numberOfChatMessages={-1}
         suggestedData={props.suggestedData}
       />
@@ -50,6 +53,7 @@ export default function CommandInputBox(props: Props) {
             language={props.language}
             maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
             maxNumberOfChatMessages={props.maxNumberOfChatMessages}
+            navigatable={props.navigatable}
             numberOfChatMessages={props.werewolf.numberOfChatMessages}
             suggestedData={props.suggestedData}
           /> :

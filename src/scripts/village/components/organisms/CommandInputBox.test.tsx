@@ -13,6 +13,7 @@ describe('<CommandInputBox />', () => {
         language={village.Language.en}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         public={{
           numberOfChatMessages: 0
         }}
@@ -40,6 +41,7 @@ describe('<CommandInputBox />', () => {
         language={village.Language.en}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         public={{
           numberOfChatMessages: 0
         }}
