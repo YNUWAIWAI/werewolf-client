@@ -29,6 +29,7 @@ describe('<Prediction />', () => {
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
+        navigatable
         roleStatus={roleStatus}
         spec={spec}
         table={table}
@@ -238,6 +239,7 @@ describe('<Prediction />', () => {
         handleBoardClick={handleBoardClick}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
+        navigatable
         roleStatus={roleStatus}
         spec={spec}
         table={table}
