@@ -1,6 +1,9 @@
 .lo--avatar-image-select {
-  background: var(--color--background--modal);
+  background: var(--color--background);
+  border: 1px solid var(--color--border);
+  border-radius: 4px;
   bottom: 10%;
+  color: var(--color--font);
   left: 10%;
   padding: 1rem;
   position: fixed;
@@ -9,11 +12,25 @@
   z-index: var(--z-index--modal);
 
   &--close {
+    background: var(--color--background);
+    border: none;
+    fill: var(--color--line--close-button);
     height: 1.5rem;
     left: 0.5rem;
+    padding: 0;
     position: absolute;
     top: 0.5rem;
     width: 1.5rem;
+
+    &:focus {
+      fill: var(--color--line--close-button--hover);
+      outline: none;
+    }
+
+    &:hover {
+      fill: var(--color--line--close-button--hover);
+    }
+
   }
 
   &--description {

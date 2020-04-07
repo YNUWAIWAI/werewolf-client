@@ -4,6 +4,7 @@
 @import './avatar';
 @import './avatarImageSelect';
 @import './avatarList';
+@import './common';
 @import './compactMenu';
 @import './confirmation';
 @import './createNewAvatar';
@@ -18,6 +19,7 @@
 @import './reactSelect';
 @import './selectAvatar';
 @import './settings';
-@import './theme';
+@import './theme/dark';
+@import './theme/light';
 @import './video';
 @import './village';
