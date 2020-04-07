@@ -1,11 +1,11 @@
-import {
-  HideResult,
-  hideResult
-} from '../actions'
 import Component, {
   DispatchProps,
   StateProps
 } from '../components/organisms/Result'
+import {
+  HideResult,
+  hideResult
+} from '../actions'
 import {
   getInitial,
   getText
