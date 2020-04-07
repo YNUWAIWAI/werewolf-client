@@ -1,6 +1,9 @@
 import * as React from 'react'
+import {
+  mount,
+  shallow
+} from 'enzyme'
 import ChatText from './ChatText'
-import {shallow} from 'enzyme'
 
 describe('<ChatText />', () => {
   describe('text', () => {
@@ -91,25 +94,25 @@ describe('<ChatText />', () => {
   })
   describe('navigatable', () => {
     test('true', () => {
-      const wrapper = shallow(
+      const wrapper = mount(
         <ChatText
           navigatable
           text=">>1 text"
         />
       )
 
-      expect(wrapper.find('a[tabindex="0"]').exists()).toBe(true)
+      expect(wrapper.find('a').props().tabIndex).toBe(0)
       expect(wrapper.html()).toMatchSnapshot()
     })
     test('false', () => {
-      const wrapper = shallow(
+      const wrapper = mount(
         <ChatText
           navigatable={false}
           text=">>1 text"
         />
       )
 
-      expect(wrapper.find('a[tabindex="-1"]').exists()).toBe(true)
+      expect(wrapper.find('a').props().tabIndex).toBe(-1)
       expect(wrapper.html()).toMatchSnapshot()
     })
   })

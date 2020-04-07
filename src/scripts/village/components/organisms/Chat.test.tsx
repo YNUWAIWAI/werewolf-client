@@ -1,12 +1,8 @@
 import * as React from 'react'
 import Chat, {Props} from './Chat'
 import {ImagePath} from '../../constants/ImagePath'
-import {getMessages} from '../../i18n'
-import {initRenderer} from '../../tools'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
-
-const {mountWithIntl} = initRenderer(village.Language.en, getMessages(village.Language.en))
 
 describe('<Chat />', () => {
   describe('render', () => {
@@ -183,7 +179,7 @@ describe('<Chat />', () => {
       expect(handleStar).toHaveBeenCalledWith('chat2')
     })
   })
-  describe('handleScroll', () => {
+  test('handleScroll', () => {
     const allIds: Props['allIds'] = ['chat0']
     const byId: Props['byId'] = {
       'chat0': {
@@ -201,40 +197,20 @@ describe('<Chat />', () => {
         type: village.ChatItemType.item
       }
     }
+    const handleStarInner = jest.fn()
+    const handleStar = jest.fn(() => handleStarInner)
+    const wrapper = shallow(
+      <Chat
+        allIds={allIds}
+        byId={byId}
+        expand={false}
+        handleStar={handleStar}
+      />
+    )
 
-    test('shallow', () => {
-      const handleStarInner = jest.fn()
-      const handleStar = jest.fn(() => handleStarInner)
-      const wrapper = shallow(
-        <Chat
-          allIds={allIds}
-          byId={byId}
-          expand={false}
-          handleStar={handleStar}
-        />
-      )
-
-      wrapper.simulate('scroll')
-      expect(wrapper.state()).toStrictEqual({
-        atBottom: true
-      })
-    })
-    test('mount', () => {
-      const handleStarInner = jest.fn()
-      const handleStar = jest.fn(() => handleStarInner)
-      const wrapper = mountWithIntl(
-        <Chat
-          allIds={allIds}
-          byId={byId}
-          expand={false}
-          handleStar={handleStar}
-        />
-      )
-
-      wrapper.simulate('scroll')
-      expect(wrapper.state()).toStrictEqual({
-        atBottom: true
-      })
+    wrapper.simulate('scroll')
+    expect(wrapper.state()).toStrictEqual({
+      atBottom: true
     })
   })
 })
