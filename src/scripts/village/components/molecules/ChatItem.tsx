@@ -4,7 +4,7 @@ import ChatDay from '../atoms/ChatDay'
 import ChatIcon from '../atoms/ChatIcon'
 import ChatNum from '../atoms/ChatNum'
 import ChatStar from '../atoms/ChatStar'
-import ChatText from '../atoms/ChatText'
+import ChatText from '../../containers/ChatTextContainer'
 import {getChatChannelFromChannel} from '../../util'
 import {village} from '../../types'
 
