@@ -12,6 +12,7 @@ export interface Props {
     readonly isLoading?: boolean
     readonly type: Navigation
   }[]
+  readonly navigatable: boolean
 }
 
 export default function CommandNavigation(props: Props) {
@@ -30,6 +31,7 @@ export default function CommandNavigation(props: Props) {
                 props.handleClick(item.type)
               }
             }}
+            tabIndex={props.navigatable ? 0 : -1}
           >
             {
               item.isLoading ?

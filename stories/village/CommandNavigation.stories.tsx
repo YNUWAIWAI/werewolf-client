@@ -43,6 +43,7 @@ storiesOf('village|Command/CommandNavigation', module)
           <CommandNavigation
             handleClick={type => action(`handleClick: ${type}`)}
             items={items}
+            navigatable
           />
         </IntlProvider>
       </Provider>

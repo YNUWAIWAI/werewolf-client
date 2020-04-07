@@ -34,6 +34,7 @@ describe('<CommandNavigation />', () => {
       <CommandNavigation
         handleClick={handleClick}
         items={items}
+        navigatable
       />
     )
 
@@ -69,6 +70,7 @@ describe('<CommandNavigation />', () => {
       <CommandNavigation
         handleClick={handleClick}
         items={items}
+        navigatable
       />
     )
 

@@ -129,6 +129,7 @@ storiesOf('village|Command', module)
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         public={{
           numberOfChatMessages: 0
         }}
@@ -164,6 +165,7 @@ storiesOf('village|Command', module)
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
+        navigatable
         public={{
           numberOfChatMessages: 0
         }}
@@ -199,6 +201,7 @@ storiesOf('village|Command', module)
         handlePostChat={() => action('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
+        navigatable
         navigation={[
           {
             className: 'show-result',
@@ -244,6 +247,7 @@ storiesOf('village|Command', module)
         handlePostChat={() => action('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
+        navigatable
         navigation={[
           {
             className: 'show-result',
@@ -290,6 +294,7 @@ storiesOf('village|Command', module)
         handlePostChat={() => action('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
+        navigatable
         navigation={[
           {
             className: 'show-result',
@@ -330,6 +335,7 @@ storiesOf('village|Command', module)
         handlePostChat={() => action('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
+        navigatable
         navigation={[
           {
             className: 'return-to-lobby expand',
