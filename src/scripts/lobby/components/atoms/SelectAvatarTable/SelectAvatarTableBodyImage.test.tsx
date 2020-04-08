@@ -16,6 +16,7 @@ test('render', () => {
       handleClick={handleClick}
       handleSelect={handleSelect}
       image={ImagePath.Character.a}
+      navigative
     />
   )
 
@@ -30,10 +31,11 @@ test('handleClick', () => {
       handleClick={handleClick}
       handleSelect={handleSelect}
       image={ImagePath.Character.a}
+      navigative
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item > img').simulate('click')
+  wrapper.find('.lo--select-avatar--table--body--item > button').simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)
 })
 test('handleSelect', () => {
@@ -45,9 +47,10 @@ test('handleSelect', () => {
       handleClick={handleClick}
       handleSelect={handleSelect}
       image={ImagePath.Character.a}
+      navigative
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item.image').simulate('click')
+  wrapper.find('.lo--select-avatar--table--body--item').simulate('click')
   expect(handleSelect).toHaveBeenCalledTimes(1)
 })

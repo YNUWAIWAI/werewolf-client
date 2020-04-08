@@ -18,7 +18,8 @@ type Action =
   | SelectHumanAvatar.ShowAvatarImageSelect
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  avatar: state.selectHumanAvatar.avatar
+  avatar: state.selectHumanAvatar.avatar,
+  navigative: !state.obfucator.visible
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleAvatarImageClick: token => image => {

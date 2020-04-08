@@ -29,6 +29,7 @@ export interface StateProps {
       }
     }
   }
+  readonly navigatable: boolean
 }
 export interface DispatchProps {
   readonly handleAccept: (accessToken: lobby.Token) => () => void
@@ -87,6 +88,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           handleClick={props.handleAvatarImageClick(id)}
           handleSelect={props.handleSelectAvatar(id)}
           image={avatar.image}
+          navigative
         />
         <SelectAvatarTableBodyStatus
           additionalClassName={additionalClassName}
@@ -98,6 +100,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           authorized={authorized}
           handleAccept={props.handleAccept(avatar.token)}
           handleSelect={props.handleSelectAvatar(id)}
+          naviagtable={props.navigatable}
         />
         <SelectAvatarTableBodyTest
           additionalClassName={additionalClassName}
@@ -112,6 +115,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
         <SelectAvatarTableBodyAccessToken
           additionalClassName={additionalClassName}
           handleSelect={props.handleSelectAvatar(id)}
+          naviagtable={props.navigatable}
           renewAccessToken={props.renewAccessToken(avatar.token)}
           token={avatar.token}
         />

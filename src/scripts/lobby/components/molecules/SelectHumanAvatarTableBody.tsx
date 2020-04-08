@@ -19,6 +19,7 @@ export interface StateProps {
       }
     }
   }
+  readonly navigative: boolean
 }
 export interface DispatchProps {
   readonly handleAvatarImageClick: (token: lobby.Token) => (image: string) => void
@@ -64,6 +65,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
         handleSelect={props.handleSelectAvatar(id)}
         image={avatar.image}
         key={`image${id}`}
+        navigative
       />,
       <SelectAvatarTableBodySpacer
         additionalClassName={additionalClassName}

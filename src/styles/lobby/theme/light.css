@@ -1,0 +1,61 @@
+.lo.light {
+
+  /* stylelint-disable color-named */
+  --color--danger: rgb(244, 67, 54);
+  --color--neutral0: hsl(0, 0%, 100%);
+  --color--neutral5: hsl(0, 0%, 95%);
+  --color--neutral10: hsl(0, 0%, 90%);
+  --color--neutral15: hsl(0, 0%, 85%);
+  --color--neutral20: hsl(0, 0%, 80%);
+  --color--neutral25: hsl(0, 0%, 75%);
+  --color--neutral30: hsl(0, 0%, 70%);
+  --color--neutral40: hsl(0, 0%, 60%);
+  --color--neutral50: hsl(0, 0%, 50%);
+  --color--neutral60: hsl(0, 0%, 40%);
+  --color--neutral70: hsl(0, 0%, 30%);
+  --color--neutral80: hsl(0, 0%, 20%);
+  --color--neutral90: hsl(0, 0%, 10%);
+  --color--neutral100: hsl(0, 0%, 0%);
+  --color--primary: rgba(38, 132, 255, 1);
+  --color--primary10: rgba(38, 132, 255, 0.1);
+  --color--primary20: rgba(38, 132, 255, 0.2);
+  --color--primary25: rgba(38, 132, 255, 0.25);
+  --color--primary30: rgba(38, 132, 255, 0.3);
+  --color--primary40: rgba(38, 132, 255, 0.4);
+  --color--primary50: rgba(38, 132, 255, 0.5);
+  --color--primary60: rgba(38, 132, 255, 0.6);
+  --color--primary70: rgba(38, 132, 255, 0.7);
+  --color--primary75: rgba(38, 132, 255, 0.75);
+  --color--primary80: rgba(38, 132, 255, 0.8);
+  --color--primary90: rgba(38, 132, 255, 0.9);
+  --color--safe: rgb(76, 175, 80);
+  --color--warning: rgb(255, 235, 59);
+
+  /* stylelint-enable color-named */
+  --color--background: var(--color--neutral0);
+  --color--background--button: var(--color--neutral10);
+  --color--background--button--disabled: var(--color--neutral25);
+  --color--background--button--hover: var(--color--neutral20);
+  --color--background--menu: var(--color--neutral0);
+  --color--background--menu--disabled: var(--color--neutral40);
+  --color--background--menu--focus: var(--color--neutral20);
+  --color--background--menu--hover: var(--color--neutral30);
+  --color--background--primary-button: var(--color--primary60);
+  --color--background--primary-button--disabled: var(--color--primary20);
+  --color--background--primary-button--hover: var(--color--primary40);
+  --color--background--settings--bucket: var(--color--neutral80);
+  --color--border--settings--bucket: var(--color--neutral80);
+  --color--border: var(--color--neutral90);
+  --color--border--input: var(--color--neutral20);
+  --color--font: var(--color--font--black);
+  --color--font--button: var(--color--font--black);
+  --color--font--button--disabled: var(--color--font--gray);
+  --color--font--settings--bucket: var(--color--font--white);
+  --color--font--settings--bucket--danger: var(--color--font--black);
+  --color--font--placeholder: var(--color--neutral50);
+  --color--font--menu: var(--color--font--black);
+  --color--font--menu--disabled: var(--color--font--gray);
+  --color--line--close-button: var(--color--border);
+  --color--line--close-button--hover: var(--color--neutral70);
+  --color--obfucator--loader: var(--color--neutral10);
+}

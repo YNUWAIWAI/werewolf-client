@@ -16,12 +16,12 @@ export type Props = StateProps & DispatchProps
 export default function AvatarImageSelect(props: Props) {
   return (
     <div className="lo--avatar-image-select">
-      <div
+      <button
         className="lo--avatar-image-select--close"
         onClick={() => props.handleCloseButtonClick()}
       >
         <Close />
-      </div>
+      </button>
       <FormattedMessage
         id="AvatarImageSelect.description"
       >

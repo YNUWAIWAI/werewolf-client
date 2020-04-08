@@ -110,5 +110,6 @@ export const createMiddleware = ({history, url}: Options) => {
 export const createRouterMiddleware = (history: Options['history']) => applyMiddleware(
   audio,
   router(history),
-  logger
+  logger,
+  windowLocation
 )

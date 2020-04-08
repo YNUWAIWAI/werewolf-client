@@ -13,10 +13,13 @@ export interface OwnProps {
   readonly itemClassName: string
   readonly items: MenuItemProps[]
 }
+export interface StateProps {
+  readonly navigative: boolean
+}
 export interface DispatchProps {
   readonly transition: (target: Target) => void
 }
-export type Props = OwnProps & DispatchProps
+export type Props = OwnProps & DispatchProps & StateProps
 
 export default function Menu(props: Props) {
   const items = props.items.map(item => (
@@ -26,6 +29,7 @@ export default function Menu(props: Props) {
       id={item.id}
       isLoading={item.isLoading}
       key={item.id}
+      navigative={props.navigative}
       transition={props.transition}
       types={item.types}
     />

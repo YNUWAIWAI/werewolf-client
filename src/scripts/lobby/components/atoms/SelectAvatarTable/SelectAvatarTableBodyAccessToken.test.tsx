@@ -11,6 +11,7 @@ describe('render', () => {
   test('navigator.clipboard !== undefined', () => {
     const navigatorClipBoard = navigator.clipboard;
 
+    // eslint-disable-next-line no-extra-parens, @typescript-eslint/no-explicit-any
     (navigator as any).clipboard = {}
     const handleSelect = jest.fn()
     const renewAccessToken = jest.fn()
@@ -18,6 +19,7 @@ describe('render', () => {
       <SelectAvatarTableBodyAccessToken
         additionalClassName={[]}
         handleSelect={handleSelect}
+        naviagtable
         renewAccessToken={renewAccessToken}
         token="token"
       />
@@ -25,6 +27,7 @@ describe('render', () => {
 
     expect(wrapper.find(Copy).exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot();
+    // eslint-disable-next-line no-extra-parens, @typescript-eslint/no-explicit-any
     (navigator as any).clipboard = navigatorClipBoard
   })
   test('navigator.clipboard === undefined', () => {
@@ -34,6 +37,7 @@ describe('render', () => {
       <SelectAvatarTableBodyAccessToken
         additionalClassName={[]}
         handleSelect={handleSelect}
+        naviagtable
         renewAccessToken={renewAccessToken}
         token="token"
       />
@@ -47,6 +51,7 @@ test('copy', () => {
   const navigatorClipBoard = navigator.clipboard
   const writeText = jest.fn();
 
+  // eslint-disable-next-line no-extra-parens, @typescript-eslint/no-explicit-any
   (navigator as any).clipboard = {
     writeText
   }
@@ -56,6 +61,7 @@ test('copy', () => {
     <SelectAvatarTableBodyAccessToken
       additionalClassName={[]}
       handleSelect={handleSelect}
+      naviagtable
       renewAccessToken={renewAccessToken}
       token="token"
     />
@@ -64,6 +70,7 @@ test('copy', () => {
   wrapper.find('div.copy').simulate('click')
   expect(writeText).toHaveBeenCalledTimes(1)
   expect(writeText).toHaveBeenCalledWith('token');
+  // eslint-disable-next-line no-extra-parens, @typescript-eslint/no-explicit-any
   (navigator as any).clipboard = navigatorClipBoard
 })
 test('handleFocus', () => {
@@ -73,6 +80,7 @@ test('handleFocus', () => {
     <SelectAvatarTableBodyAccessToken
       additionalClassName={[]}
       handleSelect={handleSelect}
+      naviagtable
       renewAccessToken={renewAccessToken}
       token="token"
     />
@@ -94,6 +102,7 @@ describe('handleSelect', () => {
       <SelectAvatarTableBodyAccessToken
         additionalClassName={[]}
         handleSelect={handleSelect}
+        naviagtable
         renewAccessToken={renewAccessToken}
         token="token"
       />
@@ -109,6 +118,7 @@ describe('handleSelect', () => {
       <SelectAvatarTableBodyAccessToken
         additionalClassName={[]}
         handleSelect={handleSelect}
+        naviagtable
         renewAccessToken={renewAccessToken}
         token="token"
       />
@@ -125,6 +135,7 @@ test('renewAccessToken', () => {
     <SelectAvatarTableBodyAccessToken
       additionalClassName={[]}
       handleSelect={handleSelect}
+      naviagtable
       renewAccessToken={renewAccessToken}
       token="token"
     />

@@ -2,6 +2,6 @@
 
 exports[`render authorized === lobby.Authorized.no 1`] = `"<div class=\\"lo--select-avatar--table--body--item authorized \\">No</div>"`;
 
-exports[`render authorized === lobby.Authorized.waitForAcceptance 1`] = `"<div class=\\"lo--select-avatar--table--body--item authorized \\"><div class=\\"accept\\">Accept</div></div>"`;
+exports[`render authorized === lobby.Authorized.waitForAcceptance 1`] = `"<div class=\\"lo--select-avatar--table--body--item authorized \\"><button class=\\"accept\\" tabindex=\\"0\\">Accept</button></div>"`;
 
 exports[`render authorized === lobby.Authorized.yes 1`] = `"<div class=\\"lo--select-avatar--table--body--item authorized \\">Yes</div>"`;
