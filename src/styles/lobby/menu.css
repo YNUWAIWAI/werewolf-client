@@ -29,6 +29,10 @@
       &:hover {
         background: var(--color--background--menu--hover);
       }
+
+      &:disabled {
+        background: var(--color--background--menu--disabled);
+      }
     }
   }
 }

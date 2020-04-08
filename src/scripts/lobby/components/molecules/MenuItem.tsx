@@ -30,23 +30,19 @@ export default function MenuItem(props: Props) {
               })
             }}
           >
-            {
-              props.isLoading ?
-                <button
-                  className={`${props.className}--button ${props.isLoading ? 'loader' : ''}`}
-                  tabIndex={-1}
-                >
+            <button
+              className={`${props.className}--button ${props.isLoading ? 'loader' : ''}`}
+              disabled={props.disabled || props.isLoading}
+              tabIndex={props.navigative ? 0 : -1}
+            >
+              {
+                props.isLoading ?
                   <Loader>
                     {text}
-                  </Loader>
-                </button> :
-                <button
-                  className={`${props.className}--button`}
-                  tabIndex={props.navigative ? 0 : -1}
-                >
-                  {text}
-                </button>
-            }
+                  </Loader> :
+                  text
+              }
+            </button>
           </li>
         )
       }

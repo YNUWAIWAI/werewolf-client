@@ -23,14 +23,14 @@
 
       &.loader {
         align-items: center;
-        background: var(--color--background--button--disabled);
-        color: var(--color--font--button--disabled);
+        background: var(--color--background--menu--disabled);
+        color: var(--color--font--menu--disabled);
         cursor: wait;
         display: flex;
         justify-content: center;
 
         &:hover {
-          background: var(--color--background--button--disabled);
+          background: var(--color--background--menu--disabled);
         }
       }
 
@@ -43,13 +43,13 @@
         background: var(--color--background--menu--hover);
       }
 
-      &.disabled {
-        background: var(--color--background--button--disabled);
+      &:disabled {
+        background: var(--color--background--menu--disabled);
         color: var(--color--font--button--disabled);
         cursor: not-allowed;
 
         &:hover {
-          background: var(--color--background--button--disabled);
+          background: var(--color--background--menu--disabled);
         }
       }
 
