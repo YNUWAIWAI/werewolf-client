@@ -37,6 +37,10 @@
   --color--background--button: var(--color--neutral25);
   --color--background--button--disabled: var(--color--neutral15);
   --color--background--button--hover: var(--color--neutral40);
+  --color--background--menu: var(--color--neutral0);
+  --color--background--menu--disabled: var(--color--neutral40);
+  --color--background--menu--focus: var(--color--neutral20);
+  --color--background--menu--hover: var(--color--neutral30);
   --color--background--primary-button: var(--color--primary50);
   --color--background--primary-button--disabled: var(--color--primary20);
   --color--background--primary-button--hover: var(--color--primary40);
@@ -47,5 +51,7 @@
   --color--font--button--disabled: var(--color--font--gray);
   --color--line--close-button: var(--color--border);
   --color--line--close-button--hover: var(--color--neutral70);
+  --color--font--menu: var(--color--font--white);
+  --color--font--menu--disabled: var(--color--font--gray);
   --color--obfucator--loader: var(--color--neutral90);
 }

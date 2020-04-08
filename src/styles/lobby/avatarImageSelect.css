@@ -30,7 +30,6 @@
     &:hover {
       fill: var(--color--line--close-button--hover);
     }
-
   }
 
   &--description {

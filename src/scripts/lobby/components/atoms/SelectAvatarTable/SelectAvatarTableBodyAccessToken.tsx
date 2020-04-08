@@ -6,6 +6,7 @@ import {lobby} from '../../../types'
 interface Props {
   readonly additionalClassName: string[]
   readonly handleSelect: () => void
+  readonly naviagtable: boolean
   readonly renewAccessToken: () => void
   readonly token: lobby.Token
 }
@@ -41,6 +42,7 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
       <input
         onFocus={handleFocus}
         readOnly
+        tabIndex={props.naviagtable ? 0 : -1}
         type="text"
         value={props.token}
       />
@@ -49,12 +51,13 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
       >
         {
           text => (
-            <div
+            <button
               className="renew"
               onClick={props.renewAccessToken}
+              tabIndex={props.naviagtable ? 0 : -1}
             >
               {text}
-            </div>
+            </button>
           )
         }
       </FormattedMessage>

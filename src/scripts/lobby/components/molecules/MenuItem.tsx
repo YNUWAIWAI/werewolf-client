@@ -8,6 +8,7 @@ export interface Props {
   readonly disabled?: boolean
   readonly id: string
   readonly isLoading?: boolean
+  readonly navigative: boolean
   readonly transition: (target: Target) => void
   readonly types: Target[]
 }
@@ -20,7 +21,7 @@ export default function MenuItem(props: Props) {
       {
         text => (
           <li
-            className={`${props.className} ${props.disabled ? 'disabled' : ''} ${props.isLoading ? 'loader' : ''}`}
+            className={`${props.className} ${props.disabled ? 'disabled' : ''}`}
             onClick={() => {
               props.types.forEach(type => {
                 if (!props.disabled && !props.isLoading) {
@@ -31,8 +32,20 @@ export default function MenuItem(props: Props) {
           >
             {
               props.isLoading ?
-                <Loader /> :
-                text
+                <button
+                  className={`${props.className}--button ${props.isLoading ? 'loader' : ''}`}
+                  tabIndex={-1}
+                >
+                  <Loader>
+                    {text}
+                  </Loader>
+                </button> :
+                <button
+                  className={`${props.className}--button`}
+                  tabIndex={props.navigative ? 0 : -1}
+                >
+                  {text}
+                </button>
             }
           </li>
         )

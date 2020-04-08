@@ -4,55 +4,61 @@
   padding: 0;
 
   &--item {
-    background: var(--color--background);
+    background: var(--color--background--menu);
     border: 2px solid var(--color--border);
     cursor: pointer;
-    font-size: 2rem;
     font-weight: 100;
-    line-height: 1.5;
     margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    text-align: center;
     user-select: none;
 
-    &.disabled {
-      background: var(--color--background--button--disabled);
-      color: var(--color--font--button--disabled);
-      cursor: not-allowed;
+    &--button {
+      background: var(--color--background--menu);
+      border: none;
+      color: var(--color--font--menu);
+      font-size: 2rem;
+      font-weight: 100;
+      padding: 0.5rem;
+      text-align: center;
+      width: 100%;
+
+      &.loader {
+        align-items: center;
+        background: var(--color--background--button--disabled);
+        color: var(--color--font--button--disabled);
+        cursor: wait;
+        display: flex;
+        justify-content: center;
+
+        &:hover {
+          background: var(--color--background--button--disabled);
+        }
+      }
+
+      &:focus {
+        background: var(--color--background--menu--focus);
+        outline: none;
+      }
 
       &:hover {
-        background: var(--color--background--button--disabled);
+        background: var(--color--background--menu--hover);
       }
-    }
 
-    &:focus {
-      background: var(--color--background--button--hover);
-    }
-
-    &:hover {
-      background: var(--color--background--button--hover);
-    }
-
-    &.loader {
-      align-items: center;
-      background: var(--color--background--button--disabled);
-      color: var(--color--font--button--disabled);
-      cursor: wait;
-      display: flex;
-      justify-content: center;
-
-      &:hover {
+      &.disabled {
         background: var(--color--background--button--disabled);
+        color: var(--color--font--button--disabled);
+        cursor: not-allowed;
+
+        &:hover {
+          background: var(--color--background--button--disabled);
+        }
       }
-    }
 
-    & > svg {
-      height: 3rem;
-      width: 3rem;
-    }
-
-    & > .loader {
-      stroke: var(--color--neutral90);
+      & > .loader {
+        height: 3rem;
+        position: absolute;
+        stroke: var(--color--neutral90);
+        width: 3rem;
+      }
     }
   }
 }
