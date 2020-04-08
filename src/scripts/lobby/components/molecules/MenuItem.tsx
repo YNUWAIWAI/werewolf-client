@@ -21,7 +21,7 @@ export default function MenuItem(props: Props) {
       {
         text => (
           <li
-            className={`${props.className} ${props.disabled ? 'disabled' : ''}`}
+            className={props.className}
             onClick={() => {
               props.types.forEach(type => {
                 if (!props.disabled && !props.isLoading) {

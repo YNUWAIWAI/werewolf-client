@@ -35,7 +35,7 @@ test('handleClick', () => {
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item > img').simulate('click')
+  wrapper.find('.lo--select-avatar--table--body--item > button').simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)
 })
 test('handleSelect', () => {
@@ -51,6 +51,6 @@ test('handleSelect', () => {
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item.image').simulate('click')
+  wrapper.find('.lo--select-avatar--table--body--item').simulate('click')
   expect(handleSelect).toHaveBeenCalledTimes(1)
 })

@@ -1,5 +1,6 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
+import Loader from '../atoms/svg/Loader'
 import MenuItem from './MenuItem'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
@@ -39,7 +40,6 @@ describe('<MenuItem />', () => {
       )
 
       expect(wrapper.text()).toBe('Return to the main page')
-      expect(wrapper.find('li.className').hasClass('disabled')).toBe(true)
       expect(transition).toHaveBeenCalledTimes(0)
     })
     test('isLoading', () => {
@@ -55,8 +55,7 @@ describe('<MenuItem />', () => {
         />
       )
 
-      expect(wrapper.text()).toBe('')
-      expect(wrapper.find('li.className').hasClass('loader')).toBe(true)
+      expect(wrapper.find(Loader).exists()).toBe(true)
       expect(transition).toHaveBeenCalledTimes(0)
     })
   })
