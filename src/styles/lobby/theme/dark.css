@@ -32,7 +32,6 @@
   --color--warning: rgb(255, 238, 88);
 
   /* stylelint-enable color-named */
-  /* ailias */
   --color--background: var(--color--neutral0);
   --color--background--button: var(--color--neutral25);
   --color--background--button--disabled: var(--color--neutral15);

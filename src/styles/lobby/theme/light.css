@@ -30,12 +30,32 @@
   --color--primary90: rgba(38, 132, 255, 0.9);
   --color--safe: rgb(76, 175, 80);
   --color--warning: rgb(255, 235, 59);
+
   /* stylelint-enable color-named */
   --color--background: var(--color--neutral0);
-  --color--background--modal: var(--color--neutral10);
-  --color--background--button--modal: var(--color--neutral20);
+  --color--background--button: var(--color--neutral10);
+  --color--background--button--disabled: var(--color--neutral25);
+  --color--background--button--hover: var(--color--neutral20);
+  --color--background--menu: var(--color--neutral0);
+  --color--background--menu--disabled: var(--color--neutral40);
+  --color--background--menu--focus: var(--color--neutral20);
+  --color--background--menu--hover: var(--color--neutral30);
+  --color--background--primary-button: var(--color--primary60);
+  --color--background--primary-button--disabled: var(--color--primary20);
+  --color--background--primary-button--hover: var(--color--primary40);
+  --color--background--settings--bucket: var(--color--neutral80);
+  --color--border--settings--bucket: var(--color--neutral80);
   --color--border: var(--color--neutral90);
   --color--border--input: var(--color--neutral20);
   --color--font: var(--color--font--black);
+  --color--font--button: var(--color--font--black);
+  --color--font--button--disabled: var(--color--font--gray);
+  --color--font--settings--bucket: var(--color--font--white);
+  --color--font--settings--bucket--danger: var(--color--font--black);
+  --color--font--placeholder: var(--color--neutral50);
+  --color--font--menu: var(--color--font--black);
+  --color--font--menu--disabled: var(--color--font--gray);
+  --color--line--close-button: var(--color--border);
+  --color--line--close-button--hover: var(--color--neutral70);
   --color--obfucator--loader: var(--color--neutral10);
 }
