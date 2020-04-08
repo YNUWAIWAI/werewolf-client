@@ -52,6 +52,7 @@ describe('render', () => {
         handleAvatarNameChange={handleAvatarNameChange}
         handleHoverAvatar={handleHoverAvatar}
         handleSelectAvatar={handleSelectAvatar}
+        navigatable
         renewAccessToken={renewAccessToken}
       />
     )
@@ -116,6 +117,7 @@ describe('render', () => {
         handleAvatarNameChange={handleAvatarNameChange}
         handleHoverAvatar={handleHoverAvatar}
         handleSelectAvatar={handleSelectAvatar}
+        navigatable
         renewAccessToken={renewAccessToken}
       />
     )

@@ -15,6 +15,7 @@ describe('<MenuItem />', () => {
         <MenuItem
           className="className"
           id="Menu.returnToMainPage"
+          navigative
           transition={transition}
           types={[ActionTypes.App.SHOW_MAIN]}
         />
@@ -31,6 +32,7 @@ describe('<MenuItem />', () => {
           className="className"
           disabled
           id="Menu.returnToMainPage"
+          navigative
           transition={transition}
           types={[ActionTypes.App.SHOW_MAIN]}
         />
@@ -47,6 +49,7 @@ describe('<MenuItem />', () => {
           className="className"
           id="Menu.returnToMainPage"
           isLoading
+          navigative
           transition={transition}
           types={[ActionTypes.App.SHOW_MAIN]}
         />
@@ -64,6 +67,7 @@ describe('<MenuItem />', () => {
         <MenuItem
           className="className"
           id="Menu.returnToMainPage"
+          navigative
           transition={transition}
           types={[ActionTypes.App.SHOW_MAIN]}
         />
@@ -80,6 +84,7 @@ describe('<MenuItem />', () => {
           className="className"
           disabled
           id="Menu.returnToMainPage"
+          navigative
           transition={transition}
           types={[ActionTypes.App.SHOW_MAIN]}
         />
@@ -95,6 +100,7 @@ describe('<MenuItem />', () => {
           className="className"
           id="Menu.returnToMainPage"
           isLoading
+          navigative
           transition={transition}
           types={[ActionTypes.App.SHOW_MAIN]}
         />
