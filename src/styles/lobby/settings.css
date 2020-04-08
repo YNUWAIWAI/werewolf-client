@@ -1,7 +1,7 @@
 .lo--settings {
   &--bucket {
     background: var(--color--background);
-    border: 1px solid var(--color--neutral80);
+    border: 1px solid var(--color--border--settings--bucket);
     margin-bottom: 3rem;
 
     &.danger {
@@ -9,14 +9,14 @@
     }
 
     &--head {
-      background: var(--color--neutral80);
-      color: var(--color--neutral10);
+      background: var(--color--background--settings--bucket);
+      color: var(--color--font--settings--bucket);
       font-size: 2rem;
       padding: 1rem;
 
       &.danger {
         background: var(--color--danger);
-        color: var(--color--neutral0);
+        color: var(--color--font--settings--bucket--danger);
       }
     }
 
@@ -29,7 +29,6 @@
       margin: 1rem;
 
       &--button {
-        appearance: none;
         background: var(--color--background--button);
         border: none;
         border-radius: 4px;
@@ -40,23 +39,21 @@
         line-height: 2;
 
         &:disabled {
-          background: var(--color--disabled);
+          background: var(--color--background--button--disabled);
+          color: var(--color--font--button--disabled);
           cursor: not-allowed;
         }
 
+        &:focus {
+          box-shadow: var(--box-shadow--focus-ring);
+          outline: none;
+        }
+
         &:hover {
-          background: var(--color--hover);
+          background: var(--color--background--button--hover);
 
           &:disabled {
-            background: var(--color--disabled);
-          }
-
-          &:active {
-            background: var(--color--active);
-
-            &:disabled {
-              background: var(--color--disabled);
-            }
+            background: var(--color--background--button--disabled);
           }
         }
       }

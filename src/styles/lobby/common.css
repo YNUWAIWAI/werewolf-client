@@ -1,0 +1,47 @@
+.lo {
+  --min-height--window: 536px;
+  --min-width--window: 900px;
+
+  /* focus-ring */
+  --box-shadow--focus-ring: 0 0 3px 2px var(--color--primary);
+
+  /* font-color */
+  --color--font--black: hsl(0, 0%, 10%);
+  --color--font--gray: hsl(0, 0%, 50%);
+  --color--font--white: hsl(0, 0%, 90%);
+
+  /* color */
+  --color--active: var(--color--neutral40);
+  --color--background--button: var(--color--neutral20);
+  --color--background--input: var(--color--neutral10);
+  --color--background--me: var(--color--primary);
+  --color--disabled: var(--color--neutral50);
+  --color--font: var(--color--neutral90);
+  --color--font--me: var(--color--neutral0);
+  --color--font--input: var(--color--neutral80);
+  --color--font--role-image: rgb(254, 254, 254);
+  --color--hover: var(--color--neutral30);
+  --color--me: var(--color--primary);
+  --color--obfucator: rgba(0, 0, 0, 0.8);
+  --color--selected: var(--color--primary25);
+  --filter--active: opacity(60%);
+  --filter--hover: opacity(70%);
+
+  /* image-size */
+  --size--avatar-image: 50px;
+  --size--avatar-image--L: 120px;
+  --size--role-image: 50px;
+
+  /* z-index */
+  --z-index--background: -1;
+  --z-index--kick-out: 2;
+  --z-index--obfucator: 3;
+  --z-index--modal: 4;
+  --z-index--member--image: 0;
+  --z-index--member--text: 1;
+  --z-index--village--select: 2;
+
+  /* properties */
+  color: var(--color--font);
+  font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
+}

@@ -4,60 +4,60 @@
   padding: 0;
 
   &--item {
-    background: var(--color--background);
+    background: var(--color--background--menu);
     border: 2px solid var(--color--border);
     cursor: pointer;
-    font-size: 2rem;
     font-weight: 100;
-    line-height: 1.5;
     margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    text-align: center;
     user-select: none;
 
-    &.disabled {
-      background: var(--color--disabled);
-      cursor: not-allowed;
+    &--button {
+      background: var(--color--background--menu);
+      border: none;
+      color: var(--color--font--menu);
+      font-size: 2rem;
+      font-weight: 100;
+      padding: 0.5rem;
+      text-align: center;
+      width: 100%;
 
-      &:hover {
-        background: var(--color--disabled);
+      &.loader {
+        align-items: center;
+        background: var(--color--background--menu--disabled);
+        color: var(--color--font--menu--disabled);
+        cursor: wait;
+        display: flex;
+        justify-content: center;
 
-        &:active {
-          background: var(--color--disabled);
+        &:hover {
+          background: var(--color--background--menu--disabled);
         }
       }
-    }
 
-    &.loader {
-      align-items: center;
-      background: var(--color--active);
-      cursor: wait;
-      display: flex;
-      justify-content: center;
+      &:focus {
+        background: var(--color--background--menu--focus);
+        outline: none;
+      }
 
       &:hover {
-        background: var(--color--active);
+        background: var(--color--background--menu--hover);
+      }
 
-        &:active {
-          background: var(--color--active);
+      &:disabled {
+        background: var(--color--background--menu--disabled);
+        color: var(--color--font--button--disabled);
+        cursor: not-allowed;
+
+        &:hover {
+          background: var(--color--background--menu--disabled);
         }
       }
-    }
 
-    & > svg {
-      height: 3rem;
-      width: 3rem;
-    }
-
-    & > .loader {
-      stroke: var(--color--neutral90);
-    }
-
-    &:hover {
-      background: var(--color--hover);
-
-      &:active {
-        background: var(--color--active);
+      & > .loader {
+        height: 3rem;
+        position: absolute;
+        stroke: var(--color--neutral90);
+        width: 3rem;
       }
     }
   }

@@ -7,6 +7,7 @@ interface Props {
   readonly authorized: lobby.Authorized
   readonly handleAccept: () => void
   readonly handleSelect: () => void
+  readonly naviagtable: boolean
 }
 
 export default function SelectAvatarTableBodyAuthorized(props: Props) {
@@ -28,12 +29,13 @@ export default function SelectAvatarTableBodyAuthorized(props: Props) {
               className={className}
               onClick={handleSelect}
             >
-              <div
+              <button
                 className="accept"
                 onClick={props.handleAccept}
+                tabIndex={props.naviagtable ? 0 : -1}
               >
                 {text}
-              </div>
+              </button>
             </div>
           )
         }

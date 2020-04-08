@@ -10,7 +10,7 @@ const windowLocation: Middleware = store => next => action => {
 
       return next(action)
     case ActionTypes.App.SHOW_CREDITS: {
-      const w = window.open(`${window.location.origin}/credits`, 'credits')
+      const w = window.open('https://werewolfguide.netlify.com/docs/en/credits', 'credits')
 
       if (w) {
         w.opener = null
@@ -19,7 +19,7 @@ const windowLocation: Middleware = store => next => action => {
       return next(action)
     }
     case ActionTypes.App.SHOW_HOW_TO_PLAY: {
-      const w = window.open(`${window.location.origin}/how-to-play`, 'how-to-play')
+      const w = window.open('https://werewolfguide.netlify.com/docs/en/introduction', 'how-to-play')
 
       if (w) {
         w.opener = null

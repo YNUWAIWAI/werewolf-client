@@ -16,6 +16,7 @@ describe('render', () => {
         authorized={lobby.Authorized.no}
         handleAccept={handleAccept}
         handleSelect={handleSelect}
+        naviagtable
       />
     )
 
@@ -30,6 +31,7 @@ describe('render', () => {
         authorized={lobby.Authorized.waitForAcceptance}
         handleAccept={handleAccept}
         handleSelect={handleSelect}
+        naviagtable
       />
     )
 
@@ -44,6 +46,7 @@ describe('render', () => {
         authorized={lobby.Authorized.yes}
         handleAccept={handleAccept}
         handleSelect={handleSelect}
+        naviagtable
       />
     )
 
@@ -60,6 +63,7 @@ describe('handleSelect', () => {
         authorized={lobby.Authorized.waitForAcceptance}
         handleAccept={handleAccept}
         handleSelect={handleSelect}
+        naviagtable
       />
     )
 
@@ -75,6 +79,7 @@ describe('handleSelect', () => {
         authorized={lobby.Authorized.waitForAcceptance}
         handleAccept={handleAccept}
         handleSelect={handleSelect}
+        naviagtable
       />
     )
 
