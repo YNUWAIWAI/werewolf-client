@@ -6,8 +6,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   theme: state.theme
 })
 
-const ObfucatorContainer = connect(
+const Container = connect(
   mapStateToProps
 )(Component)
 
-export default ObfucatorContainer
+export default Container

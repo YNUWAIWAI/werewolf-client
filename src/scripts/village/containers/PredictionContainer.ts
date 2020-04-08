@@ -6,7 +6,7 @@ import {
   hidePredictionSpec,
   showPredictionSpec
 } from '../actions'
-import Prediction, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/organisms/Prediction'
@@ -91,9 +91,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   }
 })
 
-const PredictionContainer = connect(
+const Container = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Prediction)
+)(Component)
 
-export default PredictionContainer
+export default Container

@@ -1,4 +1,4 @@
-import CommandInputBox, {
+import Component, {
   DispatchProps,
   StateProps
 } from '../components/organisms/CommandInputBox'
@@ -31,9 +31,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     )
   }
 })
-const CommandInputBoxContainer = connect(
+const Container = connect(
   mapStateToProps,
   mapDispatchToProps
-)(CommandInputBox)
+)(Component)
 
-export default CommandInputBoxContainer
+export default Container
