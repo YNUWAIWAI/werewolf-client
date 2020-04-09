@@ -44,11 +44,6 @@ export default function CreateNewRobotAvatarBody(props: Props) {
         defaultValue={lobby.Automation.full}
         handleChange={() => () => {}}
       />
-      <Menu
-        className="lo--create-new-avatar--command"
-        itemClassName="lo--create-new-avatar--command--item"
-        items={props.command}
-      />
     </div>
   )
 }
