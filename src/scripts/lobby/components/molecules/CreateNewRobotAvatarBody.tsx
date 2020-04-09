@@ -4,7 +4,9 @@ import {FormattedMessage} from 'react-intl'
 import TextInput from '../atoms/TextInput'
 import {lobby} from '../../types'
 
-interface Props {}
+interface Props {
+  readonly navigatable: boolean
+}
 
 export default function CreateNewRobotAvatarBody(props: Props) {
   return (
@@ -32,6 +34,7 @@ export default function CreateNewRobotAvatarBody(props: Props) {
         initialValue=""
         max={15}
         min={5}
+        navigatable
         placeholder=""
         required
       />
