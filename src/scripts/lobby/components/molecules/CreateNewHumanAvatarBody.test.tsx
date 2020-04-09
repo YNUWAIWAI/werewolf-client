@@ -14,5 +14,4 @@ test('render', () => {
   )
 
   expect(wrapper.find(TextInput)).toHaveLength(1)
-  expect(wrapper.find(Menu)).toHaveLength(1)
 })
