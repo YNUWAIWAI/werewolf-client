@@ -12,9 +12,7 @@ export default function CreateNewRobotAvatarBox(props: Props) {
   return (
     <>
       <CreateNewAvatarHeader />
-      <CreateNewRobotAvatarBody
-        command={props.command}
-      />
+      <CreateNewRobotAvatarBody />
       <Menu
         className="lo--create-new-avatar--command"
         itemClassName="lo--create-new-avatar--command--item"
