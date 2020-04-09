@@ -1,14 +1,10 @@
 import * as React from 'react'
 import AutomationSelect from '../atoms/Select/AutomationSelect'
 import {FormattedMessage} from 'react-intl'
-import Menu from '../../containers/MenuContainer'
-import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import TextInput from '../atoms/TextInput'
 import {lobby} from '../../types'
 
-interface Props {
-  command: MenuItem[]
-}
+interface Props {}
 
 export default function CreateNewRobotAvatarBody(props: Props) {
   return (

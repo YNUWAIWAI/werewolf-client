@@ -1,11 +1,8 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import TextInput from '../atoms/TextInput'
 
-interface Props {
-  command: MenuItem[]
-}
+interface Props {}
 
 export default function CreateNewHumanAvatarBody(props: Props) {
   return (
