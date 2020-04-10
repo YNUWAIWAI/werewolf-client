@@ -13,6 +13,7 @@ describe('<TextareaInput />', () => {
         initialValue=""
         max={100}
         min={0}
+        navigatable
         placeholder="0-100 chars"
         required
         rows={3}
@@ -32,6 +33,7 @@ describe('<TextareaInput />', () => {
         initialValue=""
         max={100}
         min={0}
+        navigatable
         placeholder="0-100 chars"
         required
         rows={3}

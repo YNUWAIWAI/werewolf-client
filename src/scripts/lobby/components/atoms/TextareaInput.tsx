@@ -6,6 +6,7 @@ interface Props {
   readonly initialValue: string
   readonly max: number
   readonly min: number
+  readonly navigatable: boolean
   readonly placeholder: string
   readonly required: boolean
   readonly rows: number
@@ -44,6 +45,7 @@ export default class TextareaInput extends React.Component<Props, State> {
         placeholder={this.props.placeholder}
         required={this.props.required}
         rows={this.props.rows}
+        tabIndex={this.props.navigatable ? 0 : -1}
         value={this.state.value}
       />
     )
