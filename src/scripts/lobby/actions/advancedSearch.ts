@@ -6,6 +6,7 @@ export declare namespace AdvancedSearch {
   type ChangeAvatar = {
     avatar: lobby.Avatar
     type: ActionTypes.AdvancedSearch.CHANGE_AVATAR
+    valid: boolean
   }
   type ChangeCheckbox = {
     propName: string
@@ -15,62 +16,63 @@ export declare namespace AdvancedSearch {
   type ChangeComment = {
     comment: string
     type: ActionTypes.AdvancedSearch.CHANGE_COMMENT
+    valid: boolean
   }
   type ChangeHostName = {
     hostName: string
     type: ActionTypes.AdvancedSearch.CHANGE_HOST_NAME
+    valid: boolean
   }
   type ChangeMaximum = {
     maximum: number
     type: ActionTypes.AdvancedSearch.CHANGE_MAXIMUM
+    valid: boolean
   }
   type ChangeMinimum = {
     minimum: number
     type: ActionTypes.AdvancedSearch.CHANGE_MINIMUM
-  }
-  type ChangeValidity = {
-    propName: string
-    type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY
-    validity: boolean
+    valid: boolean
   }
   type ChangeVillageName = {
     type: ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME
+    valid: boolean
     villageName: string
   }
 }
 
-const changeAvatar = (avatar: lobby.Avatar): AdvancedSearch.ChangeAvatar => ({
+const changeAvatar = (valid: boolean) => (avatar: lobby.Avatar): AdvancedSearch.ChangeAvatar => ({
   avatar,
-  type: ActionTypes.AdvancedSearch.CHANGE_AVATAR
+  type: ActionTypes.AdvancedSearch.CHANGE_AVATAR,
+  valid
 })
 const changeCheckbox = (propName: string) => (checked: boolean): AdvancedSearch.ChangeCheckbox => ({
   checked,
   propName,
   type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
 })
-const changeComment = (comment: string): AdvancedSearch.ChangeComment => ({
+const changeComment = (valid: boolean) => (comment: string): AdvancedSearch.ChangeComment => ({
   comment,
-  type: ActionTypes.AdvancedSearch.CHANGE_COMMENT
+  type: ActionTypes.AdvancedSearch.CHANGE_COMMENT,
+  valid
 })
-const changeHostName = (hostName: string): AdvancedSearch.ChangeHostName => ({
+const changeHostName = (valid: boolean) => (hostName: string): AdvancedSearch.ChangeHostName => ({
   hostName,
-  type: ActionTypes.AdvancedSearch.CHANGE_HOST_NAME
+  type: ActionTypes.AdvancedSearch.CHANGE_HOST_NAME,
+  valid
 })
-const changeMaximum = (maximum: number): AdvancedSearch.ChangeMaximum => ({
+const changeMaximum = (valid: boolean) => (maximum: number): AdvancedSearch.ChangeMaximum => ({
   maximum: Number(maximum),
-  type: ActionTypes.AdvancedSearch.CHANGE_MAXIMUM
+  type: ActionTypes.AdvancedSearch.CHANGE_MAXIMUM,
+  valid
 })
-const changeMinimum = (minimum: number): AdvancedSearch.ChangeMinimum => ({
+const changeMinimum = (valid: boolean) => (minimum: number): AdvancedSearch.ChangeMinimum => ({
   minimum: Number(minimum),
-  type: ActionTypes.AdvancedSearch.CHANGE_MINIMUM
+  type: ActionTypes.AdvancedSearch.CHANGE_MINIMUM,
+  valid
 })
-const changeValidity = (propName: string) => (validity: boolean): AdvancedSearch.ChangeValidity => ({
-  propName,
-  type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-  validity
-})
-const changeVillageName = (villageName: string): AdvancedSearch.ChangeVillageName => ({
+const changeVillageName = (valid: boolean) => (villageName: string): AdvancedSearch.ChangeVillageName => ({
   type: ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME,
+  valid,
   villageName
 })
 
@@ -81,6 +83,5 @@ export const advancedSearch = {
   changeHostName,
   changeMaximum,
   changeMinimum,
-  changeValidity,
   changeVillageName
 }
