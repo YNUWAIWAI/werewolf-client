@@ -20,6 +20,7 @@ interface Props {
   readonly className: string
   readonly defaultValue: lobby.Avatar
   readonly handleChange: (valid: boolean) => (avatar: lobby.Avatar) => void
+  readonly navigatable?: boolean
   readonly type: 'advancedSearch' | 'buildVillage'
 }
 
@@ -95,6 +96,7 @@ export default function AvatarSelect(props: Props) {
       className={props.className}
       defaultValue={defaultValue}
       isSearchable={false}
+      navigatable={props.navigatable}
       onChange={handleChange}
       options={options}
     />
