@@ -196,7 +196,7 @@ describe('<AdvancedSearchContainer />', () => {
     )
     const avatar = lobby.Avatar.fixed
 
-    wrapper.find(AdvancedSearch).props().handleAvatarChange(avatar)
+    wrapper.find(AdvancedSearch).props().handleAvatarChange(true)(avatar)
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       avatar,
@@ -339,7 +339,7 @@ describe('<AdvancedSearchContainer />', () => {
       )
       const maximum = 10
 
-      wrapper.find(AdvancedSearch).props().handleNumberChange('maximum')(maximum)
+      wrapper.find(AdvancedSearch).props().handleNumberChange('maximum')(true)(maximum)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         maximum,
@@ -409,7 +409,7 @@ describe('<AdvancedSearchContainer />', () => {
       )
       const minimum = 10
 
-      wrapper.find(AdvancedSearch).props().handleNumberChange('minimum')(minimum)
+      wrapper.find(AdvancedSearch).props().handleNumberChange('minimum')(true)(minimum)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         minimum,
@@ -481,7 +481,7 @@ describe('<AdvancedSearchContainer />', () => {
       )
       const comment = 'comment'
 
-      wrapper.find(AdvancedSearch).props().handleTextChange('comment')(comment)
+      wrapper.find(AdvancedSearch).props().handleTextChange('comment')(true)(comment)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         comment,
@@ -551,7 +551,7 @@ describe('<AdvancedSearchContainer />', () => {
       )
       const hostName = 'hostName'
 
-      wrapper.find(AdvancedSearch).props().handleTextChange('hostName')(hostName)
+      wrapper.find(AdvancedSearch).props().handleTextChange('hostName')(true)(hostName)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         hostName,
@@ -621,84 +621,12 @@ describe('<AdvancedSearchContainer />', () => {
       )
       const villageName = 'villageName'
 
-      wrapper.find(AdvancedSearch).props().handleTextChange('villageName')(villageName)
+      wrapper.find(AdvancedSearch).props().handleTextChange('villageName')(true)(villageName)
       expect(dispatch).toHaveBeenCalledTimes(1)
       expect(dispatch).toHaveBeenCalledWith({
         type: ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME,
         villageName
       })
-    })
-  })
-  test('handleValidityChange', () => {
-    const store = fakeStore(
-      {
-        advancedSearch: {
-          checked: {
-            avatar: true,
-            comment: false,
-            hostName: false,
-            maximum: false,
-            minimum: false,
-            villageName: false
-          },
-          header: 'Header.idSearch(audience)',
-          image: '',
-          isPlayer: true,
-          menuItems: [
-            {
-              id: 'Menu.search',
-              types: [ActionTypes.AdvancedSearch.SEARCH]
-            },
-            {
-              id: 'Menu.returnToLobbyForHumanPlayer',
-              types: [ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-            },
-            {
-              id: 'Menu.returnToMainPage',
-              types: [ActionTypes.App.SHOW_MAIN]
-            }
-          ],
-          name: '',
-          searched: false,
-          validity: {
-            avatar: true,
-            comment: false,
-            hostName: false,
-            maximum: false,
-            minimum: false,
-            villageName: false
-          },
-          value: {
-            avatar: lobby.Avatar.random,
-            comment: '',
-            hostName: '',
-            maximum: -1,
-            minimum: -1,
-            villageName: ''
-          },
-          villageItems: []
-        }
-      }
-    )
-    const dispatch = jest.fn()
-
-    store.dispatch = dispatch
-    const wrapper = mount(
-      <Provider store={store} >
-        <IntlProviderContainer>
-          <AdvancedSearchContainer />
-        </IntlProviderContainer>
-      </Provider>
-    )
-    const propName = 'villageName'
-    const validity = true
-
-    wrapper.find(AdvancedSearch).props().handleValidityChange(propName)(validity)
-    expect(dispatch).toHaveBeenCalledTimes(1)
-    expect(dispatch).toHaveBeenCalledWith({
-      propName,
-      type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-      validity
     })
   })
   test('selectVillage', () => {

@@ -54,11 +54,10 @@ storiesOf('lobby|AdvancedSearch', module)
         types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
-    const handleAvatarChange = action('handleAvatarChange')
+    const handleAvatarChange = () => action('handleAvatarChange')
     const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
-    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
-    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
+    const handleNumberChange = (propName: string) => () => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => () => action(`handleTextChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const store = createStore(
       reducer,
@@ -75,12 +74,12 @@ storiesOf('lobby|AdvancedSearch', module)
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             header="Header.advancedSearch(human player)"
             image={ImagePath.Character.r}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
+            navigatable
             searched={false}
             selectVillage={selectVillage}
             validity={validity}
@@ -122,11 +121,10 @@ storiesOf('lobby|AdvancedSearch', module)
         types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
-    const handleAvatarChange = action('handleAvatarChange')
-    const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
-    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
-    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
+    const handleAvatarChange = () => action('handleAvatarChange')
+    const handleCheckboxChange = (propName: string) => () => action(`handleCheckboxChange ${propName}`)
+    const handleNumberChange = (propName: string) => () => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => () => action(`handleTextChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const store = createStore(
       reducer,
@@ -143,12 +141,12 @@ storiesOf('lobby|AdvancedSearch', module)
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             header="Header.advancedSearch(human player)"
             image={ImagePath.Character.r}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
+            navigatable
             searched
             selectVillage={selectVillage}
             validity={validity}
@@ -190,12 +188,12 @@ storiesOf('lobby|AdvancedSearch', module)
         types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
-    const handleAvatarChange = action('handleAvatarChange')
-    const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
-    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
-    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
-    const selectVillage = (id: number) => action(`selectVillage ${id}`)
+    const handleAvatarChange = () => action('handleAvatarChange')
+    const handleCheckboxChange = (propName: string) => () => action(`handleCheckboxChange ${propName}`)
+    const handleNumberChange = (propName: string) => () => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => () => action(`handleTextChange ${propName}`)
+    const handleValidityChange = (propName: string) => () => action(`handleValidityChange ${propName}`)
+    const selectVillage = (id: number) => () => action(`selectVillage ${id}`)
     const villageItems: Props['villageItems'] = [
       {
         avatar: lobby.Avatar.fixed,
@@ -247,12 +245,12 @@ storiesOf('lobby|AdvancedSearch', module)
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             header="Header.advancedSearch(human player)"
             image={ImagePath.Character.r}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
+            navigatable
             searched
             selectVillage={selectVillage}
             validity={validity}
@@ -294,11 +292,11 @@ storiesOf('lobby|AdvancedSearch', module)
         types: [ActionTypes.App.SHOW_MAIN]
       }
     ]
-    const handleAvatarChange = action('handleAvatarChange')
-    const handleCheckboxChange = (propName: string) => action(`handleCheckboxChange ${propName}`)
-    const handleNumberChange = (propName: string) => action(`handleNumberChange ${propName}`)
-    const handleTextChange = (propName: string) => action(`handleTextChange ${propName}`)
-    const handleValidityChange = (propName: string) => action(`handleValidityChange ${propName}`)
+    const handleAvatarChange = () => action('handleAvatarChange')
+    const handleCheckboxChange = (propName: string) => () => action(`handleCheckboxChange ${propName}`)
+    const handleNumberChange = (propName: string) => () => action(`handleNumberChange ${propName}`)
+    const handleTextChange = (propName: string) => () => action(`handleTextChange ${propName}`)
+    const handleValidityChange = (propName: string) => () => action(`handleValidityChange ${propName}`)
     const selectVillage = (id: number) => action(`selectVillage ${id}`)
     const villageItems: Props['villageItems'] = [
       {
@@ -385,12 +383,12 @@ storiesOf('lobby|AdvancedSearch', module)
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             header="Header.advancedSearch(human player)"
             image={ImagePath.Character.r}
             isPlayer
             menuItems={menuItems}
             name="Ryan"
+            navigatable
             searched
             selectVillage={selectVillage}
             validity={validity}

@@ -20,7 +20,6 @@ type Action =
   | AdvancedSearch.ChangeHostName
   | AdvancedSearch.ChangeMaximum
   | AdvancedSearch.ChangeMinimum
-  | AdvancedSearch.ChangeValidity
   | AdvancedSearch.ChangeVillageName
   | SelectVillage
 
@@ -51,39 +50,37 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     isPlayer: state.advancedSearch.isPlayer,
     menuItems,
     name: state.advancedSearch.name,
+    navigatable: !state.obfucator.visible,
     searched: state.advancedSearch.searched,
     validity: state.advancedSearch.validity,
     villageItems: state.advancedSearch.villageItems
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleAvatarChange: value => {
-    dispatch(advancedSearch.changeAvatar(value))
+  handleAvatarChange: valid => value => {
+    dispatch(advancedSearch.changeAvatar(valid)(value))
   },
   handleCheckboxChange: propName => checked => {
     dispatch(advancedSearch.changeCheckbox(propName)(checked))
   },
-  handleNumberChange: propName => value => {
+  handleNumberChange: propName => valid => value => {
     if (propName === 'maximum') {
-      dispatch(advancedSearch.changeMaximum(value))
+      dispatch(advancedSearch.changeMaximum(valid)(value))
     }
     if (propName === 'minimum') {
-      dispatch(advancedSearch.changeMinimum(value))
+      dispatch(advancedSearch.changeMinimum(valid)(value))
     }
   },
-  handleTextChange: propName => value => {
+  handleTextChange: propName => valid => value => {
     if (propName === 'comment') {
-      dispatch(advancedSearch.changeComment(value))
+      dispatch(advancedSearch.changeComment(valid && value !== '')(value))
     }
     if (propName === 'hostName') {
-      dispatch(advancedSearch.changeHostName(value))
+      dispatch(advancedSearch.changeHostName(valid && value !== '')(value))
     }
     if (propName === 'villageName') {
-      dispatch(advancedSearch.changeVillageName(value))
+      dispatch(advancedSearch.changeVillageName(valid && value !== '')(value))
     }
-  },
-  handleValidityChange: propName => validity => {
-    dispatch(advancedSearch.changeValidity(propName)(validity))
   },
   selectVillage: id => () => {
     dispatch(selectVillage(id))

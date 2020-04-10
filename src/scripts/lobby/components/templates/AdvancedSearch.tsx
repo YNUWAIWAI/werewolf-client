@@ -29,6 +29,7 @@ export interface StateProps {
   readonly isPlayer: boolean
   readonly menuItems: MenuItem[]
   readonly name: string
+  readonly navigatable: boolean
   readonly searched: boolean
   readonly validity: {
     readonly avatar: boolean
@@ -41,11 +42,10 @@ export interface StateProps {
   readonly villageItems: lobby.Village[]
 }
 export interface DispatchProps {
-  readonly handleAvatarChange: (value: lobby.Avatar) => void
-  readonly handleCheckboxChange: (propName: PropName) => (valid: boolean) => void
-  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
-  readonly handleTextChange: (propName: TextPropName) => (value: string) => void
-  readonly handleValidityChange: (propName: PropName) => (value: boolean) => void
+  readonly handleAvatarChange: (valid: boolean) => (value: lobby.Avatar) => void
+  readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
+  readonly handleNumberChange: (propName: NumberPropName) => (valid: boolean) => (value: number) => void
+  readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
   readonly selectVillage: (id: number) => () => void
 }
 export type Props = StateProps & DispatchProps
@@ -62,7 +62,7 @@ export default function AdvancedSearch(props: Props) {
           handleCheckboxChange={props.handleCheckboxChange}
           handleNumberChange={props.handleNumberChange}
           handleTextChange={props.handleTextChange}
-          handleValidityChange={props.handleValidityChange}
+          navigatable={props.navigatable}
           validity={props.validity}
         />
         <SearchResult

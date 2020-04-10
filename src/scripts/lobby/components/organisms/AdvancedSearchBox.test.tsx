@@ -32,8 +32,6 @@ describe('<AdvancedSearchBox />', () => {
     const handleNumberChange = jest.fn(() => handleNumberChangeInner)
     const handleTextChangeInner = jest.fn()
     const handleTextChange = jest.fn(() => handleTextChangeInner)
-    const handleValidityChangeInner = jest.fn()
-    const handleValidityChange = jest.fn(() => handleValidityChangeInner)
     const wrapper = mountWithIntl(
       <AdvancedSearchBox
         checked={checked}
@@ -41,7 +39,7 @@ describe('<AdvancedSearchBox />', () => {
         handleCheckboxChange={handleCheckboxChange}
         handleNumberChange={handleNumberChange}
         handleTextChange={handleTextChange}
-        handleValidityChange={handleValidityChange}
+        navigatable
         validity={validity}
       />
     )
@@ -75,8 +73,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -84,7 +80,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -108,10 +104,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('avatar')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('avatar')
       })
       test('[]', () => {
         const handleAvatarChange = jest.fn()
@@ -121,8 +113,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -130,7 +120,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -150,10 +140,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('avatar')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('avatar')
       })
       test('undefined', () => {
         const handleAvatarChange = jest.fn()
@@ -163,8 +149,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -172,7 +156,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -189,8 +173,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
       })
       test('null', () => {
         const handleAvatarChange = jest.fn()
@@ -200,8 +182,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -209,7 +189,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -226,8 +206,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleAvatarChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
       })
     })
     describe('comment', () => {
@@ -239,8 +217,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -248,7 +224,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -269,10 +245,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('comment')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('comment')
       })
       test('invalid', () => {
         const handleAvatarChange = jest.fn()
@@ -282,8 +254,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -291,7 +261,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -312,10 +282,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(false)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('comment')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('comment')
       })
       test('empty', () => {
         const handleAvatarChange = jest.fn()
@@ -325,8 +291,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -334,7 +298,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -355,10 +319,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(false)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('comment')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('comment')
       })
     })
     describe('hostName', () => {
@@ -370,8 +330,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -379,7 +337,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -400,10 +358,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('hostName')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('hostName')
       })
       test('invalid', () => {
         const handleAvatarChange = jest.fn()
@@ -413,8 +367,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -422,7 +374,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -443,10 +395,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(false)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('hostName')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('hostName')
       })
     })
     describe('maximum', () => {
@@ -458,8 +406,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -467,7 +413,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -492,10 +438,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('maximum')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('maximum')
       })
       test('[]', () => {
         const handleAvatarChange = jest.fn()
@@ -506,7 +448,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
         const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -514,7 +455,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -536,10 +477,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(false)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('maximum')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('maximum')
       })
       test('undefined', () => {
         const handleAvatarChange = jest.fn()
@@ -549,8 +486,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -558,7 +493,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -576,8 +511,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
       })
       test('null', () => {
         const handleAvatarChange = jest.fn()
@@ -587,8 +520,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -596,7 +527,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -614,8 +545,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
       })
     })
     describe('minimum', () => {
@@ -628,7 +557,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
         const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -636,7 +564,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -661,10 +589,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('minimum')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('minimum')
       })
       test('[]', () => {
         const handleAvatarChange = jest.fn()
@@ -674,8 +598,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -683,7 +605,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -705,10 +627,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(false)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('minimum')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('minimum')
       })
       test('undefined', () => {
         const handleAvatarChange = jest.fn()
@@ -718,8 +636,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -727,7 +643,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -745,8 +661,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
       })
       test('null', () => {
         const handleAvatarChange = jest.fn()
@@ -756,8 +670,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -765,7 +677,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -783,8 +695,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleNumberChange).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChangeInner).toHaveBeenCalledTimes(0)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
       })
     })
     describe('villageName', () => {
@@ -796,8 +706,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -805,7 +713,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -826,10 +734,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(true)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('villageName')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('villageName')
       })
       test('invalid', () => {
         const handleAvatarChange = jest.fn()
@@ -839,8 +743,6 @@ describe('<AdvancedSearchBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <AdvancedSearchBox
             checked={checked}
@@ -848,7 +750,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -869,10 +771,6 @@ describe('<AdvancedSearchBox />', () => {
         expect(handleCheckboxChangeInner).toHaveBeenCalledWith(false)
         expect(handleCheckboxChange).toHaveBeenCalledTimes(1)
         expect(handleCheckboxChange).toHaveBeenCalledWith('villageName')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('villageName')
       })
     })
   })
@@ -890,8 +788,6 @@ describe('<AdvancedSearchBox />', () => {
     const handleNumberChange = jest.fn(() => handleNumberChangeInner)
     const handleTextChangeInner = jest.fn()
     const handleTextChange = jest.fn(() => handleTextChangeInner)
-    const handleValidityChangeInner = jest.fn()
-    const handleValidityChange = jest.fn(() => handleValidityChangeInner)
 
     describe('avatar', () => {
       test('enabled', () => {
@@ -912,7 +808,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -939,7 +835,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -968,7 +864,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -997,7 +893,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1027,7 +923,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1056,7 +952,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1085,7 +981,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1114,7 +1010,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1143,7 +1039,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1172,7 +1068,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1201,7 +1097,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
@@ -1230,7 +1126,7 @@ describe('<AdvancedSearchBox />', () => {
             handleCheckboxChange={handleCheckboxChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
           />
         )
