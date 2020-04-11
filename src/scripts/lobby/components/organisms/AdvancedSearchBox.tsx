@@ -13,7 +13,7 @@ type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
 
 type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
 
-export interface Props {
+export interface StateProps {
   readonly checked: {
     readonly avatar: boolean
     readonly comment: boolean
@@ -22,10 +22,6 @@ export interface Props {
     readonly minimum: boolean
     readonly villageName: boolean
   }
-  readonly handleAvatarChange: (valid: boolean) => (avatar: lobby.Avatar) => void
-  readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
-  readonly handleNumberChange: (propName: NumberPropName) => (valid: boolean) => (value: number) => void
-  readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
@@ -36,6 +32,13 @@ export interface Props {
   }
   readonly navigatable: boolean
 }
+export interface DispatchProps {
+  readonly handleAvatarChange: (valid: boolean) => (avatar: lobby.Avatar) => void
+  readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
+  readonly handleNumberChange: (propName: NumberPropName) => (valid: boolean) => (value: number) => void
+  readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
+}
+type Props = StateProps & DispatchProps
 
 export default function AdvancedSearchBox(props: Props) {
   return (
