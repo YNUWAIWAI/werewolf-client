@@ -58,14 +58,14 @@ export default function AdvancedSearchBox(props: Props) {
         checked={props.checked.minimum}
         handleCheckboxChange={props.handleCheckboxChange('minimum')}
         handleValueChange={props.handleNumberChange('minimum')}
-        navigatable
+        navigatable={props.navigatable}
         valid={props.validity.minimum}
       />
       <AdvancedSearchCellMaximum
         checked={props.checked.maximum}
         handleCheckboxChange={props.handleCheckboxChange('maximum')}
         handleValueChange={props.handleNumberChange('maximum')}
-        navigatable
+        navigatable={props.navigatable}
         valid={props.validity.maximum}
       />
       <AdvancedSearchCellAvatar
