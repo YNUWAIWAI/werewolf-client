@@ -448,7 +448,7 @@ test('SHOW_ADVANCED_SEARCH', () => {
           hostName: 'hostName',
           maximum: 10,
           minimum: 5,
-          villageName: 'Cursed Village'
+          villageName: 'Cursed village'
         }
       },
       {
