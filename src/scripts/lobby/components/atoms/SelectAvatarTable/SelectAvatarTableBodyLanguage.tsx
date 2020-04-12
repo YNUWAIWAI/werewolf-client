@@ -7,6 +7,7 @@ interface Props {
   readonly handleChange: (valid: boolean) => (value: lobby.Language) => void
   readonly handleSelect: () => void
   readonly language: lobby.Language
+  readonly navigatable: boolean
 }
 
 export default function SelectAvatarTableBodyLanguage(props: Props) {
@@ -26,6 +27,7 @@ export default function SelectAvatarTableBodyLanguage(props: Props) {
         defaultValue={props.language}
         handleChange={props.handleChange}
         menuPosition="fixed"
+        navigatable={props.navigatable}
       />
     </div>
   )

@@ -14,6 +14,7 @@ export interface StateProps {
     readonly userName: string
   }
   readonly menuItems: MenuItem[]
+  readonly navigatable: boolean
 }
 export interface DispatchProps {
   readonly handleChangeLanguage: (value: lobby.Language) => void
@@ -36,6 +37,7 @@ export default function Setting(props: Props) {
           handleChangeUserPassword={props.handleChangeUserPassword}
           handleSubmitLogout={props.handleSubmitLogout}
           initialValue={props.initialValue}
+          navigatable={props.navigatable}
         />
       </MainContent>
       <AsideContent>

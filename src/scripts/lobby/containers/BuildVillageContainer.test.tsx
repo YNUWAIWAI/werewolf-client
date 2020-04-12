@@ -49,6 +49,10 @@ describe('<BuildVillageContainer />', () => {
               numberOfRobots: true,
               villageName: true
             }
+          },
+          obfucator: {
+            loading: false,
+            visible: false
           }
         }
       )
@@ -88,6 +92,10 @@ describe('<BuildVillageContainer />', () => {
               numberOfRobots: true,
               villageName: true
             }
+          },
+          obfucator: {
+            loading: false,
+            visible: false
           }
         }
       )

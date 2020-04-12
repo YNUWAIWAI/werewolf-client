@@ -13,6 +13,7 @@ test('render', () => {
       checked
       handleChange={handleChange}
       name="villageName"
+      navigatable
       valid
     />
   )
@@ -28,6 +29,7 @@ describe('onChange', () => {
         checked
         handleChange={handleChange}
         name="villageName"
+        navigatable
         valid
       />
     )
@@ -43,6 +45,7 @@ describe('onChange', () => {
         checked
         handleChange={handleChange}
         name="villageName"
+        navigatable
         valid={false}
       />
     )

@@ -17,7 +17,10 @@ type Action =
   | Settings.ChangeUserPassword
   | Settings.SubmitLogout
 
-const mapStateToProps = (state: ReducerState): StateProps => state.settings
+const mapStateToProps = (state: ReducerState): StateProps => ({
+  ... state.settings,
+  navigatable: !state.obfucator.visible
+})
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleChangeLanguage: value => {
     dispatch(settings.changeLanguage(value))

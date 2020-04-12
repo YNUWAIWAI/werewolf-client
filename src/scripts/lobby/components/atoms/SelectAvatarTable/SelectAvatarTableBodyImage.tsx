@@ -5,7 +5,7 @@ interface Props {
   readonly handleSelect: () => void
   readonly handleClick: (image: string) => void
   readonly image: string
-  readonly navigative: boolean
+  readonly navigatable: boolean
 }
 
 export default function SelectAvatarTableBodyImage(props: Props) {
@@ -22,7 +22,7 @@ export default function SelectAvatarTableBodyImage(props: Props) {
     >
       <button
         onClick={() => props.handleClick(props.image)}
-        tabIndex={props.navigative ? 0 : -1}
+        tabIndex={props.navigatable ? 0 : -1}
       >
         <img src={props.image} />
       </button>

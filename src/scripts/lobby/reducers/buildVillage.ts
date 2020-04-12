@@ -72,7 +72,7 @@ export const initialState: State = {
     numberOfHumans: 15,
     numberOfPlayers: 15,
     numberOfRobots: 0,
-    villageName: 'Cursed Village'
+    villageName: 'Cursed village'
   }
 }
 const buildVillage = (state: State = initialState, action: Action): State => {

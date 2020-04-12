@@ -48,7 +48,6 @@ type Action =
   | AdvancedSearch.ChangeHostName
   | AdvancedSearch.ChangeMaximum
   | AdvancedSearch.ChangeMinimum
-  | AdvancedSearch.ChangeValidity
   | AdvancedSearch.ChangeVillageName
   | ChangeLobby
   | Message.Avatar
@@ -71,7 +70,7 @@ export const initialState: State = {
   name: '',
   searched: false,
   validity: {
-    avatar: true,
+    avatar: false,
     comment: false,
     hostName: false,
     maximum: false,
@@ -109,12 +108,24 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.AdvancedSearch.CHANGE_AVATAR:
       return {
         ... state,
+        checked: {
+          ... state.checked,
+          avatar: true
+        },
+        validity: {
+          ... state.validity,
+          avatar: false
+        },
         value: {
           ... state.value,
           avatar: action.avatar
         }
       }
     case ActionTypes.AdvancedSearch.CHANGE_CHECKBOX:
+      if (action.propName === 'avatar') {
+        return state
+      }
+
       return {
         ... state,
         checked: {
@@ -125,6 +136,14 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.AdvancedSearch.CHANGE_COMMENT:
       return {
         ... state,
+        checked: {
+          ... state.checked,
+          comment: action.valid
+        },
+        validity: {
+          ... state.validity,
+          comment: action.valid
+        },
         value: {
           ... state.value,
           comment: action.comment
@@ -133,6 +152,14 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.AdvancedSearch.CHANGE_HOST_NAME:
       return {
         ... state,
+        checked: {
+          ... state.checked,
+          hostName: action.valid
+        },
+        validity: {
+          ... state.validity,
+          hostName: action.valid
+        },
         value: {
           ... state.value,
           hostName: action.hostName
@@ -141,6 +168,14 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.AdvancedSearch.CHANGE_MAXIMUM:
       return {
         ... state,
+        checked: {
+          ... state.checked,
+          maximum: action.valid
+        },
+        validity: {
+          ... state.validity,
+          maximum: action.valid
+        },
         value: {
           ... state.value,
           maximum: action.maximum
@@ -149,22 +184,30 @@ const advancedSearch = (state: State = initialState, action: Action): State => {
     case ActionTypes.AdvancedSearch.CHANGE_MINIMUM:
       return {
         ... state,
+        checked: {
+          ... state.checked,
+          minimum: action.valid
+        },
+        validity: {
+          ... state.validity,
+          minimum: action.valid
+        },
         value: {
           ... state.value,
           minimum: action.minimum
         }
       }
-    case ActionTypes.AdvancedSearch.CHANGE_VALIDITY:
-      return {
-        ... state,
-        validity: {
-          ... state.validity,
-          [action.propName]: action.validity
-        }
-      }
     case ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME:
       return {
         ... state,
+        checked: {
+          ... state.checked,
+          villageName: action.valid
+        },
+        validity: {
+          ... state.validity,
+          villageName: action.valid
+        },
         value: {
           ... state.value,
           villageName: action.villageName

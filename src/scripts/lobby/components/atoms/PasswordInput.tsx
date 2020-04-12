@@ -4,6 +4,7 @@ export interface Props {
   readonly className: string
   readonly handleChange: (valid: boolean) => (value: string) => void
   readonly id: string
+  readonly navigatable: boolean
 }
 export interface State {
   value: string
@@ -38,6 +39,7 @@ export default class PasswordInput extends React.Component<Props, State> {
         minLength={8}
         onChange={event => this.handleChange(event)}
         required
+        tabIndex={this.props.navigatable ? 0 : -1}
         type="password"
         value={this.state.value}
       />

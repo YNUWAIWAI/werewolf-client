@@ -41,6 +41,7 @@ describe('<BuildVillageBox />', () => {
           handleNumberChange={handleNumberChange}
           handleTextChange={handleTextChange}
           handleValidityChange={handleValidityChange}
+          navigatable
           validity={validity}
           value={value}
         />
@@ -82,7 +83,7 @@ describe('<BuildVillageBox />', () => {
         numberOfHumans: 8,
         numberOfPlayers: 15,
         numberOfRobots: 7,
-        villageName: 'Cursed Village'
+        villageName: 'Cursed village'
       }
       const wrapper = mountWithIntl(
         <BuildVillageBox
@@ -91,6 +92,7 @@ describe('<BuildVillageBox />', () => {
           handleNumberChange={handleNumberChange}
           handleTextChange={handleTextChange}
           handleValidityChange={handleValidityChange}
+          navigatable
           validity={validity}
           value={value}
         />
@@ -145,6 +147,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -190,6 +193,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -232,6 +236,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -271,6 +276,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -312,6 +318,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -354,6 +361,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -394,6 +402,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -438,6 +447,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -476,6 +486,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -522,6 +533,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -563,6 +575,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -602,6 +615,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -643,6 +657,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -689,6 +704,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -730,6 +746,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -769,6 +786,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -810,6 +828,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />
@@ -852,6 +871,7 @@ describe('<BuildVillageBox />', () => {
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
             handleValidityChange={handleValidityChange}
+            navigatable
             validity={validity}
             value={value}
           />

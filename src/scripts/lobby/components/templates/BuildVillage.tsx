@@ -17,6 +17,7 @@ type TextPropName = Extract<PropName, 'comment' | 'villageName'>
 export interface StateProps {
   readonly image: string
   readonly name: string
+  readonly navigatable: boolean
   readonly menuItems: MenuItem[]
   readonly validity: {
     readonly avatar: boolean
@@ -56,6 +57,7 @@ export default function BuildVillage(props: Props) {
           handleNumberChange={props.handleNumberChange}
           handleTextChange={props.handleTextChange}
           handleValidityChange={props.handleValidityChange}
+          navigatable={props.navigatable}
           validity={props.validity}
           value={props.value}
         />

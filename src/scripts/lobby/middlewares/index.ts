@@ -18,14 +18,6 @@ import socket from './socket'
 import windowLocation from './windowLocation'
 
 type Action =
-  | actions.AdvancedSearch.ChangeAvatar
-  | actions.AdvancedSearch.ChangeCheckbox
-  | actions.AdvancedSearch.ChangeComment
-  | actions.AdvancedSearch.ChangeHostName
-  | actions.AdvancedSearch.ChangeMaximum
-  | actions.AdvancedSearch.ChangeMinimum
-  | actions.AdvancedSearch.ChangeValidity
-  | actions.AdvancedSearch.ChangeVillageName
   | actions.AvatarImageSelect.SelectAvatar
   | actions.BuildVillage.ChangeAvatar
   | actions.BuildVillage.ChangeComment

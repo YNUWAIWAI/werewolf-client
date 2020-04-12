@@ -20,6 +20,7 @@ export interface Props {
   readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
   readonly handleTextChange: (propName: TextPropName) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
+  readonly navigatable: boolean
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
@@ -126,6 +127,7 @@ export default function BuildVillageBox(props: Props) {
                     initialValue={props.value.villageName}
                     max={villageName.max}
                     min={villageName.min}
+                    navigatable={props.navigatable}
                     placeholder={text}
                     required
                   />
@@ -193,6 +195,7 @@ export default function BuildVillageBox(props: Props) {
           defaultValue={props.value.numberOfPlayers}
           from={4}
           handleChange={handleChange('numberOfPlayers')}
+          navigatable={props.navigatable}
           to={15}
           type="player"
         />
@@ -202,6 +205,7 @@ export default function BuildVillageBox(props: Props) {
           className="lo--village--item--val--setup2--select"
           defaultValue={props.value.avatar}
           handleChange={handleChange('avatar')}
+          navigatable={props.navigatable}
           type="buildVillage"
         />
       </div>
@@ -209,6 +213,7 @@ export default function BuildVillageBox(props: Props) {
       <MemberSelect
         handleMemberChange={handleChange('member')}
         handleNumberChange={handleChange('numberOfRobots')}
+        navigatable={props.navigatable}
         numberOfHumans={props.value.numberOfHumans}
         numberOfPlayers={props.value.numberOfPlayers}
         numberOfRobots={props.value.numberOfRobots}
@@ -246,6 +251,7 @@ export default function BuildVillageBox(props: Props) {
                 initialValue={props.value.comment}
                 max={comment.max}
                 min={comment.min}
+                navigatable={props.navigatable}
                 placeholder={text}
                 required={false}
                 rows={3}

@@ -8,6 +8,7 @@ interface Props {
   readonly initialValue: string
   readonly max: number
   readonly min: number
+  readonly navigatable: boolean
   readonly placeholder: string
   readonly required: boolean
 }
@@ -54,6 +55,7 @@ export default class TextInput extends React.Component<Props, State> {
         onChange={event => this.handleChange(event)}
         placeholder={this.props.placeholder}
         required={this.props.required}
+        tabIndex={this.props.navigatable ? 0 : -1}
         type="text"
         value={this.state.value}
       />

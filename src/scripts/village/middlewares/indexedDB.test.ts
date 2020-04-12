@@ -223,7 +223,7 @@ describe('NEXT_GAME', () => {
     },
     id: -1,
     idForSearching: -1,
-    name: 'Cursed Village',
+    name: 'Cursed village',
     playerSetting: {
       current: -1,
       human: {

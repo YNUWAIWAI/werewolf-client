@@ -19,7 +19,7 @@ export interface StateProps {
       }
     }
   }
-  readonly navigative: boolean
+  readonly navigatable: boolean
 }
 export interface DispatchProps {
   readonly handleAvatarImageClick: (token: lobby.Token) => (image: string) => void
@@ -51,6 +51,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
         handleSelect={props.handleSelectAvatar(id)}
         key={`avatarName${id}`}
         name={avatar.name}
+        navigatable={props.navigatable}
       />,
       <SelectAvatarTableBodyLanguage
         additionalClassName={additionalClassName}
@@ -58,6 +59,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
         handleSelect={props.handleSelectAvatar(id)}
         key={`language${id}`}
         language={avatar.language}
+        navigatable={props.navigatable}
       />,
       <SelectAvatarTableBodyImage
         additionalClassName={additionalClassName}
@@ -65,7 +67,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
         handleSelect={props.handleSelectAvatar(id)}
         image={avatar.image}
         key={`image${id}`}
-        navigative
+        navigatable={props.navigatable}
       />,
       <SelectAvatarTableBodySpacer
         additionalClassName={additionalClassName}

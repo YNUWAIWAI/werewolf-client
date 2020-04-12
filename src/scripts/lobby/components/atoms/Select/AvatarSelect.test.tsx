@@ -17,6 +17,7 @@ describe('<AvatarSelect />', () => {
           className="class"
           defaultValue={lobby.Avatar.fixed}
           handleChange={handleChange}
+          navigatable
           type="advancedSearch"
         />
       )
@@ -36,6 +37,7 @@ describe('<AvatarSelect />', () => {
           className="class"
           defaultValue={lobby.Avatar.random}
           handleChange={handleChange}
+          navigatable
           type="advancedSearch"
         />
       )
@@ -55,6 +57,7 @@ describe('<AvatarSelect />', () => {
           className="class"
           defaultValue={lobby.Avatar.unspecified}
           handleChange={handleChange}
+          navigatable
           type="advancedSearch"
         />
       )
@@ -74,6 +77,7 @@ describe('<AvatarSelect />', () => {
           className="class"
           defaultValue={lobby.Avatar.random}
           handleChange={handleChange}
+          navigatable
           type="buildVillage"
         />
       )
@@ -93,6 +97,7 @@ describe('<AvatarSelect />', () => {
           className="class"
           defaultValue={lobby.Avatar.fixed}
           handleChange={handleChange}
+          navigatable
           type="buildVillage"
         />
       )
@@ -115,6 +120,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.fixed}
             handleChange={handleChange}
+            navigatable
             type="advancedSearch"
           />
         )
@@ -144,6 +150,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.fixed}
             handleChange={handleChange}
+            navigatable
             type="advancedSearch"
           />
         )
@@ -171,6 +178,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.fixed}
             handleChange={handleChange}
+            navigatable
             type="advancedSearch"
           />
         )
@@ -196,6 +204,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.fixed}
             handleChange={handleChange}
+            navigatable
             type="advancedSearch"
           />
         )
@@ -223,6 +232,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.fixed}
             handleChange={handleChange}
+            navigatable
             type="buildVillage"
           />
         )
@@ -253,6 +263,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.random}
             handleChange={handleChange}
+            navigatable
             type="buildVillage"
           />
         )
@@ -279,6 +290,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.random}
             handleChange={handleChange}
+            navigatable
             type="buildVillage"
           />
         )
@@ -304,6 +316,7 @@ describe('<AvatarSelect />', () => {
             className="class"
             defaultValue={lobby.Avatar.random}
             handleChange={handleChange}
+            navigatable
             type="buildVillage"
           />
         )
