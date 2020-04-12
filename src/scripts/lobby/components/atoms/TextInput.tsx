@@ -8,7 +8,7 @@ interface Props {
   readonly initialValue: string
   readonly max: number
   readonly min: number
-  readonly navigatable: boolean
+  readonly navigatable?: boolean
   readonly placeholder: string
   readonly required: boolean
 }
