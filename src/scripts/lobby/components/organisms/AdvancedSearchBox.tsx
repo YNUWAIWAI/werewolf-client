@@ -8,11 +8,8 @@ import AdvancedSearchCellVillageName from '../molecules/AdvancedSearch/AdvancedS
 import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
-
 type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
-
 type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
-
 export interface StateProps {
   readonly checked: {
     readonly avatar: boolean

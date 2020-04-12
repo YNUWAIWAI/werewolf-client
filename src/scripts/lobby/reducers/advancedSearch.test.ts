@@ -1,11 +1,14 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
+  advancedSearch,
+  message
+} from '../actions'
+import {
   avatar,
   searchResult
 } from './fakeServer'
 import reducer, {initialState} from './advancedSearch'
 import {lobby} from '../types'
-import {message} from '../actions'
 
 test('ADVANCED_SEARCH', () => {
   expect(
@@ -187,10 +190,7 @@ test('advancedSearch/CHANGE_AVATAR', () => {
   expect(
     reducer(
       initialState,
-      {
-        avatar: lobby.Avatar.fixed,
-        type: ActionTypes.AdvancedSearch.CHANGE_AVATAR
-      }
+      advancedSearch.changeAvatar(true)(lobby.Avatar.fixed)
     )
   ).toStrictEqual(
     {
@@ -207,11 +207,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
     expect(
       reducer(
         initialState,
-        {
-          checked: true,
-          propName: 'avatar',
-          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
-        }
+        advancedSearch.changeCheckbox('avatar')(true)
       )
     ).toStrictEqual(
       {
@@ -227,11 +223,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
     expect(
       reducer(
         initialState,
-        {
-          checked: true,
-          propName: 'comment',
-          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
-        }
+        advancedSearch.changeCheckbox('comment')(true)
       )
     ).toStrictEqual(
       {
@@ -247,11 +239,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
     expect(
       reducer(
         initialState,
-        {
-          checked: true,
-          propName: 'hostName',
-          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
-        }
+        advancedSearch.changeCheckbox('hostName')(true)
       )
     ).toStrictEqual(
       {
@@ -267,11 +255,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
     expect(
       reducer(
         initialState,
-        {
-          checked: true,
-          propName: 'maximum',
-          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
-        }
+        advancedSearch.changeCheckbox('maximum')(true)
       )
     ).toStrictEqual(
       {
@@ -287,11 +271,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
     expect(
       reducer(
         initialState,
-        {
-          checked: true,
-          propName: 'minimum',
-          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
-        }
+        advancedSearch.changeCheckbox('minimum')(true)
       )
     ).toStrictEqual(
       {
@@ -307,11 +287,7 @@ describe('advancedSearch/CHANGE_CHECKBOX', () => {
     expect(
       reducer(
         initialState,
-        {
-          checked: true,
-          propName: 'villageName',
-          type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
-        }
+        advancedSearch.changeCheckbox('villageName')(true)
       )
     ).toStrictEqual(
       {
@@ -328,14 +304,19 @@ test('advancedSearch/CHANGE_COMMENT', () => {
   expect(
     reducer(
       initialState,
-      {
-        comment: 'comment',
-        type: ActionTypes.AdvancedSearch.CHANGE_COMMENT
-      }
+      advancedSearch.changeComment(true)('comment')
     )
   ).toStrictEqual(
     {
       ... initialState,
+      checked: {
+        ... initialState.checked,
+        comment: true
+      },
+      validity: {
+        ... initialState.validity,
+        comment: true
+      },
       value: {
         ... initialState.value,
         comment: 'comment'
@@ -347,14 +328,19 @@ test('advancedSearch/CHANGE_HOST_NAME', () => {
   expect(
     reducer(
       initialState,
-      {
-        hostName: 'hostName',
-        type: ActionTypes.AdvancedSearch.CHANGE_HOST_NAME
-      }
+      advancedSearch.changeHostName(true)('hostName')
     )
   ).toStrictEqual(
     {
       ... initialState,
+      checked: {
+        ... initialState.checked,
+        hostName: true
+      },
+      validity: {
+        ... initialState.validity,
+        hostName: true
+      },
       value: {
         ... initialState.value,
         hostName: 'hostName'
@@ -366,14 +352,19 @@ test('advancedSearch/CHANGE_MAXIMUM', () => {
   expect(
     reducer(
       initialState,
-      {
-        maximum: 15,
-        type: ActionTypes.AdvancedSearch.CHANGE_MAXIMUM
-      }
+      advancedSearch.changeMaximum(true)(15)
     )
   ).toStrictEqual(
     {
       ... initialState,
+      checked: {
+        ... initialState.checked,
+        maximum: true
+      },
+      validity: {
+        ... initialState.validity,
+        maximum: true
+      },
       value: {
         ... initialState.value,
         maximum: 15
@@ -385,14 +376,19 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
   expect(
     reducer(
       initialState,
-      {
-        minimum: 4,
-        type: ActionTypes.AdvancedSearch.CHANGE_MINIMUM
-      }
+      advancedSearch.changeMinimum(true)(4)
     )
   ).toStrictEqual(
     {
       ... initialState,
+      checked: {
+        ... initialState.checked,
+        minimum: true
+      },
+      validity: {
+        ... initialState.validity,
+        minimum: true
+      },
       value: {
         ... initialState.value,
         minimum: 4
@@ -400,140 +396,23 @@ test('advancedSearch/CHANGE_MINIMUM', () => {
     }
   )
 })
-describe('advancedSearch/CHANGE_VALIDITY', () => {
-  test('avatar', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'avatar',
-          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-          validity: true
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          avatar: true
-        }
-      }
-    )
-  })
-  test('comment', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'comment',
-          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-          validity: true
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          comment: true
-        }
-      }
-    )
-  })
-  test('hostName', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'hostName',
-          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-          validity: true
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          hostName: true
-        }
-      }
-    )
-  })
-  test('maximum', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'maximum',
-          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-          validity: true
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          maximum: true
-        }
-      }
-    )
-  })
-  test('minimum', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'minimum',
-          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-          validity: true
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          minimum: true
-        }
-      }
-    )
-  })
-  test('villageName', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'villageName',
-          type: ActionTypes.AdvancedSearch.CHANGE_VALIDITY,
-          validity: true
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          villageName: true
-        }
-      }
-    )
-  })
-})
 test('advancedSearch/CHANGE_VILLAGE_NAME', () => {
   expect(
     reducer(
       initialState,
-      {
-        type: ActionTypes.AdvancedSearch.CHANGE_VILLAGE_NAME,
-        villageName: 'villageName'
-      }
+      advancedSearch.changeVillageName(true)('villageName')
     )
   ).toStrictEqual(
     {
       ... initialState,
+      checked: {
+        ... initialState.checked,
+        villageName: true
+      },
+      validity: {
+        ... initialState.validity,
+        villageName: true
+      },
       value: {
         ... initialState.value,
         villageName: 'villageName'
