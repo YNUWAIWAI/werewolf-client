@@ -20,7 +20,7 @@ interface Props {
   readonly defaultValue?: number
   readonly from: number
   readonly handleChange: (valid: boolean) => (value: number) => void
-  readonly navigatable?: boolean
+  readonly navigatable: boolean
   readonly to: number
   readonly type: 'player' | 'robot'
 }

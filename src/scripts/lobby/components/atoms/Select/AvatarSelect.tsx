@@ -20,7 +20,7 @@ interface Props {
   readonly className: string
   readonly defaultValue: lobby.Avatar
   readonly handleChange: (valid: boolean) => (avatar: lobby.Avatar) => void
-  readonly navigatable?: boolean
+  readonly navigatable: boolean
   readonly type: 'advancedSearch' | 'buildVillage'
 }
 

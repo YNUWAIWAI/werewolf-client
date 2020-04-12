@@ -4,7 +4,7 @@ export interface Props {
   readonly className: string
   readonly handleChange: (valid: boolean) => (value: string) => void
   readonly id: string
-  readonly navigatable?: boolean
+  readonly navigatable: boolean
 }
 export interface State {
   value: string
