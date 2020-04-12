@@ -41,6 +41,7 @@ test('<BuildVillage />', () => {
       image=""
       menuItems={[]}
       name=""
+      navigatable
       validity={validity}
       value={value}
     />

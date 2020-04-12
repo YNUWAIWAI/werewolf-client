@@ -26,6 +26,7 @@ describe('<SettingsBox />', () => {
         handleChangeUserPassword={handleChangeUserPassword}
         handleSubmitLogout={handleSubmitLogout}
         initialValue={initialValue}
+        navigatable
       />
     )
 
@@ -81,6 +82,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -126,6 +128,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -171,6 +174,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -216,6 +220,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -263,6 +268,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -308,6 +314,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -353,6 +360,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -398,6 +406,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -445,6 +454,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -490,6 +500,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -535,6 +546,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -580,6 +592,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -627,6 +640,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -672,6 +686,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -717,6 +732,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -762,6 +778,7 @@ describe('<SettingsBox />', () => {
             handleChangeUserPassword={handleChangeUserPassword}
             handleSubmitLogout={handleSubmitLogout}
             initialValue={initialValue}
+            navigatable
           />
         )
 
@@ -809,6 +826,7 @@ describe('<SettingsBox />', () => {
         handleChangeUserPassword={handleChangeUserPassword}
         handleSubmitLogout={handleSubmitLogout}
         initialValue={initialValue}
+        navigatable
       />
     )
 

@@ -44,6 +44,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     image: state.buildVillage.image,
     menuItems,
     name: state.buildVillage.name,
+    navigatable: !state.obfucator.visible,
     validity: state.buildVillage.validity,
     value: {
       avatar: state.buildVillage.value.avatar,

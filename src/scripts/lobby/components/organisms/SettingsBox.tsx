@@ -26,6 +26,7 @@ export interface Props {
     readonly [PropName.userEmail]: string
     readonly [PropName.userName]: string
   }
+  readonly navigatable: boolean
 }
 
 interface State {
@@ -181,6 +182,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               defaultValue={this.props.initialValue.language}
               handleChange={(() => this.handleChange(PropName.language))()}
               menuPosition="absolute"
+              navigatable={this.props.navigatable}
             />
             <FormattedMessage
               id="Settings.button(save)"
@@ -236,6 +238,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               initialValue={this.props.initialValue.userName}
               max={15}
               min={5}
+              navigatable={this.props.navigatable}
               placeholder=""
               required
             />
@@ -317,6 +320,7 @@ export default class SettingsBox extends React.Component<Props, State> {
               className="lo--settings--bucket--form--field input"
               handleChange={(() => this.handleChange(PropName.userPassword))()}
               id="userPassword"
+              navigatable
             />
             <FormattedMessage
               id="Settings.button(save)"

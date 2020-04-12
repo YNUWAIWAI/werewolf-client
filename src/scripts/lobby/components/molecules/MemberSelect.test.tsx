@@ -47,6 +47,7 @@ test('render', () => {
     <MemberSelect
       handleMemberChange={handleMemberChange}
       handleNumberChange={handleNumberChange}
+      navigatable
       numberOfHumans={7}
       numberOfPlayers={15}
       numberOfRobots={8}
@@ -107,6 +108,7 @@ describe('onChange', () => {
       <MemberSelect
         handleMemberChange={handleMemberChange}
         handleNumberChange={handleNumberChange}
+        navigatable
         numberOfHumans={7}
         numberOfPlayers={15}
         numberOfRobots={8}
@@ -134,6 +136,7 @@ describe('onChange', () => {
       <MemberSelect
         handleMemberChange={handleMemberChange}
         handleNumberChange={handleNumberChange}
+        navigatable
         numberOfHumans={7}
         numberOfPlayers={15}
         numberOfRobots={8}
@@ -161,6 +164,7 @@ describe('onChange', () => {
       <MemberSelect
         handleMemberChange={handleMemberChange}
         handleNumberChange={handleNumberChange}
+        navigatable
         numberOfHumans={7}
         numberOfPlayers={15}
         numberOfRobots={8}

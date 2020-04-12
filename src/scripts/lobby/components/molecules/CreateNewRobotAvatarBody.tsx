@@ -36,6 +36,7 @@ export default function CreateNewRobotAvatarBody(props: Props) {
         initialValue=""
         max={15}
         min={5}
+        navigatable
         placeholder=""
         required
       />

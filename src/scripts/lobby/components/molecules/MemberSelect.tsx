@@ -9,6 +9,7 @@ type RoleSetting = Readonly<lobby.Payload$BuildVillage['roleSetting']>
 interface Props {
   readonly handleMemberChange: (valid: boolean) => (value: lobby.Member) => void
   readonly handleNumberChange: (valid: boolean) => (value: number) => void
+  readonly navigatable: boolean
   readonly numberOfHumans: number
   readonly numberOfPlayers: number
   readonly numberOfRobots: number
@@ -57,6 +58,7 @@ export default function MemberSelect(props: Props) {
           defaultValue={props.numberOfRobots}
           from={0}
           handleChange={props.handleNumberChange}
+          navigatable={props.navigatable}
           to={props.numberOfPlayers}
           type="robot"
         />
