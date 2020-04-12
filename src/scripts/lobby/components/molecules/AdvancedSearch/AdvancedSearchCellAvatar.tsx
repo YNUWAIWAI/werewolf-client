@@ -3,7 +3,7 @@ import AdvancedSearchProp from '../../atoms/AdvancedSearchProp'
 import AvatarSelect from '../../atoms/Select/AvatarSelect'
 import {lobby} from '../../../types'
 
-export interface Props {
+interface Props {
   readonly checked: boolean
   readonly handleCheckboxChange: (value: boolean) => void
   readonly handleValueChange: (valid: boolean) => (value: lobby.Avatar) => void

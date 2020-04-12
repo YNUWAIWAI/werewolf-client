@@ -3,12 +3,12 @@ import AdvancedSearchProp from '../../atoms/AdvancedSearchProp'
 import {FormattedMessage} from 'react-intl'
 import TextInput from '../../atoms/TextInput'
 
-export interface Props {
+interface Props {
   readonly checked: boolean
-  readonly navigatable: boolean
-  readonly valid: boolean
   readonly handleCheckboxChange: (value: boolean) => void
   readonly handleValueChange: (valid: boolean) => (value: string) => void
+  readonly navigatable: boolean
+  readonly valid: boolean
 }
 
 const values = {

@@ -2,7 +2,7 @@ import * as React from 'react'
 import AdvancedSearchProp from '../../atoms/AdvancedSearchProp'
 import NumberSelect from '../../atoms/Select/NumberSelect'
 
-export interface Props {
+interface Props {
   readonly checked: boolean
   readonly handleCheckboxChange: (value: boolean) => void
   readonly handleValueChange: (valid: boolean) => (value: number) => void
