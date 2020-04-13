@@ -3,8 +3,6 @@ import {FormattedMessage} from 'react-intl'
 import TextInput from '../../atoms/TextInput'
 
 interface Props {
-  readonly checked: boolean
-  readonly handleCheckboxChange: (value: boolean) => void
   readonly handleValueChange: (valid: boolean) => (value: string) => void
   readonly isFiexdAvatar: boolean
   readonly navigatable: boolean
