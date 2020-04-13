@@ -6,44 +6,14 @@ import BuildVillageBox from '../organisms/BuildVillageBox'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
-import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
-test('<BuildVillage />', () => {
-  const handleAvatarChange = jest.fn()
-  const handleMemberChange = jest.fn()
-  const handleNumberChange = jest.fn()
-  const handleTextChange = jest.fn()
-  const handleValidityChange = jest.fn()
-  const validity = {
-    avatar: true,
-    comment: true,
-    numberOfPlayers: true,
-    numberOfRobots: true,
-    villageName: true
-  }
-  const value = {
-    avatar: lobby.Avatar.random,
-    comment: 'comment',
-    hostName: 'hostName',
-    numberOfHumans: 8,
-    numberOfPlayers: 15,
-    numberOfRobots: 7,
-    villageName: 'villageName'
-  }
+test('render', () => {
   const wrapper = shallow(
     <BuildVillage
-      handleAvatarChange={handleAvatarChange}
-      handleMemberChange={handleMemberChange}
-      handleNumberChange={handleNumberChange}
-      handleTextChange={handleTextChange}
-      handleValidityChange={handleValidityChange}
       image=""
       menuItems={[]}
       name=""
-      navigatable
-      validity={validity}
-      value={value}
     />
   )
 
@@ -53,9 +23,4 @@ test('<BuildVillage />', () => {
   expect(wrapper.find(MainContent).find(BuildVillageBox).exists()).toBe(true)
   expect(wrapper.find(AsideContent).exists()).toBe(true)
   expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
-  expect(handleAvatarChange).toHaveBeenCalledTimes(0)
-  expect(handleMemberChange).toHaveBeenCalledTimes(0)
-  expect(handleNumberChange).toHaveBeenCalledTimes(0)
-  expect(handleTextChange).toHaveBeenCalledTimes(0)
-  expect(handleValidityChange).toHaveBeenCalledTimes(0)
 })

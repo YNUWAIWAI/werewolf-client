@@ -9,17 +9,10 @@ import {getCastFromNumberOfPlayers} from '../../util'
 import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'member' | 'numberOfPlayers' | 'numberOfRobots' | 'villageName'
-
 type NumberPropName = Extract<PropName, 'numberOfPlayers' | 'numberOfRobots'>
-
 type TextPropName = Extract<PropName, 'comment' | 'villageName'>
 
-export interface Props {
-  readonly handleAvatarChange: (value: lobby.Avatar) => void
-  readonly handleMemberChange: (value: lobby.Member) => void
-  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
-  readonly handleTextChange: (propName: TextPropName) => (value: string) => void
-  readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
+export interface StateProps {
   readonly navigatable: boolean
   readonly validity: {
     readonly avatar: boolean
@@ -38,6 +31,14 @@ export interface Props {
     readonly villageName: string
   }
 }
+export interface DispatchProps {
+  readonly handleAvatarChange: (value: lobby.Avatar) => void
+  readonly handleMemberChange: (value: lobby.Member) => void
+  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
+  readonly handleTextChange: (propName: TextPropName) => (value: string) => void
+  readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
+}
+type Props = StateProps & DispatchProps
 
 export default function BuildVillageBox(props: Props) {
   const handleChange = (propName: PropName) => (valid: boolean) => (value: boolean | number | string | lobby.Avatar | lobby.Member) => {
