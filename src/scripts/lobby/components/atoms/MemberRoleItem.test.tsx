@@ -1,14 +1,14 @@
 import * as React from 'react'
-import MemberRole from './MemberRole'
+import MemberRoleItem from './MemberRoleItem'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('<MemberRole />', () => {
+test('render', () => {
   const wrapper = mountWithIntl(
-    <MemberRole
+    <MemberRoleItem
       className="className"
       id="villager"
       image="image"
