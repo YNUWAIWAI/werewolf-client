@@ -1,8 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes'
+import {
+  buildVillage,
+  message
+} from '../actions'
 import reducer, {initialState} from './buildVillage'
 import {avatar2} from './fakeServer'
 import {lobby} from '../types'
-import {message} from '../actions'
 
 describe('CHANGE_LOBBY', () => {
   test('anonymousAudience', () => {
@@ -105,10 +108,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
     expect(
       reducer(
         initialState,
-        {
-          avatar: lobby.Avatar.fixed,
-          type: ActionTypes.BuildVillage.CHANGE_AVATAR
-        }
+        buildVillage.changeAvatar(true)(lobby.Avatar.fixed)
       )
     ).toStrictEqual(
       {
@@ -126,10 +126,7 @@ describe('buildVillage/CHANGE_AVATAR', () => {
     expect(
       reducer(
         initialState,
-        {
-          avatar: lobby.Avatar.random,
-          type: ActionTypes.BuildVillage.CHANGE_AVATAR
-        }
+        buildVillage.changeAvatar(true)(lobby.Avatar.random)
       )
     ).toStrictEqual(
       {
@@ -148,10 +145,7 @@ test('buildVillage/CHANGE_COMMENT', () => {
   expect(
     reducer(
       initialState,
-      {
-        comment: 'comment',
-        type: ActionTypes.BuildVillage.CHANGE_COMMENT
-      }
+      buildVillage.changeComment(true)('comment')
     )
   ).toStrictEqual(
     {
@@ -167,10 +161,7 @@ test('buildVillage/CHANGE_MEMBER', () => {
   expect(
     reducer(
       initialState,
-      {
-        member: lobby.Member.B,
-        type: ActionTypes.BuildVillage.CHANGE_MEMBER
-      }
+      buildVillage.changeMember(true)(lobby.Member.B)
     )
   ).toStrictEqual(
     {
@@ -195,10 +186,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
             numberOfRobots: 8
           }
         },
-        {
-          numberOfPlayers: 5,
-          type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
-        }
+        buildVillage.changeNumberOfPlayers(true)(5)
       )
     ).toStrictEqual(
       {
@@ -224,10 +212,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
             numberOfRobots: 8
           }
         },
-        {
-          numberOfPlayers: 8,
-          type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
-        }
+        buildVillage.changeNumberOfPlayers(true)(8)
       )
     ).toStrictEqual(
       {
@@ -253,10 +238,7 @@ describe('buildVillage/CHANGE_NUMBER_OF_PLAYERS', () => {
             numberOfRobots: 8
           }
         },
-        {
-          numberOfPlayers: 10,
-          type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
-        }
+        buildVillage.changeNumberOfPlayers(true)(10)
       )
     ).toStrictEqual(
       {
@@ -275,10 +257,7 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
   expect(
     reducer(
       initialState,
-      {
-        numberOfRobots: 8,
-        type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS
-      }
+      buildVillage.changeNumberOfRobots(true)(8)
     )
   ).toStrictEqual(
     {
@@ -292,109 +271,6 @@ test('buildVillage/CHANGE_NUMBER_OF_ROBOTS', () => {
     }
   )
 })
-describe('buildVillage/CHANGE_VALIDITY', () => {
-  test('avatar', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'avatar',
-          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
-          validity: false
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          avatar: false
-        }
-      }
-    )
-  })
-  test('comment', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'comment',
-          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
-          validity: false
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          comment: false
-        }
-      }
-    )
-  })
-  test('numberOfPlayers', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'numberOfPlayers',
-          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
-          validity: false
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          numberOfPlayers: false
-        }
-      }
-
-    )
-  })
-  test('numberOfRobots', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'numberOfRobots',
-          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
-          validity: false
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          numberOfRobots: false
-        }
-      }
-    )
-  })
-  test('villageName', () => {
-    expect(
-      reducer(
-        initialState,
-        {
-          propName: 'villageName',
-          type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
-          validity: false
-        }
-      )
-    ).toStrictEqual(
-      {
-        ... initialState,
-        validity: {
-          ... initialState.validity,
-          villageName: false
-        }
-      }
-    )
-  })
-})
 test('buildVillage/CHANGE_VILLAGE_NAME', () => {
   expect(
     reducer(
@@ -407,10 +283,7 @@ test('buildVillage/CHANGE_VILLAGE_NAME', () => {
           villageName: 'Alice\'s village'
         }
       },
-      {
-        type: ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME,
-        villageName: 'villageName'
-      }
+      buildVillage.changeVillageName(true)('villageName')
     )
   ).toStrictEqual(
     {

@@ -35,7 +35,6 @@ export interface DispatchProps {
   readonly handleMemberChange: (valid: boolean) => (value: lobby.Member) => void
   readonly handleNumberChange: (propName: NumberPropName) => (valid: boolean) => (value: number) => void
   readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
-  readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
 }
 type Props = StateProps & DispatchProps
 

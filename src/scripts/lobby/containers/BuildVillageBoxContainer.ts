@@ -16,7 +16,6 @@ type Action =
   | BuildVillage.ChangeMember
   | BuildVillage.ChangeNumberOfPlayers
   | BuildVillage.ChangeNumberOfRobots
-  | BuildVillage.ChangeValidity
   | BuildVillage.ChangeVillageName
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
@@ -33,30 +32,27 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   }
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleAvatarChange: value => {
-    dispatch(buildVillage.changeAvatar(value))
+  handleAvatarChange: valid => value => {
+    dispatch(buildVillage.changeAvatar(valid)(value))
   },
-  handleMemberChange: value => {
-    dispatch(buildVillage.changeMember(value))
+  handleMemberChange: valid => value => {
+    dispatch(buildVillage.changeMember(valid)(value))
   },
-  handleNumberChange: propName => value => {
+  handleNumberChange: propName => valid => value => {
     if (propName === 'numberOfPlayers') {
-      dispatch(buildVillage.changeNumberOfPlayers(value))
+      dispatch(buildVillage.changeNumberOfPlayers(valid)(value))
     }
     if (propName === 'numberOfRobots') {
-      dispatch(buildVillage.changeNumberOfRobots(value))
+      dispatch(buildVillage.changeNumberOfRobots(valid)(value))
     }
   },
-  handleTextChange: propName => value => {
+  handleTextChange: propName => valid => value => {
     if (propName === 'comment') {
-      dispatch(buildVillage.changeComment(value))
+      dispatch(buildVillage.changeComment(valid)(value))
     }
     if (propName === 'villageName') {
-      dispatch(buildVillage.changeVillageName(value))
+      dispatch(buildVillage.changeVillageName(valid)(value))
     }
-  },
-  handleValidityChange: propName => validity => {
-    dispatch(buildVillage.changeValidity(propName)(validity))
   }
 })
 const Container = connect(
