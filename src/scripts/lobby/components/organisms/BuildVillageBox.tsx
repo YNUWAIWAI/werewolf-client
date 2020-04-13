@@ -1,5 +1,6 @@
 import * as React from 'react'
 import AvatarSelect from '../atoms/Select/AvatarSelect'
+import BuildVillageCellVillageName from '../molecules/BuildVillage/BuildVillageCellVillageName'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'
 import NumberSelect from '../atoms/Select/NumberSelect'
@@ -35,7 +36,7 @@ export interface DispatchProps {
   readonly handleAvatarChange: (value: lobby.Avatar) => void
   readonly handleMemberChange: (value: lobby.Member) => void
   readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
-  readonly handleTextChange: (propName: TextPropName) => (value: string) => void
+  readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
 }
 type Props = StateProps & DispatchProps
@@ -98,58 +99,13 @@ export default function BuildVillageBox(props: Props) {
 
   return (
     <div className="lo--village--item build">
-      <FormattedMessage
-        id="BuildVillage.label(villageName)"
-      >
-        {
-          text => (
-            <div className="lo--village--item--prop village-name">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      {
-        props.value.avatar === lobby.Avatar.fixed ?
-          <FormattedMessage
-            id="BuildVillage.placeholder"
-            values={villageName}
-          >
-            {
-              text => {
-                if (typeof text !== 'string') {
-                  return null
-                }
-
-                return (
-                  <TextInput
-                    className={`lo--village--item--val village-name ${props.validity.villageName ? '' : 'invalid'}`}
-                    handleChange={handleChange('villageName')}
-                    initialValue={props.value.villageName}
-                    max={villageName.max}
-                    min={villageName.min}
-                    navigatable={props.navigatable}
-                    placeholder={text}
-                    required
-                  />
-                )
-              }
-            }
-          </FormattedMessage> :
-          <FormattedMessage
-            id={`BuildVillage.villageName.anonymous(${props.value.villageName})`}
-          >
-            {
-              text => (
-                <div
-                  className="lo--village--item--val village-name"
-                >
-                  {text}
-                </div>
-              )
-            }
-          </FormattedMessage>
-      }
+      <BuildVillageCellVillageName
+        handleValueChange={props.handleTextChange('villageName')}
+        isFiexdAvatar={props.value.avatar === lobby.Avatar.fixed}
+        navigatable={props.navigatable}
+        valid={props.validity.villageName}
+        value={props.value.villageName}
+      />
       <FormattedMessage
         id="BuildVillage.label(hostName)"
       >
