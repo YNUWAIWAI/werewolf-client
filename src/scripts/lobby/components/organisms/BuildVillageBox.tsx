@@ -2,6 +2,7 @@ import * as React from 'react'
 import AvatarSelect from '../atoms/Select/AvatarSelect'
 import BuildVillageCellComment from '../molecules/BuildVillage/BuildVillageCellComment'
 import BuildVillageCellHostName from '../molecules/BuildVillage/BuildVillageCellHostName'
+import BuildVillageCellSetup from '../molecules/BuildVillage/BuildVillageCellSetup'
 import BuildVillageCellVillageName from '../molecules/BuildVillage/BuildVillageCellVillageName'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'
@@ -33,9 +34,9 @@ export interface StateProps {
   }
 }
 export interface DispatchProps {
-  readonly handleAvatarChange: (value: lobby.Avatar) => void
+  readonly handleAvatarChange: (valid: boolean) => (value: lobby.Avatar) => void
   readonly handleMemberChange: (value: lobby.Member) => void
-  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
+  readonly handleNumberChange: (propName: NumberPropName) => (valid: boolean) => (value: number) => void
   readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
 }
@@ -103,38 +104,19 @@ export default function BuildVillageBox(props: Props) {
         isFiexdAvatar={isFiexdAvatar}
         value={props.value.hostName}
       />
-      <FormattedMessage
-        id="BuildVillage.label(setup)"
-      >
-        {
-          text => (
-            <div className="lo--village--item--prop setup">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <div className={`lo--village--item--val setup1 build ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
-        <NumberSelect
-          ascendingOrder={false}
-          className="lo--village--item--val--setup1--select"
-          defaultValue={props.value.numberOfPlayers}
-          from={4}
-          handleChange={handleChange('numberOfPlayers')}
-          navigatable={props.navigatable}
-          to={15}
-          type="player"
-        />
-      </div>
-      <div className={`lo--village--item--val setup2 build ${props.validity.avatar ? '' : 'invalid'}`}>
-        <AvatarSelect
-          className="lo--village--item--val--setup2--select"
-          defaultValue={props.value.avatar}
-          handleChange={handleChange('avatar')}
-          navigatable={props.navigatable}
-          type="buildVillage"
-        />
-      </div>
+      <BuildVillageCellSetup
+        handleAvatarChange={props.handleAvatarChange}
+        handleNumberOfPlayersChange={props.handleNumberChange('numberOfPlayers')}
+        navigatable={props.navigatable}
+        validity={{
+          avatar: props.validity.avatar,
+          numberOfPlayers: props.validity.numberOfPlayers
+        }}
+        value={{
+          avatar: props.value.avatar,
+          numberOfPlayers: props.value.numberOfPlayers
+        }}
+      />
       <MemberSelect
         handleMemberChange={handleChange('member')}
         handleNumberChange={handleChange('numberOfRobots')}
