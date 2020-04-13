@@ -9,7 +9,7 @@ export declare namespace AdvancedSearch {
     valid: boolean
   }
   type ChangeCheckbox = {
-    propName: string
+    propName: 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
     checked: boolean
     type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
   }
@@ -45,7 +45,7 @@ const changeAvatar = (valid: boolean) => (avatar: lobby.Avatar): AdvancedSearch.
   type: ActionTypes.AdvancedSearch.CHANGE_AVATAR,
   valid
 })
-const changeCheckbox = (propName: string) => (checked: boolean): AdvancedSearch.ChangeCheckbox => ({
+const changeCheckbox = (propName: 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName') => (checked: boolean): AdvancedSearch.ChangeCheckbox => ({
   checked,
   propName,
   type: ActionTypes.AdvancedSearch.CHANGE_CHECKBOX
