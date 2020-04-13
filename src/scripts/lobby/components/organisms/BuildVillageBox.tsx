@@ -1,12 +1,9 @@
 import * as React from 'react'
-import AvatarSelect from '../atoms/Select/AvatarSelect'
 import BuildVillageCellComment from '../molecules/BuildVillage/BuildVillageCellComment'
 import BuildVillageCellHostName from '../molecules/BuildVillage/BuildVillageCellHostName'
+import BuildVillageCellMemberSelect from '../molecules/BuildVillage/BuildVillageCellMemberSelect'
 import BuildVillageCellSetup from '../molecules/BuildVillage/BuildVillageCellSetup'
 import BuildVillageCellVillageName from '../molecules/BuildVillage/BuildVillageCellVillageName'
-import {FormattedMessage} from 'react-intl'
-import MemberSelect from '../molecules/MemberSelect'
-import NumberSelect from '../atoms/Select/NumberSelect'
 import {getCastFromNumberOfPlayers} from '../../util'
 import {lobby} from '../../types'
 
@@ -35,7 +32,7 @@ export interface StateProps {
 }
 export interface DispatchProps {
   readonly handleAvatarChange: (valid: boolean) => (value: lobby.Avatar) => void
-  readonly handleMemberChange: (value: lobby.Member) => void
+  readonly handleMemberChange: (valid: boolean) => (value: lobby.Member) => void
   readonly handleNumberChange: (propName: NumberPropName) => (valid: boolean) => (value: number) => void
   readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
   readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
@@ -43,52 +40,6 @@ export interface DispatchProps {
 type Props = StateProps & DispatchProps
 
 export default function BuildVillageBox(props: Props) {
-  const handleChange = (propName: PropName) => (valid: boolean) => (value: boolean | number | string | lobby.Avatar | lobby.Member) => {
-    if (!valid) {
-      props.handleValidityChange(propName)(false)
-
-      return
-    }
-    props.handleValidityChange(propName)(true)
-    switch (propName) {
-      case 'avatar': {
-        const avatar = [lobby.Avatar.fixed, lobby.Avatar.random]
-        const maybe = avatar.find(v => v === value)
-
-        if (maybe) {
-          props.handleAvatarChange(maybe)
-        }
-
-        return
-      }
-      case 'comment':
-      case 'villageName':
-        if (typeof value === 'string') {
-          props.handleTextChange(propName)(value)
-        }
-
-        return
-      case 'member': {
-        const member = [lobby.Member.A, lobby.Member.B, lobby.Member.C]
-        const maybe = member.find(v => v === value)
-
-        if (maybe) {
-          props.handleMemberChange(maybe)
-        }
-
-        return
-      }
-      case 'numberOfPlayers':
-      case 'numberOfRobots':
-        if (typeof value === 'number') {
-          props.handleNumberChange(propName)(value)
-        }
-
-        return
-      default:
-        throw Error(`Unknown: ${propName}`)
-    }
-  }
   const isFiexdAvatar = props.value.avatar === lobby.Avatar.fixed
 
   return (
@@ -117,16 +68,18 @@ export default function BuildVillageBox(props: Props) {
           numberOfPlayers: props.value.numberOfPlayers
         }}
       />
-      <MemberSelect
-        handleMemberChange={handleChange('member')}
-        handleNumberChange={handleChange('numberOfRobots')}
+      <BuildVillageCellMemberSelect
+        handleMemberChange={props.handleMemberChange}
+        handleNumberChange={props.handleNumberChange('numberOfRobots')}
         navigatable={props.navigatable}
-        numberOfHumans={props.value.numberOfHumans}
-        numberOfPlayers={props.value.numberOfPlayers}
-        numberOfRobots={props.value.numberOfRobots}
         role={getCastFromNumberOfPlayers(props.value.numberOfPlayers)}
         validity={{
           numberOfRobots: props.validity.numberOfRobots
+        }}
+        value={{
+          numberOfHumans: props.value.numberOfHumans,
+          numberOfPlayers: props.value.numberOfPlayers,
+          numberOfRobots: props.value.numberOfRobots
         }}
       />
       <BuildVillageCellComment
