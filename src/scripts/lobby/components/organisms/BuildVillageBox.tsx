@@ -1,11 +1,11 @@
 import * as React from 'react'
 import AvatarSelect from '../atoms/Select/AvatarSelect'
+import BuildVillageCellComment from '../molecules/BuildVillage/BuildVillageCellComment'
 import BuildVillageCellHostName from '../molecules/BuildVillage/BuildVillageCellHostName'
 import BuildVillageCellVillageName from '../molecules/BuildVillage/BuildVillageCellVillageName'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'
 import NumberSelect from '../atoms/Select/NumberSelect'
-import TextareaInput from '../atoms/TextareaInput'
 import {getCastFromNumberOfPlayers} from '../../util'
 import {lobby} from '../../types'
 
@@ -89,10 +89,6 @@ export default function BuildVillageBox(props: Props) {
     }
   }
   const isFiexdAvatar = props.value.avatar === lobby.Avatar.fixed
-  const comment = {
-    max: 100,
-    min: 0
-  }
 
   return (
     <div className="lo--village--item build">
@@ -139,7 +135,6 @@ export default function BuildVillageBox(props: Props) {
           type="buildVillage"
         />
       </div>
-
       <MemberSelect
         handleMemberChange={handleChange('member')}
         handleNumberChange={handleChange('numberOfRobots')}
@@ -152,44 +147,12 @@ export default function BuildVillageBox(props: Props) {
           numberOfRobots: props.validity.numberOfRobots
         }}
       />
-
-      <FormattedMessage
-        id="BuildVillage.label(comment)"
-      >
-        {
-          text => (
-            <div className="lo--village--item--prop comment">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="BuildVillage.placeholder"
-        values={comment}
-      >
-        {
-          text => {
-            if (typeof text !== 'string') {
-              return null
-            }
-
-            return (
-              <TextareaInput
-                className={`lo--village--item--val comment ${props.validity.comment ? '' : 'invalid'}`}
-                handleChange={handleChange('comment')}
-                initialValue={props.value.comment}
-                max={comment.max}
-                min={comment.min}
-                navigatable={props.navigatable}
-                placeholder={text}
-                required={false}
-                rows={3}
-              />
-            )
-          }
-        }
-      </FormattedMessage>
+      <BuildVillageCellComment
+        handleValueChange={props.handleTextChange('comment')}
+        navigatable={props.navigatable}
+        valid={props.validity.comment}
+        value={props.value.comment}
+      />
     </div>
   )
 }
