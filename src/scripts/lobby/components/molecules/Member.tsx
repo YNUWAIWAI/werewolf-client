@@ -46,7 +46,7 @@ export default function Member(props: Props) {
         }
       </FormattedMessage>
       <MemberRoleList
-        className="lo--village--item"
+        className="lo--village--item--member--role"
         role={props.role}
       />
     </div>

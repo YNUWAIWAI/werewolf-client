@@ -12,12 +12,12 @@ interface Props {
 export default function MemberRoleList(props: Props) {
   return (
     <div
-      className={`${props.className}--member--role`}
+      className={props.className}
     >
       {
         ORDERED_ROLE_LIST.map(item => (
           <MemberRoleItem
-            className={`${props.className}--member--role--item`}
+            className={`${props.className}--item`}
             id={item.id}
             image={item.image}
             key={item.id}
