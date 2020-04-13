@@ -6,7 +6,7 @@ import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('<Member />', () => {
+test('render', () => {
   const human = {
     current: 5,
     max: 8
