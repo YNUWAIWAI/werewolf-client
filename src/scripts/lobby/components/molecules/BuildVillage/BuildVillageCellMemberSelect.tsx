@@ -40,6 +40,7 @@ export default function BuildVillageCellMemberSelect(props: Props) {
         numberOfHumans={props.value.numberOfHumans}
       />
       <BuildVillageCellMemberSelectRole
+        defaultChecked
         handleMemberChange={() => props.handleMemberChange(true)(lobby.Member.A)}
         label={lobby.Member.A}
         role={props.role.A}

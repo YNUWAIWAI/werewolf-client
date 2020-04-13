@@ -1,5 +1,5 @@
 import * as React from 'react'
-import BuildVillageBox, {Props} from './BuildVillageBox'
+import BuildVillageBox, {StateProps} from './BuildVillageBox'
 import Select from 'react-select'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
@@ -16,16 +16,14 @@ describe('<BuildVillageBox />', () => {
       const handleNumberChange = jest.fn(() => handleNumberChangeInner)
       const handleTextChangeInner = jest.fn()
       const handleTextChange = jest.fn(() => handleTextChangeInner)
-      const handleValidityChangeInner = jest.fn()
-      const handleValidityChange = jest.fn(() => handleValidityChangeInner)
-      const validity: Props['validity'] = {
+      const validity: StateProps['validity'] = {
         avatar: true,
         comment: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
       }
-      const value: Props['value'] = {
+      const value: StateProps['value'] = {
         avatar: lobby.Avatar.fixed,
         comment: '',
         hostName: 'Alice',
@@ -40,7 +38,6 @@ describe('<BuildVillageBox />', () => {
           handleMemberChange={handleMemberChange}
           handleNumberChange={handleNumberChange}
           handleTextChange={handleTextChange}
-          handleValidityChange={handleValidityChange}
           navigatable
           validity={validity}
           value={value}
@@ -57,8 +54,6 @@ describe('<BuildVillageBox />', () => {
       expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
       expect(handleTextChange).toHaveBeenCalledTimes(0)
       expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-      expect(handleValidityChange).toHaveBeenCalledTimes(0)
-      expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
     })
     test('avatar: random', () => {
       const handleAvatarChange = jest.fn()
@@ -67,16 +62,14 @@ describe('<BuildVillageBox />', () => {
       const handleNumberChange = jest.fn(() => handleNumberChangeInner)
       const handleTextChangeInner = jest.fn()
       const handleTextChange = jest.fn(() => handleTextChangeInner)
-      const handleValidityChangeInner = jest.fn()
-      const handleValidityChange = jest.fn(() => handleValidityChangeInner)
-      const validity: Props['validity'] = {
+      const validity: StateProps['validity'] = {
         avatar: true,
         comment: true,
         numberOfPlayers: true,
         numberOfRobots: true,
         villageName: true
       }
-      const value: Props['value'] = {
+      const value: StateProps['value'] = {
         avatar: lobby.Avatar.random,
         comment: '',
         hostName: 'Alice',
@@ -91,7 +84,6 @@ describe('<BuildVillageBox />', () => {
           handleMemberChange={handleMemberChange}
           handleNumberChange={handleNumberChange}
           handleTextChange={handleTextChange}
-          handleValidityChange={handleValidityChange}
           navigatable
           validity={validity}
           value={value}
@@ -108,19 +100,17 @@ describe('<BuildVillageBox />', () => {
       expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
       expect(handleTextChange).toHaveBeenCalledTimes(0)
       expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-      expect(handleValidityChange).toHaveBeenCalledTimes(0)
-      expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
     })
   })
   describe('handleChange', () => {
-    const validity: Props['validity'] = {
+    const validity: StateProps['validity'] = {
       avatar: true,
       comment: true,
       numberOfPlayers: true,
       numberOfRobots: true,
       villageName: true
     }
-    const value: Props['value'] = {
+    const value: StateProps['value'] = {
       avatar: lobby.Avatar.fixed,
       comment: '',
       hostName: 'Alice',
@@ -138,15 +128,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -172,10 +159,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('avatar')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
       test('[]', () => {
         const handleAvatarChange = jest.fn()
@@ -184,21 +167,17 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
           />
         )
-
         const onChange = wrapper.find('.lo--village--item').childAt(6).find(Select).props().onChange
 
         if (onChange) {
@@ -215,10 +194,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('avatar')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
       })
       test('undefined', () => {
         const handleAvatarChange = jest.fn()
@@ -235,7 +210,6 @@ describe('<BuildVillageBox />', () => {
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -257,8 +231,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
       })
       test('null', () => {
         const handleAvatarChange = jest.fn()
@@ -267,15 +239,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -297,8 +266,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
       })
     })
     describe('comment', () => {
@@ -309,15 +276,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -340,10 +304,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleTextChange).toHaveBeenCalledWith('comment')
         expect(handleTextChangeInner).toHaveBeenCalledTimes(1)
         expect(handleTextChangeInner).toHaveBeenCalledWith('value')
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('comment')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
       test('invalid', () => {
         const handleAvatarChange = jest.fn()
@@ -352,15 +312,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -381,10 +338,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('comment')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
       })
       test('empty', () => {
         const handleAvatarChange = jest.fn()
@@ -393,15 +346,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -424,10 +374,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleTextChange).toHaveBeenCalledWith('comment')
         expect(handleTextChangeInner).toHaveBeenCalledTimes(1)
         expect(handleTextChangeInner).toHaveBeenCalledWith('')
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('comment')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
     })
     describe('member', () => {
@@ -438,15 +384,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -463,10 +406,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(3)
-        expect(handleValidityChange).toHaveBeenCalledWith('member')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(3)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
     })
     describe('numberOfPlayers', () => {
@@ -477,15 +416,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -512,10 +448,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledWith(4)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('numberOfPlayers')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
       test('[]', () => {
         const handleAvatarChange = jest.fn()
@@ -524,15 +456,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -554,10 +483,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('numberOfPlayers')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
       })
       test('undefined', () => {
         const handleAvatarChange = jest.fn()
@@ -566,15 +491,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -596,8 +518,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
       })
       test('null', () => {
         const handleAvatarChange = jest.fn()
@@ -606,15 +526,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -636,8 +553,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
       })
     })
     describe('numberOfRobots', () => {
@@ -648,15 +563,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -683,10 +595,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledWith(4)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('numberOfRobots')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
       test('[]', () => {
         const handleAvatarChange = jest.fn()
@@ -695,15 +603,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -725,10 +630,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('numberOfRobots')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
       })
       test('undefined', () => {
         const handleAvatarChange = jest.fn()
@@ -737,15 +638,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -767,8 +665,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
       })
       test('null', () => {
         const handleAvatarChange = jest.fn()
@@ -777,15 +673,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -807,8 +700,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(0)
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(0)
       })
     })
     describe('villageName', () => {
@@ -819,15 +710,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -850,10 +738,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleTextChange).toHaveBeenCalledWith('villageName')
         expect(handleTextChangeInner).toHaveBeenCalledTimes(1)
         expect(handleTextChangeInner).toHaveBeenCalledWith('value')
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('villageName')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(true)
       })
       test('invalid', () => {
         const handleAvatarChange = jest.fn()
@@ -862,15 +746,12 @@ describe('<BuildVillageBox />', () => {
         const handleNumberChange = jest.fn(() => handleNumberChangeInner)
         const handleTextChangeInner = jest.fn()
         const handleTextChange = jest.fn(() => handleTextChangeInner)
-        const handleValidityChangeInner = jest.fn()
-        const handleValidityChange = jest.fn(() => handleValidityChangeInner)
         const wrapper = mountWithIntl(
           <BuildVillageBox
             handleAvatarChange={handleAvatarChange}
             handleMemberChange={handleMemberChange}
             handleNumberChange={handleNumberChange}
             handleTextChange={handleTextChange}
-            handleValidityChange={handleValidityChange}
             navigatable
             validity={validity}
             value={value}
@@ -891,10 +772,6 @@ describe('<BuildVillageBox />', () => {
         expect(handleNumberChangeInner).toHaveBeenCalledTimes(0)
         expect(handleTextChange).toHaveBeenCalledTimes(0)
         expect(handleTextChangeInner).toHaveBeenCalledTimes(0)
-        expect(handleValidityChange).toHaveBeenCalledTimes(1)
-        expect(handleValidityChange).toHaveBeenCalledWith('villageName')
-        expect(handleValidityChangeInner).toHaveBeenCalledTimes(1)
-        expect(handleValidityChangeInner).toHaveBeenCalledWith(false)
       })
     })
   })
