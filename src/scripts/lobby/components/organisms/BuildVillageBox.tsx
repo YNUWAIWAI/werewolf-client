@@ -1,10 +1,10 @@
 import * as React from 'react'
 import AvatarSelect from '../atoms/Select/AvatarSelect'
+import BuildVillageCellHostName from '../molecules/BuildVillage/BuildVillageCellHostName'
 import BuildVillageCellVillageName from '../molecules/BuildVillage/BuildVillageCellVillageName'
 import {FormattedMessage} from 'react-intl'
 import MemberSelect from '../molecules/MemberSelect'
 import NumberSelect from '../atoms/Select/NumberSelect'
-import TextInput from '../atoms/TextInput'
 import TextareaInput from '../atoms/TextareaInput'
 import {getCastFromNumberOfPlayers} from '../../util'
 import {lobby} from '../../types'
@@ -88,10 +88,7 @@ export default function BuildVillageBox(props: Props) {
         throw Error(`Unknown: ${propName}`)
     }
   }
-  const villageName = {
-    max: 30,
-    min: 5
-  }
+  const isFiexdAvatar = props.value.avatar === lobby.Avatar.fixed
   const comment = {
     max: 100,
     min: 0
@@ -101,39 +98,15 @@ export default function BuildVillageBox(props: Props) {
     <div className="lo--village--item build">
       <BuildVillageCellVillageName
         handleValueChange={props.handleTextChange('villageName')}
-        isFiexdAvatar={props.value.avatar === lobby.Avatar.fixed}
+        isFiexdAvatar={isFiexdAvatar}
         navigatable={props.navigatable}
         valid={props.validity.villageName}
         value={props.value.villageName}
       />
-      <FormattedMessage
-        id="BuildVillage.label(hostName)"
-      >
-        {
-          text => (
-            <div className="lo--village--item--prop host-name">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      {
-        props.value.avatar === lobby.Avatar.fixed ?
-          <div className="lo--village--item--val host-name">
-            {props.value.hostName}
-          </div> :
-          <FormattedMessage
-            id="BuildVillage.hostName.anonymous"
-          >
-            {
-              text => (
-                <div className="lo--village--item--val host-name">
-                  {text}
-                </div>
-              )
-            }
-          </FormattedMessage>
-      }
+      <BuildVillageCellHostName
+        isFiexdAvatar={isFiexdAvatar}
+        value={props.value.hostName}
+      />
       <FormattedMessage
         id="BuildVillage.label(setup)"
       >
