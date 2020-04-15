@@ -33,7 +33,5 @@ test('render', () => {
     />
   )
 
-  expect(wrapper.find('.lo--village--item--member--robot').text()).toBe('min 7 robots')
-  expect(wrapper.find('.lo--village--item--member--human').text()).toBe('max 8 humans')
-  expect(wrapper.find('.lo--village--item--member--role').children()).toHaveLength(8)
+  expect(wrapper.html()).toMatchSnapshot()
 })

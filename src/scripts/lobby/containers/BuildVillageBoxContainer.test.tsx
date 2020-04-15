@@ -127,7 +127,8 @@ test('handleAvatarChange', () => {
   expect(dispatch).toHaveBeenCalledTimes(1)
   expect(dispatch).toHaveBeenCalledWith({
     avatar,
-    type: ActionTypes.BuildVillage.CHANGE_AVATAR
+    type: ActionTypes.BuildVillage.CHANGE_AVATAR,
+    valid: true
   })
 })
 test('handleMemberChange', () => {
@@ -148,7 +149,8 @@ test('handleMemberChange', () => {
   expect(dispatch).toHaveBeenCalledTimes(1)
   expect(dispatch).toHaveBeenCalledWith({
     member,
-    type: ActionTypes.BuildVillage.CHANGE_MEMBER
+    type: ActionTypes.BuildVillage.CHANGE_MEMBER,
+    valid: true
   })
 })
 describe('handleNumberChange', () => {
@@ -170,7 +172,8 @@ describe('handleNumberChange', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       numberOfPlayers,
-      type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
+      type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS,
+      valid: true
     })
   })
   test('numberOfRobots', () => {
@@ -191,7 +194,8 @@ describe('handleNumberChange', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       numberOfRobots,
-      type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS
+      type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS,
+      valid: true
     })
   })
 })
@@ -214,7 +218,8 @@ describe('handleTextChange', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       comment,
-      type: ActionTypes.BuildVillage.CHANGE_COMMENT
+      type: ActionTypes.BuildVillage.CHANGE_COMMENT,
+      valid: true
     })
   })
   test('villageName', () => {
@@ -235,6 +240,7 @@ describe('handleTextChange', () => {
     expect(dispatch).toHaveBeenCalledTimes(1)
     expect(dispatch).toHaveBeenCalledWith({
       type: ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME,
+      valid: true,
       villageName
     })
   })
