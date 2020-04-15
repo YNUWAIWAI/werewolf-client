@@ -6,7 +6,7 @@ interface Props {
   readonly value: string
 }
 
-export default function BuildVillageCellVillageName(props: Props) {
+export default function BuildVillageCellHostName(props: Props) {
   return (
     <>
       <FormattedMessage
