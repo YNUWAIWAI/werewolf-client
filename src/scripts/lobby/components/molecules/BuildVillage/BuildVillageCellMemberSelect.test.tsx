@@ -29,3 +29,80 @@ test('render', () => {
 
   expect(wrapper.html()).toMatchSnapshot()
 })
+describe('handleMemberChange', () => {
+  test('A', () => {
+    const handleMemberChangeInner = jest.fn()
+    const handleMemberChange = jest.fn(() => handleMemberChangeInner)
+    const handleNumberChange = jest.fn()
+    const wrapper = mountWithIntl(
+      <BuildVillageCellMemberSelect
+        handleMemberChange={handleMemberChange}
+        handleNumberChange={handleNumberChange}
+        navigatable
+        role={Cast['15']}
+        validity={{
+          numberOfRobots: true
+        }}
+        value={{
+          numberOfHumans: 8,
+          numberOfPlayers: 15,
+          numberOfRobots: 7
+        }}
+      />
+    )
+
+    wrapper.find('#memberA').simulate('change')
+    expect(handleMemberChange).toHaveBeenCalledWith(true)
+    expect(handleMemberChangeInner).toHaveBeenCalledWith(lobby.Member.A)
+  })
+  test('B', () => {
+    const handleMemberChangeInner = jest.fn()
+    const handleMemberChange = jest.fn(() => handleMemberChangeInner)
+    const handleNumberChange = jest.fn()
+    const wrapper = mountWithIntl(
+      <BuildVillageCellMemberSelect
+        handleMemberChange={handleMemberChange}
+        handleNumberChange={handleNumberChange}
+        navigatable
+        role={Cast['15']}
+        validity={{
+          numberOfRobots: true
+        }}
+        value={{
+          numberOfHumans: 8,
+          numberOfPlayers: 15,
+          numberOfRobots: 7
+        }}
+      />
+    )
+
+    wrapper.find('#memberB').simulate('change')
+    expect(handleMemberChange).toHaveBeenCalledWith(true)
+    expect(handleMemberChangeInner).toHaveBeenCalledWith(lobby.Member.B)
+  })
+  test('C', () => {
+    const handleMemberChangeInner = jest.fn()
+    const handleMemberChange = jest.fn(() => handleMemberChangeInner)
+    const handleNumberChange = jest.fn()
+    const wrapper = mountWithIntl(
+      <BuildVillageCellMemberSelect
+        handleMemberChange={handleMemberChange}
+        handleNumberChange={handleNumberChange}
+        navigatable
+        role={Cast['15']}
+        validity={{
+          numberOfRobots: true
+        }}
+        value={{
+          numberOfHumans: 8,
+          numberOfPlayers: 15,
+          numberOfRobots: 7
+        }}
+      />
+    )
+
+    wrapper.find('#memberC').simulate('change')
+    expect(handleMemberChange).toHaveBeenCalledWith(true)
+    expect(handleMemberChangeInner).toHaveBeenCalledWith(lobby.Member.C)
+  })
+})
