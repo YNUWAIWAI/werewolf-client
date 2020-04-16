@@ -1,8 +1,7 @@
 import * as React from 'react'
 import CreateNewAvatarAvatarImage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
-import {FormattedMessage} from 'react-intl'
-import LanguageSelect from '../atoms/Select/LanguageSelect'
-import TextInput from '../atoms/TextInput'
+import CreateNewAvatarAvatarLanguage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
+import CreateNewAvatarAvatarName from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
 import {lobby} from '../../types'
 
 export interface StateProps {
@@ -23,55 +22,18 @@ export default function CreateNewHumanAvatarTable(props: Props) {
     <div
       className="lo--create-new-avatar--table"
     >
-      <FormattedMessage
-        id="CreateNewAvatar.label(avatarName)"
-      >
-        {
-          text => (
-            <label
-              className="lo--create-new-avatar--label"
-              htmlFor="newAvatarName"
-            >
-              {text}
-            </label>
-          )
-        }
-      </FormattedMessage>
-      <TextInput
-        className="lo--create-new-avatar--input"
+      <CreateNewAvatarAvatarName
         handleChange={props.handleNameChange}
-        id="newAvatarName"
-        initialValue=""
-        max={15}
-        min={5}
         navigatable={props.navigatable}
-        placeholder=""
-        required
       />
       <CreateNewAvatarAvatarImage
         handleClick={() => props.handleImageClick(props.image)}
         image={props.image}
         navigatable
       />
-      <FormattedMessage
-        id="CreateNewAvatar.label(avatarLanguage)"
-      >
-        {
-          text => (
-            <label
-              className="lo--create-new-avatar--label"
-              htmlFor="newAvatarName"
-            >
-              {text}
-            </label>
-          )
-        }
-      </FormattedMessage>
-      <LanguageSelect
-        className="lo--create-new-avatar--input"
-        defaultValue={props.language}
+      <CreateNewAvatarAvatarLanguage
         handleChange={props.handleLanguageChange}
-        menuPosition="fixed"
+        language={props.language}
         navigatable={props.navigatable}
       />
     </div>
