@@ -1,12 +1,28 @@
 .lo--create-new-avatar {
-  &--body {
+  &--table {
     border: 1px solid var(--color--border);
     display: grid;
     grid-template:
       'name-l name-i' 1fr
       'language-l language-i' 1fr
       / 1fr 1fr;
+  }
+
+  &--label {
+    align-items: center;
+    border: 1px solid var(--color--border);
+    display: inline-flex;
+    font-size: 1.5rem;
     padding: 1rem;
+  }
+
+  &--input {
+    background: var(--color--background--input);
+    border: 1px solid var(--color--border);
+    box-sizing: border-box;
+    color: var(--color--font--input);
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   &--command {
