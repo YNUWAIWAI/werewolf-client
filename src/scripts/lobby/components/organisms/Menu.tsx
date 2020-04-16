@@ -14,7 +14,7 @@ export interface OwnProps {
   readonly items: MenuItemProps[]
 }
 export interface StateProps {
-  readonly navigative: boolean
+  readonly navigatable: boolean
 }
 export interface DispatchProps {
   readonly transition: (target: Target) => void
@@ -29,7 +29,7 @@ export default function Menu(props: Props) {
       id={item.id}
       isLoading={item.isLoading}
       key={item.id}
-      navigative={props.navigative}
+      navigatable={props.navigatable}
       transition={props.transition}
       types={item.types}
     />

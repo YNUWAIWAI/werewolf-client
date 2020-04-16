@@ -12,7 +12,7 @@ describe('<Menu />', () => {
         className="className"
         itemClassName="itemClassName"
         items={items}
-        navigative
+        navigatable
         transition={transition}
       />
     )
@@ -33,7 +33,7 @@ describe('<Menu />', () => {
         className="className"
         itemClassName="itemClassName"
         items={items}
-        navigative
+        navigatable
         transition={transition}
       />
     )
@@ -58,7 +58,7 @@ describe('<Menu />', () => {
         className="className"
         itemClassName="itemClassName"
         items={items}
-        navigative
+        navigatable
         transition={transition}
       />
     )
