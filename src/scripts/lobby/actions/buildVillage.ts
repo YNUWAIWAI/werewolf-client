@@ -6,61 +6,63 @@ export declare namespace BuildVillage {
   type ChangeAvatar = {
     avatar: lobby.Avatar
     type: ActionTypes.BuildVillage.CHANGE_AVATAR
+    valid: boolean
   }
   type ChangeComment = {
     comment: string
     type: ActionTypes.BuildVillage.CHANGE_COMMENT
+    valid: boolean
   }
   type ChangeMember = {
     member: lobby.Member
     type: ActionTypes.BuildVillage.CHANGE_MEMBER
+    valid: boolean
   }
   type ChangeNumberOfPlayers = {
     numberOfPlayers: number
     type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
+    valid: boolean
   }
   type ChangeNumberOfRobots = {
     numberOfRobots: number
     type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS
-  }
-  type ChangeValidity = {
-    propName: string
-    type: ActionTypes.BuildVillage.CHANGE_VALIDITY
-    validity: boolean
+    valid: boolean
   }
   type ChangeVillageName = {
     type: ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME
+    valid: boolean
     villageName: string
   }
 }
 
-const changeAvatar = (avatar: lobby.Avatar): BuildVillage.ChangeAvatar => ({
+const changeAvatar = (valid: boolean) => (avatar: lobby.Avatar): BuildVillage.ChangeAvatar => ({
   avatar,
-  type: ActionTypes.BuildVillage.CHANGE_AVATAR
+  type: ActionTypes.BuildVillage.CHANGE_AVATAR,
+  valid
 })
-const changeComment = (comment: string): BuildVillage.ChangeComment => ({
+const changeComment = (valid: boolean) => (comment: string): BuildVillage.ChangeComment => ({
   comment,
-  type: ActionTypes.BuildVillage.CHANGE_COMMENT
+  type: ActionTypes.BuildVillage.CHANGE_COMMENT,
+  valid
 })
-const changeMember = (member: lobby.Member): BuildVillage.ChangeMember => ({
+const changeMember = (valid: boolean) => (member: lobby.Member): BuildVillage.ChangeMember => ({
   member,
-  type: ActionTypes.BuildVillage.CHANGE_MEMBER
+  type: ActionTypes.BuildVillage.CHANGE_MEMBER,
+  valid
 })
-const changeNumberOfPlayers = (numberOfPlayers: number): BuildVillage.ChangeNumberOfPlayers => ({
+const changeNumberOfPlayers = (valid: boolean) => (numberOfPlayers: number): BuildVillage.ChangeNumberOfPlayers => ({
   numberOfPlayers: Number(numberOfPlayers),
-  type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS
+  type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_PLAYERS,
+  valid
 })
-const changeNumberOfRobots = (numberOfRobots: number): BuildVillage.ChangeNumberOfRobots => ({
+const changeNumberOfRobots = (valid: boolean) => (numberOfRobots: number): BuildVillage.ChangeNumberOfRobots => ({
   numberOfRobots: Number(numberOfRobots),
-  type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS
+  type: ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS,
+  valid
 })
-const changeValidity = (propName: string) => (validity: boolean): BuildVillage.ChangeValidity => ({
-  propName,
-  type: ActionTypes.BuildVillage.CHANGE_VALIDITY,
-  validity
-})
-const changeVillageName = (villageName: string): BuildVillage.ChangeVillageName => ({
+const changeVillageName = (valid: boolean) => (villageName: string): BuildVillage.ChangeVillageName => ({
   type: ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME,
+  valid,
   villageName
 })
 
@@ -70,6 +72,5 @@ export const buildVillage = {
   changeMember,
   changeNumberOfPlayers,
   changeNumberOfRobots,
-  changeValidity,
   changeVillageName
 }

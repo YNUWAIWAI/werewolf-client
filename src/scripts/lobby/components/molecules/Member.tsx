@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import MemberRole from '../atoms/MemberRole'
-import {ORDERED_ROLE_LIST} from '../../constants/Role'
+import MemberRoleList from '../molecules/MemberRoleList'
 import {lobby} from '../../types'
 
 type Human = Readonly<lobby.Payload$BuildVillage['playerSetting']['human']>
@@ -14,16 +13,6 @@ interface Props {
 }
 
 export default function Member(props: Props) {
-  const items = ORDERED_ROLE_LIST.map(item => (
-    <MemberRole
-      className="lo--village--item--member--role--item"
-      id={item.id}
-      image={item.image}
-      key={item.id}
-      numberOfPlayers={props.role[item.id]}
-    />
-  ))
-
   return (
     <div className="lo--village--item--member">
       <FormattedMessage
@@ -56,9 +45,10 @@ export default function Member(props: Props) {
 
         }
       </FormattedMessage>
-      <div className="lo--village--item--member--role">
-        {items}
-      </div>
+      <MemberRoleList
+        className="lo--village--item--member--role"
+        role={props.role}
+      />
     </div>
   )
 }

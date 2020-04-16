@@ -1,24 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {
-  BuildVillage,
-  buildVillage
-} from '../actions'
-import Component, {
-  DispatchProps,
-  StateProps
-} from '../components/templates/BuildVillage'
-import {Dispatch} from 'redux'
+import Component, {StateProps} from '../components/templates/BuildVillage'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
-
-type Action =
-  | BuildVillage.ChangeAvatar
-  | BuildVillage.ChangeComment
-  | BuildVillage.ChangeMember
-  | BuildVillage.ChangeNumberOfPlayers
-  | BuildVillage.ChangeNumberOfRobots
-  | BuildVillage.ChangeValidity
-  | BuildVillage.ChangeVillageName
 
 const mapStateToProps = (state: ReducerState): StateProps => {
   const menuItems = (() => {
@@ -43,50 +26,11 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   return {
     image: state.buildVillage.image,
     menuItems,
-    name: state.buildVillage.name,
-    navigatable: !state.obfucator.visible,
-    validity: state.buildVillage.validity,
-    value: {
-      avatar: state.buildVillage.value.avatar,
-      comment: state.buildVillage.value.comment,
-      hostName: state.buildVillage.value.hostName,
-      numberOfHumans: state.buildVillage.value.numberOfHumans,
-      numberOfPlayers: state.buildVillage.value.numberOfPlayers,
-      numberOfRobots: state.buildVillage.value.numberOfRobots,
-      villageName: state.buildVillage.value.villageName
-    }
+    name: state.buildVillage.name
   }
 }
-const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
-  handleAvatarChange: value => {
-    dispatch(buildVillage.changeAvatar(value))
-  },
-  handleMemberChange: value => {
-    dispatch(buildVillage.changeMember(value))
-  },
-  handleNumberChange: propName => value => {
-    if (propName === 'numberOfPlayers') {
-      dispatch(buildVillage.changeNumberOfPlayers(value))
-    }
-    if (propName === 'numberOfRobots') {
-      dispatch(buildVillage.changeNumberOfRobots(value))
-    }
-  },
-  handleTextChange: propName => value => {
-    if (propName === 'comment') {
-      dispatch(buildVillage.changeComment(value))
-    }
-    if (propName === 'villageName') {
-      dispatch(buildVillage.changeVillageName(value))
-    }
-  },
-  handleValidityChange: propName => validity => {
-    dispatch(buildVillage.changeValidity(propName)(validity))
-  }
-})
-const BuildVillageContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+const Container = connect(
+  mapStateToProps
 )(Component)
 
-export default BuildVillageContainer
+export default Container

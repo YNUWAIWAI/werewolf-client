@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render isFixedAvatar false 1`] = `"<div class=\\"lo--village--item--prop host-name\\">Host name</div><div class=\\"lo--village--item--val host-name\\">Anonymous</div>"`;
+
+exports[`render isFixedAvatar true 1`] = `"<div class=\\"lo--village--item--prop host-name\\">Host name</div><div class=\\"lo--village--item--val host-name\\">hostName</div>"`;

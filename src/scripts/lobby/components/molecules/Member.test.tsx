@@ -6,7 +6,7 @@ import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('<Member />', () => {
+test('render', () => {
   const human = {
     current: 5,
     max: 8
@@ -33,7 +33,5 @@ test('<Member />', () => {
     />
   )
 
-  expect(wrapper.find('.lo--village--item--member--robot').text()).toBe('min 7 robots')
-  expect(wrapper.find('.lo--village--item--member--human').text()).toBe('max 8 humans')
-  expect(wrapper.find('.lo--village--item--member--role').children()).toHaveLength(8)
+  expect(wrapper.html()).toMatchSnapshot()
 })

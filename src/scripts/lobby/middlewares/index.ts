@@ -24,7 +24,6 @@ type Action =
   | actions.BuildVillage.ChangeMember
   | actions.BuildVillage.ChangeNumberOfPlayers
   | actions.BuildVillage.ChangeNumberOfRobots
-  | actions.BuildVillage.ChangeValidity
   | actions.BuildVillage.ChangeVillageName
   | actions.ChangeLobby
   | actions.ChangeToken

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render isFixedAvatar false 1`] = `"<div class=\\"lo--village--item--prop village-name\\">Village name</div><div class=\\"lo--village--item--val village-name\\">Cursed village</div>"`;
+
+exports[`render isFixedAvatar true 1`] = `"<div class=\\"lo--village--item--prop village-name\\">Village name</div><input class=\\"lo--village--item--val village-name \\" maxlength=\\"30\\" minlength=\\"5\\" placeholder=\\"5-30 chars\\" required=\\"\\" tabindex=\\"0\\" type=\\"text\\" value=\\"villageName\\">"`;
