@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {CreateNewHumanAvatar} from '../actions'
+import {
+  AvatarImageSelect,
+  CreateNewHumanAvatar
+} from '../actions'
 import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {lobby} from '../types'
 
@@ -9,9 +12,12 @@ export interface State {
   readonly language: lobby.Language
   readonly menuItems: MenuItem[]
   readonly name: string
+  readonly visibleAvatarImageSelect: boolean
 }
 type Action =
-  | CreateNewHumanAvatar.ChangeAvatarImage
+  | AvatarImageSelect.CloseModal
+  | AvatarImageSelect.SelectAvatar
+  | CreateNewHumanAvatar.ShowAvatarImageSelect
   | CreateNewHumanAvatar.ChangeAvatarLangauge
   | CreateNewHumanAvatar.ChangeAvatarName
 
@@ -22,7 +28,7 @@ export const initialState: State = {
       types: [ActionTypes.SelectRobotAvatar.CREATE]
     }
   ],
-  image: '',
+  image: 'https://werewolf.world/image/0.3/character_icons/50x50/a_50x50.png',
   language: lobby.Language.en,
   menuItems: [
     {
@@ -34,14 +40,29 @@ export const initialState: State = {
       types: [ActionTypes.App.SHOW_MAIN]
     }
   ],
-  name: ''
+  name: '',
+  visibleAvatarImageSelect: false
 }
 const createNewHumanAvatar = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_IMAGE:
+    case ActionTypes.AvatarImageSelect.CLOSE_MODAL:
       return {
         ... state,
-        image: action.image
+        visibleAvatarImageSelect: false
+      }
+    case ActionTypes.AvatarImageSelect.SELECT_AVATAR:
+      if (state.visibleAvatarImageSelect) {
+        return {
+          ... state,
+          image: action.image
+        }
+      }
+
+      return state
+    case ActionTypes.CreateNewHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
+      return {
+        ... state,
+        visibleAvatarImageSelect: true
       }
     case ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_LANGUAGE:
       return {

@@ -1249,7 +1249,7 @@ describe('avatarImageSelect/SELECT_AVATAR', () => {
   const store = fakeStore({
     avatarImageList: {
       ... avatarImageList,
-      lobby: lobby.LobbyType.human,
+      scope: ActionTypes.Scope.SelectHumanAvatar,
       token
     }
   })

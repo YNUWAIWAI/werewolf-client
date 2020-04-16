@@ -1,3 +1,4 @@
+
 import * as React from 'react'
 import CreateNewHumanAvatarBody from './CreateNewHumanAvatarBody'
 import TextInput from '../atoms/TextInput'
@@ -8,14 +9,14 @@ import {lobby} from '../../types'
 const {shallowWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 test('render', () => {
-  const handleChangeImage = jest.fn()
-  const handleChangeLanguage = jest.fn()
-  const handleChangeName = jest.fn()
+  const handleImageClick = jest.fn()
+  const handleLanguageChange = jest.fn()
+  const handleNameChange = jest.fn()
   const wrapper = shallowWithIntl(
     <CreateNewHumanAvatarBody
-      handleChangeImage={handleChangeImage}
-      handleChangeLanguage={handleChangeLanguage}
-      handleChangeName={handleChangeName}
+      handleImageClick={handleImageClick}
+      handleLanguageChange={handleLanguageChange}
+      handleNameChange={handleNameChange}
       image=""
       language={lobby.Language.en}
       name=""

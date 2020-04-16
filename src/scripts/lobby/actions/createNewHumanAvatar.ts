@@ -3,10 +3,6 @@ import {lobby} from '../types'
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export declare namespace CreateNewHumanAvatar {
-  type ChangeAvatarImage = {
-    image: string
-    type: ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_IMAGE
-  }
   type ChangeAvatarLangauge = {
     language: lobby.Language
     type: ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_LANGUAGE
@@ -15,12 +11,12 @@ export declare namespace CreateNewHumanAvatar {
     name: string
     type: ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_NAME
   }
+  type ShowAvatarImageSelect = {
+    image: string
+    type: ActionTypes.CreateNewHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
+  }
 }
 
-const changeAvatarImage = (image: string): CreateNewHumanAvatar.ChangeAvatarImage => ({
-  image,
-  type: ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_IMAGE
-})
 const changeAvatarLanguage = (language: lobby.Language): CreateNewHumanAvatar.ChangeAvatarLangauge => ({
   language,
   type: ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_LANGUAGE
@@ -29,9 +25,13 @@ const changeAvatarName = (name: string): CreateNewHumanAvatar.ChangeAvatarName =
   name,
   type: ActionTypes.CreateNewHumanAvatar.CHANGE_AVATAR_NAME
 })
+const showAvatarImageSelect = (image: string): CreateNewHumanAvatar.ShowAvatarImageSelect => ({
+  image,
+  type: ActionTypes.CreateNewHumanAvatar.SHOW_AVATAR_IMAGE_SELECT
+})
 
 export const createNewHumanAvatar = {
-  changeAvatarImage,
   changeAvatarLanguage,
-  changeAvatarName
+  changeAvatarName,
+  showAvatarImageSelect
 }

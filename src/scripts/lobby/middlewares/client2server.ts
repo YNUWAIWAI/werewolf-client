@@ -253,18 +253,39 @@ const client2server: Middleware = store => next => action => {
     }
     case ActionTypes.AvatarImageSelect.SELECT_AVATAR: {
       const state = store.getState()
-      const payload: lobby.Payload$ChangeAvatar = {
-        image: action.image,
-        language: null,
-        lobby: state.avatarImageList.lobby,
-        name: null,
-        token: state.avatarImageList.token,
-        type: lobby.PayloadType.changeAvatar
+
+      switch (state.avatarImageList.scope) {
+        case ActionTypes.Scope.SelectHumanAvatar: {
+          const payload: lobby.Payload$ChangeAvatar = {
+            image: action.image,
+            language: null,
+            lobby: lobby.LobbyType.human,
+            name: null,
+            token: state.avatarImageList.token,
+            type: lobby.PayloadType.changeAvatar
+          }
+
+          store.dispatch(socket.send(payload))
+
+          return next(action)
+        }
+        case ActionTypes.Scope.SelectRobotAvatar: {
+          const payload: lobby.Payload$ChangeAvatar = {
+            image: action.image,
+            language: null,
+            lobby: lobby.LobbyType.robot,
+            name: null,
+            token: state.avatarImageList.token,
+            type: lobby.PayloadType.changeAvatar
+          }
+
+          store.dispatch(socket.send(payload))
+
+          return next(action)
+        }
+        default:
+          return next(action)
       }
-
-      store.dispatch(socket.send(payload))
-
-      return next(action)
     }
     case ActionTypes.SelectRobotAvatar.AUTHORIZATION_REQUEST_ACCEPTED: {
       const payload: lobby.Payload$AuthorizationRequestAccepted = {

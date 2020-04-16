@@ -1,18 +1,22 @@
 import * as React from 'react'
+import CreateNewAvatarAvatarImage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
 import {FormattedMessage} from 'react-intl'
 import LanguageSelect from '../atoms/Select/LanguageSelect'
 import TextInput from '../atoms/TextInput'
 import {lobby} from '../../types'
 
-interface Props {
-  readonly handleChangeImage: (valid: boolean) => (value: string) => void
-  readonly handleChangeLanguage: (valid: boolean) => (value: lobby.Language) => void
-  readonly handleChangeName: (valid: boolean) => (value: string) => void
+export interface StateProps {
   readonly image: string
   readonly language: lobby.Language
   readonly name: string
   readonly navigatable: boolean
 }
+export interface DispatchProps {
+  readonly handleImageClick: (value: string) => void
+  readonly handleLanguageChange: (valid: boolean) => (value: lobby.Language) => void
+  readonly handleNameChange: (valid: boolean) => (value: string) => void
+}
+type Props = StateProps & DispatchProps
 
 export default function CreateNewHumanAvatarTable(props: Props) {
   return (
@@ -20,7 +24,7 @@ export default function CreateNewHumanAvatarTable(props: Props) {
       className="lo--create-new-avatar--table"
     >
       <FormattedMessage
-        id="CreateNewAvatar.label(avatarImage)"
+        id="CreateNewAvatar.label(avatarName)"
       >
         {
           text => (
@@ -35,14 +39,19 @@ export default function CreateNewHumanAvatarTable(props: Props) {
       </FormattedMessage>
       <TextInput
         className="lo--create-new-avatar--input"
-        handleChange={props.handleChangeName}
+        handleChange={props.handleNameChange}
         id="newAvatarName"
         initialValue=""
         max={15}
         min={5}
-        navigatable
+        navigatable={props.navigatable}
         placeholder=""
         required
+      />
+      <CreateNewAvatarAvatarImage
+        handleClick={() => props.handleImageClick(props.image)}
+        image={props.image}
+        navigatable
       />
       <FormattedMessage
         id="CreateNewAvatar.label(avatarLanguage)"
@@ -61,8 +70,9 @@ export default function CreateNewHumanAvatarTable(props: Props) {
       <LanguageSelect
         className="lo--create-new-avatar--input"
         defaultValue={props.language}
-        handleChange={props.handleChangeLanguage}
+        handleChange={props.handleLanguageChange}
         menuPosition="fixed"
+        navigatable={props.navigatable}
       />
     </div>
   )
