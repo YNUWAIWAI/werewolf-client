@@ -29,6 +29,7 @@ test('<Settings />', () => {
       handleSubmitLogout={handleSubmitLogout}
       initialValue={initialValue}
       menuItems={menuItems}
+      navigatable
     />
   )
 

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<div class=\\"lo--village--item--prop comment\\">Comment</div><textarea class=\\"lo--village--item--val comment \\" maxlength=\\"100\\" minlength=\\"0\\" placeholder=\\"0-100 chars\\" rows=\\"3\\" tabindex=\\"0\\">comment</textarea>"`;

@@ -6,6 +6,7 @@ interface Props {
   readonly handleChange: (valid: boolean) => (value: string) => void
   readonly handleSelect: () => void
   readonly name: string
+  readonly navigatable: boolean
 }
 
 export default function SelectAvatarTableBodyAvatarName(props: Props) {
@@ -26,6 +27,7 @@ export default function SelectAvatarTableBodyAvatarName(props: Props) {
         initialValue={props.name}
         max={15}
         min={5}
+        navigatable={props.navigatable}
         placeholder={props.name}
         required
       />

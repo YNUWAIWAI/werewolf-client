@@ -14,6 +14,7 @@ describe('<LanguageSelect />', () => {
         defaultValue={lobby.Language.en}
         handleChange={handleChange}
         menuPosition="absolute"
+        navigatable
       />
     )
 
@@ -30,6 +31,7 @@ describe('<LanguageSelect />', () => {
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
           menuPosition="absolute"
+          navigatable
         />
       )
 
@@ -51,6 +53,7 @@ describe('<LanguageSelect />', () => {
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
           menuPosition="absolute"
+          navigatable
         />
       )
 
@@ -69,6 +72,7 @@ describe('<LanguageSelect />', () => {
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
           menuPosition="absolute"
+          navigatable
         />
       )
 
@@ -85,6 +89,7 @@ describe('<LanguageSelect />', () => {
           defaultValue={lobby.Language.en}
           handleChange={handleChange}
           menuPosition="absolute"
+          navigatable
         />
       )
 

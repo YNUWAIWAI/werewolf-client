@@ -19,6 +19,7 @@ interface Props {
   readonly className: string
   readonly defaultValue: lobby.Automation
   readonly handleChange: (valid: boolean) => (automation: lobby.Automation) => void
+  readonly navigatable: boolean
 }
 
 interface Option {
@@ -59,6 +60,7 @@ export default function AutomationSelect(props: Props) {
       className={props.className}
       defaultValue={defaultValue}
       isSearchable
+      navigatable={props.navigatable}
       onChange={handleChange}
       options={options}
     />

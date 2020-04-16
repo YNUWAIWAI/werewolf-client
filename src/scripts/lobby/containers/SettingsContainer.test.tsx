@@ -10,7 +10,14 @@ import {mount} from 'enzyme'
 
 describe('<SettingsContainer />', () => {
   test('render', () => {
-    const store = fakeStore()
+    const store = fakeStore(
+      {
+        obfucator: {
+          loading: false,
+          visible: false
+        }
+      }
+    )
     const wrapper = mount(
       <Provider store={store} >
         <IntlProviderContainer>

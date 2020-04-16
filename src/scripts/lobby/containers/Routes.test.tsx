@@ -18,7 +18,12 @@ import {mount} from 'enzyme'
 
 describe('<Routes />', () => {
   test('/', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
 
     const wrapper = mount(
       <Provider store={store}>
@@ -34,7 +39,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/history', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -49,7 +59,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/settings', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -64,7 +79,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/audience/lobby', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -79,7 +99,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/human/lobby', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -94,7 +119,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/robot/lobby', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -109,7 +139,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/audience/advancedSearch', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -124,7 +159,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/human/advancedSearch', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -139,7 +179,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/robot/advancedSearch', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -154,7 +199,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/audience/buildVillage', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -170,7 +220,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/human/buildVillage', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -185,7 +240,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/robot/buildVillage', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -200,7 +260,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/audience/idSearch', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -215,7 +280,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/human/idSearch', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -230,7 +300,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/robot/idSearch', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -245,7 +320,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/audience/waitingForPlayers', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -260,7 +340,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/human/waitingForPlayers', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>
@@ -275,7 +360,12 @@ describe('<Routes />', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('/robot/waitingForPlayers', () => {
-    const store = fakeStore()
+    const store = fakeStore({
+      obfucator: {
+        loading: false,
+        visible: false
+      }
+    })
     const wrapper = mount(
       <Provider store={store}>
         <IntlProviderContainer>

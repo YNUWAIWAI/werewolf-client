@@ -42,7 +42,6 @@ type Action =
   | BuildVillage.ChangeMember
   | BuildVillage.ChangeNumberOfPlayers
   | BuildVillage.ChangeNumberOfRobots
-  | BuildVillage.ChangeValidity
   | BuildVillage.ChangeVillageName
   | ChangeLobby
   | Message.Avatar
@@ -72,7 +71,7 @@ export const initialState: State = {
     numberOfHumans: 15,
     numberOfPlayers: 15,
     numberOfRobots: 0,
-    villageName: 'Cursed Village'
+    villageName: 'Cursed village'
   }
 }
 const buildVillage = (state: State = initialState, action: Action): State => {
@@ -132,6 +131,10 @@ const buildVillage = (state: State = initialState, action: Action): State => {
       if (action.avatar === lobby.Avatar.fixed) {
         return {
           ... state,
+          validity: {
+            ... state.validity,
+            avatar: action.valid
+          },
           value: {
             ... state.value,
             avatar: action.avatar,
@@ -143,6 +146,10 @@ const buildVillage = (state: State = initialState, action: Action): State => {
 
       return {
         ... state,
+        validity: {
+          ... state.validity,
+          avatar: action.valid
+        },
         value: {
           ... state.value,
           avatar: action.avatar,
@@ -153,6 +160,10 @@ const buildVillage = (state: State = initialState, action: Action): State => {
     case ActionTypes.BuildVillage.CHANGE_COMMENT:
       return {
         ... state,
+        validity: {
+          ... state.validity,
+          comment: action.valid
+        },
         value: {
           ... state.value,
           comment: action.comment
@@ -170,6 +181,10 @@ const buildVillage = (state: State = initialState, action: Action): State => {
       if (action.numberOfPlayers < state.value.numberOfRobots) {
         return {
           ... state,
+          validity: {
+            ... state.validity,
+            numberOfPlayers: action.valid
+          },
           value: {
             ... state.value,
             numberOfHumans: 0,
@@ -181,6 +196,10 @@ const buildVillage = (state: State = initialState, action: Action): State => {
 
       return {
         ... state,
+        validity: {
+          ... state.validity,
+          numberOfPlayers: action.valid
+        },
         value: {
           ... state.value,
           numberOfHumans: action.numberOfPlayers - state.value.numberOfRobots,
@@ -190,23 +209,23 @@ const buildVillage = (state: State = initialState, action: Action): State => {
     case ActionTypes.BuildVillage.CHANGE_NUMBER_OF_ROBOTS:
       return {
         ... state,
+        validity: {
+          ... state.validity,
+          numberOfRobots: action.valid
+        },
         value: {
           ... state.value,
           numberOfHumans: state.value.numberOfPlayers - action.numberOfRobots,
           numberOfRobots: action.numberOfRobots
         }
       }
-    case ActionTypes.BuildVillage.CHANGE_VALIDITY:
+    case ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME:
       return {
         ... state,
         validity: {
           ... state.validity,
-          [action.propName]: action.validity
-        }
-      }
-    case ActionTypes.BuildVillage.CHANGE_VILLAGE_NAME:
-      return {
-        ... state,
+          villageName: action.valid
+        },
         value: {
           ... state.value,
           villageName: action.villageName

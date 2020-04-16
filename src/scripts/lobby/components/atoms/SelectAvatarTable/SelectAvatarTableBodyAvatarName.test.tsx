@@ -15,6 +15,7 @@ test('render', () => {
       handleChange={handleChange}
       handleSelect={handleSelect}
       name="Alice"
+      navigatable
     />
   )
 
@@ -30,6 +31,7 @@ describe('handleSelect', () => {
         handleChange={handleChange}
         handleSelect={handleSelect}
         name="Alice"
+        navigatable
       />
     )
 
@@ -45,6 +47,7 @@ describe('handleSelect', () => {
         handleChange={handleChange}
         handleSelect={handleSelect}
         name="Alice"
+        navigatable
       />
     )
 

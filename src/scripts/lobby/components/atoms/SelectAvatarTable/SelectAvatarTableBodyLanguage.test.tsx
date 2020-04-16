@@ -15,6 +15,7 @@ test('render', () => {
       handleChange={handleChange}
       handleSelect={handleSelect}
       language={lobby.Language.en}
+      navigatable
     />
   )
 
@@ -29,6 +30,7 @@ test('handleSelect', () => {
       handleChange={handleChange}
       handleSelect={handleSelect}
       language={lobby.Language.en}
+      navigatable
     />
   )
 

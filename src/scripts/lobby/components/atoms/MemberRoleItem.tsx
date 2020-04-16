@@ -8,7 +8,7 @@ interface Props {
   readonly numberOfPlayers: number
 }
 
-export default function MemberRole(props: Props) {
+export default function MemberRoleItem(props: Props) {
   const times = '✕'
 
   return (

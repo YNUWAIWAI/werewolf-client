@@ -13,6 +13,7 @@ describe('<TextInput />', () => {
         initialValue=""
         max={30}
         min={5}
+        navigatable
         placeholder="5-30 chars"
         required
       />
@@ -32,6 +33,7 @@ describe('<TextInput />', () => {
           initialValue=""
           max={30}
           min={5}
+          navigatable
           placeholder="5-30 chars"
           required
         />
@@ -60,6 +62,7 @@ describe('<TextInput />', () => {
           initialValue=""
           max={30}
           min={5}
+          navigatable
           placeholder="5-30 chars"
           required
         />
@@ -90,6 +93,7 @@ describe('<TextInput />', () => {
           initialValue=""
           max={30}
           min={5}
+          navigatable
           placeholder="5-30 chars"
           required
         />
@@ -118,6 +122,7 @@ describe('<TextInput />', () => {
           initialValue=""
           max={30}
           min={5}
+          navigatable
           placeholder="5-30 chars"
           required
         />

@@ -1,19 +1,16 @@
 import * as React from 'react'
-import AdvancedSearchProp from '../atoms/AdvancedSearchProp'
-import AvatarSelect from '../atoms/Select/AvatarSelect'
-import {FormattedMessage} from 'react-intl'
-import NumberSelect from '../atoms/Select/NumberSelect'
-import TextInput from '../atoms/TextInput'
-import TextareaInput from '../atoms/TextareaInput'
+import AdvancedSearchCellAvatar from '../molecules/AdvancedSearch/AdvancedSearchCellAvatar'
+import AdvancedSearchCellComment from '../molecules/AdvancedSearch/AdvancedSearchCellComment'
+import AdvancedSearchCellHostName from '../molecules/AdvancedSearch/AdvancedSearchCellHostName'
+import AdvancedSearchCellMaximum from '../molecules/AdvancedSearch/AdvancedSearchCellMaximum'
+import AdvancedSearchCellMinimum from '../molecules/AdvancedSearch/AdvancedSearchCellMinimum'
+import AdvancedSearchCellVillageName from '../molecules/AdvancedSearch/AdvancedSearchCellVillageName'
 import {lobby} from '../../types'
 
 type PropName = 'avatar' | 'comment' | 'hostName' | 'maximum' | 'minimum' | 'villageName'
-
 type NumberPropName = Extract<PropName, 'maximum' | 'minimum'>
-
 type TextPropName = Extract<PropName, 'comment' | 'hostName' | 'villageName'>
-
-export interface Props {
+export interface StateProps {
   readonly checked: {
     readonly avatar: boolean
     readonly comment: boolean
@@ -22,11 +19,6 @@ export interface Props {
     readonly minimum: boolean
     readonly villageName: boolean
   }
-  readonly handleAvatarChange: (avatar: lobby.Avatar) => void
-  readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
-  readonly handleNumberChange: (propName: NumberPropName) => (value: number) => void
-  readonly handleTextChange: (propName: TextPropName) => (value: string) => void
-  readonly handleValidityChange: (propName: PropName) => (valid: boolean) => void
   readonly validity: {
     readonly avatar: boolean
     readonly comment: boolean
@@ -35,210 +27,61 @@ export interface Props {
     readonly minimum: boolean
     readonly villageName: boolean
   }
+  readonly navigatable: boolean
 }
+export interface DispatchProps {
+  readonly handleAvatarChange: (valid: boolean) => (avatar: lobby.Avatar) => void
+  readonly handleCheckboxChange: (propName: PropName) => (value: boolean) => void
+  readonly handleNumberChange: (propName: NumberPropName) => (valid: boolean) => (value: number) => void
+  readonly handleTextChange: (propName: TextPropName) => (valid: boolean) => (value: string) => void
+}
+type Props = StateProps & DispatchProps
 
 export default function AdvancedSearchBox(props: Props) {
-  const handleValueChange = (propName: PropName) => (valid: boolean) => (value: boolean | number | string | lobby.Avatar) => {
-    switch (propName) {
-      case 'avatar': {
-        const avatar = [lobby.Avatar.fixed, lobby.Avatar.random, lobby.Avatar.unspecified]
-        const maybe = avatar.find(v => v === value)
-
-        if (maybe) {
-          props.handleAvatarChange(maybe)
-        }
-        break
-      }
-      case 'comment':
-      case 'hostName':
-      case 'villageName':
-        if (typeof value === 'string') {
-          props.handleTextChange(propName)(value)
-        }
-        break
-      case 'maximum':
-      case 'minimum':
-        if (typeof value === 'number') {
-          props.handleNumberChange(propName)(value)
-        }
-        break
-      default:
-        throw Error(`Unknown: ${propName}`)
-    }
-    if (valid && value !== '') {
-      props.handleCheckboxChange(propName)(true)
-      props.handleValidityChange(propName)(true)
-    } else {
-      props.handleCheckboxChange(propName)(false)
-      props.handleValidityChange(propName)(false)
-    }
-  }
-  const handleCheckboxChange = (propName: PropName) => (checked: boolean) => {
-    switch (propName) {
-      case 'avatar':
-        break
-      case 'comment':
-      case 'hostName':
-      case 'maximum':
-      case 'minimum':
-      case 'villageName':
-        props.handleCheckboxChange(propName)(checked)
-        break
-      default:
-        throw Error(`Unknown: ${propName}`)
-    }
-  }
-  const comment = {
-    max: 100,
-    min: 0
-  }
-  const hostName = {
-    max: 15,
-    min: 5
-  }
-  const villageName = {
-    max: 30,
-    min: 5
-  }
-
   return (
     <div className="lo--advanced-search">
-      <AdvancedSearchProp
+      <AdvancedSearchCellVillageName
         checked={props.checked.villageName}
-        handleChange={handleCheckboxChange('villageName')}
-        name="villageName"
+        handleCheckboxChange={props.handleCheckboxChange('villageName')}
+        handleValueChange={props.handleTextChange('villageName')}
+        navigatable={props.navigatable}
         valid={props.validity.villageName}
       />
-      <FormattedMessage
-        id="AdvancedSearch.placeholder(villageName)"
-        values={villageName}
-      >
-        {
-          text => {
-            if (typeof text !== 'string') {
-              return null
-            }
-
-            return (
-              <TextInput
-                className="lo--advanced-search--input"
-                handleChange={handleValueChange('villageName')}
-                initialValue=""
-                max={villageName.max}
-                min={villageName.min}
-                placeholder={text}
-                required={false}
-              />
-            )
-          }
-        }
-      </FormattedMessage>
-
-      <AdvancedSearchProp
+      <AdvancedSearchCellHostName
         checked={props.checked.hostName}
-        handleChange={handleCheckboxChange('hostName')}
-        name="hostName"
+        handleCheckboxChange={props.handleCheckboxChange('hostName')}
+        handleValueChange={props.handleTextChange('hostName')}
+        navigatable={props.navigatable}
         valid={props.validity.hostName}
       />
-      <FormattedMessage
-        id="AdvancedSearch.placeholder(hostName)"
-        values={hostName}
-      >
-        {
-          text => {
-            if (typeof text !== 'string') {
-              return null
-            }
-
-            return (
-              <TextInput
-                className="lo--advanced-search--input"
-                handleChange={handleValueChange('hostName')}
-                initialValue=""
-                max={hostName.max}
-                min={hostName.min}
-                placeholder={text}
-                required={false}
-              />
-            )
-          }
-        }
-      </FormattedMessage>
-
-      <AdvancedSearchProp
+      <AdvancedSearchCellMinimum
         checked={props.checked.minimum}
-        handleChange={handleCheckboxChange('minimum')}
-        name="minimum"
+        handleCheckboxChange={props.handleCheckboxChange('minimum')}
+        handleValueChange={props.handleNumberChange('minimum')}
+        navigatable={props.navigatable}
         valid={props.validity.minimum}
       />
-      <NumberSelect
-        ascendingOrder
-        className="lo--advanced-search--input"
-        from={4}
-        handleChange={handleValueChange('minimum')}
-        to={15}
-        type="player"
-      />
-
-      <AdvancedSearchProp
+      <AdvancedSearchCellMaximum
         checked={props.checked.maximum}
-        handleChange={handleCheckboxChange('maximum')}
-        name="maximum"
+        handleCheckboxChange={props.handleCheckboxChange('maximum')}
+        handleValueChange={props.handleNumberChange('maximum')}
+        navigatable={props.navigatable}
         valid={props.validity.maximum}
       />
-      <NumberSelect
-        ascendingOrder={false}
-        className="lo--advanced-search--input"
-        from={4}
-        handleChange={handleValueChange('maximum')}
-        to={15}
-        type="player"
-      />
-
-      <AdvancedSearchProp
+      <AdvancedSearchCellAvatar
         checked={props.checked.avatar}
-        handleChange={handleCheckboxChange('avatar')}
-        name="avatar"
+        handleCheckboxChange={props.handleCheckboxChange('avatar')}
+        handleValueChange={props.handleAvatarChange}
+        navigatable={props.navigatable}
         valid={props.validity.avatar}
       />
-      <AvatarSelect
-        className="lo--advanced-search--input"
-        defaultValue={lobby.Avatar.random}
-        handleChange={handleValueChange('avatar')}
-        type="advancedSearch"
-      />
-
-      <AdvancedSearchProp
+      <AdvancedSearchCellComment
         checked={props.checked.comment}
-        handleChange={handleCheckboxChange('comment')}
-        name="comment"
+        handleCheckboxChange={props.handleCheckboxChange('comment')}
+        handleValueChange={props.handleTextChange('comment')}
+        navigatable={props.navigatable}
         valid={props.validity.comment}
       />
-      <FormattedMessage
-        id="AdvancedSearch.placeholder(comment)"
-        values={comment}
-      >
-        {
-          text => {
-            if (typeof text !== 'string') {
-              return null
-            }
-
-            return (
-              <TextareaInput
-                className="lo--advanced-search--input"
-                handleChange={handleValueChange('comment')}
-                initialValue=""
-                max={comment.max}
-                min={comment.min}
-                placeholder={text}
-                required={false}
-                rows={3}
-              />
-            )
-          }
-        }
-      </FormattedMessage>
     </div>
   )
 }

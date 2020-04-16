@@ -76,19 +76,21 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           handleChange={props.handleAvatarNameChange(avatar.token)}
           handleSelect={props.handleSelectAvatar(id)}
           name={avatar.name}
+          navigatable={props.navigatable}
         />
         <SelectAvatarTableBodyLanguage
           additionalClassName={additionalClassName}
           handleChange={props.handleAvatarLanguageChange(id)}
           handleSelect={props.handleSelectAvatar(id)}
           language={avatar.language}
+          navigatable={props.navigatable}
         />
         <SelectAvatarTableBodyImage
           additionalClassName={additionalClassName}
           handleClick={props.handleAvatarImageClick(id)}
           handleSelect={props.handleSelectAvatar(id)}
           image={avatar.image}
-          navigative
+          navigatable={props.navigatable}
         />
         <SelectAvatarTableBodyStatus
           additionalClassName={additionalClassName}

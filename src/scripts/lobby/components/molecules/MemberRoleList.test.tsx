@@ -1,21 +1,19 @@
 import * as React from 'react'
-import MemberRole from './MemberRole'
+import Cast from '../../constants/Cast'
+import MemberRoleList from './MemberRoleList'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('<MemberRole />', () => {
+test('render', () => {
   const wrapper = mountWithIntl(
-    <MemberRole
+    <MemberRoleList
       className="className"
-      id="villager"
-      image="image"
-      numberOfPlayers={0}
+      role={Cast['15'].A}
     />
   )
 
-  expect(wrapper.text()).toBe('✕0Villager')
-  expect(wrapper.find('img[src="image"]').exists()).toBe(true)
+  expect(wrapper.html()).toMatchSnapshot()
 })

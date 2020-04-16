@@ -16,7 +16,7 @@ test('render', () => {
       handleClick={handleClick}
       handleSelect={handleSelect}
       image={ImagePath.Character.a}
-      navigative
+      navigatable
     />
   )
 
@@ -31,7 +31,7 @@ test('handleClick', () => {
       handleClick={handleClick}
       handleSelect={handleSelect}
       image={ImagePath.Character.a}
-      navigative
+      navigatable
     />
   )
 
@@ -47,7 +47,7 @@ test('handleSelect', () => {
       handleClick={handleClick}
       handleSelect={handleSelect}
       image={ImagePath.Character.a}
-      navigative
+      navigatable
     />
   )
 

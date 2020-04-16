@@ -14,6 +14,7 @@ describe('<PasswordInput />', () => {
         className="className"
         handleChange={handleChange}
         id="id"
+        navigatable
       />
     )
 
@@ -29,6 +30,7 @@ describe('<PasswordInput />', () => {
         className="className"
         handleChange={handleChange}
         id="id"
+        navigatable
       />
     )
 
@@ -54,6 +56,7 @@ describe('<PasswordInput />', () => {
         className="className"
         handleChange={handleChange}
         id="id"
+        navigatable
       />
     )
 

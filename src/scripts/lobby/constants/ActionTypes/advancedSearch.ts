@@ -5,7 +5,6 @@ export const enum AdvancedSearch {
   CHANGE_HOST_NAME = 'advancedSearch/CHANGE_HOST_NAME',
   CHANGE_MAXIMUM = 'advancedSearch/CHANGE_MAXIMUM',
   CHANGE_MINIMUM = 'advancedSearch/CHANGE_MINIMUM',
-  CHANGE_VALIDITY = 'advancedSearch/CHANGE_VALIDITY',
   CHANGE_VILLAGE_NAME = 'advancedSearch/CHANGE_VILLAGE_NAME',
   SEARCH = 'advancedSearch/SEARCH'
 }

@@ -15,6 +15,7 @@ test('render', () => {
       className="className"
       defaultValue={lobby.Automation.full}
       handleChange={handleChange}
+      navigatable
     />
   )
 
@@ -31,6 +32,7 @@ describe('onChange', () => {
         className="className"
         defaultValue={lobby.Automation.full}
         handleChange={handleChange}
+        navigatable
       />
     )
     const onChange = wrapper.find(Select).props().onChange
@@ -57,6 +59,7 @@ describe('onChange', () => {
         className="className"
         defaultValue={lobby.Automation.full}
         handleChange={handleChange}
+        navigatable
       />
     )
     const onChange = wrapper.find(Select).props().onChange
@@ -78,6 +81,7 @@ describe('onChange', () => {
         className="className"
         defaultValue={lobby.Automation.full}
         handleChange={handleChange}
+        navigatable
       />
     )
     const onChange = wrapper.find(Select).props().onChange
@@ -99,6 +103,7 @@ describe('onChange', () => {
         className="className"
         defaultValue={lobby.Automation.full}
         handleChange={handleChange}
+        navigatable
       />
     )
     const onChange = wrapper.find(Select).props().onChange

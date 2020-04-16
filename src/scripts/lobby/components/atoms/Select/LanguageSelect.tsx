@@ -19,6 +19,7 @@ interface Props {
   readonly defaultValue: lobby.Language
   readonly handleChange: (valid: boolean) => (value: lobby.Language) => void
   readonly menuPosition: 'absolute' | 'fixed'
+  readonly navigatable: boolean
 }
 
 interface Option {
@@ -62,6 +63,7 @@ export default function LanguageSelect(props: Props) {
       className={props.className}
       defaultValue={defaultValue}
       menuPosition={props.menuPosition}
+      navigatable={props.navigatable}
       onChange={handleChange}
       options={options}
     />

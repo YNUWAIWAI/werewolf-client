@@ -42,6 +42,7 @@ export default function CreateNewRobotAvatarBody(props: Props) {
         className="lo--create-new-avatar--select"
         defaultValue={lobby.Automation.full}
         handleChange={() => () => {}}
+        navigatable
       />
     </div>
   )
