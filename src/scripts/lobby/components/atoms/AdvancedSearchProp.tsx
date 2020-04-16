@@ -17,7 +17,10 @@ export default function AdvancedSearchProp(props: Props) {
   }
 
   return (
-    <div className="lo--advanced-search--prop">
+    <label
+      className="lo--advanced-search--prop"
+      htmlFor={props.name}
+    >
       <input
         checked={props.checked}
         disabled={!props.valid}
@@ -32,12 +35,12 @@ export default function AdvancedSearchProp(props: Props) {
       >
         {
           text => (
-            <label htmlFor={props.name}>
+            <span>
               {text}
-            </label>
+            </span>
           )
         }
       </FormattedMessage>
-    </div>
+    </label>
   )
 }
