@@ -10,7 +10,9 @@ const {shallowWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Lang
 
 test('render', () => {
   const wrapper = shallowWithIntl(
-    <CreateNewRobotAvatarBody />
+    <CreateNewRobotAvatarBody
+      navigatable
+    />
   )
 
   expect(wrapper.find(TextInput)).toHaveLength(1)

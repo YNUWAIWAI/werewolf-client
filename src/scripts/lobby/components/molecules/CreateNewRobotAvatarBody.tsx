@@ -34,7 +34,7 @@ export default function CreateNewRobotAvatarBody(props: Props) {
         initialValue=""
         max={15}
         min={5}
-        navigatable
+        navigatable={props.navigatable}
         placeholder=""
         required
       />
@@ -42,7 +42,7 @@ export default function CreateNewRobotAvatarBody(props: Props) {
         className="lo--create-new-avatar--select"
         defaultValue={lobby.Automation.full}
         handleChange={() => () => {}}
-        navigatable
+        navigatable={props.navigatable}
       />
     </div>
   )
