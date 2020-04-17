@@ -61,7 +61,7 @@
   --color--background--primary-button--disabled: var(--color--primary20);
   --color--background--primary-button--hover: var(--color--primary40);
   --color--background--settings--bucket: var(--color--neutral80);
-  --color--border: var(--color--neutral90);
+  --color--border: var(--color--neutral80);
   --color--border--input: var(--color--neutral20);
   --color--border--settings--bucket: var(--color--neutral80);
   --color--font: var(--color--font--white);
