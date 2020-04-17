@@ -2,6 +2,9 @@
 
   /* stylelint-disable color-named */
   --color--danger: rgb(239, 83, 80);
+  --color--font--black: hsl(0, 0%, 10%);
+  --color--font--gray: hsl(0, 0%, 50%);
+  --color--font--white: hsl(0, 0%, 80%);
   --color--neutral0: hsl(0, 0%, 0%);
   --color--neutral5: hsl(0, 0%, 5%);
   --color--neutral10: hsl(0, 0%, 10%);
