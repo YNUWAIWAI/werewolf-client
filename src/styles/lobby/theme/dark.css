@@ -16,6 +16,20 @@
   --color--neutral80: hsl(0, 0%, 80%);
   --color--neutral90: hsl(0, 0%, 90%);
   --color--neutral100: hsl(0, 0%, 100%);
+  --color--neutral0a: hsla(0, 0%, 0%, 0.5);
+  --color--neutral5a: hsla(0, 0%, 5%, 0.5);
+  --color--neutral10a: hsla(0, 0%, 10%, 0.5);
+  --color--neutral15a: hsla(0, 0%, 15%, 0.5);
+  --color--neutral20a: hsla(0, 0%, 20%, 0.5);
+  --color--neutral25a: hsla(0, 0%, 25%, 0.5);
+  --color--neutral30a: hsla(0, 0%, 30%, 0.5);
+  --color--neutral40a: hsla(0, 0%, 40%, 0.5);
+  --color--neutral50a: hsla(0, 0%, 50%, 0.5);
+  --color--neutral60a: hsla(0, 0%, 60%, 0.5);
+  --color--neutral70a: hsla(0, 0%, 70%, 0.5);
+  --color--neutral80a: hsla(0, 0%, 80%, 0.5);
+  --color--neutral90a: hsla(0, 0%, 90%, 0.5);
+  --color--neutral100a: hsla(0, 0%, 100%, 0.5);
   --color--primary: rgba(38, 132, 255, 1);
   --color--primary10: rgba(38, 132, 255, 0.1);
   --color--primary20: rgba(38, 132, 255, 0.2);
@@ -32,14 +46,14 @@
   --color--warning: rgb(255, 238, 88);
 
   /* stylelint-enable color-named */
-  --color--background: var(--color--neutral0);
-  --color--background--button: var(--color--neutral25);
-  --color--background--button--disabled: var(--color--neutral15);
-  --color--background--button--hover: var(--color--neutral40);
-  --color--background--menu: var(--color--neutral0);
-  --color--background--menu--disabled: var(--color--neutral40);
-  --color--background--menu--focus: var(--color--neutral20);
-  --color--background--menu--hover: var(--color--neutral30);
+  --color--background: var(--color--neutral0a);
+  --color--background--button: var(--color--neutral25a);
+  --color--background--button--disabled: var(--color--neutral15a);
+  --color--background--button--hover: var(--color--neutral40a);
+  --color--background--menu: var(--color--neutral0a);
+  --color--background--menu--disabled: var(--color--neutral40a);
+  --color--background--menu--focus: var(--color--neutral20a);
+  --color--background--menu--hover: var(--color--neutral30a);
   --color--background--primary-button: var(--color--primary50);
   --color--background--primary-button--disabled: var(--color--primary20);
   --color--background--primary-button--hover: var(--color--primary40);
