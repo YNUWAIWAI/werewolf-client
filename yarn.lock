@@ -1483,10 +1483,10 @@
   resolved "https://registry.yarnpkg.com/@nimiusrd/eslint-config/-/eslint-config-2.1.0.tgz#47d56d880c18690a2962437bf92c5106f5078e13"
   integrity sha512-qKwkFB3Fpcav4z6glJ6CqOMD7nlOwMGYZ4hKerXJhW+HK7CcEC+T7rMQOvg8Kr4l7Vz6SznuoeHc67J7279zmA==
 
-"@nimiusrd/stylelint-config@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@nimiusrd/stylelint-config/-/stylelint-config-3.0.0.tgz#c4382e8fed8823d0c0ae60d7f88a5cc324df2428"
-  integrity sha512-5jNdINyhJxqB/05pTsO4W+BeJFOARUIxCHoy6gQST+0amJqro86bu68kzDnO+7HgdVaAE4hrrlG+LDwedg/gsg==
+"@nimiusrd/stylelint-config@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@nimiusrd/stylelint-config/-/stylelint-config-3.1.0.tgz#eb563c739d083fec7b6a058954aecc9d9588d6e4"
+  integrity sha512-5xwK5Xg9yGnG8uSBQAIH0hVtxi66VexoAabn2GPBQo+LQPsf/+wnMEX5vAvCKZ/0Xwf8CCwNsJRW7+ASQn63Kg==
   dependencies:
     stylelint-order "^4.0.0"
 
