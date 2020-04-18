@@ -1,47 +1,40 @@
 import * as React from 'react'
-import {FormattedMessage} from 'react-intl'
-import Menu from '../../containers/MenuContainer'
-import {MenuItemProps as MenuItem} from '../organisms/Menu'
-import TextInput from '../atoms/TextInput'
+import CreateNewAvatarAvatarImage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
+import CreateNewAvatarAvatarLanguage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
+import CreateNewAvatarAvatarName from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
+import {lobby} from '../../types'
 
-interface Props {
-  command: MenuItem[]
+export interface StateProps {
+  readonly image: string
+  readonly language: lobby.Language
+  readonly name: string
+  readonly navigatable: boolean
 }
+export interface DispatchProps {
+  readonly handleImageClick: (value: string) => void
+  readonly handleLanguageChange: (valid: boolean) => (value: lobby.Language) => void
+  readonly handleNameChange: (valid: boolean) => (value: string) => void
+}
+type Props = StateProps & DispatchProps
 
-export default function CreateNewHumanAvatarBody(props: Props) {
+export default function CreateNewHumanAvatarTable(props: Props) {
   return (
     <div
-      className="lo--create-new-avatar--body"
+      className="lo--create-new-avatar--table"
     >
-      <FormattedMessage
-        id="CreateNewAvatar.label"
-      >
-        {
-          text => (
-            <label
-              className="lo--create-new-avatar--label"
-              htmlFor="newAvatarName"
-            >
-              {text}
-            </label>
-          )
-        }
-      </FormattedMessage>
-      <TextInput
-        className="lo--create-new-avatar--input"
-        handleChange={() => () => {}}
-        id="newAvatarName"
-        initialValue=""
-        max={15}
-        min={5}
-        navigatable
-        placeholder=""
-        required
+      <CreateNewAvatarAvatarName
+        handleChange={props.handleNameChange}
+        navigatable={props.navigatable}
       />
-      <Menu
-        className="lo--create-new-avatar--command"
-        itemClassName="lo--create-new-avatar--command--item"
-        items={props.command}
+      <CreateNewAvatarAvatarImage
+        handleClick={() => props.handleImageClick(props.image)}
+        image={props.image}
+        navigatable
+      />
+      <CreateNewAvatarAvatarLanguage
+        handleChange={props.handleLanguageChange}
+        language={props.language}
+        navigatable={props.navigatable}
       />
     </div>
   )

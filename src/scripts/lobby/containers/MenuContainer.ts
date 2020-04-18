@@ -14,7 +14,7 @@ type Action =
   | Transition
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  navigative: !state.obfucator.visible
+  navigatable: !state.obfucator.visible
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   transition: target => {
