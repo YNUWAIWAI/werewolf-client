@@ -7,6 +7,7 @@
   &--item {
     background: var(--color--background--menu);
     border: 2px solid var(--color--border);
+    border-radius: 4px;
     cursor: pointer;
     margin: 1.5rem 10rem;
     user-select: none;

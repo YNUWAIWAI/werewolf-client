@@ -6,6 +6,7 @@
   &--item {
     background: var(--color--background--menu);
     border: 2px solid var(--color--border);
+    border-radius: 4px;
     cursor: pointer;
     font-weight: 100;
     margin-bottom: 0.5rem;

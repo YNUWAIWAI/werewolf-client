@@ -1,5 +1,5 @@
 .lo--video {
-  background: var(--color--background);
+  background: var(--color--background--video);
   height: 100%;
   left: 0;
   object-fit: cover;

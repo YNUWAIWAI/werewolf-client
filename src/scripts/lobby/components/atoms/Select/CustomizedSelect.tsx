@@ -32,6 +32,7 @@ export default function CustomizedSelect(props: Props<any>) {
       tabIndex={props.navigatable ? '0' : '-1'}
       theme={theme => ({
         ... theme,
+        borderRadius: 0,
         colors: {
           ... theme.colors,
           neutral0: 'var(--color--neutral0)',

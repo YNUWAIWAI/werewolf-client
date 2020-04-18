@@ -1,7 +1,20 @@
 .lo.light {
 
   /* stylelint-disable color-named */
+  --color--background: var(--color--neutral0);
+  --color--background--button: var(--color--neutral10);
+  --color--background--button--disabled: var(--color--neutral25);
+  --color--background--button--hover: var(--color--neutral20);
+  --color--background--input: var(--color--neutral5);
+  --color--background--input--menu: var(--color--neutral0);
+  --color--background--menu: var(--color--neutral0);
+  --color--background--menu--disabled: var(--color--neutral40);
+  --color--background--menu--focus: var(--color--neutral20);
+  --color--background--menu--hover: var(--color--neutral30);
   --color--danger: rgb(244, 67, 54);
+  --color--font--black: hsl(0, 0%, 10%);
+  --color--font--gray: hsl(0, 0%, 50%);
+  --color--font--white: hsl(0, 0%, 90%);
   --color--neutral0: hsl(0, 0%, 100%);
   --color--neutral5: hsl(0, 0%, 95%);
   --color--neutral10: hsl(0, 0%, 90%);
@@ -32,30 +45,29 @@
   --color--warning: rgb(255, 235, 59);
 
   /* stylelint-enable color-named */
-  --color--background: var(--color--neutral0);
-  --color--background--button: var(--color--neutral10);
-  --color--background--button--disabled: var(--color--neutral25);
-  --color--background--button--hover: var(--color--neutral20);
-  --color--background--menu: var(--color--neutral0);
-  --color--background--menu--disabled: var(--color--neutral40);
-  --color--background--menu--focus: var(--color--neutral20);
-  --color--background--menu--hover: var(--color--neutral30);
+  --color--background--me: var(--color--primary);
   --color--background--primary-button: var(--color--primary60);
   --color--background--primary-button--disabled: var(--color--primary20);
   --color--background--primary-button--hover: var(--color--primary40);
   --color--background--settings--bucket: var(--color--neutral80);
-  --color--border--settings--bucket: var(--color--neutral80);
+  --color--background--video: var(--color--neutral0);
   --color--border: var(--color--neutral90);
   --color--border--input: var(--color--neutral20);
+  --color--border--settings--bucket: var(--color--neutral80);
   --color--font: var(--color--font--black);
   --color--font--button: var(--color--font--black);
   --color--font--button--disabled: var(--color--font--gray);
-  --color--font--settings--bucket: var(--color--font--white);
-  --color--font--settings--bucket--danger: var(--color--font--black);
-  --color--font--placeholder: var(--color--neutral50);
+  --color--font--input: var(--color--neutral80);
+  --color--font--me: var(--color--font--white);
   --color--font--menu: var(--color--font--black);
   --color--font--menu--disabled: var(--color--font--gray);
+  --color--font--placeholder: var(--color--font--gray);
+  --color--font--role-image: var(--color--font--white);
+  --color--font--settings--bucket: var(--color--font--white);
+  --color--font--settings--bucket--danger: var(--color--font--black);
   --color--line--close-button: var(--color--border);
   --color--line--close-button--hover: var(--color--neutral70);
+  --color--me: var(--color--primary);
   --color--obfucator--loader: var(--color--neutral10);
+  --color--selected: var(--color--primary25);
 }

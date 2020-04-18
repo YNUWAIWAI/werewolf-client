@@ -25,6 +25,16 @@
       outline-color: var(--color--danger);
       outline-offset: -2px;
     }
+
+    & > .lo--react-select {
+      &__control {
+        background: var(--color--background--input);
+      }
+
+      &__menu {
+        background: var(--color--background--input--menu);
+      }
+    }
   }
 
   &--not-found {
