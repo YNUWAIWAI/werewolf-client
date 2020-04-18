@@ -8,7 +8,7 @@ export interface Props {
   readonly disabled?: boolean
   readonly id: string
   readonly isLoading?: boolean
-  readonly navigative: boolean
+  readonly navigatable: boolean
   readonly transition: (target: Target) => void
   readonly types: Target[]
 }
@@ -33,7 +33,7 @@ export default function MenuItem(props: Props) {
             <button
               className={`${props.className}--button ${props.isLoading ? 'loader' : ''}`}
               disabled={props.disabled || props.isLoading}
-              tabIndex={props.navigative ? 0 : -1}
+              tabIndex={props.navigatable ? 0 : -1}
             >
               {
                 props.isLoading ?

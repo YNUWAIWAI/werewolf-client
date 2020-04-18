@@ -1,26 +1,27 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
   AvatarImageSelect,
+  CreateNewHumanAvatar,
   SelectHumanAvatar,
   SelectRobotAvatar
 } from '../actions'
 import {AvatarImageList} from '../constants/AvatarImageList'
-import {lobby} from '../types'
 
 export interface State {
-  readonly lobby: lobby.LobbyType
   readonly imageList: string[]
+  readonly scope: ActionTypes.Scope.SelectHumanAvatar | ActionTypes.Scope.SelectRobotAvatar | ActionTypes.Scope.CreateNewHumanAvatar
   readonly selectedImage: string
   readonly token: string
 }
 type Action =
   | AvatarImageSelect.SelectAvatar
+  | CreateNewHumanAvatar.ShowAvatarImageSelect
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
 
 export const initialState: State = {
   imageList: AvatarImageList,
-  lobby: lobby.LobbyType.human,
+  scope: ActionTypes.Scope.SelectHumanAvatar,
   selectedImage: '',
   token: ''
 }
@@ -31,17 +32,24 @@ const avatarImageSelect = (state: State = initialState, action: Action): State =
         ... state,
         selectedImage: action.image
       }
+    case ActionTypes.CreateNewHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
+      return {
+        ... state,
+        scope: ActionTypes.Scope.CreateNewHumanAvatar,
+        selectedImage: action.image,
+        token: ''
+      }
     case ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
       return {
         ... state,
-        lobby: lobby.LobbyType.human,
+        scope: ActionTypes.Scope.SelectHumanAvatar,
         selectedImage: action.image,
         token: action.token
       }
     case ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
       return {
         ... state,
-        lobby: lobby.LobbyType.robot,
+        scope: ActionTypes.Scope.SelectRobotAvatar,
         selectedImage: action.image,
         token: action.token
       }

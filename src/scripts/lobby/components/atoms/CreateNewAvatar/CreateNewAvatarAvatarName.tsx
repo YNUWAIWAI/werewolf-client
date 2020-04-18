@@ -1,20 +1,17 @@
 import * as React from 'react'
-import AutomationSelect from '../atoms/Select/AutomationSelect'
 import {FormattedMessage} from 'react-intl'
-import TextInput from '../atoms/TextInput'
-import {lobby} from '../../types'
+import TextInput from '../TextInput'
 
 interface Props {
+  readonly handleChange: (valid: boolean) => (value: string) => void
   readonly navigatable: boolean
 }
 
-export default function CreateNewRobotAvatarBody(props: Props) {
+export default function CreateNewAvatarAvatarName(props: Props) {
   return (
-    <div
-      className="lo--create-new-avatar--body"
-    >
+    <>
       <FormattedMessage
-        id="CreateNewAvatar.label"
+        id="CreateNewAvatar.label(avatarName)"
       >
         {
           text => (
@@ -29,7 +26,7 @@ export default function CreateNewRobotAvatarBody(props: Props) {
       </FormattedMessage>
       <TextInput
         className="lo--create-new-avatar--input"
-        handleChange={() => () => {}}
+        handleChange={props.handleChange}
         id="newAvatarName"
         initialValue=""
         max={15}
@@ -38,12 +35,6 @@ export default function CreateNewRobotAvatarBody(props: Props) {
         placeholder=""
         required
       />
-      <AutomationSelect
-        className="lo--create-new-avatar--select"
-        defaultValue={lobby.Automation.full}
-        handleChange={() => () => {}}
-        navigatable={props.navigatable}
-      />
-    </div>
+    </>
   )
 }

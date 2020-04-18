@@ -1,6 +1,7 @@
 import * as React from 'react'
 import AsideContent from '../atoms/AsideContent'
-import CreateNewHumanAvatarBox from '../organisms/CreateNewHumanAvatarBox'
+import CreateNewAvatarHeader from '../molecules/CreateNewAvatarHeader'
+import CreateNewHumanAvatarBody from '../../containers/CreateNewHumanAvatarBodyContainer'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
@@ -17,8 +18,12 @@ export default function CreateNewHumanAvatar(props: Props) {
     <div className="lo--grid">
       <Header id="Header.selectHumanAvatar" />
       <MainContent>
-        <CreateNewHumanAvatarBox
-          command={props.command}
+        <CreateNewAvatarHeader />
+        <CreateNewHumanAvatarBody />
+        <Menu
+          className="lo--create-new-avatar--command"
+          itemClassName="lo--create-new-avatar--command--item"
+          items={props.command}
         />
       </MainContent>
       <AsideContent>

@@ -1,4 +1,4 @@
-import CreateNewHumanAvatar, {StateProps} from '../components/templates/CreateNewHumanAvatar'
+import Component, {StateProps} from '../components/templates/CreateNewHumanAvatar'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -6,8 +6,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   command: state.createNewHumanAvatar.command,
   menuItems: state.createNewHumanAvatar.menuItems
 })
-const CreateNewHumanAvatarContainer = connect(
+const Container = connect(
   mapStateToProps
-)(CreateNewHumanAvatar)
+)(Component)
 
-export default CreateNewHumanAvatarContainer
+export default Container

@@ -2,6 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   AvatarImageSelect,
   Confirmation,
+  CreateNewHumanAvatar,
   SelectHumanAvatar,
   SelectRobotAvatar,
   Socket,
@@ -16,6 +17,7 @@ type Action =
   | AvatarImageSelect.CloseModal
   | Confirmation.SelectNo
   | Confirmation.SelectYes
+  | CreateNewHumanAvatar.ShowAvatarImageSelect
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
   | Socket.Close
@@ -36,6 +38,7 @@ const obfucator = (state: State = initialState, action: Action): State => {
         visible: false
       }
     case ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER:
+    case ActionTypes.CreateNewHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
       return {
