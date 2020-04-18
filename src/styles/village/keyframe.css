@@ -27,8 +27,8 @@
   }
 
   to {
-    background: var(--color--danger);
-    color: var(--color--font);
+    background: var(--color--background--prediction--dead);
+    color: var(--color--font--prediction--dead);
   }
 }
 

@@ -34,8 +34,8 @@
 
     &.dead {
       animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
-      background: var(--color--dead);
-      color: var(--color--font--dead);
+      background: var(--color--background--prediction--dead);
+      color: var(--color--font--prediction--dead);
     }
 
     &.silent {

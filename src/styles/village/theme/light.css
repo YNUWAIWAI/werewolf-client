@@ -3,12 +3,14 @@
   /* stylelint-disable color-named */
   --color--background--grave: rgb(179, 179, 255);
   --color--background--master: rgb(153, 255, 153);
+  --color--background--prediction--dead: var(--color--danger);
   --color--background--private: rgb(217, 217, 217);
   --color--background--public: rgb(255, 219, 153);
   --color--background--silent: rgb(255, 223, 51);
   --color--background--werewolf: rgb(255, 125, 153);
   --color--danger: rgb(244, 67, 54);
   --color--font--black: hsl(0, 0%, 10%);
+  --color--font--dead: var(--color--danger);
   --color--font--gray: hsl(0, 0%, 50%);
   --color--font--white: hsl(0, 0%, 90%);
   --color--neutral0: hsl(0, 0%, 100%);
@@ -54,15 +56,14 @@
   --color--background: var(--color--neutral0);
   --color--background--body: var(--color--neutral5);
   --color--border: var(--color--neutral90);
-  --color--dead: var(--color--danger);
   --color--font: var(--color--font--black);
   --color--font--button: var(--color--font--black);
   --color--font--button--disabled: var(--color--font--gray);
-  --color--font--dead: var(--color--font--black);
   --color--font--grave: var(--color--font--black);
   --color--font--image-initial: var(--color--font--white);
   --color--font--modal: var(--color--font--black);
-  --color--font--placeholder: var(--color--neutral50);
+  --color--fonåt--placeholder: var(--color--neutral50);
+  --color--font--prediction--dead: var(--color--font--black);
   --color--font--prediction--fill: var(--color--font--white);
   --color--font--primary-button: var(--color--font--black);
   --color--font--primary-button--disabled: var(--color--font--gray);
