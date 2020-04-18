@@ -8,6 +8,9 @@
   --color--background--silent: rgb(204, 172, 0);
   --color--background--werewolf: rgb(80, 0, 0);
   --color--danger: rgb(239, 83, 80);
+  --color--font--black: hsl(0, 0%, 10%);
+  --color--font--gray: hsl(0, 0%, 50%);
+  --color--font--white: hsl(0, 0%, 80%);
   --color--neutral0: hsl(0, 0%, 0%);
   --color--neutral5: hsl(0, 0%, 5%);
   --color--neutral10: hsl(0, 0%, 10%);
@@ -72,6 +75,7 @@
   --color--font--werewolf: var(--color--font--white);
   --color--line--close-button: var(--color--border);
   --color--line--close-button--hover: var(--color--neutral70);
+  --color--obfucator--loader: var(--color--neutral90);
   --color--prediction--circle: var(--color--danger);
   --color--prediction--cross: var(--color--danger);
   --color--prediction--fill: var(--color--neutral90);
