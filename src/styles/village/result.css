@@ -170,7 +170,7 @@
       text-align: center;
 
       &.dead {
-        color: var(--color--dead);
+        color: var(--color--font--dead);
       }
     }
 
@@ -186,7 +186,7 @@
       text-align: center;
 
       &.dead {
-        color: var(--color--dead);
+        color: var(--color--font--dead);
       }
     }
 
@@ -232,7 +232,7 @@
       text-align: center;
 
       &.dead {
-        color: var(--color--dead);
+        color: var(--color--font--dead);
       }
     }
   }

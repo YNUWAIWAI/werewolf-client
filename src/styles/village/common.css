@@ -5,11 +5,6 @@
   /* focus-ring */
   --box-shadow--focus-ring: 0 0 3px 2px var(--color--primary);
 
-  /* font-color */
-  --color--font--black: hsl(0, 0%, 10%);
-  --color--font--gray: hsl(0, 0%, 50%);
-  --color--font--white: hsl(0, 0%, 90%);
-
   /* font-size */
   --font-size--image-initial: 16px;
   --font-size--image-name: 10px;

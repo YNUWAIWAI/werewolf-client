@@ -108,8 +108,15 @@
         height: 100%;
         width: 100%;
 
-        & > .lo--react-select__menu {
-          z-index: var(--z-index--village--select);
+        & > .lo--react-select {
+          &__control {
+            background: var(--color--background--input);
+          }
+
+          &__menu {
+            background: var(--color--background--input--menu);
+            z-index: var(--z-index--village--select);
+          }
         }
       }
 
@@ -126,8 +133,15 @@
         height: 100%;
         width: 100%;
 
-        & > .lo--react-select__menu {
-          z-index: var(--z-index--village--select);
+        & > .lo--react-select {
+          &__control {
+            background: var(--color--background--input);
+          }
+
+          &__menu {
+            background: var(--color--background--input--menu);
+            z-index: var(--z-index--village--select);
+          }
         }
       }
 
@@ -264,8 +278,16 @@
           margin-left: 1rem;
           width: calc(100% - 4rem - 10px);
 
-          & > .lo--react-select__menu {
-            z-index: var(--z-index--village--select);
+          & > .lo--react-select {
+            &__control {
+              background: var(--color--background--input);
+              border-radius: 4px;
+            }
+
+            &__menu {
+              background: var(--color--background--input--menu);
+              z-index: var(--z-index--village--select);
+            }
           }
         }
 

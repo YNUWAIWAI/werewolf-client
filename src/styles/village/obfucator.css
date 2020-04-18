@@ -12,6 +12,7 @@
 
   &--loader {
     height: 10%;
+    stroke: var(--color--obfucator--loader);
     width: 10%;
   }
 
