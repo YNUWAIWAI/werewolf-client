@@ -1318,7 +1318,7 @@ describe('avatarImageSelect/SELECT_AVATAR', () => {
     const payload: lobby.Payload$ChangeAvatar = {
       image,
       language: null,
-      lobby: lobby.LobbyType.human,
+      lobby: lobby.LobbyType.robot,
       name: null,
       token,
       type: lobby.PayloadType.changeAvatar
@@ -1369,42 +1369,11 @@ describe('avatarImageSelect/SELECT_AVATAR', () => {
     const dispatchAPI = jest.fn()
     const actionHandler = nextHandler(dispatchAPI)
     const image = ImagePath.Character.a
-    const payload: lobby.Payload$ChangeAvatar = {
-      image,
-      language: null,
-      lobby: lobby.LobbyType.human,
-      name: null,
-      token,
-      type: lobby.PayloadType.changeAvatar
-    }
     const action = avatarImageSelect.selectAvatar(image)
 
-    test('validate the JSON', async () => {
-      expect.hasAssertions()
-      const schemas = await Promise.all([
-        LOBBY_SCHEMA.client2server.changeAvatar,
-        VILLAGE_SCHEMA.avatar
-      ].map(
-        schema => fetch(schema)
-          .then(res => res.json())
-      ))
-      const ajv = new Ajv({
-        schemas
-      })
-      const validate = ajv.validate(LOBBY_SCHEMA.client2server.changeAvatar, payload)
-
-      if (!validate) {
-        console.error(ajv.errors)
-      }
-      expect(validate).toBe(true)
-    })
     test('dispatch correctly', () => {
       actionHandler(action)
-      expect(dispatch).toHaveBeenCalledTimes(1)
-      expect(dispatch).toHaveBeenCalledWith({
-        payload,
-        type: ActionTypes.Socket.SEND
-      })
+      expect(dispatch).toHaveBeenCalledTimes(0)
     })
   })
 })
