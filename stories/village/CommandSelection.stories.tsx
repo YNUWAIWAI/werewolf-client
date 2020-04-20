@@ -4,7 +4,6 @@ import CommandSelection from '../../src/scripts/village/components/organisms/Com
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
@@ -122,7 +121,7 @@ storiesOf('village|Command/CommandSelection', module)
             characters={characters}
             descriptionId="CommandSelection.Description.noonVote.unfixed"
             fixed={false}
-            handleSelectOption={id => action(`handleSelectOption id: ${id}`)}
+            handleSelectOption={id => () => console.log(`handleSelectOption id: ${id}`)}
             phase={village.Phase.noon}
           />
         </IntlProvider>

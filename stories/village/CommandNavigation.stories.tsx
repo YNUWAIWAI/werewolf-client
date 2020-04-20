@@ -3,7 +3,6 @@ import * as React from 'react'
 import CommandNavigation from '../../src/scripts/village/components/molecules/CommandNavigation'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
@@ -41,7 +40,7 @@ storiesOf('village|Command/CommandNavigation', module)
       <Provider store={store}>
         <IntlProvider>
           <CommandNavigation
-            handleClick={type => action(`handleClick: ${type}`)}
+            handleClick={type => console.log(`handleClick: ${type}`)}
             items={items}
             navigatable
           />

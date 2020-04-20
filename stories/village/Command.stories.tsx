@@ -8,7 +8,6 @@ import CommandPostMortem from '../../src/scripts/village/components/organisms/Co
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../../src/scripts/village/constants/Role'
-import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
@@ -125,7 +124,7 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
-        handlePostChat={() => action('handlePostChat')}
+        handlePostChat={() => () => console.log('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
@@ -161,7 +160,7 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandInputBox
-        handlePostChat={() => action('handlePostChat')}
+        handlePostChat={() => () => console.log('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         maxNumberOfChatMessages={10}
@@ -197,8 +196,8 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandPostMortem
-        handleNavigationClick={() => action('handleNavigationClick')}
-        handlePostChat={() => action('handlePostChat')}
+        handleNavigationClick={() => console.log('handleNavigationClick')}
+        handlePostChat={() => () => console.log('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         navigatable
@@ -243,8 +242,8 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandPostMortem
-        handleNavigationClick={() => action('handleNavigationClick')}
-        handlePostChat={() => action('handlePostChat')}
+        handleNavigationClick={() => console.log('handleNavigationClick')}
+        handlePostChat={() => () => console.log('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         navigatable
@@ -290,8 +289,8 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandPostMortem
-        handleNavigationClick={() => action('handleNavigationClick')}
-        handlePostChat={() => action('handlePostChat')}
+        handleNavigationClick={() => console.log('handleNavigationClick')}
+        handlePostChat={() => () => console.log('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         navigatable
@@ -331,8 +330,8 @@ storiesOf('village|Command', module)
     const value = radios(language.label, language.options, language.defaultValue)
     const content =
       <CommandGrave
-        handleNavigationClick={() => action('handleNavigationClick')}
-        handlePostChat={() => action('handlePostChat')}
+        handleNavigationClick={() => console.log('handleNavigationClick')}
+        handlePostChat={() => () => console.log('handlePostChat')}
         language={value}
         maxLengthOfUnicodeCodePoints={140}
         navigatable

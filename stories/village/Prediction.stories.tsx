@@ -3,7 +3,6 @@ import Prediction, {Props} from '../../src/scripts/village/components/organisms/
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
@@ -847,9 +846,9 @@ storiesOf('village|Prediction', module)
             <Prediction
               characterStatus={characterStatus}
               expand={false}
-              handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
-              handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-              handleMouseLeave={action('handleMouseLeave')}
+              handleBoardClick={({characterId, roleId}) => () => console.log(`handleBoardClick [${characterId}, ${roleId}]`)}
+              handleMouseEnter={role => () => console.log(`handleMouseEnter ${role}`)}
+              handleMouseLeave={() => console.log('handleMouseLeave')}
               navigatable
               roleStatus={roleStatus}
               spec={spec}
@@ -1063,9 +1062,9 @@ storiesOf('village|Prediction', module)
             <Prediction
               characterStatus={characterStatus}
               expand={false}
-              handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
-              handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-              handleMouseLeave={action('handleMouseLeave')}
+              handleBoardClick={({characterId, roleId}) => () => console.log(`handleBoardClick [${characterId}, ${roleId}]`)}
+              handleMouseEnter={role => () => console.log(`handleMouseEnter ${role}`)}
+              handleMouseLeave={() => console.log('handleMouseLeave')}
               navigatable
               roleStatus={roleStatus}
               spec={spec}
@@ -1903,9 +1902,9 @@ storiesOf('village|Prediction', module)
             <Prediction
               characterStatus={characterStatus}
               expand={false}
-              handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
-              handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-              handleMouseLeave={action('handleMouseLeave')}
+              handleBoardClick={({characterId, roleId}) => () => console.log(`handleBoardClick [${characterId}, ${roleId}]`)}
+              handleMouseEnter={role => () => console.log(`handleMouseEnter ${role}`)}
+              handleMouseLeave={() => console.log('handleMouseLeave')}
               navigatable
               roleStatus={roleStatus}
               spec={spec}
@@ -2119,9 +2118,9 @@ storiesOf('village|Prediction', module)
             <Prediction
               characterStatus={characterStatus}
               expand={false}
-              handleBoardClick={({characterId, roleId}) => action(`handleBoardClick [${characterId}, ${roleId}]`)}
-              handleMouseEnter={role => action(`handleMouseEnter ${role}`)}
-              handleMouseLeave={action('handleMouseLeave')}
+              handleBoardClick={({characterId, roleId}) => () => console.log(`handleBoardClick [${characterId}, ${roleId}]`)}
+              handleMouseEnter={role => () => console.log(`handleMouseEnter ${role}`)}
+              handleMouseLeave={() => console.log('handleMouseLeave')}
               navigatable
               roleStatus={roleStatus}
               spec={spec}

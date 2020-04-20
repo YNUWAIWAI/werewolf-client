@@ -3,7 +3,6 @@ import Result, {Props} from '../../src/scripts/village/components/organisms/Resu
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
@@ -240,7 +239,7 @@ storiesOf('village|Result', module)
         <IntlProvider>
           <Result
             characters={characters}
-            handleClickCloseButton={action('handleCloseClick')}
+            handleClickCloseButton={() => console.log('handleCloseClick')}
             losers={losers}
             me={me}
             summary={summary}
@@ -341,7 +340,7 @@ storiesOf('village|Result', module)
         <IntlProvider>
           <Result
             characters={characters}
-            handleClickCloseButton={action('handleCloseClick')}
+            handleClickCloseButton={() => console.log('handleCloseClick')}
             losers={losers}
             me={me}
             summary={summary}
