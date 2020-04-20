@@ -40,6 +40,7 @@ const windowLocation: Middleware = store => next => action => {
 
       return next(action)
     case ActionTypes.Settings.LOGOUT:
+      window.onbeforeunload = null
       window.location.replace(`${window.location.origin}/logout`)
 
       return next(action)

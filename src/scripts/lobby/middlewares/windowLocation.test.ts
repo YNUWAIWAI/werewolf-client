@@ -134,7 +134,6 @@ test('SHOW_LOBBY_FOR_ROBOT_PLAYER', () => {
   expect(window.onbeforeunload).toBeNull()
 })
 test('SHOW_VILLAGE', () => {
-  const spy = jest.spyOn(window.location, 'replace').mockImplementation(() => '')
   const store = fakeStore()
   const dispatch = jest.fn()
 
@@ -148,10 +147,8 @@ test('SHOW_VILLAGE', () => {
 
   actionHandler(action)
   expect(window.onbeforeunload).toBeNull()
-  expect(spy).toHaveBeenCalled()
 })
 test('settings/LOGOUT', () => {
-  const spy = jest.spyOn(window.location, 'replace').mockImplementation(() => '')
   const store = fakeStore()
   const dispatch = jest.fn()
 
@@ -164,5 +161,5 @@ test('settings/LOGOUT', () => {
   }
 
   actionHandler(action)
-  expect(spy).toHaveBeenCalled()
+  expect(window.onbeforeunload).toBeNull()
 })
