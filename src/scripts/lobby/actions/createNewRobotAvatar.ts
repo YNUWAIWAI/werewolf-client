@@ -30,7 +30,7 @@ const showAvatarImageSelect = (image: string): CreateNewRobotAvatar.ShowAvatarIm
   type: ActionTypes.CreateNewRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
 })
 
-export const createNewHumanAvatar = {
+export const createNewRobotAvatar = {
   changeAvatarLanguage,
   changeAvatarName,
   showAvatarImageSelect

@@ -9,8 +9,17 @@ import {lobby} from '../../types'
 const {shallowWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
 test('render', () => {
+  const handleImageClick = jest.fn()
+  const handleLanguageChange = jest.fn()
+  const handleNameChange = jest.fn()
   const wrapper = shallowWithIntl(
     <CreateNewRobotAvatarBody
+      handleImageClick={handleImageClick}
+      handleLanguageChange={handleLanguageChange}
+      handleNameChange={handleNameChange}
+      image=""
+      language={lobby.Language.en}
+      name=""
       navigatable
     />
   )
