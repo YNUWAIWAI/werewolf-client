@@ -10,15 +10,7 @@ export default function FormattedTime(props: Props) {
     return (
       <FormattedMessage
         id="FormattedTime.end"
-      >
-        {
-          text => (
-            <span>
-              {text}
-            </span>
-          )
-        }
-      </FormattedMessage>
+      />
     )
   }
 
@@ -32,15 +24,7 @@ export default function FormattedTime(props: Props) {
         minute,
         second
       }}
-    >
-      {
-        text => (
-          <span>
-            {text}
-          </span>
-        )
-      }
-    </FormattedMessage>
+    />
   )
 }
 

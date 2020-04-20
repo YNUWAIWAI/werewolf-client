@@ -1,11 +1,11 @@
 import * as ActionTypes from '../../src/scripts/lobby/constants/ActionTypes'
 import * as React from 'react'
-import WaitingForPlayers, {Props} from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
 import {ImagePath} from '../../src/scripts/lobby/constants/ImagePath'
 import IntlProvider from '../../src/scripts/lobby/containers/IntlProviderContainer'
 import {MenuItemProps} from '../../src/scripts/lobby/components/organisms/Menu'
+import {Props} from '../../src/scripts/lobby/components/templates/WaitingForPlayers'
 import {Provider} from 'react-redux'
-import {action} from '@storybook/addon-actions'
+import WaitingForPlayers from '../../src/scripts/lobby/containers/WaitingForPlayersContainer'
 import {createStore} from 'redux'
 import {language} from './language'
 import {lobby} from './types'
@@ -181,6 +181,21 @@ const players: Props['players'] = [
     token: '3F2504E0-4F89-11D3-9A0C-0305E82C3315'
   }
 ]
+const menuItems: MenuItemProps[] = [
+  {
+    disabled: true,
+    id: 'Menu.playGame',
+    types: [ActionTypes.WaitingPage.PLAY_GAME]
+  },
+  {
+    id: 'Menu.returnToLobbyForHumanPlayer',
+    types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
+  },
+  {
+    id: 'Menu.returnToMainPage',
+    types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
+  }
+]
 
 storiesOf('lobby|WaitingForPlayers', module)
   .addDecorator(story => (
@@ -192,24 +207,6 @@ storiesOf('lobby|WaitingForPlayers', module)
     </div>
   ))
   .add('15 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -247,43 +244,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players,
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('14 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -321,43 +301,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 14),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 14)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('13 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -395,43 +358,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 13),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 13)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('12 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -469,43 +415,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 12),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 12)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('11 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -543,43 +472,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 11),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 11)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('10 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -617,43 +529,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 10),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 10)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('9 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -691,43 +586,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 9),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 9)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('8 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -765,43 +643,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 8),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 8)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('7 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -839,43 +700,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 7),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 7)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('6 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -913,43 +757,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 6),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 6)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('5 players', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Experts recommended',
@@ -987,43 +814,26 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players: players.slice(0, 5),
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players.slice(0, 5)}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 
     return story
   })
   .add('long comment', () => {
-    const confirmKickOutPlayer = (values: {name: string, token: lobby.Token}) => () => {
-      action(`kick out ${values.name},${values.token}`)
-    }
-    const menuItems: MenuItemProps[] = [
-      {
-        disabled: true,
-        id: 'Menu.playGame',
-        types: [ActionTypes.WaitingPage.PLAY_GAME]
-      },
-      {
-        id: 'Menu.returnToLobbyForHumanPlayer',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_LOBBY_FOR_HUMAN_PLAYER]
-      },
-      {
-        id: 'Menu.returnToMainPage',
-        types: [ActionTypes.WaitingPage.LEAVE_WAITING_PAGE, ActionTypes.App.SHOW_MAIN]
-      }
-    ]
     const village: Props['village'] = {
       avatar: lobby.Avatar.random,
       comment: 'Too long long long long long long long long long long long long long long long long long long commen',
@@ -1061,19 +871,20 @@ storiesOf('lobby|WaitingForPlayers', module)
     const store = createStore(
       reducer,
       {
-        language: radios(language.label, language.options, language.defaultValue)
+        language: radios(language.label, language.options, language.defaultValue),
+        waitingForPlayers: {
+          isPlayer: true,
+          kickOutToken: '',
+          menuItems,
+          players,
+          village
+        }
       }
     )
     const story =
       <Provider store={store}>
         <IntlProvider>
-          <WaitingForPlayers
-            confirmKickOutPlayer={confirmKickOutPlayer}
-            isPlayer
-            menuItems={menuItems}
-            players={players}
-            village={village}
-          />
+          <WaitingForPlayers />
         </IntlProvider>
       </Provider>
 

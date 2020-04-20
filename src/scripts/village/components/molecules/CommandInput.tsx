@@ -49,7 +49,7 @@ export const enum Triger {
   At = '@',
   Space = ' '
 }
-const options: Fuse.FuseOptions<SuggestedData> = {
+const options: Fuse.IFuseOptions<SuggestedData> = {
   distance: 100,
   keys: [
     'id',
@@ -59,14 +59,13 @@ const options: Fuse.FuseOptions<SuggestedData> = {
     'name.ja'
   ],
   location: 0,
-  maxPatternLength: 32,
   minMatchCharLength: 1,
   shouldSort: true,
   threshold: 0.6
 }
 
 export default class CommandInput extends React.Component<Props, State> {
-  private fuse: Fuse<SuggestedData, Fuse.FuseOptions<SuggestedData>>
+  private fuse: Fuse<SuggestedData, Fuse.IFuseOptions<SuggestedData>>
 
   public constructor(props: Props) {
     super(props)
@@ -190,7 +189,9 @@ export default class CommandInput extends React.Component<Props, State> {
     } else if (caretPosition <= this.state.trigerPosition) {
       this.updateSuggestable(false)
     } else if (this.state.suggestable) {
-      const suggestedData = this.fuse.search<SuggestedData, false, false>(this.getSearchText(text, caretPosition))
+      const suggestedData =
+        this.fuse.search<SuggestedData>(this.getSearchText(text, caretPosition))
+          .map(result => result.item)
 
       this.setState({
         suggestSelected: 0,

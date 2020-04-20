@@ -19,7 +19,6 @@ test('INIT', () => {
   expect(window.onbeforeunload).toBeDefined()
 })
 test('SHOW_LOBBY', () => {
-  const spy = jest.spyOn(window.location, 'replace').mockImplementation(() => '')
   const store = fakeStore()
   const dispatch = jest.fn()
 
@@ -33,5 +32,4 @@ test('SHOW_LOBBY', () => {
 
   actionHandler(action)
   expect(window.onbeforeunload).toBeNull()
-  expect(spy).toHaveBeenCalled()
 })

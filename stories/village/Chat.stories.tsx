@@ -3,7 +3,6 @@ import Chat, {Props} from '../../src/scripts/village/components/organisms/Chat'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
-import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
@@ -67,7 +66,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -121,7 +120,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -175,7 +174,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -229,7 +228,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -283,7 +282,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -337,7 +336,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -391,7 +390,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -445,7 +444,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -499,7 +498,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -561,7 +560,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -651,7 +650,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>
@@ -803,7 +802,7 @@ storiesOf('village|Chat', module)
               allIds={allIds}
               byId={byId}
               expand={false}
-              handleStar={id => isMarked => action(`star${id}: ${isMarked}`)}
+              handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
             />
           </div>
         </IntlProvider>

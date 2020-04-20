@@ -41,34 +41,22 @@ export default function Modal(props: Props) {
           className="vi--modal--description"
           id={props.descriptionId}
         />
-        <FormattedMessage
-          id="Modal.button.yes"
+        <button
+          className="vi--modal--button yes"
+          onClick={() => props.handleClickYes(props.id)}
         >
-          {
-            text => (
-              <button
-                className="vi--modal--button yes"
-                onClick={() => props.handleClickYes(props.id)}
-              >
-                {text}
-              </button>
-            )
-          }
-        </FormattedMessage>
-        <FormattedMessage
-          id="Modal.button.no"
+          <FormattedMessage
+            id="Modal.button.yes"
+          />
+        </button>
+        <button
+          className="vi--modal--button no"
+          onClick={() => props.handleClickNo()}
         >
-          {
-            text => (
-              <button
-                className="vi--modal--button no"
-                onClick={() => props.handleClickNo()}
-              >
-                {text}
-              </button>
-            )
-          }
-        </FormattedMessage>
+          <FormattedMessage
+            id="Modal.button.no"
+          />
+        </button>
       </div>
     </CSSTransition>
   )

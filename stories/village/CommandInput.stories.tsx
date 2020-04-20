@@ -8,7 +8,6 @@ import CommandInput from '../../src/scripts/village/components/molecules/Command
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../../src/scripts/village/constants/Role'
-import {action} from '@storybook/addon-actions'
 import {createStore} from 'redux'
 import {language} from './language'
 import reducer from '../../src/scripts/village/reducers'
@@ -136,7 +135,7 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              handlePostChat={action('postChat')}
+              handlePostChat={() => console.log('postChat')}
               inputChannel={village.InputChannel.grave}
               language={value}
               maxLengthOfUnicodeCodePoints={140}
@@ -173,7 +172,7 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              handlePostChat={action('postChat')}
+              handlePostChat={() => console.log('postChat')}
               inputChannel={village.InputChannel.public}
               language={value}
               maxLengthOfUnicodeCodePoints={140}
@@ -204,7 +203,7 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              handlePostChat={action('postChat')}
+              handlePostChat={() => console.log('postChat')}
               inputChannel={village.InputChannel.private}
               language={value}
               maxLengthOfUnicodeCodePoints={140}
@@ -241,7 +240,7 @@ storiesOf('village|Command/CommandInput', module)
           }}
           >
             <CommandInput
-              handlePostChat={action('postChat')}
+              handlePostChat={() => console.log('postChat')}
               inputChannel={village.InputChannel.werewolf}
               language={value}
               maxLengthOfUnicodeCodePoints={140}
