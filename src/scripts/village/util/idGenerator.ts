@@ -1,5 +1,7 @@
-import uuidv4 from 'uuid/v4'
-import uuidv5 from 'uuid/v5'
+import {
+  v4,
+  v5
+} from 'uuid'
 
 export const idGenerator = (isTest?: boolean) => {
   if (typeof isTest === 'boolean' && isTest) {
@@ -9,12 +11,12 @@ export const idGenerator = (isTest?: boolean) => {
       index = 0
       while (true) {
         index += 1
-        yield uuidv5(String(index), uuidv5.URL)
+        yield v5(String(index), v5.URL)
       }
     })()
 
     return () => infiniteList.next().value
   }
 
-  return () => uuidv4()
+  return () => v4()
 }
