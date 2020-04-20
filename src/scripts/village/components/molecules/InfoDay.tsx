@@ -16,21 +16,17 @@ export default function InfoDay(props: Props) {
   return (
     <div className="vi--info--day">
       <div className="vi--info--day--text">
-        <FormattedMessage
-          id={`InfoDay.${spaceSeparatedToCamelCase(phase)}`}
-          values={{
-            day: props.day
-          }}
-        >
-          {
-            text => (
-              <span>
-                {text}
-              </span>
-            )
-          }
-        </FormattedMessage>
-        <Timer />
+        <span>
+          <FormattedMessage
+            id={`InfoDay.${spaceSeparatedToCamelCase(phase)}`}
+            values={{
+              day: props.day
+            }}
+          />
+        </span>
+        <span>
+          <Timer />
+        </span>
       </div>
     </div>
   )
