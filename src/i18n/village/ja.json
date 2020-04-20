@@ -21,7 +21,7 @@
   "CommandSelection.Description.werewolfVote.fixed": "あなたの選んだ襲撃先はこちらです",
   "CommandSelection.Description.werewolfVote.unfixed": "襲撃先を選んでください",
   "FormattedTime.end": "終了",
-  "FormattedTime.time": "残り{minute}'{second}",
+  "FormattedTime.time": "残り{minute}''{second}",
   "Info.property.character": "あなた:",
   "Info.property.role": "役職:",
   "Info.property.team": "陣営:",
