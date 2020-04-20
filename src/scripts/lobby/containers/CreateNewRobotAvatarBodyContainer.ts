@@ -1,7 +1,7 @@
 import Component, {
   DispatchProps,
   StateProps
-} from '../components/molecules/CreateNewHumanAvatarBody'
+} from '../components/molecules/CreateNewRobotAvatarBody'
 import {
   CreateNewRobotAvatar,
   createNewRobotAvatar
@@ -11,17 +11,24 @@ import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
 type Action =
+  | CreateNewRobotAvatar.ChangeAutomation
   | CreateNewRobotAvatar.ChangeAvatarLangauge
   | CreateNewRobotAvatar.ChangeAvatarName
   | CreateNewRobotAvatar.ShowAvatarImageSelect
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
+  automation: state.createNewRobotAvatar.automation,
   image: state.createNewRobotAvatar.image,
   language: state.createNewRobotAvatar.language,
   name: state.createNewRobotAvatar.name,
   navigatable: !state.obfucator.visible
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
+  handleAutomationChange: valid => value => {
+    if (valid) {
+      dispatch(createNewRobotAvatar.changeAutomation(value))
+    }
+  },
   handleImageClick: value => {
     dispatch(createNewRobotAvatar.showAvatarImageSelect(value))
   },

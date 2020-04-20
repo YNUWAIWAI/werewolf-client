@@ -3,6 +3,10 @@ import {lobby} from '../types'
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export declare namespace CreateNewRobotAvatar {
+  type ChangeAutomation = {
+    automation: lobby.Automation
+    type: ActionTypes.CreateNewRobotAvatar.CHANGE_AUTOMATION
+  }
   type ChangeAvatarLangauge = {
     language: lobby.Language
     type: ActionTypes.CreateNewRobotAvatar.CHANGE_AVATAR_LANGUAGE
@@ -17,6 +21,10 @@ export declare namespace CreateNewRobotAvatar {
   }
 }
 
+const changeAutomation = (automation: lobby.Automation): CreateNewRobotAvatar.ChangeAutomation => ({
+  automation,
+  type: ActionTypes.CreateNewRobotAvatar.CHANGE_AUTOMATION
+})
 const changeAvatarLanguage = (language: lobby.Language): CreateNewRobotAvatar.ChangeAvatarLangauge => ({
   language,
   type: ActionTypes.CreateNewRobotAvatar.CHANGE_AVATAR_LANGUAGE
@@ -31,6 +39,7 @@ const showAvatarImageSelect = (image: string): CreateNewRobotAvatar.ShowAvatarIm
 })
 
 export const createNewRobotAvatar = {
+  changeAutomation,
   changeAvatarLanguage,
   changeAvatarName,
   showAvatarImageSelect

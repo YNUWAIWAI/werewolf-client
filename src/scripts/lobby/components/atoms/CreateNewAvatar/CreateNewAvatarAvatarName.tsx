@@ -10,22 +10,16 @@ interface Props {
 export default function CreateNewAvatarAvatarName(props: Props) {
   return (
     <>
-      <FormattedMessage
-        id="CreateNewAvatar.label(avatarName)"
+      <label
+        className="lo--create-new-avatar--label name"
+        htmlFor="newAvatarName"
       >
-        {
-          text => (
-            <label
-              className="lo--create-new-avatar--label"
-              htmlFor="newAvatarName"
-            >
-              {text}
-            </label>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="CreateNewAvatar.label(avatarName)"
+        />
+      </label>
       <TextInput
-        className="lo--create-new-avatar--input"
+        className="lo--create-new-avatar--input name"
         handleChange={props.handleChange}
         id="newAvatarName"
         initialValue=""

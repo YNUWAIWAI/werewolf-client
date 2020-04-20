@@ -7,6 +7,7 @@ import {MenuItemProps as MenuItem} from '../components/organisms/Menu'
 import {lobby} from '../types'
 
 export interface State {
+  readonly automation: lobby.Automation
   readonly command: MenuItem[]
   readonly image: string
   readonly language: lobby.Language
@@ -18,10 +19,12 @@ type Action =
   | AvatarImageSelect.CloseModal
   | AvatarImageSelect.SelectAvatar
   | CreateNewRobotAvatar.ShowAvatarImageSelect
+  | CreateNewRobotAvatar.ChangeAutomation
   | CreateNewRobotAvatar.ChangeAvatarLangauge
   | CreateNewRobotAvatar.ChangeAvatarName
 
 export const initialState: State = {
+  automation: lobby.Automation.full,
   command: [
     {
       id: 'CreateNewAvatar.create',
@@ -63,6 +66,11 @@ const createNewRobotAvatar = (state: State = initialState, action: Action): Stat
       return {
         ... state,
         visibleAvatarImageSelect: true
+      }
+    case ActionTypes.CreateNewRobotAvatar.CHANGE_AUTOMATION:
+      return {
+        ... state,
+        automation: action.automation
       }
     case ActionTypes.CreateNewRobotAvatar.CHANGE_AVATAR_LANGUAGE:
       return {

@@ -4,8 +4,18 @@
     display: grid;
     grid-template:
       'name-l name-i' 1fr
+      'image-l image-i' 1fr
       'language-l language-i' 1fr
       / 1fr 1fr;
+
+    &.robot {
+      grid-template:
+        'name-l name-i' 1fr
+        'image-l image-i' 1fr
+        'automation-l automation-i' 1fr
+        'language-l language-i' 1fr
+        / 1fr 1fr;
+    }
   }
 
   &--label {
@@ -14,6 +24,22 @@
     display: inline-flex;
     font-size: 1.5rem;
     padding: 1rem;
+
+    &.automation {
+      grid-area: automation-l;
+    }
+
+    &.image {
+      grid-area: image-l;
+    }
+
+    &.language {
+      grid-area: language-l;
+    }
+
+    &.name {
+      grid-area: name-l;
+    }
   }
 
   &--input {
@@ -23,6 +49,22 @@
     color: var(--color--font--input);
     font-size: 1.5rem;
     text-align: center;
+
+    &.automation {
+      grid-area: automation-i;
+    }
+
+    &.image {
+      grid-area: image-i;
+    }
+
+    &.language {
+      grid-area: language-i;
+    }
+
+    &.name {
+      grid-area: name-i;
+    }
   }
 
   &--command {
@@ -68,9 +110,5 @@
   &--header {
     font-size: 2rem;
     padding: 0.5rem;
-  }
-
-  &--select {
-    width: 50%;
   }
 }

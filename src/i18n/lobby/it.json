@@ -35,6 +35,7 @@
   "BuildVillage.villageName.anonymous(Doubtful village)": "Doubtful village",
   "BuildVillage.villageName.anonymous(Secret village)": "Secret village",
   "CreateNewAvatar.header": "Create a new avatar",
+  "CreateNewAvatar.label(automation)": "Automation",
   "CreateNewAvatar.label(avatarImage)": "Image",
   "CreateNewAvatar.label(avatarLanguage)": "Language",
   "CreateNewAvatar.label(avatarName)": "Avatar name",
