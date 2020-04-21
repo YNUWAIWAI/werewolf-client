@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<label class=\\"lo--advanced-search--prop\\" for=\\"villageName\\"><input id=\\"villageName\\" readonly=\\"\\" tabindex=\\"0\\" type=\\"checkbox\\" checked=\\"\\"><span>Village name</span></label>"`;

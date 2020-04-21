@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<input type=\\"email\\" class=\\"className\\" id=\\"id\\" maxLength=\\"256\\" minLength=\\"6\\" required=\\"\\" value=\\"example@example.com\\"/>"`;
