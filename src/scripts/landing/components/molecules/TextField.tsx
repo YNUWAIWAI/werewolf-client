@@ -18,20 +18,8 @@ export default class TextField extends React.Component<Props, State> {
     }
   }
 
-  public getType() {
-    if (this.props.name === 'password') {
-      return 'password'
-    }
-
-    return 'text'
-  }
-
-  public getMinLength() {
-    if (this.props.name === 'password') {
-      return 8
-    }
-
-    return undefined
+  public shouldComponentUpdate() {
+    return true
   }
 
   public handleTextChange(text: string) {
@@ -43,32 +31,26 @@ export default class TextField extends React.Component<Props, State> {
   public render() {
     return (
       <div className="la--field">
-        <FormattedMessage
-          id={`${this.props.type}-label-${this.props.name}`}
+        <label
+          className="la--label"
+          htmlFor={`${this.props.type}-${this.props.name}`}
         >
-          {
-            text => (
-              <label
-                className="la--label"
-                htmlFor={`${this.props.type}-${this.props.name}`}
-              >
-                {text}
-              </label>
-            )
-          }
-        </FormattedMessage>
+          <FormattedMessage
+            id={`${this.props.type}-label-${this.props.name}`}
+          />
+        </label>
         <input
           autoComplete="off"
           autoFocus={this.props.autoFocus}
           className="la--input"
           id={`${this.props.type}-${this.props.name}`}
-          minLength={this.getMinLength()}
+          minLength={this.props.name === 'password' ? 8 : undefined}
           name={this.props.name}
           onChange={
             event => this.handleTextChange(event.target.value)
           }
           required
-          type={this.getType()}
+          type={this.props.name === 'password' ? 'password' : 'text'}
           value={this.state.text}
         />
       </div>

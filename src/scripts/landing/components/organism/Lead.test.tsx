@@ -13,6 +13,5 @@ test('render', () => {
     <Lead />
   )
 
-  expect(wrapper.find('.la--title').text()).toBe('LiCOS: A Game Of Werewolves')
-  expect(wrapper.find('.la--flavor').text()).toBe('* Flavor text *')
+  expect(wrapper.html()).toMatchSnapshot()
 })

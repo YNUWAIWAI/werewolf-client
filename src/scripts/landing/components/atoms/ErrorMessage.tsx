@@ -12,16 +12,10 @@ export default function ErrorMessage(props: Props) {
   }
 
   return (
-    <FormattedMessage
-      id={`${props.type}-error`}
-    >
-      {
-        text => (
-          <div className="la--error">
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+    <div className="la--error">
+      <FormattedMessage
+        id={`${props.type}-error`}
+      />
+    </div>
   )
 }

@@ -4,32 +4,20 @@ import {FormattedMessage} from 'react-intl'
 export default function Lead() {
   return (
     <div className="la--lead">
-      <FormattedMessage
-        id="lead-title"
-      >
-        {
-          text => (
-            <div className="la--title">
-              <p>
-                {text}
-              </p>
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="lead-flavor"
-      >
-        {
-          text => (
-            <div className="la--flavor">
-              <p>
-                {text}
-              </p>
-            </div>
-          )
-        }
-      </FormattedMessage>
+      <div className="la--title">
+        <p>
+          <FormattedMessage
+            id="lead-title"
+          />
+        </p>
+      </div>
+      <div className="la--flavor">
+        <p>
+          <FormattedMessage
+            id="lead-flavor"
+          />
+        </p>
+      </div>
       <iframe
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

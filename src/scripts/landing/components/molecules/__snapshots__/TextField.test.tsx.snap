@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render email 1`] = `"<div class=\\"la--field\\"><label class=\\"la--label\\" for=\\"signup-email\\">Email</label><input autocomplete=\\"off\\" class=\\"la--input\\" id=\\"signup-email\\" name=\\"email\\" required=\\"\\" type=\\"text\\" value=\\"\\"></div>"`;
+
+exports[`render name 1`] = `"<div class=\\"la--field\\"><label class=\\"la--label\\" for=\\"signup-name\\">Name</label><input autocomplete=\\"off\\" class=\\"la--input\\" id=\\"signup-name\\" name=\\"name\\" required=\\"\\" type=\\"text\\" value=\\"\\"></div>"`;
+
+exports[`render password 1`] = `"<div class=\\"la--field\\"><label class=\\"la--label\\" for=\\"signup-password\\">Password</label><input autocomplete=\\"off\\" class=\\"la--input\\" id=\\"signup-password\\" minlength=\\"8\\" name=\\"password\\" required=\\"\\" type=\\"password\\" value=\\"\\"></div>"`;

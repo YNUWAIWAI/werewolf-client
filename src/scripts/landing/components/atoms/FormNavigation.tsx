@@ -8,21 +8,15 @@ interface Props {
 
 export default function FormNavigation(props: Props) {
   return (
-    <FormattedMessage
-      id={`${props.isSignup ? 'login' : 'signup'}-navigation`}
+    <button
+      className="la--form-navigation"
+      onClick={() => {
+        props.handleClick(!props.isSignup)
+      }}
     >
-      {
-        text => (
-          <button
-            className="la--form-navigation"
-            onClick={() => {
-              props.handleClick(!props.isSignup)
-            }}
-          >
-            {text}
-          </button>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`${props.isSignup ? 'login' : 'signup'}-navigation`}
+      />
+    </button>
   )
 }

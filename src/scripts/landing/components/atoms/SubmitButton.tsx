@@ -7,19 +7,13 @@ interface Props {
 
 export default function SubmitButton(props: Props) {
   return (
-    <FormattedMessage
-      id={`${props.type}-submit`}
+    <button
+      className="la--button"
+      type="submit"
     >
-      {
-        text => (
-          <button
-            className="la--button"
-            type="submit"
-          >
-            {text}
-          </button>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`${props.type}-submit`}
+      />
+    </button>
   )
 }

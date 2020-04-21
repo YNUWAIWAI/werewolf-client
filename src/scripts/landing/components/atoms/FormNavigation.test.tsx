@@ -18,7 +18,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('Login')
+    expect(wrapper.html()).toMatchSnapshot()
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
   test('isSignup={false}', () => {
@@ -30,7 +30,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('Signup')
+    expect(wrapper.html()).toMatchSnapshot()
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
 })

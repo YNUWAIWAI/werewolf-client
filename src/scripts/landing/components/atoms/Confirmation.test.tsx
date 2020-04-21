@@ -13,5 +13,5 @@ test('render', () => {
     <Confirmation />
   )
 
-  expect(wrapper.text()).toBe('Please agree to our Terms, Data Policy and Cookies Policy before signing up.')
+  expect(wrapper.html()).toMatchSnapshot()
 })
