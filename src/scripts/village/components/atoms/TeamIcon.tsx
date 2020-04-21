@@ -21,17 +21,11 @@ export default function TeamIcon(props: Props) {
           <TeamVillager
             className={`${props.class}--image`}
           />
-          <FormattedMessage
-            id="TeamIcon.villager"
-          >
-            {
-              text => (
-                <span className={`${props.class}--name`}>
-                  {text}
-                </span>
-              )
-            }
-          </FormattedMessage>
+          <span className={`${props.class}--name`}>
+            <FormattedMessage
+              id="TeamIcon.villager"
+            />
+          </span>
         </div>
       )
     case village.Team.werehamster:
@@ -42,17 +36,11 @@ export default function TeamIcon(props: Props) {
           <TeamWerehamster
             className={`${props.class}--image`}
           />
-          <FormattedMessage
-            id="TeamIcon.werehamster"
-          >
-            {
-              text => (
-                <span className={`${props.class}--name`}>
-                  {text}
-                </span>
-              )
-            }
-          </FormattedMessage>
+          <span className={`${props.class}--name`}>
+            <FormattedMessage
+              id="TeamIcon.werehamster"
+            />
+          </span>
         </div>
       )
     case village.Team.werewolf:
@@ -63,17 +51,11 @@ export default function TeamIcon(props: Props) {
           <TeamWerewolf
             className={`${props.class}--image`}
           />
-          <FormattedMessage
-            id="TeamIcon.werewolf"
-          >
-            {
-              text => (
-                <span className={`${props.class}--name`}>
-                  {text}
-                </span>
-              )
-            }
-          </FormattedMessage>
+          <span className={`${props.class}--name`}>
+            <FormattedMessage
+              id="TeamIcon.werewolf"
+            />
+          </span>
         </div>
       )
     default:

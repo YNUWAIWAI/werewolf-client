@@ -17,33 +17,29 @@ export interface Props {
 
 export default function CommandNavigation(props: Props) {
   const items = props.items.map(item => (
-    <FormattedMessage
-      id={item.id}
+    <button
+      className={`vi--command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
+      disabled={item.disabled || item.isLoading}
       key={item.id}
+      onClick={() => {
+        if (!item.disabled && !item.isLoading) {
+          props.handleClick(item.type)
+        }
+      }}
+      tabIndex={props.navigatable ? 0 : -1}
     >
       {
-        text => (
-          <button
-            className={`vi--command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
-            disabled={item.disabled || item.isLoading}
-            onClick={() => {
-              if (!item.disabled && !item.isLoading) {
-                props.handleClick(item.type)
-              }
-            }}
-            tabIndex={props.navigatable ? 0 : -1}
-          >
-            {
-              item.isLoading ?
-                <Loader>
-                  {text}
-                </Loader> :
-                text
-            }
-          </button>
-        )
+        item.isLoading ?
+          <Loader>
+            <FormattedMessage
+              id={item.id}
+            />
+          </Loader> :
+          <FormattedMessage
+            id={item.id}
+          />
       }
-    </FormattedMessage>
+    </button>
   ))
 
   return (

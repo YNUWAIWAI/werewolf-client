@@ -30,17 +30,11 @@ export default function AdvancedSearchProp(props: Props) {
         tabIndex={props.navigatable ? 0 : -1}
         type="checkbox"
       />
-      <FormattedMessage
-        id={`AdvancedSearch.label(${props.name})`}
-      >
-        {
-          text => (
-            <span>
-              {text}
-            </span>
-          )
-        }
-      </FormattedMessage>
+      <span>
+        <FormattedMessage
+          id={`AdvancedSearch.label(${props.name})`}
+        />
+      </span>
     </label>
   )
 }

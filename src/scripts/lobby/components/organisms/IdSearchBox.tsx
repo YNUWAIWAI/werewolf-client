@@ -29,24 +29,18 @@ export default function IdSearchBox(props: Props) {
         }}
       >
         {
-          text => {
-            if (typeof text !== 'string') {
-              return null
-            }
-
-            return (
-              <input
-                className="lo--id-search--input"
-                maxLength={props.max}
-                minLength={1}
-                onChange={handleIdChange}
-                pattern="^\d+$"
-                placeholder={text}
-                required
-                type="text"
-              />
-            )
-          }
+          text => (
+            <input
+              className="lo--id-search--input"
+              maxLength={props.max}
+              minLength={1}
+              onChange={handleIdChange}
+              pattern="^\d+$"
+              placeholder={typeof text === 'string' ? text : ''}
+              required
+              type="text"
+            />
+          )
         }
       </FormattedMessage>
       <span className="lo--id-search--validity" />

@@ -8,34 +8,22 @@ export interface Props {
 export default function ChatDelimeter(props: Props) {
   if (props.day >= 0) {
     return (
-      <FormattedMessage
-        id="ChatContainer.day"
-        values={{
-          day: props.day
-        }}
-      >
-        {
-          text => (
-            <div className="vi--chat--delimeter">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+      <div className="vi--chat--delimeter">
+        <FormattedMessage
+          id="ChatContainer.day"
+          values={{
+            day: props.day
+          }}
+        />
+      </div>
     )
   }
 
   return (
-    <FormattedMessage
-      id="ChatContainer.postMortem"
-    >
-      {
-        text => (
-          <div className="vi--chat--delimeter">
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+    <div className="vi--chat--delimeter">
+      <FormattedMessage
+        id="ChatContainer.postMortem"
+      />
+    </div>
   )
 }

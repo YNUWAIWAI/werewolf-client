@@ -11,19 +11,13 @@ interface Props {
 export default function SelectHumanAvatarBox(props: Props) {
   return (
     <>
-      <FormattedMessage
-        id="SelectHumanAvatarBox.header"
+      <div
+        className="lo--select-avatar--header"
       >
-        {
-          text => (
-            <div
-              className="lo--select-avatar--header"
-            >
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="SelectHumanAvatarBox.header"
+        />
+      </div>
       <SelectHumanAvatarTable />
       <Menu
         className="lo--select-avatar--command human"

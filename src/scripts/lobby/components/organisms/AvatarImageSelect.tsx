@@ -22,19 +22,13 @@ export default function AvatarImageSelect(props: Props) {
       >
         <Close />
       </button>
-      <FormattedMessage
-        id="AvatarImageSelect.description"
+      <div
+        className="lo--avatar-image-select--description"
       >
-        {
-          text => (
-            <div
-              className="lo--avatar-image-select--description"
-            >
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="AvatarImageSelect.description"
+        />
+      </div>
       <div
         className="lo--avatar-image-select--image-list"
       >

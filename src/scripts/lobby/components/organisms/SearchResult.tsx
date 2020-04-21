@@ -17,17 +17,11 @@ export default function SearchResult(props: Props) {
   }
   if (props.villageItems.length === 0) { // && props.searched
     return (
-      <FormattedMessage
-        id="SearchResult.notFound"
-      >
-        {
-          text => (
-            <div className={`${props.className}--not-found`}>
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+      <div className={`${props.className}--not-found`}>
+        <FormattedMessage
+          id="SearchResult.notFound"
+        />
+      </div>
     )
   }
 

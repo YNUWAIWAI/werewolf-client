@@ -46,21 +46,15 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
         type="text"
         value={props.token}
       />
-      <FormattedMessage
-        id="SelectAvatarTableBodyAccessToken.renew"
+      <button
+        className="renew"
+        onClick={props.renewAccessToken}
+        tabIndex={props.naviagtable ? 0 : -1}
       >
-        {
-          text => (
-            <button
-              className="renew"
-              onClick={props.renewAccessToken}
-              tabIndex={props.naviagtable ? 0 : -1}
-            >
-              {text}
-            </button>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="SelectAvatarTableBodyAccessToken.renew"
+        />
+      </button>
     </div>
   )
 }

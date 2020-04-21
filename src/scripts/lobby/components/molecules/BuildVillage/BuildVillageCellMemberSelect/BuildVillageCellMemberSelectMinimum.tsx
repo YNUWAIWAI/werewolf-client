@@ -15,15 +15,11 @@ interface Props {
 export default function BuildVillageCellMemberSelectMinimum(props: Props) {
   return (
     <div className={`lo--village--item--member-select--robot ${props.valid ? '' : 'invalid'}`}>
-      <FormattedMessage id="MemberSelect.min">
-        {
-          text => (
-            <span>
-              {text}
-            </span>
-          )
-        }
-      </FormattedMessage>
+      <span>
+        <FormattedMessage
+          id="MemberSelect.min"
+        />
+      </span>
       <NumberSelect
         ascendingOrder
         className="lo--village--item--member-select--robot--select"

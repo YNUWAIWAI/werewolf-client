@@ -1,11 +1,10 @@
 import * as React from 'react'
 
 interface Props {
-  readonly children?: React.ReactNode
   readonly expand?: boolean
 }
 
-export default function AsideContent(props: Props) {
+export default function AsideContent(props: React.PropsWithChildren<Props>) {
   return (
     <div className={`lo--aside-content ${props.expand ? 'expand' : ''}`}>
       {props.children}

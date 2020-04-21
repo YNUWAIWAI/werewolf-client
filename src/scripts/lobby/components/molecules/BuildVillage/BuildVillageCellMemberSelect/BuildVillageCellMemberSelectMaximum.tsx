@@ -7,19 +7,13 @@ interface Props {
 
 export default function BuildVillageCellMemberSelectMaximum(props: Props) {
   return (
-    <FormattedMessage
-      id="MemberSelect.max"
-      values={{
-        num: props.numberOfHumans
-      }}
-    >
-      {
-        text => (
-          <div className="lo--village--item--member-select--human">
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+    <div className="lo--village--item--member-select--human">
+      <FormattedMessage
+        id="MemberSelect.max"
+        values={{
+          num: props.numberOfHumans
+        }}
+      />
+    </div>
   )
 }

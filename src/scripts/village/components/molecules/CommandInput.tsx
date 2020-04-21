@@ -273,28 +273,22 @@ export default class CommandInput extends React.Component<Props, State> {
       <div className="vi--command--input">
         <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
           {
-            text => {
-              if (typeof text !== 'string') {
-                return null
-              }
-
-              return (
-                <textarea
-                  className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
-                  onChange={event => this.handleTextChange({
-                    caretPosition: event.target.selectionEnd,
-                    text: event.target.value
-                  })}
-                  onCompositionEnd={() => this.updateProcessing(false)}
-                  onCompositionStart={() => this.updateProcessing(true)}
-                  onKeyDown={event => this.handleKeyDown(event)}
-                  placeholder={text}
-                  ref={this.textareaRef}
-                  tabIndex={this.props.navigatable ? 0 : -1}
-                  value={this.state.text}
-                />
-              )
-            }
+            text => (
+              <textarea
+                className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
+                onChange={event => this.handleTextChange({
+                  caretPosition: event.target.selectionEnd,
+                  text: event.target.value
+                })}
+                onCompositionEnd={() => this.updateProcessing(false)}
+                onCompositionStart={() => this.updateProcessing(true)}
+                onKeyDown={event => this.handleKeyDown(event)}
+                placeholder={typeof text === 'string' ? text : ''}
+                ref={this.textareaRef}
+                tabIndex={this.props.navigatable ? 0 : -1}
+                value={this.state.text}
+              />
+            )
           }
         </FormattedMessage>
         <CommandInputSuggest
@@ -322,20 +316,16 @@ export default class CommandInput extends React.Component<Props, State> {
           maxNumberOfChatMessages={this.props.maxNumberOfChatMessages}
           numberOfChatMessages={this.props.numberOfChatMessages}
         />
-        <FormattedMessage id="CommandInput.send">
-          {
-            text => (
-              <button
-                className="vi--command--input--send"
-                disabled={!(this.isSendable() && this.isValidTextLength())}
-                onClick={() => this.handlePostChat()}
-                tabIndex={this.props.navigatable ? 0 : -1}
-              >
-                {text}
-              </button>
-            )
-          }
-        </FormattedMessage>
+        <button
+          className="vi--command--input--send"
+          disabled={!(this.isSendable() && this.isValidTextLength())}
+          onClick={() => this.handlePostChat()}
+          tabIndex={this.props.navigatable ? 0 : -1}
+        >
+          <FormattedMessage
+            id="CommandInput.send"
+          />
+        </button>
       </div>
     )
   }

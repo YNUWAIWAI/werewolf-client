@@ -13,34 +13,28 @@ export default function ResultCellLoserCaption(props: Props) {
   const loserTeam: (village.Team | '')[] = [... props.team, '']
 
   return (
-    <FormattedMessage
-      id={`Result.summary.loser(${props.team.size})`}
-      values={
-        {
-          loserTeam0:
-            <TeamIcon
-              class="vi--result--cell--caption--team"
-              key="loserTeam0"
-              team={loserTeam[0]}
-            />,
-          loserTeam1:
-            <TeamIcon
-              class="vi--result--cell--caption--team"
-              key="loserTeam1"
-              team={loserTeam[1]}
-            />
-        }
-      }
+    <div
+      className="vi--result--cell--caption"
     >
-      {
-        (... text) => (
-          <div
-            className="vi--result--cell--caption"
-          >
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`Result.summary.loser(${props.team.size})`}
+        values={
+          {
+            loserTeam0:
+              <TeamIcon
+                class="vi--result--cell--caption--team"
+                key="loserTeam0"
+                team={loserTeam[0]}
+              />,
+            loserTeam1:
+              <TeamIcon
+                class="vi--result--cell--caption--team"
+                key="loserTeam1"
+                team={loserTeam[1]}
+              />
+          }
+        }
+      />
+    </div>
   )
 }

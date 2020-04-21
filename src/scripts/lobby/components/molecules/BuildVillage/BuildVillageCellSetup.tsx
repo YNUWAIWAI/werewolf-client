@@ -9,29 +9,23 @@ interface Props {
   readonly handleNumberOfPlayersChange: (valid: boolean) => (value: number) => void
   readonly navigatable: boolean
   readonly validity: {
-    avatar: boolean
-    numberOfPlayers: boolean
+    readonly avatar: boolean
+    readonly numberOfPlayers: boolean
   }
   readonly value: {
-    avatar: lobby.Avatar
-    numberOfPlayers: number
+    readonly avatar: lobby.Avatar
+    readonly numberOfPlayers: number
   }
 }
 
 export default function BuildVillageCellSetup(props: Props) {
   return (
     <>
-      <FormattedMessage
-        id="BuildVillage.label(setup)"
-      >
-        {
-          text => (
-            <div className="lo--village--item--prop setup">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+      <div className="lo--village--item--prop setup">
+        <FormattedMessage
+          id="BuildVillage.label(setup)"
+        />
+      </div>
       <div className={`lo--village--item--val setup1 build ${props.validity.numberOfPlayers ? '' : 'invalid'}`}>
         <NumberSelect
           ascendingOrder={false}

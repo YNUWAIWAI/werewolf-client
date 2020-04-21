@@ -31,24 +31,18 @@ export default function AdvancedSearchCellHostName(props: Props) {
         values={values}
       >
         {
-          text => {
-            if (typeof text !== 'string') {
-              return null
-            }
-
-            return (
-              <TextInput
-                className="lo--advanced-search--input"
-                handleChange={props.handleValueChange}
-                initialValue=""
-                max={values.max}
-                min={values.min}
-                navigatable={props.navigatable}
-                placeholder={text}
-                required={false}
-              />
-            )
-          }
+          text => (
+            <TextInput
+              className="lo--advanced-search--input"
+              handleChange={props.handleValueChange}
+              initialValue=""
+              max={values.max}
+              min={values.min}
+              navigatable={props.navigatable}
+              placeholder={typeof text === 'string' ? text : ''}
+              required={false}
+            />
+          )
         }
       </FormattedMessage>
     </>

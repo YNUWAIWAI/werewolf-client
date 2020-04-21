@@ -44,34 +44,28 @@ export default function AvatarItem(props: Props) {
       </div>
       {
         props.isAnonymous ?
-          <FormattedMessage
-            id="AvatarItem.name.anonymous"
+          <div
+            className="lo--avatar-list--item--name"
           >
-            {
-              text => (
-                <div className="lo--avatar-list--item--name">
-                  {text}
-                </div>
-              )
-            }
-          </FormattedMessage> :
-          <div className="lo--avatar-list--item--name">
+            <FormattedMessage
+              id="AvatarItem.name.anonymous"
+            />
+          </div> :
+          <div
+            className="lo--avatar-list--item--name"
+          >
             {props.name}
           </div>
       }
       {
         props.isHost ?
-          <FormattedMessage
-            id="AvatarItem.host"
+          <div
+            className="lo--avatar-list--item--host"
           >
-            {
-              text => (
-                <div className="lo--avatar-list--item--host">
-                  {text}
-                </div>
-              )
-            }
-          </FormattedMessage> :
+            <FormattedMessage
+              id="AvatarItem.host"
+            />
+          </div> :
           null
       }
       <div className="lo--avatar-list--item--ping">
