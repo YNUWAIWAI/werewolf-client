@@ -15,5 +15,5 @@ test('render', () => {
     />
   )
 
-  expect(wrapper.text()).toBe('Login')
+  expect(wrapper.html()).toMatchSnapshot()
 })

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render isSignup={false} 1`] = `"<button class=\\"la--form-navigation\\">Signup</button>"`;
+
+exports[`render isSignup={true} 1`] = `"<button class=\\"la--form-navigation\\">Login</button>"`;

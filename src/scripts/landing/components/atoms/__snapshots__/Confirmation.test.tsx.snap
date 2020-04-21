@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<p class=\\"la--confirmation\\">Please agree to our <a href=\\"terms\\" rel=\\"noreferrer noopener\\" target=\\"_blank\\">Terms, Data Policy and Cookies Policy</a> before signing up.</p>"`;

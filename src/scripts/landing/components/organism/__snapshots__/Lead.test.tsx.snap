@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<div class=\\"la--lead\\"><div class=\\"la--title\\"><p>LiCOS: A Game Of Werewolves</p></div><div class=\\"la--flavor\\"><p>* Flavor text *</p></div><iframe allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" allowfullscreen=\\"\\" class=\\"la--trailer\\" src=\\"https://www.youtube.com/embed/VrxRKYTRZG8\\"></iframe></div>"`;

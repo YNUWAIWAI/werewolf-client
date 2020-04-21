@@ -18,7 +18,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('Email')
+    expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find('.la--input').props().minLength).toBeUndefined()
     expect(wrapper.find('.la--input').props().type).toBe('text')
   })
@@ -31,7 +31,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('Name')
+    expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find('.la--input').props().minLength).toBeUndefined()
     expect(wrapper.find('.la--input').props().type).toBe('text')
   })
@@ -44,7 +44,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('Password')
+    expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find('.la--input').props().minLength).toBe(8)
     expect(wrapper.find('.la--input').props().type).toBe('password')
   })

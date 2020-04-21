@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render visible={false} 1`] = `null`;
+
+exports[`render visible={true} 1`] = `"<div class=\\"la--error\\">Invalid email or password</div>"`;

@@ -17,7 +17,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.text()).toBe('Invalid email or password')
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test('visible={false}', () => {
     const wrapper = mountWithIntl(
@@ -27,6 +27,6 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.isEmptyRender()).toBe(true)
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
