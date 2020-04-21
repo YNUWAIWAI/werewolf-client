@@ -1,7 +1,7 @@
 import Component, {
   DispatchProps,
   StateProps
-} from '../components/molecules/CreateNewHumanAvatarBody'
+} from '../components/molecules/CreateNewHumanAvatarTable'
 import {
   CreateNewHumanAvatar,
   createNewHumanAvatar

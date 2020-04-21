@@ -20,7 +20,7 @@ export interface DispatchProps {
 }
 type Props = StateProps & DispatchProps
 
-export default function CreateNewRobotAvatarBody(props: Props) {
+export default function CreateNewRobotAvatarTable(props: Props) {
   return (
     <div
       className="lo--create-new-avatar--table robot"

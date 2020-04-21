@@ -1,7 +1,7 @@
 import * as React from 'react'
 import AsideContent from '../atoms/AsideContent'
 import CreateNewAvatarHeader from '../molecules/CreateNewAvatarHeader'
-import CreateNewHumanAvatarBody from '../../containers/CreateNewHumanAvatarBodyContainer'
+import CreateNewHumanAvatarTable from '../../containers/CreateNewHumanAvatarTableContainer'
 import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
@@ -19,7 +19,7 @@ export default function CreateNewHumanAvatar(props: Props) {
       <Header id="Header.selectHumanAvatar" />
       <MainContent>
         <CreateNewAvatarHeader />
-        <CreateNewHumanAvatarBody />
+        <CreateNewHumanAvatarTable />
         <Menu
           className="lo--create-new-avatar--command"
           itemClassName="lo--create-new-avatar--command--item"
