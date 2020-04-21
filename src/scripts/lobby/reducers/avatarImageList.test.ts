@@ -2,6 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   avatarImageSelect,
   createNewHumanAvatar,
+  createNewRobotAvatar,
   selectHumanAvatar,
   selectRobotAvatar
 } from '../actions'
@@ -30,6 +31,21 @@ test('createNewHumanAvatar/SHOW_AVATAR_IMAGE_SELECT', () => {
   ).toStrictEqual({
     ... initialState,
     scope: ActionTypes.Scope.CreateNewHumanAvatar,
+    selectedImage: image,
+    token: ''
+  })
+})
+test('createNewRobotAvatar/SHOW_AVATAR_IMAGE_SELECT', () => {
+  const image = ImagePath.Character.a
+
+  expect(
+    reducer(
+      initialState,
+      createNewRobotAvatar.showAvatarImageSelect(image)
+    )
+  ).toStrictEqual({
+    ... initialState,
+    scope: ActionTypes.Scope.CreateNewRobotAvatar,
     selectedImage: image,
     token: ''
   })

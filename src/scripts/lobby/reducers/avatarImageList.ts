@@ -2,20 +2,28 @@ import * as ActionTypes from '../constants/ActionTypes'
 import {
   AvatarImageSelect,
   CreateNewHumanAvatar,
+  CreateNewRobotAvatar,
   SelectHumanAvatar,
   SelectRobotAvatar
 } from '../actions'
 import {AvatarImageList} from '../constants/AvatarImageList'
 
+type Scope =
+  | ActionTypes.Scope.SelectHumanAvatar
+  | ActionTypes.Scope.SelectRobotAvatar
+  | ActionTypes.Scope.CreateNewHumanAvatar
+  | ActionTypes.Scope.CreateNewRobotAvatar
+
 export interface State {
   readonly imageList: string[]
-  readonly scope: ActionTypes.Scope.SelectHumanAvatar | ActionTypes.Scope.SelectRobotAvatar | ActionTypes.Scope.CreateNewHumanAvatar
+  readonly scope: Scope
   readonly selectedImage: string
   readonly token: string
 }
 type Action =
   | AvatarImageSelect.SelectAvatar
   | CreateNewHumanAvatar.ShowAvatarImageSelect
+  | CreateNewRobotAvatar.ShowAvatarImageSelect
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
 
@@ -36,6 +44,13 @@ const avatarImageSelect = (state: State = initialState, action: Action): State =
       return {
         ... state,
         scope: ActionTypes.Scope.CreateNewHumanAvatar,
+        selectedImage: action.image,
+        token: ''
+      }
+    case ActionTypes.CreateNewRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
+      return {
+        ... state,
+        scope: ActionTypes.Scope.CreateNewRobotAvatar,
         selectedImage: action.image,
         token: ''
       }

@@ -57,7 +57,7 @@ export default function AutomationSelect(props: Props) {
 
   return (
     <Select
-      className={props.className}
+      className={`${props.className} automation`}
       defaultValue={defaultValue}
       isSearchable
       navigatable={props.navigatable}

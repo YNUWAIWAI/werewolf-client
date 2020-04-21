@@ -3,6 +3,7 @@ import {
   AvatarImageSelect,
   Confirmation,
   CreateNewHumanAvatar,
+  CreateNewRobotAvatar,
   SelectHumanAvatar,
   SelectRobotAvatar,
   WaitingPage
@@ -18,6 +19,7 @@ type Action =
   | Confirmation.SelectNo
   | Confirmation.SelectYes
   | CreateNewHumanAvatar.ShowAvatarImageSelect
+  | CreateNewRobotAvatar.ShowAvatarImageSelect
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
   | WaitingPage.ConfirmKickOutPlayer
@@ -42,6 +44,7 @@ const modal = (state: State = initialState, action: Action): State => {
     case ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.CreateNewHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
+    case ActionTypes.CreateNewRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
       return {
         type: lobby.ModalType.avatarImageSelect,
         visible: true

@@ -6,8 +6,8 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
   command: state.createNewRobotAvatar.command,
   menuItems: state.createNewRobotAvatar.menuItems
 })
-const CreateNewRobotAvatarContainer = connect(
+const Container = connect(
   mapStateToProps
 )(Component)
 
-export default CreateNewRobotAvatarContainer
+export default Container

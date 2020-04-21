@@ -1,47 +1,47 @@
 import * as React from 'react'
-import AutomationSelect from '../atoms/Select/AutomationSelect'
-import {FormattedMessage} from 'react-intl'
-import TextInput from '../atoms/TextInput'
+import CreateNewAvatarAutomation from '../atoms/CreateNewAvatar/CreateNewAvatarAutomation'
+import CreateNewAvatarAvatarImage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
+import CreateNewAvatarAvatarLanguage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
+import CreateNewAvatarAvatarName from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
 import {lobby} from '../../types'
 
-interface Props {
+export interface StateProps {
+  readonly automation: lobby.Automation
+  readonly image: string
+  readonly language: lobby.Language
+  readonly name: string
   readonly navigatable: boolean
 }
+export interface DispatchProps {
+  readonly handleAutomationChange: (valid: boolean) => (value: lobby.Automation) => void
+  readonly handleImageClick: (value: string) => void
+  readonly handleLanguageChange: (valid: boolean) => (value: lobby.Language) => void
+  readonly handleNameChange: (valid: boolean) => (value: string) => void
+}
+type Props = StateProps & DispatchProps
 
 export default function CreateNewRobotAvatarBody(props: Props) {
   return (
     <div
-      className="lo--create-new-avatar--body"
+      className="lo--create-new-avatar--table robot"
     >
-      <FormattedMessage
-        id="CreateNewAvatar.label"
-      >
-        {
-          text => (
-            <label
-              className="lo--create-new-avatar--label"
-              htmlFor="newAvatarName"
-            >
-              {text}
-            </label>
-          )
-        }
-      </FormattedMessage>
-      <TextInput
-        className="lo--create-new-avatar--input"
-        handleChange={() => () => {}}
-        id="newAvatarName"
-        initialValue=""
-        max={15}
-        min={5}
+      <CreateNewAvatarAvatarName
+        handleChange={props.handleNameChange}
         navigatable={props.navigatable}
-        placeholder=""
-        required
       />
-      <AutomationSelect
-        className="lo--create-new-avatar--select"
-        defaultValue={lobby.Automation.full}
-        handleChange={() => () => {}}
+      <CreateNewAvatarAvatarImage
+        handleClick={() => props.handleImageClick(props.image)}
+        image={props.image}
+        navigatable
+      />
+      <CreateNewAvatarAutomation
+        automation={props.automation}
+        handleChange={props.handleAutomationChange}
+        navigatable={props.navigatable}
+      />
+      <CreateNewAvatarAvatarLanguage
+        handleChange={props.handleLanguageChange}
+        language={props.language}
         navigatable={props.navigatable}
       />
     </div>

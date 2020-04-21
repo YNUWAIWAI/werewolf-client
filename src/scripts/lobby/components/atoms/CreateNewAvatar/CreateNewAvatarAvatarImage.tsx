@@ -10,21 +10,16 @@ interface Props {
 export default function CreateNewAvatarAvatarImage(props: Props) {
   return (
     <>
-      <FormattedMessage
-        id="CreateNewAvatar.label(avatarImage)"
+      <label
+        className="lo--create-new-avatar--label image"
+        htmlFor="newAvatarImage"
       >
-        {
-          text => (
-            <label
-              className="lo--create-new-avatar--label"
-              htmlFor="newAvatarImage"
-            >
-              {text}
-            </label>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="CreateNewAvatar.label(avatarImage)"
+        />
+      </label>
       <button
+        className="lo--create-new-avatar--input image"
         onClick={props.handleClick}
         tabIndex={props.navigatable ? 0 : -1}
       >

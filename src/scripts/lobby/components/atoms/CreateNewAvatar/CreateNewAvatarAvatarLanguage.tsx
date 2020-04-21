@@ -12,22 +12,16 @@ interface Props {
 export default function CreateNewAvatarAvatarLanguage(props: Props) {
   return (
     <>
-      <FormattedMessage
-        id="CreateNewAvatar.label(avatarLanguage)"
+      <label
+        className="lo--create-new-avatar--label language"
+        htmlFor="newAvatarName"
       >
-        {
-          text => (
-            <label
-              className="lo--create-new-avatar--label"
-              htmlFor="newAvatarName"
-            >
-              {text}
-            </label>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="CreateNewAvatar.label(avatarLanguage)"
+        />
+      </label>
       <LanguageSelect
-        className="lo--create-new-avatar--input"
+        className="lo--create-new-avatar--input language"
         defaultValue={props.language}
         handleChange={props.handleChange}
         menuPosition="fixed"
