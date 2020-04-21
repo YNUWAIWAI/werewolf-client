@@ -18,8 +18,7 @@ test('render', () => {
     />
   )
 
-  expect(wrapper.find('input').exists()).toBe(true)
-  expect(wrapper.find('label').exists()).toBe(true)
+  expect(wrapper.html()).toMatchSnapshot()
 })
 describe('onChange', () => {
   test('valid', () => {

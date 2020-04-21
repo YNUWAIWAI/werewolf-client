@@ -8,18 +8,12 @@ interface Props {
 
 export default function ResultCellStatus(props: Props) {
   return (
-    <FormattedMessage
-      id={`Result.status(${props.status})`}
+    <div
+      className={`vi--result--cell--status ${props.status === 'alive' ? '' : 'dead'}`}
     >
-      {
-        text => (
-          <div
-            className={`vi--result--cell--status ${props.status === 'alive' ? '' : 'dead'}`}
-          >
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`Result.status(${props.status})`}
+      />
+    </div>
   )
 }

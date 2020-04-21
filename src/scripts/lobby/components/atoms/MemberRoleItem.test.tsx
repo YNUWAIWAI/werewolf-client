@@ -16,6 +16,5 @@ test('render', () => {
     />
   )
 
-  expect(wrapper.text()).toBe('✕0Villager')
-  expect(wrapper.find('img[src="image"]').exists()).toBe(true)
+  expect(wrapper.html()).toMatchSnapshot()
 })

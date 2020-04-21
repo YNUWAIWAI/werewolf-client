@@ -10,19 +10,13 @@ interface Props {
 
 export default function SelectAvatarTableBodyTest(props: Props) {
   return (
-    <FormattedMessage
-      id={`SelectAvatarTableBodyTest.test(${props.test})`}
+    <div
+      className={`lo--select-avatar--table--body--item test ${props.additionalClassName.join(' ')}`}
+      onClick={props.handleSelect}
     >
-      {
-        text => (
-          <div
-            className={`lo--select-avatar--table--body--item test ${props.additionalClassName.join(' ')}`}
-            onClick={props.handleSelect}
-          >
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`SelectAvatarTableBodyTest.test(${props.test})`}
+      />
+    </div>
   )
 }

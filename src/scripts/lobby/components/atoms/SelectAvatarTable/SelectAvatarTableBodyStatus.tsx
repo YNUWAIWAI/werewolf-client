@@ -10,19 +10,13 @@ interface Props {
 
 export default function SelectAvatarTableBodyStatus(props: Props) {
   return (
-    <FormattedMessage
-      id={`SelectAvatarTableBodyStatus.status(${props.status})`}
+    <div
+      className={`lo--select-avatar--table--body--item status ${props.additionalClassName.join(' ')}`}
+      onClick={props.handleSelect}
     >
-      {
-        text => (
-          <div
-            className={`lo--select-avatar--table--body--item status ${props.additionalClassName.join(' ')}`}
-            onClick={props.handleSelect}
-          >
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`SelectAvatarTableBodyStatus.status(${props.status})`}
+      />
+    </div>
   )
 }

@@ -20,34 +20,28 @@ const getId = (myTeam: village.Team | '', winnerTeam: village.Team) => {
 
 export default function ResultCellSummary(props: Props) {
   return (
-    <FormattedMessage
-      id={getId(props.myTeam, props.winnerTeam)}
-      values={
-        {
-          myTeam:
-            <TeamIcon
-              class="vi--result--cell--summary--team"
-              key="myTeam"
-              team={props.myTeam || ''}
-            />,
-          winnerTeam:
-            <TeamIcon
-              class="vi--result--cell--summary--team"
-              key="winnerTeam"
-              team={props.winnerTeam}
-            />
-        }
-      }
+    <div
+      className="vi--result--cell--summary"
     >
-      {
-        (... text) => (
-          <div
-            className="vi--result--cell--summary"
-          >
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={getId(props.myTeam, props.winnerTeam)}
+        values={
+          {
+            myTeam:
+              <TeamIcon
+                class="vi--result--cell--summary--team"
+                key="myTeam"
+                team={props.myTeam || ''}
+              />,
+            winnerTeam:
+              <TeamIcon
+                class="vi--result--cell--summary--team"
+                key="winnerTeam"
+                team={props.winnerTeam}
+              />
+          }
+        }
+      />
+    </div>
   )
 }

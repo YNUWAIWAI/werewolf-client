@@ -15,36 +15,22 @@ interface Props {
 export default function Member(props: Props) {
   return (
     <div className="lo--village--item--member">
-      <FormattedMessage
-        id="Member.min"
-        values={{
-          num: props.robot.min
-        }}
-      >
-        {
-          text => (
-            <div className="lo--village--item--member--robot">
-              {text}
-            </div>
-          )
-
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="Member.max"
-        values={{
-          num: props.human.max
-        }}
-      >
-        {
-          text => (
-            <div className="lo--village--item--member--human">
-              {text}
-            </div>
-          )
-
-        }
-      </FormattedMessage>
+      <div className="lo--village--item--member--robot">
+        <FormattedMessage
+          id="Member.min"
+          values={{
+            num: props.robot.min
+          }}
+        />
+      </div>
+      <div className="lo--village--item--member--human">
+        <FormattedMessage
+          id="Member.max"
+          values={{
+            num: props.human.max
+          }}
+        />
+      </div>
       <MemberRoleList
         className="lo--village--item--member--role"
         role={props.role}

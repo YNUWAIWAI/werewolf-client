@@ -20,43 +20,31 @@ export default function SelectAvatarTableBodyAuthorized(props: Props) {
 
   if (props.authorized === lobby.Authorized.waitForAcceptance) {
     return (
-      <FormattedMessage
-        id={`SelectAvatarTableBodyAuthorized.authorized(${props.authorized})`}
+      <div
+        className={className}
+        onClick={handleSelect}
       >
-        {
-          text => (
-            <div
-              className={className}
-              onClick={handleSelect}
-            >
-              <button
-                className="accept"
-                onClick={props.handleAccept}
-                tabIndex={props.naviagtable ? 0 : -1}
-              >
-                {text}
-              </button>
-            </div>
-          )
-        }
-      </FormattedMessage>
+        <button
+          className="accept"
+          onClick={props.handleAccept}
+          tabIndex={props.naviagtable ? 0 : -1}
+        >
+          <FormattedMessage
+            id={`SelectAvatarTableBodyAuthorized.authorized(${props.authorized})`}
+          />
+        </button>
+      </div>
     )
   }
 
   return (
-    <FormattedMessage
-      id={`SelectAvatarTableBodyAuthorized.authorized(${props.authorized})`}
+    <div
+      className={className}
+      onClick={handleSelect}
     >
-      {
-        text => (
-          <div
-            className={className}
-            onClick={handleSelect}
-          >
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`SelectAvatarTableBodyAuthorized.authorized(${props.authorized})`}
+      />
+    </div>
   )
 }

@@ -18,19 +18,13 @@ export default function PredictionSpec(props: Props) {
       className="vi--prediction--spec"
       style={props.style}
     >
-      <FormattedMessage
-        id={`PredictionSpec(${props.role})`}
+      <div
+        className="vi--prediction--spec--body"
       >
-        {
-          text => (
-            <div
-              className="vi--prediction--spec--body"
-            >
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id={`PredictionSpec(${props.role})`}
+        />
+      </div>
     </div>
   )
 }

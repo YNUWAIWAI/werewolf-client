@@ -27,19 +27,13 @@ export default function MemberRoleItem(props: Props) {
       >
         {props.numberOfPlayers}
       </span>
-      <FormattedMessage
-        id={`MemberRole(${props.id})`}
+      <span
+        className={`${props.className}--caption`}
       >
-        {
-          text => (
-            <span
-              className={`${props.className}--caption`}
-            >
-              {text}
-            </span>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id={`MemberRole(${props.id})`}
+        />
+      </span>
     </div>
   )
 }

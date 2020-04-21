@@ -18,17 +18,11 @@ const values = {
 export default function BuildVillageCellVillageName(props: Props) {
   return (
     <>
-      <FormattedMessage
-        id="BuildVillage.label(villageName)"
-      >
-        {
-          text => (
-            <div className="lo--village--item--prop village-name">
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+      <div className="lo--village--item--prop village-name">
+        <FormattedMessage
+          id="BuildVillage.label(villageName)"
+        />
+      </div>
       {
         props.isFiexdAvatar ?
           <FormattedMessage
@@ -36,39 +30,25 @@ export default function BuildVillageCellVillageName(props: Props) {
             values={values}
           >
             {
-              text => {
-                if (typeof text !== 'string') {
-                  return null
-                }
-
-                return (
-                  <TextInput
-                    className={`lo--village--item--val village-name ${props.valid ? '' : 'invalid'}`}
-                    handleChange={props.handleValueChange}
-                    initialValue={props.value}
-                    max={values.max}
-                    min={values.min}
-                    navigatable={props.navigatable}
-                    placeholder={text}
-                    required
-                  />
-                )
-              }
-            }
-          </FormattedMessage> :
-          <FormattedMessage
-            id={`BuildVillage.villageName.anonymous(${props.value})`}
-          >
-            {
               text => (
-                <div
-                  className="lo--village--item--val village-name"
-                >
-                  {text}
-                </div>
+                <TextInput
+                  className={`lo--village--item--val village-name ${props.valid ? '' : 'invalid'}`}
+                  handleChange={props.handleValueChange}
+                  initialValue={props.value}
+                  max={values.max}
+                  min={values.min}
+                  navigatable={props.navigatable}
+                  placeholder={typeof text === 'string' ? text : ''}
+                  required
+                />
               )
             }
-          </FormattedMessage>
+          </FormattedMessage> :
+          <div className="lo--village--item--val village-name">
+            <FormattedMessage
+              id={`BuildVillage.villageName.anonymous(${props.value})`}
+            />
+          </div>
       }
     </>
   )

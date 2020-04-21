@@ -24,16 +24,12 @@ export default function SelectAvatarTableHeaderItem(props: Props) {
   }
 
   return (
-    <FormattedMessage
-      id={`SelectAvatarTableHeader(${props.type})`}
+    <div
+      className={className}
     >
-      {
-        text => (
-          <div className={className}>
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`SelectAvatarTableHeader(${props.type})`}
+      />
+    </div>
   )
 }

@@ -19,50 +19,32 @@ export type Props = StateProps & DispatchProps
 export default function Confirmation(props: Props) {
   return (
     <div className="lo--confirmation">
-      <FormattedMessage
-        id={props.descriptionId}
-        values={{
-          name: props.values.name
-        }}
+      <div
+        className="lo--confirmation--description"
       >
-        {
-          text => (
-            <div
-              className="lo--confirmation--description"
-            >
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="Modal.button.yes"
+        <FormattedMessage
+          id={props.descriptionId}
+          values={{
+            name: props.values.name
+          }}
+        />
+      </div>
+      <button
+        className="lo--confirmation--button yes"
+        onClick={() => props.handleClickYes(props.type)}
       >
-        {
-          text => (
-            <button
-              className="lo--confirmation--button yes"
-              onClick={() => props.handleClickYes(props.type)}
-            >
-              {text}
-            </button>
-          )
-        }
-      </FormattedMessage>
-      <FormattedMessage
-        id="Modal.button.no"
+        <FormattedMessage
+          id="Modal.button.yes"
+        />
+      </button>
+      <button
+        className="lo--confirmation--button no"
+        onClick={() => props.handleClickNo()}
       >
-        {
-          text => (
-            <button
-              className="lo--confirmation--button no"
-              onClick={() => props.handleClickNo()}
-            >
-              {text}
-            </button>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="Modal.button.no"
+        />
+      </button>
     </div>
   )
 }

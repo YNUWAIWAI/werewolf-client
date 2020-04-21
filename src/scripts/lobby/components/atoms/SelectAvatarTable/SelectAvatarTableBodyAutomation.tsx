@@ -10,19 +10,13 @@ interface Props {
 
 export default function SelectAvatarTableBodyAutomation(props: Props) {
   return (
-    <FormattedMessage
-      id={`SelectAvatarTableBodyAutomation.automation(${props.automation})`}
+    <div
+      className={`lo--select-avatar--table--body--item automation ${props.additionalClassName.join(' ')}`}
+      onClick={props.handleSelect}
     >
-      {
-        text => (
-          <div
-            className={`lo--select-avatar--table--body--item automation ${props.additionalClassName.join(' ')}`}
-            onClick={props.handleSelect}
-          >
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+      <FormattedMessage
+        id={`SelectAvatarTableBodyAutomation.automation(${props.automation})`}
+      />
+    </div>
   )
 }

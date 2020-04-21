@@ -7,16 +7,10 @@ interface Props {
 
 export default function Header(props: Props) {
   return (
-    <FormattedMessage
-      id={props.id}
-    >
-      {
-        text => (
-          <div className="lo--header">
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+    <div className="lo--header">
+      <FormattedMessage
+        id={props.id}
+      />
+    </div>
   )
 }

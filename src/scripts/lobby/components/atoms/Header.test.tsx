@@ -6,8 +6,12 @@ import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('<Header />', () => {
-  const wrapper = mountWithIntl(<Header id="Header.buildVillage" />)
+test('render', () => {
+  const wrapper = mountWithIntl(
+    <Header
+      id="Header.buildVillage"
+    />
+  )
 
-  expect(wrapper.text()).toBe('Build your village')
+  expect(wrapper.html()).toMatchSnapshot()
 })

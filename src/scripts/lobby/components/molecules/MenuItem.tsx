@@ -14,38 +14,36 @@ export interface Props {
 }
 
 export default function MenuItem(props: Props) {
-  return (
-    <FormattedMessage
-      id={props.id}
-    >
-      {
-        text => (
-          <li
-            className={props.className}
-            onClick={() => {
-              props.types.forEach(type => {
-                if (!props.disabled && !props.isLoading) {
-                  props.transition(type)
-                }
-              })
-            }}
-          >
-            <button
-              className={`${props.className}--button ${props.isLoading ? 'loader' : ''}`}
-              disabled={props.disabled || props.isLoading}
-              tabIndex={props.navigatable ? 0 : -1}
-            >
-              {
-                props.isLoading ?
-                  <Loader>
-                    {text}
-                  </Loader> :
-                  text
-              }
-            </button>
-          </li>
-        )
+  const handleClick = () => {
+    props.types.forEach(type => {
+      if (!props.disabled && !props.isLoading) {
+        props.transition(type)
       }
-    </FormattedMessage>
+    })
+  }
+
+  return (
+    <li
+      className={props.className}
+      onClick={handleClick}
+    >
+      <button
+        className={`${props.className}--button ${props.isLoading ? 'loader' : ''}`}
+        disabled={props.disabled || props.isLoading}
+        tabIndex={props.navigatable ? 0 : -1}
+      >
+        {
+          props.isLoading ?
+            <Loader>
+              <FormattedMessage
+                id={props.id}
+              />
+            </Loader> :
+            <FormattedMessage
+              id={props.id}
+            />
+        }
+      </button>
+    </li>
   )
 }

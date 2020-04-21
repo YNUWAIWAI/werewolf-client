@@ -40,20 +40,14 @@ export default function ChatDay(props: Props) {
     </FormattedTime>
 
   return (
-    <FormattedMessage
-      id="ChatDay"
-      values={{
-        postTime,
-        restTime
-      }}
-    >
-      {
-        (... text) => (
-          <div className="vi--chat--day">
-            {text}
-          </div>
-        )
-      }
-    </FormattedMessage>
+    <div className="vi--chat--day">
+      <FormattedMessage
+        id="ChatDay"
+        values={{
+          postTime,
+          restTime
+        }}
+      />
+    </div>
   )
 }

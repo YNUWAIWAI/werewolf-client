@@ -9,47 +9,29 @@ export default function Info() {
   return (
     <div className="vi--info">
       <InfoDay />
-      <FormattedMessage
-        id="Info.property.character"
+      <div
+        className="vi--info--property character"
       >
-        {
-          text => (
-            <div
-              className="vi--info--property character"
-            >
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="Info.property.character"
+        />
+      </div>
       <InfoCharacter />
-      <FormattedMessage
-        id="Info.property.role"
+      <div
+        className="vi--info--property role"
       >
-        {
-          text => (
-            <div
-              className="vi--info--property role"
-            >
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="Info.property.role"
+        />
+      </div>
       <InfoRole />
-      <FormattedMessage
-        id="Info.property.team"
+      <div
+        className="vi--info--property team"
       >
-        {
-          text => (
-            <div
-              className="vi--info--property team"
-            >
-              {text}
-            </div>
-          )
-        }
-      </FormattedMessage>
+        <FormattedMessage
+          id="Info.property.team"
+        />
+      </div>
       <InfoTeam />
     </div>
   )
