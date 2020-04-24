@@ -59,9 +59,11 @@
   --z-index--prediction--role--times: 1;
   --z-index--prediction--role--number: 1;
   --z-index--result: 7;
-  --z-index--result--close: 10;
+  --z-index--result--caption: 10;
+  --z-index--result--close: 11;
   --z-index--result--character-image: 8;
   --z-index--result--character-initial: 9;
+  --z-index--result--summary: 10;
 
   /* properties */
   color: var(--color--font);
