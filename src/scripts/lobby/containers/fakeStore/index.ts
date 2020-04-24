@@ -12,6 +12,7 @@ import {initialState as buildVillage} from '../../reducers/buildVillage'
 import {initialState as confirmation} from '../../reducers/confirmation'
 import {initialState as createNewHumanAvatar} from '../../reducers/createNewHumanAvatar'
 import {initialState as createNewRobotAvatar} from '../../reducers/createNewRobotAvatar'
+import {initialState as createNewRobotAvatarSupport} from '../../reducers/createNewRobotAvatarSupport'
 import {initialState as history} from '../../reducers/history'
 import {initialState as idSearch} from '../../reducers/idSearch'
 import {initialState as language} from '../../reducers/language'
@@ -38,6 +39,7 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     confirmation,
     createNewHumanAvatar,
     createNewRobotAvatar,
+    createNewRobotAvatarSupport,
     history,
     idSearch,
     language,

@@ -5,6 +5,7 @@ import buildVillage, {State as BuildVillageState} from './buildVillage'
 import confirmation, {State as Confirmation} from './confirmation'
 import createNewHumanAvatar, {State as CreateNewHumanAvatar} from './createNewHumanAvatar'
 import createNewRobotAvatar, {State as CreateNewRobotAvatar} from './createNewRobotAvatar'
+import createNewRobotAvatarSupport, {State as CreateNewRobotAvatarSupport} from './createNewRobotAvatarSupport'
 import history, {State as HistoryState} from './history'
 import idSearch, {State as IdSearchState} from './idSearch'
 import language, {State as LanguageState} from './language'
@@ -31,6 +32,7 @@ export interface ReducerState {
   confirmation: Confirmation
   createNewHumanAvatar: CreateNewHumanAvatar
   createNewRobotAvatar: CreateNewRobotAvatar
+  createNewRobotAvatarSupport: CreateNewRobotAvatarSupport
   history: HistoryState
   idSearch: IdSearchState
   language: LanguageState
@@ -57,6 +59,7 @@ const reducer = combineReducers({
   confirmation,
   createNewHumanAvatar,
   createNewRobotAvatar,
+  createNewRobotAvatarSupport,
   history,
   idSearch,
   language,
