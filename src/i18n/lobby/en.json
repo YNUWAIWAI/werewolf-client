@@ -40,6 +40,8 @@
   "CreateNewAvatar.label(avatarLanguage)": "Language",
   "CreateNewAvatar.label(avatarName)": "Avatar name",
   "CreateNewAvatar.create": "Create",
+  "CreateNewAvatarSupportBoardColumnHeader.numberOfPlayers": "# of players",
+  "CreateNewAvatarSupportBoardHover": "Edit",
   "Header.advancedSearch(audience)": "Audience's advanced search",
   "Header.advancedSearch(human player)": "Human player's advanced search",
   "Header.advancedSearch(robot player)": "Robot player's advanced search",

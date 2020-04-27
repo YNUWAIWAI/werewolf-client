@@ -1,4 +1,4 @@
-import Component, {StateProps} from '../components/molecules/CreateNewRobotAvatarSupportBoard'
+import Component, {StateProps} from '../components/organisms/CreateNewRobotAvatarSupportBoard'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
