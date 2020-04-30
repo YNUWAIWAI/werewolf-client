@@ -15,7 +15,11 @@ export interface StateProps {
     }
   }
 }
-type Props = OwnProps & StateProps
+export interface DispatchProps {
+  readonly handleSupportBoardClick: () => void
+}
+
+type Props = OwnProps & StateProps & DispatchProps
 const order: NumberOfPlayers[] = [
   '4',
   '5',
@@ -37,6 +41,7 @@ export default function CreateNewAvatarSupportBoard(props: Props) {
   return (
     <div
       className={props.className}
+      onClick={props.handleSupportBoardClick}
       onMouseLeave={() => setIsHover(false)}
       onMouseOver={() => setIsHover(true)}
     >
