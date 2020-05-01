@@ -21,7 +21,8 @@ export const enum LobbyType {
 }
 export const enum ModalType {
   avatarImageSelect = 'avatarImageSelect',
-  confirmation = 'confirmation'
+  confirmation = 'confirmation',
+  supportSelect = 'supportSelect'
 }
 export const enum PingStatus {
   danger = 'danger',

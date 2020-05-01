@@ -19,6 +19,7 @@
 @import './reactSelect';
 @import './selectAvatar';
 @import './settings';
+@import './supportSelect';
 @import './theme/dark';
 @import './theme/light';
 @import './video';

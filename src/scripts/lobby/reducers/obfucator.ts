@@ -7,6 +7,7 @@ import {
   SelectHumanAvatar,
   SelectRobotAvatar,
   Socket,
+  SupportSelect,
   WaitingPage
 } from '../actions'
 
@@ -20,11 +21,13 @@ type Action =
   | Confirmation.SelectYes
   | CreateNewHumanAvatar.ShowAvatarImageSelect
   | CreateNewRobotAvatar.ShowAvatarImageSelect
+  | CreateNewRobotAvatar.ShowSupportSelect
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
   | Socket.Close
   | Socket.Error
   | Socket.Open
+  | SupportSelect.CloseModal
   | WaitingPage.ConfirmKickOutPlayer
 
 export const initialState: State = {
@@ -35,6 +38,7 @@ export const initialState: State = {
 const obfucator = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.AvatarImageSelect.CLOSE_MODAL:
+    case ActionTypes.SupportSelect.CLOSE_MODAL:
       return {
         loading: false,
         visible: false
@@ -42,6 +46,7 @@ const obfucator = (state: State = initialState, action: Action): State => {
     case ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER:
     case ActionTypes.CreateNewHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.CreateNewRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
+    case ActionTypes.CreateNewRobotAvatar.SHOW_SUPPORT_SELECT:
     case ActionTypes.SelectHumanAvatar.SHOW_AVATAR_IMAGE_SELECT:
     case ActionTypes.SelectRobotAvatar.SHOW_AVATAR_IMAGE_SELECT:
       return {

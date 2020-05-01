@@ -1,0 +1,96 @@
+.lo--support-select {
+  background: var(--color--background);
+  border: 1px solid var(--color--border);
+  border-radius: 4px;
+  bottom: 10%;
+  color: var(--color--font);
+  left: 10%;
+  padding: 1rem;
+  position: fixed;
+  right: 10%;
+  top: 10%;
+  z-index: var(--z-index--modal);
+
+  &--close {
+    background: var(--color--background);
+    border: none;
+    fill: var(--color--line--close-button);
+    height: 1.5rem;
+    left: 0.5rem;
+    padding: 0;
+    position: absolute;
+    top: 0.5rem;
+    width: 1.5rem;
+
+    &:focus {
+      fill: var(--color--line--close-button--hover);
+      outline: none;
+    }
+
+    &:hover {
+      fill: var(--color--line--close-button--hover);
+    }
+  }
+
+  &--description {
+    color: var(--color--font--modal);
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  &--member {
+    height: calc(100% - 5rem);
+    overflow: auto;
+
+    &--list {
+      display: grid;
+      grid-area: role;
+      grid-template-columns: repeat(8, 1fr);
+      margin-top: 0.5rem;
+
+      &--item {
+        display: grid;
+        font-size: inherit;
+        grid-template: 1fr calc(var(--size--role-image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--role-image) - 24px) 12px 12px 1fr;
+
+        &--caption {
+          font-size: 10px;
+          grid-column: 1 / 6;
+          grid-row: 4;
+          line-height: 1.5;
+          text-align: center;
+          word-break: keep-all;
+        }
+
+        &--image {
+          grid-column: 2 / 4;
+          grid-row: 2 / 4;
+          height: var(--size--role-image);
+          width: var(--size--role-image);
+          z-index: var(--z-index--member--image);
+        }
+
+        &--number {
+          color: var(--color--font--role-image);
+          font-size: 1rem;
+          grid-column: 4;
+          grid-row: 3;
+          line-height: 1;
+          z-index: var(--z-index--member--text);
+        }
+
+        &--times {
+          align-items: flex-end;
+          color: var(--color--font--role-image);
+          display: inline-flex;
+          font-size: 0.75rem;
+          grid-column: 3;
+          grid-row: 3;
+          justify-content: center;
+          line-height: 1;
+          z-index: var(--z-index--member--text);
+        }
+      }
+    }
+  }
+}
