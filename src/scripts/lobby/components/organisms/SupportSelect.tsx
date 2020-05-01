@@ -48,7 +48,7 @@ export default function SupportSelect(props: Props) {
         />
       </div>
       <div
-        className="lo--support-select--member-list"
+        className="lo--support-select--member-select"
       >
         {
           order.map(numberOfPlayers => {
@@ -57,15 +57,15 @@ export default function SupportSelect(props: Props) {
             return (
               <>
                 <MemberRoleList
-                  className="lo--support-select--member-list--item"
+                  className="lo--support-select--member-select--list"
                   role={role[lobby.Member.A]}
                 />
                 <MemberRoleList
-                  className="lo--support-select--member-list--item"
+                  className="lo--support-select--member-select--list"
                   role={role[lobby.Member.B]}
                 />
                 <MemberRoleList
-                  className="lo--support-select--member-list--item"
+                  className="lo--support-select--member-select--list"
                   role={role[lobby.Member.C]}
                 />
               </>

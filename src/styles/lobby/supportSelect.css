@@ -38,7 +38,7 @@
     padding: 1rem;
   }
 
-  &--member {
+  &--member-select {
     height: calc(100% - 5rem);
     overflow: auto;
 
