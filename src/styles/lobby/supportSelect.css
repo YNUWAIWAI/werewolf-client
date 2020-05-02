@@ -42,53 +42,75 @@
     height: calc(100% - 5rem);
     overflow: auto;
 
-    &--list {
+    &--option {
       display: grid;
-      grid-area: role;
-      grid-template-columns: repeat(8, 1fr);
-      margin-top: 0.5rem;
+      grid-template: 'checkbox text list' / fit-content(1rem) 5rem auto;
 
-      &--item {
+      &--checkbox {
+        align-items: center;
+        display: flex;
+        grid-area: checkbox;
+        justify-content: center;
+      }
+
+      &--text {
+        align-items: center;
+        display: flex;
+        font-size: 1.5rem;
+        grid-area: text;
+        justify-content: center;
+        padding: 0.5rem;
+        position: sticky;
+      }
+
+      &--role-list {
         display: grid;
-        font-size: inherit;
-        grid-template: 1fr calc(var(--size--role-image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--role-image) - 24px) 12px 12px 1fr;
+        grid-area: list;
+        grid-template-columns: repeat(8, 1fr);
+        margin-top: 0.5rem;
 
-        &--caption {
-          font-size: 10px;
-          grid-column: 1 / 6;
-          grid-row: 4;
-          line-height: 1.5;
-          text-align: center;
-          word-break: keep-all;
-        }
+        &--item {
+          display: grid;
+          font-size: inherit;
+          grid-template: 1fr calc(var(--size--role-image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--role-image) - 24px) 12px 12px 1fr;
 
-        &--image {
-          grid-column: 2 / 4;
-          grid-row: 2 / 4;
-          height: var(--size--role-image);
-          width: var(--size--role-image);
-          z-index: var(--z-index--member--image);
-        }
+          &--caption {
+            font-size: 10px;
+            grid-column: 1 / 6;
+            grid-row: 4;
+            line-height: 1.5;
+            text-align: center;
+            word-break: keep-all;
+          }
 
-        &--number {
-          color: var(--color--font--role-image);
-          font-size: 1rem;
-          grid-column: 4;
-          grid-row: 3;
-          line-height: 1;
-          z-index: var(--z-index--member--text);
-        }
+          &--image {
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+            height: var(--size--role-image);
+            width: var(--size--role-image);
+            z-index: var(--z-index--member--image);
+          }
 
-        &--times {
-          align-items: flex-end;
-          color: var(--color--font--role-image);
-          display: inline-flex;
-          font-size: 0.75rem;
-          grid-column: 3;
-          grid-row: 3;
-          justify-content: center;
-          line-height: 1;
-          z-index: var(--z-index--member--text);
+          &--number {
+            color: var(--color--font--role-image);
+            font-size: 1rem;
+            grid-column: 4;
+            grid-row: 3;
+            line-height: 1;
+            z-index: var(--z-index--member--text);
+          }
+
+          &--times {
+            align-items: flex-end;
+            color: var(--color--font--role-image);
+            display: inline-flex;
+            font-size: 0.75rem;
+            grid-column: 3;
+            grid-row: 3;
+            justify-content: center;
+            line-height: 1;
+            z-index: var(--z-index--member--text);
+          }
         }
       }
     }

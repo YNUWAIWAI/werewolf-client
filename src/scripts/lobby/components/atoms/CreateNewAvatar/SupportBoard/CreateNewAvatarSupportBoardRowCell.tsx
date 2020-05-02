@@ -10,7 +10,7 @@ export default function CreateNewAvatarSupportBoardRowCell(props: Props) {
     <div
       className={props.className}
     >
-      {props.support ? '✅' : '❌'}
+      {props.support ? '✅' : ''}
     </div>
   )
 }

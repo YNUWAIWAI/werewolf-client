@@ -12,18 +12,17 @@ import {connect} from 'react-redux'
 
 type Action =
   | SupportSelect.CloseModal
-  | SupportSelect.SelectMember
+  | SupportSelect.ChangeCheckbox
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-  imageList: state.avatarImageList.imageList,
-  selectedImage: state.avatarImageList.selectedImage
+  data: state.createNewRobotAvatarSupport.data
 })
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   handleCloseButtonClick: () => {
     dispatch(supportSelect.closeModal())
   },
-  handleSelect: image => {
-    dispatch(supportSelect.selectMember(image))
+  handleSelect: numberOfPlayers => member => checked => {
+    dispatch(supportSelect.changeCheckbox(numberOfPlayers)(member)(checked))
   }
 })
 

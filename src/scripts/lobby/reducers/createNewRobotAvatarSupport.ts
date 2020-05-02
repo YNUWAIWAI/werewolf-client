@@ -1,21 +1,18 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  CreateNewRobotAvatar
+  SupportSelect
 } from '../actions'
 import {lobby} from '../types'
 
 export interface State {
   readonly data: {
-    readonly [key in '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15']: {
+    readonly [key in lobby.NumberOfPlayers]: {
       readonly [key in lobby.Member]: boolean
     }
   }
 }
 type Action =
-  | CreateNewRobotAvatar.ShowAvatarImageSelect
-  | CreateNewRobotAvatar.ChangeAutomation
-  | CreateNewRobotAvatar.ChangeAvatarLangauge
-  | CreateNewRobotAvatar.ChangeAvatarName
+  | SupportSelect.ChangeCheckbox
 
 export const initialState: State = {
   data: {
@@ -83,6 +80,17 @@ export const initialState: State = {
 }
 const createNewRobotAvatarSupport = (state: State = initialState, action: Action): State => {
   switch (action.type) {
+    case ActionTypes.SupportSelect.CHANGE_CHECKBOX: {
+      return {
+        data: {
+          ... state.data,
+          [action.numberOfPlayers]: {
+            ... state.data[action.numberOfPlayers],
+            [action.member]: action.checked
+          }
+        }
+      }
+    }
     default:
       return state
   }

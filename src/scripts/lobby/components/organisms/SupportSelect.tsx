@@ -1,22 +1,23 @@
 import * as React from 'react'
 import Close from '../atoms/svg/Close'
 import {FormattedMessage} from 'react-intl'
-
-import MemberRoleList from '../molecules/MemberRoleList'
-import {getCastFromNumberOfPlayers} from '../../util'
+import SupportSelectMemberSelectOption from '../molecules/SupportSelect/SupportSelectMemberSelectOption'
 import {lobby} from '../../types'
 
 export interface StateProps {
-  readonly selectedImage: string
-  readonly imageList: string[]
+  readonly data: {
+    readonly [key in lobby.NumberOfPlayers]: {
+      readonly [key in lobby.Member]: boolean
+    }
+  }
 }
 export interface DispatchProps {
   readonly handleCloseButtonClick: () => void
-  readonly handleSelect: (image: string) => void
+  readonly handleSelect: (numberOfPlayers: lobby.NumberOfPlayers) => (member: lobby.Member) => (checked: boolean) => void
 }
 export type Props = StateProps & DispatchProps
 
-const order = [
+const order: lobby.NumberOfPlayers[] = [
   '4',
   '5',
   '6',
@@ -52,21 +53,28 @@ export default function SupportSelect(props: Props) {
       >
         {
           order.map(numberOfPlayers => {
-            const role = getCastFromNumberOfPlayers(Number(numberOfPlayers))
+            const handleSelect = props.handleSelect(numberOfPlayers)
+            const support = props.data[numberOfPlayers]
 
             return (
               <>
-                <MemberRoleList
-                  className="lo--support-select--member-select--list"
-                  role={role[lobby.Member.A]}
+                <SupportSelectMemberSelectOption
+                  checked={support.A}
+                  handleSelect={handleSelect(lobby.Member.A)}
+                  member={lobby.Member.A}
+                  numberOfPlayers={Number(numberOfPlayers)}
                 />
-                <MemberRoleList
-                  className="lo--support-select--member-select--list"
-                  role={role[lobby.Member.B]}
+                <SupportSelectMemberSelectOption
+                  checked={support.B}
+                  handleSelect={handleSelect(lobby.Member.B)}
+                  member={lobby.Member.B}
+                  numberOfPlayers={Number(numberOfPlayers)}
                 />
-                <MemberRoleList
-                  className="lo--support-select--member-select--list"
-                  role={role[lobby.Member.C]}
+                <SupportSelectMemberSelectOption
+                  checked={support.C}
+                  handleSelect={handleSelect(lobby.Member.C)}
+                  member={lobby.Member.C}
+                  numberOfPlayers={Number(numberOfPlayers)}
                 />
               </>
             )
