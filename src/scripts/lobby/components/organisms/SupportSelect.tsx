@@ -18,18 +18,18 @@ export interface DispatchProps {
 export type Props = StateProps & DispatchProps
 
 const order: lobby.NumberOfPlayers[] = [
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  '11',
-  '12',
-  '13',
+  '15',
   '14',
-  '15'
+  '13',
+  '12',
+  '11',
+  '10',
+  '9',
+  '8',
+  '7',
+  '6',
+  '5',
+  '4'
 ]
 
 export default function SupportSelect(props: Props) {
