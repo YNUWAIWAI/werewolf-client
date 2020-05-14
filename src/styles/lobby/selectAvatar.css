@@ -132,7 +132,7 @@
         padding: 0;
         position: sticky;
 
-        & > span {
+        &--checkbox {
           border-radius: 4px;
           fill: var(--color--checkbox);
           height: var(--height--checkbox);

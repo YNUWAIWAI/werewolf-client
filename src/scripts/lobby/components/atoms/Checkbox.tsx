@@ -4,9 +4,10 @@ import CheckboxFilled from './svg/CheckboxFilled'
 
 interface Props {
   readonly checked: boolean
-  readonly handleChange: (checked: boolean) => void
-  readonly labeledby?: string
   readonly className?: string
+  readonly handleChange: (checked: boolean) => void
+  readonly label?: string
+  readonly labeledby?: string
 }
 
 export default function Checkbox(props: Props) {
@@ -24,6 +25,7 @@ export default function Checkbox(props: Props) {
   return (
     <span
       aria-checked={props.checked}
+      aria-label={props.label}
       aria-labelledby={props.labeledby}
       className={props.className}
       onClick={handleClick}

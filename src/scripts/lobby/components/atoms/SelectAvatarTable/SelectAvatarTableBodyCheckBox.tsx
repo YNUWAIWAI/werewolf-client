@@ -15,6 +15,7 @@ export default function SelectAvatarTableBodyCheckbox(props: Props) {
     >
       <Checkbox
         checked={props.checked}
+        className="lo--select-avatar--table--body--item--checkbox"
         handleChange={props.handleClick}
       />
     </div>
