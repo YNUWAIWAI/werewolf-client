@@ -48,7 +48,7 @@
     background: var(--color--background);
     border: 2px solid var(--color--border);
     display: grid;
-    grid-template-columns: 24px repeat(7, minmax(8rem, 1fr)) minmax(16rem, 2fr);
+    grid-template-columns: 28px repeat(7, minmax(8rem, 1fr)) minmax(16rem, 2fr);
     overflow: auto;
     padding: 0 0 1rem;
 
@@ -127,10 +127,22 @@
         }
       }
 
-      &.check-box {
+      &.checkbox {
         left: 0;
         padding: 0;
         position: sticky;
+
+        & > span {
+          border-radius: 4px;
+          fill: var(--color--checkbox);
+          height: var(--height--checkbox);
+          width: var(--width--checkbox);
+
+          &:focus {
+            box-shadow: var(--box-shadow--focus-ring--checkbox);
+            outline: none;
+          }
+        }
       }
 
       &.image {

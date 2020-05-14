@@ -11,6 +11,7 @@
   --color--background--menu--disabled: hsla(0, 0%, 40%, 0.5);
   --color--background--menu--focus: hsla(0, 0%, 20%, 0.5);
   --color--background--menu--hover: hsla(0, 0%, 30%, 0.5);
+  --color--checkbox: hsla(0, 0%, 90%);
   --color--danger: rgb(239, 83, 80);
   --color--font--black: hsl(0, 0%, 10%);
   --color--font--gray: hsl(0, 0%, 50%);
