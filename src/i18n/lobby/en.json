@@ -129,6 +129,8 @@
   "Settings.label(userName)": "Name",
   "Settings.label(userPassword)": "Password",
   "SupportSelect.description": "Choose",
+  "SupportSelect.header(numberOfPlayers)": "# of players",
+  "SupportSelect.header(type)": "type",
   "VillageItem.hostName.anonymous": "Anonymous",
   "VillageItem.label(comment)": "Comment",
   "VillageItem.label(hostName)": "Host name",
