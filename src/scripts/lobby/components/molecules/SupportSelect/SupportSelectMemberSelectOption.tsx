@@ -1,5 +1,5 @@
 import * as React from 'react'
-import MemberRoleList from '../MemberRoleList'
+import {ORDERED_ROLE_LIST} from '../../../constants/Role'
 import {getCastFromNumberOfPlayers} from '../../../util'
 import {lobby} from '../../../types'
 
@@ -13,12 +13,10 @@ interface Props {
 export default function SupportSelectMemberSelectOption(props: Props) {
   const label = `${props.numberOfPlayers}-${props.member}`
   const className = 'lo--support-select--member-select--option'
+  const cast = getCastFromNumberOfPlayers(props.numberOfPlayers)[props.member]
 
   return (
-    <label
-      className={className}
-      htmlFor={`member${label}`}
-    >
+    <>
       <div
         className={`${className}--checkbox`}
       >
@@ -31,14 +29,28 @@ export default function SupportSelectMemberSelectOption(props: Props) {
         />
       </div>
       <div
-        className={`${className}--text`}
+        className={`${className}--number`}
+        onClick={() => props.handleSelect(!props.checked)}
       >
-        {label}
+        {props.numberOfPlayers}
       </div>
-      <MemberRoleList
-        className={`${className}--role-list`}
-        role={getCastFromNumberOfPlayers(props.numberOfPlayers)[props.member]}
-      />
-    </label>
+      <div
+        className={`${className}--type`}
+        onClick={() => props.handleSelect(!props.checked)}
+      >
+        {props.member}
+      </div>
+      {
+        ORDERED_ROLE_LIST.map(item => (
+          <div
+            className={`${className}--role`}
+            key={item.id}
+            onClick={() => props.handleSelect(!props.checked)}
+          >
+            {cast[item.id]}
+          </div>
+        ))
+      }
+    </>
   )
 }

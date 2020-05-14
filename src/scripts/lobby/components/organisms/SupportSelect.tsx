@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Close from '../atoms/svg/Close'
 import {FormattedMessage} from 'react-intl'
+import SupportSelectMemberSelectHeader from '../molecules/SupportSelect/SupportSelectMemberSelectHeader'
 import SupportSelectMemberSelectOption from '../molecules/SupportSelect/SupportSelectMemberSelectOption'
 import {lobby} from '../../types'
 
@@ -51,6 +52,7 @@ export default function SupportSelect(props: Props) {
       <div
         className="lo--support-select--member-select"
       >
+        <SupportSelectMemberSelectHeader />
         {
           order.map(numberOfPlayers => {
             const handleSelect = props.handleSelect(numberOfPlayers)
