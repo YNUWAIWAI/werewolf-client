@@ -1,18 +1,20 @@
 .lo--support-select {
-  background: var(--color--background);
+  background: var(--color--background--modal);
   border: 1px solid var(--color--border);
   border-radius: 4px;
   bottom: 10%;
   color: var(--color--font);
   left: 10%;
+  min-height: calc(var(--min-height--window) * 0.8);
+  min-width: calc(var(--min-width--window) * 0.8);
   padding: 1rem;
-  position: fixed;
+  position: absolute;
   right: 10%;
   top: 10%;
   z-index: var(--z-index--modal);
 
   &--close {
-    background: var(--color--background);
+    background: var(--color--background--modal);
     border: none;
     fill: var(--color--line--close-button);
     height: 1.5rem;
@@ -39,79 +41,102 @@
   }
 
   &--member-select {
+    border: 1px solid var(--color--border);
+    display: grid;
+    grid-template-columns: fit-content(1rem) fit-content(2rem) fit-content(2rem) repeat(8, 1fr);
     height: calc(100% - 5rem);
     overflow: auto;
 
-    &--option {
-      display: grid;
-      grid-template: 'checkbox text list' / fit-content(1rem) 5rem auto;
-
-      &--checkbox {
-        align-items: center;
-        display: flex;
-        grid-area: checkbox;
-        justify-content: center;
+    &--header {
+      &--spacer {
+        background: var(--color--background--modal); 
+        border: 1px solid var(--color--border);
+        position: sticky;
+        top: 0;
+        z-index: var(--z-index--support-select--header);
       }
 
       &--text {
         align-items: center;
+        background: var(--color--background--modal);
+        border: 1px solid var(--color--border);
         display: flex;
-        font-size: 1.5rem;
-        grid-area: text;
         justify-content: center;
         padding: 0.5rem;
         position: sticky;
+        text-align: center;
+        top: 0;
+        z-index: var(--z-index--support-select--header);
       }
 
-      &--role-list {
+      &--role {
+        background: var(--color--background--modal);
+        border: 1px solid var(--color--border);
         display: grid;
-        grid-area: list;
-        grid-template-columns: repeat(8, 1fr);
-        margin-top: 0.5rem;
+        font-size: inherit;
+        grid-template: 1fr calc(var(--size--role-image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--role-image) - 24px) 12px 12px 1fr;
+        position: sticky;
+        top: 0;
+        z-index: var(--z-index--support-select--header);
 
-        &--item {
-          display: grid;
-          font-size: inherit;
-          grid-template: 1fr calc(var(--size--role-image) - 16px) 16px 15px 1fr / 1fr calc(var(--size--role-image) - 24px) 12px 12px 1fr;
-
-          &--caption {
-            font-size: 10px;
-            grid-column: 1 / 6;
-            grid-row: 4;
-            line-height: 1.5;
-            text-align: center;
-            word-break: keep-all;
-          }
-
-          &--image {
-            grid-column: 2 / 4;
-            grid-row: 2 / 4;
-            height: var(--size--role-image);
-            width: var(--size--role-image);
-            z-index: var(--z-index--member--image);
-          }
-
-          &--number {
-            color: var(--color--font--role-image);
-            font-size: 1rem;
-            grid-column: 4;
-            grid-row: 3;
-            line-height: 1;
-            z-index: var(--z-index--member--text);
-          }
-
-          &--times {
-            align-items: flex-end;
-            color: var(--color--font--role-image);
-            display: inline-flex;
-            font-size: 0.75rem;
-            grid-column: 3;
-            grid-row: 3;
-            justify-content: center;
-            line-height: 1;
-            z-index: var(--z-index--member--text);
-          }
+        &--caption {
+          font-size: 10px;
+          grid-column: 1 / 6;
+          grid-row: 4;
+          line-height: 1.5;
+          text-align: center;
+          word-break: keep-all;
         }
+
+        &--image {
+          grid-column: 2 / 4;
+          grid-row: 2 / 4;
+          height: var(--size--role-image);
+          width: var(--size--role-image);
+        }
+      }
+    }
+
+    &--option {
+      &--checkbox {
+        align-items: center;
+        border: 1px solid var(--color--border);
+        display: flex;
+        justify-content: center;
+        z-index: var(--z-index--support-select--option);
+      }
+
+      &--number {
+        align-items: center;
+        border: 1px solid var(--color--border);
+        display: flex;
+        font-size: 1.5rem;
+        justify-content: center;
+        padding: 0.5rem;
+        position: sticky;
+        z-index: var(--z-index--support-select--option);
+      }
+
+      &--type {
+        align-items: center;
+        border: 1px solid var(--color--border);
+        display: flex;
+        font-size: 1.5rem;
+        justify-content: center;
+        padding: 0.5rem;
+        position: sticky;
+        z-index: var(--z-index--support-select--option);
+      }
+
+      &--role {
+        align-items: center;
+        border: 1px solid var(--color--border);
+        display: flex;
+        font-size: 1.5rem;
+        justify-content: center;
+        padding: 0.5rem;
+        position: sticky;
+        z-index: var(--z-index--support-select--option);
       }
     }
   }
