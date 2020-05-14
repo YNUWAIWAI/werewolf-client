@@ -1,6 +1,6 @@
 import * as React from 'react'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
-import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckBox'
+import SelectAvatarTableBodyCheckbox from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
 import SelectAvatarTableBodyImage from '../atoms/SelectAvatarTable/SelectAvatarTableBodyImage'
 import SelectAvatarTableBodyLanguage from '../atoms/SelectAvatarTable/SelectAvatarTableBodyLanguage'
 import SelectAvatarTableBodySpacer from '../atoms/SelectAvatarTable/SelectAvatarTableBodySpacer'
@@ -39,11 +39,11 @@ export default function SelectHumanAvatarTableBody(props: Props) {
     ]
 
     return [
-      <SelectAvatarTableBodyCheckBox
+      <SelectAvatarTableBodyCheckbox
         additionalClassName={additionalClassName}
         checked={avatar.checked}
         handleClick={props.handleSelectAvatar(id)}
-        key={`checkBox${id}`}
+        key={`checkbox${id}`}
       />,
       <SelectAvatarTableBodyAvatarName
         additionalClassName={additionalClassName}
