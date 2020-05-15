@@ -28,6 +28,6 @@ test('handleClick', () => {
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item.check-box').simulate('click')
+  wrapper.find('.lo--select-avatar--table--body--item.checkbox').simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)
 })
