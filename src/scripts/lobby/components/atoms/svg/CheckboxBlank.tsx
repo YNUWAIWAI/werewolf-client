@@ -22,5 +22,3 @@ export default function CheckboxBlank(props: Props) {
     </svg>
   )
 }
-
-

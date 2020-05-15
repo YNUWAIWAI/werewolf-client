@@ -22,5 +22,3 @@ export default function CheckboxFilled(props: Props) {
     </svg>
   )
 }
-
-
