@@ -4,20 +4,21 @@ import CheckboxFilled from './svg/CheckboxFilled'
 
 interface Props {
   readonly checked: boolean
-  readonly className?: string
+  readonly disabled?: boolean
   readonly handleChange: (checked: boolean) => void
   readonly label?: string
   readonly labeledby?: string
+  readonly tabIndex: number
 }
 
 export default function Checkbox(props: Props) {
   const handleKeyPress = (event: React.KeyboardEvent<HTMLSpanElement>) => {
-    if (event.key === ' ') {
+    if (!props.disabled && event.key === ' ') {
       props.handleChange(!props.checked)
     }
   }
   const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
-    if (event.target === event.currentTarget) {
+    if (!props.disabled && event.target === event.currentTarget) {
       props.handleChange(!props.checked)
     }
   }
@@ -27,11 +28,11 @@ export default function Checkbox(props: Props) {
       aria-checked={props.checked}
       aria-label={props.label}
       aria-labelledby={props.labeledby}
-      className={props.className}
+      className={`checkbox ${props.disabled ? 'disabled' : ''}`}
       onClick={handleClick}
       onKeyPress={handleKeyPress}
       role="checkbox"
-      tabIndex={0}
+      tabIndex={props.tabIndex}
     >
       {
         props.checked ?
