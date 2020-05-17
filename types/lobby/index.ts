@@ -21,7 +21,8 @@ export const enum LobbyType {
 }
 export const enum ModalType {
   avatarImageSelect = 'avatarImageSelect',
-  confirmation = 'confirmation'
+  confirmation = 'confirmation',
+  supportSelect = 'supportSelect'
 }
 export const enum PingStatus {
   danger = 'danger',
@@ -43,6 +44,7 @@ export const enum Theme {
   light = 'light'
 }
 export type Village = Omit<BuildVillage, 'token' | 'type'>
+export type NumberOfPlayers = '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15'
 export interface Cast {
   [numberOfPlayers: string]: {
     [member in Member]: BuildVillage['roleSetting']

@@ -11,6 +11,7 @@
   --color--background--menu--disabled: var(--color--neutral40);
   --color--background--menu--focus: var(--color--neutral20);
   --color--background--menu--hover: var(--color--neutral30);
+  --color--background--modal: var(--color--neutral0);
   --color--danger: rgb(244, 67, 54);
   --color--font--black: hsl(0, 0%, 10%);
   --color--font--gray: hsl(0, 0%, 50%);

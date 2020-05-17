@@ -6,6 +6,7 @@ import {
   CreateNewRobotAvatar,
   SelectHumanAvatar,
   SelectRobotAvatar,
+  SupportSelect,
   WaitingPage
 } from '../actions'
 import {lobby} from '../types'
@@ -20,8 +21,10 @@ type Action =
   | Confirmation.SelectYes
   | CreateNewHumanAvatar.ShowAvatarImageSelect
   | CreateNewRobotAvatar.ShowAvatarImageSelect
+  | CreateNewRobotAvatar.ShowSupportSelect
   | SelectHumanAvatar.ShowAvatarImageSelect
   | SelectRobotAvatar.ShowAvatarImageSelect
+  | SupportSelect.CloseModal
   | WaitingPage.ConfirmKickOutPlayer
 
 export const initialState: State = {
@@ -48,6 +51,16 @@ const modal = (state: State = initialState, action: Action): State => {
       return {
         type: lobby.ModalType.avatarImageSelect,
         visible: true
+      }
+    case ActionTypes.CreateNewRobotAvatar.SHOW_SUPPORT_SELECT:
+      return {
+        type: lobby.ModalType.supportSelect,
+        visible: true
+      }
+    case ActionTypes.SupportSelect.CLOSE_MODAL:
+      return {
+        type: lobby.ModalType.supportSelect,
+        visible: false
       }
     case ActionTypes.WaitingPage.CONFIRM_KICK_OUT_PLAYER:
       return {

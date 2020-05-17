@@ -19,6 +19,9 @@ export declare namespace CreateNewRobotAvatar {
     image: string
     type: ActionTypes.CreateNewRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
   }
+  type ShowSupportSelect = {
+    type: ActionTypes.CreateNewRobotAvatar.SHOW_SUPPORT_SELECT
+  }
 }
 
 const changeAutomation = (automation: lobby.Automation): CreateNewRobotAvatar.ChangeAutomation => ({
@@ -37,10 +40,14 @@ const showAvatarImageSelect = (image: string): CreateNewRobotAvatar.ShowAvatarIm
   image,
   type: ActionTypes.CreateNewRobotAvatar.SHOW_AVATAR_IMAGE_SELECT
 })
+const showSupportSelect = (): CreateNewRobotAvatar.ShowSupportSelect => ({
+  type: ActionTypes.CreateNewRobotAvatar.SHOW_SUPPORT_SELECT
+})
 
 export const createNewRobotAvatar = {
   changeAutomation,
   changeAvatarLanguage,
   changeAvatarName,
-  showAvatarImageSelect
+  showAvatarImageSelect,
+  showSupportSelect
 }

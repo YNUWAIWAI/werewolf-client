@@ -13,6 +13,7 @@ export * from './selectHumanAvatar'
 export * from './selectRobotAvatar'
 export * from './settings'
 export * from './socket'
+export * from './supportSelect'
 export * from './waitingPage'
 
 export type ChangeLobby = {

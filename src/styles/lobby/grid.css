@@ -5,5 +5,8 @@
     'header avatar'
     'main aside';
   grid-template-columns: minmax(600px, 2fr) minmax(300px, 1fr);
+  height: 100vh;
   margin: 1rem;
+  min-height: var(--min-height--window);
+  min-width: var(--min-width--window);
 }

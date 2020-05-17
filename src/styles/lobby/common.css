@@ -23,6 +23,8 @@
   --z-index--kick-out: 2;
   --z-index--obfucator: 3;
   --z-index--modal: 4;
+  --z-index--support-select--header: 6;
+  --z-index--support-select--option: 5;
   --z-index--member--image: 0;
   --z-index--member--text: 1;
   --z-index--village--select: 2;

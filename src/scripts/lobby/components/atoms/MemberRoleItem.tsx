@@ -5,7 +5,7 @@ interface Props {
   readonly className: string
   readonly id: string
   readonly image: string
-  readonly numberOfPlayers: number
+  readonly numberOfPlayers?: number
 }
 
 export default function MemberRoleItem(props: Props) {
@@ -17,16 +17,22 @@ export default function MemberRoleItem(props: Props) {
         className={`${props.className}--image`}
         src={props.image}
       />
-      <span
-        className={`${props.className}--times`}
-      >
-        {times}
-      </span>
-      <span
-        className={`${props.className}--number`}
-      >
-        {props.numberOfPlayers}
-      </span>
+      {
+        typeof props.numberOfPlayers === 'number' ?
+          <>
+            <span
+              className={`${props.className}--times`}
+            >
+              {times}
+            </span>
+            <span
+              className={`${props.className}--number`}
+            >
+              {props.numberOfPlayers}
+            </span>
+          </> :
+          null
+      }
       <span
         className={`${props.className}--caption`}
       >
