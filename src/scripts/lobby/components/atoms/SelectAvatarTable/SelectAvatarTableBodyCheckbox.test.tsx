@@ -1,5 +1,5 @@
 import * as React from 'react'
-import SelectAvatarTableBodyCheckBox from './SelectAvatarTableBodyCheckBox'
+import SelectAvatarTableBodyCheckbox from './SelectAvatarTableBodyCheckbox'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'
@@ -9,7 +9,7 @@ const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Langua
 test('render', () => {
   const handleClick = jest.fn()
   const wrapper = mountWithIntl(
-    <SelectAvatarTableBodyCheckBox
+    <SelectAvatarTableBodyCheckbox
       additionalClassName={[]}
       checked
       handleClick={handleClick}
@@ -21,13 +21,13 @@ test('render', () => {
 test('handleClick', () => {
   const handleClick = jest.fn()
   const wrapper = mountWithIntl(
-    <SelectAvatarTableBodyCheckBox
+    <SelectAvatarTableBodyCheckbox
       additionalClassName={[]}
       checked
       handleClick={handleClick}
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item.check-box').simulate('click')
+  wrapper.find('.lo--select-avatar--table--body--item.checkbox').simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)
 })

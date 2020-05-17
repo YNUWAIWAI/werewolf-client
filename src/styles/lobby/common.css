@@ -4,6 +4,7 @@
 
   /* focus-ring */
   --box-shadow--focus-ring: 0 0 3px 2px var(--color--primary);
+  --box-shadow--focus-ring--checkbox: inset 0 0 1px 1px var(--color--primary);
 
   /* color */
   --color--active: var(--color--neutral40);
@@ -25,6 +26,10 @@
   --z-index--member--image: 0;
   --z-index--member--text: 1;
   --z-index--village--select: 2;
+
+  /* checkbox */
+  --height--checkbox: 24px;
+  --width--checkbox: 24px;
 
   /* properties */
   color: var(--color--font);

@@ -2,7 +2,7 @@ import * as React from 'react'
 import SelectHumanAvatarTableBody, {StateProps} from './SelectHumanAvatarTableBody'
 import {ImagePath} from '../../constants/ImagePath'
 import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
-import SelectAvatarTableBodyCheckBox from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckBox'
+import SelectAvatarTableBodyCheckbox from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
@@ -43,7 +43,7 @@ describe('render', () => {
     )
 
     expect(wrapper.find(SelectAvatarTableBodyAvatarName)).toHaveLength(1)
-    expect(wrapper.find(SelectAvatarTableBodyCheckBox)).toHaveLength(1)
+    expect(wrapper.find(SelectAvatarTableBodyCheckbox)).toHaveLength(1)
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('2 avatar', () => {
@@ -87,7 +87,7 @@ describe('render', () => {
     )
 
     expect(wrapper.find(SelectAvatarTableBodyAvatarName)).toHaveLength(2)
-    expect(wrapper.find(SelectAvatarTableBodyCheckBox)).toHaveLength(2)
+    expect(wrapper.find(SelectAvatarTableBodyCheckbox)).toHaveLength(2)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
