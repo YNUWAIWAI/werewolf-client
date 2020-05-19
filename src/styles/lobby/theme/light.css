@@ -55,6 +55,8 @@
   --color--border: var(--color--neutral90);
   --color--border--input: var(--color--neutral20);
   --color--border--settings--bucket: var(--color--neutral80);
+  --color--checkbox: var(--color--neutral90);
+  --color--checkbox--disabled: var(--color--neutral50);
   --color--font: var(--color--font--black);
   --color--font--button: var(--color--font--black);
   --color--font--button--disabled: var(--color--font--gray);
