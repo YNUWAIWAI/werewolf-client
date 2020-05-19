@@ -2,7 +2,12 @@
   border-radius: 4px;
   fill: var(--color--checkbox);
   height: var(--height--checkbox);
+  margin: 0 1rem 0 0;
   width: var(--width--checkbox);
+
+  &[aria-disabled] {
+    fill: var(--color--checkbox--disabled);
+  }
 
   &:focus {
     box-shadow: var(--box-shadow--focus-ring--checkbox);
