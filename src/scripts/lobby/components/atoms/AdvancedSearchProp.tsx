@@ -1,7 +1,9 @@
 import * as React from 'react'
+import {Checkbox} from '../atoms/Checkbox'
 import {FormattedMessage} from 'react-intl'
 
 interface Props {
+  readonly checkboxFixed?: boolean
   readonly checked: boolean
   readonly handleChange: (checked: boolean) => void
   readonly name: string
@@ -10,31 +12,35 @@ interface Props {
 }
 
 export default function AdvancedSearchProp(props: Props) {
-  const handleChange = () => {
-    if (props.valid) {
+  const ref = React.createRef<HTMLSpanElement>()
+  const disabled = !props.valid || props.checkboxFixed
+  const handleClick = () => {
+    if (!disabled && ref.current) {
+      ref.current.focus()
       props.handleChange(!props.checked)
     }
   }
 
   return (
-    <label
+    <div
       className="lo--advanced-search--prop"
-      htmlFor={props.name}
+      onClick={handleClick}
     >
-      <input
+      <Checkbox
         checked={props.checked}
-        disabled={!props.valid}
-        id={props.name}
-        onChange={handleChange}
-        readOnly
-        tabIndex={props.navigatable ? 0 : -1}
-        type="checkbox"
+        disabled={!props.valid || props.checkboxFixed}
+        handleChange={props.handleChange}
+        labelledby={props.name}
+        navigatable={props.navigatable}
+        ref={ref}
       />
-      <span>
+      <span
+        id={props.name}
+      >
         <FormattedMessage
           id={`AdvancedSearch.label(${props.name})`}
         />
       </span>
-    </label>
+    </div>
   )
 }

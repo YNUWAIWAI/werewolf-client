@@ -4,6 +4,7 @@
 @import './avatar';
 @import './avatarImageSelect';
 @import './avatarList';
+@import './checkbox';
 @import './common';
 @import './compactMenu';
 @import './confirmation';

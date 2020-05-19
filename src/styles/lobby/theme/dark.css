@@ -12,7 +12,6 @@
   --color--background--menu--focus: hsla(0, 0%, 20%, 0.5);
   --color--background--menu--hover: hsla(0, 0%, 30%, 0.5);
   --color--background--modal: hsla(0, 0%, 0%);
-  --color--checkbox: hsla(0, 0%, 90%);
   --color--danger: rgb(239, 83, 80);
   --color--font--black: hsl(0, 0%, 10%);
   --color--font--gray: hsl(0, 0%, 50%);
@@ -56,6 +55,8 @@
   --color--border: var(--color--neutral80);
   --color--border--input: var(--color--neutral20);
   --color--border--settings--bucket: var(--color--neutral80);
+  --color--checkbox: var(--color--neutral90);
+  --color--checkbox--disabled: var(--color--neutral60);
   --color--font: var(--color--font--white);
   --color--font--button: var(--color--font--white);
   --color--font--button--disabled: var(--color--font--gray);

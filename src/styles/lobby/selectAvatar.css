@@ -128,20 +128,10 @@
       }
 
       &.checkbox {
-        left: 0;
         padding: 0;
-        position: sticky;
 
-        &--checkbox {
-          border-radius: 4px;
-          fill: var(--color--checkbox);
-          height: var(--height--checkbox);
-          width: var(--width--checkbox);
-
-          &:focus {
-            box-shadow: var(--box-shadow--focus-ring--checkbox);
-            outline: none;
-          }
+        & > .lo--checkbox {
+          margin: 0;
         }
       }
 

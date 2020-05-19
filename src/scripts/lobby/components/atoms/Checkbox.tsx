@@ -4,20 +4,23 @@ import CheckboxFilled from './svg/CheckboxFilled'
 
 interface Props {
   readonly checked: boolean
-  readonly className?: string
+  readonly disabled?: boolean
   readonly handleChange: (checked: boolean) => void
   readonly label?: string
-  readonly labeledby?: string
+  readonly labelledby?: string
+  readonly navigatable: boolean
 }
 
-export default function Checkbox(props: Props) {
+export const Checkbox = React.forwardRef((props: Props, ref: React.Ref<HTMLSpanElement>) => {
   const handleKeyPress = (event: React.KeyboardEvent<HTMLSpanElement>) => {
-    if (event.key === ' ') {
+    if (!props.disabled && event.key === ' ') {
+      event.preventDefault()
       props.handleChange(!props.checked)
     }
   }
   const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
-    if (event.target === event.currentTarget) {
+    event.stopPropagation()
+    if (!props.disabled) {
       props.handleChange(!props.checked)
     }
   }
@@ -25,13 +28,14 @@ export default function Checkbox(props: Props) {
   return (
     <span
       aria-checked={props.checked}
-      aria-label={props.label}
-      aria-labelledby={props.labeledby}
-      className={props.className}
+      aria-disabled={props.disabled}
+      aria-labelledby={props.labelledby}
+      className="lo--checkbox"
       onClick={handleClick}
       onKeyPress={handleKeyPress}
+      ref={ref}
       role="checkbox"
-      tabIndex={0}
+      tabIndex={props.navigatable && !props.disabled ? 0 : -1}
     >
       {
         props.checked ?
@@ -40,4 +44,6 @@ export default function Checkbox(props: Props) {
       }
     </span>
   )
-}
+})
+
+Checkbox.displayName = 'Checkbox'

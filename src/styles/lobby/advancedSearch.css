@@ -50,9 +50,5 @@
     display: inline-flex;
     grid-column: 1 / 2;
     padding: 1rem 1rem 1rem 0;
-
-    & > input {
-      margin: 0 1rem;
-    }
   }
 }

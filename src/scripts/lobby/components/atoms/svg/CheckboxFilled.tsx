@@ -1,13 +1,9 @@
 import * as React from 'react'
 
-interface Props {
-  readonly className?: string
-}
-
-export default function CheckboxFilled(props: Props) {
+export default function CheckboxFilled() {
   return (
     <svg
-      className={`${props.className || ''} chackbox filled`}
+      className="checkbox filled"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"

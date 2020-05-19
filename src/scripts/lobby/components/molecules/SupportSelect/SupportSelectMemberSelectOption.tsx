@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {Checkbox} from '../../atoms/Checkbox'
 import {ORDERED_ROLE_LIST} from '../../../constants/Role'
 import {getCastFromNumberOfPlayers} from '../../../util'
 import {lobby} from '../../../types'
@@ -11,32 +12,40 @@ interface Props {
 }
 
 export default function SupportSelectMemberSelectOption(props: Props) {
+  const ref = React.createRef<HTMLSpanElement>()
   const label = `${props.numberOfPlayers}-${props.member}`
   const className = 'lo--support-select--member-select--option'
   const cast = getCastFromNumberOfPlayers(props.numberOfPlayers)[props.member]
+  const handleSelect = () => {
+    if (ref.current) {
+      ref.current.focus()
+      props.handleSelect(!props.checked)
+    }
+  }
 
   return (
     <>
       <div
         className={`${className}--checkbox`}
+        onClick={handleSelect}
       >
-        <input
+        <Checkbox
           checked={props.checked}
-          id={`member${label}`}
-          name="member"
-          onChange={() => props.handleSelect(!props.checked)}
-          type="checkbox"
+          handleChange={handleSelect}
+          label={`member${label}`}
+          navigatable
+          ref={ref}
         />
       </div>
       <div
         className={`${className}--number`}
-        onClick={() => props.handleSelect(!props.checked)}
+        onClick={handleSelect}
       >
         {props.numberOfPlayers}
       </div>
       <div
         className={`${className}--type`}
-        onClick={() => props.handleSelect(!props.checked)}
+        onClick={handleSelect}
       >
         {props.member}
       </div>
@@ -45,7 +54,7 @@ export default function SupportSelectMemberSelectOption(props: Props) {
           <div
             className={`${className}--role`}
             key={item.id}
-            onClick={() => props.handleSelect(!props.checked)}
+            onClick={handleSelect}
           >
             {cast[item.id]}
           </div>
