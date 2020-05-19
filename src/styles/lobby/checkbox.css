@@ -1,0 +1,15 @@
+.lo--checkbox {
+  border-radius: 4px;
+  fill: var(--color--checkbox);
+  height: var(--height--checkbox);
+  width: var(--width--checkbox);
+
+  &:focus {
+    box-shadow: var(--box-shadow--focus-ring--checkbox);
+    outline: none;
+  }
+
+  & > .checkbox {
+    display: block;
+  }
+}
