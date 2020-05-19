@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Checkbox from './Checkbox'
+import {Checkbox} from './Checkbox'
 import {shallow} from 'enzyme'
 
 describe('render', () => {
@@ -10,7 +10,7 @@ describe('render', () => {
         <Checkbox
           checked
           handleChange={handleChange}
-          tabIndex={0}
+          navigatable
         />
       )
 
@@ -22,7 +22,7 @@ describe('render', () => {
         <Checkbox
           checked={false}
           handleChange={handleChange}
-          tabIndex={0}
+          navigatable
         />
       )
 
@@ -36,11 +36,11 @@ describe('render', () => {
         checked
         disabled
         handleChange={handleChange}
-        tabIndex={0}
+        navigatable
       />
     )
 
-    expect(wrapper.find('.checkbox').hasClass('disabled')).toBe(true)
+    expect(wrapper.find('.lo--checkbox').hasClass('disabled')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
@@ -51,7 +51,7 @@ describe('handleKeyPress', () => {
       <Checkbox
         checked
         handleChange={handleChange}
-        tabIndex={0}
+        navigatable
       />
     )
 
@@ -66,7 +66,7 @@ describe('handleKeyPress', () => {
       <Checkbox
         checked
         handleChange={handleChange}
-        tabIndex={0}
+        navigatable
       />
     )
 
@@ -82,7 +82,7 @@ describe('handleKeyPress', () => {
         checked
         disabled
         handleChange={handleChange}
-        tabIndex={0}
+        navigatable
       />
     )
 
@@ -93,40 +93,18 @@ describe('handleKeyPress', () => {
   })
 })
 describe('handleClick', () => {
-  test('event.target === event.currentTarget', () => {
+  test('enabled', () => {
     const handleChange = jest.fn()
     const wrapper = shallow(
       <Checkbox
         checked
         handleChange={handleChange}
-        tabIndex={0}
+        navigatable
       />
     )
-    const currentTarget = {}
 
-    wrapper.find('.checkbox').simulate('click', {
-      currentTarget,
-      target: currentTarget
-    })
+    wrapper.find('.checkbox').simulate('click')
     expect(handleChange).toHaveBeenCalled()
-  })
-  test('event.target !== event.currentTarget', () => {
-    const handleChange = jest.fn()
-    const wrapper = shallow(
-      <Checkbox
-        checked
-        handleChange={handleChange}
-        tabIndex={0}
-      />
-    )
-    const currentTarget = {}
-    const target = {}
-
-    wrapper.find('.checkbox').simulate('click', {
-      currentTarget,
-      target
-    })
-    expect(handleChange).not.toHaveBeenCalled()
   })
   test('disabled', () => {
     const handleChange = jest.fn()
@@ -135,15 +113,11 @@ describe('handleClick', () => {
         checked
         disabled
         handleChange={handleChange}
-        tabIndex={0}
+        navigatable
       />
     )
-    const currentTarget = {}
 
-    wrapper.find('.checkbox').simulate('click', {
-      currentTarget,
-      target: currentTarget
-    })
+    wrapper.find('.checkbox').simulate('click')
     expect(handleChange).not.toHaveBeenCalled()
   })
 })
