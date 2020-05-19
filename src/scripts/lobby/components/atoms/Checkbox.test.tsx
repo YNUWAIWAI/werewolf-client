@@ -55,7 +55,7 @@ describe('handleKeyPress', () => {
       />
     )
 
-    wrapper.find('.checkbox').simulate('keypress', {
+    wrapper.find('.lo--checkbox').simulate('keypress', {
       key: ' '
     })
     expect(handleChange).toHaveBeenCalled()
@@ -70,7 +70,7 @@ describe('handleKeyPress', () => {
       />
     )
 
-    wrapper.find('.checkbox').simulate('keypress', {
+    wrapper.find('.lo--checkbox').simulate('keypress', {
       key: 'Enter'
     })
     expect(handleChange).not.toHaveBeenCalled()
@@ -86,7 +86,7 @@ describe('handleKeyPress', () => {
       />
     )
 
-    wrapper.find('.checkbox').simulate('keypress', {
+    wrapper.find('.lo--checkbox').simulate('keypress', {
       key: ' '
     })
     expect(handleChange).not.toHaveBeenCalled()
@@ -103,7 +103,7 @@ describe('handleClick', () => {
       />
     )
 
-    wrapper.find('.checkbox').simulate('click')
+    wrapper.find('.lo--checkbox').simulate('click')
     expect(handleChange).toHaveBeenCalled()
   })
   test('disabled', () => {
@@ -117,7 +117,7 @@ describe('handleClick', () => {
       />
     )
 
-    wrapper.find('.checkbox').simulate('click')
+    wrapper.find('.lo--checkbox').simulate('click')
     expect(handleChange).not.toHaveBeenCalled()
   })
 })
