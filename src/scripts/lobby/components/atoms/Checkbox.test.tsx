@@ -40,13 +40,13 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.find('.lo--checkbox').hasClass('disabled')).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
 describe('handleKeyPress', () => {
   test('press "Space"', () => {
     const handleChange = jest.fn()
+    const preventDefault = jest.fn()
     const wrapper = shallow(
       <Checkbox
         checked
@@ -56,12 +56,15 @@ describe('handleKeyPress', () => {
     )
 
     wrapper.find('.lo--checkbox').simulate('keypress', {
-      key: ' '
+      key: ' ',
+      preventDefault
     })
     expect(handleChange).toHaveBeenCalled()
+    expect(preventDefault).toHaveBeenCalled()
   })
   test('press "Enter"', () => {
     const handleChange = jest.fn()
+    const preventDefault = jest.fn()
     const wrapper = shallow(
       <Checkbox
         checked
@@ -71,12 +74,15 @@ describe('handleKeyPress', () => {
     )
 
     wrapper.find('.lo--checkbox').simulate('keypress', {
-      key: 'Enter'
+      key: 'Enter',
+      preventDefault
     })
     expect(handleChange).not.toHaveBeenCalled()
+    expect(preventDefault).not.toHaveBeenCalled()
   })
   test('disabled', () => {
     const handleChange = jest.fn()
+    const preventDefault = jest.fn()
     const wrapper = shallow(
       <Checkbox
         checked
@@ -87,14 +93,17 @@ describe('handleKeyPress', () => {
     )
 
     wrapper.find('.lo--checkbox').simulate('keypress', {
-      key: ' '
+      key: ' ',
+      preventDefault
     })
     expect(handleChange).not.toHaveBeenCalled()
+    expect(preventDefault).not.toHaveBeenCalled()
   })
 })
 describe('handleClick', () => {
   test('enabled', () => {
     const handleChange = jest.fn()
+    const stopPropagation = jest.fn()
     const wrapper = shallow(
       <Checkbox
         checked
@@ -103,11 +112,15 @@ describe('handleClick', () => {
       />
     )
 
-    wrapper.find('.lo--checkbox').simulate('click')
+    wrapper.find('.lo--checkbox').simulate('click', {
+      stopPropagation
+    })
     expect(handleChange).toHaveBeenCalled()
+    expect(stopPropagation).toHaveBeenCalled()
   })
   test('disabled', () => {
     const handleChange = jest.fn()
+    const stopPropagation = jest.fn()
     const wrapper = shallow(
       <Checkbox
         checked
@@ -117,7 +130,10 @@ describe('handleClick', () => {
       />
     )
 
-    wrapper.find('.lo--checkbox').simulate('click')
+    wrapper.find('.lo--checkbox').simulate('click', {
+      stopPropagation
+    })
     expect(handleChange).not.toHaveBeenCalled()
+    expect(stopPropagation).toHaveBeenCalled()
   })
 })
