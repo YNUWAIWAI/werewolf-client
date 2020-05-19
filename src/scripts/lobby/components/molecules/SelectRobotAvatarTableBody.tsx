@@ -70,6 +70,7 @@ export default function SelectRobotAvatarTableBody(props: Props) {
           additionalClassName={additionalClassName}
           checked={avatar.checked}
           handleClick={props.handleSelectAvatar(id)}
+          navigatable={props.navigatable}
         />
         <SelectAvatarTableBodyAvatarName
           additionalClassName={additionalClassName}

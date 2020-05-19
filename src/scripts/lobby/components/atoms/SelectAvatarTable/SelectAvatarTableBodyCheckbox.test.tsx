@@ -13,6 +13,7 @@ test('render', () => {
       additionalClassName={[]}
       checked
       handleClick={handleClick}
+      navigatable
     />
   )
 
@@ -25,6 +26,7 @@ test('handleClick', () => {
       additionalClassName={[]}
       checked
       handleClick={handleClick}
+      navigatable
     />
   )
 

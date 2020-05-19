@@ -44,6 +44,7 @@ export default function SelectHumanAvatarTableBody(props: Props) {
         checked={avatar.checked}
         handleClick={props.handleSelectAvatar(id)}
         key={`checkbox${id}`}
+        navigatable={props.navigatable}
       />,
       <SelectAvatarTableBodyAvatarName
         additionalClassName={additionalClassName}
