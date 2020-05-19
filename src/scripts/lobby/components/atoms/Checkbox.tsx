@@ -18,7 +18,8 @@ export const Checkbox = React.forwardRef((props: Props, ref: React.Ref<HTMLSpanE
       props.handleChange(!props.checked)
     }
   }
-  const handleClick = () => {
+  const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+    event.stopPropagation()
     if (!props.disabled) {
       props.handleChange(!props.checked)
     }
