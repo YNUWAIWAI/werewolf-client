@@ -20,8 +20,40 @@ test('render', () => {
 
   expect(wrapper.html()).toMatchSnapshot()
 })
-describe('onChange', () => {
-  test('valid', () => {
+describe('handleClick', () => {
+  test('valid === true && checkboxFixed === true', () => {
+    const handleChange = jest.fn()
+    const wrapper = mountWithIntl(
+      <AdvancedSearchProp
+        checkboxFixed
+        checked
+        handleChange={handleChange}
+        name="villageName"
+        navigatable
+        valid
+      />
+    )
+
+    wrapper.find('.lo--advanced-search--prop').simulate('click')
+    expect(handleChange).not.toHaveBeenCalled()
+  })
+  test('valid === false && checkboxFixed === true', () => {
+    const handleChange = jest.fn()
+    const wrapper = mountWithIntl(
+      <AdvancedSearchProp
+        checkboxFixed
+        checked
+        handleChange={handleChange}
+        name="villageName"
+        navigatable
+        valid={false}
+      />
+    )
+
+    wrapper.find('.lo--advanced-search--prop').simulate('click')
+    expect(handleChange).not.toHaveBeenCalled()
+  })
+  test('valid === true && checkboxFixed === false', () => {
     const handleChange = jest.fn()
     const wrapper = mountWithIntl(
       <AdvancedSearchProp
@@ -33,11 +65,10 @@ describe('onChange', () => {
       />
     )
 
-    wrapper.find('input').simulate('change')
-    expect(handleChange).toHaveBeenCalledTimes(1)
+    wrapper.find('.lo--advanced-search--prop').simulate('click')
     expect(handleChange).toHaveBeenCalledWith(false)
   })
-  test('invalid', () => {
+  test('valid === false && checkboxFixed === false', () => {
     const handleChange = jest.fn()
     const wrapper = mountWithIntl(
       <AdvancedSearchProp
@@ -49,7 +80,7 @@ describe('onChange', () => {
       />
     )
 
-    wrapper.find('input').simulate('change')
-    expect(handleChange).toHaveBeenCalledTimes(0)
+    wrapper.find('.lo--advanced-search--prop').simulate('click')
+    expect(handleChange).not.toHaveBeenCalled()
   })
 })
