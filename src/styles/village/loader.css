@@ -1,3 +1,4 @@
 .loader.animation {
+  /* stylelint-disable-next-line no-unknown-animations */
   animation: 1s linear loader infinite;
 }
