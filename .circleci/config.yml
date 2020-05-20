@@ -70,6 +70,24 @@ jobs:
           path: integration/village/__image_snapshots__
           destination: village
 
+  deploy-storybook:
+    docker:
+      - image: circleci/node:12-browsers
+        environment:
+          TZ: Asia/Tokyo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn deploy-storybook --ci
+
   eslint:
     docker:
       - image: circleci/node:12-browsers
