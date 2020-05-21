@@ -44,7 +44,7 @@ test('onChange valid', () => {
   expect(handleChange).toHaveBeenCalledWith(true)
   expect(handleChangeInner).toHaveBeenCalledTimes(1)
   expect(handleChangeInner).toHaveBeenCalledWith('example@example.co.jp')
-  expect(wrapper.state().value).toBe('example@example.co.jp')
+  expect(wrapper.find('input').props().value).toBe('example@example.co.jp')
 })
 test('onChange invalid', () => {
   const handleChangeInner = jest.fn()
@@ -70,5 +70,5 @@ test('onChange invalid', () => {
   expect(handleChange).toHaveBeenCalledWith(false)
   expect(handleChangeInner).toHaveBeenCalledTimes(1)
   expect(handleChangeInner).toHaveBeenCalledWith('text')
-  expect(wrapper.state().value).toBe('text')
+  expect(wrapper.find('input').props().value).toBe('text')
 })
