@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
 import * as React from 'react'
 import {Character} from '../../src/scripts/village/constants/Character'

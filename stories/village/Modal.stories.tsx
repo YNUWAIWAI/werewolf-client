@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
 import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'

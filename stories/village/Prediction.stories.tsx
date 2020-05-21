@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react'
 import Prediction, {Props} from '../../src/scripts/village/components/organisms/Prediction'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'

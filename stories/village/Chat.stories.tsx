@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react'
 import Chat, {Props} from '../../src/scripts/village/components/organisms/Chat'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'
