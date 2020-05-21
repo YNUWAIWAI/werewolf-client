@@ -6,43 +6,25 @@ export interface Props {
   readonly id: string
   readonly navigatable: boolean
 }
-export interface State {
-  value: string
-}
 
-export default class PasswordInput extends React.Component<Props, State> {
-  public constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      value: ''
-    }
+export default function PasswordInput(props: Props) {
+  const [value, setValue] = React.useState('')
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value)
+    props.handleChange(event.target.validity.valid)(event.target.value)
   }
 
-  public shouldComponentUpdate() {
-    return true
-  }
-
-  public handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({
-      value: event.target.value
-    })
-    this.props.handleChange(event.target.validity.valid)(event.target.value)
-  }
-
-  public render() {
-    return (
-      <input
-        className={this.props.className}
-        id={this.props.id}
-        maxLength={128}
-        minLength={8}
-        onChange={event => this.handleChange(event)}
-        required
-        tabIndex={this.props.navigatable ? 0 : -1}
-        type="password"
-        value={this.state.value}
-      />
-    )
-  }
+  return (
+    <input
+      className={props.className}
+      id={props.id}
+      maxLength={128}
+      minLength={8}
+      onChange={handleChange}
+      required
+      tabIndex={props.navigatable ? 0 : -1}
+      type="password"
+      value={value}
+    />
+  )
 }

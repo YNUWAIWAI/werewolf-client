@@ -1,15 +1,12 @@
 import * as React from 'react'
-import PasswordInput, {
-  Props,
-  State
-} from './PasswordInput'
+import PasswordInput from './PasswordInput'
 import {shallow} from 'enzyme'
 
 describe('<PasswordInput />', () => {
   test('render', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow<Props, State>(
+    const wrapper = shallow(
       <PasswordInput
         className="className"
         handleChange={handleChange}
@@ -19,13 +16,13 @@ describe('<PasswordInput />', () => {
     )
 
     expect(wrapper.find('input')).toHaveLength(1)
-    expect(wrapper.state().value).toBe('')
+    expect(wrapper.find('input').props().value).toBe('')
     expect(handleChange).toHaveBeenCalledTimes(0)
   })
   test('onChange valid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow<Props, State>(
+    const wrapper = shallow(
       <PasswordInput
         className="className"
         handleChange={handleChange}
@@ -46,12 +43,12 @@ describe('<PasswordInput />', () => {
     expect(handleChange).toHaveBeenCalledWith(true)
     expect(handleChangeInner).toHaveBeenCalledTimes(1)
     expect(handleChangeInner).toHaveBeenCalledWith('userPassword')
-    expect(wrapper.state().value).toBe('userPassword')
+    expect(wrapper.find('input').props().value).toBe('userPassword')
   })
   test('onChange invalid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow<Props, State>(
+    const wrapper = shallow(
       <PasswordInput
         className="className"
         handleChange={handleChange}
@@ -72,6 +69,6 @@ describe('<PasswordInput />', () => {
     expect(handleChange).toHaveBeenCalledWith(false)
     expect(handleChangeInner).toHaveBeenCalledTimes(1)
     expect(handleChangeInner).toHaveBeenCalledWith('text')
-    expect(wrapper.state().value).toBe('text')
+    expect(wrapper.find('input').props().value).toBe('text')
   })
 })
