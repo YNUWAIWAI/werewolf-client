@@ -10,7 +10,7 @@ const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))
 
 describe('render', () => {
   test('email', () => {
-    const wrapper = mountWithIntl<TextField>(
+    const wrapper = mountWithIntl(
       <TextField
         autoFocus
         name="email"
@@ -23,7 +23,7 @@ describe('render', () => {
     expect(wrapper.find('.la--input').props().type).toBe('text')
   })
   test('name', () => {
-    const wrapper = mountWithIntl<TextField>(
+    const wrapper = mountWithIntl(
       <TextField
         autoFocus
         name="name"
@@ -36,7 +36,7 @@ describe('render', () => {
     expect(wrapper.find('.la--input').props().type).toBe('text')
   })
   test('password', () => {
-    const wrapper = mountWithIntl<TextField>(
+    const wrapper = mountWithIntl(
       <TextField
         autoFocus
         name="password"
@@ -50,7 +50,7 @@ describe('render', () => {
   })
 })
 test('handleTextChange', () => {
-  const wrapper = mountWithIntl<TextField>(
+  const wrapper = mountWithIntl(
     <TextField
       autoFocus
       name="email"
@@ -58,11 +58,11 @@ test('handleTextChange', () => {
     />
   )
 
-  expect(wrapper.state().text).toBe('')
+  expect(wrapper.find('.la--input').props().value).toBe('')
   wrapper.find('.la--input').simulate('change', {
     target: {
       value: 'text'
     }
   })
-  expect(wrapper.state().text).toBe('text')
+  expect(wrapper.find('.la--input').props().value).toBe('text')
 })

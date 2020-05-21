@@ -6,54 +6,37 @@ interface Props {
   name: 'email' | 'name' | 'password'
   type: 'login' | 'signup'
 }
-interface State {
-  text: string
-}
 
-export default class TextField extends React.Component<Props, State> {
-  public constructor(props: Props) {
-    super(props)
-    this.state = {
-      text: ''
-    }
+export default function TextField(props: Props) {
+  const [text, setText] = React.useState('')
+  const handleTextChange = (value: string) => {
+    setText(value)
   }
 
-  public shouldComponentUpdate() {
-    return true
-  }
-
-  public handleTextChange(text: string) {
-    this.setState({
-      text
-    })
-  }
-
-  public render() {
-    return (
-      <div className="la--field">
-        <label
-          className="la--label"
-          htmlFor={`${this.props.type}-${this.props.name}`}
-        >
-          <FormattedMessage
-            id={`${this.props.type}-label-${this.props.name}`}
-          />
-        </label>
-        <input
-          autoComplete="off"
-          autoFocus={this.props.autoFocus}
-          className="la--input"
-          id={`${this.props.type}-${this.props.name}`}
-          minLength={this.props.name === 'password' ? 8 : undefined}
-          name={this.props.name}
-          onChange={
-            event => this.handleTextChange(event.target.value)
-          }
-          required
-          type={this.props.name === 'password' ? 'password' : 'text'}
-          value={this.state.text}
+  return (
+    <div className="la--field">
+      <label
+        className="la--label"
+        htmlFor={`${props.type}-${props.name}`}
+      >
+        <FormattedMessage
+          id={`${props.type}-label-${props.name}`}
         />
-      </div>
-    )
-  }
+      </label>
+      <input
+        autoComplete="off"
+        autoFocus={props.autoFocus}
+        className="la--input"
+        id={`${props.type}-${props.name}`}
+        minLength={props.name === 'password' ? 8 : undefined}
+        name={props.name}
+        onChange={
+          event => handleTextChange(event.target.value)
+        }
+        required
+        type={props.name === 'password' ? 'password' : 'text'}
+        value={text}
+      />
+    </div>
+  )
 }
