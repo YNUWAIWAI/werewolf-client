@@ -30,6 +30,7 @@ interface Option {
 
 export default function AutomationSelect(props: Props) {
   const intl = useIntl()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
     if (!selectedOption || Array.isArray(selectedOption)) { // selectedOption: null | undifined | Option[]
       return

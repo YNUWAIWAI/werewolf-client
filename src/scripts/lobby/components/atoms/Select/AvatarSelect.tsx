@@ -32,6 +32,7 @@ interface Option {
 
 export default function AvatarSelect(props: Props) {
   const intl = useIntl()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
     if (!selectedOption) { // selectedOption: null | undifined
       return
