@@ -1,6 +1,7 @@
 // Workaround for https://github.com/microsoft/TypeScript/issues/17002
 declare global {
   interface ArrayConstructor {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     isArray(arg: readonly any[] | any): arg is readonly any[]
   }
 }

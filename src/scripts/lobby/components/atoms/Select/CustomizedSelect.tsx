@@ -9,7 +9,8 @@ export interface Option<T> {
   readonly label: string
   readonly value: T
 }
-export interface Props<T> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface Props<T = any> {
   readonly className: string
   readonly defaultValue: ValueType<Option<T>>
   readonly isSearchable?: boolean
@@ -19,7 +20,7 @@ export interface Props<T> {
   readonly options: Option<T>[]
 }
 
-export default function CustomizedSelect(props: Props<any>) {
+export default function CustomizedSelect(props: Props) {
   return (
     <Select
       className={props.className}
