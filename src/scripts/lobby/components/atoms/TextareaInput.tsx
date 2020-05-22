@@ -15,39 +15,24 @@ interface State {
   value: string
 }
 
-export default class TextareaInput extends React.Component<Props, State> {
-  public constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      value: this.props.initialValue
-    }
+export default function TextareaInput(props: Props) {
+  const [value, setValue] = React.useState(props.initialValue)
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setValue(event.target.value)
+    props.handleChange(event.target.validity.valid)(event.target.value)
   }
 
-  public shouldComponentUpdate() {
-    return true
-  }
-
-  public handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    this.setState({
-      value: event.target.value
-    })
-    this.props.handleChange(event.target.validity.valid)(event.target.value)
-  }
-
-  public render() {
-    return (
-      <textarea
-        className={this.props.className}
-        maxLength={this.props.max}
-        minLength={this.props.min}
-        onChange={event => this.handleChange(event)}
-        placeholder={this.props.placeholder}
-        required={this.props.required}
-        rows={this.props.rows}
-        tabIndex={this.props.navigatable ? 0 : -1}
-        value={this.state.value}
-      />
-    )
-  }
+  return (
+    <textarea
+      className={props.className}
+      maxLength={props.max}
+      minLength={props.min}
+      onChange={handleChange}
+      placeholder={props.placeholder}
+      required={props.required}
+      rows={props.rows}
+      tabIndex={props.navigatable ? 0 : -1}
+      value={value}
+    />
+  )
 }
