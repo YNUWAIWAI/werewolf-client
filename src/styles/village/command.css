@@ -319,6 +319,7 @@
       }
 
       &.fixed {
+        /* stylelint-disable-next-line no-unknown-animations */
         animation: fadein 0.4s 2 alternate-reverse ease-in;
         cursor: default;
 

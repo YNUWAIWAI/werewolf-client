@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {Middleware} from '.'
 
-const windowLocation: Middleware = store => next => action => {
+const windowLocation: Middleware = () => next => action => {
   switch (action.type) {
     case ActionTypes.App.SELECT_VILLAGE:
     case ActionTypes.App.SHOW_SETTINGS:

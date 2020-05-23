@@ -25,9 +25,16 @@ export default function VillageList(props: Props) {
       unmountOnExit
     >
       <VillageItem
-        {... item}
+        avatar={item.avatar}
+        comment={item.comment}
         handleClick={typeof props.selectVillage === 'function' ? props.selectVillage(item.id) : undefined}
+        hostPlayer={item.hostPlayer}
+        id={item.id}
+        idForSearching={item.idForSearching}
         isPlayer={props.isPlayer}
+        name={item.name}
+        playerSetting={item.playerSetting}
+        roleSetting={item.roleSetting}
       />
     </CSSTransition>
   ))

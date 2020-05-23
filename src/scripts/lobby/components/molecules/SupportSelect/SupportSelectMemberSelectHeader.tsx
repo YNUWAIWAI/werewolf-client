@@ -3,9 +3,7 @@ import {FormattedMessage} from 'react-intl'
 import MemberRoleItem from '../../atoms/MemberRoleItem'
 import {ORDERED_ROLE_LIST} from '../../../constants/Role'
 
-interface Props {}
-
-export default function SupportSelectMemberSelectHeader(props: Props) {
+export default function SupportSelectMemberSelectHeader() {
   return (
     <>
       <div

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react'
 import {Character} from '../../src/scripts/village/constants/Character'
 import CommandSelection from '../../src/scripts/village/components/organisms/CommandSelection'

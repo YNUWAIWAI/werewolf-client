@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react'
 import Result, {Props} from '../../src/scripts/village/components/organisms/Result'
 import {ImagePath} from '../../src/scripts/village/constants/ImagePath'

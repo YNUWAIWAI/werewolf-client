@@ -14,7 +14,7 @@ interface Props {
 export default function ChatDay(props: Props) {
   const f = new Date(props.from)
   const t = new Date(props.to)
-  const restTimeValue = f.getTime() - t.getTime() + props.limit * 1000
+  const restTimeValue = f.getTime() - t.getTime() + (props.limit * 1000)
   const postTime =
     <FormattedDate
       day="2-digit"

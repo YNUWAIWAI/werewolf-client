@@ -150,8 +150,10 @@ export default class CommandInput extends React.Component<Props, State> {
           )
         )
 
+        // eslint-disable-next-line no-useless-return
         return
       default:
+        // eslint-disable-next-line no-useless-return
         return
     }
   }

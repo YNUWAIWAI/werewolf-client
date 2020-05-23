@@ -104,7 +104,7 @@ describe('<ChatContainer />', () => {
       expect(wrapper.html()).toMatchSnapshot()
     })
   })
-  describe('handleStar', () => {
+  test('handleStar', () => {
     const store = fakeStore(
       {
         chat: {

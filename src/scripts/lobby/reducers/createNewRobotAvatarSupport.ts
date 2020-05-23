@@ -1,7 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import {
-  SupportSelect
-} from '../actions'
+import {SupportSelect} from '../actions'
 import {lobby} from '../types'
 
 export interface State {

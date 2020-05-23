@@ -1,6 +1,7 @@
 // Workaround for https://github.com/microsoft/TypeScript/issues/17002
 declare global {
   interface ArrayConstructor {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     isArray(arg: readonly any[] | any): arg is readonly any[]
   }
 }
@@ -29,6 +30,7 @@ interface Option {
 
 export default function AutomationSelect(props: Props) {
   const intl = useIntl()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
     if (!selectedOption || Array.isArray(selectedOption)) { // selectedOption: null | undifined | Option[]
       return

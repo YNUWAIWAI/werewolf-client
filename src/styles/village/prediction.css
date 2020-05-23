@@ -4,6 +4,7 @@
   padding: 8px;
 
   &--container {
+    /* stylelint-disable-next-line no-unknown-animations */
     animation: fadein 0.5s ease-out;
     border: solid 1px var(--color--border);
     box-sizing: border-box;
@@ -33,6 +34,7 @@
     z-index: var(--z-index--prediction--character);
 
     &.dead {
+      /* stylelint-disable-next-line no-unknown-animations */
       animation: flash 0.4s 19 alternate cubic-bezier(0.4, 0, 0.2, 1);
       background: var(--color--background--prediction--dead);
       color: var(--color--font--prediction--dead);

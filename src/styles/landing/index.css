@@ -6,6 +6,7 @@
   --error-color: red;
 }
 
+/* stylelint-disable-next-line selector-max-universal */
 * {
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
 }
@@ -82,11 +83,10 @@ body {
 
   &--landing {
     display: grid;
-    grid-template-areas:
-      'lead - button'
-      'lead form form';
-    grid-template-columns: 3fr 1fr 1fr;
-    grid-template-rows: 4rem 1fr;
+    grid-template:
+      'lead . button' 4rem
+      'lead form form' 1fr
+      / 3fr 1fr 1fr;
   }
 
   &--lead {

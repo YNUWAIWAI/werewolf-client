@@ -10,38 +10,23 @@ export interface State {
   value: string
 }
 
-export default class EmaildInput extends React.Component<Props, State> {
-  public constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      value: this.props.initialValue
-    }
+export default function EmaildInput(props: Props) {
+  const [value, setValue] = React.useState(props.initialValue)
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value)
+    props.handleChange(event.target.validity.valid)(event.target.value)
   }
 
-  public shouldComponentUpdate() {
-    return true
-  }
-
-  public handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({
-      value: event.target.value
-    })
-    this.props.handleChange(event.target.validity.valid)(event.target.value)
-  }
-
-  public render() {
-    return (
-      <input
-        className={this.props.className}
-        id={this.props.id}
-        maxLength={256}
-        minLength={6}
-        onChange={event => this.handleChange(event)}
-        required
-        type="email"
-        value={this.state.value}
-      />
-    )
-  }
+  return (
+    <input
+      className={props.className}
+      id={props.id}
+      maxLength={256}
+      minLength={6}
+      onChange={handleChange}
+      required
+      type="email"
+      value={value}
+    />
+  )
 }
