@@ -7,7 +7,7 @@ interface Props {
   readonly initialValue: string
 }
 
-export const EmailInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+const EmailInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const [value, setValue] = React.useState(props.initialValue)
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
@@ -28,4 +28,6 @@ export const EmailInput = React.forwardRef<HTMLInputElement, Props>((props, ref)
     />
   )
 })
+
 EmailInput.displayName = 'EmailInput'
+export default EmailInput
