@@ -44,7 +44,7 @@ describe('onChange', () => {
     expect(handleChangeInner).toHaveBeenCalledWith('example@example.co.jp')
     expect(wrapper.find('input').props().value).toBe('example@example.co.jp')
   })
-  test('onChange invalid', () => {
+  test('invalid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
