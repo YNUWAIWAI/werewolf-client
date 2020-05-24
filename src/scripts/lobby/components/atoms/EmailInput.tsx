@@ -1,16 +1,13 @@
 import * as React from 'react'
 
-export interface Props {
+interface Props {
   readonly className: string
   readonly handleChange: (valid: boolean) => (value: string) => void
   readonly id: string
   readonly initialValue: string
 }
-export interface State {
-  value: string
-}
 
-export default function EmaildInput(props: Props) {
+export const EmailInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const [value, setValue] = React.useState(props.initialValue)
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
@@ -24,9 +21,11 @@ export default function EmaildInput(props: Props) {
       maxLength={256}
       minLength={6}
       onChange={handleChange}
+      ref={ref}
       required
       type="email"
       value={value}
     />
   )
-}
+})
+EmailInput.displayName = 'EmailInput'
