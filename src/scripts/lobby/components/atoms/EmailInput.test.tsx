@@ -17,7 +17,7 @@ test('render', () => {
   expect(wrapper.html()).toMatchSnapshot()
   expect(handleChange).toHaveBeenCalledTimes(0)
 })
-describe('onChange', () => {
+describe('handleChange', () => {
   test('valid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
