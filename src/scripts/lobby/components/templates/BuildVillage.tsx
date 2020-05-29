@@ -1,9 +1,9 @@
 import * as React from 'react'
-import AsideContent from '../atoms/AsideContent'
-import Avatar from '../atoms/Avatar'
+import {AsideContent} from '../atoms/AsideContent'
+import {Avatar} from '../atoms/Avatar'
 import BuildVillageBox from '../../containers/BuildVillageBoxContainer'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 
@@ -14,7 +14,7 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export default function BuildVillage(props: Props) {
+export const BuildVillage: React.FC<Props> = props => {
   return (
     <div className="lo--grid">
       <Header id="Header.buildVillage" />
@@ -32,3 +32,4 @@ export default function BuildVillage(props: Props) {
     </div>
   )
 }
+BuildVillage.displayName = 'BuildVillage'
