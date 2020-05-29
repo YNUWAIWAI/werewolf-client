@@ -1,5 +1,5 @@
 import * as React from 'react'
-import PredictionSpec from './PredictionSpec'
+import {PredictionSpec} from './PredictionSpec'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {village} from '../../types'
