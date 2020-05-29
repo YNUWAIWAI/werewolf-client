@@ -39,3 +39,4 @@ export const SettingsBox: React.FC<Props> = props => (
     />
   </div>
 )
+SettingsBox.displayName = 'SettingsBox'

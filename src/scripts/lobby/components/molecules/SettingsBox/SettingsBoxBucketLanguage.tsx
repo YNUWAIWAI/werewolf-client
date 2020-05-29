@@ -58,3 +58,4 @@ export const SettingsBoxBucketLanguage: React.FC<Props> = props => {
     </div>
   )
 }
+SettingsBoxBucketLanguage.displayName = 'SettingsBoxBucketLanguage'

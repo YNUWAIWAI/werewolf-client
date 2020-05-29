@@ -54,3 +54,4 @@ export const SettingsBoxBucketDanger: React.FC<Props> = props => {
     </div>
   )
 }
+SettingsBoxBucketDanger.displayName = 'SettingsBoxBucketDanger'

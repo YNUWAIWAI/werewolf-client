@@ -36,3 +36,4 @@ export const SettingsBoxBucketUser: React.FC<Props> = props => (
     />
   </div>
 )
+SettingsBoxBucketUser.displayName = 'SettingsBoxBucketUser'
