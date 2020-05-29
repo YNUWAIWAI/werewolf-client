@@ -8,7 +8,7 @@ export interface Props {
   readonly numberOfPlayers?: number
 }
 
-export default function RoleIcon(props: Props) {
+export const RoleIcon: React.FC<Props> = props => {
   const times = '×'
 
   return (
@@ -39,3 +39,4 @@ export default function RoleIcon(props: Props) {
     </div>
   )
 }
+RoleIcon.displayName = 'RoleIcon'
