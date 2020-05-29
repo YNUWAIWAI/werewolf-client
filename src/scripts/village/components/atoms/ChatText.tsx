@@ -46,10 +46,9 @@ interface OwnProps {
 }
 type Props = StateProps & OwnProps
 
-export default function ChatItem(props: Props) {
-  return (
-    <div className="vi--chat--text">
-      {parseChat(props.text, props.navigatable)}
-    </div>
-  )
-}
+export const ChatText: React.FC<Props> = props => (
+  <div className="vi--chat--text">
+    {parseChat(props.text, props.navigatable)}
+  </div>
+)
+ChatText.displayName = 'ChatText'
