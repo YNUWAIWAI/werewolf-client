@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Header from './Header'
+import {Header} from './Header'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'

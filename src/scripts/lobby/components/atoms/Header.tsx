@@ -5,7 +5,7 @@ interface Props {
   readonly id: string
 }
 
-export default function Header(props: Props) {
+export const Header: React.FC<Props> = props => {
   return (
     <div className="lo--header">
       <FormattedMessage
