@@ -8,23 +8,21 @@ interface Props {
   readonly command: MenuItem[]
 }
 
-export const SelectHumanAvatarBox: React.FC<Props> = props => {
-  return (
-    <>
-      <div
-        className="lo--select-avatar--header"
-      >
-        <FormattedMessage
-          id="SelectHumanAvatarBox.header"
-        />
-      </div>
-      <SelectHumanAvatarTable />
-      <Menu
-        className="lo--select-avatar--command human"
-        itemClassName="lo--select-avatar--command--item"
-        items={props.command}
+export const SelectHumanAvatarBox: React.FC<Props> = props => (
+  <>
+    <div
+      className="lo--select-avatar--header"
+    >
+      <FormattedMessage
+        id="SelectHumanAvatarBox.header"
       />
-    </>
-  )
-}
+    </div>
+    <SelectHumanAvatarTable />
+    <Menu
+      className="lo--select-avatar--command human"
+      itemClassName="lo--select-avatar--command--item"
+      items={props.command}
+    />
+  </>
+)
 SelectHumanAvatarBox.displayName = 'SelectHumanAvatarBox'
