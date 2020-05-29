@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {ImagePath} from '../../constants/ImagePath'
-import ResultCellImage from './ResultCellImage'
+import {ResultCellImage} from './ResultCellImage'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
 
