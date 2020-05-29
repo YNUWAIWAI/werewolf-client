@@ -4,12 +4,11 @@ interface Props {
   token: string
 }
 
-export default function Csrf(props: Props) {
-  return (
-    <input
-      name="csrfToken"
-      type="hidden"
-      value={props.token}
-    />
-  )
-}
+export const Csrf: React.FC<Props> = props => (
+  <input
+    name="csrfToken"
+    type="hidden"
+    value={props.token}
+  />
+)
+Csrf.displayName = 'Csrf'

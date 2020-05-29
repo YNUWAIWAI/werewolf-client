@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Csrf from './Csrf'
+import {Csrf} from './Csrf'
 import {shallow} from 'enzyme'
 
 test('render', () => {
