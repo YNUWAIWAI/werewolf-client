@@ -32,7 +32,8 @@ module.exports = {
     '@nimiusrd',
     'plugin:jest/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react/all'
+    'plugin:react/all',
+    'plugin:react-hooks/recommended'
   ],
   'rules': {
     '@typescript-eslint/class-name-casing': 0,
@@ -65,8 +66,10 @@ module.exports = {
     'jest/valid-expect-in-promise': 0,
     'jest/no-export': 'error',
     'react/button-has-type': 0,
+    'react/display-name': [2, { "ignoreTranspilerName": true }],
     'react/destructuring-assignment': 0,
     'react/forbid-component-props': 0,
+    'react/function-component-definition': [1, { 'namedComponents': 'arrow-function' }],
     'react/jsx-filename-extension': [1, {'extensions': ['.js', '.jsx', '.ts', 'tsx']}],
     'react/jsx-fragments': 0,
     'react/jsx-handler-names': 0,
