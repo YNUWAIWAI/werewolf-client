@@ -6,7 +6,7 @@ interface Props {
   readonly intensionalDisclosureRange: village.Channel
 }
 
-export default function ChatNum(props: Props) {
+export const ChatNum: React.FC<Props> = props => {
   return (
     <div className="vi--chat--num">
       {
@@ -17,3 +17,4 @@ export default function ChatNum(props: Props) {
     </div>
   )
 }
+ChatNum.displayName = 'ChatNum'
