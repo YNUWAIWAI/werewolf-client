@@ -1,8 +1,11 @@
 import * as React from 'react'
-import Settings, {Props} from './Settings'
-import AsideContent from '../atoms/AsideContent'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
+import {
+  Props,
+  Settings
+} from './Settings'
+import {AsideContent} from '../atoms/AsideContent'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {SettingsBox} from '../organisms/SettingsBox'
 import {lobby} from '../../types'

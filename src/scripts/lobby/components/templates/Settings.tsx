@@ -1,7 +1,7 @@
 import * as React from 'react'
-import AsideContent from '../atoms/AsideContent'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
+import {AsideContent} from '../atoms/AsideContent'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import {SettingsBox} from '../organisms/SettingsBox'
@@ -25,28 +25,27 @@ export interface DispatchProps {
 }
 export type Props = StateProps & DispatchProps
 
-export default function Setting(props: Props) {
-  return (
-    <div className="lo--grid">
-      <Header id="Header.settings" />
-      <MainContent>
-        <SettingsBox
-          handleChangeLanguage={props.handleChangeLanguage}
-          handleChangeUserEmail={props.handleChangeUserEmail}
-          handleChangeUserName={props.handleChangeUserName}
-          handleChangeUserPassword={props.handleChangeUserPassword}
-          handleSubmitLogout={props.handleSubmitLogout}
-          initialValue={props.initialValue}
-          navigatable={props.navigatable}
-        />
-      </MainContent>
-      <AsideContent>
-        <Menu
-          className="lo--compact-menu"
-          itemClassName="lo--compact-menu--item"
-          items={props.menuItems}
-        />
-      </AsideContent>
-    </div>
-  )
-}
+export const Settings: React.FC<Props> = props => (
+  <div className="lo--grid">
+    <Header id="Header.settings" />
+    <MainContent>
+      <SettingsBox
+        handleChangeLanguage={props.handleChangeLanguage}
+        handleChangeUserEmail={props.handleChangeUserEmail}
+        handleChangeUserName={props.handleChangeUserName}
+        handleChangeUserPassword={props.handleChangeUserPassword}
+        handleSubmitLogout={props.handleSubmitLogout}
+        initialValue={props.initialValue}
+        navigatable={props.navigatable}
+      />
+    </MainContent>
+    <AsideContent>
+      <Menu
+        className="lo--compact-menu"
+        itemClassName="lo--compact-menu--item"
+        items={props.menuItems}
+      />
+    </AsideContent>
+  </div>
+)
+Settings.displayName = 'Settings'
