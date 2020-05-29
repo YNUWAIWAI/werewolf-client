@@ -16,7 +16,7 @@ interface Props {
   type: ItemType
 }
 
-export default function SelectAvatarTableHeaderItem(props: Props) {
+export const SelectAvatarTableHeaderItem: React.FC<Props> = props => {
   const className = `lo--select-avatar--table--header--item ${props.type}`
 
   if (props.type === 'check-box') {
@@ -33,3 +33,4 @@ export default function SelectAvatarTableHeaderItem(props: Props) {
     </div>
   )
 }
+SelectAvatarTableHeaderItem.displayName = 'SelectAvatarTableHeaderItem'
