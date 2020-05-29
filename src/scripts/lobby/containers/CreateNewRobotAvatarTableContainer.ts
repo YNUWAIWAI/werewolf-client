@@ -1,4 +1,5 @@
-import Component, {
+import {
+  CreateNewRobotAvatarTable as Component,
   DispatchProps,
   StateProps
 } from '../components/molecules/CreateNewRobotAvatarTable'
@@ -43,9 +44,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     }
   }
 })
-const Container = connect(
+
+export const CreateNewRobotAvatarTableContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container
