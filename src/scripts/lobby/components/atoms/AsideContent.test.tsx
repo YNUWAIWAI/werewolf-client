@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AsideContent from './AsideContent'
+import {AsideContent} from './AsideContent'
 import {shallow} from 'enzyme'
 
 test('render', () => {

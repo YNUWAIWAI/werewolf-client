@@ -4,10 +4,9 @@ interface Props {
   readonly expand?: boolean
 }
 
-export default function AsideContent(props: React.PropsWithChildren<Props>) {
-  return (
-    <div className={`lo--aside-content ${props.expand ? 'expand' : ''}`}>
-      {props.children}
-    </div>
-  )
-}
+export const AsideContent: React.FC<Props> = props => (
+  <div className={`lo--aside-content ${props.expand ? 'expand' : ''}`}>
+    {props.children}
+  </div>
+)
+AsideContent.displayName = 'AsideContent'
