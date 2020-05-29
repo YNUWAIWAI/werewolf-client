@@ -14,22 +14,20 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export const BuildVillage: React.FC<Props> = props => {
-  return (
-    <div className="lo--grid">
-      <Header id="Header.buildVillage" />
-      <Avatar image={props.image} name={props.name} />
-      <MainContent>
-        <BuildVillageBox />
-      </MainContent>
-      <AsideContent>
-        <Menu
-          className="lo--compact-menu"
-          itemClassName="lo--compact-menu--item"
-          items={props.menuItems}
-        />
-      </AsideContent>
-    </div>
-  )
-}
+export const BuildVillage: React.FC<Props> = props => (
+  <div className="lo--grid">
+    <Header id="Header.buildVillage" />
+    <Avatar image={props.image} name={props.name} />
+    <MainContent>
+      <BuildVillageBox />
+    </MainContent>
+    <AsideContent>
+      <Menu
+        className="lo--compact-menu"
+        itemClassName="lo--compact-menu--item"
+        items={props.menuItems}
+      />
+    </AsideContent>
+  </div>
+)
 BuildVillage.displayName = 'BuildVillage'
