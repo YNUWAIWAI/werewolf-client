@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import {
-  AdvancedSearch,
+  AdvancedSearch as Component,
   DispatchProps,
   StateProps
 } from '../components/templates/AdvancedSearch'
@@ -54,4 +54,4 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 export const AdvancedSearchContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AdvancedSearch)
+)(Component)
