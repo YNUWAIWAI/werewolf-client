@@ -1,4 +1,5 @@
-import Component, {
+import {
+  LobbyForRobotPlayer as Component,
   DispatchProps,
   StateProps
 } from '../components/templates/LobbyForRobotPlayer'
@@ -19,9 +20,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(selectVillage(id))
   }
 })
-const LobbyForRobotPlayerContainer = connect(
+
+export const LobbyForRobotPlayerContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default LobbyForRobotPlayerContainer
