@@ -1,5 +1,5 @@
 import * as React from 'react'
-import SelectAvatarTableBodyAutomation from './SelectAvatarTableBodyAutomation'
+import {SelectAvatarTableBodyAutomation} from './SelectAvatarTableBodyAutomation'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'
