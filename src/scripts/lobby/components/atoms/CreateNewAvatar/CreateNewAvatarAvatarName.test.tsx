@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CreateNewAvatarAvatarName from './CreateNewAvatarAvatarName'
+import {CreateNewAvatarAvatarName} from './CreateNewAvatarAvatarName'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'
