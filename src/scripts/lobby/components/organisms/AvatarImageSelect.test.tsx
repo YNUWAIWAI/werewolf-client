@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {AvatarImageList} from '../../constants/AvatarImageList'
-import AvatarImageSelect from './AvatarImageSelect'
+import {AvatarImageSelect} from './AvatarImageSelect'
 import {ImagePath} from '../../constants/ImagePath'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
