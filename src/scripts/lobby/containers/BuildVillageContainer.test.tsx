@@ -1,6 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes'
 import * as React from 'react'
-import BuildVillageContainer from './BuildVillageContainer'
+import {BuildVillageContainer} from './BuildVillageContainer'
 import IntlProviderContainer from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
