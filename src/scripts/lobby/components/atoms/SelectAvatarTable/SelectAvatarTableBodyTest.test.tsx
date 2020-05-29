@@ -1,5 +1,5 @@
 import * as React from 'react'
-import SelectAvatarTableBodyTest from './SelectAvatarTableBodyTest'
+import {SelectAvatarTableBodyTest} from './SelectAvatarTableBodyTest'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'
