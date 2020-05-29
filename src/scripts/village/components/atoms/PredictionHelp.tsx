@@ -1,11 +1,11 @@
 import * as React from 'react'
-import Help from './svg/Help'
+import {Help} from './svg/Help'
 
 interface Props {
   navigatable: boolean
 }
 
-export default function PredictionHelp(props: Props) {
+export const PredictionHelp: React.FC<Props> = props => {
   return (
     <a
       className="vi--prediction--help"
@@ -18,3 +18,4 @@ export default function PredictionHelp(props: Props) {
     </a>
   )
 }
+PredictionHelp.displayName = 'PredictionHelp'
