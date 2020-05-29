@@ -8,15 +8,14 @@ interface Props {
   readonly status: lobby.AvatarStatus
 }
 
-export default function SelectAvatarTableBodyStatus(props: Props) {
-  return (
-    <div
-      className={`lo--select-avatar--table--body--item status ${props.additionalClassName.join(' ')}`}
-      onClick={props.handleSelect}
-    >
-      <FormattedMessage
-        id={`SelectAvatarTableBodyStatus.status(${props.status})`}
-      />
-    </div>
-  )
-}
+export const SelectAvatarTableBodyStatus: React.FC<Props> = props => (
+  <div
+    className={`lo--select-avatar--table--body--item status ${props.additionalClassName.join(' ')}`}
+    onClick={props.handleSelect}
+  >
+    <FormattedMessage
+      id={`SelectAvatarTableBodyStatus.status(${props.status})`}
+    />
+  </div>
+)
+SelectAvatarTableBodyStatus.displayName = 'SelectAvatarTableBodyStatus'
