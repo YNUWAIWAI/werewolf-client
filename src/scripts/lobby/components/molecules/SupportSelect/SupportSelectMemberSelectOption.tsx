@@ -11,7 +11,7 @@ interface Props {
   readonly member: lobby.Member
 }
 
-export default function SupportSelectMemberSelectOption(props: Props) {
+export const SupportSelectMemberSelectOption: React.FC<Props> = props => {
   const [hover, setHover] = React.useState(false)
   const handleMouseOver = () => {
     setHover(true)
@@ -79,3 +79,4 @@ export default function SupportSelectMemberSelectOption(props: Props) {
     </>
   )
 }
+SupportSelectMemberSelectOption.displayName = 'SupportSelectMemberSelectOption'
