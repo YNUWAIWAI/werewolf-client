@@ -1,6 +1,6 @@
 import * as React from 'react'
-import AdvancedSearchProp from '../../atoms/AdvancedSearchProp'
-import AvatarSelect from '../../atoms/Select/AvatarSelect'
+import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
+import {AvatarSelect} from '../../atoms/Select/AvatarSelect'
 import {lobby} from '../../../types'
 
 interface Props {
@@ -11,23 +11,22 @@ interface Props {
   readonly valid: boolean
 }
 
-export default function AdvancedSearchCellAvatar(props: Props) {
-  return (
-    <>
-      <AdvancedSearchProp
-        checked={props.checked}
-        handleChange={props.handleCheckboxChange}
-        name="avatar"
-        navigatable={props.navigatable}
-        valid={props.valid}
-      />
-      <AvatarSelect
-        className="lo--advanced-search--input"
-        defaultValue={lobby.Avatar.random}
-        handleChange={props.handleValueChange}
-        navigatable={props.navigatable}
-        type="advancedSearch"
-      />
-    </>
-  )
-}
+export const AdvancedSearchCellAvatar: React.FC<Props> = props => (
+  <>
+    <AdvancedSearchProp
+      checked={props.checked}
+      handleChange={props.handleCheckboxChange}
+      name="avatar"
+      navigatable={props.navigatable}
+      valid={props.valid}
+    />
+    <AvatarSelect
+      className="lo--advanced-search--input"
+      defaultValue={lobby.Avatar.random}
+      handleChange={props.handleValueChange}
+      navigatable={props.navigatable}
+      type="advancedSearch"
+    />
+  </>
+)
+AdvancedSearchCellAvatar.displayName = 'AdvancedSearchCellAvatar'
