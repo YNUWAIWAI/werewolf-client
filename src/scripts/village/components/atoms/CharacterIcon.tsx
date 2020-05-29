@@ -9,32 +9,31 @@ export interface Props {
   readonly name?: string
 }
 
-export default function CharacterIcon(props: Props) {
-  return (
-    <div
-      className={`${props.className} ${props.additionalClass || ''}`}
-      onClick={props.handleOnClick}
-    >
-      {
-        props.initial ?
-          <div
-            className={`${props.className}--initial`}
-          >
-            {props.initial}
-          </div> :
-          null
-      }
-      <img
-        className={`${props.className}--image`}
-        src={props.image}
-      />
-      {
-        props.name ?
-          <span className={`${props.className}--name`}>
-            {props.name}
-          </span> :
-          null
-      }
-    </div>
-  )
-}
+export const CharacterIcon: React.FC<Props> = props => (
+  <div
+    className={`${props.className} ${props.additionalClass || ''}`}
+    onClick={props.handleOnClick}
+  >
+    {
+      props.initial ?
+        <div
+          className={`${props.className}--initial`}
+        >
+          {props.initial}
+        </div> :
+        null
+    }
+    <img
+      className={`${props.className}--image`}
+      src={props.image}
+    />
+    {
+      props.name ?
+        <span className={`${props.className}--name`}>
+          {props.name}
+        </span> :
+        null
+    }
+  </div>
+)
+CharacterIcon.displayName = 'CharacterIcon'
