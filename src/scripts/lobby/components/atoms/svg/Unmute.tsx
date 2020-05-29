@@ -4,7 +4,7 @@ interface Props {
   readonly className?: string
 }
 
-export default function Unmute(props: Props) {
+export const Unmute: React.FC<Props> = props => {
   return (
     <svg
       className={`unmute ${props.className || ''}`}
@@ -17,4 +17,4 @@ export default function Unmute(props: Props) {
     </svg>
   )
 }
-
+Unmute.displayName = 'Unmute'
