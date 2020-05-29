@@ -1,6 +1,6 @@
 import * as React from 'react'
-import AdvancedSearchCellHostName from './AdvancedSearchCellHostName'
-import AdvancedSearchProp from '../../atoms/AdvancedSearchProp'
+import {AdvancedSearchCellHostName} from './AdvancedSearchCellHostName'
+import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
 import {FormattedMessage} from 'react-intl'
 import {shallow} from 'enzyme'
 
