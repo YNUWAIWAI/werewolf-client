@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ResultCellWinnerCaption from './ResultCellWinnerCaption'
+import {ResultCellWinnerCaption} from './ResultCellWinnerCaption'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {village} from '../../types'
