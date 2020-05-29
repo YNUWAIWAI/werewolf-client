@@ -1,4 +1,5 @@
-import Component, {
+import {
+  CreateNewAvatarSupportBoard as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/CreateNewRobotAvatarSupportBoard'
@@ -22,9 +23,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   }
 })
 
-const Container = connect(
+export const CreateNewAvatarSupportBoardContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container
