@@ -1,7 +1,7 @@
 import * as React from 'react'
-import SelectHumanAvatarTable from './SelectHumanAvatarTable'
+import {SelectHumanAvatarTable} from './SelectHumanAvatarTable'
 import SelectHumanAvatarTableBody from '../../containers/SelectHumanAvatarTableBodyContainer'
-import SelectHumanAvatarTableHeader from '../molecules/SelectHumanAvatarTableHeader'
+import {SelectHumanAvatarTableHeader} from '../molecules/SelectHumanAvatarTableHeader'
 import {shallow} from 'enzyme'
 
 test('render', () => {
