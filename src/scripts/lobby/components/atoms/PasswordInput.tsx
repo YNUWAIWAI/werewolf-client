@@ -21,6 +21,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => 
       maxLength={128}
       minLength={8}
       onChange={handleChange}
+      ref={ref}
       required
       tabIndex={props.navigatable ? 0 : -1}
       type="password"
