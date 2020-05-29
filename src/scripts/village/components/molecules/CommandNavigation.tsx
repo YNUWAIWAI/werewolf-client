@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import Loader from '../atoms/svg/Loader'
+import {Loader} from '../atoms/svg/Loader'
 import {Navigation} from '../../constants/ActionTypes'
 
 export interface Props {
@@ -15,7 +15,7 @@ export interface Props {
   readonly navigatable: boolean
 }
 
-export default function CommandNavigation(props: Props) {
+export const CommandNavigation: React.FC<Props> = props => {
   const items = props.items.map(item => (
     <button
       className={`vi--command--navigation--button ${item.className || ''} ${item.isLoading ? 'isLoading' : ''}`}
@@ -48,3 +48,4 @@ export default function CommandNavigation(props: Props) {
     </div>
   )
 }
+CommandNavigation.displayName = 'CommandNavigation'
