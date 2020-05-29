@@ -1,5 +1,5 @@
 import * as React from 'react'
-import LanguageSelect from '../Select/LanguageSelect'
+import {LanguageSelect} from '../Select/LanguageSelect'
 import {lobby} from '../../../types'
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
   readonly navigatable: boolean
 }
 
-export default function SelectAvatarTableBodyLanguage(props: Props) {
+export const SelectAvatarTableBodyLanguage: React.FC<Props> = props => {
   const handleSelect = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
       props.handleSelect()
@@ -32,3 +32,4 @@ export default function SelectAvatarTableBodyLanguage(props: Props) {
     </div>
   )
 }
+SelectAvatarTableBodyLanguage.displayName = 'SelectAvatarTableBodyLanguage'

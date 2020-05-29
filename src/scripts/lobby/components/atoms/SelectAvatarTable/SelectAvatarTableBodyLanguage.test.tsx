@@ -1,5 +1,5 @@
 import * as React from 'react'
-import SelectAvatarTableBodyLanguage from './SelectAvatarTableBodyLanguage'
+import {SelectAvatarTableBodyLanguage} from './SelectAvatarTableBodyLanguage'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'
