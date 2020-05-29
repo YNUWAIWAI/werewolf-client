@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Mute from './svg/Mute'
-import MuteButton from './MuteButton'
-import Unmute from './svg/Unmute'
+import {Mute} from './svg/Mute'
+import {MuteButton} from './MuteButton'
+import {Unmute} from './svg/Unmute'
 import {shallow} from 'enzyme'
 
 describe('render', () => {
