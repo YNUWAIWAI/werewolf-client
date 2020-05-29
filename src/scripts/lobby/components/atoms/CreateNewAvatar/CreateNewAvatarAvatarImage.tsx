@@ -7,7 +7,7 @@ interface Props {
   readonly navigatable: boolean
 }
 
-export default function CreateNewAvatarAvatarImage(props: Props) {
+export const CreateNewAvatarAvatarImage: React.FC<Props> = props => {
   return (
     <>
       <label

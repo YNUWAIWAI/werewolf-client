@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CreateNewAvatarAvatarImage from './CreateNewAvatarAvatarImage'
+import {CreateNewAvatarAvatarImage} from './CreateNewAvatarAvatarImage'
 import {ImagePath} from '../../../constants/ImagePath'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
