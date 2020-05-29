@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AutomationSelect from './AutomationSelect'
+import {AutomationSelect} from './AutomationSelect'
 import Select from 'react-select'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
