@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import VillageList from './VillageList'
+import {VillageList} from './VillageList'
 import {lobby} from '../../types'
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
   readonly villageItems: lobby.Village[]
 }
 
-export default function SearchResult(props: Props) {
+export const SearchResult: React.FC<Props> = props => {
   if (!props.searched) {
     return null
   }
@@ -34,3 +34,4 @@ export default function SearchResult(props: Props) {
     />
   )
 }
+SearchResult.displayName = 'SearchResult'
