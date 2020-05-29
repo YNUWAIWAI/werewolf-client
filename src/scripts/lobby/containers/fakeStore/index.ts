@@ -81,6 +81,7 @@ export default (state?: Partial<ReducerState>): Store<ReducerState, Action<unkno
     getState,
     replaceReducer,
     subscribe,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-empty-function
     [Symbol.observable]: (): any => {}
   }
 
