@@ -1,12 +1,12 @@
 import * as React from 'react'
-import AdvancedSearch from './AdvancedSearch'
+import {AdvancedSearch} from './AdvancedSearch'
 import AdvancedSearchBox from '../../containers/AdvancedSearchBoxContainer'
-import AsideContent from '../atoms/AsideContent'
-import Avatar from '../atoms/Avatar'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
+import {AsideContent} from '../atoms/AsideContent'
+import {Avatar} from '../atoms/Avatar'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
-import SearchResult from '../organisms/SearchResult'
+import {SearchResult} from '../organisms/SearchResult'
 import {shallow} from 'enzyme'
 
 test('<AdvancedSearch />', () => {
