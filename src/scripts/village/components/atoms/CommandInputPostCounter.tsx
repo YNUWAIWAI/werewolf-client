@@ -7,7 +7,7 @@ interface Props {
   readonly numberOfChatMessages: number
 }
 
-export default function CommandInputPostCounnter(props: Props) {
+export const CommandInputPostCounter: React.FC<Props> = props => {
   switch (props.inputChannel) {
     case village.InputChannel.public:
     case village.InputChannel.werewolf:
@@ -23,3 +23,4 @@ export default function CommandInputPostCounnter(props: Props) {
       return null
   }
 }
+CommandInputPostCounter.displayName = 'CommandInputPostCounter'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CommandInputPostCounter from './CommandInputPostCounter'
+import {CommandInputPostCounter} from './CommandInputPostCounter'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
 
