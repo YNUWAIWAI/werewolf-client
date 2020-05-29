@@ -4,7 +4,7 @@ import Header from '../atoms/Header'
 import MainContent from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
-import SettingsBox from '../organisms/SettingsBox'
+import {SettingsBox} from '../organisms/SettingsBox'
 import {lobby} from '../../types'
 
 export interface StateProps {

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `"<div class=\\"lo--settings--bucket danger\\"><div class=\\"lo--settings--bucket--head danger\\">Danger zone</div><form class=\\"lo--settings--bucket--form danger\\"><button class=\\"lo--settings--bucket--form--button\\" type=\\"submit\\">LOGOUT</button></form><form class=\\"lo--settings--bucket--form danger\\"><button class=\\"lo--settings--bucket--form--button\\" disabled=\\"\\" type=\\"submit\\">DEACTIVATE</button></form></div>"`;

@@ -7,7 +7,7 @@ export interface Props {
   readonly navigatable: boolean
 }
 
-export default function PasswordInput(props: Props) {
+const PasswordInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const [value, setValue] = React.useState('')
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
@@ -21,10 +21,14 @@ export default function PasswordInput(props: Props) {
       maxLength={128}
       minLength={8}
       onChange={handleChange}
+      ref={ref}
       required
       tabIndex={props.navigatable ? 0 : -1}
       type="password"
       value={value}
     />
   )
-}
+})
+
+PasswordInput.displayName = 'PasswordInput'
+export default PasswordInput

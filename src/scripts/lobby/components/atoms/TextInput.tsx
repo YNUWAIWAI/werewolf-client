@@ -13,7 +13,7 @@ interface Props {
   readonly required: boolean
 }
 
-export default function TextInput(props: Props) {
+const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const [value, setValue] = React.useState(props.initialValue)
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     if (props.handleBlur) {
@@ -36,10 +36,14 @@ export default function TextInput(props: Props) {
       onBlur={handleBlur}
       onChange={handleChange}
       placeholder={props.placeholder}
+      ref={ref}
       required={props.required}
       tabIndex={props.navigatable ? 0 : -1}
       type="text"
       value={value}
     />
   )
-}
+})
+
+TextInput.displayName = 'TextInput'
+export default TextInput

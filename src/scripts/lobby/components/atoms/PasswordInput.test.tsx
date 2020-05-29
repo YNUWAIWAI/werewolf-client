@@ -2,24 +2,23 @@ import * as React from 'react'
 import PasswordInput from './PasswordInput'
 import {shallow} from 'enzyme'
 
-describe('<PasswordInput />', () => {
-  test('render', () => {
-    const handleChangeInner = jest.fn()
-    const handleChange = jest.fn(() => handleChangeInner)
-    const wrapper = shallow(
-      <PasswordInput
-        className="className"
-        handleChange={handleChange}
-        id="id"
-        navigatable
-      />
-    )
+test('render', () => {
+  const handleChangeInner = jest.fn()
+  const handleChange = jest.fn(() => handleChangeInner)
+  const wrapper = shallow(
+    <PasswordInput
+      className="className"
+      handleChange={handleChange}
+      id="id"
+      navigatable
+    />
+  )
 
-    expect(wrapper.find('input')).toHaveLength(1)
-    expect(wrapper.find('input').props().value).toBe('')
-    expect(handleChange).toHaveBeenCalledTimes(0)
-  })
-  test('onChange valid', () => {
+  expect(wrapper.html()).toMatchSnapshot()
+  expect(handleChange).toHaveBeenCalledTimes(0)
+})
+describe('handleChange', () => {
+  test('valid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
@@ -45,7 +44,7 @@ describe('<PasswordInput />', () => {
     expect(handleChangeInner).toHaveBeenCalledWith('userPassword')
     expect(wrapper.find('input').props().value).toBe('userPassword')
   })
-  test('onChange invalid', () => {
+  test('invalid', () => {
     const handleChangeInner = jest.fn()
     const handleChange = jest.fn(() => handleChangeInner)
     const wrapper = shallow(
