@@ -1,10 +1,10 @@
 import * as React from 'react'
-import App from './App'
-import FormNavigation from '../atoms/FormNavigation'
+import {App} from './App'
+import {FormNavigation} from '../atoms/FormNavigation'
 import {Language} from '../../i18n'
-import Lead from '../organism/Lead'
-import Login from '../organism/Login'
-import Signup from '../organism/Signup'
+import {Lead} from '../organism/Lead'
+import {Login} from '../organism/Login'
+import {Signup} from '../organism/Signup'
 import {shallow} from 'enzyme'
 
 test('render', () => {

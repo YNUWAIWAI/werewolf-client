@@ -3,11 +3,11 @@ import {
   Language,
   getMessages
 } from '../../i18n'
-import FormNavigation from '../atoms/FormNavigation'
+import {FormNavigation} from '../atoms/FormNavigation'
 import {IntlProvider} from 'react-intl'
-import Lead from '../organism/Lead'
-import Login from '../organism/Login'
-import Signup from '../organism/Signup'
+import {Lead} from '../organism/Lead'
+import {Login} from '../organism/Login'
+import {Signup} from '../organism/Signup'
 
 interface Props {
   csrfToken: string
@@ -18,7 +18,7 @@ interface Props {
   signupError: boolean
 }
 
-export default function App(props: Props) {
+export const App: React.FC<Props> = props => {
   const messages = getMessages(props.language)
   const [isSignup, setIsSignup] = React.useState(false)
 
@@ -50,3 +50,4 @@ export default function App(props: Props) {
     </IntlProvider>
   )
 }
+App.displayName = 'App'
