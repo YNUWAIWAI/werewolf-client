@@ -1,5 +1,8 @@
 import * as React from 'react'
-import MenuItem, {Props as MenuItemProps_} from '../molecules/MenuItem'
+import {
+  MenuItem,
+  Props as MenuItemProps_
+} from '../molecules/MenuItem'
 import {Target} from '../../actions'
 
 export interface MenuItemProps {
@@ -21,7 +24,7 @@ export interface DispatchProps {
 }
 export type Props = OwnProps & DispatchProps & StateProps
 
-export default function Menu(props: Props) {
+export const Menu: React.FC<Props> = props => {
   const items = props.items.map(item => (
     <MenuItem
       className={props.itemClassName}
@@ -41,3 +44,4 @@ export default function Menu(props: Props) {
     </ul>
   )
 }
+Menu.displayName = 'Menu'
