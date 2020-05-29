@@ -1,8 +1,11 @@
 import * as React from 'react'
-import SelectHumanAvatarTableBody, {StateProps} from './SelectHumanAvatarTableBody'
+import {
+  SelectHumanAvatarTableBody,
+  StateProps
+} from './SelectHumanAvatarTableBody'
 import {ImagePath} from '../../constants/ImagePath'
-import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
-import SelectAvatarTableBodyCheckbox from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
+import {SelectAvatarTableBodyAvatarName} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
+import {SelectAvatarTableBodyCheckbox} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
