@@ -1,5 +1,5 @@
 import * as React from 'react'
-import SelectRobotAvatarTableHeader from './SelectRobotAvatarTableHeader'
+import {SelectRobotAvatarTableHeader} from './SelectRobotAvatarTableHeader'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
