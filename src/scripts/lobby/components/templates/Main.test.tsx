@@ -1,5 +1,8 @@
 import * as React from 'react'
-import Main, {Props} from './Main'
+import {
+  Main,
+  Props
+} from './Main'
 import Menu from '../../containers/MenuContainer'
 import {shallow} from 'enzyme'
 
