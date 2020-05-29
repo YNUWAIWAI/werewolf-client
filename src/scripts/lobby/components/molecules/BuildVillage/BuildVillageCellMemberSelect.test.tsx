@@ -1,5 +1,5 @@
 import * as React from 'react'
-import BuildVillageCellMemberSelect from './BuildVillageCellMemberSelect'
+import {BuildVillageCellMemberSelect} from './BuildVillageCellMemberSelect'
 import Cast from '../../../constants/Cast'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
