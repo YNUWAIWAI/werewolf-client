@@ -10,7 +10,7 @@ import Prediction from './containers/PredictionContainer'
 import Result from './containers/ResultContainer'
 import Theme from './containers/ThemeContainer'
 
-export default function App() {
+export const App: React.FC<{}> = () => {
   return (
     <IntlProvider>
       <Theme>
@@ -29,3 +29,4 @@ export default function App() {
     </IntlProvider>
   )
 }
+App.displayName = 'App'
