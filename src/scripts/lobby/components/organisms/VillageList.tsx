@@ -3,7 +3,7 @@ import {
   CSSTransition,
   TransitionGroup
 } from 'react-transition-group'
-import VillageItem from '../molecules/VillageItem'
+import {VillageItem} from '../molecules/VillageItem'
 import {lobby} from '../../types'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   readonly selectVillage?: (id: number) => () => void
 }
 
-export default function VillageList(props: Props) {
+export const VillageList: React.FC<Props> = props => {
   const items = props.items.map(item => (
     <CSSTransition
       appear
@@ -45,3 +45,4 @@ export default function VillageList(props: Props) {
     </TransitionGroup>
   )
 }
+VillageList.displayName = 'VillageList'

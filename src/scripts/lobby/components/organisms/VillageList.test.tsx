@@ -1,5 +1,5 @@
 import * as React from 'react'
-import VillageList from './VillageList'
+import {VillageList} from './VillageList'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
