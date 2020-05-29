@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Circle from './svg/Circle'
-import Cross from './svg/Cross'
-import Question from './svg/Question'
-import Triangle from './svg/Triangle'
+import {Circle} from './svg/Circle'
+import {Cross} from './svg/Cross'
+import {Question} from './svg/Question'
+import {Triangle} from './svg/Triangle'
 import {village} from '../../types'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   readonly state: village.BoardState
 }
 
-export default function PredictionItem(props: Props) {
+export const PredictionItem: React.FC<Props> = props => {
   const handleBoardClick = () => {
     const state = [village.BoardState.QUESTION, village.BoardState.TRIANGLE, village.BoardState.CIRCLE, village.BoardState.CROSS]
     const currentState = props.state
@@ -53,3 +53,4 @@ export default function PredictionItem(props: Props) {
     </div>
   )
 }
+PredictionItem.displayName = 'PredictionItem'

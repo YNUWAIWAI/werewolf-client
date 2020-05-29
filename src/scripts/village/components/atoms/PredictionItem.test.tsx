@@ -1,5 +1,5 @@
 import * as React from 'react'
-import PredictionItem from './PredictionItem'
+import {PredictionItem} from './PredictionItem'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
 
