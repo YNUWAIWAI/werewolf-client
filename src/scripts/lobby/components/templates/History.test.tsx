@@ -1,10 +1,10 @@
 import * as React from 'react'
-import AsideContent from '../atoms/AsideContent'
-import Header from '../atoms/Header'
-import History from './History'
-import MainContent from '../atoms/MainContent'
+import {AsideContent} from '../atoms/AsideContent'
+import {Header} from '../atoms/Header'
+import {History} from './History'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
-import VillageList from '../organisms/VillageList'
+import {VillageList} from '../organisms/VillageList'
 import {shallow} from 'enzyme'
 
 test('<History />', () => {
