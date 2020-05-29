@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CreateNewRobotAvatarTable from './CreateNewRobotAvatarTable'
+import {CreateNewRobotAvatarTable} from './CreateNewRobotAvatarTable'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
