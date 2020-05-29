@@ -1,5 +1,5 @@
 import * as React from 'react'
-import VillageItem from './VillageItem'
+import {VillageItem} from './VillageItem'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
