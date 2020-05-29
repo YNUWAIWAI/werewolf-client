@@ -1,11 +1,11 @@
 import * as React from 'react'
-import AsideContent from '../atoms/AsideContent'
-import Avatar from '../atoms/Avatar'
-import Header from '../atoms/Header'
-import LobbyForAudience from './LobbyForAudience'
-import MainContent from '../atoms/MainContent'
+import {AsideContent} from '../atoms/AsideContent'
+import {Avatar} from '../atoms/Avatar'
+import {Header} from '../atoms/Header'
+import {LobbyForAudience} from './LobbyForAudience'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
-import VillageList from '../organisms/VillageList'
+import {VillageList} from '../organisms/VillageList'
 import {shallow} from 'enzyme'
 
 test('<LobbyForAudience />', () => {
