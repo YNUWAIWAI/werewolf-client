@@ -12,7 +12,7 @@ import {
   ActionMeta,
   ValueType
 } from 'react-select/src/types'
-import Select from './CustomizedSelect'
+import {CustomizedSelect as Select} from './CustomizedSelect'
 import {lobby} from '../../../types'
 
 interface Props {
@@ -28,7 +28,7 @@ interface Option {
   readonly value: lobby.Language
 }
 
-export default function LanguageSelect(props: Props) {
+export const LanguageSelect: React.FC<Props> = props => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
     if (!selectedOption) { // selectedOption: null | undifined
@@ -71,3 +71,4 @@ export default function LanguageSelect(props: Props) {
     />
   )
 }
+LanguageSelect.displayName = 'LanguageSelect'

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import LanguageSelect from './LanguageSelect'
-import Select from './CustomizedSelect'
+import {LanguageSelect} from './LanguageSelect'
+import {CustomizedSelect as Select} from './CustomizedSelect'
 import {lobby} from '../../../types'
 import {shallow} from 'enzyme'
 
