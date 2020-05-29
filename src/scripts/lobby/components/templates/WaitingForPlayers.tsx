@@ -1,11 +1,11 @@
 import * as React from 'react'
-import AsideContent from '../atoms/AsideContent'
-import AvatarList from '../organisms/AvatarList'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
+import {AsideContent} from '../atoms/AsideContent'
+import {AvatarList} from '../organisms/AvatarList'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
-import VillageList from '../organisms/VillageList'
+import {VillageList} from '../organisms/VillageList'
 import {lobby} from '../../types'
 
 export interface StateProps {
@@ -29,7 +29,7 @@ export interface DispatchProps {
 }
 export type Props = StateProps & DispatchProps
 
-export default function WaitingForPlayers(props: Props) {
+export const WaitingForPlayers: React.FC<Props> = props => {
   const [head, ... tail] = props.menuItems
 
   return (
@@ -70,3 +70,4 @@ export default function WaitingForPlayers(props: Props) {
     </div>
   )
 }
+WaitingForPlayers.displayName = 'WaitingForPlayers'

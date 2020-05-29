@@ -1,11 +1,14 @@
 import * as React from 'react'
-import WaitingForPlayers, {Props} from './WaitingForPlayers'
-import AsideContent from '../atoms/AsideContent'
-import AvatarList from '../organisms/AvatarList'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
+import {
+  Props,
+  WaitingForPlayers
+} from './WaitingForPlayers'
+import {AsideContent} from '../atoms/AsideContent'
+import {AvatarList} from '../organisms/AvatarList'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
-import VillageList from '../organisms/VillageList'
+import {VillageList} from '../organisms/VillageList'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
