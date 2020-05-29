@@ -6,17 +6,17 @@ interface Props {
   isSignup: boolean
 }
 
-export default function FormNavigation(props: Props) {
-  return (
-    <button
-      className="la--form-navigation"
-      onClick={() => {
-        props.handleClick(!props.isSignup)
-      }}
-    >
-      <FormattedMessage
-        id={`${props.isSignup ? 'login' : 'signup'}-navigation`}
-      />
-    </button>
-  )
-}
+export const FormNavigation: React.FC<Props> = props => (
+  <button
+    className="la--form-navigation"
+    onClick={() => {
+      props.handleClick(!props.isSignup)
+    }}
+  >
+    <FormattedMessage
+      id={`${props.isSignup ? 'login' : 'signup'}-navigation`}
+    />
+  </button>
+)
+FormNavigation.displayName = 'FormNavigation'
+
