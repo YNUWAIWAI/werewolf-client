@@ -1,5 +1,8 @@
 import * as React from 'react'
-import AvatarList, {Props} from './AvatarList'
+import {
+  AvatarList,
+  Props
+} from './AvatarList'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 

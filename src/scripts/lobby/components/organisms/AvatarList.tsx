@@ -3,7 +3,7 @@ import {
   CSSTransition,
   TransitionGroup
 } from 'react-transition-group'
-import AvatarItem from '../molecules/AvatarItem'
+import {AvatarItem} from '../molecules/AvatarItem'
 import {lobby} from '../../types'
 
 export interface Props {
@@ -21,7 +21,7 @@ export interface Props {
   }[]
 }
 
-export default function AvatarList(props: Props) {
+export const AvatarList: React.FC<Props> = props => {
   const items = props.items.map(item => (
     <CSSTransition
       appear
@@ -54,3 +54,4 @@ export default function AvatarList(props: Props) {
     </TransitionGroup>
   )
 }
+AvatarList.displayName = 'AvatarList'
