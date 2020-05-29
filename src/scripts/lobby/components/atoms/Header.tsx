@@ -5,12 +5,11 @@ interface Props {
   readonly id: string
 }
 
-export const Header: React.FC<Props> = props => {
-  return (
-    <div className="lo--header">
-      <FormattedMessage
-        id={props.id}
-      />
-    </div>
-  )
-}
+export const Header: React.FC<Props> = props => (
+  <div className="lo--header">
+    <FormattedMessage
+      id={props.id}
+    />
+  </div>
+)
+Header.displayName = 'Header'
