@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import TextInput from '../../atoms/TextInput'
+import {TextInput} from '../../atoms/TextInput'
 
 export interface Props {
   readonly handleSubmit: (value: string) => void
@@ -58,3 +58,4 @@ export const SettingsBoxBucketUserName: React.FC<Props> = props => {
     </form>
   )
 }
+SettingsBoxBucketUserName.displayName = 'SettingsBoxBucketUserName'
