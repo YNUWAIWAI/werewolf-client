@@ -1,12 +1,15 @@
 import * as React from 'react'
-import IdSearch, {Props} from './IdSearch'
-import AsideContent from '../atoms/AsideContent'
-import Avatar from '../atoms/Avatar'
-import Header from '../atoms/Header'
-import IdSearchBox from '../organisms/IdSearchBox'
-import MainContent from '../atoms/MainContent'
+import {
+  IdSearch,
+  Props
+} from './IdSearch'
+import {AsideContent} from '../atoms/AsideContent'
+import {Avatar} from '../atoms/Avatar'
+import {Header} from '../atoms/Header'
+import {IdSearchBox} from '../organisms/IdSearchBox'
+import {MainContent} from '../atoms/MainContent'
 import Menu from '../../containers/MenuContainer'
-import SearchResult from '../organisms/SearchResult'
+import {SearchResult} from '../organisms/SearchResult'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
