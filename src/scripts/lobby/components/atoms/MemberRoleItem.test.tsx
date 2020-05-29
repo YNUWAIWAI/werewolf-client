@@ -1,5 +1,5 @@
 import * as React from 'react'
-import MemberRoleItem from './MemberRoleItem'
+import {MemberRoleItem} from './MemberRoleItem'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'

@@ -8,7 +8,7 @@ interface Props {
   readonly numberOfPlayers?: number
 }
 
-export default function MemberRoleItem(props: Props) {
+export const MemberRoleItem: React.FC<Props> = props => {
   const times = '✕'
 
   return (
@@ -43,3 +43,4 @@ export default function MemberRoleItem(props: Props) {
     </div>
   )
 }
+MemberRoleItem.displayName = 'MemberRoleItem'
