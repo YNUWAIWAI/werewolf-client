@@ -17,30 +17,29 @@ interface Props {
   readonly history: H
 }
 
-export default function App(props: Props) {
-  return (
-    <IntlProvider>
-      <Theme>
-        <Router history={props.history}>
-          <TransitionGroup
-            component={null}
+export const App: React.FC<Props> = props => (
+  <IntlProvider>
+    <Theme>
+      <Router history={props.history}>
+        <TransitionGroup
+          component={null}
+        >
+          <CSSTransition
+            appear
+            classNames="lo--app--transition"
+            exit={false}
+            timeout={100}
+            unmountOnExit
           >
-            <CSSTransition
-              appear
-              classNames="lo--app--transition"
-              exit={false}
-              timeout={100}
-              unmountOnExit
-            >
-              <Routes />
-            </CSSTransition>
-          </TransitionGroup>
-          <Obfucator />
-          <Modal />
-          <MuteButton />
-          <Video />
-        </Router>
-      </Theme>
-    </IntlProvider>
-  )
-}
+            <Routes />
+          </CSSTransition>
+        </TransitionGroup>
+        <Obfucator />
+        <Modal />
+        <MuteButton />
+        <Video />
+      </Router>
+    </Theme>
+  </IntlProvider>
+)
+App.displayName = 'App'
