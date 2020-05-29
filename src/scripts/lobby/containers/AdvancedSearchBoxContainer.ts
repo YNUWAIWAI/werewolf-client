@@ -3,7 +3,7 @@ import {
   advancedSearch
 } from '../actions'
 import {
-  AdvancedSearchBox,
+  AdvancedSearchBox as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/AdvancedSearchBox'
@@ -56,4 +56,4 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
 export const AdvancedSearchBoxContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AdvancedSearchBox)
+)(Component)
