@@ -11,11 +11,8 @@ interface Props {
   readonly required: boolean
   readonly rows: number
 }
-interface State {
-  value: string
-}
 
-export default function TextareaInput(props: Props) {
+export const TextareaInput: React.FC<Props> = props => {
   const [value, setValue] = React.useState(props.initialValue)
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value)
@@ -36,3 +33,4 @@ export default function TextareaInput(props: Props) {
     />
   )
 }
+TextareaInput.displayName = 'TextareaInput'
