@@ -1,9 +1,9 @@
 import * as React from 'react'
-import BuildVillageCellComment from '../molecules/BuildVillage/BuildVillageCellComment'
-import BuildVillageCellHostName from '../molecules/BuildVillage/BuildVillageCellHostName'
-import BuildVillageCellMemberSelect from '../molecules/BuildVillage/BuildVillageCellMemberSelect'
-import BuildVillageCellSetup from '../molecules/BuildVillage/BuildVillageCellSetup'
-import BuildVillageCellVillageName from '../molecules/BuildVillage/BuildVillageCellVillageName'
+import {BuildVillageCellComment} from '../molecules/BuildVillage/BuildVillageCellComment'
+import {BuildVillageCellHostName} from '../molecules/BuildVillage/BuildVillageCellHostName'
+import {BuildVillageCellMemberSelect} from '../molecules/BuildVillage/BuildVillageCellMemberSelect'
+import {BuildVillageCellSetup} from '../molecules/BuildVillage/BuildVillageCellSetup'
+import {BuildVillageCellVillageName} from '../molecules/BuildVillage/BuildVillageCellVillageName'
 import {getCastFromNumberOfPlayers} from '../../util'
 import {lobby} from '../../types'
 
@@ -38,7 +38,7 @@ export interface DispatchProps {
 }
 type Props = StateProps & DispatchProps
 
-export default function BuildVillageBox(props: Props) {
+export const BuildVillageBox: React.FC<Props> = props => {
   const isFiexdAvatar = props.value.avatar === lobby.Avatar.fixed
 
   return (
@@ -90,3 +90,4 @@ export default function BuildVillageBox(props: Props) {
     </div>
   )
 }
+BuildVillageBox.displayName = 'BuildVillageBox'
