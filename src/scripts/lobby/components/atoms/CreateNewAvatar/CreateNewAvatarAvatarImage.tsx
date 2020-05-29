@@ -28,3 +28,4 @@ export const CreateNewAvatarAvatarImage: React.FC<Props> = props => {
     </>
   )
 }
+CreateNewAvatarAvatarImage.displayName = 'CreateNewAvatarAvatarImage'
