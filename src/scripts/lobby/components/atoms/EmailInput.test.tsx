@@ -1,5 +1,5 @@
 import * as React from 'react'
-import EmailInput from './EmailInput'
+import {EmailInput} from './EmailInput'
 import {shallow} from 'enzyme'
 
 test('render', () => {
