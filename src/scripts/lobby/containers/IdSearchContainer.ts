@@ -1,4 +1,5 @@
-import Component, {
+import {
+  IdSearch as Component,
   DispatchProps,
   StateProps
 } from '../components/templates/IdSearch'
@@ -29,9 +30,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(selectVillage(id))
   }
 })
-const IdSearchContainer = connect(
+
+export const IdSearchContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default IdSearchContainer
