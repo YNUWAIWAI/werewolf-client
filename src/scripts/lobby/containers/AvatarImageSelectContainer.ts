@@ -2,7 +2,8 @@ import {
   AvatarImageSelect,
   avatarImageSelect
 } from '../actions'
-import Component, {
+import {
+  AvatarImageSelect as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/AvatarImageSelect'
@@ -27,9 +28,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   }
 })
 
-const AvatarImageSelectContainer = connect(
+export const AvatarImageSelectContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default AvatarImageSelectContainer
