@@ -1,13 +1,13 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import TeamIcon from './TeamIcon'
+import {TeamIcon} from './TeamIcon'
 import {village} from '../../types'
 
 interface Props {
   readonly team: Set<village.Team>
 }
 
-export default function ResultCellLoserCaption(props: Props) {
+export const ResultCellLoserCaption: React.FC<Props> = props => {
   // '' is dummy element
   // ex) ['werewolf', 'villager'], ['werewolf', ''], ['', '']
   const loserTeam: (village.Team | '')[] = [... props.team, '']
@@ -38,3 +38,4 @@ export default function ResultCellLoserCaption(props: Props) {
     </div>
   )
 }
+ResultCellLoserCaption.displayName = 'ResultCellLoserCaption'
