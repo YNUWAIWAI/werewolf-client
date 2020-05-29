@@ -8,7 +8,7 @@ interface Props {
   readonly command: MenuItem[]
 }
 
-export default function SelectRobotAvatarBox(props: Props) {
+export const SelectRobotAvatarBox: React.FC<Props> = props => {
   return (
     <>
       <div
@@ -27,3 +27,4 @@ export default function SelectRobotAvatarBox(props: Props) {
     </>
   )
 }
+SelectRobotAvatarBox.displayName = 'SelectRobotAvatarBox'
