@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {ImagePath} from '../../constants/ImagePath'
-import PredictionCharacter from './PredictionCharacter'
+import {PredictionCharacter} from './PredictionCharacter'
 import {mount} from 'enzyme'
 
 describe('<PredictionCharacter />', () => {
