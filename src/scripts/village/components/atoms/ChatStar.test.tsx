@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ChatStar from './ChatStar'
+import {ChatStar} from './ChatStar'
 import {shallow} from 'enzyme'
 
 describe('rennder', () => {

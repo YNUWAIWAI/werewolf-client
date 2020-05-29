@@ -1,12 +1,12 @@
 import * as React from 'react'
-import Star from './svg/Star'
+import {Star} from './svg/Star'
 
 interface Props {
   readonly handleStar: (isMarked: boolean) => void
   readonly isMarked: boolean
 }
 
-export default function ChatNum(props: Props) {
+export const ChatStar: React.FC<Props> = props => {
   return (
     <div
       className={`vi--chat--star ${props.isMarked ? 'marked' : ''}`}
@@ -16,3 +16,4 @@ export default function ChatNum(props: Props) {
     </div>
   )
 }
+ChatStar.displayName = 'ChatStar'
