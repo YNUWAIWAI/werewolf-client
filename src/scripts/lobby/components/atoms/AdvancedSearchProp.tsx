@@ -11,7 +11,7 @@ interface Props {
   readonly valid: boolean
 }
 
-export default function AdvancedSearchProp(props: Props) {
+export const AdvancedSearchProp: React.FC<Props> = props => {
   const ref = React.createRef<HTMLSpanElement>()
   const disabled = !props.valid || props.checkboxFixed
   const handleClick = () => {
@@ -44,3 +44,4 @@ export default function AdvancedSearchProp(props: Props) {
     </div>
   )
 }
+AdvancedSearchProp.displayName = 'AdvancedSearchProp'

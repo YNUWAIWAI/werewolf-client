@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AdvancedSearchProp from './AdvancedSearchProp'
+import {AdvancedSearchProp} from './AdvancedSearchProp'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'
