@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import TextareaInput from '../../atoms/TextareaInput'
+import {TextareaInput} from '../../atoms/TextareaInput'
 
 interface Props {
   readonly handleValueChange: (valid: boolean) => (value: string) => void
@@ -14,34 +14,33 @@ const values = {
   min: 0
 }
 
-export default function BuildVillageCellComment(props: Props) {
-  return (
-    <>
-      <div className="lo--village--item--prop comment">
-        <FormattedMessage
-          id="BuildVillage.label(comment)"
-        />
-      </div>
+export const BuildVillageCellComment: React.FC<Props> = props => (
+  <>
+    <div className="lo--village--item--prop comment">
       <FormattedMessage
-        id="BuildVillage.placeholder"
-        values={values}
-      >
-        {
-          text => (
-            <TextareaInput
-              className={`lo--village--item--val comment ${props.valid ? '' : 'invalid'}`}
-              handleChange={props.handleValueChange}
-              initialValue={props.value}
-              max={values.max}
-              min={values.min}
-              navigatable={props.navigatable}
-              placeholder={typeof text === 'string' ? text : ''}
-              required={false}
-              rows={3}
-            />
-          )
-        }
-      </FormattedMessage>
-    </>
-  )
-}
+        id="BuildVillage.label(comment)"
+      />
+    </div>
+    <FormattedMessage
+      id="BuildVillage.placeholder"
+      values={values}
+    >
+      {
+        text => (
+          <TextareaInput
+            className={`lo--village--item--val comment ${props.valid ? '' : 'invalid'}`}
+            handleChange={props.handleValueChange}
+            initialValue={props.value}
+            max={values.max}
+            min={values.min}
+            navigatable={props.navigatable}
+            placeholder={typeof text === 'string' ? text : ''}
+            required={false}
+            rows={3}
+          />
+        )
+      }
+    </FormattedMessage>
+  </>
+)
+BuildVillageCellComment.displayName = 'BuildVillageCellComment'
