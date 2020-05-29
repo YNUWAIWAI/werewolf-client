@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {ImagePath} from '../../../constants/ImagePath'
-import SelectAvatarTableBodyImage from './SelectAvatarTableBodyImage'
+import {SelectAvatarTableBodyImage} from './SelectAvatarTableBodyImage'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'

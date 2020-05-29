@@ -8,7 +8,7 @@ interface Props {
   readonly navigatable: boolean
 }
 
-export default function SelectAvatarTableBodyImage(props: Props) {
+export const SelectAvatarTableBodyImage: React.FC<Props> = props => {
   const handleSelect = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
       props.handleSelect()
@@ -29,3 +29,4 @@ export default function SelectAvatarTableBodyImage(props: Props) {
     </div>
   )
 }
+SelectAvatarTableBodyImage.displayName = 'SelectAvatarTableBodyImage'
