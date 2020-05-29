@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import Loader from '../atoms/svg/Loader'
+import {Loader} from '../atoms/svg/Loader'
 import {Target} from '../../actions'
 
 export interface Props {
@@ -13,7 +13,7 @@ export interface Props {
   readonly types: Target[]
 }
 
-export default function MenuItem(props: Props) {
+export const MenuItem: React.FC<Props> = props => {
   const handleClick = () => {
     props.types.forEach(type => {
       if (!props.disabled && !props.isLoading) {
@@ -47,3 +47,4 @@ export default function MenuItem(props: Props) {
     </li>
   )
 }
+MenuItem.displayName = 'MenuItem'
