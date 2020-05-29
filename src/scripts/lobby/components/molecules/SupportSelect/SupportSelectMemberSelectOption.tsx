@@ -12,9 +12,17 @@ interface Props {
 }
 
 export default function SupportSelectMemberSelectOption(props: Props) {
+  const [hover, setHover] = React.useState(false)
+  const handleMouseOver = () => {
+    setHover(true)
+  }
+  const handleMouseLeave = () => {
+    setHover(false)
+  }
   const ref = React.createRef<HTMLSpanElement>()
   const label = `${props.numberOfPlayers}-${props.member}`
   const className = 'lo--support-select--member-select--option'
+  const state = `${props.checked ? 'checked' : ''} ${hover ? 'hover' : ''}`
   const cast = getCastFromNumberOfPlayers(props.numberOfPlayers)[props.member]
   const handleSelect = () => {
     if (ref.current) {
@@ -26,8 +34,10 @@ export default function SupportSelectMemberSelectOption(props: Props) {
   return (
     <>
       <div
-        className={`${className}--checkbox`}
+        className={`${className} checkbox ${state}`}
         onClick={handleSelect}
+        onMouseLeave={handleMouseLeave}
+        onMouseOver={handleMouseOver}
       >
         <Checkbox
           checked={props.checked}
@@ -38,23 +48,29 @@ export default function SupportSelectMemberSelectOption(props: Props) {
         />
       </div>
       <div
-        className={`${className}--number`}
+        className={`${className} number ${state}`}
         onClick={handleSelect}
+        onMouseLeave={handleMouseLeave}
+        onMouseOver={handleMouseOver}
       >
         {props.numberOfPlayers}
       </div>
       <div
-        className={`${className}--type`}
+        className={`${className} type ${state}`}
         onClick={handleSelect}
+        onMouseLeave={handleMouseLeave}
+        onMouseOver={handleMouseOver}
       >
         {props.member}
       </div>
       {
         ORDERED_ROLE_LIST.map(item => (
           <div
-            className={`${className}--role`}
+            className={`${className} role ${state}`}
             key={item.id}
             onClick={handleSelect}
+            onMouseLeave={handleMouseLeave}
+            onMouseOver={handleMouseOver}
           >
             {cast[item.id]}
           </div>
