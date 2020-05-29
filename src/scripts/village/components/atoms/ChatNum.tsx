@@ -6,15 +6,13 @@ interface Props {
   readonly intensionalDisclosureRange: village.Channel
 }
 
-export const ChatNum: React.FC<Props> = props => {
-  return (
-    <div className="vi--chat--num">
-      {
-        props.intensionalDisclosureRange === village.Channel.public && props.id > 0 ?
-          props.id :
-          ''
-      }
-    </div>
-  )
-}
+export const ChatNum: React.FC<Props> = props => (
+  <div className="vi--chat--num">
+    {
+      props.intensionalDisclosureRange === village.Channel.public && props.id > 0 ?
+        props.id :
+        ''
+    }
+  </div>
+)
 ChatNum.displayName = 'ChatNum'
