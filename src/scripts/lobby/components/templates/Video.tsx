@@ -5,7 +5,7 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export default function Video(props: Props) {
+export const Video: React.FC<Props> = props => {
   if (props.visible) {
     return (
       <video
@@ -24,3 +24,4 @@ export default function Video(props: Props) {
 
   return null
 }
+Video.displayName = 'Video'
