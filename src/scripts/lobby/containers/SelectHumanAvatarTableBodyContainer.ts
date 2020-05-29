@@ -1,4 +1,5 @@
-import Component, {
+import {
+  SelectHumanAvatarTableBody as Component,
   DispatchProps,
   StateProps
 } from '../components/molecules/SelectHumanAvatarTableBody'
@@ -42,9 +43,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(selectHumanAvatar.changeCheckbox(id))
   }
 })
-const SelectHumanAvatarTableBodyContainer = connect(
+
+export const SelectHumanAvatarTableBodyContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default SelectHumanAvatarTableBodyContainer
