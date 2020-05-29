@@ -1,7 +1,7 @@
 import * as React from 'react'
-import AdvancedSearchCellMinimum from './AdvancedSearchCellMinimum'
-import AdvancedSearchProp from '../../atoms/AdvancedSearchProp'
-import NumberSelect from '../../atoms/Select/NumberSelect'
+import {AdvancedSearchCellMinimum} from './AdvancedSearchCellMinimum'
+import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
+import {NumberSelect} from '../../atoms/Select/NumberSelect'
 import {shallow} from 'enzyme'
 
 test('render', () => {
