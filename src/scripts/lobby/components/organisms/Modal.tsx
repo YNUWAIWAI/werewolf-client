@@ -11,7 +11,7 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export default function Modal(props: Props) {
+export const Modal: React.FC<Props> = props => {
   if (props.type === lobby.ModalType.avatarImageSelect) {
     return (
       <CSSTransition
@@ -57,3 +57,4 @@ export default function Modal(props: Props) {
     </CSSTransition>
   )
 }
+Modal.displayName = 'Modal'
