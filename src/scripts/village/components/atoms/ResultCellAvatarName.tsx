@@ -6,10 +6,9 @@ interface Props {
   readonly text: string
 }
 
-export default function ResultCellAvatarName(props: Props) {
-  return (
-    <div className={`vi--result--cell--avatarName ${props.status === 'alive' ? '' : 'dead'}`}>
-      {props.text}
-    </div>
-  )
-}
+export const ResultCellAvatarName: React.FC<Props> = props => (
+  <div className={`vi--result--cell--avatarName ${props.status === 'alive' ? '' : 'dead'}`}>
+    {props.text}
+  </div>
+)
+ResultCellAvatarName.displayName = 'ResultCellAvatarName'
