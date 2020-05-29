@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AutomationSelect from '../Select/AutomationSelect'
+import {AutomationSelect} from '../Select/AutomationSelect'
 import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../../types'
 
@@ -9,23 +9,22 @@ interface Props {
   readonly navigatable: boolean
 }
 
-export default function CreateNewAvatarAutomation(props: Props) {
-  return (
-    <>
-      <label
-        className="lo--create-new-avatar--label automation"
-        htmlFor="newAvatarName"
-      >
-        <FormattedMessage
-          id="CreateNewAvatar.label(automation)"
-        />
-      </label>
-      <AutomationSelect
-        className="lo--create-new-avatar--input"
-        defaultValue={props.automation}
-        handleChange={props.handleChange}
-        navigatable={props.navigatable}
+export const CreateNewAvatarAutomation: React.FC<Props> = props => (
+  <>
+    <label
+      className="lo--create-new-avatar--label automation"
+      htmlFor="newAvatarName"
+    >
+      <FormattedMessage
+        id="CreateNewAvatar.label(automation)"
       />
-    </>
-  )
-}
+    </label>
+    <AutomationSelect
+      className="lo--create-new-avatar--input"
+      defaultValue={props.automation}
+      handleChange={props.handleChange}
+      navigatable={props.navigatable}
+    />
+  </>
+)
+CreateNewAvatarAutomation.displayName = 'CreateNewAvatarAutomation'
