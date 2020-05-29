@@ -6,14 +6,12 @@ interface Props {
   readonly isMarked: boolean
 }
 
-export const ChatStar: React.FC<Props> = props => {
-  return (
-    <div
-      className={`vi--chat--star ${props.isMarked ? 'marked' : ''}`}
-      onClick={() => props.handleStar(!props.isMarked)}
-    >
-      <Star />
-    </div>
-  )
-}
+export const ChatStar: React.FC<Props> = props => (
+  <div
+    className={`vi--chat--star ${props.isMarked ? 'marked' : ''}`}
+    onClick={() => props.handleStar(!props.isMarked)}
+  >
+    <Star />
+  </div>
+)
 ChatStar.displayName = 'ChatStar'
