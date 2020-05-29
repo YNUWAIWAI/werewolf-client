@@ -2,13 +2,13 @@ import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 import Menu from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from './Menu'
-import SelectHumanAvatarTable from './SelectHumanAvatarTable'
+import {SelectHumanAvatarTable} from './SelectHumanAvatarTable'
 
 interface Props {
   readonly command: MenuItem[]
 }
 
-export default function SelectHumanAvatarBox(props: Props) {
+export const SelectHumanAvatarBox: React.FC<Props> = props => {
   return (
     <>
       <div
@@ -27,3 +27,4 @@ export default function SelectHumanAvatarBox(props: Props) {
     </>
   )
 }
+SelectHumanAvatarBox.displayName = 'SelectHumanAvatarBox'
