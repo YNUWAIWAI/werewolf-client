@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import Info from './Info'
+import {Info} from './Info'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {shallow} from 'enzyme'
