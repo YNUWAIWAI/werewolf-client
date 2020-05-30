@@ -13,7 +13,8 @@ interface Props {
   top: number
 }
 
-export default class CommandInputSuggest extends React.Component<Props, {}> {
+// eslint-disable-next-line react/display-name, react/require-optimization
+export class CommandInputSuggest extends React.Component<Props, {}> {
   public componentDidUpdate() {
     const listElem = this.listRef.current
     const itemElem = this.itemsRef[this.props.selected]
