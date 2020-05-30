@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CommandInput from '../molecules/CommandInput'
+import {CommandInput} from '../molecules/CommandInput'
 import {State} from '../../reducers/suggest'
 import {village} from '../../types'
 
@@ -22,43 +22,42 @@ export interface DispatchProps {
 }
 export interface Props extends StateProps, DispatchProps {}
 
-export default function CommandInputBox(props: Props) {
-  return (
-    <>
-      <CommandInput
-        handlePostChat={props.handlePostChat(village.InputChannel.public)}
-        inputChannel={village.InputChannel.public}
-        language={props.language}
-        maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
-        maxNumberOfChatMessages={props.maxNumberOfChatMessages}
-        navigatable={props.navigatable}
-        numberOfChatMessages={props.public.numberOfChatMessages}
-        suggestedData={props.suggestedData}
-      />
-      <CommandInput
-        handlePostChat={props.handlePostChat(village.InputChannel.private)}
-        inputChannel={village.InputChannel.private}
-        language={props.language}
-        maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
-        maxNumberOfChatMessages={-1}
-        navigatable={props.navigatable}
-        numberOfChatMessages={-1}
-        suggestedData={props.suggestedData}
-      />
-      {
-        props.werewolf.available ?
-          <CommandInput
-            handlePostChat={props.handlePostChat(village.InputChannel.werewolf)}
-            inputChannel={village.InputChannel.werewolf}
-            language={props.language}
-            maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
-            maxNumberOfChatMessages={props.maxNumberOfChatMessages}
-            navigatable={props.navigatable}
-            numberOfChatMessages={props.werewolf.numberOfChatMessages}
-            suggestedData={props.suggestedData}
-          /> :
-          null
-      }
-    </>
-  )
-}
+export const CommandInputBox: React.FC<Props> = props => (
+  <>
+    <CommandInput
+      handlePostChat={props.handlePostChat(village.InputChannel.public)}
+      inputChannel={village.InputChannel.public}
+      language={props.language}
+      maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
+      maxNumberOfChatMessages={props.maxNumberOfChatMessages}
+      navigatable={props.navigatable}
+      numberOfChatMessages={props.public.numberOfChatMessages}
+      suggestedData={props.suggestedData}
+    />
+    <CommandInput
+      handlePostChat={props.handlePostChat(village.InputChannel.private)}
+      inputChannel={village.InputChannel.private}
+      language={props.language}
+      maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
+      maxNumberOfChatMessages={-1}
+      navigatable={props.navigatable}
+      numberOfChatMessages={-1}
+      suggestedData={props.suggestedData}
+    />
+    {
+      props.werewolf.available ?
+        <CommandInput
+          handlePostChat={props.handlePostChat(village.InputChannel.werewolf)}
+          inputChannel={village.InputChannel.werewolf}
+          language={props.language}
+          maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
+          maxNumberOfChatMessages={props.maxNumberOfChatMessages}
+          navigatable={props.navigatable}
+          numberOfChatMessages={props.werewolf.numberOfChatMessages}
+          suggestedData={props.suggestedData}
+        /> :
+        null
+    }
+  </>
+)
+CommandInputBox.displayName = 'CommandInputBox'

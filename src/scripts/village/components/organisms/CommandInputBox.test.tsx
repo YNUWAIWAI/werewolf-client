@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CommandInputBox from './CommandInputBox'
+import {CommandInputBox} from './CommandInputBox'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
 
