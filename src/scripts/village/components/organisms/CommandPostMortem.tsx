@@ -1,6 +1,9 @@
 import * as React from 'react'
-import CommandNavigation, {Props as CommandNavigationProps} from '../molecules/CommandNavigation'
-import CommandInput from '../molecules/CommandInput'
+import {
+  CommandNavigation,
+  Props as CommandNavigationProps
+} from '../molecules/CommandNavigation'
+import {CommandInput} from '../molecules/CommandInput'
 import {Navigation} from '../../constants/ActionTypes'
 import {State} from '../../reducers/suggest'
 import {village} from '../../types'
@@ -18,24 +21,23 @@ export interface DispatchProps {
 }
 export interface Props extends StateProps, DispatchProps {}
 
-export default function CommandPostMortem(props: Props) {
-  return (
-    <>
-      <CommandInput
-        handlePostChat={props.handlePostChat(village.InputChannel.postMortem)}
-        inputChannel={village.InputChannel.postMortem}
-        language={props.language}
-        maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
-        maxNumberOfChatMessages={-1}
-        navigatable={props.navigatable}
-        numberOfChatMessages={-1}
-        suggestedData={props.suggestedData}
-      />
-      <CommandNavigation
-        handleClick={props.handleNavigationClick}
-        items={props.navigation}
-        navigatable={props.navigatable}
-      />
-    </>
-  )
-}
+export const CommandPostMortem: React.FC<Props> = props => (
+  <>
+    <CommandInput
+      handlePostChat={props.handlePostChat(village.InputChannel.postMortem)}
+      inputChannel={village.InputChannel.postMortem}
+      language={props.language}
+      maxLengthOfUnicodeCodePoints={props.maxLengthOfUnicodeCodePoints}
+      maxNumberOfChatMessages={-1}
+      navigatable={props.navigatable}
+      numberOfChatMessages={-1}
+      suggestedData={props.suggestedData}
+    />
+    <CommandNavigation
+      handleClick={props.handleNavigationClick}
+      items={props.navigation}
+      navigatable={props.navigatable}
+    />
+  </>
+)
+CommandPostMortem.displayName = 'CommandPostMortem'

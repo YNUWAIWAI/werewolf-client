@@ -1,6 +1,6 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
-import CommandPostMortem from './CommandPostMortem'
+import {CommandPostMortem} from './CommandPostMortem'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
 
