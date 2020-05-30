@@ -4,7 +4,7 @@ import {Avatar} from '../atoms/Avatar'
 import {Header} from '../atoms/Header'
 import {IdSearchBox} from '../organisms/IdSearchBox'
 import {MainContent} from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import {SearchResult} from '../organisms/SearchResult'
 import {lobby} from '../../types'
@@ -44,7 +44,7 @@ export const IdSearch: React.FC<Props> = props => (
         handleValidityChange={props.handleValidityChange}
         max={3}
       />
-      <Menu
+      <MenuContainer
         className="lo--compact-menu"
         itemClassName="lo--compact-menu--item"
         items={props.menuItems}

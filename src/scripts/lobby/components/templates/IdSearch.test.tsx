@@ -8,7 +8,7 @@ import {Avatar} from '../atoms/Avatar'
 import {Header} from '../atoms/Header'
 import {IdSearchBox} from '../organisms/IdSearchBox'
 import {MainContent} from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {SearchResult} from '../organisms/SearchResult'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
@@ -40,7 +40,7 @@ describe('<IdSearch />', () => {
     expect(wrapper.find(MainContent).find(SearchResult).exists()).toBe(true)
     expect(wrapper.find(AsideContent).exists()).toBe(true)
     expect(wrapper.find(AsideContent).find(IdSearchBox).exists()).toBe(true)
-    expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(MenuContainer).exists()).toBe(true)
     expect(selectVillage).toHaveBeenCalledTimes(0)
   })
   test('1 item', () => {
@@ -105,7 +105,7 @@ describe('<IdSearch />', () => {
     expect(wrapper.find(MainContent).find(SearchResult).exists()).toBe(true)
     expect(wrapper.find(AsideContent).exists()).toBe(true)
     expect(wrapper.find(AsideContent).find(IdSearchBox).exists()).toBe(true)
-    expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
+    expect(wrapper.find(AsideContent).find(MenuContainer).exists()).toBe(true)
     expect(selectVillage).toHaveBeenCalledTimes(0)
   })
 })
