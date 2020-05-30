@@ -1,6 +1,6 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from './Menu'
 import {SelectRobotAvatarBox} from './SelectRobotAvatarBox'
 import {SelectRobotAvatarTable} from './SelectRobotAvatarTable'
@@ -36,5 +36,5 @@ test('render', () => {
   )
 
   expect(wrapper.find(SelectRobotAvatarTable)).toHaveLength(1)
-  expect(wrapper.find(Menu)).toHaveLength(1)
+  expect(wrapper.find(MenuContainer)).toHaveLength(1)
 })
