@@ -2,7 +2,7 @@ import * as React from 'react'
 import {AsideContent} from '../atoms/AsideContent'
 import {Header} from '../atoms/Header'
 import {MainContent} from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import {SelectRobotAvatarBox} from '../organisms/SelectRobotAvatarBox'
 
@@ -21,7 +21,7 @@ export const SelectRobotAvatar: React.FC<Props> = props => (
       />
     </MainContent>
     <AsideContent>
-      <Menu
+      <MenuContainer
         className="lo--compact-menu"
         itemClassName="lo--compact-menu--item"
         items={props.menuItems}
