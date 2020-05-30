@@ -1,4 +1,7 @@
-import Component, {Props as StateProps} from '../components/atoms/RoleIcon'
+import {
+  RoleIcon as Component,
+  Props as StateProps
+} from '../components/atoms/RoleIcon'
 import {ImagePath} from '../constants/ImagePath'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
@@ -23,8 +26,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 
-const Container = connect(
+export const InfoRoleContainer = connect(
   mapStateToProps
 )(Component)
-
-export default Container
