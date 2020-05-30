@@ -1,4 +1,7 @@
-import Component, {Props as StateProps} from '../components/atoms/CharacterIcon'
+import {
+  CharacterIcon as Component,
+  Props as StateProps
+} from '../components/atoms/CharacterIcon'
 import {
   getInitial,
   getText
@@ -28,8 +31,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 
-const Container = connect(
+export const InfoCharacterContainer = connect(
   mapStateToProps
 )(Component)
-
-export default Container
