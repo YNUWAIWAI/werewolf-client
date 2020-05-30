@@ -1,6 +1,6 @@
 import * as React from 'react'
-import ChatDelimeter from '../atoms/ChatDelimeter'
-import ChatItem from '../molecules/ChatItem'
+import {ChatDelimeter} from '../atoms/ChatDelimeter'
+import {ChatItem} from '../molecules/ChatItem'
 import {village} from '../../types'
 
 export interface StateProps {
@@ -34,7 +34,8 @@ export interface State {
   atBottom: boolean
 }
 
-export default class Chat extends React.Component<Props, State> {
+// eslint-disable-next-line react/display-name
+export class Chat extends React.Component<Props, State> {
   public constructor(props: Props) {
     super(props)
     this.state = {
