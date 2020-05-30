@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   }
 })
 
-export const CreateNewAvatarSupportBoardContainer = connect(
+export const CreateNewRobotAvatarSupportBoardContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
