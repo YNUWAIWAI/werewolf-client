@@ -6,7 +6,7 @@ import {
   changeToken,
   init
 } from './actions'
-import App from './App'
+import {App} from './App'
 import {Provider} from 'react-redux'
 import {createHashHistory} from 'history'
 import {createMiddleware} from './middlewares'
