@@ -1,4 +1,5 @@
-import Component, {
+import {
+  Result as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/Result'
@@ -63,9 +64,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(hideResult())
   }
 })
-const Container = connect(
+
+export const ResultContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container
