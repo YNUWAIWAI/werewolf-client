@@ -1,4 +1,5 @@
-import Component, {
+import {
+  Chat as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/Chat'
@@ -61,9 +62,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     }))
   }
 })
-const Container = connect(
+
+export const ChatContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container
