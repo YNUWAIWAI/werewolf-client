@@ -4,22 +4,22 @@ import {
   TransitionGroup
 } from 'react-transition-group'
 import {History as H} from 'history'
-import IntlProvider from './containers/IntlProviderContainer'
-import Modal from './containers/ModalContainer'
-import MuteButton from './containers/MuteButtonContainer'
-import Obfucator from './containers/ObfucatorContainer'
+import {IntlProviderContainer} from './containers/IntlProviderContainer'
+import {ModalContainer} from './containers/ModalContainer'
+import {MuteButtonContainer} from './containers/MuteButtonContainer'
+import {ObfucatorContainer} from './containers/ObfucatorContainer'
 import {Router} from 'react-router-dom'
-import Routes from './containers/Routes'
-import Theme from './containers/ThemeContainer'
-import Video from './containers/VideoContainer'
+import {Routes} from './containers/Routes'
+import {ThemeContainer} from './containers/ThemeContainer'
+import {VideoContainer} from './containers/VideoContainer'
 
 interface Props {
   readonly history: H
 }
 
 export const App: React.FC<Props> = props => (
-  <IntlProvider>
-    <Theme>
+  <IntlProviderContainer>
+    <ThemeContainer>
       <Router history={props.history}>
         <TransitionGroup
           component={null}
@@ -34,12 +34,12 @@ export const App: React.FC<Props> = props => (
             <Routes />
           </CSSTransition>
         </TransitionGroup>
-        <Obfucator />
-        <Modal />
-        <MuteButton />
-        <Video />
+        <ObfucatorContainer />
+        <ModalContainer />
+        <MuteButtonContainer />
+        <VideoContainer />
       </Router>
-    </Theme>
-  </IntlProvider>
+    </ThemeContainer>
+  </IntlProviderContainer>
 )
 App.displayName = 'App'
