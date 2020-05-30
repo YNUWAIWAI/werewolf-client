@@ -1,10 +1,10 @@
 import * as React from 'react'
-import AdvancedSearchBox from '../../containers/AdvancedSearchBoxContainer'
+import {AdvancedSearchBoxContainer} from '../../containers/AdvancedSearchBoxContainer'
 import {AsideContent} from '../atoms/AsideContent'
 import {Avatar} from '../atoms/Avatar'
 import {Header} from '../atoms/Header'
 import {MainContent} from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 import {SearchResult} from '../organisms/SearchResult'
 import {lobby} from '../../types'
@@ -28,7 +28,7 @@ export const AdvancedSearch: React.FC<Props> = props => (
     <Header id={props.header} />
     <Avatar image={props.image} name={props.name} />
     <MainContent>
-      <AdvancedSearchBox />
+      <AdvancedSearchBoxContainer />
       <SearchResult
         className="lo--advanced-search"
         isPlayer={props.isPlayer}
@@ -38,7 +38,7 @@ export const AdvancedSearch: React.FC<Props> = props => (
       />
     </MainContent>
     <AsideContent>
-      <Menu
+      <MenuContainer
         className="lo--compact-menu"
         itemClassName="lo--compact-menu--item"
         items={props.menuItems}
