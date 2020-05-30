@@ -1,10 +1,10 @@
 import * as React from 'react'
 import {AsideContent} from '../atoms/AsideContent'
 import {Avatar} from '../atoms/Avatar'
-import BuildVillageBox from '../../containers/BuildVillageBoxContainer'
+import {BuildVillageBoxContainer} from '../../containers/BuildVillageBoxContainer'
 import {Header} from '../atoms/Header'
 import {MainContent} from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 
 export interface StateProps {
@@ -19,10 +19,10 @@ export const BuildVillage: React.FC<Props> = props => (
     <Header id="Header.buildVillage" />
     <Avatar image={props.image} name={props.name} />
     <MainContent>
-      <BuildVillageBox />
+      <BuildVillageBoxContainer />
     </MainContent>
     <AsideContent>
-      <Menu
+      <MenuContainer
         className="lo--compact-menu"
         itemClassName="lo--compact-menu--item"
         items={props.menuItems}
