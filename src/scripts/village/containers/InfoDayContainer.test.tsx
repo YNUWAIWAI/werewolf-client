@@ -1,6 +1,6 @@
 import * as React from 'react'
-import InfoDayContainer from './InfoDayContainer'
-import IntlProviderContainer from './IntlProviderContainer'
+import {InfoDayContainer} from './InfoDayContainer'
+import {IntlProviderContainer} from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {VERSION} from '../constants/Version'
 import fakeStore from './fakeStore'
