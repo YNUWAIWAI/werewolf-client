@@ -1,5 +1,5 @@
 import * as React from 'react'
-import InfoDay from './InfoDay'
+import {InfoDay} from './InfoDay'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
 import {getMessages} from '../../i18n'
