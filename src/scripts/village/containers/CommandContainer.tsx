@@ -1,5 +1,8 @@
 import * as React from 'react'
-import Component, {StateProps} from '../components/organisms/Command'
+import {
+  Command as Component,
+  StateProps
+} from '../components/organisms/Command'
 import CommandGrave from './CommandGraveContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
@@ -34,8 +37,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
       throw Error('Unexpected value')
   }
 }
-const Container = connect(
+
+export const CommandContainer = connect(
   mapStateToProps
 )(Component)
-
-export default Container

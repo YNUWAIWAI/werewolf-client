@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CommandContainer from './CommandContainer'
+import {CommandContainer} from './CommandContainer'
 import CommandGrave from './CommandGraveContainer'
 import CommandInputBox from './CommandInputBoxContainer'
 import CommandPostMortem from './CommandPostMortemContainer'
