@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import InfoCharacter from '../../containers/InfoCharacterContainer'
-import InfoDay from '../../containers/InfoDayContainer'
-import InfoRole from '../../containers/InfoRoleContainer'
-import InfoTeam from '../../containers/InfoTeamContainer'
+import {InfoCharacterContainer as InfoCharacter} from '../../containers/InfoCharacterContainer'
+import {InfoDayContainer as InfoDay} from '../../containers/InfoDayContainer'
+import {InfoRoleContainer as InfoRole} from '../../containers/InfoRoleContainer'
+import {InfoTeamContainer as InfoTeam} from '../../containers/InfoTeamContainer'
 
 export const Info: React.FC<{}> = () => (
   <div className="vi--info">
