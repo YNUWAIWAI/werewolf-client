@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from './Menu'
 import {SelectHumanAvatarTable} from './SelectHumanAvatarTable'
 
@@ -18,7 +18,7 @@ export const SelectHumanAvatarBox: React.FC<Props> = props => (
       />
     </div>
     <SelectHumanAvatarTable />
-    <Menu
+    <MenuContainer
       className="lo--select-avatar--command human"
       itemClassName="lo--select-avatar--command--item"
       items={props.command}
