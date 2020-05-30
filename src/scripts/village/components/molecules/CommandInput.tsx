@@ -8,7 +8,7 @@ import {
 } from '../../util'
 import {ChatIcon} from '../atoms/ChatIcon'
 import {CommandInputPostCounter} from '../atoms/CommandInputPostCounter'
-import CommandInputSuggest from '../atoms/CommandInputSuggest'
+import {CommandInputSuggest} from '../atoms/CommandInputSuggest'
 import {CommandInputTextCounter} from '../atoms/CommandInputTextCounter'
 import {FormattedMessage} from 'react-intl'
 import Fuse from 'fuse.js'
