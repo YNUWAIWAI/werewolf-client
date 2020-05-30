@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Command from './Command'
+import {Command} from './Command'
 import {shallow} from 'enzyme'
 
 test('<Command hide />', () => {
