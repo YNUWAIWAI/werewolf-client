@@ -7,7 +7,7 @@ interface Props {
   id: string
 }
 
-export default function Description(props: Props) {
+export const Description: React.FC<Props> = props => {
   const lparen = ' ('
   const rparen = ')'
 
@@ -22,3 +22,4 @@ export default function Description(props: Props) {
     </div>
   )
 }
+Description.displayName = 'Description'
