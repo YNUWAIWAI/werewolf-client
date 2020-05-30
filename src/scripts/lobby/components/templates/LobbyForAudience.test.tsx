@@ -4,7 +4,7 @@ import {Avatar} from '../atoms/Avatar'
 import {Header} from '../atoms/Header'
 import {LobbyForAudience} from './LobbyForAudience'
 import {MainContent} from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {VillageList} from '../organisms/VillageList'
 import {shallow} from 'enzyme'
 
@@ -27,6 +27,6 @@ test('<LobbyForAudience />', () => {
   expect(wrapper.find(MainContent).exists()).toBe(true)
   expect(wrapper.find(MainContent).find(VillageList).exists()).toBe(true)
   expect(wrapper.find(AsideContent).exists()).toBe(true)
-  expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
+  expect(wrapper.find(AsideContent).find(MenuContainer).exists()).toBe(true)
   expect(selectVillage).toHaveBeenCalledTimes(0)
 })
