@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import Timer from '../../containers/TimerContainer'
+import {TimerContainer as Timer} from '../../containers/TimerContainer'
 import {spaceSeparatedToCamelCase} from '../../util'
 import {village} from '../../types'
 
