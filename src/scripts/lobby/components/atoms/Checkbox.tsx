@@ -1,6 +1,6 @@
 import * as React from 'react'
-import CheckboxBlank from './svg/CheckboxBlank'
-import CheckboxFilled from './svg/CheckboxFilled'
+import {CheckboxBlank} from './svg/CheckboxBlank'
+import {CheckboxFilled} from './svg/CheckboxFilled'
 
 interface Props {
   readonly checked: boolean
