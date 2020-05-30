@@ -1,5 +1,8 @@
 import * as React from 'react'
-import CommandInput, {Key} from './CommandInput'
+import {
+  CommandInput,
+  Key
+} from './CommandInput'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {village} from '../../types'

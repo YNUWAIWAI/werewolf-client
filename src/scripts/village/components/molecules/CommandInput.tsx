@@ -64,7 +64,8 @@ const options: Fuse.IFuseOptions<SuggestedData> = {
   threshold: 0.6
 }
 
-export default class CommandInput extends React.Component<Props, State> {
+// eslint-disable-next-line react/display-name
+export class CommandInput extends React.Component<Props, State> {
   private fuse: Fuse<SuggestedData, Fuse.IFuseOptions<SuggestedData>>
 
   public constructor(props: Props) {
