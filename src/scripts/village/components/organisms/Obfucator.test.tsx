@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Loader from '../atoms/svg/Loader'
-import Obfucator from './Obfucator'
+import {Loader} from '../atoms/svg/Loader'
+import {Obfucator} from './Obfucator'
 import {mount} from 'enzyme'
 
 describe('<Obfucator />', () => {
