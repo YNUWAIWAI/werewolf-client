@@ -1,11 +1,11 @@
 import * as React from 'react'
 import {CommandContainer} from './CommandContainer'
-import CommandGrave from './CommandGraveContainer'
-import CommandInputBox from './CommandInputBoxContainer'
-import CommandPostMortem from './CommandPostMortemContainer'
-import CommandSelection from './CommandSelectionContainer'
+import {CommandGraveContainer} from './CommandGraveContainer'
+import {CommandInputBoxContainer} from './CommandInputBoxContainer'
+import {CommandPostMortemContainer} from './CommandPostMortemContainer'
+import {CommandSelectionContainer} from './CommandSelectionContainer'
 import {Content} from '../reducers/command'
-import IntlProviderContainer from './IntlProviderContainer'
+import {IntlProviderContainer} from './IntlProviderContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
@@ -28,7 +28,7 @@ describe('<CommandContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.find(CommandGrave).exists()).toBe(true)
+    expect(wrapper.find(CommandGraveContainer).exists()).toBe(true)
     expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -49,7 +49,7 @@ describe('<CommandContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.find(CommandInputBox).exists()).toBe(true)
+    expect(wrapper.find(CommandInputBoxContainer).exists()).toBe(true)
     expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -70,7 +70,7 @@ describe('<CommandContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.find(CommandPostMortem).exists()).toBe(true)
+    expect(wrapper.find(CommandPostMortemContainer).exists()).toBe(true)
     expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -91,7 +91,7 @@ describe('<CommandContainer />', () => {
       </Provider>
     )
 
-    expect(wrapper.find(CommandSelection).exists()).toBe(true)
+    expect(wrapper.find(CommandSelectionContainer).exists()).toBe(true)
     expect(wrapper.find('.vi--command').hasClass('hidden')).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
   })
