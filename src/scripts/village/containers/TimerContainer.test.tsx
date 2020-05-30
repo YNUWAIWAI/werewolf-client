@@ -1,7 +1,7 @@
 import * as React from 'react'
-import IntlProviderContainer from './IntlProviderContainer'
+import {IntlProviderContainer} from './IntlProviderContainer'
 import {Provider} from 'react-redux'
-import TimerContainer from './TimerContainer'
+import {TimerContainer} from './TimerContainer'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 

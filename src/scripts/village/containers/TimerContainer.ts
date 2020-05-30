@@ -1,4 +1,7 @@
-import Component, {Props as StateProps} from '../components/atoms/FormattedTime'
+import {
+  FormattedTime as Component,
+  Props as StateProps
+} from '../components/atoms/FormattedTime'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -18,8 +21,6 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   }
 }
 
-const Container = connect(
+export const TimerContainer = connect(
   mapStateToProps
 )(Component)
-
-export default Container
