@@ -1,5 +1,8 @@
 import * as React from 'react'
-import Prediction, {Props} from './Prediction'
+import {
+  Prediction,
+  Props
+} from './Prediction'
 import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
