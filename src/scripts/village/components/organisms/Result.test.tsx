@@ -1,5 +1,8 @@
 import * as React from 'react'
-import Result, {Props} from './Result'
+import {
+  Props,
+  Result
+} from './Result'
 import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
