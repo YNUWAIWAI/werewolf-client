@@ -6,7 +6,7 @@ import {
 import {AsideContent} from '../atoms/AsideContent'
 import {Header} from '../atoms/Header'
 import {MainContent} from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {SettingsBox} from '../organisms/SettingsBox'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
@@ -40,7 +40,7 @@ test('<Settings />', () => {
   expect(wrapper.find(MainContent).exists()).toBe(true)
   expect(wrapper.find(MainContent).find(SettingsBox).exists()).toBe(true)
   expect(wrapper.find(AsideContent).exists()).toBe(true)
-  expect(wrapper.find(AsideContent).find(Menu).exists()).toBe(true)
+  expect(wrapper.find(AsideContent).find(MenuContainer).exists()).toBe(true)
   expect(handleChangeLanguage).toHaveBeenCalledTimes(0)
   expect(handleChangeUserEmail).toHaveBeenCalledTimes(0)
   expect(handleChangeUserName).toHaveBeenCalledTimes(0)
