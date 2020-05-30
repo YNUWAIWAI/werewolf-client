@@ -5,8 +5,8 @@ import {
   radios
 } from '@storybook/addon-knobs'
 import {Character} from '../../src/scripts/village/constants/Character'
-import CommandInput from '../../src/scripts/village/components/molecules/CommandInput'
-import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
+import {CommandInput} from '../../src/scripts/village/components/molecules/CommandInput'
+import {IntlProviderContainer as IntlProvider} from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {Role} from '../../src/scripts/village/constants/Role'
 import {createStore} from 'redux'

@@ -10,7 +10,7 @@ import {
   prologue,
   result
 } from './initialState'
-import App from '../../src/scripts/village/App'
+import {App} from '../../src/scripts/village/App'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import {language} from './language'
