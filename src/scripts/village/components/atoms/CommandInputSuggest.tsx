@@ -13,79 +13,70 @@ interface Props {
   top: number
 }
 
-// eslint-disable-next-line react/display-name, react/require-optimization
-export class CommandInputSuggest extends React.Component<Props, {}> {
-  public componentDidUpdate() {
-    const listElem = this.listRef.current
-    const itemElem = this.itemsRef[this.props.selected]
+export const CommandInputSuggest: React.FC<Props> = props => {
+  const suggestable = props.data.length > 0 && props.suggestable
+  const listRef = React.useRef<HTMLDivElement>(null)
+  const selectedItemRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    const listElem = listRef.current
+    const itemElem = selectedItemRef.current
 
     if (
       listElem === null ||
-      typeof itemElem === 'undefined' ||
-      this.props.data.length <= 0 ||
-      !this.props.suggestable
+      itemElem === null ||
+      !suggestable
     ) {
       return
     }
     const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
     listElem.scrollTop = offsetBottom - listElem.clientHeight
+  })
+
+  if (!suggestable) {
+    return null
+  }
+  const style = {
+    left: props.left,
+    top: props.top
   }
 
-  private listRef = React.createRef<HTMLDivElement>()
+  const handleSuggestClick = (text: string) => () => {
+    props.handleSuggestClick(text)
+  }
 
-  private itemsRef: HTMLDivElement[] = []
+  return (
+    <div className="vi--command--input--suggest--container">
+      <div
+        className="vi--command--input--suggest--list"
+        ref={listRef}
+        style={style}
+      >
+        {
+          props.data.map((item, index) => {
+            const selected = index === props.selected
+            const text = getText(
+              {
+                language: props.language,
+                languageMap: item.name
+              }
+            )
 
-  public render() {
-    if (this.props.data.length <= 0 || !this.props.suggestable) {
-      return null
-    }
-    this.itemsRef = []
-    const style = {
-      left: this.props.left,
-      top: this.props.top
-    }
-
-    return (
-      <div className="vi--command--input--suggest--container">
-        <div
-          className="vi--command--input--suggest--list"
-          ref={this.listRef}
-          style={style}
-        >
-          {
-            this.props.data.map((item, index) => (
+            return (
               <div
-                className={`vi--command--input--suggest--item ${index === this.props.selected ? 'selected' : ''}`}
+                className={`vi--command--input--suggest--item ${selected ? 'selected' : ''}`}
                 key={item.id}
-                onClick={() => this.props.handleSuggestClick(
-                  getText(
-                    {
-                      language: this.props.language,
-                      languageMap: item.name
-                    }
-                  )
-                )}
-                ref={instance => {
-                  if (instance !== null) {
-                    this.itemsRef = [... this.itemsRef, instance]
-                  }
-                }}
+                onClick={handleSuggestClick(text)}
+                ref={selected ? selectedItemRef : null}
               >
-                {
-                  getText(
-                    {
-                      language: this.props.language,
-                      languageMap: item.name
-                    }
-                  )
-                }
+                {text}
               </div>
-            ))
-          }
-        </div>
+            )
+          })
+        }
       </div>
-    )
-  }
+    </div>
+  )
 }
-
+CommandInputSuggest.displayName = 'CommandInputSuggest'

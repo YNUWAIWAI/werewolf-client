@@ -108,7 +108,7 @@ describe('<CommandInputSuggest />', () => {
         }
       ]
       const handleSuggestClick = jest.fn()
-      const wrapper = mount<CommandInputSuggest>(
+      const wrapper = mount(
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
@@ -128,7 +128,7 @@ describe('<CommandInputSuggest />', () => {
     })
     test('data.length <= 0', () => {
       const handleSuggestClick = jest.fn()
-      const wrapper = mount<CommandInputSuggest>(
+      const wrapper = mount(
         <CommandInputSuggest
           data={[]}
           handleSuggestClick={handleSuggestClick}
@@ -164,7 +164,7 @@ describe('<CommandInputSuggest />', () => {
         }
       ]
       const handleSuggestClick = jest.fn()
-      const wrapper = mount<CommandInputSuggest>(
+      const wrapper = mount(
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
@@ -200,7 +200,7 @@ describe('<CommandInputSuggest />', () => {
         }
       ]
       const handleSuggestClick = jest.fn()
-      const wrapper = mount<CommandInputSuggest>(
+      const wrapper = mount(
         <CommandInputSuggest
           data={data}
           handleSuggestClick={handleSuggestClick}
