@@ -14,6 +14,8 @@ import {App} from '../../src/scripts/village/App'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import {language} from './language'
+import {message} from '../../src/scripts/village/actions'
+import {myMessageOnChat} from '../../src/scripts/village/reducers/fakeServer'
 import {radios} from '@storybook/addon-knobs'
 import reducer from '../../src/scripts/village/reducers'
 import {storiesOf} from '@storybook/react'
@@ -178,6 +180,26 @@ storiesOf('village|App', module)
       <Provider store={store}>
         <App />
       </Provider>
+
+    return story
+  })
+  .add('morning (post chat every 3 sec)', () => {
+    const store = createStore(
+      reducer,
+      {
+        ... morningWithoutLimitedChat,
+        language: radios(language.label, language.options, language.defaultValue),
+        theme: radios(theme.label, theme.options, theme.defaultValue)
+      }
+    )
+    const story =
+      <Provider store={store}>
+        <App />
+      </Provider>
+
+    setInterval(() => {
+      store.dispatch(message.chatMessage(myMessageOnChat))
+    }, 3000)
 
     return story
   })
