@@ -51,7 +51,8 @@ const mapStateToProps = (state: ReducerState): StateProps => {
   return {
     allIds: state.chat.allIds,
     byId,
-    expand: state.hideButton.hide
+    expand: state.hideButton.hide,
+    navigatable: !state.obfucator.visible
   }
 }
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({

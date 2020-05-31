@@ -71,6 +71,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -125,6 +126,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -179,6 +181,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -233,6 +236,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -287,6 +291,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -341,6 +346,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -395,6 +401,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -449,6 +456,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -503,6 +511,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -565,6 +574,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -655,6 +665,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>
@@ -807,6 +818,7 @@ storiesOf('village|Chat', module)
               byId={byId}
               expand={false}
               handleStar={id => isMarked => console.log(`star${id}: ${isMarked}`)}
+              navigatable
             />
           </div>
         </IntlProvider>

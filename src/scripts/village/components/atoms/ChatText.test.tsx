@@ -5,7 +5,7 @@ import {
 } from 'enzyme'
 import {ChatText} from './ChatText'
 
-describe('<ChatText />', () => {
+describe('render', () => {
   describe('text', () => {
     test('text', () => {
       const wrapper = shallow(

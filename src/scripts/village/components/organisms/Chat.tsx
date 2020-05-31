@@ -25,53 +25,18 @@ export interface StateProps {
     }
   }
   readonly expand: boolean
+  readonly navigatable: boolean
 }
 export interface DispatchProps {
   readonly handleStar: (id: village.ChatId) => (isMarked: boolean) => void
 }
 export interface Props extends StateProps, DispatchProps {}
-export interface State {
-  atBottom: boolean
-}
 
-// eslint-disable-next-line react/display-name
-export class Chat extends React.Component<Props, State> {
-  public constructor(props: Props) {
-    super(props)
-    this.state = {
-      atBottom: true
-    }
-  }
-
-  public componentDidMount() {
-    this.scrollToBottom()
-  }
-
-  public shouldComponentUpdate() {
-    return true
-  }
-
-  public componentDidUpdate() {
-    if (this.state.atBottom) {
-      this.scrollToBottom()
-    }
-  }
-
-  private chat = React.createRef<HTMLDivElement>()
-
-  public handleScroll() {
-    const elem = this.chat.current
-
-    if (!elem) {
-      return
-    }
-    this.setState({
-      atBottom: elem.scrollHeight <= elem.clientHeight + elem.scrollTop
-    })
-  }
-
-  public scrollToBottom() {
-    const elem = this.chat.current
+export const Chat: React.FC<Props> = props => {
+  const [atBottom, setAtBottom] = React.useState(true)
+  const chatRef = React.useRef<HTMLDivElement>(null)
+  const scrollToBottom = () => {
+    const elem = chatRef.current
 
     if (!elem) {
       return
@@ -79,49 +44,64 @@ export class Chat extends React.Component<Props, State> {
     elem.scrollTop = elem.scrollHeight
   }
 
-  public render() {
-    return (
-      <div
-        className={`vi--chat ${this.props.expand ? 'expand' : ''}`}
-        onScroll={() => this.handleScroll()}
-        ref={this.chat}
-      >
-        {
-          this.props.allIds.map(id => {
-            const item = this.props.byId[id]
+  React.useEffect(() => {
+    if (atBottom) {
+      scrollToBottom()
+    }
+  })
 
-            switch (item.type) {
-              case 'item':
-                return (
-                  <ChatItem
-                    handleStar={this.props.handleStar(id)}
-                    id={item.id}
-                    image={item.image}
-                    initial={item.initial}
-                    intensionalDisclosureRange={item.intensionalDisclosureRange}
-                    isMarked={item.isMarked}
-                    isMine={item.isMine}
-                    key={id}
-                    name={item.name}
-                    phaseStartTime={item.phaseStartTime}
-                    phaseTimeLimit={item.phaseTimeLimit}
-                    serverTimestamp={item.serverTimestamp}
-                    text={item.text}
-                  />
-                )
-              case 'delimeter':
-                return (
-                  <ChatDelimeter
-                    day={item.day}
-                    key={id}
-                  />
-                )
-              default:
-                throw Error('Unexpected item type')
-            }
-          })
-        }
-      </div>
-    )
+  const handleScroll = () => {
+    const elem = chatRef.current
+
+    if (!elem) {
+      return
+    }
+    setAtBottom(elem.scrollHeight <= elem.clientHeight + elem.scrollTop)
   }
+
+  return (
+    <div
+      className={`vi--chat ${props.expand ? 'expand' : ''}`}
+      onScroll={handleScroll}
+      ref={chatRef}
+    >
+      {
+        props.allIds.map(id => {
+          const item = props.byId[id]
+
+          switch (item.type) {
+            case 'item':
+              return (
+                <ChatItem
+                  handleStar={props.handleStar(id)}
+                  id={item.id}
+                  image={item.image}
+                  initial={item.initial}
+                  intensionalDisclosureRange={item.intensionalDisclosureRange}
+                  isMarked={item.isMarked}
+                  isMine={item.isMine}
+                  key={id}
+                  name={item.name}
+                  navigatable={props.navigatable}
+                  phaseStartTime={item.phaseStartTime}
+                  phaseTimeLimit={item.phaseTimeLimit}
+                  serverTimestamp={item.serverTimestamp}
+                  text={item.text}
+                />
+              )
+            case 'delimeter':
+              return (
+                <ChatDelimeter
+                  day={item.day}
+                  key={id}
+                />
+              )
+            default:
+              throw Error('Unexpected item type')
+          }
+        })
+      }
+    </div>
+  )
 }
+Chat.displayName = 'Chat'

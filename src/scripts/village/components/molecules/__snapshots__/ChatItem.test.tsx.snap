@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render intensionalDisclosureRange anonymousAudience isMine: false 1`] = `
+"<div class=\\"vi--chat--item  public\\" id=\\"message1\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"audience\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0,0h24v24H0V0z\\" fill=\\"none\\"></path><path d=\\"M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M15.61,8.34c1.07,0,1.93,0.86,1.93,1.93s-0.86,1.93-1.93,1.93s-1.93-0.86-1.93-1.93C13.67,9.2,14.54,8.34,15.61,8.34z M9.61,6.76c1.3,0,2.36,1.06,2.36,2.36s-1.06,2.36-2.36,2.36s-2.36-1.06-2.36-2.36C7.25,7.81,8.3,6.76,9.61,6.76z M9.61,15.89v3.75c-2.4-0.75-4.3-2.6-5.14-4.96c1.05-1.12,3.67-1.69,5.14-1.69c0.53,0,1.2,0.08,1.9,0.22C9.87,14.08,9.61,15.23,9.61,15.89z M12,20c-0.27,0-0.53-0.01-0.79-0.04v-4.07c0-1.42,2.94-2.13,4.4-2.13c1.07,0,2.92,0.39,3.84,1.15C18.28,17.88,15.39,20,12,20z\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange anonymousAudience isMine: true 1`] = `
+"<div class=\\"vi--chat--item me public\\" id=\\"message1\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"audience\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0,0h24v24H0V0z\\" fill=\\"none\\"></path><path d=\\"M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M15.61,8.34c1.07,0,1.93,0.86,1.93,1.93s-0.86,1.93-1.93,1.93s-1.93-0.86-1.93-1.93C13.67,9.2,14.54,8.34,15.61,8.34z M9.61,6.76c1.3,0,2.36,1.06,2.36,2.36s-1.06,2.36-2.36,2.36s-2.36-1.06-2.36-2.36C7.25,7.81,8.3,6.76,9.61,6.76z M9.61,15.89v3.75c-2.4-0.75-4.3-2.6-5.14-4.96c1.05-1.12,3.67-1.69,5.14-1.69c0.53,0,1.2,0.08,1.9,0.22C9.87,14.08,9.61,15.23,9.61,15.89z M12,20c-0.27,0-0.53-0.01-0.79-0.04v-4.07c0-1.42,2.94-2.13,4.4-2.13c1.07,0,2.92,0.39,3.84,1.15C18.28,17.88,15.39,20,12,20z\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange grave isMine: false 1`] = `
+"<div class=\\"vi--chat--item  grave\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"grave\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path><path d=\\"M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75c0-2.17-4.33-3.25-6.5-3.25zm-4 4.5h-10v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75v1.25zm9 0H14v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75v1.25zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 5.5c1.93 0 3.5-1.57 3.5-3.5S18.43 5 16.5 5 13 6.57 13 8.5s1.57 3.5 3.5 3.5zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange grave isMine: true 1`] = `
+"<div class=\\"vi--chat--item me grave\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"grave\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path><path d=\\"M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75c0-2.17-4.33-3.25-6.5-3.25zm-4 4.5h-10v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75v1.25zm9 0H14v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75v1.25zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 5.5c1.93 0 3.5-1.57 3.5-3.5S18.43 5 16.5 5 13 6.57 13 8.5s1.57 3.5 3.5 3.5zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange hunter isMine: false 1`] = `
+"<div class=\\"vi--chat--item  werewolf\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><circle cx=\\"4.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><circle cx=\\"9\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"15\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"19.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><path d=\\"M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange hunter isMine: true 1`] = `
+"<div class=\\"vi--chat--item me werewolf\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><circle cx=\\"4.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><circle cx=\\"9\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"15\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"19.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><path d=\\"M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange master isMine: false 1`] = `
+"<div class=\\"vi--chat--item  master\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"master\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange master isMine: true 1`] = `
+"<div class=\\"vi--chat--item me master\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"master\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange onymousAudience isMine: false 1`] = `
+"<div class=\\"vi--chat--item  public\\" id=\\"message1\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"audience\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0,0h24v24H0V0z\\" fill=\\"none\\"></path><path d=\\"M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M15.61,8.34c1.07,0,1.93,0.86,1.93,1.93s-0.86,1.93-1.93,1.93s-1.93-0.86-1.93-1.93C13.67,9.2,14.54,8.34,15.61,8.34z M9.61,6.76c1.3,0,2.36,1.06,2.36,2.36s-1.06,2.36-2.36,2.36s-2.36-1.06-2.36-2.36C7.25,7.81,8.3,6.76,9.61,6.76z M9.61,15.89v3.75c-2.4-0.75-4.3-2.6-5.14-4.96c1.05-1.12,3.67-1.69,5.14-1.69c0.53,0,1.2,0.08,1.9,0.22C9.87,14.08,9.61,15.23,9.61,15.89z M12,20c-0.27,0-0.53-0.01-0.79-0.04v-4.07c0-1.42,2.94-2.13,4.4-2.13c1.07,0,2.92,0.39,3.84,1.15C18.28,17.88,15.39,20,12,20z\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange onymousAudience isMine: true 1`] = `
+"<div class=\\"vi--chat--item me public\\" id=\\"message1\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"audience\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0,0h24v24H0V0z\\" fill=\\"none\\"></path><path d=\\"M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M15.61,8.34c1.07,0,1.93,0.86,1.93,1.93s-0.86,1.93-1.93,1.93s-1.93-0.86-1.93-1.93C13.67,9.2,14.54,8.34,15.61,8.34z M9.61,6.76c1.3,0,2.36,1.06,2.36,2.36s-1.06,2.36-2.36,2.36s-2.36-1.06-2.36-2.36C7.25,7.81,8.3,6.76,9.61,6.76z M9.61,15.89v3.75c-2.4-0.75-4.3-2.6-5.14-4.96c1.05-1.12,3.67-1.69,5.14-1.69c0.53,0,1.2,0.08,1.9,0.22C9.87,14.08,9.61,15.23,9.61,15.89z M12,20c-0.27,0-0.53-0.01-0.79-0.04v-4.07c0-1.42,2.94-2.13,4.4-2.13c1.07,0,2.92,0.39,3.84,1.15C18.28,17.88,15.39,20,12,20z\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange private isMine: false 1`] = `
+"<div class=\\"vi--chat--item  private\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange private isMine: true 1`] = `
+"<div class=\\"vi--chat--item me private\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange public isMine: false 1`] = `
+"<div class=\\"vi--chat--item  public\\" id=\\"message1\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"public\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path><path d=\\"M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z\\"></path></svg></div><div class=\\"vi--chat--num\\">1</div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange public isMine: true 1`] = `
+"<div class=\\"vi--chat--item me public\\" id=\\"message1\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"public\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path><path d=\\"M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z\\"></path></svg></div><div class=\\"vi--chat--num\\">1</div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange seer isMine: false 1`] = `
+"<div class=\\"vi--chat--item  werewolf\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><circle cx=\\"4.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><circle cx=\\"9\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"15\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"19.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><path d=\\"M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange seer isMine: true 1`] = `
+"<div class=\\"vi--chat--item me werewolf\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><circle cx=\\"4.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><circle cx=\\"9\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"15\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"19.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><path d=\\"M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange werewolf isMine: false 1`] = `
+"<div class=\\"vi--chat--item  werewolf\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><circle cx=\\"4.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><circle cx=\\"9\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"15\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"19.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><path d=\\"M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;
+
+exports[`render intensionalDisclosureRange werewolf isMine: true 1`] = `
+"<div class=\\"vi--chat--item me werewolf\\"><div class=\\"vi--chat--arrow-box\\"><div class=\\"vi--chat--icon\\"><svg class=\\"private\\" viewBox=\\"0 0 24 24\\" xmlns=\\"http://www.w3.org/2000/svg\\"><circle cx=\\"4.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><circle cx=\\"9\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"15\\" cy=\\"5.5\\" r=\\"2.5\\"></circle><circle cx=\\"19.5\\" cy=\\"9.5\\" r=\\"2.5\\"></circle><path d=\\"M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z\\"></path><path d=\\"M0 0h24v24H0z\\" fill=\\"none\\"></path></svg></div><div class=\\"vi--chat--num\\"></div><div class=\\"vi--chat--text\\"><p class=\\"vi--chat--text--chunk\\">text</p></div><div class=\\"vi--chat--day\\">01/01/2018, 09:00:10 (00:40 left)</div><div class=\\"vi--chat--star \\"><svg class=\\"star\\" viewBox=\\"0 0 50 50\\" xmlns=\\"http://www.w3.org/2000/svg\\"><polygon points=\\"
+          25, 3
+          29.93930774237544, 18.201626123751154
+          45.92324335849338, 18.201626123751158
+          32.99196780805897, 27.596747752497688
+          37.93127555043441, 42.798373876248846
+          25, 33.403252247502316
+          12.068724449565593, 42.798373876248846
+          17.00803219194103, 27.596747752497688
+          4.076756641506623, 18.20162612375115
+          20.06069225762456, 18.201626123751158
+          25, 3
+        \\" stroke-width=\\"1.5\\"></polygon></svg></div></div><div class=\\"vi--chat--character \\"><div class=\\"vi--chat--character--initial\\">A</div><img class=\\"vi--chat--character--image\\" src=\\"https://werewolf.world/image/0.3/character_icons/120x120/a_120x120.png\\"><span class=\\"vi--chat--character--name\\">Adil</span></div></div>"
+`;

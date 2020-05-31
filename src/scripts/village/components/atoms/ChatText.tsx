@@ -38,13 +38,10 @@ const parseChat = (text: string, navigatable: boolean) => text
     )
   })
 
-export interface StateProps {
+interface Props {
   readonly navigatable: boolean
-}
-interface OwnProps {
   readonly text: string
 }
-type Props = StateProps & OwnProps
 
 export const ChatText: React.FC<Props> = props => (
   <div className="vi--chat--text">

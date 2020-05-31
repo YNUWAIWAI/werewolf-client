@@ -4,7 +4,7 @@ import {ChatDay} from '../atoms/ChatDay'
 import {ChatIcon} from '../atoms/ChatIcon'
 import {ChatNum} from '../atoms/ChatNum'
 import {ChatStar} from '../atoms/ChatStar'
-import {ChatTextContainer as ChatText} from '../../containers/ChatTextContainer'
+import {ChatText} from '../atoms/ChatText'
 import {getChatChannelFromChannel} from '../../util'
 import {village} from '../../types'
 
@@ -17,6 +17,7 @@ export interface Props {
   readonly isMarked: boolean
   readonly isMine: boolean
   readonly name: string
+  readonly navigatable: boolean
   readonly phaseStartTime: string
   readonly phaseTimeLimit: number
   readonly serverTimestamp: string
@@ -41,6 +42,7 @@ export const ChatItem: React.FC<Props> = props => {
           intensionalDisclosureRange={props.intensionalDisclosureRange}
         />
         <ChatText
+          navigatable={props.navigatable}
           text={props.text}
         />
         <ChatDay
