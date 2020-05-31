@@ -16,20 +16,19 @@ interface Props {
 export const CommandInputSuggest: React.FC<Props> = props => {
   const suggestable = props.data.length > 0 && props.suggestable
   const listRef = React.useRef<HTMLDivElement>(null)
-  const selectedItemRef = React.useRef<HTMLDivElement>(null)
+  const [offsetBottom, setOffsetBottom] = React.useState<number>(0)
+  const selectedItemRef = React.useCallback<(node: HTMLDivElement | null) => void>(node => {
+    if (node !== null) {
+      setOffsetBottom(node.offsetHeight + node.offsetTop)
+    }
+  }, [])
 
   React.useEffect(() => {
     const listElem = listRef.current
-    const itemElem = selectedItemRef.current
 
-    if (
-      listElem === null ||
-      itemElem === null ||
-      !suggestable
-    ) {
+    if (listElem === null || !suggestable) {
       return
     }
-    const offsetBottom = itemElem.offsetTop + itemElem.offsetHeight
 
     listElem.scrollTop = offsetBottom - listElem.clientHeight
   })
