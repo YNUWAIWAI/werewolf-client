@@ -1,6 +1,6 @@
 import * as React from 'react'
-import IntlProviderContainer from './IntlProviderContainer'
-import ModalContainer from './ModalContainer'
+import {IntlProviderContainer} from './IntlProviderContainer'
+import {ModalContainer} from './ModalContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {lobby} from '../types'

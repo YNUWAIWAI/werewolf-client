@@ -8,7 +8,7 @@ interface Props {
   visible: boolean
 }
 
-export default function PredictionSpec(props: Props) {
+export const PredictionSpec: React.FC<Props> = props => {
   if (!props.visible) {
     return null
   }
@@ -28,3 +28,4 @@ export default function PredictionSpec(props: Props) {
     </div>
   )
 }
+PredictionSpec.displayName = 'PredictionSpec'

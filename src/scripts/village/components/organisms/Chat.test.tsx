@@ -1,5 +1,8 @@
 import * as React from 'react'
-import Chat, {Props} from './Chat'
+import {
+  Chat,
+  Props
+} from './Chat'
 import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
 import {village} from '../../types'

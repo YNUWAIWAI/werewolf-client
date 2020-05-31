@@ -1,5 +1,5 @@
 import * as React from 'react'
-import BuildVillageCellMemberSelectMaximum from './BuildVillageCellMemberSelectMaximum'
+import {BuildVillageCellMemberSelectMaximum} from './BuildVillageCellMemberSelectMaximum'
 import {getMessages} from '../../../../i18n'
 import {initRenderer} from '../../../../tools'
 import {lobby} from '../../../../types'

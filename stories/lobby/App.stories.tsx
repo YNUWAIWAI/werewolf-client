@@ -10,7 +10,7 @@ import {
   number,
   radios
 } from '@storybook/addon-knobs'
-import App from '../../src/scripts/lobby/App'
+import {App} from '../../src/scripts/lobby/App'
 import {Provider} from 'react-redux'
 import {audio} from './audio'
 import {createHashHistory} from 'history'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Description from './Description'
+import {Description} from './Description'
 import {Provider} from 'react-redux'
 import fakeStore from '../../containers/fakeStore'
 import {getMessages} from '../../i18n'

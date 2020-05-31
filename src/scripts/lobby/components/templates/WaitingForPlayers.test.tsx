@@ -1,11 +1,14 @@
 import * as React from 'react'
-import WaitingForPlayers, {Props} from './WaitingForPlayers'
-import AsideContent from '../atoms/AsideContent'
-import AvatarList from '../organisms/AvatarList'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
-import VillageList from '../organisms/VillageList'
+import {
+  Props,
+  WaitingForPlayers
+} from './WaitingForPlayers'
+import {AsideContent} from '../atoms/AsideContent'
+import {AvatarList} from '../organisms/AvatarList'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
+import {MenuContainer} from '../../containers/MenuContainer'
+import {VillageList} from '../organisms/VillageList'
 import {lobby} from '../../types'
 import {shallow} from 'enzyme'
 
@@ -62,7 +65,7 @@ describe('render', () => {
     expect(wrapper.find(MainContent).find(VillageList).exists()).toBe(true)
     expect(wrapper.find(AsideContent).exists()).toBe(true)
     expect(wrapper.find(AsideContent).find(AvatarList).exists()).toBe(true)
-    expect(wrapper.find(AsideContent).find(Menu)).toHaveLength(2)
+    expect(wrapper.find(AsideContent).find(MenuContainer)).toHaveLength(2)
     expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
   })
   test('village={undefined}', () => {
@@ -83,7 +86,7 @@ describe('render', () => {
     expect(wrapper.find(MainContent).find(VillageList).exists()).toBe(true)
     expect(wrapper.find(AsideContent).exists()).toBe(true)
     expect(wrapper.find(AsideContent).find(AvatarList).exists()).toBe(true)
-    expect(wrapper.find(AsideContent).find(Menu)).toHaveLength(2)
+    expect(wrapper.find(AsideContent).find(MenuContainer)).toHaveLength(2)
     expect(confirmKickOutPlayer).toHaveBeenCalledTimes(0)
   })
 })

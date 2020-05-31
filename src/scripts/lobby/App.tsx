@@ -4,43 +4,42 @@ import {
   TransitionGroup
 } from 'react-transition-group'
 import {History as H} from 'history'
-import IntlProvider from './containers/IntlProviderContainer'
-import Modal from './containers/ModalContainer'
-import MuteButton from './containers/MuteButtonContainer'
-import Obfucator from './containers/ObfucatorContainer'
+import {IntlProviderContainer} from './containers/IntlProviderContainer'
+import {ModalContainer} from './containers/ModalContainer'
+import {MuteButtonContainer} from './containers/MuteButtonContainer'
+import {ObfucatorContainer} from './containers/ObfucatorContainer'
 import {Router} from 'react-router-dom'
-import Routes from './containers/Routes'
-import Theme from './containers/ThemeContainer'
-import Video from './containers/VideoContainer'
+import {Routes} from './containers/Routes'
+import {ThemeContainer} from './containers/ThemeContainer'
+import {VideoContainer} from './containers/VideoContainer'
 
 interface Props {
   readonly history: H
 }
 
-export default function App(props: Props) {
-  return (
-    <IntlProvider>
-      <Theme>
-        <Router history={props.history}>
-          <TransitionGroup
-            component={null}
+export const App: React.FC<Props> = props => (
+  <IntlProviderContainer>
+    <ThemeContainer>
+      <Router history={props.history}>
+        <TransitionGroup
+          component={null}
+        >
+          <CSSTransition
+            appear
+            classNames="lo--app--transition"
+            exit={false}
+            timeout={100}
+            unmountOnExit
           >
-            <CSSTransition
-              appear
-              classNames="lo--app--transition"
-              exit={false}
-              timeout={100}
-              unmountOnExit
-            >
-              <Routes />
-            </CSSTransition>
-          </TransitionGroup>
-          <Obfucator />
-          <Modal />
-          <MuteButton />
-          <Video />
-        </Router>
-      </Theme>
-    </IntlProvider>
-  )
-}
+            <Routes />
+          </CSSTransition>
+        </TransitionGroup>
+        <ObfucatorContainer />
+        <ModalContainer />
+        <MuteButtonContainer />
+        <VideoContainer />
+      </Router>
+    </ThemeContainer>
+  </IntlProviderContainer>
+)
+App.displayName = 'App'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CharacterIcon from './CharacterIcon'
+import {CharacterIcon} from './CharacterIcon'
 
 interface Props {
   readonly image: string
@@ -9,7 +9,7 @@ interface Props {
   readonly status: string
 }
 
-export default function PredictionCharacter(props: Props) {
+export const PredictionCharacter: React.FC<Props> = props => {
   const isSilent = props.isSilent ? 'silent' : ''
 
   return (
@@ -22,3 +22,4 @@ export default function PredictionCharacter(props: Props) {
     />
   )
 }
+PredictionCharacter.displayName = 'PredictionCharacter'

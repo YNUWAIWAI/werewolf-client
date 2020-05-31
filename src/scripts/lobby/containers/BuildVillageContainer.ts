@@ -1,5 +1,8 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import Component, {StateProps} from '../components/templates/BuildVillage'
+import {
+  BuildVillage as Component,
+  StateProps
+} from '../components/templates/BuildVillage'
 import {ReducerState} from '../reducers'
 import {connect} from 'react-redux'
 
@@ -29,8 +32,7 @@ const mapStateToProps = (state: ReducerState): StateProps => {
     name: state.buildVillage.name
   }
 }
-const Container = connect(
+
+export const BuildVillageContainer = connect(
   mapStateToProps
 )(Component)
-
-export default Container

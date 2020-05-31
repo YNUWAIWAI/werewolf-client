@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ChatItem from './ChatItem'
+import {ChatItem} from './ChatItem'
 import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
 import {village} from '../../types'

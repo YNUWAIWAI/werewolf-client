@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Login from './Login'
+import {Login} from './Login'
 import {shallow} from 'enzyme'
 
 test('render', () => {

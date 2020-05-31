@@ -10,7 +10,7 @@ interface Props {
   readonly naviagtable: boolean
 }
 
-export default function SelectAvatarTableBodyAuthorized(props: Props) {
+export const SelectAvatarTableBodyAuthorized: React.FC<Props> = props => {
   const className = `lo--select-avatar--table--body--item authorized ${props.additionalClassName.join(' ')}`
   const handleSelect = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
@@ -48,3 +48,4 @@ export default function SelectAvatarTableBodyAuthorized(props: Props) {
     </div>
   )
 }
+SelectAvatarTableBodyAuthorized.displayName = 'SelectAvatarTableBodyAuthorized'

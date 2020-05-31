@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Menu from '../../containers/MenuContainer'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
 
 export interface StateProps {
@@ -7,12 +7,11 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export default function Main(props: Props) {
-  return (
-    <Menu
-      className="lo--menu"
-      itemClassName="lo--menu--item"
-      items={props.menuItems}
-    />
-  )
-}
+export const Main: React.FC<Props> = props => (
+  <MenuContainer
+    className="lo--menu"
+    itemClassName="lo--menu--item"
+    items={props.menuItems}
+  />
+)
+Main.displayName = 'Main'

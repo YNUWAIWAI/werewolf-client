@@ -4,7 +4,8 @@ import {
   clickNavigationButton,
   postChat
 } from '../actions'
-import Component, {
+import {
+  CommandPostMortem as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/CommandPostMortem'
@@ -36,9 +37,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     )
   }
 })
-const Container = connect(
+
+export const CommandPostMortemContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AdvancedSearchBox from './AdvancedSearchBox'
+import {AdvancedSearchBox} from './AdvancedSearchBox'
 import {shallow} from 'enzyme'
 
 test('render', () => {

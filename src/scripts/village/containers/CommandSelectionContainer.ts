@@ -1,4 +1,5 @@
-import Component, {
+import {
+  CommandSelection as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/CommandSelection'
@@ -81,9 +82,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     )
   }
 })
-const Container = connect(
+
+export const CommandSelectionContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

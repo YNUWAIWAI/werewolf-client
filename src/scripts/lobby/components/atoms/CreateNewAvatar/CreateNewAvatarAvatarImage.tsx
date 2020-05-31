@@ -7,24 +7,23 @@ interface Props {
   readonly navigatable: boolean
 }
 
-export default function CreateNewAvatarAvatarImage(props: Props) {
-  return (
-    <>
-      <label
-        className="lo--create-new-avatar--label image"
-        htmlFor="newAvatarImage"
-      >
-        <FormattedMessage
-          id="CreateNewAvatar.label(avatarImage)"
-        />
-      </label>
-      <button
-        className="lo--create-new-avatar--input image"
-        onClick={props.handleClick}
-        tabIndex={props.navigatable ? 0 : -1}
-      >
-        <img src={props.image} />
-      </button>
-    </>
-  )
-}
+export const CreateNewAvatarAvatarImage: React.FC<Props> = props => (
+  <>
+    <label
+      className="lo--create-new-avatar--label image"
+      htmlFor="newAvatarImage"
+    >
+      <FormattedMessage
+        id="CreateNewAvatar.label(avatarImage)"
+      />
+    </label>
+    <button
+      className="lo--create-new-avatar--input image"
+      onClick={props.handleClick}
+      tabIndex={props.navigatable ? 0 : -1}
+    >
+      <img src={props.image} />
+    </button>
+  </>
+)
+CreateNewAvatarAvatarImage.displayName = 'CreateNewAvatarAvatarImage'

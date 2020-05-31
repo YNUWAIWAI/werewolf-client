@@ -1,6 +1,6 @@
 
 import * as React from 'react'
-import CreateNewHumanAvatarTable from './CreateNewHumanAvatarTable'
+import {CreateNewHumanAvatarTable} from './CreateNewHumanAvatarTable'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'

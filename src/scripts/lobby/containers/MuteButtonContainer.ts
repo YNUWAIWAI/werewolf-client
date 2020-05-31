@@ -1,4 +1,5 @@
-import Component, {
+import {
+  MuteButton as Component,
   DispatchProps,
   StateProps
 } from '../components/atoms/MuteButton'
@@ -21,9 +22,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(toggleMute(muted))
   }
 })
-const MuteButtonContainer = connect(
+
+export const MuteButtonContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default MuteButtonContainer

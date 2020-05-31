@@ -6,7 +6,7 @@ export interface Props {
   readonly isHover: boolean
 }
 
-export default function CreateNewAvatarSupportBoardHover(props: Props) {
+export const CreateNewAvatarSupportBoardHover: React.FC<Props> = props => {
   if (!props.isHover) {
     return null
   }
@@ -25,3 +25,4 @@ export default function CreateNewAvatarSupportBoardHover(props: Props) {
     </div>
   )
 }
+CreateNewAvatarSupportBoardHover.displayName = 'CreateNewAvatarSupportBoardHover'

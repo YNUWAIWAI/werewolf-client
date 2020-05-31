@@ -4,7 +4,8 @@ import {
   clickNavigationButton,
   postChat
 } from '../actions'
-import Component, {
+import {
+  CommandGrave as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/CommandGrave'
@@ -36,9 +37,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     )
   }
 })
-const Container = connect(
+
+export const CommandGraveContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

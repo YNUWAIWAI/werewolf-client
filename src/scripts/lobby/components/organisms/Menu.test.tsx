@@ -1,6 +1,9 @@
 import * as ActionTypes from '../../constants/ActionTypes'
 import * as React from 'react'
-import Menu, {Props} from './Menu'
+import {
+  Menu,
+  Props
+} from './Menu'
 import {shallow} from 'enzyme'
 
 describe('<Menu />', () => {

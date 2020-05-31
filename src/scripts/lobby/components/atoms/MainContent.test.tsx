@@ -1,5 +1,5 @@
 import * as React from 'react'
-import MainContent from './MainContent'
+import {MainContent} from './MainContent'
 import {shallow} from 'enzyme'
 
 test('render', () => {

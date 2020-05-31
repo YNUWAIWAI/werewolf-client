@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CreateNewAvatarSupportBoardRowCell from '../../../atoms/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardRowCell'
+import {CreateNewAvatarSupportBoardRowCell} from '../../../atoms/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardRowCell'
 import {lobby} from '../../../../types'
 
 interface Props {
@@ -10,26 +10,25 @@ interface Props {
   }
 }
 
-export default function CreateNewAvatarSupportBoardRow(props: Props) {
-  return (
-    <>
-      <div
-        className={props.className}
-      >
-        {props.numberOfPlayers}
-      </div>
-      <CreateNewAvatarSupportBoardRowCell
-        className={props.className}
-        support={props.support.A}
-      />
-      <CreateNewAvatarSupportBoardRowCell
-        className={props.className}
-        support={props.support.B}
-      />
-      <CreateNewAvatarSupportBoardRowCell
-        className={props.className}
-        support={props.support.C}
-      />
-    </>
-  )
-}
+export const CreateNewAvatarSupportBoardRow: React.FC<Props> = props => (
+  <>
+    <div
+      className={props.className}
+    >
+      {props.numberOfPlayers}
+    </div>
+    <CreateNewAvatarSupportBoardRowCell
+      className={props.className}
+      support={props.support.A}
+    />
+    <CreateNewAvatarSupportBoardRowCell
+      className={props.className}
+      support={props.support.B}
+    />
+    <CreateNewAvatarSupportBoardRowCell
+      className={props.className}
+      support={props.support.C}
+    />
+  </>
+)
+CreateNewAvatarSupportBoardRow.displayName = 'CreateNewAvatarSupportBoardRow'

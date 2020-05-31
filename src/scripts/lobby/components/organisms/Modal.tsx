@@ -1,8 +1,8 @@
 import * as React from 'react'
-import AvatarImageSelect from '../../containers/AvatarImageSelectContainer'
+import {AvatarImageSelectContainer} from '../../containers/AvatarImageSelectContainer'
 import {CSSTransition} from 'react-transition-group'
-import Confirmation from '../../containers/ConfirmationContainer'
-import SupportSelect from '../../containers/SupportSelectContainer'
+import {ConfirmationContainer} from '../../containers/ConfirmationContainer'
+import {SupportSelectContainer} from '../../containers/SupportSelectContainer'
 import {lobby} from '../../types'
 
 export interface StateProps {
@@ -11,7 +11,7 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export default function Modal(props: Props) {
+export const Modal: React.FC<Props> = props => {
   if (props.type === lobby.ModalType.avatarImageSelect) {
     return (
       <CSSTransition
@@ -23,7 +23,7 @@ export default function Modal(props: Props) {
         }}
         unmountOnExit
       >
-        <AvatarImageSelect />
+        <AvatarImageSelectContainer />
       </CSSTransition>
     )
   }
@@ -38,7 +38,7 @@ export default function Modal(props: Props) {
         }}
         unmountOnExit
       >
-        <Confirmation />
+        <ConfirmationContainer />
       </CSSTransition>
     )
   }
@@ -53,7 +53,8 @@ export default function Modal(props: Props) {
       }}
       unmountOnExit
     >
-      <SupportSelect />
+      <SupportSelectContainer />
     </CSSTransition>
   )
 }
+Modal.displayName = 'Modal'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import RoleIcon from './RoleIcon'
+import {RoleIcon} from './RoleIcon'
 import {shallow} from 'enzyme'
 
 describe('<RoleIcon />', () => {

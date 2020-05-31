@@ -1,5 +1,5 @@
 import * as React from 'react'
-import HideButton from './HideButton'
+import {HideButton} from './HideButton'
 import {shallow} from 'enzyme'
 
 describe('<HideButton />', () => {

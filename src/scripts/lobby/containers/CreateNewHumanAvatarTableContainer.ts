@@ -1,4 +1,5 @@
-import Component, {
+import {
+  CreateNewHumanAvatarTable as Component,
   DispatchProps,
   StateProps
 } from '../components/molecules/CreateNewHumanAvatarTable'
@@ -36,9 +37,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     }
   }
 })
-const Container = connect(
+
+export const CreateNewHumanAvatarTableContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import NumberSelect from '../../../atoms/Select/NumberSelect'
+import {NumberSelect} from '../../../atoms/Select/NumberSelect'
 
 interface Props {
   readonly handleNumberOfRobotsChange: (valid: boolean) => (value: number) => void
@@ -12,24 +12,23 @@ interface Props {
   }
 }
 
-export default function BuildVillageCellMemberSelectMinimum(props: Props) {
-  return (
-    <div className={`lo--village--item--member-select--robot ${props.valid ? '' : 'invalid'}`}>
-      <span>
-        <FormattedMessage
-          id="MemberSelect.min"
-        />
-      </span>
-      <NumberSelect
-        ascendingOrder
-        className="lo--village--item--member-select--robot--select"
-        defaultValue={props.value.numberOfRobots}
-        from={0}
-        handleChange={props.handleNumberOfRobotsChange}
-        navigatable={props.navigatable}
-        to={props.value.numberOfPlayers}
-        type="robot"
+export const BuildVillageCellMemberSelectMinimum: React.FC<Props> = props => (
+  <div className={`lo--village--item--member-select--robot ${props.valid ? '' : 'invalid'}`}>
+    <span>
+      <FormattedMessage
+        id="MemberSelect.min"
       />
-    </div>
-  )
-}
+    </span>
+    <NumberSelect
+      ascendingOrder
+      className="lo--village--item--member-select--robot--select"
+      defaultValue={props.value.numberOfRobots}
+      from={0}
+      handleChange={props.handleNumberOfRobotsChange}
+      navigatable={props.navigatable}
+      to={props.value.numberOfPlayers}
+      type="robot"
+    />
+  </div>
+)
+BuildVillageCellMemberSelectMinimum.displayName = 'BuildVillageCellMemberSelectMinimum'

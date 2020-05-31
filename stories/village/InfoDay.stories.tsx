@@ -4,8 +4,8 @@ import {
   radios,
   select
 } from '@storybook/addon-knobs'
-import InfoDay from '../../src/scripts/village/components/molecules/InfoDay'
-import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
+import {InfoDay} from '../../src/scripts/village/components/molecules/InfoDay'
+import {IntlProviderContainer as IntlProvider} from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import {language} from './language'

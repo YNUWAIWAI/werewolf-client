@@ -1,5 +1,5 @@
 import * as React from 'react'
-import TextInput from '../TextInput'
+import {TextInput} from '../TextInput'
 
 interface Props {
   readonly additionalClassName: string[]
@@ -9,7 +9,7 @@ interface Props {
   readonly navigatable: boolean
 }
 
-export default function SelectAvatarTableBodyAvatarName(props: Props) {
+export const SelectAvatarTableBodyAvatarName: React.FC<Props> = props => {
   const handleSelect = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
       props.handleSelect()
@@ -34,3 +34,4 @@ export default function SelectAvatarTableBodyAvatarName(props: Props) {
     </div>
   )
 }
+SelectAvatarTableBodyAvatarName.displayName = 'SelectAvatarTableBodyAvatarName'

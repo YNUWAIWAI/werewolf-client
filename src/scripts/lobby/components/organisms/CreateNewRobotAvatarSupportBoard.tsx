@@ -1,7 +1,7 @@
 import * as React from 'react'
-import CreateNewAvatarSupportBoardColumnHeader from '../molecules/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardColumnHeader'
-import CreateNewAvatarSupportBoardHover from '../molecules/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardHover'
-import CreateNewAvatarSupportBoardRow from '../molecules/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardRow'
+import {CreateNewAvatarSupportBoardColumnHeader} from '../molecules/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardColumnHeader'
+import {CreateNewAvatarSupportBoardHover} from '../molecules/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardHover'
+import {CreateNewAvatarSupportBoardRow} from '../molecules/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardRow'
 import {lobby} from '../../types'
 
 interface OwnProps {
@@ -35,7 +35,7 @@ const order: NumberOfPlayers[] = [
   '4'
 ]
 
-export default function CreateNewAvatarSupportBoard(props: Props) {
+export const CreateNewAvatarSupportBoard: React.FC<Props> = props => {
   const [isHover, setIsHover] = React.useState(false)
 
   return (
@@ -65,3 +65,4 @@ export default function CreateNewAvatarSupportBoard(props: Props) {
     </div>
   )
 }
+CreateNewAvatarSupportBoard.displayName = 'CreateNewAvatarSupportBoard'

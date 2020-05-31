@@ -1,8 +1,8 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import TeamVillager from './svg/TeamVillager'
-import TeamWerehamster from './svg/TeamWerehamster'
-import TeamWerewolf from './svg/TeamWerewolf'
+import {TeamVillager} from './svg/TeamVillager'
+import {TeamWerehamster} from './svg/TeamWerehamster'
+import {TeamWerewolf} from './svg/TeamWerewolf'
 import {village} from '../../types'
 
 export interface Props {
@@ -11,7 +11,7 @@ export interface Props {
   readonly team: village.Team | ''
 }
 
-export default function TeamIcon(props: Props) {
+export const TeamIcon: React.FC<Props> = props => {
   switch (props.team) {
     case village.Team.villager:
       return (
@@ -71,3 +71,4 @@ export default function TeamIcon(props: Props) {
       )
   }
 }
+TeamIcon.displayName = 'TeamIcon'

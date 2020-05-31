@@ -1,9 +1,9 @@
 import * as React from 'react'
-import PredictionCharacter from '../atoms/PredictionCharacter'
-import PredictionHelp from '../atoms/PredictionHelp'
-import PredictionItem from '../atoms/PredictionItem'
-import PredictionRole from '../atoms/PredictionRole'
-import PredictionSpec from '../atoms/PredictionSpec'
+import {PredictionCharacter} from '../atoms/PredictionCharacter'
+import {PredictionHelp} from '../atoms/PredictionHelp'
+import {PredictionItem} from '../atoms/PredictionItem'
+import {PredictionRole} from '../atoms/PredictionRole'
+import {PredictionSpec} from '../atoms/PredictionSpec'
 import {just} from '../../util'
 import {village} from '../../types'
 
@@ -43,13 +43,13 @@ export interface StateProps {
   }
 }
 export interface DispatchProps {
-  handleMouseEnter: (role: village.RoleId) => (position: {top: number, left: number}) => void
-  handleMouseLeave: () => void
-  handleBoardClick: (ids: {characterId: village.CharacterId, roleId: village.RoleId}) => (state: village.BoardState) => void
+  readonly handleMouseEnter: (role: village.RoleId) => (position: {top: number, left: number}) => void
+  readonly handleMouseLeave: () => void
+  readonly handleBoardClick: (ids: {characterId: village.CharacterId, roleId: village.RoleId}) => (state: village.BoardState) => void
 }
 export interface Props extends StateProps, DispatchProps {}
 
-export default function Prediction(props: Props) {
+export const Prediction: React.FC<Props> = props => {
   if (props.characterStatus.length === 0 || props.roleStatus.length === 0) {
     return <div className={`vi--prediction ${props.expand ? 'expand' : ''}`} />
   }
@@ -116,3 +116,4 @@ export default function Prediction(props: Props) {
     </div>
   )
 }
+Prediction.displayName = 'Prediction'

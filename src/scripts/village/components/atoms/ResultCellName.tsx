@@ -6,10 +6,9 @@ interface Props {
   readonly text: string
 }
 
-export default function ResultCellName(props: Props) {
-  return (
-    <div className={`vi--result--cell--name ${props.status === 'alive' ? '' : 'dead'}`}>
-      {props.text}
-    </div>
-  )
-}
+export const ResultCellName: React.FC<Props> = props => (
+  <div className={`vi--result--cell--name ${props.status === 'alive' ? '' : 'dead'}`}>
+    {props.text}
+  </div>
+)
+ResultCellName.displayName = 'ResultCellName'

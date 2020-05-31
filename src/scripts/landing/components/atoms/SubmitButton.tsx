@@ -5,15 +5,14 @@ interface Props {
   type: 'login' | 'signup'
 }
 
-export default function SubmitButton(props: Props) {
-  return (
-    <button
-      className="la--button"
-      type="submit"
-    >
-      <FormattedMessage
-        id={`${props.type}-submit`}
-      />
-    </button>
-  )
-}
+export const SubmitButton: React.FC<Props> = props => (
+  <button
+    className="la--button"
+    type="submit"
+  >
+    <FormattedMessage
+      id={`${props.type}-submit`}
+    />
+  </button>
+)
+SubmitButton.displayName = 'SubmitButton'

@@ -11,7 +11,7 @@ interface Props {
   readonly to: string
 }
 
-export default function ChatDay(props: Props) {
+export const ChatDay: React.FC<Props> = props => {
   const f = new Date(props.from)
   const t = new Date(props.to)
   const restTimeValue = f.getTime() - t.getTime() + (props.limit * 1000)
@@ -51,3 +51,4 @@ export default function ChatDay(props: Props) {
     </div>
   )
 }
+ChatDay.displayName = 'ChatDay'

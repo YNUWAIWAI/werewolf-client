@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Audience from './svg/Audience'
-import Grave from './svg/Grave'
-import Master from './svg/Master'
-import Private from './svg/Private'
-import Public from './svg/Public'
-import Werewolf from './svg/Werewolf'
+import {Audience} from './svg/Audience'
+import {Grave} from './svg/Grave'
+import {Master} from './svg/Master'
+import {Private} from './svg/Private'
+import {Public} from './svg/Public'
+import {Werewolf} from './svg/Werewolf'
 import {village} from '../../types'
 
 export interface Props {
@@ -12,7 +12,7 @@ export interface Props {
   readonly className: string
 }
 
-export default function ChatIcon(props: Props) {
+export const ChatIcon: React.FC<Props> = props => {
   switch (props.channel) {
     case village.Channel.anonymousAudience:
     case village.Channel.onymousAudience:
@@ -59,3 +59,4 @@ export default function ChatIcon(props: Props) {
       )
   }
 }
+ChatIcon.displayName = 'ChatIcon'

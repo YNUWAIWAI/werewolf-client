@@ -1,5 +1,5 @@
 import * as React from 'react'
-import EmailInput from '../EmailInput'
+import {EmailInput} from '../EmailInput'
 import {FormattedMessage} from 'react-intl'
 
 interface Props {
@@ -53,3 +53,4 @@ export const SettingsBoxBucketUserEmail: React.FC<Props> = props => {
     </form>
   )
 }
+SettingsBoxBucketUserEmail.displayName = 'SettingsBoxBucketUserEmail'

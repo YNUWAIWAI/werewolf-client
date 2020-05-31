@@ -3,7 +3,7 @@ import {
   Language,
   getMessages
 } from '../../i18n'
-import TextField from './TextField'
+import {TextField} from './TextField'
 import {initRenderer} from '../../tools'
 
 const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))

@@ -1,4 +1,5 @@
-import Component, {
+import {
+  SelectRobotAvatarTableBody as Component,
   DispatchProps,
   StateProps
 } from '../components/molecules/SelectRobotAvatarTableBody'
@@ -50,9 +51,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(selectRobotAvatar.renewAvatarToken(token))
   }
 })
-const SelectRobotAvatarTableBodyContainer = connect(
+
+export const SelectRobotAvatarTableBodyContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default SelectRobotAvatarTableBodyContainer

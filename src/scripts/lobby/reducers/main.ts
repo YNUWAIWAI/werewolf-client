@@ -41,6 +41,7 @@ export const initialState: State = {
   ]
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const main = (state: State = initialState, action: Action): State => state
 
 export default main

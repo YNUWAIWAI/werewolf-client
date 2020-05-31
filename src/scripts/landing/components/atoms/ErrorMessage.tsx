@@ -6,7 +6,7 @@ interface Props {
   visible: boolean
 }
 
-export default function ErrorMessage(props: Props) {
+export const ErrorMessage: React.FC<Props> = props => {
   if (!props.visible) {
     return null
   }
@@ -19,3 +19,4 @@ export default function ErrorMessage(props: Props) {
     </div>
   )
 }
+ErrorMessage.displayName = 'ErrorMessage'

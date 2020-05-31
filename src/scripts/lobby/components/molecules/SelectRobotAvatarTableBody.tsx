@@ -1,13 +1,13 @@
 import * as React from 'react'
-import SelectAvatarTableBodyAccessToken from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAccessToken'
-import SelectAvatarTableBodyAuthorized from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAuthorized'
-import SelectAvatarTableBodyAutomation from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAutomation'
-import SelectAvatarTableBodyAvatarName from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
-import SelectAvatarTableBodyCheckbox from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
-import SelectAvatarTableBodyImage from '../atoms/SelectAvatarTable/SelectAvatarTableBodyImage'
-import SelectAvatarTableBodyLanguage from '../atoms/SelectAvatarTable/SelectAvatarTableBodyLanguage'
-import SelectAvatarTableBodyStatus from '../atoms/SelectAvatarTable/SelectAvatarTableBodyStatus'
-import SelectAvatarTableBodyTest from '../atoms/SelectAvatarTable/SelectAvatarTableBodyTest'
+import {SelectAvatarTableBodyAccessToken} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAccessToken'
+import {SelectAvatarTableBodyAuthorized} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAuthorized'
+import {SelectAvatarTableBodyAutomation} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAutomation'
+import {SelectAvatarTableBodyAvatarName} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
+import {SelectAvatarTableBodyCheckbox} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
+import {SelectAvatarTableBodyImage} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyImage'
+import {SelectAvatarTableBodyLanguage} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyLanguage'
+import {SelectAvatarTableBodyStatus} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyStatus'
+import {SelectAvatarTableBodyTest} from '../atoms/SelectAvatarTable/SelectAvatarTableBodyTest'
 import {lobby} from '../../types'
 
 export interface StateProps {
@@ -42,7 +42,7 @@ export interface DispatchProps {
 }
 export type Props = StateProps & DispatchProps
 
-export default function SelectRobotAvatarTableBody(props: Props) {
+export const SelectRobotAvatarTableBody: React.FC<Props> = props => {
   const rows = props.avatar.allIds.map(id => {
     const avatar = props.avatar.byId[id]
     const additionalClassName = [
@@ -133,3 +133,4 @@ export default function SelectRobotAvatarTableBody(props: Props) {
     </>
   )
 }
+SelectRobotAvatarTableBody.displayName = 'SelectRobotAvatarTableBody'

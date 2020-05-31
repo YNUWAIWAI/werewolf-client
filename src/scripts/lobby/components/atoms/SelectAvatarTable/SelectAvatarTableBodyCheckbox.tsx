@@ -8,7 +8,7 @@ interface Props {
   readonly navigatable: boolean
 }
 
-export default function SelectAvatarTableBodyCheckbox(props: Props) {
+export const SelectAvatarTableBodyCheckbox: React.FC<Props> = props => {
   const ref = React.createRef<HTMLSpanElement>()
   const handleClick = () => {
     if (ref.current) {
@@ -31,3 +31,4 @@ export default function SelectAvatarTableBodyCheckbox(props: Props) {
     </div>
   )
 }
+SelectAvatarTableBodyCheckbox.displayName = 'SelectAvatarTableBodyCheckbox'

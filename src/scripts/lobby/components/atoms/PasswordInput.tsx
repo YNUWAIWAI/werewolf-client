@@ -7,7 +7,7 @@ export interface Props {
   readonly navigatable: boolean
 }
 
-const PasswordInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+export const PasswordInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const [value, setValue] = React.useState('')
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
@@ -31,4 +31,3 @@ const PasswordInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => 
 })
 
 PasswordInput.displayName = 'PasswordInput'
-export default PasswordInput

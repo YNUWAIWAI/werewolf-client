@@ -6,14 +6,13 @@ interface Props {
   readonly status: village.CharacterStatus
 }
 
-export default function ResultCellStatus(props: Props) {
-  return (
-    <div
-      className={`vi--result--cell--status ${props.status === 'alive' ? '' : 'dead'}`}
-    >
-      <FormattedMessage
-        id={`Result.status(${props.status})`}
-      />
-    </div>
-  )
-}
+export const ResultCellStatus: React.FC<Props> = props => (
+  <div
+    className={`vi--result--cell--status ${props.status === 'alive' ? '' : 'dead'}`}
+  >
+    <FormattedMessage
+      id={`Result.status(${props.status})`}
+    />
+  </div>
+)
+ResultCellStatus.displayName = 'ResultCellStatus'

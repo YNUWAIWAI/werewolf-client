@@ -1,7 +1,7 @@
 import * as React from 'react'
-import IntlProviderContainer from './IntlProviderContainer'
+import {IntlProviderContainer} from './IntlProviderContainer'
 import {Provider} from 'react-redux'
-import VideoContainer from './VideoContainer'
+import {VideoContainer} from './VideoContainer'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'
 

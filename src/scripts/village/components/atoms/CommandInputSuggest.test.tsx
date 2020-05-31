@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CommandInputSuggest from './CommandInputSuggest'
+import {CommandInputSuggest} from './CommandInputSuggest'
 import {mount} from 'enzyme'
 import {village} from '../../types'
 

@@ -5,12 +5,11 @@ interface Props {
   readonly support: boolean
 }
 
-export default function CreateNewAvatarSupportBoardRowCell(props: Props) {
-  return (
-    <div
-      className={props.className}
-    >
-      {props.support ? '✅' : ''}
-    </div>
-  )
-}
+export const CreateNewAvatarSupportBoardRowCell: React.FC<Props> = props => (
+  <div
+    className={props.className}
+  >
+    {props.support ? '✅' : ''}
+  </div>
+)
+CreateNewAvatarSupportBoardRowCell.displayName = 'CreateNewAvatarSupportBoardRowCell'

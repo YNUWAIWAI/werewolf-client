@@ -3,7 +3,7 @@ import {
   Language,
   getMessages
 } from '../../i18n'
-import FormNavigation from './FormNavigation'
+import {FormNavigation} from './FormNavigation'
 import {initRenderer} from '../../tools'
 
 const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))

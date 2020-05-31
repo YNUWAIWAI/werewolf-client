@@ -6,10 +6,9 @@ export interface StateProps {
 }
 export type Props = React.PropsWithChildren<StateProps>
 
-export default function Theme(props: Props) {
-  return (
-    <div className={`vi ${props.theme}`}>
-      {props.children}
-    </div>
-  )
-}
+export const Theme: React.FC<Props> = props => (
+  <div className={`vi ${props.theme}`}>
+    {props.children}
+  </div>
+)
+Theme.displayName = 'Theme'

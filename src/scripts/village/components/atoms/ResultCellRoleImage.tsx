@@ -1,5 +1,5 @@
 import * as React from 'react'
-import RoleIcon from './RoleIcon'
+import {RoleIcon} from './RoleIcon'
 import {village} from '../../types'
 
 interface Props {
@@ -8,13 +8,12 @@ interface Props {
   readonly status: village.CharacterStatus
 }
 
-export default function ResultCellRoleImage(props: Props) {
-  return (
-    <RoleIcon
-      additionalClass={props.status === 'alive' ? '' : 'dead'}
-      className="vi--result--cell--roleImage"
-      image={props.image}
-      name={props.name}
-    />
-  )
-}
+export const ResultCellRoleImage: React.FC<Props> = props => (
+  <RoleIcon
+    additionalClass={props.status === 'alive' ? '' : 'dead'}
+    className="vi--result--cell--roleImage"
+    image={props.image}
+    name={props.name}
+  />
+)
+ResultCellRoleImage.displayName = 'ResultCellRoleImage'

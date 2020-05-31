@@ -1,15 +1,15 @@
 import * as React from 'react'
 import {CSSTransition} from 'react-transition-group'
-import ResultCellAvatarImage from '../atoms/ResultCellAvatarImage'
-import ResultCellAvatarName from '../atoms/ResultCellAvatarName'
-import ResultCellImage from '../atoms/ResultCellImage'
-import ResultCellLoserCaption from '../atoms/ResultCellLoserCaption'
-import ResultCellName from '../atoms/ResultCellName'
-import ResultCellRoleImage from '../atoms/ResultCellRoleImage'
-import ResultCellStatus from '../atoms/ResultCellStatus'
-import ResultCellSummary from '../atoms/ResultCellSummary'
-import ResultCellWinnerCaption from '../atoms/ResultCellWinnerCaption'
-import ResultHeader from '../atoms/ResultHeader'
+import {ResultCellAvatarImage} from '../atoms/ResultCellAvatarImage'
+import {ResultCellAvatarName} from '../atoms/ResultCellAvatarName'
+import {ResultCellImage} from '../atoms/ResultCellImage'
+import {ResultCellLoserCaption} from '../atoms/ResultCellLoserCaption'
+import {ResultCellName} from '../atoms/ResultCellName'
+import {ResultCellRoleImage} from '../atoms/ResultCellRoleImage'
+import {ResultCellStatus} from '../atoms/ResultCellStatus'
+import {ResultCellSummary} from '../atoms/ResultCellSummary'
+import {ResultCellWinnerCaption} from '../atoms/ResultCellWinnerCaption'
+import {ResultHeader} from '../atoms/ResultHeader'
 import {village} from '../../types'
 
 export interface StateProps {
@@ -76,7 +76,7 @@ const getRow = (character: Props['characters'][village.CharacterId]) => [
   />
 ]
 
-export default function Result(props: Props) {
+export const Result: React.FC<Props> = props => {
   const me = (() => {
     if (typeof props.me === 'undefined' || props.me === null) {
       return []
@@ -160,3 +160,4 @@ export default function Result(props: Props) {
     </CSSTransition>
   )
 }
+Result.displayName = 'Result'

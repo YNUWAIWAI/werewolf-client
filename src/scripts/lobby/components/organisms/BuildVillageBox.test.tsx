@@ -1,5 +1,8 @@
 import * as React from 'react'
-import BuildVillageBox, {StateProps} from './BuildVillageBox'
+import {
+  BuildVillageBox,
+  StateProps
+} from './BuildVillageBox'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'

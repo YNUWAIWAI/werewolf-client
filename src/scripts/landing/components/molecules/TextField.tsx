@@ -7,7 +7,7 @@ interface Props {
   type: 'login' | 'signup'
 }
 
-export default function TextField(props: Props) {
+export const TextField: React.FC<Props> = props => {
   const [text, setText] = React.useState('')
   const handleTextChange = (value: string) => {
     setText(value)
@@ -40,3 +40,4 @@ export default function TextField(props: Props) {
     </div>
   )
 }
+TextField.displayName = 'TextField'

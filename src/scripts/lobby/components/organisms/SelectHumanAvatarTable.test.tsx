@@ -1,7 +1,7 @@
 import * as React from 'react'
-import SelectHumanAvatarTable from './SelectHumanAvatarTable'
-import SelectHumanAvatarTableBody from '../../containers/SelectHumanAvatarTableBodyContainer'
-import SelectHumanAvatarTableHeader from '../molecules/SelectHumanAvatarTableHeader'
+import {SelectHumanAvatarTable} from './SelectHumanAvatarTable'
+import {SelectHumanAvatarTableBodyContainer} from '../../containers/SelectHumanAvatarTableBodyContainer'
+import {SelectHumanAvatarTableHeader} from '../molecules/SelectHumanAvatarTableHeader'
 import {shallow} from 'enzyme'
 
 test('render', () => {
@@ -9,6 +9,6 @@ test('render', () => {
     <SelectHumanAvatarTable />
   )
 
-  expect(wrapper.find(SelectHumanAvatarTableBody)).toHaveLength(1)
+  expect(wrapper.find(SelectHumanAvatarTableBodyContainer)).toHaveLength(1)
   expect(wrapper.find(SelectHumanAvatarTableHeader)).toHaveLength(1)
 })

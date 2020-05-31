@@ -1,4 +1,5 @@
-import Component, {
+import {
+  WaitingForPlayers as Component,
   DispatchProps,
   StateProps
 } from '../components/templates/WaitingForPlayers'
@@ -58,9 +59,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(waitingPage.confirmKickOutPlayer(values))
   }
 })
-const WaitingForPlayersContainer = connect(
+
+export const WaitingForPlayersContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default WaitingForPlayersContainer

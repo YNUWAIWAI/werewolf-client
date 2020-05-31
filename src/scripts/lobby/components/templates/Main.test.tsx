@@ -1,6 +1,9 @@
 import * as React from 'react'
-import Main, {Props} from './Main'
-import Menu from '../../containers/MenuContainer'
+import {
+  Main,
+  Props
+} from './Main'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {shallow} from 'enzyme'
 
 test('<Main />', () => {
@@ -11,5 +14,5 @@ test('<Main />', () => {
     />
   )
 
-  expect(wrapper.find(Menu).exists()).toBe(true)
+  expect(wrapper.find(MenuContainer).exists()).toBe(true)
 })

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import PasswordInput from './PasswordInput'
+import {PasswordInput} from './PasswordInput'
 import {shallow} from 'enzyme'
 
 test('render', () => {

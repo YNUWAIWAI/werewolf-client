@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ResultHeader from './ResultHeader'
+import {ResultHeader} from './ResultHeader'
 import {shallow} from 'enzyme'
 
 test('ResultHeader', () => {

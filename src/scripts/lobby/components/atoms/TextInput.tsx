@@ -13,7 +13,7 @@ interface Props {
   readonly required: boolean
 }
 
-const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+export const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
   const [value, setValue] = React.useState(props.initialValue)
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     if (props.handleBlur) {
@@ -44,6 +44,4 @@ const TextInput = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     />
   )
 })
-
 TextInput.displayName = 'TextInput'
-export default TextInput

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import DownArrow from './svg/DownArrow'
+import {DownArrow} from './svg/DownArrow'
 
 export interface StateProps {
   readonly hide: boolean
@@ -10,16 +10,15 @@ export interface DispatchProps {
 }
 export interface Props extends StateProps, DispatchProps {}
 
-export default function HideButton(props: Props) {
-  return (
-    <div className="vi--hide-button">
-      <button
-        className={`vi--hide-button--button ${props.hide ? 'hide' : ''}`}
-        onClick={() => props.handleClick(!props.hide)}
-        tabIndex={props.navigatable ? 0 : -1}
-      >
-        <DownArrow />
-      </button>
-    </div>
-  )
-}
+export const HideButton: React.FC<Props> = props => (
+  <div className="vi--hide-button">
+    <button
+      className={`vi--hide-button--button ${props.hide ? 'hide' : ''}`}
+      onClick={() => props.handleClick(!props.hide)}
+      tabIndex={props.navigatable ? 0 : -1}
+    >
+      <DownArrow />
+    </button>
+  </div>
+)
+HideButton.displayName = 'HideButton'

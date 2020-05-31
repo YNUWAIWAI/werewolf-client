@@ -1,10 +1,10 @@
 import * as React from 'react'
-import CharacterIcon from '../atoms/CharacterIcon'
-import ChatDay from '../atoms/ChatDay'
-import ChatIcon from '../atoms/ChatIcon'
-import ChatNum from '../atoms/ChatNum'
-import ChatStar from '../atoms/ChatStar'
-import ChatText from '../../containers/ChatTextContainer'
+import {CharacterIcon} from '../atoms/CharacterIcon'
+import {ChatDay} from '../atoms/ChatDay'
+import {ChatIcon} from '../atoms/ChatIcon'
+import {ChatNum} from '../atoms/ChatNum'
+import {ChatStar} from '../atoms/ChatStar'
+import {ChatTextContainer as ChatText} from '../../containers/ChatTextContainer'
 import {getChatChannelFromChannel} from '../../util'
 import {village} from '../../types'
 
@@ -23,7 +23,7 @@ export interface Props {
   readonly text: string
 }
 
-export default function ChatItem(props: Props) {
+export const ChatItem: React.FC<Props> = props => {
   const chatChannel = getChatChannelFromChannel(props.intensionalDisclosureRange)
 
   return (
@@ -62,3 +62,4 @@ export default function ChatItem(props: Props) {
     </div>
   )
 }
+ChatItem.displayName = 'ChatItem'

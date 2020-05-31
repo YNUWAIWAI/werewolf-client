@@ -7,7 +7,7 @@ const options = {
 }
 const defaultValue = options.en
 
-export default {
+export const language = {
   defaultValue,
   label,
   options

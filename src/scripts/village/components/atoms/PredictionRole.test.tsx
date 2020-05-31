@@ -1,5 +1,5 @@
 import * as React from 'react'
-import PredictionRole from './PredictionRole'
+import {PredictionRole} from './PredictionRole'
 import {shallow} from 'enzyme'
 
 describe('<PredictionRole />', () => {

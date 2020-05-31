@@ -6,10 +6,9 @@ export interface StateProps {
 }
 export type Props = StateProps
 
-export default function Command(props: Props) {
-  return (
-    <div className={`vi--command ${props.hide ? 'hidden' : ''}`}>
-      {props.content}
-    </div>
-  )
-}
+export const Command: React.FC<Props> = props => (
+  <div className={`vi--command ${props.hide ? 'hidden' : ''}`}>
+    {props.content}
+  </div>
+)
+Command.displayName = 'Command'

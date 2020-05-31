@@ -1,5 +1,5 @@
 import * as React from 'react'
-import IdSearchBox from './IdSearchBox'
+import {IdSearchBox} from './IdSearchBox'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'

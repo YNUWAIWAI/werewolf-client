@@ -1,4 +1,5 @@
-import Component, {
+import {
+  Menu as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/Menu'
@@ -21,9 +22,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(transition(target))
   }
 })
-const Container = connect(
+
+export const MenuContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import IntlProviderContainer from './IntlProviderContainer'
-import ObfucatorContainer from './ObfucatorContainer'
+import {IntlProviderContainer} from './IntlProviderContainer'
+import {ObfucatorContainer} from './ObfucatorContainer'
 import {Provider} from 'react-redux'
 import fakeStore from './fakeStore'
 import {mount} from 'enzyme'

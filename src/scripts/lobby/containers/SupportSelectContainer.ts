@@ -1,4 +1,5 @@
-import Component, {
+import {
+  SupportSelect as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/SupportSelect'
@@ -26,9 +27,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   }
 })
 
-const Container = connect(
+export const SupportSelectContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

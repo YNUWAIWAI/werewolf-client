@@ -16,35 +16,34 @@ export interface DispatchProps {
 }
 export type Props = StateProps & DispatchProps
 
-export default function Confirmation(props: Props) {
-  return (
-    <div className="lo--confirmation">
-      <div
-        className="lo--confirmation--description"
-      >
-        <FormattedMessage
-          id={props.descriptionId}
-          values={{
-            name: props.values.name
-          }}
-        />
-      </div>
-      <button
-        className="lo--confirmation--button yes"
-        onClick={() => props.handleClickYes(props.type)}
-      >
-        <FormattedMessage
-          id="Modal.button.yes"
-        />
-      </button>
-      <button
-        className="lo--confirmation--button no"
-        onClick={() => props.handleClickNo()}
-      >
-        <FormattedMessage
-          id="Modal.button.no"
-        />
-      </button>
+export const Confirmation: React.FC<Props> = props => (
+  <div className="lo--confirmation">
+    <div
+      className="lo--confirmation--description"
+    >
+      <FormattedMessage
+        id={props.descriptionId}
+        values={{
+          name: props.values.name
+        }}
+      />
     </div>
-  )
-}
+    <button
+      className="lo--confirmation--button yes"
+      onClick={() => props.handleClickYes(props.type)}
+    >
+      <FormattedMessage
+        id="Modal.button.yes"
+      />
+    </button>
+    <button
+      className="lo--confirmation--button no"
+      onClick={() => props.handleClickNo()}
+    >
+      <FormattedMessage
+        id="Modal.button.no"
+      />
+    </button>
+  </div>
+)
+Confirmation.displayName = 'Confirmation'

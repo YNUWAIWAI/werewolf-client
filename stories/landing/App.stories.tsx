@@ -1,6 +1,6 @@
 import * as React from 'react'
-import App from '../../src/scripts/landing/components/templates/App'
-import language from './language'
+import {App} from '../../src/scripts/landing/components/templates/App'
+import {language} from './language'
 import {radios} from '@storybook/addon-knobs'
 import {storiesOf} from '@storybook/react'
 

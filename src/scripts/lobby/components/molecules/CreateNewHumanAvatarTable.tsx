@@ -1,7 +1,7 @@
 import * as React from 'react'
-import CreateNewAvatarAvatarImage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
-import CreateNewAvatarAvatarLanguage from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
-import CreateNewAvatarAvatarName from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
+import {CreateNewAvatarAvatarImage} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
+import {CreateNewAvatarAvatarLanguage} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
+import {CreateNewAvatarAvatarName} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
 import {lobby} from '../../types'
 
 export interface StateProps {
@@ -17,25 +17,24 @@ export interface DispatchProps {
 }
 type Props = StateProps & DispatchProps
 
-export default function CreateNewHumanAvatarTable(props: Props) {
-  return (
-    <div
-      className="lo--create-new-avatar--table"
-    >
-      <CreateNewAvatarAvatarName
-        handleChange={props.handleNameChange}
-        navigatable={props.navigatable}
-      />
-      <CreateNewAvatarAvatarImage
-        handleClick={() => props.handleImageClick(props.image)}
-        image={props.image}
-        navigatable
-      />
-      <CreateNewAvatarAvatarLanguage
-        handleChange={props.handleLanguageChange}
-        language={props.language}
-        navigatable={props.navigatable}
-      />
-    </div>
-  )
-}
+export const CreateNewHumanAvatarTable: React.FC<Props> = props => (
+  <div
+    className="lo--create-new-avatar--table"
+  >
+    <CreateNewAvatarAvatarName
+      handleChange={props.handleNameChange}
+      navigatable={props.navigatable}
+    />
+    <CreateNewAvatarAvatarImage
+      handleClick={() => props.handleImageClick(props.image)}
+      image={props.image}
+      navigatable
+    />
+    <CreateNewAvatarAvatarLanguage
+      handleChange={props.handleLanguageChange}
+      language={props.language}
+      navigatable={props.navigatable}
+    />
+  </div>
+)
+CreateNewHumanAvatarTable.displayName = 'CreateNewHumanAvatarTable'

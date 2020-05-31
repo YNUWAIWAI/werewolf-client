@@ -8,7 +8,7 @@ interface Props {
   readonly numberOfPlayers: number
 }
 
-export default function PredictionRole(props: Props) {
+export const PredictionRole: React.FC<Props> = props => {
   const times = '×'
   const handleMouseEnter = (event: React.MouseEvent) => {
     const rect = event.currentTarget.getBoundingClientRect()
@@ -46,3 +46,4 @@ export default function PredictionRole(props: Props) {
     </div>
   )
 }
+PredictionRole.displayName = 'PredictionRole'

@@ -2,7 +2,8 @@ import {
   BuildVillage,
   buildVillage
 } from '../actions'
-import Component, {
+import {
+  BuildVillageBox as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/BuildVillageBox'
@@ -55,9 +56,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     }
   }
 })
-const Container = connect(
+
+export const BuildVillageBoxContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

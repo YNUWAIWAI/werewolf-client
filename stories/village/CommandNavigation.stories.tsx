@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import * as ActionTypes from '../../src/scripts/village/constants/ActionTypes'
 import * as React from 'react'
-import CommandNavigation from '../../src/scripts/village/components/molecules/CommandNavigation'
-import IntlProvider from '../../src/scripts/village/containers/IntlProviderContainer'
+import {CommandNavigation} from '../../src/scripts/village/components/molecules/CommandNavigation'
+import {IntlProviderContainer as IntlProvider} from '../../src/scripts/village/containers/IntlProviderContainer'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import {language} from './language'

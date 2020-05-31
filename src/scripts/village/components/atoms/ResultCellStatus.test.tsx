@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ResultCellStatus from './ResultCellStatus'
+import {ResultCellStatus} from './ResultCellStatus'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {village} from '../../types'

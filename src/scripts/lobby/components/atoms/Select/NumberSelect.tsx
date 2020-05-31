@@ -12,7 +12,7 @@ import {
   ActionMeta,
   ValueType
 } from 'react-select/src/types'
-import Select from './CustomizedSelect'
+import {CustomizedSelect as Select} from './CustomizedSelect'
 import {useIntl} from 'react-intl'
 
 interface Props {
@@ -31,7 +31,7 @@ interface Option {
   readonly value: number
 }
 
-export default function NumberSelect(props: Props) {
+export const NumberSelect: React.FC<Props> = props => {
   const intl = useIntl()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
@@ -82,3 +82,4 @@ export default function NumberSelect(props: Props) {
     />
   )
 }
+NumberSelect.displayName = 'NumberSelect'

@@ -13,7 +13,7 @@ import {
   ValueType
 } from 'react-select/src/types'
 // import Select from 'react-select'
-import Select from './CustomizedSelect'
+import {CustomizedSelect as Select} from './CustomizedSelect'
 import {lobby} from '../../../types'
 import {useIntl} from 'react-intl'
 
@@ -30,7 +30,7 @@ interface Option {
   readonly value: lobby.Avatar
 }
 
-export default function AvatarSelect(props: Props) {
+export const AvatarSelect: React.FC<Props> = props => {
   const intl = useIntl()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleChange = (selectedOption: ValueType<Option>, action: ActionMeta) => {
@@ -104,3 +104,4 @@ export default function AvatarSelect(props: Props) {
     />
   )
 }
+AvatarSelect.displayName = 'AvatarSelect'

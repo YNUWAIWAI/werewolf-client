@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CharacterIcon from './CharacterIcon'
+import {CharacterIcon} from './CharacterIcon'
 import {ImagePath} from '../../constants/ImagePath'
 import {shallow} from 'enzyme'
 

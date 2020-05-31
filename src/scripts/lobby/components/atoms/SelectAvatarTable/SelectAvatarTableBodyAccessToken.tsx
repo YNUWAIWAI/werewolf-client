@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Copy from '../svg/Copy'
+import {Copy} from '../svg/Copy'
 import {FormattedMessage} from 'react-intl'
 import {lobby} from '../../../types'
 
@@ -11,7 +11,7 @@ interface Props {
   readonly token: lobby.Token
 }
 
-export default function SelectAvatarTableBodyAccessToken(props: Props) {
+export const SelectAvatarTableBodyAccessToken: React.FC<Props> = props => {
   const copy = () => {
     navigator.clipboard.writeText(props.token)
   }
@@ -58,3 +58,4 @@ export default function SelectAvatarTableBodyAccessToken(props: Props) {
     </div>
   )
 }
+SelectAvatarTableBodyAccessToken.displayName = 'SelectAvatarTableBodyAccessToken'

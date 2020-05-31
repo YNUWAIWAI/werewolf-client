@@ -5,7 +5,7 @@ export interface Props {
   readonly time: number
 }
 
-export default function FormattedTime(props: Props) {
+export const FormattedTime: React.FC<Props> = props => {
   if (props.time < 0) {
     return (
       <FormattedMessage
@@ -27,4 +27,5 @@ export default function FormattedTime(props: Props) {
     />
   )
 }
+FormattedTime.displayName = 'FormattedTime'
 

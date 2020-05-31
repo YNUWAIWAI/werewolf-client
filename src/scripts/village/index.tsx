@@ -2,7 +2,7 @@
 import '../../styles/village'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import App from './App'
+import {App} from './App'
 import {Provider} from 'react-redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {createStore} from 'redux'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import BuildVillageCellVillageName from './BuildVillageCellVillageName'
+import {BuildVillageCellVillageName} from './BuildVillageCellVillageName'
 import {anonymousVillageName} from '../../../constants/AnonymousVillageName'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'

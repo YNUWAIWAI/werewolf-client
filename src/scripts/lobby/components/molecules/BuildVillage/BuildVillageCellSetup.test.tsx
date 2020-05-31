@@ -1,5 +1,5 @@
 import * as React from 'react'
-import BuildVillageCellSetup from './BuildVillageCellSetup'
+import {BuildVillageCellSetup} from './BuildVillageCellSetup'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'

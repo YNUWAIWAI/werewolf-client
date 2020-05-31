@@ -2,7 +2,7 @@ import * as React from 'react'
 
 const polorToRectangular = (cx: number, cy: number, r: number, deg: number): string => `${cx + (r * Math.cos(deg / 180 * Math.PI))}, ${cy + (r * Math.sin(deg / 180 * Math.PI))}`
 
-export default function Star() {
+export const Star: React.FC<{}> = () => {
   const cx = 25
   const cy = 25
   const outerR = 22
@@ -33,3 +33,4 @@ export default function Star() {
     </svg>
   )
 }
+Star.displayName = 'Star'

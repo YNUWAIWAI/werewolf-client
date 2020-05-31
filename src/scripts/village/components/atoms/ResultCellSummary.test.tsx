@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ResultCellSummary from './ResultCellSummary'
+import {ResultCellSummary} from './ResultCellSummary'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {village} from '../../types'

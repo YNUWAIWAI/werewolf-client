@@ -3,8 +3,8 @@ import {
   CSSTransition,
   TransitionGroup
 } from 'react-transition-group'
-import CharacterIcon from '../atoms/CharacterIcon'
-import Description from '../molecules/Description'
+import {CharacterIcon} from '../atoms/CharacterIcon'
+import {Description} from '../molecules/Description'
 import {village} from '../../types'
 
 export interface StateProps {
@@ -23,39 +23,38 @@ export interface DispatchProps {
 }
 export interface Props extends StateProps, DispatchProps {}
 
-export default function CommandSelection(props: Props) {
-  return (
-    <div className="vi--command--selection">
-      <Description
-        className="vi--command--selection--description"
-        id={props.descriptionId}
-      />
-      <TransitionGroup className="vi--command--selection--select">
-        {
-          props.characters
-            .map(character => (
-              <CSSTransition
-                appear
-                classNames="vi--command--selection--option--transition"
-                key={`${character.id}${props.phase}`}
-                timeout={{
-                  enter: 1000,
-                  exit: 400
-                }}
-                unmountOnExit
-              >
-                <CharacterIcon
-                  additionalClass={props.fixed ? 'fixed' : ''}
-                  className="vi--command--selection--option"
-                  handleOnClick={props.fixed ? undefined : props.handleSelectOption(character.id)}
-                  image={character.image}
-                  initial={character.initial}
-                  name={character.name}
-                />
-              </CSSTransition>
-            ))
-        }
-      </TransitionGroup>
-    </div>
-  )
-}
+export const CommandSelection: React.FC<Props> = props => (
+  <div className="vi--command--selection">
+    <Description
+      className="vi--command--selection--description"
+      id={props.descriptionId}
+    />
+    <TransitionGroup className="vi--command--selection--select">
+      {
+        props.characters
+          .map(character => (
+            <CSSTransition
+              appear
+              classNames="vi--command--selection--option--transition"
+              key={`${character.id}${props.phase}`}
+              timeout={{
+                enter: 1000,
+                exit: 400
+              }}
+              unmountOnExit
+            >
+              <CharacterIcon
+                additionalClass={props.fixed ? 'fixed' : ''}
+                className="vi--command--selection--option"
+                handleOnClick={props.fixed ? undefined : props.handleSelectOption(character.id)}
+                image={character.image}
+                initial={character.initial}
+                name={character.name}
+              />
+            </CSSTransition>
+          ))
+      }
+    </TransitionGroup>
+  </div>
+)
+CommandSelection.displayName = 'CommandSelection'

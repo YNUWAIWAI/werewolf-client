@@ -1,5 +1,5 @@
 import * as React from 'react'
-import TeamIcon from './TeamIcon'
+import {TeamIcon} from './TeamIcon'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {village} from '../../types'

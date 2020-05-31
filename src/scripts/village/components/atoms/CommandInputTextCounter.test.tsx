@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CommandInputTextCounter from './CommandInputTextCounter'
+import {CommandInputTextCounter} from './CommandInputTextCounter'
 import {shallow} from 'enzyme'
 
 describe('<CommandInputTextCounnter />', () => {

@@ -5,10 +5,9 @@ interface Props {
   readonly valid: boolean
 }
 
-export default function CommandInputTextCounter(props: Props) {
-  return (
-    <span className={`vi--command--input--char ${props.valid ? '' : 'error'}`}>
-      {props.textCount}
-    </span>
-  )
-}
+export const CommandInputTextCounter: React.FC<Props> = props => (
+  <span className={`vi--command--input--char ${props.valid ? '' : 'error'}`}>
+    {props.textCount}
+  </span>
+)
+CommandInputTextCounter.displayName = 'CommandInputTextCounter'

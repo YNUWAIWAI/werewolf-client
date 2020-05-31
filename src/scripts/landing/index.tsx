@@ -1,7 +1,7 @@
 import '../../styles/landing'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import App from './components/templates/App'
+import {App} from './components/templates/App'
 import {Language} from './i18n'
 
 const language = (() => {

@@ -1,12 +1,12 @@
 import * as React from 'react'
-import AdvancedSearchBox from '../../containers/AdvancedSearchBoxContainer'
-import AsideContent from '../atoms/AsideContent'
-import Avatar from '../atoms/Avatar'
-import Header from '../atoms/Header'
-import MainContent from '../atoms/MainContent'
-import Menu from '../../containers/MenuContainer'
+import {AdvancedSearchBoxContainer} from '../../containers/AdvancedSearchBoxContainer'
+import {AsideContent} from '../atoms/AsideContent'
+import {Avatar} from '../atoms/Avatar'
+import {Header} from '../atoms/Header'
+import {MainContent} from '../atoms/MainContent'
+import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
-import SearchResult from '../organisms/SearchResult'
+import {SearchResult} from '../organisms/SearchResult'
 import {lobby} from '../../types'
 
 export interface StateProps {
@@ -23,28 +23,27 @@ export interface DispatchProps {
 }
 export type Props = StateProps & DispatchProps
 
-export default function AdvancedSearch(props: Props) {
-  return (
-    <div className="lo--grid">
-      <Header id={props.header} />
-      <Avatar image={props.image} name={props.name} />
-      <MainContent>
-        <AdvancedSearchBox />
-        <SearchResult
-          className="lo--advanced-search"
-          isPlayer={props.isPlayer}
-          searched={props.searched}
-          selectVillage={props.selectVillage}
-          villageItems={props.villageItems}
-        />
-      </MainContent>
-      <AsideContent>
-        <Menu
-          className="lo--compact-menu"
-          itemClassName="lo--compact-menu--item"
-          items={props.menuItems}
-        />
-      </AsideContent>
-    </div>
-  )
-}
+export const AdvancedSearch: React.FC<Props> = props => (
+  <div className="lo--grid">
+    <Header id={props.header} />
+    <Avatar image={props.image} name={props.name} />
+    <MainContent>
+      <AdvancedSearchBoxContainer />
+      <SearchResult
+        className="lo--advanced-search"
+        isPlayer={props.isPlayer}
+        searched={props.searched}
+        selectVillage={props.selectVillage}
+        villageItems={props.villageItems}
+      />
+    </MainContent>
+    <AsideContent>
+      <MenuContainer
+        className="lo--compact-menu"
+        itemClassName="lo--compact-menu--item"
+        items={props.menuItems}
+      />
+    </AsideContent>
+  </div>
+)
+AdvancedSearch.displayName = 'AdvancedSearch'

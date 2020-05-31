@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Member from './Member'
+import {Member} from './Member'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'

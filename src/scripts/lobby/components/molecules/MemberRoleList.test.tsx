@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Cast from '../../constants/Cast'
-import MemberRoleList from './MemberRoleList'
+import {MemberRoleList} from './MemberRoleList'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
 import {lobby} from '../../types'

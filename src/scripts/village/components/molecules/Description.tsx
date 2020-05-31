@@ -1,13 +1,13 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import Timer from '../../containers/TimerContainer'
+import {TimerContainer as Timer} from '../../containers/TimerContainer'
 
 interface Props {
   className: string
   id: string
 }
 
-export default function Description(props: Props) {
+export const Description: React.FC<Props> = props => {
   const lparen = ' ('
   const rparen = ')'
 
@@ -22,3 +22,4 @@ export default function Description(props: Props) {
     </div>
   )
 }
+Description.displayName = 'Description'

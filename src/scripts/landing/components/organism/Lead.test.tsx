@@ -3,7 +3,7 @@ import {
   Language,
   getMessages
 } from '../../i18n'
-import Lead from './Lead'
+import {Lead} from './Lead'
 import {initRenderer} from '../../tools'
 
 const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))

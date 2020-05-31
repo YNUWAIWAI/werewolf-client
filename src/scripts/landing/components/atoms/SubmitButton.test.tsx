@@ -3,7 +3,7 @@ import {
   Language,
   getMessages
 } from '../../i18n'
-import SubmitButton from './SubmitButton'
+import {SubmitButton} from './SubmitButton'
 import {initRenderer} from '../../tools'
 
 const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ChatIcon from './ChatIcon'
+import {ChatIcon} from './ChatIcon'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
 

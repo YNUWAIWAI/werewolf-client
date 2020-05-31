@@ -1,5 +1,5 @@
 import * as React from 'react'
-import TextareaInput from './TextareaInput'
+import {TextareaInput} from './TextareaInput'
 import {shallow} from 'enzyme'
 
 describe('<TextareaInput />', () => {

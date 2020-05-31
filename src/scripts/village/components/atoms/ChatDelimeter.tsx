@@ -5,7 +5,7 @@ export interface Props {
   readonly day: number
 }
 
-export default function ChatDelimeter(props: Props) {
+export const ChatDelimeter: React.FC<Props> = props => {
   if (props.day >= 0) {
     return (
       <div className="vi--chat--delimeter">
@@ -27,3 +27,4 @@ export default function ChatDelimeter(props: Props) {
     </div>
   )
 }
+ChatDelimeter.displayName = 'ChatDelimeter'

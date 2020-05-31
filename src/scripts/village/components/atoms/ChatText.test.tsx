@@ -3,7 +3,7 @@ import {
   mount,
   shallow
 } from 'enzyme'
-import ChatText from './ChatText'
+import {ChatText} from './ChatText'
 
 describe('<ChatText />', () => {
   describe('text', () => {

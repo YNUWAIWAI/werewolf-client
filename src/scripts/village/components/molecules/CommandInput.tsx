@@ -6,10 +6,10 @@ import {
   isValidTextLength,
   spaceSeparatedToCamelCase
 } from '../../util'
-import ChatIcon from '../atoms/ChatIcon'
-import CommandInputPostCounter from '../atoms/CommandInputPostCounter'
-import CommandInputSuggest from '../atoms/CommandInputSuggest'
-import CommandInputTextCounter from '../atoms/CommandInputTextCounter'
+import {ChatIcon} from '../atoms/ChatIcon'
+import {CommandInputPostCounter} from '../atoms/CommandInputPostCounter'
+import {CommandInputSuggest} from '../atoms/CommandInputSuggest'
+import {CommandInputTextCounter} from '../atoms/CommandInputTextCounter'
 import {FormattedMessage} from 'react-intl'
 import Fuse from 'fuse.js'
 import {SuggestedData} from '../../reducers/suggest'
@@ -64,7 +64,8 @@ const options: Fuse.IFuseOptions<SuggestedData> = {
   threshold: 0.6
 }
 
-export default class CommandInput extends React.Component<Props, State> {
+// eslint-disable-next-line react/display-name
+export class CommandInput extends React.Component<Props, State> {
   private fuse: Fuse<SuggestedData, Fuse.IFuseOptions<SuggestedData>>
 
   public constructor(props: Props) {

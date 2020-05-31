@@ -1,4 +1,5 @@
-import Component, {
+import {
+  Modal as Component,
   DispatchProps,
   StateProps
 } from '../components/organisms/Modal'
@@ -77,9 +78,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
     dispatch(selectYes(selectedCharacter))
   }
 })
-const Container = connect(
+
+export const ModalContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
-
-export default Container

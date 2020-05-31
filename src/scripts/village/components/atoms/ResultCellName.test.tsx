@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ResultCellName from './ResultCellName'
+import {ResultCellName} from './ResultCellName'
 import {shallow} from 'enzyme'
 import {village} from '../../types'
 

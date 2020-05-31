@@ -7,7 +7,7 @@ interface Props {
   readonly max: number
 }
 
-export default function IdSearchBox(props: Props) {
+export const IdSearchBox: React.FC<Props> = props => {
   const handleIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.handleValidityChange(event.target.validity.valid)
     if (event.target.validity.valid) {
@@ -47,3 +47,4 @@ export default function IdSearchBox(props: Props) {
     </div>
   )
 }
+IdSearchBox.displayName = 'IdSearchBox'

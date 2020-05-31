@@ -1,7 +1,7 @@
 import * as React from 'react'
-import AdvancedSearchCellAvatar from './AdvancedSearchCellAvatar'
-import AdvancedSearchProp from '../../atoms/AdvancedSearchProp'
-import AvatarSelect from '../../atoms/Select/AvatarSelect'
+import {AdvancedSearchCellAvatar} from './AdvancedSearchCellAvatar'
+import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
+import {AvatarSelect} from '../../atoms/Select/AvatarSelect'
 import {shallow} from 'enzyme'
 
 test('render', () => {

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Copy from '../svg/Copy'
-import SelectAvatarTableBodyAccessToken from './SelectAvatarTableBodyAccessToken'
+import {Copy} from '../svg/Copy'
+import {SelectAvatarTableBodyAccessToken} from './SelectAvatarTableBodyAccessToken'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
 import {lobby} from '../../../types'
