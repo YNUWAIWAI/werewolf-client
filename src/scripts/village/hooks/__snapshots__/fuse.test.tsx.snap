@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input text 1`] = `"<div><ul><li>Adil</li></ul><input/></div>"`;
+
+exports[`render 1`] = `"<div><ul><li>Adil</li><li>Borya</li><li>Chacha</li><li>Devdatta</li><li>Ekrem</li></ul><input/></div>"`;
+
+exports[`reset text 1`] = `"<div><ul><li>Adil</li><li>Borya</li><li>Chacha</li><li>Devdatta</li><li>Ekrem</li></ul><input/></div>"`;
