@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`next 1`] = `"<div><span>1</span><button id=\\"prev\\">prev</button><button id=\\"next\\">next</button><button id=\\"refresh\\">refresh</button></div>"`;
+
+exports[`prev 1`] = `"<div><span>4</span><button id=\\"prev\\">prev</button><button id=\\"next\\">next</button><button id=\\"refresh\\">refresh</button></div>"`;
+
+exports[`refresh 1`] = `"<div><span>0</span><button id=\\"prev\\">prev</button><button id=\\"next\\">next</button><button id=\\"refresh\\">refresh</button></div>"`;
+
+exports[`render 1`] = `"<div><span>0</span><button id=\\"prev\\">prev</button><button id=\\"next\\">next</button><button id=\\"refresh\\">refresh</button></div>"`;
