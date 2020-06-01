@@ -11,9 +11,9 @@ import {CommandInputPostCounter} from '../atoms/CommandInputPostCounter'
 import {CommandInputSuggest} from '../atoms/CommandInputSuggest'
 import {CommandInputTextCounter} from '../atoms/CommandInputTextCounter'
 import {FormattedMessage} from 'react-intl'
-import Fuse from 'fuse.js'
 import {SuggestedData} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
+import {useFuse} from '../../hooks/fuse'
 import {village} from '../../types'
 
 interface Props {
@@ -38,23 +38,9 @@ export const enum Triger {
   At = '@',
   Space = ' '
 }
-const options: Fuse.IFuseOptions<SuggestedData> = {
-  distance: 100,
-  keys: [
-    'id',
-    'name.en',
-    'name.fr',
-    'name.it',
-    'name.ja'
-  ],
-  location: 0,
-  minMatchCharLength: 1,
-  shouldSort: true,
-  threshold: 0.6
-}
 
 export const CommandInput: React.FC<Props> = props => {
-  const fuse = new Fuse(props.suggestedData, options)
+  const {suggestedResult, updateSearchText} = useFuse(props.suggestedData)
   const [caretPosition, setCaretPosition] = React.useState(0)
   const [compositing, setCompositing] = React.useState(false)
   const [selectedItem, setSelectedItem] = React.useState(0)
@@ -77,24 +63,22 @@ export const CommandInput: React.FC<Props> = props => {
     elem.setSelectionRange(caretPosition, caretPosition)
   }, [caretPosition])
 
-  const suggestedResult = React.useMemo(() => {
+  React.useEffect(() => {
+    if (!suggestable) {
+      return
+    }
     const searchText = text.slice(
       trigerPosition + 1,
       caretPosition
     )
 
-    if (searchText === '') {
-      return props.suggestedData
-    }
+    updateSearchText(searchText)
+  }, [caretPosition, suggestable, text, trigerPosition, updateSearchText])
 
-    return fuse.search<SuggestedData>(searchText)
-      .map(result => result.item)
-  }, [fuse, text, caretPosition, trigerPosition, props.suggestedData])
-
-  const updateSuggestPosition = () => {
+  React.useEffect(() => {
     const elem = textareaRef.current
 
-    if (elem === null) {
+    if (elem === null || !suggestable) {
       return
     }
     const {left, top} = getCaretCoordinates(elem, trigerPosition + 1)
@@ -103,7 +87,7 @@ export const CommandInput: React.FC<Props> = props => {
       left,
       top: top - elem.scrollTop
     })
-  }
+  }, [suggestable, trigerPosition])
 
   const isSendable = () => {
     switch (props.inputChannel) {
@@ -200,7 +184,6 @@ export const CommandInput: React.FC<Props> = props => {
         setSelectedItem(0)
         setSuggestable(true)
         setTrigerPosition(pos)
-        updateSuggestPosition()
       }
     } else if (newText[pos] === Triger.Space) {
       setSelectedItem(0)
@@ -212,7 +195,6 @@ export const CommandInput: React.FC<Props> = props => {
       setSelectedItem(0)
       setSuggestable(true)
       setTrigerPosition(trigerPosition)
-      updateSuggestPosition()
     }
   }
 
