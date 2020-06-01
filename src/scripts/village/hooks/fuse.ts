@@ -20,7 +20,6 @@ export const useFuse = (initialData: SuggestedData[]) => {
   }
   const fuse = new Fuse(initialData, options)
   const suggestedResult = React.useMemo(() => {
-    console.log(text)
     if (text === '') {
       return initialData
     }

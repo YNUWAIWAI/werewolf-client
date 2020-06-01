@@ -6,6 +6,10 @@ import {
   isValidTextLength,
   spaceSeparatedToCamelCase
 } from '../../util'
+import {
+  useFuse,
+  useSelector
+} from '../../hooks'
 import {ChatIcon} from '../atoms/ChatIcon'
 import {CommandInputPostCounter} from '../atoms/CommandInputPostCounter'
 import {CommandInputSuggest} from '../atoms/CommandInputSuggest'
@@ -13,7 +17,6 @@ import {CommandInputTextCounter} from '../atoms/CommandInputTextCounter'
 import {FormattedMessage} from 'react-intl'
 import {SuggestedData} from '../../reducers/suggest'
 import getCaretCoordinates = require('textarea-caret')
-import {useFuse} from '../../hooks/fuse'
 import {village} from '../../types'
 
 interface Props {
@@ -40,10 +43,10 @@ export const enum Triger {
 }
 
 export const CommandInput: React.FC<Props> = props => {
+  const selector = useSelector(0)
   const {suggestedResult, updateSearchText} = useFuse(props.suggestedData)
   const [caretPosition, setCaretPosition] = React.useState(0)
   const [compositing, setCompositing] = React.useState(false)
-  const [selectedItem, setSelectedItem] = React.useState(0)
   const [suggestPosition, setSuggestPosition] = React.useState({
     left: 0,
     top: 0
@@ -89,17 +92,20 @@ export const CommandInput: React.FC<Props> = props => {
     })
   }, [suggestable, trigerPosition])
 
+  React.useEffect(() => {
+    selector.setLength(suggestedResult.length)
+  }, [selector, suggestedResult])
+
   const isSendable = () => {
     switch (props.inputChannel) {
-      case village.InputChannel.grave:
-      case village.InputChannel.private:
-      case village.InputChannel.postMortem:
-        return true
       case village.InputChannel.public:
       case village.InputChannel.werewolf:
         return props.numberOfChatMessages < props.maxNumberOfChatMessages
+      case village.InputChannel.grave:
+      case village.InputChannel.private:
+      case village.InputChannel.postMortem:
       default:
-        throw Error('props.inputChannel: unkonwn')
+        return true
     }
   }
   const isValid = () => isValidTextLength(text, props.maxLengthOfUnicodeCodePoints, 1)
@@ -114,8 +120,8 @@ export const CommandInput: React.FC<Props> = props => {
 
     setText(newText)
     setCaretPosition(trigerPosition + countText(suggest))
-    setSelectedItem(0)
     setSuggestable(false)
+    selector.refresh()
   }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (compositing) {
@@ -134,18 +140,18 @@ export const CommandInput: React.FC<Props> = props => {
     switch (event.key) {
       case Key.ArrowLeft:
       case Key.ArrowRight:
-        setSelectedItem(0)
+        selector.refresh()
         setSuggestable(false)
 
         return
       case Key.ArrowDown:
         event.preventDefault()
-        setSelectedItem((selectedItem + 1) % suggestedResult.length)
+        selector.next()
 
         return
       case Key.ArrowUp:
         event.preventDefault()
-        setSelectedItem((selectedItem - 1 + suggestedResult.length) % suggestedResult.length)
+        selector.prev()
 
         return
       case Key.Enter:
@@ -155,7 +161,7 @@ export const CommandInput: React.FC<Props> = props => {
           getText(
             {
               language: props.language,
-              languageMap: suggestedResult[selectedItem].name
+              languageMap: suggestedResult[selector.selectedItem].name
             }
           )
         )
@@ -178,21 +184,21 @@ export const CommandInput: React.FC<Props> = props => {
 
     if (newText[pos] === Triger.At) {
       if (newText[pos - 1] === Triger.At) {
-        setSelectedItem(0)
+        selector.refresh()
         setSuggestable(false)
       } else {
-        setSelectedItem(0)
+        selector.refresh()
         setSuggestable(true)
         setTrigerPosition(pos)
       }
     } else if (newText[pos] === Triger.Space) {
-      setSelectedItem(0)
+      selector.refresh()
       setSuggestable(false)
     } else if (newCaretPosition <= trigerPosition) {
-      setSelectedItem(0)
+      selector.refresh()
       setSuggestable(false)
     } else if (suggestable) {
-      setSelectedItem(0)
+      selector.refresh()
       setSuggestable(true)
       setTrigerPosition(trigerPosition)
     }
@@ -229,7 +235,7 @@ export const CommandInput: React.FC<Props> = props => {
         handleSuggestClick={handleSuggestClick}
         language={props.language}
         left={suggestPosition.left}
-        selected={selectedItem}
+        selected={selector.selectedItem}
         suggestable={suggestable}
         top={suggestPosition.top}
       />
