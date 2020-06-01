@@ -26,17 +26,6 @@ interface Props {
   readonly numberOfChatMessages: number
   readonly suggestedData: SuggestedData[]
 }
-interface State {
-  caretPosition: number
-  processing: boolean
-  suggestLeft: number
-  suggestSelected: number
-  suggestedData: SuggestedData[]
-  suggestTop: number
-  suggestable: boolean
-  text: string
-  trigerPosition: number
-}
 export const enum Key {
   ArrowDown = 'ArrowDown',
   ArrowLeft = 'ArrowLeft',
@@ -64,49 +53,96 @@ const options: Fuse.IFuseOptions<SuggestedData> = {
   threshold: 0.6
 }
 
-// eslint-disable-next-line react/display-name
-export class CommandInput extends React.Component<Props, State> {
-  private fuse: Fuse<SuggestedData, Fuse.IFuseOptions<SuggestedData>>
+export const CommandInput: React.FC<Props> = props => {
+  const fuse = new Fuse(props.suggestedData, options)
+  const [caretPosition, setCaretPosition] = React.useState(0)
+  const [compositing, setCompositing] = React.useState(false)
+  const [selectedItem, setSelectedItem] = React.useState(0)
+  const [suggestPosition, setSuggestPosition] = React.useState({
+    left: 0,
+    top: 0
+  })
+  const [suggestable, setSuggestable] = React.useState(false)
+  const [text, setText] = React.useState('')
+  const [trigerPosition, setTrigerPosition] = React.useState(0)
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null)
 
-  public constructor(props: Props) {
-    super(props)
-    const text = ''
+  React.useEffect(() => {
+    const elem = textareaRef.current
 
-    this.state = {
-      caretPosition: 0,
-      processing: false,
-      suggestLeft: 0,
-      suggestSelected: 0,
-      suggestTop: 0,
-      suggestable: false,
-      suggestedData: props.suggestedData,
-      text,
-      trigerPosition: 0
-    }
-    this.fuse = new Fuse(props.suggestedData, options)
-    this.handleSuggestClick = this.handleSuggestClick.bind(this)
-  }
-
-  public shouldComponentUpdate() {
-    return true
-  }
-
-  private textareaRef = React.createRef<HTMLTextAreaElement>()
-
-  public getSearchText(text: string, caretPosition: number) {
-    return text.slice(this.state.trigerPosition + 1, caretPosition)
-  }
-
-  public handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (this.state.processing) {
+    if (elem === null) {
       return
     }
-    if (!this.state.suggestable || this.state.suggestedData.length <= 0) {
+    elem.focus()
+    elem.setSelectionRange(caretPosition, caretPosition)
+  }, [caretPosition])
+
+  const suggestedResult = React.useMemo(() => {
+    const searchText = text.slice(
+      trigerPosition + 1,
+      caretPosition
+    )
+
+    if (searchText === '') {
+      return props.suggestedData
+    }
+
+    return fuse.search<SuggestedData>(searchText)
+      .map(result => result.item)
+  }, [fuse, text, caretPosition, trigerPosition, props.suggestedData])
+
+  const updateSuggestPosition = () => {
+    const elem = textareaRef.current
+
+    if (elem === null) {
+      return
+    }
+    const {left, top} = getCaretCoordinates(elem, trigerPosition + 1)
+
+    setSuggestPosition({
+      left,
+      top: top - elem.scrollTop
+    })
+  }
+
+  const isSendable = () => {
+    switch (props.inputChannel) {
+      case village.InputChannel.grave:
+      case village.InputChannel.private:
+      case village.InputChannel.postMortem:
+        return true
+      case village.InputChannel.public:
+      case village.InputChannel.werewolf:
+        return props.numberOfChatMessages < props.maxNumberOfChatMessages
+      default:
+        throw Error('props.inputChannel: unkonwn')
+    }
+  }
+  const isValid = () => isValidTextLength(text, props.maxLengthOfUnicodeCodePoints, 1)
+  const handlePostChat = () => {
+    if (isSendable() && isValid()) {
+      props.handlePostChat(text)
+      setText('')
+    }
+  }
+  const handleSuggestClick = (suggest: string) => {
+    const newText = text.slice(0, trigerPosition) + suggest + text.slice(caretPosition)
+
+    setText(newText)
+    setCaretPosition(trigerPosition + countText(suggest))
+    setSelectedItem(0)
+    setSuggestable(false)
+  }
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (compositing) {
+      return
+    }
+    if (!suggestable || suggestedResult.length <= 0) {
       if (
         (event.ctrlKey || event.metaKey) &&
         event.key === Key.Enter
       ) {
-        this.handlePostChat()
+        handlePostChat()
       }
 
       return
@@ -114,39 +150,28 @@ export class CommandInput extends React.Component<Props, State> {
     switch (event.key) {
       case Key.ArrowLeft:
       case Key.ArrowRight:
-        this.updateSuggestable(false)
+        setSelectedItem(0)
+        setSuggestable(false)
 
         return
       case Key.ArrowDown:
         event.preventDefault()
-        this.setState(prevState => {
-          const suggestSelected = (prevState.suggestSelected + 1) % prevState.suggestedData.length
-
-          return {
-            suggestSelected
-          }
-        })
+        setSelectedItem((selectedItem + 1) % suggestedResult.length)
 
         return
       case Key.ArrowUp:
         event.preventDefault()
-        this.setState(prevState => {
-          const suggestSelected = (prevState.suggestSelected - 1 + prevState.suggestedData.length) % prevState.suggestedData.length
-
-          return {
-            suggestSelected
-          }
-        })
+        setSelectedItem((selectedItem - 1 + suggestedResult.length) % suggestedResult.length)
 
         return
       case Key.Enter:
       case Key.Tab:
         event.preventDefault()
-        this.handleSuggestClick(
+        handleSuggestClick(
           getText(
             {
-              language: this.props.language,
-              languageMap: this.state.suggestedData[this.state.suggestSelected].name
+              language: props.language,
+              languageMap: suggestedResult[selectedItem].name
             }
           )
         )
@@ -158,178 +183,98 @@ export class CommandInput extends React.Component<Props, State> {
         return
     }
   }
+  const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newText = event.target.value
+    const newCaretPosition = event.target.selectionEnd
 
-  public handlePostChat() {
-    if (this.isSendable() && this.isValidTextLength()) {
-      this.props.handlePostChat(this.state.text)
-      this.updateText('')
-    }
-  }
+    setText(newText)
+    setCaretPosition(newCaretPosition)
 
-  public handleSuggestClick(suggest: string) {
-    const text = this.state.text
-    const newText = text.slice(0, this.state.trigerPosition) + suggest + text.slice(this.state.caretPosition)
+    const pos = newCaretPosition - 1
 
-    this.updateText(newText)
-    this.updateCaretPosition(this.state.trigerPosition + countText(suggest))
-    this.updateSuggestable(false)
-  }
-
-  public handleTextChange({caretPosition, text}: {caretPosition: number, text: string}) {
-    this.updateText(text)
-    this.updateCaretPosition(caretPosition)
-    const pos = caretPosition - 1
-
-    if (text[pos] === Triger.At) {
-      if (text[pos - 1] === Triger.At) {
-        this.updateSuggestable(false)
+    if (newText[pos] === Triger.At) {
+      if (newText[pos - 1] === Triger.At) {
+        setSelectedItem(0)
+        setSuggestable(false)
       } else {
-        this.updateTrigerPosition(caretPosition - 1)
-        this.updateSuggestable(true)
+        setSelectedItem(0)
+        setSuggestable(true)
+        setTrigerPosition(pos)
+        updateSuggestPosition()
       }
-    } else if (text[pos] === Triger.Space) {
-      this.updateSuggestable(false)
-    } else if (caretPosition <= this.state.trigerPosition) {
-      this.updateSuggestable(false)
-    } else if (this.state.suggestable) {
-      const suggestedData =
-        this.fuse.search<SuggestedData>(this.getSearchText(text, caretPosition))
-          .map(result => result.item)
-
-      this.setState({
-        suggestSelected: 0,
-        suggestedData
-      })
-      this.updateTrigerPosition(this.state.trigerPosition)
+    } else if (newText[pos] === Triger.Space) {
+      setSelectedItem(0)
+      setSuggestable(false)
+    } else if (newCaretPosition <= trigerPosition) {
+      setSelectedItem(0)
+      setSuggestable(false)
+    } else if (suggestable) {
+      setSelectedItem(0)
+      setSuggestable(true)
+      setTrigerPosition(trigerPosition)
+      updateSuggestPosition()
     }
   }
 
-  public isSendable() {
-    switch (this.props.inputChannel) {
-      case village.InputChannel.grave:
-      case village.InputChannel.private:
-      case village.InputChannel.postMortem:
-        return true
-      case village.InputChannel.public:
-      case village.InputChannel.werewolf:
-        return this.props.numberOfChatMessages < this.props.maxNumberOfChatMessages
-      default:
-        throw Error('props.inputChannel: unkonwn')
-    }
-  }
+  const inputChannel = spaceSeparatedToCamelCase(props.inputChannel)
+  const channel = getChannelFromInputChennel({
+    inputChannel: props.inputChannel,
+    role: village.RoleId.werewolf
+  })
+  const tabIndex = props.navigatable ? 0 : -1
 
-  public isValidTextLength() {
-    return isValidTextLength(this.state.text, this.props.maxLengthOfUnicodeCodePoints, 1)
-  }
-
-  public updateCaretPosition(caretPosition: number) {
-    this.setState({
-      caretPosition
-    }, () => {
-      const elem = this.textareaRef.current
-
-      if (elem === null) {
-        return
-      }
-      elem.focus()
-      elem.setSelectionRange(this.state.caretPosition, this.state.caretPosition)
-    })
-  }
-
-  public updateProcessing(processing: boolean) {
-    this.setState({
-      processing
-    })
-  }
-
-  public updateSuggestable(suggestable: boolean) {
-    this.setState({
-      suggestSelected: 0,
-      suggestable,
-      suggestedData: this.props.suggestedData
-    })
-  }
-
-  public updateText(text: string) {
-    this.setState({
-      text
-    })
-  }
-
-  public updateTrigerPosition(position: number) {
-    const elem = this.textareaRef.current
-
-    if (elem === null) {
-      return
-    }
-    const {left, top} = getCaretCoordinates(elem, position + 1)
-
-    this.setState({
-      suggestLeft: left,
-      suggestTop: top - elem.scrollTop,
-      trigerPosition: position
-    })
-  }
-
-  public render() {
-    return (
-      <div className="vi--command--input">
-        <FormattedMessage id={`CommandInput.placeholder.${spaceSeparatedToCamelCase(this.props.inputChannel)}`}>
-          {
-            text => (
-              <textarea
-                className={`vi--command--input--textarea ${spaceSeparatedToCamelCase(this.props.inputChannel)}`}
-                onChange={event => this.handleTextChange({
-                  caretPosition: event.target.selectionEnd,
-                  text: event.target.value
-                })}
-                onCompositionEnd={() => this.updateProcessing(false)}
-                onCompositionStart={() => this.updateProcessing(true)}
-                onKeyDown={event => this.handleKeyDown(event)}
-                placeholder={typeof text === 'string' ? text : ''}
-                ref={this.textareaRef}
-                tabIndex={this.props.navigatable ? 0 : -1}
-                value={this.state.text}
-              />
-            )
-          }
-        </FormattedMessage>
-        <CommandInputSuggest
-          data={this.state.suggestedData}
-          handleSuggestClick={this.handleSuggestClick}
-          language={this.props.language}
-          left={this.state.suggestLeft}
-          selected={this.state.suggestSelected}
-          suggestable={this.state.suggestable}
-          top={this.state.suggestTop}
+  return (
+    <div className="vi--command--input">
+      <FormattedMessage id={`CommandInput.placeholder.${inputChannel}`}>
+        {
+          placeholder => (
+            <textarea
+              className={`vi--command--input--textarea ${inputChannel}`}
+              onChange={handleTextChange}
+              onCompositionEnd={() => setCompositing(false)}
+              onCompositionStart={() => setCompositing(true)}
+              onKeyDown={handleKeyDown}
+              placeholder={typeof placeholder === 'string' ? placeholder : undefined}
+              ref={textareaRef}
+              tabIndex={tabIndex}
+              value={text}
+            />
+          )
+        }
+      </FormattedMessage>
+      <CommandInputSuggest
+        data={suggestedResult}
+        handleSuggestClick={handleSuggestClick}
+        language={props.language}
+        left={suggestPosition.left}
+        selected={selectedItem}
+        suggestable={suggestable}
+        top={suggestPosition.top}
+      />
+      <CommandInputTextCounter
+        textCount={countText(text)}
+        valid={isValid()}
+      />
+      <ChatIcon
+        channel={channel}
+        className="vi--command--input--icon"
+      />
+      <CommandInputPostCounter
+        inputChannel={props.inputChannel}
+        maxNumberOfChatMessages={props.maxNumberOfChatMessages}
+        numberOfChatMessages={props.numberOfChatMessages}
+      />
+      <button
+        className="vi--command--input--send"
+        disabled={!(isSendable() && isValid())}
+        onClick={handlePostChat}
+        tabIndex={tabIndex}
+      >
+        <FormattedMessage
+          id="CommandInput.send"
         />
-        <CommandInputTextCounter
-          textCount={countText(this.state.text)}
-          valid={this.isValidTextLength()}
-        />
-        <ChatIcon
-          channel={getChannelFromInputChennel({
-            inputChannel: this.props.inputChannel,
-            role: village.RoleId.werewolf
-          })}
-          className="vi--command--input--icon"
-        />
-        <CommandInputPostCounter
-          inputChannel={this.props.inputChannel}
-          maxNumberOfChatMessages={this.props.maxNumberOfChatMessages}
-          numberOfChatMessages={this.props.numberOfChatMessages}
-        />
-        <button
-          className="vi--command--input--send"
-          disabled={!(this.isSendable() && this.isValidTextLength())}
-          onClick={() => this.handlePostChat()}
-          tabIndex={this.props.navigatable ? 0 : -1}
-        >
-          <FormattedMessage
-            id="CommandInput.send"
-          />
-        </button>
-      </div>
-    )
-  }
+      </button>
+    </div>
+  )
 }
+CommandInput.displayName = 'CommandInput'
