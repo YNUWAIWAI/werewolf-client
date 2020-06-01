@@ -42,18 +42,59 @@ export const enum Triger {
   Space = ' '
 }
 
-export const CommandInput: React.FC<Props> = props => {
-  const selector = useSelector(0)
-  const {suggestedResult, updateSearchText} = useFuse(props.suggestedData)
+interface TextInput {
+  readonly availableToSend: boolean
+  readonly maxLengthOfUnicodeCodePoints: number
+  readonly text: string
+}
+
+export const useTextInput = (initialValue: TextInput) => {
   const [caretPosition, setCaretPosition] = React.useState(0)
   const [compositing, setCompositing] = React.useState(false)
+  const [text, setText] = React.useState(initialValue.text)
+  const [trigerPosition, setTrigerPosition] = React.useState(0)
+  const count = countText(text)
+  const valid = isValidTextLength(text, initialValue.maxLengthOfUnicodeCodePoints, 1)
+  const disabled = !valid || !initialValue.availableToSend
+
+  return {
+    caretPosition,
+    compositing,
+    count,
+    disabled,
+    setCaretPosition,
+    setCompositing,
+    setText,
+    setTrigerPosition,
+    text,
+    trigerPosition,
+    valid
+  }
+}
+
+export const CommandInput: React.FC<Props> = props => {
+  const availableToSend = () => {
+    if (
+      props.inputChannel === village.InputChannel.public ||
+      props.inputChannel === village.InputChannel.werewolf
+    ) {
+      return props.numberOfChatMessages < props.maxNumberOfChatMessages
+    }
+
+    return true
+  }
+  const selector = useSelector(0)
+  const {suggestedResult, updateSearchText} = useFuse(props.suggestedData)
+  const textInput = useTextInput({
+    availableToSend: availableToSend(),
+    maxLengthOfUnicodeCodePoints: props.maxLengthOfUnicodeCodePoints,
+    text: ''
+  })
   const [suggestPosition, setSuggestPosition] = React.useState({
     left: 0,
     top: 0
   })
   const [suggestable, setSuggestable] = React.useState(false)
-  const [text, setText] = React.useState('')
-  const [trigerPosition, setTrigerPosition] = React.useState(0)
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
 
   React.useEffect(() => {
@@ -63,20 +104,20 @@ export const CommandInput: React.FC<Props> = props => {
       return
     }
     elem.focus()
-    elem.setSelectionRange(caretPosition, caretPosition)
-  }, [caretPosition])
+    elem.setSelectionRange(textInput.caretPosition, textInput.caretPosition)
+  }, [textInput.caretPosition])
 
   React.useEffect(() => {
     if (!suggestable) {
       return
     }
-    const searchText = text.slice(
-      trigerPosition + 1,
-      caretPosition
+    const searchText = textInput.text.slice(
+      textInput.trigerPosition + 1,
+      textInput.caretPosition
     )
 
     updateSearchText(searchText)
-  }, [caretPosition, suggestable, text, trigerPosition, updateSearchText])
+  }, [textInput, suggestable, updateSearchText])
 
   React.useEffect(() => {
     const elem = textareaRef.current
@@ -84,47 +125,36 @@ export const CommandInput: React.FC<Props> = props => {
     if (elem === null || !suggestable) {
       return
     }
-    const {left, top} = getCaretCoordinates(elem, trigerPosition + 1)
+    const {left, top} = getCaretCoordinates(elem, textInput.trigerPosition + 1)
 
     setSuggestPosition({
       left,
       top: top - elem.scrollTop
     })
-  }, [suggestable, trigerPosition])
+  }, [suggestable, textInput.trigerPosition, textInput.text])
 
   React.useEffect(() => {
     selector.setLength(suggestedResult.length)
   }, [selector, suggestedResult])
 
-  const isSendable = () => {
-    switch (props.inputChannel) {
-      case village.InputChannel.public:
-      case village.InputChannel.werewolf:
-        return props.numberOfChatMessages < props.maxNumberOfChatMessages
-      case village.InputChannel.grave:
-      case village.InputChannel.private:
-      case village.InputChannel.postMortem:
-      default:
-        return true
-    }
-  }
-  const isValid = () => isValidTextLength(text, props.maxLengthOfUnicodeCodePoints, 1)
   const handlePostChat = () => {
-    if (isSendable() && isValid()) {
-      props.handlePostChat(text)
-      setText('')
+    if (!textInput.disabled) {
+      props.handlePostChat(textInput.text)
+      textInput.setText('')
     }
   }
   const handleSuggestClick = (suggest: string) => {
+    const {caretPosition, text, trigerPosition} = textInput
     const newText = text.slice(0, trigerPosition) + suggest + text.slice(caretPosition)
+    const newCaretPosition = trigerPosition + countText(suggest)
 
-    setText(newText)
-    setCaretPosition(trigerPosition + countText(suggest))
+    textInput.setText(newText)
+    textInput.setCaretPosition(newCaretPosition)
     setSuggestable(false)
     selector.refresh()
   }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (compositing) {
+    if (textInput.compositing) {
       return
     }
     if (!suggestable || suggestedResult.length <= 0) {
@@ -166,19 +196,17 @@ export const CommandInput: React.FC<Props> = props => {
           )
         )
 
-        // eslint-disable-next-line no-useless-return
         return
       default:
-        // eslint-disable-next-line no-useless-return
-        return
+        setSuggestable(true)
     }
   }
   const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newText = event.target.value
     const newCaretPosition = event.target.selectionEnd
 
-    setText(newText)
-    setCaretPosition(newCaretPosition)
+    textInput.setText(newText)
+    textInput.setCaretPosition(newCaretPosition)
 
     const pos = newCaretPosition - 1
 
@@ -189,18 +217,17 @@ export const CommandInput: React.FC<Props> = props => {
       } else {
         selector.refresh()
         setSuggestable(true)
-        setTrigerPosition(pos)
+        textInput.setTrigerPosition(pos)
       }
     } else if (newText[pos] === Triger.Space) {
       selector.refresh()
       setSuggestable(false)
-    } else if (newCaretPosition <= trigerPosition) {
+    } else if (newCaretPosition <= textInput.trigerPosition) {
       selector.refresh()
       setSuggestable(false)
     } else if (suggestable) {
       selector.refresh()
       setSuggestable(true)
-      setTrigerPosition(trigerPosition)
     }
   }
 
@@ -219,13 +246,13 @@ export const CommandInput: React.FC<Props> = props => {
             <textarea
               className={`vi--command--input--textarea ${inputChannel}`}
               onChange={handleTextChange}
-              onCompositionEnd={() => setCompositing(false)}
-              onCompositionStart={() => setCompositing(true)}
+              onCompositionEnd={() => textInput.setCompositing(false)}
+              onCompositionStart={() => textInput.setCompositing(true)}
               onKeyDown={handleKeyDown}
               placeholder={typeof placeholder === 'string' ? placeholder : undefined}
               ref={textareaRef}
               tabIndex={tabIndex}
-              value={text}
+              value={textInput.text}
             />
           )
         }
@@ -240,8 +267,8 @@ export const CommandInput: React.FC<Props> = props => {
         top={suggestPosition.top}
       />
       <CommandInputTextCounter
-        textCount={countText(text)}
-        valid={isValid()}
+        textCount={textInput.count}
+        valid={textInput.valid}
       />
       <ChatIcon
         channel={channel}
@@ -254,7 +281,7 @@ export const CommandInput: React.FC<Props> = props => {
       />
       <button
         className="vi--command--input--send"
-        disabled={!(isSendable() && isValid())}
+        disabled={textInput.disabled}
         onClick={handlePostChat}
         tabIndex={tabIndex}
       >
