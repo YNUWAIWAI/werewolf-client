@@ -37,10 +37,6 @@ export const enum Key {
   Enter = 'Enter',
   Tab = 'Tab'
 }
-export const enum Triger {
-  At = '@',
-  Space = ' '
-}
 
 export const CommandInput: React.FC<Props> = props => {
   const availableToSend = () => {
@@ -64,7 +60,6 @@ export const CommandInput: React.FC<Props> = props => {
     left: 0,
     top: 0
   })
-  const [suggestable, setSuggestable] = React.useState(false)
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
 
   React.useEffect(() => {
@@ -78,21 +73,17 @@ export const CommandInput: React.FC<Props> = props => {
   }, [textInput.caretPosition])
 
   React.useEffect(() => {
-    if (!suggestable) {
+    if (!textInput.suggestable) {
       return
     }
-    const searchText = textInput.text.slice(
-      textInput.trigerPosition + 1,
-      textInput.caretPosition
-    )
 
-    updateSearchText(searchText)
-  }, [textInput, suggestable, updateSearchText])
+    updateSearchText(textInput.searchText)
+  }, [textInput.searchText, textInput.suggestable, updateSearchText])
 
   React.useEffect(() => {
     const elem = textareaRef.current
 
-    if (elem === null || !suggestable) {
+    if (elem === null || !textInput.suggestable) {
       return
     }
     const {left, top} = getCaretCoordinates(elem, textInput.trigerPosition + 1)
@@ -101,7 +92,7 @@ export const CommandInput: React.FC<Props> = props => {
       left,
       top: top - elem.scrollTop
     })
-  }, [suggestable, textInput.trigerPosition, textInput.text])
+  }, [textInput.suggestable, textInput.trigerPosition, textInput.text])
 
   React.useEffect(() => {
     selector.setLength(suggestedResult.length)
@@ -110,24 +101,18 @@ export const CommandInput: React.FC<Props> = props => {
   const handlePostChat = () => {
     if (!textInput.disabled) {
       props.handlePostChat(textInput.text)
-      textInput.setText('')
+      textInput.reset()
     }
   }
   const handleSuggestClick = (suggest: string) => {
-    const {caretPosition, text, trigerPosition} = textInput
-    const newText = text.slice(0, trigerPosition) + suggest + text.slice(caretPosition)
-    const newCaretPosition = trigerPosition + countText(suggest)
-
-    textInput.setText(newText)
-    textInput.setCaretPosition(newCaretPosition)
-    setSuggestable(false)
+    textInput.replaceText(suggest)
     selector.refresh()
   }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (textInput.compositing) {
       return
     }
-    if (!suggestable || suggestedResult.length <= 0) {
+    if (!textInput.suggestable || suggestedResult.length <= 0) {
       if (
         (event.ctrlKey || event.metaKey) &&
         event.key === Key.Enter
@@ -141,7 +126,7 @@ export const CommandInput: React.FC<Props> = props => {
       case Key.ArrowLeft:
       case Key.ArrowRight:
         selector.refresh()
-        setSuggestable(false)
+        textInput.hideSuggest()
 
         return
       case Key.ArrowDown:
@@ -168,36 +153,24 @@ export const CommandInput: React.FC<Props> = props => {
 
         return
       default:
-        setSuggestable(true)
+        textInput.showSuggest()
     }
   }
   const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newText = event.target.value
     const newCaretPosition = event.target.selectionEnd
 
-    textInput.setText(newText)
-    textInput.setCaretPosition(newCaretPosition)
-
-    const pos = newCaretPosition - 1
-
-    if (newText[pos] === Triger.At) {
-      if (newText[pos - 1] === Triger.At) {
-        selector.refresh()
-        setSuggestable(false)
-      } else {
-        selector.refresh()
-        setSuggestable(true)
-        textInput.setTrigerPosition(pos)
-      }
-    } else if (newText[pos] === Triger.Space) {
-      selector.refresh()
-      setSuggestable(false)
-    } else if (newCaretPosition <= textInput.trigerPosition) {
-      selector.refresh()
-      setSuggestable(false)
-    } else if (suggestable) {
-      selector.refresh()
-      setSuggestable(true)
+    textInput.changeText({
+      newCaretPosition,
+      newText
+    })
+    selector.refresh()
+  }
+  const handleComposition = (event: React.CompositionEvent<HTMLTextAreaElement>) => {
+    if (event.type === 'compositionstart') {
+      textInput.setCompositing(true)
+    } else if (event.type === 'compositionend') {
+      textInput.setCompositing(false)
     }
   }
 
@@ -216,8 +189,9 @@ export const CommandInput: React.FC<Props> = props => {
             <textarea
               className={`vi--command--input--textarea ${inputChannel}`}
               onChange={handleTextChange}
-              onCompositionEnd={() => textInput.setCompositing(false)}
-              onCompositionStart={() => textInput.setCompositing(true)}
+              onCompositionEnd={handleComposition}
+              onCompositionStart={handleComposition}
+              onCompositionUpdate={handleComposition}
               onKeyDown={handleKeyDown}
               placeholder={typeof placeholder === 'string' ? placeholder : undefined}
               ref={textareaRef}
@@ -233,7 +207,7 @@ export const CommandInput: React.FC<Props> = props => {
         language={props.language}
         left={suggestPosition.left}
         selected={selector.selectedItem}
-        suggestable={suggestable}
+        suggestable={textInput.suggestable}
         top={suggestPosition.top}
       />
       <CommandInputTextCounter
