@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`change text " " => " @" 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">1</span><span id=\\"valid\\">1</span><input value=\\" @\\"><button></button></div>"`;
+
+exports[`change text " " => " a" 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\" a\\"><button></button></div>"`;
+
+exports[`change text "" => " " 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\" \\"><button></button></div>"`;
+
+exports[`change text "" => "@" 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@\\"><button></button></div>"`;
+
+exports[`change text "" => "a" 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"a\\"><button></button></div>"`;
+
+exports[`change text "@" => "@ " 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@ \\"><button></button></div>"`;
+
+exports[`change text "@" => "@@" 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@@\\"><button></button></div>"`;
+
+exports[`change text "@" => "@a" 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\">a</span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@a\\"><button></button></div>"`;
+
+exports[`change text "@a" => "@aa" 1`] = `"<div><span id=\\"caretPosition\\">3</span><span id=\\"compositing\\">0</span><span id=\\"count\\">3</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\">aa</span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@aa\\"><button></button></div>"`;
+
+exports[`change text "a @aaa " => "a @aaa" 1`] = `"<div><span id=\\"caretPosition\\">6</span><span id=\\"compositing\\">0</span><span id=\\"count\\">6</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\">aaa</span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">2</span><span id=\\"valid\\">1</span><input value=\\"a @aaa\\"><button></button></div>"`;
+
+exports[`change text "a" => "a " 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"a \\"><button></button></div>"`;
+
+exports[`change text "a" => "a@" 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">1</span><span id=\\"valid\\">1</span><input value=\\"a@\\"><button></button></div>"`;
+
+exports[`change text "a@" => "@" 1`] = `"<div><span id=\\"caretPosition\\">0</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@\\"><button></button></div>"`;
+
+exports[`change text "aaa@a" => "aa@a" 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">4</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"aa@a\\"><button></button></div>"`;
+
+exports[`render 1`] = `"<div><span id=\\"caretPosition\\">0</span><span id=\\"compositing\\">0</span><span id=\\"count\\">0</span><span id=\\"disabled\\">1</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">0</span><input value=\\"\\"><button></button></div>"`;
+
+exports[`replace text "@aaaa" => "suggest" 1`] = `"<div><span id=\\"caretPosition\\">7</span><span id=\\"compositing\\">0</span><span id=\\"count\\">7</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"suggest\\"><button></button></div>"`;
+
+exports[`replace text "a @aaaa" => "a suggest" 1`] = `"<div><span id=\\"caretPosition\\">9</span><span id=\\"compositing\\">0</span><span id=\\"count\\">9</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">2</span><span id=\\"valid\\">1</span><input value=\\"a suggest\\"><button></button></div>"`;
