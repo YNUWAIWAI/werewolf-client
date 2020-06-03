@@ -36,6 +36,7 @@ export interface State {
       readonly characterImage: string
       readonly characterId: village.CharacterId
       readonly characterName: village.LanguageMap
+      readonly isMine: boolean
       readonly result: village.Result
       readonly roleImage: string
       readonly roleName: village.LanguageMap
@@ -86,7 +87,6 @@ const result = (state: State = initialState, action: Action): State => {
       const characters: State['characters'] = {}
       const allIds: State['allIds'] = []
       const losers: State['losers'] = []
-      let me: State['me'] = null
       const winners: State['winners'] = []
 
       getPlayableCharacters(just(payload.character))
@@ -101,6 +101,7 @@ const result = (state: State = initialState, action: Action): State => {
             characterId,
             characterImage: c.image,
             characterName: c.name,
+            isMine: c.isMine,
             result: just(c.result),
             roleImage: role.image,
             roleName: role.name,
@@ -112,11 +113,9 @@ const result = (state: State = initialState, action: Action): State => {
           if (c.result === village.Result.lose) {
             losers.push(characterId)
           }
-          if (c.isMine) {
-            me = characterId
-          }
           allIds.push(characterId)
         })
+      const me = allIds.find(id => characters[id].isMine)
       const summary = (() => {
         if (winners.length === 0) {
           throw Error('Unexpected Result: no winners')
@@ -124,7 +123,7 @@ const result = (state: State = initialState, action: Action): State => {
         const winnerTeam = getTeam(strToRoleId(characters[winners[0]].roleName.en))
         const loserTeam = new Set(losers.map(loser => getTeam(strToRoleId(characters[loser].roleName.en))))
 
-        if (typeof me === 'string') {
+        if (me) {
           const characterSummary: CharacterSummary = {
             kind: village.SummaryType.character,
             loserTeam,
@@ -148,7 +147,7 @@ const result = (state: State = initialState, action: Action): State => {
         allIds,
         characters,
         losers,
-        me,
+        me: me || null,
         summary,
         visible: true,
         winners
