@@ -60,8 +60,7 @@ export const CommandInput: React.FC<Props> = props => {
     top: 0
   })
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
-
-  React.useEffect(() => {
+  const focusElem = () => {
     const elem = textareaRef.current
 
     if (elem === null) {
@@ -69,7 +68,7 @@ export const CommandInput: React.FC<Props> = props => {
     }
     elem.focus()
     elem.setSelectionRange(textInput.caretPosition, textInput.caretPosition)
-  }, [textInput.caretPosition])
+  }
 
   React.useEffect(() => {
     if (!textInput.suggestable) {
@@ -101,11 +100,13 @@ export const CommandInput: React.FC<Props> = props => {
     if (!textInput.disabled) {
       props.handlePostChat(textInput.text)
       textInput.reset()
+      focusElem()
     }
   }
   const handleSuggestClick = (suggest: string) => {
     textInput.replaceText(suggest)
     selector.refresh()
+    focusElem()
   }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (textInput.compositing) {
