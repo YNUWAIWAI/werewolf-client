@@ -4,7 +4,7 @@ exports[`change text " " => " @" 1`] = `"<div><span id=\\"caretPosition\\">2</sp
 
 exports[`change text " " => " a" 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\" a\\"><button></button></div>"`;
 
-exports[`change text "" => " " 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"a\\"><button></button></div>"`;
+exports[`change text "" => " " 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\" \\"><button></button></div>"`;
 
 exports[`change text "" => "@" 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@\\"><button></button></div>"`;
 
@@ -23,6 +23,8 @@ exports[`change text "a @aaa " => "a @aaa" 1`] = `"<div><span id=\\"caretPositio
 exports[`change text "a" => "a " 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"a \\"><button></button></div>"`;
 
 exports[`change text "a" => "a@" 1`] = `"<div><span id=\\"caretPosition\\">2</span><span id=\\"compositing\\">0</span><span id=\\"count\\">2</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">1</span><span id=\\"trigerPosition\\">1</span><span id=\\"valid\\">1</span><input value=\\"a@\\"><button></button></div>"`;
+
+exports[`change text "a@" => "@" 1`] = `"<div><span id=\\"caretPosition\\">0</span><span id=\\"compositing\\">0</span><span id=\\"count\\">1</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"@\\"><button></button></div>"`;
 
 exports[`change text "aaa@a" => "aa@a" 1`] = `"<div><span id=\\"caretPosition\\">1</span><span id=\\"compositing\\">0</span><span id=\\"count\\">4</span><span id=\\"disabled\\">0</span><span id=\\"searchText\\"></span><span id=\\"suggestable\\">0</span><span id=\\"trigerPosition\\">0</span><span id=\\"valid\\">1</span><input value=\\"aa@a\\"><button></button></div>"`;
 

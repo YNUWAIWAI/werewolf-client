@@ -15,12 +15,15 @@ const enum Triger {
   Space = ' '
 }
 const enum Token {
+  empty = 'empty',
   letter = 'letter',
   space = 'space',
   triger = 'triger'
 }
 const parse = (char: string) => {
-  if (char === Triger.At) {
+  if (typeof char !== 'string') {
+    return Token.empty
+  } else if (char === Triger.At) {
     return Token.triger
   } else if (char === Triger.Space) {
     return Token.space
@@ -65,6 +68,22 @@ export const useTextInput = (initialValue: InitialValue) => {
     const current = parse(newText[pos])
     const prev = parse(newText[pos - 1])
 
+    if (prev === Token.empty && current === Token.empty) {
+      setSuggestable(false)
+    }
+    if (prev === Token.empty && current === Token.triger) {
+      setSuggestable(true)
+      setTrigerPosition(pos)
+    }
+    if (prev === Token.empty && current === Token.letter) {
+      setSuggestable(false)
+    }
+    if (prev === Token.empty && current === Token.space) {
+      setSuggestable(false)
+    }
+    if (prev === Token.empty && current === Token.letter) {
+      setSuggestable(false)
+    }
     if (prev === Token.letter && current === Token.letter) { // 'aa'
       const re = /@[^\s@]*$/
       const t = newText.slice(0, pos)
@@ -96,9 +115,6 @@ export const useTextInput = (initialValue: InitialValue) => {
       setSuggestable(false)
     }
     if (prev === Token.triger && current === Token.triger) { // '@@'
-      setSuggestable(false)
-    }
-    if (newCaretPosition <= trigerPosition) {
       setSuggestable(false)
     }
   }

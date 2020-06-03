@@ -163,7 +163,7 @@ describe('change text', () => {
     wrapper.find('input').simulate('change', {
       target: {
         selectionEnd: 1,
-        value: 'a'
+        value: ' '
       }
     })
     expect(wrapper.find('#caretPosition').text()).toBe('1')
@@ -426,6 +426,31 @@ describe('change text', () => {
     expect(wrapper.find('#valid').text()).toBe('1')
     expect(wrapper.html()).toMatchSnapshot()
   })
+  test('"a@" => "@"', () => {
+    const wrapper = mount(
+      <Test
+        availableToSend
+        maxLengthOfUnicodeCodePoints={5}
+        text="a@"
+      />
+    )
+
+    wrapper.find('input').simulate('change', {
+      target: {
+        selectionEnd: 0,
+        value: '@'
+      }
+    })
+    expect(wrapper.find('#caretPosition').text()).toBe('0')
+    expect(wrapper.find('#compositing').text()).toBe('0')
+    expect(wrapper.find('#count').text()).toBe('1')
+    expect(wrapper.find('#disabled').text()).toBe('0')
+    expect(wrapper.find('#searchText').text()).toBe('')
+    expect(wrapper.find('#suggestable').text()).toBe('0')
+    expect(wrapper.find('#trigerPosition').text()).toBe('0')
+    expect(wrapper.find('#valid').text()).toBe('1')
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })
 describe('replace text', () => {
   test('"@aaaa" => "suggest"', () => {
@@ -465,7 +490,7 @@ describe('replace text', () => {
 
     wrapper.find('input').simulate('change', {
       target: {
-        selectionEnd: 9,
+        selectionEnd: 7,
         value: 'a @aaaa'
       }
     })
