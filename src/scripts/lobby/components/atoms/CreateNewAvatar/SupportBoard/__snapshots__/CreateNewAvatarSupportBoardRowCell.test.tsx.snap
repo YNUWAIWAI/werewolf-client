@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render not support 1`] = `"<div class=\\"className\\"></div>"`;
+
+exports[`render support 1`] = `"<div class=\\"className\\">✅</div>"`;
