@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {TextareaInput} from '../../atoms/TextareaInput'
+import {TextareaInput} from '../../atoms/Input/TextareaInput'
 
 interface Props {
   readonly handleValueChange: (valid: boolean) => (value: string) => void

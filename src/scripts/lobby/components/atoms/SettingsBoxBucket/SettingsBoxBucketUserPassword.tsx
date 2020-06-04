@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {PasswordInput} from '../PasswordInput'
+import {PasswordInput} from '../Input/PasswordInput'
 
 export interface Props {
   readonly handleSubmit: (value: string) => void

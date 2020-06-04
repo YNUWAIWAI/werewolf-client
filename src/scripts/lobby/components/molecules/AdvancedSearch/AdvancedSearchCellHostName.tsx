@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
 import {FormattedMessage} from 'react-intl'
-import {TextInput} from '../../atoms/TextInput'
+import {TextInput} from '../../atoms/Input/TextInput'
 
 interface Props {
   readonly checked: boolean

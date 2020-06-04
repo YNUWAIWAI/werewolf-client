@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {TextInput} from '../../atoms/TextInput'
+import {TextInput} from '../Input/TextInput'
 
 export interface Props {
   readonly handleSubmit: (value: string) => void

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {TextInput} from '../TextInput'
+import {TextInput} from '../Input/TextInput'
 
 interface Props {
   readonly handleChange: (valid: boolean) => (value: string) => void
