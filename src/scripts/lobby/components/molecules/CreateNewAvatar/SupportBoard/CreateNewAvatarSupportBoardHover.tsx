@@ -3,11 +3,11 @@ import {FormattedMessage} from 'react-intl'
 
 export interface Props {
   readonly className: string
-  readonly isHover: boolean
+  readonly visible: boolean
 }
 
 export const CreateNewAvatarSupportBoardHover: React.FC<Props> = props => {
-  if (!props.isHover) {
+  if (!props.visible) {
     return null
   }
 
