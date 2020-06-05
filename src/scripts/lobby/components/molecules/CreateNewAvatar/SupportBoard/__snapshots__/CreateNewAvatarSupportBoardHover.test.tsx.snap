@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render visible 1`] = `"<div class=\\"className\\"><span class=\\"className--text\\">Edit</span></div>"`;

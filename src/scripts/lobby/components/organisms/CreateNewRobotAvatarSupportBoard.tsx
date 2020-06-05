@@ -60,7 +60,7 @@ export const CreateNewAvatarSupportBoard: React.FC<Props> = props => {
       }
       <CreateNewAvatarSupportBoardHover
         className={`${props.className}--hover`}
-        isHover={isHover}
+        visible={isHover}
       />
     </div>
   )
