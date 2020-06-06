@@ -3,18 +3,18 @@ import {FormattedMessage} from 'react-intl'
 
 export interface Props {
   readonly handleSubmitLogout: () => void
-  // readonly handleSubmitDeactivate: () => void
+  readonly handleSubmitDeactivate: () => void
   readonly navigatable: boolean
 }
 
 export const SettingsBoxBucketDanger: React.FC<Props> = props => {
+  const handleSubmitDeactivate = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    props.handleSubmitDeactivate()
+  }
   const handleSubmitLogout = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     props.handleSubmitLogout()
-  }
-  const handleSubmitDeactivate = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    // props.handleSubmitDeactivate()
   }
 
   return (

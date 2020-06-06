@@ -34,6 +34,7 @@ export const SettingsBox: React.FC<Props> = props => (
       navigatable={props.navigatable}
     />
     <SettingsBoxBucketDanger
+      handleSubmitDeactivate={props.handleSubmitLogout}
       handleSubmitLogout={props.handleSubmitLogout}
       navigatable={props.navigatable}
     />
