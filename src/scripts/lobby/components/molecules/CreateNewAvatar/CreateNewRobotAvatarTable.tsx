@@ -29,7 +29,7 @@ export const CreateNewRobotAvatarTable: React.FC<Props> = props => (
       navigatable={props.navigatable}
     />
     <CreateNewAvatarAvatarImage
-      handleClick={() => props.handleImageClick(props.image)}
+      handleClick={props.handleImageClick}
       image={props.image}
       navigatable
     />
