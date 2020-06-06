@@ -6,15 +6,28 @@ import {lobby} from '../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
-test('render', () => {
-  const wrapper = mountWithIntl(
-    <MemberRoleItem
-      className="className"
-      id="villager"
-      image="image"
-      numberOfPlayers={0}
-    />
-  )
+describe('render', () => {
+  test('with numberOfPlayers', () => {
+    const wrapper = mountWithIntl(
+      <MemberRoleItem
+        className="className"
+        id="villager"
+        image="image"
+        numberOfPlayers={0}
+      />
+    )
 
-  expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+  test('without numberOfPlayers', () => {
+    const wrapper = mountWithIntl(
+      <MemberRoleItem
+        className="className"
+        id="villager"
+        image="image"
+      />
+    )
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })

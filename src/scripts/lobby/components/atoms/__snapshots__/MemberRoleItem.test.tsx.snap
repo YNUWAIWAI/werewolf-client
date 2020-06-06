@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render 1`] = `"<div class=\\"className\\" data-id=\\"villager\\"><img class=\\"className--image\\" src=\\"image\\"><span class=\\"className--times\\">✕</span><span class=\\"className--number\\">0</span><span class=\\"className--caption\\">Villager</span></div>"`;
+exports[`render with numberOfPlayers 1`] = `"<div class=\\"className\\" data-id=\\"villager\\"><img class=\\"className--image\\" src=\\"image\\"><span class=\\"className--times\\">✕</span><span class=\\"className--number\\">0</span><span class=\\"className--caption\\">Villager</span></div>"`;
+
+exports[`render without numberOfPlayers 1`] = `"<div class=\\"className\\" data-id=\\"villager\\"><img class=\\"className--image\\" src=\\"image\\"><span class=\\"className--caption\\">Villager</span></div>"`;
