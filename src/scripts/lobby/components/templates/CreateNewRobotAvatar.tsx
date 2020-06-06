@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {AsideContent} from '../atoms/AsideContent'
-import {CreateNewAvatarHeader} from '../molecules/CreateNewAvatarHeader'
+import {CreateNewAvatarHeader} from '../molecules/CreateNewAvatar/CreateNewAvatarHeader'
 import {CreateNewRobotAvatarSupportBoardContainer} from '../../containers/CreateNewRobotAvatarSupportBoardContainer'
 import {CreateNewRobotAvatarTableContainer} from '../../containers/CreateNewRobotAvatarTableContainer'
 import {Header} from '../atoms/Header'

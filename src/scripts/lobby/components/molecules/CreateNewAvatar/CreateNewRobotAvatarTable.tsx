@@ -1,9 +1,9 @@
 import * as React from 'react'
-import {CreateNewAvatarAutomation} from '../atoms/CreateNewAvatar/CreateNewAvatarAutomation'
-import {CreateNewAvatarAvatarImage} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
-import {CreateNewAvatarAvatarLanguage} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
-import {CreateNewAvatarAvatarName} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
-import {lobby} from '../../types'
+import {CreateNewAvatarAutomation} from '../../atoms/CreateNewAvatar/CreateNewAvatarAutomation'
+import {CreateNewAvatarAvatarImage} from '../../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
+import {CreateNewAvatarAvatarLanguage} from '../../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
+import {CreateNewAvatarAvatarName} from '../../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
+import {lobby} from '../../../types'
 
 export interface StateProps {
   readonly automation: lobby.Automation

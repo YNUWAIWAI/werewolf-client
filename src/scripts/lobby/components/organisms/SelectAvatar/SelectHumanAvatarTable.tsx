@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {SelectHumanAvatarTableBodyContainer} from '../../containers/SelectHumanAvatarTableBodyContainer'
-import {SelectHumanAvatarTableHeader} from '../molecules/SelectHumanAvatarTableHeader'
+import {SelectHumanAvatarTableBodyContainer} from '../../../containers/SelectHumanAvatarTableBodyContainer'
+import {SelectHumanAvatarTableHeader} from '../../molecules/SelectAvatar/SelectHumanAvatarTableHeader'
 
 export const SelectHumanAvatarTable: React.FC<{}> = () => (
   <div className="lo--select-avatar--table human">

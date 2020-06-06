@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Checkbox} from '../atoms/Checkbox'
+import {Checkbox} from '../Checkbox'
 import {FormattedMessage} from 'react-intl'
 
 interface Props {

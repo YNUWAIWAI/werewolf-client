@@ -1,8 +1,8 @@
 import * as React from 'react'
-import {CreateNewAvatarAvatarImage} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
-import {CreateNewAvatarAvatarLanguage} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
-import {CreateNewAvatarAvatarName} from '../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
-import {lobby} from '../../types'
+import {CreateNewAvatarAvatarImage} from '../../atoms/CreateNewAvatar/CreateNewAvatarAvatarImage'
+import {CreateNewAvatarAvatarLanguage} from '../../atoms/CreateNewAvatar/CreateNewAvatarAvatarLanguage'
+import {CreateNewAvatarAvatarName} from '../../atoms/CreateNewAvatar/CreateNewAvatarAvatarName'
+import {lobby} from '../../../types'
 
 export interface StateProps {
   readonly image: string

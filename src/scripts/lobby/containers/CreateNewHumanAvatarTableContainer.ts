@@ -2,7 +2,7 @@ import {
   CreateNewHumanAvatarTable as Component,
   DispatchProps,
   StateProps
-} from '../components/molecules/CreateNewHumanAvatarTable'
+} from '../components/molecules/CreateNewAvatar/CreateNewHumanAvatarTable'
 import {
   CreateNewHumanAvatar,
   createNewHumanAvatar

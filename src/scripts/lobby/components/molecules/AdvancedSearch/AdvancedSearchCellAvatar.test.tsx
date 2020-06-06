@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {AdvancedSearchCellAvatar} from './AdvancedSearchCellAvatar'
-import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
+import {AdvancedSearchProp} from '../../atoms/AdvancedSearch/AdvancedSearchProp'
 import {AvatarSelect} from '../../atoms/Select/AvatarSelect'
 import {shallow} from 'enzyme'
 
