@@ -10,21 +10,19 @@ export interface Props {
 }
 
 export const SettingsBoxBucketLanguage: React.FC<Props> = props => {
-  const [language, setLanguage] = React.useState({
-    valid: false,
-    value: props.initialValue
-  })
+  const [disabled, setDisabled] = React.useState(true)
+  const [language, setLanguage] = React.useState(props.initialValue)
 
   const handleChange = (valid: boolean) => (value: lobby.Language): void => {
-    setLanguage({
-      valid: valid && value !== props.initialValue,
-      value
-    })
+    setDisabled(!valid || value === props.initialValue)
+    setLanguage(value)
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    props.handleChange(language.value)
+    if (!disabled) {
+      event.preventDefault()
+      props.handleChange(language)
+    }
   }
 
   return (
@@ -47,7 +45,7 @@ export const SettingsBoxBucketLanguage: React.FC<Props> = props => {
         />
         <button
           className="lo--settings--bucket--form--button"
-          disabled={!language.valid}
+          disabled={disabled}
           type="submit"
         >
           <FormattedMessage
