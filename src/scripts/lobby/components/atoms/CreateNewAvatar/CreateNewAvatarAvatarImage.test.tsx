@@ -19,3 +19,16 @@ test('render', () => {
 
   expect(wrapper.html()).toMatchSnapshot()
 })
+test('handleClick', () => {
+  const handleClick = jest.fn()
+  const wrapper = mountWithIntl(
+    <CreateNewAvatarAvatarImage
+      handleClick={handleClick}
+      image={ImagePath.Character.a}
+      navigatable
+    />
+  )
+
+  wrapper.find('button.lo--create-new-avatar--input.image').simulate('click')
+  expect(handleClick).toHaveBeenCalledWith(ImagePath.Character.a)
+})
