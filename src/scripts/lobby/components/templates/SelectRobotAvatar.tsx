@@ -4,7 +4,7 @@ import {Header} from '../atoms/Header'
 import {MainContent} from '../atoms/MainContent'
 import {MenuContainer} from '../../containers/MenuContainer'
 import {MenuItemProps as MenuItem} from '../organisms/Menu'
-import {SelectRobotAvatarBox} from '../organisms/SelectRobotAvatarBox'
+import {SelectRobotAvatarBox} from '../organisms/SelectAvatar/SelectRobotAvatarBox'
 
 export interface StateProps {
   readonly command: MenuItem[]

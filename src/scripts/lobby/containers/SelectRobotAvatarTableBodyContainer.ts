@@ -2,7 +2,7 @@ import {
   SelectRobotAvatarTableBody as Component,
   DispatchProps,
   StateProps
-} from '../components/molecules/SelectRobotAvatarTableBody'
+} from '../components/molecules/SelectAvatar/SelectRobotAvatarTableBody'
 import {
   SelectRobotAvatar,
   selectRobotAvatar

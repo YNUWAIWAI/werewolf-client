@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {SelectAvatarTableHeaderItem} from '../atoms/SelectAvatarTable/SelectAvatarTableHeaderItem'
+import {SelectAvatarTableHeaderItem} from '../../atoms/SelectAvatarTable/SelectAvatarTableHeaderItem'
 
 export const SelectRobotAvatarTableHeader: React.FC<{}> = () => (
   <>

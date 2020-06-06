@@ -2,7 +2,7 @@ import {
   SelectHumanAvatarTableBody as Component,
   DispatchProps,
   StateProps
-} from '../components/molecules/SelectHumanAvatarTableBody'
+} from '../components/molecules/SelectAvatar/SelectHumanAvatarTableBody'
 import {
   SelectHumanAvatar,
   selectHumanAvatar

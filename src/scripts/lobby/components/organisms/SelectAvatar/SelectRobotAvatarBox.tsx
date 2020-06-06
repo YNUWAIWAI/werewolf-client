@@ -1,8 +1,8 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
-import {MenuContainer} from '../../containers/MenuContainer'
-import {MenuItemProps as MenuItem} from './Menu'
-import {SelectRobotAvatarTable} from '../organisms/SelectRobotAvatarTable'
+import {MenuContainer} from '../../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from '../Menu'
+import {SelectRobotAvatarTable} from './SelectRobotAvatarTable'
 
 interface Props {
   readonly command: MenuItem[]

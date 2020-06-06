@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {AdvancedSearchCellMinimum} from './AdvancedSearchCellMinimum'
-import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
+import {AdvancedSearchProp} from '../../atoms/AdvancedSearch/AdvancedSearchProp'
 import {NumberSelect} from '../../atoms/Select/NumberSelect'
 import {shallow} from 'enzyme'
 

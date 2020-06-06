@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {AdvancedSearchProp} from '../../atoms/AdvancedSearchProp'
+import {AdvancedSearchProp} from '../../atoms/AdvancedSearch/AdvancedSearchProp'
 import {AvatarSelect} from '../../atoms/Select/AvatarSelect'
 import {lobby} from '../../../types'
 

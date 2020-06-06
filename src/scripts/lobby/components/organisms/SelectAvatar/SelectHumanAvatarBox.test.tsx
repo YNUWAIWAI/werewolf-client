@@ -1,12 +1,12 @@
-import * as ActionTypes from '../../constants/ActionTypes'
+import * as ActionTypes from '../../../constants/ActionTypes'
 import * as React from 'react'
-import {MenuContainer} from '../../containers/MenuContainer'
-import {MenuItemProps as MenuItem} from './Menu'
+import {MenuContainer} from '../../../containers/MenuContainer'
+import {MenuItemProps as MenuItem} from '../Menu'
 import {SelectHumanAvatarBox} from './SelectHumanAvatarBox'
 import {SelectHumanAvatarTable} from './SelectHumanAvatarTable'
-import {getMessages} from '../../i18n'
-import {initRenderer} from '../../tools'
-import {lobby} from '../../types'
+import {getMessages} from '../../../i18n'
+import {initRenderer} from '../../../tools'
+import {lobby} from '../../../types'
 
 const {shallowWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
