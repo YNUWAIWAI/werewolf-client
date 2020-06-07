@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+<div
+  className="lo--grid"
+>
+  <Header
+    id="Header.selectHumanAvatar"
+  />
+  <MainContent>
+    <SelectHumanAvatarBox
+      command={Array []}
+    />
+  </MainContent>
+  <AsideContent>
+    <Memo(Connect(Menu))
+      className="lo--compact-menu"
+      itemClassName="lo--compact-menu--item"
+      items={Array []}
+    />
+  </AsideContent>
+</div>
+`;
