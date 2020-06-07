@@ -4,9 +4,6 @@ import {CreateNewAvatarSupportBoardHover} from '../molecules/CreateNewAvatar/Sup
 import {CreateNewAvatarSupportBoardRow} from '../molecules/CreateNewAvatar/SupportBoard/CreateNewAvatarSupportBoardRow'
 import {lobby} from '../../types'
 
-interface OwnProps {
-  readonly className: string
-}
 type NumberOfPlayers = '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15'
 export interface StateProps {
   readonly data: {
@@ -19,7 +16,7 @@ export interface DispatchProps {
   readonly handleSupportBoardClick: () => void
 }
 
-type Props = OwnProps & StateProps & DispatchProps
+type Props = StateProps & DispatchProps
 const order: NumberOfPlayers[] = [
   '15',
   '14',
@@ -37,21 +34,22 @@ const order: NumberOfPlayers[] = [
 
 export const CreateNewAvatarSupportBoard: React.FC<Props> = props => {
   const [isHover, setIsHover] = React.useState(false)
+  const className = 'lo--create-new-avatar--support-board'
 
   return (
     <div
-      className={props.className}
+      className={className}
       onClick={props.handleSupportBoardClick}
       onMouseLeave={() => setIsHover(false)}
       onMouseOver={() => setIsHover(true)}
     >
       <CreateNewAvatarSupportBoardColumnHeader
-        className={`${props.className}--cell`}
+        className={`${className}--cell`}
       />
       {
         order.map(numberOfPlayers => (
           <CreateNewAvatarSupportBoardRow
-            className={`${props.className}--cell`}
+            className={`${className}--cell`}
             key={numberOfPlayers}
             numberOfPlayers={Number(numberOfPlayers)}
             support={props.data[numberOfPlayers]}
@@ -59,7 +57,7 @@ export const CreateNewAvatarSupportBoard: React.FC<Props> = props => {
         ))
       }
       <CreateNewAvatarSupportBoardHover
-        className={`${props.className}--hover`}
+        className={`${className}--hover`}
         visible={isHover}
       />
     </div>
