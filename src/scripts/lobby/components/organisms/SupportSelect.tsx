@@ -37,7 +37,7 @@ export const SupportSelect: React.FC<Props> = props => (
   <div className="lo--support-select">
     <button
       className="lo--support-select--close"
-      onClick={() => props.handleCloseButtonClick()}
+      onClick={props.handleCloseButtonClick}
     >
       <Close />
     </button>
@@ -58,7 +58,9 @@ export const SupportSelect: React.FC<Props> = props => (
           const support = props.data[numberOfPlayers]
 
           return (
-            <>
+            <React.Fragment
+              key={numberOfPlayers}
+            >
               <SupportSelectMemberSelectOption
                 checked={support.A}
                 handleSelect={handleSelect(lobby.Member.A)}
@@ -77,7 +79,7 @@ export const SupportSelect: React.FC<Props> = props => (
                 member={lobby.Member.C}
                 numberOfPlayers={Number(numberOfPlayers)}
               />
-            </>
+            </React.Fragment>
           )
         })
       }
