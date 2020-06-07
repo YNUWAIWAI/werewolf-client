@@ -7,8 +7,8 @@ import {lobby} from '../../../types'
 interface Props {
   readonly checked: boolean
   readonly handleSelect: (checked: boolean) => void
-  readonly numberOfPlayers: number
   readonly member: lobby.Member
+  readonly numberOfPlayers: number
 }
 
 export const SupportSelectMemberSelectOption: React.FC<Props> = props => {
@@ -19,7 +19,7 @@ export const SupportSelectMemberSelectOption: React.FC<Props> = props => {
   const handleMouseLeave = () => {
     setHover(false)
   }
-  const ref = React.createRef<HTMLSpanElement>()
+  const ref = React.useRef<HTMLSpanElement>(null)
   const label = `${props.numberOfPlayers}-${props.member}`
   const className = 'lo--support-select--member-select--option'
   const state = `${props.checked ? 'checked' : ''} ${hover ? 'hover' : ''}`
