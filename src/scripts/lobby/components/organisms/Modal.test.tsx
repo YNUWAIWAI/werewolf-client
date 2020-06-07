@@ -3,6 +3,7 @@ import {AvatarImageSelect} from './AvatarImageSelect'
 import {Confirmation} from './Confirmation'
 import {Modal} from './Modal'
 import {Provider} from 'react-redux'
+import {SupportSelect} from './SupportSelect'
 import fakeStore from '../../containers/fakeStore'
 import {getMessages} from '../../i18n'
 import {initRenderer} from '../../tools'
@@ -13,6 +14,18 @@ const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Langua
 
 describe('render', () => {
   describe('visible', () => {
+    test('avatarImageSelect', () => {
+      const wrapper = mountWithIntl(
+        <Provider store={store}>
+          <Modal
+            type={lobby.ModalType.avatarImageSelect}
+            visible
+          />
+        </Provider>
+      )
+
+      expect(wrapper.find(AvatarImageSelect).exists()).toBe(true)
+    })
     test('confirmation', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
@@ -25,17 +38,17 @@ describe('render', () => {
 
       expect(wrapper.find(Confirmation).exists()).toBe(true)
     })
-    test('avatarImageSelect', () => {
+    test('supportSelect', () => {
       const wrapper = mountWithIntl(
         <Provider store={store}>
           <Modal
-            type={lobby.ModalType.avatarImageSelect}
+            type={lobby.ModalType.supportSelect}
             visible
           />
         </Provider>
       )
 
-      expect(wrapper.find(AvatarImageSelect).exists()).toBe(true)
+      expect(wrapper.find(SupportSelect).exists()).toBe(true)
     })
   })
   test('visible={false}', () => {
