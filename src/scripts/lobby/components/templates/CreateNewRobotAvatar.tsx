@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {AsideContent} from '../atoms/AsideContent'
 import {CreateNewAvatarHeader} from '../molecules/CreateNewAvatar/CreateNewAvatarHeader'
-import {CreateNewRobotAvatarSupportBoardContainer} from '../../containers/CreateNewRobotAvatarSupportBoardContainer'
+import {CreateNewAvatarSupportBoardContainer} from '../../containers/CreateNewAvatarSupportBoardContainer'
 import {CreateNewRobotAvatarTableContainer} from '../../containers/CreateNewRobotAvatarTableContainer'
 import {Header} from '../atoms/Header'
 import {MainContent} from '../atoms/MainContent'
@@ -20,9 +20,7 @@ export const CreateNewRobotAvatar: React.FC<Props> = props => (
     <MainContent>
       <CreateNewAvatarHeader />
       <CreateNewRobotAvatarTableContainer />
-      <CreateNewRobotAvatarSupportBoardContainer
-        className="lo--create-new-avatar--support-board"
-      />
+      <CreateNewAvatarSupportBoardContainer />
       <MenuContainer
         className="lo--create-new-avatar--command"
         itemClassName="lo--create-new-avatar--command--item"
