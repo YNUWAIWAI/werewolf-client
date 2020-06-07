@@ -2,7 +2,7 @@ import {
   CreateNewAvatarSupportBoard as Component,
   DispatchProps,
   StateProps
-} from '../components/organisms/CreateNewRobotAvatarSupportBoard'
+} from '../components/organisms/CreateNewAvatarSupportBoard'
 import {
   CreateNewRobotAvatar,
   createNewRobotAvatar
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProps => ({
   }
 })
 
-export const CreateNewRobotAvatarSupportBoardContainer = connect(
+export const CreateNewAvatarSupportBoardContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Component)
