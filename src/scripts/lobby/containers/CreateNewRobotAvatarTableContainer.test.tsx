@@ -20,6 +20,22 @@ test('render', () => {
 
   expect(wrapper.html()).toMatchSnapshot()
 })
+test('handleAutomationChange', () => {
+  const store = fakeStore()
+  const dispatch = jest.fn()
+
+  store.dispatch = dispatch
+  const wrapper = mount(
+    <Provider store={store} >
+      <IntlProviderContainer>
+        <CreateNewRobotAvatarContainer />
+      </IntlProviderContainer>
+    </Provider>
+  )
+
+  wrapper.find(CreateNewRobotAvatarTable).props().handleAutomationChange(true)(lobby.Automation.full)
+  expect(dispatch).toHaveBeenCalledWith(createNewRobotAvatar.changeAutomation(lobby.Automation.full))
+})
 test('handleImageClick', () => {
   const store = fakeStore()
   const dispatch = jest.fn()
