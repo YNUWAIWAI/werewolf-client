@@ -14,6 +14,14 @@ describe('render', () => {
       {
         advancedSearch: {
           ... initialState,
+          checked: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
           header: 'Header.idSearch(audience)',
           image: '',
           isPlayer: true,
@@ -33,6 +41,14 @@ describe('render', () => {
           ],
           name: '',
           searched: false,
+          validity: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
           villageItems: []
         }
       }
@@ -52,6 +68,14 @@ describe('render', () => {
       {
         advancedSearch: {
           ... initialState,
+          checked: {
+            avatar: true,
+            comment: true,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
           header: 'Header.idSearch(audience)',
           image: '',
           isPlayer: true,
@@ -71,6 +95,14 @@ describe('render', () => {
           ],
           name: '',
           searched: false,
+          validity: {
+            avatar: true,
+            comment: false,
+            hostName: false,
+            maximum: false,
+            minimum: false,
+            villageName: false
+          },
           villageItems: []
         }
       }
