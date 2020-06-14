@@ -27,7 +27,7 @@ export const App: React.FC<Props> = props => {
       locale={props.language}
       messages={messages}
     >
-      <div className="la--landing">
+      <div className="la la--landing">
         <Lead />
         <FormNavigation
           handleClick={setIsSignup}

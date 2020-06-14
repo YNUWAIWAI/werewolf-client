@@ -1,28 +1,35 @@
 import * as React from 'react'
-import {FormattedMessage} from 'react-intl'
+import {Carousel} from 'react-responsive-carousel'
+import {News} from '../atoms/Slider/News'
+import {Title} from '../atoms/Slider/Title'
+import {Trailer} from '../atoms/Slider/Trailer'
 
-export const Lead: React.FC<{}> = () => (
-  <div className="la--lead">
-    <div className="la--title">
-      <p>
-        <FormattedMessage
-          id="lead-title"
+export const Lead: React.FC<{}> = () => {
+  return (
+    <div
+      className="la--lead"
+    >
+      <Carousel
+        autoPlay
+        infiniteLoop
+        showArrows
+        showIndicators
+        showStatus={false}
+        showThumbs={false}
+        stopOnHover
+        swipeable
+      >
+        <Title />
+        <Trailer
+          autoPlay={false}
         />
-      </p>
-    </div>
-    <div className="la--flavor">
-      <p>
-        <FormattedMessage
-          id="lead-flavor"
+        <News
+          link=""
+          title="news1"
         />
-      </p>
+      </Carousel>
     </div>
-    <iframe
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="la--trailer"
-      src="https://www.youtube.com/embed/VrxRKYTRZG8"
-    />
-  </div>
-)
+  )
+}
+
 Lead.displayName = 'Lead'
