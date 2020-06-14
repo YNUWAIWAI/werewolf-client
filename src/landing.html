@@ -7,6 +7,7 @@
   <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-intl@@3/dist/react-intl.min.js"></script>
   <script defer src='@routes.Assets.at("javascripts/landing.js")' id="script" data-csrf-token='@CSRF.getToken.value' data-login-action='@routes.AuthController.loginResult()' data-login-error='@loginForm.hasErrors' data-signup-action='@routes.AuthController.signupResult()' data-signup-error='@signupForm.hasErrors'></script>
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://unpkg.com/react-responsive-carousel@@3/lib/styles/carousel.min.css" />
 }
 @template("Home", "landing.css", scripts) {
   <div id="root"></div>
