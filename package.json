@@ -52,6 +52,7 @@
     "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.0",
     "typescript": "^3.2.4",
+    "use-resize-observer": "^6.1.0",
     "webpack": "^4.29.0"
   },
   "scripts": {
@@ -91,6 +92,7 @@
     "react-dom": "^16.7.0",
     "react-intl": "^4.4.0",
     "react-redux": "^7.0.2",
+    "react-responsive-carousel": "^3.2.7",
     "react-router-dom": "^5.1.2",
     "react-select": "^3.0.3",
     "react-transition-group": "^4.0.0",
