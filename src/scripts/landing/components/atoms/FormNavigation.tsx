@@ -7,16 +7,30 @@ interface Props {
 }
 
 export const FormNavigation: React.FC<Props> = props => (
-  <button
-    className="la--form-navigation"
-    onClick={() => {
-      props.handleClick(!props.isSignup)
-    }}
-  >
-    <FormattedMessage
-      id={`${props.isSignup ? 'login' : 'signup'}-navigation`}
-    />
-  </button>
+  <>
+    <button
+      className={`la--form-navigation login ${props.isSignup ? '' : 'selected'}`}
+      disabled={!props.isSignup}
+      onClick={() => {
+        props.handleClick(false)
+      }}
+    >
+      <FormattedMessage
+        id="login-navigation"
+      />
+    </button>
+    <button
+      className={`la--form-navigation signup ${props.isSignup ? 'selected' : ''}`}
+      disabled={props.isSignup}
+      onClick={() => {
+        props.handleClick(true)
+      }}
+    >
+      <FormattedMessage
+        id="signup-navigation"
+      />
+    </button>
+  </>
 )
 FormNavigation.displayName = 'FormNavigation'
 

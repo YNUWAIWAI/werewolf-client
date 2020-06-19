@@ -1,35 +1,13 @@
 import * as React from 'react'
-import {Carousel} from 'react-responsive-carousel'
-import {News} from '../atoms/Slider/News'
-import {Title} from '../atoms/Slider/Title'
-import {Trailer} from '../atoms/Slider/Trailer'
+import {Description} from '../molecules/Description'
+import {Slider} from '../molecules/Slider'
 
-export const Lead: React.FC<{}> = () => {
-  return (
-    <div
-      className="la--lead"
-    >
-      <Carousel
-        autoPlay
-        infiniteLoop
-        showArrows
-        showIndicators
-        showStatus={false}
-        showThumbs={false}
-        stopOnHover
-        swipeable
-      >
-        <Title />
-        <Trailer
-          autoPlay={false}
-        />
-        <News
-          link=""
-          title="news1"
-        />
-      </Carousel>
-    </div>
-  )
-}
-
+export const Lead: React.FC<{}> = () => (
+  <div
+    className="la--lead"
+  >
+    <Slider />
+    <Description />
+  </div>
+)
 Lead.displayName = 'Lead'

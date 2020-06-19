@@ -12,5 +12,8 @@
   "signup-label-name": "Name",
   "signup-label-password": "Password",
   "signup-navigation": "Signup",
-  "signup-submit": "Signup"
+  "signup-submit": "Signup",
+  "Description.human-vs-ai": "Human vs AI.",
+  "Description.human-vs-werewolves": "Humans vs Werewolves.",
+  "Description.survive": "Survive in the post-truth world."
 }

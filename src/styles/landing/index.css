@@ -6,25 +6,32 @@
   --hover-color: rgba(0, 0, 0, 0.03);
   --regular-color: rgba(0, 0, 0, 0);
   --error-color: red;
+  --color--background: hsla(0, 0%, 10%);
+  --color--background--form: hsla(0, 0%, 15%);
+  --color--background--button: hsla(0, 0%, 25%);
+  --color--background--button--disabled: hsla(0, 0%, 15%);
+  --color--background--button--hover: hsla(0, 0%, 40%);
+  --color--border: hsl(0, 0%, 80%);
+  --color--font--black: hsl(0, 0%, 10%);
+  --color--font--gray: hsl(0, 0%, 50%);
+  --color--font--white: hsl(0, 0%, 80%);
+  background: var(--color--background);
+  color: var(--color--font--white);
   font-family: 'Noto Sans JP', 'ＭＳ ゴシック', 'Osaka-Mono', monospace, sans-serif;
 
   &--button {
     appearance: none;
-    background: var(--regular-color);
-    border: 1px solid rgb(209, 209, 209);
+    background: var(--color--background--button);
+    border: 1px solid var(--color--border);
     border-radius: 5px;
+    color: var(--color--font--white);
     cursor: pointer;
     font-size: 1.25rem;
     grid-area: button;
     line-height: 2;
 
     &:hover {
-      background: var(--hover-color);
-
-      &:active {
-        background: var(--active-color);
-        box-shadow: inset 2px 2px 1px 0 grey;
-      }
+      background: var(--color--background--button--hover);
     }
   }
 
@@ -71,11 +78,15 @@
     margin-bottom: 0.5rem;
   }
 
-  &--landing {
+  &--grid {
     display: grid;
     grid-template:
-      'lead . button' 4rem
-      'lead form form' calc(315px - 4rem)
+      'lead login signup'
+      'lead form form'
+      'lead notes notes'
+      'lead assessment assessment'
+      'sponsor sponsor sponsor'
+      'footer footer footer'
       / minmax(calc(var(--min-width--window) * 0.6), 3fr) 1fr 1fr;
   }
 
@@ -85,10 +96,12 @@
   }
 
   &--form {
-    border: solid 1px black;
-    border-radius: 1rem;
+    background: var(--color--background--form);
+    border: solid 1px var(--color--border);
+    border-radius: 0 0 4px 4px;
+    border-top: none;
     grid-area: form;
-    margin: 1rem 1rem auto;
+    margin: 0 1rem;
     padding: 1rem;
   }
 
@@ -98,14 +111,35 @@
   }
 
   &--form-navigation {
-    background: rgb(156, 204, 101);
-    border: none;
-    border-radius: 0 0 0 10px;
-    color: white;
+    background: var(--color--background--button);
+    border: solid 1px var(--color--border);
+    border-radius: 4px 4px 0 0;
+    color: var(--color--font--gray);
+    cursor: pointer;
     font-size: 2rem;
-    grid-area: button;
     line-height: 1.5;
     padding: 0.5rem;
+
+    &.selected {
+      background: var(--color--background--form);
+      border-bottom: none;
+      color: var(--color--white);
+    }
+
+    &:focus {
+      background: var(--color--background--button--hover);
+      outline: none;
+    }
+
+    &.login {
+      grid-area: login;
+      margin-left: 1rem;
+    }
+
+    &.signup {
+      grid-area: signup;
+      margin-right: 1rem;
+    }
   }
 
   &--title {
@@ -116,5 +150,13 @@
       margin: 1rem;
       text-align: center;
     }
+  }
+
+  &--sponsor {
+    grid-area: sponsor;
+  }
+
+  &--footer {
+    grid-area: footer;
   }
 }
