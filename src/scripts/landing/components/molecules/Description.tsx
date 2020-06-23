@@ -11,12 +11,46 @@ export const Description: React.FC<{}> = () => (
       <FormattedMessage
         id="Description.human-vs-werewolves"
       />
-    </h1>
-    <p>
+      <br />
       <FormattedMessage
         id="Description.survive"
       />
+    </h1>
+    <p>
+      <FormattedMessage
+        id="Description.1"
+      />
     </p>
+    <p>
+      <FormattedMessage
+        id="Description.2"
+      />
+    </p>
+    <a
+      className="la--link"
+      href="https://werewolfguide.netlify.com/docs/en/introduction"
+      rel="noreferrer noopener"
+      target="_blank"
+    >
+      <FormattedMessage
+        id="how-to-play"
+      />
+    </a>
+    <p>
+      <FormattedMessage
+        id="Description.3"
+      />
+    </p>
+    <a
+      className="la--link"
+      href="https://werewolfguide.netlify.com/docs/en/introduction"
+      rel="noreferrer noopener"
+      target="_blank"
+    >
+      <FormattedMessage
+        id="how-to-develop-a-robot"
+      />
+    </a>
   </>
 )
 Description.displayName = 'Description'
