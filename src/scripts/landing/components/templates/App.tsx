@@ -8,8 +8,10 @@ import {FormNavigation} from '../atoms/FormNavigation'
 import {IntlProvider} from 'react-intl'
 import {Lead} from '../organism/Lead'
 import {Login} from '../organism/Login'
+import {Publicity} from '../organism/Publicity'
 import {Signup} from '../organism/Signup'
 import {Sponsor} from '../organism/Sponsor'
+import {UpdateNotes} from '../organism/UpdateNotes'
 
 interface Props {
   csrfToken: string
@@ -62,6 +64,8 @@ export const App: React.FC<Props> = props => {
               error={props.loginError}
             />
         }
+        <UpdateNotes />
+        <Publicity />
         <Sponsor />
         <Footer />
       </div>
