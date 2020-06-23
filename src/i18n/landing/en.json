@@ -19,7 +19,7 @@
   "Description.1": "This is a game about a village beset by werewolves. Most players will be ordinary villagers, but some of them will be werewolves, and other ones may have special abilities. In the village, werewolves attacks a villager every night. Ordinary villagers can not distinguish werewolves from villagers. To eliminate werewolves, they decide that, every day, they put a suspicious villager to death at noon. If all werewolves are put to death, the next morning nobody will be dead.",
   "Description.2": "Using your web browser, you can directly participate in the game as a human player.",
   "Description.3": "If you want more of a challenge, you can develop your own robot and make it participate as a robot player.",
-  "how-to-play": "How to play",
-  "how-to-develop-a-robot": "How to develop a robot",
+  "Description.button.how-to-play": "How to play",
+  "Description.button.how-to-develop-a-robot": "How to develop a robot",
   "UpdateNotes.header": "Update notes"
 }
