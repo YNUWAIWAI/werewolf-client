@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
+import {Link} from '../atoms/Link'
 
 export const Description: React.FC<{}> = () => (
   <>
@@ -26,31 +27,27 @@ export const Description: React.FC<{}> = () => (
         id="Description.2"
       />
     </p>
-    <a
+    <Link
       className="la--link"
       href="https://werewolfguide.netlify.com/docs/en/introduction"
-      rel="noreferrer noopener"
-      target="_blank"
     >
       <FormattedMessage
-        id="how-to-play"
+        id="Description.button.how-to-play"
       />
-    </a>
+    </Link>
     <p>
       <FormattedMessage
         id="Description.3"
       />
     </p>
-    <a
+    <Link
       className="la--link"
       href="https://werewolfguide.netlify.com/docs/en/introduction"
-      rel="noreferrer noopener"
-      target="_blank"
     >
       <FormattedMessage
-        id="how-to-develop-a-robot"
+        id="Description.button.how-to-develop-a-robot"
       />
-    </a>
+    </Link>
   </>
 )
 Description.displayName = 'Description'

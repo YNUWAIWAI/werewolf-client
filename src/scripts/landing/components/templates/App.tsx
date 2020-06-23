@@ -4,7 +4,7 @@ import {
   getMessages
 } from '../../i18n'
 import {Footer} from '../organism/Footer'
-import {FormNavigation} from '../atoms/FormNavigation'
+import {FormNavigation} from '../organism/FormNavigation'
 import {IntlProvider} from 'react-intl'
 import {Lead} from '../organism/Lead'
 import {Login} from '../organism/Login'
