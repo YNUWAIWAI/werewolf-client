@@ -81,18 +81,37 @@
   &--grid {
     display: grid;
     grid-template:
-      'lead login signup'
-      'lead form form'
-      'lead notes notes'
-      'lead assessment assessment'
+      'lead login signup' 5rem
+      'lead form form' max-content
+      'lead update-notes update-notes' max-content
+      'lead publicity publicity' 1fr
       'sponsor sponsor sponsor'
       'footer footer footer'
       / minmax(calc(var(--min-width--window) * 0.6), 3fr) 1fr 1fr;
+    margin: 1rem;
   }
 
   &--lead {
     grid-area: lead;
     position: relative;
+  }
+
+  &--link {
+    background: var(--color--background--button);
+    color: var(--color--font--white);
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--color--background--button--hover);
+    }
+
+    &:focus {
+      background: var(--color--background--button--hover);
+    }
   }
 
   &--form {
@@ -110,6 +129,18 @@
     width: 100%;
   }
 
+  &--update-notes {
+    grid-area: update-notes;
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
+  &--publicity {
+    grid-area: publicity;
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
   &--form-navigation {
     background: var(--color--background--button);
     border: solid 1px var(--color--border);
@@ -118,7 +149,7 @@
     cursor: pointer;
     font-size: 2rem;
     line-height: 1.5;
-    padding: 0.5rem;
+    padding: 1rem;
 
     &.selected {
       background: var(--color--background--form);
