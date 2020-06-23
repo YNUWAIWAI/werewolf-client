@@ -7,6 +7,10 @@
 @import './trailer';
 @import './updateNotes';
 
+body {
+  margin: 0;
+}
+
 .la {
   --min-height--window: 536px;
   --min-width--window: 900px;
@@ -16,6 +20,7 @@
   --regular-color: rgba(0, 0, 0, 0);
   --error-color: red;
   --color--background: hsla(0, 0%, 10%);
+  --color--background--sponsor: hsla(0, 0%, 20%);
   --color--background--form: hsla(0, 0%, 15%);
   --color--background--button: hsla(0, 0%, 25%);
   --color--background--button--disabled: hsla(0, 0%, 15%);
@@ -23,6 +28,7 @@
   --color--border: hsl(0, 0%, 80%);
   --color--font--black: hsl(0, 0%, 10%);
   --color--font--gray: hsl(0, 0%, 50%);
+  --color--font--link: rgb(38, 132, 255);
   --color--font--white: hsl(0, 0%, 80%);
   background: var(--color--background);
   color: var(--color--font--white);
@@ -47,6 +53,7 @@
     color: var(--color--font--white);
     display: block;
     font-size: 2rem;
+    margin: 1rem 0;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
