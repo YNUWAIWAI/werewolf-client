@@ -10,6 +10,7 @@ export const Confirmation: React.FC<{}> = () => (
         // eslint-disable-next-line
         a: (... chunks: React.ReactNode[]) => (
           <Link
+            className="la--form--link"
             href="https://werewolfguide.netlify.app/docs/en/privacy"
           >
             {chunks}

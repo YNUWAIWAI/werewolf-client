@@ -43,29 +43,33 @@ export const App: React.FC<Props> = props => {
       messages={messages}
     >
       <div
-        className="la la--grid"
-        ref={ref}
+        className="la"
       >
-        <Lead />
-        <FormNavigation
-          handleClick={setIsSignup}
-          isSignup={isSignup}
-        />
-        {
-          isSignup ?
-            <Signup
-              action={props.signupAction}
-              csrfToken={props.csrfToken}
-              error={props.signupError}
-            /> :
-            <Login
-              action={props.loginAction}
-              csrfToken={props.csrfToken}
-              error={props.loginError}
-            />
-        }
-        <UpdateNotes />
-        <Publicity />
+        <div
+          className="la la--grid"
+          ref={ref}
+        >
+          <Lead />
+          <FormNavigation
+            handleClick={setIsSignup}
+            isSignup={isSignup}
+          />
+          {
+            isSignup ?
+              <Signup
+                action={props.signupAction}
+                csrfToken={props.csrfToken}
+                error={props.signupError}
+              /> :
+              <Login
+                action={props.loginAction}
+                csrfToken={props.csrfToken}
+                error={props.loginError}
+              />
+          }
+          <UpdateNotes />
+          <Publicity />
+        </div>
         <Sponsor />
         <Footer />
       </div>

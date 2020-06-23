@@ -6,7 +6,7 @@ export const Sponsor: React.FC<{}> = () => (
     className="la--sponsor"
   >
     <FormattedMessage
-      id="Sponsor.title"
+      id="Sponsor.sponsoredBy"
     />
   </div>
 )
