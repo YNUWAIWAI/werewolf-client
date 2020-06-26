@@ -131,11 +131,11 @@ workflows:
       - build
       - unit-test
       - visual-test
-      - deploy-storybook:
-          requires:
-            - build
-            - unit-test
-            # - visual-test
+      - deploy-storybook
+          # requires:
+          #   - build
+          #   - unit-test
+          #   # - visual-test
   lint:
     jobs:
       - eslint
