@@ -36,10 +36,10 @@ test('setIsSignup', () => {
     />
   )
 
-  const {handleClick, isSignup} = wrapper.find(FormNavigation).props()
+  const {handleClick, mode} = wrapper.find(FormNavigation).props()
 
-  handleClick(!isSignup)
-
+  expect(mode).toBe('login')
+  handleClick('signup')
   expect(wrapper.find(Lead).exists()).toBe(true)
   expect(wrapper.find(FormNavigation).exists()).toBe(true)
   expect(wrapper.find(Signup).exists()).toBe(true)

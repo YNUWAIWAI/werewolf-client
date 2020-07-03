@@ -19,8 +19,8 @@ describe('render', () => {
     )
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('.la--input').props().minLength).toBeUndefined()
-    expect(wrapper.find('.la--input').props().type).toBe('text')
+    expect(wrapper.find('.la--form--input').props().minLength).toBeUndefined()
+    expect(wrapper.find('.la--form--input').props().type).toBe('text')
   })
   test('name', () => {
     const wrapper = mountWithIntl(
@@ -32,8 +32,8 @@ describe('render', () => {
     )
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('.la--input').props().minLength).toBeUndefined()
-    expect(wrapper.find('.la--input').props().type).toBe('text')
+    expect(wrapper.find('.la--form--input').props().minLength).toBeUndefined()
+    expect(wrapper.find('.la--form--input').props().type).toBe('text')
   })
   test('password', () => {
     const wrapper = mountWithIntl(
@@ -45,8 +45,8 @@ describe('render', () => {
     )
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('.la--input').props().minLength).toBe(8)
-    expect(wrapper.find('.la--input').props().type).toBe('password')
+    expect(wrapper.find('.la--form--input').props().minLength).toBe(8)
+    expect(wrapper.find('.la--form--input').props().type).toBe('password')
   })
 })
 test('handleTextChange', () => {
@@ -58,11 +58,11 @@ test('handleTextChange', () => {
     />
   )
 
-  expect(wrapper.find('.la--input').props().value).toBe('')
-  wrapper.find('.la--input').simulate('change', {
+  expect(wrapper.find('.la--form--input').props().value).toBe('')
+  wrapper.find('.la--form--input').simulate('change', {
     target: {
       value: 'text'
     }
   })
-  expect(wrapper.find('.la--input').props().value).toBe('text')
+  expect(wrapper.find('.la--form--input').props().value).toBe('text')
 })

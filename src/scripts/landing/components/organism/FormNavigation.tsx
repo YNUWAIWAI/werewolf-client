@@ -1,18 +1,19 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 
+type Mode = 'login' | 'signup'
 interface Props {
-  handleClick: (value: boolean) => void
-  isSignup: boolean
+  handleClick: (value: Mode) => void
+  mode: Mode
 }
 
 export const FormNavigation: React.FC<Props> = props => (
   <>
     <button
-      className={`la--form-navigation login ${props.isSignup ? '' : 'selected'}`}
-      disabled={!props.isSignup}
+      className={`la--form-navigation login ${props.mode === 'login' ? 'selected' : ''}`}
+      disabled={props.mode === 'login'}
       onClick={() => {
-        props.handleClick(false)
+        props.handleClick('login')
       }}
     >
       <FormattedMessage
@@ -20,10 +21,10 @@ export const FormNavigation: React.FC<Props> = props => (
       />
     </button>
     <button
-      className={`la--form-navigation signup ${props.isSignup ? 'selected' : ''}`}
-      disabled={props.isSignup}
+      className={`la--form-navigation signup ${props.mode === 'signup' ? 'selected' : ''}`}
+      disabled={props.mode === 'signup'}
       onClick={() => {
-        props.handleClick(true)
+        props.handleClick('signup')
       }}
     >
       <FormattedMessage
@@ -33,4 +34,3 @@ export const FormNavigation: React.FC<Props> = props => (
   </>
 )
 FormNavigation.displayName = 'FormNavigation'
-

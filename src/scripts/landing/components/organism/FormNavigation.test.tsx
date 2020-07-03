@@ -9,24 +9,24 @@ import {initRenderer} from '../../tools'
 const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))
 
 describe('render', () => {
-  test('isSignup={true}', () => {
+  test('mode: login', () => {
     const handleClick = jest.fn()
     const wrapper = mountWithIntl(
       <FormNavigation
         handleClick={handleClick}
-        isSignup
+        mode="login"
       />
     )
 
     expect(wrapper.html()).toMatchSnapshot()
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
-  test('isSignup={false}', () => {
+  test('mode: signup', () => {
     const handleClick = jest.fn()
     const wrapper = mountWithIntl(
       <FormNavigation
         handleClick={handleClick}
-        isSignup={false}
+        mode="signup"
       />
     )
 
@@ -34,16 +34,31 @@ describe('render', () => {
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
 })
-test('onClick', () => {
-  const handleClick = jest.fn()
-  const wrapper = mountWithIntl(
-    <FormNavigation
-      handleClick={handleClick}
-      isSignup={false}
-    />
-  )
+describe('onClick', () => {
+  test('login -> signup', () => {
+    const handleClick = jest.fn()
+    const wrapper = mountWithIntl(
+      <FormNavigation
+        handleClick={handleClick}
+        mode="login"
+      />
+    )
 
-  wrapper.find('.la--form-navigation').simulate('click')
-  expect(handleClick).toHaveBeenCalledTimes(1)
-  expect(handleClick).toHaveBeenCalledWith(true)
+    wrapper.find('.la--form-navigation.signup').simulate('click')
+    expect(handleClick).toHaveBeenCalledTimes(1)
+    expect(handleClick).toHaveBeenCalledWith('signup')
+  })
+  test('signup -> login', () => {
+    const handleClick = jest.fn()
+    const wrapper = mountWithIntl(
+      <FormNavigation
+        handleClick={handleClick}
+        mode="signup"
+      />
+    )
+
+    wrapper.find('.la--form-navigation.login').simulate('click')
+    expect(handleClick).toHaveBeenCalledTimes(1)
+    expect(handleClick).toHaveBeenCalledWith('login')
+  })
 })

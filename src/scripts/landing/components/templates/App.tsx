@@ -25,7 +25,7 @@ interface Props {
 export const App: React.FC<Props> = props => {
   const messages = getMessages(props.language)
   const ref = React.useRef<HTMLDivElement>(null)
-  const [isSignup, setIsSignup] = React.useState(false)
+  const [mode, setMode] = React.useState<'login' | 'signup'>('login')
 
   React.useEffect(() => {
     const elem = ref.current
@@ -51,11 +51,11 @@ export const App: React.FC<Props> = props => {
         >
           <Lead />
           <FormNavigation
-            handleClick={setIsSignup}
-            isSignup={isSignup}
+            handleClick={setMode}
+            mode={mode}
           />
           {
-            isSignup ?
+            mode === 'signup' ?
               <Signup
                 action={props.signupAction}
                 csrfToken={props.csrfToken}
