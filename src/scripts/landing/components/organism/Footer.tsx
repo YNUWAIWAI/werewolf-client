@@ -1,13 +1,12 @@
 import * as React from 'react'
-import {FormattedMessage} from 'react-intl'
+
+const text = 'Copyright © 2020 YNUWAIWAI'
 
 export const Footer: React.FC<{}> = () => (
   <div
     className="la--footer"
   >
-    <FormattedMessage
-      id="Footer.footer"
-    />
+    {text}
   </div>
 )
 Footer.displayName = 'Footer'
