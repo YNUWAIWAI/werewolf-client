@@ -1,0 +1,84 @@
+.la--form {
+  background: var(--color--background--form);
+  border: solid 1px var(--color--border);
+  border-radius: 0 0 4px 4px;
+  border-top: none;
+  grid-area: form;
+  margin: 0 1rem;
+  padding: 1rem;
+
+  &--button {
+    appearance: none;
+    background: var(--color--background--button);
+    border: 1px solid var(--color--border);
+    border-radius: 5px;
+    color: var(--color--font--white);
+    cursor: pointer;
+    font-size: 1.25rem;
+    grid-area: button;
+    line-height: 2;
+
+    &:hover {
+      background: var(--color--background--button--hover);
+    }
+  }
+
+  &--confirmation {
+    margin-bottom: 0.5rem;
+  }
+
+  &--field {
+    margin-bottom: 1rem;
+  }
+
+  &--input {
+    appearance: none;
+    border: 1px solid rgb(223, 223, 223);
+    box-sizing: border-box;
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  &--label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  &--link {
+    color: var(--color--font--link);
+  }
+}
+
+.la--form-navigation {
+  background: var(--color--background--button);
+  border: solid 1px var(--color--border);
+  border-radius: 4px 4px 0 0;
+  color: var(--color--font--gray);
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1.5;
+  padding: 1rem;
+
+  &.selected {
+    background: var(--color--background--form);
+    border-bottom: none;
+    color: var(--color--white);
+  }
+
+  &:focus {
+    background: var(--color--background--button--hover);
+    outline: none;
+  }
+
+  &.login {
+    grid-area: login;
+    margin-left: 1rem;
+  }
+
+  &.signup {
+    grid-area: signup;
+    margin-right: 1rem;
+  }
+}

@@ -1,20 +1,20 @@
 import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
+import {Link} from './Link'
 
 export const Confirmation: React.FC<{}> = () => (
-  <p className="la--confirmation">
+  <p className="la--form--confirmation">
     <FormattedMessage
       id="signup-confirmation"
       values={{
         // eslint-disable-next-line
         a: (... chunks: React.ReactNode[]) => (
-          <a
-            href="terms"
-            rel="noreferrer noopener"
-            target="_blank"
+          <Link
+            className="la--form--link"
+            href="https://werewolfguide.netlify.app/docs/en/privacy"
           >
             {chunks}
-          </a>
+          </Link>
         )
       }}
     />

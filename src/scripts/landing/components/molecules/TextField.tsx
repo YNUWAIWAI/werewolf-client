@@ -14,9 +14,9 @@ export const TextField: React.FC<Props> = props => {
   }
 
   return (
-    <div className="la--field">
+    <div className="la--form--field">
       <label
-        className="la--label"
+        className="la--form--label"
         htmlFor={`${props.type}-${props.name}`}
       >
         <FormattedMessage
@@ -26,7 +26,7 @@ export const TextField: React.FC<Props> = props => {
       <input
         autoComplete="off"
         autoFocus={props.autoFocus}
-        className="la--input"
+        className="la--form--input"
         id={`${props.type}-${props.name}`}
         minLength={props.name === 'password' ? 8 : undefined}
         name={props.name}

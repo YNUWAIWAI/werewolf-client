@@ -7,7 +7,7 @@ interface Props {
 
 export const SubmitButton: React.FC<Props> = props => (
   <button
-    className="la--button"
+    className="la--form--button"
     type="submit"
   >
     <FormattedMessage

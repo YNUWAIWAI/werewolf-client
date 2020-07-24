@@ -1,10 +1,10 @@
 import * as React from 'react'
-import {Lead} from './Lead'
+import {Slider} from './Slider'
 import {shallow} from 'enzyme'
 
 test('render', () => {
   const wrapper = shallow(
-    <Lead />
+    <Slider />
   )
 
   expect(wrapper.getElement()).toMatchSnapshot()

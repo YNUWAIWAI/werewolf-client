@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render mode: login 1`] = `"<button class=\\"la--form-navigation login selected\\" disabled=\\"\\">Login</button><button class=\\"la--form-navigation signup \\">Signup</button>"`;
+
+exports[`render mode: signup 1`] = `"<button class=\\"la--form-navigation login \\">Login</button><button class=\\"la--form-navigation signup selected\\" disabled=\\"\\">Signup</button>"`;

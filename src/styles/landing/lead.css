@@ -1,0 +1,4 @@
+.la--lead {
+  grid-area: lead;
+  position: relative;
+}

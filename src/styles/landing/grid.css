@@ -1,0 +1,12 @@
+.la--grid {
+  display: grid;
+  grid-template:
+    'lead login signup' 5rem
+    'lead form form' max-content
+    'lead update-notes update-notes' max-content
+    'lead publicity publicity' 1fr
+    'sponsor sponsor sponsor'
+    'footer footer footer'
+    / minmax(calc(var(--min-width--window) * 0.6), 3fr) 1fr 1fr;
+  margin: 1rem;
+}

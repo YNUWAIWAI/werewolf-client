@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+<Carousel
+  autoPlay={true}
+  axis="horizontal"
+  centerSlidePercentage={80}
+  className="la--slider"
+  infiniteLoop={true}
+  interval={3000}
+  labels={
+    Object {
+      "item": "slide item",
+      "leftArrow": "previous slide / item",
+      "rightArrow": "next slide / item",
+    }
+  }
+  onChange={[Function]}
+  onClickItem={[Function]}
+  onClickThumb={[Function]}
+  onSwipeEnd={[Function]}
+  onSwipeMove={[Function]}
+  onSwipeStart={[Function]}
+  renderArrowNext={[Function]}
+  renderArrowPrev={[Function]}
+  renderIndicator={[Function]}
+  renderItem={[Function]}
+  renderThumbs={[Function]}
+  selectedItem={0}
+  showArrows={true}
+  showIndicators={true}
+  showStatus={false}
+  showThumbs={false}
+  statusFormatter={[Function]}
+  stopOnHover={true}
+  swipeScrollTolerance={5}
+  swipeable={true}
+  transitionTime={350}
+  verticalSwipe="standard"
+  width="100%"
+>
+  <Title />
+  <Trailer
+    autoPlay={false}
+  />
+  <News
+    link=""
+    title="news1"
+  />
+</Carousel>
+`;

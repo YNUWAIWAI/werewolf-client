@@ -1,11 +1,11 @@
 import * as React from 'react'
-import {Lead} from './Lead'
+import {Footer} from './Footer'
 import {shallow} from 'enzyme'
 
 test('render', () => {
   const wrapper = shallow(
-    <Lead />
+    <Footer />
   )
 
-  expect(wrapper.getElement()).toMatchSnapshot()
+  expect(wrapper.html()).toMatchSnapshot()
 })
