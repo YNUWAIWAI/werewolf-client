@@ -152,9 +152,9 @@ workflows:
       - stylelint
 
   i18n:
-    filters:
-      branches:
-        only:
-          - master
     jobs:
       - update-translations
+        filters:
+          branches:
+            only:
+              - master
