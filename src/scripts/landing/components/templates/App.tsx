@@ -67,7 +67,9 @@ export const App: React.FC<Props> = props => {
                 error={props.loginError}
               />
           }
-          <UpdateNotes />
+          <UpdateNotes
+            language={props.language}
+          />
           <Publicity />
         </div>
         <Sponsor />
