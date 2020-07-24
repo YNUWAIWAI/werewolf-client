@@ -124,6 +124,18 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn stylelint
 
+  update-translations:
+    - image: circleci/node:12-browsers
+        environment:
+          TZ: Asia/Tokyo
+    branches:
+      only:
+        - master
+    steps:
+      - checkout
+      - crowdin upload sources -b client -c src/i18n/crowdin.yml
+
+
 workflows:
   version: 2
   test_accept_deploy:
