@@ -129,9 +129,6 @@ jobs:
       - image: circleci/node:12-browsers
         environment:
           TZ: Asia/Tokyo
-    branches:
-      only:
-        - master
     steps:
       - checkout
       - crowdin upload sources -b client -c src/i18n/crowdin.yml
@@ -155,5 +152,9 @@ workflows:
       - stylelint
 
   i18n:
+    filters:
+      branches:
+        only:
+          - master
     jobs:
       - update-translations
