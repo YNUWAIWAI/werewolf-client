@@ -125,9 +125,10 @@ jobs:
       - run: yarn stylelint
 
   update-translations:
-    - image: circleci/node:12-browsers
-        environment:
-          TZ: Asia/Tokyo
+    docker:
+      - image: circleci/node:12-browsers
+          environment:
+            TZ: Asia/Tokyo
     branches:
       only:
         - master
@@ -152,3 +153,7 @@ workflows:
     jobs:
       - eslint
       - stylelint
+
+  i18n:
+    jobs:
+      - update-translations
