@@ -4,7 +4,7 @@ import {Link} from '../atoms/Link'
 
 export const Description: React.FC<{}> = () => (
   <>
-    <h1>
+    <h1 className="la--description--header">
       <FormattedMessage
         id="Description.human-vs-ai"
       />
@@ -28,7 +28,7 @@ export const Description: React.FC<{}> = () => (
       />
     </p>
     <Link
-      className="la--link"
+      className="la--link primary"
       href="https://werewolfguide.netlify.com/docs/en/introduction"
     >
       <FormattedMessage
