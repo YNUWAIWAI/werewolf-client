@@ -31,7 +31,7 @@
 
       &:focus {
         background: var(--color--background--primary-button--hover);
-    }
+      }
     }
   }
 }
