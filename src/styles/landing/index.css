@@ -25,10 +25,14 @@ body {
   --color--background--button: hsla(0, 0%, 25%);
   --color--background--button--disabled: hsla(0, 0%, 15%);
   --color--background--button--hover: hsla(0, 0%, 40%);
+  --color--background--primary-button: hsla(44, 100%, 62%, 1);
+  --color--background--primary-button--disabled: hsla(44, 100%, 22%, 1);
+  --color--background--primary-button--hover: hsla(44, 100%, 42%, 1);
   --color--border: hsl(0, 0%, 80%);
   --color--font--black: hsl(0, 0%, 10%);
   --color--font--gray: hsl(0, 0%, 50%);
   --color--font--link: rgb(38, 132, 255);
+  --color--font--red: rgb(183, 28, 28);
   --color--font--white: hsl(0, 0%, 80%);
   background: var(--color--background);
   color: var(--color--font--white);
@@ -48,6 +52,12 @@ body {
     }
   }
 
+  &--description {
+    &--header {
+      color: var(--color--font--red);
+    }
+  }
+
   &--link {
     background: var(--color--background--button);
     color: var(--color--font--white);
@@ -64,6 +74,19 @@ body {
 
     &:focus {
       background: var(--color--background--button--hover);
+    }
+
+    &.primary {
+      background: var(--color--background--primary-button);
+      color: var(--color--font--black);
+
+      &:hover {
+        background: var(--color--background--primary-button--hover);
+      }
+
+      &:focus {
+        background: var(--color--background--primary-button--hover);
+    }
     }
   }
 
