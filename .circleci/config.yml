@@ -154,7 +154,7 @@ workflows:
   i18n:
     jobs:
       - update-translations
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
