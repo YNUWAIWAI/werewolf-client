@@ -1,0 +1,37 @@
+.la--description {
+  &--header {
+    color: var(--color--font--red);
+  }
+
+  &--link {
+    background: var(--color--background--button);
+    color: var(--color--font--white);
+    display: block;
+    font-size: 2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--color--background--button--hover);
+    }
+
+    &:focus {
+      background: var(--color--background--button--hover);
+    }
+
+    &.primary {
+      background: var(--color--background--primary-button);
+      color: var(--color--font--black);
+
+      &:hover {
+        background: var(--color--background--primary-button--hover);
+      }
+
+      &:focus {
+        background: var(--color--background--primary-button--hover);
+    }
+    }
+  }
+}

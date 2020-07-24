@@ -28,7 +28,7 @@ export const Description: React.FC<{}> = () => (
       />
     </p>
     <Link
-      className="la--link primary"
+      className="la--description--link primary"
       href="https://werewolfguide.netlify.com/docs/en/introduction"
     >
       <FormattedMessage
@@ -41,7 +41,7 @@ export const Description: React.FC<{}> = () => (
       />
     </p>
     <Link
-      className="la--link"
+      className="la--description--link"
       href="https://werewolfguide.netlify.com/docs/en/introduction"
     >
       <FormattedMessage
