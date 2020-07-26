@@ -7,6 +7,9 @@ jobs:
           TZ: Asia/Tokyo
     steps:
       - checkout
+      - sudo apt-get install default-jre
+      - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+      - sudo dpkg -i crowdin.deb
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -16,6 +19,17 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - restore_cache:
+        keys:
+          - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
+          - v1-translations-
+      - run: crowdin download -b client -c src/i18n/crowdin.yml
+      - save_cache:
+          paths:
+            - src/i18n/landing
+            - src/i18n/lobby
+            - src/i18n/village
+          key: v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
       - run:
           command: |
             mkdir -p ../public/stylesheets
@@ -31,6 +45,9 @@ jobs:
           TZ: Asia/Tokyo
     steps:
       - checkout
+      - sudo apt-get install default-jre
+      - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+      - sudo dpkg -i crowdin.deb
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -40,6 +57,17 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - restore_cache:
+        keys:
+          - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
+          - v1-translations-
+      - run: crowdin download -b client -c src/i18n/crowdin.yml
+      - save_cache:
+          paths:
+            - src/i18n/landing
+            - src/i18n/lobby
+            - src/i18n/village
+          key: v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
       - run: yarn test:ci
       - run: yarn coverage
 
@@ -50,6 +78,9 @@ jobs:
           TZ: Asia/Tokyo
     steps:
       - checkout
+      - sudo apt-get install default-jre
+      - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+      - sudo dpkg -i crowdin.deb
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -59,6 +90,17 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - restore_cache:
+        keys:
+          - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
+          - v1-translations-
+      - run: crowdin download -b client -c src/i18n/crowdin.yml
+      - save_cache:
+          paths:
+            - src/i18n/landing
+            - src/i18n/lobby
+            - src/i18n/village
+          key: v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
       - run: yarn test:integration
       - store_artifacts:
           path: integration/landing/__image_snapshots__
@@ -77,6 +119,9 @@ jobs:
           TZ: Asia/Tokyo
     steps:
       - checkout
+      - sudo apt-get install default-jre
+      - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+      - sudo dpkg -i crowdin.deb
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -86,6 +131,17 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - restore_cache:
+        keys:
+          - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
+          - v1-translations-
+      - run: crowdin download -b client -c src/i18n/crowdin.yml
+      - save_cache:
+          paths:
+            - src/i18n/landing
+            - src/i18n/lobby
+            - src/i18n/village
+          key: v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
       - run: yarn deploy-storybook --ci
 
   eslint:
