@@ -83,6 +83,7 @@ jobs:
             sudo apt-get install default-jre
             wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
             sudo dpkg -i crowdin.deb
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -149,7 +150,13 @@ jobs:
           TZ: Asia/Tokyo
     steps:
       - checkout
-      - crowdin upload sources -b client
+      - run:
+          name: Upload the source of translation
+          command: |
+            sudo apt-get install default-jre
+            wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+            sudo dpkg -i crowdin.deb
+            crowdin upload sources -b client
 
 
 workflows:
@@ -174,4 +181,4 @@ workflows:
       - update-translations:
           filters:
             branches:
-              only: master
+              only: i18n
