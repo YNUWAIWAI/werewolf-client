@@ -92,6 +92,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - run: crowdin lint
       - restore_cache:
           keys:
             - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
