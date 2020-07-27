@@ -1,1 +1,26 @@
-{}
+{
+  "lead-flavor": "* Flavor text *",
+  "lead-title": "LiCOS: A Game Of Werewolves",
+  "login-error": "Invalid email or password",
+  "login-label-email": "Email address",
+  "login-label-password": "Password",
+  "login-navigation": "Login",
+  "login-submit": "Login",
+  "signup-confirmation": "Please agree to our <a>Terms, Data Policy and Cookies Policy</a> before signing up.",
+  "signup-error": "Invalid name, email or password",
+  "signup-label-email": "Email address",
+  "signup-label-name": "Name",
+  "signup-label-password": "Password",
+  "signup-navigation": "Signup",
+  "signup-submit": "Signup",
+  "Description.human-vs-ai": "Humans vs AI.",
+  "Description.human-vs-werewolves": "Humans vs Werewolves.",
+  "Description.survive": "Survive in the post-truth world.",
+  "Description.1": "This is a game about a village beset by werewolves. Most players will be ordinary villagers, but some of them will be werewolves, and other ones may have special abilities. In the village, werewolves attacks a villager every night. Ordinary villagers can not distinguish werewolves from villagers. To eliminate werewolves, they decide that, every day, they put a suspicious villager to death at noon. If all werewolves are put to death, the next morning nobody will be dead.",
+  "Description.2": "Using your web browser, you can directly participate in the game as a human player.",
+  "Description.3": "If you want more of a challenge, you can develop your own robot and make it participate as a robot player.",
+  "Description.button.how-to-play": "How to play",
+  "Description.button.how-to-develop-a-robot": "How to develop a robot",
+  "Sponsor.sponsoredBy": "Sponsored By",
+  "UpdateNotes.header": "Update notes"
+}
