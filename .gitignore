@@ -61,5 +61,3 @@ dest/
 .cache
 __diff_output__
 storybook-static
-src/i18n/**/*.json
-!src/i18n/**/en.json
