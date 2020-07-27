@@ -22,7 +22,7 @@ jobs:
             mkdir -p ../public/javascripts
             mkdir -p ../app/views
             yarn build:development
-            yarn build:production
+            node tools/build.js
 
   unit-test:
     docker:
