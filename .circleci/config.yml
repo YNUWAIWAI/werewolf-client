@@ -92,12 +92,12 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: crowdin lint -c src/i18n/crowdin.yml
+      - run: crowdin lint
       - restore_cache:
           keys:
             - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
             - v1-translations-
-      - run: crowdin download -b client -c src/i18n/crowdin.yml
+      - run: crowdin download -b client
       - save_cache:
           paths:
             - src/i18n/landing
@@ -149,7 +149,7 @@ jobs:
           TZ: Asia/Tokyo
     steps:
       - checkout
-      - crowdin upload sources -b client -c src/i18n/crowdin.yml
+      - crowdin upload sources -b client
 
 
 workflows:
