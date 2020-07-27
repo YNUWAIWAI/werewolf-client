@@ -81,7 +81,7 @@ jobs:
           name: Intall Crowdin
           command: |
             sudo apt-get install default-jre
-            wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+            wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
             sudo dpkg -i crowdin.deb
       - restore_cache:
           keys:
