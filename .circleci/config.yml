@@ -156,7 +156,7 @@ jobs:
             sudo apt-get install default-jre
             sudo wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
             sudo dpkg -i crowdin.deb
-            crowdin upload sources --auto-update -b client
+            crowdin upload sources --auto-update -b client -T $CROWDIN_API_KEY -i $CROWDIN_PROJECT_ID
 
 
 workflows:
