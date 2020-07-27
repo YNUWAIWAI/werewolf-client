@@ -153,10 +153,10 @@ jobs:
       - run:
           name: Upload the source of translation
           command: |
-            - sudo apt-get install default-jre
-            - wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
-            - sudo dpkg -i crowdin.deb
-            - crowdin upload sources --auto-update -b client --dryrun
+            sudo apt-get install default-jre
+            wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
+            sudo dpkg -i crowdin.deb
+            crowdin upload sources --auto-update -b client --dryrun
 
 
 workflows:
