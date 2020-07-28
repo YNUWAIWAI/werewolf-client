@@ -22,7 +22,7 @@ jobs:
             mkdir -p ../public/javascripts
             mkdir -p ../app/views
             yarn build:development
-            yarn build:production
+            node tools/build.js
 
   unit-test:
     docker:
@@ -72,11 +72,18 @@ jobs:
 
   deploy-storybook:
     docker:
-      - image: circleci/node:12-browsers
+      - image: circleci/node:12
         environment:
           TZ: Asia/Tokyo
     steps:
       - checkout
+      - run:
+          name: Install Crowdin
+          command: |
+            sudo apt-get install default-jre
+            wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
+            sudo dpkg -i crowdin.deb
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -86,6 +93,17 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - restore_cache:
+          keys:
+            - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
+            - v1-translations-
+      - run: crowdin download -b client
+      - save_cache:
+          paths:
+            - src/i18n/landing
+            - src/i18n/lobbys
+            - src/i18n/village
+          key: v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
       - run: yarn deploy-storybook --ci
 
   eslint:
@@ -124,6 +142,24 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn stylelint
 
+  update-translations:
+    docker:
+      - image: circleci/node:12
+        environment:
+          TZ: Asia/Tokyo
+    steps:
+      - checkout
+      - run:
+          name: Install Crowdin
+          command: |
+            sudo apt-get install default-jre
+            wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
+            sudo dpkg -i crowdin.deb
+      - run:
+          name: Upload the source of translation
+          command: |
+            crowdin upload sources --auto-update -b client
+
 workflows:
   version: 2
   test_accept_deploy:
@@ -140,3 +176,10 @@ workflows:
     jobs:
       - eslint
       - stylelint
+
+  i18n:
+    jobs:
+      - update-translations:
+          filters:
+            branches:
+              only: master
