@@ -158,7 +158,6 @@ jobs:
             sudo dpkg -i crowdin.deb
             crowdin upload sources --auto-update -b client
 
-
 workflows:
   version: 2
   test_accept_deploy:
@@ -181,4 +180,4 @@ workflows:
       - update-translations:
           filters:
             branches:
-              only: i18n
+              only: master
