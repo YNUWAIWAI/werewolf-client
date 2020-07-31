@@ -77,13 +77,6 @@ jobs:
           TZ: Asia/Tokyo
     steps:
       - checkout
-      - run:
-          name: Install Crowdin
-          command: |
-            sudo apt-get install default-jre
-            wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
-            sudo dpkg -i crowdin.deb
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -93,17 +86,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - restore_cache:
-          keys:
-            - v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
-            - v1-translations-
-      - run: crowdin download -b client
-      - save_cache:
-          paths:
-            - src/i18n/landing
-            - src/i18n/lobbys
-            - src/i18n/village
-          key: v1-translations-{{ checksum "src/i18n/landing/en.json" }}-{{ checksum "src/i18n/lobby/en.json" }}-{{ checksum "src/i18n/village/en.json" }}
       - run: yarn deploy-storybook --ci
 
   eslint:
