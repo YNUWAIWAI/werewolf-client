@@ -11,38 +11,54 @@ interface Props {
   error: boolean
 }
 
-export const Signup: React.FC<Props> = props => (
-  <form
-    action={props.action}
-    className="la--form"
-    method="POST"
-  >
-    <ErrorMessage
-      type="signup"
-      visible={props.error}
-    />
-    <TextField
-      autoFocus
-      name="name"
-      type="signup"
-    />
-    <TextField
-      autoFocus={false}
-      name="email"
-      type="signup"
-    />
-    <TextField
-      autoFocus={false}
-      name="password"
-      type="signup"
-    />
-    <Confirmation />
-    <SubmitButton
-      type="signup"
-    />
-    <Csrf
-      token={props.csrfToken}
-    />
-  </form>
-)
+export const Signup: React.FC<Props> = props => {
+  const [isPrivacyChecked, setIsPrivacyChecked] = React.useState(false)
+  const [isTermsChecked, setIsTermsChecked] = React.useState(false)
+  const handleChangePrivacyCheck = () => {
+    setIsPrivacyChecked(!isPrivacyChecked)
+  }
+  const handleChangeTermsCheck = () => {
+    setIsTermsChecked(!isTermsChecked)
+  }
+
+  return (
+    <form
+      action={props.action}
+      className="la--form"
+      method="POST"
+    >
+      <ErrorMessage
+        type="signup"
+        visible={props.error}
+      />
+      <TextField
+        autoFocus
+        name="name"
+        type="signup"
+      />
+      <TextField
+        autoFocus={false}
+        name="email"
+        type="signup"
+      />
+      <TextField
+        autoFocus={false}
+        name="password"
+        type="signup"
+      />
+      <Confirmation
+        handleChangePrivacyCheck={handleChangePrivacyCheck}
+        handleChangeTermsCheck={handleChangeTermsCheck}
+        isPrivacyChecked={isPrivacyChecked}
+        isTermsChecked={isTermsChecked}
+      />
+      <SubmitButton
+        type="signup"
+      />
+      <Csrf
+        token={props.csrfToken}
+      />
+    </form>
+  )
+}
 Signup.displayName = 'Signup'

@@ -1,5 +1,6 @@
 .la--checkbox {
   border-radius: 4px;
+  display: block;
   fill: var(--color--checkbox);
   height: var(--height--checkbox);
   margin: 0 1rem 0 0;

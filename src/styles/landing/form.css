@@ -24,6 +24,8 @@
   }
 
   &--confirmation {
+    display: grid;
+    grid-template-columns: calc(var(--width--checkbox) + 1rem) 1fr;
     margin-bottom: 0.5rem;
   }
 

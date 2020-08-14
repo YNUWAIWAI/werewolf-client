@@ -3,32 +3,65 @@ import {Checkbox} from '../../../lobby/components/atoms/Checkbox'
 import {FormattedMessage} from 'react-intl'
 import {Link} from './Link'
 
-export const Confirmation: React.FC<{}> = () => {
-  const [checked, setChecked] = React.useState(false)
+interface Props {
+  readonly handleChangePrivacyCheck: () => void
+  readonly handleChangeTermsCheck: () => void
+  readonly isPrivacyChecked: boolean
+  readonly isTermsChecked: boolean
+}
 
+export const Confirmation: React.FC<Props> = props => {
   return (
-    <p className="la--form--confirmation">
+    <div className="la--form--confirmation">
       <Checkbox
-        checked={checked}
+        checked={props.isPrivacyChecked}
         className="la--checkbox"
-        handleChange={setChecked}
+        handleChange={props.handleChangePrivacyCheck}
         navigatable
       />
-      <FormattedMessage
-        id="signup-confirmation"
-        values={{
-          // eslint-disable-next-line
-          a: (... chunks: React.ReactNode[]) => (
-            <Link
-              className="la--form--link"
-              href="https://werewolfguide.netlify.app/docs/en/privacy"
-            >
-              {chunks}
-            </Link>
-          )
-        }}
+      <span
+        onClick={props.handleChangePrivacyCheck}
+      >
+        <FormattedMessage
+          id="signup-confirmation-privacy"
+          values={{
+            // eslint-disable-next-line
+            a: (... chunks: React.ReactNode[]) => (
+              <Link
+                className="la--form--link"
+                href="https://werewolfguide.netlify.app/docs/en/privacy"
+              >
+                {chunks}
+              </Link>
+            )
+          }}
+        />
+      </span>
+      <Checkbox
+        checked={props.isTermsChecked}
+        className="la--checkbox"
+        handleChange={props.handleChangeTermsCheck}
+        navigatable
       />
-    </p>
+      <span
+        onClick={props.handleChangeTermsCheck}
+      >
+        <FormattedMessage
+          id="signup-confirmation-terms"
+          values={{
+            // eslint-disable-next-line
+            a: (... chunks: React.ReactNode[]) => (
+              <Link
+                className="la--form--link"
+                href="https://werewolfguide.netlify.app/docs/en/terms"
+              >
+                {chunks}
+              </Link>
+            )
+          }}
+        />
+      </span>
+    </div>
   )
 }
 Confirmation.displayName = 'Confirmation'
