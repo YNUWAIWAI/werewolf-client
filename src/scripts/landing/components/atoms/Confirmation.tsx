@@ -19,9 +19,7 @@ export const Confirmation: React.FC<Props> = props => {
         handleChange={props.handleChangePrivacyCheck}
         navigatable
       />
-      <span
-        onClick={props.handleChangePrivacyCheck}
-      >
+      <span>
         <FormattedMessage
           id="signup-confirmation-privacy"
           values={{
@@ -29,6 +27,7 @@ export const Confirmation: React.FC<Props> = props => {
             a: (... chunks: React.ReactNode[]) => (
               <Link
                 className="la--form--link"
+                handleClick={props.handleChangePrivacyCheck}
                 href="https://werewolfguide.netlify.app/docs/en/privacy"
               >
                 {chunks}
@@ -43,9 +42,7 @@ export const Confirmation: React.FC<Props> = props => {
         handleChange={props.handleChangeTermsCheck}
         navigatable
       />
-      <span
-        onClick={props.handleChangeTermsCheck}
-      >
+      <span>
         <FormattedMessage
           id="signup-confirmation-terms"
           values={{
@@ -53,6 +50,7 @@ export const Confirmation: React.FC<Props> = props => {
             a: (... chunks: React.ReactNode[]) => (
               <Link
                 className="la--form--link"
+                handleClick={props.handleChangeTermsCheck}
                 href="https://werewolfguide.netlify.app/docs/en/terms"
               >
                 {chunks}
