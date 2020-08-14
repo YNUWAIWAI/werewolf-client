@@ -41,6 +41,7 @@ export const SupportSelectMemberSelectOption: React.FC<Props> = props => {
       >
         <Checkbox
           checked={props.checked}
+          className="lo--checkbox"
           handleChange={handleSelect}
           label={`member${label}`}
           navigatable

@@ -28,6 +28,7 @@ export const AdvancedSearchProp: React.FC<Props> = props => {
     >
       <Checkbox
         checked={props.checked}
+        className="lo--checkbox"
         disabled={!props.valid || props.checkboxFixed}
         handleChange={props.handleChange}
         labelledby={props.name}
