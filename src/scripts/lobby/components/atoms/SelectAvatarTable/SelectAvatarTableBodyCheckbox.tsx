@@ -24,6 +24,7 @@ export const SelectAvatarTableBodyCheckbox: React.FC<Props> = props => {
     >
       <Checkbox
         checked={props.checked}
+        className="lo--checkbox"
         handleChange={props.handleClick}
         navigatable={props.navigatable}
         ref={ref}

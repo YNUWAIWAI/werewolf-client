@@ -9,6 +9,7 @@ describe('render', () => {
       const wrapper = shallow(
         <Checkbox
           checked
+          className="lo--checkbox"
           handleChange={handleChange}
           navigatable
         />
@@ -21,6 +22,7 @@ describe('render', () => {
       const wrapper = shallow(
         <Checkbox
           checked={false}
+          className="lo--checkbox"
           handleChange={handleChange}
           navigatable
         />
@@ -34,6 +36,7 @@ describe('render', () => {
     const wrapper = shallow(
       <Checkbox
         checked
+        className="lo--checkbox"
         disabled
         handleChange={handleChange}
         navigatable
@@ -50,6 +53,7 @@ describe('handleKeyPress', () => {
     const wrapper = shallow(
       <Checkbox
         checked
+        className="lo--checkbox"
         handleChange={handleChange}
         navigatable
       />
@@ -68,6 +72,7 @@ describe('handleKeyPress', () => {
     const wrapper = shallow(
       <Checkbox
         checked
+        className="lo--checkbox"
         handleChange={handleChange}
         navigatable
       />
@@ -86,6 +91,7 @@ describe('handleKeyPress', () => {
     const wrapper = shallow(
       <Checkbox
         checked
+        className="lo--checkbox"
         disabled
         handleChange={handleChange}
         navigatable
@@ -107,6 +113,7 @@ describe('handleClick', () => {
     const wrapper = shallow(
       <Checkbox
         checked
+        className="lo--checkbox"
         handleChange={handleChange}
         navigatable
       />
@@ -124,6 +131,7 @@ describe('handleClick', () => {
     const wrapper = shallow(
       <Checkbox
         checked
+        className="lo--checkbox"
         disabled
         handleChange={handleChange}
         navigatable

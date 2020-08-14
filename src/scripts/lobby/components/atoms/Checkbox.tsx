@@ -4,6 +4,7 @@ import {CheckboxFilled} from './svg/CheckboxFilled'
 
 interface Props {
   readonly checked: boolean
+  readonly className: string
   readonly disabled?: boolean
   readonly handleChange: (checked: boolean) => void
   readonly label?: string
@@ -30,7 +31,7 @@ export const Checkbox = React.forwardRef((props: Props, ref: React.Ref<HTMLSpanE
       aria-checked={props.checked}
       aria-disabled={props.disabled}
       aria-labelledby={props.labelledby}
-      className="lo--checkbox"
+      className={props.className}
       onClick={handleClick}
       onKeyPress={handleKeyPress}
       ref={ref}
