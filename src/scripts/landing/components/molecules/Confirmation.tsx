@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {Checkbox} from '../../../lobby/components/atoms/Checkbox'
 import {FormattedMessage} from 'react-intl'
-import {Link} from './Link'
+import {Link} from '../atoms/Link'
 
 interface Props {
   readonly handleChangePrivacyCheck: () => void

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Confirmation} from '../atoms/Confirmation'
+import {Confirmation} from '../molecules/Confirmation'
 import {Csrf} from '../atoms/Csrf'
 import {ErrorMessage} from '../atoms/ErrorMessage'
 import {SubmitButton} from '../atoms/SubmitButton'
