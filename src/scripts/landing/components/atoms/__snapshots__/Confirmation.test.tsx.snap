@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`render 1`] = `"<p class=\\"la--form--confirmation\\">Please agree to our <a class=\\"la--form--link\\" href=\\"https://werewolfguide.netlify.app/docs/en/privacy\\" rel=\\"noreferrer noopener\\" target=\\"_blank\\">Privacy and Terms</a> before signing up.</p>"`;
