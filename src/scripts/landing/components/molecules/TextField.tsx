@@ -37,6 +37,11 @@ export const TextField: React.FC<Props> = props => {
         type={props.name === 'password' ? 'password' : 'text'}
         value={text}
       />
+      <p>
+        <FormattedMessage
+          id={`${props.type}-description-${props.name}`}
+        />
+      </p>
     </div>
   )
 }

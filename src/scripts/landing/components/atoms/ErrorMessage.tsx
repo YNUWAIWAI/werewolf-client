@@ -2,7 +2,7 @@ import * as React from 'react'
 import {FormattedMessage} from 'react-intl'
 
 interface Props {
-  type: 'login' | 'signup'
+  id: string
   visible: boolean
 }
 
@@ -14,7 +14,7 @@ export const ErrorMessage: React.FC<Props> = props => {
   return (
     <div className="la--error">
       <FormattedMessage
-        id={`${props.type}-error`}
+        id={props.id}
       />
     </div>
   )

@@ -14,21 +14,28 @@ interface Props {
 export const Signup: React.FC<Props> = props => {
   const [isPrivacyChecked, setIsPrivacyChecked] = React.useState(false)
   const [isTermsChecked, setIsTermsChecked] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
   const handleChangePrivacyCheck = () => {
     setIsPrivacyChecked(!isPrivacyChecked)
   }
   const handleChangeTermsCheck = () => {
     setIsTermsChecked(!isTermsChecked)
   }
+  const ref = React.useRef<HTMLFormElement>(null)
+
+  React.useEffect(() => {
+    setDisabled(!(isPrivacyChecked && isTermsChecked))
+  }, [isPrivacyChecked, isTermsChecked])
 
   return (
     <form
       action={props.action}
       className="la--form"
       method="POST"
+      ref={ref}
     >
       <ErrorMessage
-        type="signup"
+        id="signup-error"
         visible={props.error}
       />
       <TextField
@@ -53,6 +60,7 @@ export const Signup: React.FC<Props> = props => {
         isTermsChecked={isTermsChecked}
       />
       <SubmitButton
+        disabled={disabled}
         type="signup"
       />
       <Csrf

@@ -12,7 +12,7 @@ describe('render', () => {
   test('visible={true}', () => {
     const wrapper = mountWithIntl(
       <ErrorMessage
-        type="login"
+        id="login-error"
         visible
       />
     )
@@ -22,7 +22,7 @@ describe('render', () => {
   test('visible={false}', () => {
     const wrapper = mountWithIntl(
       <ErrorMessage
-        type="login"
+        id="login-error"
         visible={false}
       />
     )

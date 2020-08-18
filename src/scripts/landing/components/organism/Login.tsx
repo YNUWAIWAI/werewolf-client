@@ -17,7 +17,7 @@ export const Login: React.FC<Props> = props => (
     method="POST"
   >
     <ErrorMessage
-      type="login"
+      id="login-error"
       visible={props.error}
     />
     <TextField
@@ -31,6 +31,7 @@ export const Login: React.FC<Props> = props => (
       type="login"
     />
     <SubmitButton
+      disabled={false}
       type="login"
     />
     <Csrf
