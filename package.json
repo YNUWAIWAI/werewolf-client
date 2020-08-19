@@ -62,7 +62,7 @@
     "build:watch": "node tools/build.js -w",
     "build-storybook": "build-storybook -s ./src/styles/village/background",
     "coverage": "codecov -f coverage/*.json",
-    "deploy-storybook": "storybook-to-ghpages -s build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "eslint": "eslint 'types/**/*.ts*' 'stories/**/*.ts*' 'src/**/*.ts*'",
     "i18n:download": "crowdin download -b client",
     "i18n:upload": "crowdin upload sources -b client",
