@@ -70,6 +70,7 @@
       line-height: 1.5;
       overflow: auto;
       text-align: center;
+      user-select: none;
       word-break: keep-all;
     }
   }
@@ -189,6 +190,7 @@
       grid-row: 4;
       line-height: 1.5;
       text-align: center;
+      user-select: none;
     }
 
     &--image {
