@@ -50,6 +50,7 @@
     &--image {
       grid-area: image;
       height: var(--size--image);
+      user-select: none;
       width: var(--size--image);
     }
 
