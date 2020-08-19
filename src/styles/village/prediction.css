@@ -94,6 +94,7 @@
 
   &--item {
     align-items: center;
+    background: var(--color--background--body);
     border: solid 1px var(--color--border);
     box-sizing: border-box;
     cursor: pointer;
