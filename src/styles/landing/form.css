@@ -36,6 +36,11 @@
   }
 
   &--field {
+    margin-bottom: 0.5rem;
+  }
+
+  &--field-description {
+    font-size: 1rem;
     margin-bottom: 1rem;
   }
 

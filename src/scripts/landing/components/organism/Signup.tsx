@@ -2,6 +2,7 @@ import * as React from 'react'
 import {Confirmation} from '../molecules/Confirmation'
 import {Csrf} from '../atoms/Csrf'
 import {ErrorMessage} from '../atoms/ErrorMessage'
+import {FieldDescription} from '../atoms/FieldDescription'
 import {SubmitButton} from '../atoms/SubmitButton'
 import {TextField} from '../molecules/TextField'
 
@@ -43,15 +44,24 @@ export const Signup: React.FC<Props> = props => {
         name="name"
         type="signup"
       />
+      <FieldDescription
+        name="name"
+      />
       <TextField
         autoFocus={false}
         name="email"
         type="signup"
       />
+      <FieldDescription
+        name="email"
+      />
       <TextField
         autoFocus={false}
         name="password"
         type="signup"
+      />
+      <FieldDescription
+        name="password"
       />
       <Confirmation
         handleChangePrivacyCheck={handleChangePrivacyCheck}
