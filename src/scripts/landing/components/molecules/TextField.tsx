@@ -3,18 +3,20 @@ import {FormattedMessage} from 'react-intl'
 
 interface Props {
   autoFocus: boolean
+  handleValidityChange: (validity: boolean) => void
   name: 'email' | 'name' | 'password'
   type: 'login' | 'signup'
 }
 
 export const TextField: React.FC<Props> = props => {
   const [text, setText] = React.useState('')
-  const handleTextChange = (value: string) => {
+  const handleTextChange = (value: string, validity: ValidityState) => {
     setText(value)
+    props.handleValidityChange(validity.valid)
   }
   const pattern = () => {
     if (props.name === 'email') {
-      return '\\w*@\\w*'
+      return '[^\\s]*@[^\\s]*'
     }
     if (props.name === 'name') {
       return '^[A-Za-z](?:[!-~]| [!-~]){4,14}$'
@@ -51,7 +53,7 @@ export const TextField: React.FC<Props> = props => {
         minLength={minLength()}
         name={props.name}
         onChange={
-          event => handleTextChange(event.target.value)
+          event => handleTextChange(event.target.value, event.target.validity)
         }
         pattern={pattern()}
         required

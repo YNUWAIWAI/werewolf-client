@@ -13,19 +13,16 @@ interface Props {
 }
 
 export const Signup: React.FC<Props> = props => {
-  const [isPrivacyChecked, setIsPrivacyChecked] = React.useState(false)
-  const [isTermsChecked, setIsTermsChecked] = React.useState(false)
+  const [privacyIsChecked, setPrivacyIsChecked] = React.useState(false)
+  const [termsIsChecked, setTermsIsChecked] = React.useState(false)
+  const [emailIsValid, setEmailIsValid] = React.useState(false)
+  const [nameIsValid, setNameIsValid] = React.useState(false)
+  const [passwordIsValid, setPasswordIsValid] = React.useState(false)
   const [disabled, setDisabled] = React.useState(true)
-  const handleChangePrivacyCheck = () => {
-    setIsPrivacyChecked(!isPrivacyChecked)
-  }
-  const handleChangeTermsCheck = () => {
-    setIsTermsChecked(!isTermsChecked)
-  }
 
   React.useEffect(() => {
-    setDisabled(!(isPrivacyChecked && isTermsChecked))
-  }, [isPrivacyChecked, isTermsChecked])
+    setDisabled(!(privacyIsChecked && termsIsChecked && emailIsValid && nameIsValid && passwordIsValid))
+  }, [privacyIsChecked, termsIsChecked, emailIsValid, nameIsValid, passwordIsValid])
 
   return (
     <form
@@ -39,6 +36,7 @@ export const Signup: React.FC<Props> = props => {
       />
       <TextField
         autoFocus
+        handleValidityChange={setNameIsValid}
         name="name"
         type="signup"
       />
@@ -47,6 +45,7 @@ export const Signup: React.FC<Props> = props => {
       />
       <TextField
         autoFocus={false}
+        handleValidityChange={setEmailIsValid}
         name="email"
         type="signup"
       />
@@ -55,6 +54,7 @@ export const Signup: React.FC<Props> = props => {
       />
       <TextField
         autoFocus={false}
+        handleValidityChange={setPasswordIsValid}
         name="password"
         type="signup"
       />
@@ -62,10 +62,10 @@ export const Signup: React.FC<Props> = props => {
         name="password"
       />
       <Confirmation
-        handleChangePrivacyCheck={handleChangePrivacyCheck}
-        handleChangeTermsCheck={handleChangeTermsCheck}
-        isPrivacyChecked={isPrivacyChecked}
-        isTermsChecked={isTermsChecked}
+        handlePrivacyCheckChange={setPrivacyIsChecked}
+        handleTermsCheckChange={setTermsIsChecked}
+        privacyIsChecked={privacyIsChecked}
+        termsIsChecked={termsIsChecked}
       />
       <SubmitButton
         disabled={disabled}

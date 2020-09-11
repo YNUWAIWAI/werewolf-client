@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render email 1`] = `"<div class=\\"la--form--field\\"><label class=\\"la--form--label\\" for=\\"signup-email\\">Email address</label><input autocomplete=\\"off\\" class=\\"la--form--input\\" id=\\"signup-email\\" minlength=\\"6\\" name=\\"email\\" pattern=\\"\\\\w*@\\\\w*\\" required=\\"\\" type=\\"text\\" value=\\"\\"></div>"`;
+exports[`render email 1`] = `"<div class=\\"la--form--field\\"><label class=\\"la--form--label\\" for=\\"signup-email\\">Email address</label><input autocomplete=\\"off\\" class=\\"la--form--input\\" id=\\"signup-email\\" minlength=\\"6\\" name=\\"email\\" pattern=\\"[^\\\\s]*@[^\\\\s]*\\" required=\\"\\" type=\\"text\\" value=\\"\\"></div>"`;
 
 exports[`render name 1`] = `"<div class=\\"la--form--field\\"><label class=\\"la--form--label\\" for=\\"signup-name\\">Name</label><input autocomplete=\\"off\\" class=\\"la--form--input\\" id=\\"signup-name\\" minlength=\\"5\\" name=\\"name\\" pattern=\\"^[A-Za-z](?:[!-~]| [!-~]){4,14}$\\" required=\\"\\" type=\\"text\\" value=\\"\\"></div>"`;
 
