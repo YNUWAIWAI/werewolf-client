@@ -22,7 +22,6 @@ export const Signup: React.FC<Props> = props => {
   const handleChangeTermsCheck = () => {
     setIsTermsChecked(!isTermsChecked)
   }
-  const ref = React.useRef<HTMLFormElement>(null)
 
   React.useEffect(() => {
     setDisabled(!(isPrivacyChecked && isTermsChecked))
@@ -33,7 +32,6 @@ export const Signup: React.FC<Props> = props => {
       action={props.action}
       className="la--form"
       method="POST"
-      ref={ref}
     >
       <ErrorMessage
         id="signup-error"
