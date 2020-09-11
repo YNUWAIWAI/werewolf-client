@@ -21,7 +21,7 @@ test('render', () => {
     />
   )
 
-  expect(wrapper.html()).toBe(false)
+  expect(wrapper.html()).toMatchSnapshot()
 })
 test('useEffect', () => {
   const wrapper = mountWithIntl(
