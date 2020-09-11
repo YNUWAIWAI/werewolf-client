@@ -19,7 +19,7 @@ describe('render', () => {
     )
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('.la--form--input').props().minLength).toBeUndefined()
+    expect(wrapper.find('.la--form--input').props().minLength).toBe(6)
     expect(wrapper.find('.la--form--input').props().type).toBe('text')
   })
   test('name', () => {
@@ -32,7 +32,7 @@ describe('render', () => {
     )
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('.la--form--input').props().minLength).toBeUndefined()
+    expect(wrapper.find('.la--form--input').props().minLength).toBe(5)
     expect(wrapper.find('.la--form--input').props().type).toBe('text')
   })
   test('password', () => {
