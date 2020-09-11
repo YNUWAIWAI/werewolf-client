@@ -21,7 +21,7 @@ export const Signup: React.FC<Props> = props => {
   const [disabled, setDisabled] = React.useState(true)
 
   React.useEffect(() => {
-    setDisabled(!(privacyIsChecked && termsIsChecked))
+    setDisabled(!(privacyIsChecked && termsIsChecked && emailIsValid && nameIsValid && passwordIsValid))
   }, [privacyIsChecked, termsIsChecked, emailIsValid, nameIsValid, passwordIsValid])
 
   return (
