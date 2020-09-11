@@ -12,6 +12,26 @@ export const TextField: React.FC<Props> = props => {
   const handleTextChange = (value: string) => {
     setText(value)
   }
+  const pattern = () => {
+    if (props.name === 'email') {
+      return '\\w*@\\w*'
+    }
+    if (props.name === 'name') {
+      return '^[A-Za-z](?:[!-~]| [!-~]){4,14}$'
+    }
+
+    return undefined
+  }
+  const minLength = () => {
+    if (props.name === 'email') {
+      return 6
+    }
+    if (props.name === 'name') {
+      return 5
+    }
+
+    return 8
+  }
 
   return (
     <div className="la--form--field">
@@ -28,11 +48,12 @@ export const TextField: React.FC<Props> = props => {
         autoFocus={props.autoFocus}
         className="la--form--input"
         id={`${props.type}-${props.name}`}
-        minLength={props.name === 'password' ? 8 : undefined}
+        minLength={minLength()}
         name={props.name}
         onChange={
           event => handleTextChange(event.target.value)
         }
+        pattern={pattern()}
         required
         type={props.name === 'password' ? 'password' : 'text'}
         value={text}
