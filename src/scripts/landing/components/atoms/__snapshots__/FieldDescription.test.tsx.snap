@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render name email 1`] = `"<div class=\\"la--form--field-description\\">6-256 characters. Latin-1.</div>"`;
+
+exports[`render name name 1`] = `"<div class=\\"la--form--field-description\\">5-15 characters (except space). Disallow multi-space.</div>"`;
+
+exports[`render name password 1`] = `"<div class=\\"la--form--field-description\\">8-128 characters.</div>"`;
