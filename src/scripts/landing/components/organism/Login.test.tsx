@@ -17,6 +17,7 @@ test('render', () => {
       action="/login"
       csrfToken="token"
       error={false}
+      visible
     />
   )
 
@@ -28,6 +29,7 @@ test('useEffect', () => {
       action="/login"
       csrfToken="token"
       error={false}
+      visible
     />
   )
 

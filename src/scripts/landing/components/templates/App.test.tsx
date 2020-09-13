@@ -21,8 +21,8 @@ test('render', () => {
 
   expect(wrapper.find(Lead).exists()).toBe(true)
   expect(wrapper.find(FormNavigation).exists()).toBe(true)
-  expect(wrapper.find(Signup).exists()).toBe(false)
-  expect(wrapper.find(Login).exists()).toBe(true)
+  expect(wrapper.find(Signup).props().visible).toBe(false)
+  expect(wrapper.find(Login).props().visible).toBe(true)
 })
 test('setIsSignup', () => {
   const wrapper = shallow(
@@ -42,6 +42,6 @@ test('setIsSignup', () => {
   handleClick('signup')
   expect(wrapper.find(Lead).exists()).toBe(true)
   expect(wrapper.find(FormNavigation).exists()).toBe(true)
-  expect(wrapper.find(Signup).exists()).toBe(true)
-  expect(wrapper.find(Login).exists()).toBe(false)
+  expect(wrapper.find(Signup).props().visible).toBe(true)
+  expect(wrapper.find(Login).props().visible).toBe(false)
 })
