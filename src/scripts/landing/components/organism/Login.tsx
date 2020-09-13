@@ -8,6 +8,7 @@ interface Props {
   action: string
   csrfToken: string
   error: boolean
+  visible: boolean
 }
 
 export const Login: React.FC<Props> = props => {
@@ -22,7 +23,7 @@ export const Login: React.FC<Props> = props => {
   return (
     <form
       action={props.action}
-      className="la--form"
+      className={`la--form ${props.visible ? '' : 'hidden'}`}
       method="POST"
     >
       <ErrorMessage

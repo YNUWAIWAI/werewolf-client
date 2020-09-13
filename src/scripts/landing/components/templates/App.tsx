@@ -54,19 +54,18 @@ export const App: React.FC<Props> = props => {
             handleClick={setMode}
             mode={mode}
           />
-          {
-            mode === 'signup' ?
-              <Signup
-                action={props.signupAction}
-                csrfToken={props.csrfToken}
-                error={props.signupError}
-              /> :
-              <Login
-                action={props.loginAction}
-                csrfToken={props.csrfToken}
-                error={props.loginError}
-              />
-          }
+          <Signup
+            action={props.signupAction}
+            csrfToken={props.csrfToken}
+            error={props.signupError}
+            visible={mode === 'signup'}
+          />
+          <Login
+            action={props.loginAction}
+            csrfToken={props.csrfToken}
+            error={props.loginError}
+            visible={mode !== 'signup'}
+          />
           <UpdateNotes
             language={props.language}
           />
