@@ -10,32 +10,46 @@ interface Props {
   error: boolean
 }
 
-export const Login: React.FC<Props> = props => (
-  <form
-    action={props.action}
-    className="la--form"
-    method="POST"
-  >
-    <ErrorMessage
-      type="login"
-      visible={props.error}
-    />
-    <TextField
-      autoFocus
-      name="email"
-      type="login"
-    />
-    <TextField
-      autoFocus={false}
-      name="password"
-      type="login"
-    />
-    <SubmitButton
-      type="login"
-    />
-    <Csrf
-      token={props.csrfToken}
-    />
-  </form>
-)
+export const Login: React.FC<Props> = props => {
+  const [emailIsValid, setEmailIsValid] = React.useState(false)
+  const [passwordIsValid, setPasswordIsValid] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
+
+  React.useEffect(() => {
+    setDisabled(!(emailIsValid && passwordIsValid))
+  }, [emailIsValid, passwordIsValid])
+
+  return (
+    <form
+      action={props.action}
+      className="la--form"
+      method="POST"
+    >
+      <ErrorMessage
+        id="login-error"
+        visible={props.error}
+      />
+      <TextField
+        autoFocus
+        handleValidityChange={setEmailIsValid}
+        name="email"
+        type="login"
+      />
+      <TextField
+        autoFocus={false}
+        handleValidityChange={setPasswordIsValid}
+        name="password"
+        type="login"
+      />
+      <SubmitButton
+        disabled={disabled}
+        type="login"
+      />
+      <Csrf
+        token={props.csrfToken}
+      />
+    </form>
+  )
+}
+
 Login.displayName = 'Login'

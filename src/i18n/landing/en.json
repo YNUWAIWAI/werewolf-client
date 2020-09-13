@@ -22,6 +22,9 @@
   "Description.3": "If you want more of a challenge, you can develop your own robot and make it participate as a robot player.",
   "Description.button.how-to-play": "How to play",
   "Description.button.how-to-develop-a-robot": "How to develop a robot",
+  "FieldDescription(email)": "{min}-{max} characters. Latin-1.",
+  "FieldDescription(name)": "{min}-{max} characters (except space). Disallow multi-space.",
+  "FieldDescription(password)": "{min}-{max} characters.",
   "Sponsor.sponsoredBy": "Sponsored By",
   "UpdateNotes.header": "Update notes"
 }

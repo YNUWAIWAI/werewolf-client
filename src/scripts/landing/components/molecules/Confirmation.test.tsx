@@ -9,80 +9,80 @@ import {initRenderer} from '../../tools'
 const {mountWithIntl} = initRenderer(Language.en, getMessages(Language.en))
 
 test('render', () => {
-  const handleChangePrivacyCheck = jest.fn()
-  const handleChangeTermsCheck = jest.fn()
+  const handlePrivacyCheckChange = jest.fn()
+  const handleTermsCheckChange = jest.fn()
   const wrapper = mountWithIntl(
     <Confirmation
-      handleChangePrivacyCheck={handleChangePrivacyCheck}
-      handleChangeTermsCheck={handleChangeTermsCheck}
-      isPrivacyChecked={false}
-      isTermsChecked={false}
+      handlePrivacyCheckChange={handlePrivacyCheckChange}
+      handleTermsCheckChange={handleTermsCheckChange}
+      privacyIsChecked={false}
+      termsIsChecked={false}
     />
   )
 
   expect(wrapper.html()).toMatchSnapshot()
 })
-describe('handleChangePrivacyCheck', () => {
+describe('handlePrivacyCheckChange', () => {
   test('click checkbox', () => {
-    const handleChangePrivacyCheck = jest.fn()
-    const handleChangeTermsCheck = jest.fn()
+    const handlePrivacyCheckChange = jest.fn()
+    const handleTermsCheckChange = jest.fn()
     const wrapper = mountWithIntl(
       <Confirmation
-        handleChangePrivacyCheck={handleChangePrivacyCheck}
-        handleChangeTermsCheck={handleChangeTermsCheck}
-        isPrivacyChecked={false}
-        isTermsChecked={false}
+        handlePrivacyCheckChange={handlePrivacyCheckChange}
+        handleTermsCheckChange={handleTermsCheckChange}
+        privacyIsChecked={false}
+        termsIsChecked={false}
       />
     )
 
     wrapper.find('span.la--checkbox').at(0).simulate('click')
-    expect(handleChangePrivacyCheck).toHaveBeenCalled()
+    expect(handlePrivacyCheckChange).toHaveBeenCalled()
   })
   test('click anchor', () => {
-    const handleChangePrivacyCheck = jest.fn()
-    const handleChangeTermsCheck = jest.fn()
+    const handlePrivacyCheckChange = jest.fn()
+    const handleTermsCheckChange = jest.fn()
     const wrapper = mountWithIntl(
       <Confirmation
-        handleChangePrivacyCheck={handleChangePrivacyCheck}
-        handleChangeTermsCheck={handleChangeTermsCheck}
-        isPrivacyChecked={false}
-        isTermsChecked={false}
+        handlePrivacyCheckChange={handlePrivacyCheckChange}
+        handleTermsCheckChange={handleTermsCheckChange}
+        privacyIsChecked={false}
+        termsIsChecked={false}
       />
     )
 
     wrapper.find('a.la--form--link').at(0).simulate('click')
-    expect(handleChangePrivacyCheck).toHaveBeenCalled()
+    expect(handlePrivacyCheckChange).toHaveBeenCalled()
   })
 })
-describe('handleChangeTermsCheck', () => {
+describe('handleTermsCheckChange', () => {
   test('click checkbox', () => {
-    const handleChangePrivacyCheck = jest.fn()
-    const handleChangeTermsCheck = jest.fn()
+    const handlePrivacyCheckChange = jest.fn()
+    const handleTermsCheckChange = jest.fn()
     const wrapper = mountWithIntl(
       <Confirmation
-        handleChangePrivacyCheck={handleChangePrivacyCheck}
-        handleChangeTermsCheck={handleChangeTermsCheck}
-        isPrivacyChecked={false}
-        isTermsChecked={false}
+        handlePrivacyCheckChange={handlePrivacyCheckChange}
+        handleTermsCheckChange={handleTermsCheckChange}
+        privacyIsChecked={false}
+        termsIsChecked={false}
       />
     )
 
     wrapper.find('span.la--checkbox').at(1).simulate('click')
-    expect(handleChangeTermsCheck).toHaveBeenCalled()
+    expect(handleTermsCheckChange).toHaveBeenCalled()
   })
   test('click anchor', () => {
-    const handleChangePrivacyCheck = jest.fn()
-    const handleChangeTermsCheck = jest.fn()
+    const handlePrivacyCheckChange = jest.fn()
+    const handleTermsCheckChange = jest.fn()
     const wrapper = mountWithIntl(
       <Confirmation
-        handleChangePrivacyCheck={handleChangePrivacyCheck}
-        handleChangeTermsCheck={handleChangeTermsCheck}
-        isPrivacyChecked={false}
-        isTermsChecked={false}
+        handlePrivacyCheckChange={handlePrivacyCheckChange}
+        handleTermsCheckChange={handleTermsCheckChange}
+        privacyIsChecked={false}
+        termsIsChecked={false}
       />
     )
 
     wrapper.find('a.la--form--link').at(1).simulate('click')
-    expect(handleChangeTermsCheck).toHaveBeenCalled()
+    expect(handleTermsCheckChange).toHaveBeenCalled()
   })
 })

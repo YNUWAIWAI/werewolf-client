@@ -4,19 +4,26 @@ import {FormattedMessage} from 'react-intl'
 import {Link} from '../atoms/Link'
 
 interface Props {
-  readonly handleChangePrivacyCheck: () => void
-  readonly handleChangeTermsCheck: () => void
-  readonly isPrivacyChecked: boolean
-  readonly isTermsChecked: boolean
+  readonly handlePrivacyCheckChange: (checked: boolean) => void
+  readonly handleTermsCheckChange: (checked: boolean) => void
+  readonly privacyIsChecked: boolean
+  readonly termsIsChecked: boolean
 }
 
 export const Confirmation: React.FC<Props> = props => {
+  const handlePrivacyCheckChange = () => {
+    props.handlePrivacyCheckChange(!props.privacyIsChecked)
+  }
+  const handleTermsCheckChange = () => {
+    props.handleTermsCheckChange(!props.termsIsChecked)
+  }
+
   return (
     <div className="la--form--confirmation">
       <Checkbox
-        checked={props.isPrivacyChecked}
+        checked={props.privacyIsChecked}
         className="la--checkbox"
-        handleChange={props.handleChangePrivacyCheck}
+        handleChange={handlePrivacyCheckChange}
         navigatable
       />
       <span>
@@ -27,7 +34,7 @@ export const Confirmation: React.FC<Props> = props => {
             a: (... chunks: React.ReactNode[]) => (
               <Link
                 className="la--form--link"
-                handleClick={props.handleChangePrivacyCheck}
+                handleClick={handlePrivacyCheckChange}
                 href="https://werewolfguide.netlify.app/docs/en/privacy"
               >
                 {chunks}
@@ -37,9 +44,9 @@ export const Confirmation: React.FC<Props> = props => {
         />
       </span>
       <Checkbox
-        checked={props.isTermsChecked}
+        checked={props.termsIsChecked}
         className="la--checkbox"
-        handleChange={props.handleChangeTermsCheck}
+        handleChange={handleTermsCheckChange}
         navigatable
       />
       <span>
@@ -50,7 +57,7 @@ export const Confirmation: React.FC<Props> = props => {
             a: (... chunks: React.ReactNode[]) => (
               <Link
                 className="la--form--link"
-                handleClick={props.handleChangeTermsCheck}
+                handleClick={handleTermsCheckChange}
                 href="https://werewolfguide.netlify.app/docs/en/terms"
               >
                 {chunks}

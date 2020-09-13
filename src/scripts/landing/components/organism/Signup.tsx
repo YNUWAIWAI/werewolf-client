@@ -2,6 +2,7 @@ import * as React from 'react'
 import {Confirmation} from '../molecules/Confirmation'
 import {Csrf} from '../atoms/Csrf'
 import {ErrorMessage} from '../atoms/ErrorMessage'
+import {FieldDescription} from '../atoms/FieldDescription'
 import {SubmitButton} from '../atoms/SubmitButton'
 import {TextField} from '../molecules/TextField'
 
@@ -12,14 +13,16 @@ interface Props {
 }
 
 export const Signup: React.FC<Props> = props => {
-  const [isPrivacyChecked, setIsPrivacyChecked] = React.useState(false)
-  const [isTermsChecked, setIsTermsChecked] = React.useState(false)
-  const handleChangePrivacyCheck = () => {
-    setIsPrivacyChecked(!isPrivacyChecked)
-  }
-  const handleChangeTermsCheck = () => {
-    setIsTermsChecked(!isTermsChecked)
-  }
+  const [privacyIsChecked, setPrivacyIsChecked] = React.useState(false)
+  const [termsIsChecked, setTermsIsChecked] = React.useState(false)
+  const [emailIsValid, setEmailIsValid] = React.useState(false)
+  const [nameIsValid, setNameIsValid] = React.useState(false)
+  const [passwordIsValid, setPasswordIsValid] = React.useState(false)
+  const [disabled, setDisabled] = React.useState(true)
+
+  React.useEffect(() => {
+    setDisabled(!(privacyIsChecked && termsIsChecked && emailIsValid && nameIsValid && passwordIsValid))
+  }, [privacyIsChecked, termsIsChecked, emailIsValid, nameIsValid, passwordIsValid])
 
   return (
     <form
@@ -28,31 +31,44 @@ export const Signup: React.FC<Props> = props => {
       method="POST"
     >
       <ErrorMessage
-        type="signup"
+        id="signup-error"
         visible={props.error}
       />
       <TextField
         autoFocus
+        handleValidityChange={setNameIsValid}
         name="name"
         type="signup"
       />
+      <FieldDescription
+        name="name"
+      />
       <TextField
         autoFocus={false}
+        handleValidityChange={setEmailIsValid}
         name="email"
         type="signup"
       />
+      <FieldDescription
+        name="email"
+      />
       <TextField
         autoFocus={false}
+        handleValidityChange={setPasswordIsValid}
         name="password"
         type="signup"
       />
+      <FieldDescription
+        name="password"
+      />
       <Confirmation
-        handleChangePrivacyCheck={handleChangePrivacyCheck}
-        handleChangeTermsCheck={handleChangeTermsCheck}
-        isPrivacyChecked={isPrivacyChecked}
-        isTermsChecked={isTermsChecked}
+        handlePrivacyCheckChange={setPrivacyIsChecked}
+        handleTermsCheckChange={setTermsIsChecked}
+        privacyIsChecked={privacyIsChecked}
+        termsIsChecked={termsIsChecked}
       />
       <SubmitButton
+        disabled={disabled}
         type="signup"
       />
       <Csrf
