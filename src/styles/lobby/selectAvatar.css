@@ -108,6 +108,7 @@
             border: 1px solid var(--color--border--input);
             box-sizing: border-box;
             color: 1px solid var(--color--font--input);
+            font-size: 1rem;
             text-align: center;
             width: 100%;
           }
