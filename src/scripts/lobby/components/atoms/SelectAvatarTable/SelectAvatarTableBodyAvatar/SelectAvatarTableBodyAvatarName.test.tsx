@@ -1,8 +1,8 @@
 import * as React from 'react'
 import {SelectAvatarTableBodyAvatarName} from './SelectAvatarTableBodyAvatarName'
-import {getMessages} from '../../../i18n'
-import {initRenderer} from '../../../tools'
-import {lobby} from '../../../types'
+import {getMessages} from '../../../../i18n'
+import {initRenderer} from '../../../../tools'
+import {lobby} from '../../../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
@@ -35,7 +35,7 @@ describe('handleSelect', () => {
       />
     )
 
-    wrapper.find('.lo--select-avatar--table--body--item.avatar-name').simulate('click')
+    wrapper.find('.name').simulate('click')
     expect(handleSelect).toHaveBeenCalledTimes(1)
   })
   test('event.target !== event.currentTarget', () => {
@@ -51,7 +51,7 @@ describe('handleSelect', () => {
       />
     )
 
-    wrapper.find('.lo--select-avatar--table--body--item.avatar-name > .input').simulate('click')
+    wrapper.find('.name > .input').simulate('click')
     expect(handleSelect).toHaveBeenCalledTimes(0)
   })
 })

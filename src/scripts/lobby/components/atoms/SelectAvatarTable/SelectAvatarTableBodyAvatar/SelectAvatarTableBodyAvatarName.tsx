@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {TextInput} from '../Input/TextInput'
+import {TextInput} from '../../Input/TextInput'
 
 interface Props {
   readonly additionalClassName: string[]
@@ -18,7 +18,7 @@ export const SelectAvatarTableBodyAvatarName: React.FC<Props> = props => {
 
   return (
     <div
-      className={`lo--select-avatar--table--body--item avatar-name ${props.additionalClassName.join(' ')}`}
+      className={`name ${props.additionalClassName.join(' ')}`}
       onClick={handleSelect}
     >
       <TextInput

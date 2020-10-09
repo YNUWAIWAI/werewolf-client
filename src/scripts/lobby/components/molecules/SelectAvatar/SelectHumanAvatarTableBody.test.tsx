@@ -4,7 +4,7 @@ import {
   StateProps
 } from './SelectHumanAvatarTableBody'
 import {ImagePath} from '../../../constants/ImagePath'
-import {SelectAvatarTableBodyAvatarName} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
+import {SelectAvatarTableBodyAvatar} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatar'
 import {SelectAvatarTableBodyCheckbox} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
 import {getMessages} from '../../../i18n'
 import {initRenderer} from '../../../tools'
@@ -45,7 +45,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.find(SelectAvatarTableBodyAvatarName)).toHaveLength(1)
+    expect(wrapper.find(SelectAvatarTableBodyAvatar)).toHaveLength(1)
     expect(wrapper.find(SelectAvatarTableBodyCheckbox)).toHaveLength(1)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -89,7 +89,7 @@ describe('render', () => {
       />
     )
 
-    expect(wrapper.find(SelectAvatarTableBodyAvatarName)).toHaveLength(2)
+    expect(wrapper.find(SelectAvatarTableBodyAvatar)).toHaveLength(2)
     expect(wrapper.find(SelectAvatarTableBodyCheckbox)).toHaveLength(2)
     expect(wrapper.html()).toMatchSnapshot()
   })
