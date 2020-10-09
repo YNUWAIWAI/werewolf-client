@@ -48,7 +48,7 @@
     background: var(--color--background);
     border: 2px solid var(--color--border);
     display: grid;
-    grid-template-columns: 28px repeat(7, minmax(8rem, 1fr)) minmax(16rem, 2fr);
+    grid-template-columns: 28px repeat(6, minmax(8rem, 1fr)) minmax(16rem, 2fr);
     overflow: auto;
     padding: 0 0 1rem;
 
@@ -97,9 +97,34 @@
         }
       }
 
-      &.avatar-name {
-        & > .input {
-          width: 100%;
+      &.avatar {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        & > .name {
+          & > .input {
+            background: 1px solid var(--color--background--input);
+            border: 1px solid var(--color--border--input);
+            box-sizing: border-box;
+            color: 1px solid var(--color--font--input);
+            text-align: center;
+            width: 100%;
+          }
+        }
+
+        & > .image {
+          & > button {
+            background: transparent;
+            border: none;
+            line-height: 0;
+            padding: 0;
+
+            &:focus {
+              box-shadow: var(--box-shadow--focus-ring);
+              outline: none;
+            }
+          }
         }
       }
 
@@ -132,20 +157,6 @@
 
         & > .lo--checkbox {
           margin: 0;
-        }
-      }
-
-      &.image {
-        & > button {
-          background: transparent;
-          border: none;
-          line-height: 0;
-          padding: 0;
-
-          &:focus {
-            box-shadow: var(--box-shadow--focus-ring);
-            outline: none;
-          }
         }
       }
 

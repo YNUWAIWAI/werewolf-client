@@ -2,9 +2,8 @@ import * as React from 'react'
 import {SelectAvatarTableBodyAccessToken} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAccessToken'
 import {SelectAvatarTableBodyAuthorized} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAuthorized'
 import {SelectAvatarTableBodyAutomation} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAutomation'
-import {SelectAvatarTableBodyAvatarName} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
+import {SelectAvatarTableBodyAvatar} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatar'
 import {SelectAvatarTableBodyCheckbox} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
-import {SelectAvatarTableBodyImage} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyImage'
 import {SelectAvatarTableBodyLanguage} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyLanguage'
 import {SelectAvatarTableBodyStatus} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyStatus'
 import {SelectAvatarTableBodyTest} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyTest'
@@ -72,10 +71,13 @@ export const SelectRobotAvatarTableBody: React.FC<Props> = props => {
           handleClick={props.handleSelectAvatar(id)}
           navigatable={props.navigatable}
         />
-        <SelectAvatarTableBodyAvatarName
+        <SelectAvatarTableBodyAvatar
           additionalClassName={additionalClassName}
-          handleChange={props.handleAvatarNameChange(avatar.token)}
+          handleAvatarImageClick={props.handleAvatarImageClick(id)}
+          handleAvatarNameChange={props.handleAvatarNameChange(id)}
           handleSelect={props.handleSelectAvatar(id)}
+          image={avatar.image}
+          key={`avatar${id}`}
           name={avatar.name}
           navigatable={props.navigatable}
         />
@@ -84,13 +86,6 @@ export const SelectRobotAvatarTableBody: React.FC<Props> = props => {
           handleChange={props.handleAvatarLanguageChange(id)}
           handleSelect={props.handleSelectAvatar(id)}
           language={avatar.language}
-          navigatable={props.navigatable}
-        />
-        <SelectAvatarTableBodyImage
-          additionalClassName={additionalClassName}
-          handleClick={props.handleAvatarImageClick(id)}
-          handleSelect={props.handleSelectAvatar(id)}
-          image={avatar.image}
           navigatable={props.navigatable}
         />
         <SelectAvatarTableBodyStatus

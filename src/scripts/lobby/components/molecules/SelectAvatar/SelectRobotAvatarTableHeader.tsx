@@ -4,9 +4,8 @@ import {SelectAvatarTableHeaderItem} from '../../atoms/SelectAvatarTable/SelectA
 export const SelectRobotAvatarTableHeader: React.FC<{}> = () => (
   <>
     <SelectAvatarTableHeaderItem type="check-box" />
-    <SelectAvatarTableHeaderItem type="avatar-name" />
+    <SelectAvatarTableHeaderItem type="avatar" />
     <SelectAvatarTableHeaderItem type="language" />
-    <SelectAvatarTableHeaderItem type="image" />
     <SelectAvatarTableHeaderItem type="status" />
     <SelectAvatarTableHeaderItem type="authorized" />
     <SelectAvatarTableHeaderItem type="test" />

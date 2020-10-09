@@ -17,7 +17,7 @@ export const SelectAvatarTableBodyImage: React.FC<Props> = props => {
 
   return (
     <div
-      className={`lo--select-avatar--table--body--item image ${props.additionalClassName.join(' ')}`}
+      className={`image ${props.additionalClassName.join(' ')}`}
       onClick={handleSelect}
     >
       <button
