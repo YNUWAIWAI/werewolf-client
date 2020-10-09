@@ -7,7 +7,7 @@ import {ImagePath} from '../../../constants/ImagePath'
 import {SelectAvatarTableBodyAccessToken} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAccessToken'
 import {SelectAvatarTableBodyAuthorized} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAuthorized'
 import {SelectAvatarTableBodyAutomation} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAutomation'
-import {SelectAvatarTableBodyAvatarName} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatarName'
+import {SelectAvatarTableBodyAvatar} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyAvatar'
 import {SelectAvatarTableBodyCheckbox} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyCheckbox'
 import {SelectAvatarTableBodyStatus} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyStatus'
 import {SelectAvatarTableBodyTest} from '../../atoms/SelectAvatarTable/SelectAvatarTableBodyTest'
@@ -61,7 +61,7 @@ describe('render', () => {
     )
 
     expect(wrapper.find(SelectAvatarTableBodyCheckbox)).toHaveLength(1)
-    expect(wrapper.find(SelectAvatarTableBodyAvatarName)).toHaveLength(1)
+    expect(wrapper.find(SelectAvatarTableBodyAvatar)).toHaveLength(1)
     expect(wrapper.find(SelectAvatarTableBodyStatus)).toHaveLength(1)
     expect(wrapper.find(SelectAvatarTableBodyAuthorized)).toHaveLength(1)
     expect(wrapper.find(SelectAvatarTableBodyTest)).toHaveLength(1)
@@ -126,7 +126,7 @@ describe('render', () => {
     )
 
     expect(wrapper.find(SelectAvatarTableBodyCheckbox)).toHaveLength(2)
-    expect(wrapper.find(SelectAvatarTableBodyAvatarName)).toHaveLength(2)
+    expect(wrapper.find(SelectAvatarTableBodyAvatar)).toHaveLength(2)
     expect(wrapper.find(SelectAvatarTableBodyStatus)).toHaveLength(2)
     expect(wrapper.find(SelectAvatarTableBodyAuthorized)).toHaveLength(2)
     expect(wrapper.find(SelectAvatarTableBodyTest)).toHaveLength(2)
