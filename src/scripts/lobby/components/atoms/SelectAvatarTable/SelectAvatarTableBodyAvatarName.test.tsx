@@ -35,7 +35,7 @@ describe('handleSelect', () => {
       />
     )
 
-    wrapper.find('.lo--select-avatar--table--body--item.avatar-name').simulate('click')
+    wrapper.find('.name').simulate('click')
     expect(handleSelect).toHaveBeenCalledTimes(1)
   })
   test('event.target !== event.currentTarget', () => {
@@ -51,7 +51,7 @@ describe('handleSelect', () => {
       />
     )
 
-    wrapper.find('.lo--select-avatar--table--body--item.avatar-name > .input').simulate('click')
+    wrapper.find('.name > .input').simulate('click')
     expect(handleSelect).toHaveBeenCalledTimes(0)
   })
 })

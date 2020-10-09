@@ -35,22 +35,40 @@ test('handleClick', () => {
     />
   )
 
-  wrapper.find('.lo--select-avatar--table--body--item > button').simulate('click')
+  wrapper.find('.image > button').simulate('click')
   expect(handleClick).toHaveBeenCalledTimes(1)
 })
-test('handleSelect', () => {
-  const handleClick = jest.fn()
-  const handleSelect = jest.fn()
-  const wrapper = mountWithIntl(
-    <SelectAvatarTableBodyImage
-      additionalClassName={[]}
-      handleClick={handleClick}
-      handleSelect={handleSelect}
-      image={ImagePath.Character.a}
-      navigatable
-    />
-  )
+describe('handleSelect', () => {
+  test('event.target === event.currentTarget', () => {
+    const handleClick = jest.fn()
+    const handleSelect = jest.fn()
+    const wrapper = mountWithIntl(
+      <SelectAvatarTableBodyImage
+        additionalClassName={[]}
+        handleClick={handleClick}
+        handleSelect={handleSelect}
+        image={ImagePath.Character.a}
+        navigatable
+      />
+    )
 
-  wrapper.find('.lo--select-avatar--table--body--item').simulate('click')
-  expect(handleSelect).toHaveBeenCalledTimes(1)
+    wrapper.find('.image').simulate('click')
+    expect(handleSelect).toHaveBeenCalledTimes(1)
+  })
+  test('event.target !== event.currentTarget', () => {
+    const handleClick = jest.fn()
+    const handleSelect = jest.fn()
+    const wrapper = mountWithIntl(
+      <SelectAvatarTableBodyImage
+        additionalClassName={[]}
+        handleClick={handleClick}
+        handleSelect={handleSelect}
+        image={ImagePath.Character.a}
+        navigatable
+      />
+    )
+
+    wrapper.find('.image').simulate('click')
+    expect(handleSelect).toHaveBeenCalledTimes(1)
+  })
 })
