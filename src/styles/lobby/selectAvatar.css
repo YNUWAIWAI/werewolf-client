@@ -155,6 +155,9 @@
         }
 
         & > .image {
+          height: var(--size--avatar-image);
+          padding: 5px;
+
           & > button {
             background: transparent;
             border: none;
