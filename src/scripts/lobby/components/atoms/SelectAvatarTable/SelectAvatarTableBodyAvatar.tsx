@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {SelectAvatarTableBodyAvatarName} from './SelectAvatarTableBodyAvatarName'
-import {SelectAvatarTableBodyImage} from './SelectAvatarTableBodyImage'
+import {SelectAvatarTableBodyAvatarImage} from './SelectAvatarTableBodyAvatar/SelectAvatarTableBodyAvatarImage'
+import {SelectAvatarTableBodyAvatarName} from './SelectAvatarTableBodyAvatar/SelectAvatarTableBodyAvatarName'
 
 interface Props {
   readonly additionalClassName: string[]
@@ -24,7 +24,7 @@ export const SelectAvatarTableBodyAvatar: React.FC<Props> = props => {
       className={`lo--select-avatar--table--body--item avatar ${props.additionalClassName.join(' ')}`}
       onClick={handleSelect}
     >
-      <SelectAvatarTableBodyImage
+      <SelectAvatarTableBodyAvatarImage
         additionalClassName={props.additionalClassName}
         handleClick={props.handleAvatarImageClick}
         handleSelect={props.handleSelect}

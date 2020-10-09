@@ -1,9 +1,9 @@
 import * as React from 'react'
-import {ImagePath} from '../../../constants/ImagePath'
-import {SelectAvatarTableBodyImage} from './SelectAvatarTableBodyImage'
-import {getMessages} from '../../../i18n'
-import {initRenderer} from '../../../tools'
-import {lobby} from '../../../types'
+import {ImagePath} from '../../../../constants/ImagePath'
+import {SelectAvatarTableBodyAvatarImage} from './SelectAvatarTableBodyAvatarImage'
+import {getMessages} from '../../../../i18n'
+import {initRenderer} from '../../../../tools'
+import {lobby} from '../../../../types'
 
 const {mountWithIntl} = initRenderer(lobby.Language.en, getMessages(lobby.Language.en))
 
@@ -11,7 +11,7 @@ test('render', () => {
   const handleClick = jest.fn()
   const handleSelect = jest.fn()
   const wrapper = mountWithIntl(
-    <SelectAvatarTableBodyImage
+    <SelectAvatarTableBodyAvatarImage
       additionalClassName={[]}
       handleClick={handleClick}
       handleSelect={handleSelect}
@@ -26,7 +26,7 @@ test('handleClick', () => {
   const handleClick = jest.fn()
   const handleSelect = jest.fn()
   const wrapper = mountWithIntl(
-    <SelectAvatarTableBodyImage
+    <SelectAvatarTableBodyAvatarImage
       additionalClassName={[]}
       handleClick={handleClick}
       handleSelect={handleSelect}
@@ -43,7 +43,7 @@ describe('handleSelect', () => {
     const handleClick = jest.fn()
     const handleSelect = jest.fn()
     const wrapper = mountWithIntl(
-      <SelectAvatarTableBodyImage
+      <SelectAvatarTableBodyAvatarImage
         additionalClassName={[]}
         handleClick={handleClick}
         handleSelect={handleSelect}
@@ -59,7 +59,7 @@ describe('handleSelect', () => {
     const handleClick = jest.fn()
     const handleSelect = jest.fn()
     const wrapper = mountWithIntl(
-      <SelectAvatarTableBodyImage
+      <SelectAvatarTableBodyAvatarImage
         additionalClassName={[]}
         handleClick={handleClick}
         handleSelect={handleSelect}
