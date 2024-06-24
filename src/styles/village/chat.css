@@ -1,5 +1,7 @@
 .vi--chat {
   background: var(--color--background--body);
+  background-image: url('/werewolf-client/Dark Stone Wall Texture _27.JPG');
+  background-repeat: repeat round;
   grid-area: chat;
   overflow: auto;
   padding: 0 8px var(--height--hide-button) 8px;

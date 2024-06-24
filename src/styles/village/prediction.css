@@ -1,5 +1,7 @@
 .vi--prediction {
   background: var(--color--background--body);
+  background-image: url('/werewolf-client/Dark Stone Wall Texture _27.JPG');
+  background-repeat: repeat round;
   grid-area: prediction;
   padding: 8px;
 
@@ -48,6 +50,7 @@
     &--image {
       grid-area: image;
       height: var(--size--image);
+      user-select: none;
       width: var(--size--image);
     }
 
@@ -67,6 +70,7 @@
       line-height: 1.5;
       overflow: auto;
       text-align: center;
+      user-select: none;
       word-break: keep-all;
     }
   }
@@ -92,6 +96,7 @@
 
   &--item {
     align-items: center;
+    background: var(--color--background--body);
     border: solid 1px var(--color--border);
     box-sizing: border-box;
     cursor: pointer;
@@ -185,6 +190,7 @@
       grid-row: 4;
       line-height: 1.5;
       text-align: center;
+      user-select: none;
     }
 
     &--image {
